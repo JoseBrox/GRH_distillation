@@ -65,6 +65,18 @@ remaining same-lattice and same-map identifications.
 
 ## Scalar acceptance conditions
 
+The [scale-averaged criterion](scale-averaged-criterion.md) weakens the
+final analytic target further. At each fixed accuracy it suffices to
+control a weighted positive-part integral on arbitrarily late whole
+windows. The combined signed arithmetic budget may first be averaged
+over a fixed nearby range of scales: its transform multiplier preserves
+every detecting pole. This permits cancellation before taking the
+positive part. Pointwise bounds remain a sufficient supplier, but are
+not intrinsically necessary. The arithmetic comparison must hold almost
+everywhere on the slightly expanded windows used by local averaging.
+An uncontrolled signed mean or a small unweighted exceptional proportion
+does not suffice; explicit counterexamples are preserved in the note.
+
 The [minimal budget](rh-minimal-budget.md) keeps the four normalized
 arithmetic terms separate. With the actual source rank ranges, the old
 conditional envelope improves to a factor 36 times a power with exponent
