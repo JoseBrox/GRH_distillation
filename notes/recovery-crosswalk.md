@@ -182,21 +182,29 @@ The [short guide](../paper/guide/main.pdf) is the organizational introduction.
 Its TeX source is a single file, and its build enforces a twelve-page limit.
 It is separate from the 98-section manuscript inventory.
 
-Resume RH work from [rh-specialization.md](rh-specialization.md) and the
+Resume RH work from [rh-direct-transfer.md](rh-direct-transfer.md),
+[rh-specialization.md](rh-specialization.md) and the
 [RH program](../blueprint/rh-proof-program.md). Conductor one makes the subset
 shares automatic and leaves four characters. The exact signed companion
 budget permits the auxiliary primes to vary while zeta remains the fixed
 analytic target. A short proof handles either eventual one-sided zeta bound;
 the longer interval criterion remains available for cofinal whole windows.
 
-Resume the arithmetic estimates from [averaged-error-budget.md](averaged-error-budget.md):
-signed errors, the obstruction to positive cancellation, pooled symmetry,
-three mean weights, logarithmic dispersion and correctly weighted frame
-moments. The actual supplier does not establish the needed symmetry.
+The preferred transfer fixes the thick weights at their lower endpoint
+before averaging and uses the existing large-scale QRH estimate for thin
+samples. It needs no weight symmetry. The
+[fixed-top audit](rh-weight-symmetry.md) proves that exact pooled symmetry
+is impossible for the unchanged source family. The three-mean and transport
+criteria are retained as alternatives, with their limitations explicit.
+The averaged signed identities in
+[averaged-error-budget.md](averaged-error-budget.md) remain useful.
 
 Resume geometry from [geometric-core-lower-bound.md](geometric-core-lower-bound.md):
 the precise cuspidal section lattice and Petersson normalization, exact
 determinant descent, rank-weighted type averages, and the raw Hilbert–Samuel
-surplus. The mean-volume/height input and total surplus bound remain open.
+surplus. The [refined geometric combination](rh-geometric-combination.md)
+preserves the section-error coefficient, uses two weighted height moments,
+and averages the sharper frame cost. The actual height and total surplus
+bounds remain open.
 All new reductions are integrated into existing manuscript sections; the
 original proofs and their alternative placements remain preserved.

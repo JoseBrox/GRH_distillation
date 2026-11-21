@@ -1,0 +1,420 @@
+{
+  "schema_version": 1,
+  "status": "bounded-source-applicability-audit",
+  "repository": "jsmorph/rh",
+  "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "date_utc": "2026-11-21",
+  "source_atlas": "blueprint/lean-source-imports.json.gz",
+  "source_atlas_sha256": "f894df1636e0cbaf739c31f8c2f13c8ee7d9a427893ed93b019842cd9a4e21c0",
+  "note": {
+    "path": "notes/rh-direct-transfer.md",
+    "sha256": "e979cd90950b954a57329555a97b4363e1918e7417764a33ad36a9ff6ecf803a",
+    "section": "Appendix. Applicability to the actual RH arithmetic data"
+  },
+  "claims": [
+    "The actual recOf/recH map is the Artin map followed by the displayed sign-swap isomorphism; it is surjective.",
+    "Canonical primitive Dirichlet characters match the source primVal at every positive integer, including ramified primes; only the trivial group character is principal.",
+    "The first and second additive sign characters induce the primitive Legendre characters modulo d and q, respectively, and their product has conductor qd.",
+    "The actual GPsi equality contains the full corrected principal sum and the actual nonprincipal logarithmic derivative.",
+    "ThinScales and the source char_at transport apply to every character, including the principal one, at every sampled y at least Xprime/3.",
+    "Finite character orthogonality directly proves positivity already for abstract inertia-coset means; actual arithmetic realization is needed to identify the analytic functions."
+  ],
+  "verification_scope": {
+    "pinned_source_byte_hashes_recomputed": true,
+    "pinned_atlas_blob_hashes_matched": true,
+    "bounded_passages_read": true,
+    "ordinary_math_arguments_checked": [
+      "surjective quotient and unique principal character",
+      "CRT primitive sign characters",
+      "inertia-coset orthogonality including ramification",
+      "matching principal pole correction",
+      "all-character quantifiers and thin range"
+    ],
+    "source_dependencies_relied_on": [
+      "actual host existence and Artin-map laws",
+      "primitive-character API and conductor identities in the displayed source proof",
+      "source all-character thin analytic estimate and its deep inputs"
+    ],
+    "lean_build_run": false,
+    "lean_kernel_replay_run": false,
+    "full_upstream_proof_audit": false,
+    "independent_review": {
+      "status": "pass",
+      "reviewer": "independent geometric-simplification agent",
+      "source_files_rehashed": 16,
+      "bounded_excerpts_rehashed": 22,
+      "source_atlas_comparison": true,
+      "critical_passages_read": [
+        "quotient definition, sign swap and surjectivity",
+        "PsQ and art_ch",
+        "ramified primitive-value branches and all-positive-integer identity",
+        "unique principal character",
+        "corrected principal/nonprincipal GPsi identity",
+        "all-character char_at transfer",
+        "ThinChoice equality and QH.thin quantifiers"
+      ],
+      "ordinary_math_arguments_checked": true,
+      "notation_correction_applied": "Frobenius element in the averaged coset formula is an explicitly chosen lift in G; the average is independent of the lift.",
+      "upstream_proof_audit": false,
+      "lean_kernel_replay": false
+    }
+  },
+  "source_files": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/StatementOC.lean",
+      "git_blob_sha1": "12ab19c0176bd4135c2b23a7ee3ac22888df0122",
+      "sha256": "0249562a8b70df61856f6fdce16afdf17fbe88c9945af4231700503d11027f8a",
+      "bytes": 3737,
+      "lines": 73,
+      "excerpts": [
+        {
+          "lines": [
+            9,
+            13
+          ],
+          "sha256": "9ebd2899670f63112bcd83f617a806656c20d8e51bf122f79c0a12d061b3ef13",
+          "bytes": 198
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/FrobeniusOrbits/Statement.lean",
+      "git_blob_sha1": "45d3b672d4649dd27309c092b3f9a24d279dd399",
+      "sha256": "be6f07f572e21568d41366bad89e578cb716b1bd4622b9eea7b195063465abad",
+      "bytes": 12378,
+      "lines": 258,
+      "excerpts": [
+        {
+          "lines": [
+            11,
+            18
+          ],
+          "sha256": "58dc9596048c0eaed5db9f057bf3a51a9413a2d4b12b0f1a18a5a611a11aad90",
+          "bytes": 311
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SizeWindowBrackets/FirstPrimeNeSecondPrime.lean",
+      "git_blob_sha1": "18deb7cb85d6f650a69f01fda6e0c789b9f04d89",
+      "sha256": "0af06fb5bd926de8235472c1c0482770d70e13b5bc58a0afef86d7d6b512246d",
+      "bytes": 6380,
+      "lines": 142,
+      "excerpts": [
+        {
+          "lines": [
+            38,
+            70
+          ],
+          "sha256": "762dfc0913b982ddea6445083fcd6800141c61ebaf31f5e1b6aaa4f07e0b84d7",
+          "bytes": 1427
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SizeWindowBrackets/GaloisToProductIsIso.lean",
+      "git_blob_sha1": "4f314d4aed9d7969e3f275c9dd03aca3d015ee43",
+      "sha256": "ab8560f83980005685cf57f0fb14215e2f130eda9b884baacf04d1eef28a4bbd",
+      "bytes": 8459,
+      "lines": 168,
+      "excerpts": [
+        {
+          "lines": [
+            12,
+            32
+          ],
+          "sha256": "a02666605635816676f0ab98cfb39983d9d1d8a726e45dc2135020e856455758",
+          "bytes": 882
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/GaloisMapComplexConjugation.lean",
+      "git_blob_sha1": "b08d98f83d661d021b20ccff6c405af78e9afb59",
+      "sha256": "a2103b58ff829b63399edc4126b0cdc842ef18fe2cd3791b4bc07f4fa56bfe01",
+      "bytes": 48214,
+      "lines": 999,
+      "excerpts": [
+        {
+          "lines": [
+            164,
+            245
+          ],
+          "sha256": "329474a284b305d6038cf96f32686b3f82830a240b90d51b05f7297cb376a5cd",
+          "bytes": 3698
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ConjEMemHostFIff.lean",
+      "git_blob_sha1": "0ab34ba6d386bb84908efe66de6ce50108eacddc",
+      "sha256": "db32b7af86f38a66881c2345572c33156fdf027b2f0b2d6c64a6775f8e970647",
+      "bytes": 11453,
+      "lines": 230,
+      "excerpts": [
+        {
+          "lines": [
+            12,
+            32
+          ],
+          "sha256": "a4db493990c6e20f82dde90c7a93d10db1157391a748255d75db4c2dfff51ca0",
+          "bytes": 554
+        },
+        {
+          "lines": [
+            54,
+            55
+          ],
+          "sha256": "384db54abb2b59cc80875382b0343099ed7f590e246eee37aadbc315a20936a3",
+          "bytes": 40
+        },
+        {
+          "lines": [
+            82,
+            99
+          ],
+          "sha256": "9bb97aa941efc9a1a4d02c774fb1798e51318bfcc1b468700782801a2426dcc1",
+          "bytes": 1047
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/LocalRingCardinality/DataHost.lean",
+      "git_blob_sha1": "7e9af8ab364965c62be250ae93974098141598c0",
+      "sha256": "39252a17ac91969e59b2f1c89efe12b6ac0e7ea97bd462c1e250f8ea8b4c954f",
+      "bytes": 8732,
+      "lines": 233,
+      "excerpts": [
+        {
+          "lines": [
+            39,
+            44
+          ],
+          "sha256": "74588d0221ef05a3a5a77776800680f8cde9b8133b319b8055b1caeb893a9a64",
+          "bytes": 225
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/RecH.lean",
+      "git_blob_sha1": "b2712cc402765cea3fd406285e05e32a7ce64ec7",
+      "sha256": "61b35d1b52c98edd6829ae968b6d21d8fb754efd6dad97f357838f54477d65d5",
+      "bytes": 948,
+      "lines": 27,
+      "excerpts": [
+        {
+          "lines": [
+            10,
+            23
+          ],
+          "sha256": "974f63df652c939dac87754ce2310227d2cd9877d4fb5298b2205f0272eee084",
+          "bytes": 547
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/ToEBij.lean",
+      "git_blob_sha1": "95598a5b86a7dc37af41dfdfd526e775a7a7e254",
+      "sha256": "ca69e9bf67ef48bc8da51fe0fcf271c9cb75233e6ee2d70f8714dae6094eb4d8",
+      "bytes": 4695,
+      "lines": 84,
+      "excerpts": [
+        {
+          "lines": [
+            37,
+            66
+          ],
+          "sha256": "adcdfcfef97befc34ecca3f3cbe3ca022c70eacc1a2714e82396488ce355ab81",
+          "bytes": 1869
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/ConductorsKronecker/RecSurj.lean",
+      "git_blob_sha1": "8a2ce64499b8d0f330b3a950fced60aa2e06d0b3",
+      "sha256": "669c2686011c46c5f013ce5116a86b0ef46e0c85c069701c108929e98e348638",
+      "bytes": 859,
+      "lines": 17,
+      "excerpts": [
+        {
+          "lines": [
+            6,
+            17
+          ],
+          "sha256": "ebd286dfd06560dc2655c124d3319c3196d6b406152b761875ccfd1486d0fed3",
+          "bytes": 553
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/FieldChi.lean",
+      "git_blob_sha1": "f3e2032b133ff64406a87e27438cdf467aa05a1f",
+      "sha256": "784b9d6aed0292547065a98f2577d41f82269332559815f38fc85da4f69369b3",
+      "bytes": 3901,
+      "lines": 59,
+      "excerpts": [
+        {
+          "lines": [
+            20,
+            26
+          ],
+          "sha256": "f0e09f77c4fe628089b58e9525a7218c2d0ca240fff0d0a67374d81d6dd6f81c",
+          "bytes": 693
+        },
+        {
+          "lines": [
+            53,
+            58
+          ],
+          "sha256": "49546814d3dedd0786f398a26b7bc11b629cbc12aabdaf1295f6e955185d0da3",
+          "bytes": 534
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/GlobalSchurBounds/TieGlobal.lean",
+      "git_blob_sha1": "00acf811793877fe42d18c0d69f2d5833f75bf94",
+      "sha256": "065799d1ade7de2b196ce5fc384596059f85f5ea952b5582f5040b2807c65b6d",
+      "bytes": 7332,
+      "lines": 127,
+      "excerpts": [
+        {
+          "lines": [
+            24,
+            34
+          ],
+          "sha256": "6eebafb89cb26e71647eeca33194a90598e536f08fa5b1e41d348cf47fd7bb42",
+          "bytes": 548
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/GlobalSchurBounds/TopDensityNGeSixteen.lean",
+      "git_blob_sha1": "cbccb968fd96afe14797b8890f4e5dc63bd11d26",
+      "sha256": "f952a3ad11b8a3e5ae77f196fa3c434780eea7db9905f9a6941148d8e2d299b7",
+      "bytes": 100528,
+      "lines": 1940,
+      "excerpts": [
+        {
+          "lines": [
+            295,
+            391
+          ],
+          "sha256": "4082e027875797351693e2cc5545af5bfe9a7cbe25ceb386692515c3833acea7",
+          "bytes": 4542
+        },
+        {
+          "lines": [
+            396,
+            428
+          ],
+          "sha256": "0999c5af58090205972dee9a97cf2b0a71a68ad47414a78682cbd32644971c7c",
+          "bytes": 1440
+        },
+        {
+          "lines": [
+            476,
+            495
+          ],
+          "sha256": "4e41392d81725d843322ae341edb97e4f004f9cd6026c0656b3224782605a799",
+          "bytes": 967
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+      "git_blob_sha1": "a3ece4b4aea97a95ba2977fa9e8d437e72677774",
+      "sha256": "8143a96da8be39cf426ef142bccbff94bac7706e5bd8e97719a8feebf3272309",
+      "bytes": 10434,
+      "lines": 183,
+      "excerpts": [
+        {
+          "lines": [
+            55,
+            56
+          ],
+          "sha256": "4a0b6bd613867e4d672c4cf3afb10cc2d8d6c78ea6de3cd9c137142a8cc62cb9",
+          "bytes": 192
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/ThinChoice.lean",
+      "git_blob_sha1": "00b6f5fe9348e1d26ef97b7cdcc16ada3a38b489",
+      "sha256": "8b42f0454d20a1b7eee87723898eff5c11374432d4c45f447ec3bca57ef579e7",
+      "bytes": 3618,
+      "lines": 84,
+      "excerpts": [
+        {
+          "lines": [
+            15,
+            35
+          ],
+          "sha256": "860c181ccc3bff17b31690194d6f360827d6ef436a5482766f6321b03f681c3f",
+          "bytes": 966
+        },
+        {
+          "lines": [
+            49,
+            82
+          ],
+          "sha256": "664b8976b38605cb740c1ebf6b6a932bac426831f4ae32e4d21601421f2f1071",
+          "bytes": 1633
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/MeanSquareBounds/Thin.lean",
+      "git_blob_sha1": "d322f531dc42b40bee2cddc76f83f53a2f592ba6",
+      "sha256": "d5aa96b15c21ff10d632117c3b76954759aab3302252056ce613a02c4272169d",
+      "bytes": 2984,
+      "lines": 51,
+      "excerpts": [
+        {
+          "lines": [
+            10,
+            15
+          ],
+          "sha256": "9ead12b62549f18785499e15c89eadd161ea2856a631d8ef5a5f0a355795ba91",
+          "bytes": 513
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "source_files": 16,
+    "bounded_excerpts": 22
+  }
+}

@@ -286,6 +286,20 @@ cuspidal sections with its prescribed periods and metric. A general
 lattice identity such as~\eqref{cut} does not construct that lattice
 or prove its initial lower slope.
 
+The component calculation can now be stated with two averaged height
+bounds. For its actual positive component weights $w_Z$, put
+\[
+ \overline h=\frac{\sum_Zw_Zh_Z}{\sum_Zw_Z},\qquad
+ h_- =\frac{\sum_Zw_Z\max(-h_Z,0)}{\sum_Zw_Z}.
+\]
+A lower bound for $\overline h$ and an upper bound for $h_-$ suffice for
+the refined component estimate, once the stated section remainders
+are controlled. A separate lower height bound for every component is
+stronger than necessary. Negative heights cannot be hidden by a large
+positive average: their actual weighted contribution is retained.
+Descent from a covering also keeps the exact rank ratio and section
+error, avoiding an unnecessary doubling of that error.
+
 \subsection*{Average the losses before bounding them}
 
 For a finite abelian group and a subgroup $B$, character orthogonality gives
@@ -310,10 +324,12 @@ weights by their principal values. The full statement defines every
 term and proves~\eqref{average}~\cite{reconstruction}.
 
 Only an upper bound for the total normalized loss is needed. Negative
-discrepancies may cancel positive ones. Similarly, the slope comparison
-can use the actual weighted frame cost, without first replacing all
-individual errors by one common upper bound. These changes reduce the
-estimates that must be constructed; they do not establish their size.
+discrepancies may cancel positive ones. The same principle improves the
+comparison of the complex frames defining the map norms: average their
+actual errors before estimating the nonlinear terms. This retains the
+correlation between a frame's error, its source slope spread and its
+target height gap. It can cost much less than a common worst-case bound,
+but the required moments still concern the same maps and metrics.
 
 \section{The preferred proof structure}
 
@@ -334,8 +350,8 @@ Identify the lattice with its prescribed metric, prove its lower slope,
 and control the discarded-degree and index terms in~\eqref{cut}.
 \end{enumerate}
 
-The Galois representations needed in this construction are now supplied
-by classical theorems~\cite{blggt}. Their weights, local correspondences
+Classical theorems now supply the required Galois representations~\cite{blggt}.
+Their weights, local correspondences
 and period normalizations have been compared with the required data.
 The separate construction of those representations by stable theta
 lifting can therefore be omitted from the preferred argument. Theta
@@ -363,75 +379,107 @@ with unrelated good estimates cannot be combined.
 
 \section{What becomes simpler for ordinary RH?}
 
-The analytic target becomes just $G$, or one positive family containing
-$G$. There is no need to treat every target conductor, to retain every
-Dirichlet character, or to pass from primitive to imprimitive characters.
-Theorem~\ref{rhcriterion} gives a short complete analytic implication
-using only zeta, its functional equation and positivity.
+The analytic target becomes just $G$. Theorem~\ref{rhcriterion} uses
+only zeta, its functional equation and positivity. The arithmetic
+comparison still needs auxiliary characters and growing spaces.
 
-That does not yet make the arithmetic construction elementary. Its
-averages contain auxiliary quadratic characters even for the zeta
-target. Conductor one makes the subset-share condition automatic and
-leaves exactly four character terms. The reason a signed companion
-survives is visible in a small finite-group calculation.
-For $G_0=(\Z/2\Z)^2\times A$ and averaging in the $A$-direction,
-the character
+\subsection*{A positive kernel removes the symmetry requirement}
+
+Partition the actual archimedean weights into thick and thin places.
+The thick weights lie in $[b_0,b_0+r]$, where $r$ is small compared with
+$b_0$. Instead of making all weight distributions invariant, compare
+only the thick weights with their common lower endpoint $b_0$.
+
+The crucial fact is positivity. At each prime power, the complete
+character sum in the arithmetic identity is a nonnegative residue-class
+count, including at ramified primes. Its contribution as a function of
+a weight is a sum of nonnegative multiples of
 \[
- \varepsilon_1((e_1,e_2),a)=(-1)^{e_1}
+                           (a/n-w)_+,
+                 \qquad z_+=\max(z,0),
 \]
-always survives. At a projected point $((1,0),t)$ it equals $-1$,
-whereas the trivial character equals $1$. Changing the averaging
-subgroup inside $A$ cannot remove this pair.
+together with $a\log w$ and a constant. Moving a thick weight upward
+from $b_0$ therefore has a controlled one-sided cost. The constants
+involving logarithmic derivatives cancel from this difference.
+Sum over translations before taking absolute values: the normalized
+cost then has neither a field-degree factor nor an inverse-density
+factor. These are proved algebraic cancellations, not assumptions
+about independence of the weights~\cite{reconstruction}.
 
-More generally, the coefficients in this projection sum to zero.
-Character orthogonality proves it because the projected point is not
-the identity of the quotient. Taking linear combinations of these
-projections preserves zero total coefficient. Thus cancellation alone
-cannot turn them into a nonzero combination with all coefficients
-nonnegative. A signed companion contribution still needs a bound,
-or the arithmetic identity itself must be changed.
+The thin weights are smaller, so their arguments $a/w$ are much larger.
+The existing uniform quasi-RH estimate controls these samples. It still
+concerns the full auxiliary character family; four characters suffice
+only for the remaining main-scale expression.
 
-There is a useful further simplification. If the weight distributions
-are invariant under the relevant translations, the transfer calculation
-uses only three arithmetic means and their logarithmic dispersions.
-The remaining signed companion is
+\subsection*{One averaged arithmetic discrepancy remains}
+
+After the thick weights are fixed and translations averaged, the
+main-scale expression is
 \[
-                 C_{q,d}=G_{\chi_d}+G_{\chi_q\chi_d}-G_{\chi_q}.
+ G+G_{\chi_q}-G_{\chi_d}-G_{\chi_q\chi_d}
+                         =G-C_{q,d},\qquad
+ C_{q,d}=G_{\chi_d}+G_{\chi_q\chi_d}-G_{\chi_q},
 \]
-One needs an upper bound for its average together with the arithmetic
-and transfer errors. The auxiliary primes $q,d$ may grow with $x$;
-the retained target is still the same zeta sum. The required translation
-symmetry must be established for the actual integral maps and metrics.
+where $\chi_q,\chi_d$ are the quadratic characters of the two distinct
+auxiliary prime conductors. Their signs come from character
+orthogonality. The trivial coefficient is $1$ and one quadratic
+coefficient is always $-1$; the total coefficient is zero. Thus these
+projections alone cannot produce a positive multiple of zeta.
+Only an upper bound for the single signed companion $C_{q,d}$ is needed.
+
+Let $n_T$ be the number of top labels and put
+$k=n_Tmb_0d_0/2>0$, using the same normalization as~\eqref{average}.
+Under the stated size conditions, $|a_t/b_0-x|\le1$ and
+$d_0\ge x^{-\varepsilon}$, the preceding comparison gives
+\begin{equation}\label{rhbudget}
+ G(x)\le\frac{\overline E(x)}k
+       +\frac1{n_T}\sum_t C_{q,d}(a_t/b_0)
+       +O\!\left((1+\log x)^2+x^{-1+\varepsilon}\right).
+\end{equation}
+Here the thin-sample bound uses the uniform quasi-RH premise, and the
+constant is fixed at each accuracy before $x$ grows. The full proof
+retains the explicit error constants. Centering only the zeta term
+at $x$ costs the logarithmic error; no nonprincipal derivative bound
+is needed for that step.
+
+The simultaneous quadratic selection supplies a square-root-scale
+bound for the companion under the same uniform premise, on intervals
+containing all the samples. The next task is therefore to bound the
+normalized discrepancy $\overline E/k$, or its sum with the signed
+companion, for one compatible arithmetic and geometric construction.
+The auxiliary primes may vary with $x$, since the analytic target in
+\eqref{rhbudget} is always the same zeta sum. The estimate must hold
+on whole intervals as in~\eqref{window}, with exponent loss tending
+to zero; isolated favorable values do not suffice.
 
 \begin{center}
 \begin{tabular}{@{}p{.39\linewidth}p{.54\linewidth}@{}}
 \toprule
 Simplification for RH & Consequence \\
 \midrule
-One analytic target & A zeta-only criterion is available. \\
-No varying target conductor & Constants may be tailored to zeta. \\
-One suitable positive family can suffice & Every target character need
-not be reached by the construction. \\
-Auxiliary characters may remain & Their signed contributions still
-need control. \\
-Growing arithmetic spaces may remain & No fixed-dimension replacement
-has yet been proved. \\
+One analytic target & The short zeta criterion applies. \\
+Only four main-scale characters & One signed quadratic companion
+remains. \\
+Thick weights fixed before averaging & Symmetry is unnecessary. \\
+Thin samples at large arguments & Uniform quasi-RH controls them. \\
+One averaged discrepancy & Combine geometric and map bounds. \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-There is therefore a much shorter \emph{conditional analytic argument}
-for RH, but a much shorter complete proof has not been obtained. The
-remaining estimate is the essential content, even when its statement
-fits on one line.
+This gives a shorter proved reduction for RH. A much shorter complete
+proof has not yet been obtained: the nonzero integral maps and the
+uniform arithmetic and geometric estimate still have to be supplied.
 
 \section{How the newer zero-free results help}
 
-A fixed zero-free half-plane $\Rea s>\vartheta$, with
-$1/2<\vartheta<1$, helps select auxiliary characters and estimate
-their logarithmic derivatives within the theorem's stated scope.
-When the same uniform hypothesis already excludes a real exceptional
-zero, a separate exclusion of that zero is unnecessary.
+A uniform zero-free half-plane $\Rea s>\vartheta$, with
+$1/2<\vartheta<1$, helps select the moving quadratic companions and
+bounds the thin samples at their much larger arguments. The required
+uniformity includes the conductors of the auxiliary family. A statement
+for each fixed character with uncontrolled constants would not suffice.
+When this same hypothesis excludes a real exceptional zero, a separate
+exclusion of that zero is unnecessary.
 
 These inputs do not by themselves make $\delta_j$ in~\eqref{window}
 tend to zero. Excluding real exceptional zeros is also a different
@@ -441,11 +489,13 @@ from the alternating series. If quadratic auxiliary functions remain
 in the arithmetic construction, their own estimates must still be supplied.
 
 The next mathematical task is to produce compatible data for which
-the right side of~\eqref{average} meets~\eqref{window}. The geometric
-lower degree, the discarded-degree/index budget, integral nonvanishing
-and divisibility, and global norm estimates are concrete parts of that
-task. This guide will be reorganized as those parts are proved; their
-detailed proofs belong in the full manuscript.
+the right side of~\eqref{rhbudget} meets the interval criterion
+\eqref{window}. The two geometric height moments, actual section
+remainders, discarded degrees and integral indices, nonvanishing and
+divisibility of the maps, and global norm estimates are concrete parts
+of that task. Their combined normalized loss must tend to zero in
+exponent. The more general Dirichlet target retains its additional
+character quantifiers; its finite-error comparison is~\eqref{average}.
 
 \begin{thebibliography}{9}
 \bibitem{dlmf}
@@ -455,11 +505,9 @@ their functional equations and zeros.
 \url{https://dlmf.nist.gov/25}.
 
 \bibitem{reconstruction}
-\emph{Analytic and arithmetic reductions toward Dirichlet GRH},
-the accompanying mathematical reconstruction. See the sections
-on smoothed sums, one-sided bounds, slope comparisons, Galois
-representations, and the remaining construction.
-\url{https://github.com/JoseBrox/GRH_distillation/blob/main/paper/main.pdf}.
+\href{https://github.com/JoseBrox/GRH_distillation/blob/main/paper/main.pdf}
+{\emph{Analytic and arithmetic reductions toward Dirichlet GRH}},
+the accompanying mathematical reconstruction.
 
 \bibitem{blggt}
 T. Barnet-Lamb, T. Gee, D. Geraghty and R. Taylor,
@@ -470,9 +518,7 @@ Annales scientifiques de l'\'Ecole normale sup\'erieure
 \textbf{47} (2014), 165--179, Theorem 1.1.
 
 \bibitem{announcement}
-L. Alp\"oge, announcement of a proof of RH and Dirichlet GRH,
-20 November 2026. The present reconstruction studies and simplifies
-the announced argument; its own remaining obligations are stated above.
-\url{https://alpo.ge/remark.pdf}.
+L. Alp\"oge, \href{https://alpo.ge/remark.pdf}
+{announcement of a proof of RH and Dirichlet GRH}, 20 November 2026.
 \end{thebibliography}
 \end{document}

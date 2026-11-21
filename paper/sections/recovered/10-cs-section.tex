@@ -655,6 +655,43 @@ $h_{\det}(\Phi)\le aP$ and $\log J\ge0$. Substitution proves
 \eqref{eq:geometric-det-descent}, including the case $Q=0$.
 \end{proof}
 
+\begin{corollary}[Descent with the actual rank ratio]
+\label{geometric-cover-improved}
+Retain the preceding lattices and injection, and suppose its norm bound
+has $P=\beta$, where $0<\beta\le\Lambda$. Suppose also that
+\[
+ nb\le(1+\beta/\Lambda)a,\qquad
+ \nu(A)\ge-T-\mathcal D,\qquad c_0\ge\nu(B)-2\beta.
+\]
+Here $\mathcal D,T,c_0$ are real numbers in the same slope normalization.
+With $\lambda=a/(nb)$ one has
+\begin{equation}\label{eq:geometric-cover-ratio}
+ c_0\ge-T-\lambda\mathcal D
+       -2\beta(1+\lambda)-(1-\lambda)(2\Lambda-T).
+\end{equation}
+If, in addition, $|T|\le\Lambda$, $\beta\le U$,
+$\mathcal D\le CU$, and $C\ge0$, then
+\[
+                         c_0\ge-T-(C+7)U.
+\]
+In particular, the coefficient of the section-degree error $CU$ need
+not be increased in passing to the covered lattice.
+\end{corollary}
+\begin{proof}
+Injectivity and the rank bound give
+$(1+\beta/\Lambda)^{-1}\le\lambda\le1$. Substitute the lower bound for
+$\nu(A)$ in \eqref{eq:geometric-det-descent} and subtract $2\beta$;
+collecting $-T$ gives \eqref{eq:geometric-cover-ratio}. Moreover,
+\[
+ (1-\lambda)\Lambda\le\lambda\beta,\qquad
+ 2\Lambda-T\le3\Lambda.
+\]
+Consequently its total error is at most
+$\lambda CU+(2+5\lambda)\beta\le(C+7)U$.
+The first formula retains a signed $\mathcal D$ and does not require
+replacing it by a nonnegative uniform bound.
+\end{proof}
+
 \begin{proposition}[Average of orthogonal types]\label{prop:geometric-type-average}
 Let $L$ have positive rank and let
 $L\otimes K=\bigoplus_\tau V_\tau$ be a finite nonempty orthogonal
@@ -687,6 +724,76 @@ does not bound an arbitrary individual type: two orthogonal lines can
 have slopes $-M$ and $M$ while their direct sum has slope zero.
 
 \subsection{A component degree bound with an averaged remainder}
+
+\begin{proposition}[Two height moments suffice]
+\label{geometric-two-moments}
+Let $Z$ run through a finite nonempty set, with $w_Z>0$, $r_Z\ge w_Z$,
+and real heights $h_Z$. Put
+\[
+ W=\sum_Zw_Z,\quad R_{\rm tot}=\sum_Zr_Z,\quad
+ M=\frac{\sum_Zw_Zh_Z}{W},\quad
+ N=\frac{\sum_Zw_Z\max(-h_Z,0)}{W}.
+\]
+Suppose $M\ge-H$ and $N\le c$, where $H,c\ge0$. Let $A>0$,
+$a\ge0$, $t>a$, and suppose the arithmetic degrees satisfy
+\[
+ d_Z\ge w_Z\{t h_Z-a|h_Z|-A\log(2+|h_Z|)-R_Z\}-C_Z,
+\]
+where $R_Z,C_Z$ may be signed. Define
+\[
+ \beta=t-a,\quad H_0=\min(H,c),\quad
+ y_*=\max\{2+2c-H_0,A/\beta\},
+\]
+\[
+ K_*=2ac+A\log y_*-\beta(y_*-2-2c),\qquad
+ \Gamma=\frac{\sum_Z(w_ZR_Z+C_Z)}{R_{\rm tot}}.
+\]
+Then $K_*\ge0$ and
+\begin{equation}\label{eq:geometric-two-moments}
+ \frac{\sum_Zd_Z}{R_{\rm tot}}
+       \ge-\frac{W}{R_{\rm tot}}K_*-\Gamma
+       \ge-K_*-\Gamma.
+\end{equation}
+For $t\ge a+1$, one also has
+\[
+ K_*\le (t-a-1)H+2(a+1)c+A\log\max(A,1)+2.
+\]
+\end{proposition}
+\begin{proof}
+Since $|h|=h+2\max(-h,0)$, Jensen's inequality gives
+\[
+ \frac1W\sum_Zw_Z
+  \{t h_Z-a|h_Z|-A\log(2+|h_Z|)\}
+ \ge\beta M-2aN-A\log(2+M+2N).
+\]
+This expression decreases with $N$, so it is at least
+$\phi(M)=\beta M-2ac-A\log(2+M+2c)$. Also
+$M\ge-N\ge-c$, whence $M\ge-H_0$ and the logarithmic argument is
+at least $2+c>0$. The function $\phi$ is strictly convex, with derivative
+$\beta-A/(2+M+2c)$. Its minimum on $[-H_0,\infty)$ is therefore
+$-K_*$. Its value at $-H_0$ is negative, so $K_*\ge0$.
+Summing the degree bounds and using $W\le R_{\rm tot}$ proves
+\eqref{eq:geometric-two-moments}.
+
+For the final comparison, the inequality $\log v\le v-1$ gives
+\[
+ A\log(2+M+2c)\le A\log\max(A,1)+2+M+2c.
+\]
+When $\beta\ge1$, this bounds $\phi(M)$ below by
+$-(\beta-1)H-2(a+1)c-A\log\max(A,1)-2$ throughout the permitted
+half-line. Take its minimum.
+\end{proof}
+
+The moment bound is sharp without further restrictions on the heights.
+For any $M\ge-c$ with $z=M+2c>0$, put probability $c/z$ at $-z$
+and $1-c/z$ at $z$, omitting zero probabilities. Its mean is $M$,
+its negative first moment is $c$, and $|h|$ is constant. Equality
+therefore holds in the Jensen and moment steps. Use the minimizing
+$M$ above; if $z=0$, use the single height zero.
+A lower signed mean alone is insufficient: heights $L,-L$ with equal
+weights have mean zero but an unbounded negative nonlinear contribution.
+Likewise, when $t\le a$, taking all heights equal to $L\to\infty$
+precludes a finite lower bound, since $A>0$.
 
 \begin{proposition}[Component averaging]\label{prop:geometric-component-average}
 Let $Z$ run through a nonempty finite set. Suppose
@@ -732,17 +839,11 @@ For $u_Z=h_Z+c\ge0$, the degree-spread bound gives
  \ge(1-\rho)\bigl((1-\rho)(c-X)-c_c\bigr).
 \]
 Thus the $w$-weighted mean of $h_Z$ is at least $-H$.
-The inequality $\log v\le v-1$ implies
-\[
- A\log(2+y)\le A\log\max(A,1)+2+y\qquad(y\ge0).
-\]
-Also $|h_Z|\le h_Z+2c$. Therefore
-\[
- t h_Z-a|h_Z|-A\log(2+|h_Z|)
- \ge(t-a-1)h_Z-2(a+1)c-A\log\max(A,1)-2.
-\]
-Averaging and then summing the remaining terms proves the first
-inequality. The second uses $K_0\ge0$ and $W\le R_{\rm tot}$.
+The pointwise inequality $h_Z\ge-c$ also bounds the weighted negative
+first moment by $c$. Proposition~\ref{geometric-two-moments} applies,
+and its comparison $K_*\le K_0$ gives the result. Retaining $K_*$
+instead yields the sharper estimate without changing any geometric
+hypothesis.
 \end{proof}
 
 For a Hilbert--Samuel comparison, the actual remainder can have the form
@@ -1006,7 +1107,356 @@ holds for identities up to continuously differentiable corrections.
 This concerns a fixed finite linear combination; varying coefficients
 or varying analytic families require their own estimates.
 
-\subsection{Symmetry and the four-character transfer}
+\subsection{A direct four-character estimate for ordinary RH}
+
+The following comparison uses the full positive prime kernel before
+averaging translations. It requires no invariance of the weight
+profiles or of their empirical distributions.
+
+\begin{lemma}[Primitive character kernels, including ramification]
+\label{cs-primitive-positive-kernel}
+Let a finite abelian group $G$ be a quotient of
+$(\mathbf Z/N\mathbf Z)^\times$. For $\psi\in\widehat G$, let
+$\chi_\psi$ be the primitive Dirichlet character inducing its pullback.
+Use additive notation on $G$. For a prime $p$, let $I_p\subseteq G$
+be the image of the unit factor modulo the power of $p$ dividing $N$ in the Chinese remainder
+decomposition, with $I_p=\{0\}$ when $p\nmid N$. Let $F_p\in G/I_p$
+be the class of a unit congruent to $p$ modulo the prime-to-$p$ part
+of $N$; when $p\nmid N$, use the ordinary residue class of $p$.
+For $j\ge1$ and $g\in G$,
+\begin{equation}\label{eq:cs-primitive-kernel}
+ \kappa_g(p^j):=\sum_{\psi\in\widehat G}\psi(-g)\chi_\psi(p^j)
+       =|G/I_p|\,\mathbf1_{\{jF_p=g+I_p\}}\ge0.
+\end{equation}
+In particular $\sum_{g\in G}\kappa_g(p^j)=|G|$.
+For $a>0$ and $0<w\le a$, put
+\[
+ K_{g,a}(w)=\Re\sum_{\psi\in\widehat G}
+                    \psi(-g)\,wG_{\chi_\psi}(a/w).
+\]
+There is a real constant $C_{g,a}$, independent of $w$, such that
+\[
+ K_{g,a}(w)=
+  \sum_{n\ge1}\Lambda(n)\kappa_g(n)(a/n-w)_+
+                         +a\log w+aC_{g,a}.
+\]
+Here $\kappa_g(n)$ is defined by the same finite character sum;
+only prime powers contribute. Consequently, if $0<b\le w\le a$
+and $w-b\le r$, where $r\ge0$, then
+\begin{equation}\label{eq:cs-positive-freezing}
+ K_{g,a}(w)\ge K_{g,a}(b)-r\Psi_g(a/b),\qquad
+ \Psi_g(y)=\sum_{n\le y}\Lambda(n)\kappa_g(n).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The primitive character $\chi_\psi$ has conductor divisible by $p$
+exactly when $\psi$ is nontrivial on $I_p$; its value at $p^j$ is then
+zero. Otherwise its value is $\psi(jF_p)$. Orthogonality on $G/I_p$
+proves \eqref{eq:cs-primitive-kernel}, including the ramified primes.
+Surjectivity of the original quotient implies that only the trivial
+$\psi$ induces the primitive principal character.
+
+Multiply \eqref{eq:Gchi} and \eqref{eq:Gone} by $w$, with argument
+$a/w$, and sum. The nonprincipal correction terms are independent
+of $w$; the principal correction contributes $a\log w$ and a constant.
+This proves the hinge expansion. It is locally finite on $(0,a]$.
+Every hinge decreases by at most $w-b\le r$, and only those with
+$n\le a/b$ can decrease. Their coefficients are nonnegative by
+\eqref{eq:cs-primitive-kernel}. The remaining term
+$a\log(w/b)$ is nonnegative, proving \eqref{eq:cs-positive-freezing}.
+\end{proof}
+
+Using primitive characters at their own conductors is essential in this
+lemma. Extending every character by zero at all primes dividing an
+enlarged common modulus would remove valid terms at ramified primes.
+Write
+\[
+ \Psi(y)=\sum_{n\le y}\Lambda(n)\le C_\Psi y\qquad(y\ge1).
+\]
+One may take the absolute constant $C_\Psi=4$ by
+\eqref{qs-chebyshev}.
+
+\begin{proposition}[Transfer through a fixed character quotient]
+\label{cs-positive-quotient-transfer}
+Retain Proposition~\ref{cs-finite-average}, take
+$Z_\psi=G_{\chi_\psi}$ for the primitive family of
+Lemma~\ref{cs-primitive-positive-kernel}, and allow any $B\le A$.
+Assume all weights are at most $\min_ta_t$, and thick weights lie in
+$[b,b+r]$, with $b>0$ and $r\ge0$. Put
+\[
+ Q=\frac1{n_T}\sum_t\Re\sum_{\psi\in B^\perp}
+           \psi(e_1(t))G_{\chi_\psi}(a_t/b),\qquad
+ k=n_Tmbd/2,\quad d=|S|/|A|,
+ \quad\bar a=\frac1{n_T}\sum_ta_t.
+\]
+Let $J$ be the actual signed contribution from the non-thick places,
+with normalization $1/(|B|f)$. Define
+\[
+ \kappa^B_{g+B}(p^j)=
+  \sum_{\psi\in B^\perp}\psi(-g)\chi_\psi(p^j)
+  =|G/(I_p+B)|\mathbf1_{\{jF_p-g\in I_p+B\}},
+\]
+\[
+ \Psi^B_t(y)=\sum_{n\le y}\Lambda(n)
+                  \kappa^B_{e_1(-t)+B}(n).
+\]
+Then
+\[
+ Q\le\frac{\overline E-J}{k}
+        +\frac rb\frac1{n_T}\sum_t\Psi^B_t(a_t/b)
+ \le\frac{\overline E-J}{k}
+        +4[A:B]C_\Psi\frac rb\frac{\bar a}b.
+\]
+\end{proposition}
+\begin{proof}
+Apply the primitive-kernel lemma to the composite congruence quotient
+onto $G/B$. Its inertia subgroup is $(I_p+B)/B$, giving the displayed
+nonnegative kernel, bounded by $|G/B|=4[A:B]$.
+At a thick place $g=e_1(s+u-t)$, with $s\in S\subseteq B$.
+Sum \eqref{eq:cs-positive-freezing} over $u\in B$ before bounding
+it. Orthogonality leaves $|B|$ times the quotient kernel; the phase
+is $\psi(e_1(t))$. The frozen contribution is $kQ$, and the loss is
+at most $m|S|r\sum_t\Psi^B_t(a_t/b)/f$. Divide by $k$ and use
+$\Psi(y)\le C_\Psi y$.
+\end{proof}
+
+The quotient index, rather than the growing group order, occurs in this
+thick-weight bound. It is fixed when it equals the order of a fixed
+target character. The signed projection still needs comparison with a
+positive analytic target; no companion term is removed by this estimate.
+
+\begin{proposition}[Freeze thick weights before averaging]
+\label{rh-direct-thick-transfer}
+Retain the exact finite balance of Proposition~\ref{cs-finite-average},
+take $B=A$, and set $Z_\psi=G_{\chi_\psi}$ for the primitive family
+in Lemma~\ref{cs-primitive-positive-kernel}. Write
+\[
+ n=|A|,\quad s=|S|>0,\quad d_0=s/n,\quad f=2n,\quad
+ n_T=|T|,\quad k=n_Tmbd_0/2.
+\]
+Assume all weights are at most $\min_ta_t$. At the thick positions,
+assume only $b\le w_{u,i}(\rho)\le b+r$, where $b>0$ and $r\ge0$.
+Suppose the first and second sign characters induce respectively
+the quadratic characters $\chi_d$ and $\chi_q$ of distinct odd
+primes $d,q$. Put
+\[
+ D_+=G_1+G_{\chi_q}-G_{\chi_d}-G_{\chi_q\chi_d},
+\]
+\[
+ Q_4=\frac1{n_T}\sum_tD_+(a_t/b),\qquad
+ \bar a=\frac1{n_T}\sum_ta_t.
+\]
+Let the actual remaining contribution be
+\[
+ J_{\rm actual}=\frac1{nf}\sum_{u,t,i}
+       \sum_{\rho\in\Phi\setminus\Phi_{S,u}}
+       K_{\rho-c-t_0,a_t}\bigl(w_{u,i}(\rho)\bigr).
+\]
+Then
+\begin{equation}\label{eq:rh-direct-thick-transfer}
+ Q_4\le\frac{\overline E-J_{\rm actual}}k
+       +\frac rb\frac1{n_T}\sum_t\Psi_+(a_t/b),
+\end{equation}
+where
+\[
+ \Psi_+(y)=\sum_{n\le y}\Lambda(n)
+                  (1+\chi_q(n))(1-\chi_d(n)).
+\]
+The last term in \eqref{eq:rh-direct-thick-transfer} is at most
+$4C_\Psi(r/b)(\bar a/b)$, independently of the group order and
+the reciprocal thick density.
+\end{proposition}
+\begin{proof}
+Write $g=\rho-c-t_0$ in the exact balance, so
+\[
+ \overline E=\frac1{nf}\sum_{u,t,i}\sum_{\rho\in\Phi}
+                     K_{\rho-c-t_0,a_t}(w_{u,i}(\rho)).
+\]
+On a thick position write $\rho=((0,1),v+u)$ with $v\in S$;
+then $g=((1,0),v+u-t)$. Apply \eqref{eq:cs-positive-freezing}
+before summing over $u$. Orthogonality on $A$ gives
+\[
+ \sum_{u\in A}K_{((1,0),v+u-t),a}(b)=nbD_+(a/b),
+ \qquad
+ \sum_{u\in A}\Psi_{((1,0),v+u-t)}(y)=n\Psi_+(y).
+\]
+There are $ms$ choices of $(i,v)$. Division by $nf=2n^2$ yields
+\[
+ \overline E\ge kQ_4+J_{\rm actual}
+                   -\frac{md_0r}{2}\sum_t\Psi_+(a_t/b).
+\]
+Divide by $k>0$. Finally
+$0\le(1+\chi_q(n))(1-\chi_d(n))\le4$, also at ramified
+integers, so $\Psi_+(y)\le4C_\Psi y$.
+\end{proof}
+
+\begin{corollary}[The remaining samples and the numerical error]
+\label{rh-direct-thin-estimate}
+Under the preceding hypotheses, suppose that, at every actual sample
+with $\rho\notin\Phi_{S,u}$,
+\[
+ |G_{\chi_\psi}(a_t/w_{u,i}(\rho))|
+        \le\vartheta\,a_t/w_{u,i}(\rho)
+        \quad(\psi\in\widehat G),\qquad\vartheta\ge0.
+\]
+Then
+\[
+ \frac{|J_{\rm actual}|}{k}\le
+       \frac{2f(2-d_0)}{d_0}\frac{\bar a}{b}\vartheta.
+\]
+In particular, if $x\ge3$ and
+\[
+ |a_t/b-x|\le1,\qquad
+ 2f(x+1)\vartheta\le1/x,\qquad
+ 6f(x+1)r\le b/x,
+\]
+then
+\begin{equation}\label{eq:rh-direct-numerical}
+ Q_4\le\frac{\overline E}{k}
+           +\frac{2-d_0}{d_0x}+\frac{2C_\Psi}{3fx}.
+\end{equation}
+If also $d_0\ge x^{-\varepsilon}$, the middle error is at most
+$2x^{-1+\varepsilon}$.
+\end{corollary}
+\begin{proof}
+There are $f-s$ remaining positions for each translation and stage,
+and $|\widehat G|=2f$. Hence the triangle inequality gives
+$|J_{\rm actual}|\le2m(f-s)\vartheta\sum_ta_t$.
+Since $f-s=n(2-d_0)$, division by $k$ proves the first bound.
+Use $\bar a/b\le x+1$ and the two numerical conditions in
+\eqref{eq:rh-direct-thick-transfer}. The thick error is at most
+$4C_\Psi(x+1)r/b\le2C_\Psi/(3fx)$, and the remaining error
+is at most $(2-d_0)/(d_0x)$. The last assertion uses $d_0\le1$.
+\end{proof}
+
+The displayed numerical conditions are sufficient rather than necessary.
+More generally, for an allotted error $R_x>0$, each of the two transfer
+costs is at most $R_x$ provided
+\[
+ \frac rb\le\frac{R_x}{4C_\Psi(x+1)},\qquad
+ \vartheta\le\frac{d_0R_x}{2f(2-d_0)(x+1)}.
+\]
+Their sum then costs at most $2R_x$. If the uniform estimate is
+$|G_\chi(y)|\le C_Q\log(Q+3)y^{23/24}$ for the actual primitive
+conductors at most $Q$, a sufficient lower bound for every thin argument is
+\[
+ Y\ge\max\left\{1,
+ \left[\frac{2C_Qf(2-d_0)(x+1)\log(Q+3)}{d_0R_x}\right]^{24}
+ \right\}.
+\]
+The estimate's validity range must also be respected. For
+$R_x=x^{1/2+\delta}$ this scale is polynomial in $x$ whenever
+$f$, $d_0^{-1}$ and $\log(Q+3)$ have polynomial upper bounds.
+This simplifies the analytic interface only: choosing these smaller
+scales in an arithmetic construction would require verifying its other
+conditions at those same scales.
+
+The samples in the preceding corollary can be much larger than $x$.
+For example, if a remaining weight is at most $2b'$, where
+$b'X'\le xb$, and $a_t\ge(x-1)b$, then
+\[
+ \frac{a_t}{w}\ge\frac{(x-1)X'}{2x}\ge X'/3
+       \qquad(x\ge3).
+\]
+Thus a uniform relative estimate on $[X'/3,\infty)$ suffices.
+For $X'\ge3$, all remaining arguments are at least one. The thick
+arguments are also at least one, since
+$(x-1)/(1+r/b)\ge1$ under the displayed size conditions.
+The larger-scale estimate \eqref{qs-large-scale}, including its
+separate principal case, supplies such a bound under
+\eqref{qs-qrh} and its stated conductor and scale conditions.
+That analytic input remains explicit. A proved lower bound for the
+signed $J_{\rm actual}$ can instead be used directly in
+\eqref{eq:rh-direct-thick-transfer}.
+
+\begin{lemma}[Centering only the zeta sum]\label{rh-zeta-centering}
+If $h\ge0$, $x-h\ge1$ and $|y-x|\le h$, then
+\[
+ |G_1(y)-G_1(x)|\le h(1+\log(x+h))^2.
+\]
+\end{lemma}
+\begin{proof}
+Away from integers,
+$G_1'(v)=\sum_{n\le v}\Lambda(n)/n-\log v+\gamma$.
+For $v\in[x-h,x+h]$, the inequalities
+$\Lambda(n)\le\log n$,
+$\sum_{n\le R}1/n\le1+\log R$ and $0<\gamma<1$
+bound its absolute value by $(1+\log(x+h))^2$.
+The function is continuous and piecewise differentiable, so integration
+over an interval of length at most $h$ proves the result.
+\end{proof}
+
+\begin{corollary}[A direct signed estimate for ordinary RH]
+\label{rh-direct-budget}
+Under the numerical hypotheses of Corollary~\ref{rh-direct-thin-estimate},
+put $C_{q,d}=G_{\chi_d}+G_{\chi_q\chi_d}-G_{\chi_q}$. Then
+\begin{equation}\label{eq:rh-direct-budget}
+ \begin{split}
+ G_1(x)\le{}&\frac{\overline E}{k}
+       +\frac1{n_T}\sum_tC_{q,d}(a_t/b)
+       +\frac{2-d_0}{d_0x}+\frac{2C_\Psi}{3fx}\\
+       &+(1+\log(x+1))^2.
+ \end{split}
+\end{equation}
+If its entire right side is at most $M_jx^{1/2+\delta_j}$ on
+arbitrarily late whole intervals $[U,U^{b_j}]$, where at each
+accuracy $M_j\ge0$ and $b_j>1$ are fixed and finite, and
+$\delta_j>0$ tends to zero, then the Riemann hypothesis follows.
+The auxiliary primes and geometric data may vary with $x$.
+\end{corollary}
+\begin{proof}
+Use $G_1=D_++C_{q,d}$, add the companion to
+\eqref{eq:rh-direct-numerical}, and apply
+Lemma~\ref{rh-zeta-centering} with $h=1$ at each argument $a_t/b$.
+The last assertion is Theorem~\ref{thm:vanishing-loss-windows}
+for the fixed function $G_1$.
+\end{proof}
+
+Only the signed total in \eqref{eq:rh-direct-budget} needs an upper
+bound. In particular the moving companion is evaluated at its actual
+arguments; its derivatives are unnecessary. Under the simultaneous
+quadratic estimates \eqref{qs-bounds} on an interval containing those
+arguments, its mean is at most $3(x+1)^{1/2+\varepsilon/2}$.
+The interval must include the shifts by one at both endpoints.
+Together with the density and larger-scale estimates, this leaves
+the normalized averaged arithmetic discrepancy $\overline E/k$
+as the geometric target. The comparison establishes no uniform
+estimate for that discrepancy by itself.
+
+\subsection{An alternative under translation symmetry}
+
+Translation symmetry can shorten a different construction, but it is
+an additional condition, not a consequence of averaging the moving
+thick set. The preceding direct comparison does not require it.
+
+\begin{lemma}[Separated fixed top weights obstruct symmetry]
+\label{rh-separated-support-obstruction}
+Let $\varnothing\ne T\subsetneq A$. Suppose that, for all pooled
+indices $(u,i)$,
+\[
+ w_{u,i}((0,0),t)\ge L\quad(t\in T),\qquad
+ w_{u,i}((0,0),a)\le U\quad(a\notin T),
+ \qquad L>U>0.
+\]
+Pooling with any common positive probability weights cannot give
+$A$-invariant empirical measures on this sign orbit, or even
+$A$-invariant first moments.
+\end{lemma}
+\begin{proof}
+The measure at a top place is supported in $[L,\infty)$, and the
+measure at a nontop place in $(0,U]$. Their first moments are
+respectively at least $L$ and at most $U$. Translation invariance
+on the transitive $A$-orbit would make all these measures, and their
+first moments, equal.
+\end{proof}
+
+For example, the bounds
+$w_{\rm top}\ge b'(1+x^{-1})$ and
+$w_{\rm nontop}\le b'(1+x^{-1})/(x|A|)$
+give $L/U=x|A|>1$ when $x>1$.
+If also $0<|T|\le2x^{-\varepsilon/8}|A|$, then $T\ne A$
+for $x>2^{8/\varepsilon}$. Thus a sparse fixed top design with these
+separated weights cannot satisfy the symmetry below.
 
 \begin{lemma}[Translation symmetry before absolute values]
 \label{cs-translation-symmetry}
@@ -1161,24 +1611,7 @@ assumption entered the proof. The means, dispersions, density and thin
 samples may nevertheless depend on growing dimensions and must be bounded
 on the same whole windows as the geometric discrepancy.
 
-\subsection{A four-character budget for the Riemann hypothesis}
-
-\begin{lemma}[Centering only the zeta sum]\label{rh-zeta-centering}
-If $h\ge0$, $x-h\ge1$ and $|y-x|\le h$, then
-\[
- |G_1(y)-G_1(x)|\le h(1+\log(x+h))^2.
-\]
-\end{lemma}
-\begin{proof}
-Away from integers,
-$G_1'(v)=\sum_{n\le v}\Lambda(n)/n-\log v+\gamma$.
-For $v\in[x-h,x+h]$, the inequalities
-$\Lambda(n)\le\log n$,
-$\sum_{n\le R}1/n\le1+\log R$ and $0<\gamma<1$
-bound its absolute value by $(1+\log(x+h))^2$.
-The function is continuous and piecewise differentiable, so integration
-over an interval of length at most $h$ proves the result.
-\end{proof}
+\subsection{A conditional three-mean estimate for ordinary RH}
 
 \begin{corollary}[A single signed companion for ordinary RH]
 \label{rh-signed-companion-budget}
@@ -1215,9 +1648,9 @@ for the fixed function $G_1$.
 
 The companion is evaluated at its actual arguments $a_t/b$.
 No derivative bound for the moving auxiliary characters is needed
-in this last centering step. Establishing the translation symmetry,
-the comparison for the same integral maps, and its total error bound
-remains an arithmetic obligation.
+in this last centering step. This alternative requires the stated
+translation symmetry as well as the comparison for the same integral
+maps. Corollary~\ref{rh-direct-budget} avoids that additional condition.
 
 The existing size conditions already give a fixed centering radius
 when $b$ is the actual mean. Let $b_0>0$. If the thick weights lie in
@@ -1278,6 +1711,154 @@ its sum by its value at $(U_*,H_*)$. Cauchy--Schwarz gives
 The remaining terms are linear. If $U_*=0$ or $H_*=0$, the same conclusion
 follows by the stated continuous convention.
 \end{proof}
+
+\begin{proposition}[An average of the refined frame estimates]
+\label{cs-refined-average-frame}
+For each element $u$ of a finite nonempty set, let the lattices and
+maps satisfy Proposition~\ref{qrh-sharper-slope}, and write
+$c_u=\mu(F_u)$ for the target slope. Let $p_u>0$ sum to one.
+Use $U_u,H_u\ge0$ for the source spread and target gap, and retain
+the defects $0\le e_u<1$, $\eta_u\ge0$, and $0\le\delta_u<1$.
+Put
+\[
+ q_u=\sqrt{e_u},\qquad \mathcal B_u=\eta_uH_u,
+\]
+\[
+ \mathcal A_u=
+ \frac{U_u\log(1+H_u/U_u)
+       +2q_u\{\sqrt{U_u(U_u+H_u)}-U_u\}}{1-q_u},
+\]
+where both terms with $U_u=0$ have value zero. Define
+\[
+ v_u=\frac{p_u}{1-\delta_u},\qquad
+ \mathcal A_*=\sum_uv_u\mathcal A_u,\qquad
+ \mathcal B_*=\sum_uv_u\mathcal B_u.
+\]
+Then
+\begin{equation}\label{eq:cs-refined-average-frame}
+ \sum_up_u(s_u-c_u)\le
+ \mathcal A_*+\frac{\mathcal B_*}{2}
+       +\sqrt{\mathcal A_*\mathcal B_*+\mathcal B_*^2/4}.
+\end{equation}
+In particular, the simpler upper bound
+$\tfrac43(\mathcal A_*+\mathcal B_*)$ suffices. The constant
+$4/3$ is sharp for this replacement.
+For an estimate using only correlated first moments, set
+\[
+ w_u=\frac{p_u}{(1-\delta_u)(1-q_u)},\quad
+ U_*=\sum_uw_uU_u,\quad H_*=\sum_uw_uH_u,
+\]
+\[
+ U_q=\sum_uw_uq_uU_u,\quad H_q=\sum_uw_uq_uH_u.
+\]
+Then one may replace $\mathcal A_*$ in
+\eqref{eq:cs-refined-average-frame} by
+\begin{equation}\label{eq:cs-refined-correlated-moments}
+ \mathcal R=
+ U_*\log(1+H_*/U_*)+
+       2\{\sqrt{U_q(U_q+H_q)}-U_q\}.
+\end{equation}
+The first term is zero when $U_*=0$. If every $U_u=0$, the sharper
+endpoint estimate is
+\[
+ \sum_up_u(s_u-c_u)\le
+       \sum_u\frac{p_u\eta_uH_u}{(1+\eta_u)(1-\delta_u)}.
+\]
+\end{proposition}
+\begin{proof}
+Proposition~\ref{qrh-sharper-slope} gives, at each $u$,
+\[
+ s_u-c_u\le
+ \frac{\mathcal A_u+\mathcal B_u/2+
+             \sqrt{\mathcal B_u(\mathcal A_u+\mathcal B_u/4)}}
+      {1-\delta_u}.
+\]
+After summing, Cauchy--Schwarz bounds the square-root terms by
+\[
+ \sum_uv_u\sqrt{\mathcal B_u(\mathcal A_u+\mathcal B_u/4)}
+ \le\sqrt{\mathcal B_*(\mathcal A_*+\mathcal B_*/4)}.
+\]
+This proves \eqref{eq:cs-refined-average-frame}.
+For $A,B\ge0$, squaring the nonnegative quantities shows
+\[
+ \frac43(A+B)-A-\frac B2\ge\sqrt{AB+B^2/4},
+\]
+because the difference of their squares is $(A-2B)^2/9$.
+Equality holds when $A=2B>0$, proving the stated sharp constant.
+The concavity and homogeneity used in Lemma~\ref{cs-average-frame}
+bound the logarithmic part of $\mathcal A_*$ by
+$U_*\log(1+H_*/U_*)$. Another application of Cauchy--Schwarz gives
+\[
+ \sum_uw_uq_u\sqrt{U_u(U_u+H_u)}
+       \le\sqrt{U_q(U_q+H_q)}.
+\]
+Subtract $U_q$ to obtain $\mathcal A_*\le\mathcal R$.
+The right side of \eqref{eq:cs-refined-average-frame} increases with
+$\mathcal A_*$, so substitution is legitimate.
+If $U_*=0$, all $U_u$ vanish and every source-spread term is zero;
+if $H_*=0$, every height-dependent term vanishes.
+The final assertion follows by averaging the endpoint estimate of
+Proposition~\ref{qrh-sharper-slope}.
+\end{proof}
+
+The mixed term in \eqref{eq:cs-refined-correlated-moments} retains
+the source spread as well as the target gap. For example, put
+$E_U=\sum_uw_ue_uU_u$ and $E_H=\sum_uw_ue_uH_u$. The inequality
+$\sqrt{U(U+H)}-U\le\sqrt{UH}$ and Cauchy--Schwarz also give
+\[
+ \mathcal A_*\le U_*\log(1+H_*/U_*)+
+                   2\min\{\sqrt{E_UH_*},\sqrt{E_HU_*}\}.
+\]
+Thus diagonal error at a small source spread need not be charged
+against the whole target height gap. The denominators
+$1-\delta_u$ and $1-\sqrt{e_u}$ remain part of the actual moments.
+These bounds require the hypotheses on the same integral maps and
+common target basis in Proposition~\ref{qrh-sharper-slope}.
+
+\begin{corollary}[A combined averaged arithmetic and geometric estimate]
+\label{cs-refined-combined-budget}
+For every $u$, let a finite nonempty inner set have positive rank
+weights and write $\langle\cdot\rangle_u$ for its weighted mean.
+Suppose the first two weighted lower comparisons of
+Lemma~\ref{cs-weighted-lower} hold for these data, and that the same
+maps satisfy Proposition~\ref{cs-refined-average-frame}, with
+$s_u=\langle\nu-h\rangle_u$. Put
+\[
+ \mathcal K=\sum_up_u\left\{
+ A_u-\Gamma_u+\langle D+E+\ell-\mu\rangle_u-\mathcal M_u
+ \right\},
+\]
+\[
+ \overline E=\sum_up_u(A_u-\mathcal M_u).
+\]
+All quantities use the same slope normalization. Then
+\[
+ \overline E\le\mathcal K+\mathcal A_*+\mathcal B_*/2+
+                   \sqrt{\mathcal A_*\mathcal B_*+\mathcal B_*^2/4}.
+\]
+Hence $\mathcal K+\tfrac43(\mathcal A_*+\mathcal B_*)$ is a
+sufficient upper bound. Only the normalized sum needs the final
+prime-sum growth rate; its summands need not have separate absolute bounds.
+\end{corollary}
+\begin{proof}
+Before the final frame bound, the rearrangement in
+Lemma~\ref{cs-weighted-lower} gives
+\[
+ A_u-\mathcal M_u\le
+ A_u-\Gamma_u+\langle D+E+\ell-\mu\rangle_u-\mathcal M_u
+                         +(s_u-c_u).
+\]
+Average over $u$ and apply \eqref{eq:cs-refined-average-frame}.
+\end{proof}
+
+This estimate can be substituted directly into
+\eqref{eq:rh-direct-budget}. Any geometric lower bound used for
+the source slopes $\mu$ must concern those same lattices and metrics.
+Proposition~\ref{geometric-two-moments} and
+Corollary~\ref{geometric-cover-improved} retain the actual section remainder
+and covering rank ratio before further averaging. A bound for the
+one resulting signed expression suffices; separate upper bounds for
+every translated datum are not required.
 
 \subsection{A convenient stronger set of arithmetic estimates}
 

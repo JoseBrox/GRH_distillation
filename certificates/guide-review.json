@@ -1,22 +1,27 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "date": "2026-11-21",
-  "scope": "Didactic guide: ordinary mathematical exposition and explicit incomplete-construction boundary.",
+  "scope": "Current seven-page didactic guide: ordinary mathematical exposition, preferred positive-kernel comparison, and explicit incomplete arithmetic construction.",
   "source": {
     "path": "paper/guide/main.tex",
-    "sha256": "8c163b83eeea2c74db6884692e06776244b555099bb40f9ae09619a5f16bfa13"
+    "sha256": "42643b085251a31770b6b2a56365f5dd560da61bd6ff3c37057c9d362da275a5"
   },
   "pdf": {
     "path": "paper/guide/main.pdf",
-    "sha256": "88f6e9407e57d942cd18a74812f5bac3658c2ce9ef7cde2a4c2255af983d0aa6",
+    "sha256": "209fbbf056d0d8ba75f6d8afe3810e188ac5e5bcb77b96720df5689de2137f02",
     "pages": 7
   },
   "page_limit": 12,
+  "previous_review": {
+    "source_sha256": "8c163b83eeea2c74db6884692e06776244b555099bb40f9ae09619a5f16bfa13",
+    "pdf_sha256": "88f6e9407e57d942cd18a74812f5bac3658c2ce9ef7cde2a4c2255af983d0aa6",
+    "scope": "Earlier guide snapshot; its analytic and geometric reviews remain evidence for unchanged arguments, not a visual review of the current PDF."
+  },
   "independent_mathematical_reviews": {
-    "analytic_criterion": "PASS: endpoint reviewer checked Mellin residues, Taylor-Tonelli positivity proof, eventual RH implication, and the separate window formulation.",
-    "geometric_and_galois_explanation": "PASS: global reviewer checked determinant/index normalization, missing geometric input, and scope of the classical Galois substitution.",
-    "finite_averaging_and_obstruction": "PASS: residue reviewer checked averaging normalization, first-sign survival and the coefficient-vector zero-mass obstruction.",
-    "scope": "Reviews of the first guide and the detailed results it summarizes; the final lower-bound and three-mean additions were checked against those reviewed results by root."
+    "unchanged_analytic_criterion": "PASS: endpoint reviewer checked Mellin residues, Taylor-Tonelli positivity proof, eventual RH implication, and the separate window formulation.",
+    "new_direct_comparison": "PASS: independent source, transport and geometric reviewers checked the detailed RH comparison, its primitive characters and ramified terms, thick and thin normalization, source substitutions and general fixed-quotient extension.",
+    "new_geometric_budget": "PASS: independent reviews of determinant descent, two height moments, correlated refined frame bound and source-compatible scalar normalization.",
+    "summary_scope": "Root compared the current didactic exposition with the reviewed detailed notes and manuscript; the source reviewer inspected all final guide pages for consistency and rendering."
   },
   "visual_review": {
     "pages_inspected": [
@@ -28,9 +33,10 @@
       6,
       7
     ],
-    "method": "Every page of the final seven-page PDF rendered individually at 1.15 scale and visually inspected by root.",
-    "result": "Readable type and equations; no clipping, overlap or broken formula; coloured dependency diagram and comparison table fit."
+    "reviewer": "independent source reviewer",
+    "method": "Every page of the final seven-page PDF rendered individually to final-1.png through final-7.png at height 1400 and visually inspected.",
+    "result": "Readable text and equations; no clipping, overlap, broken glyphs or isolated reference page. References fit page seven."
   },
-  "limits": "A proof of the stated conditional reductions; the arithmetic estimates required for RH/GRH remain open.",
-  "final_integration_review": "PASS: the lower-bound variant uses the same positivity argument; the signed companion and explicit pooled-symmetry hypothesis agree with the independently reviewed manuscript. The guide is organized by mathematical ideas and contains no historical ledger."
+  "final_integration_review": "The guide presents the complete positive prime kernel, comparison of thick weights before averaging, the retained all-character thin estimate, and the remaining normalized arithmetic discrepancy. It is organized by mathematical ideas.",
+  "limits": "The required compatible arithmetic and geometric estimates remain unproved in this reconstruction. No Lean build or kernel replay was performed."
 }

@@ -63,7 +63,8 @@ dependency audit or a proof of the missing arithmetic estimate.
   discarded-degree/index criterion, counterexamples and geometric obligations
   still to be proved.
 
-Run `python scripts/check_classical_averaged_checkpoint.py` with the pinned
+At the earlier checkpoint it certifies, run
+`python scripts/check_classical_averaged_checkpoint.py` with the pinned
 source and primary-paper caches present to reproduce
 `classical-averaged-integrity.json`. The check verifies source blobs, recorded
 line ranges, note and manuscript hashes, and the exact adoption dependencies;
@@ -74,6 +75,43 @@ independent human-readable comparisons from compilation or kernel acceptance.
 The compatible arithmetic construction remains open.
 
 ## RH and geometric continuation
+
+The current preferred continuation is recorded in:
+
+- `rh-direct-transfer.json`: positive primitive-character kernels, including
+  ramified primes, the one-sided thick comparison, the exact thin-sample
+  count, the general fixed-quotient extension and source cost substitutions. Run
+  `python scripts/check_rh_direct_transfer.py`.
+- `rh-direct-source-applicability.json`: the actual source quotient,
+  primitive-character identification, corrected principal sum and
+  all-character thin hypotheses, with independently checked source hashes
+  and bounded excerpts.
+- `rh-weight-symmetry.json`: the sparse-top obstruction to both pooled
+  measures and first moments, quantitative lower bounds, and the optional
+  complete-top identity. Run `python scripts/check_rh_weight_symmetry.py`.
+- `rh-geometric-combination.json`: the improved covering coefficient,
+  optimized two-height-moment estimate and averaged refined frame penalty.
+  Run `python scripts/check_rh_geometric_combination.py`.
+- `transport-symmetry-defect.json`: conductor-uniform transport, primitive
+  inertia kernels and the signed residual identity. Its absolute majorant
+  is too large for the current source family; the direct transfer avoids
+  that limitation. Run `python scripts/check_transport_symmetry_defect.py`.
+- `rh-minimal-budget.json`: exact four-term normalization at the actual
+  source ranks, the improved exponent loss, sharp frame comparison and
+  relaxed analytic transfer allowances. Run
+  `python scripts/check_rh_minimal_budget.py`.
+- `rh-continuation-review.json`: current integration and visual review,
+  with exact hashes of the reviewed artifacts and remaining obligations.
+  `rh-continuation-integrity.json` verifies the six new evidence records,
+  pinned selected sources and bounded ranges, current build sources and
+  reviewed artifacts. Run `python scripts/check_rh_continuation.py` with
+  the pinned source cache present; missing evidence causes failure.
+
+These records contain independent mathematical review scopes and exact
+supplemental checks. They do not verify the missing arithmetic construction.
+The following earlier records retain their original source inspections and
+proof scopes; the current integrated continuation records superseding
+manuscript and rendering evidence separately.
 
 - `rh-geometric-checkpoint.json` joins the final proof, source, computation,
   blueprint and rendering evidence, with the remaining arithmetic hypotheses
@@ -92,7 +130,10 @@ The compatible arithmetic construction remains open.
 - `guide-build.json` and `guide-review.json` record the short guide's length,
   current source/PDF hashes, independent mathematical reviews and page review.
 
-Run `python scripts/check_classical_averaged_checkpoint.py --rh-and-geometry`
+At its original checkpoint, run
+`python scripts/check_classical_averaged_checkpoint.py --rh-and-geometry`
 to reproduce `rh-geometric-integrity.json` with the pinned caches present.
+Those historical checks intentionally retain the then-current note and
+manuscript hashes; use the new continuation check for the present integration.
 The integration records distinguish historical source-reading snapshots
 from the final published manuscript hashes and label positions.

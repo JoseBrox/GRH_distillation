@@ -246,3 +246,156 @@ logarithmic correction, every finite normalization, the sampled domains,
 and both source cost substitutions. Both reviews passed. Source hashes and
 bounded excerpt hashes are recorded in
 `certificates/rh-direct-transfer.json`.
+
+## Appendix. Applicability to the actual RH arithmetic data
+
+The hypotheses in Section 1 hold for the source's chosen arithmetic data,
+not merely for a possible realization of its abstract group. This appendix
+records the bridge, including the ramified primes and the principal
+correction. All source references below are to the immutable revision
+`jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`.
+
+### The quotient and the three quadratic characters
+
+The actual data have a surjective map
+\[
+ r:(\mathbb Z/N\mathbb Z)^\times\longrightarrow
+ G=(\mathbb Z/2\mathbb Z)^2\times A,
+ \qquad N=Q_Sqd.
+\]
+The source defines this as its Artin map followed by the isomorphism
+which **swaps the two sign coordinates**; the remaining factor is carried
+by the fixed isomorphism to \(A\). The surjectivity proof composes the
+surjective Artin map with that isomorphism. The definitions `recOf` and
+`recH` are the same map, as direct comparison of their displayed formulas
+shows. The source's actual host carries `PsQ`, in addition to the
+quadratic identity `art_ch`; its field construction supplies this condition
+for every target primitive character, hence also for conductor one.
+Writing \(\sigma_d,\sigma_q\) for the first and second additive sign
+characters respectively gives, on every unit \(u\bmod N\),
+\[
+ \sigma_d(r(u))=\left(\frac{u}{d}\right),\qquad
+ \sigma_q(r(u))=\left(\frac{u}{q}\right).
+\]
+The host assumptions give prime \(q\equiv3\pmod8\) and prime
+\(d\equiv7\pmod{16}\); in particular they are distinct odd primes.
+Their nontrivial Legendre characters are primitive, and their product is
+primitive of conductor \(qd\), by the Chinese remainder theorem.
+Consequently the three surviving nonprincipal characters in Section 2
+are exactly \(\chi_d,\chi_q,\chi_d\chi_q\), with the stated signs.
+The source also proves the same sign dictionary explicitly in
+`cOf_chC`, `cOf_psC`, and `cOf_chpsC`.
+
+### Primitive values at every prime, including ramification
+
+For each \(\psi\in\widehat G\), the source first forms the Dirichlet
+character on \((\mathbb Z/N\mathbb Z)^\times\) induced by \(\psi\circ r\),
+then takes its canonical primitive character \(\chi_\psi\).
+For a prime \(p\), its inertia subgroup is exactly the image under \(r\)
+of the kernel of reduction to the prime-to-\(p\) part of \(N\).
+Its chosen Frobenius unit is congruent to \(p\) on that part and to one
+on the \(p\)-primary part. Here \(F_p\in G\) denotes the image of that
+unit, a lift of the class used in Section 1; the average below is
+independent of the lift. Thus, for every \(j\ge1\),
+\[
+ \operatorname{primVal}(\psi,p^j)
+ =\frac1{|I_p|}\sum_{h\in I_p}\psi(jF_p+h)
+ =\begin{cases}\psi(jF_p),&\psi|_{I_p}=1,\\
+                 0,&\psi|_{I_p}\ne1,
+   \end{cases}
+ =\chi_\psi(p)^j.                                      \tag{A.1}
+\]
+The bounded source proof checks both branches: triviality on inertia
+makes the conductor divide the prime-to-\(p\) part; nontriviality makes
+\(p\) divide the conductor and the primitive value vanish. Multiplicative
+factorization proves \(\operatorname{primVal}(\psi,n)=\chi_\psi(n)\)
+for every \(n\ge1\). In the actual arithmetic data, `primVal_eq`,
+`prim_both`, and `prim_val` identify the primitive character used elsewhere
+in the construction with this canonical one. `prim_one_iff` proves that
+it is principal exactly when \(\psi\) is trivial.
+
+In fact, positivity alone needs even less arithmetic: expanding the
+inertia-coset mean and applying finite character orthogonality gives
+\[
+ \sum_{\psi\in\widehat G}\psi(-g)
+     \operatorname{primVal}(\psi,p^j)
+ =\frac{|G|}{|I_p|}\mathbf1_{\{g-jF_p\in I_p\}}.
+\]
+This identity holds for the abstract inertia-and-Frobenius data as well.
+The actual quotient and (A.1) are needed to identify the resulting
+functions with the analytic Dirichlet functions; no change of modulus or
+discarding of ramified terms is involved.
+
+### The thin estimate includes the corrected principal sum
+
+The source's `GPsi` is defined as
+\[
+ G_1(y)=\sum_{n\le y}\Lambda(n)(y/n-1)-y\log y+(1+\gamma)y
+ \quad(\psi=1),
+\]
+and as the sum with coefficients \(\operatorname{primVal}(\psi,n)\)
+plus \(y\ell_\psi\) otherwise. Here \(\psi=1\) means the trivial
+character; the additive-character notation in the source writes it as
+`0`. Its `char_at` supplies the actual logarithmic derivative
+\(\ell_\psi=L'(1,\chi_\psi)/L(1,\chi_\psi)\) for each nonprincipal
+character. Its `GPsi_eq` proves equality with the corrected primitive
+Dirichlet sum, treating the principal and nonprincipal branches separately.
+In particular the subtraction \(-y\log y+(1+\gamma)y\) is present.
+
+The source predicate `ThinScales` quantifies over **every** group
+character and every \(y\ge X'/3\):
+\[
+                    |G_{\chi_\psi}(y)|\le\theta y.       \tag{A.2}
+\]
+The proof of `char_at` transports the host's all-character estimate to
+precisely this predicate using `GPsi_eq`. Independently, `ThinChoice`
+checks equality of the analytic functions in both branches before
+applying the large-scale theorem `QH.thin`; that theorem includes the
+principal character. The exceptional-zero hypothesis in it is imposed
+only on nonprincipal real characters. The selected-character predicate
+`ReadsKept` alone would not suffice for this conclusion; the all-character
+identities just exhibited are the required stronger bridge. Section 3
+therefore uses exactly the source's thin estimate, including its principal
+pole correction. Supplying that analytic estimate remains the stated
+analytic input; this appendix does not reprove its deep dependencies.
+
+### Immutable source record and scope
+
+Paths below are relative to `lean/src/`. The hashes are Git blob SHA-1
+identities verified against the pinned source atlas; the certificate also
+records SHA-256 hashes of source bytes and bounded excerpts. Abbreviations
+in the path column are expanded here: `AA` is
+`Development/AutomorphicArithmetic/`, `SR` is
+`Formalism/SharpRestriction/`, and `SW` is
+`Formalism/SizeWindowBrackets/`.
+
+| Source path | Lines inspected for this bridge | Git blob SHA-1 |
+|---|---|---|
+| `Formalism/StatementOC.lean` | 9–13 | `12ab19c0176bd4135c2b23a7ee3ac22888df0122` |
+| `Formalism/FrobeniusOrbits/Statement.lean` | 11–18 | `45d3b672d4649dd27309c092b3f9a24d279dd399` |
+| `SW/FirstPrimeNeSecondPrime.lean` | 38–70 | `18deb7cb85d6f650a69f01fda6e0c789b9f04d89` |
+| `SW/GaloisToProductIsIso.lean` | 12–32 | `4f314d4aed9d7969e3f275c9dd03aca3d015ee43` |
+| `SW/ChainSlopeWindows/GaloisMapComplexConjugation.lean` | 164–245 | `b08d98f83d661d021b20ccff6c405af78e9afb59` |
+| `SR/RamificationFrobenius/TotientGaloisClasses/ConjEMemHostFIff.lean` | 12–32, 54–55, 82–99 | `0ab34ba6d386bb84908efe66de6ce50108eacddc` |
+| `Formalism/LocalRingCardinality/DataHost.lean` | 39–44 | `7e9af8ab364965c62be250ae93974098141598c0` |
+| `AA/PrimitiveCosets/RecH.lean` | 10–23 | `b2712cc402765cea3fd406285e05e32a7ce64ec7` |
+| `AA/PrimitiveCosets/ToEBij.lean` | 37–66 | `95598a5b86a7dc37af41dfdfd526e775a7a7e254` |
+| `AA/ConductorsKronecker/RecSurj.lean` | 6–17 | `8a2ce64499b8d0f330b3a950fced60aa2e06d0b3` |
+| `AA/CharacterBoxes/FieldChi.lean` | 20–26, 53–58 | `f3e2032b133ff64406a87e27438cdf467aa05a1f` |
+| `SR/GlobalSchurBounds/TieGlobal.lean` | 24–34 | `00acf811793877fe42d18c0d69f2d5833f75bf94` |
+| `SR/GlobalSchurBounds/TopDensityNGeSixteen.lean` | 295–391, 396–428, 476–495 | `cbccb968fd96afe14797b8890f4e5dc63bd11d26` |
+| `SW/GrowthBoundGivesRiemannHypothesis.lean` | 55–56 | `a3ece4b4aea97a95ba2977fa9e8d437e72677774` |
+| `AA/CharacterBoxes/ThinChoice.lean` | 15–35, 49–82 | `00b6f5fe9348e1d26ef97b7cdcc16ada3a38b489` |
+| `AA/MeanSquareBounds/Thin.lean` | 10–15 | `d322f531dc42b40bee2cddc76f83f53a2f592ba6` |
+
+This audit checks the displayed definitions, hypotheses, and intervening
+proof passages. The elementary quotient, orthogonality, and sign arguments
+are also given above in ordinary mathematics. It does not assert a fresh
+Lean build, replay the full source construction, or certify all upstream
+analytic and geometric theorems. An independent reviewer recomputed all
+16 source identities and 22 excerpt hashes, read the critical bridge
+passages, and checked the ordinary mathematical arguments; that review
+passed. No additional primitive-character,
+ramification, or principal-correction compatibility condition is needed
+for the direct transfer once the actual source data and their stated
+thin estimate are supplied.

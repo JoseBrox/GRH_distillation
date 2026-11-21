@@ -4,7 +4,8 @@
   "results": {
     "primitive_fourier_cases_including_ramification": 160,
     "one_sided_thick_freezing_cases": 378,
-    "thin_normalization_cases": 312
+    "thin_normalization_cases": 312,
+    "general_subgroup_positive_transfer_cases": 312
   },
   "sources": [
     {
@@ -39,10 +40,11 @@
   "mathematical_review": {
     "reviewers": [
       "rh_source_symmetry",
-      "transport_defect"
+      "transport_defect",
+      "geometric_simplify"
     ],
     "outcome": "PASS after relaxing the local envelope statement to b <= w <= a and w-b <= r.",
-    "scope": "General written proof, primitive/ramified coefficients, signs, counts, source numerical substitutions, and sampled domains; no new Lean build."
+    "scope": "RH written proof and manuscript integration, primitive/ramified coefficients, signs, counts, source numerical substitutions, sampled domains, and extension to any subgroup with fixed or controlled quotient index; no new Lean build."
   },
   "limitations": [
     "Finite checks supplement the general written proof.",
@@ -51,11 +53,15 @@
   "files": [
     {
       "path": "notes/rh-direct-transfer.md",
-      "sha256": "05fb6912d6547dd1f113cc862075fa13731a82dd19aae7537589e1112433939f"
+      "sha256": "e979cd90950b954a57329555a97b4363e1918e7417764a33ad36a9ff6ecf803a"
+    },
+    {
+      "path": "notes/positive-kernel-transfer.md",
+      "sha256": "4565f88aa88f30d8e5a5dd3860ffc4b6a17b17065db678858bb1b0b8514794ec"
     },
     {
       "path": "scripts/check_rh_direct_transfer.py",
-      "sha256": "d49a4e280e6e9c6e51fb07cf9e2e2cfc1bd4c1502c7ff189f0cd6a96c57f02af"
+      "sha256": "8ea51f7a96da50698c050af7b40f93a716a5746d56135bec2c6164888b91d87c"
     }
   ]
 }

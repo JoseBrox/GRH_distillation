@@ -1,5 +1,18 @@
 # Ordinary RH: a smaller target and the surviving arithmetic work
 
+## Preferred continuation
+
+Use [the direct thick/thin comparison](rh-direct-transfer.md) for the current
+RH program. It removes the weight-symmetry and logarithmic-dispersion
+requirements. The actual sparse-top source family forbids exact pooled
+symmetry, even for first moments, as proved in
+[the source audit](rh-weight-symmetry.md). The three-mean argument in
+Section 4 below remains a valid conditional alternative for other data;
+it is not the preferred construction target. The
+[minimal budget](rh-minimal-budget.md) and
+[geometric combination](rh-geometric-combination.md) give the current
+numerical and geometric frontier.
+
 ## Status and first conclusions
 
 This is a comparison of the current conventional proof program with the pinned source `jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`. It proves shorter sufficient analytic criteria and records exact specializations of the arithmetic interfaces. It does **not** prove the arithmetic estimate or the Riemann hypothesis. The source certificate records bounded reads and Git/SHA-256 checks; no new Lean compilation is claimed.
@@ -118,7 +131,7 @@ The three-mean comparison in [the averaged-budget note](averaged-error-budget.md
 \[
 \frac1{|A|m}\sum_{u\in A}\sum_{i=1}^m\delta_{w_{u,i}(\rho)}
 \]
-are invariant under translation of \(\rho\) by \(A\). This exact symmetry is weaker than requiring every chosen frame to be a translate. It is **not yet verified for the source supplier**.
+are invariant under translation of \(\rho\) by \(A\). This exact symmetry is weaker than requiring every chosen frame to be a translate. It is **incompatible with the unchanged sparse-top source supplier**; the direct transfer avoids it.
 
 Under that symmetry, its exact Fourier identity and Jensen comparison give
 \[
@@ -254,4 +267,4 @@ In particular, do not infer square-root cancellation by iterating a fixed-width 
 
 The elementary analytic criterion, exact conductor-one specialization, four-character coefficient reduction, zeta-centering lemma, and the implications (4.1) \(\Rightarrow\) (4.3) \(\Rightarrow\) RH under its stated window bound are proved. The root independently reviewed the analytic argument, the centering lemma and the signed-budget rearrangement; the three-mean/Jensen comparison was independently checked by this agent and the global-inputs agent. Source inspection and hashes certify the quoted contracts, not a new Lean build.
 
-The next mathematical tasks are to construct the same integral theta data with the required nonzero spaces, prove their geometric/cohomological costs, and establish the single total error budget. In parallel, an equivariant construction of the actual weight measures could remove the larger character-transfer estimates. Until that symmetry and budget are proved, the existing general finite-error route and its suppliers remain available. Ordinary RH is a substantially smaller target at the analytic and finite-character ends, while the current high-rank arithmetic core remains the main unresolved work.
+The next mathematical tasks are to construct the same integral theta data with the required nonzero spaces, prove their geometric/cohomological costs, and establish the single total error budget. In parallel, an equivariant construction of the actual weight measures could remove the larger character-transfer estimates. The preferred direct transfer now avoids that symmetry; the compatible arithmetic/geometric budget remains open. Ordinary RH is a substantially smaller target at the analytic and finite-character ends, while the current high-rank arithmetic core remains the main unresolved work.

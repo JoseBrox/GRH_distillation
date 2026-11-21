@@ -74,6 +74,18 @@ Lean build or a declaration-level proof dependency audit.
 
 ## The central remaining theorem
 
+For ordinary RH the preferred transfer now uses a
+[positive-kernel thick/thin comparison](../notes/rh-direct-transfer.md).
+It needs no weight symmetry. The existing sparse-top data actually forbid
+the previously proposed exact symmetry, as proved by the
+[source audit](../notes/rh-weight-symmetry.md). The conditional three-mean
+and transport results remain alternatives for other constructions.
+The current RH diagram therefore places the remaining emphasis on the
+normalized averaged discrepancy and its compatible geometric inputs.
+The [new geometric reductions](../notes/rh-geometric-combination.md)
+preserve the section-error coefficient, use two weighted height moments,
+and retain correlations in the refined frame cost.
+
 The final comparison must use **compatible integral theta maps at every required scale**:
 the lattices, measures, divisibility, nonvanishing and analytic norms must refer
 to those same maps. It must then give a positive prime-sum estimate retaining

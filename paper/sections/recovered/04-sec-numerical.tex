@@ -108,7 +108,7 @@ real part greater than $1/2$.
 \begin{proof}
 Proposition~\ref{prop:size} supplies the hypothesis of
 Theorem~\ref{thm:vanishing-loss-windows}, with
-$\delta_j=(C_j+3)\varepsilon_j$ and $M_j=1$.
+$\delta_j=(C_j+3)\varepsilon_j$ and \mbox{$M_j=1$}.
 \end{proof}
 
 For a fixed target character $\chi$, the same scalar construction may
@@ -116,7 +116,7 @@ instead use $G=H_j(x)$, where each $H_j$ is a finite positive character
 combination containing $\chi$ or $\bar\chi$. Keep $H_j$ fixed throughout
 the arbitrarily late intervals for that $j$. Then
 Corollary~\ref{cor:varying-positive-families}, with
-$\delta_j=(C_j+3)\varepsilon_j$ and $M_j=1$, gives the same zero-free
+$\delta_j=(C_j+3)\varepsilon_j$ and \mbox{$M_j=1$}, gives the same zero-free
 conclusion for $L(s,\chi)$ and $L(s,\bar\chi)$, even when the auxiliary
 characters and their coefficients vary with $j$.
 
@@ -146,6 +146,106 @@ an error. Likewise, estimates at exponent $7/8$ do not provide the
 $x^{1/2+\varepsilon}$ bounds required for the three specially
 chosen quadratic-character sums. Those character choices and
 estimates remain part of the arithmetic problem.
+
+\subsection{Keeping the densities in the normalized estimate}
+
+For the direct ordinary-RH comparison, it is useful to keep the top
+and thick densities until after division by the exact normalization.
+The following refinement uses only a supplied error envelope. Its
+rank windows are additional hypotheses on the same arithmetic data;
+the scalar calculation does not construct data satisfying them.
+
+\begin{proposition}[Four normalized terms]
+\label{prop:rh-four-term-budget}
+Let $x\ge1$, $\varepsilon>0$, $C\ge0$, $n,t,m,b,K>0$, and
+$0<d\le1$, with $t\le n$. Put
+\[
+ \tau=t/n,\qquad \kappa=tmbd/2,
+\]
+and suppose $0\le A\le2xb$. If a real discrepancy $E$ satisfies
+\[
+ E\le x^{C\varepsilon}
+ \left[tA\left(1+\frac{m^2}{K}\right)
+       +m\left(2nmbx^\varepsilon+
+                         \frac{dKbx^{2\varepsilon}}n\right)\right],
+\]
+then
+\begin{equation}\label{eq:rh-four-term-budget}
+ \frac E\kappa\le x^{C\varepsilon}
+ \left[\frac{4x}{dm}+\frac{4xm}{dK}
+       +\frac{4mx^\varepsilon}{d\tau}
+       +\frac{2Kx^{2\varepsilon}}{\tau n^2}\right].
+\end{equation}
+In particular, suppose the same data satisfy
+\[
+ n\ge x^{2+8\varepsilon},\qquad
+ x^{1/2-\varepsilon/16}\le m\le2x^{1/2-\varepsilon/16},
+\]
+\[
+ x^{9/2+10\varepsilon}\le K\le2x^{9/2+10\varepsilon},\qquad
+ \tau\ge\tfrac12x^{-\varepsilon/8},\qquad d\ge x^{-\varepsilon}.
+\]
+Then
+\begin{equation}\label{eq:rh-source-scalar-budget}
+                   E/\kappa\le36x^{1/2+(C+33/16)\varepsilon}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Division of the assumed envelope by $\kappa>0$ gives
+\[
+ x^{C\varepsilon}\left[
+ \frac{2A}{mbd}+\frac{2Am}{Kbd}
+       +\frac{4mx^\varepsilon}{d\tau}
+       +\frac{2Kx^{2\varepsilon}}{\tau n^2}\right].
+\]
+Use $A/b\le2x$ in the first two terms. Notice that the factor $d$
+in the last original summand cancels: the last normalized term does
+not acquire an inverse thick density.
+
+Under the additional windows, the four terms in brackets in
+\eqref{eq:rh-four-term-budget} are bounded respectively by
+\[
+ 4x^{1/2+17\varepsilon/16},\qquad
+ 8x^{-3-145\varepsilon/16},\qquad
+ 16x^{1/2+33\varepsilon/16},\qquad
+ 8x^{1/2-31\varepsilon/8}.
+\]
+Since $x\ge1$, each exponent is at most
+$1/2+33\varepsilon/16$. Their coefficients sum to $36$,
+which proves \eqref{eq:rh-source-scalar-budget}.
+\end{proof}
+
+The normalization $\kappa$ is the coefficient of the four-character
+mean in Proposition~\ref{rh-direct-thick-transfer}; the auxiliary
+dimension $K$ is a different parameter. If the same geometric
+construction supplies the error envelope, the last proposition
+improves the generic scalar loss $21\varepsilon/8$ before the
+constant-absorption step in Proposition~\ref{prop:size}. The factor
+$36$ can remain explicit by Theorem~\ref{thm:vanishing-loss-windows}.
+The companion mean, thin samples and zeta-centering cost in
+Corollary~\ref{rh-direct-budget} must still be included in the final
+bound, with all exponent losses tending to zero.
+
+At the purely numerical level, the first and third terms of
+\eqref{eq:rh-four-term-budget} balance at
+\[
+ m=\sqrt{\tau x^{1-\varepsilon}},\qquad
+ \frac{4x}{dm}+\frac{4mx^\varepsilon}{d\tau}
+       =\frac{8x^{(1+\varepsilon)/2}}{d\sqrt\tau}.
+\]
+This follows from the arithmetic--geometric mean inequality.
+It does not authorize changing an existing chain length: for
+$\tau\le2x^{-\varepsilon/8}$ the optimizing value is below
+$x^{1/2-\varepsilon/16}$ once $x^\varepsilon>2$.
+Any such change must also preserve the construction's cohomological,
+integral-map, spectral and geometric hypotheses.
+
+The complete weighted frame cost may be used instead of the older
+separate trace windows. When the same maps satisfy
+Proposition~\ref{cs-refined-average-frame}, its two correlated moments
+control that cost within the sharp factor $4/3$. This is a further
+sufficient supplier for the normalized discrepancy, subject to that
+proposition's actual matrix and metric hypotheses.
 
 
 

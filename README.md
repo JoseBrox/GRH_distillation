@@ -55,6 +55,12 @@ The final estimate admits a further simplification: it is enough to construct co
 
 The arithmetic comparison can now use an **average of the discrepancies**, with explicit finite errors, instead of separate bounds for every translation. Weighted lower estimates and the actual geometric losses suffice. For covolumes, a new exact splitting formula tracks the discarded subspace’s mean degree and the integral index; exponential decay of its dimension is one sufficient method, not a necessary hypothesis of that comparison. The corresponding geometric estimates remain to be proved.
 
+Positivity gives a further simplification for the general Dirichlet argument:
+compare the larger weights before averaging over a subgroup. The resulting
+error depends on the fixed target character order, rather than the growing
+auxiliary field degree. The [quotient comparison](notes/positive-kernel-transfer.md)
+proves this directly, including the contributions at ramified primes.
+
 The analytic endpoint also needs only a **total exponent loss tending to zero**. Each accuracy may have its own auxiliary characters, positive weights, multiplicative interval shape, starting threshold and multiplicative constant. Each positive combination must retain the target character and stay fixed during its own sequence of intervals. Uniform control within each such construction remains necessary. The new theorem and its scalar-construction corollary make this distinction precise; they do not themselves establish the arithmetic bound.
 
 ## What if we only want ordinary RH?
@@ -67,11 +73,21 @@ proof in full.
 
 The existing arithmetic construction also simplifies: conductor one makes
 one distribution condition automatic and leaves only four character terms.
-Under an explicit symmetry condition, its transfer error reduces to three
-mean weights and a logarithmic-dispersion bound. The auxiliary primes and
-geometric dimensions still grow, and an aggregate signed companion term
-must be controlled. This gives a smaller construction problem; a complete
-short proof of RH has not yet been obtained.
+A new positive-kernel comparison bounds the effect of changing the larger
+weights before averaging. The smaller weights are handled at the much larger
+prime-sum scales already covered by the uniform quasi-Riemann hypothesis.
+This argument requires no symmetry of the weights. In fact, the prescribed
+sparse set of distinguished places prevents the exact symmetry considered
+earlier; the new comparison avoids that requirement entirely.
+
+The resulting [RH estimate](notes/rh-direct-transfer.md) leaves one central
+task: bound the normalized average arithmetic discrepancy for the same
+integral maps and geometric objects. The quadratic companion terms have
+the conditional selection estimate already proved in the manuscript.
+Sharper covering estimates and weighted height and frame averages reduce
+the remaining geometric budget. The auxiliary primes and geometric
+dimensions still grow, and their uniform bounds remain essential.
+A complete short proof of RH has not yet been obtained.
 
 ## How the newer zero-free results help
 

@@ -1,5 +1,17 @@
 # Averaged arithmetic errors and exact finite Fourier reduction
 
+## Current use
+
+The signed identities and conditional comparisons below remain valid.
+The preferred RH route is now [direct thick/thin transfer](rh-direct-transfer.md),
+which needs no pooled symmetry. The
+[fixed-quotient extension](positive-kernel-transfer.md) also applies to the
+general Dirichlet program. The [source obstruction](rh-weight-symmetry.md)
+shows that the unchanged sparse-top family cannot meet the exact symmetry
+used in Sections 6--7; those sections are alternatives for different data.
+The quantitative transport criterion is preserved separately, with the
+same obstruction and its limits stated explicitly.
+
 ## Status and scope
 
 This checkpoint strengthens the finite averaging target of [one-construction-target.md](one-construction-target.md), and the manuscript propositions `cs-finite-average` and `cs-weighted-lower`. The finite Fourier statements below are proved in ordinary mathematics. They do not construct the integral maps, theta identities or covolume comparisons still required by the arithmetic program, and they are not a new Lean build.

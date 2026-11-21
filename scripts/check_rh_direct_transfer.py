@@ -121,13 +121,63 @@ def normalization_checks():
     return count
 
 
+def quotient_checks():
+    # G=(C2)^4, A=(C2)^2, from quadratic characters of conductors7,3,4,5.
+    A = list(product(range(2), repeat=2))
+    Bs = [[(0, 0)], [(0, 0), (1, 0)], [(0, 0), (0, 1)],
+          [(0, 0), (1, 1)], A]
+    chars = list(product(range(2), repeat=4))
+    def chi(psi, N):
+        ans = 1
+        for exponent, modulus in zip(psi, [7, 3, 4, 5]):
+            if exponent:
+                ans *= quadratic(N, modulus)
+        return ans
+    def coefficient(g, N, chosen):
+        return sum((-1)**sum(x*y for x, y in zip(psi, g))*chi(psi, N)
+                   for psi in chosen)
+    count = 0
+    n, f, b, width = 4, 8, F(3), F(2, 3)
+    for B in Bs:
+        X = [psi for psi in chars if all((psi[2]*u[0]+psi[3]*u[1]) % 2 == 0 for u in B)]
+        sets = {tuple(B), (B[0],), (B[-1],)}
+        for S, T, p, power in product(sets, [[A[0]], A], [2, 3, 5, 7, 11, 13], [1, 2]):
+            N, m = p**power, 2
+            density = F(len(S), n)
+            k = len(T)*m*b*density/2
+            actual, frozen, loss = F(0), F(0), F(0)
+            for t in T:
+                a = F(15+2*t[0]+t[1])
+                qcoeff = coefficient((1, 0, t[0], t[1]), N, X)
+                assert 0 <= qcoeff <= F(4*n, len(B))
+                frozen += qcoeff*max(a/N-b, F(0))
+                loss += qcoeff if N <= a/b else 0
+                for u, i, s in product(B, range(m), S):
+                    g = (1, 0, (s[0]+u[0]-t[0]) % 2, (s[1]+u[1]-t[1]) % 2)
+                    w = b+width*F((u[0]+u[1]+i+s[0]) % 3, 2)
+                    c = coefficient(g, N, chars)
+                    assert c >= 0
+                    actual += c*max(a/N-w, F(0))/(len(B)*f)
+                for s in S:
+                    summed = sum(coefficient((1, 0, (s[0]+u[0]-t[0]) % 2,
+                                              (s[1]+u[1]-t[1]) % 2), N, chars)
+                                 for u in B)
+                    assert summed == len(B)*qcoeff
+            rhs = k*frozen/(len(T)*b) - m*len(S)*width*loss/f
+            assert actual >= rhs
+            count += 1
+    return count
+
+
 def main():
     results = {
         "primitive_fourier_cases_including_ramification": primitive_kernel_checks(),
         "one_sided_thick_freezing_cases": thick_checks(),
         "thin_normalization_cases": normalization_checks(),
+        "general_subgroup_positive_transfer_cases": quotient_checks(),
     }
-    paths = ["notes/rh-direct-transfer.md", "scripts/check_rh_direct_transfer.py"]
+    paths = ["notes/rh-direct-transfer.md", "notes/positive-kernel-transfer.md",
+             "scripts/check_rh_direct_transfer.py"]
     pin = "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
     sources = []
     for path, expected, intervals in [
@@ -152,9 +202,9 @@ def main():
         "results": results,
         "sources": sources,
         "mathematical_review": {
-            "reviewers": ["rh_source_symmetry", "transport_defect"],
+            "reviewers": ["rh_source_symmetry", "transport_defect", "geometric_simplify"],
             "outcome": "PASS after relaxing the local envelope statement to b <= w <= a and w-b <= r.",
-            "scope": "General written proof, primitive/ramified coefficients, signs, counts, source numerical substitutions, and sampled domains; no new Lean build."
+            "scope": "RH written proof and manuscript integration, primitive/ramified coefficients, signs, counts, source numerical substitutions, sampled domains, and extension to any subgroup with fixed or controlled quotient index; no new Lean build."
         },
         "limitations": ["Finite checks supplement the general written proof.",
                         "The uniform QRH input and compatible arithmetic/geometric construction are not proved by this script."],

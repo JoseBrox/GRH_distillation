@@ -36,8 +36,13 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | RH conductor-one specialization | proved: only four sign characters survive and the subset-share condition is automatic; auxiliary primes and geometric ranks still grow |
 | Zero-total-coefficient obstruction | proved: cancellation of the present projections cannot produce a nonzero positive coefficient vector; a companion bound or a different identity is needed |
 | Fixed quotient with balanced fibres | proved finite reduction: analytic character identifications must also be fixed |
-| Three mean weights and logarithmic dispersion | proved under explicit pooled translation symmetry; the actual supplier does not yet provide that symmetry |
+| Three mean weights and logarithmic dispersion | proved conditional alternative; exact pooled symmetry is incompatible with the unchanged sparse-top source family and is unnecessary for the preferred direct RH route |
 | Determinant descent and averaged Hilbert-Samuel surplus | proved reductions: actual quotient degrees, excess-rank costs and mean-volume inputs remain to be bounded |
+| Direct RH transfer without weight symmetry | proved and independently reviewed: positive primitive-character kernels permit thick comparison before averaging; the existing large-scale QRH estimate controls thin samples |
+| Separated-top obstruction and quantitative transport | proved: current source weights forbid exact pooled means and make the absolute transport criterion too large; the direct thick/thin route avoids this detour |
+| Sharper determinant descent, two height moments and correlated frame averages | proved reductions: preserve the section-error coefficient, optimize the component bound, and average the refined nonlinear frame penalty; actual geometric suppliers remain open |
+| Positive-kernel transfer through a fixed quotient | proved for every subgroup: the thick error depends on the fixed target order rather than the growing ambient group; signed projection and thin estimates remain |
+| Sharper actual-window scalar budget | proved conditional envelope with factor36 and loss(C+33/16)epsilon; no parameter changes or new construction. Polynomial thin scales are sufficient for the analytic interface only. |
 
 ## Work packages
 
@@ -85,7 +90,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** For RH specialize to conductor one and the four-character projection. Construct one coherent datum with either verified pooled translation symmetry or a directly bounded symmetry error. Control the signed companion and actual transfer budget; preserve the fixed analytic target across every whole window.
+**Next concrete task.** For RH use the proved direct thick/thin comparison without weight symmetry. Supply the same compatible arithmetic datum and bound its normalized averaged discrepancy; retain the signed quadratic companion or its uniform-QRH selection bound on every required whole window.
 
 **Acceptance conditions:**
 
@@ -96,7 +101,8 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The averaging weights and subgroup pushforwards are exact; a surjection alone does not preserve uniform averages
 - All finite-error terms are bounded throughout each whole window, even when ambient groups and ranks grow
 - Fixed quotient labels require balanced fibre counts and fixed primitive-character identifications when used to keep an analytic family fixed.
-- Pooled translation symmetry is a separate construction hypothesis; existing scale bounds do not imply it.
+- No pooled symmetry is required for the preferred RH transfer. The unchanged sparse-top supplier forbids exact pooled first-moment symmetry; alternative constructions must state their own admissibility conditions.
+- The thin estimate applies to all actual primitive-character samples, including the separately corrected principal character; the finite kernel includes ramified primes.
 
 <a id="w03"></a>
 ### W03: Auxiliary characters, fields and nonvacuous selections
@@ -247,7 +253,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Bound the actual mean-volume/height input and total Hilbert-Samuel surplus before the growing parameter varies; identify determinant descent and any type averaging with the same selected lattices. Existing upper rank-share is a sufficient supplier, not needed by the new abstract budget.
+**Next concrete task.** Prove the actual weighted mean height and negative-height moment, and bound the signed total Hilbert-Samuel surplus for the same cuspidal lattices. Use determinant descent with its actual rank ratio and preserved section-error coefficient, then retain type indices and discarded degrees.
 
 **Acceptance conditions:**
 
@@ -259,6 +265,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Keep positive component ranks when multiplying the source slope formula.
 - Control the raw surplus remainder in mean; do not replace an effective uniform bound for moving varieties by a fixed-variety asymptotic.
 - Average types only with the proved rank weights, and retain the integral index.
+- Two height moments use the actual Hilbert-Samuel weights. A signed mean alone does not control the logarithmic error; uniform componentwise height bounds are only one sufficient supplier.
 
 <a id="w11"></a>
 ### W11: Weighted slope comparison and the complete average budget
@@ -271,7 +278,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Use the actual signed projection/transfer identity and weighted frame moments. In the symmetric four-character case, retain three mean weights and the logarithmic-dispersion penalty, then bound the single signed companion mean. The same integral maps and geometric metrics must supply these terms.
+**Next concrete task.** Insert the averaged refined frame penalty and geometric lower bounds into the normalized discrepancy. Apply the direct RH thick/thin transfer, retaining the signed companion. Optimize scalar envelopes only when the same arithmetic construction allows the proposed parameters. Keep the exact four-term normalization and the improved supplied-window exponent; the formally optimal smaller rank is outside the unchanged constructor.
 
 **Acceptance conditions:**
 
@@ -280,6 +287,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Produce cofinal whole windows for each accuracy with a fixed positive combination retaining the target
 - Retain the source family route until an alternative supplier is actually proved
 - Keep the actual frame cost or prove a valid upper bound; upper slope and pairwise variation hypotheses may be omitted only when that cost is controlled directly
+- The refined frame comparison retains both rank-loss and diagonal-error denominators and requires the same integral maps, common basis and metrics as its supplying theorem.
 
 ## Compatibility is part of the theorem
 
@@ -295,8 +303,8 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W10 actual mean-volume/height input and total Hilbert-Samuel surplus
-1. RH: coherent four-character data, three-mean transfer or a bounded symmetry error, and the signed companion mean
+1. W10 actual weighted mean height, negative-height moment and total Hilbert-Samuel surplus
+1. RH: bound the normalized average discrepancy for compatible data; direct thick/thin transfer needs no symmetry
 1. W06/W08 nonzero integral maps, divisibility and global norms on the same objects
 1. W04 remaining cohomological estimates for the growing auxiliary fields
 
