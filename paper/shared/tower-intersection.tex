@@ -1,0 +1,132 @@
+\subsection{One block-sensitive test intersection}
+
+Let $\Psi$ be a finite nonempty set of size $f$, let $N=p+q$ with
+$1\le q\le p$, and put $d=fN(N-1)/2$. For a dominant weight $u$, set
+\[
+ S=\sum_{\tau,i<p}u_{\tau i},\qquad
+ T=\sum_{\tau,i<N}u_{\tau i},\qquad C=S-\frac pN T,\qquad
+ W=\sum_\tau(u_{\tau0}-u_{\tau,N-1}),\quad L=\sum_{\tau,i}|u_{\tau i}|.
+\]
+The exact identity
+\[
+ C=\frac1N\sum_\tau\sum_{a<p\le b}(u_{\tau a}-u_{\tau b})
+ \quad\text{gives}\quad
+ 0\le C\le\min\left\{\frac{pq}{N}W,\frac pN L\right\}.
+\]
+In particular, $C$ is unchanged by adding a constant to each
+embedding's weight. All intersections below use the prescribed metric.
+
+Write $\ell_u=-\sum_{\tau,i}u_{\tau i}X_{\tau i}$ and use the flag
+degree convention
+\[
+ \deg_{\rm Fl}F=(-1)^d\sum_{(\sigma_\tau)\in(\mathfrak S_N)^\Psi}
+ \left(\prod_\tau\operatorname{sgn}\sigma_\tau\right)
+ \left[\prod_{\tau,i}X_{\tau i}^{N-1-\sigma_\tau(i)}\right]F.
+\]
+The Vandermonde identity gives
+\[
+ D(u)=\deg_{\rm Fl}(\ell_u^d)
+ =\frac{d!}{(\prod_{i=0}^{N-1}i!)^f}
+             \prod_{\tau,a<b}(u_{\tau a}-u_{\tau b}).
+\]
+Thus $D(u)>0$ for a strictly dominant weight, as assumed below.
+For a polynomial of degree $d+1$, put
+\[
+ \mathcal S_\tau(F)=\deg_{\rm Fl}\sum_{i<p}\partial_{\tau i}F,
+ \qquad
+ \mathcal T_\tau(F)=\deg_{\rm Fl}\sum_{i<N}\partial_{\tau i}F.
+\]
+
+Fix a cutoff $B$, total component volume $v>0$, and an arithmetic
+intersection functional $I_B$. Suppose its comparison has the form
+\begin{equation}\label{geo-two-polynomial-comparison}
+ I_B(F)/v
+ =H(F)-A_B\sum_\tau\mathcal S_\tau(F)
+       -b_B\sum_\tau\mathcal T_\tau(F)+R_B(F).
+\end{equation}
+Only two polynomials are needed, with the same coefficients and metric:
+$\ell_u^{d+1}$ and the following test. Put $d_0=fpq$,
+\[
+ \mu=\sum_{\tau,i\ge p}X_{\tau i},\qquad
+ V=\prod_\tau\prod_{\substack{a<b\\a,b<p\ {\rm or}\ a,b\ge p}}
+                        (X_{\tau b}-X_{\tau a}),\qquad
+ F_0=\mu^{d_0+1}V.
+\]
+Assume $J=\deg_{\rm Fl}(\mu^{d_0}V)>0$ and put $K_0=(d_0+1)J$.
+Define
+\[
+ \beta_B=\frac{I_B(F_0)}{vfqK_0},\quad
+ h_0=\frac{H(F_0)}{fqK_0},\quad r_0=\frac{R_B(F_0)}{fqK_0},
+ \qquad c_B=\frac{pA_B+Nb_B}{N},
+\]
+\[
+ \sigma_B(u)=\frac{I_B(\ell_u^{d+1})}{v(d+1)D(u)},\qquad
+ h_u=\frac{H(\ell_u^{d+1})}{(d+1)D(u)},\quad
+ r_u=\frac{R_B(\ell_u^{d+1})}{(d+1)D(u)}.
+\]
+
+\begin{proposition}[Eliminating the two scalar coefficients]
+\label{geo-tower-two-polynomial}
+Under these hypotheses,
+\[
+ \boxed{\quad
+ \sigma_B(u)=h_u+\frac Np
+       \{C(\beta_B-h_0-r_0)+c_BS\}+r_u.\quad}
+\]
+\end{proposition}
+
+\begin{proof}
+Differentiation in \eqref{geo-two-polynomial-comparison} gives
+$\sigma_B(u)=h_u+A_BC+c_BT+r_u$.
+The polynomial $V$ is invariant under translating either block at
+a fixed $\tau$. Hence $\mathcal S_\tau(F_0)=0$ and
+$\mathcal T_\tau(F_0)=qK_0$, so $\beta_B=h_0-b_B+r_0$.
+Thus $A_B=(N/p)(c_B+\beta_B-h_0-r_0)$. Substitution and
+$T+(N/p)C=(N/p)S$ prove the formula.
+\end{proof}
+
+\begin{corollary}[A single total test suffices]\label{geo-tower-block-bound}
+Let $\Lambda\ge0$, $C_0,C_F\ge0$, and suppose
+\[
+ \beta_B\ge-C_0\Lambda,\quad
+ h_u\ge0,\quad h_0\le\tfrac12\log(N+1),\quad
+ |r_0|\le\frac8{5fq},\quad r_u\ge-2qW,\quad |c_B|\le C_F\Lambda.
+\]
+With $Z=C_0\Lambda+\tfrac12\log(N+1)+8/(5fq)$, one has
+\[
+ \sigma_B(u)\ge-\frac Np\{CZ+C_F\Lambda|S|\}-2qW
+ \ge-\max\left\{Z,\frac qpZ+\frac Np C_F\Lambda\right\}L-2qW.
+\]
+The first inequality may retain the signed term $(N/p)c_BS$
+in place of its absolute-value bound.
+\end{corollary}
+
+\begin{proof}
+Use $C\ge0$ in Proposition~\ref{geo-tower-two-polynomial}.
+For the second inequality write $R=T-S$ and
+$(N/p)C=(q/p)S-R$, then use $|S|+|R|\le L$ and $Z\ge0$.
+\end{proof}
+
+The remaining geometric input is the single lower bound
+$I_B(F_0)/(vfqK_0)\ge-C_0\Lambda$ on the selected towers, with the
+required uniformity. The comparison does not establish that bound.
+The exact factor $N/p$ is less than $3/2$ when $3q+1\le N$;
+the remainder retains its denominator $fq$.
+
+Finally suppose the same functional satisfies
+\[
+ I_B\bigl((\sum_iX_{\tau i})Q\bigr)
+   =v\bar h_{B,\tau}\deg_{\rm Fl}Q,\qquad
+ \bar h_{B,\tau}=-Nc_B
+ \quad(\deg Q=d).
+\]
+For any constants $z_\tau$, differentiation along $u+tz$ gives the
+exact translation law
+\[
+             \sigma_B(u+z)=\sigma_B(u)+Nc_B\sum_\tau z_\tau.
+\]
+Thus centering the weight incurs a signed determinant term. An
+anchoring condition $u_{\tau a}=0$ does not make its total sum zero.
+Removing this term requires an identity for the actual flat-section
+metric, including its finite-place corrections; its cancellation is
+not among the hypotheses proved here.

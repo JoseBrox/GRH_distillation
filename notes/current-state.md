@@ -5,6 +5,23 @@ proof of RH or Dirichlet GRH. Start from the preferred mathematical route,
 then inspect only the relevant bounded source contracts. The repository is
 the persistent record; the archive is a baseline, not a file to reload.
 
+## Two manuscripts and concurrent research
+
+The [ordinary RH manuscript](../paper/rh/main.tex) and
+[Dirichlet GRH manuscript](../paper/grh/main.tex) now have separate route
+folders, with corresponding [RH](../blueprint/rh/README.md) and
+[GRH](../blueprint/grh/README.md) programs. The common technical chapters
+remain in `paper/sections/`; small proofs included by both papers belong
+in `paper/shared/`. The [shared-results index](../blueprint/shared/README.md)
+keeps the two applications and their extra hypotheses explicit.
+
+The [node counts](../blueprint/progress.md) distinguish finished stated
+implications or adopted inputs from open construction hypotheses. Moving
+files or adding a node is not recorded as closing an existing open node.
+The source-import atlas and documentary section atlas have no proof
+completion score. The published baseline is RH 6/9 and the GRH technical
+map 17/31; the generated progress table carries the current values.
+
 ## Preferred RH route: no weight symmetry
 
 The [direct RH comparison](rh-direct-transfer.md) is the active continuation.
@@ -62,6 +79,16 @@ threshold. Uniform intersection control and the separate finite section
 estimate remain unresolved; quasi-RH and no-Siegel bounds only control
 the arithmetic error parameter in that geometric inequality.
 
+The [tower-intersection reduction](tower-intersection-reduction.md) now
+eliminates the two common scalar coefficients using a single normalized
+Grassmannian test. The exact formula retains the block contrast, the factor
+N/p and the smaller test remainder 8/(5fq). The actual anchored weights
+need not have zero sum. Their central translation incurs an exact signed
+determinant term, including the cutoff metric's finite-place correction;
+no cancellation with a different period normalization is assumed.
+The next geometric target is the lower bound for that one test on the
+same selected towers, followed by the independent finite section estimate.
+
 The [theta-energy comparison](averaged-theta-energy.md) replaces separate
 word-pair inequalities by two exact aggregate energies. The source already
 contains the conditional bridge to the same integral maps and common target
@@ -69,6 +96,15 @@ basis. Retained-energy compression has a sharper exact bound, including the
 sharp tight-frame case. Positive normalizers and the centered global energy
 estimate remain substantive inputs. The existing manuscript already had
 linear rank-loss control; no new exponent gain over that result is claimed.
+
+The [joint period bound](centered-global-energy-reduction.md) is a simpler
+sufficient supplier for the centered energy. A calibrated one-sided Bessel
+estimate gives an explicit energy bound after the actual joint source and
+target cuts, retaining their lost mass and final diagonal energy. The exact
+orbital expansion reduces the Bessel input to one signed block quadratic
+form. Diagonal identity cells may be removed only when identified on their
+own domains. A source pair classified geometrically as scalar need not act
+as a scalar on the final target. The actual calibrated bound is still open.
 
 The [centered frame theorem](frame-degree-compatibility.md) has zero loss
 for a perfect full frame and an exact optimal common normalization. Exact

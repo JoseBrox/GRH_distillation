@@ -21,6 +21,7 @@ NAMES = [
     "averaged-theta-energy", "rh-construction-frontier",
     "finite-symmetry-energy", "frame-degree-compatibility",
     "rh-centered-frame-bridge", "mean-volume-supplier",
+    "centered-global-energy-reduction", "tower-intersection-reduction",
 ]
 SCRIPTS = {
     name: "scripts/check_" + name.replace("-", "_") + ".py"
@@ -98,6 +99,7 @@ def main():
         source_records = [entry for key in ["files", "source_files", "sources"]
                           for entry in cert.get(key, [])]
         source_records += cert.get("source", {}).get("files", [])
+        source_records += cert.get("source_verification", {}).get("records", [])
         for entry in source_records:
             path = entry["path"]
             if "git_blob_sha1" not in entry:
@@ -143,7 +145,10 @@ def main():
                     assert digest(b"".join(lines[first-1:last])) == expected, (path, first, last)
 
     build_sources = set()
-    for name in ["paper-build", "guide-build"]:
+    build_records = ["paper-build", "guide-build"]
+    if (ROOT / "certificates/rh-build.json").exists():
+        build_records.append("rh-build")
+    for name in build_records:
         cert = read_json(f"certificates/{name}.json")
         for entry in cert["sources"]:
             check_file(entry["path"], entry["sha256"])
@@ -157,7 +162,9 @@ def main():
     assert guide["pdf"]["pages"] == read_json("certificates/guide-build.json")["page_count"] == 7
     assert guide["visual_review"]["pages_inspected"] == list(range(1, 8))
 
-    review_path = "certificates/rh-continuation-review.json"
+    review_path = ("certificates/concurrent-routes-review.json"
+                   if (ROOT / "certificates/concurrent-routes-review.json").exists()
+                   else "certificates/rh-continuation-review.json")
     review = read_json(review_path)
     for entry in review["artifacts"]:
         check_file(entry["path"], entry["sha256"])

@@ -1,0 +1,182 @@
+\begin{proposition}[A one-sided period estimate]\label{shared-period-bessel}
+Let \(H,H_i\) be finite-dimensional complex Hilbert spaces, indexed by a
+finite set, with \(D=\dim H>0\). Let \(P_i:H_i\to H\), and fix real
+constants \(c_i>0\). Put
+\[
+ T_i=c_i^{-1/2}P_i,\qquad Q=\sum_iT_iT_i^*,\qquad
+ M=\operatorname{tr}Q>0.
+\]
+Suppose that, for some real \(\alpha\),
+\begin{equation}\label{shared-period-bessel-bound}
+ \sum_i c_i^{-1}\|P_i^*h\|^2\le\alpha\|h\|^2
+ \qquad(h\in H).
+\end{equation}
+Then \(\alpha>0\), and the centered target energy satisfies
+\begin{equation}\label{shared-period-bessel-energy}
+ 0\le
+ \eta:=\frac D{M^2}
+       \left\|Q-\frac MD I_H\right\|_{\mathrm{HS}}^2
+ \le\lambda:=\frac{\alpha D}{M}-1.
+\end{equation}
+Equivalently, the hypothesis is \(Q\le\alpha I_H\), or
+\[
+ \left\|\sum_iT_i v_i\right\|^2
+       \le\alpha\sum_i\|v_i\|^2
+       \qquad(v_i\in H_i).
+\]
+\end{proposition}
+
+\begin{proof}
+The first equivalence follows by evaluating the quadratic form of \(Q\).
+The second uses equality of the norms of the synthesis map
+\(\bigoplus_iH_i\to H\) and its adjoint. Every eigenvalue \(q_a\) of
+\(Q\) lies in \([0,\alpha]\), so
+\[
+ \operatorname{tr}(Q^2)\le\alpha M,\qquad
+ \left\|Q-\frac MD I_H\right\|_{\mathrm{HS}}^2
+       =\operatorname{tr}(Q^2)-\frac{M^2}{D}.
+\]
+This proves the energy bound. Taking traces also gives
+\(\alpha D\ge M>0\).
+\end{proof}
+
+\begin{proposition}[Restriction to the final source and target]
+\label{shared-period-joint-restriction}
+In Proposition~\ref{shared-period-bessel}, let \(J_i:E_i\to H_i\) be
+isometries, let \(F\subset H\) have dimension \(n>0\), and let \(\Pi\)
+be its orthogonal projection. Define
+\[
+ T_i'=T_iJ_i,\quad A_i=\Pi T_i':E_i\to F,\quad
+ Q'=\sum_iT_i'T_i'^*,\quad Q_0=\sum_iA_iA_i^*,
+\]
+\[
+ L=\operatorname{tr}(Q-Q'),\quad \rho=L/M,\quad
+ \delta=(D-n)/D,\quad
+ \kappa=1-\rho-(1+\lambda)\delta.
+\]
+If \(\kappa>0\), then
+\begin{align}
+ M_0:=\operatorname{tr}Q_0&\ge M\kappa>0,\label{shared-period-retained-mass}\\
+ \eta_0:=
+ \frac n{M_0^2}\left\|Q_0-\frac{M_0}{n}I_F\right\|_{\mathrm{HS}}^2
+ &\le
+ \frac{\lambda+\rho}{1-\rho-(1+\lambda)\delta}.
+ \label{shared-period-retained-energy}
+\end{align}
+Moreover, if
+\[
+ \Delta=\sum_i\|T_i^*T_i-I_{H_i}\|_{\mathrm{HS}}^2,\qquad
+ \Delta_0=\sum_i\|A_i^*A_i-I_{E_i}\|_{\mathrm{HS}}^2,
+\]
+then
+\begin{equation}\label{shared-period-retained-diagonal}
+ \Delta_0\le\Delta+2\alpha(D-n).
+\end{equation}
+If \(l=\sum_i(\dim H_i-\dim E_i)\), one may use
+\begin{equation}\label{shared-period-discarded-mass}
+ 0\le L\le l+\sqrt{l\Delta}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Orthogonal domain restriction gives \(0\le Q'\le Q\le\alpha I_H\).
+Consequently
+\[
+ \operatorname{tr}((I-\Pi)Q')\le\alpha(D-n),\qquad
+ M_0=M-L-\operatorname{tr}((I-\Pi)Q')\ge M\kappa.
+\]
+On \(F\) we have \(Q_0\le\alpha I_F\). The preceding proposition gives
+\[
+ \eta_0\le\frac{\alpha n}{M_0}-1
+ \le\frac{(1+\lambda)(1-\delta)}{\kappa}-1
+ =\frac{\lambda+\rho}{\kappa}.
+\]
+For the diagonal estimate, work on \(\bigoplus_iE_i\) and write
+\[
+ G=\operatorname{diag}(T_i'^*T_i'),\qquad
+ B=\operatorname{diag}(T_i'^*(I-\Pi)T_i').
+\]
+Then \(0\le B\le G\), the final diagonal Gram operator is \(G-B\),
+and domain compression gives
+\(\Delta':=\|G-I\|_{\mathrm{HS}}^2\le\Delta\).
+Since \(\operatorname{tr}((G-B)B)\ge0\), even without commutation,
+\[
+ \begin{split}
+ \Delta_0
+ &=\Delta'-2\operatorname{tr}(GB)+2\operatorname{tr}B+
+                          \operatorname{tr}(B^2)\\
+ &\le\Delta'+2\operatorname{tr}B-\operatorname{tr}(B^2)
+ \le\Delta+2\alpha(D-n).
+ \end{split}
+\]
+Here \(\operatorname{tr}B=\operatorname{tr}((I-\Pi)Q')\).
+Finally \(L\) is the trace of
+\(\operatorname{diag}(T_i^*T_i)\) on the discarded domain subspace.
+Subtract its identity operator and apply Cauchy--Schwarz on that
+\(l\)-dimensional subspace to obtain
+\eqref{shared-period-discarded-mass}.
+\end{proof}
+
+These estimates apply to the actual final maps \(A_i:E_i\to F\).
+Their diagonal normalization uses
+\(R'=\sum_i\dim E_i\); a frame comparison requiring
+\(\sqrt{\Delta_0/R'}<1\) still requires that inequality.
+One may use the smaller of \eqref{shared-period-retained-diagonal}
+and any other valid diagonal bound. The lattice and height hypotheses
+must refer to these same maps.
+If \(\lambda=\rho=0\), the target energy stays zero under every
+orthogonal target restriction. The upper Bessel estimate must therefore
+be calibrated to the actual mass \(M\); a coarse operator bound alone
+does not supply a small frame error.
+
+\begin{proposition}[A signed orbital criterion]\label{shared-period-block-gram}
+Use the spaces, maps and positive constants of
+Proposition~\ref{shared-period-bessel}. Suppose the normalized Gram
+operators have absolutely convergent operator-norm expansions
+\[
+ K_{ij}=c_i^{-1/2}c_j^{-1/2}P_i^*P_j
+       =\sum_{t\in\mathcal T_{ij}}a_{ij,t},
+ \qquad \sum_t\|a_{ij,t}\|_{\mathrm{op}}<\infty.
+\]
+For each \(i\), suppose a specified subset
+\(\mathcal I_i\subset\mathcal T_{ii}\) has sum \(I_{H_i}\).
+On \(\mathcal E=\bigoplus_iH_i\), define \(N=[N_{ij}]\) by
+\[
+ N_{ii}=\sum_{t\notin\mathcal I_i}a_{ii,t},
+ \qquad N_{ij}=\sum_{t\in\mathcal T_{ij}}a_{ij,t}\quad(i\ne j).
+\]
+If, for every \(v=(v_i)\in\mathcal E\),
+\begin{equation}\label{shared-period-signed-orbital-bound}
+ \Re\sum_{i,j}\langle v_i,N_{ij}v_j\rangle
+       \le(\alpha-1)\sum_i\|v_i\|^2,
+\end{equation}
+then the upper Bessel estimate
+\eqref{shared-period-bessel-bound} holds.
+It suffices to establish the same quadratic-form bound, with the same
+\(\alpha\), for finite orbital truncations converging in operator norm
+to \(N\).
+\end{proposition}
+
+\begin{proof}
+Let \(S:\mathcal E\to H\) be \(S(v)=\sum_iT_iv_i\).
+Absolute convergence and the diagonal identity give
+\[
+ S^*S=[K_{ij}]=I_{\mathcal E}+N,\qquad SS^*=Q.
+\]
+All rearrangements are justified because the block index set is finite.
+Thus \(N\) is self-adjoint, and
+\eqref{shared-period-signed-orbital-bound} says
+\(S^*S\le\alpha I_{\mathcal E}\).
+Since \(S^*S\ge0\), its norm is at most \(\alpha\);
+\(\|SS^*\|=\|S^*S\|\) gives \(Q\le\alpha I_H\).
+For the truncation assertion, pass to the limit in the quadratic form
+of each fixed \(v\). Taking self-adjoint parts of the truncations
+does not change their real quadratic forms.
+\end{proof}
+
+The uniform bound \eqref{shared-period-signed-orbital-bound}, calibrated
+so that \(\alpha D/M-1\) is sufficiently small, is an additional
+arithmetic input. Bounds for the separate squared norms
+\(\|K_{ij}\|_{\mathrm{HS}}^2\) do not by themselves establish this
+signed operator estimate at that scale. Off-diagonal identity cells
+are retained unless their vanishing has been proved separately.

@@ -1,0 +1,262 @@
+\section{A direct positive-kernel comparison}
+\label{rh-transfer}
+
+The weights in the arithmetic construction need not have equal means
+or symmetric distributions. The useful positivity appears before the
+character sum is separated. It therefore permits a comparison of each
+large weight with a fixed lower endpoint, followed by averaging.
+
+\subsection{Primitive characters and ramified primes}
+
+Let $\mathcal G$ be a finite abelian quotient of
+$(\mathbb Z/N_0\mathbb Z)^\times$, written additively. For
+$\psi\in\widehat{\mathcal G}$, let $\chi_\psi$ be the primitive
+Dirichlet character inducing its pullback. Surjectivity implies that
+only the trivial $\psi$ induces the character of conductor one.
+For an integer $n\ge1$ put
+\[
+ \kappa_g(n)=\sum_{\psi\in\widehat{\mathcal G}}
+                       \psi(-g)\chi_\psi(n).
+\]
+
+\begin{lemma}[Nonnegative primitive-character coefficients]
+\label{rh-kernel-positive}
+Let $p$ be a prime and $j\ge1$. Let $I_p$ be the image in $\mathcal G$ of the local unit factor at $p$
+in the Chinese remainder decomposition; put $I_p=\{0\}$ if
+$p\nmid N_0$. Let $F_p\in\mathcal G/I_p$ be the image of a unit
+congruent to $p$ modulo the prime-to-$p$ part of $N_0$. Then
+\begin{equation}\label{rh-kappa}
+ \kappa_g(p^j)=|\mathcal G/I_p|
+                    \mathbf1_{\{jF_p=g+I_p\}}\ge0,
+ \qquad \sum_{g\in\mathcal G}\kappa_g(p^j)=|\mathcal G|.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The primitive conductor of $\chi_\psi$ is divisible by $p$ precisely
+when $\psi$ is nontrivial on $I_p$. In that case
+$\chi_\psi(p^j)=0$. Otherwise it equals $\psi(jF_p)$, independently
+of the lift of $F_p$. Character orthogonality on $\mathcal G/I_p$
+proves the first formula. There are $|I_p|$ elements in the indicated
+coset, proving the second. For $p\nmid N_0$, this is the usual
+orthogonality formula with trivial inertia subgroup.
+\end{proof}
+
+For $a>0$ and $0<w\le a$, define the real kernel
+\[
+ K_{g,a}(w)=\Re\sum_{\psi\in\widehat{\mathcal G}}
+                         \psi(-g)wG_{\chi_\psi}(a/w).
+\]
+Multiplying \eqref{rh-G} and \eqref{rh-Gchi} by $w$ gives
+\begin{equation}\label{rh-hinges}
+ K_{g,a}(w)=\sum_{n\ge1}\Lambda(n)\kappa_g(n)(a/n-w)_+
+                            +a\log w+aC_{g,a},
+\end{equation}
+where $C_{g,a}$ is independent of $w$. Only prime powers matter in
+this formula, and the sum is locally finite on $w>0$.
+All the nonprincipal logarithmic derivatives are in $C_{g,a}$;
+they disappear from differences of this kernel.
+
+\begin{lemma}[A one-sided comparison at a lower endpoint]
+\label{rh-freeze}
+If $b\le w\le a$ and $w-b\le r$, where $b>0$ and $r\ge0$, then
+\[
+ K_{g,a}(w)\ge K_{g,a}(b)-r\Psi_g(a/b),\qquad
+ \Psi_g(y)=\sum_{n\le y}\Lambda(n)\kappa_g(n).
+\]
+\end{lemma}
+
+\begin{proof}
+Each hinge in \eqref{rh-hinges} decreases by at most $r$, and a
+decrease is possible only if $n\le a/b$. Its coefficient is
+nonnegative by Lemma~\ref{rh-kernel-positive}. The additional
+term $a\log(w/b)$ is nonnegative.
+\end{proof}
+
+We will use the absolute constant $C_\psi=4\log2$ in
+\begin{equation}\label{rh-chebyshev}
+ \Psi(y):=\sum_{n\le y}\Lambda(n)\le C_\psi y\qquad(y\ge1).
+\end{equation}
+Indeed, factoring $\binom{2m}{m}$ gives
+$\Psi(2m)-\Psi(m)\le2m\log2$. Summation at powers of two and
+comparison of $y$ with the next power of two give \eqref{rh-chebyshev}.
+
+\subsection{The finite arithmetic balance}
+
+Take $\mathcal G=(\mathbb Z/2\mathbb Z)^2\times A$, where $A$ is
+finite abelian of order $n$. Assume this group is supplied as the
+quotient just used. Let $S,T\subset A$ be nonempty, and put
+\[
+ d=|S|/n,\quad t_0=|T|,\quad f=2n,\quad
+ \Phi=\{((0,e),v):e\in\mathbb Z/2\mathbb Z,\ v\in A\}.
+\]
+Let $m\ge1$ be an integer, $a_t>0$ for $t\in T$, and
+$w_{u,i}(\rho)>0$ for $u\in A$, $1\le i\le m$ and $\rho\in\Phi$.
+Set
+\[
+ c=((1,1),0),\qquad \iota(t)=((0,0),t),\qquad
+ \Phi_{S,u}=\{((0,1),v+u):v\in S\}.
+\]
+The arithmetic balance required of these same data is
+\begin{equation}\label{rh-balance}
+ \overline E=\frac1{nf}\sum_{u\in A}\sum_{t\in T}\sum_{i=1}^m
+   \sum_{\rho\in\Phi}K_{\rho-c-\iota(t),a_t}(w_{u,i}(\rho)).
+\end{equation}
+The desired geometric estimate concerns this particular real
+discrepancy $\overline E$.
+
+Suppose all weights are at most $\min_ta_t$, so every sampled
+argument is at least one. At the positions in $\Phi_{S,u}$ assume
+\[
+ b\le w_{u,i}(\rho)\le b+r,\qquad b>0,\quad r\ge0.
+\]
+We call these the thick positions, and call the other positions thin.
+No invariance of the weights is assumed. Suppose the two sign characters
+of $(\mathbb Z/2\mathbb Z)^2$ induce respectively $\chi_\ell$ and
+$\chi_q$, the quadratic characters of distinct odd primes $\ell,q$.
+Their product is then primitive of conductor $\ell q$.
+Write
+\[
+ D_+=G+G_{\chi_q}-G_{\chi_\ell}-G_{\chi_q\chi_\ell},\quad
+ \overline a=\frac1{t_0}\sum_{t\in T}a_t,\quad
+ \kappa=\frac{t_0mbd}{2}>0.
+\]
+Retain the signed contribution at the actual thin weights:
+\[
+ J=\frac1{nf}\sum_{u,t,i}\sum_{\rho\in\Phi\setminus\Phi_{S,u}}
+                         K_{\rho-c-\iota(t),a_t}(w_{u,i}(\rho)).
+\]
+
+\begin{theorem}[Direct transfer through the thick positions]
+\label{rh-thick}
+Under these hypotheses,
+\begin{equation}\label{rh-thick-bound}
+ \frac1{t_0}\sum_tD_+(a_t/b)
+ \le\frac{\overline E-J}{\kappa}
+        +\frac rb\frac1{t_0}\sum_t\Psi_+(a_t/b),
+\end{equation}
+where
+\[
+ \Psi_+(y)=\sum_{n\le y}\Lambda(n)
+                            (1+\chi_q(n))(1-\chi_\ell(n)).
+\]
+The last term is at most $4C_\psi(r/b)(\overline a/b)$.
+\end{theorem}
+
+\begin{proof}
+At a thick position write $\rho=((0,1),v+u)$ with $v\in S$.
+Then $\rho-c-\iota(t)=((1,0),v+u-t)$. Apply Lemma~\ref{rh-freeze}
+and sum over $u$ before estimating the result. Orthogonality on $A$
+annihilates every character nontrivial on $A$, giving
+\[
+ \sum_{u\in A}K_{((1,0),v+u-t),a}(b)=nbD_+(a/b),
+ \quad
+ \sum_{u\in A}\Psi_{((1,0),v+u-t)}(y)=n\Psi_+(y).
+\]
+There are $m|S|$ choices of $(i,v)$. Thus \eqref{rh-balance} gives
+\[
+ \overline E\ge\kappa\frac1{t_0}\sum_tD_+(a_t/b)+J
+                         -\frac{mdr}{2}\sum_t\Psi_+(a_t/b).
+\]
+Divide by $\kappa$. Since each quadratic value lies in
+$\{-1,0,1\}$, the coefficient in $\Psi_+$ lies in $[0,4]$,
+including at ramified integers. Apply \eqref{rh-chebyshev}.
+\end{proof}
+
+The absence of both the group order and $d^{-1}$ from this thick
+error is an exact consequence of averaging before the estimate.
+Separately bounding every character would lose this cancellation.
+
+\begin{lemma}[The thin samples]
+\label{rh-thin}
+Suppose, at every actual thin sample and for every
+$\psi\in\widehat{\mathcal G}$,
+\[
+ |G_{\chi_\psi}(a_t/w_{u,i}(\rho))|
+       \le\vartheta\,a_t/w_{u,i}(\rho),\qquad\vartheta\ge0.
+\]
+Then
+\begin{equation}\label{rh-thin-bound}
+ \frac{|J|}{\kappa}\le
+       \frac{2f(2-d)}d\frac{\overline a}{b}\vartheta.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Each kernel has absolute value at most $2f\vartheta a_t$.
+There are $f-|S|$ thin positions for each $(u,i)$, so
+$|J|\le2m(f-|S|)\vartheta\sum_ta_t$.
+Use $f-|S|=n(2-d)$ and the definition of $\kappa$.
+\end{proof}
+
+\subsection{Centering only the zeta sum}
+
+\begin{lemma}\label{rh-centering}
+If $h\ge0$, $x-h\ge1$ and $|y-x|\le h$, then
+\[
+ |G(y)-G(x)|\le h(1+\log(x+h))^2.
+\]
+\end{lemma}
+
+\begin{proof}
+Away from integers,
+$G'(v)=\sum_{n\le v}\Lambda(n)/n-\log v+\gamma$.
+Use $\Lambda(n)\le\log n$, the bound
+$\sum_{n\le R}1/n\le1+\log R$, and $0<\gamma<1$.
+On the indicated interval the derivative has absolute value at most
+$(1+\log(x+h))^2$. The continuous function $G$ is piecewise
+differentiable, so integration over a length at most $h$ proves the claim.
+\end{proof}
+
+\begin{corollary}[The direct RH budget]
+\label{rh-direct-budget}
+Suppose $x\ge3$, $|a_t/b-x|\le1$, and the preceding hypotheses hold.
+Set
+\[
+ C_{q,\ell}=G_{\chi_\ell}+G_{\chi_q\chi_\ell}-G_{\chi_q},
+ \quad
+ E_{\rm thick}=4C_\psi\frac rb\frac{\overline a}{b},\quad
+ E_{\rm thin}=\frac{2f(2-d)}d\frac{\overline a}{b}\vartheta.
+\]
+Then
+\begin{equation}\label{rh-full-budget}
+ G(x)\le\frac{\overline E}{\kappa}
+     +\frac1{t_0}\sum_tC_{q,\ell}(a_t/b)
+     +E_{\rm thick}+E_{\rm thin}+(1+\log(x+1))^2.
+\end{equation}
+Alternatively retain the signed term $-J/\kappa$ in place of
+$E_{\rm thin}$ when a lower bound for $J$ is available.
+\end{corollary}
+
+\begin{proof}
+The identity $G=D_++C_{q,\ell}$, averaged over $a_t/b$, combines
+Theorem~\ref{rh-thick} with Lemma~\ref{rh-thin}.
+Lemma~\ref{rh-centering} moves only $G$ back to $x$.
+\end{proof}
+
+For example, the sufficient numerical conditions
+\[
+ 2f(x+1)\vartheta\le1/x,\qquad 6f(x+1)r\le b/x
+\]
+give
+$E_{\rm thin}\le(2-d)/(dx)$ and
+$E_{\rm thick}\le2C_\psi/(3fx)$.
+The thin error is at most $2x^{-1+\epsilon}$ if $d\ge x^{-\epsilon}$.
+These small errors do not bound $\overline E/\kappa$ or the signed
+quadratic companion; those are separate terms in \eqref{rh-full-budget}.
+
+A uniform input of the form
+$|G_\chi(y)|\le C\log(Q+3)y^{23/24}$, for the actual primitive
+conductors at most $Q$ and all $y\ge Y_0(Q)$, suffices for the thin
+samples once those samples are large enough. This includes the
+corrected conductor-one sum. For an allotted error $R_x>0$, it is
+enough that every thin argument exceed both $Y_0(Q)$ and
+\[
+ \max\left\{1,
+ \left[\frac{2Cf(2-d)(x+1)\log(Q+3)}{dR_x}\right]^{24}\right\}.
+\]
+Such a uniform input is treated, under the explicit uniform zero-free
+hypothesis, in the GRH manuscript \cite{rh-companion,rh-qrh}.
+It is not proved anew here. This observation relaxes the analytic
+requirements on the thin scale; it does not construct compatible
+geometric data at a newly chosen scale.

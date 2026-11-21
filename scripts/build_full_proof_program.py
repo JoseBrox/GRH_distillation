@@ -18,7 +18,8 @@ def sha(p):
 
 
 def main():
-    model_path = OUT / "full-proof-program.json"
+    model_path = OUT / "grh/program.json"
+    (OUT / "full-proof-program.json").write_bytes(model_path.read_bytes())
     endpoint_path = ROOT / "certificates/lean-endpoint-backbone.json"
     inventory_path = ROOT / "certificates/lean-source-inventory.json"
     model = json.loads(model_path.read_text())

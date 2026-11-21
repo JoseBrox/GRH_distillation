@@ -5,7 +5,8 @@
 This is a didactic account of the problem, the proof strategy, the completed
 reductions and the remaining arithmetic construction. It is organized by
 mathematical dependence. It is not a chronological report or a substitute
-for the detailed manuscript.
+for the separate [RH](../rh/main.pdf) and [Dirichlet GRH](../grh/main.pdf)
+manuscripts.
 
 The short one-sided analytic proof for zeta is included in full. The more
 flexible final target combines the arithmetic terms with their signs,
@@ -16,8 +17,9 @@ zeros.
 For RH, positivity and translation averaging handle the thick weights,
 and the uniform quasi-RH input controls the thin samples. Short integral
 sections reduce the geometric comparison to one weighted mean height.
-Summing the volume comparison first improves that mean. Two aggregate
-matrix energies replace separate estimates for every pair of maps. These
+Summing the volume comparison first improves that mean, and the tower
+calculation reduces to a single normalized test intersection. One upper
+bound for all periods together can control their centered energy. These
 reductions retain the same actual maps and normalizations; the compatible
 construction, genuine global energy and geometric bounds remain open.
 

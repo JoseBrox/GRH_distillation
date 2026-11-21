@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the reconstruction, short guide, or analytic companion.
+"""Build the RH manuscript, Dirichlet-GRH manuscript, guide, or companion.
 
 A normal TeX installation is used unchanged. If a Debian TeX tree is present
 but its generated filename database or format is missing, the fallback reads
@@ -19,8 +19,9 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-PAPER = ROOT / "paper"
-BUILD = ROOT / "build/paper"
+SHARED = ROOT / "paper"
+PAPER = SHARED / "grh"
+BUILD = ROOT / "build/grh"
 
 
 def run(command: list[str], cwd: Path, env: dict[str, str], log: Path) -> str:
@@ -96,20 +97,33 @@ def main() -> int:
     global PAPER, BUILD
     parser = argparse.ArgumentParser(description=__doc__)
     choice = parser.add_mutually_exclusive_group()
+    choice.add_argument("--rh", action="store_true", help="Build the ordinary-RH manuscript.")
+    choice.add_argument("--grh", action="store_true", help="Build the Dirichlet-GRH manuscript (default).")
     choice.add_argument("--companion", action="store_true", help="Build the retained analytic companion instead.")
     choice.add_argument("--guide", action="store_true", help="Build the short didactic guide instead (at most twelve pages).")
     args = parser.parse_args()
     engine = "pdflatex" if args.companion else "xelatex"
-    if args.companion:
+    route = "grh"
+    if args.rh:
+        route = "rh"
+        PAPER = SHARED / "rh"
+        BUILD = ROOT / "build/rh"
+    elif args.companion:
+        route = "companion"
         PAPER = ROOT / "paper/companion"
         BUILD = ROOT / "build/companion"
     elif args.guide:
+        route = "guide"
         PAPER = ROOT / "paper/guide"
         BUILD = ROOT / "build/guide"
     if not shutil.which(engine):
         raise RuntimeError("A TeX installation with " + engine + " is required.")
     BUILD.mkdir(parents=True, exist_ok=True)
     env = tex_environment(engine)
+    # Both manuscripts use the same technical library. TeX resolves each
+    # explicit sections/... or shared/... input from this root, while local
+    # entry files remain in their route directories.
+    env["TEXINPUTS"] = ".:" + str(SHARED) + ":" + env.get("TEXINPUTS", "")
     previous = state()
     for number in range(1, 6):
         run([engine, "-interaction=nonstopmode", "-halt-on-error", "-recorder",
@@ -127,13 +141,12 @@ def main() -> int:
             raise RuntimeError(problem)
     if "Overfull \\hbox" in log or "Overfull \\vbox" in log:
         raise RuntimeError(f"Overfull boxes remain; inspect {BUILD.relative_to(ROOT)}/main.log before delivery.")
-    page_count = None
+    import re
+    matches = re.findall(r"Output written on .*?\((\d+) pages?", log, flags=re.S)
+    if not matches:
+        raise RuntimeError("Could not verify the document's page count.")
+    page_count = int(matches[-1])
     if args.guide:
-        import re
-        matches = re.findall(r"Output written on .*?\((\d+) pages?", log, flags=re.S)
-        if not matches:
-            raise RuntimeError("Could not verify the short guide's page count.")
-        page_count = int(matches[-1])
         if page_count > 12:
             raise RuntimeError(f"The short guide has {page_count} pages; reorganize it to keep at most twelve.")
     output = PAPER / "main.pdf"
@@ -141,7 +154,7 @@ def main() -> int:
     sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
     inputs = sorted({(PAPER / line[6:]).resolve() for line in (BUILD / "main.fls").read_text().splitlines()
                      if line.startswith("INPUT ") and line.endswith(".tex")
-                     and (PAPER / line[6:]).resolve().is_relative_to(PAPER.resolve())})
+                     and (PAPER / line[6:]).resolve().is_relative_to(SHARED.resolve())})
     version = subprocess.run([engine, "--version"], text=True,
                              capture_output=True, check=True).stdout.splitlines()[0]
     certificate = {
@@ -149,17 +162,21 @@ def main() -> int:
         "claim": "The listed TeX sources produced this PDF with stabilized references and no overfull boxes.",
         "limits": "Compilation and layout checks are not mathematical proof verification.",
         "engine": version,
+        "route": route,
+        "page_count": page_count,
         "sources": [{"path": str(p.relative_to(ROOT)), "sha256": sha(p)} for p in inputs],
         "output": {"path": str(output.relative_to(ROOT)), "bytes": output.stat().st_size, "sha256": sha(output)},
     }
     if args.guide:
-        certificate["page_count"] = page_count
         certificate["editorial_page_limit"] = 12
-    destination = ROOT / ("certificates/guide-build.json" if args.guide else
-                          "certificates/companion-build.json" if args.companion else
-                          "certificates/paper-build.json")
+    destination = ROOT / f"certificates/{route}-build.json"
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(certificate, indent=2) + "\n")
+    if route == "grh":
+        # Keep existing public manuscript links and historical checker entry
+        # points usable; the two files are byte-identical, not separate texts.
+        shutil.copyfile(output, SHARED / "main.pdf")
+        (ROOT / "certificates/paper-build.json").write_text(json.dumps(certificate, indent=2) + "\n")
     print(f"Built {output.relative_to(ROOT)} ({output.stat().st_size:,} bytes).")
     print(f"Stabilized in {number} passes. Build record: {destination.relative_to(ROOT)}")
     return 0

@@ -1,0 +1,167 @@
+{
+  "title": "Ordinary RH: the shorter target and the remaining arithmetic",
+  "nodes": [
+    {
+      "id": "rh_classical",
+      "title": "Classical zeta properties",
+      "status": "cited",
+      "evidence": [
+        "paper/guide/main.tex"
+      ]
+    },
+    {
+      "id": "rh_qrh",
+      "title": "Uniform Dirichlet quasi-RH\nExplicit analytic input",
+      "status": "cited",
+      "evidence": [
+        "sources/README.md",
+        "paper/sections/recovered/11-qs-section.tex"
+      ]
+    },
+    {
+      "id": "rh_four",
+      "title": "Conductor-one specialization\nFour characters; automatic subset shares",
+      "status": "written",
+      "evidence": [
+        "notes/rh-specialization.md"
+      ]
+    },
+    {
+      "id": "rh_data",
+      "title": "Compatible maps and geometry\nOne test, section ranks and period bound",
+      "status": "open",
+      "evidence": [
+        "notes/geometric-degree-frontier.md",
+        "notes/averaged-theta-energy.md",
+        "notes/mean-volume-supplier.md",
+        "notes/rh-centered-frame-bridge.md",
+        "notes/tower-intersection-reduction.md",
+        "notes/centered-global-energy-reduction.md",
+        "paper/rh/sections/04-geometric-degree.tex",
+        "paper/rh/sections/05-theta-energy.tex"
+      ]
+    },
+    {
+      "id": "rh_transfer",
+      "title": "Positive-kernel thick/thin comparison\nNo weight symmetry needed",
+      "status": "written",
+      "evidence": [
+        "notes/rh-direct-transfer.md",
+        "paper/rh/sections/03-direct-transfer.tex"
+      ]
+    },
+    {
+      "id": "rh_companion",
+      "title": "Separate quadratic companion bound\nAn optional supplier under uniform QRH",
+      "status": "written",
+      "evidence": [
+        "qs-selection",
+        "notes/rh-direct-transfer.md"
+      ]
+    },
+    {
+      "id": "rh_bound",
+      "title": "Signed discrepancy and companion\nWeighted positive-part integral",
+      "status": "open",
+      "evidence": [
+        "rh-averaged-final",
+        "paper/rh/sections/06-compatible-budget.tex"
+      ]
+    },
+    {
+      "id": "rh_criterion",
+      "title": "Scale-averaged zeta criterion\nFixed local averaging preserves poles",
+      "status": "written",
+      "evidence": [
+        "thm:scale-averaged-criterion",
+        "notes/scale-averaged-criterion.md",
+        "paper/rh/sections/02-analytic-endpoint.tex"
+      ]
+    },
+    {
+      "id": "rh_goal",
+      "title": "Riemann hypothesis",
+      "status": "open",
+      "evidence": [
+        "notes/rh-specialization.md"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "rh_four",
+      "rh_data"
+    ],
+    [
+      "rh_four",
+      "rh_companion"
+    ],
+    [
+      "rh_qrh",
+      "rh_companion"
+    ],
+    [
+      "rh_data",
+      "rh_transfer"
+    ],
+    [
+      "rh_data",
+      "rh_bound"
+    ],
+    [
+      "rh_transfer",
+      "rh_bound"
+    ],
+    [
+      "rh_companion",
+      "rh_bound"
+    ],
+    [
+      "rh_bound",
+      "rh_criterion"
+    ],
+    [
+      "rh_classical",
+      "rh_criterion"
+    ],
+    [
+      "rh_criterion",
+      "rh_goal"
+    ],
+    [
+      "rh_qrh",
+      "rh_transfer"
+    ]
+  ],
+  "ranks": [
+    [
+      "rh_classical",
+      "rh_qrh",
+      "rh_four"
+    ],
+    [
+      "rh_data",
+      "rh_companion"
+    ],
+    [
+      "rh_transfer"
+    ],
+    [
+      "rh_bound"
+    ],
+    [
+      "rh_criterion"
+    ],
+    [
+      "rh_goal"
+    ]
+  ],
+  "layout": {
+    "nodesep": 0.35,
+    "ranksep": 0.55,
+    "ordered_ranks": true,
+    "max_nodes_per_rank": 3,
+    "wrap_columns": 34
+  },
+  "edge_semantics": "Curated mathematical interfaces. A separate companion bound is an optional supplier of the combined signed budget; uniform QRH also supplies the all-character thin estimate in the direct transfer. Green implications retain their stated inputs."
+}

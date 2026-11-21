@@ -1,0 +1,221 @@
+\section{One compatible arithmetic estimate}
+\label{rh-budget}
+
+The preceding results meet at the discrepancy $\overline E$ in
+\eqref{rh-balance}. It must be estimated by the geometric and
+integral maps that produce that identity. The same section weights,
+field embeddings, periods, ranks and finite levels must occur in
+every comparison. This section gives the final sufficient estimate
+without requiring each intermediate error to satisfy a separate
+worst-case bound.
+
+\subsection{Only weighted lower comparisons are needed}
+
+For each outer index $u$, let a finite nonempty set of maps have
+positive rank weights $r_{u,i}$, and write $\langle\cdot\rangle_u$
+for their rank-weighted mean. Let $\nu_{u,i}$ be quotient-source
+slopes, $\mu_{u,i}$ initial section slopes, $h_{u,i}$ map-height
+bounds, $e_{u,i}$ exponent terms, $D_{u,i}$ divisor terms and
+$l_{u,i}$ quotient losses. Write $c_u$ for the common target slope.
+The following lemma is a real-variable rearrangement, so all these
+quantities must be in the same normalization.
+
+\begin{lemma}[The combined lower comparison]\label{rh-lower-comparison}
+Suppose
+\[
+ \langle\nu-\mu+e+l\rangle_u\ge\Gamma_u+F_u,
+ \quad c_u+\langle h\rangle_u-F_u\le\langle D\rangle_u,
+\]
+\[
+ s_u=\langle\nu-h\rangle_u,\qquad s_u-c_u\le P_u.
+\]
+If $\overline E=\operatorname{avg}_u(A_u-\mathcal M_u)$, then
+\begin{equation}\label{rh-nonframe}
+ \overline E\le\mathcal B_0+\operatorname{avg}_uP_u,\qquad
+ \mathcal B_0=\operatorname{avg}_u
+ \{A_u-\Gamma_u+\langle D+e+l-\mu\rangle_u-\mathcal M_u\}.
+\end{equation}
+The outer average may use any fixed positive probability weights.
+\end{lemma}
+
+\begin{proof}
+The first two assumptions imply
+$s_u\ge\Gamma_u+c_u-\langle D+e+l-\mu\rangle_u$.
+Combine with $s_u-c_u\le P_u$, add $A_u-\mathcal M_u$, and average.
+\end{proof}
+
+For the arithmetic application, the outer weights are those of the
+same translation average as \eqref{rh-balance}. The quantity $P_u$
+may be the minimum of the valid slope bounds in
+Section~\ref{rh-energy}. A convention using squared-norm slopes
+causes no ambiguity: divide slopes and heights by two, apply the
+ordinary slope theorem, and multiply back. The displayed penalties
+are homogeneous of degree one in the slope spread and height gap.
+
+The nonlinear penalties should be averaged with their actual
+parameters. In particular, the retained fraction $n_u/D_u$, the
+mass $M_u$, the source spread $U_u$ and target gap $H_u$ need not
+be replaced by unrelated extrema. Perfect frame energies can make
+$P_u$ vanish, but do not remove $\mathcal B_0$. Its counting,
+divisibility, quotient and section-degree terms still need estimates.
+
+\subsection{A concrete scalar envelope}
+
+The following calculation makes the final exponent loss explicit.
+It is conditional on the arithmetic envelope itself. Retain the
+notation of Section~\ref{rh-transfer}, put $\tau=t_0/n$, and use
+$K>0$ for an auxiliary rank parameter, distinct from $\kappa$.
+
+\begin{proposition}[Four normalized terms]\label{rh-four-terms}
+Suppose $x\ge1$, $\epsilon>0$, $C\ge0$, $0\le a\le2xb$, and
+\[
+ \overline E\le x^{C\epsilon}
+ \left[t_0a(1+m^2/K)
+       +m\left(2nmbx^\epsilon+\frac{dKbx^{2\epsilon}}n\right)\right].
+\]
+Then
+\begin{equation}\label{rh-four-terms-bound}
+ \frac{\overline E}{\kappa}\le x^{C\epsilon}
+ \left[\frac{4x}{dm}+\frac{4xm}{dK}
+       +\frac{4mx^\epsilon}{d\tau}
+       +\frac{2Kx^{2\epsilon}}{\tau n^2}\right].
+\end{equation}
+If, in addition,
+\[
+ n\ge x^{2+8\epsilon},\quad
+ x^{1/2-\epsilon/16}\le m\le2x^{1/2-\epsilon/16},
+\]
+\[
+ x^{9/2+10\epsilon}\le K\le2x^{9/2+10\epsilon},\quad
+ \tau\ge\tfrac12x^{-\epsilon/8},\quad d\ge x^{-\epsilon},
+\]
+then
+\begin{equation}\label{rh-thirty-six}
+              \frac{\overline E}{\kappa}
+                   \le36x^{1/2+(C+33/16)\epsilon}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Divide by $\kappa=t_0mbd/2$ and use $t_0=\tau n$.
+The last term's density $d$ cancels. Before the common factor
+$x^{C\epsilon}$, the four terms are bounded respectively by
+\[
+ 4x^{1/2+17\epsilon/16},\quad
+ 8x^{-3-145\epsilon/16},\quad
+ 16x^{1/2+33\epsilon/16},\quad
+ 8x^{1/2-31\epsilon/8}.
+\]
+For $x\ge1$, their exponents are at most $1/2+33\epsilon/16$;
+their coefficients sum to $36$.
+\end{proof}
+
+The factor $36$ is harmless at the analytic endpoint. What must
+tend to zero is the exponent loss, including $C\epsilon$.
+If $C$ varies with the accuracy, that product must still tend to
+zero. A uniform finite constant during each large-scale limit is
+enough; it need not be absorbed into a further power of $x$.
+
+The numerical ranks are constrained by the construction. For example,
+the first and third terms of \eqref{rh-four-terms-bound} balance at
+$m=\sqrt{\tau x^{1-\epsilon}}$. If
+$\tau\le2x^{-\epsilon/8}$, this is at most
+$\sqrt2x^{1/2-9\epsilon/16}$, eventually below the displayed lower
+window for $m$. A formal minimization of the envelope alone therefore
+does not provide a permissible replacement family.
+
+\subsection{The final acceptance theorem}
+
+\begin{theorem}[A single signed budget suffices for RH]
+\label{rh-final}
+For each $j$, fix $\beta_j>1$, $h_j\ge0$ and
+$1/2<\theta_j<1$, with $\theta_j\to1/2$. Let
+$\mathcal Y_j\subset(1,\infty)$ be unbounded.
+Suppose the same arithmetic data give the hypotheses of
+Corollary~\ref{rh-direct-budget} and Lemma~\ref{rh-lower-comparison}
+for almost every $x\in[Y,e^{h_j}Y^{\beta_j}]$, for each
+$Y\in\mathcal Y_j$. At each such $x$ define
+\begin{equation}\label{rh-final-budget}
+ \begin{split}
+ \mathcal B_j(x)={}&
+ \frac{\mathcal B_0(x)+\operatorname{avg}_uP_u(x)}{\kappa(x)}
+ +\frac1{t_0(x)}\sum_tC_{q,\ell}(a_t/b)\\
+ &+E_{\rm thick}(x)+E_{\rm thin}(x)+(1+\log(x+1))^2.
+ \end{split}
+\end{equation}
+Assume $\mathcal B_j$ is measurable and locally integrable. If
+\[
+ \liminf_{\substack{Y\to\infty\\Y\in\mathcal Y_j}}
+ \frac{\log\left(1+\displaystyle\int_Y^{Y^{\beta_j}}
+    (\mathcal A_{h_j}\mathcal B_j(x))_+
+                       x^{-\theta_j}\,\frac{dx}{x}\right)}{\log Y}=0
+\]
+for every $j$, then RH holds. The signed $-J/\kappa$ may replace
+$E_{\rm thin}$ throughout when retained in the direct comparison.
+\end{theorem}
+
+\begin{proof}
+The two comparisons give $G\le\mathcal B_j$ on the expanded
+intervals. The positive averaging operator and the positive-part
+function preserve that inequality. Apply Corollary~\ref{rh-averaged}
+along the same unbounded sets of starting points.
+\end{proof}
+
+For a simpler sufficient version, take $h_j=0$ and establish a
+pointwise bound $\mathcal B_j(x)\le M_jx^{\theta_j}$ on the whole
+windows. Proposition~\ref{rh-four-terms} is one possible supplier
+for the discrepancy part, once its input envelope is proved.
+A compatible quadratic estimate
+\[
+ \frac1{t_0}\sum_tC_{q,\ell}(a_t/b)
+                           \le M_{c,j}x^{1/2+\delta_{c,j}}
+\]
+with $\delta_{c,j}\to0$ then leaves the explicit transfer and
+centering errors. Absolute estimates for the three quadratic sums
+are sufficient, but a bound for their signed combination is enough.
+All sample arguments must lie in the interval on which the chosen
+quadratic estimates hold, including the shifts of at most one.
+
+The uniform analytic inputs can also be kept smaller. Suppose a single
+$\vartheta_0<1$ is known such that every Dirichlet $L$-function is
+zero-free in $\Re s>\vartheta_0$, apart from the principal pole.
+For every real zero $\beta\in(0,1)$ of a primitive real character of
+conductor $q\ge3$, this immediately gives
+\[
+ (1-\beta)\log q\ge(1-\vartheta_0)\log3>0.
+\]
+Thus this particular uniform exclusion of zeros close to one requires
+no separate no-Siegel assumption on a route already using the common
+zero-free half-plane. It does not assert the absence of all real
+zeros in the strip, or replace the separate geometric estimates.
+
+The arithmetic characters, groups and lattices may vary with $x$.
+The analytic target throughout this RH manuscript remains the single
+fixed function $G$. By contrast, the accuracy-dependent interval
+exponent, averaging width and analytic exponent must remain fixed
+as the admissible windows tend to infinity.
+
+\subsection{The exact mathematical frontier}
+
+Three construction tasks remain. The first is a uniform lower bound
+for the actual normalized test intersection in
+Corollary~\ref{geo-tower-block-bound}, together with that corollary's
+other comparison hypotheses, the prescribed period and finite-valuation
+identifications, and the quantitative finite section-degree estimates.
+Section~\ref{rh-geometry} then converts that input into the needed
+degree contribution using one mean volume and short sections.
+
+The second is a positive normalization and a common-target identity
+for the actual integral theta maps, followed by bounds for their
+centered global energy and their arithmetic heights. The matrix
+identities in Section~\ref{rh-energy} specify sufficient quantities;
+they do not establish their size for those maps.
+
+The third is to assemble the remaining counting, divisibility,
+quotient, auxiliary-character and cohomological estimates with those
+same fields, levels and scales. Uniform quasi-RH and no-Siegel
+inputs can assist the auxiliary analytic and arithmetic estimates
+\cite{rh-qrh,rh-siegel}; a fixed zero-free boundary to the right of
+one half does not itself give the vanishing exponent loss in
+Theorem~\ref{rh-final}. The full signed budget, rather than a list
+of independently small errors, is the remaining sufficient target.

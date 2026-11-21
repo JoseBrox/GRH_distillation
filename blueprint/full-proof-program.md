@@ -54,6 +54,8 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Exact proportional rank expansion | proved loss-free slope comparison without spread or target-minimum assumptions when expansion holds for every source subspace; actual-rank threshold and counterexamples prevent an automatic application |
 | Actual-source centered substitution | verified same-map, squared-norm and rank dictionary; only the frame penalty is replaced, and all four current envelope shapes retain nonframe suppliers |
 | Exact mean-volume supplier and finite-prime allowance | proved reduction to one normalized tower-intersection mean plus the prescribed metric/counting bridge; finite-prime allowance improves from 120 to 80, and this fixed-data volume limit requires no uniform finite convergence threshold |
+| One normalized tower test and signed determinant translation | proved exact two-polynomial elimination with block contrast, factor N/p and remainder 8/(5fq); actual anchored weights are not trace zero, and the same-tower base-test inequality remains open |
+| One calibrated upper bound for all periods | proved Bessel-to-energy and joint-restriction estimates, plus a signed orbital block quadratic-form supplier; the actual arithmetic bound, diagonal control and compatible positive normalizers remain open |
 
 ## Work packages
 
@@ -226,7 +228,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Bound the aggregate diagonal and centered target energies, or a correlated scale integral of their frame cost. The source Bessel/common-basis bridge can be reused conditionally; global orbital estimates remain a stronger supplier.
+**Next concrete task.** Prove the calibrated joint period bound, equivalently the signed quadratic-form bound for the exact normalized orbital block expansion, or directly bound the aggregate diagonal and centered target energies. Retain actual lost mass, final diagonal error and normalizers after joint source/target cuts; a correlated scale integral of the final frame cost is also sufficient.
 
 **Acceptance conditions:**
 
@@ -238,6 +240,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Pairwise word inequalities and the large redundancy used by that supplier are not intrinsically required when the exact aggregate energies are supplied
 - A finite symmetry can leave multiplicity-space variance; the actual retained target and metric must be preserved
 - Use actual centered source and target energies; a common optimum normalization does not prove that those energies are small
+- A common-target upper operator bound is a sufficient energy supplier only at the actual mass scale; total mass alone is insufficient
+- Remove only the proved diagonal identity cells from the signed block expansion; geometric scalar-pair terminology is not a scalar endomorphism identity on the final target
+- Joint source/target restrictions must retain their actual lost mass and diagonal energy; a centered target bound alone does not make every source map isometric
 
 <a id="w09"></a>
 ### W09: Automorphic spectrum, finite-group characters and counting
@@ -269,7 +274,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Prove the normalized arithmetic intersection bound for the selected actual towers and modified weights, with the prescribed metric/counting bridge. Equal component volumes then give the required mean directly, with finite-prime allowance 80. The auxiliary volume limit needs no uniform finite convergence threshold. Supply the separate finite section-rank/surplus cost and retain the determinant, type-index and discarded-degree corrections.
+**Next concrete task.** Prove the single normalized Grassmannian base-test bound on the selected towers and the same-tower comparison in the prescribed metric. Exact elimination gives the all-weight intersection bound with block contrast, factor N/p and test remainder 8/(5fq). Equal component volumes then supply the mean with finite-prime allowance 80. Supply the separate finite section-rank/surplus cost and retain signed determinant, type-index and discarded-degree corrections.
 
 **Acceptance conditions:**
 
@@ -286,6 +291,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - A perfect final frame does not replace the intermediate component covolume; identify the same lattice before using a slope comparison
 - The fixed-data volume limit does not require a convergence threshold uniform in moving varieties; the normalized intersection bound and the separate finite section estimate still require their stated uniformity
 - Quasi-RH and no-Siegel estimates bound the arithmetic error parameter but do not supply the normalized tower-intersection inequality
+- The two scalar coefficients are eliminated only between the selected-weight polynomial and base test in the same tower, cutoff and metric
+- Anchored weights need not have zero total sum; central translation incurs the exact cutoff determinant height
+- The normalized base-test lower bound remains a geometric hypothesis; semipositivity does not fix a metric constant or establish it automatically
 
 <a id="w11"></a>
 ### W11: Weighted slope comparison and the complete average budget
@@ -326,9 +334,9 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W10: prove the selected normalized tower-intersection inequality with the prescribed norm/counting bridge, then the separate finite section-rank/surplus bound
+1. W10: prove the single normalized Grassmannian test bound with the same-tower comparison and prescribed metric, then the separate finite section-rank/surplus bound
 1. RH: bound the combined signed discrepancy in the weighted positive-part integral on the same expanded cofinal windows
-1. W06/W08: construct nonzero integral maps, exact positive normalizers and centered global energies on the same objects
+1. W06/W08: construct nonzero integral maps and exact positive normalizers, then prove the calibrated signed orbital quadratic-form bound or centered global energy estimate on those same maps
 1. W04: supply remaining integral cohomological estimates for the growing auxiliary fields
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.

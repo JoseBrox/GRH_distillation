@@ -1,0 +1,96 @@
+\section{The problem and the shorter route}
+\label{rh-purpose}
+
+The Riemann hypothesis asserts that every zero of the Riemann zeta
+function in the open strip $0<\Re s<1$ has real part $1/2$. This
+manuscript studies a shorter route to that assertion, within a broader
+reconstruction of Levent Alp\"oge's announced proof of the Riemann
+hypothesis for Dirichlet $L$-functions \cite{rh-alpoge,rh-companion}.
+The arithmetic construction that would complete the argument has not
+been supplied here. The purpose is to make its necessary output smaller
+and its mathematical dependencies explicit.
+
+There are three principal steps. First, an upper bound for one real
+prime sum excludes zeros to the right of the critical line. Second,
+positivity and finite character averaging bound that prime sum by a
+single arithmetic discrepancy, three auxiliary quadratic sums, and
+explicit errors. Third, geometric degree estimates and the energies of
+integral maps provide sufficient conditions for that discrepancy.
+The first step is complete. The second is a complete implication from
+the stated arithmetic identity and sampled estimates. The third contains
+proved comparison theorems, with substantial construction inputs still
+to be established on the same family.
+
+The distinction between a comparison theorem and its arithmetic input is
+essential. For example, proving that an isotropic family of matrices
+has good rank properties does not construct integral maps with those
+matrices, metrics and heights. Similarly, a bound for a logarithmic
+derivative does not establish a lower bound for an arithmetic
+intersection number. We retain those identifications as hypotheses
+where they enter.
+
+\subsection{A corrected prime sum}
+
+All logarithms are natural. Let $\Lambda(p^j)=\log p$ for a prime $p$
+and integer $j\ge1$, and let $\Lambda(n)=0$ otherwise. Write $\gamma$
+for Euler's constant. For $x\ge1$ set
+\begin{equation}\label{rh-G}
+ G(x)=\sum_{n\le x}\Lambda(n)(x/n-1)-x\log x+(1+\gamma)x.
+\end{equation}
+The summand vanishes when $x=n$, so $G$ is continuous. Its correction
+removes the pole of $\zeta$ at one from the Mellin transform. The
+one-sided target is
+\begin{equation}\label{rh-simple-target}
+ G(x)\le C_\epsilon x^{1/2+\epsilon}
+       \qquad(x\ge X_\epsilon),
+\end{equation}
+for every $\epsilon>0$, with finite constants depending on $\epsilon$.
+No corresponding lower bound is required.
+
+Auxiliary characters enter only in the arithmetic comparison. For a
+primitive nonprincipal Dirichlet character $\chi$, define
+\begin{equation}\label{rh-Gchi}
+ G_\chi(x)=\sum_{n\le x}\Lambda(n)\chi(n)(x/n-1)
+                   +x\frac{L'(1,\chi)}{L(1,\chi)},
+ \qquad G_1=G.
+\end{equation}
+The symbol $1$ means the character of conductor one. Principal
+characters written at larger moduli have different values at the
+removed primes and must not be substituted into this definition.
+Products of characters below are always replaced by their primitive
+inducing characters when $G_\chi$ is formed.
+
+We use the classical analytic continuation and functional equations
+of $\zeta$ and Dirichlet $L$-functions, the Euler product in $\Re s>1$,
+and $L(1,\chi)\ne0$ for nonprincipal $\chi$; see
+\cite{rh-dlmf-zeta,rh-dlmf-dirichlet}. In particular,
+$\zeta(s)=(s-1)^{-1}+\gamma+O(s-1)$ near one. These are background
+analytic inputs. The newer uniform zero-free estimates, when invoked,
+will be stated separately and will not be identified with RH.
+
+\subsection{The two useful acceptance conditions}
+
+The eventual condition \eqref{rh-simple-target} has a short proof and
+is the easiest endpoint to understand. For construction purposes, a
+weaker condition is useful. Put $z_+=\max(z,0)$ and, for fixed $h>0$,
+\[
+ \mathcal A_hF(x)=\frac1h\int_0^hF(xe^v)\,dv,
+ \qquad \mathcal A_0F=F.
+\]
+One may instead bound
+\[
+ \int_Y^{Y^\beta}(\mathcal A_hG(x))_+
+                          x^{-\theta}\,\frac{dx}{x}
+\]
+by a quantity smaller than every positive power of $Y$, on arbitrarily
+large intervals, for exponents $\theta$ tending to $1/2$.
+At each accuracy, $h\ge0$, $\beta>1$ and $\theta$ are fixed while the
+intervals move to infinity. This permits signed cancellation between
+nearby scales and between terms in the final arithmetic budget. The
+positive part is taken only after those signed terms are combined.
+
+Sections~\ref{rh-analytic} and \ref{rh-transfer} prove the analytic
+endpoint and the direct transfer. Sections~\ref{rh-geometry} and
+\ref{rh-energy} develop the smaller geometric and matrix conditions.
+Section~\ref{rh-budget} states the complete remaining target and shows
+how the quantifiers and parameter losses fit together.

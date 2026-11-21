@@ -1,0 +1,206 @@
+\section{A complete analytic endpoint}
+\label{rh-analytic}
+
+\subsection{The detecting transform}
+
+\begin{lemma}[Mellin transform of the corrected sum]
+\label{rh-mellin}
+For $\Re s>1$,
+\begin{equation}\label{rh-mellin-formula}
+ \int_1^\infty G(x)x^{-s-1}\,dx
+ =-\frac{\zeta'(s)/\zeta(s)}{s(s-1)}
+       -\frac1{(s-1)^2}+\frac{1+\gamma}{s-1}.
+\end{equation}
+The right side is holomorphic at $s=1$. At a zero $\rho$ of $\zeta$
+in the open critical strip, of multiplicity $m_\rho$, it has residue
+\begin{equation}\label{rh-zero-residue}
+                       -\frac{m_\rho}{\rho(\rho-1)}\ne0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $\Re s>1$,
+\[
+ \int_n^\infty(x/n-1)x^{-s-1}\,dx
+       =\frac{n^{-s}}{s(s-1)}.
+\]
+The series of absolute integrals converges, since
+$\sum_n\Lambda(n)n^{-\Re s}<\infty$. Termwise integration and the
+logarithmic derivative of the Euler product give the first term in
+\eqref{rh-mellin-formula}; integrating the two correcting functions
+gives the remaining terms. Write $z=s-1$. The expansion
+$\zeta'/\zeta=-z^{-1}+\gamma+O(z)$ shows that the first term is
+$z^{-2}-(1+\gamma)z^{-1}+O(1)$, proving removability at one.
+At a zero, $\zeta'/\zeta=m_\rho/(s-\rho)+O(1)$, which proves
+\eqref{rh-zero-residue}.
+\end{proof}
+
+The same calculation for a nonprincipal primitive character gives
+\begin{equation}\label{rh-dirichlet-mellin}
+ \int_1^\infty G_\chi(x)x^{-s-1}\,dx
+ =-\frac{L'(s,\chi)/L(s,\chi)}{s(s-1)}
+                 +\frac{L'(1,\chi)/L(1,\chi)}{s-1}.
+\end{equation}
+The pole at one again cancels. At a zero in the open strip its residue
+is \eqref{rh-zero-residue}, with the corresponding multiplicity.
+
+\subsection{Positivity at the real convergence boundary}
+
+\begin{lemma}[A positive Mellin integral]
+\label{rh-landau}
+Let $f\ge0$ be locally integrable on $[X,\infty)$, $X\ge1$, and
+suppose its Mellin integral converges at all sufficiently large real
+arguments. If that integral has a holomorphic continuation to a
+neighborhood of every real $s>\theta$, then its abscissa of
+convergence is at most $\theta$.
+\end{lemma}
+
+\begin{proof}
+The assertion is immediate if the abscissa is $-\infty$. Otherwise
+suppose it is a finite number $\sigma_c>\theta$. Holomorphy near
+$\sigma_c$ supplies a real $a>\sigma_c$ at which the continued
+function has a Taylor disc of radius $R>a-\sigma_c$.
+Differentiation of the integral at $a$ is justified by convergence at
+some smaller real argument still greater than $\sigma_c$; each fixed
+power of $\log x$ is absorbed by the resulting power of $x$.
+For $0<t<R$ the Taylor series is
+\[
+ F(a-t)=\sum_{k=0}^\infty\frac{t^k}{k!}
+              \int_X^\infty f(x)(\log x)^kx^{-a-1}\,dx.
+\]
+All terms are nonnegative. Tonelli's theorem identifies this convergent
+series with
+\[
+                         \int_X^\infty f(x)x^{-(a-t)-1}\,dx.
+\]
+Taking $a-\sigma_c<t<R$ contradicts the definition of $\sigma_c$.
+\end{proof}
+
+\begin{theorem}[An eventual one-sided criterion for RH]
+\label{rh-eventual}
+If \eqref{rh-simple-target} holds for every $\epsilon>0$, the
+Riemann hypothesis follows.
+\end{theorem}
+
+\begin{proof}
+Fix $\theta=1/2+\epsilon<1$ and set
+$f(x)=C_\epsilon x^\theta-G(x)$ for $x\ge X_\epsilon$.
+It is nonnegative. The elementary bound
+$|G(x)|\ll x(1+\log^2x)$ gives initial convergence of its Mellin
+integral. Formula~\eqref{rh-mellin-formula}, with an entire finite
+interval integral subtracted, continues that transform meromorphically.
+
+There is no real singularity above $\theta$. For $s>1$, the Euler
+product gives $\zeta(s)>0$. For $0<s<1$, the convergent alternating
+series
+\[
+ \eta(s)=\sum_{n\ge1}(-1)^{n-1}n^{-s}
+        =\sum_{k\ge1}\bigl((2k-1)^{-s}-(2k)^{-s}\bigr)>0
+\]
+satisfies $\zeta(s)=\eta(s)/(1-2^{1-s})<0$. At one the apparent
+singularity was removed in Lemma~\ref{rh-mellin}. The extra transform
+$C_\epsilon X_\epsilon^{\theta-s}/(s-\theta)$ has its only pole at
+$\theta$. Lemma~\ref{rh-landau} therefore gives convergence on
+$\Re s>\theta$.
+
+This nonnegative integral is holomorphic there: convergence at a
+slightly smaller real argument supplies locally uniform domination,
+also after differentiation. Its meromorphic continuation agrees with
+that holomorphic function by the identity theorem. A zero of $\zeta$
+in the strip with real part greater than $\theta$ would, however,
+produce the nonzero residue \eqref{rh-zero-residue}. This is impossible.
+Let $\epsilon$ tend to zero. The functional equation reflects a zero
+to the left of one half into a zero to the right, completing the proof.
+\end{proof}
+
+More generally, it is enough to have eventual estimates
+$G(x)\le M_jx^{1/2+\delta_j}$ with $\delta_j\downarrow0$ and finite
+$M_j$ depending on $j$. The multiplicative constants need not tend
+to one. For any desired $\epsilon>0$, choose $j$ with
+$\delta_j<\epsilon$ and increase the initial threshold if necessary.
+
+\subsection{A stronger criterion on arbitrarily large intervals}
+
+We use the following more general analytic theorem from the GRH
+manuscript \cite[section ``One-sided criteria for zeros'', proposition
+on positive majorants on long intervals]{rh-companion}. Its full
+proof is retained there; it is stated here as an imported theorem,
+separately from the short proof above.
+
+\begin{theorem}[A meromorphic transform and long intervals]
+\label{rh-window-input}
+Let $g:[0,\infty)\to\mathbb R$ be measurable with
+$|g(u)|\le C_0e^{2u}$ for all $u\ge0$ and some finite $C_0$.
+Suppose its Laplace transform has a meromorphic
+continuation to $\Re s>0$, with only simple poles, and every real pole
+in that half-plane has positive residue. Fix $0<\theta<1$ and $\beta>1$.
+Suppose that, for every $\eta>0$, there are arbitrarily large $U$
+and measurable nonnegative functions $R_U$ on $[U,\beta U]$ with
+\[
+ g(u)\le R_U(u)\quad\hbox{almost everywhere},\qquad
+ \int_U^{\beta U}R_U(u)e^{-\theta u}\,du\le e^{\eta U}.
+\]
+Then the transform has no pole in $\Re s>\theta$.
+\end{theorem}
+
+\begin{lemma}[Fixed averaging preserves detecting poles]
+\label{rh-averaging}
+For $g$ satisfying the hypotheses of Theorem~\ref{rh-window-input},
+let $g_h(u)=h^{-1}\int_0^hg(u+v)\,dv$ for $h>0$, and let $\Phi$
+be the Laplace transform of $g$. Then
+\[
+ \Phi_h(s)=\frac{e^{hs}-1}{hs}\Phi(s)-E_h(s),\qquad
+ E_h(s)=\frac1h\int_0^he^{sv}\int_0^vg(w)e^{-sw}\,dw\,dv.
+\]
+Here $E_h$ is entire. The multiplier has no zero in $\Re s>0$ and
+is positive for real $s>0$.
+\end{lemma}
+
+\begin{proof}
+Apply Fubini first where the Laplace integral converges absolutely,
+and substitute $w=u+v$. Both integrals defining $E_h$ are over compact
+intervals, proving entire dependence. The zeros of $e^{hs}-1$ lie
+on $\Re s=0$; its value divided by $hs$ at zero is interpreted as one.
+\end{proof}
+
+\begin{corollary}[A weighted positive-part criterion for RH]
+\label{rh-averaged}
+For each $j$, fix $\beta_j>1$, $h_j\ge0$ and
+$1/2<\theta_j<1$, with $\theta_j\to1/2$. If
+\begin{equation}\label{rh-average-target}
+ \liminf_{Y\to\infty}
+ \frac{\log\left(1+\displaystyle\int_Y^{Y^{\beta_j}}
+       (\mathcal A_{h_j}G(x))_+x^{-\theta_j}\,\frac{dx}{x}\right)}
+      {\log Y}=0
+\end{equation}
+for every $j$, then RH holds.
+\end{corollary}
+
+\begin{proof}
+Apply Theorem~\ref{rh-window-input} to $g(u)=G(e^u)$ after the fixed
+averaging of Lemma~\ref{rh-averaging}. Formula~\eqref{rh-mellin-formula}
+gives meromorphic continuation and simple poles; all real points in
+$\Re s>0$ are regular. The growth condition follows from the elementary
+bound for $G$. For each $\eta>0$, \eqref{rh-average-target} supplies
+arbitrarily large $U=\log Y$ with
+$R_U(u)=(\mathcal A_{h_j}G(e^u))_+$ satisfying the required integral
+bound. Every detecting pole is preserved. There are consequently no
+zeros to the right of $\theta_j$; now let $j\to\infty$.
+\end{proof}
+
+It suffices to replace $G$ in \eqref{rh-average-target} by a measurable,
+locally integrable upper bound $\mathcal B_j$. For each selected $Y$,
+that bound must hold almost everywhere on
+$[Y,e^{h_j}Y^{\beta_j}]$, so it covers every argument used by the
+local average. Positivity gives
+$(\mathcal A_{h_j}G)_+\le(\mathcal A_{h_j}\mathcal B_j)_+$.
+With $h_j=0$, a pointwise bound
+$G(x)\le M_jx^{\theta_j}$ on arbitrarily late whole intervals gives
+an integral at most $M_j(\beta_j-1)\log Y$ and is sufficient.
+
+A signed integral alone does not replace the positive part. For
+example, $g(u)=e^{\sigma u}\cos(\tau u)$, with $\theta<\sigma<1$ and
+$\tau\ne0$, has a Laplace-transform pole at $\sigma+i\tau$, yet its
+signed weighted integral can be negative on arbitrarily late intervals.
+It therefore cannot detect the required obstruction by an upper bound
+on that signed integral. The positive-part criterion retains it.

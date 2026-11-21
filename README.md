@@ -1,6 +1,6 @@
 # Distilling the Generalized Riemann Hypothesis
 
-**[Read the short guide](paper/guide/main.pdf)** · **[Main manuscript](paper/main.pdf)** · **[RH-only proof program](blueprint/rh-proof-program.md)** · **[Full GRH proof program](blueprint/full-proof-program.md)** · **[Visual proof map](blueprint/overview.svg)** · **[Complete source atlas](blueprint/lean-source-atlas.md)**
+**[Short guide](paper/guide/main.pdf)** · **[RH manuscript](paper/rh/main.pdf)** · **[Dirichlet GRH manuscript](paper/grh/main.pdf)** · **[RH program](blueprint/rh/program.md)** · **[GRH program](blueprint/grh/program.md)** · **[Visual proof map](blueprint/overview.svg)** · **[Source atlas](blueprint/lean-source-atlas.md)**
 
 We are developing a simpler, human-readable proof from Levent Alpöge's announced argument for the Riemann Hypothesis and the Generalized Riemann Hypothesis for Dirichlet characters. The aim is to understand the mathematics, replace long arguments by shorter ones where possible, and give complete definitions and proofs in ordinary mathematical language.
 
@@ -19,6 +19,12 @@ The goal is a **complete and substantially shorter proof in ordinary mathematics
 
 **The human-readable proof is not yet complete.** Several substantial reductions and local arguments are written, but the decisive uniform arithmetic–geometric estimate needed to conclude RH and Dirichlet GRH remains to be established. The manuscripts distinguish proved implications, explicitly cited classical theorems, conditional arguments and outstanding obligations.
 
+## Two concurrent routes
+
+The [ordinary RH manuscript](paper/rh/main.pdf) concentrates on the zeta function and its four-character arithmetic comparison. The [Dirichlet GRH manuscript](paper/grh/main.pdf) treats the general character and conductor. They have separate manuscripts and proof programs, while sharing the geometric, integral and analytic results that apply to both. An improvement in either route is checked in the other with its precise hypotheses.
+
+The [progress table](blueprint/progress.md) gives finished nodes over total nodes for each proof map. A finished conditional implication can still require an open arithmetic input. These counts therefore describe the proof program, not a percentage of RH or GRH proved.
+
 ## How we are simplifying the proof
 
 Our approach combines a global analysis of the argument with improvements to individual mathematical steps:
@@ -26,7 +32,7 @@ Our approach combines a global analysis of the argument with improvements to ind
 1. **Reconstruct the dependency structure.** We identify theorems and hypotheses that actually feed the final nonvanishing statement, separate alternative constructions from essential interfaces, and track the compatibility of objects used by different parts of the proof. The [full proof program](blueprint/full-proof-program.md) gives this dependency-based plan.
 2. **Seek simpler mathematical replacements.** We try direct arguments, better inequalities, positivity, averaging, algebraic reductions and suitable published theorems in place of longer constructions. Each replacement must imply the precise result needed later, with all exceptional cases, constants and parameter ranges accounted for.
 3. **Remove unnecessarily strong requirements.** We ask whether the final conclusion needs a pointwise estimate or only an average; a global bound or a bound on selected intervals; a whole family of objects or just one compatible choice at each scale. Weakening an intermediate requirement is useful only when the new condition still suffices for the final theorem.
-4. **Rebuild the proof for human readers.** The [main manuscript](paper/main.pdf) is arranged by mathematical ideas rather than the order of the Lean files. It contains definitions, statements and proofs, while the [short guide](paper/guide/main.pdf) gives a compact explanation of the main mechanism.
+4. **Rebuild the proof for human readers.** The [main manuscript](paper/grh/main.pdf) is arranged by mathematical ideas rather than the order of the Lean files. It contains definitions, statements and proofs, while the [short guide](paper/guide/main.pdf) gives a compact explanation of the main mechanism.
 5. **Audit every substitution.** We check source statements, dependency maps, formal and numerical evidence, and the exact hypotheses of imported results. An argument verified for a fixed finite construction is not silently extended to a family whose size grows.
 
 At the pinned source revision, the [Lean source atlas](blueprint/lean-source-atlas.md) indexes **175,187 local Lean files** and their imports. That map is a tool for navigating the formal development; import reachability is not, by itself, a proof-term dependency audit or an independent kernel check.
@@ -54,7 +60,7 @@ The main proof strategy has three connected stages:
 
 Several improvements make the third stage more economical. Positivity permits comparisons before character averaging; controlling an **average arithmetic discrepancy** can replace separate estimates for every translation. Exact covolume identities keep track of the contribution of discarded subspaces and integral indices. At the analytic endpoint, it is sufficient for the **total exponent loss to tend to zero**: the auxiliary construction and its constants may depend on the required accuracy, subject to the quantifiers proved in the manuscript.
 
-The final estimate may also be averaged over scale. A fixed local average preserves the zeros detected by the analytic argument, so signed arithmetic contributions can be combined before their positive part is bounded. On the geometric side, short integral sections remove a separate lower-height requirement. For the analytic norms, two exact energies of the same maps can replace many separate pairwise estimates. The remaining task is to prove the required bounds for those geometric quantities and energies.
+The final estimate may also be averaged over scale. A fixed local average preserves the zeros detected by the analytic argument, so signed arithmetic contributions can be combined before their positive part is bounded. On the geometric side, short integral sections remove a separate lower-height requirement, and one test intersection can supply the weight-dependent estimate. For the analytic norms, one upper bound for all periods together can replace many separate pairwise estimates. These bounds must still be proved for the actual geometric objects and maps.
 
 These are genuine reductions of what must be shown, **not proofs that the required arithmetic and geometric estimates hold**. The [technical proof map](blueprint/technical.svg) distinguishes established reductions, imported inputs and open obligations.
 
@@ -72,14 +78,15 @@ Fixed-rank identities and independently valid estimates for unrelated objects do
 
 For ordinary **RH**, only the zeta prime sum is needed. The conductor-one specialization simplifies the character projection to four terms, and the preferred positive-kernel comparison avoids imposing an artificial symmetry on the auxiliary weights. The quasi-RH estimates can be applied at the larger scales of the complementary terms, subject to their exact hypotheses.
 
-A one-sided upper **or** lower estimate for the corrected zeta prime sum, with exponent arbitrarily close to one half, would suffice for RH. The [RH proof program](blueprint/rh-proof-program.md) and [direct comparison](notes/rh-direct-transfer.md) isolate the remaining averaged arithmetic and geometric estimates. They do **not** yet constitute a complete proof of RH.
+A one-sided upper **or** lower estimate for the corrected zeta prime sum, with exponent arbitrarily close to one half, would suffice for RH. The [RH proof program](blueprint/rh/program.md) and [direct comparison](notes/rh-direct-transfer.md) isolate the remaining averaged arithmetic and geometric estimates. They do **not** yet constitute a complete proof of RH.
 
 ## Where to read the mathematics
 
 | Resource | What it contains |
 | --- | --- |
 | [Short guide (PDF)](paper/guide/main.pdf) and [TeX](paper/guide/main.tex) | A didactic overview of the problem, the analytic criterion, the proof strategy and the RH specialization. |
-| [Main manuscript (PDF)](paper/main.pdf) and [TeX](paper/main.tex) | Detailed definitions, reductions, arithmetic and geometric arguments, conditional dependencies and alternatives. |
+| [RH manuscript (PDF)](paper/rh/main.pdf) and [TeX](paper/rh/main.tex) | The zeta criterion, positive-kernel comparison and precise remaining arithmetic requirements for ordinary RH. |
+| [Dirichlet GRH manuscript (PDF)](paper/grh/main.pdf) and [TeX](paper/grh/main.tex) | Detailed definitions, reductions, arithmetic and geometric arguments, conditional dependencies and alternatives. |
 | [Full proof program](blueprint/full-proof-program.md) | The source-wide logical requirements and the smaller sufficient targets. |
 | [Module atlas](blueprint/module-inventory.md) and [proof diagrams](blueprint/README.md) | The 98-module mathematical organization, preferred route, alternatives and dependency interfaces. |
 | [Analytic companion (PDF)](paper/companion/main.pdf) | Independent analytic reductions and rigorous checks of proposed shortcuts. |

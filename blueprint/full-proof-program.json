@@ -250,7 +250,7 @@
         "r69",
         "r70"
       ],
-      "next_step": "Bound the aggregate diagonal and centered target energies, or a correlated scale integral of their frame cost. The source Bessel/common-basis bridge can be reused conditionally; global orbital estimates remain a stronger supplier.",
+      "next_step": "Prove the calibrated joint period bound, equivalently the signed quadratic-form bound for the exact normalized orbital block expansion, or directly bound the aggregate diagonal and centered target energies. Retain actual lost mass, final diagonal error and normalizers after joint source/target cuts; a correlated scale integral of the final frame cost is also sufficient.",
       "acceptance": [
         "Local positivity alone does not prove the global identity",
         "Unique nonzero scalar with the exact normalization",
@@ -259,7 +259,10 @@
         "Total kernel mass does not control its centered variance",
         "Pairwise word inequalities and the large redundancy used by that supplier are not intrinsically required when the exact aggregate energies are supplied",
         "A finite symmetry can leave multiplicity-space variance; the actual retained target and metric must be preserved",
-        "Use actual centered source and target energies; a common optimum normalization does not prove that those energies are small"
+        "Use actual centered source and target energies; a common optimum normalization does not prove that those energies are small",
+        "A common-target upper operator bound is a sufficient energy supplier only at the actual mass scale; total mass alone is insufficient",
+        "Remove only the proved diagonal identity cells from the signed block expansion; geometric scalar-pair terminology is not a scalar endomorphism identity on the final target",
+        "Joint source/target restrictions must retain their actual lost mass and diagonal energy; a centered target bound alone does not make every source map isometric"
       ]
     },
     {
@@ -302,7 +305,7 @@
       "manuscript_sections": [
         "r10"
       ],
-      "next_step": "Prove the normalized arithmetic intersection bound for the selected actual towers and modified weights, with the prescribed metric/counting bridge. Equal component volumes then give the required mean directly, with finite-prime allowance 80. The auxiliary volume limit needs no uniform finite convergence threshold. Supply the separate finite section-rank/surplus cost and retain the determinant, type-index and discarded-degree corrections.",
+      "next_step": "Prove the single normalized Grassmannian base-test bound on the selected towers and the same-tower comparison in the prescribed metric. Exact elimination gives the all-weight intersection bound with block contrast, factor N/p and test remainder 8/(5fq). Equal component volumes then supply the mean with finite-prime allowance 80. Supply the separate finite section-rank/surplus cost and retain signed determinant, type-index and discarded-degree corrections.",
       "acceptance": [
         "Actual geometric lattices identified with the construction",
         "Degree, metric and self-intersection normalizations retained",
@@ -316,7 +319,10 @@
         "The raw signed cost contains no heights, but still needs an actual rank/surplus bound; apply the flat twist once after the untwisted section estimate",
         "A perfect final frame does not replace the intermediate component covolume; identify the same lattice before using a slope comparison",
         "The fixed-data volume limit does not require a convergence threshold uniform in moving varieties; the normalized intersection bound and the separate finite section estimate still require their stated uniformity",
-        "Quasi-RH and no-Siegel estimates bound the arithmetic error parameter but do not supply the normalized tower-intersection inequality"
+        "Quasi-RH and no-Siegel estimates bound the arithmetic error parameter but do not supply the normalized tower-intersection inequality",
+        "The two scalar coefficients are eliminated only between the selected-weight polynomial and base test in the same tower, cutoff and metric",
+        "Anchored weights need not have zero total sum; central translation incurs the exact cutoff determinant height",
+        "The normalized base-test lower bound remains a geometric hypothesis; semipositivity does not fix a metric constant or establish it automatically"
       ]
     },
     {
@@ -717,6 +723,14 @@
     {
       "name": "Exact mean-volume supplier and finite-prime allowance",
       "status": "proved reduction to one normalized tower-intersection mean plus the prescribed metric/counting bridge; finite-prime allowance improves from 120 to 80, and this fixed-data volume limit requires no uniform finite convergence threshold"
+    },
+    {
+      "name": "One normalized tower test and signed determinant translation",
+      "status": "proved exact two-polynomial elimination with block contrast, factor N/p and remainder 8/(5fq); actual anchored weights are not trace zero, and the same-tower base-test inequality remains open"
+    },
+    {
+      "name": "One calibrated upper bound for all periods",
+      "status": "proved Bessel-to-energy and joint-restriction estimates, plus a signed orbital block quadratic-form supplier; the actual arithmetic bound, diagonal control and compatible positive normalizers remain open"
     }
   ],
   "reading_order": [
@@ -733,9 +747,9 @@
     "W10"
   ],
   "recommended_next": [
-    "W10: prove the selected normalized tower-intersection inequality with the prescribed norm/counting bridge, then the separate finite section-rank/surplus bound",
+    "W10: prove the single normalized Grassmannian test bound with the same-tower comparison and prescribed metric, then the separate finite section-rank/surplus bound",
     "RH: bound the combined signed discrepancy in the weighted positive-part integral on the same expanded cofinal windows",
-    "W06/W08: construct nonzero integral maps, exact positive normalizers and centered global energies on the same objects",
+    "W06/W08: construct nonzero integral maps and exact positive normalizers, then prove the calibrated signed orbital quadratic-form bound or centered global energy estimate on those same maps",
     "W04: supply remaining integral cohomological estimates for the growing auxiliary fields"
   ],
   "evidence": [
@@ -767,6 +781,8 @@
     "notes/project-assessment.md",
     "notes/frame-degree-compatibility.md",
     "notes/rh-centered-frame-bridge.md",
-    "notes/mean-volume-supplier.md"
+    "notes/mean-volume-supplier.md",
+    "notes/tower-intersection-reduction.md",
+    "notes/centered-global-energy-reduction.md"
   ]
 }

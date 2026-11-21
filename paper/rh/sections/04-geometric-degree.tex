@@ -1,0 +1,246 @@
+\section{One mean volume and the degree of short sections}
+\label{rh-geometry}
+
+The geometric task is to give lower bounds for the degrees of the
+actual section lattices used by the arithmetic maps. Three reductions
+are useful: average the normalized intersection numbers before
+estimating them, preserve the component-degree weights, and use the
+existing short sections to control negative degree. These are
+comparison statements; their geometric hypotheses are retained.
+
+Arithmetic degrees in this section are divided by the degree of the
+ground number field. For a nonzero Hermitian lattice $E$, its ordinary
+slope is $\mu(E)=\widehat{\deg}(E)/\rank E$. A convention using logarithms
+of squared norms gives slope $2\mu(E)$. We use ordinary slopes and
+state every factor accordingly.
+
+\subsection{The exact mean-volume input}
+
+Fix a finite nonempty actual family of components $Z$, each with the prescribed
+period-normalized metric and integral conditions. Let $V_Z(t)$ be
+its normalized asymptotic count volume of sections whose norm in
+power $k$ is at most $e^{kt}$. A real number $s_Z$ is an admissible
+lower volume slope if
+\begin{equation}\label{rh-volume-slope}
+ V_Z(t)\ge\max\{\delta_Z(s_Z+t),0\}\quad(t\in\mathbb R),
+ \qquad \delta_Z>0.
+\end{equation}
+The required mean estimate has the form
+$|\mathcal Z|^{-1}\sum_Zs_Z\ge-X$, with an explicit $X\ge0$.
+An estimate for each separate component is stronger than necessary.
+
+\begin{lemma}[A finite-prime allowance]\label{rh-prime-cost}
+Let $E$ be a number field of degree $n_E$, absolute discriminant
+$\Delta_E$, and root discriminant $r_E=\Delta_E^{1/n_E}$.
+Let $Q$ be the prime divisors of $2\Delta_EM'$ for a positive
+integer $M'$. Suppose $B\ge128$ and $|Q|\le\lfloor B\rfloor$.
+With $S=\{p\text{ prime}:p\le B\}\cup Q$, put
+\[
+ c_2=\sum_{p\in S}\left(\frac1{p-1}
+       +\frac{40v_p(\Delta_E)}{n_E}+\mathbf1_{p=2}\right)\log p.
+\]
+Then $0\le c_2\le(59/7)\log B+40\log r_E
+\le40(\log B+\log r_E)$.
+\end{lemma}
+
+\begin{proof}
+The discriminant and the prime two contribute exactly
+$40\log r_E+\log2$. Partial summation and \eqref{rh-chebyshev} give
+\[
+ \sum_{p\le B}\frac{\log p}{p-1}
+ \le2\sum_{m\le B}\frac{\Lambda(m)}m
+ \le8\log2(1+\log B).
+\]
+The decreasing function $\log t/(t-1)$ bounds the remaining primes
+of $Q$ by $B\log B/(B-1)\le(8/7)\log B$.
+Since $\log B\ge7\log2$ and $\log2<3/4$, the total
+nondiscriminant contribution is at most
+$(6+9/7+8/7)\log B=(59/7)\log B$.
+Finally $r_E\ge1$ and $59/7<40$.
+\end{proof}
+
+\begin{proposition}[From total intersection to mean volume]
+\label{rh-intersection-mean}
+Suppose the components have equal positive volumes $v_Z$, and put
+$v_T=\sum_Zv_Z$. Let $D>0$, $d\ge0$, and let $I_Z$ be their actual
+arithmetic intersection numbers. For nonnegative $L,W,q$ and real
+$\lambda$, set
+\[
+ \mathcal E=(\log B+\log r_E+|\lambda|)L+qW.
+\]
+Assume, for $C_T\ge0$,
+\[
+ \sum_ZI_Z\ge-C_T(d+1)v_TD\mathcal E,
+\]
+and assume the prescribed section-counting comparison makes
+$s_Z=I_Z/((d+1)v_ZD)-2c_2L$ admissible in
+\eqref{rh-volume-slope}. Under Lemma~\ref{rh-prime-cost},
+\begin{equation}\label{rh-intersection-result}
+                  \frac1{|\mathcal Z|}\sum_Zs_Z
+                         \ge-(C_T+80)\mathcal E.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Equal volumes give the exact identity
+\[
+ \frac1{|\mathcal Z|}\sum_Z\frac{I_Z}{(d+1)v_ZD}
+                  =\frac{\sum_ZI_Z}{(d+1)v_TD}.
+\]
+Its denominator is positive. Divide the assumed inequality and use
+$2c_2L\le80(\log B+\log r_E)L\le80\mathcal E$.
+\end{proof}
+
+In the intended application, $L$ is the sum of the absolute values
+of a weight, $W$ is its total spread, and $\lambda$ is the specified
+logarithmic derivative at one. The actual period factor in the norm
+of weight $u$ is $(2\pi\xi)^{-\frac12\sum u}$ for a prescribed
+$\xi>0$. At the finite primes in $S$ the lattice uses its specified
+Hodge--Tate valuations, and elsewhere its original integral valuations.
+The proposition does not supply the comparison for an arbitrary
+replacement of these norms or lattices.
+
+This normalization is essential. Multiplying the norm in power $k$
+by $e^{kc}$ changes $V_Z(t)$ to $V_Z(t-c)$ and every admissible
+lower volume slope by $-c$, while leaving the field and its
+$L$-function unchanged. A bound for $\lambda$ alone cannot prevent
+that change. The uniform arithmetic intersection bound is a separate
+geometric input.
+
+The asymptotic comparison fixes each datum before taking the section
+power to infinity. A fixed shift of that power and fixed finite
+constants disappear in the normalized limit. When the volume uses
+powers divisible by eight, the shift must also be divisible by eight.
+No uniform convergence threshold is needed for this fixed-data limit.
+An estimate at a prescribed finite section power remains a different
+quantitative requirement.
+
+The next comparison sharpens the intersection input itself. Under its
+displayed polynomial and metric hypotheses, a single normalized test
+intersection controls the weight-dependent lower bound. The test and
+the chosen weight must use the same coefficients and prescribed metric.
+
+\input{shared/tower-intersection}
+
+\subsection{Keep the component degrees when averaging}
+
+\begin{lemma}[Cancellation of the degree weights]
+\label{rh-degree-weights}
+Let $0\le\rho<1$, $\delta_*>0$, and
+$\delta_*\le\delta_Z\le\delta_* /(1-\rho)$.
+Put $w_Z=B_0\delta_Z$ with $B_0>0$, $W_0=\sum_Zw_Z$, and
+$N=|\mathcal Z|$. Suppose $c,\gamma\ge0$ and
+\[
+ \delta_*(s_Z+c)\le\delta_Z(h_Z+c+\gamma).
+\]
+With $q_0=NB_0\delta_*/W_0$, $\bar s=N^{-1}\sum_Zs_Z$ and
+$M=W_0^{-1}\sum_Zw_Zh_Z$, one has
+\begin{equation}\label{rh-degree-weights-result}
+ 1-\rho\le q_0\le1,\qquad
+ M\ge q_0\bar s-(1-q_0)c-\gamma.
+\end{equation}
+Thus $\bar s\ge-X$ gives $M\ge-H$, where
+$H=q_0X+(1-q_0)c+\gamma\le X+\rho c+\gamma$.
+\end{lemma}
+
+\begin{proof}
+The degree inequalities give the bounds on $q_0$. Multiply the
+component comparison by $B_0$, sum it, and divide by $W_0$.
+\end{proof}
+
+The degree at the smaller weight is the common $\delta_*$. The
+image degrees $\delta_Z$ may vary. Summing before discarding them
+therefore retains the geometric averaging measure exactly.
+
+\subsection{Short sections replace a negative-height moment}
+
+\begin{proposition}[A degree bound from one mean height]
+\label{rh-short-sections}
+Let $E_Z$ be nonzero Hermitian lattices, with ranks $r_Z$ and
+normalized degrees $d_Z$. Suppose integral vectors of norm at most
+$e^L$ at every embedding span each lattice over the field, where
+$L\ge0$. Let $0<w_Z\le r_Z$ and suppose
+\[
+ d_Z\ge w_Z\{t h_Z-a|h_Z|-A\log(2+|h_Z|)-R_0\},
+ \quad a,R_0\ge0,\quad A>0,\quad t\ge a+1.
+\]
+Put $W_0=\sum_Zw_Z$, $R=\sum_Zr_Z$, $\vartheta=W_0/R$,
+$M=W_0^{-1}\sum_Zw_Zh_Z$, and
+$\lambda=t-a-1$, $b_0=t+a$, $K_0=\max(2,A)$. Then
+\begin{equation}\label{rh-one-mean-exact}
+ \frac{\sum_Zd_Z}{R}
+ \ge\lambda\vartheta M-\frac{2a+1}{b_0}L-\vartheta R_0
+       -\vartheta A\log\!\left(K_0+\frac{L}{b_0\vartheta}\right).
+\end{equation}
+In particular, $M\ge-H$ with $H\ge0$ implies
+\begin{equation}\label{rh-one-mean-bound}
+ \frac{\sum_Zd_Z}{R}
+ \ge-\lambda\vartheta H-\vartheta\{R_0+A\log\max(A,1)\}
+       -2\log2-\frac{2a+2}{t+a}L.
+\end{equation}
+The term $2\log2$ is unnecessary when $A\ge2$.
+\end{proposition}
+
+\begin{proof}
+Choose a field basis among the short integral vectors. The determinant
+norm inequality, including the nonnegative integral-index contribution,
+gives $d_Z\ge-r_ZL$.
+For one component put $P=r_ZL/w_Z$. If $h_Z=-y\le0$ and
+$y\le P/b_0$, its assumed degree bound yields
+\[
+ d_Z/w_Z\ge-\lambda y-\frac{2a+1}{b_0}P
+                           -R_0-A\log(K_0+P/b_0).
+\]
+If $y\ge P/b_0$, the same conclusion follows from $d_Z/w_Z\ge-P$,
+since $b_0-\lambda=2a+1$. For $h_Z\ge0$, use
+$A\log(2+h_Z)\le h_Z+A\log K_0$. Thus in every case
+\[
+ d_Z/w_Z\ge\lambda h_Z-\frac{2a+1}{b_0}P
+                           -R_0-A\log(K_0+P/b_0).
+\]
+The weighted mean of $P$ is $L/\vartheta$; concavity of the logarithm
+proves \eqref{rh-one-mean-exact}. Finally,
+\[
+ \vartheta A\log\!\left(K_0+\frac{L}{b_0\vartheta}\right)
+ \le\vartheta A\log K_0+L/b_0,
+ \quad A\log K_0\le A\log\max(A,1)+2\log2.
+\]
+This proves \eqref{rh-one-mean-bound}, also when $L=0$ or $\lambda=0$.
+\end{proof}
+
+Only the weighted mean $M$ is needed. The short sections already give
+the independent lower degree bound used on components of large negative
+height. Without that bound a mean alone is insufficient: equal weights
+at heights $H$ and $-H$ keep the mean zero while the logarithmic and
+absolute-value losses grow without bound. Short sections must belong
+to these same component lattices, with these metrics.
+
+\subsection{Descent preserves the actual rank ratio}
+
+\begin{lemma}[Determinant descent]\label{rh-descent}
+Let $E,F$ be nonzero Hermitian lattices and let $n\ge1$ be an integer.
+Suppose an integral injection $E\to F^{\oplus n}$ has operator norm
+at most $e^\beta$ at every embedding. Suppose $F$ is spanned by
+integral vectors of norm at most $e^\Lambda$ at every embedding.
+With $a=\rank E$, $b=\rank F$ and $\tau=a/(nb)$,
+\[
+                  \mu(F)\ge\tau\{\mu(E)-\beta\}
+                                      -(1-\tau)\Lambda.
+\]
+\end{lemma}
+
+\begin{proof}
+Saturate the image. Its degree is at least
+$\widehat{\deg}(E)-a\beta$ by the determinant norm inequality.
+The quotient has rank $nb-a$ and is spanned by the images of the
+short vectors, so its degree is at least $-(nb-a)\Lambda$.
+Add the degrees and divide by $nb$.
+\end{proof}
+
+A signed section-degree error is multiplied by its actual ratio
+$\tau$ in this formula. Replacing it prematurely by an absolute
+value can increase the coefficient unnecessarily. Flat twists likewise
+enter once, through their actual rank-weighted degree costs. The
+contribution of this section to the final arithmetic budget still
+requires a compatible mean-volume theorem, quantitative section-degree
+bound, short spanning sections, and the stated integral descent maps.

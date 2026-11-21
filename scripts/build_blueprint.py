@@ -30,6 +30,27 @@ def title_plain(value: str) -> str:
     return value.replace("\\", "").replace("{", "").replace("}", "").replace("$", "")
 
 
+def module_text(path: Path, active=None):
+    """Read a chapter and any common proof fragments it actually includes."""
+    active = set() if active is None else active
+    path = path.resolve()
+    assert path.is_relative_to(ROOT / "paper") and path not in active
+    active.add(path)
+    raw = path.read_text()
+    files = {str(path.relative_to(ROOT)): hashlib.sha256(raw.encode()).hexdigest()}
+    def include(match):
+        name = match[1] + ("" if Path(match[1]).suffix else ".tex")
+        child = ROOT / "paper" / name
+        if not child.exists():
+            child = path.parent / name
+        text, dependencies = module_text(child, active)
+        files.update(dependencies)
+        return text
+    text = re.sub(r"\\input\{([^{}]+)\}", include, raw)
+    active.remove(path)
+    return text, files
+
+
 def graph_header(title: str, *, size: float = 12) -> list[str]:
     return ["digraph proof {",
             'graph [rankdir=TB, bgcolor="white", pad="0.24", nodesep="0.30", ranksep="0.48",',
@@ -90,15 +111,28 @@ def main() -> None:
     OUT.mkdir(exist_ok=True)
     BUILD.mkdir(parents=True, exist_ok=True)
     model = json.loads(MODEL.read_text())
+    # Route files are the editable mathematical maps. The aggregate model
+    # and old public diagrams remain synchronized compatibility views.
+    for name, route in [("technical", "grh"), ("rh", "rh")]:
+        path = OUT / route / "map.json"
+        if path.exists():
+            model[name] = json.loads(path.read_text())
+    MODEL.write_text(json.dumps(model, indent=2, ensure_ascii=False) + "\n")
     allocation = json.loads(ALLOCATION.read_text())
     colors = model["statuses"]
     interface_names = ["overview", "technical"] + (["rh"] if "rh" in model else [])
     for name in interface_names:
         render(name, interface_graph(model[name], colors))
+    for name, route in [("technical", "grh"), ("rh", "rh")]:
+        directory = OUT / route
+        directory.mkdir(exist_ok=True)
+        for suffix in [".dot", ".svg"]:
+            (directory / ("proof" + suffix)).write_bytes((OUT / (name + suffix)).read_bytes())
 
     modules = [dict(n) for n in allocation["nodes"]]
     known = {n["path"] for n in modules}
-    main_tex = (ROOT / "paper/main.tex").read_text()
+    manuscript = ROOT / "paper/grh/main.tex"
+    main_tex = manuscript.read_text()
     input_matches = list(re.finditer(r"\\input\{(sections/[^}]+)\}", main_tex))
     actual = {"paper/" + m[1] + ".tex" for m in input_matches}
     for path in sorted(actual - known):
@@ -113,9 +147,12 @@ def main() -> None:
     assert len({n["id"] for n in modules}) == len(modules)
     appendix_at = main_tex.find(r"\appendix")
     labels = {}
+    expanded = {}
     for n in modules:
-        text = (ROOT / n["path"]).read_text()
-        n["source_sha256"] = hashlib.sha256(text.encode()).hexdigest()
+        text, inputs = module_text(ROOT / n["path"])
+        expanded[n["id"]] = text
+        n["source_sha256"] = inputs[n["path"]]
+        n["included_proof_sources"] = {p: sha for p, sha in inputs.items() if p != n["path"]}
         n["labels"] = re.findall(r"\\label\{([^}]+)\}", text)
         for label in n["labels"]:
             assert label not in labels, "Duplicate manuscript label: " + label
@@ -130,7 +167,7 @@ def main() -> None:
                 assert evidence in labels or (ROOT / evidence).is_file(), ("Missing mathematical evidence target", name, node["id"], evidence)
     documentary_edges = set()
     for n in modules:
-        text = (ROOT / n["path"]).read_text()
+        text = expanded[n["id"]]
         for label in re.findall(r"\\(?:eqref|ref)\{([^}]+)\}", text):
             target = labels.get(label)
             if target and target != n["id"]:
@@ -173,7 +210,7 @@ def main() -> None:
     certificate = {"scope": "Structural coverage, valid graph endpoints and deterministic diagram generation; no mathematical proof certification.",
                    "module_count": len(modules), "alternative_count": inventory["alternative_count"],
                    "preferred_exposition_count": inventory["preferred_exposition_count"], "documentary_edges": len(documentary_edges),
-                   "input_hashes": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in [MODEL, ALLOCATION, ROOT / "paper/main.tex"]},
+                   "input_hashes": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in [MODEL, ALLOCATION, manuscript, OUT / "rh/map.json", OUT / "grh/map.json"]},
                    "outputs": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.glob("*")) if p.suffix in {".svg", ".dot", ".json"}},
                    "passed": True}
     (ROOT / "certificates/blueprint-check.json").write_text(json.dumps(certificate, indent=2) + "\n")

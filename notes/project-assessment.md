@@ -7,7 +7,7 @@ the 46 endpoint fields, within the stated local-source scope. Neither is a
 complete theorem-dependency audit or a measure of how much mathematics
 remains. Import coverage and human proof completion are different quantities.
 
-The current [eleven-package ledger](../blueprint/full-proof-program.md) has:
+The current [eleven-package ledger](../blueprint/grh/program.md) has:
 
 | Status | Packages | Share of the eleven packages |
 | --- | --- | --- |
@@ -22,6 +22,11 @@ The packages have different difficulty, share hypotheses, and are not
 independent. A written implication can still require an unresolved input.
 The new scale, degree and energy reductions improve several partial
 packages without making their substantive suppliers complete.
+
+The separate [node maps](../blueprint/progress.md) currently count **6/9**
+finished RH nodes and **17/31** finished GRH technical nodes. These are
+overlapping views of stated implications and cited inputs, with different
+granularity; their counts must not be combined or treated as proof percentages.
 
 Ordinary RH has a smaller analytic interface, but the present construction
 retains the difficult growing-field, integral, geometric and global-norm
@@ -42,13 +47,15 @@ an obstruction to this particular reconstruction.
 This uncertainty is specific to proof closure. The next research tasks are
 concrete and can be completed or rejected one by one:
 
-1. Supply the normalized tower-intersection bound and prescribed norm/counting
-   comparison that give the actual mean volume, then the separate finite
+1. Supply the single normalized base-test intersection bound, its same-tower
+   comparison and the prescribed norm/counting comparison that give the
+   actual mean volume, then the separate finite
    section-rank/surplus estimate. The new short-section argument
    removes a separate negative-height hypothesis.
-2. Supply the centered global theta-energy estimate with the actual positive
-   normalizers and common target. The new scalar-energy interface avoids
-   requiring a separate estimate for every pair of words.
+2. Supply a calibrated joint period bound, or directly the centered global
+   theta energy, with the actual positive normalizers and common target.
+   The signed orbital quadratic-form criterion avoids a separate estimate
+   for every pair of words; the required arithmetic bound remains open.
 3. Complete the remaining integral congruence, divisibility and compatibility
    requirements and control the combined discrepancy. The final criterion
    permits a weighted average over scales and a fixed local logarithmic
@@ -62,8 +69,10 @@ especially unstable unit of work.
 ## A provisional page budget
 
 The current compiled artifacts have a seven-page didactic guide, a
-21-page analytic companion and a 579-page working manuscript. These
-are measured PDF lengths. The long manuscript preserves detailed arguments
+22-page RH manuscript, a 21-page analytic companion and a 582-page
+Dirichlet-GRH working manuscript. These are measured PDF lengths. The RH
+manuscript gives complete reductions and explicit remaining arithmetic
+hypotheses; it is not a 22-page proof of RH. The long manuscript preserves detailed arguments
 and alternatives; it is not a finished short paper and its length is not
 a lower bound for one. The current integration adds proved scale, energy
 and degree reductions while shortening the organizational account of the

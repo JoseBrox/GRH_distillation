@@ -4,12 +4,13 @@
 The compatible arithmetic and geometric estimate needed to finish the proof
 remains open.**
 
-The [short guide](../paper/guide/main.pdf) explains the mathematics.
+The [RH manuscript](../paper/rh/main.pdf) presents this route separately;
+the [short guide](../paper/guide/main.pdf) explains the larger picture.
 The [direct comparison](../notes/rh-direct-transfer.md) proves the preferred
 RH reduction, and the [geometric refinements](../notes/rh-geometric-combination.md)
 state the smaller remaining budget.
 
-![The RH specialization and its remaining arithmetic requirements](rh.svg)
+![The RH specialization and its remaining arithmetic requirements](rh/proof.svg)
 
 Green means a written deduction under its stated inputs. Blue means a cited
 input. Red means a remaining construction or estimate. In particular, a green
@@ -89,6 +90,13 @@ already give a lower degree bound for the same lattices, eliminating the
 separate negative-height moment. The raw form retains signed section-rank
 and twist costs with no heights in its remaining remainder.
 
+The [tower reduction](../notes/tower-intersection-reduction.md) eliminates
+two scalar coefficients using one normalized Grassmannian test intersection.
+It retains the exact block contrast, rank factor and test remainder.
+Centering the weight has an explicit signed determinant cost; the actual
+anchored weights do not have zero total sum. The test's lower bound, the
+same-tower comparison and the prescribed metric remain genuine inputs.
+
 The [frame energies](../notes/averaged-theta-energy.md) are exact aggregate
 quantities of the same normalized maps. A centered global kernel estimate
 can supply them without separate inequalities for every pair of words.
@@ -96,6 +104,13 @@ The actual retained energy controls compression, and subsequent averages
 preserve correlations with source slope spread and target height.
 Small unweighted error means are insufficient; the retained-rank and
 diagonal-error denominators remain.
+
+A [single upper bound for all periods](../notes/centered-global-energy-reduction.md)
+is a sufficient supplier for the centered energy. The bound must be calibrated
+against the actual total mass. It gives explicit estimates after the same
+source and target restrictions. A signed quadratic-form estimate for the
+exact orbital expansion can supply it; positivity or an unrelated kernel
+bound cannot. These proofs are included literally in both manuscripts.
 
 The [centered slope comparison](../notes/frame-degree-compatibility.md)
 has zero loss for a perfect full frame, an exact optimum common
@@ -138,19 +153,22 @@ the relevant character phase depends on their difference and is unchanged.
 
 ## Next mathematical work
 
-1. Prove the normalized total intersection bound and prescribed norm/counting
-   comparison identified by the [mean-volume supplier](../notes/mean-volume-supplier.md).
+1. Prove the single normalized base-test bound isolated by the
+   [tower reduction](../notes/tower-intersection-reduction.md), together with
+   its same-tower comparison and the prescribed norm/counting comparison
+   in the [mean-volume supplier](../notes/mean-volume-supplier.md).
    Equal component volumes then give the mean exactly. Supply the separate
    finite section-rank costs, using short sections to avoid a separate
    negative-height input, and carry signed errors through determinant descent.
 2. Supply nonzero integral theta maps, sharp finite-prime divisibility,
    normalized global identities and centered energy estimates for those same
-   maps, with positive normalizers and the same common target basis.
+   maps. The preferred sufficient target is the signed block quadratic-form
+   bound, with positive normalizers and the same common target basis.
 3. Complete the remaining cohomological estimates for the growing auxiliary
    fields and bound the combined normalized positive-part scale integral on
    the same expanded cofinal windows.
 
-The [full proof program](full-proof-program.md) retains the general Dirichlet
+The [GRH program](grh/program.md) retains the general Dirichlet
 target and every surviving compatibility condition. The RH case is a
 substantially smaller first target, but its central arithmetic estimate is
 still unproved in this reconstruction.

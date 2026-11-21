@@ -10,6 +10,20 @@ This directory separates mathematical interfaces, manuscript organisation,
 and the complete local source import graph. An import graph is not a proof-term
 dependency certificate; none of these maps asserts that GRH is proved here.
 
+## Separate research routes
+
+The [ordinary RH route](rh/README.md) and [Dirichlet GRH route](grh/README.md)
+have distinct manuscripts, editable maps and research programs. Their
+[shared-results index](shared/README.md) records which arguments transfer
+between them and which hypotheses survive. The [progress table](progress.md)
+counts finished stated results separately for each map and records genuine
+node completions. A written implication may still have an open premise.
+
+Edit `rh/map.json`, `rh/program.md`, `grh/map.json` and `grh/program.json`;
+run `python scripts/build_route_blueprints.py` to synchronize both routes
+and the existing public overview, technical and RH diagrams. The old entry
+paths remain valid synchronized views.
+
 ## Complementary views
 
 | View | Purpose | Meaning of an arrow |
@@ -123,12 +137,11 @@ separates the uncut geometric lower slope from the discarded mean degree and
 integral index. Written reductions are green, the classical Galois input is
 blue, and the unproved geometric construction remains red.
 
-The new RH view reduces the character projection to four functions. Under
-pooled translation symmetry, its heterogeneous transfer uses three mean
-weights and logarithmic dispersions. The geometric view now includes exact
-determinant descent, rank-weighted type averages and the actual Hilbert–Samuel
-surplus. These are reductions of the required estimates, not completed
-constructions of their inputs. The [short guide](../paper/guide/main.pdf)
+The RH view reduces the character projection to four functions and uses
+the direct positive-kernel comparison. The geometric view retains exact
+determinant descent, rank-weighted type averages and the actual finite
+section cost. These reductions do not supply their remaining construction
+inputs. Translation symmetry is a conditional alternative for different data. The [short guide](../paper/guide/main.pdf)
 explains the ideas without source identifiers.
 
 ## Maintaining the blueprint

@@ -38,7 +38,7 @@ announced argument~\cite{announcement}. The analytic implications below
 are proved; the central arithmetic construction remains incomplete in
 this reconstruction. The guide explains what becomes simpler for ordinary
 RH and what still needs proof. Detailed arguments are in the accompanying
-manuscript~\cite{reconstruction}.
+RH and GRH manuscripts~\cite{reconstruction}.
 \end{abstract}
 
 \section{The two questions}
@@ -296,13 +296,14 @@ Thus the mean height $\overline h=\sum_Zw_Zh_Z/\sum_Zw_Z$,
 with the actual weights $w_Z>0$, suffices, with explicit
 section errors. A separate negative-height moment is unnecessary.
 
-The geometric mean also improves if one sums before estimating.
-Component degrees in the volume comparison cancel the same degrees
-in the weights $w_Z$. Equal component volumes then let the mean-volume
-theorem control exactly the required weighted mean height. This avoids
-an extra change-of-weights loss. The genuine mean-volume and section
-remainder bounds still have to hold uniformly for the growing family.
-Descent from a covering retains the actual rank ratio and section error.
+Summing the volume comparison first cancels its component degrees
+against the weights $w_Z$. With the required volume lower bound, equal
+component volumes control the mean height directly. The tower calculation
+replaces its two scalar coefficients by one test intersection and a signed
+determinant term.
+The test's lower bound and the section remainder still need uniform
+control for the growing family. Centering the weights incurs a signed
+determinant term; anchoring one entry at zero does not remove that term.
 
 \subsection*{Two energies for all the maps}
 
@@ -323,18 +324,17 @@ the exact errors entering the slope comparison are
 \[
                          e=\Delta/R,\qquad \xi=DV/M^2.
 \]
-Thus two aggregate estimates can replace separate inequalities for
-every pair of maps. In a space of square-integrable functions, $V$
-is the double integral of $|K-(M/D)P|^2$, where $K$ is the kernel of
-$Q$ and $P$ the kernel of orthogonal projection onto the common target.
-This centered global theta energy, with its exact measure and positive
-normalizing constants, is the estimate still needed.
-
-The period identity identifies these operators with the integral maps
-in one common target basis, under its stated hypotheses. After restricting
-the source spaces, retain their actual dimensions and energies in the
-denominators. Small unweighted mean errors cannot replace the required
-height-weighted costs or justify discarding a small denominator.
+Two aggregate estimates can therefore replace separate inequalities for
+every pair of maps. A simpler sufficient target is one upper bound for
+all periods together:
+\[
+ \sum_i\|T_i^*h\|^2\le\alpha\|h\|^2\quad\text{for every }h
+ \qquad\Longrightarrow\qquad \xi\le\frac{\alpha D}{M}-1.
+\]
+Indeed, $Q\le\alpha I$ gives $\operatorname{tr}(Q^2)\le\alpha M$.
+The useful bound must be close to $\alpha=M/D$; positivity or total
+mass alone does not give it. It must concern the same integral maps,
+period normalization and retained spaces as the degree comparison.
 
 \subsection*{Average the losses before bounding them}
 
@@ -491,9 +491,11 @@ their functional equations and zeros.
 \url{https://dlmf.nist.gov/25}.
 
 \bibitem{reconstruction}
-\href{https://github.com/JoseBrox/GRH_distillation/blob/main/paper/main.pdf}
+\href{https://github.com/JoseBrox/GRH_distillation/blob/main/paper/rh/main.pdf}
+{\emph{Reductions toward the Riemann hypothesis}}; and
+\href{https://github.com/JoseBrox/GRH_distillation/blob/main/paper/grh/main.pdf}
 {\emph{Analytic and arithmetic reductions toward Dirichlet GRH}},
-the accompanying mathematical reconstruction.
+the accompanying mathematical manuscripts.
 
 \bibitem{blggt}
 T. Barnet-Lamb, T. Gee, D. Geraghty and R. Taylor,
