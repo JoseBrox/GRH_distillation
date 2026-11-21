@@ -90,7 +90,44 @@ intervals. The proof of Theorem~\ref{thm:interval-grh} applies to
 this fixed positive character combination.
 \end{proof}
 
-This reduction does not permit $C$ to grow like
+\begin{corollary}\label{cor:variable-loss-construction}
+Fix a positive character combination $H$ as in
+Lemma~\ref{lem:positive-family}. Suppose there are
+$\varepsilon_j>0$, $C_j\ge0$ and $b_j>1$ such that
+\[
+                    (C_j+3)\varepsilon_j\longrightarrow0.
+\]
+For each $j$, suppose that on arbitrarily large intervals
+$[Y,Y^{b_j}]$ the hypotheses of Proposition~\ref{prop:size}
+can be satisfied at every $x$, with $G=H(x)$,
+$\varepsilon=\varepsilon_j$, and $C=C_j$.
+Then none of the $L$-functions occurring in $H$ has a zero with
+real part greater than $1/2$.
+\end{corollary}
+
+\begin{proof}
+Proposition~\ref{prop:size} supplies the hypothesis of
+Theorem~\ref{thm:vanishing-loss-windows}, with
+$\delta_j=(C_j+3)\varepsilon_j$ and $M_j=1$.
+\end{proof}
+
+For a fixed target character $\chi$, the same scalar construction may
+instead use $G=H_j(x)$, where each $H_j$ is a finite positive character
+combination containing $\chi$ or $\bar\chi$. Keep $H_j$ fixed throughout
+the arbitrarily late intervals for that $j$. Then
+Corollary~\ref{cor:varying-positive-families}, with
+$\delta_j=(C_j+3)\varepsilon_j$ and $M_j=1$, gives the same zero-free
+conclusion for $L(s,\chi)$ and $L(s,\bar\chi)$, even when the auxiliary
+characters and their coefficients vary with $j$.
+
+The exponent-loss constants may therefore grow with the accuracy
+index, provided that their total contribution tends to zero.
+For example, $C_j=\varepsilon_j^{-1/2}$ is permitted when
+$\varepsilon_j\to0$. All estimates must still hold with the
+chosen $C_j$ throughout arbitrarily late intervals for that fixed
+$j$; a factor growing freely with $x$ cannot be hidden in $C_j$.
+
+The vanishing-loss condition does not permit $C$ to grow like
 $\varepsilon^{-1}$: the exponent $(C+3)\varepsilon$ must tend to
 zero. Nor does it permit the main height parameter $A$ to be replaced
 by a bound for a different arithmetic function. The two leading

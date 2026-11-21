@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "scope": "Ordinary mathematical proofs of Good-preimage lemmas under the source full LLC laws; bounded hash-verified source comparison. No fresh Lean kernel build, proof of full LLC, or replacement of the entire global Galois branch.",
+  "status": "Both Good-preimage propositions proved relative to explicit full LLC laws and independently reviewed; the separate conventional TypeLaw comparison passed independent review. Full local-law and global period dictionaries remain.",
+  "note": "notes/local-correspondence-bridge.md",
+  "assumptions": {
+    "classical_map": "A fixed correspondence R satisfying the full source Laws (in particular surjectivity, dimension, cuspidality, cuspidal-support compatibility and the two-way depth law).",
+    "support": "Every irreducible smooth representation has a cuspidal support; a support member is cuspidal.",
+    "depth_support": "Source GoodLem.good_of_fixed: first-congruence fixed vectors over Q_p imply Good, using first-congruence fixed vectors in every cuspidal-support factor.",
+    "comparison_only": "To compare arbitrary weak correspondences, R must also satisfy IsRecT, including TypeLaw, and restricted uniqueness is used."
+  },
+  "claims": [
+    {
+      "id": "semisimple-triviality",
+      "status": "proved",
+      "statement": "A semisimple complex operator whose characteristic polynomial divides (X-1)^m is the identity.",
+      "proof": "Its squarefree minimal polynomial divides a power of X-1, hence divides X-1."
+    },
+    {
+      "id": "tmw-implies-tame",
+      "status": "proved",
+      "statement": "Source TmW y implies IsTameWD y.",
+      "proof": "The two wild-inertia valuation conditions agree after division by the nonzero valuation of the argument; inePol equals charPol on Weil elements. Apply semisimple-triviality to every wild-inertia element."
+    },
+    {
+      "id": "good-preimage-toral",
+      "status": "proved under stated full LLC laws",
+      "statement": "For any Tor y there is z with R(z)=y and Good z.",
+      "proof": "Choose z by surjectivity. For every cuspidal-support factor u, Laws.supp gives divisibility of its Weil characteristic polynomial on commutators by (X-1)^dim(y). Semisimplicity kills all commutators. Laws.cusp gives irreducibility, so the commutative image has dimension one. Laws.dim gives rank(u)=1. Thus z is Toral and Good.",
+      "unused_hypotheses": [
+        "zero monodromy",
+        "tameness",
+        "rational local field"
+      ]
+    },
+    {
+      "id": "good-preimage-tame-qp",
+      "status": "proved under stated full LLC laws",
+      "statement": "If the local field is continuously isomorphic to Q_p and TmW y, there is z with R(z)=y and Good z.",
+      "proof": "Choose z by surjectivity. TmW implies IsTameWD. The reverse direction of full Laws.depth gives nonzero KOne fixed vectors; good_of_fixed gives Good over Q_p.",
+      "unused_hypotheses": [
+        "zero monodromy",
+        "Sqf",
+        "large residue characteristic"
+      ]
+    },
+    {
+      "id": "weak-classical-equality",
+      "status": "proved under IsRecT for R and restricted uniqueness",
+      "statement": "If r satisfies IsRecT and r(x)=y with Tor y or (Q_p local field and TmW y), then r(x)=R(x).",
+      "proof": "Choose the Good preimage z. Restricted uniqueness gives r(z)=R(z)=y=r(x); weak injectivity with Good target z gives x=z."
+    },
+    {
+      "id": "row0b-guard-coverage",
+      "status": "source definitions checked",
+      "statement": "Both Row0b guards and the older NcW guard lie in the union covered above.",
+      "proof": "The toral branch gives Tor directly. IsQpBig implies the required Q_p isomorphism, and the tame branch includes TmW. OfStar.star_guard sends NcW into these cases. The unguarded dimension clause uses dimension laws separately and does not require full parameter equality."
+    }
+  ],
+  "not_claimed": [
+    "The reverse depth implication follows from the weak LawsT interface; it is explicitly taken from full Laws.",
+    "TypeLaw follows from depth preservation alone.",
+    "Zero monodromy, Sqf, or the large-prime guard may be removed from the global Galois comparison contracts.",
+    "The global Row0b construction has already been eliminated."
+  ],
+  "remaining": [
+    "Audit the classical correspondence against all full source LLC conventions.",
+    "Complete the independent global automorphic and period-model dictionary."
+  ],
+  "primary_references": [
+    {
+      "authors": [
+        "Anne-Marie Aubert",
+        "Paul Baum",
+        "Roger Plymen",
+        "Maarten Solleveld"
+      ],
+      "title": "Depth and the local Langlands correspondence",
+      "url": "https://www.math.ru.nl/~solleveld/depthLLC.pdf",
+      "arxiv": "1311.1606",
+      "location": "Theorem 2.9, section 2.6, page 13; parsed lines 500-535",
+      "claim_used": "Depth preservation for every irreducible smooth representation of GL_m(D), including split GL_n.",
+      "verification": "Primary author-hosted PDF; bounded theorem excerpt examined. This citation does not alone verify source TypeLaw."
+    }
+  ],
+  "files": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/MonodromyZeroOfWeilDeligneRepClassIff.lean",
+      "git_blob_sha1": "4c424b486a66ef4a8581a5c16af5a91572d721be",
+      "sha256": "c9606fde496604088dc8667a8008980c0d8250f15f330cc18b3644767fd3d8f8",
+      "bytes": 30181,
+      "inspected_ranges": [
+        [
+          36,
+          58
+        ],
+        [
+          501,
+          545
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/NonemptyEquivMultiProdOne.lean",
+      "git_blob_sha1": "4fb9f2f98e463779ca4408d5f9d8681bde1236e6",
+      "sha256": "a25c4167d0d342508d3fde846dca96b02fbc316efb8186ac509c4c5069f42388",
+      "bytes": 45768,
+      "inspected_ranges": [
+        [
+          352,
+          370
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues/IsTameWeilDeligneIffWildCharpoly.lean",
+      "git_blob_sha1": "a2888d2babbb0a6a207142014952f92ecc534c06",
+      "sha256": "eb6abdd03447c22a1e6eab2d2a24f85c659cbfe94fec2e9730c76414ae7f13b7",
+      "bytes": 4181,
+      "inspected_ranges": [
+        [
+          25,
+          61
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/PublishedTheorems/AutomorphicForms₂/LocalLanglandsGL.lean",
+      "git_blob_sha1": "0e3abe539c00d0b51ab3c34976e97e17a34abad7",
+      "sha256": "85f160b86f6b67f6660b8a580e8cccadc0d70cda58a7c4db2c1d1325bd844ad8",
+      "bytes": 9769,
+      "inspected_ranges": [
+        [
+          21,
+          76
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/PublishedTheorems/GaloisCohomology₂/DepthZeroTypeInertia.lean",
+      "git_blob_sha1": "b60ab4d8c43f018df8098f354be5c6be902a5666",
+      "sha256": "edeef8be534f05b693450c70f5ca86be1a87ffd2667dda37b8816a5ed45e2c88",
+      "bytes": 2315,
+      "inspected_ranges": [
+        [
+          13,
+          36
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/TypeConditions/OfStar.lean",
+      "git_blob_sha1": "a4f73c68cdc1d7641f53b5342d12b7723df77f57",
+      "sha256": "dd29a2a5a459b1777ee3652c899b8057153309234d3af8aea55db5191d6e2509",
+      "bytes": 5560,
+      "inspected_ranges": [
+        [
+          22,
+          41
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/TypeConditions/WeightsConj.lean",
+      "git_blob_sha1": "600ef95a75276bd9ee68b1d831b3b741fd5195d1",
+      "sha256": "0158f29dcd6e1255ee0073c274b9543692dda9112da2751b85d31a0e9171e229",
+      "bytes": 9852,
+      "inspected_ranges": [
+        [
+          18,
+          27
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/TypeConditions/WeightsConjAlt.lean",
+      "git_blob_sha1": "486af16ec21e4f8c5a482e1481769093b9448bd4",
+      "sha256": "17249e993a0cfaa745b35b523cb92fae0dbc8ea8d8a7bdbde8b5bdc657848d81",
+      "bytes": 6524,
+      "inspected_ranges": [
+        [
+          20,
+          39
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/TypeConditions/WeightsConjBis.lean",
+      "git_blob_sha1": "0a1eab0eb68defc45b4e62d19fbfd01dad459344",
+      "sha256": "e3020031e884beef2eff18275019b7213a16f3c721242e9a79891b5396955719",
+      "bytes": 5507,
+      "inspected_ranges": [
+        [
+          15,
+          31
+        ],
+        [
+          39,
+          52
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/Foundations/LocalLanglands/IsRecTOfIsRec.lean",
+      "git_blob_sha1": "baddfb181bfefea1533526863033f99b63bb4d17",
+      "sha256": "4054d69535a55b8df339dee1ed766d38cb271ae87ce6033a8e0195ac577d9931",
+      "bytes": 6283,
+      "inspected_ranges": [
+        [
+          20,
+          26
+        ],
+        [
+          34,
+          74
+        ],
+        [
+          82,
+          112
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/Foundations/LocalLanglands/LocalCentralUnits/RecTUnique.lean",
+      "git_blob_sha1": "187cf1359de937c6841b1662dec803ac39a5f6f2",
+      "sha256": "694f8d8d7dc16cbc63c7409e045cc3809dd9413dc6a0459d2ea01f943dc55bc0",
+      "bytes": 2992,
+      "inspected_ranges": [
+        [
+          28,
+          53
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/Foundations/UnitarySphericalFixing/SatakeParameters/GoodLem.lean",
+      "git_blob_sha1": "04d693e96f7d2ceb263d8ac2e185dac86ab2134c",
+      "sha256": "9fd7e13313831881c864eafdd00e3f25fb653360f671ac958dea3f666abfb7cf",
+      "bytes": 3570,
+      "inspected_ranges": [
+        [
+          16,
+          43
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/WeilBound/CoreStatements/AutomorphicKernels/LocalGlobalCompatibility/TemperedLocalGlobal/LocalGlobalOfIwahori.lean",
+      "git_blob_sha1": "ca358167a1c6bf3a15b5c1e0960290db6dd01c9f",
+      "sha256": "bd33e4bd4882fd0ba7c527f5a8add120237b0d58c1760211b7754fb58796ad8d",
+      "bytes": 5152,
+      "inspected_ranges": [
+        [
+          21,
+          28
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/LevelLetterCocycles/BlochKatoPhases.lean",
+      "git_blob_sha1": "df02dbb392f97b19ebd900ab2f7ec3b69ef52049",
+      "sha256": "a1bc324b0e66228ab9225c4ea84f3813538902c6d20a2fcc3faccd96b4f22ab5",
+      "bytes": 28727,
+      "inspected_ranges": [
+        [
+          74,
+          75
+        ]
+      ]
+    }
+  ],
+  "independent_review": {
+    "status": "pass",
+    "reviewer": "global_inputs",
+    "date": "2026-11-21",
+    "scope": [
+      "toral Good-preimage proof",
+      "tame Q_p Good-preimage proof",
+      "full versus weak depth-law direction",
+      "source Good target in injectivity"
+    ],
+    "second_review": "endpoint_backbone requested"
+  },
+  "note_sha256": "3c76aaf16ffd62c6073a0b13f45887034e40d0115e4e668a73848626b48ebfeb",
+  "type_law_review": {
+    "status": "pass for the conventional mathematical deduction",
+    "date": "2026-11-21",
+    "reviewer": "residue_dictionary",
+    "proof_location": "notes/lean-global-inputs.md#the-classical-depth-zero-type-formula",
+    "checked": [
+      "uniqueness of the finite cuspidal representation from its regular-elliptic trace formula in Bushnell section 8.2 page 26",
+      "nonzero finite-type embedding and central-character extension",
+      "irreducible cuspidal compact induction and Frobenius reciprocity, section 1.2 page 5",
+      "unramified quadratic rectifier disappears on inertia",
+      "geometric Artin normalization in Bushnell-Henniart section 1.1",
+      "unramified degree-n auxiliary completion and arbitrary residue-field reduction"
+    ],
+    "boundary": "The complete source full-Laws dictionary and global period-model dictionary remain separate."
+  }
+}

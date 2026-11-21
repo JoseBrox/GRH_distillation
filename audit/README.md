@@ -36,6 +36,9 @@ verification scope must be read alongside the recovered evidence below.
 | Complete local kernel replay | The recovered audit explicitly records that this was not completed locally. | Not performed. |
 | Ordinary-mathematics proof | The complete recovered manuscript and analytic companion are preserved. | Structural checks and narrow editorial review; no independent recheck of all 611 proofs is claimed. The central uniform arithmetic estimate remains open in the reconstruction. |
 | New radial matrix argument | A written commutator proof recovers the full matrix and its successive restrictions for fixed finite standard flags. | Separate mathematical review, 810 finite exact identities, complete coefficient checks in dimensions one and two, and a negative control. The general proof is in the manuscript; finite computation does not replace it. |
+| Complete current source import inventory | All 175,187 pinned local Lean files and 753,261 distinct local import edges. | Every source blob hash recomputed; all local modules reachable from Main; acyclic import graph of depth203. The 348 external import names are boundaries. This is not an elaborated proof dependency or kernel audit. |
+| Full-proof mathematical program | All 46 fields of the endpoint construction assigned to eleven work packages, with shared choices and nonvacuity retained. | The main source interfaces and their exact quantifiers were inspected; global Galois, theta-matching and geometric covolume requirements are explicit. Not every supporting source theorem was independently audited. |
+| Local residue/source comparison | General mixed-word positivity, word-independent pairing normalization, and original-parameter admissibility. | Independent mathematical review, 672 exact finite cases, and a pinned15-file operator/word/gauge/measure dictionary on smooth coefficient classes. No global or growing-chain estimates are inferred. |
 
 The source of the recovered formal evidence is the
 [original reproducibility bundle](../archive/recovered-2026-11-21/grh_audit_reproducibility.zip),
@@ -51,8 +54,11 @@ record the current preservation checks and editorial changes.
 
 The [fresh source note](../notes/source-check-2026-11-21.md) and
 [matrix proof review](../notes/radial-commutator-review.md) record the new work
-after recovery. The integrated residue pairing and growing-chain estimates
-remain open even though the algebraic matrix restriction is now proved.
+after recovery. The [new local dictionary](../notes/residue-source-dictionary.md)
+and [vanishing-loss theorem](../notes/vanishing-loss-program.md) record further
+completed reductions. Global forms and estimates uniform in growing chains
+remain separate. The [full proof program](../blueprint/full-proof-program.md)
+supersedes the manuscript-only overview as a map of the source-wide task.
 
 ## Limits that remain material
 

@@ -1,176 +1,130 @@
 # Current continuation checkpoint
 
-Updated 21 November 2026. Start here, then open one relevant mathematical module.
+Updated 21 November 2026. Begin with the full proof program, then read one
+bounded source contract or mathematical section. The conventional proof of
+Dirichlet GRH remains incomplete.
 
-## Proof-wide planning checkpoint
+## Full-proof structure is now the starting point
 
-The complete pinned local Lean source has now been downloaded to an ignored
-local checkout and verified without printing the source into conversation.
-There are 175,187 local files, 753,261 distinct local import edges, no import
-cycles, and full reachability from Main, with import depth 203. The
-[complete source atlas](../blueprint/lean-source-atlas.md) and its compressed
-index preserve this fresh computation. External package internals and
-term-level proof dependencies are outside this import inventory.
+- [Full proof program](../blueprint/full-proof-program.md): eleven work packages,
+  their exact goals, quantifier order, acceptance conditions and next tasks.
+- [Endpoint field ledger](../blueprint/endpoint-field-ledger.md): all 46 fields
+  of the source's coherent construction, assigned once. These share objects
+  and are not 46 independent assumptions.
+- [Complete source atlas](../blueprint/lean-source-atlas.md): every local source
+  module and import edge, separate from the manuscript section atlas.
+- [Endpoint analysis](lean-endpoint-backbone.md) and
+  [global inputs](lean-global-inputs.md): source contracts and pinned evidence.
 
-The [endpoint review](lean-endpoint-backbone.md) and
-[global-input review](lean-global-inputs.md) expose essential branches absent
-from the earlier manuscript overview: Galois/local compatibility, stable
-nonzero theta-lift existence, global theta-integral matching, and geometric
-Hodge-bundle/log-covolume estimates. The source endpoint requires one coherent
-family and selections; its bundle fields cannot be solved on unrelated data.
-The earlier list of four global bottlenecks is therefore not a complete
-source-wide plan. The next priority is the full mathematical work-package
-ledger and proof graph, before treating any one local module as the whole
-remaining argument.
+The source-wide plan supersedes the earlier list of four global bottlenecks.
+It explicitly includes Galois/local compatibility, stable nonzero theta-lift
+existence, normalized global theta matching, and geometric Hodge-bundle
+log-covolume bounds. The 96 recovered sections never exhaustively represented
+these source interfaces. The main manuscript still has 98 section files:
+96 recovered plus two new, with 14 alternatives and 84 in the preferred flow.
 
-## Recovery is complete for the supplied material
+## Complete source coverage: what was actually checked
 
-The three attachments supplied again in this session are byte-identical to
-`archive/recovered-2026-11-21/grh_audit_v2.tex`,
-`grh_reconstruction_v2.tex`, and `grh_audit_reproducibility.zip`.
-The recovered baseline was already integrated at commit
-`2f5f79f2b6f7c4da99c3add332eb664047a0ba86`.
-Fresh reconciliation preserves 96 sections, 1,522 unique labels, 646 result
-environments and 611 proof environments. All 622 bundle files are present;
-all 621 internal-manifest entries verify. The eight analytic companion files
-are also preserved. This is a preservation check, not a new proof audit of
-every statement. Prior-chat retrieval is disabled; no unavailable continuation
-is being represented as recovered.
+All 175,187 local Lean files at `jsmorph/rh` commit
+`ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de` were read locally and matched to their
+pinned Git blob hashes. The rebuilt import graph has 753,261 distinct local
+edges, is acyclic, has depth 203, and reaches all local files from Main.
+The 348 external import names are explicit boundaries; package internals were
+not traversed. All-source import reachability does not mean every declaration
+is essential to the target proof. No new Lean build or kernel replay was run.
 
-## Mathematical status
+The compressed complete graph is version controlled. The large source checkout
+stays in ignored `build/lean-mirror`; no complete large file was printed into
+conversation. The first source-wide checkpoint is commit `993681b`.
 
-The conventional reconstruction is incomplete. Its analytic implication from
-the fixed positive prime-sum combination to Dirichlet GRH is written out.
-The sufficient uniform arithmetic estimate remains unproved.
+## Structural simplifications
 
-The current frontier is:
+The five exported targets reduce to one common right-half-plane nonvanishing
+assertion. One exact Galois compatibility result is reused in the repeated
+source bundle fields and the Selmer windows. The complete source family
+construction supplies a smaller sufficient interface: one compatible host at
+each required scale, with the exact arithmetic/analytic clauses. A direct
+replacement construction is still open; isolating this interface does not
+prove its existence.
 
-1. The normalization and order comparison for any differently presented
-   source fusion forms. Actual integration, the mixed-sign congruence and
-   positivity for every fixed finite word of the explicit residue recursion
-   are proved under the terminal domain, sign and separation hypotheses.
-2. Uniform global orbital-energy estimates, including the remaining
-   coordinate-size and weighted lattice-pair inputs.
-3. Seed nonvanishing and auxiliary-level-prime divisibility for the same
-   integral theta maps whose norms are estimated.
-4. Complementary-parity automorphic character-length bounds with integral
-   congruence control.
-5. Assembly for growing chains with compatible lattices, measures,
-   denominators, and constants.
+The final analytic loss need only tend to zero. The new independently reviewed
+`thm:vanishing-loss-windows` and `cor:variable-loss-construction` permit
+accuracy-dependent constants and interval shapes. The stronger
+`cor:varying-positive-families` also permits new auxiliary characters and
+positive weights at each accuracy, provided the target character or its
+conjugate remains present. Each combination stays fixed throughout its own
+arbitrarily late whole-window sequence. Uniformity in x within each fixed
+accuracy remains essential; a common auxiliary family across accuracies is
+unnecessary. See
+[the proof and limiting cases](vanishing-loss-program.md).
 
-Recovered section 95 proves Fourier-decay results. The new sections
-`paper/sections/new/commutator-matrix.tex` and
-`paper/sections/new/jacquet-integrated-descent.tex` identify the full matrix,
-prove its restriction chain, and integrate the actual residue pairings.
-Read these updated conclusions
-before reopening an earlier provisional gap. The dependency crosswalk is
-[`recovery-crosswalk.md`](recovery-crosswalk.md), and recovered section 96
-states the complete remaining obligations.
+The earlier exponent86-to14 K-theory substitution remains in force. Ten old
+cohomological sections and four analytic alternatives are bypassed in the
+preferred route, with their proofs retained in the appendix.
 
-## New results completed after recovery
+## Local residue comparison completed
 
-The full contracted matrix is recovered from its scalar Capelli determinant
-by three commutators with the Hermitian matrix coefficient and its conjugate.
-The scalar restriction theorem therefore gives all four matrix entries, and
-iteration gives the exact ordered restriction formula for every fixed finite
-standard flag. The proof checks the isotropic intermediate vectors, spectral
-shifts, coefficient order, support, covariance and Haar adjoints. This closes
-the algebraic matrix/restriction obligation; it supplies no chain-uniform
-estimate. Its hypotheses have now been sharpened to specify orthogonal
-normalized hyperbolic splittings and the precise Jacquet signature and
-character data. See [the fresh review](review-of-recent-advances.md).
+The commutator matrix, the matrix of Schwartz marginals, the ordered mixed-word
+congruence, and the finite-decay approximation are written and independently
+reviewed. The new `ji-word-pairing` uses one positive reciprocal Haar constant
+for every polynomial/word and auxiliary dimension. The source dictionary now
+matches the operators, open cell, gauge and measure on the smooth coefficient
+classes. Source lists recurse tail first, so chronological insertions reverse
+the source list positions; operators themselves are not freely reordered.
 
-See [the proof note](commutator-matrix-2026-11-21.md) and
-[independent review](radial-commutator-review.md). Exact polynomial checks
-give 810 identities in dimensions 1, 2 and 3. A separate implementation checks
-complete normal-ordered coefficients in dimensions 1 and 2, tests the transfer
-formula with noncommuting entries, and rejects a negative control that violates
-coordinate independence. These checks support the written general proof;
-they are not its substitute.
+`ji-unshifted-positivity` reuses the existing original-parameter terminal
+criterion. Separation of original parameters does not imply the stronger
+shifted separation, and that implication is not used. The theorem retains
+the common cut, interlacing, sign and 1<=l<=k conditions. See
+[the complete local dictionary](residue-source-dictionary.md).
 
-An additional independent PBW calculation checks the scalar bordered Capelli
-expansion in full dimensions 3, 4 and 5: respectively 26, 113 and 586 nonzero
-terms agree exactly. A deliberately wrong terminal shift gives 18 residual
-terms. See `certificates/bordered-capelli-review-check.json`.
+This closes the local smooth-class interface, not every global form, arbitrary
+merely finitely differentiable coefficient class, or growing-rank norm bound.
+The supplementary exact 672-case mixed-word check is regenerated against the
+new manuscript. The earlier scalar PBW and commutator reviews remain valid.
 
-The new [integration argument](jacquet-integrated-descent.md) puts all
-first-coordinate polynomial residue marginals in one matrix of Schwartz
-functions. The distinct-index integration identity follows immediately.
-The general mixed-sign congruence and terminal positivity then give actual Jacquet
-positivity at every fixed rank. One cutoff-density argument extends this to
-decay index `A+2h+delta` and derivative order `(k+2r+1)h+5`. Only the paired
-scalar density is asserted Schwartz; transformed factors need not separately
-be globally square integrable. [Independent review](matrix-schwartz-review.md)
-checks that distinction, order, signs, domains and constant dependence.
+## Next research priorities
 
-The supplementary exact Laurent-action check covers all sign words of lengths
-1, 2 and 3 in 672 cases with noncommuting terminal coefficients. Wrong-order
-and wrong-minus-argument controls fail. The written ordered-transfer proof establishes arbitrary length; finite
-checks support it without replacing it.
+1. W05: finish the exact classical Galois/LLC comparison. The BLGGT monodromy
+   dominance theorem removes the zero-monodromy difficulty. The two
+   Good-preimage lemmas, the weak-to-classical comparison and the classical
+   depth-zero type formula have now passed independent review. Under the
+   full local correspondence laws, the same global representation works for
+   every weak correspondence. The exact full-law and global period-model
+   dictionaries remain open. See [the global input audit](lean-global-inputs.md),
+   [the bridge](local-correspondence-bridge.md) and
+   [comparison reduction](fixed-correspondence-reduction.md).
+2. W10: translate and prove the geometric log-covolume bound, including the
+   28-field Hodge-bundle construction and its common thresholds. Abstract lattice
+   comparisons are not this theorem.
+3. W02/W11: design the actual compatible data at each scale and keep a complete
+   loss ledger. Do not combine estimates for independently chosen maps.
+4. W06/W08: seed nonvanishing, sharp auxiliary-level divisibility, and normalized
+   global theta/orbital-energy bounds for those same maps. Complete the remaining
+   W04 complementary-parity integral congruence bounds in parallel.
 
-## Structural simplification and complete maps
+Classical substitutions remain candidates until their full contracts match.
+No source branch is deleted merely because a shorter sufficient interface is
+known. The old source construction remains an available supplier in the plan.
 
-The 96 recovered sections are an editorial division of the mathematical
-manuscript, not the entire Lean dependency graph. There are now 98 section
-files, including the two new ones. Fourteen alternatives are retained after
-`\appendix`; 84 files remain in the preferred exposition. These include
-context and mixed sections, not 84 indispensable or independently proved lemmas.
+## Recovery and bounded resumption
 
-The bounded-order case `sv-exact-case` now uses `kt-fourteen`; its exponent
-86 becomes 14. This removes the dependency on recovered sections 15 and
-18–26. Under the selected uniform QRH route, sections 6–9 are alternatives
-as well. The [architecture review](global-architecture-review.md) checks all
-25 incoming explicit references and 16 implicit formula links before that
-cut. Sections 13–14 and the early class-number/unit parts of 16–17 remain.
-
-The [proof blueprint](../blueprint/README.md) provides the compact README
-diagram, technical interface graph, and complete section atlas/inventory.
-The latter shows documentary references, not certified proof premises.
-The six-stage reading spine identifies the desired compatible construction;
-it does not establish that construction or GRH.
-
-Corollary `sz-qrh-real-gap` also removes a redundant assumption: under a common
-Dirichlet zero-free boundary `vartheta < 1`, the required real-zero gap follows
-with constant `(1-vartheta) log 3`. The independent determinant route is retained.
-
-The audit overview is reconciled with the recovered formal evidence, and
-implementation identifiers in fifteen mathematical sections are now recorded
-outside the exposition. The immutable archive remains unchanged. The new
-[source comparison](source-check-2026-11-21.md) checks seven selected Lean files
-against the recovered hashes and two source papers against pinned Git blobs.
-It is not a new full kernel replay or an audit of all proofs in those papers.
-
-## Next mathematical task
-
-Match the explicit finite-word theorem to any different source fusion-form
-conventions, then pursue the uniform global orbital-energy estimates and the
-same-object norm/divisibility comparison. Fixed-chain local positivity is now
-proved; bounds uniform in growing chains and the four arithmetic/global
-obligations listed above remain open.
-
-The [bounded source comparison](source-residue-interface.md) locates the exact
-remaining form identity. It confirms that the positive normalization is
-reciprocal and chosen before the word, that the rightmost operator acts first,
-and that new transfer factors multiply on the left. No mismatch was found.
-The remaining dictionary must match the residue recursion, transpose, shifts,
-scalar denominators, radial gauge and common Haar measure; the note pins the
-three inspected files and the exact next definitions to locate.
-
-## Bounded resumption
+The supplied originals are byte-identical to the preserved archive. All 622
+bundle files and 621 manifest entries remain verified; all 96 recovered sections,
+1,522 labels, 646 result environments and 611 proofs are preserved. This is not
+an independent review of all those proofs. Prior unavailable chats are not
+represented as recovered.
 
 ```sh
-python scripts/reconcile_recovery.py --section 95
-python scripts/reconcile_recovery.py --label kt-fourteen
-python scripts/source_excerpt.py --source lean/src/Main.lean --search theorem
-python scripts/source_excerpt.py --source lean/src/Main.lean --lines 1:12
-python scripts/source_excerpt.py --manifest certificates/source-frontier-2026-11-21.json --source StatementQ.lean --lines 198:206 --offline
+python scripts/scan_lean_backbone.py --module Main
+python scripts/source_excerpt.py --atlas --source Main --search theorem --offline
+python scripts/reconcile_recovery.py --section 3
+python scripts/build_full_proof_program.py
+python scripts/build_blueprint.py
 ```
 
-The source reader verifies the pinned Git blob before showing content. It
-prints at most 25 search matches or 120 excerpt lines, with a 12,000-byte
-excerpt limit. Downloaded source bytes stay in the ignored local cache.
-Use exact paths and narrowly selected declarations. Never print the complete
-manuscript, source tree, export, or integration certificate into conversation.
-
-Keep proof checking as thorough as the claim requires; limit what is printed,
-not what is verified. Commit coherent progress to `main` as it becomes ready.
+The atlas reader can select any pinned local module by its exact name or unique
+path suffix. It verifies the bytes and prints at most25 search matches or120
+lines/12KB. Run large analyses locally and retain concise results, dependencies
+and evidence in version-controlled files. Commit coherent results to main
+promptly; never weaken mathematical verification to save context.

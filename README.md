@@ -1,6 +1,6 @@
 # Distilling the Generalized Riemann Hypothesis
 
-**[Read the main manuscript](paper/main.pdf)** · **[Mathematical sections](paper/sections/recovered/)** · **[Analytic companion](paper/companion/main.pdf)**
+**[Read the main manuscript](paper/main.pdf)** · **[Full proof program](blueprint/full-proof-program.md)** · **[Complete source atlas](blueprint/lean-source-atlas.md)** · **[Analytic companion](paper/companion/main.pdf)**
 
 We are developing a simpler, human-readable proof from Levent Alpöge's announced argument for the Riemann Hypothesis and the Generalized Riemann Hypothesis for Dirichlet characters. The aim is to understand the mathematics, replace long arguments by shorter ones where possible, and give complete definitions and proofs in ordinary mathematical language.
 
@@ -21,17 +21,19 @@ The number **96** refers to the sections of the recovered mathematical manuscrip
 
 The older files have been reconciled with the repository. The [recovery crosswalk](notes/recovery-crosswalk.md) identifies later results that resolve earlier provisional gaps, and the originals remain in the [recovery archive](archive/recovered-2026-11-21/README.md).
 
+The proof-wide source analysis now covers all **175,187 local Lean files** at the fixed source revision. That source map is broader than the manuscript: it reveals separate requirements for Galois representations, stable nonzero theta lifts, global theta-integral identities, and geometric covolume estimates from Hodge bundles. These are now explicit in the [full proof program](blueprint/full-proof-program.md). Its eleven work packages organise the remaining research; they are not eleven completed theorems or a claim that the proof has only eleven indispensable steps.
+
 The argument has three broad stages:
 
 1. **Reduce the location of zeros to cancellation in prime sums.** A one-sided upper bound on arbitrarily large multiplicative intervals is sufficient; a bound for every large real number is unnecessary.
-2. **Construct arithmetic objects that control those sums.** Quadratic characters, cyclotomic cohomology, integral polynomial spaces, and theta lifts supply the ingredients.
+2. **Construct arithmetic objects that control those sums.** Quadratic characters, cyclotomic cohomology, Galois representations, integral coefficient spaces, theta lifts, and geometric covolume estimates supply the ingredients.
 3. **Compare their sizes in compatible ways.** Divisibility and analytic norms must concern the same integral objects, with every denominator retained and constants controlled as the chain grows.
 
 The first stage is written out. Much of the second and third stages is also present, including a shorter cohomological route through algebraic K-theory, normalized theta measures, local orbital identities, an automorphic multiplicity comparison, and Jacquet adjointness and Fourier decay.
 
 There are now two further simplifications. Three commutators recover a whole matrix of differential operators from one scalar identity and determine its restrictions along a fixed finite chain. A single theorem about Schwartz functions then justifies the integrations for every finite residue expression. Together with an ordered matrix identity, it proves Jacquet positivity for every fixed finite mixture of plus and minus insertions, under the stated sign and domain hypotheses. One approximation argument extends this positivity from compact support to an explicit class with finite decay and differentiability bounds.
 
-The remaining work concerns global orbital-energy bounds, nonvanishing and divisibility at auxiliary level primes, the remaining complementary-parity Selmer bounds, and the final assembly with uniform constants. Fixed finite-chain identities do not supply estimates for chains whose length grows. These obligations are stated precisely in the manuscript's last part.
+The remaining work includes the precise Galois compatibility input, geometric covolume bounds, normalized global theta identities and energy estimates, nonvanishing and auxiliary-level divisibility, the remaining complementary-parity Selmer bounds, and their compatible assembly. Fixed finite-chain identities do not supply estimates for chains whose length grows. The proof program states these requirements separately.
 
 ## A map of the proof
 
@@ -39,13 +41,17 @@ The remaining work concerns global orbital-energy bounds, nonvanishing and divis
 
 **Green:** a written reduction with its stated hypotheses. **Blue:** a cited mathematical input. **Amber:** part of the required argument is written. **Red:** a remaining obligation. A green step may depend on an earlier red step; its colour does not assert that the final conclusion has been established.
 
-The [detailed proof map](blueprint/README.md) separates the arithmetic and analytic requirements. It also provides a complete section inventory and a larger diagram of the references between sections. These distinguish the mathematical route from the organisation of the manuscript.
+The [detailed proof map](blueprint/README.md) separates all the arithmetic, geometric and analytic requirements. The complete source atlas, the manuscript section atlas, and the mathematical proof program are distinct views. Importing a source file does not show that every theorem in it is indispensable to the final proof.
 
 ## A shorter overall argument
 
 The principal structural simplification replaces the older coarse cohomology construction by the algebraic K-theory estimate with exponent **14**. Applying it also in the bounded-order character argument replaces the exponent **86** there. This removes ten sections of finite-field homology and arithmetic-cycle constructions from the preferred route. The arithmetic complex, the needed class-number and unit estimates, and the stated classical theorems remain necessary inputs.
 
 Four more sections become alternatives when the uniform quasi-Riemann hypothesis is used throughout: the separate real-zero route and a proposed analytic shortcut that still needs a stronger mean-square estimate. All fourteen sections remain available in the appendix, with their hypotheses and proofs intact. The [structural review](notes/global-architecture-review.md) records why the preferred route no longer depends on them.
+
+The final estimate admits a further simplification: it is enough to construct compatible arithmetic data at every required scale. The source's larger families are one way to obtain those data; a new proof may construct them directly, provided it proves every required estimate and compatibility.
+
+The analytic endpoint also needs only a **total exponent loss tending to zero**. Each accuracy may have its own auxiliary characters, positive weights, multiplicative interval shape, starting threshold and multiplicative constant. Each positive combination must retain the target character and stay fixed during its own sequence of intervals. Uniform control within each such construction remains necessary. The new theorem and its scalar-construction corollary make this distinction precise; they do not themselves establish the arithmetic bound.
 
 ## How the newer zero-free results help
 

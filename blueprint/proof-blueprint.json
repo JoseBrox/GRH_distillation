@@ -40,85 +40,116 @@
     }
   },
   "overview": {
-    "title": "A shorter route toward Dirichlet GRH",
+    "title": "A proof-wide route toward Dirichlet GRH",
     "nodes": [
       {
-        "id": "qrh",
-        "title": "Uniform quasi-RH",
-        "status": "cited"
+        "id": "inputs",
+        "title": "Classical inputs and uniform quasi-RH",
+        "status": "cited",
+        "evidence": [
+          "sources/README.md"
+        ]
       },
       {
-        "id": "choices",
-        "title": "Choose auxiliary characters",
-        "status": "written"
+        "id": "arithmetic",
+        "title": "Characters, cohomology and Galois representations",
+        "status": "partial",
+        "evidence": [
+          "notes/lean-global-inputs.md"
+        ]
       },
       {
-        "id": "cohomology",
-        "title": "Cohomology bounds",
-        "status": "partial"
-      },
-      {
-        "id": "maps",
+        "id": "theta",
         "title": "Integral theta maps",
-        "status": "partial"
+        "status": "partial",
+        "evidence": [
+          "tvc-section"
+        ]
       },
       {
-        "id": "norms",
-        "title": "Norm and divisibility bounds",
-        "status": "partial"
+        "id": "geometry",
+        "title": "Geometric covolume bound",
+        "status": "open",
+        "evidence": [
+          "notes/lean-global-inputs.md"
+        ]
       },
       {
-        "id": "assembly",
-        "title": "Compare the same integral objects",
-        "status": "open"
+        "id": "global_norms",
+        "title": "Global theta identities and norm bounds",
+        "status": "partial",
+        "evidence": [
+          "notes/lean-global-inputs.md"
+        ]
       },
       {
-        "id": "prime_sum",
+        "id": "compatible",
+        "title": "Compatible arithmetic data at every required scale",
+        "status": "open",
+        "evidence": [
+          "notes/lean-endpoint-backbone.md"
+        ]
+      },
+      {
+        "id": "bound",
         "title": "Required prime-sum bound",
-        "status": "open"
+        "status": "open",
+        "evidence": [
+          "sec:remaining"
+        ]
       },
       {
         "id": "criterion",
         "title": "One-sided zero criterion",
-        "status": "written"
+        "status": "written",
+        "evidence": [
+          "sec:one-sided"
+        ]
       },
       {
         "id": "grh",
         "title": "Dirichlet GRH",
-        "status": "open"
+        "status": "open",
+        "evidence": [
+          "sec:remaining"
+        ]
       }
     ],
     "edges": [
       [
-        "qrh",
-        "choices"
+        "inputs",
+        "arithmetic"
       ],
       [
-        "choices",
-        "maps"
+        "arithmetic",
+        "theta"
       ],
       [
-        "maps",
-        "norms"
+        "theta",
+        "global_norms"
       ],
       [
-        "maps",
-        "assembly"
+        "arithmetic",
+        "compatible"
       ],
       [
-        "cohomology",
-        "assembly"
+        "theta",
+        "compatible"
       ],
       [
-        "norms",
-        "assembly"
+        "geometry",
+        "compatible"
       ],
       [
-        "assembly",
-        "prime_sum"
+        "global_norms",
+        "compatible"
       ],
       [
-        "prime_sum",
+        "compatible",
+        "bound"
+      ],
+      [
+        "bound",
         "criterion"
       ],
       [
@@ -128,17 +159,17 @@
     ],
     "ranks": [
       [
-        "choices",
-        "cohomology"
+        "arithmetic",
+        "geometry"
       ],
       [
-        "maps",
-        "norms"
+        "theta",
+        "global_norms"
       ]
     ]
   },
   "technical": {
-    "title": "Technical proof blueprint\nCurated interfaces; open constructions remain unproved",
+    "title": "Full-proof interfaces and the preferred reconstruction",
     "nodes": [
       {
         "id": "qrh",
@@ -272,7 +303,7 @@
       },
       {
         "id": "residue",
-        "title": "Actual local residue positivity\nEvery fixed mixed word",
+        "title": "Local residue positivity\nExplicit sign and domain hypotheses",
         "status": "written",
         "evidence": [
           "ji-integrated-word",
@@ -302,16 +333,15 @@
       },
       {
         "id": "compatible",
-        "title": "One compatible construction\nUniform in growing chains",
+        "title": "One compatible construction\nNonempty data at every scale",
         "status": "open",
         "evidence": [
-          "eq:remaining-estimate",
-          "sec:remaining"
+          "notes/lean-endpoint-backbone.md"
         ]
       },
       {
         "id": "bound",
-        "title": "Fixed positive prime-sum bound\non arbitrarily large windows",
+        "title": "Positive prime-sum bounds\nVanishing total exponent loss",
         "status": "open",
         "evidence": [
           "eq:remaining-estimate"
@@ -349,6 +379,50 @@
         "evidence": [
           "notes/global-architecture-review.md"
         ]
+      },
+      {
+        "id": "galois",
+        "title": "Classical Galois representations\nLocal-law and period dictionary",
+        "status": "partial",
+        "evidence": [
+          "notes/lean-global-inputs.md",
+          "notes/local-correspondence-bridge.md"
+        ]
+      },
+      {
+        "id": "stable_lift",
+        "title": "Stable nonzero theta lift\nA source route to Galois compatibility",
+        "status": "open",
+        "evidence": [
+          "notes/lean-global-inputs.md"
+        ]
+      },
+      {
+        "id": "theta_identity",
+        "title": "Global theta-integral matching\nNonzero scalar and normalization",
+        "status": "open",
+        "evidence": [
+          "notes/lean-global-inputs.md"
+        ]
+      },
+      {
+        "id": "geometry",
+        "title": "Geometric logarithmic covolume\nHodge bundles and intersections",
+        "status": "open",
+        "evidence": [
+          "notes/lean-global-inputs.md"
+        ]
+      },
+      {
+        "id": "source_dictionary",
+        "title": "Source residue words and forms\nSmooth positive-cutoff classes",
+        "status": "written",
+        "evidence": [
+          "ji-word-pairing",
+          "ji-unshifted-positivity",
+          "notes/residue-source-dictionary.md"
+        ],
+        "limits": "Local smooth coefficient classes only; not every global form, merely finite differentiability or growing-chain energy."
       }
     ],
     "edges": [
@@ -447,6 +521,38 @@
       [
         "criterion",
         "grh"
+      ],
+      [
+        "stable_lift",
+        "galois"
+      ],
+      [
+        "galois",
+        "selection"
+      ],
+      [
+        "galois",
+        "refined"
+      ],
+      [
+        "theta",
+        "theta_identity"
+      ],
+      [
+        "theta_identity",
+        "norms"
+      ],
+      [
+        "geometry",
+        "compatible"
+      ],
+      [
+        "residue",
+        "source_dictionary"
+      ],
+      [
+        "source_dictionary",
+        "norms"
       ]
     ],
     "ranks": [
@@ -455,9 +561,14 @@
         "qrh"
       ],
       [
+        "stable_lift",
         "coarse",
-        "coefficients",
-        "local_orbits"
+        "coefficients"
+      ],
+      [
+        "galois",
+        "local_orbits",
+        "geometry"
       ],
       [
         "selection",
@@ -478,6 +589,10 @@
         "dimensions",
         "residue",
         "slope"
+      ],
+      [
+        "theta_identity",
+        "source_dictionary"
       ],
       [
         "norms"

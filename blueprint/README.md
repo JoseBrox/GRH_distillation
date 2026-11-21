@@ -1,16 +1,25 @@
 # Proof blueprint
 
-This directory separates the **mathematical route**, its **remaining interfaces**,
-and the **complete manuscript inventory**. It covers the conventional reconstruction.
-It is not an enumeration or independent verification of the entire Lean dependency tree.
+Start with the **[full proof program](full-proof-program.md)**. It tracks the
+source-wide mathematical requirements, the smaller sufficient target, and
+the exact conditions for adopting a simplification. Its eleven work packages
+account for all 46 fields of the endpoint construction while retaining their
+shared data and nonvacuity requirements.
 
-## Three views
+This directory separates mathematical interfaces, manuscript organisation,
+and the complete local source import graph. An import graph is not a proof-term
+dependency certificate; none of these maps asserts that GRH is proved here.
+
+## Complementary views
 
 | View | Purpose | Meaning of an arrow |
 | --- | --- | --- |
 | [Reader's overview](overview.svg) | A compact map of the principal argument, displayed in the main README. | An input required by the following step. |
 | [Technical proof map](technical.svg) | Arithmetic and analytic interfaces, with named evidence and open requirements. | A required mathematical dependency or assembly interface. |
 | [Complete section atlas](module-atlas.svg) | Every section of the main manuscript, grouped by subject. | The source section cites the target section; this may be a forward pointer or an optional comparison. |
+| [Complete source atlas](lean-source-atlas.md) | All 175,187 pinned local source files, with every import endpoint. | In the stored graph, the importing module depends on the imported module. |
+| [Source subject diagram](source-subject-atlas.svg) | Every local source file assigned to a visible namespace group. | Namespace containment, not a mathematical implication. |
+| [Endpoint field ledger](endpoint-field-ledger.md) | All 46 construction fields assigned to responsible work packages. | No arrows: the fields share one coherent collection of objects. |
 
 The first two maps are curated mathematical descriptions. Their arrows do not
 certify that all hypotheses have been discharged. The section atlas is generated
@@ -54,23 +63,34 @@ choice. It audits incoming references and implicit formula links, including
 the mixed status of recovered sections 16 and 17. The arithmetic complex and
 the necessary class-number and unit arguments remain in the preferred route.
 
-The archived large-source inventory is historical evidence, not a fresh Lean
-build. Its counts, provenance and limitations are recorded in the
-[allocation certificate](../certificates/proof-architecture-allocation.json).
+The earlier archived source inventory is now supplemented by a fresh complete
+local-source hash check and import traversal. The
+[source certificate](../certificates/lean-source-inventory.json) records
+175,187 modules, 753,261 local import edges, full reachability from Main and
+import depth 203. The 348 external import names are explicit boundaries;
+their package internals were not traversed. This remains distinct from a
+Lean build or a declaration-level proof dependency audit.
 
 ## The central remaining theorem
 
-The final comparison must use **one compatible family of integral theta maps**:
+The final comparison must use **compatible integral theta maps at every required scale**:
 the lattices, measures, divisibility, nonvanishing and analytic norms must refer
-to those same maps. It must then give the fixed positive prime-sum estimate on
-arbitrarily large multiplicative intervals, with constants controlled as the
+to those same maps. It must then give a positive prime-sum estimate retaining
+the target character on arbitrarily large multiplicative intervals, with the
+combination fixed for each accuracy and constants controlled as the
 construction grows. Separate estimates for unrelated objects do not supply
 this theorem.
 
-The six-stage reading spine in the structural review organizes this objective.
-Its six stages are a plan for a shorter proof, not six completed theorems that
-already imply GRH. Local residue identities, global orbital energy, integral
-congruence bounds and growing-chain uniformity have separate statuses.
+The source's full family construction supplies such data, but the analytic
+conclusion only needs one suitable construction at each scale. Replacing the
+family construction remains an open mathematical task. The final exponent
+loss need only tend to zero; accuracy-dependent constants and interval shapes
+are allowed with the exact quantifiers proved in the manuscript.
+
+The earlier six-stage manuscript guide is superseded as a source-wide plan by
+the full program. Galois compatibility, stable nonzero theta lifts, normalized
+global theta identities and geometric Hodge-bundle covolume estimates are now
+explicit branches. Local positivity does not discharge those global results.
 
 ## Maintaining the blueprint
 
@@ -82,6 +102,7 @@ Then run, from the repository root:
 ```sh
 python scripts/build_proof_architecture.py
 python scripts/reconcile_recovery.py
+python scripts/build_full_proof_program.py
 python scripts/build_blueprint.py
 ```
 

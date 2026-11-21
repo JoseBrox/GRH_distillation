@@ -1,6 +1,6 @@
 digraph proof {
 graph [rankdir=TB, bgcolor="white", pad="0.24", nodesep="0.30", ranksep="0.48",
-  fontname="DejaVu Sans", fontsize=12, labelloc=t, label="Technical proof blueprint\nCurated interfaces; open constructions remain unproved", splines=polyline];
+  fontname="DejaVu Sans", fontsize=12, labelloc=t, label="Full-proof interfaces and the preferred reconstruction", splines=polyline];
 node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=11,
   margin="0.18,0.12", penwidth=1.3];
 edge [color="#64748B", penwidth=1.1, arrowsize=0.65];
@@ -20,15 +20,20 @@ graph [nodesep="0.26", ranksep="0.36"];
 "dimensions" [label="Mass, dimensions\nand ambient multiplicity\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
 "matrix" [label="Full matrix from three\ncommutators\nFixed-chain restriction and\ndomains\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
 "jacquet" [label="Jacquet regularity, adjoints\nand Fourier decay\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
-"residue" [label="Actual local residue positivity\nEvery fixed mixed word\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"residue" [label="Local residue positivity\nExplicit sign and domain\nhypotheses\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
 "norms" [label="Archimedean norm bounds\nfor the same maps\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
 "slope" [label="Abstract slope comparison\nand numerical balance\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
-"compatible" [label="One compatible construction\nUniform in growing chains\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
-"bound" [label="Fixed positive prime-sum bound\non arbitrarily large windows\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"compatible" [label="One compatible construction\nNonempty data at every scale\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"bound" [label="Positive prime-sum bounds\nVanishing total exponent loss\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
 "criterion" [label="Mellin transform and one-sided\ncriterion\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
 "grh" [label="Dirichlet GRH\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
 "alt_homology" [label="Optional coarse homology route\nTen sections bypassed\nOptional alternative", fillcolor="#EEE7F7", color="#79609C", fontcolor="#4C3769"];
 "alt_analytic" [label="Optional analytic routes\nFour sections; mixed hypotheses\nOptional alternative", fillcolor="#EEE7F7", color="#79609C", fontcolor="#4C3769"];
+"galois" [label="Classical Galois representations\nLocal-law and period dictionary\nPartly completed", fillcolor="#FFF1CC", color="#A66B0B", fontcolor="#694400"];
+"stable_lift" [label="Stable nonzero theta lift\nA source route to Galois\ncompatibility\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"theta_identity" [label="Global theta-integral matching\nNonzero scalar and normalization\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"geometry" [label="Geometric logarithmic covolume\nHodge bundles and intersections\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"source_dictionary" [label="Source residue words and forms\nSmooth positive-cutoff classes\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
 "qrh" -> "selection";
 "classical" -> "coarse";
 "coarse" -> "selection";
@@ -53,12 +58,22 @@ graph [nodesep="0.26", ranksep="0.36"];
 "compatible" -> "bound";
 "bound" -> "criterion";
 "criterion" -> "grh";
+"stable_lift" -> "galois";
+"galois" -> "selection";
+"galois" -> "refined";
+"theta" -> "theta_identity";
+"theta_identity" -> "norms";
+"geometry" -> "compatible";
+"residue" -> "source_dictionary";
+"source_dictionary" -> "norms";
 {rank=same; "classical"; "qrh";}
-{rank=same; "coarse"; "coefficients"; "local_orbits";}
+{rank=same; "stable_lift"; "coarse"; "coefficients";}
+{rank=same; "galois"; "local_orbits"; "geometry";}
 {rank=same; "selection"; "refined"; "theta";}
 {rank=same; "seed"; "level"; "global_orbits";}
 {rank=same; "divisibility"; "matrix"; "jacquet";}
 {rank=same; "dimensions"; "residue"; "slope";}
+{rank=same; "theta_identity"; "source_dictionary";}
 {rank=same; "norms";}
 {rank=same; "compatible";}
 {rank=same; "bound";}
@@ -67,8 +82,10 @@ graph [nodesep="0.26", ranksep="0.36"];
 {rank=same; "alt_homology"; "alt_analytic";}
 // Invisible edges below control layout only; they are not proof interfaces.
 "classical" -> "qrh" [style=invis, weight=50];
+"stable_lift" -> "coarse" [style=invis, weight=50];
 "coarse" -> "coefficients" [style=invis, weight=50];
-"coefficients" -> "local_orbits" [style=invis, weight=50];
+"galois" -> "local_orbits" [style=invis, weight=50];
+"local_orbits" -> "geometry" [style=invis, weight=50];
 "selection" -> "refined" [style=invis, weight=50];
 "refined" -> "theta" [style=invis, weight=50];
 "seed" -> "level" [style=invis, weight=50];
@@ -77,13 +94,16 @@ graph [nodesep="0.26", ranksep="0.36"];
 "matrix" -> "jacquet" [style=invis, weight=50];
 "dimensions" -> "residue" [style=invis, weight=50];
 "residue" -> "slope" [style=invis, weight=50];
+"theta_identity" -> "source_dictionary" [style=invis, weight=50];
 "alt_homology" -> "alt_analytic" [style=invis, weight=50];
-"classical" -> "coarse" [style=invis, weight=50];
-"coarse" -> "selection" [style=invis, weight=50];
+"classical" -> "stable_lift" [style=invis, weight=50];
+"stable_lift" -> "galois" [style=invis, weight=50];
+"galois" -> "selection" [style=invis, weight=50];
 "selection" -> "seed" [style=invis, weight=50];
 "seed" -> "divisibility" [style=invis, weight=50];
 "divisibility" -> "dimensions" [style=invis, weight=50];
-"dimensions" -> "norms" [style=invis, weight=50];
+"dimensions" -> "theta_identity" [style=invis, weight=50];
+"theta_identity" -> "norms" [style=invis, weight=50];
 "norms" -> "compatible" [style=invis, weight=50];
 "compatible" -> "bound" [style=invis, weight=50];
 "bound" -> "criterion" [style=invis, weight=50];

@@ -118,10 +118,12 @@ recovered sections and both new sections, with their exact roles.
 5. Assemble these bounds for growing chains, with compatible lattices,
    measures, denominator factors, exceptional spaces and parameter order.
 
-The exact final target is the fixed positive combination of smoothed prime
-sums defined in the main paper, bounded by an arbitrarily small power above
-the square root on arbitrarily large fixed-shape multiplicative intervals.
-The estimate remains unproved in the recovered reconstruction.
+The recovered target is the fixed positive combination of smoothed prime
+sums defined in the main paper. The stronger continuation criterion permits
+a different positive combination at each accuracy, always retaining the
+target character or its conjugate. Each combination and interval shape stay
+fixed during their own arbitrarily-late-window sequence; the total exponent
+loss must tend to zero. Producing these estimates remains open.
 
 ## Keeping further work small enough to resume
 
@@ -145,3 +147,18 @@ external report of kernel acceptance; it explicitly records no complete local
 kernel replay. The restart audit records a smaller direct source inspection.
 Neither scope should be silently substituted for the other or called a new
 independent verification performed during this recovery.
+
+## Source-wide continuation after the manuscript map
+
+The [full proof program](../blueprint/full-proof-program.md) now governs the
+source-wide frontier. Its complete import atlas covers175,187 pinned local
+modules, and its field ledger accounts for all46 fields of the final coherent
+construction. The source also needs explicit Galois compatibility, global theta
+matching and geometric Hodge-bundle covolume contracts; the earlier manuscript
+frontier was not a complete inventory of those branches.
+
+The local word/form dictionary on smooth classes is now completed in
+[residue-source-dictionary.md](residue-source-dictionary.md), including original
+parameter admissibility. The analytic endpoint has been weakened rigorously to
+vanishing total loss in [vanishing-loss-program.md](vanishing-loss-program.md).
+The source-wide program retains all global and growing-chain requirements.

@@ -35,3 +35,15 @@ alternative sections follow `\appendix`; 84 remain in the preferred exposition.
 The latter includes context and mixed sections, so it is not a count of minimal
 independent lemmas. The [proof blueprint](../blueprint/README.md) records every
 section and keeps documentary references distinct from logical obligations.
+
+The [full source-wide program](../blueprint/full-proof-program.md) now supplies
+the research backbone. It includes Galois/local compatibility, stable lift
+existence, global theta matching and geometric Hodge-bundle covolume estimates
+that were not separately visible in the earlier manuscript map. The introduction
+and final construction section now identify these requirements.
+
+Two further simplifications are integrated without adding section files:
+the vanishing-total-loss theorem in Section3 with its scalar corollary in
+Section4, and the word-independent pairing and original-parameter positivity
+corollaries in the Jacquet section. Exact source evidence remains outside the
+ordinary mathematical exposition.

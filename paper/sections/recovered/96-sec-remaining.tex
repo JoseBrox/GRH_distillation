@@ -256,15 +256,25 @@ These results do not yet give a conventional proof of
 \eqref{eq:remaining-estimate}. This section specifies the remaining
 work without disguising it as a standard theorem.
 
-For a fixed primitive character $\chi$, the construction has to produce
-intervals $[Y,Y^b]$, with fixed $b>1$ and arbitrarily large $Y$, on
-which the positive combination \eqref{eq:Hchi} has the stated upper
-bound for every prescribed positive error exponent. All constants
-that multiply that exponent must remain bounded independently of
-the exponent. Constants that merely change the starting point of
-an interval may depend on it. The actual functions $G_\psi$ and
-their normalizing logarithmic derivatives must be those defined in
-\eqref{eq:Gchi}--\eqref{eq:Gone}.
+For a fixed primitive character $\chi$, it suffices to construct a
+sequence of positive losses $\delta_j\to0$ such that, for each fixed
+$j$, the fixed positive combination \eqref{eq:Hchi} satisfies
+$H_\chi(x)\le M_jx^{1/2+\delta_j}$ throughout arbitrarily large
+intervals $[Y,Y^{b_j}]$, with $M_j\ge0$ and $b_j>1$.
+Theorem~\ref{thm:vanishing-loss-windows} allows both $M_j$ and $b_j$
+to depend on $j$. The estimates must remain valid as $x$ and the chain
+length grow within each fixed-$j$ construction; uniform bounds across
+$j$ are unnecessary once the total exponent loss tends to zero.
+For the scalar construction, the sufficient condition is
+$(C_j+3)\varepsilon_j\to0$, as in
+Corollary~\ref{cor:variable-loss-construction}. More generally,
+Corollary~\ref{cor:varying-positive-families} permits a different finite
+positive combination $H_j$ for each accuracy, always containing $\chi$
+or $\bar\chi$ with positive coefficient. No uniform lower bound on that
+coefficient is required. Each combination must remain fixed throughout
+its own arbitrarily late sequence of whole intervals.
+The actual functions $G_\psi$ and their normalizing logarithmic
+derivatives must be those defined in \eqref{eq:Gchi}--\eqref{eq:Gone}.
 
 The announcement proposes chains of theta lifts between definite
 unitary groups. Here a definite unitary group means the group of
@@ -276,9 +286,23 @@ pair of such groups. The chain length is allowed to grow with $x$.
 These definitions describe the objects; they do not assert uniform
 estimates for the integrals.
 
-A full reconstruction must provide the following four arguments
+A full reconstruction must provide the following arguments
 with compatible normalizations and uniformity.
 \begin{enumerate}
+\item Supply the Galois representations attached to the required
+      regular algebraic polarized cuspidal representations over CM
+      fields, with the exact local and infinity normalizations used
+      in the construction. A replacement by a classical theorem must
+      match these conditions, including the conditions at the
+      coefficient prime. A source of representations does not by
+      itself prove the quantitative integral congruence estimates.
+\item Construct the geometric data and prove the required upper
+      bound for normalized logarithmic covolumes of the associated
+      lattices of sections. The metrics, degrees and Hodge-bundle
+      self-intersection data must be those of the arithmetic
+      construction, with one threshold valid for all its indices.
+      The abstract lattice comparisons proved above do not establish
+      this geometric estimate.
 \item Construct the integral modules of theta lifts, specify their
       coefficient rings, pairings, levels, weights, and measures,
       and prove the requisite nonvanishing. Iteration must be
@@ -298,7 +322,8 @@ with compatible normalizations and uniformity.
       complementary-parity components need constants uniform in
       the allowed auxiliary primes.
 \item Use the character averages and the preceding estimates to
-      bound the particular fixed function $H_\chi$. In this step
+      bound $H_\chi$, or a positive combination retaining $\chi$
+      that is fixed for each accuracy. In this step
       the selected-character estimates are supplied, conditional
       on QRH, by Theorem~\ref{qs-selection}, for the entire finite
       family of fixed base characters and their quadratic twists.
@@ -404,7 +429,7 @@ remaining argument.
 \end{example}
 
 The next substantial advance in this manuscript should therefore
-be a proof of one of the four uniform constructions above, or a
+be a proof of one of the uniform constructions above, or a
 replacement of them by an independently proved estimate strong
 enough to yield \eqref{eq:remaining-estimate}. Until then, the
 conditional statements retain their stated hypotheses and this

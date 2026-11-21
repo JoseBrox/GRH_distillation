@@ -135,6 +135,32 @@ give
 \begin{equation}\label{ji-polynomial-intertwining}
           P_j^{\rm rad}\Phi_F=\Phi_{P_jF}.
 \end{equation}
+
+\begin{corollary}\label{ji-word-pairing}
+Fix the place data and Haar measures of Section~\ref{jf-section}.
+There is a constant \(C_r>0\), independent of the auxiliary dimension
+and of the admissible polynomial matrix \(P\), such that for all
+\(F,H\in\mathscr S_\varepsilon(G_r,E)^B\),
+\[
+ \sum_{a\in B}\beta((PF)_a,H_a)
+   =C_r^{-1}\langle P^{\mathrm{rad}}\Phi_F,\Phi_H\rangle_{L^2(d\eta_r)}.
+\]
+In particular the same constant works for every finite residue word
+whose scalar denominators are nonzero.
+\end{corollary}
+
+\begin{proof}
+The coefficient class is preserved by \(P\), by
+Corollary~\ref{cm-group-preservation}. Apply
+\eqref{jf-radial-pairing} componentwise to \(PF,H\), and use
+\eqref{ji-polynomial-intertwining}. Finite component sums preserve the
+same constant. The intertwining identity holds for any ordered polynomial
+because it holds for each contracted entry and passes to sums and
+compositions. Constant auxiliary matrices, including insertion and
+transposition at a fresh auxiliary factor, commute with the componentwise
+Jacquet transformation. Thus it applies to both signed residue steps.
+\end{proof}
+
 Define its quadratic form on compact coefficient vectors by
 \[
  \mathfrak q_j(F)=\int
@@ -727,10 +753,41 @@ These are the two constant-sign cases of
 Corollary~\ref{ji-fused-positivity}.
 \end{proof}
 
+\begin{corollary}\label{ji-unshifted-positivity}
+Fix the place data, standard flag and initial spectral parameters of
+Corollary~\ref{ji-fused-positivity}. Take a finite word on distinct
+auxiliary factors with real insertion parameters \(\lambda_j\).
+Assume the interlacing and common-cut conditions
+\eqref{rp-interlacing} and \eqref{rp-cut-margin}, the latter with
+\(Y=\lambda_j\), for one fixed \(1\le l\le k\), and use initial
+sign \(\sigma=(-1)^{k-l}\). If
+\[
+                     |\lambda_i-\lambda_j|>2\qquad(i\ne j),
+\]
+then the compact and finite-decay positivity conclusions of
+Corollary~\ref{ji-fused-positivity} hold. The separation in this
+statement is imposed on the original insertion parameters for both signs.
+\end{corollary}
+
+\begin{proof}
+Lemma~\ref{rp-parameter-signs} gives the required signs of the initial
+spectral polynomials at \(\lambda_j-1,\lambda_j,\lambda_j+1\),
+and positivity of \(q(\lambda_j)\) and \(q(\lambda_j-1)\).
+The original-parameter admissibility argument
+\eqref{re-word-domain} makes every recursive step well defined.
+Lemma~\ref{rp-recursive-positive} and Corollary~\ref{re-density}
+therefore give terminal positivity for every mixture of signs.
+
+Theorem~\ref{ji-fused-congruence} and Theorem~\ref{ji-rank-descent}
+need distinct auxiliary factors and nonzero scalar denominators, and
+impose no further separation on shifted parameters. Applying them gives
+compact-input positivity. Theorem~\ref{ji-finite-decay-positivity}
+gives the asserted extension with the same finite decay indices.
+\end{proof}
+
 This establishes the local positivity for the explicitly defined
 residue recursion and the actual compact or finite-decay Jacquet
-coefficients just stated.  Identifying other presentations of the
-source's fusion forms requires their normalization and ordering
-to match this recursion.  Global orbital-energy estimates and
+coefficients just stated. The integral comparison uses one positive
+normalization for every finite word. Global orbital-energy estimates and
 the arithmetic nonvanishing and divisibility requirements do not
 follow from this local positivity theorem.

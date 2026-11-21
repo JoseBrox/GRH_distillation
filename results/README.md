@@ -41,8 +41,42 @@ order (k + 2r + 1)h + 5, where δ > 0 and A satisfies the existing pairing bound
 
 Only the scalar paired density is asserted Schwartz. The factors involving
 inverse coordinates need not separately be globally square integrable. The
-comparison with differently presented source fusion forms and quantitative
-estimates for growing chains remain separate requirements. See the [independent review](../notes/matrix-schwartz-review.md).
+local source word, operator, gauge and measure dictionary is now checked on
+smooth coefficient classes. Source lists recurse tail first; the existing
+original-parameter positivity criterion avoids imposing the stronger shifted
+separation. One positive pairing constant works for every word. Quantitative
+estimates for growing chains remain separate. See the
+[source dictionary](../notes/residue-source-dictionary.md) and
+[independent review](../notes/matrix-schwartz-review.md).
+
+## Vanishing total exponent loss
+
+For the same fixed positive character combination H, suppose
+
+```math
+H(x)\le M_jx^{1/2+\delta_j}\qquad(Y\le x\le Y^{b_j}),
+\qquad\delta_j\longrightarrow0,
+```
+
+holds on arbitrarily late whole windows for each fixed j, with M_j ≥ 0 and
+b_j > 1 fixed before choosing the windows. Then the occurring L-functions
+have no zero to the right of one half. The multiplicative constants and window
+shapes need not be uniform across j. Apply the existing one-sided criterion
+separately at each exponent, then let those exponents approach one half.
+
+The auxiliary families may also vary with j: if every positive combination
+H_j contains a fixed target character or its conjugate with a positive
+coefficient, the same proof excludes every target zero to the right of one
+half. No uniform positive lower bound on that coefficient is needed. Each
+H_j stays fixed throughout its own sequence of windows. Thus a common family
+across accuracies is sufficient but unnecessary.
+
+For the scalar arithmetic construction, the sufficient condition becomes
+(C_j + 3) ε_j → 0. Bounded C_j is one sufficient possibility, not a necessary
+uniformity requirement. Uniform control within each fixed-accuracy construction
+remains essential. The proof, limiting cases and independent review are in
+[vanishing-loss-program.md](../notes/vanishing-loss-program.md); the theorems
+are integrated into the existing analytic and numerical sections.
 
 ## Removing a cohomological dependency
 

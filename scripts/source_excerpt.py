@@ -14,6 +14,8 @@ No mathematical verification or compilation is implied by byte verification.
 from __future__ import annotations
 
 import argparse
+import gzip
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -31,6 +33,7 @@ MAX_MATCHES = 25
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, default=ROOT / "sources/manifest.json")
+    parser.add_argument("--atlas", action="store_true", help="Select from the complete pinned source atlas, using a full module name, path or unique suffix")
     parser.add_argument("--source", required=True, help="Exact path, or unique path suffix")
     parser.add_argument("--repository", help="Disambiguate identical paths across repositories")
     parser.add_argument("--offline", action="store_true", help="Require an already cached file")
@@ -49,10 +52,21 @@ def main() -> int:
         if end < start or end - start + 1 > MAX_LINES:
             parser.error("Request an ordered range of at most 120 lines")
 
-    manifest = json.loads(args.manifest.read_text())
+    if args.atlas:
+        packed = (ROOT / "blueprint/lean-source-imports.json.gz").read_bytes()
+        inventory = json.loads((ROOT / "certificates/lean-source-inventory.json").read_text())
+        if hashlib.sha256(packed).hexdigest() != inventory["compressed_graph"]["sha256"]:
+            raise ValueError("Source atlas differs from its verification certificate")
+        atlas = json.loads(gzip.decompress(packed))
+        manifest = {"files": [{"repository": atlas["repository"], "commit": atlas["commit"],
+                               "path": "lean/src/" + row[0].replace(".", "/") + ".lean",
+                               "git_blob_sha1": row[1], "module": row[0]}
+                              for row in atlas["modules"]]}
+    else:
+        manifest = json.loads(args.manifest.read_text())
     entries = [item for item in manifest["files"]
                if (not args.repository or item["repository"] == args.repository)]
-    exact = [item for item in entries if item["path"] == args.source]
+    exact = [item for item in entries if item["path"] == args.source or item.get("module") == args.source]
     matches = exact or [item for item in entries if item["path"].endswith("/" + args.source)]
     if len(matches) != 1:
         names = [item["repository"] + ":" + item["path"] for item in matches[:MAX_MATCHES]]
@@ -65,8 +79,17 @@ def main() -> int:
         raise ValueError("Invalid repository path")
     if not re.fullmatch(r"[0-9a-fA-F]{40}", item["commit"]):
         raise ValueError("Use a pinned full commit hash")
-    record = inspect_file(item, args.offline)
     cache = ROOT / "build/source-cache" / item["repository"] / item["commit"] / item["path"]
+    if args.atlas:
+        local = ROOT / "build/lean-mirror" / item["path"]
+        if local.is_file():
+            data = local.read_bytes()
+            blob = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+            if blob != item["git_blob_sha1"]:
+                raise ValueError("Local mirror bytes differ from the pinned atlas")
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            cache.write_bytes(data)
+    record = inspect_file(item, args.offline)
     lines = cache.read_text().splitlines()
 
     if args.search is not None:

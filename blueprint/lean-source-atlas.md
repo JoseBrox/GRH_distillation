@@ -37,6 +37,7 @@ Query one module without loading a source file into the conversation:
 
 ```sh
 python scripts/scan_lean_backbone.py --module Main
+python scripts/source_excerpt.py --atlas --source Main --search theorem --offline
 ```
 
 To reproduce the full inventory, make the pinned source checkout available locally and run:
@@ -51,4 +52,9 @@ The scanner reads and verifies the large artifact locally and prints only aggreg
 
 The [endpoint backbone](../notes/lean-endpoint-backbone.md) traces the final sufficient interfaces and the one coherent construction they require. The [global input review](../notes/lean-global-inputs.md) unfolds the Galois compatibility, stable theta lift, theta-integral matching and geometric covolume contracts. These are mathematical interpretation checkpoints, not a claim that every source lemma has been independently verified.
 
-The conventional proof program must cover all of these branches, including any replaced by a correctly matched classical theorem. The complete import graph remains available when a dependency must be traced beyond the current mathematical boundary.
+The [full proof program](full-proof-program.md) covers these branches and records
+the acceptance conditions for each proposed replacement. The
+[source subject diagram](source-subject-atlas.svg) accounts for the entire
+local tree; the [complete subject table](source-subjects.md) lists all 343
+two-component groups. The complete import graph remains available when a
+dependency must be traced beyond the current mathematical boundary.

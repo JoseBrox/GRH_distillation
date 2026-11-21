@@ -46,3 +46,17 @@ python scripts/source_excerpt.py --source lean/src/Main.lean --lines 1:12
 The file is cached locally, not copied into the conversation in full. Search
 output is limited to 25 matches; excerpts are limited to 120 lines and 12,000
 bytes. A source-byte check is not a proof check or a Lean build.
+
+The complete pinned local source is now indexed in the
+[source atlas](../blueprint/lean-source-atlas.md). To select any indexed
+module by its full name while keeping the same bounds:
+
+```sh
+python scripts/source_excerpt.py --atlas --source Main --search theorem --offline
+```
+
+The reader checks the local mirror bytes against the stored Git blob and then
+uses the verified cache. If the local mirror is unavailable, omit `--offline`
+to retrieve only the selected file. The full import index and its precise
+verification scope are preserved in the repository; large source bodies stay
+outside conversational context.

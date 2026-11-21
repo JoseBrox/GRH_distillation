@@ -16,6 +16,7 @@ from pathlib import Path
 import re
 import sys
 from urllib.request import Request, urlopen
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,7 +37,7 @@ def inspect_file(item: dict, offline: bool) -> dict:
         raise FileNotFoundError(f"Not cached: {relative}")
     else:
         url = (f"https://raw.githubusercontent.com/{item['repository']}/"
-               f"{item['commit']}/{item['path']}")
+               f"{item['commit']}/{quote(item['path'], safe='/')}")
         request = Request(url, headers={"User-Agent": "GRH-distillation-source-check/1"})
         with urlopen(request, timeout=45) as response:
             data = response.read()

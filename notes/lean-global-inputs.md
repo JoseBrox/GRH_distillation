@@ -68,16 +68,300 @@ The source's predicate `PolarizedGaloisRepPublished` is stronger and has a
 similar-looking conclusion. Its name is not a bibliographic verification,
 and it is not being substituted without checking every local clause.
 
-### Proposed structural shortcut, still gated
+### Classical Galois theorems: a concrete possible branch reduction
 
-An exact published Galois-representation theorem implying `Row0b`, together
-with the required local Langlands normalization, could replace the entire
-geometric-seed/theta-lift construction **for this use of `Row0b`**. It would
-not remove the separate theta-integral or covolume branches. The existence,
-local-at-ℓ and ramified-place hypotheses must be compared before marking
-this shortcut complete. Adjoint Selmer vanishing alone supplies none of
-these existence or local-compatibility conclusions. Uniform Dirichlet QRH
-also does not supply them.
+Two primary references have now been checked against the contract:
+
+- Barnet-Lamb, Gee, Geraghty and Taylor, *Potential automorphy and change
+  of weight*, Annals of Mathematics 179 (2014), Theorem 2.1.1, printed
+  page 538; weight conventions on pages 536–537 and local conventions on
+  pages 509–510. [Publisher PDF](https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p03-p.pdf).
+- The same authors, *Local-global compatibility for ℓ = p, II*, Annales
+  scientifiques de l'École Normale Supérieure 47 (2014), 165–179,
+  DOI [10.24033/asens.2212](https://www.numdam.org/articles/10.24033/asens.2212/).
+  The inspected [author PDF](https://virtualmath1.stanford.edu/~rltaylor/lg2.pdf)
+  has the monodromy order on pages 5–6 and Theorem 1.1 on page 6.
+- For the standard implication from de Rham to potentially semistable,
+  Laurent Berger, *Représentations p-adiques et équations différentielles*,
+  Inventiones Mathematicae 148 (2002), 219–284,
+  [arXiv:math/0102179v3](https://arxiv.org/pdf/math/0102179v3),
+  Theorems 0.6 and 5.19 (pages 6 and 56 of the inspected version).
+
+The following comparison uses the **classical local Langlands
+correspondence**. The additional source-interface issue immediately below
+the table is not suppressed.
+
+| Source clause | Classical input or deduction | Comparison status |
+| --- | --- | --- |
+| Continuous semisimple representation of rank \(n\) | Theorem 2.1.1 | Same mathematical conclusion |
+| Polarized cuspidal hypothesis | Source `PolarizedPair` imposes the duality and \(\chi_v(-1)=(-1)^n\) | Matches the polarized hypothesis; the source imposes no weaker infinity sign |
+| Local normalization | `algNorm` twists by \(\lvert\det\rvert^{(1-n)/2}\) | The numerical exponent agrees exactly |
+| Away from ℓ | Theorem 2.1.1(2) gives full Frobenius-semisimplified compatibility | Stronger than `AwayB`, for the classical correspondence |
+| Infinity weights | Theorem 2.1.1(3), with the dual highest-weight convention | The shift agrees by the calculation below |
+| Conjugate Hodge–Tate multisets | Theorem 2.1.1(3) gives \(\mathrm{HT}_{\tau c}=w-\mathrm{HT}_\tau\) | Same symmetry |
+| Spherical places above ℓ | Theorem 2.1.1(4) gives crystallinity; (3) supplies the de Rham and weight statements | Spherical implies Iwahori-fixed, as required in (4) |
+| Places above ℓ with comparison monodromy zero | Local-global II, Theorem 1.1, and the dominance lemma below | Full compatibility follows without a Shin-regularity or Iwahori hypothesis |
+
+The last row is useful because **both alternatives in `AboveB.nice`
+explicitly assume that the comparison parameter has zero monodromy**.
+The dominance assertion of Theorem 1.1 requires a regular algebraic,
+essentially conjugate-self-dual cuspidal pair over an imaginary CM field,
+an identification \(\overline{\mathbf Q}_\ell\simeq\mathbf C\), and a place
+above ℓ. It imposes no Iwahori, level, odd-prime or Shin-regularity
+restriction. Shin regularity is used only for its further assertion of
+full compatibility with arbitrary monodromy. Ramified toral representations
+are therefore not being assumed to have Iwahori-fixed vectors.
+
+There is no extra imaginary-quadratic-subfield requirement here. In the
+Annals paper's notation (page 511), “CM” permits either a totally real
+field or a totally imaginary quadratic extension of one; “imaginary CM”
+selects the latter case. This terminology does not create a new descent
+obligation for the ordinary CM fields in `Row0b`.
+
+#### The zero-monodromy dominance lemma
+
+Let \(X,Y\) be Frobenius-semisimple Weil–Deligne representations. Suppose
+\(X\prec Y\) in the order used in Local-global II: they have isomorphic
+semisimplifications, and in each unramified-twist class of irreducible
+Weil representations, the decreasing sequences of special-block lengths
+satisfy all partial-sum inequalities. If \(N_Y=0\), then \(X\simeq Y\).
+
+Indeed, every special-block length of \(Y\) is one. In each nonempty
+class the first partial-sum inequality makes the largest block length of
+\(X\) at most one. All its lengths are positive integers, so they are
+all one and \(N_X=0\). The common semisimplification then identifies
+\(X\) and \(Y\). Empty classes contribute nothing. This proof works
+in rank one as well.
+
+Consequently, for the classical correspondence, Theorem 1.1 already gives
+the zero-monodromy local compatibility needed above ℓ. No separate proof
+of purity or full arbitrary-monodromy compatibility is required for this
+deduction.
+
+**Classical consequence.** For a regular algebraic polarized cuspidal
+representation over a CM field, the usual associated Galois representation
+can be taken continuous and semisimple, with the specified de Rham weights
+at every place above ℓ, potentially semistable there, crystalline wherever
+the automorphic representation is unramified, and compatible after
+Frobenius semisimplification at every place away from ℓ and every place
+above ℓ whose classical local parameter has zero monodromy. This follows
+from the two compatibility theorems, the proved dominance lemma and
+Berger's theorem. It is a proved consequence of the cited classical
+results. The literal source contract still has the extra dictionary and
+weak-correspondence quantifiers described below.
+
+#### Independent spectral check
+
+If \(F\) is invertible on a finite-dimensional complex vector space,
+\(FNF^{-1}=cN\), \(\lvert c\rvert\ne1\), and all eigenvalues of \(F\)
+have one absolute value, then \(N=0\). The identity
+\[
+ (F-c\lambda I)^mN=c^mN(F-\lambda I)^m
+\]
+shows that \(N\) sends the generalized \(\lambda\)-eigenspace into the
+generalized \(c\lambda\)-eigenspace. The latter is zero, since its
+eigenvalue has a different absolute value. Summing generalized
+eigenspaces proves the assertion; semisimplicity of \(F\) is unnecessary.
+
+This gives another route from semisimplified compatibility when the
+comparison parameter is pure **and has zero monodromy**. Purity alone
+does not give the common-modulus hypothesis: a nonzero-monodromy pure
+Weil–Deligne representation has distinct monodromy weights. The dominance
+argument above is shorter and does not use this extra purity input.
+
+#### Weight and Frobenius normalization
+
+`GaloisRepOfPolarizedCuspidal.lean`, 24–26, and
+`NonemptyEquivMultiProdOne.lean`, 203–206, show that `algNorm` means the
+determinant twist with exponent \((1-n)/2\). `absPow`, 47–55 of
+`IsSubquotientDetRepParInd.lean`, uses the local Haar-modulus absolute
+value raised to that exponent.
+
+For the infinity convention, `ContinuousConjFin.lean`, 147–156, evaluates
+the source's Capelli polynomial on a highest-weight vector with weights
+\(\nu_k\), \(0\le k<n\), as
+\[
+ \prod_{k=0}^{n-1}\bigl(u+\nu_k+(n-1)/2-k\bigr).
+\]
+Thus its infinitesimal-character multiset is
+\(\{\nu_k+(n-1)/2-k\}\). The Annals paper defines automorphic weight
+\(a_1\ge\cdots\ge a_n\) using the dual of the algebraic representation
+of highest weight \(a\). Substitution of
+\(\nu_k=-a_{n-k}\) gives exactly
+\[
+ \left\{\frac{n-1}{2}-z:z\in\operatorname{infChar}\pi\right\}
+       =\{a_i+n-i:1\le i\le n\},
+\]
+the Hodge–Tate convention in Theorem 2.1.1(3). This checks the numerical
+shift; the source's automorphic and period-model interpretations still
+belong to the dictionary obligation below.
+
+The source already builds Frobenius semisimplification into its local
+objects. `WDRep` has a semisimplicity field
+(`MonodromyZeroOfWeilDeligneRepClassIff.lean`, 36–45), and `wdRep` in
+`FiniteDimensionalWdSpace.lean`, 126–136, is explicitly chosen by
+Frobenius semisimplification without changing monodromy. The away-place
+definition similarly uses `IsFrobSS` before passing to its isomorphism
+class (`WeilDeligneParamMonodromyEqZeroIff.lean`, 333–354).
+
+The reciprocity sign is also explicit. `IsLocalArtin` in
+`HasExponentZeroIff.lean`, 145–152, requires
+\[
+ \operatorname{ord}(a(\sigma))=-\deg(\sigma).
+\]
+Thus a uniformizer corresponds to degree \(-1\), and the source relation
+\(\rho(\sigma)N\rho(\sigma)^{-1}=q^{\deg\sigma}N\) becomes
+\(q^{-1}N\) on geometric Frobenius. This agrees with the local Artin and
+Weil–Deligne conventions in the two compatibility papers. The associated
+transport contract is stated across field, algebraic-closure and place
+isomorphisms in `RecTTransport.lean`, 317–324.
+The degree interpretation is checked directly, not read from a name:
+`ExistsNotCongPow.lean`, 70–72 and 168–176, describes residue action by
+\(\overline{\sigma(x)}^{q^b}=\bar x^{q^a}\) and degree \(a-b\).
+Arithmetic Frobenius has degree one (231–235), so its geometric inverse
+has degree minus one.
+
+#### The classical depth-zero type formula
+
+The extra `TypeLaw` has now been unfolded. It is an inertial statement,
+not a claim about all Frobenius eigenvalues. For a rational local field
+\(F\simeq\mathbf Q_p\), a regular character
+\(\theta:\mathbf F_{p^n}^{\times}\to\mathbf C^{\times}\), and an
+irreducible smooth representation containing the corresponding finite
+cuspidal type, it requires zero monodromy and the inertial polynomial
+\[
+ \prod_{j=0}^{n-1}\left(X-\theta(z^{p^j})\right).
+\]
+Here \(z\) is the reduction of the local Artin image in the unramified
+extension of degree \(n\). The exact quantifiers and formula are in
+`IsRecTOfIsRec.lean`, 35–53.
+
+This agrees with an explicit primary author account: Colin Bushnell,
+[*Effective local Langlands correspondence*](https://maths.dur.ac.uk/events/Meetings/LMS/2011/GRAF11/papers/bushnell.pdf),
+§1.2 (page 5) and §8.2 (pages 25–26). It constructs the finite cuspidal
+representation using the trace
+\((-1)^{n-1}\sum_{j=0}^{n-1}\theta(z^{p^j})\) on elliptic regular
+elements, and gives the associated Weil representation by induction of
+a tame character from the unramified extension, with an unramified
+quadratic correction. The coauthored monograph
+[*To an effective local Langlands correspondence*](https://arxiv.org/pdf/1103.5316v2),
+§1.1, page 9, explicitly uses the geometric-Frobenius Artin convention.
+
+The deduction of the source formula has the following precise steps.
+
+1. `IsRegularChar`, in `GreenRegularCharacters.lean`, 10–11, says that
+   the \(n\) Frobenius conjugates of \(\theta\) are distinct. The trace
+   label in `TypeLaw` is exactly the finite cuspidal label just described.
+   The source's finite `IsCusp` includes irreducibility
+   (`LabelDatum.lean`, 64–65).
+   The explicit uniqueness assertion in §8.2 identifies this finite
+   cuspidal representation from its elliptic regular traces.
+2. `Inflates` is a **nonzero intertwining map** from that finite
+   representation to the local one on the maximal compact group
+   (`PrincipalCongruenceFixedVectorsLeSmoothVectors.lean`, 20–22).
+   Irreducibility makes this an embedding of the type. Extend the type to
+   the product of the centre and the maximal compact group using the
+   central character of the local representation. Its compact induction
+   is irreducible and cuspidal by the construction in §1.2. Frobenius
+   reciprocity gives a nonzero map from that induction to the given
+   irreducible representation, hence an isomorphism. This also explains
+   why the source need not assume local supercuspidality separately.
+3. In §8.2 the parameter has the form
+   \(\operatorname{Ind}_{W_L}^{W_F}(\omega^{n-1}\xi)\), where
+   \(L/F\) is unramified of degree \(n\), \(\xi\) lifts \(\theta\),
+   and \(\omega\) is unramified quadratic. Its monodromy is zero. On
+   inertia the correction \(\omega\) disappears, and the induced
+   representation is the sum of the \(n\) Frobenius conjugates of the
+   residue character. Taking its characteristic polynomial gives exactly
+   the displayed product. The choice of \(\xi\) on a uniformizer also
+   disappears from this calculation.
+4. The source's global auxiliary field has
+   \(p\notin\mathfrak p'^2\) and residue norm \(p^n\), so its local
+   extension over \(\mathbf Q_p\) is unramified of degree \(n\).
+   Its surjective reduction map with kernel \(\mathfrak p'\) identifies
+   the chosen finite field with this residue field. The source's congruence
+   involving the local Artin image says precisely that its residue is
+   \(z\). Thus its arbitrary auxiliary fields and reduction maps give
+   the same local formula. A reversal of the generator of the finite
+   Galois orbit merely permutes the factors.
+
+There is no odd-prime, squarefreeness, zero-monodromy input, or large-prime
+restriction in this depth-zero type calculation; zero monodromy is an
+output. The formula is therefore available with the strength requested by
+`TypeLaw`. The conventional mathematical comparison is established here;
+identifying every source implementation of the full local laws and its
+period objects with the classical objects remains a separate dictionary
+obligation. This is not a Lean rebuild or a proof of the global arithmetic
+estimates.
+
+#### Recovering the weaker local interface
+
+The literal source contract quantifies over **every** correspondence
+satisfying `IsRecT`, not just the classical one. This is a weaker
+interface. Its `LawsT` give the twisting, determinant, duality and
+injectivity laws only on the class `Good` of representations
+(`IsRecTOfIsRec.lean`, 55–76). Even the declared uniqueness contract
+`RecTUnique`, 82–85, compares two such correspondences only on `Good`.
+`LocalCentralUnits/RecTUnique.lean`, 28–53, proves this restricted
+uniqueness; its initial step identifies the two local Artin maps.
+The toral and tame restrictions in `Row0b` must therefore be used to
+identify its local parameters with the classical parameters. Full
+classical compatibility alone does not settle that quantifier.
+
+There is a useful elementary transfer lemma. Let \(R\) be a fixed
+classical correspondence that satisfies the weak interface, and let
+\(r\) be any other correspondence satisfying it. Suppose \(r(x)=y\)
+and that a representation \(z\) in `Good` satisfies \(R(z)=y\).
+Restricted uniqueness gives \(r(z)=R(z)=y\); the restricted injectivity
+law, applied with `Good` target \(z\), gives \(x=z\). Thus it suffices
+to construct a `Good` classical preimage of each admitted parameter.
+The two preimage statements are now proved relative to the full local laws
+in [the local-correspondence bridge](local-correspondence-bridge.md), and
+have been independently checked. The toral proof uses the support
+characteristic-polynomial identity, semisimplicity of every Weil element
+and irreducibility of cuspidal parameters to force rank-one cuspidal
+support. The tame proof uses the full depth equivalence and the source
+lemma `GoodLem.good_of_fixed`, 31–40. Neither proof needs the additional
+squarefreeness, zero-monodromy or large-prime hypotheses of the original
+guards.
+
+Alternatively, the human proof can fix one classical correspondence
+coherently throughout. The source already names the full-correspondence
+notion `recFull` (`WeightsConjAlt.lean`, 101), and `OfStar.lean`, 60–70,
+converts its Galois contract into another downstream package. Such a
+specialization must change both existential local admissibility witnesses
+and universal Galois comparisons consistently. Usual local Langlands
+laws alone are not the whole weak interface: `IsRecTOfIsRec.lean`, 91–104,
+also requires its local `TypeLaw`. The endpoint audit records the exact
+consumer changes needed for this alternative.
+
+The resulting conditional reduction is now precise. The fixed-family
+Galois contract, the full local laws and the type formula imply the
+original weak-correspondence Galois contract with the **same** global
+representation and Hodge–Tate data. The proof is in
+[the fixed-correspondence reduction](fixed-correspondence-reduction.md),
+and has also been independently checked. In particular, this route does
+not require rewriting every downstream occurrence of a weak local map.
+
+Two dictionary tasks remain before marking the source branch as removed:
+
+1. Finish the clause-by-clause identification of the source's full local
+   laws with the classical correspondence. The Good-preimage argument and
+   the explicit depth-zero type formula account for the additional weak
+   interface; they do not silently certify all the other clauses of the
+   full local bundle.
+2. Complete the source-to-classical automorphic and period dictionary,
+   including potentially semistable realizations in all the allowed
+   period models. The numerical shifts, Frobenius sign and classical
+   de Rham-to-potentially-semistable theorem are now identified; this
+   does not by itself prove all the source's model quantifiers.
+
+An exact replacement could remove the geometric seed, integral
+congruence and stable theta-lift construction **for this use of `Row0b`**.
+It would not remove the separate global theta-integral or geometric
+covolume branches. The source alternative remains in the proof plan;
+the replacement is not yet marked complete. Adjoint Selmer vanishing
+and uniform Dirichlet QRH do not themselves supply these Galois objects.
 
 ## 2. The stable-range lift and its quantifiers
 
@@ -142,6 +426,14 @@ The new manuscript theorem proves an actual local residue form positive.
 It does not prove the global unique nonzero scalar, the two Hecke-
 \(L\)-value rank-reduction identities, or the required nonzero global
 test integral. These are explicit tasks in the full program.
+
+The final source supplier is now also inspected directly:
+`TheoremKOfMod.lean`, 14–27. It assembles local coinvariants and ramified
+multiplicity one, split and inert matching, local representation
+existence, archimedean differential and compact-group comparisons,
+Siegel reduction, the Eisenstein and Siegel–Weil statements, and Weil
+representation existence. Thus the global identity box has real inputs
+on both the local representation and global integration sides.
 
 ## 4. The geometric logarithmic-covolume estimate
 
