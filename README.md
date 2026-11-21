@@ -2,13 +2,13 @@
 
 This project studies Levent Alpöge's announced proof of the Riemann Hypothesis and the Generalized Riemann Hypothesis. Its purpose is to understand the argument, check its dependencies, and write a shorter proof in ordinary mathematical language, with complete definitions and proofs.
 
-For a Dirichlet character χ, the Dirichlet series
+For a Dirichlet character $\chi$, the Dirichlet series
 
-```text
-L(s, χ) = ∑_{n=1}^∞ χ(n)/n^s               (Re(s) > 1)
+```math
+L(s,\chi)=\sum_{n=1}^{\infty}\frac{\chi(n)}{n^s}\qquad (\mathrm{Re}\,s>1)
 ```
 
-extends beyond its initial domain of convergence. The version of GRH studied here says that every zero in the open strip 0 < Re(s) < 1 lies on the line Re(s) = 1/2. The original source also states nonvanishing to the right of that line, with the usual exception at the pole of a principal character.
+extends beyond its initial domain of convergence. The version of GRH studied here says that every zero in the open strip $0<\mathrm{Re}\,s<1$ lies on the line $\mathrm{Re}\,s=1/2$. The original source also states nonvanishing to the right of that line, with the usual exception at the pole of a principal character.
 
 ## Original result and attribution
 
@@ -31,8 +31,6 @@ The source statements have been inspected. They concern all Dirichlet characters
 The repository records independently recomputed hashes for 29 selected source files. An exact-rational script checks the exponent calculations. The paper has been compiled with stable references. The [verification records](certificates/README.md) explain the scope of each check.
 
 [The recovery record](notes/recovery.md) distinguishes what was available at the first checkpoint from the much larger body of work subsequently supplied. The preserved originals and complete ZIP ensure that no recovered proof, program, or certificate is lost during reorganization.
-
-Markdown summaries use Unicode notation and plain-text formula blocks for reliable display in GitHub and other Markdown viewers. The PDFs and TeX sources retain fully typeset mathematics.
 
 ## How to read the project
 

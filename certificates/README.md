@@ -18,7 +18,7 @@ This is a **source-file integrity check**. It is not a Lean build, a kernel cert
 python3 scripts/verify_exponents.py --check certificates/exponents.json
 ```
 
-The script checks finite rational identities. The proof for all integers m ≥ 2 is in the paper. In particular, an evaluation at ϑ = 0 records the limiting algebraic exponent and does not assert an arithmetic estimate at that endpoint.
+The script checks finite rational identities. The proof for all integers $m\geq2$ is in the paper. In particular, an evaluation at $\vartheta=0$ records the limiting algebraic exponent and does not assert an arithmetic estimate at that endpoint.
 
 ## Compiled paper
 
