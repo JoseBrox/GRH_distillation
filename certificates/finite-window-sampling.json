@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "claim": "Exact finite endpoint, signed-weight and error-integral checks supplement the written finite-table criterion.",
+  "note": "notes/finite-window-sampling.md",
+  "note_sha256": "393a181772c9f388f72bee25f38e96b3382b9b6d8902785f0813abf88c58ef7d",
+  "script": "scripts/check_finite_window_sampling.py",
+  "script_sha256": "6d20686551893f2e603d46d28715e8fad6ad862351e189b03cbe210f7561d84b",
+  "proof_dependencies": [
+    {
+      "path": "paper/sections/recovered/03-sec-one-sided.tex",
+      "ranges": [
+        {
+          "start": 337,
+          "end": 381,
+          "sha256": "ce3e87093500a6e5235d7efd687f7f8832ec60c33d8b8bce154eb4dbfeca0fcf"
+        }
+      ]
+    },
+    {
+      "path": "paper/rh/sections/01-introduction.tex",
+      "ranges": [
+        {
+          "start": 31,
+          "end": 60,
+          "sha256": "96606f00a60113d4b636dc162c243ed3b1c21ab0d35f87b2b692e8e97c759c63"
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "rational_averaging_rows": 266,
+    "exact_signed_cancellation_cases": 41,
+    "positive_part_interpolation_cases": 451,
+    "symbolic_tail_integral": "PASS",
+    "integral_and_fractional_endpoints": "PASS"
+  },
+  "mathematical_review": "The general proof is written in the note; its independent review is recorded separately in certificates/finite-window-sampling-review.json.",
+  "limits": "No new arithmetic construction, spectral or geometric estimate, zero computation or Lean verification. Integer comparisons are hypotheses; an almost-everywhere comparison is not assumed to include the integers."
+}
