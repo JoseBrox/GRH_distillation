@@ -239,7 +239,8 @@ def main():
         "script_sha256":sha(Path(__file__).read_bytes()),"source_files":sources,
         "tex":{"path":"paper/shared/selected-tangent-bound.tex",
                "sha256":sha((ROOT/"paper/shared/selected-tangent-bound.tex").read_bytes()),
-               "scope":"Shared ordinary-mathematics presentation of the two new reductions; build and visual review are recorded separately."},
+               "scope":"Shared ordinary-mathematics presentation, with its final absolute-Siegel passage now supplied by the companion classical theorem. Build and visual review are recorded separately.",
+               "classical_supplier_certificate":"certificates/absolute-siegel-supplier.json"},
         "primary_reference":{"authors":"A. Genestier and B.-C. Ngo",
             "title":"Lectures on Shimura varieties","theorem":"2.2.3",
             "url":"https://www.math.uchicago.edu/~ngo/Shimura.pdf",
@@ -252,13 +253,16 @@ def main():
         "independent_reviews":[
             {"reviewer":"transport_defect","result":"PASS",
              "scope":"Ordinary mathematics in Sections 1--3: localized flag integrality, product formula, Gram--Schmidt, generic jet rank, Gaussian Cauchy/factorial constants, principal generator count, rounding and all explicit logarithmic constants. No independent primary-PDF or source-byte audit and no arithmetic theta construction is included in this review."},
+            {"reviewer":"transport_defect","result":"PASS",
+             "reviewed_tex_sha256":"1d1cc7311be04997507b9730047cec50a3ac08414b62f94ddb03ecfa60decb74",
+             "scope":"The shared presentation before the final classical-Siegel addition: signed selected degrees, exact ranks, undivided jets, section count, constants, same-metric field extension and the then-conditional absolute-Siegel passage. The new classical supplier is separately reviewed in certificates/absolute-siegel-supplier.json. No new primary-PDF or upstream-source proof audit."},
             {"reviewer":"root","result":"PASS",
              "scope":"Ordinary mathematics in Sections 1--5: flag, Cauchy, level choice, absolute-Siegel consequence and quadratic completion, conditional on the explicitly supplied arithmetic inputs. No upstream Lean replay or independent arithmetic theta construction is claimed."}
         ],
         "limitations":[
             "No actual integral theta construction or uniform finite-prime supplier is proved by this checker.",
             "The prescribed principal polarization, ordinary pi-times-Appell--Humbert norm, rigidification and isometric field-extension data are retained.",
-            "Absolute Siegel is an explicit arithmetic input, not verified here merely from its name.",
+            "Absolute Siegel is now supplied by the independently audited classical theorem and principalization argument in certificates/absolute-siegel-supplier.json; the theta construction remains open.",
             "The exact generator count r is retained; nonprincipal polarizations require the extra log h0(L) term.",
             "No Lean kernel replay, whole-source audit, or blueprint node closure."
         ]

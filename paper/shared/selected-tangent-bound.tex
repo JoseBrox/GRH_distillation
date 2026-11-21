@@ -1,0 +1,253 @@
+\paragraph{The selected tangent degrees.}
+All degrees in this paragraph are ordinary Arakelov degrees divided by
+the degree of the number field. Let $\bar V$ have rank $n$ and degree
+$d$, with pairwise orthogonal, generically complementary integral
+sublattices $W_\tau,W'_\tau$. Let $V_\tau\subset W_\tau$ have the same
+generic fibre and the inherited metric. Put
+\[
+ X=\sum_\tau\widehat{\deg}_{\rm n}W_\tau,\quad
+ Y=\sum_\tau\widehat{\deg}_{\rm n}W'_\tau,\quad
+ T=\sum_\tau\widehat{\deg}_{\rm n}V_\tau,\quad
+ R=\sum_\tau\operatorname{rk}V_\tau .
+\]
+The two integral indices give
+\begin{equation}\label{geo-selected-index-identity}
+ \delta=d-X-Y\ge0,\qquad \nu=X-T\ge0,\qquad
+ b=X-Y,\qquad d=2T-b+\delta+2\nu .
+\end{equation}
+There is no archimedean correction, since all summands are orthogonal
+and retain the given metrics.
+
+\begin{proposition}\label{geo-selected-tangent-sum}
+If $C_s\ge0$ and
+\[
+ T\le RC_s\log(2+n+(-d)_+),
+\]
+then
+\[
+ T\le RC_s\log\bigl(2+n+(b-\delta-2\nu)_+\bigr).
+\]
+If also $\Lambda\ge1$, $C_f\ge0$, $n\le G\le e^\Lambda$ and
+$b\le C_fG\Lambda$, then
+\begin{equation}\label{geo-selected-log-budget}
+ T\le C_A R\Lambda,\qquad C_A=C_s\{1+\log(3+C_f)\}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+For $T\le0$ the first conclusion is immediate. For $T>0$,
+\eqref{geo-selected-index-identity} gives
+$(-d)_+=(b-\delta-2\nu-2T)_+\le(b-\delta-2\nu)_+$.
+For the second conclusion, bound the logarithm's argument by
+$e^\Lambda(3+C_f\Lambda)$ and use concavity:
+\[
+ \log(3+C_f\Lambda)
+ \le\log(3+C_f)+\frac{C_f}{3+C_f}(\Lambda-1)
+ \le\Lambda\log(3+C_f).
+\]
+The proof includes $R=0$ and $C_s=0$.
+\end{proof}
+
+Only the signed total $b$ occurs; both integral defects are favourable.
+If the selected eigenspace has dimension $m$, an adapted family has
+$r$ toric vectors and $m-r$ abelian vectors, and there are $f$ conjugate
+pairs, then the exact selected rank is $R=f(m-r)$. Thus a comparison
+\[
+ \Phi\le fmX_0+T-fr\log\operatorname{rd}(E)
+                         +\frac{fr}{2}\log(4\pi)
+\]
+together with $X_0\le C_X\Lambda$, $\log\operatorname{rd}(E)\ge0$ and
+$\log(4\pi)\le\Lambda$ gives
+\[
+ \Phi\le\{C_X+\max(C_A,\tfrac12)\}fm\Lambda .
+\]
+In the purely toric case the selected abelian sum is zero.
+
+\paragraph{A short integral jet argument.}
+Write $\operatorname{av}_K$ for the average over all complex embeddings
+of $K$, counting conjugate embeddings separately. The next lemma
+isolates the elementary determinant argument.
+
+\begin{lemma}\label{geo-leading-jet-determinant}
+Let $J_0,\ldots,J_k$ be independent $K$-linear forms on $K^r$ and
+$W_i=\bigcap_{j<i}\ker J_j$. Suppose
+$J_i(W_i\cap\mathcal O_K^r)\subset\mathcal O_K$ and, for every embedding,
+\[
+ \|J_i|_{W_i\otimes_\sigma\mathbb C}\|_{\rm op}\le A_{i,\sigma},
+ \qquad A_{i,\sigma}>0 .
+\]
+Then $0\le\sum_{i=0}^k\operatorname{av}_K\log A_{i,\sigma}$.
+\end{lemma}
+\begin{proof}
+At each finite prime, choose an integral basis adapted to the saturated
+kernel flag. The row matrix is triangular in its first $k+1$ columns,
+zero in the remaining columns, and has integral diagonal entries.
+Every coordinate of $J_0\wedge\cdots\wedge J_k$ is therefore integral.
+For a nonzero such coordinate $c$, row Gram--Schmidt gives
+\[
+ |\sigma(c)|\le\|J_0\wedge\cdots\wedge J_k\|_\sigma
+       =\prod_{i=0}^k\|J_i|_{W_i\otimes_\sigma\mathbb C}\|_{\rm op}
+       \le\prod_{i=0}^kA_{i,\sigma}.
+\]
+Now use $|N_{K/\mathbb Q}(c)|\ge1$.
+\end{proof}
+
+The required integrality has a direct geometric interpretation.
+Let $\mathcal G/\mathcal O_K$ be a group scheme, let $\mathcal L$
+be a line bundle rigidified at its identity, and let $x$ be an integral
+invariant tangent vector. For integral sections of $\mathcal L^{\otimes n}$,
+take successive directional derivatives in a generic local frame
+with that prescribed value at the identity. At a finite prime choose
+an integral frame with the same value. Derivatives of its regular
+representing functions are integral. When the earlier derivatives
+vanish, the Leibniz rule shows that the leading derivative is unchanged
+by the transition function, whose value is one. It is consequently
+integral at every finite prime. These are undivided derivatives:
+no assertion about division by $i!$ is needed. The same argument
+identifies the leading derivative in a holomorphic frame with the
+same rigidification.
+
+\begin{proposition}\label{geo-theta-jet-bound}
+Suppose the generic fibre is an abelian variety $A/K$ of dimension
+$g\ge1$, $L$ is ample, and $x\ne0$ is an integral tangent vector.
+Let $n=3k$, $k\ge1$. Suppose $r$ integral sections of $L^{\otimes n}$
+span its generic section space. Write $\ell_\sigma=\|x\|_\sigma>0$.
+Assume their functions in the rigidified theta frame satisfy
+\[
+ |f_c(zx)|\le\sqrt r\,M_\sigma\|c\|_2
+                    \exp(n\ell_\sigma^2|z|^2/2),
+ \qquad M_\sigma>0,\quad c\in\mathbb C^r .
+\]
+For $U=\operatorname{av}_K\log M_\sigma$ one has
+\begin{equation}\label{geo-exact-jet-cost}
+ -\operatorname{av}_K\log\ell_\sigma
+       \le\frac12\log(enk)+\frac{\log r+2U}{k}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The third power of an ample line bundle on an abelian variety is
+very ample \cite[Theorem~2.2.3]{genestier-ngo-shimura}.
+Choose $u_0,u_1\in H^0(A,L^{\otimes3})$ with $u_0(0)\ne0$,
+$u_1(0)=0$, and $D_x(u_1/u_0)(0)\ne0$. Then
+$u_0^{k-i}u_1^i$ has exactly order $i$ along $\exp(zx)$,
+for every $0\le i\le k$. The supplied spanning sections therefore
+have independent jet rows through order $k$. Only this generic
+rank argument uses $u_0,u_1$; their integrality is unnecessary.
+
+For $1\le i\le k$, apply Cauchy's formula at radius
+$\sqrt{i/n}/\ell_\sigma$ and use $i!\le i^i$. The operator bound
+on the $i$-th leading jet is
+\[
+ A_{i,\sigma}=\sqrt r\,M_\sigma
+                    (\sqrt{enk}\,\ell_\sigma)^i .
+\]
+The same formula holds for $i=0$. Leading-jet integrality and
+Lemma~\ref{geo-leading-jet-determinant} give
+\[
+ 0\le(k+1)(\tfrac12\log r+U)
+       +\frac{k(k+1)}2
+          \{\tfrac12\log(enk)+\operatorname{av}_K\log\ell_\sigma\}.
+\]
+Division proves \eqref{geo-exact-jet-cost}.
+\end{proof}
+
+The norm convention is essential: for the prescribed Hodge metric,
+$\ell_\sigma^2=\pi H_\sigma(x,x)$ and the theta weight is
+$\exp(-\pi nH_\sigma(w,w)/2)$. These give exactly the Gaussian
+bound above. Also, $h^0(A,L^{\otimes n})=n^g h^0(A,L)$.
+A spanning family of that cardinality contributes
+$g\log n+\log h^0(A,L)$ to $\log r$; the principal case has
+$h^0(A,L)=1$.
+
+\paragraph{An economical theta power and the arithmetic input.}
+Suppose $L$ gives a principal polarization. Assume that for every
+integer $m\ge1$, after a finite number field extension, the prescribed
+construction gives $m^{2g}$ integral sections spanning $L^{\otimes m^2}$
+with the same bounds $M_\sigma$, pulled back under the embeddings.
+Assume the integral tangent lattice and its metric pull back
+isometrically, and that for fixed $A_0,B_0\ge0$,
+\[
+ U\le h/2+A_0g+B_0g\log Y,\qquad Y=2+g+h,\qquad h\ge0.
+\]
+This includes the uniform finite-prime integrality of those sections;
+it is not implied by their complex translation identities.
+
+Put
+\[
+ Z=1+g+h+2A_0g+2B_0g\log Y,\qquad
+ a=\lceil\sqrt Z\rceil,\quad m=3a,\quad k=3a^2,\quad n=9a^2 .
+\]
+Thus $n=m^2=3k$, $3Z\le k\le12Z$ and $n\le36Z$.
+The tensor exponent is $n$; the torsion order is $m$.
+With $r=n^g$, Proposition~\ref{geo-theta-jet-bound} yields
+\[
+ -\operatorname{av}_K\log\ell_\sigma
+ \le\log k+\tfrac12\log(3e)+\frac{g\log(3k)+2U}{k}
+ \le\frac43\log(12Z)+\frac56\log3+\frac12 .
+\]
+For the last inequality, use $\log(3k)>1$ and
+$g+2U_+\le Z$. If $C_0=1+2A_0+2B_0$, then
+$Z\le C_0Y\log Y$ and $\log Y\ge1$. Consequently
+\begin{equation}\label{geo-logarithmic-tangent-line}
+ -\operatorname{av}_K\log\|x\|
+ \le C_{\rm line}\log(2+g+h),\qquad
+ C_{\rm line}=\frac83+\frac43\log(12C_0)+\frac56\log3+\frac12 .
+\end{equation}
+
+The passage to degrees is supplied by the classical absolute Siegel
+lemma. For a nonzero Hermitian sublattice $F$ of rank $r$, let $h_F$
+be its logarithmic adelic height, using the given archimedean norms
+and the finite-place unit balls $F_v$. Gaudron--R\'emond give
+\[
+ \inf_{0\ne y\in F_K\otimes_K\overline K}h_F(y)
+       \le-\widehat\mu(F)+c_r,\qquad
+ c_r=\frac12\sum_{j=2}^r\frac1j\le\frac12\log r .
+\]
+These are the same ordinary normalized degree and norm conventions
+\cite[Sections~2.1--2.3 and Lemma~3.2]{gaudron-remond-minima}.
+
+For completeness, the algebraic vector can be made integral without
+changing its height. Choose $y$ within $\epsilon>0$ of the displayed
+infimum, over a finite extension $K'$. Its saturated integral line
+is $P=Iy$ for a fractional ideal $I$ of $\mathcal O_{K'}$.
+Choose $a\ge1$ with $I^a=(b)$ and adjoin $\alpha$ with $\alpha^a=b$.
+Fractional ideals have no torsion, so $I\mathcal O_L=(\alpha)$ in
+$L=K'(\alpha)$. The vector $x=\alpha y$ is an integral generator
+of $P\otimes\mathcal O_L$. The quotient by $P$ is projective,
+so saturation survives base change and every finite gauge norm
+of $x$ is one. The product formula now gives exactly
+\[
+ \operatorname{av}_{L}\log\|x\|=h_F(x)=h_F(y),\qquad
+ \widehat\mu(F)-c_r-\epsilon
+                  \le-\operatorname{av}_{L}\log\|x\| .
+\]
+No metric has changed.
+
+Suppose the theta construction and \eqref{geo-logarithmic-tangent-line}
+apply after every finite extension, with unchanged constants, rank,
+and $h=(-d)_+$. Apply that line bound to $x$ and let
+$\epsilon\downarrow0$. Since $r\le g$,
+\[
+ \widehat\mu(F)
+ \le C_{\rm line}\log(2+g+(-d)_+)+c_r
+ \le(C_{\rm line}+\tfrac12)\log(2+g+(-d)_+).
+\]
+The extension may depend on $\epsilon$; no bound on its degree is
+needed. Multiplying by the actual selected ranks and summing supplies
+Proposition~\ref{geo-selected-tangent-sum} with
+$C_s=C_{\rm line}+\tfrac12$.
+If the ambient abelian tangent rank is zero, the selected sum is zero
+and none of these theta or Siegel inputs is needed.
+
+The remaining arithmetic construction is therefore precise: the
+primitive theta section with its mean norm bound and its integral
+normalized torsion translates with the same supremum bounds at every
+level, compatible with the prescribed field extensions and metric.
+At a degeneration the final valuation inequality is the elementary
+identity
+\[
+ Q(\chi)+\frac{b_Q(y,\chi)}N+\frac{Q(y)}{N^2}
+             =\frac{Q(N\chi+y)}{N^2}\ge0
+\]
+for a nonnegative quadratic form $Q$ and $N\ge1$. Applying it to
+theta values still requires the coefficient valuation bound and the
+identification of the prescribed rigidified torsion frame.
