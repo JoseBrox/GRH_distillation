@@ -175,3 +175,28 @@ The local word/form dictionary on smooth classes is now completed in
 parameter admissibility. The analytic endpoint has been weakened rigorously to
 vanishing total loss in [vanishing-loss-program.md](vanishing-loss-program.md).
 The source-wide program retains all global and growing-chain requirements.
+
+## RH specialization and the current geometric reduction
+
+The [short guide](../paper/guide/main.pdf) is the organizational introduction.
+Its TeX source is a single file, and its build enforces a twelve-page limit.
+It is separate from the 98-section manuscript inventory.
+
+Resume RH work from [rh-specialization.md](rh-specialization.md) and the
+[RH program](../blueprint/rh-proof-program.md). Conductor one makes the subset
+shares automatic and leaves four characters. The exact signed companion
+budget permits the auxiliary primes to vary while zeta remains the fixed
+analytic target. A short proof handles either eventual one-sided zeta bound;
+the longer interval criterion remains available for cofinal whole windows.
+
+Resume the arithmetic estimates from [averaged-error-budget.md](averaged-error-budget.md):
+signed errors, the obstruction to positive cancellation, pooled symmetry,
+three mean weights, logarithmic dispersion and correctly weighted frame
+moments. The actual supplier does not establish the needed symmetry.
+
+Resume geometry from [geometric-core-lower-bound.md](geometric-core-lower-bound.md):
+the precise cuspidal section lattice and Petersson normalization, exact
+determinant descent, rank-weighted type averages, and the raw Hilbert–Samuel
+surplus. The mean-volume/height input and total surplus bound remain open.
+All new reductions are integrated into existing manuscript sections; the
+original proofs and their alternative placements remain preserved.

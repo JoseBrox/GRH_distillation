@@ -57,6 +57,22 @@ The arithmetic comparison can now use an **average of the discrepancies**, with 
 
 The analytic endpoint also needs only a **total exponent loss tending to zero**. Each accuracy may have its own auxiliary characters, positive weights, multiplicative interval shape, starting threshold and multiplicative constant. Each positive combination must retain the target character and stay fixed during its own sequence of intervals. Uniform control within each such construction remains necessary. The new theorem and its scalar-construction corollary make this distinction precise; they do not themselves establish the arithmetic bound.
 
+## What if we only want ordinary RH?
+
+The [RH program](blueprint/rh-proof-program.md) has one analytic target:
+the corrected prime sum for zeta. A short positivity argument shows that
+either an eventual upper bound or an eventual lower bound with exponent
+arbitrarily close to one half is sufficient. The guide gives the upper-bound
+proof in full.
+
+The existing arithmetic construction also simplifies: conductor one makes
+one distribution condition automatic and leaves only four character terms.
+Under an explicit symmetry condition, its transfer error reduces to three
+mean weights and a logarithmic-dispersion bound. The auxiliary primes and
+geometric dimensions still grow, and an aggregate signed companion term
+must be controlled. This gives a smaller construction problem; a complete
+short proof of RH has not yet been obtained.
+
 ## How the newer zero-free results help
 
 The quasi-Riemann hypothesis papers provide a fixed zero-free region and useful estimates for selecting auxiliary characters. The work on Landau–Siegel zeros supplies an independent real-zero argument. When a uniform quasi-Riemann bound is already assumed, the required exclusion of real zeros follows from it and needs no additional assumption. Each route is stated with its exact hypotheses and ranges.

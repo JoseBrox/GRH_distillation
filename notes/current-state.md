@@ -86,15 +86,19 @@ new manuscript. The earlier scalar PBW and commutator reviews remain valid.
 
 ## Next research priorities
 
-Two new research checkpoints sharpen these priorities. The
+The latest completed reductions sharpen these priorities. The
 [geometric core analysis](geometric-core-lower-bound.md) identifies the
 actual cuspidal section lattice and proves determinant descent and a
-simpler component-degree averaging lemma. Its geometric input hypotheses
-remain explicit. The [averaged error analysis](averaged-error-budget.md)
+component-degree averaging lemma with the actual Hilbert–Samuel surplus.
+Its mean-volume/height input and total surplus bound remain open. The
+[averaged error analysis](averaged-error-budget.md)
 proves a zero-total-coefficient obstruction to a positive zeta-only
 projection, and gives exact fixed-quotient descent with balanced fibres.
-Further source comparisons and independent reviews are in progress;
-neither checkpoint claims the missing global construction.
+The three-mean/Jensen transfer and weighted-frame reductions have passed
+independent review and are integrated into the main manuscript. Exact
+pooled translation symmetry is not supplied by the inspected family
+interfaces; it remains an explicit sufficient hypothesis. None of these
+reductions claims the missing global construction.
 
 The [RH-only analysis](rh-specialization.md) proves a short zeta positivity
 criterion and traces the conductor-one specialization. The newly created
@@ -102,13 +106,25 @@ criterion and traces the conductor-one specialization. The newly created
 with a twelve-page editorial limit. Its analytic, geometric and finite-group
 explanations have separate independent reviews. It is not a completed RH proof.
 
-1. W10: identify the geometric core with its prescribed periods and metrics,
-   prove its uncut lower slope, and control the actual discarded-degree/index
-   budget. The 28-field source ledger is complete; the new orthogonal identity
-   is a reduction, not this geometric theorem.
-2. W02/W11: design the actual compatible data at each scale. Control the
-   averaged discrepancy, finite sampled errors and actual frame penalties.
-   The total normalized loss must satisfy the vanishing-loss criterion.
+For RH, order one makes the translation subgroup the whole finite group and
+the subset shares automatic. The projection has exactly four characters.
+Only one signed quadratic-companion mean must be bounded, together with the
+geometric discrepancy, thin-weight term and logarithmic dispersion. Centering
+the actual thick mean uses only the zeta derivative estimate; the source
+conditions allow radius two. The auxiliary primes and field degrees still
+grow. The [RH program](../blueprint/rh-proof-program.md) records the precise
+savings and the surviving W01–W11 obligations.
+
+1. W10: bound the actual mean-volume/height input and the total Hilbert–Samuel
+   surplus for the cuspidal section lattice with the prescribed Petersson
+   metric. Use exact determinant descent, type indices and discarded degrees.
+   Positive component ranks and uniformity in the growing family are retained.
+2. W02/W11: attempt the simpler RH construction first. Supply pooled
+   translation symmetry for the actual maps and metrics, or prove a quantitative
+   symmetry-error bound. Control the single signed companion, three mean-weight
+   terms, logarithmic dispersion and weighted frame moments on whole windows.
+   The complete normalized loss must tend to zero in exponent. The general
+   Dirichlet target keeps its additional character quantifiers.
 3. W06/W08: seed nonvanishing, sharp auxiliary-level divisibility, and normalized
    global theta/orbital-energy bounds for those same maps. Complete the remaining
    W04 complementary-parity integral congruence bounds in parallel.
@@ -118,6 +134,12 @@ transport comparisons. The [adoption proof](classical-galois-substitution.md)
 preserves one global representation before all local correspondences and
 period models. Independent theta, integral and geometric branches remain.
 No exact count of source files removed is inferred from the import graph.
+
+The next possible refinement is a transport-distance bound for defects of
+pooled symmetry: differentiation of the scaled corrected sums cancels their
+linear logarithmic-derivative terms. This direction is recorded for further
+proof; no reviewed quantitative transport theorem or canonical theta
+transport construction is claimed in the present checkpoint.
 
 ## Recovery and bounded resumption
 

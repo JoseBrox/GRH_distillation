@@ -16,6 +16,7 @@ dependency certificate; none of these maps asserts that GRH is proved here.
 | --- | --- | --- |
 | [Reader's overview](overview.svg) | A compact map of the principal argument, displayed in the main README. | An input required by the following step. |
 | [Technical proof map](technical.svg) | Arithmetic and analytic interfaces, with named evidence and open requirements. | A required mathematical dependency or assembly interface. |
+| [Ordinary RH program](rh-proof-program.md) and [diagram](rh.svg) | The conductor-one simplifications and the surviving arithmetic construction. | A proved conditional reduction or a remaining bound; the signed companion is explicit. |
 | [Complete section atlas](module-atlas.svg) | Every section of the main manuscript, grouped by subject. | The source section cites the target section; this may be a forward pointer or an optional comparison. |
 | [Complete source atlas](lean-source-atlas.md) | All 175,187 pinned local source files, with every import endpoint. | In the stored graph, the importing module depends on the imported module. |
 | [Source subject diagram](source-subject-atlas.svg) | Every local source file assigned to a visible namespace group. | Namespace containment, not a mathematical implication. |
@@ -98,6 +99,14 @@ finite projection and transfer errors. The orthogonal covolume identity
 separates the uncut geometric lower slope from the discarded mean degree and
 integral index. Written reductions are green, the classical Galois input is
 blue, and the unproved geometric construction remains red.
+
+The new RH view reduces the character projection to four functions. Under
+pooled translation symmetry, its heterogeneous transfer uses three mean
+weights and logarithmic dispersions. The geometric view now includes exact
+determinant descent, rank-weighted type averages and the actual Hilbert–Samuel
+surplus. These are reductions of the required estimates, not completed
+constructions of their inputs. The [short guide](../paper/guide/main.pdf)
+explains the ideas without source identifiers.
 
 ## Maintaining the blueprint
 

@@ -92,7 +92,8 @@ def main() -> None:
     model = json.loads(MODEL.read_text())
     allocation = json.loads(ALLOCATION.read_text())
     colors = model["statuses"]
-    for name in ["overview", "technical"]:
+    interface_names = ["overview", "technical"] + (["rh"] if "rh" in model else [])
+    for name in interface_names:
         render(name, interface_graph(model[name], colors))
 
     modules = [dict(n) for n in allocation["nodes"]]
@@ -123,7 +124,7 @@ def main() -> None:
         n["placement"] = "alternative appendix" if appendix_at >= 0 and match.start() > appendix_at else "preferred exposition"
         if n["role"] == "alternative":
             assert n["placement"] == "alternative appendix", "Alternative remains in preferred flow"
-    for name in ["overview", "technical"]:
+    for name in interface_names:
         for node in model[name]["nodes"]:
             for evidence in node.get("evidence", []):
                 assert evidence in labels or (ROOT / evidence).is_file(), ("Missing mathematical evidence target", name, node["id"], evidence)

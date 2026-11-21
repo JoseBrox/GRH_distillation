@@ -5,6 +5,7 @@ This checks integrity and recorded source ranges, not mathematical truth or
 Lean kernel acceptance. It needs the ignored pinned source and paper caches.
 The source cache can be populated with scripts/source_excerpt.py --atlas.
 """
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -29,18 +30,29 @@ def check_file(path, expected):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--rh-and-geometry', action='store_true',
+                        help='Also verify the RH specialization and new geometric/averaging records.')
+    args = parser.parse_args()
+    names = CERTS + (['rh-specialization', 'geometric-core-lower-bound',
+                     'averaged-error-budget'] if args.rh_and_geometry else [])
     sources, ranges, notes, papers = set(), 0, 0, set()
     cached_papers = {}
-    for directory in ["build/galois-period", "build/global-inputs",
-                      "build/classical-local-correspondence"]:
+    directories = ["build/galois-period", "build/global-inputs",
+                   "build/classical-local-correspondence"]
+    if args.rh_and_geometry:
+        directories.append('build/geometric-core')
+    for directory in directories:
         for path in (ROOT / directory).rglob("*.pdf"):
             cached_papers[sha(path.read_bytes())] = path
-    for name in CERTS:
+    for name in names:
         record = json.loads((ROOT / f"certificates/{name}.json").read_text())
-        if record.get("note_sha256"):
-            check_file(f"notes/{name}.md", record["note_sha256"])
+        note = record.get('note')
+        digest = record.get('note_sha256') or (note.get('sha256') if isinstance(note, dict) else None)
+        if digest:
+            check_file(f"notes/{name}.md", digest)
             notes += 1
-        for entry in record.get("files", []):
+        for entry in record.get("files", record.get('source_files', [])):
             source = ROOT / "build/lean-mirror" / entry["path"]
             data = source.read_bytes()
             assert sha(data) == entry["sha256"], f"Source SHA-256: {source}"
@@ -68,8 +80,13 @@ def main():
                 if reference.get("local_path"):
                     check_file(reference["local_path"], digest)
                 else:
-                    assert digest in cached_papers, f"Missing primary paper: {reference['id']}"
+                    assert digest in cached_papers, f"Missing primary paper: {reference.get('id', reference.get('title'))}"
                 papers.add(digest)
+        integration = record.get('manuscript_integration', {})
+        for item in integration.get('files', []):
+            check_file(item['path'], item['sha256'])
+        if integration.get('path') and integration.get('sha256'):
+            check_file(integration['path'], integration['sha256'])
     composition = json.loads((ROOT / "certificates/classical-galois-substitution.json").read_text())
     check_file(composition["note"], composition["note_sha256"])
     for dependency in composition["dependencies"]:
@@ -93,7 +110,7 @@ def main():
         "script_sha256": sha(Path(__file__).read_bytes()),
         "certificate_sha256": {
             name: sha((ROOT / f"certificates/{name}.json").read_bytes())
-            for name in CERTS + ["classical-galois-substitution"]
+            for name in names + ["classical-galois-substitution"]
         },
         "scope": "Offline file integrity and range validation; no proof or kernel verification",
     }

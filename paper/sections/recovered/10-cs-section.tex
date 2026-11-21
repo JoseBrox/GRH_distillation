@@ -612,6 +612,170 @@ $L=\mathbb Ze_1+\mathbb Z(e_1+e_2)/N$ with the standard metric and
 projection onto $\mathbb Qe_1$, both $G$ and $B$ have slope zero,
 whereas $I=N$ and $\mu(L)=\tfrac12\log N$.
 
+\subsection{Determinant descent and orthogonal averages}
+
+Let $K$ be a number field of degree $d$. For a Hermitian
+$\mathcal O_K$-lattice $E$ of positive rank, write
+\[
+ \nu(E)=\frac{2\widehat{\deg}_K(E)}{\operatorname{rk}E},
+\]
+where arithmetic degree is divided by $d$ and the usual metric on
+$\mathcal O_K$ has degree zero. All quotient metrics below are orthogonal
+quotient metrics.
+
+\begin{proposition}[Determinant descent]\label{prop:geometric-det-descent}
+Let $A,B$ have ranks $a,b>0$, let $n\ge1$ be an integer, and let
+$\Phi:A\longrightarrow B^{\oplus n}$ be integral and injective.
+Let $C$ be the saturation of $\Phi(A)$, let $Q=B^{\oplus n}/C$, and
+put $J=[C:\Phi(A)]$. If $h_{\det}(\Phi)$ is the normalized logarithmic
+volume distortion on $A\otimes K$, then
+\[
+ n\widehat{\deg}_K(B)=\widehat{\deg}_K(A)-h_{\det}(\Phi)
+       +\widehat{\deg}_K(Q)+\frac{\log J}{d}.
+\]
+If $\|\Phi\|_\sigma\le e^P$ at every embedding, and $B\otimes K$
+is spanned by elements of $B$ whose norms at every embedding are at most
+$e^\Lambda$, then, with $\lambda=a/(nb)$,
+\begin{equation}\label{eq:geometric-det-descent}
+ \nu(B)\ge\lambda\bigl(\nu(A)-2P\bigr)
+                -2(1-\lambda)\Lambda.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The induced metric on $\Phi(A)$ changes its degree by
+$-h_{\det}(\Phi)$. Saturating increases the degree by $\log J/d$.
+Determinant additivity in the saturated exact sequence
+$0\to C\to B^{\oplus n}\to Q\to0$ proves the identity.
+The projected short vectors span $Q\otimes K$. Choose a linearly
+independent subset; Hadamard's inequality bounds the determinant norm
+of their integral span by $e^{(nb-a)\Lambda}$. Since that span is a
+sublattice of $Q$, its index can only increase the degree, and hence
+$\widehat{\deg}_K(Q)\ge-(nb-a)\Lambda$. Finally,
+$h_{\det}(\Phi)\le aP$ and $\log J\ge0$. Substitution proves
+\eqref{eq:geometric-det-descent}, including the case $Q=0$.
+\end{proof}
+
+\begin{proposition}[Average of orthogonal types]\label{prop:geometric-type-average}
+Let $L$ have positive rank and let
+$L\otimes K=\bigoplus_\tau V_\tau$ be a finite nonempty orthogonal
+decomposition such that $L_\tau=L\cap V_\tau$ has positive rank $r_\tau$.
+Put $r=\operatorname{rk}L$ and $J=[L:\bigoplus_\tau L_\tau]$.
+Then
+\[
+ \sum_\tau\frac{r_\tau}{r}\nu(L_\tau)
+       =\nu(L)-\frac{2\log J}{dr}.
+\]
+If all projections $P_\tau$ satisfy $NP_\tau(L)\subset L$ for a
+common positive integer $N$, then
+\[
+ J\le N^{d(r-\max_\tau r_\tau)}.
+\]
+\end{proposition}
+\begin{proof}
+The equality is determinant multiplicativity. To bound the index,
+omit a summand of largest rank and use the projections to map
+$L/\bigoplus_\tau L_\tau$ into the product of
+$N^{-1}L_\tau/L_\tau$ over the remaining summands. The map is
+injective: if those projections are integral, so is the omitted one,
+because all projections sum to the original lattice vector. Each
+factor has order $N^{dr_\tau}$.
+\end{proof}
+
+This proposition applies to the final average only if its type weights
+are the rank proportions displayed above. A full-space mean degree
+does not bound an arbitrary individual type: two orthogonal lines can
+have slopes $-M$ and $M$ while their direct sum has slope zero.
+
+\subsection{A component degree bound with an averaged remainder}
+
+\begin{proposition}[Component averaging]\label{prop:geometric-component-average}
+Let $Z$ run through a nonempty finite set. Suppose
+\[
+ 0<\delta_0\le\delta_Z\le\frac{\delta_0}{1-\rho},\qquad
+ 0\le\rho<1,\qquad w_Z=B\delta_Z>0,\qquad r_Z\ge w_Z.
+\]
+Suppose $c,X,c_c\ge0$ and
+\[
+ h_Z\ge-c,\quad
+ (1-\rho)\max(0,s_Z+c)\le h_Z+c+c_c,\quad
+ \frac1{\#Z}\sum_Zs_Z\ge-X.
+\]
+Let $A>0$, $a\ge0$, and $t\ge a+1$. Suppose the arithmetic degrees
+$d_Z$ satisfy
+\[
+ d_Z\ge w_Z\{t h_Z-a|h_Z|-A\log(2+|h_Z|)-R_Z\}-C_Z,
+\]
+where $R_Z,C_Z$ may be signed. Put
+\[
+ H=(2\rho-\rho^2)c+(1-\rho)^2X+(1-\rho)c_c,
+\]
+\[
+ K_0=(t-a-1)H+2(a+1)c+A\log\max(A,1)+2,
+\]
+and let
+\[
+ R_{\rm tot}=\sum_Zr_Z,\quad W=\sum_Zw_Z,\quad
+ \Gamma=\frac{\sum_Z(w_ZR_Z+C_Z)}{R_{\rm tot}}.
+\]
+Then
+\begin{equation}\label{eq:geometric-component-average}
+ \frac{\sum_Zd_Z}{R_{\rm tot}}
+ \ge-\frac{W}{R_{\rm tot}}K_0-\Gamma
+ \ge-K_0-\Gamma.
+\end{equation}
+\end{proposition}
+\begin{proof}
+For $u_Z=h_Z+c\ge0$, the degree-spread bound gives
+\[
+ \frac{\sum_Zw_Zu_Z}{W}
+ \ge(1-\rho)\frac{\sum_Zu_Z}{\#Z}
+ \ge(1-\rho)\bigl((1-\rho)(c-X)-c_c\bigr).
+\]
+Thus the $w$-weighted mean of $h_Z$ is at least $-H$.
+The inequality $\log v\le v-1$ implies
+\[
+ A\log(2+y)\le A\log\max(A,1)+2+y\qquad(y\ge0).
+\]
+Also $|h_Z|\le h_Z+2c$. Therefore
+\[
+ t h_Z-a|h_Z|-A\log(2+|h_Z|)
+ \ge(t-a-1)h_Z-2(a+1)c-A\log\max(A,1)-2.
+\]
+Averaging and then summing the remaining terms proves the first
+inequality. The second uses $K_0\ge0$ and $W\le R_{\rm tot}$.
+\end{proof}
+
+For a Hilbert--Samuel comparison, the actual remainder can have the form
+\[
+ C_Z=(r_Z-w_Z)P_Z+r_Zc_Z.
+\]
+Here the first term is the cost of the excess rank and the second is
+the change of metric or flat twist. Formula
+\eqref{eq:geometric-component-average} retains their actual weighted
+sum. It does not require a componentwise upper bound on $r_Z/w_Z$.
+To obtain a lower slope of order $-U$, one must still prove that
+$K_0+\Gamma=O(U)$ for the actual geometric family, with constants fixed
+before its large parameter varies.
+
+\begin{corollary}\label{cor:geometric-component-constant}
+In the preceding proposition, take $C_Z=0$ and $R_Z=R\ge0$,
+let $D\ge0$, $a=3(D+1)$ and $U\ge1$, and suppose
+\[
+ tX\le C_HU,\quad tc_c\le C_HU,\quad
+ c(6D+10+t(z+2\rho))\le C_HU,
+ \quad A\log\max(A,1)+R\le C_SU,
+\]
+where $z\ge0$ and $t\ge3D+4$. Then
+\[
+ \frac{2\sum_Zd_Z}{\sum_Zr_Z}\ge-2(3C_H+C_S+2)U.
+\]
+\end{corollary}
+\begin{proof}
+Use $H\le X+c_c+2\rho c$ and $2(a+1)=6D+8$ in the preceding
+proof. The three height contributions are bounded by $3C_HU$,
+the remaining parameter contribution by $C_SU$, and $2\le2U$.
+\end{proof}
+
 \subsection{Weighted lower estimates}
 
 \begin{lemma}[Weighted lower estimates]\label{cs-weighted-lower}
@@ -731,6 +895,389 @@ if the ambient finite groups and auxiliary data grow with $x$.
 The proposition imposes no separate square-root choice of the chain
 length $m$; such a choice is one way to balance the errors in a particular
 construction.
+
+\subsection{Signed character projection and compatible averages}
+
+\begin{proposition}[The exact signed budget]\label{cs-signed-budget}
+Retain the data and notation of Proposition~\ref{cs-finite-average}, and put
+\[
+ k=\frac{n_Tmbd}{2}>0,\qquad
+ Q=\frac1{n_T}\sum_t\Re\sum_{\psi\in X}
+          \psi(e_1(t))Z_\psi(a_t/b).
+\]
+For $\rho=c+g+t_0$ put
+\[
+ D_{u,t,i,\psi}(\rho)=w_{u,i}(\rho)Z_\psi(a_t/w_{u,i}(\rho))
+       -\mathbf1_{\Phi_{S,u}}(\rho)bZ_\psi(a_t/b),
+\]
+and define the signed real transfer
+\[
+ \mathcal T=\Re\frac1{|B|f}\sum_{u,t,i}\sum_{g\notin\Phi}
+           \sum_{\psi\in\widehat G}\psi(-g)
+                        D_{u,t,i,\psi}(c+g+t_0).
+\]
+Then
+\[
+ \overline E=kQ+\mathcal T,\qquad
+ H=(H-Q)+\frac{\overline E-\mathcal T}{k}.
+\]
+Thus only an upper bound for this complete signed expression is needed;
+the separate absolute projection and transfer errors are sufficient
+majorants, not necessary hypotheses.
+\end{proposition}
+\begin{proof}
+Subtract the thick contribution from the exact balance. The thick sum,
+after averaging over $B$, is exactly $kQ$ by character orthogonality.
+The residual is $\mathcal T$. Rearrangement gives the second identity.
+\end{proof}
+
+\begin{lemma}[Fixed quotient and the signed obstruction]\label{cs-fixed-quotient}
+Let $\pi:A\twoheadrightarrow Q_0$ be a homomorphism, put $B=\ker\pi$,
+and define $\mu(z)=|T\cap\pi^{-1}(z)|/n_T$. For
+$\sigma,\tau\in\{0,1\}$ and $\theta\in\widehat{Q_0}$ write
+\[
+ \psi_{\sigma,\tau,\theta}((e_1,e_2),a)
+    =(-1)^{\sigma e_1+\tau e_2}\theta(\pi(a)).
+\]
+These are precisely the characters in $X$, and
+\[
+ |X|=4|Q_0|,\qquad
+ \alpha_{\sigma,\tau,\theta}=(-1)^\sigma\widehat\mu(\theta),
+ \qquad \sum_{\psi\in X}\alpha_\psi=0.
+\]
+Consequently a fixed quotient and fixed normalized fibre counts fix all
+coefficients, regardless of $|A|$. In particular $T=\pi^{-1}(T_0)$,
+for nonempty fixed $T_0$, has the uniform distribution on $T_0$.
+To fix an analytic positive character combination across changing hosts,
+its primitive Dirichlet characters must also be identified.
+
+The trivial character has coefficient $1$ and the first sign character
+has coefficient $-1$. Merging identical primitive characters and taking
+finite linear combinations of such projections preserve total coefficient
+zero. They therefore cannot yield a nonzero vector of nonnegative real
+coefficients by coefficient identities alone.
+\end{lemma}
+\begin{proof}
+Characters trivial on $B$ factor uniquely through $G/B$.
+Evaluation at $e_1(t)$ gives the displayed coefficient, and summing over
+$\sigma$ gives zero. The fibres of a surjective finite-group homomorphism
+all have size $|B|$, which proves the assertion about full preimages.
+Merging and taking linear combinations preserve the sum of coefficients.
+\end{proof}
+
+\begin{lemma}[Independence modulo smooth corrections]\label{cs-smoothed-independence}
+Let $\mathcal C$ be a finite set of distinct primitive Dirichlet
+characters, including the conductor-one character if desired. If
+$\sum_{\chi\in\mathcal C}c_\chi G_\chi(x)$ is continuously differentiable
+on some terminal half-line, where the $c_\chi$ are fixed complex numbers,
+then every $c_\chi$ is zero.
+\end{lemma}
+\begin{proof}
+Let $N$ be a common multiple of the conductors. At every sufficiently
+large prime $p\nmid N$, the jump of the derivative is
+\[
+ \frac{\log p}{p}\sum_{\chi\in\mathcal C}c_\chi\chi(p).
+\]
+It vanishes, so write $R(p)=\sum_\chi c_\chi\chi(p)=0$.
+Fix $\xi\in\mathcal C$ and lift the characters to modulus $N$.
+For real $s>1$, the prime terms in
+\[
+ \sum_{\chi\in\mathcal C}c_\chi
+       \left(-\frac{L_N'}{L_N}(s,\chi\bar\xi)\right)
+\]
+are $R(p)\bar\xi(p)(\log p)p^{-s}$ and vanish except at finitely
+many primes. The terms from higher prime powers converge uniformly
+near $s=1$, since $\sum_p(\log p)p^{-2s}$ does so.
+Thus the displayed expression is bounded as $s\downarrow1$.
+Here $L_N$ denotes the Dirichlet function with Euler factors at primes
+of $N$ deleted. Every nonprincipal term is bounded by the classical
+nonvanishing at one. The only principal term, corresponding to
+$\chi=\xi$, is $c_\xi/(s-1)+O(1)$. Hence $c_\xi=0$, as required.
+\end{proof}
+
+For complex coefficients and real parts, use
+\[
+ \Re(cG_\chi)=(cG_\chi+\bar cG_{\bar\chi})/2
+\]
+and merge identical characters. This preserves the real part of the total
+coefficient, and in particular preserves total coefficient zero.
+Consequently the preceding zero-total-coefficient obstruction also
+holds for identities up to continuously differentiable corrections.
+This concerns a fixed finite linear combination; varying coefficients
+or varying analytic families require their own estimates.
+
+\subsection{Symmetry and the four-character transfer}
+
+\begin{lemma}[Translation symmetry before absolute values]
+\label{cs-translation-symmetry}
+Retain the finite-balance data, and put
+\[
+ F_{t,\psi}(\rho)=\frac1{|B|}\sum_{u\in B}\sum_{i=1}^m
+ w_{u,i}(\rho)Z_\psi(a_t/w_{u,i}(\rho)),\qquad \rho\in\Phi.
+\]
+Suppose that $F_{t,\psi}(\rho+v)=F_{t,\psi}(\rho)$ for every
+$v\in B$, $t$ and $\psi$. Then
+\[
+ \overline E=\Re\frac1f\sum_t\sum_{\psi\in X}\psi(c+t_0)
+                   \sum_{\rho\in\Phi}\psi(-\rho)F_{t,\psi}(\rho).
+\]
+A sufficient condition is that the empirical probability measure
+\[
+ \frac1{|B|m}\sum_{u,i}\delta_{w_{u,i}(\rho)}
+\]
+is invariant under $\rho\mapsto\rho+v$ for every $v\in B$.
+In particular, the condition holds if
+$w_{u,i}(\rho)=v_i(\rho-u)$ for some positive profiles $v_i$;
+it also holds if the corresponding lists of weights agree as multisets.
+\end{lemma}
+\begin{proof}
+Write $g=\rho-c-t_0$ in the exact balance. The averaged expression
+is the displayed sum with all characters of $G$. If $\psi|_B\ne1$,
+choose $v\in B$ with $\psi(v)\ne1$ and translate the inner sum by $v$.
+Invariance multiplies it by $\psi(-v)$ without changing it, so it is zero.
+Equality of the empirical measures implies invariance after applying
+the function $w\mapsto wZ_\psi(a_t/w)$. The last two sufficient
+conditions imply equality of those measures by reindexing $u$.
+\end{proof}
+
+\begin{lemma}[Positive prime kernels and logarithmic dispersion]
+\label{cs-positive-kernel}
+Let $q\ne d$ be odd primes and let $\chi_q,\chi_d$ be their nonprincipal
+quadratic characters. Their product is primitive of conductor $qd$.
+Put
+\[
+ D_+=G_1+G_{\chi_q}-G_{\chi_d}-G_{\chi_q\chi_d},\qquad
+ D_-=G_1-G_{\chi_q}-G_{\chi_d}+G_{\chi_q\chi_d}.
+\]
+For $a>0$, write $F_{\pm,a}(w)=wD_\pm(a/w)$ on $0<w\le a$.
+Then $F_{\pm,a}(w)-a\log w$ is convex. Consequently, for a finite nonempty list of positive
+$w_j\le a$ and probability weights $p_j$, with
+$\bar w=\sum_jp_jw_j$ and $w_{\rm geom}=\prod_jw_j^{p_j}$,
+\[
+ \sum_jp_jF_{\pm,a}(w_j)
+ \ge F_{\pm,a}(\bar w)-a\log(\bar w/w_{\rm geom}).
+\]
+If $w_j\ge(1-\eta)\bar w$ for every positive-weight index, where
+$0\le\eta<1$, then
+\[
+ 0\le\log(\bar w/w_{\rm geom})
+ \le\frac{\sum_jp_j(w_j-\bar w)^2}
+             {2(1-\eta)\bar w^2}.
+\]
+No upper bound on the relative deviations is needed.
+\end{lemma}
+\begin{proof}
+At every positive integer $n$, including integers divisible by $q$ or
+$d$, the coefficient
+\[
+ \kappa_\pm(n)=(1\pm\chi_q(n))(1-\chi_d(n))
+\]
+is real and nonnegative. Expanding the definitions of the smoothed sums,
+\[
+ F_{\pm,a}(w)-a\log w
+ =\sum_{n\ge1}\Lambda(n)\kappa_\pm(n)(a/n-w)_++aC_{\pm,a},
+\]
+where $C_{\pm,a}$ is independent of $w$. On each compact subinterval
+of $(0,a]$ only finitely many summands are nonzero. They are nonnegative
+multiples of convex hinge functions, so the asserted convexity follows.
+Jensen's inequality gives the first bound. Put
+$z_j=(w_j-\bar w)/\bar w$, so $\sum p_jz_j=0$ and $z_j\ge-\eta$.
+Integration of $z/(1+z)$ gives
+$z-\log(1+z)\le z^2/[2(1-\eta)]$ on this range.
+Averaging proves the last inequality. The case $\eta=0$ forces every
+positive-weight $w_j$ to equal its mean and gives zero on both sides.
+\end{proof}
+
+\begin{proposition}[Three mean weights for the four-character projection]
+\label{cs-three-means}
+Suppose $B=A$ and the preceding translation-symmetry hypothesis holds.
+Suppose that the four surviving host characters are exactly
+$1,\chi_q,\chi_d,\chi_q\chi_d$, with the first additive sign corresponding
+to $\chi_d$ and the second to $\chi_q$. These are hypotheses on the
+primitive characters induced by the two sign characters.
+Put $n=|A|$, $s=|S|>0$, $d_0=s/n$, and $n_T=|T|>0$.
+
+Partition the finite triples $(u,i,a)$, with $u,a\in A$ and $1\le i\le m$,
+and their associated weights into the following three classes:
+\[
+ \begin{array}{c|c|c}
+ \text{class}&\text{weights}&\text{cardinality}\\ \hline
+ \mathrm{thick}&w_{u,i}((0,1),a),\ a-u\in S&nms\\
+ \mathrm{outer}&w_{u,i}((0,1),a),\ a-u\notin S&nm(n-s)\\
+ \mathrm{zero}&w_{u,i}((0,0),a)&mn^2.
+ \end{array}
+\]
+Let their arithmetic means be $b,c_+,c_-$ and the logarithms of the
+ratios of arithmetic to geometric mean be $L_s,L_+,L_-$.
+When $S=A$, omit the empty outer class and every term involving it.
+Assume every weight is at most $\min_t a_t$, so the arguments of all
+smoothed sums remain at least one. Define
+\[
+ k=\frac{n_Tmbd_0}{2},\qquad
+ Q_4=\frac1{n_T}\sum_tD_+(a_t/b),\qquad
+ \bar a=\frac1{n_T}\sum_ta_t,
+\]
+\[
+ J_{\rm thin}=\frac m2\sum_t
+       \bigl((1-d_0)c_+D_+(a_t/c_+)+c_-D_-(a_t/c_-)\bigr),
+\]
+and
+\[
+ J_{\log}=\frac{\bar a}{b}
+       \left(L_s+\frac{1-d_0}{d_0}L_++\frac1{d_0}L_-\right).
+\]
+Then
+\[
+ \boxed{\quad Q_4\le\frac{\overline E-J_{\rm thin}}k+J_{\log}.\quad}
+\]
+Only a lower bound for the one signed thin sum $J_{\rm thin}$ is needed.
+The thickness scale $b$ in this statement is the actual arithmetic
+mean of the thick weights, not an arbitrary lower endpoint of their range.
+\end{proposition}
+\begin{proof}
+Translation symmetry first removes every character except the four
+signs. At a place $\rho=((0,e),a)$, the remaining phase is
+$(-1)^{\sigma+\tau(1-e)}$. Thus the contribution is $F_{+,a_t}(w)$
+when $e=1$ and $F_{-,a_t}(w)$ when $e=0$. The exact balance becomes
+\[
+ \overline E=\frac1{2n^2}\sum_t\sum_{u,i,a}
+  \left(F_{+,a_t}(w_{u,i}((0,1),a))
+       +F_{-,a_t}(w_{u,i}((0,0),a))\right).
+\]
+Apply the preceding lemma separately to each nonempty class,
+pooling the stage and translation indices before taking means.
+The thick term is $kQ_4$, the remaining mean terms give $J_{\rm thin}$,
+and the logarithmic penalty is
+\[
+ \frac{m\sum_ta_t}{2n}
+       \bigl(sL_s+(n-s)L_++nL_-\bigr)=kJ_{\log}.
+\]
+This proves $\overline E\ge kQ_4+J_{\rm thin}-kJ_{\log}$.
+All denominators are positive, so division proves the result.
+\end{proof}
+
+The factor $m$ cancels from the normalized logarithmic cost; no fixed-rank
+assumption entered the proof. The means, dispersions, density and thin
+samples may nevertheless depend on growing dimensions and must be bounded
+on the same whole windows as the geometric discrepancy.
+
+\subsection{A four-character budget for the Riemann hypothesis}
+
+\begin{lemma}[Centering only the zeta sum]\label{rh-zeta-centering}
+If $h\ge0$, $x-h\ge1$ and $|y-x|\le h$, then
+\[
+ |G_1(y)-G_1(x)|\le h(1+\log(x+h))^2.
+\]
+\end{lemma}
+\begin{proof}
+Away from integers,
+$G_1'(v)=\sum_{n\le v}\Lambda(n)/n-\log v+\gamma$.
+For $v\in[x-h,x+h]$, the inequalities
+$\Lambda(n)\le\log n$,
+$\sum_{n\le R}1/n\le1+\log R$ and $0<\gamma<1$
+bound its absolute value by $(1+\log(x+h))^2$.
+The function is continuous and piecewise differentiable, so integration
+over an interval of length at most $h$ proves the result.
+\end{proof}
+
+\begin{corollary}[A single signed companion for ordinary RH]
+\label{rh-signed-companion-budget}
+Let $q,d$ be the distinct auxiliary quadratic primes, and put
+\[
+ C_{q,d}=G_{\chi_d}+G_{\chi_q\chi_d}-G_{\chi_q}.
+\]
+Suppose the three-mean comparison for the same arithmetic data gives
+\[
+ \frac1{|T|}\sum_{t\in T}
+ (G_1+G_{\chi_q}-G_{\chi_d}-G_{\chi_q\chi_d})(a_t/b)
+ \le\frac{\overline E-J_{\rm thin}}k+J_{\log},
+ \qquad k>0.
+\]
+If $h\ge0$, $x-h\ge1$ and $|a_t/b-x|\le h$ for every $t$, then
+\[
+ G_1(x)\le
+ \frac{\overline E-J_{\rm thin}}k+J_{\log}
+ +\frac1{|T|}\sum_{t\in T}C_{q,d}(a_t/b)
+ +h(1+\log(x+h))^2.
+\]
+Consequently a bound of the entire right side by
+$M_jx^{1/2+\delta_j}$ on arbitrarily late whole windows
+$[U,U^{b_j}]$, with fixed finite $M_j\ge0$, $b_j>1$ at each accuracy
+and $\delta_j>0$ tending to zero, suffices for the Riemann hypothesis.
+The auxiliary primes may vary with $x$.
+\end{corollary}
+\begin{proof}
+Add the signed companion to the assumed comparison and apply
+Lemma~\ref{rh-zeta-centering} to each summand.
+The last assertion is Theorem~\ref{thm:vanishing-loss-windows}
+for the fixed function $G_1$.
+\end{proof}
+
+The companion is evaluated at its actual arguments $a_t/b$.
+No derivative bound for the moving auxiliary characters is needed
+in this last centering step. Establishing the translation symmetry,
+the comparison for the same integral maps, and its total error bound
+remains an arithmetic obligation.
+
+The existing size conditions already give a fixed centering radius
+when $b$ is the actual mean. Let $b_0>0$. If the thick weights lie in
+$[b_0,b_0+\eta+1]$, then so does $b$. If also
+$|a_t/b_0-x|\le1$ and $6f(x+1)(\eta+1)\le b_0/x$, with
+$f\ge1$ and $x\ge3$, then
+\[
+ \left|\frac{a_t}{b}-x\right|
+ \le1+\frac{(x-1)(\eta+1)}{b_0}
+ \le1+\frac{x-1}{6fx(x+1)}<2.
+\]
+Indeed $a_t/b$ lies between $(x-1)/(1+r)$ and $x+1$, where
+$r=(b-b_0)/b_0\ge0$. Thus the centering cost can be taken to be
+$2(1+\log(x+2))^2$ without requiring the mean to equal the old
+lower endpoint.
+
+\subsection{Averages of the actual frame costs}
+
+\begin{lemma}[An averaged frame budget]
+\label{cs-average-frame}
+Let $\lambda_u>0$ sum to one on a finite nonempty index set. Suppose the frame comparison for the same
+arithmetic maps gives
+\[
+ s_u-c_u\le P_u:=\log N_u+
+ \frac{\beta U_u\log(1+H_u/U_u)+\eta_uH_u+4\sqrt{e_u}H_u}
+      {1-\delta_u},
+\]
+where $\beta\ge0$, $N_u\ge1$, $0\le\delta_u<1$, and
+$U_u,H_u,\eta_u,e_u\ge0$.
+The expression with $U_u=0$ is interpreted by continuity.
+Write
+\[
+ v_u=\lambda_u/(1-\delta_u),\quad
+ U_* =\sum_uv_uU_u,\quad H_* =\sum_uv_uH_u,\quad
+ E_* =\sum_uv_ue_uH_u,\quad \eta_* =\sum_uv_u\eta_uH_u.
+\]
+Then
+\[
+ \sum_u\lambda_uP_u\le
+  \sum_u\lambda_u\log N_u+
+  \beta U_*\log(1+H_*/U_*)+\eta_*+4\sqrt{E_*H_*}.
+\]
+The original comparison has $\beta=4$.
+Proposition~\ref{cs-slope} gives $\beta=2$ and no $\log N_u$ term,
+provided its hypotheses about the integral maps, matrices and common
+target basis hold for these data.
+\end{lemma}
+\begin{proof}
+The function $(U,H)\mapsto U\log(1+H/U)$ is concave and homogeneous
+of degree one on the nonnegative quadrant, with value zero at $U=0$.
+Jensen's inequality with weights proportional to $v_u$ therefore bounds
+its sum by its value at $(U_*,H_*)$. Cauchy--Schwarz gives
+\[
+ \sum_uv_uH_u\sqrt{e_u}\le
+ \left(\sum_uv_ue_uH_u\right)^{1/2}
+ \left(\sum_uv_uH_u\right)^{1/2}.
+\]
+The remaining terms are linear. If $U_*=0$ or $H_*=0$, the same conclusion
+follows by the stated continuous convention.
+\end{proof}
 
 \subsection{A convenient stronger set of arithmetic estimates}
 

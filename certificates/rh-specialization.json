@@ -2,22 +2,9 @@
   "schema_version": 1,
   "source_repository": "jsmorph/rh",
   "source_commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
-  "status": "Early checkpoint: proved RH-only analytic reduction; full structural specialization audit in progress.",
+  "status": "Reviewed RH-only analytic reductions and complete source-specialization map; arithmetic construction, covariance and total error bound remain open.",
   "note": "notes/rh-specialization.md",
   "files": [
-    {
-      "path": "lean/src/Main.lean",
-      "git_blob_sha1": "dbd5db70bc11b35f18fa5751216ab335321e7bfc",
-      "sha256": "017645ca448f2fd1f6fd5c4c2cb2c6e96e472725be13f6e180ca6e1574360939",
-      "bytes": 433,
-      "line_count": 12,
-      "inspected_ranges": [
-        [
-          1,
-          12
-        ]
-      ]
-    },
     {
       "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/EveryCharacter.lean",
       "git_blob_sha1": "6ac769568b67f85f33565ba3e1eef7b91f53c55f",
@@ -32,41 +19,32 @@
       ]
     },
     {
-      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/SupplyChi.lean",
-      "git_blob_sha1": "339885b77069601fb716a60739369805241e8222",
-      "sha256": "70a11ba909e03b9153a6beacce24da22f3224b8192ec6980b7f27018961be81b",
-      "bytes": 697,
-      "line_count": 16,
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean",
+      "git_blob_sha1": "398eb8ed3528aa2666e9d3b2b09a582ad4390dd7",
+      "sha256": "732c3347fb02e410cf9af8831afdbba1d230fc522c3dbbccdb4b708e5dde73db",
+      "bytes": 3776,
+      "line_count": 81,
       "inspected_ranges": [
         [
           1,
-          16
+          66
         ]
       ]
     },
     {
-      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/Imports.lean",
-      "git_blob_sha1": "b15694c2104e63fdb84d4114ada6857eea4dd594",
-      "sha256": "d1b291621c551340f48e9a035502904a7923a942ce11b3289f29b5b008d7472b",
-      "bytes": 502,
-      "line_count": 16,
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/FieldChi.lean",
+      "git_blob_sha1": "f3e2032b133ff64406a87e27438cdf467aa05a1f",
+      "sha256": "784b9d6aed0292547065a98f2577d41f82269332559815f38fc85da4f69369b3",
+      "bytes": 3901,
+      "line_count": 59,
       "inspected_ranges": [
         [
           1,
-          16
-        ]
-      ]
-    },
-    {
-      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/Supply.lean",
-      "git_blob_sha1": "b104f034fc9c13758e280d1b7d33ac1ea370663a",
-      "sha256": "c57b63c82b55380b31aabae74ba797be099cd0edaba3de88387995fea2cfe31f",
-      "bytes": 1628,
-      "line_count": 47,
-      "inspected_ranges": [
+          52
+        ],
         [
-          33,
-          47
+          52,
+          59
         ]
       ]
     },
@@ -84,15 +62,321 @@
       ]
     },
     {
-      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/PrimePairSizeCondition.lean",
-      "git_blob_sha1": "aee05935e7bac6625cd4e07fef4912722d796780",
-      "sha256": "3f75794693f7f4ce9618f48c91ef4672c5de1909347fd245fb4e5a93cd2e6c6c",
-      "bytes": 3625,
-      "line_count": 132,
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/Imports.lean",
+      "git_blob_sha1": "b15694c2104e63fdb84d4114ada6857eea4dd594",
+      "sha256": "d1b291621c551340f48e9a035502904a7923a942ce11b3289f29b5b008d7472b",
+      "bytes": 502,
+      "line_count": 16,
       "inspected_ranges": [
         [
           1,
-          88
+          16
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/MainConclusion.lean",
+      "git_blob_sha1": "ee340012ab19713a8acfecf8adc6a331cbc2f1a4",
+      "sha256": "a5f71e107087e37b2c598709795b0f56c0a6741cf1e8ab99ee1f97e2fce0fe34",
+      "bytes": 1213,
+      "line_count": 14,
+      "inspected_ranges": []
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/PairGood.lean",
+      "git_blob_sha1": "68d04b506355e999c0f6020ee066c4967c1e6939",
+      "sha256": "e5ddbc7f4573275caad502b8414dc3579ed904d1fa6c5f3848080bbd94fb3abb",
+      "bytes": 2421,
+      "line_count": 46,
+      "inspected_ranges": [
+        [
+          1,
+          46
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/Supply.lean",
+      "git_blob_sha1": "b104f034fc9c13758e280d1b7d33ac1ea370663a",
+      "sha256": "c57b63c82b55380b31aabae74ba797be099cd0edaba3de88387995fea2cfe31f",
+      "bytes": 1628,
+      "line_count": 47,
+      "inspected_ranges": [
+        [
+          33,
+          47
+        ],
+        [
+          1,
+          47
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/SupplyChi.lean",
+      "git_blob_sha1": "339885b77069601fb716a60739369805241e8222",
+      "sha256": "70a11ba909e03b9153a6beacce24da22f3224b8192ec6980b7f27018961be81b",
+      "bytes": 697,
+      "line_count": 16,
+      "inspected_ranges": [
+        [
+          1,
+          16
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/TwistForm.lean",
+      "git_blob_sha1": "5e8b1a992a393336dffd3603524526dfccfa1981",
+      "sha256": "f6fcb4d6d30327b91dc81247a280070efc3196de2053cad36cbf14ec1daae2c3",
+      "bytes": 1184,
+      "line_count": 30,
+      "inspected_ranges": [
+        [
+          1,
+          30
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/DedekindLFunctions/SplitInertia.lean",
+      "git_blob_sha1": "b5662cda1f3523fc53b547ee582a46bd3cd826d4",
+      "sha256": "7cba3fb7f7bae39df7e93248dfcf9b4255c37e8c1ebc0cb6a821b506b3839563",
+      "bytes": 5851,
+      "line_count": 104,
+      "inspected_ranges": [
+        [
+          39,
+          49
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/ChrBij.lean",
+      "git_blob_sha1": "cc28de6e8170b10950d5caaf20e1ac31ac319070",
+      "sha256": "9284283c1bc30e10a1cb37395b5798771f06f4199a7b5889f0307ede18dadc43",
+      "bytes": 4150,
+      "line_count": 90,
+      "inspected_ranges": [
+        [
+          15,
+          28
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreAtH.lean",
+      "git_blob_sha1": "0ba3621036f19146e7e67fa9c0e8a1c38661a097",
+      "sha256": "cb17dfd05546ac3116b0638406cb082913e3370841a8abfab1e6498b6d4ac698",
+      "bytes": 2897,
+      "line_count": 51,
+      "inspected_ranges": [
+        [
+          1,
+          51
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/LevelFamily.lean",
+      "git_blob_sha1": "d08c25d0cb674297482bec9a235401c14bfb22fa",
+      "sha256": "99ab2af08664a9d1cf3afbe5113894d2b56bb64eb052a378f62d027d0f74354e",
+      "bytes": 3034,
+      "line_count": 52,
+      "inspected_ranges": [
+        [
+          1,
+          52
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/RecH.lean",
+      "git_blob_sha1": "b2712cc402765cea3fd406285e05e32a7ce64ec7",
+      "sha256": "61b35d1b52c98edd6829ae968b6d21d8fb754efd6dad97f357838f54477d65d5",
+      "bytes": 948,
+      "line_count": 27,
+      "inspected_ranges": [
+        [
+          6,
+          18
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/CoveringLowDefectBound.lean",
+      "git_blob_sha1": "5c2da8a8e2c820ad1a4da248b4571bb362886daa",
+      "sha256": "35fb1acc7e2ace50cfc907d7f52716a0988b577c7260358a4d5b6262e90929e2",
+      "bytes": 3889,
+      "line_count": 56,
+      "inspected_ranges": [
+        [
+          30,
+          48
+        ],
+        [
+          8,
+          29
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/EveryCharacterOfLiteratureOfVWin.lean",
+      "git_blob_sha1": "a13ba1f8c38d4dbf2ddd809fbf9610a007936c24",
+      "sha256": "246b74eeb03dae250c45b46c155b3590cb53c2bac86f5e35f4b74338db487068",
+      "bytes": 97393,
+      "line_count": 814,
+      "inspected_ranges": [
+        [
+          1,
+          80
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/HilbertSamuelLowerBoundOfComponents.lean",
+      "git_blob_sha1": "8248d049ccef5644eb8d7d5bf906ddbaf702b0fe",
+      "sha256": "8f952800c424367f1c8961e71b610a9cf0ac39e9f6b9958b7591199e48ddfdee",
+      "bytes": 10021,
+      "line_count": 131,
+      "inspected_ranges": [
+        [
+          43,
+          72
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/GaloisCohomology/Statement.lean",
+      "git_blob_sha1": "0799e9bcd8aa191ffaa90ab005453a53381bacea",
+      "sha256": "67dc5835eb4b337dfbbbf7f0accd1198b59793ae70f5af34421a7c35410d632c",
+      "bytes": 8427,
+      "line_count": 186,
+      "inspected_ranges": [
+        [
+          43,
+          106
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/LocalRingCardinality/DataParams₂.lean",
+      "git_blob_sha1": "50914500995df91e2646d91a6c5c99a7e603a51b",
+      "sha256": "39d84d7e7db5196715f955ac44f45e61a23fcf4ebd5065ca41444f836efd3099",
+      "bytes": 10441,
+      "line_count": 274,
+      "inspected_ranges": [
+        [
+          58,
+          86
+        ],
+        [
+          82,
+          150
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/LocalRingCardinality/Params.lean",
+      "git_blob_sha1": "09d1aeec3049821ed6d190c7970cdca9ec5b34cf",
+      "sha256": "1de4e5a1230e9d93b5ace3e4f7e112f65e3d5264d75db227476986d179881e17",
+      "bytes": 3847,
+      "line_count": 125,
+      "inspected_ranges": [
+        [
+          35,
+          50
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/RealCubicMeans/LogMeanShares/LogMeanStatements/HSClaim.lean",
+      "git_blob_sha1": "bcd80d8fb4b6039174fd73880fb8e8643f93285e",
+      "sha256": "764e30159e21ec507075f04acd0c24e680bcb7e17ede5cfafedeb77657661c9b",
+      "bytes": 970,
+      "line_count": 24,
+      "inspected_ranges": [
+        [
+          7,
+          22
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/SharpRestriction/FamCore.lean",
+      "git_blob_sha1": "44cd54c38881086724fdf7f10f32b7d8e80e35b3",
+      "sha256": "b261e12923d7dc47037a7b5b458e61ef59d69545f3b40a904a36e6bf8047ec78",
+      "bytes": 10481,
+      "line_count": 218,
+      "inspected_ranges": [
+        [
+          71,
+          145
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/SharpRestriction/GlobalSchurBounds/FirstClaimLemmaTwoFourOfLemmaTwoThree.lean",
+      "git_blob_sha1": "b49a1d399c8c390d38b4beeda267b01327ffa228",
+      "sha256": "1dcba9474c1680f769afe55efac99ad6b99ca449fc34b81e23696e671f72a6f2",
+      "bytes": 180319,
+      "line_count": 3397,
+      "inspected_ranges": [
+        [
+          536,
+          556
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/SharpRestriction/GlobalSchurBounds/QuadraticLogDerivCongr.lean",
+      "git_blob_sha1": "7828c8b1060818fe158e23f87f1ad9e2efcf79eb",
+      "sha256": "3c863264dc9f4fd63a46d3ee2b5ae5fd6fba7d64a572466ef5388b76830618bf",
+      "bytes": 95785,
+      "line_count": 1892,
+      "inspected_ranges": [
+        [
+          356,
+          422
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/SharpRestriction/InertJacobiLevels/AsmRec.lean",
+      "git_blob_sha1": "32d6ddda8aad0d2a06a1a3fa2dfddd72c3ce733f",
+      "sha256": "a82fb8d24ce704e24e3b8f4e32f95b9b7164ab4a949814ce3c87b923fbe5835a",
+      "bytes": 2305,
+      "line_count": 61,
+      "inspected_ranges": [
+        [
+          1,
+          61
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Analytic.lean",
+      "git_blob_sha1": "599699b5b35f6fb7bf2ab94f5f0c577b14f35ea1",
+      "sha256": "52ef51f6acc3ac5bdc351912a0c2934b36b4bbffcc60aea8cc6cfcf886ac3a89",
+      "bytes": 7650,
+      "line_count": 176,
+      "inspected_ranges": [
+        [
+          81,
+          160
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ConjEMemHostFIff.lean",
+      "git_blob_sha1": "0ab34ba6d386bb84908efe66de6ce50108eacddc",
+      "sha256": "db32b7af86f38a66881c2345572c33156fdf027b2f0b2d6c64a6775f8e970647",
+      "bytes": 11453,
+      "line_count": 230,
+      "inspected_ranges": [
+        [
+          74,
+          107
         ]
       ]
     },
@@ -118,6 +402,40 @@
       ]
     },
     {
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/FrameFacts.lean",
+      "git_blob_sha1": "22402e8349688ace18526a8fc486eb659a5e7450",
+      "sha256": "4b29bf3a7df92739ba0351614ac7d98ffdc73ea46c0e6c58505c91b2c3ce9e70",
+      "bytes": 39617,
+      "line_count": 843,
+      "inspected_ranges": [
+        [
+          178,
+          192
+        ],
+        [
+          202,
+          228
+        ],
+        [
+          250,
+          264
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/PrimePairSizeCondition.lean",
+      "git_blob_sha1": "aee05935e7bac6625cd4e07fef4912722d796780",
+      "sha256": "3f75794693f7f4ce9618f48c91ef4672c5de1909347fd245fb4e5a93cd2e6c6c",
+      "bytes": 3625,
+      "line_count": 132,
+      "inspected_ranges": [
+        [
+          1,
+          88
+        ]
+      ]
+    },
+    {
       "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Window.lean",
       "git_blob_sha1": "099d96fec932b03a505ea79a81c45bcc3fbf0ea3",
       "sha256": "882989a78da888b0462d17f285e42e44970a3dee70c1dc8c667fb5a3f985c2f7",
@@ -127,75 +445,6 @@
         [
           1,
           50
-        ]
-      ]
-    },
-    {
-      "path": "lean/src/Formalism/SharpRestriction/GlobalSchurBounds/FirstClaimLemmaTwoFourOfLemmaTwoThree.lean",
-      "git_blob_sha1": "b49a1d399c8c390d38b4beeda267b01327ffa228",
-      "sha256": "1dcba9474c1680f769afe55efac99ad6b99ca449fc34b81e23696e671f72a6f2",
-      "bytes": 180319,
-      "line_count": 3397,
-      "inspected_ranges": [
-        [
-          536,
-          556
-        ]
-      ]
-    },
-    {
-      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/FieldChi.lean",
-      "git_blob_sha1": "f3e2032b133ff64406a87e27438cdf467aa05a1f",
-      "sha256": "784b9d6aed0292547065a98f2577d41f82269332559815f38fc85da4f69369b3",
-      "bytes": 3901,
-      "line_count": 59,
-      "inspected_ranges": [
-        [
-          1,
-          52
-        ],
-        [
-          52,
-          59
-        ]
-      ]
-    },
-    {
-      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Analytic.lean",
-      "git_blob_sha1": "599699b5b35f6fb7bf2ab94f5f0c577b14f35ea1",
-      "sha256": "52ef51f6acc3ac5bdc351912a0c2934b36b4bbffcc60aea8cc6cfcf886ac3a89",
-      "bytes": 7650,
-      "line_count": 176,
-      "inspected_ranges": [
-        [
-          81,
-          160
-        ]
-      ]
-    },
-    {
-      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean",
-      "git_blob_sha1": "398eb8ed3528aa2666e9d3b2b09a582ad4390dd7",
-      "sha256": "732c3347fb02e410cf9af8831afdbba1d230fc522c3dbbccdb4b708e5dde73db",
-      "bytes": 3776,
-      "line_count": 81,
-      "inspected_ranges": [
-        [
-          1,
-          66
-        ]
-      ]
-    },
-    {
-      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/TwistForm.lean",
-      "git_blob_sha1": "5e8b1a992a393336dffd3603524526dfccfa1981",
-      "sha256": "f6fcb4d6d30327b91dc81247a280070efc3196de2053cad36cbf14ec1daae2c3",
-      "bytes": 1184,
-      "line_count": 30,
-      "inspected_ranges": [
-        [
-          1,
-          30
         ]
       ]
     },
@@ -213,54 +462,54 @@
       ]
     },
     {
-      "path": "lean/src/Formalism/GaloisCohomology/Statement.lean",
-      "git_blob_sha1": "0799e9bcd8aa191ffaa90ab005453a53381bacea",
-      "sha256": "67dc5835eb4b337dfbbbf7f0accd1198b59793ae70f5af34421a7c35410d632c",
-      "bytes": 8427,
-      "line_count": 186,
+      "path": "lean/src/Formalism/SizeWindowBrackets/FirstPrimeNeSecondPrime.lean",
+      "git_blob_sha1": "18deb7cb85d6f650a69f01fda6e0c789b9f04d89",
+      "sha256": "0af06fb5bd926de8235472c1c0482770d70e13b5bc58a0afef86d7d6b512246d",
+      "bytes": 6380,
+      "line_count": 142,
       "inspected_ranges": [
         [
-          43,
-          106
+          8,
+          35
         ]
       ]
     },
     {
-      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/PairGood.lean",
-      "git_blob_sha1": "68d04b506355e999c0f6020ee066c4967c1e6939",
-      "sha256": "e5ddbc7f4573275caad502b8414dc3579ed904d1fa6c5f3848080bbd94fb3abb",
-      "bytes": 2421,
-      "line_count": 46,
+      "path": "lean/src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+      "git_blob_sha1": "a3ece4b4aea97a95ba2977fa9e8d437e72677774",
+      "sha256": "8143a96da8be39cf426ef142bccbff94bac7706e5bd8e97719a8feebf3272309",
+      "bytes": 10434,
+      "line_count": 183,
+      "inspected_ranges": [
+        [
+          54,
+          79
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Formalism/SizeWindowBrackets/SChain.lean",
+      "git_blob_sha1": "a4bc8cecac40a1f5fd307661e151639aaf6a6efa",
+      "sha256": "fbd9601bd93a72f7004d6de3f67737755a588631035c760f3e7f063c4c4a197f",
+      "bytes": 15604,
+      "line_count": 252,
       "inspected_ranges": [
         [
           1,
-          46
+          70
         ]
       ]
     },
     {
-      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/FrameFacts.lean",
-      "git_blob_sha1": "22402e8349688ace18526a8fc486eb659a5e7450",
-      "sha256": "4b29bf3a7df92739ba0351614ac7d98ffdc73ea46c0e6c58505c91b2c3ce9e70",
-      "bytes": 39617,
-      "line_count": 843,
+      "path": "lean/src/Main.lean",
+      "git_blob_sha1": "dbd5db70bc11b35f18fa5751216ab335321e7bfc",
+      "sha256": "017645ca448f2fd1f6fd5c4c2cb2c6e96e472725be13f6e180ca6e1574360939",
+      "bytes": 433,
+      "line_count": 12,
       "inspected_ranges": [
         [
-          202,
-          228
-        ]
-      ]
-    },
-    {
-      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ConjEMemHostFIff.lean",
-      "git_blob_sha1": "0ab34ba6d386bb84908efe66de6ce50108eacddc",
-      "sha256": "db32b7af86f38a66881c2345572c33156fdf027b2f0b2d6c64a6775f8e970647",
-      "bytes": 11453,
-      "line_count": 230,
-      "inspected_ranges": [
-        [
-          74,
-          107
+          1,
+          12
         ]
       ]
     }
@@ -292,11 +541,87 @@
         "ExistsPageN.lean:12–49",
         "GaloisCohomology/Statement.lean:54–83"
       ]
+    },
+    {
+      "id": "four-character-rh-quotient",
+      "status": "proved finite-character specialization",
+      "statement": "o=1 implies A0=A. With the actual supplier PsQ, the common-scale projection is G1+Gq-Gd-Gqd; only the signed companion Gd+Gqd-Gq needs an upper bound for the pure-zeta endpoint.",
+      "sources": [
+        "ConjEMemHostFIff.lean:82–83,98–101",
+        "FieldChi.lean:53–58",
+        "RecH.lean:10–11",
+        "ChrBij.lean:21–24",
+        "Analytic.lean:81–160"
+      ]
+    },
+    {
+      "id": "zero-total-mass-obstruction",
+      "status": "proved finite Fourier obstruction",
+      "statement": "Each source projection has coefficient sum zero, even after merging primitive inducers or taking finite cross-host linear combinations. These coefficient identities alone cannot yield a nonzero all-nonnegative combination.",
+      "proof": "Character orthogonality on G/B; every selected e1(t) is nonidentity modulo B."
+    },
+    {
+      "id": "zeta-only-centering",
+      "status": "proved elementary inequality",
+      "statement": "For h>=0, x-h>=1 and |y-x|<=h, |G1(y)-G1(x)| <= h*(1+log(x+h))^2.",
+      "proof": "Piecewise differentiation, Lambda(n)<=log n, harmonic-sum bound, and 0<gamma<1."
+    },
+    {
+      "id": "single-rh-arithmetic-budget",
+      "status": "proved conditional reduction",
+      "statement": "Under the same-map three-mean comparison, h>=0, x-h>=1 and |a_t/b-x|<=h, G1(x)<=(Ebar-Jthin)/k+Jlog+mean_t(Gd+Gqd-Gq)(a_t/b)+h*(1+log(x+h))^2. A vanishing-loss whole-window bound for this total implies RH, with auxiliary primes allowed to vary with x.",
+      "construction_or_bound_proved": false,
+      "required_extra_hypothesis": "Pooled empirical A-translation invariance of actual weight measures, or a different valid proof of the assumed comparison."
+    },
+    {
+      "id": "actual-weight-symmetry-interface",
+      "status": "bounded source trace; symmetry remains open",
+      "statement": "Actual weights read hc(tau).e_j from independently selected points. Family interfaces align hosts and top orders but do not assert translated profiles or pooled empirical invariance.",
+      "sources": [
+        "QuadraticLogDerivCongr.lean:367–407",
+        "DataParams₂.lean:73–74",
+        "FamCore.lean:90–105,132–136",
+        "AsmRec.lean:10–28"
+      ]
+    },
+    {
+      "id": "rh-growing-two-extensions",
+      "status": "proved from exact kernel and source size contracts",
+      "statement": "For conductor one, A is cyclic of order 2^e and E=Q(zeta_(2^(e+2)))^+(sqrt(-q),sqrt(-d)), degree 4*2^e, with x^(2+8eps)<=2^e<=2*x^(2+8eps). The integral cohomology, growing automorphic ranks and section-lattice requirements do not disappear.",
+      "sources": [
+        "FrameFacts.lean:178–192,208–225,250–264",
+        "ExistsPageN.lean:12–49",
+        "SChain.lean:53–58",
+        "Params.lean:46",
+        "HilbertSamuelLowerBoundOfComponents.lean:43–72"
+      ]
+    },
+    {
+      "id": "fixed-quadratic-alternative",
+      "status": "proved analytic alternative, no arithmetic construction",
+      "statement": "A fixed positive family G1+Gchi_D admits the window criterion and proves both zeta RH and the corresponding fixed quadratic conclusion. For D=-4 or -3 it also admits either eventual one-sided criterion by real nonvanishing. The source growing-prime supplier is not a construction of this fixed family."
+    },
+    {
+      "id": "qrh-noncircular-use",
+      "status": "scope comparison with already reviewed manuscript results",
+      "statement": "Section11 already supplies the moving three-quadratic selection conditional on the uniform QRH theorem. Fixed-width QRH or a no-Siegel gap does not itself supply the vanishing-loss zeta bound. Section6 short-outer-range bootstrap still requires a new mean-square estimate."
+    },
+    {
+      "id": "source-centering-after-averaging",
+      "status": "proved from exact source size inequalities",
+      "statement": "If b0 is the source lower endpoint and b the actual mean of thick weights, SizesA and CostWindows imply |a_t/b-x|<2 for x>=3 and f>=1. The zeta-centering loss is at most 2*(1+log(x+2))^2; no new h=1 centering gate is required.",
+      "proof": "Set r=(b-b0)/b0>=0 and use (x-1)/(1+r)<=a_t/b<=x+1, with (eta+1)/b0<=1/(6*f*x*(x+1)).",
+      "sources": [
+        "SplitInertia.lean:42–48",
+        "SChain.lean:50–51"
+      ]
     }
   ],
   "open_items": [
-    "Verify source conductor-one specialization and surviving arithmetic suppliers.",
-    "Complete fixed quadratic and finite-Fourier obstruction analysis."
+    "Construct compatible nonzero integral theta data and prove the geometric and cohomological costs for the RH host family.",
+    "Prove the single total arithmetic budget on cofinal whole windows with exponent loss tending to zero.",
+    "Establish pooled weight-measure translation invariance for the same actual integral maps before using the three-mean specialization; otherwise retain the general finite-error route.",
+    "Do not replace the growing abelian 2-extension cohomology bound by a fixed-field or characteristic-zero vanishing statement."
   ],
   "verification_limits": [
     "Bounded source inspection and ordinary mathematical proofs only; no new Lean compilation.",
@@ -322,5 +647,95 @@
       "role": "Classical zero-free boundary and symmetry"
     }
   ],
-  "note_sha256": "cf4cf39b77be1ff998b1f1fa94d2e1a6b1ddd58c0c534404afe14ae72743b010"
+  "note_sha256": "bb90da0056fbb1307adb89bf4558b52c8679bf5c5624fa6a885aec38849af60f",
+  "source_specialization": {
+    "target": "PChar.one",
+    "selected_family": [
+      "zeta"
+    ],
+    "o": 1,
+    "translation_subgroup": "A0=A",
+    "shares": "automatic exactly",
+    "main_auxiliary_characters": [
+      "chi_q",
+      "chi_d",
+      "chi_q*chi_d"
+    ],
+    "PsQ_supplied": true,
+    "host_field": "Q(zeta_(2^(e+2)))^+(sqrt(-q),sqrt(-d))",
+    "host_degree": "4*2^e",
+    "cohomology": "VWinAt one 401 retained",
+    "high_rank_geometry": "retained",
+    "global_classical_substitution": "same reviewed citation route as full GRH; not an extra RH-only deletion"
+  },
+  "manuscript_context": {
+    "existing_main_scale_RH_selection": "paper/sections/recovered/11-qs-section.tex:518–535",
+    "analytic_window_criterion": "paper/sections/recovered/03-sec-one-sided.tex",
+    "general_arithmetic_fallback": "paper/sections/recovered/10-cs-section.tex",
+    "existing_QRH_bootstrap_limit": "paper/sections/recovered/06-sec-qrh-bootstrap.tex"
+  },
+  "proposed_tex": {
+    "path": "build/rh-proposed.tex",
+    "sha256": "fbbdfcd49e824edd28c85d3b23dab504fa8683da123fa3c0e231bd2167a4408d",
+    "status": "proposed for root integration; no shared manuscript edit by this agent",
+    "labels": [
+      "rh-positive-mellin-boundary",
+      "rh-eventual-one-sided",
+      "rh-eventual-vanishing-loss",
+      "rh-zeta-centering",
+      "rh-signed-companion-budget"
+    ]
+  },
+  "independent_review": [
+    {
+      "reviewer": "root",
+      "scope": "eventual one-sided zeta argument and guide §§2–4",
+      "result": "PASS; lower-bound variant follows by choosing C*x^theta+G1"
+    },
+    {
+      "reviewer": "endpoint_backbone",
+      "scope": "residue_dictionary three-mean transfer/Jensen comparison",
+      "result": "PASS, including phase, cardinalities, logarithmic dispersion and positive denominators; covariance remains an explicit hypothesis"
+    },
+    {
+      "reviewer": "global_inputs",
+      "scope": "three-mean transfer/Jensen comparison",
+      "result": "PASS as communicated by root"
+    },
+    {
+      "reviewer": "root",
+      "scope": "zeta-centering derivative proof and signed-companion budget rearrangement, extended to h>=0",
+      "result": "PASS; requested general h form and reuse at h=2"
+    }
+  ],
+  "manuscript_integration": {
+    "files": [
+      {
+        "path": "paper/sections/recovered/03-sec-one-sided.tex",
+        "sha256": "5cbcce9d88251e235cff4771988839dd5fd58df214fd3cdd3e28aa110af4ab98",
+        "labels": {
+          "rh-positive-mellin-boundary": 12,
+          "rh-eventual-one-sided": 38,
+          "rh-eventual-vanishing-loss": 77
+        }
+      },
+      {
+        "path": "paper/sections/recovered/10-cs-section.tex",
+        "sha256": "a4ca1fa09111f817590fa3eb3f4f90a5ee1a6de08afda5369c5a9e54ffad79ee",
+        "labels": {
+          "rh-zeta-centering": 1166,
+          "rh-signed-companion-budget": 1184
+        }
+      },
+      {
+        "path": "paper/sections/recovered/11-qs-section.tex",
+        "sha256": "d3c55c2b5081aaa2addcb0a4436506c61fe2a9c4f2e5f26d9c3d8b3b6ea90d2a",
+        "labels": {
+          "qs-section": 2
+        }
+      }
+    ],
+    "status": "Integrated, compiled and reviewed in the conventional manuscript; hypotheses and remaining construction obligations are retained.",
+    "scope": "These named statements and their proofs or specialization paragraph; not a new audit of every theorem in the file."
+  }
 }

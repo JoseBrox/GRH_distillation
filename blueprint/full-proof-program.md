@@ -33,6 +33,11 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Average arithmetic discrepancies and explicit finite Fourier/transfer errors | new ordinary finite-character theorem proved and independently reviewed; actual arithmetic supplier remains open |
 | Weighted lower estimates and actual frame penalties replace preliminary uniform envelopes | new weighted lower-estimate lemma proved; same-map and positivity hypotheses retained |
 | Exact discarded-degree and integral-index budget for geometric covolumes | new lattice identity and sufficient polynomial-decay criterion proved; core geometric lower bound remains open |
+| RH conductor-one specialization | proved: only four sign characters survive and the subset-share condition is automatic; auxiliary primes and geometric ranks still grow |
+| Zero-total-coefficient obstruction | proved: cancellation of the present projections cannot produce a nonzero positive coefficient vector; a companion bound or a different identity is needed |
+| Fixed quotient with balanced fibres | proved finite reduction: analytic character identifications must also be fixed |
+| Three mean weights and logarithmic dispersion | proved under explicit pooled translation symmetry; the actual supplier does not yet provide that symmetry |
+| Determinant descent and averaged Hilbert-Samuel surplus | proved reductions: actual quotient degrees, excess-rank costs and mean-volume inputs remain to be bounded |
 
 ## Work packages
 
@@ -80,7 +85,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Construct the same integral maps and geometric data that control the averaged budget. Use the completed six-clause EAtH and full CoreAtH ledger to check identifications; do not demand the source scalar windows when a direct budget is available.
+**Next concrete task.** For RH specialize to conductor one and the four-character projection. Construct one coherent datum with either verified pooled translation symmetry or a directly bounded symmetry error. Control the signed companion and actual transfer budget; preserve the fixed analytic target across every whole window.
 
 **Acceptance conditions:**
 
@@ -90,6 +95,8 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Bounds on every x in the chosen windows
 - The averaging weights and subgroup pushforwards are exact; a surjection alone does not preserve uniform averages
 - All finite-error terms are bounded throughout each whole window, even when ambient groups and ranks grow
+- Fixed quotient labels require balanced fibre counts and fixed primitive-character identifications when used to keep an analytic family fixed.
+- Pooled translation symmetry is a separate construction hypothesis; existing scale bounds do not imply it.
 
 <a id="w03"></a>
 ### W03: Auxiliary characters, fields and nonvacuous selections
@@ -232,7 +239,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 <a id="w10"></a>
 ### W10: Geometric logarithmic-covolume estimate
 
-**Required result.** Construct the prescribed geometric lattices and prove their uncut lower slope together with a controlled discarded mean-degree and integral-index defect; this supplies the required normalized logarithmic covolume bound.
+**Required result.** Prove the mean degree bound for the actual cuspidal section lattices with their Petersson/period metrics; transport it through exact quotient, type-cut and raw Hilbert-Samuel surplus budgets.
 
 **Quantifiers and uniformity.** For each admissible closed family, one common constant and eventual threshold precede all points and indices.
 
@@ -240,7 +247,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Identify the core and its period normalization, then prove its lower slope and actual discarded-degree/index budget. Match any weighted covolume average to the arithmetic target before using average rather than pointwise bounds.
+**Next concrete task.** Bound the actual mean-volume/height input and total Hilbert-Samuel surplus before the growing parameter varies; identify determinant descent and any type averaging with the same selected lattices. Existing upper rank-share is a sufficient supplier, not needed by the new abstract budget.
 
 **Acceptance conditions:**
 
@@ -249,6 +256,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Existing abstract lattice estimates are not accepted as this geometric theorem
 - An exponentially small exceptional rank or an ambient maximal-slope estimate is only one sufficient supplier of the actual defect budget
 - Small discarded rank alone does not control its degree; retain the integral splitting index
+- Keep positive component ranks when multiplying the source slope formula.
+- Control the raw surplus remainder in mean; do not replace an effective uniform bound for moving varieties by a fixed-variety asymptotic.
+- Average types only with the proved rank weights, and retain the integral index.
 
 <a id="w11"></a>
 ### W11: Weighted slope comparison and the complete average budget
@@ -261,7 +271,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Combine the explicit average discrepancy, finite sampled errors and geometric defect terms; verify that the total normalized budget has vanishing exponent loss.
+**Next concrete task.** Use the actual signed projection/transfer identity and weighted frame moments. In the symmetric four-character case, retain three mean weights and the logarithmic-dispersion penalty, then bound the single signed companion mean. The same integral maps and geometric metrics must supply these terms.
 
 **Acceptance conditions:**
 
@@ -285,10 +295,10 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W10 uncut geometric lower slope and discarded-degree/index budget
-1. W02/W11 actual compatible construction with averaged finite errors and a vanishing total loss
-1. W06 seed/level divisibility and W08 global norms on the same maps
-1. W04 remaining complementary-parity integral congruence bounds
+1. W10 actual mean-volume/height input and total Hilbert-Samuel surplus
+1. RH: coherent four-character data, three-mean transfer or a bounded symmetry error, and the signed companion mean
+1. W06/W08 nonzero integral maps, divisibility and global norms on the same objects
+1. W04 remaining cohomological estimates for the growing auxiliary fields
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
 

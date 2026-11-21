@@ -191,6 +191,11 @@ hypothesis remains the arithmetic problem. Neither the prime number
 theorem nor a fixed zero-free region reaching only to some
 $\theta>1/2$ supplies that hypothesis.
 
+For zeta, the same proof also works from an eventual lower bound
+$G(x)\ge-C_\delta x^{1/2+\delta}$: take
+$f=C_\delta x^{1/2+\delta}+G$ instead. Either direction may be chosen
+at each accuracy. Real nonvanishing of zeta is essential to this argument.
+
 \section{The more flexible analytic target}
 
 The arithmetic construction need not control every sufficiently large
@@ -295,8 +300,10 @@ the arithmetic comparison gives an inequality of the form
        +\frac{2\bigl(\overline E(x)+R_{\mathrm{trans}}(x)\bigr)}
                     {n_T m b_0 d_0}.
 \end{equation}
-Here $n_T,m$ are positive integers, $b_0,d_0>0$, and $\overline E$
-is the arithmetic discrepancy averaged over translations. The two
+Here $n_T$ counts the chosen labels, $m$ counts the maps,
+$b_0>0$ is the common weight scale, and $d_0>0$ is the selected density.
+The quantity $\overline E$ is the arithmetic discrepancy averaged over
+translations. The two
 remainders are explicit finite sums: one measures the error in the
 chosen character projection, the other the replacement of the original
 weights by their principal values. The full statement defines every
@@ -364,7 +371,9 @@ using only zeta, its functional equation and positivity.
 
 That does not yet make the arithmetic construction elementary. Its
 averages contain auxiliary quadratic characters even for the zeta
-target. The reason is visible in a small finite-group calculation.
+target. Conductor one makes the subset-share condition automatic and
+leaves exactly four character terms. The reason a signed companion
+survives is visible in a small finite-group calculation.
 For $G_0=(\Z/2\Z)^2\times A$ and averaging in the $A$-direction,
 the character
 \[
@@ -381,6 +390,18 @@ projections preserves zero total coefficient. Thus cancellation alone
 cannot turn them into a nonzero combination with all coefficients
 nonnegative. A signed companion contribution still needs a bound,
 or the arithmetic identity itself must be changed.
+
+There is a useful further simplification. If the weight distributions
+are invariant under the relevant translations, the transfer calculation
+uses only three arithmetic means and their logarithmic dispersions.
+The remaining signed companion is
+\[
+                 C_{q,d}=G_{\chi_d}+G_{\chi_q\chi_d}-G_{\chi_q}.
+\]
+One needs an upper bound for its average together with the arithmetic
+and transfer errors. The auxiliary primes $q,d$ may grow with $x$;
+the retained target is still the same zeta sum. The required translation
+symmetry must be established for the actual integral maps and metrics.
 
 \begin{center}
 \begin{tabular}{@{}p{.39\linewidth}p{.54\linewidth}@{}}

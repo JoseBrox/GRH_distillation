@@ -43,6 +43,17 @@ verification scope must be read alongside the recovered evidence below.
 | Averaged construction target | Finite character averaging, explicit projection/transfer errors, and weighted lower estimates. | Complete source clause ledger and independently reviewed conventional proofs. The compatible arithmetic construction remains open. |
 | Geometric covolume defect | Exact orthogonal splitting, discarded mean-degree and integral-index budget, and a sufficient polynomial-decay criterion. | Fifteen pinned source files and an independent proof review; counterexamples show why rank alone and index-free estimates fail. The actual geometric core lower slope remains open. |
 
+The current [RH specialization](../notes/rh-specialization.md),
+[averaged error reductions](../notes/averaged-error-budget.md), and
+[geometric core analysis](../notes/geometric-core-lower-bound.md) have
+independent mathematical reviews and pinned source dictionaries. They add
+short RH-only analytic proofs, a four-character signed budget, conditional
+three-mean transfer, and exact determinant and Hilbert–Samuel remainder
+formulas. The remaining construction includes the required symmetry or its
+defect bound, the signed companion, actual mean-height/surplus bounds and
+compatible integral maps. The finite computation is reproduced by
+`scripts/check_averaged_errors.py`; it does not establish these open inputs.
+
 The source of the recovered formal evidence is the
 [original reproducibility bundle](../archive/recovered-2026-11-21/grh_audit_reproducibility.zip),
 particularly `formal_export/EXPORTED_PROOF_AUDIT.md`,

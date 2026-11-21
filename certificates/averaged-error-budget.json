@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "status": "Early proved finite-Fourier checkpoint; transfer and same-data frame refinements in progress.",
+  "status": "Final proved reductions checkpoint: root and independent reviews passed; exact finite checks passed. Concrete covariance and arithmetic window estimates remain open.",
   "scope": "Ordinary mathematical deductions from bounded pinned source and manuscript identities; no new Lean build; not a completed arithmetic construction.",
   "source_pin": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
   "note": "notes/averaged-error-budget.md",
-  "note_sha256": "bc35a14e5ecd73be7c5a958301e9190e158a021d08cbeee5d2f917a0c94a419f",
+  "note_sha256": "e4c595c315544681359caa518e689f160d5d9cf7f502b1b0c52a78e10968d11b",
   "claims": [
     {
       "id": "exact-signed-budget",
@@ -30,6 +30,64 @@
       "id": "first-sign-quadratic",
       "status": "proved from source definitions and elementary conductor argument",
       "statement": "Additive epsilon_1 is source chC, primitive conductor-d quadratic; designated psC is the other sign and equals conductor-q Legendre only under extra PsQ."
+    },
+    {
+      "id": "balanced-fibre-average",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "Positive weights 1/(|B|*fibre cardinality) give exact uniform pushforward; nonempty word sets and positive inner rank weights remain.",
+      "warning": "An existing unweighted U-mean bound does not survive reweighting automatically; prove the weighted budget or balanced fibres."
+    },
+    {
+      "id": "paired-parseval",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "Projection mismatch is bounded by sqrt(|Q| sum|mu-mu0|^2)*sqrt(sum|V_theta|^2), with V the signed four-character combination; no automatic unknown spectral estimate."
+    },
+    {
+      "id": "pooled-translation-symmetry",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "B-invariant pooled empirical weight measures annihilate all off-quotient characters before absolute values, including nonlinear transfer terms."
+    },
+    {
+      "id": "positive-quadratic-kernels",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "For D_pm=G1 +/- Gq - Gd -/+ Gqd, w D_pm(a/w)-a log w is convex. Jensen costs a log(AM/GM); the one-sided lower relative margin gives the variance bound.",
+      "domain": "Finite nonempty probability list of strictly positive weights, each at most a."
+    },
+    {
+      "id": "three-mean-transfer",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "Under B=A, pooled symmetry and the actual four quadratic characters: Q4 <= (Ebar-Jthin)/k+Jlog, k=nT*m*b*density/2. b is the thick arithmetic mean; all weights <= min a_t; empty outer class omitted."
+    },
+    {
+      "id": "sampled-rh-budget",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "For x>=2 and |a_t/b-x|<=1, G1 <= (Ebar-Jthin)/k+Jlog+avg(Gd+Gqd-Gq)(a_t/b)+(1+log(x+1))^2. Auxiliary primes may vary; no nonprincipal centering derivative is used."
+    },
+    {
+      "id": "joint-lower-comparison-defects",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "Exact identity (16) permits one joint outer average for the two lower-comparison defects; inner means use each translation own positive rank normalization."
+    },
+    {
+      "id": "frame-weighted-moments",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "For beta>=0 and v=p/(1-delta), average frame cost <= average log N + beta U*log(1+H*/U*)+eta*+4sqrt(E*H*). All same-map hypotheses and allowed e range remain.",
+      "domain": "Finite nonempty index set; positive probabilities; beta>=0 and every delta<1; same-map hypotheses retained."
+    },
+    {
+      "id": "analytic-independence-modulo-c1",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "A fixed finite linear combination of primitive smoothed sums that is C1 on a terminal half-line has zero coefficients. Derivative jumps plus twisted logarithmic Euler derivatives and nonvanishing at 1 prove this; conjugate pairs are merged for real parts."
+    },
+    {
+      "id": "semilinear-lattice-map-transport",
+      "status": "proved mathematical statement with hypotheses and scope in note",
+      "statement": "Twisting a Hermitian lattice/map by a field automorphism and transporting metrics preserves ranks, indices, degrees, extremal slopes and global heights. Transported embedding/bases preserve frame matrices and constants."
+    },
+    {
+      "id": "source-covariance-gap",
+      "status": "Bounded source nonimplication and identified remaining construction condition; no global absence claim.",
+      "statement": "Public Mod/HC parameter/family contracts match hosts, ranks and top orders but do not assert pooled covariance. Concrete canonical theta, metric, period and HC-parameter transport still requires proof."
     }
   ],
   "counterexamples": [
@@ -37,6 +95,31 @@
       "id": "unequal-fibres",
       "data": "A=(Z/2)^2, pi=first coordinate, T={(0,0),(0,1),(1,0)}",
       "conclusion": "Surjective top set has nontrivial quotient Fourier coefficient 1/3, not 0."
+    },
+    {
+      "id": "sizes-not-covariance",
+      "data": "A=B=Z/2,m=1,S={0}; second-sign-one rows (2,1/2),(1/2,1); zero row all1/2; b=1,eta=0,bprime=1/4,Xprime=1,x=a_t=10,N=20",
+      "conclusion": "All SizesA inequalities hold but pooled empirical measures differ."
+    },
+    {
+      "id": "coherent-errors",
+      "data": "Same positive error at all translations",
+      "conclusion": "No square-root saving from averaging alone."
+    },
+    {
+      "id": "variance-needs-lower-margin",
+      "data": "Integer N>=2, probability1/N at w1=2^(-N^2), probability(N-1)/N at w2=(N-w1)/(N-1); all data rational.",
+      "conclusion": "Mean1, variance(1-w1)^2/(N-1) tends to0, logarithmic AM/GM gap grows as N log2."
+    },
+    {
+      "id": "height-correlated-defect",
+      "data": "Probability epsilon at e=1/4,H=epsilon^-2; e=0 elsewhere",
+      "conclusion": "mean e tends to0 but mean H sqrt(e)=1/(2epsilon)."
+    },
+    {
+      "id": "frame-denominator",
+      "data": "Probability epsilon at delta=1-epsilon^2,eta=H=1; delta=eta=0 elsewhere",
+      "conclusion": "mean delta tends to0 but normalized frame cost diverges as1/epsilon."
     }
   ],
   "files": [
@@ -211,6 +294,135 @@
           "lines": "1:74"
         }
       ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/RankGapBounds/MeanBoundSecondForm.lean",
+      "git_blob_sha1": "e4332fd8680d2b2f82e0a1e44a276453e03e2109",
+      "sha256": "3e437728559aa38523941d029f892eeefed7f654d09dd5f4dae6bb0f278a4950",
+      "bytes": 8116,
+      "lines": 229,
+      "reads": [
+        {
+          "lines": "105:166"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/DedekindLFunctions/SplitInertia.lean",
+      "git_blob_sha1": "b5662cda1f3523fc53b547ee582a46bd3cd826d4",
+      "sha256": "7cba3fb7f7bae39df7e93248dfcf9b4255c37e8c1ebc0cb6a821b506b3839563",
+      "bytes": 5851,
+      "lines": 104,
+      "reads": [
+        {
+          "lines": "10:80"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreAtH.lean",
+      "git_blob_sha1": "0ba3621036f19146e7e67fa9c0e8a1c38661a097",
+      "sha256": "cb17dfd05546ac3116b0638406cb082913e3370841a8abfab1e6498b6d4ac698",
+      "bytes": 2897,
+      "lines": 51,
+      "reads": [
+        {
+          "lines": "18:43"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/GlobalSchurBounds/QuadraticLogDerivCongr.lean",
+      "git_blob_sha1": "7828c8b1060818fe158e23f87f1ad9e2efcf79eb",
+      "sha256": "3c863264dc9f4fd63a46d3ee2b5ae5fd6fba7d64a572466ef5388b76830618bf",
+      "bytes": 95785,
+      "lines": 1892,
+      "reads": [
+        {
+          "lines": "367:407"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/LocalRingCardinality/DataParams₂.lean",
+      "git_blob_sha1": "50914500995df91e2646d91a6c5c99a7e603a51b",
+      "sha256": "39d84d7e7db5196715f955ac44f45e61a23fcf4ebd5065ca41444f836efd3099",
+      "bytes": 10441,
+      "lines": 274,
+      "reads": [
+        {
+          "lines": "59:80"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/FamCore.lean",
+      "git_blob_sha1": "44cd54c38881086724fdf7f10f32b7d8e80e35b3",
+      "sha256": "b261e12923d7dc47037a7b5b458e61ef59d69545f3b40a904a36e6bf8047ec78",
+      "bytes": 10481,
+      "lines": 218,
+      "reads": [
+        {
+          "lines": "88:107"
+        },
+        {
+          "lines": "126:140"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/InertJacobiLevels/AsmRec.lean",
+      "git_blob_sha1": "32d6ddda8aad0d2a06a1a3fa2dfddd72c3ce733f",
+      "sha256": "a82fb8d24ce704e24e3b8f4e32f95b9b7164ab4a949814ce3c87b923fbe5835a",
+      "bytes": 2305,
+      "lines": 61,
+      "reads": [
+        {
+          "lines": "10:31"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SizeWindowBrackets/SChain.lean",
+      "git_blob_sha1": "a4bc8cecac40a1f5fd307661e151639aaf6a6efa",
+      "sha256": "fbd9601bd93a72f7004d6de3f67737755a588631035c760f3e7f063c4c4a197f",
+      "bytes": 15604,
+      "lines": 252,
+      "reads": [
+        {
+          "lines": "22:33"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/FieldChi.lean",
+      "git_blob_sha1": "f3e2032b133ff64406a87e27438cdf467aa05a1f",
+      "sha256": "784b9d6aed0292547065a98f2577d41f82269332559815f38fc85da4f69369b3",
+      "bytes": 3901,
+      "lines": 59,
+      "reads": [
+        {
+          "lines": "49:59"
+        }
+      ]
     }
   ],
   "local_inputs": [
@@ -238,11 +450,12 @@
           346,
           412
         ]
-      ]
+      ],
+      "hash_role": "Source-content snapshot recorded while reading; subsequent shared manuscript edits may change the whole-file hash."
     },
     {
       "path": "paper/sections/recovered/10-cs-section.tex",
-      "sha256": "4075e6f6fc294fa720d0241940e6692cee8729246b3a8b4d34429b72ec622827",
+      "sha256": "a4ca1fa09111f817590fa3eb3f4f90a5ee1a6de08afda5369c5a9e54ffad79ee",
       "read_ranges": [
         [
           70,
@@ -251,8 +464,13 @@
         [
           610,
           743
+        ],
+        [
+          151,
+          176
         ]
-      ]
+      ],
+      "hash_role": "Source-content snapshot recorded while reading; subsequent shared manuscript edits may change the whole-file hash."
     },
     {
       "path": "paper/sections/recovered/01-sec-purpose.tex",
@@ -262,22 +480,195 @@
           1,
           72
         ]
-      ]
+      ],
+      "hash_role": "Source-content snapshot recorded while reading; subsequent shared manuscript edits may change the whole-file hash."
+    },
+    {
+      "path": "paper/sections/recovered/03-sec-one-sided.tex",
+      "sha256": "d0eb7ee1cf984280eb147dc761b81dcdf01c700992140b337eb305c79c5d488c",
+      "read_ranges": [
+        [
+          128,
+          165
+        ],
+        [
+          218,
+          282
+        ]
+      ],
+      "hash_role": "Source-content snapshot recorded while reading; subsequent shared manuscript edits may change the whole-file hash."
     }
   ],
   "verification": {
-    "source_git_blob_sha1": "pass all 11 recorded files against pinned Git tree",
-    "source_sha256": "recorded",
-    "bounded_reads": "all ranges at most 120 lines; no complete large source retrieved",
-    "lean_build": "not run; no claim of new kernel verification"
+    "source_files": 20,
+    "source_git_blob_sha1": "pass all recorded files against pin",
+    "source_sha256": "pass all recorded files",
+    "bounded_reads": {
+      "max_lines": 81,
+      "max_bytes": 3822
+    },
+    "lean_build": "not run; no new kernel verification claimed",
+    "scope": "Ordinary mathematical proofs; concrete arithmetic construction remains open.",
+    "exact_finite_checks": {
+      "fraction_cases": [
+        {
+          "B_size": 1,
+          "S_size": 1,
+          "E": "-286463/140",
+          "k": "21/4"
+        },
+        {
+          "B_size": 1,
+          "S_size": 1,
+          "E": "-286463/140",
+          "k": "21/4"
+        },
+        {
+          "B_size": 2,
+          "S_size": 1,
+          "E": "-1779163/840",
+          "k": "21/4"
+        },
+        {
+          "B_size": 2,
+          "S_size": 2,
+          "E": "-1779163/840",
+          "k": "21/2"
+        },
+        {
+          "B_size": 4,
+          "S_size": 1,
+          "E": "-905489/420",
+          "k": "21/4"
+        },
+        {
+          "B_size": 4,
+          "S_size": 4,
+          "E": "-905489/420",
+          "k": "21"
+        }
+      ],
+      "signed_budget": "pass exactly",
+      "covariant_projection": "pass exactly",
+      "zero_coefficient_sum": "pass exactly",
+      "failed_covariance_off_quotient": "-9/16",
+      "parseval": "pass exactly",
+      "quadratic_kernel_residues": 21,
+      "quadratic_kernel_nonnegative": "pass exactly"
+    },
+    "reproduction_code_python": "from fractions import Fraction as F\nA=range(4)\nG=[(r,s,a) for r in range(2) for s in range(2) for a in A]\ndef ch(z,g):\n r,s,a=z; e,h,v=g\n return (-1)**(r*e+s*h+(a&v).bit_count())\ndef zfun(z,y):\n c=8*z[0]+4*z[1]+z[2]\n return (1+c%3)*y*y+(c-7)*y+F((-1)**c,2)\ndef weight(u,i,e,a): return F(2+i+e+(a^u),2)\nresults=[]\nfor B in [[0],[0,1],[0,1,2,3]]:\n for S in [B[:1],B]:\n  T=[0,1,2];m=2;b=F(7);f=8\n  X=[z for z in G if all(ch(z,(0,0,u))==1 for u in B)]\n  E=Et=Tsg=F(0)\n  for u in B:\n   for t in T:\n    at=F(13+2*t)\n    for i in range(m):\n     for e in range(2):\n      for a in A:\n       w=weight(u,i,e,a);phase=(1,1^e,t^a);thick=e==1 and (a^u) in S\n       for z in G:\n        v=ch(z,phase)*w*zfun(z,at/w);E+=v\n        if z in X:Et+=v\n        Tsg+=v-ch(z,phase)*(b*zfun(z,at/b) if thick else 0)\n  E/=len(B)*f;Et/=len(B)*f;Tsg/=len(B)*f\n  Q=sum(F(ch(z,(1,0,t)))*zfun(z,F(13+2*t)/b) for t in T for z in X)/len(T)\n  k=F(len(T)*m)*b*F(len(S),4)/2\n  assert E==Et and E==k*Q+Tsg\n  alpha={z:F(sum(ch(z,(1,0,t)) for t in T),len(T)) for z in X}\n  assert sum(alpha.values())==0\n  results.append({'B_size':len(B),'S_size':len(S),'E':str(E),'k':str(k)})\nz=(0,0,1);E=F(0)\nfor u in A:\n for e in range(2):\n  for a in A:\n   w=F(2 if (u,e,a)==(0,1,0) else 1)\n   E+=ch(z,(1,1^e,a))*w*(F(6)/w)**2\nE/=32\nassert E==F(-9,16)\nmu=[F(1,2),F(1,3),F(1,6),F(0)];mu0=[F(1,4)]*4\nhat=[sum((mu[a]-mu0[a])*(-1)**((h&a).bit_count()) for a in A) for h in A]\nassert sum(v*v for v in hat)==4*sum((mu[a]-mu0[a])**2 for a in A)\ndef leg(n,p):\n r=pow(n%p,(p-1)//2,p)\n return -1 if r==p-1 else r\nkernels=[((1+leg(n,3))*(1-leg(n,7)),(1-leg(n,3))*(1-leg(n,7))) for n in range(21)]\nassert all(min(v)>=0 for v in kernels)\nCHECKS={'fraction_cases':results,'signed_budget':'pass exactly','covariant_projection':'pass exactly','zero_coefficient_sum':'pass exactly','failed_covariance_off_quotient':str(E),'parseval':'pass exactly','quadratic_kernel_residues':21,'quadratic_kernel_nonnegative':'pass exactly'}\n",
+    "code_sha256": "5019fc961a76a5fdffb7b96388adb36e630d59a924d5638c8d955f565452ab0b",
+    "computation_scope": "Exact rational spot checks audit signs and normalization; general proofs are in the note, not inferred from finite examples.",
+    "note_hash": "pass at final freeze",
+    "proposal_hash": "pass at final freeze",
+    "git_diff_check": "pass",
+    "reproduction_script": {
+      "path": "scripts/check_averaged_errors.py",
+      "sha256": "e85d7a9714d76257d2f0cbef547137a01a49b03f4da457e72d1dd444d9ee0a35"
+    }
   },
   "independent_review": {
-    "status": "requested after completed refinements"
+    "positive_kernel_and_three_means": [
+      {
+        "reviewer": "global_inputs",
+        "status": "pass",
+        "checked": [
+          "+a log w correction",
+          "ramified coefficients",
+          "variance lower margin",
+          "pooled symmetry",
+          "1/(2n^2)",
+          "class counts",
+          "k and Jlog",
+          "domain/empty class"
+        ]
+      },
+      {
+        "reviewer": "endpoint_backbone",
+        "status": "pass",
+        "checked": [
+          "same normalizations",
+          "pooled rather than individual covariance",
+          "PsQ supplier",
+          "source covariance not supplied by public contracts"
+        ]
+      }
+    ],
+    "frame_moments": {
+      "reviewer": "global_inputs",
+      "status": "pass after explicit beta>=0 correction",
+      "checked": [
+        "perspective concavity",
+        "height-weighted Cauchy-Schwarz",
+        "v denominators",
+        "zero-boundary conventions"
+      ]
+    },
+    "analytic_independence": {
+      "reviewer": "root",
+      "status": "pass",
+      "integration_review": {
+        "reviewer": "residue_dictionary",
+        "status": "pass",
+        "path": "paper/sections/recovered/10-cs-section.tex",
+        "read_range": [
+          968,
+          1007
+        ]
+      }
+    },
+    "root": {
+      "status": "pass",
+      "checked": [
+        "exact signed balance",
+        "fixed-quotient formulas",
+        "covariance phase and cardinalities",
+        "Jensen variance constant 1/(2*(1-eta))",
+        "all three means and k*Jlog",
+        "frame perspective and Cauchy-Schwarz",
+        "analytic independence via jumps and twisted logarithmic derivatives"
+      ],
+      "scope": "Ordinary-mathematics arguments; not concrete source covariance or a new Lean build."
+    }
   },
   "remaining_obligations": [
-    "same-map arithmetic/geometric construction",
-    "signed companion and transfer estimates on whole cofinal windows",
-    "growing-rank frame and covolume costs",
-    "actual primitive-character identification for each fixed positive family"
-  ]
+    "same-map integral/global theta construction",
+    "pooled symmetry or matched Galois transport of canonical theta/lattice/metric data",
+    "one-sided companion and thin estimates",
+    "logarithmic dispersion plus growing-rank frame/covolume bounds",
+    "whole cofinal windows and fixed positive target identifications at each accuracy"
+  ],
+  "proposed_tex": {
+    "path": "build/averaged-budget-proposed.tex",
+    "sha256": "aead7521e4045d8b2f746d2eaea8dd70eff0c440994f63c0a0d9ef86d5d9fd54",
+    "lines": 266,
+    "labels": [
+      "cs-signed-budget",
+      "cs-fixed-quotient",
+      "cs-translation-symmetry",
+      "cs-positive-kernel",
+      "cs-three-means",
+      "cs-average-frame"
+    ],
+    "status": "Final frozen proposal; root integrated all six statements into existing Section10, with an additional analytic-independence lemma."
+  },
+  "manuscript_integration": {
+    "files": [
+      {
+        "path": "paper/sections/recovered/10-cs-section.tex",
+        "sha256": "a4ca1fa09111f817590fa3eb3f4f90a5ee1a6de08afda5369c5a9e54ffad79ee",
+        "labels": {
+          "cs-signed-budget": 901,
+          "cs-fixed-quotient": 934,
+          "cs-smoothed-independence": 968,
+          "cs-translation-symmetry": 1012,
+          "cs-positive-kernel": 1044,
+          "cs-three-means": 1092,
+          "cs-average-frame": 1240
+        }
+      }
+    ],
+    "status": "Integrated, compiled and reviewed in the conventional manuscript; hypotheses and remaining construction obligations are retained.",
+    "scope": "These named statements and their proofs or specialization paragraph; not a new audit of every theorem in the file."
+  }
 }

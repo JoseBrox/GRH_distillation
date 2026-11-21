@@ -176,3 +176,29 @@ replaces the separate source construction of this input. The same global
 representation supplies all required local comparisons and the repeated
 uses in the Selmer argument. Independent theta identities, integral maps
 and geometric lower bounds remain obligations of the construction.
+
+## Ordinary RH and the reduced arithmetic budget
+
+The one-sided analytic section now proves a short criterion using only zeta:
+either an eventual upper or an eventual lower bound with exponent tending
+to one half suffices. The conductor-one specialization makes the subset
+shares automatic and leaves only four quadratic-character terms. A single
+signed companion mean, together with the arithmetic discrepancy and transfer
+costs, is enough for the final RH estimate. The primes may vary with the
+scale because zeta remains the fixed analytic target.
+
+The slope section proves exact signed Fourier accounting, a fixed-quotient
+reduction and an obstruction to positive cancellation. Under explicit
+pooled symmetry it reduces transfer to three mean weights and logarithmic
+dispersions. It also bounds the actual average frame penalty through weighted
+moments. The inspected source interfaces do not supply the symmetry merely
+from their size bounds.
+
+The same section proves determinant descent, an orthogonal average over
+types, and a component-degree bound with an actual signed remainder. These
+permit direct control of the raw Hilbert–Samuel excess-rank cost instead of
+first bounding every rank ratio. The required geometric mean-height and
+total remainder estimates remain open. Proofs and exact scope are in the
+[RH](../notes/rh-specialization.md), [averaging](../notes/averaged-error-budget.md)
+and [geometric](../notes/geometric-core-lower-bound.md) notes. The
+[short guide](../paper/guide/main.pdf) explains their roles in the proof.

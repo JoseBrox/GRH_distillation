@@ -1,0 +1,39 @@
+digraph proof {
+graph [rankdir=TB, bgcolor="white", pad="0.24", nodesep="0.30", ranksep="0.48",
+  fontname="DejaVu Sans", fontsize=12, labelloc=t, label="Ordinary RH: the shorter target and the remaining arithmetic", splines=polyline];
+node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=11,
+  margin="0.18,0.12", penwidth=1.3];
+edge [color="#64748B", penwidth=1.1, arrowsize=0.65];
+graph [nodesep="0.35", ranksep="0.55"];
+"rh_classical" [label="Classical zeta properties\nCited input", fillcolor="#E8F0FC", color="#3566A0", fontcolor="#173D70"];
+"rh_four" [label="Conductor-one specialization\nFour characters; automatic subset\nshares\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"rh_data" [label="Compatible arithmetic and geometry\nActual maps, degrees and transport\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"rh_transfer" [label="Transfer through three mean\nweights\nConditional on pooled symmetry\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"rh_companion" [label="Signed companion bound\nCannot be removed by cancellation\nalone\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"rh_bound" [label="Zeta prime-sum estimate\nTotal exponent loss tending to\nzero\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"rh_criterion" [label="One-sided zeta criteria\nEventual bound or whole intervals\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"rh_goal" [label="Riemann hypothesis\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"rh_four" -> "rh_data";
+"rh_four" -> "rh_companion";
+"rh_data" -> "rh_transfer";
+"rh_data" -> "rh_bound";
+"rh_transfer" -> "rh_bound";
+"rh_companion" -> "rh_bound";
+"rh_bound" -> "rh_criterion";
+"rh_classical" -> "rh_criterion";
+"rh_criterion" -> "rh_goal";
+{rank=same; "rh_classical"; "rh_four";}
+{rank=same; "rh_data";}
+{rank=same; "rh_transfer"; "rh_companion";}
+{rank=same; "rh_bound";}
+{rank=same; "rh_criterion";}
+{rank=same; "rh_goal";}
+// Invisible edges below control layout only; they are not proof interfaces.
+"rh_classical" -> "rh_four" [style=invis, weight=50];
+"rh_transfer" -> "rh_companion" [style=invis, weight=50];
+"rh_classical" -> "rh_data" [style=invis, weight=50];
+"rh_data" -> "rh_transfer" [style=invis, weight=50];
+"rh_transfer" -> "rh_bound" [style=invis, weight=50];
+"rh_bound" -> "rh_criterion" [style=invis, weight=50];
+"rh_criterion" -> "rh_goal" [style=invis, weight=50];
+}

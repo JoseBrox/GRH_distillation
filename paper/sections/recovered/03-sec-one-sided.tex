@@ -1,5 +1,98 @@
-\section{A one-sided criterion on multiplicative intervals}
+\section{One-sided criteria for zeros}
 \label{sec:one-sided}
+
+\subsection{A shorter sufficient criterion for the Riemann hypothesis}
+
+For the zeta function alone, an eventual bound admits a shorter proof.
+The hypothesis here is stronger than a bound on arbitrarily late
+intervals; it has the advantage that either direction of inequality
+is sufficient.
+
+\begin{lemma}[The real boundary for a positive Mellin transform]
+\label{rh-positive-mellin-boundary}
+Let $X\ge1$, and let $f:[X,\infty)\to[0,\infty)$ be locally integrable
+and of at most polynomial growth. If its Mellin transform
+\[
+ F(s)=\int_X^\infty f(x)x^{-s-1}\,dx
+\]
+has a finite abscissa of convergence $\alpha$, it does not extend
+holomorphically through the real point $\alpha$.
+\end{lemma}
+\begin{proof}
+Suppose that it extends to a disk of radius $r>0$ about $\alpha$,
+and put $\sigma_0=\alpha+r/4$. Its Taylor series at $\sigma_0$,
+evaluated at $\sigma_0-z$, converges for $r/4<z<r/2$ and has terms
+\[
+ \frac{(-1)^kF^{(k)}(\sigma_0)z^k}{k!}
+ =\int_X^\infty f(x)x^{-\sigma_0-1}
+                   \frac{(z\log x)^k}{k!}\,dx\ge0.
+\]
+Differentiation follows by domination using convergence at an
+intermediate real point between $\alpha$ and $\sigma_0$.
+Tonelli's theorem identifies the Taylor sum with
+$\int_X^\infty f(x)x^{-(\sigma_0-z)-1}\,dx$.
+This is finite to the left of $\alpha$, a contradiction.
+\end{proof}
+
+\begin{proposition}[Either eventual one-sided zeta bound]
+\label{rh-eventual-one-sided}
+Fix $0<\theta<1$. If, for some finite $C\ge0$ and $X\ge1$, either
+\[
+ G_1(x)\le Cx^\theta\quad(x\ge X),
+ \qquad\hbox{or}\qquad
+ G_1(x)\ge-Cx^\theta\quad(x\ge X),
+\]
+then $\zeta(s)$ has no zero with $\Re s>\theta$.
+Its pole at one is excluded from the zero-free assertion.
+\end{proposition}
+\begin{proof}
+Let $\mathcal G(s)$ be the transform in
+\eqref{eq:mellin-zeta}. It is holomorphic at one. It is also
+holomorphic near every other positive real point: for $0<s<1$,
+\[
+ \sum_{j\ge0}\bigl((2j+1)^{-s}-(2j+2)^{-s}\bigr)>0,
+ \qquad
+ \zeta(s)=\frac{\sum_{n\ge1}(-1)^{n-1}n^{-s}}{1-2^{1-s}}<0,
+\]
+and the Euler product handles $s>1$.
+
+In the upper-bound case put $f=Cx^\theta-G_1(x)$ on $[X,\infty)$;
+in the lower-bound case put $f=Cx^\theta+G_1(x)$.
+In either case $f\ge0$ and its Mellin transform, initially in a
+right half-plane, is
+\[
+ \frac{CX^{\theta-s}}{s-\theta}\mp\mathcal G(s)
+ \quad\hbox{plus an entire finite-interval integral}.
+\]
+This expression is holomorphic near every real $s>\theta$.
+Lemma~\ref{rh-positive-mellin-boundary} therefore puts its abscissa
+of convergence at most $\theta$; the case of abscissa $-\infty$
+already has this conclusion. The integral is holomorphic on
+$\Re s>\theta$, and hence so is $\mathcal G$.
+But a zeta zero $\rho$ there would give the nonzero residue
+$-m(\rho)/(\rho(\rho-1))$ in Lemma~\ref{lem:mellin}.
+This contradiction proves the assertion.
+\end{proof}
+
+\begin{corollary}\label{rh-eventual-vanishing-loss}
+Suppose $\delta_j>0$ tends to zero and $1/2+\delta_j<1$.
+For every $j$, assume one of the two eventual bounds in
+Proposition~\ref{rh-eventual-one-sided} with
+$\theta=1/2+\delta_j$. The finite constant, threshold and direction
+may depend on $j$. Then the Riemann hypothesis follows.
+A single eventual bound with exponent exactly $1/2$ also suffices.
+\end{corollary}
+\begin{proof}
+The proposition excludes every zero to the right of the critical line.
+The functional equation excludes every nontrivial zero to its left.
+\end{proof}
+
+This argument does not replace an eventual bound by a cofinal-window
+bound: nonnegativity on the entire tail was used in the Mellin integral.
+For the latter arithmetic hypothesis one retains
+Theorem~\ref{thm:vanishing-loss-windows}.
+
+\subsection{Positive families on large intervals}
 
 Only elementary complex analysis is needed in the following argument.
 The proof is included because replacing a one-sided estimate by an

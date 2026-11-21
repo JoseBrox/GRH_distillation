@@ -72,3 +72,27 @@ it reports a missing cache instead of silently skipping that evidence.
 These records distinguish written proofs, cited classical theorems and
 independent human-readable comparisons from compilation or kernel acceptance.
 The compatible arithmetic construction remains open.
+
+## RH and geometric continuation
+
+- `rh-geometric-checkpoint.json` joins the final proof, source, computation,
+  blueprint and rendering evidence, with the remaining arithmetic hypotheses
+  stated explicitly.
+- `rh-specialization.json` records the conductor-one source specialization,
+  the eventual one-sided zeta criterion, the single signed companion budget,
+  the actual-mean centering calculation and the surviving growing-field inputs.
+- `averaged-error-budget.json` records signed Fourier accounting, fixed
+  quotients, the cancellation obstruction, the three-mean transfer and frame
+  moments. Run `python scripts/check_averaged_errors.py` to reproduce the exact
+  finite checks in `averaged-error-exact.json`; these support the proofs and
+  do not replace them.
+- `geometric-core-lower-bound.json` records the actual core lattice,
+  determinant descent, orthogonal type averages, component averaging and the
+  exact Hilbert–Samuel surplus, with its remaining geometric bounds.
+- `guide-build.json` and `guide-review.json` record the short guide's length,
+  current source/PDF hashes, independent mathematical reviews and page review.
+
+Run `python scripts/check_classical_averaged_checkpoint.py --rh-and-geometry`
+to reproduce `rh-geometric-integrity.json` with the pinned caches present.
+The integration records distinguish historical source-reading snapshots
+from the final published manuscript hashes and label positions.

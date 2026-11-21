@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "status": "proved reductions with explicit open arithmetic inputs",
+  "basis_commit": "97de4cbb0cd225ba572a05c5ba9c25c922baccba",
+  "upstream_pin": "jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "guide": {
+    "tex": "paper/guide/main.tex",
+    "pdf": "paper/guide/main.pdf",
+    "pages": 7,
+    "page_limit": 12
+  },
+  "main_manuscript": {
+    "pdf": "paper/main.pdf",
+    "pages": 565,
+    "section_files": 98,
+    "preferred_section_files": 84,
+    "alternative_section_files": 14
+  },
+  "proved_reductions": [
+    "Either eventual one-sided bound for the corrected zeta sum excludes zeros to the right of its exponent; vanishing exponent loss gives the conditional RH implication.",
+    "Conductor one gives four primitive characters and automatic subset shares; a single signed companion remains.",
+    "Exact signed error accounting and fixed-quotient projection; zero total coefficient and fixed-combination analytic independence prevent cancellation to a nonzero positive family.",
+    "Under explicit pooled weight-measure symmetry, three arithmetic means and logarithmic dispersions suffice; height-weighted frame moments replace uniform maxima.",
+    "Determinant descent, orthogonal type averaging, and signed component averaging retain actual quotient degrees and excess-rank costs. The component constant improves from +4 to +2 under the stated hypotheses."
+  ],
+  "open_inputs": [
+    "Compatible integral maps, finite-prime divisibility, and global norms for the actual growing arithmetic family.",
+    "Pooled translation symmetry for the actual weights, or a proved quantitative substitute controlling its defect.",
+    "A small total signed companion, thin-weight, dispersion and geometric budget on the required whole intervals.",
+    "The actual geometric mean-height and Hilbert-Samuel surplus bounds; rank-proportional weights are additionally required to apply the type-mean shortcut."
+  ],
+  "evidence": [
+    {
+      "path": "certificates/rh-specialization.json",
+      "sha256": "870fd73566b31c460ac001d3ad41fbb613df39a98c5d1acd0bd591eef4ee3a1f"
+    },
+    {
+      "path": "certificates/averaged-error-budget.json",
+      "sha256": "6a6ab87d59357978f6716b9e20c3c4e14a669df5bfc0a74603902b00745e2f67"
+    },
+    {
+      "path": "certificates/geometric-core-lower-bound.json",
+      "sha256": "6317b3a8fa08e4a9ea5c287b557da45565bd439bbf0ecf4f6b950dc576a63876"
+    },
+    {
+      "path": "certificates/rh-geometric-integrity.json",
+      "sha256": "6b37023d6e8ca671a1a3522ced3fdf5b3a4558c8a39ce6a9ef8d29d347b024ac"
+    },
+    {
+      "path": "certificates/averaged-error-exact.json",
+      "sha256": "2a03150728c307d7bf6b523506f471d07e5ae51d64e0d532b9fd3a94002b87fe"
+    },
+    {
+      "path": "certificates/guide-build.json",
+      "sha256": "d753a152a32065a6c78af6dd131265baabb8c5b43559fefad4ac01a284c39122"
+    },
+    {
+      "path": "certificates/guide-review.json",
+      "sha256": "b2d2062e9f9a05fcdf8ed82868f8cb425698a9e321eb5503f8aa39dd8f050c49"
+    },
+    {
+      "path": "certificates/paper-build.json",
+      "sha256": "77e3f268a719db7b8028cd5b3a7f629995b678a163bd5c9a3591d7abcc310672"
+    },
+    {
+      "path": "certificates/manuscript-render-check.json",
+      "sha256": "7e7535dc8201c22ae0c27ac778f2747be3000991dad162250fe976862ce67112"
+    },
+    {
+      "path": "certificates/blueprint-check.json",
+      "sha256": "50c947339acc6f24b70af9dfb9909ad936ba4876b642d608b4437260a0b49769"
+    },
+    {
+      "path": "certificates/full-proof-program-check.json",
+      "sha256": "c97def5087a154ba27f0e44e4fed408251d2947a107e42197ce423b1a5f440ac"
+    },
+    {
+      "path": "certificates/recovery-integration.json",
+      "sha256": "202b86032cb36a235f5295ec6063de9fe8e6c9917a5ac11391b84fda5d7c55ea"
+    }
+  ],
+  "source_integrity_summary": {
+    "status": "PASS",
+    "source_files": 159,
+    "recorded_ranges_checked": 333,
+    "notes_checked": 11,
+    "distinct_primary_pdfs": 18,
+    "composition_dependencies": 5
+  },
+  "exact_computation": {
+    "program": "scripts/check_averaged_errors.py",
+    "sha256": "e85d7a9714d76257d2f0cbef547137a01a49b03f4da457e72d1dd444d9ee0a35",
+    "output": "certificates/averaged-error-exact.json",
+    "result": "PASS: reproduced output equals both stored output and the arithmetic certificate; finite examples and counterexamples only."
+  },
+  "verification_commands": [
+    "python scripts/reconcile_recovery.py",
+    "python scripts/build_proof_architecture.py",
+    "python scripts/build_full_proof_program.py",
+    "python scripts/build_blueprint.py",
+    "python scripts/check_averaged_errors.py",
+    "python scripts/check_classical_averaged_checkpoint.py --rh-and-geometry",
+    "python scripts/build_paper.py",
+    "python scripts/build_paper.py --guide"
+  ],
+  "limits": "No new Lean kernel build. The source atlas is an import/declaration inventory, not a proof-term closure audit. The mathematical statements are conventional conditional reductions with written proofs and independent review; the open arithmetic estimates are not claimed proved. Neither a complete reconstructed RH proof nor a complete reconstructed Dirichlet GRH proof is claimed."
+}

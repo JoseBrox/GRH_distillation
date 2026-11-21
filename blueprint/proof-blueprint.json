@@ -331,7 +331,8 @@
         "evidence": [
           "cs-slope",
           "cs-combination",
-          "cs-weighted-lower"
+          "cs-weighted-lower",
+          "cs-average-frame"
         ]
       },
       {
@@ -340,7 +341,8 @@
         "status": "open",
         "evidence": [
           "notes/lean-endpoint-backbone.md",
-          "notes/one-construction-target.md"
+          "notes/one-construction-target.md",
+          "notes/averaged-error-budget.md"
         ]
       },
       {
@@ -412,7 +414,7 @@
       },
       {
         "id": "geometry",
-        "title": "Geometric core lower slope\nPrescribed periods and metrics",
+        "title": "Geometric section lattices\nActual mean degree and remainder bounds",
         "status": "open",
         "evidence": [
           "notes/lean-global-inputs.md",
@@ -432,21 +434,28 @@
       },
       {
         "id": "covolume_defect",
-        "title": "Orthogonal splitting\nDiscarded-degree and index budget",
+        "title": "Determinant degree budgets\nOrthogonal cuts, quotients and excess rank",
         "status": "written",
         "evidence": [
           "cs-orthogonal-cut",
           "cs-exceptional-budget",
-          "cs-polynomial-exceptional"
+          "cs-polynomial-exceptional",
+          "notes/geometric-core-lower-bound.md",
+          "prop:geometric-det-descent",
+          "prop:geometric-type-average",
+          "prop:geometric-component-average"
         ]
       },
       {
         "id": "averaging",
-        "title": "Finite character averaging\nExplicit projection and transfer errors",
+        "title": "Signed averaging and transfer\nThree means under pooled symmetry",
         "status": "written",
         "evidence": [
           "cs-finite-average",
-          "notes/one-construction-target.md"
+          "notes/one-construction-target.md",
+          "notes/averaged-error-budget.md",
+          "cs-signed-budget",
+          "cs-three-means"
         ]
       }
     ],
@@ -659,5 +668,150 @@
       "nodesep": 0.26,
       "ranksep": 0.36
     }
+  },
+  "rh": {
+    "title": "Ordinary RH: the shorter target and the remaining arithmetic",
+    "nodes": [
+      {
+        "id": "rh_classical",
+        "title": "Classical zeta properties",
+        "status": "cited",
+        "evidence": [
+          "paper/guide/main.tex"
+        ]
+      },
+      {
+        "id": "rh_four",
+        "title": "Conductor-one specialization\nFour characters; automatic subset shares",
+        "status": "written",
+        "evidence": [
+          "notes/rh-specialization.md"
+        ]
+      },
+      {
+        "id": "rh_data",
+        "title": "Compatible arithmetic and geometry\nActual maps, degrees and transport",
+        "status": "open",
+        "evidence": [
+          "notes/rh-specialization.md",
+          "notes/geometric-core-lower-bound.md"
+        ]
+      },
+      {
+        "id": "rh_transfer",
+        "title": "Transfer through three mean weights\nConditional on pooled symmetry",
+        "status": "written",
+        "evidence": [
+          "notes/averaged-error-budget.md",
+          "cs-three-means",
+          "cs-positive-kernel"
+        ]
+      },
+      {
+        "id": "rh_companion",
+        "title": "Signed companion bound\nCannot be removed by cancellation alone",
+        "status": "open",
+        "evidence": [
+          "notes/averaged-error-budget.md",
+          "notes/rh-specialization.md"
+        ]
+      },
+      {
+        "id": "rh_bound",
+        "title": "Zeta prime-sum estimate\nTotal exponent loss tending to zero",
+        "status": "open",
+        "evidence": [
+          "notes/rh-specialization.md",
+          "rh-signed-companion-budget"
+        ]
+      },
+      {
+        "id": "rh_criterion",
+        "title": "One-sided zeta criteria\nEventual bound or whole intervals",
+        "status": "written",
+        "evidence": [
+          "notes/rh-specialization.md",
+          "paper/guide/main.tex",
+          "rh-eventual-one-sided",
+          "rh-eventual-vanishing-loss"
+        ]
+      },
+      {
+        "id": "rh_goal",
+        "title": "Riemann hypothesis",
+        "status": "open",
+        "evidence": [
+          "notes/rh-specialization.md"
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "rh_four",
+        "rh_data"
+      ],
+      [
+        "rh_four",
+        "rh_companion"
+      ],
+      [
+        "rh_data",
+        "rh_transfer"
+      ],
+      [
+        "rh_data",
+        "rh_bound"
+      ],
+      [
+        "rh_transfer",
+        "rh_bound"
+      ],
+      [
+        "rh_companion",
+        "rh_bound"
+      ],
+      [
+        "rh_bound",
+        "rh_criterion"
+      ],
+      [
+        "rh_classical",
+        "rh_criterion"
+      ],
+      [
+        "rh_criterion",
+        "rh_goal"
+      ]
+    ],
+    "ranks": [
+      [
+        "rh_classical",
+        "rh_four"
+      ],
+      [
+        "rh_data"
+      ],
+      [
+        "rh_transfer",
+        "rh_companion"
+      ],
+      [
+        "rh_bound"
+      ],
+      [
+        "rh_criterion"
+      ],
+      [
+        "rh_goal"
+      ]
+    ],
+    "layout": {
+      "nodesep": 0.35,
+      "ranksep": 0.55,
+      "ordered_ranks": true,
+      "max_nodes_per_rank": 3,
+      "wrap_columns": 34
+    },
+    "edge_semantics": "Curated sufficient interfaces. The direct eventual zeta criterion can also be used if its bound is proved independently of this arithmetic branch. Green means a written conditional reduction; the red arithmetic premise remains unproved."
   }
 }
