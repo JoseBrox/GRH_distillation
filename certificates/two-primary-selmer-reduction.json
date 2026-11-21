@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "repository": "jsmorph/rh",
+  "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "note": "notes/two-primary-selmer-reduction.md",
+  "note_sha256": "64cf0c48c6240cd9a7edaf53d561ce037c6e72fd67dd5fa19d774b022ad14fb2",
+  "checker": "scripts/check_two_primary_selmer_reduction.py",
+  "checker_sha256": "6e9d52af89f412c75a9807f600f55ef07286264ec56f637ad5f15b9cfb0e64bd",
+  "atlas_compressed_sha256": "f894df1636e0cbaf739c31f8c2f13c8ee7d9a427893ed93b019842cd9a4e21c0",
+  "mathematical_results": [
+    "Case III is empty for actual host characters when the fixed target has power-of-two order.",
+    "The restricted SumOut proof omits CountIII; the universal theorem is not changed.",
+    "Resonant prime-twist pairs are at most m H_m, with m=t-1.",
+    "The conditional outside-prime budget is at most (1+2^C)(Nt)^max(C_I+1,2C+2).",
+    "LitThin is an analytic thin-prime input, distinct from VWin/cohomological inputs."
+  ],
+  "exact_checks": {
+    "power_of_two_order_cases": 1859,
+    "prime_twist_harmonic_counts": 300,
+    "rational_polynomial_budget_cases": 400,
+    "odd_target_order_counterexample": "order 3 divides 3 times every positive power of 2"
+  },
+  "sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.DirichletPrimeToLPartMulLPowerPart",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/DirichletPrimeToLPartMulLPowerPart.lean",
+      "sha256": "581296043e4d3e868e1530db3aa8d36f0af6e95a7345a67967b8508dd54592c0",
+      "git_blob_sha1": "1feb420e376868ca41d85fb09bc4f8c7ee66778e",
+      "bytes": 9810,
+      "line_count": 237,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            148,
+            192
+          ],
+          "sha256": "b411cd13adcd17c9762be621ec0024e35757ae2aabe8b978c940c799c6daa301"
+        },
+        {
+          "lines": [
+            204,
+            225
+          ],
+          "sha256": "3d9445b81ed6de8a7fb8a02cad150beb7ff1bb51c9b5f17e14c287b70dde1f93"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.HostComp",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/HostComp.lean",
+      "sha256": "96947e65f39891fa39aa40a42ac7c78ae86d6b12b7b40c964ed308a182cb65e4",
+      "git_blob_sha1": "2d9c083608be97d265cfd899214f7a4adf392ba2",
+      "bytes": 4429,
+      "line_count": 81,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            21,
+            34
+          ],
+          "sha256": "f2d18c5ee2d141b0c6c13a6c46782193f1ec7e745ad1e9349b89b8a7ebd0eb88"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.Cases",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Cases.lean",
+      "sha256": "106cac91fddb7abbd3f3234bbf986446c631ae0a9d64ae18be415ea901890102",
+      "git_blob_sha1": "eaa06b3c40b9fd0ba585e0ee18ae3e551be465ba",
+      "bytes": 2748,
+      "line_count": 48,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            8,
+            48
+          ],
+          "sha256": "ec00f4af1d6d65032ff5f1ba009278dee1055929e96090496c583e2a7bdcc41d"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.Counts",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean",
+      "sha256": "cc00a1a2e38f8dc5a87a0cc5d79ab8100db8c59255d62be12c95931262fc53c2",
+      "git_blob_sha1": "0d9f87aacf2d53abe43d894c1d822f071599ee57",
+      "bytes": 4578,
+      "line_count": 77,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            49,
+            73
+          ],
+          "sha256": "bea608a3ff8b74d5cbf278594406fade0afa1daf8493b3352bb6edace4989a85"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.SumOut",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/SumOut.lean",
+      "sha256": "4cb9dc9c0dca0804fcb4cb68deeb0cacb0b47c32f8fec59084d240646754bc28",
+      "git_blob_sha1": "781726edc101d9f7bfae6b49bf68a1d1f1f67ee5",
+      "bytes": 12349,
+      "line_count": 231,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            50,
+            118
+          ],
+          "sha256": "1ade87feb6463a478ac6836869b66b728063b0e4efef3b2a9d8d70922fd1c9b5"
+        },
+        {
+          "lines": [
+            119,
+            166
+          ],
+          "sha256": "2380db49bfd243791bb5730e61c9a4d70056ef5b36b9baeb3c55d0c8745765d2"
+        },
+        {
+          "lines": [
+            167,
+            231
+          ],
+          "sha256": "8ebc243ff3804a3bc530434b7ce715be7a6f5bc4599157d60c484bf3a6610f58"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.JointWinOfCounts",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/JointWinOfCounts.lean",
+      "sha256": "3c71cf0dabc617e3d1ab9fc04939c311e4242912407cdfbc71c8e0764563d558",
+      "git_blob_sha1": "2f86e49421d870aa158af11ad1388da80b5d70d1",
+      "bytes": 2436,
+      "line_count": 35,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            16,
+            33
+          ],
+          "sha256": "2fc2f4a9a7eb198d6e581569431c655802fb425f51cbd7d4a9badee27daff313"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.BchiFacts",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/BchiFacts.lean",
+      "sha256": "6304725e9256d25463272315823562e7875bf5eb31d21f30b651173116cfa1de",
+      "git_blob_sha1": "c96defe3b3c64107975bbc8a056d2d39cca9bfea",
+      "bytes": 5231,
+      "line_count": 101,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            7,
+            10
+          ],
+          "sha256": "e474e8b6db31b0baeb0a6ffc076592ac1fdbbb19578cb660e829fcd73d2c465d"
+        },
+        {
+          "lines": [
+            75,
+            85
+          ],
+          "sha256": "b6fa1d2bf41292e8b62cce95dc7b722fea112482145861e7d7ec99ee9da9c2ef"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.CharacterBoxes.ExistsPageN",
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean",
+      "sha256": "732c3347fb02e410cf9af8831afdbba1d230fc522c3dbbccdb4b708e5dde73db",
+      "git_blob_sha1": "398eb8ed3528aa2666e9d3b2b09a582ad4390dd7",
+      "bytes": 3776,
+      "line_count": 81,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            12,
+            49
+          ],
+          "sha256": "3941bc3b365f88e37d01e65d66e31feb147c44fe694b92645eebd8cd4d2f5fe2"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.CharacterBoxes.SupplyChi",
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/SupplyChi.lean",
+      "sha256": "70a11ba909e03b9153a6beacce24da22f3224b8192ec6980b7f27018961be81b",
+      "git_blob_sha1": "339885b77069601fb716a60739369805241e8222",
+      "bytes": 697,
+      "line_count": 16,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            8,
+            16
+          ],
+          "sha256": "2fc8f643aa2faafb92245eef1323f7d1b97bfad2151f9cc3bd6a50433b33a56f"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.GlobalSchurBounds.MainSup",
+      "path": "lean/src/Formalism/SharpRestriction/GlobalSchurBounds/MainSup.lean",
+      "sha256": "0a317908f73e9deed3a39ab3056c5531567d849633b2c65615190dfd55e0701d",
+      "git_blob_sha1": "364960f766dd5994ca8adc07ddf1ec7718b178a6",
+      "bytes": 17672,
+      "line_count": 309,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            88,
+            94
+          ],
+          "sha256": "08f98c797c70df0f5578411c992e06327022772d5663e665a861e0c3acda3c6f"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.LitThin",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/LitThin.lean",
+      "sha256": "a135fd9de91e2a9306f67e83ed1de431fa787b3c46e15df92db9fb191338671b",
+      "git_blob_sha1": "68675e5de80baaa229883d19cb50cbf4d503eef2",
+      "bytes": 486,
+      "line_count": 11,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            8,
+            9
+          ],
+          "sha256": "87f9bf55f05d5324ea89e6b35c4ef81059b95e6bebbcb7336d44c61978c315b7"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.VwinOfRow",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/VwinOfRow.lean",
+      "sha256": "d2df45a5cf337190ae6f885e8e43056ae4e804ae8da250a2ab0abd64b1ca7080",
+      "git_blob_sha1": "4cba179acd45ac08d3cad21f51c9b9d62715a9a4",
+      "bytes": 515,
+      "line_count": 5,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            1,
+            5
+          ],
+          "sha256": "d2df45a5cf337190ae6f885e8e43056ae4e804ae8da250a2ab0abd64b1ca7080"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.TopMainZj",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/TopMainZj.lean",
+      "sha256": "f824d3f7873a493432bdfcbdc279fa82d70a6a9dbaac44c2a30316cada2eae3e",
+      "git_blob_sha1": "23b7a05606074da30e6f8eb3b3821e877a968d3e",
+      "bytes": 6603,
+      "line_count": 75,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            18,
+            58
+          ],
+          "sha256": "a17bad492c244ac01fb92a6e2b2ad7c21f5f7c7f2b271f8185c720c5386d7653"
+        },
+        {
+          "lines": [
+            59,
+            74
+          ],
+          "sha256": "9610fbe7e2dd1172c35658ce653a02e875c9dc507c167074a3f0e9fd6f16faa3"
+        }
+      ]
+    }
+  ],
+  "review": {
+    "author": "Ordinary proofs and bounded source-consumer audit completed.",
+    "root": "PASS: complete note ordinary mathematics and pinned HostComp 21-34, Cases 8-48, SumOut 85-123, MainSup 88-94. Root requested the explicit weighted sum and retention of C_Z in the default assembly; both are now included.",
+    "transport_defect": "PASS: Sections 1-2 ordinary proofs; independently hash-read HostComp 21-34, DirichletPrimeToLPartMulLPowerPart 208-215 and SumOut 85-123. Earlier review allowed the explicitly assumed zero Case Z; the final statement instead includes C_Z in the same per-character majorant, with unchanged proof. No cohomological supplier or upstream replay claimed."
+  },
+  "limitations": [
+    "Finite checks supplement, rather than prove, the universal ordinary-mathematics arguments.",
+    "No actual Selmer length, congruence index, or nonzero theta map is computed.",
+    "Cases I/II, fixed bad primes, prime 2, other parity, integral comparison, and window quantifiers remain.",
+    "No complete source proof dependency closure or Lean kernel build was performed.",
+    "No W04/W06 or other construction-node completion follows."
+  ]
+}
