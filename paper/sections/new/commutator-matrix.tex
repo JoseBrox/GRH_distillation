@@ -1,0 +1,326 @@
+\section{Recovering the radial matrix from a scalar determinant}
+\label{cm-section}
+
+The full matrix restriction can be deduced from the scalar Capelli
+restriction.  Three commutators supply its other entries.  This avoids
+three further expansions of bordered minors and, on the group itself,
+introduces no division by a leading minor.
+
+\subsection{The contracted matrix as commutators}
+
+Use the quantum minors and signed complementary minors
+$D(u),C_{ij}(u),N_{ilja}(u)$ of Section~\ref{rq-section}.
+Let $n\geq2$, with generators satisfying
+$[E_{ab},E_{cd}]=\delta_{bc}E_{ad}-\delta_{da}E_{cb}$.
+Suppose that the commuting multiplication operators
+$y_j,\eta_i$ satisfy
+\[
+ [E_{ab},y_j]=-\delta_{aj}y_b,
+ \qquad [E_{ab},\eta_i]=\delta_{bi}\eta_a.
+\]
+For constant vectors $x=(x_j)$ and $\xi=(\xi_i)$ put
+\[
+ Z=\sum_j x_j\eta_j,\qquad B=\sum_i\xi_i y_i,
+ \qquad [A,B]=AB-BA.
+\]
+Here $B$ denotes a multiplication operator; the letter does not
+assert complex conjugacy.  In the unitary application below, $B=\bar Z$.
+Define
+\[
+ \mathcal T(u)=
+ \begin{pmatrix}
+ D(u)&-H_\eta(u-1;x)\\
+ -H_y(u;\xi)&-H_2(u-1;x,\xi)
+ \end{pmatrix},
+\]
+with the contractions defined in Section~\ref{rq-section}.
+
+\begin{theorem}\label{cm-commutator-matrix}
+With multiplication coefficients placed to the left of the minors,
+\begin{equation}\label{cm-four-commutators}
+ \mathcal T(u)=
+ \begin{pmatrix}
+ D(u)&-[D(u),Z]\\
+ {[D(u),B]}&-[[D(u),Z],B]
+ \end{pmatrix}.
+\end{equation}
+This is an identity of differential operators on their common smooth
+domain.  It requires neither a nonzero Gram determinant nor an inverse
+spectral polynomial.
+\end{theorem}
+
+\begin{proof}
+The determinant--vector identity \eqref{rq-det-vector} gives
+\[
+ [D(u),B]=-
+       \sum_{i,j}\xi_i y_jC_{ij}(u)=-H_y(u;\xi).
+\]
+For the other first commutator, expand the determinant in column $j$,
+putting its column factor first.  Every factor in the complementary
+minor commutes with $\eta_j$, since its column differs from $j$.
+Its commutator is therefore
+\[
+ [D(u),\eta_j]=\sum_i\eta_i C_{ij}(u-1).
+\]
+The shift $u-1$ is the parameter of the complementary minor after
+the first column has been removed.  Multiplication by $x_j$ and
+summation prove $[D(u),Z]=H_\eta(u-1;x)$.
+
+The analogous row expansion of a complementary minor gives
+\begin{equation}\label{cm-cofactor-vector}
+ [C_{ij}(v),y_l]=-
+                \sum_a y_aN_{ilja}(v).
+\end{equation}
+For $l=i$ both sides vanish.  Otherwise place row $l$ first
+in the row expression for that minor.  The other rows commute
+with $y_l$, and the remaining commutator is $-y_a$.
+The two omission signs are precisely those in $N_{ilja}$.
+The parameter of the remaining minor is $v$: the row expression
+used here places its first row factor at the lowest parameter,
+as in the proof of \eqref{rq-det-vector}.
+
+All the multiplication coefficients commute.  Hence
+\begin{align*}
+ [[D(u),Z],B]
+ &=-\sum_{i,j,l,a}\eta_i x_j\xi_l y_aN_{ilja}(u-1)\\
+ &=\sum_{i,l,a,j}\eta_i\xi_l y_a x_jN_{ilaj}(u-1)
+   =H_2(u-1;x,\xi).
+\end{align*}
+The second equality exchanges the two omitted column indices.
+To see the last equality, group the four summands for each
+unordered row pair and each unordered column pair.  Their factors
+are $(\eta_i\xi_l-\eta_l\xi_i)(y_a x_j-y_jx_a)$, with exactly
+the signed complementary minor in the definition of $H_2$.
+Thus there is no extra factor of two or four.
+\end{proof}
+
+\begin{remark}\label{cm-small-dimension}
+For $n=1$, take $C_{11}=1$ and $H_2=0$.  The identities become
+$[u+E_{11},Z]=Z$, $[u+E_{11},B]=-B$, and
+$[[u+E_{11},Z],B]=0$.  Thus the same formula holds with
+$\mathcal T(u)=\bigl(\begin{smallmatrix}u+E_{11}&-Z\\-B&0
+\end{smallmatrix}\bigr)$.
+\end{remark}
+
+\subsection{The full-group operators}
+
+Let $(V,h)$ be any nondegenerate complex Hermitian space of dimension
+$n\geq1$, with $h$ linear in its first argument, and let $x,z\in V$
+be fixed.
+For $g\in U(V,h)$ put
+\[
+ Z(g)=h(gx,z),\qquad
+ y(g)=g^{-1}z,\qquad
+ \eta_i(g)=h(gw_i,z),\qquad \xi_i=h(w_i,x).
+\]
+Then $B(g)=\sum_i\xi_i y_i(g)=h(g^{-1}z,x)=\overline{Z(g)}$.
+The complexified right derivatives satisfy the hypotheses of
+Theorem~\ref{cm-commutator-matrix}.  No definiteness assumption
+on $V$, and no assumption on the signs of $h(x,x),h(z,z)$, is needed.
+
+\begin{corollary}\label{cm-group-preservation}
+The four entries of $\mathcal T(u)$ are globally smooth differential
+operators with polynomial coefficients in the matrix entries of $g$
+and their conjugates.  They commute with left and right translations
+by subgroups fixing $z$ and $x$, respectively.  Their formal adjoints
+have the same coefficient property.  After the real shift
+$u=Y+(n-1)/2$, for real $Y$ their matrix of Haar formal adjoints
+is their transpose.
+
+Consequently these entries and all their finite compositions preserve
+smooth compact support, a prescribed positive Gram cutoff, and the
+spaces of rapidly decreasing smooth functions used in
+Section~\ref{jf-section}.
+\end{corollary}
+
+\begin{proof}
+The full Capelli determinant is central and is invariant under
+conjugation, so its right differential operator commutes with all
+left and right translations.  The coefficient $Z$ is invariant
+under the translations in the statement, and so is $\bar Z$.
+Formula~\eqref{cm-four-commutators} proves the claimed covariance.
+
+The invariant derivatives have polynomial coefficients in matrix
+coordinates.  Also $g^{-1}=H^{-1}g^*H$ on $U(V,h)$, where $H$
+is a fixed Gram matrix.  Thus both $Z$ and $\bar Z$, and all
+their invariant derivatives, have polynomial growth.  No inverse
+coordinate or Gram factor occurs in \eqref{cm-four-commutators}.
+The same is true of the Haar formal adjoints, because invariant
+vector fields have zero divergence and adjoint formation differentiates
+these same polynomial coefficients.
+
+For the adjoint identity, $D(u)^\dagger=D(\bar u)$ follows from
+the signed-minor adjoint rule used in Lemma~\ref{re-base-leading}.
+Multiplication by $Z$ has adjoint multiplication by $\bar Z$.
+Thus the two off-diagonal entries are adjoints.  The last entry
+is self-adjoint, since $[Z,\bar Z]=0$ and the Jacobi identity give
+$[[D,Z],\bar Z]=[[D,\bar Z],Z]$.
+Finally the Leibniz rule proves preservation of rapid decay after
+increasing finitely many derivative and decay indices.  Differential
+operators do not enlarge support, so they also preserve the cutoff.
+\end{proof}
+
+\subsection{One scalar restriction gives the entire matrix restriction}
+
+Let $c\in\mathbb C^\times$, let $p=c\partial_c$ and
+$\bar p=\bar c\partial_{\bar c}$, and put
+\[
+ T(Y)=\begin{pmatrix}Y+p&-c\\c^{-1}&0\end{pmatrix},\qquad
+ L(Y)=\begin{pmatrix}Y-\bar p&\bar c^{-1}\\-\bar c&0\end{pmatrix}.
+\]
+Let $t(Y)=\bigl(\begin{smallmatrix}a&b\\d&e\end{smallmatrix}\bigr)$
+be a matrix of differential operators in independent variables.
+Its entries may fail to commute with each other; they commute with
+$c,\bar c,p,\bar p$.  Set $M=L(Y)t(Y)T(Y)$ and $C=M_{11}$.
+
+\begin{lemma}\label{cm-scalar-sandwich}
+One has
+\begin{equation}\label{cm-sandwich-recovery}
+ M=\begin{pmatrix}
+ C&-[C,c]\\
+ {[C,\bar c]}&-[[C,c],\bar c]
+ \end{pmatrix}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Multiplication in the displayed order gives
+\[
+ C=(Y-\bar p)a(Y+p)+(Y-\bar p)b c^{-1}
+                      +\bar c^{-1}d(Y+p)+\bar c^{-1}e c^{-1}.
+\]
+The only nonzero commutators with the coordinate multipliers
+come from $[p,c]=c$ and $[\bar p,\bar c]=\bar c$.
+Consequently
+\begin{align*}
+ -[C,c]&=-(Y-\bar p)ac-\bar c^{-1}dc=M_{12},\\
+ [C,\bar c]&=-\bar c a(Y+p)-\bar c b c^{-1}=M_{21},\\
+ -[[C,c],\bar c]&=\bar c a c=M_{22}.
+\end{align*}
+This proves all entries without interchanging operators belonging
+to $t(Y)$.
+\end{proof}
+
+\begin{theorem}\label{cm-full-restriction}
+Let $V=\mathbb C e_0\oplus W\oplus\mathbb C f_0$ be a Hermitian
+space, where $e_0,f_0$ form a hyperbolic pair and $\dim W=d\geq2$.
+Use the open-cell coordinates and character laws of
+Section~\ref{rr-section}, with any fixed vectors $z,x\in W$.
+Form the contracted matrix $t(Y)$ on $U(W)$ from these vectors,
+with parameter $Y+(d-1)/2$.
+On $U(V)$ form the contracted matrix $Q(Y)$ using the vector
+$e_0$ on both sides and parameter $Y+(d+1)/2$.
+For a smooth function $F$ with the two prescribed unipotent
+character laws, write
+\[
+ (\mathcal RF)(c,m)=|c|^{d+1}F(w(c)m).
+\]
+Then every entry satisfies
+\begin{equation}\label{cm-full-one-pair}
+ \mathcal R(Q_{ab}(Y)F)
+        =(L(Y)t(Y)T(Y))_{ab}\mathcal RF,
+               \qquad a,b\in\{1,2\}.
+\end{equation}
+The identity is pointwise on the open cell.  It allows isotropic
+$z$ and $x$ and arbitrary signature of $W$.
+\end{theorem}
+
+\begin{proof}
+The scalar $(1,1)$ identity is the bordered determinant calculation
+of Lemma~\ref{rr-radial-capelli}.  That calculation uses only the
+nondegeneracy of $W$, its two character laws, the vanishing of their
+central characters, and the diagonal derivative rules.  None of its
+steps uses a sign for the norm of $z$ or $x$, or restricts the signature
+of $W$.  More explicitly, with
+$y=m^{-1}z$, $\eta_i=h(mw_i,z)$, and $\xi_i=h(w_i,x)$,
+the character rules are
+\[
+ E_{e_0j}F=x_jF,\quad E_{if_0}F=\xi_iF,\quad
+ (E_{ie_0}XF)(w(c)m)=c^{-1}\eta_i(XF)(w(c)m),
+\]
+\[
+ (E_{f_0j}XF)(w(c)m)=\bar c^{-1}y_j(XF)(w(c)m).
+\]
+The first two are right character rules, the last two are left
+character rules and hold for every right differential word $X$.
+The central root terms vanish as in
+\eqref{rc-mixed-right}--\eqref{rc-mixed-left}, and
+$E_{e_0e_0}$ and $E_{f_0f_0}$ restrict to $p$ and $-\bar p$.
+These statements use only the Hermitian pairing and the chosen
+characters.  The bordered expansion therefore applies with full
+parameter $u=Y+(d+1)/2$ and $k+1$ replaced by $d$.
+The normalizing factor has
+$p|c|^{d+1}=\bar p|c|^{d+1}=(d+1)|c|^{d+1}/2$.
+Thus its conjugation gives exactly the two factors $Y+p$ and
+$Y-\bar p$, and the middle parameter is $Y+(d-1)/2$.
+
+On the larger group the matrix coefficient for $e_0,e_0$ is
+$Z_0(g)=h(ge_0,e_0)$.  It is invariant under both integrating
+unipotent groups, and $Z_0(w(c)m)=c$.  Hence $Z_0F$ and
+$\bar Z_0F$ have the same character laws as $F$, and
+\[
+ \mathcal R(Z_0F)=c\mathcal RF,\qquad
+ \mathcal R(\bar Z_0F)=\bar c\mathcal RF.
+\]
+Apply the scalar identity also to these products.  Subtraction
+shows that $\mathcal R$ carries $[Q_{11},Z_0]$ to $[C,c]$,
+$[Q_{11},\bar Z_0]$ to $[C,\bar c]$, and their mixed
+commutator to $[[C,c],\bar c]$.  Theorem~\ref{cm-commutator-matrix}
+and Lemma~\ref{cm-scalar-sandwich} now give all of
+\eqref{cm-full-one-pair}.  The real scalar normalizing factor
+commutes with both coordinate multipliers, so it introduces no
+additional term in these commutators.
+\end{proof}
+
+\begin{corollary}\label{cm-chain-restriction}
+Fix integers $k\geq1$ and $r\geq0$.  For a succession of $r$
+hyperbolic pairs ending in a Hermitian space of dimension $k+1$,
+choose the two distinguished vectors in each nonterminal remaining
+space to be its first isotropic basis vector, and those in the
+terminal space to be its two fixed vectors.  At each step use the
+unipotent characters determined by the distinguished vectors of the
+next remaining space.  These are the standard flag characters.
+Let $t(Y)$ be the
+terminal contracted matrix and let $T_j(Y),L_j(Y)$ act in the
+$j$th independent nonzero coordinate.  The restriction of the full
+initial matrix, with the normalizing factor $\gamma_r$ of
+Section~\ref{jf-section}, namely
+\[
+ \gamma_r(c)=\prod_{j=0}^{r-1}|c_j|^{k+2(r-j)},
+\]
+is
+\begin{equation}\label{cm-full-chain}
+ L_0(Y)\cdots L_{r-1}(Y)\,t(Y)\,
+                       T_{r-1}(Y)\cdots T_0(Y).
+\end{equation}
+This includes the empty chain.  All full-group entries and finite
+words in them have the coefficient, support and adjoint properties
+required for the Jacquet commutation argument of
+Lemma~\ref{jf-pointwise-smooth}.
+\end{corollary}
+
+\begin{proof}
+Apply Theorem~\ref{cm-full-restriction} one pair at a time.
+At each nonterminal stage the distinguished vector is the first
+isotropic vector of the remaining space.  The next stage's character
+vectors may therefore be isotropic, as allowed by the theorem.
+At step $j$ the larger space has dimension $k+1+2(r-j)$,
+so its factor is $|c_j|^{k+2(r-j)}$.
+These factors multiply to $\gamma_r$, and associativity
+gives the indicated order of the matrices.  Operators in previously
+separated variables commute with the next restriction.  For $r=0$
+the formula is the terminal matrix itself.
+The last assertion follows from Corollary~\ref{cm-group-preservation}.
+Each entry commutes with the translations defining its Jacquet
+equivariance, so every finite product does as well.
+The dominated-differentiation and Haar-adjoint arguments already
+proved in Sections~\ref{jp-section} and \ref{jf-section} therefore
+apply to these operators, with the same positive Gram support.
+\end{proof}
+
+These results establish the full matrix restriction and its
+compatibility with the existing Jacquet operators.  They give no
+estimate uniform in the length of a chain.  The noncompact
+residue-pairing application must still assemble its actual generated
+vectors, convergence statements, and scalar weights; the global
+orbital-energy and arithmetic divisibility estimates remain separate.

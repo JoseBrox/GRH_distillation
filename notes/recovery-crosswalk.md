@@ -72,10 +72,29 @@ Likewise, a fixed zero-free region or the exclusion of real zeros does not
 supply the missing bounds for growing theta chains or varying-field Hecke
 characters. The main paper states the exact range of those simplifications.
 
+## Progress after the recovered endpoint
+
+The [commutator-matrix argument](../paper/sections/new/commutator-matrix.tex)
+now establishes the full group matrix, all four entries of its one-pair
+restriction, and the complete successive restriction formula for each fixed
+finite standard flag. It also proves polynomial coefficient growth, covariance,
+support preservation and the Haar adjoint identities needed by the existing
+Jacquet arguments. The proof uses the recovered scalar Capelli identity;
+three commutators supply the remaining entries. See the
+[proof and source-comparison note](commutator-matrix-2026-11-21.md) and
+[independent review](radial-commutator-review.md).
+
+The new corollary `sz-qrh-real-gap` also makes the real-zero exclusion a
+consequence, rather than a second assumption, whenever uniform Dirichlet QRH
+is already used. The independent determinant route remains available.
+
+These are new results and dependency clarifications, not recovered work.
+Earlier provisional assertions in sections 95 and 96 have been updated.
+
 ## The remaining mathematical frontier
 
-1. Complete the full initial radial matrix, its successive restriction
-   identity and the integrated residue pairing for the actual generated functions.
+1. Complete the integrated residue pairing for the actual generated functions,
+   using the now-proved full matrix and successive restriction identities.
 2. Establish the outstanding uniform global orbital-energy estimates, including
    the coordinate-size reduction and weighted lattice-pair count where required.
 3. Prove seed nonvanishing and the sharp auxiliary-level-prime divisibility

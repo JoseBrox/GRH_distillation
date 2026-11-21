@@ -1,30 +1,81 @@
 # Audit status
 
-At source commit `ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`, `lean/src/Statements.lean` defines the following propositions:
+The recovered records contain substantially more formal-audit evidence than the
+small source inspection performed when this repository was first started.
+The table below distinguishes those records from checks actually repeated in
+the present workspace. Preserving and checking a log does not repeat the
+computation that produced it.
 
-1. Zeros of the Riemann zeta function, excluding negative even integers and the special value at 1, have real part one half.
-2. Every Dirichlet L-function is nonzero for real part greater than one half, excluding the principal-character value at 1.
-3. Every zero of every Dirichlet L-function in the open critical strip has real part one half.
-4. The restriction of the preceding assertion to primitive characters.
+## The mathematical statements
 
-`lean/src/Main.lean` exports five theorems using these statements and Mathlib's `RiemannHypothesis` proposition. Their declarations have been read. Their existence as text is not evidence that their complete proofs have been independently checked.
+At source commit `ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`,
+`lean/src/Statements.lean` defines the assertions that the nontrivial zeros
+of the Riemann zeta function and of Dirichlet L-functions lie on the critical
+line, together with a nonvanishing formulation to its right and the
+primitive-character restriction. The exceptional principal-character value
+at 1 is excluded. `lean/src/Main.lean` exports five theorems, including the
+Mathlib formulation of the Riemann hypothesis.
 
-## Current verification boundary
+The [detailed source audit](theorem-and-dependencies.md) records the initial
+inspection of these declarations and selected dependencies. Its smaller
+verification scope must be read alongside the recovered evidence below.
 
-| Item | Status |
-| --- | --- |
-| New repository and initial state | Inspected. |
-| Original announcement | Read. |
-| Mirror provenance claims | Read; original archive hashes not independently recomputed. |
-| `Statements.lean` and `Main.lean` | Read at the pinned revision. |
-| Classical primitive-character reduction | Independently written and checked in the paper, including the functional equation and boundary cases. |
-| Selected source bytes | 29 files matched to their pinned Git blob hashes; SHA-256 hashes also computed. |
-| Complete import and theorem dependency chain | Not yet verified. |
-| Absence of admitted proofs or added axioms in all dependencies | Not established. |
-| Lean compilation and kernel check | Not run in this environment. |
-| Agreement of every internal definition with the advertised statement | Not established. |
-| Complete ordinary-mathematics proof of GRH | Not yet present. |
+## Evidence and its scope
 
-Further results must distinguish source inspection, compilation, dependency/axiom inspection, and independent mathematical proof. Searching for a few suspicious words cannot replace these checks.
+| Check | Evidence now available | What was repeated in this continuation |
+| --- | --- | --- |
+| Attachment identity | All three originals are preserved in the recovery archive. | Byte comparison and SHA-256 checks against the attachments. |
+| Reproducibility bundle | 622 regular files; its internal manifest lists 621 entries and excludes only itself. | All recorded byte counts and SHA-256 values, ZIP CRCs, and equality of the separately supplied and bundled TeX files. |
+| Manuscript preservation | 96 recovered sections, 1,522 labels, 646 result environments, 611 proof environments and 45 bibliography entries. | Inclusion and reference checks; every recovered section was byte-identical before the documented editorial cleanup. |
+| Selected sources | The initial certificate records 29 files checked against pinned Git blob hashes. | Seven targeted Lean files checked against recovered SHA-256 hashes; two mathematical source files checked against pinned Git blobs. The bounded declaration ranges are in the new source certificate; no full dependency traversal or full paper-proof audit is claimed. |
+| Prior local compilation | Recovered records report 31 local source modules compiled; the complete local `Main` build was not finished. | The stored records were inspected; this build was not rerun. |
+| Prior complete export inventory | The recovered scanner report covers the entire hash-identified solution export and records only `propext`, `Quot.sound` and `Classical.choice`, with no unsafe/partial declarations, duplicate names or unknown record forms. | The report's preservation was checked; the large export was not downloaded or rescanned here. |
+| Prior transitive statement comparison | Recovered comparison records report equality of the five target types and their transitive constant declarations, including definitions, opaque bodies, inductive data and nontarget theorem bodies. | The records and their stated scope were inspected; the comparison was not rerun here. |
+| Public target-specific axiom audit | Sutherland's archived report lists the same three standard axioms for each of the five target proofs. | External evidence, not a new local axiom traversal. |
+| Independent kernel acceptance | The recovered audit preserves Sutherland's primary report and the published nanoda exit/timing log. | External evidence, not a kernel execution in this workspace. |
+| Complete local kernel replay | The recovered audit explicitly records that this was not completed locally. | Not performed. |
+| Ordinary-mathematics proof | The complete recovered manuscript and analytic companion are preserved. | Structural checks and narrow editorial review; no independent recheck of all 611 proofs is claimed. The central uniform arithmetic estimate remains open in the reconstruction. |
+| New radial matrix argument | A written commutator proof recovers the full matrix and its successive restrictions for fixed finite standard flags. | Separate mathematical review, 810 finite exact identities, complete coefficient checks in dimensions one and two, and a negative control. The general proof is in the manuscript; finite computation does not replace it. |
 
-[The detailed source audit](theorem-and-dependencies.md) identifies the first substantive dependencies and the exact scope of the selected-file inspection. [The source-file record](../certificates/source_files.json) is reproducible from the manifest and does not claim completeness of the dependency graph.
+The source of the recovered formal evidence is the
+[original reproducibility bundle](../archive/recovered-2026-11-21/grh_audit_reproducibility.zip),
+particularly `formal_export/EXPORTED_PROOF_AUDIT.md`,
+`formal_export/solution_inventory.json`,
+`formal_export/statement_definition_comparison.log`, and
+`formal_export/mit_verified/`. The
+[original audit manuscript](../archive/recovered-2026-11-21/grh_audit_v2.tex)
+contains the full account. The
+[recovery recheck](../notes/recovery-check-2026-11-21.md)
+and [integration certificate](../certificates/recovery-integration.json)
+record the current preservation checks and editorial changes.
+
+The [fresh source note](../notes/source-check-2026-11-21.md) and
+[matrix proof review](../notes/radial-commutator-review.md) record the new work
+after recovery. The integrated residue pairing and growing-chain estimates
+remain open even though the algebraic matrix restriction is now proved.
+
+## Limits that remain material
+
+The scanner and structural comparator are independently written audit programs,
+not formally verified software and not kernel proof checkers. Their recorded
+results are reproducible computational evidence under their stated parsing and
+normalization rules. The canonical challenge contains admitted target proofs
+by design; comparison of the target statements does not compare those admitted
+bodies with the solution proofs.
+
+The public nanoda timing log records exit status zero but does not include the
+configuration contents or input hash. Associating that run with the published,
+hash-identified export therefore relies on the verifier's accompanying primary
+report. The archived all-environment axiom census also contains compiler-support
+axioms and `sorryAx`; this is different from the target-proof dependency audit,
+which reports only the three standard axioms above.
+
+The recovered compiled-module comparison found 25 exact binary matches among
+31 local modules, with six different hashes. It does not establish complete
+byte reproduction; a differing binary hash alone does not establish a changed
+proposition or invalid proof.
+
+None of these formal records supplies the outstanding mathematical estimates
+in the human-readable reconstruction. New progress must state separately
+what is proved in ordinary mathematics, what is conditional on a cited theorem,
+what was inspected in source, and what was actually executed.
