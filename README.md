@@ -1,6 +1,6 @@
 # Distilling the Generalized Riemann Hypothesis
 
-**[Read the short guide](paper/guide/main.pdf)** · **[Main manuscript](paper/main.pdf)** · **[RH-only proof program](blueprint/rh-proof-program.md)** · **[Full GRH proof program](blueprint/full-proof-program.md)** · **[Complete source atlas](blueprint/lean-source-atlas.md)**
+**[Read the short guide](paper/guide/main.pdf)** · **[Main manuscript](paper/main.pdf)** · **[RH-only proof program](blueprint/rh-proof-program.md)** · **[Full GRH proof program](blueprint/full-proof-program.md)** · **[Visual proof map](blueprint/overview.svg)** · **[Complete source atlas](blueprint/lean-source-atlas.md)**
 
 We are developing a simpler, human-readable proof from Levent Alpöge's announced argument for the Riemann Hypothesis and the Generalized Riemann Hypothesis for Dirichlet characters. The aim is to understand the mathematics, replace long arguments by shorter ones where possible, and give complete definitions and proofs in ordinary mathematical language.
 
