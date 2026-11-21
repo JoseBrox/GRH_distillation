@@ -9,6 +9,7 @@ The exact-check scripts are separate, explicitly reproducible evidence.
 import gzip
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,6 +25,11 @@ NAMES = [
     "centered-global-energy-reduction", "tower-intersection-reduction",
     "one-sided-frame-slope", "base-test-height-supplier",
     "actual-point-height-frontier",
+    "finite-window-sampling", "two-primary-selmer-reduction",
+    "selected-eigenspace-degree", "finite-twisted-place-budget",
+    "theta-jet-slope-reduction", "redundant-period-spectrum",
+    "qualitative-selmer-finiteness", "absolute-siegel-supplier",
+    "coarse-selmer-budget",
 ]
 SCRIPTS = {
     name: "scripts/check_" + name.replace("-", "_") + ".py"
@@ -90,9 +96,24 @@ def main():
             script = cert.get("script", SCRIPTS[name])
             check_file(script, cert["script_sha256"])
             artifact_paths.add(script)
+        if isinstance(cert.get("checker"), dict):
+            checker = cert["checker"]
+            check_file(checker["path"], checker["sha256"])
+            artifact_paths.add(checker["path"])
+        elif "checker_sha256" in cert:
+            checker = cert["checker"]
+            check_file(checker, cert["checker_sha256"])
+            artifact_paths.add(checker)
+        if isinstance(cert.get("tex"), dict):
+            tex_record = cert["tex"]
+            check_file(tex_record["path"], tex_record["sha256"])
+            artifact_paths.add(tex_record["path"])
         if "source_atlas_sha256" in cert:
             assert digest(atlas_bytes) == cert["source_atlas_sha256"]
+        if "atlas_compressed_sha256" in cert:
+            assert digest(atlas_bytes) == cert["atlas_compressed_sha256"]
         references = list(cert.get("primary_references", []))
+        references += cert.get("primary_sources", [])
         if isinstance(cert.get("primary_reference"), dict):
             references.append(cert["primary_reference"])
         for reference in references:
@@ -154,6 +175,24 @@ def main():
                 assert last - first + 1 <= 120
                 if expected:
                     assert digest(b"".join(lines[first-1:last])) == expected, (path, first, last)
+        premises = cert.get("project_premises", {})
+        if premises:
+            assert premises["repository"] == "JoseBrox/GRH_distillation"
+            for entry in premises["sources"]:
+                path = entry["path"]
+                data = subprocess.check_output(
+                    ["git", "show", premises["commit"] + ":" + path], cwd=ROOT)
+                assert digest(data) == entry["sha256"], ("Historical premise", path)
+                blob = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+                assert blob == entry["git_blob_sha1"]
+                lines = data.splitlines(keepends=True)
+                current_lines = (ROOT / path).read_bytes().splitlines(keepends=True)
+                for first, last, expected in ranges_of(entry):
+                    assert 1 <= first <= last <= len(lines)
+                    assert last - first + 1 <= 120
+                    assert expected and digest(b"".join(lines[first-1:last])) == expected
+                    assert digest(b"".join(current_lines[first-1:last])) == expected, (
+                        "Current premise passage changed", path, first, last)
 
     build_sources = set()
     build_records = ["paper-build", "guide-build"]

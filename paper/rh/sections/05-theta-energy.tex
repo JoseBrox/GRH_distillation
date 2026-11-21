@@ -89,7 +89,7 @@ cost proportional to \(U\). It also permits source restriction alone,
 as in \eqref{shared-trace-source-only}; no target compression is
 needed when the first rows are the actual arithmetic maps.
 
-\subsection{What the weaker trace condition buys}
+\subsection{When trace and energy estimates are useful}
 
 The trace condition is strictly more flexible than a small squared
 target energy. For an integer \(N\ge2\), take \(n=N^3\) unit
@@ -132,3 +132,29 @@ arithmetic weights. The integral maps, common target identification,
 positive normalizers and map-height bounds must also be supplied.
 Bounds for an average matrix alone do not estimate the average
 of these nonlinear slope costs.
+
+\subsection{The correct global normalization}
+
+Let $S$ synthesize the full maps, $K=S^*S$, and write $K=I_R+N$
+when the prescribed diagonal identity terms sum to $I_R$.
+If $r=\operatorname{rank}S\le D$, then $N$ has $R-r$ eigenvalues
+equal to $-1$. Its positive eigenvalues have total at least $M-r$.
+Thus the highly redundant family cannot have a small entire
+nonidentity contribution. The target error instead has the exact form
+\[
+ \beta=M^{-1}\operatorname{tr}
+             \left(N-(M/D-1)I_R\right)_+.
+\]
+Only the excess above the correct mean-eigenvalue threshold is relevant.
+The identity follows from the common positive spectra of $S^*S$ and $SS^*$.
+
+Pairwise inequalities alone do not improve this error to first order
+in $D/R$. There are explicit integral cyclotomic columns with unit
+source Gram matrices and squared inner products at most $1/D$, but
+with $\beta$ of order $\sqrt{D/R}$ and centered squared energy of
+order $D/R$. Their exact spectrum and a higher-rank example whose
+rank obstruction survives every change of comparison bases are proved
+in the GRH manuscript's \emph{What the global period estimate must
+control}~\cite{rh-companion}. These examples concern the matrix
+hypotheses, not the actual theta family. They explain why the smaller
+of the valid trace and refined-energy penalties should be retained.

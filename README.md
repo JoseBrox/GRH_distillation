@@ -23,7 +23,7 @@ The goal is a **complete and substantially shorter proof in ordinary mathematics
 
 The [ordinary RH manuscript](paper/rh/main.pdf) concentrates on the zeta function and its four-character arithmetic comparison. The [Dirichlet GRH manuscript](paper/grh/main.pdf) treats the general character and conductor. They have separate manuscripts and proof programs, while sharing the geometric, integral and analytic results that apply to both. An improvement in either route is checked in the other with its precise hypotheses.
 
-The [progress table](blueprint/progress.md) gives finished nodes over total nodes for each proof map. A finished conditional implication can still require an open arithmetic input. These counts therefore describe the proof program, not a percentage of RH or GRH proved.
+The current proof-map counts are **RH: 6/9** and **Dirichlet GRH: 17/31**, as recorded in the [progress table](blueprint/progress.md). A finished conditional implication can still require an open arithmetic input. These counts therefore describe the proof program, not a percentage of RH or GRH proved.
 
 ## How we are simplifying the proof
 
@@ -54,13 +54,13 @@ The [complete mathematical module atlas](blueprint/module-inventory.md) shows th
 
 The main proof strategy has three connected stages:
 
-1. **Turn zero-freeness into a prime-sum estimate.** An analytic criterion relates zeros of Dirichlet L-functions to corrected, positively weighted prime sums. A suitable one-sided bound on arbitrarily late multiplicative intervals is enough; it need not hold at every large real number.
+1. **Turn zero-freeness into a prime-sum estimate.** An analytic criterion relates zeros of Dirichlet L-functions to corrected, positively weighted prime sums. Suitable finite tables of upper bounds at integers on arbitrarily late intervals are enough. A short continuity estimate recovers the required averaged bound between integers.
 2. **Construct arithmetic and automorphic objects.** Dirichlet characters and their auxiliary characters are connected to cyclotomic cohomology, Selmer groups, integral coefficient lattices, theta correspondences, automorphic multiplicities and geometric covolumes. These ingredients create both divisibility information and analytic norm estimates.
 3. **Compare the same objects on both sides.** The arithmetic lower bounds and analytic upper bounds must apply to compatible integral maps, with the same normalizations, denominators, nonvanishing statements and growing-family parameters. Their discrepancy is then transferred into the prime-sum bound.
 
 Several improvements make the third stage more economical. Positivity permits comparisons before character averaging; controlling an **average arithmetic discrepancy** can replace separate estimates for every translation. Exact covolume identities keep track of the contribution of discarded subspaces and integral indices. At the analytic endpoint, it is sufficient for the **total exponent loss to tend to zero**: the auxiliary construction and its constants may depend on the required accuracy, subject to the quantifiers proved in the manuscript.
 
-The final estimate may also be averaged over scale. A fixed local average preserves the zeros detected by the analytic argument, so signed arithmetic contributions can be combined before their positive part is bounded. On the geometric side, short integral sections remove a separate lower-height requirement, and one test intersection can supply the weight-dependent estimate. For the analytic norms, two aggregate trace errors can replace many separate pairwise estimates, allowing large errors on sufficiently little mass. These bounds must still be proved for the actual geometric objects and maps.
+The final estimate may also be averaged over scale. A fixed local average preserves the zeros detected by the analytic argument, so signed arithmetic contributions can be combined before their positive part is bounded. Each interval can use its own finite table of arithmetic data; the tables need not agree on overlaps. On the geometric side, short integral sections remove a separate lower-height requirement, and one test intersection can supply the weight-dependent estimate. For the analytic norms, two aggregate trace errors can replace many separate pairwise estimates, allowing large errors on sufficiently little mass. A short determinant argument with integral theta derivatives now supplies the tangent-degree comparison from precise integral-section hypotheses. These hypotheses and the global norm bounds still have to be proved for the actual geometric objects and maps.
 
 These are genuine reductions of what must be shown, **not proofs that the required arithmetic and geometric estimates hold**. The [technical proof map](blueprint/technical.svg) distinguishes established reductions, imported inputs and open obligations.
 
@@ -77,6 +77,8 @@ Fixed-rank identities and independently valid estimates for unrelated objects do
 ## A shorter route for the original Riemann Hypothesis
 
 For ordinary **RH**, only the zeta prime sum is needed. The conductor-one specialization simplifies the character projection to four terms, and the preferred positive-kernel comparison avoids imposing an artificial symmetry on the auxiliary weights. The quasi-RH estimates can be applied at the larger scales of the complementary terms, subject to their exact hypotheses.
+
+The cohomological side is smaller as well. Classical algebraic K-theory and global duality give finiteness and finite prime support for the strict Selmer groups. RH also removes the nontrivial odd-order character case. The quantitative task is to bound a weighted sum over the primes actually used by the construction.
 
 A one-sided upper **or** lower estimate for the corrected zeta prime sum, with exponent arbitrarily close to one half, would suffice for RH. The [RH proof program](blueprint/rh/program.md) and [direct comparison](notes/rh-direct-transfer.md) isolate the remaining averaged arithmetic and geometric estimates. They do **not** yet constitute a complete proof of RH.
 

@@ -91,13 +91,26 @@ test from all-point height floors and the signed cusp comparison using
 only reciprocal perturbations and a one-sided limit. The
 [actual point-height frontier](actual-point-height-frontier.md) reduces its
 arithmetic supplier to a sum of degrees of the selected small image
-eigensublattices. The signed index contribution cancels exactly; the
-favourable discriminant term remains. The required sum, prescribed
-integral/metric comparison and cusp mean are still open. A bare total
+eigensublattices. The [selected-degree identity](selected-eigenspace-degree.md) retains
+both favorable integral indices and gives a two-case proof from only the
+signed total conjugate imbalance. It also retains the exact selected
+abelian rank f(m-r). The prescribed integral/metric comparison and cusp
+mean remain required. A bare total
 Faltings-height lower bound does not supply the selected degrees, and
 the inspected published tangent-slope estimate does not imply the source's
 stronger universal logarithmic interface. No claim that that interface is
 false is made.
+
+The [theta-jet reduction](theta-jet-slope-reduction.md) replaces the
+longer tangent argument by leading-jet integrality, a flag determinant,
+the product formula and very ampleness of the third tensor power. A much
+smaller theta power suffices. The
+[classical absolute Siegel supplier](absolute-siegel-supplier.md) supplies
+the short integral vector in the same metric after finite extension;
+principalizing its saturated line preserves the exact height. The
+remaining geometric supplier is the primitive theta norm and the integral
+normalized torsion translates with bounds uniform in their order.
+Their finite-prime coefficient and frame identifications remain essential.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
@@ -115,6 +128,17 @@ common-target unfolding. Its exact expansion and convergence remain
 hypotheses; signed terms are combined before taking the positive part.
 The source trace deficit needs its own estimate. The actual arithmetic
 spectral-tail bound is not supplied by positivity or total mass alone.
+
+The [exact period-spectrum models](redundant-period-spectrum.md) now
+show why the actual redundancy forces a large nonidentity contribution.
+The tail must be measured above the mean eigenvalue, not around zero.
+Integral cyclotomic columns satisfy the pairwise estimates with zero
+error but have square-root trace excess; a block-simplex model has a
+positive rank defect under every comparison-basis change. These are
+countermodels to specific matrix implications, not to the actual theta
+construction. Keep the minimum of the trace and refined-energy penalties.
+The ambient automorphic projector does not itself identify the sum of
+the chosen period maps.
 
 The actual source restrictions can be carried through positive retained
 mass and then an ambient target comparison, preserving the discarded
@@ -155,6 +179,34 @@ section remainder or theta-energy bounds. The old
 [averaged signed arithmetic identity](averaged-error-budget.md) locate the
 remaining same-lattice and same-map identifications.
 
+## Cohomology: finiteness is supplied, a uniform budget remains
+
+[Classical global duality and even K-groups](qualitative-selmer-finiteness.md)
+give an injection of the actual strict Selmer dual into the corresponding
+finite even K-group. The CM host condition covers the prime two. For a
+fixed host and finite twist range, the all-prime Selmer sum has finite
+support and is bounded by the logarithm of a finite product of K-group
+orders. No numerical prime cutoff or useful growing-family bound follows
+from this qualitative statement.
+
+The [finite-place reduction](finite-twisted-place-budget.md) keeps only
+the actual twisted residue primes and their ramification-inertia fractions.
+Generator primes use their already aggregated bound, with no extra fraction.
+The local congruence comparison then needs one weighted finite Selmer budget.
+The [two-primary character reduction](two-primary-selmer-reduction.md)
+omits the nontrivial odd-order branch for RH, and a joint harmonic count
+improves the resonant prime--twist exponent. The trivial character,
+complementary parity, exceptional primes and integral local bounds remain.
+The existing manuscript already provides an opposite-parity all-odd-prime
+estimate (Theorem14.1 in the current GRH PDF); this supplier is to be
+applied with the exact source group and local conditions, not reproved
+merely because the odd-order branch has disappeared.
+The source's LitThin is an analytic short-interval input, not cohomology.
+The [coarse-bound assessment](coarse-selmer-budget.md) quantifies why the
+existing exponent-14 bound, applied directly to the growing host, does
+not fit the allowed budget. It remains useful after the existing
+common-interval descent; no lower bound on actual Selmer sizes is inferred.
+
 ## Scalar acceptance conditions
 
 The [scale-averaged criterion](scale-averaged-criterion.md) weakens the
@@ -183,25 +235,31 @@ the source's exponential scale, or adopting the formally optimal smaller
 chain rank, has not been justified for the other arithmetic clauses.
 These are exact acceptance conditions and limitations, not new constructors.
 
+The [finite-table theorem](finite-window-sampling.md) is now the smaller
+construction interface. At each fixed accuracy and each chosen large
+integer interval, construct a finite table bounding the analytic target at
+all sampled integers. The exact positive averaging matrix preserves signed
+cancellation, and the interpolation error tends to zero. Tables may differ
+on overlaps, so no measurable family of arithmetic choices is needed.
+An almost-everywhere comparison is not silently promoted to integer data.
+
 ## Next mathematical work
 
-1. **Geometric core (W10).** Bound the selected small image-eigenspace
-   degree sum at every actual point, retaining the integral comparison,
-   prescribed quotient metric and finite-prime commensurability cost.
-   Prove the signed cusp mean and limit, then use the classical height,
-   single-test and mean-volume reductions. Supply the independent finite
-   section-rank/surplus estimate and retain determinant and integral indices.
+1. **Geometric core (W10).** Establish the primitive theta norm and
+   normalized torsion-translate integrality in the prescribed semistable
+   model. Use the short jet proof and classical absolute Siegel theorem,
+   retain the exact selected abelian rank, and supply the signed cusp mean
+   and the independent finite section-rank/surplus estimate.
 2. **Integral maps and global norms (W06/W08).** Supply nonzero integral
-   theta maps, sharp auxiliary-level divisibility, exact positive normalizers,
-   and the source and target trace estimates on those same maps. The full
-   signed orbital block spectral tail can supply the target trace error;
-   its expansion/convergence and the source estimate remain independent inputs.
-3. **Cohomology and assembly (W04/W02/W11).** Complete the remaining
-   complementary-parity integral congruence bounds and prove the total
-   normalized discrepancy in the weighted positive-part scale integral.
-   The locally averaged budget uses the same expanded cofinal windows.
-   Optimize numerical envelopes only within parameter ranges that the
-   same construction actually supplies.
+   theta maps, sharp auxiliary-level divisibility and positive normalizers.
+   Bound their calibrated global trace costs or a sufficient refined-energy
+   cost, carrying actual restrictions and arithmetic heights throughout.
+   Pairwise matrix bounds do not automatically improve to a linear trace bound.
+3. **Cohomology and assembly (W04/W02/W11).** Quantify the finite weighted
+   Selmer sum on the actual twisted places, retaining the integral local
+   comparisons and surviving character cases. Assemble the signed finite
+   integer tables on arbitrarily late intervals, with all exponent losses
+   and constants fixed at each accuracy.
 
 The [RH program](../blueprint/rh/program.md) is the shorter first case.
 The [GRH program](../blueprint/grh/program.md) retains all eleven
@@ -287,6 +345,14 @@ python scripts/check_finite_symmetry_energy.py
 python scripts/check_frame_degree_compatibility.py
 python scripts/check_rh_centered_frame_bridge.py
 python scripts/check_mean_volume_supplier.py
+python scripts/check_finite_window_sampling.py
+python scripts/check_two_primary_selmer_reduction.py
+python scripts/check_selected_eigenspace_degree.py
+python scripts/check_finite_twisted_place_budget.py
+python scripts/check_qualitative_selmer_finiteness.py
+python scripts/check_theta_jet_slope_reduction.py
+python scripts/check_absolute_siegel_supplier.py
+python scripts/check_redundant_period_spectrum.py
 python scripts/build_full_proof_program.py
 python scripts/build_blueprint.py
 python scripts/check_rh_continuation.py

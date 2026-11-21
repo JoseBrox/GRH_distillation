@@ -47,20 +47,20 @@ an obstruction to this particular reconstruction.
 This uncertainty is specific to proof closure. The next research tasks are
 concrete and can be completed or rejected one by one:
 
-1. Bound the selected small-eigenspace degree sum and its exact point-height
-   comparison, together with the signed cusp correction. The classical
-   single-test and prescribed volume comparison then give the actual mean,
-   followed by the separate finite
-   section-rank/surplus estimate. The new short-section argument
-   removes a separate negative-height hypothesis.
+1. Supply the primitive integral theta norm and normalized torsion
+   translates. The shorter jet proof and the adopted classical absolute
+   Siegel lemma then give the selected degree bound in the same metric.
+   Retain the signed cusp comparison and the separate finite section
+   estimate; the short-section argument removes a negative-height input.
 2. Supply the two trace errors for the actual normalized maps. The signed
    orbital block spectral tail can supply the target error; the source
    error and positive retained mass remain explicit. These weaker criteria
    still need their actual arithmetic estimates.
-3. Complete the remaining integral congruence, divisibility and compatibility
-   requirements and control the combined discrepancy. The final criterion
-   permits a weighted average over scales and a fixed local logarithmic
-   average before taking the positive part.
+3. Bound the finite weighted Selmer sum on the actual twisted primes,
+   and complete integral congruence, divisibility and compatibility.
+   Classical finiteness and finite prime support are already supplied.
+   The final construction may use independent finite integer tables
+   on the chosen intervals, retaining signed local averaging.
 
 A completion forecast should be revisited when those suppliers, rather than
 only their acceptance criteria, have been proved. The fact that a prompt can
@@ -70,10 +70,10 @@ especially unstable unit of work.
 ## A provisional page budget
 
 The current compiled artifacts have a seven-page didactic guide, a
-22-page RH manuscript, a 21-page analytic companion and a 587-page
+30-page RH manuscript, a 21-page analytic companion and a 596-page
 Dirichlet-GRH working manuscript. These are measured PDF lengths. The RH
 manuscript gives complete reductions and explicit remaining arithmetic
-hypotheses; it is not a 22-page proof of RH. The long manuscript preserves detailed arguments
+hypotheses; it is not a 30-page proof of RH. The long manuscript preserves detailed arguments
 and alternatives; it is not a finished short paper and its length is not
 a lower bound for one. The current integration adds proved scale, energy
 and degree reductions while shortening the organizational account of the

@@ -1,0 +1,108 @@
+\subsection{Finite comparisons at integer arguments}
+\label{shared-finite-sampling}
+
+The arithmetic construction need only be made at finitely many integer
+arguments in each chosen interval. The corrected prime sums vary little
+between consecutive integers, so no measurable choice of arithmetic
+objects over a real interval is needed.
+
+Let $H$ be a fixed finite linear combination of real parts of the
+corrected prime sums. It is locally absolutely continuous and, for
+some finite $C\ge0$ depending on that combination,
+\begin{equation}\label{shared-sampling-derivative}
+                         |H'(x)|\le C(1+\log x)^2
+\end{equation}
+almost everywhere. Indeed, the derivatives of the prime terms are
+$\sum_{m\le x}\Lambda(m)\chi(m)/m$, whose absolute value is at most
+$\log x(1+\log x)$. The correcting derivatives are a constant for
+a nonprincipal character, and $-\log x+\gamma$ for zeta.
+New summands vanish at their integer endpoints, giving continuity.
+
+Fix $h\ge0$. For a finite real table $(B_k)$ define
+\begin{equation}\label{shared-discrete-average}
+ \begin{split}
+ (\mathsf A_hB)(n)&=
+  \frac1h\sum_{k=n}^{\lceil e^hn\rceil-1}
+       B_k\log\frac{\min\{k+1,e^hn\}}k \quad(h>0),\\
+ (\mathsf A_0B)(n)&=B_n.
+ \end{split}
+\end{equation}
+The coefficients in the first line are positive and sum to one.
+This is the exact logarithmic average of the function equal to $B_k$
+on $[k,k+1)$. In particular, it retains signs before averaging.
+
+\begin{lemma}[Finite tables suffice]\label{shared-integer-table}
+Let $H$ be locally absolutely continuous and satisfy
+\eqref{shared-sampling-derivative}. Fix $b>1$,
+$h\ge0$ and $0<\theta<1$. Let $N\ge2$ be an integer. Suppose
+$H(k)\le B_k$ at every integer
+$N\le k\le\lceil e^hN^b\rceil$. Then
+\begin{equation}\label{shared-integer-bound}
+ \int_N^{N^b}(\mathcal A_hH(x))_+x^{-\theta}\,\frac{dx}{x}
+ \le \sum_{n=N}^{\lfloor N^b\rfloor}
+       \frac{(\mathsf A_hB(n))_+}{n^{1+\theta}}
+       +O_{C,h,\theta}\!\left(N^{-\theta}(1+\log N)^2\right).
+\end{equation}
+The implicit constant is independent of $N$, $b$ and the table.
+No bound on the absolute values of the $B_k$ is required.
+\end{lemma}
+
+\begin{proof}
+For $k\le t\le k+1$, integrating
+\eqref{shared-sampling-derivative} gives
+$H(t)\le B_k+C(1+\log(k+1))^2$.
+Put $F=\mathcal A_hH$ and set $d_0=1$,
+$d_h=(e^h-1)/h$ for $h>0$. Averaging the cell estimates gives
+\[
+ F(n)\le\mathsf A_hB(n)+C(1+h+\log(n+1))^2.
+\]
+This remains valid for $h=0$. Differentiation under the bounded
+averaging integral gives
+$|F'(x)|\le Cd_h(1+h+\log x)^2$ almost everywhere. Thus, on
+$[n,n+1]$,
+\[
+ F(x)_+\le(\mathsf A_hB(n))_+
+                  +C(1+d_h)(1+h+\log(n+1))^2.
+\]
+Integrate over the cells meeting $[N,N^b]$; each weight is at most
+$n^{-1-\theta}$. Write $c=1+h+\log2$ and $\ell=c+\log N$.
+The total error is at most $C(1+d_h)$ times
+\[
+ \begin{split}
+ \sum_{n=N}^{\infty}\frac{(c+\log n)^2}{n^{1+\theta}}
+ &\le 2^{1+\theta}\int_N^\infty
+                 (c+\log x)^2x^{-1-\theta}\,dx\\
+ &=2^{1+\theta}N^{-\theta}
+    \left(\frac{\ell^2}{\theta}
+          +\frac{2\ell}{\theta^2}+\frac2{\theta^3}\right).
+ \end{split}
+\]
+For the inequality use $x/n\le2$ on each cell and
+$c+\log n\le c+\log x$. This proves the stated uniform error.
+All averages at integers use only the supplied expanded table.
+\end{proof}
+
+Consequently, for each fixed accuracy $j$, one may choose a finite
+table $B_{j,N}$ independently on every interval starting at an integer
+$N$ in an unbounded set $\mathcal N_j$. It suffices that the actual
+comparisons hold at the sampled integers and
+\begin{equation}\label{shared-finite-criterion}
+ \liminf_{\substack{N\to\infty\\N\in\mathcal N_j}}
+ \frac{\log\left(1+\displaystyle
+  \sum_{n=N}^{\lfloor N^{b_j}\rfloor}
+  \frac{(\mathsf A_{h_j}B_{j,N}(n))_+}{n^{1+\theta_j}}\right)}
+ {\log N}=0.
+\end{equation}
+Lemma~\ref{shared-integer-table} then gives the averaged analytic
+criterion. The analytic function, $b_j$, $h_j$ and $\theta_j$ stay
+fixed while $N$ grows; the arithmetic tables need not agree where
+two intervals overlap. For ordinary RH use the single function $G$.
+For Dirichlet GRH use the fixed positive combinations containing the
+target character, with $\theta_j\to1/2$.
+
+The simplest version takes $h_j=0$. Its test is just a weighted sum
+of positive parts at integers. If local averaging is useful, retain
+\eqref{shared-discrete-average}: taking positive parts before it can
+lose cancellation. The discrete alternative requires its comparisons
+at the stated integers; an almost-everywhere construction does not
+automatically provide them.

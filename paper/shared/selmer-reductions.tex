@@ -1,0 +1,173 @@
+% Shared ordinary-mathematics reductions for the RH and Dirichlet GRH routes.
+\subsection{Finiteness before quantitative estimates}
+
+Let \(F\) be a totally imaginary number field, \(p\) a prime,
+and \(e\ge1\).  Let \(S\) consist of the places above \(p\)
+and the archimedean places, and let \(G_{F,S}\) be the Galois
+group of the maximal extension unramified outside \(S\).  Define
+\[
+ \mathcal S(F,p,e)=\ker\left(
+ H^1(G_{F,S},\mathbf Q_p/\mathbf Z_p(-e))
+ \longrightarrow\prod_{v\mid p}
+             H^1(F_v,\mathbf Q_p/\mathbf Z_p(-e))\right).
+\]
+Thus the local condition is zero in the full local cohomology group.
+
+\begin{proposition}\label{shared-selmer-finite}
+There is an injection
+\[
+ \mathcal S(F,p,e)^\vee\hookrightarrow K_{2e}(\mathcal O_F)\{p\}.
+\]
+In particular \(\mathcal S(F,p,e)\) is finite for every prime,
+including \(p=2\), and
+\[
+ \operatorname{length}_{\mathbf Z_p}\mathcal S(F,p,e)
+       \le v_p\bigl(\#K_{2e}(\mathcal O_F)\bigr).
+\]
+\end{proposition}
+\begin{proof}
+Quillen's finite-generation theorem and Borel's rank theorem make
+\(K_{2e}(\mathcal O_F)\) finite.  The Quillen--Lichtenbaum
+comparison identifies its \(p\)-primary subgroup with
+\(H^2_{\mathrm{\acute et}}(\mathcal O_F[1/p],\mathbf Z_p(e+1))\).
+This comparison includes \(e=1\); at \(p=2\) it requires only
+that \(F\) be totally imaginary, and does not require
+\(\mu_p\subset F\).
+\cite[IV, Theorems 1.17--1.18 and 6.9; VI, Theorem 8.2]{weibel-kbook}
+
+Put \(A_n=(\mathbf Q_p/\mathbf Z_p(-e))[p^n]\).
+Its finite Tate dual is \(T_n=\mathbf Z/p^n(e+1)\).
+Write \(\mathcal S^i_S\) for the kernel of localization in
+degree \(i\).  Finite-coefficient global duality gives compatible
+perfect pairings between \(\mathcal S^1_S(A_n)\) and
+\(\mathcal S^2_S(T_n)\).\cite[I, Theorem 4.10]{milne-adt}
+Continuous cochains with discrete coefficients commute with the
+union of the \(A_n\), since their compact domains have finite image.
+The set \(S\) is finite, so kernels and its product commute with
+this filtered colimit.  Taking duals and then inverse limits gives
+\[
+ \mathcal S(F,p,e)^\vee
+   \simeq\varprojlim_n\mathcal S^2_S(T_n)
+   \hookrightarrow\varprojlim_n H^2(G_{F,S},T_n).
+\]
+The finite-level \(H^1\) groups are finite, so the possible
+\(\varprojlim^1H^1\) term vanishes.  The \'etale--Galois comparison
+therefore identifies the last inverse limit with the integral
+cohomology group above.\cite[I, Corollary 4.15; II, Proposition 2.9]{milne-adt}
+The injection follows.  A discrete abelian group with finite
+Pontryagin dual is finite, and has the same order as that dual.
+\end{proof}
+
+\begin{corollary}\label{shared-selmer-finite-support}
+For fixed \(F\) and integer \(t\ge2\), put
+\(N_{F,t}=\prod_{e=1}^{t-1}\#K_{2e}(\mathcal O_F)\).
+If \(p\nmid N_{F,t}\), then \(\mathcal S(F,p,e)=0\) for
+every \(1\le e<t\).  Moreover the following sum has finite support:
+\[
+ \sum_p(\log p)\sum_{e=1}^{t-1}
+        \operatorname{length}_{\mathbf Z_p}\mathcal S(F,p,e)
+                  \le\log N_{F,t}.
+\]
+\end{corollary}
+\begin{proof}
+Sum the prime-valuation bound of Proposition~\ref{shared-selmer-finite}
+over the finite product defining \(N_{F,t}\).
+\end{proof}
+This supplies qualitative finiteness and convergence for each datum.
+A useful bound uniform in the changing field and twist range still
+requires a quantitative estimate.
+
+\subsection{Fewer characters and a joint count of primes and twists}
+
+Suppose the target character has order \(o\), and every auxiliary
+character \(\psi\) has order dividing \(2^h o\) for some integer
+\(h\ge0\).  If \(o\) is a power of two, a nontrivial \(\psi\)
+has even order: an odd divisor of a power of two is one.  Consequently
+the part of a character estimate restricted to nontrivial odd-order
+auxiliary characters is empty.  This applies to the trivial target
+used for RH.  It leaves the trivial character, the even-order
+characters and the exceptional coefficient primes.
+
+\begin{proposition}\label{shared-prime-twist-count}
+Let \(t\ge2\) be an integer, \(m=t-1\), \(H_m=\sum_{j=1}^m1/j\), and
+\(N\ge1\).  For each odd prime \(p\) in a finite set and each
+\(1\le e<t\), consider at most \(N\) characters with nonnegative
+lengths \(\ell(p,e,\psi)\).  Suppose that, for each \(e\), the
+sum of \((\log p)\ell(p,e,\psi)\) over the terms with
+\(p-1\nmid2e\) is at most \((Nt)^{C_I}\), and every weighted term
+\((\log p)\ell(p,e,\psi)\) with \(p-1\mid2e\) is at most
+\((pNe)^C\), where \(C_I,C\ge0\).
+Then the total weighted sum is at most
+\[
+ m(Nt)^{C_I}+NmH_m\bigl((2m+1)Nm\bigr)^C
+       \le(1+2^C)(Nt)^{\max\{C_I+1,\,2C+2\}}.
+\]
+\end{proposition}
+\begin{proof}
+Put \(j=(p-1)/2\).  The condition is \(j\mid e\), so the
+number of prime--twist pairs is at most
+\(\sum_{j=1}^m\lfloor m/j\rfloor\le mH_m\).
+Such pairs have \(p\le2m+1\) and \(e\le m\).
+Sum the stated bounds and use the character count.
+For the last inequality use \(m\le t\), \(H_m\le t\),
+\(pNe\le2Nt^2\), and \(N^{C+1}\le N^{2C+2}\).
+\end{proof}
+The exponent \(C\) must cover every remaining resonant character,
+including the trivial one unless its contribution separately vanishes.
+These are conditional character estimates, not consequences of finiteness.
+
+\subsection{Retain only the actual twisted places}
+
+Let \(K\) be the field normalizing the finite-place weights, and
+let \(\mathcal W\) be the fixed finite set of twisted places.
+Write \(e_w,f_w\) for the absolute ramification and inertia degrees,
+\(S_0\) for the residue characteristics, and set
+\[
+ a_w=\frac{e_w\log Nw}{[K:\mathbf Q]},\qquad
+ \kappa_p=\frac{\sum_{w\in\mathcal W,\,w\mid p}e_wf_w}
+                  {[K:\mathbf Q]}\le1.
+\]
+Thus \(\sum_{w\in\mathcal W,\,w\mid p}a_w=\kappa_p\log p\).
+Fix a set \(G\) of generator primes.  Let \(V_p\ge0\) be the
+Selmer-length aggregate over the chosen twists of the same host
+field, which may differ from \(K\).
+
+\begin{proposition}\label{shared-twisted-selmer-budget}
+Let \(d_j\ge0\), \(R_p\ge0\), and \(\eta_j(w)\ge0\).
+Assume, for \(p\notin G\), that
+\(\eta_j(w)\le d_j(R_p+V_p)\) at every selected place above \(p\).
+At \(p\in G\), assume the aggregate estimate
+\[
+ \sum_{w\in\mathcal W,\,w\mid p}a_w\eta_j(w)
+               \le d_j(\log p)(R_p+V_p).
+\]
+If \(\sum_{p\in S_0}(\log p)R_p\le A\), then
+\[
+ \sum_{w\in\mathcal W}a_w\eta_j(w)
+ \le d_j\left(A+\sum_{p\in S_0}\widehat\kappa_p(\log p)V_p\right),
+ \qquad
+ \widehat\kappa_p=
+ \begin{cases}1,&p\in G,\\ \kappa_p,&p\notin G.\end{cases}
+\]
+\end{proposition}
+\begin{proof}
+Sum the per-place bounds with their actual weights outside \(G\),
+and use the given aggregate bound on \(G\).  Retain
+\(\widehat\kappa_p\) on \(V_p\); on \(R_p\) use
+\(0\le\widehat\kappa_p\le1\).  Every sum is finite.
+\end{proof}
+
+In particular, let \(y=x^\varepsilon\ge1\), \(b=e^y\),
+\(f,m\ge1\), \(B_0=fmby\), and \(N_c\ge0\).
+If \(d_j=D_0\), \(A\le C_Nfmby^2\), and
+\[
+ \sum_{p\in S_0}\widehat\kappa_p(\log p)V_p
+                       \le C_Vy(B_0+N_c),
+\]
+with nonnegative uniform constants, then the congruence loss is at
+most \(D_0(C_N+C_V)y(B_0+N_c)\).  This follows from
+\(fmby^2=yB_0\).  The support, integral modules and local estimates
+must belong to the same chosen datum.  They cannot be selected anew
+to discard large lengths.  Proposition~\ref{shared-selmer-finite}
+supplies finiteness; the useful uniform weighted estimate and the
+integral local comparisons remain construction requirements.

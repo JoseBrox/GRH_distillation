@@ -53,6 +53,12 @@ No bound uniform in the accuracy index is required.
 
 ## 2. A finite version of local logarithmic averaging
 
+For a locally integrable function, write
+\[
+ \mathcal A_hH(x)=\frac1h\int_0^hH(xe^v)\,dv\quad(h>0),
+ \qquad \mathcal A_0H=H.
+\]
+
 Fix \(h>0\). For integers \(n\ge1\) and \(k\) with \(n\le k<e^h n\), put
 
 \[

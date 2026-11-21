@@ -189,7 +189,7 @@ It therefore is a weaker quantitative supplier, shared by RH and GRH.
 It does not by itself remove an entire summand from the final arithmetic
 envelope: the same rank costs enter other parts of that envelope.
 
-## 4. The remaining compatibility and finiteness requirements
+## 4. Compatibility and the qualitative finiteness input
 
 The smaller sum must use the actual twisted support of the same datum,
 the same coefficient modules, and the same selected family on every
@@ -208,7 +208,10 @@ There are two distinct finiteness issues:
   **GlobalTheoremInputs**, lines 25–26, includes every coefficient prime,
   including 2, and every positive twist below \(t\). Merely replacing
   the quantitative sum does not discharge or localize this finiteness
-  hypothesis. Doing so would require a separate audit of that supplier.
+  hypothesis. The [classical strict Selmer comparison](qualitative-selmer-finiteness.md)
+  supplies it for the actual CM host, including the prime 2, and also
+  supplies finite all-prime support for each fixed twist range. The
+  quantitative weighted bound is still required.
 
 Likewise, the integral local-index and multiplicity estimates in
 (2.1)–(2.2) remain essential. A rational vanishing statement is not

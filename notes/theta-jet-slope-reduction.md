@@ -284,6 +284,13 @@ Hermitian lattice.
 
 ## 5. What remains arithmetic at the finite primes
 
+The absolute-Siegel input is supplied by the
+[classical same-metric comparison](absolute-siegel-supplier.md), with a
+full principalization argument. Letting its arbitrary positive error tend
+to zero improves the selected slope constant to
+\(C_s=C_{\rm line}+\tfrac12\). The shared manuscript uses this sharper
+form. The theta and integral-model hypotheses remain as stated.
+
 The actual supplier has two separate arithmetic steps:
 
 - A primitive integral theta section with mean logarithmic

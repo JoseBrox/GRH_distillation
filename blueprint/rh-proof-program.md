@@ -29,9 +29,13 @@ than one. The combined signed budget may first be averaged over a fixed
 nearby range of scales: this logarithmic average preserves every detecting
 pole. A pointwise upper bound is a stronger sufficient supplier. At each
 accuracy the interval shape and averaging width are fixed before Y varies,
-and the arithmetic comparison holds almost everywhere on the same slightly
-expanded intervals. Only the total exponent loss must tend to zero. The
-analytic function remains the zeta sum even when auxiliary primes change.
+and the arithmetic comparison holds on the same expanded intervals. The
+[finite-table criterion](../notes/finite-window-sampling.md) now permits
+independent finite tables of comparisons at integer arguments. This avoids
+a measurable choice of arithmetic objects over a continuum. The explicit
+integer comparisons are required; they do not follow from an almost-everywhere
+bound. Only the total exponent loss must tend to zero. The analytic
+function remains the zeta sum even when auxiliary primes change.
 
 ## The preferred arithmetic comparison
 
@@ -63,7 +67,9 @@ geometric objects. Separate discrepancy and companion bounds are sufficient
 but not necessary. The transfer and centering errors already have finite
 weighted tail integrals under the stated source size conditions. The
 [precise criterion](../notes/scale-averaged-criterion.md) retains the common
-windows and measurability hypotheses. Its arithmetic bound is still to prove.
+windows and measurability hypotheses. Its arithmetic bound is still to prove. The finite-table alternative
+requires only finitely many constructions for each interval and allows
+independent choices on overlapping intervals.
 
 ## What the specialization removes
 
@@ -97,8 +103,13 @@ then supplies the test from an all-point height floor, including the
 boundary, and the prescribed cusp comparison. Reciprocal perturbations
 and a one-sided limit suffice. The [actual point-height comparison](../notes/actual-point-height-frontier.md)
 reduces the arithmetic supplier further to one sum of degrees of the
-selected small image eigensublattices. The required bound and exact
-metric/integral comparisons remain open. Anchoring a weight entry does not make its sum
+selected small image eigensublattices. The [selected-degree identity](../notes/selected-eigenspace-degree.md)
+now gives a two-case proof retaining the favorable integral indices and
+only the signed total conjugate imbalance. The exact abelian rank is kept
+separate from the toric rank. A [short theta-jet proof](../notes/theta-jet-slope-reduction.md)
+reduces the tangent bound to integral theta sections and their uniform
+norms, with a smaller tensor power. These actual geometric suppliers and
+the exact metric comparisons remain to be established. Anchoring a weight entry does not make its sum
 zero or cancel its determinant contribution.
 
 The preferred [slope comparison](../notes/one-sided-frame-slope.md) now
@@ -133,6 +144,38 @@ The [finite-symmetry analysis](../notes/finite-symmetry-energy.md) also
 retains the actual target-stability condition; positivity and total mass
 alone do not control the required trace errors.
 
+## A smaller cohomological requirement
+
+[Classical duality and even K-groups](../notes/qualitative-selmer-finiteness.md)
+supply finiteness of the actual strict Selmer groups, including the prime
+2, and finite prime support for each fixed host and twist range. This
+removes separate qualitative finiteness and summability obligations. The
+useful bound as the host and twists grow remains quantitative.
+
+For RH, every auxiliary character has order a power of two, so the
+[nontrivial odd-order branch](../notes/two-primary-selmer-reduction.md)
+is empty. The trivial character, complementary parity, exceptional
+primes and local integral comparisons remain. Counting prime--twist
+pairs jointly also improves the polynomial exponent.
+The reconstructed opposite-parity estimate remains an available supplier;
+its application must retain the actual group and local conditions.
+
+The congruence consumer needs only the
+[finite weighted sum on actual twisted places](../notes/finite-twisted-place-budget.md).
+Keep the ramification-inertia fractions away from generator primes;
+the latter already have aggregate estimates. The support must be the
+one chosen by the same arithmetic construction.
+
+## What the pairwise norm bounds do not give
+
+The [exact spectral examples](../notes/redundant-period-spectrum.md)
+show why the full nonidentity orbital contribution is necessarily large
+in this redundant normalization. The estimate must concern its positive
+tail above the mean eigenvalue. Even zero-error pairwise inequalities can
+give trace excess of square-root order. Preserve the smaller valid
+refined-energy penalty unless an additional global input improves it.
+An ambient projector is not automatically the sum of the chosen periods.
+
 ## Why the earlier symmetry route is optional
 
 The source uses a common sparse set of distinguished places. Weights there
@@ -151,8 +194,10 @@ the relevant character phase depends on their difference and is unchanged.
 
 ## Next mathematical work
 
-1. Bound the [selected small-eigenspace degree sum](../notes/actual-point-height-frontier.md)
-   and prove its exact point-height comparison and the cusp/metric hypotheses
+1. Supply the integral theta sections and their uniform norms for the
+   [short jet argument](../notes/theta-jet-slope-reduction.md), use the
+   [selected degree comparison](../notes/selected-eigenspace-degree.md),
+   and prove the exact point-height comparison and the cusp/metric hypotheses
    in the [base-test supplier](../notes/base-test-height-supplier.md), then use
    the [tower reduction](../notes/tower-intersection-reduction.md) and
    [mean-volume supplier](../notes/mean-volume-supplier.md).
@@ -163,9 +208,9 @@ the relevant character phase depends on their difference and is unchanged.
    normalized global identities and the two trace estimates for those same
    maps. A signed block spectral-tail bound supplies the target estimate;
    retain the independent source estimate and the actual compression costs.
-3. Complete the remaining cohomological estimates for the growing auxiliary
-   fields and bound the combined normalized positive-part scale integral on
-   the same expanded cofinal windows.
+3. Bound the finite weighted Selmer sum on the actual twisted primes for
+   the growing auxiliary fields. Assemble the signed finite integer tables
+   and bound their weighted positive parts on arbitrarily late intervals.
 
 The [GRH program](grh/program.md) retains the general Dirichlet
 target and every surviving compatibility condition. The RH case is a

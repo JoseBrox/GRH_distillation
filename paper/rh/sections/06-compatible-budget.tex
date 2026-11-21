@@ -195,6 +195,28 @@ fixed function $G$. By contrast, the accuracy-dependent interval
 exponent, averaging width and analytic exponent must remain fixed
 as the admissible windows tend to infinity.
 
+\subsection{A finite version of the final construction}
+
+The arithmetic choices can instead be made only at integers. For each
+fixed $j$, take arbitrarily large integers $N$ and supply the comparisons
+in Theorem~\ref{rh-final} at every integer
+$N\le k\le\lceil e^{h_j}N^{\beta_j}\rceil$.
+Let $B_{j,N}(k)$ be the resulting right side of
+\eqref{rh-final-budget}. These tables may be chosen independently for
+different intervals. If
+\[
+ \liminf_{N\to\infty}
+ \frac{\log\!\left(1+\sum_{n=N}^{\lfloor N^{\beta_j}\rfloor}
+       \frac{(\mathsf A_{h_j}B_{j,N}(n))_+}{n^{1+\theta_j}}\right)}
+      {\log N}=0
+\]
+along those chosen integers, then RH follows from
+Lemma~\ref{shared-integer-table}. Indeed each table bounds $G$ at its
+sampled integers, and the interpolation error tends to zero.
+This formulation requires finitely many compatible constructions per
+interval and no measurable choice of arithmetic data. It retains all
+the arithmetic estimates needed at those integers.
+
 \subsection{The exact mathematical frontier}
 
 Three construction tasks remain. The first is a uniform lower bound

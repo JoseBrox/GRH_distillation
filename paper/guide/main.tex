@@ -242,9 +242,13 @@ of the positivity argument then proves
 
 The order matters: combine signed contributions, average nearby scales,
 then take the positive part. A signed integral alone could hide large
-positive excursions. Isolated favorable values do not suffice either.
-A measurable, locally integrable arithmetic upper bound must hold almost
-everywhere on $[Y,e^{h_j}Y^{b_j}]$, for the same starting points $Y$.
+positive excursions. There is a finite alternative: supply upper bounds
+only at the integers in each expanded interval. The corrected prime sums
+have derivative $O((1+\log x)^2)$, so interpolation gives an error tending
+to zero in~\eqref{window}. Each interval can use an independent finite
+table; no measurable choice of arithmetic objects is needed. The required
+weighted sum still controls every sampled integer, not isolated favorable
+values~\cite{reconstruction}.
 
 \section{How arithmetic is meant to bound the prime sum}
 
@@ -340,11 +344,12 @@ when the source slopes occupy a shorter range.
 The required trace estimates must hold for the same integral maps and
 normalizations. They can be supplied before the source and target
 restrictions, provided the actual lost mass is carried through the
-proved compression formulas. For the target error, a bound on the
-positive spectral tail of the full joint Gram matrix suffices before
-those restrictions. A compatible orbital expansion is one way to seek
-that bound; the source error needs its own estimate. Positivity and
-total mass alone do not give small trace errors.
+proved compression formulas. For the target error, bound the positive spectral tail of the full
+joint Gram matrix above its mean eigenvalue. Its whole nonidentity
+contribution is large because the family has many more columns than
+target dimensions. Exact examples show that pairwise bounds alone need
+not give a sufficiently small trace error. Keep the smaller valid trace
+or squared-energy penalty; the source error needs its own estimate.
 
 \subsection*{Average the losses before bounding them}
 
@@ -374,9 +379,11 @@ Three groups of input feed the arithmetic comparison.
 
 \begin{enumerate}
 \item \textbf{Arithmetic selection and cohomology.}
-Choose the auxiliary characters and levels, then control the relevant
-cohomological errors. Algebraic $K$-theory supplies a shorter route to
-the coarse bound. Some integral and complementary-parity bounds remain.
+Choose the auxiliary characters and levels. Classical duality and finite
+even $K$-groups supply Selmer finiteness, including at the prime two, and
+finite prime support for each fixed datum. The remaining estimate is a
+uniform weighted bound on the actual twisted primes, together with the
+local integral comparisons~\cite{reconstruction}.
 \item \textbf{Integral maps and analytic norms.}
 Construct nonzero theta maps with the required finite-prime divisibility
 and trace bounds on the same final spaces. Local positivity and
@@ -394,7 +401,9 @@ must form one compatible construction whose combined bound meets~\eqref{window}.
 \section{What becomes simpler for ordinary RH?}
 
 The analytic target becomes just $G$; the arithmetic comparison still
-needs auxiliary characters and growing spaces.
+needs auxiliary characters and growing spaces. Their orders are powers
+of two, so the nontrivial odd-order cohomology case disappears. The other
+parity and exceptional-prime estimates remain.
 
 \subsection*{A positive kernel removes the symmetry requirement}
 

@@ -127,12 +127,32 @@ The current preferred continuation is recorded in:
   requirement, prescribed metric and counting bridge, fixed-data limiting
   step and improved finite-prime allowance. Run
   `python scripts/check_mean_volume_supplier.py`.
-- `rh-continuation-review.json`: current integration and visual review,
+- `concurrent-routes-review.json`: current integration and visual review,
   with exact hashes of the reviewed artifacts and remaining obligations.
   `rh-continuation-integrity.json` verifies the current continuation records,
   pinned selected sources and bounded ranges, current build sources and
   reviewed artifacts. Run `python scripts/check_rh_continuation.py` with
   the pinned source cache present; missing evidence causes failure.
+
+The following reductions are shared by the separate manuscripts. Their
+notes contain the mathematical proofs; their certificates distinguish
+source authentication, independent review and supplemental computation.
+
+| Certificate | Result or precise limitation |
+| --- | --- |
+| `finite-window-sampling.json` | Finite integer tables suffice on growing intervals, with an explicit interpolation error. |
+| `two-primary-selmer-reduction.json` | The nontrivial odd-order branch disappears for RH; harmonic prime–twist counting reduces the loss. |
+| `qualitative-selmer-finiteness.json` | Classical duality and finite even K-groups supply finiteness and finite prime support, including at two. |
+| `finite-twisted-place-budget.json` | Only the weighted finite sum at the actual twisted places is required. |
+| `coarse-selmer-budget.json` | The existing coarse bound is too large to supply the required growing-family budget directly. |
+| `selected-eigenspace-degree.json` | A two-case argument bounds the selected degree while retaining favorable integral indices and exact ranks. |
+| `theta-jet-slope-reduction.json` | Integral leading derivatives give an economical conditional theta proof of the tangent slope bound. |
+| `absolute-siegel-supplier.json` | The absolute Siegel lemma applies in the prescribed metric, after finite extension and principalization. |
+| `redundant-period-spectrum.json` | The correct global spectral threshold and exact countermodels delimit what pairwise estimates imply. |
+
+Run the corresponding `scripts/check_<name>.py`, replacing hyphens in the
+certificate name by underscores. The continuation integrity check includes
+these records, their bounded source passages and their primary references.
 
 These records contain independent mathematical review scopes and exact
 supplemental checks. They do not verify the missing arithmetic construction.
