@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "claim": "Fourth-power upper tables supply the original positive-part scale-averaged criterion with O(Y^(1/2-theta)*log Y) error; a nonnegative prime kernel removes the logarithm.",
+  "note": {
+    "path": "notes/fourth-power-sampling.md",
+    "sha256": "4d05213904637dc6342af600f7f1aa42e962d9bbad4dd293ba3ac017775050ff"
+  },
+  "checker": {
+    "path": "scripts/check_fourth_power_sampling.py",
+    "sha256": "f5793b6f9ab097f2988478677f931b2999b1721e47bb1f84c2b0ef5ec86d9cbd"
+  },
+  "manuscript_fragment": {
+    "path": "paper/shared/fourth-power-sampling.tex",
+    "sha256": "315b9c7b9bec68837a283e7a40a360eb5b19fbd95cf837e554cc9da997c06b3a"
+  },
+  "proof_dependencies": [
+    {
+      "path": "paper/sections/recovered/03-sec-one-sided.tex",
+      "start": 337,
+      "end": 381,
+      "sha256": "ce3e87093500a6e5235d7efd687f7f8832ec60c33d8b8bce154eb4dbfeca0fcf"
+    },
+    {
+      "path": "paper/rh/sections/01-introduction.tex",
+      "start": 31,
+      "end": 60,
+      "sha256": "96606f00a60113d4b636dc162c243ed3b1c21ab0d35f87b2b692e8e97c759c63"
+    }
+  ],
+  "checks": {
+    "rational_ramp_chord_cases": 7885,
+    "grid_and_scaled_interval_cases": 500,
+    "finite_table_endpoint_cases": 2450,
+    "exact_upper_endpoint_cases": 900,
+    "exact_signed_affine_cancellation_cases": 4,
+    "positive_interval_clipping_cases": 50,
+    "symbolic_checks": [
+      "grid polynomial with positive coefficients",
+      "positive hat row mass and affine reproduction",
+      "concavity of sqrt(x) and sqrt(x)*(3+h+log(x))",
+      "affine-cell antiderivative",
+      "tail identity and vanishing limit"
+    ]
+  },
+  "independent_reviews": {
+    "record": "certificates/continuation-review-2026-11-22.json",
+    "scope": "Independent mathematical reviews are recorded in certificates/continuation-review-2026-11-22.json; this report covers automated checks only."
+  },
+  "limits": [
+    "Universal inequalities and limiting quantifiers are proved in the note and TeX fragment, not by the finite test cases.",
+    "Hat positivity follows by integrating nonnegative affine basis functions; row-mass and cancellation algebra are checked exactly.",
+    "The argument uses the exact ramp structure, not merely a generic derivative bound.",
+    "Each sampled fourth power still needs its compatible arithmetic comparison.",
+    "No arithmetic, geometric, spectral, Selmer estimate or zero computation is supplied.",
+    "No Lean build or formal proof replay is performed.",
+    "Document compilation and visual review are separate."
+  ]
+}

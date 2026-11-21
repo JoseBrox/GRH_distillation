@@ -1,0 +1,92 @@
+\paragraph{The exact conjugate determinant comparison.}
+The passage from local flat norms to the degrees of the prescribed
+eigenlattices has a short direct proof. Let $K$ be a number field and
+$\bar V$ an integral Hermitian lattice with an action of $\mathcal O_E$.
+For two conjugate embeddings into $K$, let $W,W'$ be the integral
+eigenlattices, of ranks $a,b$, with their inherited metrics. Put
+$\mathcal D=\det W\otimes(\det W')^{-1}$.
+
+\begin{lemma}\label{geo-flat-determinant-bridge}
+After one common finite extension if necessary, suppose a scalar
+$\varphi(x,y)\in K^\times$ attached to rational eigenframes commutes
+with field embeddings and field extension, and satisfies
+\[
+ \varphi(Ax,By)=\varphi(x,y)\frac{\det B}{\det A}.
+\]
+At complex embeddings suppose its specified logarithmic norm is
+\[
+ \log|\varphi(x,y)|+
+ \tfrac12\log\det\operatorname{Gram}(x)-
+ \tfrac12\log\det\operatorname{Gram}(y).
+\]
+At every finite place suppose it is $\log|\varphi(x_0,y_0)|$
+on integral local frames of these same eigenlattices. Then its normalized
+adelic degree is
+$\widehat{\deg}_{\rm n}W-\widehat{\deg}_{\rm n}W'$.
+The statement remains valid after a common finite field extension,
+including at ramified places.
+\end{lemma}
+\begin{proof}
+The section
+$s=\varphi(x,y)(\bigwedge x)\otimes(\bigwedge y)^{-1}$ of
+$\mathcal D_K$ is independent of the frames. Its complex norm is the
+displayed Gram expression. At a finite place, writing $x=Ax_0$ and
+$y=By_0$ gives
+\[
+ \log\|s\|=\log|\varphi(x,y)|+\log|\det A|-\log|\det B|
+                         =\log|\varphi(x_0,y_0)|.
+\]
+Thus the supplied norms are exactly those of $\mathcal D$. Sum their
+negatives over all embeddings and finite places, and divide by
+$[K:\mathbb Q]$. The product formula removes any change of rational
+section. For integral base change, choose an integral basis $e_i$ of
+$\mathcal O_E$: an eigenlattice is the kernel of
+$v\mapsto((e_i-\tau(e_i))v)_i$. Flat extension preserves this kernel,
+so no denominator or new index occurs. Normalized degree is unchanged
+because the embeddings occur with their extension multiplicities.
+For rank zero the determinant is the trivial line.
+\end{proof}
+
+The geometric input is still a flat family with these local norms and
+its complex multiplication evaluation. Its finite-place normalization
+must be retained. Write
+\[
+ P_E=\gamma+\log(2\pi)-\log\operatorname{rd}(E)
+                      -\frac{L'(1,\chi_{-d})}{L(1,\chi_{-d})}.
+\]
+Suppose the corrected flat degree is
+$(a-b)P_E/2+b(\log d-\log\operatorname{rd}(E))$ and the actual
+integral-frame logarithmic norms add
+$b(\log|\mathfrak D_E|-\log|d|)$ at finite places. Their normalized
+sum is $b(\log d-\log\operatorname{rd}(E))$, by the ideal norm
+of the different and the product formula. Degree is the negative
+sum of logarithmic norms, so this term cancels exactly. The lemma gives
+\begin{equation}\label{geo-exact-conjugate-degree}
+ \widehat{\deg}_{\rm n}W-\widehat{\deg}_{\rm n}W'
+                         =\frac{a-b}{2}P_E.
+\end{equation}
+These are hypotheses about the same semistable model and its prescribed
+metric. They do not follow from a scalar estimate for $P_E$.
+
+\begin{corollary}\label{geo-signed-signature-budget}
+In the notation of \eqref{geo-selected-index-identity}, assume the
+flat-family and period inputs above for each conjugate pair with the
+same $P_E$. Assume also the tangent-slope estimate
+$T\le12R\log(2+n+(-d)_+)$ for these same lattices, with $d$ their
+total degree. Then
+\[
+ b=\frac{2R-n}{2}P_E,\qquad
+ T\le12R\log\left(2+n+
+       \left(\frac{2R-n}{2}P_E-\delta-2\nu\right)_+\right).
+\]
+For constant signature $(p,q)$, toric rank $r$, and a selected half
+of size $m\in\{p,q\}$, one has
+$2R-n=f(2m-p-q)$, independently of $r$. Equal signatures remove
+the period cost. Selecting the smaller half also removes it when
+$P_E\ge0$.
+\end{corollary}
+\begin{proof}
+Sum \eqref{geo-exact-conjugate-degree}; the complementary ranks sum
+to $n-R$. Apply the selected-degree argument with the tangent-slope
+constant $12$. Finally use $R=f(m-r)$ and $n=f(p+q-2r)$.
+\end{proof}

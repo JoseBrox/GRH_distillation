@@ -1,0 +1,177 @@
+\section{Arithmetic comparisons at fourth powers}\label{shared-fourth-powers}
+
+The shape of the corrected prime sums permits fewer arithmetic
+comparisons than a first derivative estimate alone suggests. On a
+window $[Y,Y^b]$, it suffices to supply $O_h(Y^{b/4})$ comparisons
+at fourth powers. The same positive logarithmic average is retained.
+
+Write
+\[
+ R_\chi(x)=\sum_{m\ge1}\Lambda(m)\chi(m)(x/m-1)_+,
+ \quad G_1(x)=R_1(x)-x\log x+(1+\gamma)x,
+ \quad G_\chi(x)=R_\chi(x)+x\frac{L'(1,\chi)}{L(1,\chi)}
+ \quad(\chi\ne1).
+\]
+Let $H=a_0G_1+\sum_{j=1}^r a_j\operatorname{Re}G_{\chi_j}$,
+where the $\chi_j$ are nonprincipal primitive characters and
+$a_0,\ldots,a_r\ge0$.
+Put
+\begin{equation}\label{shared-fourth-constants}
+ A=\sum_{j=1}^r a_j,\qquad Q=(A-a_0)_+,
+ \qquad C=\frac{a_0}{8}+\frac Q4.
+\end{equation}
+
+\begin{lemma}[Upper interpolation error]\label{shared-fourth-chord}
+For $1\le u<v$, put $\Delta=v-u$, and let $\ell_{u,v}H$ be the
+affine function agreeing with $H$ at $u,v$. Then, for $u\le x\le v$,
+\begin{equation}\label{shared-fourth-chord-bound}
+ H(x)\le\ell_{u,v}H(x)+\frac{a_0\Delta^2}{8u}
+       +\frac{Q\Delta(\Delta+1)\log v}{4u}.
+\end{equation}
+If $a_0+\sum_j a_j\operatorname{Re}\chi_j(m)\ge0$ for every
+integer $m$, the last term may be omitted.
+\end{lemma}
+\begin{proof}
+All linear corrections have zero interpolation error. The second
+derivative of $-a_0x\log x$ is $-a_0/x$, giving an excess above its
+chord of at most $a_0\Delta^2/(8u)$. The ramp $(x/m-1)_+$ is
+convex, and is affine on $[u,v]$ unless $u<m<v$. Its greatest
+chord gap is
+\[
+ \frac{(m-u)(v-m)}{m\Delta}\le\frac\Delta{4u}.
+\]
+Only negative ramp coefficients contribute to an upper error. Their
+absolute values are at most $Q\Lambda(m)\le Q\log v$, and there
+are at most $\Delta+1$ relevant integers. This proves the assertion,
+including integer breakpoints and ramified primes.
+\end{proof}
+
+Fix $N\ge2$, $b>1$, $h\ge0$, and $1/2<\theta<1$. Set
+\begin{equation}\label{shared-fourth-grid}
+ Y=N^4,\qquad L=\lceil N^b\rceil,\qquad
+ K=\lceil e^{h/4}L\rceil,\qquad x_k=k^4.
+\end{equation}
+Suppose real numbers $B_k$, $N\le k\le K$, satisfy $H(x_k)\le B_k$.
+Let $P_B$ be their continuous affine interpolant. Define
+\begin{equation}\label{shared-fourth-rows}
+ \beta_n=\frac1h\int_0^hP_B(x_ne^v)\,dv\quad(h>0),
+ \qquad\beta_n=B_n\quad(h=0),\qquad N\le n\le L.
+\end{equation}
+These are positive averages of the signed table entries. Explicitly,
+for a cell $N\le k<K$ with a nonempty interval
+\[
+ \alpha=\max\{0,4\log(k/n)\}<
+ \eta=\min\{h,4\log((k+1)/n)\},
+\]
+the weights of $B_k,B_{k+1}$ are respectively
+\begin{equation}\label{shared-fourth-hats}
+ \frac{x_{k+1}(\eta-\alpha)-x_n(e^\eta-e^\alpha)}
+      {h(x_{k+1}-x_k)},\qquad
+ \frac{x_n(e^\eta-e^\alpha)-x_k(\eta-\alpha)}
+      {h(x_{k+1}-x_k)}.
+\end{equation}
+They are nonnegative and sum to $(\eta-\alpha)/h$; the complete
+row has mass one. The final column $K$ supplies every endpoint.
+
+Let $J_\beta$ interpolate $\beta_N,\ldots,\beta_L$ affinely on
+the fourth-power grid, and put
+\begin{equation}\label{shared-fourth-cost}
+ S^{(4)}(N)=\sum_{n=N}^{L-1}\int_{x_n}^{x_{n+1}}
+                     (J_\beta(x))_+x^{-1-\theta}\,dx.
+\end{equation}
+Each integral is elementary: if $J_\beta(x)=s x+t$ and its
+positive interval has endpoints $u,v$, the answer is
+\[
+ \frac{s(v^{1-\theta}-u^{1-\theta})}{1-\theta}
+ +\frac{t(u^{-\theta}-v^{-\theta})}{\theta}.
+\]
+An empty positive interval contributes zero. Thus the cost requires
+no new arithmetic choices at real arguments. The positive part is
+taken after the signed row average and affine interpolation.
+
+Write $d_u=(e^u-1)/u$ for $u>0$, $d_0=1$, and
+\[
+ \kappa_h=\begin{cases}1,&h=0,\\d_h+d_{h/2},&h>0,\end{cases}
+ \qquad\delta=\theta-\tfrac12.
+\]
+\begin{theorem}[Fourth powers suffice]\label{shared-fourth-theorem}
+With $\mathcal A_hH(x)=h^{-1}\int_0^hH(xe^v)\,dv$ for $h>0$
+and $\mathcal A_0H=H$, one has
+\begin{equation}\label{shared-fourth-estimate}
+ \int_Y^{Y^b}(\mathcal A_hH(x))_+x^{-1-\theta}\,dx
+ \le S^{(4)}(N)+81C\kappa_hY^{-\delta}
+ \left(\frac{3+h+\log Y}{\delta}+\frac1{\delta^2}\right).
+\end{equation}
+If the arithmetic coefficient in Lemma~\ref{shared-fourth-chord}
+is nonnegative, the error can instead be
+\begin{equation}\label{shared-fourth-nonnegative}
+ \frac{81a_0}{8}\,\kappa_h\frac{Y^{-\delta}}\delta.
+\end{equation}
+This includes $H=G_1$ and $H=G_1+\operatorname{Re}G_\chi$.
+\end{theorem}
+\begin{proof}
+On a grid cell $a=n^4$, $c=(n+1)^4$, with $n\ge2$, its length
+$\Delta$ satisfies
+\[
+ \Delta+1\le9n^3,\qquad
+ \frac{\Delta(\Delta+1)}a\le81n^2,\qquad \log(c/a)\le2.
+\]
+Lemma~\ref{shared-fourth-chord} therefore gives
+$H(t)\le P_B(t)+81C\sqrt t(3+\log t)$ wherever the table is
+defined. Averaging at $x_n$ bounds
+$\mathcal A_hH(x_n)-\beta_n$ above by
+$81Cd_{h/2}\sqrt{x_n}(3+h+\log x_n)$.
+
+For $x\in[a,c]$, apply the same lemma on $[ae^v,ce^v]$.
+The affine interpolation parameter is unchanged by this dilation,
+and
+\[
+ \frac{(e^v\Delta)(e^v\Delta+1)}{e^v a}
+ \le e^v\frac{\Delta(\Delta+1)}a.
+\]
+After averaging, the excess of $\mathcal A_hH(x)$ above its
+endpoint interpolant is at most
+$81Cd_h\sqrt x(3+h+\log x)$. Since
+$\phi(x)=\sqrt x(3+h+\log x)$ has
+$\phi''(x)=-(3+h+\log x)/(4x^{3/2})\le0$, the interpolated
+endpoint errors are at most $81Cd_{h/2}\phi(x)$. Consequently
+\[
+ \mathcal A_hH(x)\le J_\beta(x)
+                 +81C\kappa_h\sqrt x(3+h+\log x).
+\]
+For $h=0$ this follows directly from the chord estimate, with no
+averaging error at the nodes. Take positive parts and integrate.
+The nonnegative table cost can be enlarged to $[Y,L^4]$; the
+remaining error is bounded by its integral over $[Y,\infty)$,
+which is exactly \eqref{shared-fourth-estimate}.
+For a nonnegative arithmetic coefficient the same proof uses only
+$a_0\Delta^2/(8a)$ and the concavity of $\sqrt x$, giving
+\eqref{shared-fourth-nonnegative}.
+\end{proof}
+
+\begin{corollary}\label{shared-fourth-criterion}
+For each accuracy $j$, fix a positive finite character combination
+$H_j$ containing the target or its conjugate with positive coefficient,
+and fixed $b_j>1$, $h_j\ge0$, $1/2<\theta_j<1$, where
+$\theta_j\to1/2$. Suppose the required fourth-power tables exist
+for an unbounded set $\mathcal N_j$ and
+\[
+ \liminf_{\substack{N\to\infty\\N\in\mathcal N_j}}
+ \frac{\log(1+S_j^{(4)}(N))}{\log N}=0
+ \quad\text{for every }j.
+\]
+Then the target and its conjugate have no zeros to the right of
+one half. The choice $H_j=G_1$ gives RH; applying this statement
+to every primitive target gives Dirichlet GRH.
+\end{corollary}
+\begin{proof}
+The theorem supplies the positive-part scale-averaged criterion on
+$[Y,Y^{b_j}]$, with $\log Y=4\log N$. Its error tends to zero for
+each fixed accuracy. Apply the established zero-detection theorem.
+\end{proof}
+
+There are $K-N+1=O_h(Y^{b/4})$ arithmetic comparisons. Each retains
+its required compatible maps, lattices and normalizations. Different
+nodes may use different data. The theorem supplies no missing arithmetic
+estimate, and an almost-everywhere comparison does not automatically
+hold at these sampled fourth powers.

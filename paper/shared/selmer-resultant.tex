@@ -1,0 +1,110 @@
+\subsection{An explicit integer for a character orbit}
+\label{selmer-resultant}
+
+The elementary part of the congruence estimate can be expressed by a
+single resultant. This separates the construction of a useful integer
+from the arithmetic assertion that its valuations control Selmer lengths.
+
+\begin{proposition}[A simultaneous integer certificate]
+\label{selmer-resultant-certificate}
+Let \(Q\ge5\), \(e\ge1\), and \(a=Q^e\). Let
+\(\alpha_1,\ldots,\alpha_R\) be a Galois-stable multiset of
+algebraic numbers with \(|\alpha_j|\le3\) and \(a\alpha_j\)
+integral. Let \(z_1,\ldots,z_m\) be a Galois-stable multiset of
+roots of unity. Put
+\[
+ P(T)=\prod_j(T-a\alpha_j),\qquad Z(X)=\prod_i(X-z_i),
+ \qquad V(X)=X^R P\!\left(X+a+\frac{a^2}{X}\right).
+\]
+Then \(P,Z,V\) have integer coefficients and the integer
+\(n_Q=\operatorname{Res}(Z,V)\) is nonzero. It satisfies
+\[
+ \log|n_Q|\le mR\log(a^2+4a+1)
+                 \le mR(2e\log Q+\log2).
+\]
+For every prime \(\ell\nmid Q\), every embedding into
+\(\overline{\mathbf Q}_\ell\), and all subsets
+\(J_i\subseteq\{1,\ldots,R\}\),
+\[
+ \sum_i\sum_{j\in J_i}
+ v_\ell\bigl(\alpha_j-(Q^{-e}z_i+1+Q^e z_i^{-1})\bigr)
+                                      \le v_\ell(n_Q),
+ \qquad v_\ell(\ell)=1.
+\]
+Multiplicity is retained throughout; empty products equal one.
+\end{proposition}
+
+\begin{proof}
+Galois invariance and integrality give \(P,Z\in\mathbf Z[X]\).
+Writing \(P(T)=\sum_{k=0}^R c_kT^k\), we have
+\[
+ V(X)=\sum_{k=0}^R c_kX^{R-k}(X^2+aX+a^2)^k\in\mathbf Z[X].
+\]
+The resultant product formula is
+\[
+ n_Q=\left(\prod_i z_i\right)^R
+             \prod_{i,j}(z_i+a+a^2z_i^{-1}-a\alpha_j).
+\]
+The first factor is \(\pm1\). Each remaining factor has modulus
+between \(a^2-4a-1>0\) and \(a^2+4a+1<2a^2\).
+This proves nonvanishing and the logarithmic estimate. At
+\(\ell\nmid Q\), the factors are integral and multiplication by
+\(a\) is a unit. The valuation of the product is therefore the sum
+of all the nonnegative trace-difference valuations. Discarding those
+outside the subsets \(J_i\) proves the last assertion.
+\end{proof}
+
+\subsection{Combine two bounds for the same Selmer group}
+\label{selmer-common-divisor}
+
+\begin{proposition}[The two exceptional primes]
+\label{selmer-corrected-gcd}
+Fix distinct primes \(r,s\) and nonzero integers \(n_r,n_s\).
+For each prime in a specified finite set \(\mathcal T\), let
+\(L_\ell\ge0\) satisfy
+\[
+ L_\ell\le2v_\ell(n_r)\quad(\ell\ne r),\qquad
+ L_\ell\le2v_\ell(n_s)\quad(\ell\ne s).
+\]
+Set \(A=|n_r|\), \(B=|n_s|\), and
+\[
+ G_{r,s}=
+ \gcd\!\left(A/r^{v_r(A)},B/s^{v_s(B)}\right)
+             r^{v_r(B)}s^{v_s(A)}.
+\]
+Then \(L_\ell\le2v_\ell(G_{r,s})\) on \(\mathcal T\).
+For any prescribed weights \(0\le w_\ell\le1\),
+\[
+ \sum_{\ell\in\mathcal T}w_\ell L_\ell\log\ell
+ \le2\sum_{\ell\in\mathcal T}w_\ell
+                      v_\ell(G_{r,s})\log\ell
+ \le2\log G_{r,s}\le2\log A+2\log B.
+\]
+If \(r,s\notin\mathcal T\), the same first inequality holds
+with \(\gcd(A,B)\) instead of \(G_{r,s}\).
+\end{proposition}
+
+\begin{proof}
+Away from \(r,s\), both estimates concern the same \(L_\ell\),
+so their minimum applies. The valuation of \(G_{r,s}\) is that
+minimum. Its valuations at \(r,s\) are respectively
+\(v_r(B),v_s(A)\), exactly the estimates not excluded there.
+Thus \(G_{r,s}\mid AB\), and prime factorization gives the weighted
+inequalities.
+\end{proof}
+
+In the arithmetic application, \(L_\ell\) is the sum of normalized
+Selmer lengths over one fixed character orbit, with the same host and
+twist for both auxiliary primes. The required arithmetic estimate still
+has to bound that length by twice the sum of the trace-difference
+valuations in Proposition~\ref{selmer-resultant-certificate}.
+The spectral families must classify the very representations used in
+this estimate, injectively up to isomorphism for each character.
+These conditions cannot be replaced by rational vanishing or a bound
+for unrelated representations. Nor does the greatest common divisor of
+integers bounding different Selmer components bound their sum.
+
+When both comparisons are available, the common-divisor bound preserves
+every actual prime weight and can be strictly smaller than the product
+bound. Its quantitative size for the required arithmetic families is
+not asserted here.
