@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "status": "Early proved finite-Fourier checkpoint; transfer and same-data frame refinements in progress.",
+  "scope": "Ordinary mathematical deductions from bounded pinned source and manuscript identities; no new Lean build; not a completed arithmetic construction.",
+  "source_pin": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "note": "notes/averaged-error-budget.md",
+  "note_sha256": "bc35a14e5ecd73be7c5a958301e9190e158a021d08cbeee5d2f917a0c94a419f",
+  "claims": [
+    {
+      "id": "exact-signed-budget",
+      "status": "proved",
+      "statement": "Ebar=k*Q+T_signed and H=(H-Q)+(Ebar-T_signed)/k, k=|T|*m*b*d/2>0"
+    },
+    {
+      "id": "coefficient-zero-mass",
+      "status": "proved",
+      "statement": "alpha_(sigma,tau,theta)=(-1)^sigma*muhat(theta); sum alpha=0. Preserved by primitive merging and finite cross-host linear combinations; no nonzero all-nonnegative coefficient vector can result."
+    },
+    {
+      "id": "fixed-quotient-descent",
+      "status": "proved",
+      "statement": "A onto fixed Q with B=kernel gives |X|=4|Q|; exact normalized T-fibre counts determine all coefficients. A fixed analytic positive combination additionally requires fixed primitive-character identifications."
+    },
+    {
+      "id": "positive-companion-design",
+      "status": "proved",
+      "statement": "mu=nu*nu_check yields nonnegative squared Fourier weights; the projection is H_plus-H_minus, with zeta weight 1 in H_plus. Only a one-sided companion upper bound is needed, but it remains an arithmetic obligation."
+    },
+    {
+      "id": "first-sign-quadratic",
+      "status": "proved from source definitions and elementary conductor argument",
+      "statement": "Additive epsilon_1 is source chC, primitive conductor-d quadratic; designated psC is the other sign and equals conductor-q Legendre only under extra PsQ."
+    }
+  ],
+  "counterexamples": [
+    {
+      "id": "unequal-fibres",
+      "data": "A=(Z/2)^2, pi=first coordinate, T={(0,0),(0,1),(1,0)}",
+      "conclusion": "Surjective top set has nontrivial quotient Fourier coefficient 1/3, not 0."
+    }
+  ],
+  "files": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SizeWindowBrackets/FirstPrimeNeSecondPrime.lean",
+      "git_blob_sha1": "18deb7cb85d6f650a69f01fda6e0c789b9f04d89",
+      "sha256": "0af06fb5bd926de8235472c1c0482770d70e13b5bc58a0afef86d7d6b512246d",
+      "bytes": 6380,
+      "lines": 142,
+      "reads": [
+        {
+          "lines": "14:34"
+        },
+        {
+          "lines": "55:96"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChBalance.lean",
+      "git_blob_sha1": "37648715bcf507e086374e8cc476ee746fd274f4",
+      "sha256": "502b43ca1aa951cad0f60719ea17e17912db992ee8371f6d88cdd2d496159911",
+      "bytes": 13626,
+      "lines": 264,
+      "reads": [
+        {
+          "lines": "194:206"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean",
+      "git_blob_sha1": "878f5077bc382426c7da988e5a375b85deeaa7de",
+      "sha256": "80ceae1e3c5728267fe7e7848342ca2d754c5363e9b6d8ae2d628c70f26772e0",
+      "bytes": 25006,
+      "lines": 446,
+      "reads": [
+        {
+          "lines": "56:73"
+        },
+        {
+          "lines": "90:104"
+        },
+        {
+          "lines": "140:152"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/RecH.lean",
+      "git_blob_sha1": "b2712cc402765cea3fd406285e05e32a7ce64ec7",
+      "sha256": "61b35d1b52c98edd6829ae968b6d21d8fb754efd6dad97f357838f54477d65d5",
+      "bytes": 948,
+      "lines": 27,
+      "reads": [
+        {
+          "lines": "9:25"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/ChrBij.lean",
+      "git_blob_sha1": "cc28de6e8170b10950d5caaf20e1ac31ac319070",
+      "sha256": "9284283c1bc30e10a1cb37395b5798771f06f4199a7b5889f0307ede18dadc43",
+      "bytes": 4150,
+      "lines": 90,
+      "reads": [
+        {
+          "lines": "21:26"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ZsmulGeneratorEqZeroOfProjection.lean",
+      "git_blob_sha1": "d13afca4924f8b277ae89b5d1d1e38d349ad99de",
+      "sha256": "a786d25a19cde4477ce53daef71a01b55d5d44e73f55da2e64034d934bafa87d",
+      "bytes": 4367,
+      "lines": 150,
+      "reads": [
+        {
+          "lines": "96:114"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ConjEMemHostFIff.lean",
+      "git_blob_sha1": "0ab34ba6d386bb84908efe66de6ce50108eacddc",
+      "sha256": "db32b7af86f38a66881c2345572c33156fdf027b2f0b2d6c64a6775f8e970647",
+      "bytes": 11453,
+      "lines": 230,
+      "reads": [
+        {
+          "lines": "12:46"
+        },
+        {
+          "lines": "77:88"
+        },
+        {
+          "lines": "90:116"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/HostFacts.lean",
+      "git_blob_sha1": "b6a9456ebd641dfd958f66039e3dddbd7b6a02e9",
+      "sha256": "55932761ca70f4de199ea50ec2cf0b23c720102c73d9572956e9b20e8eb52d77",
+      "bytes": 16551,
+      "lines": 373,
+      "reads": [
+        {
+          "lines": "31:49"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Analytic.lean",
+      "git_blob_sha1": "599699b5b35f6fb7bf2ab94f5f0c577b14f35ea1",
+      "sha256": "52ef51f6acc3ac5bdc351912a0c2934b36b4bbffcc60aea8cc6cfcf886ac3a89",
+      "bytes": 7650,
+      "lines": 176,
+      "reads": [
+        {
+          "lines": "66:112"
+        },
+        {
+          "lines": "126:153"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean",
+      "git_blob_sha1": "ed60b4b997cd4703713660b185b9e43fd95559a1",
+      "sha256": "d6b12bcbdc15c1b717c33a712474f9fca18c577a65c41fff2b2937534e5447ba",
+      "bytes": 7338,
+      "lines": 168,
+      "reads": [
+        {
+          "lines": "10:90"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/PrimitiveCosets/GmAEq.lean",
+      "git_blob_sha1": "2f1a763f43d65eea1f6e61018c8b70c02d2dfa03",
+      "sha256": "8443808b37680ed3d10eeafbd3f739a95b0d1e479918834a3065de28e8269f5b",
+      "bytes": 6479,
+      "lines": 149,
+      "reads": [
+        {
+          "lines": "1:74"
+        }
+      ]
+    }
+  ],
+  "local_inputs": [
+    {
+      "path": "notes/one-construction-target.md",
+      "sha256": "ce062a0eafaf87b48b768d29e6c9ff4fb013c33763b5ced00b25fe8c9a855657",
+      "read_ranges": [
+        [
+          17,
+          94
+        ],
+        [
+          110,
+          216
+        ],
+        [
+          246,
+          292
+        ],
+        [
+          294,
+          335
+        ],
+        [
+          346,
+          412
+        ]
+      ]
+    },
+    {
+      "path": "paper/sections/recovered/10-cs-section.tex",
+      "sha256": "4075e6f6fc294fa720d0241940e6692cee8729246b3a8b4d34429b72ec622827",
+      "read_ranges": [
+        [
+          70,
+          171
+        ],
+        [
+          610,
+          743
+        ]
+      ]
+    },
+    {
+      "path": "paper/sections/recovered/01-sec-purpose.tex",
+      "sha256": "d71b861e8f1400fa04138aa0d6d6af6ed38614848676fb82daeb7e1c4313a829",
+      "read_ranges": [
+        [
+          1,
+          72
+        ]
+      ]
+    }
+  ],
+  "verification": {
+    "source_git_blob_sha1": "pass all 11 recorded files against pinned Git tree",
+    "source_sha256": "recorded",
+    "bounded_reads": "all ranges at most 120 lines; no complete large source retrieved",
+    "lean_build": "not run; no claim of new kernel verification"
+  },
+  "independent_review": {
+    "status": "requested after completed refinements"
+  },
+  "remaining_obligations": [
+    "same-map arithmetic/geometric construction",
+    "signed companion and transfer estimates on whole cofinal windows",
+    "growing-rank frame and covolume costs",
+    "actual primitive-character identification for each fixed positive family"
+  ]
+}

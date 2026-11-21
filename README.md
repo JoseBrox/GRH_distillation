@@ -1,6 +1,6 @@
 # Distilling the Generalized Riemann Hypothesis
 
-**[Read the main manuscript](paper/main.pdf)** · **[Full proof program](blueprint/full-proof-program.md)** · **[Complete source atlas](blueprint/lean-source-atlas.md)** · **[Analytic companion](paper/companion/main.pdf)**
+**[Read the short guide](paper/guide/main.pdf)** · **[Main manuscript](paper/main.pdf)** · **[Full proof program](blueprint/full-proof-program.md)** · **[Complete source atlas](blueprint/lean-source-atlas.md)**
 
 We are developing a simpler, human-readable proof from Levent Alpöge's announced argument for the Riemann Hypothesis and the Generalized Riemann Hypothesis for Dirichlet characters. The aim is to understand the mathematics, replace long arguments by shorter ones where possible, and give complete definitions and proofs in ordinary mathematical language.
 
@@ -64,6 +64,13 @@ The quasi-Riemann hypothesis papers provide a fixed zero-free region and useful 
 These methods simplify particular steps. A fixed region to the right of the critical line does not itself give GRH, and a result about Dirichlet characters does not automatically apply to characters over varying number fields. The manuscript keeps these distinctions explicit.
 
 ## Reading the mathematics
+
+Begin with the [short mathematical guide](paper/guide/main.pdf)
+([TeX source](paper/guide/main.tex)). It explains the problem, the prime-sum
+criterion, the arithmetic construction and what can be simplified for
+ordinary RH. It is organized by mathematical ideas and kept to at most
+twelve pages. Complete reductions and remaining assumptions are distinguished
+throughout; the detailed proofs remain in the main manuscript.
 
 | Part | Subject |
 | --- | --- |

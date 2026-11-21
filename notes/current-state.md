@@ -86,6 +86,22 @@ new manuscript. The earlier scalar PBW and commutator reviews remain valid.
 
 ## Next research priorities
 
+Two new research checkpoints sharpen these priorities. The
+[geometric core analysis](geometric-core-lower-bound.md) identifies the
+actual cuspidal section lattice and proves determinant descent and a
+simpler component-degree averaging lemma. Its geometric input hypotheses
+remain explicit. The [averaged error analysis](averaged-error-budget.md)
+proves a zero-total-coefficient obstruction to a positive zeta-only
+projection, and gives exact fixed-quotient descent with balanced fibres.
+Further source comparisons and independent reviews are in progress;
+neither checkpoint claims the missing global construction.
+
+The [RH-only analysis](rh-specialization.md) proves a short zeta positivity
+criterion and traces the conductor-one specialization. The newly created
+[didactic guide](../paper/guide/main.pdf) is organized by mathematical ideas,
+with a twelve-page editorial limit. Its analytic, geometric and finite-group
+explanations have separate independent reviews. It is not a completed RH proof.
+
 1. W10: identify the geometric core with its prescribed periods and metrics,
    prove its uncut lower slope, and control the actual discarded-degree/index
    budget. The 28-field source ledger is complete; the new orthogonal identity

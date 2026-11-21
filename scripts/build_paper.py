@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the main reconstruction (XeLaTeX) or analytic companion (pdfLaTeX).
+"""Build the reconstruction, short guide, or analytic companion.
 
 A normal TeX installation is used unchanged. If a Debian TeX tree is present
 but its generated filename database or format is missing, the fallback reads
@@ -95,12 +95,17 @@ def state() -> tuple[bytes, ...]:
 def main() -> int:
     global PAPER, BUILD
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--companion", action="store_true", help="Build the retained analytic companion instead.")
+    choice = parser.add_mutually_exclusive_group()
+    choice.add_argument("--companion", action="store_true", help="Build the retained analytic companion instead.")
+    choice.add_argument("--guide", action="store_true", help="Build the short didactic guide instead (at most twelve pages).")
     args = parser.parse_args()
     engine = "pdflatex" if args.companion else "xelatex"
     if args.companion:
         PAPER = ROOT / "paper/companion"
         BUILD = ROOT / "build/companion"
+    elif args.guide:
+        PAPER = ROOT / "paper/guide"
+        BUILD = ROOT / "build/guide"
     if not shutil.which(engine):
         raise RuntimeError("A TeX installation with " + engine + " is required.")
     BUILD.mkdir(parents=True, exist_ok=True)
@@ -121,7 +126,16 @@ def main() -> int:
         if problem in log:
             raise RuntimeError(problem)
     if "Overfull \\hbox" in log or "Overfull \\vbox" in log:
-        raise RuntimeError("Overfull boxes remain; inspect build/paper/main.log before delivery.")
+        raise RuntimeError(f"Overfull boxes remain; inspect {BUILD.relative_to(ROOT)}/main.log before delivery.")
+    page_count = None
+    if args.guide:
+        import re
+        matches = re.findall(r"Output written on .*?\((\d+) pages?", log, flags=re.S)
+        if not matches:
+            raise RuntimeError("Could not verify the short guide's page count.")
+        page_count = int(matches[-1])
+        if page_count > 12:
+            raise RuntimeError(f"The short guide has {page_count} pages; reorganize it to keep at most twelve.")
     output = PAPER / "main.pdf"
     shutil.copyfile(BUILD / "main.pdf", output)
     sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -138,7 +152,12 @@ def main() -> int:
         "sources": [{"path": str(p.relative_to(ROOT)), "sha256": sha(p)} for p in inputs],
         "output": {"path": str(output.relative_to(ROOT)), "bytes": output.stat().st_size, "sha256": sha(output)},
     }
-    destination = ROOT / ("certificates/companion-build.json" if args.companion else "certificates/paper-build.json")
+    if args.guide:
+        certificate["page_count"] = page_count
+        certificate["editorial_page_limit"] = 12
+    destination = ROOT / ("certificates/guide-build.json" if args.guide else
+                          "certificates/companion-build.json" if args.companion else
+                          "certificates/paper-build.json")
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(certificate, indent=2) + "\n")
     print(f"Built {output.relative_to(ROOT)} ({output.stat().st_size:,} bytes).")

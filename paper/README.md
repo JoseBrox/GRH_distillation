@@ -1,5 +1,7 @@
 # The mathematical manuscripts
 
+- [Short didactic guide (PDF)](guide/main.pdf) and [complete TeX source](guide/main.tex): the problem, proof strategy, RH-only specialization and remaining construction, kept to at most twelve pages.
+
 - [Main reconstruction (PDF)](main.pdf): the entire recovered mathematical baseline and two new arguments, organized in eight parts and an appendix of alternatives.
 - [Main TeX file](main.tex), [preamble](preamble.tex), [recovered sections](sections/recovered/), and [new mathematical sections](sections/new/).
 - [Analytic companion (PDF)](companion/main.pdf) and [its TeX source](companion/main.tex): the shorter paper written at the restart, preserved with its additional analytic arguments.
@@ -11,6 +13,7 @@ Build from the repository root:
 ```sh
 python3 scripts/build_paper.py
 python3 scripts/build_paper.py --companion
+python3 scripts/build_paper.py --guide
 python3 scripts/reconcile_recovery.py
 ```
 
