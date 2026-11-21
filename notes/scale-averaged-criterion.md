@@ -238,6 +238,8 @@ residue. The averaged function retains an $O(e^{2u})$ bound. Apply the
 general Laplace criterion to $g_h$ and the majorant $(g_h)_+$. When
 $h=0$, use $M_0=1$, $E_0=0$ and the original proof. ∎
 
+Crossley gives a discrete counterpart for Dirichlet families. With $c=\log 2$, the difference $-g(u)+3g(u-c)-2g(u-2c)$ uses zero-extended delays. Its multiplier $(1-2^{-s})(2^{1-s}-1)$ has no zeros in $0<\Re s<1$ and is positive on the real interval $(0,1)$. A one-sided window bound of exponent $\theta$ on the difference, with $0<\theta<1$, then excludes zeros of the family in $\Re s>\theta$. [Lean theorem](https://github.com/leecrossley/dirichlet-window-transfer/blob/fa94718cf9d65ee5b143ded4c91dc3873222cfdf/DelayedPole.lean#L176) and [archived result](https://doi.org/10.5281/zenodo.24410863).
+
 Consequently (2) may be averaged first. The sufficient final arithmetic
 target is the subpower growth of
 
