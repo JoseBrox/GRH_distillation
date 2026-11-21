@@ -161,7 +161,32 @@ Crossley's [separate all-width manuscript](https://github.com/leecrossley/prime-
 
 **Research decision:** Retain this as an optional analytic branch. Test whether the preferred RH arithmetic construction can supply the finite-window lower estimate directly, respecting ramified primes, auxiliary characters, same-map normalizations and its growing parameters. Do not infer that the signed filter improves the currently available one-sided bounds. No arithmetic or geometric obligation has been discharged by the PR.
 
-## 5. An exact match with the preferred quadratic projector
+## 5. A discrete square-sampling criterion
+
+The same classical argument shows something stronger about sampling, without invoking the large formal source. For each fixed $b>1$, the prime-only deficit $D_b(y)$ is Lipschitz at large scales. Indeed, on its support each summand $W_b(p/y)$, viewed as a function of $y$, is piecewise linear with slope of absolute value at most $b^2/p$. At points of differentiability,
+
+```math
+|D_b'(y)|\le M_b+b^2\!\sum_{y\le p\le b^2y}\frac{\log p}{p}
+\le M_b+\frac{b^2}{y}\,\vartheta(b^2y)\ll_b1,
+```
+
+where $\vartheta(x)=\sum_{p\le x}\log p\ll x$ is Chebyshev's elementary bound. Continuity at breakpoints makes this a global Lipschitz bound for all sufficiently large $y$.
+
+**Corollary (RH from tests at squares).** Let $b>b_0$, with $b_0$ from (5). Then
+
+```math
+\mathrm{RH}\quad\Longleftrightarrow\quad
+D_b(n^2)\ge0\quad\text{for every sufficiently large integer }n.
+\tag{10}
+```
+
+In particular $b=2$ works. To prove the nontrivial direction, interpolate from $n^2\le y<(n+1)^2$. The Lipschitz bound gives $D_b(y)\ge-C_b\sqrt y$. Hence $F(y)=D_b(y)+C_b\sqrt y\ge0$ eventually. Its Mellin transform is (7) plus $C_b/(s-1/2)$, holomorphic at every real $s>1/2$. Landau's positivity theorem again rules out any nonreal zero pole with $\mathrm{Re}\,s>1/2$. Conversely, RH gives eventual positivity *at every real scale* by (9), hence also at squares.
+
+More generally, a grid $y_n\to\infty$ with gaps $y_{n+1}-y_n\ll\sqrt{y_n}$ suffices for this implication. If gaps are $O_\varepsilon(y_n^{1/2+\varepsilon})$ for every fixed $\varepsilon>0$, the same proof gives zero-freeness in each $\mathrm{Re}\,s>1/2+\varepsilon$, hence RH. Testing finitely many squares is, of course, not enough.
+
+A square-sampling formulation is also credited to earlier work in [Crossley's README](https://github.com/leecrossley/prime-window-rh-criterion/blob/main/README.md). The significance here is its elementary compatibility with the [finite-table RH acceptance conditions](finite-window-sampling.md): it can reduce a continuous statement to a discrete family, *if* an arithmetic argument supplies the sign. The sign remains unproved.
+
+## 6. An exact match with the preferred quadratic projector
 
 The current [RH direct transfer](rh-direct-transfer.md) uses the *positive arithmetic projector*
 
@@ -176,7 +201,7 @@ Here $\chi_q,\chi_d$ are the quadratic characters of two distinct odd auxiliary 
 ```math
 -D_+(4y)+3D_+(2y)-2D_+(y)
 =2y\log 2-\sum_{y<n<4y}\Lambda(n)K_{q,d}(n)W_2(n/y).
-\tag{10}
+\tag{11}
 ```
 
 All linear corrections of the three nonprincipal terms disappear. The kernel $K_{q,d}(n)$ is real and nonnegative even at primes dividing the auxiliary conductors. At an unramified prime $p$, it equals $4$ if $\chi_q(p)=1$, $\chi_d(p)=-1$, and $0$ otherwise.
