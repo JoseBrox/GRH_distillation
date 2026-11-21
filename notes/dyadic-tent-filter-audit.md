@@ -52,6 +52,8 @@ The factors vanish only on the boundary lines $\mathrm{Re}\,s=0,1$. Thus any zer
 
 This is not interchangeable with the positive forward logarithmic average in [our existing criterion](scale-averaged-criterion.md). In particular $g\le B$ does not imply $T_bg\le T_bB$: a narrow negative bump at the largest sampled argument can make $T_bg$ arbitrarily positive while $g\le0$. Our existing one-sided arithmetic estimates therefore cannot simply be filtered. They require new two-sided control or an independent estimate for the finite prime window.
 
+There is also a general order-theoretic obstruction: the convolution kernel of $T_b$ is the signed measure $-\delta_0+(b+1)\delta_c-b\delta_{2c}$, with total mass zero. Convolving it with any nonzero positive finite averaging measure still has total mass zero but has a nonzero Laplace multiplier. It therefore cannot be a nonnegative measure. Thus post-averaging with a positive kernel cannot turn this filter into an order-preserving operator. This explains why compactifying the prime sum and preserving our original one-sided majorant are intrinsically different operations.
+
 ## 3. An independent, concise eventual-sign equivalence for ordinary RH
 
 Let $P_b(y)=\sum_p(\log p)W_b(p/y)$, and define the **ordinary-prime deficit**
