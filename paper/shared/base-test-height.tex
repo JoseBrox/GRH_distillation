@@ -1,0 +1,89 @@
+\paragraph{The classical height theorem and the cusp limit.}
+For a projective integral variety $X$ of dimension $n$ over a number
+field $K$, normalize arithmetic intersections by $[K:\mathbb Q]$ and
+point heights by the absolute degree of their field. Write
+\[
+ D(\bar L)=\deg_LX,\qquad
+ I(\bar L)=\frac{\widehat{\deg}(\bar L^{n+1})}{[K:\mathbb Q]}.
+\]
+Zhang's successive-minima theorem, in its relative-semipositive form
+\cite[Theorems A.4.2 and A.5.2]{yuan-zhang-adelic}, implies
+\begin{equation}\label{geo-classical-height-lower}
+ h_{\bar L}(P)\ge a\quad(P\in X(\overline K))
+ \quad\Longrightarrow\quad
+ I(\bar L)\ge(n+1)aD(\bar L).
+\end{equation}
+Here $L$ is ample. For a smooth Hermitian model, relative semipositivity
+means semipositive curvature and nonnegative degrees on curves in
+finite fibres; the metric is conjugation invariant. Nonnegative
+horizontal point heights are not assumed. The point-height lower
+bound makes every successive minimum at least $a$. Rational tensor
+powers are included by homogeneity.
+
+\begin{proposition}[Reciprocal perturbations suffice]
+\label{geo-reciprocal-height-limit}
+Fix a component and its prescribed cutoff and metrics, and finite
+real numbers $a,\gamma,u_B$.
+Let $\bar L_{m,j}$, $m,j\ge1$, be prescribed smooth Hermitian
+$\mathbb Q$-line bundles on projective models of $X$, with perturbation
+$1/m$ and smoothing index $j$. Suppose that, for each $m$ and all
+sufficiently large $j$, they satisfy the positivity and ampleness
+conditions above and
+\[
+             h_{\bar L_{m,j}}(P)\ge a-\gamma/m
+                         \quad(P\in X(\overline K)).
+\]
+The threshold may depend on $m$ but must work for every point.
+Suppose finite real $d_m,A_m,V_m$ satisfy
+\[
+ D(\bar L_{m,j})\longrightarrow d_m,\qquad
+ \limsup_{j\to\infty}I(\bar L_{m,j})\le A_m+(n+1)V_m,
+\]
+and, for the original prescribed intersection $I_B$ and degree $d_B>0$,
+\[
+ A_m\longrightarrow I_B,\qquad d_m\longrightarrow d_B,\qquad
+ V_m\longrightarrow u_Bd_B/2.
+\]
+Then
+\[
+                   \frac{I_B}{(n+1)d_B}\ge a-u_B/2.
+\]
+\end{proposition}
+
+\begin{proof}
+Apply \eqref{geo-classical-height-lower} and take the lower limit in
+$j$. It is at most the assumed upper limit, so
+\[
+ (n+1)(a-\gamma/m)d_m\le A_m+(n+1)V_m.
+\]
+Let $m\to\infty$ and divide by $(n+1)d_B>0$. The argument permits
+negative $a$, $u_B$ or $V_m$.
+\end{proof}
+
+For a finite nonempty set of actual components, suppose the same-tower test
+identification is
+\[
+ I^{\rm test}_{B,Z}
+ =s_{B,Z}(d_0+1)v_ZJ,\qquad
+ s_{B,Z}=\frac{I_{B,Z}}{(n_Z+1)d_{B,Z}},\qquad
+ v_Z,J>0,\quad d_0=fpq.
+\]
+With $v=\sum_Zv_Z$, the normalized total test is
+\[
+ \beta_B=\frac{\sum_ZI^{\rm test}_{B,Z}}{vfq(d_0+1)J}
+         =\frac1{fq}\sum_Z\frac{v_Z}{v}s_{B,Z}.
+\]
+If Proposition~\ref{geo-reciprocal-height-limit} applies with
+$a_Z=-C_hfq\Lambda_B$ and $u_{B,Z}\le C_ufq\Lambda_B$, then
+\[
+                   \beta_B\ge-(C_h+C_u/2)\Lambda_B.
+\]
+The signed component means may be retained before estimating them.
+This is the input of Corollary~\ref{geo-tower-block-bound}. Its
+remaining geometric premises are the prescribed positive
+regularizations, the all-point height floor including the boundary,
+and the one-sided intersection comparison and signed cusp limit.
+A lower bound for the essential minimum alone does not imply
+\eqref{geo-classical-height-lower}. Each datum is fixed before the
+limits, so no convergence rate uniform in the growing family is
+required for this deduction.

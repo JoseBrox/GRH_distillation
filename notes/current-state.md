@@ -86,42 +86,52 @@ N/p and the smaller test remainder 8/(5fq). The actual anchored weights
 need not have zero sum. Their central translation incurs an exact signed
 determinant term, including the cutoff metric's finite-place correction;
 no cancellation with a different period normalization is assumed.
-The next geometric target is the lower bound for that one test on the
-same selected towers, followed by the independent finite section estimate.
+The [classical height step](base-test-height-supplier.md) supplies this
+test from all-point height floors and the signed cusp comparison using
+only reciprocal perturbations and a one-sided limit. The
+[actual point-height frontier](actual-point-height-frontier.md) reduces its
+arithmetic supplier to a sum of degrees of the selected small image
+eigensublattices. The signed index contribution cancels exactly; the
+favourable discriminant term remains. The required sum, prescribed
+integral/metric comparison and cusp mean are still open. A bare total
+Faltings-height lower bound does not supply the selected degrees, and
+the inspected published tangent-slope estimate does not imply the source's
+stronger universal logarithmic interface. No claim that that interface is
+false is made.
 
-The [theta-energy comparison](averaged-theta-energy.md) replaces separate
-word-pair inequalities by two exact aggregate energies. The source already
-contains the conditional bridge to the same integral maps and common target
-basis. Retained-energy compression has a sharper exact bound, including the
-sharp tight-frame case. Positive normalizers and the centered global energy
-estimate remain substantive inputs. The existing manuscript already had
-linear rank-loss control; no new exponent gain over that result is claimed.
+The preferred [trace slope comparison](one-sided-frame-slope.md) now
+uses one source deficit and one target excess, both measured by the
+trace of a positive part. These may be small even when operator norms
+or squared-energy errors are large. The source centered term is retained
+where sharper, and one takes the minimum with older valid penalties.
+The source slope spread, target lower slope and actual normalizers remain.
+A perfect analytic frame still does not supply the intermediate geometric
+component degree or the separate counting, divisor and quotient losses.
 
-The [joint period bound](centered-global-energy-reduction.md) is a simpler
-sufficient supplier for the centered energy. A calibrated one-sided Bessel
-estimate gives an explicit energy bound after the actual joint source and
-target cuts, retaining their lost mass and final diagonal energy. The exact
-orbital expansion reduces the Bessel input to one signed block quadratic
-form. Diagonal identity cells may be removed only when identified on their
-own domains. A source pair classified geometrically as scalar need not act
-as a scalar on the final target. The actual calibrated bound is still open.
+The positive spectral trace of the target operator equals that of the
+normalized source block Gram matrix. Thus the full-period orbital
+interface can supply the new target trace estimate without a new
+common-target unfolding. Its exact expansion and convergence remain
+hypotheses; signed terms are combined before taking the positive part.
+The source trace deficit needs its own estimate. The actual arithmetic
+spectral-tail bound is not supplied by positivity or total mass alone.
 
-The [centered frame theorem](frame-degree-compatibility.md) has zero loss
-for a perfect full frame and an exact optimal common normalization. Exact
-proportional expansion removes the spread and minimum-slope hypotheses
-altogether, when that stronger condition is actually supplied. The
-[actual source bridge](rh-centered-frame-bridge.md) permits replacing the
-same-map frame penalty, with the correct slope units and retained rank.
-Counting, divisor, section-degree and quotient losses still supply all four
-shapes of the present RH envelope. The centered estimate is used together
-with the older comparison, since its square-root energy term can be larger.
+The actual source restrictions can be carried through positive retained
+mass and then an ambient target comparison, preserving the discarded
+rank times source-spread term. Alternatively, the full trace-compression
+lemma estimates both final restrictions. Every application uses the
+same restricted lattices, maps and common target basis. The source-only
+formula has fewer formal mass hypotheses, but its coarse upper bound
+can be trivial in the omitted regime; no automatic quantitative gain is
+claimed there.
 
-The [finite-symmetry calculation](finite-symmetry-energy.md) identifies
-exactly which energy averaging removes. Multiplicity-space variance and
-unequal representation masses remain. In the actual retained arithmetic
-space, the available stabilizing subgroup acts by scalars; larger ambient
-symmetry cannot be assumed to preserve that space. Neither symmetry nor a
-perfect analytic frame alone supplies the intermediate geometric degree.
+The [aggregate energies](averaged-theta-energy.md),
+[centered frame estimates](frame-degree-compatibility.md), and
+[joint uniform period bound](centered-global-energy-reduction.md) remain
+valid alternative suppliers. The [actual source bridge](rh-centered-frame-bridge.md)
+retains the correct slope units and nonframe losses. The
+[finite-symmetry calculation](finite-symmetry-energy.md) still excludes
+an unsupported appeal to ambient symmetry on the retained target.
 
 The earlier [geometric combination](rh-geometric-combination.md) proves
 useful general alternatives:
@@ -175,18 +185,17 @@ These are exact acceptance conditions and limitations, not new constructors.
 
 ## Next mathematical work
 
-1. **Geometric core (W10).** Prove the normalized tower-intersection bound
-   and prescribed metric/counting comparison identified in the mean-volume
-   supplier, then the explicit finite section-rank/surplus cost. Use short
-   sections to remove the independent negative
-   height moment, then carry signed errors through determinant descent,
-   type indices and discarded degrees. Retain positive ranks and growing-family
-   uniformity.
+1. **Geometric core (W10).** Bound the selected small image-eigenspace
+   degree sum at every actual point, retaining the integral comparison,
+   prescribed quotient metric and finite-prime commensurability cost.
+   Prove the signed cusp mean and limit, then use the classical height,
+   single-test and mean-volume reductions. Supply the independent finite
+   section-rank/surplus estimate and retain determinant and integral indices.
 2. **Integral maps and global norms (W06/W08).** Supply nonzero integral
-   theta maps, sharp auxiliary-level divisibility, normalized global
-   centered theta/orbital-energy estimates for those same maps and exact
-   positive normalizers. A measured aggregate energy can supply the frame
-   moments directly.
+   theta maps, sharp auxiliary-level divisibility, exact positive normalizers,
+   and the source and target trace estimates on those same maps. The full
+   signed orbital block spectral tail can supply the target trace error;
+   its expansion/convergence and the source estimate remain independent inputs.
 3. **Cohomology and assembly (W04/W02/W11).** Complete the remaining
    complementary-parity integral congruence bounds and prove the total
    normalized discrepancy in the weighted positive-part scale integral.
@@ -194,8 +203,8 @@ These are exact acceptance conditions and limitations, not new constructors.
    Optimize numerical envelopes only within parameter ranges that the
    same construction actually supplies.
 
-The [RH program](../blueprint/rh-proof-program.md) is the shorter first case.
-The [full program](../blueprint/full-proof-program.md) retains all eleven
+The [RH program](../blueprint/rh/program.md) is the shorter first case.
+The [GRH program](../blueprint/grh/program.md) retains all eleven
 work packages and the [46-field ledger](../blueprint/endpoint-field-ledger.md).
 These are shared-object responsibilities, not independent assumptions.
 The main manuscript and [short guide](../paper/guide/main.tex) are organized

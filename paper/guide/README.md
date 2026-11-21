@@ -18,8 +18,10 @@ For RH, positivity and translation averaging handle the thick weights,
 and the uniform quasi-RH input controls the thin samples. Short integral
 sections reduce the geometric comparison to one weighted mean height.
 Summing the volume comparison first improves that mean, and the tower
-calculation reduces to a single normalized test intersection. One upper
-bound for all periods together can control their centered energy. These
+calculation reduces to a single normalized test intersection. Classical
+height theory identifies the required all-point lower bound and cusp
+correction. Two trace errors control the slope comparison and allow
+large errors on sufficiently little mass. These
 reductions retain the same actual maps and normalizations; the compatible
 construction, genuine global energy and geometric bounds remain open.
 

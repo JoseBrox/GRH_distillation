@@ -1,18 +1,22 @@
 {
   "schema_version": 1,
   "date": "2026-11-21",
-  "scope": "Dedicated RH manuscript: complete eventual one-sided zeta criterion and direct positive-kernel transfer, with explicit imported long-window theorem and conditional same-data geometric, theta and arithmetic budgets. No completed RH proof is claimed.",
   "status": "PASS",
+  "scope": "Dedicated RH manuscript: complete eventual one-sided zeta criterion and direct positive-kernel transfer; shared all-point-height and reciprocal-limit reduction; final and ambient two-trace slope bounds with actual restrictions and source-Gram spectral transfer; explicitly conditional same-data arithmetic construction. No completed RH proof is claimed.",
   "pdf": {
     "path": "paper/rh/main.pdf",
-    "sha256": "de22d6aed63ebbbb421d4bbc165b528274fb773d716424e3d779935e1ce628c8",
-    "bytes": 186222,
+    "sha256": "bb1201e64fe398a43c23d624275c883436352ed7cd63c69783dd969cd20d4436",
+    "bytes": 190592,
     "page_count": 22
   },
   "source_files": [
     {
+      "path": "paper/preamble.tex",
+      "sha256": "69c3cd13fc20f06557995d4c316c0f6207b03595257a8cb02666f4659beafe02"
+    },
+    {
       "path": "paper/rh/main.tex",
-      "sha256": "bf38c3c0b963de1d11466c5509cff44e8a04707b5ef73732a1324f821e1ae0da"
+      "sha256": "60b1f1198de47624fa4b40a82fd65eeff5d61ca67a65548d82eb3c380837ffcc"
     },
     {
       "path": "paper/rh/sections/01-introduction.tex",
@@ -28,61 +32,87 @@
     },
     {
       "path": "paper/rh/sections/04-geometric-degree.tex",
-      "sha256": "c7cbcb836156799a39163335f313e6bc90620569ddd0bd698981b767d4972f12"
+      "sha256": "5d07e8a7945e03a4fa3340321600e54a42a882749d354953e25fbddf74138a2a"
     },
     {
       "path": "paper/rh/sections/05-theta-energy.tex",
-      "sha256": "01eb075ea28e28e296cc8aa9b5578239bfd1e83666a44e608b2532f9272da038"
+      "sha256": "11bfd3e6d7bfb60a08ddb79021246f3dfd5f64974a8cf61d7c24065b9045b10f"
     },
     {
       "path": "paper/rh/sections/06-compatible-budget.tex",
-      "sha256": "87b4b469eb037df53cfab6897bec808bebe7b9c307c3b6e45cb1c41dadf35391"
+      "sha256": "a8d866fdff0be61f4a50b9e215a0e176dfe3a1bdb4b54ea6d1c8d5eacaff5745"
     },
     {
       "path": "paper/rh/sections/07-references.tex",
-      "sha256": "dc3b173a3c87c60281e2c33ecd795412fdc496dec56c937236cca9cf59b26660"
+      "sha256": "e0846ec331de38549aeca54789d21792f164f91f5460192a8090755286b5a206"
     },
     {
-      "path": "paper/preamble.tex",
-      "sha256": "69c3cd13fc20f06557995d4c316c0f6207b03595257a8cb02666f4659beafe02"
-    },
-    {
-      "path": "paper/shared/period-bessel.tex",
-      "sha256": "314ff8d72cc3cd6f8ee95e1040ea6590d534fa890bb11d80cbe93836611a2b11"
+      "path": "paper/shared/base-test-height.tex",
+      "sha256": "05b5ddef4d271e54bd16561879d00abf74f35d248ce293481c731c0e9aa5702d"
     },
     {
       "path": "paper/shared/tower-intersection.tex",
       "sha256": "807229e7fac1474d6959c062b399f6e0339521a65591e753f1d35c561c42e91f"
+    },
+    {
+      "path": "paper/shared/trace-slope.tex",
+      "sha256": "a9aa0a2a81589084d0d5edccce83caf3cb8526336c03f7fcd654dd8bd457b00b"
     }
   ],
+  "shared_manifest": {
+    "path": "paper/shared/manifest.json",
+    "sha256": "a4a5e9e6253c532c883bb03e078bf8a1eadfb420e4f9195346aa6506e3c4bd51"
+  },
   "readme": {
     "path": "paper/rh/README.md",
-    "sha256": "e08b1f7f7aaf4d6c5660923a2dc04a56ba390338da07e9c85d96c9a11ee2b4e6"
+    "sha256": "dba9003c48c78421adc0a8d22d71bfc7a0666ed947e36ac8fabde2dbd61baf4d"
   },
   "build": {
     "certificate": "certificates/rh-build.json",
-    "sha256": "dda92f336f811f4781ed257529e2f33621a2bef732fc7c82b50bd17b1c5c971c",
+    "sha256": "253f6c37a545becaa530ec2c3fba53f00557e654e72e5f3ddd4c741bc06cdcf7",
     "command": "python scripts/build_paper.py --rh",
     "stabilized_passes": 2,
     "overfull_boxes": 0,
     "undefined_references": 0,
-    "typography": "11-point body; A4; 25mm margins; smaller bibliography type; RH-specific title and running header"
+    "undefined_citations": 0,
+    "typography": "11-point body; A4; 25mm margins; smaller bibliography type; RH-specific title and running header",
+    "immutable_publisher_pdf_hyperlinks_verified": true
   },
   "independent_mathematical_reviews": [
     {
       "reviewer": "rh_source_symmetry",
-      "scope": "Sections02\u201303, with introduction definitions and the exact GRH long-window proposition checked. Mellin correction/residue, positivity argument, inherited growth assumptions, scale windows, primitive ramification, nf and kappa normalizations, signed companion and sampled errors.",
-      "result": "PASS; editorial hypotheses and explicit GRH citation fixes applied."
+      "scope": "Sections 02–03 and introduction definitions retain their previously reviewed source hashes: Mellin corrections/residues, pure-zeta positivity, fixed-average growth hypotheses, cofinal windows, primitive inertia identity, nf and kappa normalizations, signed quadratic companion and sampled errors.",
+      "result": "PASS; unchanged mathematical sources."
     },
     {
-      "reviewer": "geometric_simplify",
-      "scope": "Sections04\u201305: ordinary degree normalization, conditional mean-volume input, component weights, short-section split/Jensen bound, determinant descent, energy identities/compression, common matrices and centered slope theorem.",
-      "result": "PASS; target-minimum-slope condition added to the sharpness example."
+      "reviewer": "geometric_simplify and parent",
+      "scope": "Section 04 degree convention, mean-volume input, exact component weights, short-section mean and determinant descent; shared tower proof and new classical all-point-height/reciprocal-limit proof. The modern Yuan–Zhang theorem and its relative-semipositivity/normalization hypotheses were checked against the primary v9 PDF.",
+      "result": "PASS; actual regularization, point-floor and cusp-limit suppliers remain explicit hypotheses."
+    },
+    {
+      "reviewer": "rh_source_symmetry and parent",
+      "scope": "Complete shared/trace-slope.tex: final two-trace slope theorem, min{aPhi,gamma(U+H)}, H cap, lambda/positive-trace corollary, safe upper-lambda substitution, ambient delta U cancellation, actual source/target restrictions, source-only retained-mass route, source-Gram positive-spectrum identity and truncation factor.",
+      "result": "PASS; explicit final centered defect and generic compression dimension clarified."
+    },
+    {
+      "reviewer": "rh_source_symmetry",
+      "scope": "Rewritten RH Section 05: exact energy identities, correctly normalized imported refined bound, common-scaling optimum, sharp integral beta-to-zero/eta-to-infinity example, full-versus-restricted source expansion and conditional same-map semantics. New ambient/source-only additions independently checked.",
+      "result": "PASS."
     },
     {
       "reviewer": "parent",
-      "scope": "Geometric and matrix chapters04\u201305, scalar and final budget06, and complete shared tower-intersection and period/Bessel fragments.",
-      "result": "PASS; finite/nonempty sets, positive lattice ranks, fixed number field and nonnegative centered defects made explicit."
+      "scope": "Section 06 exact scalar normalization/exponents and weighted positive-part final criterion, with updated trace costs preserving the same arithmetic data and denominators.",
+      "result": "PASS; no construction claim."
+    }
+  ],
+  "supporting_review_records": [
+    {
+      "path": "certificates/one-sided-frame-slope.json",
+      "sha256": "21045b9a77d584550cfcc1096fcf0eb194c7027df9bd65ad5af0c4c5597737a0"
+    },
+    {
+      "path": "certificates/base-test-height-supplier.json",
+      "sha256": "57cca36c80cf4627593a29e5f79d1eb145cbe4578051ffa404ae32632c498334"
     }
   ],
   "visual_review": {
@@ -110,145 +140,215 @@
       21,
       22
     ],
-    "render_command": "pdftoppm -scale-to 1500 -png paper/rh/main.pdf build/rh/review-complete",
-    "reviewers": [
-      {
-        "reviewer": "transport_defect",
-        "pages": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ],
-        "method": "Final pages01,03,06,07 individually inspected. Final pages02,04,05 verified PNG-byte-identical by SHA256 to individually inspected review-final renders; their complete pixel identity preserves that inspection."
-      },
-      {
-        "reviewer": "rh_source_symmetry",
-        "pages": [
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15
-        ],
-        "method": "All eight final review-complete PNGs individually inspected after tower insertion."
-      },
-      {
-        "reviewer": "geometric_simplify",
-        "pages": [
-          16,
-          17,
-          18,
-          19,
-          20,
-          21,
-          22
-        ],
-        "method": "All seven final review-complete PNGs individually inspected after tower insertion."
-      }
+    "render_command": "pdftoppm -scale-to 1500 -png paper/rh/main.pdf build/rh/review-trace-complete",
+    "result": "PASS: all final page images were individually inspected, directly or through independently verified byte identity with an individually inspected image. No clipping, overlap, unreadable mathematics or stranded headings. Final page contains the mathematical frontier and complete bibliography; the isolated-reference-page issue is resolved.",
+    "inherited_inspection_pdf_sha256": "56ba01728563375d00fb77a32a016ea9e91cad43b8a60257133ada6fc0f0c538",
+    "byte_identical_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
     ],
-    "final_render_hashes": [
+    "freshly_inspected_final_pages": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "pages": [
       {
         "page": 1,
-        "sha256": "cfdcbbf1164875fb1ada240b351e7fccd488b3b3d8604fe7f88f67ce488a9836"
+        "image": "build/rh/review-trace-complete-01.png",
+        "sha256": "1a9d95f70bba24e775896c20cffb4fdbe164863c611bed6517fd52351f16d0fc",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-01.png",
+        "reviewer": "transport_defect"
       },
       {
         "page": 2,
-        "sha256": "bf98985d73b68c7f2fb0025cb14ba242d82df1742bcad050500b6d8bbc630423"
+        "image": "build/rh/review-trace-complete-02.png",
+        "sha256": "bf98985d73b68c7f2fb0025cb14ba242d82df1742bcad050500b6d8bbc630423",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-02.png",
+        "reviewer": "transport_defect"
       },
       {
         "page": 3,
-        "sha256": "577a30eb09933bd28244c40e4c5382f191c8dcfa35c28327f2fdc5ebee0a4096"
+        "image": "build/rh/review-trace-complete-03.png",
+        "sha256": "577a30eb09933bd28244c40e4c5382f191c8dcfa35c28327f2fdc5ebee0a4096",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-03.png",
+        "reviewer": "transport_defect"
       },
       {
         "page": 4,
-        "sha256": "0ed88b2dd41ef1714e360aa225a4a0ce8f5a98787dbeff00f1f08f0081e087a8"
+        "image": "build/rh/review-trace-complete-04.png",
+        "sha256": "0ed88b2dd41ef1714e360aa225a4a0ce8f5a98787dbeff00f1f08f0081e087a8",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-04.png",
+        "reviewer": "transport_defect"
       },
       {
         "page": 5,
-        "sha256": "2f68cabbc375015ab244d5c387ece88234dca993503ab00b0c22ff814f72db1c"
+        "image": "build/rh/review-trace-complete-05.png",
+        "sha256": "2f68cabbc375015ab244d5c387ece88234dca993503ab00b0c22ff814f72db1c",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-05.png",
+        "reviewer": "transport_defect"
       },
       {
         "page": 6,
-        "sha256": "1c2bf6be36548faa6f4d1dcb8d54c57e5351c2b71f61eb2e3e6023d09c3a5ef1"
+        "image": "build/rh/review-trace-complete-06.png",
+        "sha256": "1c2bf6be36548faa6f4d1dcb8d54c57e5351c2b71f61eb2e3e6023d09c3a5ef1",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-06.png",
+        "reviewer": "transport_defect"
       },
       {
         "page": 7,
-        "sha256": "ba41687441abc7b679300a020269eb6911a4b427a7e907a57bcbfe54b5aa6788"
+        "image": "build/rh/review-trace-complete-07.png",
+        "sha256": "ba41687441abc7b679300a020269eb6911a4b427a7e907a57bcbfe54b5aa6788",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-07.png",
+        "reviewer": "transport_defect"
       },
       {
         "page": 8,
-        "sha256": "9ce728de7b2479d4c4bd3ccb949fcb65c3db63e3705258fb67970fdec59cb653"
+        "image": "build/rh/review-trace-complete-08.png",
+        "sha256": "b21fcacc5349625ccdc057f3a98710c3ebb9565babc4bc543fd87c2c14f7e43b",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-08.png",
+        "reviewer": "geometric_simplify"
       },
       {
         "page": 9,
-        "sha256": "74fe956c0fbc54348283b776c084c43501b0ca8578915f8af7ec7ef2533c8291"
+        "image": "build/rh/review-trace-complete-09.png",
+        "sha256": "74fe956c0fbc54348283b776c084c43501b0ca8578915f8af7ec7ef2533c8291",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-09.png",
+        "reviewer": "geometric_simplify"
       },
       {
         "page": 10,
-        "sha256": "53445e0af564392d39158a5613a9eca20b26570fef911fb0667dd23ea48c1b0b"
+        "image": "build/rh/review-trace-complete-10.png",
+        "sha256": "53445e0af564392d39158a5613a9eca20b26570fef911fb0667dd23ea48c1b0b",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-10.png",
+        "reviewer": "geometric_simplify"
       },
       {
         "page": 11,
-        "sha256": "478abed6319552efa45f9ba70c7455debf8a4318ecf7007165afa66c0259a516"
+        "image": "build/rh/review-trace-complete-11.png",
+        "sha256": "478abed6319552efa45f9ba70c7455debf8a4318ecf7007165afa66c0259a516",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-11.png",
+        "reviewer": "geometric_simplify"
       },
       {
         "page": 12,
-        "sha256": "b540b9010964a847b2aac59fd5e75c1a4d8ff30869f7f55f2915d841afa5b4a6"
+        "image": "build/rh/review-trace-complete-12.png",
+        "sha256": "11bd0c260d8691b3b479cd130cb2556ec112a857e0570366ad1377241ff584d0",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-12.png",
+        "reviewer": "geometric_simplify"
       },
       {
         "page": 13,
-        "sha256": "9c6419cd4934415eb0077552ab648481f1021c67f10ad575462712911a0dcf4d"
+        "image": "build/rh/review-trace-complete-13.png",
+        "sha256": "687352fa60019c45334a18ad6f22bb5e772c809b035ed7320802a6c5a4a06757",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-13.png",
+        "reviewer": "geometric_simplify"
       },
       {
         "page": 14,
-        "sha256": "78d50495caf7b8e0c7e7cfd6b04e278c02245c5610d2ff75fe06efefa433c8df"
+        "image": "build/rh/review-trace-complete-14.png",
+        "sha256": "ad4fe09bf7027017a615d3a7ec867e829ef7d8db3696c71df9c47af070457030",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-14.png",
+        "reviewer": "geometric_simplify"
       },
       {
         "page": 15,
-        "sha256": "13c5ce2b6d2a693dc3bd375d880e1b0340377678cc7f6c279de0bc8ba3559420"
+        "image": "build/rh/review-trace-complete-15.png",
+        "sha256": "2a296cadb284d2513a479d90d5b92e7894e00de900c606c042c01eada8221164",
+        "inspection": "Individual visual inspection of the byte-identical earlier image; final byte identity independently verified by transport_defect and rh_source_symmetry.",
+        "inspected_image": "build/rh/review-trace-final-15.png",
+        "reviewer": "rh_source_symmetry"
       },
       {
         "page": 16,
-        "sha256": "8adf0b1bc5fa627d2e3146785f1b43b8f98a6e6c637e0f560b919aa1f466f735"
+        "image": "build/rh/review-trace-complete-16.png",
+        "sha256": "1dedcb9d2aac29ae4d8c7db0d6841880720973db2696966a2c1040c5d9c3c10c",
+        "inspection": "Individual visual inspection of this final rendered image.",
+        "reviewer": "rh_source_symmetry"
       },
       {
         "page": 17,
-        "sha256": "afc044ec76f23c2b7a0f5165109c23aea8ce76b387fcc47c3b7fb497c863ce31"
+        "image": "build/rh/review-trace-complete-17.png",
+        "sha256": "2bb9a9d2965160557a25d35ece35d2a61d4aacc2f3b4670146472fffb001c5f3",
+        "inspection": "Individual visual inspection of this final rendered image.",
+        "reviewer": "rh_source_symmetry"
       },
       {
         "page": 18,
-        "sha256": "9ca75c99a94483d173b50ba5af4f839fd4dd61d47239a019fc33f348f78d7ba0"
+        "image": "build/rh/review-trace-complete-18.png",
+        "sha256": "da357c16f4910963ec6383aa01a032a90d426ad997ff3d11288f95ece5843e77",
+        "inspection": "Individual visual inspection of this final rendered image.",
+        "reviewer": "rh_source_symmetry"
       },
       {
         "page": 19,
-        "sha256": "134e8b34add4078b4986a670893e8ca330b892ea894c24465f894b2238319253"
+        "image": "build/rh/review-trace-complete-19.png",
+        "sha256": "66930fae6c9d7e129b005d233c382623925219f8db5450a9491816b4275dc7ee",
+        "inspection": "Individual visual inspection of this final rendered image.",
+        "reviewer": "rh_source_symmetry"
       },
       {
         "page": 20,
-        "sha256": "34587f9a76114e1d732bc1bb2b21af34fb2e65c3583164ed33e359d978da5d20"
+        "image": "build/rh/review-trace-complete-20.png",
+        "sha256": "f9d71a61000f8a0b33ca6be204bf01de2f9a9b8b016b9e0bb66f0a7f4b2c0694",
+        "inspection": "Individual visual inspection of this final rendered image.",
+        "reviewer": "rh_source_symmetry"
       },
       {
         "page": 21,
-        "sha256": "72ac824bf90dca5d94950979e66948d58312b5c2b6b8eece3f1f827f1fd225f5"
+        "image": "build/rh/review-trace-complete-21.png",
+        "sha256": "e73305f2bf75b7bdded89bc4427e10d46e785c911e74945ab5038555b2a87754",
+        "inspection": "Individual visual inspection of this final rendered image.",
+        "reviewer": "rh_source_symmetry"
       },
       {
         "page": 22,
-        "sha256": "678268acc01f4bac4df790c7571dcbb274a879fc6c579a7f58932b06d5fe48d5"
+        "image": "build/rh/review-trace-complete-22.png",
+        "sha256": "ada0c723cfa24927a0cfc8525a65fd688407b38abb0a7af005f98157f8941882",
+        "inspection": "Individual visual inspection of this final rendered image.",
+        "reviewer": "rh_source_symmetry",
+        "additional_reviewer": "transport_defect"
       }
-    ],
-    "result": "PASS: mathematical displays, subscripts, equation labels, proof continuations, margins, headers and bibliography are legible; no clipping, overlap, broken glyphs, stranded headings or isolated bibliography entry."
+    ]
   },
-  "limits": [
-    "Compilation and visual inspection are not proof of the unresolved arithmetic construction.",
-    "Mathematical reviews check the written reductions and their stated hypotheses; no upstream Lean kernel replay or independent proof audit of the external quasi-RH/no-Siegel papers is claimed.",
-    "The meromorphic long-window criterion and refined slope theorem are explicitly imported from the GRH manuscript; the shorter eventual RH criterion and the direct transfer have full proofs here.",
-    "The separate direct Bessel/trace-excess slope research note is not included in this manuscript checkpoint."
-  ]
+  "verification_limits": {
+    "actual_arithmetic_construction_supplied": false,
+    "upstream_lean_kernel_replay": false,
+    "upstream_global_geometry_or_theta_proof_audit": false,
+    "external_qrh_or_no_siegel_proof_audit_in_this_review": false,
+    "imported_long_window_theorem": "Fully stated and precisely attributed to the GRH manuscript; its general proof is not duplicated in the RH manuscript.",
+    "imported_refined_slope_theorem": "Precisely stated on the final spaces and cited to the GRH manuscript; the new trace comparison and restriction proofs are included in full.",
+    "classical_height_theorem": "Cited Yuan–Zhang successive-minima result with relative-semipositivity, ampleness and normalization hypotheses retained; the reciprocal-limit consequence is proved in full."
+  }
 }

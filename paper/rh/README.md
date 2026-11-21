@@ -14,9 +14,11 @@ The organization follows the mathematical dependencies:
 3. Primitive-character positivity at all primes, the thick/thin
    comparison, four surviving quadratic terms and zeta centering.
 4. One mean volume, a single test intersection sensitive to the block
-   weights, exact component-degree weights, short sections and descent.
-5. Exact aggregate theta energies, retained-energy compression and
-   centered slope comparison for the same integral maps.
+   weights, the classical all-point-height reduction, exact
+   component-degree weights, short sections and descent.
+5. Two positive spectral traces, direct slope comparison, and control
+   under the actual source and target restrictions. Squared energies
+   remain available when they give a smaller cost.
 6. The combined signed arithmetic budget, scalar parameter losses and
    the construction estimates still required.
 

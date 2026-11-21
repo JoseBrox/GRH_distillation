@@ -751,35 +751,11 @@ Then
 \end{equation}
 \end{proposition}
 \begin{proof}
-Multiply the source norms by $e^{h_i}$. Their slopes decrease by
-$h_i$, and all map heights become nonpositive.
-For $\xi\in[s-H,s+u]$, let $p(\xi)$ and $q(\xi)$ be the normalized
-source and target filtration ranks. Lemma~\ref{cs-functoriality}
-puts the matrix images in the target filtration space together with
-the $D-n$ discarded coordinates. Its dimension fraction is
-$w(\xi)=\delta_0+\nu q(\xi)$, so
-\[
- \nu q(\xi)\ge p(\xi)-\delta_0
-       -a\sqrt{p(\xi)(1-p(\xi))}
-       -b\sqrt{w(\xi)(1-w(\xi))}.
-\]
-Every adjusted source slope $\alpha$ is at most $s+u$. Hence
-$\int p$ is the mean of $(\alpha-(s-H))_+$, and
-\[
- \int_{s-H}^{s+u}p\ge H,\qquad
- \int_{s-H}^{s+u}(1-p)\le u.
-\]
-Writing $x=\int(1-p)$ and $L=u+H$, Cauchy--Schwarz gives
-\[
- \int\sqrt{p(1-p)}\le\sqrt{x(L-x)}\le\Phi(u,H).
-\]
-The maximum is attained at $x=u$ if $u\le H$, and at $x=L/2$
-otherwise. Also $\int\sqrt{w(1-w)}\le L/2$.
-The lower target slope bound gives
-$\mu(F)\ge s-H+\int q$; target slopes above $s+u$ only improve
-this inequality. Integrating the rank comparison and using
-$\nu=1-\delta_0$ cancels the terms in $\delta_0H$ and proves
-\eqref{eq:cs-centered-slope}. If $u+H=0$, the assertion is immediate.
+For these same matrices the normalized positive target trace is at most
+$b/2$, by Cauchy--Schwarz and trace zero. Corollary~\ref{shared-trace-ambient},
+proved below directly from the filtration rank comparison, therefore gives
+\eqref{eq:cs-centered-slope}, since
+$\min\{a\Phi(u,H),\gamma(u+H)\}\le a\Phi(u,H)$.
 \end{proof}
 
 For a perfect full frame, $a=b=\delta_0=0$, this cost is zero.
@@ -808,11 +784,13 @@ Then, without a source-spread or lower target-slope hypothesis,
 \]
 \end{corollary}
 \begin{proof}
-Normalize source heights as in the preceding proof.
-The functoriality of the slope filtrations and the assumed expansion
-give $\operatorname{rk}F_{\ge\xi}/n
-\ge\sum_i\operatorname{rk}(E_i)_{\ge\xi}/R$ for every real $\xi$.
-Integrate over a finite interval containing all source and target slopes.
+Multiply the source norms on $E_i$ by $e^{h_i}$. The resulting
+source slopes are shifted by $-h_i$, and every map has height at most zero.
+The functoriality of the slope filtrations and the assumed expansion give
+$\operatorname{rk}F_{\ge\xi}/n
+\ge\sum_i\operatorname{rk}(E_i)_{\ge\xi+h_i}/R$ for every real $\xi$.
+Integrate over a finite interval containing all shifted source slopes
+and target slopes; the integrals give their respective mean slopes.
 \end{proof}
 
 The expansion condition forces individual injectivity and joint
@@ -827,6 +805,15 @@ All these conclusions compare the same source and target lattices.
 They do not identify the final target with an intermediate cuspidal
 core or provide an absolute arithmetic degree without additional
 arithmetic information.
+
+\subsection{A slope bound from trace errors}
+
+The final integral maps admit a comparison that uses only the total
+positive source and target errors. A uniform operator bound remains
+one sufficient input, while a small positive trace also permits a
+small amount of mass in directions with large norm.
+
+\input{shared/trace-slope}
 
 \subsection{Discarding an orthogonal subspace}
 
@@ -1071,6 +1058,8 @@ does not bound an arbitrary individual type: two orthogonal lines can
 have slopes $-M$ and $M$ while their direct sum has slope zero.
 
 \input{shared/tower-intersection}
+
+\input{shared/base-test-height}
 
 \subsection{From mean volume to section degree}
 

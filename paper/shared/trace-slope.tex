@@ -1,0 +1,308 @@
+\paragraph{A comparison on the final spaces.}
+Let \(f_i:E_i\to F\) be a finite nonempty family of integral maps of
+nonzero Hermitian lattices over one number field \(K\). Use ordinary
+slopes, normalized by \([K:\mathbb Q]\), and the map height
+\[
+ h(f)=\frac1{[K:\mathbb Q]}\sum_{\sigma:K\hookrightarrow\mathbb C}
+                  \log\|f_\sigma\|,\qquad h(0)=-\infty.
+\]
+Write \(r_i=\operatorname{rank}E_i\), \(R=\sum_i r_i\), and
+\(n=\operatorname{rank}F\). Suppose matrices
+\(T_i:\mathbb C^{r_i}\to\mathbb C^n\) represent these same maps at
+one complex embedding, in individual source bases and one common
+target basis. All matrix norms and adjoints below use the auxiliary
+Euclidean structures. Put
+\[
+ Q=\sum_iT_iT_i^*,\qquad M=\operatorname{tr}Q>0,\qquad
+ \mathcal S=\bigoplus_iT_i^*T_i.
+\]
+For a self-adjoint operator \(A\), write \(A_+\) for its positive part.
+Define
+\[
+ \gamma=\frac1M\operatorname{tr}\left(\frac MR I_R-\mathcal S\right)_+,
+ \qquad
+ \beta=\frac1M\operatorname{tr}\left(Q-\frac Mn I_n\right)_+,
+\]
+\[
+ a^2=\frac R{M^2}\left\|\mathcal S-\frac MR I_R\right\|_{\rm HS}^2,
+ \quad a\ge0.
+\]
+These quantities are unchanged by a common positive rescaling of the
+matrices. For \(U,H\ge0\), set
+\[
+ L=U+H,\qquad
+ \Phi(U,H)=
+ \begin{cases}\sqrt{UH},&U\le H,\\(U+H)/2,&U>H,\end{cases}
+ \qquad \mathcal A=\min\{a\Phi(U,H),\gamma L\}.
+\]
+
+\begin{theorem}[A slope bound from two trace errors]
+\label{shared-trace-slope}
+Let \(s,h_i\in\mathbb R\), and suppose
+\[
+ h(f_i)\le h_i,\qquad
+ \frac1R\sum_i r_i\{\mu(E_i)-h_i\}\ge s,\qquad
+ \mu_{\max}(E_i)-h_i\le s+U,\qquad
+ \mu_{\min}(F)\ge s-H.
+\]
+Then
+\begin{equation}\label{shared-trace-slope-bound}
+ s-\mu(F)\le P_{\rm tr}:=\min\{H,\mathcal A+\beta L\}.
+\end{equation}
+In particular, \(\min\{H,(\gamma+\beta)(U+H)\}\) is a valid bound
+using only the two trace errors.
+\end{theorem}
+
+\begin{proof}
+Multiply the source norms by \(e^{h_i}\). Their slopes decrease by
+\(h_i\), and all map heights become nonpositive. Such an integral
+map preserves the Harder--Narasimhan filtration: a nonzero induced
+map from slopes at least \(\xi\) to a quotient of slopes below
+\(\xi\) would contradict the determinant inequality.
+
+For \(\xi\in[s-H,s+U]\), let \(p(\xi)\) be the total source
+filtration rank divided by \(R\), and let \(q(\xi)\) be the target
+filtration rank divided by \(n\). Let \(P=\bigoplus_iP_i\) and \(P_W\)
+be the corresponding Euclidean orthogonal projections. The image
+inclusion and positivity give
+\[
+ \operatorname{tr}(P\mathcal S)
+ =\operatorname{tr}\left(\sum_iT_iP_iT_i^*\right)
+ \le\operatorname{tr}(P_WQ)\le M(q+\beta).
+\]
+The left side is at least \(M(p-\gamma)\). Centering \(\mathcal S\)
+and using \(\|P-pI_R\|_{\rm HS}^2=Rp(1-p)\) also bounds it below by
+\(M\{p-a\sqrt{p(1-p)}\}\).
+
+The upper source slope bound and its mean give
+\(\int p\ge H\) and \(z:=\int(1-p)\le U\) on this interval.
+Consequently
+\[
+ \int\sqrt{p(1-p)}
+ \le\sqrt{z(L-z)}\le\Phi(U,H).
+\]
+The lower target slope bound gives
+\(\mu(F)\ge s-H+\int q\). Integrating either source lower bound
+therefore proves \(s-\mu(F)\le\mathcal A+\beta L\).
+The target minimum slope independently gives \(s-\mu(F)\le H\).
+If \(L=0\), this last bound proves the result directly.
+\end{proof}
+
+For a trace-zero self-adjoint matrix, the positive and negative
+traces both equal half its trace norm. Cauchy--Schwarz on the
+eigenvalues therefore gives
+\[
+ \gamma\le a/2,\qquad
+ \beta\le\frac{\sqrt\eta}{2},\qquad
+ \eta=\frac n{M^2}\left\|Q-\frac Mn I_n\right\|_{\rm HS}^2.
+\]
+Thus the trace bound includes the centered squared-energy bound.
+More generally, positive operators \(E_{\rm s},E_{\rm t}\) satisfying
+\[
+ \mathcal S\ge(M/R)I_R-E_{\rm s},\qquad
+ Q\le(M/n)I_n+E_{\rm t}
+\]
+give \(\gamma\le\operatorname{tr}E_{\rm s}/M\) and
+\(\beta\le\operatorname{tr}E_{\rm t}/M\).
+Indeed, evaluate each inequality on the spectral projection defining
+the corresponding positive part. No small operator norm is required.
+
+\begin{corollary}[A direct upper period bound]
+\label{shared-trace-bessel}
+Under the same arithmetic hypotheses, suppose
+\[
+ Q\le(1+\lambda)(M/n)I_n+E,\qquad
+ \lambda,\varepsilon\ge0,\quad E\ge0,\quad
+ \operatorname{tr}E\le\varepsilon M.
+\]
+Then
+\begin{equation}\label{shared-trace-bessel-bound}
+ s-\mu(F)\le
+ \min\left\{H,\frac{\mathcal A+\lambda H+\varepsilon L}
+                         {1+\lambda}\right\}.
+\end{equation}
+For \(E=0\), take \(\varepsilon=0\). A supplied upper bound for
+\(\lambda\) may replace it in this minimum.
+\end{corollary}
+
+\begin{proof}
+The preceding rank argument now has upper bound
+\(M\{(1+\lambda)q+\varepsilon\}\). Integration gives
+\((1+\lambda)(s-\mu(F))\le\mathcal A+\lambda H+\varepsilon L\).
+For the substitution assertion, write the fraction as
+\(H+(\mathcal A+\varepsilon L-H)/(1+\lambda)\).
+It increases with \(\lambda\) when its numerator after \(H\) is
+nonpositive; otherwise the minimum equals \(H\).
+\end{proof}
+
+\begin{corollary}[An ambient trace comparison]\label{shared-trace-ambient}
+Retain the arithmetic hypotheses of Theorem~\ref{shared-trace-slope}.
+The matrices may instead have \(D\ge n\) rows, with their first \(n\)
+rows representing the same maps in one common target basis. Define
+\(M,\mathcal S,a,\gamma\) from these enlarged matrices, and define
+\(\beta=M^{-1}\operatorname{tr}(Q-(M/D)I_D)_+\).
+Suppose \(M>0\), and put \(\nu=n/D\), \(\delta=1-\nu\).
+Then, with \(\mathcal A=\min\{a\Phi(U,H),\gamma(U+H)\}\),
+\begin{equation}\label{shared-trace-ambient-bound}
+ s-\mu(F)\le
+ \min\left\{H,\frac{\delta U+\mathcal A+\beta(U+H)}{\nu}\right\}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Adjoin the \(D-n\) discarded coordinates to each target filtration
+space. Its normalized dimension is \(\delta+\nu q\), so the previous
+trace upper bound becomes \(M(\delta+\nu q+\beta)\).
+Integrating either source lower bound gives
+\(\nu\int q\ge H-\delta(U+H)-\mathcal A-\beta(U+H)\).
+Use \(\mu(F)\ge s-H+\int q\) and \(\nu=1-\delta\).
+The independent lower slope bound gives the minimum with \(H\).
+\end{proof}
+
+\paragraph{Restriction to the actual source and target.}
+The next lemma starts with maps \(T_i:H_i\to H\) into an ambient
+space of dimension \(D>0\). Define \(R,M,\mathcal S,\gamma\) as
+above, and use \(D\) in the definition of \(\beta\).
+Let \(J_i:H_i'\to H_i\) be isometries with
+\(R'=\sum_i\dim H_i'>0\), and let \(\Pi\) be an orthogonal
+target projection of rank \(n>0\). Remove zero-dimensional source
+spaces when applying the arithmetic theorem. Put
+\[
+ T_{i,0}=\Pi T_iJ_i,\quad
+ Q'=\sum_iT_iJ_iJ_i^*T_i^*,\quad
+ Q_0=\Pi Q'\Pi|_{\operatorname{ran}\Pi},
+\]
+\[
+ M_0=\operatorname{tr}Q_0,\quad
+ \rho=\frac{\operatorname{tr}(Q-Q')}{M},\quad
+ \delta=1-\frac nD .
+\]
+
+\begin{lemma}[Both restrictions measured by trace]
+\label{shared-trace-restriction}
+If \(k=1-\rho-\delta-\beta>0\), the final maps have positive mass
+and their trace errors satisfy
+\begin{equation}\label{shared-trace-restriction-bound}
+ M_0\ge Mk,\qquad
+ \beta_0\le\frac{\beta+\rho}{k},\qquad
+ \gamma_0\le\frac{\gamma+\delta+\beta}{k},\qquad
+ \rho\le\frac{R-R'}R+\gamma.
+\end{equation}
+Here \(\gamma_0,\beta_0\) use the actual dimensions \(R',n\)
+and the actual mass \(M_0\).
+Let \(a_0\ge0\) be the final centered source defect, defined by
+\[
+ a_0^2=\frac{R'}{M_0^2}
+ \left\|\bigoplus_iT_{i,0}^*T_{i,0}-\frac{M_0}{R'}I_{R'}\right\|_{\rm HS}^2.
+\]
+If \(\Delta=\sum_i\|T_i^*T_i-I\|_{\rm HS}^2\), and \(\Delta_0\)
+denotes the analogous final quantity, then
+\[
+ \Delta_0\le\Delta+2M(\delta+\beta),\qquad
+ a_0^2=\frac{R'\Delta_0-(M_0-R')^2}{M_0^2}.
+\]
+\end{lemma}
+
+\begin{proof}
+If \(A\) is self-adjoint of trace zero and its compression \(B\)
+acts on a space of dimension \(m>0\) and has trace \(b\), then
+\(\operatorname{tr}(B-(b/m)I)_+\le\operatorname{tr}A_+\).
+For \(b\ge0\), bound the left side by \(\operatorname{tr}B_+\);
+for \(b\le0\), use the negative part instead.
+Compression cannot increase either positive or negative trace,
+by the variational formula
+\(\operatorname{tr}A_+=\max_{0\le P\le I}\operatorname{tr}(PA)\).
+
+Write \(L_{\rm s}=\rho M\). Source restriction changes the centered
+target operator to
+\[
+ Q'-\frac{M-L_{\rm s}}D I
+  =Q-\frac MD I-(Q-Q')+\frac{L_{\rm s}}D I.
+\]
+Its positive trace is at most \(M\beta+L_{\rm s}\).
+Compression and recentering therefore give
+\(\beta_0M_0\le M(\beta+\rho)\).
+The target mass removed afterward is
+\[
+ L_{\rm t}=\operatorname{tr}((I-\Pi)Q')
+            \le\operatorname{tr}((I-\Pi)Q)
+            \le M(\delta+\beta).
+\]
+Hence \(M_0=M-L_{\rm s}-L_{\rm t}\ge Mk>0\).
+
+Applying the same compression observation to the block diagonal
+source operator shows that its unnormalized centered negative
+trace after source restriction is at most \(M\gamma\).
+Target restriction subtracts a positive block operator of trace
+\(L_{\rm t}\). After recentering, its negative trace is therefore
+at most \(M\gamma+L_{\rm t}\), proving the bound for \(\gamma_0\).
+The trace of \(\mathcal S\) on the discarded source space is at most
+\(M(R-R')/R+M\gamma\), proving the bound for \(\rho\).
+
+Finally let \(G\) be the block source Gram operator after source
+restriction, and let \(B\ge0\) be its discarded-target part.
+Then \(0\le B\le G\), \(\operatorname{tr}B=L_{\rm t}\), and
+\(\|G-I\|_{\rm HS}^2\le\Delta\). Expanding the square and using
+\(\operatorname{tr}((G-B)B)\ge0\) gives
+\(\|G-B-I\|_{\rm HS}^2\le\Delta+2L_{\rm t}\).
+Centering this final operator gives the identity for \(a_0^2\).
+\end{proof}
+
+One may stop after source restriction and use the ambient comparison.
+If \(\rho<1\), the matrices \(T_iJ_i\) have
+\[
+ M'=M(1-\rho)>0,\qquad
+ \gamma'\le\frac{\gamma}{1-\rho},\qquad
+ \beta'\le\frac{\beta+\rho}{1-\rho}.
+\]
+Suppose their first \(n\) rows represent the arithmetic maps in one
+common target basis, and the slope and height hypotheses hold for
+these restricted source lattices and that same target.
+With \(\nu=n/D>0\), Corollary~\ref{shared-trace-ambient} gives
+\begin{equation}\label{shared-trace-source-only}
+ s-\mu(F)\le
+ \min\left\{H,\frac{\delta U+
+              \dfrac{\gamma+\beta+\rho}{1-\rho}(U+H)}{\nu}\right\}.
+\end{equation}
+The three estimates use only the source-compression steps of the
+preceding proof. This route retains the target-rank term \(\delta U\)
+without imposing \(k>0\) or estimating the final target mass.
+
+\paragraph{The same spectral error in the source Gram matrix.}
+\begin{lemma}[Transfer of the positive spectral trace]
+\label{shared-trace-spectrum}
+Let \(S:\bigoplus_iH_i\to H\) be synthesis,
+\(S(v_i)=\sum_iT_iv_i\), and let
+\(\mathcal K=S^*S=[T_i^*T_j]\). For every \(\alpha>0\),
+\begin{equation}\label{shared-trace-spectrum-identity}
+ \operatorname{tr}(Q-\alpha I_D)_+
+       =\operatorname{tr}(\mathcal K-\alpha I_R)_+.
+\end{equation}
+Consequently a bound on the right by \(\varepsilon M\) supplies
+\(Q\le\alpha I_D+E\) with \(E\ge0\) and
+\(\operatorname{tr}E\le\varepsilon M\).
+\end{lemma}
+
+\begin{proof}
+The positive eigenvalues of \(SS^*\) and \(S^*S\) agree, with
+multiplicities: on a positive eigenspace, \(S\) and \(S^*\) give
+inverse isomorphisms after division by its eigenvalue.
+Any additional zero eigenvalues contribute zero to either positive
+part. Take \(E=(Q-\alpha I_D)_+\).
+\end{proof}
+
+If an absolutely convergent block expansion gives
+\(\mathcal K=I_R+N\), the required quantity is
+\(\operatorname{tr}((1-\alpha)I_R+N)_+\).
+Combine the signed terms before taking the positive part, retaining
+every off-diagonal term unless its vanishing is proved.
+For self-adjoint matrices \(A,B\), the variational formula gives
+\[
+ \left|\operatorname{tr}A_+-\operatorname{tr}B_+\right|
+       \le R\|A-B\|_{\rm op}.
+\]
+Thus bounds for self-adjoint finite truncations pass to the limit
+in operator norm; a quantitative truncation error retains the
+factor \(R\). An expansion supplied only for the full period maps
+can be used with Lemma~\ref{shared-trace-restriction}.
+An expansion for already restricted maps must refer to those maps.

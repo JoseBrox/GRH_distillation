@@ -80,60 +80,58 @@ windows and measurability hypotheses. Its arithmetic bound is still to prove.
 The auxiliary primes, field degrees and geometric dimensions still grow.
 The source construction has not become a fixed-dimensional argument.
 
-## The geometric budget
+## Degree and norm bounds
 
-The reductions keep the actual Hermitian metrics and rank weights.
-Covering descent preserves the coefficient of the section-degree error.
-The [direct component argument](../notes/geometric-degree-frontier.md)
+The geometric comparison keeps the actual Hermitian metrics and rank
+weights. The [direct component argument](../notes/geometric-degree-frontier.md)
 sums the degree-weighted volume comparison first. Short integral sections
-already give a lower degree bound for the same lattices, eliminating the
-separate negative-height moment. The raw form retains signed section-rank
-and twist costs with no heights in its remaining remainder.
+supply a lower degree bound for the same lattices, eliminating a separate
+negative-height moment. The raw version retains signed section-rank and
+twist costs. The finite section estimate remains an actual requirement.
 
-The [tower reduction](../notes/tower-intersection-reduction.md) eliminates
-two scalar coefficients using one normalized Grassmannian test intersection.
-It retains the exact block contrast, rank factor and test remainder.
-Centering the weight has an explicit signed determinant cost; the actual
-anchored weights do not have zero total sum. The test's lower bound, the
-same-tower comparison and the prescribed metric remain genuine inputs.
+The [tower reduction](../notes/tower-intersection-reduction.md) replaces
+two scalar coefficients by one normalized Grassmannian test and a signed
+determinant term. Its exact formula keeps the block contrast, rank factor
+and test remainder. A [classical height theorem](../notes/base-test-height-supplier.md)
+then supplies the test from an all-point height floor, including the
+boundary, and the prescribed cusp comparison. Reciprocal perturbations
+and a one-sided limit suffice. The [actual point-height comparison](../notes/actual-point-height-frontier.md)
+reduces the arithmetic supplier further to one sum of degrees of the
+selected small image eigensublattices. The required bound and exact
+metric/integral comparisons remain open. Anchoring a weight entry does not make its sum
+zero or cancel its determinant contribution.
 
-The [frame energies](../notes/averaged-theta-energy.md) are exact aggregate
-quantities of the same normalized maps. A centered global kernel estimate
-can supply them without separate inequalities for every pair of words.
-The actual retained energy controls compression, and subsequent averages
-preserve correlations with source slope spread and target height.
-Small unweighted error means are insufficient; the retained-rank and
-diagonal-error denominators remain.
+The preferred [slope comparison](../notes/one-sided-frame-slope.md) now
+uses two positive trace errors of the same maps: a source deficit and a
+target excess. This permits a small amount of mass in directions with
+large norms. Neither squared-energy control nor a small uniform operator
+excess is intrinsic. The source slope spread, target lower slope and
+positive total mass remain explicit arithmetic hypotheses. One may keep
+the sharper centered source term and take the minimum with older valid
+penalties; no useful regime is discarded.
 
-A [single upper bound for all periods](../notes/centered-global-energy-reduction.md)
-is a sufficient supplier for the centered energy. The bound must be calibrated
-against the actual total mass. It gives explicit estimates after the same
-source and target restrictions. A signed quadratic-form estimate for the
-exact orbital expansion can supply it; positivity or an unrelated kernel
-bound cannot. These proofs are included literally in both manuscripts.
+For the target error, synthesis and its adjoint have the same positive
+spectrum. Thus a spectral-tail bound on the full normalized block Gram
+matrix suffices; its signed orbital terms are combined before taking the
+positive part. The orbital expansion and convergence themselves remain
+inputs. The proved trace-compression formulas carry this bound through
+the actual source and target restrictions, retaining their lost mass and
+dimensions. The source trace error still needs its own bound. Estimates
+for an average operator alone do not bound the required correlated costs.
 
-The [centered slope comparison](../notes/frame-degree-compatibility.md)
-has zero loss for a perfect full frame, an exact optimum common
-normalization, and a sharp cost for the discarded target coordinates.
-Use the minimum with the earlier valid bounds: the new square-root
-energy term need not be smaller. The
-[actual construction comparison](../notes/rh-centered-frame-bridge.md)
-permits this replacement for the same maps and in the correct units.
-It does not delete the separate counting, divisor, initial section or
-quotient losses; all four current envelope shapes retain those suppliers.
-
-These improvements simplify the sufficient bounds. They do not prove the
-mean-volume, section-rank or centered global theta-energy estimates for
-the actual growing family.
+The [earlier energy reductions](../notes/averaged-theta-energy.md) and
+[uniform period bound](../notes/centered-global-energy-reduction.md)
+remain sufficient alternatives. Their extra error denominators are required
+when those particular formulas are used; the final-space trace theorem
+requires positive mass and the stated slope hypotheses instead. Counting,
+divisor, initial section and quotient losses remain in the combined budget.
 
 Four retained characters do not bound the integral splitting index: the
-[frontier audit](../notes/rh-construction-frontier.md) gives an exact example
-with quotient consisting of four copies of the integers modulo the growing
-group order. Nor does local irreducibility remove global multiplicity-space
-energy; the [finite-symmetry analysis](../notes/finite-symmetry-energy.md)
-identifies the remaining variance and the actual target-stability condition.
-An exact paired-construction comparison can cancel thin samples, but no
-compatible paired supplier or signed relative estimate has been supplied.
+[frontier audit](../notes/rh-construction-frontier.md) gives a quotient
+consisting of four copies of the integers modulo the growing group order.
+The [finite-symmetry analysis](../notes/finite-symmetry-energy.md) also
+retains the actual target-stability condition; positivity and total mass
+alone do not control the required trace errors.
 
 ## Why the earlier symmetry route is optional
 
@@ -153,17 +151,18 @@ the relevant character phase depends on their difference and is unchanged.
 
 ## Next mathematical work
 
-1. Prove the single normalized base-test bound isolated by the
-   [tower reduction](../notes/tower-intersection-reduction.md), together with
-   its same-tower comparison and the prescribed norm/counting comparison
-   in the [mean-volume supplier](../notes/mean-volume-supplier.md).
+1. Bound the [selected small-eigenspace degree sum](../notes/actual-point-height-frontier.md)
+   and prove its exact point-height comparison and the cusp/metric hypotheses
+   in the [base-test supplier](../notes/base-test-height-supplier.md), then use
+   the [tower reduction](../notes/tower-intersection-reduction.md) and
+   [mean-volume supplier](../notes/mean-volume-supplier.md).
    Equal component volumes then give the mean exactly. Supply the separate
    finite section-rank costs, using short sections to avoid a separate
    negative-height input, and carry signed errors through determinant descent.
 2. Supply nonzero integral theta maps, sharp finite-prime divisibility,
-   normalized global identities and centered energy estimates for those same
-   maps. The preferred sufficient target is the signed block quadratic-form
-   bound, with positive normalizers and the same common target basis.
+   normalized global identities and the two trace estimates for those same
+   maps. A signed block spectral-tail bound supplies the target estimate;
+   retain the independent source estimate and the actual compression costs.
 3. Complete the remaining cohomological estimates for the growing auxiliary
    fields and bound the combined normalized positive-part scale integral on
    the same expanded cofinal windows.

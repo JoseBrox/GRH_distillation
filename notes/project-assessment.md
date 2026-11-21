@@ -47,15 +47,16 @@ an obstruction to this particular reconstruction.
 This uncertainty is specific to proof closure. The next research tasks are
 concrete and can be completed or rejected one by one:
 
-1. Supply the single normalized base-test intersection bound, its same-tower
-   comparison and the prescribed norm/counting comparison that give the
-   actual mean volume, then the separate finite
+1. Bound the selected small-eigenspace degree sum and its exact point-height
+   comparison, together with the signed cusp correction. The classical
+   single-test and prescribed volume comparison then give the actual mean,
+   followed by the separate finite
    section-rank/surplus estimate. The new short-section argument
    removes a separate negative-height hypothesis.
-2. Supply a calibrated joint period bound, or directly the centered global
-   theta energy, with the actual positive normalizers and common target.
-   The signed orbital quadratic-form criterion avoids a separate estimate
-   for every pair of words; the required arithmetic bound remains open.
+2. Supply the two trace errors for the actual normalized maps. The signed
+   orbital block spectral tail can supply the target error; the source
+   error and positive retained mass remain explicit. These weaker criteria
+   still need their actual arithmetic estimates.
 3. Complete the remaining integral congruence, divisibility and compatibility
    requirements and control the combined discrepancy. The final criterion
    permits a weighted average over scales and a fixed local logarithmic
@@ -69,7 +70,7 @@ especially unstable unit of work.
 ## A provisional page budget
 
 The current compiled artifacts have a seven-page didactic guide, a
-22-page RH manuscript, a 21-page analytic companion and a 582-page
+22-page RH manuscript, a 21-page analytic companion and a 587-page
 Dirichlet-GRH working manuscript. These are measured PDF lengths. The RH
 manuscript gives complete reductions and explicit remaining arithmetic
 hypotheses; it is not a 22-page proof of RH. The long manuscript preserves detailed arguments

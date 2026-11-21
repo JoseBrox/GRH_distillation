@@ -1,278 +1,134 @@
-\section{The energies of the actual integral maps}
+\section{The trace errors of the actual integral maps}
 \label{rh-energy}
 
-An arithmetic map has both an integral meaning and a complex matrix
-representation. The following estimates simplify the required matrix
-conditions. Their use in the arithmetic argument requires the matrices
-to represent the same integral maps, in one common target basis, with
-the prescribed positive normalizers and metrics.
+The matrix comparison needs two facts: enough source mass reaches the
+target, and this mass does not concentrate excessively in a small target
+subspace. Two positive spectral traces measure these failures directly.
+They give a shorter slope argument and can be small even when the
+corresponding squared target energy is large.
 
-\subsection{Two aggregate energies}
+Every matrix below must represent the same integral map used in the
+degree and height comparisons. The target basis is common to all maps;
+the individual source bases and positive period normalizers may vary.
+We first work on the final arithmetic source and target spaces. The
+restriction lemma then explains how an estimate on full period maps can
+supply the same quantities.
 
-Let $T_i:H_i\to H$ be finitely many linear maps of finite-dimensional
-complex Hermitian spaces, with $r_i=\dim H_i>0$, $D=\dim H>0$ and
-$R=\sum_i r_i$. Define
-\[
- Q=\sum_iT_iT_i^*,\quad M=\operatorname{tr}Q>0,
- \quad \mathcal S=\bigoplus_iT_i^*T_i,
-\]
+\subsection{A direct trace comparison}
+
+\input{shared/trace-slope}
+
+\subsection{Squared energies remain useful suppliers}
+
+On the final spaces of Theorem~\ref{shared-trace-slope}, define
 \begin{equation}\label{rh-energies}
- \Delta=\sum_i\|T_i^*T_i-I_{r_i}\|_{\rm HS}^2,
- \qquad V=\left\|Q-\frac MD I_D\right\|_{\rm HS}^2.
+ \Delta=\sum_i\|T_i^*T_i-I_{r_i}\|_{\rm HS}^2,\qquad
+ V=\left\|Q-\frac Mn I_n\right\|_{\rm HS}^2,\qquad
+ e=\Delta/R,\qquad \eta=nV/M^2.
 \end{equation}
-The Hilbert--Schmidt norm satisfies
-$\|A\|_{\rm HS}^2=\operatorname{tr}(A^*A)$.
+These are aggregate quantities; they require no separate bound for
+each ordered pair of maps.
 
 \begin{lemma}[Exact energy identities]\label{rh-energy-identities}
-The diagonal defect and target isotropy defect are
+With the notation of the trace comparison,
 \[
- e=\Delta/R,\qquad
- \eta=\frac{DV}{M^2}=\frac{D\operatorname{tr}(Q^2)}{M^2}-1.
+ a^2=\frac{R\Delta-(M-R)^2}{M^2},\qquad
+ \eta=\frac{n\operatorname{tr}(Q^2)}{M^2}-1,\qquad
+ |M-R|\le\sqrt{R\Delta}.
 \]
-Moreover,
+If \(\Omega=\sum_{i\ne j}\|T_i^*T_j\|_{\rm HS}^2\), then
 \[
- |M-R|\le\sqrt{R\Delta},\qquad
- \rank Q\ge\frac D{1+\eta},\qquad
- \sum_i\dim\ker T_i\le\Delta.
+ \operatorname{tr}(Q^2)=\Omega+2M-R+\Delta.
 \]
-If $\Omega=\sum_{i\ne j}\|T_i^*T_j\|_{\rm HS}^2$, then
-$\operatorname{tr}(Q^2)=\Omega+2M-R+\Delta$.
 \end{lemma}
 
 \begin{proof}
-Expand the squared norms. Cauchy--Schwarz applied to
-$\mathcal S-I_R$ gives the trace inequality. Applied to the
-nonzero eigenvalues of $Q$, it gives
-$M^2\le\rank(Q)\operatorname{tr}(Q^2)$.
-Each vector in the kernel of $T_i$ contributes an eigenvalue $-1$
-to $T_i^*T_i-I$. Finally, expand $\operatorname{tr}(Q^2)$ into its
-diagonal and off-diagonal terms.
+Expanding the square gives
+\(\Delta=\operatorname{tr}(\mathcal S^2)-2M+R\).
+Center \(\mathcal S\) to obtain the first identity, and center
+\(Q\) for the second. Cauchy--Schwarz applied to
+\(\operatorname{tr}(\mathcal S-I_R)\) gives the inequality.
+Expanding \(\operatorname{tr}(Q^2)\) into its diagonal and
+off-diagonal terms proves the last formula.
 \end{proof}
 
-The diagonal energy alone is insufficient. For $D$ one-dimensional
-sources all mapped isometrically to the same line in $\mathbb C^D$,
-one has $\Delta=0$ but $\eta=D-1$. A global isotropy estimate is
-therefore a genuine additional input.
-
-\begin{proposition}[Compression measured by retained energy]
-\label{rh-energy-compression}
-Let $J_i:H'_i\to H_i$ be isometries. Put $T'_i=T_iJ_i$ and attach
-primes to the corresponding quantities. Suppose $R'>0$ and $M'>0$.
-With $l=R-R'$, $L=M-M'$ and $\alpha=M/M'$, one has
+The GRH manuscript's \emph{Refined slope comparison}
+\cite{rh-companion}, under the same arithmetic hypotheses and
+\(e<1\), gives the additional bound
 \[
- 0\le Q'\le Q,\quad \Delta'\le\Delta,\quad
- |L-l|\le\sqrt{l\Delta},\quad
- M'\ge R'-\sqrt{R'\Delta},
-\]
-\begin{equation}\label{rh-compressed-isotropy}
- \eta'\le
- \left(\frac{\alpha\sqrt\eta+
-                \sqrt{\alpha^2\eta+4(\alpha-1)}}2\right)^2.
-\end{equation}
-For a perfectly isotropic full family, $\eta=0$, this becomes
-$\eta'\le L/(M-L)$, and equality is possible.
-\end{proposition}
-
-\begin{proof}
-Each $J_iJ_i^*$ is an orthogonal projection. This gives $Q'\le Q$;
-compression of $T_i^*T_i-I$ contracts its Hilbert--Schmidt norm,
-giving $\Delta'\le\Delta$. Taking traces on the discarded and
-retained source subspaces and applying Cauchy--Schwarz gives the
-two trace bounds.
-Since $\operatorname{tr}((Q-Q')Q')\ge0$, centering both matrices gives
-\[
- \frac{(M')^2}{D}(1+\eta')
- \le\operatorname{tr}(QQ')
- \le\frac{MM'}D(1+\sqrt\eta\sqrt{\eta'}).
-\]
-Solve the resulting quadratic inequality in $\sqrt{\eta'}$.
-For sharpness when $\eta=0$, take $Q=cI_D$ and $Q'=cP$ for an
-orthogonal projection $P$ of positive rank $k$. Then
-$\eta'=(D-k)/k=L/(M-L)$.
-\end{proof}
-
-The denominators $M'$ and $R'$ are substantive. A bound on the
-number of discarded dimensions does not by itself measure the
-energy they carry. The exact retained-energy formula may be used
-before any uniform estimate for those denominators.
-
-\subsection{A centered comparison of dimensions and slopes}
-
-Define the nonnegative scale-invariant quantities $a,b\ge0$ by
-\[
- a^2=\frac R{M^2}\left\|\mathcal S-\frac MR I_R\right\|_{\rm HS}^2
-     =\frac{R\Delta-(M-R)^2}{M^2},\qquad b^2=\eta.
-\]
-
-\begin{lemma}[Centered dimension comparison]\label{rh-centered-rank}
-If subspaces $V_i\subset H_i$ have total dimension $k$ and
-$T_i(V_i)\subset W\subset H$, then, with $p=k/R$ and $q=\dim W/D$,
-\begin{equation}\label{rh-centered-rank-bound}
-               p-a\sqrt{p(1-p)}\le q+b\sqrt{q(1-q)}.
-\end{equation}
-\end{lemma}
-
-\begin{proof}
-Let $P=\bigoplus_iP_{V_i}$ and $C=\sum_iT_iP_{V_i}T_i^*$.
-Since $\|P-pI_R\|_{\rm HS}^2=Rp(1-p)$,
-\[
- \operatorname{tr}C=\operatorname{tr}(P\mathcal S)
-                         \ge M\{p-a\sqrt{p(1-p)}\}.
-\]
-Also $0\le C\le Q$, and its range lies in $W$. Centering $Q$ gives
-\[
- \operatorname{tr}C\le\operatorname{tr}(P_WQ)
-                         \le M\{q+b\sqrt{q(1-q)}\}.
-\]
-Divide by $M>0$.
-\end{proof}
-
-For the arithmetic use, fix a number field $K$ and let all lattices
-be defined over $K$. Let $\mu_{\max}$ and $\mu_{\min}$ denote
-the extreme slopes of the Harder--Narasimhan filtration. Its slopes,
-counted with their multiplicities, average to $\mu(E)$. For a nonzero
-integral map $f:E\to F$, use the ordinary height
-\[
- h(f)=\frac1{[K:\mathbb Q]}\sum_{\sigma:K\hookrightarrow\mathbb C}
-                                      \log\|f_\sigma\|;
-\]
-put $h(0)=-\infty$. A height-nonpositive integral map carries the
-source subspace of slopes at least $\xi$ into the corresponding
-target subspace. To see this, any nonzero induced map to the target
-quotient would have an image of slope at least $\xi$ from the source
-and of slope strictly less than $\xi$ from the quotient, contrary
-to the determinant inequality. This is the filtration functoriality
-used below.
-
-\begin{theorem}[A centered arithmetic slope bound]
-\label{rh-centered-slope}
-Let $f_i:E_i\to F$ be integral maps, with source ranks $r_i>0$,
-target rank $n>0$, and heights $h(f_i)\le h_i$. Suppose
-\[
- \frac1R\sum_ir_i\{\mu(E_i)-h_i\}\ge s,\quad
- \mu_{\max}(E_i)-h_i\le s+U,\quad
- \mu_{\min}(F)\ge s-H,\qquad U,H\ge0.
-\]
-Suppose the first $n\le D$ rows of the matrices $T_i$ represent
-these maps at one complex embedding, in individual source bases and
-one common target basis. Put $\nu=n/D$, $\delta_0=1-\nu$, and
-\[
- \Phi(U,H)=\begin{cases}\sqrt{UH},&U\le H,\\(U+H)/2,&U>H.
- \end{cases}
-\]
-Then
-\begin{equation}\label{rh-centered-slope-bound}
- s-\mu(F)\le P_{\rm cen}:=
-       \frac{\delta_0U+a\Phi(U,H)+\sqrt\eta(U+H)/2}{\nu}.
-\end{equation}
-\end{theorem}
-
-\begin{proof}
-Multiply the source norms by $e^{h_i}$. Their slopes decrease by
-$h_i$ and all map heights become nonpositive. For
-$\xi\in[s-H,s+U]$, let $p(\xi)$ be the total source filtration
-rank divided by $R$, and $q(\xi)$ the target filtration rank divided
-by $n$. Functoriality puts the images in a subspace of fraction
-$w(\xi)=\delta_0+\nu q(\xi)$ of the full target: include its
-$D-n$ discarded coordinates. Lemma~\ref{rh-centered-rank} gives
-\[
- \nu q\ge p-\delta_0-a\sqrt{p(1-p)}
-                            -\sqrt\eta\sqrt{w(1-w)}.
-\]
-On this interval, the upper source slope bound and its mean give
-$\int p\ge H$ and $\int(1-p)\le U$.
-If $z=\int(1-p)$ and $L_0=U+H$, Cauchy--Schwarz yields
-\[
- \int\sqrt{p(1-p)}\le\sqrt{z(L_0-z)}\le\Phi(U,H),
- \qquad \int\sqrt{w(1-w)}\le L_0/2.
-\]
-The lower target slope bound gives
-$\mu(F)\ge s-H+\int q$. Integrating the preceding dimension
-inequality cancels the terms in $\delta_0H$ and proves
-\eqref{rh-centered-slope-bound}. If $U+H=0$, the conclusion follows
-directly from the lower target slope bound.
-\end{proof}
-
-For $a=\eta=\delta_0=0$, this cost is zero. The target-cut term is
-sharp: project a full identity matrix on $D$ coordinates to $n$
-coordinates, give the discarded source directions slope $s+U$ and
-the retained ones slope $s-\delta_0U/\nu$, and use identical metrics
-on the latter and the target. The source mean is $s$, the map has
-height zero, and the target slope deficit is $\delta_0U/\nu$.
-This satisfies the target minimum-slope hypothesis whenever
-$H\ge\delta_0U/\nu$.
-
-The centered bound need not be the smallest when $\eta$ is small
-and $H$ is large. The GRH manuscript's proved \emph{Refined slope
-comparison} \cite{rh-companion}, under the same lattice conditions
-and $e<1$, gives
-\[
- P_{\rm ref}=\frac{A+B/2+\sqrt{AB+B^2/4}}{\nu},
- \qquad B=\eta H,
+ P_{\rm ref}=A+B/2+\sqrt{AB+B^2/4},\qquad B=\eta H,
 \]
 \[
- A=\frac{U\log(1+H/U)+2\sqrt e\{\sqrt{U(U+H)}-U\}}{1-\sqrt e}.
+ A=\frac{U\log(1+H/U)+
+             2\sqrt e\{\sqrt{U(U+H)}-U\}}{1-\sqrt e}.
 \]
-At $U=0$ set $A=0$. One may use
-$P=\min\{H,P_{\rm cen},P_{\rm ref}\}$ whenever all hypotheses hold.
-The first bound follows directly from $\mu(F)\ge s-H$.
+At \(U=0\), set \(A=0\). This can be smaller than the trace
+bound when the target squared energy is very small and \(H\) is
+large. Whenever its hypotheses hold, use
+\(\min\{P_{\rm tr},P_{\rm ref}\}\), together with any supplied
+bound from Corollary~\ref{shared-trace-bessel}.
 
-An optimal common positive rescaling of the matrices gives
+One may improve \(e\) by a common positive rescaling of the
+matrices. Completing the square gives
 \[
- e_* =\min_{t>0}\frac1R\|t\mathcal S-I_R\|_{\rm HS}^2
-       =1-\frac{M^2}{R\operatorname{tr}(\mathcal S^2)}
-       =\frac{a^2}{1+a^2}<1.
+ \min_{t>0}\frac1R\|t\mathcal S-I_R\|_{\rm HS}^2
+   =1-\frac{M^2}{R\operatorname{tr}(\mathcal S^2)}
+   =\frac{a^2}{1+a^2}<1,
 \]
-This follows by completing the square; the minimum is at
-$t=M/\operatorname{tr}(\mathcal S^2)$. Absorbing the rescaling into
-the source bases preserves the represented arithmetic maps and their
-heights, and the target isotropy defect is unchanged. The denominator
-$1-\sqrt{e_*}$ must still be retained.
+with minimum at \(t=M/\operatorname{tr}(\mathcal S^2)\).
+Absorb the factor \(\sqrt t\) into the source bases; the arithmetic
+maps and heights remain the same. The quantities \(a,\gamma,\beta,\eta\)
+are unchanged. The refined denominator \(1-\sqrt e\) must still
+be retained. Exact retained-energy inequalities and the global
+\(L^2\)-kernel formulation are proved in the GRH manuscript's
+\emph{Slope comparison} chapter \cite{rh-companion}.
 
-\subsection{A global kernel formulation}
+The ambient trace comparison in
+Corollary~\ref{shared-trace-ambient} already retains a target-rank
+cost proportional to \(U\). It also permits source restriction alone,
+as in \eqref{shared-trace-source-only}; no target compression is
+needed when the first rows are the actual arithmetic maps.
 
-Realize $H$ isometrically in $L^2(X,\mu)$, where $(X,\mu)$ is
-sigma-finite, and choose orthonormal bases of $H_i$ and $H$. Let
-$\theta_{ij}$ be the images of the source basis vectors. Put
+\subsection{What the weaker trace condition buys}
+
+The trace condition is strictly more flexible than a small squared
+target energy. For an integer \(N\ge2\), take \(n=N^3\) unit
+rank-one integral maps: \(N^2\) copies of the first coordinate
+vector and one copy of each of \(n-N^2\) further coordinate vectors.
+Then \(R=M=n\), \(a=\gamma=\Delta=0\), and
 \[
- K_i(z,w)=\sum_j\theta_{ij}(z)\overline{\theta_{ij}(w)},\quad
- K=\sum_iK_i,\quad P_H(z,w)=\sum_{a=1}^Dh_a(z)\overline{h_a(w)}.
+ Q=\operatorname{diag}
+       (N^2,\underbrace{1,\ldots,1}_{n-N^2},
+                    \underbrace{0,\ldots,0}_{N^2-1}),
 \]
-Finite expansion and Parseval give
-\begin{align*}
- M&=\int K(z,z)\,d\mu(z),\\
- \Delta&=\sum_i\left\{\iint|K_i(z,w)|^2\,d\mu(z)d\mu(w)
-                    -2\int K_i(z,z)\,d\mu(z)+r_i\right\},\\
- \eta&=\frac D{M^2}\iint\left|K(z,w)-\frac MD P_H(z,w)\right|^2
-                                                   \,d\mu(z)d\mu(w).
-\end{align*}
-Indeed, $K_i$ represents $T_iT_i^*$ and the $L^2$ norm of its
-kernel is its Hilbert--Schmidt norm. The displayed finite sums specify
-the representatives used on the diagonal. The centered integral
-retains the interference between all maps; a bound on its diagonal
-alone is not the required estimate.
+\[
+ \beta=\frac{N^2-1}{N^3}\longrightarrow0,\qquad
+ \eta=N-\frac1N\longrightarrow\infty.
+\]
+These formulas follow directly by summing the positive and squared
+deviations from \(I_n\). Give the image coordinates slope zero and
+the omitted target coordinates slope \(-H\), with unit source
+metrics. The maps have height zero, \(U=0\), and the target slope
+deficit is exactly \(\beta H\). Thus the trace bound is sharp for
+this family. This example establishes the distinction between the
+conditions; it does not construct the required arithmetic family.
 
-For theta maps the necessary input is an identity between these
-normalized kernels and the matrices of the actual integral maps.
-Every individual normalizer must be positive. An appropriate period
-or Bessel identity can supply that identification, but the numerical
-global energy estimate and the arithmetic height bounds remain
-distinct obligations.
+For the theta application, write the actual full normalized maps as
+\(T_i=c_i^{-1/2}P_i\), with every \(c_i>0\). Their source Gram
+expansion must concern these same maps and these normalizers.
+Lemma~\ref{shared-trace-spectrum} permits a direct estimate of its
+positive spectral trace. Restrict to the actual source subspaces and
+use \eqref{shared-trace-source-only} when the first rows already
+represent the arithmetic maps. If an estimate on the fully projected
+operators is preferable, Lemma~\ref{shared-trace-restriction}
+retains the actual target projection and positive retained mass.
+If the spectral estimate is supplied directly on the final maps,
+no ambient restriction loss is added.
 
-\subsection{A one-sided period bound can supply the target energy}
-
-An alternative to computing every interaction is to prove one upper
-Bessel bound for the same common target. It must be calibrated to
-the actual total mass. The following two propositions give the
-resulting energy estimate and its behavior under both source and
-target restriction.
-
-\input{shared/period-bessel}
-
-Whenever the final matrices $A_i$ in this comparison represent the
-actual arithmetic maps, Theorem~\ref{rh-centered-slope} may be applied
-to them with full target dimension equal to $n$. Its target-cut
-parameter is then zero; the retained mass and the final diagonal
-and target energies carry the cost of projection. Establishing the
-upper Bessel estimate and the same-map identification remains part
-of the arithmetic construction.
+The remaining input is quantitative: the actual source and target
+trace errors, or a stronger valid energy or period bound, must be
+small enough after multiplication by the same \(U,H\) and the final
+arithmetic weights. The integral maps, common target identification,
+positive normalizers and map-height bounds must also be supplied.
+Bounds for an average matrix alone do not estimate the average
+of these nonlinear slope costs.

@@ -56,6 +56,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Exact mean-volume supplier and finite-prime allowance | proved reduction to one normalized tower-intersection mean plus the prescribed metric/counting bridge; finite-prime allowance improves from 120 to 80, and this fixed-data volume limit requires no uniform finite convergence threshold |
 | One normalized tower test and signed determinant translation | proved exact two-polynomial elimination with block contrast, factor N/p and remainder 8/(5fq); actual anchored weights are not trace zero, and the same-tower base-test inequality remains open |
 | One calibrated upper bound for all periods | proved Bessel-to-energy and joint-restriction estimates, plus a signed orbital block quadratic-form supplier; the actual arithmetic bound, diagonal control and compatible positive normalizers remain open |
+| Direct trace slope comparison and spectral transfer | proved source-deficit and target-excess trace bounds, sharper centered source term, direct linear Bessel penalty and exact positive-spectrum transfer to the full block Gram interface; actual trace estimates and orbital convergence remain open |
+| Classical height theorem with reciprocal perturbations | verified successive-minima input and proved signed limiting deduction from actual all-point floors and cusp comparison; no uniform smoothing rate in the growing family is needed, while geometric hypotheses and uniform constants remain open |
+| Selected eigenspace degrees in the actual point-height comparison | proved signed reduction to one sum of actual small image eigenspace degrees, preserving the favourable discriminant term and exact index cancellation; the selected-sum bound, integral-model comparison and cusp mean remain open |
 
 ## Work packages
 
@@ -220,15 +223,15 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 <a id="w08"></a>
 ### W08: Global theta matching, orbital energy and norms
 
-**Required result.** Prove normalized global theta identities, exact positive word normalizers, and small centered scalar energies for the same integral maps; retain the actual common-basis and restriction identities.
+**Required result.** Prove normalized global theta identities, exact positive word normalizers, and the required source and target trace estimates for the same integral maps; retain the actual common-basis, restriction and weighted-average hypotheses. Squared-energy estimates remain sufficient alternatives.
 
 **Quantifiers and uniformity.** Common Haar measures, local normalizations, Hecke L-values and rank thresholds; estimates uniform in the scale for each accuracy.
 
 **Source interface.** `ThetaIntegralsAgree`; `LocalMatching`; `theta-integral rank-reduction identities`.
 
-**Existing manuscript coverage.** r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](../module-inventory.md).
+**Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Prove the calibrated joint period bound, equivalently the signed quadratic-form bound for the exact normalized orbital block expansion, or directly bound the aggregate diagonal and centered target energies. Retain actual lost mass, final diagonal error and normalizers after joint source/target cuts; a correlated scale integral of the final frame cost is also sufficient.
+**Next concrete task.** Prove the two trace bounds for the actual normalized period maps. The target positive spectral trace equals that of the existing full block Gram matrix; combine its signed orbital terms before taking the positive part. The source deficit needs its own bound. Carry actual source restrictions through the positive retained mass, then use the ambient target comparison, or estimate final maps directly. A suitably weighted scale integral of the final cost also suffices.
 
 **Acceptance conditions:**
 
@@ -237,12 +240,16 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - All required absolute convergence or justified iterated pairings
 - No omitted rank or level dependence
 - Total kernel mass does not control its centered variance
-- Pairwise word inequalities and the large redundancy used by that supplier are not intrinsically required when the exact aggregate energies are supplied
+- Pairwise word inequalities and their large redundancy are not intrinsically required when the exact trace costs or valid alternative energies are supplied
 - A finite symmetry can leave multiplicity-space variance; the actual retained target and metric must be preserved
-- Use actual centered source and target energies; a common optimum normalization does not prove that those energies are small
+- Use actual source and target trace errors or the stated alternative energies; optimizing a common scale does not prove that they are small
 - A common-target upper operator bound is a sufficient energy supplier only at the actual mass scale; total mass alone is insufficient
 - Remove only the proved diagonal identity cells from the signed block expansion; geometric scalar-pair terminology is not a scalar endomorphism identity on the final target
-- Joint source/target restrictions must retain their actual lost mass and diagonal energy; a centered target bound alone does not make every source map isometric
+- Restrictions retain actual lost mass and the selected source error; a target trace bound alone does not supply the source estimate
+- The trace theorem permits a positive error of small trace even when its operator norm and squared-energy error are large
+- A source-Gram spectral-tail bound supplies only the target error; source trace deficit and arithmetic slope hypotheses remain separate
+- The source orbital interface describes full period maps; their actual restrictions must be carried through the proved comparison or separately identified
+- The ambient target comparison can retain the sharper discarded-rank times source-spread cost; source-only restriction needs its actual positive retained mass
 
 <a id="w09"></a>
 ### W09: Automorphic spectrum, finite-group characters and counting
@@ -274,7 +281,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Prove the single normalized Grassmannian base-test bound on the selected towers and the same-tower comparison in the prescribed metric. Exact elimination gives the all-weight intersection bound with block contrast, factor N/p and test remainder 8/(5fq). Equal component volumes then supply the mean with finite-prime allowance 80. Supply the separate finite section-rank/surplus cost and retain signed determinant, type-index and discarded-degree corrections.
+**Next concrete task.** Bound the sum of normalized degrees of the selected small image eigensublattices at actual points, with the prescribed metric and integral commensurability comparison. This supplies the all-point height floor. Establish the signed cusp/metric comparison, use the classical base-test and tower reductions, and separately supply the finite section-rank/surplus cost.
 
 **Acceptance conditions:**
 
@@ -294,6 +301,11 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The two scalar coefficients are eliminated only between the selected-weight polynomial and base test in the same tower, cutoff and metric
 - Anchored weights need not have zero total sum; central translation incurs the exact cutoff determinant height
 - The normalized base-test lower bound remains a geometric hypothesis; semipositivity does not fix a metric constant or establish it automatically
+- Relative semipositivity and generic ampleness do not themselves give a numerical point-height floor
+- A lower essential minimum alone has the wrong direction for the desired lower intersection bound; the all-point floor controls all successive minima
+- Reciprocal perturbations and a limsup upper comparison suffice; each smoothing threshold may depend on the perturbation while remaining uniform over points
+- The selected small-eigenspace degree sum is a sufficient arithmetic target; the source universal logarithmic maximum-tangent-slope interface is stronger than this use requires
+- A total Faltings-height lower bound or the inspected classical tangent-slope envelope does not imply the required logarithmic slope interface; the exact integral-model and pi-metric comparisons cannot be skipped
 
 <a id="w11"></a>
 ### W11: Weighted slope comparison and the complete average budget
@@ -306,7 +318,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Insert the one-mean section-degree bounds and the minimum of the valid frame penalties into the same normalized discrepancy. The centered comparison has no defect-independent loss, but its square-root target-energy term can be larger. Preserve signed cancellation before the fixed local average and positive part.
+**Next concrete task.** Combine the one-mean section-degree bounds with the minimum of the valid trace, ambient and refined frame penalties for the same maps. The trace route removes squared-energy smallness as an intrinsic hypothesis; every source spread, target lower slope, retained mass and rank factor remains. Preserve signed cancellation before fixed local averaging and the positive part.
 
 **Acceptance conditions:**
 
@@ -334,9 +346,9 @@ The [adopted classical Galois substitution](../../notes/classical-galois-substit
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W10: prove the single normalized Grassmannian test bound with the same-tower comparison and prescribed metric, then the separate finite section-rank/surplus bound
+1. W10: bound the actual selected small-eigenspace degree sum with its prescribed metric/integral comparison; establish the cusp mean and the independent finite section estimate
 1. RH: bound the combined signed discrepancy in the weighted positive-part integral on the same expanded cofinal windows
-1. W06/W08: construct nonzero integral maps and exact positive normalizers, then prove the calibrated signed orbital quadratic-form bound or centered global energy estimate on those same maps
+1. W06/W08: construct the actual nonzero integral maps and positive normalizers; prove their source trace deficit and the target spectral-tail estimate through the full signed orbital Gram interface
 1. W04: supply remaining integral cohomological estimates for the growing auxiliary fields
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.

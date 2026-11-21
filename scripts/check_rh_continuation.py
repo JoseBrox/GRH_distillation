@@ -22,6 +22,8 @@ NAMES = [
     "finite-symmetry-energy", "frame-degree-compatibility",
     "rh-centered-frame-bridge", "mean-volume-supplier",
     "centered-global-energy-reduction", "tower-intersection-reduction",
+    "one-sided-frame-slope", "base-test-height-supplier",
+    "actual-point-height-frontier",
 ]
 SCRIPTS = {
     name: "scripts/check_" + name.replace("-", "_") + ".py"
@@ -67,6 +69,7 @@ def main():
     # Only a local lookup is built; no source file is printed.
     atlas_blobs = {m[0]: m[1] for m in atlas["modules"]}
     source_paths, source_ranges, hashed_ranges = set(), set(), set()
+    primary_reference_paths = set()
     artifact_paths, certificate_hashes = set(), {}
     for name in NAMES:
         cert_path = f"certificates/{name}.json"
@@ -89,6 +92,14 @@ def main():
             artifact_paths.add(script)
         if "source_atlas_sha256" in cert:
             assert digest(atlas_bytes) == cert["source_atlas_sha256"]
+        references = list(cert.get("primary_references", []))
+        if isinstance(cert.get("primary_reference"), dict):
+            references.append(cert["primary_reference"])
+        for reference in references:
+            data = check_file(reference["path"], reference["sha256"])
+            primary_reference_paths.add(reference["path"])
+            if "bytes" in reference:
+                assert len(data) == reference["bytes"]
         for source_key in ["upstream", "source"]:
             metadata = cert.get(source_key, {})
             if isinstance(metadata, dict):
@@ -190,6 +201,7 @@ def main():
         "distinct_pinned_source_files": len(source_paths),
         "distinct_bounded_ranges": len(source_ranges),
         "distinct_ranges_with_recorded_hashes": len(hashed_ranges),
+        "primary_reference_files_checked": len(primary_reference_paths),
         "current_note_and_script_files": len(artifact_paths),
         "current_build_sources": len(build_sources),
         "reviewed_artifacts": len(review["artifacts"]),

@@ -37,10 +37,16 @@ def main():
     common = sorted(set(s["path"] for s in builds["rh"]["sources"]) &
                     set(s["path"] for s in builds["grh"]["sources"]))
     fragments = [p for p in common if p.startswith("paper/shared/")]
-    for route in ["rh", "grh"]:
-        for fragment in (ROOT/"paper/shared").glob("*.tex"):
-            name = str(fragment.relative_to(ROOT))
-            assert name in common, ("A declared common proof is missing from a route", route, name)
+    manifest = read("paper/shared/manifest.json")
+    declared = {item["path"]:set(item["routes"]) for item in manifest["fragments"]}
+    assert len(declared) == len(manifest["fragments"]), "Duplicate proof-library declaration"
+    actual_files = {str(p.relative_to(ROOT)) for p in (ROOT/"paper/shared").glob("*.tex")}
+    assert set(declared) == actual_files, "The proof-library manifest must cover every fragment"
+    for path, expected in declared.items():
+        assert expected and expected <= {"rh", "grh"}
+        actual = {route for route, data in builds.items()
+                  if path in {s["path"] for s in data["sources"]}}
+        assert actual == expected, ("Declared proof inclusion differs from actual TeX inputs", path, actual, expected)
     aggregate = read("blueprint/proof-blueprint.json")
     progress = read("blueprint/progress.json")
     for route, key in [("rh", "rh"), ("grh", "technical")]:
@@ -73,6 +79,7 @@ def main():
               "pages": {k: v["page_count"] for k,v in builds.items()},
               "counts": {k: {x:v[x] for x in ["finished","total"]} for k,v in progress["maps"].items()},
               "common_tex_inputs": common, "common_proof_fragments": fragments,
+              "proof_library_manifest": {"path":"paper/shared/manifest.json", "sha256":sha("paper/shared/manifest.json")},
               "local_links_checked": links,
               "build_certificates": {route:sha(f"certificates/{route}-build.json") for route in builds},
               "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}

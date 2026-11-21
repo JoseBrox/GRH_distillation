@@ -296,45 +296,55 @@ Thus the mean height $\overline h=\sum_Zw_Zh_Z/\sum_Zw_Z$,
 with the actual weights $w_Z>0$, suffices, with explicit
 section errors. A separate negative-height moment is unnecessary.
 
-Summing the volume comparison first cancels its component degrees
-against the weights $w_Z$. With the required volume lower bound, equal
-component volumes control the mean height directly. The tower calculation
-replaces its two scalar coefficients by one test intersection and a signed
-determinant term.
-The test's lower bound and the section remainder still need uniform
-control for the growing family. Centering the weights incurs a signed
-determinant term; anchoring one entry at zero does not remove that term.
+Summing the volume comparison cancels component degrees against the
+weights $w_Z$. With the required volume lower bound, equal component
+volumes control the mean height directly. Two scalar coefficients can
+then be replaced by one test intersection and a signed determinant term.
+Under the prescribed positivity conditions, Zhang's height inequality
+reduces the test bound to lower heights for all points, including the
+boundary, and a prescribed cusp correction~\cite{yuan-zhang}.
+Those geometric inputs and the section remainder must still be uniform.
+Anchoring one weight entry at zero does not remove the determinant term.
 
-\subsection*{Two energies for all the maps}
+\subsection*{Two trace errors for all the maps}
 
-Let $T_i$ be the actual normalized complex maps, with source dimensions
-$r_i$, total dimension $R=\sum_i r_i>0$ and common target dimension $D>0$.
-Put
+Let $T_i$ represent the actual normalized maps, with total source rank
+$R>0$ and final target rank $D>0$, in one common target basis. Put
 \[
- Q=\sum_iT_iT_i^*,\quad M=\operatorname{tr}Q,\quad
- \Delta=\sum_i\|T_i^*T_i-I\|_{\mathrm{HS}}^2,\quad
- V=\left\|Q-\frac MD I\right\|_{\mathrm{HS}}^2.
+ \mathcal S=\bigoplus_iT_i^*T_i,\qquad
+ Q=\sum_iT_iT_i^*,\qquad M=\operatorname{tr}Q>0,
 \]
-Here the squared Hilbert--Schmidt norm is the sum of the squared
-absolute values of matrix entries in orthonormal bases. The first
-energy measures departure from isometries; the second measures how
-unevenly their images fill the target. Since $M\ge R-\sqrt{R\Delta}$,
-the condition $\Delta<R$ ensures $M>0$, and
-the exact errors entering the slope comparison are
 \[
-                         e=\Delta/R,\qquad \xi=DV/M^2.
+ \gamma=\frac{\operatorname{tr}((M/R)I_R-\mathcal S)_+}{M},
+ \qquad
+ \beta=\frac{\operatorname{tr}(Q-(M/D)I_D)_+}{M}.
 \]
-Two aggregate estimates can therefore replace separate inequalities for
-every pair of maps. A simpler sufficient target is one upper bound for
-all periods together:
+For a self-adjoint matrix, the trace of its positive part is the sum
+of its positive eigenvalues. The first error measures source mass
+below its uniform average; the second measures target mass above its
+uniform average. Both allow large errors on sufficiently little mass.
+
+Subtract a stated finite upper bound on each map's height from its source
+slopes. Suppose their mean, counted with multiplicity, is at least $s$,
+every source slope is at most $s+U$, and
+every target slope is at least $s-H$, with $U,H\ge0$. Then
 \[
- \sum_i\|T_i^*h\|^2\le\alpha\|h\|^2\quad\text{for every }h
- \qquad\Longrightarrow\qquad \xi\le\frac{\alpha D}{M}-1.
+                s-\mu(F)\le\min\{H,(\gamma+\beta)(U+H)\}.
 \]
-Indeed, $Q\le\alpha I$ gives $\operatorname{tr}(Q^2)\le\alpha M$.
-The useful bound must be close to $\alpha=M/D$; positivity or total
-mass alone does not give it. It must concern the same integral maps,
-period normalization and retained spaces as the degree comparison.
+The proof compares corresponding subspaces in the slope filtrations.
+If their normalized dimensions are $p$ and $q$, a trace comparison
+gives $p-\gamma\le q+\beta$. Integrating over $[s-H,s+U]$ proves
+the bound. The detailed theorem also retains a sharper source term
+when the source slopes occupy a shorter range.
+
+The required trace estimates must hold for the same integral maps and
+normalizations. They can be supplied before the source and target
+restrictions, provided the actual lost mass is carried through the
+proved compression formulas. For the target error, a bound on the
+positive spectral tail of the full joint Gram matrix suffices before
+those restrictions. A compatible orbital expansion is one way to seek
+that bound; the source error needs its own estimate. Positivity and
+total mass alone do not give small trace errors.
 
 \subsection*{Average the losses before bounding them}
 
@@ -352,7 +362,7 @@ Here $D_j$ is the normalized arithmetic discrepancy averaged over
 translations, $C_j$ the signed companion contribution, and $R_j\ge0$
 the explicit transfer errors. All three must come from the same data.
 It suffices to put $B_j$ in place of $H_j$ in~\eqref{window}, retaining
-its signs until after the local average. The map energies can likewise
+its signs until after the local average. The trace costs can likewise
 be bounded jointly over the construction and the scale. Their correlation
 with source slope spread, target height gap and retained ranks survives
 this averaging; a separate worst-case estimate at every scale is stronger
@@ -368,21 +378,18 @@ Choose the auxiliary characters and levels, then control the relevant
 cohomological errors. Algebraic $K$-theory supplies a shorter route to
 the coarse bound. Some integral and complementary-parity bounds remain.
 \item \textbf{Integral maps and analytic norms.}
-Construct nonzero theta maps, establish their finite-prime divisibility,
-and bound their archimedean norms. Local positivity and several exact
-identities are proved; the required global estimates in growing
-dimensions are still being assembled.
+Construct nonzero theta maps with the required finite-prime divisibility
+and trace bounds on the same final spaces. Local positivity and
+conditional identities still need global bounds in growing dimensions.
 \item \textbf{Geometric degrees.}
 Identify the lattice with its prescribed metric, prove its lower slope,
 and control the discarded-degree and index terms in~\eqref{cut}.
 \end{enumerate}
 
-Classical theorems supply the required Galois representations, with the
-necessary local identifications~\cite{blggt}. Their separate construction
-by stable theta lifting can be omitted; other uses of theta identities
-retain their roles. The three groups of data above must form one compatible
-construction. Once their combined bound meets~\eqref{window}, the proved
-analytic implication excludes the off-line zeros.
+Classical theorems with precise local identifications supply the Galois
+representations~\cite{blggt}, making their separate stable theta construction
+optional. The independent theta identities retain their roles. These inputs
+must form one compatible construction whose combined bound meets~\eqref{window}.
 
 \section{What becomes simpler for ordinary RH?}
 
@@ -479,9 +486,7 @@ real exceptional zeros does not exclude every off-line nonreal zero.
 Real nonvanishing of zeta already follows from the alternating series;
 the quadratic auxiliaries still need their stated uniform estimates.
 
-The remaining task is a compatible construction whose combined,
-normalized geometric and theta-energy bounds meet~\eqref{window}.
-Dirichlet GRH also retains the character quantifiers in~\eqref{average}.
+The compatible geometric and trace bounds in~\eqref{window} remain to prove.
 
 \begin{thebibliography}{9}
 \bibitem{dlmf}
@@ -508,5 +513,10 @@ Annales scientifiques de l'\'Ecole normale sup\'erieure
 \bibitem{announcement}
 L. Alp\"oge, \href{https://alpo.ge/remark.pdf}
 {announcement of a proof of RH and Dirichlet GRH}, 20 November 2026.
+
+\bibitem{yuan-zhang}
+X. Yuan and S.-W. Zhang, \emph{Adelic Line Bundles on Quasi-projective
+Varieties}, \href{https://arxiv.org/abs/2105.13587v9}{arXiv:2105.13587v9},
+Theorem A.5.2.
 \end{thebibliography}
 \end{document}

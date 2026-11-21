@@ -18,6 +18,9 @@ The [technical chapters](sections/), [common preamble](preamble.tex) and
 [references](references.tex) form the common library. The GRH entry assembles
 those chapters; the RH paper proves its shorter analytic and arithmetic
 comparisons and cites precisely stated shared results where appropriate.
+The [proof-library manifest](shared/manifest.json) records which fragments
+each paper includes directly. Longer alternatives can stay in the GRH
+technical text without enlarging the shorter RH exposition.
 The [shared-results index](../blueprint/shared/README.md) records the applications
 and extra hypotheses of each route. Improvements are reviewed in both routes;
 an RH-specific simplification is not silently generalized to all characters.
