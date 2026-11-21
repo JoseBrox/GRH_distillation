@@ -6,15 +6,21 @@ These results concern deductions from specified estimates. They do not disprove 
 
 Suppose a second moment at length $H$ is bounded by $D^{1+\varepsilon}H$, while the number of useful $m$th-power indices has size $H^{1/m}/\log H$ and their individual error is at most a constant times $D H^{-1/m}$. The elementary extraction gives
 
-$$|A_1(D)|^2\ll D^{1+\varepsilon}H^{1-1/m}\log H+D^2H^{-2/m}.$$
+```math
+|A_1(D)|^2\ll D^{1+\varepsilon}H^{1-1/m}\log H+D^2H^{-2/m}.
+```
 
 For $H=D^\alpha$, its exponent for $|A_1|$ is
 
-$$E_m(\alpha)=\max\left\{\frac12+\frac{m-1}{2m}\alpha,\ 1-\frac\alpha m\right\}.$$
+```math
+E_m(\alpha)=\max\left\{\frac12+\frac{m-1}{2m}\alpha,\ 1-\frac\alpha m\right\}.
+```
 
 The first expression increases and the second decreases. They meet at $\alpha=m/(m+1)$, where
 
-$$\min_{\alpha>0}E_m(\alpha)=\frac{m}{m+1}.$$
+```math
+\min_{\alpha>0}E_m(\alpha)=\frac{m}{m+1}.
+```
 
 For sixth powers this is **$6/7$**, even if the same moment estimate were hypothetically available for every positive $\alpha$. The actually stated October range is $\alpha=1+\vartheta$ with fixed $\vartheta>0$, whose limiting exponent is **$11/12$**. Changing that length alone cannot reach the square-root exponent $1/2$.
 

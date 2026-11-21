@@ -42,19 +42,19 @@ Two source files contain a comparatively short mathematical argument that can be
 
 In ordinary mathematics, if a character chi modulo N is induced by a primitive character psi modulo q, then
 
-\[
+```math
 L(s,\chi)=L(s,\psi)\prod_{\substack{p\mid N\\p\nmid q}}
              (1-\psi(p)p^{-s}).
-\]
+```
 
 For Re(s)>0, each added factor is nonzero because its second term has modulus at most p^{-Re(s)}<1. The primitive and imprimitive functions therefore have the same zeros, with multiplicities, in this open half-plane away from poles.
 
 The primitive completed function satisfies
 
-\[
+```math
 \Lambda(s,\psi)=\varepsilon_\psi\Lambda(1-s,\overline\psi),
 \qquad |\varepsilon_\psi|=1.
-\]
+```
 
 Its gamma and power factors are finite and nonzero throughout 0<Re(s)<1. A zero with real part below 1/2 consequently gives a zero for the conjugate primitive character at 1-s, whose real part is above 1/2. A universal nonvanishing assertion to the right of 1/2 excludes both possibilities.
 

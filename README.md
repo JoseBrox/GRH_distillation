@@ -4,7 +4,9 @@ This project studies Levent Alpöge's announced proof of the Riemann Hypothesis 
 
 For a Dirichlet character $\chi$, the Dirichlet series
 
-$$L(s,\chi)=\sum_{n=1}^{\infty}\frac{\chi(n)}{n^s}\qquad (\operatorname{Re}s>1)$$
+```math
+L(s,\chi)=\sum_{n=1}^{\infty}\frac{\chi(n)}{n^s}\qquad (\operatorname{Re}s>1)
+```
 
 extends beyond its initial domain of convergence. The version of GRH studied here says that every zero in the open strip $0<\operatorname{Re}s<1$ lies on the line $\operatorname{Re}s=1/2$. The original source also states nonvanishing to the right of that line, with the usual exception at the pole of a principal character.
 
