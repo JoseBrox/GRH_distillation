@@ -4,6 +4,39 @@ Updated 21 November 2026. Begin with the full proof program, then read one
 bounded source contract or mathematical section. The conventional proof of
 Dirichlet GRH remains incomplete.
 
+## New reviewed continuation: RH transfer without symmetry
+
+The [direct RH comparison](rh-direct-transfer.md) supersedes the proposed
+search for exact pooled weight symmetry. The source's common sparse top set
+forces separated top and non-top weights, so exact pooled symmetry is
+impossible, even for first moments. The [source proof](rh-weight-symmetry.md)
+records the precise eventual range and the verified contracts.
+
+The successful replacement keeps the existing source design. Positivity of
+the complete primitive-character kernel, including ramified primes, permits
+a one-sided comparison with the lower endpoint of the thick weights.
+Averaging translations before bounding this perturbation removes both the
+field-degree and inverse-density factors from that error. The existing
+large-scale QRH bound controls the actual thin samples. Thus the RH transfer
+needs no symmetry assumption, no logarithmic-dispersion hypothesis and no
+new bound for the auxiliary logarithmic derivatives. The remaining central
+target is the normalized averaged arithmetic discrepancy, together with
+the already identified signed quadratic companion and negligible numerical
+errors. The same actual integral maps and geometric estimates are still
+required.
+
+The [geometric refinements](rh-geometric-combination.md) preserve the
+coefficient of the section-degree error under descent, replace individual
+lower height bounds by two weighted height moments, and average the sharper
+frame cost before taking estimates. The [transport theorem](transport-symmetry-defect.md)
+is retained as an alternative for other constructions; its absolute
+majorant is too large for the current sparse-top weights.
+
+These results have independent mathematical reviews and exact supplemental
+checks. Source-byte checks are distinct from proof checks; no new Lean build
+was run. The notes and certificates form a complete early checkpoint while
+the main manuscript, short guide and blueprints are being reorganized.
+
 ## Full-proof structure is now the starting point
 
 - [Full proof program](../blueprint/full-proof-program.md): eleven work packages,

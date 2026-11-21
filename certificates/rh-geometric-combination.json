@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "repository": "jsmorph/rh",
+  "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "source_files": [
+    {
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/Divisors/CovolXOfCovol.lean",
+      "git_blob_sha1": "4ed4695093989e1f18246a3244b79102db6c548e",
+      "sha256": "f40c762ed8c2b18311d604540c15613e4a5969b1395dcab59b2854584fb6d3ae",
+      "inspected_ranges": [
+        [
+          65,
+          131
+        ],
+        [
+          133,
+          159
+        ]
+      ],
+      "bytes": 15459,
+      "line_count": 294
+    },
+    {
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LowerBoundOfAllEstimates.lean",
+      "git_blob_sha1": "4d30dd405b7d5b26d61d37507a095cc7ef426dc5",
+      "sha256": "111bbcfa0022d90c5aebb3d52247857c8f10ff9269cc369f5d2eaae8a76637d9",
+      "inspected_ranges": [
+        [
+          18,
+          51
+        ],
+        [
+          65,
+          105
+        ]
+      ],
+      "bytes": 7019,
+      "line_count": 125
+    }
+  ],
+  "note": "notes/rh-geometric-combination.md",
+  "note_sha256": "9805fcfb4b22a2f01e63549553b3966f6713cba436c3802b742338404f48a20d",
+  "script": "scripts/check_rh_geometric_combination.py",
+  "script_sha256": "d4b9b5f431a13d75fea92987f50103f3443fcf8874b725894a6e178b26d2d12b",
+  "exact_checks": {
+    "rational_covering_descent_cases": 3600,
+    "sharp_two_moment_models": 19,
+    "covering_rearrangement": true,
+    "constant_seven_extremal_family_and_limit": true,
+    "component_optimization_derivatives": true,
+    "cauchy_schwarz_square_identity": true,
+    "log_perspective_hessian": true,
+    "zero_source_spread_limits": true
+  },
+  "independent_review": {
+    "status": "PASS",
+    "reviewer": "rh_source_symmetry",
+    "scope": "Sections 1--3: normalized-rank descent and sharpness; two-height-moment optimization, equality cases and K* <= K0; weighted refined-frame inequalities, denominators and zero cases. Refined frame statement matched to manuscript qrh-sharper-slope.",
+    "limits": "The reviewer did not independently re-download the geometric source files or audit upstream geometric suppliers. Section 4 is a substitution into the separately reviewed direct-transfer result."
+  },
+  "scope": "Pinned source integrity and exact symbolic/rational supplementary checks. Full ordinary proofs are in the note. No Lean build, kernel replay, geometric supplier verification, or uniform RH estimate is asserted."
+}
