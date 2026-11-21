@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "status": "PASS",
+  "scope": "Readable RH visual map, direct public links, generated counts and optional companion arrow; no mathematical node status was changed.",
+  "baseline_commit": "447b7224e111d0acbec9b454ea3b63d35080e608",
+  "counts": {
+    "rh": "6/9",
+    "grh": "17/31"
+  },
+  "status_and_dependency_preservation": {
+    "same_node_ids_and_statuses": true,
+    "same_mathematical_edges": true,
+    "optional_edge": "rh_companion -> rh_bound; already an optional supplier in the previous mathematical program"
+  },
+  "visual_review": {
+    "reviewer": "parent",
+    "inspected": [
+      "build/blueprint/rh.png",
+      "build/blueprint/overview.png",
+      "blueprint/grh/proof.png"
+    ],
+    "findings": "Readable labels and counts, no clipped nodes or text; the RH optional arrow is dashed and labelled. The technical GRH map remains a detailed view with many arrows."
+  },
+  "artifacts": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "918f9f6bc857f47634831cb43e32ef8d5233aa069801ebca3889561f918c5604"
+    },
+    {
+      "path": "README.md",
+      "sha256": "841f4830747e81de7d3cb73e08a5d22d9c7f3292b5e63002fb188a1078b76a6b"
+    },
+    {
+      "path": "blueprint/rh/README.md",
+      "sha256": "9d8f08e37b9205992e7ee62a60278af44d1de7f6532464470b25292bdf37c5ad"
+    },
+    {
+      "path": "blueprint/rh/map.json",
+      "sha256": "ec1a65d4dd5c2152c1b2316ab3bc5b7573abba5eedb0195b204acb66e57325a3"
+    },
+    {
+      "path": "blueprint/rh/proof.svg",
+      "sha256": "736c0c84c2bdf0a672ceeb58606619849166f00038ac3d7453a4e6a9d8573d82"
+    },
+    {
+      "path": "blueprint/rh/proof.png",
+      "sha256": "57b3adc215e45dda6366c0ac2bf94e00eaa1cb92ab35a6796e05f0107aa425d0"
+    },
+    {
+      "path": "blueprint/grh/proof.svg",
+      "sha256": "6143cee9a526d2cf07dd1a99dcfef609463d4c2cc20d009efd971f965f160ca0"
+    },
+    {
+      "path": "blueprint/grh/proof.png",
+      "sha256": "95ce324d2935bdaae22f0c7eff7a83e9d7f4624b0af32e035d1cd45e08aae520"
+    },
+    {
+      "path": "blueprint/overview.svg",
+      "sha256": "a2e049c8ac5cb61e7015463a4b2432c7f715393c340c60fac077b7db50401b8f"
+    },
+    {
+      "path": "scripts/build_blueprint.py",
+      "sha256": "b515fb7e8a36371a40632d40448606e0fcae79e6d17e298ef193e2fcf113c1ea"
+    },
+    {
+      "path": "scripts/build_route_blueprints.py",
+      "sha256": "b56378280a1127c8843fdbe5aca3439ceccd8f490ffe89081fd8dca6c82ba1d3"
+    }
+  ],
+  "limits": "Navigation and rendering verification only. Written conditional implications and cited inputs do not complete RH or GRH."
+}

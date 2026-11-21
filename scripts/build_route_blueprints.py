@@ -100,7 +100,8 @@ def main():
     paths = ["paper/grh/main.tex", "blueprint/rh/map.json", "blueprint/rh/program.md",
              "blueprint/grh/map.json", "blueprint/grh/program.json", "blueprint/grh/program.md",
              "blueprint/grh/field-ledger.md", "blueprint/progress.json", "blueprint/progress.md",
-             "blueprint/rh/proof.svg", "blueprint/grh/proof.svg", "certificates/node-completions.json"]
+             "blueprint/rh/proof.svg", "blueprint/rh/proof.png", "blueprint/grh/proof.svg",
+             "blueprint/grh/proof.png", "certificates/node-completions.json"]
     certificate = {"passed": True, "scope": "Route synchronization, stable node counts and status transitions. Not verification of mathematical proofs.",
                    "artifacts": [{"path": p, "sha256": hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in paths],
                    "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),

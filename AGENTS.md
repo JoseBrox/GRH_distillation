@@ -9,6 +9,7 @@ Develop a rigorous, readable distillation of the announced GRH proof. Attribute 
 - Cite immutable source revisions. Do not infer that an imported theorem is proved merely from its name.
 - Include reproducible scripts and checkable outputs for decisive computations. Do not call an unrun computation or unbuilt Lean project verified.
 - Commit coherent checkpoints to `main` as ready, as authorized by the owner. Never force-push or discard unrelated work.
+- Report the current finished/total node counts for both the RH and GRH maps in every user-facing turn. Announce any newly completed existing node, and distinguish such completion from adding or reorganizing nodes.
 - Exclude generated TeX byproducts. Include final TeX sources and compiled PDF.
 - Do not invent missing earlier work. Reconcile recovered material if it becomes available.
 

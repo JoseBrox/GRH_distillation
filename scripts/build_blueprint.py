@@ -72,7 +72,10 @@ def interface_graph(spec: dict, colors: dict) -> list[str]:
     """Render the curated arrows; invisible edges only order layout rows."""
     ids = {n["id"] for n in spec["nodes"]}
     assert len(ids) == len(spec["nodes"]), "Duplicate work-interface id"
-    lines = graph_header(spec["title"])
+    finished = sum(node["status"] in {"written", "cited"} for node in spec["nodes"])
+    caption = (spec["title"] + "\n" + f"{finished}/{len(ids)} nodes written or cited"
+               + " — stated hypotheses remain necessary")
+    lines = graph_header(caption)
     layout = spec.get("layout", {})
     if layout:
         lines.append(f'graph [nodesep={q(str(layout["nodesep"]))}, ranksep={q(str(layout["ranksep"]))}];')
@@ -85,9 +88,12 @@ def interface_graph(spec: dict, colors: dict) -> list[str]:
                               for part in title.split("\n"))
         label = title + "\n" + c["label"]
         lines.append(f'{q(node["id"])} [label={q(label)}, fillcolor={q(c["fill"])}, color={q(c["border"])}, fontcolor={q(c["text"])}];')
+    optional_edges = {tuple(edge) for edge in spec.get("optional_edges", [])}
+    assert optional_edges <= {tuple(edge) for edge in spec["edges"]}
     for source, target in spec["edges"]:
         assert source in ids and target in ids, "Missing edge endpoint"
-        lines.append(f"{q(source)} -> {q(target)};")
+        attributes = ' [style=dashed, label="optional", fontsize=9]' if (source, target) in optional_edges else ""
+        lines.append(f"{q(source)} -> {q(target)}{attributes};")
     rows = spec.get("ranks", [])
     for row in rows:
         assert all(n in ids for n in row)
@@ -128,6 +134,7 @@ def main() -> None:
         directory.mkdir(exist_ok=True)
         for suffix in [".dot", ".svg"]:
             (directory / ("proof" + suffix)).write_bytes((OUT / (name + suffix)).read_bytes())
+        (directory / "proof.png").write_bytes((BUILD / (name + ".png")).read_bytes())
 
     modules = [dict(n) for n in allocation["nodes"]]
     known = {n["path"] for n in modules}
