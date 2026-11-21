@@ -52,7 +52,7 @@ the actual place/level data and `P5.IsData`, it supplies one real constant
 \texttt{D.formLev}(w;F,F')
 =C_{\mathrm{st}}\,
 \texttt{P5.form}\bigl(
- \texttt{P5.act}(\texttt{P5.RRi}(L,st,0,\texttt{D.positionted}\(w\)))\Phi,
+ \texttt{P5.act}(\texttt{P5.RRi}(L,st,0,\texttt{D.positionted}(w)))\Phi,
  \Phi'\bigr).
 \]
 

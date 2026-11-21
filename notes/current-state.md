@@ -2,6 +2,27 @@
 
 Updated 21 November 2026. Start here, then open one relevant mathematical module.
 
+## Proof-wide planning checkpoint
+
+The complete pinned local Lean source has now been downloaded to an ignored
+local checkout and verified without printing the source into conversation.
+There are 175,187 local files, 753,261 distinct local import edges, no import
+cycles, and full reachability from Main, with import depth 203. The
+[complete source atlas](../blueprint/lean-source-atlas.md) and its compressed
+index preserve this fresh computation. External package internals and
+term-level proof dependencies are outside this import inventory.
+
+The [endpoint review](lean-endpoint-backbone.md) and
+[global-input review](lean-global-inputs.md) expose essential branches absent
+from the earlier manuscript overview: Galois/local compatibility, stable
+nonzero theta-lift existence, global theta-integral matching, and geometric
+Hodge-bundle/log-covolume estimates. The source endpoint requires one coherent
+family and selections; its bundle fields cannot be solved on unrelated data.
+The earlier list of four global bottlenecks is therefore not a complete
+source-wide plan. The next priority is the full mathematical work-package
+ledger and proof graph, before treating any one local module as the whole
+remaining argument.
+
 ## Recovery is complete for the supplied material
 
 The three attachments supplied again in this session are byte-identical to
