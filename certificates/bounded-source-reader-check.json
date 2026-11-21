@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-21",
+  "scope": "Source-reader operation, bounds, and source-byte checks; no mathematical proof check or Lean compilation.",
+  "script_sha256": "baffe04c50706b2ae7e174cf0b9f59333bfa3bf89501c4967aec944345672cd0",
+  "checks": [
+    {
+      "check": "pinned declaration search",
+      "passed": true,
+      "exit_code": 0,
+      "output_bytes": 711
+    },
+    {
+      "check": "bounded cached excerpt",
+      "passed": true,
+      "exit_code": 0,
+      "output_bytes": 804
+    },
+    {
+      "check": "oversized excerpt rejection",
+      "passed": true,
+      "exit_code": 2,
+      "output_bytes": 262
+    },
+    {
+      "check": "out of range rejection",
+      "passed": true,
+      "exit_code": 1,
+      "output_bytes": 74
+    },
+    {
+      "check": "mismatched expected hash rejection",
+      "passed": true,
+      "exit_code": 1
+    }
+  ]
+}

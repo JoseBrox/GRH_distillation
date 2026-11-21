@@ -31,3 +31,18 @@ The dates distinguish the approaches; they do not imply progressively stronger c
 ## Our contributions
 
 The exposition, mathematical reconstructions, checks, and limitations developed here are distinct from the original announced proof. A proof of a reduction is not a verification of its difficult input. Cite each imported result and state every unresolved input explicitly.
+
+## Reading one source at a time
+
+Start from the [current continuation checkpoint](../notes/current-state.md).
+The bounded reader checks a selected file against its pinned Git blob before
+showing a declaration search or an explicitly requested line range:
+
+```sh
+python scripts/source_excerpt.py --source lean/src/Main.lean --search theorem
+python scripts/source_excerpt.py --source lean/src/Main.lean --lines 1:12
+```
+
+The file is cached locally, not copied into the conversation in full. Search
+output is limited to 25 matches; excerpts are limited to 120 lines and 12,000
+bytes. A source-byte check is not a proof check or a Lean build.

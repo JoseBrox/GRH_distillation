@@ -11,3 +11,11 @@ Develop a rigorous, readable distillation of the announced GRH proof. Attribute 
 - Commit coherent checkpoints to `main` as ready, as authorized by the owner. Never force-push or discard unrelated work.
 - Exclude generated TeX byproducts. Include final TeX sources and compiled PDF.
 - Do not invent missing earlier work. Reconcile recovered material if it becomes available.
+
+## Bounded continuation
+
+- Start from `notes/current-state.md` when present and the relevant resumption card in `notes/recovery-crosswalk.md`. The archive is a baseline, not a file to reload into conversation.
+- Never return a complete large source, export, manuscript, registry, or connector response to conversation. Download and analyze large artifacts locally; report the specific conclusion and its verification scope.
+- Locate a declaration or label first, then read a bounded range. `scripts/source_excerpt.py` verifies one pinned source before printing a bounded search or excerpt. For other sources, record the immutable revision, file hash, and exact line ranges beside the result.
+- Keep mathematical claims, dependencies, counterexamples, and verification evidence in version-controlled files. Update the current checkpoint and commit coherent progress to `main` promptly, without force-pushing.
+- Bounded output is a context-management measure, never a reason to skip a decisive proof check. Distinguish preserved historical evidence, checks rerun now, cited external verification, and open obligations.
