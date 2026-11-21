@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "claim": "Square-spaced finite upper tables supply the same positive-part scale-averaged analytic criterion, with the explicit decaying error.",
+  "note": {
+    "path": "notes/square-grid-sampling.md",
+    "sha256": "e6d7fdf90277086bf0de36a8b62d28f9dae54aa4f8bfeb2efba3388e9badfcf3"
+  },
+  "checker": {
+    "path": "scripts/check_square_grid_sampling.py",
+    "sha256": "ab8cb57cf2860628ec603313232b460b5d7ec099ce60b4323f287aefc632a633"
+  },
+  "manuscript_fragment": {
+    "path": "paper/shared/square-grid-sampling.tex",
+    "sha256": "dfe970ea4dd2b6c60bd632505afd17332d011dbddfdfe1d37f76d348b722395c"
+  },
+  "proof_dependencies": [
+    {
+      "path": "paper/sections/recovered/03-sec-one-sided.tex",
+      "ranges": [
+        {
+          "start": 337,
+          "end": 381,
+          "sha256": "ce3e87093500a6e5235d7efd687f7f8832ec60c33d8b8bce154eb4dbfeca0fcf"
+        }
+      ],
+      "reuse": "Same bounded analytic premise as the integer-table checker."
+    },
+    {
+      "path": "paper/rh/sections/01-introduction.tex",
+      "ranges": [
+        {
+          "start": 31,
+          "end": 60,
+          "sha256": "96606f00a60113d4b636dc162c243ed3b1c21ab0d35f87b2b692e8e97c759c63"
+        }
+      ],
+      "reuse": "Same bounded analytic premise as the integer-table checker."
+    }
+  ],
+  "dependency_provenance": "The bounded analytic premises reuse the published integer-table certificate's exact excerpt hashes; no temporary local Git commit is used.",
+  "checks": {
+    "exact_rational_rows": 266,
+    "zero_weight_integral_upper_endpoints": 122,
+    "finite_window_and_cell_weight_cases": 660,
+    "rational_square_distance_cases": 720,
+    "exact_signed_cancellation_cases": 41,
+    "positive_part_cases": 451,
+    "symbolic": {
+      "tail_integral": "PASS",
+      "square_cell_weight": "PASS",
+      "strict_requirement": "delta=theta-1/2>0",
+      "error_coefficient": "2*C*(d_h+d_(h/2))"
+    }
+  },
+  "independent_reviews": [
+    {
+      "reviewer": "/root",
+      "status": "PASS",
+      "scope": "Complete shared proof: one-sided derivative, exact positive row mass, error constant and tail, h=0, full last-cell weight, finite table endpoints, fixed-accuracy cofinal square windows and subpolynomial acceptance criterion."
+    },
+    {
+      "reviewer": "/root/geometric_simplify",
+      "status": "PASS",
+      "scope": "Complete written note and compact theorem: weights, final positive cell, h=0, finite table coverage, delta>0 tail, fixed analytic data, cofinal square windows, signed cancellation, optional pointwise criterion. Explicit domain and zero-weight endpoint precisions incorporated."
+    }
+  ],
+  "limits": [
+    "Universal proofs are in the note and TeX fragment; finite cases supplement them.",
+    "No signed dyadic filter is applied.",
+    "Every sampled square must have its actual arithmetic comparison.",
+    "No new arithmetic, geometric, spectral or Selmer estimate is supplied.",
+    "No zero computation or Lean replay is performed.",
+    "Final document build and visual review are separate."
+  ]
+}

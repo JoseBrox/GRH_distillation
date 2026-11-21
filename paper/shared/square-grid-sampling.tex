@@ -1,0 +1,109 @@
+\subsection{Finite comparisons at square arguments}
+\label{shared-square-sampling}
+
+The arithmetic objects need only be supplied at finitely many squares
+in each selected interval. The averaging remains positive and uses the
+original signed arithmetic budget.
+
+Let \(H:[1,\infty)\to\mathbb R\) be locally absolutely continuous, with
+\begin{equation}\label{shared-square-derivative}
+ H'(x)\le C(1+\log x)^2\quad\hbox{almost everywhere},\qquad C\ge0.
+\end{equation}
+Every fixed finite combination of corrected prime sums has even the
+corresponding absolute derivative bound, for some finite \(C\).
+Indeed the prime-term derivatives have absolute value at most
+\(\sum_{m\le x}\log m/m\le\log x(1+\log x)\);
+the correcting derivatives are constants or \(-\log x+\gamma\).
+New summands vanish at their integer endpoints, giving continuity.
+Put \(\mathcal A_hH(x)=h^{-1}\int_0^hH(xe^v)\,dv\) for \(h>0\),
+and \(\mathcal A_0H=H\).
+
+For a table \(B(k^2)\), define
+\[
+ \begin{aligned}
+ a_{n,k}(h)&=\frac1h
+       \log\frac{\min\{(k+1)^2,e^hn^2\}}{k^2}
+       \quad(n\le k<e^{h/2}n,\ h>0),\\
+ (\mathsf A^\square_hB)(n)&=\sum_k a_{n,k}(h)B(k^2).
+ \end{aligned}
+\]
+with all other coefficients zero and
+\((\mathsf A^\square_0B)(n)=B(n^2)\).
+Each row has nonnegative entries and sum one: they are the fractions
+of \(v\in[0,h]\) for which \(k\le ne^{v/2}<k+1\).
+The last used column for \(h>0\) is \(\lceil e^{h/2}n\rceil-1\).
+
+\begin{theorem}[Square-grid tables]\label{shared-square-table}
+Fix an integer \(N\ge2\), \(b>1\), \(h\ge0\), and \(\theta>1/2\).
+Set
+\[
+ Y=N^2,\quad L=\lfloor N^b\rfloor,\quad
+ K=\lceil e^{h/2}N^b\rceil,\quad
+ w_n=\frac{n^{-2\theta}-(n+1)^{-2\theta}}{\theta}.
+\]
+Suppose \(H(k^2)\le B(k^2)\) for all integers \(N\le k\le K\).
+With \(\delta=\theta-1/2\), \(\ell=1+h+\log Y\),
+\(d_0=1\), and \(d_u=(e^u-1)/u\) for \(u>0\), one has
+\begin{equation}\label{shared-square-bound}
+\begin{split}
+ \int_Y^{Y^b}(\mathcal A_hH(x))_+x^{-\theta}\frac{dx}{x}
+ &\le \sum_{n=N}^{L}w_n(\mathsf A^\square_hB(n))_+
+       +\mathcal E(Y),\\
+ \mathcal E(Y)
+ &=2C(d_h+d_{h/2})Y^{-\delta}
+       \left(\frac{\ell^2}{\delta}
+              +\frac{2\ell}{\delta^2}+\frac2{\delta^3}\right).
+\end{split}
+\end{equation}
+The error vanishes for fixed \(C,h,\theta\), independently of the table.
+\end{theorem}
+\begin{proof}
+For \(n^2\le x<(n+1)^2\), \(0\le v\le h\), and
+\(k=\lfloor ne^{v/2}\rfloor\), one has \(k^2\le xe^v\) and
+\[
+ xe^v-k^2=e^v(x-n^2)+(n^2e^v-k^2)
+           \le2\sqrt x(e^v+e^{v/2}).
+\]
+Here \(x-n^2\le2\sqrt x\), and the same integer-part inequality
+bounds the second difference by \(2ne^{v/2}\).
+Integrate \eqref{shared-square-derivative} from \(k^2\) to \(xe^v\)
+and average over \(v\). The row coefficients give
+\[
+ (\mathcal A_hH(x))_+
+ \le(\mathsf A^\square_hB(n))_+
+       +2C(d_h+d_{h/2})\sqrt x(1+h+\log x)^2 .
+\]
+For \(h=0\), the same inequality follows directly with \(k=n\).
+All used columns lie in the supplied table. Integrating each constant
+positive part over its whole square cell gives \(w_n\).
+The extra portion of the last cell is harmless because that constant
+is nonnegative, also when \(N^b\) is an integer.
+The error is bounded by
+\[
+ 2C(d_h+d_{h/2})
+       \int_Y^\infty x^{-1-\delta}(1+h+\log x)^2\,dx
+       =\mathcal E(Y).
+\]
+The equality follows by \(x=Ye^u\) and two integrations by parts.
+\end{proof}
+
+For each fixed accuracy \(j\), choose the analytic function \(H_j\),
+\(b_j>1\), \(h_j\ge0\), and \(1/2<\theta_j<1\) before choosing its
+windows. On an unbounded set of integers \(N\), supply the table above
+and let \(S^\square_j(N)\) denote the finite sum in
+\eqref{shared-square-bound}. The condition
+\[
+ \liminf_{N\to\infty}
+       \frac{\log(1+S^\square_j(N))}{\log N}=0
+\]
+along that set implies the averaged analytic criterion on
+\([N^2,N^{2b_j}]\), since \(\log Y=2\log N\) and the error tends to zero.
+Take \(\theta_j\to1/2\), using \(G_1\) for RH or the fixed positive
+character combinations containing the target for Dirichlet GRH.
+Each \(C_j\) need only be finite; no uniformity in \(j\) is required.
+
+The tables on overlapping windows need not agree. Each entry must
+still satisfy its actual arithmetic comparison at the stated square.
+For a physical starting scale \(Y\), only \(O_h(Y^{b/2})\) entries
+are required. The positive part is taken after local averaging;
+placing it inside the row can lose signed cancellation.
