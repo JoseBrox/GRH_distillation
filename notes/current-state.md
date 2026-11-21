@@ -51,6 +51,17 @@ version removes all heights from its remaining cost, while retaining the
 actual section ranks and twist costs. A mean-volume estimate and an explicit
 rank/surplus bound still have to be supplied.
 
+The [mean-volume supplier](mean-volume-supplier.md) now isolates the
+required normalized arithmetic intersection inequality for the selected
+towers and weights, together with the prescribed norm and counting
+comparison. Equal component volumes then give the mean by exact division.
+An elementary finite-prime bound improves the additive allowance from
+120 to 80. The auxiliary volume limit fixes each datum before taking the
+section power to infinity, so it needs no uniform finite convergence
+threshold. Uniform intersection control and the separate finite section
+estimate remain unresolved; quasi-RH and no-Siegel bounds only control
+the arithmetic error parameter in that geometric inequality.
+
 The [theta-energy comparison](averaged-theta-energy.md) replaces separate
 word-pair inequalities by two exact aggregate energies. The source already
 contains the conditional bridge to the same integral maps and common target
@@ -128,9 +139,10 @@ These are exact acceptance conditions and limitations, not new constructors.
 
 ## Next mathematical work
 
-1. **Geometric core (W10).** Prove the actual mean-volume estimate and explicit
-   section-rank/surplus cost for the cuspidal lattice with its prescribed
-   Petersson metric. Use short sections to remove the independent negative
+1. **Geometric core (W10).** Prove the normalized tower-intersection bound
+   and prescribed metric/counting comparison identified in the mean-volume
+   supplier, then the explicit finite section-rank/surplus cost. Use short
+   sections to remove the independent negative
    height moment, then carry signed errors through determinant descent,
    type indices and discarded degrees. Retain positive ranks and growing-family
    uniformity.
@@ -223,6 +235,13 @@ python scripts/check_rh_weight_symmetry.py
 python scripts/check_rh_geometric_combination.py
 python scripts/check_transport_symmetry_defect.py
 python scripts/check_rh_minimal_budget.py
+python scripts/check_geometric_degree_frontier.py
+python scripts/check_averaged_theta_energy.py
+python scripts/check_rh_construction_frontier.py
+python scripts/check_finite_symmetry_energy.py
+python scripts/check_frame_degree_compatibility.py
+python scripts/check_rh_centered_frame_bridge.py
+python scripts/check_mean_volume_supplier.py
 python scripts/build_full_proof_program.py
 python scripts/build_blueprint.py
 python scripts/check_rh_continuation.py
