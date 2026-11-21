@@ -1,0 +1,623 @@
+% Independently written reductions for integration into the GRH paper.
+% Required packages: amsmath, amssymb, amsthm.
+% Required theorem environments: theorem, lemma, proposition, corollary,
+% definition, remark. Bibliography keys: OpenAIOctober, OpenAISeptember.
+
+\section{Smoothed sums and zeros of L-functions}
+\label{qr-sec-mellin}
+
+The final analytic step can be separated from the arithmetic estimates.
+This is useful because a proposed simplification must supply a precisely
+stated estimate; an analogy with a known proof does not supply that estimate.
+We first prove the implication that we shall need. The argument is related
+to the reduction in \cite[Section~3]{OpenAIOctober}.
+% Source labels: sec:reduction, eq:mobius-saving.
+
+Let $K$ be a number field, let $\mathcal O_K$ be its ring of integers,
+and let $N\mathfrak a=|\mathcal O_K/\mathfrak a|$ denote the norm of a
+nonzero integral ideal. Here a number field is a finite extension of $\mathbb Q$, and
+$\mathcal O_K$ consists of its elements integral over $\mathbb Z$.
+For clarity, a ray class group is the group of fractional ideals
+coprime to a fixed nonzero ideal $\mathfrak f$, modulo the principal
+ideals $(\alpha)$ for which $\alpha\equiv1\pmod{\mathfrak f}$
+locally at each prime dividing $\mathfrak f$, with positivity imposed
+at a chosen set of real embeddings. Locally the congruence means
+$v_{\mathfrak p}(\alpha-1)\geq v_{\mathfrak p}(\mathfrak f)$,
+where $v_{\mathfrak p}$ is the exponent of $\mathfrak p$ in a
+principal fractional ideal.
+A finite-order Hecke character $\nu$ is a homomorphism of such a
+ray class group into the complex roots of unity. We view it as a
+completely multiplicative function on integral ideals coprime to
+$\mathfrak f$ and extend it by zero to all other ideals. The least
+possible finite modulus is its conductor, and we use that modulus.
+In particular, $|\nu(\mathfrak a)|\leq1$. The ideal M\"obius function is
+defined by $\mu_K(\mathcal O_K)=1$, by $\mu_K(\mathfrak a)=0$ if a square
+of a prime ideal divides $\mathfrak a$, and by
+$\mu_K(\mathfrak p_1\cdots\mathfrak p_r)=(-1)^r$ for distinct prime ideals.
+We use the classical analytic properties of the associated $L$-function:
+its Euler product converges absolutely in $\Re s>1$, and it has a
+meromorphic continuation. The result below is an implication from these
+properties and a stated sum estimate; it does not prove that estimate.
+
+For a finite set $S$ of prime ideals, write $(\mathfrak a,S)=1$ if none
+of them divides $\mathfrak a$, and put
+\begin{equation}\label{qr-eq-deleted-L}
+ L_K^S(s,\nu)=L_K(s,\nu)
+   \prod_{\mathfrak p\in S}
+       \bigl(1-\nu(\mathfrak p)(N\mathfrak p)^{-s}\bigr).
+\end{equation}
+Every factor in this finite product is nonzero in $\Re s>0$.
+For $W\in C_c^\infty((0,\infty);\mathbb C)$ and $X>0$, define
+\begin{equation}\label{qr-eq-smooth-sum}
+ A_W(X)=\sum_{(\mathfrak a,S)=1}
+       \mu_K(\mathfrak a)\nu(\mathfrak a)
+       W(N\mathfrak a/X).
+\end{equation}
+The sum is finite, since the norm is bounded on its support.
+
+\begin{theorem}[A smoothed cancellation criterion]\label{qr-thm-mellin}
+Let $\theta\geq0$. Suppose that for every $\varepsilon>0$ and every
+$W\in C_c^\infty((0,\infty);\mathbb C)$ there is a constant
+$C_{\nu,S,W,\varepsilon}$ such that
+\begin{equation}\label{qr-eq-cancellation-input}
+ |A_W(X)|\leq C_{\nu,S,W,\varepsilon}X^{\theta+\varepsilon}
+ \qquad(X\geq2).
+\end{equation}
+Then $L_K(s,\nu)$ has no zero in $\Re s>\theta$.
+\end{theorem}
+
+\begin{proof}
+Fix a test $W$ supported in $[a,b]\subset(0,\infty)$. Since a nonzero
+integral ideal has norm at least one, $A_W(X)=0$ for $X<1/b$. Define
+\[
+ \mathcal M_W(s)=\int_0^\infty A_W(X)X^{-s}\,\frac{dX}{X}.
+\]
+This integral is locally uniformly convergent in $\Re s>\theta$.
+Indeed, for a compact subset of that half-plane choose $\delta>0$ such
+that $\Re s\geq\theta+2\delta$ there, and apply
+\eqref{qr-eq-cancellation-input} with $\varepsilon=\delta$.
+The integrand at infinity is then bounded by a constant times
+$X^{-\delta}dX/X$. Derivatives with respect to $s$ introduce fixed
+powers of $\log X$ and remain integrable. The interval near zero makes
+no contribution. Thus $\mathcal M_W$ is holomorphic in $\Re s>\theta$.
+
+The Mellin transform
+\[
+ \widehat W(s)=\int_0^\infty W(y)y^s\,\frac{dy}{y}
+\]
+is entire. For $\Re s>\max(1,\theta)$, absolute convergence of the
+Euler product permits interchange of the ideal sum and the integral.
+More explicitly, the sum of the integrals of absolute values is
+\[
+ \left(\int_0^\infty |W(y)|y^{\Re s}\,\frac{dy}{y}\right)
+ \sum_{(\mathfrak a,S)=1}
+ \frac{|\mu_K(\mathfrak a)\nu(\mathfrak a)|}{(N\mathfrak a)^{\Re s}},
+\]
+which is finite. The substitution $y=N\mathfrak a/X$ therefore gives
+\begin{equation}\label{qr-eq-mellin-identity}
+ \mathcal M_W(s)=\widehat W(s)
+       \sum_{(\mathfrak a,S)=1}
+       \frac{\mu_K(\mathfrak a)\nu(\mathfrak a)}{(N\mathfrak a)^s}
+       =\frac{\widehat W(s)}{L_K^S(s,\nu)}.
+\end{equation}
+The last equality follows by expanding the absolutely convergent
+reciprocal Euler product. The identity theorem for meromorphic functions
+now gives
+\begin{equation}\label{qr-eq-continued-product}
+ L_K^S(s,\nu)\mathcal M_W(s)=\widehat W(s)
+ \qquad(\Re s>\theta).
+\end{equation}
+At a pole this is understood as an identity of meromorphic functions.
+
+Suppose that $L_K(\rho,\nu)=0$ and $\Re\rho>\theta$. Since
+$\theta\geq0$, the factors deleted in \eqref{qr-eq-deleted-L} are
+nonzero at $\rho$, so $L_K^S(\rho,\nu)=0$. Choose a nonzero,
+nonnegative function $\phi\in C_c^\infty((1,2);\mathbb R)$ and set
+$W(y)=\exp(-\rho\log y)\phi(y)$, where $\log y$ is the real logarithm.
+This is an admissible test, and
+\[
+ \widehat W(\rho)=\int_1^2\phi(y)\,\frac{dy}{y}>0.
+\]
+But \eqref{qr-eq-continued-product}, evaluated at $\rho$, says that this
+positive number is zero. This is a contradiction.
+\end{proof}
+
+\begin{remark}\label{qr-rem-mellin-quantifiers}
+The constants in \eqref{qr-eq-cancellation-input} may depend on the
+fixed character and on the test. The test in the proof is chosen only
+after the hypothetical zero is fixed. The theorem excludes an open
+half-plane and makes no assertion at its boundary. It does not require
+an unsmoothed M\"obius estimate or a bound for $1/L_K$ near a zero.
+\end{remark}
+
+For $K=\mathbb Q$, the same proof uses positive integers, a Dirichlet
+character $\chi$, and the usual M\"obius function. Thus the bound
+\eqref{qr-eq-cancellation-input} with $\theta=1/2$, for every primitive
+Dirichlet character and every fixed test, implies GRH by
+Theorem~\ref{prim:strip-reduction}. Its functional equation and the
+imprimitive Euler factors have already been proved there. The new
+arithmetic task would be the square-root estimate itself.
+
+\section{Extracting one sum from a second moment}
+\label{qr-sec-moments}
+
+The following elementary lemma makes explicit how the size of a family
+affects the exponent obtained for one of its sums.
+
+\begin{lemma}\label{qr-lem-replicated-rows}
+Let $(A_u)_{u\in\mathcal R}$ be a finite family of complex numbers,
+and let $A$ be another complex number. Suppose there are $J\geq1$
+distinct indices $u_1,\ldots,u_J$ such that $|A_{u_j}-A|\leq E$,
+where $E\geq0$. Then
+\begin{equation}\label{qr-eq-replicated-rows}
+ |A|^2\leq\frac2J\sum_{u\in\mathcal R}|A_u|^2+2E^2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For each $j$, the triangle inequality and $(x+y)^2\leq2x^2+2y^2$
+give $|A|^2\leq2|A_{u_j}|^2+2E^2$. Average over $j$ and enlarge
+the sum of nonnegative terms to all of $\mathcal R$.
+\end{proof}
+
+\begin{proposition}\label{qr-prop-power-rows}
+Fix an integer $m\geq2$. Suppose, at parameters $D\geq2$ and $H>1$,
+that a family satisfies
+\[
+ \sum_{u\in\mathcal R(H)}|A_u(D)|^2\leq C_\eta D^{1+\eta}H
+\]
+for an arbitrarily prescribed $\eta>0$. Put $Y=H^{1/m}$ and suppose
+that $Y\geq2$. Assume there are at least $cY/\log Y$ distinct indices
+in this family at which $A_u(D)$ differs from a distinguished sum
+$A_1(D)$ by at most $C D/Y$. Then
+\begin{equation}\label{qr-eq-power-extraction}
+ |A_1(D)|^2\ll_\eta
+ D^{1+\eta}H^{1-1/m}\log H+D^2H^{-2/m}.
+\end{equation}
+The implied constant may depend on $m,c,C,C_\eta$.
+\end{proposition}
+
+\begin{proof}
+Apply Lemma~\ref{qr-lem-replicated-rows} with
+$J\geq cH^{1/m}/\log(H^{1/m})$ and $E\leq CDH^{-1/m}$.
+\end{proof}
+
+\subsection{The sextic example}
+\label{qr-subsec-sextic}
+
+We state the arithmetic hypotheses carefully to separate a proved
+deduction from its analytic input. Put
+$K=\mathbb Q(\sqrt{-3})$, $\omega=e^{2\pi i/3}$, and
+$\mathcal O=\mathbb Z[\omega]$. For $z=a+b\omega$ its norm is
+$N(z)=|z|^2=a^2-ab+b^2$.
+The ring $\mathcal O$ is Euclidean for this norm: writing a complex
+number as $x+y\omega$ and rounding $x,y$ to the nearest integers gives
+an error $u+v\omega$ with $|u|,|v|\leq1/2$, whose norm is at most
+$3/4<1$. Applied to a quotient of two elements, this gives division
+with remainder of smaller norm. Hence every ideal is principal.
+The six units are $\{\pm1,\pm\omega,\pm\omega^2\}$; their images are
+the six distinct units of $\mathcal O/(3)$. Consequently every ideal
+coprime to $3$ has a unique generator congruent to $1$ modulo $3$.
+We call this its primary generator.
+
+For a prime ideal $\mathfrak p$ not dividing $6$ and an element $u$
+not in $\mathfrak p$, the sextic residue symbol
+$(u/\mathfrak p)_6$ is the sixth root of unity whose reduction modulo
+$\mathfrak p$ equals $u^{(N\mathfrak p-1)/6}$. Set it equal to zero
+when $u\in\mathfrak p$, and extend multiplicatively in the ideal
+denominator. For the unit ideal the symbol is one for every $u$.
+These definitions are possible because the six roots of unity remain
+distinct modulo $\mathfrak p$; in particular $6$ divides
+$N\mathfrak p-1$.
+
+Fix a finite-order Hecke character $\nu$ and a finite set $S$ containing
+the primes above $2$ and $3$ and those dividing its conductor. Define
+\begin{equation}\label{qr-eq-sextic-family}
+ A_u(D)=\sum_{(\mathfrak n,S)=1}
+     \mu_K(\mathfrak n)\nu(\mathfrak n)
+     (u/\mathfrak n)_6 W(N\mathfrak n/D).
+\end{equation}
+The sum $A_1(D)$ is the sum in \eqref{qr-eq-smooth-sum}.
+
+\begin{proposition}[Conditional sextic estimate]\label{qr-prop-sextic}
+Assume the following two inputs for this family.
+First, for each sufficiently large $Y$, at least $c_S Y/\log Y$
+prime ideals outside $S$ satisfy $Y/2<N\mathfrak p\leq Y$, where
+$c_S>0$ is fixed. Second, for every fixed $0<\vartheta\leq1/10$,
+every $\eta>0$, and every fixed test $W$, one has
+\begin{equation}\label{qr-eq-sextic-ms-input}
+ \sum_{0<N(u)\leq D^{1+\vartheta}}|A_u(D)|^2
+ \ll_{\nu,S,W,\vartheta,\eta}D^{2+\vartheta+\eta}
+ \qquad(D\geq2).
+\end{equation}
+Then for every $\varepsilon>0$ and every fixed test $W$,
+\begin{equation}\label{qr-eq-sextic-conclusion}
+ A_1(D)\ll_{\nu,S,W,\varepsilon}D^{11/12+\varepsilon}.
+\end{equation}
+Consequently $L_K(s,\nu)$ has no zero in $\Re s>11/12$.
+\end{proposition}
+
+The prime-counting input is the stated consequence of the prime ideal
+theorem in this fixed field. Estimate \eqref{qr-eq-sextic-ms-input}
+is the principal input asserted in \cite[Section~3]{OpenAIOctober};
+that source also states explicit control by a finite number of
+derivatives of $W$. Its automorphic proof is not reproduced here.
+The following proof establishes the implication from the displayed
+inputs, independently of that automorphic proof.
+% Source labels: thm:ms, eq:ms, eq:prime-extract.
+
+\begin{proof}
+For a prime ideal $\mathfrak p$ outside $S$, let $p$ be its primary
+generator. The definition of the residue symbol gives exactly
+\[
+ (p^6/\mathfrak n)_6=\mathbf1_{\mathfrak p\nmid\mathfrak n}.
+\]
+Therefore the difference $A_1(D)-A_{p^6}(D)$ contains only ideals
+divisible by $\mathfrak p$.
+
+For completeness, the required counting bound is elementary in this
+field. The inequality
+$a^2-ab+b^2\geq(a^2+b^2)/2$ shows that the number of elements of
+$\mathcal O$ of norm at most $T$ is $O(T)$ for $T\geq1$. Since every
+ideal is principal, the same upper bound holds for ideals. If $W$ is
+supported in $[a,b]$, multiplication by $\mathfrak p$ identifies the
+ideals in question with ideals of norm at most $bD/N\mathfrak p$.
+If this last quantity is below one there are none; otherwise counting
+and $|\mu_K\nu|\leq1$ give, for $Y/2<N\mathfrak p\leq Y$,
+\begin{equation}\label{qr-eq-sextic-error}
+ |A_1(D)-A_{p^6}(D)|\ll_W D/Y.
+\end{equation}
+
+Put $H=D^{1+\vartheta}$ and $Y=H^{1/6}$. The selected elements
+$p^6$ have norm at most $H$ and are distinct. Indeed, equality of
+sixth powers implies equality of the principal ideals $(p)^6$,
+and unique factorization of ideals then implies equality of the
+prime ideals. By the assumed prime count there are
+$J\gg_S Y/\log Y$ such rows for large $D$.
+Lemma~\ref{qr-lem-replicated-rows} gives
+\begin{align}
+ |A_1(D)|^2
+ &\ll_{\nu,S,W,\vartheta,\eta}
+ D^{2+\vartheta+\eta}Y^{-1}\log Y+D^2Y^{-2}\notag\\
+ &\ll_{\nu,S,W,\vartheta,\eta}
+ D^{11/6+5\vartheta/6+\eta}\log D
+       +D^{5/3-\vartheta/3}.
+ \label{qr-eq-sextic-squared}
+\end{align}
+For a given $\varepsilon>0$, choose
+$\vartheta=\min(1/10,\varepsilon/5)$ and $\eta=\varepsilon/2$.
+Use $\log D\ll_\varepsilon D^{\varepsilon/2}$ and take square roots.
+The first exponent is at most
+$11/12+\varepsilon/12+\varepsilon/2<11/12+\varepsilon$;
+the second is at most $5/6$. This proves
+\eqref{qr-eq-sextic-conclusion} for large $D$. The bounded remaining
+range follows from ideal counting, after increasing the constant.
+Theorem~\ref{qr-thm-mellin} gives the zero-free conclusion.
+\end{proof}
+
+\subsection{A limitation of this second-moment argument}
+\label{qr-subsec-exponent-limit}
+
+\begin{proposition}\label{qr-prop-exponent-limit}
+For $m\geq2$ and $\alpha>0$, put
+\[
+ E_m(\alpha)=\max\left\{
+     \frac12+\frac{m-1}{2m}\alpha,\quad
+     1-\frac\alpha m\right\}.
+\]
+Then
+\begin{equation}\label{qr-eq-optimal-exponent}
+ \min_{\alpha>0}E_m(\alpha)=\frac{m}{m+1},
+ \qquad\alpha_{\min}=\frac{m}{m+1}.
+\end{equation}
+In the restricted range $\alpha\geq1$, the minimum is
+$1-1/(2m)$, attained at $\alpha=1$.
+\end{proposition}
+
+\begin{proof}
+The first affine function is strictly increasing and the second is
+strictly decreasing. Equality between them is equivalent to
+$\alpha(m+1)=m$. To the left of this intersection the second
+function is larger, and to the right the first is larger.
+Substitution proves \eqref{qr-eq-optimal-exponent} and uniqueness.
+Since $m/(m+1)<1$, the first function is the larger throughout
+$\alpha\geq1$; evaluating it at one proves the last assertion.
+\end{proof}
+
+Putting $H=D^\alpha$ in \eqref{qr-eq-power-extraction} gives, apart
+from an arbitrarily small exponent loss, the bound $D^{E_m(\alpha)}$.
+For sextic rows its best exponent over all positive row lengths would
+therefore be $6/7$. The actually supplied range
+$\alpha=1+\vartheta$, with $\vartheta>0$, has infimum $11/12$.
+Thus changing this row length alone cannot obtain exponent $1/2$
+from the two terms of \eqref{qr-eq-power-extraction}. This is a
+limitation of that particular deduction. It does not disprove a
+stronger arithmetic estimate, an alternative extraction, or GRH.
+The stronger $7/8$ conclusion stated in \cite{OpenAISeptember}
+uses additional estimates; it is not obtained by simply repeating
+the extraction above.
+
+\section{Completion and finite iteration}
+\label{qr-sec-iteration}
+
+\subsection{Removing added cube factors}
+
+A completed theta expansion can contain additional cube factors.
+Their removal is an exact algebraic step before any estimates are made.
+The following formulation retains both shared prime factors and
+possible zero values of the weights.
+
+\begin{lemma}[M\"obius inversion for cube factors]\label{qr-lem-cube-inversion}
+Let $w$ be a function on nonzero integral ideals such that
+$w(\mathcal O_K)=1$ and $w(\mathfrak b\mathfrak c)
+=w(\mathfrak b)w(\mathfrak c)$ for all ideals. Let $P:(0,\infty)
+\to\mathbb C$ satisfy $P(X)=0$ for $0<X<X_0$, for some $X_0>0$.
+Define
+\begin{equation}\label{qr-eq-cube-completion}
+ T(X)=\sum_{\mathfrak b}\frac{w(\mathfrak b)}{N\mathfrak b}
+            P\left(\frac{X}{(N\mathfrak b)^3}\right).
+\end{equation}
+Then both this sum and the following sum are finite, and
+\begin{equation}\label{qr-eq-cube-inversion}
+ P(X)=\sum_{\mathfrak d}
+       \frac{\mu_K(\mathfrak d)w(\mathfrak d)}{N\mathfrak d}
+       T\left(\frac{X}{(N\mathfrak d)^3}\right).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+A nonzero summand in \eqref{qr-eq-cube-completion} must have
+$(N\mathfrak b)^3\leq X/X_0$, so only finitely many ideals occur.
+Also $T(X)=0$ for $X<X_0$, giving finiteness of the inverse sum.
+Substitute \eqref{qr-eq-cube-completion} into its right-hand side
+and group by $\mathfrak b=\mathfrak d\mathfrak c$. Complete
+multiplicativity and multiplicativity of the norm make the coefficient
+of $P(X/(N\mathfrak b)^3)$ equal to
+\[
+ \frac{w(\mathfrak b)}{N\mathfrak b}
+       \sum_{\mathfrak d\mid\mathfrak b}\mu_K(\mathfrak d).
+\]
+For a nonunit ideal the last sum is the product of one factor
+$1-1$ for each distinct prime ideal dividing it, and is zero.
+For the unit ideal it is one. Since $w(\mathcal O_K)=1$, the
+remaining term is exactly $P(X)$.
+\end{proof}
+
+No coprimality between $\mathfrak d$ and $\mathfrak c$ is assumed.
+The proof still works when $w$ vanishes at some prime ideals.
+In contrast, discarding the added cube terms from a complex sum is
+not justified by positivity: they may cancel the other terms.
+Splitting \eqref{qr-eq-cube-inversion} at a cutoff leaves a
+remainder which must be estimated. This exact inversion is used in
+\cite[Section~5]{OpenAIOctober}.
+% Source labels: lem:cube-reduction, eq:cube-inverse.
+
+\subsection{A finite descent with an explicit gap}
+
+The next lemma isolates the elementary induction from any analytic
+construction of successor sums. The requirement that every successor
+remain in the same admissible class is part of its hypotheses.
+
+\begin{lemma}\label{qr-lem-finite-descent}
+Fix $B,a,\kappa>0$. For each $D\geq2$, let $\mathcal I(D)$ be a set
+of indices. To each index $r$ associate numbers $Q_r\geq0$ and
+$0<h_r\leq D^B$, and a set of successors
+$\mathcal C(r)\subseteq\mathcal I(D)$. Suppose that
+\[
+ h_{r'}\leq D^{-a\kappa}h_r\qquad(r'\in\mathcal C(r)).
+\]
+Assume that for every $\delta>0$ there is $C_\delta\geq1$, independent
+of $D$ and of the indices, such that
+\begin{align*}
+ Q_r&\leq C_\delta D^\delta &&\text{if }h_r\leq1,\\
+ Q_r&\leq C_\delta D^\delta
+           \left(1+\sup_{r'\in\mathcal C(r)}Q_{r'}\right)
+       &&\text{if }h_r>1.
+\end{align*}
+An empty supremum is zero. Then for every $\varepsilon>0$ there is
+$C^*_{\varepsilon,B,a,\kappa}$, independent of $D,r$, such that
+$Q_r\leq C^*_{\varepsilon,B,a,\kappa}D^\varepsilon$.
+\end{lemma}
+
+\begin{proof}
+Put $N=\lceil B/(a\kappa)\rceil$. After $N$ successor steps,
+the row parameter is at most $D^{B-Na\kappa}\leq1$.
+Fix $\varepsilon>0$, set $\delta=\varepsilon/(N+1)$, and write
+$A=C_\delta D^\delta\geq1$. Starting with the terminal bound $A$
+and applying the recurrence at most $N$ times gives
+\[
+ Q_r\leq\sum_{j=1}^{N+1}A^j
+      \leq(N+1)C_\delta^{N+1}D^{(N+1)\delta}
+      =(N+1)C_\delta^{N+1}D^\varepsilon.
+\]
+This argument is an induction on the maximum remaining number of
+steps. It is valid even with infinitely many successors, because
+the inductive bounds are uniform before each supremum is taken.
+\end{proof}
+
+In the October argument, the normalized quantity has the form
+$Q=\mathcal E(\mathcal H,X,F)/(XF)$ and $\Sigma=XF$. The admissible
+range includes $\mathcal H/\Sigma\leq D^{-\kappa}$. Its two analytic
+inputs produce successors satisfying
+\begin{equation}\label{qr-eq-source-descent}
+ \mathcal H'<\mathcal H(\mathcal H/\Sigma)^2
+       \leq D^{-2\kappa}\mathcal H,
+ \qquad\frac{\mathcal H'}{\Sigma'}\leq
+             \frac{\mathcal H}{\Sigma},
+ \qquad\Sigma'\leq\Sigma.
+\end{equation}
+The second and third inequalities preserve these displayed size and gap
+conditions, while the first provides the finite descent. Closure of the
+other data under each transformation must be established separately. The analytic
+proofs of those inputs remain separate obligations. The source
+also tracks changing smooth tests: a derivative order $m$ is
+replaced by an order at least $4m+12$, and the support interval
+enlarges in a controlled way. For a fixed number of steps these
+costs can be specified in advance. See
+\cite[Section~5]{OpenAIOctober}.
+% Source labels: prop:canonical, prop:transfer, sec:canonical-proof.
+
+\begin{proposition}[Fixed parameters cannot be varied without bounds]
+\label{qr-prop-nonuniform-kappa}
+There exists a nonnegative function $F(D,\kappa)$ such that, for every
+fixed $\kappa>0$ and every $\varepsilon>0$,
+$F(D,\kappa)=O_{\kappa,\varepsilon}(D^\varepsilon)$ as $D\to\infty$,
+but $F(D,1/\log D)=D$ for all $D\geq2$.
+\end{proposition}
+
+\begin{proof}
+Take $F(D,\kappa)=\exp(1/\kappa)$. At fixed $\kappa$ it is a constant
+in $D$, so the first estimate holds with constant $\exp(1/\kappa)$.
+Substituting $\kappa=1/\log D$ proves the second assertion.
+\end{proof}
+
+Thus a statement proved for every fixed positive gap does not itself
+control gaps tending to zero with $D$. In Lemma~\ref{qr-lem-finite-descent}
+both the number of steps and the constant may deteriorate as
+$\kappa\downarrow0$. To use a growing number of transformations one
+must prove the needed quantitative uniformity, including all weight
+and derivative costs. Proposition~\ref{qr-prop-nonuniform-kappa}
+concerns that logical issue; it is not an assertion about the
+actual arithmetic quantities of the source paper.
+
+\section{Uniform continuation for a family of functions}
+\label{qr-sec-uniform}
+
+The September paper uses a different analytic arrangement: it
+compares two estimates for a sum whose inverse Mellin representation
+contains $1/L$. We record a precise abstract version, together with
+the uniformity it requires. This is the continuation argument of
+\cite[Section~2]{OpenAISeptember}, stated without its arithmetic
+construction of the compared sums.
+% Source labels: lem:continuation-criterion, eq:uniform-saving.
+
+Let $(L_j)_{j\in\mathcal J}$ be a family of nonzero meromorphic
+functions on $\mathbb C$. Suppose none has a zero in $\Re s>1$ and
+that $1/L_j$ is bounded on every half-plane $\Re s\geq b>1$,
+with the bound allowed to depend on $j,b$. Define
+\[
+ \beta_*:=\sup\left(\{1/2\}\cup
+   \{\Re\rho:\Re\rho\geq1/2,\ L_j(\rho)=0
+                        \text{ for some }j\}\right),
+\]
+where poles are not counted as zeros. Then $1/2\leq\beta_*\leq1$.
+
+\begin{proposition}\label{qr-prop-uniform-continuation}
+Fix $\sigma_0\in(1/2,1)$ and suppose $\beta_*>\sigma_0$.
+Let $c,b_0\in\mathbb R$ be fixed. Suppose there are numbers
+$\omega,\tau$ independent of $j$ with
+$0<\omega<\beta_*-\sigma_0$ and $\tau>0$, and, for every $j$,
+a holomorphic function $H_j$ on $\Re s>\sigma_0$ such that
+$|H_j(s)-1|\leq1/2$ throughout that half-plane. Put
+\begin{equation}\label{qr-eq-gaussian-mellin}
+ f_j(Z)=\frac1{2\pi i}\int_{\Re s=2}
+       Z^{s+c}e^{(s-b_0)^2}\frac{H_j(s)}{L_j(s)}\,ds
+       \qquad(Z>0).
+\end{equation}
+Suppose functions $J_j(Z)$, defined for all sufficiently large $Z$,
+satisfy
+\begin{align}
+ |J_j(Z)|&\ll_j Z^{\sigma_0+c+\omega},
+       \label{qr-eq-first-comparison}\\
+ |J_j(Z)-f_j(Z)|&\ll_j Z^{\beta_*+c-\tau}.
+       \label{qr-eq-second-comparison}
+\end{align}
+The lower thresholds may depend on $j$. These hypotheses are
+inconsistent with $\beta_*>\sigma_0$.
+\end{proposition}
+
+\begin{proof}
+Let $\delta=\min(\beta_*-\sigma_0-\omega,\tau)>0$.
+It is independent of $j$, and $\beta_*-\delta>\sigma_0$.
+The triangle inequality gives
+\begin{equation}\label{qr-eq-uniform-power-saving}
+ |f_j(Z)|\ll_j Z^{\beta_*+c-\delta}
+ \quad\text{for all sufficiently large }Z.
+\end{equation}
+
+We also need the other endpoint of its Mellin transform. The
+integral \eqref{qr-eq-gaussian-mellin} converges absolutely, because
+on every fixed vertical strip the Gaussian has modulus a bounded
+factor times $e^{-(\Im s)^2}$. The reciprocal and $H_j$ are bounded
+on $\Re s\geq2$. For any fixed $B>2$, Cauchy's theorem on rectangles
+therefore moves the contour from $2$ to $B$. On the horizontal sides
+the Gaussian dominates all remaining factors, so their integrals
+tend to zero. Consequently
+\begin{equation}\label{qr-eq-small-scale-decay}
+ |f_j(Z)|\ll_{j,B}Z^{B+c}\qquad(0<Z\leq1).
+\end{equation}
+Together \eqref{qr-eq-uniform-power-saving} and
+\eqref{qr-eq-small-scale-decay} show that
+\[
+ F_j(s)=\int_0^\infty f_j(Z)Z^{-s-c}\,\frac{dZ}{Z}
+\]
+is locally uniformly convergent and holomorphic in
+$\Re s>\beta_*-\delta$. Near zero choose $B$ larger than the real
+parts on the compact set under consideration; near infinity use
+\eqref{qr-eq-uniform-power-saving}. Logarithmic factors introduced
+by differentiation are integrable in the same way.
+
+To identify the transform, set
+$G_j(s)=e^{(s-b_0)^2}H_j(s)/L_j(s)$ for $\Re s>1$.
+Writing $Z=e^u$ in \eqref{qr-eq-gaussian-mellin} gives
+\[
+ e^{-(2+c)u}f_j(e^u)
+   =\frac1{2\pi}\int_{\mathbb R}e^{itu}G_j(2+it)\,dt.
+\]
+The integrand $G_j(2+it)$ is continuous and integrable. The
+left-hand side is integrable in $u$: at $+\infty$ use
+$\beta_*\leq1$ and \eqref{qr-eq-uniform-power-saving}, and at
+$-\infty$ use \eqref{qr-eq-small-scale-decay} with $B>2$.
+Fourier inversion therefore gives
+$F_j(2+it)=G_j(2+it)$ for every real $t$.
+Both functions are holomorphic on $\Re s>1$, so the identity
+theorem gives $F_j(s)=G_j(s)$ throughout that half-plane.
+
+Since $|H_j|\geq1/2$, the function
+\[
+ R_j(s):=e^{-(s-b_0)^2}\frac{F_j(s)}{H_j(s)}
+\]
+is a holomorphic continuation of $1/L_j(s)$ to
+$\Re s>\beta_*-\delta$. The same $\delta>0$ works for every $j$.
+By the definition of the supremum and
+$\beta_*-\delta>\sigma_0>1/2$, some $L_j$ has a zero $\rho$ with
+$\Re\rho>\beta_*-\delta$. Its reciprocal has a pole there, in
+contradiction to this holomorphic continuation. Equivalently, the
+meromorphic identity theorem gives $L_j(s)R_j(s)=1$ throughout
+the larger half-plane; evaluating at $\rho$ gives $0=1$.
+\end{proof}
+
+The constants in the two comparisons need not be uniform in $j$.
+The positive saving $\delta$ does need to be uniform. The next
+example proves that this distinction cannot be omitted.
+
+\begin{proposition}\label{qr-prop-nonuniform-family}
+There is a family of entire functions with zero real parts having
+supremum one, although the reciprocal of each member extends
+holomorphically from $\Re s>1$ to a strictly larger half-plane.
+There is no common positive amount of extension for the whole family.
+\end{proposition}
+
+\begin{proof}
+For integers $n\geq1$, let
+\[
+ \rho_n=1-\frac1{n+2},\qquad L_n(s)=s-\rho_n,
+ \qquad\delta_n=\frac1{2(n+2)}.
+\]
+The only zero of $L_n$ is $\rho_n=1-2\delta_n$.
+Hence $1/L_n(s)$ is holomorphic on $\Re s>1-\delta_n$,
+which extends a positive distance to the left of one for each
+fixed $n$. Nevertheless $\rho_n\to1$, so the supremum of their
+real parts is one. Given any $\delta>0$, choose $n$ with
+$1/(n+2)<\delta$; then $\rho_n>1-\delta$, so the $n$th reciprocal
+cannot be holomorphic on $\Re s>1-\delta$.
+\end{proof}
+
+These are elementary entire functions, not arithmetic $L$-functions.
+Their purpose is to exhibit the quantifier error in replacing a
+common positive saving by separate savings which may tend to zero.
+In an arithmetic application, the uniform saving and the two
+comparisons in Proposition~\ref{qr-prop-uniform-continuation} must
+be established by the actual estimates. The continuation argument
+does not improve a fixed $11/12$ or $7/8$ half-plane to $1/2$
+without those new estimates.

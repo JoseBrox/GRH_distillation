@@ -16,9 +16,15 @@ The original Lean archive is linked from the announcement. For stable file refer
 
 ## Current status
 
-This repository is being built in checked, coherent steps. It does **not yet contain an independently verified proof of GRH**. Reading a theorem declaration is different from checking the proof that produces it.
+**[Read the developing paper (PDF)](paper/main.pdf)** · **[TeX source](paper/main.tex)** · **[Proved results](results/README.md)** · **[Limitations of the methods](negative-results/README.md)**
+
+The paper contains complete proofs of analytic reductions and explicitly conditional comparisons with the quasi-RH approaches. It does **not yet contain an independently verified proof of GRH**. The unresolved arithmetic inputs are stated separately.
+
+The written results include the primitive-character reduction, a one-sided criterion for weighted prime sums, a criterion based on smoothed Möbius sums, and an exact limitation of the sixth-power averaging argument. These help identify what a shorter proof must actually establish.
 
 The source statements have been inspected. They concern all Dirichlet characters of positive modulus; they do not assert GRH for every automorphic or number-field L-function. The full Lean dependency chain has not been built or checked here.
+
+The repository records independently recomputed hashes for 29 selected source files. An exact-rational script checks the exponent calculations. The paper has been compiled with stable references. The [verification records](certificates/README.md) explain the scope of each check.
 
 The earlier conversation's mathematical files are not present in the current workspace. [The recovery record](notes/recovery.md) states exactly which context survived. No missing proof, certificate, computation, or previous result is treated as recovered.
 
@@ -26,16 +32,24 @@ The earlier conversation's mathematical files are not present in the current wor
 
 | Location | Purpose |
 | --- | --- |
-| `paper/` | The developing mathematical paper, its TeX source, and its compiled PDF. |
+| [paper/](paper/README.md) | The developing mathematical paper, its TeX source, and its compiled PDF. |
 | [audit/](audit/README.md) | The source statements, dependency checks, and remaining verification work. |
 | [sources/](sources/README.md) | Original references, exact source versions, and attribution. |
-| `results/` | Short accounts of results proved in the paper. |
-| `negative-results/` | Precise limitations of proposed arguments and proved counterexamples, when available. |
+| [results/](results/README.md) | Short accounts of results proved in the paper. |
+| [negative-results/](negative-results/README.md) | Precise limitations of proposed arguments and proved examples of invalid inferences. |
 | `scripts/` | Reproducible computations and document-building tools. |
 | `data/` and `certificates/` | Inputs and independently checkable outputs of computations. |
 | [notes/](notes/recovery.md) | Project continuity records, kept separate from the mathematical exposition. |
 
-Only populated directories are committed. A directory name does not imply that any result or certificate has already been produced.
+## Reproducing the checks
+
+```sh
+python3 scripts/build_paper.py
+python3 scripts/verify_exponents.py --check certificates/exponents.json
+python3 scripts/check_sources.py --output certificates/source_files.json
+```
+
+The first command needs a TeX installation; the other scripts use only the Python standard library. The source check downloads exactly the files pinned in the manifest and can subsequently run with `--offline`. No command is a full formal verification of GRH.
 
 ## Mathematical standards
 

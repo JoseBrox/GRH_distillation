@@ -1,0 +1,111 @@
+\section{Two elementary analytic tools}
+\label{sec:analytic-tools}
+
+We record the Fourier and gamma-function facts used in the primitive
+functional equation. Their usual normalizations can be compared with
+\cite[\S\S1.8(iv), 5.2]{DLMF}.
+
+\subsection{Poisson summation and the Gaussian}
+
+A function $f:\mathbb R\to\mathbb C$ is a Schwartz function if it is
+smooth and $\sup_x |x^j f^{(k)}(x)|<\infty$ for every pair of
+nonnegative integers $j,k$. Define its Fourier transform by
+\[
+ \widehat f(y)=\int_{\mathbb R}f(x)e^{-2\pi ixy}\,dx.
+\]
+\begin{lemma}\label{tools:poisson}
+For a Schwartz function,
+\[
+ \sum_{n\in\mathbb Z}f(n)=\sum_{m\in\mathbb Z}\widehat f(m).
+\]
+For $A>0$ the transforms of $e^{-\pi Ax^2}$ and
+$xe^{-\pi Ax^2}$ are, respectively,
+\[
+ A^{-1/2}e^{-\pi y^2/A},\qquad
+ -iA^{-3/2}y e^{-\pi y^2/A}.
+\]
+\end{lemma}
+\begin{proof}
+The periodization $F(x)=\sum_{n\in\mathbb Z}f(x+n)$ and all its
+derivatives converge uniformly for $x\in[0,1]$. Its $m$th Fourier
+coefficient is, by an absolutely convergent interchange,
+\[
+ \int_0^1F(x)e^{-2\pi imx}\,dx
+  =\int_{\mathbb R}f(x)e^{-2\pi imx}\,dx=\widehat f(m).
+\]
+Integration by parts twice makes these coefficients absolutely summable.
+The Fourier series of the smooth periodic function $F$ therefore
+converges uniformly to $F$. Evaluating at zero proves the sum identity.
+
+Let $G(y)$ be the transform of $e^{-\pi Ax^2}$. Differentiation under
+the integral and integration by parts give
+$G'(y)=-(2\pi y/A)G(y)$. The Gaussian integral, obtained by squaring
+the integral and using polar coordinates, gives $G(0)=A^{-1/2}$.
+Solving this differential equation proves the first formula. The transform
+of $xe^{-\pi Ax^2}$ is $iG'(y)/(2\pi)$, proving the second.
+All differentiations and boundary terms are justified by Gaussian decay.
+\end{proof}
+
+Applying the sum identity to $x\mapsto f(r+qx)$ gives, for $q>0$,
+\begin{equation}\label{tools:poisson-progression}
+ \sum_{n\in\mathbb Z}f(r+qn)
+ =\frac1q\sum_{m\in\mathbb Z}
+          e^{2\pi imr/q}\widehat f(m/q).
+\end{equation}
+Indeed, substitution in the Fourier integral gives its $m$th
+coefficient as $q^{-1}e^{2\pi imr/q}\widehat f(m/q)$.
+
+\subsection{The gamma function and its zeros}
+
+For $\Re z>0$ define
+\[
+ \Gamma(z)=\int_0^\infty e^{-t}t^{z-1}\,dt.
+\]
+The integral and its derivatives converge locally uniformly in this
+half-plane. Euler's constant is
+$\gamma=\lim_{n\to\infty}(\sum_{k=1}^n k^{-1}-\log n)$.
+The limit exists because the sequence is decreasing and positive, as
+comparison with the integral of $1/x$ shows.
+
+\begin{lemma}\label{tools:gamma}
+The gamma function is nonzero for $\Re z>0$. Its reciprocal extends
+to the entire function
+\begin{equation}\label{tools:gamma-product}
+ \frac1{\Gamma(z)}
+   =ze^{\gamma z}\prod_{k=1}^{\infty}
+        \left(1+\frac zk\right)e^{-z/k}.
+\end{equation}
+Its zeros are precisely $0,-1,-2,\ldots$, each simple.
+Also $\Gamma(z+1)=z\Gamma(z)$ where both sides are defined, and
+$\Gamma(z)\sim1/z$ as $z\to0$.
+\end{lemma}
+\begin{proof}
+For $\Re z>0$, repeated integration by parts gives
+\[
+ \int_0^1 t^{z-1}(1-t)^n\,dt
+  =\frac{n!}{z(z+1)\cdots(z+n)}.
+\]
+After multiplying by $n^z$ and putting $u=nt$, dominated convergence
+applies because $(1-u/n)^n\leq e^{-u}$ for $0\leq u\leq n$.
+It follows that
+\[
+ F_n(z):=\frac{n!n^z}{z(z+1)\cdots(z+n)}\longrightarrow\Gamma(z).
+\]
+On the other hand, the exact reciprocal is
+\[
+ F_n(z)^{-1}
+  =z\exp\left(z\left(\sum_{k=1}^n\frac1k-\log n\right)\right)
+       \prod_{k=1}^n(1+z/k)e^{-z/k}.
+\]
+On a compact set, the logarithms of the tail factors are uniformly
+$O(k^{-2})$. The infinite product therefore converges locally uniformly;
+off the nonpositive integers its tail and its finitely many initial
+factors are nonzero. Thus the displayed reciprocals converge to a
+nonzero function for $\Re z>0$. Passing to the limit in
+$F_n(z)F_n(z)^{-1}=1$ proves both nonvanishing of $\Gamma$ and the
+product formula there. The product itself is entire. At a nonpositive
+integer exactly one factor vanishes simply, which proves the assertion
+about its zeros and defines the meromorphic extension of $\Gamma$.
+Finally, integration by parts in Euler's integral gives the recurrence.
+Since $\Gamma(1)=1$, it also gives the asymptotic at zero.
+\end{proof}

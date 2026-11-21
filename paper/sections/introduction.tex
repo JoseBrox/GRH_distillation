@@ -1,0 +1,57 @@
+\section{Purpose, scope, and conventions}
+\label{sec:introduction}
+
+The original work motivating this project is Levent Alp\"oge's announced
+proof of the Riemann Hypothesis and the Generalized Riemann Hypothesis,
+developed with Claude and accompanied by a released formal
+source~\cite{Alpoge,AlpogeSource}. The project brief identifies the model as
+Fable~5.2; the announcement itself names Claude without specifying a
+model version. We attribute the announced proof to Alp\"oge and distinguish
+it from the expository reconstructions and checks carried out here.
+
+The assertion under study is GRH for Dirichlet $L$-functions. For a
+Dirichlet character $\chi$, it states that
+\begin{equation}\label{eq:grh-target}
+ L(s,\chi)=0,\qquad 0<\Re s<1
+ \quad\Longrightarrow\quad \Re s=\frac12.
+\end{equation}
+The interval $0<\Re s<1$ is the open critical strip. Definitions of the
+characters and the functions are given in
+Section~\ref{sec:primitive-reduction}. The principal character of conductor
+one gives the Riemann zeta function. No assertion about all automorphic
+$L$-functions is made here.
+
+This manuscript does not yet prove~\eqref{eq:grh-target}. It proves
+reductions whose missing arithmetic inputs are stated separately.
+In particular, the functional equation reduces the critical-strip
+assertion to nonvanishing for primitive characters to the right of
+one half. We give two complementary ways to obtain nonvanishing from
+estimates: a Mellin transform of smoothed M\"obius sums, and a positivity
+argument for suitable weighted prime sums. These are implications;
+the required cancellation and upper bounds remain substantial mathematical
+tasks.
+
+The quasi-RH sources~\cite{OpenAISeptember,OpenAIOctober} provide useful
+comparisons. The September source states a zero-free half-plane
+$\Re s>7/8$, and the October source isolates a simpler route to
+$\Re s>11/12$. We prove the elementary consequences of the October
+second-moment input and identify exactly what its exponent permits.
+Neither stated half-plane is the GRH half-plane $\Re s>1/2$.
+The automorphic estimates in those sources are not treated as having
+been independently proved merely because their consequences are proved
+here.
+
+For positive real $x$, complex powers always mean
+$x^s=\exp(s\log x)$ with the real logarithm. The notation
+$F\ll_{\mathcal P}G$, where $G\geq0$, means that $|F|\leq CG$ for a
+constant $C$ depending only on the listed fixed parameters $\mathcal P$.
+Every parameter declared fixed is chosen before a limit such as
+$X\to\infty$. Dependence on a fixed character is allowed unless a
+uniform assertion over a character family is expressly made.
+
+We use elementary complex analysis, finite Fourier orthogonality,
+unique factorization of integers and ideals, and the ordinary integration
+theorems for absolutely convergent sums. The analytic normalizations
+needed below are included explicitly. The mathematical exposition is
+organized by logical dependence. Source-file paths, build records, and
+the continuing audit are maintained outside the paper.

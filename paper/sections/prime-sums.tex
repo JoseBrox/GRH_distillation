@@ -1,0 +1,374 @@
+\section{Smoothed prime sums and nonvanishing}
+\label{sec:prime-sum-reduction}
+
+The purpose of this section is to identify a precise analytic estimate
+which suffices for nonvanishing.  A global upper bound for a certain real
+combination of smoothed prime sums is sufficient; a corresponding lower
+bound is not required.  This is a conditional reduction.  No such upper
+bound is established here.
+
+\subsection{Normalization and Mellin transforms}
+
+Let $\Lambda(n)$ denote the von Mangoldt function: it is $\log p$ when
+$n=p^k$ for a prime $p$ and an integer $k\geq1$, and is zero otherwise.
+Let $\gamma=\lim_{M\to\infty}(\sum_{n=1}^M n^{-1}-\log M)$.
+For $x\geq1$, define
+\begin{align}
+ S(x)&=\sum_{n\leq x}\Lambda(n)(x/n-1),\label{mellin:S}\\
+ G(x)&=S(x)-x\log x+(1+\gamma)x.\label{mellin:G}
+\end{align}
+For a nonprincipal Dirichlet character $\chi$, assume explicitly that
+$L(1,\chi)\neq0$, and set
+\begin{align}
+ c_\chi&=\frac{L'(1,\chi)}{L(1,\chi)},\label{mellin:cchi}\\
+ g_\chi(x)&=\sum_{n\leq x}\Lambda(n)\chi(n)(x/n-1)+c_\chi x,
+ \qquad G_\chi(x)=\operatorname{Re}g_\chi(x).\label{mellin:gchi}
+\end{align}
+The assumption at $1$ is the classical nonvanishing theorem for
+nonprincipal Dirichlet characters.  In the conditional statements below
+it is an explicit hypothesis.  Each function in
+\eqref{mellin:S}--\eqref{mellin:gchi} is continuous on $[1,\infty)$:
+the newly appearing term at an integer $n$ has value zero at that point.
+The elementary inequalities $|\chi(n)|\leq1$ and
+$0\leq\Lambda(n)\leq\log n$ give
+\begin{equation}\label{mellin:trivial-growth}
+ |G(x)|+|g_\chi(x)|=O_\chi\bigl(x\log^2(2x)\bigr).
+\end{equation}
+For example, the uncorrected sum is bounded in absolute value by
+$x\sum_{n\leq x}(\log n)/n$.
+
+We record explicitly the analytic information needed near $s=1$.
+For $\operatorname{Re}s>1$, partial summation gives
+\begin{equation}\label{mellin:zeta-fractional}
+ \zeta(s)=\frac{s}{s-1}
+       -s\int_1^\infty\{x\}x^{-s-1}\,dx,
+\end{equation}
+where $\{x\}=x-\lfloor x\rfloor$.  Since $0\leq\{x\}<1$, the
+integral is holomorphic for $\operatorname{Re}s>0$, by locally uniform
+absolute convergence, also after differentiation.  This proves a
+meromorphic continuation of $\zeta$ to that half-plane with just a simple
+pole at $1$.  At an integer $M\geq1$,
+\[
+ \int_1^M\frac{\{x\}}{x^2}\,dx
+   =\log M-\sum_{n=1}^{M-1}n\left(\frac1n-\frac1{n+1}\right)
+   =1+\log M-\sum_{n=1}^M\frac1n.
+\]
+Consequently the constant term of~\eqref{mellin:zeta-fractional} at
+$1$ is $\gamma$, and
+\begin{equation}\label{mellin:zeta-laurent}
+ \zeta(s)=\frac1{s-1}+\gamma+O(s-1),\qquad
+ Z(s):=(s-1)\zeta(s),\quad Z(1)=1,\quad Z'(1)=\gamma.
+\end{equation}
+The harmonic limit defining $\gamma$ exists by integral comparison;
+$\sum_{n=1}^M n^{-1}-\log M$ is positive and decreasing.
+
+For a nonprincipal character, the sum of its values in a complete period
+is zero.  Indeed, multiplication by a unit on which the character is
+not $1$ permutes that sum and multiplies it by a different scalar.
+Thus $A_\chi(x)=\sum_{n\leq x}\chi(n)$ is bounded.  The formula
+\begin{equation}\label{mellin:dirichlet-continuation}
+ L(s,\chi)=s\int_1^\infty A_\chi(x)x^{-s-1}\,dx
+\end{equation}
+continues $L(s,\chi)$ holomorphically to $\operatorname{Re}s>0$.
+The equality first follows by summation by parts for real part greater
+than $1$, and the integral converges locally uniformly for real part
+greater than $0$.  These elementary continuations agree with the usual
+$L$-functions by uniqueness of analytic continuation.
+
+\begin{lemma}\label{mellin:identities}
+For $\operatorname{Re}s>1$ the following integrals converge absolutely:
+\begin{align}
+ \int_1^\infty G(x)x^{-s-1}\,dx
+ &=\frac{-\zeta'(s)/\zeta(s)}{s(s-1)}
+     -\frac1{(s-1)^2}+\frac{1+\gamma}{s-1},\label{mellin:G-transform}\\
+ \int_1^\infty g_\chi(x)x^{-s-1}\,dx
+ &=\frac{-L'(s,\chi)/L(s,\chi)}{s(s-1)}
+     +\frac{c_\chi}{s-1}.\label{mellin:g-transform}
+\end{align}
+The expression in~\eqref{mellin:G-transform} has a removable singularity
+at $1$.  The same is true of~\eqref{mellin:g-transform} when
+$L(1,\chi)\neq0$.
+\end{lemma}
+
+\begin{proof}
+For $n\geq1$ and $\operatorname{Re}s>1$, direct integration gives
+\[
+ \int_n^\infty(x/n-1)x^{-s-1}\,dx
+   =\frac{n^{-s}}{s(s-1)}.
+\]
+The sum of the absolute values of the corresponding integrals, with
+coefficients bounded by $\Lambda(n)$, is finite.  This follows from
+$\sum_{n\geq2}(\log n)n^{-\operatorname{Re}s}<\infty$.
+Fubini's theorem therefore permits the exchange of the sum and the
+integral.  The absolutely convergent Euler products give
+\[
+ -\frac{\zeta'(s)}{\zeta(s)}
+   =\sum_{n\geq1}\frac{\Lambda(n)}{n^s},\qquad
+ -\frac{L'(s,\chi)}{L(s,\chi)}
+   =\sum_{n\geq1}\frac{\Lambda(n)\chi(n)}{n^s}.
+\]
+One obtains these identities by expanding the logarithm of each Euler
+factor and differentiating its locally uniformly convergent series.
+The same absolute convergence proves that the Euler products are
+nonzero in this half-plane.
+Finally,
+\[
+ \int_1^\infty x\,x^{-s-1}\,dx=\frac1{s-1},\qquad
+ \int_1^\infty x\log x\,x^{-s-1}\,dx=\frac1{(s-1)^2}.
+\]
+These calculations prove both identities.
+
+For the assertion at $1$, write $u=s-1$.  Equation
+\eqref{mellin:zeta-laurent} implies
+$-\zeta'/\zeta=1/u-\gamma+O(u)$.  Hence
+\[
+ \frac{-\zeta'/\zeta}{s(s-1)}
+   =\frac1{u^2}-\frac{1+\gamma}{u}+O(1),
+\]
+so the two displayed correction terms cancel both polar terms.
+For $\chi$, the quotient $L'/L$ is analytic near $1$ with value
+$c_\chi$.  The polar term in its negative divided by $s(s-1)$ is
+$-c_\chi/(s-1)$, again exactly cancelled by the correction term.
+\end{proof}
+
+The coefficient $1+\gamma$ and the sign of $c_\chi$ in these definitions
+are therefore forced by cancellation at $1$.  Altering either linear
+term changes the problem being estimated.
+
+\subsection{The real singularity of a nonnegative Mellin transform}
+
+The following version of Landau's principle supplies the analytic
+reason that a one-sided bound can be enough.
+
+\begin{lemma}\label{mellin:landau}
+Let $H:[1,\infty)\to[0,\infty)$ be measurable and locally integrable,
+and suppose $\int_1^\infty H(x)x^{-\sigma-1}\,dx$ is finite for at least
+one real $\sigma$.  Put
+\[
+ \sigma_c=\inf\left\{\sigma\in\mathbb R:
+       \int_1^\infty H(x)x^{-\sigma-1}\,dx<\infty\right\}.
+\]
+If $\sigma_c$ is finite, the holomorphic function
+\[
+ F(s)=\int_1^\infty H(x)x^{-s-1}\,dx,
+       \qquad \operatorname{Re}s>\sigma_c,
+\]
+has no holomorphic continuation to a neighborhood of the real point
+$\sigma_c$.
+\end{lemma}
+
+\begin{proof}
+Nonnegativity makes the set of real exponents for which the integral
+is finite an upper interval.  For every $\sigma>\sigma_c$, one can
+choose a smaller exponent in that interval; hence the integral is
+finite at $\sigma$.  Local uniform domination then makes $F$ holomorphic
+in the indicated half-plane.  For a real $a>\sigma_c$,
+\begin{equation}\label{mellin:moments}
+ F^{(k)}(a)=(-1)^k\int_1^\infty
+          H(x)(\log x)^k x^{-a-1}\,dx.
+\end{equation}
+Differentiation is justified by comparison with a slightly smaller
+exponent greater than $\sigma_c$: every fixed power of $\log x$ is
+bounded by a constant times an arbitrarily small positive power of $x$.
+
+Suppose now that $F$ continues holomorphically to a disk
+$|s-\sigma_c|<r$, for some $r>0$.  Set
+$a=\sigma_c+r/4$ and $h=r/2$.  The Taylor series of this continuation
+about $a$ converges at $a-h$, since the disk about $a$ of radius $3r/4$
+is contained in the first disk.  Using~\eqref{mellin:moments}, all the
+terms in this Taylor expansion are nonnegative real numbers:
+\begin{align*}
+ F(a-h)
+  &=\sum_{k=0}^{\infty}\frac{(-h)^kF^{(k)}(a)}{k!}\\
+  &=\sum_{k=0}^{\infty}\frac{h^k}{k!}
+       \int_1^\infty H(x)(\log x)^k x^{-a-1}\,dx\\
+  &=\int_1^\infty H(x)x^{-a-1}
+       \sum_{k=0}^{\infty}\frac{(h\log x)^k}{k!}\,dx\\
+  &=\int_1^\infty H(x)x^{-(a-h)-1}\,dx.
+\end{align*}
+The exchange uses Tonelli's theorem, so no integrability assumption
+below $\sigma_c$ has been inserted.  The finite Taylor sum limit proves
+that the last integral is finite.  But
+$a-h=\sigma_c-r/4<\sigma_c$, contradicting the definition of
+$\sigma_c$.
+\end{proof}
+
+\subsection{A global one-sided criterion for a family}
+
+Let $\mathcal X$ be a finite set of nonprincipal Dirichlet characters,
+possibly of different moduli.  Suppose that $\mathcal X$ is closed
+under complex conjugation, and assign positive integer multiplicities
+$m_\chi$ satisfying $m_{\overline\chi}=m_\chi$.  Assume
+$L(1,\chi)\neq0$ for every $\chi\in\mathcal X$.  Let $R$ be a positive
+integer and define the real-valued function
+\begin{equation}\label{mellin:B}
+ B(x)=R G(x)+\sum_{\chi\in\mathcal X}m_\chi G_\chi(x).
+\end{equation}
+The empty family is allowed.  It yields a criterion for $\zeta$ alone.
+
+\begin{theorem}\label{mellin:one-sided-family}
+Let $0\leq\theta<1$.  If there are constants $C_0\in\mathbb R$ and
+$x_0\geq1$ such that
+\begin{equation}\label{mellin:global-bound}
+ B(x)\leq C_0x^\theta\qquad\text{for every }x\geq x_0,
+\end{equation}
+then $\zeta$ has no zeros in $\operatorname{Re}s>\theta$, and
+$L(s,\chi)\neq0$ in this half-plane for every
+$\chi\in\mathcal X$.  The pole of $\zeta$ at $1$ is understood as a
+pole, not as a value to which the assertion is applied.
+\end{theorem}
+
+\begin{proof}
+The identity
+$L(s,\overline\chi)=\overline{L(\overline s,\chi)}$ follows first
+from the Dirichlet series and then by analytic continuation.  In
+particular $c_{\overline\chi}=\overline{c_\chi}$.  Therefore
+\[
+ \sum_{\chi\in\mathcal X}m_\chi G_\chi(x)
+   =\sum_{\chi\in\mathcal X}m_\chi g_\chi(x),
+ \qquad
+ c=\sum_{\chi\in\mathcal X}m_\chi c_\chi\in\mathbb R.
+\]
+In the half-plane $\operatorname{Re}s>0$, form the holomorphic function
+\[
+ P(s)=Z(s)^R\prod_{\chi\in\mathcal X}L(s,\chi)^{m_\chi}.
+\]
+It is not identically zero, since the Euler products are nonzero for
+$\operatorname{Re}s>1$.  Also $P(1)\neq0$ by the assumptions at $1$.
+Put
+\[
+ a=-R,\qquad b=R(1+\gamma)+c.
+\]
+Logarithmic differentiation at $1$ gives
+\begin{equation}\label{mellin:P-at-one}
+ \frac{P'(1)}{P(1)}=R\gamma+c=a+b.
+\end{equation}
+Adding the identities in Lemma~\ref{mellin:identities} and using
+$Z'/Z=1/(s-1)+\zeta'/\zeta$ yields, for
+$\operatorname{Re}s>1$,
+\begin{equation}\label{mellin:B-transform}
+ \int_1^\infty B(x)x^{-s-1}\,dx
+   =\frac{-P'(s)/P(s)+a+bs}{s(s-1)}.
+\end{equation}
+
+By continuity on $[1,x_0]$, increase $C_0$ to a nonnegative constant
+$C$ so that
+$H(x)=Cx^\theta-B(x)\geq0$ for all $x\geq1$.
+Equation~\eqref{mellin:trivial-growth} shows that the Mellin transform
+of $H$ converges absolutely for real part greater than $1$.
+Let $\sigma_c\leq1$ be its abscissa of convergence; the case
+$\sigma_c=-\infty$ is permitted.  For real part greater than $1$,
+\begin{equation}\label{mellin:H-transform}
+ F(s):=\int_1^\infty H(x)x^{-s-1}\,dx
+   =\frac{P'(s)/P(s)-(a+bs)}{s(s-1)}+\frac C{s-\theta}.
+\end{equation}
+Denote the meromorphic expression on the right by $\Phi(s)$.
+It is meromorphic for $\operatorname{Re}s>0$.
+Equation~\eqref{mellin:P-at-one} shows that its singularity at $1$ is
+removable; here $\theta<1$ and $P(1)\neq0$ are used.
+
+We claim that $\sigma_c\leq\theta$.  Otherwise
+$\theta<\sigma_c\leq1$ is a finite real number, and the identity theorem
+for meromorphic functions gives $F=\Phi$ throughout
+$\operatorname{Re}s>\sigma_c$.  If $\sigma_c=1$, the removability just
+proved contradicts Lemma~\ref{mellin:landau}.
+Suppose therefore that $\beta=\sigma_c\in(\theta,1)$.
+If $P(\beta)\neq0$, then $\Phi$ is holomorphic near $\beta$, again
+contradicting that lemma.
+If $P(\beta)=0$, let $m\geq1$ be its order of vanishing.  Locally,
+$P(s)=(s-\beta)^mU(s)$ with $U(\beta)\neq0$, so
+\[
+ \frac{P'(s)}{P(s)}=\frac m{s-\beta}+\frac{U'(s)}{U(s)}.
+\]
+Thus the residue of $\Phi$ at $\beta$ is
+\[
+ \frac{m}{\beta(\beta-1)}<0.
+\]
+As real $\sigma$ decreases to $\beta$ from above,
+$F(\sigma)=\Phi(\sigma)\to-\infty$.  This is impossible because
+$F(\sigma)$ is the integral of a nonnegative real function.
+The claim follows.
+
+Consequently $F$ is holomorphic in $\operatorname{Re}s>\theta$.
+Define there the holomorphic coefficient
+\[
+ Q(s)=a+bs+s(s-1)\left(F(s)-\frac C{s-\theta}\right).
+\]
+Multiplication of~\eqref{mellin:H-transform} by $s(s-1)P(s)$ gives
+$P'=QP$ for real part greater than $1$.  Both sides are holomorphic
+in the connected half-plane $\operatorname{Re}s>\theta$, so the
+identity theorem extends this equality throughout that half-plane.
+A nonzero holomorphic function satisfying $P'=QP$ cannot have a zero:
+at a zero of order $m\geq1$, the order of $P'$ would be $m-1$, whereas
+the order of $QP$ would be at least $m$.  Hence $P$ has no zeros there.
+Every exponent in its product is a positive integer.  It follows that
+each $L(s,\chi)$ and $Z(s)$ is nonzero there.  Finally
+$Z(s)=(s-1)\zeta(s)$ away from $1$, proving the assertion for $\zeta$.
+\end{proof}
+
+The argument uses no estimate for $-B(x)$.
+Its essential sign is the negative residue
+$m/(\beta(\beta-1))$ for $0<\beta<1$.  Positive multiplicities prevent
+cancellation of zero orders in the product $P$.
+
+\subsection{An absolute-bound criterion and the limitation of windows}
+
+\begin{corollary}\label{mellin:absolute}
+Fix $\theta\geq0$.  If, for every $\epsilon>0$,
+$G(x)=O_\epsilon(x^{\theta+\epsilon})$ in absolute value, then
+$\zeta$ has no zeros with real part greater than $\theta$.
+For a fixed nonprincipal character with $L(1,\chi)\neq0$, if
+$g_\chi(x)=O_\epsilon(x^{\theta+\epsilon})$ in absolute value for
+every $\epsilon>0$, then $L(s,\chi)$ has no zeros in that half-plane.
+\end{corollary}
+
+\begin{proof}
+The assumptions make the respective Mellin integrals $I(s)$ and $J(s)$
+holomorphic in $\operatorname{Re}s>\theta$.  Indeed, on any compact
+subset choose $\epsilon$ smaller than its distance from the boundary;
+the resulting power bound dominates the integrands and all their
+derivatives locally uniformly.  The identities of
+Lemma~\ref{mellin:identities}, multiplied out, become
+\[
+ Z'(s)=\bigl[-1+(1+\gamma)s-s(s-1)I(s)\bigr]Z(s),
+\]
+and
+\[
+ L'(s,\chi)=\bigl[c_\chi s-s(s-1)J(s)\bigr]L(s,\chi).
+\]
+They initially hold for real part greater than $\max(1,\theta)$ and
+extend to $\operatorname{Re}s>\theta$ by the identity theorem.
+The same order-of-vanishing argument as above excludes zeros.
+The elementary continuations are holomorphic throughout this
+half-plane because $\theta\geq0$.
+\end{proof}
+
+The global quantifier in~\eqref{mellin:global-bound} must be preserved.
+An estimate only on arbitrarily large intervals
+$[Y,Y^\lambda]$, with fixed $\lambda>1$, does not by itself make
+$Cx^\theta-B(x)$ nonnegative on the entire integration range.  It
+therefore cannot be substituted into the proof of
+Theorem~\ref{mellin:one-sided-family}.
+
+For a general continuous function, even an absolute bound on such
+intervals gives no global growth estimate.  To see this, choose $Y_1>1$ and numbers
+$Y_j\to\infty$ so rapidly that
+$Y_{j+1}>4Y_j^\lambda$.  Let $\eta$ be a continuous nonnegative function
+supported on $[2,3]$, with $\eta(5/2)=1$, and fix $\beta>\theta$.
+The locally finite sum
+\[
+ f(x)=\sum_{j\geq1}x^\beta\eta(x/Y_j^\lambda)
+\]
+vanishes on every $[Y_j,Y_j^\lambda]$, while
+$f((5/2)Y_j^\lambda)=((5/2)Y_j^\lambda)^\beta$.
+It is not $O(x^\theta)$.  Moreover, if $\eta$ is positive on a
+subinterval of $(2,3)$, its Mellin integral diverges for real exponents
+at most $\beta$: each separate bump contributes a positive constant
+times $(Y_j^\lambda)^{\beta-\sigma}$.
+
+This example is not a counterexample to a theorem about the particular
+prime sums above.  Their logarithmic-derivative structure may allow a
+stronger theorem from long multiplicative intervals.  Such a theorem
+requires an additional argument.  The global criterion proved here
+does not establish it, and no global estimate is inferred from a
+window estimate in this section.

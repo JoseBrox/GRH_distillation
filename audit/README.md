@@ -17,6 +17,8 @@ At source commit `ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`, `lean/src/Statement
 | Original announcement | Read. |
 | Mirror provenance claims | Read; original archive hashes not independently recomputed. |
 | `Statements.lean` and `Main.lean` | Read at the pinned revision. |
+| Classical primitive-character reduction | Independently written and checked in the paper, including the functional equation and boundary cases. |
+| Selected source bytes | 29 files matched to their pinned Git blob hashes; SHA-256 hashes also computed. |
 | Complete import and theorem dependency chain | Not yet verified. |
 | Absence of admitted proofs or added axioms in all dependencies | Not established. |
 | Lean compilation and kernel check | Not run in this environment. |
@@ -24,3 +26,5 @@ At source commit `ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`, `lean/src/Statement
 | Complete ordinary-mathematics proof of GRH | Not yet present. |
 
 Further results must distinguish source inspection, compilation, dependency/axiom inspection, and independent mathematical proof. Searching for a few suspicious words cannot replace these checks.
+
+[The detailed source audit](theorem-and-dependencies.md) identifies the first substantive dependencies and the exact scope of the selected-file inspection. [The source-file record](../certificates/source_files.json) is reproducible from the manifest and does not claim completeness of the dependency graph.

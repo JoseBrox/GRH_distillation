@@ -1,0 +1,334 @@
+\section{Primitive characters and the critical strip}
+\label{sec:primitive-reduction}
+
+This section isolates a classical part of the argument which can be written
+without any of the automorphic constructions in the announced proof.  It does
+not establish the required nonvanishing in the right half-plane.  It proves,
+with the analytic details made explicit, why that assertion would imply the
+usual statement about zeros of every Dirichlet $L$-function in the critical
+strip.
+
+\subsection{Primitive Gauss sums}
+
+Let $q$ be a positive integer.  A Dirichlet character modulo $q$ is a
+homomorphism from $(\mathbb Z/q\mathbb Z)^\times$ to $\mathbb C^\times$,
+extended periodically to the integers by zero on integers not relatively
+prime to $q$.  For $q=1$ the unique character has value $1$ at every integer.
+A character modulo $q$ is \emph{primitive} if it is not induced from a
+character modulo a proper divisor of $q$.  Here induction means that the
+values agree at all integers relatively prime to $q$.  The conductor of a
+character is the modulus of its inducing primitive character.
+
+Every character modulo $N$ is induced from a unique primitive character
+modulo a divisor $q$ of $N$.  To see this explicitly, write
+$N=\prod_{p\mid N}p^{e_p}$.  The Chinese remainder theorem identifies
+its unit group with the product of the unit groups modulo $p^{e_p}$,
+and the character is uniquely a product of characters of those factors.
+For each $p$ choose the smallest $f_p\in\{0,\ldots,e_p\}$ through which
+the corresponding character factors under reduction modulo $p^{f_p}$;
+the unit group for $p^0=1$ is trivial.  Reduction maps of these unit groups
+are surjective, so the factored characters are unique.  Their product
+has modulus $q=\prod p^{f_p}$, induces the original character, and is
+primitive by minimality at each prime.  Any primitive inducing modulus
+must have exactly these exponents: an exponent below $f_p$ is impossible,
+and one above $f_p$ gives an imprimitive character.  This proves the
+assertion and the uniqueness.
+
+Every character value at a unit is a root of unity, because the group of
+units is finite.  Thus $|\psi(n)|\leq 1$ and
+$\overline{\psi(n)}=\psi(n)^{-1}$ for units $n$.
+For a primitive character $\psi$ modulo $q>1$, put
+\[
+ a=\begin{cases}0,&\psi(-1)=1,\\1,&\psi(-1)=-1,\end{cases}
+ \qquad
+ \tau(\psi)=\sum_{r\bmod q}\psi(r)e^{2\pi i r/q}.
+\]
+The two possibilities for $\psi(-1)$ follow from $(-1)^2=1$.
+
+\begin{lemma}\label{prim:gauss}
+For every integer $m$,
+\[
+ \sum_{r\bmod q}\psi(r)e^{2\pi i mr/q}
+   =\overline{\psi(m)}\tau(\psi),
+ \qquad |\tau(\psi)|=\sqrt q.
+\]
+\end{lemma}
+
+\begin{proof}
+If $m$ is relatively prime to $q$, multiplication by $m$ permutes the
+residue classes modulo $q$.  Substituting $u=mr$ gives the first identity.
+
+Suppose now that $d=(m,q)>1$, and put $q'=q/d$.  Reduction of units modulo
+$q$ onto the units modulo $q'$ is surjective.  Indeed, a residue class
+coprime to $q'$ can be lifted to an integer coprime also to every prime
+dividing $q$ but not $q'$, by the Chinese remainder theorem.  If $\psi$
+were trivial on the kernel of this reduction, it would factor through
+the units modulo $q'$, contradicting primitivity.  There is therefore a
+unit $u$ modulo $q$ such that $u\equiv 1\pmod {q'}$ and $\psi(u)\neq1$.
+Since $m(u-1)$ is divisible by $q$, substitution $r\mapsto ur$ in the sum
+shows that the sum equals $\psi(u)$ times itself.  It is zero.  The right
+side is also zero because $\psi(m)=0$.
+
+Write $S(m)$ for the sum in the first identity.  Finite Fourier
+orthogonality gives
+\begin{align*}
+ \sum_{m\bmod q}|S(m)|^2
+ &=\sum_{r,t\bmod q}\psi(r)\overline{\psi(t)}
+       \sum_{m\bmod q}e^{2\pi i m(r-t)/q}\\
+ &=q\sum_{r\bmod q}|\psi(r)|^2=q\varphi(q),
+\end{align*}
+where $\varphi(q)$ is the number of units modulo $q$.
+On the other hand, the identity already proved makes the left side
+$|\tau(\psi)|^2\varphi(q)$.  Division by the positive integer
+$\varphi(q)$ proves the second assertion.
+\end{proof}
+
+\subsection{The primitive functional equation}
+
+For a positive real number $x$, complex powers mean
+$x^s=\exp(s\log x)$ with the real logarithm.
+For $\operatorname{Re}s>1$, define
+\[
+ L(s,\psi)=\sum_{n=1}^{\infty}\frac{\psi(n)}{n^s}.
+\]
+The series converges absolutely and locally uniformly in that half-plane.
+For primitive $\psi$ modulo $q>1$, define its completion there by
+\[
+ \Lambda(s,\psi)
+ =\left(\frac q\pi\right)^{(s+a)/2}
+     \Gamma\left(\frac{s+a}{2}\right)L(s,\psi).
+\]
+Here $\Gamma$ is Euler's gamma function. Lemma~\ref{tools:gamma}
+proves its nonvanishing and the entire continuation of its reciprocal.
+We use Poisson summation in the normalization of
+Lemma~\ref{tools:poisson} and equation~\eqref{tools:poisson-progression}.
+
+\begin{proposition}\label{prim:functional-equation}
+If $\psi$ is primitive modulo $q>1$, then $\Lambda(s,\psi)$ extends to an
+entire function and
+\[
+ \Lambda(s,\psi)
+    =\varepsilon_\psi\Lambda(1-s,\overline\psi),
+ \qquad
+ \varepsilon_\psi=i^{-a}\frac{\tau(\psi)}{\sqrt q},
+ \qquad |\varepsilon_\psi|=1.
+\]
+The unique primitive principal character has conductor $1$.  Its
+$L$-function is $\zeta(s)$, and
+\[
+ \Lambda_0(s)=\pi^{-s/2}\Gamma(s/2)\zeta(s)
+\]
+has a meromorphic continuation with only simple poles at $0$ and $1$,
+and satisfies $\Lambda_0(s)=\Lambda_0(1-s)$.
+\end{proposition}
+
+\begin{proof}
+First assume $q>1$ and put
+\[
+ \theta_\psi(t)=\sum_{n\in\mathbb Z}
+      \psi(n)n^a e^{-\pi n^2t/q},\qquad t>0.
+\]
+When $a=0$ the factor $n^a$ is interpreted as $1$; the term $n=0$ is
+still zero because $\psi(0)=0$.  The series and all its derivatives
+converge uniformly on compact subintervals of $(0,\infty)$.
+
+Applying Poisson summation in each residue class modulo $q$ yields
+\[
+ \sum_{n\in\mathbb Z}\psi(n)f(n)
+   =\frac1q\sum_{m\in\mathbb Z}\widehat f(m/q)
+       \sum_{r\bmod q}\psi(r)e^{2\pi i mr/q}
+   =\frac{\tau(\psi)}q\sum_{m\in\mathbb Z}
+       \overline{\psi(m)}\widehat f(m/q).
+\]
+Use $f(x)=x^a e^{-\pi tx^2/q}$.  The Gaussian Fourier transform and its
+first derivative give, for $a=0,1$,
+\[
+ \widehat f(y)=(-i)^a
+      (q/t)^{a+1/2}y^a e^{-\pi qy^2/t}.
+\]
+Consequently
+\begin{equation}\label{prim:theta-transform}
+ \theta_\psi(t)
+  =\varepsilon_\psi t^{-a-1/2}
+       \theta_{\overline\psi}(1/t).
+\end{equation}
+Lemma~\ref{prim:gauss} proves $|\varepsilon_\psi|=1$.
+
+The theta series is exponentially small as $t\to\infty$.
+Equation~\eqref{prim:theta-transform} shows that as $t\to0^+$ it is
+bounded by a fixed power of $t^{-1}$ times $e^{-c/t}$, for some $c>0$.
+It follows that
+\[
+ F_\psi(s)=\frac12\int_0^\infty
+           \theta_\psi(t)t^{(s+a)/2-1}\,dt
+\]
+converges absolutely and locally uniformly for every $s\in\mathbb C$.
+The same is true after inserting any fixed power of $\log t$, so
+differentiation under the integral proves that $F_\psi$ is entire.
+
+For $\operatorname{Re}s>1$, absolute convergence justifies termwise
+integration.  Indeed, after taking absolute values, the integral of the
+$n$th term is a constant depending on $s$ times $|n|^{-\operatorname{Re}s}$.
+Since $\psi(-n)(-n)^a=\psi(n)n^a$, the factor $1/2$ removes the duplicate
+negative terms.  Substitution $u=\pi n^2t/q$ therefore gives
+\[
+ F_\psi(s)
+ =\Gamma\left(\frac{s+a}{2}\right)
+      \left(\frac q\pi\right)^{(s+a)/2}
+      \sum_{n\geq1}\frac{\psi(n)}{n^s}
+ =\Lambda(s,\psi).
+\]
+Finally insert~\eqref{prim:theta-transform} in the integral and make the
+change of variable $u=1/t$.  Absolute convergence at both endpoints
+justifies this substitution and yields
+\[
+ F_\psi(s)=\frac{\varepsilon_\psi}{2}
+       \int_0^\infty\theta_{\overline\psi}(u)
+           u^{(1-s+a)/2-1}\,du
+   =\varepsilon_\psi F_{\overline\psi}(1-s).
+\]
+This proves the functional equation and the continuation for $q>1$.
+Dividing the entire completion by the displayed gamma and power factors
+also continues $L(s,\psi)$; equivalently, multiplication by the entire
+function $1/\Gamma((s+a)/2)$ shows that $L(s,\psi)$ is entire.
+
+For the principal character of conductor $1$, let
+$\theta(t)=\sum_{n\in\mathbb Z}e^{-\pi n^2t}$ and $A(t)=\theta(t)-1$.
+Poisson summation gives $\theta(t)=t^{-1/2}\theta(1/t)$.
+For $\operatorname{Re}s>1$, termwise integration gives
+$\Lambda_0(s)=\frac12\int_0^\infty A(t)t^{s/2-1}\,dt$.
+Split the integral at $1$ and transform the portion from $0$ to $1$.
+The result is
+\begin{equation}\label{prim:zeta-continuation}
+ \Lambda_0(s)=\frac1{s-1}-\frac1s
+  +\frac12\int_1^\infty A(t)
+       \bigl(t^{s/2-1}+t^{(1-s)/2-1}\bigr)\,dt.
+\end{equation}
+The integral is entire by exponential decay, and the right side is
+unchanged by $s\mapsto1-s$.  It has exactly the asserted poles, with
+residues $1$ at $1$ and $-1$ at $0$.
+\end{proof}
+
+\subsection{Changing the modulus}
+
+Suppose $\chi$ modulo $N$ is induced by a primitive character $\psi$
+modulo $q$, where $q\mid N$.  Define the entire function
+\[
+ E_{N,q}(s,\psi)
+   =\prod_{\substack{p\mid N\\p\nmid q}}
+         (1-\psi(p)p^{-s}),
+\]
+where $p$ runs over primes and an empty product is $1$.
+
+\begin{lemma}\label{prim:change-level}
+As an identity of meromorphic functions,
+\[
+ L(s,\chi)=L(s,\psi)E_{N,q}(s,\psi).
+\]
+Moreover, $E_{N,q}(s,\psi)\neq0$ whenever
+$\operatorname{Re}s>0$.  Thus $L(s,\chi)$ and $L(s,\psi)$ have the same
+zeros, with the same multiplicities, in that open half-plane, away from
+any pole.
+\end{lemma}
+
+\begin{proof}
+In $\operatorname{Re}s>1$, absolute convergence and unique prime
+factorization give the Euler products
+\[
+ L(s,\chi)=\prod_p(1-\chi(p)p^{-s})^{-1},
+ \qquad
+ L(s,\psi)=\prod_p(1-\psi(p)p^{-s})^{-1}.
+\]
+For primes $p\nmid N$ the character values agree.  For primes dividing
+$q$ both values vanish.  For $p\mid N$, $p\nmid q$, the factor of
+$L(s,\chi)$ is $1$, whereas the factor of $L(s,\psi)$ is
+$(1-\psi(p)p^{-s})^{-1}$.  Cancelling these factors proves the identity
+in that half-plane.  The identity supplies the meromorphic continuation
+of $L(s,\chi)$ and remains valid everywhere by uniqueness of analytic
+continuation.
+
+If $\sigma=\operatorname{Re}s>0$, then
+\[
+ |\psi(p)p^{-s}|\leq p^{-\sigma}<1,
+ \qquad
+ |1-\psi(p)p^{-s}|\geq1-p^{-\sigma}>0.
+\]
+Every factor, and hence the finite product, is nonzero.  Multiplication
+by a holomorphic function which is nonzero at a point preserves the
+order of a zero there, proving the multiplicity statement.
+\end{proof}
+
+For the primitive principal character, we use the conventions
+$a=0$ and $\Lambda(s,\psi)=\Lambda_0(s)$ from
+Proposition~\ref{prim:functional-equation}.
+
+The restriction $\operatorname{Re}s>0$ in this lemma is essential.
+For example, for the principal character modulo a prime $p$,
+$L(s,\chi)=\zeta(s)(1-p^{-s})$ as meromorphic functions.
+The extra factor vanishes at $s=2\pi i k/\log p$ for $k\in\mathbb Z$.
+In particular, $s=0$ is an additional zero since $\zeta(0)=-1/2$.
+This value follows directly from~\eqref{prim:zeta-continuation}:
+$\Lambda_0(s)\sim-1/s$ and $\Gamma(s/2)\sim2/s$ at zero.
+Thus imprimitive characters require care on the boundary of the critical
+strip.
+
+\subsection{The precise reduction}
+
+For clarity, state the needed half-plane assertion explicitly:
+\begin{quote}
+For every positive integer $N$, every Dirichlet character $\chi$ modulo
+$N$, and every $s\in\mathbb C$ with $\operatorname{Re}s>1/2$, the value
+$L(s,\chi)$ is nonzero whenever $\chi$ is nonprincipal or $s\neq1$.
+\end{quote}
+At $s=1$ a principal $L$-function has a pole, so that exception is part of
+the statement, not a possible zero.  The value of a meromorphic function
+at its pole is not used in the argument.
+
+\begin{theorem}[Critical-strip reduction]\label{prim:strip-reduction}
+Assume the half-plane assertion above.  Then for every Dirichlet
+character $\chi$ modulo a positive integer $N$,
+\[
+ 0<\operatorname{Re}s<1,\qquad L(s,\chi)=0
+ \quad\Longrightarrow\quad
+ \operatorname{Re}s=\frac12.
+\]
+In fact, it suffices to assume nonvanishing for primitive characters at
+points satisfying $1/2<\operatorname{Re}s<1$.
+\end{theorem}
+
+\begin{proof}
+Let $\psi$ be the primitive character inducing $\chi$.
+Lemma~\ref{prim:change-level} shows that a zero $s$ of $L(s,\chi)$ in
+the strip is a zero of $L(s,\psi)$.  If
+$\operatorname{Re}s>1/2$, the stated nonvanishing already gives a
+contradiction.
+
+Suppose instead that $\operatorname{Re}s<1/2$.  The gamma factor and
+the power of $q/\pi$ in the completion are finite and nonzero at $s$,
+because $\operatorname{Re}((s+a)/2)>0$.  Therefore
+$\Lambda(s,\psi)=0$.  Proposition~\ref{prim:functional-equation} and
+$\varepsilon_\psi\neq0$ imply
+$\Lambda(1-s,\overline\psi)=0$.  For the character of conductor $1$
+the same inference uses~\eqref{prim:zeta-continuation}; neither $s$ nor
+$1-s$ is a pole.  The conjugate character is primitive: any factorization
+of $\overline\psi$ through a proper divisor, when conjugated, would give
+one for $\psi$.  Its parity is the same as that of $\psi$.
+
+At $1-s$ the gamma and power factors are again finite and nonzero,
+since $0<\operatorname{Re}(1-s)<1$.  Hence
+$L(1-s,\overline\psi)=0$.  But
+$1/2<\operatorname{Re}(1-s)<1$, contradicting the assumed primitive
+nonvanishing.  The only remaining possibility is
+$\operatorname{Re}s=1/2$.
+\end{proof}
+
+The character changes to its conjugate in this reflection.  For a
+nonreal character it is generally incorrect to replace
+$\overline\psi$ by $\psi$ in the displayed functional equation.
+No bound on the conductor, and no restriction to real or even
+characters, is present in the theorem.
+
+The reduction just proved is the classical part of the passage from
+half-plane nonvanishing to the conclusion of the announced
+result~\cite{AlpogeSource}. The half-plane estimate itself requires
+further arithmetic input.
