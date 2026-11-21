@@ -28,7 +28,7 @@
 \newcommand{\Q}{\mathbb Q}
 \title{RH and Dirichlet GRH\\[3pt]\large A short mathematical guide}
 \author{}
-\date{21 November 2026}
+\date{22 November 2026}
 \begin{document}
 \maketitle
 \vspace{-1.8em}
@@ -242,13 +242,16 @@ of the positivity argument then proves
 
 The order matters: combine signed contributions, average nearby scales,
 then take the positive part. A signed integral alone could hide large
-positive excursions. There is a finite alternative: supply upper bounds
-only at the integers in each expanded interval. The corrected prime sums
-have derivative $O((1+\log x)^2)$, so interpolation gives an error tending
-to zero in~\eqref{window}. Each interval can use an independent finite
-table; no measurable choice of arithmetic objects is needed. The required
-weighted sum still controls every sampled integer, not isolated favorable
-values~\cite{reconstruction}.
+positive excursions. There is a smaller finite alternative: supply upper
+bounds only at the squares $n^2$ in each expanded interval. The gaps
+between successive squares are $O(\sqrt x)$, and the corrected prime sums
+have derivative $O((1+\log x)^2)$. Interpolation therefore costs
+$O(\sqrt x(1+\log x)^2)$, whose weighted tail tends to zero for every
+$\theta_j>1/2$. The local average is an explicit positive weighted sum
+of the finite table entries. Each interval can use its own arithmetic
+objects; agreement on overlapping intervals is unnecessary. The table
+must still cover every required square, not just favorable samples
+\cite{reconstruction}.
 
 \section{How arithmetic is meant to bound the prime sum}
 
@@ -309,6 +312,15 @@ reduces the test bound to lower heights for all points, including the
 boundary, and a prescribed cusp correction~\cite{yuan-zhang}.
 Those geometric inputs and the section remainder must still be uniform.
 Anchoring one weight entry at zero does not remove the determinant term.
+
+One substantial geometric ingredient is already supplied. Classical
+integral theta sections, a determinant argument with their derivatives,
+and an absolute form of Siegel's lemma give the required logarithmic
+upper bound for the largest tangent slope, in its prescribed metric.
+The remaining tasks concern the selected eigenspace degrees, the cusp
+contribution and the finite section estimate. A bound for the total
+degree alone does not determine those selected degrees
+\cite{reconstruction}.
 
 \subsection*{Two trace errors for all the maps}
 
@@ -381,9 +393,12 @@ Three groups of input feed the arithmetic comparison.
 \item \textbf{Arithmetic selection and cohomology.}
 Choose the auxiliary characters and levels. Classical duality and finite
 even $K$-groups supply Selmer finiteness, including at the prime two, and
-finite prime support for each fixed datum. The remaining estimate is a
-uniform weighted bound on the actual twisted primes, together with the
-local integral comparisons~\cite{reconstruction}.
+finite prime support for each fixed datum. For RH, integral character
+projectors combine the remaining sums into a single weighted product
+of orders of specified finite Selmer groups. Averaging the construction
+averages the prime weights in that same product. Its size must still be
+bounded uniformly, with the actual local conditions and rank factors.
+Finiteness alone gives no such estimate~\cite{reconstruction}.
 \item \textbf{Integral maps and analytic norms.}
 Construct nonzero theta maps with the required finite-prime divisibility
 and trace bounds on the same final spaces. Local positivity and

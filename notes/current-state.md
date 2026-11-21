@@ -1,6 +1,6 @@
 # Current continuation checkpoint
 
-Updated 21 November 2026. The conventional reconstruction is not a complete
+Updated 22 November 2026. The conventional reconstruction is not a complete
 proof of RH or Dirichlet GRH. Start from the preferred mathematical route,
 then inspect only the relevant bounded source contracts. The repository is
 the persistent record; the archive is a baseline, not a file to reload.
@@ -18,6 +18,8 @@ keeps the two applications and their extra hypotheses explicit.
 The [node counts](../blueprint/progress.md) distinguish finished stated
 implications or adopted inputs from open construction hypotheses. Moving
 files or adding a node is not recorded as closing an existing open node.
+The continuation was recovered from main through `0ffbc6f7e190d4b007eb1109df215857539c60f5`,
+including its preceding geometric, sampling and cohomological checkpoints.
 The source-import atlas and documentary section atlas have no proof
 completion score. The published baseline is RH 6/9 and the GRH technical
 map 17/31; the generated progress table carries the current values.
@@ -108,9 +110,16 @@ smaller theta power suffices. The
 [classical absolute Siegel supplier](absolute-siegel-supplier.md) supplies
 the short integral vector in the same metric after finite extension;
 principalizing its saturated line preserves the exact height. The
-remaining geometric supplier is the primitive theta norm and the integral
-normalized torsion translates with bounds uniform in their order.
-Their finite-prime coefficient and frame identifications remain essential.
+arithmetic and archimedean theta inputs are now supplied by the
+[Moret--Bailly comparison](moret-bailly-theta-supplier.md), on the prescribed
+tangent lattice with its exact metric. Together these arguments prove
+the required tangent-slope bound with absolute constant 12. The
+[remaining point-height comparison](remaining-point-height-comparisons.md)
+also supplies the finite-prime allowance with constant 16 at the eventual
+scales and the scalar period bound. The same-lattice determinant comparison,
+signed cusp mean and independent finite section estimate remain. Grouping
+eigenspaces does not permit replacing the unramified host by the ramified
+quadratic field; see the [host obstruction](quadratic-host-descent-obstruction.md).
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
@@ -120,6 +129,13 @@ where sharper, and one takes the minimum with older valid penalties.
 The source slope spread, target lower slope and actual normalizers remain.
 A perfect analytic frame still does not supply the intermediate geometric
 component degree or the separate counting, divisor and quotient losses.
+
+The [separation of code size and arithmetic height](code-rate-height-separation.md)
+uses the source's existing quantified order to choose the code exponent
+independently. Under the same full-map estimates and restrictions, its
+frame cost is at most the source slope spread plus a decaying multiple
+of the original height scale. This is a proved parameter improvement;
+the global estimates and geometric height conditions are still inputs.
 
 The positive spectral trace of the target operator equals that of the
 normalized source block Gram matrix. Thus the full-period orbital
@@ -207,6 +223,18 @@ existing exponent-14 bound, applied directly to the growing host, does
 not fit the allowed budget. It remains useful after the existing
 common-interval descent; no lower bound on actual Selmer sizes is inferred.
 
+For RH, the [residual decomposition](rh-selmer-residual-budget.md) applies
+the supplied cases and isolates three remaining sums. The
+[integral Selmer product](rh-selmer-product-criterion.md) identifies those
+sums exactly with one weighted logarithm of orders of finite integral
+direct factors. Family averaging changes only the prime weights after
+the actual common-host identifications. Its exponent-one part is relative
+growth above a fixed lower layer of the two-power cyclotomic tower.
+The retained parity gives trivial zeros at the ordinary special values,
+so a nonzero Bernoulli-value formula does not supply the missing order
+bound. A valid substitute must retain its regulator or integral
+comparison and growing-family uniformity.
+
 ## Scalar acceptance conditions
 
 The [scale-averaged criterion](scale-averaged-criterion.md) weakens the
@@ -242,14 +270,21 @@ all sampled integers. The exact positive averaging matrix preserves signed
 cancellation, and the interpolation error tends to zero. Tables may differ
 on overlaps, so no measurable family of arithmetic choices is needed.
 An almost-everywhere comparison is not silently promoted to integer data.
+The [square-grid refinement](square-grid-sampling.md) needs only square
+arguments. Its positive averaging coefficients preserve the signed
+budget, and its interpolation error tends to zero for every exponent
+strictly above one half. On a window from Y to its b-th power it reduces
+the table size from order \(Y^b\) to order \(Y^{b/2}\), without changing
+the analytic target.
 
 ## Next mathematical work
 
-1. **Geometric core (W10).** Establish the primitive theta norm and
-   normalized torsion-translate integrality in the prescribed semistable
-   model. Use the short jet proof and classical absolute Siegel theorem,
-   retain the exact selected abelian rank, and supply the signed cusp mean
-   and the independent finite section-rank/surplus estimate.
+1. **Geometric core (W10).** Use the now supplied tangent-slope estimate
+   on the prescribed lattice. Independently reconstruct the conjugate
+   eigenspace determinant comparison, retain the exact selected abelian
+   rank, and supply the signed cusp mean and independent finite
+   section-rank/surplus estimate. The scalar prime and period bounds
+   are already supplied; they are not the remaining geometric gap.
 2. **Integral maps and global norms (W06/W08).** Supply nonzero integral
    theta maps, sharp auxiliary-level divisibility and positive normalizers.
    Bound their calibrated global trace costs or a sufficient refined-energy

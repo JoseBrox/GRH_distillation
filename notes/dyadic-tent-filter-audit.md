@@ -212,7 +212,8 @@ All linear corrections of the three nonprincipal terms disappear. The kernel $K_
 
 ```math
 \sum_{\substack{p^k\le4y\\ k\ge3}} \log p
-\ll\sum_{k\ge3}(4y)^{1/k}\ll y^{1/3}.
+\ll\sum_{k=3}^{\lfloor\log_2(4y)\rfloor}(4y)^{1/k}
+\ll (4y)^{1/3}+(4y)^{1/4}\log(4y)\ll y^{1/3}.
 ```
 
 Since $0\le K_{q,d}\le4$ and $0\le W_2\le1$, the difference between the prime-power sum in (11) and its prime-only version is $O(y^{1/3})$, **uniformly in the distinct odd primes $q,d$**. At most two ramified-prime terms distinguish the prime-only kernel from four times the selected split/inert prime count; these are $O(\log(2y))$, and vanish under the relevant local sign conditions.
