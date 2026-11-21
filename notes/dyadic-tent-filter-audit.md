@@ -161,4 +161,35 @@ Crossley's [separate all-width manuscript](https://github.com/leecrossley/prime-
 
 **Research decision:** Retain this as an optional analytic branch. Test whether the preferred RH arithmetic construction can supply the finite-window lower estimate directly, respecting ramified primes, auxiliary characters, same-map normalizations and its growing parameters. Do not infer that the signed filter improves the currently available one-sided bounds. No arithmetic or geometric obligation has been discharged by the PR.
 
+## 5. An exact match with the preferred quadratic projector
+
+The current [RH direct transfer](rh-direct-transfer.md) uses the *positive arithmetic projector*
+
+```math
+D_+(x)=G_1(x)+G_{\chi_q}(x)-G_{\chi_d}(x)-G_{\chi_q\chi_d}(x),
+\qquad
+K_{q,d}(n)=(1+\chi_q(n))(1-\chi_d(n)).
+```
+
+Here $\chi_q,\chi_d$ are the quadratic characters of two distinct odd auxiliary primes. Applying (1) and (2) gives the **exact local identity**
+
+```math
+-D_+(4y)+3D_+(2y)-2D_+(y)
+=2y\log 2-\sum_{y<n<4y}\Lambda(n)K_{q,d}(n)W_2(n/y).
+\tag{10}
+```
+
+All linear corrections of the three nonprincipal terms disappear. The kernel $K_{q,d}(n)$ is real and nonnegative even at primes dividing the auxiliary conductors. At an unramified prime $p$, it equals $4$ if $\chi_q(p)=1$, $\chi_d(p)=-1$, and $0$ otherwise.
+
+**Prime-power advantage.** For even $k\ge2$, $K_{q,d}(p^k)=0$ except possibly at $p=d$. Indeed at primes outside $qd$ both quadratic characters square to $1$; at $p=q$, $\chi_d(q)^{2k}=1$; at $p=d$, $K_{q,d}(d^{2k})=2$. Consecutive even powers of an odd $d$ have ratio $d^2\ge9>4$, so at most one can lie in $(y,4y)$, contributing $O(\log(2y))$. All remaining higher powers are odd powers $k\ge3$, and Chebyshev's bound gives
+
+```math
+\sum_{\substack{p^k\le4y\\ k\ge3}} \log p
+\ll\sum_{k\ge3}(4y)^{1/k}\ll y^{1/3}.
+```
+
+Since $0\le K_{q,d}\le4$ and $0\le W_2\le1$, the difference between the prime-power sum in (10) and its prime-only version is $O(y^{1/3})$, **uniformly in the distinct odd primes $q,d$**. At most two ramified-prime terms distinguish the prime-only kernel from four times the selected split/inert prime count; these are $O(\log(2y))$, and vanish under the relevant local sign conditions.
+
+This is a useful feature of the actual RH construction, not merely of the abstract Dirichlet-family transfer. The improved $O(y^{1/3})$ deletion bound is nevertheless **not** the unresolved geometric estimate: we still need a lower bound for this local selected-prime sum to force the required upper bound for (10). The preferred RH comparison gives a one-sided *upper* bound for a cumulative $D_+$ observable, and (10) has mixed signs. Furthermore, $D_+$ is a *signed* combination of characters even though $K_{q,d}\ge0$; it cannot be treated as an admissible positive-residue character family without separate justification. The original quadratic-twist selection and common-map arithmetic hypotheses remain necessary to transfer any local estimate to the zeta target.
+
 **Verification scope:** Formulae (1)–(9) and the bound $C_0<1/20$ were checked algebraically. The pinned external Lean source and its recorded kernel/axiom output were inspected, not rebuilt. No new finite certificate and no independent full Lean verification is claimed.
