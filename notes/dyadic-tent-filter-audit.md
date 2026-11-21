@@ -172,7 +172,7 @@ The same classical argument shows something stronger about sampling, without inv
 
 where $\vartheta(x)=\sum_{p\le x}\log p\ll x$ is Chebyshev's elementary bound. Continuity at breakpoints makes this a global Lipschitz bound for all sufficiently large $y$.
 
-**Corollary (RH from tests at squares).** Let $b>b_0$, with $b_0$ from (5). Then
+**Corollary (RH from tests at squares).** Let $b>b_0$, where $b_0$ is the explicit threshold in Section 3. Then
 
 ```math
 \mathrm{RH}\quad\Longleftrightarrow\quad
@@ -213,8 +213,8 @@ All linear corrections of the three nonprincipal terms disappear. The kernel $K_
 \ll\sum_{k\ge3}(4y)^{1/k}\ll y^{1/3}.
 ```
 
-Since $0\le K_{q,d}\le4$ and $0\le W_2\le1$, the difference between the prime-power sum in (10) and its prime-only version is $O(y^{1/3})$, **uniformly in the distinct odd primes $q,d$**. At most two ramified-prime terms distinguish the prime-only kernel from four times the selected split/inert prime count; these are $O(\log(2y))$, and vanish under the relevant local sign conditions.
+Since $0\le K_{q,d}\le4$ and $0\le W_2\le1$, the difference between the prime-power sum in (11) and its prime-only version is $O(y^{1/3})$, **uniformly in the distinct odd primes $q,d$**. At most two ramified-prime terms distinguish the prime-only kernel from four times the selected split/inert prime count; these are $O(\log(2y))$, and vanish under the relevant local sign conditions.
 
-This is a useful feature of the actual RH construction, not merely of the abstract Dirichlet-family transfer. The improved $O(y^{1/3})$ deletion bound is nevertheless **not** the unresolved geometric estimate: we still need a lower bound for this local selected-prime sum to force the required upper bound for (10). The preferred RH comparison gives a one-sided *upper* bound for a cumulative $D_+$ observable, and (10) has mixed signs. Furthermore, $D_+$ is a *signed* combination of characters even though $K_{q,d}\ge0$; it cannot be treated as an admissible positive-residue character family without separate justification. The original quadratic-twist selection and common-map arithmetic hypotheses remain necessary to transfer any local estimate to the zeta target.
+This is a useful feature of the actual RH construction, not merely of the abstract Dirichlet-family transfer. The improved $O(y^{1/3})$ deletion bound is nevertheless **not** the unresolved geometric estimate: we still need a lower bound for this local selected-prime sum to force the required upper bound for (11). The preferred RH comparison gives a one-sided *upper* bound for a cumulative $D_+$ observable, and (11) has mixed signs. Furthermore, $D_+$ is a *signed* combination of characters even though $K_{q,d}\ge0$; it cannot be treated as an admissible positive-residue character family without separate justification. The original quadratic-twist selection and common-map arithmetic hypotheses remain necessary to transfer any local estimate to the zeta target.
 
 **Verification scope:** Formulae (1)–(9) and the bound $C_0<1/20$ were checked algebraically. The pinned external Lean source and its recorded kernel/axiom output were inspected, not rebuilt. No new finite certificate and no independent full Lean verification is claimed.
