@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "repository": "jsmorph/rh",
+  "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "note": "notes/qualitative-selmer-finiteness.md",
+  "note_sha256": "2e18981627bc91d95b92f6132eb3f6c79074c435f96e1a251d9cb0eeff5b806e",
+  "checker": "scripts/check_qualitative_selmer_finiteness.py",
+  "checker_sha256": "d7c2b6e60ef60434ad2bc454b1045dae99b9ff520eaa873a49c8427149d2a430",
+  "atlas_compressed_sha256": "f894df1636e0cbaf739c31f8c2f13c8ee7d9a427893ed93b019842cd9a4e21c0",
+  "classical_conclusions": [
+    "For every totally imaginary F, every prime p and e>=1, the dual strict Selmer group embeds in K_{2e}(O_F){p}.",
+    "For each fixed F,t, the prime support is finite and the all-prime weighted sum is at most log product_{1<=e<t} #K_{2e}(O_F).",
+    "The actual host data meet the hypotheses, supplying ShaFinOdd and qualitative summability independently of the quantitative window estimate."
+  ],
+  "proof_checks": [
+    "Finite-to-discrete strict kernel commutes with filtered colimits because the localization set is finite.",
+    "The finite Tate dual of Q_p/Z_p(-e)[p^n] is Z/p^n(e+1), with dual reduction transitions.",
+    "Perfect finite pairings yield the inverse-limit injection; finite H1 removes lim^1.",
+    "The p=2 comparison needs no real places, supplied by the actual CM host; e=1 is included.",
+    "Actual source H1 is continuous cocycles modulo coboundaries, Sha1 is a restriction-kernel intersection, and localization uses full decomposition groups."
+  ],
+  "sources": [
+    {
+      "module": "Formalism.GaloisCohomology.Statement",
+      "path": "lean/src/Formalism/GaloisCohomology/Statement.lean",
+      "sha256": "67dc5835eb4b337dfbbbf7f0accd1198b59793ae70f5af34421a7c35410d632c",
+      "git_blob_sha1": "0799e9bcd8aa191ffaa90ab005453a53381bacea",
+      "bytes": 8427,
+      "line_count": 186,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            13,
+            20
+          ],
+          "sha256": "d37631a56ad49fc9c890a6c8af7e4adce8f039ff9cbd943f7e835ed3ffbb71e7"
+        },
+        {
+          "lines": [
+            54,
+            105
+          ],
+          "sha256": "3dd3c294af94dbd16a2201e113b61fa949f96c2ebf3ffc66000dfb2e4d492978"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.LevelLetterCocycles.DataN",
+      "path": "lean/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+      "sha256": "aeb3839d2468c0e89fbf509a1b971bf983a09ccc1e3ccf99d89dc8ee78a9edc8",
+      "git_blob_sha1": "3d5ea7e38ae7ff6a7fae481011bc05e4490b5a84",
+      "bytes": 71611,
+      "line_count": 1423,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            55,
+            67
+          ],
+          "sha256": "bd5b00ba9ca6e5c0260a4e13ac0a312a991c5427562b9f9c203b11b1c89e740d"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.LocalRingCardinality.DataHost",
+      "path": "lean/src/Formalism/LocalRingCardinality/DataHost.lean",
+      "sha256": "39252a17ac91969e59b2f1c89efe12b6ac0e7ea97bd462c1e250f8ea8b4c954f",
+      "git_blob_sha1": "7e9af8ab364965c62be250ae93974098141598c0",
+      "bytes": 8732,
+      "line_count": 233,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            115,
+            118
+          ],
+          "sha256": "edfc1451bc637e9bbcdc799ff144a91600e6234e224a7ed7bbc1ca9cd5923d9f"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.GlobalTheoremInputs",
+      "path": "lean/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+      "sha256": "4d51ccc0586441a159ad6d09ebc0a46b3c462e3c5b296d5a5bd7613266e17bfb",
+      "git_blob_sha1": "ba31f5120ed089d48968754ae577427912d467c5",
+      "bytes": 8939,
+      "line_count": 168,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            25,
+            29
+          ],
+          "sha256": "00f56ac764fe81a57f905dcd52754db8873098d047b8a2ef22bf25d255920fe9"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.GaloisValuations.SeparatedDvrSecondCohomologyMem",
+      "path": "lean/src/ReciprocityTheory/GaloisValuations/SeparatedDvrSecondCohomologyMem.lean",
+      "sha256": "52e77c27ae46d0c14e80e46af66a7d94d84c36a665165406e512c229ea261bb0",
+      "git_blob_sha1": "5860d068c8ee7b7d2845256ce5e2871cf3c9c251",
+      "bytes": 12040,
+      "line_count": 300,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            42,
+            66
+          ],
+          "sha256": "58f45a0bdcaeba1bf4df084580b678c44a7908d4ebeeff9dfdd3ac1fd0c5e97b"
+        },
+        {
+          "lines": [
+            138,
+            150
+          ],
+          "sha256": "10ee2fc7834c5c413f3f55c672293cfd9ecc3785cab5daff7bbd1c7f721bb054"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.GaloisValuations.ContinuousConstSMulQuotient",
+      "path": "lean/src/ReciprocityTheory/GaloisValuations/ContinuousConstSMulQuotient.lean",
+      "sha256": "610c38bcf79837ed06292f22f6ce7ccdb40dc8df503e0ed41a06e71e9224b55f",
+      "git_blob_sha1": "cc7e6464c45dac01a68e484ce0eb884df25d9f4f",
+      "bytes": 8957,
+      "line_count": 207,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            154,
+            170
+          ],
+          "sha256": "1dbe8d9e2a148987b2b9edd5deceb0c8376e4f812c8ff5030f211026f7089055"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.Hypotheses.GalCoh",
+      "path": "lean/src/ReciprocityTheory/Hypotheses/GalCoh.lean",
+      "sha256": "8b5051953b0209402d9ef496c5877eec8b809d1b10fbd67877408876c36f30cd",
+      "git_blob_sha1": "a4e5044d290790dfc54db004228d49cd9fdb77e5",
+      "bytes": 16010,
+      "line_count": 273,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            132,
+            139
+          ],
+          "sha256": "40f5ff31f6724b3abe6e3f122537ec7d098204580dbb1f83f6c0a24c6e110fcc"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.GaloisValuations.Global",
+      "path": "lean/src/ReciprocityTheory/GaloisValuations/Global.lean",
+      "sha256": "c8e9465c22e48ca68c4e2cfec74c1f9407d8c471b2eb5e2440f11b910a6bfbd6",
+      "git_blob_sha1": "cb4c9727d3c18cfdf185fa0958a4f11d21a5a43f",
+      "bytes": 19920,
+      "line_count": 417,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            6,
+            18
+          ],
+          "sha256": "73a408f669a0b2592a1d9b19ccac0c9f36ccd99d308400390ef99bd95c04af57"
+        },
+        {
+          "lines": [
+            128,
+            156
+          ],
+          "sha256": "8dc342b5df4945be8feb7859f6bdf1b7ab582ba272daebc55f377446ce0fc7ec"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.ConjugateSelfDual.Statement",
+      "path": "lean/src/Formalism/ConjugateSelfDual/Statement.lean",
+      "sha256": "8d249d25b306976cf622c4c79137456f46ee90aac3271b3647ee7cb217219dae",
+      "git_blob_sha1": "8ac13fd8953cf0cff090de5b89c0aab876c5c929",
+      "bytes": 1333,
+      "line_count": 33,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            5,
+            6
+          ],
+          "sha256": "6f16e2df26525936468752c1830571ae0eacc5b8f8b864733834aefdbdd94634"
+        }
+      ]
+    }
+  ],
+  "primary_sources": [
+    {
+      "title": "Weibel, The K-book, Chapter IV",
+      "url": "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf",
+      "path": "build/reference-cache/weibel-kbook-iv.pdf",
+      "sha256": "9f1c1b8cccfe19d547c27dd04c61f198fd7a0cddd0018a0b84442b00fa575248",
+      "page_count": 93,
+      "bytes": 882504,
+      "inspected_pages": [
+        {
+          "pdf_page": 12,
+          "scope": "Theorems 1.17-1.18: zero even rank",
+          "extracted_page_text_sha256": "f3adcf02ba5263b04a47663de77c832cfff54485d8db5e201b88ce080c683ea4",
+          "visually_inspected": true,
+          "rendered_page_sha256": "c84e96f08453dd094660d16a2efc7b65f3db6f889a95f421f16a4c96eecd6620"
+        },
+        {
+          "pdf_page": 59,
+          "scope": "Theorem 6.9: finite generation over the ring of integers",
+          "extracted_page_text_sha256": "6fd1e1d02efeb63b1f0f008fe4459d516400b76d7d3d964f7da370b73ed016c9",
+          "visually_inspected": true,
+          "rendered_page_sha256": "18805cac49d09e711d9c5d5d9c99173ed7f8664f1307f9ffd25a44ee7e7444e8"
+        }
+      ]
+    },
+    {
+      "title": "Weibel, The K-book, Chapter VI",
+      "url": "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.VI.pdf",
+      "path": "build/reference-cache/weibel-kbook-vi.pdf",
+      "sha256": "efca16d77ed598735aa4e819be48d10d35bec0cf1b4138548f94f67922d40cd1",
+      "page_count": 66,
+      "bytes": 673944,
+      "inspected_pages": [
+        {
+          "pdf_page": 47,
+          "scope": "Theorem 8.2: all n>=2; p=2 requires totally imaginary; no roots-of-unity assumption",
+          "extracted_page_text_sha256": "729cb38daf3753e4a484ca1aaf8a00593acf94d4df5371346867ba6983ca3e54",
+          "visually_inspected": true,
+          "rendered_page_sha256": "d9f4a2ddf06b3099ef22c41765e9df580c1fbf4084cc7fcc7dff1aad47cae625"
+        }
+      ]
+    },
+    {
+      "title": "Milne, Arithmetic Duality Theorems, second edition",
+      "url": "https://jmilne.org/math/Books/ADTnot.pdf",
+      "path": "build/reference-cache/milne-arithmetic-duality.pdf",
+      "sha256": "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31",
+      "page_count": 347,
+      "bytes": 2136045,
+      "inspected_pages": [
+        {
+          "pdf_page": 64,
+          "scope": "Printed p.56: strict kernels, Tate dual and Theorem I.4.10 hypotheses",
+          "extracted_page_text_sha256": "6ed4c096deb70467ce8932aec50944b481d75e8d80941560005ff7c95788f711",
+          "visually_inspected": true,
+          "rendered_page_sha256": "ad206b6084911457f4740e9ae43f53806f5ac2ee328caad2c3e338661c51366d"
+        },
+        {
+          "pdf_page": 65,
+          "scope": "Printed p.57: Theorem I.4.10(a), perfect finite strict-kernel pairing",
+          "extracted_page_text_sha256": "a27ca904319299c5afe761860675fdec79ceffdeb29b7f54594a47f7aaaadb19",
+          "visually_inspected": true,
+          "rendered_page_sha256": "e337710c34d1e2012150782efee8b45f1c6ba85e76d109e161fed80f72a8bc8b"
+        },
+        {
+          "pdf_page": 70,
+          "scope": "Printed p.62: Corollary I.4.15, finite cohomology for finite S",
+          "extracted_page_text_sha256": "5e1cc5376306686dd2565da86003bb84eacd93d057f3b9c92d6f9f075fb77609",
+          "visually_inspected": true,
+          "rendered_page_sha256": "0561c8546b39c4c8ecc5a7e03fa554cb54a17b4fdc2e9c17b42eb22dc7a464c1"
+        },
+        {
+          "pdf_page": 178,
+          "scope": "Printed p.170: Proposition II.2.9, etale-Galois comparison",
+          "extracted_page_text_sha256": "5c6c8f89a14dc511fae5282885f272633012fdf0967bb3681e4850894c908458",
+          "visually_inspected": true,
+          "rendered_page_sha256": "58a0fab343b68bece402961bcbbc21475fbf2c7c3e8ec0c96fca20666d59ea9e"
+        }
+      ]
+    }
+  ],
+  "review": {
+    "author": "Ordinary limiting proof, source-definition audit and visual primary-page review completed.",
+    "root": "PASS full ordinary proof, finite-support corollary and shared Selmer TeX. Independently viewed Weibel VI PDF page 47 and Milne ADT PDF pages 64-65; hash-read GaloisCohomology.Statement 54-105, Global 128-156, DataN 55-67 and DataHost 115-118, confirming the actual host, twist and full-local identification. Other primary pages and upstream proofs were not independently audited.",
+    "geometric_simplify": "PASS: complete ordinary limiting proof and finite-support/log-product corollary; independently viewed all seven primary page renders, including exact p=2/e=1 hypotheses; separately hash-read GaloisCohomology.Statement 54-104. No independent reread of additional deeper cochain/model sources or upstream proof replay claimed."
+  },
+  "limitations": [
+    "Cited classical comparison/duality theorems are established inputs, not newly proved here.",
+    "No useful uniform bound for the changing K-group orders or selected weighted Selmer sum is proved.",
+    "Finite support is not a specified numerical cutoff and does not establish local integral congruence estimates.",
+    "No Selmer or K-group computation, whole-source audit, Lean build, or construction-node completion is claimed."
+  ]
+}
