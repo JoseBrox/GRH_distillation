@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "status": "early checkpoint: all 15 full laws and additional Artin/epsilon witnesses inventoried; substitution not yet asserted",
+  "scope": "Conventional mathematical comparison with pinned local source definitions; no Lean kernel build or broad global substitution claim.",
+  "source_commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "note": "notes/classical-local-correspondence.md",
+  "note_sha256": "95e034e6aae841349ff1dfb5fb3b8a3145eff12a9def4230f64c5a449b01bd29",
+  "laws": [
+    {
+      "field": "bij",
+      "declaration_line": 32,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "dim",
+      "declaration_line": 34,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "one",
+      "declaration_line": 36,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "eps",
+      "declaration_line": 38,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "twist",
+      "declaration_line": 42,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "central",
+      "declaration_line": 44,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "dual",
+      "declaration_line": 47,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "cusp",
+      "declaration_line": 50,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "langlands",
+      "declaration_line": 52,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "det",
+      "declaration_line": 56,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "prod",
+      "declaration_line": 59,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "supp",
+      "declaration_line": 63,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "sph",
+      "declaration_line": 66,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "sat",
+      "declaration_line": 68,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    },
+    {
+      "field": "depth",
+      "declaration_line": 71,
+      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+    }
+  ],
+  "additional_witnesses": [
+    "IsLocalArtin: surjectivity, inertia continuity, valuation, smooth-character factorization, global reciprocity compatibility",
+    "IsDeligneEps: multiplicativity, exact normalized rank-one Gauss sum, virtual-dimension-zero induction"
+  ],
+  "proved_translations": [
+    {
+      "id": "all-weil-semisimple",
+      "statement": "For smooth complex Weil representations, Frobenius semisimplicity is equivalent to semisimplicity of every Weil operator.",
+      "proof": "Finite inertia image; a centralizing Frobenius power; semisimple positive powers of invertible complex operators imply semisimplicity."
+    },
+    {
+      "id": "adjacent-rank-no-inertia",
+      "statement": "If rho is irreducible of dimension m+1 and tau is semisimple of dimension m, then (rho tensor tau)^I=0.",
+      "proof": "An inertia overlap between irreducible Weil representations forces them to differ by an unramified twist and hence have equal dimensions."
+    }
+  ],
+  "critical_normalization": "The source induction relation ignores monodromy. Its IsDeligneEps witness is the underlying-Weil epsilon constant at s=1/2, with self-dual additive measure. Adjacent-rank cuspidal pairs have no inertia invariants, so neither their L-factors nor the WD monodromy correction changes the corresponding functional equation.",
+  "files": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/PublishedTheorems/AutomorphicForms₂/LocalLanglandsGL.lean",
+      "git_blob_sha1": "0e3abe539c00d0b51ab3c34976e97e17a34abad7",
+      "sha256": "85f160b86f6b67f6660b8a580e8cccadc0d70cda58a7c4db2c1d1325bd844ad8",
+      "bytes": 9769,
+      "inspected_ranges": [
+        [
+          21,
+          90
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/PublishedTheorems/AutomorphicForms₂/HasExponentZeroIff.lean",
+      "git_blob_sha1": "680f232fc10710a489c212783793c4a3ea13728b",
+      "sha256": "76f20aec25e7a72b9cdfd3304e2f56f3e202db55e4cba0d6d183003af0c02afe",
+      "bytes": 11302,
+      "inspected_ranges": [
+        [
+          18,
+          70
+        ],
+        [
+          78,
+          115
+        ],
+        [
+          145,
+          215
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/MonodromyZeroOfWeilDeligneRepClassIff.lean",
+      "git_blob_sha1": "4c424b486a66ef4a8581a5c16af5a91572d721be",
+      "sha256": "c9606fde496604088dc8667a8008980c0d8250f15f330cc18b3644767fd3d8f8",
+      "bytes": 30181,
+      "inspected_ranges": [
+        [
+          36,
+          58
+        ],
+        [
+          126,
+          147
+        ],
+        [
+          247,
+          282
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/NonemptyEquivMultiProdOne.lean",
+      "git_blob_sha1": "4fb9f2f98e463779ca4408d5f9d8681bde1236e6",
+      "sha256": "a25c4167d0d342508d3fde846dca96b02fbc316efb8186ac509c4c5069f42388",
+      "bytes": 45768,
+      "inspected_ranges": [
+        [
+          498,
+          568
+        ]
+      ]
+    }
+  ],
+  "remaining": [
+    "Primary references for full correspondence properties",
+    "Exact normalized-induction and multisegment orientation",
+    "Satake inverse and arithmetic/geometric Frobenius",
+    "Rankin-Selberg functional equation and arbitrary invariant integral",
+    "Rank-one Gauss sum and virtual induction normalization",
+    "All local Artin clauses, including global reciprocity"
+  ]
+}

@@ -128,3 +128,15 @@ path suffix. It verifies the bytes and prints at most25 search matches or120
 lines/12KB. Run large analyses locally and retain concise results, dependencies
 and evidence in version-controlled files. Commit coherent results to main
 promptly; never weaken mathematical verification to save context.
+
+## Continuation checkpoint: averaged arithmetic target
+
+The new [one-construction target](one-construction-target.md) proves that the
+final character comparison needs an averaged arithmetic discrepancy, rather
+than a separate discrepancy bound for every translation. Its finite-error
+refinement and full clause ledger are still being completed.
+
+The [classical local correspondence inventory](classical-local-correspondence.md)
+now lists all fifteen full laws and the additional Artin and epsilon witnesses.
+This is an explicit partial comparison, not yet adoption of the entire
+classical replacement. Both notes carry pinned bounded-source certificates.
