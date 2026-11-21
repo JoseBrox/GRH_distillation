@@ -59,6 +59,23 @@ sharp tight-frame case. Positive normalizers and the centered global energy
 estimate remain substantive inputs. The existing manuscript already had
 linear rank-loss control; no new exponent gain over that result is claimed.
 
+The [centered frame theorem](frame-degree-compatibility.md) has zero loss
+for a perfect full frame and an exact optimal common normalization. Exact
+proportional expansion removes the spread and minimum-slope hypotheses
+altogether, when that stronger condition is actually supplied. The
+[actual source bridge](rh-centered-frame-bridge.md) permits replacing the
+same-map frame penalty, with the correct slope units and retained rank.
+Counting, divisor, section-degree and quotient losses still supply all four
+shapes of the present RH envelope. The centered estimate is used together
+with the older comparison, since its square-root energy term can be larger.
+
+The [finite-symmetry calculation](finite-symmetry-energy.md) identifies
+exactly which energy averaging removes. Multiplicity-space variance and
+unequal representation masses remain. In the actual retained arithmetic
+space, the available stabilizing subgroup acts by scalars; larger ambient
+symmetry cannot be assumed to preserve that space. Neither symmetry nor a
+perfect analytic frame alone supplies the intermediate geometric degree.
+
 The earlier [geometric combination](rh-geometric-combination.md) proves
 useful general alternatives:
 
