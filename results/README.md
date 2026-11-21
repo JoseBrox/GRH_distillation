@@ -4,13 +4,13 @@ These are mathematical reductions and comparisons. Their proofs are in [the pape
 
 ## Primitive characters and reflection
 
-If a character modulo $N$ is induced by a primitive character $\psi$ of conductor $q$, then
+If a character modulo N is induced by a primitive character ψ of conductor q, then
 
-```math
-L(s,\chi)=L(s,\psi)\prod_{p\mid N,\ p\nmid q}(1-\psi(p)p^{-s}).
+```text
+L(s, χ) = L(s, ψ) ∏_{p | N, p ∤ q} (1 − ψ(p)p^(−s)).
 ```
 
-Every added factor is nonzero for $\operatorname{Re}s>0$. The primitive and imprimitive functions therefore have the same zeros, with multiplicities, in that half-plane away from poles. The normalized functional equation reflects a primitive zero at $s$ to a zero for the conjugate character at $1-s$. Thus primitive nonvanishing in the right half of the critical strip implies Dirichlet GRH.
+Every added factor is nonzero for Re(s) > 0. The primitive and imprimitive functions therefore have the same zeros, with multiplicities, in that half-plane away from poles. The normalized functional equation reflects a primitive zero at s to a zero for the conjugate character at 1 − s. Thus primitive nonvanishing in the right half of the critical strip implies Dirichlet GRH.
 
 The proof includes conductors, Gauss sums, the theta transformation, the conductor-one case, and the boundary at real part zero.
 
@@ -18,37 +18,37 @@ The proof includes conductors, Gauss sums, the theta transformation, the conduct
 
 Put
 
-```math
-G(x)=\sum_{n\leq x}\Lambda(n)(x/n-1)-x\log x+(1+\gamma)x.
+```text
+G(x) = ∑_{n≤x} Λ(n)(x/n − 1) − x log x + (1 + γ)x.
 ```
 
-For nonprincipal $\chi$ with $L(1,\chi)\ne0$, put
+For nonprincipal χ with L(1, χ) ≠ 0, put
 
-```math
-g_\chi(x)=\sum_{n\leq x}\Lambda(n)\chi(n)(x/n-1)+x\frac{L'(1,\chi)}{L(1,\chi)}.
+```text
+g_χ(x) = ∑_{n≤x} Λ(n)χ(n)(x/n − 1) + x L'(1, χ)/L(1, χ).
 ```
 
-Let $R$ and the $m_\chi$ be positive integers, with a finite character family closed under conjugation and $m_{\bar\chi}=m_\chi$. An eventual upper bound
+Let R and the m_χ be positive integers, with a finite character family closed under conjugation and m_{χ̄} = m_χ. An eventual upper bound
 
-```math
-R G(x)+\sum_\chi m_\chi\operatorname{Re}g_\chi(x)\leq Cx^\theta,\qquad 0\leq\theta<1,
+```text
+R G(x) + ∑_χ m_χ Re(g_χ(x)) ≤ C x^θ,    0 ≤ θ < 1,
 ```
 
-implies zero-freeness in $\operatorname{Re}s>\theta$ for zeta and all characters in the family. No lower bound is needed. The paper proves the exact Mellin identities, the positivity argument, and the sign of the possible residue. It does not prove this arithmetic upper bound.
+implies zero-freeness in Re(s) > θ for zeta and all characters in the family. No lower bound is needed. The paper proves the exact Mellin identities, the positivity argument, and the sign of the possible residue. It does not prove this arithmetic upper bound.
 
 ## A smoothed Möbius-sum criterion
 
-If, for every fixed smooth compactly supported test $W$ and every $\varepsilon>0$,
+If, for every fixed smooth compactly supported test W and every ε > 0,
 
-```math
-\sum_n\mu(n)\chi(n)W(n/X)\ll_{\chi,W,\varepsilon}X^{\theta+\varepsilon},
+```text
+∑_n μ(n)χ(n)W(n/X) ≪_{χ,W,ε} X^(θ+ε),
 ```
 
-then $L(s,\chi)$ has no zero in $\operatorname{Re}s>\theta$, for $\theta\geq0$. The paper also proves the version for ideals and deleted Euler factors. A test chosen to have nonzero Mellin transform at a hypothetical zero gives a direct contradiction.
+then L(s, χ) has no zero in Re(s) > θ, for θ ≥ 0. The paper also proves the version for ideals and deleted Euler factors. A test chosen to have nonzero Mellin transform at a hypothetical zero gives a direct contradiction.
 
 ## Consequences of a second-moment bound
 
-The paper proves the exact inequality that extracts one sum from many approximately equal sums. Applying it to sixth powers gives the October source's $11/12$ exponent **conditional on its displayed arithmetic inputs**. The precise optimization limitation is recorded in [negative-results](../negative-results/README.md).
+The paper proves the exact inequality that extracts one sum from many approximately equal sums. Applying it to sixth powers gives the October source's 11/12 exponent **conditional on its displayed arithmetic inputs**. The precise optimization limitation is recorded in [negative-results](../negative-results/README.md).
 
 ## Inversion and uniformity
 
