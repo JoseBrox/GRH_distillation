@@ -16,17 +16,19 @@ The original Lean archive is linked from the announcement. For stable file refer
 
 ## Current status
 
-**[Read the developing paper (PDF)](paper/main.pdf)** · **[TeX source](paper/main.tex)** · **[Proved results](results/README.md)** · **[Limitations of the methods](negative-results/README.md)**
+**[Recovered main manuscript](archive/recovered-2026-11-21/grh_reconstruction_v2.tex)** · **[Complete recovered bundle](archive/recovered-2026-11-21/grh_audit_reproducibility.zip)** · **[Restart analytic companion (PDF)](paper/main.pdf)** · **[Recovery inventory](archive/recovered-2026-11-21/README.md)**
 
-The paper contains complete proofs of analytic reductions and explicitly conditional comparisons with the quasi-RH approaches. It does **not yet contain an independently verified proof of GRH**. The unresolved arithmetic inputs are stated separately.
+The earlier work has now been recovered from the three files supplied by the project owner. It includes a 48,261-line mathematical reconstruction and a 622-file reproducibility bundle. The originals are preserved unchanged, with hashes. This much larger manuscript is the main baseline; its mathematical dependencies and current remaining obligations are being reconciled before editorial reorganization.
 
-The written results include the primitive-character reduction, a one-sided criterion for weighted prime sums, a criterion based on smoothed Möbius sums, and an exact limitation of the sixth-power averaging argument. These help identify what a shorter proof must actually establish.
+The human-readable reconstruction remains incomplete. It does **not yet constitute a complete independently verified ordinary-mathematics proof of GRH**. Many inputs are proved in later sections, but the final arithmetic prime-sum estimate and some prerequisites remain open in this reconstruction. The formal verification evidence reported in the recovered audit is a separate question from the completeness of the written mathematical explanation.
+
+The shorter paper prepared at the restart is retained as an analytic companion. Its results are being compared with the recovered manuscript. In particular, its limitation of a coarse sixth-power estimate does not rule out the more refined exact prime-removal method already developed in the recovered work.
 
 The source statements have been inspected. They concern all Dirichlet characters of positive modulus; they do not assert GRH for every automorphic or number-field L-function. The full Lean dependency chain has not been built or checked here.
 
 The repository records independently recomputed hashes for 29 selected source files. An exact-rational script checks the exponent calculations. The paper has been compiled with stable references. The [verification records](certificates/README.md) explain the scope of each check.
 
-The earlier conversation's mathematical files are not present in the current workspace. [The recovery record](notes/recovery.md) states exactly which context survived. No missing proof, certificate, computation, or previous result is treated as recovered.
+[The recovery record](notes/recovery.md) distinguishes what was available at the first checkpoint from the much larger body of work subsequently supplied. The preserved originals and complete ZIP ensure that no recovered proof, program, or certificate is lost during reorganization.
 
 ## How to read the project
 

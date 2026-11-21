@@ -17,10 +17,22 @@ The project brief attributes Alpöge's work to collaboration with Fable 5.2. The
 - The full September 30 quasi-RH URL and a truncated reference to the October 5 approach, now identified from the source repository.
 - The new repository and its initial two-line README.
 
-## What has not been recovered
+## What was missing at the first checkpoint
 
 No earlier TeX manuscript, proof text, audit report, program, data file, certificate, or computational output was available in the current workspace. The prior-conversation retrieval service returned that it was disabled. The project source-file list supplied for this conversation was empty.
 
-This checkpoint preserves the actual available brief and newly verified source references. It does not reconstruct prior conclusions from guesses. If earlier artifacts become available, add them with their provenance and reconcile them with the current mathematics.
+That first checkpoint preserved the actual available brief and newly verified source references. The short analytic paper written immediately afterwards was a new reconstruction, not a recovery of unseen earlier work.
+
+## Recovery from the supplied files
+
+Later on 21 November 2026, the project owner attached `grh_audit v2.tex`, `grh_reconstruction v2.tex`, and `grh_audit_reproducibility.zip`. All three originals are now preserved in [the recovery archive](../archive/recovered-2026-11-21/README.md), with SHA-256 hashes and a full member inventory.
+
+The recovered reconstruction has 48,261 lines. The ZIP contains 622 regular files, including both manuscripts and their PDFs, source provenance, formal-export checks, mathematical continuations, exact computations, and negative results. The separately supplied TeX files are byte-identical to the versions in the ZIP. All members passed CRC checks during safe extraction.
+
+The recovered reconstruction supersedes the short restart paper as the main mathematical baseline. The restart paper is retained as an analytic companion while its results are compared with the recovered work. Earlier statements that no mathematical files had been recovered describe the first checkpoint only and are no longer the current status.
+
+The original large Lean archive and the complete exported proof are not included in these three attachments. They contain records of earlier inspections, not those full inputs. At this restart we have directly read selected source files from a pinned public mirror. We must distinguish those direct checks, the earlier checks documented in the recovered reports, and independent verification reported by other researchers.
+
+No continuation after the supplied bundle is treated as recovered unless its text, data, or supporting record is actually available. New results must be identified as new work. Reconciliation must follow the mathematical dependencies: many obligations described as open in an early section are discharged later in the recovered manuscript.
 
 This record belongs outside the main paper. New mathematics belongs in the appropriate sections of the paper, with separate audit records where necessary.
