@@ -1,6 +1,6 @@
 # The mathematical manuscripts
 
-- [Main reconstruction (PDF)](main.pdf): the entire recovered mathematical baseline and the new scalar-to-matrix argument, organized in eight parts.
+- [Main reconstruction (PDF)](main.pdf): the entire recovered mathematical baseline and two new arguments, organized in eight parts and an appendix of alternatives.
 - [Main TeX file](main.tex), [preamble](preamble.tex), [recovered sections](sections/recovered/), and [new mathematical sections](sections/new/).
 - [Analytic companion (PDF)](companion/main.pdf) and [its TeX source](companion/main.tex): the shorter paper written at the restart, preserved with its additional analytic arguments.
 
@@ -22,7 +22,16 @@ Write new mathematics in the appropriate section, with complete hypotheses and p
 
 The new [commutator argument](sections/new/commutator-matrix.tex) proves the
 full matrix restriction and its successive restrictions for a fixed finite
-chain. The final part now separates that completed algebraic step from the
-remaining integrated residue pairing and estimates uniform in growing chains.
+chain. The new [integration theorem](sections/new/jacquet-integrated-descent.tex)
+proves actual Jacquet positivity for every fixed finite mixture of the two
+residue operations under the stated terminal sign and domain hypotheses. The final part
+separates these completed local steps from global estimates and bounds
+uniform in growing chains.
 The original recovered section numbers in the crosswalk remain fixed even
 when a new section changes the numbering in the compiled paper.
+
+There are 98 section files: 96 recovered sections and two new ones. Fourteen
+alternative sections follow `\appendix`; 84 remain in the preferred exposition.
+The latter includes context and mixed sections, so it is not a count of minimal
+independent lemmas. The [proof blueprint](../blueprint/README.md) records every
+section and keeps documentary references distinct from logical obligations.

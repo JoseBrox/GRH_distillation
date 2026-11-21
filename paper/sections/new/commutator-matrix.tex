@@ -203,7 +203,8 @@ to $t(Y)$.
 
 \begin{theorem}\label{cm-full-restriction}
 Let $V=\mathbb C e_0\oplus W\oplus\mathbb C f_0$ be a Hermitian
-space, where $e_0,f_0$ form a hyperbolic pair and $\dim W=d\geq2$.
+space, where $e_0,f_0$ are isotropic, $h(e_0,f_0)=1$,
+$W$ is orthogonal to their span, and $\dim W=d\geq2$.
 Use the open-cell coordinates and character laws of
 Section~\ref{rr-section}, with any fixed vectors $z,x\in W$.
 Form the contracted matrix $t(Y)$ on $U(W)$ from these vectors,
@@ -274,7 +275,8 @@ additional term in these commutators.
 
 \begin{corollary}\label{cm-chain-restriction}
 Fix integers $k\geq1$ and $r\geq0$.  For a succession of $r$
-hyperbolic pairs ending in a Hermitian space of dimension $k+1$,
+hyperbolic pairs, with each remaining space orthogonal to the
+pair removed and the terminal space of dimension $k+1$,
 choose the two distinguished vectors in each nonterminal remaining
 space to be its first isotropic basis vector, and those in the
 terminal space to be its two fixed vectors.  At each step use the
@@ -294,9 +296,13 @@ is
                        T_{r-1}(Y)\cdots T_0(Y).
 \end{equation}
 This includes the empty chain.  All full-group entries and finite
-words in them have the coefficient, support and adjoint properties
-required for the Jacquet commutation argument of
-Lemma~\ref{jf-pointwise-smooth}.
+words in them have the polynomial coefficient, support and formal
+adjoint properties of Corollary~\ref{cm-group-preservation}.
+For the Jacquet application, retain the terminal signature $(k,1)$,
+negative character vectors, measures, compact equivariance and
+positive Gram support fixed in Section~\ref{jf-section}.
+Under these analytic hypotheses the operators satisfy the
+requirements of Lemma~\ref{jf-pointwise-smooth}.
 \end{corollary}
 
 \begin{proof}
@@ -313,14 +319,17 @@ the formula is the terminal matrix itself.
 The last assertion follows from Corollary~\ref{cm-group-preservation}.
 Each entry commutes with the translations defining its Jacquet
 equivariance, so every finite product does as well.
-The dominated-differentiation and Haar-adjoint arguments already
-proved in Sections~\ref{jp-section} and \ref{jf-section} therefore
-apply to these operators, with the same positive Gram support.
+Under the stated analytic hypotheses, the dominated-differentiation
+and Haar-adjoint arguments proved in Sections~\ref{jp-section} and
+\ref{jf-section} apply to these operators, with the same positive
+Gram support.  The algebraic restriction formula alone makes no
+convergence assertion for other signatures or character data.
 \end{proof}
 
 These results establish the full matrix restriction and its
 compatibility with the existing Jacquet operators.  They give no
-estimate uniform in the length of a chain.  The noncompact
-residue-pairing application must still assemble its actual generated
-vectors, convergence statements, and scalar weights; the global
-orbital-energy and arithmetic divisibility estimates remain separate.
+estimate uniform in the length of a chain.  Section~\ref{ji-section}
+uses these identities to prove the actual noncompact integration
+and local residue positivity for every fixed finite word, with the
+stated terminal hypotheses.  The global orbital-energy and arithmetic
+divisibility estimates remain separate.

@@ -20,8 +20,43 @@ spectral shifts and coefficient order. It shows that the scalar restriction
 identity determines all four entries and gives their restrictions along any
 fixed finite standard flag. The group operators remain smooth without
 dividing by intermediate minors, and they preserve the support and decay
-conditions used in the Jacquet argument. The integrated residue pairing and
-estimates uniform in growing chains remain open.
+conditions used in the Jacquet argument. The application retains the prescribed
+terminal signature, character vectors and normalized orthogonal splittings.
+Estimates uniform in growing chains remain open.
+
+## One integration theorem for every finite residue word
+
+For compact smooth coefficients with positive Gram support, all the required
+first-coordinate marginals form a finite matrix of Schwartz functions. The
+exact integration formula therefore follows by integrating derivatives whose
+boundary terms vanish. This replaces separate analytic premises for every
+subset of a residue word by one invariant-class theorem.
+
+The [written proof](../paper/sections/new/jacquet-integrated-descent.tex)
+combines this integration with ordered matrix congruences to prove actual
+Jacquet positivity for every fixed finite mixture of both operations, under the
+terminal domain, sign and separation hypotheses. An explicit cutoff argument
+extends it to smooth coefficients with decay index A + 2h + δ and derivative
+order (k + 2r + 1)h + 5, where δ > 0 and A satisfies the existing pairing bound.
+
+Only the scalar paired density is asserted Schwartz. The factors involving
+inverse coordinates need not separately be globally square integrable. The
+comparison with differently presented source fusion forms and quantitative
+estimates for growing chains remain separate requirements. See the [independent review](../notes/matrix-schwartz-review.md).
+
+## Removing a cohomological dependency
+
+The bounded-order character argument now uses the coarse K-theory bound with
+exponent 14, replacing its use of the older exponent 86. The field degree is
+bounded before the varying parameters are chosen, and the comparison retains
+the possible prime-dividing-degree error. This removes the finite-field
+homology and arithmetic-cycle construction from this application.
+
+Ten older cohomological sections, and four analytic alternatives under the
+chosen uniform quasi-RH route, are preserved in the appendix. The
+[structural review](../notes/global-architecture-review.md) verifies that the
+preferred route retains the arithmetic complex and the needed class-number
+and unit arguments.
 
 ## A redundant real-zero assumption
 

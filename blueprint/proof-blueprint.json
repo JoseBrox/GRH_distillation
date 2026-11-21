@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "scope": "Logical work interfaces for the conventional reconstruction, with complete section coverage in the generated inventory. Not a complete Lean dependency graph and not a certificate of all recovered proofs.",
+  "statuses": {
+    "written": {
+      "label": "Written reduction",
+      "fill": "#E3F3E8",
+      "border": "#267047",
+      "text": "#17472E"
+    },
+    "cited": {
+      "label": "Cited input",
+      "fill": "#E8F0FC",
+      "border": "#3566A0",
+      "text": "#173D70"
+    },
+    "partial": {
+      "label": "Partly completed",
+      "fill": "#FFF1CC",
+      "border": "#A66B0B",
+      "text": "#694400"
+    },
+    "open": {
+      "label": "Open obligation",
+      "fill": "#FCE6E6",
+      "border": "#B44444",
+      "text": "#792828"
+    },
+    "alternative": {
+      "label": "Optional alternative",
+      "fill": "#EEE7F7",
+      "border": "#79609C",
+      "text": "#4C3769"
+    },
+    "context": {
+      "label": "Context or recorded proof",
+      "fill": "#EEF1F4",
+      "border": "#697887",
+      "text": "#33424F"
+    }
+  },
+  "overview": {
+    "title": "A shorter route toward Dirichlet GRH",
+    "nodes": [
+      {
+        "id": "qrh",
+        "title": "Uniform quasi-RH",
+        "status": "cited"
+      },
+      {
+        "id": "choices",
+        "title": "Choose auxiliary characters",
+        "status": "written"
+      },
+      {
+        "id": "cohomology",
+        "title": "Cohomology bounds",
+        "status": "partial"
+      },
+      {
+        "id": "maps",
+        "title": "Integral theta maps",
+        "status": "partial"
+      },
+      {
+        "id": "norms",
+        "title": "Norm and divisibility bounds",
+        "status": "partial"
+      },
+      {
+        "id": "assembly",
+        "title": "Compare the same integral objects",
+        "status": "open"
+      },
+      {
+        "id": "prime_sum",
+        "title": "Required prime-sum bound",
+        "status": "open"
+      },
+      {
+        "id": "criterion",
+        "title": "One-sided zero criterion",
+        "status": "written"
+      },
+      {
+        "id": "grh",
+        "title": "Dirichlet GRH",
+        "status": "open"
+      }
+    ],
+    "edges": [
+      [
+        "qrh",
+        "choices"
+      ],
+      [
+        "choices",
+        "maps"
+      ],
+      [
+        "maps",
+        "norms"
+      ],
+      [
+        "maps",
+        "assembly"
+      ],
+      [
+        "cohomology",
+        "assembly"
+      ],
+      [
+        "norms",
+        "assembly"
+      ],
+      [
+        "assembly",
+        "prime_sum"
+      ],
+      [
+        "prime_sum",
+        "criterion"
+      ],
+      [
+        "criterion",
+        "grh"
+      ]
+    ],
+    "ranks": [
+      [
+        "choices",
+        "cohomology"
+      ],
+      [
+        "maps",
+        "norms"
+      ]
+    ]
+  },
+  "technical": {
+    "title": "Technical proof blueprint\nCurated interfaces; open constructions remain unproved",
+    "nodes": [
+      {
+        "id": "qrh",
+        "title": "Uniform Dirichlet zero-free input",
+        "status": "cited",
+        "evidence": [
+          "sources/manifest.json",
+          "notes/source-check-2026-11-21.md"
+        ]
+      },
+      {
+        "id": "classical",
+        "title": "Classical arithmetic and analytic theorems",
+        "status": "cited",
+        "evidence": [
+          "paper/references.tex"
+        ]
+      },
+      {
+        "id": "selection",
+        "title": "Simultaneous character selection\nand compatible intervals",
+        "status": "written",
+        "evidence": [
+          "qs-selection",
+          "sec:selection-assembly"
+        ]
+      },
+      {
+        "id": "coarse",
+        "title": "Coarse cohomology: exponent 14\nShorter K-theory route",
+        "status": "written",
+        "evidence": [
+          "kt-fourteen",
+          "sv-exact-case"
+        ]
+      },
+      {
+        "id": "refined",
+        "title": "Complementary-parity character bounds\nand integral congruence control",
+        "status": "partial",
+        "evidence": [
+          "paper/sections/recovered/96-sec-remaining.tex"
+        ]
+      },
+      {
+        "id": "coefficients",
+        "title": "Coefficient lattices, periods\nand exact denominators",
+        "status": "written",
+        "evidence": [
+          "coef:section",
+          "div:section",
+          "ip-section"
+        ]
+      },
+      {
+        "id": "theta",
+        "title": "Normalized theta columns\nand selected-prime bounds",
+        "status": "written",
+        "evidence": [
+          "tvc-section"
+        ]
+      },
+      {
+        "id": "seed",
+        "title": "Seed nonvanishing",
+        "status": "open",
+        "evidence": [
+          "paper/sections/recovered/96-sec-remaining.tex"
+        ]
+      },
+      {
+        "id": "level",
+        "title": "Sharp auxiliary-level divisibility",
+        "status": "open",
+        "evidence": [
+          "paper/sections/recovered/96-sec-remaining.tex"
+        ]
+      },
+      {
+        "id": "divisibility",
+        "title": "Divisibility for the actual\nnonzero integral maps",
+        "status": "open",
+        "evidence": [
+          "cs-required-divisor"
+        ]
+      },
+      {
+        "id": "local_orbits",
+        "title": "Local orbital identities\nand ideal summation",
+        "status": "written",
+        "evidence": [
+          "tp-section",
+          "gt-section"
+        ]
+      },
+      {
+        "id": "global_orbits",
+        "title": "Uniform global orbital energy\nCoordinate and lattice-pair estimates",
+        "status": "open",
+        "evidence": [
+          "th-four-estimates",
+          "th-diag-input"
+        ]
+      },
+      {
+        "id": "dimensions",
+        "title": "Mass, dimensions\nand ambient multiplicity",
+        "status": "written",
+        "evidence": [
+          "dc-ambient-comparison"
+        ]
+      },
+      {
+        "id": "matrix",
+        "title": "Full matrix from three commutators\nFixed-chain restriction and domains",
+        "status": "written",
+        "evidence": [
+          "cm-commutator-matrix",
+          "cm-chain-restriction",
+          "notes/review-of-recent-advances.md"
+        ]
+      },
+      {
+        "id": "jacquet",
+        "title": "Jacquet regularity, adjoints\nand Fourier decay",
+        "status": "written",
+        "evidence": [
+          "jp-section",
+          "jf-section"
+        ]
+      },
+      {
+        "id": "residue",
+        "title": "Actual local residue positivity\nEvery fixed mixed word",
+        "status": "written",
+        "evidence": [
+          "ji-integrated-word",
+          "ji-fused-congruence",
+          "ji-fused-positivity",
+          "ji-finite-decay-positivity",
+          "notes/matrix-schwartz-review.md"
+        ],
+        "limits": "Explicit residue recursion; terminal domain, sign, separation and Gram hypotheses. No quantitative growing-chain bound or identification of differently presented source fusion forms."
+      },
+      {
+        "id": "norms",
+        "title": "Archimedean norm bounds\nfor the same maps",
+        "status": "open",
+        "evidence": [
+          "paper/sections/recovered/96-sec-remaining.tex"
+        ]
+      },
+      {
+        "id": "slope",
+        "title": "Abstract slope comparison\nand numerical balance",
+        "status": "written",
+        "evidence": [
+          "cs-slope",
+          "cs-combination"
+        ]
+      },
+      {
+        "id": "compatible",
+        "title": "One compatible construction\nUniform in growing chains",
+        "status": "open",
+        "evidence": [
+          "eq:remaining-estimate",
+          "sec:remaining"
+        ]
+      },
+      {
+        "id": "bound",
+        "title": "Fixed positive prime-sum bound\non arbitrarily large windows",
+        "status": "open",
+        "evidence": [
+          "eq:remaining-estimate"
+        ]
+      },
+      {
+        "id": "criterion",
+        "title": "Mellin transform and one-sided criterion",
+        "status": "written",
+        "evidence": [
+          "lem:positive-family",
+          "thm:interval-grh"
+        ]
+      },
+      {
+        "id": "grh",
+        "title": "Dirichlet GRH",
+        "status": "open",
+        "evidence": [
+          "sec:purpose"
+        ]
+      },
+      {
+        "id": "alt_homology",
+        "title": "Optional coarse homology route\nTen sections bypassed",
+        "status": "alternative",
+        "evidence": [
+          "notes/global-architecture-review.md"
+        ]
+      },
+      {
+        "id": "alt_analytic",
+        "title": "Optional analytic routes\nFour sections; mixed hypotheses",
+        "status": "alternative",
+        "evidence": [
+          "notes/global-architecture-review.md"
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "qrh",
+        "selection"
+      ],
+      [
+        "classical",
+        "coarse"
+      ],
+      [
+        "coarse",
+        "selection"
+      ],
+      [
+        "coarse",
+        "refined"
+      ],
+      [
+        "classical",
+        "coefficients"
+      ],
+      [
+        "classical",
+        "theta"
+      ],
+      [
+        "coefficients",
+        "theta"
+      ],
+      [
+        "theta",
+        "divisibility"
+      ],
+      [
+        "seed",
+        "divisibility"
+      ],
+      [
+        "level",
+        "divisibility"
+      ],
+      [
+        "local_orbits",
+        "global_orbits"
+      ],
+      [
+        "global_orbits",
+        "norms"
+      ],
+      [
+        "dimensions",
+        "norms"
+      ],
+      [
+        "matrix",
+        "residue"
+      ],
+      [
+        "jacquet",
+        "residue"
+      ],
+      [
+        "residue",
+        "norms"
+      ],
+      [
+        "selection",
+        "compatible"
+      ],
+      [
+        "refined",
+        "compatible"
+      ],
+      [
+        "divisibility",
+        "compatible"
+      ],
+      [
+        "norms",
+        "compatible"
+      ],
+      [
+        "slope",
+        "compatible"
+      ],
+      [
+        "compatible",
+        "bound"
+      ],
+      [
+        "bound",
+        "criterion"
+      ],
+      [
+        "criterion",
+        "grh"
+      ]
+    ],
+    "ranks": [
+      [
+        "classical",
+        "qrh"
+      ],
+      [
+        "coarse",
+        "coefficients",
+        "local_orbits"
+      ],
+      [
+        "selection",
+        "refined",
+        "theta"
+      ],
+      [
+        "seed",
+        "level",
+        "global_orbits"
+      ],
+      [
+        "divisibility",
+        "matrix",
+        "jacquet"
+      ],
+      [
+        "dimensions",
+        "residue",
+        "slope"
+      ],
+      [
+        "norms"
+      ],
+      [
+        "compatible"
+      ],
+      [
+        "bound"
+      ],
+      [
+        "criterion"
+      ],
+      [
+        "grh"
+      ],
+      [
+        "alt_homology",
+        "alt_analytic"
+      ]
+    ],
+    "edge_semantics": "Solid arrows record curated input interfaces, not an exhaustive theorem-premise graph. An open target is a remaining obligation. Invisible generator edges order rows and have no mathematical meaning.",
+    "layout": {
+      "ordered_ranks": true,
+      "max_nodes_per_rank": 3,
+      "wrap_columns": 32,
+      "nodesep": 0.26,
+      "ranksep": 0.36
+    }
+  }
+}

@@ -23,3 +23,28 @@ The script checks finite rational identities. The proof for all integers $m\geq2
 ## Compiled paper
 
 `paper-build.json` records the hashes of the TeX sources and the compiled PDF, the engine, and the scope of the build checks. Rebuild with `python3 scripts/build_paper.py`. Visual review of the rendered pages is a separate step; compiling a document does not verify its mathematics.
+
+## Matrix identities and integrated pairings
+
+- `bordered-capelli-review-check.json` records an exact PBW normal-order check
+  of the bordered determinant identity in full dimensions 3, 4 and 5, with a
+  wrong-shift negative control. Reproduce it with
+  `python scripts/check_bordered_capelli.py`.
+- `commutator-matrix-check.json` and
+  `radial-commutator-independent-check.json` record complementary exact tests
+  of the matrix reconstruction and transfer operators. Their written proofs
+  retain all-rank arguments and the required analytic domains.
+- `fused-transfer-exact.json` records rational Laurent-action checks of the
+  residue congruence, with noncommuting terminal coefficients, all sign words
+  through length three, and wrong-order and wrong-argument controls. Run
+  `python scripts/check_fused_transfer.py` to reproduce them. Finite action
+  checks support the written argument and do not prove arbitrary length.
+
+## Structural proof maps
+
+`proof-architecture-allocation.json` records the reviewed 97-section baseline,
+the optional branches and the exact dependency substitution. The live
+`blueprint/module-inventory.json` additionally includes recognized new sections
+and their current hashes. `blueprint-check.json` checks graph endpoints, exact
+section coverage, unique labels and appendix placement. None is a full formal
+dependency audit or a proof of the missing arithmetic estimate.

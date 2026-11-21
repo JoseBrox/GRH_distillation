@@ -1,0 +1,736 @@
+\section{Integration and positivity for finite residue words}
+\label{ji-section}
+
+The first-coordinate integration can be performed for every finite
+matrix of polynomial differential operators at once.  The essential
+observation is that the scalar Jacquet marginals already form a
+matrix of Schwartz functions.  Thus the derivative terms in the
+two-component identity have zero integral without a separate decay
+argument for each subset of a word.  A second argument extends any
+positivity proved for compact coefficients to a prescribed class with
+finitely many decay and differentiability bounds.  An ordered matrix
+identity handles both residue operations together, giving actual local
+positivity for every fixed finite word under the terminal hypotheses.
+
+Throughout this section the place data, Haar measures, compact
+representations and positive Gram support are those of
+Section~\ref{jf-section}.  The standard flag and its normalizations
+are those of Corollary~\ref{cm-chain-restriction}.  All ranks, words
+and spectral parameters are fixed unless a uniform range is stated.
+
+\subsection{A matrix of Schwartz marginals}
+
+Write
+\[
+ \mathscr C_\varepsilon(G_r,E)
+   =\{F\in C_c^\infty(G_r,E):F=0\text{ on }
+                                      \mathcal G_r<\varepsilon\}.
+\]
+This is a subspace of \(\mathscr S_\varepsilon\).
+Let \(B\) be a finite auxiliary index set.  For vectors indexed by
+\(B\), the Jacquet transform acts on each component, and all inner
+products are summed over \(B\).  The inner product is linear in its
+first argument.  For \(r\geq1\), put
+\(\mathcal H=L^2(d\eta_{r-1},E)\).
+
+Let \(\mathcal Q_r(Y)\) denote the full contracted matrix on
+\(G_r\), with the real spectral normalization of
+Corollary~\ref{cm-group-preservation}.  An admissible polynomial
+matrix in this section means a finite matrix whose entries are
+finite sums of ordered products of entries of
+\(\mathcal Q_r(Y)\), evaluated at fixed real parameters, with
+constant scalar or auxiliary-matrix coefficients.  The products
+need not commute.  Constant denominators in the parameters are
+allowed when nonzero; inverse coordinate, Gram or differential
+operators are not included in this definition.
+
+\begin{theorem}\label{ji-schwartz-matrix}
+Let \(r\geq1\), \(F,H\in\mathscr C_\varepsilon(G_r,E)^B\), and let
+\(P\) be an admissible polynomial matrix acting on these vectors.
+Set
+\[
+ U(t)=\Phi_{PF}(t,\cdot),\qquad
+ V(t)=\Phi_H(t,\cdot)\qquad(t\ne0).
+\]
+Then \(U,V:\mathbb C^\times\to\mathcal H^B\) are smooth.
+Every entry of the finite matrix
+\begin{equation}\label{ji-kernel}
+ K_{ab}(t)=|t|^{-2}\langle U_a(t),V_b(t)\rangle_{\mathcal H}
+ \qquad(a,b\in B)
+\end{equation}
+has a unique Schwartz extension to \(\mathbb C\).
+Consequently, for every constant matrix \(A\) on the auxiliary
+space,
+\begin{equation}\label{ji-trace-density}
+ D(U,AV)(t)=|t|^{-2}\langle U(t),AV(t)\rangle
+                         =\operatorname{tr}(K(t)A^*)
+\end{equation}
+has a Schwartz extension.  Every positive-order constant-coefficient
+derivative of this extension has integral zero over \(\mathbb C\).
+\end{theorem}
+
+\begin{proof}
+Corollary~\ref{cm-group-preservation} shows that every component of
+\(PF\) is smooth, compactly supported, and zero on the same open
+set \(\mathcal G_r<\varepsilon\).  Corollary~\ref{jf-smooth-slices}
+therefore gives the Hilbert-space smoothness.  Apply
+Theorem~\ref{jf-marginal-schwartz} to each pair
+\(((PF)_a,H_b)\).  It gives precisely the pointwise formula
+\eqref{ji-kernel} on \(\mathbb C^\times\), as well as its Schwartz
+extension across zero.  There are only finitely many pairs.
+
+Linearity in the first argument gives
+\(D(U,AV)=\sum_{a,b}K_{ab}\overline{A_{ab}}\), which is
+\eqref{ji-trace-density}.  A derivative of a Schwartz function is
+integrable.  Integrating one real coordinate derivative first gives
+zero, since the function tends to zero at both ends; Fubini is
+valid by absolute integrability.  Repeating this observation proves
+the assertion for all positive-order derivatives, including the
+Wirtinger derivatives used below.
+\end{proof}
+
+\begin{corollary}\label{ji-integrated-word}
+Take \(B=\{0,1\}^S\), and let
+\(w=((a_j,\sigma_j,Y_j))_{j=1}^h\) have pairwise distinct
+\(a_j\in S\), signs \(\sigma_j\in\{+,-\}\), and real
+parameters \(Y_j\).  Use the ordered operators \(I_w,V_w\)
+of Section~\ref{rf-section}, with the rightmost factor acting first.
+For \(U,V\) in Theorem~\ref{ji-schwartz-matrix}, the pointwise
+density \(D(I_wU,V_wV)\) has a Schwartz extension and
+\begin{equation}\label{ji-integrated-identity}
+ \int_{\mathbb C}D(I_wU,V_wV)(t)\,dt
+                         =\int_{\mathbb C}D(U,V)(t)\,dt.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Proposition~\ref{rf-subset-expansion} gives, on
+\(\mathbb C^\times\),
+\[
+ D(I_wU,V_wV)=\sum_{J\subseteq\{1,\ldots,h\}}
+                    \epsilon_J\delta_JD(U,E_JV).
+\]
+Every \(E_J\) is a constant matrix.  Theorem~\ref{ji-schwartz-matrix}
+makes every term on the right a Schwartz function.  Terms with
+\(J\ne\varnothing\) have zero integral by that theorem, and the
+empty term is \(D(U,V)\).  This proves the asserted extension and
+the equality.  The conclusion concerns the scalar paired density;
+it does not assert that either transformed vector separately belongs
+to \(L^2(|t|^{-2}dt;\mathcal H^B)\).
+\end{proof}
+
+The empty word gives the identity.  Distinct auxiliary indices
+remain essential: no decay statement repairs an algebraically
+incorrect repeated-index expansion.  The constants implicit in
+Schwartz seminorms may depend on the whole fixed word and on the
+coefficients.  No estimate uniform over unbounded ranks or word
+lengths is asserted.
+
+\subsection{Positivity reduced to an algebraic congruence}
+
+For an admissible polynomial matrix \(P_j\) on \(G_j\), let
+\(P_j^{\rm rad}\) be its radial restriction.  Entrywise
+intertwining in Corollary~\ref{cm-chain-restriction} and composition
+give
+\begin{equation}\label{ji-polynomial-intertwining}
+          P_j^{\rm rad}\Phi_F=\Phi_{P_jF}.
+\end{equation}
+Define its quadratic form on compact coefficient vectors by
+\[
+ \mathfrak q_j(F)=\int
+       \langle P_j^{\rm rad}\Phi_F,\Phi_F\rangle\,d\eta_j.
+\]
+This integral is absolutely convergent, by
+\eqref{ji-polynomial-intertwining} and Cauchy--Schwarz.
+
+\begin{theorem}\label{ji-rank-descent}
+Fix \(r\), a finite auxiliary set \(S\), and admissible polynomial
+matrices \(P_j\), \(0\leq j\leq r\), on the corresponding
+standard flag.  Suppose that for each \(j\geq1\) there is a word
+\(w_j\) with distinct auxiliary indices such that, as differential
+operators on the open radial domain,
+\begin{equation}\label{ji-congruence}
+ P_j^{\rm rad}=V_{w_j}^*P_{j-1}^{\rm rad}V_{w_j}.
+\end{equation}
+Here \(V_{w_j}\) acts in the outermost coordinate; the star is the
+formal adjoint for its measure \(|t|^{-2}dt\).
+If \(\mathfrak q_0(F)\geq0\) for every compact smooth terminal
+coefficient vector with a positive Gram cutoff, then
+\(\mathfrak q_r(F)\geq0\) for every
+\(F\in\mathscr C_\varepsilon(G_r,E)^{\{0,1\}^S}\).
+
+More precisely, writing \(F_t\) for the compact family of
+Proposition~\ref{jf-compact-family} and applying \(V_{w_j}\)
+to its parameter \(t\), one has
+\begin{equation}\label{ji-positive-descent}
+ \mathfrak q_j(F)=
+   \int_{\mathbb C}|t|^{-2}
+                    \mathfrak q_{j-1}(V_{w_j}F_t)\,dt.
+\end{equation}
+The scalar integrand has a Schwartz extension after the factor
+\(|t|^{-2}\) is included.
+\end{theorem}
+
+\begin{proof}
+At each nonzero \(t\), every component of \(V_{w_j}F_t\) is a
+finite linear combination of parameter derivatives of \(F_t\),
+multiplied by smooth scalar functions of \(t\).  On a compact
+neighborhood of this parameter, Proposition~\ref{jf-compact-family}
+gives common compact support and a common positive Gram cutoff.
+Thus \(V_{w_j}F_t\) is an admissible compact coefficient vector
+on the smaller group.  Its Jacquet transform equals
+\(V_{w_j}\Phi_F(t,\cdot)\), by the same proposition and
+Corollary~\ref{jf-smooth-slices}.
+
+Put \(U=\Phi_{P_jF}\) and \(V=\Phi_F\).  The formal inverse
+identity of Lemma~\ref{rf-inverse-adjoint} and
+\eqref{ji-congruence} imply, on this smooth domain,
+\[
+ I_{w_j}U=P_{j-1}^{\rm rad}V_{w_j}\Phi_F.
+\]
+This is an identity of differential expressions, so no domain of a
+closed unbounded operator is being assumed.  Apply
+Corollary~\ref{ji-integrated-word}.  Its right side is
+\(\mathfrak q_j(F)\), and its left side is the right side of
+\eqref{ji-positive-descent}.  Each inner smaller-rank pairing
+exists: both vectors are Jacquet transforms of compact coefficient
+vectors, one obtained by applying \(P_{j-1}\).
+The scalar extension supplied by that corollary proves absolute
+integrability in \(t\); no exchange of a merely conditionally
+convergent multiple integral has been used.
+
+If \(\mathfrak q_{j-1}\) is nonnegative on all such compact
+coefficients, the integrand is nonnegative for every \(t\ne0\).
+Equation~\eqref{ji-positive-descent} proves the same property for
+\(\mathfrak q_j\).  Induction from \(j=0\) proves the theorem.
+\end{proof}
+
+\begin{corollary}\label{ji-one-insertion}
+For a real \(Y\) and \(\sigma\in\{1,-1\}\), consider either
+\(P_j=\sigma\mathcal Q_j(Y)\) for all \(j\), or
+\(P_j=\sigma\mathcal Q_j(Y)^t\) for all \(j\), where the
+transpose is on the two auxiliary indices.  If the corresponding
+terminal compact form is nonnegative, the actual Jacquet form is
+nonnegative at every finite rank.
+
+In the notation of the initial frame of
+Section~\ref{re-section}, sufficient terminal conditions are
+\[
+\begin{array}{ll}
+\text{plus, }Y=a:
+ &a,a+1\in I,\quad q(a)>0,\quad
+           \sigma p_\rho(a)>0,\quad\sigma p_\rho(a+1)>0;\\[2pt]
+\text{minus, }Y=b:
+ &b-1,b,b+1\in I,\quad q(b-1)>0,\quad
+           \sigma p_\rho(b-1)>0,\quad\sigma p_\rho(b)>0.
+\end{array}
+\]
+The inequalities are required for every terminal finite type
+\(\rho\).  They make the two weights in
+Corollary~\ref{re-density} positive.  In the minus case the
+conditions use the shifted parameter \(y=b-1\), whereas the
+radial operator is \(V_-(b)\).  Positivity of the contracted
+matrix at an arbitrary real parameter is not asserted.
+\end{corollary}
+
+\begin{proof}
+Write \(p=t\partial_t\), \(\bar p=\bar t\partial_{\bar t}\),
+and let \(A(Y)\) be the contracted matrix in the remaining
+coordinates.  The one-pair restriction is
+\[
+ \mathcal Q_j^{\rm rad}(Y)=L(Y)A(Y)T(Y),\quad
+ T(Y)=\begin{pmatrix}Y+p&-t\\t^{-1}&0\end{pmatrix},\quad
+ L(Y)=\begin{pmatrix}Y-\bar p&\bar t^{-1}\\-\bar t&0\end{pmatrix}.
+\]
+For \(|t|^{-2}dt\), one has \(p^*=-\bar p\).  Hence
+\(L(Y)=T(Y)^*\), and \(T(Y)=V_+(Y)\).  This proves
+\eqref{ji-congruence} for the plus case.
+
+For the transpose, let
+\[
+ W(Y)=V_-(Y)=
+       \begin{pmatrix}Y-\bar p&-\bar t\\\bar t^{-1}&0\end{pmatrix}.
+\]
+The entries of \(A(Y)\) commute with all outer coordinate
+operators.  Every entry of \(T(Y)\) also commutes with every
+entry of \(L(Y)\): the only Euler derivative in \(T\) is
+\(p\), acting on holomorphic coordinates, and the only Euler
+derivative in \(L\) is \(\bar p\), acting on antiholomorphic
+coordinates.  Matrix multiplication can therefore be transposed
+in the ordinary reversed order in this particular product.  Since
+\(L(Y)^t=W(Y)\) and \(T(Y)^t=W(Y)^*\), it follows that
+\[
+       (L(Y)A(Y)T(Y))^t=W(Y)^*A(Y)^tW(Y).
+\]
+No commutation between two entries of \(A\) is required.
+Multiplication by the real sign \(\sigma\) preserves both
+congruences.  Theorem~\ref{ji-rank-descent} now applies.  At rank
+zero the compact-support statement at the end of
+Section~\ref{jf-section} makes the Jacquet vector an admissible
+compact terminal vector for Corollary~\ref{re-density}.
+\end{proof}
+
+\subsection{Arbitrary residue words}
+\label{mx-section}
+
+Label the fresh two-dimensional auxiliary factors chronologically
+by \(1,\ldots,h\).  On factors \(i,j\), put
+\[
+ \Pi_{ij}=\sum_{a,b=0}^1 E_{ab}^{(i)}E_{ba}^{(j)},\qquad
+ \Omega_{ij}=\sum_{a,b=0}^1 E_{ab}^{(i)}E_{ab}^{(j)},
+\]
+and define
+\[
+ R_{\Pi,ij}(z)=\frac{z\,1-\Pi_{ij}}{z-1},\qquad
+ R_{\Omega,ij}(z)=\frac{z\,1-\Omega_{ij}}{z-1}.
+\]
+These are the permutation and contraction matrices of
+\eqref{re-fresh-matrices}.  Transposition in either one of their
+two factors exchanges \(\Pi\) and \(\Omega\).
+
+Choose signs \(\epsilon_i\in\{1,-1\}\) and real parameters
+\(\lambda_i\).  A plus step means \(\epsilon_i=1\) and
+\(a_i=\lambda_i\); a minus step means \(\epsilon_i=-1\)
+and \(b_i=\lambda_i\).  For a matrix \(A(Y)\) in the remaining
+variables, let \(A_i^{[1]}(Y)=A_i(Y)\) and
+\(A_i^{[-1]}(Y)=A_i(Y)^t\), with the indices inserted at factor
+\(i\).  Define the constant auxiliary matrices
+\begin{align}
+ C_i&=\prod_{\substack{j<i\\\epsilon_j\ne\epsilon_i}}^{\text{decreasing }j}
+       R_{\Omega,ij}\bigl(\epsilon_i(\lambda_j-\lambda_i)\bigr),
+                                                        \label{mx-C}\\
+ D_i&=\prod_{\substack{j<i\\\epsilon_j=\epsilon_i}}^{\text{increasing }j}
+       R_{\Pi,ij}\bigl(\epsilon_i(\lambda_i-\lambda_j)\bigr).
+                                                        \label{mx-D}
+\end{align}
+Products are written in the indicated order, and an empty product
+is the identity.  Assume every displayed denominator is nonzero.
+
+\begin{lemma}\label{mx-recursion}
+For the actual mixed recursion of
+\eqref{re-plus-module} and \eqref{re-minus-module}, starting
+from \(\mathcal R_0(A)=1\), its residue matrix is exactly
+\begin{equation}\label{mx-residue-recursion}
+ \mathcal R_i(A)=\mathcal R_{i-1}(A)
+                    C_i A_i^{[\epsilon_i]}(\lambda_i)D_i.
+\end{equation}
+In particular it is a polynomial of degree at most \(i\) in
+the entries of the original \(A\), with scalar spectral
+denominators and constant auxiliary coefficients.
+\end{lemma}
+
+\begin{proof}
+After the first \(i-1\) operations, the main matrix is
+\[
+ \left(\prod_{\substack{j<i\\\epsilon_j=-1}}^{\text{decreasing }j}
+                         R_Q(\lambda_j-Y)\right)
+ A(Y)
+ \left(\prod_{\substack{j<i\\\epsilon_j=1}}^{\text{increasing }j}
+                         R_P(Y-\lambda_j)\right).
+\]
+This follows directly because a minus operation multiplies on the
+left and a plus operation on the right.  A new plus insertion
+evaluates this expression at \(Y=\lambda_i\) and places the
+main index at factor \(i\), giving \(C_i A_i D_i\).
+
+A new minus insertion evaluates and transposes the main index.
+This reverses the written product, changes \(R_P\) to
+\(R_\Omega\) on the left, and changes \(R_Q\) to
+\(R_\Pi\) on the right.  This particular partial transpose is
+legitimate: the coefficient entries from distinct old auxiliary
+factors commute with one another and with the entries of the
+original \(A\).  It gives precisely
+\(C_i A_i^tD_i\), with the orders in \eqref{mx-C} and
+\eqref{mx-D}.  Multiplication by the previous residue proves
+\eqref{mx-residue-recursion}.  Each step introduces one entry of
+the original \(A\), proving the degree bound.
+\end{proof}
+
+\subsection{The mixed congruence}
+
+Use the outer-coordinate operators
+\[
+ T(Y)=\begin{pmatrix}Y+p&-t\\t^{-1}&0\end{pmatrix},\qquad
+ W(Y)=\begin{pmatrix}Y-\bar p&-\bar t\\\bar t^{-1}&0\end{pmatrix},
+ \qquad p=t\partial_t,\quad\bar p=\bar t\partial_{\bar t}.
+\]
+Formal adjoints are for \(|t|^{-2}dt\), so
+\(W(Y)^*=T(Y)^t\) and \(T(Y)^*=W(Y)^t\) for real \(Y\).
+Write
+\[
+ U_i=
+ \begin{cases}
+ T_i(\lambda_i),&\epsilon_i=1,\\
+ W_i(\lambda_i),&\epsilon_i=-1,
+ \end{cases}
+ \qquad V_i=U_i\cdots U_1.
+\]
+
+
+\begin{lemma}\label{ji-transfer-relations}
+For distinct auxiliary factors and real parameters where the rational
+matrices are defined,
+\begin{align}
+ T_j(u)T_i(v)R_{\Pi,ij}(v-u)
+       &=R_{\Pi,ij}(v-u)T_i(v)T_j(u),\label{ji-transfer-rtt}\\
+ W_j(u)W_i(v)R_{\Pi,ij}(u-v)
+       &=R_{\Pi,ij}(u-v)W_i(v)W_j(u).\label{ji-opposite-rtt}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Using matrix indices \(0,1\), write \(T(Y)=Y E_{00}+S\).
+Substitution in the component
+relations \eqref{re-rtt}, as a polynomial identity in \(u,v\),
+reduces them to
+\[
+ [S_{ab},S_{cd}]=\delta_{c0}\delta_{b0}S_{ad}
+                              -\delta_{a0}\delta_{d0}S_{cb}.
+\]
+Their nonzero cases are precisely
+\([p,-t]=-t\) and \([p,t^{-1}]=-t^{-1}\), together with
+antisymmetry; the remaining cases use \([-t,t^{-1}]=0\)
+and \(S_{11}=0\).  Multiplication by the permutation matrix
+writes these relations as \eqref{ji-transfer-rtt}.  Multiplying
+by its rational scalar normalization does not change the identity.
+
+For \(W\), the corresponding commutators are
+\([-\bar p,-\bar t]=\bar t\) and
+\([-\bar p,\bar t^{-1}]=\bar t^{-1}\), with commuting
+off-diagonal entries.  They negate the preceding component
+relations, replacing \(v-u\) by \(u-v\).  This proves
+\eqref{ji-opposite-rtt}.  The argument uses polynomial identities
+before division, so no extra exclusion of \(u=v\) is needed.
+\end{proof}
+
+\begin{lemma}\label{mx-transfer-moves}
+With \(C_i,D_i\) as above,
+\begin{equation}\label{mx-two-moves}
+          V_{i-1}C_iU_i^*=U_i^*C_iV_{i-1},
+       \qquad V_{i-1}U_iD_i=D_iU_iV_{i-1}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Use the two quadratic identities in
+Lemma~\ref{ji-transfer-relations}.
+Partially transpose factor \(i\) in the first identity.  Keep
+\(T_j(u)\) on its original side: it has no matrix index in
+factor \(i\).  Only the products \(T_iR_\Pi\) and
+\(R_\Pi T_i\) reverse their order under this operation.
+Their coefficient algebras commute, since the entries of \(T_i\)
+act on the outer coordinate and the coefficients of \(R_\Pi\)
+act on factor \(j\).  Thus the resulting equality is
+\[
+ T_j(u)R_{\Omega,ij}(v-u)W_i(v)^*
+                  =W_i(v)^*R_{\Omega,ij}(v-u)T_j(u).
+\]
+This does not commute the noncommuting entries of \(T_i\)
+and \(T_j\).  The identical partial transpose in the second
+quadratic identity gives
+\[
+ W_j(u)R_{\Omega,ij}(u-v)T_i(v)^*
+                  =T_i(v)^*R_{\Omega,ij}(u-v)W_j(u).
+\]
+These are exactly the required relations for old and fresh factors
+of opposite signs, with the arguments in \eqref{mx-C}.
+
+To obtain the first identity in \eqref{mx-two-moves}, process the
+old factors in increasing order of their index.  An opposite-sign
+factor passes the fresh adjoint by the corresponding relation just
+proved.  A same-sign factor commutes with that adjoint, since one
+uses only holomorphic outer operators and the other only
+antiholomorphic ones.  Constant matrices involving other old
+indices commute with the factor currently being moved.  The
+decreasing order in \(C_i\) is therefore preserved throughout.
+
+For the second identity, a same-sign old factor uses the original
+quadratic relation, and an opposite-sign old factor commutes with
+the fresh \(U_i\).  Again the unused constant factors act on
+disjoint old indices.  Processing old indices in increasing order
+leaves the increasing order of \(D_i\) unchanged.  This proves
+both displayed identities without exchanging two old transfer
+factors.
+\end{proof}
+
+\begin{theorem}\label{ji-fused-congruence}
+Let the entries of \(A(Y)\) commute with all outer-coordinate
+operators, and put \(Q(Y)=T(Y)^*A(Y)T(Y)\).  For every fixed
+finite word of plus and minus insertions with fresh auxiliary
+factors and nonzero scalar denominators,
+\begin{equation}\label{mx-full-congruence}
+              \mathcal R_h(Q)=V_h^*\mathcal R_h(A)V_h.
+\end{equation}
+The entries of \(A\) need not commute with one another.
+\end{theorem}
+
+\begin{proof}
+Corollary~\ref{ji-one-insertion} gives
+\[
+       Q_i^{[\epsilon_i]}(\lambda_i)
+            =U_i^*A_i^{[\epsilon_i]}(\lambda_i)U_i.
+\]
+Assume \eqref{mx-full-congruence} at length \(i-1\), and
+abbreviate \(A_i^{[\epsilon_i]}(\lambda_i)\) to \(A_i'\).
+Lemma~\ref{mx-recursion} and the two ordered moves yield
+\[
+\begin{split}
+ \mathcal R_i(Q)
+ &=V_{i-1}^*\mathcal R_{i-1}(A)V_{i-1}
+                              C_iU_i^*A_i'U_iD_i\\
+ &=V_{i-1}^*U_i^*\mathcal R_{i-1}(A)C_i
+                                      A_i'V_{i-1}U_iD_i\\
+ &=V_i^*\mathcal R_{i-1}(A)C_iA_i'D_iV_i\\
+ &=V_i^*\mathcal R_i(A)V_i.
+\end{split}
+\]
+In the second line, \(\mathcal R_{i-1}(A)\) commutes with
+\(U_i^*\), since factor \(i\) is fresh and the remaining
+variables are independent of the outer coordinate.  Also
+\(A_i'\) commutes with \(V_{i-1}\), whose auxiliary factors
+are all old.  No commutation of the previous residue with
+\(C_i\), or between two entries of \(A\), is used.
+The identity at length zero is the identity matrix, completing
+the induction.
+\end{proof}
+
+
+\begin{corollary}\label{ji-single-sign-congruence}
+For a word with only plus insertions, or only minus insertions,
+respectively, the general congruence specializes to
+\begin{align}
+ \mathcal R_h^+(Q)
+   &=\mathcal V_+^*\mathcal R_h^+(A)\mathcal V_+,
+ &\mathcal V_+&=T_h(a_h)\cdots T_1(a_1),
+                                      \label{ji-plus-congruence}\\
+ \mathcal R_h^-(Q)
+   &=\mathcal V_-^*\mathcal R_h^-(A)\mathcal V_-,
+ &\mathcal V_-&=W_h(b_h)\cdots W_1(b_1).
+                                      \label{ji-minus-congruence}
+\end{align}
+The rightmost factor acts first.
+\end{corollary}
+
+\begin{proof}
+Take all signs equal in Theorem~\ref{ji-fused-congruence}.
+Then every \(C_i\) is the identity and the same ordered formula
+applies.
+\end{proof}
+
+\subsection{One passage from compact support to finite decay}
+
+Let \(d=k+2r+1\) be the dimension of the defining Hermitian space,
+and let \(M(g)=\|g\|_{\mathrm F}\), as in
+Section~\ref{jm-section}.  In particular \(M\geq1\).
+For an auxiliary vector, use the product Hilbert norm in the
+seminorm \(\|\cdot\|_{A,m}\) of Section~\ref{jp-section}.
+
+\begin{lemma}\label{ji-degree-order}
+An admissible polynomial matrix \(P\) of degree at most \(h\)
+has differential order at most \(dh\).  In an invariant
+derivative expansion, its coefficients, and all their fixed mixed
+left and right derivatives, are bounded by constants times
+\(M^{2h}\).  Consequently, for every integer \(m\geq0\),
+\begin{equation}\label{ji-operator-bound}
+       \|PF\|_{A,m}\leq C_{P,m}\|F\|_{A+2h,dh+m}.
+\end{equation}
+The constant is finite for fixed parameters; it can depend on their
+denominators and on the size of the auxiliary space.
+\end{lemma}
+
+\begin{proof}
+The full Capelli determinant is a polynomial of order at most
+\(d\) in invariant derivatives, with constant coefficients.
+The coefficient \(Z(g)\) and its conjugate are restrictions of
+polynomials of degree one in matrix entries and their conjugates.
+Invariant differentiation preserves this polynomial degree.
+Expanding a commutator with multiplication by \(Z\) lowers
+differential order by at least one, and gives coefficients of
+degree at most one.  A second commutator with \(\bar Z\)
+lowers order once more and gives degree at most two.
+The four entries in \eqref{cm-four-commutators} therefore all
+have order at most \(d\) and coefficient degree at most two.
+
+In a product of \(h\) entries, the Leibniz rule differentiates
+coefficients without increasing their degree.  Its order is at most
+\(dh\), and its coefficient degree at most \(2h\).
+The same degree bound holds after any fixed invariant derivatives
+of the coefficients.  A polynomial of degree at most \(2h\)
+is bounded by a constant times \(M^{2h}\), since \(M\geq1\).
+Mixed left and right derivatives of the output give only finitely
+many terms of this kind and derivatives of \(F\) of total order
+at most \(dh+m\); left and right invariant derivatives commute.
+This proves \eqref{ji-operator-bound}, also for finite sums and
+constant auxiliary matrices.
+\end{proof}
+
+\begin{lemma}\label{ji-compact-cutoff}
+Fix \(\delta>0\), \(A\geq0\), and \(m\geq0\).  There are
+smooth compactly supported scalar functions \(\chi_R\), \(R\geq1\),
+such that \(\chi_RF\in\mathscr C_\varepsilon\) whenever
+\(F\) is smooth and vanishes on \(\mathcal G_r<\varepsilon\),
+and
+\begin{equation}\label{ji-cutoff-bound}
+ \|(1-\chi_R)F\|_{A,m}
+                   \leq C_{m,\delta}R^{-\delta}
+                                      \|F\|_{A+\delta,m}.
+\end{equation}
+The support of \(\chi_R\) is contained in \(M\leq2R\).
+\end{lemma}
+
+\begin{proof}
+Choose a smooth real function \(\chi\) on \([0,\infty)\)
+equal to one on \([0,1]\), zero on \([2,\infty)\), and
+between zero and one elsewhere, and put
+\(\chi_R(g)=\chi(M(g)/R)\).
+The matrix group is closed in matrix space, so this support is
+compact.  The function \(M\) is smooth on the group because
+it never vanishes.  Every fixed mixed invariant derivative of
+\(M^2\) is bounded by a constant times \(M^2\): matrix
+multiplication makes the differentiated entries linear in the
+original entries.  The chain rule, applied successively to the
+positive square root, gives the corresponding bound \(CM\)
+for every fixed derivative of \(M\).
+
+All positive-order derivatives of \(\chi_R\) are supported
+on \(R\leq M\leq2R\) and are bounded independently of
+\(R\).  The zero-order function \(1-\chi_R\) vanishes on
+\(M<R\) and is bounded by one.  Apply the Leibniz rule to
+\((1-\chi_R)F\).  On the support of each resulting term,
+\(M^{-\delta}\leq R^{-\delta}\).  This proves
+\eqref{ji-cutoff-bound}.  Multiplication does not enlarge the
+support of \(F\), so the same Gram cutoff is preserved.
+\end{proof}
+
+\begin{theorem}\label{ji-finite-decay-positivity}
+Let \(A\geq B(k,r)\), \(\delta>0\), and let \(P\) have
+polynomial degree at most \(h\).  For smooth vectors satisfying
+\[
+             \|F\|_{A+2h,dh+5}<\infty,
+             \qquad\|H\|_{A,5}<\infty,
+\]
+the sesquilinear form
+\[
+       \mathcal B_P(F,H)=\sum_{a\in B}\beta((PF)_a,H_a)
+\]
+is well defined and obeys
+\begin{equation}\label{ji-form-bound}
+ |\mathcal B_P(F,H)|
+       \leq C_P\|F\|_{A+2h,dh+4}\|H\|_{A,4}.
+\end{equation}
+Suppose this form is nonnegative on the diagonal for every
+\(F\in\mathscr C_\varepsilon(G_r,E)^B\).
+Then it is nonnegative for every smooth \(F\) with the same
+positive Gram cutoff and
+\begin{equation}\label{ji-finite-class}
+                    \|F\|_{A+2h+\delta,dh+5}<\infty.
+\end{equation}
+Indeed its compact cutoffs satisfy
+\begin{equation}\label{ji-form-error}
+ |\mathcal B_P(F,F)-\mathcal B_P(\chi_RF,\chi_RF)|
+       \leq C_{P,\delta}R^{-\delta}
+                             \|F\|_{A+2h+\delta,dh+5}^{\,2}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Lemma~\ref{ji-degree-order} puts \(PF\) in
+\(\mathcal C_A^5\), and \(H\) is already in this space.
+Theorem~\ref{jp-pairing-equality} therefore defines the actual
+Jacquet pairing and bounds it by the fourth-derivative seminorms.
+Together with \eqref{ji-operator-bound}, this proves
+\eqref{ji-form-bound}; the finite component sum is absorbed in
+the constant.
+
+Write \(F_R=\chi_RF\).  Sesquilinearity gives
+\[
+ \mathcal B_P(F,F)-\mathcal B_P(F_R,F_R)
+       =\mathcal B_P(F-F_R,F)+\mathcal B_P(F_R,F-F_R).
+\]
+Apply \eqref{ji-form-bound} and
+Lemma~\ref{ji-compact-cutoff}, first with decay index \(A+2h\)
+and then with index \(A\).  The same lemma bounds the norms of
+\(F_R\) by fixed multiples of those of \(F\), independently
+of \(R\).  Since \(M\geq1\), the norm in
+\eqref{ji-finite-class} dominates all the required norms.  This
+gives \eqref{ji-form-error}.  Each \(F_R\) belongs to
+\(\mathscr C_\varepsilon\), so its diagonal value is real and
+nonnegative.  Its limit has the same property.
+\end{proof}
+
+For fixed \(k,r,h\), the decay and derivative indices in
+\eqref{ji-finite-class} apply to every polynomial residue of
+length at most \(h\), at every set of parameters where that
+residue is defined.  Uniform operator-norm constants over these
+parameters are unnecessary for this positivity conclusion: for
+each individual form one takes its compact-support limit.  Such
+constants would be necessary for a quantitative estimate uniform
+over a varying family.  The theorem supplies neither that estimate
+nor uniform control as the ranks and word lengths tend to infinity.
+
+\subsection{Actual local positivity for every finite word}
+
+\begin{corollary}\label{ji-fused-positivity}
+Fix \(k\geq1\), \(r\geq0\), the standard flag and the
+actual Jacquet place data of Section~\ref{jf-section}.  Fix a
+finite word of \(h\) plus and minus insertions, with distinct
+auxiliary factors and a single initial sign \(\sigma\).
+Assume the initial-domain, shifted-sign and separation hypotheses
+of Lemma~\ref{re-shifted-domain}.  Then the residue form of the
+explicit recursion in Section~\ref{re-section} is nonnegative on
+actual Jacquet transforms of compact smooth coefficient vectors
+with positive Gram cutoff.
+
+The same positivity holds for every smooth coefficient vector
+with that cutoff and
+\[
+       \|F\|_{A+2h+\delta,(k+2r+1)h+5}<\infty,
+           \qquad A\geq B(k,r),\quad\delta>0.
+\]
+The assertion is for each fixed finite rank and word.  No uniform
+quantitative energy bound over growing ranks or words is claimed.
+\end{corollary}
+
+\begin{proof}
+At each rank apply Theorem~\ref{ji-fused-congruence} to the
+one-pair restriction of \(\sigma\mathcal Q_j\).  The transfer
+word \(V_h\) lists the chronological insertions in reverse
+order under the product convention of Section~\ref{rf-section};
+its auxiliary indices are pairwise distinct.  The terminal residue
+has the positive compact form of Corollary~\ref{re-density}.
+Theorem~\ref{ji-rank-descent} therefore proves actual positivity
+for compact group coefficients, including every mix of signs.
+
+Each smaller-rank pairing in that descent is absolutely defined
+for a compact coefficient vector at each nonzero outer parameter.
+Its scalar outer density is Schwartz by
+Corollary~\ref{ji-integrated-word}.  This justifies the iterated
+integration without requiring separate global square integrability
+of the transferred vectors or absolute integrability of every
+term of a fully expanded multiple integral.
+
+Lemma~\ref{mx-recursion} gives polynomial degree at most \(h\)
+in the full contracted entries.  The finite-decay conclusion now
+follows directly from Theorem~\ref{ji-finite-decay-positivity},
+using the positive normalization constant in
+\eqref{jf-radial-pairing}.
+\end{proof}
+
+\begin{corollary}\label{ji-single-sign-positivity}
+Under the preceding hypotheses, the same conclusion holds in
+particular for every fixed finite word containing only plus
+insertions or only minus insertions.
+\end{corollary}
+
+\begin{proof}
+These are the two constant-sign cases of
+Corollary~\ref{ji-fused-positivity}.
+\end{proof}
+
+This establishes the local positivity for the explicitly defined
+residue recursion and the actual compact or finite-decay Jacquet
+coefficients just stated.  Identifying other presentations of the
+source's fusion forms requires their normalization and ordering
+to match this recursion.  Global orbital-energy estimates and
+the arithmetic nonvanishing and divisibility requirements do not
+follow from this local positivity theorem.

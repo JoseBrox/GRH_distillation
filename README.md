@@ -17,7 +17,9 @@ After analytic continuation, Dirichlet GRH says that every zero in the open stri
 
 **The conventional reconstruction is not yet a complete proof of GRH.** It contains extensive proofs of intermediate results, together with explicitly stated classical inputs and conditional deductions. The decisive uniform arithmetic estimate remains open in this reconstruction.
 
-The main manuscript includes all 96 recovered sections, organized in eight thematic parts, and a new section simplifying the radial matrix argument. The older files have been reconciled with the repository, and the short paper written at the restart is preserved as an analytic companion. The [recovery crosswalk](notes/recovery-crosswalk.md) identifies the later results that resolve earlier provisional gaps. The original files remain available in the [recovery archive](archive/recovered-2026-11-21/README.md).
+The number **96** refers to the sections of the recovered mathematical manuscript. It is not a division of the entire formal proof into 96 independent modules. The main manuscript now contains those 96 sections and two new sections: **98 in all**. Of these, **84 remain in the preferred exposition and 14 are retained in an appendix of alternative methods**. Some retained sections contain background or more than one argument, so 84 is not a count of indispensable lemmas. The analytic companion is a separate work.
+
+The older files have been reconciled with the repository. The [recovery crosswalk](notes/recovery-crosswalk.md) identifies later results that resolve earlier provisional gaps, and the originals remain in the [recovery archive](archive/recovered-2026-11-21/README.md).
 
 The argument has three broad stages:
 
@@ -27,13 +29,27 @@ The argument has three broad stages:
 
 The first stage is written out. Much of the second and third stages is also present, including a shorter cohomological route through algebraic K-theory, normalized theta measures, local orbital identities, an automorphic multiplicity comparison, and Jacquet adjointness and Fourier decay.
 
-The latest simplification obtains a whole matrix of differential operators from one scalar identity. It also proves how that matrix behaves at each step of a fixed finite chain. The [new argument](paper/sections/new/commutator-matrix.tex) uses commutators: the difference between applying two operations in opposite orders.
+There are now two further simplifications. Three commutators recover a whole matrix of differential operators from one scalar identity and determine its restrictions along a fixed finite chain. A single theorem about Schwartz functions then justifies the integrations for every finite residue expression. Together with an ordered matrix identity, it proves Jacquet positivity for every fixed finite mixture of plus and minus insertions, under the stated sign and domain hypotheses. One approximation argument extends this positivity from compact support to an explicit class with finite decay and differentiability bounds.
 
-The remaining work concerns the integrated residue pairing, global orbital-energy bounds, nonvanishing and divisibility at auxiliary level primes, the remaining complementary-parity Selmer bounds, and the final assembly with uniform constants. The matrix argument does not supply estimates for chains whose length grows. These obligations are stated precisely in the manuscript's last part.
+The remaining work concerns global orbital-energy bounds, nonvanishing and divisibility at auxiliary level primes, the remaining complementary-parity Selmer bounds, and the final assembly with uniform constants. Fixed finite-chain identities do not supply estimates for chains whose length grows. These obligations are stated precisely in the manuscript's last part.
+
+## A map of the proof
+
+![A shorter route toward Dirichlet GRH, with the status of each main step](blueprint/overview.svg)
+
+**Green:** a written reduction with its stated hypotheses. **Blue:** a cited mathematical input. **Amber:** part of the required argument is written. **Red:** a remaining obligation. A green step may depend on an earlier red step; its colour does not assert that the final conclusion has been established.
+
+The [detailed proof map](blueprint/README.md) separates the arithmetic and analytic requirements. It also provides a complete section inventory and a larger diagram of the references between sections. These distinguish the mathematical route from the organisation of the manuscript.
+
+## A shorter overall argument
+
+The principal structural simplification replaces the older coarse cohomology construction by the algebraic K-theory estimate with exponent **14**. Applying it also in the bounded-order character argument replaces the exponent **86** there. This removes ten sections of finite-field homology and arithmetic-cycle constructions from the preferred route. The arithmetic complex, the needed class-number and unit estimates, and the stated classical theorems remain necessary inputs.
+
+Four more sections become alternatives when the uniform quasi-Riemann hypothesis is used throughout: the separate real-zero route and a proposed analytic shortcut that still needs a stronger mean-square estimate. All fourteen sections remain available in the appendix, with their hypotheses and proofs intact. The [structural review](notes/global-architecture-review.md) records why the preferred route no longer depends on them.
 
 ## How the newer zero-free results help
 
-The quasi-Riemann hypothesis papers provide a fixed zero-free region and useful estimates for selecting auxiliary characters. The work on Landau–Siegel zeros supplies an independent real-zero argument. When a uniform quasi-Riemann bound is already assumed, the required exclusion of real zeros follows from it and needs no additional assumption. Both routes are used with their exact hypotheses and ranges.
+The quasi-Riemann hypothesis papers provide a fixed zero-free region and useful estimates for selecting auxiliary characters. The work on Landau–Siegel zeros supplies an independent real-zero argument. When a uniform quasi-Riemann bound is already assumed, the required exclusion of real zeros follows from it and needs no additional assumption. Each route is stated with its exact hypotheses and ranges.
 
 These methods simplify particular steps. A fixed region to the right of the critical line does not itself give GRH, and a result about Dirichlet characters does not automatically apply to characters over varying number fields. The manuscript keeps these distinctions explicit.
 
@@ -42,13 +58,14 @@ These methods simplify particular steps. A fixed region to the right of the crit
 | Part | Subject |
 | --- | --- |
 | I | Prime sums, the one-sided criterion, quadratic characters, and the slope comparison. |
-| II | Cyclotomic cohomology and Selmer groups, including shorter alternative arguments. |
+| II | Cyclotomic cohomology and Selmer groups, using the shorter K-theory argument. |
 | III | Integral coefficient spaces, polynomial duality, and period pairings. |
 | IV | Ordinary theta measures, their normalizations, and integral columns. |
 | V | Local orbital identities, ideal sums, and unitary mass formulas. |
 | VI | Automorphic dimensions, formal degrees, and the multiplicity comparison. |
 | VII | Archimedean differential operators, radial forms, and Jacquet integrals. |
 | VIII | The uniform estimates still needed for the conclusion. |
+| Appendix | Alternative analytic and cohomological methods, with their limitations. |
 
 For the main logical route, begin with Part I and the final part, then read the particular arithmetic input being used. Within Part II, the algebraic K-theory argument gives a shorter route to the coarse bound; the longer homology construction is retained as an alternative. The [analytic companion](paper/companion/main.pdf) supplies additional foundational proofs and clarifies the limits of proposed analytic shortcuts.
 

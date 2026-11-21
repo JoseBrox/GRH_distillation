@@ -1,0 +1,36 @@
+{
+  "scope": "Exact PBW coefficient checks of the six-term bordered expansion in middle dimensions 1,2,3; no all-rank or analytic conclusion from finite computation.",
+  "method": "Independently expand the full quantum determinant and bordered expression; normal-order every word using [E_ab,E_cd]=delta_bc E_ad-delta_da E_cb. Coefficients are integer polynomials in the symbolic spectral parameter.",
+  "script_sha256": "9a5060a4c808ac85199f73f398319300aa736fd3fc828214512671ceb50141e9",
+  "recovered_scalar_source": "paper/sections/recovered/88-rr-section.tex",
+  "recovered_scalar_source_sha256": "5dac9c24f5eb357b74b00eb82c315665a8b03c30401ab77f794d8785ca59096e",
+  "results": [
+    {
+      "d": 1,
+      "full_terms": 26,
+      "rhs_terms": 26,
+      "residual_terms": 0,
+      "sample": []
+    },
+    {
+      "d": 2,
+      "full_terms": 113,
+      "rhs_terms": 113,
+      "residual_terms": 0,
+      "sample": []
+    },
+    {
+      "d": 3,
+      "full_terms": 586,
+      "rhs_terms": 586,
+      "residual_terms": 0,
+      "sample": []
+    }
+  ],
+  "negative_control": {
+    "change": "First diagonal terminal factor shifted by one in the wrong direction",
+    "residual_terms": 18,
+    "status": "rejected as expected"
+  },
+  "status": "passed"
+}

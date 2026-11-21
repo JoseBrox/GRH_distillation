@@ -91,10 +91,24 @@ is already used. The independent determinant route remains available.
 These are new results and dependency clarifications, not recovered work.
 Earlier provisional assertions in sections 95 and 96 have been updated.
 
+The [integration theorem](jacquet-integrated-descent.md) now justifies the
+actual finite-word integrations through a matrix of Schwartz marginals.
+One ordered congruence proves positivity for every fixed finite mixture of
+both operations under the terminal domain and sign hypotheses, and one density
+argument extends it to an explicit class with finite decay. Differently
+presented source fusion forms still require a normalization/order comparison.
+
+The [global architecture review](global-architecture-review.md) replaces the
+bounded-order exponent 86 by 14 and removes ten older cohomological sections
+from the preferred dependency route. Four analytic alternatives are also in
+the appendix. The [complete proof map](../blueprint/README.md) retains all 96
+recovered sections and both new sections, with their exact roles.
+
 ## The remaining mathematical frontier
 
-1. Complete the integrated residue pairing for the actual generated functions,
-   using the now-proved full matrix and successive restriction identities.
+1. Match any differently presented source fusion forms to the explicit
+   recurrence now proved positive. Actual integration, mixed-sign congruence
+   and finite-decay extension hold with the specified terminal hypotheses.
 2. Establish the outstanding uniform global orbital-energy estimates, including
    the coordinate-size reduction and weighted lattice-pair count where required.
 3. Prove seed nonvanishing and the sharp auxiliary-level-prime divisibility

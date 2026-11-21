@@ -1,0 +1,92 @@
+digraph proof {
+graph [rankdir=TB, bgcolor="white", pad="0.24", nodesep="0.30", ranksep="0.48",
+  fontname="DejaVu Sans", fontsize=12, labelloc=t, label="Technical proof blueprint\nCurated interfaces; open constructions remain unproved", splines=polyline];
+node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=11,
+  margin="0.18,0.12", penwidth=1.3];
+edge [color="#64748B", penwidth=1.1, arrowsize=0.65];
+graph [nodesep="0.26", ranksep="0.36"];
+"qrh" [label="Uniform Dirichlet zero-free\ninput\nCited input", fillcolor="#E8F0FC", color="#3566A0", fontcolor="#173D70"];
+"classical" [label="Classical arithmetic and\nanalytic theorems\nCited input", fillcolor="#E8F0FC", color="#3566A0", fontcolor="#173D70"];
+"selection" [label="Simultaneous character selection\nand compatible intervals\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"coarse" [label="Coarse cohomology: exponent 14\nShorter K-theory route\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"refined" [label="Complementary-parity character\nbounds\nand integral congruence control\nPartly completed", fillcolor="#FFF1CC", color="#A66B0B", fontcolor="#694400"];
+"coefficients" [label="Coefficient lattices, periods\nand exact denominators\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"theta" [label="Normalized theta columns\nand selected-prime bounds\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"seed" [label="Seed nonvanishing\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"level" [label="Sharp auxiliary-level\ndivisibility\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"divisibility" [label="Divisibility for the actual\nnonzero integral maps\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"local_orbits" [label="Local orbital identities\nand ideal summation\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"global_orbits" [label="Uniform global orbital energy\nCoordinate and lattice-pair\nestimates\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"dimensions" [label="Mass, dimensions\nand ambient multiplicity\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"matrix" [label="Full matrix from three\ncommutators\nFixed-chain restriction and\ndomains\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"jacquet" [label="Jacquet regularity, adjoints\nand Fourier decay\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"residue" [label="Actual local residue positivity\nEvery fixed mixed word\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"norms" [label="Archimedean norm bounds\nfor the same maps\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"slope" [label="Abstract slope comparison\nand numerical balance\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"compatible" [label="One compatible construction\nUniform in growing chains\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"bound" [label="Fixed positive prime-sum bound\non arbitrarily large windows\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"criterion" [label="Mellin transform and one-sided\ncriterion\nWritten reduction", fillcolor="#E3F3E8", color="#267047", fontcolor="#17472E"];
+"grh" [label="Dirichlet GRH\nOpen obligation", fillcolor="#FCE6E6", color="#B44444", fontcolor="#792828"];
+"alt_homology" [label="Optional coarse homology route\nTen sections bypassed\nOptional alternative", fillcolor="#EEE7F7", color="#79609C", fontcolor="#4C3769"];
+"alt_analytic" [label="Optional analytic routes\nFour sections; mixed hypotheses\nOptional alternative", fillcolor="#EEE7F7", color="#79609C", fontcolor="#4C3769"];
+"qrh" -> "selection";
+"classical" -> "coarse";
+"coarse" -> "selection";
+"coarse" -> "refined";
+"classical" -> "coefficients";
+"classical" -> "theta";
+"coefficients" -> "theta";
+"theta" -> "divisibility";
+"seed" -> "divisibility";
+"level" -> "divisibility";
+"local_orbits" -> "global_orbits";
+"global_orbits" -> "norms";
+"dimensions" -> "norms";
+"matrix" -> "residue";
+"jacquet" -> "residue";
+"residue" -> "norms";
+"selection" -> "compatible";
+"refined" -> "compatible";
+"divisibility" -> "compatible";
+"norms" -> "compatible";
+"slope" -> "compatible";
+"compatible" -> "bound";
+"bound" -> "criterion";
+"criterion" -> "grh";
+{rank=same; "classical"; "qrh";}
+{rank=same; "coarse"; "coefficients"; "local_orbits";}
+{rank=same; "selection"; "refined"; "theta";}
+{rank=same; "seed"; "level"; "global_orbits";}
+{rank=same; "divisibility"; "matrix"; "jacquet";}
+{rank=same; "dimensions"; "residue"; "slope";}
+{rank=same; "norms";}
+{rank=same; "compatible";}
+{rank=same; "bound";}
+{rank=same; "criterion";}
+{rank=same; "grh";}
+{rank=same; "alt_homology"; "alt_analytic";}
+// Invisible edges below control layout only; they are not proof interfaces.
+"classical" -> "qrh" [style=invis, weight=50];
+"coarse" -> "coefficients" [style=invis, weight=50];
+"coefficients" -> "local_orbits" [style=invis, weight=50];
+"selection" -> "refined" [style=invis, weight=50];
+"refined" -> "theta" [style=invis, weight=50];
+"seed" -> "level" [style=invis, weight=50];
+"level" -> "global_orbits" [style=invis, weight=50];
+"divisibility" -> "matrix" [style=invis, weight=50];
+"matrix" -> "jacquet" [style=invis, weight=50];
+"dimensions" -> "residue" [style=invis, weight=50];
+"residue" -> "slope" [style=invis, weight=50];
+"alt_homology" -> "alt_analytic" [style=invis, weight=50];
+"classical" -> "coarse" [style=invis, weight=50];
+"coarse" -> "selection" [style=invis, weight=50];
+"selection" -> "seed" [style=invis, weight=50];
+"seed" -> "divisibility" [style=invis, weight=50];
+"divisibility" -> "dimensions" [style=invis, weight=50];
+"dimensions" -> "norms" [style=invis, weight=50];
+"norms" -> "compatible" [style=invis, weight=50];
+"compatible" -> "bound" [style=invis, weight=50];
+"bound" -> "criterion" [style=invis, weight=50];
+"criterion" -> "grh" [style=invis, weight=50];
+"grh" -> "alt_homology" [style=invis, weight=50];
+}

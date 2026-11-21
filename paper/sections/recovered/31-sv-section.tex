@@ -174,18 +174,19 @@ extension. Thus this proves the source's case $V_s$ for every
 $p$ in its fixed finite set of odd primes.
 \end{theorem}
 \begin{proof}
-Corollary~\ref{sw-coarse-consequence}, applied at exponent one
-to the field in (SV4), proves finiteness and
+The field in (SV4) is totally imaginary and contains $\mu_p$,
+so the strict Selmer bound of Theorem~\ref{kt-fourteen}, applied
+with $E=1$, proves finiteness and
 \[
  \lambda_p(F,1)\log p
- \le\exp\bigl((2n)^{86}\log(2|\operatorname{disc}F|)\bigr).
+ \le\exp\bigl((2n)^{14}\log(2|\operatorname{disc}F|)\bigr).
                                                                \tag{SV7}
 \]
 Put $x=pN_h\ge3$. By (SV4),
 $2|\operatorname{disc}F|\le x^{n+1}$. Hence the right side
 of (SV7) is at most $x^A$, where
 \[
-                            A=(2n_0)^{86}(n_0+1)
+                            A=(2n_0)^{14}(n_0+1)
                                                                \tag{SV8}
 \]
 is fixed. By (SV5),
@@ -198,10 +199,10 @@ Then the latter expression is at most
 $2x^{\max(A,k)}\le x^{\max(A,k)+1}$, proving (SV6).
 Additional local conditions decrease the group.
 
-The much smaller coarse exponent from
-Section~\ref{kt-section} could replace $86$ after the strict
-Selmer comparison. Its numerical size is immaterial here:
-$n_0$ is already fixed. Applying the same argument to a field
+This proof uses the algebraic $K$-theory bound directly;
+the finite-field homology and arithmetic-cycle comparison
+is not needed. The numerical size of the exponent is immaterial here:
+$n_0$ is fixed before $h,q,d$ vary. Applying the same argument to a field
 whose degree grew with $h$ would not give a fixed exponent,
 and no such step is used.
 \end{proof}
