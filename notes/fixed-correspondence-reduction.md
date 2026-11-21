@@ -4,9 +4,9 @@
 
 The new mathematical proof can be organised around **one fixed, coherently normalised classical local Langlands correspondence**, instead of constructing global Galois compatibility separately for every map satisfying the weaker source interface. The precise smaller Galois contract is given below. Its conversion into fixed-family pair and self-dual Galois packages is proved directly from the original proof terms. A stronger local comparison then recovers the unchanged universal source row.
 
-The two local preimage statements needed for that comparison are now proved and independently reviewed under the full local correspondence laws. The separate classical depth-zero type formula has also passed independent review. Thus the weak-correspondence quantifier is no longer an open local gate under those laws. The complete classical replacement still requires the exact full local-law dictionary and the global automorphic, weight and period-model dictionary. Until they are supplied, the source construction remains in the proof plan.
+The local preimage statements, classical depth-zero type formula, [full local laws](classical-local-correspondence.md), and [global automorphic, weight and period dictionary](galois-period-dictionary.md) are now proved and independently reviewed. Their [adopted composition](classical-galois-substitution.md) supplies the original universal `Row0b IsRecT`, including weak-correspondence existence. The source's separate Galois construction is retained as an alternative supplier. The optional fixed-family refactoring below is not required by the adopted route.
 
-This note complements [the global-input analysis](lean-global-inputs.md), which checks the candidate classical Galois theorems and their remaining normalisation dictionary. It does not remove the separate global theta identity, geometric covolume, or growing-family estimates.
+This note complements [the global-input analysis](lean-global-inputs.md), which records the classical Galois theorems and their exact source contracts. The separate global theta identity, geometric covolume and growing-family estimates retain their original obligations. These are mathematical interface proofs; no Lean refactoring or new kernel build is claimed.
 
 ## 1. Where the universal interface actually enters
 
@@ -16,7 +16,7 @@ All paths below are relative to `lean/src/Development/AutomorphicArithmetic/` in
 
 The two apparent Galois inputs are not two independently required existence theorems:
 
-| Source route | Actual use of the row | Fixed-family replacement needed |
+| Source route | Actual use of the row | Optional fixed-family refactoring |
 |---|---|---|
 | `field_of_starFull_alt` | Constructs `PairUAlt` using the same row witness | The pair package with all local parameters evaluated at the fixed correspondence |
 | `ofDual_star_alt` | Constructs `CarUAlt` for conjugate-self-dual representations | The self-dual package with the same fixed correspondence |
@@ -24,6 +24,10 @@ The two apparent Galois inputs are not two independently required existence theo
 | `vwin_of_row` | Passes the row as `RowT` into the automorphy/window branch | Specialise `RowT`, the local Galois conclusions and their consumers consistently |
 
 The first three facts follow from `ThirdPlaceSeries/SOfStar.lean`, 33–54; `EveryCharacterOfLiteratureOfVWin.lean`, 609–625; and `PublishedInputsCombined.lean`, 18–36. The finite-GL and local-correspondence arguments of `carU_of_finite_gl_recT` are unused: the proof is literally `fun _ _ h => h` (`SPairs.lean`, 15). Likewise the first three arguments of `field_of_starFull_alt` are unused (`SOfStar.lean`, 52–53). These wrappers introduce no additional mathematical content at this point.
+
+The adopted route supplies the universal row to these same consumers. The
+last column records the separate option of changing their interfaces to
+use a fixed family directly.
 
 The window route is explicit in `DenseThresholdCases/VwinOfRow.lean`, 4–5, and `TopMainZj.lean`, 38–58 and 71–74. The relevant `RowT` and `One.M.Row` are definitionally the same universal row (`AutomorphyLifting/WeakOfAtt.lean`, 47; `Foundations/UnitarySphericalFixing/SatakeParameters/RecT.lean`, 4–6).
 
@@ -34,10 +38,14 @@ Fix once and for all a family
 \[
   \mathcal R_{E,\Omega,A,w,h}:
   \operatorname{Irr}\bigl(\mathrm{GL}_n(E_w)\bigr)\longrightarrow
-  \operatorname{WD}(E_w),\qquad n\geq1.
+  \operatorname{WD}(E_w),\qquad n\geq0.
 \]
 
 The notation on the right denotes isomorphism classes of Weil–Deligne parameters in the chosen realisation. The indices range over **every number field**, its algebraic closure, every finite place and every extension of that place to the closure. They are not restricted to the one field or rank of an eventual application. For each index, take the classical correspondence, transported into that realisation, with a single stated reciprocity convention. In source terminology the family must satisfy `IsRecT` at each index; the stronger classical laws together with the explicit depth-zero type law imply this (`Foundations/LocalLanglands/IsRecTOfIsRec.lean`, 91–112).
+
+At rank zero this sends the unique irreducible representation of the trivial
+group to the zero parameter, as checked in the full local dictionary. The
+global Galois contract below still assumes positive rank.
 
 For every CM number field \(E\), algebraic closure \(\Omega\), prime \(\ell\), isomorphism \(\iota:\overline{\mathbf Q}_\ell\simeq\mathbf C\), rank \(n\geq1\), and regular algebraic polarized cuspidal representation \(\pi\) with its polarization character, require one representation \(r\), one integer weight and one family of Hodge–Tate multisets with the following properties:
 
@@ -77,7 +85,7 @@ Then the fixed-family `PairUAlt` follows. With the source's contragredient ident
 
 This proof is a mathematical rechecking of the displayed proof terms; no Lean refactoring or new kernel build has been performed. It proves the stated replacement for these first consumers, not the whole downstream window theorem.
 
-### A genuine obstruction to an automatic replacement
+### Why the local comparison is needed
 
 The original `NiceAlt` means
 
@@ -95,7 +103,7 @@ There are two immediate valid routes:
 
 No unproved converse from a toral/tame target parameter to `Good` is being assumed here.
 
-### A shorter conditional route: recover the original universal row
+### Recovering the original universal row
 
 There is a stronger local comparison principle that can avoid refactoring every downstream consumer.
 
@@ -126,7 +134,7 @@ The argument is purely local before the final substitution, so it proves compati
 
 This proposition has passed independent review. Its Good-preimage hypothesis is now discharged under the full local correspondence laws in [the local-correspondence bridge](local-correspondence-bridge.md): the support-polynomial identity and irreducibility force every cuspidal-support factor to have rank one in the toral case; the full depth-law converse and the first-congruence fixed-vector lemma give `Good` in the tame rational-local-field case. These arguments need neither zero monodromy nor squarefreeness nor the lower residue-characteristic bound, although those conditions remain in the global compatibility clauses.
 
-The separate [classical depth-zero type formula](lean-global-inputs.md#the-classical-depth-zero-type-formula) has also been checked: the finite-field cuspidal type and compact-induction correspondence give the exact inertia polynomial; the unramified quadratic correction disappears on inertia. This supplies the required type comparison with geometric Artin normalisation. The exact full local-law dictionary and the global automorphic/period-model dictionary remain open; the local preimage and type-formula gates do not.
+The separate [classical depth-zero type formula](lean-global-inputs.md#the-classical-depth-zero-type-formula) has also been checked: the finite-field cuspidal type and compact-induction correspondence give the exact inertia polynomial; the unramified quadratic correction disappears on inertia. The [full local-law dictionary](classical-local-correspondence.md) and [global automorphic/period-model dictionary](galois-period-dictionary.md) now discharge the other hypotheses. Thus the proposition supplies the original universal row with the same global witnesses; its complete use is recorded in [the adopted substitution](classical-galois-substitution.md).
 
 ## 4. The actual choices and the coherence requirement
 
@@ -142,22 +150,22 @@ The window code makes fresh existential eliminations at concrete points. Represe
 | `DenseThresholdCases/RROrdAbove.lean`, 29–30 | Chooses a map and extracts its reciprocity normalisation | Use the chosen family and the same normalisation |
 | `DenseThresholdCases/TTypePST.lean`, 14–16 | Chooses a map to turn local type information into a potentially semistable conclusion | State and use the type condition for \(\mathcal R\) |
 
-A local text search found 47 files containing 55 non-import lines mentioning the three witness functions `recTExists`, `exRec′` and `exLL′` inside `Development/AutomorphicArithmetic`. This is a locator inventory, **not** a proof-dependency count, and includes unused or alternative declarations. The certificate records its bounded path/line inventory. The representative sites above have been read and byte-verified; the other sites are a remaining audit queue, not verified replacements.
+A local text search found 47 files containing 55 non-import lines mentioning the three witness functions `recTExists`, `exRec′` and `exLL′` inside `Development/AutomorphicArithmetic`. This is a locator inventory, **not** a proof-dependency count, and includes unused or alternative declarations. The certificate records its bounded path/line inventory. The representative sites above have been read and byte-verified. The other sites would require an audit if the optional fixed-family refactoring were chosen; they are not unresolved prerequisites for the adopted universal-row substitution.
 
-Fixing arbitrary choices by the axiom of choice alone would not establish coherence. The family must respect the field, closure and place identifications actually used in descent. The source's `RecTTransport` states the precise comparison under `PlaceIso` and `RepRel`, with conclusion `WDRel`, for `Good` representations (`Foundations/LocalLanglands/RecTTransport.lean`, 317–324). Its uniqueness theorem also compares weak correspondences only on `Good` (`LocalCentralUnits/RecTUnique.lean`, 28–53). These are adequate at a use already proved to be `Good`. Any use outside that class needs the full classical transport theorem or a separate proof. The classical depth-zero type law must also be retained; it is not supplied merely by a notation saying “the local Langlands correspondence”.
+Fixing arbitrary choices by the axiom of choice alone would not establish coherence. The family must respect the field, closure and place identifications actually used in descent. The source's `RecTTransport` states the precise comparison under `PlaceIso` and `RepRel`, with conclusion `WDRel`, for `Good` representations (`Foundations/LocalLanglands/RecTTransport.lean`, 317–324). Its uniqueness theorem also compares weak correspondences only on `Good` (`LocalCentralUnits/RecTUnique.lean`, 28–53). These are adequate at a use already proved to be `Good`. The completed full local dictionary also proves field compatibility for the chosen classical family; an optional refactoring would use that theorem at any classical-family comparison outside `Good`. It would still need to check each changed consumer. The independently proved classical depth-zero type law is retained throughout.
 
-## 5. Proposed replacement program and the exact stopping point
+## 5. Adopted route and optional fixed-family refactoring
 
-The preferred route is now to finish the exact full local-law and global automorphic/period-model dictionaries, then use the proved preimage lemmas and the preceding proposition to retain the existing downstream interfaces. No separate downstream fixed-family refactoring is needed for this route.
+The adopted route uses the completed full local-law and global automorphic/period-model dictionaries, the proved preimage lemmas and the preceding proposition. It supplies the universal row and weak-correspondence existence at the existing downstream interfaces. Its proof and verification scope are recorded in [the classical Galois substitution](classical-galois-substitution.md).
 
-The following fixed-family refactoring was the earlier alternative. It remains available if a future exposition deliberately chooses a narrower local interface, but it is not the current open-preimage task:
+The following fixed-family refactoring was the earlier alternative. It remains available if a future exposition deliberately chooses a narrower local interface. It has not been carried out and is not required for the adopted substitution:
 
-1. State the classical local correspondence once, with the reciprocity, algebraic twist, depth-zero type and transport conventions needed by the proof.
-2. Prove \(\mathrm{Row}(\mathcal R)\) from the classical global Galois theorems, including the period-model and weight dictionary described in `lean-global-inputs.md`.
+1. Use the classical local correspondence with the now-checked reciprocity, algebraic twist, depth-zero type and transport conventions.
+2. Use the now-proved \(\mathrm{Row}(\mathcal R)\), including the complete period-model and weight dictionary.
 3. Use the proposition above to obtain the pair and self-dual packages, sharing the same global witnesses whenever their hypotheses coincide.
 4. Specialise the window and local-type predicates to this same family. Audit the identified witness sites and any transport or comparison that previously accepted arbitrary weak correspondences. In particular, never reuse the old existential `NiceAlt` without a comparison proof.
 5. Reconnect the specialised packages to the remaining theta, covolume and window constructions; prove the same final scalar estimates and apply the already established analytic criterion.
 
 The source contains a parallel stronger-correspondence route: `recFull` is `IsRec`, and `TypeConditions/OfStar.lean`, 60–83, converts `Row0b recFull` into the analogous pair and self-dual packages. This provides a useful model for the new exposition, but those stronger-correspondence packages have not been substituted for all current weak-correspondence consumers.
 
-**Current conclusion.** Under the full local correspondence laws, a fixed-family Galois row supplies the original universal weak-correspondence row with the same global representation, weight and Hodge–Tate data. The two local preimage proofs and the classical type formula are complete at their stated mathematical interfaces and have passed independent review. The remaining obligations are the exact full local-law and global automorphic/period-model dictionaries. Consequently the source's geometric-seed, congruence and theta-lift construction is still retained as a complete source route; no independent theta-integral or geometric-covolume branch is removed by this reduction.
+**Current conclusion.** The completed classical inputs supply the original universal weak-correspondence row with one global representation, weight and Hodge–Tate family. All hypotheses of the transfer proposition are discharged, and the composition has passed independent review. The geometric-seed, congruence and stable theta-lift supplier remains an alternative source route. Independent integral, theta-integral, geometric-covolume and common-data estimates remain part of the proof program. This reconciliation records a conventional mathematical substitution, not a newly compiled Lean replacement.

@@ -61,9 +61,11 @@ The final `OpenLiteratureStatements` record has only three fields: `Row`,
 Galois compatibility proof to both Row fields and to `vwin_of_row`.
 Thus the human plan should have one compatibility package with multiple
 uses, rather than two apparently independent Galois assumptions plus a
-third unrelated window assumption. This consolidates an interface; it does
-not establish its hypotheses or remove the geometric and theta constructions
-that the other source theorems supply.
+third unrelated window assumption. The
+[adopted classical substitution](classical-galois-substitution.md) now supplies
+this universal Row and RecTExists input, after the full local laws and global
+period dictionary have been matched. Independent geometric, integral and
+theta constructions used by other source theorems remain obligations.
 
 ## Current boundary
 
@@ -133,12 +135,21 @@ thin scales, costs and subset conditions. Its definition is only thirteen
 lines (`CoreAtH.lean:29–41`); the assertions referenced by those lines are
 substantial and are not being declared automatic.
 
-This gives the preferred replacement interface for a simpler proof:
+This gives one sufficient replacement interface for a simpler proof:
 construct those packets directly on cofinal windows and apply the scalar
 comparison. The original connected-family machinery remains one fully
 specified source route to the packets. It can be bypassed in the human proof
 only after a direct construction actually supplies every packet condition.
 No such full direct construction is claimed here.
+
+The preferred research target is now the weaker
+[finite averaged criterion](one-construction-target.md). It retains the
+exact common objects and finite character identities, but requires only an
+averaged arithmetic discrepancy and explicit finite projection and transfer
+errors. Weighted lower estimates can use the actual frame penalties. Thus a
+new construction need not reproduce every scalar window of EAtH/CoreAtH if
+it proves this direct sufficient bound. The complete stronger source clauses
+remain inventoried, so no source hypothesis is silently declared automatic.
 
 The [vanishing-loss argument](vanishing-loss-program.md) further weakens the
 required error budget to a sequence with total exponent loss tending to zero.

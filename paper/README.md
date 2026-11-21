@@ -37,13 +37,22 @@ independent lemmas. The [proof blueprint](../blueprint/README.md) records every
 section and keeps documentary references distinct from logical obligations.
 
 The [full source-wide program](../blueprint/full-proof-program.md) now supplies
-the research backbone. It includes Galois/local compatibility, stable lift
-existence, global theta matching and geometric Hodge-bundle covolume estimates
-that were not separately visible in the earlier manuscript map. The introduction
-and final construction section now identify these requirements.
+the research backbone. It includes Galois/local compatibility, global theta
+matching and geometric Hodge-bundle covolume estimates that were not separately
+visible in the earlier manuscript map. The classical Galois theorem and its
+period comparison are now supplied in the Galois and adjoint-vanishing section;
+the stable theta-lift construction of that input is retained as an alternative.
+The introduction and final construction section identify the surviving requirements.
 
 Two further simplifications are integrated without adding section files:
 the vanishing-total-loss theorem in Section3 with its scalar corollary in
 Section4, and the word-independent pairing and original-parameter positivity
 corollaries in the Jacquet section. Exact source evidence remains outside the
 ordinary mathematical exposition.
+
+The slope section now also proves a finite character-averaging criterion, a
+weighted lower-estimate lemma and an exact orthogonal covolume identity. These
+isolate the average arithmetic loss and the discarded-degree/index budget
+that the remaining construction must control. Their hypotheses and proofs
+are in the manuscript; the source dictionaries and verification records are
+kept in the accompanying notes.

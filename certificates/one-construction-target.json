@@ -382,9 +382,74 @@
           "lines": "167:186"
         }
       ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ZsmulGeneratorEqZeroOfProjection.lean",
+      "git_blob_sha1": "d13afca4924f8b277ae89b5d1d1e38d349ad99de",
+      "sha256": "a786d25a19cde4477ce53daef71a01b55d5d44e73f55da2e64034d934bafa87d",
+      "bytes": 4367,
+      "lines": 150,
+      "reads": [
+        {
+          "lines": "14:79"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean",
+      "git_blob_sha1": "398eb8ed3528aa2666e9d3b2b09a582ad4390dd7",
+      "sha256": "732c3347fb02e410cf9af8831afdbba1d230fc522c3dbbccdb4b708e5dde73db",
+      "bytes": 3776,
+      "lines": 81,
+      "reads": [
+        {
+          "lines": "34:50"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/FrobeniusOrbits/Statement.lean",
+      "git_blob_sha1": "45d3b672d4649dd27309c092b3f9a24d279dd399",
+      "sha256": "be6f07f572e21568d41366bad89e578cb716b1bd4622b9eea7b195063465abad",
+      "bytes": 12378,
+      "lines": 258,
+      "reads": [
+        {
+          "search": "HGrp"
+        },
+        {
+          "lines": "7:44"
+        },
+        {
+          "lines": "94:105"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/FrameFacts.lean",
+      "git_blob_sha1": "22402e8349688ace18526a8fc486eb659a5e7450",
+      "sha256": "4b29bf3a7df92739ba0351614ac7d98ffdc73ea46c0e6c58505c91b2c3ce9e70",
+      "bytes": 39617,
+      "lines": 843,
+      "reads": [
+        {
+          "lines": "178:194"
+        },
+        {
+          "lines": "250:263"
+        }
+      ]
     }
   ],
-  "status": "Early checkpoint: averaged gap inequality proved; complete clause ledger and finite-error generalisation in progress.",
+  "status": "Integrated, independently reviewed ordinary-mathematics averaged/finite-error/weighted-lower reductions with a complete bounded-source clause ledger; the compatible arithmetic and geometric construction remains open.",
   "note": "notes/one-construction-target.md",
   "claims": [
     {
@@ -420,6 +485,263 @@
         "CoreGm:55-74",
         "SigALe:38-60"
       ]
+    },
+    {
+      "id": "finite-character-error-budget",
+      "status": "proved ordinary-mathematics theorem",
+      "statement": "H(x) <= R_F(x) + 2*(mean(E)+R_T)/(nT*m*b*density)",
+      "proof": "Exact arithmetic character balance, triangle inequality and character orthogonality on the translation subgroup. The thick-part multiplier is |S|/|Phi|=density/2.",
+      "source_evidence": [
+        "ChBalance:200-202",
+        "FirstPrimeNeSecondPrime:75-96",
+        "ChCore:56-73,90-104,140-152"
+      ],
+      "strict_weakenings": [
+        "averaged gap rather than every gap",
+        "finite sampled transfer errors rather than a uniform all-y tail estimate",
+        "finite Fourier error rather than a translated-subset bound at every translate",
+        "aggregate short-shift error rather than uniform per-character logarithmic derivative bounds"
+      ],
+      "limit": "One compatible host and exact identification with the fixed target combination at each accuracy are retained.",
+      "manuscript_label": "cs-finite-average"
+    },
+    {
+      "id": "weighted-lower-slope-supplier",
+      "status": "proved ordinary-mathematics lemma",
+      "statement": "A-M <= A-Gamma + weighted_mean(D+E+ell-mu)-M+P under weighted lower quotient, weighted divisor, and s-c<=P inequalities",
+      "proof": "Add the two weighted lower inequalities, apply the actual frame penalty and rearrange. Average over translations.",
+      "source_evidence": [
+        "LevelOfCongruence:50-66,113-128",
+        "paper:cs-combination",
+        "paper:cs-slope",
+        "paper:qrh-sharper-slope"
+      ],
+      "strict_weakenings": [
+        "weighted divisor/lower quotient in place of pointwise conditions",
+        "actual frame cost in place of uniform maximum/spread proxies",
+        "no upper quotient/height-variation/count-oscillation prerequisites if actual frame cost is proved directly"
+      ],
+      "limit": "Does not assert that compatible integral maps or their frame bounds have been constructed.",
+      "manuscript_label": "cs-weighted-lower"
+    },
+    {
+      "id": "automatic-cutoff",
+      "status": "proved elementary bookkeeping removal",
+      "statement": "Positive weights and finite indexing imply one common finite cutoff for all positive-part prime-power sums; N and a/w<=N need not be independent choices.",
+      "proof": "Each summand vanishes once its prime power exceeds max(a/w); take an integer ceiling over the finite indexing sets."
+    },
+    {
+      "id": "growing-dimension",
+      "status": "proved deductions from exact source constraints",
+      "scalar_lower_bound": "|A|>=sqrt(x), from xm<=k<=|A|^2*x^(1/2-eps) and m>=x^(1/2-eps)",
+      "page_route": "If PageN(eps,x,e), then x^(2+8eps)<=|A|<=2*o*x^(2+8eps); [E:Q]=4*|A|.",
+      "source_evidence": [
+        "SChain:53-58",
+        "ErrorFormsWeakWindowsFalse:28-45",
+        "FrameFacts:188-192,258-260",
+        "ExistsPageN:39",
+        "ConjEMemHostFIff:181-184"
+      ],
+      "limit": "Page-route growth is conditional on that supplier; it is not imposed on every possible new construction."
     }
-  ]
+  ],
+  "source_pin": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "host_clause_ledger": {
+    "source": "EAtH:144-151",
+    "count": 6,
+    "fields": [
+      "o_eq",
+      "kept",
+      "ps",
+      "shares",
+      "bdG",
+      "bdL"
+    ],
+    "unfolded_sources": [
+      "ExplicitFormulaErrorOfHostConditions:32-38,135-151",
+      "Analytic:127-159",
+      "GmAEq:61-64"
+    ],
+    "quadratic_warning": "ps is the designated quadratic-character weight convention, not an assertion of a Siegel zero."
+  },
+  "core_clause_ledger": {
+    "source": "CoreAtH:29-41",
+    "indexing": [
+      "finite U0",
+      "tr:U0->A covers A0",
+      "finite nonempty W(u)",
+      "finite Top",
+      "m,f naturals",
+      "Top equivalent to selected T",
+      "Fin f equivalent to Phi"
+    ],
+    "identities": [
+      "actual primitive logarithmic derivatives",
+      "datum.x=x",
+      "datum.eps=eps",
+      "C.eDiv<=eD",
+      "C.eLoss<=eL",
+      "C.cHH<=cHH",
+      "top weights identified",
+      "place weights identified",
+      "Euler constant identified",
+      "quadratic log derivative identified",
+      "ASK identified exactly"
+    ],
+    "SizeData2": [
+      "HidaSetting",
+      "DIV",
+      "EComp5",
+      "HComp",
+      "Count5",
+      "Slopes",
+      "QuotientSlopeBoundsWith",
+      "LossBounds",
+      "SlopeIneq",
+      "HHBound",
+      "FParams"
+    ],
+    "remaining": [
+      "ErrWindows0 (27 scalar clauses plus ConstsBound)",
+      "trace budget (etaBar+4sqrt(eBar))*x^cHH*b <= K*x^eps*nT*a",
+      "BNBoundsU",
+      "SizesA",
+      "ThinScales",
+      "CostWindows",
+      "RestSize",
+      "T2 subset A0"
+    ],
+    "full_mathematical_expansion": "notes/one-construction-target.md#7-complete-ledger-of-the-original-construction-conditions",
+    "nonvacuity": [
+      "finite nonempty word sets",
+      "strictly positive rank weights",
+      "positive cardinality of A0",
+      "nonempty T and T2 and m>=1 for divisions",
+      "reindex by A0 or establish uniform pushforward before averaging; surjectivity alone does not preserve averages"
+    ]
+  },
+  "proposed_tex": {
+    "path": "build/one-construction-proposed.tex",
+    "labels": [
+      "cs-weighted-lower",
+      "cs-finite-average"
+    ],
+    "sha256": "6f41f65d1052f2641f25b50039d8ad44e4c1f180f526c0e4ef696acc27081b93",
+    "status": "Historical ignored drafting artifact; superseded for manuscript verification by manuscript_integration."
+  },
+  "independent_review": {
+    "averaged_gap_comparison": {
+      "reviewer": "root",
+      "status": "pass",
+      "scope": "positive denominators and exact coefficient 4/(density*x)"
+    },
+    "finite_character_error_budget": {
+      "reviewer": "root",
+      "status": "pass",
+      "date": "2026-11-21",
+      "checked": [
+        "explicit embedding B into G",
+        "g=e1(s+u-t)",
+        "psi(-g)=psi(e1(t))*psi(-s-u)",
+        "survival exactly on B annihilator",
+        "|S|/|Phi|=density/2",
+        "coefficient nT*m*b*density/2",
+        "unit-modulus phase estimates for R_F and R_T"
+      ]
+    },
+    "weighted_lower_slope_supplier": {
+      "reviewer": "root",
+      "status": "pass",
+      "date": "2026-11-21",
+      "checked": [
+        "weighted divisor and lower quotient rearrangements",
+        "actual frame penalty",
+        "outer averaging with positive denominators"
+      ]
+    },
+    "integrated_manuscript": {
+      "reviewer": "endpoint_backbone",
+      "status": "pass",
+      "date": "2026-11-21",
+      "labels": [
+        "cs-orthogonal-cut",
+        "cs-exceptional-budget",
+        "cs-polynomial-exceptional",
+        "cs-weighted-lower",
+        "cs-finite-average"
+      ],
+      "checked": [
+        "Exact orthogonal degree identity and index bound I<=N^(d*min(g,b)).",
+        "Squared-slope normalization doubles the index term; b=0 is handled without an undefined slope.",
+        "Uniform polynomial exceptional-rank criterion and both counterexamples.",
+        "Positive weighted lower-estimate rearrangements and same-map requirement.",
+        "x>0, explicit B embedding in G, positive integer m, positive denominator.",
+        "g=e1(s+u-t), surviving phase psi(e1(t)), density/2 and coefficient nT*m*b*density/2.",
+        "Finite projection/transfer error bounds, including replacement by an upper bound for the actual real projection error.",
+        "One fixed positive target combination within each accuracy window sequence; ranks and ambient groups may vary with x."
+      ]
+    }
+  },
+  "final_acceptance_criterion": {
+    "fixed_before_windows": [
+      "target primitive character",
+      "accuracy index j",
+      "finite positive target combination H_j containing target or conjugate",
+      "finite M_j",
+      "window exponent b_j>1"
+    ],
+    "may_vary_with_x": [
+      "compatible host",
+      "ranks and dimensions",
+      "number of stages",
+      "actual error terms and weight scale"
+    ],
+    "budget": "R_F + 2*(geometric upper bound for mean(E) + R_T)/(nT*m*weight_scale*density) <= M_j*x^(1/2+delta_j)",
+    "asymptotic": "delta_j>0 tends to zero along a sequence; use cor:varying-positive-families separately at each j",
+    "not_proved": [
+      "global theta matching",
+      "same-map integral realization",
+      "growing-family norm/covolume estimates",
+      "cofinal whole-window control of finite character errors"
+    ]
+  },
+  "note_sha256": "ce062a0eafaf87b48b768d29e6c9ff4fb013c33763b5ced00b25fe8c9a855657",
+  "verification": {
+    "source_files": 28,
+    "git_blob_sha1": "pass all inspected source files",
+    "sha256": "pass all inspected source files",
+    "bounded_reads": "pass all recorded numeric ranges <=120 lines and <12KB",
+    "source_scope": "selected definitions and proof terms, not a whole declaration closure or new Lean build",
+    "manuscript_changes": "Integrated by root into Section 10; independently reviewed here; no manuscript edits by this agent.",
+    "manuscript_sha256": "pass at the frozen section10 snapshot recorded in manuscript_integration"
+  },
+  "manuscript_integration": {
+    "path": "paper/sections/recovered/10-cs-section.tex",
+    "sha256": "4075e6f6fc294fa720d0241940e6692cee8729246b3a8b4d34429b72ec622827",
+    "section": 10,
+    "line_count": 893,
+    "labels": {
+      "cs-orthogonal-cut": 500,
+      "cs-exceptional-budget": 540,
+      "cs-polynomial-exceptional": 581,
+      "cs-weighted-lower": 617,
+      "cs-finite-average": 654
+    },
+    "reviewed_ranges": [
+      [
+        484,
+        581
+      ],
+      [
+        582,
+        653
+      ],
+      [
+        654,
+        734
+      ]
+    ],
+    "status": "Integrated by root; all five statements independently reviewed by endpoint_backbone.",
+    "same_construction_requirement": "Any use of the orthogonal-cut budget in the averaged arithmetic discrepancy requires the same lattice, metric and projection, plus the stated quotient/covolume comparison."
+  }
 }

@@ -10,7 +10,7 @@ The preferred exposition still contains mixed sections and context. This is not 
 
 | Stable id | Mathematical section | Package | Role | Record | Placement | References to sections |
 | --- | --- | --- | --- | --- | --- | --- |
-| r01 | [Purpose, notation, and the assertion still to be proved](../paper/sections/recovered/01-sec-purpose.tex) | analytic_criterion | context | open | preferred exposition | r03 |
+| r01 | [Purpose, notation, and the assertion still to be proved](../paper/sections/recovered/01-sec-purpose.tex) | analytic_criterion | context | open | preferred exposition | r03, r10, r33 |
 | r02 | [Smoothed sums and their Mellin transforms](../paper/sections/recovered/02-sec-mellin.tex) | analytic_criterion | primary | recovered | preferred exposition | r01 |
 | r03 | [A one-sided criterion on multiplicative intervals](../paper/sections/recovered/03-sec-one-sided.tex) | analytic_criterion | primary | recovered | preferred exposition | r01, r02 |
 | r04 | [The numerical balance required of the arithmetic construction](../paper/sections/recovered/04-sec-numerical.tex) | slope_assembly | primary | open | preferred exposition | r02, r03 |
@@ -19,7 +19,7 @@ The preferred exposition still contains mixed sections and context. This is not 
 | r07 | [An elementary determinant estimate for quadratic characters](../paper/sections/recovered/07-sz-section.tex) | auxiliary_selection | alternative | recovered | alternative appendix | — |
 | r08 | [Pairing two character tails before estimating them](../paper/sections/recovered/08-sz-tails-section.tex) | auxiliary_selection | alternative | recovered | alternative appendix | — |
 | r09 | [What these results simplify in the auxiliary choices](../paper/sections/recovered/09-sz-integration.tex) | auxiliary_selection | alternative | recovered | alternative appendix | r07 |
-| r10 | [A shorter slope comparison for a family of integral maps](../paper/sections/recovered/10-cs-section.tex) | slope_assembly | primary | recovered | preferred exposition | — |
+| r10 | [A shorter slope comparison for a family of integral maps](../paper/sections/recovered/10-cs-section.tex) | slope_assembly | primary | recovered | preferred exposition | r01, r03 |
 | r11 | [Simultaneous selection of the auxiliary quadratic characters](../paper/sections/recovered/11-qs-section.tex) | auxiliary_selection | primary | cited | preferred exposition | r05 |
 | r12 | [Cyclotomic towers and a common interval for the cohomological bounds](../paper/sections/recovered/12-sec-ct-intervals.tex) | coarse_cohomology | primary | recovered | preferred exposition | r27 |
 | r13 | [Homology torsion and the remaining cohomological estimate](../paper/sections/recovered/13-ht-section.tex) | coarse_cohomology | primary | recovered | preferred exposition | r12, r14 |

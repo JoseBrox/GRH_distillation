@@ -1,4 +1,4 @@
-\section{Adjoint vanishing at the automorphic points}
+\section{Galois representations and adjoint vanishing}
 \label{av-section}
 
 A theorem of Thorne gives a substantial simplification of the
@@ -124,6 +124,187 @@ applied to a single vector giving a coboundary, not to a
 variable cocycle. Lemma~\ref{av-coefficients} and this observation
 justify the use of (AV3) for the cocycles with algebraic
 $p$-adic coefficients in the submitted source.
+
+\subsection{Classical Galois representations and vanishing monodromy}
+\label{sec-classical-galois}
+
+The Galois representations needed below can be taken directly from
+the classical theorems for regular algebraic polarized cuspidal
+representations. At places above the coefficient prime, their general
+local compatibility theorem is sufficient whenever the automorphic
+parameter has zero monodromy. This removes the need for a separate
+construction of these global Galois representations.
+
+Let $E$ be a CM field, let $E^+$ be its maximal totally real
+subfield, and let $c$ denote complex conjugation. Normalize local
+class field theory by sending a uniformizer to geometric Frobenius.
+For an irreducible admissible representation $\pi_v$ of
+$\mathrm{GL}_n(E_v)$, put
+\[
+ R_v(\pi)=\operatorname{rec}_{E_v}
+       \bigl(\pi_v\otimes|\det|_v^{(1-n)/2}\bigr).
+\]
+The absolute value is normalized by $|\varpi_v|_v=q_v^{-1}$.
+We write $\operatorname{WD}^{\mathrm{F\!\!-ss}}$ for Frobenius
+semisimplification of the Weil--Deligne parameter; this operation
+retains its monodromy operator.
+
+\begin{theorem}\label{thm-classical-galois-zero-monodromy}
+Let $n\geq1$, and let $\pi$ be a regular algebraic cuspidal
+automorphic representation of $\mathrm{GL}_n(\mathbb A_E)$.
+Suppose that a Hecke character $\chi$ of $E^+$ has $\chi_v(-1)$
+independent of the real place $v$ and satisfies
+\[
+ \pi^c\simeq\pi^\vee\otimes
+              (\chi\circ N_{E/E^+}\circ\det).
+\]
+Fix a prime $\ell$ and a field isomorphism
+$\iota:\overline{\mathbb Q}_\ell\simeq\mathbb C$.
+Then there are a continuous semisimple representation
+\[
+ r_{\ell,\iota}(\pi):G_E\longrightarrow
+                   \mathrm{GL}_n(\overline{\mathbb Q}_\ell)
+\]
+and an integer $w$ with the following properties.
+For every $v\nmid\ell$,
+\[
+ \iota\operatorname{WD}
+      \bigl(r_{\ell,\iota}(\pi)|_{G_{E_v}}\bigr)^%
+          {\mathrm{F\!\!-ss}}
+       \simeq R_v(\pi).
+\]
+At every $v\mid\ell$, the representation is de Rham and
+potentially semistable. It is crystalline if $\pi_v$ is spherical.
+If the monodromy of $R_v(\pi)$ is zero, the same displayed
+local compatibility holds at $v$.
+
+Use the weight convention in which $\pi_\infty$ has the
+infinitesimal character of the dual of the algebraic representation
+of highest weight
+$a_\sigma=(a_{\sigma,1}\geq\cdots\geq a_{\sigma,n})$.
+For every embedding $\tau:E\hookrightarrow\overline{\mathbb Q}_\ell$,
+\[
+ \operatorname{HT}_\tau(r_{\ell,\iota}(\pi))
+       =\{a_{\iota\tau,i}+n-i:1\leq i\leq n\},
+ \qquad
+ \operatorname{HT}_{\tau c}(r_{\ell,\iota}(\pi))
+       =\{w-h:h\in\operatorname{HT}_\tau(r_{\ell,\iota}(\pi))\}.
+\]
+Here the cyclotomic character has Hodge--Tate number $-1$.
+\end{theorem}
+
+\begin{proof}
+If necessary, multiply $\chi$ by the quadratic character of $E/E^+$.
+Its pullback by the norm is trivial, and this arranges
+$\chi_v(-1)=(-1)^n$ at every real place without changing $\pi$.
+The global representation, compatibility away from $\ell$,
+de Rham property, labeled weights, conjugate-weight identity and
+crystallinity at spherical places are
+\cite[Theorem~2.1.1]{blggt-potential-automorphy}.
+Potential semistability follows from
+\cite[Theorem~0.6, equivalently Theorem~5.19]{berger-monodromy}.
+
+At $v\mid\ell$, the local theorem
+\cite[Theorem~1.1]{blggt-local-global-p} gives the same
+semisimplified Weil representation and a monodromy operator
+dominated by that of $R_v(\pi)$. Explicitly, within every
+inertial class, the partial sums of the largest monodromy block
+lengths of the first parameter are at most those of the second.
+If the second monodromy is zero, every such block has length one.
+The first block length is consequently at most one in every
+class, so the first monodromy is zero too. The common
+semisimplified Weil representation now gives equality of the
+Frobenius-semisimplified parameters. This use of the local theorem
+requires neither an Iwahori fixed vector nor an additional
+regularity or prime-size condition.
+\end{proof}
+
+In particular, the theorem applies at all the toral and tame
+places considered here as soon as their specified automorphic
+parameters have zero monodromy. The toral and tame restrictions
+are unnecessary for this classical Galois assertion. Purity alone
+would not give this conclusion: a pure Weil--Deligne
+representation can have nonzero monodromy. The argument uses
+monodromy dominance and the explicit zero-monodromy hypothesis.
+
+\subsubsection{Weights and changes of realization}
+
+The half-integral shift above can be checked directly. On an
+algebraic highest-weight vector of weight
+$\nu_0\geq\cdots\geq\nu_{n-1}$, the shifted infinitesimal
+parameters are
+\[
+ z_k=\nu_k+\frac{n-1}{2}-k\qquad(0\leq k<n).
+\]
+For the dual highest-weight convention,
+$\nu_k=-a_{n-k}$. Hence
+\[
+ \left\{\frac{n-1}{2}-z_k:0\leq k<n\right\}
+       =\{a_i+n-i:1\leq i\leq n\}.
+\]
+The de Rham filtration gives the same sign: for the cyclotomic
+character its invariant vector has the form $v\otimes t^{-1}$,
+whose filtration degree is $-1$.
+
+All comparisons in the next lemma use the induced identifications of
+coefficient fields and embedding labels.
+
+\begin{lemma}\label{lem-galois-period-realizations}
+The crystalline, de Rham and potentially semistable conditions,
+the labeled Hodge--Tate multiplicities and the Weil--Deligne
+isomorphism class are unchanged by enlarging the finite
+coefficient field, changing compatible algebraic closures and
+completion embeddings, or changing presentations of the period
+rings by equivariant isomorphisms preserving their scalar
+embeddings, Frobenius, filtration and logarithmic period.
+These changes may be made separately at every finite place
+after one global representation has been fixed.
+\end{lemma}
+
+\begin{proof}
+Write $L'/L$ for a finite extension of coefficient fields.
+Choosing an $L$-basis of $L'$ shows, coordinate by coordinate,
+that tensoring with $L'$ commutes with taking invariants.
+The same argument applies to every filtered embedding
+eigenspace, so it preserves the dimensions of its successive
+quotients. Potentially semistable periods are the union of
+semistable invariant spaces over finite extensions of the local
+field. Finitely many vectors in this union are already defined
+over one common finite extension; consequently coefficient
+extension commutes with this construction as well. Frobenius
+and monodromy commute with these identifications.
+
+An equivariant period-ring isomorphism, tensored with the
+identity of the representation, identifies the same invariant
+spaces and filtered eigenspaces. In the usual presentation
+$B_{\mathrm{st}}=B_{\mathrm{cris}}[X]$ the operators are
+\[
+ gX=X+c(g)t,\qquad \varphi X=\ell X,
+ \qquad N=-\frac{d}{dX}.
+\]
+Changing the compatible roots of $\ell$ replaces $X$ by
+$X+bt$ for some $b\in\mathbb Z_\ell$. Changing the primitive
+roots of unity scales $t$ and inversely scales $c(g)$.
+Both changes give the same equivariant period construction.
+
+If the residue field has size $q=\ell^f$ and $g$ has
+arithmetic degree $d$, the associated Weil action is
+$g\varphi^{-fd}$. For geometric degree $m=-d$ this is
+$g\varphi^{fm}$. The identity $N\varphi=\ell\varphi N$
+therefore gives
+$r(g)Nr(g)^{-1}=q^{-m}N$, as required by the normalization
+fixed above. Scalar specialization and Frobenius
+semisimplification preserve all these isomorphisms.
+
+Finally, Lemma~\ref{av-coefficients} provides a finite
+coefficient model of the given global representation. It can
+be enlarged to contain any further finite local coefficient
+field. Thus all the local choices can follow the single
+choice of the global representation and its labeled weights.
+\end{proof}
+
+The later adjoint theorem is applied under its stated irreducibility
+hypotheses.
 
 \subsection{The polarization and its adjoint action}
 

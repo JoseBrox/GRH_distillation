@@ -1,4 +1,4 @@
-# Global inputs missing from the manuscript-only map
+# Global inputs and their source contracts
 
 Checkpoint: 21 November 2026. Source: `jsmorph/rh`, commit
 `ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`.
@@ -9,16 +9,26 @@ dependency census. Every cited source file is checked against its pinned Git
 blob before bounded excerpts are read. The exact evidence is in
 `certificates/lean-global-inputs.json` and its source manifest.
 
+**Current status.** The classical Galois replacement is now adopted.
+The [full local correspondence](classical-local-correspondence.md),
+[global automorphic and period dictionary](galois-period-dictionary.md),
+and the local comparison below supply the original universal
+`Row0b IsRecT` with all its quantifiers. The complete composition is in
+[the adopted substitution](classical-galois-substitution.md). The other
+global arithmetic, theta and geometric estimates remain separate.
+
 ## Four branches that the full proof plan must expose
 
 | Branch | Required mathematical output | Source status | Human reconstruction status |
 | --- | --- | --- | --- |
-| Galois representations and local compatibility | For every regular algebraic polarized cuspidal representation over a CM field, an associated continuous semisimple Galois representation with the stated local, weight and crystalline properties | Supplied through `RowSrc` and the geometry/theta-lift construction | Not supplied by the recovered adjoint-vanishing section; needs an exact classical-theorem comparison or a separate proof |
-| Stable-range theta lifting used in that construction | A sufficiently large target rank, chosen before characters and automorphic representation, yields a lift with specified infinity weights and split-place local correspondence | Supplied by `TPGHolds` from analytic and representation-theoretic tools | Local integral, matrix and decay sections are ingredients; the full lift-existence theorem is not present |
+| Galois representations and local compatibility | For every regular algebraic polarized cuspidal representation over a CM field, an associated continuous semisimple Galois representation with the stated local, weight and crystalline properties | Supplied through `RowSrc` and the geometry/theta-lift construction | Supplied by the adopted classical theorem package, with the full local and global dictionaries and universal weak-correspondence transfer proved |
+| Stable-range theta lifting used in that construction | A sufficiently large target rank, chosen before characters and automorphic representation, yields a lift with specified infinity weights and split-place local correspondence | Supplied by `TPGHolds` from analytic and representation-theoretic tools | Retained as part of the alternative source Galois supplier; its use in producing this Galois row is replaced by the classical theorem package |
 | Agreement of global theta integrals and local models | Matching local maps, convergence and decay, a unique nonzero comparison scalar, coinvariants, and two normalized rank-reduction laws | Supplied by the final literature assembly through `theoremK_head2` | Not implied by the new mixed-residue positivity theorem; the global identities and their normalizations remain distinct |
 | Geometric covolume bound for the same family | A uniform normalized logarithmic-covolume inequality for every relevant index and every sufficiently large point of the chosen family | Supplied by the Hodge-bundle/self-intersection branch | The manuscript's lattice comparisons do not establish this geometric input |
 
-All four belong in a proof-wide map. They should not be hidden inside a single
+The proof-wide map records all four, distinguishing the adopted Galois input
+from its alternative source construction and the independently required
+theta and covolume branches. They should not be hidden inside a single
 box labelled “classical inputs” or mistaken for consequences of local positivity.
 The final endpoint also uses Green's character theory for finite general linear
 groups, local Langlands, and the complete common-data construction package;
@@ -68,7 +78,7 @@ The source's predicate `PolarizedGaloisRepPublished` is stronger and has a
 similar-looking conclusion. Its name is not a bibliographic verification,
 and it is not being substituted without checking every local clause.
 
-### Classical Galois theorems: a concrete possible branch reduction
+### Classical Galois theorems: the adopted branch reduction
 
 Two primary references have now been checked against the contract:
 
@@ -147,8 +157,9 @@ Frobenius semisimplification at every place away from ℓ and every place
 above ℓ whose classical local parameter has zero monodromy. This follows
 from the two compatibility theorems, the proved dominance lemma and
 Berger's theorem. It is a proved consequence of the cited classical
-results. The literal source contract still has the extra dictionary and
-weak-correspondence quantifiers described below.
+results. The exact dictionaries and weak-correspondence comparison below
+now identify it with the literal universal source contract; their
+composition is recorded in [the adopted substitution](classical-galois-substitution.md).
 
 #### Independent spectral check
 
@@ -193,8 +204,8 @@ of highest weight \(a\). Substitution of
        =\{a_i+n-i:1\le i\le n\},
 \]
 the Hodge–Tate convention in Theorem 2.1.1(3). This checks the numerical
-shift; the source's automorphic and period-model interpretations still
-belong to the dictionary obligation below.
+shift. The source's automorphic realization and all allowed period models
+are identified in [the completed global dictionary](galois-period-dictionary.md).
 
 The source already builds Frobenius semisimplification into its local
 objects. `WDRep` has a semisimplicity field
@@ -288,11 +299,13 @@ The deduction of the source formula has the following precise steps.
 There is no odd-prime, squarefreeness, zero-monodromy input, or large-prime
 restriction in this depth-zero type calculation; zero monodromy is an
 output. The formula is therefore available with the strength requested by
-`TypeLaw`. The conventional mathematical comparison is established here;
-identifying every source implementation of the full local laws and its
-period objects with the classical objects remains a separate dictionary
-obligation. This is not a Lean rebuild or a proof of the global arithmetic
-estimates.
+`TypeLaw`. The conventional mathematical comparison is established here.
+The [completed full local dictionary](classical-local-correspondence.md)
+supplies the other local laws, and the
+[completed global dictionary](galois-period-dictionary.md) handles the
+automorphic and period objects. Their composition is a mathematical
+substitution, not a Lean rebuild or a proof of the independent global
+arithmetic estimates.
 
 #### Recovering the weaker local interface
 
@@ -335,7 +348,7 @@ laws alone are not the whole weak interface: `IsRecTOfIsRec.lean`, 91–104,
 also requires its local `TypeLaw`. The endpoint audit records the exact
 consumer changes needed for this alternative.
 
-The resulting conditional reduction is now precise. The fixed-family
+The proved reduction now applies to the completed classical inputs. The fixed-family
 Galois contract, the full local laws and the type formula imply the
 original weak-correspondence Galois contract with the **same** global
 representation and Hodge–Tate data. The proof is in
@@ -343,25 +356,25 @@ representation and Hodge–Tate data. The proof is in
 and has also been independently checked. In particular, this route does
 not require rewriting every downstream occurrence of a weak local map.
 
-Two dictionary tasks remain before marking the source branch as removed:
+Both additional dictionaries are now complete and independently reviewed:
 
-1. Finish the clause-by-clause identification of the source's full local
-   laws with the classical correspondence. The Good-preimage argument and
-   the explicit depth-zero type formula account for the additional weak
-   interface; they do not silently certify all the other clauses of the
-   full local bundle.
-2. Complete the source-to-classical automorphic and period dictionary,
-   including potentially semistable realizations in all the allowed
-   period models. The numerical shifts, Frobenius sign and classical
-   de Rham-to-potentially-semistable theorem are now identified; this
-   does not by itself prove all the source's model quantifiers.
+1. [The full local correspondence](classical-local-correspondence.md)
+   supplies all fifteen source laws, the local Artin and epsilon witnesses,
+   the exact segment and Satake conventions, and rank zero. Every required
+   field is a finite completion of a number field.
+2. [The global automorphic and period dictionary](galois-period-dictionary.md)
+   identifies the cusp-form realization, weights, local embeddings and
+   all tied period models. It chooses one global representation, weight
+   and Hodge–Tate family before allowing any local model to vary.
 
-An exact replacement could remove the geometric seed, integral
-congruence and stable theta-lift construction **for this use of `Row0b`**.
-It would not remove the separate global theta-integral or geometric
-covolume branches. The source alternative remains in the proof plan;
-the replacement is not yet marked complete. Adjoint Selmer vanishing
-and uniform Dirichlet QRH do not themselves supply these Galois objects.
+Their [adopted composition](classical-galois-substitution.md) removes the
+geometric seed, integral congruence and stable theta-lift construction
+**as the preferred supplier of `Row0b`**. That source construction remains
+available as an alternative. Independent uses of integral congruences,
+global theta-integral identities and geometric covolume estimates retain
+their original obligations. Adjoint Selmer vanishing and uniform Dirichlet
+QRH do not themselves supply these Galois objects; the classical theorem
+package does.
 
 ## 2. The stable-range lift and its quantifiers
 
@@ -475,7 +488,8 @@ calculations already in the manuscript.
 Use one coherent arithmetic/theta datum throughout and organize the source
 construction behind five explicit interfaces:
 
-1. Exact Galois/local-Langlands compatibility for the representations used.
+1. Exact Galois/local-Langlands compatibility for the representations used,
+   now supplied by the adopted classical substitution.
 2. Global theta matching and its nonzero normalized rank-reduction laws.
 3. Integral realizations and divisibility for those same maps.
 4. Analytic norm estimates, with the local residue positivity now available.
@@ -487,9 +501,10 @@ This is a smaller mathematical interface than reproducing every geometric
 foundation in the Lean import tree. It is a **plan**, with the missing
 uniform and global theorems exposed; grouping them does not prove them.
 
-The safe branch reductions already proved remain valid: K-theory replaces
+The branch reductions already proved remain valid: K-theory replaces
 the older coarse cohomology route, and uniform Dirichlet QRH makes its
-separate real-zero premise redundant. Neither reduction removes the four
-global branches identified here. A future exact classical theorem comparison
-may eliminate the internal `Row0b` construction, but that reduction is not
-yet marked as established.
+separate real-zero premise redundant. The additional classical Galois
+substitution is now established at the full universal `Row0b` interface.
+The global theta, integral, geometric-covolume and common-data estimates
+remain the outstanding mathematical construction; their status is not
+changed by the availability of the associated Galois representations.

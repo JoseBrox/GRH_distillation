@@ -48,3 +48,27 @@ the optional branches and the exact dependency substitution. The live
 and their current hashes. `blueprint-check.json` checks graph endpoints, exact
 section coverage, unique labels and appendix placement. None is a full formal
 dependency audit or a proof of the missing arithmetic estimate.
+
+## Current arithmetic and geometric comparisons
+
+- `classical-galois-substitution.json` ties together the full local
+  correspondence, depth-zero type formula, global period dictionary, local
+  preimages and universal weak-correspondence transfer. It records the
+  adopted classical supplier and the exact hashes of its dependencies.
+  The two new dictionaries include pinned source ranges, primary references
+  and independent mathematical reviews.
+- `one-construction-target.json` records the complete original clause ledger
+  and the finite averaged criterion with weighted lower estimates.
+- `covolume-defect-budget.json` records the orthogonal covolume identity,
+  discarded-degree/index criterion, counterexamples and geometric obligations
+  still to be proved.
+
+Run `python scripts/check_classical_averaged_checkpoint.py` with the pinned
+source and primary-paper caches present to reproduce
+`classical-averaged-integrity.json`. The check verifies source blobs, recorded
+line ranges, note and manuscript hashes, and the exact adoption dependencies;
+it reports a missing cache instead of silently skipping that evidence.
+
+These records distinguish written proofs, cited classical theorems and
+independent human-readable comparisons from compilation or kernel acceptance.
+The compatible arithmetic construction remains open.

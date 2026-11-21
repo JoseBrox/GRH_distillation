@@ -21,7 +21,7 @@ The number **96** refers to the sections of the recovered mathematical manuscrip
 
 The older files have been reconciled with the repository. The [recovery crosswalk](notes/recovery-crosswalk.md) identifies later results that resolve earlier provisional gaps, and the originals remain in the [recovery archive](archive/recovered-2026-11-21/README.md).
 
-The proof-wide source analysis now covers all **175,187 local Lean files** at the fixed source revision. That source map is broader than the manuscript: it reveals separate requirements for Galois representations, stable nonzero theta lifts, global theta-integral identities, and geometric covolume estimates from Hodge bundles. These are now explicit in the [full proof program](blueprint/full-proof-program.md). Its eleven work packages organise the remaining research; they are not eleven completed theorems or a claim that the proof has only eleven indispensable steps.
+The proof-wide source analysis now covers all **175,187 local Lean files** at the fixed source revision. That source map is broader than the manuscript: it records the Galois, theta-integral and geometric covolume arguments, including alternative ways to supply them. These are explicit in the [full proof program](blueprint/full-proof-program.md). Its eleven work packages organise the research; they are not eleven completed theorems or a claim that the proof has only eleven indispensable steps.
 
 The argument has three broad stages:
 
@@ -33,7 +33,9 @@ The first stage is written out. Much of the second and third stages is also pres
 
 There are now two further simplifications. Three commutators recover a whole matrix of differential operators from one scalar identity and determine its restrictions along a fixed finite chain. A single theorem about Schwartz functions then justifies the integrations for every finite residue expression. Together with an ordered matrix identity, it proves Jacquet positivity for every fixed finite mixture of plus and minus insertions, under the stated sign and domain hypotheses. One approximation argument extends this positivity from compact support to an explicit class with finite decay and differentiability bounds.
 
-The remaining work includes the precise Galois compatibility input, geometric covolume bounds, normalized global theta identities and energy estimates, nonvanishing and auxiliary-level divisibility, the remaining complementary-parity Selmer bounds, and their compatible assembly. Fixed finite-chain identities do not supply estimates for chains whose length grows. The proof program states these requirements separately.
+The Galois representations are now supplied by classical theorems, with their local correspondences, weights and period normalizations checked. This removes the separate construction of those representations by stable theta lifting from the preferred route. The independent theta identities and geometric estimates remain necessary; the [comparison proof](notes/classical-galois-substitution.md) records the exact scope of the substitution.
+
+The remaining work includes geometric covolume bounds, normalized global theta identities and energy estimates, nonvanishing and auxiliary-level divisibility, the remaining complementary-parity Selmer bounds, and their compatible assembly. Fixed finite-chain identities do not supply estimates for chains whose length grows. The proof program states these requirements separately.
 
 ## A map of the proof
 
@@ -50,6 +52,8 @@ The principal structural simplification replaces the older coarse cohomology con
 Four more sections become alternatives when the uniform quasi-Riemann hypothesis is used throughout: the separate real-zero route and a proposed analytic shortcut that still needs a stronger mean-square estimate. All fourteen sections remain available in the appendix, with their hypotheses and proofs intact. The [structural review](notes/global-architecture-review.md) records why the preferred route no longer depends on them.
 
 The final estimate admits a further simplification: it is enough to construct compatible arithmetic data at every required scale. The source's larger families are one way to obtain those data; a new proof may construct them directly, provided it proves every required estimate and compatibility.
+
+The arithmetic comparison can now use an **average of the discrepancies**, with explicit finite errors, instead of separate bounds for every translation. Weighted lower estimates and the actual geometric losses suffice. For covolumes, a new exact splitting formula tracks the discarded subspace’s mean degree and the integral index; exponential decay of its dimension is one sufficient method, not a necessary hypothesis of that comparison. The corresponding geometric estimates remain to be proved.
 
 The analytic endpoint also needs only a **total exponent loss tending to zero**. Each accuracy may have its own auxiliary characters, positive weights, multiplicative interval shape, starting threshold and multiplicative constant. Each positive combination must retain the target character and stay fixed during its own sequence of intervals. Uniform control within each such construction remains necessary. The new theorem and its scalar-construction corollary make this distinction precise; they do not themselves establish the arithmetic bound.
 

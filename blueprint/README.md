@@ -88,9 +88,16 @@ loss need only tend to zero; accuracy-dependent constants and interval shapes
 are allowed with the exact quantifiers proved in the manuscript.
 
 The earlier six-stage manuscript guide is superseded as a source-wide plan by
-the full program. Galois compatibility, stable nonzero theta lifts, normalized
-global theta identities and geometric Hodge-bundle covolume estimates are now
-explicit branches. Local positivity does not discharge those global results.
+the full program. Classical Galois compatibility is now a cited input with
+proved local and period comparisons. Its original stable theta-lift supplier
+is an optional branch. Normalized global theta identities and geometric
+Hodge-bundle covolume estimates remain explicit obligations.
+
+The current target controls an averaged arithmetic discrepancy and explicit
+finite projection and transfer errors. The orthogonal covolume identity
+separates the uncut geometric lower slope from the discarded mean degree and
+integral index. Written reductions are green, the classical Galois input is
+blue, and the unproved geometric construction remains red.
 
 ## Maintaining the blueprint
 

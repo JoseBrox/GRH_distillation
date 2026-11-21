@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "status": "Exact lattice identity and weaker covolume defect criterion proved; actual geometric core lower bound and same-data identification remain open.",
+  "scope": "Ordinary mathematical proof with bounded pinned-source comparison. No Lean build or global GRH completion.",
+  "note": "notes/covolume-defect-budget.md",
+  "note_sha256": "27a2325b22c23c0c093591198b7d1a4c8b7d4615e7d8c4e9c59489e9bd0269d5",
+  "manuscript_file": {
+    "path": "paper/sections/recovered/10-cs-section.tex",
+    "sha256": "4075e6f6fc294fa720d0241940e6692cee8729246b3a8b4d34429b72ec622827"
+  },
+  "manuscript_labels": [
+    "cs-orthogonal-cut",
+    "cs-exceptional-budget",
+    "cs-polynomial-exceptional"
+  ],
+  "claims": [
+    "I=[L:G⊕B]≤N^(d min(g,b)) and gμ(G)=rμ(L)−bμ(B)−log(I)/d",
+    "q≤T+CU+D with D=(b/g)(ν(B)+T+CU)+2log(I)/(dg), ν=2μ; zero-rank case separated",
+    "Mean discarded slope and actual index suffice; ambient maximal slope and exponential rank decay are optional stronger suppliers",
+    "Polynomial rank decay of order a>p controls polynomial slope/index costs of order p, uniformly in all required indices",
+    "Positive weighted sums need only the corresponding weighted sum of actual defects, when downstream weights/maps agree"
+  ],
+  "assumptions": [
+    "K number field; L finite projective Hermitian lattice",
+    "P K-linear idempotent, orthogonal at every infinite place; positive integer N clears P on L",
+    "Retained rank g>0; genuine fixed lattices and measures",
+    "Uncut lower slope and recursion/covolume inequality for these same data",
+    "Uniform defect budget at each fixed accuracy on whole required windows"
+  ],
+  "source_normalization": "GoodBadCut supplies rν(L)≤gν(G)+bν(B)+2b logN directly in the source squared-slope convention; the source-side reduction does not assume equality between differently normalized slopes.",
+  "hodge_fields": {
+    "compactification_reduction_extension": [
+      "p1",
+      "p12",
+      "p22"
+    ],
+    "volumes_intersection_arithmetic_degrees": [
+      "p2",
+      "p3",
+      "p4",
+      "p16",
+      "q7",
+      "q9",
+      "q10",
+      "q11"
+    ],
+    "de_rham_deformation_algebraisation": [
+      "p5",
+      "q1",
+      "q4",
+      "q18"
+    ],
+    "arithmetic_representation": [
+      "p8",
+      "p13",
+      "p14",
+      "p19",
+      "p20",
+      "p23"
+    ],
+    "polarizations_multiplication": [
+      "p25",
+      "p26"
+    ],
+    "vanishing_extension_sections": [
+      "q6",
+      "q8",
+      "q13",
+      "q15"
+    ],
+    "principalisation": [
+      "q16"
+    ]
+  },
+  "hodge_field_count": 28,
+  "additional_methods": [
+    "p18",
+    "q2",
+    "q12"
+  ],
+  "negative_examples": [
+    "Small discarded rank alone: good rank n with norm exp(n), bad rank1 with norm exp(−n²); total slope0, retained slope−n",
+    "Gluing-index loss: L=Ze1+Z(e1+e2)/N; I=N and μ(L)=log(N)/2 while summand slopes0"
+  ],
+  "independent_review": {
+    "reviewer": "endpoint_backbone",
+    "result": "PASS",
+    "checked": [
+      "two quotient/index bounds",
+      "degree sign and normalization factor",
+      "zero discarded rank",
+      "exceptional-fraction budget",
+      "no claimed removal from unrelated branches"
+    ]
+  },
+  "remaining": [
+    "Construct actual core and retained lattices with the prescribed periods/metrics",
+    "Prove the uncut lower slope and discarded mean degree/index bound",
+    "Identify any averaged covolume weights with the new arithmetic comparison"
+  ],
+  "files": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/TopCovolG.lean",
+      "git_blob_sha1": "62742fab059140fb67f88b2c1e18abd6078992b3",
+      "sha256": "f29362501bf62b9b6a7eb933aa0bdf9065414ecca014cf4a9da2970d791b4928",
+      "bytes": 6400,
+      "lines": 61,
+      "inspected_ranges": [
+        [
+          15,
+          61
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/HodgeBundleWeights/ToKnownTheoremsOf.lean",
+      "git_blob_sha1": "95aeefe8ba6bb9f38a0d32b3147d331792ef74d8",
+      "sha256": "f56a93dc187c44ef4d3424a79a4c2d1f7942b1993d40912f89164ada600ea1a6",
+      "bytes": 2874,
+      "lines": 47,
+      "inspected_ranges": [
+        [
+          1,
+          47
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/LiftLambdaBound.lean",
+      "git_blob_sha1": "cb1d92d73f1b063cafa799587c3f8f3e556f6c0a",
+      "sha256": "a73cbdc50b441874d719358771398f999f21e720ef899a99b66c09b9bf72272b",
+      "bytes": 6297,
+      "lines": 66,
+      "inspected_ranges": [
+        [
+          1,
+          66
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/LocalToGlobal/IndefiniteForms/IndefSide.lean",
+      "git_blob_sha1": "bd368accfbed7af9b034507d0a5348dc32bb0225",
+      "sha256": "eff45b2225af32f6bfdd328ab1cfcf5bbb0d64e3137ddd473e0c020c5fb8c460",
+      "bytes": 13143,
+      "lines": 474,
+      "inspected_ranges": [
+        [
+          218,
+          232
+        ],
+        [
+          285,
+          333
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/CovolXOfStepsStatement.lean",
+      "git_blob_sha1": "28a5021492a1f20e86876551f32b1cfcba8e6d3f",
+      "sha256": "b44910310a652e4b6edc43be701af3e695b2f65f146b5096f05710bb82ea6d3a",
+      "bytes": 1318,
+      "lines": 13,
+      "inspected_ranges": [
+        [
+          1,
+          13
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/Divisors/CovolXOfCovol.lean",
+      "git_blob_sha1": "4ed4695093989e1f18246a3244b79102db6c548e",
+      "sha256": "f40c762ed8c2b18311d604540c15613e4a5969b1395dcab59b2854584fb6d3ae",
+      "bytes": 15459,
+      "lines": 294,
+      "inspected_ranges": [
+        [
+          18,
+          24
+        ],
+        [
+          25,
+          101
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/CovolXOfSteps.lean",
+      "git_blob_sha1": "7ddbd133b4503eb235422ebc9e46641e1da5312f",
+      "sha256": "91523ca83062a562c25a77e794e99d2028103fce290ca0749392aed99ea38c75",
+      "bytes": 2912,
+      "lines": 43,
+      "inspected_ranges": [
+        [
+          9,
+          43
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CovolumeFromGramAndBoundsStatement.lean",
+      "git_blob_sha1": "ce42d409079716adb2073b341f22eaa18e584ab4",
+      "sha256": "4849418d623a63ec2c35ad2b41b5fbe38e5cbc6d66a80b8999e593ae9c12c360",
+      "bytes": 681,
+      "lines": 8,
+      "inspected_ranges": [
+        [
+          1,
+          8
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/QuotientMetricDivisors/Statement.lean",
+      "git_blob_sha1": "426f4ef59d7857df5adf0ec8d08768da0b1eea81",
+      "sha256": "502bb8bb725605949758d6a522266e35aaf1d3f5842ca6bf34bc0b22f98d4cf0",
+      "bytes": 11042,
+      "lines": 194,
+      "inspected_ranges": [
+        [
+          12,
+          54
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SizeWindowBrackets/SBrDiv.lean",
+      "git_blob_sha1": "a3bb614873edbee4072ea4642f91f3e7f7a9068d",
+      "sha256": "2870bf8a5b9c521560b895b71c8b8e5d7d500123a61e49b743007c597b863820",
+      "bytes": 25656,
+      "lines": 469,
+      "inspected_ranges": [
+        [
+          324,
+          352
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CovolumeFromGramAndBounds.lean",
+      "git_blob_sha1": "bdb5d891bb3f738cb8cb8c61218ce2e2863630a4",
+      "sha256": "840e9bdd6a0114433a9a8a7b42c52cc6f69cd5ab6604b3fa95750e3c580e90a7",
+      "bytes": 5827,
+      "lines": 114,
+      "inspected_ranges": [
+        [
+          12,
+          104
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/HarderNarasimhan/StatementPl.lean",
+      "git_blob_sha1": "0ef994d7e7998e4b46dfce96b8ccd24bebe4bda8",
+      "sha256": "16766730a8dd781538ca5035ff73ddf7612decae9f293bbd995679093d9adc39",
+      "bytes": 10956,
+      "lines": 170,
+      "inspected_ranges": [
+        [
+          12,
+          76
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/Foundations/IsProbabilityMeasureMuPart.lean",
+      "git_blob_sha1": "f1e1fb8777cb777df70d80ccc4dfdbad7c88024f",
+      "sha256": "3951bad4542aa62738d56c1f31d93348ca8578bffc940aaafba74e395973645d",
+      "bytes": 42278,
+      "lines": 830,
+      "inspected_ranges": [
+        [
+          12,
+          53
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/MajAtAddRight.lean",
+      "git_blob_sha1": "333507ec0c9cfc17d024a01ee81f24d74171e4e9",
+      "sha256": "6a1ee253147d270c21ed5f2b763eca2d8b23082f8dc3307ed1abf217fd4efae7",
+      "bytes": 7536,
+      "lines": 144,
+      "inspected_ranges": [
+        [
+          100,
+          144
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/MeanHeightDescent/MuMaxMinkowski.lean",
+      "git_blob_sha1": "72a1e7262756cd53f4370cc5554f71bae5340cff",
+      "sha256": "f3ad39d3bf8ea1b1e77466990d0dd8fae33be206ae382b086469458a9461f430",
+      "bytes": 5316,
+      "lines": 87,
+      "inspected_ranges": [
+        [
+          37,
+          68
+        ]
+      ]
+    }
+  ]
+}

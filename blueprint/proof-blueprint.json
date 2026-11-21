@@ -55,7 +55,8 @@
         "title": "Characters, cohomology and Galois representations",
         "status": "partial",
         "evidence": [
-          "notes/lean-global-inputs.md"
+          "notes/lean-global-inputs.md",
+          "notes/classical-galois-substitution.md"
         ]
       },
       {
@@ -68,10 +69,10 @@
       },
       {
         "id": "geometry",
-        "title": "Geometric covolume bound",
+        "title": "Geometric lower slope and discarded-degree budget",
         "status": "open",
         "evidence": [
-          "notes/lean-global-inputs.md"
+          "notes/covolume-defect-budget.md"
         ]
       },
       {
@@ -84,10 +85,11 @@
       },
       {
         "id": "compatible",
-        "title": "Compatible arithmetic data at every required scale",
+        "title": "Compatible arithmetic data with controlled average losses",
         "status": "open",
         "evidence": [
-          "notes/lean-endpoint-backbone.md"
+          "notes/lean-endpoint-backbone.md",
+          "notes/one-construction-target.md"
         ]
       },
       {
@@ -324,19 +326,21 @@
       },
       {
         "id": "slope",
-        "title": "Abstract slope comparison\nand numerical balance",
+        "title": "Weighted slope comparison\nActual frame and lower-quotient costs",
         "status": "written",
         "evidence": [
           "cs-slope",
-          "cs-combination"
+          "cs-combination",
+          "cs-weighted-lower"
         ]
       },
       {
         "id": "compatible",
-        "title": "One compatible construction\nNonempty data at every scale",
+        "title": "One compatible construction\nNonempty data and averaged losses",
         "status": "open",
         "evidence": [
-          "notes/lean-endpoint-backbone.md"
+          "notes/lean-endpoint-backbone.md",
+          "notes/one-construction-target.md"
         ]
       },
       {
@@ -382,19 +386,20 @@
       },
       {
         "id": "galois",
-        "title": "Classical Galois representations\nLocal-law and period dictionary",
-        "status": "partial",
+        "title": "Classical Galois representations\nLocal and period comparisons proved",
+        "status": "cited",
         "evidence": [
-          "notes/lean-global-inputs.md",
-          "notes/local-correspondence-bridge.md"
+          "thm-classical-galois-zero-monodromy",
+          "lem-galois-period-realizations",
+          "notes/classical-galois-substitution.md"
         ]
       },
       {
         "id": "stable_lift",
-        "title": "Stable nonzero theta lift\nA source route to Galois compatibility",
-        "status": "open",
+        "title": "Stable theta-lift construction\nAlternative Galois supplier",
+        "status": "alternative",
         "evidence": [
-          "notes/lean-global-inputs.md"
+          "notes/classical-galois-substitution.md"
         ]
       },
       {
@@ -407,10 +412,11 @@
       },
       {
         "id": "geometry",
-        "title": "Geometric logarithmic covolume\nHodge bundles and intersections",
+        "title": "Geometric core lower slope\nPrescribed periods and metrics",
         "status": "open",
         "evidence": [
-          "notes/lean-global-inputs.md"
+          "notes/lean-global-inputs.md",
+          "notes/covolume-defect-budget.md"
         ]
       },
       {
@@ -423,6 +429,25 @@
           "notes/residue-source-dictionary.md"
         ],
         "limits": "Local smooth coefficient classes only; not every global form, merely finite differentiability or growing-chain energy."
+      },
+      {
+        "id": "covolume_defect",
+        "title": "Orthogonal splitting\nDiscarded-degree and index budget",
+        "status": "written",
+        "evidence": [
+          "cs-orthogonal-cut",
+          "cs-exceptional-budget",
+          "cs-polynomial-exceptional"
+        ]
+      },
+      {
+        "id": "averaging",
+        "title": "Finite character averaging\nExplicit projection and transfer errors",
+        "status": "written",
+        "evidence": [
+          "cs-finite-average",
+          "notes/one-construction-target.md"
+        ]
       }
     ],
     "edges": [
@@ -511,20 +536,12 @@
         "compatible"
       ],
       [
-        "compatible",
-        "bound"
-      ],
-      [
         "bound",
         "criterion"
       ],
       [
         "criterion",
         "grh"
-      ],
-      [
-        "stable_lift",
-        "galois"
       ],
       [
         "galois",
@@ -543,16 +560,32 @@
         "norms"
       ],
       [
-        "geometry",
-        "compatible"
-      ],
-      [
         "residue",
         "source_dictionary"
       ],
       [
         "source_dictionary",
         "norms"
+      ],
+      [
+        "geometry",
+        "covolume_defect"
+      ],
+      [
+        "covolume_defect",
+        "compatible"
+      ],
+      [
+        "compatible",
+        "averaging"
+      ],
+      [
+        "averaging",
+        "bound"
+      ],
+      [
+        "classical",
+        "galois"
       ]
     ],
     "ranks": [
@@ -561,7 +594,6 @@
         "qrh"
       ],
       [
-        "stable_lift",
         "coarse",
         "coefficients"
       ],
@@ -592,13 +624,17 @@
       ],
       [
         "theta_identity",
-        "source_dictionary"
+        "source_dictionary",
+        "covolume_defect"
       ],
       [
         "norms"
       ],
       [
         "compatible"
+      ],
+      [
+        "averaging"
       ],
       [
         "bound"
@@ -611,7 +647,8 @@
       ],
       [
         "alt_homology",
-        "alt_analytic"
+        "alt_analytic",
+        "stable_lift"
       ]
     ],
     "edge_semantics": "Solid arrows record curated input interfaces, not an exhaustive theorem-premise graph. An open target is a remaining obligation. Invisible generator edges order rows and have no mathematical meaning.",

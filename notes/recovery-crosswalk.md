@@ -157,6 +157,19 @@ construction. The source also needs explicit Galois compatibility, global theta
 matching and geometric Hodge-bundle covolume contracts; the earlier manuscript
 frontier was not a complete inventory of those branches.
 
+The [classical Galois substitution](classical-galois-substitution.md) now
+supplies that branch, including the full local laws and the global period
+dictionary. The source's stable theta-lift supplier is retained as an
+alternative. Its independent theta and geometric applications still require
+their own proofs.
+
+The [finite averaged target](one-construction-target.md) and
+[exact covolume defect](covolume-defect-budget.md) further reduce the
+construction's acceptance conditions. Resume with the actual uncut geometric
+lower slope and discarded-degree/index bound, then the compatible integral
+maps and their averaged losses. Original stronger scalar windows remain
+documented as one sufficient supplier.
+
 The local word/form dictionary on smooth classes is now completed in
 [residue-source-dictionary.md](residue-source-dictionary.md), including original
 parameter admissibility. The analytic endpoint has been weakened rigorously to

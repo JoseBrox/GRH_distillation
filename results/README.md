@@ -157,3 +157,22 @@ The paper proves the exact inequality that extracts one sum from many approximat
 ## Inversion and uniformity
 
 The remaining proved results include exact Möbius inversion for added cube factors, an induction with an explicit bound on its number of steps, and a continuation theorem with a common positive saving over a family. All multiplicativity, support, and uniformity hypotheses are stated in the paper.
+
+## Average arithmetic losses and the geometric defect
+
+The existing slope section now proves finite character averaging with explicit projection and transfer errors, and a weighted lower-estimate lemma. Their exact source correspondence and complete original clause ledger are in [the reduced construction target](../notes/one-construction-target.md).
+
+The same section proves an exact orthogonal lattice splitting identity. A covolume bound needs only the discarded mean-degree and integral-index budget; suitable polynomial rank decay can suffice. The [geometric defect note](../notes/covolume-defect-budget.md) gives the proof interface, two necessary-control examples and the remaining core lower-slope problem. These reductions do not construct the missing global arithmetic data.
+
+## Classical Galois representations
+
+The Galois and adjoint-vanishing section now states the classical Galois
+representation theorem with the required weights and local normalizations,
+and proves the comparison between the permitted period realizations. The
+local correspondence laws, depth-zero types and transfer to every allowed
+weak correspondence have been matched separately. The
+[adopted substitution](../notes/classical-galois-substitution.md) therefore
+replaces the separate source construction of this input. The same global
+representation supplies all required local comparisons and the repeated
+uses in the Selmer argument. Independent theta identities, integral maps
+and geometric lower bounds remain obligations of the construction.

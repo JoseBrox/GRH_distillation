@@ -61,7 +61,7 @@ def main():
         lines += ["- " + x for x in w["acceptance"]]
     lines += ["", "## Compatibility is part of the theorem", "", model["coherence"], "", model["nonvacuity"], "",
               "A separately proved bound for some lattice, some theta map, or some measure does not discharge a field that refers to a different selected object. Every proposed substitution needs the relevant equality, transport or compatibility statement.", "",
-              "The [classical-input review](../notes/lean-global-inputs.md), [weak-to-classical comparison](../notes/fixed-correspondence-reduction.md), and [local preimage proofs](../notes/local-correspondence-bridge.md) record the current conditional reduction of the Galois construction. Both local preimage lemmas are proved under the full correspondence laws, and the conventional depth-zero type formula has passed independent review. The exact full local-law and global period-model dictionaries remain gates; the original source supplier is retained.", "",
+              "The [adopted classical Galois substitution](../notes/classical-galois-substitution.md) supplies the universal source row. The full local laws, depth-zero types, local preimages and global period comparisons have passed independent review. The same global representation works for every allowed weak correspondence. The original Galois-construction supplier remains an alternative; independent theta identities, integral estimates and geometric bounds remain required.", "",
               "## Execution order", "",
               "Read " + " → ".join(model["reading_order"][:3]) + " first to fix the final target, then work on the suppliers. The immediate research priorities are:", ""]
     lines += ["1. " + x for x in model["recommended_next"]]

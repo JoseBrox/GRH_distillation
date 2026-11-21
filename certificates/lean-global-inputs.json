@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-11-21",
-  "scope": "Named global source contracts and assembly inspected at pinned revision; not a complete theorem dependency graph or kernel verification.",
+  "scope": "Named global source contracts and assembly inspected at the pinned revision. Universal Row0b substitution is complete in conventional mathematics via the separately reviewed local/global dictionaries; this is not a complete theorem-dependency graph, full global-arithmetic construction, or new kernel verification.",
   "repository": "jsmorph/rh",
   "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
   "files": [
@@ -662,8 +662,10 @@
         "base_change_descent",
         "local_compatibility"
       ],
-      "reconstruction_status": "No exact theorem with this full contract is presently in the manuscript. The adjoint Selmer vanishing section is not a replacement.",
-      "simplification_status": "Concrete classical-theorem candidate: classical Galois packet and normalizations checked, both Good-preimage lemmas and universal-row recovery independently reviewed, and conventional TypeLaw formula matched to primary references. Full local-Laws and global automorphic/period-model dictionaries remain open."
+      "reconstruction_status": "Adopted classical theorem package supplies the exact universal Row0b IsRecT contract, including local/weight/crystalline/period quantifiers and weak-correspondence existence.",
+      "simplification_status": "Complete and independently reviewed: all 15 local laws and Artin/epsilon witnesses, depth-zero TypeLaw, Good preimages, full global automorphic/period dictionary, and same-witness universal-row transfer.",
+      "construction_inputs_role": "The listed construction_inputs describe the original source supplier, retained as an alternative; the adopted supplier is the classical theorem package.",
+      "adopted_proof": "notes/classical-galois-substitution.md"
     },
     {
       "id": "stable_theta_lift",
@@ -676,8 +678,8 @@
         "explicit infinity weight formula",
         "split-place local intertwining"
       ],
-      "reconstruction_status": "Local pieces present, general source lift-existence contract not reconstructed.",
-      "scope_limit": "Removing this construction as a proof of Row0b would not remove independent global theta-matching requirements."
+      "reconstruction_status": "The full source lift-existence theorem is retained as part of the alternative Galois supplier. Its use in producing Row0b is replaced by the adopted classical theorem package; this note does not assert a new proof of TLiftK.",
+      "scope_limit": "The adopted Galois substitution retains independent global theta-matching requirements and any independent uses of the geometric or integral suppliers."
     },
     {
       "id": "theta_matching",
@@ -740,7 +742,7 @@
   "cited_names_not_verified_theorems": true,
   "complete_global_contract_audit": false,
   "published_hodge_bundle_fields": 28,
-  "note_sha256": "0dc9570951476eb72d1a4816aca6ab748c4a1f829adfeca4ce62a63911ca551d",
+  "note_sha256": "3267d4c610519211dde01b2a24e430327b9a74388f1b28e7717fcd0e25ab0d3b",
   "primary_literature": [
     {
       "id": "BLGGT2014",
@@ -859,8 +861,8 @@
     }
   ],
   "classical_row_comparison": {
-    "status": "candidate_open",
-    "literal_Row0b_replacement_verified": false,
+    "status": "adopted_complete_conventional_mathematics",
+    "literal_Row0b_replacement_verified": true,
     "classical_local_compatibility_deduction": "BLGGT2014 Theorem 2.1.1 supplies existence, away compatibility, de Rham weights and spherical crystallinity. BLGGTLocalGlobal Theorem 1.1 gives monodromy dominance above ell; zero comparison monodromy forces equality after Frobenius semisimplification.",
     "local_global_II_hypotheses": {
       "regular_algebraic": true,
@@ -878,26 +880,33 @@
       "determinant_twist": "Both source algNorm and literature use exponent (1-n)/2.",
       "weight_identity": "For zero-based k, z_k=-a_(n-k)+(n-1)/2-k, so {(n-1)/2-z_k}={a_i+n-i}.",
       "source_WD": "Source WDRep is already semisimple, and wdRep is constructed by Frobenius semisimplification preserving N.",
-      "remaining": "Exact automorphic-space and period-model interpretations, including all allowed period bridges, still need to be matched.",
-      "reciprocity": "Source IsLocalArtin.ord_eq gives ord(a(sigma))=-deg(sigma); for a uniformizer this makes the source WD relation q^{-1}N, agreeing with geometric reciprocity."
+      "reciprocity": "Source IsLocalArtin.ord_eq gives ord(a(sigma))=-deg(sigma); for a uniformizer this makes the source WD relation q^{-1}N, agreeing with geometric reciprocity.",
+      "automorphic_and_period_models": "Completed in notes/galois-period-dictionary.md, including every allowed bridge, tied period model and embedding; the global r, weight and Hodge–Tate family are chosen before those local models."
     },
-    "concrete_remaining_gates": [
-      "Finish the clause-by-clause interpretation of the full source local Langlands Laws by the classical correspondence. Both Good-preimage lemmas are proved relative to these full laws, and the conventional depth-zero TypeLaw formula is now matched with primary references.",
-      "Complete the source-to-classical global automorphic and period-model dictionary, retaining all period and embedding quantifiers."
+    "concrete_remaining_gates": [],
+    "branches_not_removed": [
+      "global theta integral matching",
+      "independent integral maps and divisibility estimates",
+      "geometric covolume estimates",
+      "common arithmetic data construction",
+      "remaining cohomological and counting estimates"
     ],
-    "branch_removal_scope_if_completed": [
+    "fixed_classical_correspondence_alternative": "The independently reviewed universal-row recovery is now applied to completed local/global inputs. Optional refactoring of all downstream predicates to a fixed family remains unperformed and is unnecessary for the adopted route.",
+    "classical_packet_status": "Proved classical packet identified with literal universal Row0b IsRecT through the completed source dictionaries and Good/weak transfer.",
+    "weak_interface_transfer_route": "The full local dictionary and TypeLaw give the classical IsRecT family. Both Good-preimage propositions and restricted uniqueness/injectivity identify every guarded weak target with the classical target; dimension laws handle the unguarded clause. The same global r, weight and Hodge–Tate family satisfy the universal row.",
+    "verification_kind": "Conventional mathematical source-contract comparison and independently reviewed composition; no new Lean compilation.",
+    "resolved_dictionary_inputs": {
+      "full_local_laws": "notes/classical-local-correspondence.md",
+      "global_dictionary": "notes/galois-period-dictionary.md",
+      "adopted_composition": "notes/classical-galois-substitution.md",
+      "full_local_certificate": "certificates/classical-local-correspondence.json",
+      "global_certificate": "certificates/galois-period-dictionary.json"
+    },
+    "adopted_branch_removal_scope": [
       "geometric seed for Row0b",
       "stable-range theta lift for Row0b",
       "integral congruences and trace-limit construction for Row0b"
-    ],
-    "branches_not_removed": [
-      "global theta integral matching",
-      "geometric covolume estimates",
-      "common arithmetic data construction"
-    ],
-    "fixed_classical_correspondence_alternative": "The conditional recovery of the original universal row has been proved and independently reviewed; this avoids a mandatory refactoring of all downstream consumers once its local and global dictionary inputs are supplied.",
-    "classical_packet_status": "Proved in conventional mathematical language by the two compatibility theorems, the elementary monodromy-dominance lemma and Berger p-adic monodromy; not yet a verified literal source Row0b substitution.",
-    "weak_interface_transfer_route": "The two Good-preimage conditions have now been proved relative to full Laws in notes/local-correspondence-bridge.md and independently reviewed. Together with TypeLaw, the fixed-row recovery theorem supplies literal Row0b for every weak map with the same global witnesses. Full source-object dictionaries remain open."
+    ]
   },
   "proved_elementary_deductions": [
     {
@@ -930,7 +939,7 @@
         "RecTUnique gives r(z)=R(z) because Good(z).",
         "LawsT.inj applied to r(x)=r(z) and Good(z) gives x=z."
       ],
-      "status": "Proved conditional transfer lemma. Does not establish Good classical preimages for every admitted source target.",
+      "status": "Proved transfer lemma. Its Good-preimage hypotheses are discharged separately in notes/local-correspondence-bridge.md; the completed classical inputs now give the adopted universal-row composition.",
       "source_contracts": [
         "IsRecTOfIsRec.lean:70",
         "IsRecTOfIsRec.lean:82-85",
@@ -958,7 +967,6 @@
   },
   "classical_type_law_comparison": {
     "status": "conventional_mathematical_formula_matched",
-    "literal_source_implementation_certified": false,
     "source_contract": "IsRecTOfIsRec.lean:35-53",
     "inputs": [
       "local field continuously isomorphic to Q_p",
@@ -982,7 +990,7 @@
       "Sqf",
       "assumed zero monodromy"
     ],
-    "scope_limit": "This matches the conventional local type formula. The full source Laws bundle and global automorphic/period-model dictionaries have not all been certified.",
+    "scope_limit": "The conventional TypeLaw deduction and its exact source hypotheses are matched. Full local Laws and global automorphic/period dictionaries are separately complete; no new Lean implementation or arithmetic norm/degree estimate is asserted.",
     "independent_review": {
       "status": "PASS",
       "reviewer_role": "local-correspondence bridge agent",
@@ -999,8 +1007,10 @@
         "Unramified quadratic rectifier is self-inverse and disappears on inertia.",
         "Auxiliary local extension and residue-Artin normalization match the source formula."
       ],
-      "scope": "Conventional mathematical TypeLaw deduction only; full source Laws and global period-model dictionary remain open."
-    }
+      "scope": "This review verifies the conventional mathematical TypeLaw deduction. The separately reviewed full local Laws and global period-model dictionaries are completed in the linked companion certificates."
+    },
+    "literal_source_contract_mathematically_matched": true,
+    "new_lean_implementation_certified": false
   },
   "independent_review_of_local_bridge": {
     "status": "passed",
@@ -1014,7 +1024,8 @@
       "GoodLem.lean:31-40"
     ],
     "stronger_scope": "Neither preimage result requires zero monodromy, squarefreeness or a large-prime bound.",
-    "caution": "The full correspondence laws are assumptions of these deductions; weak LawsT.depth has not been reversed."
+    "caution": "The full correspondence laws are assumptions of these deductions; weak LawsT.depth has not been reversed.",
+    "application_status": "The full Laws hypotheses of these abstract local deductions are now discharged by the completed classical local dictionary; the weak depth law is still not reversed."
   },
   "independent_review_of_universal_row_recovery": {
     "status": "passed",
@@ -1026,6 +1037,48 @@
       "AboveB rank bound transfers by weak correspondence dimension.",
       "The same global r, weight and Hodge-Tate data work for every weak local map.",
       "Period, place and embedding quantifiers are untouched."
+    ],
+    "application_status": "All local and global hypotheses are discharged; the composition supplies the adopted universal Row0b IsRecT."
+  },
+  "complete_global_contract_audit_scope": "The false value refers to a complete proof-wide global/arithmetic contract audit, not to the now-completed universal Row0b substitution.",
+  "universal_Row0b_contract_completed": true,
+  "adopted_semantic_edges": [
+    [
+      "classical_local_laws_and_type_formula",
+      "classical_IsRecT_family"
+    ],
+    [
+      "classical_global_theorems_and_period_dictionary",
+      "fixed_correspondence_row"
+    ],
+    [
+      "classical_IsRecT_family_and_good_preimages",
+      "universal_row_transfer"
+    ],
+    [
+      "fixed_correspondence_row_and_universal_row_transfer",
+      "galois_compatibility"
     ]
-  }
+  ],
+  "status_reconciliation": {
+    "date": "2026-11-21",
+    "status": "reconciled with adopted classical universal Row0b substitution",
+    "completed_inputs": {
+      "full_local_laws": "notes/classical-local-correspondence.md",
+      "global_dictionary": "notes/galois-period-dictionary.md",
+      "adopted_composition": "notes/classical-galois-substitution.md",
+      "full_local_certificate": "certificates/classical-local-correspondence.json",
+      "global_certificate": "certificates/galois-period-dictionary.json"
+    },
+    "mathematical_scope": "All original local guards and global/period quantifier order retained; one global r, weight and Hodge–Tate family works for every admitted weak correspondence.",
+    "new_lean_kernel_build": false,
+    "independent_obligations_retained": [
+      "common arithmetic construction",
+      "integral maps and divisibility",
+      "global theta identities and norm estimates",
+      "geometric core slopes and discarded-degree budgets",
+      "remaining cohomological and counting estimates"
+    ]
+  },
+  "semantic_edges_scope": "The original semantic_edges record source dependencies, including the alternative Galois supplier. The adopted classical supplier is recorded separately in adopted_semantic_edges."
 }

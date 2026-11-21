@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Byte-verified bounded source audit; proved ordinary-mathematics interface reductions. The two Good-preimage lemmas and classical depth-zero type formula are discharged in companion notes under their stated full-correspondence hypotheses. No Lean kernel build or completed full local/global dictionary.",
+  "scope": "Byte-verified bounded source audit and proved conventional interface reductions. The completed local/global dictionaries discharge the transfer hypotheses and give the adopted universal Row0b IsRecT. Optional fixed-family refactoring remains separate; no Lean kernel build is claimed.",
   "files": [
     {
       "repository": "jsmorph/rh",
@@ -443,7 +443,7 @@
     },
     {
       "id": "good-preimage-restores-universal-row",
-      "status": "proved ordinary-mathematics reduction; two preimage hypotheses discharged under full correspondence laws",
+      "status": "proved conventional reduction; all hypotheses discharged for the adopted classical family",
       "hypotheses": [
         "fixed R satisfies IsRecT everywhere",
         "Row0b for singleton relation rc=R",
@@ -457,15 +457,20 @@
         "dimension law handles unconditional AwayB.dim; all other PropsB clauses unchanged"
       ],
       "conclusion": "the original Row0b IsRecT with the same global representation, weight and Hodge-Tate data",
-      "open_hypotheses": [
-        "exact classical full local-law dictionary",
-        "global automorphic, weight and period-model dictionary"
-      ],
+      "open_hypotheses": [],
       "discharged_local_hypotheses": {
         "toral_good_preimage": "notes/local-correspondence-bridge.md#toral-parameters-have-good-preimages",
         "tame_good_preimage": "notes/local-correspondence-bridge.md#tame-parameters-over-the-rational-local-field-have-good-preimages",
         "classical_type_formula": "notes/lean-global-inputs.md#the-classical-depth-zero-type-formula"
-      }
+      },
+      "completed_dictionary_inputs": {
+        "full_local_laws": "notes/classical-local-correspondence.md",
+        "global_dictionary": "notes/galois-period-dictionary.md",
+        "adopted_composition": "notes/classical-galois-substitution.md",
+        "full_local_certificate": "certificates/classical-local-correspondence.json",
+        "global_certificate": "certificates/galois-period-dictionary.json"
+      },
+      "application": "notes/classical-galois-substitution.md"
     }
   ],
   "endpoint_row_routes": [
@@ -798,13 +803,8 @@
     ],
     "verification": "locator-only except bounded source reads explicitly listed in files"
   },
-  "remaining_gates": [
-    "Audit the classical correspondence against the exact full source LLC laws, with matching Artin and algebraic-twist conventions",
-    "Complete the global Galois theorem/automorphic/weight/period-model dictionary",
-    "Retain the whole source Galois-construction branch until these dictionaries are supplied",
-    "No deletion of independent theta-integral or geometric covolume branches"
-  ],
-  "status": "Local weak-correspondence quantifier gate discharged under full correspondence laws; exact full Laws and global automorphic/period-model dictionaries remain.",
+  "remaining_gates": [],
+  "status": "Adopted universal Row0b transfer with all local/global hypotheses discharged; same global r, weight and Hodge–Tate data retained.",
   "independent_review": {
     "status": "pass",
     "date": "2026-11-21",
@@ -829,8 +829,43 @@
     "type_formula": {
       "reviewer": "residue_dictionary",
       "evidence": "certificates/local-correspondence-bridge.json:type_law_review",
-      "scope": "classical finite-field type/compact induction/inertia formula and geometric Artin normalisation; does not discharge full Laws dictionary"
+      "scope": "Classical finite-field type, compact induction, exact inertia polynomial and geometric Artin normalization. Other full-Laws fields are discharged in the separately reviewed full local dictionary."
+    },
+    "completed_dictionary_reviews": {
+      "local": "certificates/classical-local-correspondence.json",
+      "global": "certificates/galois-period-dictionary.json",
+      "composition": "notes/classical-galois-substitution.md"
     }
   },
-  "note_sha256": "c116615d98629e79db8b05971f3bb6722a4a301b5e308c714b8adcc11bdd0658"
+  "note_sha256": "3c93f8cfbd70315d143b87ca4b60aed6ab81ec410350e8be5a053df43ee85a91",
+  "optional_fixed_family_refactoring": {
+    "status": "not performed; not required for the adopted route",
+    "inventory_scope": "The 47-file/55-line locator inventory remains historical evidence for this optional refactoring. Only the representative sites recorded in the source manifest were bounded-read and verified.",
+    "requirements_if_chosen": "Specialise existential local admissibility and universal compatibility predicates coherently, audit remaining witness sites, and retain the exact type and transport conventions."
+  },
+  "scope_exclusions": [
+    "No removal of independent integral, theta, covolume or common-data estimates",
+    "No complete Lean refactoring or fresh kernel build",
+    "No count of removable source files inferred from the locator inventory"
+  ],
+  "status_reconciliation": {
+    "date": "2026-11-21",
+    "status": "reconciled with adopted classical universal Row0b substitution",
+    "completed_inputs": {
+      "full_local_laws": "notes/classical-local-correspondence.md",
+      "global_dictionary": "notes/galois-period-dictionary.md",
+      "adopted_composition": "notes/classical-galois-substitution.md",
+      "full_local_certificate": "certificates/classical-local-correspondence.json",
+      "global_certificate": "certificates/galois-period-dictionary.json"
+    },
+    "mathematical_scope": "All original local guards and global/period quantifier order retained; one global r, weight and Hodge–Tate family works for every admitted weak correspondence.",
+    "new_lean_kernel_build": false,
+    "independent_obligations_retained": [
+      "common arithmetic construction",
+      "integral maps and divisibility",
+      "global theta identities and norm estimates",
+      "geometric core slopes and discarded-degree budgets",
+      "remaining cohomological and counting estimates"
+    ]
+  }
 }

@@ -1,90 +1,113 @@
 {
   "schema_version": 1,
-  "status": "early checkpoint: all 15 full laws and additional Artin/epsilon witnesses inventoried; substitution not yet asserted",
-  "scope": "Conventional mathematical comparison with pinned local source definitions; no Lean kernel build or broad global substitution claim.",
+  "status": "full conventional substitution proved and independently reviewed",
+  "scope": "All fifteen Laws fields, the local Artin witness, the monodromy-forgetting Deligne epsilon family, rank zero and field-isomorphism compatibility. Conventional mathematics using the cited classical theorems; no new Lean compilation or blanket removal of unrelated geometry is claimed.",
   "source_commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
   "note": "notes/classical-local-correspondence.md",
-  "note_sha256": "95e034e6aae841349ff1dfb5fb3b8a3145eff12a9def4230f64c5a449b01bd29",
+  "note_sha256": "37bff32de508ca260b1e8e5c02bf446ed3f2d445db49b77fb15ab9c6c558e2f7",
   "laws": [
     {
       "field": "bij",
       "declaration_line": 32,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Multisegment quotient and special-parameter classifications"
     },
     {
       "field": "dim",
       "declaration_line": 34,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Formula (3) preserves total segment rank, including zero"
     },
     {
       "field": "one",
       "declaration_line": 36,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Scholze Theorem 14.1(i) and geometric local Artin"
     },
     {
       "field": "eps",
       "declaration_line": 38,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Exact JPSS equation, cuspidal multiplicativity, no tensor inertia invariants, arbitrary invariant linear integral and m=0"
     },
     {
       "field": "twist",
       "declaration_line": 42,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Cuspidal twist compatibility, induction and quotient functoriality"
     },
     {
       "field": "central",
       "declaration_line": 44,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Central characters of normalized induction and determinants of segment constituents"
     },
     {
       "field": "dual",
       "declaration_line": 47,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Inverse transpose, reversed dual segment order, alternating special-basis isomorphism for minus-transpose monodromy"
     },
     {
       "field": "cusp",
       "declaration_line": 50,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Underlying Weil irreducibility is equivalent to one segment of length one"
     },
     {
       "field": "langlands",
       "declaration_line": 52,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Emerton–Helm §4.3 ordinary Q(S), with source-centered Sp shifted by (length−1)/2"
     },
     {
       "field": "det",
       "declaration_line": 56,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Descending singleton quotient, via normalized Frobenius reciprocity or compact integration"
     },
     {
       "field": "prod",
       "declaration_line": 59,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Triangular constituent order forces Q(S union T) to occur; irreducibility identifies it"
     },
     {
       "field": "supp",
       "declaration_line": 63,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Underlying Weil sum over all cuspidal-support terms, with multiplicities"
     },
     {
       "field": "sph",
       "declaration_line": 66,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "Satake and compact-invariant standard-module calculation; source unramified includes N=0"
     },
     {
       "field": "sat",
       "declaration_line": 68,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "alpha^ord composed with Artin is alpha^(−degree), hence diag(alpha inverse)"
     },
     {
       "field": "depth",
       "declaration_line": 71,
-      "status": "exact source obligation inventoried; primary correspondence or elementary normalization check in progress"
+      "status": "proved in conventional mathematics",
+      "evidence": "ABPS Theorem 2.9 and lattice-chain radical containment of KOne; exact source wild inertia"
     }
   ],
   "additional_witnesses": [
-    "IsLocalArtin: surjectivity, inertia continuity, valuation, smooth-character factorization, global reciprocity compatibility",
-    "IsDeligneEps: multiplicativity, exact normalized rank-one Gauss sum, virtual-dimension-zero induction"
+    {
+      "id": "IsLocalArtin",
+      "status": "proved from ordinary local/global class field theory",
+      "details": "Geometric normalization; uniqueness follows from ArtEx 8–15 with explicit Chevalley-units local-idele injection. Global uniqueness is also deduced from source fields and Chebotarev."
+    },
+    {
+      "id": "IsDeligneEps",
+      "status": "proved from Deligne Theorem 4.1 and exact rank-one normalization",
+      "details": "Underlying Weil epsilon at s=1/2, self-dual measure. Identity-extension induction forces independence of N. IsLocalExt gives equality of global/local degrees; the orbit-spanning map with that dimension gives ordinary Weil induction."
+    }
   ],
   "proved_translations": [
     {
@@ -96,6 +119,26 @@
       "id": "adjacent-rank-no-inertia",
       "statement": "If rho is irreducible of dimension m+1 and tau is semisimple of dimension m, then (rho tensor tau)^I=0.",
       "proof": "An inertia overlap between irreducible Weil representations forces them to differ by an unramified twist and hence have equal dimensions."
+    },
+    {
+      "id": "source-epsilon-forgets-monodromy",
+      "statement": "Identity-extension induction forces constants to depend only on underlying Weil representations.",
+      "proof": "Compare the induced pair with induction of the first parameter to itself; cancel the nonzero constant."
+    },
+    {
+      "id": "arbitrary-invariant-linear-integral",
+      "statement": "The source invariant linear functional is scalar Haar on both functions used in its equation.",
+      "proof": "Cuspidal Whittaker restriction gives compact support modulo N; quotient test functions have one-dimensional algebraic coinvariants."
+    },
+    {
+      "id": "irreducible-product-union",
+      "statement": "An irreducible Q(S) times Q(T) equals Q(S union T).",
+      "proof": "Triangular standard-module constituents and Grothendieck commutativity force the top union constituent into the top product."
+    },
+    {
+      "id": "full-depth-equivalence",
+      "statement": "KOne-fixed vectors are equivalent to source IsTameWD for the classical correspondence.",
+      "proof": "Full depth preservation and the lattice-chain radical containment; source wild inertia acts trivially on every valuation graded piece."
     }
   ],
   "critical_normalization": "The source induction relation ignores monodromy. Its IsDeligneEps witness is the underlying-Weil epsilon constant at s=1/2, with self-dual additive measure. Adjacent-rank cuspidal pairs have no inertia invariants, so neither their L-factors nor the WD monodromy correction changes the corresponding functional equation.",
@@ -109,8 +152,8 @@
       "bytes": 9769,
       "inspected_ranges": [
         [
-          21,
-          90
+          11,
+          105
         ]
       ]
     },
@@ -123,12 +166,12 @@
       "bytes": 11302,
       "inspected_ranges": [
         [
-          18,
+          17,
           70
         ],
         [
           78,
-          115
+          124
         ],
         [
           145,
@@ -153,8 +196,20 @@
           147
         ],
         [
+          156,
+          166
+        ],
+        [
+          197,
+          215
+        ],
+        [
           247,
           282
+        ],
+        [
+          319,
+          326
         ]
       ]
     },
@@ -167,18 +222,450 @@
       "bytes": 45768,
       "inspected_ranges": [
         [
+          45,
+          91
+        ],
+        [
+          179,
+          210
+        ],
+        [
+          352,
+          370
+        ],
+        [
+          402,
+          456
+        ],
+        [
           498,
           568
         ]
       ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/TwistedInnerProducts/IsSubquotientDetRepParInd.lean",
+      "git_blob_sha1": "7eef4a1515820c62f2a9b1cd306f2dfa7a13d334",
+      "sha256": "633bdfbc117fc7f2998f717c505babeb271dc9d05d71083767d85f2693b2ff0e",
+      "bytes": 32499,
+      "inspected_ranges": [
+        [
+          47,
+          61
+        ],
+        [
+          125,
+          144
+        ],
+        [
+          193,
+          240
+        ],
+        [
+          321,
+          359
+        ],
+        [
+          388,
+          413
+        ],
+        [
+          510,
+          545
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/TwistedInnerProducts/LeviEmbMemNormalizerLower.lean",
+      "git_blob_sha1": "ffa9d033d1d7ab110fa46f5deaff51841400a53e",
+      "sha256": "b4339053a50af23cb4e31f02b972ff7070ca8f5f61528e1f946bfa0a3c8c787b",
+      "bytes": 32989,
+      "inspected_ranges": [
+        [
+          18,
+          44
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/Foundations/MatrixMeasurableSpace.lean",
+      "git_blob_sha1": "3357ad90bd4c82c9fd86d50aa023c7997703b5c0",
+      "sha256": "fa6c75518903c431a0ea7c7db484c717d52eb3d4ea6c43781953af865bb8e963",
+      "bytes": 3255,
+      "inspected_ranges": [
+        [
+          19,
+          42
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/ExistsNotCongPow.lean",
+      "git_blob_sha1": "b2073e33bd1c02961acda3ab878dce8b45caf88c",
+      "sha256": "245016ec8d132b1c94b37499d357cd4fb93a8e508176d10a676a09bcf711d281",
+      "bytes": 11705,
+      "inspected_ranges": [
+        [
+          217,
+          236
+        ],
+        [
+          249,
+          273
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/PublishedTheorems/AutomorphicForms₂/ExistsUniqueHcharOfFiniteOrder.lean",
+      "git_blob_sha1": "9b6b9aca2fc6239477a254a7a623099b10ef945a",
+      "sha256": "8297c5822c5dd0e82383f41c872a915a5ae4be81d89f3202aefcd2a19abf8d19",
+      "bytes": 25179,
+      "inspected_ranges": [
+        [
+          18,
+          43
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/PublishedTheorems/TwistedTraceFormula/NontrivialOfIrreducible.lean",
+      "git_blob_sha1": "b2b44bb86c9034ee49bba88d5b312ff0ea1a0c3a",
+      "sha256": "edb7565dd1908ad144297c27c0ed485a7d7326a631b3f7b4c81d69747afd35ab",
+      "bytes": 14266,
+      "inspected_ranges": [
+        [
+          156,
+          193
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/PublishedTheorems/GaloisCohomology₂/NotIsGenericDetRepTwo.lean",
+      "git_blob_sha1": "5685d854607a6d7150cd670a5a4c3ffc34f5749f",
+      "sha256": "a7ac29808b698283afb50a5cabf63f548cbae2d343fec719f33bb655e8455a11",
+      "bytes": 2015,
+      "inspected_ranges": [
+        [
+          10,
+          28
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/Foundations/LocalLanglands/LocalCentralUnits/ArtEx.lean",
+      "git_blob_sha1": "baffb36d76e9265f949f51597bf4aa9b226b3f60",
+      "sha256": "151bbc3b12e309d4b48f504eeeff426caa2e95844679faa1e2ee2eeab0f1599d",
+      "bytes": 959,
+      "inspected_ranges": [
+        [
+          1,
+          15
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/Foundations/LocalLanglands/IsRecTOfIsRec.lean",
+      "git_blob_sha1": "baddfb181bfefea1533526863033f99b63bb4d17",
+      "sha256": "4054d69535a55b8df339dee1ed766d38cb271ae87ce6033a8e0195ac577d9931",
+      "bytes": 6283,
+      "inspected_ranges": [
+        [
+          74,
+          91
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/LevelLetterCocycles/BlochKatoPhases.lean",
+      "git_blob_sha1": "df02dbb392f97b19ebd900ab2f7ec3b69ef52049",
+      "sha256": "a1bc324b0e66228ab9225c4ea84f3813538902c6d20a2fcc3faccd96b4f22ab5",
+      "bytes": 28727,
+      "inspected_ranges": [
+        [
+          65,
+          86
+        ]
+      ]
     }
   ],
-  "remaining": [
-    "Primary references for full correspondence properties",
-    "Exact normalized-induction and multisegment orientation",
-    "Satake inverse and arithmetic/geometric Frobenius",
-    "Rankin-Selberg functional equation and arbitrary invariant integral",
-    "Rank-one Gauss sum and virtual induction normalization",
-    "All local Artin clauses, including global reciprocity"
-  ]
+  "primary_references": [
+    {
+      "id": "ScholzeLLC",
+      "url": "https://people.math.uni-bonn.de/scholze/LocalLanglands.pdf",
+      "title": "The local Langlands correspondence for GL_n over p-adic fields",
+      "local_path": "build/classical-local-correspondence/ScholzeLLC.pdf",
+      "sha256": "11358ca04e158f455a08d59fc31afa3dc324ad816c53eef571d5fa7dbce6f002",
+      "bytes": 388731,
+      "inspected_locations": [
+        {
+          "printed_pages": "3",
+          "location": "Theorem 1.2(c),(d)",
+          "text_lines": [
+            119,
+            146
+          ]
+        },
+        {
+          "printed_pages": "35",
+          "location": "Theorem 14.1 and footnote 9",
+          "text_lines": [
+            1967,
+            1997
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EmertonHelmFamilies",
+      "url": "https://math.uchicago.edu/~emerton/pdffiles/families.pdf",
+      "title": "The local Langlands correspondence for GL_n in families",
+      "local_path": "build/classical-local-correspondence/EmertonHelmFamilies.pdf",
+      "sha256": "43079a450c3e053e96eae8851069a97528d5d976ce196431c5c6e61c07146289",
+      "bytes": 671358,
+      "inspected_locations": [
+        {
+          "printed_pages": "27–29",
+          "location": "Ordinary normalization; Lemmas 4.1.1–4.1.2; Definition 4.1.4",
+          "text_lines": [
+            1467,
+            1595
+          ]
+        },
+        {
+          "printed_pages": "33–34",
+          "location": "Condition 4.3.1 and ordinary quotient Q(S)",
+          "text_lines": [
+            1759,
+            1798
+          ]
+        },
+        {
+          "printed_pages": "35",
+          "location": "Theorem 4.3.4 triangular constituent order",
+          "text_lines": [
+            1880,
+            1896
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Zelevinsky1980",
+      "url": "https://www.numdam.org/article/ASENS_1980_4_13_2_165_0.pdf",
+      "title": "Induced representations of reductive p-adic groups II",
+      "local_path": "build/classical-local-correspondence/Zelevinsky1980.pdf",
+      "sha256": "663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac",
+      "bytes": 4662925,
+      "inspected_locations": [
+        {
+          "printed_pages": "171",
+          "location": "§1.5 admissibility",
+          "text_lines": [
+            333,
+            356
+          ]
+        },
+        {
+          "printed_pages": "174",
+          "location": "Theorem 1.9 Grothendieck commutativity",
+          "text_lines": [
+            473,
+            491
+          ]
+        },
+        {
+          "printed_pages": "197–198",
+          "location": "§9.1–9.4 ascending quotient and dual",
+          "text_lines": [
+            1609,
+            1647
+          ]
+        }
+      ]
+    },
+    {
+      "id": "JPSS",
+      "url": "https://www.math.columbia.edu/~hj/Rankin%20Selberg%20convolutions.pdf",
+      "title": "Rankin–Selberg convolutions",
+      "local_path": "build/classical-local-correspondence/JPSS.pdf",
+      "sha256": "d9feed6388ca5acf02ecc6a8cce984871a7c28f062ff441e45a71fa2d8962245",
+      "bytes": 4897256,
+      "inspected_locations": [
+        {
+          "printed_pages": "374",
+          "pdf_pages_one_based": [
+            9
+          ],
+          "location": "Introduction statement of Theorem 3.1 gamma multiplicativity",
+          "inspection": "bounded local OCR"
+        },
+        {
+          "printed_pages": "376,386,387,390,391",
+          "pdf_pages_one_based": [
+            11,
+            21,
+            22,
+            25,
+            26
+          ],
+          "location": "Weyl elements; §2.1–2.2; §2.4(2); Theorem 2.7(iii)(2)",
+          "inspection": "bounded local OCR; visual verification of pages 376,387,391"
+        }
+      ]
+    },
+    {
+      "id": "DeligneConstants",
+      "url": "https://publications.ias.edu/sites/default/files/Number20.pdf",
+      "title": "Les constantes des équations fonctionnelles des fonctions L",
+      "local_path": "build/classical-local-correspondence/DeligneConstants.pdf",
+      "sha256": "b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844",
+      "bytes": 2976421,
+      "inspected_locations": [
+        {
+          "printed_pages": "523–524",
+          "location": "§2.3 local reciprocity",
+          "text_lines": [
+            1231,
+            1296
+          ]
+        },
+        {
+          "printed_pages": "526–528",
+          "location": "§3.3–3.4.3 Tate normalization",
+          "text_lines": [
+            1420,
+            1543
+          ],
+          "inspection": "page 528 formulas also verified visually"
+        },
+        {
+          "printed_pages": "535",
+          "location": "Theorem 4.1 existence, multiplicativity and virtual-rank-zero induction",
+          "text_lines": [
+            1874,
+            1926
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ABPSDepth",
+      "url": "https://www.math.ru.nl/~solleveld/depthLLC.pdf",
+      "title": "Depth and the local Langlands correspondence",
+      "local_path": "build/classical-local-correspondence/ABPSDepth.pdf",
+      "sha256": "c1b8ff1243616df6b832d1befa29f232c858c81032560c5feb9797be88a3094a",
+      "bytes": 405678,
+      "inspected_locations": [
+        {
+          "printed_pages": "3",
+          "location": "Depth-zero meanings",
+          "text_lines": [
+            81,
+            87
+          ]
+        },
+        {
+          "printed_pages": "9–10",
+          "location": "Proposition 2.5",
+          "text_lines": [
+            410,
+            447
+          ]
+        },
+        {
+          "printed_pages": "13–14",
+          "location": "Theorem 2.9 and proof",
+          "text_lines": [
+            640,
+            690
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Satake1963",
+      "url": "https://www.numdam.org/item/PMIHES_1963__18__5_0.pdf",
+      "title": "Theory of spherical functions on reductive algebraic groups over p-adic fields",
+      "local_path": "build/classical-local-correspondence/Satake1963.pdf",
+      "sha256": "bd6c8f5c0076257c1252f8d34e659727ac4b30ee58073ed1224ee1eb3d1f23c9",
+      "bytes": 6113819,
+      "inspected_locations": [
+        {
+          "printed_pages": "23–24",
+          "location": "§5.1–5.2 spherical Hecke characters",
+          "text_lines": [
+            807,
+            862
+          ]
+        },
+        {
+          "printed_pages": "27",
+          "location": "Theorem 2 parametrization",
+          "text_lines": [
+            965,
+            1000
+          ]
+        },
+        {
+          "printed_pages": "45",
+          "location": "Theorem 6 for GL_n",
+          "text_lines": [
+            1820,
+            1870
+          ]
+        }
+      ]
+    }
+  ],
+  "independent_reviews": [
+    {
+      "reviewer": "/root/global_inputs",
+      "status": "PASS",
+      "scope": "Quotient order, centered special shift, ordinary versus generic correspondence, depth and local/global Artin uniqueness",
+      "evidence": "Direct reads of Laws 29–72, source segment/IsCosocle definitions, Emerton–Helm §4.3, ABPS Theorem 2.9, IsLocalArtin and ArtEx; GL2 trivial/Steinberg check."
+    },
+    {
+      "reviewer": "/root/endpoint_backbone",
+      "status": "PASS",
+      "scope": "All fifteen Laws; all-Weil semisimplicity; adjacent-rank inertia vanishing; epsilon family and induction; arbitrary invariant functional; rank zero; triangular irreducible product; final Rodier quotient bridge",
+      "evidence": "Final PASS after amended Rodier and Laurent-polynomial deductions. Direct source audit of Laws, Induces, IsLocalExt, IsDeligneEps, IsTateEps, HasPairEps, IsLSeg/IsL, order and special parameters. Independent visual JPSS checks on printed pp.374,386,387,391; Emerton–Helm 4.3.4 and Scholze 14.1 checked."
+    }
+  ],
+  "remaining_gates": [],
+  "verification": {
+    "source_files_checked": 14,
+    "git_blob_checks": "all match complete pinned source tree",
+    "primary_reference_files_hashed": 7,
+    "large_source_files_printed": false,
+    "lean_kernel_build_run": false,
+    "note_hash_checked": true,
+    "range_correction": "Final offline check corrected ArtEx.lean endpoint 17 to the actual final line 15; the complete 15-line source and its unchanged hashes were checked."
+  },
+  "field_scope": {
+    "required_fields": "Only finite completions of number fields, hence finite extensions of Q_p.",
+    "evidence": "LocalLanglandsGL 18–19 and 96–105; IsRecTOfIsRec 78–80; HasExponentZeroIff 191–193.",
+    "existence_theorem": "Scholze p-adic local Langlands, Theorem 1.2(c),(d), extended by the exact Langlands quotient classification.",
+    "equal_characteristic_required": false,
+    "family_consequence": "Coherent existence of full IsRec witnesses; chosen classical family is field-compatible. Global transfer uses the previously proved restricted uniqueness on Good."
+  }
 }

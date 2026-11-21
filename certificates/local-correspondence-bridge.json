@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "scope": "Ordinary mathematical proofs of Good-preimage lemmas under the source full LLC laws; bounded hash-verified source comparison. No fresh Lean kernel build, proof of full LLC, or replacement of the entire global Galois branch.",
-  "status": "Both Good-preimage propositions proved relative to explicit full LLC laws and independently reviewed; the separate conventional TypeLaw comparison passed independent review. Full local-law and global period dictionaries remain.",
+  "scope": "Conventional Good-preimage proofs under the explicit full LLC laws, with bounded hash-verified source evidence. Those hypotheses are now satisfied by the completed classical local dictionary; the bridge is used in the adopted universal Row0b composition. No new Lean kernel build is asserted.",
+  "status": "Both Good-preimage propositions proved and independently reviewed; full local laws, TypeLaw and global period hypotheses discharged by completed companion results; universal Row0b substitution adopted.",
   "note": "notes/local-correspondence-bridge.md",
   "assumptions": {
     "classical_map": "A fixed correspondence R satisfying the full source Laws (in particular surjectivity, dimension, cuspidality, cuspidal-support compatibility and the two-way depth law).",
@@ -61,12 +61,10 @@
     "The reverse depth implication follows from the weak LawsT interface; it is explicitly taken from full Laws.",
     "TypeLaw follows from depth preservation alone.",
     "Zero monodromy, Sqf, or the large-prime guard may be removed from the global Galois comparison contracts.",
-    "The global Row0b construction has already been eliminated."
+    "Independent theta, integral and geometric covolume estimates follow from the availability of the Galois representation.",
+    "A newly compiled Lean implementation of the replacement has been produced."
   ],
-  "remaining": [
-    "Audit the classical correspondence against all full source LLC conventions.",
-    "Complete the independent global automorphic and period-model dictionary."
-  ],
+  "remaining": [],
   "primary_references": [
     {
       "authors": [
@@ -307,9 +305,13 @@
       "full versus weak depth-law direction",
       "source Good target in injectivity"
     ],
-    "second_review": "endpoint_backbone requested"
+    "second_review": {
+      "status": "PASS",
+      "reviewer": "endpoint_backbone",
+      "scope": "Support-polynomial divisibility, semisimplicity, underlying Weil irreducibility, reverse full depth, and exact Good preimages; no N=0/Sqf/large-prime assumption in either preimage proof."
+    }
   },
-  "note_sha256": "3c76aaf16ffd62c6073a0b13f45887034e40d0115e4e668a73848626b48ebfeb",
+  "note_sha256": "bb7ae1f43251929774aaf5282bcedf50340e60f572fa48559ee0952f2f598b20",
   "type_law_review": {
     "status": "pass for the conventional mathematical deduction",
     "date": "2026-11-21",
@@ -323,6 +325,33 @@
       "geometric Artin normalization in Bushnell-Henniart section 1.1",
       "unramified degree-n auxiliary completion and arbitrary residue-field reduction"
     ],
-    "boundary": "The complete source full-Laws dictionary and global period-model dictionary remain separate."
+    "boundary": "This review establishes the conventional TypeLaw deduction. The full source Laws and global period-model dictionaries are separately completed and reviewed; their composition is adopted in notes/classical-galois-substitution.md."
+  },
+  "discharged_application_hypotheses": {
+    "full_Laws": "notes/classical-local-correspondence.md",
+    "TypeLaw": "notes/lean-global-inputs.md#the-classical-depth-zero-type-formula",
+    "fixed_global_row": "notes/galois-period-dictionary.md",
+    "universal_transfer": "notes/fixed-correspondence-reduction.md",
+    "adopted_composition": "notes/classical-galois-substitution.md"
+  },
+  "status_reconciliation": {
+    "date": "2026-11-21",
+    "status": "reconciled with adopted classical universal Row0b substitution",
+    "completed_inputs": {
+      "full_local_laws": "notes/classical-local-correspondence.md",
+      "global_dictionary": "notes/galois-period-dictionary.md",
+      "adopted_composition": "notes/classical-galois-substitution.md",
+      "full_local_certificate": "certificates/classical-local-correspondence.json",
+      "global_certificate": "certificates/galois-period-dictionary.json"
+    },
+    "mathematical_scope": "All original local guards and global/period quantifier order retained; one global r, weight and Hodge–Tate family works for every admitted weak correspondence.",
+    "new_lean_kernel_build": false,
+    "independent_obligations_retained": [
+      "common arithmetic construction",
+      "integral maps and divisibility",
+      "global theta identities and norm estimates",
+      "geometric core slopes and discarded-degree budgets",
+      "remaining cohomological and counting estimates"
+    ]
   }
 }

@@ -4,9 +4,9 @@ A proof-wide work program traced from the pinned source endpoint. Complete sourc
 
 ## Preferred target
 
-One compatible arithmetic construction per required scale, with a total exponent loss tending to zero on cofinal whole windows.
+One compatible arithmetic construction at each required scale, controlling an averaged discrepancy and explicit finite errors with a total exponent loss tending to zero on whole windows.
 
-The complete coherent-family route is retained as the known source supplier. It is not deleted merely because a smaller sufficient interface is isolated.
+The complete coherent-family route remains an available supplier. Its separate Galois-construction supplier is replaced in the preferred route by the fully compared classical theorem; independent theta and geometric obligations are retained.
 
 The eleven work packages below are responsibilities in a research program, not eleven already proved theorems or a claim of minimal logical independence.
 
@@ -29,23 +29,26 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Auxiliary positive character families may vary with accuracy while retaining the target | new written analytic reduction independently reviewed; each combination remains fixed within its own whole-window sequence |
 | K-theory exponent14 and uniform QRH remove fourteen recovered alternative sections | preferred manuscript dependency cut checked |
 | One matrix/Schwartz/mixed-congruence argument for local residues | written fixed-rank proof; exact local source dictionary and original admissibility completed on smooth classes |
-| Classical replacement for the Row0b construction | Classical Galois consequence, both local Good-preimage reductions and depth-zero type formula reviewed; full local-law and global period-model dictionaries remain before adoption |
+| Classical replacement for the Row0b construction | adopted: full local laws, depth-zero types, global periods and universal weak-correspondence transport independently reviewed; original Galois supplier is optional |
+| Average arithmetic discrepancies and explicit finite Fourier/transfer errors | new ordinary finite-character theorem proved and independently reviewed; actual arithmetic supplier remains open |
+| Weighted lower estimates and actual frame penalties replace preliminary uniform envelopes | new weighted lower-estimate lemma proved; same-map and positivity hypotheses retained |
+| Exact discarded-degree and integral-index budget for geometric covolumes | new lattice identity and sufficient polynomial-decay criterion proved; core geometric lower bound remains open |
 
 ## Work packages
 
 | Package | Goal | Status |
 | --- | --- | --- |
 | [W01](#w01) | Analytic conclusion from vanishing exponent loss | written |
-| [W02](#w02) | One compatible arithmetic construction at each scale | open |
+| [W02](#w02) | Compatible constructions with controlled average losses | open |
 | [W03](#w03) | Auxiliary characters, fields and nonvacuous selections | partial |
 | [W04](#w04) | Cyclotomic cohomology and integral congruence bounds | partial |
-| [W05](#w05) | Galois representations with the exact local conditions | partial |
+| [W05](#w05) | Classical Galois representations with the required local conditions | cited |
 | [W06](#w06) | Integral theta maps and divisibility | partial |
 | [W07](#w07) | Archimedean restriction and local residue positivity | written |
 | [W08](#w08) | Global theta matching, orbital energy and norms | open |
 | [W09](#w09) | Automorphic spectrum, finite-group characters and counting | partial |
-| [W10](#w10) | Geometric logarithmic-covolume estimate | open |
-| [W11](#w11) | One slope comparison with the full loss budget | partial |
+| [W10](#w10) | Geometric logarithmic-covolume estimate | partial |
+| [W11](#w11) | Weighted slope comparison and the complete average budget | partial |
 
 <a id="w01"></a>
 ### W01: Analytic conclusion from vanishing exponent loss
@@ -67,9 +70,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Every arithmetic loss is included in delta_j
 
 <a id="w02"></a>
-### W02: One compatible arithmetic construction at each scale
+### W02: Compatible constructions with controlled average losses
 
-**Required result.** Supply one source host satisfying EAtH and CoreAtH at each required x, or prove the equivalent ordinary arithmetic statement directly. The complete source family is one supplier of this sufficient data.
+**Required result.** Construct actual nonempty arithmetic/theta data whose averaged discrepancy, finite Fourier-projection error and sampled transfer error satisfy the proved finite-character bound. The full source EAtH/CoreAtH package is one stronger supplier.
 
 **Quantifiers and uniformity.** For each accuracy, thresholds and the total exponent loss are fixed before all x in arbitrarily late whole windows. Choices of the host at x may vary with x.
 
@@ -77,7 +80,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Unfold and translate the six EAtH clauses and all CoreAtH clauses into one explicit conventional construction with nonempty spaces.
+**Next concrete task.** Construct the same integral maps and geometric data that control the averaged budget. Use the completed six-clause EAtH and full CoreAtH ledger to check identifications; do not demand the source scalar windows when a direct budget is available.
 
 **Acceptance conditions:**
 
@@ -85,6 +88,8 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Nonempty actual coefficient/word spaces
 - Exact identification of maps and periods
 - Bounds on every x in the chosen windows
+- The averaging weights and subgroup pushforwards are exact; a surjection alone does not preserve uniform averages
+- All finite-error terms are bounded throughout each whole window, even when ambient groups and ranks grow
 
 <a id="w03"></a>
 ### W03: Auxiliary characters, fields and nonvacuous selections
@@ -125,7 +130,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Prove any stronger uniformity actually used downstream
 
 <a id="w05"></a>
-### W05: Galois representations with the exact local conditions
+### W05: Classical Galois representations with the required local conditions
 
 **Required result.** Supply the Row0b representation for every regular algebraic polarized cuspidal representation over the allowed CM fields, including the specified local and infinity data.
 
@@ -133,9 +138,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Source interface.** `UpperTheory.GalStar.Row0b`; `PropsB`; `UpperTheory.TP.TLiftK`.
 
-**Existing manuscript coverage.** No matching complete conventional theorem yet. Stable section ids are in the [inventory](module-inventory.md).
+**Existing manuscript coverage.** r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Use the independently reviewed toral/tame Good-preimage comparison and classical depth-zero type formula. Finish the exact full local-law and global automorphic/period-model dictionaries; retain the source construction until the whole substitution is justified.
+**Next concrete task.** Use the adopted classical theorem and universal weak-correspondence transport. Reuse the same representation in repeated row fields and the Selmer windows; preserve its local, weight and period normalizations in every consumer.
 
 **Acceptance conditions:**
 
@@ -143,7 +148,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - All away-prime and above-prime local clauses matched
 - The same result supplies both repeated Row fields and VWin
 - A classical shortcut removes only this supplier, not independent theta identities
-- Retain the TypeLaw and transport conditions under a chosen-correspondence specialization
+- The full local laws, depth-zero type formula, and global period-model dictionary are matched before universal weak-correspondence transport
 - Good-preimage comparison uses one global Galois representation for every allowed weak correspondence
 
 <a id="w06"></a>
@@ -227,26 +232,28 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 <a id="w10"></a>
 ### W10: Geometric logarithmic-covolume estimate
 
-**Required result.** Construct the geometric Hodge-bundle data and prove lcv(XW_j,M_j)/D<=l3_j in the required normalized setting.
+**Required result.** Construct the prescribed geometric lattices and prove their uncut lower slope together with a controlled discarded mean-degree and integral-index defect; this supplies the required normalized logarithmic covolume bound.
 
 **Quantifiers and uniformity.** For each admissible closed family, one common constant and eventual threshold precede all points and indices.
 
 **Source interface.** `GlobalTheory.CovTop.CovolumeBoundOfX`; `SelfIntersectionVolumeEstimates`; `topCovolSlim2`.
 
-**Existing manuscript coverage.** No matching complete conventional theorem yet. Stable section ids are in the [inventory](module-inventory.md).
+**Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Translate the 28-field Hodge-bundle record and the geometric inequality; identify exact classical intersection/height results usable in its proof.
+**Next concrete task.** Identify the core and its period normalization, then prove its lower slope and actual discarded-degree/index budget. Match any weighted covolume average to the arithmetic target before using average rather than pointwise bounds.
 
 **Acceptance conditions:**
 
 - Actual geometric lattices identified with the construction
 - Degree, metric and self-intersection normalizations retained
 - Existing abstract lattice estimates are not accepted as this geometric theorem
+- An exponentially small exceptional rank or an ambient maximal-slope estimate is only one sufficient supplier of the actual defect budget
+- Small discarded rank alone does not control its degree; retain the integral splitting index
 
 <a id="w11"></a>
-### W11: One slope comparison with the full loss budget
+### W11: Weighted slope comparison and the complete average budget
 
-**Required result.** Apply the numerical comparison to the same nonzero integral objects, producing the fixed prime-sum bound required by W01.
+**Required result.** Use weighted lower quotient and divisor inequalities with the actual nonlinear frame penalty, then average over translations and apply the finite-character comparison for the same maps.
 
 **Quantifiers and uniformity.** Every scale-dependent and accuracy-dependent loss is recorded. Only total loss tending to0 is analytically required; fixed-accuracy scale uniformity is essential.
 
@@ -254,7 +261,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Assemble W02 using compatible maps, projections, measures, divisibility and norms; check the complete exponent budget.
+**Next concrete task.** Combine the explicit average discrepancy, finite sampled errors and geometric defect terms; verify that the total normalized budget has vanishing exponent loss.
 
 **Acceptance conditions:**
 
@@ -262,6 +269,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Do not use a conditional reduction as its own construction input
 - Produce cofinal whole windows for each accuracy with a fixed positive combination retaining the target
 - Retain the source family route until an alternative supplier is actually proved
+- Keep the actual frame cost or prove a valid upper bound; upper slope and pairwise variation hypotheses may be omitted only when that cost is controlled directly
 
 ## Compatibility is part of the theorem
 
@@ -271,16 +279,16 @@ RawSel on a possibly empty A is not sufficient. Retain hEx (MinkDiv implies ExS)
 
 A separately proved bound for some lattice, some theta map, or some measure does not discharge a field that refers to a different selected object. Every proposed substitution needs the relevant equality, transport or compatibility statement.
 
-The [classical-input review](../notes/lean-global-inputs.md), [weak-to-classical comparison](../notes/fixed-correspondence-reduction.md), and [local preimage proofs](../notes/local-correspondence-bridge.md) record the current conditional reduction of the Galois construction. Both local preimage lemmas are proved under the full correspondence laws, and the conventional depth-zero type formula has passed independent review. The exact full local-law and global period-model dictionaries remain gates; the original source supplier is retained.
+The [adopted classical Galois substitution](../notes/classical-galois-substitution.md) supplies the universal source row. The full local laws, depth-zero types, local preimages and global period comparisons have passed independent review. The same global representation works for every allowed weak correspondence. The original Galois-construction supplier remains an alternative; independent theta identities, integral estimates and geometric bounds remain required.
 
 ## Execution order
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W05 exact classical/source comparison
-1. W10 geometric covolume translation
-1. W02 one-construction design and loss ledger
+1. W10 uncut geometric lower slope and discarded-degree/index budget
+1. W02/W11 actual compatible construction with averaged finite errors and a vanishing total loss
 1. W06 seed/level divisibility and W08 global norms on the same maps
+1. W04 remaining complementary-parity integral congruence bounds
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
 

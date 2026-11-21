@@ -17,9 +17,10 @@ Dirichlet GRH remains incomplete.
   [global inputs](lean-global-inputs.md): source contracts and pinned evidence.
 
 The source-wide plan supersedes the earlier list of four global bottlenecks.
-It explicitly includes Galois/local compatibility, stable nonzero theta-lift
-existence, normalized global theta matching, and geometric Hodge-bundle
-log-covolume bounds. The 96 recovered sections never exhaustively represented
+It explicitly includes Galois/local compatibility, normalized global theta
+matching, and geometric Hodge-bundle log-covolume bounds. The classical Galois
+input is now adopted, and its original stable theta-lift supplier is optional.
+The 96 recovered sections never exhaustively represented
 these source interfaces. The main manuscript still has 98 section files:
 96 recovered plus two new, with 14 alternatives and 84 in the preferred flow.
 
@@ -40,12 +41,12 @@ conversation. The first source-wide checkpoint is commit `993681b`.
 ## Structural simplifications
 
 The five exported targets reduce to one common right-half-plane nonvanishing
-assertion. One exact Galois compatibility result is reused in the repeated
-source bundle fields and the Selmer windows. The complete source family
-construction supplies a smaller sufficient interface: one compatible host at
-each required scale, with the exact arithmetic/analytic clauses. A direct
-replacement construction is still open; isolating this interface does not
-prove its existence.
+assertion. One classical Galois compatibility result is now reused in the
+repeated source bundle fields and the Selmer windows. The complete source
+family construction supplies a smaller sufficient interface: one compatible
+host at each required scale, controlling an averaged arithmetic discrepancy
+and explicit finite projection and transfer errors. A direct replacement
+construction is still open; isolating this interface does not prove existence.
 
 The final analytic loss need only tend to zero. The new independently reviewed
 `thm:vanishing-loss-windows` and `cor:variable-loss-construction` permit
@@ -85,27 +86,22 @@ new manuscript. The earlier scalar PBW and commutator reviews remain valid.
 
 ## Next research priorities
 
-1. W05: finish the exact classical Galois/LLC comparison. The BLGGT monodromy
-   dominance theorem removes the zero-monodromy difficulty. The two
-   Good-preimage lemmas, the weak-to-classical comparison and the classical
-   depth-zero type formula have now passed independent review. Under the
-   full local correspondence laws, the same global representation works for
-   every weak correspondence. The exact full-law and global period-model
-   dictionaries remain open. See [the global input audit](lean-global-inputs.md),
-   [the bridge](local-correspondence-bridge.md) and
-   [comparison reduction](fixed-correspondence-reduction.md).
-2. W10: translate and prove the geometric log-covolume bound, including the
-   28-field Hodge-bundle construction and its common thresholds. Abstract lattice
-   comparisons are not this theorem.
-3. W02/W11: design the actual compatible data at each scale and keep a complete
-   loss ledger. Do not combine estimates for independently chosen maps.
-4. W06/W08: seed nonvanishing, sharp auxiliary-level divisibility, and normalized
+1. W10: identify the geometric core with its prescribed periods and metrics,
+   prove its uncut lower slope, and control the actual discarded-degree/index
+   budget. The 28-field source ledger is complete; the new orthogonal identity
+   is a reduction, not this geometric theorem.
+2. W02/W11: design the actual compatible data at each scale. Control the
+   averaged discrepancy, finite sampled errors and actual frame penalties.
+   The total normalized loss must satisfy the vanishing-loss criterion.
+3. W06/W08: seed nonvanishing, sharp auxiliary-level divisibility, and normalized
    global theta/orbital-energy bounds for those same maps. Complete the remaining
    W04 complementary-parity integral congruence bounds in parallel.
 
-Classical substitutions remain candidates until their full contracts match.
-No source branch is deleted merely because a shorter sufficient interface is
-known. The old source construction remains an available supplier in the plan.
+W05 is closed as a cited classical input with proved normalization and
+transport comparisons. The [adoption proof](classical-galois-substitution.md)
+preserves one global representation before all local correspondences and
+period models. Independent theta, integral and geometric branches remain.
+No exact count of source files removed is inferred from the import graph.
 
 ## Recovery and bounded resumption
 
@@ -129,14 +125,35 @@ lines/12KB. Run large analyses locally and retain concise results, dependencies
 and evidence in version-controlled files. Commit coherent results to main
 promptly; never weaken mathematical verification to save context.
 
-## Continuation checkpoint: averaged arithmetic target
+## Completed continuation: averaged arithmetic target and covolumes
 
 The new [one-construction target](one-construction-target.md) proves that the
-final character comparison needs an averaged arithmetic discrepancy, rather
-than a separate discrepancy bound for every translation. Its finite-error
-refinement and full clause ledger are still being completed.
+final character comparison needs an averaged arithmetic discrepancy and
+explicit finite projection and transfer errors. The six arithmetic clauses,
+the complete geometric-core clauses, eleven size/slope requirements and
+twenty-seven scalar windows of the source supplier are now inventoried.
+The manuscript also proves a weighted lower-estimate lemma, keeping the actual
+nonlinear frame cost and avoiding unnecessary preliminary uniform envelopes.
+
+The [covolume defect](covolume-defect-budget.md) is an exact orthogonal splitting
+identity with a discarded mean-degree and integral-index budget. Suitable
+polynomial decay of the exceptional rank can suffice when the other terms
+have the stated growth; small rank alone is insufficient. Both meaningful
+counterexamples and the normalization to the source slope are retained.
+
+## Completed continuation: classical Galois substitution
 
 The [classical local correspondence inventory](classical-local-correspondence.md)
-now lists all fifteen full laws and the additional Artin and epsilon witnesses.
-This is an explicit partial comparison, not yet adoption of the entire
-classical replacement. Both notes carry pinned bounded-source certificates.
+proves all fifteen full laws and the additional Artin and epsilon witnesses.
+The [global period dictionary](galois-period-dictionary.md) matches the
+automorphic, weight and period-model quantifiers. Both have independent
+reviews. Together with the depth-zero type formula, local preimages and
+universal weak-correspondence transfer, they supply the entire required
+Galois row. Above the coefficient prime, zero target monodromy suffices by
+monodromy dominance. The separate original Galois-construction supplier is
+now an alternative; the manuscript states the classical theorem and its
+period-realization lemma in ordinary mathematics.
+
+The early partial checkpoint was committed as `e48d334`. All subsequent
+results carry persistent proofs, exact source ranges, hashes and the scope
+of independent review. No new Lean compilation or kernel replay is claimed.

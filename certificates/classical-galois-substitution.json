@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "status": "ADOPTED: classical theorem package supplies universal Row0b IsRecT and RecTExists",
+  "scope": "Cited classical Galois theorem with proved normalization and transport comparisons. No Lean build, proof-term minimization or complete conventional GRH proof is claimed.",
+  "source_repository": "jsmorph/rh",
+  "source_commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "note": "notes/classical-galois-substitution.md",
+  "note_sha256": "770dbea1b6143c6c1752a896f1827ba469fc6845bd2c0e514ca658d0dc2a1581",
+  "dependencies": [
+    {
+      "role": "Full local laws with Artin and epsilon witnesses",
+      "note": "notes/classical-local-correspondence.md",
+      "note_sha256": "37bff32de508ca260b1e8e5c02bf446ed3f2d445db49b77fb15ab9c6c558e2f7",
+      "certificate": "certificates/classical-local-correspondence.json",
+      "certificate_sha256": "7064028f6e03fe60465bf8d2c0023a16230cd247259f749d1b626bbf207001fb"
+    },
+    {
+      "role": "Depth-zero type formula",
+      "note": "notes/lean-global-inputs.md",
+      "note_sha256": "3267d4c610519211dde01b2a24e430327b9a74388f1b28e7717fcd0e25ab0d3b",
+      "certificate": "certificates/lean-global-inputs.json",
+      "certificate_sha256": "c34af7b11ee3e38975ad78dacd839d8cb88b6bcfc03b7595a5adcfc586572586"
+    },
+    {
+      "role": "Global automorphic, weight and period comparison",
+      "note": "notes/galois-period-dictionary.md",
+      "note_sha256": "c517a086614c5ad4fa090c46287624944a3f4bc4e88bffeecc6cfc0cc7fe71a4",
+      "certificate": "certificates/galois-period-dictionary.json",
+      "certificate_sha256": "2dbc0803837d5ce6724fc94e9b8a4a4d4d8936ef55fded151ff72af006d73a69"
+    },
+    {
+      "role": "Toral and tame Good-preimage lemmas",
+      "note": "notes/local-correspondence-bridge.md",
+      "note_sha256": "bb7ae1f43251929774aaf5282bcedf50340e60f572fa48559ee0952f2f598b20",
+      "certificate": "certificates/local-correspondence-bridge.json",
+      "certificate_sha256": "6227d38c9f60a46096d963fa09f41414f4697585394b28f08b1e554ffad409ba"
+    },
+    {
+      "role": "Transfer from the fixed classical family to every allowed weak family",
+      "note": "notes/fixed-correspondence-reduction.md",
+      "note_sha256": "3c93f8cfbd70315d143b87ca4b60aed6ab81ec410350e8be5a053df43ee85a91",
+      "certificate": "certificates/fixed-correspondence-reduction.json",
+      "certificate_sha256": "72d0343372499c189eb31fa6a17bbea95efeeb10790741fbeb7b9a5e0a27eabd"
+    }
+  ],
+  "manuscript_files": [
+    {
+      "path": "paper/sections/recovered/33-av-section.tex",
+      "sha256": "e5f8379dbf98d180c9ec8fb4f71abf39480769e46f26cd19edc18176bd403069"
+    },
+    {
+      "path": "paper/references.tex",
+      "sha256": "d0fe2fb112b062700cb8232a37d4eda367d54b2d794c48ca98bb4bde4e52d1d5"
+    }
+  ],
+  "manuscript_labels": [
+    "thm-classical-galois-zero-monodromy",
+    "lem-galois-period-realizations"
+  ],
+  "composition_steps": [
+    "Choose the classical full local correspondence at every required number-field completion; the type formula supplies the additional weak law.",
+    "Choose one global semisimple representation r, weight w and labeled Hodge-Tate multisets before all local models, bridges and scalar embeddings.",
+    "For any allowed weak correspondence rc and local component sigma, put x=algNorm(sigma), y=rc(x). Under either guard choose a Good classical preimage z of y.",
+    "Restricted uniqueness gives rc(z)=y=rc(x); weak injectivity implies x=z. The classical local comparison for the fixed r therefore equals the required weak comparison.",
+    "Dimension, global weights, continuity, semisimplicity and spherical crystallinity are preserved independently of the local-family choice.",
+    "Reuse this same universal row in the two literature fields and the verified Selmer-window construction."
+  ],
+  "normalizations": [
+    "Full local scope is number-field completions, hence finite extensions of Q_p.",
+    "The source epsilon family is the underlying-Weil epsilon constant at 1/2 and forgets monodromy.",
+    "Above the coefficient prime, zero target monodromy gives full compatibility by monodromy dominance.",
+    "The source twist is |det|^((1-n)/2); geometric Artin reciprocity and cyclotomic Hodge-Tate number -1 are retained."
+  ],
+  "independent_review": {
+    "composition": "PASS: endpoint reviewer, including normalized local input and unchanged global quantifier order",
+    "local_dictionary": "PASS: two independent specialists; generic-quotient/JPSS bridge repaired and rechecked",
+    "global_dictionary": "PASS: two independent specialists, with primary theorem and period-normalization checks",
+    "manuscript_integration": "PASS: global specialist checked polarization, weights, scalar choices, and semisimplicity/irreducibility distinction"
+  },
+  "preferred_route_change": "Original geometric-seed/congruence/stable-theta-lift production of this Galois row becomes an alternative. The original complete source atlas remains unchanged.",
+  "remaining_global_obligations": [
+    "Compatible integral maps and nonvanishing",
+    "Sharp auxiliary-level divisibility",
+    "Normalized global theta identities and norms",
+    "Geometric uncut lower slopes with discarded-degree and index budgets",
+    "Remaining complementary-parity cohomological and growing-rank estimates"
+  ],
+  "verification_command": "python scripts/check_classical_averaged_checkpoint.py",
+  "limits": [
+    "No exact number of removable source files inferred from import reachability.",
+    "No chosen-correspondence refactoring of all downstream consumers was needed or performed.",
+    "Independent uses of geometric and theta arguments are retained."
+  ]
+}

@@ -52,6 +52,12 @@ The scanner reads and verifies the large artifact locally and prints only aggreg
 
 The [endpoint backbone](../notes/lean-endpoint-backbone.md) traces the final sufficient interfaces and the one coherent construction they require. The [global input review](../notes/lean-global-inputs.md) unfolds the Galois compatibility, stable theta lift, theta-integral matching and geometric covolume contracts. These are mathematical interpretation checkpoints, not a claim that every source lemma has been independently verified.
 
+The [classical Galois substitution](../notes/classical-galois-substitution.md)
+now replaces the source's Galois-construction supplier in the preferred proof
+program. The atlas still describes the complete original source. No number
+of eliminated files is inferred from this substitution: an imported file
+can contain arguments used in several surviving branches.
+
 The [full proof program](full-proof-program.md) covers these branches and records
 the acceptance conditions for each proposed replacement. The
 [source subject diagram](source-subject-atlas.svg) accounts for the entire

@@ -7,18 +7,21 @@ Source hashes and bounded reading ranges are recorded in
 
 **Result.** The required `Good` preimages exist for both local target classes
 used in `Row0b`, provided the fixed classical correspondence satisfies the
-source's full local Langlands laws. The proof below establishes this precise
-local bridge. It does not assume uniqueness of the weak correspondence on
-arbitrary representations, and it does not by itself replace the entire
-global Galois-representation construction.
+source's full local Langlands laws. Those laws are now supplied by
+[the completed classical local dictionary](classical-local-correspondence.md).
+The proof below establishes the precise local bridge, using restricted
+uniqueness on `Good`. Together with the completed global dictionary it
+forms part of [the adopted universal Galois substitution](classical-galois-substitution.md).
 
 The assertion that the chosen classical correspondence satisfies the weak
 interface's `TypeLaw` is kept explicit. It is needed when applying restricted
 uniqueness, although neither preimage lemma needs it. Its conventional
 mathematical comparison has now been independently checked in
 [the classical depth-zero type formula](lean-global-inputs.md#the-classical-depth-zero-type-formula).
-The full local-law, global period-model and automorphic dictionaries remain
-separate tasks.
+The [full local-law dictionary](classical-local-correspondence.md) and
+[global period-model and automorphic dictionary](galois-period-dictionary.md)
+are separately complete and independently reviewed. No fresh Lean build
+is claimed by this mathematical comparison.
 
 ## Exact definitions and hypotheses
 
@@ -169,14 +172,16 @@ The extra conditions in the global comparison statements are not removed
 by this local result. They are simply unnecessary for establishing the
 `Good` preimage needed to compare the two correspondences.
 
-## What remains before removing the global construction
+## Completed inputs and the adopted composition
 
-The preimage gate is now reduced to explicit, proved local representation
-arguments under the full source LLC laws. The following inputs remain
-separate and must not be hidden:
+The two preimage propositions retain their explicit full-law hypotheses.
+The following independent results now supply those hypotheses and the
+global input needed to apply the bridge:
 
-1. The chosen classical correspondence must satisfy the source's full laws,
-   with matching local Artin and twist conventions.
+1. [The classical local dictionary](classical-local-correspondence.md)
+   proves all fifteen source laws and their Artin and epsilon witnesses,
+   with the exact twist, segment and reciprocity conventions, at every
+   required number-field completion.
 2. To apply restricted uniqueness it must also satisfy `TypeLaw`.
    `isRecT_of_isRec` supplies this only when `DepthZeroTypeInertia` is provided.
    That law specifies finite-field cuspidal types, their regular characters,
@@ -185,16 +190,26 @@ separate and must not be hidden:
    comparison is now checked separately: Bushnell's explicit unique Green
    type, irreducible compact induction and unramified quadratic correction
    give the required inertia polynomial, with geometric Artin normalization.
-   This does not replace the separate full-law dictionary in item 1.
-3. The classical global Galois theorem must be translated into the source's
-   automorphic, Hodge--Tate and period-model conventions. This local note
-   does not discharge those global quantifiers.
+   This is the separate type input used with the full-law dictionary in item 1.
+3. [The global dictionary](galois-period-dictionary.md) identifies the
+   source's automorphic, Hodge--Tate and period conventions. It supplies
+   the fixed-correspondence row with one global representation, weight
+   and labeled Hodge--Tate family before all local models are allowed to vary.
+
+The [universal-row transfer](fixed-correspondence-reduction.md) then
+supplies `Row0b IsRecT` for every allowed weak correspondence, using those
+same global witnesses. The [adopted composition](classical-galois-substitution.md)
+records the resulting replacement of the source's separate Galois supplier.
+The extra zero-monodromy, squarefreeness and residue-characteristic
+hypotheses of the global comparison clauses remain exactly as stated.
 
 Both propositions received an independent review on 21 November 2026. The
 review checked support-polynomial divisibility, the semisimplicity step, the
 full depth-law converse, and the exact `Good` target of weak injectivity.
 
 The two preimage propositions need no hypotheses about quasi-RH, exceptional
-zeros, global theta lifts, or geometric congruence constructions. Once the
-remaining dictionaries are supplied, the weak-correspondence quantifier
-itself no longer requires a separate global construction.
+zeros, global theta lifts, or geometric congruence constructions. With the
+completed dictionaries, the weak-correspondence quantifier is now handled
+without a separate global Galois construction. Independent integral,
+theta and covolume estimates retain their own obligations. No new Lean
+kernel verification is asserted.

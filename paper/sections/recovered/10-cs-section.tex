@@ -481,7 +481,258 @@ not establish the integral automorphic maps, their height bounds,
 or their matrix estimates.
 
 
-\subsection{The arithmetic inequality still required}
+\subsection{Discarding an orthogonal subspace}
+
+An exceptional subspace affects a covolume through its degree and the
+index of an integral splitting. The following calculation keeps these
+two losses explicit.
+
+Let $L$ be a nonzero Hermitian $\mathcal O_K$-lattice and let $P$ be a
+$K$-linear idempotent on $L_K$, orthogonal at every infinite place.
+Suppose that a positive integer $N$ satisfies $NP(L)\subset L$. Put
+\[
+ G=L\cap\operatorname{im}P,\qquad B=L\cap\ker P,\qquad
+ g=\operatorname{rk}G,\quad b=\operatorname{rk}B,\quad r=g+b,
+\]
+and assume $g>0$. Let $I=[L:G\oplus B]$ be the finite index.
+
+\begin{proposition}[The exact loss in an orthogonal splitting]
+\label{cs-orthogonal-cut}
+With $d=[K:\mathbb Q]$, one has
+\[
+ 1\le I\le N^{d\min(g,b)},\qquad
+ g\mu(G)=r\mu(L)-b\mu(B)-\frac{\log I}{d}.
+\]
+The term $b\mu(B)$ is interpreted as zero when $B=0$.
+\end{proposition}
+
+\begin{proof}
+The decomposition $L_K=\operatorname{im}P\oplus\ker P$ gives the rank
+identity. Both $NP(L)$ and $N(1-P)(L)$ lie in $L$, so
+$NL\subset G\oplus B$ and the index is finite.
+The maps induced by $P$ and $1-P$ give isomorphisms
+\[
+ L/(G\oplus B)\simeq P(L)/G
+                  \simeq (1-P)(L)/B.
+\]
+For example, $Px\in G$ implies $x-Px\in B$, which identifies the first
+kernel. The middle quotient embeds in $N^{-1}G/G$ and the last in
+$N^{-1}B/B$. As abelian groups, $G$ and $B$ are free of ranks $dg$
+and $db$, so these latter quotients have orders $N^{dg}$ and $N^{db}$.
+This proves the index bound.
+
+Orthogonality at all infinite places gives
+\[
+ \operatorname{covol}(G)\operatorname{covol}(B)
+       =I\operatorname{covol}(L).
+\]
+The discriminant terms in the definition of degree add with the ranks.
+Taking logarithms therefore gives
+$\widehat{\deg}L=\widehat{\deg}G+\widehat{\deg}B+d^{-1}\log I$,
+which is the asserted slope identity. If $b=0$, then $G=L$ and $I=1$.
+\end{proof}
+
+Write $\nu(E)=2\mu(E)$, the slope associated with squared norms.
+The factor two will be useful when logarithmic covolumes are expressed
+in the same convention.
+
+\begin{corollary}[A covolume bound from the discarded degree]
+\label{cs-exceptional-budget}
+Let $T,q$ be real, let $C\ge0$ and $U>0$, and suppose
+\[
+ q\le-\nu(G),\qquad \nu(L)\ge-T-CU.
+\]
+For $b>0$ define
+\[
+ \mathcal D=
+ \frac bg\bigl(\nu(B)+T+CU\bigr)+\frac{2\log I}{dg};
+\]
+put $\mathcal D=0$ when $b=0$. Then
+\[
+ q\le T+CU+\mathcal D.
+\]
+In particular, $\mathcal D\le\kappa U$ implies
+$q\le T+(C+\kappa)U$ for every $\kappa\ge0$.
+If $\nu(B)\le\Lambda$, then, with $\eta=b/r<1$,
+\[
+ \mathcal D\le
+ \frac{\eta}{1-\eta}\bigl(\Lambda+T+CU\bigr)
+ +2\min\!\left\{\frac{\eta}{1-\eta},1\right\}\log N.
+\]
+For $b=0$ this last inequality holds without any condition on $\Lambda$.
+\end{corollary}
+
+\begin{proof}
+Twice the identity in Proposition~\ref{cs-orthogonal-cut} gives
+\[
+ -\nu(G)=-\frac rg\nu(L)+\frac bg\nu(B)+\frac{2\log I}{dg}.
+\]
+Insert the lower bound for $\nu(L)$ and use $r/g=1+b/g$.
+The remaining estimate follows from the index bound and
+$b/g=\eta/(1-\eta)$.
+\end{proof}
+
+Only the mean slope of the discarded lattice enters this bound.
+An upper bound for the maximal slope of a larger lattice containing
+$L$ is one way to control it, but is stronger than required.
+Likewise, no prescribed rate of decay of the exceptional rank occurs
+in Corollary~\ref{cs-exceptional-budget}.
+
+\begin{corollary}[Polynomial decay can suffice]\label{cs-polynomial-exceptional}
+Suppose the data of Corollary~\ref{cs-exceptional-budget} vary with a
+real parameter $x\to\infty$, possibly with further indices, and that
+$\nu(B)\le\Lambda$ whenever $b>0$. Assume, uniformly in those indices,
+that for fixed $a>p\ge0$ and constants $c,c'>0$,
+\[
+ \eta\le c x^{-a},\qquad
+ \frac{|\Lambda|+|T|+CU+2\log N}{U}\le c'x^p.
+\]
+Then, uniformly in those indices, for all sufficiently large $x$,
+\[
+ \mathcal D/U\le 2cc'x^{p-a}.
+\]
+Consequently, for each $\kappa>0$, the bound
+$q\le T+(C+\kappa)U$ holds for all sufficiently large $x$.
+\end{corollary}
+
+\begin{proof}
+Eventually $\eta\le1/2$, and
+$\eta/(1-\eta)\le2c x^{-a}$. The upper bound in
+Corollary~\ref{cs-exceptional-budget}, divided by $U$, is therefore
+at most $2cc'x^{p-a}$, which tends to zero.
+\end{proof}
+
+Small exceptional rank alone is insufficient. Over $\mathbb Q$, take
+an orthogonal lattice with $n$ basis vectors of norm $e^n$ and one
+of norm $e^{-n^2}$. Project onto the first $n$ coordinates. Here
+$N=I=1$, $\mu(L)=0$ and $b/r=1/(n+1)\to0$, but
+$\mu(G)=-n$. The discarded mean slope is $n^2$ and must be controlled.
+The index term is also necessary: for
+$L=\mathbb Ze_1+\mathbb Z(e_1+e_2)/N$ with the standard metric and
+projection onto $\mathbb Qe_1$, both $G$ and $B$ have slope zero,
+whereas $I=N$ and $\mu(L)=\tfrac12\log N$.
+
+\subsection{Weighted lower estimates}
+
+\begin{lemma}[Weighted lower estimates]\label{cs-weighted-lower}
+Let $I$ be a finite nonempty set with positive weights, and write a bar
+for its weighted mean. Let $\nu_i,\mu_i,h_i,D_i,E_i,\ell_i$ be real
+numbers, and let $c,F,\Gamma,A,\mathcal M,P$ be real. Suppose
+\[
+ \overline{\nu-\mu+E+\ell}\ge\Gamma+F,
+ \qquad c+\overline h-F\le\overline D,
+ \qquad \overline{\nu-h}-c\le P.
+\]
+Then
+\[
+ A-\mathcal M\le A-\Gamma+
+       \overline{D+E+\ell-\mu}-\mathcal M+P.
+\]
+\end{lemma}
+\begin{proof}
+Put $s=\overline{\nu-h}$. The first two assumptions give
+\[
+ s\ge\Gamma+F+\overline{\mu-E-\ell-h}
+   \ge\Gamma+c-\overline{D+E+\ell-\mu}.
+\]
+Use $s-c\le P$ and rearrange.
+\end{proof}
+
+If these data are indexed in turn by a finite nonempty translation set,
+one may average the resulting inequalities over that set. Thus only the
+average of the final error expression must be controlled. The divisor
+and lower quotient estimates themselves may be proved in weighted mean.
+The quantity $P$ may be supplied directly by either slope comparison
+above, with the same integral maps and common target lattice. Keeping
+its actual value avoids a preliminary replacement of all frame defects
+and height gaps by common upper bounds. In particular, any orthogonal
+projection estimate used for its covolume term must concern that same
+lattice, with the same metric and projection.
+
+\subsection{Finite character averaging}
+
+\begin{proposition}[Finite character averaging]\label{cs-finite-average}
+Fix $x>0$. Let $A$ be a finite abelian group, $B$ a subgroup, $T\subset A$ and
+$S\subset B$ nonempty finite sets. Write $n_T=|T|$, $d=|S|/|A|$, and
+\[
+ G=(\mathbf Z/2\mathbf Z)^2\times A,\quad
+ \Phi=\{((0,e),a):e\in\mathbf Z/2\mathbf Z,\ a\in A\},\quad
+ f=|\Phi|.
+\]
+Put $c=((1,1),0)$, $t_0=((0,0),t)$, $e_1(t)=((1,0),t)$ and
+$\Phi_{S,u}=\{((0,1),s+u):s\in S\}$. Embed $B$ in $G$ by
+$u\mapsto((0,0),u)$, and let
+$X=B^\perp\subset\widehat G$.
+Suppose $m\ge1$ is an integer, $b>0$, $a_t>0$ and $w_{u,i}(\rho)>0$ for
+$u\in B$, $t\in T$, $1\le i\le m$ and $\rho\in\Phi$.
+Let $Z_\psi:(0,\infty)\to\mathbb C$ be functions, and suppose real
+numbers $E_{u,t,i}$ satisfy
+\[
+ E_{u,t,i}=\Re\frac1f\sum_{g\notin\Phi}\sum_{\psi\in\widehat G}
+       \psi(-g)w_{u,i}(c+g+t_0)
+          Z_\psi\!\left(\frac{a_t}{w_{u,i}(c+g+t_0)}\right).
+\]
+Choose $\mathcal K\subset X$ and positive weights $\lambda_\psi$, and put
+\[
+ H(x)=\sum_{\psi\in\mathcal K}\lambda_\psi\Re Z_\psi(x),\qquad
+ \overline E=\frac1{|B|}\sum_{u\in B}\sum_{t\in T}\sum_{i=1}^m E_{u,t,i},
+ \qquad
+ \alpha_\psi=\frac1{n_T}\sum_{t\in T}\psi(e_1(t)).
+\]
+In the transfer sum, write $\rho=c+g+t_0$. Define
+\begin{align*}
+ R_F(x)={}&\sum_{\psi\in\mathcal K}|\alpha_\psi-\lambda_\psi|\,|Z_\psi(x)|
+       +\sum_{\psi\in X\setminus\mathcal K}|\alpha_\psi|\,|Z_\psi(x)|\\
+ &+\frac1{n_T}\sum_{t\in T}\sum_{\psi\in X}
+             |Z_\psi(a_t/b)-Z_\psi(x)|,\\
+ R_T={}&\frac1{|B|f}\sum_{u\in B}\sum_{t\in T}\sum_{i=1}^m
+           \sum_{g\notin\Phi}\sum_{\psi\in\widehat G}
+ \left|w_{u,i}(\rho)Z_\psi\!\left(\frac{a_t}{w_{u,i}(\rho)}\right)
+   -\mathbf1_{\Phi_{S,u}}(\rho)bZ_\psi(a_t/b)\right|.
+\end{align*}
+Then
+\[
+                H(x)\le R_F(x)+\frac{2(\overline E+R_T)}{n_Tmbd}.
+\]
+One may replace $R_F$ by any upper bound for the actual real projection
+error
+\[
+ H(x)-\frac1{n_T}\sum_{t\in T}
+          \Re\sum_{\psi\in X}\psi(e_1(t))Z_\psi(a_t/b).
+\]
+\end{proposition}
+\begin{proof}
+The triangle inequality bounds the last displayed projection error by
+$R_F$. In the defining expression for $E_{u,t,i}$, replacing each weighted
+function by its thick-part value costs at most the corresponding summand
+of $R_T$ after averaging. On the thick part,
+$g=e_1(s+u-t)$ with $s\in S$.
+Summation over $u\in B$ annihilates every character outside $X$; for
+$\psi\in X$ the remaining phase is $\psi(e_1(t))$, since $s\in B$.
+The factor from summing over $s$ and dividing by $f=2|A|$ is $d/2$.
+Consequently
+\[
+ \frac{n_Tmbd}{2}\bigl(H(x)-R_F(x)\bigr)
+        \le\overline E+R_T.
+\]
+The coefficient on the left is positive, so division proves the result.
+The argument used only an upper bound for the real projection error,
+which proves the final assertion.
+\end{proof}
+
+When the functions $Z_\psi$ are the smoothed Dirichlet sums defined in
+Section~\ref{sec:purpose}, this proposition gives a sufficient arithmetic
+budget for Corollary~\ref{cor:varying-positive-families}. For each fixed
+accuracy, control the projection error and the normalized sum of the
+averaged discrepancy and transfer error by powers with total exponent
+loss tending to zero. The same selected positive combination must be
+retained throughout that accuracy's sequence of whole intervals, even
+if the ambient finite groups and auxiliary data grow with $x$.
+The proposition imposes no separate square-root choice of the chain
+length $m$; such a choice is one way to balance the errors in a particular
+construction.
+
+\subsection{A convenient stronger set of arithmetic estimates}
 
 Here is a precise reduction of the remaining numerical comparison.
 It avoids auxiliary parameters that disappear by cancellation.
