@@ -77,6 +77,12 @@ def main() -> None:
                 "Formalism/RankGapBounds/MeanBoundSecondForm.lean:118-167",
             ],
             "limits": "No whole upstream proof audit or Lean replay; remaining source-table clauses were not independently re-audited by this reviewer.",
+            "second_review": {
+                "reviewer": "geometric_simplify",
+                "status": "PASS",
+                "scope": "Sections 1-3 and hash-verified model, height/slope, LatGeom, scalar-error, density-size, word-count and isotropy contracts; additionally TopDensity568-608 and DataParams2:27-29.",
+                "limits": "Ordinary mathematics and source contracts; no upstream proof replay or Lean build.",
+            },
         },
         "scope": {
             "bounded_pinned_source_contracts_compared": True,

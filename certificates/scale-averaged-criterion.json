@@ -3,7 +3,7 @@
   "status": "written proof independently reviewed",
   "date": "2026-11-21",
   "note": "notes/scale-averaged-criterion.md",
-  "note_sha256": "7ea4b398d4ea59e0218dde0b8960367f65c887f61800591e0d2182d8254e7d6d",
+  "note_sha256": "bc16fc7f1c96d991268fee2d87c6215d9e50235e5ba38d023f34510ef51b934d",
   "claims": [
     "weighted positive-part window criterion with varying fixed-stage character families",
     "forward logarithmic averaging preserves all detecting poles in the right half-plane",
@@ -52,12 +52,23 @@
       "shortened-window Jensen comparison",
       "oscillatory counterexample and normally convergent spike transform with positive real residue"
     ],
-    "clarification_applied": "The exceptional-set comparison now explicitly assumes C,M nonnegative."
+    "clarification_applied": "The exceptional-set comparison assumes C,M nonnegative. The arithmetic majorant and subpower condition use the same cofinal set of expanded windows."
   },
   "computational_scope": "No numerical experiment is used as proof. Hashes record the written mathematical dependencies and reviewed note.",
   "limits": [
     "The general one-sided Laplace proposition and positive-family residue lemma are proved prerequisites in the manuscript.",
     "No arithmetic construction, height estimate or global theta norm estimate is supplied by this analytic relaxation.",
     "No new Lean build or kernel replay."
-  ]
+  ],
+  "manuscript_integration_review": {
+    "reviewer": "rh_source_symmetry",
+    "status": "PASS",
+    "file": "paper/sections/recovered/03-sec-one-sided.tex",
+    "labels": [
+      "lem:logarithmic-averaging",
+      "thm:scale-averaged-criterion",
+      "cor:averaged-arithmetic-budget"
+    ],
+    "scope": "Smoothing, fixed-stage target multiplicities, averaged theorem, positive budget comparison, cross-reference consolidation; common-window clarification applied."
+  }
 }

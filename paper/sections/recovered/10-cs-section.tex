@@ -481,6 +481,345 @@ not establish the integral automorphic maps, their height bounds,
 or their matrix estimates.
 
 
+\subsection{Averaged energy of the actual maps}
+\label{cs-averaged-theta-energy}
+
+The frame hypotheses can be expressed by two scalar energies, without
+estimating every pair of maps separately. These energies must concern
+the same maps that represent the integral arithmetic maps in a common
+target basis.
+
+\begin{proposition}[Exact energy criterion]\label{cs-exact-energy}
+Let $T_i:H_i\to H$ be finitely many maps of complex Hermitian spaces,
+with $D=\dim H>0$ and $R=\sum_i\dim H_i>0$. Put
+\[
+ Q=\sum_iT_iT_i^*,\qquad M=\operatorname{tr}Q,\qquad
+ \Delta=\sum_i\|T_i^*T_i-I\|_{\mathrm{HS}}^2.
+\]
+Then $Q\ge0$ and $|M-R|\le\sqrt{R\Delta}$. If $\Delta<R$,
+the diagonal and isotropy inequalities used in
+Proposition~\ref{qrh-sharper-slope} hold with
+\begin{equation}\label{cs-energy-defects}
+ e=\frac\Delta R<1,\qquad
+ \eta=\frac{D}{M^2}
+       \left\|Q-\frac MD I\right\|_{\mathrm{HS}}^2
+      =\frac{D\operatorname{tr}(Q^2)}{M^2}-1.
+\end{equation}
+Writing $\Omega=\sum_{i\ne j}\|T_i^*T_j\|_{\mathrm{HS}}^2$, one has
+\begin{equation}\label{cs-energy-trace-identity}
+ \operatorname{tr}(Q^2)=\Omega+2M-R+\Delta,
+ \qquad \operatorname{rank}Q\ge\frac{D}{1+\eta}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Apply Hilbert--Schmidt Cauchy--Schwarz to
+$\bigoplus_i(T_i^*T_i-I)$ and the identity of rank $R$. This proves
+the trace bound, and hence $M\ge R-\sqrt{R\Delta}>0$.
+Expanding the centered square gives \eqref{cs-energy-defects}.
+Cyclicity of trace gives
+$\operatorname{tr}(Q^2)=\sum_{i,j}\|T_i^*T_j\|_{\mathrm{HS}}^2$;
+expanding its diagonal terms gives \eqref{cs-energy-trace-identity}.
+Finally, Cauchy--Schwarz on the nonzero eigenvalues of $Q$ gives
+$M^2\le\operatorname{rank}(Q)\operatorname{tr}(Q^2)$.
+\end{proof}
+
+This criterion can use an estimate after summing the words. It does not
+require the large redundancy condition used by the pairwise supplier:
+an orthonormal basis has $R=D$ and $e=\eta=0$.
+
+\begin{proposition}[Restriction measured by lost energy]
+\label{cs-retained-energy}
+Keep the preceding notation. Let $J_i:H_i'\to H_i$ be isometries,
+put $T_i'=T_iJ_i$, $R'=\sum_i\dim H_i'>0$, and $l=R-R'$.
+Write $Q'=\sum_iT_i'T_i'^*$, $M'=\operatorname{tr}Q'$,
+$L=M-M'$, and $\Delta'=\sum_i\|T_i'^*T_i'-I\|_{\mathrm{HS}}^2$.
+Then
+\begin{equation}\label{cs-retained-diagonal}
+ 0\le Q'\le Q,\quad
+ \Delta'\le\Delta,\quad |L-l|\le\sqrt{l\Delta},\quad
+ M'\ge R'-\sqrt{R'\Delta}.
+\end{equation}
+If $M'>0$, define $\alpha=M/M'\ge1$ and the isotropy defect
+$\eta'=D\operatorname{tr}(Q'^2)/(M')^2-1$. Then
+\begin{equation}\label{cs-retained-energy-quadratic}
+ \eta'-\alpha\sqrt\eta\sqrt{\eta'}\le\alpha-1,
+ \qquad
+ \eta'\le
+ \left(\frac{\alpha\sqrt\eta+
+       \sqrt{\alpha^2\eta+4(\alpha-1)}}2\right)^2.
+\end{equation}
+If $\eta=0$, this reduces to the sharp inequality
+$\eta'\le L/(M-L)$.
+\end{proposition}
+\begin{proof}
+The matrices $P_i=J_iJ_i^*$ are orthogonal projections. Thus
+$Q-Q'=\sum_iT_i(I-P_i)T_i^*\ge0$.
+Orthogonal compression decreases Hilbert--Schmidt norm, proving
+$\Delta'\le\Delta$. Moreover,
+\[
+ L-l=\sum_i\operatorname{tr}\bigl((I-P_i)(T_i^*T_i-I)\bigr).
+\]
+The direct sum of the projections $I-P_i$ has squared
+Hilbert--Schmidt norm $l$, giving the bound for $L-l$.
+The trace bound of Proposition~\ref{cs-exact-energy}, applied to
+the restricted family, gives the final inequality in
+\eqref{cs-retained-diagonal}.
+
+Since $Q-Q'\ge0$,
+$\operatorname{tr}(Q'^2)\le\operatorname{tr}(QQ')$.
+Centering both operators gives
+\[
+ \operatorname{tr}(QQ')\le\frac{MM'}D+
+ \left\|Q-\frac MD I\right\|_{\mathrm{HS}}
+ \left\|Q'-\frac{M'}D I\right\|_{\mathrm{HS}}.
+\]
+Divide by $(M')^2/D$ and solve the quadratic in
+$\sqrt{\eta'}$ to obtain \eqref{cs-retained-energy-quadratic}.
+For sharpness when $\eta=0$, take $Q=cI_D$ and $Q'=cP$,
+where $c>0$ and $P$ is a projection of rank $k>0$.
+Then $\eta'=(D-k)/k=L/(M-L)$.
+\end{proof}
+
+For comparison with the earlier numerical envelope, suppose
+$\eta\le5\sigma$, $\Delta\le e_0R$,
+$0<\sigma\le1/20$, $\sqrt{e_0}\le\sigma/2$, and
+$l\le\vartheta R$ with $0\le\vartheta\le1/4$.
+Then
+\[
+ \frac{\Delta'}{R'}\le\frac{e_0}{1-\vartheta}\le\frac43e_0,
+ \qquad \eta'\le11\sigma+3\vartheta.
+\]
+Indeed, writing $q=\sqrt{e_0}$, the preceding trace bounds give
+$L/M\le(\vartheta+q\sqrt\vartheta)/(1-q)\le7/26$ and
+$\alpha-1\le80\vartheta/57+20\sigma/57$.
+Equation~\eqref{cs-retained-energy-quadratic} gives
+$\eta'\le\alpha^2\eta+2(\alpha-1)$; use
+$\alpha\le26/19$, $3380/361+40/57<11$ and $160/57<3$.
+This is an alternative to the existing $7\sigma+4\vartheta$
+bound when its pairwise hypotheses hold. The exact energy comparison
+is more informative than either rounded envelope.
+
+\paragraph{A global kernel supplier.}
+Let $(X,\mu)$ be a sigma-finite measure space and realize $H$
+isometrically as a $D$-dimensional subspace of $L^2(X,\mu)$.
+For orthonormal bases $(e_{ij})_j$ of $H_i$ and $(h_a)_{a=1}^D$
+of $H$, put
+\[
+ \theta_{ij}=T_ie_{ij},\quad
+ K_i(z,w)=\sum_j\theta_{ij}(z)\overline{\theta_{ij}(w)},\quad
+ K=\sum_iK_i,\quad
+ P_H(z,w)=\sum_a h_a(z)\overline{h_a(w)}.
+\]
+All sums are finite. When $M>0$, expansion and Parseval give
+\begin{align*}
+ M&=\int K(z,z)\,d\mu(z),\\
+ \Delta&=\sum_i\left(\iint|K_i(z,w)|^2\,d\mu(z)d\mu(w)
+          -2\int K_i(z,z)\,d\mu(z)+\dim H_i\right),\\
+ \eta&=\frac D{M^2}\iint
+       \left|K(z,w)-\frac MD P_H(z,w)\right|^2
+                         \,d\mu(z)d\mu(w).
+\end{align*}
+These follow because $K_i$ is the kernel of $T_iT_i^*$ and
+the Hilbert--Schmidt norm of an operator on $H$ is the $L^2$ norm
+of its kernel. The diagonal uses the displayed finite-sum
+representative. The centered integral is nonnegative and retains
+all interference between words.
+
+For theta maps, one must use the actual normalization
+$T_i=c_i^{-1/2}P_i$ with $c_i>0$, the prescribed measure, and the
+actual isometric restrictions. A Bessel identity with one common
+target isometry and nonzero source constants supplies the common-basis
+identification with the integral maps; it does not supply the energy
+bound. The target loss $(1-\delta)^{-1}$ and the retained diagonal
+denominator $1-\sqrt{\Delta'/R'}$ remain in the slope estimate.
+The correlated averaging of Proposition~\ref{cs-refined-average-frame}
+can be applied directly to these measured energies, including under a
+positive scale integral. An estimate for their required weighted
+integrals suffices for this frame contribution. The actual global
+energy, integral-map and height bounds remain arithmetic inputs.
+
+
+\subsection{Centered frame estimates}
+
+\begin{lemma}[A centered dimension comparison]\label{cs-centered-rank}
+Let $A_i:\mathbf C^{r_i}\to\mathbf C^D$ be finitely many matrices,
+with $D>0$, $R=\sum_i r_i>0$, and
+\[
+ \mathcal G=\bigoplus_iA_i^*A_i,\qquad
+ Q=\sum_iA_iA_i^*,\qquad M=\operatorname{tr}Q>0.
+\]
+Define the scale-invariant defects
+\[
+ a=\frac{\sqrt R}{M}
+       \left\|\mathcal G-\frac MR I_R\right\|_{\rm HS},
+ \qquad
+ b=\frac{\sqrt D}{M}
+       \left\|Q-\frac MD I_D\right\|_{\rm HS}.
+\]
+If subspaces $V_i\subset\mathbf C^{r_i}$ have total dimension $k$,
+and all their images lie in $W\subset\mathbf C^D$, put
+$p=k/R$, $q=\dim W/D$. Then
+\begin{equation}\label{eq:cs-centered-rank}
+ p-a\sqrt{p(1-p)}\le q+b\sqrt{q(1-q)}.
+\end{equation}
+In particular, $q\ge p-(a+b)/2$.
+\end{lemma}
+\begin{proof}
+Let $P_i$ be the source projections, $P=\bigoplus_iP_i$, and
+$C=\sum_iA_iP_iA_i^*$. Centering the two matrices gives
+\[
+ \operatorname{tr}C=\operatorname{tr}(P\mathcal G)
+ \ge Mp-\left\|\mathcal G-\frac MR I_R\right\|_{\rm HS}
+                   \sqrt{Rp(1-p)}.
+\]
+Here $\|P-pI_R\|_{\rm HS}^2=Rp(1-p)$.
+Since $0\le C\le Q$ and the range of $C$ lies in $W$,
+\[
+ \operatorname{tr}C\le\operatorname{tr}(P_WQ)
+ \le Mq+\left\|Q-\frac MD I_D\right\|_{\rm HS}
+                   \sqrt{Dq(1-q)}.
+\]
+Divide by $M$ and use $\sqrt{z(1-z)}\le1/2$.
+\end{proof}
+
+\begin{proposition}[Optimal common normalization]
+\label{cs-optimal-normalization}
+With the preceding notation, put $U_s=\operatorname{tr}(\mathcal G^2)$.
+Among all common positive rescalings $A_i\mapsto\sqrt t\,A_i$,
+the normalized diagonal error is minimized at
+\[
+ t_*=\frac M{U_s},\qquad
+ e_*=1-\frac{M^2}{RU_s}=\frac{a^2}{1+a^2}\in[0,1).
+\]
+The target isotropy defect $b^2$ and every image are preserved.
+Whenever a common-basis representation of arithmetic maps is supplied,
+it is preserved after a change of the individual source bases.
+\end{proposition}
+\begin{proof}
+The diagonal error after rescaling is
+\[
+ \frac1R\|t\mathcal G-I_R\|_{\rm HS}^2
+ =\frac{U_s}{R}\left(t-\frac M{U_s}\right)^2
+       +1-\frac{M^2}{RU_s}.
+\]
+Cauchy--Schwarz gives $M^2\le RU_s$, and $M>0$ gives $U_s>0$.
+Both centered defects and every image are invariant under a common
+positive scaling. In the arithmetic matrix representation, absorb
+$\sqrt t$ into each invertible source-basis matrix. The integral maps,
+their metrics and their arithmetic heights are unchanged.
+\end{proof}
+
+Thus the earlier refined comparison may use $e_*$ in place of the
+raw diagonal error. This need not give a small denominator:
+$e_*$ may approach one. A positive theta normalizer and positive total
+mass remain separate requirements.
+
+\begin{proposition}[A centered slope comparison]
+\label{cs-centered-slope}
+Let $f_i:E_i\to F$ be integral maps of nonzero Hermitian lattices,
+of ranks $r_i,n$, with ordinary heights $h(f_i)\le h_i$.
+Suppose
+\[
+ \frac1R\sum_i r_i\{\mu(E_i)-h_i\}\ge s,\qquad
+ \mu_{\max}(E_i)-h_i\le s+u,\qquad
+ \mu_{\min}(F)\ge s-H,
+ \qquad u,H\ge0.
+\]
+Suppose the first $n\le D$ rows of the matrices in
+Lemma~\ref{cs-centered-rank} represent these maps at one complex
+embedding, in individual source bases and one common target basis.
+Put $\nu=n/D$, $\delta_0=1-\nu$, and
+\[
+ \Phi(u,H)=
+ \begin{cases}
+  \sqrt{uH},&u\le H,\\
+  (u+H)/2,&u>H.
+ \end{cases}
+\]
+Then
+\begin{equation}\label{eq:cs-centered-slope}
+ s-\mu(F)\le
+ \frac{\delta_0u+a\Phi(u,H)+b(H+u)/2}{\nu}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Multiply the source norms by $e^{h_i}$. Their slopes decrease by
+$h_i$, and all map heights become nonpositive.
+For $\xi\in[s-H,s+u]$, let $p(\xi)$ and $q(\xi)$ be the normalized
+source and target filtration ranks. Lemma~\ref{cs-functoriality}
+puts the matrix images in the target filtration space together with
+the $D-n$ discarded coordinates. Its dimension fraction is
+$w(\xi)=\delta_0+\nu q(\xi)$, so
+\[
+ \nu q(\xi)\ge p(\xi)-\delta_0
+       -a\sqrt{p(\xi)(1-p(\xi))}
+       -b\sqrt{w(\xi)(1-w(\xi))}.
+\]
+Every adjusted source slope $\alpha$ is at most $s+u$. Hence
+$\int p$ is the mean of $(\alpha-(s-H))_+$, and
+\[
+ \int_{s-H}^{s+u}p\ge H,\qquad
+ \int_{s-H}^{s+u}(1-p)\le u.
+\]
+Writing $x=\int(1-p)$ and $L=u+H$, Cauchy--Schwarz gives
+\[
+ \int\sqrt{p(1-p)}\le\sqrt{x(L-x)}\le\Phi(u,H).
+\]
+The maximum is attained at $x=u$ if $u\le H$, and at $x=L/2$
+otherwise. Also $\int\sqrt{w(1-w)}\le L/2$.
+The lower target slope bound gives
+$\mu(F)\ge s-H+\int q$; target slopes above $s+u$ only improve
+this inequality. Integrating the rank comparison and using
+$\nu=1-\delta_0$ cancels the terms in $\delta_0H$ and proves
+\eqref{eq:cs-centered-slope}. If $u+H=0$, the assertion is immediate.
+\end{proof}
+
+For a perfect full frame, $a=b=\delta_0=0$, this cost is zero.
+The estimate complements the earlier refined comparison: its
+dependence on $b=\sqrt\eta$ can be worse. One may use the minimum
+of the available bounds and the immediate bound $s-\mu(F)\le H$.
+The perfect-frame target-cut cost is sharp. Take a full identity
+matrix on $D$ source coordinates and project to $n=\nu D$ target
+coordinates. Give the discarded source coordinates slope $s+u$,
+and the retained coordinates slope $s-\delta_0u/\nu$, with identical
+target metrics. The map has height zero and the source mean is $s$,
+while $s-\mu(F)=\delta_0u/\nu$. This realizes equality whenever
+$H\ge\delta_0u/\nu$.
+
+\begin{corollary}[Exact proportional expansion]\label{cs-exact-expansion}
+Let the integral maps and ordinary height bounds be as above.
+Suppose that, at one complex embedding, every collection of subspaces
+$V_i\subset E_{i,\mathbf C}$ satisfies
+\[
+ \frac{\dim\sum_i f_i(V_i)}n
+       \ge\frac{\sum_i\dim V_i}{R}.
+\]
+Then, without a source-spread or lower target-slope hypothesis,
+\[
+ \mu(F)\ge\frac1R\sum_i r_i\{\mu(E_i)-h_i\}.
+\]
+\end{corollary}
+\begin{proof}
+Normalize source heights as in the preceding proof.
+The functoriality of the slope filtrations and the assumed expansion
+give $\operatorname{rk}F_{\ge\xi}/n
+\ge\sum_i\operatorname{rk}(E_i)_{\ge\xi}/R$ for every real $\xi$.
+Integrate over a finite interval containing all source and target slopes.
+\end{proof}
+
+The expansion condition forces individual injectivity and joint
+surjectivity. It follows from the centered matrix estimate if
+\[
+ \delta_0+\frac{a+b}{2}<\frac1{nR},
+\]
+because any positive difference between the two rational rank
+fractions is at least $1/(nR)$. This sufficient condition uses the
+actual ranks; small average defects alone do not imply it.
+All these conclusions compare the same source and target lattices.
+They do not identify the final target with an intermediate cuspidal
+core or provide an absolute arithmetic degree without additional
+arithmetic information.
+
 \subsection{Discarding an orthogonal subspace}
 
 An exceptional subspace affects a covolume through its degree and the
@@ -723,7 +1062,337 @@ are the rank proportions displayed above. A full-space mean degree
 does not bound an arbitrary individual type: two orthogonal lines can
 have slopes $-M$ and $M$ while their direct sum has slope zero.
 
-\subsection{A component degree bound with an averaged remainder}
+\subsection{From mean volume to section degree}
+
+The geometric requirement consists of an arithmetic intersection bound
+in the prescribed metric and a finite section-degree bound. We first
+isolate the finite-prime correction and the passage from total
+intersection to the required mean.
+
+\begin{lemma}[An elementary finite-place allowance]
+\label{cs-mean-volume-prime-cost}
+Let $E$ be a number field of degree $n_E$, with absolute discriminant
+$\Delta_E$ and root discriminant $r_E=\Delta_E^{1/n_E}$. Let $M'$ be a
+positive integer, let $Q$ be the set of prime divisors of $2\Delta_E M'$,
+and suppose that $B\ge128$ and $|Q|\le\lfloor B\rfloor$. Put
+\[
+ S=\{p\text{ prime}:p\le B\}\cup Q,\qquad
+ c_2=\sum_{p\in S}\left(\frac1{p-1}
+       +\frac{40v_p(\Delta_E)}{n_E}+\mathbf1_{p=2}\right)\log p.
+\]
+Then
+\begin{equation}
+\label{eq:mean-volume-prime-cost}
+ 0\le c_2\le\frac{59}{7}\log B+40\log r_E
+                      \le40(\log B+\log r_E).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since $S$ contains two and every prime divisor of $\Delta_E$,
+\[
+ c_2=\sum_{p\in S}\frac{\log p}{p-1}+40\log r_E+\log2.
+\]
+The elementary bound $\psi(y)=\sum_{m\le y}\Lambda(m)\le4(\log2)y$
+follows from the prime factorization of $\binom{2n}{n}$:
+$\psi(2n)-\psi(n)\le2n\log2$, followed by summation at powers of two.
+Partial summation now gives
+\[
+ \sum_{p\le B}\frac{\log p}{p-1}
+ \le2\sum_{m\le B}\frac{\Lambda(m)}m
+ \le8\log2\,(1+\log B).
+\]
+The function $\log t/(t-1)$ decreases for $t>1$. There are at most
+$B$ primes of $Q$ above $B$, so their total contribution is at most
+$B\log B/(B-1)\le(8/7)\log B$. Finally,
+$\log B\ge7\log2$ and $\log2<3/4$, and therefore
+\[
+ 8\log2\log B+9\log2+\frac87\log B
+ \le\left(6+\frac97+\frac87\right)\log B
+ =\frac{59}{7}\log B.
+\]
+This proves the first upper bound. The second uses $59/7<40$ and
+$\log r_E\ge0$.
+\end{proof}
+
+\begin{corollary}[From total intersection to mean volume]
+\label{cs-mean-volume-intersection}
+Retain the finite-place data of
+Lemma~\ref{cs-mean-volume-prime-cost}. Let $\mathcal Z$ be finite and
+nonempty, with equal positive component volumes $v_Z$, and put
+$v_T=\sum_Zv_Z$. Let $d\ge0$, $D>0$, $L,W,q\ge0$, and $\lambda\in\mathbb R$.
+Set
+\[
+ \mathcal E=(\log B+\log r_E+|\lambda|)L+qW.
+\]
+Suppose that the actual component intersection numbers $I_Z$ satisfy,
+for some $C_T\ge0$,
+\[
+ \sum_ZI_Z\ge-C_T(d+1)v_TD\mathcal E.
+\]
+For each component let $V_Z(t)$ be its nonnegative normalized
+count-volume function and let $\delta_Z>0$ be its top degree.
+Suppose the prescribed metric and integral section-counting comparison
+gives, for all real $t$,
+\[
+ V_Z(t)\ge\max\{\delta_Z(s_Z+t),0\},\qquad
+ s_Z=\frac{I_Z}{(d+1)v_ZD}-2c_2L.
+\]
+Then
+\begin{equation}
+\label{eq:mean-volume-intersection}
+ \frac1{|\mathcal Z|}\sum_Zs_Z\ge-(C_T+80)\mathcal E.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Equality of the positive component volumes gives
+\[
+ \frac1{|\mathcal Z|}\sum_Z\frac{I_Z}{(d+1)v_ZD}
+   =\frac{\sum_ZI_Z}{(d+1)v_TD}\ge-C_T\mathcal E.
+\]
+Apply \eqref{eq:mean-volume-prime-cost} to the common correction,
+using $(\log B+\log r_E)L\le\mathcal E$.
+\end{proof}
+
+The corollary separates the remaining geometric input from its
+elementary averaging step. A uniform bound for the logarithmic
+derivative $\lambda$ controls an error parameter; it does not supply
+the stated intersection inequality or the metric comparison. In a
+volume-limit comparison, each geometric datum may be fixed first:
+a fixed shift $k_0$ of section power and fixed finite constants are
+absorbed by letting the auxiliary power tend to infinity, then letting
+an auxiliary positive error tend to zero. Each fixed additive constant
+is negligible after division by the auxiliary power. If the count
+volume uses a fixed arithmetic progression of powers, the shift must
+preserve that progression.
+This argument needs no uniform convergence threshold for those fixed-data
+limits. It gives no estimate at a specified finite section power;
+the intersection constant and every subsequent section-length and rank
+factor must still meet the final error budget on the same data.
+
+Short integral sections supply an additional lower degree bound.
+Together with Hilbert--Samuel, this permits a degree estimate from one
+weighted mean height. First retain the degrees in the volume comparison.
+
+\begin{lemma}[Cancellation of component degrees]
+\label{geometric-volume-weights}
+Let a finite nonempty component set have positive degrees $\delta_Z$,
+and suppose a positive number $\delta_*$ satisfies
+\[
+ \delta_*\le\delta_Z\le\frac{\delta_*}{1-\rho},
+ \qquad 0\le\rho<1.
+\]
+Let $B>0$, $w_Z=B\delta_Z$, $W=\sum_Zw_Z$, and $N=\#\{Z\}$.
+Suppose $c,\gamma\ge0$ and
+\[
+ \delta_*(s_Z+c)\le\delta_Z(h_Z+c+\gamma).
+\]
+Set $q=NB\delta_*/W$, $\bar s=N^{-1}\sum_Zs_Z$, and
+$M=W^{-1}\sum_Zw_Zh_Z$. Then
+\begin{equation}\label{eq:geometric-volume-weights}
+ 1-\rho\le q\le1,\qquad
+ M\ge q\bar s-(1-q)c-\gamma.
+\end{equation}
+In particular, $\bar s\ge-X$, with $X\ge0$, gives
+$M\ge-H_q$, where
+\[
+ H_q=qX+(1-q)c+\gamma\le X+\rho c+\gamma.
+\]
+\end{lemma}
+\begin{proof}
+The degree inequalities give the bounds on $q$. Multiply the component
+comparison by $B$, sum, and divide by $W$.
+\end{proof}
+
+Here $\delta_*$ is the top degree at the smaller weight. Equality of
+component volumes makes this top degree independent of the component;
+the image degrees $\delta_Z$ need not be equal. Summation before
+discarding these degrees avoids a second change of averaging measure.
+
+\begin{proposition}[One mean height and short sections]
+\label{geometric-one-mean}
+Let $E_Z$ be nonzero Hermitian lattices over a number field, indexed by
+a finite nonempty set. Write $r_Z$ for their ranks and $d_Z$ for their
+normalized arithmetic degrees. Suppose integral vectors of norm at most
+$e^L$ at every embedding span each $E_Z$ over the field, with $L\ge0$.
+Let $0<w_Z\le r_Z$, and suppose
+\[
+ d_Z\ge w_Z\{t h_Z-a|h_Z|-A\log(2+|h_Z|)-R_0\},
+ \qquad a,R_0\ge0,\quad A>0,\quad t\ge a+1.
+\]
+Put
+\[
+ W=\sum_Zw_Z,\quad R_{\rm tot}=\sum_Zr_Z,\quad
+ \theta=W/R_{\rm tot},\quad M=W^{-1}\sum_Zw_Zh_Z.
+\]
+\[
+ \lambda=t-a-1,\qquad b=t+a,\qquad K=\max(2,A).
+\]
+Then
+\begin{equation}\label{eq:geometric-one-mean-exact}
+ \frac{\sum_Zd_Z}{R_{\rm tot}}
+ \ge\lambda\theta M-\frac{2a+1}{b}L-\theta R_0
+       -\theta A\log\!\left(K+\frac{L}{b\theta}\right).
+\end{equation}
+Consequently, $M\ge-H$, $H\ge0$, implies
+\begin{equation}\label{eq:geometric-one-mean}
+ \frac{\sum_Zd_Z}{R_{\rm tot}}
+ \ge-\lambda\theta H-\theta\{R_0+A\log\max(A,1)\}
+       -2\log2-\frac{2a+2}{t+a}L.
+\end{equation}
+The term $2\log2$ may be omitted if $A\ge2$.
+\end{proposition}
+\begin{proof}
+Choose a field basis from the short integral spanning vectors.
+The determinant norm inequality and the nonnegative integral-index
+contribution give $d_Z\ge-r_ZL$. With the degree normalized by the
+field degree, this is a slope bound $d_Z/r_Z\ge-L$, or a
+squared-norm slope bound $\nu(E_Z)\ge-2L$.
+
+For one component write $P=r_ZL/w_Z$. If $h=-y\le0$ and
+$y\le P/b$, its Hilbert--Samuel bound gives
+\[
+ \frac d w\ge-\lambda y-\frac{b-\lambda}{b}P
+                    -R_0-A\log(K+P/b).
+\]
+If $y\ge P/b$, the same inequality follows from $d/w\ge-P$.
+For $h\ge0$, use
+$A\log(2+h)\le h+A\log\max(2,A)$, obtained by maximizing the
+left side minus $h$. Thus, for every real $h_Z$,
+\[
+ \frac{d_Z}{w_Z}\ge
+ \lambda h_Z-\frac{2a+1}{b}\frac{r_ZL}{w_Z}
+ -R_0-A\log\!\left(K+\frac{r_ZL}{bw_Z}\right).
+\]
+Sum and apply concavity of the logarithm. The weighted mean of
+$r_ZL/w_Z$ is $L/\theta$, proving
+\eqref{eq:geometric-one-mean-exact}. Finally,
+\[
+ \theta A\log\!\left(K+\frac{L}{b\theta}\right)
+ \le\theta A\log K+\frac Lb,
+ \qquad
+ A\log K\le A\log\max(A,1)+2\log2.
+\]
+The first inequality uses $\log(1+u)\le u$ and $A/K\le1$.
+This proves \eqref{eq:geometric-one-mean}, including $L=0$
+and $\lambda=0$.
+\end{proof}
+
+The extra hypothesis is a bound for short spanning vectors of these
+same component lattices. A weighted mean height by itself still does
+not control the nonlinear height loss. No estimate of the weighted
+negative-height moment is needed once this degree bound is available.
+
+\begin{corollary}[A uniform numerical specialization]
+\label{geometric-one-mean-scale}
+Use the preceding proposition and Lemma~\ref{geometric-volume-weights}.
+Suppose $D\ge1$, $a=3(D+1)$, $b_0>0$, and
+\[
+ z=7(D^2/t+D\rho),\qquad \rho\ge0,\qquad zL\le b_0,
+\]
+\[
+ A\ge2,\qquad A\log A+R_0\le C_Sb_0.
+\]
+If flat twists preserve ranks and give $d'_Z\ge d_Z-r_Zc_Z$,
+then
+\begin{equation}\label{eq:geometric-direct-degree}
+ \frac{\sum_Zd'_Z}{R_{\rm tot}}
+ \ge\lambda\theta\{q\bar s-(1-q)c-\gamma\}
+       -(C_S+2)b_0-\frac{\sum_Zr_Zc_Z}{R_{\rm tot}}.
+\end{equation}
+The costs $c_Z$ may be signed. In particular, the quantitative values
+\[
+ A=26(26D^2+2zt),\qquad R_0=4000b_0,\qquad
+ A\log A\le6000b_0
+\]
+permit $C_S+2=10002$.
+\end{corollary}
+\begin{proof}
+Since $z\ge7D^2/t$ and $6D+8\le14D^2$,
+\[
+ \frac{2a+2}{t+a}L
+ =\frac{6D+8}{t+3D+3}L\le14D^2L/t\le2b_0.
+\]
+Use \eqref{eq:geometric-one-mean-exact} and its logarithmic bound
+with $A\ge2$, substitute \eqref{eq:geometric-volume-weights}, and
+subtract the actual twist cost.
+\end{proof}
+
+The Hilbert--Samuel estimate is applied before the flat twist, and
+the twist is charged once, afterward. The mean-volume theorem and
+the quantitative section-degree estimate remain geometric inputs.
+Using the displayed uniform Hilbert--Samuel coefficients can still
+require an upper rank-share estimate. The following alternative
+retains the actual ranks instead.
+
+\begin{proposition}[A signed remainder without heights]
+\label{geometric-signed-raw-degree}
+Keep the same lattices, short-section bound and positive weights.
+Suppose $a\ge0$, $t>a$, and
+\[
+ d_Z\ge w_Z\{t h_Z-a|h_Z|
+                 -A_Z\log(b_Z+|h_Z|)-R_Z\},
+ \qquad A_Z>0,\quad b_Z\ge1,\quad R_Z\in\mathbf R.
+\]
+For $0\le\lambda<t-a$, put $s=t-a-\lambda$, $\beta=t+a$, and
+\[
+ P_Z=\left(\frac{r_ZL}{w_Z}-R_Z\right)_+,\qquad
+ K_Z=\max(b_Z,A_Z/s),
+\]
+\[
+ \mathcal B_Z=R_Z+\left(1-\frac{\lambda}{\beta}\right)P_Z
+               +A_Z\log(K_Z+P_Z/\beta).
+\]
+Then
+\begin{equation}\label{eq:geometric-signed-raw-degree}
+ \sum_Zd_Z\ge\lambda\sum_Zw_Zh_Z-\sum_Zw_Z\mathcal B_Z.
+\end{equation}
+Under the component comparison of
+Lemma~\ref{geometric-volume-weights} and the flat-twist inequality,
+this gives
+\begin{equation}\label{eq:geometric-volume-direct-raw}
+ \begin{split}
+ \sum_Zd'_Z\ge{}&
+ \lambda B\delta_*\sum_Zs_Z
+ -\lambda\{(W-NB\delta_*)c+W\gamma\}\\
+ &-\sum_Zw_Z\mathcal B_Z-\sum_Zr_Zc_Z .
+ \end{split}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The shifted degree satisfies $d_Z/w_Z+R_Z\ge-P_Z$.
+Repeat the negative-height split in
+Proposition~\ref{geometric-one-mean} at $P_Z/\beta$.
+For positive heights use
+\[
+ A_Z\log(b_Z+h)\le sh+A_Z\log\max(b_Z,A_Z/s).
+\]
+The logarithmic cost is nonnegative because $K_Z\ge1$.
+The resulting pointwise inequality is
+$d_Z/w_Z\ge\lambda h_Z-\mathcal B_Z$.
+Sum it, then apply the component comparison and subtract the twist.
+\end{proof}
+
+In the raw Hilbert--Samuel estimate, the coefficient of its logarithm
+is $CD^2w_Z+t(r_Z-w_Z)$. Writing that logarithm as
+$\ell_{0,Z}+C\log(b_Z+|h_Z|)$ therefore gives
+\[
+ A_Z=C^2D^2+Ct\frac{r_Z-w_Z}{w_Z},
+\]
+with every height-independent term retained in $R_Z$.
+No upper rank-share estimate is used in
+\eqref{eq:geometric-volume-direct-raw}. What remains is a bound for
+the explicit signed total $\sum_Zw_Z\mathcal B_Z$, together with
+the mean-volume and twist terms, for the same growing geometric family.
+Arbitrary excess rank cannot be discarded: even with all heights zero,
+its complementary degree may be as negative as its short-vector bound
+allows. Nonnegative outer weighted sums or integrals preserve these
+inequalities and their signed terms; scale-dependent coefficients
+remain inside those averages.
+
+
+\subsection{An alternative using height moments}
 
 \begin{proposition}[Two height moments suffice]
 \label{geometric-two-moments}
@@ -987,7 +1656,7 @@ which proves the final assertion.
 
 When the functions $Z_\psi$ are the smoothed Dirichlet sums defined in
 Section~\ref{sec:purpose}, this proposition gives a sufficient arithmetic
-budget for Corollary~\ref{cor:varying-positive-families}. For each fixed
+budget for Theorem~\ref{cor:varying-positive-families}. For each fixed
 accuracy, control the projection error and the normalized sum of the
 averaged discrepancy and transfer error by powers with total exponent
 loss tending to zero. The same selected positive combination must be
@@ -1423,6 +2092,44 @@ the normalized averaged arithmetic discrepancy $\overline E/k$
 as the geometric target. The comparison establishes no uniform
 estimate for that discrepancy by itself.
 
+\begin{corollary}[The remaining averaged estimate for RH]
+\label{rh-averaged-final}
+At each fixed accuracy stage let the same compatible data supply
+\eqref{eq:rh-direct-budget} almost everywhere on expanded windows
+$[Y,e^{h_j}Y^{b_j}]$, for an unbounded set of starting points $Y$.
+Assume $b_j>1$, $h_j\ge0$, $1/2<\theta_j<1$ and
+$\theta_j\to1/2$. Suppose the combined signed function
+\[
+ \mathcal D_j(x)=\frac{\overline E(x)}{k(x)}
+   +\frac1{|T|}\sum_{t\in T} C_{q,d}(a_t/b)
+\]
+is measurable and locally integrable on those expanded windows.
+Retain the density bound $d_0\ge x^{-\varepsilon_j}$, with
+$0<\varepsilon_j<1$, and $f\ge1$.
+Put
+\[
+ J_j(Y)=\int_Y^{Y^{b_j}}(\mathcal A_{h_j}\mathcal D_j(x))_+
+                   x^{-\theta_j}\,\frac{dx}{x}.
+\]
+If $\liminf_{Y\to\infty}\log(1+J_j(Y))/\log Y=0$ along these same
+starting points for every $j$, then RH follows.
+\end{corollary}
+\begin{proof}
+The nonnegative remainder in \eqref{eq:rh-direct-budget} is at most
+\[
+ R_j(x)=2x^{-1+\varepsilon_j}+\frac{2C_\Psi}{3x}
+                         +(1+\log(x+1))^2.
+\]
+Its integral against $x^{-\theta_j}\,dx/x$ is finite on any tail.
+For fixed $h_j$, Tonelli's theorem gives the same conclusion for
+$\mathcal A_{h_j}R_j$, with at most the fixed factor
+$(e^{h_j\theta_j}-1)/(h_j\theta_j)$, interpreted as $1$ at zero.
+Since $(\mathcal A_{h_j}(\mathcal D_j+R_j))_+
+\le(\mathcal A_{h_j}\mathcal D_j)_++\mathcal A_{h_j}R_j$,
+Corollary~\ref{cor:averaged-arithmetic-budget} applies to the fixed
+analytic target $G_1$. The auxiliary data may vary with $x$.
+\end{proof}
+
 \subsection{An alternative under translation symmetry}
 
 Translation symmetry can shorten a different construction, but it is
@@ -1854,8 +2561,11 @@ Average over $u$ and apply \eqref{eq:cs-refined-average-frame}.
 This estimate can be substituted directly into
 \eqref{eq:rh-direct-budget}. Any geometric lower bound used for
 the source slopes $\mu$ must concern those same lattices and metrics.
-Proposition~\ref{geometric-two-moments} and
-Corollary~\ref{geometric-cover-improved} retain the actual section remainder
+Propositions~\ref{geometric-one-mean} and
+\ref{geometric-signed-raw-degree} give the preferred degree suppliers
+when short sections are available; Proposition~\ref{geometric-two-moments}
+is an alternative without that hypothesis.
+Corollary~\ref{geometric-cover-improved} retains the actual section remainder
 and covering rank ratio before further averaging. A bound for the
 one resulting signed expression suffices; separate upper bounds for
 every translated datum are not required.

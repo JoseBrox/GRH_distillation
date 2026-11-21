@@ -309,76 +309,97 @@ characters. The usual Riemann hypothesis follows by taking conductor
 one and using the classical location of the trivial zeta zeros.
 \end{proof}
 
-\begin{theorem}[Vanishing total loss]\label{thm:vanishing-loss-windows}
-Let $H$ be a fixed positive character combination as in
-Lemma~\ref{lem:positive-family}. Suppose that there are sequences
-$\delta_j>0$, $b_j>1$ and $M_j\ge0$, with $\delta_j\to0$, such that
-for each $j$ there are arbitrarily large $Y$ for which
+\begin{lemma}[Averaging nearby scales]\label{lem:logarithmic-averaging}
+For $h>0$ define
 \[
-             H(x)\le M_j x^{1/2+\delta_j}
-                       \qquad(Y\le x\le Y^{b_j}).
+ \mathcal A_hH(x)=\frac1h\int_0^hH(xe^v)\,dv,
+ \qquad \mathcal A_0H=H.
 \]
-Then none of the $L$-functions occurring in $H$ has a zero with
-real part greater than $1/2$. No uniform bound on $M_j$ or
-positive lower bound on $b_j-1$ is required.
-\end{theorem}
+If $g(u)=H(e^u)$ satisfies the transform and growth hypotheses of
+Proposition~\ref{prop:landau-independent}, then so does
+$g_h(u)=\mathcal A_hH(e^u)$. Every pole in $\Re s>0$ is preserved.
+\end{lemma}
 
 \begin{proof}
-Put $g(u)=H(e^u)$. For every sufficiently large $j$,
-$\theta_j=1/2+\delta_j$ belongs to $(0,1)$. Fix such a $j$.
-On each corresponding interval $[U,b_jU]$, with $U=\log Y$, put
-$R_U(u)=M_je^{\theta_ju}$. This is a nonnegative majorant for $g$,
-and for every $\eta>0$,
+For $h>0$, Fubini's theorem initially in $\Re s>2$ gives
 \[
- \int_U^{b_jU}R_U(u)e^{-\theta_ju}\,du
-            =M_j(b_j-1)U\le e^{\eta U}
+ \Phi_h(s)=\frac{e^{hs}-1}{hs}\Phi(s)-E_h(s),\qquad
+ E_h(s)=\frac1h\int_0^h e^{sv}\int_0^v g(w)e^{-sw}\,dw\,dv.
 \]
-for all sufficiently large $U$. The constants $M_j,b_j$ are fixed
-while $U$ tends to infinity. Proposition~\ref{prop:landau-independent}
-therefore excludes every pole to the right of $\theta_j$.
-Lemma~\ref{lem:positive-family} excludes every zero of an occurring
-$L$-function in the same region. This holds for all sufficiently
-large $j$, and $\theta_j\to1/2$, proving the assertion.
+The function $E_h$ is entire, since the integrations are over compact
+intervals. The multiplier has removable value $1$ at zero, has no zero
+in $\Re s>0$, and is positive on the positive real axis. It therefore
+preserves all poles there, their simplicity, and positivity of real
+residues. The bound $g_h(u)=O_h(e^{2u})$ follows directly. For $h=0$
+there is nothing to prove.
 \end{proof}
 
-\begin{corollary}[Varying the auxiliary character family]
+\begin{theorem}[Vanishing loss in an averaged estimate]
+\label{thm:scale-averaged-criterion}
+\label{thm:vanishing-loss-windows}
 \label{cor:varying-positive-families}
-Fix a primitive character $\chi$, possibly of conductor one. For each
-$j$, let
+Fix a primitive target character $\chi$, possibly of conductor one.
+At each accuracy stage $j$, let
 \[
  H_j(x)=\sum_{\nu\in\mathcal C_j}a_{j,\nu}\Re G_\nu(x),
  \qquad a_{j,\nu}>0,
 \]
-where $\mathcal C_j$ is a finite set of primitive characters containing
-$\chi$ or $\bar\chi$. Suppose that $\delta_j>0$ tends to zero and that
-for each $j$ there are finite constants $M_j\ge0$ and $b_j>1$ and
-arbitrarily large $Y$ such that
+where $\mathcal C_j$ is a finite family of primitive characters containing
+$\chi$ or $\bar\chi$.
+Fix $b_j>1$, $h_j\ge0$ and $1/2<\theta_j<1$, with
+$\theta_j\to1/2$. Put
 \[
- H_j(x)\le M_jx^{1/2+\delta_j}
-                 \qquad(Y\le x\le Y^{b_j}).
+ I_j(Y)=\int_Y^{Y^{b_j}}(\mathcal A_{h_j}H_j(x))_+
+                         x^{-\theta_j}\,\frac{dx}{x}.
 \]
-Then $L(s,\chi)$ and $L(s,\bar\chi)$ have no zero with real part
-greater than $1/2$. The auxiliary characters and all their positive
-coefficients may vary with $j$; no uniform positive lower bound on
-the target coefficient is required.
+If for every $j$
+\begin{equation}\label{eq:scale-averaged-target}
+ \liminf_{Y\to\infty}\frac{\log(1+I_j(Y))}{\log Y}=0,
+\end{equation}
+then $L(s,\chi)$ and $L(s,\bar\chi)$ have no zeros to the right
+of one half. In particular, it suffices to have a finite $M_j\ge0$
+and arbitrarily late whole windows on which
+$H_j(x)\le M_jx^{\theta_j}$.
+\end{theorem}
+
+\begin{proof}
+Fix $j$. Lemma~\ref{lem:positive-family} supplies a meromorphic
+Laplace transform for $H_j(e^u)$ in which every zero of the target
+or its conjugate gives a nonzero residue. The preceding lemma
+preserves these poles under the fixed local averaging.
+For every $\eta>0$, \eqref{eq:scale-averaged-target} gives arbitrarily
+large $U=\log Y$ such that the nonnegative majorant
+$R_U(u)=(\mathcal A_{h_j}H_j(e^u))_+$ satisfies
+\[
+ \int_U^{b_jU}R_U(u)e^{-\theta_ju}\,du\le e^{\eta U}.
+\]
+Proposition~\ref{prop:landau-independent} excludes poles to the right
+of $\theta_j$. Let $j$ tend to infinity. A fixed positive combination
+is a special case, and the same reasoning then applies to every
+character it contains. For the final pointwise sufficient condition,
+choose $h_j=0$ and use $I_j(Y)\le M_j(b_j-1)\log Y$.
+\end{proof}
+
+\begin{corollary}[The combined signed arithmetic budget]
+\label{cor:averaged-arithmetic-budget}
+In the preceding theorem, let $\mathcal Y_j\subset(1,\infty)$ be
+unbounded. Suppose a measurable, locally integrable real function $B_j$
+satisfies $H_j\le B_j$ almost everywhere on
+$[Y,e^{h_j}Y^{b_j}]$ for every $Y\in\mathcal Y_j$.
+It suffices to establish \eqref{eq:scale-averaged-target}, with $Y$
+restricted to this same set $\mathcal Y_j$ and with
+\[
+ \int_Y^{Y^{b_j}}(\mathcal A_{h_j}B_j(x))_+
+                         x^{-\theta_j}\,\frac{dx}{x}
+\]
+in place of $I_j(Y)$. All signed contributions to $B_j$ may be
+combined before the local average and the positive part are taken.
 \end{corollary}
 
 \begin{proof}
-Fix a sufficiently large $j$, so that $\theta_j=1/2+\delta_j<1$.
-Apply Proposition~\ref{prop:landau-independent} to
-$g_j(u)=H_j(e^u)$, with interval exponent $b_j$ and majorant
-$M_je^{\theta_ju}$. As in the preceding proof, its weighted integral
-is $M_j(b_j-1)U$, which is at most $e^{\eta U}$ for every $\eta>0$
-once $U$ is sufficiently large. Thus this particular transform has
-no pole to the right of $\theta_j$.
-By Lemma~\ref{lem:positive-family}, every zero of $L(s,\chi)$ or
-$L(s,\bar\chi)$ is a genuine pole of that transform: its target
-contribution to the residue is strictly positive before multiplication
-by the common nonzero factor $-1/(\rho(\rho-1))$, and the other
-contributions cannot cancel it. The target coefficient need not be
-bounded below as $j$ varies. Since $\theta_j\to1/2$, the assertion
-follows. The corrected conductor-one sum treats $\zeta$ in the same
-way.
+Positivity of the averaging operator gives
+$(\mathcal A_{h_j}H_j)_+\le(\mathcal A_{h_j}B_j)_+$.
+The expanded interval contains every argument used by that operator.
 \end{proof}
 
 \begin{remark}[Essential quantifiers and signs]
@@ -386,9 +407,10 @@ For each fixed accuracy index, the character family and its positive
 coefficients must remain fixed while $Y$ tends to infinity through
 whole admissible intervals. Replacing them at each $Y$ does not give
 the repeated intervals required for a single Laplace transform.
-The interval exponent and multiplicative constant must likewise be
-fixed during each arbitrarily-large-$Y$ limit.
-Corollary~\ref{cor:varying-positive-families} allows all these data,
+The interval exponent and local averaging width must likewise be fixed
+during each arbitrarily-large-$Y$ limit. A multiplicative constant in a
+pointwise supplier must also be fixed during that limit.
+Theorem~\ref{cor:varying-positive-families} allows all these data,
 including the auxiliary characters and their coefficients, to vary
 with the accuracy index, provided that the target character or its
 conjugate retains a strictly positive coefficient. Only the total

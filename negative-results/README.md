@@ -2,6 +2,46 @@
 
 These results concern deductions from specified estimates. They do not disprove GRH or establish a defect in Alpöge's proof.
 
+## A signed long-window mean can hide detecting poles
+
+An exponentially growing cosine can have negative signed integrals on
+arbitrarily late intervals while its transform retains poles to the right
+of the desired line. A second example concentrates positive mass on an
+exponentially small set of logarithmic scales and still has such a pole.
+The final criterion needs the stated weighted positive-part control, after
+any permitted fixed local averaging. Neither a bare signed mean nor a small
+unweighted exceptional proportion supplies it.
+Both [counterexamples](../notes/scale-averaged-criterion.md) have explicit
+meromorphic transforms and satisfy the required real-residue condition.
+
+## Four retained characters do not bound an integral index
+
+The [RH frontier example](../notes/rh-construction-frontier.md) retains four
+sign characters in an integral group lattice, yet its splitting quotient is
+four copies of the integers modulo the growing group order. In particular,
+an arbitrarily large primary defect survives when that order is a power of
+two. A small analytic character projection does not remove the integral
+congruence and lattice-index obligations.
+
+## Finite symmetry can leave all the relevant variance
+
+Exact unitary averaging removes the part of an operator outside the group
+commutant. It leaves variance in multiplicity spaces and imbalance between
+representation blocks. A locally irreducible type can therefore retain a
+large global isotropy defect. The source's defining character subgroup acts
+by scalars on the retained eigenspace and gives no improvement at all.
+See the [finite-symmetry theorem and sharp examples](../notes/finite-symmetry-energy.md).
+
+## Relative frame data do not determine absolute degree
+
+Scaling all source and target metrics together leaves normalized maps,
+their energies and operator heights unchanged while shifting their slopes.
+An exact ambient frame can also lose the necessary rank expansion after a
+target cut. The [frame-degree analysis](../notes/frame-degree-compatibility.md)
+states the determinant, short-image and exact-expansion conditions that
+would make a replacement valid, and explains why the present source does
+not supply an automatic elimination of the geometric estimate.
+
 ## Optimizing the length in the power argument is insufficient
 
 Suppose a second moment at length $H$ is bounded by $D^{1+\varepsilon}H$, while the number of useful $m$th-power indices has size $H^{1/m}/\log H$ and their individual error is at most a constant times $D H^{-1/m}$. The elementary extraction gives

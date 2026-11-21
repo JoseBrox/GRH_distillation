@@ -54,6 +54,8 @@ The main proof strategy has three connected stages:
 
 Several improvements make the third stage more economical. Positivity permits comparisons before character averaging; controlling an **average arithmetic discrepancy** can replace separate estimates for every translation. Exact covolume identities keep track of the contribution of discarded subspaces and integral indices. At the analytic endpoint, it is sufficient for the **total exponent loss to tend to zero**: the auxiliary construction and its constants may depend on the required accuracy, subject to the quantifiers proved in the manuscript.
 
+The final estimate may also be averaged over scale. A fixed local average preserves the zeros detected by the analytic argument, so signed arithmetic contributions can be combined before their positive part is bounded. On the geometric side, short integral sections remove a separate lower-height requirement. For the analytic norms, two exact energies of the same maps can replace many separate pairwise estimates. The remaining task is to prove the required bounds for those geometric quantities and energies.
+
 These are genuine reductions of what must be shown, **not proofs that the required arithmetic and geometric estimates hold**. The [technical proof map](blueprint/technical.svg) distinguishes established reductions, imported inputs and open obligations.
 
 ![Diagram of the principal mathematical dependencies and their current status](blueprint/overview.svg)

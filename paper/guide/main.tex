@@ -4,8 +4,7 @@
 \setmainfont{Latin Modern Roman}
 \usepackage{amsmath,amssymb,amsthm,mathtools,unicode-math}
 \setmathfont{Latin Modern Math}
-\usepackage{microtype,booktabs,array,enumitem,xcolor,fancyhdr,xurl,tikz}
-\usetikzlibrary{arrows.meta}
+\usepackage{microtype,enumitem,xcolor,fancyhdr,xurl}
 \usepackage[colorlinks,linkcolor=blue!45!black,urlcolor=blue!45!black,
  citecolor=blue!45!black]{hyperref}
 \hypersetup{pdftitle={RH and Dirichlet GRH: a short mathematical guide}}
@@ -34,14 +33,12 @@
 \maketitle
 \vspace{-1.8em}
 \begin{abstract}
-The purpose of this guide is to explain the problem and the proposed proof
-in a small number of steps. The analytic reductions below are proved;
-several arithmetic inputs are supplied by classical theorems. The central
-arithmetic construction is still incomplete in this reconstruction.
-In particular, this is a guide to a proof program, not a completed proof
-of the Riemann hypothesis. It explains what becomes simpler when only
-the ordinary Riemann hypothesis is sought, and where the difficulty survives.
-Detailed arguments are in the accompanying manuscript~\cite{reconstruction}.
+This guide explains RH, Dirichlet GRH and reductions of Levent Alp\"oge's
+announced argument~\cite{announcement}. The analytic implications below
+are proved; the central arithmetic construction remains incomplete in
+this reconstruction. The guide explains what becomes simpler for ordinary
+RH and what still needs proof. Detailed arguments are in the accompanying
+manuscript~\cite{reconstruction}.
 \end{abstract}
 
 \section{The two questions}
@@ -72,9 +69,7 @@ it is not induced from a smaller modulus. The general case reduces to
 primitive characters, since the extra Euler factors have no zeros in
 $\Rea s>0$~\cite{dlmf}.
 
-RH therefore has one analytic target; Dirichlet GRH has a family of
-targets. An auxiliary character used to prove RH is not an additional
-target unless the argument requires its own zero statement.
+RH has one analytic target; Dirichlet GRH has a family of targets.
 
 \section{A prime sum that detects zeros}
 
@@ -123,7 +118,7 @@ Put $G_1=G$ for the conductor-one character.
 
 The following theorem isolates an RH-only problem with a short proof.
 It requires a bound for every sufficiently large $x$. A later section
-gives a more flexible interval version used by the arithmetic construction.
+gives a weaker averaged target for the arithmetic construction.
 
 \begin{theorem}[One-sided zeta criterion]\label{rhcriterion}
 Suppose that for every $\delta>0$ there are finite constants
@@ -191,20 +186,11 @@ hypothesis remains the arithmetic problem. Neither the prime number
 theorem nor a fixed zero-free region reaching only to some
 $\theta>1/2$ supplies that hypothesis.
 
-For zeta, the same proof also works from an eventual lower bound
-$G(x)\ge-C_\delta x^{1/2+\delta}$: take
-$f=C_\delta x^{1/2+\delta}+G$ instead. Either direction may be chosen
-at each accuracy. Real nonvanishing of zeta is essential to this argument.
+\section{The smaller final analytic target}
 
-\section{The more flexible analytic target}
-
-The arithmetic construction need not control every sufficiently large
-real number. It is enough to control whole intervals $[Y,Y^b]$ for
-arbitrarily large $Y$, with $b>1$ fixed during each limiting argument.
-Such an interval has logarithmic length $(b-1)\log Y$, which tends to
-infinity; control at isolated large values of $x$ does not suffice.
-
-One can also retain auxiliary characters with positive coefficients.
+The arithmetic construction need not give a pointwise bound at every
+scale. A weighted average over long intervals suffices. One can also
+retain auxiliary characters with positive coefficients.
 For each positive integer $j$, let
 \[
  H_j(x)=\sum_{\nu\in\mathcal C_j}a_{j,\nu}\Rea G_\nu(x),
@@ -212,16 +198,27 @@ For each positive integer $j$, let
 \]
 where $\mathcal C_j$ is finite. For RH, require that the conductor-one
 character occurs. For a specified Dirichlet $L$-function, require its
-primitive character or its conjugate to occur. The completed interval
-criterion in the full manuscript says that
+primitive character or its conjugate to occur.
+
+First average nearby scales, if useful. For a fixed $h>0$, put
+\[
+ \mathcal A_hH(x)=\frac1h\int_0^hH(xe^v)\,dv,
+ \qquad \mathcal A_0H=H,
+ \qquad z_+=\max(z,0).
+\]
+Choose $b_j>1$, $h_j\ge0$, and $1/2<\theta_j<1$ with
+$\theta_j\to1/2$. The proved sufficient target is
 \begin{equation}\label{window}
- H_j(x)\le M_j x^{1/2+\delta_j}\quad(Y\le x\le Y^{b_j}),
- \qquad \delta_j>0,\quad\delta_j\longrightarrow0,
+ \int_Y^{Y^{b_j}}(\mathcal A_{h_j}H_j(x))_+
+              x^{-\theta_j}\,\frac{dx}{x}\le Y^\eta
 \end{equation}
-on arbitrarily late such whole intervals excludes every off-line zero
-of the retained target~\cite{reconstruction}. Here $0\le M_j<\infty$,
-$b_j>1$, the auxiliary characters and their weights may depend on $j$.
-They are fixed while the intervals for that $j$ go to infinity.
+for every $\eta>0$ and arbitrarily large $Y$, at each fixed $j$.
+The characters, their weights, $b_j$, $h_j$ and $\theta_j$ stay fixed
+while those intervals go to infinity. This excludes all off-line zeros
+of the retained target~\cite{reconstruction}. The condition says that
+the weighted integral grows more slowly than every positive power of
+the starting scale. A pointwise bound $H_j\le M_jx^{\theta_j}$ gives
+an integral of order $\log Y$ when $h_j=0$, so it is a special case.
 
 The reason positive coefficients are useful is exact. At a zero $\rho$,
 the residue of the transform of $H_j$ is
@@ -230,11 +227,24 @@ the residue of the transform of $H_j$ is
    \sum_{\nu\in\mathcal C_j}\frac{a_{j,\nu}}2
        \bigl(m_\nu(\rho)+m_{\bar\nu}(\rho)\bigr).
 \]
-Every multiplicity is nonnegative. A zero of a retained target gives
+Here $m_\nu(\rho)$ is the multiplicity of the zero of $L(s,\nu)$.
+All multiplicities are nonnegative. A zero of a retained target gives
 a nonzero sum, so the auxiliary terms cannot cancel its pole.
-The interval argument is longer than Lemma~\ref{landau}, but allows
-a weaker arithmetic premise. Its complete proof is kept in the
-full manuscript.
+The nearby-scale average also preserves these poles: it multiplies
+the Mellin transform, up to an entire function, by
+\[
+                         \frac{e^{hs}-1}{hs}.
+\]
+This multiplier has no zeros in $\Rea s>0$ and is positive for real
+$s>0$; at $h=0$ use its limiting value $1$. The longer interval form
+of the positivity argument then proves
+\eqref{window}'s implication; its proof is in the full manuscript.
+
+The order matters: combine signed contributions, average nearby scales,
+then take the positive part. A signed integral alone could hide large
+positive excursions. Isolated favorable values do not suffice either.
+A measurable, locally integrable arithmetic upper bound must hold almost
+everywhere on $[Y,e^{h_j}Y^{b_j}]$, for the same starting points $Y$.
 
 \section{How arithmetic is meant to bound the prime sum}
 
@@ -258,47 +268,73 @@ The slope $\mu$ is the logarithmic size per dimension. Lattices over
 number fields use the corresponding normalized arithmetic degree.
 
 Suppose an orthogonal rational projection $P$ satisfies $NP(L)\subset L$
-for an integer $N\ge1$. Put
-\[
- L_+=L\cap\operatorname{im}P,\quad
- L_-=L\cap\ker P,\quad
- g=\rk L_+>0,\quad b=\rk L_-,\quad r=g+b.
-\]
-Writing $I=[L:L_+\oplus L_-]$, one has the exact identity and bound
+for an integer $N\ge1$. Let $L_+=L\cap\operatorname{im}P$ and
+$L_-=L\cap\ker P$, with ranks $g>0$ and $b$, respectively.
+Put $r=g+b$ and $I=[L:L_+\oplus L_-]$. Then
 \begin{equation}\label{cut}
  g\mu(L_+)=r\mu(L)-b\mu(L_-)-\log I,
                    \qquad I\le N^{\min(g,b)}.
 \end{equation}
-Orthogonality gives the covolume identity. The quotient of $L$ by
-$L_+\oplus L_-$ embeds both in $N^{-1}L_+/L_+$ and in
-$N^{-1}L_-/L_-$, giving the index bound. When $b=0$, the discarded
-term is omitted and $I=1$.
+Orthogonality gives the identity; embeddings of the quotient into
+$N^{-1}L_\pm/L_\pm$ give the index bound. When $b=0$, omit its term
+and put $I=1$. Applying this to the actual cuspidal section lattice
+requires its prescribed metric and initial lower degree bound. The
+discarded degree must also be controlled: small discarded dimension
+alone does not bound its slope.
 
-Thus a lower slope bound for $L$ gives one for $L_+$ once the actual
-discarded degree and the integral index are controlled. Small discarded
-dimension alone is insufficient: its mean slope could be very large.
-An exponential estimate for the discarded fraction is one possible
-supplier, but suitable polynomial decay also suffices when the other
-terms have appropriately smaller growth.
-
-The missing geometric input is a bound for the specific lattice of
-cuspidal sections with its prescribed periods and metric. A general
-lattice identity such as~\eqref{cut} does not construct that lattice
-or prove its initial lower slope.
-
-The component calculation can now be stated with two averaged height
-bounds. For its actual positive component weights $w_Z$, put
+The actual short integral sections simplify the component calculation.
+If integral vectors of norm at most $e^L$, $L\ge0$, at every embedding span a
+component lattice $E_Z$ of rank $r_Z$ over its field, choosing a
+field basis from them gives
 \[
- \overline h=\frac{\sum_Zw_Zh_Z}{\sum_Zw_Z},\qquad
- h_- =\frac{\sum_Zw_Z\max(-h_Z,0)}{\sum_Zw_Z}.
+                        \deg E_Z\ge-r_ZL.
 \]
-A lower bound for $\overline h$ and an upper bound for $h_-$ suffice for
-the refined component estimate, once the stated section remainders
-are controlled. A separate lower height bound for every component is
-stronger than necessary. Negative heights cannot be hidden by a large
-positive average: their actual weighted contribution is retained.
-Descent from a covering also keeps the exact rank ratio and section
-error, avoiding an unnecessary doubling of that error.
+The determinant norm is at most $e^{r_ZL}$; the integral index only
+improves the degree. With the applicable section-count inequality and
+its size hypotheses, this bound controls very negative component heights.
+Thus the mean height $\overline h=\sum_Zw_Zh_Z/\sum_Zw_Z$,
+with the actual weights $w_Z>0$, suffices, with explicit
+section errors. A separate negative-height moment is unnecessary.
+
+The geometric mean also improves if one sums before estimating.
+Component degrees in the volume comparison cancel the same degrees
+in the weights $w_Z$. Equal component volumes then let the mean-volume
+theorem control exactly the required weighted mean height. This avoids
+an extra change-of-weights loss. The genuine mean-volume and section
+remainder bounds still have to hold uniformly for the growing family.
+Descent from a covering retains the actual rank ratio and section error.
+
+\subsection*{Two energies for all the maps}
+
+Let $T_i$ be the actual normalized complex maps, with source dimensions
+$r_i$, total dimension $R=\sum_i r_i>0$ and common target dimension $D>0$.
+Put
+\[
+ Q=\sum_iT_iT_i^*,\quad M=\operatorname{tr}Q,\quad
+ \Delta=\sum_i\|T_i^*T_i-I\|_{\mathrm{HS}}^2,\quad
+ V=\left\|Q-\frac MD I\right\|_{\mathrm{HS}}^2.
+\]
+Here the squared Hilbert--Schmidt norm is the sum of the squared
+absolute values of matrix entries in orthonormal bases. The first
+energy measures departure from isometries; the second measures how
+unevenly their images fill the target. Since $M\ge R-\sqrt{R\Delta}$,
+the condition $\Delta<R$ ensures $M>0$, and
+the exact errors entering the slope comparison are
+\[
+                         e=\Delta/R,\qquad \xi=DV/M^2.
+\]
+Thus two aggregate estimates can replace separate inequalities for
+every pair of maps. In a space of square-integrable functions, $V$
+is the double integral of $|K-(M/D)P|^2$, where $K$ is the kernel of
+$Q$ and $P$ the kernel of orthogonal projection onto the common target.
+This centered global theta energy, with its exact measure and positive
+normalizing constants, is the estimate still needed.
+
+The period identity identifies these operators with the integral maps
+in one common target basis, under its stated hypotheses. After restricting
+the source spaces, retain their actual dimensions and energies in the
+denominators. Small unweighted mean errors cannot replace the required
+height-weighted costs or justify discarding a small denominator.
 
 \subsection*{Average the losses before bounding them}
 
@@ -307,29 +343,20 @@ For a finite abelian group and a subgroup $B$, character orthogonality gives
  \frac1{|B|}\sum_{u\in B}\psi(u)
  =\begin{cases}1,&\psi|_B=1,\\0,&\psi|_B\ne1.\end{cases}
 \]
-This removes unwanted character contributions exactly. Applying it to
-the arithmetic comparison gives an inequality of the form
+This removes unwanted character contributions exactly. The resulting
+comparison has the form
 \begin{equation}\label{average}
- H(x)\le R_{\mathrm{proj}}(x)
-       +\frac{2\bigl(\overline E(x)+R_{\mathrm{trans}}(x)\bigr)}
-                    {n_T m b_0 d_0}.
+                 H_j(x)\le B_j(x)=D_j(x)+C_j(x)+R_j(x).
 \end{equation}
-Here $n_T$ counts the chosen labels, $m$ counts the maps,
-$b_0>0$ is the common weight scale, and $d_0>0$ is the selected density.
-The quantity $\overline E$ is the arithmetic discrepancy averaged over
-translations. The two
-remainders are explicit finite sums: one measures the error in the
-chosen character projection, the other the replacement of the original
-weights by their principal values. The full statement defines every
-term and proves~\eqref{average}~\cite{reconstruction}.
-
-Only an upper bound for the total normalized loss is needed. Negative
-discrepancies may cancel positive ones. The same principle improves the
-comparison of the complex frames defining the map norms: average their
-actual errors before estimating the nonlinear terms. This retains the
-correlation between a frame's error, its source slope spread and its
-target height gap. It can cost much less than a common worst-case bound,
-but the required moments still concern the same maps and metrics.
+Here $D_j$ is the normalized arithmetic discrepancy averaged over
+translations, $C_j$ the signed companion contribution, and $R_j\ge0$
+the explicit transfer errors. All three must come from the same data.
+It suffices to put $B_j$ in place of $H_j$ in~\eqref{window}, retaining
+its signs until after the local average. The map energies can likewise
+be bounded jointly over the construction and the scale. Their correlation
+with source slope spread, target height gap and retained ranks survives
+this averaging; a separate worst-case estimate at every scale is stronger
+than necessary.
 
 \section{The preferred proof structure}
 
@@ -350,38 +377,17 @@ Identify the lattice with its prescribed metric, prove its lower slope,
 and control the discarded-degree and index terms in~\eqref{cut}.
 \end{enumerate}
 
-Classical theorems now supply the required Galois representations~\cite{blggt}.
-Their weights, local correspondences
-and period normalizations have been compared with the required data.
-The separate construction of those representations by stable theta
-lifting can therefore be omitted from the preferred argument. Theta
-identities and geometric estimates used elsewhere retain their own roles.
-
-\begin{center}
-\begin{tikzpicture}[>=Stealth,
- every node/.style={draw,rounded corners,align=center,font=\small,
-                   text width=5.5cm,minimum height=1cm},
- open/.style={fill=red!6,draw=red!55!black},
- proved/.style={fill=green!7,draw=green!40!black}]
- \node[open] (geom) at (-3.2,0) {Geometric lower slope\\and discarded-degree bound};
- \node[open] (maps) at (3.2,0) {Compatible integral maps,\\divisibility and global norms};
- \node[open] (budget) at (0,-1.6) {Averaged prime-sum bound\\with loss tending to zero};
- \node[proved] (criterion) at (0,-3.2) {Proved analytic implication:\\the bound excludes off-line zeros};
- \draw[->] (geom)--(budget);
- \draw[->] (maps)--(budget);
- \draw[->] (budget)--(criterion);
-\end{tikzpicture}
-\end{center}
-Red boxes are unresolved mathematical obligations. The green implication
-is proved under its stated premise. All the arithmetic and geometric
-objects entering a box must be compatible; separately chosen objects
-with unrelated good estimates cannot be combined.
+Classical theorems supply the required Galois representations, with the
+necessary local identifications~\cite{blggt}. Their separate construction
+by stable theta lifting can be omitted; other uses of theta identities
+retain their roles. The three groups of data above must form one compatible
+construction. Once their combined bound meets~\eqref{window}, the proved
+analytic implication excludes the off-line zeros.
 
 \section{What becomes simpler for ordinary RH?}
 
-The analytic target becomes just $G$. Theorem~\ref{rhcriterion} uses
-only zeta, its functional equation and positivity. The arithmetic
-comparison still needs auxiliary characters and growing spaces.
+The analytic target becomes just $G$; the arithmetic comparison still
+needs auxiliary characters and growing spaces.
 
 \subsection*{A positive kernel removes the symmetry requirement}
 
@@ -390,13 +396,12 @@ The thick weights lie in $[b_0,b_0+r]$, where $r$ is small compared with
 $b_0$. Instead of making all weight distributions invariant, compare
 only the thick weights with their common lower endpoint $b_0$.
 
-The crucial fact is positivity. At each prime power, the complete
+The crucial fact is positivity. At each prime power $n$, the complete
 character sum in the arithmetic identity is a nonnegative residue-class
 count, including at ramified primes. Its contribution as a function of
 a weight is a sum of nonnegative multiples of
 \[
-                           (a/n-w)_+,
-                 \qquad z_+=\max(z,0),
+                           (a/n-w)_+,\qquad a>0,
 \]
 together with $a\log w$ and a constant. Moving a thick weight upward
 from $b_0$ therefore has a controlled one-sided cost. The constants
@@ -427,15 +432,18 @@ coefficient is always $-1$; the total coefficient is zero. Thus these
 projections alone cannot produce a positive multiple of zeta.
 Only an upper bound for the single signed companion $C_{q,d}$ is needed.
 
-Let $n_T$ be the number of top labels and put
-$k=n_Tmb_0d_0/2>0$, using the same normalization as~\eqref{average}.
-Under the stated size conditions, $|a_t/b_0-x|\le1$ and
+\begin{samepage}
+Let $n_T$ count the top labels, $m$ the stages and $d_0>0$ the selected
+density, and put $k=n_Tmb_0d_0/2>0$.
+For positive sampling parameters $a_t$ under the stated size conditions,
+$|a_t/b_0-x|\le1$ and
 $d_0\ge x^{-\varepsilon}$, the preceding comparison gives
 \begin{equation}\label{rhbudget}
  G(x)\le\frac{\overline E(x)}k
        +\frac1{n_T}\sum_t C_{q,d}(a_t/b_0)
        +O\!\left((1+\log x)^2+x^{-1+\varepsilon}\right).
 \end{equation}
+\end{samepage}
 Here the thin-sample bound uses the uniform quasi-RH premise, and the
 constant is fixed at each accuracy before $x$ grows. The full proof
 retains the explicit error constants. Centering only the zeta term
@@ -443,33 +451,18 @@ at $x$ costs the logarithmic error; no nonprincipal derivative bound
 is needed for that step.
 
 The simultaneous quadratic selection supplies a square-root-scale
-bound for the companion under the same uniform premise, on intervals
-containing all the samples. The next task is therefore to bound the
-normalized discrepancy $\overline E/k$, or its sum with the signed
-companion, for one compatible arithmetic and geometric construction.
+companion bound under the same uniform premise, on intervals containing
+all samples. The logarithmic and decaying errors in~\eqref{rhbudget}
+have bounded weighted integrals when $\varepsilon<1$. Thus the
+remaining target is~\eqref{window} for the locally averaged positive
+part of $\overline E/k$ plus the signed companion. A separate bound
+for each summand is sufficient but unnecessary.
+
 The auxiliary primes may vary with $x$, since the analytic target in
-\eqref{rhbudget} is always the same zeta sum. The estimate must hold
-on whole intervals as in~\eqref{window}, with exponent loss tending
-to zero; isolated favorable values do not suffice.
-
-\begin{center}
-\begin{tabular}{@{}p{.39\linewidth}p{.54\linewidth}@{}}
-\toprule
-Simplification for RH & Consequence \\
-\midrule
-One analytic target & The short zeta criterion applies. \\
-Only four main-scale characters & One signed quadratic companion
-remains. \\
-Thick weights fixed before averaging & Symmetry is unnecessary. \\
-Thin samples at large arguments & Uniform quasi-RH controls them. \\
-One averaged discrepancy & Combine geometric and map bounds. \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-This gives a shorter proved reduction for RH. A much shorter complete
-proof has not yet been obtained: the nonzero integral maps and the
-uniform arithmetic and geometric estimate still have to be supplied.
+\eqref{rhbudget} is always the same zeta sum. The comparison must be
+valid on the expanded intervals used by the local average. Its positive
+part, after combining terms and averaging, must satisfy~\eqref{window}.
+One compatible arithmetic and geometric construction must supply it.
 
 \section{How the newer zero-free results help}
 
@@ -481,21 +474,14 @@ for each fixed character with uncontrolled constants would not suffice.
 When this same hypothesis excludes a real exceptional zero, a separate
 exclusion of that zero is unnecessary.
 
-These inputs do not by themselves make $\delta_j$ in~\eqref{window}
-tend to zero. Excluding real exceptional zeros is also a different
-assertion from excluding every nonreal zero to the right of one half.
-For the zeta-only proof above, real nonvanishing follows directly
-from the alternating series. If quadratic auxiliary functions remain
-in the arithmetic construction, their own estimates must still be supplied.
+These inputs alone do not let $\theta_j$ tend to one half. Excluding
+real exceptional zeros does not exclude every off-line nonreal zero.
+Real nonvanishing of zeta already follows from the alternating series;
+the quadratic auxiliaries still need their stated uniform estimates.
 
-The next mathematical task is to produce compatible data for which
-the right side of~\eqref{rhbudget} meets the interval criterion
-\eqref{window}. The two geometric height moments, actual section
-remainders, discarded degrees and integral indices, nonvanishing and
-divisibility of the maps, and global norm estimates are concrete parts
-of that task. Their combined normalized loss must tend to zero in
-exponent. The more general Dirichlet target retains its additional
-character quantifiers; its finite-error comparison is~\eqref{average}.
+The remaining task is a compatible construction whose combined,
+normalized geometric and theta-energy bounds meet~\eqref{window}.
+Dirichlet GRH also retains the character quantifiers in~\eqref{average}.
 
 \begin{thebibliography}{9}
 \bibitem{dlmf}

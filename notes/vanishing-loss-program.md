@@ -1,5 +1,17 @@
 # A weaker sufficient target: vanishing total loss
 
+## Current preferred formulation
+
+The [scale-averaged criterion](scale-averaged-criterion.md) now contains this
+pointwise sufficient formulation as a special case. A weighted positive-part
+integral suffices, and fixed local logarithmic averaging preserves every
+detecting pole. Its combined signed arithmetic budget can retain cancellation
+between nearby scales. The old fixed- and varying-family statements are
+consolidated in the manuscript's stronger theorem, with their labels retained.
+The pointwise constructions and counterexamples below remain valid suppliers
+and limits; their all-scale bounds are not intrinsic requirements of the final
+analytic endpoint.
+
 ## Result
 
 The existing one-sided analytic criterion yields a strictly more flexible

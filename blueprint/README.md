@@ -64,7 +64,7 @@ choice. It audits incoming references and implicit formula links, including
 the mixed status of recovered sections 16 and 17. The arithmetic complex and
 the necessary class-number and unit arguments remain in the preferred route.
 
-The earlier archived source inventory is now supplemented by a fresh complete
+The archived source inventory is supplemented by the preserved complete
 local-source hash check and import traversal. The
 [source certificate](../certificates/lean-source-inventory.json) records
 175,187 modules, 753,261 local import edges, full reachability from Main and
@@ -82,9 +82,20 @@ the previously proposed exact symmetry, as proved by the
 and transport results remain alternatives for other constructions.
 The current RH diagram therefore places the remaining emphasis on the
 normalized averaged discrepancy and its compatible geometric inputs.
-The [new geometric reductions](../notes/rh-geometric-combination.md)
-preserve the section-error coefficient, use two weighted height moments,
-and retain correlations in the refined frame cost.
+The [direct degree argument](../notes/geometric-degree-frontier.md)
+uses short integral sections and the exact volume weights to remove an
+independent negative-height moment. A genuine mean-volume and section-rank
+estimate remains. The [energy comparison](../notes/averaged-theta-energy.md)
+uses exact aggregate energies of the same maps, retaining the actual
+normalizers, target basis and rank losses.
+
+The [scale-averaged criterion](../notes/scale-averaged-criterion.md) permits
+one weighted positive-part integral of the combined signed budget after
+fixed local logarithmic averaging. Its slightly expanded windows must be
+the same ones on which the arithmetic comparison holds. Separate pointwise
+bounds remain sufficient, but are not intrinsic to the final criterion.
+A separate companion estimate is likewise an optional supplier; its signed
+contribution may stay inside the combined budget.
 
 The final comparison must use **compatible integral theta maps at every required scale**:
 the lattices, measures, divisibility, nonvanishing and analytic norms must refer

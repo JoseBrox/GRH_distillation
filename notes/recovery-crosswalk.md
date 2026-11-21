@@ -1,5 +1,16 @@
 # Recovery crosswalk and continuation index
 
+For the current mathematical route, begin with
+[the continuation checkpoint](current-state.md). The active analytic
+condition is the [weighted scale average](scale-averaged-criterion.md).
+The preferred geometric reduction uses
+[short sections and one mean volume](geometric-degree-frontier.md);
+the preferred norm interface uses [aggregate energies](averaged-theta-energy.md)
+and the [centered slope comparison](frame-degree-compatibility.md).
+The earlier two-height-moment and pointwise conditions below remain
+sufficient alternatives. The recovery counts record preservation,
+not the current number of independently completed proof obligations.
+
 The three supplied attachments are already preserved byte for byte in
 [the recovery archive](../archive/recovered-2026-11-21/README.md).
 Their ZIP contains 622 regular files; all 621 entries in its internal

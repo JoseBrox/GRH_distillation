@@ -232,6 +232,10 @@ def main():
 
     result = {
         "status": "PASS",
+        "note": {"path": "notes/averaged-theta-energy.md",
+                 "sha256": hashlib.sha256((ROOT / "notes/averaged-theta-energy.md").read_bytes()).hexdigest()},
+        "script": {"path": "scripts/check_averaged_theta_energy.py",
+                   "sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},
         "scope": "Exact finite rational matrix and scalar algebra plus pinned source-byte checks; no global theta-energy supplier, construction, Lean build or kernel replay.",
         "source": {"repository": "jsmorph/rh", "commit": COMMIT, "files": evidence},
         "checks": {"matrix_families": matrix_cases,

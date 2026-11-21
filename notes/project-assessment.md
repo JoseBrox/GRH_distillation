@@ -42,8 +42,9 @@ an obstruction to this particular reconstruction.
 This uncertainty is specific to proof closure. The next research tasks are
 concrete and can be completed or rejected one by one:
 
-1. Supply the actual mean-volume and explicit section-rank/surplus estimate
-   for the prescribed lattices and metrics. The new short-section argument
+1. Supply the normalized tower-intersection bound and prescribed norm/counting
+   comparison that give the actual mean volume, then the separate finite
+   section-rank/surplus estimate. The new short-section argument
    removes a separate negative-height hypothesis.
 2. Supply the centered global theta-energy estimate with the actual positive
    normalizers and common target. The new scalar-energy interface avoids
@@ -60,11 +61,13 @@ especially unstable unit of work.
 
 ## A provisional page budget
 
-The last fully integrated checkpoint before these new results had a
-seven-page didactic guide, a 21-page analytic companion and a 573-page
-working manuscript. These were measured PDF lengths. The long manuscript
-preserves detailed arguments and alternatives; it is not a finished short
-paper and its length is not a lower bound for one.
+The current compiled artifacts have a seven-page didactic guide, a
+21-page analytic companion and a 579-page working manuscript. These
+are measured PDF lengths. The long manuscript preserves detailed arguments
+and alternatives; it is not a finished short paper and its length is not
+a lower bound for one. The current integration adds proved scale, energy
+and degree reductions while shortening the organizational account of the
+remaining tasks; it does not claim that the full manuscript is already short.
 
 For planning the eventual fully argued papers, a **very low-confidence
 editorial budget**, conditional on completing and substantially compressing

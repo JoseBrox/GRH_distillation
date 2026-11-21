@@ -69,10 +69,11 @@
       },
       {
         "id": "geometry",
-        "title": "Geometric lower slope and discarded-degree budget",
+        "title": "Tower intersection and section-rank cost",
         "status": "open",
         "evidence": [
-          "notes/covolume-defect-budget.md"
+          "notes/geometric-degree-frontier.md",
+          "notes/mean-volume-supplier.md"
         ]
       },
       {
@@ -94,18 +95,18 @@
       },
       {
         "id": "bound",
-        "title": "Required prime-sum bound",
+        "title": "Averaged prime-sum budget",
         "status": "open",
         "evidence": [
-          "sec:remaining"
+          "thm:scale-averaged-criterion"
         ]
       },
       {
         "id": "criterion",
-        "title": "One-sided zero criterion",
+        "title": "Scale-averaged zero criterion",
         "status": "written",
         "evidence": [
-          "sec:one-sided"
+          "thm:scale-averaged-criterion"
         ]
       },
       {
@@ -318,21 +319,21 @@
       },
       {
         "id": "norms",
-        "title": "Archimedean norm bounds\nfor the same maps",
+        "title": "Centered global theta energy\nFor the same integral maps",
         "status": "open",
         "evidence": [
-          "paper/sections/recovered/96-sec-remaining.tex"
+          "cs-averaged-theta-energy",
+          "notes/averaged-theta-energy.md"
         ]
       },
       {
         "id": "slope",
-        "title": "Weighted slope comparison\nActual frame and lower-quotient costs",
+        "title": "Weighted slope comparison\nExact aggregate frame energies",
         "status": "written",
         "evidence": [
-          "cs-slope",
-          "cs-combination",
-          "cs-weighted-lower",
-          "cs-average-frame"
+          "cs-exact-energy",
+          "cs-retained-energy",
+          "cs-refined-combined-budget"
         ]
       },
       {
@@ -347,19 +348,19 @@
       },
       {
         "id": "bound",
-        "title": "Positive prime-sum bounds\nVanishing total exponent loss",
+        "title": "Combined signed arithmetic budget\nPositive-part window integral",
         "status": "open",
         "evidence": [
-          "eq:remaining-estimate"
+          "cor:averaged-arithmetic-budget"
         ]
       },
       {
         "id": "criterion",
-        "title": "Mellin transform and one-sided criterion",
+        "title": "Scale-averaged zero criterion\nLocal averaging preserves poles",
         "status": "written",
         "evidence": [
-          "lem:positive-family",
-          "thm:interval-grh"
+          "thm:scale-averaged-criterion",
+          "lem:logarithmic-averaging"
         ]
       },
       {
@@ -414,11 +415,12 @@
       },
       {
         "id": "geometry",
-        "title": "Geometric section lattices\nActual mean degree and remainder bounds",
+        "title": "Tower intersection and section-rank cost\nPrescribed lattices and metrics",
         "status": "open",
         "evidence": [
-          "notes/lean-global-inputs.md",
-          "notes/covolume-defect-budget.md"
+          "geometric-one-mean",
+          "geometric-signed-raw-degree",
+          "notes/mean-volume-supplier.md"
         ]
       },
       {
@@ -702,11 +704,13 @@
       },
       {
         "id": "rh_data",
-        "title": "Compatible arithmetic and geometry\nBound the normalized average",
+        "title": "Compatible maps and geometry\nMean volume, ranks and centered energy",
         "status": "open",
         "evidence": [
-          "notes/rh-direct-transfer.md",
-          "notes/rh-geometric-combination.md"
+          "notes/geometric-degree-frontier.md",
+          "notes/averaged-theta-energy.md",
+          "notes/mean-volume-supplier.md",
+          "notes/rh-centered-frame-bridge.md"
         ]
       },
       {
@@ -719,31 +723,28 @@
       },
       {
         "id": "rh_companion",
-        "title": "Quadratic companion and thin samples\nBounds from uniform quasi-RH",
+        "title": "Separate quadratic companion bound\nAn optional supplier under uniform QRH",
         "status": "written",
         "evidence": [
-          "paper/sections/recovered/11-qs-section.tex",
+          "qs-selection",
           "notes/rh-direct-transfer.md"
         ]
       },
       {
         "id": "rh_bound",
-        "title": "Zeta prime-sum estimate\nTotal exponent loss tending to zero",
+        "title": "Signed discrepancy and companion\nWeighted positive-part integral",
         "status": "open",
         "evidence": [
-          "notes/rh-direct-transfer.md",
-          "notes/rh-geometric-combination.md"
+          "rh-averaged-final"
         ]
       },
       {
         "id": "rh_criterion",
-        "title": "One-sided zeta criteria\nEventual bound or whole intervals",
+        "title": "Scale-averaged zeta criterion\nFixed local averaging preserves poles",
         "status": "written",
         "evidence": [
-          "notes/rh-specialization.md",
-          "paper/guide/main.tex",
-          "rh-eventual-one-sided",
-          "rh-eventual-vanishing-loss"
+          "thm:scale-averaged-criterion",
+          "notes/scale-averaged-criterion.md"
         ]
       },
       {
@@ -773,10 +774,6 @@
         "rh_transfer"
       ],
       [
-        "rh_companion",
-        "rh_transfer"
-      ],
-      [
         "rh_data",
         "rh_bound"
       ],
@@ -799,6 +796,10 @@
       [
         "rh_criterion",
         "rh_goal"
+      ],
+      [
+        "rh_qrh",
+        "rh_transfer"
       ]
     ],
     "ranks": [
@@ -831,6 +832,6 @@
       "max_nodes_per_rank": 3,
       "wrap_columns": 34
     },
-    "edge_semantics": "Curated sufficient interfaces. The direct eventual zeta criterion can also be used if its bound is proved independently of this arithmetic branch. Green means a written conditional reduction; the red arithmetic premise remains unproved."
+    "edge_semantics": "Curated mathematical interfaces. A separate companion bound is an optional supplier of the combined signed budget; uniform QRH also supplies the all-character thin estimate in the direct transfer. Green implications retain their stated inputs."
   }
 }

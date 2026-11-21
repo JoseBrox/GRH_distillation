@@ -2,6 +2,48 @@
 
 These are mathematical reductions and comparisons. Their proofs are in [the paper](../paper/main.pdf); none establishes the missing arithmetic input for a complete proof of GRH.
 
+## Averaging the final estimate over scale
+
+The final analytic argument needs only a weighted positive-part integral on
+arbitrarily late multiplicative intervals. The combined signed arithmetic
+budget may first be averaged over a fixed nearby range of scales: the
+transform of this averaging operator has no zero in the detecting half-plane.
+Thus cancellation may be retained before taking the positive part.
+The arithmetic comparison and its integral bound must use the same expanded
+intervals. See the [proved criterion](../notes/scale-averaged-criterion.md).
+
+## Section degrees from one mean volume
+
+Short integral sections already give a lower degree bound for each of the
+actual component lattices. Combining that bound with Hilbert–Samuel removes
+the separate negative-height moment. Summing the exact component comparison
+first cancels its geometric weights, and the raw signed version leaves an
+explicit section-rank cost with no component heights in the remainder.
+The genuine mean-volume and rank-cost estimates remain to be supplied.
+See the [direct degree proof](../notes/geometric-degree-frontier.md).
+
+The [precise mean-volume supplier](../notes/mean-volume-supplier.md)
+reduces that input to a total arithmetic intersection bound and the
+prescribed norm and section-counting comparison. Equal component volumes
+make the final averaging exact. An elementary prime-sum estimate reduces
+the additive finite-place allowance from 120 to 80. The auxiliary
+volume limit fixes each datum first, so it needs no uniform finite
+convergence threshold; the intersection estimate and the separate
+finite section-degree estimate still require their stated control.
+
+## Exact energies and centered frame comparisons
+
+Two aggregate energies of the same normalized maps can supply the frame
+conditions without a separate inequality for every word pair. The actual
+energy lost under restriction gives a sharper exact compression formula.
+An optimal common scalar normalization removes an irrelevant common Gram
+scale. The centered slope comparison gives zero error for a perfectly
+balanced frame with no target cut; for imperfect data it can be combined
+with the earlier refined bound by taking the smaller estimate.
+These results do not supply the global energy bound or an absolute geometric
+degree. See the [energy identities](../notes/averaged-theta-energy.md) and
+[centered comparison and compatibility limits](../notes/frame-degree-compatibility.md).
+
 ## Recovering a matrix from one scalar operator
 
 Let D be the full Capelli differential operator, and let Z be multiplication

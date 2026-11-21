@@ -22,11 +22,15 @@ with exponent arbitrarily close to one half suffices; an eventual lower bound
 of the opposite sign also suffices. The constants and thresholds can depend
 on the exponent. The guide gives the short positivity proof.
 
-The more flexible route needs an upper bound on arbitrarily late whole
-intervals from Y to Y raised to a fixed power greater than one. For each
-accuracy the multiplicative constant and interval shape are fixed before Y
-varies. Only the total exponent loss must tend to zero. The analytic function
-remains the zeta sum even when the auxiliary primes change.
+The more flexible route controls a weighted positive-part integral over
+arbitrarily late whole intervals from Y to Y raised to a fixed power greater
+than one. The combined signed budget may first be averaged over a fixed
+nearby range of scales: this logarithmic average preserves every detecting
+pole. A pointwise upper bound is a stronger sufficient supplier. At each
+accuracy the interval shape and averaging width are fixed before Y varies,
+and the arithmetic comparison holds almost everywhere on the same slightly
+expanded intervals. Only the total exponent loss must tend to zero. The
+analytic function remains the zeta sum even when auxiliary primes change.
 
 ## The preferred arithmetic comparison
 
@@ -52,10 +56,13 @@ The manuscript's simultaneous quadratic selection bounds that companion on
 the required sample interval, conditional on its stated uniform quasi-RH
 input. Sample intervals must include the short endpoint shifts.
 
-What remains is an upper bound for the **normalized averaged arithmetic
-discrepancy** of the same integral maps and geometric objects. One can also
-bound its sum with the signed companion directly, retaining cancellation.
-This is an estimate to prove, not a completed construction.
+What remains is the **weighted positive-part integral of the locally
+averaged signed discrepancy and companion**, for the same integral maps and
+geometric objects. Separate discrepancy and companion bounds are sufficient
+but not necessary. The transfer and centering errors already have finite
+weighted tail integrals under the stated source size conditions. The
+[precise criterion](../notes/scale-averaged-criterion.md) retains the common
+windows and measurability hypotheses. Its arithmetic bound is still to prove.
 
 ## What the specialization removes
 
@@ -74,21 +81,44 @@ The source construction has not become a fixed-dimensional argument.
 
 ## The geometric budget
 
-The new reductions keep the actual Hermitian metrics and rank weights.
-Covering descent preserves the coefficient of the section-degree error,
-instead of doubling it. The component estimate can use a lower weighted
-mean height and an upper weighted negative-height moment; a pointwise lower
-height bound is only one way to obtain those two quantities. The total
-Hilbert–Samuel remainder and its excess-rank and twist costs are retained.
+The reductions keep the actual Hermitian metrics and rank weights.
+Covering descent preserves the coefficient of the section-degree error.
+The [direct component argument](../notes/geometric-degree-frontier.md)
+sums the degree-weighted volume comparison first. Short integral sections
+already give a lower degree bound for the same lattices, eliminating the
+separate negative-height moment. The raw form retains signed section-rank
+and twist costs with no heights in its remaining remainder.
 
-The refined frame estimate can be averaged before estimating its nonlinear
-terms. This preserves the correlation between errors, source slope spread
-and target height. Small unweighted error means are insufficient, and the
-denominators associated with discarded rank and diagonal defects remain.
+The [frame energies](../notes/averaged-theta-energy.md) are exact aggregate
+quantities of the same normalized maps. A centered global kernel estimate
+can supply them without separate inequalities for every pair of words.
+The actual retained energy controls compression, and subsequent averages
+preserve correlations with source slope spread and target height.
+Small unweighted error means are insufficient; the retained-rank and
+diagonal-error denominators remain.
+
+The [centered slope comparison](../notes/frame-degree-compatibility.md)
+has zero loss for a perfect full frame, an exact optimum common
+normalization, and a sharp cost for the discarded target coordinates.
+Use the minimum with the earlier valid bounds: the new square-root
+energy term need not be smaller. The
+[actual construction comparison](../notes/rh-centered-frame-bridge.md)
+permits this replacement for the same maps and in the correct units.
+It does not delete the separate counting, divisor, initial section or
+quotient losses; all four current envelope shapes retain those suppliers.
 
 These improvements simplify the sufficient bounds. They do not prove the
-uniform height, section-remainder or theta-frame estimates for the actual
-growing family.
+mean-volume, section-rank or centered global theta-energy estimates for
+the actual growing family.
+
+Four retained characters do not bound the integral splitting index: the
+[frontier audit](../notes/rh-construction-frontier.md) gives an exact example
+with quotient consisting of four copies of the integers modulo the growing
+group order. Nor does local irreducibility remove global multiplicity-space
+energy; the [finite-symmetry analysis](../notes/finite-symmetry-energy.md)
+identifies the remaining variance and the actual target-stability condition.
+An exact paired-construction comparison can cancel thin samples, but no
+compatible paired supplier or signed relative estimate has been supplied.
 
 ## Why the earlier symmetry route is optional
 
@@ -108,13 +138,17 @@ the relevant character phase depends on their difference and is unchanged.
 
 ## Next mathematical work
 
-1. Prove the weighted geometric height and section-remainder bounds for the
-   actual cuspidal lattices, then carry their signed errors through the sharper
-   determinant comparison.
+1. Prove the normalized total intersection bound and prescribed norm/counting
+   comparison identified by the [mean-volume supplier](../notes/mean-volume-supplier.md).
+   Equal component volumes then give the mean exactly. Supply the separate
+   finite section-rank costs, using short sections to avoid a separate
+   negative-height input, and carry signed errors through determinant descent.
 2. Supply nonzero integral theta maps, sharp finite-prime divisibility,
-   normalized global identities and archimedean estimates for those same maps.
+   normalized global identities and centered energy estimates for those same
+   maps, with positive normalizers and the same common target basis.
 3. Complete the remaining cohomological estimates for the growing auxiliary
-   fields and bound the resulting normalized average throughout each window.
+   fields and bound the combined normalized positive-part scale integral on
+   the same expanded cofinal windows.
 
 The [full proof program](full-proof-program.md) retains the general Dirichlet
 target and every surviving compatibility condition. The RH case is a

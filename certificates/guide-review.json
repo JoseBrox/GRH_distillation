@@ -1,27 +1,43 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "date": "2026-11-21",
-  "scope": "Current seven-page didactic guide: ordinary mathematical exposition, preferred positive-kernel comparison, and explicit incomplete arithmetic construction.",
+  "scope": "Current seven-page organizational guide: weighted positive-part scale criterion, one geometric mean through short integral sections, exact aggregate theta energies, and explicit compatible-construction obligations.",
   "source": {
     "path": "paper/guide/main.tex",
-    "sha256": "42643b085251a31770b6b2a56365f5dd560da61bd6ff3c37057c9d362da275a5"
+    "sha256": "e27bf5e5a35819de7cd67ff39b185b94fddcf02b689de8efd84ef9c41cc9b7f0"
   },
   "pdf": {
     "path": "paper/guide/main.pdf",
-    "sha256": "209fbbf056d0d8ba75f6d8afe3810e188ac5e5bcb77b96720df5689de2137f02",
+    "sha256": "405478c6df740f525c089f232f76151b0267da8add7ab46bc0d25a063d963fd1",
     "pages": 7
   },
+  "readme": {
+    "path": "paper/guide/README.md",
+    "sha256": "25debd2cb33ebed85c1b24de1f0b1d1745bcdd9a3f608ea3c7cc6ad0e28e06c3"
+  },
   "page_limit": 12,
+  "typography": {
+    "body_type_pt": 11,
+    "paper": "A4",
+    "margin_mm": 24,
+    "formatting_reduced_to_fit": false
+  },
   "previous_review": {
-    "source_sha256": "8c163b83eeea2c74db6884692e06776244b555099bb40f9ae09619a5f16bfa13",
-    "pdf_sha256": "88f6e9407e57d942cd18a74812f5bac3658c2ce9ef7cde2a4c2255af983d0aa6",
-    "scope": "Earlier guide snapshot; its analytic and geometric reviews remain evidence for unchanged arguments, not a visual review of the current PDF."
+    "source_sha256": "42643b085251a31770b6b2a56365f5dd560da61bd6ff3c37057c9d362da275a5",
+    "pdf_sha256": "209fbbf056d0d8ba75f6d8afe3810e188ac5e5bcb77b96720df5689de2137f02",
+    "scope": "Earlier guide snapshot. Its review of the unchanged compact analytic proof remains applicable; its visual review does not cover the current PDF."
+  },
+  "analytic_proof_preservation": {
+    "status": "PASS",
+    "scope": "The one-sided zeta theorem, positivity lemma, and both complete proofs are byte-identical to the preceding repository version.",
+    "block_sha256": "285b95021916cdfce582efe208ff6ba81a87a1b0535e628c7481abb7915c044d"
   },
   "independent_mathematical_reviews": {
-    "unchanged_analytic_criterion": "PASS: endpoint reviewer checked Mellin residues, Taylor-Tonelli positivity proof, eventual RH implication, and the separate window formulation.",
-    "new_direct_comparison": "PASS: independent source, transport and geometric reviewers checked the detailed RH comparison, its primitive characters and ramified terms, thick and thin normalization, source substitutions and general fixed-quotient extension.",
-    "new_geometric_budget": "PASS: independent reviews of determinant descent, two height moments, correlated refined frame bound and source-compatible scalar normalization.",
-    "summary_scope": "Root compared the current didactic exposition with the reviewed detailed notes and manuscript; the source reviewer inspected all final guide pages for consistency and rendering."
+    "unchanged_analytic_criterion": "Preserved earlier independent PASS for Mellin residues, Taylor-Tonelli positivity argument and eventual RH implication; exact proof block checked unchanged.",
+    "scale_averaging": "The guide summarizes the reviewed theorem in notes/scale-averaged-criterion.md: fixed character family and averaging width at each accuracy, positive part, cofinal multiplicative windows, nonvanishing Mellin multiplier, measurable locally integrable budgets on the same expanded windows.",
+    "geometric_mean": "The guide summarizes the independently reviewed results in notes/geometric-degree-frontier.md: short integral generators at every embedding, the applicable section-count and size hypotheses, one actual positive weighted mean, and summation before cancelling component degrees.",
+    "theta_energy": "Detailed Sections1-2 of notes/averaged-theta-energy.md passed geometric and parent review; Sections3-4 and the critical same-map source bridge passed independent source review. The guide retains actual normalizers, common target basis and missing global energy estimate.",
+    "summary_scope": "transport_defect compared the current didactic exposition with those reviewed notes. This certificate does not claim an independent audit of every upstream theorem."
   },
   "visual_review": {
     "pages_inspected": [
@@ -33,10 +49,49 @@
       6,
       7
     ],
-    "reviewer": "independent source reviewer",
-    "method": "Every page of the final seven-page PDF rendered individually to final-1.png through final-7.png at height 1400 and visually inspected.",
-    "result": "Readable text and equations; no clipping, overlap, broken glyphs or isolated reference page. References fit page seven."
+    "reviewer": "transport_defect",
+    "method": "Every page rendered individually at height1500. After correcting a split sampling condition, final pages1-5 were verified pixel-identical by PNG SHA256 to the individually inspected renders; final pages6-7 were individually reinspected. Final renders are build/guide/guide-checked-1.png through guide-checked-7.png.",
+    "final_render_hashes": [
+      {
+        "page": 1,
+        "sha256": "8a0b0653c12766af0a2dbf96b2f6c56b8c01a60443a20f944906bab41646af93"
+      },
+      {
+        "page": 2,
+        "sha256": "19b3e8591c08f3264bb7421f407cb35ce657736203feb21e37446ff8943f7443"
+      },
+      {
+        "page": 3,
+        "sha256": "7454fd6df228a397024d3c7269b3d18116910ea1813083ec8d436e0197d439b6"
+      },
+      {
+        "page": 4,
+        "sha256": "aa5bc81e02a8ee983b2af83dbc8c42e2ee7da0915227f16bb2d40c7ed1d84d5a"
+      },
+      {
+        "page": 5,
+        "sha256": "206c5389e330f3522d937ee489db47fe1912c7b359200afa56e0abaeedb810e9"
+      },
+      {
+        "page": 6,
+        "sha256": "d25c1178427260613d3ea7decd8505263543a89f03d4b6363ae4369ff924204e"
+      },
+      {
+        "page": 7,
+        "sha256": "6f08662ce25fda97ee33e4906e509546dfefbee6ce87ea91382de7662ebcc187"
+      }
+    ],
+    "result": "PASS: readable text, mathematics and references; no clipping, overlap, broken glyphs or orphan reference page. The RH sampling hypotheses and displayed budget now remain on one page.",
+    "coverage": {
+      "1": "Problem, attribution, scope and corrected prime sum.",
+      "2": "Mellin relation, zeta criterion and complete positivity-lemma proof.",
+      "3": "Complete zeta proof, weighted positive-part criterion and detecting residues.",
+      "4": "Fixed local averaging and expanded-window conditions; actual geometric degrees and short sections.",
+      "5": "Mean-volume cancellation, exact Delta/V energies, same maps and correlated averages.",
+      "6": "Remaining construction inputs and positive-kernel RH specialization.",
+      "7": "Normalized RH budget, averaged endpoint, zero-free input and complete references."
+    }
   },
-  "final_integration_review": "The guide presents the complete positive prime kernel, comparison of thick weights before averaging, the retained all-character thin estimate, and the remaining normalized arithmetic discrepancy. It is organized by mathematical ideas.",
-  "limits": "The required compatible arithmetic and geometric estimates remain unproved in this reconstruction. No Lean build or kernel replay was performed."
+  "final_integration_review": "Organized by mathematical dependence. Superseded two-height-moment exposition and pointwise-only window target were replaced. Duplicate diagram/table and repeated warnings were removed to retain seven pages without shrinking type or margins.",
+  "limits": "The compatible growing arithmetic construction, genuine global theta energy and geometric bounds remain open in this reconstruction. Compilation and visual inspection are not a proof of RH; no Lean build or kernel replay was performed."
 }

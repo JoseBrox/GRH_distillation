@@ -43,6 +43,17 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Sharper determinant descent, two height moments and correlated frame averages | proved reductions: preserve the section-error coefficient, optimize the component bound, and average the refined nonlinear frame penalty; actual geometric suppliers remain open |
 | Positive-kernel transfer through a fixed quotient | proved for every subgroup: the thick error depends on the fixed target order rather than the growing ambient group; signed projection and thin estimates remain |
 | Sharper actual-window scalar budget | proved conditional envelope with factor36 and loss(C+33/16)epsilon; no parameter changes or new construction. Polynomial thin scales are sufficient for the analytic interface only. |
+| Scale-averaged analytic endpoint | proved: positive-part window integrals suffice; fixed local logarithmic averaging preserves all detecting poles and permits cancellation between nearby scales |
+| One mean volume instead of two height moments | proved and source-compatible: short sections supply a lower degree floor; exact component-degree cancellation removes the independent negative-height input, with actual rank/surplus costs retained |
+| Exact aggregate theta energies | proved: two scalar energies replace per-word-pair inequalities; the conditional same-map source bridge is identified, while the global centered-energy estimate remains open |
+| Retained-energy compression | proved exact quadratic bound with sharp tight-frame case; the existing manuscript already had linear rank-loss control, so no new exponent gain over that earlier bound is claimed |
+| Four characters do not bound integral defects | proved group-lattice obstruction: retained rank four can have splitting quotient (Z/n)^4; surviving integral clauses cannot be deleted solely from the RH projection |
+| Paired relative comparison | proved optional four-character interface with exact thin cancellation and a pole-preserving dilation difference; no actual paired arithmetic supplier or signed relative estimate is claimed |
+| Finite symmetry leaves multiplicity energy | proved Reynolds/partial-trace reduction and sharp obstruction; ambient integral isometries need not preserve the actual type cut, and its defining subgroup acts by scalars |
+| Centered frame and optimal common normalization | proved centered dimension and slope comparisons, zero loss for a perfect full frame, sharp target-cut cost and exact optimum common scale; use the minimum with older valid penalties |
+| Exact proportional rank expansion | proved loss-free slope comparison without spread or target-minimum assumptions when expansion holds for every source subspace; actual-rank threshold and counterexamples prevent an automatic application |
+| Actual-source centered substitution | verified same-map, squared-norm and rank dictionary; only the frame penalty is replaced, and all four current envelope shapes retain nonframe suppliers |
+| Exact mean-volume supplier and finite-prime allowance | proved reduction to one normalized tower-intersection mean plus the prescribed metric/counting bridge; finite-prime allowance improves from 120 to 80, and this fixed-data volume limit requires no uniform finite convergence threshold |
 
 ## Work packages
 
@@ -63,7 +74,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 <a id="w01"></a>
 ### W01: Analytic conclusion from vanishing exponent loss
 
-**Required result.** For a fixed target character chi, prove that bounds H_j(x)<=M_j x^(1/2+delta_j), delta_j->0, on arbitrarily late whole multiplicative windows exclude its zeros to the right of one half, when every finite positive H_j retains chi or its conjugate.
+**Required result.** For a fixed target character, exclude right-half-plane zeros from subpower weighted positive-part integrals of a fixed local logarithmic average of positive prime-sum combinations, at exponents tending to one half.
 
 **Quantifiers and uniformity.** For fixed j, H_j, its finite family and positive weights, M_j and b_j>1 precede the windows. They may vary with j; no uniform positive lower bound on the target coefficient is needed.
 
@@ -71,18 +82,19 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r02, r03, r04. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Use the proved criterion as the final acceptance test; do not demand bounded accuracy-dependent constants without need.
+**Next concrete task.** Use the proved averaged criterion as the final acceptance test. Keep each analytic family, averaging width and interval exponent fixed at one accuracy, and retain the same expanded cofinal windows for the arithmetic comparison and its integral bound.
 
 **Acceptance conditions:**
 
 - The target character or its conjugate occurs with positive coefficient in every H_j; H_j is fixed within its own window sequence
-- Bounds hold throughout each window, not only at isolated x
-- Every arithmetic loss is included in delta_j
+- The weighted positive-part integral is small on the same cofinal windows where the arithmetic comparison holds almost everywhere; fixed local averaging uses the expanded interval
+- A signed long-window mean or an unweighted exceptional proportion is insufficient
+- Every arithmetic loss is included in the final budget and total exponent loss
 
 <a id="w02"></a>
 ### W02: Compatible constructions with controlled average losses
 
-**Required result.** Construct actual nonempty arithmetic/theta data whose averaged discrepancy, finite Fourier-projection error and sampled transfer error satisfy the proved finite-character bound. The full source EAtH/CoreAtH package is one stronger supplier.
+**Required result.** Construct nonempty compatible arithmetic/theta data whose combined signed normalized discrepancy supplies the averaged analytic criterion. The full pointwise source package remains a stronger sufficient supplier.
 
 **Quantifiers and uniformity.** For each accuracy, thresholds and the total exponent loss are fixed before all x in arbitrarily late whole windows. Choices of the host at x may vary with x.
 
@@ -90,16 +102,16 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** For RH use the proved direct thick/thin comparison without weight symmetry. Supply the same compatible arithmetic datum and bound its normalized averaged discrepancy; retain the signed quadratic companion or its uniform-QRH selection bound on every required whole window.
+**Next concrete task.** Use the direct RH thick/thin comparison and retain the signed companion. Bound the positive-part integral of their fixed local logarithmic average over the same expanded cofinal windows; separate pointwise bounds and a separate companion estimate are optional stronger suppliers.
 
 **Acceptance conditions:**
 
 - Each accuracy retains the target in a positive combination fixed throughout its own window sequence
 - Nonempty actual coefficient/word spaces
 - Exact identification of maps and periods
-- Bounds on every x in the chosen windows
+- Actual data and comparison almost everywhere on each chosen expanded window, with measurable locally integrable combined budget
 - The averaging weights and subgroup pushforwards are exact; a surjection alone does not preserve uniform averages
-- All finite-error terms are bounded throughout each whole window, even when ambient groups and ranks grow
+- All finite errors enter the same weighted budget as groups and ranks grow
 - Fixed quotient labels require balanced fibre counts and fixed primitive-character identifications when used to keep an analytic family fixed.
 - No pooled symmetry is required for the preferred RH transfer. The unchanged sparse-top supplier forbids exact pooled first-moment symmetry; alternative constructions must state their own admissibility conditions.
 - The thin estimate applies to all actual primitive-character samples, including the separately corrected principal character; the finite kernel includes ramified primes.
@@ -206,7 +218,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 <a id="w08"></a>
 ### W08: Global theta matching, orbital energy and norms
 
-**Required result.** Prove the normalized global theta-integral identities, their nonzero scalar, the rank-reduction laws, and uniform global energy estimates for the actual maps.
+**Required result.** Prove normalized global theta identities, exact positive word normalizers, and small centered scalar energies for the same integral maps; retain the actual common-basis and restriction identities.
 
 **Quantifiers and uniformity.** Common Haar measures, local normalizations, Hecke L-values and rank thresholds; estimates uniform in the scale for each accuracy.
 
@@ -214,7 +226,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Complete coordinate-size and weighted lattice-pair estimates and the normalized global matching; then obtain the norms of W06.
+**Next concrete task.** Bound the aggregate diagonal and centered target energies, or a correlated scale integral of their frame cost. The source Bessel/common-basis bridge can be reused conditionally; global orbital estimates remain a stronger supplier.
 
 **Acceptance conditions:**
 
@@ -222,6 +234,10 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Unique nonzero scalar with the exact normalization
 - All required absolute convergence or justified iterated pairings
 - No omitted rank or level dependence
+- Total kernel mass does not control its centered variance
+- Pairwise word inequalities and the large redundancy used by that supplier are not intrinsically required when the exact aggregate energies are supplied
+- A finite symmetry can leave multiplicity-space variance; the actual retained target and metric must be preserved
+- Use actual centered source and target energies; a common optimum normalization does not prove that those energies are small
 
 <a id="w09"></a>
 ### W09: Automorphic spectrum, finite-group characters and counting
@@ -245,7 +261,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 <a id="w10"></a>
 ### W10: Geometric logarithmic-covolume estimate
 
-**Required result.** Prove the mean degree bound for the actual cuspidal section lattices with their Petersson/period metrics; transport it through exact quotient, type-cut and raw Hilbert-Samuel surplus budgets.
+**Required result.** Prove the mean-volume and explicit section-rank/surplus cost for actual cuspidal lattices with their prescribed Petersson/period metrics, then transport degrees through covering and integral cuts.
 
 **Quantifiers and uniformity.** For each admissible closed family, one common constant and eventual threshold precede all points and indices.
 
@@ -253,7 +269,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Prove the actual weighted mean height and negative-height moment, and bound the signed total Hilbert-Samuel surplus for the same cuspidal lattices. Use determinant descent with its actual rank ratio and preserved section-error coefficient, then retain type indices and discarded degrees.
+**Next concrete task.** Prove the normalized arithmetic intersection bound for the selected actual towers and modified weights, with the prescribed metric/counting bridge. Equal component volumes then give the required mean directly, with finite-prime allowance 80. The auxiliary volume limit needs no uniform finite convergence threshold. Supply the separate finite section-rank/surplus cost and retain the determinant, type-index and discarded-degree corrections.
 
 **Acceptance conditions:**
 
@@ -265,20 +281,24 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Keep positive component ranks when multiplying the source slope formula.
 - Control the raw surplus remainder in mean; do not replace an effective uniform bound for moving varieties by a fixed-variety asymptotic.
 - Average types only with the proved rank weights, and retain the integral index.
-- Two height moments use the actual Hilbert-Samuel weights. A signed mean alone does not control the logarithmic error; uniform componentwise height bounds are only one sufficient supplier.
+- Short generators must span the same component lattices in the prescribed metrics; the lower degree floor is normalized by the field degree
+- The raw signed cost contains no heights, but still needs an actual rank/surplus bound; apply the flat twist once after the untwisted section estimate
+- A perfect final frame does not replace the intermediate component covolume; identify the same lattice before using a slope comparison
+- The fixed-data volume limit does not require a convergence threshold uniform in moving varieties; the normalized intersection bound and the separate finite section estimate still require their stated uniformity
+- Quasi-RH and no-Siegel estimates bound the arithmetic error parameter but do not supply the normalized tower-intersection inequality
 
 <a id="w11"></a>
 ### W11: Weighted slope comparison and the complete average budget
 
-**Required result.** Use weighted lower quotient and divisor inequalities with the actual nonlinear frame penalty, then average over translations and apply the finite-character comparison for the same maps.
+**Required result.** Combine the actual signed geometric, divisor, frame and companion contributions for one family of maps, then supply the weighted positive-part integral after fixed local scale averaging.
 
-**Quantifiers and uniformity.** Every scale-dependent and accuracy-dependent loss is recorded. Only total loss tending to0 is analytically required; fixed-accuracy scale uniformity is essential.
+**Quantifiers and uniformity.** Every scale-dependent and accuracy-dependent loss is recorded. Only total loss tending to zero is analytically required; fixed-accuracy scale uniformity is essential.
 
 **Source interface.** `CoreGm`; `Top.plugAll`; `one coherent Hyps package`.
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Insert the averaged refined frame penalty and geometric lower bounds into the normalized discrepancy. Apply the direct RH thick/thin transfer, retaining the signed companion. Optimize scalar envelopes only when the same arithmetic construction allows the proposed parameters. Keep the exact four-term normalization and the improved supplied-window exponent; the formally optimal smaller rank is outside the unchanged constructor.
+**Next concrete task.** Insert the one-mean section-degree bounds and the minimum of the valid frame penalties into the same normalized discrepancy. The centered comparison has no defect-independent loss, but its square-root target-energy term can be larger. Preserve signed cancellation before the fixed local average and positive part.
 
 **Acceptance conditions:**
 
@@ -288,6 +308,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Retain the source family route until an alternative supplier is actually proved
 - Keep the actual frame cost or prove a valid upper bound; upper slope and pairwise variation hypotheses may be omitted only when that cost is controlled directly
 - The refined frame comparison retains both rank-loss and diagonal-error denominators and requires the same integral maps, common basis and metrics as its supplying theorem.
+- The combined budget and its local scale average must be measurable and locally integrable on the same expanded cofinal windows
+- A paired construction with exact thin cancellation remains optional until an actual pair and a signed relative discrepancy estimate are supplied
+- The actual-source centered substitution changes only the same-map frame penalty; counting, divisor, section and quotient terms still supply all four normalized envelope shapes
 
 ## Compatibility is part of the theorem
 
@@ -303,10 +326,10 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W10 actual weighted mean height, negative-height moment and total Hilbert-Samuel surplus
-1. RH: bound the normalized average discrepancy for compatible data; direct thick/thin transfer needs no symmetry
-1. W06/W08 nonzero integral maps, divisibility and global norms on the same objects
-1. W04 remaining cohomological estimates for the growing auxiliary fields
+1. W10: prove the selected normalized tower-intersection inequality with the prescribed norm/counting bridge, then the separate finite section-rank/surplus bound
+1. RH: bound the combined signed discrepancy in the weighted positive-part integral on the same expanded cofinal windows
+1. W06/W08: construct nonzero integral maps, exact positive normalizers and centered global energies on the same objects
+1. W04: supply remaining integral cohomological estimates for the growing auxiliary fields
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
 

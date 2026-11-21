@@ -4,7 +4,7 @@
 Run offline after populating the ignored source cache with source_excerpt.py.
 This checks bytes, source ranges and integration records. It does not repeat
 the mathematical reviews or prove the remaining arithmetic construction.
-The five exact-check scripts are separate, explicitly reproducible evidence.
+The exact-check scripts are separate, explicitly reproducible evidence.
 """
 import gzip
 import hashlib
@@ -17,6 +17,10 @@ NAMES = [
     "rh-direct-transfer", "rh-direct-source-applicability",
     "rh-weight-symmetry", "rh-geometric-combination",
     "transport-symmetry-defect", "rh-minimal-budget",
+    "scale-averaged-criterion", "geometric-degree-frontier",
+    "averaged-theta-energy", "rh-construction-frontier",
+    "finite-symmetry-energy", "frame-degree-compatibility",
+    "rh-centered-frame-bridge", "mean-volume-supplier",
 ]
 SCRIPTS = {
     name: "scripts/check_" + name.replace("-", "_") + ".py"
@@ -42,6 +46,9 @@ def ranges_of(entry):
     for r in entry.get("ranges", []):
         yield r["start"], r["end"], r.get("sha256")
     for r in entry.get("excerpts", []):
+        first, last = r["lines"]
+        yield first, last, r.get("sha256")
+    for r in entry.get("inspected_excerpts", []):
         first, last = r["lines"]
         yield first, last, r.get("sha256")
     for r in entry.get("reads", []):
@@ -71,43 +78,69 @@ def main():
         elif "note_sha256" in cert:
             check_file(note, cert["note_sha256"])
             artifact_paths.add(note)
-        if "script_sha256" in cert:
+        if isinstance(cert.get("script"), dict):
+            script = cert["script"]
+            check_file(script["path"], script["sha256"])
+            artifact_paths.add(script["path"])
+        elif "script_sha256" in cert:
             script = cert.get("script", SCRIPTS[name])
             check_file(script, cert["script_sha256"])
             artifact_paths.add(script)
         if "source_atlas_sha256" in cert:
             assert digest(atlas_bytes) == cert["source_atlas_sha256"]
-        for key in ["files", "source_files", "sources"]:
-            for entry in cert.get(key, []):
-                path = entry["path"]
-                if "git_blob_sha1" not in entry:
-                    check_file(path, entry["sha256"])
-                    artifact_paths.add(path)
-                    continue
-                assert entry.get("repository", cert.get("repository", "jsmorph/rh")) == "jsmorph/rh"
-                assert entry.get("commit", cert.get("commit", cert.get("source_pin", PIN))) == PIN
-                cache = f"build/source-cache/jsmorph/rh/{PIN}/{path}"
-                data = check_file(cache, entry["sha256"])
-                blob = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
-                assert blob == entry["git_blob_sha1"], f"Git blob mismatch: {path}"
-                assert path.startswith("lean/src/") and path.endswith(".lean")
-                module = path[len("lean/src/"):-len(".lean")].replace("/", ".")
-                assert atlas_blobs[module] == blob, f"Pinned atlas mismatch: {module}"
-                if "bytes" in entry:
-                    assert len(data) == entry["bytes"]
-                lines = data.splitlines(keepends=True)
-                for key_count in ["lines", "line_count"]:
-                    if key_count in entry:
-                        assert len(lines) == entry[key_count]
-                for first, last, expected in ranges_of(entry):
-                    assert 1 <= first <= last <= len(lines), (path, first, last)
-                    assert last - first + 1 <= 120, ("Unbounded recorded excerpt", path)
-                    excerpt = b"".join(lines[first-1:last])
-                    if expected:
-                        assert digest(excerpt) == expected, ("Excerpt mismatch", path, first, last)
-                        hashed_ranges.add((path, first, last))
-                    source_ranges.add((path, first, last))
-                source_paths.add(path)
+        for source_key in ["upstream", "source"]:
+            metadata = cert.get(source_key, {})
+            if isinstance(metadata, dict):
+                if "repository" in metadata:
+                    assert metadata["repository"] == "jsmorph/rh"
+                if "commit" in metadata:
+                    assert metadata["commit"] == PIN
+        source_records = [entry for key in ["files", "source_files", "sources"]
+                          for entry in cert.get(key, [])]
+        source_records += cert.get("source", {}).get("files", [])
+        for entry in source_records:
+            path = entry["path"]
+            if "git_blob_sha1" not in entry:
+                check_file(path, entry["sha256"])
+                artifact_paths.add(path)
+                continue
+            assert entry.get("repository", cert.get("repository", "jsmorph/rh")) == "jsmorph/rh"
+            assert entry.get("commit", cert.get("commit", cert.get("source_pin", PIN))) == PIN
+            cache = f"build/source-cache/jsmorph/rh/{PIN}/{path}"
+            data = check_file(cache, entry["sha256"])
+            blob = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+            assert blob == entry["git_blob_sha1"], f"Git blob mismatch: {path}"
+            assert path.startswith("lean/src/") and path.endswith(".lean")
+            module = path[len("lean/src/"):-len(".lean")].replace("/", ".")
+            assert atlas_blobs[module] == blob, f"Pinned atlas mismatch: {module}"
+            if "bytes" in entry:
+                assert len(data) == entry["bytes"]
+            lines = data.splitlines(keepends=True)
+            for key_count in ["lines", "line_count"]:
+                if key_count in entry:
+                    assert len(lines) == entry[key_count]
+            for first, last, expected in ranges_of(entry):
+                assert 1 <= first <= last <= len(lines), (path, first, last)
+                assert last - first + 1 <= 120, ("Unbounded recorded excerpt", path)
+                excerpt = b"".join(lines[first-1:last])
+                if expected:
+                    assert digest(excerpt) == expected, ("Excerpt mismatch", path, first, last)
+                    hashed_ranges.add((path, first, last))
+                source_ranges.add((path, first, last))
+            source_paths.add(path)
+        for entry in cert.get("proof_dependencies", []):
+            path = entry["path"]
+            data = (ROOT / path).read_bytes()
+            if "sha256" in entry:
+                check_file(path, entry["sha256"])
+            # A whole-file snapshot is historical metadata when a dependency
+            # is specified by exact unchanged bounded proof passages.
+            lines = data.splitlines(keepends=True)
+            for first, last, expected in ranges_of(entry):
+                assert 1 <= first <= last <= len(lines)
+                assert last - first + 1 <= 120
+                if expected:
+                    assert digest(b"".join(lines[first-1:last])) == expected, (path, first, last)
 
     build_sources = set()
     for name in ["paper-build", "guide-build"]:
@@ -133,7 +166,13 @@ def main():
     tex = (ROOT / "paper/sections/recovered/10-cs-section.tex").read_text()
     for label in ["geometric-cover-improved", "geometric-two-moments",
                   "cs-positive-quotient-transfer", "rh-direct-budget",
-                  "cs-refined-average-frame", "cs-refined-combined-budget"]:
+                  "cs-refined-average-frame", "cs-refined-combined-budget",
+                  "cs-exact-energy", "cs-retained-energy", "cs-centered-rank",
+                  "cs-optimal-normalization", "cs-centered-slope",
+                  "cs-exact-expansion", "geometric-volume-weights",
+                  "cs-mean-volume-prime-cost", "cs-mean-volume-intersection",
+                  "geometric-one-mean", "geometric-one-mean-scale",
+                  "geometric-signed-raw-degree", "rh-averaged-final"]:
         assert tex.count("\\label{" + label + "}") == 1, label
     scalar = (ROOT / "paper/sections/recovered/04-sec-numerical.tex").read_text()
     assert scalar.count("\\label{prop:rh-four-term-budget}") == 1

@@ -100,14 +100,22 @@ such that
 on arbitrarily late intervals for each fixed $j$.
 Theorem~\ref{thm:vanishing-loss-windows} proves this assertion.
 The constants and interval shapes may depend on $j$; the target
-function does not.  Thus a construction need only make its total
-exponent loss tend to zero, while controlling every $x$ in the
-intervals belonging to each fixed accuracy. More generally,
-Corollary~\ref{cor:varying-positive-families} permits a new finite positive
+function does not. Thus a construction need only make its total exponent
+loss tend to zero. This pointwise sufficient formulation controls every
+$x$ in the intervals belonging to each fixed accuracy. More generally,
+Theorem~\ref{cor:varying-positive-families} permits a new finite positive
 combination $H_j$ at each accuracy, provided $\chi$ or $\bar\chi$ occurs
 with a positive coefficient. Each $H_j$ remains fixed during its own
 sequence of intervals. A common auxiliary family across accuracies is
 therefore unnecessary.
+
+The same theorem permits a weighted positive-part integral in place of
+the pointwise bound. Before taking that positive part, one may average
+the combined signed arithmetic budget over a fixed nearby range of
+scales. Such logarithmic averaging preserves every pole that detects a
+zero off the critical line. Corollary~\ref{cor:averaged-arithmetic-budget}
+states the precise condition, including the slightly expanded intervals
+on which the same arithmetic comparison must hold almost everywhere.
 
 The arithmetic programme has several distinct requirements.
 Theorem~\ref{thm-classical-galois-zero-monodromy} supplies the classical
@@ -126,8 +134,10 @@ alone supplies these global constructions.
 One may aim to construct the required compatible data separately
 at each scale. A larger family construction is a sufficient method,
 but its auxiliary organization is not part of the analytic conclusion.
-Replacing it requires an actual construction at every scale in the
-chosen intervals, with all of its estimates and compatibility conditions.
+Replacing it requires actual compatible data at the scales used by the
+chosen sufficient criterion. The averaged formulation requires its
+comparison almost everywhere on the expanded intervals, together with
+the weighted integral bound; it does not omit the underlying construction.
 Proposition~\ref{cs-finite-average} gives a more flexible arithmetic
 target: an averaged discrepancy and explicit finite errors.
 Corollary~\ref{cs-exceptional-budget} likewise retains the actual

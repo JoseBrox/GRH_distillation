@@ -7,13 +7,19 @@ reductions and the remaining arithmetic construction. It is organized by
 mathematical dependence. It is not a chronological report or a substitute
 for the detailed manuscript.
 
-The current RH route compares the thick weights at their common lower
-endpoint, uses positivity before averaging over translations, and controls
-the thin samples with the existing uniform quasi-RH input. It imposes no
-weight-symmetry hypothesis. The remaining target is one normalized averaged
-arithmetic discrepancy, with the geometric comparison stated through its
-actual height moments, section errors and map-frame costs. The short
-one-sided analytic proof for zeta is included in full.
+The short one-sided analytic proof for zeta is included in full. The more
+flexible final target combines the arithmetic terms with their signs,
+averages nearby scales, and bounds the weighted integral of the positive
+part. The guide explains why that averaging preserves the poles detecting
+zeros.
+
+For RH, positivity and translation averaging handle the thick weights,
+and the uniform quasi-RH input controls the thin samples. Short integral
+sections reduce the geometric comparison to one weighted mean height.
+Summing the volume comparison first improves that mean. Two aggregate
+matrix energies replace separate estimates for every pair of maps. These
+reductions retain the same actual maps and normalizations; the compatible
+construction, genuine global energy and geometric bounds remain open.
 
 Keep the guide at most twelve pages, with readable type and margins. When
 results change, rewrite the relevant explanation and remove superseded

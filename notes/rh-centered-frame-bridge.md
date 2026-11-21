@@ -183,8 +183,8 @@ increasing the code exponent while keeping the same constructed
 family is also not licensed by its fixed-exponent code contract.
 
 The additive \(\log|W_v|\) penalty is absent from (1); under the
-current scales its normalized size was already smaller than every
-inverse power of \(x\). Removing it does not change the four dominant
+current scales [its normalized size](rh-minimal-budget.md#the-existing-word-count-term-is-already-negligible)
+was already smaller than every inverse power of \(x\). Removing it does not change the four dominant
 shape estimates. To improve those estimates materially, one must
 control the signed residual in (2), or improve the appropriate
 counting, divisor, section-degree or quotient-loss supplier in (3).
@@ -219,3 +219,10 @@ signs and all four surviving shapes. The reviewer independently
 hash-verified and reread the actual model dictionary and both scalar
 comparison files at the cited ranges. This review did not audit the
 whole upstream proof or replay Lean.
+
+A second independent reviewer passed Sections 1–3 and hash-verified the
+model, height/slope, arithmetic matrix, scalar error, density, word-count
+and isotropy source passages. That review also checked the rank-weighted
+instantiation and the actual exponential scale for \(b\). It likewise
+concerned ordinary mathematics and source contracts, without an upstream
+proof replay or Lean build.

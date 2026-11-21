@@ -81,8 +81,9 @@ and its varying-family version are immediate special cases.
 
 ## 2. Apply the criterion to the combined signed arithmetic budget
 
-Suppose the actual compatible data give, almost everywhere on each
-selected interval,
+For each fixed stage choose an unbounded set $\mathcal Y_j$ of allowed
+starting points. Suppose the actual compatible data give, almost
+everywhere on every selected interval with $Y\in\mathcal Y_j$,
 
 \[
 H_j(x)\le B_j(x),\qquad
@@ -95,7 +96,8 @@ centering costs. The functions in (2) must be measurable. Every term must
 come from the same data in the pointwise comparison; this condition is
 not removed by integration.
 
-It suffices to prove (1) with
+It suffices to prove (1), restricting its lower limit to the **same**
+allowed starting points $Y\in\mathcal Y_j$, with
 
 \[
 \int_Y^{Y^{b_j}}(B_j(x))_+x^{-\theta_j}\,\frac{dx}{x}
@@ -246,7 +248,8 @@ target is the subpower growth of
 \]
 
 The original comparison must hold almost everywhere on the **expanded**
-interval $[Y,e^{h_j}Y^{b_j}]$. No data are required at smaller scales by
+interval $[Y,e^{h_j}Y^{b_j}]$ for the same cofinal starting points along
+which (9) has subpower growth. No data are required at smaller scales by
 this local averaging. It is enough that the combined upper budget be
 locally integrable there; the positive averaged part must have the stated
 finite weighted integral. Contributions retain their signs until after

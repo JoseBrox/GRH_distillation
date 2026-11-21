@@ -100,9 +100,36 @@ The current preferred continuation is recorded in:
   source ranks, the improved exponent loss, sharp frame comparison and
   relaxed analytic transfer allowances. Run
   `python scripts/check_rh_minimal_budget.py`.
+- `scale-averaged-criterion.json`: the positive-part whole-window criterion,
+  pole-preserving local averaging and exact hypotheses of the combined
+  arithmetic budget. Its written proof and independent review are recorded;
+  finite computation is not used to certify the analytic theorem.
+- `geometric-degree-frontier.json`: exact volume weights, short-section
+  degree floors, the one-mean estimate and the raw signed rank cost. Run
+  `python scripts/check_geometric_degree_frontier.py`.
+- `averaged-theta-energy.json`: exact aggregate energies, retained-energy
+  compression and the same-map kernel interface. Run
+  `python scripts/check_averaged_theta_energy.py`.
+- `rh-construction-frontier.json`: surviving RH clauses, the unbounded
+  integral index and the optional paired-construction comparison. Run
+  `python scripts/check_rh_construction_frontier.py`.
+- `finite-symmetry-energy.json`: the exact finite-group averaging identity,
+  surviving multiplicity variance and the actual target-stability
+  obstruction. Run `python scripts/check_finite_symmetry_energy.py`.
+- `frame-degree-compatibility.json`: centered dimension and slope
+  comparisons, optimum common normalization, sharp target-cut examples
+  and limits of a proposed frame replacement for geometric degree. Run
+  `python scripts/check_frame_degree_compatibility.py`.
+- `rh-centered-frame-bridge.json`: the actual quotient-source, target,
+  units and rank dictionary; explicit nonframe residual; surviving four
+  error shapes. Run `python scripts/check_rh_centered_frame_bridge.py`.
+- `mean-volume-supplier.json`: the precise normalized tower-intersection
+  requirement, prescribed metric and counting bridge, fixed-data limiting
+  step and improved finite-prime allowance. Run
+  `python scripts/check_mean_volume_supplier.py`.
 - `rh-continuation-review.json`: current integration and visual review,
   with exact hashes of the reviewed artifacts and remaining obligations.
-  `rh-continuation-integrity.json` verifies the six new evidence records,
+  `rh-continuation-integrity.json` verifies the current continuation records,
   pinned selected sources and bounded ranges, current build sources and
   reviewed artifacts. Run `python scripts/check_rh_continuation.py` with
   the pinned source cache present; missing evidence causes failure.
