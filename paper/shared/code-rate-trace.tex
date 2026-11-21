@@ -1,0 +1,96 @@
+\paragraph{Separating redundancy from the height gap.}
+The code size and the geometric height bound need not use the same
+exponent. The following estimate makes their different roles explicit.
+
+\begin{proposition}[A linear source-spread cost]\label{shared-code-trace}
+Let \(T_i:\mathbb C^{r_i}\to\mathbb C^D\) be a finite family, put
+\[
+ R=\sum_i r_i>0,\quad Q=\sum_iT_iT_i^*,\quad
+ \mathcal S=\bigoplus_iT_i^*T_i,\quad M=\operatorname{tr}Q,
+\]
+and let \(D_*>0\), \(\xi=D_*/R\), and \(0<E\le1/64\).
+Assume \(\xi\le1/64\) and
+\[
+ \|\mathcal S-I_R\|_{\rm HS}^2\le E^2R,\qquad
+ D\le(1+E)D_*,\qquad
+ \operatorname{tr}Q^2\le(1+E)\frac{R^2}{D_*}+(1+E)^2R.
+\]
+Let \(J_i\) be isometric source inclusions whose total discarded
+dimension is at most \(E^2R\). Suppose the first \(n\) rows of
+\(T_iJ_i\), where \(1\le n\le D\) and \(1-n/D\le E\), represent
+the same integral arithmetic maps in one common target basis.
+Assume the height and slope hypotheses of
+Corollary~\ref{shared-trace-ambient} for these final source lattices
+and this target, with \(U,H\ge0\). Then
+\begin{equation}\label{shared-code-trace-bound}
+ s-\mu(F)\le\min\{H,\ U+(8\sqrt E+2\sqrt\xi)H\}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Cauchy--Schwarz gives \((1-E)R\le M\le(1+E)R\).
+Define
+\[
+ \gamma=\frac{\operatorname{tr}((M/R)I_R-\mathcal S)_+}{M},\quad
+ \beta=\frac{\operatorname{tr}(Q-(M/D)I_D)_+}{M},\quad
+ \eta=\frac{D\operatorname{tr}Q^2}{M^2}-1 .
+\]
+Centering lowers the squared source error, and a trace-zero matrix
+has positive trace equal to half its trace norm. Therefore
+\[
+ \gamma\le\frac{E}{2(1-E)}\le\frac{2E}{3},\qquad
+ \eta\le\frac{4E+(1+E)^3\xi}{(1-E)^2}\le8E+4\xi,\qquad
+ \beta\le\frac{\sqrt\eta}{2}\le2\sqrt E+\sqrt\xi .
+\]
+For the middle bound, \(4/(1-E)^2\le64/9<8\) and
+\((1+E)^3/(1-E)^2\le125/36<4\) already hold for \(E\le1/4\).
+The fraction \(\rho\) of energy lost by the source restrictions is
+at most \(E^2+\gamma\le E\), by the discarded-projection estimate.
+Put \(\delta=1-n/D\) and \(q=\gamma+\beta+\rho\).
+Equation~\eqref{shared-trace-source-only} applies and bounds the
+uncapped cost by
+\[
+ \frac{\delta U+q(U+H)/(1-\rho)}{1-\delta}.
+\]
+Here \(q\le2E+2\sqrt E+\sqrt\xi\). Its coefficient of \(U\) is at most
+\((E+q)/(1-E)^2\le(27/64)/(63/64)^2<1\), while its coefficient of
+\(H\) is at most \(2q\le8\sqrt E+2\sqrt\xi\).
+The independent cap \(H\) proves the assertion.
+\end{proof}
+
+\begin{corollary}\label{shared-code-height-separation}
+Fix \(\kappa,t>0\), \(h\ge0\), and \(\omega\ge2h+2t\).
+Suppose the preceding hypotheses hold at every sufficiently large
+scale \(x\), with
+\[
+ E=e^{-x^\kappa},\qquad \xi\le x^{-\omega},\qquad
+ H\le x^h b,\quad b>0.
+\]
+Then, eventually and uniformly over all the maps covered at that scale,
+\[
+ s-\mu(F)\le\min\{H,\ U+10b\,x^{-t}\}.
+\]
+\end{corollary}
+\begin{proof}
+Eventually \(x^{h+t}\sqrt E\le1\); the two terms in
+\eqref{shared-code-trace-bound} then contribute at most
+\(8b x^{-t}\) and \(2b x^{-t}\). No growth bound on \(U\) is used.
+\end{proof}
+
+The required choices must belong to one construction. For example,
+suppose its code has \(\lceil3\Gamma^2x^\omega\rceil\) words,
+each full source rank is at least \(D_*/(3\Gamma^2)\), and this code
+fits at the same geometric ranks. Then \(R\ge D_*x^\omega\).
+Suppose also that the construction and the height estimate have
+finitely many staged thresholds: their middle thresholds depend only
+on fixed outer data, and their last thresholds depend only on the
+already chosen middle entries. Choose \(h\ge1\) above every middle
+threshold, then choose \(\omega\ge2h+2t\), and finally choose each
+last constant above all required threshold values at both arguments.
+No monotonicity of the threshold functions is needed. A constructor
+uniform over these choices yields one family satisfying both
+requirements; a larger last constant does not reset \(h\).
+The global matrix estimates, arithmetic height bound, and compatible
+constructor remain substantive hypotheses. The surviving source
+spread \(U\) and the other arithmetic losses still require their
+own bounds.
