@@ -1,0 +1,343 @@
+\section{Integral class pairings and the initial period bound}
+\label{cp-section}
+
+The initial period valuation has an elementary proof once the
+actual polynomial lattices and their class coordinates have been
+identified. The period is a finite class sum of the normalized
+bilinear Fock pairing. Its only denominator at this stage is the
+order of a finite stabilizer. We give the argument with arbitrary
+finite stabilizers, so it also applies to the row classes with
+additional level characters. The stronger divisibility of the
+iterated columns is a separate assertion.
+
+\subsection{Equivariant functions and integral pairings}
+
+Let $K$ be a number field, $\mathcal O$ its ring of integers, and
+let a group $G$ act on a set $\mathcal D$ with finitely many orbits.
+Choose representatives $d_c$, indexed by a finite set $C$, and
+suppose their stabilizers $\Gamma_c$ are finite. Put
+$n_c=|\Gamma_c|\ge1$. Let $V^-$ and $V^+$ be finite-dimensional
+$K$-spaces with representations $\rho^-$ and $\rho^+$ of $G$.
+Suppose the nondegenerate bilinear pairing
+\[
+                    B:V^-\times V^+\longrightarrow K
+\]
+satisfies
+\begin{equation}\label{cp-invariance}
+ B(\rho^-(g)x,\rho^+(g)y)=B(x,y)\qquad(g\in G).
+\end{equation}
+For each $d\in\mathcal D$ let $M_d^\pm$ be full
+$\mathcal O$-lattices, with
+\[
+ M_{gd}^\pm=\rho^\pm(g)M_d^\pm,
+ \qquad B(M_d^-,M_d^+)\subseteq\mathcal O.
+\]
+Define the spaces and their integral lattices by
+\[
+ \begin{split}
+ \mathcal A^\pm_K
+   &=\{f:\mathcal D\to V^\pm:
+                         f(gd)=\rho^\pm(g)f(d)\},\\
+ \mathcal A^\pm_{\mathcal O}
+   &=\{f\in\mathcal A^\pm_K:f(d)\in M_d^\pm
+                                      \text{ for every }d\}.
+ \end{split}
+\]
+Evaluation at the $d_c$ identifies these objects with
+\[
+ \bigoplus_c(V^\pm)^{\Gamma_c},\qquad
+ \bigoplus_c\bigl(M_{d_c}^\pm\cap(V^\pm)^{\Gamma_c}\bigr),
+\]
+respectively. Indeed, an invariant value at a representative
+extends uniquely by equivariance, independently of the element
+used to transport that representative. This is the same
+identification as in Proposition~\ref{acl-class-evaluation}.
+Each displayed integral module is a full lattice in the
+corresponding space: it is a submodule of a finite lattice, and
+every vector in the invariant space has a nonzero integral
+multiple in that lattice after clearing finitely many denominators.
+
+Define
+\begin{equation}\label{cp-period}
+              P(f,h)=\sum_{c\in C}\frac{B(f(d_c),h(d_c))}{n_c}.
+\end{equation}
+Changing $d_c$ to $gd_c$ conjugates its stabilizer and preserves
+its pairing by \eqref{cp-invariance}. Thus $P$ is independent
+of all the representatives.
+
+\begin{proposition}\label{cp-nondegenerate}
+The pairing $P$ on $\mathcal A^-_K\times\mathcal A^+_K$
+is nondegenerate. If $D$ is a positive integer divisible by
+every $n_c$, then
+\begin{equation}\label{cp-integrality}
+       D\,P(\mathcal A^-_{\mathcal O},
+                         \mathcal A^+_{\mathcal O})\subseteq\mathcal O.
+\end{equation}
+In fact one may take $D=\operatorname{lcm}_{c\in C}n_c$,
+with the empty least common multiple defined to be $1$.
+\end{proposition}
+\begin{proof}
+For a nonzero $x\in(V^-)^{\Gamma_c}$, choose $y\in V^+$
+with $B(x,y)\ne0$. Its average
+\[
+                  y_0=\frac1{n_c}\sum_{\gamma\in\Gamma_c}
+                                                       \rho^+(\gamma)y
+\]
+is invariant and satisfies $B(x,y_0)=B(x,y)$, by
+\eqref{cp-invariance}. Thus the restriction to the invariant
+spaces is nondegenerate on the left. The same argument on
+the other side proves nondegeneracy on the right.
+The direct sum of these pairings, multiplied by the nonzero
+scalars $1/n_c$, remains nondegenerate. If $C$ is empty,
+both spaces are zero and this statement has the same meaning.
+
+For integral $f,h$, every $B(f(d_c),h(d_c))$ belongs to
+$\mathcal O$, and $D/n_c$ is an integer. Multiplying
+\eqref{cp-period} by $D$ proves \eqref{cp-integrality}.
+The averaging used to prove nondegeneracy is not used to
+prove this integral assertion.
+\end{proof}
+
+For a prime $w$ of $\mathcal O$, normalize $v_w$ by
+$v_w(w)=1$ and put $v_w(0)=+\infty$. If $p$ is the
+rational prime below $w$ and $e_w=v_w(p)$, then
+\begin{equation}\label{cp-nat-valuation}
+                        v_w(D)=e_w v_p(D).
+\end{equation}
+Indeed write $D=p^a b$ with $p\nmid b$. Bezout's identity
+for $p,b$ shows that $b$ is a unit in $\mathcal O_w$.
+
+\begin{corollary}\label{cp-local}
+For integral $f,h$,
+\[
+                 v_w(P(f,h))\ge -e_wv_p(D).
+\]
+The same assertion holds if the first integral lattice is
+replaced by its localization at $w$, and the second is
+localized as well.
+More generally, if $\mathfrak a$ is a nonzero fractional
+ideal and $f\in\mathfrak a(\mathcal A^-_{\mathcal O})_w$,
+$h\in(\mathcal A^+_{\mathcal O})_w$, then
+\begin{equation}\label{cp-shift}
+                  v_w(P(f,h))\ge v_w(\mathfrak a)-v_w(D).
+\end{equation}
+\end{corollary}
+\begin{proof}
+Localizing \eqref{cp-integrality} gives
+$DP(f,h)\in\mathcal O_w$. This proves the first statements
+and \eqref{cp-nat-valuation} gives their normalization.
+The fractional ideal $\mathfrak a\mathcal O_w$ is principal;
+write $f=a f_0$ with $v_w(a)=v_w(\mathfrak a)$ and
+$f_0\in(\mathcal A^-_{\mathcal O})_w$. Bilinearity gives
+\eqref{cp-shift}. Zero values cause no exception under the
+chosen valuation convention.
+\end{proof}
+
+\subsection{The actual normalized polynomial pairing}
+
+We now specify the preceding data for the row construction.
+Use the dominant integral weights, determinant powers,
+normalized bilinear Fock pairing $B$, and polynomial
+representation $\rho_\lambda$ of Section~\ref{coef:section}.
+For a tuple of full lattices $M=(M_\tau)_\tau$, put
+\[
+                M^+=N(M),\qquad M^-=D(M^\vee),
+\]
+in the notation of \eqref{coef:transport}. The integral
+duality already proved in \eqref{coef:transport-duality} is
+the exact equality
+\begin{equation}\label{cp-polynomial-dual}
+                     M^-=(M^+)^{\vee,B}.
+\end{equation}
+In particular $B(M^-,M^+)\subseteq\mathcal O$.
+This uses the actual factorial normalization of the Fock
+pairing, all determinant characters, and the unsaturated
+Weyl lattice. It is valid at every coefficient prime,
+including ramified primes and primes above $2$.
+
+If the base change is $A=(A_\tau)_\tau$, the two coefficient
+actions are $\rho_\lambda(A^{-t})$ and
+$\rho_\lambda(A)$. Their pairing is invariant because
+\[
+ B(\rho_\lambda(A^{-t})x,\rho_\lambda(A)y)=B(x,y),
+\]
+by \eqref{coef:contravariant}. Multiplying the first action
+by a finite-order level character and the second by its
+inverse preserves this identity. Character values are
+algebraic integral units, so they preserve the corresponding
+integral lattices as well.
+
+For the actual row objects the level-prime kernel condition
+is absent: the underlying lattice is a unimodular Hermitian
+lattice $N=N^\#$. The polynomial point lattice is the Weyl
+lattice transported by the contragredient action on $N$;
+the row lattice is the dual Weyl lattice transported
+covariantly on $N$. Thus these are precisely
+$D(M^\vee)$ and $N(M)$. The additional local bases in the
+point description change neither classes nor stabilizers,
+by Corollary~\ref{acl-row-classes}. The two level characters
+are inverse, as in \eqref{acl-row-character}. Hence all
+the hypotheses of Proposition~\ref{cp-nondegenerate} apply
+to these actual row and point lattices.
+
+For an embedding $\sigma:K\hookrightarrow\mathbb C$, let
+$\operatorname{ev}(x_c)$ be the frame function associated
+to a polynomial $x_c$ as in \eqref{acl-evaluation}.
+Recovering its polynomial in the identity frame gives
+exactly $\sigma(x_c)$: the determinant factor is removed
+with the same exponent with which it was inserted.
+The complex period in the construction is therefore
+\begin{equation}\label{cp-actual-period}
+ \operatorname{Per}(\operatorname{ev}(f),\operatorname{ev}(h))
+      =\sum_c\frac{B_{\mathbb C}(\sigma(f(d_c)),
+                                      \sigma(h(d_c)))}{n_c}
+      =\sigma(P(f,h)).
+\end{equation}
+The last equality can be checked on monomials: the Fock
+pairing is a finite sum of products of coefficients and
+integer factorials, divided by the fixed nonzero rational
+normalizing constant. An embedding commutes with all these
+operations. No analytic comparison or unproved algebraicity
+assertion is needed for this finite class sum.
+
+Here the symbol $\operatorname{Per}$ denotes the final
+polynomial period pairing. The iterated theta column is
+substituted into its first argument later. Establishing
+the arithmetic size of that column is a different step.
+
+\subsection{Class restrictions and the stabilizer denominator}
+
+For $c\in C$, let $e_c$ be restriction to the orbit of $d_c$,
+followed by extension by zero. These operators preserve the
+equivariant spaces, their integral lattices, and their
+complexifications. They satisfy
+\[
+                 \sum_c e_c=1,\qquad e_ce_{c'}=0\quad(c\ne c').
+\]
+Give the complex point space its positive Hermitian form
+\[
+                   \langle x,y\rangle
+                          =\sum_c n_c^{-1}\langle x_c,y_c\rangle_c,
+\]
+where the local forms are the normalized Fock forms. It is
+conjugate-linear in its first variable. The $e_c$ are
+orthogonal projections for this form, directly from the sum.
+
+Fix a row vector $h$ and let $J(h)$ represent its period
+functional, so
+\[
+       \langle J(h),x\rangle=\operatorname{Per}(x,\operatorname{ev}(h)).
+\]
+Such a vector exists uniquely because the Hermitian form is
+positive definite on a finite-dimensional space. In coordinates
+with Gram matrix $H$, solving this equation amounts to solving
+the invertible linear system for $\overline{J(h)}^{\,t}H$.
+In particular $J$ is conjugate-linear in $h$ under this
+convention; no assertion of bilinearity of the Hermitian form
+is being made.
+
+\begin{proposition}\label{cp-class-contribution}
+For integral $f,h$ the normalized class contribution
+\[
+                p_c(f,h)=n_c\langle e_cJ(h),e_c\operatorname{ev}(f)\rangle
+\]
+is $\sigma(B(f(d_c),h(d_c)))$, hence belongs to
+$\sigma(\mathcal O)$. Moreover
+\[
+              \operatorname{Per}(\operatorname{ev}(f),\operatorname{ev}(h))
+                           =\sum_c n_c^{-1}p_c(f,h).
+\]
+\end{proposition}
+\begin{proof}
+Orthogonality gives
+$\langle e_cJ(h),e_cx\rangle=\langle J(h),e_cx\rangle$.
+Apply \eqref{cp-actual-period} with $e_cf$ in place of $f$.
+All terms other than $c$ vanish, leaving
+$n_c^{-1}\sigma(B(f(d_c),h(d_c)))$. Multiplication by $n_c$
+proves the first assertion and \eqref{cp-polynomial-dual}
+proves its integrality. Summing the restrictions proves
+the last identity.
+\end{proof}
+
+In the source, the row stabilizer embeds into the stabilizer
+of its image in the last column class. This accounts for the
+chosen common denominator. More generally, suppose a map
+of objects is equivariant for an injective homomorphism of
+acting groups. Its restriction to the stabilizer of an object
+is injective into the stabilizer of the image, because
+equivariance sends a fixing element to a fixing element.
+Both groups here are finite, so Lagrange's theorem gives
+divisibility of their orders. Changing the representative
+of the image merely conjugates this injection.
+Consequently the source's positive integer $D_\Gamma$,
+divisible by the last-column stabilizer orders, is also
+divisible by each $n_c$. Corollary~\ref{cp-local} gives
+exactly
+\begin{equation}\label{cp-source-bound}
+ v_w\!\left(\sigma^{-1}\operatorname{Per}
+                (\operatorname{ev}(f),\operatorname{ev}(h))\right)
+                      \ge -e_wv_p(D_\Gamma).
+\end{equation}
+The inverse in this notation is applied only to a value
+already proved to lie in $\sigma(K)$.
+
+The same proof applies for every used finite-order twist.
+If the row lattice is integral at all primes, it gives
+\eqref{cp-source-bound} at all primes. If integrality has
+only been supplied away from a prescribed exceptional set,
+the conclusion holds away from that same set. No exceptional
+prime is silently removed.
+
+\subsection{Passage to columns and the remaining estimate}
+
+Let $L$ be a lattice of column vectors and let
+$T:L\otimes K\to\mathcal A^-_K$ be the rational map
+which forms the iterated column and then its point value.
+At a coefficient prime $w$, if one proves
+\[
+                  T(L_w)\subseteq\mathfrak a_w
+                                      (\mathcal A^-_{\mathcal O})_w,
+\]
+then \eqref{cp-shift} immediately gives
+\begin{equation}\label{cp-column-bound}
+ v_w(P(Tx,h))\ge v_w(\mathfrak a_w)-v_w(D_\Gamma)
+       \quad(x\in L_w,\ h\in\mathcal A^+_{\mathcal O}).
+\end{equation}
+This deduction retains the ramification factor in
+\eqref{cp-nat-valuation}. The extension of the integral
+cut and of the test-vector range is already proved in
+Section~\ref{ip-section}. What remains here is the actual
+containment for $T$, including the special estimates at
+the level prime and the two type primes. The initial
+period bound \eqref{cp-source-bound} alone does not give
+that stronger containment.
+
+For completeness, a finite set of residue-prime shifts has
+an exact global interpretation. If $\mathfrak a=\prod_w w^{-b_w}$,
+with integral $b_w$ of finite support, then a $K$-valued
+bilinear pairing is integral on $\mathfrak a L\times M$
+if and only if
+\[
+                     v_w(P(L,M))\ge b_w\quad\text{for every }w.
+\]
+Localize: $\mathfrak a_w$ has valuation $-b_w$, so the
+condition is precisely that its product with every pairing
+value have nonnegative valuation. An element of $K$ is
+integral if and only if it is integral at every finite prime.
+This proves both directions, including negative $b_w$.
+
+Two examples show why the qualifications above are necessary.
+Let a group of order two act trivially on a single object
+and on $V^-=V^+=\mathbb Q$, with $B(x,y)=xy$ and both
+lattices $\mathbb Z$. Then $P(1,1)=1/2$. Thus the
+stabilizer denominator cannot be deleted in general, even
+though the class contribution $p_c(1,1)$ is integral.
+Also, over $K=\mathbb Q(\zeta_3)$, let an element act as
+$\zeta_3$ on both one-dimensional coefficient spaces.
+Then $B(\zeta_3x,\zeta_3y)=\zeta_3^2B(x,y)$, so a
+class sum is not independent of representatives with those
+two actions. Inverse characters restore invariance. Neither
+example satisfies the corresponding qualified assertion
+used in the submitted construction.
+
+

@@ -1,0 +1,804 @@
+\section{The exact constant in a change of theta lattice}
+\label{tc-section}
+
+The remaining analytic normalization in Section~\ref{lm-section}
+can be calculated explicitly.  We give the calculation, including
+the finite quadratic Gauss sum on which its eighth power depends.
+All square roots of positive real numbers in this section mean
+the positive square root.  This convention is part of the
+normalization.
+
+Let $V$ be a complex vector space of dimension $r$, let $H$ be a
+positive definite Hermitian form, linear in its first variable,
+and put $E=\operatorname{Im}H$.  A full lattice $\Lambda$ is
+self-dual if
+\[
+ \Lambda=\Lambda^*
+   :=\{x\in V:E(x,\Lambda)\subset\mathbb Z\}.
+ \tag{TC1}
+\]
+A sign semicharacter on $\Lambda$ is a function
+$\alpha:\Lambda\to\{1,-1\}$ satisfying
+\[
+ \alpha(x+y)=\alpha(x)\alpha(y)e^{\pi iE(x,y)}.
+ \tag{TC2}
+\]
+For several lattices we require their semicharacters to be
+restrictions of one function, so they agree on intersections.
+Write
+\[
+ U_xF(z)=e^{-\pi H(z,x)-\pi H(x,x)/2}F(z+x),
+ \qquad W_x=\alpha(x)U_x.
+ \tag{TC3}
+\]
+The theta space $\mathcal T(\Lambda,\alpha)$ consists of entire
+functions $F$ satisfying $W_xF=F$ for $x\in\Lambda$.
+The basic identities are
+\[
+ U_xU_y=e^{-\pi iE(x,y)}U_{x+y},\qquad
+ U_xU_y=e^{-2\pi iE(x,y)}U_yU_x.
+ \tag{TC4}
+\]
+They follow by expanding the three exponential factors and using
+$H(y,x)=\overline{H(x,y)}$.  On any one of the lattices in
+(TC2), the operators $W_x$ form a representation of its additive
+group.  Also $\alpha(0)=1$ and $\alpha(-x)=\alpha(x)$.
+
+\subsection{Self-dual lattices and their theta spaces}
+
+Choose Lebesgue measure $dz$ by using any $H$-orthonormal complex
+basis.  Thus
+\[
+                  \int_V e^{-\pi H(z,z)}\,dz=1.
+ \tag{TC5}
+\]
+This measure does not depend on the chosen orthonormal basis.
+
+\begin{lemma}\label{tc-covolume}
+Every self-dual lattice has covolume one for this measure.
+For every sign semicharacter on such a lattice,
+$\dim_{\mathbb C}\mathcal T(\Lambda,\alpha)=1$.
+\end{lemma}
+\begin{proof}
+In real orthonormal coordinates the matrix of $E$ has determinant
+one.  If $B$ is a real basis matrix for $\Lambda$, its integral
+alternating Gram matrix is $B^{\mathsf T}JB$.
+Self-duality says that this integer matrix is unimodular.
+Therefore $(\det B)^2=1$, which proves the covolume assertion.
+
+For completeness, the dimension assertion has an elementary
+Fourier proof.  A unimodular alternating integer form has a
+symplectic basis $e_1,\ldots,e_r,f_1,\ldots,f_r$ with
+$E(e_i,f_j)=-\delta_{ij}$.
+Indeed, a primitive vector $e_1$ has a partner $f_1$ with
+$E(e_1,f_1)=-1$ by unimodularity.  Subtracting integer multiples
+of these two vectors splits off their orthogonal complement;
+induction supplies the basis.
+The $e_i$ are a complex basis of $V$: if
+$\sum a_i e_i=i\sum b_i e_i$ with $a_i,b_i\in\mathbb R$,
+pairing the two sides with $\sum b_i e_i$ under $E$ gives
+$H(\sum b_i e_i,\sum b_i e_i)=0$.  Positivity then gives
+$a_i=b_i=0$.
+
+Use this complex basis, and write
+$H(z,w)=z^{\mathsf T}G\overline w$ and
+$(f_1,\ldots,f_r)=(e_1,\ldots,e_r)Z$.
+The matrix $G$ is real symmetric and positive definite, since
+$E(e_i,e_j)=0$.  The equations
+$E(e_i,f_j)=-\delta_{ij}$ and $E(f_i,f_j)=0$ give
+\[
+             \operatorname{Im}Z=G^{-1}>0,\qquad Z=Z^{\mathsf T}.
+ \tag{TC6}
+\]
+Choose $a_i,b_i\in\{0,\tfrac12\}$ with
+$\alpha(e_i)=e^{2\pi ia_i}$ and
+$\alpha(f_i)=e^{2\pi ib_i}$.
+For $F\in\mathcal T(\Lambda,\alpha)$ put
+$f(z)=e^{-\pi z^{\mathsf T}Gz/2}F(z)$.
+The transformation equations become
+\[
+ \begin{split}
+ f(z+u)&=e^{2\pi ia^{\mathsf T}u}f(z),\\
+ f(z+Zv)&=e^{2\pi ib^{\mathsf T}v}
+        e^{-2\pi iv^{\mathsf T}z-\pi iv^{\mathsf T}Zv}f(z)
+                 \qquad(u,v\in\mathbb Z^r).
+ \end{split}
+ \tag{TC7}
+\]
+The first equation gives a Fourier expansion
+$f(z)=\sum_{n\in\mathbb Z^r}c_n
+ e^{2\pi i(n+a)^{\mathsf T}z}$.
+Here the coefficients are obtained by integration on a real
+unit cube after multiplication by $e^{-2\pi ia^{\mathsf T}z}$.
+Cauchy's theorem on the coordinate rectangles makes the
+appropriately weighted coefficient independent of the imaginary
+part of $z$.  Shifting these rectangles in either direction
+bounds the coefficients exponentially on every smaller closed
+strip.  The resulting Fourier series therefore converges normally
+on compact subsets and represents $f$.
+Substitution in the second equation of (TC7) gives
+\[
+ c_{n+v}=c_n
+  \exp\!\left(2\pi i(n+a)^{\mathsf T}Zv+
+              \pi iv^{\mathsf T}Zv-2\pi ib^{\mathsf T}v\right).
+ \tag{TC8}
+\]
+All coefficients are determined by $c_0$.
+Conversely,
+\[
+ e^{\pi z^{\mathsf T}Gz/2}
+ \sum_{n\in\mathbb Z^r}
+  \exp\!\left(\pi i(n+a)^{\mathsf T}Z(n+a)
+                 +2\pi i(n+a)^{\mathsf T}(z-b)\right)
+ \tag{TC9}
+\]
+converges normally, because $\operatorname{Im}Z>0$, and
+satisfies (TC7).  Its Fourier coefficients are nonzero, so it is
+not the zero function.  This proves the dimension assertion.
+The case $r=0$ consists simply of the constant functions.
+\end{proof}
+
+\subsection{Normalized finite averaging is unitary}
+
+Suppose $\Lambda_i$ are commensurable self-dual lattices carrying
+one common sign semicharacter.  Put
+\[
+ d_{ij}=[\Lambda_j:\Lambda_i\cap\Lambda_j]
+        =[\Lambda_i:\Lambda_i\cap\Lambda_j],\qquad
+ I_{ij}F=d_{ij}^{-1/2}
+     \sum_{x\in\Lambda_j/(\Lambda_i\cap\Lambda_j)}W_xF.
+ \tag{TC10}
+\]
+The equality of indices follows from Lemma~\ref{tc-covolume}.
+On functions fixed by $\Lambda_i$ the summands are independent
+of the choice of representatives.
+
+\begin{lemma}\label{tc-unitary-intertwiner}
+The operator $I_{ij}$ is a unitary isomorphism from the
+$\Lambda_i$ theta space to the $\Lambda_j$ theta space, with
+inverse $I_{ji}$.  The same inverse and norm assertions hold on
+continuous functions with the corresponding transformation laws.
+\end{lemma}
+\begin{proof}
+Let $\Gamma$ be the intersection of all lattices under
+consideration.  For continuous functions satisfying the
+$\Gamma$ transformation law define
+\[
+ \langle F,G\rangle_\Gamma
+  =\frac1{\operatorname{vol}(V/\Gamma)}
+    \int_{V/\Gamma}F(z)\overline{G(z)}
+                        e^{-\pi H(z,z)}\,dz.
+ \tag{TC11}
+\]
+The integrand is $\Gamma$-periodic.  Its norm is positive on
+nonzero continuous functions.  For $x\in\Gamma^*$ the operator
+$U_x$ preserves this space and is unitary, since
+\[
+ |U_xF(z)|^2e^{-\pi H(z,z)}
+       =|F(z+x)|^2e^{-\pi H(z+x,z+x)}.
+ \tag{TC12}
+\]
+All $\Lambda_i$ lie in $\Gamma^*$.
+Consequently
+\[
+       P_i=\frac1{[\Lambda_i:\Gamma]}
+                   \sum_{x\in\Lambda_i/\Gamma}W_x
+ \tag{TC13}
+\]
+is an orthogonal projection onto the functions fixed by
+$\Lambda_i$: it is the average of a finite unitary group
+representation.
+
+For $x\in\Gamma^*$, the commutator in (TC4) and finite
+character orthogonality show that $P_iU_xP_i=0$ unless
+$x\in\Lambda_i^*=\Lambda_i$.
+Explicitly, the character being averaged is
+$u\mapsto e^{-2\pi iE(u,x)}$ on $\Lambda_i/\Gamma$;
+a nontrivial character has zero sum because translating its
+sum by an element on which it is not one multiplies that sum
+by a nontrivial scalar.
+If $x\in\Lambda_i$, then $U_xP_i=\alpha(x)P_i$.
+For $x$ also belonging to another specified lattice, the
+common semicharacter therefore gives $W_xP_i=P_i$.
+Thus
+\[
+ P_iP_jP_i=
+ \frac{[(\Lambda_i\cap\Lambda_j):\Gamma]}
+      {[\Lambda_j:\Gamma]}P_i=d_{ij}^{-1}P_i.
+ \tag{TC14}
+\]
+On the image of $P_i$, regrouping the sum (TC13) gives
+$I_{ij}=\sqrt{d_{ij}}P_j$.
+Equation (TC14) gives $I_{ji}I_{ij}=1$ and
+\[
+ \|I_{ij}F\|^2=d_{ij}\langle F,P_jF\rangle
+             =\|F\|^2.
+\]
+The reverse composition is the identity as well.
+Finite translations preserve holomorphy, so the assertion
+restricts to theta spaces.  For a function satisfying a
+$\Lambda_i$ law, its normalized norm in (TC11) is independent
+of the smaller common lattice $\Gamma$, by subdivision of
+fundamental domains.
+\end{proof}
+
+\subsection{An eighth-power formula for finite Gauss sums}
+
+A homogeneous quadratic function on a finite abelian group $M$
+is a function $q:M\to\mathbb C^\times$ such that
+$q(nx)=q(x)^{n^2}$ for integers $n$ and
+\[
+                b(x,y)=\frac{q(x+y)}{q(x)q(y)}
+ \tag{TC15}
+\]
+is a bicharacter.  Its radical is
+$R=\{x:b(x,M)=1\}$.
+All values of $q$ are roots of unity, since
+$q(x)^{|M|^2}=q(|M|x)=1$.
+
+\begin{lemma}\label{tc-four-squares-congruence}
+For every positive integer $N$ there are integers
+$a,b,c,d$ with $a^2+b^2+c^2+d^2\equiv-1\pmod N$.
+\end{lemma}
+\begin{proof}
+For an odd prime $\ell$, the sets of squares and of $-1$
+minus squares in $\mathbb F_\ell$ both have size
+$(\ell+1)/2$, so they intersect.  Thus $-1$ is a sum of
+two squares modulo $\ell$.  At least one of the two
+coordinates is nonzero.  Adjusting that coordinate at each
+step lifts the solution to $\ell^s$, since its derivative
+$2a$ or $2b$ is a unit modulo $\ell$.
+For powers of two, start with
+$1^2+1^2+1^2+2^2=7\equiv-1\pmod8$.
+If the sum is correct modulo $2^s$, $s\ge3$, replacing
+the first, odd coordinate $a$ by $a+2^{s-1}$ changes
+the sum by $2^s$ modulo $2^{s+1}$.  It therefore corrects
+the next bit when necessary.  The same initial tuple
+also works modulo $2$ and $4$.
+Apply the Chinese remainder theorem to each of the four
+coordinates.  The assertion for $N=1$ is immediate.
+\end{proof}
+
+\begin{theorem}\label{tc-gauss-eight}
+If $q$ is nondegenerate, then
+\[
+                    \left(\sum_{x\in M}q(x)\right)^8=|M|^4.
+ \tag{TC16}
+\]
+More generally, if its sum $S$ is nonzero, then $q$ is trivial
+on its radical $R$ and
+\[
+                         S^8=|R|^4|M|^4>0.
+ \tag{TC17}
+\]
+\end{theorem}
+\begin{proof}
+First suppose $R=0$, and set $N=|M|^2$.
+Choose $a,b,c,d$ as in Lemma~\ref{tc-four-squares-congruence}
+and write $s=a^2+b^2+c^2+d^2$.
+The integer quaternion matrix
+\[
+ T=\begin{pmatrix}
+ a&-b&-c&-d\\
+ b&a&-d&c\\
+ c&d&a&-b\\
+ d&-c&b&a
+ \end{pmatrix}
+ \quad\hbox{satisfies}\quad
+                  T^{\mathsf T}T=TT^{\mathsf T}=sI_4.
+ \tag{TC18}
+\]
+It permutes $M^4$, because $s\equiv-1\pmod N$ and
+$N$ annihilates $M$; its inverse on this group is
+$-T^{\mathsf T}$.
+For $Q(x_1,\ldots,x_4)=\prod_iq(x_i)$ the quadratic
+identity (TC15), applied to each row, gives
+\[
+                         Q(Tx)=Q(x)^s=Q(x)^{-1}.
+ \tag{TC19}
+\]
+Indeed the exponents of $q(x_i)$ are the squared column
+lengths $s$, while the exponents of each $b(x_i,x_j)$
+are the column inner products, all zero for $i\ne j$.
+The last equality uses $q(x_i)^N=1$.
+Summing (TC19) gives $S^4=\overline S^{\,4}$.
+On the other hand
+\[
+ |S|^2
+  =\sum_{t\in M}q(t)\sum_{y\in M}b(y,t)=|M|.
+ \tag{TC20}
+\]
+Here we substituted $x=y+t$ in $\sum_{x,y}q(x)/q(y)$;
+nondegeneracy and character orthogonality leave only $t=0$.
+Multiplying $S^4=\overline S^{\,4}$ by $S^4$ proves (TC16).
+
+For a possibly degenerate $q$ with $S\ne0$, translation
+of its sum by $r\in R$ gives $S=q(r)S$.
+Thus $q(r)=1$.  The function descends to a nondegenerate
+quadratic function $\bar q$ on $M/R$, and
+$S=|R|\sum_{M/R}\bar q$.
+Equation (TC16) gives
+$S^8=|R|^8|M/R|^4=|R|^4|M|^4$, as claimed.
+\end{proof}
+
+\subsection{The phase in a composition of three lattice averages}
+
+\begin{theorem}\label{tc-triple}
+For three commensurable self-dual lattices with a common sign
+semicharacter there is a scalar $\mu$ such that
+\[
+                      I_{23}I_{12}=\mu I_{13},
+                         \qquad \mu^8=1
+ \tag{TC21}
+\]
+on every function fixed by $\Lambda_1$.
+\end{theorem}
+\begin{proof}
+Choose representatives $S_2$ for
+$\Lambda_2/(\Lambda_1\cap\Lambda_2)$ and $S_3$ for
+$\Lambda_3/(\Lambda_2\cap\Lambda_3)$.
+For $z\in\Lambda_3$, $y\in\Lambda_2$, $z+y\in\Lambda_1$
+put
+\[
+ \psi(z,y)=\alpha(z)\alpha(y)\alpha(z+y)e^{-\pi iE(z,y)},
+ \quad
+ B=\sum_{\substack{z\in S_3,\ y\in S_2\\z+y\in\Lambda_1}}
+                         \psi(z,y).
+ \tag{TC22}
+\]
+The projection argument of Lemma~\ref{tc-unitary-intertwiner}
+gives, for $F$ fixed by $\Lambda_1$,
+\[
+ I_{31}I_{23}I_{12}F
+       =\frac{\sqrt{d_{13}}}{\sqrt{d_{12}}\sqrt{d_{23}}}\,BF.
+ \tag{TC23}
+\]
+In detail, expand the two rightmost averages and apply
+$I_{31}=\sqrt{d_{13}}P_1$ on their output.
+The projection kills $W_zW_yF$ unless $z+y\in\Lambda_1$,
+by character orthogonality.  In the remaining cases
+$W_zW_yF=\psi(z,y)F$ by (TC4).
+Applying the inverse $I_{13}$ proves (TC21) with
+$\mu=\sqrt{d_{13}}B/(\sqrt{d_{12}}\sqrt{d_{23}})$.
+The unitarity of all three operators, applied to a nonzero
+theta function from Lemma~\ref{tc-covolume}, gives $|\mu|=1$.
+
+It remains to determine its phase.  Define subgroups
+\[
+ \begin{split}
+ P&=\{(z,y)\in\Lambda_3\times\Lambda_2:z+y\in\Lambda_1\},\\
+ T&=\{(t,u-t):t\in\Lambda_2\cap\Lambda_3,\
+                         u\in\Lambda_1\cap\Lambda_2\}.
+ \end{split}
+ \tag{TC24}
+\]
+The pairs in the sum (TC22) form representatives for $P/T$.
+To see existence, first reduce $z$ modulo
+$\Lambda_2\cap\Lambda_3$ to $z_0\in S_3$, moving the
+discarded element into $y$, and then reduce the new $y$
+modulo $\Lambda_1\cap\Lambda_2$ to $y_0\in S_2$.
+The sum $z_0+y_0$ stays in $\Lambda_1$.
+For uniqueness, membership of the difference in $T$ first
+forces equality of the $S_3$ representatives and then
+equality of the $S_2$ representatives.  In particular $P/T$
+is finite.
+
+Direct use of (TC2) gives
+\[
+ \begin{split}
+ \psi(z+z',y+y')&=\psi(z,y)\psi(z',y')
+                                      e^{2\pi iE(y,z')},\\
+ \psi(nz,ny)&=\psi(z,y)^{n^2}.
+ \end{split}
+ \tag{TC25}
+\]
+For the first equation, the excess exponent after expanding
+the three semicharacters is
+$2\pi i\{E(z,z')+E(y,y')+E(y,z')\}$.
+The first two terms are integers and disappear.
+For the second, $\alpha(nx)=\alpha(x)^n
+=\alpha(x)^{n^2}$ on each lattice, since its values are signs.
+The polar factor in (TC25) is a bicharacter.
+For $(t,u-t)\in T$, formula (TC2) on $\Lambda_2$ gives
+$\psi(t,u-t)=1$, and $E(y,t)\in\mathbb Z$ gives trivial
+polar factor against every $(z,y)\in P$.
+Thus $\psi$ descends to a homogeneous quadratic function
+on $P/T$.  Its sum is $B$.
+Since $|\mu|=1$, this sum is nonzero.  By
+Theorem~\ref{tc-gauss-eight}, $B^8$ is positive real.
+The multiplier relating $\mu$ to $B$ is positive real,
+so $\mu^8$ is positive real and has absolute value one.
+It is therefore one.
+\end{proof}
+
+\subsection{The Cayley phase and the Gaussian trace}
+
+Let $\delta$ be a complex linear $H$-isometry with no nonzero
+fixed vector.  Assume that $\Lambda$ and $\delta\Lambda$
+are commensurable self-dual lattices, that the common function
+$\alpha$ is a sign semicharacter on both, and that
+\[
+                         \alpha(\delta x)=\alpha(x)
+                                      \quad(x\in\Lambda).
+ \tag{TC26}
+\]
+This last equality is essential; agreement on an intersection
+alone would not assert it.
+Set
+\[
+ A=1-\delta^{-1},\quad C=A^{-1}-\tfrac12,\quad
+ \Gamma=\Lambda\cap\delta\Lambda,\quad d=[\Lambda:\Gamma],
+ \quad
+ q(x)=\alpha(x)e^{-\pi H(Cx,x)}\quad(x\in\Lambda).
+ \tag{TC27}
+\]
+
+\begin{lemma}\label{tc-cayley-quadratic}
+The function $q$ descends to a nondegenerate homogeneous
+quadratic function on $\Lambda/A\Gamma$.  Moreover
+\[
+                 N:=|\Lambda/A\Gamma|=d|\det_{\mathbb C}A|^2.
+ \tag{TC28}
+\]
+\end{lemma}
+\begin{proof}
+Unitarity gives
+$A^*=-\delta A$ and $A^{-1}+(A^*)^{-1}=1$,
+so $C^*=-C$.
+Thus $H(Cx,x)$ is purely imaginary.  For $x,y\in\Lambda$,
+expanding $q(x+y)$ and using $E(x,y)\in\mathbb Z$ gives
+\[
+ \frac{q(x+y)}{q(x)q(y)}
+                   =e^{-2\pi iE(A^{-1}x,y)}.
+ \tag{TC29}
+\]
+For example the exponent before reducing modulo $2\pi i\mathbb Z$
+is $\pi iE(x,y)-2\pi iE(Cx,y)$, equal to the displayed
+exponent plus $2\pi iE(x,y)$.
+This is a bicharacter; its symmetry follows also from its
+definition as a polar factor.  Homogeneity follows from
+$\alpha(nx)=\alpha(x)^{n^2}$.
+
+If $t\in\Gamma$, then $t,\delta^{-1}t\in\Lambda$ and
+$At=t-\delta^{-1}t\in\Lambda$.
+Also
+$H(CAt,At)=-iE(t,\delta^{-1}t)$.
+Equations (TC2) and (TC26) give
+\[
+ q(At)=\alpha(t)\alpha(\delta^{-1}t)=1.
+ \tag{TC30}
+\]
+The polar factor against $At$ is one, because $t\in\Lambda$.
+Thus $q$ descends modulo $A\Gamma$.
+The radical of (TC29) on $\Lambda$ consists precisely of
+the $x$ with $A^{-1}x\in\Lambda^*=\Lambda$.
+For such an $x$, write $t=A^{-1}x$.
+The equation $\delta^{-1}t=t-x\in\Lambda$ implies
+$t\in\Gamma$, hence $x\in A\Gamma$.
+This proves nondegeneracy on the quotient.
+Finally $A$ changes real volume by $|\det_{\mathbb C}A|^2$.
+Lemma~\ref{tc-covolume} and $\operatorname{vol}(V/\Gamma)=d$
+therefore give (TC28).
+\end{proof}
+
+\begin{theorem}\label{tc-unitary-constant}
+For every $F\in\mathcal T(\Lambda,\alpha)$,
+\[
+ F(\delta^{-1}z)=
+       c(\delta,\Lambda)\,I_{\Lambda,\delta\Lambda}F(z),
+ \quad
+ c(\delta,\Lambda)=
+ \frac{|\det A|}{\det A}\,
+         \frac1{\sqrt N}\sum_{x\in\Lambda/A\Gamma}q(x).
+ \tag{TC31}
+\]
+In particular
+\[
+                         c(\delta,\Lambda)^8=(\det\delta)^4.
+ \tag{TC32}
+\]
+\end{theorem}
+\begin{proof}
+Both sides of the first equation belong to the same
+one-dimensional theta space; the left side has the required
+transformation law by (TC26).  Lemma~\ref{tc-unitary-intertwiner}
+makes its right-hand operator nonzero.
+There is therefore a scalar $c$, independent of $F$.
+We compute it, which is the step needed for its arithmetic
+absolute value.
+
+Put $K_w(z)=e^{\pi H(z,w)}$ and consider the periodized kernel
+\[
+                       P(z,w)=\sum_{x\in\Lambda}W_xK_w(z).
+ \tag{TC33}
+\]
+For $z,w$ in compact sets, each summand and every derivative
+is bounded by a polynomial in $\|x\|$ times
+$e^{-\pi\|x\|^2/2+C\|x\|}$.
+The lattice sum is consequently normally convergent.
+Reindexing under $W_\lambda$ shows that
+$P(\,\cdot\,,w)\in\mathcal T(\Lambda,\alpha)$.
+
+We need a diagonal integral.  For $y\in\delta\Lambda$,
+expand (TC33) and use (TC4).  After multiplication by
+$e^{-\pi H(z,z)}$, its $x$-summand is
+\[
+ \alpha(y)\alpha(x)e^{-\pi iE(y,x)}
+       e^{-\pi H(x+y,x+y)/2}e^{2\pi iE(x+y,z)}.
+ \tag{TC34}
+\]
+The last factor is a character of the real torus $V/\Gamma$.
+It has integral zero unless $x+y=0$; nondegeneracy of $E$
+ensures that a nonzero $x+y$ gives a nontrivial character.
+If $y\in\Lambda$ the unique surviving term is $x=-y$,
+whose coefficient is one.  Otherwise no term survives.
+Termwise integration is justified by the preceding Gaussian
+bound on a compact fundamental parallelepiped.  Thus
+\[
+ \int_{V/\Gamma}(W_yP(\,\cdot\,,z))(z)
+                        e^{-\pi H(z,z)}\,dz
+     =\begin{cases}d,&y\in\Lambda,\\0,&y\notin\Lambda.\end{cases}
+ \tag{TC35}
+\]
+The case $y=0$ shows that the kernel is not identically zero.
+Averaging (TC35) over representatives of $\delta\Lambda/\Gamma$
+gives
+\[
+ \int_{V/\Gamma}
+   (I_{\Lambda,\delta\Lambda}P(\,\cdot\,,z))(z)
+                          e^{-\pi H(z,z)}\,dz=\sqrt d.
+ \tag{TC36}
+\]
+
+Set $g(z)=e^{-\pi H(Az,z)}$.
+A direct expansion, using $C^*=-C$, gives the exact identity
+\[
+ \alpha(x)(U_xK_z)(\delta^{-1}z)e^{-\pi H(z,z)}
+                  =q(x)\,g(z-A^{-1}x).
+ \tag{TC37}
+\]
+For clarity, the linear terms agree because
+$H(Az,A^{-1}x)=-H(\delta^{-1}z,x)$.
+The constant terms agree because
+$H(A^{-1}x,x)+H(x,A^{-1}x)=H(x,x)$.
+Also
+\[
+                 |g(z)|=e^{-\pi H(Az,Az)/2}.
+ \tag{TC38}
+\]
+This follows from $A+A^*=A^*A$ and is an integrable
+positive Gaussian, since $A$ is invertible.
+Decompose $\Lambda$ into the $N$ cosets of $A\Gamma$.
+By Lemma~\ref{tc-cayley-quadratic}, the phase $q$ is constant
+on each coset.  The integral of
+$\sum_{\gamma\in\Gamma}g(z-A^{-1}x-\gamma)$ over
+a fundamental domain is $\int_Vg$.
+Absolute convergence follows from (TC38); hence both the
+decomposition and this unfolding are justified.
+We obtain
+\[
+ \int_{V/\Gamma}P(\delta^{-1}z,z)e^{-\pi H(z,z)}\,dz
+       =\left(\sum_{\Lambda/A\Gamma}q(x)\right)\int_Vg(z)\,dz.
+ \tag{TC39}
+\]
+
+Diagonalize the unitary map $\delta$ in an orthonormal basis.
+The eigenvalues of $A$ are $\lambda_j=1-e^{-i\theta_j}$,
+with $\operatorname{Re}\lambda_j>0$, since $\delta$ has no
+fixed vectors.  Polar coordinates give, for such a $\lambda$,
+\[
+ \int_{\mathbb C}e^{-\pi\lambda|w|^2}\,dw
+        =2\pi\int_0^\infty e^{-\pi\lambda t^2}t\,dt
+        =\lambda^{-1}.
+\]
+Absolute convergence permits multiplication of these integrals,
+so $\int_Vg=(\det A)^{-1}$.
+Comparing (TC36) and (TC39) in the scalar identity
+$P(\delta^{-1}z,w)=cI_{\Lambda,\delta\Lambda}P(\,\cdot\,,w)(z)$
+now gives
+\[
+                c=\frac{\sum q(x)}{\sqrt d\,\det A}.
+\]
+Using $\sqrt N=\sqrt d\,|\det A|$ proves (TC31).
+
+The normalized Gauss sum in (TC31) has eighth power one
+by Theorem~\ref{tc-gauss-eight}.
+Taking determinants in $A^*=-\delta A$ gives
+\[
+             \overline{\det A}=(-1)^r\det(\delta)\det A.
+ \tag{TC40}
+\]
+Consequently $(|\det A|/\det A)^2=(-1)^r\det\delta$,
+whose fourth power is $(\det\delta)^4$.
+This proves (TC32).
+\end{proof}
+
+\subsection{Application to the actual fourth-power normalization}
+
+Let $k=\mathbb Q(\sqrt{-D})$ with $D>0$, $D\equiv7\pmod8$,
+and $\mathcal O_k=\mathbb Z[\tau]$,
+$\tau=(1+i\sqrt D)/2$.
+The same argument applies whenever the specified order is
+$\mathbb Z[\tau]$; here $\mathcal O_k$ denotes the maximal
+order used in the arithmetic construction.
+Suppose $\Lambda\subset V$ is a full lattice stable under
+$\mathcal O_k$ and self-dual for $E$.
+Define on the whole complex space
+\[
+              \alpha_H(x)=
+                    \exp\!\left(\pi i\frac{\sqrt D}{2}H(x,x)\right).
+ \tag{TC41}
+\]
+
+\begin{lemma}\label{tc-norm-semicharacter}
+The function (TC41) is a sign semicharacter on $\Lambda$.
+Every isometry preserves this function, and it is multiplicative
+under orthogonal direct sums.
+On the standard lattice $\mathcal O_k^m$ with
+$H_0(z,w)=(2/\sqrt D)\sum_jz_j\overline w_j$, it is
+$(-1)^{\sum_jN_{k/\mathbb Q}(x_j)}$.
+\end{lemma}
+\begin{proof}
+Put $Q(x)=(\sqrt D/2)H(x,x)$.
+Since $\tau x\in\Lambda$,
+$Q(x)=E(\tau x,x)\in\mathbb Z$.
+For $x,y\in\Lambda$,
+\[
+ Q(x+y)-Q(x)-Q(y)+E(x,y)=2E(\tau x,y)\in2\mathbb Z.
+ \tag{TC42}
+\]
+Subtracting $2E(x,y)\in2\mathbb Z$ gives (TC2).
+The remaining assertions follow immediately from preservation
+and additivity of the squared Hermitian norm.
+\end{proof}
+
+We also make explicit the nonprincipal elliptic base allowed
+in the submitted construction.
+Let
+\[
+ I=\mathbb Za+\mathbb Z\tau_b,\qquad
+ \tau_b=\frac{b+i\sqrt D}{2},\qquad
+ 4ac=b^2+D,\qquad a>0\text{ odd},
+ \tag{TC43}
+\]
+be an integral $\mathcal O_k$-ideal, and let $L=\lambda I$,
+$\lambda\in\mathbb C^\times$.
+Its Hermitian form is
+$H_L(z,w)=2z\overline w/(a|\lambda|^2\sqrt D)$.
+
+\begin{lemma}\label{tc-ideal-character}
+The normalized translate by $\lambda a/2$ of the reduced odd
+theta function of $L$ has semicharacter $\alpha_{H_L}$.
+The lattice $L$ is self-dual for $\operatorname{Im}H_L$.
+\end{lemma}
+\begin{proof}
+In the basis $\lambda a,\lambda\tau_b$, the alternating
+pairing has entries $E(\lambda a,\lambda\tau_b)=-1$ and
+$E(\lambda a,\lambda a)=E(\lambda\tau_b,\lambda\tau_b)=0$.
+It is therefore unimodular.
+For $x=\lambda(am+n\tau_b)$ the reduced odd theta
+semicharacter is $(-1)^{m+n+mn}$.
+Translation by $\lambda a/2$ multiplies it by
+$e^{2\pi iE(x,\lambda a/2)}=(-1)^n$, yielding
+$(-1)^{m+mn}$; the opposite sign in this exponential
+gives the same value.
+On the other hand
+\[
+ \frac{\sqrt D}{2}H_L(x,x)
+       =\frac{N(am+n\tau_b)}a
+       =am^2+bmn+cn^2.
+ \tag{TC44}
+\]
+The relation in (TC43) makes $b$ odd, and then
+$D\equiv7\pmod8$ and oddness of $a$ make $c$ even.
+Thus (TC44) has parity $m+mn$, as required.
+The translating half-period does not belong to $L$, so the
+value used to normalize the theta function at zero is nonzero.
+\end{proof}
+
+Now put $\Lambda_0=L^{4r}$ with the product form $H_0$,
+and let $\Theta_0$ be the product of these normalized
+one-dimensional theta functions.
+The case $I=\mathcal O_k$ and $\lambda=1$ is the base of
+Section~\ref{ct-section}.  Lemma~\ref{tc-ideal-character}
+handles the other ideal classes without changing the
+analytic argument.
+Let $g_0,g_1:V^4\to\mathbb C^{4r}$ be isometries from
+$H^{\oplus4}$ to $H_0$, and put $M_i=g_i(\Lambda^4)$.
+Assume that $M_0,M_1,\Lambda_0$ are commensurable and
+$\det(g_1g_0^{-1})$ is algebraic.  These are satisfied
+when the maps are obtained from isometries over $k$ in
+the common scaled $k$-coordinates of the construction.
+Use the same norm semicharacter $\alpha_{H_0}$ on all
+three lattices.  They are self-dual by the isometries and
+Lemma~\ref{tc-ideal-character}.
+Define, as in Section~\ref{lm-section},
+\[
+          K_{g_i}(z)=(I_{\Lambda_0,M_i}\Theta_0)(g_i z).
+ \tag{TC45}
+\]
+
+\begin{theorem}\label{tc-kernel-ratio}
+Suppose $g_1-g_0$ is invertible.  Then there is a nonzero
+algebraic number $c$ such that
+\[
+       K_{g_0}=cK_{g_1},\qquad
+       c^8=\det(g_1g_0^{-1})^4.
+ \tag{TC46}
+\]
+Thus the analytic identity required in the fourth tensor
+criterion of Section~\ref{lm-section} holds with its exact
+determinant exponent.
+\end{theorem}
+\begin{proof}
+Put $\delta=g_1g_0^{-1}$ and $F=I_{\Lambda_0,M_0}\Theta_0$.
+This is a nonzero theta function by
+Lemma~\ref{tc-unitary-intertwiner}.
+The hypothesis makes $\delta-1$ invertible.
+The norm semicharacter is invariant under $\delta$ by
+Lemma~\ref{tc-norm-semicharacter}, including the equality
+(TC26).  Apply Theorem~\ref{tc-unitary-constant} on $M_0$
+and then Theorem~\ref{tc-triple}:
+\[
+ F(\delta^{-1}w)
+    =c_0 I_{M_0,M_1}I_{\Lambda_0,M_0}\Theta_0(w)
+    =c_0\mu I_{\Lambda_0,M_1}\Theta_0(w),
+ \quad c_0^8=(\det\delta)^4,\quad\mu^8=1.
+\]
+Evaluate at $w=g_1z$.  This gives (TC46) with $c=c_0\mu$.
+Since $\det\delta$ is algebraic, that equation also proves
+that $c$ is algebraic.  No algebraicity of the separate
+complex Gaussian factors has been presumed.
+\end{proof}
+
+\begin{corollary}\label{tc-normalized-unit}
+Use the reference isometry $\gamma_0=g_0$, and form
+$\kappa$ as in (LM9)--(LM10), with the locally standard
+maps carrying the given lattice onto the fixed target
+$\Lambda_0$ in scaled $k$-coordinates.
+If $p$ splits in $k$ and
+$g_1(\Lambda^4\otimes\mathbb Z_p)
+=\Lambda_0\otimes\mathbb Z_p$ in those coordinates, then,
+for the same
+embedding into $\mathbb C_p$ as in that theorem,
+\[
+                         |\iota(\kappa c)|_p=1.
+ \tag{TC47}
+\]
+Moreover a nonzero theta function $F_\Lambda$ with
+$F_\Lambda^{\otimes4}=\kappa K_{g_0}$ exists and is unique
+up to a fourth root of unity.
+\end{corollary}
+\begin{proof}
+The proof of Theorem~\ref{lm-kappa} applies to any fixed
+target $\mathcal O_k$-lattice.  Indeed, two local maps
+onto that target differ by an automorphism of its completed
+lattice; its determinant has valuation zero at both primes.
+The finite-support argument uses commensurability with the
+fixed target in place of commensurability with
+$\mathcal O_k^{4r}$, and every subsequent valuation
+calculation is unchanged.
+Equation (TC46) and Corollary~\ref{lm-change-scalar}
+therefore give (TC47).  For existence, choose any nonzero element $\theta$
+of $\mathcal T(\Lambda,\alpha_H)$ by
+Lemma~\ref{tc-covolume}.
+Both $\theta^{\otimes4}$ and $K_{g_0}$ are nonzero elements
+of the one-dimensional theta space for $\Lambda^4$.
+Thus $\kappa K_{g_0}=a\theta^{\otimes4}$ for $a\ne0$.
+Choose a fourth root of $a$ and multiply $\theta$ by it.
+Any two choices, and any two theta functions satisfying
+the displayed normalization, differ by a fourth root of
+unity, again by the one-dimensionality of the theta space.
+\end{proof}
+
+The determinant exponent in (TC46), the positive index
+square roots in (TC10), and the invariant sign semicharacter
+in (TC26) have all been retained.  The complex absolute
+value of a theta normalization alone would not establish
+(TC47).  The calculation above establishes the stronger
+algebraic equality that supplies the finite-place bound.
+It closes the analytic change-of-isometry input; identifying
+the particular arithmetic column and its support is a
+separate subsequent step.
+
+

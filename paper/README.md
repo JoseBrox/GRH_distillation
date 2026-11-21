@@ -1,17 +1,21 @@
-# The developing paper
+# The mathematical manuscripts
 
-- [Read the PDF](main.pdf).
-- [Main TeX file](main.tex).
-- [Mathematical sections](sections/).
+- [Main reconstruction (PDF)](main.pdf): the entire recovered mathematical baseline, organized in eight parts.
+- [Main TeX file](main.tex), [preamble](preamble.tex), and [individual sections](sections/recovered/).
+- [Analytic companion (PDF)](companion/main.pdf) and [its TeX source](companion/main.tex): the shorter paper written at the restart, preserved with its additional analytic arguments.
 
-The manuscript contains proved analytic reductions and explicitly conditional comparisons with the quasi-RH methods. It is **not yet a complete proof of GRH**. The unresolved arithmetic estimates are collected in the final section, and the separate source audit records what has actually been inspected.
+The main reconstruction is **incomplete**. It proves intermediate results and states classical inputs, conditional hypotheses, and the remaining uniform arithmetic estimates separately. The final part states the current frontier; earlier provisional statements must be read with the later results that discharge them. The [recovery crosswalk](../notes/recovery-crosswalk.md) gives a compact guide.
 
-Build from the repository root with:
+Build from the repository root:
 
 ```sh
 python3 scripts/build_paper.py
+python3 scripts/build_paper.py --companion
+python3 scripts/reconcile_recovery.py
 ```
 
-This uses pdfLaTeX, stabilizes cross-references, rejects undefined references and overfull boxes, and writes `certificates/paper-build.json` with the source and output hashes. It makes no network requests. A normal TeX installation needs the standard AMS, geometry, Latin Modern, microtype, and hyperref packages. A local fallback supports an already installed TeX tree whose generated format or filename database is missing.
+The main manuscript uses XeLaTeX and Latin Modern fonts; the companion uses pdfLaTeX. Both builds stabilize references, reject undefined citations and overfull boxes, and record hashes of the actual TeX inputs and resulting PDF. The build scripts make no network requests and can use the installed TeX tree when its generated format database is absent.
 
-The paper is organized by mathematical dependence. Recovery records and source-code details belong outside it. When adding a result, update the exposition where that result is needed, rather than appending a chronological entry.
+The reconciliation check preserves the unchanged archive and maps all recovered sections, labels, results and dependencies to working files. It distinguishes exact copying from editorial or mathematical revision. It does not independently verify every proof.
+
+Write new mathematics in the appropriate section, with complete hypotheses and proofs. Keep source identifiers, audit details, chronological records, and computation logs outside the mathematical exposition. Retain useful alternative proofs without confusing them with necessary steps in the shortest route.

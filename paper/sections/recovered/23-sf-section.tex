@@ -1,0 +1,437 @@
+\section{Explicit homology functionals over a finite field}
+\label{sf-section}
+
+We construct the finite-field functional used to evaluate
+the arithmetic cycles.  The construction uses a cyclic
+two-cocycle and a sum over projective lines.  In particular,
+this step does not require a theorem about the algebraic
+\(K\)-groups of finite fields.
+
+We use the bar chains and boundary of
+Section~\ref{sh-section}.  For a commutative coefficient
+ring \(A\), a degree-\(m\) cochain is an \(A\)-linear
+map \(C_m(G;A)\to A\); it is a cocycle if it vanishes
+on boundaries.  The group acts trivially on \(A\).
+
+\subsection{A cyclic cocycle with an exact value}
+
+Let \(k\) be a finite field of cardinality \(Q\),
+let \(q\ge2\), and let \(\zeta\in k^\times\) have
+order \(q\).  Put \(R=\mathbb Z/q\mathbb Z\), and
+let \(v:k^\times\to(R,+)\) be a homomorphism.
+For \(x\in\mathbb Z\), write
+\(\chi_x:C_q\to k^\times\) for
+\(\chi_x(j)=\zeta^{xj}\), where \(C_q=\mathbb Z/q\mathbb Z\).
+For \(E\ge0\), define
+\[
+ z_E=\sum_{j_1,\ldots,j_E\in C_q}
+             [j_1|1|\cdots|j_E|1]\in C_{2E}(C_q;R).
+\]
+When \(E=0\), this means the single empty tuple.
+For \(E\ge1\), it is the cycle proved in
+Lemma~\ref{sh-cycle}.
+
+\begin{lemma}\label{sf-carry}
+There is a symmetric integer-valued function
+\(u_0:k^\times\times k^\times\to\mathbb Z\) such that
+\[
+ u_0(b,c)-u_0(ab,c)+u_0(a,bc)-u_0(a,b)=0
+\]
+and, writing \(u\) for its reduction modulo \(q\),
+\[
+                \sum_{j\in C_q}u(\zeta^{xj},\zeta^x)=x
+                         \qquad\text{in }R.
+\]
+\end{lemma}
+\begin{proof}
+The multiplicative group of a finite field is cyclic.
+Here is the elementary reason: if \(m\) is the least
+common multiple of its element orders, every element is
+a root of \(X^m-1\), so its cardinality is at most \(m\).
+Lagrange's theorem gives the reverse inequality.
+In a finite abelian group, an element of order \(m\)
+is obtained by taking, for each prime, a component of
+largest prime-power order and multiplying these components.
+The component orders are relatively prime.
+Thus there is a generator of \(k^\times\).
+
+Put \(N=Q-1=qr\).  We may choose a generator \(g\)
+with \(g^r=\zeta\).
+Indeed, for an initial generator \(h\), write
+\(\zeta=h^{ra}\), where \((a,q)=1\).
+Chinese remainders give an integer \(b\equiv a\pmod q\)
+which is \(1\) modulo each prime dividing \(N\) but
+not \(q\).  Then \((b,N)=1\), and \(g=h^b\) works.
+
+For \(s\in k^\times\), let \(a(s)\in\{0,\ldots,N-1\}\)
+be its exponent relative to \(g\), and define
+\[
+                  u_0(s,t)
+                       =\frac{a(s)+a(t)-a(st)}{N}.
+\]
+The numerator is divisible by \(N\).
+Symmetry follows from commutativity, and the displayed
+cocycle identity follows by substituting this formula:
+every exponent cancels.
+
+Set \(s=\zeta^x\).  Summing over \(j\in C_q\),
+the terms \(a(s^j)\) and \(a(s^{j+1})\) cancel,
+even when \(s\) has order less than \(q\).  Hence
+\[
+       \sum_{j\in C_q}u_0(s^j,s)
+             =\frac{q\,a(s)}{N}=\frac{a(s)}r.
+\]
+Since \(g^r=\zeta\), the last integer is the least
+nonnegative residue of \(x\) modulo \(q\).
+Reducing modulo \(q\) proves the assertion.
+\end{proof}
+
+For commuting entries \(h_1,\ldots,h_m\) and an element
+\(g\) commuting with them, define the insertion chain
+\[
+ P_g[h_1|\cdots|h_m]
+   =\sum_{i=0}^m(-1)^i
+       [h_1|\cdots|h_i|g|h_{i+1}|\cdots|h_m].
+\]
+This is the source's prism on such chains; its conjugations
+disappear because of the stated commutation.
+
+\begin{proposition}\label{sf-cyclic-functional}
+For every \(E\ge0\), there is a cocycle
+\(t:C_{2E+1}(k^\times;R)\to R\) satisfying
+\[
+              t(P_g(\chi_x)_*z_E)=x^E v(g)
+            \qquad(x\in\mathbb Z,\ g\in k^\times).
+\]
+\end{proposition}
+\begin{proof}
+Using Lemma~\ref{sf-carry}, set
+\[
+ t([h_1|\cdots|h_{2E+1}])
+       =\prod_{a=1}^E u(h_{2a-1},h_{2a})\,
+                                      v(h_{2E+1}).
+\]
+This is the cup product \(u^E\smile v\).
+For completeness, if \(f\) has degree \(a\) and
+\(h\) has degree \(b\), their cup product on a tuple
+is \(f\) of its first \(a\) entries times \(h\) of
+its last \(b\) entries.
+The bar differential gives
+\[
+       \delta(f\smile h)
+          =(\delta f)\smile h+(-1)^a f\smile\delta h.
+\]
+To check this identity, expand both sides by the faces:
+the faces before the dividing position are those of
+\(\delta f\), and those after it are those of
+\(\delta h\), shifted by \(a\) positions.
+The last face of the first group and the first face
+of the second group cancel with opposite signs;
+the remaining common face multiplies the two entries
+at the dividing position.  These are exactly all
+the faces of the tuple on the left.
+The cocycle identity of Lemma~\ref{sf-carry} and
+\(v(ab)=v(a)+v(b)\) therefore imply \(\delta t=0\).
+
+Evaluate \(t\) on an insertion chain of even length.
+The terms inserting \(g\) just before and just after
+\(h_{2a-1}\) cancel, because \(u\) is symmetric.
+Only insertion in the last position remains.  Thus
+\[
+ t(P_g[h_1|\cdots|h_{2E}])
+       =\prod_{a=1}^E u(h_{2a-1},h_{2a})\,v(g).
+\]
+For \((\chi_x)_*z_E\), the \(E\) summation indices
+are independent, so the value is
+\[
+       \left(\sum_{j\in C_q}u(\zeta^{xj},\zeta^x)\right)^E
+                  v(g)=x^Ev(g).
+\]
+This includes the empty product \(E=0\).
+\end{proof}
+
+\subsection{Transfer over projective lines}
+
+We give the chain construction, including the independence
+of its choices.  Let a group \(G\) act on a finite set
+\(X\) on the right, and let \(M\) be an abelian group.
+Suppose
+\[
+ c(gh,x)=c(g,x)c(h,xg),\qquad c(1,x)=1,
+\]
+for a function \(c:G\times X\to M\).
+For a tuple \([g_1|\cdots|g_m]\), put
+\(x_i=xg_1\cdots g_i\), \(x_0=x\), and define
+\[
+ T_c[g_1|\cdots|g_m]
+    =\sum_{x\in X}
+       [c(g_1,x_0)|c(g_2,x_1)|\cdots|c(g_m,x_{m-1})].
+\]
+Extend this map linearly over any commutative ring \(A\).
+
+\begin{lemma}\label{sf-transfer}
+The maps \(T_c\) commute with the bar boundary.
+If
+\[
+                c'(g,x)=b(x)^{-1}c(g,x)b(xg)
+\]
+for a function \(b:X\to M\), then \(T_{c'}\) and
+\(T_c\) are chain homotopic.  In particular they give
+the same value on cycles after applying a cocycle.
+\end{lemma}
+\begin{proof}
+For an internal face, the two adjacent entries in
+the image multiply to \(c(g_ig_{i+1},x_{i-1})\),
+by the cocycle identity.  The last face deletes the
+same entry on either side.  For the first face,
+replace the summation index \(x\) by \(xg_1\).
+This is a permutation of \(X\), so the first faces
+also agree.  This proves the chain-map assertion.
+
+Here is an explicit homotopy.  On a degree-\(m\) tuple,
+write \(c_i=c(g_i,x_{i-1})\),
+\(c'_i=c'(g_i,x_{i-1})\), and \(b_i=b(x_i)\).
+Set
+\[
+ K_m[g_1|\cdots|g_m]
+ =\sum_{x\in X}\sum_{i=0}^m(-1)^i
+          [c_1|\cdots|c_i|b_i|c'_{i+1}|\cdots|c'_m].
+\]
+Then
+\[
+                    dK_m+K_{m-1}d=T_{c'}-T_c.
+\]
+Indeed the faces not adjacent to the inserted entry
+are precisely the corresponding terms of
+\(-K_{m-1}d\), after the first-face permutation of
+\(X\) already described.  The two faces adjacent
+to successive inserted entries cancel by
+\(c_i b_i=b_{i-1}c'_i\).
+The two unpaired end faces are the all-\(c'\) tuple
+and minus the all-\(c\) tuple.
+This accounts for every face and its sign.
+For a cycle \(z\), the identity expresses
+\(T_{c'}z-T_cz\) as the boundary \(dK_mz\).
+\end{proof}
+
+Let \(V\) now be a finite-dimensional vector space
+over \(k\).  Write \(\mathbb P(V)\) for its set
+of one-dimensional subspaces; it is empty for \(V=0\).
+Choose one nonzero vector in each line.  This defines
+a homogeneous function \(\lambda:V\setminus\{0\}\to k^\times\)
+by expressing a vector as \(\lambda(v)\) times the
+chosen vector in its line.  Thus
+\(\lambda(av)=a\lambda(v)\) for \(a\ne0\).
+
+For a representation \(\rho:G\to\operatorname{GL}(V)\),
+use the right action \(\ell g=\rho(g)^{-1}\ell\),
+and put
+\[
+                  c_\rho(g,\ell)
+                    =\frac{\lambda(v)}{\lambda(\rho(g)^{-1}v)},
+                    \qquad 0\ne v\in\ell.
+\]
+Homogeneity makes this independent of \(v\).
+It satisfies the cocycle identity in
+Lemma~\ref{sf-transfer}.
+Changing \(\lambda\) gives precisely the coboundary
+in that lemma, with
+\(b(\ell)=\lambda(v)/\lambda'(v)\).
+
+\begin{proposition}\label{sf-additive-transfer}
+Let \(A\) be a commutative ring in which \(Q=1\),
+and let \(t:C_m(k^\times;A)\to A\) be a cocycle
+of positive degree.  For every finite-dimensional
+\(k\)-space \(V\), define
+\[
+                    \theta_V=t\circ T_{c_{\mathrm{id}}}.
+\]
+These functionals vanish on boundaries.  Their values
+on cycles are invariant under linear isomorphisms.
+For representations \(\rho\) on \(V\) and \(\sigma\)
+on \(W\), and any cycle \(z\in C_m(G;A)\),
+\[
+ \theta_{V\oplus W}((\rho\oplus\sigma)_*z)
+       =\theta_V(\rho_*z)+\theta_W(\sigma_*z).
+\]
+In dimension one, the scalar representation identifies
+\(\theta_k\) with \(t\) on cycles.
+\end{proposition}
+\begin{proof}
+The chain-map property proves the assertion about
+boundaries.  Pulling the homogeneous function through
+a linear isomorphism gives identical summands under
+the resulting bijection of projective lines.
+Any other choice gives the same value on cycles by
+Lemma~\ref{sf-transfer}.
+
+For the direct sum, choose
+\[
+ \lambda(v,w)=
+ \begin{cases}
+     \lambda_V(v),&v\ne0,\\
+     \lambda_W(w),&v=0.
+ \end{cases}
+\]
+Send a line represented by \((v,w)\) to \(kv\in\mathbb P(V)\)
+when \(v\ne0\), and otherwise to \(kw\in\mathbb P(W)\).
+This map is equivariant for \(\rho\oplus\sigma\).
+The scalar cocycle is the pullback of the one on
+the appropriate summand.
+A fiber over \(kv\in\mathbb P(V)\), after fixing
+the nonzero representative \(v\), consists uniquely
+of the lines \(k(v,w)\) with \(w\in W\).
+It has \(Q^{\dim W}\) elements.
+A fiber over a line in \(W\) has one element.
+Consequently the transfer for the direct sum is
+\(Q^{\dim W}T_\rho+T_\sigma=T_\rho+T_\sigma\)
+with coefficients in \(A\).
+Choice independence proves the claimed formula for
+the originally chosen functionals on cycles.
+
+For \(V=k\), there is one projective line.
+Choosing \(\lambda(v)=v\) gives
+\(c(g)=g\), so its transfer is the identity.
+\end{proof}
+
+\subsection{The determinant value}
+
+\begin{lemma}\label{sf-determinant}
+For \(g\in\operatorname{GL}(V)\),
+\[
+                 \prod_{\ell\in\mathbb P(V)}c(g,\ell)
+                              =\det(g)\quad\text{in }k^\times.
+\]
+\end{lemma}
+\begin{proof}
+Denote the product by \(D(g)\).
+The cocycle identity and the permutation of the
+projective lines imply \(D(gh)=D(g)D(h)\).
+Changing \(\lambda\) does not change the product,
+because all factors \(b(\ell)^{-1}b(\ell g)\) cancel.
+
+Choose coordinates and take \(\lambda(v)\) to be
+the first nonzero coordinate of \(v\).
+For \(g=\operatorname{diag}(a_1,\ldots,a_n)\), a line
+whose first nonzero coordinate has index \(i\)
+contributes \(a_i\).  There are \(Q^{n-i}\) such
+lines, obtained by making that coordinate equal
+to \(1\).  Since \(a_i^Q=a_i\) in the finite field,
+\[
+                      D(g)=\prod_i a_i^{Q^{n-i}}
+                            =\prod_i a_i=\det(g).
+\]
+If \(Q=2\), the target group \(k^\times\) is
+trivial and the result already follows.
+Otherwise choose \(a\in k\setminus\{0,1\}\).
+For \(i\ne j\), let \(T_{ij}(s)=I+sE_{ij}\),
+and let \(d\) be diagonal with entry \(a\) at
+\(i\) and \(1\) elsewhere.  Then
+\[
+      dT_{ij}(s)d^{-1}T_{ij}(s)^{-1}=T_{ij}((a-1)s).
+\]
+Every transvection is therefore a commutator, so
+the homomorphism \(D\) is \(1\) on transvections.
+Gaussian elimination writes every invertible matrix
+as a product of diagonal matrices and transvections:
+if a pivot is zero, add a row having a nonzero entry
+in that column, then clear the remaining column
+entries and continue.  Row scalings supply the
+diagonal matrices.
+Both \(D\) and determinant agree on these generators,
+which proves the lemma.  In dimension zero both
+products are \(1\).
+\end{proof}
+
+\begin{theorem}\label{sf-functional}
+Under the hypotheses of Proposition~\ref{sf-cyclic-functional},
+there are functionals
+\[
+             \theta_V:C_{2E+1}(\operatorname{GL}(V);R)\to R
+\]
+which vanish on boundaries, are invariant under
+linear isomorphisms on cycles, and are additive
+under direct sums on cycles.  They satisfy
+\[
+ \theta_V\bigl(P_g(\chi_{x,V})_*z_E\bigr)
+                         =x^E v(\det g),
+ \qquad
+ \chi_{x,V}(j)=\zeta^{xj}I_V.
+\]
+\end{theorem}
+\begin{proof}
+Since \(q\mid Q-1\), we have \(Q=1\) in \(R\).
+Apply Proposition~\ref{sf-additive-transfer} to the
+cyclic cocycle \(t\).
+Scalar matrices act trivially on \(\mathbb P(V)\),
+and their scalar cocycle is the scalar itself.
+Thus, directly from the tuple formula for transfer,
+\[
+ T\bigl(P_g(\chi_{x,V})_*z_E\bigr)
+     =\sum_{\ell\in\mathbb P(V)}
+          P_{c(g,\ell)}(\chi_x)_*z_E.
+\]
+Indeed, before the inserted \(g\), all projective
+lines remain fixed by the preceding scalar entries;
+after it, the line may change, but the remaining
+scalar cocycle entries do not depend on that line.
+Apply Proposition~\ref{sf-cyclic-functional} and then
+Lemma~\ref{sf-determinant} to obtain
+\[
+ x^E\sum_\ell v(c(g,\ell))
+       =x^E v\!\left(\prod_\ell c(g,\ell)\right)
+       =x^E v(\det g).
+\]
+If the coefficient modulus is \(q=1\), the same
+assertion holds with all functionals zero; no
+nontrivial root of unity is then required.
+\end{proof}
+
+Taking \(E=e+1\) proves the source assertions
+\(\mathrm{SCoc}\), \(\mathrm{STrans}\), and
+\(\mathrm{STheta}\), with their stated coefficients
+and normalization.  The determinant calculation also
+explains why no exceptional claim about
+\(\operatorname{GL}_2(\mathbb F_2)\) is needed:
+its multiplicative residue group is trivial.
+
+\begin{corollary}\label{sf-primitive-family}
+Let \(A\) be a commutative coefficient ring, let
+\(\theta\) be any positive-degree additive family
+with values in \(A\) as above, let \(B\) be a commutative ring, and let
+\(r:B\to k\) be a ring homomorphism.
+Composing reduction of matrices with \(\theta\)
+gives a family on \(\operatorname{GL}_n(B)\) which
+vanishes on boundaries, is invariant on cycles under
+\(g\mapsto\operatorname{diag}(g,I)\), and is
+multiplied by \(d\) under
+\(g\mapsto\operatorname{diag}(g,\ldots,g)\)
+with \(d\) copies.
+\end{corollary}
+\begin{proof}
+Reduction is a group homomorphism and therefore
+commutes with the bar boundary.
+The contribution of a trivial representation on
+a positive-degree cycle is zero.
+To see this without an acyclicity assumption,
+the bar chain group of the trivial group is \(A\)
+in every degree; its boundary is the identity in
+positive even degrees and zero in odd degrees.
+Its positive-degree homology is consequently zero.
+The image of the cycle under a trivial representation
+is therefore a boundary, annihilated by \(\theta\).
+Direct-sum additivity now proves stabilization
+invariance, and iteration proves multiplication
+by \(d\).  For \(d=0\) the representation is trivial
+on the zero space and gives zero.
+\end{proof}
+
+This corollary is exactly the source assertion
+\(\mathrm{SPhi}\).  The finite-field evaluations and
+their stable additivity are now proved.  Constructing
+the integral arithmetic cycles with the prescribed
+evaluations, and bounding their possible values by
+the stable rational homology calculation, remain
+separate tasks.
+
+

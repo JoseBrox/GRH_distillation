@@ -1,0 +1,1102 @@
+\section{A local change of variables and cancellation of mixed critical terms}
+\label{sec:theta-orbital-identity}
+
+We continue with the same local data as in the preceding section:
+$K$ is a finite product of finite extensions of $\mathbb Q_p$,
+$R\subset K$ is a compact open subring, and $\psi$ is a continuous
+additive character whose annihilator of $R$ is $R$ itself.  Haar
+measure is normalized by $\operatorname{vol}(R)=1$.  This includes
+the nonmaximal split order already described.  Absolute values and
+small neighborhoods in $K$ are understood componentwise.  In
+particular, a parameter tends to zero in every field factor.
+
+Fix an integer $m\ge1$, put $s=m+1$, and let $\Omega\subset K^\times$
+be compact and open.  Suppose that $\Omega$ is invariant under
+multiplication by every $s$th root of unity in $K$.
+For $t\in K^\times$, define
+\begin{equation}\label{orb-cut}
+ \mathcal C_t=\{(-t)^{-m}z^s:z\in\Omega\}.
+\end{equation}
+Fix an additive lattice $\Lambda$ such that
+$\Omega+\Lambda=\Omega$.  A function on $\Omega$ is called
+$\Lambda$-invariant when $f(z+\lambda)=f(z)$ for
+$z\in\Omega$ and $\lambda\in\Lambda$.
+We may always replace $\Lambda$ by a smaller lattice.  None of the
+neighborhoods below depends on the values of $f$ or $g$.
+
+\subsection{Uniform choices near one}
+
+We record the elementary local facts used to keep the dependence on
+residue characteristic and conductor explicit.
+
+\begin{lemma}\label{orb-near-one}
+For each positive integer $s$, the power series
+$\beta_s(X)=(1+X)^{1/s}$ converges on a sufficiently small
+neighborhood of zero in $K$.  On a smaller neighborhood it satisfies
+\[
+ \beta_s(X)^s=1+X,\qquad
+ \beta_s(X)=1+\frac{X}{s}b_s(X),\qquad b_s(X)\in R,
+ \quad b_s(0)=1.
+\]
+It is the unique $s$th root sufficiently close to one.
+Given $\Omega$ and $\Lambda$ as above, there is a neighborhood
+$U$ of one in $K^\times$, invariant under inversion, such that
+\[
+ u\Omega=\Omega,\qquad (u-1)\Omega\subset\Lambda,
+ \qquad |u_j|=1
+\]
+for every $u\in U$ and every field component $j$.
+\end{lemma}
+
+\begin{proof}
+In a field factor the coefficients of the binomial series have at
+most exponential growth.  Indeed, for a fixed rational number $a$,
+\[
+ \left|\binom a n\right|
+ \le\max(1,|a|)^n|n!|^{-1},
+\]
+and the valuation formula for $n!$ gives an exponential upper bound
+for its inverse absolute value.  The series therefore converges on
+a sufficiently small ball.  Its formal identity
+$\beta_s(X)^s=1+X$ is an identity of convergent series there.
+The function $b_s(X)=s(\beta_s(X)-1)/X$, extended by $b_s(0)=1$,
+is continuous.  Since $R$ is a neighborhood of one, it takes
+values in $R$ after another shrink.  Two nearby roots differ by an
+$s$th root of unity.  There are finitely many such roots, and one
+can choose the neighborhood to exclude all but one.  Applying these
+facts in the finitely many field factors proves the assertion for
+$K$.
+
+For the second assertion, compactness of $\Omega$ and continuity
+of multiplication give $(u-1)\Omega\subset\Lambda$ for every
+$u$ in a sufficiently small neighborhood of one.  Then
+$u\Omega\subset\Omega$.  Intersect this neighborhood with its
+inverse to obtain equality.  The component absolute values of a
+unit near one are all one.
+\end{proof}
+
+The neighborhood in this lemma is allowed to depend on $s$, on the
+fields, and on $R$.  In particular, it is not asserted to be
+independent of the valuations of $s$ or of $2$.  The lemma remains
+valid when the residue characteristic divides either integer.
+
+Let $\Sigma\subset K$ be finite.  For $t$ sufficiently small and
+$\sigma\in\Sigma$, set
+\begin{equation}\label{orb-shift}
+ t_\sigma=(t^{-1}+\sigma)^{-1}=\frac{t}{1+\sigma t}.
+\end{equation}
+The denominator is then a unit, $t_\sigma/t$ tends uniformly to one,
+and $|t_\sigma|=|t|$.  Taking the near-one $s$th root of
+$(t_\sigma/t)^m$ and using Lemma~\ref{orb-near-one} gives
+\begin{equation}\label{orb-cut-shift}
+ \mathcal C_{t_\sigma}=\mathcal C_t
+ \qquad(\sigma\in\Sigma).
+\end{equation}
+The same argument shows that $\mathcal C_t+R=\mathcal C_t$
+when $t$ is small: if $c=(-t)^{-m}z^s$ and $r\in R$, then
+$r/c$ tends uniformly to zero, and
+$z\beta_s(r/c)\in\Omega$ is an $s$th root of $(-t)^m(c+r)$.
+Compactness of $R$ and of the set of inverses of elements of
+$\Omega$ makes this uniform in $c$ and $r$.
+
+\subsection{An exact formula for the sum over root fibers}
+
+Choose any representatives $c_x\in K^\times$ of the additive
+cosets $x\in K/R$.  Such representatives exist: the compact open
+ring contains a product of sufficiently small open balls, so each
+coordinate of a representative can be perturbed away from zero.
+The following identity is independent of these choices.
+
+\begin{theorem}\label{orb-change-variable}
+For all sufficiently small $t\in K^\times$ and every
+$\Lambda$-invariant function $f:\Omega\to\mathbb C$,
+\begin{equation}\label{orb-change-formula}
+ \sum_{\substack{x\in K/R\cr c_x\in\mathcal C_t}}
+       \ \sum_{z^s=(-t)^m c_x} f(z)
+ =\frac{|s|}{|t|^m}\int_\Omega |z|^m f(z)\,dz.
+\end{equation}
+All roots in the inner sum belong to $\Omega$, and both sums are
+finite.  The required small neighborhood depends only on
+$K,R,m,\Omega,\Lambda$.
+\end{theorem}
+
+\begin{proof}
+If one root of $z^s=(-t)^mc$ lies in $\Omega$, every root does,
+because their ratios are $s$th roots of unity.  Put
+\[
+ H(c)=\sum_{\substack{z\in\Omega\cr z^s=(-t)^mc}}f(z).
+\]
+This function has compact support $\mathcal C_t$.  For
+$c\in\mathcal C_t$ and $r\in R$, multiplication by
+$\omega=\beta_s(r/c)$ bijects the roots above $c$ and $c+r$.
+For small $t$, uniformly over these choices,
+$z(\omega-1)\in\Lambda$.  Thus it preserves $f$, and
+$H(c+r)=H(c)$.  The invariance of $\mathcal C_t$ under $R$
+proves the same equality outside $\mathcal C_t$.  Consequently
+\[
+ \sum_{x\in K/R}H(c_x)=\int_K H(c)\,dc,
+\]
+since each additive coset has volume one and only finitely many
+cosets meet the compact support.
+
+The map $z\mapsto c=z^s/(-t)^m$ has nonzero derivative
+$s z^m/(-t)^m$ at every point of $\Omega$.  On sufficiently small
+product balls it is an analytic bijection onto a product of balls,
+and multiplies Haar measure by $|s||z|^m/|t|^m$.  To justify this
+without a smoothness assumption on $f$, divide the local map by
+its derivative: on a smaller ball it is a linear map followed by
+the identity plus a strict contraction, exactly as in the proof
+of the local Morse lemma.  It therefore maps each sufficiently
+small coset partition bijectively to the corresponding partition.
+The Jacobian factor is constant on that ball.  A finite disjoint
+partition of $\Omega$ by such balls proves the change-of-variables
+formula, with every root counted once.  This gives
+\eqref{orb-change-formula}.
+\end{proof}
+
+The source writes the integral on the right as a finite lattice
+sum and additionally assumes that $|z|$ is constant on the
+$\Lambda$-cosets in $\Omega$.  Under that assumption its sum is
+exactly the Haar integral in \eqref{orb-change-formula}.  The
+Haar-integral version itself needs no such extra assumption.
+
+\subsection{Vanishing of the mixed critical terms}
+
+\begin{theorem}\label{orb-cross-vanish}
+Fix $\zeta\in K^\times$ with $\zeta^s=1$ and $\zeta\ne1$,
+and fix a finite set $\Sigma\subset K$.  There are neighborhoods
+$E$ of one and $V$ of zero such that the following holds.
+Let $t\in V\cap K^\times$, let
+$t_1=t_\sigma$, $t_2=t_{\sigma'}$ with
+$\sigma,\sigma'\in\Sigma$, and let $\kappa\in E$.
+Suppose that $g:\Omega\to\mathbb C$ is $\Lambda$-invariant
+and satisfies
+\begin{equation}\label{orb-cross-support}
+ g(z)\ne0\quad\Longrightarrow\quad
+ z^{-1}-(\zeta z)^{-1}\in R.
+\end{equation}
+Then, for every choice of the representatives $c_x$,
+\begin{equation}\label{orb-cross-sum}
+ \sum_{\substack{x\in K/R\cr c_x\in\mathcal C_t}}
+ \ \sum_{z^s=(-t_1)^m c_x}
+ g(z)\psi\left(sz/t_1-s\zeta\kappa z/t_2\right)=0.
+\end{equation}
+In particular this holds with the source's further condition
+$\kappa^s=(t_2/t_1)^m$; that condition is unnecessary for this
+vanishing assertion alone.
+\end{theorem}
+
+\begin{proof}
+Write
+\[
+ a=\frac{s}{t_1}-\frac{s\zeta\kappa}{t_2},\qquad
+ \rho=\kappa\frac{t_1}{t_2},\qquad
+ T=(-t_1)^m.
+\]
+We may make $\rho$ as close to one as needed by shrinking $E$
+and $V$.  The truncation sets for $t_1$ and $t$ agree by
+\eqref{orb-cut-shift}.  Define
+\[
+ H(c)=\sum_{\substack{z\in\Omega\cr z^s=Tc}}
+             g(z)\psi(az).
+\]
+The important point is that $H$ is still $R$-periodic, despite
+the oscillating factor.  For $r\in R$, multiplication by
+$\omega=\beta_s(r/c)$ matches the roots above $c$ and $c+r$,
+preserves $\Omega$, and preserves $g$.  Moreover
+\[
+ az(\omega-1)=\frac{aT}{s z^m}\,r\,b_s(r/c),\qquad
+ \frac{aT}{s z^m}
+    =(-1)^m\frac{t_1^{m-1}}{z^m}(1-\zeta\rho).
+\]
+The second expression belongs to $R$ on the support of $g$,
+uniformly for sufficiently small parameters.  If $m\ge2$, it
+tends uniformly to zero, since $\Omega$ is compact in $K^\times$.
+If $m=1$, then $s=2$ and $\zeta^{-1}=\zeta$, so
+\[
+ -\frac{1-\zeta\rho}{z}
+ =-\frac{1-\zeta}{z}+\frac{\zeta(\rho-1)}{z}\in R.
+\]
+The first term belongs to $R$ by \eqref{orb-cross-support};
+the second does so by the uniform smallness of $\rho-1$.
+Since $r,b_s(r/c)\in R$ and $\psi$ is trivial on $R$, the
+phase is unchanged.  Terms where $g(z)=0$ cause no difficulty,
+because the matched value of $g$ is also zero.  Therefore
+$H(c+r)=H(c)$, including outside its $R$-stable support.
+
+As in the preceding theorem, the sum in \eqref{orb-cross-sum}
+is consequently
+\begin{equation}\label{orb-cross-integral}
+ \frac{|s|}{|t_1|^m}
+       \int_\Omega |z|^m g(z)\psi(az)\,dz.
+\end{equation}
+Choose a fixed smaller lattice $\Lambda_0\subset\Lambda$
+such that $\Omega$ is a finite union of its cosets and $|z|$
+is constant on each such coset.  This is possible because the
+absolute value is locally constant on $K^\times$ and $\Omega$
+is compact.  The amplitude $|z|^m g(z)$ is constant on each coset,
+independently of the values of $g$.
+
+There is at least one field component $j$ with $\zeta_j\ne1$.
+After shrinking $E$ and $V$, the number $1-\zeta_j\rho_j$
+has the same nonzero absolute value as $1-\zeta_j$.
+Thus $|a_j|=|s(1-\zeta_j\rho_j)/t_{1,j}|$ tends to infinity.
+The annihilator $\Lambda_0^\perp$ is compact, so
+$a\notin\Lambda_0^\perp$ once $t$ is sufficiently small.
+Character orthogonality on each coset of $\Lambda_0$ now makes
+the integral in \eqref{orb-cross-integral} zero.  This proves
+\eqref{orb-cross-sum}.
+\end{proof}
+
+The proof isolates the role of the support condition: it is needed
+for invariance under a change of representative when $m=1$.
+For $m\ge2$ the same conclusion holds without that condition.
+All choices remain local choices made after $K,R,\psi,m,\Omega,
+\Lambda,\Sigma,\zeta$ are fixed.  No constant uniform over
+all residue characteristics or over all block sizes has been
+asserted.
+
+\begin{remark}[The support condition cannot simply be omitted when $m=1$]
+Take $K=\mathbb Q_3$, $R=\mathbb Z_3$, and a character with
+annihilator $R$.  Let $m=1$, $s=2$, $\zeta=-1$,
+$\Sigma=\{0\}$, $\kappa=1$, and set
+\[
+ \Omega=(3+9\mathbb Z_3)\cup(-3+9\mathbb Z_3),\qquad
+ \Lambda=9\mathbb Z_3,\qquad g=1_{3+9\mathbb Z_3}.
+\]
+All the assumptions of Theorem~\ref{orb-cross-vanish}, other than
+\eqref{orb-cross-support}, hold.  Put $t=3^N$ with $N\ge4$.
+One may choose $c=-9/t$ as the representative of its coset in
+$K/R$.  The roots of $z^2=-tc$ are $3$ and $-3$, and the
+contribution of this coset is $\psi(12/t)$.
+Now replace only this representative by $c+1$.  Its root in
+$3+9\mathbb Z_3$ is
+\[
+ z'=3\sqrt{1-3^{N-2}}.
+\]
+The near-one square root exists, and its binomial series gives
+\[
+ \frac{4(z'-3)}{t}
+       =-\frac23+O(3^{N-3})
+       \equiv-\frac23\pmod{\mathbb Z_3}.
+\]
+Indeed the first-order term is $-2/3$ and, for $j\ge2$, the
+$j$th term has valuation at least $N-3$; the binomial
+coefficients of $(1+X)^{1/2}$ lie in $\mathbb Z_3$.
+Thus this coset's contribution is multiplied by
+$\psi(-2/3)\ne1$, while all other contributions are unchanged.
+The two total sums differ, so they cannot both vanish.
+Such a failure occurs for arbitrarily small $t$.
+The omitted hypothesis fails at $z=3$, since
+$z^{-1}-(-z)^{-1}=2/3\notin R$.
+This is a counterexample to removing a hypothesis, not to the
+statement in the source.
+\end{remark}
+
+\subsection{The exact truncated orbital identity and its remaining algebraic inputs}
+
+A block configuration $h$ consists of a finite list of block sizes
+and one scalar in $K^\times$ for each block.  Write $h[s,z]$ for
+the configuration obtained by adjoining the block $zJ_s$, where
+$J_s$ is the reversing permutation matrix of size $s$.  Zero-sized
+blocks contribute empty matrices and can be omitted.  The matrix
+$Z(h)$ is the block diagonal matrix of the configuration.
+
+Let $\mathcal K(h,h')$ denote the local marked-cokernel kernel of
+the preceding section.  For convenience define
+\begin{align}
+ N_s(h,h';z,z')
+   &=|zz'|^{s(s-1)/2}
+                 \mathcal K(h[s,z],h'[s,z']),\\
+ W_h(t,c)&=h[m,t][1,c].
+\end{align}
+The truncated Gram sum is
+\begin{equation}\label{orb-cut-gram}
+ U_t(h,h';t_1,t_2)=|t_1t_2|^{m(m+1)/2}
+       \sum_{\substack{x\in K/R\cr c_x\in\mathcal C_t}}
+          \mathcal K(W_h(t_1,c_x),W_{h'}(t_2,c_x)).
+\end{equation}
+
+The next theorem isolates the exact algebraic inputs still needed
+for this particular kernel.  The hypotheses are stated in
+ordinary mathematical terms rather than concealed in a general
+existence assertion.
+
+\begin{theorem}\label{orb-cut-identity}
+Fix a finite collection $\mathcal F$ of block configurations of
+the same total size, a compact open $\Omega$ as above, and a
+finite $\Sigma\subset K$.  Suppose that the following properties
+hold for the kernel $\mathcal K$.
+\begin{enumerate}
+\item The kernel is Hermitian.
+\item For each $h\in\mathcal F$ there is an additive lattice
+$L_h$ such that, whenever $z,z'\in K^\times$, $z\in\Omega$,
+and $z'-z\in L_h$, one has
+\[
+ \mathcal K(h[s,z'],w)=\mathcal K(h[s,z],w)
+ \quad\text{for every comparison configuration }w.
+\]
+\item For $h,h'\in\mathcal F$ and $z,z'\in K^\times$,
+\begin{equation}\label{orb-inverse-support}
+ \mathcal K(h[s,z],h'[s,z'])\ne0
+ \quad\Longrightarrow\quad z^{-1}-z'^{-1}\in R.
+\end{equation}
+\item With $\gamma_m$ the Gaussian phase from the preceding
+section, the following germ formula holds.  For every compact
+$Q\subset K^\times$ there is a sufficiently small neighborhood
+of zero such that, for $h\in\mathcal F$, $t$ in that neighborhood,
+$ct^m\in Q$, and every comparison configuration $w$,
+\begin{align}\label{orb-germ-input}
+ \mathcal K(W_h(t,c),w)
+  ={}&|t|^{-m^2/2}|s|^{-1/2}
+       \sum_{z^s=(-t)^m c}\gamma_m(zt)|z|^{m^2/2}
+             \psi(sz/t)\mathcal K(h[s,z],w).
+\end{align}
+The neighborhood is uniform in $c$ and $w$ as stated.
+\end{enumerate}
+Then for all sufficiently small $t\in K^\times$, all
+$\sigma,\sigma'\in\Sigma$, and all $h,h'\in\mathcal F$,
+with $t_1=t_\sigma$ and $t_2=t_{\sigma'}$, one has
+\begin{equation}\label{orb-exact-cut}
+ U_t(h,h';t_1,t_2)
+   =\int_\Omega N_s(h,h';z,z)
+                         \psi(z(\sigma-\sigma'))\,dz.
+\end{equation}
+The small neighborhood is independent of the representatives $c_x$.
+\end{theorem}
+
+\begin{proof}
+All choices below involve finitely many configurations, shifts,
+and $s$th roots of unity, so the required neighborhoods and lattices
+can be intersected.  Choose the unique root near one satisfying
+\[
+ \kappa^s=(t_2/t_1)^m.
+\]
+For each root $z^s=(-t_1)^mc$, the roots for the second germ
+formula are exactly $\zeta\kappa z$, with $\zeta^s=1$.
+The truncation sets for $t,t_1,t_2$ agree.  In particular all these roots
+are in $\Omega$.
+
+Take
+$Q=\{(-1)^m z^s:z\in\Omega\}$ in the germ hypothesis.
+Apply \eqref{orb-germ-input} first to the first argument of the
+kernel in \eqref{orb-cut-gram}, and then to its second argument
+by Hermitian symmetry.  These are finite sums.  Since
+$|t_1|=|t_2|=|t|$ and $|\zeta|=|\kappa|=1$, the result is
+\begin{align}\label{orb-expanded-cut}
+ U_t(h,h';t_1,t_2)
+ ={}&\frac{|t|^m}{|s|}
+ \sum_{\zeta^s=1}
+ \sum_{\substack{x\in K/R\cr c_x\in\mathcal C_t}}
+ \ \sum_{z^s=(-t_1)^m c_x}
+ |z|^{-m}\notag\\
+ &\quad\cdot\gamma_m(zt_1)
+       \overline{\gamma_m(\zeta\kappa zt_2)}
+       N_s(h,h';z,\zeta\kappa z)\notag\\
+ &\quad\cdot\psi(sz/t_1-s\zeta\kappa z/t_2).
+\end{align}
+For completeness, the power of $|t|$ comes from
+$m(m+1)-m^2=m$.  The power of $|z|$ comes from
+$m^2-s(s-1)=-m$.  These equalities account for the whole
+normalization in this calculation.
+
+The factor $\kappa t_2/t_1$ is a square when $t$ is sufficiently
+small.  Square invariance of the Gaussian phase gives
+\[
+ \gamma_m(\zeta\kappa zt_2)=\gamma_m(\zeta zt_1).
+\]
+The local constancy hypothesis, applied in the second argument
+using Hermitian symmetry, gives
+\[
+ N_s(h,h';z,\zeta\kappa z)=N_s(h,h';z,\zeta z).
+\]
+Here $\zeta z\in\Omega$, and
+$(\kappa-1)\zeta z$ is uniformly small.  The positive factor in
+the definition of $N_s$ is unchanged because $|\kappa|=1$.
+
+Choose a fixed lattice $\Lambda_0$ small enough that $\Omega$
+is a union of its cosets, that $|z|$ is constant on those cosets,
+and that $(z+\lambda)/z$ is a square for
+$z\in\Omega$, $\lambda\in\Lambda_0$.  Also require
+$\Lambda_0\subset L_h$ and $\zeta\Lambda_0\subset L_h$
+for every $h\in\mathcal F$ and $\zeta^s=1$.
+These choices are possible by compactness and
+Lemma~\ref{orb-near-one}.  The amplitude
+\[
+ g_{\zeta,t_1}(z)=|z|^{-m}\gamma_m(zt_1)
+           \overline{\gamma_m(\zeta zt_1)}
+                       N_s(h,h';z,\zeta z)
+\]
+is then $\Lambda_0$-invariant, with that lattice independent of
+$t_1$.  Square invariance handles the two Gaussian factors, and
+the local constancy hypothesis handles both kernel arguments.
+If this amplitude is nonzero, \eqref{orb-inverse-support}
+gives exactly \eqref{orb-cross-support}.
+Theorem~\ref{orb-cross-vanish} therefore removes every term in
+\eqref{orb-expanded-cut} with $\zeta\ne1$.
+
+For $\zeta=1$ the two Gaussian factors multiply to one.
+The remaining phase satisfies
+\begin{equation}\label{orb-diagonal-phase}
+ \psi(sz/t_1-s\kappa z/t_2)
+               =\psi(z(\sigma-\sigma'))\qquad(z\in\Omega).
+\end{equation}
+Here is a direct verification, including the necessary uniformity.
+As a convergent power series in the small parameter $t$,
+\[
+ \kappa=1+\frac{m}{s}(\sigma-\sigma')t+t^2q(t),
+\]
+where $q$ is analytic near zero.  This follows by substituting
+$t_2/t_1=(1+\sigma t)/(1+\sigma't)$ in its defining
+near-one root.  Consequently
+\[
+ s/t_1-s\kappa/t_2
+     =\sigma-\sigma'+tq_1(t)
+\]
+for another analytic function $q_1$.  Its values are bounded on
+a smaller neighborhood.  Multiplication by $z\in\Omega$ makes
+the remainder lie in $R$ for all sufficiently small $t$.
+There are finitely many pairs of shifts, so the choice is uniform.
+Triviality of $\psi$ on $R$ proves \eqref{orb-diagonal-phase}.
+
+After shrinking $\Lambda_0$ again to annihilate all differences
+$\sigma-\sigma'$, the remaining amplitude
+\[
+ |z|^{-m}N_s(h,h';z,z)\psi(z(\sigma-\sigma'))
+\]
+is $\Lambda_0$-invariant.  Theorem~\ref{orb-change-variable}
+turns its root sum into
+\[
+ \frac{|s|}{|t_1|^m}
+       \int_\Omega N_s(h,h';z,z)
+                      \psi(z(\sigma-\sigma'))\,dz.
+\]
+This cancels the factor $|t|^m/|s|$ in
+\eqref{orb-expanded-cut}, proving \eqref{orb-exact-cut}.
+\end{proof}
+
+The theorem proves the full analytic passage from the orbital germ
+formula to the truncated orbital identity, including the mixed critical terms.
+It does not establish the germ formula or the inverse-parameter
+support for an arbitrary Hermitian kernel.  For the actual marked
+cokernel kernel those properties are additional algebraic facts;
+their exact content is examined next.
+
+\subsection{Finiteness of the actual sums}
+
+We make the kernel definition precise enough for the algebraic
+support argument.  For a configuration $w$ of total size $n$, let
+$L_w(K)$ be the block lower unipotent group, with identity matrices
+on its diagonal blocks and arbitrary blocks strictly below them.
+Let $U_n(K)$ be the upper unipotent group.  For either group,
+placing $R$ in place of $K$ means that all its entries lie in $R$.
+The source's lower group is exactly $L_w(K)$: conjugating a lower
+triangular diagonal block by its reversing permutation matrix
+makes it upper triangular, so a diagonal block that remains lower
+unipotent must be the identity.
+
+For
+\[
+ q=(x,y)\in L_w(R)\backslash L_w(K)
+                    \times U_n(K)/U_n(R),
+\]
+choose representatives and put
+\[
+ Z_q=xZ(w)y,\qquad
+ a_q=\psi\left(\sum_{i=0}^{n-2}x_{i+1,i}
+                       +\sum_{i=0}^{n-2}y_{i,i+1}\right).
+\]
+Let $\mathcal I_w$ be the set of those cosets for which
+$Z_q\in M_n(R)$.  The marked module attached to $Z_q$ is
+$C_{Z_q}=R^n/Z_qR^n$, with marked vector $[e_{n-1}]$ and
+functional $[v]\mapsto (Z_q^{-1}v)_{n-1}\pmod R$.
+For $n=0$, take the zero module with zero markings.  Then the actual kernel is
+\begin{equation}\label{orb-actual-kernel}
+ \mathcal K(w,w')=
+ \sum_{q\in\mathcal I_w}\sum_{q'\in\mathcal I_{w'}}
+ a_q\overline{a_{q'}}\,
+       \#\operatorname{Iso}(C_{Z_q},C_{Z_{q'}}).
+\end{equation}
+Isomorphisms here preserve both markings.
+
+\begin{lemma}\label{orb-finite-orbits}
+The set $\mathcal I_w$ is finite, and
+\eqref{orb-actual-kernel} is independent of every representative
+choice.  In particular it is the finite Gram kernel described
+earlier.  For $w=h[s,z]$, the union of the integral orbit cosets
+is still finite when $z$ ranges over a fixed compact subset of
+$K^\times$.
+\end{lemma}
+
+\begin{proof}
+First consider all pairs $(x,y)$ for which $xZ(w)y$ has entries
+in $R$.  Write $xZ(w)y=LU$ in block form, with $L=x$ and
+$U=Z(w)y$.  The determinant of the $i$th diagonal block of $U$
+is the fixed nonzero number $\det(t_iJ_{s_i})$.
+Block Gaussian elimination recovers $L$ and $U$ from the product
+$Z$ by
+\[
+ U_{ij}=Z_{ij}-\sum_{a<i}L_{ia}U_{aj}\quad(j\ge i),\qquad
+ L_{ji}=\left(Z_{ji}-\sum_{a<i}L_{ja}U_{ai}\right)U_{ii}^{-1}
+ \quad(j>i).
+\]
+At each step $U_{ii}^{-1}$ is its adjugate divided by its fixed
+nonzero determinant.  Thus the entries of $L,U$, and
+$y=Z(w)^{-1}U$ are bounded when the entries of $Z$ lie in the
+compact set $R$.  All conditions on $x,y$ are closed.  The set
+of such pairs is therefore a closed bounded subset of a
+finite-dimensional vector space over the local fields, hence
+compact.  Its image in the displayed coset space is finite because
+the integral unipotent subgroups are open and that coset space
+is discrete.  The case $n=0$ has just one pair and the same
+conclusion.
+The same proof is uniform for $z$ in a compact subset of
+$K^\times$: the diagonal-block determinants and their inverses
+then range over compact sets.  Apply the recovery formulas on
+the compact set of pairs $(Z,z)$ instead.  The group $L_w$
+depends only on the block sizes, so the quotient space is fixed.
+
+Changing representatives replaces $Z_q$ by $aZ_qb$, with
+$a\in L_w(R)$ and $b\in U_n(R)$.  Both matrices are invertible
+over $R$.  The map $[v]\mapsto[av]$ identifies the cokernels.
+It preserves the marked vector because $ae_{n-1}=e_{n-1}$,
+and preserves the functional because
+$e_{n-1}^tb^{-1}=e_{n-1}^t$.
+The sums of the adjacent entries are additive on unipotent
+groups.  Their changes lie in $R$, so the phase $a_q$ is
+unchanged.  This proves representative independence and the
+claimed identification.
+\end{proof}
+
+\begin{proposition}\label{orb-local-constancy-proved}
+Fix $h$, an integer $s\ge1$, and a compact set
+$C\subset K^\times$.  There is an additive lattice $L$ such
+that for $z\in C$ and $z'\in K^\times$ with $z'-z\in L$,
+\[
+ \mathcal K(h[s,z'],w)=\mathcal K(h[s,z],w)
+ \quad\text{for every configuration }w.
+\]
+The lattice is independent of the comparison configuration.
+\end{proposition}
+
+\begin{proof}
+Enlarge $C$ to a compact open subset of $K^\times$ and choose
+a preliminary lattice so that its small translates remain
+inside this larger set.  By Lemma~\ref{orb-finite-orbits}, a
+single finite list of orbit cosets contains all the possible
+integral terms.  Choose fixed representatives $(x_q,y_q)$
+for them.  Write
+$Z_q(z)=x_qZ(h[s,z])y_q$.
+These matrices are invertible, and their inverses range over
+a compact set as $q,z$ vary.  Choose an integer $b\ge0$
+such that every entry of every $Z_q(z)^{-1}$ lies in
+$p^{-b}R$.
+
+Shrink the lattice $L$ so that, for every listed coset,
+\[
+ \Delta_q=Z_q(z')-Z_q(z)\in p^{2b+1}M_n(R)
+ \quad\text{whenever }z'-z\in L.
+\]
+This is possible because the difference is a fixed linear
+function of $z'-z$ for each of finitely many $q$.
+It implies that $Z_q(z')$ is integral exactly when $Z_q(z)$
+is integral.  Put $M=Z_q(z)^{-1}\Delta_q$.
+Then $M\in p^{b+1}M_n(R)$, and the geometric series for
+$(I+M)^{-1}$ converges inside $M_n(R)$, since $R$ is compact
+and hence complete.  Thus
+\[
+ Z_q(z')R^n=Z_q(z)R^n,
+ \qquad Z_q(z')^{-1}-Z_q(z)^{-1}\in pM_n(R).
+\]
+The first identity identifies the cokernels by the identity
+map of $R^n$; the second preserves every inverse-coordinate
+functional modulo $R$.  The marked vector is unchanged,
+and the phase depends only on $x_q,y_q$, not on $z$.
+Consequently every marked module and weight in the finite
+sum is unchanged.  Counting isomorphisms to any comparison
+marked module gives the asserted equality, uniformly in $w$.
+\end{proof}
+
+\subsection{The finite-module character argument}
+
+We use the following elementary duality fact.  Its proof also
+explains why a nonmaximal order causes no difficulty.
+
+\begin{lemma}\label{orb-dual-span}
+Let $C$ be a finite $R$-module, and let
+$\lambda_1,\ldots,\lambda_l,\nu:C\to K/R$ be $R$-linear.
+Then $\nu$ is an $R$-linear combination of the $\lambda_i$
+if and only if it vanishes on their common kernel.
+\end{lemma}
+
+\begin{proof}
+Only the reverse implication needs proof.  The character
+$c\mapsto\psi(\nu(c))$ then factors through the image of
+$\lambda=(\lambda_1,\ldots,\lambda_l)$.
+That image is a finite additive subgroup of $(K/R)^l$, contained
+in $(p^{-N}R/R)^l$ for a sufficiently large integer $N$.
+Every character of a subgroup of a finite abelian group extends
+to the group: adjoin one element at a time, choosing a root of
+the prescribed value of its least positive multiple lying in
+the subgroup.  Self-duality of $R$ gives a perfect pairing
+\[
+ R/p^NR\ \times\ p^{-N}R/R\longrightarrow\mathbb C^\times,
+ \qquad(a,z)\longmapsto\psi(az).
+\]
+Its kernels are exactly $p^NR$ and $R$; the two finite groups
+have the same order by Haar-volume scaling.  Thus the extended
+character has the form
+$\psi(\sum_i a_i\lambda_i(c))$ with $a_i\in R$.
+Apply this equality to $rc$ for every $r\in R$.  Self-duality
+then implies
+$\nu(c)-\sum_i a_i\lambda_i(c)=0$ in $K/R$ for every $c$.
+\end{proof}
+
+For an integral invertible $n$ by $n$ matrix $Z$, put
+\[
+ \lambda_j^Z([v])=(Z^{-1}v)_j\pmod R
+ \qquad(0\le j<n).
+\]
+These functionals are well-defined on $C_Z$.  If
+$\phi:C_Z\to C_{Z'}$ is an isomorphism, let $T_j(\phi)$
+mean that for every $i\ge j$ there are $a_{il}\in R$ such that
+\begin{equation}\label{orb-triangular}
+ \lambda_i^{Z'}\phi=\lambda_i^Z+
+                                  \sum_{l>i}a_{il}\lambda_l^Z.
+\end{equation}
+The marked-module isomorphisms already satisfy $T_{n-1}$.
+By Lemma~\ref{orb-dual-span}, assuming $T_{k+1}$, the additional
+condition $T_k$ is equivalent to vanishing of
+$\lambda_k^{Z'}\phi-\lambda_k^Z$ on the common kernel of the
+functionals $\lambda_i^Z$ with $i>k$.
+
+\begin{proposition}\label{orb-triangular-average}
+Let $w=h[s,t]$ and $w'=h'[s,t']$, where the two previous
+configurations have the same total size $r$, and let
+$n=r+s$.  If $r\le k\le n-2$, then the sum in
+\eqref{orb-actual-kernel} is unchanged when, among the
+isomorphisms counted in each summand, the condition $T_{k+1}$
+is strengthened to $T_k$.
+\end{proposition}
+
+\begin{proof}
+It suffices to show that the weighted contribution of the
+isomorphisms satisfying $T_{k+1}$ but not $T_k$ is zero.
+We partition the upper-unipotent variables into smaller cosets.
+Put $a=k+1$ and $l=n-a$.  Let $P_k\subset U_n(K)$ consist of
+matrices whose two diagonal blocks of sizes $a,l$ have entries
+in $R$; the upper-right rectangle is unrestricted.  This is a
+subgroup containing $U_n(R)$.  Every coset in $P_k/U_n(R)$ has
+a representative
+\[
+ p_B=\begin{pmatrix}I_a&B\\0&I_l\end{pmatrix},
+ \qquad B\in M_{a,l}(K)/M_{a,l}(R).
+\]
+Indeed one can remove both integral diagonal blocks by right
+multiplication.  Two displayed representatives define the same
+coset exactly when their difference $B-B'$ is integral.
+
+Fix the lower-unipotent cosets and representatives $y_0,y'_0$
+of the upper cosets modulo $P_k$.  Write
+$Z_0=xZ(w)y_0$ and $Z'_0=x'Z(w')y'_0$.
+Only finitely many $B,B'$ make $Z_0p_B,Z'_0p_{B'}$ integral,
+by Lemma~\ref{orb-finite-orbits}.  Empty collections contribute
+zero and may be discarded.  The first $a$ columns of $Z_0$
+and $Z'_0$ are then integral, since multiplication by $p_B$
+does not change them.  Define
+\[
+ S_0=Z_0(R^a\oplus0)\subset R^n,\quad
+ P=R^n/S_0,\quad
+ \Lambda:P\to K^l,\quad
+ \Lambda([v])=\operatorname{pr}_{>k}(Z_0^{-1}v),
+\]
+and define $S'_0,P',\Lambda'$ in the same way.
+The maps are well-defined.  For
+$L_B=Z_0p_BR^n\subset R^n$, the restriction
+\begin{equation}\label{orb-tail-section}
+ \Lambda:L_B/S_0\longrightarrow R^l
+\end{equation}
+is an isomorphism.  It is surjective by the last $l$ columns
+of $Z_0p_B$; its kernel is zero because a vector with last
+$l$ inverse coordinates zero belongs to the first $a$ columns.
+The analogous statement holds for $L'_{B'}$.
+
+The marked vector $e=e_{n-1}$ satisfies
+$\Lambda([e])=\Lambda'([e])=0$.
+To check this, use
+$Z_0^{-1}e=y_0^{-1}Z(w)^{-1}x^{-1}e
+=t^{-1}y_0^{-1}e_r$.
+An upper triangular matrix times $e_r$ has zero coordinates
+greater than $r$, hence greater than $k$.  The same calculation
+applies to $Z'_0$.
+
+We now describe the isomorphisms in this finite sum by data
+independent of $B,B'$.  The higher inverse-coordinate maps of
+$Z_0p_B$ are just $\Lambda$ modulo $R^l$.
+An isomorphism
+$\phi:R^n/L_B\to R^n/L'_{B'}$ satisfying $T_{k+1}$ therefore
+satisfies
+\[
+ \Lambda'(v')\equiv D\Lambda(v)\pmod{R^l}
+ \quad\text{whenever }\phi([v])=[v'],
+\]
+for some upper unipotent $D\in U_l(R)$.
+Choose once and for all representatives for the equivalence
+relation
+\[
+ D_1\sim D_2\quad\Longleftrightarrow\quad
+ (D_1-D_2)\Lambda(P)\subset R^l.
+\]
+The isomorphism $\phi$ determines exactly one such class.
+Replacing $D$ by its chosen representative preserves the
+congruence above.
+
+There is a unique lift
+\begin{equation}\label{orb-partial-lift}
+ \Psi:P\longrightarrow P',\qquad
+ \Lambda'\Psi=D\Lambda,
+\end{equation}
+that induces $\phi$.  Indeed, start with any representative
+$v'$ of $\phi([v])$.  Its error
+$\Lambda'(v')-D\Lambda(v)$ lies in $R^l$ and can be removed
+by subtracting the unique element of $L'_{B'}/S'_0$ with
+that image under \eqref{orb-tail-section}.  This defines the
+lift independently of all choices and proves linearity.
+It is injective because an element in its kernel lies in
+$L_B/S_0$ and has zero $\Lambda$-image.  It is surjective by
+the same adjustment in the source, using $D^{-1}R^l=R^l$.
+The lift carries the marked vector to its counterpart, since
+both have zero higher coordinates.
+
+Conversely, a marked isomorphism $\Psi:P\to P'$ satisfying
+\eqref{orb-partial-lift}, with $D$ a chosen representative,
+descends to exactly one isomorphism $\phi$ whenever
+\begin{equation}\label{orb-related-lattices}
+ \Psi(L_B/S_0)=L'_{B'}/S'_0.
+\end{equation}
+Its last inverse-coordinate functional is preserved because
+the last row of $D$ is the last coordinate vector; hence it
+is an isomorphism of the marked modules.  It satisfies
+$T_{k+1}$ by construction.
+
+The failure of $T_k$ is also intrinsic to $\Psi$.  It is
+equivalent to the existence of $v,v'\in R^n$ such that
+\begin{equation}\label{orb-bad-pair}
+ \Psi([v])=[v'],\qquad \Lambda(v)=\Lambda'(v')=0,
+ \qquad (Z_0'^{-1}v')_k-(Z_0^{-1}v)_k\notin R.
+\end{equation}
+To see this, apply Lemma~\ref{orb-dual-span} to the common
+kernel of the higher coordinate functionals.  A representative
+whose higher coordinates lie in $R^l$ can be changed, using
+\eqref{orb-tail-section}, to one whose higher coordinates
+are exactly zero.  The corresponding change in the target
+is made using $\Psi$.  These changes do not alter any
+inverse-coordinate difference modulo $R$.  On exact zero
+higher coordinates, multiplication by $p_B^{-1}$ does not
+alter the $k$th coordinate, proving \eqref{orb-bad-pair}.
+The converse follows by applying the same criterion to that
+pair of representatives.
+
+Group all bad isomorphisms by their lift $\Psi$.  Each resulting
+set of pairs $(B,B')$ is finite.  Fix such a $\Psi$, choose
+$v,v'$ as in \eqref{orb-bad-pair}, and write the last
+nonintegral difference there as $d$.  By self-duality there
+is $r_0\in R$ with $\psi(r_0d)\ne1$.
+Put $v_0=r_0v$, $v'_0=r_0v'$, and
+\[
+ \xi=Z_0^{-1}v_0,\quad \xi'=Z_0'^{-1}v'_0,
+ \quad\beta=(1,0,\ldots,0)\in R^{1\times l},
+ \quad\beta'=\beta D^{-1}.
+\]
+Extend $\beta,\beta'$ by zeros in the first $a$ coordinates.
+Both $\xi$ and $\xi'$ vanish in the last $l$ coordinates.
+The matrices
+\[
+ \sigma=I+\xi\beta,\qquad
+ \sigma'=I+\xi'\beta'
+\]
+are therefore upper unipotent shears supported in the
+upper-right rectangle.  Their inverses have the corresponding
+minus signs.
+
+Replacing $p_B,p_{B'}$ by $\sigma p_B,\sigma'p_{B'}$
+preserves integrality: their products with $Z_0,Z'_0$ change
+by $v_0\beta,v'_0\beta'$, whose entries lie in $R$.
+It also preserves \eqref{orb-related-lattices}.
+Here are the details of that assertion.  For $x\in R^n$,
+put $b(x)=\beta\Lambda(x)$.  Then
+\[
+ x\in Z_0\sigma p_BR^n
+ \quad\Longleftrightarrow\quad
+ b(x)\in R\text{ and }x-b(x)v_0\in L_B.
+\]
+This follows directly by applying the inverse shear; on
+$L_B$ the higher inverse coordinates are integral, and
+$\beta\xi=0$.
+For representatives $x,y$ with $\Psi([x])=[y]$, the analogous
+scalar in the target is
+$\beta'\Lambda'(y)=\beta'D\Lambda(x)=b(x)$.
+Moreover $\Psi([v_0])=[v'_0]$.  The equivalence of the two
+membership conditions now follows from
+\eqref{orb-related-lattices}.  Applying the inverse shears
+shows that the resulting transformation is a bijection of
+the finite set of pairs grouped under $\Psi$.
+
+Only one adjacent upper entry occurs in the shears, the
+$(k,k+1)$ entry.  Since $\beta_{k+1}=\beta'_{k+1}=1$, the
+change in the difference of the upper phases is
+\[
+ \xi_k-\xi'_k=-r_0d.
+\]
+Thus this permutation multiplies every weight in the finite
+sum for $\Psi$ by the same number $\psi(-r_0d)\ne1$.
+That sum must be zero.  Summing over the finitely many lifts
+and over the outer cosets proves the proposition.
+
+Finally, using canonical representatives $p_B$ has not
+changed the original counts.  A right integral upper
+unipotent change replaces the inverse-coordinate functionals
+by an integral upper unipotent combination.  It preserves
+the last functional and every condition $T_j$, in both
+source and target.  Its phase is trivial.  Hence all the
+partitions and changes of representatives used above are
+legitimate in \eqref{orb-actual-kernel}.
+\end{proof}
+
+\begin{corollary}\label{orb-support-proved}
+For the actual kernel \eqref{orb-actual-kernel}, if $s\ge1$,
+the previous block configurations $h,h'$ have equal total
+size, and
+$\mathcal K(h[s,t],h'[s,t'])\ne0$, then
+\[
+ t^{-1}-t'^{-1}\in R.
+\]
+\end{corollary}
+
+\begin{proof}
+Put $r=\dim Z(h)=\dim Z(h')$ and $n=r+s$.
+Marked isomorphisms already satisfy $T_{n-1}$.
+Repeated use of Proposition~\ref{orb-triangular-average}
+shows that the same kernel is obtained by counting only
+isomorphisms satisfying $T_r$.
+If its value is nonzero, at least one such isomorphism occurs.
+For $Z=xZ(h[s,t])y$,
+\[
+ Z^{-1}e_{n-1}=t^{-1}y^{-1}e_r.
+\]
+Its $r$th coordinate is $t^{-1}$ and all coordinates greater
+than $r$ are zero.  The corresponding coordinates for $Z'$
+are $t'^{-1}$ and zeros.  Evaluate the relation
+\eqref{orb-triangular} with $i=r$ on the marked vector,
+which the isomorphism preserves.  It gives
+$t'^{-1}\equiv t^{-1}\pmod R$, as asserted.
+When $s=1$ no averaging step is needed: $r=n-1$ already.
+\end{proof}
+
+\paragraph{Exact finite controls.}
+An accompanying integer-arithmetic program checks the averaging
+identity for a single block of size two over $\mathbb Q_p$,
+with $p=3,5$, $t=p$, and $t'=vp$ for $v=1,2,p+1$.
+For a block with scalar $pv$, writing the upper unipotent
+parameter as $b/p$ with $0\le b<p$ gives the integral orbit matrix
+\[
+ Z_b=\begin{pmatrix}0&pv\\pv&vb\end{pmatrix}.
+\]
+All marked-module isomorphisms are enumerated directly in
+$(\mathbb Z/p^2\mathbb Z)^2/Z_b(\mathbb Z/p^2\mathbb Z)^2$,
+using the possible images of its two generators.  The program
+independently tests the additional condition $T_0$ and reduces
+the phase sums modulo $1+X+\cdots+X^{p-1}$.
+For $v=2$, the unrestricted phase polynomial is
+$p(1+X+\cdots+X^{p-1})$, whereas the restricted polynomial is
+zero: cancellation is essential.  For $v=1,p+1$, both values
+are $p^2$.  These six exact controls agree with the support
+corollary.  Four additional exact congruence checks, for
+$N=4,5,6,7$, verify the representative change in the preceding
+$\mathbb Q_3$ counterexample.  The general assertions rest on
+the displayed proofs, not on these finite computations.
+
+\paragraph{Scope of the reconstructed truncated orbital identity.}
+For the actual finite marked-cokernel kernel, its Gram formula
+proves Hermitian symmetry, Proposition~\ref{orb-local-constancy-proved}
+proves the required local constancy uniformly against all comparison
+configurations, and Corollary~\ref{orb-support-proved} proves the
+inverse-parameter support.  The following finite-type argument
+reduces comparison-configuration uniformity to finitely many
+fixed marked modules.  Section~\ref{hr-section} constructs the
+actual matrix test functions, and
+Section~\ref{sec:theta-scalar-germ} proves their algebraic
+reduction to the oscillatory integral.  Together with the previously
+proved stationary-phase formula, these give the actual kernel germ
+in Theorem~\ref{ga-actual-germ}.  Thus all hypotheses of
+Theorem~\ref{orb-cut-identity} are established for this kernel.
+The averaged diagonal estimate needed for the positive-majorant
+induction is a separate finite character calculation, proved in
+Section~\ref{tp-section}.  The quantitative global theta energy
+estimates remain separate statements; they do not follow merely
+from these local identities.
+
+
+\subsection{Reduction of the germ formula to finitely many fixed marked modules}
+\label{gu-section}
+
+The comparison configuration in the remaining orbital germ formula is
+arbitrary. Its uniformity can nevertheless be reduced to finitely many
+fixed targets. The reason is that the determinant stays in a compact
+subset of $K^\times$. This observation does not prove the scalar germ
+formula, but removes a separate uniformity requirement from that task.
+We retain the local field product $K$, compact open subring $R$, and
+marked cokernels used in Section~\ref{sec:theta-orbital-identity}.
+
+\begin{lemma}\label{gu-bounded-types}
+Let $n\ge0$ and let $D\subset K^\times$ be compact. There is an
+integer $N\ge0$, depending only on $R$ and $D$, such that every
+$Z\in M_n(R)\cap\mathrm{GL}_n(K)$ with $\det Z\in D$ satisfies
+\[
+             p^N R^n\subset ZR^n\subset R^n.
+\]
+Consequently the finite modules $C_Z=R^n/ZR^n$, with any specified
+vector $e\in C_Z$ and any $R$-linear functional
+$\lambda:C_Z\to K/R$, belong to finitely many isomorphism classes.
+Writing $a=\#(R/p^NR)$ and $B=a^n$, their number is at most
+\[
+                         2^B B a^B.
+\]
+These assertions hold for nonmaximal compact open orders as well.
+\end{lemma}
+
+\begin{proof}
+The inverse set $D^{-1}$ is compact. Since $R$ is a neighborhood
+of zero, multiplication by a sufficiently large power of $p$ sends
+all of $D^{-1}$ into $R$; choose such a power $p^N$.
+The adjugate of an integral matrix has entries in $R$. Therefore
+\[
+ p^N Z^{-1}=\frac{p^N}{\det Z}\operatorname{adj}(Z)
+                                      \in M_n(R),
+\]
+which proves the first inclusion. The second is integrality of $Z$.
+The case $n=0$ has the zero module and also satisfies the conclusion.
+
+The group $R/p^NR$ is finite: it is compact and discrete, because
+$p^NR$ is an open subgroup of $R$. Put $A=R/p^NR$.
+The module $C_Z$ is a quotient of the finite module $A^n$ and has
+cardinality at most $B$. There are at most $2^B$ choices for its
+defining submodule, at most $B$ choices for its marked vector,
+and at most $a^B$ choices for its functional. For the last claim,
+$p^NC_Z=0$ implies that the functional takes values in
+\[
+          (K/R)[p^N]=p^{-N}R/R,
+\]
+which has cardinality $a$ by multiplication by $p^N$.
+Counting all functions into this finite set only increases the
+number of $R$-linear ones. These finite presentations cover all
+the marked modules under consideration, so also bound their
+number of isomorphism classes. No principal-ideal property of
+$R$ is used.
+\end{proof}
+
+For a finite $R$-module with specified vector and functional,
+write $T=(C,e,\lambda)$ and define its orbital coefficient by
+\begin{equation}\label{gu-orbital-coefficient}
+ \mathcal B(w;T)=
+       \sum_{q\in\mathcal I_w}a_q\,
+                     \#\operatorname{Iso}(C_{Z_q},T).
+\end{equation}
+Isomorphisms preserve both specifications. This is a finite sum by
+Lemma~\ref{orb-finite-orbits}. It depends only on the isomorphism
+class of $T$. Directly from the definition of the kernel,
+\begin{equation}\label{gu-kernel-coefficients}
+ \mathcal K(w,w')=
+       \sum_{q'\in\mathcal I_{w'}}\overline{a_{q'}}\,
+                        \mathcal B(w;C_{Z_{q'}}).
+\end{equation}
+The notation on the right includes the specified vector and
+functional of each cokernel.
+
+\begin{proposition}\label{gu-uniform-germ}
+Fix $m\ge1$, put $s=m+1$, and fix a finite collection
+$\mathcal F$ of configurations whose total size is $r$.
+Put $n=r+s$ and fix a compact set $Q\subset K^\times$.
+For a critical root $z^s=(-t)^mc$, write
+\[
+ b(t,c;z)=|t|^{-m^2/2}|s|^{-1/2}
+              \gamma_m(zt)|z|^{m^2/2}\psi(sz/t).
+\]
+Suppose that for each $h\in\mathcal F$ and each fixed
+$Z'\in M_n(R)\cap\mathrm{GL}_n(K)$ there is a neighborhood
+$V_{h,Z'}$ of zero such that, whenever $t,c\in K^\times$,
+$t\in V_{h,Z'}$ and $ct^m\in Q$, one has
+\begin{equation}\label{gu-pointwise-germ}
+ \mathcal B(W_h(t,c);C_{Z'})
+       =\sum_{z^s=(-t)^mc}
+                 b(t,c;z)\mathcal B(h[s,z];C_{Z'}).
+\end{equation}
+Then there is one neighborhood $V$ of zero such that, for every
+$h\in\mathcal F$, $t,c\in K^\times$ with $t\in V$ and
+$ct^m\in Q$, and every comparison configuration $w'$, one has
+\begin{equation}\label{gu-uniform-germ-conclusion}
+ \mathcal K(W_h(t,c),w')
+       =\sum_{z^s=(-t)^mc}
+                    b(t,c;z)\mathcal K(h[s,z],w').
+\end{equation}
+The total size and parameters of $w'$ are unrestricted. In fact,
+only finitely many fixed matrices $Z'$ are needed in the
+hypothesis.
+\end{proposition}
+
+\begin{proof}
+Let $H=Z(h)$. The determinant of a reversing matrix of size $j$
+is $(-1)^{j(j-1)/2}$. Hence
+\[
+ \det Z(W_h(t,c))
+      =\det H\,(-1)^{m(m-1)/2}t^mc.
+\]
+For every critical root,
+\begin{align*}
+ \det Z(h[s,z])
+  &=\det H\,(-1)^{m(m+1)/2}z^{m+1}\\
+  &=\det H\,(-1)^{m(m+1)/2+m}t^mc
+    =\det Z(W_h(t,c)).
+\end{align*}
+The last two exponents differ by $2m$. Multiplication by the
+lower and upper unipotent matrices in an orbital term does not
+change the determinant.
+
+Thus the determinants of all integral matrices occurring on
+either side, for every allowed parameter and every
+$h\in\mathcal F$, lie in one compact subset $D\subset K^\times$.
+Lemma~\ref{gu-bounded-types} gives a finite list of possible marked
+cokernel types. Keep only those which actually occur on one of
+the two sides for some allowed parameter, and choose a realizing
+integral matrix $Z_T\in M_n(R)\cap\mathrm{GL}_n(K)$ for each type
+$T$. This list and its representatives depend on the already
+fixed $\mathcal F,m,Q$, not on any later $t,c$ or $w'$.
+If the list is empty, all relevant orbital coefficients vanish
+and the result is immediate.
+
+Intersect the finitely many neighborhoods $V_{h,Z_T}$.
+For $t$ in their intersection, \eqref{gu-pointwise-germ} holds
+for every possible target type $T$. It also holds with any target
+of a different type: both sides are zero, because an isomorphism
+can exist only between equal marked types.
+
+Apply these identities to the finitely many marked modules
+$C_{Z_{q'}}$ occurring in an arbitrary comparison configuration
+$w'$. Multiply by $\overline{a_{q'}}$ and sum. Formula
+\eqref{gu-kernel-coefficients} and interchange of the finite sums
+give \eqref{gu-uniform-germ-conclusion}. The chosen neighborhood
+is independent of $w'$, as required.
+\end{proof}
+
+The proposition supplies precisely the comparison-configuration
+uniformity in \eqref{orb-germ-input}. The scalar identity
+\eqref{gu-pointwise-germ} is supplied by the initial-block
+reduction in Section~\ref{hr-section} and the scalar germ in
+Section~\ref{sec:theta-scalar-germ}. The present proposition
+shows that, for fixed $m$, $\mathcal F$ and $Q$,
+one need not establish bounds simultaneously for infinitely many
+unrelated target modules. The finite list is determined before
+the small parameter is chosen, so no exchange of an infinite
+intersection with a neighborhood occurs.
+
+

@@ -1,0 +1,847 @@
+\section{The volume of the region with small least size}
+\label{rv-section}
+
+We prove the volume estimate needed in
+\eqref{amb-rare-input}.  A sublattice of least normalized size
+replaces the complete Harder--Narasimhan flag.  If that size is
+less than one, the sublattice is totally isotropic.  Unfolding
+the number of primitive isotropic sublattices of a fixed rank
+then gives the required estimate.
+
+The global classical inputs are the unitary Tamagawa-number
+theorem, the Tamagawa number one of the special linear group,
+the analytic class-number formula, the local-global principle
+for Hermitian spaces, and Louboutin's residue bound.  We specify
+their use and normalize all measures below.  We do not import
+the submitted flag-volume estimate.
+
+\subsection{Statement and the sublattice of least size}
+
+Use the notation of Section~\ref{amb-section}.  Thus $E/F$ is
+CM and unramified at every finite place,
+$[F:\mathbb Q]=f$, $r_E=|D_E|^{1/(2f)}$, and $V$ has dimension
+$n=p+q$ and signature $(p,q)$ at every real place.
+The lattice $\Lambda_0$ is self-dual.  For
+$x\in\mathcal X=G(F)\backslash G(\mathbb A_F)$ use the point
+lattice and metrics in \eqref{amb-point-lattice}, and write
+$\lambda_x$ for its least size \eqref{amb-size}.
+Let $\mathbb P$ be Haar measure on $\mathcal X$, divided by
+its total volume.
+
+\begin{theorem}\label{rv-main}
+Suppose
+\[
+       \log n\ge15,\qquad q^2\le n,\qquad
+       \log r_E\le e^n .
+\]
+Then
+\begin{equation}\label{rv-probability}
+ \mathbb P\{x:\lambda_x<1/2\}
+       \le \exp(-nf\log n/3).
+\end{equation}
+Consequently, for $b\ge2$, $g\ge1$, and
+$\tau_0=(nfr_Egb)^{-11q}$, the complement of
+$\{x:\lambda_x\ge\tau_0\}$ has probability at most
+$\exp(-nf\log n/3)$.  This proves the weaker estimate
+\eqref{amb-rare-input}.  No bound on $\log f$ is needed here.
+\end{theorem}
+
+All positive metrics below are compatible with the Hermitian
+form: its matrix in an orthonormal basis has entries $1,-1$
+on the diagonal.  A sublattice is called primitive if its
+quotient in the ambient lattice is torsion-free.
+
+\begin{lemma}\label{rv-minimum}
+For every full $\mathcal O_E$-lattice $\Lambda$ the infimum
+$\lambda(\Lambda)$ is attained by a nonzero primitive sublattice
+$M$.  Put $s=s(M)$.  Every nonzero sublattice of $M$ has size
+at least $s$, and every nonzero torsion-free quotient of $M$
+has size at most $s$.
+If $\Lambda$ is self-dual and $s<1$, then $M$ is totally
+isotropic.  Its rank is therefore between one and $q$.
+\end{lemma}
+\begin{proof}
+Saturation preserves rank and decreases covolume.  At a fixed
+rank $j$, a primitive sublattice determines, up to sign, a
+primitive decomposable vector in
+$\bigwedge_{\mathbb Z}^{2fj}\Lambda$; its norm is the real
+covolume.  A bounded ball contains only finitely many vectors
+of this fixed exterior lattice.  Thus there are only finitely
+many primitive sublattices of bounded covolume at each rank.
+There are only $n$ possible ranks.  Taking, for example,
+$s(\Lambda)$ as an initial upper bound proves attainment.
+
+The assertion for sublattices follows from minimality.
+For a primitive submodule $N\subset M$, of rank $a<j$,
+orthogonal quotient metrics give
+\[
+                  H(M)=H(N)H(M/N).
+\]
+This identity follows by taking a basis of the underlying
+$\mathbb Z$-lattice, extending a basis of $N$, and projecting
+the remaining vectors orthogonally; the determinant becomes
+block triangular.  The normalizing powers of $c_E$ multiply
+because ranks add.  Since
+$H(N)\ge s^{2fa}$ and $H(M)=s^{2fj}$, it gives
+$s(M/N)\le s$.
+
+Let $\overline{M}^{\,*}$ denote the conjugate
+$\mathcal O_E$-linear dual, with its dual metrics.  The
+Hermitian form restricted to $M$ defines a homomorphism
+\[
+                         T:M\longrightarrow\overline{M}^{\,*}.
+\]
+Its operator norm at each complex place is at most one:
+it is the restriction of the unitary matrix $J_v$, followed
+by orthogonal projection onto the dual of the subspace.
+Suppose that $T\ne0$.  Let $Q=M/\ker T$ and $I=T(M)$, of
+common positive rank $a$.  By the duality of sublattices and
+quotients in Lemma~\ref{amb-size-duality}, the quotient
+assertion just proved gives
+\[
+                 s(Q)\le s,\qquad s(I)\ge s^{-1}.
+\]
+The change-of-volume argument of
+Lemma~\ref{amb-map-separation}, now with these domain and
+target lattices, gives
+\[
+ s(I)\le s(Q)\Bigl(\prod_{v\mid\infty}
+                                  \|T_v\|_{\rm op}\Bigr)^{1/f}.
+\]
+It would follow that $1\ge s^{-2}>1$, a contradiction.
+Hence the restricted pairing is zero.  An isotropic subspace
+of a Hermitian space of signature $(p,q)$ has dimension at
+most $\min(p,q)$: projection to either definite summand is
+injective on that subspace.  In particular its dimension
+is at most $q$.
+\end{proof}
+
+For self-dual $\Lambda$, duality also gives $H(\Lambda)=1$.
+If $q=0$, the lemma excludes $\lambda(\Lambda)<1$, while
+$s(\Lambda)=1$ gives the reverse inequality.  Thus
+$\lambda_x=1$ everywhere in that case.  In the rest of the
+proof assume $q\ge1$.
+
+\subsection{The quotient volumes and their Haar measures}
+
+At a real place put on $\operatorname U(a,b)$ the Haar
+measure whose density at the identity is Euclidean volume
+for
+\[
+       \langle X,Y\rangle=\Re\operatorname{tr}(X^*Y)
+\]
+on its real Lie algebra.  We call this the
+Hilbert--Schmidt normalization.  At finite places normalize
+the stabilizer of a self-dual lattice to have volume one.
+Let $\mathcal V_{a,b}$ be the resulting adelic quotient
+volume, with signature $(a,b)$ at all real places, and set
+$r=a+b>0$.
+Write $d_F=|D_F|$ and
+$L_\ell=L_F(\ell,\chi^\ell)$ for the factors in
+Section~\ref{md-section}, where $\chi$ is the quadratic
+character of $E/F$.
+
+\begin{lemma}\label{rv-unitary-volume}
+For $r>0$,
+\begin{equation}\label{rv-unitary-volume-formula}
+        \mathcal V_{a,b}
+          =2d_F^{r^2/2}\prod_{\ell=1}^{r}L_\ell .
+\end{equation}
+Consequently, if $m=n-2j>0$, the ratio for signatures
+$(p-j,q-j)$ and $(p,q)$ is
+\begin{equation}\label{rv-volume-ratio}
+ \frac{\mathcal V_{p-j,q-j}}{\mathcal V_{p,q}}
+       =r_E^{-2fj(n-j)}
+                      \prod_{\ell=m+1}^{n}L_\ell^{-1}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+We use the classical unitary Tamagawa-number theorem in the
+following form: over a fixed quadratic extension, the
+Tamagawa quotient volume of a nondegenerate Hermitian
+space is independent of its form and of its positive
+dimension, and equals two in the commutative unitary case.
+Weil proves the independence in \cite[\S54]{weil-siegel};
+his unitary case has parameter $e=1/2$, as specified in
+\cite[\S27]{weil-siegel}.  The threshold $r>4e-2$ is
+therefore precisely $r>0$.  The absolute normalization
+agrees with the unitary mass formula already stated in
+\eqref{md-classical-mass}.
+
+Here are the measure comparisons needed to apply this
+theorem to our normalization.  At finite places the density
+of the self-dual stabilizer is
+$\prod_{\ell=1}^{r}(1-\eta_v^\ell q_v^{-\ell})$ by
+\eqref{md-stabilizer-density}, independent of the Hermitian
+form, including at dyadic places.  At infinity the conversion
+from an algebraic invariant differential to
+Hilbert--Schmidt volume is independent of the signature.
+One can check the latter directly on the Lie algebra.
+For a Hermitian matrix $H$, the map $X\mapsto HX$
+identifies $X^*H+HX=0$ with the skew-Hermitian matrices.
+After writing $H=AJA$ with $A$ positive definite and $J$
+diagonal with entries $1,-1$, put $Y=AXA^{-1}$.
+Then $HX=AJYA$.  Multiplication by $J$ is an isometry.
+On the real space of skew-Hermitian matrices the map
+$Z\mapsto AZA$ has determinant $|\det H|^r$:
+diagonalize $A$, count its real diagonal coordinates and
+its complex off-diagonal coordinates.  The corresponding
+finite-place determinant is a unit in an integral
+self-dual basis.  In arbitrary rational bases the
+remaining determinant factors cancel by the product
+formula.  Thus changing the signature introduces no
+new constant in the normalized quotient volume.
+
+It suffices to compute that volume for signature $(r,0)$.
+In Hilbert--Schmidt normalization the compact group has
+volume
+\begin{equation}\label{rv-compact-volume}
+ U_r:=\operatorname{vol}\operatorname U(r)
+      =2^{r(r-1)/2}\prod_{\ell=1}^{r}
+                        \frac{2\pi^\ell}{(\ell-1)!}.
+\end{equation}
+For completeness, in the fibration
+$\operatorname U(r-1)\subset\operatorname U(r)\to S^{2r-1}$
+the off-diagonal tangent directions have squared norm
+twice their sphere norm; the remaining tangent direction
+has unchanged norm.  The quotient metric volume is
+$2^{r-1}$ times the standard sphere volume
+$2\pi^r/(r-1)!$.  Induction, starting with the circle
+of length $2\pi$, proves \eqref{rv-compact-volume}.
+Multiplying the mass in Theorem~\ref{md-mass-ratio} by
+$U_r^f$ cancels all factorials and powers of $2\pi$ and
+gives \eqref{rv-unitary-volume-formula}.
+Finally $d_F=r_E^f$ and
+$n^2-(n-2j)^2=4j(n-j)$ prove \eqref{rv-volume-ratio}.
+\end{proof}
+
+We also need a general linear quotient volume.  At the
+$f$ complex places use
+\[
+ da=\prod_{v\mid\infty}
+              \frac{\prod_{\alpha,\beta}
+                     d\Re A_{v,\alpha\beta}\,
+                     d\Im A_{v,\alpha\beta}}
+                   {|\det A_v|^{2j}},
+ \qquad
+ u(A)=\prod_{v\mid\infty}|\det A_v|^2.
+\]
+For a projective rank-$j$ $\mathcal O_E$-module $P$ embedded
+as a lattice in $E^j$, let $\operatorname{Aut}(P)$ act on
+$\operatorname{GL}_j(\mathbb C)^f$ by left multiplication,
+and let $\mathcal G(P)$ be the volume of the part of that
+quotient with $1\le u(A)<e$.
+The number $u(A)$ is invariant under $\operatorname{Aut}(P)$,
+since the absolute norm of the determinant of an integral
+automorphism is one.
+
+\begin{lemma}\label{rv-gl-volume}
+With one representative of each isomorphism class of
+projective rank-$j$ $\mathcal O_E$-modules,
+\begin{equation}\label{rv-gl-formula}
+ \mathcal G_j:=\sum_{[P]}\mathcal G(P)
+     =c_E^{j^2}\operatorname{Res}_{s=1}\zeta_E(s)
+                         \prod_{\ell=2}^{j}\zeta_E(\ell).
+\end{equation}
+For any nonnegative measurable function $h$,
+\begin{equation}\label{rv-gl-radial}
+ \int_{\operatorname{Aut}(P)\backslash
+                         \operatorname{GL}_j(\mathbb C)^f}
+                  h(u(A))\,da
+      =\mathcal G(P)\int_0^\infty h(u)\,\frac{du}{u}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Here the classical input is the Tamagawa number one of
+$\operatorname{SL}_j$ over a number field, recorded, for
+example, in \cite[\S57]{weil-siegel}; for $j=1$ the special
+linear group is trivial.  Together with the analytic
+class-number formula for $E$, applied to the determinant
+torus, it says that the norm-one adelic quotient of
+$\operatorname{GL}_j$ has volume one with the following
+normalization:
+\begin{equation}\label{rv-tamagawa-gl}
+ |D_E|^{-j^2/2}
+       \bigl(\operatorname{Res}_{s=1}\zeta_E(s)\bigr)^{-1}
+       \prod_{v\mid\infty}2^{j^2}\,da_v
+       \prod_{w\nmid\infty}(1-q_w^{-1})^{-1}\,da_w.
+\end{equation}
+At a finite place, $da_w=|\det A|_w^{-j}dA$, with
+$M_j(\mathcal O_{E,w})$ of additive volume one.
+The measure on the norm-one group is obtained by
+disintegration against $d\log|\det|_{\mathbb A_E}$.
+To explain the compatibility, the invariant differential
+on $\operatorname{GL}_j$ decomposes into the invariant
+differential on its determinant-one fiber and $dt/t$.
+The determinant sequence is split; applying Fubini to it
+multiplies the special-linear Tamagawa number by the
+idele-class norm-one volume.  The analytic class-number
+formula gives the latter as one after the residue factor
+in \eqref{rv-tamagawa-gl} is included.  The factor two in
+each complex additive coordinate and the discriminant
+factor are the usual additive adelic normalization.
+This also checks \eqref{rv-tamagawa-gl} directly when $j=1$.
+
+Counting ordered independent columns over the residue
+field gives
+\[
+ \operatorname{vol}_{da_w}\operatorname{GL}_j(\mathcal O_{E,w})
+                 =\prod_{\ell=1}^{j}(1-q_w^{-\ell}).
+\]
+The convergence factor in \eqref{rv-tamagawa-gl} cancels
+the term with $\ell=1$.  Dividing out the finite compact
+group and sorting the remaining components by the
+associated projective module therefore gives
+\[
+ 1=c_E^{-j^2}
+       \bigl(\operatorname{Res}_{s=1}\zeta_E(s)\bigr)^{-1}
+       \left(\prod_{\ell=2}^{j}\zeta_E(\ell)^{-1}\right)
+       \sum_{[P]}\mathcal G(P).
+\]
+This proves \eqref{rv-gl-formula}; no assumption that
+$P$ is free has been imposed.
+
+For \eqref{rv-gl-radial}, multiplication at every complex
+place by $u^{1/(2fj)}I_j$ gives a central one-parameter
+subgroup with determinant norm $u$.  Haar disintegration
+along this subgroup has radial measure $du/u$ and a
+constant fiber volume.  The slab $1\le u<e$ has radial
+volume one, so its volume $\mathcal G(P)$ is exactly that
+constant.  This proves the formula, first for intervals
+and then for all nonnegative measurable functions.
+\end{proof}
+
+\subsection{Primitive isotropic sublattices and the unipotent radical}
+
+Fix a rank $j$ with $1\le j\le\min(p,q)$ and put
+$m=n-2j>0$ and $d=2mj+j^2$.
+Let $P$ be a primitive totally isotropic sublattice of a
+self-dual Hermitian lattice $\Lambda$.
+
+\begin{lemma}\label{rv-integral-splitting}
+There is an integral orthogonal decomposition
+\[
+                     \Lambda=\mathbb H(P)\perp\Lambda',
+\]
+where $\mathbb H(P)$ is the hyperbolic module
+$P\oplus\overline P^{\,*}$ and $\Lambda'$ is self-dual
+of rank $m$ and signature $(p-j,q-j)$ at each real place.
+The stabilizer of $P$ in $\operatorname{Aut}(\Lambda)$
+is a semidirect product of its integral unipotent radical
+with
+$\operatorname{Aut}(P)\times\operatorname{Aut}(\Lambda')$.
+\end{lemma}
+\begin{proof}
+Finite unramifiedness implies
+$\operatorname{Tr}_{E/F}(\mathcal O_E)=\mathcal O_F$.
+Indeed the local trace is surjective in an unramified
+quadratic extension, and it is the sum map in the split
+case.  The image of the global trace is an ideal of
+$\mathcal O_F$ whose localization at every finite prime
+is the unit ideal.  Choose $\theta\in\mathcal O_E$ with
+$\theta+\bar\theta=1$.
+
+Primitivity implies that $\Lambda/P$ is projective over
+the Dedekind domain $\mathcal O_E$.  Restriction of the
+perfect pairing on $\Lambda$ thus gives a surjection
+$\Lambda\to\overline P^{\,*}$, and this surjection has
+an $\mathcal O_E$-linear section.  The pairing of its
+image with $P$ is perfect.  If $B$ is the Hermitian
+Gram map of the section, subtract from the section
+the map into $P$ corresponding to $\theta B$.
+The new Gram map is
+$B-\theta B-\bar\theta B=0$.
+This calculation may be made after localization in
+bases; it is intrinsic and hence holds for projective
+modules.  We have obtained an integral isotropic
+section, whose sum with $P$ is $\mathbb H(P)$.
+Its pairing is perfect, so it is an orthogonal direct
+summand.  Its orthogonal complement is the required
+self-dual $\Lambda'$.
+
+Every automorphism of $P$ extends to $\mathbb H(P)$
+by its inverse conjugate dual, and every automorphism
+of $\Lambda'$ extends by the identity.  Conversely,
+an isometry preserving $P$ acts on $P$ and on
+$P^\perp/P=\Lambda'$ by such automorphisms.
+After removing these actions it lies in the unipotent
+radical.  This proves the stated semidirect product.
+The argument used a trace-one element, rather than
+division by two, so it remains integral at dyadic places.
+\end{proof}
+
+At infinity choose hyperbolic coordinates
+$E^j\oplus E^m\oplus E^j$ in which the Hermitian matrix is
+\[
+ \begin{pmatrix}0&0&I_j\\0&J'&0\\I_j&0&0\end{pmatrix},
+ \qquad J'=\operatorname{diag}(1,\ldots,1,-1,\ldots,-1),
+\]
+and the compatible positive metric is the ordinary
+Euclidean metric.  The unipotent radical consists of
+\[
+ n(Z,B)=
+ \begin{pmatrix}
+ I_j&-Z^*J'&B\\
+ 0&I_m&Z\\
+ 0&0&I_j
+ \end{pmatrix},
+                  \qquad B+B^*=-Z^*J'Z.
+\]
+Its tangent vectors are parametrized by $Z\in M_{m,j}(\mathbb C)$
+and skew-Hermitian $C\in M_j(\mathbb C)$, and have
+squared Hilbert--Schmidt norm
+$2\|Z\|_{\rm HS}^2+\|C\|_{\rm HS}^2$.
+Give the radical the Haar measure with this tangent density.
+
+\begin{lemma}\label{rv-radical-covolume}
+In the product of the radicals at the $f$ complex places,
+the integral subgroup has covolume
+\begin{equation}\label{rv-radical-formula}
+                  r_E^{fd/2}H(P)^{n-j}.
+\end{equation}
+Here $H(P)$ is taken in the positive metrics just chosen.
+\end{lemma}
+\begin{proof}
+Projection to $Z$ identifies the quotient by the center
+with $\operatorname{Hom}_{\mathcal O_E}
+(\overline P^{\,*},\Lambda')$.  It is surjective on
+integral points: for any integral $Z$ one may take
+$B=-\theta Z^*J'Z$.  The fibers are translates of the
+integral skew-Hermitian central lattice.  Multiplication
+in these coordinates is triangular with diagonal
+Jacobian one, so its Haar measure is the product of
+the two additive measures.  A fundamental domain may
+be chosen by reducing $Z$ first and then the central
+coordinate.  Its volume is the product of the two
+additive covolumes, even though the group need not
+be abelian.
+
+For the $Z$ coordinate, the elementary determinant
+identity for tensor products gives normalized height
+\[
+ H\bigl(\operatorname{Hom}(\overline P^{\,*},\Lambda')\bigr)
+                =H(P)^m H(\Lambda')^j=H(P)^m.
+\]
+This identity follows in free bases from the determinant
+of the Gram matrices and, for projective modules, by
+localizing their inclusions in free lattices and
+multiplying the resulting indices.
+Its ordinary additive covolume is
+$c_E^{mj}H(P)^m$.
+The factor two in the squared $Z$-norm multiplies this
+by $2^{fmj}$, giving $r_E^{fmj}H(P)^m$.
+
+For clarity we also calculate the center, including its
+diagonal coordinates.  Put
+$\mathcal O_E^-=\{z\in\mathcal O_E:\bar z=-z\}$.
+In the selected complex embeddings,
+the real projection of $\mathcal O_E$ is
+$\tfrac12\mathcal O_F$, by trace surjectivity.
+Since $\operatorname{covol}(\mathcal O_E)
+=2^{-f}d_F$, orthogonal projection gives
+\[
+              \operatorname{covol}(\mathcal O_E^-)
+                         =\sqrt{d_F}=r_E^{f/2}.
+\]
+An off-diagonal skew-Hermitian entry has a second,
+conjugate entry and hence has squared norm twice its
+ordinary complex squared norm.  Its integral
+covolume is $2^fc_E=r_E^f$.  For $P=\mathcal O_E^j$
+the total central covolume is therefore
+$r_E^{f j^2/2}$.
+
+For general $P$, write it, in an $E$-basis, as
+$\bigoplus_i\mathfrak a_i$.  An off-diagonal coordinate
+belongs to $\mathfrak a_i\bar{\mathfrak a}_k$ and
+contributes the additional factor
+$N\mathfrak a_i\,N\mathfrak a_k$.
+The invariant ideal $\mathfrak a_i\bar{\mathfrak a}_i$
+is $\mathfrak b_i\mathcal O_E$ with
+$N_{F/\mathbb Q}\mathfrak b_i=N_{E/\mathbb Q}\mathfrak a_i$.
+This follows prime by prime, both in the split and in
+the unramified inert case.  Its diagonal skew part is
+$\mathfrak b_i\mathcal O_E^-$ and contributes
+$N\mathfrak a_i$.  Thus the total ideal factor is
+$(\prod_iN\mathfrak a_i)^j$.
+For an arbitrary positive metric on $P$, a complex
+change of basis $A$ acts on the center by $C\mapsto ACA^*$,
+whose real determinant is $|\det A|^{2j}$.
+Multiplication over the complex places supplies exactly
+the remaining metric factor in $H(P)^j$.
+The central covolume is
+$r_E^{fj^2/2}H(P)^j$.
+Multiplying it by the $Z$ covolume proves
+\eqref{rv-radical-formula}, since $m+j=n-j$.
+\end{proof}
+
+\subsection{The real Iwasawa factor}
+
+Put
+\[
+ S_a=\prod_{\ell=1}^{a}\frac{2\pi^\ell}{(\ell-1)!},
+                   \qquad S_0=1.
+\]
+The stabilizer of the isotropic $j$-plane has Levi
+subgroup
+\[
+       \operatorname{GL}_j(\mathbb C)\times
+                          \operatorname U(p-j,q-j).
+\]
+Its embedding is
+$(A,b)\mapsto\operatorname{diag}(A,b,A^{-*})$.
+Let $K=\operatorname U(p)\times\operatorname U(q)$
+carry probability Haar measure.
+
+\begin{lemma}\label{rv-iwasawa}
+For the Hilbert--Schmidt measures on the unitary group,
+its radical, and the smaller unitary group, and for the
+ordinary complex matrix Haar measure $da$ used above,
+\begin{equation}\label{rv-iwasawa-formula}
+ \begin{split}
+ \int_{\operatorname U(p,q)}F(g)\,dg
+   =c_j\,2^{j^2}
+       \int_N\int_{\operatorname{GL}_j(\mathbb C)}
+       \int_{\operatorname U(p-j,q-j)}\int_K
+       &F\bigl(n\operatorname{diag}(A,b,A^{-*})k\bigr)\\[-1mm]
+       &\hspace{-18mm}\cdot|\det A|^{-2(n-j)}
+                         \,dk\,db\,da\,dn ,
+ \end{split}
+\end{equation}
+for every nonnegative measurable $F$, where
+\begin{equation}\label{rv-iwasawa-constant}
+ c_j=
+ 2^{-d/2}\frac{U_pU_q}
+           {2^{j^2/2}U_jU_{p-j}U_{q-j}}
+ =2^{-j(j+1)/2}
+                \frac{S_pS_q}{S_jS_{p-j}S_{q-j}} .
+\end{equation}
+\end{lemma}
+\begin{proof}
+The compact group $K$ is transitive on isotropic
+$j$-planes: the projections of an orthonormal isotropic
+frame to its positive and negative summands are scaled
+orthonormal frames with the same scale; extend each
+to a unitary basis.  This gives $G=NMK$.
+The redundancy is the compact subgroup
+$K_M\simeq\operatorname U(j)\times
+\operatorname U(p-j)\times\operatorname U(q-j)$.
+On its first factor the embedding duplicates a tangent
+matrix, so its metric is twice the ordinary
+Hilbert--Schmidt metric.  Its volume is
+$2^{j^2/2}U_jU_{p-j}U_{q-j}$.
+Likewise the full embedded general linear factor has
+twice its usual tangent metric, and real dimension
+$2j^2$, accounting for $2^{j^2}$ in
+\eqref{rv-iwasawa-formula}.
+
+It remains to compute the transverse Jacobian.
+The radical Lie algebra is orthogonal to its Cartan
+involutive image.  Its projection onto the orthogonal
+complement of the compact Lie algebra is
+$(X-\vartheta X)/2$, of norm $\|X\|/\sqrt2$.
+It is orthogonal to the noncompact Levi directions.
+There are $d$ radical directions, so this projection
+contributes $2^{-d/2}$.
+The quotient of the compact volumes is $U_pU_q/\operatorname{vol}K_M$,
+giving the first expression for $c_j$.
+
+Finally conjugation by the Levi acts on the complex
+$Z$ coordinate with real determinant
+$|\det A|^{2m}$ and on the skew-Hermitian central
+coordinate with determinant $|\det A|^{2j}$.
+Its modular character is consequently
+$|\det A|^{2(n-j)}$.
+Left invariance therefore requires its reciprocal in
+the $NMK$ integral.  This determines the measure
+globally from the just computed density at the identity.
+Inserting \eqref{rv-compact-volume} into the first
+expression in \eqref{rv-iwasawa-constant} gives the
+second, by cancellation of the powers of two.
+\end{proof}
+
+\subsection{Unfolding the number of isotropic sublattices}
+
+Let $N_j(x,T)$ count the primitive totally isotropic
+rank-$j$ sublattices of $\Lambda_x$ whose size in its
+point metrics is less than $T$.  This number is finite:
+the exterior-lattice argument in Lemma~\ref{rv-minimum}
+gives finiteness for any bound on the covolume.
+It is measurable, being a countable sum of indicators
+of continuous height inequalities on the arithmetic
+components of the adelic quotient.
+
+\begin{proposition}\label{rv-mean-value}
+For $1\le j\le\min(p,q)$ and $m=n-2j>0$,
+\begin{equation}\label{rv-mean-value-formula}
+ \int_{\mathcal X}N_j(x,T)\,d\mathbb P(x)
+       =\frac{\kappa_j}{n-j}\,
+                        T^{2fj(n-j)}\qquad(T>0),
+\end{equation}
+where
+\begin{equation}\label{rv-kappa}
+ \kappa_j=
+ r_E^{-fd/2}\,2^{-fj(j+1)/2}
+ \left(\frac{S_pS_q}{S_{p-j}S_{q-j}S_j}\right)^f
+ \operatorname{Res}_{s=1}\zeta_E(s)
+ \frac{\prod_{\ell=2}^{j}\zeta_E(\ell)}
+      {\prod_{\ell=m+1}^{n}L_\ell},
+ \qquad d=2mj+j^2 .
+\end{equation}
+\end{proposition}
+\begin{proof}
+We give the orbit and measure details of the unfolding.
+After division by $K_f$, the adelic quotient is the
+disjoint union of
+$\operatorname{Aut}(\Lambda)\backslash G_\infty$,
+over the isometry classes in the genus of $\Lambda_0$.
+Finite compact volume is one, so the measures on these
+components are precisely the archimedean quotient
+measures.  For each component, split the sum defining
+$N_j$ into orbits under $\operatorname{Aut}(\Lambda)$.
+The usual change of variables in a fundamental domain
+gives
+\[
+ \int_{\operatorname{Aut}(\Lambda)\backslash G_\infty}
+                    \sum_P {\bf1}_{s_x(P)<T}\,dx
+  =\sum_{[P]}
+       \int_{\operatorname{Aut}(\Lambda,P)\backslash G_\infty}
+                                  {\bf1}_{s_x(P)<T}\,dx .
+\]
+Here the sum on the right is over primitive isotropic
+sublattices modulo the indicated automorphism group.
+All summands are nonnegative, so Tonelli justifies
+this equality before integrability is known.
+
+The isometry classes of marked pairs $(\Lambda,P)$
+are exactly the pairs consisting of an isomorphism
+class of projective rank-$j$ modules $P$ and an
+isometry class of self-dual lattices $\Lambda'$ of
+signature $(p-j,q-j)$.
+Indeed Lemma~\ref{rv-integral-splitting} gives this
+description and its converse by
+$\mathbb H(P)\perp\Lambda'$.
+For the converse to lie in the prescribed rational
+space, we use the classical local-global principle
+for Hermitian spaces
+\cite[Theorem 2.4.1]{kirschmer-herm}.
+At every finite place all unimodular Hermitian
+lattices over the unramified quadratic algebra are
+isometric: first use the finite-field classification
+in Lemma~\ref{md-unitary-order}, and then the successive
+Gram-matrix lifting in Proposition~\ref{md-lifting}.
+The split case is the corresponding perfect-pairing
+calculation.  At infinity the signatures agree.
+Thus the rational spaces are isometric and the
+resulting lattice lies in the same genus.
+An isometry of marked pairs induces an isomorphism
+of $P$ and an isometry on $P^\perp/P$; conversely
+these extend to the hyperbolic orthogonal sums.
+No class is lost by requiring a free basis for $P$,
+because no such requirement has been made.
+
+For one marked pair, its stabilizer is the semidirect
+product in Lemma~\ref{rv-integral-splitting}.  Apply
+\eqref{rv-iwasawa-formula} at the $f$ complex places.
+Its radical quotient contributes
+$r_E^{fd/2}H(P)^{n-j}$ by
+Lemma~\ref{rv-radical-covolume}.  Denote by
+$V(\Lambda')$ the volume of
+$\operatorname{Aut}(\Lambda')\backslash
+\operatorname U(p-j,q-j)^f$.
+If $u=\prod_v|\det A_v|^2$, the size of the fixed
+$P$ in the point metric is
+\[
+                         s_x(P)=(H(P)/u)^{1/(2fj)}.
+\]
+Indeed $n$ acts trivially on $P$, the Levi acts there
+as $A$, and the right compact factor preserves
+the positive norm.  Thus the integral of this
+marked pair equals
+\[
+ \begin{split}
+ c_j^f2^{fj^2}\,r_E^{fd/2}H(P)^{n-j}V(\Lambda')
+       \int_{\operatorname{Aut}(P)\backslash
+                           \operatorname{GL}_j(\mathbb C)^f}
+       u^{-(n-j)}
+       {\bf1}_{u>H(P)T^{-2fj}}\,da .
+ \end{split}
+\]
+This also describes a fundamental domain in the
+semidirect quotient: first reduce the Levi
+coordinate and then the radical coordinate.
+Integral Levi automorphisms preserve the radical
+lattice and have global modular character one.
+Consequently the radical covolume just used has no
+extra index or stabilizer factor.
+
+By \eqref{rv-gl-radial}, the last integral is
+\[
+ \mathcal G(P)\int_{H(P)T^{-2fj}}^\infty
+                                u^{-(n-j)}\,\frac{du}{u}
+  =\frac{\mathcal G(P)}{n-j}
+                    H(P)^{-(n-j)}T^{2fj(n-j)}.
+\]
+The power of $H(P)$ cancels exactly.  Summing over
+the two sets of lattice classes and dividing by
+$\mathcal V_{p,q}$ proves
+\[
+ \int N_j(x,T)\,d\mathbb P(x)
+ =c_j^f2^{fj^2}r_E^{fd/2}\mathcal G_j
+      \frac{\mathcal V_{p-j,q-j}}{\mathcal V_{p,q}}
+                  \frac{T^{2fj(n-j)}}{n-j}.
+\]
+Inserting \eqref{rv-gl-formula},
+\eqref{rv-volume-ratio}, and
+\eqref{rv-iwasawa-constant}, and using
+$c_E=(r_E/2)^f$, yields \eqref{rv-kappa}.
+In particular the computed integral is finite,
+justifying all ordinary integral assertions as well.
+\end{proof}
+
+\subsection{An elementary bound for the constant}
+
+\begin{lemma}\label{rv-kappa-bound}
+Under the hypotheses of Theorem~\ref{rv-main},
+for every $1\le j\le q$,
+\begin{equation}\label{rv-kappa-small}
+                 \kappa_j\le
+                    \exp(-jnf\log n/2).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The inequalities imply $p=n-q\ge q$ and
+$n-2j\ge n-2\sqrt n\ge2$, so all preceding formulas
+apply.  The first two powers in \eqref{rv-kappa}
+are at most one, since $r_E\ge1$.
+
+The factorials give a particularly large saving.
+Direct cancellation shows
+\[
+ \frac{S_q}{S_{q-j}S_j}
+   =\pi^{j(q-j)}
+          \prod_{a=1}^{j}\frac{(a-1)!}{(q-j+a-1)!}
+   \le\pi^{j(q-j)}.
+\]
+Moreover
+$S_p/S_{p-j}\le[2\pi^p/(p-j)!]^j$.
+Put $h=p-j\ge n-2\sqrt n$.  Hence
+\[
+ \log\frac{S_pS_q}{S_{p-j}S_{q-j}S_j}
+       \le j\bigl(\log2+(n-j)\log\pi-\log(h!)\bigr).
+\]
+The integral of $\log x$ from one to $h$ gives
+$\log(h!)\ge h\log h-h+1$.
+Since $\log2<1$, $\log\pi<2$, and $h\le n$,
+the last displayed right side is at most
+$j(3n-h\log h)$.
+For $\sqrt n\ge64$,
+\[
+ \log h\ge\log n+\log(1-2/\sqrt n)
+                          \ge\log n-4/\sqrt n .
+\]
+Thus
+\[
+ 3n-h\log h
+ \le -n\log n+2\sqrt n\log n+4\sqrt n+3n .
+\]
+The ratio of the last three terms to $n\log n$
+is at most
+$1/32+1/240+1/5<1/4$, using $\log n\ge15$.
+Consequently
+\begin{equation}\label{rv-sphere-saving}
+ \log\frac{S_pS_q}{S_{p-j}S_{q-j}S_j}
+                         \le-\frac34jn\log n.
+\end{equation}
+
+For the residue we use the following unconditional
+classical bound, valid for every number field $K$
+of degree $d>1$:
+\[
+ \operatorname{Res}_{s=1}\zeta_K(s)
+       \le\left(\frac{e\log|D_K|}{2(d-1)}\right)^{d-1}.
+ \qquad\text{\cite[Theorem 1(1)]{louboutin-residue}}
+\]
+Here $d=2f$ and $\log|D_E|=2f\log r_E$, so it gives
+\begin{equation}\label{rv-residue-bound}
+       \log\operatorname{Res}_{s=1}\zeta_E(s)
+                           \le 2f(n+1).
+\end{equation}
+Indeed $f/(2f-1)\le1$ and
+$\log\log r_E\le n$.  The discriminant is greater
+than one for a CM field, so these logarithms are
+defined; if the logarithm of the residue bound is
+negative, the same upper estimate still holds.
+
+For completeness, the remaining Euler products
+require only
+\[
+ \sum_{\ell=2}^{\infty}\log\zeta(\ell)
+ \le\sum_{\ell=2}^{\infty}(\zeta(\ell)-1)
+ =\sum_{a=2}^{\infty}\frac1{a(a-1)}=1.
+\]
+Since $\zeta_E(\ell)\le\zeta(\ell)^{2f}$, the numerator
+in \eqref{rv-kappa} contributes at most $2f$ to its
+logarithm.  Each inverse factor $L_\ell^{-1}$ is at
+most $\zeta_F(\ell)\le\zeta(\ell)^f$: compare
+$1-\eta_v^\ell q_v^{-\ell}$ with
+$(1-q_v^{-\ell})^{-1}$ at every finite prime.
+The denominator therefore contributes at most $f$.
+Combining these estimates with
+\eqref{rv-sphere-saving} and \eqref{rv-residue-bound},
+\[
+        \log\kappa_j
+          \le-\frac34jnf\log n+2fn+5f
+          \le-\frac12jnf\log n .
+\]
+The last inequality follows from
+$\tfrac14jn\log n\ge\tfrac{15}{4}n\ge2n+5$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{rv-main}]
+The case $q=0$ was already proved.
+For $q\ge1$, if $\lambda_x<1/2$,
+Lemma~\ref{rv-minimum} gives a primitive isotropic
+sublattice of some rank $1\le j\le q$ and size
+less than $1/2$.  Hence, pointwise,
+\[
+              {\bf1}_{\lambda_x<1/2}
+                     \le\sum_{j=1}^{q}N_j(x,1/2).
+\]
+Put $A=nf\log n$.  The mean-value formula and
+\eqref{rv-kappa-small} give
+\[
+ \mathbb P\{\lambda_x<1/2\}
+ \le\sum_{j=1}^{q}
+        \frac{2^{-2fj(n-j)}}{n-j}\kappa_j
+ \le\sum_{j\ge1}e^{-jA/2}
+ \le2e^{-A/2}\le e^{-A/3}.
+\]
+Here $A\ge15$, so both final inequalities hold.
+This proves \eqref{rv-probability}.
+If $q\ge1$, then $nfr_Egb\ge2n>2$ and
+$\tau_0<1/2$; its exceptional set is smaller.
+If $q=0$, then $\tau_0=1$ and $\lambda_x=1$,
+so the exceptional set is empty.
+\end{proof}
+
+\paragraph{Relation to the source and remaining estimates.}
+The constant \eqref{rv-kappa} is exactly the source's
+\texttt{kapBd} for a flag with one nonzero rank increment:
+rewriting $r_E/2$ as its \texttt{vInv} gives its two
+displayed powers of two.  The source's set
+$\operatorname{stepLt}(1/2)\ne0$ is the set
+$\lambda_x<1/2$.  In one direction, a lattice of largest
+quotient size less than $1/2$ itself has size less than
+$1/2$.  In the other, the minimizing lattice in
+Lemma~\ref{rv-minimum} has all quotient sizes at most
+its size, and therefore occurs in that sum of submodules.
+Thus \eqref{rv-probability} also proves the stated
+\texttt{NonzeroFlagBound}, by a different argument.
+This section settles the rare-volume input only.
+The integrated count of nearby nonidentity unipotents,
+the deep-cusp mass bound, and the finite-rank kernel
+identity in the ambient comparison remain separate.
+
+
+% A direct proof of the integrated count of nearby rational isometries.
+% Labels in this fragment have the prefix nu-.

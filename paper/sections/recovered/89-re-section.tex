@@ -1,0 +1,911 @@
+\section{Construction of the recursive radial frame}
+\label{re-section}
+
+The terminal commutation and determinant identities suffice to
+construct the change of variables in the positivity argument.
+We first construct its initial connection directly from a
+polynomial coefficient.  We then prove the two recursive changes
+of variables by \(2\times2\) matrix multiplication.  In particular,
+the larger normal form involving individual raising operators is
+not a premise of this construction.
+
+\subsection{The initial connection}
+
+Let \(k\geq1\), let \(W\) have signature \((k,1)\), and retain
+the negative vectors \(z,z'\), with
+\[
+ h(z,z)=-T,\qquad h(z',z')=-T',\qquad
+ \zeta(m)=h(mz',z),\qquad G=\zeta\bar\zeta-TT'.
+\]
+We work on the open set \(G>0\).  In particular, \(G,\zeta,\bar\zeta\)
+are invertible smooth multiplication operators.  The space of
+smooth functions has the fixed left and right compact equivariance
+of Section~\ref{rd-section}; it can also depend on independent
+variables \(c_1,\ldots,c_r\in\mathbb C^\times\).
+The formal adjoint is taken for terminal Haar measure, the
+Hilbert--Schmidt inner product, and
+\(\prod_i |c_i|^{-2}\,dc_i\).
+
+Write
+\[
+ t(Y)=
+ \begin{pmatrix} a(Y)&b(Y)\\c(Y)&\tau(Y)\end{pmatrix}
+\]
+for the actual terminal matrix of
+\eqref{rc-t21}--\eqref{rc-t22}, including its full Capelli
+entry \(a(Y)\).  The letter \(c(Y)\) in this display denotes
+an operator, and is unrelated to the independent coordinates
+\(c_i\).  Sections~\ref{rq-section} and \ref{rr-section} give
+\begin{align}
+ (u-v)[t_{ij}(u),t_{kl}(v)]
+ &=t_{kj}(u)t_{il}(v)-t_{kj}(v)t_{il}(u),       \label{re-rtt}\\
+ a(Y+1)\tau(Y)-c(Y+1)b(Y)&=q(Y),                \label{re-one-det}\\
+ q(Y)&=-TT'\prod_{i=1}^k
+       (Y+\tfrac12+u_i)(Y+\tfrac12+u'_i).       \label{re-q}
+\end{align}
+The real numbers \(u_i,u'_i\) are the shifted compact highest
+weights used in the terminal determinant calculation.
+All these equalities are equalities of differential operators,
+not merely of their principal symbols.
+
+\begin{lemma}\label{re-base-leading}
+Put \(h=k-1\).  There are operators \(B,C\) such that
+\begin{align}
+ \tau(Y)&=Gx_0(Y),&
+ x_0(Y)&=Y^h+B Y^{h-1}+O(Y^{h-2}),             \label{re-x-leading}\\
+ c(Y)&=-\bar\zeta Y^{h+1}+C Y^h+O(Y^{h-1}).    \label{re-c-leading}
+\end{align}
+Here \(x_0(Y)=\sum_\rho p_\rho(Y)P_\rho\), with
+\(p_\rho(Y)=\prod_{i=1}^{k-1}(Y+\rho_i)\), is the actual
+finite spectral decomposition of
+Theorem~\ref{rd-constructed-kappa}.
+When \(h=0\), the first formula means \(x_0=1\), we set
+\(B=0\), and the second formula has no remainder.
+The operator \(C\) has differential order at most one.
+For real \(Y\), the formal adjoint of \(t_{ij}(Y)\) is
+\(t_{ji}(Y)\).
+\end{lemma}
+
+\begin{proof}
+The spectral formula, including the fact that its coefficients
+have order zero, was proved in
+Theorem~\ref{rd-constructed-kappa}.
+There is also a direct check on its leading normalization.
+Put \(y=m^{-1}z\), \(\eta_i=h(mw_i,z)\),
+\(x=z'\), and \(\xi_i=h(w_i,z')\).
+The leading coefficient of the double cofactor contraction is
+\[
+ -\sum_{i<j}(\eta_i\xi_j-\eta_j\xi_i)(y_i x_j-y_jx_i)
+ =-\{(\eta y)(\xi x)-(\eta x)(\xi y)\}=G.
+\]
+The leading coefficient of the single cofactor contraction is
+\(-\xi y=-\bar\zeta\).  A cofactor of size \(k\) has degree
+\(k\) in its parameter; its coefficient of degree \(k-1\)
+contains at most one Lie algebra generator.  The shift
+\(Y\mapsto Y+k/2\) changes this coefficient only by an order
+zero term.  This proves \eqref{re-c-leading} and the order
+assertion.
+
+For completeness, the adjoint assertion follows directly from
+the same minors.  In an orthonormal basis put
+\(\epsilon_i=h(w_i,w_i)\in\{1,-1\}\).
+Complexified right differentiation satisfies
+\(E_{ij}^*=\epsilon_i\epsilon_jE_{ji}\).
+The row and column forms of a quantum minor give
+\[
+ Q_{I,J}(u)^*=\epsilon_I\epsilon_J Q_{J,I}(\bar u).
+\]
+Indeed, taking adjoints reverses the order of all factors;
+use the row form with both index lists reversed.  Reversing
+both lists contributes the square of the same permutation sign,
+which is one.  For the signed cofactors this reads
+\(C_{ij}(u)^*=\epsilon_i\epsilon_jC_{ji}(\bar u)\).
+Consequently, for real \(u\),
+\[
+ \left(-\sum_{i,j}\xi_i y_j C_{ij}(u)\right)^*
+ =-\sum_{i,j}C_{ij}(u)\eta_i x_j
+ =-\sum_{i,j}\eta_i x_j C_{ij}(u-1).
+\]
+The last equality is precisely the covector shift
+\eqref{rq-shift-one}.  Thus \(c(Y)^*=b(Y)\).
+The full determinant is self-adjoint by the same minor rule.
+Finally \(\tau(Y)=Gx_0(Y)\) is self-adjoint on the radial
+space: \(G\) is real and each \(P_\rho\) is a pointwise
+orthogonal projection.  This proves every matrix entry of the
+assertion.
+\end{proof}
+
+\begin{lemma}\label{re-two-dets}
+The relations \eqref{re-rtt} and \eqref{re-one-det} imply
+\begin{equation}
+ t(Y+1)^t Jt(Y)=q(Y)J,\qquad
+ t(Y)Jt(Y+1)^t=q(Y)J,\qquad
+ J=\begin{pmatrix}0&1\\-1&0\end{pmatrix}.       \label{re-dets}
+\end{equation}
+They also imply that the members of each fixed entry family
+\(t_{ij}(Y)\) commute with one another.
+\end{lemma}
+
+\begin{proof}
+For a fixed entry, \eqref{re-rtt} gives
+\((u-v-1)[t_{ij}(u),t_{ij}(v)]=0\).
+Interchanging \(u,v\) gives the same assertion with
+\(u-v+1\); subtraction proves commutation, without a restriction
+on \(u-v\).
+At \(u=Y+1,v=Y\), the remaining entries of
+\eqref{re-rtt} give
+\[
+ a_+c=c_+a,\quad b_+\tau=\tau_+b,\quad
+ ab_+=ba_+,\quad c\tau_+=\tau c_+,
+\]
+where a subscript \(+\) means evaluation at \(Y+1\).
+They further give
+\[
+ a_+\tau-c_+b=a\tau_+-bc_+
+                         =\tau a_+-cb_+
+                         =\tau_+a-b_+c.
+\]
+For example, the first equality is the relation for \(c_+,b\);
+the second follows from that for \(a_+,\tau\).
+The fourth expression follows in the same way from that for
+\(b_+,c\).  Multiplying the two displayed \(2\times2\)
+matrices now gives \eqref{re-dets} entry by entry.
+\end{proof}
+
+\begin{theorem}\label{re-initial-connection}
+Define
+\begin{equation}
+ \nabla=-G^{-1}C-(B+\tfrac12)\bar\zeta G^{-1},
+ \qquad
+ \nabla^*=\text{its formal adjoint}.
+                                                               \label{re-connection}
+\end{equation}
+Then \(\nabla\) is a first-order operator and
+\begin{gather}
+ [\nabla,\zeta]=1,\quad[\nabla,\bar\zeta]=0,\quad
+ [\nabla,G]=\bar\zeta,\qquad
+ [x_0(Y),\nabla]=0,                               \label{re-connection-laws}\\
+ [\nabla^*,\bar\zeta]=-1,\quad[\nabla^*,\zeta]=0,\quad
+ [\nabla^*,G]=-\zeta.                            \label{re-star-laws}
+\end{gather}
+The connection and its adjoint commute with the independent
+coordinates \(c_i,\bar c_i\), their inverses, and their Euler
+derivatives.
+
+Let \(\sigma\in\{1,-1\}\), replace \(t\) by \(\sigma t\),
+and put \(x(Y)=\sigma x_0(Y)\).  Define
+\begin{equation}
+ I=\{Y\in\mathbb C:p_\rho(Y)\ne0\text{ for every }\rho\},\quad
+ x(Y)^{-1}=\sigma\sum_\rho p_\rho(Y)^{-1}P_\rho\quad(Y\in I).
+                                                               \label{re-initial-domain}
+\end{equation}
+On \(I\) put
+\begin{equation}
+ \ell(Y)=(Gx(Y))^{-1}(\sigma c(Y)),\qquad
+ \ell_0(Y)=-\nabla-(Y+\tfrac12)\bar\zeta G^{-1},\qquad
+ e(Y)=\zeta G\bar\zeta^{-1}\{\ell(Y)-\ell_0(Y)\}.
+                                                               \label{re-initial-e}
+\end{equation}
+Each \(e(Y)\) commutes with \(\zeta,\bar\zeta,G\) and their
+inverses.  These operators supply the actual initial data of
+the recursive construction, with
+\begin{equation}
+ \begin{aligned}
+ &R=F=1,\quad N=0,\quad d=c_{\rm wt}=1,\quad t_{22}(Y)=Gx(Y),\\
+ &t_{21}(Y)=Gx(Y)\{\ell_0(Y)+\bar\zeta\zeta^{-1}G^{-1}e(Y)\}.
+ \end{aligned}
+                                                               \label{re-initial-frame}
+\end{equation}
+The determinant \(q\) is unchanged by the sign \(\sigma\).
+\end{theorem}
+
+\begin{proof}
+Compare coefficients of the polynomial parameter \(v\) in
+\eqref{re-rtt}.  Commutation of the family \(c(v)\) gives
+\([c(u),\bar\zeta]=0\).
+The coefficient of \(v^{h+2}\) in the relation for
+\(\tau(u),c(v)\) gives \([\tau(u),\bar\zeta]=0\).
+Commutation of the family \(\tau(v)\) gives
+\([\tau(u),G]=0\).  Since \(G=\zeta\bar\zeta-TT'\) and
+\(\bar\zeta\) is invertible, also \([\tau(u),\zeta]=0\).
+Finally the coefficient of \(v^{h+1}\) in
+\[
+ (u-v)[c(u),\tau(v)]
+                    =c(u)\tau(v)-c(v)\tau(u)
+\]
+is
+\([c(u),G]=-\bar\zeta\tau(u)\).
+It follows that
+\begin{equation}
+ [c(u),\zeta]=-\tau(u),\qquad [c(u),\bar\zeta]=0.
+                                                               \label{re-zeta-comm}
+\end{equation}
+Comparing the coefficient of \(u^h\) proves
+\([C,\zeta]=-G\), \([C,\bar\zeta]=0\).  The coefficient \(B\)
+commutes with scalar multiplication by the spectral
+decomposition.  Thus \eqref{re-connection} gives the first
+three identities in \eqref{re-connection-laws}.
+
+It remains to check the commutation with \(x_0(u)\).
+Work in the algebra of formal Laurent series in \(v^{-1}\)
+with differential-operator coefficients.  The leading term
+of \(\tau(v)\) is \(Gv^h\), with invertible coefficient, so
+its formal inverse exists.  Equations
+\eqref{re-x-leading}--\eqref{re-connection} give
+\begin{equation}
+ \ell(v)=\tau(v)^{-1}c(v)
+      =-v\bar\zeta/G-\nabla-\tfrac12\bar\zeta/G+O(v^{-1}).
+                                                               \label{re-laurent}
+\end{equation}
+Dividing the RTT relation for \(\tau(u),c(v)\) by the
+commuting \(\tau(v)\) gives
+\begin{equation}
+ [\tau(u),\ell(v)]
+       =-\tau(u)\frac{\ell(u)-\ell(v)}{u-v}.       \label{re-tau-ell}
+\end{equation}
+This identity may initially be read with \(\tau(u)\) also
+formally invertible; multiplication by it cancels its inverse.
+The coefficient of \(v^0\) on its right is
+\(\bar\zeta x_0(u)\).  On its left the coefficient is
+\[
+ [Gx_0(u),-\nabla]
+        =-G[x_0(u),\nabla]+\bar\zeta x_0(u).
+ \]
+Hence \([x_0(u),\nabla]=0\).  This is a polynomial
+identity in \(u\); it therefore holds for every complex \(u\).
+The interpolation formula for \(P_\rho\) then also gives
+\([P_\rho,\nabla]=0\) for every \(\rho\).
+Taking formal adjoints gives \eqref{re-star-laws}.
+All coefficients used here act only in the terminal variable,
+which proves the assertions about the independent \(c_i\).
+
+The finite spectral formula proves the stated two-sided
+inverse on \(I\), commutation of the \(x(Y)\), their
+commutation with all scalar functions, and their
+self-adjointness for real \(Y\).
+Equation \eqref{re-zeta-comm} shows
+\([\ell(Y),\zeta]=-1\) and
+\([\ell(Y),\bar\zeta]=0\).
+The same is true of \(\ell_0(Y)\); their difference therefore
+commutes with \(\zeta,\bar\zeta,G\), proving the assertion about
+\(e\).  The last displayed identities are now definitions.
+The sign disappears from \(\ell\), and its square in the
+determinant is one.  For \(k=1\), \eqref{re-laurent} is an
+exact equality, so \(e=0\).  No limiting argument at a spectral
+root has been used.
+\end{proof}
+
+The construction stays within the actual radial function space.
+The cofactor covariance in Section~\ref{rc-section} shows that
+the terminal entries preserve the two compact equivariances.
+Each of their polynomial coefficients is a finite linear
+combination of evaluations, so \(C\) preserves them as well.
+The spectral projections preserve them by
+Theorem~\ref{rd-constructed-kappa}; multiplication by
+\(\zeta,\bar\zeta,G\) and their inverses does so because these
+functions are invariant.  All these coefficients are smooth on
+\(G>0\).  Formal adjoints preserve the equivariance because
+the compact actions are unitary.  Consequently every operator
+just constructed acts on the stated smooth radial space and
+preserves supports.
+
+\subsection{Two elementary Gauss identities}
+
+The following calculations take place in an arbitrary
+associative complex algebra.  Every inverse mentioned is a
+two-sided inverse.  Suppose \(t(u)\) satisfies
+\eqref{re-rtt} and \eqref{re-dets}, and that \(\tau(u)\) is
+invertible for \(u\) in a set \(I\).  Write
+\[
+ \ell_u=\tau_u^{-1}c_u,\qquad
+ m_u=\tau_u^{-1}b_u,\qquad
+ H_u=q(u)\tau_u^{-1}\tau_{u+1}^{-1}.
+\]
+The last expression is used only when \(u,u+1\in I\).
+
+\begin{lemma}\label{re-gauss}
+Whenever the indicated adjacent points belong to \(I\),
+\begin{align}
+ m_{u+1}&=b_u\tau_u^{-1},&
+ \ell_u&=c_{u+1}\tau_{u+1}^{-1},               \label{re-shifts}\\
+ a_u-b_u\tau_u^{-1}c_u&=q(u)\tau_{u+1}^{-1},&
+ a_u-c_u\tau_u^{-1}b_u&=q(u-1)\tau_{u-1}^{-1},\label{re-schur}\\
+ t(u)&=
+ \begin{pmatrix}1&m_{u+1}\\0&1\end{pmatrix}
+ \begin{pmatrix}q(u)\tau_{u+1}^{-1}&0\\0&\tau_u\end{pmatrix}
+ \begin{pmatrix}1&0\\\ell_u&1\end{pmatrix},     \label{re-gauss-plus}\\
+ t(u)^t&=
+ \begin{pmatrix}1&\ell_{u-1}\\0&1\end{pmatrix}
+ \begin{pmatrix}q(u-1)\tau_{u-1}^{-1}&0\\0&\tau_u\end{pmatrix}
+ \begin{pmatrix}1&0\\m_u&1\end{pmatrix}.        \label{re-gauss-minus}
+\end{align}
+If \(u\ne v\), put
+\(\eta_{uv}=(\ell_u-\ell_v)/(u-v)\) and
+\(\mu_{uv}=(m_u-m_v)/(u-v)\).  Then
+\begin{align}
+ [\tau_u,\ell_v]&=-\tau_u\eta_{uv},&
+ [\tau_u,m_v]&=\tau_u\mu_{uv},                 \label{re-gauss-comm}\\
+ [\ell_u,\ell_v]&=\eta_{uv}(\ell_u-\ell_v),    \label{re-ell-comm}\\
+ (u-v-1)[m_u,\ell_v]&=H_v-H_{u-1}.            \label{re-mixed}
+\end{align}
+For \eqref{re-mixed} assume \(u-1,u,v,v+1\in I\).
+If \(d=d^*\) is invertible and \(dt(u)\) is Hermitian for real
+\(u\), then
+\begin{equation}
+             dm_{u+1}=\ell_u^*d                 \label{re-adj-gauss}
+\end{equation}
+for real \(u,u+1\in I\).
+\end{lemma}
+
+\begin{proof}
+The zero diagonal entries of the two identities
+\eqref{re-dets} give
+\(b_{u+1}\tau_u=\tau_{u+1}b_u\) and
+\(c_u\tau_{u+1}=\tau_uc_{u+1}\).
+These are \eqref{re-shifts}.  The off-diagonal entries,
+with these substitutions, give \eqref{re-schur}.
+Multiplying the three factors proves the two factorizations.
+
+The RTT relation for \(\tau_u,c_v\), after multiplication
+by \(\tau_v^{-1}\), gives the first identity in
+\eqref{re-gauss-comm}.  For clarity, the second can be
+derived without dividing by \(u-v+1\).
+Put \(D=u-v\) and \(K=[\tau_u,m_v]\).
+The relations for \(\tau_u,b_v\), together with the same
+relation with \(u,v\) interchanged, give
+\[
+ DK=\tau_v^{-1}b_u\tau_v-m_v\tau_u,\qquad
+ \tau_v^{-1}b_u\tau_v=b_u-K.
+\]
+Thus \((D+1)K=b_u-m_v\tau_u
+=b_u-\tau_um_v+K\), proving \(DK=\tau_u(m_u-m_v)\).
+Next expand \(c_uc_v=c_vc_u\), use
+\(c_w=\tau_w\ell_w\), and move \(\tau_u,\tau_v\)
+to the left using \eqref{re-gauss-comm}.
+Cancellation of their invertible product gives
+\eqref{re-ell-comm}.
+
+The relation for \(b_u,c_v\) gives, by the same movement,
+\[
+ D[m_u,\ell_v]-(m_u-m_v)\ell_v-(\ell_u-\ell_v)m_u
+       =H_v-H_{u-1}+m_v\ell_v-\ell_um_u.
+\]
+Here use the first Schur expression at \(v\) and the second
+at \(u\), so that no inverse at \(u+1\) is required.
+The left side is
+\((D-1)[m_u,\ell_v]+m_v\ell_v-\ell_um_u\).
+Cancellation proves \eqref{re-mixed}.
+Finally weighted Hermiticity says \(c_u^*d=db_u\) and
+\(\tau_u^*d=d\tau_u\).  Hence
+\[
+ \ell_u^*d=c_u^*(\tau_u^*)^{-1}d
+                    =db_u\tau_u^{-1}=dm_{u+1}.
+\]
+\end{proof}
+
+\subsection{The recursive construction and its domains}
+
+We now allow an auxiliary tensor product of finitely many copies
+of \(\mathbb C^2\).  All matrices below have differential-operator
+coefficients on the radial space and act on this tensor product.
+A new factor always means a factor on which every existing
+coefficient acts as the identity.  This condition is essential.
+Let
+\[
+ w=\zeta\bar\zeta/G,\qquad
+ \kappa=\bar\zeta/(\zeta G),\qquad t_z=TT'/\bar\zeta.
+\]
+A frame consists of sets \(I\subset\Omega\), a matrix \(t(Y)\)
+defined on \(\Omega\), an invertible \(F\), commuting operators
+\(x(Y)\), an invertible self-adjoint \(c_{\rm wt}\), and
+operators \(e(Y)\) for \(Y\in I\).  Its scalar determinant
+\(q(Y)\) is defined on the adjacent-point domain
+\(\Omega^{(2)}=\{Y:Y,Y+1\in\Omega\}\).  Put
+\begin{equation}
+ d=w^N c_{\rm wt},\quad
+ \ell_Y=-\nabla-(Y+\tfrac12)\bar\zeta/G+\kappa e(Y),\quad
+ m_Y=d^{-1}\ell_{Y-1}^*d
+       \quad(Y\in\mathbb R,\ Y-1\in I).
+                                                               \label{re-frame-data}
+\end{equation}
+Here \(\ell_Y\) is defined for \(Y\in I\).  For real \(Y\)
+with \(Y-1,Y\in I\), the displayed \(m_Y\) agrees with
+the upper Gauss coordinate by the adjoint identity
+\eqref{re-adj-gauss}.
+The frame identities are
+\begin{align}
+ R&=F^*dF,&
+ Ft_{22}(Y)F^{-1}&=Gx(Y)\quad(Y\in\Omega),       \label{re-frame-main}\\
+ Ft_{21}(Y)F^{-1}&=Gx(Y)\ell_Y
+                    \quad(Y,Y+1\in I).        \label{re-frame-lower}
+\end{align}
+We require \(x(Y)^{-1}\) on \(I\), that the \(x(Y)\)
+commute with one another, \(c_{\rm wt}\), \(\nabla\), and
+\(\zeta,\bar\zeta,G\), that \(x(Y)^*=x(Y)\) for real \(Y\),
+and that \(c_{\rm wt}\) and \(e(Y)\) commute with the latter
+three multiplication operators.  In addition, \(R=R^*\),
+\(Rt(Y)\) is Hermitian at real \(Y\in\Omega\), and
+\eqref{re-rtt} holds on \(\Omega\), with
+\eqref{re-dets} whenever \(Y,Y+1\in\Omega\).
+These conditions hold for the initial frame constructed above.
+
+For a new factor let
+\begin{equation}
+ P_{ij}=E_{ji},\qquad Q_{ij}=E_{ij},\qquad
+ R_P(D)=\frac{DI-P}{D-1},\qquad
+ R_Q(d_0)=\frac{d_0I-Q}{d_0-1}.
+                                                               \label{re-fresh-matrices}
+\end{equation}
+Here \(i,j\in\{1,2\}\) are the matrix indices of \(t\),
+and \(E_{ij}\) acts on the new factor.  The operation
+\(\operatorname{ins}t(a)\) means that the two indices of
+\(t(a)\) act on that new factor.
+
+\begin{theorem}\label{re-recursive-frame}
+Suppose the preceding frame conditions hold.
+
+For a real number \(a\), assume
+\begin{equation}
+                a,a+1\in I,\qquad q(a)\ne0.     \label{re-plus-hyp}
+\end{equation}
+There is a new frame with
+\begin{equation}
+ \begin{aligned}
+ \Omega_+&=\Omega\setminus\{a+1\},&
+ I_+&=I\setminus\{a,a+1\},\\
+ t_+(Y)&=t(Y)R_P(Y-a),&
+ q_+(Y)&=q(Y)\frac{Y-a+1}{Y-a},\\
+ R_+&=R\,\operatorname{ins}t(a),&
+ N_+&=N+1.
+ \end{aligned}                                                   \label{re-plus-module}
+\end{equation}
+Its other entries are
+\begin{equation}
+ F_+=C_+L_aF,\quad
+ C_+=\begin{pmatrix}\zeta^{-1}&0\\0&G/\bar\zeta\end{pmatrix},\quad
+ L_a=\begin{pmatrix}1&0\\\ell_a&1\end{pmatrix}.                 \label{re-plus-F}
+\end{equation}
+\begin{align}
+ x_+(Y)&=x(Y)
+       \begin{pmatrix}(Y-a)/(Y-a-1)&0\\0&1\end{pmatrix},\nonumber\\
+ c_{{\rm wt},+}&=c_{\rm wt}
+       \begin{pmatrix}q(a)x(a+1)^{-1}&0\\0&x(a)\end{pmatrix},
+                                                               \label{re-plus-xc}
+\end{align}
+With \(\Delta_{Ya}e=(e(Y)-e(a))/(Y-a)\), put
+\begin{equation}
+ e_+(Y)=
+ \begin{pmatrix}
+ e(Y)-\Delta_{Ya}e+t_z&-(Y-a)^{-1}\\
+ 0&x(a)^{-1}e(Y)x(a)
+ \end{pmatrix}.                                \label{re-plus-e}
+\end{equation}
+
+For a real number \(b\), assume
+\begin{equation}
+             b-1,b,b+1\in I,\qquad q(b-1)\ne0.  \label{re-minus-hyp}
+\end{equation}
+There is a new frame with
+\begin{equation}
+ \begin{aligned}
+ \Omega_-&=\Omega\setminus\{b-1\},&
+ I_-&=I\setminus\{b-1,b\},\\
+ t_-(Y)&=R_Q(b-Y)t(Y),&
+ q_-(Y)&=q(Y)\frac{b-Y}{b-Y-1},\\
+ R_-&=R\,\operatorname{ins}t(b)^t,&
+ N_-&=N+1.
+ \end{aligned}                                                   \label{re-minus-module}
+\end{equation}
+Its other entries are
+\begin{equation}
+ F_-=C_-M_bF,\quad
+ C_-=\begin{pmatrix}\bar\zeta^{-1}&0\\0&G/\zeta\end{pmatrix},\quad
+ M_b=\begin{pmatrix}1&0\\m_b&1\end{pmatrix}.                  \label{re-minus-F}
+\end{equation}
+\begin{align}
+ x_-(Y)&=x(Y)
+       \begin{pmatrix}(b-Y)/(b-Y-1)&0\\0&1\end{pmatrix},\nonumber\\
+ c_{{\rm wt},-}&=c_{\rm wt}
+       \begin{pmatrix}q(b-1)x(b-1)^{-1}&0\\0&x(b)\end{pmatrix},
+                                                               \label{re-minus-xc}
+\end{align}
+\begin{equation}
+ e_-(Y)=
+ \begin{pmatrix}
+ e(Y)&0\\
+ -\dfrac{q(b-1)x(b)^{-1}x(b-1)^{-1}}{b-Y-1}
+       &x(b)^{-1}e(Y)x(b)-\Delta_{Yb}e+t_z
+ \end{pmatrix}.                                  \label{re-minus-e}
+\end{equation}
+All displayed rational formulas are asserted on their indicated
+domains.  In particular, \(q_\pm\) is defined on
+\(\Omega_\pm^{(2)}=\{Y:Y,Y+1\in\Omega_\pm\}\).
+For \(q_+\), this condition excludes \(Y=a\), so its displayed
+formula never evaluates its apparent pole.
+\end{theorem}
+
+\begin{proof}
+Conjugate the old matrix by \(F\), and abbreviate it by \(t\)
+during the calculation.  Its lower-right entry is
+\(\tau_Y=Gx(Y)\); the old density is \(d\).
+Similarity preserves \eqref{re-rtt} and \eqref{re-dets}.
+The Gauss coordinates coincide with \(\ell_Y\) when
+\(Y,Y+1\in I\), and \eqref{re-adj-gauss} identifies the upper
+coordinate with \(m_Y\) at the real parameters used below.
+
+First we check the conjugation of the last row.  For the plus
+step put \(D=Y-a\) and
+\(\eta=(\ell_Y-\ell_a)/D\).  Before conjugating by \(L_a\),
+the new entries are
+\begin{equation}
+ (t_+)_{22}=\frac{\tau_Y}{D-1}
+      \begin{pmatrix}D&0\\-\ell_Y&D-1\end{pmatrix},\qquad
+ (t_+)_{21}=\frac{\tau_Y}{D-1}
+      \begin{pmatrix}(D-1)\ell_Y&-1\\0&D\ell_Y\end{pmatrix}.
+                                                               \label{re-plus-blocks}
+\end{equation}
+Set the two matrices on the right equal to \(U,V\).
+The first identity of \eqref{re-gauss-comm} gives
+\begin{equation}
+ L_a\tau_Y U
+       =\tau_Y\operatorname{diag}(D,D-1)L_a.
+                                                               \label{re-plus-tau-calc}
+\end{equation}
+Moreover
+\begin{equation}
+ V L_a^{-1}
+ =U L_a^{-1}
+       \begin{pmatrix}\ell_Y-\eta&-D^{-1}\\0&\ell_Y+\eta\end{pmatrix}.
+                                                               \label{re-plus-low-calc}
+\end{equation}
+Three entries follow by \(D\eta=\ell_Y-\ell_a\).
+For the remaining lower-left entry the difference is a scalar
+multiple of
+\((\ell_Y-\ell_a)^2-D[\ell_Y,\ell_a]\), which is zero
+by \eqref{re-ell-comm}.
+Thus conjugation by \(L_a\) gives the asserted new
+\(\tau\) and the Gauss coordinate in
+\eqref{re-plus-low-calc}.
+
+The assertion about \(\tau\) holds on all of \(\Omega_+\),
+including points where \(x(Y)\) is not invertible.
+To see this without division by \(D\), use the RTT identity
+in the form
+\begin{equation}
+ D\ell_a\tau_Y-c_Y=(D-1)\tau_Y\ell_a .
+                                                               \label{re-plus-all-reg}
+\end{equation}
+It requires only the inverse of \(\tau_a\), and proves
+\eqref{re-plus-tau-calc} directly with \(c_Y\) in place of
+\(\tau_Y\ell_Y\).
+
+For the minus step put \(d_0=b-Y\).
+Before conjugating by \(M_b\), the two new entries, multiplied
+by \(d_0-1\), are
+\[
+ A=\begin{pmatrix}d_0\tau_Y&0\\-b_Y&(d_0-1)\tau_Y\end{pmatrix},
+ \qquad
+ B_0=\begin{pmatrix}d_0c_Y&0\\-a_Y&(d_0-1)c_Y\end{pmatrix}.
+\]
+The first Schur formula gives
+\begin{equation}
+ B_0=A
+       \begin{pmatrix}\ell_Y&0\\-H_Y/(d_0-1)&\ell_Y\end{pmatrix}.
+                                                               \label{re-minus-block}
+\end{equation}
+The second identity of \eqref{re-gauss-comm} gives
+\[
+ M_b A=\operatorname{diag}(d_0\tau_Y,(d_0-1)\tau_Y)M_b.
+\]
+The mixed identity \eqref{re-mixed}, with \(u=b,v=Y\), then gives
+\begin{equation}
+ M_b
+ \begin{pmatrix}\ell_Y&0\\-H_Y/(d_0-1)&\ell_Y\end{pmatrix}
+ =
+ \begin{pmatrix}\ell_Y&0\\-H_{b-1}/(d_0-1)&\ell_Y\end{pmatrix}M_b.
+                                                               \label{re-minus-low-calc}
+\end{equation}
+For the lower-right entry on all of \(\Omega_-\), use instead
+the undivided RTT equality
+\begin{equation}
+ d_0m_b\tau_Y-b_Y=(d_0-1)\tau_Ym_b.             \label{re-minus-all-reg}
+\end{equation}
+It only uses \(\tau_b^{-1}\).
+
+It remains to conjugate by \(C_+\) or \(C_-\).
+The level relations give
+\begin{equation}
+ \eta=-\bar\zeta/G+\kappa\Delta_{Ya}e,\qquad
+ \bar\zeta/G-\zeta^{-1}=\kappa t_z .
+                                                               \label{re-coordinate-simplify}
+\end{equation}
+The first relation in \eqref{re-gauss-comm}, applied to
+\(\tau_a=Gx(a)\), also gives
+\begin{equation}
+               x(a)^{-1}e(Y)x(a)=e(Y)+\Delta_{Ya}e.
+                                                               \label{re-e-conj}
+\end{equation}
+Here \(Y,Y+1,a,a+1\in I\) and \(Y\ne a\), exactly as in the
+new lower-entry domain.
+For the plus step, the two diagonal entries after conjugation
+are
+\[
+ \ell_Y-\eta-\zeta^{-1},\qquad
+ \ell_Y+\eta+\bar\zeta/G,
+\]
+and the upper entry is \(-\kappa/D\).
+Equations \eqref{re-coordinate-simplify} and
+\eqref{re-e-conj} give exactly \eqref{re-plus-e}.
+For the minus step the diagonal entries are
+\(\ell_Y\) and \(\ell_Y+\bar\zeta/G-\zeta^{-1}\).
+Its lower entry is
+\[
+ -\frac{G}{\zeta}\frac{H_{b-1}}{d_0-1}\bar\zeta
+ =-\kappa\,\frac{q(b-1)x(b)^{-1}x(b-1)^{-1}}{d_0-1}.
+\]
+Using \eqref{re-e-conj} with \(a=b\) gives
+\eqref{re-minus-e}.  The requirement \(b+1\in I\) is used
+in this last application.
+
+We next prove the congruence for the form.  The weighted
+Gauss factorization gives
+\begin{align*}
+ d\,t(a)
+ &=L_a^*\operatorname{diag}
+       \bigl(dq(a)\tau_{a+1}^{-1},d\tau_a\bigr)L_a,\\
+ d\,t(b)^t
+ &=M_b^*\operatorname{diag}
+       \bigl(dq(b-1)\tau_{b-1}^{-1},d\tau_b\bigr)M_b.
+\end{align*}
+All \(x\)'s commute with \(d\) and with the coordinate
+multiplications.  Since
+\(w/(\zeta\bar\zeta)=G^{-1}\), direct diagonal multiplication
+gives
+\begin{align*}
+ C_+^*w^{N+1}c_{{\rm wt},+}C_+
+ &=\operatorname{diag}(dq(a)\tau_{a+1}^{-1},d\tau_a),\\
+ C_-^*w^{N+1}c_{{\rm wt},-}C_-
+ &=\operatorname{diag}(dq(b-1)\tau_{b-1}^{-1},d\tau_b).
+\end{align*}
+Undoing the old conjugation therefore proves
+\(R_\pm=F_\pm^*w^{N+1}c_{{\rm wt},\pm}F_\pm\).
+The inverse of \(F_+\), for example, is
+\(F^{-1}L_a^{-1}C_+^{-1}\); the minus inverse is identical
+with \(M_b,C_-\) substituted.
+
+We verify the remaining matrix relations explicitly.
+The matrices in \eqref{re-fresh-matrices} satisfy
+\eqref{re-rtt}: their numerators have, respectively, the
+generator matrices \(-E_{ji}\) and \(E_{ij}\), and
+\([E_{ij},E_{kl}]=\delta_{jk}E_{il}-\delta_{il}E_{kj}\)
+gives each of the sixteen identities.
+Multiplication gives their two shifted determinants as
+\((D+1)/D\) and \(d_0/(d_0-1)\), respectively.
+Before division the numerators are
+\((D-1)(D+1)\) and \(d_0(d_0-2)\); the successive
+denominators are \((D-1)D\) and
+\((d_0-1)(d_0-2)\).
+Products of matrices with mutually commuting coefficient
+algebras preserve RTT: in the two auxiliary tensor copies,
+move each old coefficient past each fresh coefficient and
+apply the two RTT equations in succession.
+They also preserve the two determinant equations, since
+\((AB)^t=B^tA^t\) for such coefficient algebras.
+This proves the claimed \(q_\pm\).
+
+The new weighted Hermiticity follows from the old RTT
+relation at \(a,Y\), or \(b,Y\).  More explicitly, after
+using \(dt(u)=(dt(u))^*\), the plus assertion is the exchange
+identity
+\[
+ \operatorname{ins}t(a)\,t(Y)R_P(Y-a)
+       =R_P(Y-a)t(Y)\operatorname{ins}t(a);
+\]
+the minus assertion is
+\[
+ \operatorname{ins}t(b)^t R_Q(b-Y)t(Y)
+       =t(Y)R_Q(b-Y)\operatorname{ins}t(b)^t.
+\]
+The first is RTT on the old auxiliary and new factors.
+For the second, expand \(Q_{ij}=E_{ij}\): its
+\((i,j;k,l)\) entry is the same RTT identity with the two
+indices belonging to the new factor interchanged.
+This is an entry calculation; it does not use a rule
+reversing arbitrary products under partial transpose.
+The self-adjointness of \(R_\pm\) also follows from the
+congruences just proved.  The reality of \(q_\pm\) follows
+from the reality of their parameters.
+Commutation within the new lower-left family follows from
+RTT as in Lemma~\ref{re-two-dets}.
+
+Finally the inverses in the new \(x,c_{\rm wt}\) exist on
+the specified sets by \eqref{re-plus-hyp} or
+\eqref{re-minus-hyp}.  Their commutations and adjoints
+follow entry by entry from the old ones: every new
+diagonal factor is a real scalar rational function times
+one of the commuting \(x\)'s or their inverses.
+The formulas for \(e_\pm\) show that they commute with
+the three coordinate multiplications.
+All frame conditions have now been checked.
+\end{proof}
+
+\subsection{Iteration, scalar densities and the empty word}
+
+Start with the actual frame of
+Theorem~\ref{re-initial-connection}, with
+\(\sigma=(-1)^{k-l}\), \(1\le l\le k\), as in the application.
+Take an ordered sequence of plus and minus steps on distinct
+auxiliary factors.  At each step require exactly
+\eqref{re-plus-hyp} or \eqref{re-minus-hyp} for the current
+domain and current determinant.
+Theorem~\ref{re-recursive-frame} then applies by induction.
+This formulation allows the sharper recursively admissible
+domains of the source.
+
+A convenient sufficient condition, used for its original
+admissible words, is the following.  All parameters \(a_j\)
+are real, \(a_j-1,a_j,a_j+1\) belong to the initial set \(I\),
+\(q(a_j),q(a_j-1)\ne0\), and
+\begin{equation}
+             a_i-a_j\notin\{-2,-1,0,1,2\}\quad(i\ne j).
+                                                               \label{re-word-domain}
+\end{equation}
+Indeed an earlier step removes only its parameter and a
+neighbor from \(I\).  Its determinant multiplier has its
+zero and pole at such neighbors.  Condition
+\eqref{re-word-domain} prevents any later required evaluation
+from meeting either one.  Distinct auxiliary factors supply
+the required commutation with each new factor.
+This proves sufficiency for every order of the steps.
+
+\begin{lemma}\label{re-shifted-domain}
+For each step define \(y_j=a_j\) in the plus case and
+\(y_j=b_j-1\) in the minus case.
+It is enough to require that the auxiliary factors are distinct,
+that all \(y_j\) are real, that
+\[
+ y_j,y_j+1\in I,\qquad q(y_j)\ne0,\qquad
+ y_j+2\in I\ \hbox{for a minus step},
+\]
+in the initial frame, and that
+\[
+ y_i-y_j\notin\{-2,-1,0,1,2\}\quad(i\ne j).
+\]
+The resulting invertibility domain after any subset of steps is
+the initial \(I\) with the pairs \(\{y_j,y_j+1\}\) removed.
+If, in addition,
+\begin{equation}
+ |y_i-y_j|>2,\qquad
+ \sigma p_\rho(y_j)>0,\quad
+ \sigma p_\rho(y_j+1)>0,\quad q(y_j)>0
+                                                               \label{re-shifted-signs}
+\end{equation}
+for every \(\rho,j\), all the scalar weights in
+\eqref{re-plus-scalar}--\eqref{re-minus-scalar} are positive.
+\end{lemma}
+
+\begin{proof}
+Both signs remove exactly \(\{y_j,y_j+1\}\) from the
+current \(I\).  The required points for a later plus step are
+\(y_i,y_i+1\); for a later minus step they are
+\(y_i,y_i+1,y_i+2\).  An intersection with a removed pair
+would give one of the excluded integer differences.
+The determinant multipliers from earlier steps, at a general
+point \(Y\), are respectively
+\[
+ \frac{Y-y_j+1}{Y-y_j},\qquad
+ \frac{Y-y_j-1}{Y-y_j}.
+\]
+At \(Y=y_i\) neither has a zero or a pole.  This proves
+recursive admissibility.
+
+For positivity, the two possible nontrivial multipliers of
+\(x(Y)\) are
+\[
+ \frac{Y-y_j}{Y-y_j-1},\qquad
+ \frac{Y-y_j-1}{Y-y_j}.
+\]
+When \(Y=y_i\) or \(y_i+1\), both are positive: the difference
+\(Y-y_j\) is either greater than one or less than zero.
+The two determinant multipliers at \(Y=y_i\) are positive
+as well.  In both signs of the recursion, the required values
+of \(x\) are exactly \(x(y_i)\) and \(x(y_i+1)\), and the
+required value of \(q\) is \(q(y_i)\).
+Thus every new scalar weight is a product or quotient of
+positive numbers, proving the assertion inductively.
+\end{proof}
+
+This also gives the version with shifted spectral cuts used
+in the source.  Namely, it is enough that for each \(j\)
+either \(y_j\) or \(y_j+1\) satisfy
+\eqref{rp-cut-margin}, and that the \(y_j\) are separated
+by more than two.  Lemma~\ref{rp-parameter-signs} gives
+\eqref{re-shifted-signs} in both cases, using \(q(Y-1)>0\)
+when the cut is imposed at \(Y=y_j+1\).
+For the additional domain point \(y_j+2\), its proof gives
+slightly more than was stated: every factor \(Y+\rho_i\)
+has absolute value at least \(5/2\) with a fixed sign,
+so that sign persists for every shift of absolute value at
+most two.  Consequently \(p_\rho(y_j+2)\ne0\).
+No stronger separation between the unshifted parameters
+\(a_j,b_j\) is needed for this version.
+
+\begin{corollary}\label{re-density}
+Let \(n\) be the number of steps.  If \(e\) is a choice
+of \(0\) or \(1\) on each auxiliary factor, then
+\begin{equation}
+ x_n(Y)=\sum_{\rho,e}x_{\rho,e}(Y)P_\rho\otimes E_{ee},
+ \qquad
+ c_{{\rm wt},n}=\sum_{\rho,e}c_{\rho,e}P_\rho\otimes E_{ee},
+ \qquad
+ R_n=F_n^*w^n c_{{\rm wt},n}F_n .              \label{re-final-congruence}
+\end{equation}
+Initially \(x_{\rho,e}(Y)=\sigma p_\rho(Y)\) and
+\(c_{\rho,e}=1\).
+At a plus step of parameter \(a\), multiply
+\(x_{\rho,e}(Y)\) by
+\((Y-a)/(Y-a-1)\) when its new bit is \(0\), and by \(1\)
+when it is \(1\).  Multiply \(c_{\rho,e}\) respectively by
+\begin{equation}
+                  q(a)/x_{\rho,e}(a+1),\qquad x_{\rho,e}(a).
+                                                               \label{re-plus-scalar}
+\end{equation}
+At a minus step of parameter \(b\), the corresponding
+multipliers are \((b-Y)/(b-Y-1)\), \(1\), and
+\begin{equation}
+                  q(b-1)/x_{\rho,e}(b-1),\qquad x_{\rho,e}(b).
+                                                               \label{re-minus-scalar}
+\end{equation}
+Every quantity on the right is evaluated before the step.
+Under the spectral-margin and separation hypotheses of
+Corollary~\ref{rp-terminal-density-positive}, or under
+the shifted hypotheses of Lemma~\ref{re-shifted-domain}, all
+\(c_{\rho,e}>0\).
+Consequently, for every smooth compactly supported radial
+vector \(\Phi\),
+\begin{equation}
+ \int\langle R_n\Phi,\Phi\rangle
+       =\int w^n\sum_{\rho,e}c_{\rho,e}
+                       \|P_\rho(F_n\Phi)_e\|^2\geq0.             \label{re-positive-form}
+\end{equation}
+The integration measure is the radial measure specified at
+the start of the section.
+\end{corollary}
+
+\begin{proof}
+All initial projections commute, and every new formula for
+\(x,c_{\rm wt}\) is diagonal on the new factor.
+Induction therefore proves the spectral formulas and the
+scalar recurrences.  They are exactly the scalar expressions
+whose signs were proved in
+Corollary~\ref{rp-terminal-density-positive}.
+On a compact subset of \(G>0\), the inverses of \(G,\zeta\)
+and \(\bar\zeta\), and all coefficients of the finitely many
+operators, are bounded with all needed derivatives.
+Differential operators do not enlarge supports.
+Formal integration by parts is therefore legitimate in
+\eqref{re-final-congruence}, giving
+\eqref{re-positive-form}.  The pointwise orthogonality of
+the \(P_\rho\) justifies its last expansion.
+\end{proof}
+
+For the empty sequence, \(n=0\), \(R_0=F_0=1\), and
+\eqref{re-positive-form} is simply the ordinary squared norm.
+When \(r=0\), there are no independent \(c_i\), and their
+product measure and all assertions about their Euler
+derivatives disappear.  When \(k=1\), the finite type has
+one element, \(p_\rho=1\), and the initial correction
+\(e(Y)\) is zero.  These cases require no additional
+invertibility assumption.
+
+This proves the actual algebraic frame and its compactly
+supported positive form.  Passing to the specific noncompact
+vectors used later still requires their regularity, decay,
+support and operator-commutation hypotheses to be checked
+against the analytic theorems of
+Sections~\ref{jg-section} and \ref{jp-section}.
+The algebraic congruence alone does not assert those hypotheses.
+The correspondence of the formulas with the submitted source
+is recorded separately; see \cite{alpo-uniform-source}.
+
+

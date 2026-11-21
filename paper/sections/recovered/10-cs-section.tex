@@ -1,0 +1,642 @@
+\section{A shorter slope comparison for a family of integral maps}
+\label{cs-section}
+
+The final arithmetic comparison in the proposed argument\cite{alpo-central-comparison} has two distinct
+parts. One constructs integral maps, controls their heights and local
+divisibility, and proves that their complex realizations are nearly isotropic.
+The other turns these facts into an inequality between slopes. We give a
+short proof of the second part. Its hypotheses are concrete; establishing
+them for the required automorphic family remains a separate problem.
+
+\subsection{Slopes and the height of a map}
+
+Let $K$ be a number field of degree $d$. A Hermitian $\mathcal O_K$-lattice
+$E$ is a finite projective $\mathcal O_K$-module with a positive definite
+Hermitian norm at each complex embedding, compatible with conjugation.
+Its rank is its dimension over $K$. Give its real Minkowski space the
+metric in which a complex place contributes twice the real part of the
+Hermitian form. Write $\operatorname{covol}(E)$ for the resulting real
+covolume and put
+\[
+ \widehat{\deg}(E)
+ =\frac1d\left(-\log\operatorname{covol}(E)
+                  +\frac{\operatorname{rk}E}{2}\log|\Delta_K|\right),
+ \qquad \mu(E)=\frac{\widehat{\deg}(E)}{\operatorname{rk}E}.
+\]
+Submodules are given the restricted metrics and quotients the quotient
+metrics. A submodule is called saturated if its quotient is torsion free.
+For a nonzero integral linear map $f:E\to F$, its height is
+\[
+ h(f)=\frac1d\sum_{v\mid\infty}n_v\log\|f_v\|_{\rm op},
+ \qquad n_v=[K_v:\mathbb R].
+\]
+We allow the zero map and assign it height $-\infty$.
+
+We recall the slope facts that will be used. Every nonzero $E$ has a
+filtration by saturated submodules
+\[
+ 0=E_0\subset E_1\subset\cdots\subset E_a=E
+\]
+whose successive quotients are semistable and have strictly decreasing
+slopes. Semistable means that no nonzero saturated submodule has larger
+slope than the whole lattice. List the successive slopes with their
+rank multiplicities as
+$\lambda_1(E)\ge\cdots\ge\lambda_r(E)$.
+Then their mean is $\mu(E)$; write
+$\mu_{\max}(E)=\lambda_1(E)$ and
+$\mu_{\min}(E)=\lambda_r(E)$. For a real $t$, let $E_{\ge t}$ denote the
+step consisting of all successive quotients with slope at least $t$.
+
+For completeness, the construction uses only covolumes. In each fixed
+rank, the degrees of saturated submodules are bounded above and attain
+their maximum: their underlying primitive integral sublattices have
+nonzero exterior products in a fixed discrete lattice, and there are
+only finitely many such products of bounded norm. Choose a submodule
+of maximal slope and, among those, maximal rank. It is unique. Indeed,
+for two saturated submodules $U,V$ the determinant formula for an exact
+sequence and the decrease of quotient norms give
+\[
+ \widehat{\deg}U+\widehat{\deg}V
+ \le\widehat{\deg}(U\cap V)
+       +\widehat{\deg}\bigl((U+V)^{\rm sat}\bigr).
+\]
+If $U,V$ have maximal slope, both terms on the right are at most that
+slope times their respective ranks; the ranks add to
+$\operatorname{rk}U+\operatorname{rk}V$. Thus their saturated sum also has
+maximal slope. Maximality of the chosen rank proves uniqueness.
+Repeat in the quotient. The slopes strictly decrease, since otherwise
+the inverse image of the next maximal submodule contradicts the choice
+at the preceding step. The process terminates after at most $r$ steps.
+Degree additivity proves the assertion about the mean. It also shows
+that every nonzero torsion-free quotient, with its quotient metrics,
+has slope at least $\mu_{\min}(E)$ and every
+nonzero submodule has slope at most $\mu_{\max}(E)$: intersect a submodule,
+or filter a quotient, by the displayed filtration, and use semistability
+on its successive images. Saturation and quotient norms can only improve
+the needed inequalities.
+
+\begin{lemma}[Slopes under an integral map]\label{cs-functoriality}
+If $f:E\to F$ is nonzero, then
+\[
+ \mu_{\min}(E)\le\mu_{\max}(F)+h(f).
+\]
+If $h(f)\le0$, then $f(E_{\ge t})\subset F_{\ge t}$ for every real $t$.
+\end{lemma}
+\begin{proof}
+Let $Q=E/\ker f$ and let $J$ be the saturation of $f(E)$ in $F$.
+Put $q=\operatorname{rk}Q=\operatorname{rk}J$. On $q$th exterior powers
+the operator norm is at most $\|f_v\|_{\rm op}^{q}$.
+The image lattice has finite index in $J$; its index contributes a
+nonnegative logarithm to its covolume. Multiplying the determinant
+inequalities at the infinite places therefore gives
+\[
+ \widehat{\deg}(Q)\le\widehat{\deg}(J)+q h(f).
+\]
+Divide by $q$ and use the preceding submodule and quotient properties.
+For the second assertion, compose the restriction to $E_{\ge t}$ with
+$F\to F/F_{\ge t}$. Restriction and orthogonal quotient do not increase
+operator norms. If this composite were nonzero, the first assertion
+would give $t\le\mu_{\min}(E_{\ge t})
+\le\mu_{\max}(F/F_{\ge t})<t$, a contradiction.
+\end{proof}
+
+\subsection{The matrix estimate}
+
+For a complex matrix $A$, put
+$\|A\|_{\mathrm{HS}}^2=\operatorname{tr}(A^*A)$.
+An orthogonal projection always refers to the ordinary Euclidean inner
+product, independently of the arithmetic metrics above.
+
+\begin{lemma}[Images of subspaces]\label{cs-dimension}
+Let $A_i:\mathbb C^{d_i}\to\mathbb C^D$ be a finite family of matrices,
+where $D\ge1$ and $R=\sum_i d_i>0$.
+Set $Q=\sum_i A_iA_i^*$ and suppose that
+\begin{align}
+ \sum_i\|A_i^*A_i-I\|_{\mathrm{HS}}^2&\le eR,
+       &0\le e\le\tfrac14,\label{cs-diagonal}\\
+ \operatorname{tr}(Q^2)&\le
+       \frac{1+\eta}{D}(\operatorname{tr}Q)^2,
+       &\eta\ge0.\label{cs-isotropic}
+\end{align}
+If $V_i\subset\mathbb C^{d_i}$ and all $A_i(V_i)$ lie in a subspace
+$W\subset\mathbb C^D$, put $t=\sum_i\dim V_i$ and $r=\dim W$. Then
+\begin{equation}\label{cs-rank-bound}
+ \frac rD\ge
+ \frac{(t/R-\sqrt e)_+^2}{(1+\eta)(1+\sqrt e)^2},
+ \qquad z_+=\max\{z,0\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $P_i$ project onto $V_i$ and put $C=\sum_i A_iP_iA_i^*$.
+Then $0\le C\le Q$ and $\operatorname{rank}C\le r$. Cauchy--Schwarz gives
+\[
+ |\operatorname{tr}Q-R|\le\sqrt{R}
+     \left(\sum_i\|A_i^*A_i-I\|_{\mathrm{HS}}^2\right)^{1/2}
+ \le\sqrt e\,R
+\]
+and, using $\sum_i\|P_i\|_{\mathrm{HS}}^2=t$,
+\[
+ \operatorname{tr}C
+ =t+\sum_i\operatorname{tr}\bigl(P_i(A_i^*A_i-I)\bigr)
+ \ge t-\sqrt{eRt}\ge t-\sqrt e\,R.
+\]
+The eigenvalues of $C$ are nonnegative. Thus
+$(\operatorname{tr}C)^2\le r\operatorname{tr}(C^2)$.
+Moreover
+$\operatorname{tr}(Q^2-C^2)
+=\operatorname{tr}((Q-C)(Q+C))\ge0$, since the trace of a product
+of two positive semidefinite matrices is nonnegative. Combine these
+facts with \eqref{cs-isotropic} and
+$\operatorname{tr}Q\le(1+\sqrt e)R$. If $t/R\le\sqrt e$, the desired
+inequality is simply $r\ge0$; otherwise division gives
+\eqref{cs-rank-bound}.
+\end{proof}
+
+\begin{proposition}[Slope comparison]\label{cs-slope}
+Let $I$ be a finite nonempty index set. Let $E_i$ for $i\in I$, and $F$,
+be Hermitian $\mathcal O_K$-lattices with positive ranks
+$d_i,n$, put $R=\sum_{i\in I}d_i$, and let $f_i:E_i\to F$ be integral linear maps with
+$h(f_i)\le h_i\in\mathbb R$. Suppose that
+\begin{equation}\label{cs-numerical}
+ \frac1R\sum_i d_i\bigl(\mu(E_i)-h_i\bigr)\ge s,
+ \quad \mu_{\max}(E_i)-h_i\le s+u,
+ \quad \mu_{\min}(F)\ge s-H,
+ \qquad u,H\ge0.
+\end{equation}
+Fix one complex embedding of $K$. Suppose that $D\ge n$,
+$n\ge(1-\delta)D$, and $0\le\delta<1$. Suppose that matrices
+$A_i:\mathbb C^{d_i}\to\mathbb C^D$ satisfy
+\eqref{cs-diagonal}--\eqref{cs-isotropic}, and that their first $n$ rows
+represent the maps $f_i$ in some complex bases of $E_i$ and a single
+common basis of $F$. Positive scalar factors depending on $i$ are allowed.
+Then
+\begin{equation}\label{cs-slope-bound}
+ s-\mu(F)\le\frac{2u\log(1+H/u)+(\eta+4\sqrt e)H}{1-\delta}.
+\end{equation}
+At $u=0$ the expression $u\log(1+H/u)$ means its continuous value $0$.
+\end{proposition}
+\begin{proof}
+Multiply every norm on $E_i$ by $\exp(h_i)$. All of its slopes decrease
+by $h_i$, and the height of $f_i$ decreases by $h_i$. Thus the maps now
+have nonpositive height. By Lemma~\ref{cs-functoriality}, the source
+subspaces with slopes at least $s-z$ map into $F_{\ge s-z}$.
+
+For $z>0$, let $t(z)$ be the sum of the ranks of these source subspaces.
+Every adjusted source slope is at most $s+u$, and their weighted mean is
+at least $s$. The total of their nonnegative deficits from $s+u$ is at
+most $uR$. Each slope smaller than $s-z$ has deficit larger than $u+z$.
+Consequently
+\[
+ a(z):=t(z)/R\ge\frac z{u+z}.
+\]
+Write $r(z)=\operatorname{rk}F_{\ge s-z}$. The images in $\mathbb C^D$
+lie in the direct sum of this $r(z)$-dimensional target subspace and the
+last $D-n$ coordinate directions. Lemma~\ref{cs-dimension} gives
+\[
+ 1-\frac{r(z)}n\le\frac1{1-\delta}
+ \left(1-\frac{(a(z)-\sqrt e)_+^2}
+ {(1+\eta)(1+\sqrt e)^2}\right).
+\]
+For $0\le a\le1$, $q\ge0$, and $\eta\ge0$ one has
+\[
+ 1-\frac{(a-q)_+^2}{(1+\eta)(1+q)^2}
+ \le\eta+4q+2(1-a).
+\]
+To see this, put $b=(a-q)_+/(1+q)$. Then $0\le b\le a\le1$,
+$a-b\le2q$, and
+$1-b^2/(1+\eta)\le\eta+(1-a^2)+(a^2-b^2)
+\le\eta+2(1-a)+4q$.
+It follows that
+\[
+ 1-r(z)/n\le\frac{\eta+4\sqrt e+2u/(u+z)}{1-\delta}.
+\]
+Every target slope is at least $s-H$. If these slopes are $\nu_j$,
+integration of the last inequality therefore yields
+\begin{align*}
+ s-\mu(F)&\le\frac1n\sum_j(s-\nu_j)_+
+   =\int_0^H\left(1-\frac{r(z)}n\right)\,dz\\
+ &\le\frac{(\eta+4\sqrt e)H+2u\log(1+H/u)}{1-\delta}.
+\end{align*}
+When $u=0$, the source dimension is $R$ for every $z>0$ and the same
+proof directly gives the stated limiting formula.
+\end{proof}
+
+\begin{lemma}[Pairwise estimates suffice]\label{cs-pairwise}
+Let $A_i:\mathbb C^{d_i}\to\mathbb C^D$, $D\ge1$, be a finite family,
+$R=\sum_i d_i>0$, and $Q=\sum_iA_iA_i^*$.
+Suppose $D_*>0$, $\eta_0\ge-1$, $\eta_1\ge0$, $0\le e\le1/4$, and
+\[
+ \|A_i^*A_j\|_{\mathrm{HS}}^2
+       \le(1+\eta_0)d_id_j/D_*\quad(i\ne j),\qquad
+ \|A_i^*A_i-I\|_{\mathrm{HS}}^2\le e d_i,
+ \qquad D\le(1+\eta_1)D_*.
+\]
+Then \eqref{cs-diagonal} holds and
+\[
+ \frac{D\operatorname{tr}(Q^2)}{(\operatorname{tr}Q)^2}
+ \le
+ \frac{(1+\eta_1)
+   \bigl(1+\eta_0+(D_*/R)(1+\sqrt e)^2\bigr)}{(1-\sqrt e)^2}.
+\]
+Thus any nonnegative $\eta$ at least the right side minus $1$ is
+permitted in Proposition~\ref{cs-slope}.
+\end{lemma}
+\begin{proof}
+Cyclicity of trace gives
+$\operatorname{tr}(Q^2)=\sum_{i,j}\|A_i^*A_j\|_{\mathrm{HS}}^2$.
+The off-diagonal terms sum to at most $(1+\eta_0)R^2/D_*$.
+The triangle inequality gives
+$\|A_i^*A_i\|_{\mathrm{HS}}\le(1+\sqrt e)\sqrt{d_i}$.
+Therefore
+\[
+ \operatorname{tr}(Q^2)
+ \le(1+\eta_0)R^2/D_*+(1+\sqrt e)^2R.
+\]
+The proof of Lemma~\ref{cs-dimension} gives
+$\operatorname{tr}Q\ge(1-\sqrt e)R>0$. Division proves the claim.
+\end{proof}
+
+\begin{lemma}[Restriction to subspaces]\label{cs-compression}
+Let $B_i:\mathbb C^{r_i}\to\mathbb C^D$, $D\ge1$, be a finite family satisfying the pairwise and
+diagonal inequalities of Lemma~\ref{cs-pairwise}, with parameters
+$D_*,\eta_0,\eta_1,e_0$. Let
+$V_i:\mathbb C^{d_i}\to\mathbb C^{r_i}$ satisfy $V_i^*V_i=I$,
+and put $A_i=B_iV_i$, $R_f=\sum_i r_i>0$, $R=\sum_i d_i$.
+Suppose $R_f-R\le\theta R_f$, where $0\le\theta<1$, and set
+\[
+ q=\sqrt{e_0},\qquad
+ \kappa=1-\theta-q>0.
+\]
+Then $R>0$, and the compressed matrices satisfy
+\[
+ \sum_i\|A_i^*A_i-I\|_{\mathrm{HS}}^2
+       \le\frac{e_0}{1-\theta}R,
+\]
+and, for $Q=\sum_iA_iA_i^*$,
+\[
+ \frac{D\operatorname{tr}(Q^2)}{(\operatorname{tr}Q)^2}
+ \le\frac{(1+\eta_1)
+ [1+\eta_0+(D_*/R_f)(1+q)^2]}{\kappa^2}.
+\]
+After omitting zero-dimensional domains, these are the matrix hypotheses
+of Proposition~\ref{cs-slope} whenever
+$e_0/(1-\theta)\le1/4$, with the displayed bound determining $1+\eta$.
+\end{lemma}
+\begin{proof}
+Orthogonal compression decreases the Hilbert--Schmidt norm, so
+\[
+ \|A_i^*A_i-I\|_{\mathrm{HS}}
+ =\|V_i^*(B_i^*B_i-I)V_i\|_{\mathrm{HS}}
+ \le\|B_i^*B_i-I\|_{\mathrm{HS}}.
+\]
+This follows also by extending the columns of $V_i$ to an orthonormal
+basis and summing the squares of matrix entries. Summing and using
+$R\ge(1-\theta)R_f>0$ proves the first assertion.
+
+Put $Q_f=\sum_iB_iB_i^*$ and let $P_i=V_iV_i^*$.
+Then $0\le Q\le Q_f$, and $\sum_i\operatorname{rank}P_i=R$.
+Cauchy--Schwarz gives
+\begin{align*}
+ \operatorname{tr}Q
+ &=R+\sum_i\operatorname{tr}\bigl(P_i(B_i^*B_i-I)\bigr)\\
+ &\ge R-\sqrt{e_0R_fR}\ge(1-\theta-q)R_f.
+\end{align*}
+Thus $\operatorname{tr}Q\ge\kappa R_f>0$.
+As in Lemma~\ref{cs-dimension},
+$\operatorname{tr}(Q^2)\le\operatorname{tr}(Q_f^2)$.
+Use the upper bound for this last trace from the proof of
+Lemma~\ref{cs-pairwise} and divide by $\kappa^2R_f^2$.
+\end{proof}
+
+In the source application, $D_*/R_f\le\sigma$,
+$\eta_0,\eta_1,\sqrt{e_0}\le\sigma/2$, $0<\sigma\le1/20$,
+and $0\le\theta\le1/4$; a negative $\eta_1$ can harmlessly be replaced
+by $0$. These imply $\kappa>0$ and $e_0/(1-\theta)<1/4$.
+In fact the displayed trace-ratio bound is at most $1+7\sigma+4\theta$.
+Indeed, its numerator is at most $1+9\sigma/4$, and
+$\kappa\ge1-t$ for $t=\theta+\sigma/2\le11/40$.
+For $0\le t\le1/3$ the inequality $(1-t)^{-2}\le1+4t$ follows by
+multiplication and $2-7t+4t^2\ge0$. Hence the trace ratio is at most
+$(1+9\sigma/4)(1+4\theta+2\sigma)
+\le1+7\sigma+4\theta$, using $\theta\le1/4$ and $\sigma\le1/20$.
+Thus the passage from the pairwise estimates
+on the full matrices to the required estimate on their restrictions
+is justified by ordinary matrix inequalities. The quantitative
+pairwise estimates themselves are still an input about the theta maps.
+
+% Optional refinement of the independent comparison in central_step.tex.
+% This subsection uses the notation and labels introduced there.
+\subsection{A refinement using the complementary subspaces}
+\label{qrh-sharper-slope-section}
+
+The same hypotheses give a second bound that can be useful when the
+source slope spread is much smaller than the permitted target deficit.
+The simple estimate in Proposition~\ref{cs-slope} remains available;
+one may use whichever of the two bounds is smaller.
+
+\begin{proposition}[Refined slope comparison]
+\label{qrh-sharper-slope}
+Keep the lattice, map, rank, and numerical hypotheses of
+Proposition~\ref{cs-slope}. In its matrix hypotheses, assume
+$0\le e<1$ in place of $e\le1/4$, and retain
+\eqref{cs-isotropic} with $\eta\ge0$.
+Put $q=\sqrt e$ and, for $u,H\ge0$, define
+\[
+ \mathcal A=
+ \frac{u\log(1+H/u)
+       +2q\sqrt u\bigl(\sqrt{u+H}-\sqrt u\bigr)}{1-q}.
+\]
+At $u=0$ this expression means its continuous value $0$;
+at $H=0$ it also equals $0$. Then
+\begin{equation}\label{qrh-sharper-slope-bound}
+ s-\mu(F)\le
+ \frac{\mathcal A+\eta H/2+
+       \sqrt{\mathcal A\eta H+(\eta H)^2/4}}{1-\delta}.
+\end{equation}
+If $u=0$, the stronger bound
+\[
+ s-\mu(F)\le\frac{\eta H}{(1+\eta)(1-\delta)}
+\]
+holds. In particular, when $e=\eta=0$,
+\begin{equation}\label{qrh-exact-slope-bound}
+ s-\mu(F)\le\frac{u\log(1+H/u)}{1-\delta}.
+\end{equation}
+All assertions include $H=0$ and $u=0$ with the stated conventions.
+\end{proposition}
+
+\begin{proof}
+As in Proposition~\ref{cs-slope}, rescale the source norms by
+$\exp(h_i)$ so that all map heights are nonpositive. For $z>0$,
+let $V_i(z)$ be the complex realization, in the chosen source basis,
+of the subspace of adjusted slopes at least $s-z$. Set
+\[
+ t(z)=\sum_i\dim V_i(z),\qquad c(z)=1-t(z)/R.
+\]
+The source slope assumptions give
+\begin{equation}\label{qrh-source-complement}
+ 0\le c(z)\le\frac{u}{u+z}.
+\end{equation}
+When $u=0$, every adjusted source slope equals $s$, so $c(z)=0$.
+By Lemma~\ref{cs-functoriality}, the images of $V_i(z)$ under $A_i$
+lie in the subspace $W(z)$ obtained by adjoining the last $D-n$
+coordinate directions to $F_{\ge s-z}$. Write
+\[
+ r(z)=\operatorname{rk}F_{\ge s-z},\qquad
+ x(z)=\frac{D-\dim W(z)}D=\frac{n-r(z)}D.
+\]
+
+Fix $z$. Let $P_i$ be the orthogonal projection onto $V_i(z)$,
+let $P$ be the orthogonal projection onto $W(z)^\perp$, and put
+\[
+ Q=\sum_i A_iA_i^*,\qquad
+ C=\sum_i A_iP_iA_i^*,\qquad T=\operatorname{tr}Q.
+\]
+Thus $0\le C\le Q$ and $PC=0$. Since $0\le P\le I$, one has
+$\operatorname{tr}(PQ)\le\operatorname{tr}(Q-C)$.
+Using Cauchy--Schwarz for the sum of the Hilbert--Schmidt inner
+products gives
+\begin{align*}
+ \operatorname{tr}(Q-C)
+ &=R-t+\sum_i\operatorname{tr}
+       \bigl((I-P_i)(A_i^*A_i-I)\bigr)\\
+ &\le R-t+\sqrt{(R-t)eR}
+   =R(c+q\sqrt c).
+\end{align*}
+The diagonal hypothesis also gives $T\ge(1-q)R>0$.
+Consequently
+\begin{equation}\label{qrh-complement-trace}
+ \frac{\operatorname{tr}(PQ)}T
+       \le d(z):=\frac{c(z)+q\sqrt{c(z)}}{1-q}.
+\end{equation}
+
+The isotropy hypothesis is exactly the variance bound
+\[
+ \left\|Q-\frac TD I\right\|_{\mathrm{HS}}^2
+       \le\frac{\eta T^2}D.
+\]
+Since $\operatorname{tr}P=Dx$ and
+$\|P-xI\|_{\mathrm{HS}}^2=Dx(1-x)$, another application of
+Cauchy--Schwarz yields
+\[
+ \frac{\operatorname{tr}(PQ)}T
+ \ge x-\sqrt{\eta x(1-x)}.
+\]
+Combining this with \eqref{qrh-complement-trace}, and using
+$0\le x\le1$, gives
+\begin{equation}\label{qrh-complement-dimension}
+ x(z)\le d(z)+\sqrt{\eta x(z)}.
+\end{equation}
+
+Integrate over $0<z<H$. By \eqref{qrh-source-complement},
+\[
+ \int_0^H d(z)\,dz\le\mathcal A,
+\]
+because the integrals of $u/(u+z)$ and
+$\sqrt{u/(u+z)}$ are respectively
+$u\log(1+H/u)$ and
+$2\sqrt u(\sqrt{u+H}-\sqrt u)$.
+If $X=\int_0^H x(z)\,dz$, Cauchy--Schwarz in
+\eqref{qrh-complement-dimension} therefore gives
+\[
+ X\le\mathcal A+\sqrt{\eta HX}.
+\]
+Solving the quadratic inequality for $\sqrt X$ proves
+\[
+ X\le\mathcal A+\frac{\eta H}{2}
+              +\sqrt{\mathcal A\eta H+\frac{(\eta H)^2}{4}}.
+\]
+Every target slope is at least $s-H$. Hence, exactly as in the
+proof of Proposition~\ref{cs-slope},
+\[
+ s-\mu(F)\le\int_0^H\frac{n-r(z)}n\,dz
+       =\frac Dn X\le\frac X{1-\delta},
+\]
+which proves \eqref{qrh-sharper-slope-bound}.
+
+If $u=0$, then $c(z)=0$ and
+$\operatorname{tr}(PQ)=0$. The sharper variance inequality gives
+$x\le\sqrt{\eta x(1-x)}$. For $x>0$, squaring and dividing by
+$x$ gives $x\le\eta/(1+\eta)$; the same bound holds when $x=0$.
+Integrating proves the asserted endpoint improvement. If $e=\eta=0$,
+then $\mathcal A=u\log(1+H/u)$ and the general bound is
+\eqref{qrh-exact-slope-bound}. When $H=0$, the target slope
+assumption already gives $\mu(F)\ge s$, so all displayed bounds
+hold without an integration interval.
+\end{proof}
+
+The special case $e=\eta=0$ means that the matrices are isometries
+on their source spaces and that $Q=(R/D)I$. It gives coefficient
+$1$ in front of $u\log(1+H/u)$, in place of the coefficient $2$
+in the simpler comparison. For nonzero diagonal error,
+\[
+ \mathcal A\le
+ \frac{u\log(1+H/u)+2\sqrt e\,\sqrt{uH}}{1-\sqrt e},
+\]
+so this form can reduce the effect of the diagonal error when
+$u$ is much smaller than $H$. The mixed term involving $\eta$
+is explicit in \eqref{qrh-sharper-slope-bound}; no assertion of
+uniform improvement over every parameter choice is needed.
+This refinement concerns only the comparison of slopes. It does
+not establish the integral automorphic maps, their height bounds,
+or their matrix estimates.
+
+
+\subsection{The arithmetic inequality still required}
+
+Here is a precise reduction of the remaining numerical comparison.
+It avoids auxiliary parameters that disappear by cancellation.
+
+\begin{lemma}[Combination of the local estimates]\label{cs-combination}
+Let $I$ be a nonempty finite set, with positive weights $d_i$ and
+weighted mean denoted by a bar. Let
+$\nu_i\le\nu_i^+$, $h_i$, $M_i$, $M_i^+$, $D_i$, $E_i$, and $\ell_i$
+be real numbers. The scalar parameters
+$c,F,G,A,\mathcal M,K,M_-,M_+,E_+,V,L,L_0$ are also real.
+Suppose
+\begin{align*}
+ c+h_i-F&\le D_i,&
+ \nu_i&\ge M_i+G+F-E_i-\ell_i,\\
+ \nu_i^+&\le M_i^++G+F-E_i+E_+,&
+ -M_-&\le M_i,\qquad M_i^+\le M_+,\\
+ D_i+E_i&\le\mathcal M+K,&
+ (-E_i-h_i)-(-E_j-h_j)&\le V,\\
+ A-G&\le L,&\overline\ell&\le L_0.
+\end{align*}
+Put $s=\overline{\nu-h}$ and
+$U=\max_i(\nu_i^+-h_i)-s$. Suppose $H\ge0$ and
+\[
+ s-c\le\frac{2U\log(1+H/U)+(\eta+4\sqrt e)H}{1-\delta},
+ \qquad 0\le\delta<1,\quad\eta,e\ge0.
+\]
+Then, with $B=M_++M_-+V+E_++L_0$, one has $0\le U\le B$ and
+\[
+ A-\mathcal M\le L+K+M_-+L_0+
+ \frac{2B\log(1+H/B)+(\eta+4\sqrt e)H}{1-\delta}.
+\]
+If $H\le Xb$ with $X\ge0$, $b>0$, the last numerator is at most
+$2(B+b)\log(1+X)+(\eta+4\sqrt e)Xb$.
+\end{lemma}
+\begin{proof}
+The first, second, fifth and lower-slope inequalities give
+$s\ge G+c-\mathcal M-K-M_--\overline\ell$.
+Comparing the upper bound for $\nu_i^+-h_i$ with the weighted lower
+bound for $\nu_j-h_j$ gives
+$U\le M_++M_-+V+E_++\overline\ell\le B$.
+Also $U\ge0$, since $\nu_i\le\nu_i^+$.
+The function $z\mapsto z\log(1+H/z)$ is increasing for $z>0$:
+its derivative is
+$\log(1+H/z)-H/(H+z)\ge0$, by integrating
+$1/(1+t)\ge1/(1+H/z)$ from $0$ to $H/z$.
+The asserted inequality now follows by addition. Finally, concavity of
+the logarithm, with weights $B/(B+b)$ and $b/(B+b)$, gives
+\[
+ B\log(1+H/B)\le(B+b)\log(1+H/(B+b))
+ \le(B+b)\log(1+X).
+\]
+The limiting cases $B=0$ or $H=0$ follow by continuity.
+\end{proof}
+
+For comparison with the proposed arithmetic construction, let $m\ge1$ be
+its integer number of lifts, let $\mathcal T$ be the finite nonempty
+index set of interpolation orders $a_t>0$, and let $T_i>0$ be its
+auxiliary primes, $g>0$ its product of two local factors, and $w_{j\rho}>0$
+its weights, where $f\ge1$ is an integer,
+$1\le j\le m$, and $1\le\rho\le f$. Write $\mathcal R^\vee$
+for the target Hermitian lattice, $h_i$ for the map-height bounds,
+$F\in\mathbb R$ for the local correction, and $v>0$ for the
+archimedean normalization. Set
+\[
+ S=\sum_t a_t,\qquad
+ \log\Omega=\gamma+\log(\pi/v)-\ell,
+\]
+where $\gamma$ is Euler's constant and $\ell$ is the relevant real
+logarithmic derivative of a quadratic $L$-function at $1$. The required
+divisor inequality has the concrete form
+\begin{equation}\label{cs-required-divisor}
+ \mu(\mathcal R^\vee)+h_i-F\le
+ \sum_t\{m(a_t\log a_t-a_t-a_t\log\Omega)-a_t\log T_i\}
+       +\mathcal E_D.
+\end{equation}
+The slopes here and below may all be multiplied by the same fixed
+normalizing factor; the preceding homogeneous inequalities are unchanged.
+Let $\mathcal L,B_0,N_c\ge0$ denote the error parameters whose
+arithmetic interpretation and simultaneous bounds must be supplied by
+that construction. The proposed bound for the error is
+\[
+ \mathcal E_D=C|\mathcal T|a\mathcal L
+             +Cm(B_0+N_c)x^{2\varepsilon},
+ \qquad a=xb,\quad b=\exp(x^\varepsilon),\quad
+ x^{1/2-\varepsilon}\le m\le x^{1/2+\varepsilon/2}.
+\]
+The multiplicative constant $C$ may depend on the family and on
+$\varepsilon$, while the exponent $2$ must be independent of
+$\varepsilon$. The assertion is required for every word and all
+sufficiently large parameters in the selected family.
+In particular, a multiplicative constant depending on $\varepsilon$
+can be absorbed by increasing that threshold. An exponent coefficient
+growing like $1/\varepsilon$ cannot be treated in the same way.
+
+The remaining cancellation is elementary. Suppose
+\begin{align*}
+ E_i&\le mS\log g+\mathcal E_E,\\
+ \log T_i&\ge
+   \sum_{j=1}^m\frac1f\sum_{\rho=1}^f\log(w_{j\rho}v/\pi)
+       +m\log g-\mathcal E_C.
+\end{align*}
+If $D_i$ denotes the right side of \eqref{cs-required-divisor}, then
+\[
+ D_i+E_i\le\mathcal M+S\mathcal E_C+\mathcal E_D+\mathcal E_E,
+\]
+where
+\[
+ \mathcal M=\sum_{j=1}^m\sum_t
+ a_t\left(\log a_t-1-\gamma+\ell
+                   -\frac1f\sum_{\rho=1}^f\log w_{j\rho}\right).
+\]
+This follows by direct substitution: both $mS\log g$ and
+$mS\log(v/\pi)$ cancel. Together with comparison of the source slopes,
+the mean loss bound, and Proposition~\ref{cs-slope},
+Lemma~\ref{cs-combination} proves the final scalar estimate. It removes
+the term $\log|I|$ and replaces the coefficient $4$ of
+$U\log(1+H/U)$ in the displayed source comparison by $2$.
+These improvements simplify constants and exposition. They do not
+prove \eqref{cs-required-divisor}, nor the matrix estimates for the
+automorphic maps, nor by themselves the required bounds for the selected
+twisted-character sums.  The latter involve a fixed finite family of
+base characters; only the RH subcase reduces to three quadratic
+characters.  A separate argument by averaging over the auxiliary primes
+can establish this selection under a suitable uniform QRH hypothesis.
+
+The source of \eqref{cs-required-divisor} is more than the
+nonvanishing of one integer determinant. At each finite place it needs
+pairing divisibility for every vector in a prescribed lattice, and a
+bound for a rank-normalized sum of valuations of bordered minors.
+At every infinite place it needs upper bounds for operator norms of a
+chain of rectangular matrices, together with lower bounds for the
+eigenvalues in the quotient metrics. These are separate assertions
+about the constructed matrices. The elementary determinant of the
+preceding quadratic argument does not establish them.
+
+\begin{remark}[A counterexample to a possible simplification]\label{cs-counterexample}
+Nonvanishing modulo every prime does not imply the matrix estimate
+\eqref{cs-isotropic} with a small $\eta$. For any integer $M\ge1$, take
+the columns of the unimodular matrix
+\[
+ \begin{pmatrix}1&M\\0&1\end{pmatrix}
+\]
+and normalize each column to length $1$. Thus
+$A_1=(1,0)^t$ and $A_2=(M,1)^t/\sqrt{M^2+1}$.
+Both diagonal errors vanish, but
+\[
+ \operatorname{tr}Q=2,\qquad
+ \operatorname{tr}(Q^2)=2+\frac{2M^2}{M^2+1},\qquad
+ \frac{2\operatorname{tr}(Q^2)}{(\operatorname{tr}Q)^2}-1
+       =\frac{M^2}{M^2+1}.
+\]
+The smallest permissible $\eta$ tends to $1$. This is a counterexample
+to replacing the theta estimates by determinant nonvanishing; it is
+not a counterexample to the theta estimates asserted for the specific
+automorphic construction.
+\end{remark}
+
+

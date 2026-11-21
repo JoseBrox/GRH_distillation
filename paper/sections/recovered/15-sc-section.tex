@@ -1,0 +1,415 @@
+\section{The strict Selmer comparison and its numerical bound}
+\label{sc-section}
+
+The arithmetic complex in Section~\ref{ac-section} proves the
+homology torsion estimate used by the submitted class-counting
+argument.  It does not by itself bound a strict Selmer group.
+We now state the comparison assertions precisely,
+prove one elementary improvement in their numerical factor,
+and give the resulting conditional exponent.
+This section isolates the comparisons before proving the numerical
+consequence. Sections~\ref{sl-section}--\ref{sp-section} then prove
+the class-number estimate and assertions~\ref{sc-count}--\ref{sc-layer}.
+Theorem~\ref{sw-few} later proves the finite-field homology
+comparison in assertion~\ref{sc-few}, with an improved scalar exponent.
+
+\subsection{The precise arithmetic objects}
+
+Let $\ell$ be prime and let $E\ge1$.  For a number field $L$
+put $n_L=[L:\mathbb Q]$, $D_L=|\operatorname{disc}L|$,
+$r_2(L)=\#\{\text{complex places of }L\}$, and
+\[
+ t_L(N,m)=\#H_m(\operatorname{GL}_N(\mathcal O_L),
+                       \mathbb Z)_{\rm tors},
+ \qquad
+ g_L=2n_L+\lfloor\log_2 h_L\rfloor+2,
+ \tag{SC1}
+\]
+where $h_L$ is the ideal class number.
+For the totally imaginary fields occurring below, the relevant
+homology torsion groups are finite by Section~\ref{ac-section}.
+
+Let $\mathcal S_\ell(L,E)$ denote the strict Selmer group with
+coefficients $\mathbb Q_\ell/\mathbb Z_\ell(-E)$: it consists
+of the classes in $H^1(G_L,\mathbb Q_\ell/\mathbb Z_\ell(-E))$
+which are unramified outside $\ell$ and have zero restriction
+to every decomposition group above $\ell$.
+Equivalently it is the kernel of localization above $\ell$
+in $H^1(G_{L,S},\mathbb Q_\ell/\mathbb Z_\ell(-E))$,
+where $S$ is the set of primes above $\ell$.
+Write
+\[
+       s_\ell(L,E)=
+       \length_{\mathbb Z_\ell}\mathcal S_\ell(L,E)
+             \in\mathbb N\cup\{\infty\}.
+       \tag{SC2}
+\]
+When this length is finite, the group has order
+$\ell^{s_\ell(L,E)}$.
+These are the negative twists used by the source.
+
+Consider a finite cyclic Galois extension $K/L$ with generator
+$\gamma$, and integers $\nu\ge c\ge1$, with $c\ge2$ if $\ell=2$.
+Suppose that $K$ contains a primitive $\ell^\nu$-th root
+$\zeta$ satisfying
+\[
+          \gamma(\zeta)=\zeta^{\,1+\ell^c},
+          \qquad [K:L]=\ell^{\nu-c}.
+          \tag{SC3}
+\]
+Put $q=\ell^\nu$, $\kappa=1+\ell^c$, and $a=\kappa^E$.
+For a fractional divisor $\mathfrak d=\sum_P d_P P$
+on $K$, call $\alpha\in K^\times$ admissible for
+$\mathfrak d$ if
+\[
+                v_P(\alpha)=d_{\gamma P}-a d_P
+                       \quad\text{for every finite prime }P.
+                \tag{SC4}
+\]
+Define the explicitly weighted product
+\[
+       N_{\gamma,a}(\alpha)
+          =\prod_{j=0}^{[K:L]-1}\gamma^j(\alpha)^{a^j}.
+          \tag{SC5}
+\]
+This is not the ordinary field norm.
+
+Let $T_{\gamma,a,q}$ be the set of functions
+$\varphi:\{P\text{ finite in }K\}\to\mathbb Z/q\mathbb Z$
+such that
+\[
+ \sum_P v_P(\alpha)\varphi(P)=0\quad(\alpha\in K^\times),
+ \qquad
+ \varphi(\gamma^{-1}P)=a\varphi(P)\quad(P).
+ \tag{SC6}
+\]
+The sum is finite because a principal divisor has finite
+support.  The first condition identifies these functions
+with homomorphisms out of the ideal class group; the second
+is the displayed equivariance condition.  In particular
+the inverse on $\gamma$ is part of the statement.
+
+For $b,B\in\mathbb N$, write $\mathcal A(b,B)$ for the
+following assertion about these fixed data.  Every finite
+set $S\subset K^\times$ has cardinality at most $B$
+provided that each $\alpha\in S$ is admissible for some
+fractional divisor and that, for all $\alpha,\alpha'\in S$,
+\[
+ \begin{split}
+ N_{\gamma,a}(\alpha)^{\ell^b}
+     &=N_{\gamma,a}(\alpha')^{\ell^b}\delta^q
+       \text{ for some }\delta\in K^\times\\
+ &\hspace{35mm}\Longrightarrow\quad\alpha=\alpha'.
+ \end{split}
+ \tag{SC7}
+\]
+Thus this assertion bounds a set of distinct classes
+represented by the weighted products, after the specified
+power is taken.  It does not assert a bound on the infinite
+set of all admissible elements.
+
+\subsection{The four comparison assertions}
+
+The following are the exact mathematical assertions used in this
+route of the submitted proof\cite{alpo-uniform-source}.
+
+\begin{enumerate}
+\item\label{sc-few}
+For totally imaginary $L$ and data (SC3), assume
+\[
+                 2E+1<\ell^c,\qquad 2E+1<r_2(L).
+                 \tag{SC8}
+\]
+Then $\mathcal A(b,B)$ holds with
+\[
+ \begin{split}
+ b&=2E+(2E+1)(c+2E+1),\\
+ B&=q^{r_2(L)}t_L(4E+6,2E+1)t_L(4E+6,2E).
+ \end{split}
+ \tag{SC9}
+\]
+In the source this assertion is obtained from constructed
+finite-field homology functionals, integral homology
+classes with prescribed reductions, an odd-degree rational
+rank estimate, and detection of global powers by residue
+fields.  Those constructions and comparisons are not
+replaced here by the homology torsion bound.
+
+\item\label{sc-count}
+For totally imaginary $L$, any data (SC3), and any $b,B$
+for which $\mathcal A(b,B)$ holds, one has
+\[
+ |T_{\gamma,a,q}|\,q^{r_2(L)}
+       \le B\,\ell^{(b+v_\ell(E))g_L+c+v_\ell(E)}.
+ \tag{SC10}
+\]
+This is the separate comparison with class groups and
+units.  It does not require the two inequalities (SC8).
+
+\item\label{sc-sha}
+Suppose $L$ is totally imaginary and $c\ge1$, with $c\ge2$
+at $\ell=2$, is the largest integer such that
+$\mu_{\ell^c}\subset L$.  If there is a single integer $B$
+such that
+\[
+                         |T_{\gamma,\kappa^E,\ell^\nu}|
+                              \le B
+                              \tag{SC11}
+\]
+for every $\nu$ and every datum (SC3) over $L$, then
+$s_\ell(L,E)$ is finite and
+\[
+                              \ell^{s_\ell(L,E)}\le B.
+                              \tag{SC12}
+\]
+Uniformity in the entire cyclotomic tower is essential.
+
+\item\label{sc-layer}
+Suppose $L$ contains $\mu_\ell$ if $\ell$ is odd and
+$\mu_4$ if $\ell=2$.  There is a totally imaginary
+cyclotomic extension $L'/L$ of degree $d$, and a largest
+integer $c$ with $\mu_{\ell^c}\subset L'$, such that
+\[
+ \begin{gathered}
+ c\ge1,\quad \ell=2\Longrightarrow c\ge2,\qquad
+ 2E+1<\ell^c,\quad 2E+1<r_2(L'),\\
+ n_{L'}=dn_L,\quad
+ d\le(n_L+1)(4E+4),\quad
+ \ell^c\le2n_{L'},\\
+ D_{L'}\le D_L^d(\ell^c)^{n_{L'}},\qquad
+ s_\ell(L,E)\le s_\ell(L',E).
+ \end{gathered}
+ \tag{SC13}
+\]
+The numerical statement alone does not prove the last
+inequality; that is the Selmer comparison in this assertion.
+\end{enumerate}
+
+For the numerical conclusion below we also isolate the
+classical class-number bound used by the source:
+\[
+ \log h_L\le\tfrac12\log D_L+
+             n_L\log(1+\tfrac12\log D_L).
+ \tag{SC14}
+\]
+Its source proof invokes the existence of a small ideal
+in every ideal class and a count of ideals of bounded norm.
+Those inputs are not proved in this section.
+We will only need the weaker consequence
+\[
+                        g_L\le2n_L+4n_L\log(2D_L)+2.
+                        \tag{SC15}
+\]
+Indeed $\log(1+x)\le x$ gives
+$\log h_L\le n_L\log D_L$, since $n_L\ge1$.
+The inequality $\log2>1/2$ then gives
+$\lfloor\log_2h_L\rfloor\le2n_L\log D_L
+\le4n_L\log(2D_L)$.
+
+\subsection{An exact valuation in the class construction}
+
+The large value of $b$ in (SC9) comes partly from bounding
+a product of differences of powers.  That product admits
+a simple exact evaluation of its valuation.
+
+\begin{lemma}\label{sc-vandermonde}
+Let $\ell$ be prime, $c\ge1$, and $c\ge2$ if $\ell=2$.
+Put $\kappa=1+\ell^c$.  For $E\ge1$ define
+\[
+             P_E=\prod_{\substack{0\le j\le2E\\j\ne E}}
+                       (\kappa^E-\kappa^j)\in\mathbb Z.
+\]
+Then $P_E\ne0$ and
+\[
+                   v_\ell(P_E)=2Ec+2v_\ell(E!).
+                   \tag{SC16}
+\]
+Consequently, in any $\mathbb Z/\ell^\nu\mathbb Z$-module,
+\[
+           \ell^{2E}P_E z=0
+             \quad\Longrightarrow\quad
+           \ell^{\,2E(c+1)+2v_\ell(E!)}z=0.
+           \tag{SC17}
+\]
+\end{lemma}
+\begin{proof}
+We first establish the valuation identity
+\[
+                   v_\ell(\kappa^m-1)=c+v_\ell(m)
+                              \quad(m\ge1).
+                   \tag{SC18}
+\]
+If $t$ has valuation $h\ge1$ (and $h\ge2$ for $\ell=2$),
+and $u$ is a positive integer prime to $\ell$, the binomial
+expansion of $(1+t)^u-1$ has first term $ut$ of valuation
+$h$ and all later terms of valuation at least $2h>h$.
+If instead the exponent is $\ell$, its first term
+$\ell t$ has valuation $h+1$.  All terms with
+$2\le j<\ell$ have valuation at least $1+2h>h+1$,
+because $\ell\mid\binom{\ell}{j}$.
+The last term $t^\ell$ also has strictly greater valuation:
+for odd $\ell$, $\ell h\ge h+2$; for $\ell=2$ this uses
+$h\ge2$.  Thus raising $1+t$ to the $\ell$-th power
+increases the valuation of its difference from one by
+exactly one.  Write $m=\ell^r u$ with $\ell\nmid u$,
+first apply the prime-to-$\ell$ calculation, and then
+apply the second calculation $r$ times.  This proves
+(SC18).
+
+The powers of $\kappa>1$ are distinct, so $P_E\ne0$.
+For $j\ne E$ the unit factor
+$\kappa^{\min(j,E)}$ and (SC18) give
+\[
+             v_\ell(\kappa^E-\kappa^j)
+                          =c+v_\ell(|E-j|).
+\]
+The distances $|E-j|$ run through $1,\ldots,E$ twice.
+Adding the valuations proves (SC16).
+Write $P_E=\ell^\delta u$ with
+$\delta=2Ec+2v_\ell(E!)$ and $\ell\nmid u$.
+Multiplication by $u$ is invertible modulo $\ell^\nu$.
+Cancelling it proves (SC17), including the case
+$\delta\ge\nu$.
+\end{proof}
+
+The source uses precisely $P_E$ at this stage, with the
+index in its definition shifted by $e=E-1$.
+Its much larger valuation allowance is
+$(2E+1)(c+2E+1)$.  Formula (SC17) supplies the smaller
+power
+\[
+                         b_{\rm new}=2E(c+1)+2v_\ell(E!)
+                         \tag{SC19}
+\]
+in the same finite-field detection calculation.
+This proves the required cancellation of the scalar.
+It does not prove the other constructions entering
+assertion~\ref{sc-few}, nor does assertion~\ref{sc-few}
+with its original exponent alone imply its stronger
+version with $b_{\rm new}$.  Theorem~\ref{sw-few} carries
+out those constructions with this scalar estimate and proves
+the strengthened version directly.
+For example, at $\ell=2$, $c=2$, $E=1$, the original
+exponent is $17$, whereas (SC19) is $6$.
+
+The restriction at $2$ cannot be dropped.
+For $\ell=2$, $c=1$, and $m=2$ one has
+$v_2(3^2-1)=3$, while $c+v_2(m)=2$.
+The source includes $c\ge2$ in this case, so this is
+a counterexample to the weakened statement only.
+
+\subsection{The conditional exponent}
+
+\begin{proposition}\label{sc-exponent}
+Assume assertions~\ref{sc-few}--\ref{sc-layer} and the
+bound (SC15).  Suppose that, for some real $C$ and every
+totally imaginary number field $F$,
+\[
+ \log t_F(4E+6,m)
+      \le\exp\bigl((2E n_F)^C\log(2D_F)\bigr)
+       \qquad(0\le m\le2E+1).
+ \tag{SC20}
+\]
+If $L$ contains the roots of unity required in
+assertion~\ref{sc-layer}, then $s_\ell(L,E)$ is finite and
+\[
+ s_\ell(L,E)\log\ell
+   \le\exp\bigl((2E n_L)^{\,5(\max(C,9)+2)+11}
+                          \log(2D_L)\bigr).
+ \tag{SC21}
+\]
+In particular the proved homology exponent $C=13$ gives
+the conditional strict Selmer exponent $86$.
+\end{proposition}
+\begin{proof}
+Choose $L',c,d$ from (SC13), and write
+$n'=n_{L'}$, $D'=D_{L'}$, $r'=r_2(L')$, and
+\[
+ T_1=t_{L'}(4E+6,2E+1),\quad
+ T_2=t_{L'}(4E+6,2E),\quad
+ b=2E+(2E+1)(c+2E+1),\quad
+ v=v_\ell(E).
+\]
+Apply assertions~\ref{sc-few} and \ref{sc-count} to
+each datum (SC3) over $L'$.  The positive factor $q^{r'}$
+cancels, leaving the bound, uniform in $\nu$,
+\[
+                |T_{\gamma,\kappa^E,\ell^\nu}|
+                         \le T_1T_2\ell^X,
+              \qquad X=(b+v)g_{L'}+c+v.
+ \tag{SC22}
+\]
+Assertion~\ref{sc-sha} gives a finite length $s'=s_\ell(L',E)$
+and $\ell^{s'}\le T_1T_2\ell^X$.  Hence
+\[
+           s'\log\ell\le\log T_1+\log T_2+X\log\ell.
+           \tag{SC23}
+\]
+
+Put $u=2En'\ge2$ and $Y=\log(2D')>1/2$.
+The inequalities in (SC13) give
+\[
+ \log\ell\le u,\quad c\le u,\quad v\le u,\quad
+ b\le u+2u^2,\quad
+ g_{L'}\le u+2uY+2.
+\]
+For the bound on $b$, use $2E\le u$,
+$2E+1\le n'$, $c\le2n'$, and $2n'\le u$.
+It follows that
+$b+v\le3u^2$, $g_{L'}\le6uY$, and $c+v\le4uY$.
+Consequently
+\[
+                  X\log\ell\le19u^4Y\le u^9Y,
+                  \tag{SC24}
+\]
+since $u^5\ge32>19$.
+By (SC20), (SC23) is at most
+$2\exp(u^CY)+u^9Y$.
+
+Let $A=u^{\max(C,9)}Y\ge1$.  Then
+\[
+ 2\exp(u^CY)+u^9Y
+       \le2e^A+A\le3e^A\le e^{4A}
+       \le\exp\bigl(u^{\max(C,9)+2}Y\bigr).
+ \tag{SC25}
+\]
+Here $A\le e^A$, $3\le e^{3A}$, and $u^2\ge4$
+justify the three last comparisons.
+
+It remains to express the bound in the original field.
+Put $x=2E n_L\ge2$, $Y_0=\log(2D_L)>1/2$,
+$w=\ell^c$, and $C_1=\max(C,9)+2\ge0$.
+The extension bounds imply
+\[
+ d\le16E n_L=8x,\quad
+ n'\le16E n_L^2\le4x^2,\quad
+ u=2En'\le8x^2\le x^5,\quad w\le8x^2.
+\]
+Using the discriminant inequality in (SC13) yields
+\[
+ \begin{split}
+ Y&\le\log2+d\log D_L+n'\log w\\
+  &\le(1+8x)Y_0+32x^4
+   \le73x^4Y_0
+   \le x^{11}Y_0,
+ \end{split}
+\]
+where $\log w\le w$, $Y_0>1/2$, and $x^7\ge128>73$
+were used.  Thus $u^{C_1}Y\le x^{5C_1+11}Y_0$.
+Combining this with (SC25) and
+$s_\ell(L,E)\le s'$ proves (SC21).
+The value for $C=13$ is $5(15)+11=86$.
+\end{proof}
+
+The original source inserts $C=24$ and obtains $141$
+by this same exponent propagation.  The improvement to
+$86$ follows once the comparison assertions are supplied.
+The following sections prove the class-number input and the
+other comparisons, and Theorem~\ref{sw-few} proves
+assertion~\ref{sc-few}; Corollary~\ref{sw-coarse-consequence}
+records the resulting bound.
+It is not a proof of their conclusion from the geometric
+complex alone.
+
+
+

@@ -1,0 +1,698 @@
+\section{The full group integral and the Jacquet majorant}
+\label{jm-section}
+
+We retain the Hermitian spaces and flags of
+Section~\ref{ju-section}.  We prove the group integral required
+for the matrix coefficient estimate, and then construct the
+majorant with its two required properties.
+The proof includes the rank zero case, the Haar density on the
+open cell, and the integration in each Heisenberg variable.
+
+\subsection{Singular minors and compact changes of flag}
+
+Write \(M(g)=\|g\|_{\mathrm F}\) for the Frobenius norm and set
+\[
+ D_l(g)=\det\bigl(h_r(g\phi'_b,\phi'_a)\bigr)_{0\leq a,b\leq l},
+ \qquad
+ \mathcal F_s(g)=\prod_{l=0}^{r}|D_l(g)|^{-s_l}.
+\]
+We use positive exponents \(s_l\), assigning value \(+\infty\)
+when a minor vanishes.  Define also
+\[
+ \widehat\Delta_l(g)=
+       \|g\phi'_0\wedge\cdots\wedge g\phi'_l\|,
+ \qquad
+ \widehat\Xi_s(g)=\prod_l\widehat\Delta_l(g)^{-s_l}.
+\]
+These last quantities are finite and positive on \(G_r\).
+For a fixed Haar measure \(dg\), let
+\[
+ J_r(A,s)=\int_{G_r}M(g)^{-A}\mathcal F_s(g)\,dg,\qquad
+ B(k,r)=2(k+r)(r+1)+1.
+\]
+All assertions about these integrals are independent of the
+normalization of Haar measure.
+
+The groups \(G_r\) are unimodular.  One way to see this directly
+is to use the invariant bilinear form
+\(\operatorname{Re}\operatorname{tr}(XY)\) on their real Lie
+algebras.  It is nondegenerate: the complexification of the
+Lie algebra is the full matrix algebra, on which the trace
+form is nondegenerate, and \(\operatorname{tr}(XY)\) is real
+for the two elements of this real form.
+Preservation of this form gives
+\(|\det_{\mathbb R}\operatorname{Ad}g|=1\).
+A left invariant volume form is therefore right invariant
+as well.
+
+\begin{lemma}\label{jm-compact-factor}
+For every nonnegative measurable function \(\Phi\) invariant
+under left and right multiplication by \(K_r\), and every
+\(x,y\in G_r\),
+\begin{equation}\label{jm-both}
+ \int_{G_r}\Phi(g)\mathcal F_s(x^{-1}gy)\,dg
+  =\widehat\Xi_s(x)\widehat\Xi_s(y)
+                        \int_{G_r}\Phi(g)\mathcal F_s(g)\,dg .
+\end{equation}
+If only left \(K_r\)-invariance is assumed, the corresponding
+identity with \(y=1\) still holds.
+\end{lemma}
+
+\begin{proof}
+Apply Lemma~\ref{ju-isotropic-qr} to the primed frame
+\(x\phi'_j\).  Thus
+\(x\phi'_j=\sum_{i\leq j}\tau_{ij}\kappa\phi'_i\),
+with \(\kappa\in K_r\).
+Invariance of \(h_r\) gives
+\[
+ h_r(x^{-1}g\phi'_b,\phi'_a)
+                         =h_r(g\phi'_b,x\phi'_a).
+\]
+Taking the first \(l+1\) rows of the triangular change
+therefore multiplies the absolute value of the determinant
+by \(\prod_{j\leq l}\tau_{jj}=\widehat\Delta_l(x)\).
+Consequently
+\[
+ \mathcal F_s(x^{-1}g)
+          =\widehat\Xi_s(x)\mathcal F_s(\kappa^{-1}g).
+\]
+Change variables by left multiplication by \(\kappa\).
+This proves the assertion for \(y=1\), including when the
+integral is infinite.
+The same triangular calculation on the columns of \(y\phi'_j\)
+gives \(\mathcal F_s(gy)=\widehat\Xi_s(y)\mathcal F_s(g\kappa')\)
+for some \(\kappa'\in K_r\).
+Right invariance of Haar measure and of \(\Phi\) proves
+\eqref{jm-both}.
+\end{proof}
+
+\subsection{The base case}
+
+\begin{lemma}\label{jm-ball}
+On \(G_0=U(k,1)\),
+\[
+                       \int_{G_0}M(g)^{-A}\,dg<\infty
+                              \qquad\text{if }A>2k.
+\]
+Every \(g\in G_0\) is a product of two elements of \(K_0\)
+and a matrix \(a_t\), \(t\geq0\), which is the identity on
+\(\operatorname{span}(u_2,\ldots,u_k)\) and has matrix
+\[
+ \begin{pmatrix}\cosh t&\sinh t\\
+                 \sinh t&\cosh t\end{pmatrix}
+\]
+on \(\operatorname{span}(u_1,u_-)\).
+\end{lemma}
+
+\begin{proof}
+The quotient \(G_0/K_0\) is the unit ball
+\(\mathbb B^k\subset\mathbb C^k\).
+Indeed a block matrix
+\(g=\left(\begin{smallmatrix}A&b\\c^*&d\end{smallmatrix}\right)\)
+acts by \(w\mapsto(Aw+b)/(c^*w+d)\).
+It preserves the ball, and the stabilizer of zero is exactly
+\(K_0=U(k)\times U(1)\).
+For \(w=\rho u\), \(\|u\|=1\), \(0\leq\rho<1\), the matrix
+\[
+ b_w=
+ \begin{pmatrix}
+ I+(a-1)uu^*&a\rho u\\
+ a\rho u^*&a
+ \end{pmatrix},
+ \qquad a=(1-\rho^2)^{-1/2},
+\]
+preserves the form and sends zero to \(w\).
+At zero use \(b_0=I\).
+Rotating \(u\) by \(U(k)\) shows that \(b_w\in K_0a_tK_0\)
+with \(\tanh t=\rho\), proving the second assertion.
+
+For completeness, the invariant measure on the ball is,
+up to a positive constant,
+\[
+                       (1-\|w\|^2)^{-k-1}\,dw.
+\]
+The form identity gives
+\(1-\|gw\|^2=(1-\|w\|^2)/|c^*w+d|^2\).
+Differentiating the fractional linear map and taking a
+block determinant gives its complex Jacobian
+\(\det g/(c^*w+d)^{k+1}\).
+Since \(|\det g|=1\), its real Jacobian is the squared
+absolute value, which proves invariance of the displayed
+density.
+Disintegration of Haar measure over the compact stabilizer
+therefore gives this quotient measure, up to normalization.
+Finally
+\[
+ M(b_w)^2=k-1+\frac{2(1+\rho^2)}{1-\rho^2}
+                         \geq\frac2{1-\rho^2}.
+\]
+The required integral is bounded by a constant times
+\[
+ \int_0^1 \rho^{2k-1}
+               (1-\rho^2)^{A/2-k-1}\,d\rho,
+\]
+which is finite for \(A>2k\).
+\end{proof}
+
+\begin{lemma}\label{jm-sphere}
+Let \(d\omega\) be probability measure on the unit sphere in
+\(\mathbb C^k\).  For \(0<s<k\),
+\begin{equation}\label{jm-angular}
+ \int |1-\zeta_1|^{-s}\,d\omega(\zeta)
+       =\frac{\Gamma(k)\Gamma(k-s)}
+                    {\Gamma(k-s/2)^2}<\infty.
+\end{equation}
+For \(0\leq\rho<1\),
+\begin{equation}\label{jm-poisson}
+ \int |1-\rho\zeta_1|^{-2k}\,d\omega(\zeta)
+                                      =(1-\rho^2)^{-k}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Rotational invariance and a complex Gaussian integral give
+\[
+ \int\zeta_1^a\overline{\zeta_1}^{\,b}\,d\omega=0
+       \quad(a\ne b),\qquad
+ \int|\zeta_1|^{2j}\,d\omega
+                         =\frac{j!}{(k)_j}.
+\]
+Here \((v)_j=v(v+1)\cdots(v+j-1)\).
+To check the second formula, integrate
+\(|z_1|^{2j}e^{-\|z\|^2}\) over \(\mathbb C^k\) first by
+coordinates and then in polar coordinates.
+The coordinate value is \(\pi^k j!\), while comparison with
+the case \(j=0\) gives the stated quotient of gamma factors.
+This also covers \(k=1\).
+
+The binomial series, absolutely convergent for \(\rho<1\),
+now gives, for \(a>0\),
+\[
+ \int|1-\rho\zeta_1|^{-2a}\,d\omega
+                  =\sum_{j=0}^\infty
+                    \frac{(a)_j^2}{j!(k)_j}\rho^{2j}.
+\]
+Taking \(a=k\) proves \eqref{jm-poisson}.
+For \(a=s/2\), the sum at \(\rho=1\) is evaluated by
+inserting the beta integral
+\[
+ \frac{(a)_j}{(k)_j}
+ =\frac{\Gamma(k)}{\Gamma(a)\Gamma(k-a)}
+               \int_0^1 u^{a+j-1}(1-u)^{k-a-1}\,du.
+\]
+Summing the remaining binomial series inside this nonnegative
+integral gives the beta integral with parameters \(a,k-2a\),
+and hence the right side of \eqref{jm-angular}.
+The beta integral itself follows from
+\(\Gamma(\alpha)\Gamma(\beta)\) by the change
+\((x,y)=(vu,v(1-u))\).
+Its parameters here are positive because \(0<s<k\).
+Fatou's lemma, as \(\rho\uparrow1\), first proves finiteness
+of the integral in \eqref{jm-angular}.
+For \(1/2\leq\rho<1\) and \(|z|\leq1\),
+\[
+ |1-\rho z|^2-\rho|1-z|^2
+                         =(1-\rho)(1-\rho|z|^2)\geq0.
+\]
+Thus the integrands are dominated by
+\(2^{s/2}|1-\zeta_1|^{-s}\).
+Dominated convergence proves the equality.
+\end{proof}
+
+\begin{proposition}\label{jm-base}
+For \(0<s<k\) and \(A>2k\), the integral \(J_0(A,s)\) is finite.
+\end{proposition}
+
+\begin{proof}
+On this group the single primed vector is
+\(\phi'_0=(u_1-u_-)/\sqrt2\).
+Its orbit under probability Haar measure on \(K_0\) has
+the distribution \((\zeta,-v)/\sqrt2\), where \(\zeta\)
+is uniform on the unit sphere and \(v\) is uniform on the
+unit circle, independently.
+It follows from Lemma~\ref{jm-sphere} that
+\[
+ C_s:=\int_{K_0}|h_0(\kappa\phi'_0,\phi'_0)|^{-s}\,d\kappa
+             =2^s\frac{\Gamma(k)\Gamma(k-s)}
+                          {\Gamma(k-s/2)^2}<\infty .
+\]
+The compact group is transitive on the Euclidean unit
+isotropic vectors, by Lemma~\ref{ju-isotropic-qr}.
+For every nonzero isotropic \(y\), therefore,
+\[
+ \int_{K_0}|h_0(\kappa y,\phi'_0)|^{-s}\,d\kappa
+                                      =C_s\|y\|^{-s}.
+\]
+For \(a_t\) of Lemma~\ref{jm-ball},
+\(\|a_t\kappa\phi'_0\|\) has the distribution
+\(|\cosh t-\sinh t\,\zeta_1|\).
+Equation \eqref{jm-poisson}, with \(\rho=\tanh t\), gives
+\[
+             \int_{K_0}\|a_t\kappa\phi'_0\|^{-2k}\,d\kappa=1.
+\]
+Jensen's inequality for the concave power \(s/(2k)\in(0,1)\)
+implies
+\(\int_{K_0}\|a_t\kappa\phi'_0\|^{-s}\,d\kappa\leq1\).
+The decomposition \(G_0=K_0a_tK_0\) then shows that
+\[
+ \int_{K_0\times K_0}\mathcal F_s(\kappa g\kappa')\,
+                          d\kappa\,d\kappa'\leq C_s
+                                     \qquad(g\in G_0).
+\]
+Average the definition of \(J_0\) on both sides by \(K_0\).
+Tonelli and the invariance of Haar measure and \(M\) give
+\[
+ J_0(A,s)\leq C_s\int_{G_0}M(g)^{-A}\,dg<\infty
+\]
+by Lemma~\ref{jm-ball}.
+\end{proof}
+
+\subsection{Haar measure on the open cell}
+
+For \(r\geq1\), set \(W=V_{r-1}\), \(d=\dim_{\mathbb C}W
+=2r+k-1\), and write
+\[
+ w(c)=
+ \begin{pmatrix}0&0&\bar c^{-1}\\0&I&0\\c&0&0\end{pmatrix},
+                              \qquad c\in\mathbb C^\times.
+\]
+The matrices \(n(v,t)\) and \(\iota(m)\) are those of
+Lemma~\ref{ju-heisenberg}.
+
+\begin{lemma}\label{jm-cell-haar}
+The map
+\[
+ (n_L,c,m,n_R)\longmapsto n_Lw(c)\iota(m)n_R
+\]
+is a smooth bijection, with smooth inverse, onto
+\(\{g\in G_r:g_{f_0e_0}\ne0\}\).
+Its complement has Haar measure zero.
+For a positive constant depending only on the Haar
+normalizations, the measure in these coordinates is
+\begin{equation}\label{jm-haar}
+                  C\,|c|^{2d}\,dn_L\,dc\,dm\,dn_R .
+\end{equation}
+Here \(dn_L,dn_R\) are the Lebesgue Haar measures on
+\(W\times\mathbb R\), and \(dc\) is planar Lebesgue measure.
+\end{lemma}
+
+\begin{proof}
+The coordinates follow by solving the block product.
+If \(c=g_{f_0e_0}\ne0\), the left vector is
+\(v_L=g_{We_0}/c\), the right vector is determined by
+\(v_R^*J=-g_{f_0W}/c\), and the two upper right parameters
+are \(g_{e_0e_0}/c\) and \(g_{f_0f_0}/c\).
+Their imaginary parts determine the two real parameters;
+the real parts follow from isotropy.
+Removing these factors leaves \(w(c)\iota(m)\), with
+\(m=g_{WW}+v_Lc\,v_R^*J\).
+These formulas prove the assertion about coordinates.
+
+We give the density calculation.  Translation invariance
+reduces it to \(n_L=n_R=1\), \(m=1\).
+Conjugation by a fixed \(m\in G_{r-1}\) preserves the
+Lebesgue measure on \(W\times\mathbb R\), as in
+Lemma~\ref{ju-heisenberg}, so this reduction introduces no
+extra factor.
+For
+\[
+ X(v,t)=\begin{pmatrix}0&-v^*J&it\\0&0&v\\0&0&0\end{pmatrix},
+\]
+the contribution of the left variable to \(g^{-1}dg\) is
+\[
+ w(c)^{-1}X(v,t)w(c)=
+ \begin{pmatrix}
+ 0&0&0\\cv&0&0\\i|c|^2t&-\bar c v^*J&0
+ \end{pmatrix}.
+\]
+Thus its real Jacobian is \(|c|^{2d+2}\).
+The \(c\)-variable contributes the diagonal matrix with entries
+\(dc/c\), \(0\), and \(-d\bar c/\bar c\), whose real Jacobian
+relative to planar \(dc\) is \(|c|^{-2}\).
+The middle Lie algebra and the right Heisenberg Lie algebra
+complete these to a direct sum of the real Lie algebra of
+\(G_r\), and their Jacobians are one.
+The product is \(|c|^{2d}\), proving \eqref{jm-haar}.
+
+Finally \(G_r\) is connected.
+For its polar decomposition \(g=\kappa P\), the identity
+\(H_r(g^*g)H_r=(g^*g)^{-1}\) implies
+\(H_rPH_r=P^{-1}\).  Thus \(P^t\in G_r\) for \(0\leq t\leq1\)
+and \(\kappa\in K_r\); the latter group is
+\(U(k+r)\times U(r+1)\), which is connected.
+The real analytic function \(|g_{f_0e_0}|^2\) is not
+identically zero, since it is nonzero at \(w(1)\).
+Its zero set has measure zero in analytic local coordinates.
+To recall the elementary justification, at each zero some
+finite directional derivative is nonzero, unless all
+derivatives vanish and analytic continuation makes the
+function identically zero.  In a sufficiently small box this
+derivative stays nonzero; on each line in that direction
+Rolle's theorem bounds the number of zeros by its order.
+Fubini and a countable covering give measure zero.
+Haar measure has a smooth positive density in these coordinates,
+which proves the assertion.
+\end{proof}
+
+\subsection{Integration of one Heisenberg factor}
+
+\begin{lemma}\label{jm-e-int}
+Put \(D=2d+1\).  If \(A>D\), then
+\begin{equation}\label{jm-e-bound}
+ \int_{W\times\mathbb R}
+        M(w(c)\iota(m)n(v,t))^{-A}\,dv\,dt
+ \leq C_{A,d}\min(|c|^{-D},|c|^{-1})M(m)^{D-A}
+\end{equation}
+for all \(c\ne0\) and \(m\in G_{r-1}\).
+\end{lemma}
+
+\begin{proof}
+Writing \(b=it-h_{r-1}(v,v)/2\), direct block multiplication gives
+\[
+ M(w(c)\iota(m)n(v,t))^2
+ =|c|^{-2}+M(m)^2+\|mv\|^2
+                       +|c|^2(1+\|v\|^2+|b|^2).
+\]
+In particular this is at least
+\(M(m)^2+|c|^2(\|v\|^2+t^2)\).
+Scale \(v,t\) by \(|c|\), then by \(M(m)\).
+The resulting bound is
+\[
+ |c|^{-D}M(m)^{D-A}
+                    \int_{\mathbb R^D}(1+\|u\|^2)^{-A/2}\,du .
+\]
+The same norm is at least
+\(M(m)^2+\|mv\|^2+|c|^2t^2\).
+Now substitute \(v'=mv\), whose real Jacobian is
+\(|\det m|^2=1\), and \(t'=|c|t\).
+This gives the identical bound with \(|c|^{-1}\) in place
+of \(|c|^{-D}\).
+The remaining Euclidean integral is finite because \(A>D\);
+polar coordinates, or the Gaussian calculation in
+Theorem~\ref{jk-exact}, prove this directly.
+Taking the smaller of the two bounds gives the result.
+\end{proof}
+
+\begin{lemma}\label{jm-left-factor}
+Fix \(n_L=n(v,t)\), and set
+\[
+ Y_0=n_Lf_0,\qquad Y_{j+1}=n_L\phi'_j\quad(0\leq j<r),
+ \qquad \delta_l=\|Y_0\wedge\cdots\wedge Y_l\|,
+ \qquad Q=\delta_0>0.
+\]
+For every \(c\ne0\), there exist
+\(\kappa\in K_r\), \(u\in G_{r-1}\), and a Heisenberg
+element \(n_0\) such that
+\begin{equation}\label{jm-left-decomposition}
+ n_Lw(c)=\kappa w(cQ)\iota(u)n_0,\qquad
+               \widehat\Delta_j(u)=\delta_{j+1}/Q.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The vector \(Y_0\) is nonzero and isotropic.
+Compact transitivity supplies \(\kappa f_0=Y_0/Q\).
+Consequently
+\((\kappa w(cQ))^{-1}n_Lw(c)\) fixes \(e_0\).
+The block argument in Lemma~\ref{ju-heisenberg}, with
+\(m\in G_{r-1}\) instead of \(N_{r-1}\), identifies its
+stabilizer as the products \(\iota(u)n_0\).
+This proves the factorization.
+Apply it to the primed flag, whose first vector is \(e_0\).
+The rightmost \(n_0\) changes its columns by an upper triangular
+matrix with diagonal one.
+The norm of the first \(j+2\) transformed columns on the left
+is \(|c|\delta_{j+1}\).
+On the right it is
+\(|c|Q\,\widehat\Delta_j(u)\), since \(f_0\) is Euclidean
+orthogonal to \(W\) and \(\kappa\) is Euclidean unitary.
+Cancellation gives the claimed norm identities.
+\end{proof}
+
+\begin{theorem}\label{jm-group-integral}
+For every \(k\geq1\), \(r\geq0\), and
+\[
+                0<s_l^0-s_l\leq1/10\quad(0\leq l\leq r),
+\]
+one has
+\begin{equation}\label{jm-AAt}
+                       J_r(A,s)<\infty
+                                   \qquad(A\geq B(k,r)).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The case \(r=0\) follows from Proposition~\ref{jm-base},
+since \(0<s_0<k\) and \(B(k,0)=2k+1\).
+Suppose \(r\geq1\), and use induction at rank \(r-1\).
+Write
+\[
+ e_l=s_l^0-s_l,\quad
+ \sigma=\sum_{l=0}^{r}s_l,\quad
+ a=2d-\sigma,\quad D=2d+1,\quad s^-=(s_1,\ldots,s_r).
+\]
+Since
+\(B(k,r)-B(k,r-1)=2k+4r=D+1\), one has
+\(A>D\) and \(A-D\geq B(k,r-1)\).
+The induction hypothesis gives
+\(J_{r-1}(A-D,s^-)<\infty\).
+
+Both left and right multiplication by a Heisenberg element
+preserve all the minors \(D_l\).
+Indeed its action on the primed flag is upper triangular
+with diagonal one, and the left action gives the same row
+operations by Hermitian invariance.
+The block matrix \(w(c)\iota(m)\) then gives
+\[
+ D_0=c,\qquad D_l=c\,D_{l-1}(m)\quad(l\geq1).
+\]
+Thus in the coordinates of Lemma~\ref{jm-cell-haar},
+\[
+ \mathcal F_s(n_Lw(c)\iota(m)n_R)
+                  =|c|^{-\sigma}\mathcal F_{s^-}(m).
+\]
+For fixed \(n_L,c\), use \eqref{jm-left-decomposition}.
+The change
+\(n_0\iota(m)n_R=\iota(m)(\iota(m)^{-1}n_0\iota(m))n_R\)
+is a translation in the right Heisenberg integral, and
+introduces no factor.  Lemma~\ref{jm-e-int} therefore gives
+\[
+ \int_{n_R}M(n_Lw(c)\iota(m)n_R)^{-A}\,dn_R
+ \leq C_{A,d}\min(|cQ|^{-D},|cQ|^{-1})M(um)^{D-A}.
+\]
+Integration over \(m\), followed by \(g=um\), is evaluated
+using the left version of Lemma~\ref{jm-compact-factor}:
+\begin{align*}
+ \int_{G_{r-1}}\mathcal F_{s^-}(m)M(um)^{-(A-D)}\,dm
+       &=\widehat\Xi_{s^-}(u)J_{r-1}(A-D,s^-),\\
+ \widehat\Xi_{s^-}(u)
+       &=Q^{\sum_{l=1}^{r}s_l}
+                             \prod_{l=1}^{r}\delta_l^{-s_l}.
+\end{align*}
+The second expression depends on \(n_L\), and not on the
+particular factorization or on \(c\).
+
+The integral in \(c\) has an elementary exact value.
+For \(1<\sigma<2d+1\), polar coordinates give
+\[
+ \int_{\mathbb C}|c|^{2d-\sigma}
+             \min(|c|^{-2d-1},|c|^{-1})\,dc
+          =2\pi\left(\frac{1}{2d-\sigma+1}
+                                  +\frac{1}{\sigma-1}\right).
+\]
+The hypotheses ensure these inequalities:
+\(\sigma\geq2r+k-(r+1)/10>1\), and
+\(\sigma<2r+k<4r+2k-1=2d+1\).
+The substitution \(c'=Qc\) consequently extracts the
+factor \(Q^{-a-2}\).
+
+It remains to integrate
+\[
+ \delta_0^{-a-2+\sum_{l=1}^{r}s_l}
+                                  \prod_{l=1}^{r}\delta_l^{-s_l}
+\]
+over \(n_L\).
+Lemma~\ref{ju-coordinate-formula} applies also to the
+reference frame \(\phi'_j\) on \(W\), with its paired frame
+\(\phi_j\): its proof uses only the displayed orthogonality
+and pairing identities.  Hence this is the coordinate integral
+\(I_{r,k-1}(\nu)\), where
+\[
+           \nu_0=e_0+2\sum_{j=1}^{r}e_j,\qquad
+           \nu_l=-e_l\quad(1\leq l\leq r).
+\]
+For its partial sums,
+\[
+ S_l=e_0+\sum_{j=1}^{l}e_j+2\sum_{j=l+1}^{r}e_j>0,\qquad
+ S_l+2\sum_{j>l}\nu_j=e_0+\sum_{j=1}^{l}e_j>0.
+\]
+Every inequality in Theorem~\ref{jk-exact} holds.
+The remaining integral is therefore finite, with the exact
+gamma-product value given there.
+All substitutions and integrations involved nonnegative
+functions; Tonelli justifies them before finiteness is known.
+This completes the induction.
+\end{proof}
+
+\subsection{The separated bound for matrix coefficients}
+
+\begin{proposition}\label{jm-coefficient}
+Under the hypotheses of Theorem~\ref{jm-group-integral},
+there is a finite constant \(C\) such that, for any functions
+\(F,F'\) into a normed space that are strongly measurable
+almost everywhere for Haar measure and satisfy
+\[
+ \|F(g)\|\leq cM(g)^{-A},\qquad
+ \|F'(g)\|\leq c'M(g)^{-A}\qquad(g\in G_r),
+\]
+where \(c,c'\geq0\), one has
+\begin{equation}\label{jm-coefficient-bound}
+ \int_{G_r}\|F(x^{-1}gy)\|\,\|F'(g)\|\,dg
+                         \leq Ccc'\Xi_s(x)\Xi_s(y)
+                                  \qquad(x,y\in G_r).
+\end{equation}
+One may take \(C=J_r(A,s)\) with the present norm conventions.
+\end{proposition}
+
+\begin{proof}
+Left and right translations preserve Haar null sets, so the
+integrand is measurable for the completed Haar measure.
+The two reference exterior vectors defining \(D_l\) have
+Euclidean norm one.  Cauchy--Schwarz on the exterior power
+therefore gives \(|D_l(g)|\leq M(g)^{l+1}\).
+Also \(M(g)\geq1\), since \(|\det g|=1\).
+As
+\[
+ \sum_{l=0}^{r}(l+1)s_l
+   <\sum_{l=0}^{r}(l+1)s_l^0
+       =(r+1)(k+r)<B(k,r)\leq A,
+\]
+it follows that
+\begin{equation}\label{jm-determinant-majorization}
+                         M(g)^{-A}\leq\mathcal F_s(g).
+\end{equation}
+Let \(H=H_r\).  Conjugation by \(H\) preserves both Haar
+measure and \(M\).  Moreover
+\[
+                  \widehat\Xi_s(HxH)=\Xi_s(x),
+\]
+because \(H\phi'_j=\phi_j\), and left multiplication by
+\(H\) is Euclidean unitary.
+Apply \eqref{jm-determinant-majorization} to
+\(H(x^{-1}gy)H\), multiply by \(cc'M(g)^{-A}\), and integrate.
+After the substitution \(g'=HgH\), formula \eqref{jm-both}
+with \(x'=HxH\), \(y'=HyH\), and \(\Phi(g')=M(g')^{-A}\)
+gives exactly \eqref{jm-coefficient-bound}.
+Theorem~\ref{jm-group-integral} proves that its constant is finite.
+\end{proof}
+
+\subsection{The compact stabilizers and the required majorant}
+
+For the negative vector \(z\in V_0\), let \(K_z\) be the
+subgroup of \(G_r\) fixing \(z\) and each \(e_j,f_j\).
+It is compact: on \(V_0\) it acts trivially on the negative
+line \(\mathbb Cz\) and unitarily on the positive definite
+space \(z^\perp\), so is isomorphic to \(U(k)\).
+It normalizes \(N_r\), preserves its Haar measure under
+conjugation, and satisfies
+\(\lambda_z(h^{-1}nh)=\lambda_z(n)\).
+The flag definition proves normalization.
+The formula for \(\ell_z\), using the fixed vectors \(e_j,z\),
+proves character invariance.
+For Haar measure, use the recursion of
+Lemma~\ref{ju-heisenberg}: conjugation acts on each
+Heisenberg parameter by \(v\mapsto hv\), \(t\mapsto t\),
+with real determinant \(|\det h|^2=1\).
+Induction gives measure preservation.
+
+\begin{lemma}\label{jm-compact-stabilizer}
+Suppose \(s_l\geq0\) and
+\(\int_{N_r}\Xi_s(n)(1+|\lambda_z(n)|)^{-1/2}\,dn<\infty\).
+Then, for Haar measure \(dh\) on \(K_z\),
+\begin{equation}\label{jm-stabilizer-integral}
+ \int_{K_z\times N_r}
+       \Xi_s(nh)(1+|\lambda_z(n)|)^{-2}\,dh\,dn<\infty.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Compactness gives a uniform bound \(L\geq1\) on
+\(\|h^{-1}\|_{\mathrm{op}}\), \(h\in K_z\).
+The exterior norm inequality
+\(\|\bigwedge^{l+1}h\,v\|\geq L^{-l-1}\|v\|\)
+implies
+\[
+          \Xi_s(hg)\leq L^{\sum_l(l+1)s_l}\Xi_s(g).
+\]
+For fixed \(h\), write \(nh=h(h^{-1}nh)\), and change
+variables \(n'=h^{-1}nh\).  The measure and character are
+unchanged.  Since
+\((1+|u|)^{-2}\leq(1+|u|)^{-1/2}\), the integral over \(n\)
+is at most the assumed finite integral times the displayed
+constant, independently of \(h\).
+Haar measure on the compact group \(K_z\) is finite.
+Tonelli proves \eqref{jm-stabilizer-integral}.
+\end{proof}
+
+\begin{theorem}\label{jm-majorant}
+Let \(k\geq1\), \(r\geq0\), \(A\geq B(k,r)\), and let
+\(z,z'\in V_0\) have negative Hermitian norm.
+There exists a positive continuous function \(\Xi\) on \(G_r\)
+with the following two properties:
+\begin{enumerate}
+ \item For all \(F,F'\) satisfying the decay bounds in
+ Proposition~\ref{jm-coefficient}, the integral in
+ \eqref{jm-coefficient-bound} is at most
+ \(Ccc'\Xi(x)\Xi(y)\).
+ \item Both integrals
+ \[
+ \int_{K_z\times N_r}\Xi(nh)(1+|\lambda_z(n)|)^{-2}\,dh\,dn,
+ \qquad
+ \int_{K_{z'}\times N_r}
+             \Xi(nh)(1+|\lambda_{z'}(n)|)^{-2}\,dh\,dn
+ \]
+ are finite.
+\end{enumerate}
+One may take
+\[
+ \Xi=\Xi_s,\qquad
+ s_l=s_l^0-\epsilon,\qquad
+ 0<\epsilon\leq\min\bigl(1/10,\epsilon_r(1/2)\bigr).
+\]
+\end{theorem}
+
+\begin{proof}
+The exterior Gram determinants are continuous and positive
+on the group, so \(\Xi_s\) is positive and continuous.
+Its extension by zero outside the closed matrix group \(G_r\)
+is Borel measurable on the ambient matrix space; all the Haar
+measures in these assertions are supported on \(G_r\).
+Theorem~\ref{ju-integrability} gives the two unipotent
+integrals with exponent \(1/2\), using the same \(\epsilon\)
+for \(z\) and \(z'\).
+Theorem~\ref{jm-group-integral} and
+Proposition~\ref{jm-coefficient} give the first property.
+Lemma~\ref{jm-compact-stabilizer} gives the second.
+\end{proof}
+
+Theorem~\ref{jm-group-integral} is the actual assertion
+\(\mathrm{AAt}\) in the source, and
+Theorem~\ref{jm-majorant} proves the actual existence
+assertion \(\mathrm{XiExists}\), including both
+\(\mathrm{CoefBound}\) and \(\mathrm{XiInt}\).
+The norm is exactly the Frobenius norm called \(gN\), and
+the exponent threshold \(B(k,r)\) is exactly \(AB\).
+The source uses \(n_L^{-1}\) in its open cell; the change
+\((v,t)\mapsto(-v,-t)\) preserves the Lebesgue measure and
+identifies that convention with the one used here.
+These statements and conventions are in
+\texttt{StatementB.lean} and the
+\texttt{TailIntegrals} files recorded in the source trace
+\cite{alpo-uniform-source}.
+
+The construction of the majorant is now complete.
+Its application to differentiation, regularized pairings,
+and the final Jacquet adjointness identity still requires
+the subsequent dominated integration and unfolding arguments.
+
+

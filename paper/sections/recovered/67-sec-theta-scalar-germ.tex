@@ -1,0 +1,798 @@
+\section{The scalar orbital germ from a Hessenberg determinant}
+\label{sec:theta-scalar-germ}
+
+We retain $K,R,\psi$ and the Haar normalization of the preceding
+sections.  In particular $K$ is a finite product of finite extensions
+of $\mathbb Q_p$, $R$ is a compact open subring, and the annihilator
+of $R$ is $R$.  An absolute value $|a|$ denotes the modulus of
+multiplication by $a$ on the additive group of $K$.  It is the
+product of the usual local-field moduli.  All product spaces carry
+product Haar measure.  The integer $p$ tends to zero in every
+factor, and the lattices $p^aR$, $a\in\mathbb Z$, are cofinal among
+neighborhoods of zero.
+
+The purpose of this section is to prove the scalar two-block
+orbital germ.  The essential algebraic step is a change from
+unipotent coordinates to the first row of an upper Hessenberg
+matrix.  Its determinant determines the one remaining diagonal
+entry.  Only its expansion through first order is needed; local
+constancy makes the resulting formula exact.
+
+\subsection{Test functions and orbital sums}
+
+Fix $m\ge1$, and write $s=m+1$ and $d=m(m+1)/2$.
+Let $L,\Lambda\subset K$ be compact open additive subgroups,
+and let $Q\subset K^\times$ be compact.  A permitted test function
+$\Phi:M_s(K)\to\mathbb C$ satisfies the following conditions:
+\begin{enumerate}
+\item $\Phi(aZb)=\Phi(Z)$ for integral lower unipotent $a$ and
+integral upper unipotent $b$ of size $s$.
+\item If $\Phi(Z)\ne0$, then every entry of $Z$ belongs to $L$.
+\item If $\det Z\in Q\cup(-Q)$ and $Y\in M_s(\Lambda)$, then
+$\Phi(Z+Y)=\Phi(Z)$.
+\end{enumerate}
+The neighborhoods constructed below depend on $K,R,\psi,m,L,
+\Lambda,Q$, and not on the values of $\Phi$.
+
+Let $J_j$ denote the reversing permutation matrix of size $j$.
+For a block configuration $w$ of size $s$, define
+\[
+ \mathcal O_\Phi(w)=
+ \sum_{q\in L_w(R)\backslash L_w(K)\times U_s(K)/U_s(R)}
+       \Phi(x_qZ(w)y_q)
+       \psi\left(\sum_i(x_q)_{i+1,i}
+                    +\sum_i(y_q)_{i,i+1}\right).
+\]
+Here the lower group and representatives have the definitions
+used in \eqref{orb-actual-kernel}.  Every sum in this section is
+finite.  Indeed the block Gaussian elimination proof of
+Lemma~\ref{orb-finite-orbits} applies with the compact set $L$
+in place of $R$: bounded product entries and fixed nonzero
+diagonal-block determinants bound both unipotent factors.
+Invariance of $\Phi$ and triviality of $\psi$ on $R$ prove
+independence of representatives.
+
+We abbreviate
+\[
+ \mathcal O_\Phi(t,c)=\mathcal O_\Phi(\operatorname{diag}(tJ_m,c)),
+ \qquad
+ \mathcal O_\Phi(zJ_s)=\mathcal O_\Phi(\text{one block }zJ_s).
+\]
+The integrands below are locally constant on their relevant
+determinant sets.  Condition (3), continuity of the matrix maps,
+and the compact support just proved show that all Haar integrals
+are absolutely convergent.  No global regularity of $\Phi$
+outside these sets is needed.
+
+\subsection{The first-row determinant calculation}
+
+Use indices $0,1,\ldots,m$.  For $\rho\in K$, $x=(x_1,\ldots,x_m)$,
+and $y=(y_{ij})_{0\le i<j\le m}$, let
+$H_t(\rho,x,y)$ be the matrix with diagonal
+$(\rho,x_1,\ldots,x_m)$, entries $y_{ij}$ above the diagonal,
+entries $t$ immediately below it, and all other entries zero.
+Thus $H_t$ is upper Hessenberg.  Let $C_t(x,y)$ be its trailing
+$m$ by $m$ principal submatrix; it does not depend on $\rho$ or
+on the first-row variables $y_{0j}$.
+
+For $x\in(K^\times)^m$ and $D\in K^\times$, put
+\begin{align}
+ P(x)&=\prod_{i=1}^m x_i,&
+ x_0(D,x)&=D/P(x),\\
+ g_D(x,y)&=\frac{y_{01}}{x_1}
+     +x_0(D,x)\sum_{i=1}^{m-1}
+                       \frac{y_{i,i+1}}{x_ix_{i+1}},&
+ f_D(x)&=\sum_{i=1}^m x_i+x_0(D,x).
+\end{align}
+The empty sum is zero when $m=1$.
+
+\begin{lemma}\label{sg-determinant-expansion}
+Fix compact sets of allowed $D\in K^\times$,
+$x\in(K^\times)^m$, and $y\in K^d$.  For all sufficiently small
+$t$, uniformly over these sets,
+\begin{equation}\label{sg-tail-modulus}
+ C_t(x,y)\text{ is invertible},\qquad
+                  |\det C_t(x,y)|=|P(x)|.
+\end{equation}
+There is then a unique $\rho=\rho_t(D,x,y)$ with
+$\det H_t(\rho,x,y)=D$, and
+\begin{equation}\label{sg-rho-expansion}
+ \rho_t(D,x,y)=x_0(D,x)+t g_D(x,y)+t^2 E_t(D,x,y),
+\end{equation}
+where the values of $E_t$ are contained in one compact subset
+of $K$.  The neighborhood and this bound are independent of
+the individual parameters in the specified compact sets.
+\end{lemma}
+
+\begin{proof}
+The determinant is linear in $\rho$, with coefficient
+$\det C_t$.  At $t=0$ that coefficient is $P(x)$, which is
+bounded away from zero in every field factor.  The ratio
+$\det C_t/P(x)$ is therefore uniformly in $1+pR$ for small $t$.
+Such a ratio is a unit of $R$, with inverse given by a convergent
+geometric series, and hence has modulus one.  This proves
+\eqref{sg-tail-modulus} and uniqueness of $\rho$.
+
+The coefficient of $t$ in the Hessenberg determinant is
+\begin{equation}\label{sg-det-linear}
+ -\sum_{i=0}^{m-1}y_{i,i+1}
+                 \prod_{j\ne i,i+1}d_j,
+ \qquad (d_0,d_1,\ldots,d_m)=(\rho,x_1,\ldots,x_m).
+\end{equation}
+For completeness, in the permutation expansion a term using
+exactly one entry below the diagonal must use an adjacent
+transposition.  All other positions must be diagonal: the
+sum of column minus row indices is zero, so the sole negative
+displacement $-1$ permits exactly one positive displacement
+$+1$.  The sign of that transposition is negative, proving
+\eqref{sg-det-linear}.  Terms using two or more subdiagonal
+entries are divisible by $t^2$.
+
+Put $S=\sum_{i=1}^{m-1}y_{i,i+1}/(x_ix_{i+1})$.
+There are polynomial remainders, uniformly bounded on the
+compact parameter sets for small $t$, such that
+\[
+ \det C_t=P(1-tS)+t^2 A_t,
+ \qquad
+ \det H_t(0,x,y)=-t y_{01}P/x_1+t^2 B_t.
+\]
+Solving the linear equation for $\rho$ gives
+\[
+ \rho_t=
+ \frac{D+t y_{01}P/x_1-t^2B_t}{P(1-tS)+t^2A_t}.
+\]
+The denominator divided by $P$ is uniformly near one.
+Expanding its inverse by the geometric series, through the
+linear term, gives exactly \eqref{sg-rho-expansion}.
+All remainders are bounded uniformly because $P^{-1}$, the
+polynomial coefficients and the inverse of that near-one
+denominator are bounded on the stated compact sets.  This also
+proves the assertion when $m=1$, where the higher remainders
+in the determinant vanish.
+\end{proof}
+
+The next observation ensures that this calculation covers every
+contributing orbit, including ones for which the diagonal entries
+were not initially assumed invertible.
+
+\begin{lemma}\label{sg-nonzero-diagonals}
+Fix a compact $Q_0\subset K^\times$ and a compact open additive
+subgroup $L$.  There is a compact open set $E\subset K^\times$
+and a neighborhood of zero such that the following holds.
+If $t$ belongs to that neighborhood, all entries of
+$\rho,x,y$ belong to $L$, and
+\[
+                    \det H_t(\rho,x,y)\in Q_0,
+\]
+then every $x_i$ belongs to $E$.
+The set $E$ can also be chosen to contain every $x_i$ for which
+$x_0(D,x),x_1,\ldots,x_m\in L$ and $D\in Q_0$.
+\end{lemma}
+
+\begin{proof}
+Choose $a\ge0$ such that $L$, $Q_0$ and $Q_0^{-1}$ are
+contained in $p^{-a}R$.  Write the determinant as
+\[
+             D=\rho\prod_i x_i+t B.
+\]
+For $t\in R$ all values of the polynomial $B$ lie in one
+fixed compact subset of $K$.  Consequently, for small $t$,
+$tB/D\in pR$, uniformly.  It follows that
+$\rho\prod_i x_i=D(1-tB/D)$ is invertible, and hence so is
+every $x_i$.  Moreover
+\[
+ x_i^{-1}=\frac{\rho\prod_{j\ne i}x_j}{D}
+                           (1-tB/D)^{-1}
+             \in p^{-(m+1)a}R.
+\]
+The same bound holds when $\rho=x_0(D,x)$ and $t=0$.
+Thus one may take
+\[
+ E=\{u\in L\cap K^\times:u^{-1}\in p^{-(m+1)a}R\}.
+\]
+This set is open and compact in $K^\times$: both $u$ and its
+inverse are bounded, so no sequence in it can approach a
+nonunit in any field component.  It is a finite union of
+cosets of some sufficiently small additive lattice.
+\end{proof}
+
+\subsection{Construction of the amplitude}
+
+Let $Q_0=Q\cup(-Q)$.  For $D\in Q_0$, define
+\begin{equation}\label{sg-amplitude}
+ A_D(x)=|P(x)|^{-1}\int_{K^d}
+   \Phi\bigl(J_sH_0(x_0(D,x),x,y)\bigr)
+                          \psi(g_D(x,y))\,dy
+ \quad(x\in(K^\times)^m),
+\end{equation}
+and set $A_D(x)=0$ otherwise.
+
+\begin{lemma}\label{sg-amplitude-uniform}
+There are a compact open $E\subset K^\times$ and an additive
+lattice $\Lambda_1\subset K$, depending only on the fixed
+data, such that every amplitude \eqref{sg-amplitude} is
+supported in $E^m$ and invariant under translations by
+$\Lambda_1^m$.  The inner integrands are supported in $L^d$.
+All these assertions are uniform in $D\in Q_0$ and in every
+permitted $\Phi$.
+\end{lemma}
+
+\begin{proof}
+If the matrix value of $\Phi$ is nonzero, all its diagonal
+and upper entries before reversal belong to $L$.  Their
+diagonal product is $D$.  Lemma~\ref{sg-nonzero-diagonals},
+at $t=0$, bounds $x$ in $E^m$, and condition (2) bounds $y$
+in $L^d$.
+
+Choose an additive lattice small enough to preserve $E$ and
+$L$ under translation.  On the compact set
+$Q_0\times E^m\times L^d$, the rational functions $P^{-1}$,
+$x_0$ and $g_D$ have bounded denominators and are uniformly
+continuous.  Shrink the lattice so that translating any of
+the $x$ or $y$ coordinates by it has the following effects:
+$|P|$ is unchanged; every entry of the change in
+$J_sH_0(x_0,x,y)$ lies in $\Lambda$; and the change in
+$g_D$ lies in $R$.  These choices are uniform because the
+parameter set is compact, and $D$ is held fixed during each
+translation.  More explicitly, the differences in reciprocal
+coordinates satisfy
+\[
+ (x_i+u)^{-1}-x_i^{-1}=-u\bigl(x_i(x_i+u)\bigr)^{-1};
+\]
+their denominators remain in fixed bounded sets.  Products
+and sums of these identities give each asserted uniform
+continuity bound.
+
+The determinant of the unperturbed matrix is
+$(-1)^{s(s-1)/2}D$, which belongs to $Q\cup(-Q)$.
+Thus condition (3) makes the matrix factor unchanged.
+The character factor is unchanged because $\psi$ is trivial
+on $R$.  Outside $E^m\times L^d$, both values vanish because
+that set is stable under the selected translations.  This
+proves a common translation invariance for the full inner
+integrand.  Integrating in $y$ proves the claim for $A_D$.
+\end{proof}
+
+\subsection{The exact oscillatory integral}
+
+\begin{theorem}\label{sg-oscillatory-reduction}
+For all sufficiently small $t\in K^\times$, uniformly in
+$c\in K^\times$ with $ct^m\in Q$ and in permitted $\Phi$,
+put $D=(-t)^mc$.  Then
+\begin{equation}\label{sg-oscillatory-identity}
+ \mathcal O_\Phi(t,c)
+   =|t|^{-d}\int_{(K^\times)^m}
+                         A_D(x)\psi(f_D(x)/t)\,dx.
+\end{equation}
+For every $z\in K^\times$ with $z^s=D$,
+\begin{equation}\label{sg-critical-amplitude}
+ A_D(z,\ldots,z)
+       =|z|^{m(m-1)/2}\mathcal O_\Phi(zJ_s).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For the two-block matrix $W=\operatorname{diag}(tJ_m,c)$,
+the lower group consists of matrices with identity diagonal
+blocks and a single arbitrary last row below the diagonal.
+Write this row as $(\eta_{m-1},\ldots,\eta_0)$.
+Its simple-root phase is $\psi(\eta_0)$.
+Write an upper unipotent matrix as $U=I+(u_{ij})_{i<j}$.
+Product additive Haar measure in the $u_{ij}$ is Haar measure
+on this group, normalized by $\operatorname{vol}(U_s(R))=1$.
+Indeed left and right translations are triangular affine
+changes in these coordinates with diagonal entries one;
+successive one-variable translations preserve product Haar
+measure.  The last-row coordinates likewise have measure
+normalized by $\operatorname{vol}(R^m)=1$.
+
+The summand is invariant under the corresponding integral
+subgroups.  Its support lies in finitely many cosets and each
+has volume one.  Hence the orbital sum equals the double
+Haar integral of that summand.  Reverse the rows of $LWU$.
+The resulting matrix has first row
+\[
+ t\sum_{i=0}^{m-1}\eta_i U_{i,*}+c e_m^{\,t},
+\]
+and row $i+1$ equal to $tU_{i,*}$ for $0\le i<m$.
+Its determinant is $(-t)^mc=D$: subtract the indicated
+linear combination of the last $m$ rows from the first row
+and expand along the remaining entry $c$.
+
+Now put $n_{ij}=tu_{ij}$.  This contributes the Jacobian
+$|t|^{-d}$.  Set
+\[
+ x_i=n_{i-1,i}\quad(1\le i\le m),\qquad
+ y_{ij}=n_{i-1,j}\quad(1\le i<j\le m).
+\]
+These are all the scaled upper entries, merely reordered.
+The remaining first-row entries are denoted
+$\tau_j=y_{0j}$, $1\le j\le m$, and its first diagonal
+entry is $\rho=t\eta_0$.  Thus the reversed matrix is
+$H_t(\rho,x,y)$ and its phase is
+\begin{equation}\label{sg-coordinate-phase}
+ \psi\left(\eta_0+\sum_{i=0}^{m-1}u_{i,i+1}\right)
+              =\psi\left((\rho+\sum_{i=1}^m x_i)/t\right).
+\end{equation}
+
+If the matrix value of $\Phi$ is nonzero, all entries
+$\rho,x,y$ belong to $L$.  Its determinant is in $Q_0$.
+Lemma~\ref{sg-nonzero-diagonals} therefore restricts $x$ to
+a fixed compact open $E^m$, and the upper entries below
+the first row lie in $L$.  The same restrictions contain
+the support of the amplitude in \eqref{sg-amplitude}.
+Outside these restrictions both relevant integrands vanish.
+
+Fix such $x$ and the upper entries below the first row.
+The affine map $\eta\mapsto\tau$ has coefficient matrix
+\[
+             \bigl(tU_{i,j}\bigr)_{1\le j\le m,\ 0\le i<m}
+                     =C_t(x,y)^{\,t}.
+\]
+For small $t$ it is invertible by
+Lemma~\ref{sg-determinant-expansion}, and its determinant
+has modulus $|P(x)|$.  It is therefore a bijection of all
+$K^m$, with $d\eta=|P(x)|^{-1}d\tau$.
+The entry $\rho$ after this change is the unique
+$\rho_t(D,x,y)$ in that lemma, since the determinant remains
+$D$.  In particular, this is a change on the whole first-row
+space, not a selection of a branch or a restriction to an
+unspecified neighborhood.
+
+When one of the first-row coordinates lies outside $L$,
+both matrix test functions vanish.  For all the remaining
+$y\in L^d$, the expansion \eqref{sg-rho-expansion} is uniform.
+Make $t$ small enough that
+\[
+ t\in\Lambda,\qquad
+ \rho_t-x_0\in\Lambda,\qquad tE_t\in R.
+\]
+The first two conditions and test-function condition (3),
+applied at $J_sH_0(x_0,x,y)$, give
+\[
+ \Phi(J_sH_t(\rho_t,x,y))
+                  =\Phi(J_sH_0(x_0,x,y)).
+\]
+The third and \eqref{sg-coordinate-phase} give
+\[
+ \psi\left((\rho_t+\sum_i x_i)/t\right)
+                 =\psi(f_D(x)/t)\psi(g_D(x,y)).
+\]
+Substitute these equalities into the changed integral.
+Its two Jacobian factors are $|t|^{-d}$ and $|P(x)|^{-1}$.
+Fubini's theorem, applicable to these compactly supported
+locally constant functions, gives exactly
+\eqref{sg-oscillatory-identity}.
+
+Finally let $x_1=\cdots=x_m=z$ with $z^s=D$.  Then
+$x_0=z$ and $g_D(x,y)=z^{-1}\sum_i y_{i,i+1}$.
+Substitute $y_{ij}=zv_{ij}$ in \eqref{sg-amplitude}.
+The factor $|P|^{-1}$ is $|z|^{-m}$ and the Jacobian is
+$|z|^d$.  The matrix becomes $zJ_sU$, where $U$ is upper
+unipotent with upper entries $v_{ij}$, and its phase is the
+usual $\psi(\sum_i v_{i,i+1})$.  For a single block the lower
+group is trivial.  The remaining Haar integral is therefore
+$\mathcal O_\Phi(zJ_s)$, by the same volume-one coset argument.
+As $d-m=m(m-1)/2$, this proves
+\eqref{sg-critical-amplitude}.
+\end{proof}
+
+\subsection{The scalar germ}
+
+\begin{corollary}\label{sg-scalar-germ}
+For all sufficiently small $t\in K^\times$, uniformly in
+$ct^m\in Q$ and in all permitted test functions,
+\begin{align}\label{sg-germ-formula}
+ \mathcal O_\Phi(t,c)
+ ={}&|t|^{-m^2/2}|s|^{-1/2}
+   \sum_{z^s=(-t)^mc}\gamma_m(zt)|z|^{m^2/2}
+                     \psi(sz/t)\mathcal O_\Phi(zJ_s).
+\end{align}
+There is no exclusion of residue characteristics dividing
+$2s$; all neighborhoods may depend on $m$, the local field
+product, the order, the character and the stated compact sets.
+\end{corollary}
+
+\begin{proof}
+Lemma~\ref{sg-amplitude-uniform} supplies one support and one
+translation lattice for every $A_D$.  Apply
+Theorem~\ref{th-stationary} with these data and $D\in Q_0$.
+Then apply \eqref{sg-oscillatory-identity} and
+\eqref{sg-critical-amplitude}.  The exponents combine as
+\[
+ -d+\frac m2=-\frac{m^2}{2},\qquad
+ \frac m2+\frac{m(m-1)}2=\frac{m^2}{2}.
+\]
+This gives precisely \eqref{sg-germ-formula}, with every
+normalization unchanged.  Uniformity follows because both
+the oscillatory reduction and stationary phase used
+neighborhoods chosen from the fixed data before $\Phi,t,c$.
+\end{proof}
+
+This proves the scalar two-block orbital germ and its full
+compact-parameter uniformity.  Section~\ref{hr-section} supplies
+the test function for the marked-cokernel coefficient with fixed
+initial blocks.  The following assembly applies the scalar
+formula to that function and then to the actual kernel.
+
+
+\subsection{Removing the fixed initial blocks}
+\label{hr-section}
+
+We now prove the reduction of a scalar orbital coefficient to a
+function of the last blocks. This is the reduction required before
+the stationary-phase calculation. All sums below are finite on their
+effective support. The proof retains the specified vector and
+inverse-coordinate functional of each cokernel.
+
+Fix a configuration $h$ of total size $a$, put $H=Z(h)$ and
+$d=\det H\in K^\times$, and fix a finite marked module
+$T=(C,e,\lambda)$. For an integral matrix $B$ of size $b$, let
+$T_B$ denote $R^b/BR^b$ with its usual last-vector and
+last-inverse-coordinate specifications when $B$ is invertible.
+Define
+\[
+ F_T(B)=
+ \begin{cases}
+ \#\operatorname{Iso}(T_B,T),&B\in M_b(R)\cap\mathrm{GL}_b(K),\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+In size zero this uses the zero module and zero specifications.
+For an integral singular matrix its cokernel cannot be a finite
+module: extension from $R$ to $K$ leaves a nonzero cokernel in at
+least one field factor, whereas extension of a finite module is zero:
+its cardinality annihilates it and is a nonzero integer invertible in $K$.
+Here $K=R[1/p]$, since $R$ is open. Thus assigning zero in the
+singular case agrees with counting isomorphisms to the finite target.
+
+Fix $s\ge1$. For $A\in\mathrm{GL}_a(K)$ and rectangular matrices
+$X\in M_{s,a}(K)$, $Y\in M_{a,s}(K)$, put
+\begin{equation}\label{hr-block-matrix}
+ B(A,X,Y,G)=
+ \begin{pmatrix}A&AY\\ XA&XAY+G\end{pmatrix}
+ =\begin{pmatrix}I&0\\X&I\end{pmatrix}
+   \begin{pmatrix}A&0\\0&G\end{pmatrix}
+   \begin{pmatrix}I&Y\\0&I\end{pmatrix}.
+\end{equation}
+Write $\ell(X)=X_{1,a}$ and $r(Y)=Y_{a,1}$ when $a>0$,
+and put both expressions equal to zero when $a=0$.
+
+For each integral orbital coset $q\in\mathcal I_h$, choose its
+representative matrix $A_q=x_qHy_q$ and phase $a_q$. Define
+\[
+ \mathcal X_q=
+  \{X\bmod M_{s,a}(R):XA_q\in M_{s,a}(R)\},\qquad
+ \mathcal Y_q=
+  \{Y\bmod M_{a,s}(R):A_qY\in M_{a,s}(R)\}.
+\]
+These are finite sets. For example, the first is the quotient
+$M_{s,a}(R)A_q^{-1}/M_{s,a}(R)$ of two compact open additive
+lattices; the denominator is contained in the numerator because
+$A_q$ is integral. The second is treated in the same way. Put
+\begin{equation}\label{hr-Phi}
+ \Phi_{h,T,s}(G)=
+ \sum_{q\in\mathcal I_h}a_q
+    \sum_{X\in\mathcal X_q}\sum_{Y\in\mathcal Y_q}
+        \psi(\ell(X)+r(Y))F_T(B(A_q,X,Y,G)).
+\end{equation}
+The sets indexing this sum do not depend on $G$ or on $T$.
+
+\begin{lemma}\label{hr-well-defined}
+Formula \eqref{hr-Phi} is independent of all the indicated
+representatives. If $v\in U_s^-(R)$ and $u\in U_s^+(R)$ are
+lower and upper unipotent matrices, respectively, then
+\begin{equation}\label{hr-invariance}
+                  \Phi_{h,T,s}(vGu)=\Phi_{h,T,s}(G).
+\end{equation}
+Moreover,
+\begin{equation}\label{hr-support}
+ \Phi_{h,T,s}(G)\ne0
+       \quad\Longrightarrow\quad G\in d^{-1}M_s(R).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For any integral lower unipotent matrix $v_0$ and upper
+unipotent matrix $u_0$, the replacement $B\mapsto v_0Bu_0$
+preserves integrality and invertibility. It preserves the marked
+module: the induced cokernel map sends $[x]$ to $[v_0x]$,
+the last vector is fixed by $v_0$, and the last row of $u_0^{-1}$
+is the last coordinate row. Hence $F_T(v_0Bu_0)=F_T(B)$.
+
+Replacing $X,Y$ by $X+X_0,Y+Y_0$ with integral $X_0,Y_0$
+multiplies \eqref{hr-block-matrix} on the left and right by
+integral unipotent matrices. The corner phase changes by an
+element of $R$, on which $\psi$ is trivial. This proves
+independence of the rectangular representatives.
+If the representative of $q$ changes $A_q$ to $v_0A_qu_0$,
+the bijection $X\mapsto Xv_0^{-1}$, $Y\mapsto u_0^{-1}Y$
+identifies the summands. The block matrix is then multiplied
+by $\operatorname{diag}(v_0,I_s)$ and
+$\operatorname{diag}(u_0,I_s)$. The corner entries and the
+phase $a_q$ are unchanged modulo $R$.
+
+For \eqref{hr-invariance}, use the bijections
+$X\mapsto vX$ and $Y\mapsto Yu$. Then
+\[
+ B(A,vX,Yu,vGu)=\operatorname{diag}(I_a,v)
+                  B(A,X,Y,G)\operatorname{diag}(I_a,u).
+\]
+The first row of a lower unipotent matrix and the first column
+of an upper unipotent matrix are coordinate vectors. Therefore
+$\ell(vX)=\ell(X)$ and $r(Yu)=r(Y)$, which proves the identity.
+
+If the finite sum is nonzero, some block matrix
+$B=B(A_q,X,Y,G)$ is integral. Its upper-left block $A=A_q$,
+both $XA$ and $AY$, and its lower-right block $XAY+G$ are
+integral. Also $\det A=d\in R$ and $\operatorname{adj}(A)$
+is integral. The identity
+\[
+ dG=d(XAY+G)-(XA)\operatorname{adj}(A)(AY)
+\]
+shows that $dG$ is integral. For $a=0$, $d=1$ and the same
+assertion follows directly from $B=G$.
+\end{proof}
+
+We next give the perturbation estimate that preserves the
+functional as well as the underlying module.
+
+\begin{lemma}\label{hr-perturbation}
+Let $B\in\mathrm{GL}_b(K)$, write $\delta=\det B$, and
+suppose that $P\in M_b(R)$ and
+$P\in\delta^2pM_b(R)$. Then
+\[
+                         F_T(B+P)=F_T(B)
+\]
+for every fixed finite marked module $T$.
+If $B$ is integral, the identification is the identity on the
+ambient module $R^b$: the two image lattices are equal and
+$(B+P)^{-1}-B^{-1}$ is integral.
+\end{lemma}
+
+\begin{proof}
+If $B$ is not integral, adding the integral matrix $P$ cannot
+make it integral, so both sides are zero. Assume $B$ integral
+and write $P=\delta^2pP_0$ with $P_0$ integral. Put
+\[
+ A=I+B^{-1}P=I+p\delta\operatorname{adj}(B)P_0.
+\]
+Since $\delta\in R$, this is a matrix in $I+pM_b(R)$.
+Every such matrix is invertible over $R$: its geometric-series
+inverse converges, because the powers of a matrix in $pM_b(R)$
+have entries in $p^jR$ and these sets tend to zero. Compactness
+of $R$ makes it complete. This argument also applies at $p=2$
+and to a nonmaximal order.
+
+Now $B+P=BA$, so $(B+P)R^b=BR^b$. Moreover
+\[
+ (B+P)^{-1}-B^{-1}
+   =-pA^{-1}\operatorname{adj}(B)P_0\operatorname{adj}(B)
+                                                     \in M_b(R).
+\]
+The identity on the common cokernel preserves the specified
+vector and every inverse-coordinate functional modulo $R$.
+It consequently identifies the two sets of marked
+isomorphisms to $T$.
+\end{proof}
+
+\begin{corollary}\label{hr-local-constancy}
+Let $Q\subset K^\times$ be compact. There is an additive
+lattice $L\subset R$, depending only on $R,d,Q$, such that
+\[
+ \Phi_{h,T,s}(G+E)=\Phi_{h,T,s}(G)
+ \quad\text{if }\det G\in Q\cup(-Q),\quad E\in M_s(L).
+\]
+The choice is independent of $T$ and $s$.
+\end{corollary}
+
+\begin{proof}
+Choose $k\ge0$ such that $p^kd^{-2}q^{-2}\in R$ for every
+$q\in Q$, using compactness of the inverse set; take
+$L=p^{k+1}R$. In every term of \eqref{hr-Phi}, the full block
+matrix has determinant $d\det G$. Replacing $G$ by $G+E$
+adds only the lower-right block $E$, an integral perturbation
+whose entries divided by $(d\det G)^2$ belong to $pR$.
+Lemma~\ref{hr-perturbation} therefore applies term by term.
+The indexing sets and phases do not change.
+\end{proof}
+
+\begin{proposition}\label{hr-sum-identity}
+Let $g$ be any configuration of total size $s$, and let $h\,g$
+denote concatenation of their lists of blocks. Let
+\[
+ \mathcal Q_g=L_g(R)\backslash L_g(K)\times U_s(K)/U_s(R)
+\]
+be its full orbital coset space. For $q\in\mathcal Q_g$, write
+$G_q=x_qZ(g)y_q$ and let $a_q$ be its phase. Then
+\begin{equation}\label{hr-orbital-sum}
+ \mathcal B(h\,g;T)
+           =\sum_{q\in\mathcal Q_g}a_q\Phi_{h,T,s}(G_q).
+\end{equation}
+The support of the sum on the right is finite. The matrices
+$G_q$ in it are not required to be integral.
+\end{proposition}
+
+\begin{proof}
+Split the coordinates into the first $a$ and last $s$.
+Every lower matrix for the concatenated configuration has
+a unique expression
+\[
+ \begin{pmatrix}v_h&0\\Xv_h&v_g\end{pmatrix},
+ \qquad v_h\in L_h(K),\quad v_g\in L_g(K),
+\]
+and every upper matrix has a unique expression
+\[
+ \begin{pmatrix}u_h&u_hY\\0&u_g\end{pmatrix},
+ \qquad u_h\in U_a(K),\quad u_g\in U_s(K).
+\]
+Choose representatives for the four diagonal cosets. Left
+integral multiplication on the lower side then leaves exactly
+$X\bmod M_{s,a}(R)$; right integral multiplication on the
+upper side leaves exactly $Y\bmod M_{a,s}(R)$.
+For clarity, once the diagonal representatives agree, the
+quotient of two lower matrices is
+$\left(\begin{smallmatrix}I&0\\X'-X&I\end{smallmatrix}\right)$;
+the corresponding quotient on the upper side is
+$\left(\begin{smallmatrix}I&Y'-Y\\0&I\end{smallmatrix}\right)$.
+This proves both existence and uniqueness of the resulting
+coset parametrization.
+
+Their orbital matrix is exactly
+$B(v_hHu_h,X,Y,v_gZ(g)u_g)$.
+The adjacent-entry phase factors into the phases of the first
+and last configurations, multiplied by
+$\psi(\ell(X)+r(Y))$. Indeed the only adjacent entry crossing
+the block boundary is the corner entry, and
+$\ell(Xv_h)=\ell(X)$, $r(u_hY)=r(Y)$ by triangularity.
+No determinant or measure factor enters this bijection of
+discrete cosets.
+
+If the full orbital matrix is integral, its first block is
+integral, and $XA$ and $AY$ are integral. Thus the nonzero
+terms are exactly among those defining \eqref{hr-Phi}.
+There are only finitely many full integral orbital cosets by
+Lemma~\ref{orb-finite-orbits}. The bijection just proved
+therefore has finite effective support, so it can be regrouped
+without an infinite-sum interchange. Grouping first by the
+coset of the last configuration gives
+\eqref{hr-orbital-sum}.
+\end{proof}
+
+Applying Proposition~\ref{hr-sum-identity} with
+$g=[m,t][1,c]$ and with $g=[m+1,z]$ gives the two scalar
+identities required to remove the fixed initial blocks. The
+same function $\Phi_{h,T,m+1}$ occurs in both. It is invariant
+under integral lower and upper unipotent multiplication, is
+supported in $d^{-1}M_{m+1}(R)$, and is locally constant on
+the determinant range $Q\cup(-Q)$ with a lattice independent
+of the target module. These are precisely the required
+hypotheses on the matrix function in the subsequent
+oscillatory reduction.
+
+\begin{remark}[Nonintegral matrices in the last blocks]
+Their inclusion in \eqref{hr-orbital-sum} is essential.
+Take $K=\mathbb Q_3$, $R=\mathbb Z_3$, the standard character
+with $\psi(1/3)=\zeta_3$, one initial block $H=(3)$,
+one last block $G=(-1/3)$, and the zero marked target module.
+The full orbital matrices are
+\[
+ \begin{pmatrix}3&3y\\3x&3xy-1/3\end{pmatrix}.
+\]
+Integrality forces $x=u/3$, $y=v/3$ modulo $R$, with
+$uv\equiv1\pmod3$. Their determinant is $-1$, so every
+integral matrix has zero cokernel and contributes its phase.
+The only pairs are $(u,v)=(1,1),(2,2)$; their sum is
+\[
+             \zeta_3^2+\zeta_3^4=-1.
+\]
+The last scalar $-1/3$ is not integral. Restricting the right
+side of \eqref{hr-orbital-sum} to integral last-block matrices
+would incorrectly give zero. The actual source retains the
+full coset sum.
+\end{remark}
+
+\begin{remark}[Preserving the module does not preserve the functional]
+Take $R=\mathbb Z_p$, $B=(p^2)$ and $P=(p^3)$.
+The image ideals of $B$ and $B+P=p^2(1+p)$ are equal, but
+their inverse entries differ by
+$-1/(p(1+p))\notin R$. The two cyclic cokernels with marked
+vector $[1]$ are the same underlying module; any isomorphism
+preserving this generator is the identity. Their specified
+functionals differ on that generator, so they are not
+isomorphic as marked modules. This explains why a perturbation
+of size merely $p\det(B)R$ is insufficient. The squared
+determinant condition in Lemma~\ref{hr-perturbation} retains
+the information that is actually used in the germ formula.
+\end{remark}
+
+
+\subsection{The germ formula for the actual marked-cokernel kernel}
+\label{ga-section}
+
+We now combine the initial-block reduction and the scalar
+oscillatory calculation.  All objects in the statement are
+the actual finite orbital sums defined above.
+
+\begin{theorem}\label{ga-actual-germ}
+Fix a block configuration $h$, an integer $m\ge1$, and a
+compact set $Q\subset K^\times$.  Put $s=m+1$.
+There is a neighborhood $V$ of zero such that for all
+$t,c\in K^\times$ with $t\in V$ and $ct^m\in Q$, and every
+comparison configuration $w'$, one has
+\begin{align}\label{ga-actual-kernel-formula}
+ \mathcal K(W_h(t,c),w')
+ ={}&|t|^{-m^2/2}|s|^{-1/2}
+       \sum_{z^s=(-t)^mc}\gamma_m(zt)|z|^{m^2/2}
+          \psi(sz/t)\mathcal K(h[s,z],w').
+\end{align}
+The size, block decomposition and parameters of $w'$ are
+unrestricted.  The neighborhood is chosen before $t,c,w'$.
+For a fixed finite collection of possible $h$, one neighborhood
+works for every member of that collection.
+\end{theorem}
+
+\begin{proof}
+Write $d_h=\det Z(h)$.  For each fixed finite marked target
+module $T$, Section~\ref{hr-section} constructs the test function
+$\Phi_{h,T,s}$.  Lemma~\ref{hr-well-defined} makes it invariant
+under integral lower and upper unipotent multiplication and
+supports it on $d_h^{-1}M_s(R)$.  Corollary~\ref{hr-local-constancy}
+provides one additive lattice on which it is locally constant
+when the determinant belongs to $Q\cup(-Q)$.
+These bounds are independent of the target module.
+They are precisely the three test-function assumptions of
+Section~\ref{sec:theta-scalar-germ}.
+
+Apply Corollary~\ref{sg-scalar-germ}.  Proposition~\ref{hr-sum-identity}
+identifies its two orbital coefficients, giving
+\begin{align}\label{ga-marked-formula}
+ \mathcal B(W_h(t,c);T)
+ ={}&|t|^{-m^2/2}|s|^{-1/2}
+       \sum_{z^s=(-t)^mc}\gamma_m(zt)|z|^{m^2/2}
+               \psi(sz/t)\mathcal B(h[s,z];T).
+\end{align}
+All sums here include every orbital coset on their finite
+effective supports, including nonintegral last-block matrices
+in the initial-block reduction.
+
+Proposition~\ref{gu-uniform-germ} already shows that these
+identities against fixed marked targets imply the germ
+uniformly against all comparison configurations.  In the
+present proof one can also see the uniformity directly:
+the test-function bounds and the scalar-germ neighborhood
+were independent of $T$.  For any $w'$, apply
+\eqref{ga-marked-formula} to each marked module $C_{Z_{q'}}$
+in its finite integral orbital expansion, multiply by
+$\overline{a_{q'}}$, and sum.  Formula
+\eqref{gu-kernel-coefficients} gives
+\eqref{ga-actual-kernel-formula}.  The root sum is finite,
+so the interchange introduces no convergence requirement.
+This argument does not require the size of $w'$ to equal
+the size of $W_h(t,c)$.
+
+Finally, intersect the neighborhoods for finitely many $h$.
+This retains a neighborhood of zero and proves the last assertion.
+\end{proof}
+
+\begin{corollary}\label{ga-actual-truncation}
+For the actual marked-cokernel kernel, the truncated orbital
+identity \eqref{orb-exact-cut} holds under the local hypotheses
+stated in Theorem~\ref{orb-cut-identity}, without an additional
+germ assumption.
+\end{corollary}
+
+\begin{proof}
+The Gram formula gives Hermitian symmetry.
+Proposition~\ref{orb-local-constancy-proved} supplies the
+required local constancy, Corollary~\ref{orb-support-proved}
+supplies the inverse-parameter support, and
+Theorem~\ref{ga-actual-germ} supplies the last hypothesis.
+Apply Theorem~\ref{orb-cut-identity}.
+\end{proof}
+
+This closes the local orbital germ and truncated orbital identity.
+It does not assert a global theta energy bound: the global
+arithmetic and automorphic estimates remain distinct statements.
+
+

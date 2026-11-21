@@ -1,0 +1,342 @@
+\section{One ordinary period for the nonprincipal CM ideal bases}
+\label{ci-section}
+
+The source permits a nonprincipal elliptic lattice.  At every
+prime where its moment theorem is applied it also assumes
+$p\nmid N(I)$.  We verify the extension of
+Section~\ref{ct-section} under this precise hypothesis, using a
+prime-to-$p$ isogeny to keep the same period.  Choosing an unrelated
+unit in $\mathbb C_p$ and making a binomial substitution with that
+unit would not justify this step.
+
+Keep $k=\mathbb Q(\sqrt{-D})$ and
+$\mathcal O_k=\mathbb Z+\mathbb Z\tau$ as in
+Section~\ref{tc-section}.  Throughout this section $p\geq5$
+is a rational prime split in $k$; this is the scope of the
+ordinary theta integrality theorem used here.
+Let $I$ be the ideal (TC43),
+so $[\mathcal O_k:I]=a$, $a$ is odd, and $p\nmid a$.
+The source's curve ideals $J$ satisfy
+$\gcd(N(J),2D)=1$, in particular $N(J)$ is odd.
+Such an integral ideal $J$ can
+first be written $J=gI$ with $g\in\mathbb Z_{>0}$ and
+$I$ primitive of this form.  One obtains $g$ by taking the
+content of a lattice basis; stability under $\tau$ shows
+that the primitive Hermite normal form has second
+$\tau$-coefficient one.
+Then $N(J)=g^2a$, so $p\nmid N(J)$ implies $p\nmid a$
+and $p\nmid g$.  The factor $g$ is included in the
+scaling treated at the end of this section.
+Put
+\[
+ H_I(z,w)=\frac{2}{a\sqrt D}z\overline w,\qquad
+ E_I=\operatorname{Im}H_I,\qquad
+ Q_I(z)=\frac{|z|^2}{a},\qquad h_I=\frac a2.
+ \tag{CI1}
+\]
+Let $\theta_I$ be the reduced odd theta function translated
+by $h_I$ and divided by its value at zero.  Lemma~\ref{tc-ideal-character}
+gives its multiplier $(-1)^{Q_I(v)}$ for $v\in I$.
+It is even and has its zero precisely at $h_I+I$, by the
+same zero-count and uniqueness argument as in
+Lemma~\ref{ct-even-identification}.  All translations below use
+the Hermitian form $H_I$.
+
+\subsection{Prime-to-$p$ isogenies and the common formal parameter}
+
+Let $\mathscr E_0$ be the good ordinary model for
+$\mathbb C/\mathcal O_k$ used in Section~\ref{ct-section}.
+We choose its CM equation and differential over algebraic
+numbers before completing at the selected place, as is
+permitted in that classical CM input.  Further finite
+extensions and the quotients below preserve this convention.
+Write its period lattice relative to a good differential as
+$c_0\mathcal O_k$, and normalize its multiplicative formal
+parameter there.  If $\Omega_{p,0}$ is the associated unit
+period, put
+\[
+                  \omega=\frac{\Omega_{p,0}}{\iota(c_0)}.
+ \tag{CI2}
+\]
+The embedding $\iota$ is the fixed one from that section.
+
+\begin{proposition}\label{ci-common-period}
+There is a good ordinary model $\mathscr E_I$ for
+$\mathbb C/I$ whose multiplicative formal parameter, pulled
+back through the isogeny
+\[
+                    \psi:\mathbb C/I\longrightarrow
+                         \mathbb C/\mathcal O_k,\qquad z\longmapsto z,
+ \tag{CI3}
+\]
+has the same formal relation $z=\omega\log(1+T)$
+in the unscaled complex variable.
+If $\delta_I^{12}=g_2(I)^3-27g_3(I)^2$ and $\delta_0$
+is the corresponding root for $\mathcal O_k$, then
+\[
+ \delta_I/\delta_0\in\overline{\mathbb Q}^{\,\times},
+       \qquad |\iota(\delta_I/\delta_0)|_p=1.
+ \tag{CI4}
+\]
+\end{proposition}
+\begin{proof}
+The inclusions $a\mathcal O_k\subset I\subset\mathcal O_k$
+give (CI3) and its degree-$a$ dual, which in unscaled complex
+coordinates sends $z$ to $az$.
+Construct the latter as a quotient of $\mathscr E_0$ by its
+subgroup $a^{-1}I/\mathcal O_k$.
+After a finite extension this subgroup extends to a finite
+\'etale subgroup of $\mathscr E_0[a]$: since $p\nmid a$,
+multiplication by $a$ has invertible differential, and its
+kernel on the smooth elliptic scheme is finite \'etale.
+The translation action is free.  The finite locally free
+quotient theorem \cite{stacks-07S7} makes the quotient a scheme
+and its quotient map a torsor.  In this case it is finite
+\'etale; smoothness and properness descend through that
+cover.  Its geometrically connected genus-one fibers and
+the image of the zero section make the quotient an elliptic
+scheme.  Thus it is the required good model $\mathscr E_I$.
+The dual isogeny (CI3) extends as well.  Both maps are
+isomorphisms of formal groups: their composite is $[a]$,
+whose formal inverse is integral, and each has a unit
+linear term.  Ordinary reduction is preserved, for example
+because they induce an isomorphism on the $p$-divisible
+formal groups.
+
+Write the period lattice of $\mathscr E_I$, relative to a
+good differential, as $c_I I$.
+The differential multiplier of $\psi$ in these coordinates
+is $u=c_0/c_I$.  It is an algebraic number and a $p$-adic
+unit, since $\psi$ is an algebraic isogeny between the
+chosen algebraic models and its map on formal groups is an
+integral isomorphism.
+If $\lambda_I,\lambda_0$ are their normalized formal
+logarithms, differentiation of the group homomorphism gives
+\[
+               \lambda_0(\psi(t))=\iota(u)\lambda_I(t).
+ \tag{CI5}
+\]
+There is no extra constant because both sides vanish at zero.
+Pull back the chosen multiplicative coordinate of
+$\mathscr E_0$ along $\psi$.  Its period on $\mathscr E_I$
+is
+$\Omega_{p,I}=\Omega_{p,0}/\iota(u)
+=\iota(c_I/c_0)\Omega_{p,0}$, again a unit.
+In the variable $z$ for the lattice $I$, it therefore gives
+\[
+             \frac{\Omega_{p,I}}{\iota(c_I)}
+                       =\frac{\Omega_{p,0}}{\iota(c_0)}=\omega.
+ \tag{CI6}
+\]
+This proves the asserted equality of periods, rather than
+merely equality of their absolute values.
+
+Let $\Delta_0,\Delta_I$ be the discriminants of the two good
+models.  The invariant-differential calculation (CT11) gives
+$(\delta_I/c_I)^{12}=\Delta_I$ and
+$(\delta_0/c_0)^{12}=\Delta_0$, after the fixed algebraic
+identifications.  Their ratio shows that
+$(\delta_I/\delta_0)^{12}
+=(c_I/c_0)^{12}\Delta_I/\Delta_0$ is algebraic.
+All its factors have $p$-adic absolute value one.
+Taking a twelfth root proves both assertions in (CI4).
+\end{proof}
+
+\begin{theorem}\label{ci-integral-translates}
+For every $t\in I\otimes\mathbb Q$ of order prime to $p$
+modulo $I$,
+\[
+                     \widehat{U_t\theta_I}
+                           \bigl(\omega\log(1+T)\bigr)
+                         \in\mathcal O_{\mathbb C_p}[[T]].
+ \tag{CI7}
+\]
+The series is a unit unless $t+h_I\in I$.
+All finite-combination norm identities of
+Theorem~\ref{ct-combination-norm} hold with $\theta_I$ and
+this same $\omega$.
+In particular every prime-to-$p$ translate has integral
+period-scaled moments in every finite family of directions
+from $I$.
+\end{theorem}
+\begin{proof}
+Apply the reduced-theta integrality theorem cited in
+Section~\ref{ct-section} to the good ordinary curve
+$\mathscr E_I$ and to the nonzero two-torsion point $h_I$.
+Its reduced-theta value at zero is a unit.  Translation
+by $t$ composes with that translation up to the root of
+unity $e^{-\pi iE_I(t,h_I)}$.
+The sum $t+h_I$ still has prime-to-$p$ order.
+The cited theorem therefore gives integrality, with unit
+constant term except at the stated zero.
+The inverse of the multiplicative coordinate constructed
+in Proposition~\ref{ci-common-period} is integral with
+unit linear coefficient, and (CI6) identifies its variable
+with the one in (CI7).
+
+The finite-combination assertion follows from the proof of
+Theorem~\ref{ct-combination-norm} on this elliptic scheme:
+choose an even common denominator $N$ prime to $p$, use the
+line bundle $[N]^*\mathcal O([h_I])^{\otimes m}$, and use
+the integral trivialization near zero given by its canonical
+section.  Formula (CI7) makes the corresponding reduced
+expansion an integral unit.  The saturated expansion lemma
+identifies its coefficient norm with the integral
+global-section norm.  Translation by $t/N$ has a power
+equal to a root of unity and is therefore an integral
+automorphism by the vertical-divisor proof of
+Lemma~\ref{ct-torsion-isometry}.
+The exact identity (CT18) uses only the Hermitian Weyl
+formula, so it holds for $H_I$ as well.
+Finally $T\mapsto(1+T)^N-1$ and its inverse are integral,
+and removing that substitution gives the asserted norm
+identity for arbitrary $\mathbb C_p$ coefficients.
+Every element of $I$ belongs to $\mathcal O_k$, so its
+image at this split prime lies in $\mathbb Z_p$.
+Lemma~\ref{lm-directions} now gives the assertion for
+arbitrary finite direction families.
+\end{proof}
+
+\subsection{The selected torsion character and its Weyl phase}
+
+The chosen parameter is compatible with the required
+character, not just with the invariant differential.
+
+\begin{proposition}\label{ci-character}
+The formal $p^n$-torsion of $\mathbb C/I$ consists of
+\[
+ y=\frac{am+b'\tau_b}{p^n}\pmod I,\qquad
+ \iota(am+b'\overline{\tau_b})\in p^n\mathbb Z_p.
+ \tag{CI8}
+\]
+In the parameter of Proposition~\ref{ci-common-period},
+\[
+                1+T(y)=\iota(e^{2\pi ib'/p^n})
+                         =\iota(e^{-2\pi iE_I(a,y)}).
+ \tag{CI9}
+\]
+If $st\in I$, $p\nmid s$, and
+$y=s\nu/p^n$ with $\nu\in I$ and
+$\iota(\bar\nu)\in p^{2n}\mathbb Z_p$, then
+\[
+ \widehat{e^{\pi iQ_I(y)}U_y(U_t\theta_I)}
+                       \bigl(\omega\log(1+T)\bigr)
+  =S_\zeta\!\left(\widehat{U_t\theta_I}
+                       \bigl(\omega\log(1+T)\bigr)\right),
+ \quad
+ \zeta=\iota(e^{-2\pi iE_I(a,y)}).
+ \tag{CI10}
+\]
+\end{proposition}
+\begin{proof}
+The isogeny (CI3) identifies the formal groups and their
+$p$-power torsion.  Since
+$\tau_b=\tau+(b-1)/2$, the image of the numerator in
+(CI8), in the basis $1,\tau$, is
+$am+b'(b-1)/2+b'\tau$.
+Its conjugate-divisibility condition and its coefficient
+of $\tau$ are exactly those in
+Proposition~\ref{ct-character-normalization}.
+This proves (CI8)--(CI9), including the simultaneous
+normalization for every $n$.
+Alternatively, $a$ is a unit modulo $p^n$, so (CI8)
+has exactly one residue of $m$ for every $b'$; this
+also proves directly that its character is an isomorphism.
+
+We record the arithmetic changes in the proof of
+Theorem~\ref{ct-power-translation}; they are the only
+changes needed for (CI10).
+Because $N(\nu)/a\in\mathbb Z$ and $p\nmid a$, the strong
+conjugate divisibility gives
+$Q_I(\nu/p^n)\in\mathbb Z$.
+Choose $\epsilon\in2\mathcal O_k$ with
+$\epsilon\equiv1\pmod{\mathfrak p^n}$ and
+$\epsilon\equiv0\pmod{\bar{\mathfrak p}^{\,n}}$.
+Then
+\[
+  (\epsilon-1)\nu/p^n\in I,\qquad
+                  \bar\epsilon\nu/p^n\in2I.
+ \tag{CI11}
+\]
+At the two primes over $p$ this follows from the two
+congruences and the strong divisibility, using
+$I\otimes\mathbb Z_p=\mathcal O_k\otimes\mathbb Z_p$.
+At every other prime the denominator is a unit;
+the factor two follows because $\epsilon$ is even and
+$p$ is odd.
+The rational elliptic function
+$\theta_I(\epsilon z)/\theta_I(\bar\epsilon z)$ has no
+zero or pole in the formal subgroup: all such points
+map to the nonzero two-torsion point $h_I$.
+Applying the formal translation identity (CT22) and
+cancelling its unit denominator, exactly as in
+(CT28)--(CT30), gives
+$S_\zeta\widehat\theta_I
+=\widehat{U_{\epsilon y}\theta_I}$ for $y=\nu/p^n$.
+
+Write $\epsilon=A+B\tau$ and $l=(\epsilon-1)y$.
+The two phase identities are now
+\[
+ E_I(y,l)=-B Q_I(y),\qquad
+ Q_I(l)=(N(\epsilon)-2A-B+1)Q_I(y).
+ \tag{CI12}
+\]
+Consequently
+$e^{\pi iE_I(y,l)-\pi iQ_I(l)}
+=e^{\pi iQ_I(y)}$, since their exponent difference
+is $(2A-2-N(\epsilon))Q_I(y)$, an even integer.
+This proves the base-theta assertion.
+For $st\in I$, apply (CT22) to the elliptic rational
+function
+$z\mapsto(U_t\theta_I)(sz)/\theta_I(sz)$ and to
+$\nu/p^n$.  Its poles avoid the formal subgroup.
+The invertible substitution $[s]$ gives the ratio
+identity (CT33), now for $I$.
+Multiplying by the base-theta identity proves (CI10).
+The operator $S_\zeta$ and its inverse preserve the
+coefficient norm by (CT21).
+\end{proof}
+
+\subsection{Scaling the lattice and the actual restriction on primes}
+
+For $L=\lambda I$ and its normalized theta function,
+uniqueness gives $\theta_L(\lambda z)=\theta_I(z)$, and
+the Hermitian forms give
+\[
+          (U_{\lambda t}^{L}\theta_L)(\lambda z)
+                           =(U_t^{I}\theta_I)(z).
+ \tag{CI13}
+\]
+Thus a direction $v_j=\lambda u_j\in L$ satisfies, identically
+before transport,
+\[
+ (U_{\lambda t}^{L}\theta_L)
+       \left(\omega\sum_j\lambda u_j\log(1+T_j)\right)
+ =
+ (U_t^{I}\theta_I)
+       \left(\omega\sum_j u_j\log(1+T_j)\right).
+ \tag{CI14}
+\]
+Here the displayed identity is understood first with an
+indeterminate scalar $w$ in place of $\omega$, and then
+after transporting its formal coefficients and setting
+$w=\omega$.  This is why the same $\omega$ supplies the moments on
+$L$: the complex scaling cancels in the function and
+its directions.  No assertion that $|\iota(\lambda)|_p=1$
+has been made or used.
+
+Writing $\omega=\Omega/\iota(\delta_0)$, the number $\Omega$
+is the single unit already fixed in Section~\ref{ct-section}.
+Equation (CI4) implies that
+$\Omega\,a\,\iota(\delta_I/\delta_0)$ is a unit as well.
+This is the period adjustment that occurs when the source
+changes from lattice directions to its arithmetic
+trace-pairing coordinates.
+The results here require $p\ge5$, $p$ split, and $p\nmid a$.
+The inspected moment and local-normalization statements
+explicitly impose the last condition; no claim for $p\mid a$
+is needed for them.  Without it, the character in (CI9)
+need not be a generator and the particular prime-to-$p$
+isogeny argument above does not apply.
+
+

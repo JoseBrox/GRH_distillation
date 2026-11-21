@@ -1,0 +1,432 @@
+\section{The finite radial decomposition without the larger normal form}
+\label{rd-section}
+
+We now construct the algebra homomorphism required in
+\eqref{rp-required-normal-form}.  Only the terminal
+operator proved in Section~\ref{rp-section} and the
+compact branching law of Theorem~\ref{ib-compact-branching}
+are needed.  In particular, the construction does not
+require the additional raising and lowering operators
+in the larger source normal form
+\cite{alpo-uniform-source}.
+
+\subsection{The function space and the actual matrix field}
+
+Retain the Hermitian space $V$ of signature $(k,1)$,
+the vectors $z,z'$ and the positive constants $T,T'$
+from Section~\ref{rp-section}.  Let
+\[
+ K_z=\{a\in U(V,h):az=z\},\qquad
+ K_{z'}=\{b\in U(V,h):bz'=z'\}.
+\]
+Let $\pi:K_z\to U(W')$ and
+$\pi':K_{z'}\to U(W)$ be nonzero irreducible,
+finite-dimensional continuous unitary representations.
+Let $r\geq0$ and set
+\[
+ \Omega=(\mathbb C^\times)^r,\qquad
+ D=\{g\in U(V,h):G(g)>0\}.
+\]
+For $r=0$, $\Omega$ is a one-point space.
+Define $\mathscr R$ to be the space of smooth functions
+\[
+ \Phi:\Omega\times D\longrightarrow\operatorname{Hom}(W,W')
+\]
+with
+\begin{equation}\label{rd-biequivariance}
+ \Phi(c,agb)=\pi(a)\Phi(c,g)\pi'(b)
+              \quad(a\in K_z,\ b\in K_{z'}).
+\end{equation}
+Extend these functions by zero outside $\Omega\times D$.
+Smoothness is required on this open submanifold only,
+not across its boundary.  This is the source's radial
+function space after identifying the terminal group
+with $U(V,h)$.  Its formulation using local smooth
+extensions to matrix space is equivalent: local
+coordinates for an embedded Lie group extend a smooth
+function by making it constant in the normal
+coordinates.
+
+For $g\in D$, write $x=z'$, $y=g^{-1}z$, and let
+\[
+                       E_g=\langle y,x\rangle^\perp.
+\]
+This is a positive space of dimension $k-1$.
+Using any orthonormal basis of $E_g$, define the
+matrix $C_g(Y)$ on $W$ by
+Corollary~\ref{rp-finite-terminal}.
+
+\begin{lemma}\label{rd-smooth-matrix}
+The matrix $C_g(Y)$ is independent of the chosen
+orthonormal basis of $E_g$.  It is smooth in $g$,
+polynomial in $Y$, and obeys
+\begin{equation}\label{rd-matrix-equivariance}
+ C_{agb}(Y)=\pi'(b)^{-1}C_g(Y)\pi'(b).
+\end{equation}
+Consequently
+\begin{equation}\label{rd-actual-X}
+             (X(Y)\Phi)(c,g)=\Phi(c,g)C_g(Y)
+\end{equation}
+defines an endomorphism of $\mathscr R$.  This is the
+actual differential operator
+$G^{-1}\mathcal T_{22}(Y)$, and it does not enlarge
+the support of a function.
+\end{lemma}
+
+\begin{proof}
+A change of orthonormal basis in $E_g$ conjugates its
+general-linear generators exactly as in
+Lemma~\ref{rp-capelli}.  Full determinant covariance
+makes $C_g(Y)$ unchanged.
+
+To check smoothness without choosing a global frame,
+put
+\[
+ v_g=y+\frac{h(y,x)}{T'}x.
+\]
+Then $v_g\in x^\perp$ and direct expansion gives
+$h(v_g,v_g)=G(g)/T'>0$.  The space $E_g$ is the
+orthogonal complement of $v_g$ in the fixed positive
+space $x^\perp$.  Its orthogonal projection is
+\[
+       v\longmapsto v-\frac{h(v,v_g)}{h(v_g,v_g)}v_g
+                                      \quad(v\in x^\perp),
+\]
+which varies smoothly in $g$.  Near a fixed point,
+project a fixed basis of $E_g$ by these projections
+and apply positive-definite Gram--Schmidt.  The
+resulting local orthonormal frame is smooth, since
+all denominators and the required squared norms
+are positive near that point.  The definition of
+$C_g(Y)$ is polynomial in the associated rank-one
+matrices and their images under $d\pi'_{\mathbb C}$,
+so it is smooth in that neighborhood.  Frame
+independence makes these descriptions agree.
+
+For $g'=agb$ one has $y'=b^{-1}y$, while
+$b^{-1}x=x$.  Thus $E_{g'}=b^{-1}E_g$.
+Conjugating the rank-one matrices by $b^{-1}$
+conjugates their representation operators by
+$\pi'(b)^{-1}$.  Ordered products give
+\eqref{rd-matrix-equivariance}.
+Combining it with \eqref{rd-biequivariance} proves
+that \eqref{rd-actual-X} again satisfies
+\eqref{rd-biequivariance}.  Joint smoothness and
+the zero extension are preserved.
+Corollary~\ref{rp-finite-terminal}, applied to
+$g\mapsto\Phi(c,g)$ for fixed $c$, identifies it
+with the actual differential operator.  The
+displayed multiplication formula proves the
+support assertion.
+\end{proof}
+
+\subsection{Matching the source parameters with highest weights}
+
+Let the spectral parameters $u,u'$ satisfy
+\eqref{rp-interlacing}, and suppose the compact types
+are specified by the source's Capelli equations:
+on the representation with parameters $u$ the
+full $k$-dimensional determinant is
+\begin{equation}\label{rd-source-Capelli}
+       Q_k(w)=\prod_{i=1}^k
+           \left(w-\frac{k-1}{2}+u_i\right)\operatorname{Id},
+\end{equation}
+and the analogous equation holds for $u'$.
+The common integral coset condition is as in
+Section~\ref{rp-section}.
+
+\begin{lemma}\label{rd-highest-parameters}
+With highest weights indexed from $1$ to $k$, the
+representations $\pi,\pi'$ have respectively
+\begin{equation}\label{rd-lambda-u}
+ \lambda_i=u_i+i-1-\frac{k-1}{2},
+ \qquad
+ \lambda'_i=u'_i+i-1-\frac{k-1}{2}.
+\end{equation}
+In particular these numbers are integers.
+The common irreducible constituents on restriction
+to a common positive $(k-1)$-dimensional subspace
+are indexed exactly by the tuples $\rho\in\mathcal S$
+from Section~\ref{rp-section}, under
+\begin{equation}\label{rd-mu-rho}
+                   \rho_i=\mu_i-i+1+\frac{k-2}{2}.
+\end{equation}
+On such a constituent the operator $C_g(Y)$ acts by
+$p_\rho(Y)$.
+\end{lemma}
+
+\begin{proof}
+The highest-weight classification in
+Lemma~\ref{cb-highest-classification} gives integral
+dominant weights $\lambda,\lambda'$.
+Corollary~\ref{rp-central-character} gives the
+full Capelli eigenvalue
+$\prod_{i=1}^k(w-i+1+\lambda_i)$.
+Its constants $\lambda_i-i+1$ are strictly
+decreasing.  The $u_i$ are also strictly decreasing
+by \eqref{rp-interlacing}.  Comparison with
+\eqref{rd-source-Capelli} and equality of ordered
+real roots prove \eqref{rd-lambda-u}.
+
+By Theorem~\ref{ib-compact-branching}, a highest
+weight $\mu$ occurs on restriction from the left
+type precisely when
+$\lambda_i\geq\mu_i\geq\lambda_{i+1}$, and similarly
+for the right type.  Applying \eqref{rd-lambda-u}
+and \eqref{rd-mu-rho}, the simultaneous conditions
+become
+\[
+ \max(u_{i+1},u'_{i+1})+\tfrac12
+          \leq \rho_i
+          \leq \min(u_i,u'_i)-\tfrac12 .
+\]
+Moreover
+$\rho_i-\max(u_{i+1},u'_{i+1})-1/2
+=\mu_i-\max(\lambda_{i+1},\lambda'_{i+1})$
+is an integer.  These are exactly the finite sets
+defining $\mathcal S$.
+The inequalities automatically make $\mu$ dominant.
+Finally the $(k-1)$-dimensional Capelli eigenvalue
+at $w=Y+(k-2)/2$ is
+\[
+ \prod_{i=1}^{k-1}(Y+(k-2)/2-i+1+\mu_i)
+                                      =p_\rho(Y).
+\]
+For $k=1$ the common subgroup is trivial, each
+original representation is one-dimensional,
+$\mathcal S$ has the empty tuple, and this last
+determinant is $1$.
+\end{proof}
+
+\begin{lemma}\label{rd-common-types}
+For every $\Phi\in\mathscr R$ and $g\in D$,
+the map $\Phi(c,g)$ vanishes on all right
+constituents whose type does not also occur on
+the left.  Thus its nonzero components have
+precisely the possible Capelli polynomials
+$p_\rho(Y)$, $\rho\in\mathcal S$.
+\end{lemma}
+
+\begin{proof}
+Let $H_g$ be the subgroup that acts arbitrarily
+on $E_g$ and as the identity on $\langle y,x\rangle$.
+It is isomorphic to $U(k-1)$.
+For $h\in H_g$, one has $h\in K_{z'}$ and
+$ghg^{-1}\in K_z$.  Evaluating
+\eqref{rd-biequivariance} in these two ways gives
+\[
+             \Phi(c,g)\pi'(h)
+                 =\pi(ghg^{-1})\Phi(c,g).
+\]
+Both restrictions are orthogonal sums of the
+irreducibles in the compact branching theorem.
+An intertwiner between two nonisomorphic
+irreducibles is zero: its kernel and image
+are invariant, so a nonzero such map would
+be an isomorphism.  Projection onto the
+orthogonal left summands therefore shows that
+every noncommon right summand is annihilated.
+Lemma~\ref{rd-highest-parameters} identifies the
+remaining labels and eigenvalues.
+\end{proof}
+
+\subsection{Construction of the projections}
+
+\begin{theorem}\label{rd-constructed-kappa}
+There is a unique unital algebra homomorphism
+\[
+       \kappa:\mathbb C^{\mathcal S}
+                    \longrightarrow
+                         \operatorname{End}_{\mathbb C}(\mathscr R)
+\]
+such that
+\begin{equation}\label{rd-kappa-identity}
+       \kappa((p_\rho(Y))_\rho)
+                =X(Y)=G^{-1}\mathcal T_{22}(Y)
+                            \qquad(Y\in\mathbb C).
+\end{equation}
+It can be chosen as a polynomial in one actual
+terminal operator.  For
+$P_\rho=\kappa(1_{\{\rho\}})$, every radial
+function has the decomposition
+\begin{equation}\label{rd-decomposition}
+ \Phi=\sum_{\rho\in\mathcal S}P_\rho\Phi,\qquad
+ \mathcal T_{22}(Y)P_\rho\Phi
+                        =G\,p_\rho(Y)P_\rho\Phi.
+\end{equation}
+At every point the summands are orthogonal in
+the Hilbert--Schmidt form.  In particular
+\begin{equation}\label{rd-pointwise-contraction}
+ \sum_\rho\|(P_\rho\Phi)(c,g)\|_{\rm HS}^2
+                      =\|\Phi(c,g)\|_{\rm HS}^2 .
+\end{equation}
+All projections preserve the stated smooth
+equivariance and do not enlarge supports.
+\end{theorem}
+
+\begin{proof}
+Choose a real $Y_0$ for which
+$\xi_\rho=p_\rho(Y_0)$ are distinct, as in
+Proposition~\ref{rp-idempotent-positive}.
+Let
+\[
+ q_0(Z)=\prod_{\rho\in\mathcal S}(Z-\xi_\rho),
+ \qquad
+ \ell_\rho(Z)=
+       \prod_{\sigma\ne\rho}
+           \frac{Z-\xi_\sigma}{\xi_\rho-\xi_\sigma}.
+\]
+We first prove $q_0(X(Y_0))=0$ on $\mathscr R$.
+At a fixed $(c,g)$, induction on the degree shows
+that a polynomial $a$ obeys
+\[
+ (a(X(Y_0))\Phi)(c,g)
+                         =\Phi(c,g)a(C_g(Y_0)).
+\]
+This uses \eqref{rd-actual-X} for every function
+to which the next operator is applied.
+Lemma~\ref{rd-common-types} shows that
+$\Phi(c,g)q_0(C_g(Y_0))=0$: on common types
+the factor is zero, while on other types
+$\Phi(c,g)$ itself is zero.
+Outside the prescribed domain all functions
+are zero.  Pointwise equality proves
+$q_0(X(Y_0))=0$.
+
+In the quotient algebra $\mathbb C[Z]/(q_0)$,
+the $\ell_\rho$ are mutually annihilating
+idempotents and their sum is $1$.
+Indeed each claimed polynomial identity
+vanishes at every distinct $\xi_\rho$ and
+is therefore divisible by $q_0$.
+Set
+\[
+     P_\rho=\ell_\rho(X(Y_0)),\qquad
+     \kappa(f)=\sum_\rho f(\rho)P_\rho.
+\]
+The same identities hold as operators, proving
+that $\kappa$ is a unital algebra homomorphism.
+For a right constituent of common type $\sigma$,
+its evaluation satisfies
+\[
+            (P_\rho\Phi)(c,g)
+              =\Phi(c,g)\ell_\rho(C_g(Y_0)),
+ \qquad
+ \ell_\rho(C_g(Y_0))|_{W_\sigma}
+                          =\delta_{\rho,\sigma}\operatorname{Id}.
+\]
+Noncommon constituents are killed by $\Phi(c,g)$.
+Consequently both sides of
+\eqref{rd-kappa-identity}, evaluated at $(c,g)$,
+act as $p_\sigma(Y)$ on every surviving
+constituent, and agree.  This proves the identity
+for all complex $Y$, without an analytic
+continuation argument.
+
+The idempotent identities now imply
+\eqref{rd-decomposition}.  Since $C_g(Y_0)$ is
+self-adjoint, the proof of
+Proposition~\ref{rp-idempotent-positive} gives
+pointwise orthogonality and
+\eqref{rd-pointwise-contraction}.
+Lemma~\ref{rd-smooth-matrix} shows that every
+polynomial in $X(Y_0)$ acts within $\mathscr R$.
+Its pointwise matrix formula also preserves
+the support of the original function.
+
+Finally any unital algebra homomorphism satisfying
+\eqref{rd-kappa-identity} must send $1_{\{\rho\}}$
+to $\ell_\rho(X(Y_0))$, since
+$1_{\{\rho\}}=\ell_\rho((\xi_\sigma)_\sigma)$
+in the finite function algebra.  This proves
+uniqueness.  In particular its action agrees
+with the action of the source's larger normal
+form whenever that form is supplied.
+\end{proof}
+
+No estimate on the separation between the
+$\xi_\rho$ is needed.  They are used to construct
+the projections, but the resulting estimate
+\eqref{rd-pointwise-contraction} has constant one.
+In particular there is no hidden dependence on
+the size of the type set or on the interpolation
+denominators in this estimate.
+
+\begin{corollary}\label{rd-integrated-projections}
+Let $\nu$ be any positive measure on
+$\Omega\times D$.  Whenever the functions in
+question are square integrable, the projections
+$P_\rho$ are mutually orthogonal contractions
+for the Hilbert--Schmidt $L^2(\nu)$ norm, and
+\[
+ \|\Phi\|_{L^2(\nu)}^2
+                  =\sum_\rho\|P_\rho\Phi\|_{L^2(\nu)}^2.
+\]
+For $f\in\mathbb C^{\mathcal S}$,
+\[
+ \|\kappa(f)\Phi\|_{L^2(\nu)}
+              \leq \max_\rho|f(\rho)|\,\|\Phi\|_{L^2(\nu)}.
+\]
+The same assertions hold after inserting any
+nonnegative measurable scalar weight into the
+measure.  Each $P_\rho$ commutes with scalar
+multiplication and with differentiation in
+the variables $c\in\Omega$.
+\end{corollary}
+
+\begin{proof}
+Integrate \eqref{rd-pointwise-contraction};
+the sum is finite.  More generally, its
+orthogonal components give
+$\|\kappa(f)\Phi(c,g)\|_{\rm HS}^2
+=\sum_\rho|f(\rho)|^2
+\|(P_\rho\Phi)(c,g)\|_{\rm HS}^2$.
+Integration proves the bound.
+The projections are pointwise right
+multiplications by matrices depending only
+on $g$, which proves the last assertions
+whenever both sides are defined on the
+smooth radial space.
+\end{proof}
+
+\begin{corollary}\label{rd-actual-positive-density}
+Under the actual compact-type and spectral-margin
+hypotheses, the terminal density
+\eqref{rp-terminal-density} is nonnegative
+without an additional normal-form premise.
+For a fixed $c$, it is integrable against Haar
+measure on $U(V,h)$ if all its finitely many
+functions $\Psi_e(c,\cdot)$ have compact
+support in $D$.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{rd-constructed-kappa} supplies
+exactly \eqref{rp-required-normal-form}, so
+Corollary~\ref{rp-terminal-density-positive}
+applies.  On the finite union of the compact
+supports, $G$ has a positive minimum and
+$|\zeta|^2/G$ is bounded.  The functions,
+their projections, and all displayed
+coefficients are continuous there.
+The density is therefore bounded and
+compactly supported.  Haar measure is
+finite on compact sets, proving
+integrability.
+\end{proof}
+
+The construction proves the entire finite
+spectral decomposition needed for terminal
+positivity, not just a conditional implication
+from the larger normal form.  It also proves
+an exact contraction estimate for arbitrary
+positive measures.  The remaining analytic
+task is to identify the original integrated
+differential forms with these densities on
+the source's generated function classes,
+including their noncompact members and
+successive radial integrations.  Compact
+support at one fixed value of $c$ is not
+asserted for that whole class.
+
+

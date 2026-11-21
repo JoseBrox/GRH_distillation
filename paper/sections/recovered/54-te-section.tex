@@ -1,0 +1,586 @@
+\section{Exact equivariance of the arithmetic theta family}
+\label{te-section}
+
+An eighth-power identity does not by itself give an identity of
+theta functions with the prescribed scalar.  The arithmetic
+hypotheses supply the additional information needed here.  We
+prove the exact identities, including the determinant characters.
+The argument uses unramifiedness of the CM extension at every
+finite place and the even dimensions in the construction.
+
+\subsection{The trace lattices and their semicharacter}
+
+Let $k=\mathbb Q(\sqrt{-D})$, $\sigma=\sqrt{-D}=i\sqrt D$,
+and $\tau=(1+\sigma)/2$, with
+$\mathcal O_k=\mathbb Z[\tau]$ and $D\equiv7\pmod8$.
+Let $E/F$ be a CM quadratic extension unramified at every
+finite place, with $k\subset E$ and $F$ its maximal real
+subfield.  Write $\mathcal O=\mathcal O_E$ and let $\Sigma$
+be the embeddings of $E$ into $\mathbb C$ extending the
+specified embedding of $k$; put $d=|\Sigma|$.
+Choose a fractional $\mathcal O$-ideal $\mathfrak a$ with
+\[
+          \mathfrak a\overline{\mathfrak a}
+                         =\mathfrak D_{E/k}^{-1}.
+ \tag{TE1}
+\]
+This is the ideal denoted by the inverse of the chosen half
+different in the construction.  Its existence is part of the
+arithmetic datum; the assertion below retains the exact equality
+(TE1).  Let $I$ be the elliptic ideal of norm $a$, and let
+$\lambda\in\mathbb C^\times$ be its common complex scaling.
+
+For unimodular Hermitian $\mathcal O$-lattices
+$L\subset E^n$, $M\subset E^{n'}$, define
+\[
+ \begin{split}
+ W_{n,n'}&=\prod_{\eta\in\Sigma}
+                      \operatorname{Mat}_{n'\times n}(\mathbb C),\\
+ \Lambda(L,M)&=\{(\lambda\eta(X))_{\eta\in\Sigma}:
+             X\in I\mathfrak a\operatorname{Hom}_{\mathcal O}(L,M)\},\\
+ H(X,Y)&=\frac{2}{a|\lambda|^2\sqrt D}
+                  \sum_{\eta\in\Sigma}\operatorname{tr}(X_\eta Y_\eta^*),
+       \qquad E_H=\operatorname{Im}H.
+ \end{split}
+ \tag{TE2}
+\]
+The symbol $E_H$ denotes the alternating form; the unadorned
+$E$ continues to denote the number field.  The standard
+Hermitian forms on the two vector spaces are used in (TE2).
+Put $L_0=\mathcal O^n$ and $M_0=\mathcal O^{n'}$.
+
+\begin{lemma}\label{te-trace-lattice}
+Every lattice in (TE2) is self-dual for $E_H$.
+All these lattices are commensurable and stable under
+$\mathcal O$.  On each of them
+\[
+       Q(x)=\frac{\sqrt D}{2}H(x,x)\in\mathbb Z,
+                    \qquad \alpha(x)=e^{\pi iQ(x)}\in\{1,-1\}
+ \tag{TE3}
+\]
+is the same sign semicharacter.
+\end{lemma}
+\begin{proof}
+The Hermitian trace dual of
+$\operatorname{Hom}_{\mathcal O}(L,M)$ for the $E$-valued
+form $\operatorname{tr}(XY^*)$ is itself.  To check this,
+localize at a prime, use a basis of $L$ and a basis of $M$,
+and use their Hermitian dual bases at the conjugate prime.
+The matrix units and their duals give precisely the asserted
+dual module.  This argument does not assume that the global
+projective modules have bases.
+
+For the $k$-valued trace form, taking a dual inserts
+$\mathfrak D_{E/k}^{-1}$.  Thus the dual of
+$I\mathfrak a\operatorname{Hom}(L,M)$ for that form divided
+by $a$ is
+\[
+ a\overline I^{-1}\overline{\mathfrak a}^{-1}
+       \mathfrak D_{E/k}^{-1}\operatorname{Hom}(L,M)
+             =I\mathfrak a\operatorname{Hom}(L,M).
+\]
+Here $I\overline I=(a)$ and (TE1) were used.
+The inverse different of $k/\mathbb Q$ is
+$\sigma^{-1}\mathcal O_k$.  Since
+\[
+ \operatorname{Tr}_{k/\mathbb Q}(t/\sigma)
+                              =2\operatorname{Im}(t)/\sqrt D,
+\]
+passing to the alternating form in (TE2) gives exactly
+the same dual lattice.  The factors $\lambda$ cancel in
+the numerator and denominator.  This proves self-duality.
+Full lattices in the same rational vector space are
+commensurable, and stability under $\mathcal O$ is immediate.
+Finally $Q(x)=E_H(\tau x,x)$, so integrality and the
+semicharacter law follow from (TC42).
+\end{proof}
+
+Use the normalized averaging operators $I_{\Lambda,\Lambda'}$
+of (TC10), with positive square roots of their indices.
+No change in that normalization will be made below.
+
+\subsection{A common local hyperbolic decomposition}
+
+\begin{lemma}\label{te-local-pair}
+Let $A$ be a complete discrete valuation ring of
+characteristic zero with finite residue field, and let $B$
+be its unramified quadratic extension, with involution
+$x\mapsto\bar x$.  Let $V$ be an even-dimensional
+nondegenerate Hermitian space over $\operatorname{Frac}(B)$.
+If $M,N$ are unimodular $B$-lattices in $V$, there is a
+decomposition into hyperbolic planes with vectors $v_j,u_j$
+and integers $a_j\geq0$ such that
+\[
+ \begin{split}
+ M&=\bigoplus_j(Bv_j\oplus Bu_j),\\
+ N&=\bigoplus_j(B\varpi^{-a_j}v_j\oplus B\varpi^{a_j}u_j),\\
+ h(v_i,v_j)&=h(u_i,u_j)=0,\qquad h(v_i,u_j)=\delta_{ij}.
+ \end{split}
+ \tag{TE4}
+\]
+In particular, an idempotent $e$ preserves both lattices
+and satisfies $e^*=1-e$.
+For a split quadratic algebra $B=A\times A$, an idempotent
+with the same properties exists in every dimension.
+\end{lemma}
+\begin{proof}
+We use the convention that $h$ is conjugate-linear in its
+first variable.  Trace and norm on units are surjective by
+Lemma~\ref{acl-local-norm}, including in residue
+characteristic two.
+
+First a single unimodular even-dimensional lattice is a
+sum of hyperbolic planes.  Proposition~\ref{acl-local-basis}
+gives an orthonormal basis.  In any pair of its coordinates
+choose $t\in B^\times$ with $t\bar t=-1$; the vector
+$(1,t)$ is primitive and isotropic.  Unimodularity gives
+a vector $z$ paired with it to one.  Replacing $z$ by
+$z-c(1,t)$, where $c+\bar c=h(z,z)$, makes $z$ isotropic
+without changing this pairing.  The resulting hyperbolic
+plane splits integrally, and induction proves the assertion.
+
+For two lattices, let $a\geq0$ be the least integer with
+$\varpi^aN\subset M$.  Duality also gives
+$\varpi^aM\subset N$.  If $a=0$, the lattices are equal
+and the preceding argument applies.  If $a>0$, choose
+$w\in\varpi^aN$ primitive in $M$; otherwise $a$ was not
+minimal.  Its norm lies in $\varpi^{2a}A$.
+Choose $z\in M$ with $h(w,z)=1$ and choose $c\in B$
+whose trace is a unit.  The equation
+\[
+ h(w+\varpi^{2a}ctz,w+\varpi^{2a}ctz)=0
+                    \qquad(t\in A)
+ \tag{TE5}
+\]
+divided by $\varpi^{2a}$ has the form
+$b+t\operatorname{Tr}(c)+\varpi^{2a}N(c)h(z,z)t^2=0$.
+It has a root modulo $\varpi$, and its derivative is a
+unit there.  Successively correcting the root modulo
+$\varpi^r$ and taking its limit gives a root in $A$.
+This also supplies the required elementary form of
+Hensel's argument.
+
+The resulting vector $v$ is primitive in $M$, is isotropic,
+and still belongs to $\varpi^aN$, because
+$\varpi^{2a}M\subset\varpi^aN$.
+Choose $u\in M$ with $h(v,u)=1$ and make it isotropic
+by subtracting $cv$ with $c+\bar c=h(u,u)$.
+The vectors $v,u$ split a unimodular hyperbolic plane
+off $M$.  The vectors $\varpi^{-a}v,\varpi^a u$
+belong to $N$, are isotropic, and have pairing one;
+they split the same plane off $N$.
+The two orthogonal complements are again unimodular
+lattices of even rank.  Induction gives (TE4).
+Projection onto the span of the $v_j$ has the stated
+properties.  In the split case use multiplication by
+$(1,0)$; its adjoint is multiplication by $(0,1)$.
+\end{proof}
+
+\begin{proposition}\label{te-projector}
+Let $M,N$ be unimodular $\mathcal O$-lattices of even
+rank in one Hermitian $E$-space.  For every positive
+rational integer $b$ there is an $E$-linear map $e$
+preserving both lattices such that each of
+\[
+ e^2-e,\quad e+e^*-1,\quad e^*e,\quad ee^*,\quad
+                 (1-e)^*(1-e),\quad(1-e)(1-e)^*
+ \tag{TE6}
+\]
+maps $M+N$ into $b(M\cap N)$.
+\end{proposition}
+\begin{proof}
+Put $\mathscr R=\operatorname{End}_{\mathcal O}(M)
+\cap\operatorname{End}_{\mathcal O}(N)$.  It is a full
+finitely generated $\mathbb Z$-lattice in
+$\operatorname{End}_E(V)$ and a ring.  It is stable under
+adjoint, since $M$ and $N$ are self-dual.
+Choose a positive integer $c$ with
+$c(M+N)\subset b(M\cap N)$.
+At each finite place of $F$ above a divisor of $c$,
+Lemma~\ref{te-local-pair} supplies an exact idempotent
+preserving both completed lattices and satisfying
+$e_v^*=1-e_v$.  All polynomials in (TE6) vanish at $e_v$.
+
+Completion commutes with this intersection of two full
+lattices: after clearing denominators it is the kernel
+of a homomorphism to a finite module, and completion is
+exact on finitely generated modules over $\mathbb Z$.
+Thus these local maps belong to the corresponding
+completions of $\mathscr R$.
+The Chinese remainder theorem on the finite free
+$\mathbb Z$-module $\mathscr R$ gives
+$e\in\mathscr R$ congruent to all of them modulo
+$c\mathscr R$ at the primes dividing $c$.
+Every expression in (TE6) then lies in $c\mathscr R$;
+membership is checked at these primes, and elsewhere
+$c$ is a unit.  Its image of $M+N$ lies in
+$c(M+N)\subset b(M\cap N)$, as claimed.
+\end{proof}
+
+\subsection{The finite quadratic sum has positive sign}
+
+For three commensurable self-dual lattices
+$\Lambda_1,\Lambda_2,\Lambda_3$, recall the finite group
+and its quadratic function from the proof of
+Theorem~\ref{tc-triple}:
+\[
+ \begin{split}
+ P&=\{(z,y)\in\Lambda_3\times\Lambda_2:z+y\in\Lambda_1\},\\
+ T&=\{(t,u-t):t\in\Lambda_2\cap\Lambda_3,
+                              \ u\in\Lambda_1\cap\Lambda_2\},\\
+ \psi(z,y)&=\alpha(z)\alpha(y)\alpha(z+y)e^{-\pi iE_H(z,y)}.
+ \end{split}
+ \tag{TE7}
+\]
+The function $\psi$ is a well-defined homogeneous quadratic
+function on $P/T$.  Its sum differs from the scalar
+in $I_{23}I_{12}=\mu I_{13}$ by a positive real factor,
+and $|\mu|=1$.
+
+\begin{lemma}\label{te-positive-gauss}
+Suppose an endomorphism $e$ of the ambient rational space
+preserves the three lattices, commutes with $k$, and
+each of $e^2-e$, $e^*e$, and $(1-e)^*(1-e)$ carries
+$\Lambda_1+\Lambda_2+\Lambda_3$ into
+$\Lambda_1\cap\Lambda_2\cap\Lambda_3$.
+Then $\mu=1$.
+\end{lemma}
+\begin{proof}
+The map $(z,y)\mapsto(ez,ey)$ induces an idempotent on
+$P/T$: its square minus itself has both coordinates in
+the common intersection, and every such pair belongs
+to $T$.  Consequently
+$P/T=A\oplus B$, where $A$ and $B$ are the images of
+$e$ and $1-e$.
+
+Put
+\[
+ \beta(x,y)=\sqrt D\operatorname{Re}H(x,y)-E_H(x,y)
+                         =2E_H((\tau-1)x,y).
+ \tag{TE8}
+\]
+If $x,y,x+y$ lie in the indicated three lattices,
+integrality of their $Q$-values gives
+$\psi(x,y)=e^{\pi i\beta(x,y)}$.
+For $(z,y)\in P$,
+\[
+       \beta(ez,ey)=\beta(z,e^*ey)\in2\mathbb Z,
+\]
+because $z,e^*ey\in\Lambda_3$ and $\Lambda_3$ is
+$\mathcal O_k$-stable.  Hence $\psi=1$ on $A$.
+The same argument with $1-e$ proves $\psi=1$ on $B$.
+Writing $b_\psi$ for the polar bicharacter gives
+\[
+       \sum_{x\in P/T}\psi(x)
+                    =\sum_{a\in A}\sum_{b\in B}b_\psi(a,b)\geq0.
+ \tag{TE9}
+\]
+Indeed the inner sum of any character of a finite group
+is either its order or zero, as follows by translating
+the sum by an element where the character is nontrivial.
+The scalar $\mu$ is therefore nonnegative real.  Its
+absolute value one implies $\mu=1$.
+\end{proof}
+
+\begin{proposition}\label{te-exact-paths}
+Let $n,n'$ be even.  Normalized averaging satisfies both
+triangle identities with one of $L,M$ fixed, and the
+square identity
+\[
+ \begin{split}
+ I_{\Lambda(L_1,M),\Lambda(L_1,M_1)}
+ I_{\Lambda(L,M),\Lambda(L_1,M)}
+ \;=\;
+ I_{\Lambda(L,M_1),\Lambda(L_1,M_1)}
+ I_{\Lambda(L,M),\Lambda(L,M_1)}
+ \end{split}
+ \tag{TE10}
+\]
+on the theta line of $\Lambda(L,M)$.
+\end{proposition}
+\begin{proof}
+For the square, choose $b$ with
+$b(L+L_1)\subset L\cap L_1$, and apply
+Proposition~\ref{te-projector} to $M,M_1$.
+The induced map on matrices is $X\mapsto eX$.
+It preserves each of the four lattices.
+Every error in (TE6) sends each of them into their
+common intersection.  In fact, if $A:L_i\to M_j$
+and $v\in L_k$, then $bv\in L_i$ and
+\[
+       R A(v)=b^{-1}R A(bv)\in M\cap M_1
+\]
+for each error $R$, since $R(M+M_1)\subset b(M\cap M_1)$.
+Multiplication by $I\mathfrak a$ preserves this inclusion.
+Lemma~\ref{te-positive-gauss} applies to either of the
+two triples from the lower left to the upper right
+corner of the square.  Both composites are the same
+direct averaging operator, proving (TE10).
+
+For three varying domain lattices and a fixed target
+$M$, choose $b$ carrying their sum into their
+intersection, and apply the same argument to the pair
+$M,M$.  This proves the left triangle identity.
+For three varying target lattices and fixed $L$, use
+Proposition~\ref{te-projector} for $L,L$, with $b$
+carrying the sum of those target lattices into their
+intersection.  Use the induced map $X\mapsto Xe^*$.
+Its adjoint is $X\mapsto Xe$; the errors are precisely
+the corresponding right multiplications by the
+expressions in (TE6) or their adjoints.  They have the
+required images by the same calculation.  This proves
+the right triangle identity.  Zero-dimensional cases
+have identity averaging and satisfy all the formulas.
+\end{proof}
+
+\subsection{The determinant in the unitary action}
+
+We next remove the possible sign from the action on an
+even number of copies of a theta line.
+
+\begin{lemma}\label{te-negative-norm}
+For every positive rational integer $m$ there is
+$\ell\in\mathcal O$ with
+\[
+                         \ell\bar\ell\equiv-1\pmod{m\mathcal O}.
+ \tag{TE11}
+\]
+\end{lemma}
+\begin{proof}
+At an inert place of $F$ dividing $m$, choose a unit
+of norm $-1$ by Lemma~\ref{acl-local-norm}; at a split
+place use $(1,-1)$.  Approximate all these units modulo
+$m$ in the product of the completed integer rings.
+The Chinese remainder theorem for $\mathcal O$ gives
+an element $\ell$ with these residues.  Multiplication
+and conjugation preserve the congruences, proving (TE11).
+\end{proof}
+
+\begin{lemma}\label{te-real-gauss}
+For any three lattices of the form (TE2), or any three
+commensurable $\mathcal O$-stable self-dual trace lattices
+with the same form, their triple scalar $\mu$ is real,
+and hence $\mu^2=1$.
+For an $E$-linear unitary map $g$ with $1-g$ invertible,
+the Cayley Gauss sum in (TC31) is real.
+\end{lemma}
+\begin{proof}
+For the first assertion choose $r>0$ carrying the sum
+of the three lattices into their intersection.
+Choose $m$ divisible by $2r^2$ and by the exponent of
+the finite group $P/T$, and choose $\ell$ from (TE11).
+Multiplication by $\ell$ permutes $P/T$: multiplication
+by $-\bar\ell$ is its inverse, because $m(P/T)=0$.
+Write $\ell\bar\ell+1=2r^2s$ with
+$s\in\mathcal O_F$.  The scalar action has adjoint
+$\bar\ell$, so (TE8) gives
+\[
+ \beta(\ell z,\ell y)+\beta(z,y)
+                       =2\beta(rsz,ry)\in2\mathbb Z.
+\]
+Here both arguments on the right lie in the common
+intersection, and $\beta$ is even integral there.
+It follows that
+$\psi(\ell z,\ell y)=\overline{\psi(z,y)}$.
+The sum of $\psi$ is real, and so is $\mu$.
+
+For the second assertion use the notation $A,C,\Gamma,q$
+of (TC27), on an $\mathcal O$-stable lattice $\Lambda$.
+The maps $A,C$ are $E$-linear.
+Choose $r>0$ with $rC\Lambda\subset\Lambda$, and choose
+$m$ divisible by $2r$ and the exponent of
+$\Lambda/A\Gamma$.
+Multiplication by the corresponding $\ell$ again
+permutes this quotient.  Write
+$\ell\bar\ell+1=2rs$, $s\in\mathcal O_F$.
+Since $C^*=-C$, the exponent in
+\[
+ q(\ell x)q(x)=
+ \exp\!\left(\pi i E_H(\tau(\ell\bar\ell+1)x,x)
+                   -\pi H(C(\ell\bar\ell+1)x,x)\right)
+ \tag{TE12}
+\]
+is $2\pi i$ times an integer.
+Indeed the first $E_H$-pairing is even integral, and
+$C(\ell\bar\ell+1)x=2s(rCx)\in2\Lambda$.
+The second Hermitian value is purely imaginary, so its
+imaginary part is even integral as well.
+Thus $q(\ell x)=\overline{q(x)}$, proving reality of
+its sum.
+\end{proof}
+
+\begin{proposition}\label{te-unitary-square}
+Let $\Lambda$ be an $\mathcal O$-stable self-dual trace
+lattice of even complex dimension $r$.  Let $g$ be
+an $E$-linear unitary map.  The nonzero scalar defined by
+\[
+          F(g^{-1}z)=c(g,\Lambda)I_{\Lambda,g\Lambda}F(z)
+                        \qquad(F\in\mathcal T(\Lambda,\alpha))
+ \tag{TE13}
+\]
+satisfies
+\[
+                         c(g,\Lambda)^2=\det_{\mathbb C}g.
+ \tag{TE14}
+\]
+\end{proposition}
+\begin{proof}
+The scalar exists by the one-dimensionality of the theta
+spaces and the invariance of the norm semicharacter.
+If $1-g$ is invertible, its nondegenerate Cayley Gauss
+sum has absolute value $\sqrt N$ by (TC16), and is real
+by Lemma~\ref{te-real-gauss}.  Its normalized square is
+therefore one.  Equations (TC31) and (TC40) give
+$c^2=(-1)^r\det g=\det g$.
+
+For a general $g$, choose a scalar $z\in k$ of norm one
+such that $z\ne1$ and $1-zg$ is invertible.
+There are infinitely many choices before these finitely
+many exclusions: with $s=\sqrt{-D}$, the values
+$(1+ts)/(1-ts)$ for $t\in\mathbb Q$ are distinct and
+have norm one.
+Write $g=g_1g_2$, where $g_1=zg$ and $g_2=z^{-1}$.
+Both factors have no fixed vectors.
+Pullback commutes with normalized averaging after
+transforming both lattices; this follows by reindexing
+the finite sum and using preservation of $H$ and $\alpha$.
+Consequently the scalar in (TE13) is the product of the
+two factor scalars and a triple scalar for
+$\Lambda,g_1\Lambda,g\Lambda$.
+The latter has square one by Lemma~\ref{te-real-gauss}.
+Squaring and using the first case proves (TE14).
+The zero-dimensional case has scalar and determinant one.
+\end{proof}
+
+\subsection{The exact family and its three transformation laws}
+
+Let $\theta$ be the fixed nonzero normalized theta
+function for the rank-one trace lattice
+$\lambda I\mathfrak a$, as constructed in
+Sections~\ref{tc-section}--\ref{ts-section}.
+Let $F_0$ be its product in $nn'$ independent entries,
+and define
+\[
+ \begin{split}
+ T(L,M)&=I_{\Lambda(L,M_0),\Lambda(L,M)}
+                 I_{\Lambda(L_0,M_0),\Lambda(L,M_0)}F_0,\\
+ b_\chi(L,M)&=\chi(\det(L_0,L))^{n'/2}
+                             \chi(\det(M_0,M))^{-n/2},\\
+ e_\chi(L,M)&=b_\chi(L,M)T(L,M).
+ \end{split}
+ \tag{TE15}
+\]
+Here $\det(L,L_1)$ is the relative determinant ideal.
+The character $\chi$ is multiplicative on fractional
+ideals $\mathfrak c$ with
+$\mathfrak c\overline{\mathfrak c}=\mathcal O$ and obeys
+\[
+             \chi((u))=\prod_{\eta\in\Sigma}\eta(u)^{-1}
+                          \qquad(u\bar u=1).
+ \tag{TE16}
+\]
+These are exactly the character requirements used in
+this assertion.  In particular $\chi$ never vanishes
+on such an ideal.
+
+\begin{theorem}\label{te-equivariance}
+For positive even $n,n'$, the functions in (TE15)
+satisfy all three identities
+\[
+ \begin{split}
+ e_\chi(L,M_1)&=\chi(\det(M,M_1))^{-n/2}
+                         I_{\Lambda(L,M),\Lambda(L,M_1)}e_\chi(L,M),\\
+ e_\chi(L_1,M)&=\chi(\det(L,L_1))^{n'/2}
+                         I_{\Lambda(L,M),\Lambda(L_1,M)}e_\chi(L,M),\\
+ e_\chi(L,M)((\gamma'^{-1}z_\eta\gamma)_\eta)
+                         &=e_\chi(\gamma L,\gamma'M)(z).
+ \end{split}
+ \tag{TE17}
+\]
+In the last equation $\gamma,\gamma'$ are unitary
+matrices over $E$, and each matrix in the argument is
+understood through its embedding $\eta$.
+These identities also hold in dimension zero with the
+empty-product conventions.
+\end{theorem}
+\begin{proof}
+Proposition~\ref{te-exact-paths} gives the first two
+identities for $T$ with the character factors removed.
+The relative determinant is multiplicative in its
+three lattice arguments: at any prime it is the
+quotient of the two determinant lattices.  Its
+Hermitian norm is one by self-duality.
+Thus multiplication of the factors in (TE15) gives
+the first two identities of (TE17).
+
+For the last identity put
+$D(\gamma)=\prod_{\eta\in\Sigma}\eta(\det_E\gamma)$.
+First let only $\gamma$ act, at the standard pair.
+Group the entries of $F_0$ into its $n'$ rows.
+On each row the forward map of period lattices is
+$x\mapsto x\gamma^{-1}$, whose complex determinant
+is $D(\gamma)^{-1}$ and whose dimension $dn$ is even.
+The operator in (TE13) and the normalized averaging
+both factor over this orthogonal product: the finite
+quotient is a product, and its positive square root
+is the product of the positive square roots.
+Proposition~\ref{te-unitary-square} therefore gives
+\[
+ F_0((z_\eta\gamma)_\eta)
+                   =D(\gamma)^{-n'/2}T(\gamma L_0,M_0)(z).
+ \tag{TE18}
+\]
+Likewise, grouping by columns gives
+\[
+ F_0((\gamma'^{-1}z_\eta)_\eta)
+                    =D(\gamma')^{n/2}T(L_0,\gamma'M_0)(z).
+ \tag{TE19}
+\]
+Here the forward map is $x\mapsto\gamma'x$, giving
+the opposite determinant exponent.
+Pullback commutes with averaging, as in the proof of
+Proposition~\ref{te-unitary-square}.
+The square and triangle identities in (TE10) therefore
+extend (TE18)--(TE19) to every pair:
+\[
+ T(L,M)((\gamma'^{-1}z_\eta\gamma)_\eta)
+       =D(\gamma)^{-n'/2}D(\gamma')^{n/2}
+                                      T(\gamma L,\gamma'M)(z).
+ \tag{TE20}
+\]
+To see explicitly why no path ambiguity remains,
+transport the two defining edges in (TE15) by
+$(\gamma,\gamma')$, precede them by the two edges
+from $(L_0,M_0)$ to $(\gamma L_0,\gamma'M_0)$, and
+interchange adjacent horizontal and vertical edges
+using (TE10).  Consecutive edges in one direction
+collapse by the corresponding triangle identity.
+The result is exactly the two edges defining the
+right side of (TE20).
+
+Finally
+\[
+ \det(L_0,\gamma L)=(\det_E\gamma)\det(L_0,L).
+\]
+The same formula holds for $M$, and (TE16) gives
+\[
+ b_\chi(\gamma L,\gamma'M)
+            =D(\gamma)^{-n'/2}D(\gamma')^{n/2}b_\chi(L,M).
+\]
+Substitution in (TE20) proves the last identity of
+(TE17), with its exact scalar.
+\end{proof}
+
+This proves the covariance and the two moves required
+for the actual normalized family.  It uses no choice
+of signs for individual lattice moves.  For comparison,
+the homogeneous quadratic function
+$q(x)=e^{2\pi ix^2/3}$ on $\mathbb Z/3\mathbb Z$ has
+sum $i\sqrt3$, so a general normalized quadratic Gauss
+sum need not be one.  The local hyperbolic decomposition
+and the norm congruence (TE11) are the specific arithmetic
+facts that remove this obstruction here.  The measure
+support at the selected primes and its use in incidence
+maps remain separate assertions.
+
+

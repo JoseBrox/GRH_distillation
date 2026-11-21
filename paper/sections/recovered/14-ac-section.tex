@@ -1,0 +1,752 @@
+\section{The arithmetic complex and its orbit bound}
+\label{ac-section}
+
+This section proves the geometric input in
+\eqref{ht-geometric-input}.  In particular, the homology estimate in
+Proposition~\ref{ht-arithmetic-numerical} no longer requires that input
+as an additional hypothesis.  The construction is the ordered nerve
+of the normal cones of the Hermitian reduction polyhedron used in
+the submitted source\cite{alpo-uniform-source}.  We give the exact
+arithmetic definitions and prove its exactness, the stabilizer bound,
+and its orbit count.  This does not prove the separate global Selmer
+class count discussed at the end of Section~\ref{ht-section}.
+
+\subsection{The lattice and the Hermitian reduction polyhedron}
+
+Let $F$ be a totally imaginary number field, let
+$n=[F:\mathbb Q]=2s$, and let
+$D=|\operatorname{disc}F|$.  Fix one embedding
+$\sigma_v:F\longrightarrow\mathbb C$ from each conjugate pair.
+Let $N\ge1$, and put
+\[
+ \Lambda=\mathcal O_F^N,\qquad
+ d=nN,\qquad
+ \Gamma=\operatorname{GL}_N(\mathcal O_F),\qquad
+ \mathcal H=\prod_{v=1}^s\operatorname{Herm}_N(\mathbb C).
+\]
+Here $\operatorname{Herm}_N(\mathbb C)$ is the real vector space of
+Hermitian $N$ by $N$ matrices.  Its dimension is $N^2$, and
+$\dim_{\mathbb R}\mathcal H=sN^2\le dN$.  For $H=(H_v)\in\mathcal H$
+and $y\in\Lambda$, define
+\[
+ q_H(y)=\sum_{v=1}^s \sigma_v(y)^*H_v\sigma_v(y).
+\]
+Every summand is real.  The star denotes conjugate transpose;
+no involution of the number field is assumed.
+Write
+\[
+ \begin{aligned}
+ \mathcal P&=\{H:H_v\text{ is positive semidefinite for every }v\},\\
+ \mathcal R&=\{H:q_H(y)\ge1\text{ for every }0\ne y\in\Lambda\}.
+ \end{aligned}
+ \tag{AC1}
+\]
+The group acts by
+\[
+ (gH)_v=\sigma_v(g)^{-*}H_v\sigma_v(g)^{-1}.
+ \tag{AC2}
+\]
+Consequently $q_{gH}(y)=q_H(g^{-1}y)$, and the action preserves
+$\mathcal R$ and $\mathcal P$.
+
+We use the elementary facts that $\mathcal O_F$ is a free abelian
+group of rank $n$, that the field norm of a nonzero algebraic integer
+is a nonzero integer, and that the discriminant of an integral basis
+is nonzero.  The volume normalization needed below follows directly
+from these facts.  If $\omega_1,\ldots,\omega_n$ is an integral basis,
+the determinant of the matrix of all $n$ embeddings has absolute
+value $\sqrt D$.  Replacing each conjugate pair of rows by its real
+and imaginary parts divides its absolute determinant by $2$.
+Thus the image of $\mathcal O_F$ in $\mathbb C^s=\mathbb R^n$
+is a full lattice of covolume $2^{-s}\sqrt D$.
+
+\begin{lemma}\label{ac-positive-gram}
+Let $G$ be a real symmetric $r$ by $r$ matrix, with $r\ge1$.
+If
+\[
+                 z^{\mathsf T}Gz\ge1
+       \quad(0\ne z\in\mathbb Z^r),
+\]
+then $G$ is positive definite and $\det G\ge r^{-r}$.
+\end{lemma}
+\begin{proof}
+First $G$ is positive semidefinite.  Otherwise continuity supplies
+a rational vector on which its quadratic form is negative, and
+clearing denominators contradicts the hypothesis.
+
+We recall and prove the elementary lattice estimate used here.
+If a measurable set $A\subset\mathbb R^r$ has volume greater than
+the covolume of a lattice $L$, then two distinct points of $A$
+differ by a lattice vector.  Indeed, let $P$ be a half-open
+fundamental parallelepiped.  Integration over $P$ of
+$\sum_{\ell\in L}\mathbf1_A(x+\ell)$ gives $\operatorname{vol}(A)$.
+If no two such points existed, this integer-valued sum would be at
+most one everywhere, contradicting the volume inequality.
+Applying this assertion to one half of an open centrally symmetric
+convex set proves that such a set of volume greater than
+$2^r\operatorname{covol}(L)$ contains a nonzero lattice point:
+the difference of the two points belongs to the original set.
+
+Suppose first that $G$ is positive definite, and choose a real
+invertible matrix $T$ with $G=T^{\mathsf T}T$.  Apply the preceding
+argument to $T\mathbb Z^r$ and the cube $(-R,R)^r$, where
+$R>|\det T|^{1/r}$.  For some $0\ne z\in\mathbb Z^r$,
+\[
+                  1\le\|Tz\|^2\le rR^2.
+\]
+Letting $R$ decrease to $|\det T|^{1/r}$ gives
+$1\le r(\det G)^{1/r}$.  For a merely positive semidefinite $G$,
+apply this bound to $G+\varepsilon I$ and let
+$\varepsilon\downarrow0$.  Its determinant is at least $r^{-r}$
+in the limit.  Hence $\det G>0$, and positive semidefiniteness
+then implies positive definiteness.
+\end{proof}
+
+\begin{proposition}\label{ac-polyhedron}
+The set $\mathcal R$ is nonempty, closed and convex, and every
+$H\in\mathcal R$ is positive definite at every complex place.
+The defining inequalities are locally finite on $\mathcal R$:
+for every $H\in\mathcal R$, there are a neighborhood $U$ of $H$
+and a finite set $T\subset\Lambda\setminus\{0\}$ such that
+\[
+          q_K(y)>1\qquad(K\in U,\ y\notin T).
+          \tag{AC3}
+\]
+\end{proposition}
+\begin{proof}
+Closedness and convexity follow because each $q_H(y)$ is real
+linear in $H$.  The tuple of identity matrices belongs to
+$\mathcal R$.  Indeed, a nonzero coordinate $a\in\mathcal O_F$
+of $y$ has $|\sigma_v(a)|\ge1$ for at least one $v$;
+otherwise $|\operatorname{Norm}_{F/\mathbb Q}(a)|<1$.
+
+Choose the integral basis above in every coordinate of $\Lambda$.
+Its embedding identifies $\mathbb Z^d$ with a full lattice in
+$\prod_v\mathbb C^N$, and identifies the associated real vector
+spaces.  The real quadratic form $q_H$ therefore has a symmetric
+Gram matrix $G_H$ in these coordinates.  For $H\in\mathcal R$,
+Lemma~\ref{ac-positive-gram} makes $G_H$ positive definite.
+Since the embedding is a real vector-space isomorphism, a vector
+supported at any one complex place shows that $H_v$ is positive
+definite at that place.
+
+Finally choose $c>0$ and a sufficiently small neighborhood $U$
+such that
+\[
+ q_K(z)\ge c\sum_v\|z_v\|^2
+       \quad(K\in U,\ z\in\prod_v\mathbb C^N).
+\]
+The lattice has only finitely many points in the ball
+$\sum_v\|\sigma_v(y)\|^2\le c^{-1}$.  Taking these points for $T$
+proves (AC3).
+\end{proof}
+
+For $H\in\mathcal R$ let
+\[
+                  M(H)=\{y\in\Lambda:q_H(y)=1\}.
+\]
+This is a finite set, and does not contain zero.
+Call $H$ a vertex if the linear functionals
+$K\mapsto q_K(y)$, for $y\in M(H)$, span $\mathcal H^*$.
+Equivalently,
+\[
+ q_K(y)=0\ (y\in M(H))\quad\Longrightarrow\quad K=0.
+ \tag{AC4}
+\]
+This is the actual vertex definition in the source.  It agrees
+with the usual definition as an extreme point of $\mathcal R$.
+To see this, if (AC4) holds and $H$ is the midpoint of
+$H_1,H_2\in\mathcal R$, all its active inequalities are active
+at both endpoints, so $H_1-H_2=0$.
+Conversely, if a nonzero $K$ annihilates all active inequalities,
+(AC3) and the finitely many remaining strict inequalities show
+that $H\pm\varepsilon K\in\mathcal R$ for sufficiently small
+$\varepsilon>0$.  Thus $H$ is not extreme.
+We will repeatedly use this last perturbation argument.
+
+\subsection{Normal cones and an exact ordered complex}
+
+Let $V$ be the set of vertices of $\mathcal R$.  Define
+\[
+ \mathcal U=\{\ell\in\mathcal H^*:
+            \ell(K)>0\text{ for all }0\ne K\in\mathcal P\},
+ \qquad
+ C_H=\{\ell:\ell(H)\le\ell(K)\text{ for all }K\in\mathcal R\}.
+ \tag{AC5}
+\]
+The cone $\mathcal U$ is convex and nonempty: the sum of the
+matrix traces belongs to it.  Each $C_H$ is closed and convex.
+
+\begin{lemma}\label{ac-normal-cover}
+The sets $C_H$, $H\in V$, cover $\mathcal U$.
+For every finite nonempty set $E\subset\mathcal U$, only finitely
+many of these cones meet $\operatorname{conv}(E)$.
+\end{lemma}
+\begin{proof}
+Fix $\ell\in\mathcal U$.  On the intersection of $\mathcal P$
+with the unit sphere, $\ell$ has a strictly positive minimum.
+It follows that $\ell(K)\ge c\|K\|$ on $\mathcal P$ for some
+$c>0$.  Therefore every sublevel
+\[
+          \{K\in\mathcal R:\ell(K)\le a\}
+\]
+is compact.  As $\mathcal R$ is nonempty, $\ell$ attains its
+minimum there, and its minimizing face is nonempty and compact.
+A nonempty compact convex set in a finite-dimensional real
+space has an extreme point: one can successively maximize the
+coordinates of a fixed basis, restricting to the maximizing
+face after each step, until a singleton remains.
+An extreme point of this minimizing face is extreme in
+$\mathcal R$, because the value of $\ell$ at each endpoint
+of any segment with midpoint in the face must also be minimal.
+Hence it belongs to $V$, proving the covering assertion.
+
+We need one consequence of (AC3).  A compact subset
+$K\subset\mathcal R$ contains only finitely many vertices.
+Cover $K$ by finitely many neighborhoods as in (AC3), and let
+$T$ be the union of their finite sets of inequalities.
+Every active set $M(H)$ for $H\in K$ is contained in $T$.
+For a vertex, this set determines $H$ uniquely by the
+equations $q_H(y)=1$.  There are only finitely many subsets
+of $T$.
+
+Now fix $H_0\in\mathcal R$, and write
+$E=\{\ell_1,\ldots,\ell_t\}$.  If $C_H$ meets
+$\operatorname{conv}(E)$, some convex combination
+$\ell=\sum_i a_i\ell_i$ is minimized at $H$.  Thus
+\[
+                 \sum_i a_i\{\ell_i(H)-\ell_i(H_0)\}\le0.
+\]
+For some $i$ with $a_i>0$, $\ell_i(H)\le\ell_i(H_0)$.
+The vertex $H$ therefore lies in the finite union of compact
+sublevels defined by these $t$ inequalities.  The preceding
+paragraph proves the desired finiteness.
+\end{proof}
+
+For $p\ge0$, define $X_p$ to be the set of ordered tuples
+$(H_0,\ldots,H_p)$ of vertices such that
+\[
+                   \mathcal U\cap C_{H_0}\cap\cdots
+                            \cap C_{H_p}\ne\varnothing.
+                   \tag{AC6}
+\]
+Repetitions are allowed.  Deleting an entry defines a map
+$X_p\to X_{p-1}$.  Put
+\[
+ C_p=\mathbb Z[X_p],\quad
+ \partial(H_0,\ldots,H_p)
+      =\sum_{i=0}^p(-1)^i(H_0,\ldots,\widehat H_i,\ldots,H_p),
+ \quad
+ \epsilon(H)=1.
+ \tag{AC7}
+\]
+Here $\mathbb Z[X]$ denotes the free abelian group on $X$,
+with finite support.  The familiar cancellation of pairs of
+deletions gives $\partial^2=0$.
+
+We prove the needed exactness directly, including the issue
+that the cover consists of closed sets.
+
+\begin{lemma}\label{ac-convex-nerve}
+Let $K$ be a nonempty compact convex subset of a
+finite-dimensional real vector space, covered by finitely many
+closed convex sets $A_i$.  Form the ordered tuple complex of
+the nerve: a tuple is allowed precisely when
+$K\cap\bigcap_j A_{i_j}\ne\varnothing$.  Its augmented integral
+chain complex, with repetitions and the boundary (AC7), is exact.
+\end{lemma}
+\begin{proof}
+Replace $A_i$ by $K\cap A_i$ and discard empty sets.
+We induct on the number of subsets of the finite index set
+whose corresponding intersection is nonempty, counting the
+empty subset as well.
+
+If all the $A_i$ have a common point, every tuple of indices
+is allowed.  Fix an index $a$.  Prepending $a$ to a tuple
+defines a contraction: for $p\ge0$,
+\[
+       \partial(a,i_0,\ldots,i_p)
+          =(i_0,\ldots,i_p)-(a,\partial(i_0,\ldots,i_p)),
+\]
+and in degree $-1$ send $1$ to $(a)$.  This proves exactness.
+
+Otherwise choose a minimal collection of the $A_i$ with
+empty intersection.  Write it as $\{A_i\}\cup\{A_j:j\in J\}$.
+Both $A_i$ and $B=\bigcap_{j\in J}A_j$ are nonempty compact
+convex sets, and they are disjoint.
+They admit a strict separating linear functional $f$:
+\[
+                         f(A_i)<u<f(B)
+                         \tag{AC8}
+\]
+for some real number $u$.
+For completeness, take a pair of nearest points $a\in A_i$,
+$b\in B$.  Their distance is positive by compactness.
+With $f(x)=\langle b-a,x\rangle$, differentiating the squared
+distance along segments in the two convex sets gives
+$f(x)\le f(a)<f(b)\le f(y)$ for $x\in A_i$, $y\in B$.
+Any number between $f(a)$ and $f(b)$ gives (AC8).
+
+Set $K_-=K\cap\{f\le u\}$, $K_+=K\cap\{f\ge u\}$,
+and $K_0=K\cap\{f=u\}$.  They are nonempty compact convex
+sets, covered by the corresponding intersections with $A_i$.
+All three nerves have strictly fewer faces: $K_-$ and $K_0$
+lose the face $J$, and $K_+$ loses the vertex $i$.
+Their augmented complexes are therefore exact by induction.
+
+The nerve on $K$ is the union of the nerves on $K_-$ and
+$K_+$.  Their intersection is the nerve on $K_0$.
+Indeed, witnesses on both sides for the same tuple can be
+joined by a segment lying in every set of that tuple, and
+this segment meets the separating hyperplane.
+These statements remain true for ordered tuples with repetitions.
+
+Here is the chain argument for this union.  Decompose a cycle
+$z$ as $z_-+z_+$, using chains in the two subcomplexes.
+Then $\partial z_-=-\partial z_+$ is supported in their
+intersection.  Exactness there supplies a chain $w$ with
+$\partial w=\partial z_-$.  The chains $z_--w$ and $z_++w$
+are cycles in their respective subcomplexes, hence boundaries.
+Their sum is $z$.  In degree zero the same argument uses
+surjectivity of the augmentation of the intersection; in
+degree $-1$ surjectivity follows from nonemptiness.
+This completes the induction.
+\end{proof}
+
+\begin{theorem}\label{ac-exact}
+The augmented sequence
+\[
+       \cdots\longrightarrow\mathbb Z[X_2]
+       \longrightarrow\mathbb Z[X_1]
+       \longrightarrow\mathbb Z[X_0]
+       \overset{\epsilon}{\longrightarrow}\mathbb Z
+       \longrightarrow0
+\]
+is an exact sequence of permutation $\mathbb Z\Gamma$-modules.
+Every column of the boundary
+$\mathbb Z[X_{p+1}]\to\mathbb Z[X_p]$ has integral
+$\ell^1$-norm at most $p+2$.
+\end{theorem}
+\begin{proof}
+The action (AC2), and its contragredient action on linear
+functionals, preserve (AC6).  Deletions and augmentation are
+equivariant, so the modules are permutation modules.
+The boundary estimate counts its $p+2$ signed terms;
+coinciding faces can only decrease the $\ell^1$-norm.
+
+A cycle has finite support.  Choose a witness in $\mathcal U$
+for each tuple in its support, and choose an additional point
+of $\mathcal U$ if necessary.  Their convex hull $K$ is
+nonempty, compact, and contained in $\mathcal U$.
+By Lemma~\ref{ac-normal-cover}, only finitely many $C_H$
+meet $K$, and they cover $K$.  Apply
+Lemma~\ref{ac-convex-nerve} to their intersections with $K$.
+It supplies a filling using only tuples already allowed
+by (AC6).  The same covering lemma ensures that $X_0$
+is nonempty, so augmentation is surjective.
+\end{proof}
+
+\subsection{Common minimal vectors and determinant bounds}
+
+\begin{lemma}\label{ac-common-minima}
+For every tuple $(H_0,\ldots,H_p)\in X_p$, the common minimal
+vectors
+\[
+                 \bigcap_{j=0}^p M(H_j)
+\]
+span $F^N$ over $F$.
+\end{lemma}
+\begin{proof}
+Let $\ell\in\mathcal U$ witness (AC6), and put
+$\overline H=(p+1)^{-1}\sum_jH_j$.
+Each $H_j$ minimizes $\ell$ on $\mathcal R$, so
+$\overline H$ does too.  Since every $q_{H_j}(y)\ge1$,
+\[
+                  M(\overline H)=\bigcap_jM(H_j).
+\]
+Suppose this set does not span $F^N$.  There exists a nonzero
+$F$-linear functional $a:F^N\to F$ vanishing on it.
+At each place let $K_v$ be the positive semidefinite rank-one
+form whose value at $z$ is $|\sigma_v(a)z|^2$.
+This defines a nonzero $K\in\mathcal P$ with
+$q_K(y)=0$ for every $y\in M(\overline H)$.
+The perturbation argument following (AC4) gives
+$\overline H-\varepsilon K\in\mathcal R$ for some
+$\varepsilon>0$.  But
+$\ell(\overline H-\varepsilon K)<\ell(\overline H)$,
+a contradiction.
+\end{proof}
+
+Consequently we may choose $N$ common minimal vectors as the
+columns of an integral matrix $A\in M_N(\mathcal O_F)$ with
+$\det A\ne0$.  Such columns are an $F$-basis, and are not
+claimed to be an $\mathcal O_F$-basis of $\Lambda$.
+Define the integers
+\[
+       I_0=D^N d^d,\qquad R_0=N^N I_0^2,\qquad
+       I(A)=|\operatorname{Norm}_{F/\mathbb Q}(\det A)|.
+       \tag{AC9}
+\]
+
+\begin{lemma}\label{ac-det}
+For every $H\in\mathcal R$,
+\[
+                  I_0\prod_v\det H_v\ge1.
+                  \tag{AC10}
+\]
+If the columns of $A$ are minimal for $H$, put
+$H'_v=\sigma_v(A)^*H_v\sigma_v(A)$.  Then
+\[
+ \begin{split}
+ &1\le I(A)\le I_0,\\
+ &H'_v>0,\qquad (H'_v)_{aa}\le1,\qquad
+                I_0^{-1}\le\det H'_v\le1
+                   \quad\text{for every }v,a.
+ \end{split}
+ \tag{AC11}
+\]
+\end{lemma}
+\begin{proof}
+Let $G_H$ be the real Gram matrix in the integral coordinates
+used above.  Its determinant is
+\[
+       \det G_H=2^{-d}D^N\left(\prod_v\det H_v\right)^2.
+       \tag{AC12}
+\]
+Indeed the squared determinant of the lattice embedding is
+$2^{-d}D^N$.  For a positive Hermitian matrix, its quadratic
+form on the underlying real space has determinant equal to
+the square of its complex determinant: unitary diagonalization
+reduces this to the fact that each eigenvalue occurs twice.
+This proves (AC12).
+
+Write $P=\prod_v\det H_v>0$.
+Lemma~\ref{ac-positive-gram} gives
+$P^2\ge 2^dD^{-N}d^{-d}$, and hence
+\[
+                       (I_0P)^2\ge D^N(2d)^d\ge1.
+\]
+This proves (AC10); it also shows that our intermediate
+determinant estimate is stronger than the one required.
+
+For each column $a$ of $A$, minimality says
+$\sum_v(H'_v)_{aa}=1$.  Every term is positive, so
+$(H'_v)_{aa}\le1$.  Hadamard's inequality gives
+$0<\det H'_v\le1$.  This inequality follows, for example,
+by writing $H'_v$ as a Gram matrix: successive orthogonal
+projections do not increase the lengths of its Gram vectors.
+The determinant transformation formula gives
+\[
+                  \prod_v\det H'_v=I(A)P.
+                  \tag{AC13}
+\]
+Here each complex embedding is represented once, so
+$\prod_v|\sigma_v(\det A)|^2=I(A)$.
+The left side of (AC13) is at most one, whence
+$I(A)\le P^{-1}\le I_0$.
+Each factor on that left side is at least their product,
+because all the other factors are at most one.  Since
+$I(A)\ge1$, this proves
+$\det H'_v\ge I(A)P\ge I_0^{-1}$.
+\end{proof}
+
+\subsection{Integral matrix reduction without a principal ideal hypothesis}
+
+\begin{lemma}\label{ac-scaled-inverse}
+For $A\in M_N(\mathcal O_F)$ with $\det A\ne0$, the matrix
+\[
+                           B_A=I(A)A^{-1}
+                           \tag{AC14}
+\]
+belongs to $M_N(\mathcal O_F)$.
+For every integer $J\ge1$, there is a set $\mathscr A_J$
+of at most $J^{1+dN}$ integral matrices such that every
+$A$ with $0<I(A)\le J$ satisfies
+$gA\in\mathscr A_J$ for some $g\in\Gamma$.
+\end{lemma}
+\begin{proof}
+If $0\ne\alpha\in\mathcal O_F$, the group
+$\mathcal O_F/\alpha\mathcal O_F$ has order
+$|\operatorname{Norm}_{F/\mathbb Q}(\alpha)|$.
+Indeed multiplication by $\alpha$ on an integral basis has
+that determinant, and the index of an integral full-rank
+matrix is the absolute value of its determinant, as follows
+from integer elementary row and column reduction.
+Lagrange's theorem in this finite additive group therefore
+gives
+\[
+          |\operatorname{Norm}_{F/\mathbb Q}(\alpha)|
+                      \in\alpha\mathcal O_F.
+\]
+For $\alpha=\det A$, the adjugate formula now proves (AC14).
+In particular $AB_A=B_AA=I(A)I_N$.
+
+Fix a positive integer $I$, and consider only matrices with
+$I(A)=I$.  Assign to $A$ the residue of $B_A$ in
+$M_N(\mathcal O_F/I\mathcal O_F)$.
+If $A,A'$ have the same residue, write
+$B_A-B_{A'}=IX$ with $X\in M_N(\mathcal O_F)$.
+Then
+\[
+       A'A^{-1}=I_N+A'X,\qquad
+       AA'^{-1}=I_N-AX.
+       \tag{AC15}
+\]
+Both matrices on the right are integral and are inverse
+to each other.  Thus $g=A'A^{-1}$ belongs to $\Gamma$
+and satisfies $gA=A'$.
+
+There are exactly $I^{nN^2}=I^{dN}$ possible residues,
+because the additive rank of $\mathcal O_F$ is $n$.
+Choose one representative matrix for each residue that
+actually occurs.  Equal residues imply equal left
+$\Gamma$-orbits by (AC15), so these representatives meet
+every such orbit.  They need not be distinct orbit
+representatives, which only improves the upper bound.
+Summing over $1\le I\le J$ gives at most
+\[
+                         \sum_{I=1}^J I^{dN}
+                             \le J^{1+dN}
+\]
+matrices.  No ideal in this argument is required to be
+principal except the explicitly displayed ideal
+$\alpha\mathcal O_F$.
+\end{proof}
+
+\subsection{Counting vertices with fixed minimal columns}
+
+For an integral matrix $A$ with nonzero determinant, define
+\[
+ \begin{split}
+ T(A)=\{y\in\Lambda:\;&q_H(y)=1
+       \text{ for some }H\in\mathcal R\\
+       &\text{for which every column of }A\text{ is minimal}\},
+ \end{split}
+\]
+and let $V(A)$ be the set of vertices for which every column
+of $A$ is minimal.  These sets are allowed to be empty.
+
+\begin{lemma}\label{ac-cramer}
+Let $G$ be a positive definite Hermitian $N$ by $N$ matrix
+such that $G_{aa}\le1$ for every $a$.  If $c^*Gc\le1$, then
+\[
+                          (\det G)|c_a|\le N^N
+                          \quad(1\le a\le N).
+                          \tag{AC16}
+\]
+\end{lemma}
+\begin{proof}
+Cauchy--Schwarz for the inner product defined by $G$ gives
+$|G_{ij}|\le1$ and $|(Gc)_i|\le1$.
+Cramer's rule says that $(\det G)c_a$ is the determinant
+of the matrix obtained by replacing column $a$ of $G$
+by $Gc$.  Every entry of this matrix has absolute value
+at most one.  Its determinant is a sum of $N!$ signed
+products, so its absolute value is at most
+$N!\le N^N$.
+\end{proof}
+
+\begin{lemma}\label{ac-short-count}
+One has
+\[
+             |T(A)|\le(2R_0+1)^d,\qquad
+             |V(A)|\le\bigl((2R_0+1)^d+1\bigr)^{dN}.
+             \tag{AC17}
+\]
+In particular both sets are finite.
+\end{lemma}
+\begin{proof}
+Suppose $y\in T(A)$, and choose the form $H$ in its definition.
+Write $I=I(A)$, $B=B_A$, and $z=By$.
+Since $Az=Iy$, and $H'_v=\sigma_v(A)^*H_v\sigma_v(A)$,
+\[
+              \sum_v \sigma_v(z)^*H'_v\sigma_v(z)=I^2.
+\]
+Every term is nonnegative.  For each place apply
+Lemma~\ref{ac-cramer} to $G=H'_v$ and
+$c=I^{-1}\sigma_v(z)$.  Using (AC11) gives
+\[
+       |\sigma_v(z_a)|
+          \le I N^N I_0
+          \le N^N I_0^2=R_0
+                  \qquad(v,a).
+                  \tag{AC18}
+\]
+
+For any integer $R\ge0$, there are at most $(2R+1)^n$
+algebraic integers $a\in\mathcal O_F$ satisfying
+$|\sigma_v(a)|\le R$ for all $v$.
+To prove this, reduce modulo $(2R+1)\mathcal O_F$.
+If two such integers $a,b$ have the same residue, write
+$a-b=(2R+1)c$ with $c\in\mathcal O_F$.  Then
+\[
+                    |\sigma_v(c)|\le\frac{2R}{2R+1}<1
+\]
+at every place.  The norm of $c$ is an integer of absolute
+value less than one, so $c=0$.  Reduction is injective on
+the set being counted, and the quotient has
+$(2R+1)^n$ elements.  Applying this with $R=R_0$ in each
+of the $N$ coordinates bounds the possible $z$ by
+$(2R_0+1)^d$.  The map $y\mapsto B_Ay$ is injective
+because $B_A$ is invertible over $F$.  This proves the
+first assertion in (AC17).
+
+If $H\in V(A)$, its active functionals span
+$\mathcal H^*$ by definition.  Choose at most
+$\dim_{\mathbb R}\mathcal H\le dN$ of its minimal vectors
+whose functionals still span this dual space.
+All of them belong to $T(A)$, and the equations
+$q_K(y)=1$ for this chosen set uniquely determine $K=H$.
+Choose one such determining subset for each vertex.
+Two vertices assigned the same subset must be equal.
+A set of $t$ elements has at most $(t+1)^r$ subsets of
+size at most $r$: order the elements, list each subset
+in order, and pad its list to length $r$ with an extra
+symbol.  Taking $t=|T(A)|$ and $r=dN$ proves the
+second assertion.
+\end{proof}
+
+\begin{theorem}\label{ac-orbit}
+For every $p\ge0$, the ordered tuple set $X_p$ has finitely
+many $\Gamma$-orbits, and
+\[
+ \begin{split}
+ \#(\Gamma\backslash X_p)
+   &\le I_0^{\,1+dN}
+       \bigl((2R_0+1)^d+1\bigr)^{dN(p+1)}\\
+   &\le (2Dd)^{12(p+1)d^3N}.
+ \end{split}
+ \tag{AC19}
+\]
+\end{theorem}
+\begin{proof}
+For a tuple in $X_p$, choose the matrix $A$ of common
+minimal columns furnished by Lemma~\ref{ac-common-minima}.
+By Lemma~\ref{ac-det}, $I(A)\le I_0$.
+Choose $g\in\Gamma$ such that $gA$ belongs to the set
+$\mathscr A_{I_0}$ in Lemma~\ref{ac-scaled-inverse}.
+Because $q_{gH_j}(gy)=q_{H_j}(y)$, every vertex of the
+translated tuple belongs to $V(gA)$.
+Every orbit thus meets
+\[
+              \bigcup_{A'\in\mathscr A_{I_0}}V(A')^{p+1}.
+\]
+Only the tuples satisfying (AC6) need be included, so
+counting all displayed tuples is an upper bound.
+Lemma~\ref{ac-short-count} proves the first inequality.
+
+Here are the numerical estimates for the second inequality.
+Put $b=2Dd\ge2$.  Since $1\le N\le d$,
+\[
+ \begin{aligned}
+ I_0=D^N d^d&\le b^{2d},&
+ N^N&\le b^d,&
+ R_0&\le b^{5d},\\
+ 2R_0+1&\le b^{5d+2},&
+ (2R_0+1)^d+1&\le b^{(5d+2)d+1}.
+ \end{aligned}
+\]
+For the fourth inequality use $R_0\ge1$ and
+$2R_0+1\le3R_0\le b^2R_0$; for the fifth use $2\le b$.
+The exponent resulting from the first line of (AC19)
+is therefore at most
+\[
+       2d+2d^2N+(5d^3N+2d^2N+dN)(p+1).
+\]
+Each of its five terms is bounded respectively by
+$2$, $2$, $5$, $2$, and $1$ times $(p+1)d^3N$.
+Their sum is at most $12(p+1)d^3N$.
+\end{proof}
+
+\subsection{Stabilizers, hypotheses, and the resulting homology estimate}
+
+\begin{proposition}\label{ac-stabilizer}
+Every stabilizer of a tuple in $X_p$ is finite and has
+order at most $3^{nN^2}=3^{dN}$.
+\end{proposition}
+\begin{proof}
+All vertices are positive definite by
+Proposition~\ref{ac-polyhedron}.  At the complex places,
+the stabilizer of one such tuple is contained in the
+product of the unitary stabilizers of its first entry.
+This is a compact subset of the product of complex
+matrix spaces.  Matrices over $\mathcal O_F$ form a
+closed discrete subset of that real vector space,
+so their intersection with this compact set is finite.
+
+For the quantitative assertion apply
+Lemma~\ref{ht-congruence-three} to
+$M_N(\mathcal O_F)$, whose additive rank is $nN^2$.
+That lemma proves that reduction modulo $3$ is injective
+on every finite subgroup of its unit group.  The residue
+ring has $3^{nN^2}$ elements.
+\end{proof}
+
+Theorem~\ref{ac-exact}, Theorem~\ref{ac-orbit}, and
+Proposition~\ref{ac-stabilizer} supply all the hypotheses
+of Proposition~\ref{ht-permutation} for this arithmetic
+group.  In degree $m\ge1$ one may take
+\[
+       A=(2Dd)^{12(m+1)d^3N},\qquad
+       s=3^{dN},\qquad B=m+2.
+\]
+In particular the geometric input of
+Proposition~\ref{ht-arithmetic-numerical} is now proved.
+For $E\ge1$, $1\le N\le4E+6$, and $0\le m\le2E+1$,
+its established numerical argument gives the unconditional
+inequality
+\[
+ \log\#H_m(\operatorname{GL}_N(\mathcal O_F),\mathbb Z)_{\rm tors}
+       \le\exp\bigl((2En)^{13}\log(2D)\bigr).
+ \tag{AC20}
+\]
+No class-number estimate is imported in the proof of
+(AC20).  The remaining passage from this homology estimate
+to the strict Selmer group in the submitted proof is
+a different assertion.
+
+\paragraph{Boundary cases and normalization checks.}
+The source also allows $N=0$ in some intermediate statements.
+In that case $\Lambda=0$, $\mathcal H=0$, $\mathcal R$
+has one point, and $\Gamma$ is trivial.  The ordered
+complex has a single generator in every degree and
+is contracted by prepending its unique vertex.
+Every orbit and stabilizer has cardinality one.
+With $0^0=1$, the unsimplified first bound in (AC19)
+also equals one.  The simplified bound involving $d$
+is only asserted above for $N\ge1$.
+
+The normalization in (AC12) can be checked already at
+$F=\mathbb Q(i)$, $N=1$.  For $H=(t)$ and the integral
+basis $1,i$, one has $G_H=tI_2$, $D=4$, and
+$2^2\det G_H=4t^2=D(\det H)^2$.
+Removing the factor $2^{-d}$ would give a false identity.
+This check concerns the convention of using one embedding
+per conjugate pair; the source includes the correct factor.
+
+Positive definiteness is also essential to the stabilizer
+argument.  On $\mathcal O_F^2$, the semidefinite form
+$|x_1|^2$ at every complex place is preserved by all
+matrices
+\[
+                      \begin{pmatrix}1&0\\a&1\end{pmatrix},
+                         \qquad a\in\mathcal O_F.
+\]
+Its arithmetic stabilizer is infinite.  It is not a
+counterexample to the proposition: the integral vector
+$(0,1)$ has value zero, so this form is excluded from
+$\mathcal R$ by (AC1).  Proposition~\ref{ac-polyhedron}
+proves exactly the positivity needed to exclude this
+possibility.
+
+Finally, the construction uses the ordered tuples (AC6),
+with repetitions and the unsigned action on their
+generators.  Replacing them by oriented simplices without
+accounting for orientation characters would change the
+permutation-module argument.  The proof above makes no
+such replacement.  No counterexample satisfying the actual
+hypotheses was found.
+
+
+
+

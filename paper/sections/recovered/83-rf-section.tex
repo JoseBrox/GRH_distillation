@@ -1,0 +1,640 @@
+\section{Noncompact integration of the radial derivative terms}
+\label{rf-section}
+
+The remaining radial integration takes place on the whole complex
+plane.  Both the point $t=0$ and infinity must therefore be treated.
+We prove the Fourier regularization and the actual elementary
+differential identities used in this passage
+\cite{alpo-uniform-source}.  Two simplifications are useful.
+Only the Fourier transform of the weighted density is needed.
+Furthermore, for an admissible word the differential expansion
+can be written explicitly as a sum over subsets.
+The estimates for the actual Jacquet integrals needed to apply
+these facts are identified separately at the end.
+
+\subsection{Fourier normalization and extension across zero}
+
+We identify $\mathbb C$ with $\mathbb R^2$ and use the measure
+$dt=dx\,dy$ for $t=x+iy$.  The Fourier transform in this section is
+\begin{equation}\label{rf-transform}
+ \widehat E(s)=\int_{\mathbb C}
+        \exp(st-\overline s\,\overline t)\,E(t)\,dt.
+\end{equation}
+For $s=a+ib$, the exponential in \eqref{rf-transform} is
+$\exp(2i(bx+ay))$.  In particular its absolute value is one.
+All derivatives below are real derivatives.  The norm
+$\|D^jF(t)\|$ is the operator norm of the $j$-linear derivative
+on the Euclidean space $\mathbb R^2$; for $j=0$ it is $|F(t)|$.
+
+\begin{lemma}\label{rf-inversion}
+Let $E\in L^1(\mathbb C)$ and suppose
+$\widehat E\in L^1(\mathbb C)$.  Then
+\begin{equation}\label{rf-inverse}
+ E_0(t)=\frac1{\pi^2}\int_{\mathbb C}
+       \exp(-st+\overline s\,\overline t)\widehat E(s)\,ds
+\end{equation}
+is continuous and equals $E$ almost everywhere.
+It equals $E$ at every point at which $E$ is continuous.
+If $|s|^j\widehat E(s)$ is integrable for $0\leq j\leq m$,
+then $E_0$ is $C^m$, and differentiation under the integral is valid.
+\end{lemma}
+
+\begin{proof}
+The absolute convergence and continuity of \eqref{rf-inverse}
+follow from dominated convergence.  To fix the normalization
+and prove the assertion about $E$, put
+\[
+ \eta_a(t)=\frac1{\pi a}e^{-|t|^2/a}\qquad(a>0).
+\]
+The one-dimensional Gaussian integral, applied separately to
+the two real coordinates of $s$, gives
+\[
+ \widehat{\eta_a}(s)=e^{-a|s|^2},\qquad
+ \frac1{\pi^2}\int_{\mathbb C}e^{-a|s|^2}
+        e^{st-\overline s\,\overline t}\,ds=\eta_a(t).
+\]
+Fubini's theorem is applicable because $E$ is integrable and
+the Gaussian in $s$ is integrable.  It therefore gives
+\[
+ (E*\eta_a)(t)=\frac1{\pi^2}\int_{\mathbb C}
+      e^{-st+\overline s\,\overline t}
+      e^{-a|s|^2}\widehat E(s)\,ds.
+\]
+The right side tends to $E_0(t)$ uniformly in $t$ as $a\to0$.
+
+On the other hand, $E*\eta_a\to E$ in $L^1$.
+Indeed,
+\[
+ \|E*\eta_a-E\|_1
+ \leq\int_{\mathbb C}\eta_a(v)\,
+                    \|E(\,\cdot-v)-E\|_1\,dv.
+\]
+Translations are continuous in $L^1$: this follows first for
+continuous functions of compact support by uniform continuity,
+and then for an arbitrary integrable function by approximation
+in $L^1$.  Split the last integral into a fixed small disk
+and its complement, use this translation continuity on the
+disk and the bound $2\|E\|_1$ on the complement.
+The Gaussian mass of the complement tends to zero.
+An $L^1$-convergent subsequence converges almost everywhere,
+so the uniform limit $E_0$ equals $E$ almost everywhere.
+At a point of continuity of $E$, their difference is continuous.
+If its value were nonzero, its absolute value would be bounded
+away from zero throughout a small disk, contradicting equality
+almost everywhere.
+
+For a unit real direction $v$, differentiating the exponential
+in \eqref{rf-inverse} gives the factor
+$-sv+\overline s\,\overline v$, whose absolute value is at most
+$2|s|$.  The stated moment assumptions permit repeated
+differentiation by dominated convergence and prove the last
+assertion.
+\end{proof}
+
+\begin{theorem}\label{rf-weighted-extension}
+Let $m\geq0$ be an integer and let $D:\mathbb C\to\mathbb C$
+be measurable and continuous on $\mathbb C^\times$.
+Put
+\[
+                   E(t)=(1+|t|^2)^2D(t).
+\]
+Suppose that $E\in L^1(\mathbb C)$ and, for some $C\geq0$,
+\begin{equation}\label{rf-weighted-decay}
+             |\widehat E(s)|\leq C(1+|s|)^{-m-3}
+                      \qquad(s\in\mathbb C).
+\end{equation}
+Then there is a unique $C^m$ function $D_0$ on $\mathbb C$
+equal to $D$ on $\mathbb C^\times$.  It satisfies
+\begin{align}
+ \int_{\mathbb C}D_0(t)\,dt
+      &=\int_{\mathbb C}D(t)\,dt, \label{rf-same-integral}\\
+ \|D^jD_0(t)\|&\leq A_m C(1+|t|)^{-4}
+       \qquad(0\leq j\leq m), \label{rf-all-derivatives}\\
+ \int_{\mathbb C}D^jD_0(t)\,dt&=0
+       \qquad(1\leq j\leq m). \label{rf-zero-derivatives}
+\end{align}
+In the last line the integral is the componentwise integral
+of the multilinear derivative.  The constant $A_m$ depends
+only on $m$, and the following completely explicit choice is valid:
+\begin{align*}
+ B_0&=1,\qquad B_j=\prod_{\nu=0}^{j-1}(5\nu+4),\\
+ M_{m,j}&=\frac{2^{j+1}}{\pi}
+                   \frac{(j+1)!(m-j)!}{(m+2)!}
+                       \qquad(0\leq j\leq m),\\
+ A_m&=\max_{0\leq j\leq m}
+       \sum_{\nu=0}^j\binom j\nu
+                    16\,2^{\nu/2}B_\nu M_{m,j-\nu}.
+\end{align*}
+No separate estimate for $\widehat D$ is required.
+\end{theorem}
+
+\begin{proof}
+The hypothesis $E\in L^1$ implies $D\in L^1$ because
+$(1+|t|^2)^{-2}\leq1$.  For $0\leq j\leq m$, polar coordinates
+and the substitution $r=u/(1-u)$ give
+\begin{align*}
+ \int_{\mathbb C}|s|^j(1+|s|)^{-m-3}\,ds
+ &=2\pi\int_0^\infty r^{j+1}(1+r)^{-m-3}\,dr\\
+ &=2\pi\frac{(j+1)!(m-j)!}{(m+2)!}.
+\end{align*}
+The last integral can also be evaluated by repeated integration
+by parts; its endpoint terms vanish since $j\leq m$.
+Lemma~\ref{rf-inversion} supplies a $C^m$ extension $E_0$ and gives
+\begin{equation}\label{rf-E-derivative}
+                       \|D^jE_0(t)\|\leq M_{m,j}C.
+\end{equation}
+Since $E$ is continuous away from zero, $E_0=E$ there.
+Define $D_0(t)=(1+|t|^2)^{-2}E_0(t)$.  This proves the asserted
+extension and uniqueness, because $\mathbb C^\times$ is dense.
+
+For clarity, a uniform derivative bound for the weight can
+be obtained without an unspecified differentiation constant.
+For every coordinate multi-index $\alpha$ with $|\alpha|=j$,
+\[
+ \partial^\alpha(1+x^2+y^2)^{-2}
+     =\frac{P_\alpha(x,y)}{(1+x^2+y^2)^{2+j}},
+ \qquad \deg P_\alpha\leq j.
+\]
+The sum of the absolute values of the coefficients of
+$P_\alpha$ is at most $B_j$.  To see this, differentiating once
+replaces $P$ by
+\[
+  (1+x^2+y^2)\partial_iP-(4+2j)x_iP.
+\]
+The coefficient sum increases by a factor at most
+$3j+4+2j=5j+4$.  This proves the bound by induction.
+On $|t|\leq1$ and $|t|\geq1$, respectively, the displayed
+rational expression then gives
+\[
+ |\partial^\alpha(1+|t|^2)^{-2}|
+                      \leq16B_j(1+|t|)^{-4}.
+\]
+Passing from coordinate derivatives to the operator norm
+costs at most $2^{j/2}$, since
+$|v_x|+|v_y|\leq\sqrt2\,|v|$.
+The multilinear product rule, together with
+\eqref{rf-E-derivative}, proves \eqref{rf-all-derivatives}
+with the stated $A_m$.
+
+These bounds imply integrability of $D_0$ and all of its
+derivatives through order $m$.  Equality almost everywhere
+with $D$ proves \eqref{rf-same-integral}.
+To prove \eqref{rf-zero-derivatives}, it is enough to consider
+a coordinate derivative $\partial_i H$, where
+$H=\partial^\alpha D_0$ has order at most $m-1$.
+Choose a smooth compactly supported function $\chi$ equal to
+one on the unit disk and put $\chi_R(t)=\chi(t/R)$.
+Integration by parts on its compact support gives
+\[
+ \int_{\mathbb C}\chi_R\,\partial_i H
+        =-\int_{\mathbb C}H\,\partial_i\chi_R.
+\]
+The right side has absolute value at most
+$R^{-1}\|\partial_i\chi\|_\infty\|H\|_1$, hence tends to zero.
+Dominated convergence on the left gives
+$\int\partial_iH=0$.  The argument applies to every component
+of every positive-order derivative.  It treats zero and
+infinity simultaneously, without discarding an annular
+boundary term.
+\end{proof}
+
+\begin{corollary}\label{rf-finite-combination}
+Let $D_1,\ldots,D_N$ satisfy
+Theorem~\ref{rf-weighted-extension} with a common order $m$,
+and constants $C_i$ that may depend on $i$.  Let $0\leq j_i\leq m$,
+$a_i\in\mathbb C$ and fixed real directions
+$v_{i,1},\ldots,v_{i,j_i}\in\mathbb C$.
+If, for $t\ne0$,
+\[
+ f(t)=\sum_{i=1}^N a_i
+      D^{j_i}D_i(t)[v_{i,1},\ldots,v_{i,j_i}],
+\]
+then $f$ extends continuously to $\mathbb C$, its extension
+is $O((1+|t|)^{-4})$, and
+\[
+        \int_{\mathbb C}f(t)\,dt
+           =\sum_{\{i:j_i=0\}}a_i\int_{\mathbb C}D_i(t)\,dt.
+\]
+The implicit constant can be taken to be
+$A_m\sum_i |a_i|C_i\prod_{\nu=1}^{j_i}|v_{i,\nu}|$.
+The assertion includes $N=0$.
+\end{corollary}
+
+\begin{proof}
+Replace $D_i$ by its extension from the theorem.
+They agree on an open neighborhood of every nonzero point,
+so their derivatives agree there.  The finite sum of the
+extended derivatives is continuous and has the stated
+bound.  Integrate term by term and use
+\eqref{rf-same-integral}--\eqref{rf-zero-derivatives}.
+\end{proof}
+
+\begin{example}\label{rf-critical-power}
+The extra integrable Fourier moment cannot simply be omitted.
+For $t\ne0$ set
+\[
+ E(t)=\int_0^1\frac1{\pi a}e^{-|t|^2/a}\,da,\qquad
+ D(t)=\frac{E(t)}{(1+|t|^2)^2},
+\]
+and give both functions any finite values at zero.
+Tonelli's theorem gives $\|E\|_1=1$, and differentiation
+under the integral shows that $E$ is smooth away from zero.
+Fubini's theorem and the Gaussian calculation above give
+\[
+ \widehat E(s)=
+ \begin{cases}
+ (1-e^{-|s|^2})/|s|^2,&s\ne0,\\
+ 1,&s=0.
+ \end{cases}
+\]
+Thus $|\widehat E(s)|\leq4(1+|s|)^{-2}$.
+For $0<|t|<1$, restricting the integral to
+$|t|^2\leq a\leq1$ gives
+$E(t)\geq(\pi e)^{-1}\log(|t|^{-2})$.
+Consequently $D$ has no continuous extension at zero.
+This is a counterexample to replacing the power $-3$
+by $-2$ in the case $m=0$; the source uses the sufficient
+power $-m-3$.
+\end{example}
+
+\subsection{The actual two-component differential identity}
+
+Let $\mathcal H$ be a complex Hilbert space, with inner product
+linear in the first argument.  Write
+\[
+ \partial_t=\tfrac12(\partial_x-i\partial_y),\qquad
+ \partial_{\overline t}=\tfrac12(\partial_x+i\partial_y),
+ \qquad p=t\partial_t,\quad
+ \overline p=\overline t\,\partial_{\overline t}.
+\]
+Here $\overline p$ denotes this displayed differential
+operator, not an instruction to conjugate its argument.
+For $u,v:\mathbb C^\times\to\mathcal H^2$ put
+\[
+ D(u,v)(t)=|t|^{-2}
+              \bigl(\langle u_0(t),v_0(t)\rangle+
+                    \langle u_1(t),v_1(t)\rangle\bigr).
+\]
+For a real number $Y$, define
+\begin{align}
+ V_+(Y)v&=(Yv_0+pv_0-tv_1,\ t^{-1}v_0),\nonumber\\
+ I_+(Y)u&=(-\overline t^{-1}u_1,\
+             \overline t\,u_0+(Y+1)u_1-\overline p\,u_1),
+                    \label{rf-plus-operators}\\
+ V_-(Y)v&=(Yv_0-\overline p\,v_0-\overline t\,v_1,\
+                                      \overline t^{-1}v_0),\nonumber\\
+ I_-(Y)u&=(-t^{-1}u_1,\
+                    t u_0+(Y-1)u_1+p u_1).
+                    \label{rf-minus-operators}
+\end{align}
+These are the source's actual one-coordinate operators, including
+their shifts by $1$.  Let $Ev=(0,v_0)$.
+
+\begin{lemma}\label{rf-one-letter}
+For $C^1$ Hilbert-space-valued functions $u,v$ on
+$\mathbb C^\times$ and real $Y$,
+\begin{align}
+ D(I_+(Y)u,V_+(Y)v)
+      &=D(u,v)-\partial_{\overline t}D(u,Ev),\label{rf-plus-density}\\
+ D(I_-(Y)u,V_-(Y)v)
+      &=D(u,v)+\partial_tD(u,Ev).\label{rf-minus-density}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Put $A(t)=\langle u_1(t),v_0(t)\rangle$.
+Direct expansion of \eqref{rf-plus-operators}, using
+linearity in the first argument and $Y=\overline Y$, gives
+\[
+ \langle I_+u,V_+v\rangle
+ =\langle u,v\rangle+\overline t^{-1}A
+       -\langle\overline t^{-1}\overline p\,u_1,v_0\rangle
+       -\langle u_1,t^{-1}p v_0\rangle.
+\]
+The last two terms sum to $-\partial_{\overline t}A$:
+\[
+ \partial_{\overline t}A
+    =\langle\partial_{\overline t}u_1,v_0\rangle
+       +\langle u_1,\partial_t v_0\rangle.
+\]
+Since
+$\partial_{\overline t}|t|^{-2}
+       =-\overline t^{-1}|t|^{-2}$,
+multiplication by $|t|^{-2}$ proves \eqref{rf-plus-density}.
+
+The analogous expansion of \eqref{rf-minus-operators} is
+\[
+ \langle I_-u,V_-v\rangle
+ =\langle u,v\rangle-t^{-1}A
+       +\langle t^{-1}p u_1,v_0\rangle
+       +\langle u_1,\overline t^{-1}\overline p\,v_0\rangle.
+\]
+The last two terms sum to $\partial_tA$.
+Using $\partial_t|t|^{-2}=-t^{-1}|t|^{-2}$ proves
+\eqref{rf-minus-density}.  All calculations are valid in a
+Hilbert space by the differentiability of its inner product.
+\end{proof}
+
+\subsection{An explicit expansion for an admissible word}
+
+Let $S$ be a finite set and let
+$\mathcal B=\{0,1\}^S$.  Replace $\mathcal H^2$ by
+$\mathcal H^{\mathcal B}$ and sum its inner product over
+$\mathcal B$.  For $a\in S$, each of the operators
+\eqref{rf-plus-operators}--\eqref{rf-minus-operators} acts
+on the $a$-th two-component factor and as the identity
+on the other factors.  Denote by $E_a$ the corresponding
+elementary matrix $E_{10}$:
+\[
+ (E_a v)_b=
+ \begin{cases}
+ v_{b[a\leftarrow0]},& b(a)=1,\\
+ 0,&b(a)=0.
+ \end{cases}
+\]
+
+A word of length $h$ is a sequence
+$\ell_j=(a_j,\sigma_j,Y_j)$, where
+$a_j\in S$, $\sigma_j\in\{+,-\}$ and $Y_j\in\mathbb R$.
+Assume that the $a_j$ are pairwise distinct.
+This is the part of the source's admissibility condition
+used in the present identity.  Define the ordered products
+\[
+ I_w=I_{\sigma_1,a_1}(Y_1)\cdots I_{\sigma_h,a_h}(Y_h),
+ \qquad
+ V_w=V_{\sigma_1,a_1}(Y_1)\cdots V_{\sigma_h,a_h}(Y_h).
+\]
+The rightmost factor acts first.  Put
+\[
+ (\epsilon_j,\delta_j)=
+ \begin{cases}
+ (-1,\partial_{\overline t}),&\sigma_j=+,\\
+ (1,\partial_t),&\sigma_j=-.
+ \end{cases}
+\]
+For $J\subseteq\{1,\ldots,h\}$, let
+$E_J=\prod_{j\in J}E_{a_j}$,
+$\epsilon_J=\prod_{j\in J}\epsilon_j$, and
+$\delta_J=\prod_{j\in J}\delta_j$.
+The factors in these three products commute.
+For the empty set they are the identity, $1$, and the
+identity differential operator, respectively.
+
+\begin{proposition}\label{rf-subset-expansion}
+For smooth $u,v:\mathbb C^\times\to\mathcal H^{\mathcal B}$,
+\begin{equation}\label{rf-explicit-expansion}
+             D(I_wu,V_wv)
+       =\sum_{J\subseteq\{1,\ldots,h\}}
+                         \epsilon_J\delta_JD(u,E_Jv).
+\end{equation}
+There are at most $2^h$ terms, their coefficients have
+absolute value one, and the derivative order of the
+$J$-term is $|J|$.
+\end{proposition}
+
+\begin{proof}
+The case $h=0$ is immediate.  Write $w=\ell_1w'$.
+Sum Lemma~\ref{rf-one-letter} over the other component
+indices to obtain
+\[
+ D(I_wu,V_wv)=D(I_{w'}u,V_{w'}v)
+     +\epsilon_1\delta_1
+          D(I_{w'}u,E_{a_1}V_{w'}v).
+\]
+Since $a_1$ does not occur in $w'$, $E_{a_1}$ commutes
+with every constant component matrix in $V_{w'}$.
+It also commutes with multiplication by $t,\overline t$
+and with their derivatives.  Hence
+$E_{a_1}V_{w'}=V_{w'}E_{a_1}$.
+Apply the induction hypothesis first to $(u,v)$ and
+then to $(u,E_{a_1}v)$.  The resulting terms correspond,
+respectively, to subsets not containing $1$ and to
+subsets containing $1$.  Smoothness permits the
+indicated differentiations of these identities.
+\end{proof}
+
+\begin{theorem}\label{rf-noncompact-step}
+In Proposition~\ref{rf-subset-expansion}, suppose for every
+$J\subseteq\{1,\ldots,h\}$ that
+\[
+ E^{(J)}(t)=(1+|t|^2)^2D(u,E_Jv)(t)
+\]
+is integrable and
+\[
+             |\widehat {E^{(J)}}(s)|
+                    \leq C_J(1+|s|)^{-h-3}
+                    \qquad(s\in\mathbb C)
+\]
+for some $C_J\geq0$.
+Then $D(I_wu,V_wv)$ has a continuous integrable extension
+to the whole plane, bounded in absolute value by
+$A_h(\sum_J C_J)(1+|t|)^{-4}$, and
+\begin{equation}\label{rf-full-plane-identity}
+       \int_{\mathbb C}D(I_wu,V_wv)(t)\,dt
+                       =\int_{\mathbb C}D(u,v)(t)\,dt.
+\end{equation}
+No support condition in $t$ is imposed.
+\end{theorem}
+
+\begin{proof}
+Apply Theorem~\ref{rf-weighted-extension} to the finitely
+many functions $D(u,E_Jv)$, with $m=h$.
+An iterated Wirtinger derivative of order $j$ is a sum
+of $2^j$ coordinate derivatives, each with coefficient
+of absolute value $2^{-j}$.  Thus \eqref{rf-all-derivatives}
+bounds it by the same constant, and its integral is
+zero for $j\geq1$ by \eqref{rf-zero-derivatives}.
+Insert these extended functions in
+\eqref{rf-explicit-expansion}.  The empty subset contributes
+$D(u,v)$; every other subset integrates to zero.
+\end{proof}
+
+\begin{example}\label{rf-repeated-index}
+The distinct-index assumption in
+Proposition~\ref{rf-subset-expansion} is essential.
+Take $\mathcal H=\mathbb C$, one two-component factor,
+two identical plus letters with $Y=0$, and
+$u=(0,1)$, $v=(1,0)$.
+Then $I_+^2u=(-\overline t^{-1},0)$ and
+$V_+^2v=(-1,0)$, so
+\[
+                D(I_+^2u,V_+^2v)=\frac1{t\overline t^2}.
+\]
+The proposed subset expression would instead be
+$-2\partial_{\overline t}|t|^{-2}
+       =2/(t\overline t^2)$, since $E^2=0$.
+The source's admissible words have distinct indices,
+so this does not contradict its statement.
+\end{example}
+
+\subsection{Relation to the radial form and remaining analysis}
+
+The measure $|t|^{-2}dt$ explains the shifts in the
+operators.  On compactly supported smooth functions
+away from zero, integration by parts gives
+\[
+       p^*=-\overline p,\qquad
+       \overline p^{\,*}=-p,\qquad t^*=\overline t.
+\]
+These formulas define the formal adjoint of every
+matrix differential operator considered here.
+
+\begin{lemma}\label{rf-inverse-adjoint}
+As differential operators on $\mathbb C^\times$,
+\[
+             I_\sigma(Y)V_\sigma(Y)^*
+             =V_\sigma(Y)^*I_\sigma(Y)=1
+                      \qquad(Y\in\mathbb R).
+\]
+Consequently $I_wV_w^*=1$ for an ordered word.
+If matrix differential operators $R,R'$ satisfy
+$R=V_w^*R'V_w$, then
+\begin{equation}\label{rf-mirror-identity}
+                         R'V_w=I_wR.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+In the plus case,
+\[
+ V_+(Y)^*=
+  \begin{pmatrix}Y-\overline p&\overline t^{-1}\\
+                          -\overline t&0\end{pmatrix},
+ \qquad
+ I_+(Y)=
+  \begin{pmatrix}0&-\overline t^{-1}\\
+                  \overline t&Y+1-\overline p\end{pmatrix}.
+\]
+Their products are the identity because
+$[\overline p,\overline t]=\overline t$ and
+$[\overline p,\overline t^{-1}]=-\overline t^{-1}$.
+In the minus case the corresponding matrices are
+\[
+ V_-(Y)^*=
+  \begin{pmatrix}Y+p&t^{-1}\\-t&0\end{pmatrix},
+ \qquad
+ I_-(Y)=
+  \begin{pmatrix}0&-t^{-1}\\t&Y-1+p\end{pmatrix},
+\]
+and the calculation uses $[p,t]=t$ and
+$[p,t^{-1}]=-t^{-1}$.
+In the word product $I_wV_w^*$ these identities cancel
+adjacent factors, starting with the last letter.
+Multiplying $R=V_w^*R'V_w$ on the left by $I_w$
+proves \eqref{rf-mirror-identity}.
+These are algebraic identities; they assert no
+unproved adjoint-domain statement on a noncompact space.
+\end{proof}
+
+\begin{lemma}\label{rf-L2-smoothness}
+Let $(Z,\nu)$ be a $\sigma$-finite measure space and let
+$F:\mathbb C^\times\times Z\to\mathbb C^d$ be measurable.
+Suppose that, outside one null subset of $Z$, it is smooth
+in $t$ and all its coordinate derivatives are jointly
+measurable.  Suppose also that, for every compact
+$K\subset\mathbb C^\times$ and every multi-index $\alpha$,
+\begin{equation}\label{rf-local-L2-bounds}
+       \sup_{t\in K}
+          \|\partial^\alpha_tF(t,\cdot)\|_{L^2(Z,\nu)}
+                                                     <\infty.
+\end{equation}
+Then $t\mapsto F(t,\cdot)$ is a smooth map into
+$L^2(Z,\nu;\mathbb C^d)$, with the expected derivatives.
+A pointwise dominating $L^2$ function is not required.
+\end{lemma}
+
+\begin{proof}
+Fix a closed disk $K$ inside $\mathbb C^\times$ and a
+smaller concentric disk.  Every sufficiently short
+segment from the smaller disk lies in $K$.
+The fundamental theorem of calculus, applied outside
+the common null set, gives
+\[
+ F(t+h,z)-F(t,z)
+       =\int_0^1\bigl(h_x\partial_xF+h_y\partial_yF\bigr)
+                                                    (t+uh,z)\,du.
+\]
+Cauchy--Schwarz in $u$, followed by Tonelli's theorem,
+or equivalently the integral triangle inequality in
+$L^2$, bounds the $L^2$ norm of the difference by
+$\sqrt2|h|$ times a common bound for the two first
+derivatives on $K$.  This proves norm continuity.
+Applying the same argument to every
+$\partial^\alpha F$ proves their norm continuity.
+
+The second-order Taylor formula along that segment
+gives
+\[
+ F(t+h,\cdot)-F(t,\cdot)
+       -h_x\partial_xF(t,\cdot)-h_y\partial_yF(t,\cdot)
+ =\int_0^1(1-u)
+       \sum_{i,j\in\{x,y\}}h_i h_j\partial_{ij}F(t+uh,\cdot)\,du.
+\]
+If $B$ bounds the $L^2$ norms of the second derivatives
+on $K$, the norm of the right side is at most
+$B(|h_x|+|h_y|)^2/2\leq B|h|^2$.
+Thus the derivative exists in $L^2$ and has the asserted
+value.  Repeating this proof for each
+$\partial^\alpha F$ proves smoothness of all orders.
+The same estimates justify every integral displayed
+above; no assumption of finite measure on $Z$ is used.
+\end{proof}
+
+For the source radial form, $\mathcal H$ is the $L^2$ space
+of the remaining radial coordinates and the terminal
+unitary group, with its specified positive measure
+and Hilbert--Schmidt coefficient space.  Its measure
+is independent of the coordinate $t$ being integrated.
+When the radial functions and their derivatives are
+smooth as maps into this Hilbert space, all the preceding
+identities apply directly.  Lemma~\ref{rf-L2-smoothness}
+shows that it suffices to bound their $L^2$ derivative
+norms locally uniformly.  The source's coordinate
+operators include multiplication by $t^{\pm1}$ and
+$\overline t^{\pm1}$ together with $p,\overline p$.
+On a compact subset of $\mathbb C^\times$, every
+coordinate derivative of order $j$ is a finite sum
+of words in these operators, of length at most $2j$.
+For example $\partial_t=t^{-1}p$ and
+$\partial_{\overline t}=\overline t^{-1}\overline p$,
+and one repeats these identities by composition.
+Consequently locally uniform $L^2$ bounds for all
+coordinate-operator words imply
+\eqref{rf-local-L2-bounds}.  This also justifies
+differentiating all the integrated pairings in
+Lemma~\ref{rf-one-letter}, without constructing a
+separate pointwise dominating function.
+
+With $u=Rx$ and $v=y$, identity
+\eqref{rf-mirror-identity} and Theorem~\ref{rf-noncompact-step}
+give
+\[
+ \int_{\mathbb C}D(R'V_wx,V_wy)(t)\,dt
+                  =\int_{\mathbb C}D(Rx,y)(t)\,dt,
+\]
+provided the displayed weighted Fourier bounds hold for
+the densities $D(Rx,E_Jy)$.
+This is precisely the one-coordinate integration step
+after the source's algebraic relation
+$R=V_w^*R'V_w$ has been established.
+The argument uses the actual shifts and the full
+noncompact coordinate domain.
+
+The present section proves the elementary differential
+expansion, the inverse formal-adjoint identity, and the
+analytic removal of every derivative term.  It does
+not yet prove that all actual Jacquet-generated functions
+satisfy the required $L^2$ differentiability and weighted
+Fourier estimates, nor does it identify the preceding
+algebraic relation with all of the source's recursively
+defined frame operators.  The source obtains the
+Fourier estimates from four specified differential
+operators preserving the class of coefficients and
+from an identity that transfers multiplication by the
+Fourier parameter to those operators.  Their construction
+and the precise Jacquet pairing and measure identities
+remain substantive dependencies.  In particular,
+pointwise terminal positivity alone is not being used
+as an integrated noncompact theorem.
+
+

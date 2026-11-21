@@ -1,0 +1,694 @@
+\section{The integrated contribution of nearby rational isometries}
+\label{nu-section}
+
+We prove the estimate \eqref{amb-near-input}.  The argument
+has three parts.  A canonical flag of small sublattices
+puts every sufficiently small integral isometry in one
+unipotent radical.  Successive matrix blocks give a
+packing estimate in that radical.  Iteration of the
+one-sublattice unfolding in Section~\ref{rv-section}
+then integrates the estimate, with all constants.
+The only classical global inputs are those already
+specified in that section.
+
+\subsection{Statement and elementary inequalities for lattices}
+
+Retain the notation of Sections~\ref{amb-section}
+and~\ref{rv-section}.  In particular $E/F$ is a
+CM extension unramified at every finite place,
+$[F:\mathbb Q]=f$, $n=p+q$, and the Hermitian lattices
+are self-dual.  The positive metrics are compatible
+with their Hermitian forms.  Haar probability on the
+adelic quotient is denoted by $\mathbb P$.
+Set
+\begin{equation}\label{nu-parameters}
+ \begin{gathered}
+ A=nf\log n,\qquad X=nfr_Egb,\qquad
+ \tau_0=X^{-11q},\\
+ \epsilon=10^{-6}n^{-8}f^{-2},\qquad
+ \delta=3\sqrt{n\epsilon}
+                =3\cdot10^{-3}n^{-7/2}f^{-1}.
+ \end{gathered}
+\end{equation}
+For a point $x$, let $N_\delta(x)$ be the number of
+nonidentity integral isometries of its point lattice
+whose matrices, in its orthonormal frames, satisfy
+$\|\gamma_v-I\|_{\rm HS}\le\delta$ at every complex place.
+
+\begin{theorem}\label{nu-main}
+Suppose $C_g\ge0$, $b\ge2$, $1\le g\le b^{C_g}$,
+$1\le q$, $q^2\le n$, and
+\begin{equation}\label{nu-hypotheses}
+ \begin{gathered}
+ \log n\ge20,\qquad n\ge4\log(C_g+3),\\
+ \log r_E\le e^n,\qquad \log f\le\sqrt n,\qquad
+                       \log b\le e^{A/16}.
+ \end{gathered}
+\end{equation}
+Then
+\begin{equation}\label{nu-count-integral}
+   \int_{\lambda_x\ge\tau_0}N_\delta(x)\,d\mathbb P(x)
+                                      \le e^{-A/4}.
+\end{equation}
+Consequently, under the finite-level congruence
+hypotheses of Proposition~\ref{amb-near-unipotent},
+\begin{equation}\label{nu-coefficient-integral}
+ \int_{\lambda_x\ge\tau_0}
+  \sum_{\substack{\gamma\ne1\\
+       t((x^{-1}\gamma x)_v)\le\epsilon\ (\forall v)}}
+      |\Phi(x^{-1}\gamma x)|\,dx
+                                      \le e^{-A/4}D_*.
+\end{equation}
+Terms where $\Phi$ vanishes may be included in the sum.
+\end{theorem}
+
+Here integral means preservation of the point lattice
+at all finite places; it does not require a free
+$\mathcal O_E$-basis.  All the counts are finite:
+distinct integral matrices are separated by
+\eqref{amb-two-matrices}, and their archimedean norms
+are bounded.  They are measurable, being countable
+sums of indicators of measurable conditions.
+
+For a nonzero metrized projective lattice $L$, write
+$\lambda(L)$ for its least sublattice size, and write
+$\mu(L)$ for the supremum of the sizes of its nonzero
+projective quotients, with quotient metrics.
+The size $s$ and height $H$ are those of
+\eqref{amb-size}.  Thus
+$H(L)=s(L)^{2f\operatorname{rank}L}$.
+A lattice is semistable if every nonzero sublattice
+has size at least $s(L)$.
+
+\begin{lemma}\label{nu-map-size}
+If $T:L\to M$ is a nonzero integral map, then
+\begin{equation}\label{nu-map-size-inequality}
+ \left(\prod_v\|T_v\|_{\rm op}\right)^{1/f}
+                              \ge\frac{\lambda(M)}{\mu(L)}.
+\end{equation}
+For a semistable lattice of size $s$,
+$\lambda(L)=\mu(L)=s$.
+\end{lemma}
+\begin{proof}
+Let $Q=L/(L\cap\ker T)$ and $I=TL$.  They have the
+same positive rank $r$, and the quotient-to-image
+map is an isomorphism of projective modules.
+Its singular values at $v$ are at most
+$\|T_v\|_{\rm op}$.  As in
+Lemma~\ref{amb-map-separation}, change of covolume gives
+\[
+ H(I)\le H(Q)\prod_v\|T_v\|_{\rm op}^{2r}.
+\]
+Take $2fr$th roots and use
+$s(I)\ge\lambda(M)$ and $s(Q)\le\mu(L)$.
+If $L$ is semistable and $Q=L/S$ is a nonzero
+projective quotient, the exact covolume identity
+$H(L)=H(S)H(Q)$ gives $s(Q)\le s(L)$.
+The identity quotient and the sublattice $L$ itself
+give the reverse inequalities.
+\end{proof}
+
+\subsection{A canonical flag and its small automorphisms}
+
+\begin{lemma}\label{nu-largest-minimum}
+Every nonzero positive metrized lattice $L$ has a
+unique primitive sublattice $M$ of maximum rank
+among those with size $\lambda(L)$.  It is
+semistable.  If $M\ne L$, then
+\begin{equation}\label{nu-quotient-strict}
+                        \lambda(L/M)>\lambda(L).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The minimum is attained by the exterior-lattice
+argument of Lemma~\ref{rv-minimum}, which applies to
+any positive metric, and saturation preserves a
+minimizer.  Choose one of maximum rank, and put
+$s=\lambda(L)$.  Every sublattice of $M$ has size
+at least $s$, so $M$ is semistable.
+
+For a nonzero primitive sublattice $N$ of $L/M$,
+let $\widetilde N$ be its inverse image in $L$.
+The quotient metrics give the exact identity
+\[
+ H(\widetilde N)=H(M)H(N).
+\]
+If $s(N)<s$, the size of $\widetilde N$ is less than
+$s$.  If $s(N)=s$, it is another minimizer of
+larger rank.  Both are impossible.  The least
+size of the nonzero lattice $L/M$ is attained,
+which proves the strict inequality.
+
+If $M=L$, uniqueness of the maximum-rank
+primitive minimizer is immediate.  Otherwise,
+if $B$ is another minimum-size sublattice, it too
+is semistable of size $s$.  The quotient map
+$B\to L/M$ has operator norm at most one.
+If nonzero, Lemma~\ref{nu-map-size} and
+\eqref{nu-quotient-strict} would give a geometric
+mean operator norm greater than one.
+Thus $B\subset M$.  This proves uniqueness of
+the maximum-rank minimizer.
+\end{proof}
+
+\begin{proposition}\label{nu-canonical-flag}
+For every self-dual point lattice $\Lambda$ there
+is a uniquely specified flag of primitive
+isotropic sublattices
+\[
+          0=P_0\subsetneq P_1\subsetneq\cdots
+                                      \subsetneq P_a
+\]
+with the following properties.  Put
+$Q_i=P_i/P_{i-1}$, $j_i=\operatorname{rank}Q_i$,
+$J=\sum_i j_i$, and $M=P_a^\perp/P_a$.
+Then
+\begin{equation}\label{nu-flag-properties}
+ \begin{gathered}
+ j_i\ge1,\quad J\le q,\quad
+ Q_i\text{ is semistable of size }\tau_i,\quad
+             0<\tau_1<\cdots<\tau_a<1/2,\\
+ \lambda(M)\ge1/2,\qquad \mu(M)\le2.
+ \end{gathered}
+\end{equation}
+The flag is empty exactly when $\lambda(\Lambda)\ge1/2$.
+If nonempty, $\tau_1=\lambda(\Lambda)$.
+Every integral isometry $\gamma$ with
+$\|\gamma_v-I\|_{\rm op}<1/4$ at every place acts
+as the identity on all $Q_i$ and on $M$.
+It therefore lies in the unipotent radical of the
+parabolic stabilizing this flag.
+\end{proposition}
+\begin{proof}
+If $\lambda(\Lambda)<1/2$, take the sublattice in
+Lemma~\ref{nu-largest-minimum}.  It is isotropic
+by Lemma~\ref{rv-minimum}.  The lattice
+$P_1^\perp/P_1$ is self-dual with its compatible
+quotient metric, by the integral hyperbolic
+splitting in Lemma~\ref{rv-integral-splitting}.
+It embeds isometrically as a sublattice of
+$\Lambda/P_1$.  Its least size is consequently
+strictly greater than $\tau_1$, by
+\eqref{nu-quotient-strict}.  Repeat this construction
+in the quotient for as long as the least size is
+less than $1/2$.
+Each step reduces both signature entries by a
+positive rank, so there are at most $q$ steps.
+Their inverse images give the stated flag.
+The construction is unique at each step.
+Self-duality of the last quotient and
+Lemma~\ref{amb-size-duality} give $\mu(M)\le2$.
+
+We check the automorphism assertion at the first
+step; the same argument then applies to every
+quotient.  The map
+\[
+        P_1\xrightarrow{\gamma-I}\Lambda
+                                  \longrightarrow\Lambda/P_1
+\]
+is integral and has operator norm less than $1/4$.
+If nonzero, Lemma~\ref{nu-map-size} gives a lower
+bound greater than one, since
+$\mu(P_1)=\tau_1<\lambda(\Lambda/P_1)$.
+Thus $\gamma$ preserves the $E$-span of $P_1$.
+It preserves $P_1$ itself, with equality: an
+invertible linear map preserving this span
+preserves it also under its inverse, and
+$P_1=\Lambda\cap EP_1$.
+The endomorphism $(\gamma-I)|_{P_1}$ must vanish,
+since a nonzero endomorphism of the semistable
+lattice $P_1$ has geometric mean norm at least one.
+
+Unitarity now gives the identity action on
+$\Lambda/P_1^\perp$, the conjugate dual of $P_1$,
+and gives an isometry on $P_1^\perp/P_1$.
+Its difference from the identity has operator
+norm less than $1/4$, because restriction and
+orthogonal quotient do not increase the norm.
+Induction applies.  On the final self-dual
+quotient a nonzero integral endomorphism has
+geometric mean norm at least
+$\lambda(M)^2\ge1/4$, by
+Lemma~\ref{amb-map-separation}; hence the induced
+isometry is the identity there too.
+
+Relative to the flag and its perpendicular flag,
+the resulting matrix is upper block triangular
+with identity diagonal blocks.  These are exactly
+the elements of the unipotent radical.  For an
+empty flag the same last argument says $\gamma=I$.
+\end{proof}
+
+\subsection{Packing successive matrix blocks}
+
+For a sequence $\mathbf j=(j_1,\ldots,j_a)$ of
+positive integers, let $J=\sum_i j_i$, $m=n-2J$,
+and put
+\begin{equation}\label{nu-dimension}
+ d(\mathbf j)=4\sum_{i<k}j_ij_k+2Jm+\sum_i j_i^2
+             =2nJ-2J^2-\sum_i j_i^2\le2nJ.
+\end{equation}
+For positive $\boldsymbol\tau$ and a function $F$
+on the positive real numbers, define
+\begin{equation}\label{nu-layer-product}
+ \begin{split}
+ L_{\mathbf j}(\boldsymbol\tau;F)
+ ={}&\prod_{i<k}
+       F(\tau_i/\tau_k)^{2fj_ij_k}
+       F(\tau_i\tau_k)^{2fj_ij_k}\\
+    &{}\times\prod_i
+       F(\tau_i)^{2fj_im}F(\tau_i^2)^{fj_i^2}.
+ \end{split}
+\end{equation}
+This is the source's function \texttt{layerProd},
+with the rank and measure conventions made explicit.
+
+\begin{lemma}\label{nu-packing}
+At a point with the nonempty canonical flag
+of Proposition~\ref{nu-canonical-flag}, and for
+$0<\delta<1/4$,
+\begin{equation}\label{nu-packing-bound}
+ 1+N_\delta(x)\le
+ L_{\mathbf j}\!\left(\boldsymbol\tau;
+                         r\longmapsto1+\frac{4\delta}{r}\right).
+\end{equation}
+\end{lemma}
+\begin{proof}
+At each place choose orthonormal coordinates
+adapted to the flag and its perpendicular flag.
+The ordered diagonal blocks have sizes
+\[
+                j_1,\ldots,j_a,m,j_a,\ldots,j_1.
+\]
+The Hermitian form pairs block $i$ with block
+$i^*=2a+2-i$ by the identity, and has a
+signature matrix on the middle block.
+Such coordinates follow by pairing an orthonormal
+basis of the isotropic space with its image under
+the unitary involution representing the form.
+The remaining orthogonal complement has the
+induced compatible metric.
+The corresponding graded integral lattices are
+\[
+              Q_1,\ldots,Q_a,M,
+                   \overline{Q_a}^{\,*},\ldots,
+                   \overline{Q_1}^{\,*},
+\]
+with their quotient metrics.  These are integral
+identifications: dualize the split projective
+sequences using self-duality of $\Lambda$.
+
+Write an element of the radical as $I+Z$, with
+$Z$ strictly upper block triangular.  Order the
+upper blocks by their height, namely the difference
+between column and row indices.  The unitary
+equation is
+\[
+              Z^\dagger+Z+Z^\dagger Z=0,
+\]
+where $\dagger$ is adjunction for the displayed
+Hermitian form.  Adjunction preserves block
+height.  A block of height $h$ in
+$Z^\dagger Z$ depends only on blocks of smaller
+positive height.  Thus, after those earlier
+blocks are fixed, the blocks of height $h$ are
+paired by a linear adjoint relation.  The
+independent blocks, with their real dimensions
+and separation scales, are as follows:
+\[
+\begin{array}{c|c|c}
+ \text{map}&\text{real dimension}&\text{scale}\\ \hline
+ Q_k\longrightarrow Q_i,\quad i<k
+       &2j_ij_k&\tau_i/\tau_k\\
+ \overline{Q_k}^{\,*}\longrightarrow Q_i,\quad i<k
+       &2j_ij_k&\tau_i\tau_k\\
+ M\longrightarrow Q_i
+       &2j_im&\tau_i/2\\
+ \overline{Q_i}^{\,*}\longrightarrow Q_i
+       \text{ with skew-Hermitian difference}
+       &j_i^2&\tau_i^2
+\end{array}
+\]
+In the last row the Hermitian part of the block
+is determined by earlier heights; its free part
+is skew-Hermitian.  In every other row the whole
+complex block is free.  The list selects one
+from each reflected pair
+$(r,s)\leftrightarrow(s^*,r^*)$; the fixed pairs
+are precisely the last row.
+
+Here is why the separation statements are
+integral statements, although the orthogonal
+splittings need not be defined over $E$.
+Extend the isotropic flag by its perpendicular
+flag to a filtration $F_\bullet\Lambda$ with the
+displayed graded pieces.  For two integral
+matrices agreeing at all smaller heights,
+their difference $T$ satisfies
+$T(F_s)\subset F_{s-h}$ at the first remaining
+height $h$.  It therefore induces integral maps
+$F_s/F_{s-1}\to F_{s-h}/F_{s-h-1}$.
+Their matrices are exactly the differences of
+the corresponding orthogonal blocks.
+After fixing one reflected pair at height $h$,
+its other member is fixed too.  One may hence
+process the independent blocks at that height
+in any order.  Lemma~\ref{nu-map-size} gives
+the tabulated scales, since the $Q_i$ and their
+duals are semistable of sizes $\tau_i$ and
+$\tau_i^{-1}$, and $\mu(M)\le2$.
+
+For each fixed set of earlier coordinates,
+the next coordinate has norm at most $\delta$
+at every place.  This is immediate for a block
+of $Z$, since $\|Z\|_{\rm op}\le\delta$.
+For a skew-Hermitian coordinate apply the
+contractive projection $B\mapsto(B-B^*)/2$;
+its differences are the original block
+differences, because the Hermitian parts
+have already been fixed.
+The packing lemma \ref{amb-packing}, in the
+product of these real normed spaces, bounds
+the number of possibilities by
+$(1+2\delta/r)^{fD}$ for a row of dimension
+$D$ and scale $r$.
+For the middle-block row this is
+$(1+4\delta/\tau_i)^{2fj_im}$.
+The other rows are bounded by replacing
+$2\delta$ with $4\delta$.
+Multiplication of the successive fibre
+bounds proves \eqref{nu-packing-bound}.
+All the small isometries are in this radical
+by Proposition~\ref{nu-canonical-flag}, and
+the identity accounts for the additional one.
+\end{proof}
+
+\subsection{The measure of flags by repeated unfolding}
+
+Let $\mathcal F_{\mathbf j}(x)$ be the set of all
+primitive isotropic flags with rank increments
+$\mathbf j$.  No semistability condition is
+imposed on these flags.  For such a flag let
+$\tau_i=s_x(P_i/P_{i-1})$, with the induced
+quotient metric.
+Define
+\begin{equation}\label{nu-kappa}
+ \begin{split}
+ \kappa_{\mathbf j}
+  ={}&r_E^{-f d(\mathbf j)/2}
+       2^{-\frac f2\sum_i j_i(j_i+1)}
+       \left(\frac{S_pS_q}
+        {S_{p-J}S_{q-J}\prod_i S_{j_i}}\right)^f\\
+     &{}\times
+       \bigl(\operatorname{Res}_{s=1}\zeta_E(s)\bigr)^a
+       \frac{\displaystyle\prod_i\prod_{\ell=2}^{j_i}
+                         \zeta_E(\ell)}
+            {\displaystyle\prod_{\ell=n-2J+1}^{n}L_\ell}.
+ \end{split}
+\end{equation}
+The factors $S_r$ and $L_\ell$ have the definitions
+in Section~\ref{rv-section}.  Rewriting $r_E/2$
+as the source's \texttt{vInv} shows that
+\eqref{nu-kappa} is exactly its \texttt{kapBd}:
+\[
+ \frac{d(\mathbf j)}2-nJ+J^2-\frac J2
+                      =-\frac12\sum_i j_i(j_i+1).
+\]
+
+\begin{proposition}\label{nu-flag-measure}
+If $J\le q$ and $n-2J>0$, then every nonnegative
+Borel function $B$ on $(0,\infty)^a$ satisfies
+\begin{equation}\label{nu-unfolded-flags}
+ \begin{split}
+ &\int_{\mathcal X}
+       \sum_{\mathcal P\in\mathcal F_{\mathbf j}(x)}
+           B(\boldsymbol\tau(\mathcal P,x))\,d\mathbb P(x)\\
+ &\quad=\kappa_{\mathbf j}
+      \int_{(0,\infty)^a}
+       B(\boldsymbol\tau)
+       L_{\mathbf j}(\boldsymbol\tau;\operatorname{id})
+                     \prod_i2fj_i\,\frac{d\tau_i}{\tau_i}.
+ \end{split}
+\end{equation}
+The equality is an equality of nonnegative
+integrals and does not assume their finiteness.
+\end{proposition}
+\begin{proof}
+The one-sublattice unfolding
+of Proposition~\ref{rv-mean-value} gives more
+than its displayed cumulative formula.
+It also disintegrates the measure over the
+self-dual quotient $P^\perp/P$.
+To see this directly, insert in that proof a
+nonnegative function of this quotient and its
+induced metric.  In the Levi coordinates
+$n\,\operatorname{diag}(A,b,A^{-*})\,k$,
+the size is $(H(P)/u)^{1/(2fj)}$, whereas the
+quotient metric depends only on $b$.
+The radical acts trivially on the quotient
+and the compact factor is an isometry.
+The radical covolume, the determinant
+disintegration on $\operatorname{GL}_j$, and
+the cancellation of $H(P)^{n-j}$ therefore
+remain exactly the same.
+The last unitary integral is simply the
+integral of the inserted function.
+
+After division by the original unitary volume,
+the quotient variable consequently has its
+Haar probability measure, and the size
+variable has density
+\[
+       \kappa_j(E;p,q)\,
+               2fj\,\tau^{\,2fj(n-j)}\,\frac{d\tau}{\tau}.
+\]
+The coefficient agrees with
+\eqref{rv-mean-value-formula}, since integrating
+this density over $(0,T)$ gives
+$\kappa_jT^{2fj(n-j)}/(n-j)$.
+The projective-module and quotient-lattice
+classes are summed independently, exactly as
+in the proof there.  This proves the
+disintegration for nonnegative simple
+functions, and monotone convergence proves
+it for nonnegative measurable functions.
+
+A flag above its first member is precisely
+a flag in $P_1^\perp/P_1$.  Repeatedly apply
+this disintegration with
+\[
+ t_{i-1}=j_1+\cdots+j_{i-1},\quad
+ p_i=p-t_{i-1},\quad q_i=q-t_{i-1},\quad
+ n_i=n-2t_{i-1}.
+\]
+Its coefficient is
+$\prod_i\kappa_{j_i}(E;p_i,q_i)$.
+The compact volumes and the $L$-factors
+telescope to \eqref{nu-kappa}.  The
+discriminant exponents telescope because
+\[
+ \sum_i\bigl(2j_in_i-3j_i^2\bigr)
+                         =d(\mathbf j).
+\]
+Finally the radial powers satisfy the exact
+identity
+\[
+ L_{\mathbf j}(\boldsymbol\tau;\operatorname{id})
+          =\prod_i\tau_i^{\,2fj_i(n_i-j_i)}.
+\]
+Indeed, for each $i<k$ the ratio and product
+factors together contribute
+$\tau_i^{4fj_ij_k}$ and no power of $\tau_k$.
+This proves \eqref{nu-unfolded-flags}.
+All changes of order are justified by Tonelli.
+\end{proof}
+
+\subsection{Uniform constants and the truncated radial integral}
+
+\begin{lemma}\label{nu-kappa-bound}
+If $\log n\ge15$, $q^2\le n$,
+$\log r_E\le e^n$, and $1\le J\le q$, then
+\begin{equation}\label{nu-kappa-small}
+                         \kappa_{\mathbf j}\le e^{-JA/2}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+In the product of one-step compact factors
+from the preceding proof, each integer
+$p_i-j_i$ is at least $n-q-J\ge n-2\sqrt n$,
+and $p_i+q_i\le n$.
+The factorial proof of \eqref{rv-sphere-saving}
+therefore applies with the original $n$
+at every step.  Explicitly,
+\[
+ \log\frac{S_{p_i}S_{q_i}}
+          {S_{p_i-j_i}S_{q_i-j_i}S_{j_i}}
+ \le j_i\bigl(3n-h_i\log h_i\bigr)
+ \le-\tfrac34j_in\log n,\qquad h_i=p_i-j_i.
+\]
+Sum over $i$.  The first two factors in
+\eqref{nu-kappa} are at most one.
+Equation~\eqref{rv-residue-bound} bounds the
+$a$ residues by a logarithm of at most
+$2af(n+1)$.
+The elementary Euler-product estimates in
+that same proof bound the numerator zeta
+products by a logarithm of at most $2af$,
+and all inverse $L$-factors together by $f$.
+Here $n-2J\ge2$, so their indices are at least
+two.  Since $a\le J$, we obtain
+\[
+ \log\kappa_{\mathbf j}
+ \le-\tfrac34JA+2Jfn+4Jf+f
+ \le-\tfrac34JA+Jf(2n+5)
+ \le-\tfrac12JA.
+\]
+The last inequality uses
+$n\log n/4\ge 15n/4\ge2n+5$.
+\end{proof}
+
+\begin{lemma}\label{nu-radial-bound}
+Under the hypotheses of Theorem~\ref{nu-main},
+let
+\[
+ \mathcal S_a=\{\boldsymbol\tau:
+                 \tau_0\le\tau_1<\cdots<\tau_a<1/2\}.
+\]
+Then
+\begin{equation}\label{nu-one-type}
+ \begin{split}
+ \kappa_{\mathbf j}\int_{\mathcal S_a}
+   L_{\mathbf j}\!\left(\boldsymbol\tau;
+                 r\longmapsto1+\frac{4\delta}{r}\right)
+   L_{\mathbf j}(\boldsymbol\tau;\operatorname{id})
+             \prod_i2fj_i\,\frac{d\tau_i}{\tau_i}
+                  \le e\,e^{-3JA/8}.
+ \end{split}
+\end{equation}
+\end{lemma}
+\begin{proof}
+On the ordered simplex, every argument
+$\tau_i/\tau_k$ with $i<k$, $\tau_i\tau_k$,
+$\tau_i$, or $\tau_i^2$ lies in $(0,1)$.
+Multiplying the two layer products replaces
+each such argument $r$ by $r+4\delta$.
+Their product is therefore at most
+$(1+4\delta)^{fd(\mathbf j)}$.
+Equations~\eqref{nu-parameters} and
+\eqref{nu-dimension} give
+\[
+ \log(1+4\delta)^{fd(\mathbf j)}
+ \le4\delta f(2nJ)
+ \le 24\cdot10^{-3}n^{-2}<1,
+\]
+since $J\le\sqrt n$.
+
+Enlarging the ordered simplex to
+$[\tau_0,1/2]^a$ bounds the remaining radial
+integral by
+\[
+ \prod_i2fj_i\log\frac1{2\tau_0}
+        \le\bigl(22f q^2\log X\bigr)^a.
+\]
+The logarithm is positive because $X\ge2n$
+and $q\ge1$.  We verify explicitly that
+\begin{equation}\label{nu-log-absorption}
+                   22f q^2\log X\le e^{A/8}.
+\end{equation}
+The hypotheses give
+\[
+ \log X\le\log n+\sqrt n+e^n+(C_g+1)e^{A/16}
+                         \le(C_g+3)e^{A/16}.
+\]
+Indeed $\log n+\sqrt n\le e^n$ and
+$A/16\ge n$, since $\log n\ge20$.
+Using $q^2\le n$,
+\[
+ \log(22f q^2\log X)
+       \le A/16+\log22+\sqrt n+\log n+\log(C_g+3).
+\]
+For $n\ge e^{20}$ we have
+$\log22\le\sqrt n$, $\log n\le\sqrt n$,
+and $3\sqrt n\le n/4$.
+The last term is at most $n/4$ by
+\eqref{nu-hypotheses}.  Thus the right side
+is at most $A/16+n/2\le A/8$.
+This proves \eqref{nu-log-absorption}.
+Combine it with $a\le J$ and
+\eqref{nu-kappa-small} to obtain
+\eqref{nu-one-type}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{nu-main}]
+The parameter $\delta$ in \eqref{nu-parameters}
+is less than $1/4$.  If the canonical flag of
+$x$ is empty, $N_\delta(x)=0$.
+If $\lambda_x\ge\tau_0$ and the flag is
+nonempty, its size tuple belongs to
+$\mathcal S_a$ by
+Proposition~\ref{nu-canonical-flag}.
+The packing bound therefore gives, pointwise,
+\[
+ \begin{split}
+ {\bf1}_{\lambda_x\ge\tau_0}N_\delta(x)
+ \le\sum_{J=1}^{q}\ 
+       \sum_{\substack{\mathbf j\text{ a composition}\\
+                       \text{of }J}}\ 
+       \sum_{\mathcal P\in\mathcal F_{\mathbf j}(x)}
+       {\bf1}_{\boldsymbol\tau(\mathcal P,x)\in\mathcal S_a}
+       L_{\mathbf j}\!\left(\boldsymbol\tau(\mathcal P,x);
+                      r\longmapsto1+\frac{4\delta}{r}\right).
+ \end{split}
+\]
+Only the one canonical flag is needed to
+dominate the left side; all other flags add
+nonnegative terms.  Their possible lack of
+semistability is immaterial, since the
+packing estimate was applied only to the
+canonical flag.
+Apply Proposition~\ref{nu-flag-measure}
+and Lemma~\ref{nu-radial-bound}.
+There are $2^{J-1}$ compositions of $J$:
+choose which of the $J-1$ spaces between
+$J$ ordered units are separators.
+Consequently
+\[
+ \int_{\lambda_x\ge\tau_0}N_\delta(x)\,d\mathbb P(x)
+ \le e\sum_{J=1}^{q}2^{J-1}e^{-3JA/8}
+ \le\frac{e\,e^{-3A/8}}{1-2e^{-3A/8}}
+ \le2e\,e^{-3A/8}\le e^{-A/4}.
+\]
+Both final inequalities hold for $A\ge16$,
+as is certainly the case here.
+
+Finally, Proposition~\ref{amb-near-unipotent}
+puts every nonzero summand in
+\eqref{nu-coefficient-integral} among the
+integral isometries counted by $N_\delta(x)$.
+The unit-vector and positive-type bounds
+give $|\Phi|\le m_0$.  Multiply
+\eqref{nu-count-integral} by
+$m_0\operatorname{vol}(\mathcal X)=D_*$.
+This proves \eqref{nu-coefficient-integral},
+including the case $m_0=0$.
+\end{proof}
+
+\paragraph{Scope.}
+For fixed $C_g$, the two lower bounds on $n$
+in \eqref{nu-hypotheses} give an explicit
+sufficient threshold.  Thus the estimate has
+the quantifiers of the source's
+\texttt{NearModerate}; the stronger block
+packing constant used here is not needed
+for that conclusion.  In the compact case
+$q=0$, a unipotent unitary matrix is the
+identity, so the corresponding near sum is
+zero.  This section does not assert the
+deep-cusp mass estimate
+\eqref{amb-deep-input}.  That estimate
+requires control of automorphic functions,
+in addition to the lattice counts proved here.
+
+
+% A quantitative proof of the mass estimate in the deepest part of the cusp.
+% Labels in this fragment have the prefix dc-.

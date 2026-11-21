@@ -1,0 +1,722 @@
+\section{Archimedean polynomial bounds and the global scale}
+\label{as-section}
+
+We now reconstruct the explicit polynomial and size estimates used
+to choose the widths in Section~\ref{gt-section}.  The parameters
+and polynomials below are the ones in the source, with ordinary
+mathematical notation~\cite{alpo-uniform-source}.  The resulting boundary estimate improves
+its numerical constant $160$ to $80$.  The mass recurrence, column
+dimension formula, and formal-degree lower bound are stated
+explicitly when they are used. Section~\ref{md-section} proves the
+mass recurrence from the stated classical mass formula. The dimension
+and formal-degree assertions are separate inputs. The coefficient
+identities underlying the Fourier and off-diagonal estimates are
+proved in Sections~\ref{ca-section} and \ref{cg-section}; their
+application to the generated Jacquet functions has additional
+analytic requirements.
+
+\subsection{Vandermonde determinants under binary perturbations}
+
+For a strictly decreasing real tuple $z=(z_1,\ldots,z_J)$, put
+\[
+ \mathcal V(z)=\prod_{1\leq i<j\leq J}(z_i-z_j),
+ \qquad H_n=\sum_{j=1}^n\frac1j,\qquad H_0=0.
+\]
+Empty products have value one.
+
+\begin{lemma}\label{as-vandermonde}
+Let $J\geq1$ and $\epsilon_1,\ldots,\epsilon_J\in\{0,1\}$.
+Then
+\[
+ R_J(\epsilon)=\prod_{i<j}
+       \left(1+\frac{\epsilon_j-\epsilon_i}{4(j-i)}\right)>0.
+\]
+If
+\[
+ L_J(\epsilon)=\frac14\sum_{i=1}^J
+               \epsilon_i(H_{i-1}-H_{J-i}),
+\]
+then
+\begin{equation}\label{as-log-vand}
+ L_J(\epsilon)-\frac{\pi^2J}{144}
+       \leq\log R_J(\epsilon)\leq L_J(\epsilon),
+ \qquad |L_J(\epsilon)|\leq\frac{J\log2}{4}.
+\end{equation}
+In particular $R_J(\epsilon)\leq2^{J/4}\leq e^{J/4}$.
+\end{lemma}
+
+\begin{proof}
+Each fraction in the product has absolute value at most $1/4$.
+For $|x|\leq1/4$, integration of
+$x-\log(1+x)=\int_0^x t/(1+t)\,dt$ gives
+\[
+ 0\leq x-\log(1+x)\leq\frac{x^2}{2(1-|x|)}
+                                      \leq\frac23x^2.
+\]
+The sum of the fractions is $L_J(\epsilon)$: the coefficient
+of $\epsilon_i$ is $(H_{i-1}-H_{J-i})/4$.
+Also
+\[
+ \frac23\sum_{i<j}
+       \left(\frac{\epsilon_j-\epsilon_i}{4(j-i)}\right)^2
+ \leq\frac1{24}\sum_{d=1}^{J-1}\frac{J-d}{d^2}
+ \leq\frac{\pi^2J}{144},
+\]
+using $\sum_{d\geq1}d^{-2}=\pi^2/6$.
+This proves the first two inequalities in \eqref{as-log-vand}.
+
+The coefficients $H_{i-1}-H_{J-i}$ are increasing and
+antisymmetric about the middle index.  Thus the largest possible
+absolute sum against binary $\epsilon_i$ is the sum of their
+positive terms.  If $J=2p$, this sum is
+$2p(H_{2p}-H_p)$; if $J=2p+1\geq3$, it is
+$(2p+1)(H_{2p}-H_p)$.  These identities follow by summing
+$\sum_{j=0}^nH_j=(n+1)H_n-n$.
+Finally
+$H_{2p}-H_p\leq\int_p^{2p}dt/t=\log2$.
+For $J=1$ the sum is zero.  This proves the last inequality.
+\end{proof}
+
+\subsection{The spectral parameters and the critical scale}
+
+Fix integers $k\geq4$ and $m\geq2$, a real $\Delta\geq1$,
+and $v_*\geq0$.  Set
+\[
+ v_i=v_*+4\Delta(k-1-i)\quad(1\leq i\leq k-1).
+\]
+Suppose that real numbers $b_1,\ldots,b_m,a$ satisfy
+\begin{equation}\label{as-parameters}
+ v_1\leq4k\Delta,\quad b_1\geq1,\quad
+ b_{j+1}-b_j\geq1,\quad a-v_1\geq4k\Delta.
+\end{equation}
+There are two cases.  In the first put $u_k=v_*-1/2$.
+In the second choose $b_*$ with
+$b_1/2\leq b_*\leq b_1-3$ and put $u_k=-b_*$.
+For a binary sequence $\epsilon=(\epsilon_1,\ldots,\epsilon_{k-1})$
+with $\epsilon_{k-1}=0$, complete the tuple by
+\[
+ u_1=a,\qquad
+ u_{i+1}=v_i-\tfrac12-\epsilon_i\Delta
+                      \quad(1\leq i\leq k-2).
+\]
+Write $u(\epsilon)$ for this tuple, and put
+\[
+ \lambda=(v_1,\ldots,v_{k-1},-b_1,\ldots,-b_m),
+ \qquad n=k+m-1,\qquad B_0=\prod_{j=1}^m b_j.
+\]
+Define
+\begin{equation}\label{as-effective-a}
+ a_0=
+ \begin{cases}a-v_1&\text{in the first case},\\
+ a b_* /(k\Delta)&\text{in the second case},\end{cases}
+ \qquad
+ \eta_*=
+ \begin{cases}0&\text{in the first case},\\
+ 4k\Delta/b_*&\text{in the second case}.
+ \end{cases}
+\end{equation}
+All these tuples are strictly decreasing.  For the interior entries,
+successive differences are $\Delta(4+\epsilon_{i+1}-\epsilon_i)$,
+and the two end inequalities follow from \eqref{as-parameters}.
+The last nonnegative entry of $\lambda$ is $v_*\geq0$, whereas
+its remaining entries are negative.  These observations also show
+that every Vandermonde determinant below is positive.
+
+\begin{lemma}\label{as-vand-comparison}
+With this notation, $a_0\geq1$ and
+\begin{align}
+ \mathcal V(\lambda)&\geq
+       \mathcal V(v_1,\ldots,v_{k-1})B_0^{k-1},
+                    \label{as-vand-lambda}\\
+ \mathcal V(u(\epsilon))&\leq
+       e^{k/4}\bigl(2a_0(1+\eta_*)\bigr)^{k-1}
+                    \mathcal V(v_1,\ldots,v_{k-1}).
+                    \label{as-vand-u}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Every mixed factor $v_i+b_j$ is at least $b_j$, and every
+factor $b_j-b_i$ for $i<j$ is at least one.
+Factoring the Vandermonde determinant proves
+\eqref{as-vand-lambda}.
+In the first case the last $k-1$ entries of $u$ are the
+binary perturbations of the arithmetic progression $v_i$.
+Their Vandermonde determinant is exactly
+$R_{k-1}(\epsilon)\mathcal V(v_1,\ldots,v_{k-1})$.
+Furthermore each $a-u_i$, $2\leq i\leq k$, is at most
+\[
+ a-v_*+\tfrac12
+   =(a-v_1)+4\Delta(k-2)+\tfrac12
+   \leq2(a-v_1).
+\]
+Lemma~\ref{as-vandermonde} proves \eqref{as-vand-u}.
+
+In the second case put $q=k-2\geq2$.
+The interior $q$ entries have Vandermonde determinant at most
+$e^{q/4}\mathcal V(v_1,\ldots,v_q)$.
+Each such entry is positive and at most $v_1$, whence
+\[
+ a-u_i\leq a,\qquad u_i+b_*\leq b_*(1+\eta_*).
+\]
+Also
+\[
+ \frac{a+b_*}{a_0}=\frac{k\Delta}{a}+\frac{k\Delta}{b_*}
+                  \leq\frac{1+\eta_*}{4}.
+\]
+The missing factors in the progression are exactly
+\[
+ \mathcal V(v_1,\ldots,v_{k-1})
+       =\mathcal V(v_1,\ldots,v_q)(4\Delta)^q q!.
+\]
+Combining these facts gives the stronger estimate
+\[
+ \frac{\mathcal V(u(\epsilon))}
+      {\mathcal V(v_1,\ldots,v_{k-1})}
+ \leq\frac{e^{q/4}}4
+       \bigl(a_0(1+\eta_*)\bigr)^{k-1}
+                  \frac{k^q}{4^q q!}.
+\]
+Here $4^q q!\geq(q+2)^q=k^q$ for $q\geq2$.
+For $2\leq q\leq5$ this is checked by multiplication.
+For $q\geq6$, the integral bound
+$\log(q!)\geq\int_1^q\log t\,dt\geq q\log q-q$
+and $e<3$ give $4^q q!\geq(4q/3)^q\geq(q+2)^q$.
+This proves \eqref{as-vand-u} also in the second case.
+Finally $a_0\geq4k\Delta$ in the first case, and
+$a_0\geq4b_*\geq2$ in the second.
+\end{proof}
+
+Let $\rho\geq1$, $g\geq2\pi$, and $\kappa=2\pi/\rho$.
+Let $V_\lambda>0$ satisfy the explicit formal-degree inequality
+\begin{equation}\label{as-formal-degree-assumption}
+ V_\lambda\geq\tfrac12\mathcal V(\lambda).
+\end{equation}
+In the application $V_\lambda$ is the formal degree of the
+specified archimedean representation, multiplied by
+$\prod_{j=0}^{n-1}j!$, for the Haar measure in the mass formula.
+Corollary~\ref{fd-source} proves the stronger equality
+$V_\lambda=\mathcal V(\lambda)$ with precisely that normalization,
+using the classical representation theorems stated there.
+For each binary sequence define its positive critical scale
+\begin{equation}\label{as-critical-scale}
+ T_\epsilon^k=
+ \kappa^{-((m-1)k+m(m-1)/2)}\rho^{-(m-1)/2}
+ g^{mk+m(m-1)/2}
+       \frac{V_\lambda}{\mathcal V(u(\epsilon))}.
+\end{equation}
+
+Suppose in addition that a real number $B\geq1$ satisfies
+\begin{equation}\label{as-small-parameters}
+ \eta=\frac{4mk\Delta}{b_1}\leq\frac1{10},\qquad
+ b_j\leq B^2\ (1\leq j\leq m),\qquad
+ \mu=\frac{2m\log B}{k}\leq\frac1{10}.
+\end{equation}
+In the second case $b_*\geq b_1/2$ and $m\geq2$ imply
+$0\leq\eta_*\leq\eta\leq1/10$.
+
+\begin{proposition}\label{as-critical-lower}
+For every allowed sequence,
+\begin{equation}\label{as-critical-lower-eq}
+ T_\epsilon\geq
+ c_0 g^m\kappa^{-(m-1)}\frac{B_0}{a_0},
+ \qquad
+ c_0=\frac{19}{50}\frac{e^{-\mu}}{1+\eta_*}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The factor
+$((g/\kappa)^{m(m-1)/2}\rho^{-(m-1)/2})^{1/k}$
+is at least one, because $g/\kappa\geq\rho\geq1$.
+Equations~\eqref{as-formal-degree-assumption} and
+\eqref{as-vand-u} therefore give
+\[
+ T_\epsilon\geq g^m\kappa^{-(m-1)}
+       \frac{e^{-1/4}}2
+       \left(\frac{B_0}{a_0(1+\eta_*)}\right)^{1-1/k}.
+\]
+We have $B_0\leq B^{2m}$ and $a_0(1+\eta_*)\geq1$.
+Thus the last power is at least
+$e^{-\mu}B_0/(a_0(1+\eta_*))$.
+Finally $e^{-1/4}/2>19/50$.
+For example the exponential series gives
+$e^{1/4}\leq1+1/4+(1/4)^2/(2(1-1/4))=31/24$,
+and $12/31>19/50$.
+\end{proof}
+
+\subsection{The explicit boundary polynomial estimate}
+
+For two allowed sequences $\epsilon,\epsilon'$ and positive
+real numbers $T,T'$, put
+\[
+ P(Y)=\prod_{j=1}^n(Y+\lambda_j),\qquad
+ Q(Y)=-TT'\prod_{i=1}^k
+          (Y+\tfrac12+u_i(\epsilon))
+          (Y+\tfrac12+u_i(\epsilon')),
+\]
+and, whenever the denominator is nonzero, define
+\[
+ \beta(Y)=g^m\kappa^{-(m-1)}
+             \sqrt{\left|\frac{P(Y)P(Y+1)}{Q(Y)}\right|},
+ \qquad t=\sqrt{\frac{T_\epsilon T_{\epsilon'}}{TT'}}.
+\]
+
+\begin{theorem}\label{as-boundary}
+Suppose that $1\leq l\leq k-2$,
+$\epsilon_l\ne\epsilon'_l$, and
+$\tau=v_l+Y\in[5/2,\Delta/2]$.
+Then $P(Y)$, $P(Y+1)$, and $Q(Y)$ are all nonzero, and
+\begin{equation}\label{as-boundary-eq}
+ 0<\beta(Y)\leq80\,t\sqrt{k}\sqrt{\tau/\Delta}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Put $y=-Y=v_l-\tau$.  Then $0<y\leq v_1\leq4k\Delta$;
+more precisely $y\geq v_*+7\Delta/2$.
+Grouping corresponding factors of $P$ and $Q$ gives
+\begin{equation}\label{as-beta-factorization}
+ \beta(Y)=\frac{g^m\kappa^{-(m-1)}}{\sqrt{TT'}}
+       N(y)U(y)\prod_{i=1}^{k-1}R_i(y),
+\end{equation}
+where
+\[
+ N(y)=\prod_{j=1}^m\sqrt{(b_j+y)(b_j+y-1)},\qquad
+ U(y)=\frac1{a+1/2-y},
+\]
+and, except for the last index in the second case,
+\[
+ R_i(y)=
+ \frac{\sqrt{|(v_i-y)(v_i+1-y)|}}
+      {\sqrt{|(v_i-\epsilon_i\Delta-y)
+                    (v_i-\epsilon'_i\Delta-y)|}}.
+\]
+At the last index in the second case replace this by
+\[
+ R_{k-1}(y)=
+       \frac{\sqrt{|(v_*-y)(v_*+1-y)|}}{b_*+y-1/2}.
+\]
+All the displayed denominators are positive.  At $i=l$ the
+two factors in the denominator have absolute values $\tau$
+and $\Delta-\tau$.  At $i<l$ they are positive, and at
+$i>l$ they are negative before absolute values are taken.
+This proves the nonvanishing assertions and justifies the
+factorization.
+
+Since $1+x\leq e^x$,
+\[
+ N(y)\leq\prod_j(b_j+y)
+       \leq B_0\exp\left(y\sum_jb_j^{-1}\right)
+       \leq B_0e^\eta.
+\]
+For $i<l$, put $d=l-i$ and $X=4d\Delta+\tau$.
+Then
+\[
+ R_i(y)\leq\frac{X+1}{X-\Delta}
+       \leq1+\frac2{4d-1}.
+\]
+For $i>l$ outside the exceptional last index,
+$X=v_i-y\leq-7\Delta/2$, so the numerator is at most
+$-X$ and each denominator factor has absolute value at
+least $-X$.  Consequently $R_i(y)\leq1$.
+At the differing index the exact value and bound are
+\[
+ R_l(y)=\sqrt{\frac{\tau+1}{\Delta-\tau}}
+              \leq\sqrt{\frac{14\tau}{5\Delta}}.
+\]
+
+The finite product before this index has the useful sharper bound
+\begin{equation}\label{as-product-sqrt}
+ \prod_{d=1}^p\left(1+\frac2{4d-1}\right)
+                 \leq\frac53\sqrt p\quad(p\geq1).
+\end{equation}
+It is equality at $p=1$.  For the induction step, the inequality
+\[
+ \left(\frac{4p+5}{4p+3}\right)^2
+                    \leq\frac{p+1}{p}
+\]
+reduces to $8p+9\geq0$.
+Thus the product over $i<l$ is at most $(5/3)\sqrt k$;
+this also holds for the empty product when $l=1$.
+
+In the first case $U(y)\leq1/a_0$ and the last factor is
+at most one.  In the second case
+\[
+ R_{k-1}(y)\leq\frac{4k\Delta}{b_*},\qquad
+ U(y)\leq\frac1{a-v_1}\leq\frac2a,
+\]
+so their product is at most $8/a_0$.
+Combining all these estimates in
+\eqref{as-beta-factorization}, and applying
+Proposition~\ref{as-critical-lower} to both sequences, gives
+\[
+ \beta(Y)\leq
+ \frac{8(5/3)\sqrt{14/5}\,e^\eta}{c_0}
+               t\sqrt k\sqrt{\tau/\Delta}.
+\]
+Finally $e^{-\mu}\geq1-\mu\geq9/10$,
+$1+\eta_*\leq11/10$, and
+$e^\eta\leq(1-\eta)^{-1}\leq10/9$.
+Since $\sqrt{14/5}<8367/5000$, the remaining constant is at most
+\[
+ 8\frac53\frac{8367}{5000}\frac{10}{9}
+       \frac{11/10}{(19/50)(9/10)}
+       =\frac{122716}{1539}<80.
+\]
+\end{proof}
+
+\subsection{The exact mass assumptions and their algebraic consequence}
+
+We next specify the global input that controls the product of the
+numbers $t$ in Theorem~\ref{as-boundary}.  Fix an integer
+$r\geq0$, put $m=2r+2$ and $n=k+m-1$, and let $f\geq1$
+be the number of complex places.
+At each place use spectral data as above, with the same
+$k,m,\Delta,g,\rho$, but possibly different $a,b_j,v_*$ and
+choice of the last entry.  The tuple $\lambda$ is fixed when
+the binary sequence varies.  Write $V_{\lambda,v}$ and
+$\mathcal V(u_v(\epsilon))$ for the corresponding quantities.
+Put $\kappa=2\pi/\rho$ and
+$s_d=\prod_{j=0}^{d-1}j!$.
+
+Let $g=g_1g_2$, with integers $g_1,g_2\geq2$.
+For $q>1$ define
+\[
+ G_d(q)=q^{d^2}\prod_{j=1}^d(1-q^{-j}),\qquad
+ c_k(q)=\frac{G_k(q)}{q^{k(k-1)/2}},\qquad
+ r_{k,r}(q)=\frac{G_n(q)}
+                     {q^{r(2k+2r+1)+k(k-1)/2}}.
+\]
+At a prime power $q$, $G_d(q)$ is the order of
+$\operatorname{GL}_d(\mathbb F_q)$, obtained by choosing
+successive linearly independent columns.  The other two
+expressions specify the exact finite-level factors used here.
+
+Assume that positive masses $M_j$ and positive factors $L_j$
+are given in the indicated ranges, with
+\begin{align}
+ M_j&=\bigl((j-1)!\kappa^{-j}\bigr)^f
+              \rho^{-f/2}L_jM_{j-1}\quad(k<j\leq n),
+                  \label{as-mass-assumption}\\
+ |\log L_j|&\leq f\log\zeta(j),
+                  \label{as-L-assumption}\\
+ D_*&=M_n\bigl(r_{k,r}(g_1)r_{k,r}(g_2)\bigr)^f
+                        \prod_v\frac{V_{\lambda,v}}{s_n},
+                  \label{as-Dstar-assumption}\\
+ d_{\epsilon,T}&=M_k\bigl(c_k(g_1)c_k(g_2)\bigr)^f
+            \prod_v\frac{\mathcal V(u_v(\epsilon))}{s_k}
+                              (T^k-1)^f,\qquad T\geq2.
+                  \label{as-column-assumption}
+\end{align}
+Here $\zeta(j)=\sum_{a\geq1}a^{-j}$ in its convergent range.
+The $M_j$ stand for the masses with the specified Haar
+normalization, and $d_{\epsilon,T}$ for the chosen source-space
+dimension. The mass recurrence and the Euler-factor bound are proved
+in Section~\ref{md-section}, the source-space dimension in
+Theorem~\ref{cd-source-dimension}, and the formal-degree
+identification in Corollary~\ref{fd-source}. The expression $D_*$
+is the prescribed leading term. Its quantitative comparison with
+the actual ambient multiplicity is a separate estimate; the
+identities here do not assert that comparison.
+
+\begin{proposition}\label{as-mass-ratio}
+Under \eqref{as-mass-assumption}--\eqref{as-column-assumption},
+\begin{equation}\label{as-mass-ratio-eq}
+ \frac{D_*}{d_{\epsilon,T}}
+   =E_T\prod_v\left(\frac{T_{\epsilon,v}}T\right)^k,
+\end{equation}
+where
+\[
+ E_T=\left(\prod_{j=k+1}^nL_j\right)
+       \left(\prod_{j=k+1}^n
+                    (1-g_1^{-j})(1-g_2^{-j})\right)^f
+                         (1-T^{-k})^{-f}.
+\]
+Moreover $E_T>0$ and
+\begin{equation}\label{as-E-bound}
+ |\log E_T|\leq8f2^{-k}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Directly from the finite products,
+\[
+ \frac{r_{k,r}(q)}{c_k(q)}
+   =q^{km+m(m-1)/2}\prod_{j=k+1}^n(1-q^{-j}).
+\]
+The exponent identity uses $m=2r+2$ and $n=k+2r+1$.
+Multiplying the mass recurrence gives
+\[
+ \frac{M_n}{M_k}
+   =\left(\kappa^{-((m-1)k+m(m-1)/2)}
+             \rho^{-(m-1)/2}\prod_{j=k}^{n-1}j!\right)^f
+                   \prod_{j=k+1}^nL_j.
+\]
+Since $s_n/s_k=\prod_{j=k}^{n-1}j!$, the factorials cancel
+in $D_*/d_{\epsilon,T}$.  The remaining factors are exactly
+\eqref{as-critical-scale} at each place and $E_T$.
+This proves \eqref{as-mass-ratio-eq}.
+
+For $j\geq3$, monotonicity of $x^{-j}$ gives
+\[
+ \zeta(j)-1\leq2^{-j}+\int_2^\infty x^{-j}\,dx
+       =2^{-j}\left(1+\frac2{j-1}\right)\leq2^{1-j}.
+\]
+Hence $\log\zeta(j)\leq2^{1-j}$.
+For $0\leq x\leq1/2$,
+$0\leq-\log(1-x)\leq2x$, by integrating $(1-t)^{-1}$.
+The logarithm of the first product in $E_T$ is therefore
+bounded in absolute value by $2f2^{-k}$.
+Each of the two finite-level products contributes at most
+$2f2^{-k}$, and the last factor contributes at most
+$2f2^{-k}$.  This proves \eqref{as-E-bound}.
+\end{proof}
+
+\begin{corollary}\label{as-product-critical}
+Suppose $8f2^{-k}\leq\log2$, $C_0\geq1$, $\Gamma\geq1$, and
+\begin{equation}\label{as-choice-dimension}
+ \frac{D_*}{C_0\Gamma^2}\leq d_{\epsilon,T}
+                      \leq\frac{C_0D_*}{\Gamma^2}.
+\end{equation}
+Then
+\[
+ (2C_0)^{-1/k}\Gamma^{2/k}
+  \leq\prod_v\frac{T_{\epsilon,v}}T
+  \leq(2C_0)^{1/k}\Gamma^{2/k}.
+\]
+In particular, if $\log\Gamma\leq k/8$, the upper bound
+is at most $C_t=2C_0e^{1/4}$.
+If the same assumptions hold for $(\epsilon',T')$, then
+\begin{equation}\label{as-product-t}
+ \prod_v\sqrt{\frac{T_{\epsilon,v}T_{\epsilon',v}}{TT'}}
+                              \leq C_t.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Equation~\eqref{as-E-bound} gives $1/2\leq E_T\leq2$.
+Substitute \eqref{as-choice-dimension} in
+\eqref{as-mass-ratio-eq} and take positive $k$th roots.
+The bound on $\Gamma$ gives $\Gamma^{2/k}\leq e^{1/4}$,
+and $(2C_0)^{1/k}\leq2C_0$.  Multiplying the two upper
+bounds and taking a square root proves
+\eqref{as-product-t}.
+\end{proof}
+
+\subsection{Actual widths and a stronger lower bound for their scale}
+
+Assume the hypotheses of Theorem~\ref{as-boundary} at every
+place, with one fixed differing index $l$, and suppose
+\eqref{as-product-t} holds.  Let
+\[
+ N=10m,\qquad I=\Delta/2-5/2,
+ \qquad N^3\leq\Delta/2,
+ \qquad C\geq1,\qquad
+ H=\frac{C\pi N}{I}\leq1.
+\]
+These assumptions imply $I>0$.
+Let $B_v$ be the supremum of $\beta_v(Y)$ on
+$5/2\leq v_l+Y\leq\Delta/2$, and let $B_{1,v}$ be its
+supremum on $5/2\leq v_l+Y\leq N^3$.
+The polynomials have no zeros in these denominators, so these
+are finite positive suprema of continuous functions on nonempty
+compact intervals.  Theorem~\ref{as-boundary} gives, with
+$A_0=80$ and $t_v=\sqrt{T_{\epsilon,v}T_{\epsilon',v}/(TT')}$,
+\begin{equation}\label{as-B-bounds}
+ B_v\leq A_0t_v\sqrt k,
+ \qquad B_{1,v}\leq A_0t_v\sqrt k\sqrt{N^3/\Delta}.
+\end{equation}
+
+Put $h=C\kappa N/(gI)$.  Since $\rho\geq2$ in the
+application, $\kappa\leq\pi$; assume $\rho\geq2$ in the
+rest of this subsection.  Then $0<h\leq H\leq1$.
+For $b,s\geq1$ with $b+s\leq r+2$ set
+\[
+ A_{b,s,v}=C B_{b,s,v}h^{2(b-1)+s-1},
+ \qquad
+ B_{b,s,v}=
+ \begin{cases}B_{1,v}&(b,s)=(1,1),\\B_v&\text{otherwise},\end{cases}
+\]
+and for $1\leq b\leq r+1$ put
+\[
+ A'_{b,v}=\sqrt{\frac{C B_v\kappa}{\sqrt{TT'}}}\,h^{b-1}.
+\]
+Define the positive number $\Theta$ by the finite maximum
+\begin{equation}\label{as-scale-definition}
+ \Theta^{-f}=
+ \max\left(\left\{\prod_vA_{b,s,v}:b,s\geq1,
+                                           b+s\leq r+2\right\}
+       \cup\left\{\prod_vA'_{b,v}:1\leq b\leq r+1\right\}\right).
+\end{equation}
+This is precisely the scale used for the source's block widths;
+there is no choice of a favorable subsequence of blocks.
+
+\begin{proposition}\label{as-widths}
+Write $U=C_t^{1/f}$.  Then
+\begin{equation}\label{as-theta-lower}
+ \Theta\geq\min\left\{
+ \frac{\sqrt{\Delta/(kN^3)}}{UCA_0},\quad
+ \frac{I}{\pi UC^2A_0\sqrt k\,N},\quad
+ \sqrt{\frac{\sqrt{TT'}}{\pi UCA_0\sqrt k}}
+                            \right\}.
+\end{equation}
+For $\nu(r,b,s)=2r+3-2b-s$, define the unnormalized widths
+\[
+ x_{b,s,v}=\frac{A_{b,s,v}}{g\rho^{\nu(r,b,s)+1}},
+ \qquad
+ x'_{b,v}=\frac{A'_{b,v}}{g\rho^{\nu(r,b,r+2-b)}}.
+\]
+Then the actual dual widths $x^D_{b,v}=x_{b,1,v}$ and lift widths
+\begin{equation}\label{as-actual-lift-widths}
+ x^L_{b,s,v}=
+ \begin{cases}
+ x_{b,s+1,v}&b+s\leq r+1,\\
+ 2x'_{b,v}&b+s=r+2
+ \end{cases}
+\end{equation}
+satisfy \eqref{gt-dual-width}--\eqref{gt-lift-width}, with
+$\rho=\rho_E$.  Also
+\[
+ \frac{(\prod_vx_{b,s,v})^2}{N\mathfrak a_{b,s}}
+                                          \leq\Theta^{-2f}.
+\]
+\end{proposition}
+
+\begin{proof}
+Multiplying \eqref{as-B-bounds} over the places shows that
+the $f$th roots of the products in
+\eqref{as-scale-definition} are bounded by, respectively,
+\[
+ UCA_0\sqrt{kN^3/\Delta},\qquad
+ UCA_0\sqrt k\,H^2,\qquad
+ UCA_0\sqrt k\,H,\qquad
+ \sqrt{\frac{\pi UCA_0\sqrt k}{\sqrt{TT'}}}.
+\]
+The four cases are $(b,s)=(1,1)$, $s=1,b\geq2$,
+$s\geq2$, and the terminal widths $A'_b$.
+Since $H\leq1$, the second bound is at most the third.
+Taking the reciprocal of the maximum proves
+\eqref{as-theta-lower}.
+
+The remaining claims follow directly from
+\eqref{as-scale-definition} and
+\eqref{gt-adjacent-ideals}.  For the interior lift widths use
+$\nu(r,b,s+1)+1=\nu(r,b,s)$.
+For the terminal lift widths the factor $2$ contributes $2^f$
+to the product, exactly as in \eqref{gt-lift-width}.
+Finally the squared ratio in the statement is
+$(\prod_vA_{b,s,v})^2$ by the ideal norm formula.
+\end{proof}
+
+To verify that these definitions are the original widths,
+let $d=2(b-1)+s-1$, $\kappa_g=2\pi/g$, and put
+$\mathcal A_v=B_{b,s,v}/(g^m\kappa^{-(m-1)})$.
+Their scalar polynomial formula is
+\[
+ C\kappa_g^{-(m-1)}\mathcal A_v
+               (C\kappa_gN/I)^d.
+\]
+Multiplication by $g\rho^{\nu(r,b,s)+1}$ gives
+$CB_{b,s,v}h^d=A_{b,s,v}$, since
+$\nu(r,b,s)+1=m-1-d$.
+For the terminal width use instead
+$\mathcal A_v=B_v/(g^m\kappa^{-(m-1)})$; its squared formula is
+\[
+ C\kappa_g^{-(m-1)}\mathcal A_v
+       \kappa_g^{2b-1}(TT')^{-1/2}(CN/I)^{2(b-1)}.
+\]
+Multiplication by $(g\rho^{r+1-b})^2$ gives
+$(A'_{b,v})^2$.  All quantities are nonnegative, so taking
+square roots preserves the equality.  This verifies both
+normalizations, including the terminal square root.
+
+\begin{corollary}\label{as-power-scale}
+Fix positive constants $C,C_t,C_\Delta,c_T,C_b$, with
+$C\geq1$, $C_t\geq1$, $C_\Delta>4$, and $c_TC_b>1$.
+Suppose $m=2r+2\leq f\leq k$ and
+\begin{equation}\label{as-growing-parameters}
+ B\geq k^{C_b/2},\qquad
+ \Delta\geq(kf\log B)^{C_\Delta},\qquad
+ T,T'\geq B^{c_Tm}.
+\end{equation}
+Under the preceding spectral, mass, dimension, and
+formal-degree hypotheses, every fixed
+\begin{equation}\label{as-improved-exponent}
+ 0<c<\min\left\{\frac{C_\Delta-1}{2},
+                         \frac{2c_TC_b-1}{4}\right\}
+\end{equation}
+satisfies $\Theta\geq k^c$ for all sufficiently large $k$.
+The threshold is uniform in $m,f,B,\Delta,T,T'$ and in the
+individual spectral parameters subject to the displayed
+assumptions.
+\end{corollary}
+
+\begin{proof}
+The constants are fixed, while $2\leq m\leq f\leq k$.
+Thus $N=10m\leq10f$ and
+$\log B\geq(C_b/2)\log k$.
+For sufficiently large $k$, uniformly in the other parameters,
+the lower bound for $\Delta$ gives
+$N^3\leq\Delta/2$, $I=\Delta/2-5/2\geq\Delta/3$,
+and $C\pi N/I\leq1$.
+Since $1\leq U=C_t^{1/f}\leq C_t$, the first term of
+\eqref{as-theta-lower} is at least a positive fixed constant times
+\[
+ k^{(C_\Delta-1)/2}
+       f^{(C_\Delta-3)/2}(\log B)^{C_\Delta/2},
+\]
+and the second is at least a positive fixed constant times
+\[
+ k^{C_\Delta-1/2}
+       f^{C_\Delta-1}(\log B)^{C_\Delta}.
+\]
+The positive powers of $f$ can be bounded below by constants.
+The third term is at least a positive fixed constant times
+\[
+ (TT')^{1/4}k^{-1/4}
+    \geq B^{c_Tm/2}k^{-1/4}
+    \geq k^{(2c_TC_b-1)/4}.
+\]
+Each exponent is strictly larger than $c$, so its fixed
+multiplicative constant is absorbed by increasing the threshold
+for $k$.  This proves the uniform claim.
+\end{proof}
+
+\begin{corollary}\label{as-final-smallness}
+Let $C_1\geq1$, $c>0$, and $C_f>0$ be fixed, with $cC_f>7$.
+If $\Theta\geq k^c$, $2r+2\leq f$, and
+$C_f\log B\leq f\log k$, then, for sufficiently large $k$,
+\[
+ r(C_1/\Theta)^f\leq1,\qquad
+ C_1(r+1)(C_1/\Theta)^f\leq B^{-7}.
+\]
+\end{corollary}
+
+\begin{proof}
+Since $r+1\leq f\leq2^f$, the prefactor
+$C_1(r+1)C_1^f$ is at most $(2C_1^2)^f$.
+Also $B^7\leq k^{7f/C_f}$.
+Therefore the second asserted product, after multiplication
+by $B^7$, is at most
+\[
+ \bigl(2C_1^2k^{-(c-7/C_f)}\bigr)^f,
+\]
+which is at most one for large $k$.
+The first assertion follows in the same way from
+$r\leq2^f$ and $k^c\geq2C_1$.
+\end{proof}
+
+The boundary constant $80$, the factor $C_t^{1/f}$ in
+\eqref{as-theta-lower}, and the exponent range
+\eqref{as-improved-exponent} strengthen the corresponding
+size estimates stated in the source.  The displayed hypotheses
+include the source-space dimension formula and formal-degree lower
+bound; the mass recurrence is now supplied by Section~\ref{md-section}.
+The polynomial coefficient identities are proved in
+Sections~\ref{ca-section} and \ref{cg-section}. Their application to
+the particular Jacquet functions, the remaining orbital energy
+estimates, and the ambient-dimension assertion are not consequences
+of the elementary size estimates above.
+
+

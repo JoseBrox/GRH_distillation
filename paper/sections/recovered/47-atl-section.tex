@@ -1,0 +1,685 @@
+\section{The integral lowering map for every auxiliary character}
+\label{atl-section}
+
+We extend the class comparison to the nontrivial auxiliary
+characters.  The relevant operation increases the rank by one,
+then restricts a coefficient representation to the smaller rank.
+Its integral normalization involves the conjugate of the selected
+prime generator.  We give the local groups, the extension of
+decorated lattices, the transport between class representatives,
+and the descent of the resulting complex-valued functions.
+The polynomial branching theorem is the separate result
+Theorem~\ref{ib-standard-integral}; no automorphic decomposition
+or period identity is needed for the arguments in this section.
+The definitions compared here are those of the actual final
+step for every auxiliary character in the source
+\cite{alpo-uniform-source}.
+
+\subsection{The selected primes and the character at the level}
+
+Let $E/F$ be a CM quadratic extension, write
+$\mathcal O=\mathcal O_E$, and write $x\mapsto\bar x$ for
+its nontrivial automorphism.  A set $S$ of rational primes
+contains the two type primes and all the primes $T$ used to
+increase the rank.  For one such $T$ fix $\pi\in\mathcal O$
+with
+\begin{equation}\label{atl-prime-generator}
+ \pi\bar\pi=T,\qquad
+ (\pi)=\prod_{P\in\mathcal T}P,\qquad
+ (\pi)+(\bar\pi)=\mathcal O.
+\end{equation}
+The primes in $\mathcal T$ are distinct.  The type primes
+form another finite set $\mathcal G$ of primes of $E$, all
+coprime to $T$.
+
+The ideal equality in \eqref{atl-prime-generator} follows
+from the actual prime data, rather than requiring a new
+selection.  Namely, write $[E:\mathbb Q]=2f$.  The construction
+has exactly $f$ distinct prime divisors of $\pi$, each of norm
+$T$.  Conjugation preserves absolute ideal norms, so
+$N((\pi))^2=N((T))=T^{2f}$ and $N((\pi))=T^f$.
+The product of those $f$ prime divisors divides $(\pi)$
+and has the same norm, hence equals $(\pi)$.  The coprimality
+with its conjugate is also part of the selected prime data.
+
+An auxiliary character determines a finite set $\mathcal Q$
+of primes of $E$.  Each $Q\in\mathcal Q$ is the chosen prime
+above a prime $v$ of $F$ such that
+\begin{equation}\label{atl-good-primes}
+ v\mathcal O=Q\bar Q,\quad Q\ne\bar Q,\quad
+ N_{F/\mathbb Q}v=p\text{ is prime},\quad
+ p\notin v^2,\quad p\notin S.
+\end{equation}
+The choice of one prime over each $v$ is fixed before the
+auxiliary character is varied.  In particular no two selected
+primes are conjugate.  The sets $\mathcal G$, $\mathcal T$,
+and $\mathcal Q$ are disjoint, and $\mathcal Q$ is disjoint
+from the conjugates of the other two sets.
+
+\begin{lemma}\label{atl-prime-units}
+For every $Q$ satisfying \eqref{atl-good-primes}, its residue
+field has cardinality $p$, and $v_Q(p)=1$.  Both $\pi$ and
+$\bar\pi$ are units in $\mathcal O_{(Q)}$.
+These conclusions remain valid in residue characteristic two
+whenever the displayed hypotheses hold.
+\end{lemma}
+\begin{proof}
+The factorization of $v\mathcal O$ has ramification index one
+at both its primes.  Since $[E:F]=2$, the equality
+$\sum_{Q\mid v}e(Q/v)f(Q/v)=2$ gives residue degree one
+at each prime.  Thus $NQ=Nv=p$.  Since $p$ belongs to $v$
+and does not belong to $v^2$, its $v$-adic valuation is one;
+extension to $Q$ leaves that valuation unchanged.
+
+The rational prime $T$ differs from $p$, so $T$ is a unit
+at $Q$.  Its two integral factors $\pi$ and $\bar\pi$
+must then both have valuation zero.  This proves the last
+assertion as well, without using the residue characteristic.
+\end{proof}
+
+Fix integers $m\geq2$, $r,t_0\geq0$, and put
+$n=r+mt_0$.  At $Q\in\mathcal Q$, let
+$\kappa_Q=\mathcal O/Q$ and let
+$\xi_Q:\kappa_Q^\times\to K^\times$ be the residue
+character, where the number field $K$ contains its values.
+The lower-rank residue group and character are
+\begin{equation}\label{atl-row-level}
+ H_Q=\left\{
+ \begin{pmatrix}A&B\\0&D\end{pmatrix}:
+ A\in\operatorname{GL}_r(\kappa_Q),\quad
+ D\in\operatorname{GL}_{mt_0}(\kappa_Q)\right\},
+ \qquad
+ \chi_Q\begin{pmatrix}A&B\\0&D\end{pmatrix}
+                         =\xi_Q(\det D)^{-1}.
+\end{equation}
+An empty diagonal block has determinant one.  At a type prime
+$P\in\mathcal G$ we keep its specified finite subgroup $H_P$
+and character $\chi_P$.  The character of the action on
+decorated objects is the product of these characters.  By
+\eqref{acl-character}, the corresponding right character on
+adelic functions is its inverse.  Thus the right character
+at $Q$ is $\xi_Q(\det D)$, whereas the character in
+\eqref{atl-row-level} is its reciprocal.
+
+Here is the exact higher-rank local group.  Put
+$A_Q=\mathcal O_{(Q)}$, let $\widetilde H_Q$ be the inverse
+image of $H_Q$ in $\operatorname{GL}_n(A_Q)$, and set
+\[
+ K_{n+1}(C)=\ker\bigl(\operatorname{GL}_{n+1}(A_Q)
+                 \longrightarrow\operatorname{GL}_{n+1}(A_Q/p^CA_Q)\bigr)
+                    \qquad(C\geq1).
+\]
+Lemma~\ref{atl-prime-units} makes this the usual principal
+congruence subgroup of depth $C$.
+
+\begin{lemma}\label{atl-congruence-group}
+The set
+\begin{equation}\label{atl-top-group}
+ \widetilde H_Q^{+}(C)
+       =\operatorname{diag}(\widetilde H_Q,1)K_{n+1}(C)
+\end{equation}
+is a subgroup of finite index in $\operatorname{GL}_{n+1}(A_Q)$.
+An element $k$ belongs to it if and only if there exists
+$h\in\widetilde H_Q$ with
+\[
+                      k\equiv\operatorname{diag}(h,1)\pmod {p^C}.
+\]
+The formula
+\begin{equation}\label{atl-top-character}
+ \chi_Q^{+}(k)=\chi_Q(\bar h)
+       \quad\text{if }k=\operatorname{diag}(h,1)u,
+                         \quad u\in K_{n+1}(C),
+\end{equation}
+is a well-defined character.  It is trivial on $K_{n+1}(C)$,
+and its restriction to $\operatorname{diag}(\widetilde H_Q,1)$
+is exactly the lower-rank character.  Furthermore
+\[
+ \operatorname{diag}(h,1)\in\widetilde H_Q^{+}(C)
+                       \quad\Longleftrightarrow\quad
+ h\in\widetilde H_Q
+ \qquad(h\in\operatorname{GL}_n(A_Q)).
+\]
+\end{lemma}
+\begin{proof}
+The principal congruence subgroup is normal, so its product
+with a subgroup is a subgroup.  It has finite index because
+the quotient ring $A_Q/p^CA_Q$ is finite.  Multiplication
+by an integral invertible matrix preserves $p^CA_Q^{n+1}$,
+so the membership criterion is equivalent to the displayed
+factorization.
+
+Reduction modulo $Q$ of every element of the product is
+$\operatorname{diag}(\bar h,1)$ with $\bar h\in H_Q$.
+It determines $\bar h$ uniquely.  Pulling $\chi_Q$ back
+along this homomorphism proves well-definedness and all
+the character assertions.  The same reduction proves the
+forward implication in the last equivalence; the reverse
+implication uses $u=1$.
+\end{proof}
+
+For the actual choice of depth, if $M\geq0$ is the local
+constant used for this auxiliary character, then
+\begin{equation}\label{atl-depth}
+                  C=\max(4m+1,2m+2M).
+\end{equation}
+Indeed the preceding depth is $\max(4m,2m+2M-1)$, and
+adding one gives \eqref{atl-depth}; $m\geq2$ ensures that
+the subtraction in the second expression does not cause
+an exceptional case.  The group in \eqref{atl-top-group}
+is not replaced by its larger inverse image under reduction
+modulo $Q$.  Its character is, however, already determined
+by that reduction.  At the type primes the higher-rank
+residue group is simply $\operatorname{diag}(H_P,1)$.
+
+\subsection{Extension by the selected line}
+
+Use the standard positive Hermitian form on $E^n$, with
+the convention $h(v,w)=\bar v^{t}w$.  Let $N\subset E^n$
+be a full self-dual $\mathcal O$-lattice.  A lower-rank
+decorated object consists of $N$, its residue frames
+\[
+ b_P:N/PN\xrightarrow{\sim}\kappa_P^n
+                       \quad(P\in\mathcal G),
+\]
+and at every $Q\in\mathcal Q$ a basis matrix
+$F_Q\in\operatorname{GL}_n(E)$ with
+$F_QA_Q^n=N_Q$.  Replacing all local bases by their
+principal-congruence orbits gives the equivalent residue
+description of Proposition~\ref{acl-row-classes}.
+
+Extend this object to rank $n+1$ by
+\begin{align}
+ N^+&=N\oplus\mathcal O,\notag\\
+ \ell_P(v,s)&=\bar\pi s\bmod P
+                    &&(P\in\mathcal T),\label{atl-extended-object}\\
+ b_P^+(v,s)&=(b_P(v),s/\pi\bmod P)
+                    &&(P\in\mathcal G),\notag\\
+ F_Q^+&=\operatorname{diag}(F_Q,\pi)
+                    &&(Q\in\mathcal Q).\notag
+\end{align}
+Here $\ell_P$ is an $\mathcal O$-linear map to $\kappa_P$.
+All divisions in the frames are by local units: at the
+type primes this follows from $T$ being different from
+the type primes, and at $Q$ it follows from
+Lemma~\ref{atl-prime-units}.
+
+\begin{proposition}\label{atl-extension}
+The formulas \eqref{atl-extended-object} define a decorated
+unimodular lattice.  Its lattice cut out by the functionals,
+and its Hermitian dual, are respectively
+\begin{equation}\label{atl-kernel-dual}
+ L^+=N\oplus\pi\mathcal O,
+               \qquad (L^+)^\#=N\oplus\bar\pi^{-1}\mathcal O.
+\end{equation}
+The construction is injective on decorated objects and
+equivariant under
+\[
+ \gamma\longmapsto\operatorname{diag}(\gamma,1),\qquad
+ h_P\longmapsto\operatorname{diag}(h_P,1),\qquad
+ k_Q\longmapsto\operatorname{diag}(k_Q,1).
+\]
+These homomorphisms are injective, preserve the level
+characters exactly, and send every lower-rank stabilizer
+into the stabilizer of the extended object.  In the
+parameter used for branching one has
+\begin{equation}\label{atl-tz}
+                            t=\bar\pi,\qquad \bar t t=T.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The direct sum of two self-dual lattices is self-dual.
+At $P\mid\pi$, the element $\bar\pi$ is a unit by
+\eqref{atl-prime-generator}, so $\ell_P$ is nonzero.
+Its kernel imposes precisely $s\in P$.  Intersecting
+these conditions gives $s\in\prod_{P\in\mathcal T}P=(\pi)$.
+This proves the first formula in \eqref{atl-kernel-dual}.
+The pairing of $(0,\pi a)$ with $(v,s)$ is
+$\bar\pi\bar a s$, so the last coordinate of the dual
+is $\bar\pi^{-1}\mathcal O$; its first coordinates
+form $N^\#=N$.
+
+The displayed frames are invertible because their last
+diagonal entries are local units.  The original lattice,
+residue frames, and local bases are recovered by taking
+the first $n$ coordinates, proving injectivity on objects.
+
+For the residue-frame action
+$b_P\mapsto h_Pb_P\gamma^{-1}$, its extension is
+$b_P^+\mapsto\operatorname{diag}(h_P,1)b_P^+
+\operatorname{diag}(\gamma,1)^{-1}$.
+For a local basis the action is $F_Q\mapsto\gamma F_Qk_Q^{-1}$;
+therefore
+\[
+ \operatorname{diag}(\gamma,1)\operatorname{diag}(F_Q,\pi)
+       \operatorname{diag}(k_Q,1)^{-1}
+                    =\operatorname{diag}(\gamma F_Qk_Q^{-1},\pi).
+\]
+The functionals at $\mathcal T$ are unchanged by the
+unitary embedding.  These identities prove equivariance.
+Injectivity of the group embeddings is immediate from
+their first blocks.  Preservation of characters is
+Lemma~\ref{atl-congruence-group} at $Q$, and the definition
+of the diagonal residue character at the type primes.
+Equivariance then proves the stabilizer assertion.
+Finally \eqref{atl-tz} is exactly the last coordinate
+of the dual lattice, together with $\pi\bar\pi=T$.
+\end{proof}
+
+This proposition does not assert that the induced map of
+class sets is injective or surjective.  Both properties
+are unnecessary.  At any class which meets the image one
+may choose an extended object as representative; all
+other classes keep arbitrary representatives.  There
+is consequently no need to assume that every higher-rank
+object comes from the smaller rank.
+
+Both class sets at these levels are finite.  Indeed, the
+finiteness theorem for positive definite unimodular lattices
+gives finitely many underlying lattices up to rational
+unitary isometry.  For each one, every residue functional
+and residue frame has only finitely many possibilities.
+The set of bases at $Q$ is a torsor under the integral
+linear group.  Its quotient by the chosen level subgroup
+is finite by Lemma~\ref{atl-congruence-group}, and likewise
+for the lower-rank inverse image of $H_Q$.  Taking the
+product over the finite set of primes leaves finitely
+many possibilities.  This argument also applies to
+higher-rank classes outside the image of the extension.
+
+\subsection{Simultaneous bases and the scaled branching map}
+
+Retain the coefficient field $K$, the finite family of
+embeddings $\tau:E\hookrightarrow K$, and the representations
+$R_\lambda$ and integral coefficient lattices of
+\eqref{acl-contragredient}.  For a full lattice $M\subset E^d$
+abbreviate its contragredient coefficient lattice by
+$\Delta_\lambda(M)$.  It is the integral coefficient lattice used in the
+class construction; all determinant twists are included.
+
+\begin{lemma}\label{atl-semilocal-basis}
+Let $\ell$ be a rational prime and $M\subset E^d$ a full
+$\mathcal O$-lattice.  There exists
+$B\in\operatorname{GL}_d(E)$ whose columns are a basis of
+$M_P$ over $\mathcal O_{(P)}$ simultaneously at every
+$P\mid\ell$.  If $w\mid\ell$ is a coefficient prime of $K$,
+then
+\begin{equation}\label{atl-local-coefficient}
+ v\in\Delta_\lambda(M)_w
+ \quad\Longleftrightarrow\quad
+ R_\lambda(B^{-1})v\in
+                 \Delta_\lambda^{\rm std}(\mathcal O_{K,w}).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For every $P\mid\ell$, the module $M_P$ is free of rank
+$d$ over the discrete valuation ring $\mathcal O_{(P)}$.
+Choose a basis of $M/PM$.  The Chinese remainder theorem
+for the pairwise comaximal submodules $PM$ lets us choose
+$d$ elements of $M$ with these prescribed residue bases
+at all the finitely many primes above $\ell$.
+At each such prime their span has quotient $C$ with
+$C/PC=0$.  The quotient is finitely generated; Nakayama's
+lemma gives $C=0$.  Since $M_P$ has rank $d$, the selected
+elements are a basis.  They are linearly independent over
+$E$, and hence form the columns of an invertible matrix
+$B$.  For $d=0$ take the unique empty matrix.
+
+For each embedding $\tau$ the prime $\tau^{-1}(w)$ is
+above $\ell$, so this same matrix supplies every required
+local basis.  The defining change-of-basis rule from
+Section~\ref{coef:section} gives
+\[
+ \Delta_\lambda(M)_w
+     =R_\lambda(B)\Delta_\lambda^{\rm std}(\mathcal O_{K,w}).
+\]
+Applying $R_\lambda(B^{-1})$ proves the equivalence.
+\end{proof}
+
+Let $\lambda_\tau$ and $\sigma_\tau$ be dominant integer
+weights in ranks $n+1$ and $n$, respectively.  We require
+the actual interlacing and determinant-shift conditions
+\begin{equation}\label{atl-weights}
+ \lambda_{\tau,i}\geq\sigma_{\tau,i}
+                       \geq\lambda_{\tau,i+1}\ (1\leq i\leq n),
+               \qquad \sigma_{\tau,n}=\lambda_{\tau,n+1}.
+\end{equation}
+The ranks in the application are positive.  The standard
+branching theorem gives a $K$-linear map
+\[
+ B_1:W_\lambda(K)\longrightarrow W_\sigma(K)
+\]
+with the specified polynomial normalization, such that
+\begin{align}
+ B_1R_\lambda(\operatorname{diag}(\gamma,1))
+                &=R_\sigma(\gamma)B_1,
+                    &&\gamma\in\operatorname{GL}_n(E),
+                         \label{atl-standard-covariance}\\
+ B_1\Delta_\lambda^{\rm std}(\mathcal O_{K,w})
+                &\subseteq\Delta_\sigma^{\rm std}(\mathcal O_{K,w})
+                    &&\text{for every }w.
+                         \label{atl-standard-integral}
+\end{align}
+These are precisely the integral assertion of
+Theorem~\ref{ib-standard-integral} and the diagonal
+covariance of Corollary~\ref{ib-diagonal-covariance}, applied
+to the contragredient realization.  Define
+\begin{equation}\label{atl-scaled-map}
+                 B_t=B_1R_\lambda(\operatorname{diag}(I_n,t))
+                         \qquad(t\in E^\times).
+\end{equation}
+To check the normalization explicitly, set
+\[
+ b_{\tau,i}=\lambda_{\tau,i}-\sigma_{\tau,i}\geq0,
+ \qquad a_\tau=\lambda_{\tau,n+1},\qquad
+ N_\tau=\sum_{i=1}^{n+1}\lambda_{\tau,i}
+                              -\sum_{i=1}^n\sigma_{\tau,i}.
+\]
+The standard polynomial formula first retains exactly the
+monomials with exponent $b_{\tau,i}$ at the last-row variable
+$X_{\tau,n+1,i}$, and exponent zero at every last-column
+variable; it then applies a fixed projection and scalar.
+Under $R_\lambda(\operatorname{diag}(I_n,t))$, each retained
+monomial is multiplied by
+$\prod_\tau\tau(t)^{-a_\tau-\sum_i b_{\tau,i}}$.
+Since $a_\tau+\sum_i b_{\tau,i}=N_\tau$, this proves the
+exact formula
+\begin{equation}\label{atl-scaled-factor}
+                      B_t=\left(\prod_\tau\tau(t)^{-N_\tau}\right)B_1.
+\end{equation}
+The exponents $N_\tau$ are integers and need not be
+nonnegative.  This is the scaled map in the construction,
+including the determinant contribution $a_\tau$.
+
+\begin{proposition}\label{atl-scaled-integrality}
+For $B'\in\operatorname{GL}_n(E)$ put
+$B=\operatorname{diag}(B',t^{-1})$.  Then
+\begin{equation}\label{atl-coordinate-identity}
+           R_\sigma(B'^{-1})B_t=B_1R_\lambda(B^{-1}).
+\end{equation}
+The map $B_t$ intertwines the two representations under
+$\gamma\mapsto\operatorname{diag}(\gamma,1)$.
+For every full lattice $M\subset E^n$ it satisfies
+\begin{equation}\label{atl-branch-integral}
+ B_t\Delta_\lambda(M\oplus t^{-1}\mathcal O)
+                           \subseteq\Delta_\sigma(M).
+\end{equation}
+All these statements hold at every finite coefficient
+prime, including primes above $T$, primes above the
+auxiliary set $\mathcal Q$, and primes above two.
+\end{proposition}
+\begin{proof}
+By \eqref{atl-standard-covariance}, the left side of
+\eqref{atl-coordinate-identity} is
+\[
+ B_1R_\lambda(\operatorname{diag}(B'^{-1},1))
+       R_\lambda(\operatorname{diag}(I_n,t))
+                 =B_1R_\lambda(\operatorname{diag}(B'^{-1},t)).
+\]
+This is the right side.  The same covariance, and the
+commutation of the last-coordinate scaling with
+$\operatorname{diag}(\gamma,1)$, prove the intertwining
+assertion.
+
+Fix a coefficient prime $w\mid\ell$.  Choose $B'$ as
+in Lemma~\ref{atl-semilocal-basis} for $M$.  The matrix
+$B=\operatorname{diag}(B',t^{-1})$ is a simultaneous
+basis of $M\oplus t^{-1}\mathcal O$.  By
+\eqref{atl-local-coefficient}, a vector in the localized
+source lattice is carried by $R_\lambda(B^{-1})$ into
+the standard integral lattice.  Apply
+\eqref{atl-standard-integral} and
+\eqref{atl-coordinate-identity}, and use the same local
+criterion for the target.  This proves the localized
+inclusion at $w$.  Intersecting over all $w$ proves
+\eqref{atl-branch-integral}.  The argument never requires
+that $t$ be a unit at $w$, or that the residue
+characteristic exceed the degree of a polynomial.
+\end{proof}
+
+Adding an integer $a_\tau$ to every entry of a weight
+does not change its normalized partition
+$\lambda_{\tau,i}-\lambda_{\tau,n+1}$, and therefore
+does not change its standard polynomial lattice as a
+set of polynomials.  It does change the determinant
+factor in $R_\lambda$.  In \eqref{atl-coordinate-identity}
+the representations are always those of the actual
+shifted weights; only the standard polynomial lattices
+may be identified by equality of normalized partitions.
+
+\subsection{Transport of class values and global descent}
+
+Let $\mathcal D$ be the lower-rank decorated objects and
+$\mathcal D^+$ the higher-rank objects, with their groups
+$G$ and $G^+$ acting as above.  Write
+$j:\mathcal D\to\mathcal D^+$ for the extension and
+$\iota:G\to G^+$ for the group homomorphism.  Let
+$\chi,\chi^+$ be the action characters.  We have proved
+\begin{equation}\label{atl-action-compatibility}
+ j(gd)=\iota(g)j(d),\qquad
+ \chi^+(\iota(g))=\chi(g),\qquad
+ \gamma(\iota(g))=\operatorname{diag}(\gamma(g),1).
+\end{equation}
+For a higher-rank equivariant coefficient function $F$,
+define
+\begin{equation}\label{atl-lowering}
+                         (\mathcal L_tF)(d)=B_tF(j(d)).
+\end{equation}
+
+\begin{theorem}\label{atl-global-lowering}
+The map $\mathcal L_t$ carries higher-rank equivariant
+$K$-valued forms to lower-rank equivariant $K$-valued
+forms.  With $t=\bar\pi$ and the actual coefficient
+lattices, it carries the integral class lattice into
+the integral lower-rank class lattice, and the same
+holds after localization at every coefficient prime.
+It agrees after complexification with evaluation on
+the extended objects followed by the normalized
+polynomial branching map.
+
+More explicitly, choose representatives $d_c$ of the
+lower-rank classes and $e_b$ of the higher-rank classes.
+Let $b(c)$ be the class of $j(d_c)$, and choose
+$a_c\in G^+$ with $a_ce_{b(c)}=j(d_c)$.  If $v_b=F(e_b)$,
+then the value at $d_c$ is exactly
+\begin{equation}\label{atl-representative-formula}
+             (\mathcal L_tF)(d_c)
+                 =B_t\bigl(\chi^+(a_c)
+                          R_\lambda(\gamma(a_c))v_{b(c)}\bigr).
+\end{equation}
+It is independent of the choices $a_c$.
+\end{theorem}
+\begin{proof}
+Equations \eqref{atl-action-compatibility} and the
+intertwining assertion of
+Proposition~\ref{atl-scaled-integrality} give
+\begin{align*}
+ (\mathcal L_tF)(gd)
+  &=B_t\chi^+(\iota(g))
+               R_\lambda(\operatorname{diag}(\gamma(g),1))F(j(d))\\
+  &=\chi(g)R_\sigma(\gamma(g))(\mathcal L_tF)(d).
+\end{align*}
+Thus the function has the required equivariance.
+
+At $j(d)$ the coefficient lattice is that of
+$(L_{j(d)})^\#=N_d\oplus t^{-1}\mathcal O$,
+whereas the lower-rank lattice is that of $N_d$.
+Their integral compatibility is
+\eqref{atl-branch-integral}.  Transport from $e_{b(c)}$
+to $j(d_c)$ preserves these exact lattices: the
+unitary action carries the underlying lattice to
+the required one, its coefficient action is $R_\lambda$,
+and $\chi^+(a_c)$ is a root of unity, hence an integral
+unit at every coefficient prime.  This proves the
+global and localized assertions.
+
+If $a_c'$ is another choice, $a_c^{-1}a_c'$ stabilizes
+$e_{b(c)}$.  Its coefficient action fixes $v_{b(c)}$
+by Proposition~\ref{acl-class-evaluation}, so the
+transported values are equal.  The same argument,
+or the equivariance just proved, shows that the
+right side of \eqref{atl-representative-formula}
+is fixed by the lower-rank stabilizer.  No averaging
+over a stabilizer occurs.  Finally all coefficient
+operations and \eqref{acl-evaluation} commute with
+the chosen embedding $K\hookrightarrow\mathbb C$.
+This proves the complex comparison.
+\end{proof}
+
+For completeness, the integral coordinates used to
+recognize the resulting complex form can also be
+characterized without presupposing rationality.
+
+\begin{proposition}\label{atl-complex-descent}
+Fix $w\mid\ell$ in $K$ and an embedding
+$\jmath:K\hookrightarrow\mathbb C$.  At every lower-rank
+class representative $d_c$, choose a simultaneous
+basis $B_c'$ of $N_{d_c}$ as in
+Lemma~\ref{atl-semilocal-basis}.  Let $z$ be a complex
+equivariant form in the coefficient representation.
+Extract its unique polynomial coefficient $P_c$ from
+$z(d_c)$ by \eqref{acl-evaluation}.  Then $z$ is the
+complexification of an element of the localized integral
+class lattice if and only if, for every $c$,
+\begin{equation}\label{atl-complex-criterion}
+ R_\sigma^{\mathbb C}(B_c'^{-1})P_c
+      \in\jmath\bigl(\Delta_\sigma^{\rm std}
+                                        (\mathcal O_{K,w})\bigr).
+\end{equation}
+The complex representation is obtained through the
+embeddings $\jmath\tau$.
+\end{proposition}
+\begin{proof}
+If the form is already the complexification of a
+localized integral one, the criterion is
+\eqref{atl-local-coefficient} at every class.
+Conversely, the right side of
+\eqref{atl-complex-criterion} supplies a unique
+$K$-valued polynomial $q_c$ in the standard local
+lattice.  The uniqueness follows from injectivity
+of the field embedding on polynomial coefficients.
+Undoing $R_\sigma(B_c'^{-1})$ gives
+$v_c=R_\sigma(B_c')q_c\in\Delta_\sigma(N_{d_c})_w$
+whose complex evaluation is $z(d_c)$.
+
+For any element of the stabilizer of $d_c$, the
+complex evaluations of $v_c$ and its coefficient
+translate are equal, since $z$ is equivariant.
+The injectivity proved after \eqref{acl-evaluation}
+implies equality over $K$.  Hence $v_c$ is fixed
+by the entire stabilizer.  These values determine
+a $K$-valued equivariant form by
+Proposition~\ref{acl-class-evaluation}.
+
+There are finitely many classes.  For each $c$ choose
+$s_c\in\mathcal O_K\setminus w$ with
+$s_cv_c\in\Delta_\sigma(N_{d_c})$.  The product
+$s=\prod_cs_c$ is still outside $w$ and makes every
+class value integral.  Multiplication by $s$ preserves
+all stabilizer equalities.  Thus the form belongs to
+the localized integral class lattice, and its
+complexification is $z$.  This also proves uniqueness.
+\end{proof}
+
+To see the exact coordinate formula for lowering,
+put $B_c=\operatorname{diag}(B_c',t^{-1})$.  For the
+transported value in \eqref{atl-representative-formula}
+define
+\begin{align*}
+ \operatorname{co}_+(F,c)
+  &=\jmath\left(R_\lambda(B_c^{-1})
+       \chi^+(a_c)R_\lambda(\gamma(a_c))v_{b(c)}\right),\\
+ \operatorname{co}_-(z,c)
+  &=R_\sigma^{\mathbb C}(B_c'^{-1})P_c.
+\end{align*}
+Equation \eqref{atl-coordinate-identity} gives
+\begin{equation}\label{atl-final-coordinate}
+ \operatorname{co}_-(\mathcal L_tF,c)
+                   =B_1^{\mathbb C}\operatorname{co}_+(F,c).
+\end{equation}
+The first coordinate map carries every localized
+integral form into the standard integral polynomial
+lattice.  The second recognizes precisely the
+localized integral forms by
+Proposition~\ref{atl-complex-descent}.  This is the
+full coordinate comparison needed in the final
+lowering step.
+
+\subsection{Uniformity over the required characters and scope}
+
+Fix the finite family of auxiliary characters used
+in the construction.  For each member use its actual
+finite support $\mathcal Q$ and its own constant $M$
+in \eqref{atl-depth}.  The preceding proofs apply
+to every member, and to every selected prime $T$,
+with exactly the same weights for fixed $T$-index.
+The support and depth change the finite class set and
+its level subgroup; they do not change the formulas
+\eqref{atl-kernel-dual}, \eqref{atl-tz}, or the
+standard polynomial map $B_1$.  The simultaneous
+local bases may depend on the class, the character,
+and $w$.  Their existence is proved after these
+parameters are fixed and requires no new prime
+selection or conductor estimate.
+
+In particular, no exclusion $w\notin\mathcal Q$ is
+needed for the integral lowering map itself.  Any
+such exclusion in a later period-valuation theorem
+is a hypothesis of that theorem, not a consequence
+of this coordinate comparison.  The exact integral
+polynomial branching assertion remains the dependency
+\eqref{atl-standard-integral}; the preceding proofs
+do not infer it merely from irreducibility over $K$.
+This section does not prove the transfer identities
+for every intermediate nontrivially twisted theta
+sum, nor the valuation improvement in the period
+pairing.  It does prove the actual final class map,
+its characters, its local integral coordinates, and
+their global descent.
+
+\subsection{Checks on essential hypotheses}
+
+The following examples explain why several exact
+features cannot be omitted.  They do not contradict
+the hypotheses of the construction.
+
+First, at a prime of residue characteristic $p$,
+take $n=1$, $H_Q=\operatorname{GL}_1(\kappa_Q)$, and
+$C=2$.  The matrix $I+pE_{21}$ reduces to the identity,
+so it lies in the full inverse image of the diagonal
+residue group.  It does not lie in
+$\operatorname{diag}(\widetilde H_Q,1)K_2(2)$, because
+its lower left entry is not divisible by $p^2$.
+Thus replacing the actual group by that inverse
+image changes the level, even when the character
+is unchanged.
+
+Second, in $E=\mathbb Q(i)$ take $\pi=2+i$.
+For the standard Hermitian form on one dimension,
+$(\pi\mathbb Z[i])^\#=\bar\pi^{-1}\mathbb Z[i]$.
+The proposed replacement $\pi^{-1}\mathbb Z[i]$
+is different: $\bar\pi/\pi=(3-4i)/5$ is not an
+algebraic integer.  The conjugation in $t=\bar\pi$
+therefore affects integral lattices.
+
+Third, transport between class representatives
+cannot be omitted from
+\eqref{atl-representative-formula}.  Already for a
+free transitive action of the group $\{1,s\}$ on
+two points, the equivariance rule $F(sd)=-F(d)$
+gives opposite values at the two representatives
+of the same orbit.  A branching map equal to the
+identity would preserve this discrepancy.
+
+Finally the finiteness of the class set is used in
+the descent proof.  In an infinite product over
+distinct rational primes $p_j\ne\ell$, the vector
+$(1/p_j)_j$ belongs componentwise to $\mathbb Z_{(\ell)}$.
+There is no integer $s$ prime to $\ell$ which makes
+all its components integers.  Hence it does not
+belong to $(\prod_j\mathbb Z)\otimes\mathbb Z_{(\ell)}$,
+although it belongs to $\prod_j\mathbb Z_{(\ell)}$.
+The finite class theorem and the common denominator
+in Proposition~\ref{atl-complex-descent} prevent
+this failure in the actual construction.
+
+

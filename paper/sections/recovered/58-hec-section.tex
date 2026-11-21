@@ -1,0 +1,421 @@
+\section{The incidence identity and Hecke commutation}
+\label{hec-section}
+
+We prove the incidence identity for the actual affine matrix test
+function and its passage to the theta columns. The scalar comes from
+the change in the volume of the Hom lattice. The weights in the
+global class sum are essential. All identities are first identities
+of complex theta functions and their coefficient maps; the finite
+coefficient-field construction then gives their arithmetic descent.
+
+\subsection{Neighbors of a lattice with a residue functional}
+
+Let $R$ be a discrete valuation ring with uniformizer $\varpi$,
+fraction field $K_v$, and finite residue field $\mathbf k$ of order
+$q$. A pair of rank $a$ consists of a free $R$-lattice $L\subset K_v^a$
+and a nonzero $\mathbf k$-linear functional
+$\ell:L/\varpi L\to\mathbf k$. We also write $\ell$ for its
+composition with reduction on $L$. An upper neighbor of $(L,\ell)$ is
+\[
+ L^+=L+R\varpi^{-1}v,\qquad
+ \ell^+(x)=\ell(\varpi x),\qquad v\in L,\quad\ell(v)=1.
+ \tag{HC1}
+\]
+The displayed functional is well defined on $L^+/\varpi L^+$,
+since $\varpi L^+\subset L$ and $\ell(\varpi y)=0$ for $y\in L$.
+Its kernel in $L^+$ is exactly $L$.
+
+\begin{lemma}\label{hec-neighbors}
+There are $q^{a-1}$ distinct upper neighbors of $(L,\ell)$.
+Every lower neighbor has underlying lattice $L^0=\ker\ell$.
+Its functional $\ell^0:L^0/\varpi L^0\to\mathbf k$ is characterized
+by
+\[
+             \ell^0(\varpi x)=\ell(x)\qquad(x\in L).
+ \tag{HC2}
+\]
+There are $q^{a-1}$ such functionals, all nonzero.
+\end{lemma}
+\begin{proof}
+Choose a basis $e_1,\ldots,e_a$ of $L$ with
+$\ell(e_i)=0$ for $i<a$ and $\ell(e_a)=1$. The upper neighbors are
+represented by $v=e_a+\sum_{i<a}u_i e_i$, $u_i\in\mathbf k$.
+Indeed two such generators give the same lattice only if their
+reductions span the same line in $L/\varpi L$; their last coordinates
+are both one, so their reductions are equal. Formula (HC1) then fixes
+the functional. The lattice $L^0$ has basis
+$e_1,\ldots,e_{a-1},\varpi e_a$. Condition (HC2) prescribes the value
+one on $\varpi e_a$ and leaves the other $a-1$ values arbitrary.
+Conversely, for any such functional, the upper neighbor obtained
+using $\varpi e_a$ is exactly $(L,\ell)$. The kernel identity in
+(HC1) proves that every lower neighbor is of this form.
+\end{proof}
+
+For pairs $d=(L,\ell)$ and $d'=(M,\ell')$, of ranks $a,b$, and
+$X\in\operatorname{Hom}_{K_v}(K_v^a,K_v^b)$, put
+\[
+ \phi_{d,d'}(X)=
+  \mathbf1_{\{XL\subset M,\ \ell'X=\ell\text{ on }L\}}.
+ \tag{HC3}
+\]
+
+\begin{proposition}\label{hec-local-count}
+For every $X$,
+\[
+ \sum_{d_1:\ d'\to d_1}\phi_{d,d_1}(X)
+       =\sum_{d_0:\ d_0\to d}\phi_{d_0,d'}(X).
+ \tag{HC4}
+\]
+Both sums are either zero or one. Here arrows mean the upper-neighbor
+relation (HC1).
+\end{proposition}
+\begin{proof}
+Suppose $d'\to d_1=(M^+,\ell^+)$ and $\phi_{d,d_1}(X)=1$.
+For $x\in L^0=\ker\ell$, the equality $\ell^+(Xx)=0$ gives
+$Xx\in M$. Define $\ell^0(x)=\ell'(Xx)$ on $L^0$.
+For $e\in L$ with $\ell(e)=1$,
+\[
+ \ell^0(\varpi e)=\ell'(\varpi Xe)=\ell^+(Xe)=1.
+\]
+More generally the same calculation gives (HC2), so $(L^0,\ell^0)$
+is a lower neighbor and $\phi_{d_0,d'}(X)=1$.
+
+Conversely suppose $d_0=(L^0,\ell^0)\to d$ and
+$\phi_{d_0,d'}(X)=1$. Choose $e\in L$ with $\ell(e)=1$ and put
+$v=X(\varpi e)\in M$. Then $\ell'(v)=1$. Define $M^+=M+R\varpi^{-1}v$
+and its functional by (HC1). Since $L=L^0+Re$, the inclusion
+$XL\subset M^+$ follows. For $x\in L^0$, $\ell^+(Xx)=0=\ell(x)$,
+and for $x=e$ both values are one. Thus $\phi_{d,d_1}(X)=1$.
+
+For uniqueness on the upper side, any solution satisfies
+$Xe\in M^+$ and $\ell^+(Xe)=1$, hence $M^+=M+RXe$;
+its functional is fixed by (HC1). On the lower side the underlying
+lattice is $L^0$ and its functional must equal $\ell'X$.
+The two constructions are inverse, which proves (HC4).
+\end{proof}
+
+For a self-dual Hermitian lattice over a CM field, changing the
+component at a split prime $P$ forces the dual change at $\bar P$.
+All other components and auxiliary frames remain fixed. Local patching
+gives a unique global lattice, as in Lemma~\ref{acl-patching}.
+Thus the same neighbor counts hold for the global pairs used here.
+The test function is the product of (HC3) over the selected primes.
+At a move at $P$, its other factors are identical on both sides of
+(HC4); multiplying by them proves the global pointwise test identity.
+
+\subsection{A finite theta calculation with a common reference lattice}
+
+We explain the normalization in the lattice change, rather than
+assuming that a finite identity of test functions automatically gives
+an identity of differently normalized theta columns.
+Fix positive even source and target ranks $a,b$.
+Let $\mathcal S$ be a finite set of split primes, disjoint from its
+conjugate. All period lattices in this paragraph agree outside
+$\mathcal S\cup\overline{\mathcal S}$ and have dual components at
+conjugate primes. Write $V_{\mathcal S}$ for the product of their
+selected local vector spaces, with any one fixed additive Haar measure.
+If $\mathcal L$ is one of these self-dual period lattices, write
+$L=\prod_{P\in\mathcal S}\mathcal L_P$ for its selected component.
+Write $v_{\mathcal L}$ for its normalized theta vector after removal
+of the determinant character in (TE15). The exact lattice moves in
+Theorem~\ref{te-equivariance} apply to these vectors.
+
+For a compactly supported, locally constant function $\Phi$ on
+$V_{\mathcal S}$, let $\mathcal T_{\mathcal L}(\Phi)$ be the finite
+theta sum formed from the actual indicators (CS12a), with
+$v_{\mathcal L}$ in place of $F$. Its support and its periods are
+assumed to lie in the finite quotients used in that definition.
+Increasing a support bound or refining a period does not change
+this sum. The following proof includes that assertion.
+
+\begin{lemma}\label{hec-common-theta}
+For two such Hom period lattices $\mathcal L_1,\mathcal L_2$ and
+one test function allowed for both,
+\[
+ \mathcal T_{\mathcal L_1}(\Phi)
+   =\left(\frac{\operatorname{vol}L_2}
+                  {\operatorname{vol}L_1}\right)^{1/2}
+                                      \mathcal T_{\mathcal L_2}(\Phi).
+ \tag{HC5}
+\]
+The square root is positive. This is an identity of entire functions.
+\end{lemma}
+\begin{proof}
+Choose a sufficiently small selected Hom lattice $C$ contained in
+$L_1\cap L_2$ and in the chosen periods of $\Phi$ for both lattices.
+Choose a sufficiently
+large selected Hom lattice $A$ containing $L_1,L_2$ and the support
+of $\Phi$. These choices can be made within the Hom-lattice family:
+enlarge the selected source and shrink the selected target to obtain
+$C$, and do the reverse to obtain $A$. At conjugate primes impose
+the dual changes and patch globally. Denote the resulting self-dual
+period lattices by $\mathcal C,\mathcal A$.
+
+Put $n_i=[L_i:C]$. The conjugate quotient dual to $L_i/C$ has order
+$n_i$ and pairs perfectly with it by the Heisenberg commutator.
+Consequently the projection of $v_{\mathcal L_i}$ onto the zero
+selected coset modulo $C$ is
+\[
+ P_Cv_{\mathcal L_i}
+       =\frac1{n_i}\sum_{y\in(L_i/C)^\vee}W_yv_{\mathcal L_i}
+       =\frac1{\sqrt{n_i}}v_{\mathcal C}.
+ \tag{HC6}
+\]
+The first equality is finite character orthogonality. The second is
+the exact normalized lattice move, whose coefficient is
+$n_i^{-1/2}$; moving the source and target consecutively gives the
+same vector by the exact path independence proved in
+Section~\ref{te-section}. This uses the positive normalization there.
+
+Choose representatives of $A/C$ in $\mathcal A$ which are admissible
+lifts for both original indicator systems. To do so, first choose
+for each $i$ a positive denominator $c'_i$ clearing the selected
+denominators of $A$ relative to $L_i$. At the conjugate selected
+primes impose the additional divisibility by $c'_i$ required for
+the half lattice in (CS12a), as well as membership in $\mathcal A$.
+These are conditions at primes disjoint from the selected coset
+conditions. The Chinese remainder theorem on $\mathcal A$ therefore
+supplies all the required representatives simultaneously. For such a
+representative $x$, the indicator of its coset applied to
+$v_{\mathcal L_i}$ is
+$n_i^{-1/2}W_{-x}v_{\mathcal C}$. These expressions are independent
+of representatives: their difference lies in
+$\mathcal A\cap\mathcal C$, the Weyl operators add on the integral
+lattice $\mathcal A$, and this difference fixes $v_{\mathcal C}$.
+
+For completeness, if $C\subset D\subset L_i$ is an intermediate
+period (as for the actual scalar periods $cL_i$), the
+identity of functions
+$\mathbf1_{x+D}=\sum_{z\in D/C}\mathbf1_{x+z+C}$ gives the same
+identity of these operators. Indeed the coefficient of a character
+$y$ in the right side is multiplied by
+\[
+ \sum_{z\in D/C}e^{-2\pi iE(z,y)}
+   =\begin{cases}|D/C|,&y\text{ is trivial on }D/C,\\
+                 0,&\text{otherwise}.
+     \end{cases}
+\]
+Together with the denominator $[L_i:C]$, this is exactly the
+denominator and character sum for the coarser period $D$.
+The lift independence in (CS12a) allows these common representatives
+even when a support denominator exceeds the original period
+denominator. Enlarging $A$ only inserts zero coefficients.
+Thus the actual finite sum is
+\[
+ \mathcal T_{\mathcal L_i}(\Phi)
+    =\frac1{\sqrt{n_i}}\sum_{x\in A/C}
+                               \Phi(x)W_{-x}v_{\mathcal C}.
+ \tag{HC7}
+\]
+Since $\operatorname{vol}L_i=n_i\operatorname{vol}C$, taking the
+ratio proves (HC5). All sums are finite sums of translates of entire
+theta functions, so the assertion holds as an identity of entire
+functions, with no analytic convergence issue.
+\end{proof}
+
+Consider now ranks $a,b$ and lattices $N_1,N_2$ on the source and
+$M_1,M_2$ on the target. They agree away from primes over a selected
+rational prime $p$ which splits completely in $E$.
+Thus $NP=p$ for each selected $P\mid p$, and $p$ is a local
+uniformizer there. These are the actual selected-prime hypotheses.
+For each such $P$, put
+\[
+ e_P=\operatorname{ord}_P\det N_2-\operatorname{ord}_P\det N_1,
+ \qquad
+ e'_P=\operatorname{ord}_P\det M_2-\operatorname{ord}_P\det M_1.
+ \tag{HC8}
+\]
+The local period ideal is a unit. The determinant of
+$\operatorname{Hom}(N,M)=M\otimes N^*$ therefore gives
+\[
+ \frac{\operatorname{vol}\operatorname{Hom}(N_2,M_2)_P}
+      {\operatorname{vol}\operatorname{Hom}(N_1,M_1)_P}
+                       =p^{b e_P-a e'_P}.
+ \tag{HC9}
+\]
+This follows also from bases: an index $p^{e_P}$ change of $N$
+changes the determinant of its dual $b$ times, and an index
+$p^{e'_P}$ change of $M$ changes its determinant $a$ times.
+
+The remaining character factor of the arithmetic column is
+$D(N)/D(M)$. Away from the auxiliary level, its factor over a
+prime of $F$ below $P$ is $w_P^{\operatorname{ord}_P\det N}$, where
+$w_P$ is the nonzero unramified character value. If the selected
+lift of that prime of $F$ is $\bar P$, both the determinant exponent
+and the character are inverted, so the same factor results.
+Here $w_{\bar P}=w_P^{-1}$ because the character is unramified at
+both primes and trivial on the ground-field idele. Auxiliary frame
+factors are unchanged under the present lattice move. Consequently
+\[
+ \frac{D(N_1)/D(M_1)}{D(N_2)/D(M_2)}
+                         =\prod_{P\mid p}w_P^{e'_P-e_P}.
+ \tag{HC10}
+\]
+Only the selected primes occur in this product.
+
+\begin{proposition}\label{hec-kernel-move}
+Let $\mathcal K_{N,M}(\Phi)$ be the actual theta coefficient map,
+including the factors just described. Suppose the same test function
+has the required support and periodicity for both pairs of lattices.
+Then, over $\mathbb C$,
+\[
+ \mathcal K_{N_1,M_1}(\Phi)
+   =\prod_{P\mid p}\left(w_P^{e'_P-e_P}
+                    p^{(b e_P-a e'_P)/2}\right)
+                                  \mathcal K_{N_2,M_2}(\Phi).
+ \tag{HC11}
+\]
+Here $a,b$ are even, so the exponent is an integer.
+\end{proposition}
+\begin{proof}
+Apply (HC5) and (HC9) to the determinant-normalized theta functions,
+and then multiply by (HC10). The mixed derivatives defining the
+column are linear operations on the same entire-function identity.
+The polynomial coefficient extraction and the coefficient-module
+maps are linear as well. Thus they preserve the scalar in (HC11).
+No valuation estimate is substituted for this equality.
+\end{proof}
+
+\subsection{The pointwise column identity}
+
+Fix pairs $d=(N,\ell)$ and $d'=(M,\ell')$, of even ranks $a,b$,
+and a selected prime $P$. Write $N^0$ for the self-dual lattice
+whose component at $P$ is $\ker\ell_P$, whose component at $\bar P$
+is the dual one, and whose other components agree with $N$.
+Let $\Phi_0$ be the prescribed auxiliary test function away from $p$.
+The point kernel is
+\[
+          k(d,d')=\mathcal K_{N,M}(\phi_{d,d'}\Phi_0).
+ \tag{HC12}
+\]
+All residue conditions at the other selected primes are included
+in $\phi$. The auxiliary frames are fixed throughout each move.
+
+\begin{theorem}\label{hec-point-identity}
+Put $s=(b-a)/2$. Then
+\[
+ \sum_{d_1:\ d'\to d_1}k(d,d_1)
+       =p^s\sum_{d_0:\ d_0\to d}k(d_0,d').
+ \tag{HC13}
+\]
+\end{theorem}
+\begin{proof}
+If $d'\to d_1$ has underlying lattice $M_1$, the lower lattice
+of $d_1$ is $M$. Change both lattices from $(N,M_1)$ to $(N^0,M)$.
+At $P$ the two index exponents in (HC8) are $e_P=e'_P=1$,
+and all other selected exponents vanish. Formula (HC11) therefore
+has scalar exactly $p^{(b-a)/2}$; the character cancels.
+
+The common test function is allowed for both pairs. If
+$\phi_{d,d_1}(X)=1$, then $XN^0_P\subset M_P$ by the kernel
+identity in (HC1). For periodicity, a period is divisible by $p$.
+If $Z:N^0_P\to M_P$ is integral, then for $x\in N_P$ one has
+$px\in N^0_P$ and
+\[
+                   pZx=Z(px)\in M_P=\ker\ell_{1,P}.
+\]
+Adding this period changes neither lattice inclusion nor the
+residue equation. With the original pair, the same assertion
+follows from $pM_{1,P}\subset\ker\ell_{1,P}$. Conditions at the
+other selected primes are unchanged, and the lattices and frames
+at the auxiliary primes are identical. Thus all support and
+periodicity requirements in (HC11) hold. We obtain
+\[
+ k(d,d_1)=p^s\mathcal K_{N^0,M}(\phi_{d,d_1}\Phi_0).
+\]
+Every lower neighbor $d_0\to d$ has underlying lattice $N^0$,
+so $k(d_0,d')=\mathcal K_{N^0,M}(\phi_{d_0,d'}\Phi_0)$.
+Both sums are finite. Use linearity and (HC4) to conclude.
+\end{proof}
+
+\subsection{The weights in the global class sum}
+
+Let a group $\Gamma$ act on a set $\mathscr X$ with finitely many
+orbits and finite stabilizers. Let $\mathscr R\subset\mathscr X^2$
+be an invariant relation with finite fibers in both directions.
+Choose one representative $x_c$ of each orbit and put
+$w_c=|\Gamma_{x_c}|^{-1}$.
+
+\begin{lemma}\label{hec-incidence-mass}
+For a simultaneous $\Gamma$-invariant vector-valued function $F$
+on $\mathscr R$,
+\[
+ \sum_c w_c\sum_{y:\,(x_c,y)\in\mathscr R}F(x_c,y)
+       =\sum_c w_c\sum_{x:\,(x,x_c)\in\mathscr R}F(x,x_c).
+ \tag{HC14}
+\]
+\end{lemma}
+\begin{proof}
+There are finitely many $\Gamma$-orbits of related pairs, since
+there are finitely many first-coordinate orbits and finite fibers.
+For one such orbit, choose $(x,y)$ with first coordinate one of
+the representatives. Its contribution to the left side is
+\[
+ \frac1{|\Gamma_x|}[\Gamma_x:\Gamma_x\cap\Gamma_y]F(x,y)
+                 =\frac{F(x,y)}{|\Gamma_x\cap\Gamma_y|}.
+\]
+Computing the same orbit using the second coordinate gives exactly
+the same value. Summing over these finitely many orbits proves (HC14).
+\end{proof}
+
+The coefficient spaces over $\mathscr X$ may carry representations
+of $\Gamma$. Equivariant sections and equivariant kernels are allowed:
+the expression $k(x,z)f(y)$ is simultaneously invariant in $(x,y)$,
+because the source transformation of the kernel cancels that of $f$.
+This is the only invariance required in (HC14).
+
+\begin{theorem}\label{hec-global-identity}
+On the actual finite spaces of equivariant forms, let $U_a,U_b$
+sum over upper neighbors, and define the theta column by
+\[
+              (Kf)(d')=\sum_c w_c\,k(d_c,d')f(d_c).
+ \tag{HC15}
+\]
+Then
+\[
+                  U_bK=p^{(b-a)/2}KU_a,
+ \qquad U_b^rK=p^{r(b-a)/2}KU_a^r\quad(r\ge0).
+ \tag{HC16}
+\]
+\end{theorem}
+\begin{proof}
+The class interpretation and its stabilizer weights were proved in
+Sections~\ref{acl-section} and \ref{acc-section}. The local neighbors
+there identify with (HC1); the residue functional records the
+quotient map, so no further multiplicity occurs. Finiteness of the
+fibers follows from Lemma~\ref{hec-neighbors}. Exact unitary
+covariance in (TE17), together with the natural changes of auxiliary
+frames, gives the equivariance of this kernel and of the forms.
+
+Expand the left side of (HC16) using (HC15), interchange the two
+finite sums, and use (HC13). The result, after division by $p^s$, is
+\[
+ \sum_c w_c\sum_{d_0:\,d_0\to d_c} k(d_0,d')f(d_c).
+\]
+Apply (HC14) with $F(x,y)=k(x,d')f(y)$. It equals
+$\sum_c w_c k(d_c,d')\sum_{y:\,d_c\to y}f(y)=(KU_af)(d')$.
+This proves the first equality, and induction proves the second,
+including $r=0$.
+\end{proof}
+
+Proposition~\ref{jcf-common-field} constructs the number field $K$
+containing the needed mixed derivatives, character values, and frame
+coefficients for this fixed finite construction. All the coefficient
+maps are therefore defined over $K$, and (HC16) descends to $K$ by
+injectivity of $K\hookrightarrow\mathbb C$. This uses the finite
+field construction, not merely the algebraicity of individual jets.
+It discharges the commutation hypothesis in the finite valuation
+iteration of Section~\ref{cv-section}. The exact source definitions
+and the finite checks are identified in the accompanying trace
+and manifest \cite{alpo-uniform-source}.
+
+\begin{example}[Why the stabilizer weights are required]
+Let $S_3$ act on one fixed point $*$ and on three permuted points.
+Relate $*$ to each of the other three points and set $F=1$ on these
+three pairs. There are two orbits of points. The two unweighted
+class sums in (HC14) would be $3$ and $1$. The actual weights give
+$3/6=1/2$ and $1/2$. Thus dropping the stabilizers would invalidate
+the passage to class sums. They are present in the submitted proof.
+\end{example}
+
+

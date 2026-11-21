@@ -1,0 +1,625 @@
+\section{Integral polynomial lattices and normalized Fock duality}
+\label{coef:section}
+
+We now construct the coefficient lattices used at the beginning of the
+finite-group argument in Section~\ref{div:section}, and prove their
+duality. The submitted construction uses polynomial dual-Weyl and Weyl
+lattices, then transports them by local bases.\cite{alpo-uniform-source}
+The proof below uses Gaussian elimination, divided row operations and
+the elementary theory of lattices. In particular, the integral duality
+will be proved here, rather than imported from a theorem on tableaux.
+
+\subsection{The polynomial modules and their normalization}
+
+Fix integers $0\le n\le r$ and a partition
+$\nu=(\nu_1,\ldots,\nu_n)$, so
+$\nu_1\ge\cdots\ge\nu_n\ge0$. Let $X=(x_{as})$ be an $r$ by $n$
+matrix of independent variables. For a characteristic-zero domain $R$,
+let $\nabla_\nu(R)$ consist of the polynomials in $R[X]$ which are
+homogeneous of degree $\nu_s$ in the variables of each column $s$ and satisfy
+\begin{equation}\label{coef:column-invariance}
+ F\bigl(X(I+tE_{ij})\bigr)=F(X)\qquad(1\le i<j\le n)
+\end{equation}
+as polynomial identities in the additional indeterminate $t$.
+Here $E_{ij}$ is the elementary matrix: the substitution adds $t$ times
+column $i$ to column $j$. Identity \eqref{coef:column-invariance} is an
+identity of polynomials, not merely a condition at the elements of a
+residue field. Write $V_\nu=\nabla_\nu(\mathbb Q)$.
+
+Let $\Delta_j(X)$ be the determinant of the first $j$ rows and first
+$j$ columns, put $\nu_{n+1}=0$, and define
+\[
+ H_\nu(X)=\prod_{j=1}^n\Delta_j(X)^{\nu_j-\nu_{j+1}}.
+\]
+The polynomial $H_\nu$ belongs to $\nabla_\nu(\mathbb Z)$: every
+initial minor is fixed by the indicated column additions, and the
+degrees telescope to $\nu_s$. Its row degrees are
+$(\nu_1,\ldots,\nu_n,0,\ldots,0)$.
+Let $I_{r,n}$ denote the first $n$ columns of the identity matrix.
+Then $H_\nu(I_{r,n})=1$.
+
+For $1\le a,b\le r$ define the divided row operator
+\[
+ D_{ab}^{(k)}F=[t^k]F\bigl((I+tE_{ab})X\bigr),\qquad k\ge0.
+\]
+Thus the substitution changes row $a$ to row $a+t\,b$ when $a\ne b$.
+For $a=b$ it multiplies row $a$ by $1+t$.
+All these operators preserve integral coefficients. They preserve
+$\nabla_\nu(R)$ because row substitutions commute with the right
+column substitutions, and preserve column degrees. Let
+\[
+ \Delta_\nu(R)=\operatorname{span}_R
+ \{D_1\cdots D_mH_\nu:m\ge0,\ D_i=D_{a_i b_i}^{(k_i)}\}.
+\]
+The empty product is allowed. In particular
+$\Delta_\nu(R)\subset\nabla_\nu(R)$.
+These are the polynomial Weyl and dual-Weyl lattices needed here.
+
+For $F=\sum_\alpha F_\alpha X^\alpha$ and
+$G=\sum_\alpha G_\alpha X^\alpha$ over $\mathbb Q$, define the
+bilinear Fock pairing and its normalization by
+\begin{equation}\label{coef:fock}
+ [F,G]=\sum_\alpha\alpha!F_\alpha G_\alpha,
+ \qquad C_\nu=[H_\nu,H_\nu],\qquad
+ B_\nu(F,G)=\frac{[F,G]}{C_\nu},
+ \qquad \alpha!=\prod_{a,s}\alpha_{as}!.
+\end{equation}
+The integer $C_\nu$ is positive: the Fock form is positive definite
+on real polynomials, and $H_\nu(I_{r,n})=1$.
+Thus the denominator in \eqref{coef:fock} is nonzero, including when
+all parts of $\nu$ vanish. This explicit finite formula specifies the
+normalizing scalar completely; a product formula for it is unnecessary.
+
+\subsection{Integral coefficients from Gaussian elimination}
+
+\begin{lemma}[Restriction to lower triangular matrices]\label{coef:restriction}
+Let $F\in V_\nu$. Its restriction to matrices with $x_{as}=0$ for
+$a<s$ determines $F$. If the restricted polynomial has integer
+coefficients, then $F\in\mathbb Z[X]$.
+\end{lemma}
+\begin{proof}
+The case $n=0$ concerns constant polynomials and is immediate. Assume
+$n>0$ and put $\Delta=\prod_{j=1}^n\Delta_j$.
+In the ring $A=\mathbb Z[X,\Delta^{-1}]$, Gaussian elimination gives
+\[
+                         X=LU,
+\]
+where $L$ is lower triangular in the rectangular sense
+($L_{as}=0$ if $a<s$) and $U$ is upper triangular with diagonal entries
+one. All entries belong to $A$.
+For completeness, eliminate the entries above the diagonal in column
+$j$, using the already treated columns $1,\ldots,j-1$ in this order.
+The pivot in column $i$ is $\Delta_i/\Delta_{i-1}$, with
+$\Delta_0=1$: these column operations leave each relevant initial
+minor unchanged, and a lower triangular initial block has determinant
+equal to the product of its pivots. Each pivot is a unit in $A$.
+This proves the asserted factorization by induction, without dividing
+by an integer.
+
+An upper triangular unipotent matrix is a product of elementary
+matrices $I+tE_{ij}$, $i<j$: successively clear its entries above the
+diagonal by column additions. Therefore
+\eqref{coef:column-invariance}, applied over the localized coefficient
+ring, gives $F(X)=F(L)$. A zero restriction consequently implies $F=0$.
+If the restriction has integer coefficients, it gives
+$F\in A$.
+
+We claim that $\mathbb Q[X]\cap A=\mathbb Z[X]$.
+Write $F=G/m$ with $G\in\mathbb Z[X]$, $m>0$, and with no prime
+dividing both $m$ and every coefficient of $G$. Membership in $A$
+gives $\Delta^kG=mQ$ for some $k\ge0$ and $Q\in\mathbb Z[X]$.
+For any prime $p\mid m$, the polynomial $\Delta$ is nonzero modulo
+$p$: each initial determinant contains its diagonal monomial with
+coefficient one, and a polynomial ring over $\mathbb F_p$ is a domain.
+Reduction of the equality modulo $p$ therefore forces every coefficient
+of $G$ to be divisible by $p$, a contradiction. Thus $m=1$.
+\end{proof}
+
+\begin{lemma}[The extremal row weight]\label{coef:extremal-weight}
+The subspace of $V_\nu$ of row degree
+$(\nu_1,\ldots,\nu_n,0,\ldots,0)$ is $\mathbb QH_\nu$.
+Moreover, for every $F\in V_\nu$,
+\begin{equation}\label{coef:evaluation-pairing}
+                         B_\nu(H_\nu,F)=F(I_{r,n}).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Projecting onto a fixed row degree preserves the column-invariance
+identities, because every term of a column substitution preserves the
+degree in each row. Let $F_0$ be the component of $F$ of the displayed
+row degree.
+
+A monomial with these row degrees and column degrees $\nu$, and
+supported on entries with $a\ge s$, must be
+\[
+                         \prod_{s=1}^n x_{ss}^{\nu_s}.
+\]
+Indeed, row one can use only column one, so its prescribed degree
+already exhausts that column; induction gives the assertion for every
+row and column. The restriction of $H_\nu$ is the same diagonal
+monomial. Lemma~\ref{coef:restriction} shows that
+$F_0=cH_\nu$. Evaluation at $I_{r,n}$ leaves only the diagonal
+monomial, so $c=F(I_{r,n})$.
+Distinct row degrees are orthogonal for the Fock pairing, which is
+diagonal on monomials. Since $H_\nu$ has the indicated row degree,
+$[H_\nu,F]=[H_\nu,F_0]=cC_\nu$, proving
+\eqref{coef:evaluation-pairing}.
+\end{proof}
+
+\begin{lemma}[Adjoint row operators]\label{coef:adjoint}
+For a matrix $g\in\operatorname{Mat}_r(\mathbb Q)$, put
+$T_gF(X)=F(gX)$. Then
+\[
+ [T_gF,G]=[F,T_{g^t}G],\qquad
+ [D_{ab}^{(k)}F,G]=[F,D_{ba}^{(k)}G].
+\]
+The first identity holds over every characteristic-zero field after
+extending the pairing, and applies independently to several disjoint
+blocks of variables.
+\end{lemma}
+\begin{proof}
+Constants satisfy the assertion directly. On polynomials of homogeneous
+degree $m\ge1$ in any finite set of variables,
+the multinomial theorem gives
+\[
+ [ (u\mathbin{\cdot}x)^m,(v\mathbin{\cdot}x)^m]
+                         =m!(u\mathbin{\cdot}v)^m.
+\]
+The powers of linear forms span that space in characteristic zero.
+One direct verification is the polarization identity
+\[
+ m!y_1\cdots y_m
+  =\sum_{S\subset\{1,\ldots,m\}}(-1)^{m-|S|}
+                               \left(\sum_{i\in S}y_i\right)^m:
+\]
+expanding the right side cancels every term missing one of the $m$
+symbols and leaves the product term with coefficient $m!$.
+Repetitions among the $y_i$ give every monomial. Substituting a matrix
+in a linear form transposes its coefficient vector, so the first
+identity follows from the displayed Fock formula and bilinearity.
+Different total degrees are orthogonal. Apply this to the block matrix
+which acts on the row variables of every column. Finally replace $g$
+by $I+tE_{ab}$ and compare coefficients of $t^k$. This includes
+$a=b$; in that case the divided operator multiplies a row-homogeneous
+polynomial of row degree $d$ by $\binom dk$.
+\end{proof}
+
+For a word $D=D_1\cdots D_m$ let
+$D^*=D_m^*\cdots D_1^*$, where
+$(D_{ab}^{(k)})^*=D_{ba}^{(k)}$.
+Lemmas~\ref{coef:extremal-weight} and \ref{coef:adjoint} give the
+key identity
+\begin{equation}\label{coef:word-evaluation}
+                 B_\nu(F,DH_\nu)=(D^*F)(I_{r,n})
+                       \qquad(F\in V_\nu).
+\end{equation}
+
+\subsection{Exact integral duality}
+
+For a subgroup $L\subset V_\nu$ define
+\[
+ L^{\vee,B}=\{F\in V_\nu:B_\nu(F,L)\subset\mathbb Z\}.
+\]
+
+\begin{theorem}[Integral Weyl duality]\label{coef:integral-duality}
+For every $0\le n\le r$ and every partition $\nu$ of length $n$,
+both $\nabla_\nu(\mathbb Z)$ and $\Delta_\nu(\mathbb Z)$ are full
+lattices in $V_\nu$, and
+\begin{equation}\label{coef:duality}
+ \Delta_\nu(\mathbb Z)^{\vee,B}=\nabla_\nu(\mathbb Z),
+ \qquad
+ \nabla_\nu(\mathbb Z)^{\vee,B}=\Delta_\nu(\mathbb Z).
+\end{equation}
+Thus $B_\nu$ gives a perfect integral pairing between these two
+lattices. No restriction on the primes dividing $C_\nu$ is required.
+\end{theorem}
+\begin{proof}
+Equation~\eqref{coef:word-evaluation} shows that the normalized pairing
+of an integral polynomial in $\nabla_\nu$ with every generator of
+$\Delta_\nu(\mathbb Z)$ is integral. This proves one inclusion in
+the first equality.
+
+Conversely, suppose $F\in V_\nu$ pairs integrally with
+$\Delta_\nu(\mathbb Z)$. Then $(DF)(I_{r,n})\in\mathbb Z$ for
+every word of divided row operators, since transposition and reversal
+permute the set of all words. Consider the matrix $L(z)$ with diagonal
+entries one, entries $z_{as}$ below the diagonal, and zero entries
+above the diagonal. It is the first $n$ columns of a product of
+elementary row matrices. More explicitly,
+\[
+ L(z)=\left(\prod_{s=1}^n\prod_{a>s}(I+z_{as}E_{as})\right)I_{r,n},
+\]
+where the factors are written from left to right in increasing $s$;
+the order for fixed $s$ is immaterial. Products of two of the
+off-diagonal summands vanish in this order: for a factor in column
+$s$ followed by one in column $t\ge s$, a nonzero product would
+require $s=b>t$. Consequently the displayed product has exactly the
+specified entries. Expanding the substitutions one factor at a time
+shows that every coefficient of $F(L(z))$ is $(DF)(I_{r,n})$ for an
+appropriate word $D$, and hence is an integer.
+
+Column homogeneity now recovers the restriction to an arbitrary lower
+triangular matrix. Write its diagonal entries as $d_s$ and its lower
+entries as $l_{as}$. In the Laurent polynomial ring in the $d_s$,
+\[
+ F((l_{as}))=\left(\prod_s d_s^{\nu_s}\right)
+              F\bigl(L((l_{as}/d_s)_{a>s})\bigr).
+\]
+Every coefficient on the right is an integer. For each off-diagonal
+monomial, the column degree determines its diagonal powers uniquely;
+there is no collision of distinct terms. The left side is a polynomial,
+so every surviving diagonal exponent is nonnegative. Its coefficients
+are therefore integers. Lemma~\ref{coef:restriction} gives
+$F\in\nabla_\nu(\mathbb Z)$, proving the first equality.
+
+The space of polynomials of the fixed column degrees has a finite
+monomial basis. Hence $\nabla_\nu(\mathbb Z)$ is a finitely generated
+free abelian group. It spans $V_\nu$, since denominators in a rational
+polynomial can be cleared and the defining identities have integral
+coefficients. Its subgroup $\Delta_\nu(\mathbb Z)$ is also finitely
+generated. It spans $V_\nu$ as well: otherwise nondegeneracy of $B_\nu$
+would give a nonzero rational vector $F$ perpendicular to its rational
+span. Then every rational multiple of $F$ would belong to
+$\Delta_\nu(\mathbb Z)^{\vee,B}=\nabla_\nu(\mathbb Z)$, which is
+impossible for a nonzero polynomial with integral coefficients.
+
+Every full lattice in a finite-dimensional rational space with a
+nondegenerate symmetric rational bilinear form equals its double dual.
+Indeed, take a basis of the lattice; in these coordinates its dual is
+the inverse Gram matrix applied to $\mathbb Z^q$, and dualizing once
+more returns $\mathbb Z^q$ (the form here is symmetric).
+Dualizing the first equality proves the second one. The same coordinate
+calculation proves perfection. If $n=0$, both lattices are
+$\mathbb Z$, $H_\nu=C_\nu=1$, and these assertions also hold directly.
+\end{proof}
+
+\begin{remark}[Saturation has two different roles]\label{coef:saturation}
+The lattice $\nabla_\nu(\mathbb Z)$ is saturated in the group of
+integral polynomials of column degree $\nu$: if a nonzero integer
+multiple of an integral polynomial satisfies the defining identities,
+the polynomial itself satisfies them. The smaller lattice
+$\Delta_\nu(\mathbb Z)$ need not be saturated in
+$\nabla_\nu(\mathbb Z)$.
+For binary quadratics, $H=x^2$, $C=2$,
+\[
+ \nabla=\mathbb Zx^2\oplus\mathbb Zxy\oplus\mathbb Zy^2,
+ \qquad
+ \Delta=\mathbb Zx^2\oplus2\mathbb Zxy\oplus\mathbb Zy^2.
+\]
+Replacing $\Delta$ by its saturation would destroy the asserted
+integral pairing, since $B(xy,xy)=1/2$.
+Also, the class of $2xy$ in $\Delta/2\Delta$ is nonzero although its
+image in $\nabla/2\nabla$ is zero. Reducing the inclusion of the
+lattices modulo two is not the same as identifying their reductions.
+The perfect pairing between the two abstract integral lattices remains
+valid at this prime. This explains why a small residue characteristic
+does not invalidate Theorem~\ref{coef:integral-duality}, and why the
+torsion in $\nabla/\Delta$ must not be discarded.
+\end{remark}
+
+\subsection{Number fields, determinant characters and tensor products}
+
+Let $K$ be a number field with ring of integers $\mathcal O$.
+The defining conditions for $\nabla_\nu$ are finitely many homogeneous
+linear equations with integer coefficients in the finite monomial
+basis of column degree $\nu$. Passing from $\mathbb Z$ to $\mathcal O$
+or $K$ commutes with their common kernel. One elementary proof puts
+the integer matrix of these equations in Smith normal form: each
+nonzero diagonal integer acts injectively on either characteristic-zero
+domain, so the kernel is spanned by the same remaining basis columns.
+Consequently
+\[
+ \nabla_\nu(\mathcal O)=\mathcal O\otimes_{\mathbb Z}
+                 \nabla_\nu(\mathbb Z),\qquad
+ \Delta_\nu(\mathcal O)=\mathcal O\otimes_{\mathbb Z}
+                 \Delta_\nu(\mathbb Z).
+\]
+The second identity also follows immediately from the integral formulas
+for the divided operators. Extending the two dual integral bases from
+Theorem~\ref{coef:integral-duality} proves the same perfect pairing over
+$\mathcal O$, with duality taken inside $\nabla_\nu(K)$.
+
+The actual coefficient weights are dominant integral weights
+$\lambda_1\ge\cdots\ge\lambda_n$; the $\lambda_i$ may be negative.
+For $n>0$ put
+\[
+ a=\lambda_n,\qquad \nu_i=\lambda_i-a.
+\]
+Thus $\nu$ is a partition with last part zero. For $n=0$ put $a=0$.
+On the square polynomial space define the representation
+\begin{equation}\label{coef:representation}
+ \rho_\lambda(g)F(X)=\det(g)^a F(g^tX),\qquad g\in\mathrm{GL}_n(K).
+\end{equation}
+It is a representation, since substitutions reverse matrix
+multiplication and the transpose reverses it again. Negative powers
+of $\det g$ are legitimate because $g$ is invertible.
+Lemma~\ref{coef:adjoint} gives
+\begin{equation}\label{coef:contravariant}
+ B_\nu(\rho_\lambda(g)F,G)
+       =B_\nu(F,\rho_\lambda(g^t)G),\qquad
+ B_\nu(\rho_\lambda(g^{-t})F,\rho_\lambda(g)G)=B_\nu(F,G).
+\end{equation}
+
+Both standard lattices are preserved by
+$\mathrm{GL}_n(\mathcal O)$ and by
+$\mathrm{GL}_n(\mathcal O_{\mathfrak p})$ after localization.
+For $\nabla$ this follows directly from integral substitution and the
+fact that a positive or negative power of a unit determinant is a unit.
+For $\Delta=\nabla^{\vee,B}$, it follows from
+\eqref{coef:contravariant} and the stability of $\nabla$ under $g^t$;
+apply the argument also to $g^{-1}$ to get equality.
+
+For a finite index set $\mathcal T$, take a weight $\lambda_\tau$
+for each $\tau$ and use disjoint variable blocks. Let
+\[
+ V=\bigotimes_{\tau\in\mathcal T}\nabla_{\nu_\tau}(K),\qquad
+ N_0=\bigotimes_\tau\nabla_{\nu_\tau}(\mathcal O),\qquad
+ D_0=\bigotimes_\tau\Delta_{\nu_\tau}(\mathcal O).
+\]
+The first tensor product is over $K$ and the latter two are over
+$\mathcal O$. They are identified with products of polynomials in
+the disjoint blocks. Monomial factorials factor over the blocks, so
+the tensor-product pairing is exactly the Fock pairing divided by
+\[
+                             C=\prod_\tau C_{\nu_\tau}.
+\]
+Tensoring the dual bases proves
+\begin{equation}\label{coef:standard-tensor-duality}
+                  N_0^{\vee,B}=D_0,\qquad D_0^{\vee,B}=N_0.
+\end{equation}
+The representation $\rho(g)$ is the tensor product of
+\eqref{coef:representation}. Formula~\eqref{coef:contravariant}
+continues to hold componentwise. For an empty index set the space is
+$K$, both lattices are $\mathcal O$, and $C=1$.
+
+The integral bases constructed above give rational polynomial bases of
+$V$. The matrix of $B$ in such a basis has rational entries. If all
+entries of the matrices $g_\tau$ lie in a subfield $K_0\subset K$,
+the matrix of $\rho(g)$ in the same basis also has entries in $K_0$:
+the polynomial substitution and determinant powers have coefficients
+in $K_0$, and expressing their outputs in a rational basis uses only
+linear equations with rational coefficients. This gives the required
+field of definition without making a special tableau-basis choice.
+
+\subsection{Transport by the actual local bases}
+
+Let $M_\tau\subset K^n$ be full $\mathcal O$-lattices. For every
+nonzero prime $\mathfrak p$, choose matrices
+$B_{\tau,\mathfrak p}\in\mathrm{GL}_n(K)$ whose columns form bases
+of $(M_\tau)_{\mathfrak p}$ over $\mathcal O_{\mathfrak p}$.
+Put $B_{\mathfrak p}=(B_{\tau,\mathfrak p})_\tau$ and define
+\begin{equation}\label{coef:transport}
+ N(M)=\bigcap_{\mathfrak p}\rho(B_{\mathfrak p})(N_0)_{\mathfrak p},
+ \qquad
+ D(M)=\bigcap_{\mathfrak p}\rho(B_{\mathfrak p})(D_0)_{\mathfrak p}
+                         \quad\text{inside }V.
+\end{equation}
+
+\begin{lemma}[Well-defined transported lattices]\label{coef:transport-lattices}
+The intersections in \eqref{coef:transport} are independent of the
+chosen local bases. They are full lattices, their localizations are
+the corresponding displayed local modules, and $D(M)\subset N(M)$.
+For a tuple $g=(g_\tau)$ of invertible matrices,
+\begin{equation}\label{coef:equivariance}
+                  N(gM)=\rho(g)N(M),\qquad D(gM)=\rho(g)D(M).
+\end{equation}
+If $M_\tau^\vee$ denotes the ordinary bilinear dual lattice in $K^n$,
+then
+\begin{equation}\label{coef:transport-duality}
+                     N(M)^{\vee,B}=D(M^\vee),
+              \qquad D(M)^{\vee,B}=N(M^\vee).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Two bases differ on the right by an element of
+$\mathrm{GL}_n(\mathcal O_{\mathfrak p})$, which preserves the two
+standard localized lattices. This proves independence.
+Outside a finite set of primes the base lattices are
+$\mathcal O_{\mathfrak p}^n$, so the identity matrices can be chosen.
+The local modules in \eqref{coef:transport} therefore equal the
+standard ones outside a finite set.
+
+Here is the elementary patching argument. Given finitely many
+exceptional local lattices and a reference lattice $L_0$, choose a
+nonzero $b\in\mathcal O$ such that each lies between
+$b(L_0)_{\mathfrak p}$ and $b^{-1}(L_0)_{\mathfrak p}$.
+The finite module $b^{-1}L_0/bL_0$ is the direct sum of its primary
+parts. In each part take the submodule specified by the corresponding
+local lattice; at the additional primes dividing $b$ take the
+submodule specified by $L_0$. Its inverse image in $b^{-1}L_0$ is a
+full lattice with exactly the prescribed localizations. A lattice
+equals the intersection of its localizations: in any finite generating
+set, a failure of membership is detected in a primary component of
+a finite quotient after clearing denominators. This proves both the
+existence assertion and its equality with the intersections above.
+The inclusion follows from $D_0\subset N_0$.
+The matrices $g_\tau B_{\tau,\mathfrak p}$ are bases of
+$(g_\tau M_\tau)_{\mathfrak p}$, proving
+\eqref{coef:equivariance}.
+
+Ordinary duality of a full lattice commutes with localization. For
+example, an element pairing locally integrally with a finite generating
+set can be multiplied by a single element outside $\mathfrak p$ so
+that it pairs globally integrally with all generators. The bases of
+$(M_\tau^\vee)_{\mathfrak p}$ are $B_{\tau,\mathfrak p}^{-t}$.
+Equations~\eqref{coef:contravariant} and
+\eqref{coef:standard-tensor-duality} therefore give
+\[
+ \bigl(\rho(B_{\mathfrak p})(N_0)_{\mathfrak p}\bigr)^{\vee,B}
+     =\rho(B_{\mathfrak p}^{-t})(D_0)_{\mathfrak p}.
+\]
+Intersecting over all primes proves the first equality in
+\eqref{coef:transport-duality}; exchange $N_0,D_0$ for the second.
+\end{proof}
+
+The definition in \eqref{coef:transport} is exactly the intersection
+over all finite primes and all admissible local bases used in the
+coefficient construction. The independence just proved is why those
+extra quantifiers do not shrink the lattice further.
+
+\subsection{The normalized Hermitian form and unimodular inputs}
+
+Suppose $K$ has an involution $c\mapsto\bar c$.
+It preserves $\mathcal O$ and acts coefficientwise on polynomials.
+For each $\tau$ let $G_\tau\in\mathrm{GL}_n(K)$ be Hermitian,
+$\bar G_\tau^{\,t}=G_\tau$. On $V$ define
+\begin{equation}\label{coef:hermitian}
+ h_G(F,F')=B(\bar F,\rho(G)F').
+\end{equation}
+Written in terms of polynomials, this is exactly
+\[
+ h_G(F,F')=
+ \frac{\prod_\tau\det(G_\tau)^{a_\tau}}
+      {\prod_\tau C_{\nu_\tau}}
+ [\bar F,\ F'((G_\tau^tX_\tau)_\tau)].
+\]
+Thus both the factorial normalization and the determinant characters
+are retained. Formula~\eqref{coef:contravariant} shows that $h_G$ is
+Hermitian and nondegenerate. At a complex embedding where every
+$G_\tau$ becomes positive definite, its numerical Gram matrix in a
+rational polynomial basis is positive definite as well. Indeed the
+ordinary complex Fock form is positive definite, the adjoint of
+$\rho(g)$ is $\rho(g^*)$, and a factorization $G=SS^*$ gives
+$\rho(G)=\rho(S)\rho(S)^*$.
+The same adjoint identity gives, componentwise,
+\[
+ h_G(\rho(g)F,\rho(g)F')=h_{g^*Gg}(F,F').
+\]
+Thus a base isometry $g^*Gg=G$ acts by isometries on the coefficient
+space. If it also preserves the input lattices, it preserves both
+coefficient lattices by \eqref{coef:equivariance}. These are the
+isometry and stability properties used for their finite stabilizers.
+
+For a base lattice put
+\[
+ M_\tau^{\#,G_\tau}
+   =\{y:\bar x^{\,t}G_\tau y\in\mathcal O\text{ for all }x\in M_\tau\}
+   =G_\tau^{-1}(\bar M_\tau)^\vee.
+\]
+The symbol $\#$ on coefficient lattices below refers to $h_G$.
+
+\begin{theorem}[The coefficient duality actually needed]\label{coef:hermitian-duality}
+With all the preceding definitions,
+\begin{equation}\label{coef:hermitian-duality-eq}
+             N(M)^\#=D(M^{\#,G}),\qquad
+             D(M)^\#=N(M^{\#,G}).
+\end{equation}
+In particular, if every input lattice is unimodular for its base
+Hermitian form, then
+\begin{equation}\label{coef:unimodular}
+                         N(M)^\#=D(M)\subset N(M),\qquad
+                         D(M)^\#=N(M).
+\end{equation}
+Consequently these coefficient lattices satisfy the initial dual
+containments in the finite-group argument with $s=1$.
+\end{theorem}
+\begin{proof}
+All standard lattice generators have integer coefficients. Conjugation
+therefore gives $\overline{N(M)}=N(\bar M)$ and
+$\overline{D(M)}=D(\bar M)$: conjugating a local basis at
+$\overline{\mathfrak p}$ gives the local basis at $\mathfrak p$.
+For $y\in V$, the defining condition for $N(M)^\#$ is
+\[
+ B(\overline{N(M)},\rho(G)y)\subset\mathcal O.
+\]
+By symmetry of $B$ and \eqref{coef:transport-duality}, this is
+equivalent to $\rho(G)y\in D((\bar M)^\vee)$.
+Equivariance \eqref{coef:equivariance} makes the resulting lattice
+\[
+ \rho(G^{-1})D((\bar M)^\vee)
+                   =D(G^{-1}(\bar M)^\vee)=D(M^{\#,G}).
+\]
+The other equality follows by exchanging the two lattices.
+The unimodular conclusion is immediate, including its inclusion,
+which was proved in Lemma~\ref{coef:transport-lattices}.
+\end{proof}
+
+\begin{lemma}[Extension of a unimodular input]\label{coef:extension}
+Let $E\hookrightarrow K$ be an embedding of number fields compatible
+with their involutions. For a nondegenerate Hermitian $E$-space and a full
+$\mathcal O_E$-lattice $L$, extension of scalars satisfies
+\[
+ (\mathcal O_K L)^\#=\mathcal O_K L^\#,
+\]
+where the form on the left is the scalar extension of the original
+$E$-valued form. In particular a unimodular lattice remains unimodular,
+even at ramified primes.
+\end{lemma}
+\begin{proof}
+The module $L$ is finite projective over the Dedekind domain
+$\mathcal O_E$. The torsion-free module $\mathcal O_K$ is flat over
+$\mathcal O_E$. Duals of finite projective modules commute with scalar
+extension: this is immediate for a finite free module, and follows
+for a projective module by writing it as a direct summand of one.
+Compatibility of the involutions also identifies the extension of
+$\bar L$ with the conjugate of its extension. Use the formula
+$L^\#=G^{-1}(\bar L)^\vee$ in any coordinates over $E$ and extend
+scalars. The pairing is extended as a field-valued pairing; no trace
+map is inserted, so there is no different-ideal factor.
+\end{proof}
+
+The first coefficient construction takes these scalar extensions of
+the original unimodular base lattices. The second uses their ordinary
+duals. The latter are unimodular for the inverse
+transpose Gram form, because direct calculation gives
+\[
+ (M^\vee)^{\#,(G^{-1})^t}=(M^{\#,G})^\vee.
+\]
+Indeed, both sides equal $G^t\bar M$, using
+$(\bar M^\vee)^\vee=\bar M$.
+Thus Theorem~\ref{coef:hermitian-duality} supplies the exact duality
+for both constructions once their stated base-lattice unimodularity is
+available. The construction and uniform estimates for those underlying
+arithmetic lattices remain separate requirements.
+
+\begin{example}[A determinant character of negative weight]
+For $n=1$ and weight $\lambda=-1$, the polynomial partition is zero
+and $V=K$, but $\rho(g)=g^{-1}$.
+Take $K=\mathbb Q(i)$, $M=\mathcal O$ and $G=2$.
+Then $M^{\#,G}=\tfrac12\mathcal O$,
+$N(M^{\#,G})=2\mathcal O$, and
+$h_G(x,y)=\bar x y/2$ has dual lattice $2\mathcal O$, as required.
+If the determinant factor in \eqref{coef:hermitian} were omitted,
+the coefficient dual would instead be $\mathcal O$.
+Negative weights therefore cannot be replaced by their nonnegative
+polynomial parts without retaining the determinant character.
+More generally, for any fractional ideal $I$ and integral rank-one
+weight $a$, local transport gives $N(I)=D(I)=I^a$, including negative
+$a$ and nonprincipal $I$. The Hermitian dual for Gram entry $g$ is
+$g^{-a}\bar I^{-a}$, equal to $D(g^{-1}\bar I^{-1})$ as the theorem
+asserts. This also checks the transport convention when no global
+basis of the input lattice exists.
+\end{example}
+
+\subsection{Checks and the resulting scope of the reconstruction}
+
+An accompanying exact computation constructs the two lattices
+independently for twelve small cases. The dual-Weyl lattice is the
+saturated integer kernel of the full column-invariance equations;
+the Weyl lattice is the lattice generated from $H_\nu$ by closure
+under all divided row operators. Smith and Hermite normal forms are
+used over the integers. In every case the normalized matrix pairing
+the two lattice bases is integral and has determinant $\pm1$.
+For example, for square matrices the partitions $(2,1,0)$ and
+$(3,1,0)$ have ranks $8$ and $15$, normalizing constants $3$ and $8$,
+and indices $[\nabla:\Delta]=3$ and $4096$, respectively.
+For four rows, two columns and partition $(2,1)$, the rank is $20$
+and the index is $81$. These finite checks support the stated
+conventions; the proof of the general result is the preceding argument.
+
+The coefficient-lattice duality, its determinant twists, tensor
+products, local transport and scalar extension are now proved in
+ordinary mathematics with the actual definitions used by the divisor
+construction. The proof uses characteristic zero, $n\le r$, a
+nonincreasing nonnegative polynomial partition, invertible base Gram
+matrices and full input lattices. The original integral weights may
+be arbitrary dominant integers. No assumption that the residue
+characteristic exceeds the degree is made. No counterexample to the
+actual duality has been found; the explicit examples above instead
+identify changes of normalization or saturation that would make it
+false.
+
+
+
+% Exact Fock normalizer and local equality of Weyl and dual-Weyl lattices.
+% Labels in this fragment have the prefix fh-.

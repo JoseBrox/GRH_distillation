@@ -1,0 +1,454 @@
+\section{Finite lattice translations and the normalization of theta measures}
+\label{lm-section}
+
+We now pass from the one-dimensional ordinary theta laws to the
+finite operations which occur in the lattice construction.  These
+operations introduce two kinds of constants: square roots of
+lattice indices and an algebraic factor correcting a determinant.
+Both must be retained.  An absolute value of one over the complex
+numbers does not imply an absolute value of one at a finite place.
+We prove the required arithmetic normalization and all the finite
+measure arguments.  The precise analytic identity which identifies
+the submitted higher-dimensional theta function is stated separately.
+
+\subsection{Integral moments in a lattice of directions}
+
+Fix $p$, a complete field $L\supset\mathbb Q_p$, an abstract
+embedding $\iota$ of the complex coefficients into $L$, and a
+period $\omega\in L$.  For an entire function $F$ on a
+finite-dimensional complex space $V$ and an additive subgroup
+$\Lambda\subset V$, say that its period-scaled moments are
+integral on $\Lambda$ if, for every finite family
+$v_1,\ldots,v_r\in\Lambda$, the formal series
+\[
+ \widehat F\left(\omega\sum_{i=1}^r v_i\log(1+T_i)\right)
+                 \quad\hbox{belongs to }\mathcal O_L[[T_1,\ldots,T_r]].
+ \tag{LM1}
+\]
+The notation means transport of Taylor coefficients and of the
+coordinates of the $v_i$ by the fixed embedding.  It makes no
+claim about convergence in the original complex topology.
+By Proposition~\ref{ot-logarithm}, (LM1) is equivalent to
+existence of the associated measures of norm at most one.
+
+\begin{lemma}\label{lm-directions}
+Suppose the series associated to $v_1,\ldots,v_r$ has coefficient
+norm at most $C$.  Let
+$w_i=\sum_j a_{ji}v_j$ for $1\le i\le s$, where
+$\iota(a_{ji})\in\mathbb Z_p$.  Then the series associated to
+$w_1,\ldots,w_s$ has norm at most $C$.
+Consequently integral moments are preserved by finite products,
+finite linear combinations with integral transported coefficients,
+and pullback by a complex linear map $g:V'\to V$ satisfying
+\[
+ \forall v\in\Lambda'\quad
+ \exists N\in\mathbb Z_{>0},\ p\nmid N,\quad Ngv\in\Lambda.
+ \tag{LM2}
+\]
+\end{lemma}
+\begin{proof}
+In the original series substitute
+\[
+ T_j=\prod_{i=1}^s(1+S_i)^{\iota(a_{ji})}-1.
+ \tag{LM3}
+\]
+These are integral series with zero constant term.  Every
+coefficient of the substituted series is a finite sum of original
+coefficients times integral scalars, so its absolute value is at
+most $C$.  The formal identity
+$\log\prod_i(1+S_i)^{a_i}=\sum_i a_i\log(1+S_i)$ follows by
+differentiation and the constant term, and identifies the series
+with the stated directions.  This proves the first assertion.
+Products and finite integral linear combinations follow by
+multiplying or adding the series for one common direction family.
+For a finite family in $\Lambda'$, choose the finitely many
+integers in (LM2).  Apply the first assertion to the vectors
+$Ngv\in\Lambda$ with diagonal coefficients $1/N\in\mathbb Z_p$.
+The chain rule identifies this result with the pullback.
+\end{proof}
+
+The same proof permits coefficients in the ring of integers of a
+split imaginary quadratic field: their images lie in $\mathbb Z_p$.
+In particular every finite family of directions in
+$\mathcal O_k$ can be reduced to the direction $1$ in the
+one-dimensional theorem of Section~\ref{ct-section}.  Products of
+the one-dimensional theta functions therefore have integral
+moments on the product lattice, with the same period.
+
+\subsection{The finite translation operator}
+
+Let $H$ be a positive definite Hermitian form on $V$, linear in
+its first variable, and put $E=\operatorname{Im}H$.  For $x\in V$
+define
+\[
+ (U_xF)(z)=e^{-\pi H(z,x)-\pi H(x,x)/2}F(z+x).
+ \tag{LM4}
+\]
+Then $U_xU_y=e^{-\pi iE(x,y)}U_{x+y}$.
+Let $\Lambda_0,\Lambda_1$ be commensurable full lattices on which
+$E$ takes integer values.  Suppose a function $\alpha$ on their
+rational span restricts to a semicharacter on each lattice:
+\[
+ \alpha(x+y)=\alpha(x)\alpha(y)e^{\pi iE(x,y)},\qquad
+ |\alpha(x)|=1,\qquad x,y\in\Lambda_j.
+ \tag{LM5}
+\]
+The values on the intersection are the same because a single
+function $\alpha$ is used.  A theta function for
+$(H,\Lambda_j,\alpha)$ is an entire function satisfying
+$U_lF=\alpha(l)^{-1}F$ for $l\in\Lambda_j$.
+Put $W_x=\alpha(x)U_x$ and
+$d=[\Lambda_1:\Lambda_0\cap\Lambda_1]$.  With $R$ any set of
+representatives of this finite quotient, define
+\[
+ I_{\Lambda_0,\Lambda_1}F
+                 =\frac1{\sqrt d}\sum_{x\in R}W_xF,
+ \tag{LM6}
+\]
+where $\sqrt d$ is the positive real square root before transport.
+
+\begin{proposition}\label{lm-finite-intertwiner}
+The expression (LM6) is independent of the representatives and
+is a theta function for $(H,\Lambda_1,\alpha)$.
+Suppose moreover $p\nmid d$, every $\alpha(x)$ on the rational
+lattice is a root of unity, and the period-scaled moments of
+$U_tF$ on $\Lambda_0$ are integral whenever
+$Nt\in\Lambda_0$ for some $N>0$ prime to $p$.
+Then $I_{\Lambda_0,\Lambda_1}F$ and all its prime-to-$p$
+translates have integral moments on $\Lambda_1$.
+\end{proposition}
+\begin{proof}
+For $x,y\in\Lambda_1$, (LM4)--(LM5) and the integrality of
+$E(x,y)$ give $W_xW_y=W_{x+y}$.  If
+$l\in\Lambda_0\cap\Lambda_1$, then $W_lF=F$.
+Thus replacing $x$ by $x+l$ does not change $W_xF$.
+Translation by any $y\in\Lambda_1$ permutes the quotient, so
+$W_yI_{\Lambda_0,\Lambda_1}F=I_{\Lambda_0,\Lambda_1}F$.
+This proves the first assertion, including entireness.
+
+The finite group of order $d$ is killed by $d$, so
+$d\Lambda_1\subset\Lambda_0$.  Each representative $x$ has
+prime-to-$p$ order modulo $\Lambda_0$.  If
+$Nt\in\Lambda_1$ with $p\nmid N$, then
+$dN(t+x)\in\Lambda_0$ for every $x\in R$.  Also
+\[
+ U_t(W_xF)=\alpha(x)e^{-\pi iE(t,x)}U_{t+x}F.
+ \tag{LM7}
+\]
+The pairing $E$ is rational on the common rational span, hence
+the exponential in (LM7) is a root of unity.
+The transported coefficient $1/\sqrt d$ has norm one since its
+square is $1/d$; every root of unity also has norm one.
+The assumed translated integrality, (LM2) with $g=1$ and
+$N=d$, and Lemma~\ref{lm-directions} now prove the assertion.
+\end{proof}
+
+Two successive operators of this form are therefore finite
+linear combinations of translates with integral coefficients
+whenever both indices are prime to $p$.  Expanding the two sums
+introduces only the cocycle in (LM4).  Multiplication by an
+algebraic character value which is a $p$-adic unit preserves
+the conclusion.  These observations apply to the submitted
+construction's two successive lattice moves; their validity
+does not depend on choosing representatives with small
+archimedean size.
+
+\subsection{An arithmetic factor correcting the determinant}
+
+Let $k$ be an imaginary quadratic field, with class number $h$,
+and let $(W,h_W)$ be a Hermitian $k$-space isometric to the
+standard Hermitian space $k^m$.  Fix a full
+$\mathcal O_k$-lattice $M\subset W$ and one rational isometry
+$\gamma_0:W\to k^m$.  For each rational split prime $\ell$ in
+a set $\mathcal S$, assume that there is an isometry
+$\gamma_\ell$ carrying
+$M\otimes\mathbb Z_\ell$ onto
+$\mathcal O_k^m\otimes\mathbb Z_\ell$.
+Choose one prime $\mathfrak l\mid\ell$, a generator
+\[
+       \mathfrak l^h=(\pi_\ell),\qquad
+       r_\ell^{\,2h}=\frac{\pi_\ell}{\bar\pi_\ell},
+ \tag{LM8}
+\]
+in an algebraic closure, and put
+\[
+ y_\ell=v_{\mathfrak l}
+             \bigl(\det(\gamma_\ell\gamma_0^{-1})\bigr).
+ \tag{LM9}
+\]
+The valuation is normalized to have value one on a uniformizer.
+The existence of $\pi_\ell$ follows directly from the definition
+of the class number, and the root $r_\ell$ is nonzero.
+
+\begin{theorem}\label{lm-kappa}
+The integer $y_\ell$ is independent of the locally integral
+isometry $\gamma_\ell$.  Only finitely many of these integers
+are nonzero, so
+\[
+                         \kappa=\prod_{\ell\in\mathcal S}
+                                         r_\ell^{-y_\ell}
+ \tag{LM10}
+\]
+is a well-defined nonzero algebraic number.
+If $p\in\mathcal S$ and $\gamma$ is any isometry satisfying
+$\gamma(M\otimes\mathbb Z_p)=\mathcal O_k^m\otimes\mathbb Z_p$
+(so both maps between these specified lattices are integral), then,
+for every embedding $\iota:\overline{\mathbb Q}\to\mathbb C_p$,
+\[
+ |\iota(\kappa)|_p^2
+  \left|\iota\bigl(\det(\gamma\gamma_0^{-1})\bigr)\right|_p=1.
+ \tag{LM11}
+\]
+Moreover every complex conjugate of $\kappa$ has absolute value one.
+\end{theorem}
+\begin{proof}
+If $\gamma$ and $\gamma'$ both carry the completed lattice
+onto the standard lattice, then $\gamma\gamma'^{-1}$ and its
+inverse are integral matrices over
+$\mathcal O_k\otimes\mathbb Z_\ell$.  Its determinant is a
+unit at both primes above $\ell$.  Taking valuations proves
+the independence in (LM9).  There is one nonzero integer $B$
+such that both $\gamma_0M$ and $\mathcal O_k^m$ are contained
+in $B^{-1}$ times the other.  For $\ell\nmid B$ their
+completions are equal, and $\gamma_0$ itself is an allowable
+local isometry.  Therefore $y_\ell=0$ away from the finite
+set of prime divisors of $B$.
+
+If $\ell\ne p$, the ideals of $\pi_\ell$ and $\bar\pi_\ell$
+are supported above $\ell$.  Their images at every place
+above $p$ are units.  Equation (LM8) gives
+$|\iota(r_\ell)|_p=1$, so (LM10) yields
+\[
+                   |\iota(\kappa)|_p
+                        =|\iota(r_p)|_p^{-y_p}.
+ \tag{LM12}
+\]
+Set $a=\det(\gamma\gamma_0^{-1})$.
+The isometry equation implies $a\bar a=1$.
+At the chosen prime $\mathfrak p$ above $p$,
+$v_{\mathfrak p}(a)=y_p$ by the independence already proved.
+At its conjugate the valuation is $-y_p$.
+Since $p$ splits, both ramification indices are one, while
+$v_{\mathfrak p}(\pi_p)=h$ and
+$v_{\bar{\mathfrak p}}(\pi_p)=0$.
+If $\iota$ induces $\mathfrak p$, (LM8) consequently gives
+\[
+ |\iota(a)|_p=p^{-y_p}
+                   =|\iota(r_p)|_p^{2y_p}.
+ \tag{LM13}
+\]
+If it induces $\bar{\mathfrak p}$, both exponents change sign
+and the same equality holds.  Multiplying by (LM12) squared
+proves (LM11).
+Finally every complex embedding of $k$ is either the given
+one or its conjugate.  Thus $\pi_\ell/\bar\pi_\ell$ has
+complex absolute value one in every embedding; every conjugate
+of its $2h$-th root has absolute value one as well.  The finite
+product (LM10) has the stated archimedean property.
+\end{proof}
+
+\begin{corollary}\label{lm-change-scalar}
+Suppose $a$ is the determinant in (LM11), and $c$ is an
+algebraic number satisfying $c^8=a^4$.  Then
+$|\iota(\kappa c)|_p=1$.
+\end{corollary}
+\begin{proof}
+Taking absolute values in the eighth-power identity gives
+$|\iota(c)|_p^2=|\iota(a)|_p$.
+The assertion is now (LM11).
+\end{proof}
+
+This is the exact exponent needed in the source's change of
+theta normalization.  Merely knowing that $c$ or $\kappa$
+has complex absolute value one would not give this conclusion.
+The proof also explains why the choice of one prime over each
+split rational prime and the sign in $r_\ell^{-y_\ell}$ matter.
+
+\subsection{The precise fourth tensor criterion}
+
+Let $\Lambda_0=\mathcal O_k^m\subset\mathbb C^m$, with its
+product Hermitian form and product theta function
+$\Theta_0(z)=\prod_{j=1}^m\theta(z_j)$ as in
+Section~\ref{ct-section}.  Let $V$ have complex dimension
+$m/4$, and let $\Lambda\subset V$ be a full lattice stable
+under $\mathcal O_k$.  Suppose
+$g:V^4\to\mathbb C^m$ is a complex linear isometry, and
+$M_g=g(\Lambda^4)$ is commensurable with $\Lambda_0$.
+Assume a common semicharacter on their rational span, with
+root-of-unity values, and write
+$j_g=[M_g:M_g\cap\Lambda_0]$.  Define the entire function
+\[
+ K_g(z)=j_g^{-1/2}
+       \sum_{x\in M_g/(M_g\cap\Lambda_0)}
+                       \alpha(x)(U_x\Theta_0)(gz).
+ \tag{LM14}
+\]
+As above the expression uses any finite set of representatives.
+
+\begin{theorem}\label{lm-fourth-criterion}
+Suppose $p\ge5$ is split in $k$, the one-dimensional theta
+function has the ordinary laws of Section~\ref{ct-section},
+and $F$ is an entire function on $V$.  Suppose there are two
+isometries $g_0,g_1$ as above and algebraic nonzero numbers
+$\kappa,c$ such that
+\[
+ \begin{aligned}
+ F^{\otimes4}&=\kappa K_{g_0},&
+ K_{g_0}&=cK_{g_1},&
+ c^8&=\det(g_1g_0^{-1})^4,\\
+ p&\nmid j_{g_1},&
+ |\iota(\kappa)|_p^2
+      |\iota(\det(g_1g_0^{-1}))|_p&=1 .
+ \end{aligned}
+ \tag{LM15}
+\]
+Then every prime-to-$p$ translate $U_tF$ has integral
+period-scaled moments on $\Lambda$.
+\end{theorem}
+\begin{proof}
+Corollary~\ref{lm-change-scalar}, or its one-line norm
+calculation, gives $|\iota(\kappa c)|_p=1$.
+The product function $\Theta_0$ and all its prime-to-$p$
+translates have integral moments on $\Lambda_0$, by the
+one-dimensional theorem and Lemma~\ref{lm-directions}.
+Proposition~\ref{lm-finite-intertwiner} proves the same assertion
+for $I_{\Lambda_0,M_{g_1}}\Theta_0$ on $M_{g_1}$.
+
+If $Nt\in\Lambda$, with $p\nmid N$, put
+$t^{[4]}=(t,t,t,t)$.  Since $g_1$ is an isometry,
+direct substitution in (LM4) gives
+\[
+ U_{t^{[4]}}(K_{g_1})
+       =(U_{g_1t^{[4]}}
+              I_{\Lambda_0,M_{g_1}}\Theta_0)\circ g_1.
+ \tag{LM16}
+\]
+The vector $g_1t^{[4]}$ has prime-to-$p$ order modulo
+$M_{g_1}$.  Pullback by $g_1$, which carries the direction
+lattice $\Lambda^4$ exactly onto $M_{g_1}$, preserves integral
+moments.  Applying (LM15) and (LM16) gives integral moments
+for
+\[
+ U_{t^{[4]}}F^{\otimes4}=(U_tF)^{\otimes4}.
+ \tag{LM17}
+\]
+Theorem~\ref{ot-tensor-root} now proves the assertion for $U_tF$.
+\end{proof}
+
+The arithmetic part of the last condition of (LM15) is precisely
+Theorem~\ref{lm-kappa} when $g_0,g_1$ arise by complexifying the
+rational isometries there.  The remaining analytic statement
+$K_{g_0}=cK_{g_1}$ with its eighth-power determinant relation
+is a substantive theta transformation theorem.  It is not proved
+by the elementary moment criterion, by linearity of derivatives,
+or by the complex norm of the two functions.
+
+\subsection{Finite Fourier projection and support of measures}
+
+Let $X=\mathbb Z_p^r$, let $\mu$ be a bounded $L$-valued
+measure, and suppose $L$ contains all $p$-power roots of unity.
+For a continuous function $w$, the measure $w\mu$ means
+$(w\mu)(f)=\mu(wf)$.  For $n\ge1$ and $a\in X$, choose a
+primitive $p^n$-th root $\zeta_n\in L$.
+
+\begin{lemma}\label{lm-character-projection}
+There is an exact equality of continuous functions
+\[
+ {\bf1}_{a+p^nX}(x)=p^{-nr}
+     \sum_{y\in(\mathbb Z/p^n\mathbb Z)^r}
+                       \zeta_n^{\,\langle y,x-a\rangle}.
+ \tag{LM18}
+\]
+Consequently, restriction of $\mu$ to any residue class has
+norm at most $\|\mu\|$, even though the displayed expression
+contains a denominator divisible by $p$.
+If
+\[
+       \chi_y\mu=\chi_y(a)\mu
+       \quad\hbox{for every character }\chi_y
+               \hbox{ of }X/p^nX,
+ \tag{LM19}
+\]
+then $\mu$ is supported on $a+p^nX$.
+\end{lemma}
+\begin{proof}
+The sum factors as a product of $r$ geometric sums.
+A one-dimensional sum is $p^n$ if $x_i-a_i$ is zero
+modulo $p^n$, and zero otherwise: in the latter case multiply
+the sum by the nontrivial root $\zeta_n^{x_i-a_i}$ and subtract.
+This proves (LM18).  Its left side has supremum norm one,
+which proves the norm assertion.
+Multiplying $\mu$ by (LM18) and applying (LM19) gives $\mu$
+again.  For any continuous $f$ vanishing on the residue class,
+$\mu(f)=\mu({\bf1}_{a+p^nX}f)=0$.  This is the stated support.
+\end{proof}
+
+Thus estimating the terms of the Fourier sum separately would
+introduce a spurious loss of $p^{nr}$.  The projection itself
+has integral values and has norm one.  The same proof applies
+to the inverse image of a coset in any finite quotient of $X$,
+using the characters of that quotient.
+
+\begin{theorem}\label{lm-finite-approximation}
+Let $Y\subset X$ be closed and let $D\subset Y$ be dense.
+Suppose $\mu$ is supported on $Y$ and $\|\mu\|\le C$.
+For every finite family $f_1,\ldots,f_s\in C(X,L)$ and
+$\epsilon>0$, there are $d_1,\ldots,d_t\in D$ and
+$a_1,\ldots,a_t\in L$ with $|a_i|\le C$ such that
+\[
+ \left|\mu(f_j)-\sum_{i=1}^t a_if_j(d_i)\right|<\epsilon
+                             \qquad(1\le j\le s).
+ \tag{LM20}
+\]
+If $C=1$, all coefficients are integral.
+\end{theorem}
+\begin{proof}
+For $C=0$ the measure is zero and the empty sum suffices.
+For $C>0$, uniform continuity gives $n$ for which every $f_j$
+oscillates by less than $\epsilon/C$ on each residue class
+modulo $p^n$.  There are finitely many such classes meeting
+$Y$.  Each has a point $d_i\in D$, since its intersection
+with $Y$ is relatively open and nonempty.  Let $B_i$ be the
+class and set $a_i=\mu({\bf1}_{B_i})$.
+Then $|a_i|\le\|\mu\|\le C$.
+The function equal to $f_j(d_i)$ on each of these classes
+differs from $f_j$ by less than $\epsilon/C$ on their union.
+Outside that union, the measure vanishes by its support
+condition.  Applying its norm bound proves (LM20).
+The case $Y=\varnothing$ again gives the zero measure.
+\end{proof}
+
+This proves the finite simultaneous approximation required by a
+polynomial-kernel argument as soon as the actual translation
+identities establish the support and the rational lattice is
+dense in that support.  It preserves the norm bound on each
+coefficient and does not insert a factor equal to the number
+of points in the finite sum.
+
+\subsection{Limits of the reduction and counterexamples}
+
+The preceding results prove every finite operation in the
+passage from a locally normalized fourth tensor identity to
+integral lattice moments, and the exact finite Fourier
+projection used to obtain support.  To identify them with the
+submitted global kernels one still has to supply the theta
+transformation in (LM15), the locally standard isometries with
+the required period lattices, and the actual higher-dimensional
+translation equations which impose the stated kernel support.
+Their names in the formal source do not discharge these
+mathematical obligations.
+
+Two false shortcuts are worth excluding.  First, over
+$k=\mathbb Q(i)$ the number $a=(3+4i)/5$ has complex
+absolute value one.  At the embedding into $\mathbb Q_5$
+with $i\equiv2\pmod5$, its numerator is a unit, so
+$|a|_5=5$.  The determinant correction in (LM11) cannot be
+replaced by an archimedean norm calculation.
+Second, multiplication of a theta function by $p^{-1}$
+preserves its transformation law but destroys an integral
+constant term of norm one.  The theta transformation law
+alone therefore does not fix the arithmetic normalization.
+These examples refute weakened claims, not the statements
+with the normalizations retained above.
+
+

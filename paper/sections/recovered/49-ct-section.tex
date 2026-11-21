@@ -1,0 +1,715 @@
+\section{A classical ordinary CM input with the required normalization}
+\label{ct-section}
+
+The integrality theorem for reduced CM theta functions gives a shorter
+route to part of the ordinary theta input.  We state precisely the
+classical result used, match the even theta function and the period,
+and prove the stronger norm assertion for finite combinations.  The
+latter does not follow merely by bounding each theta function
+separately.
+
+Fix throughout an abstract field embedding $\iota:\mathbb C\hookrightarrow
+\mathbb C_p$, compatible with the chosen embedding of the algebraic
+coefficients.  The submitted construction allows an abstract field
+isomorphism, which is more than is needed here.  Every transported
+Taylor series, torsion character and complex period below uses this
+same $\iota$.  No continuity for the complex topology, and no natural
+embedding between the two fields, is asserted.
+
+\subsection{The classical input and its scope}
+
+We use the following classical facts in their elliptic-curve form.
+For a good ordinary CM elliptic curve at a split prime $p\ge5$,
+the reduced theta function with divisor $[O]$ and derivative one
+has integral formal expansions after prime-to-$p$ Mumford translation;
+the constant term is a unit unless the translated divisor contains
+$O$.  The formal group has an integral isomorphism with
+$\widehat{\mathbb G}_m$, whose period relative to a good invariant
+differential is a unit.  The precise references are
+Bannai--Kobayashi, Proposition~2.15, Corollary~2.16(i), and
+\S3.1, in the version specified in the bibliography
+\cite{bannai-kobayashi-2007}.
+
+These statements use a good integral model, its invariant
+differential, and reduced theta functions; arbitrary exponential
+renormalizations are not included.  Prime-to-$p$ torsion includes
+points of even order because $p\ge5$.  The full CM ring is the
+maximal order.  The associated Hermitian form must be compatible
+with complex multiplication; in one dimension it is a real
+multiple of $z\bar w$, so this condition is automatic.
+We import these classical theorems explicitly.  Their proofs are
+not represented here as consequences of the finite moment argument.
+
+Let $d$ be a positive squarefree integer with $d\equiv7\pmod8$,
+put
+\[
+ k=\mathbb Q(\sqrt{-d}),\qquad
+ \tau=\frac{1+i\sqrt d}{2},\qquad
+ \Lambda=\mathcal O_k=\mathbb Z+\mathbb Z\tau,
+ \qquad H(z,w)=\frac{2}{\sqrt d}z\bar w,
+ \tag{CT1}
+\]
+and write $E(z,w)=\operatorname{Im}H(z,w)$.
+For a function $F$ and $t\in\mathbb C$, define
+\[
+ (U_tF)(z)=
+  e^{-\pi H(z,t)-\pi H(t,t)/2}F(z+t).
+ \tag{CT2}
+\]
+Thus the Hermitian form is linear in its first variable.
+Direct multiplication of the exponentials gives
+\[
+                   U_tU_s=e^{-\pi iE(t,s)}U_{t+s}.
+ \tag{CT3}
+\]
+For rational lattice points $s,t\in\Lambda\otimes\mathbb Q$,
+the factor in (CT3) is a root of unity, because
+$E(\Lambda,\Lambda)\subset\mathbb Z$.
+
+Fix a good integral CM model $\mathscr E$ over the valuation ring
+$R$ of a finite extension of $\mathbb Q_p$, and a complex
+uniformization compatible with a good invariant differential.
+After a finite extension, take the full CM action to be defined
+on this elliptic scheme.
+If its period lattice is $\Gamma=c\Lambda$, its Hermitian form
+satisfies
+\[
+                        H_\Gamma(cz,cw)=H(z,w).
+ \tag{CT4}
+\]
+All the functions and torsion points used below can be defined
+after a further finite extension.  We then embed the coefficients
+in $\mathbb C_p$.  The chosen good model and its multiplicative
+formal-group coordinate are part of the classical input.
+The multiplicative coordinate may be defined over the completed
+maximal unramified extension, or over $\mathcal O_{\mathbb C_p}$;
+it need not be defined over the finite extension with valuation
+ring $R$.  The finite ring $R$ will be used for the curve, its
+line bundles and their finite free modules of global sections.
+Integral changes of formal coordinate are then made after scalar
+extension to $\mathbb C_p$.
+
+\subsection{Identification of the even theta function}
+
+Let $\vartheta_\Gamma$ be the reduced odd theta function for
+$\Gamma$, with simple zeros exactly at $\Gamma$ and
+$\vartheta'_\Gamma(0)=1$.  Put
+$\vartheta(z)=\vartheta_\Gamma(cz)$ and $h=1/2$, and define
+\[
+                 \theta(z)=\frac{(U_h\vartheta)(z)}
+                                      {(U_h\vartheta)(0)}.
+ \tag{CT5}
+\]
+The denominator is nonzero because $h\notin\Lambda$.
+
+\begin{lemma}\label{ct-even-identification}
+The function (CT5) is entire and even, satisfies $\theta(0)=1$,
+has simple zeros exactly at $h+\Lambda$, and satisfies
+\[
+ \theta(z+\ell)=(-1)^{N_{k/\mathbb Q}(\ell)}
+            e^{\pi H(z,\ell)+\pi H(\ell,\ell)/2}\theta(z)
+                   \qquad(\ell\in\Lambda).
+ \tag{CT6}
+\]
+It is the unique entire function with this transformation law,
+constant term one, and no zeros outside $h+\Lambda$.
+\end{lemma}
+\begin{proof}
+The odd reduced theta function has semicharacter
+$\alpha(u+v\tau)=(-1)^{u+v+uv}$.
+Translation by $h$ multiplies it by
+$e^{2\pi iE(h,u+v\tau)}=(-1)^v$, since
+$E(h,u+v\tau)=-v/2$.  The translated semicharacter is therefore
+$(-1)^{u+uv}$.  On the other hand
+\[
+ N(u+v\tau)=u^2+uv+\frac{d+1}{4}v^2\equiv u+uv\pmod2,
+\]
+because $(d+1)/4$ is even.  This proves (CT6).
+Translation gives the stated zeros, and division by the value at
+zero normalizes the constant term.
+
+For completeness, every nonzero entire function with this
+multiplier has exactly one zero, with multiplicity, in a
+fundamental parallelogram.  Choose its boundary to avoid zeros.
+The logarithmic derivative changes on translation by $\ell$ by
+$\pi H(1,\ell)$.  Pairing the two horizontal and the two
+vertical edges gives the boundary integral
+\[
+       \frac{\pi}{\operatorname{Im}\tau}(\tau-\bar\tau)
+                              =2\pi i.
+\]
+The argument principle gives the claim.  Any other function in
+the stated class consequently has one simple zero in the same
+coset.  Its quotient by (CT5) is entire and $\Lambda$-periodic,
+hence bounded and constant, and the value at zero fixes that
+constant.  Finally $\theta(-z)$ has the same multiplier, the same
+zero coset, and the same value at zero.  Uniqueness proves
+evenness.
+\end{proof}
+
+Since $N(\ell)=|\ell|^2$ for $\ell\in k$, (CT6) is equivalent
+to
+\[
+               e^{\pi i|\ell|^2}U_\ell\theta=\theta.
+ \tag{CT7}
+\]
+Thus this is precisely the even theta normalization used in the
+ordinary moment construction.  The condition
+$d\equiv7\pmod{16}$ in that construction is stronger than the
+congruence needed in this identification.
+
+\subsection{One common unit period}
+
+Let $\lambda(u)$ be the formal logarithm for the good invariant
+differential on $\mathscr E$, normalized by $\lambda'(0)=1$ in
+an integral parameter $u$ whose linear differential is that basis.
+Choose the integral multiplicative isomorphism in the form
+\[
+                T=\exp(\lambda(u)/\Omega_p)-1,
+                  \qquad |\Omega_p|_p=1.
+ \tag{CT8}
+\]
+Its inverse is integral with unit linear coefficient.  In the
+original variable $z$ for $\Lambda$, the same coordinate reads
+\[
+              z=\omega\log(1+T),\qquad
+                        \omega=\Omega_p/\iota(c).
+ \tag{CT9}
+\]
+This identity is an identity of transported formal Taylor series;
+it is not a topological identification of complex and $p$-adic
+neighborhoods.
+
+Let $g_2,g_3$ be the Weierstrass invariants of $\Lambda$ and choose
+$\delta\ne0$ with
+\[
+                       \delta^{12}=g_2^3-27g_3^2.
+ \tag{CT10}
+\]
+The good model can be general Weierstrass.  With its invariants
+$c_4,c_6,\Delta$, the change of differential gives
+$c_4/12=\iota(g_2/c^4)$ and
+$c_6/216=\iota(g_3/c^6)$.  Hence the identity
+$c_4^3-c_6^2=1728\Delta$ gives
+\[
+               \iota(\delta)^{12}=\iota(c)^{12}\Delta.
+ \tag{CT11}
+\]
+Since $|\Delta|_p=1$, one has
+$|\iota(\delta)|_p=|\iota(c)|_p$.  Therefore
+\[
+             \Omega=\iota(\delta)\omega,
+                    \qquad |\Omega|_p=1,
+                    \qquad\omega=\Omega/\iota(\delta).
+ \tag{CT12}
+\]
+The same $\Omega$ works for every torsion translate and every
+finite family of directions: no period is chosen after selecting
+the translate or a derivative order.
+
+\begin{proposition}\label{ct-translates-integral}
+For every $t\in\Lambda\otimes\mathbb Q$ of order prime to $p$
+modulo $\Lambda$, the series
+\[
+                 F_t(T)=\widehat{U_t\theta}
+                                  (\omega\log(1+T))
+ \tag{CT13}
+\]
+is integral.  If $t+h\notin\Lambda$, it is a unit series.
+\end{proposition}
+\begin{proof}
+For the good model, the classical input applies to the point $ch$
+of order two, so the formal expansion of $U_h\vartheta$ has unit
+constant term.  The division in (CT5) is therefore by a $p$-adic
+unit.  By (CT3), $U_t\theta$ is this same unit inverse times a
+root of unity times $U_{t+h}\vartheta$.
+The point $c(t+h)$ still has order prime to $p$.
+The classical theorem makes its reduced-theta formal expansion
+integral, and a unit unless $t+h\in\Lambda$.  Substitution of
+the integral inverse of (CT8) preserves integrality and unit
+constant terms.  The change from $cz$ to $z$ is exactly (CT9),
+which proves the displayed assertion.
+\end{proof}
+
+Proposition~\ref{ot-logarithm} consequently supplies norm-at-most-one
+measures for all these one-dimensional period-scaled Taylor
+functionals.  The exceptional translate has a zero constant term,
+but its integrality and its measure remain valid.
+
+\subsection{An integral expansion detects all global sections}
+
+\begin{lemma}\label{ct-expansion-saturated}
+Let $\mathscr X/R$ be a smooth proper curve with geometrically
+integral special fiber, let $x\in\mathscr X(R)$, and let
+$\mathscr L$ be a line bundle.  Choose an integral trivialization
+of $\mathscr L$ in the formal neighborhood of $x$ and an integral
+parameter there.  Then the expansion map
+\[
+ H^0(\mathscr X,\mathscr L)\longrightarrow R[[u]]
+ \tag{CT14}
+\]
+is injective and is saturated: a global section over the fraction
+field has integral expansion if and only if it is integral.
+After scalar extension to $\mathbb C_p$, the coefficient
+supremum norm of an expansion equals the maximum absolute value
+of its coordinates in any $R$-basis of $H^0(\mathscr X,\mathscr L)$.
+The same assertion holds if the expansion is multiplied by an
+integral unit series, or its variable is changed by an integral
+series with unit linear coefficient.
+\end{lemma}
+\begin{proof}
+The module of global sections is finite over $R$ by properness
+and torsion-free because the line bundle is flat.  It is therefore
+free.  Choose an $R$-basis $s_1,\ldots,s_q$.
+Reduction modulo a uniformizer injects this module modulo that
+uniformizer into the space of sections on the special fiber:
+this is the initial part of the cohomology sequence of
+$0\to\mathscr L\xrightarrow{\pi}\mathscr L
+\to\mathscr L|_{\mathscr X_k}\to0$.
+On an integral smooth curve, a section which vanishes in the
+completed local ring at a point vanishes globally.  Indeed its
+germ vanishes in the local discrete valuation ring, hence on a
+nonempty open set, and the generic value then vanishes.  The
+local ring embeds in its power-series completion, since a
+nonzero element has finite valuation.  Thus the reductions of
+the expansions of the $s_i$ are linearly independent.
+
+Some finite list of coefficient functionals already detects this
+independence: their kernels form a decreasing sequence of
+subspaces in a finite-dimensional vector space, whose full
+intersection is zero.  Consequently the coefficient matrix has
+a $q\times q$ minor which is a unit of $R$.
+For any coefficients $a_i\in\mathbb C_p$, integrality of every
+expansion coefficient of $\sum a_i s_i$ implies integrality of
+the selected finite list and hence of all $a_i$, by the integral
+inverse of that minor.  More generally the same inverse has
+entries of absolute value at most one, so
+\[
+ \max_i|a_i|_p\le
+   \sup_n|[u^n]\textstyle\sum_i a_i s_i|_p
+                  \le\max_i|a_i|_p.
+\]
+This proves all the assertions about saturation and norms,
+including injectivity.  Multiplication by an integral unit has
+integral inverse, and so does a change of variable with unit
+linear coefficient.  Applying each operation and its inverse
+gives equality of norms.  The zero-dimensional space of sections
+causes no exception.
+\end{proof}
+
+\begin{lemma}\label{ct-torsion-isometry}
+In the situation of Lemma~\ref{ct-expansion-saturated}, let
+$\mathscr X$ be an elliptic scheme.  Let $v$ be a torsion section
+and suppose $\tau_v^*\mathscr L$ and $\mathscr L$ are isomorphic
+on the generic fiber.  Suppose the chosen generic-fiber lift
+$A_v$ of translation satisfies $nv=0$ and
+$A_v^n=\zeta$ as a line-bundle lift, for some $n\ge1$ and a
+root of unity $\zeta$.
+Then $A_v$ preserves the integral module of global sections and
+its inverse does also.
+\end{lemma}
+\begin{proof}
+Enlarge the finite base field if necessary so that the point,
+the lift and the root of unity are defined.  Properness extends
+the point to an integral section.  The generic line-bundle
+isomorphism is a rational section of the line bundle
+$\operatorname{Hom}(\tau_v^*\mathscr L,\mathscr L)$.
+Its divisor has no horizontal component.  Since the special
+fiber is geometrically integral and reduced, its only possible
+vertical divisor is an integral multiple of that fiber.
+Multiplying by a power of a uniformizer removes that divisor
+and gives an integral isomorphism $B_v$.
+Thus $A_v=cB_v$ for a nonzero scalar $c$.
+The relation $A_v^n=\zeta$ includes $nv=0$, and
+$B_v^n$ is an automorphism of the line bundle over the identity.
+It is multiplication by a unit of $R$: all global functions on
+the proper connected elliptic scheme are scalars.
+Taking valuations in $c^nB_v^n=\zeta$ gives $v(c)=0$.
+Hence $A_v$ and its inverse are integral, as required.
+\end{proof}
+
+The hypotheses here concern actual line-bundle lifts.  An arbitrary
+finite-order matrix need not preserve an arbitrarily chosen
+lattice; the vertical-divisor argument supplies the necessary
+integral comparison.
+
+\subsection{Norm preservation for finite combinations}
+
+For a bounded power series $F$, write
+$\|F\|=\sup_n|[T^n]F|_p$.
+
+\begin{theorem}\label{ct-combination-norm}
+Let $a\ge0$, let $s_1,\ldots,s_m,t$ be rational lattice points
+whose orders modulo $\Lambda$ are prime to $p$, and let
+$b_1,\ldots,b_m\in\mathbb C_p$ be arbitrary.  Then
+\[
+ \left\|\sum_{j=1}^m b_j
+       \widehat{U_t(U_{s_j}\theta)}
+                         (\omega\log(1+T))^a\right\|
+ =
+ \left\|\sum_{j=1}^m b_j
+       \widehat{U_{s_j}\theta}
+                         (\omega\log(1+T))^a\right\|.
+ \tag{CT15}
+\]
+In particular every common coefficient bound is preserved.
+\end{theorem}
+\begin{proof}
+The cases $a=0$ or $m=0$ are immediate.  Choose an even positive
+integer $N$, prime to $p$, such that $Ns_j,Nt\in\Lambda$ for
+all $j$.  On the complex elliptic curve $\mathbb C/\Lambda$,
+the functions
+\[
+                           (U_{s_j}\theta)(Nz)^a
+\]
+are reduced sections of the same symmetric line bundle
+\[
+              \mathscr L_N=[N]^*\mathcal O([h])^{\otimes a}.
+ \tag{CT16}
+\]
+To check the multiplier, translation by $s_j$ changes the
+semicharacter on $N\Lambda$ by
+$e^{2\pi iE(s_j,N\ell)}=1$, since $Ns_j\in\Lambda$.
+The Hermitian form is $aN^2H$ for every summand.
+
+Use the natural integral model of the divisor
+$a[N]^{-1}[h]$.  Its support consists of nonzero torsion points
+of order prime to $p$.  They do not reduce to the origin, because
+the formal group has no nonzero prime-to-$p$ torsion.  Thus its
+canonical section gives an integral trivialization near the
+origin.  The corresponding reduced function is
+$\theta(Nz)^a$.  By Proposition~\ref{ct-translates-integral}
+and the integral substitution $T\mapsto(1+T)^N-1$, its
+formal series is an integral unit.  Therefore the actual
+reduced Taylor expansion of any section of (CT16) is its
+expansion in the integral local trivialization multiplied by
+this unit series.  Lemma~\ref{ct-expansion-saturated} identifies
+its coefficient norm with the integral global-section norm,
+also for arbitrary $\mathbb C_p$ linear combinations.
+
+Put $v=t/N$.  Since $N^2v=Nt\in\Lambda$, translation by $v$
+preserves the line bundle of degree $aN^2$.  In reduced analytic
+coordinates its lift is
+\[
+       (A_vF)(z)=e^{-\pi aN^2 H(z,v)-\pi aN^2H(v,v)/2}
+                                                        F(z+v).
+ \tag{CT17}
+\]
+The algebraic Mumford translation has exactly this reduced
+formula, as in the cited construction.  The lift is algebraic
+after a finite extension.  By (CT3), a positive power of $A_v$
+is the action of a lattice translation, which is a root of
+unity because the line bundle is symmetric.  Lemma~\ref{ct-torsion-isometry}
+therefore proves that it is an integral automorphism of the
+global-section module.
+
+Using $Nv=t$ in (CT17) gives the exact identity
+\[
+ A_v\bigl((U_{s_j}\theta)(Nz)^a\bigr)
+                         =(U_t(U_{s_j}\theta))(Nz)^a.
+ \tag{CT18}
+\]
+Hence the two sides of (CT15), after substituting $Nz$ for $z$,
+have equal norm.  On the formal multiplicative group this
+substitution is $T\mapsto(1+T)^N-1$; its inverse is
+$T\mapsto(1+T)^{1/N}-1$, and both are integral with unit
+linear coefficient.  They preserve the coefficient norm by
+Lemma~\ref{ct-expansion-saturated}, or directly by applying
+composition and its inverse to bounded series.  Removing this
+substitution proves (CT15).
+\end{proof}
+
+This proves the entire finite-combination norm assertion for the
+one-dimensional theta function, with coefficients allowed to be
+arbitrary $p$-adic numbers and with one period fixed beforehand.
+It does not rely on estimating the coefficients $b_j$ separately,
+so cancellations in their sum are retained.
+
+\subsection{Matching the chosen torsion character}
+
+The multiplicative coordinate in (CT8) is unique only up to
+$T\mapsto(1+T)^u-1$ with $u\in\mathbb Z_p^\times$.
+The next argument makes this freedom explicit and matches the
+character used for the selected CM torsion points.
+
+\begin{proposition}\label{ct-character-normalization}
+Let $p\ge5$ split in $k$, and let $\iota$ induce one of its
+two primes.  For $n\ge0$, let $C_n$ consist of the classes
+\[
+ v=\frac{a+b\tau}{p^n}\pmod\Lambda,
+ \qquad a,b\in\mathbb Z,\qquad
+              \iota(a+b\bar\tau)\in p^n\mathbb Z_p.
+ \tag{CT19}
+\]
+These are precisely the $p^n$-torsion points in the formal
+subgroup.  The compatible maps
+\[
+  v\longmapsto\iota\!\left(e^{2\pi i b/p^n}\right)
+      =\iota\!\left(e^{-2\pi iE(1,v)}\right)
+ \tag{CT20}
+\]
+are isomorphisms $C_n\simeq\mu_{p^n}$.  One unit change of
+the multiplicative coordinate makes its value $1+T(v)$ equal
+to (CT20) simultaneously for every $n$.  The normalized period
+$\Omega$ in (CT12) remains a unit.
+\end{proposition}
+\begin{proof}
+Because $p$ splits and is unramified, both
+$\iota(\tau)$ and $\iota(\bar\tau)$ lie in $\mathbb Z_p$,
+and their difference is a unit.  For each residue of $b$ modulo
+$p^n$, (CT19) determines one residue of $a$; hence $|C_n|=p^n$.
+The formula for $E(1,v)$ follows from
+$\operatorname{Im}\tau=\sqrt d/2$.  It shows that (CT20)
+is a well-defined injective group map, hence an isomorphism.
+These maps commute with multiplication by $p$.
+
+To identify the formal subgroup, choose
+$\beta\in\mathcal O_k$ with
+$\iota(\beta)\equiv0\pmod{p^n}$ and
+$\iota(\bar\beta)\equiv1\pmod{p^n}$.
+In the multiplicative coordinate its action is
+$1+T\mapsto(1+T)^{\iota(\beta)}$.
+This identity follows first on formal logarithms, where the CM
+endomorphism scales the invariant differential by
+$\iota(\beta)$, and then on formal series in characteristic
+zero.  Thus $\beta$ kills every formal $p^n$-torsion point.
+For a complex torsion class represented by $(a+b\tau)/p^n$,
+this forces $\beta(a+b\tau)\in p^n\mathcal O_k$, and its
+conjugate component gives (CT19).  Conversely the formal
+multiplicative group has $p^n$ such points, so cardinalities
+give equality with $C_n$.
+
+The initial multiplicative coordinate and (CT20) are now two
+compatible isomorphisms from the same groups $C_n$ to
+$\mu_{p^n}$.  Their ratio is an automorphism of the inverse
+system, given by compatible units modulo $p^n$, hence by one
+$u\in\mathbb Z_p^\times$.  Replacing $1+T$ by $(1+T)^u$
+matches them.  Both this series and its inverse are integral,
+and the period is divided by the unit $u$.  Its absolute value
+is unchanged.
+\end{proof}
+
+In particular the source's stronger condition
+$\iota(\bar\nu)\in p^{2n}\mathbb Z_p$ for a representative
+$y=s\nu/p^n$, with $p\nmid s$, implies (CT19).  It also implies
+$|y|^2=s^2N(\nu)/p^{2n}\in\mathbb Z$, a fact used in its
+additional Weyl-translation phase.  The normalized chart above
+matches the root of unity required there.  We now prove the
+translation identity, including that phase.
+
+\subsection{The exact translation by selected $p$-power torsion}
+
+For $\zeta\in\mathbb C_p$ with $|\zeta-1|_p<1$ and a bounded
+series $F(T)=\sum_m F_mT^m$, define
+\[
+ (S_\zeta F)(T)=F(\zeta(1+T)-1),\qquad
+ [T^n]S_\zeta F
+       =\zeta^n\sum_{m\ge n}\binom mn F_m(\zeta-1)^{m-n}.
+ \tag{CT21}
+\]
+The displayed sums converge.  They give a bounded series with
+$\|S_\zeta F\|\le\|F\|$, and the inverse operation is
+$S_{\zeta^{-1}}$.  Thus $S_\zeta$ preserves the norm.
+It preserves sums and products.  These statements follow directly
+by evaluating on $|T|_p\le r<1$: every substituted argument has
+absolute value at most $\max(r,|\zeta-1|_p)<1$, so the defining
+series and all products converge uniformly there.  Alternatively
+one can use (CT21) and the ultrametric convergence criterion.
+
+We will also use the following compatibility.  If $R$ is a
+rational function on $\mathscr E$, without poles in the formal
+subgroup, and $v$ is a point of that subgroup with multiplicative
+coordinate $\zeta$, then
+\[
+                 S_\zeta\widehat R=\widehat{R(z+v)}.
+ \tag{CT22}
+\]
+The hats here use the same formal coordinate on both sides.
+The boundedness required on the left follows from
+Proposition~\ref{ot-elliptic-bounded}.  To justify the identity,
+the integral formal-group parameter converges on the open unit
+disc and its addition law there is the elliptic-curve addition
+law.  Substituting its convergent coordinate functions into the
+rational expression for $R$ gives the same analytic function
+after translation by $v$.  Its denominators do not vanish in
+this disc.  Expanding this identity at zero, using (CT21), proves
+(CT22).  This argument uses translation of points on the elliptic
+curve; it does not incorrectly replace a torsion point by its
+formal logarithm, which is zero.
+
+For the original even theta function put
+\[
+           (W_yF)(z)=e^{\pi i|y|^2}(U_yF)(z),\qquad
+              \kappa(y)=e^{-2\pi iE(1,y)}.
+ \tag{CT23}
+\]
+
+\begin{theorem}\label{ct-power-translation}
+Let $s\ge1$ be prime to $p$, let $st\in\Lambda$, and let
+\[
+ y=\frac{s\nu}{p^n},\qquad \nu\in\Lambda,\qquad
+                     \iota(\bar\nu)\in p^{2n}\mathbb Z_p.
+ \tag{CT24}
+\]
+For the coordinate normalized in
+Proposition~\ref{ct-character-normalization}, set
+$\zeta=\iota(\kappa(y))$.  Then $\zeta^{p^n}=1$ and
+\[
+ \widehat{W_y(U_t\theta)}(\omega\log(1+T))
+       =S_\zeta\!\left(
+                \widehat{U_t\theta}(\omega\log(1+T))\right).
+ \tag{CT25}
+\]
+In particular all series on the right and left are bounded,
+with the same coefficient norm.
+\end{theorem}
+\begin{proof}
+We first prove the assertion for $t=0$ and any $y=\nu/p^n$
+with the stronger conjugate divisibility in (CT24).
+For $n=0$, $y\in\Lambda$, and (CT25) is just (CT7), with
+$\zeta=1$.  Suppose $n\ge1$.  Write $\mathfrak p$ for the
+prime of $k$ induced by $\iota$.  Choose by the Chinese
+remainder theorem
+\[
+ \epsilon\in2\mathcal O_k,\qquad
+ \epsilon\equiv1\pmod{\mathfrak p^n},\qquad
+ \epsilon\equiv0\pmod{\bar{\mathfrak p}^{\,n}}.
+ \tag{CT26}
+\]
+It has nonzero unit image at $\mathfrak p$.
+The function
+\[
+                     R(z)=\frac{\theta(\epsilon z)}
+                                      {\theta(\bar\epsilon z)}
+ \tag{CT27}
+\]
+is elliptic: the two numerator and denominator multipliers
+coincide because $\epsilon$ and $\bar\epsilon$ have the same
+norm, both in (CT6) and in the Hermitian exponential.
+Its zeros and poles avoid the formal subgroup.  Indeed each
+arises from a preimage of the nonzero point $h$ of order two,
+whereas CM endomorphisms preserve the formal subgroup and that
+subgroup has no nonzero prime-to-$p$ torsion.
+Thus $R$ and its inverse have bounded expansions.
+
+Put $f(T)=\widehat\theta(\omega\log(1+T))$.
+For a CM element $\alpha$ denote its integral formal
+endomorphism by
+$[\alpha](T)=(1+T)^{\iota(\alpha)}-1$.
+The formal expansion of (CT27) is
+\[
+                   \widehat R(T)=
+                   \frac{f([\epsilon](T))}{f([\bar\epsilon](T))}.
+ \tag{CT28}
+\]
+Both denominator and numerator have constant term one and are
+integral.  Since $y$ belongs to the formal $p^n$-torsion,
+\[
+ [\epsilon](T\mathbin\oplus y)
+     =[\epsilon](T)\mathbin\oplus y,\qquad
+ [\bar\epsilon](T\mathbin\oplus y)=[\bar\epsilon](T),
+\]
+where $\oplus y$ means $T\mapsto\zeta(1+T)-1$.
+
+The points $\bar\epsilon y$ and $(\epsilon-1)y$ belong to
+$\Lambda$.  This can be checked at $\mathfrak p$ and
+$\bar{\mathfrak p}$ from (CT24)--(CT26); all other primes
+see no denominator.  Moreover $\bar\epsilon y\in2\Lambda$,
+since $\epsilon\in2\Lambda$ and $p$ is odd.
+The multiplier in (CT6) at $\bar\epsilon y$ therefore has
+semicharacter one.  Cancelling the equal Hermitian exponential
+factors gives the exact complex identity
+\[
+ R(z+y)=\frac{(U_{\epsilon y}\theta)(\epsilon z)}
+                                      {\theta(\bar\epsilon z)}.
+ \tag{CT29}
+\]
+Apply (CT22) to (CT28) and (CT29), then cancel the unit series
+$f([\bar\epsilon](T))$.  Since $[\epsilon]$ is an integral
+formal automorphism, substituting its inverse gives
+\[
+                      S_\zeta f=\widehat{U_{\epsilon y}\theta}.
+ \tag{CT30}
+\]
+The formal variable on the right is still $\omega\log(1+T)$.
+
+It remains to check the phase.  Write $\epsilon=A+B\tau$,
+with $A,B\in\mathbb Z$, and put $l=(\epsilon-1)y\in\Lambda$.
+The strong conjugate divisibility gives
+$|y|^2=N(\nu)/p^{2n}\in\mathbb Z$.
+From (CT3) and (CT6),
+\[
+ U_{\epsilon y}\theta
+   =e^{\pi iE(y,l)-\pi i|l|^2}U_y\theta.
+ \tag{CT31}
+\]
+Now
+\[
+ E(y,l)=-B|y|^2,\qquad
+ |l|^2=(N(\epsilon)-2A-B+1)|y|^2.
+\]
+Therefore the exponent coefficient in (CT31) differs from
+$|y|^2$ by
+$(2A-2-N(\epsilon))|y|^2$, an even integer because
+$\epsilon\in2\mathcal O_k$ makes $N(\epsilon)$ divisible
+by four.  This proves
+$U_{\epsilon y}\theta=W_y\theta$, and establishes (CT25)
+for the base theta function.
+
+Return to general $t$ and (CT24).  Put $y'=\nu/p^n$ and
+$\zeta'=\iota(\kappa(y'))$, so $y=sy'$ and
+$\zeta=(\zeta')^s$.  Let
+\[
+              q(z)=\frac{(U_t\theta)(z)}{\theta(z)},
+                       \qquad Q(z)=q(sz).
+ \tag{CT32}
+\]
+The function $Q$ is elliptic: its multiplier on translating by
+$l\in\Lambda$ is $e^{2\pi iE(t,sl)}=1$ because
+$st\in\Lambda$.  Its poles are among the preimages of $h$
+under multiplication by $s$, so none lies in the formal subgroup.
+It is regular at zero.  Proposition~\ref{ot-elliptic-bounded}
+shows that $\widehat Q$ is bounded.  Since
+$\widehat Q=\widehat q\circ[s]$ and $p\nmid s$, the inverse
+of $[s]$ is integral; hence $\widehat q$ is bounded as well.
+
+Apply (CT22) to $Q$ and $y'$.  The identity
+$[s](T\mathbin\oplus y')=[s](T)\mathbin\oplus y$ and
+the complex identity $Q(z+y')=q(sz+y)$ give, after cancelling
+the invertible substitution $[s]$,
+\[
+                         S_\zeta\widehat q
+                                     =\widehat{q(z+y)}.
+ \tag{CT33}
+\]
+The right side is regular at zero: $y$ has $p$-power order and
+therefore is not the theta zero of order two.
+Finally the definition (CT23) gives
+\[
+                    W_y(U_t\theta)(z)=q(z+y)W_y\theta(z).
+\]
+Multiply (CT33) by the already proved base-theta identity and
+use multiplicativity of $S_\zeta$.  This is exactly (CT25).
+The norm assertion follows from (CT21); integrality of the
+right side follows from Proposition~\ref{ct-translates-integral}.
+\end{proof}
+
+\subsection{What this classical route supplies}
+
+For any given good ordinary CM model at the actual large split
+primes, this section proves the precise matching of the even
+reduced theta function, all prime-to-$p$ translated integrality,
+one common discriminant-normalized unit period, preservation of
+the coefficient norm of finite theta combinations, and the
+normalization of its torsion character together with the exact
+selected-$p$-power translation identity.  These are all three
+one-dimensional theta laws used in the moment construction.
+The exact higher-dimensional
+lattice-theta construction and its finite translation/support
+identities remain to be connected.  The arguments do not assert
+an integral chart at a supersingular prime, do not treat $p=2$
+or $3$ through the cited elliptic integrality statement, and do
+not replace a reduced theta function by an arbitrary quadratic
+exponential multiple.
+
+

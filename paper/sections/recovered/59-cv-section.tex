@@ -1,0 +1,836 @@
+\section{Local moments, integral kernels, and the column valuation bound}
+\label{cv-section}
+
+The integrality of the final lowering map does not by itself give the
+stronger valuation estimate for a column of theta maps.  We prove the
+finite algebraic passage from the required theta moments to that
+estimate, with the actual determinant factors. The analytic input
+is stated explicitly as a condition on the ordinary theta moments;
+Section~\ref{tvc-section} assembles its proof for the actual kernel.
+In particular, bounded ordinary power moments alone are insufficient.
+The source of this part of the construction is the chain of local
+kernel estimates and incidence operators in the submitted proof.
+\cite{alpo-uniform-source}
+
+\subsection{Polynomial substitution and its determinant factor}
+
+Let $K$ be a number field, let $w$ be a finite prime of $K$, and let
+$R=\mathcal O_{K,w}$.  We use the additive valuation $v_w$, with
+$v_w(\varpi)=1$ for a uniformizer.  Let $I$ be a finite set.  Fix
+$1\le a<b$ and dominant integral weights
+$\lambda_\tau\in\mathbb Z^a$ and $\mu_\tau\in\mathbb Z^b$ for
+$\tau\in I$.  Write $d_\tau=\lambda_{\tau,a}$ and
+$d'_\tau=\mu_{\tau,b}$.  Suppose integers $s_\tau,s'_\tau$ and
+nonnegative integers $n_\tau$ satisfy
+\begin{align}
+ \mu_{\tau,j}+s_\tau&=\lambda_{\tau,j}+s'_\tau
+                  &&(1\le j\le a),\label{cv-weight-compatibility}\\
+ \mu_{\tau,j}&=-s_\tau&&(a<j\le b),\notag\\
+ n_\tau&=d_\tau+s'_\tau.\notag
+\end{align}
+Thus $d'_\tau=-s_\tau$.  The polynomial partitions underlying these
+weights are $\nu_{\tau,j}=\lambda_{\tau,j}-d_\tau$ and
+$\nu'_{\tau,j}=\mu_{\tau,j}-d'_\tau$; hence
+\[
+ \nu'_\tau=(\nu_{\tau,1}+n_\tau,\ldots,
+              \nu_{\tau,a}+n_\tau,0,\ldots,0).
+ \tag{CV1}
+\]
+Use the polynomial spaces and integral lattices of
+Section~\ref{coef:section}, taking the tensor product over $\tau$.
+We write $V_\lambda$ for the polynomial space with column degrees
+$\nu_\tau$, and similarly for $V_\mu$.
+
+If $M_\tau=B_\tau R^a$ is a full lattice, define its transported
+dual-Weyl lattice $\mathcal N_\lambda(M)$ by the coefficient condition
+\begin{equation}\label{cv-lattice-coordinates}
+ F\in\mathcal N_\lambda(M)
+ \quad\Longleftrightarrow\quad
+ F_B(X):=\left(\prod_\tau\det(B_\tau)^{d_\tau}\right)
+                       F((B_\tau X_\tau)_\tau)\in R[X].
+\end{equation}
+This is independent of the bases: a change by an element of
+$\operatorname{GL}_a(R)$ and its inverse preserves integral
+coefficients, and its determinant is a unit.  The corresponding Weyl
+lattice is denoted $\mathcal D_\lambda(M)$; it is contained in
+$\mathcal N_\lambda(M)$.  Formula
+\eqref{cv-lattice-coordinates} includes the determinant twist even
+when $d_\tau$ is negative.
+
+For an $I$-tuple of $a$ by $b$ matrices $A=(A_\tau)$, define
+\begin{equation}\label{cv-point-substitution}
+ \begin{split}
+ F^\sharp(X)&=F(X)\prod_\tau\det(X_\tau)^{n_\tau},\\
+ Q_A F(Y)&=F^\sharp\bigl((A_\tau Y_{\tau,[1,a]})_\tau\bigr),
+ \end{split}
+\end{equation}
+where $Y_{\tau,[1,a]}$ consists of the first $a$ columns of the $b$ by
+$b$ matrix $Y_\tau$.  The matrices $A_\tau$ may have deficient rank.
+
+\begin{lemma}\label{cv-substitution}
+For every $A$, the polynomial $Q_AF$ belongs to $V_\mu$.
+If $M'_{\tau}=B'_{\tau}R^b$, $A_\tau M'_\tau\subset M_\tau$,
+and $F\in\mathcal N_\lambda(M)$, then
+\begin{equation}\label{cv-point-integrality}
+ Q_AF\in c(B,B')\mathcal N_\mu(M'),\qquad
+ c(B,B')=\prod_\tau\det(B_\tau)^{s'_\tau}
+                          \det(B'_\tau)^{-s_\tau}.
+\end{equation}
+The assertion remains valid after extension to any valued field,
+with its valuation ring in place of $R$.
+\end{lemma}
+\begin{proof}
+Multiplication by the determinant powers adds $n_\tau$ to every
+column degree of $F$.  Substitution by $A_\tau$ commutes with right
+column additions.  The unused columns have degree zero, so all
+required column-invariance identities hold, including additions to an
+unused column.  Equation (CV1) proves membership in $V_\mu$.
+
+Put $A^0_\tau=B_\tau^{-1}A_\tau B'_\tau$.  The lattice inclusion is
+equivalent to $A^0_\tau$ having entries in $R$.  Direct substitution,
+using $n_\tau-d_\tau=s'_\tau$, gives
+\begin{equation}\label{cv-exact-coordinate-factor}
+ \left(\prod_\tau\det(B'_\tau)^{d'_\tau}\right)
+                 (Q_AF)((B'_\tau Y_\tau)_\tau)
+       =c(B,B')Q_{A^0}F_B(Y).
+\end{equation}
+The rightmost polynomial has integral coefficients: determinants,
+multiplication, and substitution by integral matrices introduce no
+denominators.  This proves \eqref{cv-point-integrality} and also proves
+the assertion over an arbitrary valuation ring.
+\end{proof}
+
+\subsection{Finite moments and passage to a valuation ring}
+
+Replace $A_{\tau,\alpha\beta}$ by independent variables
+$Z_{\tau,\alpha\beta}$.  Expand the universal polynomial as
+\begin{equation}\label{cv-universal-expansion}
+                Q_ZF(Y)=\sum_m Z^m Q_m(F)(Y).
+\end{equation}
+Every occurring multi-index $m$ satisfies
+\begin{equation}\label{cv-finite-degrees}
+ \sum_{\alpha=1}^{a}\sum_{\beta=1}^{b}m_{\tau,\alpha\beta}
+      =D_\tau:=\sum_{j=1}^{a}(\lambda_{\tau,j}+s'_\tau).
+\end{equation}
+In particular $D_\tau\ge0$, and the set $\mathcal M$ of such
+multi-indices is finite.  For numbers $J_m\in K$, define the linear
+operator
+\[
+                     \mathcal JF=\sum_{m\in\mathcal M}J_mQ_m(F).
+ \tag{CV2}
+\]
+The column-invariance identities and degrees hold coefficient by
+coefficient in the independent variables $Z$.  Thus
+$\mathcal JF\in V_\mu$ for every choice of the $J_m$.
+
+Fix an embedding $\iota:K\hookrightarrow L$ into a nonarchimedean
+valued field such that $|\iota(x)|\le1$ if and only if $x\in R$.
+Let $\mathcal O_L$ be its valuation ring.  For a family $\mathscr A$
+of tuples of matrices over $L$, suppose each $A\in\mathscr A$
+carries $M'_\tau\otimes_R\mathcal O_L$ into
+$M_\tau\otimes_R\mathcal O_L$.  For $\kappa\in K$, impose the
+following finite approximation condition:
+\begin{equation}\label{cv-moment-approximation}
+ \begin{gathered}
+ \text{for every }\epsilon>0\text{ there are }A_1,\ldots,A_h\in
+ \mathscr A\text{ and }c_1,\ldots,c_h\in\mathcal O_L\text{ such that}\\
+ \left|\iota(J_m)-\iota(\kappa)\sum_{j=1}^h c_j A_j^m\right|
+                  <\epsilon\quad(m\in\mathcal M).
+ \end{gathered}
+\end{equation}
+The same finite sum must approximate every required moment.  Its
+length and coefficients may depend on $\epsilon$.
+
+\begin{theorem}\label{cv-moment-integrality}
+Under \eqref{cv-moment-approximation},
+\[
+ \mathcal J\mathcal N_\lambda(M)
+       \subset \kappa c(B,B')\mathcal N_\mu(M').
+ \tag{CV3}
+\]
+If $\kappa=0$, then $\mathcal J=0$.
+No completeness, compactness, or integral basis for $\mathcal O_L$
+is needed in this assertion.
+\end{theorem}
+\begin{proof}
+Fix $F\in\mathcal N_\lambda(M)$.  By
+Lemma~\ref{cv-substitution}, each polynomial
+\[
+ \iota(\kappa)\sum_jc_jQ_{A_j}(\iota F)
+\]
+belongs to $\iota(\kappa c(B,B'))$ times the target integral
+polynomial lattice over $\mathcal O_L$.
+After applying the target coordinate transformation in
+\eqref{cv-lattice-coordinates}, its coefficients converge to those
+of the similarly transformed $\iota(\mathcal JF)$ as
+$\epsilon\to0$.  Indeed, each coefficient is a fixed finite linear
+combination of the errors in
+\eqref{cv-moment-approximation}; the ultrametric inequality bounds
+its absolute value by $C_F\epsilon$, where $C_F$ is the maximum of
+the finitely many absolute values of its multipliers.
+
+For a nonzero $q\in L$, the ball $q\mathcal O_L$ is closed in the
+following elementary sense.  If $x$ can be approximated arbitrarily
+closely by $qz$ with $|z|\le1$, choose an approximation with error at
+most $|q|$; then $|x|\le|q|$.  For $q=0$, arbitrary approximation
+means $x=0$.  Apply this observation coefficient by coefficient with
+$q=\iota(\kappa c(B,B'))$.  When $\kappa\ne0$, divide the
+coefficients by $q$ and use the defining property of $\iota$ to
+descend integrality to $R$.  This proves (CV3).  When $\kappa=0$,
+all coefficients vanish, proving the last assertion.
+\end{proof}
+
+\begin{lemma}[A bounded measure supplies the finite approximations]
+\label{cv-measure-approximation}
+Let $X$ be a compact space, let $L$ be complete, and let
+$\ell:C(X,L)\to L$ be a continuous linear functional of norm at
+most one.  Suppose $a:X\to\mathscr A$ is continuous, and
+$J_m=\kappa\ell(a^m)$ for the finitely many relevant $m$.
+Then \eqref{cv-moment-approximation} holds, provided $X$ has a
+basis of clopen sets.
+\end{lemma}
+\begin{proof}
+For any prescribed error, continuity and compactness give a finite clopen
+partition $X=\coprod_{j=1}^h X_j$ such that all the functions $a^m$
+oscillate by less than that error on each part.  Such a partition is
+obtained by taking a finite clopen subcover and successively removing
+earlier sets.  Omit empty parts, choose $x_j\in X_j$, and put
+$c_j=\ell(1_{X_j})$.  Since $\|1_{X_j}\|_\infty=1$, one has
+$|c_j|\le1$.  Applying $\ell$ to the step-function approximation
+gives the required simultaneous estimates.  If $\kappa\ne0$,
+divide the prescribed error by $|\kappa|$ first; if $\kappa=0$
+the assertion is immediate.
+\end{proof}
+
+\subsection{The selected and conjugate primes}
+
+Let $E/F$ be a CM extension with $[E:\mathbb Q]=2f$ and conjugation
+$x\mapsto\bar x$.  Assume that a rational prime $p$ and an algebraic
+integer $\pi$ satisfy
+\[
+ \pi\bar\pi=p,\qquad (\pi)+(\bar\pi)=\mathcal O_E,\qquad
+ (\pi)=\prod_{P\in\mathcal P}P,\qquad
+ |\mathcal P|=f,\quad\mathcal O_E/P=\mathbb F_p.
+ \tag{CV4}
+\]
+Then $p$ is a uniformizer at every $P\in\mathcal P$ and at every
+$\bar P$.  Let $N\subset E^a$ and $N'\subset E^b$ be self-dual
+lattices for $h(x,y)=\bar x^{\,t}y$.  At every selected prime choose
+nonzero linear functionals
+\[
+ \ell_P:N_P\to\mathbb F_p,\qquad
+ \ell'_P:N'_P\to\mathbb F_p,
+\]
+linear over the local ring through its residue map.  Put
+\[
+ L_P=\ker\ell_P,\qquad L'_P=\ker\ell'_P,
+\]
+and let $L,L'$ agree with $N,N'$ at all other primes.  A superscript
+$\#$ denotes the Hermitian dual lattice.
+
+\begin{lemma}\label{cv-kernel-lattices}
+Suppose $N_P=\mathcal O_{E,P}^a$ and
+$N'_P=\mathcal O_{E,P}^b$ for all $P\in\mathcal P$.
+Then
+\[
+ (L^\#)_P=N_P,\quad (L'^\#)_P=N'_P,
+ \qquad v_P(\det L_P)=v_P(\det L'_P)=1,
+ \tag{CV5}
+\]
+where determinant valuations are relative to the standard basis.
+At conjugate primes,
+\[
+ v_{\bar P}(\det(L^\#)_{\bar P})
+ =v_{\bar P}(\det(L'^\#)_{\bar P})=-1.
+ \tag{CV6}
+\]
+In (CV5) a basis can be chosen with determinant exactly $p$.
+\end{lemma}
+\begin{proof}
+Choose a coordinate $k$ on which $\ell_P$ is nonzero and divide its
+residue row by that nonzero coefficient.  Lift the other coefficients
+to $a_j\in\mathcal O_{E,P}$.  A basis of its kernel is
+\[
+                  p e_k,\qquad e_j-a_j e_k\quad(j\ne k).
+\]
+With the columns in their original order, its determinant is $p$.
+The same proof applies to $L'_P$.
+Hermitian duality exchanges $P$ and $\bar P$, and in bases sends
+$B$ to $\bar B^{-t}$.  Since $L_{\bar P}=N_{\bar P}$ and $N$ is
+self-dual, $(L^\#)_P=N_P$.  The inverse determinant gives (CV6).
+These arguments use no division by two.
+\end{proof}
+
+Define two subsets of $\operatorname{Hom}_E(E^a,E^b)$:
+\begin{align}
+ \mathscr S_P&=\{x:x^*L'_P\subset N_P
+                                \text{ for every }P\in\mathcal P\},
+                         \label{cv-supports}\\
+ \mathscr S_{\bar P}&=\{x:xN_P\subset N'_P,
+                \ \ell'_P(xy)=\ell_P(y)
+                \text{ for every }y\in N_P, P\in\mathcal P\}.
+                         \notag
+\end{align}
+Here $x^*=\bar x^{\,t}$.
+
+\begin{lemma}\label{cv-support-duality}
+If $x\in\mathscr S_{\bar P}$, then
+\[
+               x^*(L'^\#)_{\bar P}\subset(L^\#)_{\bar P}
+                          \quad(P\in\mathcal P).
+ \tag{CV7}
+\]
+\end{lemma}
+\begin{proof}
+The functional identity implies $xL_P\subset L'_P$.  For
+$z\in(L'^\#)_{\bar P}$ and $y\in L_P$, adjointness gives
+$h(y,x^*z)=h(xy,z)\in\mathcal O_{E,\bar P}$.
+The local description of the Hermitian dual therefore places
+$x^*z$ in $(L^\#)_{\bar P}$.  This description follows directly
+in a local basis from $L^\#_{\bar P}=\bar B^{-t}
+\mathcal O_{E,\bar P}^a$.
+\end{proof}
+
+For the coefficient field $K$, take a set $I$ of $f$ embeddings
+$\tau:E\hookrightarrow K$.  At the prime $w\mid p$ suppose either
+all primes $\tau^{-1}w$ belong to $\mathcal P$, or all belong to
+$\overline{\mathcal P}$.  These are respectively the two cases
+below.  Write $e_w=v_w(p)$; for $z\in E$, at either corresponding
+prime $Q$ one has
+\[
+                         v_w(\tau(z))=e_wv_Q(z),
+ \tag{CV8}
+\]
+because $p$ is a uniformizer at $Q$.
+
+\begin{quote}
+\textbf{The required ordinary theta moments.}
+\label{cv-theta-moments}
+For the actual theta transition from rank $a$ to rank $b$, write its
+polynomial kernel as $\eta\mathcal J$, where
+$\eta\in K^\times$ is its algebraic character factor and
+$v_w(\eta)=0$.  The indices used by $\mathcal J$ are exactly
+\eqref{cv-finite-degrees}.  There are numbers
+$u_\tau\in\mathbb C_p$ with $|u_\tau|=1$ such that its moments
+$J_m$ satisfy \eqref{cv-moment-approximation} with matrices
+\[
+                         A_\tau(x)=u_\tau\,\iota(\tau(x^*))
+ \tag{CV9}
+\]
+and with the following support and scalar:
+\[
+ \begin{array}{c|c|c}
+ \tau^{-1}w\in\mathcal P&x\in\mathscr S_P&\kappa=p^{-fa}\\
+ \tau^{-1}w\in\overline{\mathcal P}&x\in\mathscr S_{\bar P}
+                                                  &\kappa=1.
+ \end{array}
+ \tag{CV10}
+\]
+The approximation is simultaneous for all needed indices, and uses
+coefficients of absolute value at most one.
+\end{quote}
+
+This hypothesis is a finite consequence of the stronger measure
+statement used in the source.  That statement constructs a measure
+of norm at most one for the Taylor coefficients of a normalized CM
+theta function at prime-to-$p$ torsion translates, after multiplying
+the differentiation directions by one common $p$-adic unit period.
+It then applies finite translations and the indicated support
+conditions.  The measure statement has not been proved merely by
+the finite-dimensional arguments above.  It must be supplied with
+the actual normalization of the theta function and of its period.
+
+\begin{theorem}[The two local kernel bounds]\label{cv-two-kernels}
+Assume $N_P=\mathcal O_{E,P}^a$ and
+$N'_P=\mathcal O_{E,P}^b$ for every $P\in\mathcal P$.
+Assume the ordinary theta moment condition above and equality of the target
+Weyl and dual-Weyl lattices at $w$.  Suppose
+$s_\tau-s'_\tau=s_0\ge0$ is independent of $\tau$.
+For $F\in\mathcal D_\lambda(L^\#)$, the actual kernel $K=\eta\mathcal J$
+satisfies
+\begin{align}
+ p^{fa+\sum_\tau s_\tau}KF
+       &\in\mathcal D_\mu(L')
+       &&\text{if }\tau^{-1}w\in\mathcal P,\label{cv-P-bound}\\
+ KF&\in p^{fs_0}\mathcal D_\mu(L'^\#)
+       &&\text{if }\tau^{-1}w\in\overline{\mathcal P}.
+                                                      \label{cv-bar-bound}
+\end{align}
+\end{theorem}
+\begin{proof}
+In the selected case the source lattice is standard at every
+embedding.  Take its basis to be the identity.  By
+Lemma~\ref{cv-kernel-lattices}, choose target bases of $L'$ with
+determinant $p$.  Matrices (CV9) carry the target lattice into the
+source lattice, by \eqref{cv-supports}; multiplication by $u_\tau$
+does not change integrality.  The determinant factor of
+Lemma~\ref{cv-substitution} is therefore
+\[
+                         c(B,B')=p^{-\sum_\tau s_\tau}.
+\]
+Theorem~\ref{cv-moment-integrality}, with $\kappa=p^{-fa}$,
+proves \eqref{cv-P-bound} with target $L'$, first in the dual-Weyl
+lattice.  The input Weyl lattice is contained in the source
+dual-Weyl lattice, and the assumed target equality finishes the
+argument.  The scalar $\eta$ is a unit.
+
+In the conjugate case, Lemma~\ref{cv-support-duality} gives the
+required matrix inclusions.  Both source and target dual lattices
+have determinant of valuation $-e_w$ in each embedding.  Thus
+\[
+ v_w(c(B,B'))=e_w\sum_\tau(s_\tau-s'_\tau)=e_wfs_0.
+\]
+Here $\kappa=1$.  The same theorem gives
+$KF\in c(B,B')\mathcal N_\mu(L'^\#)
+=p^{fs_0}\mathcal N_\mu(L'^\#)$.  Equality of the two target
+lattices gives \eqref{cv-bar-bound}.
+\end{proof}
+
+The target equality in this theorem is now supplied by
+Corollary~\ref{fh-large-prime-equality}.  Its sufficient condition,
+for a target weight $\mu$ of length $b$, is
+\[
+                       \mu_1-\mu_b+b-1\le p.
+ \tag{CV11}
+\]
+The exact hook-product calculation in
+Theorem~\ref{fh-hook-product} proves that
+$[H_{\mu-\mu_b},H_{\mu-\mu_b}]$ is then a $p$-adic unit.  The
+normalized pairing is integral on the dual-Weyl lattice itself,
+which is therefore contained in its pairing dual, the Weyl lattice.
+The reverse inclusion always holds.  The actual submitted proof
+assumes the stronger inequality $\mu_1-\mu_b+b<p$, so its precise
+input is covered.  No equality at arbitrary primes is asserted.
+
+\subsection{Reduction to standard local lattices}
+
+The standard-lattice assumption in Lemma~\ref{cv-kernel-lattices}
+does not restrict the global class of a self-dual lattice.
+We give the approximation argument needed for that assertion.
+
+\begin{lemma}\label{cv-unitary-approximation}
+Let $\mathcal P$ be a finite set of primes of a CM field $E$ such
+that no member is the conjugate of another.  For a full lattice
+$N\subset E^n$ there exists $g\in\operatorname{GL}_n(E)$ with
+$g^*g=1$ and
+\[
+                     (gN)_P=\mathcal O_{E,P}^{n}
+                          \quad(P\in\mathcal P).
+ \tag{CV12}
+\]
+If $N$ is self-dual, the same equality holds at every $\bar P$.
+\end{lemma}
+\begin{proof}
+At a split place of $F$ below $P$, a unitary matrix is determined by
+an arbitrary matrix $G_P\in\operatorname{GL}_n(E_P)$; its conjugate
+component is $(G_P^*)^{-1}$.  Choose $G_P$ carrying $N_P$ to the
+standard lattice.  The property of carrying this lattice to the
+standard lattice is open: after composing with $G_P^{-1}$, it is
+membership in $\operatorname{GL}_n(\mathcal O_{E_P})$.
+
+We prove simultaneous approximation by rational unitary matrices.
+The Cayley transform
+\[
+              C(A)=(1-A)(1+A)^{-1},\qquad A^*=-A,
+ \tag{CV13}
+\]
+is unitary wherever $1+A$ is invertible.  Its inverse is
+$A=(1-G)(1+G)^{-1}$ on $\det(1+G)\ne0$.
+At a split place the set of $G$ with $\det(1+G)\ne0$ is dense in
+$\operatorname{GL}_n(E_P)$.  To see this, replace $G$ by $zG$ with
+$z$ arbitrarily close to $1$; the polynomial $\det(1+zG)$ has only
+finitely many roots and is not identically zero.  Thus we may choose
+the local $G_P$ in this set while preserving its lattice property.
+
+Approximate the entries of their Cayley inverses simultaneously by
+entries of a matrix $B$ over $E$, with $B$ close to the prescribed
+$A_P$ at $P$ and close to zero at every $\bar P$.  This is the usual
+finite-prime approximation obtained by the Chinese remainder
+theorem after clearing denominators.  Then $A=B-B^*$ is
+skew-Hermitian and is close to $A_P$ at every selected prime.
+The determinant $\det(1+A)$ is nonzero when the approximation is
+sufficiently close.  The rational matrix $g=C(A)$ then has the
+required local lattice property.  All continuity statements concern
+finitely many entries and determinants.  This proof works also in
+residue characteristic two, since its fields have characteristic zero.
+
+For the last assertion, local Hermitian duality gives
+$(gN)_{\bar P}=((gN)_P)^\#$, with conjugate coefficients.
+The standard lattice is its own corresponding dual.
+\end{proof}
+
+\begin{corollary}[Transport to arbitrary representatives]
+\label{cv-kernel-transport}
+Suppose the ordinary theta moment condition holds for all representatives
+which are standard at the selected primes.  Suppose also that the actual
+kernel is equivariant under rational unitary changes of representatives:
+if $g,g'$ act on its source and target lattices, and $T_g,T_{g'}$ are
+the induced coefficient-space isomorphisms, then
+\[
+ T_{g'}K_{N,N'}=K_{gN,g'N'}T_g.
+ \tag{CV13a}\label{cv-kernel-equivariance}
+\]
+Under the other hypotheses of Theorem~\ref{cv-two-kernels}, its two
+conclusions hold for arbitrary self-dual $N,N'$.
+\end{corollary}
+\begin{proof}
+Choose $g,g'$ by Lemma~\ref{cv-unitary-approximation}.
+The changes of representatives preserve
+\eqref{cv-supports}: replace $x$ by $g'xg^{-1}$, the two lattices
+by $gN,g'N'$, and the residue functionals by composition with the
+inverse.  Adjointness uses $g^{-1}=g^*$, and coefficient lattices
+transform by the actions already proved in
+Section~\ref{coef:section}.  In particular $T_g$ sends the source
+Weyl lattice onto the transformed source Weyl lattice, and $T_{g'}$
+sends each target Weyl lattice onto its transformed version.
+Apply Theorem~\ref{cv-two-kernels} to $gN,g'N'$ and pull the two
+inclusions back through $T_{g'}$, using \eqref{cv-kernel-equivariance}.
+\end{proof}
+
+\subsection{Algebraic character factors and stabilizer denominators}
+
+\begin{lemma}\label{cv-character-unit}
+Let $\chi$ be a Hecke character with conductor prime to
+$p$, with values in a number field $K$, such that a positive power
+of $\chi$ is algebraic.  An ideal or finite-idele
+argument which is a unit at every prime over $p$ has character value
+a unit at every $w\mid p$.  Finite-order character factors always
+have this property.  The same assertion holds for a character on
+norm-one fractional ideals $I\bar I=1$ whose value on a principal
+norm-one ideal $(z)$ is a product of integral powers of the embeddings
+of $z$.
+\end{lemma}
+\begin{proof}
+First replace $\chi$ by its stated positive power; vanishing of
+the valuation of a power implies vanishing of the original valuation.
+For an ideal prime to the conductor and to $p$, raise its ray class
+to a positive power which is principal, say generated by $z$ with
+$z\equiv1$ at the conductor.  Since the ideal is prime to $p$,
+$z$ is a unit at every prime over $p$.  The defining principal-ideal
+formula for an algebraic Hecke character expresses this power of
+its value as a product of integral powers of the conjugates of $z$.
+All those factors are $w$-adic units.  Taking valuations shows that
+the original value is also a unit.  Changing the ideal representative
+or inserting local unit factors introduces only the same principal
+formula and finite-order factors.  A root of unity has valuation
+zero because a positive power is one.  This proves the assertion
+for finite ideles as well.  The finiteness of the ray class group
+used here follows from finiteness of the ordinary class group and
+of the residue unit group at the conductor.
+
+For a norm-one ideal $I$, choose $h>0$ with $I^h=(a)$.
+Then $I^{2h}=(a/\bar a)$ and
+$(a/\bar a)\overline{(a/\bar a)}=1$.  If $I$ is a unit above $p$,
+then $a$ and $\bar a$ are units there.  Apply the stated
+principal-ideal formula to $I^{2h}$ and take valuations.
+\end{proof}
+
+In the actual standard representatives the determinant ideals of
+$N,N'$ are units above $p$.  The extra level primes are disjoint
+from the selected primes, and the finite auxiliary twists are
+unramified there.  The possibly half-integral unitary character types
+become algebraic after squaring; equivalently their local values
+satisfy the positive-power principal formulas just used.  The
+character scalar $\eta$ is a ratio of the
+corresponding determinant and local-frame character values.
+Lemma~\ref{cv-character-unit} therefore gives $v_w(\eta)=0$.
+This verification uses the prime-to-$p$ level condition; it cannot
+be inferred solely from the absolute value of a complex character.
+
+\begin{lemma}\label{cv-stabilizer-unit}
+Let $\Gamma$ be a finite subgroup of $\operatorname{GL}_n(E)$, where
+$[E:\mathbb Q]=d$.  Every prime divisor $p$ of $|\Gamma|$ satisfies
+$p\le dn+1$.  Hence the stabilizer orders occurring at ranks at
+most $N_m$ are units at $w\mid p$ whenever
+\[
+                              p>2fN_m+1.
+ \tag{CV14}
+\]
+The same conclusion holds for stabilizers which inject into those
+matrix groups.
+\end{lemma}
+\begin{proof}
+Cauchy's theorem gives an element $g$ of order $p$.  Regard it as
+a rational linear map on the $dn$-dimensional underlying vector
+space.  Its minimal polynomial divides $X^p-1$ and is not $X-1$.
+The polynomial $\Phi_p(X)=1+X+\cdots+X^{p-1}$ is irreducible over
+$\mathbb Q$: after replacing $X$ by $X+1$, Eisenstein's criterion
+at $p$ applies.  Thus the minimal polynomial has degree at least
+$p-1$, and $p-1\le dn$.
+
+The stabilizers of the decorated positive definite lattices are
+finite by Section~\ref{al-section}.  Their projection to the rational
+unitary matrices is injective: once the rational matrix and the
+decorated lattice are fixed, every auxiliary level coordinate of a
+stabilizing element is determined by its action on the prescribed
+frame or residue marking.  This is the stabilizer identification of
+Sections~\ref{acl-section} and~\ref{acc-section}.  Apply the first
+assertion with $d=2f$ and $n\le N_m$.
+\end{proof}
+
+Thus a class-sum kernel with denominators $|\Gamma_c|$ preserves
+any common local lattice containment satisfied by its individual
+terms.  Multiplication by those denominators costs no valuation at
+the selected prime.  This is stronger at that prime than the general
+denominator bound in Section~\ref{cp-section}.
+
+\subsection{Incidence sums and removal of one residue condition}
+
+We give the local lattice argument that produces the useful gain.
+For a local point $q=(N,\ell)$, let $L(q)=\ker\ell$.  An upper
+neighbor $q^+=(N^+,\ell^+)$ has
+\[
+          N\subset N^+,\qquad L(q^+)=N,
+ \tag{CV15}
+\]
+with the prescribed residue normalization.  The upper-neighbor
+sum is an ordinary finite sum over these points.  The degree-one
+residue field and the chosen normalization make the neighbor set
+finite; the argument below needs no division by its cardinality.
+
+For a subset $V\subset\mathcal P$, let $\mathcal L_i(V,q)$ be the
+coefficient lattice obtained by using $L(q)_P$ at $P\in V$ and
+$N(q)_P$ at $P\notin V$, with all other local conditions unchanged.
+At conjugate primes use the dual lattices.  Fix a coefficient prime
+$w$ of the selected type.  The map $\tau\mapsto P(\tau)=\tau^{-1}w$
+is a bijection from $I$ to $\mathcal P$.  Indeed, (CV4) makes $p$
+split completely in $E$, so the completion at every such prime is
+$\mathbb Q_p$.  Two embeddings into $\mathbb C_p$ inducing the same
+prime extend to the same embedding of $\mathbb Q_p$, and therefore
+coincide.  The embeddings in $I$ are distinct and both sets have
+cardinality $f$.
+
+\begin{lemma}\label{cv-incidence-lattice}
+At the fixed selected-type coefficient prime $w$, if $P\in V$,
+replacing $q$ by a neighbor at $P$ gives
+\[
+             \mathcal L_i(V,q^+)=\mathcal L_i(V\setminus\{P\},q).
+ \tag{CV16}
+\]
+Consequently the upper-neighbor sum at $P$ sends sections integral
+in the first family of lattices to sections integral in the second.
+\end{lemma}
+\begin{proof}
+At $P$ the equality is precisely $L(q^+)_P=N(q)_P$ from (CV15).
+Every other selected-prime component is unchanged.  The conjugate
+component of the global self-dual neighbor can also change, but none
+of the embeddings defining the coefficient lattice at this $w$
+sees a conjugate prime.  Transported polynomial lattices localized
+at $w$ depend only on the indicated selected-prime components,
+giving (CV16).
+Each summand therefore lies in the same target lattice, and their
+finite sum does also.  The equivariance factors used to express the
+sum in class representatives preserve these transported lattices.
+\end{proof}
+
+\begin{lemma}\label{cv-erase-cost}
+Let $M^0\subset M$ be a local sublattice of residue index $p$,
+and let $\lambda$ be a dominant integral weight of length $n$.
+Then
+\[
+                  p^{\lambda_1}\mathcal D_\lambda(M^0)
+                              \subset\mathcal D_\lambda(M).
+ \tag{CV17}
+\]
+For tensor factors at $w$, the exponent is the sum of
+$\lambda_{\tau,1}$ over the embeddings which see that prime.
+The statement permits negative $\lambda_1$.
+\end{lemma}
+\begin{proof}
+Choose a basis in which $M=R^n$ and
+$M^0=\operatorname{diag}(p,1,\ldots,1)R^n$; a unit determinant
+change is harmless.  The round action on a row-weight component
+of polynomial row degree $r_1$ multiplies it by
+$p^{-d-r_1}$, where $d=\lambda_n$.
+Every monomial of $V_{\lambda-d}$ has row degree
+$r_1\le\lambda_1-d$, by the weight-majorization proof of
+Section~\ref{am-section}.  Hence
+$\lambda_1-d-r_1\ge0$.
+The Weyl lattice is the sum of its integral row-weight components:
+its generators are iterated divided row operators applied to the
+highest vector, each of which has a definite row weight.  Multiplying
+each component by the indicated nonnegative power of $p$ preserves
+the Weyl lattice.  This proves (CV17).  Multiplying the powers in
+the different tensor factors proves the last assertion.
+\end{proof}
+
+\subsection{The one-step bound on the actual class lattices}
+
+Consider the transition from rank $N_i$ to $N_{i+1}$, with
+$N_{i+1}-N_i=t+1=2s_0$.  Let $\mathscr S_i$ be its local lattice
+of equivariant class sections.  The original coefficient lattice at
+each point is obtained from its $L^\#$, as above.  Fix a set
+$\mathcal T\subset I$ of distinguished embeddings and let
+$V_w\subset\mathcal P$ be the corresponding selected primes.
+Write $U_i$ for the product of their upper-neighbor sums at rank
+$N_i$.  Operators at different primes commute, since they change
+independent local components.
+
+Suppose nonnegative integers $W_\tau$ satisfy, for every step,
+\begin{equation}\label{cv-weight-bounds}
+ 0\le s_{i,\tau}\le W_\tau,\qquad
+ (\mu_{i,\tau})_1\le W_\tau\quad(\tau\notin\mathcal T),
+ \qquad N_i\le N_m.
+\end{equation}
+Assume the moment hypothesis and target Weyl/dual-Weyl equality
+at each step, as well as \eqref{cv-kernel-equivariance} and (CV14).
+Then the class-sum operator $K_i$
+satisfies
+\begin{equation}\label{cv-one-step}
+ p^e U_{i+1}K_i\mathscr S_i\subset\mathscr S_{i+1},
+ \qquad e=2\sum_\tau W_\tau+fN_m
+\end{equation}
+at selected-type primes.  At conjugate-type primes it satisfies
+$K_i\mathscr S_i\subset\mathscr S_{i+1}$.
+
+\begin{proof}
+By \eqref{cv-P-bound}, multiplying the point kernel by
+$p^{fN_i+\sum s_{i,\tau}}$ puts its value in the coefficient
+lattice having every selected residue condition imposed.  The
+class-sum denominator is a unit by
+Lemma~\ref{cv-stabilizer-unit}; sums retain this containment.
+Apply each upper-neighbor sum at a prime of $V_w$.
+Lemma~\ref{cv-incidence-lattice} removes exactly that residue
+condition.  For all remaining primes apply
+Lemma~\ref{cv-erase-cost}.  The additional exponent is
+$\sum_{\tau\notin\mathcal T}(\mu_{i,\tau})_1$; if some terms
+are negative, the same inclusion holds and the upper bound below
+only becomes easier.  The total exponent is at most
+\[
+ fN_i+\sum_\tau s_{i,\tau}
+       +\sum_{\tau\notin\mathcal T}(\mu_{i,\tau})_1
+                    \le fN_m+2\sum_\tau W_\tau=e.
+\]
+Any remaining nonnegative power of $p$ preserves the target
+lattice.  This proves \eqref{cv-one-step}.
+In the conjugate case, \eqref{cv-bar-bound} already gives a positive
+power $p^{fs_0}$ times the original target lattice, and the same
+stabilizer argument applies.
+\end{proof}
+
+\subsection{Accumulation along the column}
+
+The preceding estimates must be combined with the correct direction
+of the incidence commutation law.  Set $r=|V_w|$ and suppose
+\begin{equation}\label{cv-commutation}
+                         U_{i+1}K_i=p^{s_0r}K_iU_i.
+\end{equation}
+This is the finite incidence identity of the theta kernels; it is
+an additional identity, not a consequence of their integral moments.
+Let
+$C_i=K_{i-1}\cdots K_0$, with $C_0=1$.
+
+\begin{proposition}\label{cv-column}
+Assume \eqref{cv-one-step} and \eqref{cv-commutation} for
+$0\le i<m$.  Then
+\begin{equation}\label{cv-column-bound}
+ p^{b_i}C_iU_0^i\mathscr S_0\subset\mathscr S_i,\qquad
+ b_i=ie+s_0r\frac{i(i+1)}2.
+\end{equation}
+In particular, if $A\ge0$ and
+$\mathscr N=p^AU_0^m\mathscr S_0$, then for any $c\in K$ with
+\[
+                          v_w(c)\ge e_wb_m
+ \tag{CV18}
+\]
+one has $cC_m\mathscr N\subset\mathscr S_m$.
+\end{proposition}
+\begin{proof}
+Commuting one $U$ through the first $i$ transitions gives
+\[
+                         U_iC_i=p^{s_0ri}C_iU_0.
+ \tag{CV19}
+\]
+This follows by induction directly from \eqref{cv-commutation}.
+The assertion \eqref{cv-column-bound} is trivial for $i=0$.
+Apply $p^eU_{i+1}K_i$ to its left side.  By
+\eqref{cv-one-step}, the image is integral.  Equations
+\eqref{cv-commutation} and (CV19) identify that image as
+\[
+ p^{b_i+e+s_0r(i+1)}C_{i+1}U_0^{i+1}\mathscr S_0.
+\]
+Since $b_{i+1}=b_i+e+s_0r(i+1)$, induction proves the formula.
+Finally, (CV18) makes $cp^{A-b_m}$ an element of $R$.
+Multiply the $i=m$ inclusion by this scalar.
+\end{proof}
+
+For the actual set of distinguished embeddings, $r=|\mathcal T|$.
+Since $t+1=2s_0$, the final exponent can be written
+\begin{equation}\label{cv-final-exponent}
+ b_m=mE_p,\qquad
+ E_p=2\sum_\tau W_\tau+fN_m
+                    +|\mathcal T|\frac{(t+1)(m+1)}4.
+\end{equation}
+Although the last displayed summand can be a half-integer, $b_m$
+is an integer because $m(m+1)$ is even.
+The initial lattice in the submitted construction has exactly the
+form $p^AU_0^m\mathscr S_0$, with
+$A=m\sum_{P\in V_w}b_{\rm top}(\tau(P))\ge0$.
+At conjugate-type primes $V_w$ is empty and the needed exponent is
+zero.  Thus the finite argument gives the actual column valuation
+bound, on its stated initial lattice, once the local moment and
+incidence inputs have been supplied.  It does not assert the same
+bound on every vector of the original unmodified class lattice.
+
+The final all-twist lowering theorem of
+Section~\ref{atl-section} preserves these local integral lattices.
+Applying it introduces no further denominator.  Pairing with a row
+then uses the finite-orbit integrality theorem of
+Section~\ref{cp-section}; its stabilizer denominator is a unit at
+$p$ by (CV14).  These two facts connect the local column bound to
+the actual period matrix entry, without a stabilizer average in the
+lowering map.
+
+\subsection{Counterexamples to weakened assertions and remaining inputs}
+
+The support and normalization conditions above have concrete force.
+Here are elementary checks which prevent stronger, false replacements.
+
+\begin{enumerate}
+\item Take $a=1$, $b=2$, $M=\mathbb Z_p$, $M'=\mathbb Z_p^2$,
+$\lambda=(0)$, $\mu=(1,0)$, $s=0$, and $s'=1$.
+These weights satisfy the stated compatibility conditions, with
+$n=1$ and the canonical source polynomial $F=1$.
+For $A=(p^{-1},0)$, one has
+$Q_AF=p^{-1}Y_{11}$, which is not integral.  Thus the matrix
+support condition cannot be omitted from the finite moment theorem.
+\item Bounding each ordinary power moment by one does not give a
+measure of norm at most one on $\mathbb Z_p$.  For example, let
+$J_1=1$ and $J_j=0$ for every $j\ne1$, including $j=0$.
+The induced functional on polynomials is differentiation at zero.
+It takes the integer-valued polynomial $\binom Xp$ to
+$(-1)^{p-1}/p$.  Since $|\binom xp|_p\le1$ for every
+$x\in\mathbb Z_p$, this functional cannot extend with norm at
+most one.  Thus the ordinary theta measure input is materially
+stronger than bounded individual derivatives.
+\item The coefficient bound $|c_j|\le1$ in
+\eqref{cv-moment-approximation} is essential: a single integral
+evaluation multiplied by $p^{-1}$ has no such integrality property.
+\item For $\lambda=(2,0)$, the polynomial Weyl lattice on one
+column is generated by $x^2,2xy,y^2$, whereas the dual-Weyl lattice
+contains $xy$.  They differ at $p=2$.  The representation-theoretic
+prime bound therefore cannot be discarded.
+\item A finite class sum with one class and stabilizer of order $p$
+can equal $1/p$, even when its coefficient pairing is integral.
+The unit-stabilizer assertion is indispensable for the loss-free
+class-sum passage at the selected prime.
+\item Reversing \eqref{cv-commutation} changes the column exponent.
+For one-dimensional spaces over $\mathbb Q_p$, take $K_i=1$ and
+$U_i=p^{s_0ri}$.  Then \eqref{cv-commutation} holds exactly, while
+the reversed factor $p^{-s_0r}$ does not if $s_0r>0$.
+\end{enumerate}
+
+The finite approximation, substitution, lattice, determinant,
+stabilizer, and accumulation arguments in this section are proved
+in full. For the submitted theta construction, the normalized ordinary
+theta moment theorem and its exact finite translation/support identities
+are proved in Sections~\ref{gm-section} and \ref{csp-section}.
+Section~\ref{hec-section} proves \eqref{cv-commutation};
+Section~\ref{tvc-section} identifies the actual kernel with (CV2)
+and assembles the selected-prime column bound.
+Weyl/dual-Weyl equality at the target primes satisfying (CV11) has
+been proved by the hook-norm argument of
+Section~\ref{fh-section}. These inputs are proved independently
+of the final branching map.
+
+

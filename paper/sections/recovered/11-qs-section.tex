@@ -1,0 +1,616 @@
+\section{Simultaneous selection of the auxiliary quadratic characters}
+\label{qs-section}
+
+The three quadratic characters used in the RH subcase do not describe
+the entire requirement for Dirichlet GRH. For a fixed modulus one needs
+a finite family of its characters, each twisted by either of two new
+quadratic characters or by their product. The same two primes must work
+throughout an interval of scales. This section proves that selection
+from the following explicit analytic hypothesis:
+\begin{equation}\label{qs-qrh}
+ L(s,\chi)\ne0\qquad(\operatorname{Re}s>11/12)
+\end{equation}
+for every primitive Dirichlet character, with the pole of $\zeta$ at
+$1$ allowed. This is the endpoint stated in the supplied October
+quasi-Riemann-hypothesis paper; the September endpoint is stronger.
+\cite{qrh-october,qrh-september}
+The conclusion below remains conditional on \eqref{qs-qrh} in this
+reconstruction. Its proof does not assume the Riemann hypothesis for
+any of the selected characters.
+
+For a nonprincipal Dirichlet character $\chi$, write
+\[
+ F_\chi(s)=-\frac{L'}{L}(s,\chi),\qquad
+ G_\chi(y)=\sum_{n\le y}\Lambda(n)\chi(n)(y/n-1)-yF_\chi(1).
+\]
+Thus the second term in $G_\chi$ is
+$+yL'(1,\chi)/L(1,\chi)$. For an odd prime $p$, let
+$\chi_p(n)=(n/p)$ be the Legendre character, extended by zero at
+multiples of $p$. In a product of these characters, a factor with
+exponent zero is omitted; it is not a principal character at an
+unnecessarily enlarged modulus. Each resulting primitive character
+is considered at its own conductor.
+
+\begin{theorem}[Simultaneous quadratic selection]\label{qs-selection}
+Assume \eqref{qs-qrh}. Fix an integer $M\ge1$, real numbers
+$0<\varepsilon<1/52$ and $A\ge1$. For all sufficiently large $Y$,
+with threshold depending only on $M,\varepsilon,A$, put
+\[
+ z=Y^{\varepsilon/5},\qquad z'=z(\log Y)^2.
+\]
+There are distinct primes $q<d$, both coprime to $M$, such that
+\begin{gather*}
+ e^{z/2}<q<e^z,\quad q\equiv3\pmod8,\qquad
+ e^{z'/2}<d<e^{z'},\quad d\equiv7\pmod{16},\\
+ q\mid d+1,\qquad
+ \ell\mid d+1\quad\hbox{for every odd prime }\ell\le z.
+\end{gather*}
+For every primitive character $\xi$ whose conductor divides $8M$,
+and all $i,j\in\{0,1\}$ with $i+j>0$, the character
+$\chi=\xi\chi_q^i\chi_d^j$ is primitive and nonprincipal, and
+simultaneously for every $Y\le y\le Y^A$,
+\begin{equation}\label{qs-bounds}
+ |G_\chi(y)|\le y^{1/2+\varepsilon/2},\qquad
+ \left|\frac{L'}{L}(1,\chi)\right|\le4\log y.
+\end{equation}
+Every such $L$-function is also zero-free in
+$\operatorname{Re}s>399/400$, at every height.
+\end{theorem}
+
+The finite family of base characters is fixed before $Y$ varies.
+The primes $q,d$, and consequently their quadratic twists, may change
+with $Y$. This order of quantifiers is essential: the theorem gives
+no square-root estimate for an arbitrary fixed character at every
+large scale.
+
+An imprimitive base character modulo $M$ is used through its primitive
+inducer, whose conductor divides $M$. This supplies the primitive
+character determined by its values away from $2Mqd$.
+Primitive and imprimitive centered sums are not silently identified.
+If a nonprincipal $\chi$ modulo $Q$ is induced from $\chi^*$ of
+conductor $f$, direct subtraction of the finite Euler factors gives
+the exact correction
+\[
+ G_\chi(y)-G_{\chi^*}(y)=
+ \sum_{\substack{p\mid Q\\p\nmid f}}
+   \sum_{r\ge1}(\log p)\chi^*(p)^r\min(1,y/p^r).
+\]
+Indeed, subtract the missing prime powers in the finite defining sum
+and add their convergent geometric series in $-L'/L(1)$; the two
+terms combine into the displayed minimum. The theorem is stated
+at the primitive conductors, so these corrections are not needed
+in its selection argument.
+
+\subsection{Uniform analytic estimates with a smooth cutoff}
+
+We record the conductor dependence used below. Under
+\eqref{qs-qrh}, put $\sigma=23/24$. Uniformly for nonprincipal
+characters modulo $Q$,
+\begin{equation}\label{qs-logderivative}
+ |F_\chi(v+it)|\ll\log\bigl((Q+3)(|t|+3)\bigr)
+       \qquad(\sigma\le v\le2).
+\end{equation}
+Here and below the constants in analytic estimates are absolute once
+the displayed lines and smooth functions have been fixed. For clarity,
+this estimate does not mean that the value of $L$ is bounded below by
+an absolute constant. The proof uses a holomorphic logarithm. For a
+primitive nonprincipal character, its partial sums have modulus at
+most $Q$, so partial summation gives
+$|L(s,\chi)|\le Q|s|/\operatorname{Re}s$ in the right half-plane.
+On a disk centered at $2+it$ with radius strictly between
+$2-\sigma$ and $2-11/12$, take the logarithm whose value at the
+center is supplied by the absolutely convergent Euler product.
+That center value is bounded absolutely. The disk estimate of
+Lemma~\ref{lem:qrh-log-disk}, followed by Cauchy's derivative
+formula on a smaller disk, gives \eqref{qs-logderivative}.
+The chosen radii are fixed, so no conductor enters its constant.
+
+If $\chi$ is induced from $\chi^*$, its additional contribution is
+\[
+ \frac{L'}L(s,\chi)-\frac{L'}L(s,\chi^*)
+ =\sum_{\substack{p\mid Q\\p\nmid\operatorname{cond}\chi^*}}
+       \frac{\chi^*(p)\log p}{p^s-\chi^*(p)}.
+\]
+On the displayed strip this is at most
+$(2^\sigma-1)^{-1}\log Q$ in modulus. The additional Euler
+factors have their zeros on $\operatorname{Re}s=0$, so they do
+not change the zero-free hypothesis in use. For a principal
+character one instead bounds $F_\chi(s)-1/(s-1)$ by the same
+quantity, using $(s-1)\zeta(s)$ in the disk argument.
+
+Fix a smooth function $w:[0,\infty)\to[0,1]$ with
+$w(u)=1$ for $u\le1$ and $w(u)=0$ for $u\ge2$.
+
+\begin{lemma}[A finite smooth approximation]\label{qs-cutoff}
+Under \eqref{qs-qrh}, for every nonprincipal character modulo $Q$
+and $Z\ge2$,
+\[
+ F_\chi(1)=\sum_{n\le2Z}\frac{\Lambda(n)\chi(n)}n w(n/Z)
+       +O\bigl(Z^{-1/24}\log(Q+3)\bigr).
+\]
+Consequently, uniformly for $1\le y\le Z$,
+\begin{equation}\label{qs-smooth-identity}
+ G_\chi(y)=-\sum_{n\le2Z}\Lambda(n)\chi(n)
+                    \min(1,y/n)w(n/Z)
+       +O\bigl(yZ^{-1/24}\log(Q+3)\bigr).
+\end{equation}
+There is also an absolute constant $C$ such that
+\begin{equation}\label{qs-loglog}
+ |F_\chi(1)|\le192\log\log(Q+3)+C.
+\end{equation}
+These statements exclude principal characters: $F_\chi(1)$ would
+then have a pole.
+\end{lemma}
+\begin{proof}
+For $\operatorname{Re}s>0$, the Mellin transform of $w$ is
+\[
+ \widehat w(s)=\int_0^\infty w(u)u^{s-1}\,du
+       =-\frac1s\int_1^2 w'(u)u^s\,du.
+\]
+The second expression continues it meromorphically, with only a
+simple pole at $0$, of residue $1$. Repeated integration by parts
+after $u=e^v$ proves rapid decay on every fixed vertical strip away
+from this pole. Mellin inversion and absolute convergence on
+$\operatorname{Re}s=1$ give
+\[
+ \sum_n\frac{\Lambda(n)\chi(n)}n w(n/Z)
+ =\frac1{2\pi i}\int_{(1)}F_\chi(1+s)\widehat w(s)Z^s\,ds.
+\]
+Move the contour to $\operatorname{Re}s=-1/24$.
+Equation~\eqref{qs-logderivative} and rapid decay justify the shift
+and bound the new integral by $O(Z^{-1/24}\log(Q+3))$.
+The only crossed pole is that of $\widehat w$ at $0$, with residue
+$F_\chi(1)$. This proves the first assertion with the stated sign.
+When $n\le y\le Z$, $w(n/Z)=1$. Substitution in the definition
+of $G_\chi$ therefore gives \eqref{qs-smooth-identity} exactly,
+apart from the displayed analytic error.
+
+We shall use the elementary bound
+\begin{equation}\label{qs-chebyshev}
+ \psi(t):=\sum_{n\le t}\Lambda(n)\le4t\qquad(t\ge1).
+\end{equation}
+Indeed, every prime power in $(m,2m]$ contributes its logarithm
+to $\binom{2m}{m}$, and all other contributions to its prime
+valuations are nonnegative. Thus
+$\psi(2m)-\psi(m)\le2m\log2$.
+Sum this for powers of two and use the smallest power of two
+at least $t$ to obtain \eqref{qs-chebyshev}.
+Partial summation now gives
+\[
+ \sum_{n\le T}\frac{\Lambda(n)}n\le4(1+\log T)
+       \qquad(T\ge1).
+\]
+Apply the first assertion with $Z=(\log(Q+3))^{48}$.
+The error is bounded absolutely, and the polynomial has norm at
+most $4(1+\log(2Z))$. This is
+$192\log\log(Q+3)+O(1)$, proving \eqref{qs-loglog}.
+\end{proof}
+
+\subsection{Quadratic orthogonality in a progression}
+
+Choose a nonnegative $\Phi\in C_c^\infty(1/2,1)$ with
+$I_\Phi=\int\Phi>0$. For $(a,m)=1$ and $U\ge2$, give a prime
+$p\equiv a\pmod m$ weight $(\log p)\Phi(p/U)$. Let
+\[
+ W(U;m,a)=\sum_{p\equiv a\ (m)}(\log p)\Phi(p/U).
+\]
+Whenever $W>0$, expectation below means the weighted average with
+these weights divided by $W$.
+
+\begin{lemma}[Weighted correlations]\label{qs-correlations}
+Assume \eqref{qs-qrh}. Uniformly in $m,a,U$,
+\[
+ W(U;m,a)=\frac{I_\Phi U}{\varphi(m)}
+       +O\bigl(U^{23/24}\log(m+3)+U^{1/2}(\log(2U))^2\bigr).
+\]
+For odd squarefree $s>1$ coprime to $m$,
+\[
+ \left|\sum_{p\equiv a\ (m)}(\log p)\Phi(p/U)(p/s)\right|
+ \ll U^{23/24}\log(ms+3)+U^{1/2}(\log(2U))^2.
+\]
+In particular, if $W\ge I_\Phi U/(2\varphi(m))$, then
+for every such $s\le N^2$,
+\begin{equation}\label{qs-rho}
+ |\mathbb E(p/s)|\ll\varphi(m)
+ \left(U^{-1/24}\log(mN^2+3)
+             +U^{-1/2}(\log(2U))^2\right).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a Dirichlet character $\alpha$ modulo $L$, Mellin inversion gives
+\[
+ \sum_n\Lambda(n)\alpha(n)\Phi(n/U)
+ =\frac1{2\pi i}\int_{(2)}F_\alpha(s)
+                          \widehat\Phi(s)U^s\,ds.
+\]
+Moving the line to $23/24$ gives an error
+$O(U^{23/24}\log(L+3))$ by \eqref{qs-logderivative}.
+The pole at $1$ contributes $I_\Phi U$ precisely when $\alpha$
+is principal. This argument includes imprimitive characters and
+their local Euler factors, as described above.
+
+Expand the progression condition with the characters modulo $m$.
+For the first formula exactly one character is principal. For the
+second, the products of these characters with $(\cdot/s)$ are all
+nonprincipal modulo $ms$. To verify the latter assertion, the Chinese
+remainder theorem permits an integer equal to $1$ modulo $m$ on
+which the nontrivial character $(\cdot/s)$ has value $-1$.
+The factor $1/\varphi(m)$ in the character average cancels the
+number of error terms. Finally remove all prime powers of exponent
+at least two. Their absolute total is
+$O(U^{1/2}(\log(2U))^2)$, independently of the progression or
+twist. Division by the lower bound for $W$ proves
+\eqref{qs-rho}.
+\end{proof}
+
+The next lemma is elementary and independent of
+\eqref{qs-qrh}. It makes explicit why forcing splitting at a short
+initial set of primes does not destroy the second moment.
+
+\begin{lemma}[A finite second moment]\label{qs-second-moment}
+Let $\mathcal P$ be a finite probability space of primes $p>N$
+in one reduced class $a\pmod m$, where $8\mid m$.
+Let $2\le t\le N$, $1\le z\le t^{1/5}$, and suppose every prime
+divisor of $m$ at most $N$ is at most $z$. Suppose that
+\[
+ |\mathbb E(p/s)|\le\rho
+\]
+for every odd squarefree $s\le N^2$, $s>1$, $(s,m)=1$.
+Then, for every complex sequence $|\kappa(n)|\le1$,
+\begin{equation}\label{qs-moment}
+ \mathbb E\left|\sum_{n\le N}\Lambda(n)\min(1,t/n)
+                         \kappa(n)(n/p)\right|^2
+ \le C\left(t\log(2t)+\rho t^2\log^2(eN)\right)
+\end{equation}
+with an absolute constant $C$.
+The same conclusion holds if the correlation hypothesis omits
+at most one odd squarefree integer $s_0>1$.
+\end{lemma}
+\begin{proof}
+Put $c_n=\Lambda(n)\min(1,t/n)$. Only prime powers occur.
+For a fixed prime $\ell$, let
+\[
+ b_\ell=\sum_{j\ge1}c_{\ell^j},
+\]
+where the sum can be truncated at $\ell^j\le N$; all estimates
+below remain valid for the infinite sum. If $\ell\le t$, a
+geometric tail gives $b_\ell\le\log t+2\log\ell\le3\log t$.
+If $\ell>t$, it gives
+$b_\ell\le2t\log\ell/\ell$.
+It follows that
+\begin{equation}\label{qs-prime-diagonal}
+ \sum_\ell b_\ell^2\ll t\log(2t),\qquad
+ \max_\ell b_\ell\ll\log(2t).
+\end{equation}
+Here are the elementary details of the sum. From
+\eqref{qs-chebyshev}, splitting the primes at $\sqrt t$ gives
+$\pi(t)\le10t/\log t$ for $t\ge2$.
+This bounds the terms $\ell\le t$. For the others, partial
+summation with $\vartheta(u)=\sum_{\ell\le u}\log\ell\le4u$
+gives
+\[
+ \sum_{\ell>t}\frac{(\log\ell)^2}{\ell^2}
+ \le4\int_t^\infty\frac{2\log u-1}{u^2}\,du
+ \ll\frac{\log(2t)}t.
+\]
+The claimed bounds follow, with a harmless adjustment on $2\le t<3$.
+
+All even powers contribute at most
+\[
+ \sum_{r\ge1}\Lambda(r)\min(1,t/r^2)\le12\sqrt t
+\]
+by \eqref{qs-chebyshev} and partial summation at $\sqrt t$.
+The total contribution from primes dividing $m$ is at most
+$3z\log t$, since those contributing primes are at most $z$.
+Because $z\le t^{1/5}$ and
+$\log t\le(10/3)t^{3/10}$, these terms together have total
+absolute value
+\begin{equation}\label{qs-forced-part}
+ R\ll\sqrt t.
+\end{equation}
+
+Quadratic reciprocity shows that $(\ell/p)$ is constant on the
+given progression when $\ell\mid m$: the residue modulo $4$
+is fixed, the residue modulo each odd such $\ell$ is fixed, and
+the value at $2$ is fixed by the residue modulo $8$.
+Group the sum in \eqref{qs-moment} into these terms and the even
+powers, followed by odd powers of primes $\ell\nmid m$.
+It becomes
+\[
+ A_0+\sum_{\ell\nmid m}A_\ell(\ell/p),
+       \qquad |A_0|\le R,\quad |A_\ell|\le b_\ell.
+\]
+The diagonal quadratic factors equal $1$, since $p>N$.
+The other factors are, up to a constant sign fixed by the
+progression, $(p/\ell)$ or $(p/(\ell\ell'))$ for distinct
+primes outside $m$. Expanding the square and using the correlation
+bound therefore gives
+\[
+ \mathbb E|\cdots|^2\le R^2+\sum_\ell b_\ell^2
+                 +\rho\left(\sum_{n\le N}c_n\right)^2.
+\]
+Partial summation gives
+$\sum_{n\le N}c_n\le4t(1+\log(N/t))\le4t\log(eN)$.
+Together with \eqref{qs-prime-diagonal} and
+\eqref{qs-forced-part}, this proves the bound.
+
+If there is one exceptional $s_0$, it affects these correlations
+only when $s_0$ is one prime or the product of two distinct primes.
+In the first case the extra term is at most
+$2R\max b_\ell$; in the second it is at most
+$2(\max b_\ell)^2$. Both are $O(t\log(2t))$.
+Thus one exceptional correlation does not change the conclusion.
+No multiplicativity of $\kappa$ has been used.
+\end{proof}
+
+\subsection{Uniformity on an interval of scales}
+
+\begin{lemma}[A maximal second moment]\label{qs-maximal}
+For the same finite probability space, put
+\[
+ S_p(t;\kappa)=\sum_{n\le N}\Lambda(n)\min(1,t/n)
+                                      \kappa(n)(n/p).
+\]
+Suppose that, for every $Y\le t\le X$ and every
+$|\kappa(n)|\le1$,
+$\mathbb E|S_p(t;\kappa)|^2\le C t\log(2t)$, where
+$2\le Y\le X\le N$. For each fixed such sequence and each
+$\tau>0$, the probability that
+\[
+ |S_p(t;\kappa)|>\tfrac12t^{1/2+\tau}
+       \quad\hbox{for some }t\in[Y,X]
+\]
+is at most
+\begin{equation}\label{qs-bad-probability}
+ 16C Y^{-2\tau}
+ \left\{\frac{\log(4Y)}{1-2^{-2\tau}}
+       +\frac{(\log2)2^{-2\tau}}{(1-2^{-2\tau})^2}\right\}.
+\end{equation}
+For any fixed finite set of sequences, multiply this bound by
+their number to control failure for at least one sequence.
+\end{lemma}
+\begin{proof}
+The function $S_p(t;\kappa)$ is continuous and piecewise linear.
+At all but finitely many points,
+\[
+ D_p(t):=S'_p(t;\kappa)
+       =\sum_{t<n\le N}\frac{\Lambda(n)}n\kappa(n)(n/p).
+\]
+Its second moment is at most $C\log(2t)/t$: multiply by $t$
+and apply the hypothesis to
+$\kappa(n)1_{n>t}$. The uniformity in bounded sequences is what
+permits this step.
+
+On a block $[T,W]$ with $T\le W\le2T$, the fundamental theorem
+of calculus and Cauchy--Schwarz give
+\[
+ \sup_{T\le t\le W}|S_p(t;\kappa)|^2
+ \le2|S_p(T;\kappa)|^2+2T\int_T^W|D_p(v)|^2\,dv.
+\]
+Taking expectations yields a bound $4CT\log(4T)$.
+Markov's inequality therefore bounds failure in that block by
+$16CT^{-2\tau}\log(4T)$. Cover $[Y,X]$ by the blocks starting
+at $T=2^jY$ and sum this bound. The two geometric sums are
+$\sum r^j=(1-r)^{-1}$ and
+$\sum jr^j=r(1-r)^{-2}$, with $r=2^{-2\tau}$.
+This proves \eqref{qs-bad-probability}; the finite-family assertion
+is the union bound. There is no discretization loss depending on
+the length $X/Y$.
+\end{proof}
+
+\subsection{Proof of simultaneous selection}
+
+\begin{proof}[Proof of Theorem~\ref{qs-selection}]
+Let $\mathcal F$ be the finite set of primitive characters whose
+conductors divide $8M$, and put
+\[
+ X=Y^A,\qquad Z=Y^{48(A+1)},\qquad N=\lfloor2Z\rfloor.
+\]
+Its cardinality depends on $M$ alone. We use the finite sums with
+the bounded sequence $\kappa(n)=\xi(n)w(n/Z)$, and later also
+with $\kappa(n)=\xi(n)\chi_q(n)w(n/Z)$.
+
+First take $U_1=e^z$, $m=8$, $a=3$, and use the probability
+measure preceding Lemma~\ref{qs-correlations}. Its total weight
+is positive for all sufficiently large $Y$. Every prime in its
+support is greater than $U_1/2$, hence greater than $N^2$ and
+$8M$. For every fixed $L>0$, the right side of
+\eqref{qs-rho} is at most $Y^{-L}$ for all sufficiently large
+$Y$: $z=Y^{\varepsilon/5}$ grows faster than every multiple of
+$\log Y$, whereas $N$ is a fixed power of $Y$.
+This proves the correlation estimate uniformly for all the
+integers needed in Lemma~\ref{qs-second-moment}.
+
+For $Y\le t\le X$, the only prime divisor of $8$ is harmless
+in \eqref{qs-forced-part}. More generally $z\le t^{1/5}$,
+because $\varepsilon<1$. Choose $L=A+2$. The error term in
+\eqref{qs-moment} is absorbed into $Ct\log(2t)$, uniformly
+over this interval and over all bounded sequences. Apply
+Lemma~\ref{qs-maximal} with $\tau=\varepsilon/2$ to all
+$\xi\in\mathcal F$. Their total failure probability tends
+to zero. We can consequently choose a prime $q$ in the support
+such that all their finite sums have modulus at most
+$\tfrac12t^{1/2+\varepsilon/2}$ throughout $[Y,X]$.
+This prime satisfies $q\equiv3\pmod8$ and
+$e^{z/2}<q<e^z$ once $Y$ is large.
+
+Now put
+\[
+ P_z=\prod_{\substack{3\le\ell\le z\\\ell\ {
+m prime}}}\ell,
+       \qquad m=16qP_z,
+\]
+and choose by the Chinese remainder theorem the reduced residue
+class $a$ given by
+$a\equiv7\pmod{16}$ and $a\equiv-1\pmod{qP_z}$.
+Take $U_2=e^{z'}$. The bound \eqref{qs-chebyshev} gives
+\[
+ \log m\le\log16+5z,
+\]
+uniformly in the previously chosen $q$.
+The modulus satisfies the local condition in
+Lemma~\ref{qs-second-moment}: the prime $q$ is greater than
+$N$, and every other odd prime divisor is at most $z$.
+
+Again the total prime weight is positive, and for every fixed
+$L>0$ the correlation bound is at most $Y^{-L}$, uniformly in
+$q$. Indeed its logarithm is bounded above, apart from
+$O_{A,M,\varepsilon}(\log Y+\log z')$, by
+\[
+ 5z-z'/24=5z-z(\log Y)^2/24,
+\]
+which is eventually smaller than $-L\log Y$. The prime-power
+error has the still smaller exponent $5z-z'/2$.
+All primes in the support exceed $N^2$ and $q$.
+
+Apply the same second-moment and maximal estimates to the at
+most $2|\mathcal F|$ sequences
+$\xi(n)\chi_q(n)^i w(n/Z)$, $\xi\in\mathcal F$, $i=0,1$.
+Their absolute values are at most one; the constants in the
+second moment do not depend on the already chosen $q$.
+The total failure probability again tends to zero. Choose $d$
+outside this exceptional set. It has all the stated congruences
+and sizes, and $q<d$. Both primes exceed $8M$.
+
+The product of primitive characters of relatively prime
+conductors is primitive: by the Chinese remainder theorem its
+restriction to each conductor factor is the original primitive
+character, so a character inducing the product must contain
+each of those factors in its conductor. Applying this to
+$\xi$, $\chi_q$, and $\chi_d$ shows that the conductor of each
+selected twist is
+$f q^i d^j$, where $f=\operatorname{cond}\xi\mid8M$.
+It is nonprincipal, since at least one new prime occurs to the
+first power in its conductor.
+
+For all selected twists this conductor $Q$ satisfies
+\[
+ \log(Q+3)\ll_M z(\log Y)^2.
+\]
+Equation~\eqref{qs-smooth-identity} has error, uniformly on
+$[Y,X]$, at most
+\[
+ C_M Y^A Y^{-2(A+1)}Y^{\varepsilon/5}(\log Y)^2=o(1).
+\]
+For large $Y$ this is at most
+$\tfrac12Y^{1/2+\varepsilon/2}$.
+The choices of $q,d$ therefore give the first bound in
+\eqref{qs-bounds} for all twists simultaneously.
+
+For the derivative bound, the same conductor estimate implies
+\[
+ \log\log(Q+3)
+ \le\frac{\varepsilon}{5}\log Y+2\log\log Y+O_M(1).
+\]
+Equation~\eqref{qs-loglog} now yields
+\[
+ |F_\chi(1)|
+ \le\frac{192\varepsilon}{5}\log Y
+                 +384\log\log Y+O_M(1)
+ \le4\log Y\le4\log y
+\]
+for sufficiently large $Y$. Here
+$192\varepsilon/5<192/260<4$, leaving a fixed positive
+margin. The zero-free assertion follows directly from
+\eqref{qs-qrh}, since $399/400>11/12$.
+\end{proof}
+
+For the RH subcase take the principal base character of conductor
+$1$. The three twists are precisely $\chi_q,\chi_d,\chi_q\chi_d$.
+Since $q,d\equiv3\pmod4$, quadratic reciprocity identifies
+$\chi_q(n)$ and $\chi_d(n)$ with the Kronecker characters
+$(-q/n)$ and $(-d/n)$, including the supplementary rule at $2$.
+For each odd prime $\ell\mid d+1$, $-d\equiv1\pmod\ell$,
+so $\ell$ splits in $\mathbb Q(\sqrt{-d})$. The same holds for
+$\ell=q$. At $2$, the congruence $d\equiv7\pmod{16}$ makes
+$X^2-X+(d+1)/4$ have the two distinct roots $0,1$ modulo $2$.
+Thus the required splitting statements are also supplied.
+
+The argument is uniform if $z'$ is allowed to vary between
+$z(\log Y)^2$ and $A^2z(\log Y)^2$: its lower endpoint
+controls correlations, and its upper endpoint controls
+$\log(Q+3)$. No constant depends on the growing primes or on
+the intermediate scale $y$.
+
+\subsection{The larger-scale character estimate}
+
+The same analytic input supplies the separate small relative error
+needed on the much larger scales. For nonprincipal $\chi$ modulo
+$Q$, Mellin inversion of $(u-1)_+$ gives
+\[
+ \sum_{n\le y}\Lambda(n)\chi(n)(y/n-1)
+ =\frac1{2\pi i}\int_{(2)}
+             F_\chi(s)\frac{y^s}{s(s-1)}\,ds.
+\]
+Moving the line to $23/24$ crosses the simple pole with residue
+$yF_\chi(1)$. Subtracting it gives
+\begin{equation}\label{qs-large-scale}
+ |G_\chi(y)|\ll y^{23/24}\log(Q+3)\qquad(y\ge1).
+\end{equation}
+The vertical integral is absolutely convergent by
+\eqref{qs-logderivative}. For the primitive principal character
+one uses instead
+\[
+ G_1(y)=\sum_{n\le y}\Lambda(n)(y/n-1)
+                   -y(\log y-1-\gamma).
+\]
+Since $-\zeta'/\zeta(s)=1/(s-1)-\gamma+O(s-1)$, the residue
+of the double pole is exactly the term subtracted here, and the
+same argument gives $|G_1(y)|\ll y^{23/24}$.
+This treats the principal case separately rather than assigning
+it a nonexistent logarithmic derivative at $1$.
+
+For example, if $\log(Q+3)\ll x^{\varepsilon/5}(\log x)^2$
+and $y\ge\tfrac13\exp(x^{\varepsilon/3})$, then
+\eqref{qs-large-scale} gives, for all sufficiently large $x$,
+\[
+ |G_\chi(y)|\le y\exp(-x^{\varepsilon/8}).
+\]
+This follows because $y^{-1/24}$ decays faster than the displayed
+polynomial conductor factor and than $\exp(-x^{\varepsilon/8})$.
+Thus a fixed QRH gap is sufficient for this larger-scale input
+as well as for the simultaneous selection, though it is
+insufficient for a direct square-root estimate for every fixed
+character.
+
+\subsection{A necessary restriction and the remaining scope}
+
+The restriction on prime divisors of the progression modulus in
+Lemma~\ref{qs-second-moment} has real content. If it were removed,
+take a large integer $t$, put
+$m=16\prod_{\substack{3\le\ell\le t\\\ell\ {\rm prime}}}\ell$,
+and choose the reduced class
+$a\equiv7\pmod{16}$, $a\equiv-1\pmod\ell$ for every such
+odd prime. Quadratic reciprocity and the supplementary rule at
+$2$ give $(n/p)=1$ for every $n\le t$ and every prime $p>t$
+in this class. With $N=t$ and $\kappa=1$, the sum is therefore
+$\psi(t)$ for every $p$. This is $\gg t$: indeed
+\[
+ \psi(2r)\ge\log\binom{2r}{r}
+       \ge2r\log2-\log(2r+1),
+\]
+and monotonicity handles intervening real $t$.
+The second moment is consequently $\gg t^2$, contradicting
+$O(t\log t)$. Under \eqref{qs-qrh} the progression contains
+primes for all sufficiently large averaging scales, so the
+example is nonempty. This is a counterexample to dropping a
+hypothesis, not to the actual selected-prime construction.
+
+The finite second-moment and maximal lemmas have been proved here
+without QRH. QRH is used to establish the weighted prime
+correlations uniformly in the growing progression modulus, to
+control the smooth logarithmic-derivative remainder, and to make
+all required zero-free boxes automatic. The allowance of one
+exceptional correlation also explains why the ordinary
+exceptional-character formulation can be handled in the original
+second moment; proving its full analytic input without QRH is a
+separate route.
+
+This section completes the selected-character part conditional on
+the stated QRH theorem. It does not construct or estimate the
+automorphic interpolation maps, their local minors, or their
+nearly isotropic complex realizations. Nor does it supply primes
+in varying quadratic ray classes. Those parts of the proposed
+GRH proof remain separate obligations.
+
+

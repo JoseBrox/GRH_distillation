@@ -1,0 +1,351 @@
+\section{The odd-degree rank bound and the finite-image estimate}
+\label{sb-section}
+
+The remaining homology comparison has a short proof using the
+classical rational homology of the algebraic \(K\)-theory space.
+We state those classical inputs explicitly.  All subsequent
+integral counting arguments are proved below.  This proves the
+assertions called \(\mathrm{BOdd}\) and \(\mathrm{SUpper}\) in the
+source, with their actual constants; it does not purport to
+reproduce the source's longer proof by differential forms.
+
+Let \(L\) be a totally imaginary number field, put
+\(R=\mathcal O_L\), and write \(r=r_2(L)\).
+For \(N,j\ge0\), retain the notation
+\[
+ t_L(N,j)=\#H_j(\operatorname{GL}_N(R),\mathbb Z)_{\rm tors}.
+\]
+The finiteness needed here was proved in
+Sections~\ref{ac-section} and~\ref{ht-section}.
+All homology has trivial coefficients unless otherwise stated.
+
+\subsection{Stable homology and the repeated direct-sum map}
+
+As in Section~\ref{kt-section}, put
+\(X=B\operatorname{GL}(R)^+\), the connected component of the
+algebraic \(K\)-theory infinite loop space.  Its multiplication
+is induced by direct sum of matrices.  It is homotopy
+associative and homotopy commutative, has a unit, and
+\[
+ H_j(X,\mathbb Z)=H_j(\operatorname{GL}(R),\mathbb Z),
+ \qquad \pi_j(X)=K_j(R)\quad(j\ge1).
+ \tag{SB1}
+\]
+We use the following established results.
+
+\begin{enumerate}
+\item Integral homological stability identifies
+\(H_j(\operatorname{GL}_N(R),\mathbb Z)\) with
+\(H_j(X,\mathbb Z)\) for
+\(N\ge\max(2j+1,j+2)\).
+The stable-range condition for \(R\) was proved in
+Section~\ref{kt-section}.
+\cite[IV, Corollary 1.14.1]{weibel-kbook}
+\item For a path-connected, homotopy associative \(H\)-space,
+its rational homology is generated, under its homology
+product, by primitive elements.  The primitive elements
+in positive degree are precisely the image of its rational
+homotopy under the Hurewicz map, and that map is injective.
+Here an element \(v\) is primitive when
+\(\Delta v=v\otimes1+1\otimes v\), where \(\Delta\)
+comes from the diagonal of the space.
+\cite[Corollary 4.18, Theorem 5.18, and Appendix]{milnor-moore}
+\item For every odd \(j\ge3\),
+\(\dim_{\mathbb Q}(K_j(R)\otimes\mathbb Q)=r\).
+For \(j=1\), this dimension is \(r-1\): the classical
+identity \(K_1(R)=R^\times\) and
+Theorem~\ref{su-unit-theorem} give this assertion.
+The identity in degree one is the Bass--Milnor--Serre
+theorem, not an assertion about arbitrary Dedekind domains.
+\cite[III, Example 1.3.6; IV, Theorems 1.17--1.18]{weibel-kbook}
+\end{enumerate}
+
+These are classical inputs with their stated hypotheses;
+we do not reprove the general stability or rational
+homotopy theorems here.  In particular, no quantitative
+comparison of integral \(K\)-groups with homology is being
+assumed in this section.
+
+For a positive integer \(d\), let
+\[
+ \psi_{d,N}:\operatorname{GL}_N(R)
+       \longrightarrow\operatorname{GL}_{dN}(R),\qquad
+       g\longmapsto\operatorname{diag}(g,\ldots,g).
+\]
+Its stable homology map will be denoted by \(\Psi_d\).
+The choice of an ordering of the blocks changes the map
+by conjugation and therefore does not change homology.
+On \(X\), this is the map which adds a point to itself
+\(d\) times under the direct-sum multiplication.
+
+\begin{lemma}\label{sb-weight}
+Let \(m\ge1\).  In rational stable homology, the image of
+\[
+       \prod_{j=2}^{m}(\Psi_d-d^j)
+           :H_m(X,\mathbb Q)\longrightarrow H_m(X,\mathbb Q)
+ \tag{SB2}
+\]
+is contained in the space of primitive elements of degree
+\(m\).  An empty product, when \(m=1\), means the identity.
+\end{lemma}
+\begin{proof}
+If \(v\) is primitive, its iterated diagonal is the sum
+of the \(d\) tensors having \(v\) in one position and
+\(1\) elsewhere.  Multiplication therefore gives
+\(\Psi_d(v)=dv\).  Homotopy commutativity implies that
+the repeated-sum map preserves the homology product:
+equivalently, the product and the diagonal in the graded
+commutative homology algebra show that
+\(\Psi_d(vw)=\Psi_d(v)\Psi_d(w)\).
+Consequently a product of \(s\) positive-degree
+primitive elements has eigenvalue \(d^s\).
+
+Primitive generation expresses every element in degree
+\(m\) as a sum of such products.  Every factor has
+degree at least one, so \(1\le s\le m\).
+If \(s\ge2\), the factor \(\Psi_d-d^s\) in (SB2)
+annihilates the product.  The remaining terms are single
+primitive elements of degree \(m\).  This also proves
+the statement for \(d=1\); no division by an eigenvalue
+difference has been used.
+\end{proof}
+
+We now keep track of the finite matrix sizes.  Fix
+\(d\ge1\), \(N\ge1\), and an integral homology class
+\(x\in H_m(\operatorname{GL}_N(R),\mathbb Z)\).
+Let \(N_t=d^tN\), let \(s_t\) be the usual inclusion
+from size \(N_t\) to size \(N_{t+1}\), and define
+\[
+ \begin{split}
+ Z_{d,0}(x)&=x,\\
+ Z_{d,t+1}(x)&=(\psi_{d,N_t})_*Z_{d,t}(x)
+                         -d^{t+2}(s_t)_*Z_{d,t}(x).
+ \end{split}
+ \tag{SB3}
+\]
+These are homomorphisms of integral homology groups.
+They are exactly the repeated direct-sum differences
+used by the source.
+
+\begin{proposition}\label{sb-odd-rank}
+If \(m\) is positive and odd and \(N\ge2m+4\), then
+\[
+ \operatorname{rank}_{\mathbb Z}
+ \operatorname{im}\bigl(Z_{d,m-1}:
+ H_m(\operatorname{GL}_N(R),\mathbb Z)
+ \longrightarrow H_m(\operatorname{GL}_{d^{m-1}N}(R),\mathbb Z)
+                         \bigr)\le r .
+ \tag{SB4}
+\]
+The extra hypothesis \(m<r\) in the submitted assertion
+is not needed for this rank estimate.
+\end{proposition}
+\begin{proof}
+All sizes in (SB3) are at least \(N\), since \(d\ge1\).
+They lie in the integral stable range.  After these
+identifications and tensoring with \(\mathbb Q\),
+\(Z_{d,m-1}\) becomes (SB2).
+Its image is primitive by Lemma~\ref{sb-weight}.
+The dimension of that space is \(r\) for odd
+\(m\ge3\), and \(r-1\) for \(m=1\), by the classical
+inputs above.  Tensoring with \(\mathbb Q\) is exact,
+so it computes the rank of the integral image.
+This proves (SB4).
+\end{proof}
+
+\subsection{Two elementary counting lemmas}
+
+\begin{lemma}\label{sb-finite-rank}
+Let \(H\) be an abelian group with finite torsion subgroup,
+let \(W\subset H\) have rank at most \(r\), and let
+\(f:H\to B\) be a homomorphism to an abelian group
+annihilated by a positive integer \(q\).  Every finite
+subset of \(f(W)\) has cardinality at most
+\[
+                     q^r\,\#H_{\rm tors}.
+ \tag{SB5}
+\]
+In particular, \(f(W)\) is finite with that bound.
+Finite generation of \(H\) is not required.
+\end{lemma}
+\begin{proof}
+Lift a given finite subset to finitely many elements of
+\(W\), and let \(W'\) be the subgroup they generate.
+The structure theorem for finitely generated abelian
+groups gives
+\(W'\simeq\mathbb Z^s\oplus T'\), with
+\(s\le r\) and \(T'\subset H_{\rm tors}\).
+The image of the free part has at most \(q^s\) elements,
+and the image of \(T'\) has at most \(\#H_{\rm tors}\)
+elements.  This proves (SB5).
+If \(f(W)\) had more elements, choosing a finite subset
+of one greater than the bound would contradict (SB5).
+\end{proof}
+
+\begin{lemma}\label{sb-coefficients}
+For every group \(G\), positive integer \(q\), and
+\(m\ge1\), there is a natural exact sequence
+\[
+ 0\longrightarrow H_m(G,\mathbb Z)/qH_m(G,\mathbb Z)
+ \longrightarrow H_m(G,\mathbb Z/q)
+ \xrightarrow{\ \beta\ }H_{m-1}(G,\mathbb Z)[q]
+ \longrightarrow0.
+ \tag{SB6}
+\]
+Here \(H[q]=\{h\in H:qh=0\}\).
+\end{lemma}
+\begin{proof}
+Use the integral bar complex \(C_\bullet\), whose groups
+are free abelian, and its quotient \(C_\bullet/qC_\bullet\).
+Lift a cycle \(\overline z\) of degree \(m\) to
+\(z\in C_m\).  There is \(w\in C_{m-1}\) with
+\(\partial z=qw\).  Since \(C_{m-2}\) has no
+\(q\)-torsion, \(\partial w=0\); for \(m=1\)
+use the ordinary complex with \(\partial:C_0\to0\).
+Set \(\beta[\overline z]=[w]\).
+Changing the lift by \(qu\) changes \(w\) by
+\(\partial u\), and changing the cycle by a boundary
+has the same harmless effect.  Thus \(\beta\) is a
+well-defined homomorphism.  Its value is killed by
+\(q\), because \(qw=\partial z\).
+
+If \([w]=0\), write \(w=\partial u\).  Then
+\(z-qu\) is an integral cycle reducing to
+\(\overline z\), proving exactness in the middle.
+Conversely every integral cycle has zero image under
+\(\beta\).  If an integral cycle \(z\) reduces to a
+boundary, write \(z=\partial v+qu\).  Applying
+\(\partial\) and using the freeness of the chain groups
+gives \(\partial u=0\).  Therefore the kernel of
+reduction on integral homology is exactly \(qH_m\).
+Finally, if \([w]\in H_{m-1}[q]\), choose a cycle
+\(w\) and a chain \(z\) with \(qw=\partial z\).
+The reduction of \(z\) is a cycle mapping to \([w]\).
+This proves surjectivity and every term of (SB6).
+\end{proof}
+
+\subsection{The finite-image estimate}
+
+Fix a prime \(\ell\), an integer \(\nu\ge0\), and
+\(A=\mathbb Z/\ell^\nu\mathbb Z\).  Let \(B\) be
+an \(A\)-module, and suppose for each \(N\ge0\) that
+\[
+ \Phi_N:C_m(\operatorname{GL}_N(R);A)\longrightarrow B
+\]
+is \(A\)-linear and vanishes on boundaries.
+Assume that, on cycles, it is unchanged by stabilization
+and satisfies
+\[
+     \Phi_{dN}((\psi_{d,N})_*y)=d\Phi_N(y)
+                         \qquad(d\ge0).
+ \tag{SB7}
+\]
+These are the precise properties required of the
+family; they are proved for the finite-field functionals
+in Section~\ref{sf-section}.
+
+\begin{theorem}\label{sb-upper}
+Let \(m\ge1\) be odd and \(N_0=2m+4\).
+Every finite subset \(S\subset B\) whose elements have
+the form
+\[
+                \ell^{m-1}\Phi_N(y),
+       \qquad \partial y=0,
+ \tag{SB8}
+\]
+where \(N\) and \(y\) may depend on the element,
+satisfies
+\[
+ \#S\le (\ell^\nu)^r\,
+       t_L(N_0,m)\,t_L(N_0,m-1).
+ \tag{SB9}
+\]
+As in Proposition~\ref{sb-odd-rank}, the extra
+source hypothesis \(m<r\) can be omitted here.
+\end{theorem}
+\begin{proof}
+If \(\nu=0\), then \(A\) is the zero ring and every
+unital \(A\)-module is zero.  The assertion follows.
+Suppose henceforth \(\nu\ge1\), and write
+\(q=\ell^\nu\).
+There are finitely many elements of \(S\), so choose
+one size \(N\ge N_0\) larger than all their given sizes.
+Stabilization expresses them all in the form (SB8)
+at this common size.
+
+For each size, reduction of integral cycles and then
+\(\Phi\) defines a homomorphism
+\[
+ \phi_N:H_m(\operatorname{GL}_N(R),\mathbb Z)
+                        \longrightarrow B.
+\]
+It is well-defined because integral boundaries reduce
+to boundaries.  It inherits stabilization and (SB7).
+Applying it to (SB3), with \(d=\ell\), gives
+\[
+ \phi_{\ell^{m-1}N}(Z_{\ell,m-1}(x))
+    =\prod_{j=2}^{m}(\ell-\ell^j)\phi_N(x)
+    =\ell^{m-1}u\phi_N(x),
+ \quad
+ u=\prod_{j=2}^{m}(1-\ell^{j-1}).
+ \tag{SB10}
+\]
+Each factor of \(u\) is congruent to \(1\) modulo
+\(\ell\), so \(u\) is invertible modulo \(q\).
+Choose \(v\in\mathbb Z\) with \(uv\equiv1\pmod q\).
+It follows from (SB10) that every
+\(\ell^{m-1}\phi_N(x)\) belongs to
+\[
+ \phi_{\ell^{m-1}N}
+       (\operatorname{im}Z_{\ell,m-1}),
+\]
+by replacing \(x\) in the right-hand side by \(vx\).
+Proposition~\ref{sb-odd-rank} bounds the rank of this
+image by \(r\).  Integral stability identifies the
+torsion subgroup at size \(\ell^{m-1}N\) with the one
+at size \(N_0\).  Lemma~\ref{sb-finite-rank} therefore
+bounds the image of all integral cycles, after
+multiplication by \(\ell^{m-1}\), by
+\(q^r t_L(N_0,m)\).
+
+It remains to account for cycles modulo \(q\) which
+need not lift to integral cycles.  Apply (SB6) to
+\(G=\operatorname{GL}_N(R)\).
+Its right-hand group is a subgroup of the integral
+torsion in degree \(m-1\), of order at most
+\(t_L(N_0,m-1)\) by stability.
+The homomorphism induced by
+\(\ell^{m-1}\Phi_N\) maps each coset of the kernel
+of \(\beta\) to a translate of the image on that
+kernel.  The preceding paragraph bounds that image
+by \(q^r t_L(N_0,m)\), and there are at most
+\(t_L(N_0,m-1)\) such cosets.  Multiplication of the
+two bounds gives (SB9).
+\end{proof}
+
+The factor involving degree \(m-1\) is necessary in
+this argument: it measures the failure of a cycle
+modulo \(q\) to lift to an integral cycle.
+Likewise, the repeated direct-sum differences in
+(SB3) are essential to isolate the primitive part.
+For example, take \(L=\mathbb Q(\zeta_{13})\), so
+\(r=6\).  Its stable rational homology in degree three
+has dimension \(6+\binom{5}{3}=16\), whereas (SB4)
+bounds the rank after the two differences by \(6\).
+Indeed the primitive degree-one space has dimension
+\(5\), the degree-three space has dimension \(6\),
+and the rational homology algebra is the graded
+symmetric algebra on its primitives by the same
+classical Hopf-algebra theorem.  There are no
+degree-two primitives, by Borel's rank theorem.
+Thus the extra ten classes are the triple products
+in degree one; the factor \(\Psi_d-d^3\) removes them.
+This example refutes the unfiltered rank statement,
+not the statement used by the submitted proof.
+
+No counterexample satisfying the actual hypotheses of
+\(\mathrm{BOdd}\) or \(\mathrm{SUpper}\) was found.
+The arguments above prove their mathematical statements
+using the explicitly stated classical inputs.
+
+

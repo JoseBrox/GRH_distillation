@@ -1,0 +1,440 @@
+\section{Weighted integrability on the unipotent group}
+\label{ju-section}
+
+We now pass from the coordinate estimates of
+Section~\ref{jk-section} to the unipotent integral that occurs in
+the Jacquet majorant.  We prove the required coordinate identities,
+including their Jacobians, and the complete induction.
+The negative norm of the vector defining the character is used at
+a specific point: it prevents the coefficient needed by
+Theorem~\ref{jk-oscillatory} from vanishing in the last step.
+
+\subsection{The Hermitian spaces, flags, and unipotent groups}
+
+Fix \(k\geq1\).  Let \(V_0=\mathbb C^{k+1}\), with its usual
+Euclidean norm and Hermitian form
+\[
+ h_0(v,w)=\sum_{j=1}^{k}v_j\overline{w_j}
+                         -v_-\overline{w_-}.
+\]
+All Hermitian forms here are linear in the first variable.
+Inductively set
+\[
+ V_r=\mathbb Ce_0\oplus V_{r-1}\oplus\mathbb Cf_0,\qquad
+ h_r(\alpha e_0+v+\beta f_0,\alpha'e_0+w+\beta'f_0)
+       =\alpha\overline{\beta'}+\beta\overline{\alpha'}
+                                      +h_{r-1}(v,w).
+\]
+The three summands are Euclidean orthogonal, and \(e_0,f_0\)
+have Euclidean norm one.  Relabel the vectors of the smaller
+space as \(e_1,\ldots,e_{r-1}\), \(f_1,\ldots,f_{r-1}\).
+Thus \(h_r(e_i,f_j)=\delta_{ij}\).
+Write \(h_r(v,w)=w^*H_rv\); then \(H_r^*=H_r\) and \(H_r^2=1\).
+Let
+\[
+ G_r=U(V_r,h_r),\qquad K_r=G_r\cap U(V_r)
+\]
+where the second unitary group uses the Euclidean norm.
+Every element of \(K_r\) commutes with \(H_r\).
+The subgroup \(N_r\) consists of the elements \(n\in G_r\) with
+\[
+ ne_j-e_j\in\operatorname{span}(e_0,\ldots,e_{j-1})
+                 \quad(0\leq j<r),\qquad
+ nw-w\in\operatorname{span}(e_0,\ldots,e_{r-1})
+                 \quad(w\in V_0).
+\]
+In particular \(N_0=\{1\}\).
+
+Let \(u_1\) denote the first positive unit vector in \(V_0\),
+and put
+\[
+ \varepsilon=(u_1+u_-)/\sqrt2,\qquad
+ (\phi_0,\ldots,\phi_r)=(f_0,\ldots,f_{r-1},\varepsilon),
+ \qquad \phi'_j=H_r\phi_j .
+\]
+The vectors \(\phi_j,\phi'_j\), together with
+\(u_2,\ldots,u_k\), form a Euclidean orthonormal basis.
+Their Hermitian products are
+\[
+ h_r(\phi_i,\phi_j)=h_r(\phi'_i,\phi'_j)=0,\qquad
+ h_r(\phi_i,\phi'_j)=\delta_{ij}.
+\]
+For \(g\in G_r\), define
+\[
+ \Delta_l(g)=
+       \|g\phi_0\wedge\cdots\wedge g\phi_l\|>0
+                         \quad(0\leq l\leq r),
+ \qquad
+ \Xi_s(g)=\prod_{l=0}^{r}\Delta_l(g)^{-s_l}.
+\]
+The exterior norm is the Euclidean one: its square is the
+determinant of the Gram matrix.
+The critical exponents are
+\[
+ s_l^0=\begin{cases}2&l<r,\\k&l=r.\end{cases}
+\]
+
+\begin{lemma}\label{ju-heisenberg}
+For \(r\geq1\), let \(W=V_{r-1}\) and \(J=H_{r-1}\).
+Set
+\[
+ n(v,t)=
+ \begin{pmatrix}
+ 1&-v^*J&it-\tfrac12 h_{r-1}(v,v)\\
+ 0&I&v\\0&0&1
+ \end{pmatrix},\qquad
+ \iota(m)=\operatorname{diag}(1,m,1).
+\]
+Every element of \(N_r\) has a unique expression
+\(n(v,t)\iota(m)\), with \(v\in W\), \(t\in\mathbb R\),
+and \(m\in N_{r-1}\).  These are global smooth coordinates.
+There is a Haar measure on \(N_r\) which in these coordinates is
+\(dv\,dt\,dm\), where \(dm\) is the recursively chosen Haar
+measure on \(N_{r-1}\), starting with mass one on \(N_0\).
+\end{lemma}
+
+\begin{proof}
+The matrix \(n(v,t)\) preserves the Hermitian form by direct
+multiplication.  It satisfies the defining flag conditions.
+An element \(g\in N_r\) fixes \(e_0\).  Since it preserves the
+form, its last row is \((0,0,1)\); consequently
+\[
+ g=\begin{pmatrix}1&\alpha&\beta\\0&m&v\\0&0&1\end{pmatrix}.
+\]
+Pairing its middle columns with each other gives \(m^*Jm=J\).
+Pairing them with its last column gives
+\(\alpha=-v^*Jm\), and the norm of the last column gives
+\(2\operatorname{Re}\beta=-h_{r-1}(v,v)\).
+The flag conditions on the middle block are exactly those of
+\(N_{r-1}\).  Thus \(t=\operatorname{Im}\beta\) gives the
+claimed factorization, its uniqueness, and its smooth inverse.
+
+Multiplication of the displayed matrices gives
+\[
+ n(v,t)n(v',t')=
+ n(v+v',\,t+t'-\operatorname{Im}h_{r-1}(v',v)),\qquad
+ \iota(m)n(v,t)\iota(m)^{-1}=n(mv,t).
+\]
+Left and right translations in the first group have real
+Jacobian one.  Also \(|\det_{\mathbb C}m|=1\), by taking
+determinants in \(m^*Jm=J\), so the real Jacobian of
+\((v,t)\mapsto(mv,t)\) is one.
+It follows directly from these two formulas and induction that
+\(dv\,dt\,dm\) is invariant under both left and right translations.
+It is positive on nonempty open sets and finite on compact sets,
+so it is a Haar measure.
+\end{proof}
+
+\subsection{The exact exterior norm formula}
+
+\begin{lemma}\label{ju-coordinate-formula}
+On \(W=V_{r-1}\), write
+\[
+ v=\sum_{j=0}^{r-1}(a_j\phi'_j+b_j\phi_j)
+                        +\sum_{i=2}^{k}z_i u_i,\qquad
+ \widetilde t=t+\operatorname{Im}\sum_jb_j\overline{a_j}.
+\]
+The map \((v,t)\mapsto(a,b,z,\widetilde t)\) preserves
+Lebesgue measure.  With \(p=r\), \(m=k-1\), and the
+quantities of \eqref{jk-coordinates}, one has
+\begin{equation}\label{ju-formula}
+ \Delta_l(n(v,t))=d_l(a,b,z,\widetilde t)
+                                      \quad(0\leq l\leq r).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The change from \(v\) to \((a,b,z)\) is unitary for the
+Euclidean norm.  The subsequent change in \(t\) is a translation
+depending on those coordinates, and hence has Jacobian one.
+As
+\[
+ h_{r-1}(v,v)=
+         2\operatorname{Re}\sum_jb_j\overline{a_j}+\|z\|^2,
+\]
+the upper right entry of \(n(v,t)\) is precisely \(B_0\).
+Its relevant column vectors are
+\[
+ n(v,t)f_0=B_0e_0+v+f_0,\qquad
+ n(v,t)\phi_j=\phi_j-\overline{a_j}e_0.
+\]
+Here the \(\phi_j\) on the right belong to \(W\), and correspond
+to indices \(j+1\) in \(V_r\).
+In the wedge with \(l\) such middle columns, subtract
+\(\sum_{j<l}b_jn(v,t)\phi_j\) from the first column.
+The first column becomes
+\[
+ y=B_le_0+f_0+\sum_j a_j\phi'_j+
+                   \sum_{j\geq l}b_j\phi_j+\sum_i z_i u_i.
+\]
+The remaining columns are \(u_j=\phi_j-\overline{a_j}e_0\),
+\(j<l\).
+Let \(a_{<l}=(a_0,\ldots,a_{l-1})^T\).
+Their Gram matrix, with \(y\) first, is
+\[
+ \begin{pmatrix}
+ R_l+|B_l|^2&-\overline{B_l}\,a_{<l}^*\\
+ -B_l a_{<l}&I+a_{<l}a_{<l}^*
+ \end{pmatrix}.
+\]
+The lower block has determinant \(L_l\) and inverse
+\(I-a_{<l}a_{<l}^*/L_l\).
+The inverse formula follows by multiplication; the determinant
+follows by using a unitary basis whose first vector is proportional
+to \(a_{<l}\), or immediately when this vector is zero.
+Taking the Schur complement now gives
+\[
+ L_l\left(R_l+|B_l|^2
+       -|B_l|^2\frac{\|a_{<l}\|^2}{L_l}\right)
+                                  =L_lR_l+|B_l|^2.
+\]
+For \(l=0\) the same identity uses the empty lower block.
+This proves \eqref{ju-formula}.
+\end{proof}
+
+\subsection{Orthogonalization of an isotropic flag}
+
+\begin{lemma}\label{ju-isotropic-qr}
+Let \(Y_0,\ldots,Y_r\in V_r\) be linearly independent and
+span a totally isotropic subspace.  There exist
+\(\kappa\in K_r\) and an upper triangular matrix
+\(\tau=(\tau_{ij})_{0\leq i,j\leq r}\), with positive real
+diagonal entries, such that
+\[
+ Y_j=\sum_{i\leq j}\tau_{ij}\kappa\phi_i,\qquad
+ \|Y_0\wedge\cdots\wedge Y_l\|
+                            =\prod_{j=0}^{l}\tau_{jj}.
+\]
+\end{lemma}
+
+\begin{proof}
+Apply Euclidean Gram--Schmidt to the \(Y_j\).
+It gives Euclidean orthonormal vectors \(q_j\) in their span
+and the indicated upper triangular coefficients with positive
+diagonal.  Their span is still totally isotropic.
+Let \(V_r=V_+\oplus V_-\) be the orthogonal decomposition
+into the eigenspaces of \(H_r\), and let \(P_\pm\) be the
+corresponding projections.  The two identities
+\[
+ \langle q_i,q_j\rangle=\delta_{ij},\qquad h_r(q_j,q_i)=0
+\]
+imply
+\[
+ \langle P_+q_i,P_+q_j\rangle
+   =\langle P_-q_i,P_-q_j\rangle=\delta_{ij}/2.
+\]
+The same is true for the \(\phi_j\).
+There are \(r+1=\dim V_-\) negative projected vectors,
+and \(\dim V_+=k+r\geq r+1\).
+Extend the positive projected frames to orthonormal bases;
+the negative projected frames are already bases.
+The two resulting unitary changes of basis give
+\(\kappa=\kappa_+\oplus\kappa_-\in K_r\) with
+\(\kappa\phi_j=q_j\).
+Taking the wedge of the first \(l+1\) triangular expansions
+proves the norm formula.
+Since \(H_r\in K_r\) interchanges \(\phi_j\) and \(\phi'_j\),
+replacing \(\kappa\) by \(\kappa H_r\) gives the identical
+assertion with the primed reference frame, exactly as in the
+source's assertion \(\mathrm{IW}\).
+\end{proof}
+
+\begin{lemma}\label{ju-levi-factor}
+For \(m\in G_{r-1}\), one can choose
+\(\kappa\in K_{r-1}\) such that
+\[
+ m\phi_0=\Delta_0(m)\kappa\phi_0 .
+\]
+For that choice, putting \(v'=\kappa^{-1}v\), one has
+\begin{align}
+ \Delta_0(n(v,t)\iota(m))&=\Delta_0(n(v',t)),\nonumber\\
+ \Delta_{j+1}(n(v,t)\iota(m))
+     &=\Delta_j(m)\Delta_{j+1}(n(v',t))
+                                    \quad(0\leq j<r).
+ \label{ju-levi-norms}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Apply Lemma~\ref{ju-isotropic-qr} on \(W\) to \(m\phi_j\).
+Conjugation gives
+\(n(v,t)\iota(\kappa)=\iota(\kappa)n(\kappa^{-1}v,t)\).
+The first column \(f_0\) is fixed by \(\iota(m)\).
+In the first \(j+2\) columns of the wedge, the triangular
+expansion of the other \(j+1\) columns therefore contributes
+the factor \(\prod_{i\leq j}\tau_{ii}=\Delta_j(m)\).
+The exterior action of \(\iota(\kappa)\) is Euclidean unitary,
+so it does not change the norm.
+The assertion for the first column follows by the same
+unitary invariance.  Finally
+\(\tau_{00}=\|m\phi_0\|=\Delta_0(m)\).
+\end{proof}
+
+\subsection{The character and the nonvanishing coefficient}
+
+Fix a vector \(z\in V_0\) with \(h_0(z,z)<0\).
+For \(r\geq1\), put
+\[
+ \ell_z(g)=\sum_{a=0}^{r-2}(ge_{a+1})_{e_a}
+                                  +(gz)_{e_{r-1}},
+ \qquad \lambda_z(g)=2\operatorname{Im}\ell_z(g).
+\]
+For \(r=0\), put \(\ell_z=\lambda_z=0\).
+This is the character normalization in the source.
+The flag conditions show that each consecutive entry, and the
+last coefficient involving \(z\), is additive under multiplication
+in \(N_r\): in multiplying consecutive entries, all possible
+intermediate terms lie strictly earlier in the flag.
+For the last coefficient use
+\(n'z-z\in\operatorname{span}(e_0,\ldots,e_{r-1})\)
+and the fact that the coefficient of \(e_{r-1}\) in \(ne_j\)
+is \(\mathbf1_{\{j=r-1\}}\).
+Thus \(\lambda_z\) is additive on \(N_r\), and
+\(\exp(i\lambda_z)\) is a unitary character.
+For \(W=V_{r-1}\), let \(f_z=e_0\) if \(r-1\geq1\),
+and \(f_z=z\) if \(r-1=0\).
+Inspection of the first row and the middle block gives
+\begin{equation}\label{ju-lambda}
+ \lambda_z(n(v,t)\iota(m))
+       =2\operatorname{Im}h_{r-1}(v,mf_z)+\lambda_z(m).
+\end{equation}
+Indeed the first summand of \(\ell_z\) is
+\(-h_{r-1}(mf_z,v)\), and its remaining summands are
+exactly \(\ell_z(m)\).
+
+The fixed number
+\[
+ c_z=h_{r-1}(\phi_0,f_z)
+\]
+is nonzero.  If \(r-1\geq1\), it equals
+\(h_{r-1}(f_0,e_0)=1\).
+If \(r-1=0\), it equals \(h_0(\varepsilon,z)\).
+Were this zero, the first positive coordinate of \(z\)
+would equal its negative coordinate; consequently
+\(h_0(z,z)=\sum_{i=2}^{k}|z_i|^2\geq0\), a contradiction.
+
+\begin{proposition}\label{ju-inner}
+Let \(0<\delta\leq1/2\), \(0<\gamma\leq\delta/8\),
+and \(s_l=s_l^0-e_l\), where \(e_l>0\) and
+\(e_0+2\sum_{l=1}^{r}e_l<\gamma/2\).
+Define
+\[
+ s'_j=s_{j+1}-\gamma\,\mathbf1_{\{j=0\}}
+                                      \quad(0\leq j<r).
+\]
+There is a constant independent of \(m\in G_{r-1}\) such that
+\begin{align}
+ &\int_{W\times\mathbb R}
+  \Xi_s(n(v,t)\iota(m))
+  (1+|\lambda_z(n(v,t)\iota(m))|)^{-\delta}\,dv\,dt
+  \nonumber\\
+ &\hspace{15mm}\leq
+ C|c_z|^{-\gamma}\Xi_{s'}(m)
+                            (1+|\lambda_z(m)|)^{-\delta/4}.
+ \label{ju-inner-bound}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Choose \(\kappa\) as in Lemma~\ref{ju-levi-factor}, set
+\(v'=\kappa^{-1}v\), and put \(w=\kappa^{-1}mf_z\).
+This change of variables preserves Lebesgue measure.
+By \eqref{ju-levi-norms}, the factor independent of \(v',t\)
+is \(\prod_{j=0}^{r-1}\Delta_j(m)^{-s_{j+1}}\).
+Lemma~\ref{ju-coordinate-formula} gives the remaining
+coordinate kernel of Theorem~\ref{jk-oscillatory}, with
+\(P=r\), \(m\) there equal to \(k-1\).
+In those coordinates,
+\[
+ h_{r-1}(v',w)=
+ \sum_j a_j h_{r-1}(\phi'_j,w)
+ +\sum_j b_j h_{r-1}(\phi_j,w)
+ +\sum_i z_i h_{r-1}(u_i,w).
+\]
+Thus the coefficient denoted by \(\eta'_0\) in that theorem
+is \(h_{r-1}(\phi_0,w)\).
+Since \(m\phi_0=\Delta_0(m)\kappa\phi_0\), invariance of the
+Hermitian form gives
+\[
+ \Delta_0(m)h_{r-1}(\phi_0,w)
+            =h_{r-1}(m\phi_0,mf_z)=c_z .
+\]
+This coefficient is nonzero, and its negative \(\gamma\)-power
+is \(|c_z|^{-\gamma}\Delta_0(m)^\gamma\).
+Apply Theorem~\ref{jk-oscillatory} with \(c_0=\lambda_z(m)\)
+and use \eqref{ju-lambda}.  Combining the powers of
+\(\Delta_j(m)\) gives exactly \(\Xi_{s'}(m)\).
+No measurable choice of \(\kappa\) as a function of \(m\)
+is needed: the argument gives a bound for each fixed \(m\)
+by the displayed continuous function of \(m\).
+\end{proof}
+
+\begin{theorem}\label{ju-integrability}
+For every \(r\geq0\) and \(\delta>0\), there is
+\(\epsilon_r(\delta)>0\) such that
+\begin{equation}\label{ju-final}
+ \int_{N_r}\Xi_s(n)(1+|\lambda_z(n)|)^{-\delta}\,dn<\infty
+\end{equation}
+whenever \(0<s_l^0-s_l\leq\epsilon_r(\delta)\) for all \(l\).
+The same exponent window works for every negative norm vector
+\(z\in V_0\).  The integral is finite for every Haar measure on
+\(N_r\).
+\end{theorem}
+
+\begin{proof}
+It suffices to prove the assertion for \(0<\delta\leq1/2\),
+because increasing \(\delta\) decreases the integrand.
+Take \(\epsilon_0(\delta)=1/10\); the base group is a singleton.
+Suppose the result is known at rank \(r-1\) for exponent
+\(\delta/4\), and put
+\[
+ E=\epsilon_{r-1}(\delta/4),\qquad
+ \gamma=\min(\delta/8,E/2),\qquad
+ \epsilon_r(\delta)=\min\bigl(E/2,\gamma/(4r+4)\bigr).
+\]
+If \(0<e_l\leq\epsilon_r(\delta)\), then
+\[
+ e_0+2\sum_{l=1}^{r}e_l
+ \leq(2r+1)\frac{\gamma}{4r+4}<\gamma/2.
+\]
+The lower exponents in Proposition~\ref{ju-inner} have losses
+\[
+ s_j^0-s'_j=e_{j+1}+\gamma\mathbf1_{\{j=0\}},
+\]
+where \(s_j^0\) now refers to rank \(r-1\).
+These losses are positive and at most \(E\).
+Use the Haar coordinates of Lemma~\ref{ju-heisenberg},
+Tonelli, and \eqref{ju-inner-bound}.  The induction hypothesis
+makes the resulting integral over \(N_{r-1}\) finite.
+The constants involving \(z\) are finite since \(c_z\ne0\);
+the choice of \(\epsilon_r(\delta)\) does not depend on \(z\).
+Finally every Haar measure is a positive scalar multiple of
+the one constructed in Lemma~\ref{ju-heisenberg}, by uniqueness
+of Haar measure, so finiteness is independent of normalization.
+\end{proof}
+
+\subsection{The exact scope of the conclusion}
+
+Theorem~\ref{ju-integrability} proves the source's assertion
+\(\mathrm{BAt}(k,r,\delta)\); its proof also establishes
+\(\mathrm{FormulaF}\) and the compact orthogonalization assertion
+\(\mathrm{IW}\).
+
+These are the actual assertions in the source archive
+\cite{alpo-uniform-source}; the source trace identifies their
+definitions precisely.
+The proof uses the actual flag, character, Hermitian form,
+and critical exponents.
+The Gram determinant calculation provides a short direct
+replacement for the coordinate computations in
+\texttt{DelFormula.lean}.
+The induction retains precisely the exponent change
+\(\delta\mapsto\delta/4\) and the subtraction of \(\gamma\)
+from the first lower exponent.
+
+The group integral defining \(\mathrm{AAt}\), the separated
+matrix coefficient estimate, and the final dominated
+unfolding argument for the Jacquet pairing are additional
+steps.  They are not asserted by \eqref{ju-final} alone.
+
+

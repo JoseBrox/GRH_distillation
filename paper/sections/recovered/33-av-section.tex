@@ -1,0 +1,427 @@
+\section{Adjoint vanishing at the automorphic points}
+\label{av-section}
+
+A theorem of Thorne gives a substantial simplification of the
+complementary-parity argument. It proves the adjoint vanishing
+assertion at each of the automorphic points occurring in the
+submitted construction. We give the comparison of representations,
+polarizations, coefficient fields, and local conditions explicitly.
+The theorem is a classical input; its Taylor--Wiles proof is not
+reproduced here. The argument below does not assert that every
+deformation point is automorphic, and gives no bound for the length
+of an integral congruence module.
+
+\subsection{Local conditions and finite coefficient fields}
+
+Let $p$ be a prime, let $F$ be a number field, and let $E$ be a
+finite extension of $\mathbb Q_p$. Write $G_F$ for the absolute
+Galois group of $F$. If $W$ is a finite-dimensional continuous
+$E$-representation of $G_F$, a continuous one-cocycle is a map
+$z:G_F\longrightarrow W$ satisfying
+\[
+                    z(gh)=z(g)+g z(h).                         \tag{AV1}
+\]
+A coboundary has the form $z(g)=gX-X$ for one $X\in W$.
+The quotient of cocycles by coboundaries is $H^1(F,W)$.
+For each finite place $v$, fix a decomposition group $G_v$
+and its inertia group $I_v$. Put
+\[
+ H^1_f(F_v,W)=
+ \begin{cases}
+ \ker\bigl(H^1(G_v,W)\longrightarrow H^1(I_v,W)\bigr),&v\nmid p,\\
+ \ker\bigl(H^1(G_v,W)\longrightarrow
+       H^1(G_v,W\otimes_{\mathbb Q_p}B_{\mathrm{cris}})\bigr),&v\mid p.
+ \end{cases}                                                   \tag{AV2}
+\]
+Here $B_{\mathrm{cris}}$ is Fontaine's crystalline period ring,
+with its usual continuous local Galois action; the tensor product
+has the diagonal action. Define
+\[
+ H^1_f(F,W)=\{\alpha\in H^1(F,W):
+                    \alpha|_{G_v}\in H^1_f(F_v,W)\text{ for all finite }v\}.
+                                                               \tag{AV3}
+\]
+Changing a decomposition group by conjugation does not change
+this condition. Indeed (AV1) gives
+\[
+ z(g)=\gamma z(\gamma^{-1}g\gamma)+z(\gamma)-g z(\gamma).
+                                                               \tag{AV4}
+\]
+Thus the cocycles on conjugate local groups differ, after the
+natural conjugation isomorphism, by a coboundary. The same
+calculation applies after tensoring with $B_{\mathrm{cris}}$.
+
+We shall also use representations and cocycles with values in
+$\overline{\mathbb Q}_p$, with its $p$-adic topology. The following
+elementary point avoids an implicit assumption on their field
+of definition.
+
+\begin{lemma}\label{av-coefficients}
+Every compact subgroup of
+$\mathrm{GL}_d(\overline{\mathbb Q}_p)$ is contained in
+$\mathrm{GL}_d(E)$ for some finite extension
+$E/\mathbb Q_p$. Consequently a continuous representation of a
+profinite group and one continuous cocycle for it are defined,
+in their given bases, over a common finite extension of
+$\mathbb Q_p$.
+\end{lemma}
+\begin{proof}
+There are countably many finite subfields of
+$\overline{\mathbb Q}_p$ over $\mathbb Q_p$. Here is a useful
+justification. If $K=\mathbb Q_p(\alpha)$ is finite, approximate
+the coefficients of the monic minimal polynomial of $\alpha$
+by rational numbers, keeping the degree fixed. Hensel's lemma
+in the complete field $K$ gives a root $\beta\in K$ arbitrarily
+close to $\alpha$ of one of the resulting polynomials in
+$\mathbb Q[X]$. Take
+\[
+ |\alpha-\beta|_p<
+        \min_{\alpha'\ne\alpha}|\alpha-\alpha'|_p,
+                                                               \tag{AV5}
+\]
+where $\alpha'$ runs over the other $\mathbb Q_p$-conjugates.
+Every automorphism fixing $\beta$ preserves the $p$-adic
+absolute value, so (AV5) forces it to fix $\alpha$.
+Thus $\mathbb Q_p(\alpha)\subseteq\mathbb Q_p(\beta)$,
+and the reverse inclusion follows from $\beta\in K$.
+The degree-one case is immediate. There are only countably
+many such algebraic numbers $\beta$, which proves the assertion.
+
+Enumerate these finite subfields as $E_1,E_2,\ldots$, and let
+$H$ be the compact subgroup in question. Each
+$H_i=H\cap\mathrm{GL}_d(E_i)$ is closed in $H$, because a
+finite extension of $\mathbb Q_p$ is complete and therefore
+closed in $\overline{\mathbb Q}_p$. Their union is $H$.
+The Baire theorem for the compact metric space $H$ implies
+that some $H_i$ has nonempty interior. A subgroup with
+nonempty interior is open, so its index in $H$ is finite.
+Adjoin to $E_i$ the entries of finitely many coset
+representatives. The resulting finite extension contains
+every matrix in $H$.
+
+For the last assertion, if $R$ is the representation, the map
+\[
+       g\longmapsto
+       \begin{pmatrix}R(g)&z(g)\\0&1\end{pmatrix}               \tag{AV6}
+\]
+is a continuous representation by (AV1). Its image is compact.
+Apply the first assertion to (AV6).
+\end{proof}
+
+The local conditions also descend. Suppose that $R$ and $z$
+are defined over $E$ and that a local coboundary equation has
+a solution after extending coefficients to
+$\overline{\mathbb Q}_p$. Choose an $E$-linear map
+$\lambda:\overline{\mathbb Q}_p\longrightarrow E$ with
+$\lambda(1)=1$, and apply it to the solution's coordinates.
+This gives a solution over $E$. At a place above $p$, apply
+$\lambda\otimes1$ to the solution in the algebraic tensor
+product with $B_{\mathrm{cris}}$. The coefficient action of
+the local Galois group is trivial, so this map commutes with
+the diagonal action. This proves the same assertion there.
+No topological assertion about $\lambda$ is needed: it is
+applied to a single vector giving a coboundary, not to a
+variable cocycle. Lemma~\ref{av-coefficients} and this observation
+justify the use of (AV3) for the cocycles with algebraic
+$p$-adic coefficients in the submitted source.
+
+\subsection{The polarization and its adjoint action}
+
+Let now $F$ be a CM field with maximal totally real subfield
+$F^+$. Fix a complex conjugation $c\in G_{F^+}$, so that
+$c^2=1$ and $c\notin G_F$. Let $n\ge2$, let
+$\varepsilon_p:G_{F^+}\longrightarrow\mathbb Z_p^\times$
+be the cyclotomic character, and fix an abstract field
+isomorphism $\iota:\overline{\mathbb Q}_p\simeq\mathbb C$.
+This isomorphism is not asserted to be continuous.
+
+For a representation
+$r:G_F\longrightarrow\mathrm{GL}_n(\overline{\mathbb Q}_p)$,
+write $r^c(g)=r(cgc^{-1})$. A matrix $P\in
+\mathrm{GL}_n(\overline{\mathbb Q}_p)$ gives the required
+polarization when
+\[
+           r(g)^t P r^c(g)=\varepsilon_p(g)^{1-n}P
+                         \qquad(g\in G_F).                    \tag{AV7}
+\]
+For a symmetric such $P$, the polarized adjoint representation
+$\operatorname{Ad}_P(r)$ of $G_{F^+}$ acts on
+$M_n(\overline{\mathbb Q}_p)$ by
+\[
+ \begin{aligned}
+ g\cdot X&=r(g)Xr(g)^{-1}&& (g\in G_F),\\
+ c\cdot X&=-P^{-1}X^tP.
+ \end{aligned}                                                 \tag{AV8}
+\]
+The square of the second operator is the identity. Transposing
+(AV7), or solving it for $r^c(g)$, verifies that this operator
+conjugates $\operatorname{Ad}(r(g))$ to
+$\operatorname{Ad}(r^c(g))$. These are the defining relations
+for the extension from the subgroup $G_F$ of index two.
+
+\begin{theorem}[Classical adjoint vanishing]\label{av-thorne}
+Suppose that $\pi$ is a regular algebraic cuspidal automorphic
+representation of $\mathrm{GL}_n(\mathbb A_F)$ satisfying
+$\pi^c\simeq\pi^\vee$. Let $r_{\pi,\iota}$ be its continuous
+semisimple Galois representation, in the Tate normalization.
+If
+\[
+ r_{\pi,\iota}|_{G_{F(\mu_{p^\infty})}}
+                         \quad\hbox{is irreducible},            \tag{AV9}
+\]
+then it has a symmetric polarization as in (AV7), and
+\[
+ H^1_f\bigl(F^+,\operatorname{Ad}_P(r_{\pi,\iota})\bigr)=0.
+                                                               \tag{AV10}
+\]
+This holds for every prime $p$; no condition on its residual
+representation is imposed.
+\end{theorem}
+
+The vanishing is Thorne's Theorem~6.1, specialized to the
+conjugate-self-dual case. The symmetric pairing and the
+minus sign in (AV8) are the conventions in Newton--Thorne,
+page~1920; the Frobenius normalization is fixed on page~1923.
+\cite{thorne-adjoint-2022,newton-thorne-adjoint-2023}
+In the submitted source's convention a polarized pair also
+records a character $\chi$ of $F^+$ satisfying
+$\chi_v(-1)=(-1)^n$. For the above $\pi$ take
+$\chi=\delta_{F/F^+}^n$, where $\delta_{F/F^+}$ is the
+quadratic Hecke character of the CM extension. Its pullback
+by the idele norm from $F$ is trivial, and its component at
+each real place is the sign character. Its Galois character
+restricts trivially to $G_F$. This explains both the parity
+condition and the multiplier $\varepsilon_p^{1-n}$ in (AV7).
+In odd rank one must not replace this auxiliary character by
+the trivial character in that particular convention.
+
+\begin{lemma}\label{av-pairing-unique}
+If $r$ is irreducible and $P_0,P$ both satisfy (AV7), then
+$P$ is a nonzero scalar multiple of $P_0$. Consequently the
+operator in the second line of (AV8) is independent of the
+choice of polarization.
+\end{lemma}
+\begin{proof}
+Substitution of $P=P_0T$ in (AV7) shows that $T$ commutes
+with every $r^c(g)$. An eigenspace of $T$ exists over
+$\overline{\mathbb Q}_p$, and is stable under $r^c$.
+Irreducibility forces this eigenspace to be the whole space,
+so $T$ is scalar. Invertibility makes the scalar nonzero,
+and it cancels in $P^{-1}X^tP$.
+\end{proof}
+
+Scalar twists cause no difficulty either. For a character
+$\alpha$ of $G_F$, conjugation by $\alpha(g)r(g)$ equals
+conjugation by $r(g)$. If the polarized extension uses the
+same pairing, its second operator in (AV8) is identical too.
+In particular scalar twisting changes neither the invariant
+subspaces in (AV9) nor this adjoint representation.
+
+\subsection{Comparison with the actual automorphic point}
+
+We record explicitly the elementary uniqueness principle used
+when the Galois representation is specified by Frobenius
+polynomials. If two continuous semisimple representations
+over $\overline{\mathbb Q}_p$ have equal characteristic
+polynomials at all but finitely many unramified Frobenius
+classes, they are isomorphic. Lemma~\ref{av-coefficients}
+puts both over a finite extension, and Chebotarev density
+and continuity give equality of their traces at every group
+element. To see the last algebraic implication, let $A$ be
+the finite-dimensional algebra spanned by the image on the
+direct sum of the two representation spaces. The direct
+sum is a faithful semisimple $A$-module, so the radical of
+$A$ is zero. Over an algebraically closed field, $A$ is a
+product of matrix algebras. The trace of each central
+primitive idempotent gives the multiplicity of the
+corresponding simple module, multiplied by its nonzero
+dimension. Equality of traces on group elements implies
+equality on their span, hence on these idempotents. The
+multiplicities agree, proving the assertion. This is the
+usual Brauer--Nesbitt argument, included to specify exactly
+what the Frobenius comparison supplies.
+
+Here is the quotient form needed in the source. Let
+$q:G_{F^+}\twoheadrightarrow\Gamma$ be a continuous quotient
+of profinite groups. Suppose that a quadratic character
+$\eta:\Gamma\longrightarrow\{\pm1\}$ and a continuous
+character $\epsilon:\Gamma\longrightarrow\mathbb Z_p^\times$
+satisfy
+\[
+ \ker(\eta q)=G_F,\qquad
+ \epsilon q=\varepsilon_p.
+                                                               \tag{AV11}
+\]
+Put $\Gamma_0=\ker\eta$, $c_0=q(c)$ and
+$\Gamma_1=\ker(\epsilon|_{\Gamma_0})$.
+
+\begin{proposition}\label{av-quotient}
+Let $\rho:\Gamma_0\longrightarrow
+\mathrm{GL}_n(\overline{\mathbb Q}_p)$ be continuous, and
+assume that $\rho|_{\Gamma_1}$ is irreducible. Suppose that
+$r=\rho\circ q|_{G_F}$ is attached to a regular algebraic
+conjugate-self-dual cuspidal representation as in
+Theorem~\ref{av-thorne}, by the Frobenius criterion just
+described. Let $P$ be any matrix satisfying the quotient
+version of (AV7), and let $R$ be a representation of
+$\Gamma$ satisfying
+\[
+ R(g)X=\rho(g)X\rho(g)^{-1}\quad(g\in\Gamma_0),\qquad
+ R(c_0)X=-P^{-1}X^tP.                                          \tag{AV12}
+\]
+If $z:\Gamma\longrightarrow M_n(\overline{\mathbb Q}_p)$
+is a continuous one-cocycle whose pullback along $q$
+satisfies (AV2) at every finite place of $F^+$, then there is
+one matrix $X$ such that
+\[
+                          z(g)=R(g)X-X\qquad(g\in\Gamma).
+                                                               \tag{AV13}
+\]
+\end{proposition}
+\begin{proof}
+Surjectivity of $q$ and the first equality in (AV11) give
+$q(G_F)=\Gamma_0$. The second equality then gives the exact
+identity
+\[
+          q\bigl(G_{F(\mu_{p^\infty})}\bigr)=\Gamma_1.
+                                                               \tag{AV14}
+\]
+Indeed, lift an element of $\Gamma_1$ to $G_{F^+}$;
+the first equality forces the lift into $G_F$, and the
+second forces its cyclotomic character to be one. The
+reverse inclusion follows immediately from (AV11).
+Thus the assumed irreducibility is precisely (AV9).
+
+The Frobenius criterion identifies $r$ with $r_{\pi,\iota}$.
+Pulling $P$ back gives (AV7). By
+Lemma~\ref{av-pairing-unique}, it differs by a scalar from
+the symmetric pairing of Theorem~\ref{av-thorne}. Hence
+$R\circ q$ is its polarized adjoint representation: the
+two actions agree on $G_F$ and on $c$, which together
+generate $G_{F^+}$. Notice that the proposition did not
+need a separate symmetry assumption on $P$.
+
+The representation $R$ is continuous. This follows from
+(AV12), continuity of $\rho$, and the two open cosets of
+$\Gamma_0$. By Lemma~\ref{av-coefficients} the cocycle
+and representation have a common finite coefficient field;
+the local descent argument following that lemma applies.
+Theorem~\ref{av-thorne} therefore gives
+\[
+                         z(q(\sigma))=R(q(\sigma))X-X
+                         \qquad(\sigma\in G_{F^+}).
+\]
+Surjectivity of $q$ proves (AV13).
+\end{proof}
+
+\begin{corollary}\label{av-source}
+The adjoint-vanishing assertion at the automorphic points of
+the submitted ordinary deformation construction follows from
+the classical theorem above.
+\cite{alpo-uniform-source}
+\end{corollary}
+\begin{proof}
+Use $F=L$, $F^+=L^+$, $\Gamma=G_{L^+,S'}$ and the
+natural quotient $q$. The source's level data state (AV11)
+exactly, and its selected $c_0$ is the image of a genuine
+complex conjugation. The irreducibility assumption concerns
+exactly the subgroup $\Gamma_1$. The automorphic-point
+hypothesis supplies the cuspidal representation, its regular algebraicity,
+conjugate self-duality, and the matching semisimple Galois
+representation. In the source's Frobenius convention the
+polynomial of $r(\sigma^{-1})$, for arithmetic Frobenius
+$\sigma$, has Satake roots multiplied by
+$q_v^{(n-1)/2}$. This is the same Tate normalization used
+in Theorem~\ref{av-thorne}.
+
+The specified polarization and adjoint action are precisely
+(AV7) and (AV12). The local condition says that the
+restriction of the cocycle is a coboundary on inertia away
+from $p$, and becomes one after tensoring with
+$B_{\mathrm{cris}}$ above $p$. It initially chooses one
+embedding above each place; (AV4) shows independence of
+that choice. Its local group consists of pairs of global
+and local automorphisms which agree on the chosen embedded
+algebraic closure of the number field. Projection to the
+local factor identifies it with the Galois group of the
+corresponding completion: the local automorphism has a
+unique restriction to that algebraic closure, and fixing
+the number field is equivalent, by continuity, to fixing
+its completion. Thus these are exactly (AV2).
+Proposition~\ref{av-quotient}
+therefore gives the requested global coboundary conclusion.
+All extra ordinary, weight, rank-at-most-four and local
+genericity assumptions in the source implication may be
+retained, but are unnecessary for this deduction.
+\end{proof}
+
+\subsection{The symplectic projection}
+
+For later use we also give the matrix identity which transports
+this vanishing to symplectic infinitesimal deformations.
+Let $J\in\mathrm{GL}_{2m}(E)$ satisfy $J^t=-J$, and put
+\[
+ X^*=J^{-1}X^tJ,\qquad
+ \mathfrak{sp}(J)=\{X:X^*=-X\},\qquad
+                        P_-(X)=\frac{X-X^*}{2}.               \tag{AV15}
+\]
+The symbol $P_-$ denotes a linear projection and is unrelated
+to the polarization matrix $P$ above. The coefficient field
+has characteristic zero, including when $p=2$.
+Suppose that $r:G\longrightarrow\mathrm{GSp}(J,E)$ is a
+representation and $\eta:G\longrightarrow\{\pm1\}$ is
+a character. If $A_g(X)=r(g)Xr(g)^{-1}$, then
+\[
+ R_g(X)=A_g(P_-X)+\eta(g)A_g(X-P_-X)                            \tag{AV16}
+\]
+defines a representation. To check this, the similitude
+identity gives $(A_gX)^*=A_g(X^*)$, so $P_-$ commutes
+with every $A_g$. It is idempotent, and (AV16) acts by
+$A_g$ on its image and by $\eta(g)A_g$ on its kernel.
+The group law follows on these two summands.
+
+When $\eta(c)=-1$, (AV16) gives
+\[
+ R_c(X)=-r(c)J^{-1}X^tJr(c)^{-1}
+       =-(Jr(c)^{-1})^{-1}X^t(Jr(c)^{-1}).                      \tag{AV17}
+\]
+For $g\in\ker\eta$, its action is the ordinary adjoint
+action. Thus (AV17) is exactly the polarized extension
+with pairing matrix $Jr(c)^{-1}$, whenever the latter
+representation has the automorphic polarization considered
+above.
+
+The inclusion $\mathfrak{sp}(J)\hookrightarrow M_{2m}(E)$
+and projection $P_-$ are equivariant for these actions.
+They commute with restriction to inertia and with the
+diagonal action after tensoring with $B_{\mathrm{cris}}$.
+They therefore give split maps on the Selmer groups in
+(AV3). In particular vanishing for $R$ implies vanishing
+for its symplectic summand. Explicitly, if a cocycle
+$z(g)\in\mathfrak{sp}(J)$ becomes $R_gX-X$, then
+\[
+                    z(g)=A_g(P_-X)-P_-X.                       \tag{AV18}
+\]
+This retains the primitive in the symplectic Lie algebra;
+it is stronger than merely finding a primitive in all
+matrices. The argument is the ordinary matrix calculation
+needed in the source's rank-four rigidity step.
+
+\paragraph{What remains.}
+Corollary~\ref{av-source} closes the adjoint-vanishing
+implication at the actual automorphic points. To deduce
+the remaining complementary-parity estimates, one still
+needs the arithmetic construction and automorphy of the
+deformations which encode the original rank-one Selmer
+classes, and the quantitative integral comparison with
+the relevant congruence modules. Rational vanishing does
+not bound the length of a torsion module: the modules
+$\mathbb Z_p/p^a\mathbb Z_p$ all become zero after
+tensoring with $\mathbb Q_p$, while their lengths are
+the arbitrary integers $a$. Thus neither the polynomial
+exponent nor the coefficient of the common interval
+bound $B$ can be inferred from (AV10) alone. These
+remaining steps must be checked with their original
+uniform quantifiers.
+
+

@@ -1,0 +1,470 @@
+\section{The automorphic projection and its pointwise trace}
+\label{ak-section}
+
+We supply the kernel construction required in
+Section~\ref{amb-section}.  The diagonal identity is proved
+pointwise.  Equality of measurable kernels almost everywhere
+on a product would not suffice for this purpose.
+The only additional arithmetic theorem used here is the
+classical finiteness theorem for automorphic forms of fixed
+level, compact type and infinitesimal character; its precise
+use is stated below.
+
+\subsection{A matrix coefficient gives the required projection}
+
+All Hilbert space inner products in this section are linear
+in the second variable.  Let \(G\) be a unimodular locally
+compact group, let \(\sigma\) be an irreducible unitary
+representation on a Hilbert space \(H\), and let \(w\in H\)
+have norm one.  Suppose its formal degree is \(d>0\).
+Polarization of the formal-degree identity gives
+\[
+ d\int_G\overline{\langle a,\sigma(g)b\rangle}
+                 \langle c,\sigma(g)v\rangle\,dg
+                       =\langle c,a\rangle\langle b,v\rangle .
+ \tag{AK1}
+\]
+Every integral in (AK1) is absolutely convergent by
+Cauchy--Schwarz.  Put
+\[
+ a_w(g)=\langle w,\sigma(g)w\rangle,\qquad
+                   \phi(g)=d\,\overline{a_w(g)}.
+ \tag{AK2}
+\]
+Assume \(\phi\in L^1(G)\).
+
+\begin{proposition}\label{ak-projection}
+For every strongly continuous unitary representation \(\pi\)
+on a Hilbert space \(\mathcal H\), the bounded operator
+\[
+                  P=\int_G\phi(g)\pi(g)\,dg
+\]
+is an orthogonal projection.  Moreover
+\[
+                  P\pi(x)P=a_w(x)P \qquad(x\in G).
+ \tag{AK3}
+\]
+Evaluation at \(w\) is a linear bijection
+\[
+ \operatorname{Hom}^{\rm cont}_G(H,\mathcal H)
+                       \longrightarrow\operatorname{ran}P,
+                  \qquad T\longmapsto Tw .
+ \tag{AK4}
+\]
+The intertwiner corresponding to a vector \(v\) has operator
+norm \(\|v\|\).
+\end{proposition}
+\begin{proof}
+The operator integral exists on each vector, by strong
+continuity and the bound \(\|\pi(g)v\|=\|v\|\).
+Its norm is at most \(\|\phi\|_1\).
+Unitarity gives
+\(\phi(g^{-1})=\overline{\phi(g)}\), so \(P=P^*\).
+Apply (AK1) with \(a=b=w\), \(c=\sigma(y)w\), and
+\(v=\sigma(x)w\).  The result is
+\[
+ \int_G\phi(g)\phi(x^{-1}g^{-1}y)\,dg
+                                      =a_w(x)\phi(y).
+ \tag{AK5}
+\]
+Indeed the second factor in the integrand is
+\(d\langle\sigma(y)w,\sigma(g)\sigma(x)w\rangle\).
+For \(x=1\), this proves \(\phi*\phi=\phi\).
+Integrating (AK5) in \(\pi\), using Fubini for the
+\(L^1\) functions, proves both \(P^2=P\) and (AK3).
+
+If \(v\in\operatorname{ran}P\) has norm one, (AK3) gives
+\(\langle v,\pi(g)v\rangle=a_w(g)\).  Therefore the map
+\[
+       \sum_i c_i\sigma(g_i)w\longmapsto
+                          \sum_i c_i\pi(g_i)v
+\]
+preserves the squared norm: expand it as a finite sum
+of the coefficients at \(g_i^{-1}g_j\).
+It is well defined and extends to an isometry \(T_v\)
+on \(H\), since the orbit of the nonzero vector \(w\)
+is dense by irreducibility.  The same formula proves
+equivariance.  Scaling treats every \(v\), including zero.
+Conversely, any continuous intertwiner satisfies
+\(P(Tw)=T\sigma(\phi)w=Tw\), by (AK1).
+Density of the orbit of \(w\) proves uniqueness.
+The isometry construction gives the asserted operator norm.
+\end{proof}
+
+We apply this to the product of the archimedean
+representations in Section~\ref{amb-section}.
+Write \(d_\infty=\prod_vd_v\) and
+\(w=\bigotimes_v w_v\).  The finite tensor product has
+formal degree \(d_\infty\): multiply (AK1) for elementary
+tensors and use their density.  Let \(E_f=R(e)\) on
+\(L^2(\mathcal X)\).  The finite convolution identities
+in \eqref{amb-idempotent} show that \(E_f\) is an
+orthogonal projection.  It commutes with every
+archimedean right translation.  Hence
+\[
+ Q=E_fP=R(\Phi),\qquad
+ \Phi(g_\infty,g_f)=d_\infty
+       \overline{\langle w,\sigma(g_\infty)w\rangle}\,e(g_f)
+ \tag{AK6}
+\]
+is also an orthogonal projection.  Formula (AK4) restricts
+to a linear bijection between its image and the intertwiner
+space in \eqref{amb-D-definition}: the condition on an
+intertwiner is \(E_fT=T\).  Thus the rank of \(Q\), once
+proved finite, is exactly the required \(D\).
+
+\subsection{Two-point counting and convergence of the series}
+
+Retain \(n,f,q,h\) and \(\tau_x\) from
+Section~\ref{amb-section}, with \(n\ge3\) and \(q\le n/2\),
+as in its large-\(n\) application.  We first record two extensions
+of its lattice argument.
+
+\begin{lemma}\label{ak-count}
+If \(T:\Lambda_y\to\Lambda_x\) is a nonzero
+\(\mathcal O_E\)-linear map, then
+\[
+              \left(\prod_v\|T_v\|_{\rm op}\right)^{1/f}
+                                      \ge\lambda_x\lambda_y.
+ \tag{AK7}
+\]
+Consequently the number of rational \(\gamma\) for which
+\((x^{-1}\gamma y)_f\in K_f\) and
+\(t((x^{-1}\gamma y)_v)\le r_v\), with all \(r_v\ge0\),
+is at most
+\[
+ \left(\frac{3\sqrt n}{\tau_x\tau_y}\right)^{2n^2f}
+                               \exp\left(2n^2\sum_v r_v\right).
+ \tag{AK8}
+\]
+The function \(x\mapsto\tau_x\) is positive and continuous.
+\end{lemma}
+\begin{proof}
+In the proof of Lemma~\ref{amb-map-separation}, use
+the quotient of \(\Lambda_y\) by the kernel, and the
+image in \(\Lambda_x\).  The quotient size is at most
+\(\lambda_y^{-1}\), and the image size is at least
+\(\lambda_x\).  The same covolume inequality proves (AK7).
+The difference of two rational matrices counted in (AK8)
+is such a map.  Lemma~\ref{amb-packing}, in the
+\(2n^2\)-dimensional real matrix spaces, proves (AK8)
+exactly as it proved \eqref{amb-ball-bound}.
+
+The finite point lattice is locally constant modulo \(K_f\).
+At infinity, a change of positive metric by maps whose
+norms and inverse norms are at most \(e^{r_v}\)
+changes every sublattice size by a factor between
+\(e^{-\sum_vr_v/f}\) and \(e^{\sum_vr_v/f}\).
+Taking infima preserves these bounds.  Taking the minimum
+with \(1/2\) preserves them as well.  Since the maps tend
+to the identity when the point tends to a fixed point,
+these inequalities prove continuity.  Positivity was proved
+in Lemma~\ref{amb-size-duality}.
+\end{proof}
+
+For \(q>0\), assume
+\[
+                         H=\frac{h}{8\sqrt{2q}}>2n^2.
+ \tag{AK9}
+\]
+This is much weaker than \eqref{amb-parameters}.
+The proved compact-type bound implies, at each place,
+\[
+ \bigl|\langle w_v,\sigma_v(g)w_v\rangle\bigr|
+ \le \exp\!\left(-\frac h8
+                \min\{t(g)^2,t(g)/\sqrt{2q}\}\right)
+                         \le e^H e^{-Ht(g)}.
+ \tag{AK10}
+\]
+For \(t\le1\), the last right side is at least one;
+for \(t\ge1\), the minimum in the exponent is
+\(t/\sqrt{2q}\).  This proves the second inequality.
+
+The coefficient is integrable.  Here is the growth
+calculation needed to justify that assertion.  In the
+Cartan coordinates \(a_1\ge\cdots\ge a_q\ge0\) on
+\(U(n-q,q)\), one has \(t^2=2\sum_i a_i^2\).
+The positive restricted roots have multiplicities
+\[
+ e_i\pm e_j:2,\qquad e_i:2(n-2q),\qquad 2e_i:1.
+\]
+The Jacobian of the polar map, up to a fixed positive
+constant depending on the Haar normalization, is
+the product of \(\sinh(\alpha(a))^{m_\alpha}\).
+This follows by differentiating the polar map on each
+restricted-root subspace: its two opposite directions
+give the factor \(\sinh(\alpha(a))\).
+Bounding each such factor by its exponential gives
+\[
+ J(a)\le C\exp\left(2\sum_i(n-2i+1)a_i\right)
+                                \le C e^{\sqrt2 n\sqrt q\,t}.
+\]
+Since \(q\le n\), condition (AK9) implies
+\(H>\sqrt2 n\sqrt q\).  Integrating (AK10) over the
+positive chamber, and then over the two compact factors,
+is finite; the remaining radial volume is at most a
+constant times \(t^{q-1}\,dt\).  When \(q=0\) the
+archimedean group is compact, so integrability is immediate.
+The finite function \(e\) is compactly supported.
+Thus \(\Phi\in L^1(G_\infty\times G_f)\), as required
+for (AK6).
+
+\begin{theorem}\label{ak-kernel}
+Under (AK9), or in the compact case \(q=0\), the series
+\[
+                    K(x,y)=\sum_{\gamma\in\Gamma}
+                                        \Phi(x^{-1}\gamma y)
+ \tag{AK11}
+\]
+converges absolutely and locally uniformly.
+It defines a continuous kernel on
+\(\mathcal X\times\mathcal X\), and for some finite
+constant \(C_\Phi\),
+\[
+ \sum_\gamma|\Phi(x^{-1}\gamma y)|
+                  \le C_\Phi(\tau_x\tau_y)^{-2n^2f}.
+ \tag{AK12}
+\]
+It represents \(Q\) on continuous compactly supported
+test functions.
+\end{theorem}
+\begin{proof}
+Positivity of \(e\) gives \(|e(g_f)|\le e(1)\), by its
+two-by-two positive matrix, as in
+Lemma~\ref{amb-positive-type}.
+For \(q>0\), separate the series into the shells
+\(j_v\le t((x^{-1}\gamma y)_v)<j_v+1\),
+where all \(j_v\) are nonnegative integers.
+Equations (AK8)--(AK10) bound its absolute value by
+\[
+ m_0\left(\frac{3\sqrt n}{\tau_x\tau_y}\right)^{2n^2f}
+ e^{f(H+2n^2)}
+ \sum_{(j_v)\in\mathbb Z_{\ge0}^{\,f}}
+                             e^{-(H-2n^2)\sum_vj_v}.
+\]
+The sum is \((1-e^{-(H-2n^2)})^{-f}\).
+This proves (AK12), including \(e=0\).
+For \(q=0\), all distances are zero and (AK8)
+directly bounds the finite sum.
+
+On a compact set of pairs, \(\tau_x\tau_y\) has a positive
+lower bound.  The same geometric sum bounds the tails
+uniformly.  The union of the rational elements with all
+distances bounded on such a compact set is finite:
+their finite components lie in one fixed compact adelic
+set and their archimedean matrices are bounded.
+After a fixed denominator is cleared, their entries
+belong to a fixed lattice in the Minkowski space of \(E\),
+whose bounded subsets are finite.  Thus these are tails
+of the original series, not only tails of a varying
+partition.  Local uniform convergence and continuity
+of each term prove continuity of \(K\).
+Reindexing \(\Gamma\) proves its invariance in both
+quotient variables, and inversion proves
+\(K(y,x)=\overline{K(x,y)}\).
+
+For \(F\in C_c(\mathcal X)\), unfolding gives
+\[
+ \int_{\mathcal X}K(x,y)F(y)\,dy
+       =\int_{G_\infty\times G_f}\Phi(g)F(xg)\,dg .
+ \tag{AK13}
+\]
+Absolute convergence follows from
+\(\|F\|_\infty\|\Phi\|_1<\infty\).
+The latter integral represents the bounded \(L^2\)
+operator \(R(\Phi)\), by its defining operator integral
+and Fubini against a compactly supported test function.
+The left side is continuous locally in \(x\), by
+continuity of \(K\) on compact sets.  Thus (AK13)
+gives a continuous representative of \(QF\).
+\end{proof}
+
+\subsection{A continuous kernel determines its diagonal}
+
+\begin{lemma}\label{ak-diagonal}
+Let \(X\) be a locally compact second countable space
+with a positive Radon measure of full support.
+Let \(Q\) be an orthogonal projection on \(L^2(X)\),
+represented on \(C_c(X)\) by a continuous Hermitian
+kernel \(K\).  Then every vector of \(\operatorname{ran}Q\)
+has a unique continuous representative.  For an orthonormal
+basis \((F_i)\) of that range, with these representatives,
+\[
+ K(x,y)=\sum_iF_i(x)\overline{F_i(y)},\qquad
+ K(x,x)=\sum_i|F_i(x)|^2\ge0
+ \tag{AK14}
+\]
+at every point.  In particular
+\[
+                \int_X K(x,x)\,dx
+                    =\dim\operatorname{ran}Q
+ \tag{AK15}
+\]
+as an equality of nonnegative extended real numbers.
+\end{lemma}
+\begin{proof}
+Choose nonnegative \(u_{x,j}\in C_c(X)\), of integral
+one, supported in successively smaller neighborhoods
+of \(x\).  Such functions exist by local compactness,
+full support and regularity of the measure.  The kernel
+formula and continuity give
+\[
+ \langle Qu_{x,j},Qu_{y,l}\rangle
+   =\langle u_{x,j},Qu_{y,l}\rangle
+                   \longrightarrow K(x,y).
+\]
+Taking \(y=x\) shows that \(Qu_{x,j}\) is a Cauchy
+sequence in \(L^2\).  Let its limit be \(k_x\).
+It lies in the closed range of \(Q\), and
+\[
+                  \langle k_x,k_y\rangle=K(x,y).
+ \tag{AK16}
+\]
+In particular \(x\mapsto k_x\) is continuous in Hilbert
+norm, by expanding \(\|k_x-k_y\|^2\).
+
+For \(F\in\operatorname{ran}Q\), define
+\(\widetilde F(x)=\langle k_x,F\rangle\).
+This is continuous.  It represents \(F\) in \(L^2\).
+To verify this last assertion without assigning point
+values to an \(L^2\) class, first let \(u\in C_c(X)\).
+Pairing with \(v\in C_c(X)\) in the defining limit gives
+\(\langle v,k_x\rangle=\overline{(Qv)(x)}\).
+Integrating this identity and using \(Q=Q^*\) gives
+\[
+                Qu=\int_X u(x)k_x\,dx
+\]
+as a Hilbert space integral; the integrand is continuous
+and bounded on its compact support.
+Pairing with \(F\) gives
+\(\int\overline{u(x)}\widetilde F(x)\,dx
+=\langle Qu,F\rangle=\langle u,F\rangle\).
+Thus \(\widetilde F=F\) almost everywhere.
+Two continuous representatives agreeing almost everywhere
+are equal, because a nonempty open set has positive measure.
+
+Expand \(k_x\) and \(k_y\) in an orthonormal basis of
+\(\operatorname{ran}Q\).  Parseval and Cauchy--Schwarz
+give both formulas in (AK14), with an absolutely convergent
+series at each pair of points.  Separability gives a
+countable basis.  Tonelli and \(\|F_i\|_2=1\) prove
+(AK15), including an infinite-dimensional range.
+\end{proof}
+
+\subsection{Finiteness and the exact trace}
+
+We use the following classical arithmetic input.
+For a reductive group over a number field, the space
+of smooth automorphic forms of fixed compact open
+level, fixed finite collection of archimedean compact
+types, and annihilated by a fixed finite-codimensional
+ideal of the center of the universal enveloping algebra,
+is finite dimensional.  Moderate growth is required.
+This is Harish--Chandra's finiteness theorem; the adelic
+version follows from Borel's finite class decomposition.
+The precise statements and the passage from the
+classical to the adelic quotient are given in
+\cite[Theorems 6.2.3 and 6.3.2]{getz-hahn-2022}.
+These classical theorems are imported here.
+
+\begin{theorem}\label{ak-finite-trace}
+In the setting of Section~\ref{amb-section}, under (AK9)
+or \(q=0\), the operator \(Q=R(\Phi)\) has finite rank
+\(D\) as defined in \eqref{amb-D-definition}.
+Its continuous kernel satisfies
+\[
+       K(x,x)=\sum_{i=1}^D|F_i(x)|^2,\qquad
+                      \int_{\mathcal X}K(x,x)\,dx=D
+ \tag{AK17}
+\]
+for a continuous orthonormal basis of its image.
+\end{theorem}
+\begin{proof}
+It remains to check the hypotheses of the stated
+finiteness theorem; neither finite rank nor an
+integrable diagonal is assumed in this check.
+By Proposition~\ref{ak-projection}, every vector
+of the range is \(Tw\) for a continuous intertwiner
+\(T\) satisfying \(E_fT=T\).
+It is fixed by \(K_f(g)\), because \(e\) is
+bi-invariant under that subgroup.
+Its archimedean compact translates lie in the
+image under \(T\) of the fixed lowest compact type.
+The center of the universal enveloping algebra
+acts on that image by the infinitesimal character
+of \(\sigma\).
+
+We justify smoothness directly.  The lowest compact
+type occurs with multiplicity one in \(\sigma\).
+Compact Schur orthogonality supplies a matrix
+coefficient measure \(p_w\) on \(K_\infty\)
+whose action on \(\sigma\) is projection onto
+\(\mathbb Cw\).  Choose \(b\in C_c^\infty(G_\infty)\)
+with \(c=\langle w,\sigma(b)w\rangle\ne0\);
+an approximate identity supplies such \(b\).
+Then
+\[
+                  a=c^{-1}p_w*b*p_w\in C_c^\infty(G_\infty),
+                  \qquad \sigma(a)w=w.
+\]
+Consequently \(R(a)Tw=Tw\).
+Convolution by \(a\), together with normalized Haar
+measure on \(K_f(g)\), gives smooth representatives
+of these \(L^2\) vectors.  To see this in local
+coordinates, its kernel is a locally finite sum of
+smooth functions: on compact sets all possible
+rational matrices lie in a fixed compact adelic set.
+For \(x\) in a fixed compact neighborhood the
+other variable is restricted to the image of
+that neighborhood times the fixed compact support.
+Every derivative of the kernel is bounded there,
+so Cauchy--Schwarz justifies differentiation under
+the integral.  These representatives agree with
+the continuous representatives in
+Lemma~\ref{ak-diagonal}.
+The compact-type and infinitesimal-character
+identities therefore hold as identities of smooth
+functions, not only of Hilbert space vectors.
+
+Finally (AK12) and (AK14) give
+\[
+                 |(Tw)(x)|\le
+                  C_\Phi^{1/2}\tau_x^{-2n^2f}\|Tw\|_2 .
+ \tag{AK18}
+\]
+On a fixed finite adelic component, let \(\Lambda_*\)
+be its point lattice at archimedean identity.
+Changing its metric by \(g_\infty^{-1}\) gives
+\[
+       \tau_{(g_\infty,x_f)}
+             \ge\tau_{(1,x_f)}
+                   \left(\prod_v\|g_v\|_{\rm op}\right)^{-1/f}.
+\]
+The operator norms are at least one, since the
+matrices are unitary for an involutory Hermitian form.
+Thus (AK18) is polynomial growth in matrix coordinates
+on every classical component.  There are finitely many
+such components at the fixed level by Borel's class
+decomposition.  Apply the classical finiteness theorem
+on each component, with the same compact type and
+the kernel of the fixed infinitesimal character.
+Their finite direct sum contains the range of \(Q\).
+This proves finite rank.
+The bijection (AK4) identifies the rank with \(D\).
+Now (AK17) follows from Lemma~\ref{ak-diagonal}.
+\end{proof}
+
+This proves the kernel and trace input in
+Proposition~\ref{amb-final-reduction}.  Its nearby
+unipotent, small cusp-volume and deep cusp-mass bounds
+are separate quantitative statements; the qualitative
+finiteness theorem gives none of those bounds.
+The construction also explains the role of continuity:
+on a nonatomic space an arbitrary measurable kernel
+may be changed on the diagonal without changing its
+integral operator.  No such change preserves the
+continuous kernel constructed above.
+
+
+% A direct proof of the volume estimate for small least size.
+% All labels in this fragment have prefix rv-.

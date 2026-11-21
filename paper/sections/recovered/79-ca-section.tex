@@ -1,0 +1,689 @@
+\section{Polynomial identities behind the archimedean coefficients}
+\label{ca-section}
+
+The next step concerns the differential operators that produce
+the archimedean Fourier estimates.  We prove their leading
+polynomial identity directly, including the two different orders
+of the matrix indices, and then prove the coefficient extraction
+and its positive matrix estimate.  We also bound the explicit
+rational correction contributed by the preceding operators.
+These are actual algebraic steps in the source's coefficient
+argument~\cite{alpo-uniform-source}.  The Fourier integral
+identity for the radial Hermitian form, and positivity of that
+form, are identified separately at the end.
+
+\subsection{The differential operators and their leading coefficients}
+
+Let $k,r$ be nonnegative integers and $n=2r+k+1$.
+Use the ordered basis
+\[
+ e_0,\ldots,e_{r-1},w_0,\ldots,w_k,f_{r-1},\ldots,f_0
+\]
+of $\mathbb C^n$.  Let $H$ be the Hermitian matrix specified by
+\[
+ He_a=f_a,\quad Hf_a=e_a,\quad Hw_b=w_b\ (b<k),
+ \quad Hw_k=-w_k.
+\]
+Thus $H^*=H$ and $H^2=1$.  Put
+\[
+ G=\{g\in\operatorname{GL}_n(\mathbb C):g^*Hg=H\}.
+\]
+Its real Lie algebra consists of the matrices $X$ satisfying
+$X^*H+HX=0$.
+
+For a matrix $Z$ set
+\[
+ Z_1=\tfrac12(Z-HZ^*H),\qquad
+ Z_2=\tfrac1{2i}(Z+HZ^*H).
+\]
+Both matrices belong to this real Lie algebra, and
+$Z=Z_1+iZ_2$.  If $F$ is a smooth function on $G$ with
+values in a complex vector space of finite dimension, define
+\[
+ (D_XF)(g)=\left.\frac{d}{dt}F(g\exp(tX))\right|_{t=0},
+ \qquad E_{ab}=D_{(E^{ab})_1}+iD_{(E^{ab})_2},
+\]
+where $E^{ab}$ is the matrix unit in row $a$, column $b$.
+The same definitions apply to smooth functions on an open subset
+of $G$, by locality.  These are complex-linear differential
+operators with smooth coefficients.  In particular, their
+finite compositions preserve smoothness and do not enlarge
+support.
+
+For ordered injective lists $a=(a_0,\ldots,a_{m-1})$ and
+$b=(b_0,\ldots,b_{m-1})$ of basis indices, define the column
+determinant
+\begin{equation}\label{ca-column}
+ Q_{a,b}(u)=
+ \sum_{\sigma\in S_m}\operatorname{sgn}(\sigma)
+ \prod_{j=0}^{m-1}
+ \bigl((u-j)\delta_{a_{\sigma(j)},b_j}\,\mathrm{Id}
+                                  +E_{a_{\sigma(j)},b_j}\bigr).
+\end{equation}
+The product is in the displayed order; when it acts on a
+function, the rightmost operator acts first.  No commutation
+of differential operators is understood.
+For $m=0$ the value is $\mathrm{Id}$.
+
+\begin{lemma}\label{ca-column-leading}
+The expression \eqref{ca-column} is a polynomial in $u$ of
+degree at most $m$, with leading coefficient
+\[
+ [u^m]Q_{a,b}(u)=
+ \det\bigl(\delta_{a_i,b_j}\bigr)_{0\leq i,j<m}\,\mathrm{Id}.
+\]
+This identity remains valid for arbitrary endomorphisms
+$E_{ab}$ of any complex vector space; no Lie algebra
+relations are needed.
+\end{lemma}
+
+\begin{proof}
+The scalar $u$ commutes with every endomorphism.
+On expanding each ordered product, a term of degree $m$
+can only arise by choosing the scalar $u$ from every factor.
+Its coefficient is
+$\prod_j\delta_{a_{\sigma(j)},b_j}\,\mathrm{Id}$.
+Summing over $\sigma$ gives the displayed determinant.
+All other terms have degree at most $m-1$.
+\end{proof}
+
+For $0\leq m\leq r$ set
+\[
+ X_{a,c}(g)=(Hg)_{e_a,c},\qquad
+ Y_{a,c}(g)=(g^{-1})_{c,e_a}\quad(0\leq a<m).
+\]
+There are two orders on the basis indices.  The first is the
+displayed order used to define $H$.  The second begins with
+$f_0,f_1,\ldots,f_{r-1}$ and is followed by
+$e_0,\ldots,e_{r-1},w_0,\ldots,w_k$.
+Write $c$ increasing with respect to the indicated order
+in the following two sums:
+\begin{align}
+ (A_m(u)F)(g)
+   &=\sum_{c\text{ increasing in the first order}}
+          \det(X_{a,c_b}(g))_{a,b<m}\,
+                 (Q_{(e_0,\ldots,e_{m-1}),c}(u)F)(g),
+                    \label{ca-Aplus}\\
+ (\widetilde A_m(u)F)(g)
+   &=\sum_{c\text{ increasing in the second order}}
+          \det(Y_{a,c_b}(g))_{a,b<m}\,
+        (Q_{c,(f_0,\ldots,f_{m-1})}(u+m-1)F)(g).
+                    \label{ca-Aminus}
+\end{align}
+Each determinant multiplies the result of the differential
+operator; its entries are not differentiated in these formulas.
+Put
+\[
+ d_m(g)=\det\bigl((Hg)_{e_a,e_b}\bigr)_{a,b<m},
+ \qquad d_0(g)=1.
+\]
+These are the actual principal minors in the source at levels
+$m\leq r$.  The additional vectors used for the final principal
+minor do not occur at these levels.
+
+\begin{proposition}\label{ca-A-leading}
+For every smooth $F$ and every $g\in G$,
+\[
+ [u^m](A_m(u)F)(g)=d_m(g)F(g),\qquad
+ [u^m](\widetilde A_m(u)F)(g)=\overline{d_m(g)}F(g).
+\]
+Both expressions have degree at most $m$.
+\end{proposition}
+
+\begin{proof}
+In \eqref{ca-Aplus}, Lemma~\ref{ca-column-leading} gives a
+nonzero leading coefficient only if the set of indices in
+$c$ is $\{e_0,\ldots,e_{m-1}\}$.  The order condition then
+forces $c=(e_0,\ldots,e_{m-1})$, with determinant of the
+Kronecker matrix equal to one.  This proves the first formula.
+The same argument in the second order forces
+$c=(f_0,\ldots,f_{m-1})$.  The shift $u+m-1$ has no effect
+on its leading coefficient.
+
+Since $g^{-1}=Hg^*H$, one has
+\[
+ (g^{-1})_{f_b,e_a}
+     =\overline{g_{f_a,e_b}}
+     =\overline{(Hg)_{e_a,e_b}}.
+\]
+Taking determinants proves the second formula.  The empty
+determinant case $m=0$ also gives both identities.
+\end{proof}
+
+Fix $0\leq j\leq r$ and work on the open set
+$G_j=\{g\in G:d_j(g)\ne0\}$.
+Let $c=(2r+k)/2$.  The two components of the operators
+at a real parameter $y$ are
+\begin{align}
+ L^+_{j,e}(y)F&=d_j^{-1}A_{j-e}(y+c)F,
+                    \label{ca-Lplus}\\
+ L^-_{j,e}(y)F&=\overline{d_j}^{-1}
+                       \widetilde A_{j-e}(y-c)F,
+                    \label{ca-Lminus}
+\end{align}
+for $e=0,1$ and $e\leq j$.  Define
+$L^\pm_{0,1}(y)F=0$.
+These formulas include the special level-zero convention;
+they never invoke an operator with a negative index.
+
+\begin{corollary}\label{ca-normalized-leading}
+As operators on smooth functions on $G_j$,
+\[
+ L^\pm_{j,0}(y)=y^j\mathrm{Id}
+                       +\sum_{\ell<j}y^\ell B^\pm_\ell,\qquad
+ L^\pm_{j,1}(y)=\sum_{\ell<j}y^\ell C^\pm_\ell,
+\]
+for differential operators with smooth coefficients independent
+of $y$.  A translation $y\mapsto y+a$ by a fixed real number
+does not change these leading coefficients.
+At $j=0$, these formulas mean
+$L^\pm_{0,0}=\mathrm{Id}$ and $L^\pm_{0,1}=0$.
+\end{corollary}
+
+\begin{proof}
+Apply Proposition~\ref{ca-A-leading} with $m=j$ or $j-1$.
+For $e=0$, multiplication by $d_j^{-1}$ or
+$\overline{d_j}^{-1}$ cancels the leading coefficient
+exactly.  For $e=1$ the degree is at most $j-1$.
+The denominators are smooth and nonzero on $G_j$.
+Translations preserve the leading coefficient of a polynomial.
+\end{proof}
+
+This proof also gives the needed regularity of every coefficient.
+If a test function is smooth with compact support in $G_j$,
+then each coefficient has support in the same compact set.
+More generally, applying any fixed complex-linear restriction
+or pullback map preserves the polynomial identity.  If a
+Hermitian form is only defined on a subspace of functions,
+all coefficient functions must belong to that subspace.
+It suffices to check membership for $j+1$ distinct real
+values of $y$: inversion of the scalar Vandermonde matrix
+then expresses every coefficient as a finite linear combination
+of those values.  This observation prevents any implicit
+exchange of differentiation with an unproved integral.
+
+\subsection{The leading coefficient in the mixed pairing}
+
+In this subsection a sesquilinear form is linear in its first
+argument and conjugate-linear in its second, which is the
+convention of the source's coefficient functions.
+Let $\mathcal B:V\times V'\to\mathbb C$ be such a form.
+Suppose four vector polynomials in a real variable $y$ satisfy
+\[
+ X_0(y)=y^j x+\text{terms of degree less than }j,\quad
+ Y_0(y)=y^j x'+\text{terms of degree less than }j,
+\]
+\[
+ \deg X_1<j,\qquad \deg Y_1<j.
+\]
+For $j=0$ the last two polynomials are zero.
+Let $U:V\to V$ be complex-linear and let $s\in\mathbb C$.
+Then
+\begin{equation}\label{ca-mixed-polynomial}
+ F(y)=
+ \mathcal B\bigl(U X_1(y)+sU X_0(y),Y_0(y)\bigr)
+       -\mathcal B\bigl(U X_0(y),Y_1(y)\bigr)
+\end{equation}
+is a polynomial in the real variable $y$ of degree at most $2j$,
+and
+\begin{equation}\label{ca-mixed-leading}
+ [y^{2j}]F(y)=s\,\mathcal B(Ux,x').
+\end{equation}
+Indeed, in the first term only
+$\mathcal B(sy^j Ux,y^j x')$ contributes to that degree,
+and the second term has degree at most $2j-1$.
+Reality of $y$ is used when conjugating its powers.
+
+For completeness the extra summand $sU X_0$ comes from an
+explicit operation on the two-component indices, not from
+an estimate.  Given a finite sequence of signs
+$\varepsilon_\ell\in\{+,-\}$, regard its vectors as indexed by
+$\{0,1\}^a$.  On the $\ell$th factor apply the matrix
+\[
+ \begin{pmatrix}1&0\\ s&1\end{pmatrix}
+ \quad\text{if }\varepsilon_\ell=+,\qquad
+ \begin{pmatrix}1&0\\ \overline s&1\end{pmatrix}
+ \quad\text{if }\varepsilon_\ell=-.
+\]
+The matrices on distinct factors commute.  One may additionally
+multiply every component by the same function
+$\exp(sz-\overline s\,\overline z)$.
+The latter has absolute value one, but its preservation of
+a particular differential Hermitian form is an additional
+identity, not a consequence of its pointwise absolute value.
+
+On adding a new positive component, the transformed components
+are precisely $UX_0$ and $UX_1+sUX_0$.
+Contracting the new positive and negative components by
+\[
+ \mathcal B_1((x_0,x_1),(y_0,y_1))
+           =\mathcal B(x_1,y_0)-\mathcal B(x_0,y_1)
+\]
+therefore gives \eqref{ca-mixed-polynomial}.
+Repeated contraction gives a sesquilinear form on any number
+of new components.
+Applying Corollary~\ref{ca-normalized-leading} to a new pair
+$L^+_{j,e}(y)$ and $L^-_{j,e}(y+1)$ proves
+\eqref{ca-mixed-leading} for the actual normalized differential
+operators.  The shift by one on the negative side changes no
+leading coefficient.  No positivity is required for this
+algebraic assertion.
+
+\subsection{Exact extraction by interpolation}
+
+For distinct real nodes $y_0,\ldots,y_d$, put
+\[
+ c_i=\prod_{\substack{0\leq h\leq d\\h\ne i}}
+                    (y_i-y_h)^{-1},
+ \qquad C=\sum_{i=0}^d|c_i|.
+\]
+Each $c_i$ is nonzero and $C>0$.
+Lagrange interpolation of a vector polynomial $P$ of degree
+at most $d$ gives
+\begin{equation}\label{ca-Lagrange-leading}
+ [y^d]P(y)=\sum_{i=0}^d c_i P(y_i).
+\end{equation}
+To prove this for any complex vector space, subtract the
+usual interpolation expression from $P$.  Its coefficients
+lie in a finite-dimensional subspace, so the scalar
+root-counting argument applied to coordinates proves that
+the difference vanishes.  Comparing coefficients of $y^d$
+then gives \eqref{ca-Lagrange-leading}.
+For $d=0$, it simply says that a constant polynomial equals
+its value at its single node.
+
+\begin{proposition}\label{ca-iterated-extraction}
+Let $K,d$ be nonnegative integers.  Suppose that quantities
+$W_a(y_1,\ldots,y_a)$, $0\leq a\leq K$, take values in a
+complex vector space, with $W_0$ independent of the variables.
+Assume that, for each fixed $y_1,\ldots,y_{a-1}$,
+$W_a$ is a polynomial in its last real variable of degree
+at most $d$, with leading coefficient $s_aW_{a-1}$.
+For each $a$ choose $d+1$ distinct real nodes $y_{a,i}$ and
+let $c_{a,i}$ be their coefficients above.  Then
+\begin{equation}\label{ca-extraction}
+ \left(\prod_{a=1}^K s_a\right)W_0
+  =\sum_{i_1,\ldots,i_K}
+       \left(\prod_{a=1}^K c_{a,i_a}\right)
+           W_K(y_{1,i_1},\ldots,y_{K,i_K}).
+\end{equation}
+No assumption about simultaneous polynomial degree in all
+variables is needed.
+\end{proposition}
+
+\begin{proof}
+Extract the coefficient in the last variable using
+\eqref{ca-Lagrange-leading}, then extract successively in
+the preceding variables.  At each step the extracted
+coefficient is the asserted scalar multiple of $W_{a-1}$,
+independent of the variable just removed.
+The finite sums commute with scalar multiplication.
+The case $K=0$ has one empty tuple and is the identity.
+\end{proof}
+
+In the mixed pairing above one takes $d=2j$ and every
+$s_a=s$.  Newly inserted operators may act on the previous
+ones; they are not commuted past them.
+Their leading term is the identity, so the same one-variable
+argument applies to each successive insertion.
+Thus \eqref{ca-extraction} proves the source's algebraic
+degree and extraction identity on the common domain of its
+forms and restrictions.
+
+The natural probability weights are
+\[
+ \theta_{i_1,\ldots,i_K}
+   =\frac{\prod_a|c_{a,i_a}|}{\prod_a C_a},
+ \qquad C_a=\sum_i|c_{a,i}|.
+\]
+Their sum is one, because a product of finite sums expands
+as a sum over all tuples.  Consequently, for vectors in a
+normed space,
+\begin{align}
+ \left(\prod_a|s_a|\right)\|W_0\|
+   &\leq\left(\prod_aC_a\right)
+         \sum_{\boldsymbol i}\theta_{\boldsymbol i}
+                    \|W_K(\boldsymbol y_{\boldsymbol i})\|,
+                    \label{ca-extraction-norm}\\
+ \left(\prod_a|s_a|\right)^2\|W_0\|^2
+   &\leq\left(\prod_aC_a\right)^2
+         \sum_{\boldsymbol i}\theta_{\boldsymbol i}
+                    \|W_K(\boldsymbol y_{\boldsymbol i})\|^2.
+                    \label{ca-extraction-square}
+\end{align}
+The first is the triangle inequality in
+\eqref{ca-extraction}; the second follows from
+Cauchy--Schwarz for the probability weights.
+
+\begin{lemma}\label{ca-Chebyshev}
+If $d\geq1$ and $\alpha<\beta$, the nodes
+\[
+ y_i=\frac{\alpha+\beta}{2}
+       +\frac{\beta-\alpha}{2}\cos\frac{i\pi}{d},
+       \qquad 0\leq i\leq d,
+\]
+satisfy the exact identity
+\[
+ \sum_i|c_i|=\frac12\left(\frac4{\beta-\alpha}\right)^d.
+\]
+This is the smallest possible coefficient sum among all
+choices of $d+1$ distinct nodes in $[\alpha,\beta]$.
+\end{lemma}
+
+\begin{proof}
+The polynomial $T_d$ determined by
+$T_d(\cos\theta)=\cos(d\theta)$ has degree $d$, leading
+coefficient $2^{d-1}$, and absolute value at most one on
+$[-1,1]$.  These facts follow from
+$T_0=1$, $T_1=x$, and $T_{d+1}=2xT_d-T_{d-1}$.
+The scaled polynomial
+\[
+ R(y)=T_d\left(\frac{2y-\alpha-\beta}{\beta-\alpha}\right)
+\]
+has leading coefficient
+$2^{2d-1}(\beta-\alpha)^{-d}$ and value $(-1)^i$ at $y_i$.
+The nodes decrease with $i$, so $c_i$ also has sign $(-1)^i$.
+Equation~\eqref{ca-Lagrange-leading} gives the equality.
+For any other nodes in the interval, applying the same
+identity to $R$ and using $|R|\leq1$ gives the asserted
+lower bound.
+\end{proof}
+
+The actual construction needs its nodes separated from the
+parameters already used.  The exact Chebyshev identity alone
+does not supply those simultaneous separation conditions.
+The source uses grids whose coefficient sums are bounded
+by $(28N/I)^{2j}$.  Section~\ref{cg-section} supplies the
+complete construction and improves $28$ to $24$.
+For those actual grids,
+\eqref{ca-extraction-norm}--\eqref{ca-extraction-square}
+apply with that bound, with no loss from the number of grid
+tuples.
+
+\subsection{The explicit rational correction}
+
+Let $q_0$ be a real-valued function, and let
+$w=((\varepsilon_1,a_1),\ldots,(\varepsilon_L,a_L))$
+be a finite sequence, with $\varepsilon_\ell\in\{+,-\}$
+and $a_\ell\in\mathbb R$.  The modified function occurring
+in the source is exactly
+\begin{equation}\label{ca-qword}
+ q_w(y)=q_0(y)
+   \prod_{\varepsilon_\ell=+}
+           \frac{y-a_\ell+1}{y-a_\ell}
+   \prod_{\varepsilon_\ell=-}
+           \frac{a_\ell-y}{a_\ell-y-1}.
+\end{equation}
+Only the displayed evaluation at $y$ is needed below.
+
+\begin{lemma}\label{ca-q-distortion}
+Suppose $D>1$, $q_0(y)\ne0$, and
+\[
+ |y-a_\ell|\geq D\quad(\varepsilon_\ell=+),\qquad
+ |a_\ell-y-1|\geq D\quad(\varepsilon_\ell=-).
+\]
+Then $q_w(y)/q_0(y)>0$ and
+\begin{equation}\label{ca-q-distortion-eq}
+ \left|\log\frac{q_w(y)}{q_0(y)}\right|
+                      \leq\frac{L}{D-1}.
+\end{equation}
+In particular, if $N\geq20$, $L\leq N$ and $D\geq N^2/8$,
+then
+\[
+ e^{-20/49}\leq\frac{q_w(y)}{q_0(y)}\leq e^{20/49}.
+\]
+If also $q_0(y)>0$ and
+$\sqrt{|P(y)P(y+1)|/q_0(y)}\leq A$, then
+\begin{equation}\label{ca-node-majorant}
+ q_w(y)>0,\qquad
+ \sqrt{\frac{|P(y)P(y+1)|}{q_w(y)}}
+                                      \leq e^{10/49}A.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Every factor in \eqref{ca-qword} is $1+u$ with
+$|u|\leq1/D<1$.  It is positive, and
+\[
+ |\log(1+u)|
+  =\left|\int_0^u\frac{dt}{1+t}\right|
+  \leq\frac{|u|}{1-|u|}\leq\frac1{D-1}.
+\]
+Adding these inequalities proves
+\eqref{ca-q-distortion-eq}.
+Moreover
+\[
+ \frac{L}{D-1}\leq\frac{8N}{N^2-8}
+                          \leq\frac{20}{49}\quad(N\geq20).
+\]
+The last function decreases for $N>\sqrt8$; at $N=20$
+its value is $20/49$.
+Taking exponentials gives the first uniform assertion,
+and taking the reciprocal square root gives
+\eqref{ca-node-majorant}.
+\end{proof}
+
+In the actual construction $N=20(r+1)$.
+The separation conditions proved for its new and previous
+parameters give precisely the denominator bounds in this
+lemma, with $D=N^2/8$ in the exceptional short interval
+and a larger value in the other intervals.
+The polynomial $q_0$ is $Q$ from Section~\ref{as-section}.
+On an interval belonging to a differing binary position it
+is positive: exactly one of the paired factors in $Q$ has
+opposite signs, and its defining initial minus sign reverses
+that sign.  Thus \eqref{ca-node-majorant} applies there.
+The source uses the weaker factor $eA$.
+This improvement concerns the rational modification alone;
+it does not assert that the separated grids or positive
+Hermitian forms exist for arbitrary parameters.
+
+\subsection{The exact positive matrix estimate}
+
+We next give the finite-dimensional step that turns the
+interpolation identity into the normalized local coefficient
+estimate.  All its hypotheses are stated for arbitrary
+linear combinations, as required by positivity of a block
+matrix.
+
+Fix $K,d\geq0$ and the nodes of
+Proposition~\ref{ca-iterated-extraction}.
+For a tuple $\boldsymbol i=(i_1,\ldots,i_K)$ put
+\[
+ c_{\boldsymbol i}=\prod_a c_{a,i_a},\quad
+ C_*=\prod_a\sum_i|c_{a,i}|,\quad
+ \theta_{\boldsymbol i}=|c_{\boldsymbol i}|/C_*.
+\]
+Let $I_+$ and $I_-$ be finite sets.  For each tuple suppose
+$R^+_{\boldsymbol i}$ and $R^-_{\boldsymbol i}$ are
+positive semidefinite Hermitian forms on
+$\mathbb C^{I_+}$ and $\mathbb C^{I_-}$, and that
+$B_{\boldsymbol i}$ is a sesquilinear form between these
+two spaces.  Let $P$ and $q$ be real-valued at the nodes,
+with $P(y_{a,i})P(y_{a,i}+1)\ne0$ and $q(y_{a,i})>0$.
+Assume
+\begin{equation}\label{ca-pairing-assumption}
+ |B_{\boldsymbol i}(x,y)|^2
+       \prod_{a=1}^Kq(y_{a,i_a})
+       \leq R^+_{\boldsymbol i}(x,x)
+                 R^-_{\boldsymbol i}(y,y)
+ \quad\text{for every }x,y.
+\end{equation}
+Fix positive $\Gamma,S$ and nonnegative $T,A$ such that
+\[
+ \frac{|P(y_{a,i})P(y_{a,i}+1)|}{q(y_{a,i})}
+                                                  \leq A^2.
+\]
+Define normalized forms
+\[
+ G^+_{\boldsymbol i}
+       =\frac{R^+_{\boldsymbol i}}
+                 {\Gamma S\prod_a|P(y_{a,i_a})|},\qquad
+ G^-_{\boldsymbol i}
+       =\frac{R^-_{\boldsymbol i}}
+                 {\Gamma S\prod_a|P(y_{a,i_a}+1)|},
+\]
+and the mixed form
+\[
+ F=\frac{T^K}{\Gamma S}
+            \sum_{\boldsymbol i}c_{\boldsymbol i}B_{\boldsymbol i}.
+\]
+Write $\overline G^\pm=\sum_{\boldsymbol i}
+\theta_{\boldsymbol i}G^\pm_{\boldsymbol i}$.
+
+\begin{proposition}\label{ca-positive-block}
+For all $x\in\mathbb C^{I_+}$ and $y\in\mathbb C^{I_-}$,
+\begin{equation}\label{ca-positive-bound}
+ |F(x,y)|\leq C_*T^KA^K
+       \sqrt{\overline G^+(x,x)\,\overline G^-(y,y)}.
+\end{equation}
+Consequently, if $X\geq0$ and
+$C_*T^KA^K\leq X^K$, the block Hermitian form with
+diagonal forms $X^K\overline G^+$, $X^K\overline G^-$
+and mixed form $F$ is positive semidefinite.
+\end{proposition}
+
+\begin{proof}
+Divide \eqref{ca-pairing-assumption} by $(\Gamma S)^2$.
+The normalizations give exactly
+\[
+ \left|\frac{B_{\boldsymbol i}(x,y)}{\Gamma S}\right|
+ \leq
+ \left(\prod_a
+       \frac{|P(y_{a,i_a})P(y_{a,i_a}+1)|}{q(y_{a,i_a})}
+       \right)^{1/2}
+       \sqrt{G^+_{\boldsymbol i}(x,x)
+                         G^-_{\boldsymbol i}(y,y)}.
+\]
+In particular the factor on the right is at most $A^K$.
+The triangle inequality and
+$|c_{\boldsymbol i}|=C_*\theta_{\boldsymbol i}$ yield
+\[
+ |F(x,y)|\leq C_*T^KA^K
+     \sum_{\boldsymbol i}\theta_{\boldsymbol i}
+          \sqrt{G^+_{\boldsymbol i}(x,x)
+                            G^-_{\boldsymbol i}(y,y)}.
+\]
+Cauchy--Schwarz for the probability weights proves
+\eqref{ca-positive-bound}.
+If $a=\overline G^+(x,x)$ and
+$b=\overline G^-(y,y)$, the quadratic value of the block
+form is at least
+$X^K(a+b)-2|F(x,y)|\geq X^K(\sqrt a-\sqrt b)^2$.
+This is nonnegative, including when one of the diagonal
+values is zero.  For $K=0$ all empty products are one and
+the same proof applies.
+\end{proof}
+
+In the source the original size $S$ is the product
+$\prod_{\ell\in w}|P(a_\ell)|$.
+Adding positive parameters $y_1,\ldots,y_K$ multiplies it by
+$\prod_a|P(y_a)|$; adding the corresponding negative
+parameters $y_a+1$ multiplies it by
+$\prod_a|P(y_a+1)|$.  Thus the displayed normalization is
+exactly the one in its Gram sums.  The factor $\Gamma$
+cancels in the estimate.  It has not been estimated or
+replaced by one.
+
+For the Fourier coefficient at level $j$, the interpolation
+degree is $d=2j$.  If each actual grid has
+$C_a\leq(28N/I)^{2j}$, and $A_{\rm pol}$ is the unscaled
+boundary majorant
+$\sup\sqrt{|P(y)P(y+1)|/q_0(y)}$ on the relevant interval,
+one may take
+\begin{equation}\label{ca-X-exact}
+ X=\frac{g\lambda}{2\pi}
+         \left(\frac{28N}{I}\right)^{2j}
+                         e^{10/49}A_{\rm pol}.
+\end{equation}
+Here $g>0$ is the level parameter and $\lambda>0$ is the
+actual scalar change of the complex integration variable.
+This conclusion uses \eqref{ca-pairing-assumption} for the
+particular Hermitian forms.  Its proof has not supplied
+that representation-theoretic hypothesis.
+
+\subsection{Fourier normalization and the remaining analytic input}
+
+The source's additive character at a complex place is
+\[
+ \psi_g(l,c)=\exp\left(\frac{4\pi i}{g}\Re(lc)\right).
+\]
+If the radial variable is $z=\lambda c$, put
+\[
+ s=\frac{2\pi i\,l}{g\lambda},\qquad
+ T=\frac{g\lambda}{2\pi}.
+\]
+Then the exact phase and scalar identities are
+\begin{equation}\label{ca-phase}
+ e^{sz-\overline s\,\overline z}=\psi_g(l,c),
+ \qquad T^Ks^K=i^Kl^K.
+\end{equation}
+These follow by substituting $z=\lambda c$ and using that
+$g,\lambda$ are real.  In the usual Fourier transform
+$\widehat f(\xi)=\int_{\mathbb C}f(c)
+e^{-2\pi i\Re(\overline\xi c)}\,dc$, the same character
+therefore has frequency $\xi=-2\overline l/g$.
+
+If the actual radial Fourier identity represents its
+normalized coefficient as
+\[
+ \widehat K(l)
+     =(\Gamma S)^{-1}\,
+               \mathcal B(U_sx,x'),
+\]
+then the proved extraction identity identifies the mixed
+form in Proposition~\ref{ca-positive-block} with
+$i^Kl^K\widehat K(l)$.
+Here $U_s$ consists of the explicit phase and the component
+matrices described above.  There is a second necessary
+identity: $U_s$ must preserve the original nonnegative
+Hermitian form.  If it does, Cauchy--Schwarz supplies the
+coefficient bound with no power of $l$ as well.
+The diagonal forms in this latter bound need not be the
+averaged diagonal forms in Proposition~\ref{ca-positive-block}.
+If both diagonal products are bounded by a common
+nonnegative majorant $M^2$, taking the stronger estimate
+gives
+\[
+ |\widehat K(l)|\leq
+       M\min\bigl(1,(X/|l|)^K\bigr)\qquad(l\ne0).
+\]
+At $l=0$ one uses the bound $M$ from the original form.
+Obtaining this common majorant is a separate requirement
+when assembling the global estimate.
+
+Thus the differential-operator leading terms, real polynomial
+extraction, rational correction, finite averaging, and exact
+normalizations have now been proved.  The remaining actual
+inputs are the radial Fourier identity, nonnegativity and
+the mixed inequality \eqref{ca-pairing-assumption} for the
+specified differential Hermitian forms, preservation of those
+forms by $U_s$, and the analytic function-domain conditions.
+The finite grid and separation conditions are discharged in
+Section~\ref{cg-section}.  The mass,
+source-dimension, and formal-degree hypotheses in
+Section~\ref{as-section} also remain separate.
+
+\begin{remark}\label{ca-counterexamples}
+Two possible shortcuts are false.  First, entrywise bounds
+do not imply the block positivity used here.  Let the two
+diagonal matrices be $I_2$ and the mixed matrix have every
+entry equal to one.  Each mixed entry has absolute value
+at most the geometric mean of its two diagonal entries.
+For $x=(1,1)$ the block quadratic form at $(x,-x)$ is
+$4-8=-4$.  This is why \eqref{ca-pairing-assumption} is
+required for all linear combinations.
+
+Second, the real parameter in
+\eqref{ca-mixed-polynomial} cannot be replaced by an
+arbitrary complex parameter while retaining the same
+polynomial identity.  With the ordinary form on
+$\mathbb C$, $X_0(y)=Y_0(y)=y$ gives
+$\mathcal B(X_0(y),Y_0(y))=|y|^2$, not $y^2$.
+At $y=i$ these values are $1$ and $-1$.
+The actual source uses real interpolation nodes and
+tests the mixed form on all linear combinations, so
+neither example contradicts its stated hypotheses.
+\end{remark}
+
+

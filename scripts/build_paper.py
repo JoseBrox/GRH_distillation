@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build paper/main.pdf with pdfLaTeX and record exactly which sources were used.
+"""Build the main reconstruction (XeLaTeX) or analytic companion (pdfLaTeX).
 
 A normal TeX installation is used unchanged. If a Debian TeX tree is present
 but its generated filename database or format is missing, the fallback reads
@@ -9,6 +9,7 @@ or network access is performed.
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import os
@@ -40,12 +41,12 @@ def kpse(name: str, env: dict[str, str]) -> str:
     return result.stdout.strip() if result.returncode == 0 else ""
 
 
-def tex_environment() -> dict[str, str]:
+def tex_environment(engine: str = "pdflatex") -> dict[str, str]:
     env = dict(os.environ)
     # Fix the source date, rather than embedding the time of each rebuild.
     env.setdefault("SOURCE_DATE_EPOCH", "1795219200")
     env.setdefault("FORCE_SOURCE_DATE", "1")
-    if kpse("pdflatex.fmt", env) and kpse("article.cls", env):
+    if kpse(engine + ".fmt", env) and kpse("article.cls", env):
         return env
     dist = Path("/usr/share/texlive/texmf-dist")
     if not (dist / "tex/latex/base/latex.ltx").is_file():
@@ -78,9 +79,9 @@ def tex_environment() -> dict[str, str]:
     if not map_files:
         raise RuntimeError("The installed Computer Modern/AMS font maps were not found.")
     (maps / "pdftex.map").write_text("\n".join(p.read_text() for p in map_files))
-    if not (formats / "pdflatex.fmt").is_file():
-        run(["pdftex", "-ini", "-etex", "-interaction=nonstopmode", "-halt-on-error",
-             "-no-shell-escape", "-jobname=pdflatex", "-progname=pdflatex", "pdflatex.ini"],
+    if not (formats / (engine + ".fmt")).is_file():
+        run(["xetex" if engine == "xelatex" else "pdftex", "-ini", "-etex", "-interaction=nonstopmode", "-halt-on-error",
+             "-no-shell-escape", "-jobname=" + engine, "-progname=" + engine, engine + ".ini"],
             formats, env, formats / "format-build.txt")
     return env
 
@@ -92,13 +93,21 @@ def state() -> tuple[bytes, ...]:
 
 
 def main() -> int:
-    if not shutil.which("pdflatex"):
-        raise RuntimeError("Install a TeX distribution with pdfLaTeX before building.")
+    global PAPER, BUILD
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--companion", action="store_true", help="Build the retained analytic companion instead.")
+    args = parser.parse_args()
+    engine = "pdflatex" if args.companion else "xelatex"
+    if args.companion:
+        PAPER = ROOT / "paper/companion"
+        BUILD = ROOT / "build/companion"
+    if not shutil.which(engine):
+        raise RuntimeError("A TeX installation with " + engine + " is required.")
     BUILD.mkdir(parents=True, exist_ok=True)
-    env = tex_environment()
+    env = tex_environment(engine)
     previous = state()
     for number in range(1, 6):
-        run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
+        run([engine, "-interaction=nonstopmode", "-halt-on-error", "-recorder",
              "-no-shell-escape", "-file-line-error", f"-output-directory={BUILD}", "main.tex"],
             PAPER, env, BUILD / f"pass-{number}.txt")
         current = state()
@@ -116,8 +125,10 @@ def main() -> int:
     output = PAPER / "main.pdf"
     shutil.copyfile(BUILD / "main.pdf", output)
     sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
-    inputs = sorted(PAPER.rglob("*.tex"))
-    version = subprocess.run(["pdflatex", "--version"], text=True,
+    inputs = sorted({(PAPER / line[6:]).resolve() for line in (BUILD / "main.fls").read_text().splitlines()
+                     if line.startswith("INPUT ") and line.endswith(".tex")
+                     and (PAPER / line[6:]).resolve().is_relative_to(PAPER.resolve())})
+    version = subprocess.run([engine, "--version"], text=True,
                              capture_output=True, check=True).stdout.splitlines()[0]
     certificate = {
         "schema_version": 1,
@@ -125,13 +136,13 @@ def main() -> int:
         "limits": "Compilation and layout checks are not mathematical proof verification.",
         "engine": version,
         "sources": [{"path": str(p.relative_to(ROOT)), "sha256": sha(p)} for p in inputs],
-        "output": {"path": "paper/main.pdf", "bytes": output.stat().st_size, "sha256": sha(output)},
+        "output": {"path": str(output.relative_to(ROOT)), "bytes": output.stat().st_size, "sha256": sha(output)},
     }
-    destination = ROOT / "certificates/paper-build.json"
+    destination = ROOT / ("certificates/companion-build.json" if args.companion else "certificates/paper-build.json")
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(certificate, indent=2) + "\n")
     print(f"Built {output.relative_to(ROOT)} ({output.stat().st_size:,} bytes).")
-    print(f"Stabilized in {number} passes. Build record: certificates/paper-build.json")
+    print(f"Stabilized in {number} passes. Build record: {destination.relative_to(ROOT)}")
     return 0
 
 

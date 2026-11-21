@@ -1,0 +1,438 @@
+\section{Local unitary densities and the exact mass ratio}
+\label{md-section}
+
+We verify the local densities and the mass normalization used in
+Section~\ref{as-section}. The finite-field calculations and all
+normalization changes are proved below, including residue
+characteristic $2$. The global mass formula is used as an explicitly
+stated classical theorem. This is sufficient to check the source's
+mass-ratio assertion; it is not a new proof of the general mass formula.
+
+\subsection{Counting primitive frames over a finite field}
+
+Let $k=\mathbb F_q$, where $q$ is a prime power, and let
+$k'=\mathbb F_{q^2}$ with involution $a\mapsto\overline a=a^q$.
+On $(k')^n$ put $h(x,y)=\overline x^{\,t}y$.
+For a matrix $G=\overline G^{\,t}\in M_m(k')$ of rank $m-c$, let
+$\mathcal E_-(n,G)$ be the set of matrices $X\in M_{n,m}(k')$
+of column rank $m$ satisfying $\overline X^{\,t}X=G$.
+In the split case, let $G\in M_m(k)$ have rank $m-c$, and let
+$\mathcal E_+(n,G)$ consist of pairs $(X,Y)$ of matrices in
+$M_{n,m}(k)$, both of column rank $m$, satisfying $X^tY=G$.
+In both cases $0\leq c\leq m$.
+For $\eta\in\{1,-1\}$ define
+\begin{equation}\label{md-density}
+ d_\eta(n,m,c;q)=
+ \begin{cases}
+ \displaystyle\prod_{j=n-m-c+1}^{n}(1-\eta^j q^{-j}),&m+c\leq n,\\
+ 0,&m+c>n.
+ \end{cases}
+\end{equation}
+An empty product is $1$. Equivalently, one may start the product at
+$\max(0,n-m-c+1)$: the extra cases then contain the zero factor
+$1-\eta^0q^0$.
+
+\begin{lemma}\label{md-unitary-order}
+For $n\geq0$,
+\[
+ \#U_n(k)=q^{n(n-1)/2}\prod_{j=1}^n(q^j-(-1)^j).
+\]
+For $n\geq1$, the number of nonzero isotropic vectors in $(k')^n$ is
+\[
+                  (q^n-(-1)^n)(q^{n-1}-(-1)^{n-1}).
+\]
+Every nondegenerate Hermitian form on $(k')^n$ is isometric to $h$.
+These assertions hold also when $q$ is even.
+\end{lemma}
+
+\begin{proof}
+The norm $N:k'^\times\to k^\times$, $N(a)=a^{q+1}$, is
+surjective and every fiber has $q+1$ elements: the multiplicative
+group of a finite field is cyclic. The trace $a+\overline a$ is
+a nonzero $k$-linear map $k'\to k$, hence is also surjective.
+It is nonzero even in characteristic $2$, since the fixed field
+of the involution is exactly $k$.
+
+A nonzero nondegenerate Hermitian form has a vector of nonzero
+length. Otherwise, expanding $h(ax+y,ax+y)=0$ for all $a\in k'$
+would give $\operatorname{Tr}(\overline a h(x,y))=0$ for all $a$.
+The trace pairing is nondegenerate, so the form would be zero.
+Normalize a vector of nonzero length using the norm map, take its
+nondegenerate orthogonal complement, and induct. This proves the
+last assertion and extends every orthonormal frame to a basis.
+
+Let $A_n$ count vectors of length $0$ and let $B_n$ count vectors
+of length a prescribed nonzero element of $k$. The latter count
+is independent of that element by norm surjectivity. We have
+$A_0=1$, $B_0=0$, and, by separating the last coordinate,
+\[
+ A_n=A_{n-1}+(q^2-1)B_{n-1},\qquad
+ A_n+(q-1)B_n=q^{2n}.
+\]
+Equivalently $A_n-B_n=-q(A_{n-1}-B_{n-1})=(-q)^n$.
+Solving these two equations gives
+\[
+ B_n=q^{n-1}(q^n-(-1)^n),\qquad
+ A_n=q^{2n-1}+(q-1)(-1)^nq^{n-1}.
+\]
+Thus $A_n-1$ is the second expression in the lemma.
+Choosing the first vector of an orthonormal basis in $B_n$ ways
+and then a basis of its orthogonal complement gives
+$\#U_n(k)=B_n\#U_{n-1}(k)$, proving the product formula.
+\end{proof}
+
+\begin{theorem}\label{md-frame-count}
+For the two sets of primitive frames defined above,
+\[
+ \#\mathcal E_-(n,G)=q^{2nm-m^2}d_{-1}(n,m,c;q),\qquad
+ \#\mathcal E_+(n,G)=q^{2nm-m^2}d_1(n,m,c;q).
+\]
+The same formulas hold for any nondegenerate target Hermitian
+form in the first case and any perfect target bilinear pairing
+in the second case.
+\end{theorem}
+
+\begin{proof}
+Changes of target bases remove the target form or pairing.
+If $m>n$ both sets are empty, and the displayed products are zero.
+The assertion is immediate if $m=0$. We may therefore assume
+$1\leq m\leq n$.
+
+First consider the Hermitian case. A basis of the radical and
+Lemma~\ref{md-unitary-order} put $G$ into the form
+$\operatorname{diag}(I_r,0_c)$, where $r=m-c$.
+Choose the first $r$ columns as an orthonormal frame. There are
+$\#U_n(k)/\#U_{n-r}(k)$ choices. The last $c$ columns are a
+linearly independent ordered isotropic frame in the orthogonal
+complement of dimension $N=n-r$; all their pairings must vanish.
+
+Let $F(N,c)$ count such ordered isotropic frames. Their span is
+contained in its own orthogonal complement, so $2c\leq N$ is
+necessary. If $c\geq1$, choose the first nonzero isotropic vector
+$v$. The quotient $v^\perp/k'v$ is nondegenerate of dimension
+$N-2$. To see this directly, choose $w$ with $h(v,w)=1$ and
+replace $w$ by $w+av$ so that it is isotropic; the required
+choice is possible because the trace is surjective. The span
+of $v,w$ is then a nondegenerate plane.
+Every isotropic $(c-1)$-frame in the quotient has
+$q^{2(c-1)}$ lifts to $v^\perp$, all of which form with $v$
+an independent isotropic frame. Therefore
+\[
+ F(N,c)=(q^N-(-1)^N)(q^{N-1}-(-1)^{N-1})
+                         q^{2(c-1)}F(N-2,c-1).
+\]
+Together with $F(N,0)=1$, this proves
+\[
+ F(N,c)=q^{c(c-1)}
+           \prod_{j=N-2c+1}^{N}(q^j-(-1)^j)
+                  \quad(2c\leq N).
+\]
+The necessary condition $2c\leq n-r$ is precisely $m+c\leq n$.
+Multiplying by the orthonormal-frame count makes the two products
+adjacent, with indices $n-m-c+1,\ldots,n$. The total exponent of
+$q$ after writing each factor as $q^j(1-(-1)^jq^{-j})$ is
+\[
+ \frac{n(n-1)-(n-r)(n-r-1)}2+c(c-1)
+             +\sum_{j=n-m-c+1}^{n}j
+                       =2nm-m^2.
+\]
+This proves the Hermitian formula, including the impossible cases.
+
+For the split case, the number of possible matrices $X$ is
+$\prod_{i=0}^{m-1}(q^n-q^i)$. For a fixed $X$, a change of
+dual target bases reduces the equation to saying that the first
+$m$ rows of $Y$ are $G$. Write the remaining $n-m$ rows as $Z$.
+The stacked matrix $Y$ is injective precisely when $Z$ is
+injective on $\ker G$, which has dimension $c$. After choosing
+a complement of this kernel, the number of choices is
+\[
+           q^{(n-m)(m-c)}\prod_{i=0}^{c-1}(q^{n-m}-q^i).
+\]
+It is zero if $c>n-m$. Otherwise, multiply by the count of $X$
+and extract powers of $q$. The remaining product has exactly
+the indices $n-m-c+1,\ldots,n$, and the extracted exponent is
+$2nm-m^2$. This proves the split formula.
+\end{proof}
+
+\subsection{Lifting primitive frames, including the dyadic case}
+
+Let $A$ be a complete discrete valuation ring with uniformizer
+$\varpi$ and residue field $k$ of size $q$. Let $B$ be either
+the integers in the unramified quadratic extension of its fraction
+field or $A\times A$ with its interchange involution. A Hermitian
+matrix over $B$ is a matrix $G=\overline G^{\,t}$. In the split
+case it is equivalent to one arbitrary matrix over $A$.
+Let $\Phi\in M_n(B)$ be an invertible Hermitian matrix, and let
+$G\in M_m(B)$ be Hermitian with reduction of corank $c$.
+A primitive solution modulo $\varpi^a$ to
+\[
+                         \overline X^{\,t}\Phi X=G
+\]
+means one whose reduction has full column rank at both residue
+factors, if there are two. Denote their number by $N_a$.
+
+\begin{proposition}\label{md-lifting}
+If $N_1\ne0$, then for every $a\geq1$,
+\[
+ N_a=q^{(a-1)(2nm-m^2)}N_1.
+\]
+The normalized primitive density is consequently
+\[
+ \lim_{a\to\infty}q^{-a(2nm-m^2)}N_a
+                        =d_\eta(n,m,c;q),
+\]
+with $\eta=-1$ in the inert case and $\eta=1$ in the split case.
+If $N_1=0$, all the counts and the density are zero.
+\end{proposition}
+
+\begin{proof}
+Suppose first that the residue algebra is $k'$. A tentative lift
+of a solution at level $a$ may be corrected by $\varpi^aH$.
+Modulo $\varpi^{a+1}$ its Gram matrix changes by
+\[
+        \varpi^a(\overline X^{\,t}\Phi H+
+                                      \overline H^{\,t}\Phi X).
+\]
+All matrices on the right can be reduced modulo $\varpi$.
+Since $X$ is injective and $\Phi$ is invertible,
+$\overline X^{\,t}\Phi$ has rank $m$. Thus
+$T=\overline X^{\,t}\Phi H$ ranges over all of $M_m(k')$.
+The map $T\mapsto T+\overline T^{\,t}$ is onto the
+$k$-space of Hermitian matrices: choose upper off-diagonal
+entries freely and choose each diagonal entry using the
+surjective trace $k'\to k$. This argument uses no division by $2$.
+The source space of corrections has $k$-dimension $2nm$ and the
+target has dimension $m^2$, so every allowed Gram correction has
+$q^{2nm-m^2}$ preimages.
+
+In the split case write the two components as $X,Y$.
+The linearized Gram map is
+$\delta X^t\Phi Y+X^t\Phi\delta Y$. Already its second
+term is onto $M_m(k)$, since $X$ has rank $m$.
+The same dimension count gives the same number of lifts.
+Iterating proves the first formula; division by the indicated
+power of $q$ and Theorem~\ref{md-frame-count} prove the second.
+Primitivity is preserved under lifting.
+\end{proof}
+
+In particular the unitary stabilizer density of a unimodular
+rank-$n$ lattice is
+\begin{equation}\label{md-stabilizer-density}
+                 \beta_{n,v}=
+                       \prod_{j=1}^n(1-\eta_v^j q_v^{-j}).
+\end{equation}
+This follows by taking $m=n$, $c=0$: a matrix with the prescribed
+invertible Gram matrix is automatically invertible. The argument
+does not require the local base field to be unramified over
+$\mathbb Q_2$. It only requires that its quadratic algebra $B$
+be unramified or split.
+
+\begin{example}\label{md-degenerate-test}
+For $q=2$, $n=2$, $m=1$, and zero Gram matrix, there are $9$
+primitive Hermitian vectors and $3$ split pairs. Their normalized
+densities are $9/8$ and $3/8$, respectively. For nonzero Gram
+matrix the two counts are both $6$, and the two densities are
+$3/4$. These values follow directly from the formulas above and
+show why the corank $c$ must occur in the lower limit of the product.
+Also, in rank $n=m=1$, a zero Gram matrix has no primitive
+Hermitian solution. If primitivity is deleted the zero vector is
+a solution. The source's density retains both corank and
+primitivity, so neither example contradicts it.
+\end{example}
+
+\subsection{The precise global input}
+
+Let $E/F$ be a CM extension: $F$ is totally real of degree
+$f=[F:\mathbb Q]$ and $E$ is a totally imaginary quadratic
+extension. Write $\mathcal O_F,\mathcal O_E$ for their rings of
+integers, $d_F>0$ for the absolute discriminant of $F$, and
+$\mathfrak d_{E/F}$ for the relative discriminant. Assume that
+$E/F$ is unramified at every finite prime. For a finite prime $v$
+of $F$ put $q_v=\#(\mathcal O_F/v)$ and
+$\eta_v=1$ if $v$ splits in $E$, $\eta_v=-1$ if it is inert.
+Let $\chi$ be the quadratic Hecke character of $E/F$.
+For $j\geq2$ put
+\[
+                L_j=L_F(j,\chi^j)
+                   =\prod_v(1-\eta_v^j q_v^{-j})^{-1}.
+\]
+Here $\chi^j$ means the trivial character for even $j$ and
+$\chi$ for odd $j$. Write $L_1=L_F(1,\chi)>0$ for the value
+defined by analytic continuation, or equivalently by the ratio
+of the residues of $\zeta_E$ and $\zeta_F$ at $1$.
+
+For a positive definite Hermitian space $V$ over $E$ and a full
+$\mathcal O_E$-lattice $L$, its genus is the set of lattices
+isometric to $L$ at every finite completion, modulo global
+isometry. Its mass is
+\[
+                \operatorname{Mass}(L)
+                   =\sum_{[L']\in\operatorname{gen}(L)}
+                                  \frac1{\#\operatorname{Aut}(L')}.
+\]
+The class set and stabilizers are finite. The class interpretation
+and finiteness in the setting used here were proved in
+Sections~\ref{al-section} and \ref{acl-section}.
+For $n\geq1$, let $M_n$ be the mass of the standard lattice
+$\mathcal O_E^n$ with Hermitian form $\overline x^{\,t}y$.
+
+We use the classical Siegel mass formula in its unitary form.
+With unimodular local lattices, it states
+\begin{equation}\label{md-classical-mass}
+ \operatorname{Mass}(L)=
+  2d_F^{n^2/2}\,N_{F/\mathbb Q}(\mathfrak d_{E/F})^{n(n+1)/4}
+   \left(\prod_{j=1}^n\frac{(j-1)!}{(2\pi)^j}\right)^f
+                            \prod_v\beta_{n,v}^{-1}.
+\end{equation}
+The factor $2$ is the unitary Tamagawa number; the compact
+archimedean group has Haar probability measure when interpreting
+the class mass. The product has the usual $L(1,\chi)$ convergence
+normalization. The formula in this generality is recorded in
+Kirschmer, Theorem 4.2.3, from Gan--Yu, \S10.
+Terakado--Yu, equation (2.6), gives the same constants.
+\cite{kirschmer-herm,terakado-yu-mass}
+The latter article imposes an additional dyadic assumption for
+its ramified local factors. We do not use those factors: the
+unramified local formula needed here has been proved above.
+Thus no unramifiedness condition on $F/\mathbb Q$ is being added
+to the source hypotheses.
+
+\begin{theorem}\label{md-mass-ratio}
+Under the preceding hypotheses, $M_n>0$ and
+\[
+ M_n=2d_F^{n^2/2}
+             \prod_{j=1}^n
+                  \left(\frac{(j-1)!}{(2\pi)^j}\right)^f L_j.
+\]
+In particular, for $n\geq2$,
+\begin{equation}\label{md-ratio}
+ \frac{M_n}{M_{n-1}}
+       =\left((n-1)!\left(\frac{\rho}{2\pi}\right)^n\right)^f
+                   d_F^{-1/2}L_n,
+             \qquad \rho=d_F^{1/f}.
+\end{equation}
+Equivalently, with $v=\rho/2$,
+\[
+ \frac{M_n}{M_{n-1}}
+     =\frac{\bigl((n-1)!(v/\pi)^n\bigr)^f}
+                  {\sqrt{(2v)^f}}\,L_n.
+\]
+This is the source mass ratio, including its archimedean
+normalization and discriminant power.
+\end{theorem}
+
+\begin{proof}
+The relative discriminant is the unit ideal.
+Substitute \eqref{md-stabilizer-density} in the classical
+formula \eqref{md-classical-mass}. Reorganizing the finitely
+many rank factors gives the displayed expression for $M_n$.
+Equivalently, one first uses the usual $L(1,\chi)$
+convergence factor and then the absolutely convergent products
+with $j\geq2$; no rearrangement of an unregularized product at
+$1$ is needed. Positivity also follows directly because the
+genus contains the standard lattice and all summands are positive.
+
+On division by the expression in rank $n-1$, the factor $2$
+and all factors with $j<n$ cancel. The remaining discriminant
+power is $d_F^{(2n-1)/2}$. Since $\rho^f=d_F$, this is
+$\rho^{nf}d_F^{-1/2}$, which proves \eqref{md-ratio}.
+Replacing $\rho$ by $2v$ gives its last form.
+\end{proof}
+
+\subsection{The source field and Euler-product conventions}
+
+The source initially specifies a totally imaginary number field $E$
+with an involution whose image under every complex embedding is complex
+conjugation. Its fixed field is indeed a totally real field $F$ with
+$[E:F]=2$. The involution cannot be trivial, since that would make
+every embedding real. Choose $\alpha$ not fixed by it. For $x\in E$,
+the element
+\[
+ b=\frac{x-\overline x}{\alpha-\overline\alpha}
+\]
+is fixed, and $x-b\alpha$ is fixed as well. Thus $E=F+F\alpha$,
+and the sum has dimension two. Every embedding of $F$ extends to
+an embedding of $E$; its values on $F$ are real by the specified
+conjugation identity. This proves the asserted CM interpretation.
+
+\begin{proposition}\label{md-source-conventions}
+Let complex conjugation on $E$ be denoted by a bar.
+The following condition is equivalent to finite unramifiedness
+of $E/F$:
+for every maximal ideal $P\subset\mathcal O_E$ there exists
+$\theta\in\mathcal O_E$ with $\theta-\overline\theta\notin P$.
+Under this condition,
+\[
+ [E:\mathbb Q]=2f,\qquad |d_E|=d_F^2,
+ \qquad |d_E|^{1/(2f)}=\rho.
+\]
+The product indexed by primes $P$ of $E$ with local factor
+\[
+ \begin{cases}
+ (1-(-1)^n(NP)^{-n/2})^{-1},&P=\overline P,\\
+ (1-(NP)^{-n})^{-1/2},&P\ne\overline P
+ \end{cases}
+\]
+equals $L_n$ for $n\geq2$, where the positive square root is used.
+\end{proposition}
+
+\begin{proof}
+At a ramified prime of a quadratic extension, conjugation acts
+trivially on the residue field, so every integral
+$\theta-\overline\theta$ belongs to $P$.
+At an inert unramified prime, conjugation is the nontrivial
+automorphism of its quadratic residue-field extension. Choose
+a residue outside the base field and lift it to $\mathcal O_E$.
+At a split prime, $P$ and $\overline P$ are distinct, and the
+Chinese remainder theorem gives $\theta\equiv0\pmod P$ and
+$\theta\equiv1\pmod{\overline P}$. In particular
+$\overline\theta\equiv1\pmod P$. This proves both implications.
+
+The discriminant formula in a tower gives
+$|d_E|=d_F^2N(\mathfrak d_{E/F})=d_F^2$, and the degree
+formula gives $[E:\mathbb Q]=2f$.
+At an inert prime $v$, there is one $P$ and $NP=q_v^2$.
+Its displayed factor is $(1-(-1)^nq_v^{-n})^{-1}$.
+At a split prime there are two primes of norm $q_v$, and
+their positive square-root factors multiply to
+$(1-q_v^{-n})^{-1}$. These are exactly the $v$-factors of $L_n$.
+Absolute convergence for $n\geq2$ justifies grouping them.
+\end{proof}
+
+\begin{corollary}\label{md-euler-bound}
+For every integer $n\geq2$,
+\[
+                         |\log L_n|\leq f\log\zeta(n).
+\]
+Thus the recurrence and Euler-factor bound assumed in
+Section~\ref{as-section} follow from the stated classical
+mass formula with the actual source hypotheses.
+\end{corollary}
+
+\begin{proof}
+For $0<x<1$ and $\epsilon\in\{1,-1\}$,
+$|\log(1-\epsilon x)|\leq-\log(1-x)$; this follows from
+$1+x\leq(1-x)^{-1}$ and monotonicity of the logarithm.
+Apply this to every local factor to obtain
+$|\log L_n|\leq\log\zeta_F(n)$.
+Above a rational prime $p$, there are at most $f$ prime ideals
+of $F$, each of norm at least $p$. Therefore
+\[
+ \prod_{v\mid p}(1-q_v^{-n})^{-1}
+                             \leq(1-p^{-n})^{-f}.
+\]
+Multiplying the absolutely convergent products proves
+$\zeta_F(n)\leq\zeta(n)^f$ and the assertion.
+\end{proof}
+
+The finite-field formula proves the source primitive-frame density
+including all Gram coranks. The mass ratio removes the mass input
+from the archimedean size calculation, subject only to the classical
+global mass theorem explicitly identified above. The source-space
+dimension and formal-degree inputs of that calculation are distinct
+representation-theoretic assertions and are not inferred from the
+mass ratio.
+
+
+% Exact column dimensions and finite-group fixed spaces.
+% Labels in this fragment use the prefix cd-.

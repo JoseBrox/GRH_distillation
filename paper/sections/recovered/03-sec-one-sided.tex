@@ -1,0 +1,237 @@
+\section{A one-sided criterion on multiplicative intervals}
+\label{sec:one-sided}
+
+Only elementary complex analysis is needed in the following argument.
+The proof is included because replacing a one-sided estimate by an
+unjustified absolute-value estimate would invalidate the reduction.
+
+
+\begin{proposition}\label{prop:landau-independent}
+Let $g:[0,\infty)\to\R$ be measurable and satisfy
+$|g(u)|\le C_0e^{2u}$. Suppose that its Laplace transform
+\[
+ \Phi(s)=\int_0^\infty g(u)e^{-su}\,du\qquad(\Rea s>2)
+\]
+extends meromorphically to $\Rea s>0$, with only isolated simple poles,
+and that every real pole has positive real residue.
+Fix $0<\theta<1$ and $\delta>0$. Suppose that for every $\eta>0$
+there are arbitrarily large $U$ and a nonnegative function $R_U\ge g$
+on $[U,(1+\delta)U]$ such that $R_U(u)e^{-\theta u}$ is integrable there and
+\[
+ \int_U^{(1+\delta)U}R_U(u)e^{-\theta u}\,du\le e^{\eta U}.
+\]
+Then $\Phi$ has no pole with real part greater than $\theta$.
+\end{proposition}
+
+\begin{proof}
+We give the tail estimate and the pole argument explicitly.
+
+Put $a=1+\delta/2$ and $b=1+\delta$. Both numbers
+\[
+ q_- = \frac{\exp(1-1/a)}{a},\qquad
+ q_+ = \frac ba\exp(1-b/a)
+\]
+are strictly less than $1$. For the first, use
+$\log a>1-1/a$ for $a>1$; for the second, use
+$\log r<r-1$ for $r=b/a>1$. Choose $\lambda>0$ so large that
+\[
+ \lambda a\ge1,\qquad
+ q:=\max(q_-,q_+)<\frac{\lambda}{\lambda+2},
+ \qquad \sigma:=\lambda+2>2.
+\]
+For $U\ge1$, set $k=\lceil\lambda aU\rceil$, so that $k\ge U$.
+Elementary exponential tilting and
+$\int_0^\infty u^ke^{-tu}\,du=k!t^{-k-1}$ give
+\begin{align*}
+ \int_0^U\frac{u^ke^{-\lambda u}}{k!}\,du
+ &\le \frac{e^{\lambda(a-1)U}}{(\lambda a)^{k+1}}
+ \le \frac1{\lambda a}\left(\frac{q_-}{\lambda}\right)^k,\\
+ \int_{bU}^\infty\frac{u^ke^{-\lambda u}}{k!}\,du
+ &\le \frac{e^{-\lambda(b-a)U}}{(\lambda a/b)^{k+1}}
+ \le \frac{b\exp((b-a)/a)}{\lambda a}
+          \left(\frac{q_+}{\lambda}\right)^k.
+\end{align*}
+For the first inequality, write the integrand as
+$e^{\lambda(a-1)u}u^ke^{-\lambda au}/k!$ and bound the first factor
+by its value at $U$. For the second, write it as
+$e^{-\lambda(1-a/b)u}u^ke^{-(\lambda a/b)u}/k!$ and bound the first
+factor by its value at $bU$. The final bounds use
+$U\le k/(\lambda a)$ and $U\ge(k-1)/(\lambda a)$, respectively.
+Thus, for a constant $C_1$ depending only on the chosen $\delta,\lambda$,
+\begin{equation}\label{eq:landau-tail-independent}
+ \int_{[0,\infty)\setminus[U,bU]}
+      \frac{u^ke^{-(\sigma-2)u}}{k!}\,du
+ \le C_1\sigma^{-k}.
+\end{equation}
+
+For $\Rea s>2$, differentiation under the integral is justified by
+the exponential bound on $g$. Write
+\[
+ A_k(s)=\frac{(-1)^k}{k!}\Phi^{(k)}(s)
+       =\int_0^\infty\frac{g(u)u^ke^{-su}}{k!}\,du.
+\]
+The triangle inequality gives, for every real $\gamma$,
+\[
+ |A_k(\sigma+i\gamma)|+\Rea A_k(\sigma)
+ \le\int_0^\infty (|g(u)|+g(u))
+               \frac{u^ke^{-\sigma u}}{k!}\,du.
+\]
+On $[U,bU]$, use $|g|+g\le2R_U$ and
+\[
+ \frac{u^ke^{-(\sigma-\theta)u}}{k!}
+ \le(\sigma-\theta)^{-k},
+\]
+which follows from the power series for the exponential.
+Off this interval, use $|g|+g\le2C_0e^{2u}$ and
+\eqref{eq:landau-tail-independent}. Since $\theta>0$, there is a constant
+$C_2>0$, independent of $U,k,\eta,\gamma$, such that, for every
+$\eta>0$ and arbitrarily large suitable $U$,
+\begin{equation}\label{eq:landau-coeff-independent}
+ |A_k(\sigma+i\gamma)|+\Rea A_k(\sigma)
+ \le C_2\frac{e^{\eta U}}{(\sigma-\theta)^k}
+ \quad\text{for all }\gamma\in\R,
+ \qquad k\ge U.
+\end{equation}
+
+Suppose, for a contradiction, that a pole $\rho_0$ has
+$\Rea\rho_0>\theta$. All poles have real part at most $2$, since the
+original Laplace integral is holomorphic on $\Rea s>2$.
+Let $Z$ be the pole set. Every compact subset of $\Rea s>0$ meets $Z$
+in a finite set. If the closed disk with centre $\sigma$ and radius
+$\sigma-\theta$ contains a pole, let $D$ be the distance to its nearest
+pole; otherwise put $D=\sigma-\theta$. In either case
+\[
+ 0<D\le\sigma-\theta,
+ \qquad B(\sigma,D)\cap Z=\varnothing.
+\]
+
+First suppose there is a pole $\rho_1$ with
+$\sigma-\Rea\rho_1<D$. There is then a real $\gamma$ for which
+$z=\sigma+i\gamma$ has a unique nearest pole $\rho$ at distance $d<D$.
+Here is the elementary justification. Start with
+$\gamma=\Im\rho_1$ and vary it in a sufficiently small interval so
+that $\rho_1$ remains at distance less than $D$. Only finitely many
+poles can enter the disks of radius $D$ under this variation. For two
+distinct such poles, equality of their distances from
+$\sigma+i\gamma$ occurs at at most one value of $\gamma$: squared
+distances have a difference affine in $\gamma$, and if their imaginary
+parts coincide their different real parts, both less than $\sigma$,
+give unequal distances for every $\gamma$. Avoid these finitely many
+exceptional values. Choose $r$ with $d<r<D$ such that $B(z,r)$ contains
+only $\rho$, and choose $r_1$ with $d<r_1<r$.
+
+If $c\ne0$ is the residue at $\rho$, subtracting $c/(s-\rho)$ makes
+$\Phi$ holomorphic on $B(z,r)$ after filling the removable singularity.
+Cauchy's estimates consequently give constants $M,M'>0$ such that
+\[
+ \left|A_k(z)-\frac{c}{(z-\rho)^{k+1}}\right|\le Mr_1^{-k},
+ \qquad |A_k(\sigma)|\le M'r_1^{-k}
+ \quad(k\ge0).
+\]
+The second estimate uses the pole-free disk $B(\sigma,D)$.
+Combining these inequalities with~\eqref{eq:landau-coeff-independent}
+gives
+\begin{equation}\label{eq:landau-final-independent}
+ \frac{|c|}{d}\,d^{-k}
+ \le (M+M')r_1^{-k}
+       +C_2e^{\eta U}(\sigma-\theta)^{-k}.
+\end{equation}
+
+It remains to consider the case in which
+$D\le\sigma-\Rea\rho$ for every pole $\rho$.
+The pole-free closed-disk alternative is impossible because of
+$\rho_0$. A nearest pole $\rho$ must satisfy
+\[
+ D\le\sigma-\Rea\rho\le|\sigma-\rho|=D.
+\]
+Hence it is the real pole $\beta=\sigma-D$, and it is the unique nearest
+pole. Moreover $\beta>\theta$, since
+$D\le\sigma-\Rea\rho_0<\sigma-\theta$.
+Choose $D<r_1<r\le\sigma-\theta$ so that $B(\sigma,r)$ contains no
+other pole. Its positive residue $c$ gives
+\[
+ \Rea A_k(\sigma)\ge cD^{-k-1}-Mr_1^{-k}
+\]
+by the same Cauchy estimate. Equation~\eqref{eq:landau-coeff-independent},
+with $\gamma=0$, gives~\eqref{eq:landau-final-independent} with
+$d=D$, $|c|=c$, and $M'=0$.
+
+In either case $0<d<r_1\le\sigma-\theta$. Fix
+$0<\eta<\log(r_1/d)$. Since $k\ge U$, multiplying
+\eqref{eq:landau-final-independent} by $d^k$ shows
+\[
+ 0<\frac{|c|}{d}
+ \le (M+M'+C_2)
+      \exp\bigl((\eta-\log(r_1/d))U\bigr).
+\]
+The right-hand side tends to zero along the arbitrarily large admissible
+$U$, which is a contradiction.
+\end{proof}
+
+
+\begin{theorem}\label{thm:interval-grh}
+Suppose that \eqref{eq:remaining-estimate} holds for every primitive
+Dirichlet character, with $b>1$ fixed for each character. Then every
+zero of every Dirichlet $L$-function in $0<\Re s<1$ has real part
+$1/2$.
+\end{theorem}
+
+\begin{proof}
+Fix $\chi$ and put $g(u)=H_\chi(e^u)$. Lemma~\ref{lem:positive-family}
+supplies a meromorphic Laplace transform, with positive residues at
+all real poles. Given $\eta>0$, choose
+$0<\varepsilon<\eta/(2b)$. On any sufficiently large interval
+$[Y,Y^b]$ in \eqref{eq:remaining-estimate}, set $U=\log Y$ and
+$R_U(u)=e^{(1/2+\varepsilon)u}$. Then
+\[
+ \int_U^{bU}R_U(u)e^{-u/2}\,du
+    =\frac{e^{b\varepsilon U}-e^{\varepsilon U}}{\varepsilon}
+    \le \varepsilon^{-1}e^{b\varepsilon U}
+    \le e^{\eta U}
+\]
+for all sufficiently large such $U$. Proposition~\ref{prop:landau-independent},
+with $\theta=1/2$ and $\delta=b-1$, excludes every pole with
+real part greater than $1/2$. Since $\chi\in\mathcal C_\chi$ and its
+coefficient is positive, Lemma~\ref{lem:positive-family} excludes
+every zero of $L(s,\chi)$ in that half-plane. The same argument
+includes $\zeta$.
+
+For a primitive character, a zero with $0<\Re s<1/2$ would give a
+zero of $L(1-s,\bar\chi)$ with real part greater than $1/2$, by the
+functional equation. The gamma factors are finite and nonzero
+throughout the open critical strip. Thus every primitive zero there
+has real part $1/2$.
+
+Finally, if a character $\xi$ modulo $N$ is induced by $\xi^*$ of
+conductor $f$, comparison of Euler factors, followed by analytic
+continuation, gives
+\[
+ L(s,\xi)=L(s,\xi^*)
+       \prod_{\substack{p\mid N\\p\nmid f}}
+                    (1-\xi^*(p)p^{-s}).
+\]
+When $\Re s>0$, each factor is nonzero since
+$|\xi^*(p)p^{-s}|=p^{-\Re s}<1$. Hence the result extends to all
+characters. The usual Riemann hypothesis follows by taking conductor
+one and using the classical location of the trivial zeta zeros.
+\end{proof}
+
+\begin{remark}[Essential quantifiers and signs]
+The characters and positive coefficients in $H_\chi$ must be fixed
+while $Y$ tends to infinity. One cannot replace them at each $Y$ by
+an unrelated family and apply the argument to a single Laplace
+transform. Similarly, $b>1$ must be fixed. The constants and the
+starting point of the admissible intervals may depend on
+$\varepsilon$ and on $\chi$.
+
+Two counterexamples delimit the analytic theorem. If
+$g(u)=-e^{\beta u}$ with $\beta>\theta$, the majorant $R=0$ satisfies
+every one-sided estimate but the transform has residue $-1$ at
+$\beta$; thus positivity at real poles cannot be omitted.
+If $g(u)=e^{\beta u}\cos u$, there are arbitrarily late negative
+intervals of fixed length, although its transform has poles at
+$\beta\pm i$. Such intervals cannot replace $[U,bU]$ with fixed
+$b>1$. These are counterexamples to weaker criteria, not to the
+criterion just proved.
+\end{remark}
+

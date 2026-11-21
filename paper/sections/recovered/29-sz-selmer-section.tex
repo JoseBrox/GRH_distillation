@@ -1,0 +1,266 @@
+\section{The trivial and quadratic residual characters in the complementary parity}
+\label{sz-selmer-section}
+
+The complementary-parity estimate in
+Section~\ref{sec:selection-assembly} requires several different
+arithmetic arguments. We first prove, without an automorphy input,
+the exact vanishing assertion used for its trivial Dirichlet
+character. This is the case called $Z$ in the submitted
+construction.\cite{alpo-uniform-source} Its proof is shorter than
+passing to the full cyclotomic tower: the necessary lifting of
+local coboundaries can be done over $\mathbb Q$ itself.
+
+Let $p$ be an odd prime, let $L/\mathbb Q_p$ be finite, and
+write $\mathcal O$ for its ring of integers, $\varpi$ for a
+uniformizer and $\mathbf k=\mathcal O/\varpi\mathcal O$ for
+its residue field. Write $\varepsilon_p:G_{\mathbb Q}\to
+\mathbb Z_p^\times$ for the cyclotomic character. For $e\ge1$
+put
+\[
+ A_e=(L/\mathcal O)(-e),\qquad
+       g\cdot a=\varepsilon_p(g)^{-e}a,\qquad
+ B_e=A_e[\varpi]\simeq\mathbf k(\bar\varepsilon_p^{-e}).
+                                                               \tag{SZ1}
+\]
+These are discrete modules. Fix decomposition groups $D_q$
+and inertia groups $I_q$ at the rational primes $q$. Define
+\[
+ \mathcal T_p(e)=\ker\left[
+ H^1(G_{\mathbb Q},A_e)\longrightarrow
+ H^1(D_p,A_e)\oplus\prod_{q\ne p}H^1(I_q,A_e)\right].   \tag{SZ2}
+\]
+This is the strict Selmer group with local condition zero
+at $p$ and unramified conditions elsewhere. Adding zero
+local conditions at further primes only replaces it by a
+subgroup.
+
+\subsection{Lifting a torsion class with its local condition}
+
+We use the following standard form of unramified class-field
+reciprocity: continuous homomorphisms from $G_F$ to a finite
+abelian group of odd order that vanish on all finite inertia
+groups factor through the ordinary ideal class group of $F$.
+At a real place the inertia group has order at most two and
+therefore has zero image. This is the Hilbert class field
+form of the global reciprocity theorem.\cite[Chapter V,
+\S3]{milne-cft}
+
+\begin{lemma}\label{sz-torsion-and-local}
+Every element of $H^1(G_{\mathbb Q},A_e)$ is killed by a
+power of $\varpi$. The image of the cyclotomic character
+on $D_p$ equals its image on $G_{\mathbb Q}$, namely
+$\mathbb Z_p^\times$. Consequently
+\[
+                         A_e^{G_{\mathbb Q}}=A_e^{D_p}.
+                                                               \tag{SZ3}
+\]
+Every class in $\mathcal T_p(e)[\varpi]$
+is the image of a class $c\in H^1(G_{\mathbb Q},B_e)$
+whose restrictions to $D_p$ and all $I_q$, $q\ne p$,
+are zero.
+\end{lemma}
+\begin{proof}
+A continuous cocycle from a profinite group to the discrete
+module $A_e$ has finite image. Choose a common power of
+$\varpi$ killing those finitely many values; it kills the
+cohomology class as well.
+
+For $r\ge1$, the polynomial $\Phi_{p^r}(1+X)$ is Eisenstein
+at $p$. Its constant term is $p$, and its reduction modulo
+$p$ is $X^{p^{r-1}(p-1)}$. Hence
+\[
+ [\mathbb Q_p(\mu_{p^r}):\mathbb Q_p]=p^{r-1}(p-1).
+\]
+Its Galois group therefore gives the full group
+$(\mathbb Z/p^r\mathbb Z)^\times$ under the cyclotomic
+character. Taking inverse limits gives the local assertion;
+the global image contains the local one. Formula (SZ3)
+follows because the action on $A_e$ factors through that
+character.
+
+The exact sequence
+\[
+ 0\longrightarrow B_e\longrightarrow A_e
+          \xrightarrow{\,\varpi\,}A_e\longrightarrow0    \tag{SZ4}
+\]
+shows that a class $x\in H^1(G_{\mathbb Q},A_e)[\varpi]$
+lifts to $c\in H^1(G_{\mathbb Q},B_e)$. If $x\in
+\mathcal T_p(e)$, the restriction $c|_{D_p}$ belongs to
+the image of the connecting map
+\[
+ A_e^{D_p}/\varpi A_e^{D_p}\longrightarrow H^1(D_p,B_e).
+\]
+By (SZ3) choose an element of
+$A_e^{G_{\mathbb Q}}/\varpi A_e^{G_{\mathbb Q}}$ with
+this same image. Subtract its global connecting class from
+$c$. Its image in $H^1(G_{\mathbb Q},A_e)$ is unchanged,
+and the new $c$ has zero restriction to $D_p$.
+
+For $q\ne p$ the inertia group acts trivially on $A_e$,
+since the cyclotomic character is unramified there.
+Multiplication by $\varpi$ is surjective on $A_e$, so
+(SZ4) shows that
+\[
+                     H^1(I_q,B_e)\longrightarrow H^1(I_q,A_e)
+\]
+is injective. The image of $c$ on the right is zero by
+(SZ2), so its restriction on the left is zero as well.
+The stated lifting conclusion follows.
+\end{proof}
+
+\begin{proposition}\label{sz-residual-class}
+Let $F_e$ be the fixed field in $\mathbb Q(\mu_p)$ of the
+kernel of $\bar\varepsilon_p^{-e}$. There is an injection
+\[
+       \mathcal T_p(e)[\varpi]\lhook\joinrel\longrightarrow
+                  \operatorname{Hom}(\operatorname{Cl}(F_e),B_e),
+                                                               \tag{SZ5}
+\]
+where the target denotes homomorphisms of additive abelian
+groups, and $B_e$ is trivial as a $G_{F_e}$-module.
+In particular $p\nmid h_{F_e}$ implies $\mathcal T_p(e)=0$.
+Moreover
+\[
+ \dim_{\mathbf k}\mathcal T_p(e)[\varpi]
+       \le\dim_{\mathbb F_p}\operatorname{Cl}(F_e)/p.
+                                                               \tag{SZ6}
+\]
+\end{proposition}
+\begin{proof}
+The final part of Lemma~\ref{sz-torsion-and-local} constructs
+a lift with zero restriction at $D_p$ for every $e$.
+It is unique: two lifts differ by a global connecting class
+from $A_e^{G_{\mathbb Q}}/\varpi A_e^{G_{\mathbb Q}}$.
+The local connecting map is injective on
+$A_e^{D_p}/\varpi A_e^{D_p}$ by exactness, and (SZ3)
+identifies its source with the global one. A connecting
+class whose local restriction is zero is therefore zero.
+Thus this lift depends $\mathcal O$-linearly on the original
+class.
+
+Restrict to $G_{F_e}$. This is injective on
+$H^1(G_{\mathbb Q},B_e)$: the inflation kernel is
+$H^1(\operatorname{Gal}(F_e/\mathbb Q),B_e)$, which
+vanishes by averaging because its order divides $p-1$.
+On $G_{F_e}$ the cocycle is a homomorphism. It is
+unramified everywhere by the local conditions on its lift,
+so class-field reciprocity gives (SZ5). A finite abelian
+group with $p$-rank $r$ has a space of homomorphisms to
+$\mathbf k$ of $\mathbf k$-dimension $r$, proving (SZ6).
+If $p\nmid h_{F_e}$, (SZ5) is zero; the torsion argument
+used below then annihilates the full group.
+\end{proof}
+
+\begin{theorem}\label{sz-trivial}
+If $p-1\mid e$, then $\mathcal T_p(e)=0$.
+\end{theorem}
+\begin{proof}
+The residual action on $B_e$ is trivial. A class furnished
+by Lemma~\ref{sz-torsion-and-local} is therefore a continuous
+homomorphism $G_{\mathbb Q}\to(B_e,+)$ which is unramified
+at every finite prime. Its target is a finite $p$-group.
+Class-field reciprocity makes it factor through
+$\operatorname{Cl}(\mathbb Q)=0$. Thus
+$\mathcal T_p(e)[\varpi]=0$. A nonzero element of a
+$\varpi$-primary torsion module has a nonzero multiple
+killed by $\varpi$; the first assertion of the lemma
+therefore proves $\mathcal T_p(e)=0$.
+\end{proof}
+
+\subsection{The quadratic residual character}
+
+\begin{lemma}\label{sz-small-real-class}
+If $p\equiv1\pmod4$ is prime and $F=\mathbb Q(\sqrt p)$,
+then $h_F<p$.
+\end{lemma}
+\begin{proof}
+The discriminant is $p$. The small-ideal and ideal-count
+bounds in Section~\ref{sl-section}, with $[F:\mathbb Q]=2$,
+give
+\[
+                         h_F\le\sqrt p\,(1+\log\sqrt p).
+\]
+For $u>1$, integrating $1/t<1$ from $1$ to $u$ gives
+$\log u<u-1$. Taking $u=\sqrt p$ makes the right side
+strictly less than $p$.
+\end{proof}
+
+\begin{theorem}\label{sz-quadratic}
+Suppose $e$ is even, $p-1\mid2e$, and $p-1\nmid e$.
+Then $\mathcal T_p(e)=0$.
+\end{theorem}
+\begin{proof}
+Write $p-1=2a$. The divisibilities say $e=ab$ with $b$
+odd. Since $e$ is even, $a$ is even and $p\equiv1\pmod4$;
+in particular $p\ge5$. The residual character on $B_e$
+is the quadratic character
+$\bar\varepsilon_p^{(p-1)/2}$. Its fixed field is
+$F=\mathbb Q(\sqrt p)$. One explicit identification is the
+quadratic Gauss sum
+\[
+ \tau=\sum_{u\bmod p}(u/p)\zeta_p^u,\qquad
+ \sigma_v\tau=(v/p)\tau,\qquad \tau^2=p.
+\]
+The last identity follows from
+$\tau\bar\tau=p$ and $(-1/p)=1$, as in the quadratic
+field calculation of Section~\ref{sec:selection-assembly}.
+
+There is an element of $D_p$ on which this residual
+character is $-1$. Its action minus one on $A_e$ is
+multiplication by a unit of $\mathcal O$. Hence
+$A_e^{D_p}=0$. Given $x\in\mathcal T_p(e)[\varpi]$,
+choose its lift $c\in H^1(G_{\mathbb Q},B_e)$ using
+(SZ4). The local connecting term at $p$ is now zero,
+so $c|_{D_p}=0$. As in the preceding lemma, its
+restrictions to every $I_q$, $q\ne p$, are zero.
+
+Restriction to $G_F$ makes $B_e$ a trivial module.
+Thus $c|_{G_F}$ is an everywhere unramified homomorphism
+from $G_F$ to the additive group of $\mathbf k$.
+At primes above $p$ it is zero even on the decomposition
+groups; at all other finite primes inertia is already
+killed. Class-field reciprocity makes it factor through
+$\operatorname{Cl}(F)$. Lemma~\ref{sz-small-real-class}
+shows $p\nmid h_F$, so this homomorphism is zero.
+
+The restriction map
+$H^1(G_{\mathbb Q},B_e)\to H^1(G_F,B_e)$ is injective.
+Indeed its kernel is the image of
+$H^1(\operatorname{Gal}(F/\mathbb Q),B_e)$ by the
+inflation--restriction sequence, and this latter group
+vanishes by averaging over its group of order two; two
+is invertible on $B_e$. Thus $c=0$ and $x=0$.
+The torsion argument in Theorem~\ref{sz-trivial} finishes
+the proof.
+\end{proof}
+
+\begin{corollary}\label{sz-exact-case}
+For every prime $p\ge5$, every even $e\ge2$ such that
+$p-1\mid2e$, and every finite extension $L/\mathbb Q_p$,
+one has $\mathcal T_p(e)=0$. The same is true if additional
+zero local conditions are imposed at any finite set of
+primes. In particular the length for the trivial Dirichlet
+character in case $Z$ of the submitted complementary-parity
+argument is exactly zero.
+\end{corollary}
+\begin{proof}
+Apply Theorem~\ref{sz-trivial} when $p-1\mid e$ and
+Theorem~\ref{sz-quadratic} otherwise. An additional local
+condition cuts out a subgroup, so it preserves vanishing.
+The source's coefficient action for the trivial character
+is exactly $\varepsilon_p^{-e}$, and its level-$N$ group
+adds zero conditions at the primes dividing $N$.
+Thus its group is a subgroup of (SZ2). Its parity condition
+at the trivial character is precisely that $e$ be even.
+\end{proof}
+
+This proves one complete arithmetic input, including
+arbitrarily ramified coefficient extensions and all the
+relevant twists. It does not identify the groups of
+nontrivial Dirichlet characters with these trivial-character
+groups. The complementary-parity estimate for the other
+characters still requires the remaining counting and
+restriction arguments, with constants independent of the
+selected auxiliary primes.
+
+

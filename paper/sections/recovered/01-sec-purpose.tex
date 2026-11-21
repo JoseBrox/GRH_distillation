@@ -1,0 +1,92 @@
+\section{Purpose, notation, and the assertion still to be proved}
+\label{sec:purpose}
+
+This manuscript begins a conventional reconstruction of the announced proof
+of the Riemann hypothesis and its extension to Dirichlet $L$-functions
+\cite{alpo-announcement}.
+It is a mathematical working paper, not a completed proof of those
+hypotheses. The results below have proofs in ordinary mathematical
+language. Where a result from the supplied papers is used as an input,
+that input is stated explicitly. In particular, the arithmetic estimate
+\eqref{eq:remaining-estimate} is not proved in this version. Calling it
+an auxiliary lemma would not make the reconstruction complete.
+
+The aim is to separate the analytic conclusion, which can be proved quite
+concisely, from the arithmetic construction that must produce the required
+estimate. This also identifies precisely what can be gained from the
+earlier work on zero-free regions and from the quadratic determinant
+arguments. The latter arguments are reconstructed below because their
+divisibility and nonvanishing mechanisms are useful in their own right;
+their conclusions do not supply \eqref{eq:remaining-estimate}.
+
+We write $s=\sigma+it$, use natural logarithms, and put
+$y_+=\max(y,0)$. The notation $A\ll B$ means $|A|\le CB$ for a
+positive constant; subscripts specify permitted dependencies.
+A Dirichlet character modulo $q$ is a homomorphism
+$(\Z/q\Z)^\times\to\C^\times$, extended periodically to $\Z$ by
+zero on integers not coprime to $q$. It is primitive if it is not induced
+from a proper divisor of $q$. Its conductor is the least modulus from
+which it is induced. The character of conductor one is denoted by $1$.
+For $\sigma>1$,
+\[
+ L(s,\chi)=\sum_{n\ge1}\frac{\chi(n)}{n^s}
+ =\prod_p(1-\chi(p)p^{-s})^{-1},\qquad L(s,1)=\zeta(s).
+\]
+The von Mangoldt function is $\Lambda(p^j)=\log p$ for primes $p$
+and integers $j\ge1$, and $\Lambda(n)=0$ otherwise.
+
+We use the classical analytic continuation and functional equations of
+these functions, and their nonvanishing on $\Re s=1$ away from the
+pole of $\zeta$. In particular $L(1,\chi)\ne0$ for nonprincipal
+$\chi$. For primitive $\chi$ of conductor $q>1$, with
+$\chi(-1)=(-1)^a$, the completed function
+\[
+ \Lambda_\chi(s)=(q/\pi)^{(s+a)/2}
+       \Gamma((s+a)/2)L(s,\chi)
+\]
+is entire and satisfies
+$\Lambda_\chi(s)=w_\chi\Lambda_{\bar\chi}(1-s)$ with
+$|w_\chi|=1$. Also
+$\zeta(s)=(s-1)^{-1}+\gamma+O(s-1)$ at $s=1$.
+These classical facts are background inputs; the arguments below do not
+claim to reprove the analytic theory of $L$-functions from its
+foundations. References and normalizations are given in
+\cite{dlmf-dirichlet,dlmf-zeta,dlmf-zeros}.
+
+For $x\ge1$ define the smoothed sums
+\begin{align}
+ S_\chi(x)&=\sum_{n\le x}\Lambda(n)\chi(n)(x/n-1),\label{eq:Schi}\\
+ G_\chi(x)&=S_\chi(x)+x\frac{L'(1,\chi)}{L(1,\chi)}
+                  &&(\chi\ne1),\label{eq:Gchi}\\
+ G_1(x)&=\sum_{n\le x}\Lambda(n)(x/n-1)
+          -x\log x+(1+\gamma)x.\label{eq:Gone}
+\end{align}
+Only primitive characters will be used in these definitions. In
+particular, \eqref{eq:Gone} refers to conductor one, not to the
+principal character at an arbitrary larger modulus.
+
+Fix a primitive character $\chi$ modulo $q$, let $o$ be its order, and
+let $\mathcal C_\chi$ be the set of distinct primitive characters
+inducing the powers $\chi^j$, $0\le j<o$. Put
+\begin{equation}\label{eq:Hchi}
+ H_\chi(x)=G_1(x)+\frac1{3o+1}
+       \sum_{\substack{\psi\in\mathcal C_\chi\\\psi\ne1}}
+               \Re G_\psi(x).
+\end{equation}
+The set and its weights are fixed once $\chi$ is fixed; they do not
+change with $x$ or with an error exponent.
+
+Here is a precise sufficient arithmetic assertion. For each primitive
+$\chi$, there is a fixed $b>1$ such that, for every $\varepsilon>0$,
+there are arbitrarily large $Y$ for which
+\begin{equation}\label{eq:remaining-estimate}
+             H_\chi(x)\le x^{1/2+\varepsilon}
+                    \qquad(Y\le x\le Y^b).
+\end{equation}
+The proof below shows that this assertion implies Dirichlet GRH.
+Its proof from the proposed automorphic and arithmetic constructions
+remains the principal unfinished part of the present manuscript.
+The one-sided inequality and the quantifier ``arbitrarily large'' are
+intentional: an absolute-value bound at every sufficiently large $x$
+is unnecessary.
+

@@ -1,0 +1,463 @@
+\section{The single-block identity and the local majorant induction}
+\label{tp-section}
+
+We retain the product of local fields $K$, compact open self-dual
+subring $R$, character $\psi$, and orbital kernel $\mathcal K$ of
+Section~\ref{sec:theta-orbital-identity}. Haar measure gives $R$
+volume one. Write $[a]$ for the class of $a$ in $K/R$, and also
+write $\psi$ for the induced character of that quotient. For an
+integral invertible matrix $Z$ of size $n$, put
+\[
+ C_Z=R^n/ZR^n,\qquad e_Z=[e_n],\qquad
+ \lambda_Z([v])=[(Z^{-1}v)_n].
+\]
+In size zero the module, marked vector and functional are zero.
+Isomorphisms of marked modules preserve both the vector and the
+functional; an unqualified isomorphism below preserves only the
+$R$-module structure. All sums over finite modules are ordinary
+finite sums. For a block configuration $h$, define
+\[
+ c(h)=|\det Z(h)|_K^{-1},\qquad N_0(h,h')=\mathcal K(h,h'),
+\]
+\[
+ N_s(h,h';t,t')=|tt'|_K^{s(s-1)/2}
+           \mathcal K(h[s,t],h'[s,t'])\quad(s\ge1).
+\]
+Here $h[s,t]$ means that the block $tJ_s$ is appended to $h$,
+where $J_s$ reverses the coordinates. These are the source's
+normalizations\cite{alpo-uniform-source}; in particular $N_1$ has no additional modulus
+factor. We prove the exact single-block identity and then deduce
+the local majorant theorem from the orbital germ proved in
+Theorem~\ref{ga-actual-germ}.
+
+\subsection{Duality and a bordered cokernel}
+
+\begin{lemma}\label{tp-dual}
+For $C=R^n/ZR^n$ as above, put $C^*=\operatorname{Hom}_R(C,K/R)$.
+Then $\#C^*=\#C=|\det Z|_K^{-1}$, and
+\[
+ \sum_{\alpha\in C^*}\psi(\alpha(x))
+       =\#C\,1_{x=0},\qquad
+ \sum_{x\in C}\psi(\alpha(x))=\#C\,1_{\alpha=0}.
+\]
+\end{lemma}
+
+\begin{proof}
+An $R$-linear functional on $R^n$ with values in $K/R$ is
+represented by a row $\xi\in K^n$ modulo $R^n$. It vanishes on
+$ZR^n$ exactly when $\xi Z\in R^n$. Consequently
+$C^*=R^nZ^{-1}/R^n$ as an additive group. Multiplication by $Z$
+identifies this with the quotient of $R^n$ by $R^nZ$, whose
+order is $|\det Z|_K^{-1}$ by the Haar-volume calculation in
+Lemma~\ref{th-coker}. The same calculation gives the order of $C$.
+
+If $x=[v]\ne0$, then $Z^{-1}v$ has a coordinate outside $R$.
+Self-duality of $R$ gives an $r\in R$ on which its pairing by
+$\psi$ is nontrivial. The corresponding row $r e_i^tZ^{-1}$
+represents an $\alpha\in C^*$ with $\psi(\alpha(x))\ne1$.
+Translation by that $\alpha$ makes the first sum zero. If
+$\alpha\ne0$, choose $x$ with $\alpha(x)\ne0$ in $K/R$.
+Self-duality gives $r\in R$ with $\psi(\alpha(rx))\ne1$;
+translation by $rx$ makes the second sum zero. In the zero cases
+every summand is one. This proof uses no principal-ideal property.
+\end{proof}
+
+For rows $\xi$, columns $\eta$, and $c\in K^\times$, set
+\begin{equation}\label{tp-border}
+ B(Z,\xi,\eta,c)=
+ \begin{pmatrix}Z&Z\eta\\ \xi Z&\xi Z\eta+c\end{pmatrix}.
+\end{equation}
+Suppose $Z$ is integral and invertible. The conditions
+$\xi Z\in R^n$ and $Z\eta\in R^n$ identify $\xi\bmod R^n$
+with $\alpha\in C_Z^*$ and $\eta\bmod R^n$ with
+$\beta=[Z\eta]\in C_Z$. The remaining condition for
+\eqref{tp-border} to be integral is
+\begin{equation}\label{tp-integral-condition}
+                         \alpha(\beta)=-[c].
+\end{equation}
+Every pair $(\alpha,\beta)$ has such representatives. These
+assertions follow either by applying $Z^{-1}$, or by evaluating
+the functional on the standard basis of $R^n$.
+
+\begin{lemma}\label{tp-border-isomorphisms}
+Let $Z,Z'$ be integral invertible matrices, possibly of different
+sizes. Fix $c\in K^\times$ and pairs $(\alpha,\beta)$ and
+$(\alpha',\beta')$ satisfying \eqref{tp-integral-condition}.
+There is a bijection between marked isomorphisms of the two
+bordered cokernels and the unqualified isomorphisms
+$\theta:C_Z\to C_{Z'}$ satisfying
+\[
+                 \alpha'\theta=\alpha,\qquad
+                 \theta\beta=\beta'.
+\]
+\end{lemma}
+
+\begin{proof}
+For $C=C_Z$, form the $R$-module
+\[
+ E_\alpha=\{(x,k)\in C\times K:[k]=-\alpha(x)\}.
+\]
+The map $(v,r)\mapsto([v],r-\xi v)$ from $R^n\oplus R$
+onto $E_\alpha$ has kernel consisting exactly of
+$(Zu,\xi Zu)$ with $u\in R^n$. Surjectivity follows by lifting
+$x$ to $v$ and using $[k]=-\alpha(x)$ to see that $k+\xi v\in R$.
+Thus it identifies the quotient by the first $n$ columns of
+\eqref{tp-border} with $E_\alpha$. The last column maps to
+$g=(\beta,c)$, and the last standard vector maps to $e=(0,1)$.
+Block inversion gives the last inverse coordinate
+$c^{-1}(r-\xi v)$. Hence the bordered marked module is
+\[
+ E_\alpha/Rg,\qquad [e],\qquad [(x,k)]\longmapsto[k/c].
+\]
+Here $g\in E_\alpha$ by \eqref{tp-integral-condition}, and
+$Rg$ is a free copy of $R$ because $c\in K^\times$.
+
+An isomorphism of these marked quotients lifts uniquely to an
+isomorphism $E_\alpha\to E_{\alpha'}$ preserving $k$. Indeed,
+given a representative of the image class, preservation of the
+functional says that its second coordinate differs from $k$ by
+an element of $cR$. Subtracting the corresponding multiple of
+$g'=(\beta',c)$ gives a unique lift with second coordinate $k$.
+Uniqueness proves additivity and $R$-linearity, and the same
+construction for the inverse proves bijectivity. The lift sends
+$g$ to $g'$ and $e$ to $e'$, by their quotient classes and their
+respective second coordinates $c$ and $1$.
+
+Quotienting $E_\alpha$ by $Re$ recovers $C$, with functional
+$-\alpha$ determined by $k\bmod R$. The lifted isomorphism
+therefore induces $\theta$ with $\alpha'\theta=\alpha$ and
+$\theta\beta=\beta'$. Conversely such a $\theta$ gives
+$(x,k)\mapsto(\theta x,k)$ on the two $E$'s. It preserves
+$e,g$ and descends to a marked isomorphism of the bordered
+quotients. These constructions are inverse, proving the claim.
+\end{proof}
+
+\subsection{The exact single-block sum}
+
+For marked modules $(C,e,\lambda)$ and $(C',e',\lambda')$,
+define
+\begin{equation}\label{tp-finite-inner}
+ I_c(C,C')=
+ \sum_{\theta:C\simeq C'}\ 
+ \sum_{\substack{\alpha\in C^*,\ \beta\in C\\
+                         \alpha(\beta)=-[c]}}
+ \psi\bigl(\alpha(e-\theta^{-1}e')
+                    +\lambda(\beta)-\lambda'(\theta\beta)\bigr).
+\end{equation}
+The outer isomorphisms are unqualified. The finite expression
+depends only on $c\bmod R$ and is zero for all but finitely many
+such classes.
+
+\begin{proposition}\label{tp-explicit-single}
+For configurations $h,h'$ and $c\in K^\times$,
+\begin{equation}\label{tp-single-formula}
+ N_1(h,h';c,c)=
+ \sum_{q\in\mathcal I_h}\sum_{q'\in\mathcal I_{h'}}
+       a_q\overline{a_{q'}}\,I_c(C_{Z_q},C_{Z_{q'}}),
+\end{equation}
+where each cokernel on the right retains its original marked
+vector and last inverse-coordinate functional.
+\end{proposition}
+
+\begin{proof}
+Fix lower and upper representatives $(x,y)$ of an orbital class
+for $h$, so that $Z=xZ(h)y$. Representatives over this class
+after appending the size-one block are
+\[
+ x_+=\begin{pmatrix}x&0\\ \xi x&1\end{pmatrix},\qquad
+ y_+=\begin{pmatrix}y&y\eta\\0&1\end{pmatrix}.
+\]
+The rows $\xi$ and columns $\eta$ range independently over
+$K^n/R^n$. To verify this parametrization, project a lower or
+upper representative to its upper left block. Use an integral
+change to put that block equal to the chosen representative.
+The remaining integral changes add an arbitrary integral row
+to $\xi$, or an arbitrary integral column to $\eta$; conversely
+only such changes keep the upper left representative fixed.
+This proves both existence and uniqueness of the indicated
+coset coordinates.
+
+Matrix multiplication gives
+$x_+\operatorname{diag}(Z(h),c)y_+=B(Z,\xi,\eta,c)$.
+Since the last column of $x$ and last row of $y$ are the last
+standard vector and covector, the additional phase is
+\[
+ \psi(\xi_n+\eta_n)
+       =\psi\bigl(\alpha(e_Z)+\lambda_Z(\beta)\bigr).
+\]
+For size zero both extra terms are zero. Integrality is precisely
+\eqref{tp-integral-condition}; if the bordered matrix is integral,
+its upper left matrix $Z$ is integral as well. Lemma~\ref{tp-border-isomorphisms}
+now replaces the marked-isomorphism count by the number of
+$\theta$ satisfying $\alpha'=\alpha\theta^{-1}$ and
+$\beta'=\theta\beta$. The difference of the two phases is
+exactly the argument of $\psi$ in \eqref{tp-finite-inner}.
+Summing over the remaining $\alpha,\beta$ proves
+\eqref{tp-single-formula}. The base orbital sets and all modules
+are finite, so every rearrangement is finite.
+\end{proof}
+
+\begin{theorem}\label{tp-parseval}
+The function $c\mapsto N_1(h,h';c,c)$ is $R$-periodic on
+$K^\times$ and extends to a finitely supported function on
+$K/R$. For any choice of unit representative $c_x$ of each
+additive class $x\in K/R$,
+\begin{equation}\label{tp-parseval-eq}
+ \sum_{x\in K/R}N_1(h,h';c_x,c_x)
+                       =c(h)c(h')N_0(h,h').
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Periodicity and finite support follow from
+\eqref{tp-finite-inner} and \eqref{tp-single-formula}.
+Each additive class has a representative in $K^\times$:
+adding a suitable element of the open subgroup $R$ avoids
+the finitely many coordinate hyperplanes of the product $K$.
+For a fixed $\theta$ in \eqref{tp-finite-inner}, summing over
+$c\bmod R$ removes the condition $\alpha(\beta)=-[c]$, since
+each pair $(\alpha,\beta)$ determines exactly one such class.
+The remaining sum factors as
+\[
+ \left(\sum_{\alpha\in C^*}
+       \psi(\alpha(e-\theta^{-1}e'))\right)
+ \left(\sum_{\beta\in C}
+       \psi\bigl((\lambda-\lambda'\theta)(\beta)\bigr)\right).
+\]
+Lemma~\ref{tp-dual} makes this $(\#C)^2$ if $\theta$ preserves
+both marks, and zero otherwise. An isomorphism $C\simeq C'$
+implies $\#C=\#C'$. Therefore
+\[
+ \sum_{c\bmod R}I_c(C,C')
+       =\#C\,\#C'\,\#\operatorname{Iso}((C,e,\lambda),(C',e',\lambda')).
+\]
+Every integral orbital matrix for $h$ has cokernel order $c(h)$,
+and similarly for $h'$. Substitution in \eqref{tp-single-formula}
+gives \eqref{tp-parseval-eq}.
+\end{proof}
+
+\begin{example}\label{tp-factor-example}
+The factors $c(h)c(h')$ cannot be deleted. Take
+$K=\mathbb Q_2$, $R=\mathbb Z_2$, and $h=h'=[1,2]$.
+There is just one base orbital matrix, namely $(2)$; its
+marked cokernel is $C=\mathbb Z/2\mathbb Z$, with $e=1$
+and $\lambda(x)=[x/2]$. It has only the identity module
+automorphism. Write $\alpha_r(x)=[rx/2]$, $r=0,1$.
+The phase in \eqref{tp-finite-inner} is always one.
+Three pairs $(r,\beta)$ have $r\beta=0$ and one has
+$r\beta=1$. Thus $N_1$ takes values $3$ on the zero coset,
+$1$ on $1/2+\mathbb Z_2$, and zero elsewhere. Its sum is
+$4=c(h)^2N_0(h,h)$, whereas $N_0(h,h)=1$.
+This is a counterexample to an incorrectly normalized identity,
+not to \eqref{tp-parseval-eq} or to the submitted theorem.
+\end{example}
+
+\subsection{Support and the unrestricted diagonal}
+
+\begin{lemma}\label{tp-minor-support}
+For $s\ge1$, a nonzero $N_s(h,h';t,t')$ implies
+\[
+                 (\det Z(h))t\in R,
+                 \qquad(\det Z(h'))t'\in R.
+\]
+If both $Z(h)$ and its inverse are integral, and likewise for
+$h'$, then $N_0(h,h')=1$.
+\end{lemma}
+
+\begin{proof}
+Let $r$ be the total size of $h$ and $n=r+s$. In an integral
+orbital matrix $x\operatorname{diag}(Z(h),tJ_s)y$, take the
+minor in the first $r+1$ rows and columns $1,\ldots,r,n$.
+Multiplication on the left restricts to a lower unipotent
+matrix on these rows and has determinant one. Before that
+multiplication, the last selected row is zero in the first $r$
+columns and has last entry $t$; the upper left $r$ by $r$
+block is $Z(h)$ times an upper unipotent matrix. The minor is
+therefore exactly $(\det Z(h))t$. Integrality puts it in $R$.
+If the kernel is nonzero, at least one integral orbital matrix
+occurs on each side, proving both assertions of support.
+
+For the last assertion every reversing block of $Z(h)$ is
+invertible over $R$. An integral matrix $xZ(h)y$ recovers
+integral $x,y$ by successive block elimination. Indeed, the
+first diagonal block is $t_1J_{s_1}$ times an upper unipotent
+matrix, so the latter is integral and invertible over $R$.
+The other blocks in its row and column recover the first
+upper and lower off-diagonal blocks integrally. Their Schur
+complement is integral and repeats the argument on the
+remaining blocks. Thus only the integral orbital coset
+occurs. Its phase is one and its cokernel is zero. The same
+holds for $h'$, and the zero marked modules have one
+isomorphism. This also covers empty configurations.
+\end{proof}
+
+For equal-size configurations $h,h'$ put
+\[
+ U_m(h,h';t,t')=|tt'|_K^{m(m+1)/2}
+   \sum_{c\bmod R}\mathcal K(h[m,t][1,c],h'[m,t'][1,c]),
+\]
+using unit representatives. Theorem~\ref{tp-parseval} applies
+to the configurations $h[m,t]$ and $h'[m,t']$. Since
+$c(h[m,t])=c(h)|t|_K^{-m}$, it gives the exact identity
+\begin{equation}\label{tp-unrestricted}
+             U_m(h,h';t,t')=c(h)c(h')N_m(h,h';t,t').
+\end{equation}
+
+Fix a finite collection $\mathcal F$ of equal-size configurations.
+Write $D_s=\operatorname{diag}_{h\in\mathcal F}(c(h)^s)$,
+and regard kernels as matrices on $\mathcal F$.
+Suppose a positive $R$-periodic majorant $\Theta_m$ satisfies
+\[
+ N_m(t,t)\le\Theta_m(t),\qquad
+ \sum_{x\in K/R}\Theta_m(x)\le D_mN_0D_m,
+\]
+with finite support on $K/R$. Each positive summand is at most
+the whole sum. Conjugating by $D_1$ and using
+\eqref{tp-unrestricted} proves
+\begin{equation}\label{tp-diagonal}
+                     U_m(t,t)\le D_{m+1}N_0D_{m+1}
+                         \quad(t\in K^\times).
+\end{equation}
+In particular the same bound holds for every convex average
+of these unrestricted diagonals. No new analytic estimate is
+required for this step.
+
+\subsection{Completion of the induction from the germ}
+
+\begin{theorem}\label{tp-majorant}
+For every $s\ge1$ and finite family $\mathcal F$ of equal-size
+configurations there is an $R$-periodic matrix-valued function
+$\Theta_s$ with
+\begin{equation}\label{tp-majorant-properties}
+ 0\le N_s(t,t)\le\Theta_s(t)\quad(t\in K^\times),\qquad
+ \sum_{x\in K/R}\Theta_s(x)\le D_sN_0D_s.
+\end{equation}
+It is zero outside the fixed compact open $R$-module
+\[
+                 L_c=R+\sum_{h\in\mathcal F}(\det Z(h))^{-1}R.
+\]
+Its $(h,h')$ entry vanishes when
+$|\det Z(h)|_K\ne|\det Z(h')|_K$.
+If all $Z(h)$ are invertible over $R$, then
+\[
+                      0\le\Theta_s(x)\le1_R(x)N_0.
+\]
+The construction uses the germ uniformly on each fixed compact
+parameter set. Theorem~\ref{ga-actual-germ} supplies exactly
+that uniformity, independently of the comparison configuration.
+\end{theorem}
+
+\begin{proof}
+For $s=1$, take $\Theta_1$ to be the periodic extension of
+$N_1(t,t)$. Positivity is the Gram identity, its exact mass is
+Theorem~\ref{tp-parseval}, and its support is
+Lemma~\ref{tp-minor-support}. Determinant support gives the
+claimed zero entries. This proves the base case.
+
+Suppose the result is known for $s=m\ge1$. Fix a compact open
+set $\Omega\subset K^\times$ invariant under $(m+1)$st roots
+of unity. Choose additive lattices $L_1\subset R\subset L_2$
+so that $\Omega,L_c\subset L_1^\perp$, and $\Omega$ and every
+entry of $N_{m+1}(z,z)$ on it are invariant under translation
+by $L_2^\perp$. Such lattices exist by compactness and the
+uniform local constancy already proved in
+Section~\ref{sec:theta-orbital-identity}; shrinking a lattice
+to a power of $p$ times $R$ preserves these conditions.
+Choose representatives $A$ of $L_2/R$, $B$ of $R/L_1$, and
+put $a=\#A$, $b=\#B$.
+
+For all shifts $\sigma=\rho+v$, with $\rho\in A$ and $v\in B$,
+choose one sufficiently small $t\in K^\times$ and set
+$t_\sigma^{-1}=t^{-1}+\sigma$. Their absolute values equal
+$|t|_K$. The germ consequence in
+Section~\ref{sec:theta-orbital-identity} identifies the truncated
+Gram matrix by
+\begin{equation}\label{tp-truncated-average}
+ G_c((\sigma,h),(\sigma',h'))
+       =\int_\Omega N_{m+1}(h,h';z,z)
+                             \psi(z(\sigma-\sigma'))\,dz.
+\end{equation}
+The unrestricted Gram matrix is
+$G((\sigma,h),(\sigma',h'))=U_m(h,h';t_\sigma,t_{\sigma'})$.
+Both are finite sums of positive Gram matrices, with
+$0\le G_c\le G$. Finiteness follows also directly from
+Theorem~\ref{tp-parseval}. Thus Lemma~\ref{th-cut-contraction}
+realizes them as $\langle u_{\sigma,h},u_{\sigma',h'}\rangle$
+and $\langle Tu_{\sigma,h},Tu_{\sigma',h'}\rangle$ for a
+contraction $T$.
+
+By \eqref{tp-unrestricted} and the inverse-parameter support
+proved earlier, these vectors are orthogonal when their
+$\rho$ indices differ: a nonzero entry would imply
+$\sigma-\sigma'\in R$, contrary to the choice of $A$.
+Use the convention that the inner product is antilinear in
+its first variable, and define
+\[
+ v_{\rho,z,h}=\frac1b\sum_{v\in B}\psi(zv)u_{\rho+v,h},\qquad
+ v_{z,h}=\frac1a\sum_{\rho\in A}\psi(z\rho)v_{\rho,z,h},
+\]
+\[
+ \widetilde\Theta(z)_{hh'}=
+       \frac1a\sum_{\rho\in A}
+             \langle v_{\rho,z,h},v_{\rho,z,h'}\rangle.
+\]
+These expressions are considered for $z\in L_1^\perp$, and
+$\widetilde\Theta$ is extended by zero to the other classes
+of $K/R$. The values of $\widetilde\Theta$ are $R$-periodic,
+since $v\in R$ and $\psi$ is trivial on $R$.
+
+For $z_1\in\Omega$, substitute \eqref{tp-truncated-average}
+in $a\langle Tv_{z_1,h},Tv_{z_1,h'}\rangle$. The resulting
+factor in the integrand is
+\[
+ \frac{a}{(ab)^2}
+  \left|\sum_{\sigma\in A+B}\psi((z-z_1)\sigma)\right|^2.
+\]
+The set $A+B$ is a system of representatives of $L_2/L_1$.
+Because $z,z_1\in L_1^\perp$, character orthogonality makes
+this factor $a$ on $z-z_1\in L_2^\perp$ and zero otherwise.
+The whole coset $z_1+L_2^\perp$ lies in $\Omega$ and the
+kernel is constant there. Its volume is $1/a$, since
+$\operatorname{vol}(L_2)=a$ and the measure is self-dual.
+Consequently
+\[
+ a\langle Tv_{z_1,h},Tv_{z_1,h'}\rangle
+                         =N_{m+1}(h,h';z_1,z_1).
+\]
+Proposition~\ref{th-fourier-average}, with characters
+$v\mapsto\psi(-zv)$, now gives
+\[
+ \widetilde\Theta(z_1)\ge N_{m+1}(z_1,z_1),\qquad
+ \sum_{z\in L_1^\perp/R}\widetilde\Theta(z)
+   =\frac1{ab}\sum_{\rho\in A}\sum_{v\in B}
+                        U_m(t_{\rho+v},t_{\rho+v})
+   \le D_{m+1}N_0D_{m+1},
+\]
+where the final inequality is \eqref{tp-diagonal}.
+Replace $\widetilde\Theta$ by $1_{L_c}\widetilde\Theta$.
+This keeps positivity and only decreases its total mass.
+It still dominates the kernel on $\Omega$, because that
+kernel is zero outside $L_c$ by Lemma~\ref{tp-minor-support}.
+Every Gram entry between heads with different determinant
+absolute values vanishes, since all $|t_\sigma|_K$ are equal.
+Thus the required zero entries persist through the averaging.
+
+Finally exhaust $K^\times$ by compact open products of annuli,
+stable under all roots of unity. The fixed module $L_c$ works
+for every annulus. Proposition~\ref{th-local-limit} gives
+one majorant on all units with the same mass and support,
+and with the same zero entries. This completes the induction.
+If all heads are invertible over $R$, then $c(h)=1$ and
+$L_c=R$; the one possible support coset gives the last
+inequality directly from the total-mass bound. The finite
+target reduction is Proposition~\ref{gu-uniform-germ}.
+\end{proof}
+
+The scalar germ, averaged diagonal estimate and all finite
+averaging steps of the local induction are therefore proved for
+the actual kernel. A local majorant alone does not prove the
+four global orbital estimates \eqref{th-four-estimates}; their
+uniform arithmetic and automorphic estimates remain distinct
+tasks in the complete argument.
+
+

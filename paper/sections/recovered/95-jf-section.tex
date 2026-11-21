@@ -1,0 +1,656 @@
+\section{Fourier decay for the actual Jacquet transforms}
+\label{jf-section}
+
+We now apply the group operators constructed above to actual
+Jacquet integrals.  In particular, the differential operators,
+their adjoints, and their decay estimates in this section are
+not additional hypotheses.  A separate final paragraph specifies
+the further operator identities needed to apply the conclusion
+to every recursively generated vector in the source
+\cite{alpo-uniform-source}.
+
+\subsection{Smooth Jacquet integrals and their radial adjoints}
+
+Retain the Hermitian spaces, measures and compact representations
+of Sections~\ref{rl-section}, \ref{jg-section} and
+\ref{jp-section}.  Let \(k\geq1\), \(r\geq0\),
+\(G_r=U(k+r,r+1)\), and
+\(E=\operatorname{Hom}_{\mathbb C}(W',W)\), with its
+Hilbert--Schmidt inner product linear in the first variable.
+Let \(J_rF=J_{(1,1)}F\) be the Jacquet integral of
+Section~\ref{jp-section}.  Put
+\[
+ \mathscr S_\varepsilon(G_r,E)=
+ \{F\in C^\infty(G_r,E):
+       \|F\|_{A,m}<\infty\text{ for all }A,m,
+       \ F=0\text{ on }\mathcal G<\varepsilon\},
+ \qquad \varepsilon>0.
+\]
+Here \(\mathcal G\) is the full Gram polynomial
+\eqref{rl-Gram}, and \(\|\cdot\|_{A,m}\) is the mixed
+left and right derivative seminorm defined in
+Section~\ref{jp-section}.  These are the actual coefficient
+functions used in the Fourier argument.  Write
+\(\mathscr S_+=\bigcup_{\varepsilon>0}\mathscr S_\varepsilon\).
+
+Number the outer coordinates from \(0\) to \(r-1\), and set
+\[
+ d(c)=\prod_{j=0}^{r-1}c_j,\qquad
+ \gamma_r(c)=\prod_{j=0}^{r-1}|c_j|^{2(r-j)+k},\qquad
+ d\eta_r(c,m)=\prod_{j=0}^{r-1}|c_j|^{-2}\,dc_j\,dm.
+\]
+Empty products are one.  The terminal variable \(m\) belongs
+to \(G_0=U(k,1)\), restricted to
+\(G(m)=|h(mz',z)|^2-TT'>0\).  On this open radial domain put
+\begin{equation}\label{jf-radial-transform}
+ \Phi_F(c,m)=\gamma_r(c)J_rF(b(c)m).
+\end{equation}
+The integration formula and Theorem~\ref{jp-pairing-equality}
+show that \(\Phi_F\in L^2(d\eta_r,E)\) for every
+\(F\in\mathscr S_+\).  More precisely, for fixed compatible
+Haar measures there is a positive constant \(C_r\) such that
+\begin{equation}\label{jf-radial-pairing}
+ \langle\Phi_F,\Phi_H\rangle_{L^2(d\eta_r)}
+                          =C_r\beta(F,H).
+\end{equation}
+Indeed, \(\gamma_r^2\prod|c_j|^{-2}\) is exactly the outer
+density in the open-cell Haar formula.  The compact-terminal
+integration formula of Section~\ref{jg-section} then gives
+\eqref{jf-radial-pairing}; compact equivariance preserves the
+Hilbert--Schmidt inner product.  The constant is independent
+of \(F,H\), and can be made one by the allowed normalization
+of terminal Haar measure.
+
+\begin{lemma}\label{jf-pointwise-smooth}
+For \(F\in\mathscr S_+\), the Jacquet integral is absolutely
+convergent and smooth at every point of the open cell with
+\(\mathcal G>0\).  It may be differentiated there under the
+integral sign.  If \(\Theta\) is one of the group operators
+of Theorems~\ref{rt-actual-lifts}, \ref{rc-actual-lifts},
+or a composition of these with the coefficient of
+Theorem~\ref{rl-regular-inverse}, then
+\begin{equation}\label{jf-commute}
+             \Theta J_rF=J_r(\Theta F),\qquad
+             \Theta^\dagger J_rF=J_r(\Theta^\dagger F).
+\end{equation}
+Both \(\Theta F\) and \(\Theta^\dagger F\) belong to the
+same \(\mathscr S_\varepsilon\) as \(F\).
+\end{lemma}
+
+\begin{proof}
+We give the uniform majorant needed for the pointwise statement.
+For one outer pair, the inverse coordinates in
+Lemma~\ref{jm-cell-haar} are rational functions of the entries
+of the group matrix and of its nonzero lower-left entry.
+More explicitly, for
+\(g=n_Lw(t)\iota(g')n_R\), let \(J\) be the matrix of
+the form on the smaller space.  Then
+\[
+ t=g_{fe},\quad v_L=g_{We}/t,\quad
+ v_R^*J=-g_{fW}/t,\quad
+ g'=g_{WW}+v_Lt v_R^*J.
+\]
+The two central parameters are the imaginary parts of
+\(g_{ee}/t\) and \(g_{ff}/t\); their real parts are
+determined by isotropy.  Iteration proves that the inverse
+coordinates on the full open cell are rational, with
+denominators products of the nonzero leading minors and
+their conjugates.
+
+Fix a compact subset of the radial domain and allow both
+compact factors of the Jacquet integral to vary.  The leading
+minors are invariant under the integrating groups and are
+bounded away from zero on this compact set.  The preceding
+inverse formulas imply
+\[
+  1+\|n_L\|_{\rm coord}+\|n_R\|_{\rm coord}
+              \leq C M(k_L^{-1}n_L^{-1}b(c)m n_Rk_R)^a
+\]
+for some \(C,a>0\).  Coordinates on the nilpotent groups
+have Lebesgue Haar measure.  Every fixed derivative of the
+integrand is a finite sum of left or right derivatives of
+\(F\), multiplied by polynomials in these nilpotent
+coordinates with coefficients bounded on the chosen compact
+set.  Choosing the decay exponent in \(\|F\|_{A,m}\)
+larger than this polynomial degree and the dimension of the
+integration space gives an integrable majorant.  Dominated
+convergence proves absolute convergence and every derivative
+asserted in the lemma.  It also proves smooth compact
+equivariance, either directly or from the smoothness of
+finite dimensional continuous unitary representations.
+
+The covariance proved in Sections~\ref{rt-section} and
+\ref{rc-section}, and for the spectral coefficient in
+Section~\ref{rl-section}, says precisely that these operators
+commute with the action \(\rho(p)\).  Moving the operator
+inside the now justified integral proves the first identity
+in \eqref{jf-commute}.  The action \(\rho(p)\) is unitary
+for Haar measure, so its commutation with \(\Theta\)
+also implies commutation with \(\Theta^\dagger\).
+The polynomial bounds for all derivatives of the coefficients
+and their adjoints, on \(\mathcal G\geq\varepsilon\),
+prove preservation of every seminorm after increasing its
+decay exponent and derivative order.  Differential operators
+do not enlarge support.  The resulting functions extend
+smoothly by zero across the omitted region, since they vanish
+on the open set \(\mathcal G<\varepsilon\).
+The same dominated argument proves the second identity.
+\end{proof}
+
+\begin{lemma}\label{jf-radial-adjoint}
+Suppose a differential operator \(\Theta\) commutes with
+the left and right unipotent translations and has radial
+operator \(\theta\) after multiplication by \(\gamma_r\).
+Then its Haar formal adjoint has radial operator
+\(\theta^*\), the formal adjoint for \(d\eta_r\).
+This applies to all four group operators used below.
+\end{lemma}
+
+\begin{proof}
+Use the coordinates \((n_L,c,m,n_R)\) before dividing
+by the compact groups.  Haar measure is
+\[
+ dn_L\,dn_R\,
+     \gamma_r(c)^2\prod_j|c_j|^{-2}\,dc_j\,dm.
+\]
+Take a coordinate chart in \((c,m)\).  In this chart any
+finite order differential operator has a unique expansion
+in ordered products of a fixed invariant frame on each
+nilpotent factor and ordinary coordinate derivatives in
+\((c,m)\), with smooth coefficient functions.  This follows
+by replacing the ordinary derivatives in the nilpotent
+coordinates by the invertible invariant frame and proceeding
+from the highest order to the lowest order.  Translation
+invariance forces the coefficients in this expansion to be
+independent of \(n_L,n_R\).
+
+The nilpotent groups are unimodular.  Each real invariant
+vertical vector field consequently has formal adjoint equal
+to its negative.  On an equivariant function it acts by a
+purely imaginary scalar, because the character is unitary;
+evaluation on that character therefore preserves the adjoint
+operation.  Horizontal integration by parts uses exactly
+the remaining measure
+\(\gamma_r^2\prod|c_j|^{-2}dc_j\,dm\).
+Thus reduction to the character commutes with formal
+adjoints for this measure.  Finally multiplication by the
+positive function \(\gamma_r\) is an isometry from that
+weighted space to \(L^2(d\eta_r)\), and conjugates both
+the operator and its adjoint.  This proves the lemma locally,
+hence throughout the open cell.
+
+For the actual operators, both reduced adjoints preserve
+the compact equivariance conditions: the group operator
+commutes with the unitary compact actions, and the displayed
+radial operators and their stars preserve the same conditions.
+Their equality on that subspace may therefore be checked
+against compactly supported equivariant tests.  Such tests
+are obtained by compact averaging, and are dense in the
+corresponding local space of sections.  Integration by parts
+against them shows that two expressions for the same reduced
+operator have the same adjoint on this subspace as well.
+\end{proof}
+
+\subsection{A four-operator identity}
+
+Assume now \(r\geq1\).  In the radial coordinates set
+\[
+ p_j=c_j\partial_{c_j},\quad
+ \bar p_j=\bar c_j\partial_{\bar c_j},\quad
+ T_j(Y)=\begin{pmatrix}Y+p_j&-c_j\\c_j^{-1}&0\end{pmatrix},
+ \quad
+ \bar T_j(Y)=
+       \begin{pmatrix}Y-\bar p_j&-\bar c_j\\\bar c_j^{-1}&0\end{pmatrix}.
+\]
+Here the derivatives are the Wirtinger derivatives.
+Write
+\[
+ \binom{A(Y)}{B(Y)}=T_{r-1}(Y)\cdots T_0(Y)\binom10,
+ \qquad
+ \binom{\bar A(Y)}{\bar B(Y)}=
+                  \bar T_{r-1}(Y)\cdots\bar T_0(Y)\binom10.
+\]
+The bar on \(\bar A,\bar B,\bar T\) is part of this
+definition; it does not change the order of differential
+operators.  Direct integration by parts for \(|c_j|^{-2}dc_j\)
+gives
+\[
+                    p_j^*=-\bar p_j,\qquad c_j^*=\bar c_j.
+\]
+
+The actual terminal matrix of Section~\ref{re-section} is
+denoted by \(t(Y)\), with
+\(\tau_Y=t_{22}(Y)=Gx(Y)\).  Its finite spectral formula is
+\(x(Y)=\sigma\sum_\rho p_\rho(Y)P_\rho\), where
+\(\sigma=\pm1\), the \(P_\rho\) are orthogonal projections,
+and each \(p_\rho\) is a nonzero real polynomial.  Choose
+a real \(Y\) for which all these polynomials are nonzero
+at \(Y-1,Y,Y+1\).  Such a choice exists, since there are
+only finitely many exceptional real numbers.  Put
+\[
+ \ell=\tau_Y^{-1}t_{21}(Y),\qquad
+ \ell^*=\tau_{Y+1}^{-1}t_{12}(Y+1).
+\]
+The equality in this notation is the proved shifted adjoint
+identity of Section~\ref{re-section}.  These terminal
+operators commute with all outer coordinate operators.
+Define
+\begin{equation}\label{jf-four-radial}
+ \begin{split}
+ \theta_0&=\bar d\,\bar A(Y+1),\qquad
+ \theta_3=d\,A(Y),\\
+ \theta_1&=d^{-1}\bigl(\ell A(Y)+B(Y)\bigr),\\
+ \theta_2&=\bar d^{-1}
+               \bigl(\ell^*\bar A(Y+1)+\bar B(Y+1)\bigr).
+ \end{split}
+\end{equation}
+They are differential operators on the radial domain.
+
+\begin{proposition}\label{jf-four-lifts}
+There are actual group differential operators
+\(\Theta_0,\Theta_1,\Theta_2,\Theta_3\) with radial
+operators \(\theta_0,\theta_1,\theta_2,\theta_3\).
+They commute with \(\rho(p)\), and they and their Haar
+formal adjoints preserve every \(\mathscr S_\varepsilon\).
+For their actual Jacquet transforms, both the operator and
+adjoint identities hold pointwise on the radial domain.
+\end{proposition}
+
+\begin{proof}
+Take \(\Theta_0=\overline{\mathcal A}_{Y+1}\) and
+\(\Theta_3=\mathcal A_Y\) from
+Theorem~\ref{rt-actual-lifts}.  Theorem~\ref{rc-actual-lifts}
+supplies the operators with radial parts
+\[
+ \bar d\,(t_{21}(Y)A(Y)+\tau_Y B(Y)),\qquad
+ d\,(t_{12}(Y+1)\bar A(Y+1)+\tau_{Y+1}\bar B(Y+1)).
+\]
+Compose on the left with the regular group coefficients
+of Theorem~\ref{rl-regular-inverse}, whose radial values
+are respectively
+\(\mathcal G^{-1}x(Y)^{-1}\) and
+\(\mathcal G^{-1}x(Y+1)^{-1}\).
+Since \(\mathcal G=d\bar dG\), the results are exactly
+\(\theta_1,\theta_2\).  In particular, this construction
+does not use \(d^{-1}\) as a coefficient on the full group:
+the proved full-group coefficient has only powers of
+\(\mathcal G\) in its denominator and is smooth even at
+vanishing intermediate minors.  Covariance, growth and
+support preservation follow from the three cited theorems
+and Leibniz's rule.  Lemmas~\ref{jf-pointwise-smooth} and
+\ref{jf-radial-adjoint} give the final assertion.
+\end{proof}
+
+For \(s\in\mathbb C\) put
+\(f_s(c)=\exp(sc_0-\bar s\bar c_0)\), so that
+\(|f_s|=1\).  Multiplication by this function is also
+denoted by \(f_s\).
+
+\begin{lemma}\label{jf-four-identity}
+On the radial domain one has the exact differential identity
+\begin{equation}\label{jf-four-equation}
+             \theta_0^*f_s\theta_1
+                   -\theta_2^*f_s\theta_3=s f_s.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let \(J=\bigl(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\bigr)\).
+The relation \([p_j,c_j^{-1}]=-c_j^{-1}\) gives
+\[
+                  \bar T_j(Y+1)^*JT_j(Y)=J.
+\]
+The only nonconstant entry to check is the upper-left one:
+\[
+       (Y+1+p_j)c_j^{-1}-c_j^{-1}(Y+p_j)=0.
+\]
+For \(j=0\), use \([p_0,f_s]=sc_0f_s\) to obtain
+\[
+             \bar T_0(Y+1)^*f_sJT_0(Y)=f_sJ+s f_sE_{11}.
+\]
+For every other \(j\), the wave \(f_s\) commutes with
+the entries of \(T_j,\bar T_j\).  Successively cancelling
+these factors and taking the upper-left entry yields
+\begin{equation}\label{jf-telescoping}
+          \bar A(Y+1)^*f_s B(Y)
+             -\bar B(Y+1)^*f_s A(Y)=s f_s.
+\end{equation}
+On substituting \eqref{jf-four-radial}, the left side of
+\eqref{jf-four-equation} becomes
+\[
+ \bar A(Y+1)^*f_s(\ell A(Y)+B(Y))
+        -(\bar A(Y+1)^*\ell+\bar B(Y+1)^*)f_sA(Y).
+\]
+The two terms involving \(\ell\) cancel because \(\ell\)
+commutes with \(f_s\).  The remainder is
+\eqref{jf-telescoping}.  This calculation retains the
+order of every pair of noncommuting operators.
+\end{proof}
+
+\subsection{Rapid Fourier decay}
+
+Let \(D_1(g)\) be the first leading minor.  It is a linear
+polynomial in the entries of \(g\), invariant under the two
+integrating groups, and satisfies \(D_1(b(c)m)=c_0\).
+Set
+\[
+       W_sF(g)=e^{sD_1(g)-\bar s\overline{D_1(g)}}F(g).
+\]
+For each fixed \(s\), both \(W_s\) and multiplication
+by any polynomial in \(D_1,\overline{D_1}\) preserve
+\(\mathscr S_\varepsilon\).  This follows by differentiating:
+each derivative is the same unit-modulus exponential times
+a polynomial in the matrix entries.  Invariance gives
+\begin{equation}\label{jf-wave}
+                        \Phi_{W_sF}=f_s\Phi_F.
+\end{equation}
+
+\begin{theorem}\label{jf-fourier-decay}
+For the actual place data and any \(F,H\in\mathscr S_+\),
+the function
+\[
+                       s\longmapsto\beta(W_sF,H)
+\]
+is a Schwartz function on \(\mathbb C=\mathbb R^2\).
+In particular, for every integer \(N\geq0\),
+\begin{equation}\label{jf-decay-bound}
+        |\beta(W_sF,H)|\leq C_N(F,H)(1+|s|)^{-N}.
+\end{equation}
+All constants are finite and depend only on the indicated
+functions, the fixed place data and the chosen operators.
+\end{theorem}
+
+\begin{proof}
+Apply \eqref{jf-four-equation} to \(\Phi_F\).  By
+Proposition~\ref{jf-four-lifts}, Lemma~\ref{jf-pointwise-smooth}
+and \eqref{jf-wave}, its left side is the radial Jacquet
+transform of
+\[
+           \Theta_0^\dagger W_s\Theta_1F
+                        -\Theta_2^\dagger W_s\Theta_3F.
+\]
+Every function here belongs to \(\mathscr S_+\).
+Pair with \(\Phi_H\), use \eqref{jf-radial-pairing},
+and apply the proved actual adjointness of
+Corollary~\ref{jp-poly-adjoint}.  All its hypotheses hold:
+the operators commute with \(\rho\), all derivatives of
+their coefficients and adjoint coefficients have polynomial
+growth on the common positive Gram support, and every input
+has derivatives of arbitrarily fast decay.  We obtain
+\begin{equation}\label{jf-beta-recursion}
+ s\beta(W_sF,H)
+       =\beta(W_s\Theta_1F,\Theta_0H)
+                    -\beta(W_s\Theta_3F,\Theta_2H).
+\end{equation}
+No integration by parts on a noncompact radial function has
+been assumed in this step; it is supplied by the group
+adjointness theorem with its proved integrable majorants.
+
+For the initial uniform bound, use \eqref{jf-wave} and
+Cauchy--Schwarz:
+\[
+ |\beta(W_sF,H)|
+ \leq C_r^{-1}\|\Phi_F\|_2\|\Phi_H\|_2.
+\]
+This bound is independent of \(s\).  Define recursively
+\[
+ K_0(F,H)=C_r^{-1}\|\Phi_F\|_2\|\Phi_H\|_2,\qquad
+ K_{n+1}(F,H)=K_n(\Theta_1F,\Theta_0H)
+                           +K_n(\Theta_3F,\Theta_2H).
+\]
+These numbers are finite, by preservation of \(\mathscr S_+\).
+Induction in \eqref{jf-beta-recursion} gives
+\( |s|^n|\beta(W_sF,H)|\leq K_n(F,H)\).
+Together with the bound for \(n=0\) and
+\((1+x)^n\leq2^n(1+x^n)\), this proves
+\eqref{jf-decay-bound}.
+
+To include derivatives in \(s\), write \(s=u+iv\) and
+\(D_1=x+iy\).  The phase is \(2i(uy+vx)\).
+Each real derivative therefore replaces \(F\) by a
+polynomial in \(D_1,\overline{D_1}\) times \(F\).
+These functions belong to \(\mathscr S_+\).
+Their radial transforms are square integrable, so
+Cauchy--Schwarz and dominated convergence justify all these
+derivatives of the pairing.  Applying the just proved
+estimate to each differentiated input proves that every
+derivative decays to every order.  This is the Schwartz
+assertion.
+\end{proof}
+
+\subsection{Compact inputs and smooth lower-rank families}
+
+The following argument provides pointwise regularity of
+the marginal densities; a Fourier representative alone
+would only give almost everywhere information.
+Let \(r\geq1\), and decompose
+\(N_r=U_r\rtimes N_{r-1}\), where \(U_r\) is the
+one-pair nilpotent group of Lemma~\ref{ju-heisenberg}.
+For \(F\in C_c^\infty(G_r,E)\cap\mathscr S_\varepsilon\)
+and \(t\ne0\), define a coefficient on \(G_{r-1}\) by
+\begin{equation}\label{jf-slice-family}
+ \begin{split}
+ F_t(g)={}&|t|^{2r+k}
+   \int_{U_r\times U_r}
+       \psi_z(u_L)\overline{\psi_{z'}(u_R)}\\[-2pt]
+       &\hspace{34mm}\cdot
+          F(u_L^{-1}w(t)\iota(g)u_R)\,du_L\,du_R.
+ \end{split}
+\end{equation}
+The characters are the restrictions of the original
+unipotent characters.  Use recursively compatible Haar
+measures; other choices only insert fixed positive constants.
+
+\begin{proposition}\label{jf-compact-family}
+The function \((t,g)\mapsto F_t(g)\) is smooth on
+\(\mathbb C^\times\times G_{r-1}\).  On every compact
+\(K\subset\mathbb C^\times\), all \(F_t\) have support
+in one compact subset of \(G_{r-1}\), and there is
+\(\varepsilon_K>0\) such that \(F_t=0\) on
+\(\mathcal G_{r-1}<\varepsilon_K\) for every \(t\in K\).
+All their parameter derivatives have the same two properties.
+The exact radial factorization is
+\begin{equation}\label{jf-factorization}
+                  \Phi_F(t,c',m)=\Phi^{(r-1)}_{F_t}(c',m).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply the inverse coordinate formulas in the proof of
+Lemma~\ref{jf-pointwise-smooth} to
+\(u_L^{-1}w(t)\iota(g)u_R\) in \(\operatorname{supp}F\).
+When \(t\) remains in \(K\), its modulus has a positive
+lower bound.  All inverse coordinates \(u_L,u_R,g\) are
+then bounded uniformly.  They lie in closed subsets of
+finite dimensional matrix spaces, so they lie in fixed
+compact sets.  Thus the integrand is supported in one
+compact subset of the integration variables and \(g\),
+locally uniformly in \(t\).  Differentiation under this
+compact integral proves smoothness and the support assertion.
+Derivatives do not enlarge this support; taking a slightly
+larger compact neighborhood of \(K\) gives the assertion
+also at its boundary.
+
+Leading minors in these coordinates satisfy
+\(D_{j+1}^{(r)}=tD_j^{(r-1)}\).  In particular,
+\[
+ \mathcal G_r(u_L^{-1}w(t)\iota(g)u_R)
+                                  =|t|^2\mathcal G_{r-1}(g).
+\]
+Consequently one may take
+\(\varepsilon_K=\varepsilon/\max_{t\in K}|t|^2\).
+For derivatives, use a compact neighborhood of \(K\) in
+this formula.  A smooth function which vanishes on the
+corresponding open set has all derivatives zero there.
+
+The semidirect-product Haar formula and the character
+identity factor the full Jacquet integral into the outer
+integral in \eqref{jf-slice-family} followed by the smaller
+Jacquet integral.  To check the ordering, move the two
+\(N_{r-1}\) variables and the compact factors across
+\(w(t)\), which commutes with the embedded smaller group.
+Conjugate \(u_L,u_R\) by those factors.  Their action on
+\(U_r\) preserves Haar measure: the unipotent factors
+have determinant one, and the compact factors act unitarily.
+It preserves the restricted characters because the original
+character is a homomorphism and is invariant under the
+compact stabilizers.  No Jacobian or phase remains.
+All integrals at a regular cell point have compact support
+in their nilpotent coordinates, so Fubini is legitimate.
+Finally
+\(\gamma_r(t,c')=|t|^{2r+k}\gamma_{r-1}(c')\),
+which proves \eqref{jf-factorization} including its scalar
+normalization.
+\end{proof}
+
+\begin{corollary}\label{jf-smooth-slices}
+For compactly supported \(F\) as above, the map
+\[
+       t\longmapsto\Phi_F(t,\cdot,\cdot)
+       \quad\text{from }\mathbb C^\times
+                  \text{ to }L^2(d\eta_{r-1},E)
+\]
+is smooth.  Its derivatives are its pointwise derivatives.
+The same holds after any finite word in
+\[
+       t\partial_t,\quad\bar t\partial_{\bar t},\quad
+             t,\quad t^{-1},\quad\bar t,\quad\bar t^{-1},
+\]
+and after multiplication by any fixed wave
+\(e^{st-\bar s\bar t}\).  All corresponding Hilbert norms
+are bounded locally uniformly for \(t\ne0\).
+\end{corollary}
+
+\begin{proof}
+On a compact parameter neighborhood, the family in
+Proposition~\ref{jf-compact-family} and all its derivatives
+have common compact support and a common positive Gram
+bound.  Taylor's formula with its integral remainder,
+differentiated a fixed number of times on the smaller group,
+shows that the family is smooth for every seminorm
+\(\|\cdot\|_{A,m}\).  The Jacquet map into
+\(L^2(d\eta_{r-1},E)\) is continuous for
+\(\|\cdot\|_{A,4}\), by
+Theorem~\ref{jp-pairing-equality} and its bound.
+It therefore sends this smooth family to a smooth Hilbert
+space valued family, with the asserted derivatives.
+Pointwise differentiation is also valid by the compact
+integral argument.  All six displayed operators and the
+wave act on the parameter by smooth coefficients on
+\(\mathbb C^\times\), which proves the remaining claims.
+\end{proof}
+
+\begin{theorem}\label{jf-marginal-schwartz}
+For \(F,H\in\mathscr S_+\), the integrable marginal density
+\begin{equation}\label{jf-density}
+ D_{F,H}(t)=|t|^{-2}
+     \int\langle\Phi_F(t,c',m),\Phi_H(t,c',m)\rangle
+                                    \,d\eta_{r-1}(c',m)
+\end{equation}
+has a Schwartz representative on \(\mathbb C\).
+If \(F,H\) are compactly supported, the integral in
+\eqref{jf-density} exists for every \(t\ne0\), is smooth
+there, and agrees there with that representative.  It
+therefore has a unique smooth extension across \(t=0\),
+and that extension and all its derivatives decay faster
+than every inverse power at infinity.
+\end{theorem}
+
+\begin{proof}
+Fubini and Cauchy--Schwarz show that the density exists
+almost everywhere and belongs to \(L^1(\mathbb C)\).
+Its Fourier transform, using the real bilinear phase
+\(2\operatorname{Im}(st)\), is
+\[
+ \int_{\mathbb C}e^{st-\bar s\bar t}D_{F,H}(t)\,dt
+                             =C_r\beta(W_sF,H).
+\]
+Theorem~\ref{jf-fourier-decay} makes this a Schwartz
+function.  Ordinary Fourier inversion gives a Schwartz
+representative of \(D_{F,H}\).  To recall why the assertion
+includes every weight and derivative, differentiation of
+the inverse transform inserts a polynomial in the Fourier
+variable, and multiplication by a coordinate is integration
+by parts in that variable.  All resulting integrals converge
+absolutely for a Schwartz Fourier transform.  Approximate
+identities identify the inverse transform with the original
+\(L^1\) density almost everywhere.
+
+For compact \(F,H\), Corollary~\ref{jf-smooth-slices}
+shows that the inner product in \eqref{jf-density} is a
+smooth function of \(t\ne0\), with all derivatives given
+by the finite Leibniz sums of Hilbert inner products.
+It is therefore continuous and agrees almost everywhere
+with the smooth Fourier representative.  Two continuous
+functions on an open subset of the plane which agree almost
+everywhere agree everywhere: otherwise their difference
+would stay nonzero on a ball of positive measure.
+This proves the claimed pointwise extension and all its
+decay properties.
+\end{proof}
+
+\subsection{Terminal support and the remaining application}
+
+For compactly supported \(F\), terminal support is also
+locally compact in the outer coordinates.  Indeed, on any
+compact subset of \((\mathbb C^\times)^r\), the quantity
+\(|d(c)|\) is bounded above and away from zero.  The invariant
+minor \(D_{r+1}=d(c)\zeta\) is bounded on
+\(\operatorname{supp}F\), and
+\(\mathcal G=|d(c)|^2G\geq\varepsilon\) on any contributing
+orbit.  Thus \(|\zeta|\) is bounded and \(G\) is bounded
+away from zero.  By the compact double-coset description
+in Section~\ref{jg-section}, the allowed terminal matrices
+lie in a compact subset of \(G_0\).  Every terminal
+differential operator and every smooth scalar multiplier
+preserves this support.  It follows that all finite terminal
+operator words applied to these vectors belong to terminal
+\(L^2\), and their actual Haar formal adjoints may be used
+by ordinary compactly supported integration by parts.
+The assertion includes \(r=0\), when there are no outer
+variables and no Fourier-decay statement is required.
+
+The source's generated compact class starts with these
+vectors, applies finite differential words in the current
+outer coordinate when passing to the next level, and
+multiplies by unit-modulus waves.  Repeating
+Proposition~\ref{jf-compact-family} proves its actual local
+slice regularity and terminal compactness at every fixed
+nonzero outer parameter.  This also proves the local
+Leibniz formulas for its partial pairings.  More explicitly,
+after fixing the first \(i\) nonzero coordinates, inductively
+represent the vector as the radial Jacquet transform of a
+compactly supported smooth coefficient on \(G_{r-i}\).
+The coefficients depend smoothly on those fixed parameters,
+with common compact support and positive Gram bound on
+each compact parameter set.  A wave in the next coordinate
+is multiplication of that coefficient by the corresponding
+wave in its first leading minor, which preserves these
+properties.  Every entry of the source's matrix \(bT\)
+is a finite word in the six displayed coordinate operators.
+Applying such an entry and then fixing that coordinate is
+handled by differentiating the family
+\eqref{jf-slice-family}; Proposition~\ref{jf-compact-family}
+and Corollary~\ref{jf-smooth-slices} preserve exactly the
+inductive properties.  Finite linear combinations do so
+as well.  At \(i=r\), a terminal wave is a smooth multiplier
+on the already compact terminal support.  This proves the
+claim by induction, including the empty sequence of steps.
+
+For the full residue matrices, one further algebraic step
+must be kept distinct: all four entries of the initial
+matrix \(Q_0(Y)\) must be identified with their full-group
+operators, and that identification must intertwine the
+successive one-pair restrictions.  The four operators
+\(\Theta_j\) proved above do not by themselves establish
+that larger matrix identity.  Once it is established, its
+polynomial differential operators preserve compact support
+and the positive Gram cutoff, so the present theorems apply
+to every finite product of those entries.  Until that
+identification is supplied, this section proves the actual
+Fourier decay, pointwise smooth densities, generated local
+slice regularity and terminal integrability stated above;
+it does not assert all of the remaining residue-pairing
+identities by assumption.
+
+

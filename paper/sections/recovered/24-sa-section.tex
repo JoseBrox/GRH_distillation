@@ -1,0 +1,482 @@
+\section{Integral arithmetic cycles with prescribed residue values}
+\label{sa-section}
+
+We now construct the arithmetic cycles used in the class
+count.  This proves the source assertion \(\mathrm{SClass}\).
+The proof retains the integral ideal lattices, the exact
+determinants, and the inverse Galois action in the defining
+polynomial.  The matrix size is allowed to depend on the
+input; the subsequent stable homology argument is where
+that dependence must be removed.
+
+\subsection{A cycle in a lattice stabilizer}
+
+For an element \(g\) of a group, put
+\(f_g(a)=g^{-1}ag\).  On bar chains define
+\[
+ P_g[a_1|\cdots|a_m]
+  =\sum_{i=0}^m(-1)^i
+    [a_1|\cdots|a_i|g|f_g(a_{i+1})|\cdots|f_g(a_m)].
+\]
+Here and below the coefficient ring is arbitrary and
+commutative.
+
+\begin{lemma}\label{sa-prisms}
+The following chain identities hold:
+\[
+       \partial P_g+P_g\partial=(f_g)_*-1,
+\]
+and
+\[
+       \partial Q_{g,h}-Q_{g,h}\partial
+                 =P_g+P_h(f_g)_*-P_{gh},
+\]
+where the degree-two homotopy is
+\begin{align*}
+ Q_{g,h}[a_1|\cdots|a_m]
+   =\sum_{0\le i\le j\le m}(-1)^{i+j}
+   [&a_1|\cdots|a_i|g|
+       f_g(a_{i+1})|\cdots|f_g(a_j)|h|\\
+    &f_{gh}(a_{j+1})|\cdots|f_{gh}(a_m)].
+\end{align*}
+Consequently, on cycles,
+\(P_{gh}-P_g-P_h(f_g)_*\) takes values in boundaries.
+\end{lemma}
+\begin{proof}
+Expand the bar boundaries.  In the first identity,
+the faces away from the inserted \(g\) give
+\(-P_g\partial\).  The adjacent faces cancel using
+\(a g=g f_g(a)\).  The two end faces give
+\((f_g)_*\) and minus the identity.
+
+For the second identity, the faces away from both
+inserted entries give \(Q_{g,h}\partial\).
+Faces next to \(g\) or \(h\) cancel between successive
+values of \(i\) or \(j\), using
+\(a g=g f_g(a)\) and
+\(f_g(a)h=h f_{gh}(a)\).
+Deleting an initial \(g\) gives \(P_h(f_g)_*\),
+and deleting a final \(h\) gives \(P_g\).
+When \(i=j\), merging the adjacent \(g,h\) gives
+minus \(P_{gh}\): its sign is
+\((-1)^{2i}(-1)^{i+1}=-(-1)^i\).
+This accounts for all remaining faces, and proves
+the displayed identity with its stated sign.
+\end{proof}
+
+\begin{lemma}\label{sa-stabilizer-cycle}
+Let \(H\subset G\) be a subgroup, let
+\(\rho:D\to G\) and \(d_t:C\to D\) be homomorphisms,
+and let \(z\in C_m(C;A)\) be a cycle.
+Suppose
+\[
+                 \partial b=\sum_t n_t(d_t)_*z
+\]
+for a chain \(b\in C_{m+1}(D;A)\).
+Let \(g_t\in G\), and fix an index \(t_0\), writing
+\(g_0=g_{t_0}\).
+Assume that \(g_t\) commutes with
+\(\rho(d_t(C))\), that both \(\rho(D)\) and
+\(g_0^{-1}\rho(D)g_0\) lie in \(H\), and that
+\(g_0^{-1}g_t\in H\) for every \(t\).
+Then there is a cycle \(y\in C_{m+1}(H;A)\)
+whose image in \(G\) is homologous to
+\[
+                    \sum_t n_tP_{g_t}(\rho d_t)_*z.
+\]
+\end{lemma}
+\begin{proof}
+Regard \(\rho_0=\rho\) and
+\(\rho_1=g_0^{-1}\rho g_0\) as homomorphisms into
+\(H\), and put \(k_t=g_0^{-1}g_t\in H\).
+Commutation gives
+\(f_{k_t}\rho_1d_t=\rho_0d_t\).
+Set
+\[
+ y=(\rho_1)_*b-(\rho_0)_*b
+                +\sum_t n_tP_{k_t}(\rho_1d_t)_*z.
+\]
+By the first identity of Lemma~\ref{sa-prisms}, its
+boundary is
+\[
+ ((\rho_1)_*-(\rho_0)_*)\partial b
+       +\sum_t n_t((\rho_0d_t)_*-(\rho_1d_t)_*)z=0.
+\]
+In \(G\), the second identity of that lemma gives
+\[
+ \sum_t n_tP_{g_t}(\rho d_t)_*z
+ \equiv P_{g_0}\rho_*\partial b
+                 +\sum_t n_tP_{k_t}(\rho_1d_t)_*z
+                    \pmod{\text{boundaries}}.
+\]
+The first identity, now applied to \(\rho_*b\),
+identifies its first term modulo boundaries with
+\((\rho_1)_*b-(\rho_0)_*b\).  The result is \(y\).
+\end{proof}
+
+\subsection{Integral modules and good reductions}
+
+\begin{lemma}\label{sa-projective}
+Every finitely generated torsion-free module over a
+Dedekind domain is a direct summand of a finite free
+module.
+\end{lemma}
+\begin{proof}
+For a nonzero fractional ideal \(I\), choose finite
+families \(u_i\in I\), \(v_i\in I^{-1}\) with
+\(\sum_i u_iv_i=1\), using \(II^{-1}=R\).
+The maps
+\[
+ R^r\longrightarrow I,\quad (a_i)\longmapsto\sum_i a_iu_i,
+ \qquad
+ I\longrightarrow R^r,\quad x\longmapsto(v_ix)_i
+\]
+have composite the identity on \(I\).
+Thus every such ideal is a finite projective module.
+
+For a finitely generated torsion-free module \(M\)
+of positive rank, choose a nonzero linear functional
+on \(M\otimes_R\operatorname{Frac}(R)\).
+Its image on \(M\) is a nonzero fractional ideal
+\(I\).  The surjection \(M\to I\) splits by the
+preceding construction.  Its kernel is finitely
+generated, torsion-free, and has one less rank;
+finite generation follows because \(R\) is Noetherian.
+Induction expresses \(M\) as a finite direct sum
+of fractional ideals.  Taking the direct sum of
+their finite free splittings proves the assertion.
+Rank zero gives the zero module, since \(M\) is
+torsion-free.
+\end{proof}
+
+Let \(F/L\) be a finite Galois extension, and put
+\(R=\mathcal O_L\), \(S=\mathcal O_F\).
+The module \(S\) is finite over \(R\): an integral
+basis over \(\mathbb Z\) already generates it over
+\(R\).  It is torsion-free, and hence projective
+by Lemma~\ref{sa-projective}.
+
+\begin{lemma}\label{sa-split-reduction}
+There exists \(0\ne b\in R\) such that, for every
+field \(k\) and homomorphism \(r:S\to k\) whose
+restriction to \(R\) is surjective and for which
+\(r(b)\ne0\), the map
+\[
+ S\otimes_R k\longrightarrow
+              \prod_{\tau\in\operatorname{Gal}(F/L)} k,
+ \qquad x\otimes a\longmapsto(a\,r(\tau x))_\tau
+\]
+is an isomorphism.
+We may enlarge \(b\) so that any specified finite
+list of elements of \(F^\times\) are units in
+\(S[1/b]\), and any specified finite list of
+\(L\)-linear automorphisms of \(F^J\) preserve
+\(S[1/b]^J\), for a finite index set \(J\).
+\end{lemma}
+\begin{proof}
+Choose an integral \(\vartheta\in S\) with
+\(F=L(\vartheta)\).  Such an element can be obtained
+without a separability assumption beyond the one
+already present: take an integral basis
+\(a_1,\ldots,a_n\) of \(S\) over \(\mathbb Z\)
+and consider \(\sum_i t^{i-1}a_i\).
+For each nonidentity \(\tau\in\operatorname{Gal}(F/L)\),
+the equality between this element and its \(\tau\)-image
+is a nonzero polynomial equation in the integer \(t\).
+Avoiding the finitely many roots for all \(\tau\)
+makes the orbit have \([F:L]\) elements, as required.
+
+Let \(f(T)\in R[T]\) be the monic minimal polynomial
+of \(\vartheta\).  Its coefficients are integral
+because they are symmetric functions of the integral
+conjugates, and they lie in \(L\).
+Its discriminant \(\delta\in R\) is nonzero.
+As \(R[\vartheta]\) spans \(F\) over \(L\),
+clearing the denominators of a finite set of generators
+of \(S\) gives \(0\ne a\in R\) such that
+\(S[1/a]=R[1/a][\vartheta]\).
+Take initially \(b=a\delta\).
+
+In a good residue field, the elements
+\(r(\tau\vartheta)\) are all distinct: the product
+of their squared differences is the nonzero residue
+of \(\delta\).
+They give all the roots of \(f\) in \(k\).
+Chinese remainders applied to these distinct linear
+factors give
+\(k[T]/(\overline f)\simeq\prod_\tau k\), with
+the stated evaluation maps.  This is the required
+tensor-product isomorphism.
+
+For the extra conditions, clear denominators of
+each specified nonzero element and its inverse.
+For an automorphism, clear the denominators of
+the images of a finite set of \(R\)-generators of
+\(S^J\), both for it and for its inverse.
+Multiplying \(b\) by these finitely many nonzero
+elements of \(R\) proves all assertions together.
+\end{proof}
+
+If a group \(H\) acts on the projective module
+\(\mathcal M=S^J\), choose a complement \(P\) and
+an isomorphism \(\mathcal M\oplus P\simeq R^N\).
+Let \(H\) act trivially on \(P\).
+This embeds the representation in \(\operatorname{GL}_N(R)\).
+After reduction, \(\mathcal M\otimes_R k\) is the
+space in Lemma~\ref{sa-split-reduction}, repeated
+over \(J\).
+By Corollary~\ref{sf-primitive-family}, any positive-degree
+cycle has the same value under an additive family
+before and after the trivial complementary summand
+is added.
+
+\subsection{The exact arithmetic construction}
+
+Fix a prime \(\ell\), integers \(\nu\ge c\ge1\),
+and assume \(c\ge2\) if \(\ell=2\).
+Put
+\[
+ q=\ell^\nu,\qquad \kappa=1+\ell^c,
+ \qquad d=\ell^{\nu-c},\qquad A=\mathbb Z/q\mathbb Z.
+\]
+Suppose \(F/L\) is cyclic of degree \(d\), generated
+by \(\gamma\), and that \(F\) contains a primitive
+\(q\)-th root \(\zeta\) with
+\(\gamma\zeta=\zeta^\kappa\).
+The order of \(\kappa\) in \(A^\times\) is exactly
+\(d\).  This follows from the valuation identity
+\(v_\ell(\kappa^m-1)=c+v_\ell(m)\) proved in
+Lemma~\ref{sc-vandermonde}.
+
+Let \(E\ge1\), assume \(M:=2E+1<\ell^c\), and put
+\(a=\kappa^E\).
+For \(\alpha\in F^\times\), suppose an integral
+divisor \(\mathfrak d\) satisfies
+\[
+       v_P(\alpha)=\mathfrak d(\gamma P)
+                                     -a\mathfrak d(P)
+                   \qquad\text{for every prime }P.
+\]
+Define the weighted norm and the integer factor
+\[
+ \mathcal N(\alpha)=\prod_{j=0}^{d-1}(\gamma^j\alpha)^{a^j},
+ \qquad
+ c_E=\prod_{\substack{0\le j<M\\j\ne E}}(a-\kappa^j).
+\]
+
+\begin{theorem}\label{sa-class}
+There are an integer \(N\), a cycle
+\(y\in C_{2E+1}(\operatorname{GL}_N(R);A)\),
+and \(0\ne b\in R\) with the following property.
+Let \(r:S\to k\) be a homomorphism to a finite field,
+surjective on \(R\), with \(r(b)\ne0\).
+Let \(v:k^\times\to(A,+)\) be a homomorphism, and
+let \(\theta\) be an additive family which vanishes
+on boundaries.  For \(x\in A\), write
+\(\rho_x(j)=\overline\zeta^{\,xj}I_V\) for the scalar
+representation of \(C_q\) on \(V\), and suppose
+\[
+       \theta_V\bigl(P_g(\rho_x)_*z_E\bigr)
+                             =x^E v(\det g).
+\]
+Then \(\mathcal N(\alpha)\) is a unit in \(S[1/b]\),
+and
+\[
+       \theta_{k^N}(\operatorname{red}(y))
+                       =c_E\,v\bigl(r(\mathcal N(\alpha))\bigr)
+                        \qquad\text{in }A.
+\]
+Here reduction of a localized unit means its well-defined
+nonzero residue.  The family constructed in
+Theorem~\ref{sf-functional} has the required properties
+whenever \(\overline\zeta\) remains primitive.
+\end{theorem}
+\begin{proof}
+We give the construction in five steps.
+
+\emph{The cyclic relation and ideal exponents.}
+Let \(J=A^2\), and let
+\(d_t:C_q\to C_q^2\) be \(j\mapsto(j,tj)\),
+for \(t=0,\ldots,M\).
+Corollary~\ref{sh-diagonal-relation} gives coefficients
+\(n_t\in A\), an index \(t_0\) with \(n_{t_0}\)
+a unit, and a chain \(b_1\) such that
+\[
+                 \partial b_1=\sum_{t=0}^M n_t(d_t)_*z_E.
+\]
+Write
+\[
+ P(T)=\prod_{j=0}^{M-1}(T-\kappa^j)=\sum_{i=0}^M p_iT^i,
+ \qquad Q(T)=\frac{P(T)}{T-a}\in\mathbb Z[T].
+\]
+Theorem~\ref{se-interpolation} gives integer exponents
+\(\eta_j\), \(j\in J\), with zero pushforward under
+\(\chi_t(j_1,j_2)=j_1+tj_2\) for \(t\ne t_0\),
+and pushforward \(\sum_i p_i[\kappa^i]\) for \(t=t_0\).
+Let \(I=\prod_P P^{\mathfrak d(P)}\), and put
+\[
+        V=F^J,\qquad \mathcal M=S^J,
+        \qquad \mathcal M'=\bigoplus_{j\in J}I^{\eta_j}.
+\]
+On \(V\), let \(C_q^2\) act diagonally by
+\[
+     \rho(u_1,u_2)(x_j)_j
+            =(\zeta^{j_1u_1+j_2u_2}x_j)_j.
+\]
+Both ideal lattices are preserved by this action.
+
+\emph{Isomorphisms commuting with the characters.}
+For \(t\ne t_0\), divide the coordinates into the
+blocks \(\chi_t(j)=x\), \(x\in A\).
+The product of the target ideals in each block is
+\(I^{\sum_{\chi_t(j)=x}\eta_j}=S\).
+Theorem~\ref{si-prescribed} gives an \(F\)-linear
+isomorphism in each block, of determinant \(1\),
+from its standard lattice to its target lattice.
+Their direct sum \(g_t\) maps \(\mathcal M\) onto
+\(\mathcal M'\) and commutes with \(\rho d_t\).
+Empty blocks have determinant \(1\), as required.
+
+For the distinguished slope, write \(\chi=\chi_{t_0}\).
+For \(x=\kappa^i\in\langle\kappa\rangle\subset A^\times\),
+put \(T_x=\gamma^i\) and \(B(x)=1\).
+For all other \(x\), put \(T_x=1\) and \(B(x)=x\).
+The equality of the orders of \(\kappa\) and \(\gamma\)
+makes \(T_x\) well defined.
+The coordinatewise \(L\)-linear isomorphism
+\[
+             U(x_j)_j=(T_{\chi(j)}^{-1}x_j)_j
+\]
+preserves \(\mathcal M\) and changes \(\rho d_{t_0}\)
+to the diagonal character with weight \(B(\chi(j))\).
+The target ideal in its \(j\)-th coordinate has
+divisor
+\[
+             \eta_j\,\mathfrak d(T_{\chi(j)}P).
+\]
+
+For a polynomial \(Q(T)=\sum_i q_iT^i\), define
+\[
+                       \beta=\prod_i(\gamma^{-i}\alpha)^{q_i}.
+\]
+The divisor hypothesis on \(\alpha\) gives
+\begin{align*}
+ v_P(\beta)
+ &=\sum_i q_i\bigl(\mathfrak d(\gamma^{i+1}P)
+                                      -a\mathfrak d(\gamma^iP)\bigr)\\
+ &=\sum_i p_i\mathfrak d(\gamma^iP).
+\end{align*}
+Thus, in the transformed block of weight \(1\),
+the product of the target ideals is \((\beta)\).
+Indeed this follows by pushing forward \(\eta\)
+and using \(T_{\kappa^i}=\gamma^i\), with repeated
+residue classes grouped together.
+In every other block the product ideal is \(S\):
+there \(T_x=1\), and the relevant sum of exponents
+is zero.
+The weight-one block is nonempty, since
+\(j=(1,0)\) has \(\chi(j)=1\).
+Theorem~\ref{si-prescribed} therefore gives a block
+map \(g'\) with determinant \(\beta\) in this block
+and determinant \(1\) in all the others, carrying
+\(\mathcal M\) onto \(U\mathcal M'\).
+Put \(g_{t_0}=U^{-1}g'U\).
+It maps \(\mathcal M\) onto \(\mathcal M'\) and
+commutes with \(\rho d_{t_0}\).
+It is only required to be \(L\)-linear; the
+coordinatewise Galois changes need not be \(F\)-linear.
+
+\emph{The integral cycle.}
+Let \(H=\operatorname{Aut}_R(\mathcal M)\).
+All \(g_t\) have the same image lattice, so
+\(g_{t_0}^{-1}g_t\in H\).
+Since \(\rho\) preserves both lattices, both
+\(\rho\) and \(g_{t_0}^{-1}\rho g_{t_0}\) take
+values in \(H\).
+Choose \(b\) as in Lemma~\ref{sa-split-reduction},
+large enough that every \(g_t\) preserves
+\(\mathcal M[1/b]\) and that \(\alpha\) and
+\(\beta\) are units in \(S[1/b]\).
+We may include \(q\) as a factor of \(b\).
+Apply Lemma~\ref{sa-stabilizer-cycle} inside
+\(\operatorname{Aut}_{R[1/b]}(\mathcal M[1/b])\).
+It gives a cycle \(y_0\) in \(H\) homologous,
+in this localized group, to
+\[
+                       \sum_t n_tP_{g_t}(\rho d_t)_*z_E.
+\]
+Divide \(y_0\) by the unit \(n_{t_0}\in A\),
+and extend the representation of \(H\) by a trivial
+complement as described after Lemma~\ref{sa-split-reduction}.
+Its image is the required integral cycle
+\(y\in C_{2E+1}(\operatorname{GL}_N(R);A)\).
+
+\emph{Evaluation after reduction.}
+Fix a good residue map \(r\).
+All the preceding homology relations can be reduced,
+because their chains lie in the localized group.
+The trivial complementary summand has zero value.
+Under the splitting in Lemma~\ref{sa-split-reduction},
+the diagonal character on the component indexed by
+\(\tau=\gamma^j\) has its weights multiplied by
+\(\kappa^j\) modulo \(q\).
+The coordinatewise Galois change \(U\) is an
+invertible linear change after reduction; explicitly,
+it permutes the embedding coordinate by
+\(\tau\mapsto\tau T_{\chi(j)}^{-1}\) in coordinate \(j\).
+Therefore invariance under isomorphisms and additivity
+allow evaluation in the blocks used above.
+
+Each block prism is a cycle: its scalar cyclic
+character commutes with its block map, so the first
+identity of Lemma~\ref{sa-prisms} and
+\(\partial z_E=0\) apply.
+For \(t\ne t_0\), every block determinant is \(1\),
+and its value is zero.
+For \(t=t_0\), only the weight-one block contributes.
+Its determinant on the \(\gamma^j\)-component is
+\(r(\gamma^j\beta)\).
+The normalization assumed for \(\theta\) gives
+\[
+       \theta\bigl(P_{g_{t_0}}(\rho d_{t_0})_*z_E\bigr)
+               =\sum_{j=0}^{d-1}a^j v(r(\gamma^j\beta)).
+\]
+The chosen division by \(n_{t_0}\) leaves exactly
+this value for \(y\).
+
+\emph{The polynomial and the weighted norm.}
+On \(S[1/b]^\times\), put \(f(x)=v(r(x))\), and
+\[
+                         F(x)=\sum_{j=0}^{d-1}a^j f(\gamma^jx).
+\]
+The base element \(b\) is fixed by the Galois group,
+so all these arguments are localized units.
+Since \(a^d\equiv1\pmod q\), reindexing the cyclic
+sum gives
+\(F(\gamma^{-1}x)=aF(x)\) in \(A\).
+Also \(F(xy)=F(x)+F(y)\), including negative powers.
+Consequently
+\[
+     F(\beta)=Q(a)F(\alpha)
+            =c_E\,f(\mathcal N(\alpha)).
+\]
+This is precisely the required value, and
+\(\mathcal N(\alpha)\) is a localized unit because
+every factor defining it is one.
+\end{proof}
+
+All the hypotheses and the evaluation constant in
+Theorem~\ref{sa-class} agree with \(\mathrm{SClass}\),
+after writing \(E=e+1\).
+The proof makes no principal-ideal assumption,
+does not confuse an \(L\)-linear map with an
+\(F\)-linear map, and retains the complementary
+module when embedding in a free integral module.
+The construction supplies the arithmetic classes.
+Proposition~\ref{sb-odd-rank} and Theorem~\ref{sb-upper}
+then prove the stable rational homology estimate
+\(\mathrm{BOdd}\) and the finite-image bound
+\(\mathrm{SUpper}\); Theorem~\ref{sw-few} combines them
+with these classes to complete the finite-set comparison.
+
+

@@ -1,0 +1,489 @@
+\section{Additional cosets at the penultimate step}
+\label{acc-section}
+
+The reference character used to construct the intermediate adelic
+classes has no auxiliary character primes.  Consequently the only
+additional datum at an intermediate step is a particular additive
+coset, and this datum occurs only at the penultimate step.  We now
+classify these cosets, prove their simultaneous existence on every
+decorated lattice, and identify the resulting level subgroups.  This
+proves the class comparison used at every step of the reference
+construction, including its characters and stabilizer weights
+\cite{alpo-uniform-source}.  The more general transfer between columns
+with nontrivial auxiliary characters is a separate assertion.
+
+\subsection{The selected rational primes are local uniformizers}
+
+Write $\mathcal O=\mathcal O_E$, where $E$ is a CM field of degree
+$2f$.  For a nonzero prime ideal $P$, put
+$A_P=\mathcal O_{E,(P)}$ and $\kappa_P=\mathcal O/P$.
+The valuation $v_P$ is normalized to have value one on a
+uniformizer of the discrete valuation ring $A_P$.
+
+\begin{lemma}\label{acc-uniformizer}
+Let $p$ be a rational prime and let $\pi\in\mathcal O$ satisfy
+\[
+ \pi\overline\pi=p,\qquad (\pi)+(\overline\pi)=\mathcal O.
+\]
+Suppose that $f$ distinct prime ideals $P_1,\ldots,P_f$ divide
+$(\overline\pi)$ and that $|\kappa_{P_i}|=p$ for every $i$.
+Then
+\[
+ (\overline\pi)=\prod_{i=1}^f P_i,
+ \qquad v_{P_i}(p)=1.
+\]
+In particular $p=|\kappa_{P_i}|$ is a uniformizer in $A_{P_i}$.
+This assertion includes $p=2$.
+\end{lemma}
+
+\begin{proof}
+Conjugation preserves the absolute norm of a principal ideal.
+Taking ideal norms in $\pi\overline\pi=p$ therefore gives
+\[
+ N((\overline\pi))^2=p^{2f},
+ \qquad N((\overline\pi))=p^f.
+\]
+The $P_i$ are distinct maximal ideals and hence pairwise coprime.
+Thus $(\overline\pi)\subset\prod_iP_i$.
+Both ideals have norm $p^f$, so the quotient of the larger ideal
+by the smaller has one element.  They are equal.
+Coprimality of $(\pi)$ and $(\overline\pi)$ gives
+$v_{P_i}(\pi)=0$.  Taking valuations in the displayed product
+identity now gives $v_{P_i}(p)=0+1=1$.
+\end{proof}
+
+The actual construction has two distinct rational primes $g_1,g_2$.
+For each it supplies exactly the hypotheses of this lemma, with
+$f$ selected prime ideals.  Let $\mathcal G$ be their disjoint union.
+For $P\in\mathcal G$ write
+\[
+ t_P=|\kappa_P|\in\{g_1,g_2\}.
+\]
+We have proved $t_PA_P=PA_P$.  This equality is the precise
+hypothesis needed below; membership $t_P\in P$ alone would not suffice.
+
+\subsection{A quotient of intersections of local lattices}
+
+The next statement applies to any number field, without a Hermitian
+form.  Let $N\subset E^n$ be a full $\mathcal O$-lattice,
+let $\mathcal G$ be a finite set of nonzero prime ideals, and
+choose nonzero $t_P\in\mathcal O$ with $v_P(t_P)=1$.
+Write $N_P=A_PN$, and fix a $\kappa_P$-linear isomorphism
+\[
+ b_P:N/PN\longrightarrow\kappa_P^n.
+\]
+It extends uniquely to $N_P/PN_P$ by inverting the reductions
+of elements outside $P$.  We use $b_P$ also for this extended
+reduction map on $N_P$.
+Define $\mathcal O$-submodules of $E^n$ by
+\[
+ L(N)=\bigcap_{P\in\mathcal G}N_P,
+ \qquad
+ L^-(N)=\bigcap_{P\in\mathcal G}t_P^{-1}N_P.
+\]
+An intersection over an empty set is $E^n$.
+These modules need not be finitely generated over $\mathcal O$.
+Only their quotient, rather than either module separately, is finite.
+
+\begin{theorem}\label{acc-residues}
+The map
+\begin{equation}\label{acc-reduction-map}
+ L^-(N)\longrightarrow\mathcal A_n:=
+       \prod_{P\in\mathcal G}\kappa_P^n,
+ \qquad y\longmapsto \bigl(b_P(t_Py)\bigr)_P
+\end{equation}
+is surjective and has kernel $L(N)$.  It induces an isomorphism
+of $\mathcal O$-modules
+\[
+                    L^-(N)/L(N)\simeq\mathcal A_n.
+\]
+In particular every element of $\mathcal A_n$ is realized on every
+lattice $N$, and
+\[
+ |L^-(N)/L(N)|=\prod_{P\in\mathcal G}|\kappa_P|^n.
+\]
+\end{theorem}
+
+\begin{proof}
+Since $t_PA_P=PA_P$, the equality $b_P(t_Py)=0$ is equivalent to
+$t_Py\in t_PN_P$, and hence to $y\in N_P$.
+This proves the kernel assertion and also shows that
+$L(N)\subset L^-(N)$.
+
+For surjectivity, prescribe vectors $a_P\in\kappa_P^n$.
+Choose $x_P\in N$ with $b_P(x_P)=a_P$.
+For each fixed $P$, the Chinese remainder theorem gives
+$e_P\in\mathcal O$ such that
+\[
+ e_P\equiv1\pmod P,\qquad
+ e_P\in Q^{v_Q(t_P)}\quad
+       (Q\in\mathcal G,\ Q\ne P).
+\]
+An exponent zero imposes no condition.  The moduli in these
+conditions are pairwise coprime, so the theorem applies.
+Put
+\[
+                         y=\sum_{P\in\mathcal G}
+                                      \frac{e_P}{t_P}x_P.
+\]
+Fix $Q\in\mathcal G$.  The $P=Q$ term in $t_Qy$ is
+$e_Qx_Q\in N_Q$ and has reduction $a_Q$.
+For $P\ne Q$ the chosen divisibility gives
+$e_P/t_P\in A_Q$, so
+\[
+             t_Q(e_P/t_P)x_P\in t_QN_Q=QN_Q.
+\]
+Thus $t_Qy\in N_Q$ and $b_Q(t_Qy)=a_Q$.
+This proves surjectivity simultaneously at all the selected primes.
+When $\mathcal G$ is empty, both the quotient and the product have
+one element and $y=0$ suffices.  The same proof permits $n=0$.
+The first isomorphism theorem and the cardinalities of the residue
+vector spaces prove the remaining assertions.
+\end{proof}
+
+For the actual two rational primes the number in this theorem is
+\begin{equation}\label{acc-number-cosets}
+                         |\mathcal A_n|=(g_1g_2)^{fn}.
+\end{equation}
+A permitted additional coset is
+\[
+                          Y=y+L(N),\qquad y\in L^-(N).
+\]
+Its residue vector, denoted $a(Y)$, is the vector in
+\eqref{acc-reduction-map}.  It does not depend on $y\in Y$.
+The theorem says precisely that $Y\mapsto a(Y)$ is a bijection.
+
+\subsection{Coordinates and change of residue frames}
+
+Choose an $A_P$-basis matrix $F_P$ of $N_P$ that lifts the
+inverse of $b_P$; explicitly,
+\[
+ F_P A_P^n=N_P,
+ \qquad b_P(F_Px)=\overline x\quad(x\in A_P^n).
+\]
+Such a matrix exists: choose any local basis, then correct its
+residue matrix by a lift in $\operatorname{GL}_n(A_P)$.
+The reduction map on this general linear group is onto, since
+any entrywise lift of an invertible residue matrix has unit determinant.
+Define the coset in these coordinates by
+\begin{equation}\label{acc-coordinate-coset}
+                    C_P(Y)=F_P^{-1}y+A_P^n\subset E^n.
+\end{equation}
+
+\begin{proposition}\label{acc-coordinate-classification}
+The coset \eqref{acc-coordinate-coset} is independent of the
+representative $y\in Y$ and of the compatible basis matrix $F_P$.
+For permitted cosets on two possibly different lattices with
+residue frames,
+\[
+ \bigl(C_P(Y)\bigr)_{P\in\mathcal G}
+   =\bigl(C_P(Y')\bigr)_{P\in\mathcal G}
+                   \quad\Longleftrightarrow\quad a(Y)=a(Y').
+\]
+\end{proposition}
+
+\begin{proof}
+Changing $y$ by an element of $L(N)$ changes $F_P^{-1}y$ by
+an element of $A_P^n$.  Moreover
+$t_PF_P^{-1}y\in A_P^n$ and its reduction is $a_P(Y)$.
+For $u,u'\in t_P^{-1}A_P^n$,
+\[
+ u+A_P^n=u'+A_P^n
+   \ \Longleftrightarrow\ u-u'\in A_P^n
+   \ \Longleftrightarrow\ \overline{t_Pu}=\overline{t_Pu'}.
+\]
+The last equivalence uses $t_PA_P=PA_P$.
+This already proves the asserted comparison between two lattices.
+For completeness, another compatible basis is $F'_P=F_Pk$,
+where $k\in\operatorname{GL}_n(A_P)$ has reduction one.
+Then $k^{-1}-1\in t_PM_n(A_P)$; hence
+$(k^{-1}-1)F_P^{-1}y\in A_P^n$.
+The coordinate coset is unchanged.
+\end{proof}
+
+Return to the positive Hermitian space and decorated lattices of
+Section~\ref{acl-section}.  Here the selected residue-frame primes
+are $\mathcal G$ and the functional primes are disjoint from them.
+Let $\mathscr D$ be the set of decorated lattices and let
+\[
+                   \mathscr P=\{(d,Y):d\in\mathscr D,
+                        \ Y\in L^-(N_d)/L(N_d)\}.
+\]
+The notation treats a quotient element as its additive coset.
+The rational unitary group and the residue general linear groups act by
+\[
+ (\gamma,h)(d,Y)=((\gamma,h)d,\gamma Y),
+ \qquad h=(h_P)_P\in\prod_P\operatorname{GL}_n(\kappa_P).
+\]
+Recall that the new residue frame is
+$b'_P=h_Pb_P\gamma^{-1}$.
+Since $t_P\in E$, it commutes with the $E$-linear map $\gamma$.
+Consequently
+\begin{equation}\label{acc-equivariance}
+                a_P(\gamma Y)=h_Pa_P(Y).
+\end{equation}
+Theorems~\ref{acc-residues} and \ref{acc-coordinate-classification}
+therefore give a bijection, compatible with both actions,
+\begin{equation}\label{acc-product-description}
+ \mathscr P\simeq\mathscr D\times\mathcal A_n,
+ \qquad
+ (\gamma,h)(d,a)=((\gamma,h)d,ha).
+\end{equation}
+In particular a rational unitary change alone preserves the coordinate
+cosets, even when the chosen lifts of the residue frames are different.
+A residue-frame change acts on their labels by the ordinary matrix
+action.  No choice of global basis of $N_d$ is involved.
+
+\subsection{The exact partition into adelic classes}
+
+Let $B$ be a finite set of indices.  For $b\in B$ let
+\[
+ H_b=\prod_{P\in\mathcal G}H_{b,P}
+      \subset\prod_{P\in\mathcal G}\operatorname{GL}_n(\kappa_P)
+\]
+be a product of subgroups, and let $\chi_b:H_b\to K^\times$
+be a character in the coefficient field.  For $a\in\mathcal A_n$
+put
+\begin{equation}\label{acc-stabilizer-level}
+ H_{b,a}=\{h\in H_b:ha=a\}
+      =\prod_{P\in\mathcal G}
+            \bigl(H_{b,P}\cap\operatorname{Stab}(a_P)\bigr).
+\end{equation}
+Here $\operatorname{Stab}(a_P)$ fixes the vector $a_P$, not merely
+its one-dimensional span.  Choose one representative $a$ of each
+$H_b$-orbit in $\mathcal A_n$.
+
+\begin{theorem}\label{acc-class-partition}
+There is a bijection
+\begin{equation}\label{acc-class-bijection}
+ \coprod_{b\in B}\ \coprod_{a\in H_b\backslash\mathcal A_n}
+       (U(F)\times H_{b,a})\backslash\mathscr D
+ \ \longrightarrow\
+ \coprod_{b\in B}(U(F)\times H_b)\backslash\mathscr P,
+ \qquad [d]\longmapsto[(d,a)].
+\end{equation}
+Every stabilizer on the left is isomorphic to the stabilizer of
+its corresponding point on the right.  These isomorphisms preserve
+the rational unitary component and the character, whose restriction
+on the left is $\chi_b|_{H_{b,a}}$.
+
+All class sets in \eqref{acc-class-bijection} are finite.
+The number of displayed pieces is at most
+$|B|\,|\mathcal A_n|$.
+\end{theorem}
+
+\begin{proof}
+Use the product description \eqref{acc-product-description}.
+Given $(d,a')$, choose $h\in H_b$ carrying $a'$ to the selected
+representative $a$.  Applying $(1,h)$ puts its class in the indicated
+piece.  Distinct $H_b$-orbits of vectors cannot meet.
+If $(\gamma,h)(d,a)=(d',a)$, then $ha=a$, so
+$h\in H_{b,a}$; this proves injectivity within the piece.
+The same observation identifies the stabilizer groups themselves:
+\[
+ \operatorname{Stab}_{U(F)\times H_b}(d,a)
+       =\operatorname{Stab}_{U(F)\times H_{b,a}}(d).
+\]
+It does not only identify their orders or their images in $U(F)$.
+Both the rational component and the restricted character are unchanged.
+
+Each group $H_{b,a}$ is a finite residue subgroup, so the class
+finiteness theorem of Section~\ref{acl-section} applies.
+There are finitely many $b$ and finitely many vector orbits.
+There are at most $|\mathcal A_n|$ vector orbits for each $b$,
+which proves the quantitative assertion.
+\end{proof}
+
+At every step other than the penultimate step the additional datum is
+the empty set, rather than a nonempty additive coset.
+For those steps replace $\mathcal A_n$ in the theorem by a one-element
+set with trivial action.  Then $H_{b,a}=H_b$ and there is exactly
+one piece for each $b$.  In the actual construction $m\geq2$,
+so both the initial and the final step are of this kind.
+Their index set $B$ has one element, giving a unique piece at each end.
+At the penultimate step the number of pieces is bounded by
+\[
+                            |B|(g_1g_2)^{fn}.
+\]
+
+The source chooses representatives by first fixing the cosets in local
+coordinates.  Proposition~\ref{acc-coordinate-classification} shows
+that this is equivalent to fixing the vectors $a_P$ above.
+The orbit of such a vector depends only on its $H_b$-orbit and not on
+the underlying decorated lattice, by the simultaneous surjectivity
+in Theorem~\ref{acc-residues}.  Thus the choice of preferred
+representatives introduces no dependence on an unavailable lattice
+or later parameter.  It selects exactly the pieces in
+\eqref{acc-class-bijection}, up to renaming their indices.
+
+\subsection{Level subgroups, coefficients, and all volume factors}
+
+Use the notation of Section~\ref{acl-section}:
+$K_S$ is the compact open subgroup preserving the base lattice and
+its fixed residue functionals, and
+\[
+ r:K_S\longrightarrow
+           \prod_{P\in\mathcal G}\operatorname{GL}_n(\kappa_P)
+\]
+is the surjective residue map.  Put
+$K_{b}=r^{-1}(H_b)$ and $K_{b,a}=r^{-1}(H_{b,a})$.
+Theorem~\ref{acl-double-cosets} identifies the $(b,a)$ piece with
+\begin{equation}\label{acc-adelic-piece}
+                         U(F)\backslash U(\mathbb A_{F,f})/K_{b,a}.
+\end{equation}
+The exact level character is
+\begin{equation}\label{acc-character}
+       \omega_{b,a}(k)=\chi_b(r(k))^{-1}
+                              \qquad(k\in K_{b,a}).
+\end{equation}
+Indeed right multiplication by $k$ changes the residue frames by
+$r(k)^{-1}$, so this follows directly from
+\eqref{acc-equivariance} and the equivariance of coefficient functions.
+No additional character comes from the additive coset.
+
+More explicitly, suppose coefficient functions on $\mathscr P$ satisfy
+\[
+ F((\gamma,h)(d,a))=\chi_b(h)R(\gamma)F(d,a),
+\]
+where $R$ is the polynomial representation in
+Section~\ref{acl-section}.  Restriction to a fixed representative $a$
+gives exactly the corresponding equivariant coefficient function on
+$\mathscr D$ for $U(F)\times H_{b,a}$.
+Conversely, if $F_a$ is the function on the chosen piece, choose
+$g=(\gamma,h)$ with $ha=a'$ and set
+\[
+ F(d,a')=\chi_b(h)R(\gamma)F_a(g^{-1}d).
+\]
+Two choices differ by an element of $U(F)\times H_{b,a}$,
+so equivariance makes the result independent of the choice.
+This proves the coefficient-space decomposition.
+
+The integral lattice attached to a point depends on its functional
+kernel lattice $L_d$ and on its fixed weight.  It does not depend on
+$Y$.  Therefore the same restriction and transport identify the
+integral coefficient lattices, as well as their rational and complex
+spans.  In particular, the conjugate-prime coefficient identity of
+Section~\ref{acl-section} remains valid on every piece.
+If stabilizers are nontrivial their invariant subspaces are retained.
+The weighted Hermitian norm is the orthogonal sum of the piece norms,
+because corresponding stabilizers are the identical groups in
+Theorem~\ref{acc-class-partition}.
+
+\begin{proposition}\label{acc-index-volume}
+For each vector $a$,
+\[
+ [K_b:K_{b,a}]=[H_b:H_{b,a}]=|H_ba|.
+\]
+For any one fixed Haar measure $\mu$ on the finite adelic group,
+\[
+                     \mu(K_{b,a})=\frac{\mu(K_b)}{|H_ba|}.
+\]
+The quotient integral for the piece
+\eqref{acc-adelic-piece} is consequently
+$\mu(K_{b,a})$ times its finite class sum with weights
+$1/|\operatorname{Stab}|$.
+\end{proposition}
+
+\begin{proof}
+Surjectivity of $r$ identifies the coset spaces
+$K_b/K_{b,a}$ and $H_b/H_{b,a}$.
+The map $hH_{b,a}\mapsto ha$ is a bijection from the latter
+coset space to the orbit of $a$.
+The finite disjoint union of $[K_b:K_{b,a}]$ translates of
+$K_{b,a}$ has measure $\mu(K_b)$, giving the volume formula.
+The quotient integral formula is the one proved in
+Section~\ref{acl-section}, now at the subgroup $K_{b,a}$.
+\end{proof}
+
+This proof also applies to the source's local coset stabilizer:
+let $A$ be the ring of integers of a nonarchimedean local field $k$,
+with uniformizer $\varpi$.  If $J\subset\operatorname{GL}_n(A)$
+preserves a lattice $\Lambda\subset k^n$, it acts on $k^n/\Lambda$; the index in $J$ of the
+stabilizer of a quotient element is exactly its orbit size whenever
+that orbit is finite.  One proves this by the same bijection from
+stabilizer cosets to orbit elements.  For $\Lambda=\varpi^M A^n$, with $M\geq0$ an integer, and
+vectors in $\varpi^{-M}A^n$, the quotient containing the orbit is finite.
+Thus the relative-index factor in the additional local-level weight
+is an orbit cardinality, with no omitted inverse.
+
+There is a useful direct check on the stabilizer weights.
+For a fixed decorated class represented by $d$, let
+$\Gamma=\operatorname{Stab}_{U(F)\times H_b}(d)$.
+Its inverse image in the enhanced class set consists of the
+$\Gamma$-orbits in $\mathcal A_n$.
+For any function $w$ constant on those orbits, orbit--stabilizer gives
+\begin{equation}\label{acc-weighted-fiber}
+ \sum_{[a]\in\Gamma\backslash\mathcal A_n}
+           \frac{w(a)}{|\Gamma_a|}
+      =\frac1{|\Gamma|}\sum_{a\in\mathcal A_n}w(a).
+\end{equation}
+To prove it, expand the sum on the right as a sum over orbits;
+each orbit has $|\Gamma|/|\Gamma_a|$ elements.
+In particular adjoining all the additional cosets multiplies the
+weighted mass of a decorated class by $|\mathcal A_n|$.
+Restricting to one piece instead uses its actual stabilizer and does
+not insert this factor.  These two different operations must not be
+confused.
+
+\subsection{Checks on the necessary hypotheses}
+
+\begin{example}\label{acc-norm-counterexample}
+The induced map $L^-(N)/L(N)\to\mathcal A_n$ in
+Theorem~\ref{acc-residues} need not be injective if
+$v_P(t_P)=1$ is replaced by $t_P\in P$.
+This can fail even when the number field is unramified at the prime.
+Take $E=\mathbb Q(i)$, $P=(3)$, $A=A_P$ and $N_P=A$.
+The polynomial $X^2+1$ is irreducible modulo $3$, so
+$|\kappa_P|=9$ and $3$ is a uniformizer in $A$.
+Set $t_P=|\kappa_P|=9$.
+The cosets $A$ and $1/3+A$ are distinct, because $1/3\notin A$,
+but both have residue $\overline{9y}=0$.
+Thus the size of the residue field cannot be used as a uniformizer
+at an arbitrary prime.  Lemma~\ref{acc-uniformizer} proves exactly
+the stronger condition used at the actual selected primes.
+\end{example}
+
+\begin{example}\label{acc-ramified-counterexample}
+A residue-degree-one hypothesis by itself also does not suffice.
+In $E=\mathbb Q(\sqrt2)$ at $P=(\sqrt2)$, the residue field is
+$\mathbb F_2$, but $2=(\sqrt2)^2$ has valuation two.
+The distinct cosets $A_P$ and $1/\sqrt2+A_P$ both map to zero
+under $y\mapsto\overline{2y}$.
+The coprime factorization in Lemma~\ref{acc-uniformizer}
+excludes this ramification at the selected primes.
+\end{example}
+
+\begin{example}\label{acc-line-counterexample}
+Replacing the vector stabilizer by a line stabilizer changes the
+level and its index.  On $\mathbb F_3$, let
+$H=\mathbb F_3^\times$ act by multiplication and let $a=1$.
+Its vector stabilizer is trivial and its orbit has two elements.
+Its line stabilizer is all of $H$, since the vector space has
+dimension one.  The resulting indices are two and one respectively.
+The actual coordinate datum fixes an additive coset and hence a
+vector, so it requires the former subgroup.
+\end{example}
+
+\begin{example}\label{acc-weight-counterexample}
+In the same action of $\Gamma=\{\pm1\}$ on $\mathbb F_3$,
+there are two orbits, $\{0\}$ and $\{1,-1\}$.
+Their stabilizer orders are two and one.  Their weighted sum is
+$1/2+1=3/2$, as \eqref{acc-weighted-fiber} predicts.
+Using the original stabilizer order for both orbits would give one.
+Thus an unchanged stabilizer denominator after adjoining a coset
+would be incorrect; the actual chart comparison uses the smaller
+stabilizer and has the stated exact equality.
+\end{example}
+
+These examples concern weakened statements, not flaws in the
+actual source hypotheses.  The argument above proves the additional
+coset classification, its simultaneous realization, the finite
+partition into reference-step classes, and their exact integral
+coefficients, characters, stabilizers and volume factors.
+It uses the selected-prime hypotheses already verified in the
+arithmetic construction.  It does not assert a comparison for
+arbitrary nontrivial auxiliary character primes, nor does it prove
+the remaining theta-period identities or the automorphic spectral
+and mass formulas.
+
+

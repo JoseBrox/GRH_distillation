@@ -1,0 +1,207 @@
+\section{Integral subspaces and the passage to period pairings}
+\label{ip-section}
+
+The local divisor argument applies a valuation bound to every integral
+test vector after extending the coefficient field. This passage requires
+an equality of integral submodules, not merely an equality of their
+complex spans. We prove that equality and its valuation consequence.
+The actual lower bounds for the theta periods remain separate inputs;
+the following argument specifies exactly what their extension requires.
+
+\subsection{Intersection with a rational subspace after extension}
+
+Let $K_0\subseteq K$ be number fields with rings of integers $A$ and
+$B$. Fix an embedding $\sigma:K\hookrightarrow\mathbb C$.
+Let $V_0$ be a finite-dimensional $K_0$-vector space, let $M$ be a
+full $A$-lattice in $V_0$, and identify
+$V_0\otimes_{K_0,\sigma}\mathbb C$ with its specified complex
+realization $V$. In particular a $K_0$-basis of $V_0$ is linearly
+independent over $\mathbb C$ in this realization. Write $BM$ for
+the $B$-span of $M$ in $V$.
+
+\begin{lemma}\label{ip-intersection}
+Let $e:V\to V$ be a complex-linear idempotent. Suppose there is
+$0\ne a\in A$ such that $ae(M)\subseteq M$. Then
+\begin{equation}\label{ip-cut}
+                 BM\cap eV=B(M\cap eV).
+\end{equation}
+This equality holds at ramified primes as well as at unramified primes.
+\end{lemma}
+\begin{proof}
+Since $M$ spans $V_0$, the denominator condition implies that $e$
+preserves $V_0$. Set $q=a(1-e)$. It is an $A$-linear endomorphism
+of $M$, and its complex-linear extension has kernel $eV$: the
+conditions $e^2=e$ and $a\ne0$ show that $qv=0$ is equivalent to
+$ev=v$. Thus $\ker(q|_M)=M\cap eV$.
+
+We give the integral base-change argument explicitly. At a nonzero
+prime $\mathfrak p$ of $A$, the module $M_{\mathfrak p}$ is free
+of finite rank over the discrete valuation ring $A_{\mathfrak p}$.
+Choose a basis. Smith normal form, with independent changes of bases
+in the source and target, makes the matrix of $q$ diagonal, with
+nonzero entries followed by zero entries. Its kernel is the span of
+the basis vectors in those zero positions.
+The ring $(A\setminus\mathfrak p)^{-1}B$ is a subring of $K$.
+Multiplication by a nonzero element of $A_{\mathfrak p}$ remains
+injective on it. Therefore the kernel of the same diagonal matrix
+after tensoring is still exactly the span of those zero positions.
+It follows that the natural map
+\[
+ B\otimes_A\ker(q|_M)\longrightarrow
+          \ker\bigl(1\otimes q:B\otimes_A M\to B\otimes_A M\bigr)
+\]
+is an isomorphism after localization at every $\mathfrak p$.
+It is an isomorphism globally: a nonzero element of its kernel or
+cokernel would remain nonzero at a maximal ideal containing its
+annihilator, contradicting the local calculation.
+
+The map $B\otimes_A M\to V$ is injective as well. Locally over
+$A_{\mathfrak p}$ its chosen basis of $M_{\mathfrak p}$ is a
+$K_0$-basis and hence a complex-linearly independent tuple in $V$.
+The localized evaluation map is consequently injective; the same
+local criterion proves injectivity globally. Its image is $BM$.
+Under this identification the last displayed kernel is $BM\cap eV$,
+and the image of $B\otimes_A\ker(q|_M)$ is $B(M\cap eV)$.
+This proves \eqref{ip-cut}. No assumption about an integral basis
+of $B$ over $A$, or about prime splitting, has been made.
+\end{proof}
+
+The same proof applies to a finite matrix of maps with a common
+denominator: after clearing that denominator, Smith normal form
+computes the common kernel locally. This observation is useful if
+the desired subspace is specified by linear equations instead of
+by an idempotent.
+
+\begin{example}[The subspace must be defined over the original field]
+Take $K_0=\mathbb Q$, $K=\mathbb Q(\sqrt2)$,
+$M=\mathbb Z^2\subset\mathbb C^2$, and
+$e(x,y)=(x,\sqrt2x)$. Then $e^2=e$ and
+$eV=\mathbb C(1,\sqrt2)$, but $M\cap eV=0$.
+Indeed an integer pair on that line must have both coordinates zero.
+On the other hand $(1,\sqrt2)\in BM\cap eV$, so
+\eqref{ip-cut} fails. There is no nonzero integer $a$ for which
+$ae(M)\subseteq M$. This is a counterexample to omitting the
+rationality condition, not to Lemma~\ref{ip-intersection}.
+\end{example}
+
+The faithful complex realization is a separate condition. An arbitrary
+torsion-free module inside a complex vector space need not satisfy it:
+the map $\mathbb C\otimes_{\mathbb Z}(\mathbb Z+\mathbb Z\sqrt2)
+\to\mathbb C$ has the nonzero kernel element
+$1\otimes\sqrt2-\sqrt2\otimes1$. The source explicitly requires
+injectivity of complexification in the hypothesis called an integral
+form. Its subsequent intersection argument does not deduce this
+injectivity from torsion-freeness alone.
+
+\subsection{The integral denominator of the projectors}
+
+Here is the application of the preceding lemma to the finite-group
+subspaces. Let a finite group $G$ act on $V_0$, preserving $M$.
+Assume that $K_0$ contains the values of the irreducible characters
+in a chosen set $\mathcal X$ and of a one-dimensional character
+$\psi:P\to K_0^\times$ of a subgroup $P\subseteq G$.
+The two projectors are
+\[
+ e_{\mathcal X}
+   =\frac1{|G|}\sum_{g\in G}\sum_{\chi\in\mathcal X}
+                 \chi(1)\chi(g^{-1})\rho(g),
+ \qquad
+ e_\psi=\frac1{|P|}\sum_{p\in P}\psi(p)^{-1}\rho(p).
+\]
+The finite-group argument in Section~\ref{div:section} proves that
+they are commuting idempotents: the first is central, and the second
+projects to the $\psi$-subspace. Character values and roots of unity
+are algebraic integers. Consequently, for $e=e_{\mathcal X}e_\psi$,
+\begin{equation}\label{ip-denominator}
+                     |G|\,|P|\,e(M)\subseteq M.
+\end{equation}
+Indeed, multiplying the two displayed sums by $|G||P|$ leaves
+a finite sum of integral scalar multiples of the operators $\rho(gp)$,
+each preserving $M$. Lemma~\ref{ip-intersection} therefore gives
+the exact integral intersection with this simultaneous isotypic and
+character subspace after extending the coefficient field.
+The denominator in \eqref{ip-denominator} is used to make an
+integral endomorphism. It is not an extra factor in every test
+vector and is not an additional loss in the following valuation bound.
+
+\subsection{Extension of a valuation bound}
+
+For a nonzero prime $\mathfrak q$ of $B$, let
+$v_{\mathfrak q}:K^\times\to\mathbb Z$ be the additive valuation
+with a uniformizer of value one, and put $v_{\mathfrak q}(0)=+\infty$.
+Thus $v_{\mathfrak q}(b)\ge0$ for $b\in B$ and
+$v_{\mathfrak q}(x+y)\ge\min(v_{\mathfrak q}(x),v_{\mathfrak q}(y))$.
+
+\begin{proposition}\label{ip-valuation}
+Retain the notation of Lemma~\ref{ip-intersection}. Let $U$ be a
+finite-dimensional $K$-vector space, let $\mathcal S\subseteq U$,
+and let
+\[
+ \Phi:(U\otimes_{K,\sigma}\mathbb C)\times V\longrightarrow\mathbb C
+\]
+be complex-bilinear. Fix $k\in\mathbb Z$. Suppose that for every
+$s\in\mathcal S$ and $m\in M\cap eV$ there is $a_{s,m}\in K$
+with
+\[
+       \Phi(s,m)=\sigma(a_{s,m}),\qquad
+                         v_{\mathfrak q}(a_{s,m})\ge k.
+\]
+Then for every $x\in B\mathcal S$ and $t\in BM\cap eV$ there is
+a unique $a_{x,t}\in K$ with
+\[
+       \Phi(x,t)=\sigma(a_{x,t}),\qquad
+                         v_{\mathfrak q}(a_{x,t})\ge k.
+\]
+The same assertion holds for the $B_{\mathfrak q}$-spans of both
+sets, with the evident localization of the test lattice.
+\end{proposition}
+\begin{proof}
+Write $x=\sum_i b_is_i$ with $b_i\in B$, and use
+\eqref{ip-cut} to write $t=\sum_j c_jm_j$ with $c_j\in B$ and
+$m_j\in M\cap eV$. Bilinearity gives
+\[
+       \Phi(x,t)=\sigma\left(\sum_{i,j}b_ic_ja_{s_i,m_j}\right).
+\]
+Each summand on the right has valuation at least $k$, since
+both coefficients have nonnegative valuation. Their sum has
+valuation at least $k$ as well. Injectivity of $\sigma$ proves
+uniqueness, so the value does not depend on the chosen expansions.
+For localization the same proof applies with coefficients in
+$B_{\mathfrak q}$, whose valuations are still nonnegative.
+\end{proof}
+
+\begin{corollary}\label{ip-scaling}
+Suppose a $K$-valued bilinear period pairing takes
+$M_{\mathfrak q}\times T_{\mathfrak q}$ into
+$\mathfrak q^{-b}B_{\mathfrak q}$, where $b\in\mathbb Z$.
+If $x\in\mathfrak q^aM_{\mathfrak q}$ with $a\in\mathbb Z$,
+then its pairing against every $t\in T_{\mathfrak q}$ has
+valuation at least $a-b$.
+\end{corollary}
+\begin{proof}
+Choose a uniformizer $\pi$ of $B_{\mathfrak q}$ and write
+$x=\pi^a y$ with $y\in M_{\mathfrak q}$. The pairing equals
+$\pi^a\Phi(y,t)$, so its valuation is at least $a-b$.
+This argument uses only a local generator; it makes no assertion
+that the global prime ideal is principal.
+\end{proof}
+
+These results are the ordinary algebra behind the source's transition
+from integral period tests to all vectors in the final coefficient
+lattice. In its notation, the projection is the level operator,
+its integral denominator is the finite group order, and the cut
+condition is \eqref{ip-cut}. The definitions and proofs are in
+\path{Divisibility/TiedLemmas.lean} and
+\path{GroupLattices/JointServices/ValIntNonneg.lean}, with paths
+relative to \path{Formalism/LocalToGlobal}.
+The exact declaration and read scopes are recorded in the audit.
+
+What remains is mathematical content, not another scalar-extension
+lemma: one must prove the initial valuation bound for the actual
+theta periods and prove the asserted containment of their actual
+source vectors in the required local lattices. The submitted
+construction distinguishes the level prime, the two auxiliary
+primes, and the other primes, with separate estimates in each case.
+Proposition~\ref{ip-valuation} does not supply any of those estimates.
+
+

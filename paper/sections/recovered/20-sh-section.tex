@@ -1,0 +1,212 @@
+\section{The cyclic bar cycle and its relation}
+\label{sh-section}
+
+Two elementary homology inputs to the source's class construction
+can be proved directly.  We give the actual cycle, compute the
+homology group in which its diagonal images lie, and construct
+a relation with a coefficient invertible modulo \(\ell^\nu\).
+These are the assertions called \(\mathrm{SZc}\) and
+\(\mathrm{SRel}\) in the source.
+
+\subsection{The bar complex and the cyclic cycle}
+
+For a group \(G\) and a commutative coefficient ring \(A\)
+with trivial \(G\)-action, let \(C_j(G;A)\) be the free
+\(A\)-module on the tuples
+\([g_1|\cdots|g_j]\), with \(C_0(G;A)=A\).
+For \(j\ge1\), put
+\[
+\begin{split}
+ \partial[g_1|\cdots|g_j]
+ ={}&[g_2|\cdots|g_j]\\
+ &+\sum_{i=1}^{j-1}(-1)^i
+       [g_1|\cdots|g_ig_{i+1}|\cdots|g_j]\\
+ &+(-1)^j[g_1|\cdots|g_{j-1}].
+\end{split}
+\tag{SH1}
+\]
+In degree one the two empty tuples cancel.
+The identity \(\partial^2=0\) follows by pairing the
+two orders of deleting or multiplying any pair of
+adjacent positions; the two terms have opposite signs.
+The homology of this complex is \(H_j(G;A)\).
+A homomorphism of groups acts on a tuple entry by entry
+and commutes with \(\partial\).
+
+Let \(q\ge2\), write \(C_q=\mathbb Z/q\mathbb Z\)
+additively with generator \(t=\overline1\), and put
+\(A=\mathbb Z/q\mathbb Z\).
+For \(E\ge1\), define the following finite bar chain:
+\[
+ z_E=\sum_{j_1,\ldots,j_E\in C_q}
+              [j_1|t|j_2|t|\cdots|j_E|t]
+                   \in C_{2E}(C_q;A).
+ \tag{SH2}
+\]
+
+\begin{lemma}\label{sh-cycle}
+One has \(\partial z_E=0\).
+\end{lemma}
+\begin{proof}
+The first face in (SH1) forgets \(j_1\).  Its sum over
+\(j_1\) is therefore \(q\) times the same chain and is
+zero in \(A\).
+For \(1\le i<E\), pair the face multiplying
+\(j_i\) and \(t\), with sign \(-1\), with the face
+multiplying \(t\) and \(j_{i+1}\), with sign \(+1\).
+After summing over all indices their unsigned values
+are equal, since translation by \(t\) permutes \(C_q\)
+in either variable.
+Finally, the face multiplying \(j_E,t\), with sign
+\(-1\), cancels the last face, with sign \(+1\),
+by the same translation in \(j_E\).
+These are all \(2E+1\) faces, proving the assertion.
+\end{proof}
+
+\subsection{The exact homology group}
+
+\begin{proposition}\label{sh-cyclic-square}
+For every \(m\ge0\),
+\[
+       H_m(C_q\times C_q;\mathbb Z/q\mathbb Z)
+                    \simeq(\mathbb Z/q\mathbb Z)^{m+1}.
+ \tag{SH3}
+\]
+\end{proposition}
+\begin{proof}
+Temporarily write \(t\) multiplicatively and put
+\(B=A[C_q]\), \(N=1+t+\cdots+t^{q-1}\).
+There is an augmented free \(B\)-resolution of the
+trivial module \(A\):
+\[
+ \cdots\xrightarrow{\,t-1\,}B
+       \xrightarrow{\,N\,}B
+       \xrightarrow{\,t-1\,}B
+       \xrightarrow{\,\varepsilon\,}A\longrightarrow0.
+ \tag{SH4}
+\]
+To verify exactness, write \(u=\sum_{i=0}^{q-1}a_it^i\).
+The equation \((t-1)u=0\) says that all \(a_i\) are
+equal, so its kernel is \(AN=\operatorname{im}N\).
+Also \(Nu=(\sum_i a_i)N\).
+The kernel of \(N\) is therefore the same as the kernel
+of augmentation.  The equations
+\(b_{i-1}-b_i=a_i\), with cyclic indices, have a solution
+precisely when \(\sum_i a_i=0\); successive partial
+sums construct one.  Hence this kernel is
+\((t-1)B\), as required.
+These calculations hold over \(A\) without division.
+
+The augmented resolution (SH4) is split exact as a
+complex of \(A\)-modules.  Indeed \(AN\) is free of
+rank one with a coordinate retraction, and the kernel
+of augmentation is free of rank \(q-1\), with the
+last coefficient determined by the others.
+The short exact sequences just described consequently
+split over \(A\).
+
+Take the tensor product over \(A\) of two copies of
+(SH4) and form the total complex.
+It is a free resolution of \(A\) over
+\[
+           A[C_q]\otimes_A A[C_q]
+                        =A[C_q\times C_q].
+\]
+For clarity, exactness follows by first taking homology
+in one of the two nonnegative degrees: tensoring
+preserves the explicitly split exact sequences above,
+so only its degree-zero augmentation survives; the
+other resolution then has homology \(A\) in degree
+zero and zero otherwise.
+There are exactly \(m+1\) summands
+\(A[C_q\times C_q]\) in total degree \(m\).
+
+After tensoring with the trivial module \(A\),
+the maps \(t-1\) become zero and the maps \(N\)
+become multiplication by \(q=0\) in \(A\).
+The resulting complex has zero differentials and
+degree-\(m\) term \(A^{m+1}\), proving (SH3).
+This resolution computes the same homology as the
+bar complex: lift the augmentation successively
+between two free resolutions, and lift differences
+of the resulting composites to construct chain
+homotopies.  Thus their tensor complexes have
+canonically isomorphic homology.
+\end{proof}
+
+\begin{lemma}\label{sh-primitive-relation}
+Let \(A=\mathbb Z/\ell^\nu\mathbb Z\), where \(\ell\)
+is prime and \(\nu\ge1\).
+For any \(r+1\) vectors \(v_0,\ldots,v_r\in A^r\),
+there are \(a_0,\ldots,a_r\in A\), at least one of
+them a unit, with
+\[
+                         \sum_{i=0}^r a_iv_i=0.
+\]
+\end{lemma}
+\begin{proof}
+Lift the vectors to the columns of an integer
+\(r\) by \(r+1\) matrix.
+It has a nonzero rational kernel vector; clear
+denominators and divide by the greatest common
+divisor of its integer coordinates.
+The resulting primitive integer vector is still
+in the kernel.
+At least one coordinate is not divisible by \(\ell\).
+Reduce the relation modulo \(\ell^\nu\); that
+coordinate becomes a unit.
+The same proof works for \(r=0\), taking the
+single coefficient to be \(1\).
+\end{proof}
+
+\begin{corollary}\label{sh-diagonal-relation}
+Let \(q=\ell^\nu\), \(\nu\ge1\), and \(E\ge1\).
+For \(0\le t\le2E+1\), define
+\[
+       d_t:C_q\longrightarrow C_q\times C_q,
+                   \qquad x\longmapsto(x,tx).
+\]
+There are \(a_t\in\mathbb Z/q\mathbb Z\), an index
+\(t_0\) with \(a_{t_0}\) a unit, and a bar chain
+\(b\in C_{2E+1}(C_q\times C_q;\mathbb Z/q\mathbb Z)\)
+such that
+\[
+                   \partial b
+                      =\sum_{t=0}^{2E+1}a_t(d_t)_*z_E.
+ \tag{SH5}
+\]
+\end{corollary}
+\begin{proof}
+All the displayed images are cycles by
+Lemma~\ref{sh-cycle}.
+Their \(2E+2\) homology classes belong to the module
+\(A^{2E+1}\) computed in Proposition~\ref{sh-cyclic-square}.
+Apply Lemma~\ref{sh-primitive-relation}.
+The resulting zero homology class means precisely
+that the indicated cycle is a boundary, providing \(b\).
+\end{proof}
+
+Under \(E=e+1\), the cycle (SH2) is exactly the
+source's \(\mathrm{zc}(q,e)\), and the maps \(d_t\)
+are its \(\mathrm{dt}(q,t)\).
+Thus (SH5) has \(2e+4\) terms and proves the
+actual relation required there.
+The unused case \(\nu=0\) in the broad source
+interface has the zero coefficient ring; all chains
+are zero and the relation is immediate.
+
+The prime-power restriction in
+Lemma~\ref{sh-primitive-relation} cannot simply be
+removed from its general module statement.
+In \(\mathbb Z/6\mathbb Z\), a relation
+\(3a+2b=0\) forces \(a\) even and \(b\) divisible
+by \(3\), so neither coefficient can be a unit.
+The source uses a prime-power modulus, as required.
+
+These proofs establish the actual cyclic cycle and
+relation, but do not yet supply the additive
+finite-field cohomology functional or the decorated
+arithmetic lattices that enter the later class
+construction.
+
+

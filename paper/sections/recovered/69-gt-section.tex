@@ -1,0 +1,901 @@
+\section{Global ideal sums in the theta estimates}
+\label{gt-section}
+
+The local results in the preceding sections leave several global
+estimates to be proved.  We begin with a complete reconstruction of the
+sum over the dual lattices in the scalar orbital calculation.  This
+part admits a shorter proof and a stronger estimate than the one
+stated in the source~\cite{alpo-uniform-source}.  All the constants in this section are explicit
+and independent of the number field and its discriminant.
+
+\subsection{Ideal norms and separation of algebraic integers}
+
+Let $E$ be a totally complex number field of degree $2f$, where $f\geq1$.
+Write $\mathcal O_E$ for its ring of integers and choose embeddings
+$\sigma_1,\ldots,\sigma_f:E\longrightarrow\mathbb C$, one from each
+complex conjugate pair.  A nonzero fractional ideal $\mathfrak a$ is a
+nonzero finitely generated $\mathcal O_E$-submodule of $E$ for which
+$m\mathfrak a\subseteq\mathcal O_E$ for some positive integer $m$.
+Its absolute norm is
+\[
+ N\mathfrak a=\frac{[\mathcal O_E:m\mathfrak a]}{m^{2f}}.
+\]
+This does not depend on $m$.  Equivalently it is the ratio of the
+covolumes of $\mathfrak a$ and $\mathcal O_E$ under the embedding
+$\alpha\mapsto(\sigma_v\alpha)_{v=1}^f$ into $\mathbb C^f$.
+The choice of Lebesgue measure cancels in this ratio.
+
+We use the usual multiplicativity of ideal norms.  To recall its
+content, every nonzero fractional ideal has a unique factorization
+$\prod_{\mathfrak p}\mathfrak p^{n_{\mathfrak p}}$, with finitely many
+nonzero integers $n_{\mathfrak p}$, and its norm is
+$\prod_{\mathfrak p}|\mathcal O_E/\mathfrak p|^{n_{\mathfrak p}}$.
+For integral ideals this follows by the Chinese remainder theorem
+and the filtration by successive powers of each prime ideal; each
+successive quotient has the cardinality of its residue field.
+Clearing denominators gives the fractional-ideal assertion.
+
+\begin{lemma}\label{gt-product-minimum}
+If $0\ne\alpha\in\mathfrak a$, then
+\begin{equation}\label{gt-product-minimum-eq}
+ \prod_{v=1}^f|\sigma_v\alpha|\geq\sqrt{N\mathfrak a}.
+\end{equation}
+The same inequality applies to $\alpha-\beta$ for distinct
+$\alpha,\beta\in\mathfrak a$.
+\end{lemma}
+
+\begin{proof}
+The containment $\alpha\mathcal O_E\subseteq\mathfrak a$ has a
+positive integral index.  Multiplication by $\alpha$ has real
+determinant
+$|N_{E/\mathbb Q}\alpha|=\prod_v|\sigma_v\alpha|^2$ on
+$\mathbb C^f$.  Comparing covolumes gives
+\[
+ |N_{E/\mathbb Q}\alpha|
+   =N\mathfrak a\,[\mathfrak a:\alpha\mathcal O_E]
+   \geq N\mathfrak a.
+\]
+Taking square roots proves the first assertion.  The second follows
+because $\mathfrak a$ is an additive subgroup.
+\end{proof}
+
+\begin{lemma}[A box count]\label{gt-box-count}
+For positive real numbers $R_1,\ldots,R_f$, let
+\[
+ B_{\mathfrak a}(R)=
+ \#\{0\ne\alpha\in\mathfrak a:
+                  |\sigma_v\alpha|\leq R_v\text{ for all }v\}.
+\]
+Then
+\begin{equation}\label{gt-box-count-eq}
+ B_{\mathfrak a}(R)
+       \leq9^f\frac{\prod_vR_v^2}{N\mathfrak a}.
+\end{equation}
+Moreover $B_{\mathfrak a}(R)=0$ if
+$\prod_vR_v<\sqrt{N\mathfrak a}$.
+\end{lemma}
+
+\begin{proof}
+The last assertion is Lemma~\ref{gt-product-minimum}.
+If the set is empty, the estimate is immediate.  Otherwise put
+\[
+ a=\left(\frac{\sqrt{N\mathfrak a}}{\prod_vR_v}\right)^{1/f},
+ \qquad 0<a\leq1.
+\]
+After dividing the $v$th coordinate by $R_v$, the points lie in the
+closed unit polydisc in $\mathbb C^f$.  Distinct resulting points
+$z,z'$ satisfy
+\[
+ \prod_v|z_v-z'_v|\geq a^f,
+ \qquad \max_v|z_v-z'_v|\geq a.
+\]
+The open polydiscs of radius $a/2$ about these points are therefore
+pairwise disjoint.  They are all contained in the polydisc of radius
+$1+a/2$.  Comparing their $2f$-dimensional volumes gives
+\[
+ B_{\mathfrak a}(R)
+ \leq\left(1+\frac2a\right)^{2f}
+ \leq\left(\frac3a\right)^{2f}
+ =9^f\frac{\prod_vR_v^2}{N\mathfrak a}.
+\]
+One may apply this argument first to every finite subset.  The
+uniform finite bound then also proves finiteness of the full set,
+so no separate lattice-point asymptotic is being used.
+\end{proof}
+
+\subsection{A stronger smoothed sum with its exact logarithmic factor}
+
+For $x=(x_v)_{v=1}^f$ with $x_v>0$, and $0\ne\alpha\in E$, set
+\[
+ q_x(\alpha)=\prod_{v=1}^f
+       \min\left(1,\frac{x_v}{|\sigma_v\alpha|}\right),
+ \qquad
+ W_{K,x}(\alpha)=q_x(\alpha)^K
+ =\prod_{v=1}^f
+       \min\left(1,\left(\frac{x_v}{|\sigma_v\alpha|}\right)^K\right).
+\]
+Here $K$ is a positive real number.  Define $\Theta>0$ by
+\begin{equation}\label{gt-theta}
+ \Theta^f=\frac{\sqrt{N\mathfrak a}}{\prod_vx_v}.
+\end{equation}
+
+\begin{theorem}\label{gt-smoothed}
+If $K>2$ and $\Theta\geq1$, then the sum over all nonzero elements
+of $\mathfrak a$ converges and satisfies
+\begin{equation}\label{gt-smoothed-exact}
+ \sum_{0\ne\alpha\in\mathfrak a}W_{K,x}(\alpha)
+ \leq
+ \left(\frac{9K}{K-2}\right)^f\Theta^{-Kf}
+ \sum_{j=0}^{f-1}\frac{((K-2)f\log\Theta)^j}{j!}.
+\end{equation}
+For $K\geq3$ and $\Theta\geq1$, the following simpler estimates
+also hold:
+\begin{align}
+ \sum_{0\ne\alpha\in\mathfrak a}W_{K,x}(\alpha)
+    &\leq\bigl(27\Theta^{-(K-1)}\bigr)^f,
+       \label{gt-smoothed-simple}\\
+ \sum_{0\ne\alpha\in\mathfrak a}W_{K,x}(\alpha)
+    &\leq\bigl(81(1+\log\Theta)\Theta^{-K}\bigr)^f.
+       \label{gt-smoothed-log}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+For $r>0$ and $x>0$ the elementary identity
+\[
+ \min(1,x/r)^K
+       =K\int_1^\infty 1_{\{r\leq xt\}}t^{-K-1}\,dt
+\]
+follows by integrating from $\max(1,r/x)$ to infinity.
+Multiply this identity over the embeddings and sum over the ideal.
+All functions are nonnegative, so the interchange of sums and
+integrals is justified by monotone convergence.  The box count gives
+\begin{align*}
+ \sum_{0\ne\alpha\in\mathfrak a}W_{K,x}(\alpha)
+ &=K^f\int_{[1,\infty)^f}
+        B_{\mathfrak a}((x_vt_v)_v)
+                 \prod_vt_v^{-K-1}\,dt_1\cdots dt_f\\
+ &\leq9^fK^f\Theta^{-2f}
+       \int_{\substack{t_v\geq1\\\prod_vt_v\geq\Theta^f}}
+                         \prod_vt_v^{-(K-1)}\,dt_1\cdots dt_f.
+\end{align*}
+The restriction on the product is justified by the vanishing
+assertion of Lemma~\ref{gt-box-count}.  Substitute $t_v=e^{u_v}$.
+Writing $a=K-2>0$ and $L=f\log\Theta\geq0$, the last integral is
+\[
+ \int_{\substack{u_v\geq0\\\sum_vu_v\geq L}}
+                      e^{-a\sum_vu_v}\,du_1\cdots du_f
+   =\frac1{(f-1)!}\int_L^\infty e^{-au}u^{f-1}\,du.
+\]
+The equality follows by first computing the volume
+$u^f/f!$ of $\{u_v\geq0:\sum_vu_v\leq u\}$ and then integrating
+with respect to $u$.  Repeated integration by parts gives
+\[
+ \frac1{(f-1)!}\int_L^\infty e^{-au}u^{f-1}\,du
+       =a^{-f}e^{-aL}\sum_{j=0}^{f-1}\frac{(aL)^j}{j!}.
+\]
+Substituting $e^{-aL}=\Theta^{-(K-2)f}$ proves
+\eqref{gt-smoothed-exact}, including convergence.  These formulas
+also hold for $f=1$, when the polynomial is $1$.
+
+For the two simpler estimates, the same integral calculation without
+the product restriction shows, for every $s>2$,
+\begin{equation}\label{gt-moment-bound}
+ \sum_{0\ne\alpha\in\mathfrak a}q_x(\alpha)^s
+       \leq\left(\frac{9s}{s-2}\right)^f\Theta^{-2f}.
+\end{equation}
+Lemma~\ref{gt-product-minimum} also gives
+\begin{equation}\label{gt-q-bound}
+ q_x(\alpha)\leq
+       \frac{\prod_vx_v}{\prod_v|\sigma_v\alpha|}
+       \leq\Theta^{-f}.
+\end{equation}
+Consequently, if $s\leq K$, multiplication of
+\eqref{gt-moment-bound} by $\Theta^{-f(K-s)}$ yields
+\begin{equation}\label{gt-interpolation}
+ \sum_{0\ne\alpha\in\mathfrak a}q_x(\alpha)^K
+       \leq\left(\frac{9s}{s-2}
+                         \Theta^{-(K-s+2)}\right)^f.
+\end{equation}
+Taking $s=3$ proves \eqref{gt-smoothed-simple}.
+For \eqref{gt-smoothed-log}, take
+$s=2+\eta$, where $\eta=(1+\log\Theta)^{-1}$.
+Then $0<\eta\leq1$, so $s\leq3\leq K$, and
+\[
+ \frac{9s}{s-2}=9(3+2\log\Theta)
+       \leq27(1+\log\Theta),\qquad
+ \Theta^\eta\leq e<3.
+\]
+Equation~\eqref{gt-interpolation} now gives the stated bound.
+\end{proof}
+
+\begin{corollary}\label{gt-subgroup-sum}
+Let $L\subseteq\mathfrak a$ be an additive subgroup, let $A>0$,
+and suppose that $x_v\geq0$ and
+\begin{equation}\label{gt-product-size}
+ \prod_vx_v\leq(A/\Theta)^f\sqrt{N\mathfrak a},
+ \qquad \Theta\geq A.
+\end{equation}
+For $K>2$, the right side of \eqref{gt-smoothed-exact}, with
+$\Theta$ replaced by $\Theta/A$, bounds the sum of $W_{K,x}$ over
+$L\setminus\{0\}$.  For $K\geq3$ one may also use
+\begin{equation}\label{gt-subgroup-simple}
+ \bigl(27(A/\Theta)^{K-1}\bigr)^f
+ \quad\hbox{or}\quad
+ \bigl(81(1+\log(\Theta/A))(A/\Theta)^K\bigr)^f.
+\end{equation}
+Every assertion holds, in particular, for every finite partial sum.
+\end{corollary}
+
+\begin{proof}
+If some $x_v=0$, every summand is zero: a nonzero field element has
+nonzero image under every embedding.  Suppose therefore that all
+$x_v>0$.  Define $T$ by
+$T^f=\sqrt{N\mathfrak a}/\prod_vx_v$.  Then
+$T\geq\Theta/A\geq1$, and Theorem~\ref{gt-smoothed} applies.
+The exact expression in \eqref{gt-smoothed-exact} is decreasing in
+$T$: before its evaluation it is the product of $T^{-2f}$ and a
+positive integral over
+$\{u_v\geq0:\sum_vu_v\geq f\log T\}$.
+The other two expressions are also decreasing for $T\geq1$ and
+$K\geq3$.  For the logarithmic expression this follows directly from
+\[
+ \frac{d}{dT}\bigl((1+\log T)T^{-K}\bigr)
+       =T^{-K-1}\bigl(1-K(1+\log T)\bigr)<0.
+\]
+The sum over $L$ is at most the sum over $\mathfrak a$.
+\end{proof}
+
+\subsection{The actual period and dual lattices}
+
+We now assume that $E$ is a CM field and write
+$\alpha\mapsto\bar\alpha$ for its complex conjugation.  Put
+\[
+ \Delta_E=\operatorname{disc}(E),\qquad
+ \rho_E=|\Delta_E|^{1/(2f)},\qquad
+ \mathfrak D_E^{-1}
+   =\{x\in E:\operatorname{Tr}_{E/\mathbb Q}
+                          (x\mathcal O_E)\subseteq\mathbb Z\}.
+\]
+Thus $\mathfrak D_E$ is the different, and $\rho_E$ is the root
+discriminant.  The trace form is nondegenerate in characteristic
+zero, so the displayed set is a nonzero fractional ideal.
+
+\begin{lemma}\label{gt-different}
+For every nonzero fractional ideal $\mathfrak a$,
+\begin{align}
+ \{x\in E:\operatorname{Tr}_{E/\mathbb Q}(x\mathfrak a)
+                    \subseteq\mathbb Z\}
+       &=\mathfrak D_E^{-1}\mathfrak a^{-1},
+          \label{gt-trace-dual}\\
+ N\mathfrak D_E&=|\Delta_E|.\label{gt-different-norm}
+\end{align}
+The ideals $\mathfrak D_E^\nu$ are preserved by complex
+conjugation for every integer $\nu$.
+\end{lemma}
+
+\begin{proof}
+If $x$ belongs to the set on the left of \eqref{gt-trace-dual},
+then for every $y\in\mathfrak a$ and $b\in\mathcal O_E$ one has
+$by\in\mathfrak a$ and $\operatorname{Tr}(xyb)\in\mathbb Z$.
+Thus $x\mathfrak a\subseteq\mathfrak D_E^{-1}$.  Conversely
+this containment implies the trace condition by taking $b=1$.
+Multiplication by the inverse ideal gives
+\eqref{gt-trace-dual}.
+
+Let $e_1,\ldots,e_{2f}$ be an integral basis of $\mathcal O_E$
+and let $T=(\operatorname{Tr}(e_ie_j))_{i,j}$.  In these coordinates
+the codifferent is $T^{-1}\mathbb Z^{2f}$.  Its covolume relative
+to $\mathcal O_E$ is $|\det T|^{-1}=|\Delta_E|^{-1}$.
+Multiplicativity of norms gives \eqref{gt-different-norm}.
+Finally the trace is unchanged by complex conjugation.  Hence
+conjugation preserves the codifferent, its inverse, and all their
+integer powers.
+\end{proof}
+
+Fix a positive integer $g$, an integer $\nu$, and a nonnegative
+integer $s$.  The period lattice and the lift lattice in the global
+orbital calculation are, respectively,
+\begin{align}
+ P_{\nu,s}
+   &=\{y\in g\mathfrak D_E^\nu:
+                    y-(-1)^s\bar y\in g^2\mathfrak D_E^\nu\},
+           \label{gt-period-lattice}\\
+ L_{\nu,s}
+   &=\{x\in g^{-1}\mathfrak D_E^{-\nu}:
+                    x-(-1)^s\bar x\in\mathfrak D_E^{-\nu}\}.
+           \label{gt-lift-lattice}
+\end{align}
+The dual of the period lattice is taken for the pairing
+$\operatorname{Tr}_{E/\mathbb Q}(xy/g)$:
+\begin{equation}\label{gt-period-dual-definition}
+ P_{\nu,s}^{\vee,g}
+   =\{x\in E:\operatorname{Tr}_{E/\mathbb Q}(xy/g)
+                    \in\mathbb Z\text{ for every }y\in P_{\nu,s}\}.
+\end{equation}
+The superscripts specify this normalization; using the unscaled
+trace pairing would give a different power of $g$.
+
+\begin{proposition}\label{gt-lattice-containments}
+For the lattices just defined,
+\begin{align}
+ g^2\mathfrak D_E^\nu
+       &\subseteq P_{\nu,s}\subseteq g\mathfrak D_E^\nu,
+             \label{gt-period-between}\\
+ \mathfrak D_E^{-\nu-1}
+       &\subseteq P_{\nu,s}^{\vee,g}
+                  \subseteq g^{-1}\mathfrak D_E^{-\nu-1},
+             \label{gt-dual-between}\\
+ \mathfrak D_E^{-\nu}
+       &\subseteq L_{\nu,s}
+                  \subseteq g^{-1}\mathfrak D_E^{-\nu}.
+             \label{gt-lift-between}
+\end{align}
+In particular these groups are full lattices.  The containing ideals
+in \eqref{gt-dual-between} and \eqref{gt-lift-between} have norms
+\begin{align}
+ \sqrt{N(g^{-1}\mathfrak D_E^{-\nu-1})}
+       &=(g\rho_E^{\nu+1})^{-f},
+             \label{gt-dual-norm}\\
+ \sqrt{N(g^{-1}\mathfrak D_E^{-\nu})}
+       &=(g\rho_E^\nu)^{-f}.
+             \label{gt-lift-norm}
+\end{align}
+These assertions need no unramifiedness assumption on $E$ and no
+restriction on the primes dividing $2g$.
+\end{proposition}
+
+\begin{proof}
+The different and all its powers are conjugation invariant.  Thus
+$y\in g^2\mathfrak D_E^\nu$ implies both
+$y\in g\mathfrak D_E^\nu$ and
+$y-(-1)^s\bar y\in g^2\mathfrak D_E^\nu$.
+This proves \eqref{gt-period-between}.
+If $x\in P_{\nu,s}^{\vee,g}$, its trace pairing with
+$g^2\mathfrak D_E^\nu$ is integral, so
+\[
+ \operatorname{Tr}_{E/\mathbb Q}(gx\mathfrak D_E^\nu)
+        \subseteq\mathbb Z.
+\]
+Lemma~\ref{gt-different} gives
+$gx\in\mathfrak D_E^{-\nu-1}$, proving the upper containment in
+\eqref{gt-dual-between}.  For its lower containment, pair
+$x\in\mathfrak D_E^{-\nu-1}$ with
+$y\in P_{\nu,s}\subseteq g\mathfrak D_E^\nu$.
+Then $xy/g\in\mathfrak D_E^{-1}$, whose trace is integral.
+The upper containment in \eqref{gt-lift-between} is part of the
+definition, and the lower one follows from conjugation invariance
+in the same way as \eqref{gt-period-between}.
+
+The lower and upper groups in these containments are nonzero
+fractional ideals, so each intervening additive group is a full
+lattice.  Finally $N(g\mathcal O_E)=g^{2f}$ and
+$N\mathfrak D_E=\rho_E^{2f}$.  Multiplicativity proves
+\eqref{gt-dual-norm} and \eqref{gt-lift-norm} for every integer
+$\nu$, including negative $\nu$.
+\end{proof}
+
+For the blocks used in the theta calculation, the exponent is
+\begin{equation}\label{gt-block-exponent}
+ \nu(r,b,s)=2r+3-2b-s.
+\end{equation}
+Here $r$ is a nonnegative integer, $b$ is the first block index, and
+$s\geq1$ is its length.  Define
+\[
+ \mathfrak a_{b,s}=g^{-1}\mathfrak D_E^{-(\nu(r,b,s)+1)},
+ \qquad
+ \mathfrak l_{b,s}=g^{-1}\mathfrak D_E^{-\nu(r,b,s)}.
+\]
+Then
+\begin{equation}\label{gt-adjacent-ideals}
+ \mathfrak l_{b,s}=\mathfrak a_{b,s+1},\qquad
+ \sqrt{N\mathfrak a_{b,s}}
+    =(g\rho_E^{2r+4-2b-s})^{-f},\qquad
+ \sqrt{N\mathfrak l_{b,s}}
+    =(g\rho_E^{2r+3-2b-s})^{-f}.
+\end{equation}
+This is an identity of ideals, not an estimate; it accounts for the
+one-step change in the discriminant exponent in the recursion.
+
+\begin{corollary}[The actual dual-lattice error]\label{gt-actual-error}
+Let $\Theta>4$.  Suppose that the nonnegative widths
+$x^{D}_{b,v}$ and $x^{L}_{b,s,v}$ satisfy
+\begin{align}
+ \prod_vx^{D}_{b,v}
+       &\leq\Theta^{-f}(g\rho_E^{2r+3-2b})^{-f},
+                 \label{gt-dual-width}\\
+ \prod_vx^{L}_{b,s,v}
+       &\leq(2/\Theta)^f
+                       (g\rho_E^{2r+3-2b-s})^{-f}.
+                 \label{gt-lift-width}
+\end{align}
+For each indicated block, the sums
+\begin{equation}\label{gt-actual-sums}
+ \sum_{0\ne\alpha\in P_{\nu(r,b,1),1}^{\vee,g}}
+                  W_{5,x^D_b}(\alpha),
+ \qquad
+ \sum_{0\ne\alpha\in L_{\nu(r,b,s),s}}
+                  W_{5,x^L_{b,s}}(\alpha)
+\end{equation}
+are bounded by each of the following quantities:
+\begin{align}
+ &15^f(2/\Theta)^{5f}
+       \sum_{j=0}^{f-1}
+                  \frac{(3f\log(\Theta/2))^j}{j!},
+                  \label{gt-error-exact}\\
+ &(432\Theta^{-4})^f,
+                  \label{gt-error-simple}\\
+ &\bigl(2592(1+\log(\Theta/2))\Theta^{-5}\bigr)^f.
+                  \label{gt-error-log}
+\end{align}
+The bounds are uniform over the block indices and over every finite
+family of width vectors satisfying
+\eqref{gt-dual-width}--\eqref{gt-lift-width}.
+\end{corollary}
+
+\begin{proof}
+Proposition~\ref{gt-lattice-containments} places the two summation
+groups in $\mathfrak a_{b,1}$ and $\mathfrak l_{b,s}$,
+respectively.  Their norm formulas are
+\eqref{gt-adjacent-ideals}.  Thus the assumptions are precisely
+\eqref{gt-product-size}, with $A=1$ for the first group and $A=2$
+for the second.  Corollary~\ref{gt-subgroup-sum}, with $K=5$, gives
+the asserted common bounds by using $A=2$ for both.  The constants
+are $9K/(K-2)=15$, $27\cdot2^4=432$, and
+$81\cdot2^5=2592$.  No union bound over the blocks is taken:
+the same bound holds separately for every required sum.
+\end{proof}
+
+\subsection{Exact covolumes, including primes above two}
+
+Write $F$ for the maximal totally real subfield of $E$, so
+$[F:\mathbb Q]=f$.  In this subsection suppose that $E/F$ is
+unramified at every finite prime of $F$ dividing $g$.
+This is weaker than assuming that $E/F$ is unramified at every
+finite prime.  It also holds when every rational prime dividing
+$g$ splits completely in $E$, as at the selected levels in the
+application.  We give the elementary local calculation, since
+division by $2$ would be invalid at some of these primes.
+
+\begin{lemma}\label{gt-quadratic-count}
+Let $A$ be the ring of integers of a nonarchimedean local field,
+let $B$ be a quadratic \emph{\'etale} $A$-algebra which is
+unramified, and let $\tau$ be its nontrivial involution.
+Thus $B=A\times A$, with the factors exchanged, or $B$ is the
+ring of integers of the unramified quadratic field extension.
+For a nonzero nonunit $a\in A$ and $\epsilon\in\{1,-1\}$,
+\begin{equation}\label{gt-local-kernel-card}
+ \#\ker\bigl(1-\epsilon\tau:B/aB\longrightarrow B/aB\bigr)
+       =\#(A/aA).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+In the split case the kernel consists of the pairs
+$(x,\epsilon x)$, so the assertion is immediate.
+In the field case choose an element of the quadratic residue
+field which generates it over the residue field of $A$, and lift
+it to $\omega\in B$.  Nakayama's lemma shows that
+$1,\omega$ is an $A$-basis of $B$.  Its conjugate has a different
+residue, since finite fields are perfect, so
+$\delta=\omega-\tau\omega$ is a unit of $B$.
+Put $t=\omega+\tau\omega\in A$.
+
+For $\epsilon=1$, write an element as $x+y\omega$.
+Its difference with its conjugate is $y\delta$, which vanishes
+modulo $aB$ if and only if $y\in aA$.  The kernel is therefore
+the copy of $A/aA$ represented by $x$.
+For $\epsilon=-1$ the map is the trace
+$x+y\omega\mapsto2x+ty$ into $A/aA$.
+This map is surjective: if the residue characteristic is odd,
+$2$ is a unit; if it is $2$, the equality
+$\delta=2\omega-t$ shows that $t$ is a unit.
+Its domain has cardinality $\#(A/aA)^2$, so its kernel has
+cardinality $\#(A/aA)$.  This proves both signs without
+inverting $2$.
+\end{proof}
+
+\begin{proposition}\label{gt-exact-covolumes}
+Under the unramifiedness assumption of this subsection,
+\begin{align}
+ [g\mathfrak D_E^\nu:P_{\nu,s}]
+    &=[P_{\nu,s}:g^2\mathfrak D_E^\nu]=g^f,
+                 \label{gt-period-indices}\\
+ [g^{-1}\mathfrak D_E^{-\nu}:L_{\nu,s}]&=g^f.
+                 \label{gt-lift-index}
+\end{align}
+For standard Lebesgue measure on $\mathbb C^f$, the covolumes
+under $\sigma=(\sigma_v)_v$ are
+\begin{align}
+ \operatorname{covol}\sigma(P_{\nu,s})
+    &=2^{-f}g^{3f}\rho_E^{(2\nu+1)f},
+                 \label{gt-period-covol}\\
+ \operatorname{covol}\sigma(L_{\nu,s})
+    &=2^{-f}g^{-f}\rho_E^{(1-2\nu)f}.
+                 \label{gt-lift-covol}
+\end{align}
+In particular, if $\Lambda_{\nu,s}=\rho_E^{-\nu}
+\sigma(P_{\nu,s})$, then
+\begin{equation}\label{gt-normalized-covol}
+ \operatorname{covol}\Lambda_{\nu,s}
+      =(\rho_E/2)^f g^{3f},
+\end{equation}
+independently of $\nu$ and $s$.
+\end{proposition}
+
+\begin{proof}
+At a finite prime $\mathfrak p$ of $F$ dividing $g$, put
+$A=\mathcal O_{F,\mathfrak p}^{\wedge}$ and
+$B=\mathcal O_E\otimes_{\mathcal O_F}A$.
+The trace pairing of $B$ over $A$ is perfect because $B/A$ is
+unramified.  This can be seen directly from the basis in
+Lemma~\ref{gt-quadratic-count}: its trace determinant is
+$(\omega-\tau\omega)^2$, a unit; in the split case use the
+two standard idempotents.  The absolute trace pairing is the
+composition of this relative pairing with the trace of $F$.
+Consequently the localization of $\mathfrak D_E$ is
+$\mathfrak D_F B$.  More explicitly, choose a basis of $B$
+over $A$ and its relative trace-dual basis, both integral.
+An element is dual to $B$ for the absolute trace exactly when
+all its coefficients in that dual basis belong to the absolute
+codifferent of $A$.  This proves the assertion about the
+different and its inverse, and hence about every integer power.
+Thus locally $\mathfrak D_E^\nu=dB$ for a nonzero $d\in F_{\mathfrak p}$
+fixed by $\tau$.
+
+For $\epsilon=(-1)^s$, reduction modulo $g\mathfrak D_E^\nu$
+therefore identifies
+\[
+ \{z\in\mathfrak D_E^\nu:z-\epsilon\bar z
+                            \in g\mathfrak D_E^\nu\}
+       /g\mathfrak D_E^\nu
+\]
+with a product, over $\mathfrak p\mid g$, of the kernels in
+Lemma~\ref{gt-quadratic-count}.  Its cardinality is
+$\#(\mathcal O_F/g\mathcal O_F)=g^f$.
+The whole quotient
+$\mathfrak D_E^\nu/g\mathfrak D_E^\nu$ has cardinality
+$g^{2f}$.  Multiplication by $g$ gives both indices in
+\eqref{gt-period-indices}.  Applying the same argument with
+$\mathfrak D_E^{-\nu}$ and then multiplying by $g^{-1}$ proves
+\eqref{gt-lift-index}.  When $g=1$ the quotients are trivial
+and the same formulas hold.
+
+For completeness,
+\begin{equation}\label{gt-ideal-covol}
+ \operatorname{covol}\sigma(\mathfrak a)
+       =2^{-f}|\Delta_E|^{1/2}N\mathfrak a
+       =2^{-f}\rho_E^fN\mathfrak a.
+\end{equation}
+Indeed the matrix of all $2f$ complex embeddings on an integral
+basis has determinant of absolute value $|\Delta_E|^{1/2}$.
+Replacing each conjugate pair of rows by its real and imaginary
+parts divides the determinant's absolute value by $2$.
+This gives the formula for $\mathcal O_E$, and the definition of
+$N\mathfrak a$ gives it for every fractional ideal.
+The two index formulas and
+$N(g^a\mathfrak D_E^b)=g^{2af}\rho_E^{2bf}$ now give
+\eqref{gt-period-covol} and \eqref{gt-lift-covol}.
+Multiplication by the positive real number $\rho_E^{-\nu}$
+on $\mathbb C^f$ scales volume by $\rho_E^{-2\nu f}$,
+which proves \eqref{gt-normalized-covol}.
+\end{proof}
+
+Use the real inner product
+$\langle z,w\rangle_{\mathbb R}
+   =\operatorname{Re}\sum_v\bar z_vw_v$ on $\mathbb C^f$.
+For a full lattice $\Lambda$, write
+\[
+ \Lambda^*=\{\xi\in\mathbb C^f:
+       \langle\xi,\lambda\rangle_{\mathbb R}\in\mathbb Z
+                       \text{ for every }\lambda\in\Lambda\}.
+\]
+
+\begin{proposition}\label{gt-Fourier-dual}
+For every nonzero real number $c$, without any unramifiedness
+assumption, one has
+\begin{equation}\label{gt-Fourier-dual-eq}
+ (c\sigma(P_{\nu,s}))^*
+       =\left\{\frac2{gc}\overline{\sigma(x)}:
+                             x\in P_{\nu,s}^{\vee,g}\right\}.
+\end{equation}
+Under the unramifiedness assumption used in
+Proposition~\ref{gt-exact-covolumes}, one further has
+\begin{align}
+ P_{\nu,s}^{\vee,g}&=L_{\nu+1,s+1},
+                 \label{gt-exact-trace-dual}\\
+ \operatorname{covol}\sigma(P_{\nu,s}^{\vee,g})
+       &=2^{-f}g^{-f}\rho_E^{-(2\nu+1)f},
+                 \label{gt-dual-covol}\\
+ \operatorname{covol}\bigl(\rho_E^{\nu+1}
+                       \sigma(P_{\nu,s}^{\vee,g})\bigr)
+       &=(\rho_E/(2g))^f.
+                 \label{gt-normalized-dual-covol}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+For $x,y\in E$ the normalizations satisfy exactly
+\begin{equation}\label{gt-pairing-identity}
+ \left\langle\frac2{gc}\overline{\sigma(x)},
+                         c\sigma(y)\right\rangle_{\mathbb R}
+       =\frac2g\operatorname{Re}\sum_v\sigma_v(xy)
+       =\operatorname{Tr}_{E/\mathbb Q}(xy/g).
+\end{equation}
+This gives one inclusion in \eqref{gt-Fourier-dual-eq}.
+For the other, choose a $\mathbb Z$-basis $y_1,\ldots,y_{2f}$
+of $P_{\nu,s}$.  It is a $\mathbb Q$-basis of $E$.
+If $\xi$ belongs to the Fourier dual, the prescribed values
+$\langle\xi,c\sigma(y_i)\rangle_{\mathbb R}$ are integers.
+Nondegeneracy of the rational trace form gives a unique $x\in E$
+with those values equal to $\operatorname{Tr}(xy_i/g)$.
+The $2f$ vectors $c\sigma(y_i)$ form a real basis, so
+\eqref{gt-pairing-identity} implies
+$\xi=2\overline{\sigma(x)}/(gc)$.
+The integral values show that $x\in P_{\nu,s}^{\vee,g}$.
+
+For any real full lattice, its Euclidean dual has reciprocal
+covolume.  In coordinates, if the basis matrix is $M$, the dual
+basis matrix is $(M^{-1})^{\mathsf T}$, which proves this assertion.
+Taking $c=1$ in \eqref{gt-Fourier-dual-eq} and using
+\eqref{gt-period-covol} therefore gives
+\[
+ (2/g)^{2f}\operatorname{covol}\sigma(P_{\nu,s}^{\vee,g})
+       =\bigl(2^{-f}g^{3f}\rho_E^{(2\nu+1)f}\bigr)^{-1}.
+\]
+This is \eqref{gt-dual-covol}.
+
+It remains to identify the lattice, rather than just its volume.
+Put $\epsilon=(-1)^s$.  If $x\in P_{\nu,s}^{\vee,g}$, then
+$x\in g^{-1}\mathfrak D_E^{-\nu-1}$ by
+Proposition~\ref{gt-lattice-containments}.
+For every $z\in\mathfrak D_E^\nu$ the element
+$g(z+\epsilon\bar z)$ belongs to $P_{\nu,s}$.
+Pairing with it and using invariance of trace under conjugation
+gives
+\[
+ \operatorname{Tr}\bigl((x+\epsilon\bar x)z\bigr)\in\mathbb Z.
+\]
+Hence $x+\epsilon\bar x\in\mathfrak D_E^{-\nu-1}$ by
+Lemma~\ref{gt-different}, and so
+$P_{\nu,s}^{\vee,g}\subseteq L_{\nu+1,s+1}$.
+Equation~\eqref{gt-lift-covol} shows that the latter lattice has
+the covolume in \eqref{gt-dual-covol}.  The inclusion has index
+one, proving \eqref{gt-exact-trace-dual}.  Finally scaling by
+$\rho_E^{\nu+1}$ gives \eqref{gt-normalized-dual-covol}.
+\end{proof}
+
+\subsection{The global Poisson inequality with its actual regularity}
+
+The summation step in the source uses continuous nonnegative
+functions, not merely Schwartz functions.  We prove the needed
+version.  This also fixes the Fourier and volume normalizations.
+For an integrable function $\phi:\mathbb C^f\to\mathbb C$, let
+\[
+ \widehat\phi(\xi)=\int_{\mathbb C^f}\phi(z)
+          e^{-2\pi i\langle\xi,z\rangle_{\mathbb R}}\,dz,
+\]
+where $dz$ is standard Lebesgue measure.
+
+\begin{theorem}\label{gt-Poisson}
+Let $\Lambda$ be a full lattice in $\mathbb C^f$ and
+$V=\operatorname{covol}\Lambda$.
+Suppose that $\phi:\mathbb C^f\to\mathbb C$ is continuous and
+that, for some finite $C\geq0$,
+\begin{equation}\label{gt-Poisson-decay}
+ |\phi(z)|\leq C\prod_{v=1}^f(1+|z_v|)^{-3}.
+\end{equation}
+If $\sum_{\xi\in\Lambda^*}|\widehat\phi(\xi)|<\infty$, then
+for every $z_0\in\mathbb C^f$,
+\begin{equation}\label{gt-Poisson-eq}
+ \sum_{\lambda\in\Lambda}\phi(z_0+\lambda)
+       =V^{-1}\sum_{\xi\in\Lambda^*}
+          \widehat\phi(\xi)
+                 e^{2\pi i\langle\xi,z_0\rangle_{\mathbb R}}.
+\end{equation}
+Both series converge absolutely, and the first converges locally
+uniformly in $z_0$.
+If $\phi$ is real and nonnegative, then every finite subset
+$S\subseteq z_0+\Lambda$ satisfies
+\begin{equation}\label{gt-Poisson-inequality}
+ \sum_{z\in S}\phi(z)
+       \leq V^{-1}\int_{\mathbb C^f}\phi(z)\,dz
+          +V^{-1}\sum_{0\ne\xi\in\Lambda^*}
+                                  |\widehat\phi(\xi)|.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Write $h(z)=\prod_v(1+|z_v|)^{-3}$.
+This function is integrable because each complex coordinate has
+real dimension two and
+$2\pi\int_0^\infty r(1+r)^{-3}\,dr<\infty$.
+Choose $\delta>0$ so that the open polydiscs
+$\lambda+\{z:\max_v|z_v|<\delta\}$, $\lambda\in\Lambda$,
+are pairwise disjoint.  Such a choice exists because a full
+lattice is discrete.  On each of these polydiscs,
+\[
+ h(\lambda)\leq(1+\delta)^{3f}h(z).
+\]
+Integration over the disjoint polydiscs proves
+$\sum_{\lambda\in\Lambda}h(\lambda)<\infty$.
+For $z_0$ in any fixed compact set, a further fixed factor bounds
+$h(z_0+\lambda)$ by $h(\lambda)$, by the triangle inequality.
+Thus \eqref{gt-Poisson-decay} and the Weierstrass test imply that
+\[
+ F(z_0)=\sum_{\lambda\in\Lambda}\phi(z_0+\lambda)
+\]
+is a continuous $\Lambda$-periodic function.
+
+Integrate over a half-open fundamental parallelepiped $Q$ of
+$\Lambda$.  Absolute integrability permits unfolding, and for
+$\xi\in\Lambda^*$ the corresponding Fourier coefficient is
+\[
+ V^{-1}\int_Q F(z)e^{-2\pi i\langle\xi,z\rangle_{\mathbb R}}\,dz
+       =V^{-1}\widehat\phi(\xi).
+\]
+The assumed absolute convergence implies that the right side of
+\eqref{gt-Poisson-eq}, as a Fourier series in $z_0$, converges
+uniformly to a continuous function with exactly those
+coefficients.  The difference from $F$ has all Fourier
+coefficients zero and therefore vanishes.  One elementary
+justification of this last assertion is to identify
+$\mathbb C^f/\Lambda$ with
+$(\mathbb R/\mathbb Z)^{2f}$ using a lattice basis and convolve
+with products of the one-dimensional Fej\'er kernels
+\[
+ F_N(t)=\frac1N\left|\sum_{j=0}^{N-1}e^{2\pi ijt}\right|^2.
+\]
+These kernels are nonnegative, have integral one, and their
+mass outside any fixed neighborhood of $0$ tends to zero:
+away from the integers the geometric-sum formula bounds
+$F_N(t)$ by a constant divided by $N$.
+Consequently their convolution with a continuous function on
+the torus converges uniformly to that function.
+All those convolutions are zero when all its Fourier
+coefficients vanish.  This proves \eqref{gt-Poisson-eq}.
+For real nonnegative $\phi$, the finite sum is at most the full
+sum, and the triangle inequality bounds the nonzero Fourier
+terms.  The zero coefficient is $\int\phi$, giving
+\eqref{gt-Poisson-inequality}.
+\end{proof}
+
+\begin{corollary}\label{gt-actual-Poisson-error}
+Let $P=P_{\nu,s}$, $c\ne0$, $\Lambda=c\sigma(P)$, and
+$V=\operatorname{covol}\Lambda$.
+Let $\phi$ be continuous, real, nonnegative, and satisfy
+\eqref{gt-Poisson-decay}.
+Suppose $B\geq0$ and nonnegative widths $x_v$ satisfy
+\[
+ V^{-1}\left|\widehat\phi
+              \left(\frac2{gc}\overline{\sigma(\alpha)}\right)\right|
+       \leq B W_{5,x}(\alpha)
+       \quad(0\ne\alpha\in P^{\vee,g}),
+ \qquad
+ \prod_vx_v\leq(A/\Theta)^f(g\rho_E^{\nu+1})^{-f},
+\]
+where $A>0$ and $\Theta\geq A$.
+For every $y_0\in E$ and finite subset $S\subseteq y_0+P$,
+\begin{equation}\label{gt-actual-Poisson-error-eq}
+ \sum_{y\in S}\phi(c\sigma(y))
+       \leq V^{-1}\int\phi
+                   +B\bigl(27(A/\Theta)^4\bigr)^f.
+\end{equation}
+The exact logarithmic-polynomial bound of
+Corollary~\ref{gt-subgroup-sum} can replace the last factor.
+If $E/F$ is unramified above $g$, then
+\[
+ V=|c|^{2f}2^{-f}g^{3f}\rho_E^{(2\nu+1)f}.
+\]
+In particular $c=\rho_E^{-\nu}$ gives
+$V=(\rho_E/2)^fg^{3f}$.
+\end{corollary}
+
+\begin{proof}
+The containing ideal for $P^{\vee,g}$ and its norm are exactly
+\eqref{gt-dual-between} and \eqref{gt-dual-norm}.
+Corollary~\ref{gt-subgroup-sum} therefore bounds the sum of
+the nonzero Fourier coefficients divided by $V$.
+Their sum is finite; the zero coefficient is finite because
+$\phi$ is integrable.  Proposition~\ref{gt-Fourier-dual}
+identifies all Fourier frequencies, with no omitted factor
+of $2$, $g$, or $c$.  Theorem~\ref{gt-Poisson} now proves
+\eqref{gt-actual-Poisson-error-eq}, and
+Proposition~\ref{gt-exact-covolumes} gives the displayed volume.
+\end{proof}
+
+\subsection{Necessary hypotheses and the limits of this improvement}
+
+\begin{example}\label{gt-critical-exponent}
+The condition $K>2$ cannot be dropped from a uniform assertion of
+convergence.  Take $E=\mathbb Q(i)$,
+$\mathfrak a=\mathbb Z[i]$, and $x=1/\Theta<1$.  For $K=2$,
+\[
+ \sum_{0\ne\alpha\in\mathbb Z[i]}W_{2,x}(\alpha)
+       =x^2\sum_{0\ne\alpha\in\mathbb Z[i]}|\alpha|^{-2}
+       =\infty.
+\]
+Indeed, the $a$ points $a+bi$, $0\leq b<a$, have squared modulus
+at most $2a^2$, so their contribution to the latter sum is at least
+$1/(2a)$.  Summing over $a\geq1$ proves divergence.  The same
+conclusion holds for $0<K\leq2$, since $0<q_x(\alpha)\leq1$.
+The exponent in the actual theta application is $K=5$.
+\end{example}
+
+\begin{example}\label{gt-log-necessary}
+The logarithmic factor at the full decay power cannot in general be
+replaced by a constant independent of $\Theta$.  Take
+$E=\mathbb Q(\sqrt2,i)$, so $f=2$, and
+$\mathfrak a=\mathcal O_E$.  The algebraic integer
+$u=1+\sqrt2$ is a unit, with inverse $\sqrt2-1$.
+At the two complex places its absolute values are $u$ and $u^{-1}$.
+Set $x_1=x_2=\Theta^{-1}$, where $\Theta>1$.
+For every integer $n$ satisfying
+$|n|\leq\log\Theta/\log u$, both absolute values of $u^n$
+lie between $\Theta^{-1}$ and $\Theta$.  Hence
+\[
+ q_x(u^n)=\Theta^{-2},\qquad
+ W_{K,x}(u^n)=\Theta^{-2K}.
+\]
+The powers are distinct, and therefore
+\[
+ \sum_{0\ne\alpha\in\mathcal O_E}W_{K,x}(\alpha)
+ \geq
+ \left(2\left\lfloor\frac{\log\Theta}{\log(1+\sqrt2)}
+                         \right\rfloor+1\right)\Theta^{-2K}.
+\]
+This rules out a bound $C^2\Theta^{-2K}$ with a fixed $C$ for this
+one field.  In degree four the degree-one logarithmic polynomial
+in \eqref{gt-smoothed-exact} has the correct order of growth.
+\end{example}
+
+Two further restrictions are essential in the elementary count.
+The zero element is excluded: for $\mathfrak a=\mathbb Z[i]$
+and $0<R<1/3$, including zero would give at least one point,
+whereas the proposed right side $9R^2$ is smaller than one.
+Also the product lower bound must apply to differences of points.
+A bound only on each individual point would allow arbitrarily many
+distinct points on the complex unit circle and would not imply a
+packing estimate.  The actual summation sets lie in fractional
+ideals, so both restrictions are satisfied.
+
+The unramifiedness assumption for the exact indices also has
+content, although it was unnecessary for the containing ideals.
+For $E=\mathbb Q(i)$, $g=2$, $\nu=0$, and $s=0$, one has
+\[
+ P_{0,0}=\{2(a+bi):4bi\in4\mathbb Z[i]\}=2\mathbb Z[i].
+\]
+Thus $[2\mathbb Z[i]:P_{0,0}]=1$, whereas the formula
+$g^f$ would give $2$.  This prime is ramified in
+$\mathbb Q(i)/\mathbb Q$, so it is excluded by
+Proposition~\ref{gt-exact-covolumes} and by the actual source
+hypotheses.  The example also explains why a proof that
+diagonalizes the involution by dividing by $2$ would not
+justify the asserted range of that proposition.
+
+The source's stated smoothed-sum estimate has the weaker form
+$(C\Theta^{-(K-5/2)})^f$; its proof already obtains an intermediate
+bound with exponent $K-1$ before weakening it.  Thus retaining that
+intermediate exponent is an improvement of the stated result, not
+a correction of a false theorem.  The direct integration above
+also gives the explicit logarithmic polynomial at exponent $K$,
+smaller constants, and the exact convergence range $K>2$.
+The actual application has $K=5$ and the width factor $2$ recorded
+in Corollary~\ref{gt-actual-error}.
+
+This proves the ideal-summation component and the global Poisson
+step of the scalar orbital estimate, including its actual period
+lattices, covolumes, trace and Fourier normalizations, and
+discriminant exponents.  It does not by itself prove the width
+inequalities \eqref{gt-dual-width}--\eqref{gt-lift-width}: those
+come from the chosen archimedean test functions and their parameter
+bounds.  The Fourier-coefficient bound for those particular
+test functions must also be established.  Nor does the section
+supply the finite-place mass identities or the remaining
+larger-corank, nonscalar, and nongeneric orbital estimates.  The
+degenerate diagonal estimate and the comparison with the ambient
+automorphic dimension remain separate obligations.  No
+counterexample to the actual ideal-sum or lattice-containment
+statements has been found.
+
+

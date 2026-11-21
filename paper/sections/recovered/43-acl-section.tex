@@ -1,0 +1,709 @@
+\section{Adelic classes and their integral polynomial coordinates}
+\label{acl-section}
+
+The coefficient estimates in Section~\ref{am-section} concern the
+actual class lattices, rather than arbitrary lattices with the same
+rank. We identify these objects explicitly. The argument below also
+gives a short proof of the adelic existence statement needed at the
+initial step of the construction. It uses the unramified quadratic
+extension and the disjoint selected primes that occur in the
+source~\cite{alpo-uniform-source}. Neither strong approximation for
+the unitary group nor a class-number formula is required.
+
+\subsection{Unit norms and integral orthonormal bases}
+
+\begin{lemma}[Norms in an unramified quadratic extension]
+\label{acl-local-norm}
+Let $A$ be a complete discrete valuation ring with finite residue
+field $\kappa$, and let $B$ be the ring of integers in an unramified
+quadratic extension of its fraction field. Write $\bar x$ for the
+nonidentity automorphism. Then the residue trace
+$\kappa_B\to\kappa$ is surjective, and
+\[
+                         N_{B/A}:B^\times\longrightarrow A^\times
+\]
+is surjective. These statements include residue characteristic two.
+\end{lemma}
+\begin{proof}
+Write $q=|\kappa|$. The trace is $x\mapsto x+x^q$ on
+$\mathbb F_{q^2}$. In odd characteristic its value at $1$ is
+nonzero. In characteristic two its value at any
+$x\notin\mathbb F_q$ is nonzero, since $x^q\ne x$.
+It is therefore a nonzero linear map from a two-dimensional
+$\mathbb F_q$-space to a one-dimensional space, hence is onto.
+
+The multiplicative group of a finite field is cyclic. One elementary
+proof is to let $e$ be the exponent of this finite abelian group.
+Combining elements of maximal prime-power orders gives an element
+of order $e$. Every group element is a root of $X^e-1$, so the
+group has at most $e$ elements; its exponent also divides its
+order. The two numbers are equal. It follows that
+$x\mapsto x^{q+1}$ maps $\mathbb F_{q^2}^\times$ onto
+$\mathbb F_q^\times$.
+
+Choose a uniformizer $\varpi$ of $A$, which is also a uniformizer
+of $B$. Given $a\in A^\times$, first choose $u_1\in B^\times$
+with $N(u_1)\equiv a\pmod\varpi$. Suppose inductively that
+$N(u_j)\equiv a\pmod{\varpi^j}$. For $t\in B$,
+\[
+ N(1+\varpi^jt)
+  =1+\varpi^j(t+\bar t)+\varpi^{2j}t\bar t
+  \equiv1+\varpi^j\operatorname{Tr}(t)
+                                     \pmod{\varpi^{j+1}}.
+\]
+Surjectivity of the residue trace permits a choice of $t_j$
+such that $u_{j+1}=u_j(1+\varpi^jt_j)$ has
+$N(u_{j+1})\equiv a\pmod{\varpi^{j+1}}$.
+The $u_j$ converge in $B^\times$, because their successive
+ratios belong to $1+\varpi^jB$. Their limit has norm $a$.
+No division by two occurs.
+\end{proof}
+
+\begin{proposition}[Integral orthonormal bases]
+\label{acl-local-basis}
+Let $A$ be as above, and let $B$ be either its unramified quadratic
+extension or $A\times A$, with the standard involution. Every
+unimodular Hermitian form on a free $B$-module of rank $n$ has a
+basis $e_1,\ldots,e_n$ with $h(e_i,e_j)=\delta_{ij}$.
+\end{proposition}
+\begin{proof}
+First suppose $B$ is a discrete valuation ring. The Gram matrix
+in an arbitrary basis belongs to $\operatorname{GL}_n(B)$.
+If some diagonal entry is a unit, the corresponding vector has
+unit norm. Otherwise some off-diagonal entry $a=h(e_i,e_j)$
+is a unit. The reduction of
+\[
+ h(e_i+te_j,e_i+te_j)
+   =h(e_i,e_i)+\operatorname{Tr}(ta)+t\bar t\,h(e_j,e_j)
+\]
+is nonzero for a suitable $t\in B$, by
+Lemma~\ref{acl-local-norm}. Thus a vector of unit norm exists
+also in this case. Multiplying it by a unit whose norm is the
+inverse of its norm gives a vector $v$ with $h(v,v)=1$.
+
+The integral projection $x\mapsto v h(v,x)$ splits off $Bv$.
+Its orthogonal complement is a direct summand, hence free over
+the discrete valuation ring. The Gram determinant shows that
+the restricted form is again unimodular. Induction on $n$
+proves the assertion, including the empty basis when $n=0$.
+
+If $B=A\times A$, a free $B$-module is the product of two
+free $A$-modules of rank $n$. A Hermitian form amounts to a
+bilinear pairing between them, with the reverse pairing
+determined by symmetry. Unimodularity says that this pairing
+is perfect. Choose a basis on one factor and its dual basis
+on the other. The corresponding $B$-basis has Gram matrix $1$.
+\end{proof}
+
+\subsection{Patching lattices and prescribing split-prime data}
+
+Let $E/F$ be a CM quadratic extension, unramified at every finite
+prime. Put $\mathcal O=\mathcal O_E$, and fix
+\[
+ V=E^n,\qquad h(x,y)=\sum_{i=1}^n\bar x_i y_i,
+ \qquad N_0=\mathcal O^n,\qquad n\geq1.
+\]
+Let $U$ be its unitary group over $F$. At a finite place $v$ of
+$F$, write $E_v=E\otimes_FF_v$ and $\mathcal O_v$ for its
+maximal compact subring. The group $U(\mathbb A_{F,f})$ consists
+of tuples in $U(F_v)$ preserving $(N_0)_v$ at all but finitely
+many places.
+
+\begin{lemma}[Patching full lattices]
+\label{acl-patching}
+Suppose a full lattice $M_P\subset E_P^n$ is prescribed at
+each prime $P$ of $\mathcal O$, with $M_P=\mathcal O_P^n$
+for all but finitely many $P$. Here $\mathcal O_P$ denotes the
+completed discrete valuation ring. There is a unique full
+$\mathcal O$-lattice $M\subset E^n$ with these completions:
+\[
+                         M=E^n\cap\prod_PM_P.
+\]
+In particular, for $g\in U(\mathbb A_{F,f})$,
+\[
+                         N_g=V\cap g\widehat N_0
+\]
+is unimodular and has completion $g_v(N_0)_v$ at every $v$.
+\end{lemma}
+\begin{proof}
+Choose a nonzero rational integer $a$ such that, at every prime,
+\[
+                 a\mathcal O_P^n\subseteq M_P
+                              \subseteq a^{-1}\mathcal O_P^n.
+\]
+Only finitely many local conditions need be imposed when choosing
+$a$. The finite $\mathcal O$-module
+$Q=a^{-1}\mathcal O^n/a\mathcal O^n$ is annihilated by $a^2$.
+The Chinese remainder theorem decomposes it as the direct sum
+of its localizations at the primes dividing $a$; these finite
+modules are unchanged by completion. Each $M_P$ determines a
+submodule of the corresponding local summand of $Q$. Take their
+direct sum and its inverse image in $a^{-1}\mathcal O^n$.
+The resulting module has exactly the required completions and
+contains $a\mathcal O^n$, so it is full and finitely generated.
+
+The same finite quotient shows that a lattice is the intersection
+of its completions with $E^n$, proving uniqueness. Hermitian
+duality commutes with completion over $F$: in local bases it is
+given by the inverse transpose of the conjugate Gram matrix.
+Each $g_v(N_0)_v$ is self-dual because $g_v$ is unitary.
+Uniqueness therefore gives $N_g=N_g^\#$.
+\end{proof}
+
+Fix disjoint finite sets $S,G$ of primes of $\mathcal O$ such that
+\begin{equation}\label{acl-primes}
+               P\in S\cup G\quad\Longrightarrow\quad
+                                      \bar P\notin S\cup G.
+\end{equation}
+Every selected prime lies over a split prime of $F$: in a quadratic
+Galois extension an inert or ramified prime is fixed by conjugation.
+Condition~\eqref{acl-primes} also says that no two selected primes
+lie over the same prime of $F$.
+At each $P\in S$, fix $c_P\in(\mathcal O/P)^\times$ and the
+functional $\ell_{0,P}(x)=c_Px_n$ on $N_0$.
+At each $Q\in G$, use the standard coordinate frame
+$b_{0,Q}:N_0/QN_0\simeq(\mathcal O/Q)^n$.
+
+A decorated lattice consists of a unimodular $N\subset V$, a
+nonzero $\mathcal O$-linear map $\ell_P:N\to\mathcal O/P$ for each $P\in S$,
+and an $\mathcal O/Q$-linear isomorphism
+$b_Q:N/QN\to(\mathcal O/Q)^n$ for each
+$Q\in G$. These are exactly the initial-step lattice and residue
+data. The associated integral lattice is
+\begin{equation}\label{acl-kernel}
+                      L_d=\{x\in N:\ell_P(x)=0\text{ for all }P\in S\}.
+\end{equation}
+The maps on localizations, and their zero extensions when needed,
+are uniquely determined by these restrictions, as in
+Section~\ref{al-section}.
+
+For $g\in U(\mathbb A_{F,f})$, transport the fixed functionals
+and frames by $g^{-1}$ to obtain a decoration $d_g$ of $N_g$.
+Local reduction agrees with $N_g/PN_g$ by the patching lemma.
+In particular these functionals are nonzero and the frames are
+isomorphisms.
+
+\begin{theorem}[Every decorated lattice has an adelic representative]
+\label{acl-points}
+Every decorated lattice just defined equals $d_g$ for some
+$g\in U(\mathbb A_{F,f})$.
+\end{theorem}
+\begin{proof}
+Complete $N$ at every finite place $v$ of $F$. By
+Proposition~\ref{acl-local-basis}, there is an isometry
+$x_v:(N_0)_v\to N_v$. Outside finitely many places $N_v=(N_0)_v$,
+and we take $x_v=1$ there. Hence $(x_v)$ is an adelic unitary
+element.
+
+At a selected split prime $v$, the local unitary group is
+$\operatorname{GL}_n(F_v)$: after identifying
+$E_v=F_v\times F_v$, its two components have the form
+$A$ and $(A^{-1})^t$. The stabilizer of $(N_0)_v$ is
+$\operatorname{GL}_n(\mathcal O_{F_v})$, whose reduction maps
+onto $\operatorname{GL}_n(\kappa_v)$. To see the latter
+surjectivity, lift the entries of any invertible residue matrix;
+its determinant is a unit, so the lifted matrix is invertible.
+
+If $P\in S$ lies over $v$, the pulled-back map $\ell_Px_v$
+is a nonzero row vector over $\kappa_v$. The general linear
+group acts transitively on nonzero row vectors: complete a
+nonzero linear functional to a basis of the dual space.
+Choose an integral local isometry $a_v$ such that
+$\ell_Px_va_v=\ell_{0,P}$ modulo $P$.
+If $Q\in G$ lies over $v$, choose instead $a_v$ with
+$b_Qx_va_v=b_{0,Q}$ modulo $Q$, by lifting the inverse of
+the residue matrix of $b_Qx_v$.
+There is only one condition at each such $v$, by
+\eqref{acl-primes}. Put $g_v=x_va_v$ at these places and
+$g_v=x_v$ elsewhere. It has the same completed lattice as $x$,
+and the prescribed functionals and frames. Thus $d_g=d$.
+\end{proof}
+
+Multiplying each $\ell_P$ by a fixed nonzero residue scalar
+changes neither $L_d$ nor any stabilizer. This accounts for the
+source's fixed diagonal rescaling of the level-prime decorations.
+In particular, if $\pi\bar\pi=T$ and $(\pi,\bar\pi)=1$, then
+$\bar\pi$ is a unit at each prime dividing $\pi$, so it is an
+allowed choice of the scalar $c_P$. The proof does not assume
+that $N$ has a global integral basis.
+
+\subsection{Double cosets, stabilizers, and the inverse level character}
+
+Let $K_0$ be the stabilizer of $\widehat N_0$, and let
+$K_S\subseteq K_0$ preserve every $\ell_{0,P}$.
+Reduction at the primes in $G$ gives a surjective homomorphism
+\[
+       r:K_S\longrightarrow\mathcal G,
+       \qquad \mathcal G=\prod_{Q\in G}
+                                \operatorname{GL}_n(\mathcal O/Q).
+\]
+Surjectivity follows by the same independent split-prime lifts
+used in Theorem~\ref{acl-points}. Fix a subgroup $H\subseteq\mathcal G$
+and put $K_H=r^{-1}(H)$ and $K_1=\ker r$.
+These groups are compact and open: they impose finitely many
+residue conditions inside the compact open group $K_0$.
+
+The group $U(F)\times H$ acts on decorated lattices by
+transporting the lattice and functionals with $\gamma\in U(F)$
+and postcomposing the residue frames with $h\in H$.
+Directly from the definition by inverse pullback,
+\begin{equation}\label{acl-action}
+ d_{\gamma g}=(\gamma,1)d_g,
+ \qquad d_{gk}=(1,r(k)^{-1})d_g\quad(k\in K_S).
+\end{equation}
+
+\begin{proposition}\label{acl-double-cosets}
+The maps above induce bijections
+\[
+ U(\mathbb A_{F,f})/K_1\simeq\{\text{decorated lattices}\},
+ \qquad
+ U(F)\backslash U(\mathbb A_{F,f})/K_H
+       \simeq (U(F)\times H)\backslash\{\text{decorated lattices}\}.
+\]
+These double-coset sets are finite. For a representative $g$,
+the stabilizer of $d_g$ in $U(F)\times H$ is isomorphic to
+\begin{equation}\label{acl-rational-stabilizer}
+                         \Gamma_g=U(F)\cap gK_Hg^{-1}
+\end{equation}
+by first projection. Its inverse sends $\gamma$ to
+$(\gamma,r(g^{-1}\gamma g))$.
+\end{proposition}
+\begin{proof}
+If $d_g=d_{g'}$, their completed lattices agree, so
+$k=g^{-1}g'$ preserves $\widehat N_0$. Equality of the
+functionals gives $k\in K_S$, and equality of the frames
+gives $r(k)=1$. Conversely every such $k$ fixes $d_g$.
+Theorem~\ref{acl-points} now proves the first bijection.
+Equation~\eqref{acl-action}, together with the surjectivity
+of $r$, proves the second.
+
+Finiteness follows from Corollary~\ref{al-finite-decorated}.
+For the stabilizer assertion, if
+$\gamma\in\Gamma_g$ and $k=g^{-1}\gamma g$, then
+\[
+                  (\gamma,1)d_g=d_{\gamma g}=d_{gk}
+                                      =(1,r(k)^{-1})d_g.
+\]
+Thus $(\gamma,r(k))$ fixes $d_g$. The converse follows by
+the same computation and the first bijection. Once $\gamma$
+is specified, the frame isomorphisms force the component in
+$H$ uniquely, proving injectivity. These stabilizers are finite
+by Lemma~\ref{al-finite-isometries}; at the two selected type
+primes they are trivial under the unipotence hypotheses of
+Proposition~\ref{al-two-primes}.
+\end{proof}
+
+Let $K$ be a number field containing the coefficient embeddings
+of $E$ and the values of a character $\chi:H\to K^\times$.
+Since $H$ is finite, these values are roots of unity. The
+corresponding right level character is
+\begin{equation}\label{acl-character}
+                            \omega(k)=\chi(r(k))^{-1}.
+\end{equation}
+This inverse is necessary, as \eqref{acl-action} shows.
+
+\subsection{Additional local bases and the row classes}
+
+The row objects also occur in a description with actual local
+bases at the auxiliary character primes. Forgetting a local basis
+and remembering its residue frame does not change either the
+class set or the stabilizer order. We give the argument explicitly,
+since division by the group of basis changes would be incorrect:
+that group is generally infinite.
+
+\begin{lemma}\label{acl-free-fibers}
+Let $p:\widetilde D\to D$ be a surjective map, equivariant for
+a surjective homomorphism $\pi:\widetilde\Gamma\to\Gamma$.
+Suppose $\ker\pi$ acts freely and transitively on each fiber
+of $p$. Then $p$ induces a bijection of orbit sets, and for
+every $x\in\widetilde D$ the homomorphism $\pi$ restricts
+to an isomorphism
+\[
+           \operatorname{Stab}_{\widetilde\Gamma}(x)
+                    \simeq\operatorname{Stab}_\Gamma(p(x)).
+\]
+\end{lemma}
+\begin{proof}
+If $p(y)=\gamma p(x)$, lift $\gamma$ to $g\in\widetilde\Gamma$.
+Then $y$ and $gx$ lie in the same fiber, so $y=kgx$ for
+some $k\in\ker\pi$. This proves injectivity on orbit sets;
+surjectivity follows from that of $p$. For a stabilizer
+element $\gamma$ downstairs, choose a lift $g$ and then $k$
+with $kgx=x$. Thus the stabilizer map is onto. Its kernel
+is trivial because $\ker\pi$ acts freely on the fiber.
+\end{proof}
+
+Let $Q$ be a finite set of additional primes disjoint from
+$S\cup G$, and assume that $S\cup G\cup Q$ still contains
+no conjugate pair. At $P\in Q$ put
+$A_P=\mathcal O_{E,(P)}$, the localization inside $E$.
+An enhanced decoration records a basis matrix
+$B_P\in\operatorname{GL}_n(E)$ with
+$B_PA_P^n=N\otimes_{\mathcal O}A_P$, rather than a residue
+frame at $P$. Forget it by remembering
+\[
+                            b_P(x)=B_P^{-1}x\pmod P.
+\]
+Every residue frame has such a lift: first choose any basis
+of the free $A_P$-module, then lift the required invertible
+residue change of basis to $\operatorname{GL}_n(A_P)$.
+
+For each $P\in Q$, choose a subgroup
+$H_P\subseteq\operatorname{GL}_n(\mathcal O/P)$ and let
+$\widetilde H_P$ be its inverse image in
+$\operatorname{GL}_n(A_P)$. The acting groups are
+\[
+ \widetilde\Gamma=U(F)\times H\times\prod_{P\in Q}\widetilde H_P,
+ \qquad
+ \Gamma=U(F)\times H\times\prod_{P\in Q}H_P.
+\]
+The local action is $B_P\mapsto\gamma B_Pk_P^{-1}$.
+Its residue frame is transformed by
+$b_P\mapsto\bar k_Pb_P\gamma^{-1}$, so the forgetful map
+is equivariant for the evident reduction homomorphism.
+The kernel acts freely on each fiber: a basis matrix has no
+nonidentity right stabilizer. It acts transitively as well,
+since two bases with the same residue frame differ by a
+unique matrix congruent to $1$ modulo $P$.
+Lemma~\ref{acl-free-fibers} therefore applies.
+
+\begin{corollary}[The row class set and its stabilizers]
+\label{acl-row-classes}
+Take $S=\varnothing$, so $L_d=N=N^\#$. The row descriptions
+by enhanced decorations and by residue-decorated unimodular
+lattices have canonically bijective class sets and isomorphic
+stabilizers. The latter classes are the double cosets for
+the compact open subgroup with the prescribed residue groups
+at $G\cup Q$. All these sets are finite. The statement also
+holds in rank zero: every group and every frame is then
+trivial, and there is one zero lattice.
+\end{corollary}
+\begin{proof}
+For positive rank, combine Lemma~\ref{acl-free-fibers} with
+Proposition~\ref{acl-double-cosets}, using $G\cup Q$ in place
+of $G$. The rank-zero assertion follows directly from the
+definitions.
+\end{proof}
+
+Characters which factor through the residue groups pass through
+this isomorphism with their exact values. If the row character
+is denoted by $\chi_{\rm row}$ and the character on the local
+basis description by $\chi_{\rm pt}$, the convention in the
+source is
+\begin{equation}\label{acl-row-character}
+              \chi_{\rm pt}(g)
+                        =\chi_{\rm row}(\pi g)^{-1}.
+\end{equation}
+Indeed, the former is the product of the chosen local
+characters, while the latter is the product of their inverses.
+This is compatible with the contragredient coefficient action
+on one side of the period pairing and the covariant action
+on the other. The equality of stabilizer orders above shows
+that both descriptions have exactly the same weights in
+their finite class sums. No index of the principal congruence
+groups is introduced.
+
+\subsection{The polynomial representation and the class lattice}
+
+Fix embeddings $\tau:E\hookrightarrow K$ indexed by a finite
+set $\Psi$, and dominant integral weights
+$\lambda_\tau=(\lambda_{\tau,1},\ldots,\lambda_{\tau,n})$.
+Write $a_\tau=\lambda_{\tau,n}$ and
+$\nu_{\tau,i}=\lambda_{\tau,i}-a_\tau$. Let $W_\lambda(K)$
+be the tensor product of the polynomial spaces already defined
+in Section~\ref{coef:section}, with the determinant twists
+recorded separately. In a block of variables $X_\tau$, the
+covariant representation is
+\[
+ \rho_\lambda(A)F(X)
+       =\left(\prod_\tau\det(A_\tau)^{a_\tau}\right)
+                                         F((A_\tau^tX_\tau)_\tau).
+\]
+The representation used for evaluations on frames is its
+contragredient realization
+\begin{equation}\label{acl-contragredient}
+ R_\lambda(\gamma)F(X)
+    =\left(\prod_\tau\det(\tau\gamma)^{-a_\tau}\right)
+                                  F(((\tau\gamma)^{-1}X_\tau)_\tau)
+    =\rho_\lambda(((\tau\gamma)^{-1})^t)_\tau F.
+\end{equation}
+For an embedding $\sigma:K\hookrightarrow\mathbb C$, evaluate
+$F$ on a tuple of invertible complex frames $Z=(Z_\tau)$ by
+\begin{equation}\label{acl-evaluation}
+               f_F(Z)=\prod_\tau\det(Z_\tau)^{a_\tau}
+                                      \sigma(F)(Z).
+\end{equation}
+Negative $a_\tau$ are allowed, since the frames are invertible.
+The defining identity is
+\begin{equation}\label{acl-eval-action}
+               f_{R_\lambda(\gamma)F}(Z)
+                    =f_F(((\sigma\tau\gamma)^{-1}Z_\tau)_\tau).
+\end{equation}
+
+Evaluation is injective. Indeed, its determinant factor never
+vanishes. If a polynomial vanishes on all invertible matrices,
+fix any matrix $A$ and consider $A+tI$. Its determinant is a
+nonzero polynomial in $t$, so the given polynomial vanishes
+at $A+tI$ for all but finitely many $t$ and hence also at $t=0$.
+Apply this argument to each block. A polynomial over an infinite
+field which vanishes on every tuple has zero coefficients, by
+induction on the number of variables.
+
+For a full lattice $M\subset E^n$, denote by
+$\Delta_{\lambda,\tau_\bullet}^{\mathrm{ctr}}(M)$ the
+integral Weyl lattice transported by $R_\lambda$ from a local
+basis of $M$ at every coefficient prime. Its independence of
+these bases, finite generation, and compatibility with
+localization were proved in Section~\ref{coef:section}.
+Equivalently, at a prime $w$ of $K$, if $B_\tau$ is a basis
+matrix of $M$ at $P_\tau=\tau^{-1}(w)$, this lattice is
+\[
+ \rho_\lambda\bigl(((\tau B_\tau)^{-1})^t\bigr)_\tau
+                             \Delta_{\lambda}^{\mathrm{std}}(\mathcal O_{K,w}).
+\]
+This is the coefficient lattice in the actual class construction,
+with $M=L_d^\#$.
+
+\begin{lemma}[Conjugation in the coefficient lattice]
+\label{acl-conjugate-lattice}
+For the standard Hermitian form,
+\begin{equation}\label{acl-conjugate-lattice-eq}
+ \Delta_{\lambda,\tau_\bullet}^{\mathrm{ctr}}(L^\#)
+                 =\Delta_{\lambda,\tau_\bullet\circ\bar{\ }}(L).
+\end{equation}
+The right-hand side is the covariant Weyl lattice evaluated
+through the conjugate embeddings. The same identity holds
+for the integral dual Weyl lattices.
+\end{lemma}
+\begin{proof}
+Fix a coefficient prime $w$ and put $P_\tau=\tau^{-1}(w)$.
+Choose a basis matrix $A_\tau$ of $L$ at the conjugate prime
+$\bar P_\tau$. A basis of $L^\#$ at $P_\tau$ is
+\[
+                             B_\tau=(\bar A_\tau)^{-t}.
+\]
+This follows by writing the pairing in coordinates:
+$h(Ax,y)=\bar x^t\bar A^ty$.
+Substitution in the preceding local description gives
+\[
+        ((\tau B_\tau)^{-1})^t
+                     =\tau(\bar A_\tau)
+                     =(\tau\circ\bar{\ })(A_\tau).
+\]
+This is precisely the local description on the right of
+\eqref{acl-conjugate-lattice-eq}, including every determinant
+twist. Equality at all coefficient primes proves the global
+identity. The argument applies to both integral coefficient
+lattices because both have the same change-of-basis rule.
+\end{proof}
+
+Define $\mathcal F_K$ to be the space of functions $F$ from
+decorated lattices to $W_\lambda(K)$ satisfying
+\begin{equation}\label{acl-equivariant}
+             F((\gamma,h)d)=\chi(h)R_\lambda(\gamma)F(d).
+\end{equation}
+Its integral lattice is
+\[
+ \mathcal F_{\mathcal O_K}
+   =\{F\in\mathcal F_K:
+             F(d)\in\Delta_{\lambda,\tau_\bullet}^{\mathrm{ctr}}(L_d^\#)
+                                          \text{ for every }d\}.
+\]
+The condition is preserved by the action. Indeed,
+$L_{(\gamma,h)d}=\gamma L_d$, the change-of-basis rule gives
+the required coefficient-lattice transport, and roots of unity
+are integral units.
+
+\begin{proposition}[Evaluation at class representatives]
+\label{acl-class-evaluation}
+Choose representatives $d_c$ of the finite decorated class set,
+and let $\Gamma_c$ be their stabilizers. Evaluation gives an
+isomorphism
+\begin{equation}\label{acl-evaluation-product}
+ \mathcal F_K\simeq\bigoplus_c W_\lambda(K)^{\Gamma_c},
+ \qquad
+ \mathcal F_{\mathcal O_K}\simeq
+   \bigoplus_c\left(
+        \Delta_{\lambda,\tau_\bullet}^{\mathrm{ctr}}(L_{d_c}^\#)
+                           \cap W_\lambda(K)^{\Gamma_c}\right),
+\end{equation}
+where $\Gamma_c$ acts by $\chi(h)R_\lambda(\gamma)$.
+If the stabilizers are trivial, the invariant restrictions disappear.
+\end{proposition}
+\begin{proof}
+An equivariant function takes a $\Gamma_c$-invariant value at
+$d_c$, and all its other values are then determined. Conversely,
+given invariant vectors $v_c$, define
+\[
+                     F((\gamma,h)d_c)
+                               =\chi(h)R_\lambda(\gamma)v_c.
+\]
+Two choices differ by an element of $\Gamma_c$, so this is
+well-defined. The representation law proves equivariance.
+The lattice assertion follows from the transport property just
+proved. In particular this argument neither averages over a
+stabilizer nor introduces a denominator equal to its order.
+\end{proof}
+
+For clarity, localization introduces no such denominator either.
+If $M_c$ is any finite collection of full coefficient lattices and
+$W_0\subseteq\bigoplus_c W_\lambda(K)$ is a $K$-subspace, then
+\begin{equation}\label{acl-localization}
+ \left(W_0\cap\bigoplus_cM_c\right)_w
+                     =W_0\cap\bigoplus_c(M_c)_w.
+\end{equation}
+For a vector on the right, each component has an integral
+multiple with multiplier outside $w$. The product of the
+finitely many multipliers works for every component and remains
+outside $w$; it also preserves $W_0$. This proves the reverse
+inclusion, while the forward inclusion is immediate. A full
+lattice is the intersection of all its localizations: if
+$x\notin M$, the proper annihilator of $x+M$ is contained in
+some maximal ideal $w$, and $x\notin M_w$.
+Consequently the displayed local coefficient conditions are
+equivalent to the global lattice in
+\eqref{acl-evaluation-product}.
+
+\subsection{The adelic functions and the metric}
+
+Over $\mathbb C$, associate to $F$ the function
+\[
+                              A_F(g,Z)=f_{F(d_g)}(Z).
+\]
+Equations~\eqref{acl-action}, \eqref{acl-eval-action}, and
+\eqref{acl-equivariant} give exactly
+\begin{equation}\label{acl-adelic-law}
+ A_F(\gamma gk,((\sigma\tau(\gamma))Z_\tau)_\tau)
+                           =\sigma(\omega(k))A_F(g,Z)
+ \qquad(\gamma\in U(F),\ k\in K_H).
+\end{equation}
+Conversely, a function satisfying this law and having the prescribed
+polynomial form at each $g$ determines $F$ uniquely.
+Indeed, use Theorem~\ref{acl-points} to choose $g$ for each $d$;
+another choice differs by $K_1$, whose character is one.
+Injectivity of frame evaluation makes the polynomial independent
+of the choice. To recover \eqref{acl-equivariant}, lift
+$h^{-1}\in H$ to $k\in K_H$ and use
+$d_{\gamma gk}=(\gamma,h)d_g$.
+The rational subspace consists exactly of those functions whose
+class polynomials have coefficients in $\sigma(K)$ and belong
+to $\sigma(W_\lambda(K))$. The integral subspace is the one
+specified in \eqref{acl-evaluation-product} and
+\eqref{acl-localization}.
+
+Give $W_\lambda(\mathbb C)$ its normalized Fock inner product,
+as in Section~\ref{coef:section}. A unitary matrix acts
+unitarily on the polynomial representation: the standard Gaussian
+integral is invariant under its change of variables, and the
+determinant character has absolute value one.
+Every $\sigma\tau(\gamma)$ is unitary, since complex conjugation
+on the CM field induces the given involution at every embedding.
+Also $|\sigma\chi(h)|=1$. Hence the class norm is
+\begin{equation}\label{acl-class-norm}
+                  \|F\|_\sigma^2
+                     =\sum_c\frac{\|\sigma(F(d_c))\|_{\mathrm{Fock}}^2}
+                                             {|\Gamma_c|},
+\end{equation}
+independently of the representatives.
+
+This is also the adelic quotient norm when the Haar measure is
+normalized by $\operatorname{vol}(K_H)=1$. Indeed, the
+double coset represented by $g_c$ is the quotient of $K_H$
+by the finite group $g_c^{-1}\Gamma_{g_c}g_c$, and its quotient
+mass is $1/|\Gamma_{g_c}|$. The coefficient norm is constant
+on this double coset. The stabilizer identification in
+Proposition~\ref{acl-double-cosets} gives exactly
+\eqref{acl-class-norm}. One may equivalently take this finite
+sum as the definition of the algebraic automorphic norm.
+For an arbitrary fixed Haar measure $\mu$, the corresponding
+integral is $\mu(K_H)$ times \eqref{acl-class-norm}.
+Thus the algebraic class norm uses the measure divided by
+$\mu(K_H)$; it does not assert that a separately chosen mass
+or formal-degree normalization already has $\mu(K_H)=1$.
+There is no additional factor $|H|$ in the finite class norm.
+To justify the discrete quotient in this interpretation, a compact
+open neighborhood meets $U(F)$ in a finite lattice-isometry group.
+A smaller neighborhood excludes its nonidentity elements, proving
+discreteness. The finite double-coset decomposition then reduces
+the quotient integral to the displayed finite sum.
+
+Under the actual two-prime unipotence hypotheses, every
+$|\Gamma_c|$ equals one. Combining
+\eqref{acl-conjugate-lattice-eq} with
+\eqref{acl-evaluation-product} and \eqref{acl-class-norm}
+therefore identifies the initial column lattice isometrically with
+\begin{equation}\label{acl-actual-class-lattice}
+                  \bigoplus_c
+                         \Delta_{\lambda,\tau_\bullet\circ\bar{\ }}
+                                      (L_{d_c}),
+\end{equation}
+with the standard coefficient metric on each summand.
+The class lattices $L_{d_c}$ are integral kernels in unimodular
+Hermitian lattices. Thus the degree and short-dual conclusions
+of Section~\ref{al-section}, and the coefficient maps and slope
+bound of Section~\ref{am-section}, apply to these actual objects.
+
+\subsection{Necessary hypotheses and exact scope}
+
+Several small examples guard the identifications above.
+
+\begin{itemize}
+\item The unramified hypothesis in Lemma~\ref{acl-local-norm}
+cannot be dropped. In $\mathbb Q_2(i)/\mathbb Q_2$, a unit norm
+is $a^2+b^2$ with exactly one of $a,b\in\mathbb Z_2$ odd,
+so it is $1$ modulo $4$. In particular $-1$ is not a unit
+norm. The unimodular rank-one forms with Gram entries $1$
+and $-1$ are not integrally isometric. This does not affect
+the unramified extension used above.
+\item Arbitrary simultaneous decorations at conjugate split
+primes cannot be prescribed. In rank one over
+$\mathbb F_5\times\mathbb F_5$, a unitary matrix is
+$(t,t^{-1})$. The two pulled-back functional coefficients
+are $t^{-1}$ and $t$, with product one. The pair with
+coefficients $1$ and $2$ cannot arise. Condition
+\eqref{acl-primes} excludes precisely this obstruction.
+\item Conjugation in \eqref{acl-conjugate-lattice-eq} matters.
+In $E=\mathbb Q(i)$, let $P=(2+i)$ and take rank one and
+weight $1$. Then $P^\#=\bar P^{-1}$, so its contragredient
+coefficient lattice is $\bar P$, not $P$. The two ideals
+are distinct.
+\item Stabilizer invariants cannot be discarded without
+triviality. A one-dimensional coefficient space with the
+sign action of a stabilizer $\{\pm1\}$ has zero invariant
+space, although the unrestricted coefficient space is
+one-dimensional. The two-prime argument is used before
+asserting the full direct sum in
+\eqref{acl-actual-class-lattice}.
+\end{itemize}
+
+In the actual construction, the Hermitian spaces have standard
+orthonormal frames and the standard integral lattice by their
+definition. The class lattice is the inverse-coordinate image
+of the selected decorated representative's kernel. Passing back
+to coordinates gives exactly that kernel, and the frame
+determinant is the ordinary matrix determinant. The selected
+primes satisfy \eqref{acl-primes}: primes over $T$ divide
+$\pi_T$ and do not divide $\bar\pi_T$, the type primes use
+the prescribed conjugate half of the divisors of $g_1g_2$,
+and the distinct rational primes keep these sets disjoint.
+These are supplied hypotheses of the prime construction,
+not new existence assumptions.
+
+At the initial step the auxiliary coupling set is empty, the
+index set has one element, and the reference character has no
+auxiliary character primes. Thus no additional class label or
+local-basis choice survives in \eqref{acl-actual-class-lattice}.
+For the row step the coupling set is again empty; its extra
+local bases are handled by Corollary~\ref{acl-row-classes}.
+
+The present section proves the initial-step and row class
+comparisons, the initial coefficient descriptions, and its
+metric, together with the exact equality of stabilizer weights
+needed for the row pairing. More elaborate intermediate steps also carry auxiliary
+cosets and local character data. Their comparison with the
+intermediate adelic level charts requires the corresponding
+additional source arguments. The period-map valuation bound
+and the global theta identities are not consequences of this
+class comparison.
+
+

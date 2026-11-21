@@ -1,0 +1,97 @@
+\section{Smoothed sums and their Mellin transforms}
+\label{sec:mellin}
+
+\begin{lemma}\label{lem:mellin}
+For $\Re s>1$ one has
+\begin{align}
+ \int_1^\infty G_\chi(x)x^{-s-1}\,dx
+  &=-\frac{L'(s,\chi)/L(s,\chi)
+                  -sL'(1,\chi)/L(1,\chi)}{s(s-1)}
+                       &&(\chi\ne1),\label{eq:mellin-chi}\\
+ \int_1^\infty G_1(x)x^{-s-1}\,dx
+  &=-\frac{\zeta'(s)/\zeta(s)}{s(s-1)}
+      -\frac1{(s-1)^2}+\frac{1+\gamma}{s-1}.
+                       \label{eq:mellin-zeta}
+\end{align}
+The expressions on the right extend meromorphically to $\Re s>0$,
+are holomorphic at $s=1$, and have, at a zero $\rho$ of the
+corresponding $L$-function in $0<\Re\rho<1$, residue
+\begin{equation}\label{eq:residue}
+                    -\frac{m_\chi(\rho)}{\rho(\rho-1)},
+\end{equation}
+where $m_\chi(\rho)$ is the positive integer multiplicity of that zero.
+All their poles in $\Re s>0$ are of this form and are simple.
+\end{lemma}
+
+\begin{proof}
+For $n\ge1$ and $\sigma>1$, direct integration gives
+\[
+ \int_1^\infty(x/n-1)_+x^{-s-1}\,dx
+ =\frac{n^{-s}}{s(s-1)}.
+\]
+The same calculation with $\sigma$ in place of $s$ bounds the integral
+of the absolute value by $n^{-\sigma}/(\sigma(\sigma-1))$.
+Consequently the exchange of sum and integral is justified by
+$\sum\Lambda(n)n^{-\sigma}<\infty$. Logarithmic differentiation of
+the absolutely convergent Euler product gives
+\[
+       \sum_{n\ge1}\Lambda(n)\chi(n)n^{-s}
+                         =-\frac{L'(s,\chi)}{L(s,\chi)}.
+\]
+Finally,
+$\int_1^\infty x^{-s}\,dx=(s-1)^{-1}$ and
+$\int_1^\infty x^{-s}\log x\,dx=(s-1)^{-2}$.
+These identities prove both formulas, including absolute convergence
+of the integrals for $\sigma>1$.
+
+In \eqref{eq:mellin-chi} the numerator vanishes at $s=1$; its
+apparent singularity there is removable. For \eqref{eq:mellin-zeta},
+use $\zeta'/\zeta=-1/(s-1)+\gamma+O(s-1)$.
+The coefficients of both $(s-1)^{-2}$ and $(s-1)^{-1}$ cancel.
+If $L(s,\chi)=(s-\rho)^m h(s)$ with $h$ holomorphic and
+$h(\rho)\ne0$, then $L'/L=m/(s-\rho)+h'/h$.
+Since $\rho(\rho-1)\ne0$, this proves \eqref{eq:residue}.
+There are no other singularities in the indicated half-plane, by
+the classical analytic properties stated above. The zeros of a
+nonzero holomorphic function are isolated, so the pole set is locally
+finite.
+\end{proof}
+
+
+\begin{lemma}\label{lem:positive-family}
+Let $\chi_1,\ldots,\chi_r$ be primitive characters, possibly including
+the conductor-one character, and let $c_j>0$ be real numbers.
+Set $H(x)=\sum_jc_j\Re G_{\chi_j}(x)$ and $g(u)=H(e^u)$.
+Then $|g(u)|\ll e^{2u}$ for $u\ge0$. Its Laplace transform extends
+meromorphically to $\Re s>0$. At every zero $\rho$ of one of the
+$L(s,\chi_j)$ in that half-plane the transform has a genuine simple
+pole, with residue
+\begin{equation}\label{eq:family-residue}
+ -\frac{1}{\rho(\rho-1)}
+    \sum_{j=1}^r\frac{c_j}{2}
+                 \bigl(m_{\chi_j}(\rho)+m_{\bar\chi_j}(\rho)\bigr).
+\end{equation}
+Here a multiplicity is zero if the corresponding function does not
+vanish. The residue at a real pole is positive.
+\end{lemma}
+
+\begin{proof}
+The bound $\Lambda(n)\le\log n$ gives
+$|S_\chi(x)|\le x\sum_{2\le n\le x}(\log n)/n
+\ll x(1+\log^2x)\ll x^2$. The correction terms in
+\eqref{eq:Gchi}--\eqref{eq:Gone} obey the same bound for each fixed
+character. Thus $g$ is continuous and has the stated growth.
+
+Conjugating the absolutely convergent Dirichlet series, and then
+continuing analytically, gives
+$L(s,\bar\chi)=\overline{L(\bar s,\chi)}$ and
+$G_{\bar\chi}(x)=\overline{G_\chi(x)}$.
+Hence $\Re G_\chi=(G_\chi+G_{\bar\chi})/2$.
+The substitution $x=e^u$ identifies each Mellin integral in
+Lemma~\ref{lem:mellin} with the corresponding Laplace integral.
+Formula~\eqref{eq:family-residue} follows by addition. Its integer
+multiplicities are nonnegative, and at least one is positive at a
+zero under consideration. Thus the residue cannot cancel.
+For real $0<\rho<1$, the factor $-1/(\rho(\rho-1))$ is positive.
+\end{proof}
+

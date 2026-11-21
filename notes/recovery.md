@@ -36,3 +36,7 @@ The original large Lean archive and the complete exported proof are not included
 No continuation after the supplied bundle is treated as recovered unless its text, data, or supporting record is actually available. New results must be identified as new work. Reconciliation must follow the mathematical dependencies: many obligations described as open in an early section are discharged later in the recovered manuscript.
 
 This record belongs outside the main paper. New mathematics belongs in the appropriate sections of the paper, with separate audit records where necessary.
+
+## Modular integration in the resumed session
+
+The three newly attached copies match the archived originals exactly. All 622 ZIP members and all 621 internal-manifest entries were checked again. The full reconstruction is now the working manuscript in `paper/main.tex`, split into 96 mathematical sections and grouped in eight parts. The earlier short paper is preserved in `paper/companion/`. See [the recovery crosswalk](recovery-crosswalk.md) for the dependency reconciliation and precise remaining frontier. Prior-chat retrieval remains disabled; no missing continuation is represented as recovered.

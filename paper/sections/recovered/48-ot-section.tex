@@ -1,0 +1,463 @@
+\section{Integral formal series and bounded ordinary theta moments}
+\label{ot-section}
+
+This section proves the formal and functional-analytic parts of the
+ordinary theta moment argument.  They are useful because bounded
+ordinary derivatives alone do not define a bounded measure.  We give
+the exact criterion, prove the descent from tensor powers, and prove
+the integral functional equation used for the one-dimensional CM
+theta function.  The geometric hypotheses needed to apply that
+equation are stated explicitly at the end.
+
+Fix a prime $p$.  Let $L$ be a complete nonarchimedean field containing
+$\mathbb Q_p$, with its usual absolute value on $\mathbb Q_p$, and
+write $\mathcal O=\{x\in L:|x|\le1\}$ and
+$\mathfrak m=\{x\in L:|x|<1\}$.  A power series is called
+\emph{integral} if all its coefficients belong to $\mathcal O$.
+It is called \emph{bounded} if their absolute values have a finite
+common bound.  No discreteness of the valuation is assumed.
+
+\subsection{A complete measure criterion}
+
+For $r\ge0$, put $X_r=\mathbb Z_p^r$.  For a multi-index
+$n=(n_1,\ldots,n_r)\in\mathbb N^r$, set
+\[
+ B_n(x)=\prod_{j=1}^r\binom{x_j}{n_j},\qquad
+ \binom Xk=\frac{X(X-1)\cdots(X-k+1)}{k!}.
+ \tag{OT1}
+\]
+Empty products are one.  The polynomials $B_n$ take integral values
+on $X_r$: this holds at nonnegative integers and then follows on
+$\mathbb Z_p$ by continuity and density.
+Let $S_jf(x)=f(x+e_j)$ and $\Delta_j=S_j-1$.
+
+\begin{theorem}[Multivariable Mahler expansion]\label{ot-mahler}
+Every continuous $f:X_r\to L$ has a unique uniformly convergent
+expansion
+\[
+ f(x)=\sum_{n\in\mathbb N^r}a_n(f)B_n(x),\qquad
+ a_n(f)=(\Delta_1^{n_1}\cdots\Delta_r^{n_r}f)(0).
+ \tag{OT2}
+\]
+The coefficients tend to zero outside finite subsets of
+$\mathbb N^r$, and
+\[
+                  \|f\|_\infty=\sup_n|a_n(f)|.
+ \tag{OT3}
+\]
+When $r=0$, these assertions mean the single constant coefficient.
+\end{theorem}
+\begin{proof}
+The ultrametric inequality gives $\|\Delta_j\|\le1$, hence
+$|a_n(f)|\le\|f\|_\infty$.  We first prove their convergence
+to zero.  A continuous function on the compact space $X_r$ can be
+approximated uniformly, to any accuracy, by a function constant on
+residue classes modulo $p^h$.  Indeed, uniform continuity gives
+such an $h$, and one chooses one value on each of the finitely many
+classes.
+
+Let $g$ be such a function and put $N=p^h$.  On these functions
+$S_j^N=1$.  In the ring $\mathbb Z[S]/(S^N-1)$ all coefficients
+of $(S-1)^N$ are divisible by $p$: reduction modulo $p$ gives
+$(S-1)^{p^h}=S^{p^h}-1=0$.  It follows that
+\[
+ \|\Delta_j^{kN}g\|_\infty\le |p|^k\|g\|_\infty.
+ \tag{OT4}
+\]
+The same estimate holds with any additional differences in any
+coordinates.  Thus $a_n(g)$ tends to zero whenever at least one
+coordinate of $n$ tends to infinity, uniformly in the others.
+Since $|a_n(f)-a_n(g)|\le\|f-g\|_\infty$, the asserted
+cofinite convergence follows for $f$.
+
+The series in (OT2) therefore converges uniformly: its tails have
+norm at most the largest omitted coefficient, because
+$|B_n(x)|\le1$.  Its sum is continuous.  For
+$x\in\mathbb N^r$, the series is finite, and the ordinary Newton
+identity gives its value as $f(x)$.  In one variable this identity
+is the binomial inversion
+\[
+ f(m)=\sum_{n=0}^m\binom mn
+          \sum_{j=0}^n(-1)^{n-j}\binom nj f(j).
+\]
+The coefficient of $f(j)$ is
+$\binom mj\sum_{k=0}^{m-j}(-1)^k\binom{m-j}{k}$, which is
+one for $j=m$ and zero otherwise.  Applying this in each coordinate
+proves the multivariable identity.  Density of $\mathbb N^r$ in
+$X_r$ proves (OT2) everywhere.  It also gives
+$\|f\|_\infty\le\sup_n|a_n(f)|$, establishing (OT3).
+Finally $\Delta_j\binom{x_j}{k}=\binom{x_j}{k-1}$ implies
+$a_n(B_m)=1$ if $n=m$ and zero otherwise.  Applying the bounded
+functional $a_n$ to any uniformly convergent expansion proves
+uniqueness.
+\end{proof}
+
+By an $L$-valued bounded measure on $X_r$ we mean a continuous
+$L$-linear functional on $C(X_r,L)$, with its supremum norm.  This
+definition avoids any assumption of countable additivity in a
+real-valued measure space.
+
+\begin{corollary}[Exact moment criterion]\label{ot-measure}
+A family $(c_n)_{n\in\mathbb N^r}$ is of the form
+$c_n=\mu(B_n)$ for a bounded measure if and only if it is bounded.
+The measure is unique, is given by
+\[
+             \mu(f)=\sum_n a_n(f)c_n,
+             \qquad \|\mu\|=\sup_n|c_n|,
+ \tag{OT5}
+\]
+and has norm at most one exactly when every $c_n$ is integral.
+\end{corollary}
+\begin{proof}
+Boundedness of the $c_n$ and the cofinite convergence of $a_n(f)$
+give convergence of (OT5) in the complete field $L$.  The
+ultrametric inequality and (OT3) show that it is a linear
+functional of norm at most $\sup|c_n|$.  Since
+$\|B_n\|_\infty=1$ and $a_m(B_n)=\delta_{mn}$, the reverse
+inequality holds.  Conversely a bounded measure has
+$|\mu(B_n)|\le\|\mu\|$.  Applying it to (OT2) proves
+uniqueness.
+\end{proof}
+
+Let $g\in L[[z_1,\ldots,z_r]]$ and write it in exponential
+generating-function form
+\[
+ g(z)=\sum_{\alpha\in\mathbb N^r}
+           M_\alpha\frac{z^\alpha}{\alpha!}.
+ \tag{OT6}
+\]
+Here $\alpha!=\prod_j\alpha_j!$; it is nonzero in $L$.
+Define the linear functional $\Lambda_g$ on $L[X_1,\ldots,X_r]$
+by $\Lambda_g(X^\alpha)=M_\alpha$.
+
+\begin{proposition}\label{ot-logarithm}
+The coefficients of the formal series
+\[
+       g(\log(1+T_1),\ldots,\log(1+T_r))
+       =\sum_n c_nT^n
+ \tag{OT7}
+\]
+are exactly $c_n=\Lambda_g(B_n)$.  Consequently $\Lambda_g$
+extends to a measure on $X_r$ of norm at most one if and only if
+the series (OT7) is integral.
+\end{proposition}
+\begin{proof}
+The formal identity
+\[
+ \exp(X\log(1+T))=\sum_{n\ge0}\binom Xn T^n
+ \tag{OT8}
+\]
+holds in $L[X][[T]]$.  One proof differentiates in $T$: both sides
+have constant term one and satisfy
+$(1+T)\partial_T F=XF$, whose coefficients determine the series
+uniquely.  Multiply this identity in the $r$ coordinates and apply
+$\Lambda_g$ coefficient by coefficient.  Each coefficient uses
+only finitely many monomials, so the operation is purely formal
+and gives (OT7).  Corollary~\ref{ot-measure} proves the criterion.
+Polynomial uniqueness follows also from the fact that the $B_n$
+form a basis, since their leading monomials are $X^n/n!$.
+\end{proof}
+
+For a complex analytic function $G$ near zero in a finite-dimensional
+complex vector space, choose vectors $v_1,\ldots,v_r$, an abstract
+field embedding of its Taylor coefficients into $L$, and a period
+$\omega\in L$.  Apply the proposition to the transported Taylor
+series of $G(\omega\sum_j z_jv_j)$; equivalently set
+$M_\alpha=\omega^{|\alpha|}\iota(D_{v_1}^{\alpha_1}
+\cdots D_{v_r}^{\alpha_r}G(0))$.
+Only algebraic operations on Taylor coefficients are involved; the
+field embedding is not asserted to be continuous for the complex
+topology.
+
+\subsection{Descent from tensor powers}
+
+\begin{theorem}\label{ot-tensor-root}
+Let $G$ be as above, let $\Lambda$ be an additive subgroup of its
+vector space, and let $h\ge1$.  Define the function in independent
+blocks
+\[
+             G^{\otimes h}(z_1,\ldots,z_h)
+                      =\prod_{j=1}^hG(z_j).
+ \tag{OT9}
+\]
+If, for every finite family of directions in $\Lambda^h$, its
+period-scaled Taylor functional is a measure of norm at most $C$,
+then the corresponding functional of $G$ in every finite family
+of directions in $\Lambda$ is a measure of norm at most $C^{1/h}$.
+Here $C\ge0$.  In particular norm at most one descends from the
+fourth tensor power, without any assumption on $G(0)$.
+\end{theorem}
+\begin{proof}
+Fix $v_1,\ldots,v_r\in\Lambda$ and let $c_n$ be the coefficients
+in (OT7) for these directions.  Use in the tensor product the
+$hr$ directions obtained by placing $v_i$ in block $j$ and zero
+in the other blocks.  Its logarithm-substituted Taylor series is
+the product of $h$ copies of (OT7) in disjoint variable sets.
+The coefficient indexed by $(n,\ldots,n)$ is therefore $c_n^h$.
+The assumed norm bound and Corollary~\ref{ot-measure} give
+$|c_n|^h\le C$.  Thus $|c_n|\le C^{1/h}$, and the same
+corollary gives the claimed measure.  For $C=0$ every $c_n$ is
+zero; this case is included.  For an empty direction family the
+argument is simply the same inequality for the constant term.
+\end{proof}
+
+The independent blocks in this theorem matter.  A pointwise power
+$G(z)^h$ combines coefficients by convolution and does not provide
+the diagonal coefficient $c_n^h$.  The submitted fourth-power
+argument uses the tensor product (OT9), so the theorem applies
+with precisely its intended meaning.
+
+\subsection{An integral functional equation}
+
+\begin{theorem}\label{ot-functional-equation}
+Let $\phi=(\phi_1,\ldots,\phi_r)\in
+\mathcal O[[T_1,\ldots,T_r]]^r$ have zero constant term and
+linear coefficient matrix in $\operatorname{GL}_r(\mathcal O)$.
+Let $m\ge0$ be an integer with $|m|<1$, and let
+$A,B\in\mathcal O[[T_1,\ldots,T_r]]$ have constant term one.
+There exists a unique $f\in L[[T_1,\ldots,T_r]]$, with constant
+term one, satisfying
+\[
+                     f(\phi(T))A(T)=f(T)^mB(T).
+ \tag{OT10}
+\]
+This solution is integral.  If $m\ge2$ and
+$0\ne\rho\in L[[T_1,\ldots,T_r]]$ satisfies
+$\rho(\phi)=\rho^m$, then $\rho$ is a constant $c$ with
+$c^{m-1}=1$.
+\end{theorem}
+\begin{proof}
+Write the linear part of $\phi$ as $UT$.  Suppose the homogeneous
+parts of $f$ below degree $n$ have been constructed.  The degree
+$n$ part $f_n$ occurs on the left of (OT10) as $f_n(UT)$ and on
+the right as $mf_n(T)$.  All other degree $n$ terms involve only
+the already constructed parts.  Thus
+\[
+                       (S_n-m)f_n=R_n,
+ \tag{OT11}
+\]
+where $S_n:P(T)\mapsto P(UT)$ is an automorphism of the finite
+free $\mathcal O$-module of homogeneous polynomials of degree
+$n$.  Its inverse substitutes $U^{-1}T$, so both $S_n$ and
+$S_n^{-1}$ have integral entries.  The matrix
+$1-mS_n^{-1}$ reduces to the identity modulo $\mathfrak m$;
+its determinant is a unit of $\mathcal O$, and its inverse is
+integral by the adjugate formula.  Hence $S_n-m$ is invertible
+over $\mathcal O$.  If the lower parts of $f$ are integral, then
+$R_n$ is integral, so (OT11) determines a unique integral $f_n$.
+Starting with $f_0=1$ proves existence, integrality and uniqueness
+degree by degree.  The same invertibility proves uniqueness among
+all $L$-valued formal solutions, even if their coefficients were
+not initially assumed bounded.  The case $r=0$ is the constant
+identity $1=1$.
+
+For the last assertion, the least degree of a nonzero homogeneous
+part of $\rho$ is unchanged by substitution of $\phi$, since
+$U$ is invertible.  Equation $\rho(\phi)=\rho^m$ forces this
+degree to be zero.  Its constant $c$ is nonzero and satisfies
+$c=c^m$.  Then $\rho/c$ satisfies (OT10) with $A=B=1$ and
+constant term one.  Uniqueness makes it the constant one.
+\end{proof}
+
+In one variable the recurrence is especially transparent: if
+$\phi(T)=aT+\cdots$, the coefficient of $f_n$ in (OT11) is
+$a^n-m$, whose absolute value is one.  This proves exactly the
+integrality step used in the ordinary CM theta construction and
+also shows why the unit linear coefficient is essential.
+
+\subsection{Bounded elliptic quotients}
+
+The next elementary observation supplies the bounded-series step
+in that construction.  We isolate the geometric inputs so that
+integrality of a formal chart is not tacitly assumed.
+
+\begin{lemma}\label{ot-bounded-unit}
+Suppose $F,G\in L[[T]]$ are bounded, $FG=1$ and $F(0)=1$.
+Then both $F$ and $G$ are integral.
+\end{lemma}
+\begin{proof}
+For $0<r<1$ define $\|F\|_r=\max_n|F_n|r^n$; the maximum
+exists because $F$ is bounded.  The same applies to $G$.
+This norm is multiplicative.  Indeed, choose the smallest indices
+$i,j$ where the two maxima occur.  In the coefficient of
+$T^{i+j}$ in $FG$, every other summand has smaller weighted
+absolute value: if its first index is less than $i$ it is already
+smaller, and otherwise its second index is less than $j$.
+The ultrametric inequality then gives equality for this
+coefficient, while the reverse inequality for all coefficients
+is immediate.  Thus $\|F\|_r\|G\|_r=1$.
+Both norms are at least one, from their constant terms, hence
+both are one.  Letting $r$ tend to one gives the assertion for
+each coefficient.
+\end{proof}
+
+\begin{proposition}\label{ot-elliptic-bounded}
+Let $E/L$ be a smooth Weierstrass elliptic curve, with origin $O$,
+and suppose a formal parameter $T$ at $O$ gives expansions
+\[
+ x=T^{-2}X(T),\qquad y=T^{-3}Y(T),\qquad
+ X,Y\in\mathcal O[[T]],\quad X(0)\in\mathcal O^\times.
+ \tag{OT12}
+\]
+Let $R$ be a rational function on $E$, regular at $O$.
+Assume every pole $P$ of $R$ is affine and satisfies $|x(P)|\le1$,
+after passage to a complete algebraically closed extension if needed.
+Then the expansion of $R$ in $T$ is bounded.
+If $R(O)=1$ and the same pole condition holds for $R^{-1}$, then
+the expansion of $R$ and its inverse are integral.
+\end{proposition}
+\begin{proof}
+For each pole choose a sufficiently large multiplicity and form a
+monic polynomial $D(X)$ whose roots are the finitely many $x(P)$.
+Then $D(x)R$ has no affine pole, and $D$ has integral coefficients.
+The affine coordinate ring of the smooth Weierstrass curve is
+$L[x,y]$ modulo its Weierstrass equation.  A rational function
+regular at every affine point belongs to this ring.  To recall
+the local justification, smoothness makes each local ring a
+discrete valuation ring, so absence of a pole means membership in
+that local ring.  If an element of the fraction field belongs to
+all those local rings but not to the affine ring $A$, its
+denominator ideal $\{a\in A:af\in A\}$ is proper.  A maximal
+ideal containing it contradicts membership in the corresponding
+localization.  Thus
+\[
+                        D(x)R=A(x)+yB(x)
+ \tag{OT13}
+\]
+for polynomials $A,B$, since the Weierstrass equation is monic of
+degree two in $y$.
+
+Put $d=\deg D$.  From (OT12),
+$D(x)=T^{-2d}S(T)$, where $S$ is integral and
+$S(0)=X(0)^d$ is a unit.  Its inverse is integral by the usual
+coefficient recursion.  Multiplying the right side of (OT13)
+by a sufficiently large power $T^k$ produces a bounded series:
+it is a finite sum of scalar multiples of products of $X$ and
+$Y$.  Therefore the Laurent expansion
+$R=T^{2d-k}(T^k(A(x)+yB(x)))S^{-1}$ has bounded coefficients.
+Regularity at $O$ removes its negative coefficients, yielding the
+claimed power series.  Applying the same argument to $R^{-1}$
+and Lemma~\ref{ot-bounded-unit} proves the last assertion.
+All arguments may be made after the indicated extension; bounds
+and integrality of the original coefficients then descend.
+\end{proof}
+
+\subsection{The precise one-dimensional CM consequence}
+
+Here is a sufficient set of ordinary CM data, stated as conventional
+mathematics.  Let $k$ be an imaginary quadratic field, let $p$ be
+odd and split in $k$, and fix the embedding
+$\mathcal O_k\hookrightarrow\mathbb Z_p$ associated with one
+of its primes.  Suppose a complex elliptic curve with CM by
+$\mathcal O_k$ has been transported to a good integral Weierstrass
+model over $L$.  Assume its formal group has an integral
+multiplicative coordinate $T$: its parameter at the origin is an
+integral series in $T$ with unit linear coefficient, and the CM
+endomorphism $\alpha$ acts as
+\[
+                         [\alpha](T)=(1+T)^{a}-1,
+             \qquad a=\iota(\alpha)\in\mathbb Z_p.
+ \tag{OT14}
+\]
+Assume the CM endomorphisms preserve the formal subgroup, and that
+this subgroup consists precisely of $O$ and the affine points with
+$|x|>1$.  Suppose a normalized entire theta function $\theta$
+has $\theta(0)=1$, zeros at the translates of a nonzero point of
+order two, and that
+\[
+              R_\alpha(z)=\frac{\theta(\alpha z)}
+                                     {\theta(z)^{N(\alpha)}}
+ \tag{OT15}
+\]
+is an elliptic rational function for each nonzero
+$\alpha\in\mathcal O_k$ used below.  Finally suppose the
+transported Taylor series in the formal coordinate is
+\[
+               f(T)=\widehat\theta(\omega\log(1+T))
+ \tag{OT16}
+\]
+with the same period $\omega$ as in the differentiation
+directions; its constant term is one.  These are hypotheses on
+the actual model and normalization, not consequences of bounded
+formal algebra.
+
+\begin{corollary}\label{ot-CM-base}
+Under these hypotheses, $f$ is integral.  Consequently the Taylor
+functional of $\theta$ in the period-scaled one-dimensional
+direction is a measure of norm at most one on $\mathbb Z_p$.
+\end{corollary}
+\begin{proof}
+The Chinese remainder theorem gives
+$\alpha\in\mathcal O_k$ which is one modulo the chosen prime
+over $p$ and zero modulo its conjugate.  Thus $|a|=1$ and
+$m=N_{k/\mathbb Q}(\alpha)$ is a positive integer divisible by
+$p$.  In particular $m\ge2$ and $|m|<1$.
+
+A good integral formal group has no nonzero prime-to-$p$ torsion.
+In fact its multiplication-by-$n$ series is
+$nU+U^2H(U)$ with $H$ integral; when $p\nmid n$ and
+$0<|U|<1$, its absolute value is $|U|$, so it cannot vanish.
+Since $p$ is odd, the theta zero of order two does not lie in the
+formal subgroup.  No preimage of this zero under a CM
+endomorphism lies there either, because that subgroup is
+preserved.  The zeros and poles of $R_\alpha$ therefore avoid
+the formal subgroup.  Also $R_\alpha(O)=1$.
+Proposition~\ref{ot-elliptic-bounded} makes the expansion
+$\epsilon(T)$ of $R_\alpha$ integral, with integral inverse.
+
+The coefficients of $(1+T)^a-1$ are integral, by the
+integer-valued binomial polynomials and density of $\mathbb N$
+in $\mathbb Z_p$; its linear coefficient is the unit $a$.
+Equations (OT14)--(OT16), as formal identities, give
+\[
+              f((1+T)^a-1)=f(T)^m\epsilon(T).
+ \tag{OT17}
+\]
+Theorem~\ref{ot-functional-equation}, with $A=1$ and
+$B=\epsilon$, proves that $f$ is integral.
+Proposition~\ref{ot-logarithm} now gives the asserted measure.
+\end{proof}
+
+The extra hypotheses are necessary to identify this corollary with
+the theta function used in a global construction.  In particular
+one must prove existence and normalization of the good CM model
+and multiplicative chart, that its period is a unit in the chosen
+normalization, integrality for the required prime-to-$p$ torsion
+translates and their finite linear combinations, and the passage
+from the one-dimensional theta function to the higher-dimensional
+lattice theta function.  The tensor descent in
+Theorem~\ref{ot-tensor-root} closes the final extraction from the
+fourth tensor power; it does not supply that tensor power's
+integrality.  The original proof's treatment of $p=2$ requires
+additional information on its specific point of order two, and
+is not inferred from Corollary~\ref{ot-CM-base}.
+
+\subsection{Checks against stronger false assertions}
+
+\begin{enumerate}
+\item Bounded power moments are insufficient.  The functional
+$P\mapsto P'(0)$ has power moments zero except for the moment of
+$X$, which is one, but takes $\binom X{p^a}$ to
+$(-1)^{p^a-1}/p^a$ for every $a\ge1$.  These values have
+unbounded absolute value on polynomials of supremum norm one,
+so there is no bounded extension.  The binomial, rather than power, moments in
+Corollary~\ref{ot-measure} are essential.
+\item The invertible linear part in
+Theorem~\ref{ot-functional-equation} cannot be discarded.  In
+$\mathbb Q_p[[T]]$, put
+$f(T)=\exp(T/p)$, $\phi(T)=pT$ and $m=p$.  Then
+$f(\phi)=f^p$, with $A=B=1$, although $f$ is not integral.
+\item The contraction condition $|m|<1$ is also essential.
+For $\phi(T)=T$ and $m=1$, every series with constant term one
+satisfies the equation with $A=B=1$, including $1+p^{-1}T$.
+\item Boundedness of a series does not imply boundedness of its
+reciprocal: $1+p^{-1}T$ is bounded, but its reciprocal has
+coefficients $(-p^{-1})^n$.  Both bounds are used in
+Lemma~\ref{ot-bounded-unit}.
+\item At $p=2$ a formal group can have nonzero torsion of order
+two: in the multiplicative formal group the parameter $T=-2$
+has $|T|_2<1$ and $(1+T)^2-1=0$.  Thus the last proof's
+prime-to-$p$ torsion argument genuinely requires odd $p$.
+\end{enumerate}
+
+

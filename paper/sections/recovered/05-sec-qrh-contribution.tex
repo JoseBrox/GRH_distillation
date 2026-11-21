@@ -1,0 +1,691 @@
+\section{What the quasi-Riemann hypothesis can contribute}
+\label{sec:qrh-contribution}
+
+The two supplied quasi-Riemann-hypothesis papers have different endpoints.\cite{qrh-september,qrh-october}
+The paper of 30 September 2026 states zero exclusion in
+$\operatorname{Re}s>7/8$ for every finite-order Hecke character of
+$\mathbb Q(\sqrt{-3})$, and hence for every Dirichlet character.
+The shorter paper of 5 October states the corresponding $11/12$ result.
+The latter reduces its conclusion to a particularly concrete mean-square
+estimate (its Proposition~3.1). The reductions below can be checked
+independently of the substantial cubic-theta calculation that supplies
+that estimate. We do not treat that calculation as an elementary lemma
+or silently include it among the hypotheses already proved here.
+
+For use below, write $\mathcal Z(\vartheta)$ for the following precise
+assertion, where $1/2\leq\vartheta<1$:
+\[
+ L(s,\chi)\ne0\quad(\operatorname{Re}s>\vartheta)
+\]
+for every Dirichlet character $\chi$, with the pole of a principal
+character at $1$ allowed. A statement about each character with its
+own unspecified boundary is weaker than $\mathcal Z(\vartheta)$.
+
+\subsection{A direct Mellin-transform criterion}
+
+For a number field $K$, a finite-order Hecke character may be
+viewed as a character of a ray class group: it is a homomorphism from
+the group of fractional ideals prime to a fixed integral modulus
+$\mathfrak f$ to the roots of unity, trivial on the principal ideals
+$(\alpha)$ with $\alpha\equiv1\pmod{\mathfrak f}$ and with
+$\alpha$ positive at the real places prescribed by the modulus.
+Let $\nu$ be such a character, and let $S$ be a finite set of prime
+ideals containing the primes dividing its conductor. The notation
+$(\mathfrak a,S)=1$ means that no member of $S$ divides
+$\mathfrak a$. Let $\mu_K$ be the ideal M\"obius function: it is zero on ideals
+divisible by a prime square and equals $(-1)^r$ on a product of $r$
+distinct primes. The norm of an integral ideal $\mathfrak a$ is
+$N\mathfrak a=|\mathcal O_K/\mathfrak a|$. Put
+\[
+ L^S(s,\nu)=\prod_{\mathfrak p\notin S}
+       (1-\nu(\mathfrak p)N\mathfrak p^{-s})^{-1}
+       \qquad(\operatorname{Re}s>1).
+\]
+Assume that the number of ideals of norm at most $t$ is $O_K(t)$,
+and that $L^S$ has its usual meromorphic continuation to
+$\operatorname{Re}s>0$. These standard analytic inputs will be kept
+explicit in this subsection.
+
+\begin{proposition}[Compactly supported smoothing]
+\label{prop:qrh-mellin}
+Fix $0<\alpha<1$. Suppose that, for every
+$W\in C_c^\infty(0,\infty)$ and every $\epsilon>0$,
+\[
+ A_W(X):=\sum_{(\mathfrak a,S)=1}
+     \mu_K(\mathfrak a)\nu(\mathfrak a)
+     W(N\mathfrak a/X)
+       =O_{K,\nu,S,W,\epsilon}(X^{\alpha+\epsilon}).
+\]
+Then $L(s,\nu)$ has no zero in $\operatorname{Re}s>\alpha$.
+No uniformity in $\nu$ of the implied constant is required.
+\end{proposition}
+\begin{proof}
+If $\rho$ were such a zero, choose a nonzero nonnegative function
+$\phi\in C_c^\infty(1,2)$ and set
+$W(y)=y^{-\rho}\phi(y)$, where $y^{-\rho}=\exp(-\rho\log y)$.
+The Mellin transform
+\[
+ \widehat W(s)=\int_0^\infty W(y)y^s\,\frac{dy}{y}
+\]
+is entire, and $\widehat W(\rho)=\int\phi(y)\,dy/y>0$.
+On each compact subset of $\operatorname{Re}s>\alpha$, choose
+$\epsilon$ smaller than the distance of that compact set from the
+line $\operatorname{Re}s=\alpha$. The assumed bound, including the
+same bound after multiplying the integrand by any fixed power of
+$\log X$, proves local uniform convergence and holomorphy of
+\[
+ M_W(s)=\int_0^\infty A_W(X)X^{-s}\,\frac{dX}{X}.
+\]
+There is no issue at zero: compact support makes $A_W(X)=0$ for all
+sufficiently small $X$. For $\operatorname{Re}s>1$, absolute
+convergence permits termwise integration and the substitution
+$y=N\mathfrak a/X$ gives
+\[
+ M_W(s)=\widehat W(s)
+       \sum_{(\mathfrak a,S)=1}
+        \frac{\mu_K(\mathfrak a)\nu(\mathfrak a)}{N\mathfrak a^s}
+       =\frac{\widehat W(s)}{L^S(s,\nu)}.
+\]
+Consequently the meromorphic functions satisfy
+$L^S(s,\nu)M_W(s)=\widehat W(s)$ throughout the connected
+half-plane $\operatorname{Re}s>\alpha$, by the identity theorem.
+At a zero $\rho$, both $L^S$ and $M_W$ are holomorphic, so evaluation
+gives $0=\widehat W(\rho)>0$. Finally, the finitely many factors
+$1-\nu(\mathfrak p)N\mathfrak p^{-s}$ have no zeros in
+$\operatorname{Re}s>0$, because their second term has absolute
+value strictly less than one. Thus deleting them does not change
+the zeros under consideration.
+\end{proof}
+
+There is an even simpler criterion when an exponentially smoothed
+sum can be estimated directly. Define
+\[
+ F_\chi(X)=\sum_{n\ge1}\mu(n)\chi(n)e^{-n/X}.
+\]
+If $F_\chi(X)=O_{\chi,\epsilon}(X^{\alpha+\epsilon})$ for every
+$\epsilon>0$, then
+\[
+ \int_0^\infty F_\chi(X)X^{-s}\,\frac{dX}{X}
+       =\frac{\Gamma(s)}{L(s,\chi)}
+       \qquad(\operatorname{Re}s>1)
+\]
+extends holomorphically to $\operatorname{Re}s>\alpha$.
+At zero, the absolute sum is bounded by
+$e^{-1/X}/(1-e^{-1/X})$; at infinity use the assumed estimate.
+The preceding proof therefore applies with the single factor
+$\Gamma(s)$, which has no zeros. Thus it suffices to estimate one
+fixed smooth function; a collection of auxiliary functions is not
+inherent in the analytic implication. This is a simplification of
+the criterion, not a proof of the required cancellation estimate.
+
+\subsection{The exact cost of amplification by powers of primes}
+
+The following lemma isolates the numerical gain and the error that
+must be paid. It applies to ideals as well as to positive integers.
+We state it for $K=\mathbb Q(\sqrt{-3})$, where every ideal prime
+to $3$ has a unique generator congruent to $1$ modulo $3$.
+Write $\mathcal O=\mathbb Z[\omega]$, with
+$\omega=(-1+\sqrt{-3})/2$. The six units give the six invertible
+classes modulo $3\mathcal O$, so the asserted uniqueness follows
+from the fact that $\mathcal O$ is a Euclidean domain.
+
+\begin{lemma}[Power amplification]
+\label{lem:qrh-amplification}
+Let $k\ge2$, and let $\chi_{\mathfrak a}(u)$ be multiplicative
+characters in $u$, of order dividing $k$ away from
+$\mathfrak a$, extended by zero when $(u,\mathfrak a)\ne1$.
+For a fixed bounded smooth function $W$ supported in a compact
+subinterval of $(0,\infty)$, put
+\[
+ A_u(D)=\sum_{(\mathfrak a,S)=1}
+ \mu_K(\mathfrak a)\nu(\mathfrak a)
+ \chi_{\mathfrak a}(u)W(N\mathfrak a/D).
+\]
+Suppose $2\le Y=H^{1/k}\le D$, and that
+\[
+ \sum_{0<Nu\le H}|A_u(D)|^2\le B(D,H).
+\]
+If there are $\gg Y/\log Y$ prime ideals outside $S$ with norms
+in $(Y/2,Y]$, then
+\[
+ |A_1(D)|^2\ll
+       B(D,H)H^{-1/k}\log(2H)+D^2H^{-2/k}.
+\]
+The constants can depend on $K,S,W$ and on the constant in the
+prime count, but not on $D$ or $H$.
+\end{lemma}
+\begin{proof}
+Let $p$ be the primary generator of one of the indicated prime
+ideals. The convention at nonunits gives exactly
+\[
+ \chi_{\mathfrak a}(p^k)=1_{p\nmid\mathfrak a}.
+\]
+Thus $A_1(D)-A_{p^k}(D)$ is a sum over ideals divisible by $p$.
+There are $O_W(D/Np)$ such ideals, because the remaining ideal
+has norm at most a fixed multiple of $D/Np$; the condition
+$Y\le D$ absorbs the constant in ideal counting. Hence
+\[
+ |A_1(D)-A_{p^k}(D)|\ll_W D/Y.
+\]
+Distinct primary primes have distinct $k$th powers. If there
+are $J\gg Y/\log Y$ of them, the inequality
+$|z+w|^2\le2|z|^2+2|w|^2$ gives
+\[
+ J|A_1(D)|^2\le
+ 2\sum_p|A_{p^k}(D)|^2+O_W(JD^2/Y^2).
+\]
+Their norms are at most $H$, and the first sum is bounded by
+$B(D,H)$. Divide by $J$.
+\end{proof}
+
+Suppose more generally that
+$B(D,H)\ll_\epsilon D^{a+\epsilon}H^b$ and $H=D^h$.
+The exponent furnished by this argument is
+\begin{equation}\label{eq:qrh-general-exponent}
+ \max\left\{\frac a2+\frac h2\left(b-\frac1k\right),
+                    1-\frac hk\right\},
+\end{equation}
+up to an arbitrary positive loss. In the October paper,
+$k=6$, $a=b=1$, and the proved range used for the mean square
+is $H=D^{1+\eta}$, $0<\eta\le1/10$. Therefore the first
+entry is $11/12+5\eta/12$, the second is
+$5/6-\eta/6$, and letting $\eta$ tend to zero gives $11/12$.
+This verifies the final deduction from Proposition~3.1 without
+any claim about its difficult proof.
+
+Even if the bound $B(D,H)\ll_\epsilon D^{1+\epsilon}H$
+were known for every $H=D^h$, the best exponent obtainable
+from \emph{this estimate together with this absolute bound for
+prime deletion} would be $k/(k+1)$. Indeed the two entries in
+\eqref{eq:qrh-general-exponent} are equal at
+$h=k/(k+1)$, and one increases while the other decreases.
+For $k=6$ this gives $6/7$, still greater than $1/2$.
+This is a limitation of these two inequalities, not an
+impossibility theorem for character amplification.
+
+One can retain more arithmetic than the absolute deletion
+bound. For $p\notin S$, multiplicativity of the M\"obius function
+gives the exact identity
+\begin{equation}\label{eq:qrh-prime-removal}
+ A_1(D)=A_{p^k}(D)-\nu(p)A_{p^k}(D/Np).
+\end{equation}
+To prove it, split the defining sum according to $p\mid\mathfrak a$;
+write $\mathfrak a=p\mathfrak b$ in the latter part, use
+$\mu_K(p\mathfrak b)=-\mu_K(\mathfrak b)$ when $p\nmid\mathfrak b$,
+and use zero otherwise. An a priori bound for $A_1$ can be used
+in this identity to control prime deletion uniformly. Section~\ref{sec:qrh-bootstrap}
+proves that improvement and states the additional mean-square estimate
+it would require. A bound whose constant is allowed to depend on the
+varying prime cannot be inserted into the amplification without a
+separate uniformity argument.
+
+For completeness, the positivity step alone cannot force
+an exponent below $11/12$ in the range $H=D$. Consider abstract
+complex numbers with $J$ distinguished entries, all equal to
+$D/\sqrt J$, and all other entries zero. Their sum of squares
+is exactly $D^2$, while the common distinguished value has
+size $D^{11/12}$ when $J=D^{1/6}$.
+This is an exact example for the numerical inequalities, not
+an example consisting of M\"obius sums and not a counterexample
+to either submitted theorem.
+
+\subsection{Passing from the Eisenstein field to Dirichlet characters}
+
+\begin{proposition}[Quadratic base change at the analytic endpoint]
+\label{prop:qrh-basechange}
+Let $0<\alpha<1$. If every finite-order Hecke $L$-function of
+$K=\mathbb Q(\sqrt{-3})$ has no zero in
+$\operatorname{Re}s>\alpha$, with principal poles allowed,
+then the same conclusion holds for every Dirichlet $L$-function.
+\end{proposition}
+\begin{proof}
+Let $\epsilon$ be the nontrivial character modulo $3$.
+For a Dirichlet character $\chi$, pull back its ideal character
+along the norm from $K$ to $\mathbb Q$. At primes where all
+characters are unramified, the Euler factors give
+\[
+ L_K(s,\chi\circ N)=L(s,\chi)L(s,\chi\epsilon).
+\]
+If a rational prime splits, its two prime ideals have norm $p$
+and $\epsilon(p)=1$, so both sides have factor
+$(1-\chi(p)p^{-s})^{-2}$. If it is inert, its prime ideal
+has norm $p^2$ and $\epsilon(p)=-1$, so both sides have
+factor $(1-\chi(p)^2p^{-2s})^{-1}$.
+At the finitely many excluded primes insert the usual Euler
+factors; they are nonzero for $\operatorname{Re}s>0$.
+Equality in the half-plane of absolute convergence extends
+meromorphically.
+
+Away from $1$, a zero of either Dirichlet factor would give
+a zero of the product, because neither factor has a pole
+there. At $1$, a cancellation could occur only when one of
+the factors is principal, so the other is induced by
+$\epsilon$. But
+\[
+ L(1,\epsilon)=\sum_{j=0}^\infty
+      \left(\frac1{3j+1}-\frac1{3j+2}\right)>0.
+\]
+The series converges and every displayed summand is positive.
+Imprimitive Euler factors at $1$ are also nonzero. Thus a
+pole cannot conceal a zero, completing the proof.
+\end{proof}
+
+\subsection{A useful uniform consequence: logarithmic derivatives}
+
+We now give a consequence of $\mathcal Z(\vartheta)$ that
+really does shorten one of the auxiliary-prime arguments in
+the submitted proof. The hypothesis remains explicit: the
+following proof is independent of how $\mathcal Z(\vartheta)$
+is obtained.
+
+\begin{lemma}[A logarithm on a disk]
+\label{lem:qrh-log-disk}
+Let $f$ be holomorphic on $|z-z_0|<R$, and suppose
+$\operatorname{Re}f\le M$ there. For $0<r<R$,
+\[
+ \sup_{|z-z_0|\le r}|f(z)-f(z_0)|
+ \le \frac{2r}{R-r}\bigl(M-\operatorname{Re}f(z_0)\bigr).
+\]
+\end{lemma}
+\begin{proof}
+Put $g=f-f(z_0)$ and $A=M-\operatorname{Re}f(z_0)\ge0$.
+If $A=0$, the maximum principle for the real part makes
+$g=0$. If $A>0$, the function $g/(2A-g)$ maps the disk
+into the closed unit disk, since $\operatorname{Re}g\le A$,
+and vanishes at $z_0$. Schwarz's lemma after rescaling gives
+$|g/(2A-g)|\le |z-z_0|/R$. Rearrangement gives the stated
+bound. Applying the argument first on smaller closed disks
+and taking a limit avoids assumptions at the boundary.
+\end{proof}
+
+\begin{proposition}[Uniform logarithmic derivative]
+\label{prop:qrh-log-derivative}
+Assume $\mathcal Z(\vartheta)$. For every fixed
+$\sigma>\vartheta$, there is a constant $C_{\vartheta,\sigma}$
+such that, for every nonprincipal Dirichlet character modulo
+$q$ and all real $t$,
+\[
+ \left|\frac{L'}{L}(\sigma+it,\chi)\right|
+ \le C_{\vartheta,\sigma}\log\bigl(q(|t|+3)\bigr).
+\]
+The same estimate holds at every point in any fixed closed
+vertical strip whose real parts lie in
+$(\vartheta,\infty)$. In particular
+$|L'(1,\chi)/L(1,\chi)|\ll_\vartheta\log(q+3)$.
+For a principal character, subtract its simple-pole term
+before making the corresponding assertion.
+\end{proposition}
+\begin{proof}
+It is enough first to consider primitive nonprincipal
+characters and $\vartheta<\sigma\le2$. The partial sums
+$A(u)=\sum_{n\le u}\chi(n)$ have absolute value at most $q$:
+a complete period sums to zero. Partial summation therefore
+gives, for $\operatorname{Re}s>0$,
+\[
+ L(s,\chi)=s\int_1^\infty A(u)u^{-s-1}\,du,
+ \qquad |L(s,\chi)|\le\frac{q|s|}{\operatorname{Re}s}.
+\]
+This also proves holomorphy there by locally uniform
+convergence. Choose radii
+\[
+ 2-\sigma<r<R<2-\vartheta
+\]
+depending only on $\vartheta,\sigma$. On the disk of radius
+$R$ centered at $2+it$, the zero-free hypothesis gives a
+holomorphic logarithm $f=\log L$. Choose its value at the
+center by the absolutely convergent Euler-product logarithm;
+that value is bounded absolutely, uniformly in $q,t$.
+The preceding bound gives
+$\operatorname{Re}f\le\log(q(|t|+3))+C_{\vartheta,\sigma}$
+on the larger disk. Lemma~\ref{lem:qrh-log-disk} bounds $f$
+on the disk of radius $r$ by the same quantity.
+A further fixed smaller circle around $\sigma+it$ lies
+inside that disk. Cauchy's derivative formula bounds
+$f'(\sigma+it)=L'/L(\sigma+it,\chi)$ as asserted.
+The argument is uniform as $\sigma$ varies in a compact
+subinterval of $(\vartheta,2]$. For larger real parts the
+Euler product gives the bound directly.
+
+If $\chi$ is induced from $\chi^*$, then
+\[
+ \frac{L'}L(s,\chi)=\frac{L'}L(s,\chi^*)+
+ \sum_{\substack{p\mid q\\p\nmid q^*}}
+       \frac{\chi^*(p)\log p}{p^s-\chi^*(p)}.
+\]
+For $\operatorname{Re}s\ge\sigma>0$, the absolute value of
+the sum is at most
+$(2^\sigma-1)^{-1}\sum_{p\mid q}\log p
+\le(2^\sigma-1)^{-1}\log q$.
+
+For the primitive principal character use
+$F(s)=(s-1)\zeta(s)$ instead of $L(s,\chi)$. It is
+holomorphic and zero-free in the relevant disks, including
+at $1$. The elementary continuation formula
+\[
+ \zeta(s)=\frac{s}{s-1}
+          -s\int_1^\infty\{u\}u^{-s-1}\,du
+\]
+bounds $F$ polynomially in $|t|+3$ on those disks.
+At their centers a logarithm of $F$ is
+$\log(1+it)+\log\zeta(2+it)$, of size
+$O(\log(|t|+3))$. The same argument bounds $F'/F$;
+finally $\zeta'/\zeta=F'/F-1/(s-1)$.
+\end{proof}
+
+\subsection{Primes in progressions without an exceptional-zero case}
+
+Let $\Lambda(n)$ equal $\log p$ when $n=p^j$ is a prime
+power, and zero otherwise. Choose a fixed nonnegative
+$\Phi\in C_c^\infty(1,2)$ with $\int\Phi(y)\,dy>0$.
+
+\begin{proposition}[A smooth prime-counting estimate]
+\label{prop:qrh-smooth-primes}
+Assume $\mathcal Z(\vartheta)$ and fix
+$\vartheta<\sigma<1$. Uniformly in $q\ge1$, $(a,q)=1$
+and $X\ge2$,
+\[
+ \sum_{n\equiv a\ (q)}\Lambda(n)\Phi(n/X)
+ =\frac{X}{\varphi(q)}\int_0^\infty\Phi(y)\,dy
+   +O_{\vartheta,\sigma,\Phi}
+      \bigl(X^\sigma\log(q+3)\bigr).
+\]
+Consequently, for every $B>1/(1-\vartheta)$ there is
+$C_B$ such that every reduced class modulo $q$ contains
+a prime in $(X,2X)$ whenever $X\ge C_B(q+1)^B$.
+\end{proposition}
+\begin{proof}
+For $c>1$, absolute convergence of the Euler product and
+Mellin inversion give
+\[
+ \sum_n\Lambda(n)\chi(n)\Phi(n/X)
+ =\frac1{2\pi i}\int_{(c)}
+    -\frac{L'}L(s,\chi)\widehat\Phi(s)X^s\,ds.
+\]
+Mellin inversion here is ordinary Fourier inversion after
+the substitution $y=e^u$. Repeated integration by parts in
+$u$ gives, for every integer $A\ge0$,
+$|\widehat\Phi(v+it)|\ll_{A,\Phi}(1+|t|)^{-A}$,
+uniformly for $v$ in a fixed compact interval.
+Proposition~\ref{prop:qrh-log-derivative} therefore permits
+moving the line from $c$ to $\sigma$. On the horizontal
+segments the integral tends to zero; the vertical integral
+is absolutely bounded by
+$O(X^\sigma\log(q+3))$, since
+$\log(q(|t|+3))\le\log(q+3)+\log(|t|+3)$.
+The only pole crossed is at $1$ for a principal character,
+with residue $X\widehat\Phi(1)$.
+Character orthogonality gives the progression formula.
+There are $\varphi(q)$ terms in that average and the factor
+$1/\varphi(q)$ cancels their number, so the error does not
+acquire an extra factor of $\varphi(q)$.
+
+Terms with $n=p^j$, $j\ge2$, contribute
+$O_\Phi(X^{1/2}(\log X)^2)$: for each
+$2\le j\le\log(2X)/\log2$ there are at most
+$(2X)^{1/j}\le(2X)^{1/2}$ possibilities for $p$, and
+$\log p\le\log(2X)$. Since $\sigma>1/2$, this is $O_\sigma(X^\sigma)$,
+although it is useful to retain its smaller exponent when
+comparing it with the main term.
+Choose $\sigma$ with $\vartheta<\sigma<1-1/B$.
+For $X\ge C_B(q+1)^B$, the ratios of both errors to
+$X/\varphi(q)$ tend to zero uniformly as $C_B$ tends
+to infinity: use $\varphi(q)\le q$,
+$qX^{\sigma-1}\log(q+3)\ll
+ C_B^{\sigma-1}(q+1)^{1-B(1-\sigma)}\log(q+3)$,
+and the analogous bound for prime powers.
+The weighted sum over actual primes is consequently
+positive, proving existence.
+\end{proof}
+
+\begin{corollary}[The progression input in the submitted proof]
+\label{cor:qrh-ProgAt}
+Assume $\mathcal Z(\vartheta)$. There is a constant $C=C_\vartheta\ge1$ such that, for every positive integer $M$,
+every integer $a$ coprime to $M$, and every
+$X\ge\max(3,M^C)$, there is a prime $p$ satisfying
+\[
+ X<p\le X^2,\qquad p\equiv a\pmod M,
+ \qquad
+ \left|\frac{L'(1,\chi_p)}{L(1,\chi_p)}\right|
+      \le C\log p,
+\]
+where $\chi_p(n)=(n/p)$ is the quadratic character modulo
+$p$. For the fixed boundary $\vartheta=7/8$, the constant is absolute.
+This supplies the ordinary progression input used in the
+submitted argument.
+\end{corollary}
+\begin{proof}
+For $M\ge2$, enlarge $C$ so that $M^C$ dominates
+$C_B(M+1)^B$ in Proposition~\ref{prop:qrh-smooth-primes}.
+The prime then lies in $(X,2X)\subset(X,X^2]$.
+Proposition~\ref{prop:qrh-log-derivative} at $s=1$ gives
+the logarithmic derivative bound for every such prime,
+not merely for a selected subfamily. For $M=1$,
+Bertrand's postulate supplies a prime in $(X,2X)$ for
+$X\ge3$, and the same bound applies. One may also cover
+bounded $X$ by finitely many primes and increase $C$.
+\end{proof}
+
+\begin{corollary}[The two auxiliary quadratic fields]
+\label{cor:qrh-auxiliary-pair}
+Assume $\mathcal Z(\vartheta)$ and fix $\epsilon>0$.
+For all sufficiently large $V$ there are distinct primes
+$q,d$ such that
+\[
+ q\equiv3\pmod8,\quad d\equiv7\pmod{16},\quad q\mid d+1,
+ \quad p\mid d+1\quad
+  \text{for every odd prime }p\le V^{\epsilon/5},
+\]
+\[
+ \tfrac12V^{\epsilon/5}<\log q\le V^{\epsilon/5},\qquad
+ \tfrac12V^{\epsilon/5}(\log V)^2<\log d
+                         \le V^{\epsilon/5}(\log V)^2,
+\]
+and
+\[
+ \left|\frac{L'(1,\chi_d)}{L(1,\chi_d)}\right|
+       \le V^\epsilon.
+\]
+In particular $(-d/p)=1$ for every indicated odd prime $p$.
+Since $d\equiv3\pmod4$, quadratic reciprocity identifies
+$\chi_d(n)=(n/d)$ with the primitive quadratic character
+$\bigl(\frac{-d}{n}\bigr)$ of the field
+$\mathbb Q(\sqrt{-d})$. For odd $n$ the reciprocity signs
+cancel against $(-1/n)$; the supplementary law at $2$ gives
+the same equality for even $n$, and multiplicativity completes
+the verification.
+\end{corollary}
+\begin{proof}
+Put $Y=V^{\epsilon/5}$. Apply
+Proposition~\ref{prop:qrh-smooth-primes} to the class $3$
+modulo $8$ at $X=e^{3Y/4}$. The resulting prime $q$
+has the required logarithmic bounds and satisfies $q>Y$
+for large $V$.
+Let $P=\prod_{3\le p\le Y}p$ and $M=16qP$.
+The Chinese remainder theorem gives a reduced class
+$a\pmod M$ with $a\equiv7\pmod{16}$ and
+$a\equiv-1\pmod{qP}$.
+We only need the elementary bound
+$\log P\le Y\log Y$: there are at most $Y$ factors,
+each at most $Y$. Thus $\log M=O_\epsilon(Y\log V)$.
+Take $X=e^{3Y(\log V)^2/4}$. For every fixed $B$,
+$X\ge C_B(M+1)^B$ once $V$ is sufficiently large.
+A prime $d\in(X,2X)$ in the class $a$ has all the
+required size and congruence conditions. It is distinct
+from $q$ because $d$ is much larger. Moreover
+$-d\equiv1\pmod p$ proves $(-d/p)=1$.
+Finally Proposition~\ref{prop:qrh-log-derivative} bounds
+the logarithmic derivative by
+$O_\vartheta(\log d)=O_\vartheta(Y(\log V)^2)$,
+which is less than $Y^5=V^\epsilon$ eventually.
+\end{proof}
+
+These corollaries remove an exceptional-zero selection
+argument from the ordinary Dirichlet part of the proof.\cite{alpo-prime-supply}
+They do not replace the distinct assertion about primes
+represented by
+\[
+ (1+Mu)^2+d(Mv)^2.
+\]
+That assertion is a prime theorem for principal ray classes
+in the varying imaginary quadratic field
+$\mathbb Q(\sqrt{-d})$. A Hecke character of this field
+need not be a norm pullback of a Dirichlet character.
+Neither $\mathcal Z(\vartheta)$ nor the supplied theorem
+for the one fixed field $\mathbb Q(\sqrt{-3})$ supplies
+that varying-field theorem. Retaining this distinction is
+essential for a valid simplification.
+
+\subsection{Why these estimates do not supply the remaining arithmetic argument}
+
+In the final scalar estimate of the submitted argument,\cite{alpo-final-scalar}
+$A\le2xb$ is an upper bound for an auxiliary height or
+weight parameter. It is not a bound for a M\"obius sum.
+After division by the common positive factor, its contribution
+includes $A/(mb)$, while another contribution is proportional
+to $m$. Thus the elementary balance is $x/m+m$, whose
+minimum is $2\sqrt{x}$. A proof of
+$\mathcal Z(7/8)$ does not change $A$ into
+$O(bx^{7/8})$.
+
+The RH subcase separately requires square-root bounds for
+three selected quadratic characters. The full Dirichlet-GRH
+construction requires them for a finite family of twists of
+fixed characters by the selected quadratic characters, uniformly
+on the chosen interval of scales. A uniform ordinary bound
+$O(x^{7/8+\epsilon})$ is weaker and cannot be substituted
+directly. However, selection by averaging can use the fixed
+zero-free half-plane in a different way; the continuation below
+gives a conditional proof of that selection, including the fixed
+twists. The estimates for the theta lifts, the local divisibility
+and operator norms, and the Galois cohomology still remain
+separate arithmetic inputs.
+
+\subsection{Two checks on proposed analytic shortcuts}
+
+The catalogue is useful for locating exact reductions and
+for recording unsuccessful estimates.\cite{qrh-catalogue} Its statements that
+a component is conditional, source-relative, or only checked
+as an algebraic inequality have mathematical force: they
+cannot be dropped when using the component. The following
+obstruction, corresponding to its entry G280, admits a
+short complete proof.
+
+\begin{proposition}[Finite Dirichlet polynomials and absolute convergence]
+\label{prop:qrh-absolute-obstruction}
+Let $\chi$ be a Dirichlet character and let
+$B(s)=\sum_{d\le D}b_d d^{-s}$ be a finite Dirichlet
+polynomial. Expand
+$1-L(s,\chi)B(s)=\sum_{n\ge1}r_n n^{-s}$ for
+$\operatorname{Re}s>1$. For real $\sigma\le1$, the
+inequality $\sum_n|r_n|n^{-\sigma}<1$ is impossible.
+\end{proposition}
+\begin{proof}
+If $b_1=0$, then $r_1=1$. If $b_1\ne0$, every prime
+$p>D$ coprime to the modulus has
+$r_p=-b_1\chi(p)$, so $|r_p|=|b_1|$.
+The series $\sum_p1/p$ diverges. To recall its elementary
+proof, convergence would bound
+$\prod_{p\le y}(1-p^{-1})^{-1}$ uniformly in $y$;
+expanding that product gives at least
+$\sum_{n\le y}1/n$, a contradiction. Removing finitely
+many primes does not alter divergence. Since
+$p^{-\sigma}\ge p^{-1}$ for $\sigma\le1$, the
+absolute residual series is infinite.
+\end{proof}
+
+A different technical issue is whether a Mellin multiplier
+could vanish at the very zero one wants to exclude.
+Catalogue entry G276 suggests the following useful general
+fact, which can be proved without asymptotic integration.
+
+\begin{proposition}[A finite family of Mellin transforms]
+\label{prop:qrh-mellin-family}
+Let $a>0$ and let $P(y)=\sum_{j=0}^d c_jy^j$ be a real
+polynomial of degree $d\ge1$. For
+$\operatorname{Re}s>0$ put
+\[
+ F(s)=\int_0^\infty y^{s-1}e^{-ay-iP(y)}\,dy.
+\]
+The $d$ numbers $F(s),F(s+1),\ldots,F(s+d-1)$ never
+vanish simultaneously.
+\end{proposition}
+\begin{proof}
+Exponential decay and local integrability at zero justify
+holomorphy and differentiation under the integral on every
+compact subset of $\operatorname{Re}s>0$.
+Integration of the derivative of
+$y^s e^{-ay-iP(y)}$ gives
+\[
+ sF(s)=aF(s+1)+i\sum_{j=1}^d j c_jF(s+j).
+\]
+For $d\ge2$, the coefficient $idc_d$ is nonzero.
+If the first $d$ consecutive values vanished, this relation,
+then its translates by positive integers, would make every
+$F(s+n)$ vanish. For $d=1$ the same conclusion uses
+$a+ic_1\ne0$.
+
+Now the finite complex measure
+$y^{s-1}e^{-ay-iP(y)}\,dy$ has Laplace transform
+\[
+ H(z)=\int_0^\infty y^{s-1}e^{-ay-iP(y)-zy}\,dy,
+       \qquad\operatorname{Re}z>-a.
+\]
+All its derivatives at zero would vanish. Holomorphy
+would give $H\equiv0$. Push the measure forward under
+$u=e^{-y}$ to $[0,1]$. Its moments are $H(n)=0$ for
+all integers $n\ge0$. Polynomial approximation of
+continuous functions on $[0,1]$ and finite total variation
+then show that this measure is zero. Its original density
+is nonzero everywhere on $(0,\infty)$, a contradiction.
+\end{proof}
+
+This last proposition removes a possible cancellation by
+a fixed Mellin multiplier. It supplies no bound for the
+arithmetic sums multiplying that factor. In particular,
+it cannot turn a bound with exponent $7/8$ into one with
+exponent $1/2$.
+
+\subsection{An exact cancellation in the double Poisson argument}
+
+The reindexing in Section 7.3 of the October paper contains a useful
+finite identity. Its strength comes from performing the cancellation
+before replacing any summand by its absolute value. The following
+weighted form is slightly more general and has a short proof.
+
+\begin{proposition}[A squarefree factorization identity]
+\label{prop:qrh-factorization}
+Let $f$ be squarefree in a unique factorization domain, or let
+$f$ be a squarefree integral ideal of a number field. Let $k\ne0$
+be an element, or a nonzero integral ideal, respectively.
+Assign an arbitrary complex number $c(p)$ to each prime dividing
+$f$, and extend $c$ multiplicatively to its squarefree divisors.
+Then
+\[
+ \sum_{Cew=f}\mu(e)\mu(w)c(e)
+    1_{e\mid k}\,1_{(w,k)=1}
+           \sum_{d\mid(C,k)}c(d)
+       =1_{f\mid k}.
+\]
+Factorizations count associates only once in the element formulation.
+Since $f$ is squarefree, the three factors $C,e,w$ are automatically
+pairwise coprime.
+\end{proposition}
+\begin{proof}
+Both sides factor over the primes dividing $f$. Fix such a prime
+$p$, and put $I=1_{p\mid k}$. Placing $p$ in $C$ contributes
+$1+c(p)I$, placing it in $e$ contributes $-c(p)I$, and placing
+it in $w$ contributes $-(1-I)$. Their sum is $I$. Multiplication
+over $p\mid f$ gives the result. The empty product handles $f=1$.
+\end{proof}
+
+For $c(p)=1$ this is the cancellation used after the two Poisson
+summations: it forces the new auxiliary divisor to divide the new
+frequency. It is valid at shared primes, including the terms where
+that frequency is divisible by a prime in the original exclusion.
+Dropping those terms would change the identity. The weighted form
+shows that bounded prime weights can sometimes be retained through
+this particular step; a theorem about the complete surrounding
+mean square would still have to pay all other terms and the
+resulting uniform constants.
+
+

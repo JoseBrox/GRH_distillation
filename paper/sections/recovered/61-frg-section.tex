@@ -1,0 +1,320 @@
+\section{Scalar rigidity for Hermitian flags}
+\label{frg-section}
+
+We prove the three assertions which the source combines to
+identify the scalar coefficients in its identity-cell calculation.
+The conclusion concerns these coefficients and the negative norm;
+it does not identify two ordered frames whose vectors can still
+differ by lower flag terms. All conventions below agree with the
+actual flag and infinitesimal-character definitions.
+\cite{alpo-uniform-source}
+
+\subsection{Flags and their infinitesimal characters}
+
+Let $E$ be a number field with an involution $a\mapsto\bar a$,
+and let $K\subseteq E$ be a subfield. Let $V$ be a
+finite-dimensional $E$-space with a nondegenerate Hermitian form
+$h$, conjugate linear in its first argument and linear in its
+second. Thus
+\[
+ h(ax,by)=\bar a b\,h(x,y),\qquad
+ h(y,x)=\overline{h(x,y)}.
+\]
+For $T\in E\setminus\{0\}$, a flag frame of length $r+1$
+is a tuple
+\[
+ F=(e_0,\ldots,e_{r-1},z)
+\]
+with the $e_i$ linearly independent and
+\[
+ h(e_i,e_j)=0,\qquad h(e_i,z)=0,\qquad h(z,z)=-T.
+\]
+Write $f_i=e_i$ for $i<r$, $f_r=z$, and
+\begin{gather*}
+ X_a=\operatorname{span}_E(e_0,\ldots,e_{a-1})\quad(0\le a\le r),
+ \\
+ X=X_r,\qquad
+ X^\perp=\{y:h(x,y)=0\text{ for every }x\in X\}.
+\end{gather*}
+For $y\in X$, let $[y]_i$ be its coefficient on $e_i$.
+The set of $E$-linear endomorphisms used here is
+\begin{equation}\label{frg-lie-definition}
+ \mathfrak n_F=\left\{Y:
+ \begin{array}{l}
+ h(Yx,y)+h(x,Yy)=0\quad(x,y\in V),\\
+ YX_a\subseteq X_{a-1}\quad(1\le a\le r),\\
+ YX^\perp\subseteq X
+ \end{array}\right\}.
+\end{equation}
+For $Y\in\mathfrak n_F$ define
+\begin{equation}\label{frg-character}
+ \ell_F(Y)=\sum_{i=0}^{r-1}[Yf_{i+1}]_i,
+ \qquad d\psi_F(Y)=\operatorname{Tr}_{E/K}\ell_F(Y).
+\end{equation}
+Every vector whose coefficient occurs in this formula belongs
+to $X$: for $i+1<r$ this follows from
+\eqref{frg-lie-definition}, and for $i=r-1$ it follows from
+$z\in X^\perp$. When $r=0$, the sum is zero.
+
+Let $F'$ be another such frame, with negative norm parameter
+$T'\ne0$. Given scalars $c_0,\ldots,c_r\in E$, the same-flag
+condition is exactly
+\begin{equation}\label{frg-same-flag}
+                         f'_i-c_i f_i\in X_i
+                                     \qquad(0\le i\le r).
+\end{equation}
+The relevance condition needed below is
+\begin{equation}\label{frg-relevance}
+ d\psi_F(Y)=d\psi_{F'}(Y)
+                  \qquad(Y\in\mathfrak n_F\cap\mathfrak n_{F'}).
+\end{equation}
+It is equality of the actual linear functionals on the
+intersection, not just equality on one chosen endomorphism.
+
+The trace pairing has the nondegeneracy needed here without
+an additional hypothesis. Indeed $E/K$ is a finite extension
+of characteristic zero. If $b\ne0$, then
+\[
+ \operatorname{Tr}_{E/K}(b\,b^{-1})=[E:K]\ne0.
+\]
+Consequently
+\begin{equation}\label{frg-trace-nondegenerate}
+ \bigl(\operatorname{Tr}_{E/K}(ba)=0\text{ for all }a\in E\bigr)
+                                      \quad\Longrightarrow\quad b=0.
+\end{equation}
+This proves the source's explicit trace-pairing assumption in
+the present number-field setting.
+
+\subsection{Relevance forces the flag scalars to agree}
+
+\begin{lemma}\label{frg-triangular}
+Under \eqref{frg-same-flag}, every $c_i$ is nonzero and
+$X'_a=X_a$ for $0\le a\le r$.
+\end{lemma}
+\begin{proof}
+The vectors $f_0,\ldots,f_r$ are independent. For if
+$\sum_{i<r}a_i e_i+a_rz=0$, pairing with $z$ in the first
+argument gives $-a_rT=0$. Then $a_r=0$, and independence
+of the $e_i$ gives all other coefficients zero. The same
+argument applies to $F'$.
+Equation \eqref{frg-same-flag} writes the independent tuple
+$F'$ as a triangular change of the independent tuple $F$,
+with diagonal entries $c_i$. Its matrix is invertible,
+so every $c_i\ne0$. Each initial triangular block is likewise
+invertible, giving $X'_a=X_a$.
+\end{proof}
+
+\begin{proposition}\label{frg-relevant-scalars}
+If \eqref{frg-same-flag} and \eqref{frg-relevance} hold, then
+\begin{equation}\label{frg-all-scalars}
+                              c_i=c_r\qquad(0\le i\le r).
+\end{equation}
+\end{proposition}
+\begin{proof}
+There is nothing to prove for $r=0$. Fix $0\le i<r$ and
+$a\in E$. Nondegeneracy of $h$ and independence of the $f_j$
+give a vector $v\in V$ such that
+\begin{equation}\label{frg-dual-vector}
+                     h(v,f_j)=a\,\delta_{j,i+1}
+                                        \qquad(0\le j\le r).
+\end{equation}
+For completeness, extend the $f_j$ to a basis $b_1,\ldots,b_d$.
+The Gram matrix $G=(h(b_j,b_k))$ is invertible, since a vector
+orthogonal to the whole basis would contradict nondegeneracy.
+Prescribe the desired values $h(v,b_k)$, using zero on the
+additional basis vectors. If $v=\sum_j t_jb_j$, these equations
+are $\bar t^{\,t}G=(h(v,b_k))_k$. Invert $G$ and apply the
+involution to solve for every $t_j$. This proves
+\eqref{frg-dual-vector}.
+
+Define the $E$-linear endomorphism
+\begin{equation}\label{frg-rank-two}
+                       Y(y)=h(v,y)e_i-h(e_i,y)v.
+\end{equation}
+It is skew Hermitian. Indeed the two terms of $h(Yx,y)$ are
+$h(x,v)h(e_i,y)-h(x,e_i)h(v,y)$, which cancel the two terms
+of $h(x,Yy)$.
+Also $h(v,X_{i+1})=0$ by \eqref{frg-dual-vector}.
+For $x\in X_b$ we have $h(e_i,x)=0$. If $b\le i+1$, then
+$Yx=0$; if $b\ge i+2$, then $Yx$ is a multiple of
+$e_i\in X_{b-1}$. Finally, for $x\in X^\perp$ the second
+term in \eqref{frg-rank-two} vanishes, and $Yx\in X$.
+Thus $Y\in\mathfrak n_F$.
+
+By Lemma~\ref{frg-triangular}, all the spaces $X'_b$ equal
+$X_b$. The same argument, using $e_i\in X'_{i+1}$ and
+$h(v,X'_{i+1})=0$, proves $Y\in\mathfrak n_{F'}$.
+As $h(e_i,f_j)=0$ for every $j$, equation
+\eqref{frg-dual-vector} gives immediately
+\begin{equation}\label{frg-ell-unprimed}
+                                  \ell_F(Y)=a.
+\end{equation}
+
+We compute the primed functional, retaining all triangular
+terms. Since $f'_j\in X+Ez$ and $h(e_i,X+Ez)=0$,
+\[
+                            Yf'_{j+1}=h(v,f'_{j+1})e_i.
+\]
+If $j<i$, then $f'_{j+1}\in X_{i+1}$ and the scalar on
+the right is zero. If $j>i$, then $e_i\in X'_{i+1}$
+has zero coefficient on $e'_j$. For $j=i$, triangularity
+gives
+\[
+ [e_i]'_i=c_i^{-1},\qquad
+ h(v,f'_{i+1})=c_{i+1}a,
+\]
+because the error in $f'_{i+1}-c_{i+1}f_{i+1}$ lies in
+$X_{i+1}$, which is orthogonal to $v$ in the required order.
+Only this term survives. Hence
+\begin{equation}\label{frg-ell-primed}
+                         \ell_{F'}(Y)=\frac{c_{i+1}}{c_i}a.
+\end{equation}
+Relevance and \eqref{frg-ell-unprimed}--\eqref{frg-ell-primed}
+give
+\[
+ \operatorname{Tr}_{E/K}\left(\left(\frac{c_{i+1}}{c_i}-1\right)a\right)=0
+                                      \qquad(a\in E).
+\]
+Equation \eqref{frg-trace-nondegenerate} implies
+$c_{i+1}=c_i$. This holds for each $i<r$, proving
+\eqref{frg-all-scalars}.
+\end{proof}
+
+\subsection{An integral unit and the negative norm}
+
+Assume now that the involution is complex conjugation at every
+embedding:
+\begin{equation}\label{frg-all-embeddings}
+                 \sigma(\bar b)=\overline{\sigma(b)}
+                    \quad(b\in E,\ \sigma:E\hookrightarrow\mathbb C).
+\end{equation}
+This includes the actual CM-field involution. Let $T,T'$ be
+positive integers and suppose the final scalar is the image
+of a unit $\zeta\in\mathcal O_E^\times$.
+
+\begin{proposition}\label{frg-unit-norm-root}
+Under \eqref{frg-same-flag} and \eqref{frg-all-embeddings},
+if $c_r=\zeta\in\mathcal O_E^\times$, then $T=T'$ and
+$\zeta$ is a root of unity. Relevance is not needed for this
+assertion.
+\end{proposition}
+\begin{proof}
+The final equation in \eqref{frg-same-flag} says
+$z'=\zeta z+x$ with $x\in X$. The subspace $X$ is
+totally isotropic and orthogonal to $z$, so
+\[
+                 -T'=h(z',z')=-\bar\zeta\zeta T,
+ \qquad T'=\bar\zeta\zeta T.
+\]
+Let $d=[E:\mathbb Q]$. The norm of an algebraic unit is
+$\pm1$: multiplication by the unit is an automorphism of
+the free abelian group $\mathcal O_E$, so its determinant
+is $\pm1$. The involution is a $\mathbb Q$-automorphism,
+and conjugates the multiplication operators of $\zeta$
+and $\bar\zeta$. Thus their norms agree. Taking norms in
+the last display gives
+\[
+                 (T')^d=N_{E/\mathbb Q}(\zeta)^2T^d=T^d.
+\]
+Positivity gives $T'=T$, and cancellation gives
+$\bar\zeta\zeta=1$. Equation \eqref{frg-all-embeddings}
+now implies $|\sigma(\zeta)|=1$ for every embedding.
+
+Here is the elementary finite-polynomial argument completing
+the root-of-unity assertion. For every integer $m\ge1$,
+the characteristic polynomial of multiplication by $\zeta^m$
+on $\mathcal O_E$ is
+\[
+                P_m(t)=\prod_{\sigma:E\hookrightarrow\mathbb C}
+                                  (t-\sigma(\zeta)^m)\in\mathbb Z[t].
+\]
+Its coefficient of $t^{d-j}$ has absolute value at most
+$\binom dj$, since it is a sum of that many products of
+complex numbers of absolute value one. Only finitely many
+monic integer polynomials of degree $d$ have these coefficient
+bounds. Their union of root sets is finite. In a fixed
+embedding the powers $\sigma(\zeta)^m$ therefore take only
+finitely many values. Two positive powers are equal;
+injectivity and $\zeta\ne0$ give $\zeta^n=1$ for some
+$n>0$.
+\end{proof}
+
+\subsection{Reduction at an odd unramified prime}
+
+\begin{lemma}\label{frg-root-congruence}
+Let $P$ be a nonzero prime ideal of $\mathcal O_E$, and
+let $p\ge3$ be a rational prime such that
+\begin{equation}\label{frg-prime-condition}
+                         p\in P\quad\text{and}\quad p\notin P^2.
+\end{equation}
+If $\zeta\in\mathcal O_E$ is a root of unity and
+$\zeta-1\in P$, then $\zeta=1$.
+\end{lemma}
+\begin{proof}
+Suppose $\zeta\ne1$, and let its order be $m>1$.
+Choose a prime $q\mid m$ and put $\eta=\zeta^{m/q}$.
+Then $\eta$ has order exactly $q$, and $\eta-1\in P$.
+The roots $1,\eta,\ldots,\eta^{q-1}$ are distinct, so
+factoring $t^q-1$ over $E$, dividing by $t-1$, and
+evaluating at $t=1$ gives
+\begin{equation}\label{frg-prime-product}
+                     q=\prod_{j=1}^{q-1}(1-\eta^j)\in P^{q-1}.
+\end{equation}
+Indeed each factor lies in $P$, because $\eta\equiv1\pmod P$.
+In particular $q\in P$. If $p\ne q$, integers $a,b$
+with $ap+bq=1$ would imply $1\in P$, a contradiction.
+Thus $q=p$. Since $p-1\ge2$, equation
+\eqref{frg-prime-product} implies $p\in P^2$, contrary
+to \eqref{frg-prime-condition}.
+\end{proof}
+
+\begin{theorem}[The actual flag-scalar conclusion]
+\label{frg-identity-cell}
+Let $E,V,h,K,F,F',c$ satisfy the definitions above, with
+$T,T'$ positive integers. Suppose
+\eqref{frg-same-flag}, \eqref{frg-relevance} and
+\eqref{frg-all-embeddings} hold. Suppose further that
+$c_r=\zeta\in\mathcal O_E^\times$ and that, for a rational
+prime $p\ge3$ and a prime ideal $P$,
+\[
+                         p\in P\setminus P^2,
+                         \qquad\zeta\equiv1\pmod P.
+\]
+Then
+\begin{equation}\label{frg-identity-conclusion}
+                         T=T',\qquad c_0=\cdots=c_r=1.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Proposition~\ref{frg-unit-norm-root} gives $T=T'$ and
+makes $\zeta$ a root of unity. Lemma~\ref{frg-root-congruence}
+gives $\zeta=1$. Finally Proposition~\ref{frg-relevant-scalars}
+gives $c_i=c_r=\zeta$ for every $i$.
+\end{proof}
+
+The restrictions in the theorem cannot simply be discarded.
+At the prime $2$, the unit $-1\in\mathbb Z$ satisfies
+$-1\equiv1\pmod2$ and $2\notin(2)^2$, but is not $1$.
+For ramified odd primes, take a primitive cube root $\omega$
+in $E=\mathbb Q(\omega)$ and $P=(1-\omega)$.
+Then $\omega\equiv1\pmod P$ and
+$3=-\omega^{-1}(1-\omega)^2\in P^2$, so the claimed
+root conclusion would again fail without the exclusion of
+$P^2$. The unit condition in Proposition~\ref{frg-unit-norm-root}
+is also necessary: for $V=\mathbb Q(i)$ with
+$h(x,y)=-\bar x y$, take $r=0$, $z=1$, $z'=2$.
+The same-flag relation has scalar $2$, but $T=1$ and $T'=4$.
+
+Even the full theorem does not assert $F=F'$ as ordered
+tuples. When $r\ge1$, replacing $z$ by $z+e_0$ preserves
+its norm, all flag conditions and all scalars $c_i=1$.
+It also preserves the infinitesimal character, since
+$Ye_0=0$ for $Y\in\mathfrak n_F$, and the spaces
+\eqref{frg-lie-definition} depend only on the $e_i$.
+The source's precise conclusion is \eqref{frg-identity-conclusion},
+which is what has been proved. No counterexample satisfying
+those actual hypotheses was found.
+
+
+% Ordinary mathematics for the vanishing of degenerate off-diagonal terms.
+% Labels in this fragment have the prefix df-.

@@ -1,0 +1,199 @@
+\section{Isomorphisms of ideal lattices with prescribed determinant}
+\label{si-section}
+
+The arithmetic cycle construction requires an isomorphism
+between two direct sums of fractional ideals, with its
+determinant specified as an element of the number field.
+An equality of ideal classes alone would not specify this
+determinant.  We prove the exact statement by elementary
+two-dimensional operations.
+
+Let \(R\) be a Dedekind domain with fraction field \(F\).
+All fractional ideals below are nonzero.  Thus they are
+invertible, and their products have unique factorizations
+into integral powers of the nonzero prime ideals of \(R\).
+For a fractional ideal \(I\), write \(v_P(I)\) for its
+exponent at \(P\), and set
+\[
+ I^{-1}=\{x\in F:xI\subset R\}.
+\]
+In particular \(II^{-1}=R\).
+
+\begin{lemma}\label{si-two-elements}
+For fractional ideals \(C,D\), there are
+\[
+ p\in C\setminus\{0\},\qquad q\in D,\qquad
+ r\in D^{-1},\qquad s\in C^{-1}
+\]
+such that \(ps-qr=1\).
+\end{lemma}
+\begin{proof}
+Choose any nonzero \(p\in C\).
+The ideal \(A=(p)C^{-1}\) is a nonzero integral ideal.
+There are only finitely many prime ideals containing it;
+denote their set by \(\mathcal P\).
+For each \(P\in\mathcal P\), choose
+\(q_P\in D\setminus PD\).
+Such an element exists: a finite set of generators of
+\(D\) has minimum \(P\)-valuation \(v_P(D)\), whereas
+every element of \(PD\) has strictly larger valuation.
+
+The Chinese remainder theorem gives elements
+\(e_P\in R\) which are \(1\) modulo \(P\) and
+\(0\) modulo every other member of \(\mathcal P\).
+Put \(q=\sum_{P\in\mathcal P}e_Pq_P\in D\).
+Its class in \(D/PD\) is the nonzero class of \(q_P\).
+Consequently the integral ideal \((q)D^{-1}\) is not
+contained in any prime of \(\mathcal P\).
+If \(\mathcal P\) is empty, take \(q=0\), since
+then \(A=R\).
+
+It follows that
+\[
+                 (p)C^{-1}+(q)D^{-1}=R.
+\]
+Indeed a proper ideal on the left would lie in a maximal
+ideal containing \(A\), and every such ideal belongs
+to \(\mathcal P\).
+Writing \(1=ps+qw\) with
+\(s\in C^{-1}\) and \(w\in D^{-1}\), and setting
+\(r=-w\), proves the assertion.
+\end{proof}
+
+\begin{lemma}\label{si-move}
+For any fractional ideals \(I,J,C\), there exists
+\(M\in\operatorname{SL}_2(F)\) such that
+\[
+                       M(I\oplus J)
+                            =CI\oplus C^{-1}J.
+\]
+\end{lemma}
+\begin{proof}
+Apply Lemma~\ref{si-two-elements} to \(C\) and
+\(D=CIJ^{-1}\), and put
+\[
+       M=\begin{pmatrix}p&q\\r&s\end{pmatrix},
+       \qquad
+       M^{-1}=\begin{pmatrix}s&-q\\-r&p\end{pmatrix}.
+\]
+The determinant is exactly \(1\).
+The containments
+\[
+ pI\subset CI,\quad qJ\subset CI,\quad
+ rI\subset C^{-1}J,\quad sJ\subset C^{-1}J
+\]
+show one inclusion in the asserted equality.
+For the inverse, use
+\[
+ sCI\subset I,\quad qC^{-1}J\subset I,\quad
+ rCI\subset J,\quad pC^{-1}J\subset J.
+\]
+These follow immediately from the four ideal memberships
+in Lemma~\ref{si-two-elements} and
+\(D^{-1}=C^{-1}I^{-1}J\).
+Thus the restriction of \(M\) is an isomorphism of the
+specified \(R\)-modules.
+\end{proof}
+
+\begin{proposition}\label{si-equal-product}
+Let \(I_1,\ldots,I_n\) and \(J_1,\ldots,J_n\) be
+fractional ideals with
+\[
+                         \prod_{i=1}^n I_i
+                              =\prod_{i=1}^n J_i.
+\]
+Then an element of \(\operatorname{SL}_n(F)\) maps
+\(\bigoplus_i I_i\) onto \(\bigoplus_i J_i\).
+For \(n=0\), use the unique automorphism of the zero
+space, whose determinant is \(1\).
+\end{proposition}
+\begin{proof}
+For \(n=1\) the ideals are equal and the identity works.
+For \(n\ge2\), designate the last coordinate as an
+auxiliary coordinate.
+For each \(i<n\), let \(I'_i\) be the ideal currently
+in coordinate \(i\), and put \(C=J_i(I'_i)^{-1}\).
+Apply Lemma~\ref{si-move} in coordinates \(i,n\),
+acting as the identity on the other coordinates.
+The new ideal in coordinate \(i\) is \(J_i\),
+the product of all coordinate ideals is unchanged,
+and the determinant of the operation is \(1\).
+After these \(n-1\) operations, the first \(n-1\)
+coordinate ideals are the required ones.
+Cancellation of their invertible product shows that
+the last ideal is \(J_n\) as well.
+The product of the matrices has determinant \(1\).
+\end{proof}
+
+\begin{theorem}\label{si-prescribed}
+Let \(I_i,J_i\), \(1\le i\le n\), be fractional
+ideals, and let \(\beta\in F^\times\).
+There exists \(g\in\operatorname{GL}_n(F)\) with
+\[
+          g\Bigl(\bigoplus_i I_i\Bigr)
+                   =\bigoplus_i J_i,
+          \qquad \det g=\beta,
+\]
+if and only if
+\[
+             \prod_iJ_i=(\beta)\prod_iI_i,
+\]
+provided that \(n>0\).  For \(n=0\), existence is
+equivalent to \(\beta=1\).
+\end{theorem}
+\begin{proof}
+For necessity when \(n>0\), take the top exterior
+power inside \(\bigwedge^n_F F^n=F\).
+The exterior power of the first ideal lattice is
+\(\prod_iI_i\), that of the second is
+\(\prod_iJ_i\), and the induced map is multiplication
+by \(\det g\).
+
+For sufficiency, multiply the first coordinate by
+\(\beta\).  This has determinant \(\beta\) and
+replaces the product of the source ideals by
+\((\beta)\prod_iI_i=\prod_iJ_i\).
+Apply Proposition~\ref{si-equal-product} afterwards.
+The composite has the required image and determinant.
+The statement in dimension zero follows from the
+definition of the empty determinant.
+\end{proof}
+
+To match the source, specialize to
+\(R=\mathcal O_F\) and let
+\(a_i,b_i\) be finitely supported integral divisors.
+Define
+\[
+ I(a_i)=\prod_P P^{a_i(P)},\qquad
+ I(b_i)=\prod_P P^{b_i(P)}.
+\]
+Membership in \(I(a_i)\) means
+\(v_P(x)\ge a_i(P)\) at every prime, with \(x=0\)
+always allowed.  These are exactly the valuation
+inequalities defining the source's ideal lattice.
+The hypothesis
+\[
+              v_P(\beta)=\sum_i\bigl(b_i(P)-a_i(P)\bigr)
+              \qquad\text{for every }P
+\]
+is exactly the equality of fractional ideals in
+Theorem~\ref{si-prescribed}.
+Thus the theorem proves the source assertion
+\(\mathrm{SStein}\), including its condition
+that the index set be nonempty or \(\beta=1\).
+There is no assumption that an individual ideal is
+principal.
+
+Both qualifications matter.  In dimension one an
+isomorphism of the required kind would force the
+ratio ideal to be principal, so arbitrary pairs of
+ideals cannot replace the displayed hypothesis.
+In dimension zero all divisor sums vanish, so the
+divisor hypothesis alone would permit any unit
+\(\beta\); nevertheless the determinant remains
+\(1\).  For example, \(\beta=-1\) over \(\mathbb Q\)
+would contradict the conclusion if the source's
+empty-index condition were deleted.
+Neither example satisfies all the actual hypotheses.
+
+

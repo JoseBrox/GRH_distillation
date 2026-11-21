@@ -1,0 +1,326 @@
+\section{Rational isometries with the required local theta normalization}
+\label{ts-section}
+
+We now produce the isometry required in
+Theorem~\ref{tc-kernel-ratio}, with both its local lattice
+condition and its absence of fixed vectors.  This removes
+the corresponding existence hypothesis from the ordinary
+moment criterion.  We give the four-square construction as
+well, so that no existence of a rational standard form is
+being presumed.
+
+Let $k=\mathbb Q(\sqrt{-D})$, $\mathcal O_k$ and $I$ be
+as in Sections~\ref{tc-section} and~\ref{ci-section}.
+Write $\sigma=\sqrt{-D}$ for the element with positive
+imaginary part in the fixed complex embedding.
+Let $W$ be a $k$-vector space of dimension $r$, with
+positive definite Hermitian form $h$, linear in its first
+variable.  Its associated alternating rational form is
+\[
+       E_h(x,y)=
+           \operatorname{Tr}_{k/\mathbb Q}\!\left(\frac{h(x,y)}{\sigma}\right)
+          =\frac2{\sqrt D}\operatorname{Im}h(x,y).
+ \tag{TS1}
+\]
+Let $M\subset W$ be a full $\mathcal O_k$-lattice,
+self-dual for $E_h$.
+
+\subsection{The four-square isometry}
+
+\begin{lemma}\label{ts-rational-four-squares}
+Every positive rational number is a sum of four rational
+squares.
+\end{lemma}
+\begin{proof}
+We include the elementary integer descent.
+For an odd prime $\ell$, the pigeonhole argument in
+Lemma~\ref{tc-four-squares-congruence} gives integers
+$x,y$, chosen with $|x|,|y|\le(\ell-1)/2$, such that
+$x^2+y^2+1\equiv0\pmod\ell$.
+Thus some $m\ell$ is a sum of four squares with
+$0<m<\ell$.
+Choose the smallest positive $m$ for which
+$m\ell=\sum_{i=1}^4a_i^2$.
+If $m>1$, choose integers $b_i\equiv a_i\pmod m$
+with $|b_i|\le m/2$.  Then
+$\sum_i b_i^2=mm'$ with $0\le m'\le m$.
+If $m'=0$, all $a_i$ are divisible by $m$, so
+$m\mid\ell$, contradicting $1<m<\ell$.
+If $m'=m$, equality in the square bound makes $m$
+even and every $a_i=(m/2)(2c_i+1)$.
+The sum of four odd squares is divisible by four,
+so $m^2\mid\sum_i a_i^2=m\ell$, the same contradiction.
+Hence $0<m'<m$.
+
+Regard $a=(a_1,a_2,a_3,a_4)$ and $b=(b_1,b_2,b_3,b_4)$
+as integer quaternions.
+The four coordinates of $a\bar b$ are divisible by $m$:
+modulo $m$, this product is $b\bar b=\sum_i b_i^2=0$.
+The multiplicative norm identity, which is the matrix
+identity (TC18), now writes
+\[
+                    m'\ell
+                      =\left|\,a\bar b/m\,\right|^2
+\]
+as a sum of four integer squares, contradicting
+minimality of $m$.  Therefore $m=1$.
+The prime $2=1^2+1^2$ is immediate.
+Multiplying quaternion norms proves the assertion for
+every positive integer, by prime factorization.
+Finally if $q=A/B>0$ with positive integers $A,B$,
+write $AB$ as four integer squares and divide the
+four coordinates by $B$.
+\end{proof}
+
+\begin{proposition}\label{ts-global-isometry}
+There is a $k$-linear isometry
+\[
+        \gamma_0:(W^{\oplus4},h^{\oplus4})
+                           \longrightarrow (k^{4r},h_{\rm st}),
+ \qquad h_{\rm st}(x,y)=\sum_jx_j\overline y_j.
+ \tag{TS2}
+\]
+\end{proposition}
+\begin{proof}
+Hermitian Gram--Schmidt over $k$ diagonalizes $h$ with
+positive diagonal entries $q_j\in k\cap\mathbb R=\mathbb Q$.
+At each step the orthogonal projection coefficients lie in
+$k$, and positivity makes every pivot nonzero.
+By Lemma~\ref{ts-rational-four-squares}, write
+$q_j=a_j^2+b_j^2+c_j^2+d_j^2$ with rational coordinates.
+The quaternion matrix (TC18) for these four coordinates
+satisfies $T_j^*T_j=q_jI_4$, since its entries are rational.
+After reordering the four copies of the diagonal basis,
+the block diagonal matrix with blocks $T_j$ gives (TS2).
+\end{proof}
+
+\subsection{Local standard form at a split prime}
+
+\begin{lemma}\label{ts-local-isometry}
+If $p$ splits in $k$, there is a $k\otimes\mathbb Q_p$-linear
+isometry $\gamma_p$ from $W\otimes\mathbb Q_p$ to the
+standard Hermitian space carrying
+\[
+                     M\otimes\mathbb Z_p
+                      \quad\hbox{onto}\quad
+                     \mathcal O_k^r\otimes\mathbb Z_p.
+ \tag{TS3}
+\]
+\end{lemma}
+\begin{proof}
+The split algebra is $\mathbb Q_p\times\mathbb Q_p$,
+with conjugation interchanging the factors, and
+$\mathcal O_k\otimes\mathbb Z_p=\mathbb Z_p\times\mathbb Z_p$.
+Its two idempotents decompose $M\otimes\mathbb Z_p$
+as $M_+\oplus M_-$, each free of rank $r$ over
+$\mathbb Z_p$.
+Hermitian sesquilinearity makes $h$ zero on each one
+of the two summands paired with itself.
+Write $\sigma=(s,-s)$; the number $s$ is a $p$-adic unit,
+since a split prime is unramified.
+For $x\in M_+$ and $y\in M_-$, if $h(x,y)=(u,0)$,
+then $E_h(x,y)=u/s$.
+The perfect alternating pairing on $M\otimes\mathbb Z_p$
+therefore says that $h$ gives a perfect integral pairing
+between $M_+$ and $M_-$.
+Choose a basis of the former and its $h$-dual basis in
+the latter.  Sending these to the corresponding standard
+bases gives (TS3).  The conjugate cross-pairing is then
+correct by the Hermitian identity.
+\end{proof}
+
+\begin{theorem}\label{ts-approximation}
+Let $\mathcal S$ be a nonempty finite set of split primes
+of $k$.  There is a $k$-linear isometry
+$\gamma:W^{\oplus4}\to k^{4r}$ such that
+\[
+ \gamma(M^{\oplus4}\otimes\mathbb Z_p)
+          =\mathcal O_k^{4r}\otimes\mathbb Z_p
+       \quad(p\in\mathcal S),\qquad
+                   \gamma-\gamma_0\ \hbox{is invertible}.
+ \tag{TS4}
+\]
+\end{theorem}
+\begin{proof}
+Put $m=4r$ and use Lemma~\ref{ts-local-isometry} on
+$M^{\oplus4}$ to choose each local $\gamma_p$.
+Then $\delta_p=\gamma_p\gamma_0^{-1}$ is unitary on
+the standard space.
+At a split prime its first component can be any
+$G_p\in\operatorname{GL}_m(\mathbb Q_p)$ and its other
+component is $(G_p^{\mathsf T})^{-1}$.
+The condition that $\delta_p\gamma_0$ carry the specified
+lattice onto the standard one is open.
+We may perturb $G_p$ within this open set so that
+$\det(G_p-1)\det(G_p+1)\ne0$:
+replace $G_p$ by $G_p+tI$ for arbitrarily small $t$,
+avoiding the finitely many roots of the two determinant
+polynomials.
+
+Its Cayley inverse
+\[
+                     X_p=(\delta_p-1)(\delta_p+1)^{-1}
+ \tag{TS5}
+\]
+is skew-Hermitian and invertible, and $1-X_p$ is
+invertible.
+The skew-Hermitian matrices over $k$ form a finite-dimensional
+$\mathbb Q$-vector space, defined by the rational linear
+equation $X^*=-X$.  A rational basis remains a basis after
+extension to each $\mathbb Q_p$.
+The Chinese remainder theorem, after clearing a finite
+set of denominators, approximates the coefficients of
+all the $X_p$ simultaneously by coefficients in $\mathbb Q$.
+Choose a resulting matrix $X$ sufficiently close that
+the determinants of $X$ and $1-X$ stay nonzero and that
+\[
+                       \delta=(1+X)(1-X)^{-1}
+ \tag{TS6}
+\]
+has the required local lattice property.
+To justify the approximation assertion directly, multiply
+the finitely many prescribed rational $p$-adic coordinates
+by an integer making them integral at the selected primes,
+choose their required residues modulo sufficiently high
+powers, solve the simultaneous integer congruences, and
+divide by that integer.
+
+Since $X^*=-X$, multiplication in (TS6) gives
+$\delta^*\delta=1$.
+Also $\delta-1=2X(1-X)^{-1}$ is invertible.
+The map $\gamma=\delta\gamma_0$ consequently satisfies
+both assertions in (TS4).
+The zero-dimensional case is immediate with the
+usual empty-determinant convention.
+\end{proof}
+
+\subsection{Ideal twists and the same determinant correction}
+
+The trace lattices in the source are twisted by the
+elliptic ideal.  This twist preserves the hypotheses
+above and the local determinant comparison at its
+allowed primes.
+
+\begin{lemma}\label{ts-ideal-twist}
+The lattice $MI$ is self-dual for $E_h/a$.
+If $p\nmid a$, then
+\[
+                 MI\otimes\mathbb Z_p=M\otimes\mathbb Z_p,
+             \qquad I\otimes\mathbb Z_p
+                         =\mathcal O_k\otimes\mathbb Z_p.
+ \tag{TS7}
+\]
+Every isometry in (TS2) or (TS4) remains an isometry
+from $(h/a)^{\oplus4}$ to $h_{\rm st}/a$.
+\end{lemma}
+\begin{proof}
+The inverse different of $\mathcal O_k$ is
+$\sigma^{-1}\mathcal O_k$.
+Thus an $\mathcal O_k$-stable lattice self-dual for
+the trace form (TS1) is exactly a self-dual Hermitian
+lattice: testing $E_h(x,\alpha M)$ for every
+$\alpha\in\mathcal O_k$ is equivalent to
+$h(x,M)\subset\mathcal O_k$.
+This is also seen directly from the trace matrix in
+the basis $1,\tau$, whose discriminant is $-D$.
+For an invertible ideal,
+$(MI)^\#=M^\#\bar I^{-1}$ with respect to $h$,
+as follows locally by writing $I$ as a principal ideal.
+In a quadratic field $I\bar I=(a)$.
+The dual for $h/a$ is consequently
+$aM^\#\bar I^{-1}=MI$.
+The equivalence with alternating duality proves the
+first assertion.
+The finite quotient $\mathcal O_k/I$ has order $a$,
+which proves (TS7) when $p\nmid a$.
+Multiplying both Hermitian forms by $1/a$ does not
+change their isometries.
+\end{proof}
+
+Let $\kappa$ be the determinant correction of (LM9)--(LM10)
+formed from the untwisted lattice $M^{\oplus4}$, reference
+isometry $\gamma_0$, and standard target $\mathcal O_k^{4r}$.
+For the complex theta construction use the ideal-twisted
+lattice $MI$, the Hermitian form $H=(2/(a\sqrt D))h$,
+and the standard elliptic lattice $I$.
+One may multiply both lattices by the same complex scalar
+$\lambda$, replacing each Hermitian form by the transported
+form $H_\lambda(\lambda x,\lambda y)=H(x,y)$;
+the following conclusion is unchanged.
+
+\begin{theorem}\label{ts-integral-theta}
+Fix a split prime $p\ge5$ with $p\nmid a$.
+Let $F_M$ be a theta function normalized by
+\[
+                         F_M^{\otimes4}=\kappa K_{\gamma_0}.
+ \tag{TS8}
+\]
+Such a nonzero theta function exists and is unique up to a
+fourth root of unity.
+For the single ordinary period $\omega$ of
+Proposition~\ref{ci-common-period}, every translate
+$U_tF_M$ of order prime to $p$ modulo $MI$
+has integral period-scaled moments on $MI$.
+The statement also holds on the simultaneously scaled
+lattices $\lambda MI$ and $\lambda I$ with the same
+period in the lattice directions.
+\end{theorem}
+\begin{proof}
+Apply Theorem~\ref{ts-approximation} with $\mathcal S=\{p\}$.
+By (TS7), its isometry $\gamma$ is locally standard for
+the ideal-twisted lattices too:
+$\gamma((MI)^{\oplus4}\otimes\mathbb Z_p)
+=I^{4r}\otimes\mathbb Z_p$.
+Their intersection therefore has index prime to $p$.
+For finite-index lattices this follows by tensoring the
+finite quotient with $\mathbb Z_p$: it vanishes exactly
+when the quotient's order is prime to $p$.
+The determinant comparison in Theorem~\ref{lm-kappa}
+uses the untwisted local equality in (TS4), and gives
+\[
+                 |\iota(\kappa)|_p^2
+                 |\iota(\det(\gamma\gamma_0^{-1}))|_p=1.
+ \tag{TS9}
+\]
+The analytic theorem applies to the ideal-twisted lattices
+by Lemma~\ref{ts-ideal-twist}.  Their common norm
+semicharacter is exactly the elliptic one by
+Lemma~\ref{tc-ideal-character}.
+The invertibility in (TS4) gives
+$K_{\gamma_0}=cK_\gamma$ with
+$c^8=\det(\gamma\gamma_0^{-1})^4$.
+Equations (TS9) and this eighth-power equality give
+$|\iota(\kappa c)|_p=1$.
+Existence and uniqueness in (TS8) follow from the
+theta-space argument in Corollary~\ref{tc-normalized-unit}.
+
+By Theorem~\ref{ci-integral-translates}, the product
+elliptic theta function and all its prime-to-$p$
+translates have integral moments on $I^{4r}$.
+The finite intertwiner of index prime to $p$ preserves
+this property by Proposition~\ref{lm-finite-intertwiner}.
+Pullback by $\gamma$ identifies the direction lattices
+exactly.  Multiplying by the unit $\iota(\kappa c)$
+therefore gives integral moments for every fourth
+tensor power $(U_tF_M)^{\otimes4}$.
+The tensor-root theorem, Theorem~\ref{ot-tensor-root},
+gives the assertion for $U_tF_M$ itself.
+For the scaled lattices, (CI13)--(CI14) identify the
+elliptic expansions without any assumption on the
+absolute value of $\iota(\lambda)$; the same finite
+operator and pullback proof then applies.
+\end{proof}
+
+This theorem supplies the ordinary theta moments for the
+normalized self-dual lattice vector itself, with the same
+determinant correction as the untwisted trace lattice and
+for every split prime $p\geq5$ prime to the elliptic
+ideal norm.  This supplies all sufficiently large
+selected split primes.  The source's generic moment
+statement also permits $p=3$; that case is outside
+the Bannai--Kobayashi input used in this reconstruction.
+It does not yet identify the more general arithmetic
+column, which includes further finite lattice moves,
+local support conditions and incidence maps.
+
+

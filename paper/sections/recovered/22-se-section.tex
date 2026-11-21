@@ -1,0 +1,174 @@
+\section{An integral interpolation of cyclic characters}
+\label{se-section}
+
+The next input prescribes one pushforward of an integral
+function on a product of two cyclic groups, while making
+several other pushforwards zero.  Working over the integers
+is necessary: the function will be used as the exponents
+of fractional ideals.  No division by a difference of
+slopes is permitted in the group ring.
+
+For a finite abelian group \(A\), write
+\(\mathbb Z[A]\) for the free abelian group on symbols
+\([a]\), with multiplication \([a][b]=[a+b]\).
+Its multiplicative identity is \([0]\), which we also
+write as \(1\).
+A homomorphism \(f:A\to B\) induces
+\(f_*:\mathbb Z[A]\to\mathbb Z[B]\) by
+\([a]\mapsto[f(a)]\).
+Thus if \(\eta=\sum_a\eta(a)[a]\), the coefficient
+of \([b]\) in \(f_*\eta\) is
+\(\sum_{f(a)=b}\eta(a)\).
+
+\begin{lemma}\label{se-difference}
+Let \(w,M\) be nonnegative integers, put \(\kappa=1+w\),
+and write
+\[
+ P_M(T)=\prod_{j=0}^{M-1}(T-\kappa^j)
+                    =\sum_{i=0}^M p_iT^i.
+\]
+Then in \(\mathbb Z[X]\),
+\[
+                (X^w-1)^M
+                    \ \bigm|\ \sum_{i=0}^M p_iX^{\kappa^i}.
+\]
+\end{lemma}
+\begin{proof}
+Let \(U\) be the endomorphism of the abelian group
+\(\mathbb Z[X]\) given by \(Uf(X)=f(X^\kappa)\),
+and put \(D=X^w-1\).
+For every polynomial \(y\), we have
+\(Uy\equiv y\pmod D\), since \(X^\kappa\equiv X\pmod D\).
+Moreover
+\[
+ UD=D S,\qquad
+ S=\sum_{a=0}^{\kappa-1}X^{wa},\qquad
+ S\equiv\kappa\pmod D.
+\]
+These identities also hold when \(w=0\), with
+\(D=0\) and \(U\) the identity.
+If \(f=D^jy\), then
+\[
+ (U-\kappa^j)f
+   =D^j\bigl((S^j-\kappa^j)Uy
+                      +\kappa^j(Uy-y)\bigr)
+\]
+is divisible by \(D^{j+1}\).
+Starting with \(X\) and applying
+\((U-1),(U-\kappa),\ldots,(U-\kappa^{M-1})\)
+therefore gives a polynomial divisible by \(D^M\).
+The operators commute, and \(U^iX=X^{\kappa^i}\).
+Their product applied to \(X\) is consequently the
+polynomial in the assertion.
+The empty product \(M=0\) gives the same conclusion.
+\end{proof}
+
+\begin{lemma}\label{se-divisor}
+Let \(\ell\) be prime, \(q=\ell^\nu\), and
+\(0\le c\le\nu\).
+If \(d\) is a nonzero integer with \(|d|<\ell^c\),
+then the image of \(d\) in \(\mathbb Z/q\mathbb Z\)
+divides the image of \(\ell^c\).
+Consequently, in \(\mathbb Z[\mathbb Z/q\mathbb Z]\),
+\[
+                  [d]-1\ \bigm|\ [\ell^c]-1.
+\]
+\end{lemma}
+\begin{proof}
+Write \(d=\ell^a u\) with \(\ell\nmid u\).
+The size hypothesis gives \(a<c\).
+The residue class of \(u\) is a unit modulo \(q\),
+so a solution to \(dv=\ell^c\) is
+\(v=\ell^{c-a}u^{-1}\pmod q\).
+Choose a nonnegative integer representative \(v_0\).
+Then \([\ell^c]=[d]^{v_0}\), and the usual geometric
+sum proves divisibility by \([d]-1\).
+If \(v_0=0\), the numerator is zero and divisibility
+still holds.
+\end{proof}
+
+\begin{theorem}\label{se-interpolation}
+Let \(\ell\) be prime and let \(c,\nu,M\) be
+nonnegative integers satisfying
+\[
+                 c\le\nu,\qquad M<\ell^c.
+\]
+Put \(q=\ell^\nu\), \(A=\mathbb Z/q\mathbb Z\),
+and \(\kappa=1+\ell^c\).
+For \(0\le t\le M\), define
+\[
+             \chi_t:A^2\longrightarrow A,
+             \qquad \chi_t(x,y)=x+ty.
+\]
+Fix \(t_0\in\{0,\ldots,M\}\), and write
+\[
+              P_M(T)=\prod_{j=0}^{M-1}(T-\kappa^j)
+                       =\sum_{i=0}^Mp_iT^i.
+\]
+There exists \(\eta\in\mathbb Z[A^2]\) such that
+\[
+  (\chi_t)_*\eta=0\quad(t\ne t_0),
+  \qquad
+  (\chi_{t_0})_*\eta
+                       =\sum_{i=0}^M p_i[\kappa^i].
+\]
+\end{theorem}
+\begin{proof}
+All residue classes in this proof lie in \(A\).
+Let
+\[
+          \Delta=\sum_{i=0}^Mp_i[\kappa^i],
+          \qquad D=[\ell^c]-1.
+\]
+Apply the ring homomorphism
+\(\mathbb Z[X]\to\mathbb Z[A]\), \(X\mapsto[1]\),
+to Lemma~\ref{se-difference}.
+It gives \(D^M\mid\Delta\).
+For each \(t\ne t_0\) in the indicated range,
+\(0<|t_0-t|\le M<\ell^c\).
+Lemma~\ref{se-divisor} therefore gives
+\([t_0-t]-1\mid D\).
+There are exactly \(M\) such slopes, so
+\[
+          B:=\prod_{t\ne t_0}([t_0-t]-1)
+                      \ \bigm|\ D^M\ \bigm|\ \Delta.
+\]
+Choose \(Q\in\mathbb Z[A]\) with \(BQ=\Delta\).
+This argument multiplies divisibility identities;
+it never cancels a zero divisor in the group ring.
+
+Let \(\iota:\mathbb Z[A]\to\mathbb Z[A^2]\)
+be induced by \(a\mapsto(a,0)\), and put
+\[
+ \eta=
+ \prod_{t\ne t_0}\bigl([(0,1)]-[(t,0)]\bigr)
+ \ \iota\!\left(\left[-\sum_{t\ne t_0}t\right]Q\right).
+\]
+If \(s\ne t_0\), the factor indexed by \(t=s\)
+has zero image under \((\chi_s)_*\), so
+\((\chi_s)_*\eta=0\).
+For the distinguished slope,
+\[
+ (\chi_{t_0})_*\bigl([(0,1)]-[(t,0)]\bigr)
+       =[t_0]-[t]=[t]([t_0-t]-1).
+\]
+Also \((\chi_{t_0})_*\iota\) is the identity.
+The product of the factors \([t]\) cancels the
+explicit unit \([-\sum t]\), leaving \(BQ=\Delta\).
+This proves both required pushforward identities.
+\end{proof}
+
+This is precisely the source assertion
+\(\mathrm{SEta}\).  In the arithmetic cycle
+construction, \(M=2E+1\), and the hypothesis is
+\(2E+1<\ell^c\).
+The proof retains the exact integer coefficients, so
+they can be used as positive or negative powers of
+fractional ideals.
+It also includes \(M=0\), when the product is empty,
+and \(c=\nu\), when \([\ell^c]-1=0\).
+In the latter case with \(M>0\), the target
+\(\Delta\) is zero by the proved divisibility;
+there is no illicit division by zero.
+
+

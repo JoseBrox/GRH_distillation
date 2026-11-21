@@ -1,0 +1,598 @@
+\section{Polynomial differential operators and the Toda radial part}
+\label{rt-section}
+
+We now construct two of the actual differential operators used
+in the Fourier argument.  Their coefficients are polynomial on
+the full unitary group.  We also prove their precise restrictions
+to the radial cell, including the scalar conjugation and the
+conjugate-coordinate operator.  The proof of the radial identity
+uses a last-column expansion of a Capelli determinant and the
+two unipotent equivariances; no general theorem about radial
+parts is required.  These are the operators denoted by
+the weighted isotropic Capelli minors in the source
+\cite{alpo-uniform-source}.
+
+\subsection{Right derivatives and the two polynomial operators}
+
+Keep the Hermitian space and notation of Section~\ref{rl-section}.
+In particular $V=U\oplus W\oplus U^\vee$,
+$\dim U=r$, and $\dim W=k+1$.
+Fix any ordering of its chosen Witt basis.
+For $X$ in the real Lie algebra of $\mathbf G=U(V,h)$ put
+\[
+ (R_XF)(g)=\left.\frac{d}{dt}\right|_{t=0}F(g\exp(tX)).
+\]
+For an arbitrary complex matrix $A$ define the complexified
+right derivative by
+\begin{equation}\label{rt-complex-derivative}
+ R_AF=R_{(A-HA^*H)/2}F
+            +iR_{(A+HA^*H)/(2i)}F.
+\end{equation}
+Both matrices on the right belong to the real Lie algebra.
+This is complex linear in $A$, and
+$[R_A,R_B]=R_{[A,B]}$.  Indeed the real right derivatives
+are the left-invariant vector fields with tangent vectors
+$gA$, and differentiating these vector fields gives this
+bracket; complexification preserves it.
+
+Write $E_{ab}=R_{e_ae_b^*}$, where $e_b^*$ here means
+the coordinate covector, not the Hermitian dual.
+For ordered lists $I=(i_1,\ldots,i_m)$ and
+$J=(j_1,\ldots,j_m)$ of distinct basis indices define
+\begin{equation}\label{rt-minor}
+ Q_{I,J}(u)=
+ \sum_{\sigma\in S_m}\operatorname{sgn}(\sigma)
+ \prod_{b=1}^{m}
+ \bigl((u-b+1)\delta_{i_{\sigma(b)},j_b}
+                         +E_{i_{\sigma(b)},j_b}\bigr).
+\end{equation}
+Products act on a function with the rightmost factor first.
+The empty minor is the identity.  These are the minors
+of Theorem~\ref{rp-capelli}.
+
+Set $I=(e_1,\ldots,e_r)$ and
+$I^\vee=(e_1^\vee,\ldots,e_r^\vee)$.  If
+$J=(j_1,\ldots,j_r)$ runs over the increasing $r$-element
+subsets of the chosen basis, put
+\begin{align}
+ \beta_J(g)&=\det\bigl(h(ge_{j_b},e_a)\bigr)_{a,b=1}^{r},
+                                                        \label{rt-beta}\\
+ \alpha_J(g)&=\det\bigl((g^{-1}e_a)_{j_b}\bigr)_{a,b=1}^{r}.
+                                                        \label{rt-alpha}
+\end{align}
+The transpose in the second displayed determinant does
+not change its value.  For $Y\in\mathbb C$ set
+\begin{align}
+ \mathcal A_YF(g)
+   &=\sum_J\beta_J(g)\,
+       Q_{I,J}\left(Y+\frac{2r+k}{2}\right)F(g),
+                                                   \label{rt-A}\\
+ \overline{\mathcal A}_YF(g)
+   &=\sum_J\alpha_J(g)\,
+       Q_{J,I^\vee}\left(Y-\frac{2r+k}{2}+r-1\right)F(g).
+                                                   \label{rt-Av}
+\end{align}
+The bar in $\overline{\mathcal A}$ is a label for the
+conjugate-coordinate operator; it does not conjugate the
+argument $F$ or the parameter $Y$.
+Changing the order of one summation list changes both
+its scalar determinant and its quantum minor by the
+same sign.  Hence any fixed rule for ordering the subsets
+gives the same operators.  This explains the different
+ordering of the dual indices used in the source.
+For $r=0$ both operators are the identity.
+
+\begin{proposition}\label{rt-polynomial}
+The operators \eqref{rt-A} and \eqref{rt-Av} have
+differential order at most $r$ and polynomial coefficients
+of degree $r$ in $g$ and $\overline g$, respectively.
+They are smooth on the whole group, including the zeros
+of every intermediate minor.
+
+Every derivative of a scalar coefficient, of any fixed
+length $m$ in left or right Lie derivatives with directions
+of norm at most one, is bounded by
+$C_m(1+\|g\|)^r$.  The constant is independent of $g$
+and of those directions.  Their formal adjoints for
+Haar measure also have polynomial coefficients of degree
+at most $r$ and order at most $r$.
+
+Both the operators and their formal adjoints preserve the
+class $\mathscr S_\varepsilon$ of
+Corollary~\ref{rl-class-preserved}.
+\end{proposition}
+
+\begin{proof}
+The first coefficients in \eqref{rt-beta} are polynomial
+of degree $r$.  On $\mathbf G$ one has $g^{-1}=Hg^*H$,
+so the second coefficients are polynomial of degree $r$
+in $\overline g$.  Each term in \eqref{rt-minor} is a
+constant linear combination of words of length at most
+$r$ in right derivatives.  Thus no division occurs in
+either operator.
+
+A left or right Lie derivative sends a matrix entry of
+$g$ to a linear combination of its entries, and likewise
+for conjugate entries.  On the finite-dimensional space
+of polynomials of degree at most $r$, this derivative
+therefore acts by a linear map whose coefficients are
+bounded when the direction has norm at most one.
+Iterating $m$ times bounds the sum of the absolute
+coefficients by a fixed constant $C_m$.
+Evaluating the resulting polynomials proves the
+stated bound.
+
+For clarity, Haar measure on this group is unimodular.
+The real bilinear form
+$B(X,Z)=\operatorname{Re}\operatorname{tr}(XZ)$ on its
+Lie algebra is nondegenerate and invariant under the
+adjoint action of every group element.  Nondegeneracy
+follows by complexifying: the complexified Lie algebra
+is the full matrix algebra, whose trace pairing is
+nondegenerate.  An adjoint transformation preserves
+$B$, so its real determinant has absolute value one.
+The absolute volume form defined at the identity
+therefore extends to a left and right invariant
+measure.  Integration by parts for compactly supported
+functions gives $R_X^*=-R_X$ for real $X$.
+Taking adjoints of \eqref{rt-A} and \eqref{rt-Av}
+reverses each word and conjugates its coefficients.
+Leibniz's rule differentiates those polynomials but
+does not increase their degree.
+
+Finally every derivative of an output is a finite sum
+of a polynomially bounded coefficient times a derivative
+of the input.  Arbitrarily fast polynomial decay of
+all input derivatives implies the same for the output.
+A differential operator does not enlarge support.
+This proves preservation of $\mathscr S_\varepsilon$
+for the operators and their adjoints.
+\end{proof}
+
+\subsection{Equivariance on the full group}
+
+Let $N,K_z,K_{z'}$ be as in
+Lemma~\ref{rl-cofactor-covariance}.
+The following identities hold for arbitrary smooth
+functions, before imposing a character on $N$.
+
+\begin{proposition}\label{rt-full-covariance}
+If $s_L\in K_zN$ and $s_R\in K_{z'}N$, then
+\begin{align*}
+ \mathcal A_Y\bigl(F(s_L\,\cdot\,s_R)\bigr)(g)
+       &=(\mathcal A_YF)(s_Lgs_R),\\
+ \overline{\mathcal A}_Y\bigl(F(s_L\,\cdot\,s_R)\bigr)(g)
+       &=(\overline{\mathcal A}_YF)(s_Lgs_R).
+\end{align*}
+The same assertions hold for vector-valued functions
+component by component.
+\end{proposition}
+
+\begin{proof}
+Both $s_L$ and $s_R$ preserve $U$ and act on it with
+determinant one.  They also preserve $U^\perp$, and
+the induced action on $V/U^\perp$, in the basis
+given by $I^\vee$, has determinant one.
+
+Left translation commutes with right derivatives.
+For the first operator,
+\[
+ h(s_Lge_j,e_a)=h(ge_j,s_L^{-1}e_a).
+\]
+The basis change on $U$ has determinant one, so every
+$r$-row determinant in \eqref{rt-beta} is unchanged.
+For the second operator,
+$\bigwedge^r(s_L^{-1})$ fixes
+$e_1\wedge\cdots\wedge e_r$, so
+$\alpha_J(s_Lg)=\alpha_J(g)$.
+This proves left covariance.
+
+For right translation by $s$, complexified derivatives
+transform by
+\[
+ R_A\bigl(F(\,\cdot\,s)\bigr)(g)
+          =(R_{s^{-1}As}F)(gs).
+\]
+The exterior covariance of the quantum minors gives
+\begin{equation}\label{rt-right-minor}
+ Q'_{I,J}(u)
+    =\sum_{K,L}\det(s^{-1})_{K,I}\,
+                   \det(s)_{J,L}\,Q_{K,L}(u),
+\end{equation}
+where $Q'$ is formed using $A\mapsto R_{s^{-1}As}$.
+This is precisely the all-minor covariance in
+Theorem~\ref{rp-capelli}; no coefficient is
+differentiated in this constant change of basis.
+
+Since $\bigwedge^r(s^{-1})$ fixes $\bigwedge^rU$,
+the first determinant on the right of
+\eqref{rt-right-minor}, when $I$ is the fixed list
+of $U$-indices, equals one for $K=I$ and zero otherwise.
+Cauchy--Binet then gives
+\[
+ \sum_J \beta_J(g)\det(s)_{J,L}=\beta_L(gs).
+\]
+This proves right covariance of $\mathcal A_Y$.
+
+For the second operator, Cauchy--Binet gives instead
+\[
+ \sum_J\det(s^{-1})_{K,J}\alpha_J(g)=\alpha_K(gs).
+\]
+The remaining coefficients in
+\eqref{rt-right-minor} are $\det(s)_{I^\vee,L}$.
+The last $r$ coordinate rows of $s$ vanish on
+$U^\perp$ and have determinant one on the quotient.
+Consequently these coefficients are one for
+$L=I^\vee$ and zero otherwise.  This proves right
+covariance of $\overline{\mathcal A}_Y$.
+The argument is unaffected by any fixed reordering
+of the dual basis.
+\end{proof}
+
+\subsection{The two unipotent characters and elementary derivative rules}
+
+For $n\in N$, define
+\[
+ \ell_z(n)=
+ \sum_{i=1}^{r-1}(ne_{i+1})_{e_i}+(nz)_{e_r},
+ \qquad
+ \psi_z(n)=\exp\bigl(\ell_z(n)-\overline{\ell_z(n)}\bigr).
+\]
+For $r=0$ set $\ell_z=0$.
+The same definition with $z'$ gives $\psi_{z'}$.
+These are the actual normalizations of the source's
+characters.  Only their values on the roots inside
+$U$ and $U^\vee$ enter the proof below.
+
+Let $D$ be an open subset of $\mathbf G$ invariant
+under multiplication by $N$ on both sides.
+Let $F:D\to E$ be smooth, where $E$ is a
+finite-dimensional complex vector space, and suppose
+\begin{equation}\label{rt-whittaker}
+ F(n_Lgn_R)=\psi_z(n_L)\psi_{z'}(n_R)F(g).
+\end{equation}
+Fix $m\in U(W)$ and consider the points $b(c)m\in D$,
+with all $c_i\ne0$, as in Lemma~\ref{rl-cell}.
+Write
+\[
+ F_m(c)=F(b(c)m),\qquad
+ p_i=c_i\partial_{c_i},\qquad
+ \bar p_i=\overline c_i\partial_{\overline c_i}.
+\]
+Wirtinger derivatives are meant in these formulas.
+
+\begin{lemma}\label{rt-root-rules}
+For the ordered indices $e_1,\ldots,e_r$,
+right differentiation on a function satisfying
+\eqref{rt-whittaker} gives
+\begin{align}
+ E_{e_i,e_j}F&=\delta_{j,i+1}F
+                                      &&(i<j),\label{rt-right-rule}\\
+ (E_{e_i,e_j}F)(b(c)m)
+       &=\delta_{i,j+1}\frac{c_i}{c_j}F_m(c)
+                                      &&(i>j),\label{rt-left-rule}\\
+ (E_{e_i,e_i}F)(b(c)m)&=p_iF_m(c).
+                                                   \label{rt-torus-rule}
+\end{align}
+Equation \eqref{rt-left-rule} holds also with $F$
+replaced by any word of right derivatives applied
+to $F$.
+
+For the reversed dual list
+$v_i=e_{r+1-i}^\vee$, the corresponding rules are
+\begin{align}
+ E_{v_i,v_j}F&=\delta_{j,i+1}F&&(i<j),\label{rt-dual-right}\\
+ (E_{v_i,v_j}F)(b(c)m)
+   &=\delta_{i,j+1}
+       \frac{\overline c_{r+1-j}}{\overline c_{r+1-i}}
+         F_m(c)&&(i>j),\label{rt-dual-left}\\
+ (E_{v_i,v_i}F)(b(c)m)
+   &=-\bar p_{r+1-i}F_m(c).\label{rt-dual-torus}
+\end{align}
+The dual lower-root rule again holds after any
+word of right derivatives.
+\end{lemma}
+
+\begin{proof}
+For $i<j$, the real root subgroup inside $N$ is
+\[
+ n_{ij}(w)=
+ \exp\bigl(w e_ie_j^*-\overline w\,
+                         e_j^\vee(e_i^\vee)^*\bigr).
+\]
+Its character is $\exp(w-\overline w)$ when
+$j=i+1$ and is one otherwise.
+Complexifying its two real tangent directions as
+in \eqref{rt-complex-derivative} amounts to taking
+$\partial_w$ at zero.  The right character law
+therefore gives \eqref{rt-right-rule}.
+
+At $g=b(c)m$ one has, for $i>j$,
+\[
+ \operatorname{Ad}(g)(e_ie_j^*)
+          =\frac{c_i}{c_j}
+                      e_i^\vee(e_j^\vee)^*.
+\]
+The matrix on the right is an upper root in the
+dual part of $N$.  Its character derivative is
+one when $i=j+1$ and zero otherwise.  For example,
+if its root parameter is $w$, the corresponding
+upper entry in the $U$-block is $-\overline w$,
+whose contribution to
+$\ell-\overline\ell$ is again $w-\overline w$.
+Transferring the right derivative at $g$ to this
+left derivative proves \eqref{rt-left-rule}.
+Every right derivative commutes with left
+translations.  Thus every right-differentiated
+function retains the left character law, which
+proves the asserted strengthened version.
+
+The two real directions in
+\eqref{rt-complex-derivative} for $e_ie_i^*$
+scale $c_i$ respectively by $e^{t/2}$ and
+$e^{-it/2}$.  Their complex combination is
+$c_i\partial_{c_i}$, proving \eqref{rt-torus-rule}.
+
+In the reversed dual ordering, the upper root
+$e_a^\vee(e_b^\vee)^*$ has $a>b$ and has
+the same character derivative, equal to one
+precisely when $a=b+1$.  For a lower root in
+that ordering, conjugation by $b(c)m$ gives
+\[
+ \operatorname{Ad}(b(c)m)
+       \bigl(e_a^\vee(e_b^\vee)^*\bigr)
+           =\frac{\overline c_b}{\overline c_a}
+                          e_ae_b^* .
+\]
+This proves \eqref{rt-dual-right} and
+\eqref{rt-dual-left}.  The real torus directions
+for $e_i^\vee(e_i^\vee)^*$ scale $c_i$ by
+$e^{-t/2}$ and $e^{-it/2}$; their complex
+combination is $-\bar c_i\partial_{\bar c_i}$.
+This proves the last identity.
+\end{proof}
+
+\subsection{An elementary determinant recurrence}
+
+The following argument is the essential radial calculation.
+It explains why only adjacent roots survive.
+
+\begin{lemma}\label{rt-cofactor-reduction}
+Let $E_{ab}$ satisfy the $\mathfrak{gl}_s$ commutator
+relations, and let $s\geq2$.
+In its universal enveloping algebra, put
+\[
+ C_s(u)=Q_{(1,\ldots,s-2,s),(1,\ldots,s-1)}(u).
+\]
+Then
+\begin{equation}\label{rt-cofactor-ideal}
+ C_s(u)=E_{s,s-1}Q_{(1,\ldots,s-2),(1,\ldots,s-2)}(u)
+                  +\sum_{j=1}^{s-2}E_{sj}V_j
+\end{equation}
+for some elements $V_j$ of the enveloping algebra.
+No assertion about the values of the $V_j$ is needed.
+\end{lemma}
+
+\begin{proof}
+In each term of the determinant, there is exactly
+one factor from row $s$, necessarily an off-diagonal
+factor $E_{sj}$.  If $j<s-1$, move this factor to
+the far left.  For a factor from an earlier column
+$b<j$ one has
+\[
+ \bigl((u-b+1)\delta_{ab}+E_{ab}\bigr)E_{sj}
+  =E_{sj}\bigl((u-b+1)\delta_{ab}+E_{ab}\bigr)
+                                  -\delta_{aj}E_{sb}.
+\]
+Every new last-row generator has an even smaller
+column index.  Repeating this identity expresses
+the term as a sum of elements with leftmost factor
+$E_{s\ell}$, where $\ell\leq j<s-1$.
+
+If $j=s-1$, every preceding row index is at most
+$s-2$.  The same commutator is then zero.
+Moving $E_{s,s-1}$ to the far left leaves exactly
+the determinant on the first $s-2$ rows and
+columns, with parameter $u$ and positive sign.
+Summing all terms proves \eqref{rt-cofactor-ideal}.
+\end{proof}
+
+\begin{proposition}\label{rt-raw-toda}
+For $0\leq s\leq r$, let $K_s(u)$ be the
+coordinate differential operator defined by
+\[
+ K_0(u)=1,\qquad K_1(u)=u+p_1,
+\]
+and, for $s\geq2$,
+\begin{equation}\label{rt-K-rec}
+ K_s(u)=(u-s+1+p_s)K_{s-1}(u)
+                      -\frac{c_s}{c_{s-1}}K_{s-2}(u).
+\end{equation}
+For every $F$ satisfying \eqref{rt-whittaker},
+\begin{equation}\label{rt-raw-identity}
+ \bigl(Q_{(e_1,\ldots,e_s),(e_1,\ldots,e_s)}(u)F\bigr)
+                (b(c)m)=K_s(u)F_m(c).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+We prove the slightly stronger inductive assertion in which
+the full left character law is retained, but on the right
+only the upper-root character laws within the first $s$
+isotropic indices are required.  The stated theorem is
+its special case.
+The assertions for $s=0,1$ are immediate from the
+empty determinant and \eqref{rt-torus-rule}.
+Expand the size $s$ determinant in its last column.
+The last factor in each product acts first.
+By \eqref{rt-right-rule}, all terms vanish except
+the last-row diagonal term and the term with row
+$s-1$.  Thus its value equals that of
+\[
+ Q_{s-1}(u)(u-s+1+E_{ss})F-C_s(u)F.
+\]
+Here the abbreviated indices belong to the first
+isotropic list.
+
+The function $E_{ss}F$ retains left equivariance,
+and it retains right equivariance for all upper
+roots within the first $s-1$ indices, since those
+generators commute with $E_{ss}$.
+The induction hypothesis therefore applies to
+this function.  The resulting diagonal term is
+$K_{s-1}(u)(u-s+1+p_s)F_m$.
+The operator $K_{s-1}(u)$ uses only
+$c_1,\ldots,c_{s-1}$, so it commutes with $p_s$.
+
+Apply Lemma~\ref{rt-cofactor-reduction} to the
+other term.  The strengthened lower-root rule
+in Lemma~\ref{rt-root-rules} kills every summand
+$E_{sj}V_jF$ with $j<s-1$.  The remaining term
+equals
+\[
+ \frac{c_s}{c_{s-1}}\,
+       \bigl(Q_{s-2}(u)F\bigr)(b(c)m).
+\]
+The induction hypothesis gives exactly
+\eqref{rt-K-rec}.  This proof uses only the root
+laws actually needed at each stage; it does not
+assume that arbitrary right derivatives preserve
+all right character laws.
+\end{proof}
+
+\subsection{The exact scalar conjugation and the conjugate operator}
+
+Define
+\begin{equation}\label{rt-gauge}
+ \gamma(c)=\prod_{i=1}^{r}
+       |c_i|^{\,2(r-i+1)+k},
+ \qquad
+ \Phi(c,m)=\gamma(c)F(b(c)m).
+\end{equation}
+This is exactly the source's scalar radial
+normalization.  Let
+\[
+ T_i(Y)=
+ \begin{pmatrix}Y+p_i&-c_i\\ c_i^{-1}&0\end{pmatrix},
+ \qquad
+ \overline T_i(Y)=
+ \begin{pmatrix}Y-\bar p_i&-\bar c_i\\
+                         \bar c_i^{-1}&0\end{pmatrix},
+\]
+where entries act on functions of $c$.
+Write their ordered products as
+\[
+ \begin{pmatrix}A_r(Y)\\ B_r(Y)\end{pmatrix}
+       =T_r(Y)\cdots T_1(Y)\binom10,\qquad
+ \begin{pmatrix}\overline A_r(Y)\\ \overline B_r(Y)\end{pmatrix}
+       =\overline T_r(Y)\cdots\overline T_1(Y)\binom10.
+\]
+For $r=0$ both columns are $(1,0)^{\mathsf t}$.
+Set $a(c)=\prod_i c_i$.
+
+\begin{theorem}\label{rt-actual-lifts}
+For every smooth $F$ satisfying
+\eqref{rt-whittaker}, and every allowed cell point,
+\begin{align}
+ \gamma(c)(\mathcal A_YF)(b(c)m)
+       &=a(c) A_r(Y)\Phi(c,m),\label{rt-lift-first}\\
+ \gamma(c)(\overline{\mathcal A}_YF)(b(c)m)
+       &=\overline{a(c)}\,\overline A_r(Y)\Phi(c,m).
+                                             \label{rt-lift-second}
+\end{align}
+Both identities hold for every complex $Y$.
+The full-group operators on the left are the
+polynomial operators already constructed in
+\eqref{rt-A} and \eqref{rt-Av}.
+\end{theorem}
+
+\begin{proof}
+At a cell point, $h(b(c)me_j,e_a)$ is zero unless
+$j=e_a$, and its nonzero value is $c_a$.
+Only one scalar minor in \eqref{rt-A} survives.
+Consequently
+\[
+ (\mathcal A_YF)(b(c)m)
+      =a(c)\bigl(Q_{I,I}(u)F\bigr)(b(c)m),
+             \qquad u=Y+\frac{2r+k}{2}.
+\]
+For $n_i=2(r-i+1)+k$,
+\[
+ \gamma p_i\gamma^{-1}=p_i-\frac{n_i}{2},
+ \qquad u-i+1-\frac{n_i}{2}=Y.
+\]
+Multiplication by $c_s/c_{s-1}$ commutes with
+$\gamma$.  Conjugating \eqref{rt-K-rec} therefore
+gives the recurrence
+\[
+ A_s=(Y+p_s)A_{s-1}
+                -\frac{c_s}{c_{s-1}}A_{s-2},
+\]
+with $A_0=1$, $A_1=Y+p_1$.
+The first column of $T_s\cdots T_1$ obeys the
+same recurrence, since $B_{s-1}=c_{s-1}^{-1}A_{s-2}$.
+This proves \eqref{rt-lift-first}.
+
+For the second operator,
+$(b(c)m)^{-1}e_a=\bar c_a e_a^\vee$.
+Thus \eqref{rt-Av} reduces to
+\[
+ \overline{a(c)}\,
+ Q_{I^\vee,I^\vee}(w)F(b(c)m),
+        \qquad w=Y-\frac{2r+k}{2}+r-1 .
+\]
+Simultaneously reversing both index lists of a
+full Capelli determinant does not change it,
+by its covariance under a permutation matrix.
+Apply the proof of Proposition~\ref{rt-raw-toda}
+to the reversed dual list in
+Lemma~\ref{rt-root-rules}.
+At the vertex corresponding to the original
+index $i$, the diagonal factor is
+\[
+                w-(r-i)-\bar p_i,
+\]
+and the edge between $i$ and $i+1$ has factor
+$-\bar c_{i+1}/\bar c_i$.
+Conjugation by $\gamma$ changes that diagonal
+factor to $Y-\bar p_i$, because
+\[
+ w-(r-i)+\frac{n_i}{2}=Y.
+\]
+
+For completeness, the resulting recurrence can
+be read in either direction along the ordered
+set of vertices $1,\ldots,r$.
+Its expansion is a sum over sets of pairwise
+disjoint adjacent edges.  An edge $(i,i+1)$
+contributes $-\bar c_{i+1}/\bar c_i$; every
+uncovered vertex $j$ contributes $Y-\bar p_j$.
+All factors in a fixed term commute: an
+uncovered derivative involves none of the
+variables in the edge factors.  Splitting these
+sets according to whether the last vertex is
+uncovered or lies in its last edge gives the
+recurrence for $\overline T_r\cdots\overline T_1$.
+Splitting at the first vertex gives the reversed
+dual recurrence.  They are therefore equal.
+This proves \eqref{rt-lift-second}, including
+$r=0$ and $r=1$.
+\end{proof}
+
+\paragraph{Scope.}
+The two polynomial full-group operators, their
+translation covariance, their action on the
+coefficient class, and their exact radial
+identities are now proved.  Together with
+Section~\ref{rl-section}, this supplies three
+concrete ingredients of the four-operator
+Fourier construction.  The remaining coupled
+operators involving the off-diagonal terminal
+entries require their own identities.  The
+passage from formal adjoints to the actual
+Jacquet pairing, the uniform square-integrability
+bounds for the generated class, and the final
+weighted Fourier estimate are not consequences
+of the two polynomial radial identities alone.
+
+

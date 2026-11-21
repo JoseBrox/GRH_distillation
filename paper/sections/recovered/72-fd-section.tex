@@ -1,0 +1,712 @@
+\section{The formal degree with the specified Haar measure}
+\label{fd-section}
+
+We determine the formal degree in the normalization used by the mass
+formula. This also checks the meaning of the representation parameter:
+the source specifies a smallest compact type, rather than writing an
+infinitesimal character into its definition of a discrete series.
+The calculation below uses classical discrete-series theorems, stated
+explicitly. The measure comparison, scalar integral, and the application
+to the source's precise definition are proved here.
+
+For an integer $a\ge0$, write
+\[
+                     s_a=\prod_{j=0}^{a-1}j!,\qquad s_0=1.
+\]
+Let $p,q\ge1$, put $n=p+q$, and set
+\[
+ G=U(p,q)=\{g\in\operatorname{GL}_n(\mathbb C):g^*Jg=J\},
+ \quad J=\operatorname{diag}(I_p,-I_q),\quad
+ K=U(p)\times U(q).
+\]
+All Lebesgue measures on complex matrices below are the products
+of $d(\Re z)\,d(\Im z)$ over their entries. Haar measure on a compact
+group is a probability measure unless stated otherwise.
+
+\subsection{Two elementary matrix integrals}
+
+Put
+\[
+ \mathcal B_{p,q}=\{Z\in M_{p,q}(\mathbb C):I_q-Z^*Z>0\},
+\]
+where $>0$ means positive definite.
+
+\begin{lemma}\label{fd-matrix-integrals}
+For $\alpha>-1$ and $u>p+q-1$, respectively,
+\begin{align}
+ \int_{\mathcal B_{p,q}}\det(I_q-Z^*Z)^\alpha\,dZ
+   &=\pi^{pq}\prod_{j=0}^{q-1}
+                  \frac{\Gamma(\alpha+j+1)}
+                       {\Gamma(\alpha+p+j+1)},\label{fd-ball-integral}\\
+ \int_{M_{p,q}(\mathbb C)}\det(I_q+Z^*Z)^{-u}\,dZ
+   &=\pi^{pq}\prod_{j=0}^{q-1}
+                  \frac{\Gamma(u-p-j)}{\Gamma(u-j)}.
+                                                   \label{fd-affine-integral}
+\end{align}
+Here $\Gamma(v)=\int_0^\infty t^{v-1}e^{-t}\,dt$ for $v>0$.
+\end{lemma}
+\begin{proof}
+First, for a vector $z\in\mathbb C^p$, radial integration gives
+\begin{align*}
+ \int_{|z|<1}(1-|z|^2)^\alpha\,dz
+       &=\pi^p\frac{\Gamma(\alpha+1)}
+                         {\Gamma(\alpha+p+1)},\\
+ \int_{\mathbb C^p}(1+|z|^2)^{-u}\,dz
+       &=\pi^p\frac{\Gamma(u-p)}{\Gamma(u)}\quad(u>p).
+\end{align*}
+Indeed the radial volume element is
+$2\pi^p t^{2p-1}dt/\Gamma(p)$. Its constant follows by
+integrating $e^{-|z|^2}$ in Cartesian and polar coordinates.
+The substitution $x=t^2$ reduces the two integrals to the
+beta integral. The identity
+$B(a,b)=\Gamma(a)\Gamma(b)/\Gamma(a+b)$ follows by setting
+$r=x+y$, $v=x/(x+y)$ in the product of the two defining
+gamma integrals. All integrands are nonnegative, so the changes
+of variables and repeated integration follow from Tonelli's theorem.
+
+Write a matrix as $Z=[W,z]$, with $q-1$ columns in $W$.
+The Schur complement gives
+\[
+ \det(I_q\pm Z^*Z)
+  =\det(I_{q-1}\pm W^*W)
+       \bigl(1\pm z^*(I_p\pm WW^*)^{-1}z\bigr).
+ \tag{FD1}
+\]
+For the minus sign, membership in $\mathcal B_{p,q}$ is
+equivalent to $W\in\mathcal B_{p,q-1}$ and
+$z^*(I_p-WW^*)^{-1}z<1$. The equivalence of
+$I_{q-1}-W^*W>0$ and $I_p-WW^*>0$ follows by comparing
+their nonzero singular values.
+In either case substitute $z=(I_p\pm WW^*)^{1/2}v$.
+The real Jacobian is $\det(I_p\pm WW^*)$, which equals
+$\det(I_{q-1}\pm W^*W)$. The equality follows, for example,
+by expanding $\det\bigl(\begin{smallmatrix}I&W\\
+\mp W^*&I\end{smallmatrix}\bigr)$ in its two Schur complements.
+
+If the two integrals are denoted by $I_{p,q}(\alpha)$ and
+$J_{p,q}(u)$, this gives
+\begin{align*}
+ I_{p,q}(\alpha)
+   &=\pi^p\frac{\Gamma(\alpha+1)}{\Gamma(\alpha+p+1)}
+                                      I_{p,q-1}(\alpha+1),\\
+ J_{p,q}(u)
+   &=\pi^p\frac{\Gamma(u-p)}{\Gamma(u)}
+                                      J_{p,q-1}(u-1).
+\end{align*}
+At $q=0$ both integrals are one. Iteration proves the formulas,
+including convergence under exactly the indicated sufficient
+conditions.
+\end{proof}
+
+\subsection{The compact-dual normalization}
+
+For a block matrix
+$g=\bigl(\begin{smallmatrix}A&B\\C&D\end{smallmatrix}\bigr)\in G$,
+the action on $\mathcal B_{p,q}$ is
+\[
+                 g\cdot Z=(AZ+B)(CZ+D)^{-1}.
+\]
+The denominator is invertible: otherwise a nonzero vector
+$(Zv,v)$ of strictly negative norm would be carried to a
+vector with second component zero, whose norm is nonnegative.
+The stabilizer of $0$ is $K$, and the action is transitive.
+For instance, the positive Hermitian block matrix
+\[
+ g_Z=
+ \begin{pmatrix}
+ (I_p-ZZ^*)^{-1/2}&Z(I_q-Z^*Z)^{-1/2}\\
+ Z^*(I_p-ZZ^*)^{-1/2}&(I_q-Z^*Z)^{-1/2}
+ \end{pmatrix}
+ \tag{FD2}
+\]
+belongs to $G$ and carries $0$ to $Z$. The needed identities
+between its off-diagonal blocks follow by a singular-value
+decomposition of $Z$.
+
+\begin{lemma}\label{fd-quotient-measure}
+The measure
+\[
+                   d\nu_0(Z)=\det(I_q-Z^*Z)^{-n}\,dZ
+ \tag{FD3}
+\]
+is $G$-invariant. It defines a Haar measure $\mu_0$ on $G$ by
+\[
+       \int_G F(g)\,d\mu_0(g)
+          =\int_{\mathcal B_{p,q}}\int_K F(g_Zk)\,dk\,d\nu_0(Z).
+ \tag{FD4}
+\]
+The pushforward of Haar probability measure on $U(n)$ to
+$U(n)/(U(p)\times U(q))$ has, in its graph chart
+$M_{p,q}(\mathbb C)$, density
+\[
+             c_{p,q}\det(I_q+Z^*Z)^{-n}\,dZ,\qquad
+             c_{p,q}=\frac{s_n}{\pi^{pq}s_ps_q}.
+ \tag{FD5}\label{fd-cpq}
+\]
+\end{lemma}
+\begin{proof}
+Put $Z'=g\cdot Z$ and $R=CZ+D$. Directly from $g^*Jg=J$,
+\[
+                  I_q-Z'^*Z'=R^{-*}(I_q-Z^*Z)R^{-1}.
+ \tag{FD6}
+\]
+The complex derivative sends a variation $H$ to
+$(A-Z'C)HR^{-1}$. The block determinant identity
+\[
+                         \det(A-Z'C)\det R=\det g
+\]
+follows by eliminating the upper-right block after replacing
+the second block column of $g$ by its product with
+$\bigl(\begin{smallmatrix}Z\\I_q\end{smallmatrix}\bigr)$.
+The complex determinant of the derivative is
+$(\det g)^q\det R^{-n}$; its real Jacobian is
+$|\det R|^{-2n}$, since $|\det g|=1$.
+Together with (FD6) this proves invariance of (FD3).
+Changing the section in (FD4) multiplies it on the right by an
+element of $K$, which does not change the inner integral.
+Left translation by $G$ changes the section in this way and
+preserves $\nu_0$, proving the Haar assertion.
+
+The compact quotient is the Grassmannian of $q$-planes
+in $\mathbb C^{p+q}$. Its graph chart sends $Z$ to the
+column space of $\bigl(\begin{smallmatrix}Z\\I_q\end{smallmatrix}\bigr)$.
+The same calculation for $g\in U(n)$ has plus signs:
+\[
+                   I_q+Z'^*Z'=R^{-*}(I_q+Z^*Z)R^{-1}.
+ \tag{FD7}
+\]
+It therefore determines the invariant density in the chart
+up to a positive constant. Haar measure gives a smooth
+positive density in local coordinates. The complement of
+the graph chart is the zero set of a nonzero Pl\"ucker
+coordinate, and has measure zero. To justify this last
+assertion without a measure convention, cover the
+Grassmannian by its finitely many graph charts; a nonzero
+complex polynomial in each chart vanishes on a set of
+Lebesgue measure zero, by induction on the number of
+variables and Fubini's theorem.
+Formula \eqref{fd-affine-integral} at $u=n$ gives total mass
+\[
+ \pi^{pq}\prod_{j=0}^{q-1}\frac{(q-j-1)!}{(n-j-1)!}
+                        =\pi^{pq}\frac{s_ps_q}{s_n}.
+\]
+Normalizing the total mass to one proves (FD5).
+\end{proof}
+
+We now specify the Lie-algebra density used in the source.
+For either real form $\mathfrak u(p,q)$ or $\mathfrak u(n)$
+inside $M_n(\mathbb C)$, let $\omega_{\mathfrak g}$ be the
+positive Lebesgue measure characterized by
+\[
+ (X,Y)\longmapsto X+iY
+       \quad\hbox{carrying}\quad
+ \omega_{\mathfrak g}\otimes\omega_{\mathfrak g}
+       \quad\hbox{to ordinary Lebesgue measure on }M_n(\mathbb C).
+ \tag{FD8}
+\]
+This map is a real-linear isomorphism. On the diagonal write
+$X_{ii}=ix_i$ with $x_i\in\mathbb R$; off the diagonal
+use one complex coordinate $z_{ij}$ for each $i<j$.
+The other entry is $-\varepsilon_i\varepsilon_j\bar z_{ij}$,
+where $\varepsilon_i$ is the sign of the Hermitian form.
+For each pair $i<j$, the real determinant in (FD8) has
+absolute value $4$; on each diagonal coordinate it has
+absolute value $1$. Consequently
+\[
+ \omega_{\mathfrak g}
+    =2^{n(n-1)/2}\prod_i dx_i
+                  \prod_{i<j}d(\Re z_{ij})\,d(\Im z_{ij}).
+ \tag{FD9}
+\]
+This also proves uniqueness. In particular the density is
+the same in these coordinates for the two real forms.
+
+Call a Haar measure on $G$ compact-dual normalized if its
+density at the identity relative to $\omega_{\mathfrak u(p,q)}$
+equals that of Haar probability measure on $U(n)$ relative
+to $\omega_{\mathfrak u(n)}$. Density may equivalently be
+defined by the limit of the ratio of the measures of
+exponential images of shrinking coordinate balls: the
+Jacobian is continuous and the derivative of the exponential
+map at zero is the identity.
+
+\begin{proposition}\label{fd-measure-match}
+There is exactly one compact-dual normalized Haar measure, and it is
+\[
+                             \mu_{\rm cd}=c_{p,q}\mu_0.
+ \tag{FD10}\label{fd-cd-measure}
+\]
+This is the source's measure specified by its compact
+probability and equal exponential-density conditions.
+\end{proposition}
+\begin{proof}
+For both groups the decomposition at the identity into
+the block-diagonal compact algebra and its complementary
+off-diagonal coordinates has
+\[
+          \omega_{\mathfrak g}
+                =2^{pq}\omega_{\mathfrak k}\,dZ.
+ \tag{FD11}
+\]
+Indeed (FD9) contributes one additional factor $2$ for
+each of the $pq$ cross-block complex entries.
+Let $b_K$ be the density of Haar probability measure on
+$K$ relative to $\omega_{\mathfrak k}$.
+For $G$, the local product map $(Z,k)\mapsto g_Zk$ has
+derivative the direct-sum identification at $(0,1)$.
+By (FD3)--(FD4), the identity density of $\mu_0$ is
+$b_K/2^{pq}$.
+For the compact group use the analogous section obtained
+by orthonormalizing the graph of $Z$; its derivative has
+off-diagonal blocks $Z,-Z^*$ and the same coordinate
+Jacobian. Formula (FD5) gives identity density
+$c_{p,q}b_K/2^{pq}$.
+Their ratio proves (FD10). All Haar measures on a fixed
+Lie group are positive scalar multiples of one another,
+so the density also proves uniqueness.
+\end{proof}
+
+\subsection{Classical representation-theoretic inputs}
+
+For a strongly continuous irreducible unitary discrete-series
+representation $\pi$ of $G$, its formal degree with respect to
+a Haar measure $\mu$ is the positive number $d_\mu(\pi)$ in
+Schur orthogonality; in particular
+\[
+  \int_G|\langle\pi(g)v,w\rangle|^2\,d\mu(g)
+      =d_\mu(\pi)^{-1}\|v\|^2\|w\|^2.
+ \tag{FD12}
+\]
+It follows directly that
+$d_{a\mu}(\pi)=a^{-1}d_\mu(\pi)$ for $a>0$.
+A discrete series is an irreducible unitary representation
+occurring as a closed subrepresentation of $L^2(G,\mu)$.
+
+We use the following classical facts. They are background
+theorems, not new deductions or unproved assertions from
+the submitted archive.
+
+\begin{enumerate}
+\item Harish--Chandra's classification and formal-degree theorem.
+Discrete series have regular integral Harish--Chandra parameters,
+considered modulo the compact Weyl group.
+For fixed $G$ and $\mu$ there is a positive constant $b_\mu$,
+independent of the parameter and its chamber, such that
+\[
+                    d_\mu(\pi_\lambda)
+                       =b_\mu\prod_{i<j}|\lambda_i-\lambda_j|.
+ \tag{FD13}\label{fd-classical-hc}
+\]
+Here the integrality convention for $U(p,q)$ is
+$\lambda_i-(n-1)/2\in\mathbb Z$.
+The constant is left undetermined at this stage.
+\cite[Theorem 16, \S41]{harish-chandra-ds-ii}
+\item Blattner's formula: choose the positive roots making
+$\lambda$ dominant, let $\rho_{\rm c}$ and $\rho_{\rm n}$
+be the half sums of its compact and noncompact positive
+roots, and let $P_{\rm n}(\beta)$ count the expressions of
+$\beta$ as a sum of noncompact positive roots. For a
+compact-dominant integral highest weight $\mu$, its
+multiplicity is
+\[
+ m_\mu(\pi_\lambda)=
+  \sum_{w\in W_K}\operatorname{sgn}(w)
+       P_{\rm n}\bigl(w(\mu+\rho_{\rm c})
+                                -\lambda-\rho_{\rm n}\bigr).
+ \tag{FD14}\label{fd-blattner}
+\]
+The partition function is finite because these roots lie
+in an open half-space.
+\cite[III.1, theorem (2)]{duflo-heckman-vergne}
+The stated highest-weight convention is also checked
+against the explicit $U(p,q)$ convention in
+\cite[\S2.2]{baldoni-vergne}.
+\item The characterization by a compact type
+\cite[Theorem 1.1]{parthasarathy-minimal}:
+put $\nu=\lambda-\rho$, with $\rho=\rho_{\rm c}+\rho_{\rm n}$,
+and suppose $\nu$ is dominant integral. An irreducible
+unitary representation containing the compact type of
+highest weight $\nu+2\rho_{\rm n}$, and containing no
+compact-dominant type $\nu+2\rho_{\rm n}-\alpha$ for a
+noncompact positive root $\alpha$, is $\pi_\lambda$.
+\end{enumerate}
+
+The semisimple versions apply to $U(p,q)$ through the
+finite central covering $SU(p,q)\times U(1)\to U(p,q)$.
+An irreducible unitary representation has a scalar
+central character. Its restriction to $SU(p,q)$ is
+irreducible, since a subspace invariant under that group
+is then invariant under the whole group.
+The character on the compact center has absolute value one;
+probability measure on that center changes no
+matrix-coefficient norm. The possible fixed measure factor
+in the covering is absorbed in $b_\mu$ in (FD13).
+The compact-type and root statements restrict to the
+trace-zero hyperplane; all root differences have sum zero,
+so adding the fixed central weight leaves every comparison
+unchanged. The complexification of $SU(p,q)$ is $SL_n(\mathbb C)$,
+which is simply connected, as required in the third input.
+
+\subsection{An explicit scalar discrete series fixes the constant}
+
+Let $s$ be an integer with $s>n-1$, and put
+$\alpha=s-n>-1$. Consider the Hilbert space
+\[
+ \mathcal H_s=\left\{f\text{ holomorphic on }\mathcal B_{p,q}:
+        \|f\|_s^2=
+         \int_{\mathcal B_{p,q}}|f(Z)|^2
+                         \det(I_q-Z^*Z)^{s-n}\,dZ<\infty\right\}.
+ \tag{FD15}
+\]
+It is a closed subspace of the indicated $L^2$ space.
+To see this, the mean-value estimate on a small ball about
+any interior point, where the weight is bounded below,
+controls point evaluation uniformly on compact subsets.
+An $L^2$-Cauchy sequence of holomorphic functions therefore
+converges locally uniformly to a holomorphic function,
+which represents its $L^2$ limit. In particular every
+point evaluation is continuous.
+
+For $g\in G$ define $j(g,Z)=\det(CZ+D)$, and set
+\[
+       (\pi_s(g)f)(Z)=j(g^{-1},Z)^{-s}f(g^{-1}\cdot Z).
+ \tag{FD16}
+\]
+The exponent is integral, so no choice of branch is involved.
+
+\begin{lemma}\label{fd-scalar-model}
+The representation $\pi_s$ is irreducible, unitary and
+belongs to the discrete series. If
+$I_s=I_{p,q}(s-n)$ is the integral in
+\eqref{fd-ball-integral}, then
+\[
+                    d_{\mu_0}(\pi_s)=I_s^{-1}
+                      =\pi^{-pq}
+                        \prod_{i=1}^p\prod_{j=1}^q(s-i-j+1).
+ \tag{FD17}\label{fd-scalar-degree}
+\]
+\end{lemma}
+\begin{proof}
+The identity
+$j(gh,Z)=j(g,h\cdot Z)j(h,Z)$ proves the representation
+law. Equations (FD6) and the Jacobian calculation prove
+unitarity after a change of variables in (FD15).
+The representation is strongly continuous: on a compact
+subset of the ball the transformed holomorphic function
+converges uniformly as $g\to1$. In the inner product with
+a fixed $f$, the integral over the complementary tail is
+uniformly bounded by its $L^2$ norm times $\|f\|_s$.
+Letting that tail tend to zero proves
+$\langle\pi_s(g)f,f\rangle\to\|f\|_s^2$, and unitarity
+then gives norm convergence.
+
+The constant function $1$ has norm squared $I_s$.
+Averaging over the scalar rotations $Z\mapsto e^{it}Z$
+and using the one-variable Cauchy formula gives
+\[
+                         \langle f,1\rangle_s=I_s f(0),
+ \tag{FD18}
+\]
+with the inner product linear in the first argument.
+Fubini is legitimate because $I_s<\infty$ and
+$\int|f|\,\det(I-Z^*Z)^{s-n}\le\sqrt{I_s}\|f\|_s$.
+Put $v=I_s^{-1/2}1$. For $Z=g\cdot0$, (FD16)--(FD18) give
+\[
+ |\langle f,\pi_s(g)v\rangle_s|^2
+       =I_s|j(g,0)|^{-2s}|f(Z)|^2
+       =I_s\det(I_q-Z^*Z)^s|f(Z)|^2.
+ \tag{FD19}
+\]
+Thus the translates of $v$ span a dense subspace: a function
+orthogonal to all of them vanishes at every point.
+
+For $k=\operatorname{diag}(A,D)\in K$, the constant
+has character $\det(D)^s$. The subspace with this
+character is one-dimensional. Indeed its functions
+are invariant under $Z\mapsto e^{it}Z$, and their
+holomorphic power series have no terms of positive degree.
+An orthogonal projection onto a closed invariant
+subspace commutes with $K$, hence sends $v$ to either
+$0$ or $v$. It then has the same alternative on every
+translate of $v$, proving irreducibility by density.
+
+Integrating (FD19) with (FD3)--(FD4) gives
+\[
+               \int_G|\langle f,\pi_s(g)v\rangle_s|^2\,d\mu_0(g)
+                                  =I_s\|f\|_s^2.
+ \tag{FD20}
+\]
+Consequently $f\mapsto I_s^{-1/2}
+\langle f,\pi_s(\,\cdot\,)v\rangle_s$ is an isometric
+intertwining map into the left regular representation,
+with closed image. This proves the discrete-series claim.
+Taking $f=v$ in (FD20) and comparing with (FD12) gives
+$d_{\mu_0}(\pi_s)=I_s^{-1}$.
+Finally, reversal of the factors in
+\eqref{fd-ball-integral} gives
+\[
+ I_s=\pi^{pq}\prod_{j=0}^{q-1}
+                       \frac{\Gamma(s-p-j)}{\Gamma(s-j)}.
+\]
+The gamma recurrence, obtained by integration by parts,
+now proves (FD17).
+\end{proof}
+
+Its Harish--Chandra parameter is also explicit. In the
+complexified Lie algebra with upper triangular positive
+root spaces, differentiating (FD16) shows that the
+constant vector is killed by every positive root vector
+and has highest weight
+\[
+                 \Lambda=(\underbrace{0,\ldots,0}_{p},
+                            \underbrace{s,\ldots,s}_{q}).
+ \tag{FD21}
+\]
+For a cross-block upper root vector the derivative is a
+negative coordinate derivative, so it kills a constant;
+compact upper root vectors kill it as well.
+The diagonal calculation gives $0$ in the first block
+and $s$ in the second. The usual highest-weight
+infinitesimal character is $\Lambda+\rho$, where
+$\rho_i=(n+1)/2-i$. This follows from the
+Harish--Chandra isomorphism, or from the ordered Capelli
+eigenvalue calculation on a highest vector.
+Only the unordered tuple is needed here.
+Its within-block Vandermonde factors are $s_p,s_q$, and
+its cross-block factors have absolute values
+$s-p-j+i$ for $1\le i\le p$, $1\le j\le q$.
+All are positive because $s>n-1$. Hence
+\[
+ \prod_{i<j}|(\Lambda+\rho)_i-(\Lambda+\rho)_j|
+       =s_ps_q\prod_{i=1}^p\prod_{j=1}^q(s-i-j+1).
+ \tag{FD22}
+\]
+
+\begin{theorem}\label{fd-formula}
+For every discrete series of $U(p,q)$ with
+Harish--Chandra parameter $\lambda$,
+\begin{equation}\label{fd-exact}
+            d_{\mu_{\rm cd}}(\pi_\lambda)
+                 =\frac{\prod_{i<j}|\lambda_i-\lambda_j|}{s_n}.
+\end{equation}
+No extra lower bound on the noncompact root gaps is needed
+in this classical argument.
+\end{theorem}
+\begin{proof}
+Comparing (FD17), (FD22) and the parameter-independent
+constant in (FD13) gives
+$b_{\mu_0}=\pi^{-pq}/(s_ps_q)$.
+Divide by $c_{p,q}$ using (FD10) and the scaling
+rule following (FD12). The result is $b_{\mu_{\rm cd}}=1/s_n$.
+\end{proof}
+
+\paragraph{Compact signatures.}
+The same formula holds when $pq=0$. In this case the group
+is $U(n)$, and its compact-dual normalized Haar measure is
+its probability measure. An irreducible unitary representation
+of a compact group is finite dimensional. Schur orthogonality
+for probability measure makes its formal degree its dimension.
+If $\mu$ is its dominant integral highest weight and
+$\lambda=\mu+\rho$, Weyl's dimension formula gives
+\[
+ \dim V_\mu
+   =\prod_{i<j}\frac{\mu_i-\mu_j+j-i}{j-i}
+   =\frac{\prod_{i<j}(\lambda_i-\lambda_j)}{s_n}.
+\]
+The equality $\prod_{i<j}(j-i)=s_n$ follows by grouping
+the factors with fixed $j$. This is also the dimension
+formula proved in Section~\ref{cd-section}.
+For $n=0$ the group is trivial, its irreducible representation
+is one dimensional, and both the empty Vandermonde and
+$s_0$ are one. Thus its formal degree is one.
+
+\subsection{Checking the source's compact-type definition}
+
+Now allow the signs $\varepsilon_i\in\{1,-1\}$ to be in
+any order, and suppose
+\[
+             \lambda_1>\cdots>\lambda_n,\qquad
+             \lambda_i-(n-1)/2\in\mathbb Z.
+ \tag{FD23}
+\]
+Positive roots are $e_i-e_j$ for $i<j$. A positive root
+is compact if $\varepsilon_i=\varepsilon_j$ and
+noncompact otherwise. Use their half sums
+$\rho_{\rm c},\rho_{\rm n}$ and put
+\[
+ \rho=\rho_{\rm c}+\rho_{\rm n},\quad
+ \rho_i=(n+1)/2-i,\quad
+ \mu_0=\lambda+\rho_{\rm n}-\rho_{\rm c}.
+ \tag{FD24}
+\]
+The compact Weyl group permutes the indices of each sign.
+A compact highest weight $\mu$ is dominant when
+$\mu_i\ge\mu_j$ for $i<j$ of the same sign.
+The squared norm used in the source is
+$\|\mu+2\rho_{\rm c}\|^2=\sum_i(\mu_i+2\rho_{{\rm c},i})^2$.
+
+\begin{proposition}\label{fd-lowest-type}
+The classical representation $\pi_\lambda$ contains the
+compact type $\mu_0$ with multiplicity one. Every other
+compact highest weight $\mu$ occurring in it satisfies
+\[
+             \|\mu+2\rho_{\rm c}\|^2
+                        >\|\mu_0+2\rho_{\rm c}\|^2.
+ \tag{FD25}
+\]
+Conversely, an irreducible unitary representation containing
+the type $\mu_0$ and satisfying the corresponding weak
+minimum inequality for all its compact types is
+$\pi_\lambda$.
+\end{proposition}
+\begin{proof}
+If $pq=0$, then $G=K$ and $\mu_0=\lambda-\rho$.
+The corresponding compact representation has just this
+one compact type, and any irreducible representation
+containing it is that representation. This includes the
+trivial group when $n=0$. We may therefore assume $pq>0$.
+The strict integral gaps imply $\lambda_i-\lambda_j\ge j-i$.
+For indices of the same sign let $b_{ij}$ count the
+opposite-sign indices strictly between them. Directly
+from the half sums,
+\[
+ \rho_{{\rm c},i}-\rho_{{\rm c},j}=j-i-b_{ij},\qquad
+ \rho_{{\rm n},i}-\rho_{{\rm n},j}=b_{ij}.
+\]
+Thus
+$\mu_{0,i}-\mu_{0,j}=\lambda_i-\lambda_j-(j-i)+2b_{ij}\ge0$.
+Also $\mu_0=\lambda+\rho-2\rho_{\rm c}$ is integral:
+$\lambda_i+\rho_i\in\mathbb Z$ and
+$2\rho_{{\rm c},i}\in\mathbb Z$.
+The tuple $\xi=\lambda+\rho_{\rm n}=\mu_0+\rho_{\rm c}$
+is strictly decreasing within each sign.
+
+For two tuples strictly decreasing within each sign, their
+scalar product strictly decreases when one tuple is
+permuted by a nonidentity element of $W_K$.
+This is the rearrangement inequality: swapping an inverted
+pair changes the scalar product by
+$(a_i-a_j)(b_i-b_j)>0$, and repeated swaps sort each block.
+Consequently, for $w\ne1$,
+\[
+                       \langle\lambda,w\xi-\xi\rangle<0.
+\]
+Every nonzero sum of positive noncompact roots instead
+has positive scalar product with $\lambda$.
+In (FD14) at $\mu=\mu_0$, only the identity permutation
+can therefore contribute, and it contributes
+$P_{\rm n}(0)=1$. This proves occurrence and multiplicity.
+
+If $m_\mu(\pi_\lambda)>0$, some term of (FD14) is nonzero.
+For its permutation $w$, write
+\[
+          w(\mu+\rho_{\rm c})=\lambda+\rho_{\rm n}+\beta,
+ \qquad \beta\in\sum_{\alpha>0,\ {\rm noncompact}}\mathbb N\alpha.
+\]
+Put $x=\mu+\rho_{\rm c}$. The weak rearrangement
+inequality applied within each sign gives
+\begin{align*}
+ \|\mu+2\rho_{\rm c}\|^2
+   &=\|x\|^2+2\langle x,\rho_{\rm c}\rangle+\|\rho_{\rm c}\|^2\\
+   &\ge\|wx+\rho_{\rm c}\|^2
+     =\|\lambda+\rho+\beta\|^2
+     \ge\|\lambda+\rho\|^2.
+\end{align*}
+The final inequality is strict if $\beta\ne0$, since
+$\lambda+\rho$ has positive scalar product with every
+positive root. If $\beta=0$, the two compact-dominant
+tuples $x,\xi$ in the same $W_K$-orbit are equal, so
+$\mu=\mu_0$. This proves (FD25).
+
+For the converse, put $\nu=\lambda-\rho$. It is dominant
+integral by (FD23). For a positive noncompact root
+$\alpha=e_i-e_j$,
+\[
+ \|\mu_0-\alpha+2\rho_{\rm c}\|^2
+       -\|\mu_0+2\rho_{\rm c}\|^2
+       =-2\langle\lambda+\rho,\alpha\rangle+2<0.
+ \tag{FD26}
+\]
+Indeed $\lambda_i-\lambda_j\ge j-i\ge1$, and
+$\rho_i-\rho_j=j-i\ge1$.
+Whenever $\mu_0-\alpha$ is compact dominant, its occurrence
+would contradict the assumed minimum. All the hypotheses
+of the stated compact-type characterization apply, with
+$\nu+2\rho_{\rm n}=\mu_0$. It follows that the representation
+is $\pi_\lambda$.
+\end{proof}
+
+\begin{corollary}\label{fd-source}
+Suppose the source's Haar and representation data satisfy
+their stated identifications: its measure is compact-dual
+normalized; its representation is nonzero, irreducible,
+unitary, strongly continuous and square integrable; and
+it contains the compact type $\mu_0$ of (FD24), with
+minimum squared norm as above. Then its formal degree
+$d_\lambda$ satisfies
+\[
+                  s_n d_\lambda
+                      =\prod_{i<j}(\lambda_i-\lambda_j).
+ \tag{FD27}
+\]
+In particular the formal-degree assumption
+\eqref{as-formal-degree-assumption} holds with equality
+before its factor $1/2$ is inserted.
+\end{corollary}
+\begin{proof}
+The source's equal-density measure conditions are exactly
+(FD8)--(FD10), so Proposition~\ref{fd-measure-match}
+identifies its Haar measure. Its compact-type conditions
+are exactly those in Proposition~\ref{fd-lowest-type}.
+Apply Theorem~\ref{fd-formula}; strict decrease removes
+the absolute values.
+
+There is also a direct way to apply the source's numerical
+identification of its degree. That identification quantifies
+over every representation with the specified properties
+and every positive formal degree satisfying Schur
+orthogonality. The classical $\pi_\lambda$ exists and
+has those properties by (FD14) and
+Proposition~\ref{fd-lowest-type}. Substituting this one
+representation gives the same value for the stipulated
+degree. Thus no inference from an empty class of
+representations is used.
+\end{proof}
+
+\subsection{Normalization checks and scope}
+
+For $p=q=1$, one has $c_{1,1}=1/\pi$, and the scalar
+parameter difference is $s-1$. Equations (FD17) and
+\eqref{fd-exact} give
+\[
+               d_{\mu_0}=(s-1)/\pi,\qquad
+               d_{\mu_{\rm cd}}=s-1.
+\]
+More generally the constant is $s_n/(\pi^{pq}s_ps_q)$,
+not just $\pi^{-pq}$. A claim that (FD27) holds for an
+arbitrary Haar measure is false: replacing the measure
+by twice itself divides its formal degree by two.
+The source explicitly fixes the measure and is not
+subject to this objection.
+
+The compact-type condition also has real content.
+For $U(1,1)$ the two discrete series in a regular
+infinitesimal-character packet have different smallest
+torus weights. Replacing the stipulated type by an
+arbitrary occurring type would not justify the
+parameter identification above. The proof retains
+both its occurrence and its minimum property.
+
+This section supplies the precise formal-degree value
+and its normalization from the three named classical
+theorems. It does not reprove those deep theorems or
+claim a line-by-line reconstruction of the source's
+independent discrete-series construction. It closes
+the formal-degree input to the elementary size estimates.
+The global multiplicity bound, the integrated Jacquet
+identities and the arithmetic theta moments remain
+separate questions.
+
+
+% Rational orbital estimates and the complex multiplicity comparison.
+% Labels in this fragment have the prefix amb-.

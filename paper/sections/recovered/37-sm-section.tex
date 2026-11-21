@@ -1,0 +1,299 @@
+\section{Integral spanning by products of initial minors}
+\label{sm-section}
+
+The polynomial module in Section~\ref{coef:section} has an additional
+integral description needed for branching: its elements are integral
+linear combinations of products of initial-column minors. The submitted
+proof obtains this description from a two-column argument and
+semistandard tableaux.\cite{alpo-uniform-source}
+We give a direct proof of the required spanning statement. The only
+dimension calculation takes place over characteristic zero; the final
+subtraction uses monic polynomials and therefore introduces no
+denominators.
+
+\subsection{A two-column leading-term lemma}
+
+Let $d_1,\ldots,d_N$ be nonnegative integers. In the polynomial ring
+$\mathbb Q[x_1,\ldots,x_N,y_1,\ldots,y_N]$, let $V$ be the
+finite-dimensional space in which the total degree in $x_i,y_i$ is
+$d_i$ for every $i$. Put
+\[
+ E=\sum_{i=1}^N x_i\frac{\partial}{\partial y_i},\qquad
+ F=\sum_{i=1}^N y_i\frac{\partial}{\partial x_i},\qquad
+ H=\sum_{i=1}^N
+ \left(x_i\frac{\partial}{\partial x_i}
+             -y_i\frac{\partial}{\partial y_i}\right).
+\]
+These operators preserve $V$ and satisfy $EF-FE=H$.
+For an integer $h$, denote the $h$-eigenspace of $H$ by $V_h$.
+Thus a monomial $x^\alpha y^\beta$ belongs to $V_h$ precisely when
+\[
+ \alpha_i+\beta_i=d_i\quad(1\le i\le N),
+ \qquad \sum_i(\alpha_i-\beta_i)=h.
+\]
+Order monomials lexicographically with the variables in the order
+\begin{equation}\label{sm-two-order}
+                   x_1>\cdots>x_N>y_1>\cdots>y_N.
+\end{equation}
+The leading monomial is the greatest monomial with nonzero coefficient
+in this order.
+
+\begin{lemma}\label{sm-two-column}
+Let $h\ge0$, and let $0\ne f\in V_h$ satisfy $Ef=0$.
+If $x^\alpha y^\beta$ is its leading monomial, then
+\begin{equation}\label{sm-ballot}
+                \sum_{j=1}^i\beta_j
+                    \le\sum_{j=1}^{i-1}\alpha_j
+                    \qquad(1\le i\le N).
+\end{equation}
+The same assertion holds over any field of characteristic zero.
+\end{lemma}
+\begin{proof}
+We first compute the dimension of the kernel. Complexify $V$ and make
+its monomials orthogonal, with
+\[
+                \|x^\alpha y^\beta\|^2
+                           =\prod_i\alpha_i!\,\beta_i!.
+\]
+Direct comparison of the coefficients of two monomials gives
+$E^*=F$. For example, the contribution involving index $i$ uses
+\[
+ \beta_i(\alpha_i+1)!\,(\beta_i-1)!
+                  =(\alpha_i+1)\alpha_i!\,\beta_i!.
+\]
+For $v\in V_{h+2}$, the commutator identity consequently gives
+\[
+            \|Fv\|^2=\|Ev\|^2+(h+2)\|v\|^2.
+\]
+Since $h+2>0$, the map $F:V_{h+2}\longrightarrow V_h$ is
+injective. Its adjoint $E:V_h\longrightarrow V_{h+2}$ is therefore
+surjective. The matrices have rational coefficients, so their ranks
+over $\mathbb Q$ and $\mathbb C$ agree. It follows that
+\begin{equation}\label{sm-kernel-dimension}
+       \dim_{\mathbb Q}\ker(E|_{V_h})
+                       =\dim_{\mathbb Q}V_h-\dim_{\mathbb Q}V_{h+2}.
+\end{equation}
+
+We count the difference on the right without a decomposition theorem
+for representations. For $a\ge0$ define the Laurent polynomial
+\[
+                     \chi_a(T)=T^a+T^{a-2}+\cdots+T^{-a}.
+\]
+An elementary coefficient calculation gives
+\begin{equation}\label{sm-character-product}
+              \chi_a(T)\chi_b(T)
+                 =\sum_{s=0}^{\min(a,b)}\chi_{a+b-2s}(T).
+\end{equation}
+Indeed, for $0\le t\le a+b$, the coefficient of $T^{a+b-2t}$
+on either side is $1+\min(a,b,t,a+b-t)$; all other exponents have
+zero coefficient. On the left this counts pairs $(j,k)$ with
+$0\le j\le a$, $0\le k\le b$ and $j+k=t$. On the right it
+counts $s$ with $0\le s\le\min(a,b)$ and $s\le t\le a+b-s$.
+
+The dimension of $V_h$ is the coefficient of $T^h$ in
+$\prod_i\chi_{d_i}(T)$. Iterating \eqref{sm-character-product},
+starting from $h_0=0$, expresses this product as a sum of the
+polynomials $\chi_{h_N}(T)$, one for each sequence
+\begin{equation}\label{sm-path}
+ 0\le\beta_i\le\min(d_i,h_{i-1}),\qquad
+ \alpha_i=d_i-\beta_i,\qquad
+ h_i=h_{i-1}+d_i-2\beta_i
+ \quad(1\le i\le N).
+\end{equation}
+Every $h_i$ is nonnegative. For $h\ge0$, the coefficient of $T^h$
+minus the coefficient of $T^{h+2}$ in $\chi_k(T)$ is one if $k=h$
+and zero otherwise. Therefore \eqref{sm-kernel-dimension} is the
+number of sequences \eqref{sm-path} with $h_N=h$.
+Since
+\[
+                    h_{i-1}=
+                         \sum_{j<i}(\alpha_j-\beta_j),
+\]
+these sequences are exactly the nonnegative exponent arrays with the
+prescribed row degrees and total weight $h$ which satisfy
+\eqref{sm-ballot}.
+
+For each such array we construct a monic polynomial in the kernel
+with leading monomial $x^\alpha y^\beta$. Process the indices
+$i=1,\ldots,N$ in order. Before processing $i$, retain a product of
+brackets $x_jy_k-x_ky_j$ with $j<k<i$, together with
+$h_{i-1}$ unpaired factors $x_j$, all with $j<i$.
+Choose $\beta_i$ of the unpaired factors and replace each chosen
+$x_j$ by
+\[
+                            x_jy_i-x_iy_j.
+\]
+Then adjoin $\alpha_i$ factors $x_i$. The choice is possible because
+$\beta_i\le h_{i-1}$; the number of unpaired factors afterwards is
+$h_{i-1}-\beta_i+\alpha_i=h_i$. This starts with the empty product
+at $i=1$, when \eqref{sm-ballot} says $\beta_1=0$.
+
+Every bracket and every unpaired $x_j$ is killed by $E$, so their
+final product is killed by $E$. Its row degrees and weight are the
+prescribed ones. Because $j<i$, the leading term of the displayed
+bracket in \eqref{sm-two-order} is $x_jy_i$, with coefficient one.
+Consequently the final product has leading monomial
+$x^\alpha y^\beta$ and leading coefficient one.
+Choose one such product for each exponent array satisfying
+\eqref{sm-ballot}. Distinct choices of array give distinct leading
+monomials, hence linearly independent polynomials. Their number is
+the dimension in \eqref{sm-kernel-dimension}; they form a
+$\mathbb Q$-basis of the kernel.
+
+In a nonzero linear combination of these polynomials, the greatest
+of their leading monomials with nonzero coefficient cannot cancel:
+every monomial in the other participating polynomials is smaller.
+This proves \eqref{sm-ballot} for the leading monomial of $f$.
+Finally, the matrix of $E$ and all the constructed polynomials have
+integer coefficients. The rank of that matrix is unchanged under
+extension from $\mathbb Q$ to any characteristic-zero field.
+The same products are therefore a basis of the corresponding kernel
+over that field, and the leading-monomial conclusion is unchanged.
+\end{proof}
+
+\subsection{Several columns and integral subtraction}
+
+Fix integers $N\ge r\ge1$ and a partition
+$\mu_1\ge\cdots\ge\mu_r\ge0$. Let $X=(x_{ij})$ be an $N$ by $r$
+matrix of indeterminates. For a characteristic-zero integral domain
+$R$, define $\nabla_\mu(R)$ to be the set of polynomials in $R[X]$
+which are homogeneous of degree $\mu_j$ in each column $j$ and
+satisfy
+\begin{equation}\label{sm-column-invariance}
+          f\bigl(X(I+tE_{lj})\bigr)=f(X)
+                    \qquad(1\le l<j\le r)
+\end{equation}
+as polynomial identities in the additional indeterminate $t$.
+Here $E_{lj}$ is the elementary matrix, so this substitution adds
+$t$ times column $l$ to column $j$.
+Use the lexicographic order
+\begin{equation}\label{sm-column-order}
+ x_{11}>x_{21}>\cdots>x_{N1}>
+ x_{12}>\cdots>x_{N2}>\cdots>x_{1r}>\cdots>x_{Nr}.
+\end{equation}
+For a strictly increasing row sequence
+$I=(i_1<\cdots<i_s)$, $1\le s\le r$, put
+\[
+               \Delta_I(X)=
+                 \det(x_{i_a,b})_{1\le a,b\le s}.
+\]
+This is an initial-column minor of height $s$.
+
+\begin{lemma}\label{sm-leading-interlacing}
+If $0\ne f\in\nabla_\mu(R)$ has leading monomial
+$\prod_{i,j}x_{ij}^{a_{ij}}$, then for $j<r$ and $1\le i\le N$,
+\begin{equation}\label{sm-interlacing}
+                   \sum_{b\le i}a_{b,j+1}
+                         \le\sum_{b<i}a_{b,j}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Pass to the fraction field of $R$. Differentiating
+\eqref{sm-column-invariance} at $t=0$ shows that
+\[
+                       E_jf=0,\qquad
+              E_j=\sum_i x_{ij}\frac{\partial}{\partial x_{i,j+1}}.
+\]
+Decompose $f$ according to the monomial in all columns other than
+$j,j+1$ and according to the degrees
+$d_i$ in $x_{ij},x_{i,j+1}$. The operator $E_j$ preserves each
+of these finite components, and hence kills each one.
+In particular it kills the nonzero component containing the leading
+monomial of $f$. After removing its fixed monomial in the other
+columns, this component has the two-column degrees $\mu_j,\mu_{j+1}$,
+so its weight is $h=\mu_j-\mu_{j+1}\ge0$.
+The restriction of \eqref{sm-column-order} to the two columns is
+exactly \eqref{sm-two-order}. Its leading monomial is the part of
+the leading monomial of $f$ in these two columns. Applying
+Lemma~\ref{sm-two-column} gives \eqref{sm-interlacing}.
+\end{proof}
+
+\begin{lemma}\label{sm-matching-minors}
+Suppose a nonnegative integer array $(a_{ij})$ has column sums
+$\mu_j$ and satisfies \eqref{sm-interlacing}. There is a product of
+initial-column minors with the same column degrees, leading monomial
+$\prod_{i,j}x_{ij}^{a_{ij}}$, and leading coefficient one.
+It has exactly $\mu_s-\mu_{s+1}$ factors of height $s$, where
+$\mu_{r+1}=0$.
+\end{lemma}
+\begin{proof}
+For each column $j$, form the nondecreasing list
+\[
+                       w_j(1),\ldots,w_j(\mu_j)
+\]
+in which the row index $i$ occurs $a_{ij}$ times. If
+$1\le t\le\mu_{j+1}$ and $w_{j+1}(t)=i$, there are at least
+$t$ entries of the list for column $j+1$ at most $i$.
+By \eqref{sm-interlacing}, the list for column $j$ has at least
+$t$ entries strictly less than $i$. Thus
+\[
+                         w_j(t)<w_{j+1}(t).
+\]
+For each $1\le t\le\mu_1$, put
+\[
+ s_t=\max\{j:t\le\mu_j\},\qquad
+ I_t=(w_1(t),\ldots,w_{s_t}(t)).
+\]
+The preceding inequalities make $I_t$ a strictly increasing row
+sequence. Consider $P=\prod_{t=1}^{\mu_1}\Delta_{I_t}(X)$.
+In the determinant of any initial-column minor, its diagonal term
+is the greatest term in \eqref{sm-column-order}: column one chooses
+the smallest available row index, then column two chooses the
+smallest remaining one, and so on. Its coefficient is one.
+Leading monomials and coefficients multiply, so $P$ has the claimed
+leading monomial and leading coefficient one. A factor has height
+$s$ exactly when $\mu_{s+1}<t\le\mu_s$; this proves the last
+assertion as well as the column degrees. When $\mu_1=0$, all lists
+are empty and $P=1$ has the required properties.
+\end{proof}
+
+\begin{theorem}[Integral spanning by initial minors]
+\label{sm-initial-minors}
+For $N\ge r\ge1$ and a partition $\mu$ as above,
+$\nabla_\mu(\mathbb Z)$ is spanned over $\mathbb Z$ by products
+of initial-column minors having exactly $\mu_s-\mu_{s+1}$ factors
+of height $s$, for $1\le s\le r$ and $\mu_{r+1}=0$.
+The same equality of modules holds over any characteristic-zero
+integral domain $R$, with the identical integral polynomials as
+generators and coefficients in $R$.
+\end{theorem}
+\begin{proof}
+An initial-column minor of height $s$ is unchanged under every
+substitution in \eqref{sm-column-invariance}. If $j>s$, column $j$
+does not occur. If $j\le s$, both columns $l<j$ occur, and the
+substitution is a determinant-preserving column operation.
+The indicated product of minors therefore belongs to
+$\nabla_\mu(R)$, since its degree in column $j$ is
+\[
+                     \sum_{s\ge j}(\mu_s-\mu_{s+1})=\mu_j.
+\]
+
+Conversely, let $f\in\nabla_\mu(R)$ be nonzero, with leading
+coefficient $c\in R$ and leading exponent array $(a_{ij})$.
+Lemma~\ref{sm-leading-interlacing} and
+Lemma~\ref{sm-matching-minors} supply a product $P$ of the required
+minors with that leading monomial and leading coefficient one.
+Then $f-cP$ still belongs to $\nabla_\mu(R)$ and, unless it is
+zero, has a strictly smaller leading monomial.
+There are only finitely many monomials with the fixed column degrees
+$\mu_1,\ldots,\mu_r$. Repeating this subtraction must therefore
+terminate at zero. It expresses $f$ as a linear combination over
+$R$ of the specified integral products. Every subtraction used a
+leading coefficient in $R$ and a monic polynomial; no division in
+$R$ occurred. Taking $R=\mathbb Z$ proves the integral assertion.
+\end{proof}
+
+The case of no columns consists of constants and is represented by
+the empty product. Zero parts of $\mu$ likewise cause no exception.
+This argument proves exactly the integral spanning input and its
+characteristic-zero extension. It does not assert that differentiating
+the column identities suffices in positive characteristic: in
+characteristic $p$, for example, $y^p$ is killed by
+$x\partial_y$ but is not invariant under $y\mapsto y+tx$ as a
+polynomial identity. The submitted source states a more general
+result for domains of arbitrary characteristic; the present proof
+does not replace that additional assertion. All coefficient lattices
+to which we apply Theorem~\ref{sm-initial-minors} are in
+characteristic zero.
+
+

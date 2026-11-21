@@ -1,0 +1,474 @@
+\section{The determinant identity for the terminal differential operators}
+\label{rq-section}
+
+The terminal matrix is not a matrix of commuting operators.
+Its determinant identity has a spectral shift, and its
+coefficients are functions which the derivatives can differentiate.
+We prove the identity with both features retained.
+The proof uses quantum minors, elementary exterior algebra,
+and a polynomial cancellation argument.  It applies directly
+to smooth functions and does not require an approximation by
+regular functions.  The resulting identity is the source's
+terminal determinant formula \cite{alpo-uniform-source}.
+
+\subsection{Signed complementary minors}
+
+Let $n\geq2$, let $\mathcal A$ be a unital complex algebra, and let
+$E_{ab}\in\mathcal A$, $1\leq a,b\leq n$, satisfy
+\[
+ [E_{ab},E_{cd}]=\delta_{bc}E_{ad}-\delta_{da}E_{cb}.
+\]
+Use the ordered minors $Q_{I,J}(u)$ from
+\eqref{rt-minor}.  Put
+\[
+ T_{ab}(u)=u\delta_{ab}+E_{ab},\qquad
+ D(u)=Q_{\{1,\ldots,n\},\{1,\ldots,n\}}(u),
+ \qquad C_{ij}(u)=(-1)^{i+j}Q_{\widehat i,\widehat j}(u).
+\]
+For distinct pairs define
+\[
+ N_{iqjp}(u)=
+ \epsilon(i,q)\epsilon(j,p)(-1)^{i+q+j+p}
+ Q_{\widehat{i,q},\widehat{j,p}}(u),
+ \qquad
+ \epsilon(i,q)=
+ \begin{cases}1&i<q,\\-1&i>q.\end{cases}
+\]
+Set $N_{iqjp}=0$ when $i=q$ or $j=p$.
+All omission lists are increasing.  Empty minors are one.
+Here $C$ is indexed by the omitted row and omitted column;
+it has not been transposed into an adjugate matrix.
+
+We use the alternating and change-of-basis identities
+for quantum minors proved in Theorem~\ref{rp-capelli}.
+In particular $D(u)$ commutes with every $E_{ab}$:
+the full determinant is unchanged by conjugation of the
+generators, and differentiating this identity at the
+identity matrix gives the asserted commutators.
+It therefore commutes with every quantum minor.
+
+\begin{lemma}\label{rq-cofactor-expansions}
+For all indices and all $u\in\mathbb C$,
+\begin{align}
+ \sum_p C_{qp}(u)T_{cp}(u+1)
+       &=\delta_{cq}D(u+1),                 \label{rq-cofactor-one}\\
+ \sum_p N_{iqjp}(u)T_{cp}(u+1)
+       &=\delta_{cq}C_{ij}(u+1)
+                   -\delta_{ci}C_{qj}(u+1). \label{rq-cofactor-two}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The column expression for $Q$ and its reverse row
+expression \eqref{rc-row-form} give the usual four
+end-row and end-column expansions, with their displayed
+shifts.  For example, expansion in the last row, written
+with the last row factor on the right, gives
+\[
+ Q_{I,J}(v)=
+ \sum_{\beta=1}^{s}(-1)^{s+\beta}
+ Q_{I\setminus i_s,J\setminus j_\beta}(v-1)
+ T_{i_sj_\beta}(v).
+\]
+An arbitrary row can be moved to the last position;
+alternation contributes its permutation sign.
+Equivalently, one may put an arbitrary row first in the
+increasing-product row expression
+\[
+ Q_{I,J}(v)=
+ \sum_{\tau\in S_s}\operatorname{sgn}(\tau)
+ \prod_{\alpha=1}^{s}
+ T_{i_\alpha,j_{\tau(\alpha)}}(v-s+\alpha).
+\]
+This expression follows by reversing the row list in
+\eqref{rc-row-form} and using alternation.
+These expansions are identities in $\mathcal A$;
+they do not commute adjacent factors.
+
+For \eqref{rq-cofactor-one}, append row $c$ to the list
+with row $q$ removed, and expand along the appended row.
+If $c\ne q$, a row is repeated and the minor is zero.
+If $c=q$, moving that row back to its original position
+gives $D(u+1)$ with the sign already included in
+$C_{qp}$.
+
+For \eqref{rq-cofactor-two}, start instead with the row
+list omitting $i,q$ and the column list omitting $j$,
+append row $c$, and expand in that row.
+The result is zero unless $c=i$ or $c=q$.
+In those two cases moving the appended row into its
+increasing position gives respectively
+$-C_{qj}(u+1)$ and $C_{ij}(u+1)$.
+For precision, removing $q$ changes the position of
+an index $i$ to $i-\mathbf1_{i>q}$, and removing $j$
+changes the position of $p$ to $p-\mathbf1_{p>j}$.
+The two resulting signs are exactly
+$\epsilon(i,q)\epsilon(j,p)(-1)^{i+q+j+p}$.
+This verifies every sign in
+\eqref{rq-cofactor-two}, including the zero terms.
+\end{proof}
+
+\begin{theorem}\label{rq-jacobi}
+The signed quantum minors satisfy
+\begin{equation}\label{rq-jacobi-identity}
+ C_{ij}(u+1)C_{qp}(u)-C_{qj}(u+1)C_{ip}(u)
+                  =D(u+1)N_{iqjp}(u).
+\end{equation}
+No assumption that $\mathcal A$ is a domain is needed.
+\end{theorem}
+
+\begin{proof}
+Fix $i,q,j$ and let $Z_p$ be the difference of the
+two sides of \eqref{rq-jacobi-identity}.  Multiply
+$Z_p$ on the right by $T_{cp}(u+1)$ and sum over $p$.
+Lemma~\ref{rq-cofactor-expansions} gives
+\begin{align*}
+ \sum_p Z_pT_{cp}(u+1)
+ &=\delta_{cq}C_{ij}(u+1)D(u+1)
+       -\delta_{ci}C_{qj}(u+1)D(u+1)\\
+ &\quad-D(u+1)
+       \bigl(\delta_{cq}C_{ij}(u+1)
+                       -\delta_{ci}C_{qj}(u+1)\bigr)=0.
+\end{align*}
+The last equality uses the centrality of $D$.
+It remains to justify cancellation without assuming
+invertibility of the matrix $T$.
+
+Adjoin a central indeterminate $t$ and replace
+$E_{ab}$ by $E_{ab}+t\delta_{ab}$.
+These new generators satisfy the same Lie relations.
+The preceding calculation gives polynomials
+$Z_p(t)\in\mathcal A[t]$ satisfying
+\[
+ \sum_p Z_p(t)\bigl(E_{cp}+(u+1+t)\delta_{cp}\bigr)=0
+                       \qquad\text{for every }c.
+\]
+If some $Z_p(t)$ is nonzero, let $d$ be the largest
+degree of all of them.  The coefficient of $t^{d+1}$
+in the equation with index $c$ is exactly the
+degree-$d$ coefficient of $Z_c(t)$.  It vanishes
+for every $c$, a contradiction.  Thus all $Z_p(t)$
+are zero.  Substituting $t=0$ proves the theorem.
+\end{proof}
+
+\subsection{Moving the variable coefficients through a minor}
+
+Suppose $\mathcal A$ also contains elements
+$y_1,\ldots,y_n,\eta_1,\ldots,\eta_n$ such that
+\begin{equation}\label{rq-vector-laws}
+ [E_{ab},y_c]=-\delta_{ac}y_b,\qquad
+ [E_{ab},\eta_c]=\delta_{bc}\eta_a.
+\end{equation}
+Assume that all the $y$'s and $\eta$'s commute with
+one another.  They need not commute with the $E$'s.
+
+\begin{lemma}\label{rq-moving}
+Under these assumptions,
+\begin{align}
+ D(w)y_j
+       &=y_jD(w)-\sum_l y_lC_{jl}(w),          \label{rq-det-vector}\\
+ [C_{qp}(u),\eta_i]
+       &=\sum_a N_{aqip}(u)\eta_a,             \label{rq-minor-covector}\\
+ \sum_i\eta_iC_{ij}(u-1)
+       &=\sum_iC_{ij}(u)\eta_i,               \label{rq-shift-one}\\
+ \sum_a\eta_aN_{aqcp}(u-1)
+       &=\sum_aN_{aqcp}(u)\eta_a.             \label{rq-shift-two}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+For \eqref{rq-det-vector}, use the row expansion of
+$D(w)$ which puts row $j$ in the far-left factor:
+\[
+ D(w)=\sum_l(-1)^{j+l}
+                 T_{jl}(w-n+1)Q_{\widehat j,\widehat l}(w).
+\]
+Every generator in the smaller minor commutes with
+$y_j$, because its row is different from $j$.
+Commuting $y_j$ through the remaining factor gives
+$[T_{jl}(w-n+1),y_j]=-y_l$.
+This proves \eqref{rq-det-vector}.
+
+For \eqref{rq-minor-covector}, the assertion is zero
+if $i=p$, since column $p$ is absent.
+Otherwise expand the minor defining $C_{qp}(u)$
+in column $i$, putting that column factor on the right.
+All factors in the smaller minors commute with
+$\eta_i$ because their columns differ from $i$.
+The remaining commutator is
+$[T_{ai}(u-n+2),\eta_i]=\eta_a$.
+The position of $a$ after removing $q$ is
+$a-\mathbf1_{a>q}$ and that of $i$ after removing
+$p$ is $i-\mathbf1_{i>p}$.
+The signs from these positions, together with
+$(-1)^{q+p}$, are precisely those in
+$N_{aqip}(u)$.  This proves the second identity.
+
+Here is an exterior-algebra proof of both shift
+identities, including their parameter change.
+Adjoin symbols $\theta_1,\ldots,\theta_n$ commuting
+with $\mathcal A$ and satisfying
+$\theta_a\theta_b=-\theta_b\theta_a$ and $\theta_a^2=0$.
+Set
+\[
+ \beta_j(v)=\sum_a\theta_aT_{aj}(v),\qquad
+                    \eta=\sum_a\theta_a\eta_a.
+\]
+Relation \eqref{rq-vector-laws} gives, term by term,
+\[
+                   \beta_j(v)\eta=-\eta\beta_j(v-1).
+\]
+Indeed the commutator contribution is
+$\sum_a\theta_a\theta_j\eta_a=-\theta_j\eta$.
+Repeatedly using this equality yields
+\[
+ \beta_{j_1}(u)\beta_{j_2}(u-1)\cdots
+       \beta_{j_s}(u-s+1)\eta
+   =(-1)^s\eta\,\beta_{j_1}(u-1)\cdots\beta_{j_s}(u-s).
+\]
+The coefficient of
+$\theta_{i_1}\cdots\theta_{i_{s+1}}$ is
+\begin{equation}\label{rq-general-shift}
+ \sum_{\alpha=1}^{s+1}(-1)^{\alpha-1}
+       \eta_{i_\alpha}Q_{I\setminus i_\alpha,J}(u-1)
+  =
+ \sum_{\alpha=1}^{s+1}(-1)^{\alpha-1}
+       Q_{I\setminus i_\alpha,J}(u)\eta_{i_\alpha}.
+\end{equation}
+This follows directly from the column definition
+of the minors.  Taking $I$ to be the full index
+list and $J$ to omit $j$ proves
+\eqref{rq-shift-one}.  Taking $I$ to omit $q$
+and $J$ to omit $c,p$, then multiplying by the
+fixed omission signs, proves \eqref{rq-shift-two}.
+\end{proof}
+
+\subsection{The contracted determinant identity}
+
+For fixed complex vectors $x=(x_j)$ and
+$\xi=(\xi_i)$ define
+\begin{align*}
+ S(u;x,\xi)&=\sum_{i,j}\xi_i x_j C_{ij}(u),\\
+ H_y(u;\xi)&=\sum_{i,j}\xi_i y_j C_{ij}(u),\\
+ H_\eta(u;x)&=\sum_{i,j}x_j\eta_i C_{ij}(u),\\
+ H_{y\eta}(u)&=\sum_{i,j}\eta_i y_j C_{ij}(u),\\
+ H_2(u;x,\xi)&=
+ \sum_{\substack{i<i'\\j<j'}}(-1)^{i+i'+j+j'}
+  (\eta_i\xi_{i'}-\eta_{i'}\xi_i)
+  (y_jx_{j'}-y_{j'}x_j)
+            Q_{\widehat{i,i'},\widehat{j,j'}}(u).
+\end{align*}
+In every expression the coefficient precedes the minor.
+
+\begin{theorem}\label{rq-contracted}
+One has the identity in $\mathcal A$
+\begin{equation}\label{rq-contracted-identity}
+ D(u+1)H_2(u-1;x,\xi)
+     +H_y(u+1;\xi)H_\eta(u-1;x)
+                    =H_{y\eta}(u)S(u;x,\xi).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Both sides are bilinear in $x,\xi$, so fix $p,q$
+and take $x_j=\delta_{jp}$, $\xi_i=\delta_{iq}$.
+For brevity write
+\[
+ C^+_{ij}=C_{ij}(u+1),\quad
+ C^0_{ij}=C_{ij}(u),\quad C^-_{ij}=C_{ij}(u-1),
+ \quad N^0_{aqcp}=N_{aqcp}(u).
+\]
+Expanding the two alternating factors in $H_2$
+and grouping their four terms gives
+\[
+ H_2(u-1;x,\xi)=\sum_{a,c}\eta_a y_cN_{aqcp}(u-1).
+\]
+By \eqref{rq-shift-two} and the commutativity of
+$\eta_a$ with $y_c$, this is
+$\sum_c y_c\sum_aN^0_{aqcp}\eta_a$.
+Likewise \eqref{rq-shift-one} gives
+\[
+ H_\eta(u-1;x)=\sum_iC^0_{ip}\eta_i,\qquad
+ H_{y\eta}(u)=\sum_l y_l\sum_i C^+_{il}\eta_i.
+\]
+Let
+\[
+                  \mathcal E=
+       \sum_{l,c,a}y_l C^+_{cl}N^0_{aqcp}\eta_a .
+\]
+Using \eqref{rq-det-vector} in the first summand
+of the proposed identity gives
+\[
+ D(u+1)H_2(u-1;x,\xi)
+       =\sum_{l,a}y_lD(u+1)N^0_{aqlp}\eta_a-\mathcal E.
+\]
+The second summand is
+$\sum_{l,a}y_l C^+_{ql}C^0_{ap}\eta_a$.
+Their sum is therefore
+\[
+ \sum_{l,a}y_l
+   \bigl(D(u+1)N^0_{aqlp}+C^+_{ql}C^0_{ap}\bigr)\eta_a
+                       -\mathcal E
+   =\sum_{l,a}y_l C^+_{al}C^0_{qp}\eta_a-\mathcal E
+\]
+by Theorem~\ref{rq-jacobi}.
+On the other hand,
+\eqref{rq-minor-covector} gives
+\[
+ H_{y\eta}(u)C^0_{qp}
+       =\sum_{l,a}y_l C^+_{al}C^0_{qp}\eta_a-\mathcal E.
+\]
+This is the same expression.  Bilinearity now proves
+\eqref{rq-contracted-identity}.
+\end{proof}
+
+\subsection{Application to the actual terminal group}
+
+Return to $W$ of signature $(k,1)$ and its group
+$U(W,h)$, with $h$ linear in the first argument.
+For a smooth function on this group let $E_{ab}$
+be its complexified right derivatives.
+Multiplication by
+\[
+ y_j(m)=(m^{-1}z)_j,\qquad
+       \eta_i(m)=h(mw_i,z)=h(w_i,m^{-1}z)
+\]
+defines commuting operators.
+Differentiation of $m^{-1}z$ and of the row
+$z^*Hm$ gives exactly
+\eqref{rq-vector-laws}.
+Take $x_j=z'_j$, $\xi_i=h(w_i,z')$ and
+$u=Y+k/2$.  Equations
+\eqref{rc-t21}--\eqref{rc-t22} become
+\[
+ t_{11}(Y)=D(u),\quad
+ t_{21}(Y)=-H_y(u;\xi),\quad
+ t_{12}(Y)=-H_\eta(u-1;x),\quad
+ t_{22}(Y)=-H_2(u-1;x,\xi).
+\]
+Thus Theorem~\ref{rq-contracted} proves
+\begin{equation}\label{rq-terminal-factorization}
+ t_{11}(Y+1)t_{22}(Y)-t_{21}(Y+1)t_{12}(Y)
+                         =-H_{y\eta}(u)S(u;x,\xi).
+\end{equation}
+All compositions here are compositions of genuine
+differential operators with variable coefficients.
+
+Choose orthonormal bases $B_1,\ldots,B_k$ of $z^\perp$
+and $B'_1,\ldots,B'_k$ of $(z')^\perp$ in $W$.
+Write $C^R_{B'}(u)$ for the degree-$k$ Capelli
+determinant of the right derivatives along
+$B'_a h(\,\cdot\,,B'_b)$.
+Write $C^L_B(u)$ for the same polynomial in left
+derivatives, with every product of derivatives reversed.
+This reversal is part of the definition.
+
+\begin{theorem}\label{rq-terminal-determinant}
+For every smooth function $F$ on the terminal group,
+\begin{equation}\label{rq-exact-terminal}
+ \bigl(t_{11}(Y+1)t_{22}(Y)-t_{21}(Y+1)t_{12}(Y)\bigr)F
+          =-TT'\,C^L_B(Y+k/2)C^R_{B'}(Y+k/2)F.
+\end{equation}
+The formula holds for every complex $Y$ and needs
+neither nonvanishing intermediate minors nor a
+positivity restriction on the Gram polynomial.
+\end{theorem}
+
+\begin{proof}
+In the ordered basis
+$B'_1,\ldots,B'_k,z'/\sqrt{T'}$,
+the vector $x$ has only its last entry nonzero,
+equal to $\sqrt{T'}$, and the covector $\xi$
+has last entry $-\sqrt{T'}$.
+The change-of-basis rule for minors therefore gives
+\[
+                       S(u;x,\xi)=-T'C^R_{B'}(u).
+\]
+At a fixed $m$, apply the same calculation to
+$m^{-1}z$, whose Hermitian norm is $-T$.
+An orthonormal frame of its perpendicular space is
+$m^{-1}B_1,\ldots,m^{-1}B_k$.  Since the
+coefficients in $H_{y\eta}$ precede the derivatives,
+they are frozen at this evaluation point.  Consequently
+\[
+ (H_{y\eta}(u)G)(m)
+                    =-T(C^R_{m^{-1}B}(u)G)(m).
+\]
+There is no derivative of the frozen frame in this
+identity.
+
+For completeness, if $X_a=\operatorname{Ad}(m^{-1})Y_a$
+are fixed tangent matrices at this point, then
+\[
+ (R_{X_1}\cdots R_{X_s}G)(m)
+                       =(L_{Y_s}\cdots L_{Y_1}G)(m).
+\]
+Indeed both sides are the mixed derivative at zero
+of
+$G(\exp(t_1Y_1)\cdots\exp(t_sY_s)m)$.
+Complexification gives the same identity for the
+matrix units defining the Capelli determinant.
+This proves
+$(C^R_{m^{-1}B}(u)G)(m)=(C^L_B(u)G)(m)$,
+including the required reversal of each product.
+Substitution into
+\eqref{rq-terminal-factorization} proves
+\eqref{rq-exact-terminal}.
+\end{proof}
+
+\begin{corollary}\label{rq-type-scalar}
+Suppose
+$F(hmh')=\pi(h)F(m)\pi'(h')$ for
+$h\in U(z^\perp)$ and $h'\in U((z')^\perp)$,
+where $\pi,\pi'$ are irreducible finite-dimensional
+unitary representations with highest weights
+$\lambda=(\lambda_1\geq\cdots\geq\lambda_k)$ and
+$\lambda'=(\lambda'_1\geq\cdots\geq\lambda'_k)$.
+Then the left side of \eqref{rq-exact-terminal} equals
+\[
+ -TT'\prod_{j=1}^k
+   (Y+k/2-j+1+\lambda_j)
+   (Y+k/2-j+1+\lambda'_j)\,F.
+\]
+In the source's parameters
+$u_j=\lambda_j+(k+1)/2-j$ and
+$u'_j=\lambda'_j+(k+1)/2-j$, this scalar is
+\[
+                 -TT'\prod_{j=1}^k
+                    (Y+\tfrac12+u_j)(Y+\tfrac12+u'_j).
+\]
+\end{corollary}
+
+\begin{proof}
+The right derivatives act through the derived
+representation $\pi'$ on the right of $F$.
+Left derivatives act in the reverse order through
+$\pi$ on its left; the reversal in $C^L_B$
+therefore restores the ordinary Capelli polynomial.
+Its value in highest weight $\lambda$ is
+$\prod_j(u-j+1+\lambda_j)$ by
+Theorem~\ref{rp-capelli}.
+Apply this on both sides of
+\eqref{rq-exact-terminal} and substitute $u=Y+k/2$.
+\end{proof}
+
+\paragraph{Scope.}
+This proves the terminal determinant formula and its
+actual finite-type scalar, including all variable
+coefficient corrections.  It does not assert the
+remaining commutation relations of the complete
+terminal matrix, the recursive frame identity, or
+integration by parts for the Jacquet pairing.
+Those assertions have their own hypotheses and are
+not consequences of this determinant identity alone.
+
+The spectral shift cannot be suppressed.  In dimension
+two, take the trivial representation $E_{ab}=0$ and
+$u=1$.  Then $C_{11}(1)C_{22}(1)=1$, while
+$D(1)N_{1212}(1)=0$.  The unshifted version of
+\eqref{rq-jacobi-identity} is therefore false even in
+this elementary representation.  The submitted
+identity has the shift proved above, so this is a
+counterexample only to that stronger, altered statement.
+
+

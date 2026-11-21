@@ -1,0 +1,1053 @@
+\section{Rational orbital estimates and the ambient multiplicity}
+\label{amb-section}
+
+The dimension of the decorated, definite source space in
+Section~\ref{cd-section} is different from the multiplicity in the
+indefinite automorphic space. Here we isolate that second count,
+prove its rational-element and distant-orbit estimates, and give the
+exact analytic reduction needed for the final comparison. The
+coefficients throughout this section are complex. In particular, the
+large auxiliary prime below imposes a condition on the finite level;
+it is not a coefficient characteristic. These are the conventions of
+the submitted multiplicity theorem.\cite{alpo-uniform-source}
+
+\subsection{The multiplicity and its proposed main term}
+
+Let $E/F$ be a CM extension, with $F$ totally real of degree $f$,
+$[E:F]=2$, and $E/F$ unramified at all finite places. Let $V$ be an
+$n$-dimensional Hermitian space over $E$, with a self-dual
+$\mathcal O_E$-lattice $\Lambda_0$. Write $G=\operatorname U(V)$,
+$\Gamma=G(F)$ and
+\[
+ G_\infty=\prod_{v\mid\infty}G(F_v),\qquad
+ G_f=G(\mathbb A_{F,f}),\qquad
+ \mathcal X=\Gamma\backslash(G_\infty\times G_f).
+\]
+At every real place the signature is $(p,q)$, where $p+q=n$.
+Choose coordinates in which the Hermitian matrix is a diagonal
+matrix $J_v$ with entries $1$ and $-1$. No ordering of these signs
+is assumed. The associated positive norm is the usual Euclidean
+norm in these coordinates. Put
+\[
+                       r_E=|D_E|^{1/(2f)}.
+\]
+Let $K_f$ stabilize $\widehat\Lambda_0$, and let $K_f(g)$ be its
+principal congruence subgroup of positive integer level $g$.
+
+The finite test function $e:G_f\to\mathbb C$ is locally constant,
+compactly supported in $K_f$, bi-invariant under $K_f(g)$, and
+satisfies
+\begin{equation}\label{amb-idempotent}
+ e*e=e,\qquad e(y^{-1})=\overline{e(y)},\qquad
+ \sum_{i,j}\overline{c_i}c_j e(y_i^{-1}y_j)\ge0.
+\end{equation}
+The last inequality holds for every finite collection of $y_i,c_i$.
+There is a rational prime $P>4n$ which splits completely in $E$,
+such that
+\begin{equation}\label{amb-unipotent-level}
+ e(y)\ne0\quad\Longrightarrow\quad
+             (y-1)^n\widehat\Lambda_0\subseteq
+                                      P\widehat\Lambda_0.
+\end{equation}
+Fix Haar measures $dg_v$ on $G(F_v)$ and $dg_f$ on $G_f$.
+
+For each real place let $\sigma_v$ be the discrete-series
+representation with the specified Harish--Chandra parameter
+$\lambda_v$, and choose a unit vector $w_v$ in its lowest
+$K_v$-type. Let $d_v>0$ be its formal degree for $dg_v$ and
+$\sigma=\widehat\bigotimes_v\sigma_v$. With $R$ the right regular
+representation on $L^2(\mathcal X)$, define
+\begin{equation}\label{amb-D-definition}
+ D=\dim_{\mathbb C}
+   \bigl\{R(e)T:T\in
+       \operatorname{Hom}^{\mathrm{cont}}_{G_\infty}
+                         (\sigma,L^2(\mathcal X))\bigr\}.
+\end{equation}
+The dimension in \eqref{amb-D-definition} is used as a finite number
+only after finite-dimensionality has been established. Write
+\begin{equation}\label{amb-main-term}
+ m_0=\Bigl(\prod_v d_v\Bigr)e(1),\qquad
+ D_*=m_0\operatorname{vol}(\mathcal X).
+\end{equation}
+Lemma~\ref{amb-positive-type} below shows that $e(1)$ is real and
+nonnegative. The source's identification of its row multiplicity
+with \eqref{amb-D-definition} is the identification used to write
+$D=D_{\rm all}$; it does not change $D_*$.
+
+The claimed comparison is
+\begin{equation}\label{amb-target}
+                 |D-D_*|\le
+                  \exp\bigl(-nf\log n/16\bigr)D_*.
+\end{equation}
+The source proves this for sufficiently large $n$, uniformly under
+the following quantitative assumptions. Here $C_g\ge0$, $b\ge2$,
+and $h$ is a lower bound for every difference
+$|\lambda_{v,i}-\lambda_{v,j}|$ whose two indices have opposite
+signs in $J_v$:
+\begin{align}
+ q^2&\le n,& \log f&\le\sqrt n,& \log r_E&\le e^n,
+                                                        \notag\\
+ |\lambda_{v,i}|&\le b^2,&1\le g&\le b^{C_g},&
+ \log b&\le\exp(nf\log n/16),                         \label{amb-parameters}\\
+ h&\ge8\cdot10^{14}(C_g+4)n^{19}f^5\log(br_E).
+                                                        \notag
+\end{align}
+The size of the threshold for $n$ may depend on $C_g$.
+The statements proved below specify exactly which additional
+analytic inputs are still needed for \eqref{amb-target}.
+
+\subsection{Unipotence of nearby rational isometries}
+
+For an invertible complex matrix $A$ with singular values
+$s_1,\ldots,s_n$, set
+\[
+             t(A)=\Bigl(\sum_i(\log s_i)^2\Bigr)^{1/2}.
+\]
+Its polar decomposition is $A=k\exp X$, where $k$ is unitary,
+$X$ is Hermitian, and $\|X\|_{\rm HS}=t(A)$. In particular,
+$\|A\|_{\rm op}\le e^{t(A)}$.
+
+\begin{lemma}\label{amb-archimedean-traces}
+Suppose $n\ge1$, $\epsilon\ge0$, $n\epsilon\le1/4$ and
+$t(A)\le\epsilon$. Then, for $0\le j\le n$,
+\begin{equation}\label{amb-power-traces}
+                  |\operatorname{tr}(A^j)-n|\le3n.
+\end{equation}
+If $\operatorname{tr}A=n$, then
+\begin{equation}\label{amb-close-to-one}
+                  \|A-1\|_{\rm HS}\le3\sqrt{n\epsilon}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The operator-norm bound gives
+$|\operatorname{tr}(A^j)|\le n\|A^j\|_{\rm op}
+\le ne^{j\epsilon}\le ne^{1/4}<3n/2$.
+The last strict bound follows, for example, by comparing the
+exponential series with $\sum_{k\ge0}(1/4)^k=4/3$.
+The triangle inequality proves \eqref{amb-power-traces}.
+If the trace is $n$, then
+\[
+ \|A-1\|_{\rm HS}^2
+   =\operatorname{tr}(A^*A)+n-2\Re\operatorname{tr}A
+   =\operatorname{tr}(e^{2X})-n
+   \le n(e^{2\epsilon}-1).
+\]
+Here $\epsilon\le1/4$. The exponential series gives
+$e^{2\epsilon}-1\le2\epsilon/(1-2\epsilon)
+\le4\epsilon$. Taking square roots proves the stronger bound
+$2\sqrt{n\epsilon}$, hence \eqref{amb-close-to-one}.
+\end{proof}
+
+\begin{lemma}\label{amb-integral-traces}
+Let $E$ be a number field, $\Lambda$ a full
+$\mathcal O_E$-lattice in $E^n$, and $A\Lambda\subseteq\Lambda$.
+Suppose that $P\mathcal O_E$ is radical and
+$(A-1)^n\Lambda\subseteq P\Lambda$. Then
+\[
+               \operatorname{tr}(A^j)-n\in P\mathcal O_E
+                                      \qquad(j\ge0).
+\]
+No freeness of $\Lambda$ over $\mathcal O_E$ is required.
+\end{lemma}
+\begin{proof}
+At every nonzero prime $\mathfrak p$, the localization
+$\Lambda_{\mathfrak p}$ is a free module of rank $n$ over the
+discrete valuation ring $\mathcal O_{E,\mathfrak p}$.
+Thus the characteristic polynomial of $A$ has coefficients in
+every $\mathcal O_{E,\mathfrak p}$, hence in their intersection
+$\mathcal O_E$. In particular all the traces in question are
+integral. At a prime $\mathfrak p\mid P$, the reduction of $A$
+on $\Lambda_{\mathfrak p}/\mathfrak p\Lambda_{\mathfrak p}$ is
+unipotent. Its $j$th power has all eigenvalues equal to one over
+an algebraic closure of the residue field, so its trace is $n$.
+Consequently $\operatorname{tr}(A^j)-n$ belongs to every such
+$\mathfrak p$. Radicality gives
+$\bigcap_{\mathfrak p\mid P}\mathfrak p=P\mathcal O_E$.
+\end{proof}
+
+\begin{proposition}\label{amb-near-unipotent}
+Let $\Lambda,A,P$ be as in Lemma~\ref{amb-integral-traces}, with
+$P>3n$. For every complex embedding $\iota:E\hookrightarrow
+\mathbb C$, suppose that $\iota(A)$ is similar to a matrix
+$A_\iota$ satisfying $t(A_\iota)\le\epsilon$, where
+$n\epsilon\le1/4$. Then
+\begin{equation}\label{amb-unipotence}
+                   \det(T-A)=(T-1)^n,
+                   \qquad(A-1)^n=0.
+\end{equation}
+Moreover \eqref{amb-close-to-one} holds for each $A_\iota$.
+\end{proposition}
+\begin{proof}
+For $1\le j\le n$ put $a_j=\operatorname{tr}(A^j)-n$.
+Lemma~\ref{amb-integral-traces} writes $a_j=P b_j$ with
+$b_j\in\mathcal O_E$. If $a_j\ne0$, then
+\[
+ |N_{E/\mathbb Q}(a_j)|
+       =P^{[E:\mathbb Q]}|N_{E/\mathbb Q}(b_j)|
+       \ge P^{[E:\mathbb Q]}.
+\]
+But similarity invariance of trace and
+\eqref{amb-power-traces} bound the same norm by
+$(3n)^{[E:\mathbb Q]}$, a contradiction. Thus
+$\operatorname{tr}(A^j)=n$ for $1\le j\le n$.
+
+For completeness these power traces determine the characteristic
+polynomial in characteristic zero. If $\alpha_i$ are its roots
+with multiplicity, then the polynomial
+$Q(z)=\prod_i(1-\alpha_i z)$ satisfies the formal identity
+\[
+             -zQ'(z)=Q(z)\sum_{j\ge1}
+                              \operatorname{tr}(A^j)z^j.
+\]
+Writing $Q(z)=\sum_{j=0}^n c_jz^j$ with $c_0=1$, comparison
+of degree $j$ determines $j c_j$ from $c_0,\ldots,c_{j-1}$ and
+the first $j$ traces. Those traces agree with the identity matrix,
+so $Q(z)=(1-z)^n$. Cayley--Hamilton now gives
+$(A-1)^n=0$. Finally the first trace is $n$, and
+Lemma~\ref{amb-archimedean-traces} gives the asserted bound.
+\end{proof}
+
+For an adelic point $x=(x_\infty,x_f)$, define its rational
+lattice and positive metrics by
+\begin{equation}\label{amb-point-lattice}
+ \Lambda_x=V\cap x_f\widehat\Lambda_0,
+ \qquad\|u\|_{x,v}=\|x_v^{-1}u_v\|_2.
+\end{equation}
+Here $u_v$ is expressed in the chosen $J_v$-coordinates.
+The lattice is full and self-dual. Indeed a common integer clears
+the denominators of $x_f$ and $x_f^{-1}$, which bounds
+$\Lambda_x$ between two homothetic copies of $\Lambda_0$.
+The Chinese remainder theorem identifies its completions with
+$x_f\widehat\Lambda_0$; duality can then be checked at each
+finite prime. This also proves
+\[
+ (x^{-1}\gamma x)_f\in K_f\Longrightarrow
+                        \gamma\Lambda_x=\Lambda_x,
+\]
+and \eqref{amb-unipotent-level} gives
+$(\gamma-1)^n\Lambda_x\subseteq P\Lambda_x$ whenever the
+finite test function is nonzero.
+
+Complete splitting of $P$ makes $P\mathcal O_E$ radical. The
+$f$ selected complex embeddings and their conjugates are all the
+embeddings of $E$. Therefore Proposition~\ref{amb-near-unipotent}
+applies to every rational summand with
+$e((x^{-1}\gamma x)_f)\ne0$ and
+$t((x^{-1}\gamma x)_v)\le\epsilon$ for all $v$.
+In particular it applies at the exact radius
+\begin{equation}\label{amb-small-radius}
+                  \epsilon=10^{-6}n^{-8}f^{-2}.
+\end{equation}
+The source's further radius bounds follow directly: if
+$\delta=3\sqrt{n\epsilon}$ and $q^2\le n$, then
+\[
+             \delta<\tfrac14,
+             \qquad\delta qnf
+               =3\cdot10^{-3}\frac q{n^{5/2}}
+               \le3\cdot10^{-3}<\tfrac1{100}.
+\]
+
+\subsection{A separation bound from normalized covolumes}
+
+We prove the separation estimate used in the orbit count without
+requiring the construction of a Harder--Narasimhan filtration.
+Put $c_E=2^{-f}|D_E|^{1/2}$. For a nonzero
+$\mathcal O_E$-lattice $M$ of rank $r$, with its positive metrics
+at the $f$ complex places, define
+\begin{equation}\label{amb-size}
+ H(M)=c_E^{-r}\operatorname{covol}_{\mathbb R}(M),\qquad
+ s(M)=H(M)^{1/(2fr)},\qquad
+ \lambda(\Lambda)=\inf_{0\ne M\subseteq\Lambda}s(M).
+\end{equation}
+Covolumes are measured in the real span of the lattice, with the
+Euclidean metric which is the sum of the selected complex metrics.
+For a torsion-free quotient, use the orthogonal quotient metrics.
+These are exactly the normalized covolumes and exponents in the
+submitted least-size function.
+
+\begin{lemma}\label{amb-size-duality}
+For every full $\mathcal O_E$-lattice $\Lambda$ with positive
+metrics, $\lambda(\Lambda)>0$. Let $\Lambda^*$ be its
+$\mathcal O_E$-linear dual, with the dual metrics. Then
+\begin{equation}\label{amb-height-dual}
+ H(\Lambda^*)=H(\Lambda)^{-1},\qquad
+ \sup_{\substack{S\subsetneq\Lambda\\\Lambda/S\ \text{torsion-free}}}
+              s(\Lambda/S)=\lambda(\Lambda^*)^{-1}.
+\end{equation}
+If $\Lambda$ is self-dual for a Hermitian form whose matrix is
+$J_v$ in an orthonormal basis of each positive metric, then
+$\lambda(\Lambda^*)=\lambda(\Lambda)$.
+\end{lemma}
+\begin{proof}
+For $1\le r\le n$, a $\mathbb Z$-basis of any rank-$r$
+$\mathcal O_E$-sublattice gives a nonzero vector in the fixed
+lattice $\bigwedge^{2fr}_{\mathbb Z}\Lambda$. Its Euclidean
+length is the covolume of the sublattice. A lattice has a positive
+minimum length for nonzero vectors: an invertible real linear
+map from $\mathbb Z^N$ bounds every such length below by its
+smallest singular value. Taking the minimum over the finitely
+many ranks proves positivity in \eqref{amb-size}.
+
+If $M_0=\bigoplus_{i=1}^r\mathcal O_E b_i$ is free and
+$G_v=(\langle b_i,b_j\rangle_v)$, the discriminant determinant
+for the Minkowski embedding gives
+\begin{equation}\label{amb-free-height}
+                       H(M_0)=\prod_v\det G_v.
+\end{equation}
+Explicitly the covolume of $\mathcal O_E$ in its $f$ complex
+coordinates is $c_E$; the real determinant of the complex change
+of basis at $v$ is $|\det B_v|^2=\det G_v$. Multiplying these
+determinants proves \eqref{amb-free-height}. The dual Gram
+matrices are $G_v^{-1}$, so the dual-height assertion follows
+for $M_0$.
+
+For arbitrary $M$, choose such a free sublattice $M_0\subset M$
+of finite index $a$. Then $H(M)=H(M_0)/a$ and
+$[M_0^*:M^*]=a$. The latter index equality can be checked at
+each prime: diagonalizing the inclusion over the discrete
+valuation ring changes its exponents to their negatives in the
+dual inclusion, with the same lengths of the two finite
+quotients. Their global orders are the products of the residue
+norms to these lengths. Thus
+$H(M^*)=aH(M_0^*)=H(M)^{-1}$, without assuming $M$ is free.
+
+If $S$ is saturated in $\Lambda$, then $Q=\Lambda/S$ is
+projective over the Dedekind domain $\mathcal O_E$.
+Dualizing the split module sequence identifies $Q^*$ with the
+saturated submodule of $\Lambda^*$ annihilating $S$, with its
+induced metric. Conversely every saturated submodule of
+$\Lambda^*$ arises in this way, by dualizing its projective
+quotient. Saturating a nonzero sublattice decreases its covolume
+and preserves its rank; consequently the infimum in
+\eqref{amb-size} is unchanged if it is restricted to saturated
+sublattices. Since $s(Q^*)=s(Q)^{-1}$, this proves the supremum
+identity.
+
+Finally the Hermitian form identifies $\Lambda$ conjugate
+linearly with $\Lambda^*$. At each complex place the norm of the
+functional $u\mapsto\langle y,J_vu\rangle$ is $\|y\|$, because
+$J_v$ is unitary. This identification is an isometry, takes
+$\mathcal O_E$-sublattices to such sublattices and preserves their
+real covolumes. Hence it preserves the infimum defining
+$\lambda$.
+\end{proof}
+
+\begin{lemma}\label{amb-map-separation}
+Under the self-duality hypothesis of Lemma~\ref{amb-size-duality},
+every nonzero $E$-linear map $T$ with
+$T\Lambda\subseteq\Lambda$ satisfies
+\begin{equation}\label{amb-geometric-separation}
+            \Bigl(\prod_v\|T_v\|_{\rm op}\Bigr)^{1/f}
+                                     \ge\lambda(\Lambda)^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $S=\Lambda\cap\ker T$, $Q=\Lambda/S$, and $M=T\Lambda$,
+of common positive rank $r$. The first is saturated, and the
+induced map $Q\to M$ is an isomorphism of
+$\mathcal O_E$-modules. At each complex place its singular
+values are at most $\|T_v\|_{\rm op}$: identify the quotient
+with the orthogonal complement of $\ker T_v$ and restrict $T_v$.
+The change-of-volume formula, applied first to a finite-index
+free sublattice and then cancelling that common index, gives
+\[
+                 H(M)\le H(Q)\prod_v\|T_v\|_{\rm op}^{2r}.
+\]
+Take $2fr$th roots. By Lemma~\ref{amb-size-duality},
+$s(M)\ge\lambda(\Lambda)$ and
+$s(Q)\le\lambda(\Lambda)^{-1}$. These inequalities give
+\eqref{amb-geometric-separation}.
+\end{proof}
+
+For the point lattice \eqref{amb-point-lattice}, put
+\begin{equation}\label{amb-tau}
+          \lambda_x=\lambda(\Lambda_x),\qquad
+          \tau_x=\min(1/2,\lambda_x)>0.
+\end{equation}
+The positive metrics in \eqref{amb-point-lattice} are compatible
+with the original Hermitian form, since $x_v$ is an isometry of
+$J_v$. Thus Lemma~\ref{amb-map-separation} applies. If distinct
+rational elements $\gamma,\eta$ both have
+$(x^{-1}\gamma x)_f,(x^{-1}\eta x)_f\in K_f$, their difference
+preserves $\Lambda_x$, and
+\begin{equation}\label{amb-two-matrices}
+ \Bigl(\prod_v\|(x^{-1}\gamma x)_v
+                         -(x^{-1}\eta x)_v\|_{\rm op}\Bigr)^{1/f}
+                                                    \ge\tau_x^2.
+\end{equation}
+
+\subsection{Counting rational matrices and summing the tail}
+
+\begin{lemma}\label{amb-packing}
+Let $W_1,\ldots,W_f$ be real normed spaces of dimension $N$,
+where $f,N\ge1$. Suppose a set $S\subset\prod_vW_v$ satisfies
+\[
+       \Bigl(\prod_v\|s_v-t_v\|\Bigr)^{1/f}\ge a>0
+                       \quad(s,t\in S,\ s\ne t).
+\]
+For positive $R_v$, the subset with $\|s_v\|\le R_v$ for all
+$v$ is finite, of cardinality at most
+\begin{equation}\label{amb-packing-bound}
+              \left(1+\frac{2(\prod_vR_v)^{1/f}}a\right)^{Nf}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Rescale the $v$th coordinate by $R/R_v$, where
+$R=(\prod_vR_v)^{1/f}$. The product of the scale factors is one,
+so the separation hypothesis is unchanged. In the maximum norm
+on $\prod_vW_v$, the new set is $a$-separated and lies in the
+closed ball of radius $R$. The open balls of radius $a/2$ about
+any finite selection of its points are disjoint and lie in the
+ball of radius $R+a/2$. Lebesgue volume in dimension $Nf$ gives
+\eqref{amb-packing-bound} for every finite selection. An infinite
+set has finite subsets of arbitrarily large cardinality, so the
+same bound proves finiteness as well.
+\end{proof}
+
+\begin{corollary}\label{amb-rational-ball}
+For $r_v\ge0$, the rational elements with finite component in
+$xK_fx^{-1}$ and $t((x^{-1}\gamma x)_v)\le r_v$ form a finite
+set of cardinality at most
+\begin{equation}\label{amb-ball-bound}
+ A_x\exp\left(2n^2\sum_vr_v\right),\qquad
+                   A_x=\left(\frac{3\sqrt n}{\tau_x^2}\right)^{2n^2f}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Use \eqref{amb-two-matrices} and Lemma~\ref{amb-packing} in the
+spaces of complex $n\times n$ matrices with operator norm,
+each of real dimension $2n^2$, with $a=\tau_x^2$ and
+$R_v=e^{r_v}$. The map from rational elements to their matrices
+is injective, since an embedding of $E$ is injective.
+Writing $R=e^{\sum_vr_v/f}\ge1$, we have
+$1+2R/\tau_x^2\le3R/\tau_x^2\le3\sqrt nR/\tau_x^2$.
+Raise this inequality to $2n^2f$. The proof actually permits
+omitting $\sqrt n$; we keep it to match the source bound.
+\end{proof}
+
+\begin{lemma}[A dyadic sum]\label{amb-shells}
+Let $S$ be a set, $d_v:S\to[0,\infty)$, and
+$w:S\to[0,\infty)$, with $f\ge1$ indices $v$. Suppose
+\begin{align*}
+ \#\{s:d_v(s)\le r_v\text{ for all }v\}
+                 &\le A\exp(\kappa\sum_vr_v),\qquad r_v\ge0,\\
+ w(s)&\le\prod_v\exp\left[-\frac h8
+                              \min(d_v(s)^2,d_v(s)/c)\right],
+\end{align*}
+where the counted sets are finite and $A,\kappa\ge0$.
+Assume
+\begin{equation}\label{amb-shell-hypotheses}
+ 0<\epsilon\le1/c,\quad c>0,\quad
+ \kappa\epsilon\le\log2,\quad
+ 32\kappa\le h\epsilon,\quad
+                     T:=h\epsilon^2/16\ge1.
+\end{equation}
+Then the sum over $s$ for which some $d_v(s)>\epsilon$ is
+absolutely convergent and at most
+\begin{equation}\label{amb-shell-bound}
+                          2Af3^f e^{-T}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Partition each coordinate into $[0,\epsilon]$ and
+$(2^{j-1}\epsilon,2^j\epsilon]$, $j\ge1$.
+For $d\ge\epsilon$ the inequality $\epsilon\le1/c$ gives
+$\min(d^2,d/c)\ge\epsilon d$. Thus the weight in the $j$th
+interval, $j\ge1$, is at most $e^{-T2^j}$; in interval zero it
+is at most one. The number of points in a product of intervals
+is bounded using the encompassing box. Set
+\[
+ W_0=e^{\kappa\epsilon},\qquad
+ W_j=\exp\bigl((\kappa\epsilon-T)2^j\bigr)\quad(j\ge1).
+\]
+Their products, multiplied by $A$, bound the contributions of
+the corresponding boxes. We have $W_0\le2$ and
+$\kappa\epsilon\le T/2$. Hence
+\[
+       \sum_{j\ge1}W_j
+           \le\sum_{i\ge0}e^{-T2^i}\le2e^{-T}\le1.
+\]
+For the middle inequality use $2^i\ge1+i$ and $T\ge1$, so
+$e^{-T2^i}\le e^{-T}2^{-i}$. Write the last sum as $\beta$
+and $W_0$ as $\alpha$. Summing over all multi-indices except
+zero gives at most
+\[
+ A\bigl((\alpha+\beta)^f-\alpha^f\bigr)
+       \le Af\beta(\alpha+\beta)^{f-1}
+       \le2Af3^f e^{-T}.
+\]
+Every box is finite, so the partition also proves that the
+index set is countable. The finite bounds and the convergent
+nonnegative majorant justify the sum and its convergence.
+\end{proof}
+
+\begin{lemma}\label{amb-positive-type}
+For the test function in \eqref{amb-idempotent},
+\begin{equation}\label{amb-test-bound}
+                         e(1)\ge0,\qquad |e(y)|\le e(1).
+\end{equation}
+If $e(1)=0$, then $e$ is identically zero.
+\end{lemma}
+\begin{proof}
+The one-point positive-type condition makes $e(1)$ real and
+nonnegative. The two-point condition says that
+$\begin{pmatrix}e(1)&e(y)\\\overline{e(y)}&e(1)\end{pmatrix}$
+is positive semidefinite. Its determinant is nonnegative, which
+is \eqref{amb-test-bound}. This also proves the last assertion.
+\end{proof}
+
+With inner products conjugate linear in the first argument, set
+\begin{equation}\label{amb-kernel-function}
+ \Phi(g)=\Bigl(\prod_vd_v\Bigr)
+          \overline{\prod_v\langle w_v,\sigma_v(g_v)w_v\rangle}
+                 e(g_f),\qquad
+ K(x,y)=\sum_{\gamma\in\Gamma}\Phi(x^{-1}\gamma y).
+\end{equation}
+In particular $\Phi(1)=m_0$. The representation-theoretic
+estimate used for the next theorem is the precise assertion
+\begin{equation}\label{amb-decay-input}
+ |\langle w_v,\sigma_v(a)w_v\rangle|
+       \le\exp\left[-\frac h8
+                 \min\bigl(t(a)^2,t(a)/\sqrt{2q}\bigr)\right].
+\end{equation}
+It is needed for all $a\in G(F_v)$ and the chosen lowest-type
+vectors. We now derive it, with a stronger constant, from a
+classical integral formula for the lowest compact type.
+
+\subsection{Deriving decay from the lowest compact-type formula}
+
+We first give the elementary estimate for the scalar integrand.
+We then identify the exact integral formula in a classical
+representation-theoretic theorem, including its character,
+measure, and projection conventions.
+
+For a finite real random variable $Y$ supported in $[-M,M]$,
+write
+\[
+ \varphi(u)=\log\mathbb E(e^{uY}),\qquad
+ \operatorname{Var}(Y)=\mathbb E(Y^2)-\mathbb E(Y)^2.
+\]
+The expectation is a finite sum with nonnegative weights of sum one.
+
+\begin{lemma}\label{amb-variance}
+Suppose $\mathbb E(Y)=0$ and $0<\theta\le1$ satisfies
+$2M\theta\le1$. Then
+\[
+                     \log\mathbb E(e^Y)
+                  \ge\frac{\theta}{\mathrm e}\operatorname{Var}(Y),
+\]
+where $\mathrm e=\exp(1)$.
+\end{lemma}
+\begin{proof}
+Differentiation of a finite sum shows that $\varphi''(u)$ is
+the variance for the probability measure whose weights are
+multiplied by $e^{uY}/\mathbb E(e^{uY})$.
+For $u\ge0$ each multiplier is at least $e^{-2Mu}$.
+Variance is $\min_{c\in\mathbb R}\mathbb E((Y-c)^2)$.
+Taking this minimum after the pointwise comparison gives
+\[
+                \varphi''(u)\ge e^{-2Mu}\operatorname{Var}(Y).
+\]
+In particular $\varphi$ is convex. Since
+$\varphi(0)=\varphi'(0)=0$ and $2M\le1/\theta$,
+\[
+ \varphi(\theta)
+   =\int_0^\theta(\theta-u)\varphi''(u)\,du
+   \ge\operatorname{Var}(Y)
+             \int_0^\theta(\theta-u)e^{-u/\theta}\,du
+   =\frac{\theta^2}{\mathrm e}\operatorname{Var}(Y).
+\]
+Convexity and $\varphi(0)=0$ give
+$\varphi(1)\ge\varphi(\theta)/\theta$, proving the claim.
+\end{proof}
+
+Let $J$ be a diagonal signature matrix with $q\ge1$ negative
+entries, and let
+\[
+             X=X^*,\qquad JX+XJ=0,\qquad t=\|X\|_{\rm HS}.
+\]
+The signs may occur in any order. For $1\le j<n$ define
+\[
+ \Delta_j(X)=\det\bigl((e^X)_{a b}\bigr)_{1\le a,b\le j}>0.
+\]
+For a strictly decreasing real tuple $\lambda$, put
+\begin{equation}\label{amb-phase}
+ \mathcal P_\lambda(X)=
+       \sum_{j=1}^{n-1}(\lambda_j-\lambda_{j+1}+1)
+                                      \log\Delta_j(X).
+\end{equation}
+Suppose that $\lambda_a-\lambda_b\ge h\ge0$ whenever
+$a<b$ and the corresponding signs differ.
+
+\begin{proposition}\label{amb-principal-minor-bound}
+With these conventions,
+\begin{equation}\label{amb-phase-bound}
+ \mathcal P_\lambda(X)\ge
+       \frac{h}{2\mathrm e}
+                \min\left(t^2,\frac{t}{\sqrt{2q}}\right).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The claim is immediate if $X=0$, so suppose $t>0$.
+The relation $JXJ=-X$ makes the spectrum symmetric about zero.
+After grouping the signs, $X$ has blocks
+$\left(\begin{smallmatrix}0&B\\B^*&0\end{smallmatrix}\right)$.
+It has at most $q$ positive eigenvalues, and the sum of their
+squares is $t^2/2$. If $M$ is their sum, Cauchy--Schwarz gives
+\[
+                          M\le\sqrt{q/2}\,t.
+\]
+
+On $\bigwedge^j\mathbb C^n$, let $D_j(X)$ act by applying
+$X$ to each factor and adding. Its eigenvalues are sums of
+$j$ eigenvalues of $X$, hence lie in $[-M,M]$.
+For the unit vector $v_j=e_1\wedge\cdots\wedge e_j$,
+the identity $\bigwedge^j(e^X)=e^{D_j(X)}$ gives
+\[
+ \Delta_j(X)=\langle v_j,e^{D_j(X)}v_j\rangle.
+\]
+Expand $v_j$ in an orthonormal eigenbasis of $D_j(X)$.
+The squared absolute values of its coefficients define a
+finite probability measure, and its exponential moment is
+the last expression. Its mean is
+$\sum_{a\le j}X_{aa}=0$. Its variance is
+\[
+ Q_j(X)=\|D_j(X)v_j\|^2
+                  =\sum_{a\le j<b}|X_{ba}|^2.
+\]
+Indeed the nonzero replacements of an occupied basis vector
+by an unoccupied one are distinct orthogonal exterior basis
+vectors; the diagonal contribution is zero.
+
+Choose
+$\theta=\min(1,1/(\sqrt{2q}\,t))$.
+Then $2M\theta\le1$, so Lemma~\ref{amb-variance} gives
+$\log\Delta_j(X)\ge\theta Q_j(X)/\mathrm e$.
+The coefficients in \eqref{amb-phase} are positive. Summing
+and interchanging two finite sums,
+\[
+ \begin{split}
+ \sum_{j=1}^{n-1}(\lambda_j-\lambda_{j+1}+1)Q_j(X)
+  &=\sum_{a<b}(\lambda_a-\lambda_b+b-a)|X_{ba}|^2\\
+  &\ge h\sum_{a<b}|X_{ba}|^2
+   =\frac h2\,t^2.
+ \end{split}
+\]
+Here entries with equal signs vanish. Multiplication by
+$\theta/\mathrm e$ proves \eqref{amb-phase-bound}.
+\end{proof}
+
+To state the representation-theoretic identity,
+let $W$ be the lowest $K$-type in $\sigma_\lambda$,
+$j:W\hookrightarrow H$ its isometric inclusion, $\tau$ its
+compact representation, and $w_0$ a unit highest-weight vector.
+Let $P_0$ be orthogonal projection onto $\mathbb Cw_0$ and
+$d_W=\dim W$.
+
+\begin{theorem}[The lowest compact-type integral]\label{amb-compression}
+Suppose
+$\lambda_1>\cdots>\lambda_n$ and
+$\lambda_i-(n-1)/2\in\mathbb Z$.
+Then
+\begin{equation}\label{amb-compression-input}
+ j^*\sigma_\lambda(e^X)j
+   =d_W\int_K e^{-\mathcal P_\lambda(k^{-1}Xk)}
+                 \tau(k)P_0\tau(k)^{-1}\,dk ,
+ \qquad X=X^*,\ JX+XJ=0,
+\end{equation}
+with probability Haar measure on $K$.
+\end{theorem}
+\begin{proof}
+We specify the two classical representation-theoretic inputs
+and then prove the change of coordinates in the formula.
+Let $\mathfrak b$ be the upper triangular Borel subalgebra of
+$\mathfrak{gl}_n(\mathbb C)$, with strictly upper triangular
+radical $\mathfrak n$, and let $T$ be the diagonal torus
+of $G$. The Cartan involution is conjugation by $J$, so
+$\mathfrak b$ is stable under it and its real Levi subgroup
+is the compact torus $T$. Put
+\[
+ \rho_i=(n+1)/2-i,\qquad \nu=\lambda-\rho,\qquad
+ \mu_0=\nu+2\rho_{\rm n}
+                  =\lambda+\rho_{\rm n}-\rho_{\rm c}.
+\]
+The differences of consecutive coordinates of $\lambda$
+are positive integers. Thus $\nu$ is an integral dominant
+weight and defines a unitary character of $T$.
+The classical realization of discrete series by
+cohomological induction identifies the representation
+induced from this character, denoted $A_{\mathfrak b}(\nu)$,
+with $\sigma_\lambda$. Its lowest compact type has highest
+weight $\mu_0$ and multiplicity one.
+For the hypotheses in this identification, the admissibility
+conditions of \cite[(5.1), Theorem 5.3]{vogan-zuckerman}
+are exactly that $\nu$ be a unitary torus character and
+$\langle \nu,e_a-e_b\rangle\ge0$ for $a<b$.
+The identifying criterion
+\cite[Proposition 6.1]{vogan-zuckerman}
+applies to $\sigma_\lambda$: its lowest type is $\mu_0$,
+and its Casimir eigenvalue is
+$\|\lambda\|^2-\|\rho\|^2$. The additional condition on a
+noncompact part of the Cartan subalgebra is empty because
+$T$ is compact. These semisimple statements apply through
+$SU(p,q)\times U(1)\longrightarrow U(p,q)$; the extra
+central factor acts by the prescribed character and all
+root shifts have coordinate sum zero.
+
+We use Sun's integral formula for the lowest compact type
+of $A_{\mathfrak b}(\nu)$
+\cite[Theorem 6.4 and \S6.4, p.~43]{sun-eisenstein}.
+In its precise specialization here, for $x\in\exp(\mathfrak p_0)$,
+\begin{equation}\label{amb-sun}
+ j^*\sigma_\lambda(x^2)j
+ =d_W\int_K(\delta_{\mathfrak n}\nu)(\widetilde H(lx))
+                       \tau(l^{-1})P_0\tau(l)\,dl.
+\end{equation}
+Here $\mathfrak p_0=\{X=X^*:JXJ=-X\}$ and
+$\delta_{\mathfrak n}$ is the determinant of the diagonal
+adjoint action on $\mathfrak n$. It has weight $2\rho$.
+To define $\widetilde H$, factor $g=n a u$ in the complex
+group, where $n$ is upper triangular unipotent, $a$ is
+positive real diagonal, and $u\in U(n)$. Then
+$\widetilde H(g)=a^2$.
+Indeed Sun's definition is $y\overline{\theta(y^{-1})}$,
+where the bar is conjugation with respect to the real
+group $U(p,q)$; its composition with the Cartan involution
+is the compact conjugation $g\mapsto(g^*)^{-1}$.
+It therefore sends $a^{-1}$ to $a$.
+The Haar measure in \eqref{amb-sun} is a probability
+measure by the conventions of \cite[\S1.2]{sun-eisenstein}.
+Sun's matrix coefficient is the inclusion followed by
+the representation and projection onto the compact
+isotypic component. Multiplicity one and unitarity make
+it exactly $j^*\sigma_\lambda(g)j$, with value $1_W$ at
+the identity. Thus no scalar factor has been suppressed.
+
+Here is an elementary verification of the matrix conversion.
+Set $x=e^{X/2}$ and $B=l e^X l^{-1}$, a positive definite
+Hermitian matrix of determinant one. There is a unique
+factorization
+\[
+                 B=n a^2 n^*,\qquad
+       n\text{ upper triangular unipotent},\quad
+       a=\operatorname{diag}(a_1,\ldots,a_n)>0.
+\]
+It follows inductively from the Schur complement of the
+last diagonal entry: if
+$B=\left(\begin{smallmatrix}B_0&b\\b^*&c\end{smallmatrix}\right)$,
+then $c>0$ and $B_0-bb^*/c>0$; factor the latter matrix,
+take $a_n^2=c$, and take the last column of $n$ above
+the diagonal to be $b/c$. This also proves uniqueness.
+The matrix $a^{-1}n^{-1}lx$ is unitary, so this is the
+factorization used to define $\widetilde H(lx)=a^2$.
+
+Write $z_i=a_i^2$ and
+$T_i=\det B_{\{i+1,\ldots,n\},\{i+1,\ldots,n\}}$.
+Triangularity gives
+$T_i=\prod_{j>i}z_j$, and $\prod_j z_j=\det B=1$.
+The character $\delta_{\mathfrak n}\nu$ has weight
+$\kappa=\nu+2\rho=\lambda+\rho$. Summation by parts gives
+\[
+ \log(\delta_{\mathfrak n}\nu)(a^2)
+    =\sum_j\kappa_j\log z_j
+    =-\sum_{i=1}^{n-1}
+             (\lambda_i-\lambda_{i+1}+1)\log T_i.
+\]
+The complementary-principal-minor identity, with $\det B=1$,
+is
+\[
+       T_i=\det (B^{-1})_{\{1,\ldots,i\},\{1,\ldots,i\}}.
+\]
+For clarity, partition $B$ after its first $i$ rows
+and columns. If its lower right block is $D$, its
+Schur complement is $S$, and the upper left block of
+$B^{-1}$ is $S^{-1}$. Consequently
+$\det(B^{-1})_{\le i,\le i}=(\det S)^{-1}
+ =\det D/\det B$, which proves the identity.
+Since $B^{-1}=l e^{-X}l^{-1}$, we have established
+\[
+  (\delta_{\mathfrak n}\nu)(\widetilde H(lx))
+                  =e^{-\mathcal P_\lambda(-lXl^{-1})}.
+\]
+Finally $J$ lies in the center of $K$ and $JXJ=-X$.
+Replacing $l$ by $lJ$ in \eqref{amb-sun} removes the minus
+sign in the phase. The projection factor is unchanged,
+because $\tau(J)$ is scalar by irreducibility of $\tau$.
+Replace $l$ by $k^{-1}$ to obtain
+\eqref{amb-compression-input}.
+\end{proof}
+
+Thus the character shifts and dimension factor in the
+source's integral formula agree with a classical theorem.
+The proof uses the cited results on cohomological induction;
+it does not reprove those representation-theoretic theorems.
+
+\begin{corollary}\label{amb-decay-from-compression}
+Under the hypotheses of Theorem~\ref{amb-compression},
+suppose $h\ge0$ is a lower bound for all positive
+opposite-sign root differences. Then for any unit
+vectors $u,v$ in the lowest compact type and every $a\in G$,
+\[
+ |\langle u,\sigma_\lambda(a)v\rangle|
+ \le\exp\left[-\frac{h}{2\mathrm e}
+           \min\left(t(a)^2,\frac{t(a)}{\sqrt{2q}}\right)\right].
+\]
+Consequently \eqref{amb-decay-input} holds.
+\end{corollary}
+\begin{proof}
+Compact Schur orthogonality gives
+$d_W\int_K\tau(k)P_0\tau(k)^{-1}\,dk=1_W$:
+the integral commutes with $\tau(K)$, and its trace is one.
+The norm and the off-diagonal signature conditions on $X$
+are unchanged by conjugation by $K$. Proposition
+\ref{amb-principal-minor-bound} bounds every positive scalar
+in \eqref{amb-compression-input} by the asserted exponential.
+All the conjugates of $P_0$ are positive semidefinite.
+The integral therefore lies between zero and that scalar
+times $1_W$ in the order on self-adjoint operators; its norm
+has the same bound.
+
+For completeness, write $a=k e^X$ using polar decomposition.
+The unitary identity gives
+$J(a^*a)J=(a^*a)^{-1}$, so
+$X=\frac12\log(a^*a)$ satisfies $JXJ=-X$.
+The unitary factor $k$ lies in $K$, and
+$\|X\|_{\rm HS}=t(a)$ by the definition using singular values.
+Since $j(W)$ is $K$-stable, the compression at $a$ is
+$\tau(k)$ times the compression at $e^X$ and has the same
+norm. This proves the coefficient estimate.
+Finally $\mathrm e<4$, for example by bounding the exponential
+series by $1+1+\sum_{m\ge2}2^{-(m-1)}=3$, with strict
+inequality. Thus $1/(2\mathrm e)>1/8$.
+\end{proof}
+
+The restriction to the lowest compact type is essential.
+For unrestricted unit vectors in a unitary representation,
+fix $a$ and a unit vector $v$, and take $u=\sigma_\lambda(a)v$.
+Then $|\langle u,\sigma_\lambda(a)v\rangle|=1$.
+If $h>0$ and $t(a)>0$, the displayed exponential is less
+than one. Thus the corresponding assertion for all
+unit vectors would be false; neither the source nor the
+corollary makes that assertion.
+Interchanging $J$ and $-J$ changes neither the group,
+the compact subgroup, nor the phase. Hence $q$ can be
+replaced by $\min(p,q)$ in the bound. In the range
+$n\ge3$, $q^2\le n$ used below, one already has $q\le p$.
+
+\subsection{The distant rational terms}
+
+\begin{theorem}[The distant rational terms]\label{amb-far}
+Assume $n\ge3$, $1\le q$, $q^2\le n$, $f\ge1$,
+$r_E\ge1$, $b\ge2$, $C_g\ge0$, $1\le g\le b^{C_g}$,
+$\log f\le\sqrt n$, and the lower bound for $h$ in
+\eqref{amb-parameters}. Assume \eqref{amb-decay-input} and put
+\begin{equation}\label{amb-truncation}
+                X=nfr_Egb,\qquad \tau_0=X^{-11q}.
+\end{equation}
+For every $x$ with $\lambda_x\ge\tau_0$, the rational sum
+\begin{equation}\label{amb-far-sum}
+ \sum_{\substack{\gamma\in\Gamma\\
+       t((x^{-1}\gamma x)_v)>\epsilon\text{ for some }v}}
+                     |\Phi(x^{-1}\gamma x)|
+                              \le m_0e^{-n^2f}
+\end{equation}
+is absolutely convergent, where $\epsilon$ is
+\eqref{amb-small-radius}. Consequently its integral over any
+measurable subset of $\{x:\lambda_x\ge\tau_0\}$ in a
+finite-volume fundamental domain is at most $e^{-n^2f}D_*$.
+Terms with $\Phi(x^{-1}\gamma x)=0$ may freely be included.
+\end{theorem}
+\begin{proof}
+If $m_0=0$, Lemma~\ref{amb-positive-type} gives $e=0$, and all
+assertions hold. Otherwise divide the summands by $m_0$.
+Their nonzero finite components lie in $K_f$.
+Lemma~\ref{amb-positive-type} and \eqref{amb-decay-input} give
+the weight hypothesis of Lemma~\ref{amb-shells}, while
+Corollary~\ref{amb-rational-ball} gives its counting hypothesis
+with $A=A_x$, $\kappa=2n^2$ and $c=\sqrt{2q}$.
+
+Here are all the numerical estimates needed to apply that lemma
+and obtain its asserted strength. Put $L=\log(br_E)$ and
+$s=\sqrt n$. We use $L\ge\log2\ge2/3$; the last inequality
+follows by integrating $2/(1-u^2)\ge2$ from $0$ to $1/3$.
+The lower bound for $h$ gives exactly
+\begin{equation}\label{amb-T-lower}
+ T=\frac{h\epsilon^2}{16}
+                      \ge50(C_g+4)n^3fL.
+\end{equation}
+It also gives $h\epsilon\ge64n^2$ and $T\ge1$.
+For example
+$h\epsilon\ge8\cdot10^8(C_g+4)n^{11}f^3L$, which is
+larger than $64n^2$ under the stated assumptions.
+Moreover $\epsilon\le1/(2q)\le1/\sqrt{2q}$ and
+$2n^2\epsilon\le2\cdot10^{-6}\le\log2$.
+These prove \eqref{amb-shell-hypotheses}.
+
+Since $X\ge2n\ge6$, we have $\tau_0<1/2$; therefore
+$\lambda_x\ge\tau_0$ implies $\tau_x\ge\tau_0$.
+The elementary bound $\log n\le\sqrt n$ follows from
+$\log(s/2)\le s/2-1$ and $\log2\le1$. Thus
+\[
+ \log X\le2s+(C_g+1)L,\qquad q\le s,
+ \qquad \log(2f3^f)\le4f.
+\]
+Using $\log3\le2$, $s\le n$ and $n\ge3$ now gives
+\begin{align*}
+ \log A_x+\log(2f3^f)+n^2f
+ &\le2n^2f\bigl(\log3+\tfrac12\log n+22q\log X\bigr)
+                                                        +4f+n^2f\\
+ &\le n^2f\bigl(5+s+88n+44s(C_g+1)L+4/n^2\bigr)\\
+ &\le n^3f\bigl(92+44(C_g+1)L\bigr)\\
+ &\le n^3f(44C_g+182)L\\
+ &\le50(C_g+4)n^3fL\le T.
+\end{align*}
+In the third line use $5+4/n^2\le3n$; in the fourth use
+$92\le138L$. Lemma~\ref{amb-shells} therefore bounds the
+normalized sum by $A_x2f3^fe^{-T}\le e^{-n^2f}$.
+Multiplication by $m_0$ proves \eqref{amb-far-sum}.
+The sum is measurable, since it is a countable sum of measurable
+nonnegative terms. Integrating the pointwise bound and using
+the volume of the full domain proves the final assertion.
+\end{proof}
+
+\subsection{The trace identity and the remaining comparison}
+
+The following statement records the exact analytic conclusion
+needed from the automorphic-kernel construction. It is not a
+consequence of the lattice packing argument: the convolution
+operator $R(\Phi)$ must be a finite-rank orthogonal projection
+of rank \eqref{amb-D-definition}, and its continuous kernel must
+have diagonal
+\begin{equation}\label{amb-projection-diagonal}
+                  K(x,x)=\sum_{j=1}^D|F_j(x)|^2
+\end{equation}
+for an orthonormal basis $F_1,\ldots,F_D$ of its image, with
+the series in \eqref{amb-kernel-function} representing this
+kernel. With these assertions supplied, finite summation and
+orthonormality immediately give
+\begin{equation}\label{amb-trace}
+                 K(x,x)\ge0,\qquad
+                 \int_{\mathcal X}K(x,x)\,dx=D.
+\end{equation}
+In particular, the diagonal is integrable. A finite-rank kernel
+on $L^2$ must be given by such representatives, or an equivalent
+proved diagonal identity; equality of measurable kernels only
+almost everywhere on $\mathcal X\times\mathcal X$ would not
+by itself determine the diagonal.
+
+\begin{proposition}\label{amb-final-reduction}
+Assume $n\ge e^{15}$ and $f\ge1$. Suppose the actual kernel
+satisfies \eqref{amb-projection-diagonal} and its diagonal
+series is absolutely convergent. Let
+\[
+ \mathcal M=\{x:\lambda_x\ge\tau_0\},\qquad
+ \mathcal B=\mathcal X\setminus\mathcal M,
+ \qquad a=nf\log n,\qquad u=n^2f.
+\]
+Assume the three further estimates
+\begin{align}
+ \int_{\mathcal M}
+   \sum_{\substack{\gamma\ne1\\
+          t((x^{-1}\gamma x)_v)\le\epsilon\ (\forall v)}}
+                      |\Phi(x^{-1}\gamma x)|\,dx
+                  &\le e^{-a/4}D_*,                    \label{amb-near-input}\\
+ \operatorname{vol}(\mathcal B)
+                  &\le e^{-a/4}\operatorname{vol}(\mathcal X),
+                                                        \label{amb-rare-input}\\
+ \int_{\mathcal B}K(x,x)\,dx&\le e^{-u}D.             \label{amb-deep-input}
+\end{align}
+Under the hypotheses of Theorem~\ref{amb-far}, these assertions
+imply \eqref{amb-target}.
+\end{proposition}
+\begin{proof}
+On $\mathcal M$, separate the identity term $m_0$, the nonidentity
+terms with all distances at most $\epsilon$, and the remaining
+terms. Absolute convergence, \eqref{amb-near-input} and
+Theorem~\ref{amb-far} give
+\[
+ \left|\int_{\mathcal M}K(x,x)\,dx
+                      -m_0\operatorname{vol}(\mathcal M)\right|
+                  \le(e^{-a/4}+e^{-u})D_*.
+\]
+On $\mathcal B$, positivity in \eqref{amb-trace} gives
+\[
+ \left|\int_{\mathcal B}K(x,x)\,dx
+                      -m_0\operatorname{vol}(\mathcal B)\right|
+ \le e^{-u}D+m_0\operatorname{vol}(\mathcal B).
+\]
+Adding and using \eqref{amb-rare-input} proves the exact inequality
+\begin{equation}\label{amb-error-before-absorption}
+             |D-D_*|\le(2e^{-a/4}+e^{-u})D_*+e^{-u}D.
+\end{equation}
+Set $z=e^{-a/16}$ and $Y=|D-D_*|$. Since $\log n\le n$,
+$u\ge a$, and $n\ge e^{15}$ gives $a\ge240$.
+Consequently
+\[
+        e^{-a/4}\le z/8,\qquad e^{-u}\le z/8,\qquad z\le1;
+\]
+for the first two bounds it is enough that
+$3a/16\ge\log8$ and $15a/16\ge\log8$.
+Use $D\le D_*+Y$ in \eqref{amb-error-before-absorption}.
+It follows that
+\[
+                    Y\le(z/2)D_*+Y/2,
+\]
+whence $Y\le zD_*$. This is \eqref{amb-target}, including the
+case $D_*=0$.
+\end{proof}
+
+\subsection{Hypothesis checks and precise scope}
+
+The small-distance condition does not force a rational element
+to be the identity in the indefinite group. For example, in a
+hyperbolic plane with Hermitian matrix
+$\begin{pmatrix}0&1\\1&0\end{pmatrix}$, choose a nonzero
+$a\in\mathcal O_E$ with $\bar a=-a$. Then
+\[
+ \gamma=\begin{pmatrix}1&Pa\\0&1\end{pmatrix},\qquad
+ x_R=\begin{pmatrix}R&0\\0&R^{-1}\end{pmatrix}
+\]
+are isometries, $\gamma$ is a nonidentity integral unipotent
+congruent to one modulo $P$, and
+$x_R^{-1}\gamma x_R=\begin{pmatrix}1&Pa/R^2\\0&1\end{pmatrix}$
+tends to one at every infinite place as $R\to\infty$.
+One can take the same $R$ at every place and adjoin a positive
+orthogonal summand of any dimension. This satisfies the actual
+unimodularity and congruence conditions. It explains why
+\eqref{amb-near-input} is a separate counting problem, even
+after Proposition~\ref{amb-near-unipotent} is proved.
+
+If the congruence condition is omitted, $\gamma=-1$ has distance
+zero at every place and is not unipotent. If the small-distance
+condition is omitted, the product
+\[
+ \begin{pmatrix}1&Pa\\0&1\end{pmatrix}
+ \begin{pmatrix}1&0\\Pa&1\end{pmatrix}
+ =\begin{pmatrix}1+P^2a^2&Pa\\Pa&1\end{pmatrix}
+\]
+is an integral isometry congruent to one modulo $P$, but has
+trace $2+P^2a^2\ne2$, so is not unipotent. These are
+counterexamples to weakened statements, not to the actual
+propositions above. In a definite group a unitary unipotent is
+the identity, by the spectral theorem. Thus, once the actual
+kernel and trace identity are supplied, the definite case gives
+the exact equality $D=D_*$.
+
+The present section proves the rational unipotence and separation
+arguments, the orbit packing, the full distant-term estimate
+using the classical integral formula and its elementary
+decay estimate, and the exact deduction
+of \eqref{amb-target} from the displayed analytic inputs.
+It retains the explicitly cited classical representation
+theorems. It does not supply the automorphic
+finite-rank kernel construction, the integrated nonidentity
+unipotent estimate \eqref{amb-near-input}, the small-volume bound
+\eqref{amb-rare-input}, or the cusp estimate
+\eqref{amb-deep-input}. These are separate substantive inputs
+in the actual source chain. No counterexample satisfying the
+actual hypotheses was found in the components proved here.
+The Galois-cohomology bounds at other coefficient primes are a
+different dependency and are not consequences of this complex
+multiplicity argument.
+
+

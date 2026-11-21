@@ -1,0 +1,410 @@
+\section{A shorter bound for the opposite-parity Selmer groups}
+\label{ms-section}
+
+The entire odd-prime estimate for the opposite-parity summand
+admits a classical proof which avoids separating primes dividing
+the degree of the field.  Apply the equivariant special-value
+theorem over the maximal real subfield: its Galois group then
+has order two.  We give the reduction and all numerical estimates.
+The classical inputs are Greither--Popescu's cohomological
+Coates--Sinnott theorem, Ferrero--Washington's vanishing of the
+Iwasawa $\mu$-invariant for abelian number fields, and
+Poitou--Tate duality.  These theorems are stated where used;
+they are not reproved here.
+
+\subsection{The group and its parity}
+
+Let $E/\mathbb Q$ be an abelian CM extension, $j$ complex
+conjugation, $F=E^{\langle j\rangle}$, and $n=[E:\mathbb Q]$.
+Choose $N$ with $E\subset\mathbb Q(\zeta_N)$.
+Necessarily $N\ge3$, $n$ is even, and $n\le\varphi(N)\le N$.
+For an odd prime $p$, let $G_{E,S_p}$ be the Galois group
+of the maximal extension unramified away from the places
+above $p$ and the infinite places.
+The Tate module $\mathbb Z_p(1)$ is the inverse limit of the
+$p$-power roots of unity; integer twists are its tensor powers
+and their duals.  Set
+$\mathbb Q_p/\mathbb Z_p(-e)=
+\mathbb Z_p(-e)\otimes_{\mathbb Z_p}\mathbb Q_p/\mathbb Z_p$.
+For $e\ge1$ define
+\[
+ \mathcal S_p(E,e)=
+ \ker\left(H^1(G_{E,S_p},\mathbb Q_p/\mathbb Z_p(-e))
+       \longrightarrow
+       \bigoplus_{v\mid p}H^1(E_v,\mathbb Q_p/\mathbb Z_p(-e))
+       \right).
+ \tag{MS1}
+\]
+Cohomology is continuous, and the local maps are restriction.
+The action of $j$ conjugates Galois arguments and acts on
+the coefficient module.  Since two is a unit in $\mathbb Z_p$,
+the two eigenspaces are the images of $(1+j)/2$ and $(1-j)/2$.
+We require
+\[
+ b_p(E,e)=\operatorname{length}_{\mathbb Z_p}
+                     \mathcal S_p(E,e)^{\,(-1)^{e+1}}.
+ \tag{MS2}
+\]
+This is the summand called \texttt{ShaMinus} in the source.
+It is not always the eigenspace with eigenvalue $-1$.
+
+\begin{theorem}\label{ms-main}
+For every integer $t\ge2$ the groups in \textup{(MS2)}, for
+$1\le e<t$, are finite and only finitely many are nonzero.
+Moreover
+\[
+ \sum_{\substack{p\ {\rm prime}\\p\ne2}}\log p
+       \sum_{e=1}^{t-1} b_p(E,e)
+ \le n(t^2+t-2)\log(tN)
+ \le \frac98 n t^2\log(tN).
+ \tag{MS3}
+\]
+In particular this supplies the source's estimate
+$3nt^2\log(tN)$, including primes dividing $[E:\mathbb Q]$,
+without its additional degree-dependent error term.
+\end{theorem}
+
+\subsection{The special-value theorem over a group of order two}
+
+For $m\ge2$ put $\epsilon=(-1)^m$ and
+$e_\epsilon=(1+\epsilon j)/2$.
+Let $S$ consist of the infinite places of $F$ and its
+finite places above rational primes dividing $N$.
+It contains all places ramified in $E/F$.  Write
+\[
+ H^i_{S,p}(E,m)=
+ H^i_{\mathrm{et}}(\mathcal O_{E,S}[1/p],\mathbb Z_p(m)),
+ \qquad
+ W_p(E,m)=H^0(E,\mathbb Q_p/\mathbb Z_p(m)).
+ \tag{MS4}
+\]
+The latter group is cyclic of finite order $w_p(E,m)$.
+It has $j$-eigenvalue $\epsilon$, because the cyclotomic
+character of a complex conjugation is $-1$.
+
+Let $X(E)$ be the group of Dirichlet characters modulo $N$
+factoring through $\operatorname{Gal}(E/\mathbb Q)$, and set
+\[
+ X_\epsilon(E)=\{\chi\in X(E):\chi(-1)=\epsilon\},
+ \qquad
+ R_m(E,N)=\prod_{\chi\in X_\epsilon(E)} L(1-m,\chi).
+ \tag{MS5}
+\]
+There are $n/2$ factors.  Every character is viewed modulo
+$N$, even when its primitive conductor is smaller.
+Thus its $L$-function omits the Euler factors at every
+prime dividing $N$.
+
+\begin{proposition}[Classical special-value theorem,
+specialized]\label{ms-special-value}
+For every odd prime $p$,
+\[
+ \operatorname{length}_{\mathbb Z_p}
+                    e_\epsilon H^2_{S,p}(E,m)
+       =v_p(w_p(E,m))+v_p(R_m(E,N)).
+ \tag{MS6}
+\]
+The group on the left is finite, and $R_m(E,N)$ is a
+nonzero rational number.
+\end{proposition}
+\begin{proof}
+Here is the precise classical input.
+For an abelian extension $K/k$ with $k$ totally real,
+$p>2$, $m\ge2$, and $S$ containing the infinite and
+ramified places, Greither--Popescu
+\cite[Theorem 6.11]{greither-popescu} prove
+\[
+ \begin{split}
+ &\operatorname{Ann}_{\mathbb Z_p[G]}
+     \bigl(H^1_{\mathrm{et}}(\mathcal O_{K,S}[1/p],
+                             \mathbb Z_p(m))_{\mathrm{tors}}\bigr)
+                       \Theta_{S,K/k}(1-m)\\
+ &\hspace{12mm}=
+ e_m(K/k)\operatorname{Fitt}_{\mathbb Z_p[G]}
+             H^2_{\mathrm{et}}(\mathcal O_{K,S}[1/p],\mathbb Z_p(m)).
+ \end{split}
+ \tag{MS7}
+\]
+The hypothesis is the vanishing of the cyclotomic
+$\mu$-invariant for the maximal CM subfield of $K(\mu_p)$.
+For $K=E$ that field is abelian over $\mathbb Q$, so
+Ferrero--Washington \cite{ct-fw} supplies it.
+The idempotent $e_m(K/k)$ is the product, over real places
+of $k$, of $(1+(-1)^m j_v)/2$.  For $E/F$ every $j_v$
+is $j$, so the product is $e_\epsilon$.
+Finiteness of $H^2$ is part of the standard cohomological
+setting of this theorem
+\cite[\S6.2, preceding Lemma 6.9]{greither-popescu}.
+
+We spell out its specialization.  The maps $j\mapsto1$
+and $j\mapsto-1$ give
+\[
+ \mathbb Z_p[\langle j\rangle]\simeq
+                       \mathbb Z_p\times\mathbb Z_p,
+ \qquad
+ e_\epsilon\mathbb Z_p[\langle j\rangle]\simeq\mathbb Z_p.
+ \tag{MS8}
+\]
+The inverse uses division only by two.  There is no
+division by $n$ and no exclusion of $p\mid n$.
+The torsion of $H^1_{S,p}(E,m)$ is $W_p(E,m)$
+\cite[Lemma 6.9(1)]{greither-popescu}; this also follows
+from the exact sequence for
+$\mathbb Z_p(m)\subset\mathbb Q_p(m)$, since
+$H^0(E,\mathbb Q_p(m))=0$ and $H^1(E,\mathbb Q_p(m))$
+is a vector space.
+In the $\epsilon$ factor its annihilator is
+$(p^{v_p(w_p(E,m))})$.
+For a finite $\mathbb Z_p$-module
+$M=\bigoplus_i\mathbb Z_p/p^{a_i}$, the diagonal presentation
+gives $\operatorname{Fitt}(M)=(p^{\sum_i a_i})$.
+The exponent is its length.
+
+The $\epsilon$ component of $\Theta_{S,E/F}(1-m)$ is
+$\zeta_{F,S}(1-m)$ for $\epsilon=1$, and
+$L_S(1-m,E/F)$ for $\epsilon=-1$.
+Artin factorization identifies these with (MS5).
+Indeed, induction of the trivial character of
+$\langle j\rangle$ to $\operatorname{Gal}(E/\mathbb Q)$
+is the sum of the characters with $\chi(j)=1$;
+induction of its nontrivial character is the sum with
+$\chi(j)=-1$.  Equality of Euler factors proves the
+factorization, including the removal of all primes above
+the rational divisors of $N$.
+Projecting (MS7) to (MS8) proves (MS6).
+
+The character set in (MS5) is invariant under Galois
+automorphisms of the field of character values, so the
+product is rational.  Every factor is nonzero.
+Its primitive character has parity $(-1)^m$; the
+functional equation expresses its value at $1-m$ as a
+nonzero constant times $L(m,\bar\chi)$.
+The absolutely convergent Euler product makes the latter
+nonzero.  Each removed Euler factor is
+$1-\chi^*(\ell)\ell^{m-1}\ne0$, since $m\ge2$.
+\end{proof}
+
+\subsection{Localization and the strict Selmer group}
+
+\begin{lemma}\label{ms-localization}
+For $m=e+1\ge2$ and odd $p$,
+\[
+ b_p(E,e)\le
+ \operatorname{length}_{\mathbb Z_p}
+                       e_{(-1)^m}H^2_{S,p}(E,m).
+ \tag{MS9}
+\]
+\end{lemma}
+\begin{proof}
+Apply finite-coefficient Poitou--Tate duality
+\cite[Chapter I, Theorem 4.10(a)]{milne-adt}
+to $A_a=\mathbb Z/p^a(1-m)$ and its Cartier dual
+$T_a=\mathbb Z/p^a(m)$.  It pairs their local restriction
+kernels in degrees one and two perfectly.
+The pairings respect the inclusions $A_a\longrightarrow A_{a+1}$
+and the quotient maps $T_{a+1}\longrightarrow T_a$.
+Continuous cohomology with discrete coefficients commutes
+with filtered direct limits.  Since there are finitely many
+local places, exactness of that limit identifies the direct
+limit of the degree-one kernels with (MS1).
+All finite-coefficient cohomology groups in question are
+finite.  Their inverse systems have the Mittag--Leffler
+property (descending sequences of images in a fixed finite
+group stabilize); hence their first derived inverse limits
+vanish.  Consequently the inverse limit of the degree-two
+kernels is the kernel for
+$H^2(G_{E,S_p},\mathbb Z_p(m))$.
+Pontryagin duality exchanges this inverse limit and the
+direct limit just described, giving the required perfect
+pairing.  These pairings are equivariant for automorphisms of $E$:
+cup products and restriction are natural, and an automorphism
+permutes the local invariant maps without changing their sum.
+The value group $\mathbb Q_p/\mathbb Z_p$ has trivial
+$j$-action.  The eigenspaces of the same sign therefore
+pair perfectly; opposite signs pair to zero, since two
+is invertible.  Hence $b_p(E,e)$ is the length of a subgroup
+of the $(-1)^m$ eigenspace of
+$H^2(G_{E,S_p},\mathbb Z_p(m))$.
+
+This is
+$H^2_{\mathrm{et}}(\mathcal O_E[1/p],\mathbb Z_p(m))$.
+Localization injects it into $H^2_{S,p}(E,m)$.
+The potentially preceding term for a removed prime
+$v\nmid p$ is
+$H^0(\kappa(v),\mathbb Z_p(m-1))$.
+Frobenius acts by $(Nv)^{m-1}\ne1$, and multiplication
+by $(Nv)^{m-1}-1$ is injective on $\mathbb Z_p$.
+That preceding group is zero.
+Adding the finitely many primes gives the injection.
+It respects $j$, as the set of removed primes is stable.
+Projection by $e_{(-1)^m}$ preserves it, proving (MS9)
+and finiteness of its left side.
+\end{proof}
+
+\subsection{Elementary special-value estimates}
+
+Define the Bernoulli polynomials by
+\[
+ \frac{z e^{xz}}{e^z-1}
+       =\sum_{a\ge0}B_a(x)\frac{z^a}{a!},
+ \qquad B_a=B_a(0),
+ \tag{MS10}
+\]
+and put $D_m=m(m+1)!N$ for $m\ge2$.
+
+\begin{lemma}\label{ms-bernoulli}
+For every character $\chi$ modulo $N$,
+\[
+ L(1-m,\chi)=
+       -\frac{N^{m-1}}m\sum_{a=1}^N\chi(a)B_m(a/N).
+ \tag{MS11}
+\]
+The number $D_mL(1-m,\chi)$ is an algebraic integer, and
+\[
+         D_m\le(mN)^m,\qquad |L(1-m,\chi)|\le(mN)^m.
+ \tag{MS12}
+\]
+\end{lemma}
+\begin{proof}
+For $z>0$, periodicity gives
+\[
+ \sum_{\nu\ge1}\chi(\nu)e^{-\nu z}
+       =\sum_{a=1}^N\chi(a)\frac{e^{-az}}{1-e^{-Nz}}.
+\]
+Its Mellin integral is $\Gamma(s)L(s,\chi)$ for
+$\operatorname{Re}s>1$.
+Split that integral at one and subtract sufficiently many
+terms of the power series at zero.
+The tail at infinity is entire, and a subtracted term
+$c z^h$ contributes $c/(s+h)$.
+The coefficient of $z^{m-1}$ in the exponential sum is
+$(-1)^mN^{m-1}\sum_a\chi(a)B_m(a/N)/m!$, by (MS10).
+The residue of $\Gamma(s)$ at $s=1-m$ is
+$(-1)^{m-1}/(m-1)!$.
+Dividing residues proves (MS11); the same subtraction
+supplies the analytic continuation used here.
+
+A denominator bound follows without a theorem about
+Bernoulli denominators.  The formal identities
+\[
+ \frac z{e^z-1}=\sum_{b\ge0}\frac{(-1)^b}{b+1}(e^z-1)^b,
+ \qquad
+ (e^z-1)^b=b!\sum_{a\ge b}
+    \left\{\begin{smallmatrix}a\\b\end{smallmatrix}\right\}
+    \frac{z^a}{a!}
+\]
+give
+\[
+ B_a=\sum_{b=0}^a\frac{(-1)^b b!}{b+1}
+                \left\{\begin{smallmatrix}a\\b\end{smallmatrix}\right\}.
+ \tag{MS13}
+\]
+The braces count partitions into nonempty subsets and
+are integers.  For $a\le m$, $(m+1)!$ clears all
+denominators in (MS13).
+Also $B_m(x)=\sum_{a=0}^m\binom ma B_a x^{m-a}$.
+Thus $N^m(m+1)!B_m(b/N)$ is an integer for integer $b$.
+Multiplying (MS11) by $D_m$ gives an integral linear
+combination of roots of unity and zeros.
+
+Repeated integration by parts in Fourier coefficients,
+using $B_a'=aB_{a-1}$ and
+$B_a(1)-B_a(0)=0$ for $a\ne1$, gives
+\[
+ B_m(x)=-\frac{m!}{(2\pi i)^m}
+          \sum_{h\ne0}\frac{e^{2\pi ihx}}{h^m},
+                  \quad 0\le x\le1,\quad m\ge2.
+ \tag{MS14}
+\]
+The constant coefficient is zero by (MS10).
+The series converges absolutely uniformly and has the
+same Fourier coefficients as the continuous periodic
+function $B_m$, proving equality, including endpoints.
+Hence
+$|B_m(x)|\le2m!\zeta(m)/(2\pi)^m\le m!$,
+using $\zeta(m)\le2$ and $2\pi>4$.
+Equation (MS11) gives
+$|L(1-m,\chi)|\le N^m(m-1)!\le(mN)^m$.
+Finally $m!\le m^{m-1}$ and
+$m+1\le3^{m-1}\le N^{m-1}$, so
+$m(m+1)!N\le m^m(m+1)N\le(mN)^m$.
+\end{proof}
+
+\begin{lemma}\label{ms-roots}
+The integer $w_{\mathrm{odd}}(E,m)=\prod_{p\ne2}w_p(E,m)$
+is finite and
+\[
+             \log w_{\mathrm{odd}}(E,m)\le nm\log(mN).
+ \tag{MS15}
+\]
+\end{lemma}
+\begin{proof}
+If $p^a\mid w_p(E,m)$, the subgroup
+$\operatorname{Gal}(E(\zeta_{p^a})/E)$ of
+$(\mathbb Z/p^a)^\times$ has exponent dividing $m$.
+For odd $p$ it is cyclic, hence has order at most $m$.
+Its index is
+$[E\cap\mathbb Q(\zeta_{p^a}):\mathbb Q]\le n$.
+Therefore $p^{a-1}(p-1)\le nm$ and
+$p^a\le3nm/2$.
+Only primes $3\le p\le nm+1$ occur.
+Since $nm$ is even, there are at most $nm/2$ odd integers
+in that interval, whence
+\[
+ \log w_{\mathrm{odd}}(E,m)
+       \le\frac{nm}{2}\log(3nm/2)\le nm\log(mN).
+\]
+The last inequality uses $n\le N$ and
+$3nm/2\le(mN)^2$, since $mN\ge6$.
+The prime-power bound also proves finiteness.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{ms-main}]
+For fixed $m=e+1$, put $r=n/2$ and $R=R_m(E,N)$.
+The number $D_m^rR$ is a nonzero algebraic integer by
+Lemma~\ref{ms-bernoulli}, and is rational by
+Proposition~\ref{ms-special-value}.  It is therefore a
+nonzero rational integer.  So is
+$I=w_{\mathrm{odd}}(E,m)D_m^rR$.
+Equations (MS6) and (MS9) imply, for odd $p$,
+\[
+ 0\le b_p(E,m-1)\le
+       v_p(w_p(E,m))+v_p(R)\le v_p(I).
+ \tag{MS16}
+\]
+The factors $w_q$ for $q\ne p$ are $p$-adic units,
+and $D_m^r$ only increases the valuation.
+Only primes dividing $I$ can have a nonzero group.
+Summing and applying (MS12) and (MS15) yields
+\[
+ \begin{split}
+ \sum_{p\ne2}b_p(E,m-1)\log p
+ &\le\log|I|\\
+ &\le nm\log(mN)+\frac n2 m\log(mN)+\frac n2 m\log(mN)\\
+ &=2nm\log(mN).
+ \end{split}
+ \tag{MS17}
+\]
+Using the actual integer $I$ handles possible denominators
+of $R$ at two; bounding odd valuations by $\log|R|$ alone
+would not be justified.
+Sum over $2\le m\le t$ and use
+$\log(mN)\le\log(tN)$.
+The equality $2\sum_{m=2}^t m=t^2+t-2$ gives the first
+inequality in (MS3).
+The second is equivalent to $(t-4)^2\ge0$.
+\end{proof}
+
+\paragraph{Relation to the submitted proof.}
+Taking $N$ to be the conductor proves the required
+opposite-parity estimate for every abelian CM field, and
+therefore for the composita in the source.
+In its notation this supplies \texttt{ThmBcFree} with
+the additional constant equal to zero.
+This is a separate conventional proof using the named
+classical theorems.  It does not certify the source's
+individual characterwise annihilator argument.
+It does not estimate the complementary eigenspace
+$(-1)^e$, whose relevant special value has a zero.
+
+

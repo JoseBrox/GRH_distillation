@@ -1,0 +1,381 @@
+\section{Separated interpolation sets in the actual spectral interval}
+\label{cg-section}
+
+We now supply the separated interpolation sets left open in
+Section~\ref{ca-section}.  The construction below is the one
+used in the source: Chebyshev nodes in disjoint intervals,
+together with a separate set in a shorter interval near the
+left endpoint~\cite{alpo-uniform-source}.  Keeping the exact
+Chebyshev coefficient sum improves the constant $28$ to $24$
+at every degree needed in the argument.
+
+\subsection{The spectral interval}
+
+Use the parameters and polynomials $P,Q$ of
+Section~\ref{as-section}.  Fix
+$1\leq l\leq k-2$ with $\epsilon_l\ne\epsilon'_l$ and put
+\[
+ \alpha=\frac52-v_l,\qquad
+ \beta=\frac{\Delta}{2}-v_l,\qquad
+ I=\beta-\alpha=\frac{\Delta}{2}-\frac52.
+\]
+Let $r\geq0$ be an integer, $N=20(r+1)$ and $R=2r$.
+For the construction assume
+\begin{equation}\label{cg-length}
+                        I\geq6N^3+6N.
+\end{equation}
+In particular $\Delta>5$.
+
+\begin{lemma}\label{cg-spectral}
+For every $Y\in[\alpha,\beta]$, $P(Y)\ne0$ and $Q(Y)>0$.
+Also $-Y$ lies between the two differing spectral entries
+with a margin of two:
+\begin{equation}\label{cg-OnCut}
+ \min(u_{l+1}(\epsilon),u_{l+1}(\epsilon'))+2
+       \leq -Y
+       \leq\max(u_{l+1}(\epsilon),u_{l+1}(\epsilon'))-2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write $\tau=v_l+Y$, so $5/2\leq\tau\leq\Delta/2$.
+The factors $Y+v_i=\tau+4\Delta(l-i)$ are positive
+for $i\leq l$ and negative for $i>l$.
+Furthermore
+\[
+ Y=\tau-v_l\leq\Delta/2-v_*-4\Delta(k-1-l)<0,
+\]
+so every $Y-b_j$ is negative.  This proves $P(Y)\ne0$.
+The factor $Y+1/2+a$ is positive by
+$a-v_1\geq4k\Delta$.
+For $1\leq i\leq k-2$, the two factors of $Q$
+associated with $u_{i+1}$ are
+\[
+              \tau+4\Delta(l-i)-\epsilon_i\Delta,
+       \qquad \tau+4\Delta(l-i)-\epsilon'_i\Delta.
+\]
+They are both positive if $i<l$, and both negative if
+$i>l$.  At $i=l$ they are $\tau$ and $\tau-\Delta$,
+in some order, so their product is negative.
+The two factors associated with $u_k$ are equal and
+nonzero.  In the first case their common value is
+$Y+v_*<0$; in the second it is $Y+1/2-b_*<0$.
+Thus the product defining $Q$ has exactly one negative
+paired factor.  Its initial factor $-TT'$ is negative,
+so $Q(Y)>0$.
+
+The two entries in \eqref{cg-OnCut} are
+$v_l-1/2-\Delta$ and $v_l-1/2$.
+The upper inequality is $\tau\geq5/2$.
+The lower is $\tau\leq\Delta-3/2$, which follows from
+$\tau\leq\Delta/2$ and $\Delta\geq3$.
+\end{proof}
+
+In particular $P(y)$ and $P(y+1)$ are nonzero whenever
+$y,y+1\in[\alpha,\beta]$.  The same margin condition
+holds at both parameters.
+
+\subsection{The finite sets}
+
+Put
+\[
+ q=\frac{I}{6N},\qquad \ell=q-1,\qquad
+ A_a=\alpha+(2N+2a-2)q\quad(1\leq a\leq N).
+\]
+Condition~\eqref{cg-length} gives $q\geq N^2+1$ and
+$\ell\geq N^2>0$.  Define
+\[
+                    J_a=[A_a,A_a+\ell].
+\]
+For $d\geq1$, let
+\[
+ c_{a,d,i}
+   =A_a+\frac{\ell}{2}
+                \left(1+\cos\frac{i\pi}{d}\right)
+                       \quad(0\leq i\leq d),
+\]
+and set
+\[
+ \mathcal G_a=
+       \bigcup_{1\leq d\leq\max(1,R)}
+                    \{c_{a,d,0},\ldots,c_{a,d,d}\}.
+\]
+For positive $a$ outside $\{1,\ldots,N\}$ let
+$\mathcal G_a=\varnothing$.
+Independently choose arbitrary
+$\delta_0,\ldots,\delta_{N-1}\in[0,1/2]$ and put
+\[
+ z_j=\alpha+jN^2+\delta_j\quad(0\leq j<N),\qquad
+ \mathcal G_0=\{z_0,\ldots,z_{N-1}\}.
+\]
+All choices of the $\delta_j$ have the properties below.
+The source's short-interval nodes, which additionally avoid
+the finitely many zeros of $P(Y)P(Y+1)$ by construction,
+are among these choices.  Here that avoidance also follows
+from Lemma~\ref{cg-spectral}.
+
+\begin{proposition}\label{cg-sets}
+The set $\mathcal G_0$ has exactly $N$ elements.
+Every $y$ in any of the displayed sets satisfies
+$y,y+1\in[\alpha,\beta]$, and every $y\in\mathcal G_0$
+also satisfies
+\[
+                 \frac52\leq v_l+y,\quad
+                              v_l+y+1\leq N^3.
+\]
+For $e,e'\in\{0,1\}$, the following separations hold:
+\begin{align}
+ |(y+e)-(y'+e')|&\geq N^2+1
+       &&(y\in\mathcal G_a,\ y'\in\mathcal G_{a'},\
+                   1\leq a,a'\leq N,\ a\ne a'),\label{cg-long-sep}\\
+ |(y+e)-(y'+e')|&\geq N^2+1
+       &&(y\in\mathcal G_0,\ y'\in\mathcal G_a,\
+                   1\leq a\leq N),\label{cg-cross-sep}\\
+ |(y+e)-(y'+e')|&\geq N^2-\frac32\geq\frac{N^2}{8}
+       &&(y,y'\in\mathcal G_0,\ y\ne y').\label{cg-short-sep}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Every long-interval point satisfies
+\[
+ \alpha+2Nq\leq y,\qquad
+             y+1\leq\alpha+(4N-1)q<\alpha+6Nq=\beta.
+\]
+For a short-interval point,
+\[
+ \alpha\leq y,\qquad
+ y+1\leq\alpha+(N-1)N^2+\frac32
+                      \leq\alpha+N^3-\frac52.
+\]
+The last inequality uses $N^2\geq4$, and the last upper
+bound is less than $\beta$ by \eqref{cg-length}.
+It also proves the stated shorter-interval bound.
+
+If $a<a'$, the least possible difference
+$(y'+e')-(y+e)$ is at least
+\[
+             A_{a'}-(A_a+\ell+1)
+                    =\bigl(2(a'-a)-1\bigr)q\geq q.
+\]
+This proves \eqref{cg-long-sep}.
+The least difference between a long point with its shift
+and a short point with its shift is at least
+\[
+          2Nq-N^3+\frac52
+                 \geq N^3+2N+\frac52>N^2+1,
+\]
+proving \eqref{cg-cross-sep}.
+If $j<j'$, then
+$z_{j'}-z_j\geq N^2-1/2>0$.
+Thus the $z_j$ are distinct, and allowing the two shifts
+decreases their distance by at most one.
+Finally $N^2-3/2\geq N^2/8$ for $N\geq20$.
+\end{proof}
+
+\begin{proposition}[Interpolation with the actual separation]
+\label{cg-interpolation}
+For every $1\leq a\leq N$ and every integer $0\leq d\leq R$,
+there are $d+1$ distinct points $y_0,\ldots,y_d$ in
+$\mathcal G_a$ such that their Lagrange leading-coefficient
+weights satisfy
+\begin{equation}\label{cg-weight}
+ \sum_{i=0}^d\left|
+       \prod_{h\ne i}(y_i-y_h)^{-1}\right|
+                       \leq\left(\frac{24N}{I}\right)^d.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $d=0$, choose the endpoint $A_a+\ell$, which occurs
+in the degree-one set.  The empty product is one, so
+\eqref{cg-weight} holds.
+For $d\geq1$ use $y_i=c_{a,d,i}$.
+Lemma~\ref{ca-Chebyshev} gives the exact coefficient sum
+$\frac12(4/\ell)^d$.  Since $q=I/(6N)$ and
+$q\geq N^2+1$,
+\[
+ \frac4\ell=\frac{24N}{I}\frac{q}{q-1}
+              \leq\frac{24N}{I}\left(1+\frac1{N^2}\right).
+\]
+For an integer $d\geq1$ and $x\geq0$ with $dx<1$,
+\[
+ (1+x)^d
+     =\sum_{h=0}^d\binom dh x^h
+     \leq\sum_{h=0}^{\infty}(dx)^h
+     =\frac1{1-dx}.
+\]
+Here $d\leq R=2r<N/10$, so in particular
+$d/N^2\leq1/2$ and the last quantity is at most two.
+The factor $1/2$ in the exact coefficient sum absorbs
+this loss.  This proves \eqref{cg-weight}.
+The same proof works for any $d\leq N^2/2$, if the set
+is constructed with nodes of that degree.
+\end{proof}
+
+\subsection{Extension of signed parameter sequences}
+
+A signed parameter is a pair $(\varepsilon,t)$ with
+$\varepsilon\in\{+,-\}$ and $t\in\mathbb R$.
+Its underlying node is $t$ for sign $+$ and $t-1$
+for sign $-$.
+Call a finite sequence
+$w=((\varepsilon_1,t_1),\ldots,(\varepsilon_h,t_h))$
+admissible if $h\leq N$, its $i$th underlying node belongs to
+$\mathcal G_{h+1-i}\cup\mathcal G_0$, and
+\begin{equation}\label{cg-admissible}
+       |t_i-t_j+\delta|>2
+       \quad(i\ne j,\ \delta\in\mathbb Z,\ |\delta|\leq2).
+\end{equation}
+These are the actual per-place conditions used in the
+source.  Every parameter belongs to $[\alpha,\beta]$
+and hence satisfies \eqref{cg-OnCut}.
+
+For a list $\boldsymbol y=(y_1,\ldots,y_K)$, write
+\[
+ w_+(\boldsymbol y)
+       =((+,y_1),\ldots,(+,y_K),w),\qquad
+ w_-(\boldsymbol y)
+       =((-,y_1+1),\ldots,(-,y_K+1),w).
+\]
+The notation means concatenation with the original sequence.
+
+\begin{theorem}\label{cg-extension}
+Let $w$ be admissible of length $h$ and let $h+K\leq N$.
+For every $0\leq d\leq R$ there are $K$ grids
+$y_{a,0},\ldots,y_{a,d}$, $1\leq a\leq K$, satisfying
+\eqref{cg-weight}, such that every selection
+$\boldsymbol y=(y_{1,i_1},\ldots,y_{K,i_K})$
+has the following properties:
+
+\begin{enumerate}
+\item Both $w_+(\boldsymbol y)$ and $w_-(\boldsymbol y)$
+are admissible, have length $h+K$, and satisfy the
+spectral margin \eqref{cg-OnCut} at every parameter.
+\item The new nodes are pairwise at distance greater
+than four.  For every old parameter $(\varepsilon,t)$,
+every new node $y$ and every $e\in\{0,1\}$,
+\[
+                         |y+e-t|\geq N^2+1.
+\]
+\item The Lagrange product weights, normalized by their
+sum of absolute values as in
+Section~\ref{ca-section}, define a probability measure
+on the resulting finite family of extended sequences.
+\end{enumerate}
+At degree $d=0$ one may instead choose $K$ distinct
+nodes from $\mathcal G_0$ not already underlying old
+parameters.  All conclusions still hold, with the
+distance lower bound $N^2/8$ in place of $N^2+1$,
+and every new node lies in the shorter interval above.
+\end{theorem}
+
+\begin{proof}
+For $a=1,\ldots,K$ take the degree-$d$ grid from
+$\mathcal G_{h+K+1-a}$ in
+Proposition~\ref{cg-interpolation}.
+These block indices are distinct and are all greater
+than $h$.  Each old underlying node either belongs to
+$\mathcal G_0$ or to a block with index at most $h$.
+The separations \eqref{cg-long-sep} and
+\eqref{cg-cross-sep} therefore apply to every new pair
+and every new--old pair, for all shifts by zero or one.
+In particular all those parameter distances exceed four.
+Adding an integer of absolute value at most two leaves
+a distance greater than two, proving
+\eqref{cg-admissible} for the extended sequences.
+The previously existing pairs already satisfy it.
+
+For the block membership condition, the $a$th new
+underlying node lies in
+$\mathcal G_{h+K+1-a}$ by construction.
+An old entry moves from position $i$ to $K+i$, and
+\[
+                  (h+K)+1-(K+i)=h+1-i.
+\]
+Thus its required block is unchanged.  Both signs
+of extension use the same underlying nodes.  The
+interval and spectral assertions follow from
+Proposition~\ref{cg-sets} and Lemma~\ref{cg-spectral}.
+
+Every Lagrange weight is nonzero, because the nodes
+within its grid are distinct.  The product of the
+normalized absolute weights sums to one by expansion
+of a product of finite sums.  Assign the sum of these
+weights to each sequence if several choices represent
+the same sequence.  This gives the stated probability
+measure without any counting factor.
+
+For degree zero, at most $h$ elements of $\mathcal G_0$
+are underlying nodes of old parameters.  Since
+$|\mathcal G_0|=N\geq h+K$, at least $K$ unused
+nodes remain.  Choose any $K$ of them.
+Equation~\eqref{cg-short-sep} supplies all new--new
+and relevant new--old separations within the short
+set, and \eqref{cg-cross-sep} handles old long nodes.
+Here $N^2/8\geq50>4$, so the same admissibility
+argument applies.  Every grid has one node and weight
+one.  For $K=0$ both constructions give the original
+sequence and the probability measure of mass one on it.
+\end{proof}
+
+\begin{corollary}\label{cg-actual-constant}
+The actual Fourier interpolation degree $d=2j$,
+$0\leq j\leq r$, admits the construction above.
+The denominators in \eqref{ca-q-distortion-eq} are
+bounded below by $N^2/8$ for the short-interval
+construction and by $N^2+1$ for the long one.
+Consequently the algebraic barrier in
+\eqref{ca-X-exact} may be replaced by
+\[
+ \frac{g\lambda}{2\pi}
+        \left(\frac{24N}{I}\right)^{2j}
+                             e^{10/49}A_{\rm pol}.
+\]
+This improvement retains the particular Hermitian-form
+inequality and Fourier identity assumed in
+Section~\ref{ca-section}.
+\end{corollary}
+
+\begin{proof}
+For an old positive parameter, the denominator is
+$y-t$; for an old negative parameter it is
+$t-y-1$.  The latter is the difference between its
+underlying node and $y$.  Both are covered by the
+proved separation inequalities, using the appropriate
+zero or one shift.  Apply
+Lemma~\ref{ca-q-distortion} and
+Proposition~\ref{ca-positive-block}.
+\end{proof}
+
+The interval condition \eqref{cg-length} also follows
+eventually from the numerical range in
+Section~\ref{as-section}.  Indeed, there $m=2r+2\leq k$,
+so $N=10m\leq10k$.  If
+$\Delta\geq(kf\log B)^{C_\Delta}$ with $C_\Delta>4$,
+$f\geq2$ and $\log B\geq1$, then
+$\Delta\geq k^{C_\Delta}$.
+For all sufficiently large $k$, depending only on
+$C_\Delta$, this gives
+$\Delta/2-5/2\geq6000k^3+60k\geq6N^3+6N$.
+Thus this construction introduces no new asymptotic
+hypothesis in that range.
+
+This closes the finite-set construction, all simultaneous
+separation conditions, and the interpolation probabilities.
+For a finite family of complex places, perform the same
+construction at each place.  Its constants depend only on
+$N,I$ and the degree, not on the translated interval
+endpoint $\alpha$, the place, or the choices $\delta_j$.
+The source bounds the lengths of the parameter sequences
+by their maximum over the places.  Replacing the sequence
+at one place by any extension of length at most $N$
+therefore preserves the global length restriction.
+It does not prove the radial Fourier identity, the
+positivity and mixed inequality for the specified
+differential forms, their wave isometry, or the analytic
+domain and limiting assertions.  The separate mass,
+source-dimension and formal-degree hypotheses remain
+as stated earlier.
+
+

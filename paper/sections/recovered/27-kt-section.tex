@@ -1,0 +1,333 @@
+\section{A direct coarse bound from algebraic \texorpdfstring{$K$}{K}-theory}
+\label{kt-section}
+
+The coarse cohomology estimate has a shorter route through established
+comparison theorems in algebraic \(K\)-theory.  We state these inputs
+precisely, including the bound at the prime \(2\), and prove all the
+resulting order estimates.  This gives an alternative to
+assertion~\ref{sc-few} for the coarse estimate; that assertion itself
+is proved independently in Theorem~\ref{sw-few}.
+
+Let \(L\) be a totally imaginary number field, let
+\[
+ n=[L:\mathbb Q],\qquad D=|\operatorname{disc}L|,\qquad
+ h=\#\operatorname{Cl}(L),
+\]
+and let \(p\) be a prime such that \(\mu_p\subset L\).
+For \(p=2\) this last condition is automatic.
+Let \(S\) be the finite primes above \(p\), let
+\(R=\mathcal O_L[1/p]\), and let \(G_{L,S}\) be the Galois
+group of the maximal algebraic extension unramified outside \(S\).
+All \(p\)-adic cohomology groups below use continuous cohomology.
+For a finite abelian group \(A\), its \(p\)-primary subgroup is
+\(A\{p\}=\{a:p^r a=0\text{ for some }r\ge0\}\).
+
+\subsection{The precise classical inputs}
+
+Write \(\operatorname{GL}(\mathcal O_L)\) for the union of the
+groups \(\operatorname{GL}_N(\mathcal O_L)\) under the usual
+upper-left inclusions.  Quillen's construction gives a connected
+infinite loop space
+\(X=B\operatorname{GL}(\mathcal O_L)^+\).
+It is the base component of the \(K\)-theory infinite
+loop space, equivalently the infinite loop space of the
+connected cover of its spectrum; taking this cover
+preserves all positive homotopy groups.
+Here the plus construction preserves integral homology, and
+\[
+ K_j(\mathcal O_L)=\pi_j(X)\quad(j\ge1),\qquad
+ H_j(X,\mathbb Z)=
+ H_j(\operatorname{GL}(\mathcal O_L),\mathbb Z).
+ \tag{KT1}
+\]
+An infinite loop space is a pointed space equipped with
+compatible deloopings in all positive degrees.  We use this
+structure only to apply the Hurewicz theorem with an exponent
+bound stated below.
+
+The required results are the following.
+
+\begin{enumerate}
+\item Quillen's finite-generation theorem and Borel's rank
+theorem imply that \(K_{2E}(\mathcal O_L)\) is finite for
+every \(E\ge1\).
+\cite[IV, Theorems 6.9 and 1.17--1.18]{weibel-kbook}
+\item Homological stability gives
+\[
+ H_m(\operatorname{GL}_N(\mathcal O_L),\mathbb Z)
+       \simeq H_m(\operatorname{GL}(\mathcal O_L),\mathbb Z)
+       \quad\text{if }N\ge\max(2m+1,m+2).
+ \tag{KT2}
+\]
+This is the stable-range form of the usual integral
+stability theorem.\cite[IV, Corollary 1.14.1]{weibel-kbook}
+\item The Quillen--Lichtenbaum comparison, valid also at \(2\)
+for totally imaginary \(L\), identifies
+\[
+ K_{2E}(\mathcal O_L)\{p\}
+       \simeq H^2_{\mathrm{\acute et}}
+                  (\operatorname{Spec}R,\mathbb Z_p(E+1)),
+                    \qquad E\ge1.
+ \tag{KT3}
+\]
+\cite[VI, Theorem 8.2]{weibel-kbook}
+For \(p\)-power torsion coefficients, the usual
+\'etale--Galois comparison identifies the right-hand
+cohomology with that of \(G_{L,S}\), since \(p\) is
+invertible on \(\operatorname{Spec}R\).
+It also identifies their compatible inverse limits for
+\(\mathbb Z_p(E+1)\).
+\cite[II, Proposition 2.9]{milne-adt}
+\item If \(Y\) is a connected infinite loop space and \(j\ge2\),
+the \(p\)-primary part of the kernel of
+\[
+            \pi_j(Y)\longrightarrow H_j(Y,\mathbb Z)
+\]
+is killed by \(p^{b_p(j)}\), where one may take
+\[
+ b_2(j)=\left\lceil\frac{j-1}{2}\right\rceil+3,\qquad
+ b_p(j)=\left\lceil\frac{j+2}{2p-2}\right\rceil+1
+                  \quad(p>2).
+ \tag{KT4}
+\]
+This is Mathew's exponent theorem with connectivity
+parameter \(m=1\).\cite[Theorem 6.3]{mathew-hurewicz}
+In particular \(b_p(2E)\le E+3\) for every prime \(p\).
+\end{enumerate}
+
+These theorems are used as established inputs; their general
+proofs are not reproduced here.  In (KT3), the integral
+\(p\)-primary group is the one over \(\mathcal O_L\), not
+over the field \(L\).  The comparison includes the
+localization at \(p\) displayed on the right.
+For the \(p\)-adic comparison, the finite-coefficient
+\(H^1\) groups are finite.  One can see this directly:
+after passing to \(L(\mu_{p^a})\), the module
+\(\mathbb Z/p^a(E+1)\) is isomorphic to \(\mu_{p^a}\).
+Kummer theory expresses its \(H^1\) as an extension of
+the \(S\)-units modulo \(p^a\)-th powers by a subgroup
+of the finite ideal class group.
+The \(S\)-unit group is finitely generated: its valuation
+map has kernel the ordinary units and image in
+\(\mathbb Z^S\), and the ordinary unit theorem was
+proved in Theorem~\ref{su-unit-theorem}.
+Restriction has finite kernel, since that kernel is
+cohomology of a finite group with finite coefficients.
+This proves the required finiteness before base change as well.
+Inverse systems of finite groups satisfy the
+Mittag--Leffler condition, so the possible
+\(\varprojlim^1H^1\) term vanishes and the two ordinary
+inverse limits agree.
+
+For completeness, the stable-range bound used in (KT2)
+does apply to every ring of integers.  The needed ring
+condition says that a unimodular triple \((a,b,c)\) can
+be shortened to a unimodular pair \((a+cx,b+cy)\).
+If \(c=0\), take \(x=y=0\).
+Otherwise choose \(x\in\mathcal O_L\) so that \(d=a+cx\ne0\).
+There are only finitely many prime ideals dividing \((d)\).
+At any such prime dividing \(c\), unimodularity forces
+\(b\) to be nonzero modulo that prime.
+At each of the other primes, choose \(y\) modulo the prime
+so that \(b+cy\ne0\).  The Chinese remainder theorem makes
+all these choices simultaneous.
+No prime ideal divides both \(d\) and \(b+cy\), proving
+the ring condition, or stable range at most \(2\).
+Thus the general bound
+\(N\ge\max(2m+1,m+\operatorname{sr}(\mathcal O_L))\)
+gives (KT2).
+
+\subsection{The number of cyclic \texorpdfstring{$p$}{p}-primary factors}
+
+We also use the classical Brauer--Hasse--Noether theorem
+in the following form for the ring \(R\):
+\[
+ 0\longrightarrow\operatorname{Br}(R)
+   \longrightarrow\bigoplus_{v\in S}\mathbb Q/\mathbb Z
+   \xrightarrow{\ \sum_v\ }\mathbb Q/\mathbb Z
+   \longrightarrow0.
+ \tag{KT5}
+\]
+The field is totally imaginary, so there are no real-place
+terms.  Here \(\operatorname{Br}(R)=
+H^2_{\mathrm{\acute et}}(\operatorname{Spec}R,\mathbb G_m)\);
+the maps are the local invariants.
+\cite[VI, equation (8.1.1)]{weibel-kbook}
+Only the resulting elementary \(p\)-rank bound will be needed.
+
+\begin{lemma}\label{kt-rank}
+Put \(M_E=H^2(G_{L,S},\mathbb Z_p(E+1))\).
+This is a finite \(p\)-group, and
+\[
+ \dim_{\mathbb F_p}(M_E/pM_E)
+       \le |S|-1+\log_p h
+       \le n+\log_p h .
+ \tag{KT6}
+\]
+\end{lemma}
+\begin{proof}
+Finiteness follows from the first and third classical
+inputs.  The coefficient sequence for multiplication by
+\(p\) gives an injection
+\[
+ M_E/pM_E\ \lhook\joinrel\longrightarrow\
+       H^2(G_{L,S},\mathbb F_p(E+1)).
+\]
+Since \(\mu_p\subset L\), all these finite twists have
+trivial Galois action.  Choosing a primitive root
+identifies the finite coefficient module with \(\mu_p\).
+Use the \'etale--Galois comparison to compute the
+last group over \(\operatorname{Spec}R\).
+
+The Kummer sequence
+\[
+ 1\longrightarrow\mu_p\longrightarrow\mathbb G_m
+       \xrightarrow{\,(\cdot)^p\,}\mathbb G_m
+       \longrightarrow1
+\]
+is exact on the \'etale site: a unit acquires a \(p\)-th
+root in a finite \'etale algebra because \(p\) is invertible.
+Its cohomology sequence, with
+\(H^1(\mathbb G_m)=\operatorname{Pic}(R)\), gives
+\[
+ 0\longrightarrow\operatorname{Pic}(R)/p
+  \longrightarrow H^2_{\mathrm{\acute et}}(R,\mu_p)
+  \longrightarrow\operatorname{Br}(R)[p]
+  \longrightarrow0.
+ \tag{KT7}
+\]
+Every fractional ideal of \(R\) comes from an ideal of
+\(\mathcal O_L\); factorization into prime ideals shows
+that localization merely kills the classes of the
+primes in \(S\).  Thus \(\operatorname{Pic}(R)\) is a
+quotient of \(\operatorname{Cl}(L)\), and its quotient
+by \(p\) has at most \(h\) elements.
+
+Equation (KT5) identifies \(\operatorname{Br}(R)[p]\)
+with the kernel of the sum map
+\(\mathbb F_p^{S}\to\mathbb F_p\).
+There is at least one prime over \(p\), so its dimension
+is exactly \(|S|-1\).  Add the dimensions in (KT7).
+Finally \(|S|\le n\), since
+\(\sum_{v\mid p}e_vf_v=n\) and each summand is positive.
+This proves (KT6).
+\end{proof}
+
+\subsection{The complete order comparison}
+
+\begin{proposition}\label{kt-additive}
+For every \(E\ge1\),
+\[
+ \log\#H^2(G_{L,S},\mathbb Z_p(E+1))
+ \le
+ \log t_L(4E+6,2E)
+       +(E+3)\bigl(n\log p+\log h\bigr).
+ \tag{KT8}
+\]
+\end{proposition}
+\begin{proof}
+Let \(A=K_{2E}(\mathcal O_L)\{p\}\), which is finite.
+The ordinary Hurewicz map and (KT1) give
+\[
+ f:A\longrightarrow
+               H_{2E}(\operatorname{GL}(\mathcal O_L),\mathbb Z).
+\]
+The image of a finite group lies in the torsion subgroup.
+For \(m=2E\), the choice \(N=4E+6\) satisfies (KT2),
+so
+\[
+                  |\operatorname{im}f|
+                              \le t_L(4E+6,2E).
+\]
+This is where finiteness of the even \(K\)-group is
+needed; it is supplied explicitly above.
+
+By (KT4), \(\ker f\) is killed by \(p^{E+3}\).
+Write \(r=\dim_{\mathbb F_p}(A/pA)\).
+For any finite abelian \(p\)-group the kernel and
+cokernel of multiplication by \(p\) have equal orders,
+so \(|A[p]|=p^r\).
+For \(j\ge1\), multiplication by \(p\) maps
+\(A[p^{j+1}]\) to \(A[p^j]\) and has kernel \(A[p]\).
+Induction therefore gives
+\[
+                 |A[p^j]|\le p^{jr}.
+\]
+Consequently \(|\ker f|\le p^{(E+3)r}\).
+By (KT3) and Lemma~\ref{kt-rank},
+\(r\le n+\log_p h\).
+The identity \(|A|=|\ker f|\,|\operatorname{im}f|\)
+and (KT3) now prove (KT8).
+\end{proof}
+
+\begin{theorem}\label{kt-fourteen}
+For every totally imaginary \(L\), every prime \(p\)
+with \(\mu_p\subset L\), and every \(E\ge1\), one has
+\[
+ \log\#H^2(G_{L,S},\mathbb Z_p(E+1))
+       \le\exp\bigl((2En)^{14}\log(2D)\bigr).
+ \tag{KT9}
+\]
+With the stated global duality input, the strict Selmer
+group with coefficient module
+\(\mathbb Q_p/\mathbb Z_p(-E)\) is finite and also satisfies
+\[
+        \log\#\mathcal S_p(L,E)
+            \le\exp\bigl((2En)^{14}\log(2D)\bigr).
+ \tag{KT10}
+\]
+\end{theorem}
+\begin{proof}
+Put \(x=2En\ge4\) and \(Y=\log(2D)\ge\log2>1/2\).
+The arithmetic complex and
+Proposition~\ref{ht-arithmetic-numerical} give
+\[
+                 \log t_L(4E+6,2E)\le e^{x^{13}Y}.
+\]
+Corollary~\ref{sl-class-number}, together with
+\(\log(1+t)\le t\) for \(t\ge0\), gives
+\[
+ \log h\le\tfrac12\log D
+        +(n-1)\log(1+\tfrac12\log D)
+            \le\tfrac n2\log D\le\tfrac n2Y.
+\]
+The inclusion \(\mu_p\subset L\) implies \(p-1\le n\).
+For odd \(p\), this is the degree of the prime cyclotomic
+field, proved by the Eisenstein calculation in
+Section~\ref{sl-section}; it also holds for \(p=2\).
+Thus \(\log p\le\log(n+1)\le n\).
+Since \(E+3\le4E\) and \(n\le x/2\), the extra term in
+(KT8) is at most
+\[
+ 4E(n^2+nY/2)=2xn+xY
+       \le x^2+xY\le3x^2Y\le x^{13}Y.
+\]
+Here \(Y>1/2\) and \(x\ge4\) give the penultimate
+inequality, and \(x^{11}\ge3\) gives the last.
+Therefore (KT8) is at most
+\[
+ e^{x^{13}Y}+x^{13}Y
+       \le2e^{x^{13}Y}\le e^{x^{14}Y}.
+\]
+For the last step, use
+\((x-1)x^{13}Y\ge\log2\).
+This proves (KT9), with all small primes included.
+
+The global duality statement before
+Proposition~\ref{ht-h2-from-selmer} identifies
+\(\mathcal S_p(L,E)^\vee\) with a subgroup of this
+finite \(H^2\).  It follows that the Selmer group is
+finite and has order no larger than that of \(H^2\),
+proving (KT10).
+\end{proof}
+
+Theorem~\ref{kt-fourteen} proves the coarse cohomology
+input using the explicitly cited classical theorems.
+It does not use the source-specific finite-field
+homology construction in assertion~\ref{sc-few}.
+The independent proof of that construction is given in
+Theorem~\ref{sw-few}.  The other arithmetic and analytic
+constructions needed for the claimed Riemann hypothesis
+remain distinct tasks.
+
+

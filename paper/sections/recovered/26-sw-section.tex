@@ -1,0 +1,241 @@
+\section{The finite-set bound for the weighted norms}
+\label{sw-section}
+
+We can now combine the arithmetic cycles, finite-field
+functionals, homology bound, and detection of global
+powers.  This proves assertion~\ref{sc-few}, and also
+its version with the smaller scalar exponent anticipated
+in (SC19).  The classical rational homology theorems used
+in Section~\ref{sb-section} and the qualitative
+Chebotarev theorem used in Section~\ref{sd-section}
+remain the explicit classical inputs to this argument.
+
+Let \(F/L\) be a cyclic extension of number fields with
+generator \(\gamma\).  Suppose that \(L\) is totally
+imaginary and that
+\[
+ \nu\ge c\ge1,\qquad c\ge2\text{ if }\ell=2,
+ \qquad [F:L]=\ell^{\nu-c},
+ \qquad \gamma\zeta=\zeta^{1+\ell^c},
+ \tag{SW1}
+\]
+where \(\ell\) is prime and \(\zeta\in F\) is a
+primitive \(q\)-th root of unity, with \(q=\ell^\nu\).
+Put
+\[
+ \kappa=1+\ell^c,\quad E\ge1,\quad
+ m=2E+1<\ell^c,\quad a=\kappa^E,\quad A=\mathbb Z/q.
+\]
+Call \(\alpha\in F^\times\) admissible if there is a
+fractional divisor \(\mathfrak d\) on \(F\) such that
+\[
+             v_P(\alpha)=\mathfrak d(\gamma P)
+                                      -a\mathfrak d(P)
+                  \quad\text{for all finite primes }P.
+\]
+As before, define
+\[
+ \mathcal N(\alpha)=\prod_{j=0}^{[F:L]-1}
+                              (\gamma^j\alpha)^{a^j},
+ \quad
+ c_E=\prod_{\substack{0\le j\le2E\\j\ne E}}
+                              (\kappa^E-\kappa^j),
+ \quad
+ b_*=2E(c+1)+2v_\ell(E!).
+ \tag{SW2}
+\]
+
+\begin{theorem}\label{sw-few}
+Let \(b\ge b_*\) be an integer.  If \(T\subset F^\times\)
+is a finite set of admissible elements and
+\[
+ \left(\frac{\mathcal N(\alpha)}{\mathcal N(\alpha')}
+              \right)^{\ell^b}\in(F^\times)^q
+          \quad\Longrightarrow\quad\alpha=\alpha'
+                       \qquad(\alpha,\alpha'\in T),
+ \tag{SW3}
+\]
+then
+\[
+ \#T\le q^{r_2(L)}
+           t_L(4E+6,2E+1)t_L(4E+6,2E).
+ \tag{SW4}
+\]
+This conclusion does not require \(2E+1<r_2(L)\).
+\end{theorem}
+\begin{proof}
+For each \(\alpha\in T\), choose a divisor witnessing
+admissibility.  Theorem~\ref{sa-class} supplies a size
+\(N_\alpha\), a cycle
+\[
+ y_\alpha\in C_m(\operatorname{GL}_{N_\alpha}
+                           (\mathcal O_L);A),
+\]
+and a nonzero \(b_\alpha\in\mathcal O_L\) with its
+simultaneous reduction property.  The cycle and
+\(b_\alpha\) are chosen before any residue field or
+finite-field functional.  Set
+\[
+                  b_0=\ell\prod_{\alpha\in T}b_\alpha
+                         \in\mathcal O_L\setminus\{0\}.
+\]
+Let \(\mathcal P\) be the primes \(P\) of \(F\)
+such that \(P\nmid b_0\) and the natural map
+\(\mathcal O_L\to k_P:=\mathcal O_F/P\) is
+surjective.
+
+For \(P\in\mathcal P\), reduction is injective on
+\(\mu_q\), by Lemma~\ref{sd-roots-reduce}, since
+\(P\nmid\ell\).  Thus the reduction \(\overline\zeta\)
+has order \(q\), and \(q\mid\#k_P^\times\).
+Choose a generator \(g_P\) of the cyclic group
+\(k_P^\times\), and define
+\[
+      v_P:k_P^\times\longrightarrow A,
+                       \qquad v_P(g_P^j)=j\pmod q.
+\]
+The divisibility just proved makes this well-defined.
+It is surjective and
+\[
+                         \ker v_P=(k_P^\times)^q.
+ \tag{SW5}
+\]
+Indeed an exponent maps to zero precisely when it is
+divisible by \(q\).
+
+Theorem~\ref{sf-functional} constructs an additive
+family \(\theta_P\) with the scalar-prism value
+specified by \(v_P\) and \(\overline\zeta\).
+Reduce matrices over \(\mathcal O_L\) to \(k_P\)
+and apply this family.  Corollary~\ref{sf-primitive-family}
+gives linear maps
+\[
+ \Phi_{P,N}:C_m(\operatorname{GL}_N(\mathcal O_L);A)
+                                     \longrightarrow A
+\]
+which vanish on boundaries, are stable on cycles,
+and multiply their value by \(d\) on \(d\) repeated
+direct sums.  The defining property of the chosen
+arithmetic cycle is
+\[
+ \Phi_{P,N_\alpha}(y_\alpha)
+     =c_E\,v_P\bigl(\overline{\mathcal N(\alpha)}\bigr)
+                              \qquad(P\in\mathcal P).
+ \tag{SW6}
+\]
+The residue on the right exists and is nonzero:
+\(\mathcal N(\alpha)\) is a unit in
+\(\mathcal O_F[1/b_\alpha]\) by
+Theorem~\ref{sa-class}.
+
+Take the \(A\)-module
+\(B=\prod_{P\in\mathcal P}A\) and let
+\(\Phi_N=(\Phi_{P,N})_{P\in\mathcal P}\).
+All three properties of the family hold
+coordinate by coordinate.  No finiteness assumption
+on this product is needed in Theorem~\ref{sb-upper}.
+Define
+\[
+ f:T\longrightarrow B,
+      \qquad f(\alpha)=\ell^{2E}\Phi_{N_\alpha}(y_\alpha).
+ \tag{SW7}
+\]
+That theorem bounds \(\#f(T)\) by the right-hand side
+of (SW4), since \(m-1=2E\) and \(2m+4=4E+6\).
+We prove that \(f\) is injective.
+
+Suppose \(f(\alpha)=f(\alpha')\), and put
+\(\beta=\mathcal N(\alpha)/\mathcal N(\alpha')\).
+For every \(P\in\mathcal P\), (SW6) gives
+\[
+                    \ell^{2E}c_E v_P(\overline\beta)=0
+                                                \quad\text{in }A.
+\]
+Lemma~\ref{sc-vandermonde} gives
+\(v_\ell(c_E)=2Ec+2v_\ell(E!)\), and proves the
+exact cancellation of the factor prime to \(\ell\).
+Consequently
+\[
+ v_P(\overline\beta^{\,\ell^b})
+       =\ell^b v_P(\overline\beta)=0
+                      \qquad(P\in\mathcal P),
+\]
+because \(b\ge b_*\).
+Equation (SW5) says that the residue of
+\(\beta^{\ell^b}\) is a \(q\)-th power at every
+such prime.  The element is a unit there, as noted
+after (SW6).
+
+Corollary~\ref{sd-source}, applied to
+\(\beta^{\ell^b}\) and the nonzero integral element
+\(b_0\), now gives
+\(\beta^{\ell^b}\in(F^\times)^q\).
+The separating hypothesis (SW3) implies
+\(\alpha=\alpha'\).  Thus \(f\) is injective, and
+the bound for \(\#f(T)\) proves (SW4).
+\end{proof}
+
+\begin{corollary}\label{sw-source-few}
+Assertion~\ref{sc-few}, with its original exponent
+\[
+                 b=2E+(2E+1)(c+2E+1),
+\]
+holds.  Its strengthened version with \(b=b_*\)
+also holds under the same hypotheses.
+\end{corollary}
+\begin{proof}
+The valuation of \(E!\) is
+\(\sum_{j\ge1}\lfloor E/\ell^j\rfloor\le E\),
+by counting the multiples of each prime power and
+bounding the resulting geometric series.
+Hence
+\[
+ b_*\le 2E+2Ec+2E
+          \le 2E+(2E+1)(c+2E+1).
+\]
+Apply Theorem~\ref{sw-few} with each of the two
+exponents.  The source's additional hypothesis
+\(2E+1<r_2(L)\) is permitted but unnecessary here.
+\end{proof}
+
+\begin{corollary}\label{sw-coarse-consequence}
+With the classical reciprocity and duality results
+stated earlier, the bounds (SP12) and (SP13) hold
+without assuming assertion~\ref{sc-few} separately.
+More explicitly, if \(L\) is totally imaginary,
+\(E\ge1\), and \(\ell\) is prime, with
+\(\mu_\ell\subset L\) for odd \(\ell\) and
+\(\mu_4\subset L\) for \(\ell=2\), then
+\[
+ \begin{split}
+ \log\#\mathcal S_\ell(L,E)
+   &\le \exp\bigl((2E[L:\mathbb Q])^{86}
+                          \log(2|\operatorname{disc}L|)\bigr),\\
+ \log\#H^2(G_{L,S},\mathbb Z_\ell(E+1))
+   &\le \exp\bigl((2E[L:\mathbb Q])^{88}
+                          \log(2|\operatorname{disc}L|)\bigr),
+ \end{split}
+\]
+where \(S\) is the set of primes above \(\ell\).
+Both groups are finite.
+\end{corollary}
+\begin{proof}
+Corollary~\ref{sw-source-few} supplies the remaining
+hypothesis of Corollary~\ref{sp-conditional-coarse}.
+Its proof combines the already proved homology torsion
+estimate, class-number bound, unit comparison,
+cyclotomic descent, and strict Selmer comparison.
+No additional quantitative comparison is introduced
+at this last step.
+\end{proof}
+
+The independent algebraic \(K\)-theory route of
+Section~\ref{kt-section} gives the stronger coarse
+exponent \(14\).  The purpose of the present argument
+is different: it completes the conventional proof of
+the source's actual finite-set comparison, while
+improving its scalar exponent.  This does not by
+itself prove the remaining theta and period-map
+arguments or the final analytic assertion.
+
+

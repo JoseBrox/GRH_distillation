@@ -1,0 +1,754 @@
+\section{The terminal radial operator and its positive density}
+\label{rp-section}
+
+We prove the finite-dimensional part of the radial positivity
+argument, including the identity for the actual terminal
+differential operator.  All ordered products below have the
+same order and shifts as the operators in the source
+\cite{alpo-uniform-source}.  The proof uses exterior powers
+to establish the required identities for Capelli minors.
+It then replaces a further interpolation over the spectrum
+of a matrix by an orthogonal decomposition using real
+interpolation polynomials.  The passage from this pointwise
+density to the integrated radial forms still requires the
+analytic assertions specified at the end of the section.
+
+\subsection{Ordered minors and exterior powers}
+
+Let $\mathcal A$ be a unital complex algebra and let
+$E_{ab}\in\mathcal A$, $0\leq a,b<N$, satisfy
+\begin{equation}\label{rp-gl}
+ [E_{ab},E_{cd}]=\delta_{bc}E_{ad}-\delta_{da}E_{cb}.
+\end{equation}
+For increasing lists $I=(i_0,\ldots,i_{n-1})$ and
+$J=(j_0,\ldots,j_{n-1})$, with $0\leq n\leq N$, put
+\begin{equation}\label{rp-minor}
+ Q_{I,J}(u)=
+ \sum_{\sigma\in\mathfrak S_n}\operatorname{sgn}(\sigma)
+ \prod_{a=0}^{n-1}
+ \bigl((u-a)\delta_{i_{\sigma(a)},j_a}
+                  +E_{i_{\sigma(a)},j_a}\bigr).
+\end{equation}
+The factors are multiplied from left to right in increasing
+$a$.  An empty product is $1$.  Write $Q_N(u)$ for the
+minor with both lists equal to $(0,\ldots,N-1)$.
+The identities in this subsection are algebraic, so they
+also apply to differential operators acting on a common
+space of smooth functions.
+
+\begin{lemma}\label{rp-capelli}
+For $P\in\operatorname{GL}_N(\mathbb C)$ and $R=P^{-1}$,
+define
+\[
+ E'_{ab}=\sum_{c,d}P_{ca}R_{bd}E_{cd}.
+\]
+Then
+\begin{equation}\label{rp-minor-covariance}
+ Q_{I,J}(E';u)=
+ \sum_{\substack{|A|=n\\|B|=n}}
+       \det P_{A,I}\,\det R_{J,B}\,Q_{A,B}(E;u).
+\end{equation}
+Here subsets are always written in increasing order.
+If $\mathcal A=\operatorname{End}_{\mathbb C}(W)$ for a
+finite-dimensional Hilbert space $W$ and
+$E_{ab}^*=E_{ba}$, then
+\begin{equation}\label{rp-minor-adjoint}
+                      Q_{I,J}(u)^*=Q_{J,I}(\overline u).
+\end{equation}
+In particular $Q_N(u)$ is self-adjoint for real $u$.
+\end{lemma}
+
+\begin{proof}
+Let $V=\mathbb C^N$ and let $L_a(v)$ act on the $a$th
+factor of $V^{\otimes n}$, with matrix entries
+$v\delta_{ij}+E_{ij}$.  Operators in $\mathcal A$ act in
+their displayed order.  Let $P_{ab}$ interchange auxiliary
+factors $a,b$, with indices now $0,\ldots,n-1$.
+Expanding one matrix entry using \eqref{rp-gl} gives
+\begin{equation}\label{rp-rtt}
+ ((u-v)1-P_{ab})L_a(u)L_b(v)
+ =L_b(v)L_a(u)((u-v)1-P_{ab}).
+\end{equation}
+Indeed the coefficient identity, after subtracting the
+commuting scalar terms, is
+\[
+ (u-v)[E_{ij},E_{kl}]
+ =(u-v)(\delta_{kj}E_{il}-\delta_{il}E_{kj}).
+\]
+Thus this formula requires precisely \eqref{rp-gl}, with
+the indicated sign.
+
+Let $A_n$ be the antisymmetrizer and set
+\[
+ A_n=\frac1{n!}\sum_{\sigma}\operatorname{sgn}(\sigma)P_\sigma,
+ \qquad L=L_0(u)L_1(u-1)\cdots L_{n-1}(u-n+1).
+\]
+We claim that
+\begin{equation}\label{rp-fusion}
+                           A_nL=A_nLA_n.
+\end{equation}
+For adjacent positions $a,a+1$ their spectral parameters
+differ by one.  Formula \eqref{rp-rtt} therefore moves
+$(1-P_{a,a+1})/2$ through that pair, reversing their
+order.  This projector commutes with every other factor
+$L_b$, and $A_n(1-P_{a,a+1})/2=A_n$.  It follows that
+$A_nL(1+P_{a,a+1})=0$.  Hence $A_nLP_\sigma
+=\operatorname{sgn}(\sigma)A_nL$ for every permutation,
+which proves \eqref{rp-fusion}.
+
+Use the orthonormal exterior basis
+\[
+ \omega_I=\frac1{\sqrt{n!}}
+      \sum_{\sigma}\operatorname{sgn}(\sigma)
+      e_{i_{\sigma(0)}}\otimes\cdots\otimes e_{i_{\sigma(n-1)}}.
+\]
+The coefficient of $\omega_I$ in $A_nL(e_{j_0}\otimes
+\cdots\otimes e_{j_{n-1}})$ is $Q_{I,J}(u)/\sqrt{n!}$.
+On the other hand the antisymmetrization of the input is
+$\omega_J/\sqrt{n!}$.  Equation \eqref{rp-fusion} proves
+that the matrix entries of $A_nLA_n$ on $\bigwedge^nV$
+are exactly $Q_{I,J}(u)$, with no additional factorial.
+
+The auxiliary matrix $E'$ is $P^tE(P^t)^{-1}$.
+Conjugate every auxiliary factor by $P^t$.
+The antisymmetrizer commutes with this simultaneous change
+of basis.  The entries of $\bigwedge^nP^t$ and
+$\bigwedge^nR^t$ are respectively $\det P_{A,I}$ and
+$\det R_{J,B}$.  This proves
+\eqref{rp-minor-covariance}.
+
+For the adjoint assertion first take $u$ real.  Each
+$L_a(u-a)$ is self-adjoint because $E_{ij}^*=E_{ji}$.
+Inside an expression $A_n(\cdots)A_n$ one may interchange
+two neighboring factors whose labels are $a<b$.
+To see this, use \eqref{rp-rtt} with parameter difference
+$b-a$.  Its factor $(b-a)1-P_{ab}$ commutes with all the
+other $L_c$ and acts on either exterior space as the
+nonzero scalar $b-a+1$.  Move this factor across the
+expression and cancel that scalar.  Reversing the ordered
+list $0,\ldots,n-1$ by adjacent interchanges only exchanges
+pairs with $a<b$ in this direction.  Consequently
+\[
+ A_nL_0(u)\cdots L_{n-1}(u-n+1)A_n
+ =
+ A_nL_{n-1}(u-n+1)\cdots L_0(u)A_n.
+\]
+The right side is the adjoint of the left side.
+Comparison of exterior matrix entries proves
+\eqref{rp-minor-adjoint} for real $u$.  Both sides are
+polynomials in $\overline u$, so equality for all real
+$u$ proves the general assertion.  For $n=0$ all these
+identities reduce to $1=1$.
+\end{proof}
+
+\begin{corollary}\label{rp-central-character}
+The full determinant $Q_N(u)$ commutes with every $E_{ab}$.
+Suppose a module for these operators contains a vector $v$
+such that
+\[
+ E_{ab}v=0\quad(a<b),\qquad E_{aa}v=\lambda_a v.
+\]
+Then
+\begin{equation}\label{rp-highest-eigenvalue}
+                 Q_N(u)v=\prod_{a=0}^{N-1}(u-a+\lambda_a)v.
+\end{equation}
+The same scalar identity holds on the submodule generated
+by $v$.
+\end{corollary}
+
+\begin{proof}
+For $n=N$, \eqref{rp-minor-covariance} says $Q_N(E';u)
+=Q_N(E;u)$, because $\det P\det P^{-1}=1$.
+Take $P(t)=\exp(tX)$ and differentiate at $0$.
+The derivative of $E'_{ab}$ is
+$[\sum_{c,d}X_{cd}E_{cd},E_{ab}]$ by \eqref{rp-gl}.
+The product rule therefore gives
+$[\sum X_{cd}E_{cd},Q_N(u)]=0$, proving centrality.
+This argument may equally be read as an identity of
+formal power series, so no topology on $\mathcal A$ is
+needed.
+
+In a summand of \eqref{rp-minor} belonging to a nonidentity
+permutation, let $a$ be its largest nonfixed column.
+Then $\sigma(a)<a$.  All factors to its right are diagonal
+and act on $v$ by scalars; its factor is $E_{\sigma(a),a}$
+and annihilates $v$.  Only the identity permutation
+remains, yielding \eqref{rp-highest-eigenvalue}.
+Centrality extends the identity from $v$ to every vector
+obtained by applying the $E_{ab}$, and thence to their
+linear span.
+\end{proof}
+
+\begin{corollary}\label{rp-negative-convention}
+For the alternative convention
+\[
+ B_N(u)=\sum_{\sigma}\operatorname{sgn}(\sigma)
+           \prod_{a=0}^{N-1}
+             \bigl((u+a)\delta_{\sigma(a),a}-E_{\sigma(a),a}\bigr)
+\]
+one has $B_N(u)=(-1)^NQ_N(-u)$.  It is central,
+self-adjoint for real $u$ under the preceding adjoint
+hypothesis, and acts on the highest-weight submodule
+above by $\prod_a(u+a-\lambda_a)$.
+\end{corollary}
+
+\begin{proof}
+Factor $-1$ out of every factor in the ordered product.
+The other conclusions follow from the two preceding
+results.
+\end{proof}
+
+\subsection{The complementary contraction}
+
+For $N\geq2$, vectors $a,a'\in\mathbb C^N$ and covectors
+$\beta,\beta'\in(\mathbb C^N)^*$, define
+\begin{align}
+ \mathcal C_E(u;a,a',\beta,\beta')
+ ={}&\sum_{\substack{i<i'\\j<j'}}
+       (-1)^{i+i'+j+j'}
+       (\beta_i\beta'_{i'}-\beta_{i'}\beta'_i)
+       (a_ja'_{j'}-a_{j'}a'_j)\notag\\
+ &\hspace{32mm}\cdot Q_{\{i,i'\}^{c},\{j,j'\}^{c}}(u).
+ \label{rp-contraction}
+\end{align}
+All coordinate factors in this formula are scalars placed
+to the left of the differential operators, when these
+are the chosen algebra $\mathcal A$.
+
+\begin{lemma}\label{rp-adapted-contraction}
+Let $P=(a,a',b_1,\ldots,b_{N-2})$ be an invertible matrix.
+Suppose $\beta(b_i)=\beta'(b_i)=0$ for all $i$, and let
+$E'$ be its change of generators from Lemma~\ref{rp-capelli}.
+Then
+\begin{equation}\label{rp-contraction-adapted}
+ \mathcal C_E(u;a,a',\beta,\beta')
+ =\bigl(\beta(a)\beta'(a')-\beta(a')\beta'(a)\bigr)
+     Q_{\{2,\ldots,N-1\},\{2,\ldots,N-1\}}(E';u).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+We first verify covariance of \eqref{rp-contraction}.
+For two-element subsets $I,J$ put
+\[
+       C_{I,J}(E)=(-1)^{\sum I+\sum J}Q_{I^c,J^c}(E;u).
+\]
+Complementary minors of an invertible scalar matrix obey
+\[
+ \det P_{A^c,I^c}
+   =(-1)^{\sum A+\sum I}\det P\,\det(P^{-1})_{I,A}.
+\]
+For completeness this is the coefficient identity obtained
+by applying $\bigwedge^NP$ to
+$e_A\wedge e_{A^c}$ and comparing the wedge pairing
+\[
+ \bigwedge\nolimits^2\mathbb C^N\times
+ \bigwedge\nolimits^{N-2}\mathbb C^N
+                   \longrightarrow\bigwedge\nolimits^N\mathbb C^N.
+\]
+The sign of $e_A\wedge e_{A^c}$ is
+$(-1)^{\sum A-1}$; the two constant signs cancel.
+Equivalently, expanding that wedge pairing is the usual
+Laplace expansion, which proves the displayed identity
+without any assumption on the complementary minor.
+
+Apply \eqref{rp-minor-covariance} and this identity twice.
+Since $\det P\det P^{-1}=1$, one obtains
+\[
+ C(E')=(\bigwedge\nolimits^2P^{-1})\,C(E)\,
+                                     (\bigwedge\nolimits^2P).
+\]
+The vector $a\wedge a'$ changes by $\bigwedge^2P^{-1}$,
+and the covector $\beta\wedge\beta'$ by $\bigwedge^2P$.
+Their contraction with $C$ is consequently unchanged.
+In the basis formed by the columns of $P$ the two vectors
+are $e_0,e_1$, and both covectors vanish in positions
+$2,\ldots,N-1$.  Only $I=J=\{0,1\}$ survives in
+\eqref{rp-contraction}; its sign is $+1$.  This gives
+\eqref{rp-contraction-adapted}, including the case $N=2$,
+whose remaining determinant is the empty determinant $1$.
+\end{proof}
+
+\subsection{The actual terminal differential operator}
+
+Let $V$ be a complex Hermitian space of signature $(k,1)$,
+$k\geq1$, with its Hermitian form $h$ linear in the first
+argument.  Let $z,z'\in V$ satisfy
+$h(z,z)=-T$, $h(z',z')=-T'$ with $T,T'>0$.
+For $g\in U(V,h)$ put
+\[
+ y=g^{-1}z,\qquad x=z',\qquad
+ \zeta=h(gz',z)=h(x,y),\qquad
+ G(g)=|\zeta|^2-TT'.
+\]
+We work at points where $G(g)>0$.  On the terminal group
+of the source, the previously fixed isotropic vectors
+have been removed; the remaining space is exactly this
+$(k+1)$-dimensional space $V$.
+
+For $A\in\operatorname{End}_{\mathbb C}(V)$ write
+$A^\dagger$ for its $h$-adjoint and define
+\[
+ A_1=\tfrac12(A-A^\dagger),\qquad
+ A_2=\tfrac1{2i}(A+A^\dagger).
+\]
+Both belong to the real Lie algebra $\mathfrak u(V,h)$,
+and $A=A_1+iA_2$.  If $F$ is a smooth function on an
+open part of $U(V,h)$, define
+\[
+ R_XF(g)=\left.\frac{d}{dt}\right|_{t=0}F(g\exp(tX)),
+ \qquad E_AF=R_{A_1}F+iR_{A_2}F .
+\]
+In a fixed basis of $V$ set $E_{ab}=E_{e_a e_b^*}$,
+where $e_b^*$ is the coordinate covector, not the
+Hermitian dual.  The commutator formula for
+left-invariant vector fields gives \eqref{rp-gl}.
+It also follows directly by differentiating the group
+commutator
+$\exp(tX)\exp(sY)\exp(-tX)\exp(-sY)$ at $(0,0)$
+and extending complex linearly.
+
+At the fixed point $g$, put
+$\beta(v)=h(v,y)$ and $\beta'(v)=h(v,x)$.
+Define the terminal $(2,2)$ entry by
+\begin{equation}\label{rp-actual-terminal}
+ (\mathcal T_{22}(Y)F)(g)
+ =-\bigl(\mathcal C_E(Y+(k-2)/2;y,x,\beta,\beta')F\bigr)(g).
+\end{equation}
+The point-dependent scalar coordinates of $y,\beta$
+multiply the operators on the left; they are not
+differentiated in this definition.
+This is the terminal entry of the original two-by-two
+operator: its full spectral shift is $Y+k/2$, and the
+complementary contraction uses that shift minus one.
+
+\begin{proposition}\label{rp-terminal-identity}
+Choose an $h$-orthonormal basis $b_1,\ldots,b_{k-1}$
+of $\langle y,x\rangle^\perp$, and put
+$U_{ab}(v)=h(v,b_b)b_a$.  Let
+$Q_{k-1}(E_U;u)$ be the ordered full determinant of
+the operators $E_{U_{ab}}$.  Then
+\begin{equation}\label{rp-terminal-action}
+ (\mathcal T_{22}(Y)F)(g)
+       =G(g)\bigl(Q_{k-1}(E_U;Y+(k-2)/2)F\bigr)(g).
+\end{equation}
+The basis in this formula is held fixed while the
+differential operators are applied.
+\end{proposition}
+
+\begin{proof}
+The Gram matrix of $y,x$ is
+$\left(\begin{smallmatrix}-T&\overline\zeta\\
+\zeta&-T'\end{smallmatrix}\right)$, with determinant
+$TT'-|\zeta|^2=-G(g)<0$.  It is nondegenerate of
+signature $(1,1)$; its orthogonal complement is positive
+definite of dimension $k-1$.  Gram--Schmidt therefore
+gives the stated basis, including the empty basis when
+$k=1$.
+
+Use the basis $P=(y,x,b_1,\ldots,b_{k-1})$ of $V$.
+The covectors $\beta,\beta'$ vanish on its last $k-1$
+columns, and
+\[
+ \beta(y)\beta'(x)-\beta(x)\beta'(y)
+                    =TT'-|\zeta|^2=-G(g).
+\]
+For a last-column basis index $b$, the corresponding
+row of $P^{-1}$ is $v\mapsto h(v,b_b)$.
+Consequently the transformed generator $E'_{ab}$ in
+the last $(k-1)\times(k-1)$ block is $E_{U_{ab}}$:
+the rank-one matrix underlying it is
+$P_{\cdot,a}(P^{-1})_{b,\cdot}=b_a h(\,\cdot\,,b_b)$.
+Lemma~\ref{rp-adapted-contraction}, followed by the
+minus sign in \eqref{rp-actual-terminal}, proves
+\eqref{rp-terminal-action}.
+\end{proof}
+
+Let $K_{z'}$ be the stabilizer of $z'$ in $U(V,h)$.
+It is the compact unitary group of the positive space
+$(z')^\perp$.  Let $W,W'$ be finite-dimensional complex
+Hilbert spaces and let $\pi':K_{z'}\to U(W)$ be a
+continuous representation.  Suppose that
+$F:U(V,h)\supset D\to\operatorname{Hom}_{\mathbb C}(W,W')$
+is smooth and satisfies
+\begin{equation}\label{rp-equivariance}
+                     F(gh)=F(g)\pi'(h)
+\end{equation}
+whenever $h\in K_{z'}$ and the relevant points lie in $D$.
+It suffices that this holds in a neighborhood of each
+point where a derivative is taken.
+
+\begin{lemma}\label{rp-unitary-derivative}
+A continuous finite-dimensional unitary representation
+of a compact matrix Lie group is smooth.  Its
+complexified derivative is a Lie algebra representation.
+For the matrices $U_{ab}$ above, its operators
+$D_{ab}=d\pi'_{\mathbb C}(U_{ab})$ satisfy
+\[
+ [D_{ab},D_{cd}]=\delta_{bc}D_{ad}-\delta_{da}D_{cb},
+                      \qquad D_{ab}^*=D_{ba}.
+\]
+\end{lemma}
+
+\begin{proof}
+Here is a direct smoothness argument.  Normalize Haar
+measure on the compact group to have mass one.  For a
+smooth nonnegative function $f$ of integral one supported
+near the identity, the operator
+$\pi'(f)=\int f(h)\pi'(h)\,dh$ is arbitrarily close to
+the identity, by continuity, and hence invertible.
+For every $v$ the function
+\[
+ \pi'(g)\pi'(f)v=\int f(g^{-1}h)\pi'(h)v\,dh
+\]
+is smooth in $g$, by differentiation under the compact
+integral.  Since $\pi'(f)$ is onto, every orbit map is
+smooth.  Such functions $f$ exist by a smooth coordinate
+chart and a nonnegative smooth bump function.  Haar
+measure here may be obtained from the invariant
+Riemannian volume on the compact unitary group.
+
+Differentiating the representation identity and its
+group commutator gives a real Lie algebra homomorphism;
+its complex-linear extension has the same property.
+Differentiating preservation of the inner product gives
+$d\pi'(X)^*=-d\pi'(X)$ for a skew-Hermitian $X$.
+Since $U_{ab}^\dagger=U_{ba}$, the decomposition into
+the two skew-Hermitian parts above gives
+$D_{ab}^*=D_{ba}$.  Finally
+$U_{ab}U_{cd}=\delta_{bc}U_{ad}$ by orthonormality,
+which gives the displayed commutator.
+\end{proof}
+
+\begin{corollary}\label{rp-finite-terminal}
+For a fixed $g$ and its fixed basis $(b_a)$ put
+\[
+                 C_g(Y)=Q_{k-1}(D;Y+(k-2)/2).
+\]
+For every smooth equivariant $F$ as above,
+\begin{equation}\label{rp-evaluation-transfer}
+             G(g)^{-1}(\mathcal T_{22}(Y)F)(g)=F(g)C_g(Y).
+\end{equation}
+The operator $C_g(Y)$ on $W$ is self-adjoint for real
+$Y$.  No choice of a smooth family of bases in $g$ is
+needed for either assertion.
+\end{corollary}
+
+\begin{proof}
+Every $U_{ab}$ annihilates $z'$; its two real Lie algebra
+parts lie in the Lie algebra of $K_{z'}$.
+Differentiating \eqref{rp-equivariance} gives
+$E_{U_{ab}}F(g)=F(g)D_{ab}$.  Repeated differentiation
+preserves the order: for example
+$E_{U_{ab}}E_{U_{cd}}F(g)=F(g)D_{ab}D_{cd}$.
+Thus every ordered minor transfers to the corresponding
+minor in $D$.  Proposition~\ref{rp-terminal-identity}
+proves \eqref{rp-evaluation-transfer}, and
+Lemma~\ref{rp-capelli} proves self-adjointness.
+\end{proof}
+
+\subsection{A pointwise orthogonal decomposition}
+
+We state explicitly the algebraic part of the normal
+form that the positivity argument uses.  This does not
+assume that the algebraic involution on differential
+operators is already an adjoint for an integrated
+radial form.
+
+\begin{proposition}\label{rp-idempotent-positive}
+Let $\mathcal S$ be a nonempty finite set and let
+$p_\rho(Y)\in\mathbb R[Y]$, $\rho\in\mathcal S$, be
+pairwise distinct.  Let $\mathcal V$ be a complex vector
+space, let
+$\kappa:\mathbb C^{\mathcal S}\to
+\operatorname{End}_{\mathbb C}(\mathcal V)$ be a unital
+algebra homomorphism, and let
+$\operatorname{ev}:\mathcal V\to\operatorname{Hom}(W,W')$
+be linear.  Suppose that for each real $Y$ there is a
+self-adjoint $C(Y)\in\operatorname{End}(W)$ such that
+\begin{equation}\label{rp-normal-evaluation}
+ \operatorname{ev}\bigl(\kappa((p_\rho(Y))_\rho)\Phi\bigr)
+                         =(\operatorname{ev}\Phi)C(Y)
+                  \qquad(\Phi\in\mathcal V).
+\end{equation}
+Write $P_\rho=\kappa(1_{\{\rho\}})$ and use the
+Hilbert--Schmidt form linear in the first argument,
+$\langle A,B\rangle_{\rm HS}=\operatorname{tr}(B^*A)$.
+Then the maps $\operatorname{ev}(P_\rho\Phi)$ are
+pairwise orthogonal and
+\begin{equation}\label{rp-positive-decomposition}
+ \left\langle\operatorname{ev}(\kappa(f)\Phi),
+                    \operatorname{ev}\Phi\right\rangle_{\rm HS}
+       =\sum_{\rho\in\mathcal S}
+              f(\rho)\|\operatorname{ev}(P_\rho\Phi)\|_{\rm HS}^2
+                  \qquad(f\in\mathbb C^{\mathcal S}).
+\end{equation}
+In particular it is nonnegative for real $f\geq0$,
+and is bounded between
+$\min f\,\|\operatorname{ev}\Phi\|_{\rm HS}^2$ and
+$\max f\,\|\operatorname{ev}\Phi\|_{\rm HS}^2$.
+\end{proposition}
+
+\begin{proof}
+Choose a real $Y_0$ at which all $p_\rho(Y_0)$ are
+distinct.  Such a point exists because each nonzero
+difference polynomial has finitely many roots.
+Put $\xi_\rho=p_\rho(Y_0)$ and form the real
+interpolation polynomials
+\[
+ \ell_\rho(X)=
+       \prod_{\sigma\ne\rho}\frac{X-\xi_\sigma}{\xi_\rho-\xi_\sigma}.
+\]
+Since $\kappa$ is an algebra homomorphism,
+$P_\rho=\ell_\rho(\kappa((\xi_\sigma)_\sigma))$.
+Induction on the degree of a polynomial in
+\eqref{rp-normal-evaluation} therefore gives
+\[
+       \operatorname{ev}(P_\rho\Phi)
+          =(\operatorname{ev}\Phi)\ell_\rho(C(Y_0)).
+\]
+The matrix $\ell_\rho(C(Y_0))$ is self-adjoint.
+For any $\Phi,\Psi\in\mathcal V$, cyclicity of the
+finite-dimensional trace gives
+\[
+ \langle\operatorname{ev}(P_\rho\Phi),\operatorname{ev}\Psi\rangle_{\rm HS}
+ =\langle\operatorname{ev}\Phi,\operatorname{ev}(P_\rho\Psi)\rangle_{\rm HS}.
+\]
+On $\mathcal V$ the $P_\rho$ are mutually annihilating
+idempotents whose sum is the identity.  Apply this last
+identity to $P_\rho\Phi$ and $P_\sigma\Phi$ to see that
+their evaluations are orthogonal for $\rho\ne\sigma$.
+Their evaluations sum to $\operatorname{ev}\Phi$.
+Finally $\kappa(f)=\sum_\rho f(\rho)P_\rho$, which gives
+\eqref{rp-positive-decomposition} and its bounds.
+No assertion about the spectrum of $C(Y_0)$ on vectors
+outside these evaluated functions is needed.
+\end{proof}
+
+\subsection{The actual interlacing parameters and signs}
+
+Here are the precise scalar parameters used in this
+application.  Let $k\geq1$, $T,T'>0$, and let
+$u_1,\ldots,u_k,u'_1,\ldots,u'_k$ be real numbers with
+\begin{equation}\label{rp-interlacing}
+ \max(u_{i+1},u'_{i+1})+1
+              \leq\min(u_i,u'_i)\qquad(1\leq i<k).
+\end{equation}
+The source also requires these numbers to lie in a
+common coset of $\mathbb Z$; the following arguments
+do not require that extra condition.
+Set
+\[
+ a_i=\max(u_{i+1},u'_{i+1})+\tfrac12,\qquad
+ b_i=\min(u_i,u'_i)-\tfrac12,
+\]
+and let $\mathcal S$ be the product of the finite sets
+$\{a_i,a_i+1,\ldots,a_i+\lfloor b_i-a_i\rfloor\}$,
+$1\leq i<k$.  Thus a member $\rho$ is a tuple
+$(\rho_1,\ldots,\rho_{k-1})$ with $\rho_i\in[a_i,b_i]$.
+The set is nonempty; for $k=1$ it consists of the empty
+tuple.  Put
+\begin{equation}\label{rp-spectral-polynomials}
+ p_\rho(Y)=\prod_{i=1}^{k-1}(Y+\rho_i),\qquad
+ q(Y)=-TT'\prod_{i=1}^{k}(Y+\tfrac12+u_i)
+                                  (Y+\tfrac12+u'_i).
+\end{equation}
+
+\begin{lemma}\label{rp-parameter-signs}
+The polynomials $p_\rho$ are pairwise distinct.
+Fix $1\leq l\leq k$ and a real $Y$ with
+\begin{equation}\label{rp-cut-margin}
+          \min(u_l,u'_l)+2\leq-Y\leq\max(u_l,u'_l)-2.
+\end{equation}
+Then, for every $\rho\in\mathcal S$,
+\[
+ (-1)^{k-l}p_\rho(Y+\delta)>0\quad(-1\leq\delta\leq1),
+               \qquad q(Y)>0,\quad q(Y-1)>0.
+\]
+\end{lemma}
+
+\begin{proof}
+For $i<k-1$,
+$\rho_i\geq\max(u_{i+1},u'_{i+1})+1/2$ and
+$\rho_{i+1}\leq\min(u_{i+1},u'_{i+1})-1/2$.
+Hence $\rho_i-\rho_{i+1}\geq1$.
+Equality of the monic polynomials $p_\rho,p_\sigma$
+gives equality of their multisets of real roots, and
+the decreasing order gives $\rho=\sigma$.
+
+For $i<l$, \eqref{rp-interlacing} implies
+$\rho_i\geq\max(u_l,u'_l)+1/2$, so
+$Y+\rho_i\geq5/2$.
+For $i\geq l$ it gives
+$\rho_i\leq\min(u_l,u'_l)-1/2$, so
+$Y+\rho_i\leq-5/2$.
+These signs persist after a shift of absolute value at
+most one.  There are exactly $k-l$ negative factors,
+proving the first assertion, also for the empty tuple.
+
+For $i<l$, both $u_i,u'_i$ are at least
+$\max(u_l,u'_l)+1$; for $i>l$ both are at most
+$\min(u_l,u'_l)-1$.  Thus the two factors belonging to
+each $i\ne l$ in $q(Y)$ and $q(Y-1)$ have the same,
+nonzero sign.  At $i=l$, one entry is at most $-Y-2$
+and the other is at least $-Y+2$ by
+\eqref{rp-cut-margin}.  The two factors have opposite
+signs both after adding $1/2$ and after subtracting
+$1/2$.  The product in \eqref{rp-spectral-polynomials}
+is negative, and its factor $-TT'$ makes it positive.
+\end{proof}
+
+For clarity we give the exact recursion for the scalar
+diagonal coefficients in the source.  Fix a finite set
+of positions $S$ and a list $w$ of triples
+$\ell=(\varepsilon,a,y)$, where
+$\varepsilon\in\{+,-\}$, $a\in S$, and $y\in\mathbb R$.
+Positions are distinct and any two parameters have
+distance greater than two.  Fix
+$e:S\to\{0,1\}$.  For a parameter $Y$ set
+\[
+ \phi_\ell(Y)=
+ \begin{cases}(Y-y)/(Y-y-1),&\varepsilon=+,\\
+               (y-Y)/(y-Y-1),&\varepsilon=-,
+ \end{cases}
+ \qquad
+ \eta_\ell(Y)=
+ \begin{cases}(Y-y+1)/(Y-y),&\varepsilon=+,\\
+               (y-Y)/(y-Y-1),&\varepsilon=-.
+ \end{cases}
+\]
+Define $q_\varnothing(Y)=q(Y)$,
+$x_{\rho,\varnothing,e}(Y)=(-1)^{k-l}p_\rho(Y)$
+and $c_{\rho,\varnothing,e}=1$.  On prepending a triple
+$\ell=(\varepsilon,a,y)$, set
+\begin{align*}
+ q_{\ell w}(Y)&=q_w(Y)\eta_\ell(Y),\\
+ x_{\rho,\ell w,e}(Y)&=
+       x_{\rho,w,e}(Y)
+           \begin{cases}\phi_\ell(Y),&e(a)=0,\\1,&e(a)=1,\end{cases}\\
+ c_{\rho,\ell w,e}&=c_{\rho,w,e}
+   \begin{cases}
+      q_w(y)/x_{\rho,w,e}(y+1),&\varepsilon=+,\,e(a)=0,\\
+      q_w(y-1)/x_{\rho,w,e}(y-1),&\varepsilon=-,\,e(a)=0,\\
+      x_{\rho,w,e}(y),&e(a)=1 .
+   \end{cases}
+\end{align*}
+
+\begin{lemma}\label{rp-recursive-positive}
+If every parameter $y$ in the list satisfies
+\eqref{rp-cut-margin}, then all the coefficients
+$c_{\rho,w,e}$ are strictly positive, and every
+denominator appearing in their definition is nonzero.
+\end{lemma}
+
+\begin{proof}
+If $|s|>1$, all of $s/(s-1)$ and $(s+1)/s$ are
+positive.  The same statement with $s$ replaced by
+$-s$ proves that $\phi_\ell(Y)$ and $\eta_\ell(Y)$
+are positive whenever $|Y-y|>1$.
+When a new parameter $y$ is inserted, each previously
+inserted parameter $y'$ satisfies $|y-y'|>2$.
+Thus $|y+\delta-y'|>1$ for $\delta=-1,0,1$.
+Lemma~\ref{rp-parameter-signs} and the product formulas
+give
+$x_{\rho,w,e}(y),x_{\rho,w,e}(y-1),
+x_{\rho,w,e}(y+1),q_w(y),q_w(y-1)>0$.
+Every case of the recursion for $c$ is consequently a
+positive product or quotient.  Induction on the length
+proves both assertions.
+\end{proof}
+
+\begin{corollary}\label{rp-terminal-density-positive}
+Take the actual terminal evaluation
+$\operatorname{ev}_{c,g}\Phi=\Phi(c,g)$, with
+$G(g)>0$, on the space of smooth radial functions.
+Suppose that its algebraic normal form supplies a
+unital algebra homomorphism $\kappa$ with
+\begin{equation}\label{rp-required-normal-form}
+ \kappa((p_\rho(Y))_\rho)=G^{-1}\mathcal T_{22}(Y)
+                         \quad\text{on that function space}.
+\end{equation}
+Then \eqref{rp-positive-decomposition} holds at every
+such point, with the actual parameters
+\eqref{rp-spectral-polynomials}.
+
+In particular, let $\Psi_e$ be any family of functions
+in that space, indexed by $e:S\to\{0,1\}$, and let
+$h$ be the length of a list satisfying the hypotheses
+of Lemma~\ref{rp-recursive-positive}.  The terminal
+density
+\begin{equation}\label{rp-terminal-density}
+ \mathcal D(c,g)=
+  \left(\frac{|\zeta(g)|^2}{G(g)}\right)^h
+  \sum_e\left\langle
+    \operatorname{ev}_{c,g}
+       \bigl(\kappa((c_{\rho,w,e})_\rho)\Psi_e\bigr),
+            \operatorname{ev}_{c,g}\Psi_e\right\rangle_{\rm HS}
+\end{equation}
+is nonnegative.  The choice $\Psi_e=(F_w\Phi)_e$
+is exactly the terminal density in the source.
+If the radial functions are extended by zero off their
+prescribed domain, the same conclusion holds there.
+\end{corollary}
+
+\begin{proof}
+Corollary~\ref{rp-finite-terminal} gives
+\eqref{rp-normal-evaluation} from
+\eqref{rp-required-normal-form}.
+Lemma~\ref{rp-parameter-signs} supplies distinct
+polynomials, so Proposition~\ref{rp-idempotent-positive}
+applies.  Each coefficient $c_{\rho,w,e}$ is positive
+by Lemma~\ref{rp-recursive-positive}.
+Also $|\zeta|^2=G+TT'>0$.  Every summand in
+\eqref{rp-terminal-density} is therefore nonnegative.
+Off the radial domain both evaluated functions are
+zero, by the specified extension.
+\end{proof}
+
+\subsection{Scope and checks on the hypotheses}
+
+The terminal identity
+\eqref{rp-terminal-action} and its compact
+representation interpretation
+\eqref{rp-evaluation-transfer} are proved here for
+the actual operators, with their exact shifts and signs.
+For the subsequent positivity step the only normal-form
+property used is \eqref{rp-required-normal-form};
+the relations involving the additional raising and
+lowering operators are unnecessary for this step.
+The source derives this property as the $(2,2)$ entry
+of a larger normal form.  Section~\ref{rd-section}
+constructs exactly the required property directly
+from compact branching.  The orthogonal decomposition
+also strengthens the source's positivity conclusion to
+the exact sum of squares \eqref{rp-positive-decomposition}
+and its minimum and maximum bounds.
+
+This pointwise result does not yet identify the
+integrated radial form with the integral of
+\eqref{rp-terminal-density}.  That identification needs
+the adjoint relations on the actual class of functions,
+integrability after the successive differential
+operations, and the successive one-variable integral
+identities with their boundary terms.  The wave
+identities and the common positive majorants used in
+Section~\ref{ca-section} consequently remain subject to
+those analytic steps.
+
+Two simple checks explain essential hypotheses without
+giving counterexamples to the source.  A scalar operator
+is not positive merely because it is self-adjoint:
+for $N=1$, $E_{00}=0$, the determinant is $Q_1(u)=u$,
+which is negative for real $u<0$.
+The positivity above uses the positive interlacing
+weights, not positivity of an arbitrary Capelli
+polynomial.  Likewise replacing the strict separation
+$|y-y'|>2$ by merely distinct parameters can make the
+recursion undefined: with two plus parameters $y'=0$
+and $y=1$, the factor $\phi_{\ell'}(y)=y/(y-1)$
+has a pole.  The interpolation sets in
+Section~\ref{cg-section} satisfy the stronger separation,
+and Lemma~\ref{rp-parameter-signs} supplies all the
+actual sign conditions.
+
+

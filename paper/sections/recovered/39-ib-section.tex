@@ -1,0 +1,397 @@
+\section{The integral branching map and its exact normalization}
+\label{ib-section}
+
+Multiplicity one does not determine an integral normalization.
+We prove integrality for the exact scalar used by the submitted
+lowering map.  The ingredients are the preceding branching law,
+the integral spanning theorem for initial minors
+(Theorem~\ref{sm-initial-minors}), and the Capelli identities
+of Section~\ref{rp-section}.  The central differential operators
+will act on rows; this gives a direct projection argument.
+
+First let $N=n+1$, $n\ge1$, let
+$\lambda=(\lambda_1,\ldots,\lambda_n,0)$ be a partition,
+and suppose $\lambda_i\ge\mu_i\ge\lambda_{i+1}$.
+Use the polynomial modules and normalized Fock pairings
+of Section~\ref{coef:section}.  Set
+\[
+ a_i=\mu_i-\lambda_{i+1},\quad b_i=\lambda_i-\mu_i,\quad
+ d=\sum_i b_i,\quad D_0=\sum_i a_i,\quad
+ D_1=\sum_i\min(\lambda_i-\lambda_{i+1},D_0).
+ \tag{IB1}
+\]
+Define integer intervals and an integer $c$ by
+\[
+ \begin{split}
+ R_i&=[\lambda_{i+1},\min(\lambda_i,\lambda_{i+1}+D_0)]\cap\mathbb Z,\\
+ c&=\prod_{i=1}^n\ \prod_{v\in R_i\setminus\{\mu_i\}}
+                  \prod_{j=1}^n\bigl((v-i)-(\mu_j-j)\bigr).
+ \end{split}
+ \tag{IB2}
+\]
+Empty products are one.  This is exactly $c_{\rm Br}$ in the
+source: changing indices from zero to one cancels in each
+difference.  Put $\xi=\xi_{\lambda,\mu}$ from (CB4), and let
+$J:V_\mu\to V_\lambda$ be the intertwiner with $JH_\mu=\xi$.
+
+\subsection{An integral lift of the required coefficient}
+
+Write $\omega(\beta)=\sum_i i\beta_i$ for the weight of a
+last-row monomial $z^\beta$, and write $[z^b]G$ for its
+coefficient, a polynomial in the top block $A$.
+
+\begin{lemma}\label{ib-integral-lift}
+For every $f\in\nabla_\mu(\mathbb Z)$ there exists
+$G\in\nabla_\lambda(\mathbb Z)$ of last-row degree $d$ with
+\[
+ G(A,z)=z^b f(A)+G_{<}(A,z),\qquad
+ \omega(\beta)<\omega(b)
+       \quad\text{for every last-row monomial }z^\beta\text{ of }G_{<}.
+ \tag{IB3}
+\]
+In particular $[z^b]G=f$.
+\end{lemma}
+\begin{proof}
+By Theorem~\ref{sm-initial-minors}, it suffices to lift a
+product of initial-column minors of shape $\mu$; integer
+linear combinations then give the assertion.
+Induct on the number of nonconstant factors.
+If there are none, $\mu=0$ and interlacing gives
+$\lambda_2=\cdots=\lambda_N=0$.
+The lift of $1$ is $z_1^{\lambda_1}$.
+
+Choose a factor $M_I$ of height $s$, with rows
+$I\subset\{1,\ldots,n\}$ and columns $1,\ldots,s$.
+Thus $1\le s\le n$ and $\mu_s>\mu_{s+1}$, where
+$\mu_{n+1}=0$.  Remove this factor to get shape
+$\mu'=\mu-(1^s,0^{n-s})$.
+If $\mu_s>\lambda_{s+1}$, subtract the same $s$
+initial ones from $\lambda$ to obtain $\lambda'$.
+Then $\lambda'$ interlaces $\mu'$: the only changed
+lower boundary is $\lambda_{s+1}\le\mu_s-1$.
+All subtracted entries are positive.  The other
+inequalities follow by subtracting one from both
+sides or leaving both sides unchanged.
+Here $b'=\lambda'-\mu'=b$.
+Multiply the inductively obtained lift by $M_I(A)$.
+
+If $\mu_s=\lambda_{s+1}$, then $s<n$:
+a height-$n$ factor would give $\mu_n\ge1>\lambda_N$.
+Subtract $s+1$ initial ones from $\lambda$ to obtain
+$\lambda'$.  Its upper inequality at position $s+1$ is
+\[
+              \lambda_{s+1}-1=\mu_s-1\ge\mu_{s+1}.
+\]
+At position $s$ the lower inequality is equality;
+all other inequalities follow as before.
+Thus $\lambda'$ interlaces $\mu'$ and
+$b'=b-e_{s+1}\ge0$.
+Append row $N$ to $I$ and take the initial-column
+minor of height $s+1$.  Its last-row Laplace expansion is
+\[
+ \widetilde M_I(A,z)
+   =z_{s+1}M_I(A)+
+       \sum_{j=1}^{s}(-1)^{s+1+j}z_jM_{I,j}(A),
+ \tag{IB4}
+\]
+where $M_{I,j}$ uses columns $1,\ldots,s+1$ with
+column $j$ removed.  The leading last-row term has
+weight $s+1$, and every other term has smaller weight.
+Multiply this minor by the inductive lift.
+Last-row weights add, proving (IB3).
+
+Every factor used is an initial-column minor on $N$
+rows, with integral coefficients and the required
+column invariance.  Its shape adds to $\lambda$ and
+its last-row degree adds to $d$.  This also verifies
+membership and degree in both cases.
+\end{proof}
+
+\subsection{The exact integral projection}
+
+\begin{lemma}\label{ib-capelli-projection}
+The integer $c$ is nonzero.  On the last-row degree-$d$
+subspace of $V_\lambda$, an operator with integer
+differential coefficients preserves
+$\nabla_\lambda(\mathbb Z)$ and equals $c$ times the
+projection onto the $V_\mu$ summand in (CB7).
+\end{lemma}
+\begin{proof}
+Use the top-row operators $E_{ab}$ of (CB1), with
+$1\le a,b\le n$.  They preserve integral coefficients,
+column degrees, column invariance, and last-row degree.
+With indices starting at one write
+\[
+ C(u)=\sum_{\sigma\in\mathfrak S_n}\operatorname{sgn}(\sigma)
+       \prod_{j=1}^n\bigl((u+j)\delta_{\sigma(j),j}
+                                         -E_{\sigma(j),j}\bigr).
+ \tag{IB5}
+\]
+The product is ordered by increasing $j$.
+This is $B_n(u+1)$ from Corollary~\ref{rp-negative-convention}.
+It is central and acts on $V_\eta$ by
+$\chi_\eta(u)=\prod_j(u+j-\eta_j)$.
+Put
+\[
+ Z=\prod_{i=1}^n\ \prod_{v\in R_i\setminus\{\mu_i\}} C(v-i).
+ \tag{IB6}
+\]
+Its factors commute and preserve the integral polynomial module.
+
+An interlacing summand of last-row degree $d$ has
+$|\eta|=|\mu|$, so
+$\sum_i(\eta_i-\lambda_{i+1})=D_0$.
+Each summand is nonnegative, hence every $\eta_i\in R_i$.
+If $\eta\ne\mu$, choose $i$ with $\eta_i\ne\mu_i$.
+The included factor $C(\eta_i-i)$ has scalar zero on
+$V_\eta$.  On $V_\mu$ the product has scalar exactly $c$.
+
+Fix an included $v\in R_i\setminus\{\mu_i\}$.
+The $j=i$ factor in (IB2) is nonzero.
+If $j<i$, then
+$\mu_j\ge\lambda_{j+1}\ge\lambda_i\ge v$, and
+$v-i<\mu_j-j$.
+If $j>i$, then
+$v\ge\lambda_{i+1}\ge\lambda_j\ge\mu_j$, and
+$v-i>\mu_j-j$.
+Every factor is nonzero.
+The branching law now proves the projection assertion.
+\end{proof}
+
+\begin{theorem}\label{ib-iota-integral}
+The map $I=cJ$ is equivariant, sends $H_\mu$ to $c\xi$,
+has last-row degree $d$, and satisfies
+\[
+                    I\nabla_\mu(\mathbb Z)\subset\nabla_\lambda(\mathbb Z).
+ \tag{IB7}
+\]
+\end{theorem}
+\begin{proof}
+Take the integral lift $G$ of $f$ from
+Lemma~\ref{ib-integral-lift}, and let $P_\mu$ be the
+projection in Lemma~\ref{ib-capelli-projection}.
+Coefficient extraction commutes with every top-row operator.
+On $f\in V_\mu$, the operator (IB6) acts as $c$, so
+\[
+                    [z^b]P_\mu G=c^{-1}[z^b]ZG=f.
+\]
+The restriction of $[z^b]$ to $J(V_\mu)$ is the inverse
+of $J$: it is equivariant and sends $\xi$ to $H_\mu$,
+by (CB4) and its Laplace expansion.
+The uniqueness in Lemma~\ref{cb-highest-classification}
+therefore gives $[z^b]J=1$.
+Consequently $P_\mu G=Jf$ and $If=ZG$, which is integral.
+This also proves independence of the chosen lift.
+The remaining properties follow from those of $J$.
+\end{proof}
+
+\subsection{Adjoints, the standard formula, and the norm}
+
+Let $\Pi_\lambda,\Pi_\mu$ be the orthogonal Fock
+projections onto the polynomial modules.  They have
+rational matrices: choose rational bases and invert
+their positive definite rational Gram matrices.
+Set
+\[
+ C_\lambda=[H_\lambda,H_\lambda],\quad
+ C_\mu=[H_\mu,H_\mu],\quad
+ \kappa=\frac{[\xi,\xi]}{C_\lambda}>0,\qquad b!=\prod_i b_i!.
+ \tag{IB8}
+\]
+
+\begin{theorem}\label{ib-standard-integral}
+On the indicated polynomial modules define
+\[
+ \begin{split}
+ \mathcal B F&=c\kappa\,\Pi_\mu([z^b]F),\\
+ \mathcal I f&=\frac{c[\xi,\xi]}{b!C_\mu}\Pi_\lambda(z^b f).
+ \end{split}
+ \tag{IB9}
+\]
+Then $\mathcal I=I=cJ$ and $\mathcal B$ is its adjoint
+for the normalized Fock pairings.  In particular
+\[
+ \mathcal I\nabla_\mu(\mathbb Z)\subset\nabla_\lambda(\mathbb Z),
+ \qquad
+ \mathcal B\Delta_\lambda(\mathbb Z)\subset\Delta_\mu(\mathbb Z).
+ \tag{IB10}
+\]
+Both maps are nonzero and equivariant.  Their squared
+operator norms for the normalized Hermitian Fock
+metrics are exactly $c^2\kappa$.
+These are the maps denoted $\operatorname{ioStd}$ and
+$\operatorname{brStd}$ in the application.
+\end{theorem}
+\begin{proof}
+Coefficient extraction commutes with $\operatorname{GL}_n$.
+The projection $\Pi_\mu$ commutes with $U(n)$ by
+unitarity, hence with its complexified Lie algebra
+and with $\operatorname{GL}_n(\mathbb C)$.
+Thus $\phi=\Pi_\mu[z^b]$ vanishes on every last-row
+degree other than $d$; in degree $d$, multiplicity
+one makes it vanish on every summand except
+$J(V_\mu)$, on which $\phi J=1$.
+
+The Gram-matrix calculation in
+Lemma~\ref{cb-highest-classification} shows that the
+pullback of the normalized Hermitian form under $J$
+is a scalar multiple of the form on $V_\mu$.
+Evaluation on $H_\mu$ gives the scalar $\kappa$.
+Orthogonality of the summands therefore gives
+$J^*=\kappa\phi$ and $I^*=\mathcal B$.
+Their exact squared norms are $c^2\kappa>0$.
+
+Comparing monomials in the top and bottom rows gives
+\[
+                         [F,z^b f]=b!\,[[z^b]F,f].
+\]
+After normalizing, the adjoint of $\phi$ is
+$C_\lambda(b!C_\mu)^{-1}\Pi_\lambda(z^b\,\cdot)$.
+Taking the adjoint of $c\kappa\phi$ proves the second
+formula of (IB9), including every factorial.
+All matrices are rational, so the same adjoint
+identity holds for the rational bilinear forms.
+
+The first containment in (IB10) is (IB7).
+For $F\in\Delta_\lambda(\mathbb Z)$ and
+$f\in\nabla_\mu(\mathbb Z)$ it follows that
+\[
+ B_\mu(\mathcal B F,f)=B_\lambda(F,\mathcal I f)\in\mathbb Z.
+\]
+Theorem~\ref{coef:integral-duality} gives
+$\mathcal B F\in\Delta_\mu(\mathbb Z)$.
+No prime dividing $b!$ or $C_\mu$ has been excluded.
+\end{proof}
+
+\begin{proposition}\label{ib-norm-bound}
+Write $M=\lambda_1-\lambda_N$.  Then
+\[
+ |c|\le(M+n-1)^{nD_1},\qquad
+ \kappa\le\dim V_\lambda,\qquad
+ \|\mathcal B\|=\|\mathcal I\|
+                  \le |c|\sqrt{\dim V_\lambda}.
+ \tag{IB11}
+\]
+A zero base in the first power has exponent zero
+and value $1$.  In particular these estimates imply
+the source bound
+\[
+ \|\mathcal B\|,\|\mathcal I\|
+       \le\bigl(2(M+N)\bigr)^{ND_1}\sqrt{\dim V_\lambda}.
+ \tag{IB12}
+\]
+\end{proposition}
+\begin{proof}
+The interval $R_i$ contains $\mu_i$, and
+$\#(R_i\setminus\{\mu_i\})
+=\min(\lambda_i-\lambda_{i+1},D_0)$.
+Both $v$ and $\mu_j$ in (IB2) lie between $\lambda_N$
+and $\lambda_1$.  Every factor has absolute value
+at most $M+n-1$, and there are $nD_1$ factors.
+If $M+n-1=0$, then $n=1,M=0$ and $D_1=0$.
+
+Normalize Haar measure on $U(N)$ to have mass one.
+The highest vector $h=H_\lambda$ has normalized norm one.
+Average the rank-one projection onto $\rho(g)h$.
+The resulting self-adjoint operator commutes with
+the group, so each of its eigenspaces is invariant.
+Irreducibility makes it a scalar operator.
+Its trace is one, hence its scalar is $(\dim V_\lambda)^{-1}$.
+Consequently
+\[
+ \int_{U(N)}|\langle\xi,\rho(g)h\rangle_\lambda|^2\,dg
+                         =\frac{\kappa}{\dim V_\lambda}.
+\]
+The evaluation identity of
+Lemma~\ref{coef:extremal-weight} and unitarity identify
+this matrix coefficient, up to conjugation and
+inversion of $g$, with $\xi(g^t I_{N,n})$.
+Each initial or replaced-row minor of a matrix with
+orthonormal columns has absolute value at most one:
+it is a coordinate of the unit exterior product of
+those initial columns.  Formula (CB4) therefore
+gives $|\xi(g^tI_{N,n})|\le1$.
+The integral is at most one, proving the bound
+on $\kappa$.  The exact norm formula proves the
+last part of (IB11).  Finally $M+N\ge2$ and $n\le N$
+give (IB12).
+\end{proof}
+
+\subsection{The local basis identity and a necessary scalar}
+
+The statements extend to coefficient fields and tensor
+products over embeddings.  The integral containments
+also extend to characteristic-zero coefficient domains:
+initial minors span the dual-Weyl module, the lift
+and $Z$ have integer coefficients, and the perfect
+Weyl duality extends with the coefficient ring.
+In particular (IB10) imposes no exclusion of small primes.
+
+For dominant integral $\lambda,\mu$ with the same
+smallest entry $s$, subtract $s$ from both tuples.
+Their canonical polynomial modules are those above;
+the maps and integral pairings do not change.
+The action acquires the common factor $\det^s$,
+and the last-circle character becomes
+$t^{d+s}=t^{|\lambda|-|\mu|}$.
+
+\begin{corollary}\label{ib-diagonal-covariance}
+Let $\lambda,\mu$ interlace and have the same smallest
+entry.  Put $d_0=|\lambda|-|\mu|$ and
+$\mathcal B_t=t^{-d_0}\mathcal B$ for $t\ne0$.
+For $R_\lambda(g)=\rho_\lambda(g^{-t})$ and
+$B=\operatorname{diag}(B',t^{-1})$ one has
+\[
+                R_\mu(B'^{-1})\mathcal B_t
+                              =\mathcal B R_\lambda(B^{-1}).
+ \tag{IB13}
+\]
+For tensor products the scalar is the product of
+the corresponding scalars over the embeddings.
+\end{corollary}
+\begin{proof}
+Equivariance and the last-circle character give
+$\mathcal B\rho_\lambda(\operatorname{diag}(g,a))
+=a^{d_0}\rho_\mu(g)\mathcal B$.
+Now $R_\lambda(B^{-1})=\rho_\lambda(B^t)$ and
+$B^t=\operatorname{diag}(B'^t,t^{-1})$.
+Substitution proves the formula; tensor products
+prove the final assertion.
+In the arithmetic application $t=\overline{\pi_T}$,
+as dictated by the Hermitian dual lattice.
+\end{proof}
+
+The scalar $c$ cannot simply be deleted.
+Take $\lambda=(2,1,0)$ and $\mu=(2,0)$.
+Write the two columns as $x=(x_1,x_2,x_3)^t$ and
+$y=(y_1,y_2,y_3)^t$, and put $D_{ij}=x_i y_j-x_j y_i$.
+Then $\xi=x_1D_{13}$ and
+\[
+ E_{21}\xi=x_1D_{23}+x_2D_{13}
+                         =2x_2D_{13}-x_3D_{12}.
+\]
+Since $E_{21}(x_1^2)=2x_1x_2$, the unscaled map gives
+\[
+                  J(x_1x_2)=x_2D_{13}-\tfrac12x_3D_{12}.
+\]
+The coefficient of $x_1x_3y_2$ is $-1/2$.
+Thus this is not an integral polynomial, although
+$x_1x_2$ is in the integral dual-Weyl module.
+Here $D_0=1$, $R_1=\{1,2\}$, $R_2=\{0,1\}$, and
+(IB2) gives $c=(-2)(-2)=4$.
+The actual map is $4J$, whose integrality is proved
+in Theorem~\ref{ib-standard-integral}.
+This refutes deletion of the normalization, not
+the submitted integral branching assertion.
+
+These results settle the polynomial branching input
+and its local basis identity.  The actual twisted
+automorphic classes, their coefficient lattices,
+and their period sums are separate arithmetic statements.
+
+
+
+% A mathematical section, to be included after the common preamble.
+% Requires amsmath, amssymb, amsthm, booktabs and the theorem environments
+% theorem, proposition, lemma, corollary, example, remark.
+% All labels in this file have the prefix div:.

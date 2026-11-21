@@ -1,0 +1,194 @@
+\section{Detection of global powers at degree-one primes}
+\label{sd-section}
+
+We now prove the power-detection statement used in
+assertion~\ref{sc-few}.  The argument applies to every positive
+integer exponent.  Its classical input is the following
+qualitative form of the Chebotarev theorem: in a finite
+Galois extension of \(\mathbb Q\), every conjugacy class
+occurs as the Frobenius class of infinitely many unramified
+rational primes.\cite[Theorem 8.31]{milne-ant}
+No effective prime bound is needed.
+
+A prime ideal \(P\) of a number field \(F\) has
+\emph{absolute residue degree one} if its residue field
+is \(\mathbb F_r\), where \(r\) is the rational prime
+below \(P\).
+For \(\beta\in F^\times\), reduction modulo \(P\) is
+defined as a nonzero residue when \(v_P(\beta)=0\).
+Equivalently, there are \(a,b\in\mathcal O_F\) with
+\(b\notin P\), \(\beta b=a\), and \(a\notin P\).
+The residue is then \(\overline a/\overline b\).
+This is precisely the residue relation used by the source:
+the definition of the local ring
+\(\mathcal O_{F,P}\) gives the converse as well.
+
+\begin{lemma}\label{sd-degree-one}
+Let \(K/F\) be a finite Galois extension of number fields,
+let \(\sigma\in\operatorname{Gal}(K/F)\), and let
+\(\mathcal B\) be any finite set of primes of \(F\).
+There exists an unramified prime \(P\notin\mathcal B\)
+of absolute residue degree one, and a prime of \(K\)
+above \(P\), whose arithmetic Frobenius is \(\sigma\).
+\end{lemma}
+\begin{proof}
+Choose a finite Galois extension \(N/\mathbb Q\)
+containing \(K\).  The restriction map
+\(\operatorname{Gal}(N/F)\to\operatorname{Gal}(K/F)\)
+is surjective: an \(F\)-embedding of the subfield \(K\)
+extends to an \(F\)-automorphism of the normal
+extension \(N/F\).
+Choose a lift \(\widetilde\sigma\).
+
+Chebotarev provides infinitely many rational primes
+whose Frobenius class in \(\operatorname{Gal}(N/\mathbb Q)\)
+is the conjugacy class of \(\widetilde\sigma\).
+Omit the finitely many rational primes lying below
+\(\mathcal B\).
+For any remaining prime \(r\), choose a prime \(Q\) of
+\(N\) at which the Frobenius element is exactly
+\(\widetilde\sigma\), rather than a different conjugate.
+This is possible because changing \(Q\) by an
+automorphism conjugates its Frobenius.
+Put \(P=Q\cap\mathcal O_F\).
+
+For \(a\in\mathcal O_F\), the element
+\(\widetilde\sigma\) fixes \(a\), whereas its action
+on the residue field at \(Q\) is \(x\mapsto x^r\).
+Every element of \(\mathcal O_F/P\) is therefore
+fixed by the \(r\)-power map.  The polynomial
+\(X^r-X\) has at most \(r\) roots, and the residue
+field contains the \(r\) elements of \(\mathbb F_r\).
+Consequently \(\mathcal O_F/P=\mathbb F_r\).
+All these primes are unramified in \(N/\mathbb Q\).
+Since \(NP=r\), the restriction of
+\(\widetilde\sigma\) to \(K\) is also the arithmetic
+Frobenius of \(K/F\) at the chosen prime above \(P\).
+It is \(\sigma\), as required.
+\end{proof}
+
+\begin{lemma}\label{sd-roots-reduce}
+Let \(F\) contain all \(q\)-th roots of unity, and let
+\(P\nmid q\) be a finite prime.
+Reduction modulo \(P\) is injective on \(\mu_q\).
+\end{lemma}
+\begin{proof}
+Every root of unity and its inverse are algebraic integers,
+so these reductions are defined and nonzero.
+If \(\zeta\in\mu_q\) reduces to \(1\) and \(\zeta\ne1\),
+then
+\[
+             1+\zeta+\cdots+\zeta^{q-1}=0.
+\]
+Reducing this equality modulo \(P\) gives \(q=0\),
+contrary to \(P\nmid q\).
+Apply this to the quotient of two roots of unity
+with equal reduction.
+\end{proof}
+
+\begin{theorem}\label{sd-power}
+Let \(F\) be a number field, let \(q\ge1\), and suppose
+\(\mu_q\subset F\).
+Let \(\beta\in F^\times\) and let \(\mathcal B\) be
+a finite set of primes.
+Suppose that, at every prime \(P\notin\mathcal B\)
+of absolute residue degree one at which \(\beta\)
+is a unit, its residue is a \(q\)-th power in
+\((\mathcal O_F/P)^\times\).
+Then \(\beta\) is a \(q\)-th power in \(F^\times\).
+\end{theorem}
+\begin{proof}
+The case \(q=1\) is immediate.
+For \(q>1\), choose \(\alpha\) with
+\(\alpha^q=\beta\) and put \(K=F(\alpha)\).
+The polynomial is separable and all its roots
+are \(\zeta\alpha\), \(\zeta\in\mu_q\subset F\).
+Thus \(K/F\) is Galois.
+
+If \(\alpha\notin F\), choose
+\(\sigma\in\operatorname{Gal}(K/F)\) with
+\(\sigma\alpha\ne\alpha\).
+Enlarge \(\mathcal B\) by the primes dividing \(q\)
+and by the finite support of the principal divisor
+of \(\beta\).
+Lemma~\ref{sd-degree-one} gives a prime \(P\) and a
+prime \(Q\) of \(K\) above it with Frobenius \(\sigma\).
+Let \(r=NP\), a rational prime.
+The equality \(\alpha^q=\beta\) shows that \(\alpha\)
+is a unit at \(Q\).
+By the hypothesis there is \(t\in\mathbb F_r^\times\)
+with \(t^q=\overline\beta\).
+
+All \(q\)-th roots of unity reduce to elements of
+\(\mathbb F_r\), and they remain distinct by
+Lemma~\ref{sd-roots-reduce}.
+The \(q\) roots of \(X^q-\overline\beta\) in any
+extension of the residue field are consequently the
+elements \(\overline\zeta t\), all in \(\mathbb F_r\).
+In particular \(\overline\alpha\in\mathbb F_r^\times\).
+The Frobenius property gives
+\[
+             \overline{\sigma\alpha}
+                  =\overline\alpha^{\,r}
+                  =\overline\alpha.
+\]
+But \(\sigma\alpha/\alpha\in\mu_q\), so its reduction
+is \(1\).  The same injectivity lemma forces
+\(\sigma\alpha/\alpha=1\), a contradiction.
+Hence \(\alpha\in F^\times\), proving the theorem.
+\end{proof}
+
+\begin{corollary}\label{sd-source}
+Let \(L\subset F\) be number fields, let
+\(\mu_q\subset F\), let \(\beta\in F^\times\),
+and let \(0\ne b\in\mathcal O_F\).
+Assume that for every prime \(P\nmid b\) such that
+the natural map
+\[
+                 \mathcal O_L\longrightarrow\mathcal O_F/P
+\]
+is surjective, \(\beta\) has a nonzero residue
+which is a \(q\)-th power.
+Then \(\beta\in(F^\times)^q\).
+In particular this proves the source assertion
+\(\mathrm{SDetect}\), with \(q=\ell^\nu\).
+\end{corollary}
+\begin{proof}
+At every absolute degree-one prime \(P\), the residue
+field is \(\mathbb F_r\).  The image of \(\mathcal O_L\)
+contains the image of \(\mathbb Z\), which already
+equals \(\mathbb F_r\); the displayed map is therefore
+surjective.  Apply Theorem~\ref{sd-power}, with the
+primes dividing \(b\) excluded.
+No normality assumption on \(F/L\) is required.
+\end{proof}
+
+The roots-of-unity hypothesis is essential to this argument
+and to the resulting statement.  A precise counterexample
+after deleting it is
+\[
+                      F=\mathbb Q,\qquad q=8,\qquad\beta=16.
+\]
+The element \(16\) is not an eighth power in \(\mathbb Q\),
+because its \(2\)-adic valuation is \(4\).
+Nevertheless it is an eighth power modulo every odd
+rational prime \(r\).
+Indeed at least one of \(2,-2,-1\) is a square in
+\(\mathbb F_r^\times\): the square subgroup has index
+two, and their product \(4\) is a square, so they cannot
+all belong to the other coset.
+If \(t^2=2\) or \(t^2=-2\), then \(t^8=16\).
+If \(i^2=-1\), then \((1+i)^2=2i\), and hence
+\((1+i)^8=16\).
+All these elements are nonzero when \(r\) is odd.
+This example does not satisfy \(\mu_8\subset\mathbb Q\),
+which is an explicit hypothesis of the source.
+
+The detection step thus has a complete conventional proof,
+with Chebotarev as the stated classical input.
+It supplies the final separation argument in
+\(\mathrm{SFew}\); it does not construct the finite-field
+homology classes or the integral cycles whose values must
+be separated.
+
+

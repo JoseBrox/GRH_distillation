@@ -1,0 +1,315 @@
+\section{A conditional improvement using exact prime removal}
+\label{sec:qrh-bootstrap}
+
+The absolute deletion error in Lemma~\ref{lem:qrh-amplification}
+loses information about the M\"obius function. Retaining that
+information gives a better conditional implication. The new
+mean-square estimate required by the implication is stated explicitly;
+it is not established by the supplied estimates in their present ranges.
+
+Use the notation of Lemma~\ref{lem:qrh-amplification}, fix
+$k\ge2$, and suppose that the finite-order twists and their zero
+extensions satisfy
+\[
+ A_1(T)=A_{p^k}(T)-\nu(p)A_{p^k}(T/Np)
+       \qquad(p\notin S).
+\]
+For a fixed compactly supported $W$, all these sums vanish for
+sufficiently small positive $T$. This point makes the following
+iteration exact, without an infinite unestimated remainder.
+
+\begin{lemma}[Uniform control of the deleted prime]
+\label{lem:qrh-better-deletion}
+Suppose $\beta>0$ and
+$A_1(T)\ll_\epsilon T^{\beta+\epsilon}$ for every
+$\epsilon>0$, with fixed arithmetic data and fixed $W$.
+Then, uniformly in primes $p\notin S$ and all $T>0$,
+\[
+ A_{p^k}(T)=\sum_{j\ge0}\nu(p)^j A_1(T/(Np)^j),
+ \qquad
+ |A_{p^k}(T)|\ll_\epsilon T^{\beta+\epsilon}.
+\]
+Consequently, for $Y/2<Np\le Y$,
+\[
+ |A_1(D)-A_{p^k}(D)|
+       \ll_\epsilon(D/Y)^{\beta+\epsilon}.
+\]
+\end{lemma}
+\begin{proof}
+Solve the displayed prime-removal identity for $A_{p^k}(T)$
+and iterate. For each $T>0$, the sum $A_{p^k}(T/(Np)^J)$
+vanishes once $J$ is large. Thus the expansion is a finite identity.
+Choose $v>0$ containing the upper endpoint of the support
+of $W$. The assumed estimate can be made valid for every
+$T>0$ by increasing its constant: the sum is zero for
+$T<1/v$, and is bounded on every fixed compact range of
+positive $T$. Hence
+\[
+ |A_{p^k}(T)|\le
+ C_\epsilon T^{\beta+\epsilon}
+       \sum_{j\ge0}(Np)^{-j(\beta+\epsilon)}
+ \le\frac{C_\epsilon T^{\beta+\epsilon}}
+                {1-2^{-\beta-\epsilon}}.
+\]
+The denominator is positive and independent of $p$.
+Apply this bound at $T=D/Np$, and use $Np>Y/2$,
+to obtain the last assertion.
+\end{proof}
+
+\begin{proposition}[A conditional exponent improvement]
+\label{prop:qrh-exponent-improvement}
+Let $1/2<\beta\le1$ and $0<h<k$. Suppose that, for every
+$\epsilon>0$, the following two estimates hold for the same
+fixed $W$ and arithmetic data:
+\[
+ A_1(D)\ll_\epsilon D^{\beta+\epsilon},\qquad
+ \sum_{0<Nu\le D^h}|A_u(D)|^2
+       \ll_{h,\epsilon}D^{1+h+\epsilon}.
+\]
+Suppose also that the prime-ideal count used in
+Lemma~\ref{lem:qrh-amplification} is available. Then
+\[
+ A_1(D)\ll_{h,\epsilon}D^{\beta'(h)+\epsilon},
+ \qquad
+ \beta'(h)=\max\left\{
+    \frac12+\frac{k-1}{2k}h,
+    \beta\left(1-\frac hk\right)\right\}.
+\]
+In particular, if the mean-square estimate is available at
+\[
+ h=h_*(\beta):=\frac{k(2\beta-1)}{k-1+2\beta},
+\]
+then
+\begin{equation}\label{eq:qrh-bootstrap-map}
+ \beta'=T_k(\beta):=\frac{k\beta}{k-1+2\beta}<\beta.
+\end{equation}
+All implied constants may depend on $\beta,h,W$ and on the
+fixed character, but must be independent of the varying prime
+$p$ and of $D$.
+\end{proposition}
+\begin{proof}
+Set $H=D^h$ and $Y=H^{1/k}$. The proof of
+Lemma~\ref{lem:qrh-amplification}, now using
+Lemma~\ref{lem:qrh-better-deletion}, gives
+\[
+ |A_1(D)|^2\ll
+ D^{1+h-h/k+\epsilon_1}\log(2D)
+       +(D/Y)^{2(\beta+\epsilon_2)}.
+\]
+Choose the preliminary positive losses $\epsilon_1,\epsilon_2$
+small enough in terms of any requested final loss, absorb
+$\log(2D)$ into a further arbitrarily small power, and take
+square roots. The first resulting exponent increases with
+$h$ and the second decreases. They coincide at $h_*(\beta)$;
+substitution gives \eqref{eq:qrh-bootstrap-map}. Since
+$\beta>1/2$, one has $0<h_*(\beta)<k$ and
+$k-1+2\beta>k$, so the new exponent is strictly smaller.
+\end{proof}
+
+For sixth-power characters this would give
+\[
+ \beta=\frac78,\quad h_* =\frac23,
+       \quad T_6(\beta)=\frac79;
+ \qquad
+ \beta=\frac{11}{12},\quad h_* =\frac{30}{41},
+       \quad T_6(\beta)=\frac{33}{41}.
+\]
+Thus the first useful extension of the known $7/8$ result
+would concern a mean square over $Nu\le D^{2/3}$.
+That is substantially shorter than the available range
+$Nu\le D^{1+\eta}$.
+
+If the hypothesis at $h_*(\beta)$ could be deduced from the
+current exponent bound for every $\beta>1/2$, iteration
+would approach the critical line. More precisely, if
+$\beta_{n+1}=T_k(\beta_n)$, then
+\[
+ \frac1{\beta_n}
+ =2-\left(\frac{k-1}{k}\right)^n
+               \left(2-\frac1{\beta_0}\right),
+ \qquad \beta_n\downarrow\frac12.
+\]
+This follows by taking reciprocals in
+\eqref{eq:qrh-bootstrap-map} and solving the affine
+recurrence. For any fixed zero to the right of $1/2$,
+only finitely many iterations would be needed to obtain
+a contradictory bound in Proposition~\ref{prop:qrh-mellin}.
+Thus constants may deteriorate with the number of
+iterations; no uniform limit of those constants is being
+assumed. For the conclusion about every Hecke character, these
+implications must hold for every fixed character and every
+compactly supported smooth $W$, with a common exponent;
+their implied constants may depend on those fixed data.
+The missing assertion is the implication from the
+current exponent to the shorter mean square.
+
+\subsection{What a fixed lower limit on the range permits}
+
+Suppose the mean-square estimate is available only at
+exponents $h\ge h_0$, where $0<h_0<k$. The best consequence of the last
+proposition is obtained at $h=\max(h_0,h_*(\beta))$
+whenever this lies in the permitted range. In particular,
+a strict improvement over $\beta$ requires
+\[
+ h_0<\frac{k(2\beta-1)}{k-1}.
+\]
+Indeed the first entry in $\beta'(h)$ must be smaller than
+$\beta$, while the second is smaller for every $h>0$.
+A fixed $h_0$ leaves the lower bound
+$1/2+(k-1)h_0/(2k)$ on the exponent obtainable by this
+particular argument. With $k=6$ and $h_0=1$, that bound
+is $11/12$. A previously known $7/8$ estimate therefore
+does not improve when inserted into the existing
+$h>1$ mean-square range.
+
+One must also avoid a circular reformulation. If the bound
+\[
+ \sum_{0<Nu\le D^h}|A_u(D)|^2\ll_{h,\epsilon}
+                         D^{1+h+\epsilon}
+\]
+were simply assumed for every $h>0$, its single term
+$u=1$ would already give
+$A_1(D)\ll_\epsilon D^{1/2+\epsilon}$ by taking $h$
+sufficiently small. Amplification would not be needed.
+Even at $h=h_*(\beta)$, the single term gives a strict,
+though weaker, improvement, because
+$h_*(\beta)<2\beta-1$. Thus proving this shorter
+mean-square estimate is itself substantive new cancellation;
+it is not a formal consequence of changing parameters.
+
+\subsection{The precise failure of the existing iteration in this range}
+
+The October proof transforms the original scale $D$ and
+range $H$ by Poisson summation. In the contribution whose
+common-divisor parameter is $1$, its new parameters have
+sizes
+\[
+ X=D,\qquad F=1,\qquad \mathcal H\asymp D^2/H,
+          \qquad\Sigma=XF=D.
+\]
+The mean-square theorem in its Proposition 5.1 requires
+$\mathcal H\le\Sigma D^{-\kappa}$ for a fixed
+$\kappa>0$. This requires $H$ to be greater than $D$
+by a fixed power. If $H=D^h$ with $h<1$, the ratio
+$\mathcal H/\Sigma\asymp D^{1-h}$ instead tends to
+infinity. Fixed scale constants do not change this
+conclusion.
+
+This is also visible directly in the cube-divisor step.
+The splitting threshold in its equation (5.6) satisfies
+\[
+ H_c^3=\min(X,X^2/\mathcal H^2)<1
+\]
+for large $D$. The unit divisor $b=1$ is therefore in
+the remaining sum, and its new length is $L_b=X$.
+An attempted reuse of the displayed supremum for that
+remaining sum would include the original mean square itself.
+There is no decrease of the parameters. In fact, the lemma
+stating that bound already assumes $\mathcal H\le\Sigma$;
+we are diagnosing why its proof does not extend to this
+case, not applying the lemma outside its hypotheses. The next transfer proposition requires
+$\mathcal H\le\Sigma$ and is unavailable at the desired
+$\Sigma=X$. Thus the existing finite induction does not
+prove the shorter-range estimate.
+
+In the September paper, the unmarked case of the principal
+inverse moment requires $r<m-c$ when the norm length is
+$D=Z^r$ and the outer range is $H=Z^m$. Its canonical
+estimate also requires, even when the additional excluded
+ideal is the unit ideal,
+$1\le Z^{F_0-M-c}$ with $c>0$. These conditions enforce
+the same strict direction of inequality between the
+corresponding ranges. The longer-length estimate later
+obtained for sixth-power-free elements does not remedy this
+problem: the amplifying elements $p^6$ have valuation six
+and are excluded from that index set.
+
+These are exact limitations of the statements and
+recurrences presently available. They do not prove that a
+new argument cannot extend the mean square. They locate
+where such an argument is needed and prevent a purported
+iteration to the critical line from concealing that step.
+
+\subsection{A counterexample to enlarging the coefficient class}
+
+The shorter mean square also cannot be obtained by applying an
+identical estimate for arbitrary bounded squarefree coefficients.
+Here is an explicit obstruction. Fix $0<h<k/(k-1)$, put
+$H=D^h$, and take the fixed column coefficient $c_{\mathfrak a}$
+to be $1$ when $\mathfrak a$ is prime outside $S$, and
+zero otherwise. This coefficient sequence is independent
+of $D$ and of the outer index. Choose a fixed nonnegative
+$W\in C_c^\infty((1/3,3/2))$ which is at least one
+on $[1/2,1]$. For every prime ideal $p\notin S$ of norm in
+$[H^{1/k}/2,H^{1/k}]$, one has $Np<D/3$ when $D$ is
+large, because $h/k<1$. Thus every prime column on which
+$W(N\mathfrak a/D)\ne0$ is different from $p$. Thus the zero-extended character
+is exactly $1$ on every column at the argument $p^k$.
+The prime-ideal count gives
+\[
+ \left|\sum_{\mathfrak a}\!c_{\mathfrak a}
+      \chi_{\mathfrak a}(p^k)W(N\mathfrak a/D)\right|
+       \gg\frac D{\log D}.
+\]
+Their primary generators have distinct $k$th powers:
+equality of the powers would give equality of the prime
+ideals by unique factorization, and then equality of their
+primary generators. Multiplicativity of the norm gives
+$N(p^k)=(Np)^k\le H$. There are consequently
+$\gg H^{1/k}/\log D$ distinct such arguments.
+Consequently the complete mean square is at least
+\[
+       \gg\frac{D^2H^{1/k}}{(\log D)^3}.
+\]
+The ratio of this lower bound to $DH$ grows like
+$D^{1-h(1-1/k)}/(\log D)^3$, which tends to infinity.
+It even contradicts an estimate $D^{1+\epsilon}H$ for
+sufficiently small fixed $\epsilon>0$.
+This is an actual counterexample for the enlarged
+coefficient class. It is not a counterexample for the
+M\"obius coefficients in the supplied papers. It shows
+why their special arithmetic identities cannot be replaced
+by a statement about arbitrary bounded coefficients.
+If a fixed finite-order twist $\nu$ is retained explicitly,
+replace $c_{\mathfrak a}$ on prime ideals by
+$\overline{\nu(\mathfrak a)}$; the same argument applies.
+The counterexample concerns the complete outer set. It does
+not assert anything about a restricted set deliberately
+excluding $k$th powers. Fixed exclusions remove only
+finitely many primes and hence do not change the argument.
+
+The later catalogue entries R107 and R109 retain the same distinction.
+Their amplified inverse-moment exponent, with base $D$, inverse
+length exponent $1$, no additional prime factors, and outer
+range exponent $h<1$, is $(h+5)/6$ after normalizing the inverse
+sum by $D^{-1/2}$. Thus their unnormalized bound has exponent
+$(11+h)/6$, which exceeds the desired exponent $1+h$ by
+$5(1-h)/6$. Their index set is also restricted to
+sixth-power-free elements. The more elaborate cofactor bookkeeping
+in those entries consequently does not provide the missing
+shorter-range mean square.\cite{qrh-catalogue}
+
+There is another useful numerical check. The September marked
+inverse moment, with inverse length $D$ and additional prime factors
+of total length $D^z$, requires outer range exponent
+\[
+ h>1+2z,\qquad 3h>2+8z.
+\]
+If one tries to use those prime factors merely as positive
+amplifiers at arguments $p^6$, their product has size
+$D^{z/2}$ up to logarithms. The same positivity calculation
+then gives the first exponent
+\[
+ \frac12+\frac{5h}{12}-\frac z2.
+\]
+The first required inequality already makes this greater than
+$11/12+z/3$. Taking $z>0$ therefore does not improve the
+unmarked $11/12$ consequence by this particular use of the
+marked estimate. The actual $7/8$ proof uses a different
+compensated expression and a more detailed estimate; it is
+not the direct positive-amplification argument just tested.
+
+
+% Standalone mathematical sections for inclusion in the reconstruction manuscript.
+% Requires amsmath, amssymb, amsthm; theorem, lemma, proposition, corollary,
+% and remark environments. All labels and citation keys have the prefix sz-.

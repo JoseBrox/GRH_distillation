@@ -1,0 +1,320 @@
+\section{Class numbers and the cyclotomic enlargement}
+\label{sl-section}
+
+We prove two of the inputs isolated in Section~\ref{sc-section}:
+the class-number estimate and the cyclotomic enlargement
+assertion~\ref{sc-layer}.  The latter includes the inequality for
+strict Selmer lengths.  It is a statement about this particular
+cyclotomic tower and nonzero twist; it is not an assertion about
+restriction in an arbitrary extension of prime-power degree.
+The finite-field homology construction and the comparison with
+units in assertions~\ref{sc-few} and \ref{sc-count} are separate.
+
+\subsection{An elementary bound for the class number}
+
+For a number field $F$, write $n=[F:\mathbb Q]=r_1+2r_2$,
+$D=|\operatorname{disc}F|$, and let $N\mathfrak a$ be the
+absolute norm of a nonzero integral ideal.  Use ordinary Lebesgue
+measure on $\mathbb R^{r_1}\times\mathbb C^{r_2}$, with one
+embedding from each conjugate pair.  The image of $\mathfrak a$
+has covolume
+\[
+                 2^{-r_2}\sqrt D\,N\mathfrak a .
+                 \tag{SL1}
+\]
+Indeed, for $\mathcal O_F$ the matrix of all embeddings has
+squared determinant equal to the discriminant.  Replacing each
+pair of complex rows by its real and imaginary parts changes
+the absolute determinant by $1/2$.  Passing to an ideal
+multiplies the covolume by its index $N\mathfrak a$.
+
+\begin{lemma}\label{sl-small-ideal}
+Every ideal class of $F$ contains a nonzero integral ideal of norm
+at most
+\[
+          \left(\frac4\pi\right)^{r_2}
+                 \frac{n!}{n^n}\sqrt D
+             \ \le\ \sqrt D .
+             \tag{SL2}
+\]
+\end{lemma}
+\begin{proof}
+The elementary lattice-volume argument in the proof of
+Lemma~\ref{ac-positive-gram} shows that an open, convex,
+centrally symmetric body of volume greater than $2^n$ times a
+lattice's covolume contains a nonzero lattice point.
+Apply it to the image of an integral ideal $\mathfrak a$ and
+the body
+\[
+ B_T=\left\{(x,z):
+       \sum_{i=1}^{r_1}|x_i|+
+                  2\sum_{j=1}^{r_2}|z_j|<T\right\}.
+\]
+Integration in polar coordinates gives
+\[
+       \operatorname{vol}(B_T)
+             =2^{r_1}\left(\frac\pi2\right)^{r_2}
+                         \frac{T^n}{n!}.
+                         \tag{SL3}
+\]
+For clarity, put $u_i=|x_i|$ and $v_j=2|z_j|$.
+The measures become $2\,du_i$ and $(\pi/2)v_j\,dv_j$.
+The integral of $\prod_jv_j$ over
+$u_i,v_j\ge0$, $\sum u_i+\sum v_j<T$, is $T^n/n!$;
+successive integration, using
+$\int_0^T t^a(T-t)^b\,dt=a!b!T^{a+b+1}/(a+b+1)!$,
+proves this formula.
+
+Thus, whenever
+$T^n>(4/\pi)^{r_2}n!\sqrt D\,N\mathfrak a$, there is
+$0\ne\alpha\in\mathfrak a$ in $B_T$.  The arithmetic--geometric
+mean inequality, applied to the $n$ nonnegative numbers
+consisting of each $|x_i|$ and two copies of each $|z_j|$, gives
+\[
+        |N_{F/\mathbb Q}\alpha|
+              \le(T/n)^n .
+\]
+Let $T$ decrease to the indicated threshold.  A bounded region
+contains only finitely many lattice points, so one nonzero
+$\alpha$ attains the resulting non-strict bound.
+The ideal $(\alpha)\mathfrak a^{-1}$ is integral and has norm
+$|N_{F/\mathbb Q}\alpha|/N\mathfrak a$.  Taking $\mathfrak a$
+in the inverse of the desired class proves the first inequality.
+
+For the second, induction gives $n!/n^n\le2^{1-n}$:
+the ratio of the left-hand quantities at $n+1$ and $n$ is
+$(n/(n+1))^n\le1/2$, by the binomial inequality
+$(1+1/n)^n\ge2$.  Since $4/\pi<2$ and
+$r_2\le n-1$ for $n\ge2$, the desired product is at most
+$2^{1-n+r_2}\le1$.  For $n=1$ it is exactly one.
+\end{proof}
+
+\begin{lemma}\label{sl-ideal-count}
+For every real $X\ge1$ the number of nonzero integral ideals
+of norm at most $X$ is at most
+\[
+                    X(1+\log X)^{n-1}.
+                    \tag{SL4}
+\]
+\end{lemma}
+\begin{proof}
+There are at most $n$ prime ideals above any rational prime $p$,
+because their ramification indices and residue degrees satisfy
+$\sum_{\mathfrak p\mid p}e_{\mathfrak p}f_{\mathfrak p}=n$.
+For each $p$, assign distinct labels in $\{1,\ldots,n\}$ to
+these prime ideals.  If
+$\mathfrak a=\prod_{\mathfrak p}\mathfrak p^{a_{\mathfrak p}}$,
+define integers $b_1,\ldots,b_n\ge1$ by placing the factor
+$p^{a_{\mathfrak p}}$ in the coordinate with the label of
+$\mathfrak p$.  Unique factorization of integers and ideals
+shows that $\mathfrak a\mapsto(b_1,\ldots,b_n)$ is injective.
+Moreover
+\[
+        \prod_i b_i
+          =\prod_{\mathfrak p}p^{a_{\mathfrak p}}
+          \le \prod_{\mathfrak p}
+                         p^{f_{\mathfrak p}a_{\mathfrak p}}
+          =N\mathfrak a.
+\]
+No assumption that the prime ideals are principal is involved.
+
+Let $A_j(X)$ count $j$-tuples of positive integers with product
+at most $X$.  The bound
+$A_j(X)\le X(1+\log X)^{j-1}$ follows by induction.
+For $j=1$, it is $\lfloor X\rfloor\le X$.  For $j\ge2$,
+\[
+ \begin{split}
+ A_j(X)&=\sum_{a\le X}A_{j-1}(X/a)\\
+       &\le X(1+\log X)^{j-2}\sum_{a\le X}\frac1a
+        \le X(1+\log X)^{j-1}.
+ \end{split}
+\]
+The last inequality follows by comparing the terms from $a=2$
+onwards with the integral of $1/t$ over $[1,X]$.
+The injection proves (SL4).
+\end{proof}
+
+\begin{corollary}\label{sl-class-number}
+For every number field,
+\[
+       \log h_F\le\frac12\log D+
+             (n-1)\log\left(1+\frac12\log D\right).
+             \tag{SL5}
+\]
+In particular (SC14) and (SC15) hold.
+\end{corollary}
+\begin{proof}
+Choose one ideal of norm at most $\sqrt D$ in each class by
+Lemma~\ref{sl-small-ideal}, apply Lemma~\ref{sl-ideal-count}
+with $X=\sqrt D$, and take logarithms.
+The discriminant is a nonzero integer, so $D\ge1$ and all
+quantities are defined.  Replacing $n-1$ by $n$ gives (SC14);
+the calculation following that formula gives (SC15).
+\end{proof}
+
+\subsection{The cyclotomic degree and discriminant}
+
+Let $p$ be prime and let $L$ contain $\mu_p$ if $p$ is odd,
+and $\mu_4$ if $p=2$.  Write $c_0$ for the largest integer
+such that $\mu_{p^{c_0}}\subset L$.  Then $c_0\ge1$ and
+$c_0\ge2$ at $p=2$.  The cyclotomic character identifies
+\[
+ \operatorname{Gal}(L(\mu_{p^\infty})/L)
+                         =1+p^{c_0}\mathbb Z_p,
+ \qquad
+ L_m=L(\mu_{p^{c_0+m}}),\quad [L_m:L]=p^m .
+ \tag{SL6}
+\]
+Here the equality denotes the image under that character.
+We recall the justification to fix both the degree and the
+largest-root convention.
+
+The polynomial $\Phi_{p^a}(1+X)$ is Eisenstein at $p$:
+its constant term is $p$, its leading coefficient is one, and
+its reduction modulo $p$ is $X^{p^{a-1}(p-1)}$.
+For the last assertion use
+$\Phi_{p^a}(Y)=\sum_{j=0}^{p-1}Y^{jp^{a-1}}$ and
+the binomial identity in characteristic $p$.
+Eisenstein's criterion follows directly by reducing a proposed
+factorization into monic integral polynomials modulo $p$:
+both constant terms would be divisible by $p$, contradicting
+the constant term $p$.  The usual clearing of denominators
+for primitive polynomials passes from rational to integral
+factorizations.  Therefore
+$[\mathbb Q(\mu_{p^a}):\mathbb Q]=p^{a-1}(p-1)$.
+The automorphisms $\zeta\mapsto\zeta^b$ consequently fill the
+whole unit group modulo $p^a$.
+
+For $a\ge1$ (and $a\ge2$ at $2$), the group
+$1+p^a\mathbb Z_p$ is topologically generated by $1+p^a$.
+Indeed the valuation formula (SC18) shows that this element
+has order $p^{b-a}$ modulo $p^b$, equal to the number of
+elements in the indicated congruence group.  Every nontrivial
+closed subgroup is $1+p^b\mathbb Z_p$ for some $b\ge a$:
+choose a nonidentity element with least valuation of its
+difference from one; the same valuation argument shows that
+its powers fill that congruence group, and minimality puts
+every element of the subgroup in it.
+The image of the cyclotomic character for $L$ is a closed
+subgroup of finite index in the cyclotomic Galois group.
+It lies in $1+p\mathbb Z_p$, or in $1+4\mathbb Z_2$.
+The largest-root definition forces its index parameter to
+be $c_0$, proving (SL6).  It follows as well that the largest
+$p$-power roots in $L_m$ have order exactly $p^{c_0+m}$.
+
+\begin{lemma}\label{sl-cyclotomic-discriminant}
+If $L'=L(\zeta)$, where $\zeta$ is a root of unity of order
+$N\ge1$, and $d=[L':L]$, then
+\[
+                  D_{L'}\le D_L^d N^{[L':\mathbb Q]} .
+                  \tag{SL7}
+\]
+\end{lemma}
+\begin{proof}
+Put $R=\mathcal O_L$, $B=\mathcal O_{L'}$ and
+$A=R[\zeta]\subset B$.  The minimal polynomial $f$ of
+$\zeta$ is monic in $R[X]$ and divides $X^N-1$ there.
+The trace dual $A^\#=\{x:\operatorname{Tr}_{L'/L}(xA)
+\subset R\}$ equals $f'(\zeta)^{-1}A$.
+To see this, use the basis $1,\zeta,\ldots,\zeta^{d-1}$.
+Lagrange interpolation on the distinct roots of $f$ gives
+\[
+ \operatorname{Tr}\bigl(\zeta^j/f'(\zeta)\bigr)
+     =0\quad(0\le j<d-1),\qquad
+ \operatorname{Tr}\bigl(\zeta^{d-1}/f'(\zeta)\bigr)=1.
+\]
+For larger $j$ these traces lie in $R$, by reducing $X^j$
+modulo $f$.  Thus the pairing matrix for the bases
+$\zeta^i$ and $\zeta^j/f'(\zeta)$ has zeros below the
+opposite diagonal and ones on that diagonal.  Its determinant
+is a unit in $R$.  This proves the trace-dual assertion over
+$R$ itself, without assuming that $R$ is principal.
+
+As $B^\#\subset A^\#$, we have
+$f'(\zeta)B^\#\subset A\subset B$.
+The relative different is
+$\mathfrak D_{L'/L}=(B^\#)^{-1}$, so
+$f'(\zeta)\in\mathfrak D_{L'/L}$.
+Differentiating $X^N-1=f(X)g(X)$ and evaluating at $\zeta$
+gives
+$N\zeta^{N-1}=f'(\zeta)g(\zeta)$.
+Since $\zeta$ is a unit, $N$ belongs to the different.
+Hence $(N)\subset\mathfrak D_{L'/L}$ and
+$N_{L'/\mathbb Q}\mathfrak D_{L'/L}\le N^{[L':\mathbb Q]}$.
+The discriminant identity
+$D_{L'}=D_L^d N_{L'/\mathbb Q}\mathfrak D_{L'/L}$
+proves (SL7).  This identity follows by the determinant of
+the trace pairing in a tower, or equivalently by transitivity
+of the trace-dual fractional ideals.
+\end{proof}
+
+\subsection{The strict Selmer comparison in a layer}
+
+\begin{proposition}\label{sl-selmer-monotonicity}
+For $E\ge1$ and every $m\ge0$,
+\[
+                    s_p(L,E)\le s_p(L_m,E).
+                    \tag{SL8}
+\]
+\end{proposition}
+\begin{proof}
+Use the common infinite tower and the compact module $X$
+of Proposition~\ref{ct-descent}.  If $u$ is the cyclotomic
+value of a generator and $T$ its action on $X$, put
+$U=u^E T$.  That proposition identifies the two Pontryagin
+duals with $X/(U-1)X$ and $X/(U^{p^m}-1)X$.
+The polynomial identity
+\[
+ U^{p^m}-1=(U-1)(1+U+\cdots+U^{p^m-1})
+\]
+gives a surjection from the latter quotient to the former.
+Dualizing gives an injection of the strict Selmer groups,
+and the length inequality follows, with infinite length
+allowed.  The descent proposition proves preservation of
+the full local conditions; no assertion that ramification
+conditions are automatically unchanged under an arbitrary
+extension is being used.
+\end{proof}
+
+\begin{theorem}\label{sl-enlargement}
+Assertion~\ref{sc-layer} is valid.
+\end{theorem}
+\begin{proof}
+Let $n=[L:\mathbb Q]$ and choose the least $m\ge0$ such that
+$p^m\ge4E+4$.  Put $d=p^m$, $L'=L_m$ and $c=c_0+m$.
+Because $4E+4>1$, we have $m\ge1$, and minimality gives
+\[
+                    4E+4\le d<p(4E+4).
+                    \tag{SL9}
+\]
+The hypotheses on roots of unity imply that $L$ is totally
+imaginary and $n\ge2$.  They also imply $p\le n+1$:
+for odd $p$ use $p-1=[\mathbb Q(\mu_p):\mathbb Q]\le n$;
+for $p=2$ the inequality is immediate.
+Consequently $d\le(n+1)(4E+4)$ and
+$[L':\mathbb Q]=dn$.
+The field $L'$ is totally imaginary, so
+$r_2(L')=dn/2\ge d>2E+1$.
+Also $p^c=p^{c_0}d\ge2d>2E+1$.
+
+The largest-root assertion follows from (SL6).
+Since $\mathbb Q(\mu_{p^c})\subset L'$,
+\[
+        p^{c-1}(p-1)\le n'=[L':\mathbb Q],
+        \qquad p^c\le\frac{p}{p-1}n'\le2n'.
+\]
+Lemma~\ref{sl-cyclotomic-discriminant}, with $N=p^c$,
+gives $D_{L'}\le D_L^d(p^c)^{n'}$.
+Finally Proposition~\ref{sl-selmer-monotonicity} gives the
+required length inequality.  These are all the assertions
+in (SC13).
+\end{proof}
+
+Thus the exponent calculation in Proposition~\ref{sc-exponent}
+no longer requires an unproved class-number estimate or
+cyclotomic enlargement.  Its remaining assumptions are the
+finite-field homology and class-group comparisons in
+assertions~\ref{sc-few}--\ref{sc-sha}, to the extent not proved
+in subsequent sections.
+
+

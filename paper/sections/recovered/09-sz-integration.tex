@@ -1,0 +1,97 @@
+\section{What these results simplify in the auxiliary choices}
+\label{sz-integration}
+
+The original construction chooses auxiliary primes of size
+\[
+ \log q\asymp x^{\epsilon/5},\qquad
+ \log d\asymp x^{\epsilon/5}(\log x)^2,
+\]
+and imposes, among other requirements, a bound of the form
+$|L'(1,\chi_{-d})/L(1,\chi_{-d})|\le x^\epsilon$.
+The following deduction explains exactly how uniform exclusion of real
+zeros helps with that condition.
+
+\begin{proposition}\label{sz-log-derivative}
+Assume the classical zero-free region for primitive Dirichlet $L$-functions,
+with its possible simple real zero, and the uniform real-zero gap of
+Corollary~\ref{sz-zero-gap}. Then, for every real primitive nonprincipal
+character of conductor $q\ge3$,
+\[
+ \left|\frac{L'}{L}(1,\chi)\right|\ll\log q
+\]
+with an effective absolute implied constant.
+\end{proposition}
+\begin{proof}
+The two assumptions imply an absolute $c_0>0$ such that every nontrivial
+zero $\rho=b+i\gamma$ with $|\gamma|\le1$ satisfies
+$1-b\ge c_0/\log(3q)$. Put $h=1/\log q$ and $\sigma_0=1+h$.
+For $a=1-b>0$,
+\[
+ \frac{\Re(1-\rho)^{-1}}{\Re(\sigma_0-\rho)^{-1}}
+ =\frac{a}{a+h}\frac{(a+h)^2+\gamma^2}{a^2+\gamma^2}.
+\]
+If $|\gamma|\le1$, this is at most $(a+h)/a\ll1$ by the gap.
+If $|\gamma|>1$, use $0<a<1$ and $0<h<1$ to bound the ratio by $4$.
+All terms are nonnegative, so summing gives
+\[
+ \sum_\rho\Re(1-\rho)^{-1}
+ \ll\sum_\rho\Re(\sigma_0-\rho)^{-1}.
+\]
+By \eqref{sz-hadamard}, the sum on the right is at most
+$\tfrac12\log q+|L'/L(\sigma_0,\chi)|+O(1)$.
+The Euler product and $|\chi(n)|\le1$ give
+\[
+ |L'/L(\sigma_0,\chi)|
+ \le\sum_{n\ge1}\Lambda(n)n^{-\sigma_0}
+ =\frac1h+O(1)\ll\log q,
+\]
+where the equality also follows from the proof of
+Lemma~\ref{sz-mertens}. The Hadamard formula at $1$ now bounds
+$L'/L(1,\chi)$ above by $O(\log q)$ and below by
+$-\tfrac12\log q-O(1)$. This derivative is real, proving the claim.
+\end{proof}
+
+Consequently, for every fixed $\epsilon>0$, the auxiliary derivative bound
+holds for every chosen prime $d$ satisfying
+$\log d\le x^{\epsilon/5}(\log x)^2$, once $x$ is sufficiently large.
+Indeed,
+\[
+ \frac{x^{\epsilon/5}(\log x)^2}{x^\epsilon}
+ =x^{-4\epsilon/5}(\log x)^2\longrightarrow0.
+\]
+No exceptional-character avoidance is needed solely for this derivative
+condition. This is a proved simplification of one requirement, rather than
+a replacement of all the auxiliary-prime arguments.
+
+There is a second, stronger simplification if the all-character
+quasi-Riemann theorem is used. The source calls a primitive real character
+of conductor at most $Q$ good when it has no zero with
+\[
+ \Re s>399/400,\qquad |\Im s|\le Q.
+\]
+A zero-free half-plane $\Re s>7/8$ makes this condition automatic,
+uniformly in $Q$. The corresponding exclusion of bad characters can then
+be dropped, after retaining the conductor bounds in each application.
+Uniform exclusion of Landau--Siegel zeros by itself does not imply this
+fixed-width half-plane condition.
+
+Two substantial restrictions remain. First, the source also uses ray-class
+$L$-functions over a varying imaginary quadratic field. A theorem stated
+only for Dirichlet characters over $\mathbb Q$ does not immediately remove
+an exceptional-zero term for those Hecke $L$-functions; a separate descent
+or zero-free theorem with the required conductor uniformity would have to
+be supplied. Second, the construction needs square-root bounds for selected
+smoothed character sums, including a fixed finite family of character
+twists for GRH. A bound with exponent $7/8$ does not directly establish
+those bounds for every fixed character. A separate second-moment argument
+over the auxiliary primes does establish the required simultaneous
+selection under a uniform QRH hypothesis; that argument is developed in
+the continuation. Neither the determinant theorem nor the character-tail
+pairing above proves the estimates for a growing chain of theta lifts
+which supply the missing square-root exponent in the proposed GRH argument.
+
+
+% Optional mathematical section for the reconstruction manuscript.
+% Requires amsmath, amssymb, amsthm and the standard theorem environments.
+% Every assertion proved here is independent of the unverified construction
+% of the particular automorphic lattices in the proposed GRH proof.

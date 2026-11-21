@@ -1,0 +1,305 @@
+\section{An exact integral for small Gram determinants}
+\label{gv-section}
+
+The geometric estimate for a degenerate orbital integral contains
+the volume of tuples whose projected Gram determinant is small.
+This volume admits a short proof by successive orthogonal projections.
+We compute the relevant negative moments exactly, recover the submitted
+estimate with a smaller constant, and also prove the optimal power
+of the small determinant.  The passage from flag coordinates to this
+Euclidean problem is a separate geometric step.
+\cite{alpo-uniform-source}
+
+Give $\mathbb C^n$ its usual Hermitian norm and real Lebesgue measure.
+Let $P$ be an orthogonal projection of complex rank $d$, and let
+$1\le j\le d\le n$.  For $v=(v_1,\ldots,v_j)$ put
+\[
+ \Gamma_P(v)=\Bigl[\det\bigl(\langle Pv_a,Pv_b\rangle\bigr)_{a,b=1}^j\Bigr]^{1/2}.
+                                                               \tag{GV1}
+\]
+The determinant is real and nonnegative; its square root is the
+nonnegative one.  Equivalently, $\Gamma_P$ is the norm of the
+exterior product $Pv_1\wedge\cdots\wedge Pv_j$.  For $R>0$ let
+\[
+ \mathcal B_R=\{(v_1,\ldots,v_j):\|v_i\|\le R\text{ for every }i\}.
+\]
+We use the conventions $0!=1$ and that an empty product is one.
+
+\subsection{One projected vector}
+
+\begin{lemma}\label{gv-one-vector}
+Let $Q$ be an orthogonal projection of rank $h$ on $\mathbb C^n$,
+where $1\le h\le n$.  If $a$ is an integer with $0\le a<h$, then
+\[
+ \int_{\|v\|\le R}\|Qv\|^{-2a}\,dv
+ =\frac{\pi^n R^{2(n-a)}}{(n-a)!}
+       \frac{(h-a-1)!}{(h-1)!}.                               \tag{GV2}
+\]
+For $a\ge h$ the same integral is infinite.
+\end{lemma}
+
+\begin{proof}
+The volume of a ball of radius $R$ in $\mathbb C^m$ is
+$\pi^mR^{2m}/m!$.  One way to obtain the constant is to integrate
+$e^{-\|x\|^2}$ first as a product of $m$ planar Gaussian integrals,
+and then radially: the two values are $\pi^m$ and $m!$ times the
+unit-ball volume.  Consequently radial integration in $\mathbb C^h$
+uses the factor $2\pi^h r^{2h-1}/(h-1)!$.
+
+After a unitary change of coordinates write $v=(u,w)$ with
+$u\in\mathbb C^h$, $w\in\mathbb C^{n-h}$ and $Qv=(u,0)$.
+Tonelli's theorem and the ball-volume formula give
+\[
+ \frac{2\pi^n}{(h-1)!(n-h)!}
+   \int_0^R r^{2h-1-2a}(R^2-r^2)^{n-h}\,dr.
+\]
+This formula also covers $n=h$, since the zero-dimensional
+ball has volume one.  Substituting $u=r^2/R^2$ changes the
+last expression into
+\[
+ \frac{\pi^nR^{2(n-a)}}{(h-1)!(n-h)!}
+   \int_0^1 u^{h-a-1}(1-u)^{n-h}\,du.
+\]
+For positive integers $b$ and nonnegative integers $c$,
+successive integration by parts gives
+\[
+ \int_0^1 u^{b-1}(1-u)^c\,du
+      =\frac{(b-1)!c!}{(b+c)!}.
+\]
+Use $b=h-a$, $c=n-h$ to obtain (GV2).
+If $a\ge h$, restrict $w$ to a ball of radius $R/2$ and
+$u$ to a sufficiently small ball.  The radial integral in
+$u$ then contains a positive multiple of
+$\int_0^{R/2}r^{2h-1-2a}\,dr$, which diverges.
+\end{proof}
+
+\subsection{Negative moments and a uniform sublevel estimate}
+
+\begin{theorem}\label{gv-negative-moment}
+If $a$ is an integer with $0\le a\le d-j$, then
+\[
+ \int_{\mathcal B_R}\Gamma_P(v)^{-2a}\,dv
+ =\left(\frac{\pi^nR^{2(n-a)}}{(n-a)!}\right)^j
+       \prod_{i=1}^j\frac{(d-i-a)!}{(d-i)!}.                  \tag{GV3}
+\]
+In particular the integral is finite.  The set $\Gamma_P=0$
+has Lebesgue measure zero.  If $a\ge d-j+1$, the negative
+moment in (GV3) is infinite.
+\end{theorem}
+
+\begin{proof}
+Almost every projected tuple is linearly independent.  Indeed,
+once $Pv_1,\ldots,Pv_{i-1}$ are independent, the condition
+$Pv_i\in\operatorname{span}(Pv_1,\ldots,Pv_{i-1})$ describes a
+proper complex linear subspace of $\mathbb C^n$, of codimension
+$d-i+1\ge1$.  It has real Lebesgue measure zero.  Induction
+and Fubini prove the assertion for the entire tuple.
+
+For an independent partial tuple let $Q_i$ be the orthogonal
+projection onto
+\[
+ \operatorname{im}P\cap
+        \operatorname{span}(Pv_1,\ldots,Pv_{i-1})^\perp.
+\]
+Its rank is $d-i+1$.  Gram--Schmidt orthogonalization gives
+\[
+ \Gamma_P(v_1,\ldots,v_i)
+   =\Gamma_P(v_1,\ldots,v_{i-1})\,\|Q_iv_i\|,
+ \qquad \Gamma_P(\varnothing)=1.                              \tag{GV4}
+\]
+Integrate first in $v_j$.  Lemma~\ref{gv-one-vector} shows
+that its contribution is
+\[
+ \frac{\pi^nR^{2(n-a)}}{(n-a)!}
+       \frac{(d-j-a)!}{(d-j)!},
+\]
+independently of the preceding independent vectors.  Repeat
+with $v_{j-1},\ldots,v_1$.  This proves (GV3).  All exchanges
+are valid by Tonelli, even before finiteness is established;
+the exceptional dependent tuples form a null set.  When $a=0$
+the integrand is interpreted as one on that null set.
+
+If $a\ge d-j+1$, then the conditional integral in $v_j$
+is infinite for every independent preceding tuple, by the
+last assertion of Lemma~\ref{gv-one-vector}.  Such preceding
+tuples have full measure in a product of balls of positive
+measure.  Tonelli therefore gives divergence.
+\end{proof}
+
+\begin{corollary}\label{gv-sublevel}
+Let $1\le j<d\le n$, and write $s=d-j$.  Then for $t\ge0$,
+\[
+ \begin{split}
+ &\operatorname{vol}\{v\in\mathcal B_R:\Gamma_P(v)\le t\}\\
+ &\quad\le
+  \frac{\pi^{nj}R^{2j(n-s)}t^{2s}}{((n-s)!)^j}
+       \prod_{b=0}^{j-1}\frac{b!}{(s+b)!}.                    \end{split}
+ \tag{GV5}
+\]
+The same upper bound holds if the rank of $P$ is at least $d$.
+It also holds with every $v_i$ replaced by $Av_i$ both in the
+norm conditions and in the Gram determinant, for any complex
+linear automorphism $A$ with $|\det A|=1$.
+\end{corollary}
+
+\begin{proof}
+For $t>0$, outside the null set $\Gamma_P=0$,
+\[
+        {\bf1}_{\{\Gamma_P\le t\}}
+                    \le t^{2s}\Gamma_P^{-2s}.
+\]
+Integrating and applying (GV3) with $a=s$ proves (GV5).
+For $t=0$ the null-set assertion proves the result directly.
+
+If $\operatorname{rank}P\ge d$, choose a $d$-dimensional
+subspace of its image and let $P_0$ be the orthogonal projection
+onto it.  Then $\Gamma_{P_0}(v)\le\Gamma_P(v)$.  For example,
+in coordinates adapted to the two images, Cauchy--Binet writes
+the squared Gram determinant as a sum of squared absolute
+values of minors; the smaller projection retains a subset
+of these terms.  The sublevel set for $P$ is therefore
+contained in the corresponding sublevel set for $P_0$.
+
+Finally the real Jacobian of a complex linear map $A$ is
+$|\det A|^2$.  The simultaneous substitution $w_i=Av_i$
+preserves product Lebesgue measure when $|\det A|=1$.
+\end{proof}
+
+\subsection{The optimal power of the threshold}
+
+The divergent moment at the next integer does not prevent
+a stronger sublevel estimate.  To obtain it, integrate the
+last perpendicular ball directly before applying a negative
+moment to the preceding vectors.
+
+\begin{theorem}\label{gv-optimal-power}
+Let $1\le j\le d\le n$ and $q=d-j+1$.  Then for $t\ge0$,
+\[
+ \begin{split}
+ &\operatorname{vol}\{v\in\mathcal B_R:\Gamma_P(v)\le t\}\\
+ &\quad\le
+  \frac{\pi^{nj}R^{2j(n-q)}t^{2q}}{q!\,((n-q)!)^j}
+       \prod_{i=1}^{j-1}\frac{(j-i-1)!}{(d-i)!}.              \end{split}
+ \tag{GV6}
+\]
+The extensions to rank at least $d$ and to $|\det A|=1$
+in Corollary~\ref{gv-sublevel} remain valid.
+For a projection of rank exactly $d$, no exponent larger
+than $2q$ can replace $2q$ in an estimate with a finite
+constant independent of $t\in(0,1)$.
+\end{theorem}
+
+\begin{proof}
+First suppose $j\ge2$, and fix an independent preceding tuple
+$v'=(v_1,\ldots,v_{j-1})$.  Write $\gamma=\Gamma_P(v')$.
+The decomposition defined by $Q_j$ splits $v_j$ into a vector
+in $\mathbb C^q$ and a vector in $\mathbb C^{n-q}$.
+By (GV4) the first vector has norm at most $t/\gamma$.
+The second has norm at most $R$.  Dropping their coupled
+ball constraint gives the conditional volume bound
+\[
+ \frac{\pi^q}{q!}(t/\gamma)^{2q}
+       \frac{\pi^{n-q}R^{2(n-q)}}{(n-q)!}.
+\]
+For the preceding $j-1$ vectors the exponent $a=q$ satisfies
+$a=d-(j-1)$, so (GV3) applies.  Multiplication of its value
+by the displayed factor proves (GV6).  For $j=1$, the same
+two-ball estimate directly proves the formula, with the
+product empty.  The case $t=0$ follows from the null-set
+assertion.  The two extensions follow exactly as before.
+
+To prove the optimality assertion, choose an orthonormal
+basis of $\operatorname{im}P$.  When $j\ge2$, restrict
+$v_1,\ldots,v_{j-1}$ to sufficiently small neighborhoods
+of $(R/4)e_1,\ldots,(R/4)e_{j-1}$.  This gives a measurable
+set of positive volume on which the projected vectors are
+independent, all norms are less than $R/2$, and
+\[
+                  0<\gamma\le C=(R/2)^{j-1}.
+\]
+Decompose the last vector orthogonally into its components
+in the preceding projected span, its $q$-dimensional
+complement within $\operatorname{im}P$, and $\ker P$.
+Restrict the first and third components to balls of radius
+$R/4$, and the second to a ball of radius $t/C$.  For
+$0<t\le CR/4$, all these last vectors have norm less
+than $R$, and (GV4) gives $\Gamma_P\le t$.
+The conditional volume is a fixed positive constant times
+$t^{2q}$, independently of the chosen preceding tuple.
+After integration over that tuple, the full sublevel
+volume is at least $c\,t^{2q}$ for some $c>0$.
+For $j=1$ use the same decomposition with the preceding
+span absent and $C=1$.
+
+If a bound $C' t^{2q+\delta}$ with $\delta>0$ held for
+all sufficiently small $t$, division by $t^{2q}$ would
+give $c\le C't^\delta$, a contradiction as $t\to0$.
+\end{proof}
+
+\subsection{The two volume bounds in the orbital calculation}
+
+For direct comparison with the submitted estimates, put
+$n=d+c$, $s=d-j\ge1$, and $R=M\ge1$.  Each factorial
+ratio in (GV5) satisfies
+\[
+             \frac{b!}{(s+b)!}\le\frac1{s!}.
+\]
+Also $s!\ge(s/e)^s$: the term $s^s/s!$ of the exponential
+series is at most $e^s$.  Hence (GV5) implies
+\[
+ \begin{split}
+ &\operatorname{vol}\{v:\|Av_i\|\le M,\quad\Gamma_P(Av_1,\ldots,Av_j)\le t\}\\
+ &\quad\le
+   \frac{\pi^{j(j+c)}M^{2j(j+c)}}{((j+c)!)^j}
+        \left(\frac{\pi e}{s}\right)^{js}t^{2s},
+                                                               \end{split}
+ \tag{GV7}
+\]
+provided $\operatorname{rank}P\ge d$ and $|\det A|=1$.
+
+For the degenerate orbital integral, take
+\[
+ n=k+1,\qquad d=k-1,\qquad c=2,\qquad
+ s=k-1-j,\qquad t=2y,
+\]
+where $1\le j$ and $j+2\le k$.  The source's middle
+isometry $m$ satisfies $m^*H m=H$ for a nondegenerate
+Hermitian matrix $H$.  Taking determinants gives
+$|\det m|^2=1$, so $A=m^{-1}$ has the required Jacobian.
+The sublevel volume is therefore at most
+\[
+ \frac{\pi^{j^2+2j}M^{2j^2+4j}}{((j+2)!)^j}
+     \left(\frac{\pi e}{k-1-j}\right)^{j(k-1-j)}
+     (2y)^{2(k-1-j)}.                                        \tag{GV8}
+\]
+The submitted bound has the same expression without the
+factorial denominator and with an additional factor $2$.
+Thus (GV8) improves its constant by at least
+$2((j+2)!)^j$, with exactly the same hypotheses and powers
+of $M,y$.  It also proves that the zero Gram locus is null.
+
+The other orbital volume bound uses
+$d=k-2$, $c=3$, $j=r$, and $s=k-2-r\ge1$.
+The same argument gives
+\[
+ \frac{\pi^{r^2+3r}M^{2r^2+6r}}{((r+3)!)^r}
+      \left(\frac{\pi e}{k-2-r}\right)^{r(k-2-r)}
+      (2y)^{2(k-2-r)}.                                       \tag{GV9}
+\]
+This bounds the entire sublevel set and hence also its shell
+$y<\Gamma_P\le2y$.  The submitted expression has a larger
+factor $4M^{2r}$ and omits the factorial denominator.
+Its assumed range $2r+6\le k$ is stronger than needed here.
+
+The sharper exponent in (GV6) is also available for both
+applications.  Using it in the complete orbital bound would
+change the subsequent determinant powers and their comparison
+with the lattice count, which must be tracked separately.
+For the present reconstruction, (GV8)--(GV9) already supply
+the exact volume estimates required by the existing argument.
+They do not establish the flag-coordinate identity, the
+coordinate-size bounds, or the normalization of the common
+unipotent stabilizer; those remain separate inputs to the
+orbital calculation.
+
+

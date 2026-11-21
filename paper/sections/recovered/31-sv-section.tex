@@ -1,0 +1,243 @@
+\section{The bounded-order characters at exponent one}
+\label{sv-section}
+
+The part of case $V$ with small $2$-power conductor admits a
+direct use of the coarse Selmer bound. The relevant distinction
+is that the degree of the field killing its character is bounded
+in terms of the fixed data. The growing conductor therefore
+occurs only in the discriminant, and the coarse bound becomes a
+fixed power of that conductor. We prove this with the exact
+threshold used for case $V_s$ in the submitted source.
+\cite{alpo-uniform-source}
+
+Retain $\chi,M,o,E_h,N_h$ from (IV1), and fix an odd prime $p$.
+Let $\theta$ be a character of $\operatorname{Gal}(E_h/\mathbb Q)$.
+Write $2^c$ for the primitive conductor of its local component
+$\theta_2$. Let $\vartheta$ be its part of order prime to $p$,
+and put
+\[
+ \xi=\vartheta/\vartheta_2,\quad
+ u=\operatorname{ord}(\xi),\quad
+ f=\operatorname{ord}_{\operatorname{lcm}(4,u)}(p),\quad
+ \nu=v_2(p^f-1),\quad
+ R=16o(pM)^2\,4^\nu.
+                                                               \tag{SV1}
+\]
+The multiplicative order defining $f$ is well defined: $u$ is
+prime to $p$ and $p$ is odd. All character orders are finite.
+
+\subsection{The field degree is bounded before the conductor grows}
+
+\begin{lemma}\label{sv-order}
+The order of the product of all odd-prime components of
+$\theta$ divides $2o$. Consequently $u\mid2o$ and
+\[
+ \begin{split}
+ 0<f&\le\varphi(4o),\qquad 2^\nu<p^{\varphi(4o)},\\
+ R&\le H_p:=16o(pM)^2p^{2\varphi(4o)}.
+ \end{split}                                                   \tag{SV2}
+\]
+If $2^c<R$, then
+\[
+                       \operatorname{ord}(\theta)\le2oH_p.
+                                                               \tag{SV3}
+\]
+\end{lemma}
+\begin{proof}
+At an odd prime the inertia group of $E_h/\mathbb Q$ injects
+into the product of the inertia groups of
+$K_\chi/\mathbb Q$, $\mathbb Q(\sqrt{-q})/\mathbb Q$, and
+$\mathbb Q(\sqrt{-d})/\mathbb Q$. The field $R_h$ is
+unramified there. The first group has exponent dividing $o$;
+the other two have exponent dividing two. Thus each odd local
+character has order dividing $2o$. The order of their product
+is the least common multiple of their orders, because their
+arguments lie in different Chinese remainder factors. It too
+divides $2o$. Taking the part of order prime to $p$ gives
+$u\mid2o$.
+
+Set $m=\operatorname{lcm}(4,u)$. Then $m\mid4o$ and
+$(m,p)=1$. The order $f$ divides $\varphi(m)$ by Lagrange's
+theorem. For positive integers $m\mid n$, one has
+$\varphi(m)\mid\varphi(n)$: this follows at once from
+$\varphi(r^a)=r^{a-1}(r-1)$ by increasing each prime exponent
+and then adding the missing primes. Hence
+$f\le\varphi(4o)$. The positive integer $p^f-1$ is divisible
+by $2^\nu$, so
+\[
+                 2^\nu\le p^f-1<p^f\le p^{\varphi(4o)}.
+\]
+Squaring proves the bound for $R$.
+
+The order of $\theta_2$ divides $\varphi(2^c)$ and hence
+divides $2^c$; this also holds for $c=0$. The order of
+$\theta$ consequently divides $2o\,2^c$. The hypothesis
+$2^c<R\le H_p$ implies (SV3).
+\end{proof}
+
+\begin{lemma}\label{sv-field}
+Let $F_\theta$ be the fixed field of $\ker\theta$ in
+$\mathbb Q(\mu_{N_h})$, and put $F=F_\theta(\mu_p)$.
+Under $2^c<R$ this is an abelian, totally imaginary field with
+\[
+ \begin{split}
+ \mu_p&\subset F,\qquad \theta|_{G_F}=1,\qquad
+ F\subset\mathbb Q(\mu_{pN_h}),\\
+ n=[F:\mathbb Q]&\le n_0:=2opH_p,\qquad
+                   |\operatorname{disc}F|\le(pN_h)^n.
+ \end{split}                                                   \tag{SV4}
+\]
+Here $n_0$ depends only on $p,M,o$.
+\end{lemma}
+\begin{proof}
+The first statements follow from the definitions. The image of
+$\theta$ is cyclic of order $\operatorname{ord}(\theta)$, so
+$[F_\theta:\mathbb Q]=\operatorname{ord}(\theta)$.
+Adjoining $\mu_p$ increases this degree by at most $p-1$.
+Now use (SV3). The presence of $\mu_p$, with $p$ odd, makes
+$F$ totally imaginary.
+
+For completeness, if $F\subset L=\mathbb Q(\mu_m)$ and
+$n=[F:\mathbb Q]$, the discriminant tower formula implies
+\[
+             |\operatorname{disc}F|^{[L:F]}
+                                      \le|\operatorname{disc}L|.
+\]
+Moreover $|\operatorname{disc}L|\le m^{[L:\mathbb Q]}$.
+One way to obtain the latter inequality without the explicit
+cyclotomic discriminant formula is to write
+$X^m-1=\Phi_m(X)Q(X)$. At a primitive root $\zeta$,
+\[
+                 m\zeta^{m-1}=\Phi'_m(\zeta)Q(\zeta).
+\]
+Taking absolute norms shows
+$|N_{L/\mathbb Q}\Phi'_m(\zeta)|\le m^{[L:\mathbb Q]}$,
+because $Q(\zeta)$ is a nonzero algebraic integer. The
+field discriminant divides the discriminant of the order
+$\mathbb Z[\zeta]$, whose absolute value is this derivative
+norm. Combining the two inequalities gives
+$|\operatorname{disc}F|\le m^n$. Apply this with $m=pN_h$.
+\end{proof}
+
+\subsection{Restriction with a bounded invariant module}
+
+Use the normalized length $s_p(1,\theta)$ of (IV6), with an
+arbitrary finite coefficient extension containing the values of
+$\theta$. Write $b$ for its ramification index.
+
+\begin{lemma}\label{sv-restriction}
+For the field $F$ in (SV4),
+\[
+                     s_p(1,\theta)\le\lambda_p(F,1)+n^2.
+                                                               \tag{SV5}
+\]
+In particular, finiteness of the group on the right implies
+finiteness on the left.
+\end{lemma}
+\begin{proof}
+Since $F$ is finite and contains $\mu_p$, its intersection
+with $\mathbb Q(\mu_{p^\infty})$ is
+$\mathbb Q(\mu_{p^a})$ for an integer $a\ge1$.
+Indeed the Galois group above $\mathbb Q(\mu_p)$ is the
+procyclic group $1+p\mathbb Z_p$, whose open subgroups are
+$1+p^a\mathbb Z_p$. The degree of this intersection gives
+\[
+                            (p-1)p^{a-1}\le n,
+\]
+and in particular $a\le n$. On $G_F$, the coefficient
+module is $(K/\mathcal O)(-1)$. The cyclotomic image is
+$1+p^a\mathbb Z_p$, so its invariant subgroup is precisely
+$(K/\mathcal O)[p^a]$, of length $ba$.
+
+Apply the inflation--restriction sequence (IV9), with this
+$F$ and coefficient module. The kernel has length at most
+$n\,ba$, since its cocycles form a submodule of the functions
+from the group of order $n$ to that invariant subgroup.
+The image belongs to the strict Selmer group over $F$,
+whose coefficient-extended length is $b\lambda_p(F,1)$
+by (IV10). Division by $b$ proves (SV5), since $a\le n$.
+The argument again requires no coprimality between $p$ and $n$.
+\end{proof}
+
+\begin{theorem}\label{sv-exact-case}
+For fixed $p,M,o$, there is an integer $C$ such that, for every
+$h,q,d,\theta$ satisfying the preceding conditions and $2^c<R$,
+the strict Selmer group at $e=1$ is finite and
+\[
+                           s_p(1,\theta)\log p\le(pN_h)^C.
+                                                               \tag{SV6}
+\]
+The same conclusion holds with the source's extra zero local
+conditions at the primes dividing $N_h$.
+The exponent $C$ is independent of $h,q,d$ and of the coefficient
+extension. Thus this proves the source's case $V_s$ for every
+$p$ in its fixed finite set of odd primes.
+\end{theorem}
+\begin{proof}
+Corollary~\ref{sw-coarse-consequence}, applied at exponent one
+to the field in (SV4), proves finiteness and
+\[
+ \lambda_p(F,1)\log p
+ \le\exp\bigl((2n)^{86}\log(2|\operatorname{disc}F|)\bigr).
+                                                               \tag{SV7}
+\]
+Put $x=pN_h\ge3$. By (SV4),
+$2|\operatorname{disc}F|\le x^{n+1}$. Hence the right side
+of (SV7) is at most $x^A$, where
+\[
+                            A=(2n_0)^{86}(n_0+1)
+                                                               \tag{SV8}
+\]
+is fixed. By (SV5),
+\[
+                       s_p(1,\theta)\log p
+                                      \le x^A+n_0^2\log p.
+\]
+Choose an integer $k\ge0$ with $3^k\ge n_0^2\log p$.
+Then the latter expression is at most
+$2x^{\max(A,k)}\le x^{\max(A,k)+1}$, proving (SV6).
+Additional local conditions decrease the group.
+
+The much smaller coarse exponent from
+Section~\ref{kt-section} could replace $86$ after the strict
+Selmer comparison. Its numerical size is immaterial here:
+$n_0$ is already fixed. Applying the same argument to a field
+whose degree grew with $h$ would not give a fixed exponent,
+and no such step is used.
+\end{proof}
+
+\begin{corollary}\label{sv-summed}
+For a fixed finite set $P$ of odd primes, there is an integer
+$C_P$, depending only on $P,M,o$, such that for every $t\ge2$
+\[
+ \sum_{p\in P}\ \sum_{\substack{\theta\in
+          \widehat{\operatorname{Gal}(E_h/\mathbb Q)}\\2^{c(\theta)}<R_p(\theta)}}
+                   s_p(1,\theta)\log p\le(N_ht)^{C_P}.
+                                                               \tag{SV9}
+\]
+Thus the entire case $V_s$ contribution has a fixed polynomial
+bound before selecting $h,q,d$.
+\end{corollary}
+\begin{proof}
+For fixed $p$, (SV2) bounds the $2$-part of the primitive
+conductor by $H_p$. If $T$ is the largest power of two at most
+$H_p$, all these local components factor modulo $T$, so there
+are at most $\varphi(T)\le H_p$ of them. At the odd primes
+of $M$ there are at most $\varphi(M/2^{v_2(M)})\le M$
+choices; at each of $q,d$ there are at most two. Thus there
+are at most $4MH_p$ characters in this sum, independently of
+$h,q,d$.
+
+Choose $C_p$ from Theorem~\ref{sv-exact-case}. The sum is at
+most $A N_h^{C_0}$, where
+\[
+ C_0=\max_{p\in P}C_p,\qquad
+ A=\sum_{p\in P}4MH_p p^{C_p}.
+\]
+For nonempty $P$, choose $r\ge0$ with $2^r\ge A$.
+Then $A N_h^{C_0}\le(N_ht)^{C_0+r}$ for $t\ge2$.
+For empty $P$ the sum is zero. All choices involve only the
+fixed data.
+\end{proof}
+
+

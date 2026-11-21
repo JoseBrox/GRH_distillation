@@ -1,0 +1,238 @@
+\section{The exact Fock normalizer and equality at large primes}
+\label{fh-section}
+
+We now compute the normalizing integer $C_\nu$ of
+\eqref{coef:fock}. This gives an explicit integer which kills
+$\nabla_\nu(\mathbb Z)/\Delta_\nu(\mathbb Z)$, and proves the
+local equality of these lattices needed at the level primes.
+The source obtains that equality from simplicity in the lowest
+alcove.\cite{alpo-uniform-source} The calculation below instead
+uses polynomial differential operators and the integral duality
+already proved in Theorem~\ref{coef:integral-duality}.
+
+\subsection{A differential determinant identity}
+
+Let $X=(x_{ia})_{1\le i,a\le h}$ be a square matrix of variables,
+write $\partial_{ia}=\partial/\partial x_{ia}$, and put
+$E_{ij}=\sum_a x_{ia}\partial_{ja}$.
+Composition of operators acts from right to left; in all products
+below the factors are written from left to right in increasing $j$.
+
+\begin{lemma}[The differential Capelli identity]\label{fh-capelli}
+On $\mathbb Z[X]$ one has
+\begin{equation}\label{fh-capelli-identity}
+ \det(X)\det(\partial)=
+ \sum_{\sigma\in\mathfrak S_h}\operatorname{sgn}(\sigma)
+       \prod_{j=1}^h
+           \bigl(E_{\sigma(j),j}+(h-j)\delta_{\sigma(j),j}\bigr).
+\end{equation}
+On the left, multiplication by $\det(X)$ follows differentiation.
+\end{lemma}
+\begin{proof}
+Adjoin exterior generators $e_1,\ldots,e_h$, so
+$e_ie_j=-e_je_i$ and $e_i^2=0$. Derivatives act only on the
+polynomial variables. Set
+\[
+       \xi_a=\sum_i e_i x_{ia},\qquad
+       A_j=\sum_a\xi_a\partial_{ja}=\sum_i e_iE_{ij}.
+\]
+We prove by descending induction on $j$ the operator identity
+\begin{equation}\label{fh-exterior-ordering}
+ \prod_{i=j}^h\bigl(A_i+(h-i)e_i\bigr)
+   =\sum_{a_j,\ldots,a_h=1}^h
+        \xi_{a_j}\cdots\xi_{a_h}
+        \partial_{j,a_j}\cdots\partial_{h,a_h}.
+\end{equation}
+The empty tail is the identity. Suppose the assertion is known
+for $j+1$, and denote its right side by $N_{j+1}$.
+When $A_j$ acts on $N_{j+1}$, the terms in which its derivative
+passes all $h-j$ exterior factors give exactly the right side
+of \eqref{fh-exterior-ordering}. There is one additional term
+for each factor hit by the derivative, since
+\[
+                         \partial_{ja}\xi_b=e_j\delta_{ab}.
+\]
+Each such term is $-e_jN_{j+1}$. To check the sign, if the
+derivative hits the $t$th exterior factor of the tail, move the
+resulting $e_j$ to the front, across $t$ factors, then move the
+initial $\xi_a$ into its former position, across $t-1$ factors.
+The combined sign is $(-1)^t(-1)^{t-1}=-1$.
+Thus the total additional contribution is
+$-(h-j)e_jN_{j+1}$, which the displayed shift cancels.
+This proves the induction, using only integral operator identities.
+
+Take the coefficient of $e_1\cdots e_h$ in
+\eqref{fh-exterior-ordering} for $j=1$.
+On the left it is the ordered sum on the right side of
+\eqref{fh-capelli-identity}. On the right, only permutations of
+$a_1,\ldots,a_h$ contribute: a repeated index makes the exterior
+product zero. For $a_j=\tau(j)$ that coefficient is
+$\operatorname{sgn}(\tau)\det(X)$.
+The remaining sum of commuting partial derivatives is
+$\det(\partial)$. This proves \eqref{fh-capelli-identity}.
+\end{proof}
+
+\subsection{The hook product}
+
+Let $\nu$ be a partition. Its diagram consists of the pairs
+$(i,j)$ with $1\le j\le\nu_i$. Write
+$\nu'_j=\#\{i:\nu_i\ge j\}$ and define the hook length of
+the pair $(i,j)$ by
+\[
+                  h_\nu(i,j)=\nu_i-j+\nu'_j-i+1.
+\]
+It is a positive integer: it counts that pair, the pairs to its
+right in the same row, and those below it in the same column.
+Zero rows and extra unused variables do not change the highest
+polynomial $H_\nu$ or its Fock norm. Empty products are one.
+
+\begin{theorem}[Exact Fock normalization]\label{fh-hook-product}
+For the highest polynomial and the unnormalized Fock form of
+Section~\ref{coef:section},
+\begin{equation}\label{fh-hook-equality}
+                   C_\nu=[H_\nu,H_\nu]
+                          =\prod_{(i,j)\in\nu}h_\nu(i,j).
+\end{equation}
+If $\nu$ has $h>0$ positive parts, all factors on the right
+are at most $\nu_1+h-1$.
+\end{theorem}
+\begin{proof}
+For the zero partition, $H_\nu=1$ and $C_\nu=1$.
+Otherwise remove the zero parts and work on the first $h$ rows
+and columns. All $\nu_i$ are then positive. Define
+$\nu^-=(\nu_1-1,\ldots,\nu_h-1)$, omitting any zero parts
+when computing its highest polynomial. The defining products of
+initial principal minors give
+\[
+                             H_\nu=\det(X)H_{\nu^-}.
+\]
+The operators $E_{ij}$ with $i<j$ kill $H_\nu$: they
+differentiate addition of an earlier row to a later one, which
+preserves every initial principal minor involving the later row;
+the other factors do not involve that row. Also
+$E_{ii}H_\nu=\nu_iH_\nu$ by row homogeneity.
+
+In a term of the ordered determinant
+\eqref{fh-capelli-identity} for a nonidentity permutation
+$\sigma$, let $j$ be its greatest nonfixed index. Then
+$\sigma(j)<j$. All factors to its right are diagonal and
+act on $H_\nu$ by scalars, while the factor at $j$ is a
+raising operator and kills it. Only the identity permutation
+survives. Hence
+\[
+ \det(X)\det(\partial)H_\nu
+                  =\left(\prod_{i=1}^h(\nu_i+h-i)\right)H_\nu.
+\]
+Cancellation of the nonzero polynomial $\det(X)$ yields
+\begin{equation}\label{fh-lowering}
+ \det(\partial)H_\nu
+                  =\left(\prod_{i=1}^h(\nu_i+h-i)\right)H_{\nu^-}.
+\end{equation}
+
+For the Fock pairing, multiplication by $x_{ia}$ is adjoint to
+$\partial_{ia}$; this follows immediately from the factorial
+weight of a monomial. By composition and linearity,
+multiplication by $\det(X)$ is adjoint to $\det(\partial)$.
+Consequently \eqref{fh-lowering} gives the exact recurrence
+\begin{equation}\label{fh-column-recurrence}
+                 C_\nu=
+                    \left(\prod_{i=1}^h(\nu_i+h-i)\right)C_{\nu^-}.
+\end{equation}
+The factors in this product are exactly the hook lengths in
+the first column of $\nu$. Removing that column gives
+$\nu^-$, and does not change the hook lengths of the remaining
+pairs: their column indices decrease by one, their row lengths
+decrease by one, and their column heights are the former heights
+of the next columns. Induction on the number of pairs proves
+\eqref{fh-hook-equality}. Finally
+$h_\nu(i,j)\le\nu_1+h-1$, directly from its definition.
+\end{proof}
+
+\subsection{An explicit annihilator and the exact prime condition}
+
+\begin{corollary}\label{fh-annihilator}
+For every partition $\nu$,
+\begin{equation}\label{fh-inclusions}
+              C_\nu\nabla_\nu(\mathbb Z)
+                    \subseteq\Delta_\nu(\mathbb Z)
+                    \subseteq\nabla_\nu(\mathbb Z).
+\end{equation}
+In particular, if a prime $p$ divides no hook length of $\nu$,
+then
+\[
+                \Delta_\nu(\mathbb Z_{(p)})
+                          =\nabla_\nu(\mathbb Z_{(p)}).
+\]
+The equality remains true after extension to any
+characteristic-zero coefficient domain in which $C_\nu$ is a unit.
+\end{corollary}
+\begin{proof}
+For $F,G\in\nabla_\nu(\mathbb Z)$,
+\[
+                   B_\nu(C_\nu F,G)=[F,G]\in\mathbb Z.
+\]
+By Theorem~\ref{coef:integral-duality}, this says exactly that
+$C_\nu F\in\Delta_\nu(\mathbb Z)$. The other inclusion was
+part of the construction. Tensoring these inclusions with the
+coefficient ring and using the perfect bases gives the assertion
+whenever $C_\nu$ becomes a unit. Equation~\eqref{fh-hook-equality}
+supplies the stated sufficient prime condition.
+\end{proof}
+
+Let $\lambda_1\ge\cdots\ge\lambda_N$ be a dominant integral
+weight with $N\ge1$, and put $\nu_i=\lambda_i-\lambda_N$.
+Then $\nu_N=0$. If $\nu$ is nonempty, its number $h$ of
+positive parts is at most $N-1$, so every hook length is at most
+\[
+                          \lambda_1-\lambda_N+N-2.
+\]
+We therefore obtain the following precise conclusion.
+
+\begin{corollary}\label{fh-large-prime-equality}
+If $p$ is prime and
+\begin{equation}\label{fh-prime-range}
+                       \lambda_1-\lambda_N+N-1\le p,
+\end{equation}
+the standard Weyl and dual-Weyl lattices of weight $\lambda$
+are equal after localization at $p$. The same is true at every
+prime over $p$ in a number field, and after transport by a common
+local basis. More explicitly, the single positive integer
+$c=C_\nu$, independent of the polynomial, satisfies
+\[
+       p\nmid c,\qquad
+       c\nabla_\nu(\mathbb Z)\subseteq\Delta_\nu(\mathbb Z).
+\]
+For a constant weight, including $N=1$, one can take $c=1$.
+The module in rank zero also consists of constants and has $c=1$.
+\end{corollary}
+\begin{proof}
+For a nonempty $\nu$, \eqref{fh-prime-range} makes every
+positive hook length at most $p-1$. Apply
+Corollary~\ref{fh-annihilator}. The determinant twist changes
+the group action but not these standard polynomial lattices or
+their normalized pairing. Localization, coefficient extension
+and a common invertible transport preserve equality.
+The constant cases follow from $H_\nu=1$.
+\end{proof}
+
+The actual source uses the stronger hypothesis
+$\lambda_1-\lambda_N+N<p$: its quantity called the spread
+includes $N$, not $N-1$. Thus Corollary~\ref{fh-large-prime-equality}
+proves the precise local lattice assertion used there, with a
+slightly larger allowed range and an explicit clearing integer.
+It does not require a modular simplicity theorem or a passage
+from equality of dimensions to equality of integral lattices.
+
+The prime condition cannot be omitted in general. For
+$\lambda=(2,0)$, the dual-Weyl lattice is
+$\mathbb Zx^2\oplus\mathbb Zxy\oplus\mathbb Zy^2$, whereas
+the Weyl lattice is
+$\mathbb Zx^2\oplus\mathbb Z(2xy)\oplus\mathbb Zy^2$.
+Here $C_{(2)}=2$, and the two lattices remain different at $p=2$.
+This is the example of Section~\ref{coef:section}; it lies
+outside \eqref{fh-prime-range}. No equality of the two arbitrary
+integral lattices is being asserted.
+
+
+% Integral initial-minor spanning, proved by an elementary leading-term argument.
+% Labels in this fragment use the prefix sm-.

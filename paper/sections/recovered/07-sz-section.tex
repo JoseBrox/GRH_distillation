@@ -1,0 +1,367 @@
+\section{An elementary determinant estimate for quadratic characters}
+\label{sz-section}
+
+This section isolates the part of the suggested auxiliary literature that can
+be proved with particularly little machinery. The argument originates in the
+OpenAI proof of the exclusion of Landau--Siegel zeros and its subsequent
+simplifications, including Kerr's earlier interpolation argument
+\cite{sz-kerr}. The rectangular form below follows the use of derivatives
+in Green's argument, as explained by Tao, and the reduction modulo the largest
+inert prime used by Pescador and van Dijk
+\cite{sz-openai,sz-tao,sz-pescador,sz-vandijk}.
+We give all of the determinant argument, with an explicit finite inequality
+and a slightly sharper bound for the determinant. No result about automorphic
+representations is used in this section.
+
+For a nonsquare integer $d$, set $A=\mathbb Z[\sqrt d]$ and write
+$\overline{u+v\sqrt d}=u-v\sqrt d$. An odd prime $p$ will be called inert
+here if the Legendre symbol $(d/p)$ is $-1$. This definition makes sense even
+when $A$ is not the maximal order. It implies
+\begin{equation}\label{sz-frobenius}
+ A/pA\simeq\mathbb F_p[T]/(T^2-d)\simeq\mathbb F_{p^2},
+ \qquad \alpha^p\equiv\bar\alpha\pmod {pA}\quad(\alpha\in A).
+\end{equation}
+Indeed, $T^2-d$ is irreducible modulo $p$, and Euler's criterion gives
+$(\sqrt d)^p=-\sqrt d$ in that field.
+
+\begin{lemma}[Interpolation in characteristic $p$]\label{sz-interpolation}
+Let $k$ be a field of characteristic $p$, let $1\le s\le p$, and let
+$a_1,\ldots,a_p$ be distinct elements of $k$. The map
+\[
+ F\longmapsto\bigl((\partial_z^jF)(a_i,a_i^p)\bigr)_{
+          1\le i\le p,\ 0\le j<s}
+\]
+from the polynomials with $\deg_z F<p$ and $\deg_w F<s$ to $k^{ps}$
+is an isomorphism.
+\end{lemma}
+\begin{proof}
+The source and target have dimension $ps$, so injectivity suffices. Put
+$G(z)=F(z,z^p)$. The monomials $z^rw^t$ become the distinct monomials
+$z^{r+pt}$, for $0\le r<p$ and $0\le t<s$. Thus $F\ne0$ implies
+$G\ne0$ and $\deg G<ps$. Since $(z^p)'=0$, the chain rule gives
+$G^{(j)}(a_i)=(\partial_z^jF)(a_i,a_i^p)$ for every $j$. Vanishing of the
+displayed evaluations forces $G$ to have a zero of order at least $s$ at
+each $a_i$: the coefficients of $(z-a_i)^j$, for $j<s$, are
+$G^{(j)}(a_i)/j!$, and these factorials are invertible because $j<p$.
+The distinct factors $(z-a_i)^s$ then give $\deg G\ge ps$, a contradiction.
+\end{proof}
+
+\begin{proposition}[A finite determinant inequality]\label{sz-finite}
+Let $R$ be an odd inert prime, let $1\le S\le R$, and let
+$\alpha_1,\ldots,\alpha_R\in A$ have distinct reductions modulo $RA$.
+Suppose that both complex embeddings of every $\alpha_i$ have modulus
+at most $H$, where $H\ge1$. Put $N=RS$ and, for each odd inert prime $p$, put
+\begin{align}
+ E_p&=\sum_{r=0}^{R-1}\sum_{s=0}^{S-1}
+        \min\{\lfloor r/p\rfloor,S-1-s\}\label{sz-E}\\
+    &=\sum_{j=1}^{S-1}(S-j)\max\{R-jp,0\}.\nonumber
+\end{align}
+Then
+\begin{equation}\label{sz-finite-ineq}
+ 2\sum_{\substack{p\ \mathrm{odd}\\ (d/p)=-1}} E_p\log p
+ \le N\log N+N(R-1)\log H+N(S-1)\log R.
+\end{equation}
+The sum is finite, since $E_p=0$ for $p\ge R$.
+\end{proposition}
+\begin{proof}
+Form the $N\times N$ matrix
+\[
+ B_{(r,s),(i,j)}=(\partial_z^j z^rw^s)(\alpha_i,\bar\alpha_i),
+ \quad 0\le r<R,\quad 0\le s<S,\quad1\le i\le R,\quad0\le j<S.
+\]
+Its determinant $\Delta$ belongs to $A$. Reducing modulo $RA$,
+\eqref{sz-frobenius} and Lemma~\ref{sz-interpolation} show that $B$ is
+invertible. In particular $\Delta\ne0$. Consequently
+$M=|\Delta\bar\Delta|$ is a positive rational integer.
+
+Fix an odd inert prime $p$ and set
+$h_{r,s}=\min\{\lfloor r/p\rfloor,S-1-s\}$. Replace the row
+corresponding to $z^rw^s$ by the evaluation row of
+\[
+ z^{r-ph_{r,s}}(z^p-w)^{h_{r,s}}w^s.
+\]
+The leading term is $z^rw^s$. Every other term has smaller $z$-degree
+and still has $z$-degree below $R$ and $w$-degree below $S$.
+Ordering the rows by their $z$-degree shows that the change of basis is
+triangular over $\mathbb Z$ with diagonal entries $1$, so it preserves
+$\Delta$.
+
+Every ordinary $z$-derivative of $z^p-w$, evaluated at
+$(\alpha_i,\bar\alpha_i)$, lies in $pA$. For derivative order $0$ this
+is \eqref{sz-frobenius}; for orders $1\le j\le p$ the coefficient
+$p(p-1)\cdots(p-j+1)$ is divisible by $p$; for higher orders the derivative
+is zero. In the product rule each of the $h_{r,s}$ factors therefore
+contributes a factor $p$, even if some factors are differentiated.
+The transformed row lies in $p^{h_{r,s}}A^N$. Factoring these powers
+from the rows gives $\Delta\in p^{E_p}A$, and taking its norm gives
+$p^{2E_p}\mid M$. Distinct primes may be multiplied, whence
+\begin{equation}\label{sz-norm-lower}
+ \log M\ge2\sum_p E_p\log p.
+\end{equation}
+The second formula for $E_p$ counts, for each $j\ge1$, the pairs
+$(r,s)$ with $r\ge jp$ and $s\le S-1-j$.
+
+We bound the determinant separately under each complex embedding.
+An entry with $j\le r$ has modulus at most
+$R^jH^{r+s-j}$, and an entry with $j>r$ is zero. Divide row $(r,s)$
+by $H^{r+s}$ and column $(i,j)$ by $(R/H)^j$. Every resulting entry
+has modulus at most $1$, so Hadamard's inequality bounds its determinant
+by $N^{N/2}$. Moreover,
+\[
+ \sum_{r,s}(r+s)-\sum_{i,j}j=\frac{N(R-1)}2,
+ \qquad \sum_{i,j}j=\frac{N(S-1)}2.
+\]
+Thus
+\[
+ |\Delta|\le N^{N/2}H^{N(R-1)/2}R^{N(S-1)/2}
+\]
+under either embedding. Multiplying the bounds for the two embeddings,
+taking logarithms, and using \eqref{sz-norm-lower} proves the result.
+\end{proof}
+
+\begin{remark}[A number-field version of the finite inequality]
+Proposition~\ref{sz-finite} only needs the following data: a number field
+$K$ of degree $e$, an order $\mathcal A\subset K$, an automorphism
+$\tau$ of $\mathcal A$, and elements $\alpha_1,\ldots,\alpha_R$.
+For every prime $p$ to be used in the lower bound, assume
+$\alpha_i^p-\tau(\alpha_i)\in p\mathcal A$ for every $i$.
+Require the same Frobenius congruence at the auxiliary prime $R$,
+and assume also that the images of the
+$\alpha_i$ in some residue field of characteristic $R$ are distinct.
+If all embeddings of the $\alpha_i$ and $\tau(\alpha_i)$ have modulus
+at most $H$, the identical inequality \eqref{sz-finite-ineq} holds, with
+the sum restricted to these primes. To prove this, replace
+$\bar\alpha_i$ by $\tau(\alpha_i)$ in the matrix. Reduction to the
+chosen residue field again makes the determinant nonzero. The row changes
+give $\Delta\in p^{E_p}\mathcal A$, so
+$p^{eE_p}$ divides the nonzero integer $N_{K/\mathbb Q}(\Delta)$.
+The archimedean calculation gives the $e$th power of the bound for one
+embedding. Multiplying the logarithmic comparison by $2/e$ gives exactly
+\eqref{sz-finite-ineq}. No unramifiedness assertion is implicit in this
+version; the stated congruences and residue-field hypothesis are required.
+\end{remark}
+
+\begin{remark}[Ordinary derivatives are essential]
+One cannot replace every $\partial_z^j$ by the divided derivative
+$\partial_z^j/j!$ in the divisibility proof. At order $p$ the divided
+derivative of $z^p-w$ is $1$, which is not divisible by $p$.
+The restriction $S\le R$ concerns the auxiliary prime proving nonvanishing;
+the other inert primes can be much smaller than $S$. Thus invertibility
+of factorials at $R$ does not justify dividing by them at all those primes.
+\end{remark}
+
+Here are the elementary prime estimates needed to pass from the finite
+inequality to a uniform statement. All implied constants below are absolute
+and effective.
+
+\begin{lemma}\label{sz-mertens}
+For $x\ge2$ and $y\ge2$,
+\[
+ \vartheta(x):=\sum_{p\le x}\log p\ll x,
+ \qquad \sum_{p\le x}\frac{\log p}{p}=\log x+O(1),
+ \qquad \sum_{p\ge y}\frac{\log p}{p^2}\ll y^{-1}.
+\]
+\end{lemma}
+\begin{proof}
+Every prime between $n$ and $2n$ divides $\binom{2n}{n}$, so
+$\vartheta(2n)-\vartheta(n)\le2n\log2$. Summation on dyadic intervals
+gives $\vartheta(x)\ll x$. Hence, writing $\Lambda$ for the von Mangoldt
+function,
+\[
+ \psi(x):=\sum_{m\le x}\Lambda(m)
+ =\sum_{k\ge1}\vartheta(x^{1/k})
+ \ll x+\sqrt x\log(2x)\ll x.
+\]
+For an integer $n\ge2$, prime factorization of $n!$ gives
+\[
+ \log(n!)=\sum_{m\le n}\Lambda(m)\lfloor n/m\rfloor
+ =n\sum_{m\le n}\frac{\Lambda(m)}m+O(\psi(n)).
+\]
+Integral comparison gives $\log(n!)=n\log n+O(n)$, so
+$\sum_{m\le n}\Lambda(m)/m=\log n+O(1)$. The terms with $m=p^k$,
+$k\ge2$, have bounded total, because
+$\sum_{p,k\ge2}(\log p)/p^k\le\sum_{n\ge2}(\log n)/(n(n-1))<\infty$.
+This proves the second estimate, also for real $x$ by taking its integer
+part. The last estimate follows by partial summation from
+$\vartheta(t)\ll t$.
+\end{proof}
+
+\begin{theorem}[Uniform bound for inert primes]\label{sz-inert}
+For every nonsquare integer $d$ and every $X\ge2$,
+\begin{equation}\label{sz-inert-bound}
+ I_d(X):=\sum_{\substack{p\le X\ p\ {
+m odd}\ (d/p)=-1}}
+            \frac{\log p}{p}
+ \le\frac12\log X+\frac14\log|d|+\log\log(3X)+O(1).
+\end{equation}
+The implied constant is independent of both $d$ and $X$.
+\end{theorem}
+\begin{proof}
+If there is no odd inert prime below $X$, the assertion is immediate.
+Otherwise let $R$ be the largest such prime. Then $I_d(X)=I_d(R)$.
+If $R<e^3$, the result is immediate with an absolute constant. If
+$R\le\sqrt{|d|}$, Lemma~\ref{sz-mertens} gives
+\[
+ I_d(R)\le\log R+O(1)
+ \le\tfrac12\log R+\tfrac14\log|d|+O(1).
+\]
+We may therefore assume $R\ge e^3$ and $R>\sqrt{|d|}$.
+
+Set $L=\log R$, $S=\lceil R/L\rceil$, and $N=RS$. Then $1\le S<R$.
+Consider the quadratic integers $u+v\sqrt d$ with
+\[
+ 0\le u<\sqrt R\,|d|^{1/4},
+ \qquad0\le v<\sqrt R\,|d|^{-1/4},\qquad u,v\in\mathbb Z.
+\]
+There are at least $R$ such integers because the two side lengths have
+product $R$. Each coordinate lies in $[0,R)$, so all reductions are distinct
+in $A/RA$. Select any $R$ of them. Both embeddings have modulus below
+$H=2\sqrt R\,|d|^{1/4}<2R$. Apply Proposition~\ref{sz-finite},
+and let $M$ be the positive determinant norm constructed in its proof.
+
+For $a\in\mathbb Z_{\ge0}$ one has
+$\sum_{s<S}\min\{a,S-1-s\}\ge Sa-a^2$.
+For $a<S$ this follows by summing the arithmetic progression; for $a\ge S$
+the right side is nonpositive. Consequently
+\begin{align*}
+ E_p&\ge S\sum_{r<R}\lfloor r/p\rfloor-
+              \sum_{r<R}\lfloor r/p\rfloor^2\\
+ &\ge\frac{SR(R-1)}{2p}-SR-\frac{R^3}{3p^2}.
+\end{align*}
+Sum this inequality only over inert primes with $L\le p\le R$.
+By Lemma~\ref{sz-mertens}, and because $S\ge R/L$,
+\[
+ 2\sum_pE_p\log p
+ \ge NR\sum_{\substack{L\le p\le R\\(d/p)=-1}}
+           \frac{\log p}{p}-O(NR).
+\]
+Indeed, replacing $R-1$ by $R$ costs $O(N\log R)$, the floor errors
+cost $O(N\vartheta(R))$, and the quadratic error is
+$O(R^3/L)=O(NR)$.
+On the other hand, \eqref{sz-finite-ineq} gives
+\[
+ \frac{\log M}{NR}
+ \le\frac{\log N}{R}+\left(1-\frac1R\right)\log H
+       +\frac{S-1}{R}\log R
+ \le\log H+O(1).
+\]
+Here $(S-1)\log R/R\le1$ and $N\le R^2$.
+Restore the primes below $L$, whose contribution is at most
+$\log L+O(1)$ by Lemma~\ref{sz-mertens}. The result is
+\[
+ I_d(R)\le\log H+\log L+O(1)
+ =\tfrac12\log R+\tfrac14\log|d|+\log\log R+O(1).
+\]
+Finally $R\le X$ proves \eqref{sz-inert-bound}.
+\end{proof}
+
+The parameter choice can be checked directly instead of guessed. The same
+calculation with any integer $1\le S\le R/2$, and cutoff $R/S$ for the
+inert primes, gives
+\[
+ I_d(R)\le\log H+\frac SR\log R+\log(R/S)+O(1).
+\]
+Writing $u=S/R$, the varying part of this upper bound is
+$u\log R-\log u$. Its derivative is $\log R-1/u$, so its minimum occurs
+at $u=1/\log R$. This recovers the choice above. Increasing the number of
+derivatives arbitrarily does not improve this estimate: it increases the
+term $u\log R$. This calculation describes a limitation of this particular
+determinant bound, and is not a claim of optimality among all possible
+arithmetic constructions.
+
+\subsection{The analytic consequence and its exact scope}
+
+A nonprincipal real primitive Dirichlet character is quadratic:
+there is a fundamental discriminant $D$ with $|D|=q$ for which
+$\chi(n)=(D/n)$, the Kronecker symbol. A fundamental discriminant is
+the discriminant of a quadratic number field. In particular, there is
+a squarefree $d\ne1$, $|d|\le q$, such that $\chi(p)=(d/p)$ at every
+odd prime. Thus Theorem~\ref{sz-inert} applies to the inert primes
+of each real primitive character.
+
+The following use of complex analysis is explicit. We use the classical
+analytic continuation, functional equation, and Hadamard product for a
+primitive Dirichlet $L$-function. If $a=(1-\chi(-1))/2$, these give, for
+real $\sigma>1$ and real primitive nonprincipal $\chi$,
+\begin{equation}\label{sz-hadamard}
+ \sum_\rho\Re\frac1{\sigma-\rho}
+ =\frac12\log(q/\pi)
+   +\frac12\frac{\Gamma'}{\Gamma}\left(\frac{\sigma+a}{2}\right)
+   +\frac{L'}{L}(\sigma,\chi).
+\end{equation}
+The zeros here are the nontrivial zeros, with multiplicity; all summands
+are nonnegative and their sum converges. The same identity holds at
+$\sigma=1$ when $L(1,\chi)\ne0$. These are classical analytic inputs,
+not consequences of the determinant calculation. They are also the inputs
+used in the last step of \cite{sz-openai,sz-pescador,sz-vandijk}.
+
+\begin{corollary}\label{sz-zero-gap}
+Every real zero $\beta\in(0,1)$ of a real primitive nonprincipal character
+of conductor $q$ satisfies
+\[
+ (1-\beta)\log q\ge1-O\left(\frac{\log\log(3q)}{\log q}\right).
+\]
+In particular there is an effective absolute constant $c>0$ such that
+$(1-\beta)\log q\ge c$ for all these characters and zeros.
+\end{corollary}
+\begin{proof}
+For $0<\eta\le1$, partial summation in Theorem~\ref{sz-inert}, including
+the harmless prime $2$, gives
+\begin{equation}\label{sz-laplace}
+ \sum_{\chi(p)=-1}\frac{\log p}{p^{1+\eta}}
+ \le\frac1{2\eta}+\frac14\log q+O(\log(2/\eta)).
+\end{equation}
+For completeness, the sum is
+$\eta\int_1^\infty S_-(t)t^{-1-\eta}\,dt$, where
+$S_-(t)=\sum_{p\le t,\chi(p)=-1}(\log p)/p$.
+The integrals of $1$ and $\log t$ against this probability measure are
+$1$ and $1/\eta$. With $u=\log t$, concavity of the logarithm bounds
+the integral of $\log(\log3+u)$ by $\log(\log3+1/\eta)$.
+
+The Euler products, with all prime powers of exponent at least two
+contributing $O(1)$, give
+\begin{align*}
+ \frac{L'}{L}(1+\eta,\chi)
+ &=2\sum_{\chi(p)=-1}\frac{\log p}{p^{1+\eta}}
+     -\sum_p\frac{\log p}{p^{1+\eta}}
+     +\sum_{p\mid q}\frac{\log p}{p^{1+\eta}}+O(1)\\
+ &\le\frac12\log q+O(\log(2/\eta)+\log\log(3q)).
+\end{align*}
+Here $\sum_p(\log p)/p^{1+\eta}=1/\eta+O(1)$ follows by partial
+summation from Lemma~\ref{sz-mertens}. Also
+$\sum_{p\mid q}(\log p)/p\ll\log\log(3q)$: split at $p=\log q$,
+use Lemma~\ref{sz-mertens} below that point, and use
+$\sum_{p\mid q}\log p\le\log q$ above it.
+
+Retain only $\rho=\beta$ in \eqref{sz-hadamard}. The gamma term is
+bounded for $1\le\sigma\le2$, uniformly in the parity, and hence
+\[
+ \frac1{1-\beta+\eta}
+ \le\log q+O(\log(2/\eta)+\log\log(3q)).
+\]
+For large $q$, take $\eta=(\log q)^{-2}$ and invert the positive
+right side. This gives the asserted asymptotic inequality and a positive
+uniform constant for all sufficiently large $q$.
+
+To see that the extension to the finitely many smaller conductors is
+effective, use the classical theorem $L(1,\chi)\ne0$. Periodicity gives
+$|\sum_{u<n\le v}\chi(n)|\le q/2$ and hence an effective tail bound
+$q/(2N)$ for $\sum_{n>N}\chi(n)/n$. Computing partial sums therefore
+eventually certifies a positive lower bound for $|L(1,\chi)|$.
+Summation by parts also gives
+$|L'(s,\chi)|\le 2q/e$ for $1/2\le s\le1$: the total variation of
+$(\log t)t^{-s}$ on $[1,\infty)$ is $2/(es)$, and the partial sums
+are bounded by $q/2$. The mean value inequality supplies a positive
+zero-free interval at $1$. Taking the minimum over the finite list and
+also over $\tfrac12\log q$ for zeros below $1/2$ gives an effective $c$.
+\end{proof}
+
+The conclusion is a logarithmic gap from $1$, not a half-plane with boundary
+$1/2$. Neither a nonreal zero with real part $3/4$ nor a real zero bounded
+away from $1$ contradicts the inequalities just proved. For example, the
+bound obtained from \eqref{sz-hadamard} at a hypothetical real zero
+$\beta=3/4$ compares a number tending to $4$ with a quantity of size
+$\log q$. It cannot exclude such a zero as $q$ grows. This observation
+identifies the exact limitation of this method; it does not assert that
+any Dirichlet $L$-function has such a zero.
+

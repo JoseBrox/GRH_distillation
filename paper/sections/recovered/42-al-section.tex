@@ -1,0 +1,641 @@
+\section{Decorated integral lattices and short vectors in their duals}
+\label{al-section}
+
+We prove three arithmetic inputs used by the coefficient maps of
+Section~\ref{am-section}: the existence of the initial decorated
+unimodular lattice, its kernel lattice's exact degree, and the existence
+of sufficiently short independent vectors in the Hermitian dual.
+We also prove the triviality of the actual stabilizers by their
+unipotent reductions at two different rational primes.
+These arguments use no zero-free region for an $L$-function.
+The correspondence with the original construction is recorded
+separately in the source audit~\cite{alpo-uniform-source}.
+
+Throughout, $E$ is a CM field, $d=[E:\mathbb Q]=2f$, and
+$\mathcal O=\mathcal O_E$ is its maximal order. Write
+$\overline{\phantom{x}}$ for complex conjugation,
+$\mathfrak D$ for the absolute different,
+$\Delta=|\operatorname{disc}E|$, and $\rho=\Delta^{1/d}$.
+Let $V$ have dimension $n\geq1$ over $E$ and let $h$ be a
+Hermitian form, conjugate-linear in its first argument, positive
+definite at every complex embedding. A full lattice means a
+finitely generated $\mathcal O$-submodule spanning $V$ over $E$.
+For a full lattice $L$, put
+\[
+ L^\#=\{y\in V:h(x,y)\in\mathcal O\text{ for every }x\in L\}.
+\]
+It is a full lattice. A lattice is integral if $L\subseteq L^\#$,
+and unimodular if equality holds. In particular, integrality concerns
+the $E$-valued form, not just the integrality of its rational trace.
+
+\subsection{Residue decorations, indices, and determinant degree}
+
+Let $S$ and $G$ be finite sets of nonzero prime ideals of $\mathcal O$.
+The decorations used here consist of a unimodular lattice $N$, a
+nonzero $\mathcal O$-linear map
+\[
+       \ell_P:N\longrightarrow\mathcal O/P\qquad(P\in S),
+\]
+and an isomorphism
+\[
+       b_Q:N/QN\longrightarrow(\mathcal O/Q)^n\qquad(Q\in G).
+\]
+Each map has a unique extension to the localization $N_P$ or $N_Q$.
+For example, if $sx\in N$ and $s\notin P$, the extension of
+$\ell_P$ is
+\begin{equation}\label{al-extension}
+                 \ell_P(x)=\bar s^{-1}\ell_P(sx).
+\end{equation}
+If also $tx\in N$ and $t\notin P$, linearity applied to
+$tsx$ proves that this value is independent of $s$.
+It proves additivity and linearity on the localization as well.
+If a function on all of $V$ is wanted, extend it by zero outside
+that localization. No assertion of linearity outside the localization
+is made or needed.
+
+\begin{proposition}[An explicit initial decoration]\label{al-base}
+For the standard form $h(x,y)=\sum_{j=1}^n\bar x_jy_j$ on $E^n$,
+take $N=\mathcal O^n$, let $\ell_P$ be the last coordinate modulo
+$P$, and let $b_Q$ reduce all coordinates modulo $Q$.
+These choices give decorations for every pair of finite sets $S,G$.
+\end{proposition}
+\begin{proof}
+Testing $h(e_j,y)$ shows that $N^\#\subseteq\mathcal O^n$;
+the reverse inclusion follows because conjugation preserves
+$\mathcal O$. Thus $N$ is unimodular. The vector $e_n$ proves
+that every $\ell_P$ is nonzero. Coordinate reduction is onto and
+has kernel $QN$, which proves the assertion for $b_Q$.
+Formula~\eqref{al-extension} gives the localized maps, including
+their prescribed zero extensions. The construction works at
+primes above two and does not require principal prime ideals.
+\end{proof}
+
+\begin{lemma}[Duals reverse finite indices]\label{al-dual-index}
+If $L_1\subseteq L_2$ are full lattices, then
+\[
+ (L_1^\#)^\#=L_1,\qquad
+ [L_1^\#:L_2^\#]=[L_2:L_1].
+\]
+Here brackets denote the cardinality of the indicated quotient.
+\end{lemma}
+\begin{proof}
+A full lattice over the Dedekind domain $\mathcal O$ is projective.
+The nondegenerate form identifies its Hermitian dual with its
+conjugate module dual, so projective biduality proves the first
+identity. Explicitly, after localization at a prime, choose a basis
+of the free module. The dual basis for the nondegenerate form gives
+the original module on taking the dual a second time; equality at
+all primes proves the global equality.
+
+For the index identity, localize $L_1\subseteq L_2$ at $P$ and
+write it in elementary-divisor form
+\[
+ (L_2)_P=\bigoplus_j\mathcal O_Pe_j,\qquad
+ (L_1)_P=\bigoplus_j\varpi_P^{a_j}\mathcal O_Pe_j,
+                 \qquad a_j\geq0.
+\]
+The corresponding quotient of Hermitian duals at $\bar P$ has
+the same length $\sum_ja_j$. This follows by taking the dual
+basis: the exponents change from $a_j$ to $-a_j$, and scalar
+conjugation changes $P$ to $\bar P$. Since
+$N\bar P=NP$, multiplication of the local cardinalities proves
+the second identity. The same argument also proves that every
+Hermitian dual appearing here is a full lattice.
+\end{proof}
+
+\begin{proposition}[The common kernel]\label{al-kernel}
+Let $N$ be unimodular and let $\ell_P:N\to\mathcal O/P$
+be nonzero for each $P$ in a finite set $S$. Put
+\[
+ L=\{x\in N:\ell_P(x)=0\text{ for all }P\in S\},
+       \qquad t=\prod_{P\in S}NP.
+\]
+Then $L$ is an integral full lattice and
+\begin{equation}\label{al-indices}
+ [N:L]=[L^\#:N]=t,\qquad [L^\#:L]=t^2.
+\end{equation}
+For the archimedean metrics induced by $h$, its normalized ordinary
+determinant degree is
+\begin{equation}\label{al-degree}
+                         \widehat{\deg}L=-\frac{\log t}{d}.
+\end{equation}
+These conclusions do not require $S$ to be disjoint from $\bar S$.
+\end{proposition}
+\begin{proof}
+A nonzero map to the one-dimensional residue field is onto.
+Choose $u_P\in N$ with $\ell_P(u_P)=1$.
+The Chinese remainder theorem gives $a_P\in\mathcal O$ such that
+$a_P\equiv1\pmod P$ and $a_P\equiv0\pmod Q$ for $Q\ne P$ in $S$.
+Thus $\ell_Q(a_Pu_P)$ is $1$ for $Q=P$ and $0$ otherwise.
+The map $N\to\prod_{P\in S}\mathcal O/P$ is onto, with kernel
+$L$, and hence $[N:L]=t$. Also
+$(\prod_{P\in S}P)N\subseteq L\subseteq N$, so $L$ is full.
+Since $N$ is integral, so is $L$. Duality gives
+$L\subseteq N=N^\#\subseteq L^\#$, and
+Lemma~\ref{al-dual-index} gives the remaining indices.
+
+Use ordinary degree as defined in \eqref{am-degree}; the metrics
+here are the metrics furnished by $h$ at each embedding.
+Hermitian duality negates degree. Indeed it inverts the determinant
+ideal up to conjugation and takes the reciprocal determinant norm
+at every archimedean place, while conjugation does not change ideal
+norm. Since $N=N^\#$, its degree is zero.
+Passing to a sublattice of index $t$ changes the determinant ideal
+norm by a factor $t$ and leaves the ambient metric unchanged.
+This proves \eqref{al-degree}.
+\end{proof}
+
+In the actual application $|S|=f$ and $NP=T$ for every $P\in S$.
+Consequently
+\begin{equation}\label{al-actual-degree}
+ [L^\#:L]=T^{2f},\qquad
+ \widehat{\deg}L=-\tfrac12\log T,\qquad
+ \mu(L)=-\frac{\log T}{2n}.
+\end{equation}
+The last expression becomes $-\log T/n$ in the doubled slope
+convention of the original source. In particular,
+\eqref{al-actual-degree} supplies the determinant-degree hypothesis
+in Corollary~\ref{am-short} for every decorated representative.
+It is not necessary to compute the full structure of $L^\#/L$
+to obtain this degree.
+
+\subsection{Unipotent reduction and trivial stabilizers}
+
+\begin{lemma}\label{al-local-torsion}
+Let $R$ be a discrete valuation ring of characteristic zero whose
+residue field has characteristic $p>0$. If $A\in\mathrm{GL}_n(R)$
+has finite order and its reduction is unipotent, then the order
+of $A$ is a power of $p$. No condition on the ramification of
+$R$ or on whether $p=2$ is needed.
+\end{lemma}
+\begin{proof}
+First suppose $B\equiv I\pmod{\mathfrak m}$ and $B^r=I$ with
+$p\nmid r$. Write $X=B-I$. If the entries of $X$ belong to
+$\mathfrak m^k$ for $k\geq1$, the binomial identity gives
+\[
+  0=rX+\sum_{j=2}^r\binom rjX^j.
+\]
+The sum belongs entrywise to $\mathfrak m^{2k}$ and $r$ is a unit
+of $R$, so $X$ belongs entrywise to $\mathfrak m^{2k}$.
+Induction and $\bigcap_{k\geq1}\mathfrak m^k=0$ give $B=I$.
+
+Now let the order of $A$ be $p^ar$ with $p\nmid r$ and put
+$C=A^{p^a}$. Its order is $r$ and its reduction remains unipotent.
+For any unipotent matrix $I+Z$ over a field of characteristic $p$,
+$(I+Z)^{p^b}=I+Z^{p^b}=I$ when $p^b\geq n$.
+Thus the order of $\bar C$ divides both $r$ and a power of $p$,
+so $\bar C=I$. The first paragraph yields $C=I$ and hence $r=1$.
+\end{proof}
+
+\begin{lemma}\label{al-finite-isometries}
+The isometries of a positive definite Hermitian space over $E$
+which preserve a fixed full lattice form a finite group.
+The same conclusion holds for the rational stabilizer of any
+finite-adelic translate of the completed lattice.
+\end{lemma}
+\begin{proof}
+The real form $B(x,y)=\operatorname{Tr}_{E/\mathbb Q}h(x,y)$
+is positive definite on $V\otimes_{\mathbb Q}\mathbb R$.
+Choose a $\mathbb Z$-basis of the lattice. Each basis vector can
+be sent only to lattice points of its fixed $B$-norm. A discrete
+lattice meets a bounded set in finitely many points. The images
+of the basis determine the map, proving finiteness.
+
+For the second assertion, let the adelic matrix be $x$ and put
+$N_x=V\cap x\widehat N$. Choose a nonzero integer $a$ clearing
+the finitely many denominators of both $x$ and $x^{-1}$.
+Then $aN\subseteq N_x\subseteq a^{-1}N$, so $N_x$ is a full
+lattice. A rational element stabilizing $x\widehat N$ stabilizes
+$N_x$, and the first assertion applies. Only the containment
+between these two global lattices is needed for finiteness;
+no strong approximation statement is being used.
+\end{proof}
+
+\begin{proposition}[Two different residue characteristics]
+\label{al-two-primes}
+Let $\gamma$ be an isometry preserving a full lattice in $V$,
+or a rational isometry stabilizing a finite-adelic translate.
+Suppose that at places above two different rational primes $p,q$,
+the matrices of $\gamma$ are conjugate to integral invertible
+matrices with unipotent reductions. Then $\gamma=1$.
+\end{proposition}
+\begin{proof}
+Lemma~\ref{al-finite-isometries} gives finite order.
+The embeddings of $E$ in its completions are injective; thus
+the order of the matrix is unchanged after these embeddings
+and after conjugation. Lemma~\ref{al-local-torsion} makes this
+order both a power of $p$ and a power of $q$. It is therefore one.
+\end{proof}
+
+This is the actual two-prime argument needed when the level
+reduces to an upper triangular unipotent subgroup at the two
+selected primes. Merely knowing that a matrix is unipotent after
+reduction at one arbitrary prime would not prove the assertion.
+
+There is also a useful single-prime alternative. If $p>dn+1$,
+the hypotheses at $p$ alone imply $\gamma=1$.
+Indeed a nontrivial finite element of $p$-power order has a power
+$\delta$ of order $p$. On the rational vector space of dimension
+$dn$, its minimal polynomial divides $X^p-1$, is squarefree, and
+is not $X-1$. Thus it is divisible by
+$\Phi_p(X)=1+X+\cdots+X^{p-1}$, whose irreducibility follows
+from Eisenstein applied to $\Phi_p(X+1)$.
+It follows that $p-1\leq dn$, a contradiction.
+This recovers the separate large-prime decoration criterion.
+
+If a decorated stabilizer consists of a rational isometry
+$\gamma$ together with residue-frame matrices $a_Q$ and
+$b_Q(\gamma y)=a_Qb_Q(y)$, then $\gamma=1$ also forces
+$a_Q=1$ by surjectivity of $b_Q$. Thus these propositions prove
+triviality of the entire decorated stabilizer, not just of its
+rational projection.
+
+\subsection{A Gaussian proof of the needed Euclidean transference}
+
+We give the analytic step rather than importing a transference
+constant. For a full lattice $\Lambda$ in Euclidean
+$\mathbb R^D$, write
+\[
+ \Lambda^*=\{y:\langle y,x\rangle\in\mathbb Z\ (x\in\Lambda)\},
+ \qquad
+ \lambda_1(\Lambda^*)=\min_{0\ne y\in\Lambda^*}\|y\|.
+\]
+
+\begin{lemma}[Gaussian summation]\label{al-Gaussian-Poisson}
+For $s>0$, $u\in\mathbb R^D$, and
+$c=\operatorname{covol}(\Lambda)^{-1}$, one has
+\begin{equation}\label{al-Gaussian-Poisson-eq}
+ \sum_{x\in\Lambda}e^{-\pi s\|x-u\|^2}
+ =c s^{-D/2}\sum_{y\in\Lambda^*}
+       e^{-\pi\|y\|^2/s}\cos(2\pi\langle y,u\rangle).
+\end{equation}
+All sums converge absolutely, locally uniformly in $u$.
+\end{lemma}
+\begin{proof}
+A lattice has $O((1+R)^D)$ points in a ball of radius $R$:
+disjoint sufficiently small balls about its points lie in a fixed
+enlargement of that ball. This proves the asserted convergence
+and permits termwise integration on a fundamental parallelepiped.
+The Fourier transform, with exponent $-2\pi i\langle y,z\rangle$,
+of $e^{-\pi s\|z\|^2}$ is
+$s^{-D/2}e^{-\pi\|y\|^2/s}$. In one dimension this follows by
+differentiating the transform and integrating by parts, which
+gives $G'(y)=-2\pi yG(y)/s$; the Gaussian integral gives
+$G(0)=s^{-1/2}$. The latter integral follows by squaring it and
+using polar coordinates. Multiplication proves the assertion in
+dimension $D$.
+
+Unfolding the periodization over a fundamental parallelepiped
+now gives its Fourier coefficients as the terms on the right
+of \eqref{al-Gaussian-Poisson-eq}, with the factor $c$.
+The Fourier series is absolutely convergent. The difference
+between it and the continuous periodization has all Fourier
+coefficients zero and hence vanishes: convolution with products
+of the one-dimensional Fej\'er kernels gives zero and converges
+uniformly to the continuous difference. Pairing $y$ and $-y$
+replaces the complex exponentials by the displayed cosines.
+\end{proof}
+
+\begin{theorem}[Covering and independent vectors]\label{al-transference}
+If every nonzero point of $\Lambda^*$ has norm at least
+$\lambda>0$, then every $u\in\mathbb R^D$ has some
+$x\in\Lambda$ with
+\begin{equation}\label{al-cover}
+                         \|u-x\|\leq\frac D{2\lambda}.
+\end{equation}
+There are $D$ linearly independent vectors of $\Lambda$, each
+of norm at most $D/\lambda$.
+\end{theorem}
+\begin{proof}
+For $D=1$, write $\Lambda=a\mathbb Z$ in an orthonormal coordinate.
+Then $\lambda\leq1/a$, and rounding to the nearest multiple of
+$a$ proves both claims. Dimension zero is immediate.
+Suppose $D\geq2$, put $m=D/2\geq1$, and suppose for a
+contradiction that no lattice point is within $R=m/\lambda$
+of some $u$. Define
+\[
+ A_s(u)=\sum_{x\in\Lambda}e^{-\pi s\|x-u\|^2},\quad
+ Q_s=\sum_{y\in\Lambda^*}e^{-\pi\|y\|^2/s},\quad
+ Q_s(u)=\sum_{y\in\Lambda^*}e^{-\pi\|y\|^2/s}
+                              \cos(2\pi\langle y,u\rangle).
+\]
+For $0<\tau\leq1$, the distance assumption and Gaussian summation
+give
+\begin{align*}
+ A_s(u)&\leq e^{-\pi s(1-\tau)R^2}A_{s\tau}(u),\\
+ A_{s\tau}(u)&\leq c(s\tau)^{-m}Q_s.
+\end{align*}
+Indeed the cosines are at most one, and $Q_{s\tau}\leq Q_s$.
+Consequently
+\begin{equation}\label{al-Gauss-upper}
+       Q_s(u)\leq e^{-\pi s(1-\tau)R^2}\tau^{-m}Q_s.
+\end{equation}
+For $0<\theta\leq1$, the lower bound on the nonzero dual vectors
+gives
+\[
+ Q_s-Q_s(u)
+ \leq2e^{-\pi(1-\theta)\lambda^2/s}Q_{s/\theta}.
+\]
+Also $A_{s/\theta}(0)\leq A_s(0)$ term by term, so Gaussian
+summation at zero implies
+$Q_{s/\theta}\leq\theta^{-m}Q_s$.
+Since $Q_s>0$, combination with \eqref{al-Gauss-upper} yields
+\begin{equation}\label{al-Gauss-contradiction}
+ 1\leq e^{-\pi s(1-\tau)R^2}\tau^{-m}
+               +2e^{-\pi(1-\theta)\lambda^2/s}\theta^{-m}.
+\end{equation}
+Choose
+\[
+       s=\frac{18\lambda^2}{25m},\qquad
+       \tau=\frac49,\qquad\theta=\frac14.
+\]
+The right side of \eqref{al-Gauss-contradiction} is
+\[
+ \left(\frac94e^{-2\pi/5}\right)^m
+          +2\left(4e^{-25\pi/24}\right)^m<1.
+\]
+Here is an elementary numerical certificate. The perimeter of
+an inscribed regular dodecagon gives
+$\pi>3(\sqrt6-\sqrt2)>31/10$.
+The first five terms of the exponential series at $31/25$
+give $e^{31/25}>17/5$. Also
+$e>163/60>19/7$ and
+$e^{1/5}>1+1/5+1/50=61/50$, so
+\[
+ e^{25\pi/24}>e^{16/5}
+   >(19/7)^3(61/50)>24.
+\]
+The two positive bases are therefore smaller than $45/68$ and
+$1/6$. Since $m\geq1$, their indicated sum is smaller than
+$45/68+1/3=203/204<1$. This contradiction proves
+\eqref{al-cover}.
+
+Put $R=D/(2\lambda)$. If the vectors of $\Lambda$ of norm at
+most $2R$ failed to span $\mathbb R^D$, let $W$ be their span.
+Discreteness gives $\varepsilon>0$ such that every lattice vector
+of norm at most $2R+\varepsilon$ already has norm at most $2R$.
+Choose $u\in W^\perp$ with $R<\|u\|<R+\varepsilon$.
+By \eqref{al-cover} there is $x\in\Lambda$ with
+$\|u-x\|\leq R$, and then $\|x\|<2R+\varepsilon$, so
+$x\in W$. But orthogonality gives
+$\|u-x\|\geq\|u\|>R$, a contradiction.
+Select $D$ independent vectors from this spanning finite set.
+\end{proof}
+
+\subsection{The codifferent and short Hermitian dual vectors}
+
+The codifferent is
+\[
+ \mathfrak D^{-1}
+  =\{a\in E:\operatorname{Tr}_{E/\mathbb Q}(a\mathcal O)
+                                                    \subseteq\mathbb Z\}.
+\]
+It is invariant under conjugation, because the trace is invariant
+under every field automorphism. Its inverse has norm
+$N\mathfrak D=\Delta$.
+
+\begin{lemma}[A lower bound in the trace dual]\label{al-trace-dual}
+Let $L$ be an integral full lattice and put $Y=L^\#$.
+If $0\ne x\in V$ and
+\[
+       \operatorname{Tr}_{E/\mathbb Q}h(x,y)\in\mathbb Z
+                                      \qquad(y\in Y),
+\]
+then
+\begin{equation}\label{al-trace-lower}
+             \operatorname{Tr}_{E/\mathbb Q}h(x,x)
+                                      \geq\frac d{\rho^2}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $Y$ is an $\mathcal O$-module, the assumption implies
+$h(x,y)\in\mathfrak D^{-1}$ for every $y\in Y$.
+Since $L\subseteq Y$, for $\delta\in\mathfrak D$ and $l\in L$
+we obtain
+\[
+ h(l,\delta x)=\delta\overline{h(x,l)}\in\mathcal O.
+\]
+Thus $\delta x\in Y$. Applying the previous inclusion with
+$y=\delta x$ proves $\delta h(x,x)\in\mathfrak D^{-1}$.
+Writing $\beta=h(x,x)$, this says
+$\beta\mathfrak D^2\subseteq\mathcal O$.
+It is a nonzero integral ideal, so
+\[
+       |N_{E/\mathbb Q}\beta|\,\Delta^2\geq1.
+\]
+All $d$ embeddings of $\beta$ are positive real numbers.
+Their arithmetic-geometric mean inequality therefore gives
+\[
+ \operatorname{Tr}_{E/\mathbb Q}\beta
+       \geq d\,|N_{E/\mathbb Q}\beta|^{1/d}
+       \geq d\Delta^{-2/d}=d\rho^{-2}.
+\]
+This proves the claim without assuming that $L$ is unimodular
+or prescribing the index $[L^\#:L]$.
+\end{proof}
+
+\begin{theorem}[Short independent dual vectors]\label{al-short-dual}
+Every integral full lattice $L$ admits $n$ linearly independent
+vectors $y_1,\ldots,y_n\in L^\#$ over $E$ such that
+\begin{equation}\label{al-short-dual-bound}
+       \frac1d\operatorname{Tr}_{E/\mathbb Q}h(y_j,y_j)
+                                \leq n^2\rho^2\qquad(1\leq j\leq n).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Equip $V\otimes_{\mathbb Q}\mathbb R$ with the positive definite
+inner product $B(x,y)=\operatorname{Tr}_{E/\mathbb Q}h(x,y)$.
+Its real dimension is $dn$, whereas the dimension of $V$ over
+$E$ is $n$. The group $Y=L^\#$ is a full Euclidean lattice.
+Every vector in its Euclidean dual belongs to $V$: a
+$\mathbb Z$-basis of $Y$ has a rational nondegenerate Gram matrix,
+whose inverse produces the dual basis inside $V$.
+Lemma~\ref{al-trace-dual} therefore gives
+\[
+                     \lambda_1(Y^*)\geq\sqrt d/\rho.
+\]
+Theorem~\ref{al-transference} supplies $dn$ rationally independent
+vectors of $Y$, each with
+\[
+ B(y,y)\leq\left(\frac{dn}{\sqrt d/\rho}\right)^2
+                                                =dn^2\rho^2.
+\]
+They span $V$ over $\mathbb Q$, and hence also over $E$.
+Select an $E$-basis from them. This proves
+\eqref{al-short-dual-bound}. The selected tuple need not be an
+$\mathcal O$-basis of $L^\#$; no such assertion is required.
+\end{proof}
+
+\begin{corollary}[The arithmetic input for the coefficient maps]
+\label{al-coefficient-input}
+For each decorated lattice of Proposition~\ref{al-kernel} with
+$|S|=f$ and $NP=T$ for every $P\in S$, the degree and short-vector
+inputs of Corollary~\ref{am-short} hold with
+\[
+                  Q=n^2\rho^2=n^2(2v_0)^2,
+                         \qquad v_0=\rho/2.
+\]
+They remain true after any coefficient-field extension with
+the induced metrics and normalized degree.
+\end{corollary}
+\begin{proof}
+The degree is \eqref{al-actual-degree}. The mean over all
+embeddings of $h(y_j,y_j)$ is its trace divided by $d$,
+so Theorem~\ref{al-short-dual} is exactly the mean squared-norm
+hypothesis in \eqref{am-short-assumption}. Hermitian pairing
+with these dual vectors gives integral independent functionals.
+The base-change assertions follow from the norm and archimedean
+multiplicity calculation in Section~\ref{am-section}.
+\end{proof}
+
+\subsection{Finiteness of the actual decorated classes}
+
+The short-vector theorem also gives a direct finiteness proof for
+the class objects used by the coefficient maps. It does not require
+a quantitative reduction theory or a class-number estimate.
+
+\begin{theorem}[Finiteness of unimodular Hermitian lattice classes]
+\label{al-finite-classes}
+Fix the positive Hermitian space $(V,h)$ over $E$.
+There are only finitely many isometry classes of full
+$\mathcal O$-lattices $N\subset V$ satisfying $N=N^\#$.
+\end{theorem}
+\begin{proof}
+The assertion is immediate when $n=0$, so assume $n\geq1$.
+Apply Theorem~\ref{al-short-dual} to $L=N$. Since $N=N^\#$,
+it supplies an $E$-basis $y_1,\ldots,y_n$ contained in $N$ with
+\[
+       \operatorname{Tr}_{E/\mathbb Q}h(y_i,y_i)
+                      \leq C,\qquad C=dn^2\rho^2.
+\]
+Write $G=(h(y_i,y_j))$. Every entry belongs to $\mathcal O$.
+At every embedding $\sigma:E\hookrightarrow\mathbb C$,
+positivity and Cauchy--Schwarz give
+\[
+ |\sigma(G_{ij})|^2
+       \leq \sigma(G_{ii})\sigma(G_{jj})\leq C^2,
+\]
+because each positive diagonal value is at most its full trace.
+The Minkowski embedding of $\mathcal O$ is a lattice, hence
+meets the compact set defined by $|\sigma(a)|\leq C$ in
+only finitely many points. For completeness, if
+$\omega_1,\ldots,\omega_d$ is an integral basis, the
+Minkowski images of the $\omega_i$ form a real basis; its
+inverse linear map sends a bounded set to a bounded set,
+which contains only finitely many integer coordinate tuples.
+Thus only finitely many Gram matrices $G$ can occur.
+
+For each occurring $G$, choose one frame $z_1,\ldots,z_n$
+with this Gram matrix, and put
+$M=\sum_i\mathcal O z_i$. Any other frame with the same
+Gram matrix is carried to this frame by the unique
+$E$-linear map sending its $i$th vector to $z_i$; the Gram
+identity proves that this map is an isometry. After applying
+it, the original lattice therefore satisfies
+\[
+                         M\subseteq N\subseteq M^\#.
+\]
+The second inclusion follows from integrality of $N$.
+The quotient $M^\#/M$ is finite: in the frame $z_i$, the
+invertible matrix $G$ identifies $M^\#$ with a full
+fractional lattice in $E^n$, and some nonzero integer
+annihilates its quotient by $M$. There are only finitely
+many subgroups of a finite abelian group, hence only
+finitely many intermediate $\mathcal O$-lattices.
+Taking the finite union over the possible $G$ proves the result.
+\end{proof}
+
+\begin{corollary}[Finiteness with the residue decorations]
+\label{al-finite-decorated}
+Fix finite sets $S,G$ of primes of $\mathcal O$. Decorate each
+unimodular $N$ by a nonzero $\mathcal O$-linear map
+$\ell_P:N\to\mathcal O/P$ for every $P\in S$, and by a
+residue frame
+\[
+           N/QN\simeq(\mathcal O/Q)^n\qquad(Q\in G).
+\]
+Extend these maps to the appropriate localizations and then
+by zero outside them, as above. The decorated objects have
+finitely many orbits under the isometry group of $(V,h)$.
+They consequently have finitely many orbits under its product
+with any subgroup of the finite residue frame groups, acting
+in the prescribed way. Their stabilizers in this product are
+finite.
+\end{corollary}
+\begin{proof}
+Choose representatives for the finitely many undecorated
+classes from Theorem~\ref{al-finite-classes}. For a fixed
+representative $N$, choose a finite set of $\mathcal O$-module
+generators. A map $N\to\mathcal O/P$ is determined by its
+values on these generators, so there are only finitely many
+such maps. The module $N/QN$ is finite, so there are only
+finitely many residue frames. Their localized extensions are
+uniquely determined: if $s\notin P$ and $sx\in N$, the
+extended value at $x$ is $\bar s^{-1}\ell_P(sx)$.
+Thus adding the extensions introduces no further choices.
+There are finitely many decorations of each chosen $N$.
+Every decorated object is transported to one of these by an
+isometry, which proves finiteness of the isometry orbits.
+Passing to a larger group can only merge orbits.
+
+An element stabilizing a decorated object has first component
+in the finite group of isometries preserving $N$, by
+Lemma~\ref{al-finite-isometries}. The second component belongs
+to a finite product of finite matrix groups. The stabilizer
+is therefore finite. Its triviality, when required, is the
+separate two-prime conclusion of Proposition~\ref{al-two-primes}.
+\end{proof}
+
+\subsection{Counterexamples to omitted hypotheses and scope}
+
+The following examples delimit the statements just proved.
+
+\begin{itemize}
+\item One residue characteristic is insufficient without a size
+condition. For an odd prime $p$, multiplication by $\zeta_p$
+on $E=\mathbb Q(\zeta_p)$ preserves $\mathcal O_E$ and the
+standard positive Hermitian form, has order $p$, and reduces to
+$1$ at the prime $(1-\zeta_p)$. At $p=2$, multiplication by $-1$
+on $\mathbb Q(i)$ gives the same obstruction at $(1+i)$.
+The two-prime statement retains different rational primes.
+\item Positivity cannot be omitted from the finiteness step.
+On $\mathbb Q(i)^2$ the indefinite Hermitian form
+$h(x,y)=i(\bar x_1y_2-\bar x_2y_1)$ is preserved by the matrices
+$\left(\begin{smallmatrix}1&m\\0&1\end{smallmatrix}\right)$
+for $m\in\mathbb Z$. They preserve $\mathbb Z[i]^2$,
+are unipotent at every prime, and need
+not have finite order. The local torsion lemma always assumes
+finite order, and the global argument obtains it from positivity.
+\item Integrality is essential in Theorem~\ref{al-short-dual}.
+Take $E=\mathbb Q(i)$, $h(x,y)=\bar xy$, and
+$L=M^{-1}\mathbb Z[i]$ for an integer $M\geq3$.
+Then $L^\#=M\mathbb Z[i]$, every nonzero dual vector has mean
+squared norm at least $M^2$, whereas $n^2\rho^2=4$.
+The omitted hypothesis $L\subseteq L^\#$ fails.
+\item The index formula does not imply an arbitrary split
+description of the discriminant module. For
+$E=\mathbb Q(i)$, $N=\mathbb Z[i]$, and $S=\{P\}$ with
+$P=(1+i)$, the kernel is $L=P$ and $L^\#=P^{-1}$.
+Thus $L^\#/L\simeq\mathcal O/P^2$, which has cardinality
+four but is not $(\mathcal O/P)^2$ as an $\mathcal O$-module:
+the latter is killed by $P$ and the former is not.
+The source's stronger split description retains the condition
+that no selected prime is the conjugate of another.
+\item The zero extension of a localized residue map is not
+globally additive. In $\mathbb Q(i)$ at $P=(3)$,
+both $1/3$ and $2/3$ lie outside $\mathcal O_P$ and have
+zero extended value, while their sum $1$ has residue $1$.
+Only additivity on the localization is used.
+\end{itemize}
+
+These are counterexamples to weakened hypotheses, not to the actual
+statements. The arguments above close the standard decorated object's
+existence, the kernel lattice's degree, the short-dual input, finiteness
+of the decorated classes, and the two-prime stabilizer argument.
+They do not identify all automorphic
+class lattices with these decorated representatives, construct the
+period maps, or prove the remaining global theta estimates.
+Those identifications and analytic estimates require their separate
+source arguments; no existence package is being substituted for them.
+
+

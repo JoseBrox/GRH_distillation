@@ -1,0 +1,439 @@
+\section{The integration formula and the dilation measure}
+\label{jg-section}
+
+The normalization of Haar measure in the Jacquet pairing matters.
+We now derive the actual integration formula, including the terminal
+compact quotient, and prove the integrability of the weight used in
+the differentiability estimates.  No formula for integration over
+double cosets is assumed.
+
+\subsection{The compact quotient at rank zero}
+
+On \(V_0=\mathbb C^k\oplus\mathbb C e_-\), use the form
+\[
+ h_0((u,w),(u',w'))=\langle u,u'\rangle-w\bar w',
+ \qquad k\geq1,
+\]
+linear in the first variable.  Write \(G_0=U(h_0)\), and let
+\(K_-= \{\operatorname{diag}(u,1):u\in U(k)\}\).
+The orbit of \(e_-\) is the hyperboloid
+\[
+ X=\{(u,w):|w|^2-\|u\|^2=1\}.
+\]
+Transitivity follows by completing a negative unit vector to an
+orthonormal basis for the Hermitian form.  Its stabilizer is \(K_-\).
+
+\begin{lemma}\label{jg-hyperboloid}
+Up to a positive constant, the invariant measure on \(X\), in the
+coordinates
+\[
+ (u,\theta)\longmapsto
+       (u,\sqrt{1+\|u\|^2}\,e^{i\theta}),
+ \qquad u\in\mathbb C^k,\quad \theta\in\mathbb R/(2\pi\mathbb Z),
+\]
+is \(du\,d\theta\).  In particular, if \(dk\) is probability Haar
+measure on \(K_-\), then for every nonnegative measurable \(f\) on
+\(G_0\),
+\begin{equation}\label{jg-base-integration}
+ \int_{G_0}f(g)\,dg
+ =C\int_{|w|>1}(|w|^2-1)^{k-1}
+     \int_{K_-\times K_-}
+       f(k_1^{-1}b(w)k_2)\,dk_1\,dk_2\,dw ,
+\end{equation}
+where \(C>0\) and \(b(w)\) acts as the identity on
+\(\operatorname{span}(e_1,e_-)^\perp\) and on
+\(\operatorname{span}(e_1,e_-)\) has matrix
+\[
+ b(w)=
+ \begin{pmatrix}\bar w&\sqrt{|w|^2-1}\\
+                 \sqrt{|w|^2-1}&w\end{pmatrix}.
+\]
+\end{lemma}
+
+\begin{proof}
+Put \(Q(u,w)=|w|^2-\|u\|^2\).
+Every element of \(G_0\) preserves \(Q\) and real Lebesgue measure:
+its complex determinant has absolute value one.
+Consequently the measure on \(Q=1\) obtained by restricting
+Lebesgue measure to \(1-\eta<Q<1+\eta\), dividing by \(2\eta\),
+and letting \(\eta\downarrow0\), is invariant.
+For compactly supported continuous test functions this limit exists
+by the ordinary change of variables
+\[
+       (u,q,\theta)\longmapsto
+               (u,\sqrt{q+\|u\|^2}\,e^{i\theta}).
+\]
+Planar polar measure in the last coordinate is
+\(\rho\,d\rho\,d\theta=\tfrac12\,dq\,d\theta\).
+Thus the resulting measure on \(X\) is
+\(\tfrac12\,du\,d\theta\), proving invariance and the first assertion.
+
+For completeness, this quotient measure determines Haar measure on
+\(G_0\) without any choice of density.  Choose local smooth sections
+of \(G_0\to X\), combine them into a measurable section \(\sigma\),
+and set
+\[
+ \int f\,d\widetilde\mu
+     =\int_X\int_{K_-}f(\sigma(x)k)\,dk\,d\nu(x).
+\]
+Changing \(\sigma(x)\) multiplies it on the right by an element of
+\(K_-\), so this definition is independent of the section.
+For \(a\in G_0\), the two representatives
+\(a\sigma(x)\) and \(\sigma(ax)\) differ by an element of \(K_-\).
+Invariance of \(\nu\) and of \(dk\) proves left invariance of
+\(\widetilde\mu\).  It is nonzero and finite on compact sets, by
+local trivializations and compactness of \(K_-\).  It is therefore
+a positive multiple of the fixed Haar measure.
+Local sections can also be obtained directly by smooth Hermitian
+Gram--Schmidt near any negative unit vector; a countable cover and
+disjoint measurable refinements give the stated measurable section.
+
+Now write \(u=r\omega\), where \(\omega\) is a unit vector in
+\(\mathbb C^k\).  If \(\rho=|w|=\sqrt{1+r^2}\), then
+\[
+ r^{2k-1}\,dr=(\rho^2-1)^{k-1}\rho\,d\rho .
+\]
+The pushforward of probability Haar measure on \(U(k)\) by
+\(k\mapsto k e_1\) is normalized spherical measure: it is invariant,
+and transitivity and compact averaging give uniqueness.
+The matrix \(b(w)\) belongs to \(G_0\) and sends \(e_-\) to
+\((\sqrt{|w|^2-1}\,e_1,w)\).
+Substitution in the quotient formula gives
+\eqref{jg-base-integration}.  The omitted set \(u=0\) has zero
+\(du\,d\theta\)-measure, also when \(k=1\).
+\end{proof}
+
+Let \(z,z'\in V_0\) be negative, and write
+\[
+           T=-h_0(z,z)>0,\qquad T'=-h_0(z',z')>0,
+           \qquad K_z=\operatorname{Stab}_{G_0}(z).
+\]
+Choose \(a,a'\in G_0\) with
+\(a e_-=z/\sqrt T\) and \(a'e_-=z'/\sqrt{T'}\).
+Then
+\[
+ \mu(\zeta)=a\,b\!\left(-\frac{\zeta}{\sqrt{TT'}}\right)(a')^{-1}
+       \qquad (|\zeta|^2>TT')
+\]
+is a smooth section satisfying \(h_0(\mu(\zeta)z',z)=\zeta\).
+
+\begin{corollary}\label{jg-terminal-measure}
+For every such smooth section and every choice of Haar measures,
+there is a constant \(C>0\) such that
+\begin{equation}\label{jg-terminal}
+ \int_{G_0}f(g)\,dg
+ =C\int_{|\zeta|^2>TT'}(|\zeta|^2-TT')^{k-1}
+      \int_{K_z\times K_{z'}}
+        f(k_1^{-1}\mu(\zeta)k_2)\,dk_1\,dk_2\,d\zeta .
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Apply \eqref{jg-base-integration} to \(a^{-1}g a'\).
+Unimodularity gives invariance of Haar measure under these
+translations.  The substitution
+\(w=-\zeta/\sqrt{TT'}\) contributes the positive factor
+\((TT')^{-k}\), which is absorbed in \(C\).
+The conjugate compact subgroups are \(K_z\) and \(K_{z'}\).
+
+The formula does not depend on the particular section.
+For a fixed \(\zeta\) in the exterior region, \(K_z\) acts
+transitively on the vectors \(v\) satisfying
+\(h_0(v,v)=-T'\) and \(h_0(v,z)=\zeta\):
+after the change by \(a^{-1}\), the last coordinate is fixed
+and the first \(k\) coordinates run over a sphere of positive
+radius.  Once the image of \(z'\) has been matched, two group
+elements differ on the right by an element of \(K_{z'}\).
+Thus every fiber is one \(K_z\times K_{z'}\) orbit.
+Bi-invariance of the two compact Haar measures proves that its
+average is independent of the representative.
+\end{proof}
+
+\subsection{Iteration of the open cell}
+
+Embed \(V_0\) as the middle summand of
+\[
+ V_r=\bigoplus_{a=0}^{r-1}\mathbb C e_a
+          \oplus V_0\oplus
+             \bigoplus_{a=0}^{r-1}\mathbb C f_a,\qquad
+ h_r(e_a,f_b)=\delta_{ab}.
+\]
+The \(f_a\) are ordered in reverse order in the matrix coordinates.
+The vector spaces and Euclidean norms are those in
+Section~\ref{ju-section}.  Put
+\[
+       M_a=2(r-a)+k+1,\qquad
+       b(c,m)e_a=c_a f_a,\quad
+       b(c,m)f_a=\bar c_a^{-1}e_a,\quad
+       b(c,m)|_{V_0}=m .
+\]
+Here \(c\in(\mathbb C^\times)^r\) and \(m\in G_0\).
+Extend \(K_z,K_{z'}\) by the identity on all the outer pairs.
+These groups normalize \(N_r\) and preserve its Haar measure,
+as proved in Section~\ref{jm-section}.
+
+\begin{proposition}\label{jg-full-cell}
+For any choices of Haar measure there is a positive constant
+\(C_r\) such that
+\begin{equation}\label{jg-iterated}
+ \int_{G_r}f(g)\,dg
+ =C_r\int_{\mathbb C^r}
+      \prod_{a=0}^{r-1}|c_a|^{2(M_a-2)}
+      \int_{N_r\times N_r\times G_0}
+          f(n_L^{-1}b(c,m)n_R)\,dn_L\,dn_R\,dm\,dc .
+\end{equation}
+This holds for every nonnegative measurable \(f\).
+Values on any \(c_a=0\) can be assigned arbitrarily.
+\end{proposition}
+
+\begin{proof}
+At the first step Lemma~\ref{jm-cell-haar} has middle dimension
+\(d=2r+k-1=M_0-2\) and density \(|c_0|^{2d}\).
+Apply the same formula to the middle \(G_{r-1}\) variable.
+The outer Weyl matrix is the identity on that middle space,
+so it commutes with every embedded middle matrix.
+The product of the two Weyl matrices is the corresponding
+restriction of \(b(c,m)\).
+
+The left Heisenberg factor followed by the middle unipotent
+factor gives exactly the coordinates
+\(n(v,t)\iota(n')\) of Lemma~\ref{ju-heisenberg}.
+On the right, reorder
+\(\iota(n')n(v,t)\) as
+\(n(n'v,t)\iota(n')\).
+The real Jacobian in \(v\) is
+\(|\det n'|^2=1\); the central coordinate is unchanged.
+Thus the two product measures are Haar measures on \(N_r\),
+up to constant factors.  Inversion also preserves Haar measure
+on \(N_r\), because this nilpotent group is unimodular.
+This accounts for the inverse in \eqref{jg-iterated}.
+
+Repeat until reaching \(G_0\).
+At stage \(a\) the exponent is \(2(M_a-2)\).
+Each discarded complement has Haar measure zero by
+Lemma~\ref{jm-cell-haar}; Fubini in the preceding coordinates
+therefore discards only a null set at every stage.
+Tonelli permits all the substitutions for nonnegative \(f\).
+The case \(r=0\) has empty products and is immediate.
+\end{proof}
+
+Let
+\[
+ Q=(\mathbb C^\times)^r\times
+                    \{\zeta\in\mathbb C:|\zeta|^2>TT'\},
+ \qquad g_q=b(c,\mu(\zeta)),
+\]
+and define
+\begin{equation}\label{jg-radial-measure}
+ d\nu(q)=
+    \prod_{a=0}^{r-1}|c_a|^{2(M_a-2)}
+          (|\zeta|^2-TT')^{k-1}\,dc\,d\zeta .
+\end{equation}
+For \(p=((k_1,n_1),(k_2,n_2))\), put
+\[
+ dp=dk_1\,dn_1\,dk_2\,dn_2,\qquad
+                s_p(g)=k_1^{-1}n_1^{-1}g n_2k_2 .
+\]
+
+\begin{theorem}\label{jg-intformula}
+There is a unique normalization of Haar measure \(dg\) on
+\(G_r\), for the fixed measures \(dn,dk_1,dk_2\), for which
+\begin{equation}\label{jg-integral}
+       \int_{G_r}f(g)\,dg
+        =\int_Q\int f(s_p(g_q))\,dp\,d\nu(q)
+\end{equation}
+for every nonnegative measurable \(f\).
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{jg-terminal} in \eqref{jg-iterated}.
+The compact middle matrices commute with \(b(c,1)\).
+Move each compact factor to the outside, conjugating the
+adjacent unipotent variable.  These conjugations preserve
+Haar measure, so the result is a positive constant times
+the right side of \eqref{jg-integral}.
+Divide \(dg\) by that constant.
+For uniqueness, apply the formula to a nonnegative compactly
+supported continuous function of positive integral.
+
+All measures in this argument are locally finite and
+\(\sigma\)-finite.  The density in \eqref{jg-radial-measure}
+is continuous on \(Q\), and the section is smooth there.
+The excluded complex coordinate hyperplanes and terminal
+circle have planar product measure zero.  Consequently the
+same formula holds with the archive's nonnegative density on
+all of \(\mathbb C^r\times\mathbb C\), including its convention
+at the boundary when \(k=1\).
+\end{proof}
+
+\subsection{Integrability at the exact decay threshold}
+
+\begin{theorem}\label{jg-lone}
+For \(k\geq1\), \(r\geq0\), and
+\(A>2(k+r)(r+1)\), one has
+\begin{equation}\label{jg-weight-integrable}
+                     \int_{G_r}M(g)^{-A}\,dg<\infty .
+\end{equation}
+In particular every almost everywhere strongly measurable \(F\) satisfying
+\(\|F(g)\|\leq C M(g)^{-A}\) is integrable when
+\(A\geq B(k,r)=2(k+r)(r+1)+1\).
+\end{theorem}
+
+\begin{proof}
+The case \(r=0\) is the ball integral proved in
+Section~\ref{jm-section}: its radial upper bound is a constant
+times
+\(\int_0^1 \rho^{2k-1}(1-\rho^2)^{A/2-k-1}\,d\rho\),
+which is finite for \(A>2k\).
+
+Suppose \(r\geq1\), and set \(d=2r+k-1\), \(D=2d+1\).
+Retain the two constant terms in the exact Frobenius formula
+in the proof of Lemma~\ref{jm-e-int}.  The same two changes
+of variables now give
+\begin{equation}\label{jg-sharp-e}
+ \int_{\mathbb C^d\times\mathbb R}
+    M(w(c)\iota(m)n(v,t))^{-A}\,dv\,dt
+ \leq C_{A,d}\min(|c|^{-D},|c|^{-1})
+       \bigl(M(m)^2+|c|^2+|c|^{-2}\bigr)^{(D-A)/2}.
+\end{equation}
+Indeed the squared norm is at least either
+\[
+ B_c^2+|c|^2(\|v\|^2+t^2)
+ \quad\hbox{or}\quad B_c^2+\|mv\|^2+|c|^2t^2,
+ \qquad B_c^2=M(m)^2+|c|^2+|c|^{-2}.
+\]
+The real Jacobian of \(v\mapsto mv\) is one.
+The Euclidean integral after scaling is finite since \(A>D\).
+
+For the left Heisenberg variable write
+\[
+ Q_L=\|n(v_L,t_L)f_0\|
+  =\bigl(1+\|v_L\|^2+t_L^2+
+                       h_{r-1}(v_L,v_L)^2/4\bigr)^{1/2}.
+\]
+Lemma~\ref{jm-left-factor} gives, for each fixed \(n_L,c\),
+\[
+             n_Lw(c)=\kappa w(cQ_L)\iota(u)n_0.
+\]
+After multiplication by \(\iota(m)n_R\), move \(n_0\)
+past \(\iota(m)\), change the right Heisenberg variable
+by translation, and change \(m\) to \(um\).
+These preserve the relevant Haar measures; left multiplication
+by \(\kappa\) preserves \(M\).
+Thus the integral over \(m,n_R\) is exactly its value with
+\(n_L=1\) and \(c\) replaced by \(cQ_L\).
+This equality holds pointwise in \(n_L,c\), so no measurable
+choice of \(\kappa,u,n_0\) is needed.
+
+In the Haar density \(|c|^{2d}\,dc\), the substitution
+\(c'=cQ_L\) contributes \(Q_L^{-2d-2}\).
+This factor is integrable in \(n_L\).  In fact
+\[
+ \begin{split}
+ \int Q_L^{-2d-2}\,dv_L\,dt_L
+ &\leq \int_{\mathbb C^d\times\mathbb R}
+                   (1+\|v_L\|^2+t_L^2)^{-d-1}\,dv_L\,dt_L\\
+ &<\infty ,
+ \end{split}
+\]
+since \(2d+2>2d+1\).
+It remains to integrate \eqref{jg-sharp-e} against
+\(|c|^{2d}\,dc\,dm\).
+
+Put \(b=A-D>1\) and \(R=M(m)\geq1\).
+For \(|c|=\rho\geq1\), the radial factor
+\(\rho^{2d}\rho\,\rho^{-D}\) is one, and
+\[
+ \int_1^\infty(R^2+\rho^2+\rho^{-2})^{-b/2}\,d\rho
+ \leq R^{1-b}\int_0^\infty(1+s^2)^{-b/2}\,ds.
+\]
+For \(0<\rho\leq1\), the radial factor is \(\rho^{2d}\), and
+the integral is at most \(R^{-b}/(2d+1)\leq R^{1-b}/(2d+1)\).
+The remaining middle integral is bounded by
+\[
+              C\int_{G_{r-1}}M(m)^{-(A-D-1)}\,dm.
+\]
+Finally
+\[
+ 2(k+r)(r+1)-2(k+r-1)r=D+1.
+\]
+Our assumption therefore gives precisely the induction
+hypothesis at rank \(r-1\).  Tonelli justifies the argument
+before finiteness has been established.
+The final assertion is the dominated integrability criterion
+for an almost everywhere strongly measurable function,
+applied to the integrable scalar majorant \(C M^{-A}\).
+\end{proof}
+
+\subsection{Dilation and its two Jacobians}
+
+For \(t>0\), define
+\[
+ a_t e_a=t^{r-a}e_a,\qquad
+ a_t f_a=t^{-(r-a)}f_a,\qquad a_t|_{V_0}=1,
+ \qquad
+ \kappa_r=\sum_{a=0}^{r-1}2(M_a-1)(r-a).
+\]
+These elements belong to \(G_r\) and commute with \(K_z,K_{z'}\).
+The character \(\lambda_z=2\operatorname{Im}\ell_z\) is the one
+defined in Section~\ref{ju-section}.
+
+\begin{proposition}\label{jg-dilation}
+Conjugation \(\delta_t(n)=a_tna_t^{-1}\) preserves \(N_r\) and
+satisfies
+\begin{equation}\label{jg-diln}
+ \lambda_z(\delta_t n)=t\lambda_z(n),\qquad
+                 (\delta_t)_*(dn)=t^{-\kappa_r}\,dn .
+\end{equation}
+For \(s>0\), put
+\(S_s(c,\zeta)=((s^{r-a}c_a)_a,\zeta)\).
+Then
+\begin{equation}\label{jg-dilq}
+ (S_s)_*\nu=s^{-\kappa_r}\nu,\qquad
+       a_{t_1}^{-1}g_q a_{t_2}=g_{S_{t_1t_2}q}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The defining triangular conditions for \(N_r\) are preserved
+by diagonal conjugation.
+Every entry in \(\ell_z\) has dilation weight one: the
+successive \(e_a,e_{a+1}\) weights differ by one, and the
+last \(e_{r-1}\) has weight one while \(V_0\) has weight zero.
+This proves the character identity, including \(r=0\).
+
+In the first Heisenberg factor,
+\[
+       (v,u)\longmapsto(t^r a_t^{\mathrm{mid}}v,t^{2r}u).
+\]
+The middle complex determinant has absolute value one.
+The real Jacobian is consequently
+\(t^{2r(d+1)}\), with \(d=2r+k-1\).
+The remaining \(N_{r-1}\) has its own dilation Jacobian.
+The recurrence
+\(\kappa_r=2r(2r+k)+\kappa_{r-1}\), starting with zero,
+gives the stated sum.  A map whose coordinate Jacobian is
+\(t^{\kappa_r}\) pushes the measure forward to
+\(t^{-\kappa_r}\) times the measure.  This fixes the sign
+of the exponent in \eqref{jg-diln}.
+
+In the radial measure, \(c_a\mapsto s^{r-a}c_a\) multiplies
+its density by \(s^{2(M_a-2)(r-a)}\) and its planar
+volume by \(s^{2(r-a)}\).
+The total exponent is \(\kappa_r\); the terminal factor is
+unchanged.  This proves the first identity in \eqref{jg-dilq}.
+The second follows by applying both sides to \(e_a,f_a,V_0\).
+\end{proof}
+
+Theorems~\ref{jg-intformula} and~\ref{jg-lone}, together with
+Proposition~\ref{jg-dilation} and the compact conjugation
+invariance already proved, establish the geometric and
+\(L^1\) hypotheses used by the source's Jacquet pairing
+argument.  The exponents here are the actual exponents in
+that argument; in particular the normalization constant is
+absorbed in Haar measure, and the two dilation pushforwards
+have negative exponents.  The corresponding source
+definitions and the precise read scopes are recorded in
+the accompanying manifest \cite{alpo-uniform-source}.
+
+

@@ -1,0 +1,513 @@
+\section{The comparison with units and ideal classes}
+\label{su-section}
+
+This section proves assertion~\ref{sc-count}.  We first give
+a proof of the classical Dirichlet unit theorem
+\cite[Chapter 5]{milne-ant} from the lattice-volume argument
+and ideal count already established.
+The comparison below, including the determinant of the action,
+the invariant Kummer classes, and all cardinality estimates, is
+proved here.  No homology-class construction from
+assertion~\ref{sc-few} is assumed except its stated finite-set
+bound $\mathcal A(b,B)$.
+
+\subsection{The logarithmic unit lattice}
+
+\begin{theorem}\label{su-unit-theorem}
+Let $F$ be a number field of degree $n=r_1+2r_2$.
+For one embedding at each infinite place put
+\[
+ \lambda(u)=(\log|\sigma_vu|)_v,\qquad
+ H=\{x:\ \sum_v w_vx_v=0\},
+ \quad
+ w_v=\begin{cases}1&v\text{ real},\\2&v\text{ complex}.\end{cases}
+\]
+The image $\lambda(\mathcal O_F^\times)$ is a full lattice
+in $H$, and its kernel is the finite cyclic group $\mu(F)$.
+Consequently $\mathcal O_F^\times/\mu(F)$ is free abelian
+of rank $r_1+r_2-1$.
+\end{theorem}
+\begin{proof}
+A unit has norm of absolute value one, so its logarithm
+belongs to $H$.  If these logarithms belong to a bounded
+set, all conjugates of the units are bounded.
+By (SL1), only finitely many such algebraic integers
+exist.  Thus the logarithmic image has finite intersection
+with every bounded subset of $H$, and is discrete.
+Its kernel is a finite group.  Every element of this
+finite group is a root of unity, and every root of unity
+lies in the kernel.  A finite subgroup of
+$\mathbb C^\times$ is cyclic: if its exponent is $m$,
+the equation $X^m=1$ has at most $m$ roots, whereas the
+classification of finite abelian groups gives at least
+$m$ elements, with equality only for a cyclic group.
+Equivalently, it is a subgroup of the cyclic group of
+complex $m$-th roots of unity.
+
+It remains to prove that the logarithmic image spans $H$.
+Choose $C>1$ so large that
+\[
+       2^{r_1}\pi^{r_2}C^n
+                         >2^n2^{-r_2}\sqrt{D_F}.
+\]
+For each $x\in H$, apply the lattice-volume lemma to the
+product of intervals and disks
+\[
+    |y_v|<Ce^{x_v}\quad(v\text{ real}),\qquad
+    |z_v|<Ce^{x_v}\quad(v\text{ complex}).
+\]
+Its volume is $2^{r_1}\pi^{r_2}C^n$, independent of $x$,
+because $\sum_vw_vx_v=0$.  Hence it contains
+$0\ne\alpha\in\mathcal O_F$.
+Write $b_v=\log|\sigma_v\alpha|-x_v$.
+Each $b_v<\log C$, and
+\[
+          0\le\log|N_{F/\mathbb Q}\alpha|
+                    =\sum_vw_vb_v<n\log C.
+\]
+The lower inequality holds because the nonzero norm is
+an integer.  For each $v$ it follows that
+\[
+          -\frac{n-w_v}{w_v}\log C
+                    \le b_v<\log C .
+\]
+Thus $\lambda(\alpha)-x$ stays in a fixed bounded box.
+
+The principal ideal $(\alpha)$ has norm at most $C^n$.
+By Lemma~\ref{sl-ideal-count}, only finitely many such
+ideals occur.  Choose a generator $\beta_i$ for each
+principal ideal in that finite list.  If
+$(\alpha)=(\beta_i)$, then $u=\alpha/\beta_i$ is a unit,
+and
+$\lambda(u)-x=\lambda(\alpha)-x-\lambda(\beta_i)$
+lies in a bounded set independent of $x$.
+Consequently every point of $H$ is a bounded distance
+from a logarithm of a unit.  A proper real linear
+subspace of $H$ cannot have this property, as points
+on a line transverse to it have unbounded distance.
+The logarithmic image therefore spans $H$.
+
+Choose a real basis of $H$ from this discrete subgroup.
+The half-open parallelepiped of its integral span is
+bounded, so it contains only finitely many elements of
+the subgroup.  Reduction into that parallelepiped shows
+that the integral span has finite index in the subgroup.
+The subgroup is thus finitely generated, torsion-free,
+and of rank $\dim H=r_1+r_2-1$; its parallelepipeds
+give a lattice in all of $H$.  This proves the theorem,
+including $\dim H=0$.
+\end{proof}
+
+\subsection{The divisor sequence and the finite comparison group}
+
+Fix the data (SC3), with $K/L$ cyclic of degree
+$d=p^{\nu-c}$, and put
+\[
+ q=p^\nu,\qquad a=(1+p^c)^E,\qquad
+ v=v_p(E),\qquad r=r_2(L).
+\]
+Thus $a>1$, $a\equiv1\pmod p$, and $L$ is totally imaginary.
+The hypotheses also imply $K=L(\mu_{p^\nu})$:
+the restriction of $\gamma$ to the primitive root has order
+$p^{\nu-c}=d$ by (SC18), so it has trivial kernel in
+$\operatorname{Gal}(K/L)$.
+We write $Y=K^\times$ additively for the next group calculations:
+$y+y'$ means the product of the corresponding nonzero field
+elements, and $my$ means their $m$-th power.
+Let $I=\bigoplus_P\mathbb Z P$ be the group of fractional
+divisors and let $\partial:Y\to I$ be the principal-divisor
+map.  Its kernel is the unit group $U_K=\mathcal O_K^\times$,
+and its cokernel is the ideal class group $C_K$.
+Write $\mu=\mu(K)$ for the torsion subgroup of $Y$.
+
+Let $g$ act on $Y$ by $\gamma^{-1}$ and on $I$ by
+$g(P)=\gamma^{-1}P$.  In coordinates,
+$(gD)_P=D_{\gamma P}$, so $\partial$ commutes with $g$.
+Set
+\[
+ \delta=g-a,\qquad
+ V=\{y\in Y:\partial y\in\delta I\},\qquad
+ W=V/(\delta Y+\mu),\qquad
+ C=C_K/\delta C_K .
+ \tag{SU1}
+\]
+Every torsion element has zero divisor, and
+$\partial(\delta Y)\subset\delta I$, so this quotient is defined.
+Multiplicatively, $y\in V$ means exactly that it is admissible
+in (SC4).  Since $g^d=1$ and $a>1$, $\delta$ is injective on
+the torsion-free group $I$.  Indeed $\delta x=0$ implies
+$x=a^dx$, and $a^d-1\ne0$.
+
+\begin{lemma}\label{su-exact}
+There is an exact sequence of finite groups
+\[
+ 0\longrightarrow
+ (U_K/\mu)/\delta(U_K/\mu)
+ \longrightarrow W
+ \longrightarrow\ker(\delta:C_K\to C_K)
+ \longrightarrow0.
+ \tag{SU2}
+\]
+Moreover
+\[
+ |W|=\frac{(a^d-1)^r}{a-1}\,|C|,
+ \qquad
+ v_p\!\left(\frac{(a^d-1)^r}{a-1}\right)
+                    =r(\nu+v)-c-v .
+ \tag{SU3}
+\]
+\end{lemma}
+\begin{proof}
+For $y\in V$ there is a unique $D\in I$ with
+$\delta D=\partial y$.  Send the class of $y$ to the ideal
+class $[D]$.  Changing $y$ by $\delta z+t$, $t\in\mu$,
+changes $D$ by $\partial z$, so the map is well-defined.
+Its image is precisely $\ker\delta$ on $C_K$: an ideal
+class killed by $\delta$ has a representative $D$ with
+$\delta D$ principal.  Its kernel is represented by units,
+because $D=\partial z$ implies $y-\delta z\in U_K$.
+Finally
+\[
+             U_K\cap(\delta Y+\mu)=\delta U_K+\mu:
+\]
+if a unit is $\delta z+t$, taking divisors and using
+injectivity of $\delta$ on $I$ gives $\partial z=0$.
+This proves the exact sequence.
+
+Theorem~\ref{su-unit-theorem} identifies $(U_K/\mu)\otimes\mathbb R$
+with the hyperplane $H$ of coordinate sum zero in
+$\mathbb R^{r_2(K)}$.  All its places are complex, so
+the weights in the product formula are equal.
+The $d$ automorphisms of $K/L$ act freely on the complex
+places over each of the $r$ complex places of $L$.
+To verify freeness, fix one complex embedding of $L$.
+Its $d$ extensions to $K$ form a free Galois orbit;
+none is identified with another by conjugation, since
+that would change the chosen embedding of $L$.
+Thus the permutation of coordinates is a disjoint union
+of $r$ cycles of length $d$.
+
+The characteristic polynomial on each cycle is $X^d-1$.
+The quotient of $\mathbb R^{rd}$ by $H$ is the trivial
+one-dimensional representation.  Therefore
+\[
+        |\det(\delta|_H)|=\frac{(a^d-1)^r}{a-1}.
+\]
+An injective endomorphism of a free integral lattice has
+cokernel order equal to the absolute determinant of its
+matrix: integer row and column operations reduce the
+matrix to Smith normal form.  It follows that the unit
+quotient is finite with the displayed order.
+The group $C_K$ is finite by Lemma~\ref{sl-small-ideal}.
+For an endomorphism of a finite group, the kernel and
+cokernel have the same order; both orders are the total
+order divided by the image order.  This proves the first
+formula (SU3) and finiteness of $W$.
+
+Finally (SC18) gives
+$v_p(a-1)=c+v$ and $v_p(a^d-1)=\nu+v$.
+Taking valuations proves the second formula.
+\end{proof}
+
+The equivariant class-group functions in (SC6) identify with
+$\operatorname{Hom}(C,\mathbb Z/q\mathbb Z)$.
+Indeed vanishing on principal divisors factors a function
+through $C_K$, and vanishing on $(g-a)P$ is precisely
+$\varphi(\gamma^{-1}P)=a\varphi(P)$.
+For a finite abelian group $A$, write $|A|_p=p^{v_p(|A|)}$.
+Decomposition into cyclic groups gives
+\[
+ |\operatorname{Hom}(A,\mathbb Z/p^\nu\mathbb Z)|
+        =\prod_i p^{\min(e_i,\nu)}\le |A|_p,
+ \tag{SU4}
+\]
+where $p^{e_i}$ are the orders of its cyclic $p$-primary
+factors.  Consequently (SU3) implies
+\[
+            |T_{\gamma,a,q}|q^r
+                   \le |W|_p\,p^{c+v}.
+                   \tag{SU5}
+\]
+In obtaining this inequality we discarded the additional
+nonnegative exponent $rv$ in the unit factor.
+
+\subsection{A uniform bound for the \texorpdfstring{$p$}{p}-rank}
+
+Define
+\[
+ \begin{split}
+ \mathcal K_p(L)
+   &=\{x\in L^\times/(L^\times)^p:
+                 v_{\mathfrak p}(x)\equiv0\pmod p
+                       \text{ if }\mathfrak p\nmid p\},\\
+ \mathcal I_p(K)
+   &=\{[y]\in Y/(pY+\mu):
+            gy-y\in pY+\mu,\quad \partial y\in pI\}.
+ \end{split}
+ \tag{SU6}
+\]
+These definitions are independent of representatives.
+The group $\mathcal K_p(L)$ is a Kummer group with the
+displayed valuation conditions, not the strict Selmer group.
+
+\begin{lemma}\label{su-base-kummer}
+If $n=[L:\mathbb Q]$ and $h_L$ is the class number, then
+\[
+           |\mathcal K_p(L)|
+                \le p^{\,2n+\lfloor\log_2h_L\rfloor}.
+                \tag{SU7}
+\]
+\end{lemma}
+\begin{proof}
+First impose the valuation condition also at primes above
+$p$, and call the resulting subgroup $\mathcal K_p^0(L)$.
+Sending $\alpha$ to the ideal class of
+$\frac1p\operatorname{div}(\alpha)$ maps this group to
+$C_L[p]$.  Its kernel consists exactly of the image of
+$\mathcal O_L^\times/(\mathcal O_L^\times)^p$:
+if the divided divisor is principal, dividing $\alpha$
+by the corresponding $p$-th power gives a unit.
+By Theorem~\ref{su-unit-theorem} and cyclicity of roots of unity this
+kernel has order at most $p^{r_1(L)+r_2(L)}\le p^n$.
+If $|C_L[p]|=p^t$, then $2^t\le p^t\le h_L$, whence
+$t\le\lfloor\log_2h_L\rfloor$.
+
+Reduction of the remaining valuations modulo $p$ injects
+$\mathcal K_p(L)/\mathcal K_p^0(L)$ into one copy of
+$\mathbb Z/p\mathbb Z$ for each prime above $p$.
+There are at most $n$ such primes.
+Multiplying the three bounds proves finiteness and (SU7).
+\end{proof}
+
+\begin{lemma}[Cyclic Hilbert theorem 90]\label{su-hilbert90}
+If $K/L$ is cyclic with generator $\gamma$ and
+$w\in K^\times$ has norm one, then $w=\gamma(z)/z$
+for some $z\in K^\times$.
+\end{lemma}
+\begin{proof}
+Put $c_0=1$ and
+$c_j=(w\gamma(w)\cdots\gamma^{j-1}(w))^{-1}$ for $j\ge1$.
+For $b\in K$ define $z_b=\sum_{j=0}^{d-1}c_j\gamma^j(b)$.
+The norm condition gives $c_d=1$, and shifting the summation
+index gives $\gamma(z_b)=wz_b$.
+For some $b$, $z_b\ne0$, by linear independence of distinct
+field automorphisms over $K$.
+Here is the usual short proof of that independence.
+A nonzero relation with the fewest terms, after rescaling,
+has coefficient one at its first automorphism.
+Choose $x$ on which a second automorphism differs from the
+first, evaluate the relation at $xy$, and subtract the
+relation at $y$ multiplied by the first automorphism of $x$.
+This is a nonzero relation with fewer terms, a contradiction.
+A single automorphism cannot have a nonzero scalar multiple
+equal to the zero map.  Taking $z=z_b$ proves the lemma.
+\end{proof}
+
+\begin{lemma}\label{su-invariant-kummer}
+For the cyclotomic data under consideration,
+\[
+                |\mathcal I_p(K)|
+                     \le p^2|\mathcal K_p(L)|.
+                     \tag{SU8}
+\]
+\end{lemma}
+\begin{proof}
+Choose a generator $\rho$ of the finite cyclic group
+$\mu(K)$.  Its finiteness also follows directly from
+(SL1): roots of unity are integral and all their conjugates
+have absolute value one, so they belong to a compact set
+in a lattice.  A finite subgroup of $\mathbb C^\times$
+is cyclic, and any complex embedding proves cyclicity here.
+
+Every class in $\mathcal I_p(K)$ has a representative
+$\alpha\in K^\times$ with all valuations divisible by $p$
+and with
+\[
+           \gamma(\alpha)=\alpha w^p\rho^j,
+              \qquad 0\le j<p,\quad w\in K^\times .
+              \tag{SU9}
+\]
+The invariance condition with $\gamma^{-1}$ is equivalent
+to that with $\gamma$.  Reduction of the exponent of
+$\rho$ modulo $p$, absorbing its $p$-th power into $w$,
+proves (SU9).
+Taking ordinary field norms gives
+\[
+                     (N_{K/L}w)^p=(N_{K/L}\rho)^{-j}.
+\]
+There are at most $p$ choices for $j$ and at most $p$
+values of $N_{K/L}w$ for each $j$, since a polynomial of
+degree $p$ over a field has at most $p$ roots.
+
+Compare two representatives $\alpha,\alpha'$ with the
+same $j$ and the same norm of $w,w'$.  Put
+$\beta=\alpha/\alpha'$ and $v=w/w'$.
+Then $\gamma(\beta)/\beta=v^p$ and $N_{K/L}v=1$.
+By Lemma~\ref{su-hilbert90}, $v=\gamma(z)/z$.
+It follows that $\beta=xz^p$ with $x\in L^\times$.
+The extension $K=L(\mu_{p^\nu})$ is unramified outside $p$:
+the proof of Lemma~\ref{sl-cyclotomic-discriminant} puts
+$p^\nu$ in its relative different, so that the different
+is the unit ideal at every other prime.
+Thus for $P\mid\mathfrak p\nmid p$,
+$v_P(x)=v_{\mathfrak p}(x)$.
+The valuations of $\alpha$ and $\alpha'$ and those of
+$z^p$ show that this number is divisible by $p$.
+Hence $[x]\in\mathcal K_p(L)$.
+
+For each of the at most $p^2$ pairs
+$(j,N_{K/L}w)$ that occurs, fix one representative.
+Every class with that pair differs from its representative
+by the image of a class in $\mathcal K_p(L)$.
+This covers $\mathcal I_p(K)$ by at most $p^2$ sets of
+size at most $|\mathcal K_p(L)|$, proving (SU8).
+No uniqueness of the pair assigned to a class is needed.
+\end{proof}
+
+\begin{lemma}\label{su-rank}
+With $g_L$ as in (SC1),
+\[
+                           |W[p]|\le p^{g_L}.
+                           \tag{SU10}
+\]
+\end{lemma}
+\begin{proof}
+There is an injection $W[p]\to\mathcal I_p(K)$.
+To construct it, choose $u\in V$ representing a class
+$w\in W[p]$, and write
+\[
+                         pu=\delta y+t,\qquad t\in\mu .
+                         \tag{SU11}
+\]
+Such $y,t$ exist by the definition of $W$.
+Write $\partial u=\delta D$.
+Taking divisors in (SU11) and using injectivity of
+$\delta$ on $I$ gives $\partial y=pD$.
+Since $p\mid a-1$, equation (SU11) also gives
+$gy-y\in pY+\mu$.  Thus $[y]\in\mathcal I_p(K)$.
+
+This class is independent of choices.  If $u$ changes by
+$\delta z+t_0$, then subtraction of the two equations
+(SU11) shows
+$\delta(y'-y-pz)\in\mu$.  Whenever $\delta x\in\mu$,
+one has $x\in\mu$: apply the polynomial
+$g^{d-1}+ag^{d-2}+\cdots+a^{d-1}$ and use
+$g^d=1$ to obtain $(1-a^d)x\in\mu$.
+The torsion subgroup of an abelian group is saturated,
+meaning that a nonzero multiple of an element is torsion
+only if the element is torsion.  Therefore
+$y'-y-pz\in\mu$, as required.
+If $[y]=0$, write $y=pz+t_1$; then (SU11) gives
+$p(u-\delta z)\in\mu$, so $u-\delta z\in\mu$ and $w=0$.
+The construction respects addition, hence it is injective.
+Combine (SU7), (SU8), and
+$g_L=2n+\lfloor\log_2h_L\rfloor+2$.
+\end{proof}
+
+\subsection{The weighted product and its kernel}
+
+In the additive notation set
+\[
+       N_a=\sum_{j=0}^{d-1}a^j g^{d-j},\qquad
+       s=p^b,\qquad
+       R=\frac{a^d-1}{q}.
+       \tag{SU12}
+\]
+The symbol $R$ denotes an integer in this subsection.
+Since $g=\gamma^{-1}$ and $\gamma^d=1$, the element
+$N_a y$ is exactly the weighted product in (SC5).
+Telescoping gives
+\[
+                    \delta N_a=N_a\delta=(1-a^d)g=-qRg.
+                    \tag{SU13}
+\]
+Also $v_p(R)=v$, by (SC18).
+
+\begin{lemma}\label{su-weighted-map}
+The formula
+\[
+          f:W\longrightarrow Y/(qY+\mu),\qquad
+                     [y]\longmapsto[sN_a y]
+                     \tag{SU14}
+\]
+defines a homomorphism.  Its kernel is killed by $sR$.
+If $\mathcal A(b,B)$ holds, then $|\operatorname{im}f|\le B$.
+\end{lemma}
+\begin{proof}
+Equation (SU13) shows that $sN_a(\delta Y)\subset qY$.
+An endomorphism of an abelian group preserves its torsion
+subgroup, so the formula descends to $W$.
+If $f([y])=0$, write $sN_a y=qz+t$ with $t\in\mu$.
+Apply $\delta$ and use (SU13):
+\[
+                      q(-sRg y-\delta z)=\delta t.
+\]
+The right-hand side is torsion.  Saturation of $\mu$
+gives $sRg y\in\delta Y+\mu$.
+The automorphism $g$ preserves all groups in (SU1);
+applying its inverse shows $sRy\in\delta Y+\mu$.
+Thus $sR$ kills the kernel.
+
+The group $W$ is finite by Lemma~\ref{su-exact}.
+Choose one representative $y\in V$ for each value of $f$.
+These give distinct elements $\alpha\in K^\times$, each
+admissible for a divisor.  If two weighted products raised
+to $p^b$ differ by a $q$-th power, their images in the
+even coarser quotient $Y/(qY+\mu)$ coincide.
+They were chosen for distinct values, so their
+representatives are equal.  This finite set therefore
+satisfies exactly (SC7).  Assertion $\mathcal A(b,B)$
+bounds its size by $B$.
+We have not replaced equality modulo powers by equality
+modulo roots of unity in the hypothesis.
+\end{proof}
+
+\begin{lemma}\label{su-finite-group}
+Let $W$ be a finite abelian group and $f:W\to A$ a
+homomorphism.  Suppose $|W[p]|\le p^g$ and the
+$p$-primary part of $\ker f$ is killed by $p^k$.
+Then
+\[
+                         |W|_p\le|\operatorname{im}f|p^{kg}.
+                         \tag{SU15}
+\]
+\end{lemma}
+\begin{proof}
+Multiplication by $p$ maps $W[p^{j+1}]$ into
+$W[p^j]$ with kernel $W[p]$.  Induction gives
+$|W[p^k]|\le|W[p]|^k\le p^{kg}$.
+The $p$-primary part of $\ker f$ is a subgroup of
+$W[p^k]$.  Now use $|W|=|\ker f||\operatorname{im}f|$
+and take $p$-primary parts, bounding that of the image
+by its full order.
+\end{proof}
+
+\begin{theorem}\label{su-count}
+Assertion~\ref{sc-count} holds.  More explicitly,
+\[
+ |T_{\gamma,a,q}|q^{r_2(L)}
+       \le B\,p^{(b+v_p(E))g_L+c+v_p(E)}
+       \quad\text{if }\mathcal A(b,B)\text{ holds}.
+ \tag{SU16}
+\]
+\end{theorem}
+\begin{proof}
+Write $R=p^vR_0$ with $p\nmid R_0$.
+Lemma~\ref{su-weighted-map} shows that the $p$-primary
+kernel of $f$ is killed by $p^{b+v}$, because
+multiplication by $R_0$ is invertible on a finite
+$p$-group.
+Lemmas~\ref{su-rank} and \ref{su-finite-group} give
+$|W|_p\le Bp^{(b+v)g_L}$.
+Substitution in (SU5) proves the theorem.
+\end{proof}
+
+The factor $q^{r_2(L)}$ has thus been derived from the
+determinant of the unit action, rather than inserted as
+a rank heuristic.  The extra two powers of $p$ in $g_L$
+come from the root-of-unity exponent and the norm value
+in (SU9).  The argument covers the boundary case
+$\nu=c$, when $K=L$ and $d=1$, and it retains the
+condition $c\ge2$ at $p=2$ needed in (SC18).
+
+

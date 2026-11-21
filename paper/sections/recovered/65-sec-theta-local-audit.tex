@@ -1,0 +1,1196 @@
+\section{Local harmonic analysis in the theta estimates}
+\label{sec:theta-local-audit}
+
+This section reconstructs several analytic and local arithmetic steps that
+enter the proposed estimates for the theta maps.  Every lemma proved here is
+independent of the Riemann hypothesis.  The final estimate for the actual
+global family is stated with its remaining arithmetic hypotheses displayed.
+In particular, a local stationary phase formula is not a proof of the global
+estimate for the sum of the orbital terms.
+
+The source uses the normalized operators
+\begin{equation}\label{th-normalized-K}
+ K_{uv}=(c_uc_v)^{-1/2}P_u^*P_v,
+ \qquad
+ c_u=\frac{\kappa\,\operatorname{vol}(N_u)
+                   \operatorname{vol}(H_u)}{\dim\pi_u}.
+\end{equation}
+Here $P_u:C_u\longrightarrow\mathcal H$ is a Poincar\'e-series map,
+$C_u$ is a finite-dimensional Hilbert space, $\pi_u$ is a nonzero compact
+stabilizer representation, and $\kappa$ is the volume of the finite-level
+subgroup.  The source incorporates $\kappa$ into its symbol
+$\operatorname{vol}(N_u)$.  All inner products below are conjugate linear
+in the first variable.  Thus $K_{uv}:C_v\longrightarrow C_u$.
+
+\subsection{The local rings and measures actually required}
+
+Let $K$ be a finite product of finite extensions of $\mathbb Q_p$.  A
+compact open additive subgroup of $K^n$ will be called a lattice.  For
+$a\in K^\times$, write
+\[
+ |a|_K=\prod_{K_j\mid K}|a_j|_{K_j},
+\]
+where the absolute value in a field factor gives a uniformizer the value
+$(\#k_j)^{-1}$.  For a matrix $B\in\operatorname{GL}_n(K)$,
+linear change of variables multiplies additive Haar measure by
+$|\det B|_K$.
+
+Fix a continuous additive character $\psi:K\to\mathbb C^\times$ that is
+nontrivial on every field factor.  Choose the self-dual Haar measure, and
+use its product measure on $K^n$.  For a lattice $L\subset K^n$, put
+\[
+ L^\perp=\{y\in K^n:\psi(x^ty)=1\text{ for all }x\in L\}.
+\]
+Then $(L^\perp)^\perp=L$ and
+\begin{equation}\label{th-dual-vol}
+ \operatorname{vol}(L)\operatorname{vol}(L^\perp)=1,
+ \qquad
+ \int_L\psi(x^ty)\,dx=
+ \operatorname{vol}(L)\,1_{L^\perp}(y).
+\end{equation}
+For completeness, the second identity follows by translating the integral
+by an element $x_0\in L$: if the character is nontrivial, that translation
+multiplies the integral by $\psi(x_0^ty)\ne1$.  The duality and volume
+identities reduce by a linear change of basis to fractional ideals in a
+local field.  If the annihilator of its ring of integers $O$ is $c^{-1}O$,
+the measure for the character $x\mapsto\psi_0(cx)$ is
+$|c|^{1/2}\,dx_0$, where $\psi_0$ has annihilator $O$ and
+$\operatorname{vol}_{dx_0}(O)=1$.  The identities for fractional ideals
+follow immediately.  A product of these calculations proves
+\eqref{th-dual-vol}; a general additive lattice is a free
+$\mathbb Z_p$-module, so the same calculation can alternatively be made
+over $\mathbb Q_p$ using the trace pairing.
+
+The two local orders in the source are as follows.
+
+\begin{enumerate}
+\item Away from the two distinguished split primes, $K$ is an unramified
+quadratic algebra over a local field $F$, $R=O_K$, and the specified
+character has annihilator $O_K$.  This includes the algebra $F\times F$.
+The chosen measure has $\operatorname{vol}(R)=1$.
+\item At a distinguished split prime, write $K=F\times F$, let $\varpi$
+be a uniformizer of $F$, and let $\psi_F$ have annihilator $O_F$.  The
+order and character are
+\begin{equation}\label{th-split-order}
+ R_\varpi=\{(x,y)\in O_F^2:x-y\in\varpi O_F\},
+ \qquad
+ \psi_R(x,y)=\psi_F((x-y)/\varpi).
+\end{equation}
+\end{enumerate}
+
+\begin{lemma}\label{th-split-self-dual}
+The order $R_\varpi$ is its own annihilator for $\psi_R$.
+If $q=\#(O_F/\varpi O_F)$ and product Haar measure gives $O_F^2$
+volume one, self-dual Haar measure for $\psi_R$ is $q$ times that
+product measure.  In particular, it gives $R_\varpi$ volume one.
+\end{lemma}
+
+\begin{proof}
+Write an element of $R_\varpi$ as $(y+\varpi z,y)$, with $y,z\in O_F$.
+An element $(a,b)\in F^2$ annihilates this order if and only if
+\[
+ \psi_F\bigl(az+(a-b)y/\varpi\bigr)=1
+ \quad(y,z\in O_F).
+\]
+This is equivalent to $a\in O_F$ and $(a-b)/\varpi\in O_F$, which
+is precisely $(a,b)\in R_\varpi$.  The characters on the two factors
+have scale factors $\varpi^{-1}$ and $-\varpi^{-1}$.  Their self-dual
+measures therefore contribute $q^{1/2}$ each.  Finally
+$[O_F^2:R_\varpi]=q$.
+\end{proof}
+
+Consequently it would be incorrect to replace all local orders by maximal
+orders while retaining the same Haar measure.  The source does retain the
+normalization in Lemma~\ref{th-split-self-dual}.  The proofs below allow
+this nonmaximal order; they use the additive pairing, rather than a claim
+that $R$ is a discrete valuation ring.
+
+\subsection{A Gaussian integral with all normalizing factors}
+
+Let $B\in\operatorname{GL}_n(K)$ be symmetric and put
+$q_B(x)=\tfrac12x^tBx$.  Characteristic zero is essential here.
+For a lattice $L\subset K^n$, impose the explicit condition
+\begin{equation}\label{th-gauss-admissible}
+ \psi\bigl(q_{B^{-1}}(\xi)\bigr)=1\qquad(\xi\in L^\perp).
+\end{equation}
+Such lattices exist: take $L$ sufficiently large, so that $L^\perp$
+is contained in a neighborhood on which the indicated continuous
+character-valued function is one.
+
+\begin{lemma}\label{th-gaussian}
+If \eqref{th-gauss-admissible} holds, then
+\[
+ \left|\int_L\psi(q_B(x))\,dx\right|=|\det B|_K^{-1/2}.
+\]
+The integral is independent of the lattice $L$ satisfying that condition.
+Accordingly there is a well-defined complex number $\gamma_\psi(B)$,
+of absolute value one, for which
+\begin{equation}\label{th-gaussian-value}
+ \int_L\psi(q_B(x))\,dx
+   =\gamma_\psi(B)|\det B|_K^{-1/2}.
+\end{equation}
+It is unchanged under congruence:
+$\gamma_\psi(C^tBC)=\gamma_\psi(B)$ for $C\in\operatorname{GL}_n(K)$.
+\end{lemma}
+
+\begin{proof}
+Set $U=B^{-1}L^\perp$.  Condition \eqref{th-gauss-admissible} says
+$\psi(q_B(u))=1$ for $u\in U$.  Polarization gives
+$\psi(u^tBv)=1$ for $u,v\in U$.  Since $B$ is symmetric,
+$U^\perp=BL$.  It follows that $BU=L^\perp\subset BL$, or $U\subset L$.
+Writing $I_L=\int_L\psi(q_B(x))\,dx$ and making the change of variables
+$x=y+u$ gives
+\begin{align*}
+ |I_L|^2
+ &=\int_L\psi(q_B(u))
+       \int_L\psi(y^tBu)\,dy\,du\\
+ &=\operatorname{vol}(L)
+       \int_{L\cap B^{-1}L^\perp}\psi(q_B(u))\,du\\
+ &=\operatorname{vol}(L)\operatorname{vol}(B^{-1}L^\perp)
+   =|\det B|_K^{-1}.
+\end{align*}
+All these integrals are over compact sets, so Fubini causes no
+convergence issue.
+
+If $a\notin L$, duality supplies $\xi\in L^\perp$ with
+$\psi(\xi^ta)\ne1$.  Put $u=B^{-1}\xi\in U\subset L$.
+Translation by $u$ multiplies the integral of $\psi(q_B)$ over $a+L$
+by $\psi(\xi^ta)$: the other factors are one because
+$\psi(q_B(u))=1$ and $\xi\in L^\perp$.  That coset integral is zero.
+Thus enlarging $L$ to any lattice leaves $I_L$ unchanged.  For two
+admissible lattices, enlarge both to their sum.  This proves independence.
+Finally substitute $x=Cy$ in the integral.  The factor $|\det C|_K$
+is canceled by the change in $|\det(C^tBC)|_K^{1/2}$.
+\end{proof}
+
+For $m\ge1$, let $J_m$ denote the matrix all of whose entries are one,
+and put
+\[
+ H_m(a)=a^{-1}(I_m+J_m),\qquad
+ \gamma_m(a)=\gamma_\psi(H_m(a))\quad(a\in K^\times).
+\]
+The determinant lemma, or the decomposition into the line spanned by
+$(1,\ldots,1)$ and its sum-zero complement, gives
+\begin{equation}\label{th-hessian-det}
+ \det H_m(a)=(m+1)a^{-m},\qquad
+ (I_m+J_m)^{-1}=I_m-\frac{J_m}{m+1}.
+\end{equation}
+The identities remain valid when the residue characteristic divides
+$m+1$: division takes place in a characteristic-zero field.  The
+congruence assertion in Lemma~\ref{th-gaussian} gives
+$\gamma_m(ab^2)=\gamma_m(a)$.  Thus
+\begin{equation}\label{th-gauss-H}
+ \int_L\psi\bigl(\tfrac12x^tH_m(a)x\bigr)\,dx
+ =\gamma_m(a)|m+1|_K^{-1/2}|a|_K^{m/2}
+\end{equation}
+whenever \eqref{th-gauss-admissible} is satisfied.
+
+\begin{remark}\label{th-conductor}
+There is no omitted conductor factor in \eqref{th-gauss-H}, because the
+Haar measure is self-dual for the displayed character.  If a field factor
+uses $\psi_c(x)=\psi_0(cx)$ and one insists on the measure for $\psi_0$,
+the right side must instead be multiplied by $|c|^{-m/2}$.
+Moreover the admissibility condition changes with $c$.  One may not
+change the character and keep both the measure and the smallness
+threshold unchanged.
+\end{remark}
+
+\subsection{An elementary analytic change of variables}
+
+We record the analytic fact needed for stationary phase, including a
+proof that does not assume that $2$ or $m+1$ is a unit of $O_F$.
+
+\begin{lemma}\label{th-morse}
+Let $F$ be a finite extension of $\mathbb Q_p$ and let $f$ be analytic
+near $0\in F^m$.  Suppose $df(0)=0$ and the symmetric Hessian
+$H=D^2f(0)$ is invertible over $F$.  On a sufficiently small ball
+$B=(\varpi^aO_F)^m$ there is an analytic bijection
+$\Phi:B\to B$ such that
+\[
+ f(y)=f(0)+\tfrac12\Phi(y)^tH\Phi(y).
+\]
+The map preserves Haar measure, and for every $b\ge a$ and $y,y'\in B$,
+\[
+ \Phi(y)-\Phi(y')\in(\varpi^bO_F)^m
+ \quad\Longleftrightarrow\quad y-y'\in(\varpi^bO_F)^m.
+\]
+For an analytic family the ball can be chosen uniformly under the
+following precise hypothesis: on a common polydisc of radius $r>0$,
+the convergent power series $\sum_\alpha c_\alpha y^\alpha$ have
+uniformly bounded Gauss norms
+$\sup_\alpha |c_\alpha|r^{|\alpha|}$, and the inverse Hessians have
+uniformly bounded matrix norms.  Shrinking the common radius is allowed.
+\end{lemma}
+
+\begin{proof}
+Expanding the convergent power series and assigning each monomial of
+degree at least two to two of its variables writes
+\[
+ f(y)-f(0)=\tfrac12y^t(H+C(y))y,
+ \qquad C(0)=0,
+\]
+with $C(y)$ symmetric and analytic.  One explicit assignment is to put a
+monomial into a diagonal entry if some variable occurs at least twice,
+and otherwise into the two symmetric entries corresponding to its
+first two variables.  Only the fixed factors $2$ and $1/2$ are
+introduced; after shrinking the polydisc the resulting series converge.
+Put $A(y)=H^{-1}C(y)$.  The matrix $A(y)$ is self-adjoint for the
+bilinear form $H$, namely $A(y)^tH=HA(y)$.
+
+The formal series
+\[
+ S(y)=\sum_{j\ge0}\binom{1/2}{j}A(y)^j
+\]
+converges on a sufficiently small polydisc.  Indeed the $p$-adic
+absolute values of the coefficients are bounded by an exponential in
+$j$, whereas the matrix norm of $A(y)$ tends to zero with $y$.
+It satisfies $S(y)^2=I+A(y)$ and $S(y)^tH=HS(y)$.  Therefore
+$S(y)^tHS(y)=H+C(y)$.  Set $\Phi(y)=S(y)y$.
+
+Here are the required invertibility and measure details.  Shrink $B$
+until $g(y)=\Phi(y)-y$ has Lipschitz constant strictly less than one,
+and $g(0)=0$.  This is possible because its convergent power series
+has no constant or linear term.  If $b\in B$, the map
+$y\mapsto b-g(y)$ is a strict contraction of the complete ball $B$,
+so it has a unique fixed point.  This proves bijectivity.
+Furthermore
+\[
+ \|\Phi(y)-\Phi(y')\|=\|y-y'\|
+\]
+in the supremum norm, since the error has strictly smaller norm.
+The map consequently permutes the residue classes of each smaller
+ball.  These classes generate the Borel sets of $B$ and all have
+the same volume; hence $\Phi$ preserves Haar measure.  The power-series
+bounds just used can be made uniform when the coefficients and
+$H^{-1}$ satisfy the stated uniform bounds.  Indeed on any strictly
+smaller radius the uniform Gauss bound gives uniform convergence of
+the tails and of their divided difference estimates.
+\end{proof}
+
+\subsection{The stationary phase formula used in the local induction}
+
+For $D\in K^\times$ define, on $(K^\times)^m$,
+\[
+ f_D(x_1,\ldots,x_m)=x_1+\cdots+x_m+
+                         \frac{D}{x_1\cdots x_m}.
+\]
+Fix a compact subset $Q\subset K^\times$, a compact open set
+$C\subset(K^\times)^m$, and a lattice $L_1\subset K^m$.
+The amplitudes considered below are all locally constant functions
+$A:K^m\to\mathbb C$, supported in $C$ and invariant under translation
+by $L_1$.  No bound on their values is required.  Choose $L_1$ smaller
+if necessary; doing so enlarges the allowed class of amplitudes.
+
+\begin{theorem}\label{th-stationary}
+There is a product neighborhood $V$ of zero in $K$, depending on
+$K,\psi,m,Q,C,L_1$, such that for $t\in V\cap K^\times$ and $D\in Q$,
+\begin{align}\label{th-stationary-formula}
+ &\int_{(K^\times)^m}A(x)\psi(f_D(x)/t)\,dx\notag\\
+ &\quad=|t|_K^{m/2}|m+1|_K^{-1/2}
+   \sum_{\substack{z\in K^\times\\z^{m+1}=D}}
+    \gamma_m(zt)|z|_K^{m/2}
+    \psi((m+1)z/t)A(z,\ldots,z).
+\end{align}
+The sum is finite.  If $K$ is a field it has at most $m+1$ terms;
+if $K$ has $d$ field factors it has at most $(m+1)^d$ terms.
+\end{theorem}
+
+\begin{proof}
+We first take $K=F$ to be a field.  Direct differentiation gives
+\[
+ \frac{\partial f_D}{\partial x_i}
+   =1-\frac{D}{x_i\prod_jx_j}.
+\]
+All derivatives vanish if and only if $x_1=\cdots=x_m=z$ and
+$z^{m+1}=D$.  At that point the diagonal Hessian entries are $2/z$
+and the off-diagonal entries are $1/z$.  Thus the Hessian is $H_m(z)$,
+which is invertible by \eqref{th-hessian-det}, and
+$f_D(z,\ldots,z)=(m+1)z$.
+
+The set of possible roots $z$, for $D\in Q$, is compact in $F^\times$:
+their absolute values lie in finitely many valuation classes, bounded
+above and away from zero.  The coefficients of the Taylor expansion
+at these roots, and the inverse Hessians, are therefore bounded
+uniformly.  More precisely, choose a common expansion radius strictly
+smaller than the least absolute value of these roots.  On that radius
+the reciprocal factors in $f_D$ have geometrically convergent series
+with uniformly bounded Gauss norms.  This is the uniform analytic
+hypothesis of Lemma~\ref{th-morse}, which supplies a common sufficiently small
+ball $B=(\varpi^aO_F)^m\subset L_1$.  We may also arrange that distinct
+critical points have disjoint translates of $B$.  To see uniform
+separation, otherwise there would be distinct roots $z_j,z'_j$ with
+$z_j-z'_j\to0$; after taking a convergent subsequence, their common
+limit $z$ is nonzero.  The function $w\mapsto w^{m+1}$ has derivative
+$(m+1)z^m\ne0$, so is injective on a neighborhood of $z$, a
+contradiction.  Its local injectivity follows by exactly the contraction
+argument in Lemma~\ref{th-morse}, applied after its nonzero linear term
+has been divided out.
+
+On a critical ball, $A$ is constant.  Applying the measure-preserving
+change of variables and then \eqref{th-gauss-H} gives
+\[
+ \int_{(z,\ldots,z)+B}A(x)\psi(f_D(x)/t)\,dx
+ =A(z,\ldots,z)\psi((m+1)z/t)
+   \gamma_m(zt)|m+1|^{-1/2}|zt|^{m/2}.
+\]
+The use of the Gaussian formula is justified uniformly for small $t$.
+In fact
+\[
+ (H_m(z)/t)^{-1}
+       =tz\left(I_m-\frac{J_m}{m+1}\right).
+\]
+On the fixed compact lattice $B^\perp$, the associated quadratic
+form tends uniformly to zero as $t\to0$, with $z$ in its compact
+set.  It is consequently in the kernel of $\psi$ for all sufficiently
+small $t$.  This proves the admissibility condition, including at
+primes dividing $2(m+1)$.
+
+We give the uniform vanishing argument on the complement.  Near any
+pair $(D_0,x_0)$ with $\nabla f_{D_0}(x_0)\ne0$, choose $j$ for which
+$|a|=|\partial_jf_{D_0}(x_0)|$ is the largest absolute value among
+the partial derivatives.  In particular $a\ne0$.  On sufficiently small product balls
+in $D$ and $x$, the map
+\[
+ x\longmapsto(f_D(x),x_1,\ldots,\widehat{x_j},\ldots,x_m)
+\]
+is a bijection onto a product of balls.  Its first ball is a translate
+of $a\varpi^bO_F$; the other balls have radius $|\varpi|^b$.
+Its Jacobian has constant absolute value $|a|$.  These facts follow
+by dividing the first coordinate by $a$ and applying the same strict
+contraction argument: the nonlinear remainder and the variation in
+the derivative can both be made smaller than the linear term.
+For fixed other coordinates, this is a one-variable bijection of
+balls, preserving their normalized Haar measures.  Shrink the
+balls further so that $A$ is constant there.  Integration in the
+first coordinate now vanishes as soon as
+$\psi$ is nontrivial on $t^{-1}a\varpi^bO_F$.
+
+Only finitely many such bounds are needed.  Here is the compactness
+point needed for that assertion.  A root $z_0^{m+1}=D_0$ continues
+uniquely, in a fixed small root ball, for all $D$ sufficiently near
+$D_0$, by the preceding local inverse argument.  Roots outside those
+balls cannot suddenly enter the fixed compact set under consideration:
+a convergent subsequence would give an additional root at $D_0$.
+Thus after shrinking a neighborhood of each $D_0$, the critical
+balls have fixed disjoint locations and their centers vary within
+those balls.  The remaining part of $C$ is a compact open set without
+critical points, uniformly for these $D$.  It is a finite disjoint
+union of balls of the kind just described.  A finite cover of $Q$
+provides finitely many choices of $a,b$.  Choose $V$ small enough to
+make all corresponding character integrals vanish.  Summing the
+critical-ball integrals proves \eqref{th-stationary-formula}.
+
+For a product $K=\prod F_j$, the additive character and self-dual
+measure factor over $j$, as do the phase and the critical equations.
+A compactly supported function invariant under a fixed product
+lattice is a finite linear combination of products of characteristic
+functions of balls in the factors.  Apply the field result to each
+such product and use linearity and Fubini.  Enclose the projections
+of $Q$ in compact subsets of $F_j^\times$ and take the product of the
+resulting neighborhoods.  This proves the full assertion, with
+uniformity for all the stated amplitudes.
+\end{proof}
+
+\begin{remark}\label{th-uniformity-limit}
+The theorem gives a common neighborhood for the displayed fixed local
+data.  It does not give a neighborhood independent of $m$, $p$, the
+field, or the character conductor.  In particular the inverse Hessian
+contains $(m+1)^{-1}$, and the analytic square root used in
+Lemma~\ref{th-morse} depends on the valuation of $2$.  This dependence
+cannot be discarded when passing to a varying global family.
+The source's local theorem likewise quantifies its neighborhood after
+the local field, character, dimension, amplitude scale, and compact
+parameter set have been fixed.  Its later passage from these local
+identities to a uniform positive majorant requires a separate argument.
+\end{remark}
+
+\subsection{Finite cokernels and positivity of the local kernel}
+
+Let $R\subset K$ be either of the self-dual compact open orders above.
+For $Z\in M_n(R)\cap\operatorname{GL}_n(K)$, define
+\[
+ C_Z=R^n/ZR^n,\qquad e_Z=[e_n],\qquad
+ \lambda_Z([v])=e_n^tZ^{-1}v\pmod R\quad\text{in }K/R.
+\]
+For $n=0$ take $C_Z=0$, $e_Z=0$, and $\lambda_Z=0$.
+The functional $\lambda_Z$ is well-defined because replacing $v$ by
+$v+Zw$ adds $e_n^tw\in R$.  Call $(C_Z,e_Z,\lambda_Z)$ the marked
+finite module associated to $Z$.  An isomorphism of two such modules
+is an $R$-linear isomorphism carrying the marked element and the
+functional to their counterparts.
+
+\begin{lemma}\label{th-coker}
+The module $C_Z$ is finite, and
+\[
+ \#C_Z=|\det Z|_K^{-1}.
+\]
+These assertions do not require $R$ to be a principal ideal domain.
+\end{lemma}
+
+\begin{proof}
+The submodule $ZR^n$ is open and compact, since $Z$ is an invertible
+continuous linear map.  It is contained in $R^n$.  The quotient is
+therefore compact and discrete, hence finite.  All its cosets have
+volume $\operatorname{vol}(ZR^n)=|\det Z|_K$, while
+$\operatorname{vol}(R^n)=1$.
+\end{proof}
+
+Here is the precise counting mechanism for positivity.  Let $\mathcal W$
+be a finite set.  For each $w\in\mathcal W$, choose a finite family
+of marked finite $R$-modules $C_{w,q}$ and weights $a_{w,q}\in\mathbb C$.
+Put
+\begin{equation}\label{th-coker-kernel}
+ \mathcal K(w,w')=
+  \sum_{q,q'}a_{w,q}\overline{a_{w',q'}}
+       \#\operatorname{Iso}(C_{w,q},C_{w',q'}).
+\end{equation}
+\begin{lemma}\label{th-coker-gram}
+The matrix $\mathcal K$ is positive semidefinite.  More precisely, if
+$C_\alpha$ runs through the isomorphism classes occurring, and
+\[
+ B_w(\alpha)=\sum_q a_{w,q}
+                  \#\operatorname{Iso}(C_{w,q},C_\alpha),
+\]
+then
+\begin{equation}\label{th-coker-gram-formula}
+ \mathcal K(w,w')=
+ \sum_\alpha
+ \frac{B_w(\alpha)\overline{B_{w'}(\alpha)}}
+      {\#\operatorname{Aut}(C_\alpha)}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If two modules are not isomorphic, both sides of the corresponding
+identity for their isomorphism count are zero.  If they are isomorphic
+to $C_\alpha$, each set of isomorphisms to $C_\alpha$ is a torsor
+under the finite nonempty group $\operatorname{Aut}(C_\alpha)$.
+Consequently
+\[
+ \#\operatorname{Iso}(C,D)=
+ \sum_\alpha
+ \frac{\#\operatorname{Iso}(C,C_\alpha)
+       \#\operatorname{Iso}(D,C_\alpha)}
+      {\#\operatorname{Aut}(C_\alpha)}.
+\]
+Substitution gives \eqref{th-coker-gram-formula}.  Its quadratic form
+at coefficients $b_w$ is
+$\sum_\alpha|\sum_w \overline{b_w} B_w(\alpha)|^2/
+\#\operatorname{Aut}(C_\alpha)$, which is nonnegative.
+\end{proof}
+
+In the source, $w$ consists of positive block sizes $s_1,\ldots,s_l$
+and scalars $t_1,\ldots,t_l\in K^\times$.  The matrix $Z(w)$ is block
+diagonal with blocks $t_j$ times the reversing permutation matrix of
+size $s_j$.  The index $q$ ranges over the integral matrices in its
+specified lower- and upper-unipotent orbit, modulo integral
+unipotent changes.  The weight is
+$\psi(\sum x_{i+1,i}+\sum y_{i,i+1})$.
+For every finite collection of $w$, the source proves that only
+finitely many such cosets occur.  Once that finiteness and the
+invariance under the integral changes have been established, its
+local kernel is exactly \eqref{th-coker-kernel}.  Thus the positivity
+step is Lemma~\ref{th-coker-gram}, with no appeal to a global
+automorphic identity.
+
+There is also an immediate support restriction.  All matrices in
+the orbit of $Z(w)$ have determinant $\det Z(w)$, because the
+unipotent factors have determinant one.  By Lemma~\ref{th-coker},
+\begin{equation}\label{th-det-support}
+ \mathcal K(w,w')\ne0\quad\Longrightarrow\quad
+ |\det Z(w)|_K=|\det Z(w')|_K.
+\end{equation}
+The factor multiplying the kernel after adjoining a block of size
+$s$ is
+$|tt'|_K^{s(s-1)/2}$.  It is a product of a positive factor depending
+on $t$ and one depending on $t'$, so preserves positive
+semidefiniteness.  This establishes the positivity and determinant
+support portions of that construction.  The stronger support
+condition $t^{-1}-t'^{-1}\in R$ uses the additional averaging over
+successive coordinate functionals; it does not follow merely from
+\eqref{th-det-support}.
+
+\subsection{Finite Fourier averaging and the local limit}
+
+Two further steps of the local construction admit short proofs that
+do not require an estimate for an oscillatory integral.  For Hermitian
+matrices $M,N$, the notation $M\le N$ means that $N-M$ is positive
+semidefinite.
+
+\begin{lemma}\label{th-cut-contraction}
+Let $G$ and $G_c$ be Hermitian matrices on a finite index set, with
+$0\le G_c\le G$.  There are vectors $u_i$ in a finite-dimensional
+Hilbert space and a linear contraction $T$ such that
+\[
+ G_{ij}=\langle u_i,u_j\rangle,\qquad
+ (G_c)_{ij}=\langle Tu_i,Tu_j\rangle.
+\]
+\end{lemma}
+
+\begin{proof}
+Equip the vector space of coefficients with the positive semidefinite
+form $a^*Gb$ and quotient by its null space.  The form $a^*G_cb$
+descends to that quotient: a vector of zero $G$-norm has zero
+$G_c$-norm, and the Cauchy--Schwarz inequality for $G_c$ makes its
+pairing with every vector zero.  On the quotient the second form is
+$\langle a,Bb\rangle$ for a self-adjoint operator $0\le B\le I$.
+Take $T=B^{1/2}$ and let $u_i$ be the images of the coordinate vectors.
+The spectral theorem gives $\|T\|\le1$ and both stated identities.
+This also covers the zero-dimensional quotient.
+\end{proof}
+
+\begin{proposition}\label{th-fourier-average}
+Let $A$ be a finite nonempty set, let $B$ be a finite abelian group,
+and put $a=\#A$, $b=\#B$.  Let $I$ be a finite index set and
+$u_{\rho,t,i}$ vectors in a Hilbert space $\mathcal E$, indexed by
+$\rho\in A$, $t\in B$, and $i\in I$.  Suppose that
+\[
+ \langle u_{\rho,t,i},u_{\rho',t',j}\rangle=0
+ \quad\text{if }\rho\ne\rho'.
+\]
+For each character $\chi\in\widehat B$ choose numbers
+$\omega_\rho(\chi)$ of modulus one, and put
+\[
+ v_{\rho,\chi,i}=\frac1b\sum_{t\in B}
+             \overline{\chi(t)}u_{\rho,t,i},\qquad
+ v_{\chi,i}=\frac1a\sum_{\rho\in A}
+             \omega_\rho(\chi)v_{\rho,\chi,i},
+\]
+\[
+ \Theta_\chi(i,j)=\frac1a\sum_{\rho\in A}
+          \langle v_{\rho,\chi,i},v_{\rho,\chi,j}\rangle.
+\]
+If $T:\mathcal E\to\mathcal E$ is a linear contraction and
+$N_\chi(i,j)=a\langle Tv_{\chi,i},Tv_{\chi,j}\rangle$, then
+\begin{equation}\label{th-fourier-domination}
+ 0\le N_\chi\le\Theta_\chi,
+ \qquad
+ \sum_{\chi\in\widehat B}\Theta_\chi(i,j)
+ =\frac1{ab}\sum_{\rho\in A}\sum_{t\in B}
+       \langle u_{\rho,t,i},u_{\rho,t,j}\rangle.
+\end{equation}
+Consequently, if the matrix on the right is at most a fixed matrix
+$M$, then $\sum_\chi\Theta_\chi\le M$.
+\end{proposition}
+
+\begin{proof}
+For coefficients $c_i$, write
+$v_{\rho,\chi,c}=\sum_i c_i v_{\rho,\chi,i}$ and similarly
+for $v_{\chi,c}$.  Orthogonality between distinct $\rho$ gives
+\[
+ \sum_{i,j}\overline{c_i}c_j\Theta_\chi(i,j)
+ =\frac1a\sum_\rho\|v_{\rho,\chi,c}\|^2
+ =a\|v_{\chi,c}\|^2
+ \ge a\|Tv_{\chi,c}\|^2.
+\]
+This proves the first assertion, including positivity.  Character
+orthogonality gives
+\[
+ \sum_{\chi\in\widehat B}\chi(t)\overline{\chi(t')}
+ =b\,1_{t=t'}.
+\]
+This follows either by decomposing $B$ into cyclic
+groups and summing geometric series, or by translating this
+character sum.  Expanding the inner products and applying that
+identity proves the second assertion.  The last assertion follows
+directly by comparison of quadratic forms.
+\end{proof}
+
+Here is the exact role of this proposition in the local induction.
+One chooses additive lattices
+$L_1\subset R\subset L_2$ and representatives $A$ of $L_2/R$
+and $B$ of $R/L_1$.  The latter quotient is the group in
+Proposition~\ref{th-fourier-average}; representatives of $A$ are
+only a finite indexing set.  Each shift $\sigma=\rho+t$ changes
+the small parameter $\tau$ to $\tau_\sigma$ by
+$\tau_\sigma^{-1}=\tau^{-1}+\sigma$.
+The source's unrestricted orbital sum supplies a Gram matrix on the
+indices $(\rho,t,i)$.  Restricting the orbital sum to a subset
+supplies a smaller positive semidefinite matrix, so
+Lemma~\ref{th-cut-contraction} supplies $T$.
+The support condition in the preceding paragraph gives the required
+orthogonality when $\rho\ne\rho'$.
+Self-duality identifies $\widehat{R/L_1}$ with $L_1^\perp/R$.
+The phases $\omega_\rho$ account for the representatives of
+$L_2/R$.  The crucial remaining identity says that the matrix
+$a\langle Tv_{\chi,i},Tv_{\chi,j}\rangle$ equals the desired
+kernel after adjoining the larger block, for parameters in the
+chosen compact annulus.  Once that identity and the bound for the
+averaged unrestricted diagonal have been established,
+\eqref{th-fourier-domination} proves both the positive majorant and
+its total-mass bound.  Thus the averaging inequality itself adds
+neither an unspecified constant nor a loss depending on $a$ or $b$.
+
+The following compactness argument removes the annulus.  A function
+on $K$ is called $R$-periodic if it is constant on every additive
+coset of $R$.
+
+\begin{proposition}\label{th-local-limit}
+Let $L_c\subset K$ be a compact open additive subgroup containing
+$R$, and let $I$ be a finite index set.  Let $M$ be a fixed positive
+semidefinite matrix on $I$.  Suppose that $N(t)$ is a Hermitian
+matrix for every $t\in K^\times$, with $N(t)=0$ outside $L_c$.
+Let $\Omega_j$ be increasing subsets of $K^\times$ whose union is
+$K^\times$.  Suppose that for every $j$ there is an $R$-periodic
+matrix-valued function $\Theta_j$ such that
+\[
+ \Theta_j(x)\ge0,\qquad
+ \Theta_j(x)=0\ (x\notin L_c),\qquad
+ \sum_{x\in K/R}\Theta_j(x)\le M,
+\]
+and $\Theta_j(t)\ge N(t)$ for $t\in\Omega_j$.
+Then there is an $R$-periodic function $\Theta$ with the same
+positivity, support, and total-mass properties and
+$\Theta(t)\ge N(t)$ for every $t\in K^\times$.
+Any fixed collection of zero matrix entries shared by all
+$\Theta_j(x)$ is shared by $\Theta(x)$.  If $L_c=R$, then
+\begin{equation}\label{th-unit-head-bound}
+ 0\le\Theta(x)\le1_R(x)M\qquad(x\in K).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The quotient $L_c/R$ is compact and discrete, hence finite.  Thus
+the matrices $\Theta_j$ are described by a fixed finite number of
+complex entries.  For every coset $x$ one has
+$0\le\Theta_j(x)\le M$, because all other summands are positive
+semidefinite.  The $2$ by $2$ principal minors therefore give
+\[
+ |\Theta_j(x)_{il}|^2
+ \le\Theta_j(x)_{ii}\Theta_j(x)_{ll}
+ \le M_{ii}M_{ll}.
+\]
+A subsequence converges in this finite-dimensional space.  Define
+$\Theta$ by its limits on these cosets and set it to zero outside
+$L_c$.  The cone of positive semidefinite matrices is closed:
+for every vector $c$, the inequality $c^*Ac\ge0$ passes to an
+entrywise limit.  This proves positivity and the total-mass bound,
+since the latter is a finite sum.  For fixed $t\in K^\times$,
+one has $t\in\Omega_j$ for all sufficiently large $j$, so the
+same closedness argument gives $\Theta(t)\ge N(t)$.
+Zero entries also pass to the limit.  Finally, if $L_c=R$, the
+sum over $K/R$ has just one possibly nonzero term, proving
+\eqref{th-unit-head-bound}.
+\end{proof}
+
+For the present product of local fields one may take $\Omega_j$ to
+be the product of the annuli on which each component valuation lies
+between $-j$ and $j$.  These sets are compact, open, exhaust the
+units of $K$, and are stable under multiplication by any root of
+unity.  If the source's additional support assertion
+\[
+ N(t)_{hh'}\ne0\quad\Longrightarrow\quad
+       (\det Z(h))t\in R
+\]
+has been proved, a common permissible subgroup is the compact open
+$R$-module
+$L_c=R+\sum_h(\det Z(h))^{-1}R$, where $h$ ranges over the fixed
+finite family of previous block configurations and $Z(h)$ is their
+block reversal matrix defined above.  If all $Z(h)$ and their inverses have
+entries in $R$, then each determinant is a unit of $R$, so
+$L_c=R$.  In this case the upper bound in
+\eqref{th-unit-head-bound} is precisely the final extra condition
+in the local majorant statement, after substituting its matrix
+$M$.  No rate of convergence, uniform stationary-phase radius,
+or infinite-dimensional compactness theorem is needed for this
+last passage.  The subsequent local reconstruction proves that
+the truncated orbital Gram matrix equals the integral of the
+larger-block kernel.  It establishes the actual orbital germ
+formula and the cancellation between distinct stationary points.
+
+\subsection{Reproducing constants and convolution on a quotient}
+
+The possible scalar in the local reproducing formula can be determined
+without evaluating a quotient integral point by point.  We state the
+needed functional-analytic argument explicitly.
+
+Let $G$ be a second countable unimodular locally compact group with a
+fixed Haar measure.  Let $\pi$ be a unitary representation on a Hilbert
+space $V$, and suppose $d_\pi>0$ satisfies the formal-degree identity
+\begin{equation}\label{th-schur}
+ \int_G\langle a,\pi(g)b\rangle
+       \overline{\langle a',\pi(g)b'\rangle}\,dg
+   =d_\pi^{-1}\langle a,a'\rangle\langle b',b\rangle
+\end{equation}
+for all vectors.  The existence of this identity for an irreducible
+discrete series is a representation-theoretic input; it is not being
+inferred from unitarity alone.  Choose $w\in V$ of norm one and put
+\[
+ p(g)=d_\pi\overline{\langle w,\pi(g)w\rangle}.
+\]
+In addition to \eqref{th-schur}, assume $p\in L^1(G)$.
+
+\begin{lemma}\label{th-projection}
+For convolution $(p*q)(x)=\int_Gp(g)q(g^{-1}x)\,dg$ one has
+$p*p=p$ and $p^*(g)=\overline{p(g^{-1})}=p(g)$.
+In any strongly continuous unitary representation $R$ of $G$, the
+bounded operator
+\[
+ R(p)v=\int_Gp(g)R(g)v\,dg
+\]
+is an orthogonal projection.  In particular, if $v\ne0$ and
+$R(p)v=cv$ with $c\ne0$, then $c=1$.
+\end{lemma}
+
+\begin{proof}
+The coefficient belongs to $L^2$ by \eqref{th-schur}, so the
+convolution integrand is absolutely integrable by Cauchy--Schwarz.
+Unitarity and \eqref{th-schur} give
+\begin{align*}
+ (p*p)(x)
+ &=d_\pi^2\int_G
+    \overline{\langle w,\pi(g)w\rangle}
+    \langle\pi(x)w,\pi(g)w\rangle\,dg\\
+ &=d_\pi\langle\pi(x)w,w\rangle=p(x).
+\end{align*}
+The identity $p^*=p$ follows directly from unitarity.
+The integral defining $R(p)v$ exists in norm and
+$\|R(p)\|\le\|p\|_1$.  Fubini is justified by the majorant
+$|p(g)q(h)|\|v\|$, and gives $R(p)R(q)=R(p*q)$.
+Invariance under inversion gives $R(p)^*=R(p^*)$.
+Thus $R(p)$ is self-adjoint and idempotent, hence an orthogonal
+projection.  Applying idempotence to $v$ gives $c^2v=cv$;
+$c\ne0$ and $v\ne0$ imply $c=1$.
+\end{proof}
+
+For application to the source, let $S=N\rtimes H$ be the local
+stabilizer, with $N$ unipotent and $H$ compact.  Its action on $N$
+preserves Haar measure: its modular factor is a continuous
+homomorphism from the compact group $H$ to $\mathbb R_{>0}$ and
+therefore is one.  Thus $S$ is unimodular.  Let $\rho$ be its strongly
+continuous unitary representation, formed from the specified character of $N$ and
+the compact representation of $H$.  The induced Hilbert space is
+\[
+ \mathcal I=\left\{F:G\to V_\rho:
+ F(sg)=\rho(s)F(g),\quad
+ \int_{S\backslash G}\|F(g)\|^2\,d\bar g<\infty\right\},
+\]
+where the functions are measurable and functions equal almost
+everywhere are identified.  Right
+translation $R(g)F(x)=F(xg)$ is unitary, by the quotient integration
+formula.  Lemma~\ref{th-projection} applies to this representation.
+It proves that the nonzero scalar in a reproducing formula for a
+nonzero $F\in\mathcal I$ must be one.
+
+The nonvanishing, membership in $\mathcal I$, and the $L^1$ condition
+are substantive hypotheses.  The last does not follow from square
+integrability of discrete-series coefficients.  In the source it is
+obtained from a weighted coefficient estimate under a large
+Harish--Chandra parameter gap.  The argument above replaces the
+subsequent scalar-normalization argument, not that weighted estimate.
+
+\subsection{Unfolding the Gram matrix}
+
+Let $\Gamma\subset G$ be a discrete subgroup, and let
+$\Gamma_u\subset\Gamma$ be subgroups.  Let $C_u$ be finite-dimensional
+Hilbert spaces and let $\phi_{u,v}(g)$ depend linearly on $v\in C_u$,
+with $\phi_{u,v}$ left $\Gamma_u$-invariant.  Define
+\[
+ P_uv(g)=\sum_{\delta\in\Gamma_u\backslash\Gamma}
+                         \phi_{u,v}(\delta g).
+\]
+Assume the series converge absolutely almost everywhere, give
+$L^2(\Gamma\backslash G)$ functions, and that for every pair of
+vectors from chosen bases,
+\begin{equation}\label{th-unfold-integrable}
+ \int_{\Gamma_u\backslash G}|\phi_{u,v}(g)|
+     \sum_{\delta\in\Gamma_{u'}\backslash\Gamma}
+                  |\phi_{u',w}(\delta g)|\,d\bar g<\infty.
+\end{equation}
+
+\begin{lemma}\label{th-unfold}
+Choose representatives $\eta$ for
+$\Gamma_{u'}\backslash\Gamma/\Gamma_u$, and put
+$J_\eta=\Gamma_u\cap\eta^{-1}\Gamma_{u'}\eta$.
+With compatible quotient measures,
+\begin{equation}\label{th-unfold-formula}
+ \langle P_uv,P_{u'}w\rangle
+ =\sum_\eta\int_{J_\eta\backslash G}
+       \overline{\phi_{u,v}(g)}\phi_{u',w}(\eta g)\,d\bar g.
+\end{equation}
+The right side is absolutely convergent.
+\end{lemma}
+
+\begin{proof}
+Expand the first Poincar\'e series and integrate on a measurable
+fundamental domain for $\Gamma$.  Translating that domain by the
+representatives of $\Gamma_u\backslash\Gamma$ tiles a fundamental
+domain for $\Gamma_u$.  Since $P_{u'}w$ is left $\Gamma$-invariant,
+the result is
+$\int_{\Gamma_u\backslash G}
+\overline{\phi_{u,v}(g)}P_{u'}w(g)\,d\bar g$.
+For each double coset $\Gamma_{u'}\eta\Gamma_u$, its left cosets
+are $\Gamma_{u'}\eta\alpha$, with
+$\alpha\in J_\eta\backslash\Gamma_u$.
+Expanding this part of the second series and unfolding once more
+gives the integral over $J_\eta\backslash G$ in
+\eqref{th-unfold-formula}.  Tonelli applied to the absolute values,
+using \eqref{th-unfold-integrable}, justifies both rearrangements
+and proves the asserted convergence.  Finite-dimensionality extends
+the basis assumption to all vectors.
+\end{proof}
+
+By \eqref{th-normalized-K}, division of each term by $\sqrt{c_uc_{u'}}$
+gives the corresponding expansion of $K_{uu'}$.  This explains which
+kernel is being bounded: it is the Gram operator of the actual
+Poincar\'e maps, rather than an unrelated matrix with a similar name.
+Further decomposition of the double cosets into flags, lattices,
+and local orbits, and the estimates for their absolute sums, remain
+arithmetic work.  The hypotheses in Lemma~\ref{th-unfold} must be
+proved for the proposed seeds; they are not consequences of the
+formal definition of a Poincar\'e series.
+
+\subsection{From the orbital estimates to the pairwise bound}
+
+The last combination of the orbital estimates admits a short proof.
+We give it because it specifies exactly what remains to be estimated.
+Let $a_t$ be an absolutely summable family in a Hilbert space
+$\mathcal A$, and let $v_t$ be an absolutely summable family in a
+Hilbert space $\mathcal V$.  Let $r(t)$ be a row label, and let
+$i(r)$ belong to a finite set $I$.  Suppose that for each of two
+disjoint sets of terms $S=\mathcal G,\mathcal N$,
+\begin{equation}\label{th-row-norm}
+ \left\|\sum_{t\in S}a_t\right\|^2
+  =\operatorname{Re}\sum_{i,j\in I}\Gamma_{ij}
+       \left\langle\sum_{t\in S:i(r(t))=i}v_t,
+                       \sum_{t\in S:i(r(t))=j}v_t\right\rangle.
+\end{equation}
+Assume $P\gamma I-\Gamma$ is positive semidefinite, with
+$P\ge0$, $\gamma>0$, and assume
+\begin{equation}\label{th-row-orth}
+ \langle v_t,v_{t'}\rangle=0
+ \quad\text{if }i(r(t))=i(r(t'))\text{ and }r(t)\ne r(t').
+\end{equation}
+In the application, $\mathcal A$ is a space of Hilbert--Schmidt
+operators.  The sets $\mathcal G$ and $\mathcal N$ consist of the
+generic and nongeneric terms with nonzero Gram determinant.
+
+For equal-row pairs of nonzero-determinant terms, suppose an integer
+$s(t,t')\ge1$ and a scalar/non-scalar distinction at $s=1$ are given.
+For a set $\mathcal Q$ of ordered pairs define
+\[
+ E(\mathcal Q)=\gamma\sum_{(t,t')\in\mathcal Q}
+                    \operatorname{Re}\langle v_t,v_{t'}\rangle,
+ \qquad
+ E_{\mathrm{abs}}(\mathcal Q)=\gamma\sum_{(t,t')\in\mathcal Q}
+                    |\langle v_t,v_{t'}\rangle|.
+\]
+All these sums converge absolutely.  Put $\mathcal B$ for the
+equal-row pairs with $s\ge2$, $\mathcal C$ for the generic
+equal-row pairs with $s=1$ that are not scalar, $\mathcal M$ for
+the scalar generic pairs with $s=1$, and $\mathcal U$ for the
+nongeneric pairs with $s=1$.
+
+\begin{proposition}\label{th-pair-bound}
+Let $d\ge0$ and $A,\epsilon,\epsilon'\ge0$.  Suppose
+\begin{equation}\label{th-four-estimates}
+ E_{\mathrm{abs}}(\mathcal B)\le\epsilon d,\quad
+ E_{\mathrm{abs}}(\mathcal C)\le\epsilon d,\quad
+ E(\mathcal M)\le A d,\quad E(\mathcal U)\le\epsilon'd.
+\end{equation}
+Then
+\begin{equation}\label{th-pair-output}
+ \left\|\sum_{t\in\mathcal G}a_t+
+             \sum_{t\in\mathcal N}a_t\right\|^2
+ \le P\left(\sqrt{A+2\epsilon}
+                  +\sqrt{\epsilon+\epsilon'}\right)^2d.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The positive semidefinite inequality and
+\eqref{th-row-norm} bound the squared norm for a set $S$ by
+\[
+ P\gamma\sum_{i\in I}
+       \left\|\sum_{t\in S:i(r(t))=i}v_t\right\|^2.
+\]
+Expand the squares.  Equation \eqref{th-row-orth} removes pairs
+with different row labels.  For $S=\mathcal G$, the remaining
+pairs partition into $s\ge2$, scalar $s=1$, and nonscalar $s=1$;
+for $S=\mathcal N$, they partition into $s\ge2$ and $s=1$.
+Using \eqref{th-four-estimates} gives bounds
+$P(A+2\epsilon)d$ and $P(\epsilon+\epsilon')d$ respectively.
+The triangle inequality gives \eqref{th-pair-output}.  Absolute
+summability justifies every expansion and restriction of the pair sums.
+\end{proof}
+
+\begin{lemma}\label{th-small-errors}
+If $b\ge16$ and
+\[
+ 0\le P\le e^{6b^{-7}},\quad
+ 0\le A\le(1+b^{-7})e^{b^{-14}},\quad
+ 0\le\epsilon,\epsilon'\le b^{-14},
+\]
+then the multiplier in \eqref{th-pair-output} is at most
+\begin{equation}\label{th-sharper-error}
+ 1+14b^{-7}\le1+b^{-6}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write $u=b^{-7}\le1/1000$.  The elementary bound
+$e^x\le1+x+2x^2$ for $0\le x\le1/2$ follows from
+$e^x(1-x)\le1$ and $1/(1-x)\le1+x+2x^2$.
+It gives $P\le1+7u$ and $e^{u^2}\le1+2u^2$.
+Consequently
+\[
+ A+2\epsilon\le1+u+5u^2\le1+2u,
+ \qquad P(A+2\epsilon)\le1+10u.
+\]
+Also $P(\epsilon+\epsilon')\le\tfrac94u^2$.
+The sum of the two square roots is therefore at most
+$1+5u+\tfrac32u=1+\tfrac{13}{2}u$.  Squaring and using
+$u\le1/1000$ bounds it by $1+14u$.
+Finally $14u\le bu=b^{-6}$.
+\end{proof}
+
+The slightly stronger bound $14b^{-7}$ is available without changing
+the orbital estimates.  It improves the last numerical combination;
+it does not eliminate any of the four estimates in
+\eqref{th-four-estimates}.
+
+Here is a second useful simplification of the numerical part.  Suppose
+local quantities $q_{\mathfrak p}$ satisfy
+$q_{\mathfrak p}\ge p$ at a place above the rational prime $p$, and
+there are at most $f$ such places above each $p$.  For $a>1$,
+\begin{equation}\label{th-density-bound}
+ \prod_{\mathfrak p}\exp(4q_{\mathfrak p}^{-a})
+ \le\exp\left(4f\,2^{-a}\left(1+\frac2{a-1}\right)\right).
+\end{equation}
+Indeed
+$\sum_{\mathfrak p}q_{\mathfrak p}^{-a}
+\le f\sum_{n\ge2}n^{-a}
+\le f(2^{-a}+\int_2^\infty t^{-a}\,dt)$.
+This also proves convergence, and applies to every finite subproduct.
+The source uses $a=k-2r-2\ge2$ and the weaker upper bound
+$\exp(12f2^{-a})$.  Thus its local-density accumulation does not
+conceal a constant depending on the number of places.
+
+Likewise, for $q\ge3$,
+\[
+ \prod_{j=1}^k(1-q^{-j})^{-1}
+ \le\exp\left(\frac{q}{(q-1)^2}\right)
+ \le\exp\left(\frac9{4q}\right).
+\]
+Use $-\log(1-z)\le z/(1-z)$ and sum the geometric series.
+If two split primes have sizes $g_1,g_2\ge(kb)^8$ and each has $f$
+places, the product of these bounds is at most
+$\exp(9f/(2(kb)^8))$.  This is smaller than the coarser
+$\exp(6b^{-7})$ used in Lemma~\ref{th-small-errors} when
+$f\le k$, $k\ge1$, and $b\ge1$.
+For clarity, the actual prefactor $P$ in the source's row estimate
+is the different product
+\[
+ P=\prod_{v\mid g_1g_2}(1+3/q_v)
+   =\bigl((1+3/g_1)(1+3/g_2)\bigr)^f.
+\]
+The equality uses complete splitting at these two rational primes.
+It satisfies the required bound directly:
+\[
+ P\le\exp(3f/g_1+3f/g_2)
+   \le\exp\bigl(6f/(kb)^8\bigr)
+   \le\exp(6b^{-7}).
+\]
+Thus the separate Euler-product estimate above is not needed to
+identify this prefactor.
+
+\subsection{The remaining global statement, with its scale visible}
+
+We first specify all parameters in the following conditional numerical
+combination.  The integers $k,f\ge1$ and $r\ge0$ have the following
+meaning in the source.  The CM extension is $E/F$, with $F$ totally
+real of degree $f$ over $\mathbb Q$.  The relevant Hermitian space has
+dimension $k+2r+1$ over $E$ and signature $(k+r,r+1)$ at each real
+place of $F$.  The integer $r$ is the length of the isotropic flag,
+and the compact stabilizer has dimension $k$ in its defining
+representation.  The number of successive lifts is $2r+2$.  The
+positive real number $b$ is the height scale for the parameters of
+the representations; in the growing family it is $\exp(x^\varepsilon)$,
+where $x>1$ tends to infinity and $\varepsilon>0$ is fixed.
+
+The real numbers $c_5>0$ and $C_n\ge0$ are respectively the decay
+constant in the large-corank and nonscalar bounds and the growth
+constant in the nongeneric bound.  The concrete source takes
+$c_5=1/3$ and chooses $C_n$ after the fixed auxiliary constants,
+independently of the subsequent growing parameters.  The positive
+real number $C_\Gamma$ is chosen after the constants in the diagonal
+estimates, and
+\[
+ \Gamma=\exp\bigl(C_\Gamma(2r+2)^5f\log b\bigr).
+\]
+The real number $C_0\ge1$ measures the assumed comparison between
+the dimensions $d_u$ and $D_*/\Gamma^2$: the source requires
+$C_0^{-1}\le d_u\Gamma^2/D_*\le C_0$ for every $u$.
+Only its upper bound enters the diagonal estimate below.
+
+Here $D_*>0$ is the proposed main term for the dimension of the
+ambient automorphic space.  More precisely, write $G$ for the unitary
+group just specified, $d_\infty>0$ for the product of the
+archimedean formal degrees with the chosen Haar measures, and
+$e_{\mathrm{fin}}$ for the finite-adelic convolution idempotent
+specifying the finite-level condition.  Its normalization is
+\[
+ D_*=d_\infty\,
+ \operatorname{vol}\bigl(G(F)\backslash G(\mathbb A_F)\bigr)
+ \operatorname{Re} e_{\mathrm{fin}}(1).
+\]
+Both the volume and the idempotent use the measures fixed in the
+automorphic construction.  This definition does not itself assert
+an asymptotic formula for the actual dimension.  In the numerical
+argument that follows, $k,f,r,b,c_5,C_n,C_\Gamma,C_0,D_*$ are explicit
+input numbers with the domains just stated and the displayed
+inequalities; their realization by the particular global family
+remains a separate assertion.
+
+For distinct indices $u,u'$, put
+$d=d_ud_{u'}/D_*$, where $d_u=\dim C_u$ and $D_*>0$.
+The actual four estimates in the source have the following scales:
+\begin{align}\label{th-global-scales}
+ \epsilon&=\exp(-c_5kf\log k),\notag\\
+ \epsilon'&=2^{-(k-2r-5)}
+       \exp\bigl(C_n(2r+2)^5f\log b\bigr),\notag\\
+ A&=(1+\delta)e_1,\qquad
+ 0\le\delta\le b^{-7},\qquad
+ 1\le e_1\le\exp(12f2^{-(k-2r-2)}).
+\end{align}
+The dimensional restrictions include
+\begin{equation}\label{th-global-parameters}
+ \begin{gathered}
+ b\ge16,\quad k\ge32,\quad f\le k,\quad 4r+12\le k,
+ \quad70\log b\le k,\\
+ 5c_5f\log k\ge1,\qquad
+ 8C_n(2r+2)^5f\log b\le k.
+ \end{gathered}
+\end{equation}
+They imply $\epsilon,\epsilon'\le e^{-k/5}\le b^{-14}$ and
+$12f2^{-(k-2r-2)}\le e^{-k/5}$.  To verify the latter bound, use
+$k-2r-2\ge k/2+4$, so that the first expression is at most
+$f2^{-k/2}\le k2^{-k/2}\le e^{-k/5}$ for $k\ge32$.
+The last elementary inequality follows because
+$\log k\le k((\log2)/2-1/5)$ at $k=32$ and the right side has
+larger derivative thereafter.  For $\epsilon'$, use
+$k-2r-5\ge k/2$ and
+$C_n(2r+2)^5f\log b\le k/8$; then
+$-(k/2)\log2+k/8\le-k/5$.
+
+Assuming the actual orbital decomposition satisfies
+\eqref{th-row-norm}--\eqref{th-four-estimates}, and assuming the
+degenerate and identity terms vanish for $u\ne u'$, the already
+proved proposition and lemma give
+\begin{equation}\label{th-off-final}
+ \|K_{uu'}\|_{\mathrm{HS}}^2
+ \le(1+14b^{-7})\frac{d_ud_{u'}}{D_*}.
+\end{equation}
+The source states the weaker $(1+b^{-6})$ version.
+
+On the diagonal write $K_{uu}=I+Z_u+R_u$, where $Z_u$ is the sum
+of the nonidentity terms with zero Gram determinant.  The separate
+estimates required there are
+\begin{equation}\label{th-diag-input}
+ \|Z_u\|_{\mathrm{HS}}^2\le d_u e^{-kf\log k},\qquad
+ \|R_u\|_{\mathrm{HS}}^2\le\Gamma\frac{d_u^2}{D_*},
+ \qquad \frac{d_u\Gamma^2}{D_*}\le C_0.
+\end{equation}
+They imply the slightly sharper diagonal defect
+\begin{equation}\label{th-diag-final}
+ \|K_{uu}-I\|_{\mathrm{HS}}^2
+ \le d_u\left(e^{-kf\log k/2}+\sqrt{C_0/\Gamma}\right)^2.
+\end{equation}
+This is just the triangle inequality together with the last
+inequality in \eqref{th-diag-input}.  All constants and their roles
+are explicit at this stage.
+
+The Hilbert--Schmidt norm of a matrix representing a linear map in
+orthonormal bases is the operator's Hilbert--Schmidt norm.
+Consequently, if $M_u$ is the orthonormal matrix of $P_u$ and
+$A_u=c_u^{-1/2}M_u$, then
+\[
+ A_u^*A_{u'}=K_{uu'}.
+\]
+Equations \eqref{th-off-final} and \eqref{th-diag-final} therefore
+give exactly the pairwise and diagonal estimates needed by the
+previous slope comparison.  Compression by an isometric inclusion
+of the ramified subspace is handled by the compression lemma proved
+there.  This last identification requires no additional estimate.
+
+\paragraph{Local statements established in the following sections.}
+The local reconstruction proves the
+finiteness and representative independence of the actual local
+sums, their local constancy uniformly against all comparison
+configurations, and the strong inverse-parameter support.  It also
+proves the root-fiber change of variables and the cancellation of
+terms from distinct stationary points.  The fixed-initial-block
+construction and the Hessenberg change of variables establish the
+actual kernel germ in Theorem~\ref{ga-actual-germ}, hence the exact
+truncated orbital identity.  The finite character identity and its
+averaged diagonal bound then complete the positive-majorant
+induction in Theorem~\ref{tp-majorant}.
+Propositions~\ref{th-fourier-average} and \ref{th-local-limit}
+supply its averaging and limiting steps with the asserted constants.
+
+\paragraph{What has not yet been proved in this reconstruction.}
+The following are concrete remaining assertions about the proposed
+automorphic family, rather than consequences of the local lemmas.
+First, the actual seeds must have the weighted integrability and
+nonvanishing properties used above; the source obtains these from
+discrete-series and Bessel-model theorems with large parameter gaps.
+Second, the global recursion after Poisson summation must
+bound the scalar generic pair sum by $(1+\delta)e_1d$ with
+$\delta\le b^{-7}$.  Its arithmetic inputs include the lattice
+indices and the sums over the dual lattices, with constants uniform
+in the stated growing parameters.  Third, the larger-corank,
+nonscalar, and nongeneric sums in \eqref{th-global-scales}, the
+degenerate diagonal bound in \eqref{th-diag-input}, and the required
+ambient-dimension estimate must be established for these particular
+maps.  Positivity and stationary phase alone imply none of those
+global estimates.
+
+No counterexample satisfying all the actual hypotheses of the local
+results proved here has been found.  This is not an assertion of an
+exhaustive audit of the theta energy recursion.  The source trace
+accompanying this section distinguishes the statements and proofs
+read in full from the still unresolved arithmetic steps.
+
+\subsection{Exact small controls and excluded shortcuts}
+
+The accompanying program uses only integer arithmetic and reduction
+modulo cyclotomic polynomials.  For $a=p^e$, $z=1$, and
+$L=\mathbb Z_p^m$, it checks the finite sums
+\[
+ G_{p,m,e}=\sum_{x\in(\mathbb Z/p^e\mathbb Z)^m}
+ \exp\left(\frac{2\pi i}{p^e}
+       \left(\sum_i x_i^2+\sum_{i<j}x_ix_j\right)\right).
+\]
+The Gaussian lemma predicts
+$|G_{p,m,e}|^2=p^{em+v_p(m+1)}$ when the admissibility condition
+holds.  The checked cases are
+$(p,m,e)=(2,1,2),(2,3,3),(3,2,2),(3,3,1),(5,2,1),(5,4,2)$.
+The checks include residue characteristics dividing both $2$ and
+$m+1$.  It also verifies the full stationary phase identity for
+$m=1$, $D=1$, and amplitude $1_{\mathbb Z_p^\times}$ at
+$(p,e)=(3,2),(3,3),(5,2),(2,8)$, using critical balls of radius
+$p^{-1}$ for odd $p$ and $2^{-3}$ for $p=2$.
+
+Two exact failures explain hypotheses that must be retained.
+For $(p,m,e)=(2,3,1)$ one has $G_{2,3,1}=-4$, so the normalized
+squared integral is $1/4$, whereas the determinant expression
+without admissibility would be $1/2$.  The dual quadratic form is
+not trivial on $L^\perp$ in this example.  This is a counterexample
+to dropping \eqref{th-gauss-admissible}, not to
+Lemma~\ref{th-gaussian} or to the source's corresponding statement.
+For the split order \eqref{th-split-order}, with $F=\mathbb Q_p$
+and odd $p$, the integral of $\psi_R(x^2,y^2)$ over
+$\mathbb Z_p^2$ is $1/p$ for product Haar measure and $1$ for the
+correct self-dual measure.  Thus the order's factor $p$ cannot be
+omitted.  Both values are checked exactly for $p=3,5$.
+
+Finally, a degenerate Hessian really is excluded by characteristic
+zero, not by a condition on residue characteristic.  Over a field
+of characteristic $p$, the same phase at $m=p-1$ has Hessian
+determinant zero at its critical point.  The Gaussian argument then
+does not apply.  The actual source assumes that every positive
+integer is invertible in the local algebra, so this example does
+not satisfy its hypotheses.
+
+
+

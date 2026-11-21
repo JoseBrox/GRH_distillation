@@ -1,0 +1,116 @@
+\section{The numerical balance required of the arithmetic construction}
+\label{sec:numerical}
+
+The following scalar implication records why a number of stages of
+order $\sqrt{x}$ is appropriate. It is useful independently of the
+particular construction of the parameters. All its inequalities are
+assumptions; proving that the required arithmetic objects supply
+them is a separate task.
+
+
+
+\begin{proposition}\label{prop:size}
+Let $x,\varepsilon,C,n,n_T,n_2,m,b,k,A,E,G$ be real numbers satisfying
+\[
+ x\ge3,\qquad \varepsilon>0,\qquad C\ge0,\qquad n>0,\qquad b>0,
+ \qquad 0\le A\le2xb,
+\]
+\[
+ n_T\ge\frac n2x^{-\varepsilon/8},\qquad
+ x^{-\varepsilon}\le\frac{n_2}{n}\le1,\qquad
+ x^{1/2-\varepsilon}\le m\le x^{1/2+\varepsilon/2},
+\]
+\[
+ xm\le k\le n^2x^{1/2-\varepsilon},\qquad
+ x^{3\varepsilon/8}\ge26.
+\]
+Suppose also that
+\begin{align*}
+E\le x^{C\varepsilon}\biggl[
+&n_TA\left(1+\frac{m^2}{k}\right)\\
+&+m\left(2nmbx^\varepsilon+
+ \frac{n_2kbx^\varepsilon}{n^2x^{-\varepsilon}}\right)\biggr]
+\end{align*}
+and
+\[
+ n_Tmb\frac{n_2}{2n}\bigl(G-4x^{1/2+\varepsilon}\bigr)
+       \le E+\frac{2n_Tmb}{x}.
+\]
+Then $G\le x^{1/2+(C+3)\varepsilon}$.
+\end{proposition}
+\begin{proof}
+Set $Q=n_Tmb>0$, $d=n_2/n>0$, and $Y=x^{1/2+13\varepsilon/8}$. Dividing the expression in square brackets by $Q$ gives exactly
+\[
+ \frac{A}{mb}+\frac{Am}{kb}
+ +\frac{2nmx^\varepsilon}{n_T}
+ +\frac{n_2kx^{2\varepsilon}}{n^2n_T}.
+\]
+The respective bounds are
+\begin{align*}
+ \frac{A}{mb}&\le\frac{2x}{m}\le2x^{1/2+\varepsilon},\\
+ \frac{Am}{kb}&\le\frac{2xm}{k}\le2,\\
+ \frac{2nmx^\varepsilon}{n_T}&\le4mx^{9\varepsilon/8}
+                  \le4x^{1/2+13\varepsilon/8},\\
+ \frac{n_2kx^{2\varepsilon}}{n^2n_T}
+       &\le\frac{2k}{n^2}x^{17\varepsilon/8}
+                  \le2x^{1/2+9\varepsilon/8}.
+\end{align*}
+Each displayed power is at most $Y$, and $Y\ge1$. Hence $E/Q\le10x^{C\varepsilon}Y$. The second assumed inequality implies
+\[
+ d\bigl(G-4x^{1/2+\varepsilon}\bigr)
+       \le 2E/Q+4/x
+       \le22x^{C\varepsilon}Y,
+\]
+because $4/x\le4/3\le2x^{C\varepsilon}Y$. Dividing by $d$ and using $d^{-1}\le x^\varepsilon$ gives
+\begin{align*}
+ G&\le4x^{1/2+\varepsilon}
+           +22x^{1/2+(C+21/8)\varepsilon}\\
+  &\le26x^{1/2+(C+21/8)\varepsilon}
+   \le x^{1/2+(C+3)\varepsilon}.
+\end{align*}
+The last step is precisely $26\le x^{3\varepsilon/8}$.
+\end{proof}
+
+
+\begin{corollary}\label{cor:scalar-construction}
+Fix $b_0>1$ and a real function $H$ of the form in
+Lemma~\ref{lem:positive-family}. Suppose there is $C\ge0$ such that
+for every sufficiently small $\varepsilon>0$ and arbitrarily large
+$Y$, the hypotheses of Proposition~\ref{prop:size} can be satisfied
+at every $x\in[Y,Y^{b_0}]$, with $G=H(x)$ and with that same $C$.
+Then none of the $L$-functions occurring in $H$ has a zero with
+real part greater than $1/2$.
+\end{corollary}
+
+\begin{proof}
+For any $\alpha>0$, choose $\varepsilon>0$ in the permitted range
+with $(C+3)\varepsilon<\alpha$. Proposition~\ref{prop:size} gives
+$H(x)\le x^{1/2+\alpha}$ on the corresponding arbitrarily large
+intervals. The proof of Theorem~\ref{thm:interval-grh} applies to
+this fixed positive character combination.
+\end{proof}
+
+This reduction does not permit $C$ to grow like
+$\varepsilon^{-1}$: the exponent $(C+3)\varepsilon$ must tend to
+zero. Nor does it permit the main height parameter $A$ to be replaced
+by a bound for a different arithmetic function. The two leading
+contributions after division by $n_Tmb$ are of sizes $x/m$ and $m$.
+For positive $m$, $x/m+m\ge2\sqrt{x}$, with equality at
+$m=\sqrt{x}$. This elementary optimization explains the target
+scale; it does not construct the theta lifts or their integral
+lattices.
+
+In the submitted construction the analogue of $A$ is a height or
+weight parameter, compatible with weights $a_t$ satisfying
+$|a_t/b-x|\le1$. A bound for a M\"obius sum of size
+$x^{7/8+\varepsilon}$ is therefore not a bound
+$A\ll b x^{7/8+\varepsilon}$. Making that substitution would be
+an error. Likewise, estimates at exponent $7/8$ do not provide the
+$x^{1/2+\varepsilon}$ bounds required for the three specially
+chosen quadratic-character sums. Those character choices and
+estimates remain part of the arithmetic problem.
+
+
+
+% Mathematical contribution. No result in this file assumes the conclusion GRH.
+% Dependencies: amsmath, amssymb, amsthm; theorem/proposition/lemma/corollary/remark environments.

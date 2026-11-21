@@ -1,0 +1,419 @@
+\section{Exact ordinary moment laws for the full theta family}
+\label{gm-section}
+
+Integral Taylor moments alone do not identify translation by
+$p$-power torsion with multiplication of a measure by a character.
+We prove that identification for the actual theta functions.  A
+finite expansion into elliptic theta functions supplies the
+identity; the independent normalization already proved supplies
+the bound on the measure.  No root of a translated identity is
+taken.
+
+\subsection{An orthogonal frame with prime-to-$p$ index}
+
+Retain $k=\mathbb Q(\sqrt{-D})$, $D\equiv7\pmod8$, and the
+fixed abstract isomorphism $\iota:\mathbb C\simeq\mathbb C_p$.
+Assume $p\ge5$ splits in $k$.  Let $V_k$ be a positive definite
+Hermitian $k$-space of dimension $g$, with form $h$ linear in its
+first variable, and let $\Lambda$ be an integral unimodular
+$\mathcal O_k$-lattice.  On its complexification use
+\[
+ H=\frac{2}{\sqrt D}h,\quad E=\operatorname{Im}H,\quad
+ Q(x)=h(x,x),\quad \alpha(x)=e^{\pi iQ(x)},\quad
+ W_x=\alpha(x)U_x.                                      \tag{GM1}
+\]
+The lattice is self-dual for $E$, and $\alpha$ restricts to
+its norm semicharacter.  The trace lattices (TE2) have precisely
+this description after choosing their rational $k$-structure;
+their common complex scaling is included in that identification.
+
+\begin{lemma}\label{gm-orthogonal-frame}
+There are $x_1,\ldots,x_g\in\Lambda$ such that
+\[
+ h(x_i,x_j)=a_i\delta_{ij},\qquad
+ a_i\in\mathbb Z_{>0},\quad p\nmid a_i.                 \tag{GM2}
+\]
+For $\Lambda_0=\bigoplus_i\mathcal O_kx_i$,
+the finite index $[\Lambda:\Lambda_0]$ is prime to $p$,
+and
+\[
+ \Lambda_0^\#=\bigoplus_i a_i^{-1}\mathcal O_kx_i,
+                  \qquad \Lambda_0\subset\Lambda\subset\Lambda_0^\#.
+                                                               \tag{GM3}
+\]
+Here the dual can be taken for $h$ or for $E$.
+\end{lemma}
+\begin{proof}
+At $p$ the ring $\mathcal O_k\otimes\mathbb Z_p$ is
+$\mathbb Z_p\times\mathbb Z_p$, with the factors interchanged
+by conjugation.  A unimodular Hermitian pairing is a perfect
+pairing of its two factors.  A basis of one factor and its dual
+basis of the other give an orthonormal basis of
+$\Lambda\otimes\mathbb Z_p$.
+
+Approximate that basis sufficiently closely by vectors in
+$\Lambda$, which is dense in its $p$-adic completion.  Apply
+Hermitian Gram--Schmidt over $k$.  Every successive denominator
+is a $p$-adic unit, because the approximating Gram matrix is
+congruent to $1$ modulo $p$.  The resulting orthogonal vectors
+belong to $\Lambda\otimes\mathbb Z_{(p)}$ and still form a
+basis at $p$.  Multiply each by a positive integer prime to $p$
+to put it in $\Lambda$.  Its norm is then in
+$\mathcal O_k\cap\mathbb Q=\mathbb Z$, is positive by
+definiteness, and is a $p$-adic unit.  This proves (GM2).
+The local basis property implies that the finite quotient
+$\Lambda/\Lambda_0$ has order prime to $p$.
+The displayed formula for the dual follows from the diagonal
+Gram matrix.  Integrality of $h$ on $\Lambda$ gives the second
+inclusion in (GM3).  Hermitian and alternating duality agree
+because the inverse different of $k/\mathbb Q$ is
+$(\sqrt{-D})^{-1}\mathcal O_k$.
+\end{proof}
+
+Let $\theta$ be the normalized even elliptic theta function of
+Section~\ref{ct-section}, for the lattice $\mathcal O_k$.
+Use its single character-normalized ordinary period $\omega$.
+Let $\mathcal T(\Lambda)$ denote the entire functions satisfying
+$W_lF=F$ for every $l\in\Lambda$.
+
+\begin{proposition}\label{gm-finite-expansion}
+For every $F\in\mathcal T(\Lambda)$ there are finitely many
+complex coefficients $c_j$ and $t_{ji}\in k$ such that
+$a_it_{ji}\in\mathcal O_k$ and
+\[
+ F\left(\sum_i z_ix_i\right)
+       =\sum_j c_j\prod_{i=1}^g(U_{t_{ji}}\theta)(z_i)^{a_i}.
+                                                               \tag{GM4}
+\]
+The $U$ in each factor is the elliptic operator, with Hermitian
+form $2z\bar w/\sqrt D$.  Thus all its translates have order
+prime to $p$.  The coefficients need not be assumed integral.
+\end{proposition}
+\begin{proof}
+Put $G(\sum_i z_ix_i)=\prod_i\theta(z_i)^{a_i}$.
+It is nonzero, belongs to $\mathcal T(\Lambda_0)$, and
+$G(0)=1$.  The commutator pairing
+\[
+ (\Lambda/\Lambda_0)\times(\Lambda_0^\#/\Lambda)
+       \longrightarrow\mathbb C^\times,
+             (l,w)\longmapsto e^{-2\pi iE(l,w)}              \tag{GM5}
+\]
+is perfect.  Indeed, vanishing of the pairing with all
+$\Lambda_0^\#$ means membership in its dual $\Lambda_0$;
+vanishing with all $\Lambda$ means membership in
+$\Lambda^\#=\Lambda$.  The two finite groups have the
+same order by their dual indices.
+
+Choose representatives $l$ and $w$ of these groups, with
+the zero coset represented by zero, and set
+\[
+                      G_w=\sum_{l\in\Lambda/\Lambda_0}W_lU_wG.
+                                                               \tag{GM6}
+\]
+Since $w\in\Lambda_0^\#$, $U_wG$ has the same
+$\Lambda_0$ multiplier as $G$.  The operators $W_l$ on
+$\Lambda$ are additive, so (GM6) is well-defined and belongs
+to $\mathcal T(\Lambda)$.  Commuting $U_{-w}$ past $W_l$
+and using (GM5) gives
+\[
+ \sum_{w\in\Lambda_0^\#/\Lambda}U_{-w}G_w
+    =\sum_l\left(\sum_w e^{-2\pi iE(l,w)}\right)W_lG
+    =|\Lambda_0^\#/\Lambda|G\ne0.                            \tag{GM7}
+\]
+Hence some $G_w$ is nonzero.  By
+Lemma~\ref{tc-covolume}, $\mathcal T(\Lambda)$ has dimension
+one, so $F=cG_w$ for a scalar $c$ (including $c=0$).
+For each summand in (GM6), the Heisenberg composition rule gives
+\[
+ W_lU_wG=\alpha(l)e^{-\pi iE(l,w)}U_{l+w}G.
+\]
+The coordinates of $l+w$ belong to $a_i^{-1}\mathcal O_k$
+by (GM3).  Orthogonality of the frame identifies its translate
+with the product in (GM4).  Absorb the displayed scalar into
+$c_j$.  The phases are roots of unity, since $E(l,w)$ is
+rational.  This proves the assertion.
+For $g=0$ the empty product is $1$ and the assertion is immediate.
+\end{proof}
+
+\subsection{The measure and its torsion characters}
+
+Write $\iota_-:k\to\mathbb Q_p$ for $b\mapsto\iota(\bar b)$,
+and put
+\[
+                 X_\Lambda=\Lambda\otimes_{\mathcal O_k,\iota_-}
+                                            \mathbb Z_p.        \tag{GM8}
+\]
+This is the conjugate ordinary component of the lattice, a free
+$\mathbb Z_p$-module of rank $g$.  For $v\in\Lambda$ the
+function
+\[
+              L_v(z)=\iota(h(v,z)),\qquad z\in\Lambda,
+                                                               \tag{GM9}
+\]
+extends to a $\mathbb Z_p$-linear function on $X_\Lambda$:
+in the frame (GM2), it is
+$\sum_i a_i\iota(v_i)z_i$, where $z_i$ denotes the
+$\iota_-$-coordinate.  This convention is essential; the
+Hermitian adjoint in the point moments uses this conjugate
+component.
+
+For $y=S\kappa l/p^n$, with $l\in\Lambda$,
+$S\in\mathbb Z_{>0}$ prime to $p$, and
+\[
+        \kappa\in\mathcal O_k,
+                   \iota(\bar\kappa)\in p^{2n}\mathbb Z_p,
+                                                               \tag{GM10}
+\]
+define on rational lattice representatives
+\[
+                  \chi_y(z)=\iota\bigl(e^{-2\pi iE(z,y)}\bigr).
+                                                               \tag{GM11}
+\]
+It induces a character of $X_\Lambda/p^nX_\Lambda$.
+For example, in an orthogonal frame in which all $y_i$ have
+the strong divisibility (CT24),
+\[
+        \chi_y(z)=\prod_i
+          \iota\bigl(e^{-2\pi iE_1(1,y_i)}\bigr)^{a_i z_i\bmod p^n},
+             \qquad E_1=\operatorname{Im}(2z\bar w/\sqrt D).
+                                                               \tag{GM12}
+\]
+To verify this formula, adjointness gives
+$E_1(b,y_i)=E_1(1,\bar b y_i)$.
+On the formal $p^n$-torsion, multiplication by $\bar b$ is
+multiplication by $\iota(\bar b)$ modulo $p^n$; this is
+Proposition~\ref{ct-character-normalization}.  It also applies
+to $b\in\mathcal O_k\otimes\mathbb Z_{(p)}$, by inverting
+an integer prime to $p$.  Equation (GM12) follows and proves
+the assertion about factorization.
+
+\begin{theorem}\label{gm-moment-law}
+Let $F\in\mathcal T(\Lambda)$ and let $t\in V_k$ have
+order prime to $p$ modulo $\Lambda$.
+There is a unique bounded $\mathbb C_p$-valued measure
+$\mu_{F,t}$ on $X_\Lambda$ such that, for all
+$v_1,\ldots,v_r\in\Lambda$,
+\[
+ \widehat{U_tF}\left(\omega\sum_jv_j\log(1+T_j)\right)
+     =\int_{X_\Lambda}\prod_j(1+T_j)^{L_{v_j}(z)}
+                                                  \,d\mu_{F,t}(z).
+                                                               \tag{GM13}
+\]
+There is an integer $S>0$ prime to $p$, independent of $n$,
+$l$ and $\kappa$, such that for every $y$ as in (GM10),
+\[
+ \widehat{W_yU_tF}\left(\omega\sum_jv_j\log(1+T_j)\right)
+     =\int_{X_\Lambda}\chi_y(z)
+                \prod_j(1+T_j)^{L_{v_j}(z)}\,d\mu_{F,t}(z).
+                                                               \tag{GM14}
+\]
+In particular the same measure supplies all derivatives and
+all these torsion characters.  For each fixed $n$, the identity
+also holds for the additive subgroup generated by these $y$.
+If the period-scaled moments of
+$U_tF$ are integral on $\Lambda$, then $\|\mu_{F,t}\|\le1$.
+\end{theorem}
+\begin{proof}
+Use (GM4).  The coordinates $t_i$ of $t$ have prime-to-$p$
+denominators.  In these coordinates $U_t$ replaces $t_{ji}$
+by $t_i+t_{ji}$ and introduces only a root of unity into each
+coefficient.  Every transported elliptic series is bounded
+and integral by Proposition~\ref{ct-translates-integral}.
+Their powers, products and the finite sum are bounded, by
+$\max_j|\iota(c_j)|_p$.  By the multivariable moment theorem
+of Section~\ref{ot-section}, this series is the Amice
+transform of a bounded measure on $\mathbb Z_p^g$.
+In the frame, $L_{x_i}(z)=a_i z_i$.  Since $a_i$ is a
+$p$-adic unit, push this measure forward by
+$(A_i)\mapsto(A_i/a_i)$ to obtain $\mu_{F,t}$.
+
+For general directions $v_j$, the coefficients $\iota(v_{ji})$
+lie in $\mathbb Z_p$.  Substitution (LM3) proves (GM13).
+The frame directions already determine the measure uniquely,
+because the binomial polynomials are dense in the continuous
+functions on $\mathbb Z_p^g$, as proved in
+Section~\ref{ot-section}.
+
+Choose $s>0$ prime to $p$ so that every
+$s(t_i+t_{ji})$ is in $\mathcal O_k$.  Choose $d>0$ prime
+to $p$ so that $d\Lambda\subset\Lambda_0$, and put $S=sd$.
+If $l=\sum l_ix_i$, then
+\[
+          y_i=\frac{s\nu_i}{p^n},\qquad
+          \nu_i=d\kappa l_i\in\mathcal O_k,
+                      \iota(\bar\nu_i)\in p^{2n}\mathbb Z_p.
+                                                               \tag{GM15}
+\]
+Theorem~\ref{ct-power-translation} applies to every elliptic
+factor with this same $s$.  Multiplying its identities,
+taking the powers $a_i$, and adding the finitely many terms
+proves the multivariable substitution identity
+\[
+      \widehat{W_yU_tF}(T_1,\ldots,T_g)
+          =\widehat{U_tF}\bigl(\zeta_1(1+T_1)-1,
+                         \ldots,\zeta_g(1+T_g)-1\bigr),
+ \quad \zeta_i=\iota(e^{-2\pi iE_1(1,y_i)}).              \tag{GM16}
+\]
+In (GM16), the hats stand for the frame expansion
+$\omega\sum_i x_i\log(1+T_i)$.
+The Weyl phase is exactly the product of the elliptic phases
+raised to $a_i$, since $Q(y)=\sum_i a_i|y_i|^2$.
+Thus no root of unity was discarded in deriving (GM16).
+The convergent substitutions (CT21) commute with finite
+products and sums.  Under the Amice transform they multiply
+the measure by $\prod_i\zeta_i^{A_i}$, which is precisely
+(GM12) after $A_i=a_i z_i$.  This proves (GM14) for frame
+directions, and (LM3) proves it for all directions.
+For a finite sum or negative of the permitted lifts at one
+fixed level $n$, each
+coordinate in (GM15) still has an integral numerator with the
+same conjugate divisibility.  Apply the elliptic law directly
+to these summed numerators; the same proof gives (GM14) on
+the indicated additive subgroup.
+Finally, integrality on the frame directions says that the
+Amice transform has coefficient norm at most one.  The norm
+identity in the moment theorem and the invertible coordinate
+change $A_i=a_i z_i$ give $\|\mu_{F,t}\|\le1$.
+\end{proof}
+
+The characters appearing here include all characters of
+$X_\Lambda/p^nX_\Lambda$.  Indeed choose $\kappa$ with
+$\iota(\kappa)\equiv1\pmod{p^{2n}}$ and
+$\iota(\bar\kappa)\equiv0\pmod{p^{2n}}$ by the Chinese
+remainder theorem.  The alternating pairing of a self-dual
+lattice pairs its two ordinary components perfectly modulo
+$p^n$.  In (GM2) this is the product of the elementary elliptic
+pairings, multiplied by the units $a_i$.  Multiplication by
+$S$ is invertible modulo $p^n$, and $l\in\Lambda$ surjects
+onto either component modulo $p^n$.  Formula (GM11) therefore
+runs through every character.
+
+\subsection{The bound for the normalized arithmetic family}
+
+\begin{theorem}\label{gm-arithmetic-unit-bound}
+Retain the hypotheses and the even dimensions of
+Section~\ref{te-section}.  Let $p\ge5$ split in $k$, and
+assume $p$ is prime to the elliptic ideal norm $a$.
+For all unimodular $\mathcal O_E$-lattices $L,M$, the
+normalized arithmetic vector $e(L,M)$ of (TE15)
+and every translate of order prime to $p$ have the exact
+laws (GM13)--(GM14), with $\|\mu_{e(L,M),t}\|\le1$.
+The period is the common period $\omega$ of
+Proposition~\ref{ci-common-period}; it is not selected again
+after choosing $L,M$, a derivative, or a torsion point.
+\end{theorem}
+\begin{proof}
+First suppose $L$ and $M$ are standard at every prime over
+$p$.  The base vector is the tensor product of the normalized
+trace-lattice theta vector.  Theorem~\ref{ts-integral-theta}
+and multiplication of Amice transforms give its integral
+moments and those of every prime-to-$p$ translate.
+Each of the two finite averaging operators defining $e(L,M)$
+has index prime to $p$, because its lattices have equal
+$p$-adic completions.  Proposition~\ref{lm-finite-intertwiner}
+preserves the asserted integrality.
+
+The determinant characters in its definition are $p$-adic
+units.  Here is the exact argument for this character convention.
+For a norm-one fractional ideal $J$, choose $b>0$ with
+$J^b=(z)$, using finiteness of the ideal class group.  Then
+$J^{2b}=(z/\bar z)$, with $z/\bar z$ of norm one.  The
+principal-ideal convention (TE16) gives
+\[
+            \chi(J)^{2b}
+                   =\prod_{\eta\in\Sigma}\eta(z/\bar z)^{-1}.
+                                                               \tag{GM17}
+\]
+If $J$ is a unit above $p$, both $z$ and $\bar z$ are
+units there.  Every factor on the right is a $p$-adic unit
+at every transported place above $p$.  Taking valuations in
+(GM17) proves the assertion.  The relative determinant ideals
+of the standard local lattices have this property.
+
+For arbitrary $L,M$, choose rational unitary transformations
+$\gamma,\gamma'$ such that $\gamma L$ and $\gamma'M$
+are standard at every prime over $p$.  This uses only weak
+approximation: Proposition~\ref{acl-local-basis} gives a local
+unitary transformation at each of those places.  Perturb it
+within the open set preserving the specified lattice so that
+$1+g$ is invertible.  Such a perturbation exists by multiplying
+by local norm-one scalars near $1$ and avoiding the finitely
+many roots of $\det(1+zg)$.  Its Cayley transform
+$(1-g)(1+g)^{-1}$ is skew-Hermitian.  Weak approximation in
+the finite-dimensional $F$-space of skew-Hermitian matrices,
+followed by the inverse Cayley transform, gives the required
+rational transformations simultaneously.  Nonvanishing of
+the denominator and the prescribed lattice images are open
+conditions, so they survive sufficiently close approximation.
+
+The exact covariance proved in Section~\ref{te-section}
+identifies $e(\gamma L,\gamma'M)$ with the pullback of
+$e(L,M)$ by $z\mapsto\gamma'^*z\gamma$.  This unitary
+map carries the corresponding period lattice onto the original
+one.  Thus the integral moments just proved, including all
+prime-to-$p$ translates, pull back to those on $\Lambda(L,M)$.
+Apply Theorem~\ref{gm-moment-law} and its norm conclusion.
+The equalities of periods under ideal isogenies and common
+scaling were proved in Section~\ref{ci-section}; no assertion
+about the $p$-adic absolute value of the complex scaling is
+needed.
+\end{proof}
+
+\begin{corollary}\label{gm-algebraic-jets}
+Let $\delta_0$ be the discriminant twelfth root for the
+principal elliptic lattice.  For the family in
+Theorem~\ref{gm-arithmetic-unit-bound}, every rational-lattice
+translate $t\in\mathbb Q\Lambda(L,M)$ has algebraic jets
+\[
+       \delta_0^{-k}D_{v_1}\cdots D_{v_k}
+                           (U_te(L,M))(0)\in\overline{\mathbb Q}
+       \qquad(v_i\in\mathbb Q\Lambda(L,M)).                 \tag{GM18}
+\]
+The assertion also permits algebraic linear combinations of
+these directions.
+\end{corollary}
+\begin{proof}
+Fix an embedding of $\overline{\mathbb Q}$ into
+$\mathbb C_p$, and let $\iota$ run through all its extensions
+to an abstract isomorphism $\mathbb C\simeq\mathbb C_p$.
+The previous proof applies to each one.  The ordinary period
+can change with $\iota$, but always has the form
+$\omega=\Omega/\iota(\delta_0)$ with $|\Omega|_p=1$.
+Choose a sufficiently large split prime $p$ avoiding the
+denominators of $t,v_1,\ldots,v_k$ and the elliptic ideal
+norm.  Clearing those denominators, the moment formula and
+the unit bound give an upper bound independent of $\iota$
+for the absolute value of the transport of (GM18).  In fact
+the bound is one if the directions belong to the lattice.
+
+We recall why this forces algebraicity.  If a complex number
+$c$ were transcendental, fix one such isomorphism $\iota_0$
+and choose a transcendental $a\in\mathbb C_p$, over the
+image of $\overline{\mathbb Q}$, with arbitrarily large
+absolute value.  Such an $a$ exists because that algebraic
+closure is countable whereas every nonempty open ball is
+uncountable.  The isomorphism
+$\overline{\mathbb Q}(c)\to
+\overline{\mathbb Q}(\iota_0^{-1}a)$ sending $c$ to
+$\iota_0^{-1}a$ extends to an automorphism of $\mathbb C$:
+extend transcendence bases, then extend over their algebraic
+closures.  Composing with $\iota_0$ contradicts the uniform
+upper bound.  Thus the number in (GM18) is algebraic.
+Multilinearity gives the final assertion.
+
+Only existence of a split prime outside a finite list is
+used here.  It also has an elementary proof in this quadratic
+case: choose $m$ divisible by $2D$ and all primes in that
+list.  Every prime divisor $q$ of $Dm^2+1>1$ is outside
+the list, is prime to $2D$, and satisfies
+$(Dm)^2\equiv-D\pmod q$.  Hence $q$ splits in $k$.
+\end{proof}
+
+This theorem supplies the character identities needed for finite
+Fourier restriction of the actual measures.  It does not yet
+assert that a particular local test function selects the two
+matrix supports in (CV8); that identification also requires the
+explicit finite translation operator defining the arithmetic
+column.
+
+

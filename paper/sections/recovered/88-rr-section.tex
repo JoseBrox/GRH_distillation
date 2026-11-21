@@ -1,0 +1,457 @@
+\section{Commutation relations of the terminal matrix}
+\label{rr-section}
+
+We prove the full commutation relation of the actual terminal
+matrix by adding one isotropic pair.  A full Capelli determinant
+on the larger unitary group restricts to a product of three
+$2\times2$ matrices.  The full determinants commute.
+An elementary independence argument then recovers all sixteen
+commutation relations of the middle matrix.
+The smooth extension needed for this argument is given explicitly.
+
+\subsection{The open cell with one isotropic pair}
+
+Put $d=k+1$, let $J=\operatorname{diag}(1,\ldots,1,-1)$
+on $W=\mathbb C^d$, and let
+\[
+ V=\mathbb C e\oplus W\oplus\mathbb C f,\qquad
+ H=\begin{pmatrix}0&0&1\\0&J&0\\1&0&0\end{pmatrix}.
+\]
+For $v\in W$, $t\in\mathbb R$, and $c\in\mathbb C^\times$,
+write
+\[
+ n(v,t)=
+ \begin{pmatrix}
+ 1&-v^*J&it-\tfrac12v^*Jv\\
+ 0&I&v\\0&0&1
+ \end{pmatrix},
+ \qquad
+ w(c)=
+ \begin{pmatrix}0&0&\bar c^{-1}\\0&I&0\\c&0&0\end{pmatrix}.
+\]
+Both matrices preserve $H$.  The matrices $n(v,t)$ form
+the unipotent group $N$.
+For $z\in W$ set
+\[
+ \ell_z(n(v,t))=-v^*Jz,\qquad
+              \chi_z(n)=\exp(\ell_z(n)-\overline{\ell_z(n)}).
+\]
+The coordinate $v$ is additive under multiplication in
+$N$, so $\chi_z$ is a character.  This is the character
+normalization used in the preceding radial calculations.
+
+\begin{lemma}\label{rr-cell}
+The map
+\[
+ N\times\mathbb C^\times\times U(W,J)\times N
+   \longrightarrow \{g\in U(V,H):g_{fe}\ne0\},\qquad
+ (n_L,c,m,n_R)\longmapsto n_Lw(c)m n_R
+\]
+is a smooth bijection with smooth inverse.
+Here $m$ acts as the identity on $\mathbb Ce\oplus\mathbb Cf$.
+\end{lemma}
+
+\begin{proof}
+Let $g$ be in the displayed open set and put $c=g_{fe}$.
+Multiplication of the four displayed block matrices shows
+that the only possible parameters satisfy
+\[
+ v_L=c^{-1}g_{We},\qquad
+ v_R^*J=-c^{-1}g_{fW},\qquad
+ a_L=c^{-1}g_{ee},\qquad a_R=c^{-1}g_{ff},
+\]
+where $a_\nu=it_\nu-\tfrac12v_\nu^*Jv_\nu$.
+The zero Hermitian norm of column $e$ of $g$ gives
+$2\operatorname{Re}a_L=-v_L^*Jv_L$.
+The analogous row identity, obtained from $gHg^*=H$,
+gives $2\operatorname{Re}a_R=-v_R^*Jv_R$.
+Thus $t_L,t_R$ are uniquely the imaginary parts of
+$a_L,a_R$.
+
+Remove the two resulting unipotent factors.
+The matrix $n_L^{-1}gn_R^{-1}$ has first column $cf$
+and last row $ce^*$.
+Its other columns are orthogonal to that first column,
+so their $e$-coordinates vanish except in the last
+column.  The analogous row orthogonality makes the
+remaining off-diagonal blocks zero.  The pairing of
+the first and last columns then fixes the $(e,f)$
+entry to be $\bar c^{-1}$.
+The remaining $W$-block $m$ satisfies $m^*Jm=J$.
+It equals
+$g_{WW}+v_Lc\,v_R^*J$ by multiplication of the factors.
+This proves both existence and uniqueness.
+All formulas use smooth operations and division only
+by the nonzero number $c$, which proves smoothness.
+\end{proof}
+
+\begin{corollary}\label{rr-extension}
+Every smooth function $\phi(c,m)$ on
+$\mathbb C^\times\times U(W,J)$ extends uniquely to a
+smooth function on this open cell with
+\[
+ F(n_Lw(c)m n_R)
+                  =\chi_z(n_L)\chi_{z'}(n_R)\phi(c,m).
+\]
+It has the two prescribed unipotent character laws.
+\end{corollary}
+
+\begin{proof}
+Use the coordinates of Lemma~\ref{rr-cell}.
+Multiplication on either side by $N$ stays in the
+cell, and its factor is multiplied by the corresponding
+unipotent element.  The character law gives the assertion.
+\end{proof}
+
+\subsection{The full Capelli determinant in these coordinates}
+
+Let $p=c\partial_c$, $\bar p=\bar c\partial_{\bar c}$
+and $\gamma(c)=|c|^{d+1}$.  Thus
+$p\gamma=\bar p\gamma=(d+1)\gamma/2$.
+Define
+\[
+ T(Y)=\begin{pmatrix}Y+p&-c\\c^{-1}&0\end{pmatrix},
+ \qquad
+ L(Y)=\begin{pmatrix}Y-\bar p&\bar c^{-1}\\-\bar c&0\end{pmatrix}.
+\]
+Let $t(Y)$ be the actual terminal matrix from
+Section~\ref{rq-section}.  Its entries act only on $m$
+and commute with operators in $c$.
+
+\begin{lemma}\label{rr-radial-capelli}
+Let $\mathcal D(Y)$ be the full Capelli determinant on
+$U(V,H)$ with parameter $Y+(d+1)/2$.
+For every smooth function $F$ with the two unipotent
+character laws, put
+$\Phi(c,m)=\gamma(c)F(w(c)m)$.
+Then
+\begin{equation}\label{rr-sandwich}
+ \gamma(c)(\mathcal D(Y)F)(w(c)m)
+                         =(L(Y)t(Y)T(Y))_{11}\Phi(c,m).
+\end{equation}
+Consequently the operators
+$\mathcal C(Y)=(L(Y)t(Y)T(Y))_{11}$ commute
+for all complex parameters.
+\end{lemma}
+
+\begin{proof}
+We give the bordered determinant calculation explicitly.
+Order the full basis as $(e,1,\ldots,d,f)$ and put
+$U=Y+(d+1)/2$.  For an omission in the middle block,
+write $Q_{\widehat i,\widehat j}$ for its quantum minor.
+Expansion first in column $e$, then in column $f$,
+and then in the two exposed end rows gives the following
+four terms:
+\begin{align*}
+ &T_{ee}(U)D(U-1)T_{ff}(U-d-1),\\
+ &-\sum_{i,j}(-1)^{i+j}
+      E_{fj}T_{ee}(U)Q_{\widehat i,\widehat j}(U-1)E_{if},\\
+ &-\sum_{i,j}(-1)^{i+j}
+      E_{ie}Q_{\widehat i,\widehat j}(U-2)
+                        T_{ff}(U-d-1)E_{ej},\\
+ &-\sum_{\substack{i\ne i'\\j\ne j'}}
+   \epsilon(i,i')\epsilon(j,j')(-1)^{i+i'+j+j'}
+   E_{ie}E_{fj}Q_{\widehat{i,i'},\widehat{j,j'}}(U-2)
+                                      E_{ej'}E_{i'f}.
+\end{align*}
+The remaining terms are
+\begin{align*}
+ &(-1)^{d+1}E_{fe}Q_{(e,1,\ldots,d),(1,\ldots,d,f)}(U-1),\\
+ &\sum_i(-1)^{i+d}E_{ie}
+       Q_{(1,\ldots,\widehat i,\ldots,d,f),(1,\ldots,d)}(U-1)E_{ef}.
+\end{align*}
+These formulas are obtained using the end-row and
+end-column expansions of Lemma~\ref{rq-cofactor-expansions}.
+For the fourth line, the position of $i'$ after removing
+$i$ is $i'-\mathbf1_{i'>i}$, and similarly for $j'$.
+These position changes give the two factors $\epsilon$.
+When an end-row factor is moved past an end-column
+factor, their possible extra commutator is a multiple
+of $E_{ef}$ or $E_{fe}$ and is exactly one of the last
+two displayed terms.  Thus this expansion retains the
+noncommutative correction terms.
+
+At the point $w(c)m$, the left and right character
+rules of \eqref{rc-mixed-right}--\eqref{rc-mixed-left}
+are
+\[
+ \begin{gathered}
+ E_{ej}F=x_jF,\qquad E_{if}F=\xi_iF,\\
+ (E_{ie}XF)(w(c)m)=c^{-1}\eta_i(XF)(w(c)m),\\
+ (E_{fj}XF)(w(c)m)=\bar c^{-1}y_j(XF)(w(c)m).
+ \end{gathered}
+\]
+They hold for every right differential word $X$ in
+the left rules.  The right central root $E_{ef}$
+annihilates $F$, and the left central root $E_{fe}$
+annihilates the evaluation of every $XF$.
+The last two terms therefore vanish.
+
+The diagonal derivatives restrict to $p$ and $-\bar p$.
+Conjugation by $\gamma$ changes the two diagonal
+factors to $Y+p$ and $Y-\bar p$, respectively.
+The middle parameter $U-1$ is $Y+k/2$.
+Grouping the four sums by their omitted pairs,
+as in \eqref{rc-boundary-sign}, leaves precisely
+\[
+ (Y-\bar p)t_{11}(Y)(Y+p)
+ +(Y-\bar p)t_{12}(Y)c^{-1}
+ +\bar c^{-1}t_{21}(Y)(Y+p)
+ +\bar c^{-1}t_{22}(Y)c^{-1}.
+\]
+This is the $(1,1)$ entry of $L(Y)t(Y)T(Y)$.
+
+The full Capelli determinants commute, by their
+centrality.  They preserve both unipotent character
+laws: left translations commute with right
+derivatives, and invariance under conjugation gives
+commutation with right translations.  Corollary
+\ref{rr-extension} allows an arbitrary smooth radial
+function as their restriction.  Applying
+\eqref{rr-sandwich} twice therefore proves
+$[\mathcal C(U),\mathcal C(V)]=0$ on every such function.
+\end{proof}
+
+\subsection{An elementary matrix calculation}
+
+For a $2\times2$ matrix $A$ over an algebra, let
+$A_1=A\otimes I$ and $A_2=I\otimes A$, with their
+entries ordered as written.  Let $P$ interchange the
+two factors of $\mathbb C^2\otimes\mathbb C^2$ and put
+$R(s)=sI-P$.
+The identity
+\[
+ R(u-v)A_1(u)A_2(v)=A_2(v)A_1(u)R(u-v)
+\]
+is equivalent, entry by entry, to
+\begin{equation}\label{rr-RTT}
+ (u-v)[A_{ab}(u),A_{cd}(v)]
+       =A_{cb}(u)A_{ad}(v)-A_{cb}(v)A_{ad}(u).
+\end{equation}
+
+\begin{lemma}\label{rr-Weyl}
+If $cc^{-1}=c^{-1}c=1$ and $[p,c]=c$, then
+\[
+                  \begin{pmatrix}u+p&-c\\c^{-1}&0\end{pmatrix}
+\]
+satisfies \eqref{rr-RTT}.
+Both $T$ and $L$ above therefore satisfy this identity.
+\end{lemma}
+
+\begin{proof}
+One also has $[p,c^{-1}]=-c^{-1}$.
+Commutators of two diagonal entries, or of $c$ with
+$c^{-1}$, vanish.  The only nonzero pairs, up to
+interchanging them, are
+$[u+p,-c]=-c$ and $[u+p,c^{-1}]=-c^{-1}$.
+Substitution into \eqref{rr-RTT} gives respectively
+$-(u-v)c$ and $-(u-v)c^{-1}$ on both sides.
+Pairs involving the zero entry give zero on both
+sides.  This exhausts the four entries and proves
+the identity.
+For $L$, take the Weyl pair
+$p'=-\bar p$, $c'=-\bar c^{-1}$,
+$(c')^{-1}=-\bar c$.
+\end{proof}
+
+\begin{lemma}\label{rr-defect}
+Let $Q(u)$ be any polynomial $2\times2$ operator
+matrix acting only on $m$, and put $A(u)=L(u)Q(u)T(u)$.
+Set
+\[
+ X(u,v)=R(u-v)Q_1(u)Q_2(v)
+                         -Q_2(v)Q_1(u)R(u-v).
+\]
+Then
+\begin{equation}\label{rr-projected-defect}
+ (u-v-1)[A_{11}(u),A_{11}(v)]
+  =\bigl(L_2(v)L_1(u)X(u,v)T_1(u)T_2(v)\bigr)_{11,11}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The two Weyl pairs commute with one another and with
+all entries of $Q$.  Move $R$ through the two $L$
+factors by Lemma~\ref{rr-Weyl}, and then through the
+two $T$ factors by the same identity.  Ordinary
+associative matrix multiplication gives
+\[
+ R A_1(u)A_2(v)-A_2(v)A_1(u)R
+                       =L_2(v)L_1(u)X(u,v)T_1(u)T_2(v).
+\]
+The row and column indexed by $(1,1)$ are eigenvectors
+of $P$ with eigenvalue one.  Taking that entry gives
+\eqref{rr-projected-defect}.
+\end{proof}
+
+\subsection{Recovering every coefficient}
+
+\begin{lemma}\label{rr-independence}
+Suppose the left side of
+\eqref{rr-projected-defect} vanishes on all smooth
+functions of $(c,m)$.  If $u-v\ne1$, then
+$X(u,v)$ is the zero operator matrix on smooth
+functions of $m$.
+\end{lemma}
+
+\begin{proof}
+Use indices $0,1$ in this calculation only.
+Fix a smooth function $f(m)$, a point $m$, a complex
+number $\beta$ and an integer $n$, and apply
+\eqref{rr-projected-defect} to
+\[
+                     |c|^{2\beta}c^n f(m).
+\]
+Here $|c|^{2\beta}=\exp(2\beta\log|c|)$ is a smooth
+single-valued function on $\mathbb C^\times$.
+It is an eigenfunction of $p$ with eigenvalue
+$\beta+n$ and of $\bar p$ with eigenvalue $\beta$.
+Put $z=\beta+n$.
+
+For $A=(a_1,a_2)$ and $B=(b_1,b_2)$ the first-row
+and first-column coefficients in the right side of
+\eqref{rr-projected-defect}, after removing the
+common nonzero factor $|c|^{2\beta}c^n$, are
+\[
+      L_A(\beta)R_B(z)c^{-(b_1+b_2)}\bar c^{-(a_1+a_2)},
+\]
+where
+\[
+\begin{array}{c|cccc}
+A&00&01&10&11\\ \hline
+L_A(\beta)&(u-\beta)(v-\beta)&u-\beta&v-\beta+1&1
+\end{array}
+\]
+and
+\[
+\begin{array}{c|cccc}
+B&00&01&10&11\\ \hline
+R_B(z)&(u+z)(v+z)&u+z-1&v+z&1.
+\end{array}
+\]
+The two shifts by one follow from
+$p(c^{-1}h)=c^{-1}(p-1)h$ and
+$\bar p(\bar c^{-1}h)=\bar c^{-1}(\bar p-1)h$.
+No entry of $X$ differentiates these scalar factors.
+
+The nine monomials
+$c^{-b}\bar c^{-a}$, $0\leq a,b\leq2$,
+are linearly independent on every nonempty open subset
+of $\mathbb C^\times$.  Indeed multiplying by
+$c^2\bar c^2$ gives a polynomial in $c,\bar c$;
+the invertible change $c=x+iy$, $\bar c=x-iy$
+reduces the assertion to polynomial uniqueness on
+an open subset of $\mathbb R^2$.
+Thus for each pair $(a,b)$,
+\[
+ \sum_{\substack{a_1+a_2=a\\b_1+b_2=b}}
+ L_A(\beta)R_B(\beta+n)(X_{A,B}(u,v)f)(m)=0.
+\]
+This holds for every complex $\beta$ and every
+integer $n$.  Polynomial uniqueness first in
+$\beta$ and then in $n$ makes it a polynomial
+identity in two independent variables $\beta,z$.
+The argument remains valid for vector-valued
+coefficients by finite Vandermonde inversion.
+
+When $a=0$ or $2$, there is just one nonzero row
+polynomial.  When $a=1$, the two row polynomials
+are $u-\beta$ and $v-\beta+1$.
+They are independent because their difference is
+the nonzero constant $u-v-1$.
+The same assertion holds for the two column
+polynomials $u+z-1$ and $v+z$ when $b=1$.
+Products of these independent polynomials in the
+two separate variables are independent.
+Every coefficient $(X_{A,B}(u,v)f)(m)$ therefore
+vanishes.  Since $f,m$ were arbitrary, $X(u,v)=0$.
+\end{proof}
+
+\begin{theorem}\label{rr-terminal-RTT}
+The actual terminal differential matrix satisfies,
+on every smooth function on $U(W,J)$,
+\[
+ (u-v)[t_{ab}(u),t_{cd}(v)]
+      =t_{cb}(u)t_{ad}(v)-t_{cb}(v)t_{ad}(u)
+                \qquad(a,b,c,d\in\{1,2\}).
+\]
+The statement holds for every pair of complex
+parameters, including $u-v=1$.
+\end{theorem}
+
+\begin{proof}
+Lemma~\ref{rr-radial-capelli} gives the commuting
+$(1,1)$ entries required by Lemma~\ref{rr-independence}.
+Hence the defect matrix vanishes for $u-v\ne1$.
+All its entries are polynomials in $u,v$ with
+differential-operator coefficients, since the
+terminal entries are finite sums of quantum minors.
+Applying an entry to any fixed smooth function and
+evaluating at a point gives a polynomial which
+vanishes for $u-v\ne1$; it therefore vanishes
+identically.  This includes the exceptional parameters
+and proves the theorem.
+\end{proof}
+
+\begin{corollary}\label{rr-terminal-adjugate}
+Put $J_2=\begin{pmatrix}0&1\\-1&0\end{pmatrix}$ and
+\[
+ q(Y)=t_{11}(Y+1)t_{22}(Y)-t_{21}(Y+1)t_{12}(Y).
+\]
+As operator matrices on smooth terminal functions,
+\[
+ t(Y+1)^{\mathsf T}J_2t(Y)=q(Y)J_2,\qquad
+ t(Y)J_2t(Y+1)^{\mathsf T}=q(Y)J_2.
+\]
+On the compact types of Corollary~\ref{rq-type-scalar},
+$q(Y)$ is the scalar polynomial computed there.
+At a value where that scalar is nonzero,
+\[
+             t(Y)^{-1}=-q(Y)^{-1}
+                              J_2t(Y+1)^{\mathsf T}J_2
+\]
+is both a left and a right inverse.
+\end{corollary}
+
+\begin{proof}
+Write $S=t(Y+1)$ and $T=t(Y)$.
+Use Theorem~\ref{rr-terminal-RTT} with parameter
+difference one.  It gives
+\[
+ S_{11}T_{21}=S_{21}T_{11},\qquad
+ S_{12}T_{22}=S_{22}T_{12},
+\]
+and, on adding its $(12,21)$ and $(11,22)$ entries,
+\[
+ S_{12}T_{21}-S_{22}T_{11}
+                       =-S_{11}T_{22}+S_{21}T_{12}.
+\]
+These are the two zero diagonal entries and the
+negative lower off-diagonal entry of the first
+matrix identity; its upper off-diagonal entry
+is the definition of $q(Y)$.
+
+The same commutation relation, in its $(11,12)$,
+$(21,12)$, $(11,22)$, and $(21,22)$ entries, gives
+\begin{align*}
+ T_{11}S_{12}-T_{12}S_{11}&=0,\\
+ T_{11}S_{22}-T_{12}S_{21}&=q(Y),\\
+ T_{21}S_{12}-T_{22}S_{11}&=-q(Y),\\
+ T_{21}S_{22}-T_{22}S_{21}&=0.
+\end{align*}
+This proves the second matrix identity.
+Apply Corollary~\ref{rq-type-scalar} for the scalar
+value.  Finally $J_2^2=-I$, so the two identities
+give the displayed two-sided inverse whenever
+that scalar is nonzero.
+\end{proof}
+
+\paragraph{Scope.}
+The theorem proves the full commutation relation of
+the terminal matrix itself, without assuming a
+finite compact type or a special Jacquet origin
+for the smooth function.  The recursive frame
+identities and the estimates justifying integration
+with the Jacquet pairing remain separate.
+
+

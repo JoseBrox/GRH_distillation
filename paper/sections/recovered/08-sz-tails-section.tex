@@ -1,0 +1,145 @@
+\section{Pairing two character tails before estimating them}
+\label{sz-tails-section}
+
+There is another useful simplification in Guo's paper \cite{sz-guo}.
+It avoids a spurious factor $(1-\beta)^{-1}$ in a hyperbola estimate.
+The next version applies to any bounded sequence with bounded interval sums
+and records the best constant supplied by this particular pairing.
+
+\begin{proposition}\label{sz-paired-tails}
+Let $c:\mathbb N\to\mathbb C$ satisfy $|c(n)|\le1$ and
+\[
+ \left|\sum_{u<n\le v}c(n)\right|\le B\qquad(0\le u\le v).
+\]
+For real $s>0$, set $L_c(s)=\sum_{n\ge1}c(n)n^{-s}$, which converges
+by summation by parts. Suppose $0<\beta<1$ and $L_c(\beta)=0$.
+Put $\varepsilon=1-\beta$ and $a(n)=\sum_{d\mid n}c(d)$.
+Then, for every $t\ge1$,
+\begin{align}\label{sz-paired-main}
+ \sum_{n\le t}\frac{a(n)}{n^\beta}
+ &=\frac{L_c(1)}{\varepsilon}t^\varepsilon+E(t),\\
+ |E(t)|&\le
+ \left[B\bigl(1+2\beta^{\beta/(1-\beta)}\bigr)
+                  +1+\tfrac12\log t\right]t^{1/2-\beta}.\nonumber
+\end{align}
+For $\beta\ge1/2$, the bracket can be replaced by
+$2B+1+\tfrac12\log t$.
+\end{proposition}
+\begin{proof}
+Write $A_u(v)=\sum_{u<n\le v}c(n)$. Summation by parts gives
+\[
+ R_s(u):=\sum_{n>u}\frac{c(n)}{n^s}
+      =s\int_u^\infty A_u(v)v^{-s-1}\,dv,
+ \qquad |R_s(u)|\le Bu^{-s}.
+\]
+Set $u=\sqrt t$. Splitting the pairs $dm\le t$ according to $d\le u$
+or $d>u$ gives
+\[
+ \sum_{n\le t}\frac{a(n)}{n^\beta}
+ =\sum_{d\le u}d^{-\beta}\sum_{m\le t/d}\frac{c(m)}{m^\beta}
+  +\sum_{m\le u}\frac{c(m)}{m^\beta}
+            \sum_{u<d\le t/m}d^{-\beta}.
+\]
+The first sum has modulus at most $Bt^{1/2-\beta}$, because its inner
+sum is $-R_\beta(t/d)$. For real $v\ge u\ge1$, integral summation gives
+\[
+ \sum_{u<n\le v}n^{-\beta}
+ =\frac{v^\varepsilon-u^\varepsilon}{\varepsilon}+r(u,v),
+ \qquad |r(u,v)|\le u^{-\beta}.
+\]
+The error contributed to the second sum is therefore at most
+\[
+ u^{-\beta}\sum_{m\le u}m^{-\beta}
+ \le u^{\varepsilon-\beta}(1+\log u).
+\]
+Its two main terms are
+\[
+ \frac{L_c(1)}\varepsilon t^\varepsilon
+ -\frac{t^\varepsilon}\varepsilon R_1(u)
+ +\frac{u^\varepsilon}\varepsilon R_\beta(u).
+\]
+Pair the last two terms before taking absolute values. Their sum is
+\[
+ u^\varepsilon\sum_{m>u}c(m)g(m),\qquad
+ g(v)=\frac{v^{-\beta}-u^\varepsilon v^{-1}}\varepsilon.
+\]
+The function $g$ is nonnegative, vanishes at $u$ and at infinity, and
+increases and then decreases, with maximum at $v=u\beta^{-1/\varepsilon}$.
+A direct substitution gives
+$\max g=u^{-\beta}\beta^{\beta/\varepsilon}$.
+Consequently its total variation is twice this maximum. A final summation
+by parts bounds the paired terms by
+\[
+ 2B\beta^{\beta/\varepsilon}u^{\varepsilon-\beta}.
+\]
+Adding the three errors gives \eqref{sz-paired-main}. Finally
+$\beta^{\beta/(1-\beta)}$ decreases from $1/2$ to $e^{-1}$ on
+$[1/2,1)$, since the derivative of its logarithm is
+$(\log\beta+1-\beta)/(1-\beta)^2\le0$.
+\end{proof}
+
+For a nonprincipal real character, one may take $B=q/2$ by deleting complete
+periods from an interval and comparing the remaining block with its
+complement. In that case $a=1*\chi$ is nonnegative: at a prime power,
+\[
+ a(p^k)=
+ \begin{cases}
+ k+1,&\chi(p)=1,\\
+ 1,&\chi(p)=0,\\
+ (1+(-1)^k)/2,&\chi(p)=-1.
+ \end{cases}
+\]
+This is why the following comparison applies to real characters.
+
+\begin{lemma}[A weighted positive-sum comparison]\label{sz-positive}
+Suppose that $\chi$ is a nonprincipal real character,
+$1/2\le\beta<1$, and $L(\beta,\chi)=0$. Put $\varepsilon=1-\beta$,
+\[
+ H_1(y)=\sum_{n\le y}\frac{(1*\chi)(n)}n,\quad
+ B_0(t)=(q+1+\tfrac12\log t)t^{-1/2},\quad
+ K=\log x\log y+\tfrac12(\log x)^2.
+\]
+If $1\le y\le x$ and $\varepsilon\log(xy)\le1$, then
+\begin{align*}
+ \sum_{y<p\le x}\frac{(1+\chi(p))\log p}{p}
+ \le\varepsilon K+\frac{1}{H_1(y)}
+ \bigl[B_0(y)(\varepsilon K+\log y)
+       +B_0(xy)\log(xy)+2B_0(y)+2y^{-1/2}\bigr].
+\end{align*}
+\end{lemma}
+\begin{proof}
+Write $a=1*\chi$ and $N(t)=\sum_{n\le t}a(n)(\log n)/n$.
+The map $(n,p)\mapsto np$, with $n\le y<p\le x$, is injective, since
+equality $np=n'p'$ with distinct primes would force $p\mid n'$, although
+$n'<p$. Multiplicativity and nonnegativity give
+\[
+ H_1(y)\sum_{y<p\le x}\frac{a(p)\log p}{p}\le N(xy)-N(y).
+\]
+Use Proposition~\ref{sz-paired-tails} with $c=\chi$ and put
+$D(t)=t^{-\varepsilon}E(t)$; thus $|D(t)|\le B_0(t)$.
+Partial summation, applied to $(\log t)t^{-\varepsilon}$, gives exactly
+\begin{align*}
+ N(xy)-N(y)&=L(1,\chi)K+R,\\
+ R&=D(xy)\log(xy)-D(y)\log y
+      +\int_y^{xy}(\varepsilon\log t-1)D(t)\frac{dt}{t}.
+\end{align*}
+Because $0\le\varepsilon\log t\le1$ on the interval,
+\[
+ |R|\le B_0(xy)\log(xy)+B_0(y)\log y
+             +\int_y^\infty B_0(t)\frac{dt}{t}.
+\]
+The last integral is $2B_0(y)+2y^{-1/2}$. Also, positivity gives
+\[
+ \frac{L(1,\chi)}\varepsilon
+ =y^{-\varepsilon}\left(\sum_{n\le y}\frac{a(n)}{n^\beta}-E(y)\right)
+ \le H_1(y)+B_0(y).
+\]
+Substitute this inequality and divide by $H_1(y)\ge a(1)=1$.
+\end{proof}
+
+The pairing is useful whenever a proof needs a uniform error as a real zero
+approaches $1$. It does not produce high multiplicity for an automorphic
+theta lift, nor does positivity of $1*\chi$ extend to arbitrary complex
+characters. Those are distinct issues in a proof of the full generalized
+Riemann hypothesis.
+

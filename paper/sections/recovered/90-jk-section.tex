@@ -1,0 +1,618 @@
+\section{The coordinate integrals in the Jacquet estimates}
+\label{jk-section}
+
+This section proves the coordinate estimates used in the
+construction of the integrable majorant for the Jacquet pairing.
+All the integrals are Lebesgue integrals of nonnegative functions.
+They are therefore well defined, possibly with value \(+\infty\),
+before convergence is established.  Every interchange below follows
+from Tonelli's theorem.  We give an exact value and a necessary and
+sufficient convergence criterion for the basic integral; the
+weighted estimate then follows from elementary averaging.
+The notation and the precise correspondence with the source are
+recorded at the end of the section.
+
+\subsection{The basic integral and its exact convergence region}
+
+Let \(p,m\) be nonnegative integers.  On
+\[
+ X_{p,m}=\mathbb C^p\times\mathbb C^p\times
+                  \mathbb C^m\times\mathbb R
+\]
+write \(x=(a,b,z,t)\), with indices \(0\leq j<p\).
+Lebesgue measure on \(\mathbb C\) means
+\(d(\operatorname{Re}z)\,d(\operatorname{Im}z)\);
+in dimension zero it has total mass one.
+For \(0\leq l\leq p\), put
+\begin{align}
+ L_l(x)&=1+\sum_{j<l}|a_j|^2,\nonumber\\
+ B_l(x)&=-\tfrac12\|z\|^2+it-\sum_{j\geq l}b_j\overline{a_j},
+       \label{jk-coordinates}\\
+ R_l(x)&=L_p(x)+\|z\|^2+\sum_{j\geq l}|b_j|^2,\nonumber\\
+ d_l(x)&=\bigl(L_l(x)R_l(x)+|B_l(x)|^2\bigr)^{1/2}.
+       \nonumber
+\end{align}
+In particular \(d_l\geq1\).  Define
+\[
+ \sigma_l=\begin{cases}2&l<p,\\m+1&l=p,\end{cases}
+ \qquad
+ I_{p,m}(\nu)=
+       \int_{X_{p,m}}\prod_{l=0}^{p}d_l(x)^{-\sigma_l-\nu_l}\,dx,
+       \qquad \nu\in\mathbb R^{p+1}.
+\]
+Write \(S_l=\nu_0+\cdots+\nu_l\).
+
+\begin{theorem}\label{jk-exact}
+The integral \(I_{p,m}(\nu)\) is finite if and only if
+\begin{equation}\label{jk-cone}
+ S_l>0\quad(0\leq l\leq p),\qquad
+ S_l+2\sum_{j=l+1}^{p}\nu_j>0\quad(0\leq l<p).
+\end{equation}
+On this region it equals
+\begin{equation}\label{jk-product}
+ I_{p,m}(\nu)=
+ \mathcal B_m(S_p)
+ \prod_{l=0}^{p-1}
+   \frac{(2\pi)^2}{S_l\bigl(S_l+2\sum_{j>l}\nu_j\bigr)},
+\end{equation}
+where, for \(v>0\),
+\begin{equation}\label{jk-base-value}
+ \mathcal B_m(v)=
+  2^m\pi^{m+1/2}
+  \frac{\Gamma((m+v)/2)\Gamma(v)}
+       {\Gamma((m+1+v)/2)\Gamma(m+v)} .
+\end{equation}
+An empty product has value one.
+\end{theorem}
+
+\begin{proof}
+First take \(p=0\).  Directly from \eqref{jk-coordinates},
+\[
+ d_0^2=(1+\|z\|^2/2)^2+t^2.
+\]
+For \(q>1/2\) and \(A>0\), integration of
+\[
+ u^{-q}=\frac{1}{\Gamma(q)}
+                   \int_0^\infty s^{q-1}e^{-su}\,ds
+\]
+against \(u=A^2+t^2\) gives
+\[
+ \int_{\mathbb R}(A^2+t^2)^{-q}\,dt
+  =\sqrt\pi\,\frac{\Gamma(q-\tfrac12)}{\Gamma(q)}
+                      A^{1-2q}.
+\]
+Here we used \(\int_{\mathbb R}e^{-st^2}\,dt=\sqrt{\pi/s}\).
+The same calculation in \(m\) complex coordinates gives, for \(h>m\),
+\[
+ \int_{\mathbb C^m}(1+\|z\|^2/2)^{-h}\,dz
+                    =(2\pi)^m\frac{\Gamma(h-m)}{\Gamma(h)}.
+\]
+These identities follow directly from the displayed Laplace
+integral and Tonelli; the Gaussian identity follows by squaring the
+one dimensional integral and using polar coordinates in
+\(\mathbb R^2\).
+Apply them with \(q=(m+1+v)/2\) and \(h=m+v\).
+This proves \eqref{jk-base-value} when \(v>0\).
+If \(m+v\leq0\), the integral in \(t\) already diverges.
+If \(m+v>0\) but \(v\leq0\), integration in \(t\) leaves
+\((1+\|z\|^2/2)^{-m-v}\), whose integral diverges:
+for \(m\geq1\), polar coordinates give a tail comparable to
+\(\int_1^\infty r^{-1-2v}\,dr\).
+For \(m=0\) the first alternative applies.
+Thus the base integral is finite exactly when \(v>0\).
+
+Now suppose \(p\geq1\), and set \(L=1+|a_0|^2\).
+Completing the square gives the identity
+\begin{equation}\label{jk-square}
+ d_0^2=
+ L\left|b_0-\frac{a_0B_1}{L}\right|^2+\frac{d_1^2}{L}.
+\end{equation}
+Indeed \(B_0=B_1-b_0\overline{a_0}\),
+\(R_0=R_1+|b_0|^2\), and \(L_0=1\);
+expansion of both sides gives the same expression.
+The remaining \(d_l\), \(l\geq1\), do not depend on \(b_0\).
+For fixed remaining coordinates, integration in \(b_0\) is finite
+exactly when \(\nu_0>0\).  In that case polar coordinates give
+\begin{equation}\label{jk-first-integration}
+ \int_{\mathbb C}d_0^{-2-\nu_0}\,db_0
+       =\frac{2\pi}{\nu_0}L^{\nu_0/2-1}d_1^{-\nu_0}.
+\end{equation}
+For \(\nu_0\leq0\), the two dimensional tail diverges, independently
+of all the fixed coordinates.  The full integral is then infinite.
+
+For fixed \(a_0\), make the substitution
+\[
+ a_j=\sqrt L\,\widetilde a_{j-1},\quad
+ b_j=\sqrt L\,\widetilde b_{j-1}\quad(j\geq1),\qquad
+ z=\sqrt L\,\widetilde z,\quad t=L\widetilde t.
+\]
+Its Jacobian is \(L^{2(p-1)+m+1}\).  The definitions show that
+\[
+ L_{l+1}=L\widetilde L_l,\quad
+ B_{l+1}=L\widetilde B_l,\quad
+ R_{l+1}=L\widetilde R_l,\quad
+ d_{l+1}=L\widetilde d_l.
+\]
+The sum of the remaining critical exponents is
+\(2(p-1)+m+1\), exactly the Jacobian exponent.
+Consequently the remaining factor in \(a_0\) is
+\[
+ (1+|a_0|^2)^{-1-\nu_0/2-\sum_{j\geq1}\nu_j}.
+\]
+Its integral is finite exactly when
+\(\nu_0+2\sum_{j\geq1}\nu_j>0\), and then equals
+\(2\pi/(\nu_0+2\sum_{j\geq1}\nu_j)\).
+Thus, whenever these two inequalities hold,
+\begin{equation}\label{jk-recursion}
+ I_{p,m}(\nu)=
+ \frac{(2\pi)^2}
+      {\nu_0(\nu_0+2\sum_{j\geq1}\nu_j)}
+ I_{p-1,m}(\nu_0+\nu_1,\nu_2,\ldots,\nu_p).
+\end{equation}
+This is also an identity of extended nonnegative integrals.
+The lower dimensional integral is strictly positive, so divergence
+of either factor cannot be concealed by a zero factor.
+Induction now proves necessity and sufficiency of all the
+inequalities in \eqref{jk-cone}, and multiplication of the factors
+in \eqref{jk-recursion} proves \eqref{jk-product}.
+\end{proof}
+
+\begin{corollary}\label{jk-uniform}
+On every compact subset of the open region \eqref{jk-cone},
+the integrands defining \(I_{p,m}\) have a common integrable
+majorant.  In particular the integral depends continuously on
+\(\nu\) there.  The same assertion holds after any fixed number of
+derivatives with respect to the exponents.
+\end{corollary}
+
+\begin{proof}
+At any point \(\nu^*\) of the region, choose \(\varepsilon>0\)
+such that \(\nu^*-2\varepsilon(1,\ldots,1)\) remains in the region.
+For \(|\nu_l-\nu_l^*|<\varepsilon\), the inequality \(d_l\geq1\)
+gives an integrable majorant with exponents
+\(\nu_l^*-\varepsilon\).
+For derivatives, each additional factor is a product of powers
+of \(\log d_l\).  The elementary bound
+\((\log u)^N\leq C_{N,\varepsilon}u^\varepsilon\), \(u\geq1\),
+gives the majorant with exponents
+\(\nu_l^*-2\varepsilon\), with a smaller \(\varepsilon\) if needed.
+A finite covering of the compact set supplies a finite sum of
+such majorants.  Dominated convergence proves the assertions.
+\end{proof}
+
+\subsection{An integral with one coordinate removed}
+
+For \(a\in\mathbb C^{p+1}\), \(b\in\mathbb C^p\),
+\(z\in\mathbb C^m\), \(t\in\mathbb R\), regard
+\[
+ x=(a,(0,b_0,\ldots,b_{p-1}),z,t)\in X_{p+1,m}.
+\]
+Use the quantities \(L_l,d_l,\sigma_l\) for this larger space.
+For \(\alpha\in\mathbb R\) and \(\nu\in\mathbb R^{p+1}\), define
+\[
+ T_{p,m}(\alpha,\nu)=
+ \int L_1^{(\alpha-2)/2}d_1^{-\alpha}
+                \prod_{i=0}^{p}d_{i+1}^{-\sigma_{i+1}-\nu_i}
+                                      \,da\,db\,dz\,dt .
+\]
+
+\begin{corollary}\label{jk-tail}
+This integral is finite exactly when
+\[
+ \alpha+2\sum_{i=0}^{p}\nu_i>0
+ \quad\hbox{and}\quad
+ (\nu_0+\alpha,\nu_1,\ldots,\nu_p)
+                 \text{ satisfies \eqref{jk-cone}}.
+\]
+Under these conditions,
+\begin{equation}\label{jk-tail-value}
+ T_{p,m}(\alpha,\nu)=
+       \frac{2\pi}{\alpha+2\sum_i\nu_i}
+          I_{p,m}(\nu_0+\alpha,\nu_1,\ldots,\nu_p).
+\end{equation}
+No sign condition on \(\alpha\) is required.
+\end{corollary}
+
+\begin{proof}
+Set \(L=1+|a_0|^2\) and use the same scaling as in the
+proof of Theorem~\ref{jk-exact}.
+The Jacobian is now \(L^{2p+m+1}\) and cancels the sum
+of the critical exponents of \(d_1,\ldots,d_{p+1}\).
+The residual power is
+\(L^{-1-\alpha/2-\sum_i\nu_i}\).
+Its integral over \(a_0\in\mathbb C\) gives the displayed factor
+and its exact convergence condition.  The other factor is the
+strictly positive integral on the right of \eqref{jk-tail-value}.
+Tonelli proves both directions, including divergence cases.
+\end{proof}
+
+\subsection{Three elementary estimates}
+
+\begin{lemma}\label{jk-sublevel}
+Let \(P(u)=c_0+c_1u+c_2u^2\), with complex coefficients, and let
+\(M=\max_j|c_j|\).  If \(M>0\) and \(\varepsilon>0\), then
+\begin{equation}\label{jk-sublevel-measure}
+ \bigl|\{u\in[1,2]:|P(u)|\leq\varepsilon M\}\bigr|
+                                  \leq \sqrt{432\varepsilon}.
+\end{equation}
+Consequently, for \(0<\delta\leq1/2\),
+\begin{equation}\label{jk-sublevel-integral}
+ \int_1^2(1+|P(u)|)^{-\delta}\,du
+                         \leq30(1+M)^{-\delta/2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let \(E\) be the set in \eqref{jk-sublevel-measure} and
+\(\mu=|E|>0\).  Select three points \(u_1,u_2,u_3\) of \(E\)
+at pairwise distance at least \(\mu/6\): after selecting each
+of the first two points, delete its interval of radius
+\(\mu/6\); the deleted measure is at most \(2\mu/3\).
+Lagrange interpolation gives
+\[
+ P(u)=\sum_{i=1}^{3}P(u_i)
+              \prod_{j\ne i}\frac{u-u_j}{u_i-u_j}.
+\]
+Each coefficient of the numerator \(\prod_{j\ne i}(u-u_j)\)
+has absolute value at most \(4\), since \(1\leq u_j\leq2\).
+Each denominator has absolute value at least \(\mu^2/36\).
+Comparing coefficients yields
+\(M\leq432\varepsilon M/\mu^2\), proving
+\eqref{jk-sublevel-measure}.
+
+For \(M\geq1\), split at \(|P|=\sqrt M\).
+The contribution from the first set is at most
+\(\sqrt{432}M^{-1/4}\); on its complement the integrand
+is at most \(M^{-\delta/2}\).
+Since \(\delta\leq1/2\), their sum is at most
+\((\sqrt{432}+1)M^{-\delta/2}
+ \leq30(1+M)^{-\delta/2}\).
+For \(M\leq1\), including \(M=0\), the integral is at most one,
+which satisfies the same bound.
+\end{proof}
+
+\begin{lemma}\label{jk-riesz}
+If \(0<e<\gamma<2\), there is a finite constant
+\(C_{e,\gamma}\), independent of \(c\in\mathbb C\) and \(D>0\),
+such that
+\begin{equation}\label{jk-riesz-bound}
+ \int_{\mathbb C}
+ (|w-c|^2+D^2)^{-1+e/2}|w|^{-\gamma}\,dw
+       \leq C_{e,\gamma}(|c|^2+D^2)^{-(\gamma-e)/2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Scale by \(r=(|c|^2+D^2)^{1/2}\).  The resulting factor is
+\(r^{e-\gamma}\), and the new parameters satisfy
+\(|c|^2+D^2=1\).
+For \(|w|\geq3\), the integrand is at most a constant times
+\(|w|^{-2+e-\gamma}\); its integral is uniformly finite because
+\(\gamma>e\).
+It remains to consider \(|w|\leq3\).
+If \(|c|\leq1/2\), then \(D\geq\sqrt3/2\), and the only
+possible singularity is bounded by a constant times
+\(|w|^{-\gamma}\), integrable because \(\gamma<2\).
+If \(|c|>1/2\), the discs \(|w|<1/4\) and
+\(|w-c|<1/4\) are disjoint.
+On the first, the other factor is bounded uniformly.
+On the second, \(|w|^{-\gamma}\) is bounded uniformly, while
+\[
+ (|w-c|^2+D^2)^{-1+e/2}\leq |w-c|^{-2+e},
+ \qquad w\ne c,
+\]
+which is integrable because \(e>0\).
+On the remainder both distances are at least \(1/4\), so
+the integrand is bounded uniformly.
+This proves the normalized estimate and hence the result.
+\end{proof}
+
+\begin{lemma}\label{jk-slow}
+Let \(0<\kappa<1\), \(R>0\), and
+\[
+ w(\beta)=\prod_{i=1}^{n}
+                (A_i^2+(\beta-b_i)^2)^{-t_i/2},
+ \qquad
+ A_i\geq R,\quad t_i\geq0,\quad \sum_i t_i\leq T .
+\]
+For every \(c\in\mathbb R\),
+\begin{equation}\label{jk-slow-bound}
+ \int_{\mathbb R}w(\beta)|\beta-c|^{-\kappa}\,d\beta
+ \leq
+ \left(1+\frac{2\,19^{\max(T,0)/2}}{1-\kappa}\right)
+ R^{-\kappa}\int_{\mathbb R}w(\beta)\,d\beta .
+\end{equation}
+The assertion is valid for extended nonnegative integrals.
+\end{lemma}
+
+\begin{proof}
+Translate to \(c=0\).  The case \(\int w=+\infty\) is
+immediate, so suppose that integral is finite.
+For \(|\beta|\leq R\) and \(R\leq s\leq2R\),
+\[
+ A_i^2+(s-b_i)^2
+ \leq A_i^2+2(\beta-b_i)^2+18R^2
+ \leq19\bigl(A_i^2+(\beta-b_i)^2\bigr).
+\]
+Therefore \(w(\beta)\leq19^{\max(T,0)/2}w(s)\).
+Averaging over \(s\in[R,2R]\) gives
+\[
+ w(\beta)\leq19^{\max(T,0)/2}R^{-1}
+                       \int_{\mathbb R}w(s)\,ds
+             \qquad (|\beta|\leq R).
+\]
+Integration of \(|\beta|^{-\kappa}\) on \([-R,R]\) gives
+the second term in the constant.
+On \(|\beta|\geq R\), use
+\(|\beta|^{-\kappa}\leq R^{-\kappa}\).
+\end{proof}
+
+\subsection{A finite integral below the critical exponents}
+
+\begin{proposition}\label{jk-weighted}
+Let \(P\geq1\), \(m\geq0\), \(0<\gamma\leq1\), and
+\(e_0,\ldots,e_P>0\).  Suppose that
+\begin{equation}\label{jk-loss-condition}
+ e_0+2\sum_{l=1}^{P}e_l<\gamma/2.
+\end{equation}
+Use \eqref{jk-coordinates} on \(X_{P,m}\), and put
+\(s_l=\sigma_l-e_l\).  Then
+\begin{equation}\label{jk-weighted-integral}
+ \int_{X_{P,m}}\prod_{l=0}^{P}d_l(x)^{-s_l}
+                                  |b_0|^{-\gamma}\,dx<\infty .
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The hypotheses give \(0<e_0<\gamma<2\) and \(0<e_l<1\)
+for all \(l\); hence \(s_l\geq0\).
+Fix all variables except \(b_0\), and let \(L=1+|a_0|^2\).
+Write \(D_0=d_0|_{b_0=0}\) and \(D_l=d_l\) for \(l\geq1\);
+the latter quantities are independent of \(b_0\).
+With \(c=a_0B_1/L\), identity \eqref{jk-square} gives
+\[
+ d_0^2=L|b_0-c|^2+D_1^2/L,\qquad
+ D_0^2=L|c|^2+D_1^2/L .
+\]
+Applying Lemma~\ref{jk-riesz}, with its positive parameter
+\(D=D_1/L\), yields
+\begin{equation}\label{jk-b-integration}
+ \int_{\mathbb C}d_0^{-2+e_0}|b_0|^{-\gamma}\,db_0
+              \leq C L^{-1+\gamma/2}D_0^{-(\gamma-e_0)}.
+\end{equation}
+The powers of \(L\) here follow by factoring \(L\) from
+\(d_0^2\) and using
+\(|c|^2+(D_1/L)^2=D_0^2/L\).
+
+Put \(\alpha=\gamma/2-e_0>0\) and \(\kappa=\gamma/2\).
+For the point with \(b_0=0\), let
+\[
+ \theta_l=\operatorname{Im}\sum_{j\geq l}b_j\overline{a_j}.
+\]
+Then
+\[
+ D_l^2=A_l^2+(t-\theta_l)^2,\qquad
+ A_l^2=L_lR_l+
+       \left(-\|z\|^2/2-
+                   \operatorname{Re}\sum_{j\geq l}
+                                     b_j\overline{a_j}\right)^2.
+\]
+For \(l\geq1\), both \(L_l\) and \(R_l\) are at least \(L\);
+thus \(A_l\geq L\).
+Moreover \(B_0=B_1\) and \(R_0=R_1\) at \(b_0=0\).
+It follows that
+\[
+ D_1\leq\sqrt L\,D_0,\qquad |t-\theta_1|\leq D_0.
+\]
+Apart from the single value \(t=\theta_1\), this implies
+\[
+ D_0^{-(\gamma-e_0)}
+   \leq L^{\alpha/2}D_1^{-\alpha}|t-\theta_1|^{-\kappa}.
+\]
+Apply Lemma~\ref{jk-slow} to
+\[
+ w(t)=D_1^{-\alpha}\prod_{l=1}^{P}D_l^{-s_l}.
+\]
+Its exponents are nonnegative and have sum at most
+\(\alpha+\sum_{l=1}^{P}\sigma_l\); all its parameters
+\(A_l\) are at least \(L\).
+The constant is therefore independent of the fixed coordinates.
+After integrating in \(t\), the product of the powers of \(L\) is
+\[
+ L^{-1+\gamma/2}L^{\alpha/2}L^{-\kappa}
+                                      =L^{(\alpha-2)/2}.
+\]
+By \eqref{jk-b-integration}, the integral in
+\eqref{jk-weighted-integral} is consequently at most a constant
+times
+\[
+ T_{P-1,m}\bigl(\alpha,(-e_1,\ldots,-e_P)\bigr).
+\]
+Condition \eqref{jk-loss-condition} says
+\(\alpha>2\sum_{l=1}^{P}e_l\).
+The first condition of Corollary~\ref{jk-tail} follows.
+Every partial sum for the shifted vector
+\((\alpha-e_1,-e_2,\ldots,-e_P)\) is positive.
+Every other required expression is of the form
+\[
+ \alpha-\sum_{j\leq l}e_j-2\sum_{j>l}e_j
+                       \geq\alpha-2\sum_{j=1}^{P}e_j>0,
+\]
+with the appropriate initial segment starting at \(j=1\).
+Thus all conditions of that corollary hold, proving finiteness.
+\end{proof}
+
+\subsection{The estimate with a linear character}
+
+For \(x=(a,b,z,t)\in X_{P,m}\), define the complex linear form
+\[
+ \ell(x)=\sum_{j=0}^{P-1}(a_j\eta_j+b_j\eta'_j)
+                                      +\sum_{i=1}^{m}z_i\xi_i,
+\]
+where \(\eta,\eta'\in\mathbb C^P\), \(\xi\in\mathbb C^m\).
+
+\begin{theorem}\label{jk-oscillatory}
+Let \(P\geq1\), \(m\geq0\),
+\[
+ 0<\delta\leq\tfrac12,\qquad
+ 0<\gamma\leq\delta/8,\qquad e_l>0,
+ \qquad e_0+2\sum_{l=1}^{P}e_l<\gamma/2 .
+\]
+Set \(s_l=\sigma_l-e_l\).
+There is a finite constant depending only on
+\(P,m,\delta,\gamma,e\) such that, for every
+\(\eta,\eta',\xi,c_0\) with \(\eta'_0\ne0\) and \(c_0\in\mathbb R\),
+\begin{equation}\label{jk-os}
+ \int_{X_{P,m}}\prod_{l=0}^{P}d_l(x)^{-s_l}
+          \bigl(1+|2\operatorname{Im}\ell(x)+c_0|\bigr)^{-\delta}
+             \,dx
+ \leq C|\eta'_0|^{-\gamma}(1+|c_0|)^{-\delta/4}.
+\end{equation}
+In particular the bound is uniform in all the other coefficients
+of the linear form.
+\end{theorem}
+
+\begin{proof}
+Write \(F(x)=\prod_l d_l(x)^{-s_l}\).
+We use two changes of variables preserving Lebesgue measure.
+All the averaging is over \([1,2]\), an interval of length one.
+
+First put
+\[
+ \rho(u)=\frac{(1+iu)^2}{1+u^2},\qquad
+ \mathcal R_u(a,b,z,t)=(\rho(u)a,\rho(u)b,\rho(u)z,t).
+\]
+Since \(|\rho(u)|=1\), this map preserves measure.
+All \(L_l,R_l,B_l\), and hence \(F\), are unchanged, whereas
+\(\ell(\mathcal R_u x)=\rho(u)\ell(x)\).
+For \(X\in\mathbb C\), direct multiplication gives
+\[
+ 2\operatorname{Im}(\rho(u)X)+c_0
+     =\frac{(2\operatorname{Im}X+c_0)
+                 +4\operatorname{Re}X\,u
+                 +(c_0-2\operatorname{Im}X)u^2}{1+u^2}.
+\]
+Let \(M\) be the maximum of the absolute values of the three
+coefficients of the numerator.  Then
+\[
+ |c_0|\leq M,\qquad
+ |\operatorname{Re}X|\leq M/4,\qquad
+ |\operatorname{Im}X|\leq M/2,\qquad |X|\leq M.
+\]
+As \(1+u^2\leq5\), Lemma~\ref{jk-sublevel} shows that
+\begin{equation}\label{jk-rotation-bound}
+ \int_1^2
+ (1+|2\operatorname{Im}(\rho(u)X)+c_0|)^{-\delta}\,du
+ \leq30\,5^\delta
+              (1+|c_0|)^{-\delta/4}(1+|X|)^{-\delta/4}.
+\end{equation}
+Indeed \((1+M)^2\geq(1+|c_0|)(1+|X|)\).
+Changing variables by \(\mathcal R_u\), and then averaging,
+bounds the left side of \eqref{jk-os} by
+\begin{equation}\label{jk-after-rotation}
+ 30\,5^\delta(1+|c_0|)^{-\delta/4}
+                 \int F(x)(1+|\ell(x)|)^{-\delta/4}\,dx .
+\end{equation}
+
+The second change of variables is
+\[
+ \mathcal S_u(a,b,z,t)=
+ ((ua_0,a_1,\ldots),(b_0/u,b_1,\ldots),z,t).
+\]
+The real Jacobian is \(u^2u^{-2}=1\).
+For \(1\leq u\leq2\), each \(L_l\) can only increase,
+each \(R_l\) is at least one quarter of its original value,
+and each \(B_l\) is unchanged.  Thus
+\[
+ d_l(\mathcal S_u x)\geq d_l(x)/2,\qquad
+ F(\mathcal S_u x)\leq2^{\sum_l s_l}F(x).
+\]
+Here \(s_l\geq0\), as already observed in
+Proposition~\ref{jk-weighted}.
+Consequently change of variables and averaging give
+\begin{align}
+ \int F(x)(1+|\ell(x)|)^{-\delta/4}\,dx
+ &\leq2^{\sum_l s_l}
+   \int F(x)\int_1^2
+       (1+|\ell(\mathcal S_u x)|)^{-\delta/4}\,du\,dx.
+ \label{jk-after-scaling}
+\end{align}
+Write
+\[
+ A=a_0\eta_0,\qquad C=b_0\eta'_0,\qquad
+ B=\sum_{j\geq1}(a_j\eta_j+b_j\eta'_j)+\sum_i z_i\xi_i.
+\]
+Then \(u\ell(\mathcal S_u x)=C+Bu+Au^2\).
+Since \(u\leq2\), another application of
+Lemma~\ref{jk-sublevel}, now with exponent \(\delta/4\), gives
+\[
+ \int_1^2(1+|\ell(\mathcal S_u x)|)^{-\delta/4}\,du
+ \leq30\,2^{\delta/4}(1+|C|)^{-\delta/8}
+ \leq30\,2^{\delta/4}|b_0\eta'_0|^{-\gamma}
+\]
+whenever \(b_0\eta'_0\ne0\).
+The last inequality uses \(0<\gamma\leq\delta/8\).
+As \(\eta'_0\ne0\), the excluded set \(b_0=0\) has measure
+zero.  Alternatively the bound holds everywhere with value
+\(+\infty\) assigned to the singular factor.
+Insert this inequality into \eqref{jk-after-scaling}.
+Proposition~\ref{jk-weighted} bounds the resulting integral of
+\(F(x)|b_0|^{-\gamma}\).
+Together with \eqref{jk-after-rotation}, this proves
+\eqref{jk-os}.
+\end{proof}
+
+\subsection{Sharp convergence restrictions and scope}
+
+The inequalities in \eqref{jk-cone} are necessary, not merely
+convenient sufficient assumptions.  The proof of
+Theorem~\ref{jk-exact} gives a divergent complex coordinate integral
+or the divergent final real or radial integral whenever any of
+them fails.  For example, \(p=0,\nu_0=0\) gives logarithmic
+divergence; for \(p=1\), the vectors
+\((0,1)\) and \((2,-1)\) respectively violate the first
+complex integration condition and the second one at equality,
+although the remaining inequalities are positive.
+
+The extra weight in Theorem~\ref{jk-oscillatory} is also essential.
+For \(P\geq1\) and \(e_0>0\), the integral of
+\(\prod_l d_l^{-\sigma_l+e_l}\) without that weight is infinite,
+because its first exponent parameter is \(\nu_0=-e_0<0\).
+If all the coefficients \(\eta,\eta',\xi\) vanish, the weight
+is a positive constant, so the same divergence persists.
+This supplies a counterexample to omitting the condition on the
+linear form; it is not a counterexample under the stated
+condition \(\eta'_0\ne0\).
+In Lemma~\ref{jk-riesz}, \(\gamma\geq2\) makes the origin
+nonintegrable, and \(\gamma\leq e\) makes infinity nonintegrable.
+The restriction \(e>0\) is also required for a bound uniform
+as \(D\downarrow0\) with \(c\ne0\): a disc around \(c\)
+has a divergent limiting integral when \(e\leq0\).
+
+The definitions \eqref{jk-coordinates} and the critical exponents
+are exactly those in the source's coordinate integral
+\(\mathrm{CHInt}\).  Theorem~\ref{jk-exact} proves its assertion
+\(\mathrm{CH}\) and strengthens it to an exact evaluation and a
+necessary convergence criterion.  Corollary~\ref{jk-tail}
+proves its assertion \(\mathrm{TailFin}\), identity
+\eqref{jk-square} is its \(\mathrm{C1}\), and the three elementary
+lemmas prove \(\mathrm{SUB}\), \(\mathrm{KER}\), and
+\(\mathrm{SLOW}\).  Theorem~\ref{jk-oscillatory}, with \(P=p+1\),
+is exactly its assertion \(\mathrm{OS}\).
+These identifications refer to the definitions in
+\texttt{TailIntegrals/TailInt.lean} in the source archive
+\cite{alpo-uniform-source}; the accompanying source trace records
+the other files and the parts read.
+
+This section supplies actual estimates, with proofs, rather than
+assuming the existence of a Jacquet majorant.
+To obtain that majorant one still has to prove the geometric
+identities expressing the unipotent integral in these coordinates,
+the corresponding induction on the rank, and the group integral
+used for the matrix coefficient bound.
+The convergence and differentiability of the final Jacquet
+pairing also require the subsequent unfolding and domination
+arguments.  None of those further assertions is inferred solely
+from the coordinate estimates proved here.
+
+

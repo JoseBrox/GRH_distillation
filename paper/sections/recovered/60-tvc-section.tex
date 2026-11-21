@@ -1,0 +1,253 @@
+\section{The actual theta kernel and the selected-prime column estimate}
+\label{tvc-section}
+
+The moment and incidence hypotheses in Section~\ref{cv-section}
+have now been proved for the normalized theta functions of the
+construction. We make the remaining identification with the
+polynomial kernel explicit. In particular, an arbitrary projection
+onto the target representation has no effect, and ordinary mixed
+derivatives introduce no factorial denominator. We then state exactly
+which column estimate follows. This concerns the selected primes;
+the estimates at the auxiliary level primes are separate.
+\cite{alpo-uniform-source}
+
+\subsection{From mixed derivatives to the polynomial map}
+
+Retain the ranks $a<b$, embedding set $I$, dominant weights
+$\lambda,\mu$, and nonnegative determinant exponents $n_\tau$
+of \eqref{cv-weight-compatibility}. For the source variables
+$X_{\tau,\alpha s}$, target variables $Y_{\tau,\beta j}$,
+and new variables $Z_{\tau,\alpha\beta}$, put
+\[
+ \begin{split}
+ F^\sharp(X)&=F(X)\prod_{\tau\in I}\det(X_\tau)^{n_\tau},\\
+ \mathcal Q_F(Y,Z)
+   &=F^\sharp\bigl((Z_\tau Y_{\tau,[1,a]})_{\tau\in I}\bigr)
+     =\sum_m Z^m Q_m(F)(Y).
+ \end{split}
+                                                               \tag{TC1}
+\]
+Here $Y_{\tau,[1,a]}$ denotes the first $a$ columns of $Y_\tau$.
+This is the universal polynomial of
+\eqref{cv-universal-expansion}. The order of its two new matrix
+indices is significant: $Z$ is an $a$ by $b$ matrix, whereas
+the analytic theta variable is a $b$ by $a$ matrix. Thus
+$Z_{\tau,\alpha\beta}$ corresponds to differentiation in
+the analytic coordinate $(\tau,\beta,\alpha)$.
+
+Let $G$ be holomorphic near zero in those analytic coordinates,
+and let $c_\tau\ne0$ be the fixed direction constants. Define
+\[
+ J_m(G)=
+  \left(\prod_{\tau,\alpha,\beta}
+                  c_\tau^{m_{\tau,\alpha\beta}}\right)
+  \left(\prod_{\tau,\alpha,\beta}
+   \partial_{z_{\tau,\beta,\alpha}}^{m_{\tau,\alpha\beta}}
+          G\right)(0).
+                                                               \tag{TC2}
+\]
+Holomorphic mixed derivatives commute. Their multilinear definition
+also shows that the result is independent of the order in which the
+repeated directions are listed. In particular $J_m(G)$ is the
+derivative, and is $m!$ times the corresponding Taylor coefficient
+when all $c_\tau=1$.
+
+\begin{lemma}\label{tvc-jet-map}
+For any scalar family $(J_m)$, the operation on polynomials that
+first multiplies by $\prod_\tau\det(X_\tau)^{n_\tau}$,
+then substitutes
+\[
+              X_{\tau,\alpha s}
+                   \longmapsto
+                  \sum_\beta Y_{\tau,\beta s}Z_{\tau,\alpha\beta},
+\]
+and finally sends each monomial $Y^vZ^m$ to $J_mY^v$, is
+precisely
+\[
+                       F\longmapsto\sum_m J_mQ_m(F).
+                                                               \tag{TC3}
+\]
+Its image lies in $V_\mu$ for $F\in V_\lambda$. Consequently
+composing it with any linear projection of the full target polynomial
+ring onto $V_\mu$ which is the identity on $V_\mu$ leaves it unchanged.
+\end{lemma}
+\begin{proof}
+After the first two operations the polynomial is exactly (TC1).
+Applying the stated monomial rule gives (TC3) by linearity.
+Lemma~\ref{cv-substitution} proves that $\mathcal Q_F(Y,Z)$,
+as a polynomial in $Y$, satisfies the defining column degrees and
+column-addition invariances of $V_\mu$. Comparing coefficients of
+the independent variables $Z$ shows that each $Q_m(F)$ satisfies
+these same identities. Hence every finite linear combination in
+(TC3) belongs to $V_\mu$. A projection equal to the identity there
+therefore fixes it. This argument makes no choice of a complement
+and uses no integrality of a projection.
+\end{proof}
+
+For the actual lattices $N,N'$ and finite selected set $S$, put
+\[
+ H=\{x\in\operatorname{Hom}_E(E^a,E^b):xN_P\subseteq N'_P
+                                                \ (P\in S)\}.
+\]
+For positive integers $c_A,c_B$, choose representatives $x$ of
+$c_A^{-1}H/c_BH$. This quotient is finite by
+Lemma~\ref{jcf-finite-indicators}. Let $G_x$ be its normalized
+theta indicator, including division by the determinant-character
+factor as in Section~\ref{jcf-section}. Let $\Xi(x)$ be the actual
+finite test function, and let $\eta(N,N')$ be the ratio of the
+remaining local frame and determinant characters. Set
+\[
+                 J_m=\sum_{x\in c_A^{-1}H/c_BH}
+                                  \Xi(x)J_m(G_x).
+                                                               \tag{TC4}
+\]
+All the quantities in this formula belong to the one field $K$
+of Proposition~\ref{jcf-common-field}, after the fixed finite
+choices have been made. Only the finitely many $m$ of
+\eqref{cv-finite-degrees} are used.
+
+\begin{proposition}\label{tvc-actual-kernel}
+The actual polynomial theta kernel for this pair of decorated
+lattices is
+\[
+                  K(N,N')F=\eta(N,N')\sum_m J_mQ_m(F).
+                                                               \tag{TC5}
+\]
+Here $J_m$ is exactly (TC4), with the derivatives (TC2).
+There is no additional factorial, lattice index, or projection
+factor in (TC5).
+\end{proposition}
+\begin{proof}
+For a fixed representative $x$, the polynomial theta operation is
+the determinant multiplication and substitution of Lemma~\ref{tvc-jet-map},
+followed by the derivative functional $Z^m\mapsto J_m(G_x)$.
+That lemma identifies it with $\sum_mJ_m(G_x)Q_m$ and removes
+any projection onto the target representation. Multiply by
+$\Xi(x)$ and sum. Both sums are finite, so interchanging them
+gives (TC4)--(TC5). The factor $\eta(N,N')$ is independent of $x$
+and can be taken outside the sum.
+
+The finite indicator $G_x$ already contains the Fourier average
+and the positive square-root normalization proved in
+Section~\ref{csp-section}. The present operation neither inserts
+nor removes them. Likewise (TC2) is the ordinary repeated
+derivative used there, not a divided Taylor coefficient.
+This proves the normalization assertion. The admissibility of
+the representatives is also exact: $c_Ax\in H$ implies
+$c_Ac_Bx\in H$, so each term lies in the permitted level
+$c_Ac_B$ and the indicator is evaluated at level $c_B$.
+All equalities descend from the complex embedding to $K$ by
+its injectivity.
+\end{proof}
+
+\subsection{The resulting local divisibility}
+
+We retain all the geometric and coefficient data of
+Section~\ref{cv-section}. Thus $[E:\mathbb Q]=2f$,
+$\pi\bar\pi=p$, the $f$ primes dividing $\pi$ have norm $p$,
+and the ranks are positive even integers
+\[
+                 N_{i+1}-N_i=t+1=2s_0\quad(0\le i<m).
+\]
+The CM elliptic ideal and the inverse half different are units at
+$p$, and $p\ge5$. The source and target weights satisfy
+\eqref{cv-weight-compatibility} at each transition. Choose
+nonnegative integers $W_\tau$ with \eqref{cv-weight-bounds}, and suppose the
+target hook bound \textup{(CV11)} holds at every transition and
+\[
+                              p>2fN_m+1.                       \tag{TC6}
+\]
+All other local levels in the test function are prime to $p$,
+with integral values at the coefficient place in question, as in
+the construction of Section~\ref{csp-section}. These conditions
+are retained because they are used in the moment and character
+unit calculations.
+
+Let $\mathscr S_i$ be the local coefficient lattice of equivariant
+class sections at rank $N_i$. Let $\mathcal T$ be the distinguished
+set of embeddings, $r=|\mathcal T|$, and let $U_i$ be the product
+of the upper-neighbor sums at its corresponding selected primes.
+Let $K_i$ be the actual class-sum theta transition and put
+$C_m=K_{m-1}\cdots K_0$.
+
+\begin{theorem}\label{tvc-column}
+At a coefficient place $w\mid p$ of selected type, put
+\[
+ e=2\sum_\tau W_\tau+fN_m,\qquad
+ b_m=me+s_0r\frac{m(m+1)}2.
+                                                               \tag{TC7}
+\]
+Then
+\[
+                  p^{b_m}C_mU_0^m\mathscr S_0
+                                          \subseteq\mathscr S_m.
+                                                               \tag{TC8}
+\]
+If the initial lattice is $\mathscr N=p^AU_0^m\mathscr S_0$
+with $A\ge0$, and $v_w(c)\ge v_w(p)b_m$, then
+\[
+                              cC_m\mathscr N\subseteq\mathscr S_m.
+                                                               \tag{TC9}
+\]
+At a coefficient place of conjugate type the column preserves
+the original integral class lattice without a power of $p$.
+Applying any of the integral lowering maps of
+Section~\ref{atl-section}, and then pairing with an integral row,
+introduces no further denominator at $w$.
+\end{theorem}
+\begin{proof}
+Proposition~\ref{tvc-actual-kernel} identifies the actual operator
+with the operator in \textup{(CV2)}. The moment laws of
+Section~\ref{gm-section} and the two support calculations of
+Section~\ref{csp-section} supply exactly \textup{(CV9)--(CV10)}:
+the selected support has scalar $p^{-fN_i}$ and the conjugate
+support has scalar one. Lemma~\ref{csp-coordinate-units} gives
+the unit direction factors. The approximations use one integral
+finite sum for all the required moments. Thus they are the
+simultaneous approximations in
+\eqref{cv-moment-approximation}, not merely separate bounds on
+individual derivatives.
+
+The character ratio is a unit by
+Lemma~\ref{cv-character-unit}, and the hook bound identifies the
+target Weyl and dual-Weyl lattices. Condition (TC6) makes every
+class stabilizer order a unit by
+Lemma~\ref{cv-stabilizer-unit}. Theorem~\ref{cv-two-kernels}
+and the residue-removal argument therefore give
+\[
+                      p^eU_{i+1}K_i\mathscr S_i
+                                                \subseteq\mathscr S_{i+1}.
+\]
+Theorem~\ref{hec-global-identity}, at each of the $r$ distinct
+primes, gives
+\[
+                            U_{i+1}K_i=p^{s_0r}K_iU_i.
+\]
+The different local neighbor operators commute since they change
+different local components. All these identities hold over the
+same field $K$ by Proposition~\ref{jcf-common-field}.
+Proposition~\ref{cv-column} now proves (TC8)--(TC9), with the
+integer exponent (TC7). At conjugate-type places the second
+bound of Theorem~\ref{cv-two-kernels} already preserves each
+original integral lattice, so their composition does too.
+
+The final lowering maps preserve the local lattices by
+Section~\ref{atl-section}. The row pairing of
+Section~\ref{cp-section} has only the stated class stabilizer
+denominators, which are units by (TC6). This proves the last
+assertion.
+\end{proof}
+
+The exponent (TC7) is the exponent $mE_p$ of
+\eqref{cv-final-exponent}. The selected-prime part of the column
+valuation argument is therefore complete under the displayed
+construction hypotheses. This does not prove that
+$U_0^m\mathscr S_0$ or its theta image is nonzero, does not supply
+the estimates at the two auxiliary level primes, and does not
+replace the archimedean norm and period comparison needed for
+the final arithmetic inequality. Those are separate mathematical
+assertions.
+
+
+% Scalar rigidity for the actual Hermitian flags.
+% Labels in this fragment use the prefix frg-.

@@ -1,0 +1,614 @@
+\section{The two differential operators involving the terminal matrix}
+\label{rc-section}
+
+We next construct the remaining two polynomial differential
+operators in the four-operator argument.  The calculation
+extends Section~\ref{rt-section} by retaining a block of
+terminal indices.  A general bordered-minor identity gives
+both the ordinary recurrence and its boundary term.
+All signs and normalizations below refer to the actual
+terminal operators of the source \cite{alpo-uniform-source}.
+
+\subsection{The terminal entries and a bordered-minor identity}
+
+Use the notation of Section~\ref{rt-section}, with the
+ordered basis
+\[
+ e_1,\ldots,e_r,\ w_0,\ldots,w_k,\
+                         e_r^\vee,\ldots,e_1^\vee .
+\]
+Here $h(w_i,w_j)=\epsilon_i\delta_{ij}$, where
+$\epsilon_0=\cdots=\epsilon_{k-1}=1$ and
+$\epsilon_k=-1$.  Put $d=k+1$.
+For $m\in U(W)$ set
+\[
+ a_j=(m^{-1}z)_j,\qquad b_i=h(w_i,m^{-1}z),
+ \qquad a'_j=z'_j,\qquad b'_i=h(w_i,z').
+\]
+These four vectors have exactly the coefficient conventions
+in the terminal matrix.  Let $Q^W$ denote the quantum
+minors made from right derivatives on $U(W)$.
+Write $\widehat i$ for the increasing list
+$\{0,\ldots,k\}\setminus\{i\}$, and similarly
+$\widehat{i,i'}$ for two omissions.  Set $v=Y+k/2$.
+The three entries needed here are
+\begin{align}
+ t_{21}(Y)&=
+ -\sum_{i,j}(-1)^{i+j}b'_i a_j
+                    Q^W_{\widehat i,\widehat j}(v),
+                                                     \label{rc-t21}\\
+ t_{12}(Y)&=
+ -\sum_{i,j}(-1)^{i+j}b_i a'_j
+                    Q^W_{\widehat i,\widehat j}(v-1),
+                                                     \label{rc-t12}\\
+ t_{22}(Y)&=
+ -\sum_{\substack{i<i'\\j<j'}}(-1)^{i+i'+j+j'}
+     (b_i b'_{i'}-b_{i'}b'_i)
+     (a_j a'_{j'}-a_{j'}a'_j)
+                 Q^W_{\widehat{i,i'},\widehat{j,j'}}(v-1).
+                                                     \label{rc-t22}
+\end{align}
+Every scalar coefficient in these formulas multiplies
+the result of the indicated differential operator.
+It is not differentiated by that operator.
+The last entry is the one already identified with a
+positive compact Capelli contraction in
+Proposition~\ref{rp-finite-terminal}.
+
+We record two algebraic forms of the same determinant
+calculation.  Lists $I=(i_1,\ldots,i_q)$ and
+$J=(j_1,\ldots,j_q)$ in the following lemma have distinct
+entries, none equal to a distinguished index $e$.
+They need not be equal to one another.
+All indices in signs inside this lemma start at one.
+
+\begin{lemma}\label{rc-border}
+Let $E_{ab}$ satisfy the general linear Lie algebra
+relations, and let $\Lambda$ be a complex linear map
+from their enveloping algebra to a complex vector space.
+
+Suppose that for every $X$ and all $i\in I,j\in J$,
+\[
+ \Lambda(E_{ie}X)=\ell_i\Lambda(X),\qquad
+ \Lambda(XE_{ej})=r_j\Lambda(X).
+\]
+Then
+\begin{align}
+ \Lambda\bigl(Q_{(e,I),(e,J)}(u)\bigr)
+ &=\Lambda\bigl((u+E_{ee})Q_{I,J}(u-1)\bigr)\nonumber\\
+ &\quad-\sum_{\alpha,\beta=1}^{q}
+     (-1)^{\alpha+\beta}\ell_{i_\alpha}r_{j_\beta}
+       \Lambda\bigl(Q_{I\setminus i_\alpha,J\setminus j_\beta}
+                                                   (u-2)\bigr).
+                                                     \label{rc-border-first}
+\end{align}
+If instead
+\[
+ \Lambda(E_{ej}X)=\ell_j\Lambda(X),\qquad
+ \Lambda(XE_{ie})=r_i\Lambda(X),
+\]
+then
+\begin{align}
+ \Lambda\bigl(Q_{(I,e),(J,e)}(u)\bigr)
+ &=\Lambda\bigl(Q_{I,J}(u)(u-q+E_{ee})\bigr)\nonumber\\
+ &\quad-\sum_{\alpha,\beta=1}^{q}
+     (-1)^{\alpha+\beta}r_{i_\alpha}\ell_{j_\beta}
+       \Lambda\bigl(Q_{I\setminus i_\alpha,J\setminus j_\beta}
+                                                     (u)\bigr).
+                                                     \label{rc-border-last}
+\end{align}
+The formulas include $q=0$, with empty sums.
+\end{lemma}
+
+\begin{proof}
+Besides its column expression, a quantum minor has
+the reverse row expression
+\begin{equation}\label{rc-row-form}
+ Q_{I,J}(u)=
+ \sum_{\tau\in S_q}\operatorname{sgn}(\tau)
+ \prod_{\alpha=q}^{1}
+ \bigl((u-\alpha+1)\delta_{i_\alpha,j_{\tau(\alpha)}}
+                                  +E_{i_\alpha,j_{\tau(\alpha)}}\bigr).
+\end{equation}
+This follows from the anti-involution
+$E_{ab}^*=E_{ba}$ and the adjoint identity in
+Theorem~\ref{rp-capelli}: apply that identity to
+$Q_{J,I}(\overline u)$ and reverse each product.
+It is an identity in the enveloping algebra and
+does not require a Hilbert-space realization.
+
+Expand the determinant on the left of
+\eqref{rc-border-first} in its first column.
+The first term is
+$(u+E_{ee})Q_{I,J}(u-1)$.
+For row $i_\alpha$ the sign is $(-1)^\alpha$
+and the first factor is $E_{i_\alpha,e}$.
+Remove it using the left rule for $\Lambda$.
+In the remaining minor the first row is $e$.
+Expanding \eqref{rc-row-form} in that first row
+places $E_{e,j_\beta}$ at the far right and
+leaves the minor with parameter $u-2$.
+Its sign is $(-1)^{\beta-1}$.
+Remove the rightmost factor by the right rule.
+The combined sign is
+$(-1)^{\alpha+\beta-1}=-(-1)^{\alpha+\beta}$,
+which proves \eqref{rc-border-first}.
+
+For \eqref{rc-border-last}, expand in the last
+column.  The diagonal term is
+$Q_{I,J}(u)(u-q+E_{ee})$.
+For row $i_\alpha$ the remaining minor has last
+row $e$ and is followed by $E_{i_\alpha,e}$.
+The column sign is $(-1)^{\alpha+q+1}$.
+Remove the final factor by the right rule.
+Expansion of \eqref{rc-row-form} in the last
+row puts $E_{e,j_\beta}$ at the far left,
+with sign $(-1)^{q+\beta}$; the minor left
+over has parameter $u$.
+The product of the two signs is again
+$-(-1)^{\alpha+\beta}$.
+This proves the second identity.
+\end{proof}
+
+\subsection{Mixed roots and the boundary contraction}
+
+Let $F$ satisfy the smoothness and two character
+laws \eqref{rt-whittaker}.  At a fixed cell point
+$g=b(c)m$, evaluation of a right differential word
+applied to $F$ gives a map $\Lambda$ as in
+Lemma~\ref{rc-border}.
+In addition to Lemma~\ref{rt-root-rules}, the
+character laws give, for $1\leq l\leq r$,
+\begin{align}
+ E_{e_l,w_j}F&=\delta_{l,r}a'_jF,&
+ E_{w_i,e_l^\vee}F&=\delta_{l,r}b'_iF,
+                                                     \label{rc-mixed-right}\\
+ (E_{w_i,e_l}XF)(b(c)m)
+     &=\delta_{l,r}c_l^{-1}b_i(XF)(b(c)m),&
+ (E_{e_l^\vee,w_j}XF)(b(c)m)
+     &=\delta_{l,r}\bar c_l^{-1}a_j(XF)(b(c)m)
+                                                     \label{rc-mixed-left}
+\end{align}
+for every right differential word $X$.
+
+Here is a direct verification of the normalizations.
+For the root $e_r w_j^*$ the real unitary root
+matrix is
+$t e_r w_j^*-\bar t\,\epsilon_jw_j(e_r^\vee)^*$.
+Its contribution to $\ell_{z'}$ is $t z'_j$,
+so its complex character derivative is $a'_j$.
+For $w_i(e_r^\vee)^*$ the contribution is
+$-\bar t\,\epsilon_i z'_i$, whose character
+derivative is $\epsilon_i\overline{z'_i}=b'_i$.
+Earlier isotropic indices give zero.
+At a cell point conjugation gives
+\[
+ \operatorname{Ad}(b(c)m)(w_i e_l^*)
+      =c_l^{-1}(mw_i)(e_l^\vee)^*,\qquad
+ \operatorname{Ad}(b(c)m)(e_l^\vee w_j^*)
+      =\bar c_l^{-1}e_l(w_j^*m^{-1}).
+\]
+The left character derivatives are respectively
+$c_l^{-1}h(mw_i,z)=c_l^{-1}b_i$
+and $\bar c_l^{-1}(m^{-1}z)_j$ when $l=r$.
+Right differentiation preserves left equivariance,
+which proves \eqref{rc-mixed-left} with the
+arbitrary word $X$.
+
+There is one sign in the boundary term which is
+useful to make explicit.  For a fixed omitted
+index $s$, write
+$p_s(i)=i-\mathbf1_{i>s}$ for the position of
+$i$ in the increasing list $\widehat s$,
+starting at zero.  Grouping a double sum by
+unordered row and column pairs gives
+\begin{align}
+ &\sum_{s,t}(-1)^{s+t}b'_s a_t
+       \sum_{\substack{i\ne s\\j\ne t}}
+        (-1)^{p_s(i)+p_t(j)}b_i a'_j
+            Q^W_{\widehat{s,i},\widehat{t,j}}(v-1)
+       =t_{22}(Y),                                  \label{rc-boundary-sign}\\
+ &\sum_{s,t}(-1)^{s+t}b_s a'_t
+       \sum_{\substack{i\ne s\\j\ne t}}
+        (-1)^{p_s(i)+p_t(j)}b'_i a_j
+            Q^W_{\widehat{s,i},\widehat{t,j}}(v-1)
+       =t_{22}(Y).                                  \label{rc-boundary-sign-dual}
+\end{align}
+The lists with two omissions are always put in
+increasing order.
+For \eqref{rc-boundary-sign}, the two row orders
+give $b'_s b_i-b'_i b_s$, which is the negative
+of the row factor in \eqref{rc-t22}.
+The two column orders give its column factor.
+For \eqref{rc-boundary-sign-dual} the row
+factor has the correct order and the column
+factor changes sign.  In each case the minus
+sign is exactly the one in \eqref{rc-t22}.
+For $s<i,t<j$, the position corrections
+subtract two from $s+i+t+j$ and hence do not
+change its parity.  These observations verify
+all four terms for every pair and prove
+both identities.
+
+\subsection{The ordinary and conjugate recurrences}
+
+For $0\leq l\leq r$, let
+\[
+ I_{l,s}=(e_{l+1},\ldots,e_r,
+                             w_0,\ldots,\widehat w_s,\ldots,w_k),
+\]
+and
+\[
+ J_{l,s}=(w_0,\ldots,\widehat w_s,\ldots,w_k,
+                             e_r^\vee,\ldots,e_{l+1}^\vee).
+\]
+Let $\gamma$ and $\Phi$ be as in \eqref{rt-gauge}.
+Define
+\begin{align}
+ F_l(c,m)
+  &=\gamma(c)\sum_{s,t}(-1)^{s+t}b'_s a_t\,
+       \bigl(Q_{I_{l,s},I_{l,t}}(u_l)F\bigr)(b(c)m),
+       &u_l&=Y+r-l+\frac k2,                       \label{rc-F}\\
+ F_l^-(c,m)
+  &=\gamma(c)\sum_{s,t}(-1)^{s+t}b_s a'_t\,
+       \bigl(Q_{J_{l,s},J_{l,t}}(v-1)F\bigr)(b(c)m).
+                                                     \label{rc-Fminus}
+\end{align}
+The coefficients $a,b$ here are evaluated at $m$.
+They are independent of $c$.
+
+\begin{proposition}\label{rc-recurrences}
+The terminal values are
+\[
+                F_r=-t_{21}(Y)\Phi,\qquad
+                F_r^-=-t_{12}(Y)\Phi.
+\]
+For $r\geq1$ the boundary formulas are
+\begin{align}
+ F_{r-1}&=(Y+p_r)F_r-c_r^{-1}t_{22}(Y)\Phi,
+                                                     \label{rc-first-boundary}\\
+ F_{r-1}^-&=(Y-\bar p_r)F_r^-
+                              -\bar c_r^{-1}t_{22}(Y)\Phi .
+                                                     \label{rc-last-boundary}
+\end{align}
+For $0\leq l\leq r-2$,
+\begin{align}
+ F_l&=(Y+p_{l+1})F_{l+1}
+                       -\frac{c_{l+2}}{c_{l+1}}F_{l+2},
+                                                     \label{rc-first-bulk}\\
+ F_l^-&=(Y-\bar p_{l+1})F_{l+1}^-
+                       -\frac{\bar c_{l+2}}{\bar c_{l+1}}F_{l+2}^- .
+                                                     \label{rc-last-bulk}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Right derivatives with indices in $W$ act on
+$F(b(c)m)$ as the corresponding right derivatives
+in $m$.  The scalar $\gamma$ is independent of
+$m$.  The definitions \eqref{rc-t21} and
+\eqref{rc-t12} therefore give the terminal values.
+
+For \eqref{rc-first-bulk}, apply
+\eqref{rc-border-first} with distinguished
+index $e_{l+1}$, before inserting the outside
+coefficients in \eqref{rc-F}.
+All left and right root constants vanish except
+for the next index $e_{l+2}$.  The product of
+its two constants is $c_{l+2}/c_{l+1}$.
+The remaining parameters are $u_l-1=u_{l+1}$
+and $u_l-2=u_{l+2}$.
+The diagonal right derivative becomes $p_{l+1}$
+on the cell.  Conjugating it by $\gamma$ changes
+$u_l+p_{l+1}$ into $Y+p_{l+1}$, since
+$p_{l+1}\log\gamma=r-l+k/2$.
+The outside coefficients are independent of this
+coordinate, so the derivative does not create
+an additional term.
+
+For $l=r-1$, the remaining indices are the
+$W$-indices with one omission.
+Equations \eqref{rc-mixed-right} and
+\eqref{rc-mixed-left} give constants
+$c_r^{-1}b_i$ and $a'_j$.
+The contracted double sum is exactly
+$c_r^{-1}t_{22}(Y)$ by
+\eqref{rc-boundary-sign}.  The same scalar
+conjugation proves \eqref{rc-first-boundary}.
+
+For the conjugate recurrence apply
+\eqref{rc-border-last}, with distinguished
+index $e_{l+1}^\vee$ appended to the two lists.
+Its diagonal generator commutes with every generator
+in the remaining minor, since that minor has no row
+or column with the distinguished index.  We may therefore
+move the diagonal factor to the left before restricting
+to the cell.
+The right derivative in its diagonal is
+$-\bar p_{l+1}$.
+If the original size of the minor is
+$r-l+k$, its diagonal scalar is
+\[
+       (v-1)-(r-l+k-1)=Y-r+l-\frac k2 .
+\]
+Conjugating $-\bar p_{l+1}$ by $\gamma$
+adds $r-l+k/2$, leaving $Y-\bar p_{l+1}$.
+All parameters of the smaller minors remain
+$v-1$, exactly as in \eqref{rc-Fminus}.
+
+Away from the boundary the only surviving
+pair of root constants is the adjacent dual
+pair, with product
+$\bar c_{l+2}/\bar c_{l+1}$.
+At the boundary their values are
+$b'_i$ and $\bar c_r^{-1}a_j$ by
+\eqref{rc-mixed-right} and
+\eqref{rc-mixed-left}.
+Identity \eqref{rc-boundary-sign-dual}
+identifies the double contraction with
+$\bar c_r^{-1}t_{22}(Y)$.
+This proves the conjugate formulas.
+\end{proof}
+
+\begin{corollary}\label{rc-chain}
+With the transfer columns of
+Theorem~\ref{rt-actual-lifts},
+\begin{align}
+ F_0&=-t_{21}(Y)A_r(Y)\Phi
+                              -t_{22}(Y)B_r(Y)\Phi,\label{rc-chain-plus}\\
+ F_0^-&=-t_{12}(Y)\overline A_r(Y)\Phi
+                              -t_{22}(Y)\overline B_r(Y)\Phi .
+                                                     \label{rc-chain-minus}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+All terminal operators act only on $m$ and commute
+with coordinate operators in $c$.
+Expand the recurrence \eqref{rc-first-bulk}
+over the path of vertices $1,\ldots,r$.
+The coefficient of $F_r$ is the sum over
+disjoint adjacent edges, with diagonal factors
+$Y+p_i$ at uncovered vertices and edge
+factors $-c_{i+1}/c_i$.
+As in the proof of Theorem~\ref{rt-actual-lifts},
+this is $A_r(Y)$.
+The coefficient of the other boundary term is
+the same sum on $1,\ldots,r-1$, multiplied by
+$c_r^{-1}$; it equals
+$c_r^{-1}A_{r-1}(Y)=B_r(Y)$.
+Substituting the terminal values proves
+\eqref{rc-chain-plus}.
+The same expansion, with $p_i$ replaced by
+$-\bar p_i$ and $c_i$ by $\bar c_i$, gives
+\eqref{rc-chain-minus}.
+For $r=0$ the assertions reduce to the terminal
+identities and $B_0=\overline B_0=0$.
+\end{proof}
+
+\subsection{Polynomial coefficients on the full group}
+
+Let $\operatorname{vol}$ be the alternating
+form taking value one on the displayed ordered
+basis of $V$.  Let $M=r+k$.
+For an increasing $M$-element list $J$, define
+\begin{align}
+ B_J(g)&=\operatorname{vol}
+       (g^{-1}e_r,\ldots,g^{-1}e_1,g^{-1}z,e_J),
+                                                     \label{rc-global-B}\\
+ A_J(g)&=\det
+       \begin{pmatrix}
+        h(g\,\cdot,e_1)\\[-2pt]
+        \vdots\\
+        h(g\,\cdot,e_r)\\
+        h(g\,\cdot,z)\\
+        e_J^*
+       \end{pmatrix}.
+                                                     \label{rc-global-A}
+\end{align}
+The last $M$ rows in \eqref{rc-global-A}
+are the coordinate covectors in the list $J$.
+All matrix sizes are $2r+k+1$.
+Set $\sigma=(-1)^{r(k+1)}$ and define
+\begin{align}
+ \mathcal R_Y F(g)
+  &=-\sigma\sum_{i,J}(-1)^i b'_i B_J(g)\,
+                 Q_{I_{0,i},J}(u_0)F(g),
+                                                     \label{rc-global-R}\\
+ \mathcal R_Y^- F(g)
+  &=-\sum_{t,J}(-1)^t a'_t A_J(g)\,
+                 Q_{J,J_{0,t}}(v-1)F(g).
+                                                     \label{rc-global-Rminus}
+\end{align}
+These are the actual full-group coefficient
+determinants in the source, with their constant
+signs chosen explicitly.
+
+\begin{lemma}\label{rc-cell-coefficients}
+At $g=b(c)m$, all terms in
+\eqref{rc-global-B} vanish except
+$J=I_{0,t}$, and
+\[
+                 B_{I_{0,t}}(b(c)m)
+                       =\sigma(-1)^t\overline{a(c)}\,a_t .
+                                                     \tag{RC1}
+\]
+All terms in \eqref{rc-global-A} vanish except
+$J=J_{0,s}$, and
+\[
+                 A_{J_{0,s}}(b(c)m)
+                       =(-1)^s a(c)b_s .             \tag{RC2}
+\]
+\end{lemma}
+
+\begin{proof}
+In \eqref{rc-global-B} the first $r$ columns
+are $\bar c_r e_r^\vee,\ldots,\bar c_1e_1^\vee$,
+and the next column is $m^{-1}z$.
+Any nonzero complementary coordinate determinant
+must therefore contain all $U$-indices and all
+but one of the $W$-indices.
+Move the first $r$ columns past the other
+$r+k+1$ columns, and then move the $m^{-1}z$
+column past the $r$ coordinate columns of $U$.
+These moves give the sign
+$(-1)^{r(r+k+1)+r}=(-1)^{r(k+1)}$.
+Expansion in its omitted $W$-coordinate gives
+the extra sign $(-1)^t$.
+This proves (RC1).
+
+In \eqref{rc-global-A} the first $r$ rows are
+$c_i e_i^*$, while the next row vanishes on
+$U\oplus U^\vee$ and has $W$-coordinates $b_s$.
+The complementary rows must therefore be the
+dual indices and all but one $W$-index.
+Expansion of that next row in column $r+s$
+has sign $(-1)^{r+(r+s)}=(-1)^s$.
+The remaining coordinate determinant is one.
+This proves (RC2).
+\end{proof}
+
+\begin{theorem}\label{rc-actual-lifts}
+The operators \eqref{rc-global-R} and
+\eqref{rc-global-Rminus} have order at most
+$r+k$ and polynomial coefficients of degree
+$r+1$.  They are defined on the entire group.
+They commute with left translation by $K_zN$
+and right translation by $K_{z'}N$.
+They and their Haar formal adjoints preserve
+$\mathscr S_\varepsilon$.
+
+For every $F$ satisfying \eqref{rt-whittaker},
+their exact radial identities are
+\begin{align}
+ \gamma(c)(\mathcal R_YF)(b(c)m)
+   &=\overline{a(c)}
+       \bigl(t_{21}(Y)A_r(Y)+t_{22}(Y)B_r(Y)\bigr)\Phi,
+                                                     \label{rc-radial-R}\\
+ \gamma(c)(\mathcal R_Y^-F)(b(c)m)
+   &=a(c)
+       \bigl(t_{12}(Y)\overline A_r(Y)
+                    +t_{22}(Y)\overline B_r(Y)\bigr)\Phi .
+                                                     \label{rc-radial-Rminus}
+\end{align}
+The statements hold for every complex $Y$.
+\end{theorem}
+
+\begin{proof}
+The coefficients $B_J$ have degree $r+1$
+in $\overline g$, since $g^{-1}=Hg^*H$.
+The coefficients $A_J$ have degree $r+1$
+in $g$.  The order and polynomial assertions
+follow from the sizes of the quantum minors.
+The proof of Proposition~\ref{rt-polynomial}
+also gives derivative bounds
+$C_m(1+\|g\|)^{r+1}$ for these coefficients
+and proves preservation of
+$\mathscr S_\varepsilon$ by both operators
+and their formal adjoints.
+
+We give the full covariance argument to account
+for a determinant factor which cannot simply
+be omitted.
+The vector
+$\eta=e_r\wedge\cdots\wedge e_1\wedge z$
+is fixed by $\bigwedge^{r+1}s_L$ for
+$s_L\in K_zN$: the $U$-block is unipotent
+and $s_Lz-z\in U$.
+Hence $B_J(s_Lg)=B_J(g)$.
+The corresponding wedge of covectors in
+\eqref{rc-global-A} is likewise unchanged,
+because unitarity replaces each fixed vector
+by its image under $s_L^{-1}$.
+Left translations commute with right
+derivatives, proving left covariance.
+
+Now let $s\in K_{z'}N$.
+Put $P=U\oplus W$ and
+$\ell(x)=h(x,z')$ for $x\in P$.
+The action of $s$ preserves $P$ and satisfies
+$\ell(sx)=\ell(x)$.
+Its determinant on $P$ equals its determinant
+on $V$: the actions on $U$ and on
+$V/P$ have determinant one.
+Thus the fixed row vector in the exterior
+power,
+\[
+       \rho=\sum_i(-1)^i b'_i e_{I_{0,i}}
+          =(-1)^r\iota_\ell
+                  (e_1\wedge\cdots\wedge e_r
+                         \wedge w_0\wedge\cdots\wedge w_k),
+\]
+satisfies
+$\bigwedge^M(s^{-1})\rho=\det(s)^{-1}\rho$.
+On the other side, the volume definition gives
+\[
+ \sum_J B_J(g)\det(s)_{J,L}
+                  =\det(s) B_L(gs).
+                                                     \tag{RC3}
+\]
+Indeed the left side is
+$\operatorname{vol}(g^{-1}\eta\wedge s e_L)$;
+apply $s^{-1}$ to every vector in this
+volume.  Formula \eqref{rt-right-minor}
+and (RC3) cancel the two determinant
+factors and prove right covariance of
+$\mathcal R_Y$.
+
+For the second operator, the elementary
+dual volume identity is
+\[
+ \sum_J\det(s^{-1})_{K,J}A_J(g)
+                      =\det(s)^{-1}A_K(gs).
+                                                     \tag{RC4}
+\]
+It follows either by applying $s^{-1}$ to
+the coordinate rows in the full determinant,
+or by the alternating Cauchy--Binet formula.
+The fixed column covector is
+\[
+                  \kappa=\sum_t(-1)^t a'_t e_{J_{0,t}}^*.
+ \]
+On $V/U$, it is contraction of its standard
+top-degree form by the vector $z'$.
+The action of $s$ fixes this vector modulo
+$U$ and has determinant $\det(s)$ on the
+quotient.  Therefore
+$\kappa\circ\bigwedge^M s=\det(s)\kappa$.
+This factor cancels the one in (RC4) when
+\eqref{rt-right-minor} is applied.
+It proves right covariance of
+$\mathcal R_Y^-$.
+
+Finally (RC1), (RC2), and $\sigma^2=1$ give
+\[
+ \gamma(\mathcal R_YF)(b(c)m)
+       =-\overline{a(c)}F_0,\qquad
+ \gamma(\mathcal R_Y^-F)(b(c)m)
+       =-a(c)F_0^- .
+ \]
+Corollary~\ref{rc-chain} proves
+\eqref{rc-radial-R} and
+\eqref{rc-radial-Rminus}.
+The source sometimes writes the conjugate
+transfer recurrence with its new coordinate
+factor on the right.  Earlier-coordinate
+operators commute with that factor, so it
+is exactly the column used here.
+\end{proof}
+
+\paragraph{Scope.}
+The four required polynomial differential
+lifts and the regular spectral inverse have
+now been constructed and matched with their
+actual radial actions.  This is an algebraic
+and differential statement.  The terminal
+quantum relation used to cancel the two
+mixed terms in the Fourier identity, and
+the analytic passage to the Jacquet pairing
+and its uniformly bounded generated class,
+remain distinct obligations.  No integration
+by parts for that pairing is inferred from
+the ordinary Haar formal-adjoint calculation.
+
+

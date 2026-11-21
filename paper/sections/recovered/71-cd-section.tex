@@ -1,0 +1,462 @@
+\section{Column dimensions and finite-group fixed spaces}
+\label{cd-section}
+
+We prove the dimension formula for the actual decorated source
+space, including its finite-level factors and its coefficient
+dimension. We also compute the fixed spaces and simultaneous
+kernels of the norm operators at the auxiliary primes.
+These are finite-dimensional algebraic statements. The mass which
+appears below is defined as a weighted sum of lattice classes;
+its separate analytic product formula is not used in this section.
+The definitions and prime conditions are those of the submitted
+column construction.\cite{alpo-uniform-source}
+
+\subsection{Evaluation of columns on double cosets}
+
+Let $\Gamma,G_\infty,G_f$ be groups, with homomorphisms
+$\iota_\infty:\Gamma\to G_\infty$ and
+$\iota_f:\Gamma\to G_f$. Let $K\subseteq G_f$ be a subgroup,
+$k$ a field, $\psi:K\to k^\times$ a character, and
+$\pi:G_\infty\to\operatorname{GL}(V)$ a representation on a
+finite-dimensional $k$-space. A column is a linear map
+$T:V\to\{\text{functions }G_\infty\times G_f\to k\}$ such that
+\begin{align}
+ (Tv)(\iota_\infty(\gamma)g,\iota_f(\gamma)x)
+       &=(Tv)(g,x),\notag\\
+ (Tv)(g,x\kappa)&=\psi(\kappa)(Tv)(g,x),\notag\\
+ (T\pi(h)v)(g,x)&=(Tv)(gh,x)
+ \label{cd-column-equivariance}
+\end{align}
+for all indicated group elements. Denote this vector space by
+$\mathcal C(\pi,K,\psi)$.
+
+\begin{proposition}\label{cd-column-decomposition}
+Suppose the double-coset set
+$\mathcal X=\iota_f(\Gamma)\backslash G_f/K$ is finite and
+\begin{equation}\label{cd-trivial-stabilizers}
+     x^{-1}\iota_f(\gamma)x\in K\quad\Longrightarrow\quad\gamma=1
+                            \qquad(x\in G_f,\ \gamma\in\Gamma).
+\end{equation}
+Choose representatives $s_c$, $c\in\mathcal X$. Evaluation gives
+a linear isomorphism
+\[
+ \mathcal C(\pi,K,\psi)\longrightarrow\bigoplus_{c\in\mathcal X}V^*,
+ \qquad T\longmapsto\bigl(v\mapsto(Tv)(1,s_c)\bigr)_c.
+\]
+In particular
+\begin{equation}\label{cd-column-rank}
+                  \dim_k\mathcal C(\pi,K,\psi)
+                               =|\mathcal X|\dim_k V.
+\end{equation}
+The same conclusion holds if $K$ is contained in a larger subgroup
+for which \eqref{cd-trivial-stabilizers} is known.
+\end{proposition}
+\begin{proof}
+Every $x\in G_f$ can be written
+$x=\iota_f(\gamma)s_c\kappa$. This expression is unique once
+$c$ and its representative are fixed. Indeed, two such expressions
+give
+\[
+ s_c^{-1}\iota_f(\gamma'^{-1}\gamma)s_c=\kappa'\kappa^{-1}\in K,
+\]
+so \eqref{cd-trivial-stabilizers} gives $\gamma=\gamma'$ and
+then $\kappa=\kappa'$.
+For any collection $L_c\in V^*$ define
+\begin{equation}\label{cd-column-extension}
+       (Tv)(g,\iota_f(\gamma)s_c\kappa)
+          =\psi(\kappa)L_c\bigl(\pi(\iota_\infty(\gamma)^{-1}g)v\bigr).
+\end{equation}
+Uniqueness makes this well-defined. The homomorphism laws show
+directly that it satisfies all three identities
+\eqref{cd-column-equivariance}. Those identities also force
+\eqref{cd-column-extension} for any given column. Thus extension
+and evaluation are inverse. Containment in a larger subgroup
+preserves \eqref{cd-trivial-stabilizers}.
+\end{proof}
+
+There is a useful convention check over $\mathbb C$. Suppose $V$
+has a Hermitian form linear in its first argument, $\pi$ is
+unitary, and $|\psi|=1$. The unique vectors $F(x)$ satisfying
+$(Tv)(1,x)=\langle v,F(x)\rangle$ obey
+\begin{equation}\label{cd-riesz-character}
+ F(\iota_f(\gamma)x\kappa)
+            =\psi(\kappa)^{-1}\pi(\iota_\infty(\gamma))F(x).
+\end{equation}
+Indeed \eqref{cd-column-equivariance} gives
+\[
+ (Tv)(1,\iota_f(\gamma)x\kappa)
+     =\psi(\kappa)\langle\pi(\iota_\infty(\gamma)^{-1})v,F(x)\rangle,
+\]
+and unitarity and conjugate linearity in the second argument give
+\eqref{cd-riesz-character}. The passage $T\mapsto F$ is
+conjugate linear, not complex linear. With the opposite Hermitian
+convention, the same identity is written
+$(Tv)(1,x)=\langle F(x),v\rangle$. This is the source's convention.
+
+Without \eqref{cd-trivial-stabilizers}, the evaluated covectors
+must satisfy the actual stabilizer conditions
+\[
+ L_c\bigl(\pi(\iota_\infty(\gamma))v\bigr)
+   =\psi(s_c^{-1}\iota_f(\gamma)s_c)^{-1}L_c(v)
+ \quad\text{if }s_c^{-1}\iota_f(\gamma)s_c\in K.
+\]
+They cannot in general be replaced by all of $V^*$.
+
+\subsection{The fixed-space count with its character hypotheses}
+
+Let now $\Gamma,K,K_0,D$ be subgroups of a group $G$, with
+$K,D\subseteq K_0$. Assume
+\begin{equation}\label{cd-neat}
+                         \Gamma\cap xK_0x^{-1}=\{1\}
+                                             \qquad(x\in G).
+\end{equation}
+Let $W$ be a finite-dimensional $k$-representation $\rho$ of
+$\Gamma$, and let $\chi:K\to k^\times$ be a character.
+Write $\mathcal A_K$ for the functions $f:G\to W$ satisfying
+\[
+                         f(\gamma x\kappa)
+                                =\chi(\kappa)\rho(\gamma)f(x).
+\]
+Suppose $D$ normalizes $K$, $\chi(\delta\kappa\delta^{-1})
+=\chi(\kappa)$ for $\delta\in D$, and $\chi$ is trivial on
+$D\cap K$. Denote by $\mathcal A_K^D$ those functions which
+also satisfy $f(x\delta)=f(x)$ for all $\delta\in D$.
+
+\begin{proposition}\label{cd-fixed-dimension}
+If $\Gamma\backslash G/K$ is finite, then $[D:D\cap K]$ is
+finite and
+\begin{equation}\label{cd-fixed-dimension-eq}
+                   \dim_k\mathcal A_K^D\,[D:D\cap K]
+                                     =\dim_k\mathcal A_K.
+\end{equation}
+This holds in every characteristic, without dividing by the index.
+\end{proposition}
+\begin{proof}
+The product $L=DK=KD$ is a subgroup of $K_0$. Define
+$\widetilde\chi(\delta\kappa)=\chi(\kappa)$.
+If $\delta\kappa=\delta'\kappa'$, then
+$\kappa'\kappa^{-1}=\delta'^{-1}\delta\in D\cap K$,
+so this definition is independent of the decomposition.
+For multiplication, use
+\[
+ (\delta\kappa)(\delta'\kappa')
+         =\delta\delta'(\delta'^{-1}\kappa\delta')\kappa'.
+\]
+The conjugation hypothesis makes $\widetilde\chi$ a character.
+It extends $\chi$ and is trivial on $D$. The transformation
+rules therefore identify $\mathcal A_K^D$ with the corresponding
+space $\mathcal A_L$ of level $L$ and character
+$\widetilde\chi$.
+
+The projection
+$\Gamma\backslash G/K\to\Gamma\backslash G/L$ is onto.
+For a representative $x$ of a target class, its fiber consists of
+the classes of $x\delta$, $\delta\in D$. Two such classes
+coincide exactly when $\delta_1^{-1}\delta_2\in D\cap K$.
+In fact, an equality gives
+$\gamma x\delta_1\kappa=x\delta_2$ and hence
+$x^{-1}\gamma x\in L\subseteq K_0$; equation
+\eqref{cd-neat} forces $\gamma=1$.
+The converse is immediate. Every fiber thus has cardinality
+$[D:D\cap K]$, which is finite because the source is finite and
+the target is nonempty. Evaluation on classes, exactly as in
+\eqref{cd-column-extension} but with values in $W$, gives
+\[
+ \dim_k\mathcal A_K=\dim_k W\,|\Gamma\backslash G/K|,
+ \qquad
+ \dim_k\mathcal A_L=\dim_k W\,|\Gamma\backslash G/L|.
+\]
+The fiber count proves \eqref{cd-fixed-dimension-eq}.
+\end{proof}
+
+\subsection{The coefficient dimension from compact branching}
+
+For a dominant integral tuple $\lambda$ of length $k$, let
+$V_\lambda$ be the representation of Section~\ref{cb-section}.
+Put $s_k=\prod_{j=0}^{k-1}j!$, with $s_0=1$.
+
+\begin{proposition}[Weyl dimension formula]\label{cd-weyl-dimension}
+For $k\ge1$,
+\begin{equation}\label{cd-weyl-formula}
+        \dim V_\lambda
+            =\frac{\prod_{i<j}(\lambda_i-\lambda_j+j-i)}{s_k}.
+\end{equation}
+Equivalently, for $u_i=\lambda_i+(k+1)/2-i$,
+$\dim V_\lambda=\prod_{i<j}(u_i-u_j)/s_k$.
+The dimension is the same over any characteristic-zero coefficient
+field in which the polynomial representation is defined.
+\end{proposition}
+\begin{proof}
+A common determinant twist changes neither side. Subtract the
+smallest entry of $\lambda$ so that all entries are nonnegative.
+For $k=1$ the module is one-dimensional and the formula holds.
+By the already proved compact branching law,
+\[
+ \dim V_\lambda
+    =\sum_{\lambda_i\ge\mu_i\ge\lambda_{i+1}}\dim V_\mu.
+\]
+Assume the formula for length $k-1$. Put
+$a_i=\lambda_i+k-i$ and $b_i=\mu_i+k-1-i$.
+The summation ranges are independent integer intervals
+\[
+                          a_{i+1}\le b_i<a_i
+                                        \qquad(1\le i<k).
+\]
+The $a_i$ are strictly decreasing nonnegative integers.
+For $r=k-1$, the induction hypothesis equals
+\[
+       \dim V_\mu
+            =\det\left[\binom{b_i}{r-j}\right]_{1\le i,j\le r}.
+\]
+To verify this determinant formula, the polynomial
+$\binom{t}{m}$ has degree $m$ and leading coefficient $1/m!$.
+Changing the columns from these polynomials to monomials is
+triangular. The Vandermonde determinant then gives
+$\prod_{i<j}(b_i-b_j)/\prod_{j=0}^{r-1}j!$, with the displayed
+sign because the degrees run in decreasing order.
+
+Multilinearity in the rows and the telescoping identity
+\[
+ \sum_{b=A}^{B-1}\binom bq
+                         =\binom B{q+1}-\binom A{q+1}
+\]
+show that the sum over $\mu$ is
+\[
+ \det\left[
+      \binom{a_i}{r-j+1}-\binom{a_{i+1}}{r-j+1}
+              \right]_{1\le i,j\le r}.
+\]
+This is exactly
+$\det[\binom{a_i}{k-j}]_{1\le i,j\le k}$: subtract row
+$i+1$ from row $i$ for $i<k$, leaving the last row unchanged.
+The row transformation has determinant one; the last column
+then has zero entries except for its final entry one.
+Applying the same Vandermonde calculation proves
+\eqref{cd-weyl-formula}. The assertion about $u$ follows by
+subtracting two of its entries. Finally the polynomial modules
+are kernels of finite rational linear systems, so extension of a
+characteristic-zero coefficient field preserves their dimensions.
+\end{proof}
+
+\subsection{Counting the actual decorated lattice classes}
+
+Let $E$ be the CM field of degree $2f$ used in the construction,
+and fix a positive definite Hermitian space of dimension $k\ge1$
+over $E$. Consider its unimodular $\mathcal O_E$-lattices.
+Choose one lattice $N_c$ in each isometry class and put
+\begin{equation}\label{cd-mass-definition}
+                   M_k=\sum_c\frac1{|\operatorname{Aut}(N_c)|}.
+\end{equation}
+The class set and the automorphism groups are finite by the
+results of Section~\ref{al-section}.
+
+In the actual application, $E/F$ is unramified at every finite
+prime and the fixed space is $E^k$ with
+$h(x,y)=\sum_i\bar x_i y_i$. Lemma~\ref{acl-local-norm} and
+Proposition~\ref{acl-local-basis} show that every unimodular
+lattice has an orthonormal basis at every finite completion,
+including the split places. All these lattices therefore belong
+to the genus of the standard lattice $\mathcal O_E^k$.
+Consequently $M_k$ in \eqref{cd-mass-definition} is exactly
+the standard genus mass used in Section~\ref{md-section}.
+
+At each of $f$ selected primes of residue cardinality $g_1$ and
+each of $f$ selected primes of residue cardinality $g_2$, choose
+an isomorphism $N/PN\simeq\mathbb F_{g_i}^{k}$, modulo left
+composition by the upper triangular unipotent group
+$U_k(\mathbb F_{g_i})$. At each of $f$ further selected primes
+of residue cardinality $T$, choose a nonzero linear functional
+\[
+                         N/PN\longrightarrow\mathbb F_T.
+\]
+All these primes are distinct. The actual parameters have
+$g_1,g_2,T$ prime, with $g_1\ne g_2$ and $T\ne g_i$.
+Each selected collection has $f$ elements, and contains only
+the chosen primes from the conjugate pairs. A local basis at an
+auxiliary level prime is taken modulo the indicated group, not
+modulo a Borel subgroup or the scalar matrices.
+
+Let $\mathcal D_T$ be the resulting isometry classes of decorated
+lattices, and put
+\[
+ G_k(q)=\prod_{j=0}^{k-1}(q^k-q^j)
+       =q^{k^2}\prod_{j=1}^k(1-q^{-j}),\qquad
+ c_k(q)=\frac{G_k(q)}{q^{k(k-1)/2}}.
+\]
+
+\begin{lemma}\label{cd-decoration-count}
+All decorated stabilizers are trivial, and
+\begin{equation}\label{cd-classes-mass}
+             |\mathcal D_T|
+                 =M_k\bigl(c_k(g_1)c_k(g_2)\bigr)^f(T^k-1)^f.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a full projective rank-$k$ lattice, localization at $P$
+is free of rank $k$. Reduction therefore gives
+$N/PN\simeq\mathbb F_q^k$, regardless of whether $N$ is
+globally free. Its ordered bases form a torsor for
+$\operatorname{GL}_k(\mathbb F_q)$. Choosing independent
+columns successively gives $G_k(q)$ bases. The group $U_k$
+has $q^{k(k-1)/2}$ elements, because its entries strictly above
+the diagonal are arbitrary and all other entries are fixed.
+Its action on the bases is free, giving exactly $c_k(q)$
+choices modulo $U_k$. The dual vector space has $T^k-1$
+nonzero vectors, giving that number of nonzero functionals.
+Choices at the distinct primes are independent. Thus every
+$N_c$ has
+\[
+                 A=\bigl(c_k(g_1)c_k(g_2)\bigr)^f(T^k-1)^f
+\]
+possible decorations.
+
+An isometry preserving one decoration has, in the corresponding
+local bases, unipotent reductions at both residue characteristics
+$g_1,g_2$. It has finite order because it preserves a positive
+definite lattice. Proposition~\ref{al-two-primes} makes it the
+identity. The same conclusion follows from just the first prime
+under the source's additional inequality $2fk<g_1-1$, by the
+single-prime argument following that proposition.
+The action of $\operatorname{Aut}(N_c)$ on the decorations is
+therefore free. There are $A/|\operatorname{Aut}(N_c)|$ orbits
+over $N_c$. Summing over $c$ proves \eqref{cd-classes-mass}.
+\end{proof}
+
+To incorporate a character of the upper unipotent groups, one
+can instead retain the full local bases and let the product of
+these groups act along with the rational isometries, with that
+character on the coefficient space. The action on the full
+decorated objects is free: its rational part is the identity
+by the preceding proof, and then the local matrices are the
+identity because the bases are isomorphisms. Evaluation therefore
+still gives one copy of the coefficient space per class. Thus
+the finite-level character does not change the dimension.
+The character orientation remains the inverse level convention
+proved in Section~\ref{acl-section}; no invariant restriction has
+been discarded before proving stabilizer triviality.
+
+\begin{theorem}[The exact source-space dimension]\label{cd-source-dimension}
+At each of the $f$ coefficient embeddings let
+$\lambda^{(v)}$ be the dominant integral highest weight and
+$u_{v,i}=\lambda^{(v)}_i+(k+1)/2-i$. For the actual column
+space $\mathcal M_{\epsilon,T}$ with these coefficient modules
+and the decorations just specified,
+\begin{equation}\label{cd-source-formula}
+ \dim\mathcal M_{\epsilon,T}
+   =M_k\bigl(c_k(g_1)c_k(g_2)\bigr)^f
+           \prod_v\frac{\prod_{i<j}(u_{v,i}-u_{v,j})}{s_k}
+                           (T^k-1)^f.
+\end{equation}
+The same formula holds over the number field of coefficients.
+\end{theorem}
+\begin{proof}
+The class evaluation of Proposition~\ref{acl-class-evaluation},
+or equivalently Proposition~\ref{cd-column-decomposition},
+gives the number of decorated classes times the dimension of
+the coefficient space. That space is the tensor product over
+the $f$ embeddings; its dimension is the product of the individual
+dimensions. Apply Proposition~\ref{cd-weyl-dimension} and
+Lemma~\ref{cd-decoration-count}. Field extension preserves the
+dimension, as in Proposition~\ref{cd-weyl-dimension}.
+\end{proof}
+
+For the actual weights, the source identifies $u_{v,i}$ with its
+Harish--Chandra parameters. The source's zero-based sequence
+$\lambda_i-i$ differs from $u_{v,i}$ by one common constant,
+which cancels from all differences. Equation
+\eqref{cd-source-formula} is therefore precisely
+\eqref{as-column-assumption}, with the mass defined by
+\eqref{cd-mass-definition}. The integrality of the highest weights
+is part of the actual construction; an arbitrary real tuple in
+a scalar size estimate need not define a representation.
+
+\subsection{The auxiliary residue-field actions}
+
+Let
+$D=\prod_{P\in S_T}(\mathcal O_E/P)^\times$
+act by scaling the chosen nonzero functionals, leaving the lattice
+and every other decoration unchanged. This action commutes with
+isometries and with the changes of local bases.
+
+\begin{lemma}\label{cd-diamond-free}
+The action of $D$ on $\mathcal D_T$ is free. After choosing one
+class in each $D$-orbit, the column space is, as a $D$-module,
+the space of functions $D\to W_0$ with translation action,
+for a finite-dimensional coefficient space $W_0$.
+\end{lemma}
+\begin{proof}
+If scaling by $a\in D$ preserves a class, some rational
+isometry relates the original decoration to the scaled one.
+It preserves the lattice and the local-basis cosets at $g_1,g_2$,
+so the preceding stabilizer argument makes it the identity.
+Each remaining equality is $a_P\ell_P=\ell_P$ for a nonzero
+functional $\ell_P$, forcing $a_P=1$. Thus $a=1$.
+
+Choose representatives of the $D$-orbits and, for every $a\in D$,
+use the actual object obtained by scaling such a representative
+by $a$. Freeness makes these distinct isometry classes. Evaluation
+identifies a column with an arbitrary coefficient vector at each
+of them. Scaling permutes these values by translation in $D$;
+the lattice and the coefficient vector spaces themselves do not
+change. Taking $W_0$ to be the direct sum of the coefficient
+spaces at the chosen orbit representatives proves the assertion.
+\end{proof}
+
+For a factor $D_P$, let $R_a$ be translation by $a$ on this
+function space and put $N_P=\sum_{a\in D_P}R_a$.
+
+\begin{proposition}\label{cd-norm-kernel-dimensions}
+The fixed space for one $D_P$ and the simultaneous kernel satisfy
+\begin{align}
+       \dim\mathcal M_{\epsilon,T}^{D_P}\,(T-1)
+                         &=\dim\mathcal M_{\epsilon,T},
+                                      \label{cd-one-fixed}\\
+       \dim\bigcap_{P\in S_T}\ker N_P\,(T-1)^f
+                         &=\dim\mathcal M_{\epsilon,T}\,(T-2)^f.
+                                      \label{cd-all-kernels}
+\end{align}
+The counting argument is valid over every coefficient field.
+\end{proposition}
+\begin{proof}
+On functions on a finite group $D_P$, translation-invariant
+functions are exactly the constants. The norm operator sends
+a function to the constant function whose value is the sum
+of all its values. The sum functional is onto in every
+characteristic: a function supported at one point can have
+arbitrary sum. Its kernel therefore has dimension $|D_P|-1$.
+
+For several factors, identify the space of functions with
+$W_0\otimes_k\bigotimes_P k^{D_P}$. Write
+\[
+ k^{D_P}=\ker\left(\sum:k^{D_P}\to k\right)\oplus k\delta_1,
+\]
+where $\delta_1$ is the indicator of the identity element and
+has sum one. Each $N_P$ has the same kernel as this sum map
+on its tensor factor. The simultaneous kernel is consequently
+$W_0$ tensored with the product of all the displayed kernels.
+Its dimension is $\dim W_0\prod_P(|D_P|-1)$, whereas the whole
+space has dimension $\dim W_0\prod_P|D_P|$.
+Finally $|D_P|=T-1$ and $|S_T|=f$. This proves both formulas.
+For $T=2$, each factor is trivial and the norm kernel is zero,
+exactly as the second formula states.
+\end{proof}
+
+The trivial-stabilizer and character conditions in these results
+are substantive. For example, take $G=\Gamma=K_0=D$ cyclic of
+order two, $K=\{1\}$, and the trivial one-dimensional coefficient
+representation. Then $\mathcal A_K$ and its $D$-fixed space both
+have dimension one, but $[D:D\cap K]=2$; formula
+\eqref{cd-fixed-dimension-eq} would be false without
+\eqref{cd-neat}. Separately, take $G=K=K_0=D$ cyclic of order
+two, $\Gamma=\{1\}$, and the nontrivial character over
+$\mathbb Q$. Now stabilizers are trivial, but $\mathcal A_K$
+has dimension one and its $D$-fixed space is zero, so triviality
+of $\chi$ on $D\cap K$ cannot be omitted. Both examples are
+excluded by the actual hypotheses.
+
+These arguments prove the source-space dimension and the
+finite-group fixed-space counts. They do not evaluate the mass
+\eqref{cd-mass-definition}, its recurrence in $k$, an
+archimedean formal degree, or an ambient automorphic dimension.
+
+

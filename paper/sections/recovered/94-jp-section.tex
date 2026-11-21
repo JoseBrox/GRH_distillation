@@ -1,0 +1,682 @@
+\section{Regularization, unfolding, and Jacquet adjointness}
+\label{jp-section}
+
+We prove the analytic passage from the group operators to the
+Jacquet pairing.  The geometric integration formula and the
+integrable majorant are the theorems of
+Sections~\ref{jm-section} and~\ref{jg-section}.
+In particular, none of the estimates in this section assumes
+absolute convergence of an unweighted integral over the
+unipotent group.
+
+\subsection{The transform and the differentiability class}
+
+Fix finite dimensional complex Hilbert spaces \(W',W\), continuous
+unitary representations \(\pi,\pi'\) of \(K_z,K_{z'}\), and
+\(E=\operatorname{Hom}_{\mathbb C}(W',W)\).
+Use the Hilbert--Schmidt inner product on \(E\), linear in the
+first variable.  Replacing its norm by the operator norm changes
+the estimates below only by constants depending on the dimensions.
+
+Let \(S_z=N_rK_z\) and \(S_{z'}=N_rK_{z'}\).
+Each element has a unique expression \(nk\); the two factors have
+trivial intersection because \(N_r\) is unipotent and \(K_z\)
+fixes all the outer vectors.  Both groups are unimodular, and
+\(dn\,dk\) is Haar measure: compact conjugation preserves \(dn\).
+We write \(P=S_z\times S_{z'}\), with product Haar measure \(dp\).
+The coordinates \(p=((k_1,n_1),(k_2,n_2))\) are those of
+Theorem~\ref{jg-intformula}; their order is retained in formulas.
+Set
+\[
+ \begin{split}
+ s_p(g)&=k_1^{-1}n_1^{-1}g n_2k_2,\\
+ \rho(p)F(g)&=\pi(k_1)F(s_p(g))\pi'(k_2^{-1}),\\
+ \chi_\tau(p)&=\exp\!\bigl(i(\tau_1\lambda_z(n_1)
+                              -\tau_2\lambda_{z'}(n_2))\bigr),
+                 \qquad \tau\in\mathcal Q=(0,\infty)^2 .
+ \end{split}
+\]
+The characters \(\lambda_z,\lambda_{z'}\) are additive on \(N_r\)
+and invariant under their compact stabilizers.  Thus \(\chi_\tau\)
+is a unitary character of \(P\).
+For the product inherited from \(S_z\times S_{z'}\),
+\[
+                       \rho(p)\rho(p')=\rho(pp').
+\]
+This follows directly by multiplying \(n_1k_1\) and \(n'_1k'_1\),
+and similarly on the right.  The transformations of \(E\) supplied
+by the compact representations preserve its Hilbert--Schmidt norm.
+Each \(\rho(p)\) is therefore unitary on \(L^2(G_r,E)\).
+
+For \(X\) in the real Lie algebra of \(G_r\), define
+\[
+ L_XF(g)=\left.\frac d{dt}F(e^{-tX}g)\right|_{t=0},
+ \qquad
+ R_XF(g)=\left.\frac d{dt}F(ge^{tX})\right|_{t=0}.
+\]
+For words \(u=(X_1,\ldots,X_i)\), \(v=(Y_1,\ldots,Y_j)\),
+let \(L_u=L_{X_1}\cdots L_{X_i}\) and
+\(R_v=R_{Y_1}\cdots R_{Y_j}\), with the empty word equal to
+the identity.  Left and right derivatives commute.
+Choose the compact unit ball in the Lie algebra consisting of
+matrices whose entries have absolute value at most one, and set
+\[
+ \|F\|_{A,m}
+ =\max_{i+j\leq m}\ 
+      \sup_{\substack{g\in G_r\\X_a,Y_b\text{ in that ball}}}
+        M(g)^A\|L_uR_vF(g)\|.
+\]
+Write \(\mathcal C_A^m\) for the \(C^m\) functions for which this
+quantity is finite.  This is the differentiability and decay class
+in the source: a \(C^m\) function on the embedded matrix Lie group
+has local \(C^m\) ambient extensions, by extending in local
+submanifold coordinates, and conversely such extensions give the
+intrinsic derivatives used here.
+Throughout the section,
+\[
+                         A\geq B(k,r).
+\]
+Theorem~\ref{jg-lone} implies
+\(\mathcal C_A^0\subset L^1(G_r,E)\).
+
+Define, wherever the integral is absolutely convergent,
+\[
+ J_\tau F(g)=\int_P\chi_\tau(p)\rho(p)F(g)\,dp,\qquad
+ \Phi_{F,F'}(p)=\int_{G_r}
+                  \langle\rho(p)F(g),F'(g)\rangle\,dg.
+\]
+Let \(X(p)=\Xi(n_1k_1)\Xi(n_2k_2)\), for the function
+\(\Xi\) constructed in Section~\ref{jm-section}.
+Its two proved properties give
+\begin{align}
+ \int_{G_r}\|\rho(p)F(g)\|\|F'(g)\|\,dg
+       &\leq C\|F\|_{A,0}\|F'\|_{A,0}X(p),
+                                      \label{jp-coef}\\
+ \int_P\frac{X(p)}
+       {(1+|\lambda_z(n_1)|)^2(1+|\lambda_{z'}(n_2)|)^2}\,dp
+       &<\infty .                     \label{jp-xi}
+\end{align}
+In particular \(\Phi\) is an ordinary absolutely convergent
+group integral for every \(p\).
+
+\begin{lemma}\label{jp-orbital}
+For \(F\in\mathcal C_A^0\), the integral \(J_\tau F(g_q)\)
+is absolutely convergent for almost every \(q\) with respect to
+\(\nu\), on one common set valid for every \(\tau\in\mathcal Q\).
+On that set it is continuous in \(\tau\).
+It has a jointly measurable version in \((\tau,q)\).
+\end{lemma}
+
+\begin{proof}
+The integration formula and unitarity on \(E\) give
+\[
+ \int_Q\int_P\|\rho(p)F(g_q)\|\,dp\,d\nu(q)
+                         =\int_{G_r}\|F(g)\|\,dg<\infty .
+\]
+Tonelli supplies the common full measure set.
+The integrand's norm is independent of \(\tau\), so dominated
+convergence gives continuity there.
+The map \((\tau,q,p)\mapsto\chi_\tau(p)\rho(p)F(g_q)\) is
+measurable.  Integration of a measurable finite dimensional
+vector valued function, with value zero assigned where its
+norm integral is infinite, is measurable; this follows
+componentwise from truncation and the scalar integration
+theorem.  This proves the final assertion.
+\end{proof}
+
+We use this version to define
+\[
+ N_\tau(F)=\int_Q\|J_\tau F(g_q)\|^2\,d\nu(q)\in[0,\infty],
+ \qquad
+ \beta_\tau(F,F')=
+       \int_Q\langle J_\tau F(g_q),J_\tau F'(g_q)\rangle\,d\nu(q)
+\]
+when both squared norms are finite.
+The eventual pairing in the source is \(\beta=\beta_{(1,1)}\).
+
+\subsection{Dilation estimates and the regularized form}
+
+For \(t=(t_1,t_2)\in\mathcal Q\), put
+\[
+ D_tF(g)=F(a_{t_1}^{-1}g a_{t_2}),\qquad
+ U_tF(g)=F(a_{t_1}g a_{t_2}^{-1}).
+\]
+Here \(U_t=D_{(t_1^{-1},t_2^{-1})}\).
+
+\begin{lemma}\label{jp-dilation-seminorm}
+On every compact rectangle in \(\mathcal Q\),
+\(\|D_tF\|_{A,m}\leq C\|F\|_{A,m}\).
+On \([1/2,2]^2\) one also has
+\begin{equation}\label{jp-dilation-cont}
+ \|D_tF-F\|_{A,4}
+       \leq C(|t_1-1|+|t_2-1|)\|F\|_{A,5}.
+\end{equation}
+For \(|\alpha|\leq m\), the ordinary parameter derivatives
+\(\partial_t^\alpha U_tF\) have decay norm of order zero at
+most \(C_\alpha\|F\|_{A,m}\), uniformly on a compact rectangle.
+\end{lemma}
+
+\begin{proof}
+The Frobenius norm is submultiplicative, and the matrices
+\(a_t,a_t^{-1}\) are uniformly bounded on such a rectangle.
+Consequently \(M(a_{t_1}^{-1}g a_{t_2})\) and \(M(g)\) are
+comparable there, uniformly in \(g\).
+The chain rule gives
+\[
+ L_XD_tF=D_t L_{\operatorname{Ad}(a_{t_1}^{-1})X}F,\qquad
+ R_YD_tF=D_t R_{\operatorname{Ad}(a_{t_2}^{-1})Y}F.
+\]
+Iterating these identities, and using multilinearity in the
+Lie algebra elements, proves the first bound: the indicated
+adjoint maps have uniformly bounded coefficients.
+
+Let \(H\) be the diagonal matrix with entries
+\(r,r-1,\ldots,1,0,\ldots,0,-1,\ldots,-r\).
+Then \(a_t=e^{(\log t)H}\), \(H\) belongs to the real Lie
+algebra, and
+\[
+       \partial_{t_1}D_tF=t_1^{-1}D_tL_HF,\qquad
+       \partial_{t_2}D_tF=t_2^{-1}D_tR_HF.
+\]
+The corresponding formulas for \(U_t\) have the opposite
+signs and the same bounded scalar factors.
+Higher parameter derivatives are finite sums of translated
+Lie derivatives, with smooth bounded coefficients.
+This proves their asserted decay estimates.
+
+Apply one parameter derivative also to the displayed formulas
+for \(L_uR_vD_tF\), with \(|u|+|v|\leq4\).
+It differentiates either an adjoint coefficient or the
+translated function.  The latter term uses at most five
+Lie derivatives of \(F\).  All terms are bounded, after
+multiplication by \(M(g)^A\), by \(C\|F\|_{A,5}\).
+Integrate first along \(t_1\) and then along \(t_2\) from
+\((1,1)\) to \(t\).  Taking the suprema defining the
+seminorm gives \eqref{jp-dilation-cont}.
+\end{proof}
+
+Choose a real smooth function \(\chi\), supported in
+\((1/2,2)\), with \(\int_{\mathbb R}\chi(t)\,dt=1\).
+It need not be nonnegative.  Write
+\[
+ \delta_t p=((k_1,a_{t_1}n_1a_{t_1}^{-1}),
+             (k_2,a_{t_2}n_2a_{t_2}^{-1})),\qquad
+ \lambda_1=\lambda_z(n_1),\quad\lambda_2=\lambda_{z'}(n_2).
+\]
+Define the compactly supported \(C^4\) function
+\[
+ a_{F,F',p}(t)=
+       \chi(t_1)\chi(t_2)(t_1t_2)^{\kappa_r}
+                                  \Phi_{F,F'}(\delta_t p),
+\]
+extended by zero outside \(\mathcal Q\).
+For \(F,F'\in\mathcal C_A^4\), define
+\begin{equation}\label{jp-reg-definition}
+ B_\tau(F,F')
+ =\int_P\frac{1}{(1+\tau_1^2\lambda_1^2)
+                    (1+\tau_2^2\lambda_2^2)}
+    \int_{\mathbb R^2}
+      (1-\partial_{t_1}^2)(1-\partial_{t_2}^2)
+          a_{F,F',p}(t)\,
+      e^{i(\tau_1t_1\lambda_1-\tau_2t_2\lambda_2)}\,dt\,dp .
+\end{equation}
+This is exactly the source's regularized pairing.
+
+\begin{proposition}\label{jp-reg-bound}
+The integral \eqref{jp-reg-definition} is absolutely convergent.
+It is sesquilinear in \(F,F'\), continuous in \(\tau\in\mathcal Q\),
+and satisfies, locally uniformly in \(\tau\),
+\begin{equation}\label{jp-Bbound}
+       |B_\tau(F,F')|\leq C_\tau\|F\|_{A,4}\|F'\|_{A,4}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The substitution \(g=a_{t_1}h a_{t_2}^{-1}\) in the group
+integral gives
+\begin{equation}\label{jp-phase-translate}
+ \Phi_{F,F'}(\delta_t p)
+                  =\Phi_{U_tF,U_tF'}(p).
+\end{equation}
+It uses both unimodularity of \(G_r\) and commutation of
+\(a_t\) with the compact stabilizers.
+For fixed \(p\), the derivatives in \(t\) on the right may
+be taken under the group integral.  Indeed every derivative
+of total order at most four is bounded, on the fixed compact
+rectangle, by a constant times
+\[
+                 M(s_p(g))^{-A}M(g)^{-A}.
+\]
+This is integrable by \eqref{jp-coef}.
+The same bound applies to the continuous highest derivatives,
+so repeated dominated convergence proves the asserted \(C^4\)
+regularity, including the mixed derivative of order \((2,2)\).
+
+After differentiation, apply \eqref{jp-coef} to each of the
+translated derivatives, and then the preceding lemma.
+For \(0\leq i,j\leq2\) this yields
+\[
+ |\partial_{t_1}^i\partial_{t_2}^j a_{F,F',p}(t)|
+ \leq C\|F\|_{A,4}\|F'\|_{A,4}X(p)
+                      {\bf1}_{[1/2,2]^2}(t).
+\]
+On a compact subset of \(\mathcal Q\),
+\[
+ (1+\tau_j^2\lambda_j^2)^{-1}
+                         \leq C(1+|\lambda_j|)^{-2}.
+\]
+Equation~\eqref{jp-xi} proves absolute convergence and the
+bound.  It also supplies a common dominating function for
+continuity in \(\tau\).  Sesquilinearity follows from that
+of the integrands, with all the integrals now justified.
+\end{proof}
+
+\subsection{Averaging in the two characters}
+
+For a real \(C^2\) function \(w\) of compact support in
+\((0,\infty)\), write
+\[
+                \widehat w(x)=\int_{\mathbb R}w(\tau)e^{i\tau x}\,d\tau.
+\]
+Twice integrating by parts gives
+\[
+          |\widehat w(x)|\leq C_w(1+|x|)^{-2}.
+\]
+For example combine the bounds \(\|w\|_1\) and
+\(|x|^{-2}\|w''\|_1\); the boundary terms vanish by compact
+support.
+For two such functions set
+\(\Omega(p)=\widehat w_1(\lambda_1)\widehat w_2(-\lambda_2)\).
+
+\begin{proposition}\label{jp-reg-average}
+For \(F,F'\in\mathcal C_A^4\),
+\begin{equation}\label{jp-average}
+ \int_{\mathcal Q}w_1(\tau_1)w_2(\tau_2)B_\tau(F,F')\,d\tau
+                           =\int_P\Omega(p)\Phi_{F,F'}(p)\,dp .
+\end{equation}
+The integral on the right is absolutely convergent.
+\end{proposition}
+
+\begin{proof}
+Its absolute convergence follows from
+\eqref{jp-coef}, \eqref{jp-xi}, and Fourier decay.
+For each fixed \(p\), integration by parts in \(t_1,t_2\)
+gives
+\[
+ \begin{split}
+ &\frac{1}{(1+\tau_1^2\lambda_1^2)(1+\tau_2^2\lambda_2^2)}
+    \int (1-\partial_{t_1}^2)(1-\partial_{t_2}^2)a_p(t)
+                         e^{i(\tau_1t_1\lambda_1-\tau_2t_2\lambda_2)}\,dt\\
+ &\hspace{25mm}
+       =\int a_p(t)e^{i(\tau_1t_1\lambda_1-\tau_2t_2\lambda_2)}\,dt .
+ \end{split}
+\]
+The right side is asserted here for fixed \(p\); no unweighted
+interchange of \(p\) and \(t\) is being made.
+The absolute bound used in Proposition~\ref{jp-reg-bound}
+allows averaging the left side in \(\tau\) under the \(p\)
+integral.  For fixed \(p\), all \(t,\tau\) integrals are
+over compact sets, so their interchange gives
+\[
+ \int_P\int_{\mathbb R^2}
+       \chi(t_1)\chi(t_2)(t_1t_2)^{\kappa_r}
+       \Phi_{F,F'}(\delta_t p)
+       \widehat w_1(t_1\lambda_1)
+       \widehat w_2(-t_2\lambda_2)\,dt\,dp .
+\]
+This new double integral is absolutely convergent.
+To see this, for each \(t\) in the support change variables
+\(p'=\delta_t p\).
+Proposition~\ref{jg-dilation} gives
+\(dp=(t_1t_2)^{-\kappa_r}dp'\), and its character identity
+replaces \(t_j\lambda_j\) by the corresponding \(\lambda_j'\).
+The absolute integral is therefore bounded by
+\[
+ \|\chi\|_1^2\int_P|\Omega(p')\Phi_{F,F'}(p')|\,dp'<\infty .
+\]
+Fubini now applies.  The same substitution without absolute
+values and \((\int\chi)^2=1\) prove \eqref{jp-average}.
+\end{proof}
+
+\begin{proposition}\label{jp-unfold}
+For \(F\in\mathcal C_A^4\) and nonnegative \(w_1,w_2\) as above,
+\begin{equation}\label{jp-unfold-identity}
+ \int_{\mathcal Q}w_1(\tau_1)w_2(\tau_2)N_\tau(F)\,d\tau
+                  =\int_P\Omega(p)\Phi_{F,F}(p)\,dp<\infty .
+\end{equation}
+The equality regards the nonnegative real number on the left
+as a complex number on the right.
+\end{proposition}
+
+\begin{proof}
+Fix \(q\) in the common full measure set of
+Lemma~\ref{jp-orbital} and put \(f_q(p)=\rho(p)F(g_q)\).
+This is an \(E\)-valued \(L^1(P)\) function.
+Expanding the squared norm of its character integral gives
+an absolutely convergent double integral.
+In that integral set the second variable equal to \(p\)
+and the first to \(pp'\).
+Left invariance of Haar measure, the character identity,
+and unitarity on \(E\) give
+\begin{equation}\label{jp-fixed-q}
+ \|J_\tau F(g_q)\|^2
+ =\int_P\int_P \chi_\tau(p')
+     \langle\rho(p')F(s_p(g_q)),F(s_p(g_q))\rangle\,dp'\,dp .
+\end{equation}
+The compact factors attached to \(p\) act unitarily.
+They transform the two entries of the inner product on
+the right into \(\rho(pp')F(g_q)\) and \(\rho(p)F(g_q)\).
+The absolute double integral before inserting the character
+is at most \(\|f_q\|_1^2\).
+Thus averaging \eqref{jp-fixed-q} in \(\tau\) gives the same
+formula with \(\chi_\tau(p')\) replaced by \(\Omega(p')\).
+
+It remains to justify integration in \(q\); the preceding
+bound need not be integrable in \(q\).
+Instead use the Fourier decay already obtained.
+The integration formula for \(G_r\), followed by Tonelli, gives
+\[
+ \begin{split}
+ &\int_Q\int_P\int_P|\Omega(p')|
+       \|\rho(p')F(s_p(g_q))\|\,\|F(s_p(g_q))\|
+                        \,dp'\,dp\,d\nu(q)\\
+ &\quad=\int_P|\Omega(p')|
+               \int_{G_r}\|\rho(p')F(g)\|\,\|F(g)\|\,dg\,dp'
+ <\infty ,
+ \end{split}
+\]
+by \eqref{jp-coef} and \eqref{jp-xi}.
+This proves that the averaged right side of
+\eqref{jp-fixed-q} is integrable in \(q\).
+On the left, \(w_1w_2\geq0\), so Tonelli applies even before
+finiteness is known.  Fubini on the absolutely integrable
+right side now proves \eqref{jp-unfold-identity}.
+\end{proof}
+
+\subsection{Equality at every positive character}
+
+\begin{theorem}\label{jp-pairing-equality}
+For every \(F,F'\in\mathcal C_A^5\) and every
+\(\tau\in\mathcal Q\), the two squared norms
+\(N_\tau(F),N_\tau(F')\) are finite and
+\begin{equation}\label{jp-beta-equals}
+                         \beta_\tau(F,F')=B_\tau(F,F').
+\end{equation}
+In particular
+\[
+       |\beta(F,F')|\leq C\|F\|_{A,4}\|F'\|_{A,4}.
+\]
+\end{theorem}
+
+\begin{proof}
+First take only \(F\in\mathcal C_A^4\), and put
+\(b(\tau)=B_\tau(F,F)\).
+The two averaging propositions say
+\[
+       \int w_1w_2N_\tau(F)\,d\tau=\int w_1w_2b(\tau)\,d\tau
+\]
+for every pair of nonnegative test functions.
+The left side is finite.
+On any compact rectangle in \(\mathcal Q\), choose test
+functions positive on that rectangle; this shows that
+\(\tau\mapsto N_\tau(F)\) is locally integrable and finite
+almost everywhere.
+At its Lebesgue points, use products of nonnegative smooth
+approximate identities in the displayed equality.
+Their support can be kept inside \(\mathcal Q\).
+The Lebesgue differentiation theorem on the left and continuity
+of \(b\) on the right give
+\[
+                           N_\tau(F)=b(\tau)
+                           \quad\hbox{for almost every }\tau .
+\]
+In particular \(b\) is real and nonnegative almost everywhere,
+and hence everywhere by continuity.
+
+For any fixed \(\tau_0\), choose a sequence of such equality
+points tending to \(\tau_0\).
+The pointwise continuity in Lemma~\ref{jp-orbital} and
+Fatou's lemma give
+\begin{equation}\label{jp-diagonal-domination}
+                    N_{\tau_0}(F)\leq b(\tau_0).
+\end{equation}
+Thus the norm is finite at every positive character even
+for \(F\in\mathcal C_A^4\).  Moreover, locally uniformly in
+\(\tau\),
+\[
+              \|J_\tau F(g_\cdot)\|_{L^2(Q,\nu)}
+                                      \leq C\|F\|_{A,4}.
+\]
+Linearity holds because the defining orbital integrals are
+absolutely convergent on common full measure sets.
+
+We next use the fifth derivative.
+Changes of variables \(p=\delta_t p'\), and then
+\(q'=S_{t_1t_2}q\), give
+\begin{align}
+ J_\tau(D_tF)(g)
+     &=(t_1t_2)^{\kappa_r}
+           J_{(\tau_1t_1,\tau_2t_2)}F(a_{t_1}^{-1}g a_{t_2}),
+                                                   \label{jp-J-dilation}\\
+ N_\tau(D_tF)
+     &=(t_1t_2)^{\kappa_r}
+                           N_{(\tau_1t_1,\tau_2t_2)}(F).
+                                                   \label{jp-N-dilation}
+\end{align}
+These equalities use precisely the two pushforward exponents
+in Proposition~\ref{jg-dilation}.
+They are valid on common full measure sets in \(q\);
+the radial scaling preserves null sets.
+
+For \(F\in\mathcal C_A^5\), the estimate just proved and
+\eqref{jp-dilation-cont} show
+\[
+ \|J_\tau(D_tF)(g_\cdot)-J_\tau F(g_\cdot)\|_{L^2}
+ \leq C\|D_tF-F\|_{A,4}
+                 \longrightarrow0\qquad(t\longrightarrow(1,1)).
+\]
+Consequently \(N_\tau(D_tF)\to N_\tau(F)\).
+Equation~\eqref{jp-N-dilation} now proves continuity of
+\(\tau'\mapsto N_{\tau'}(F)\) at \(\tau\).
+Since \(\tau\) was arbitrary, it is continuous on
+\(\mathcal Q\), and its almost everywhere equality with
+\(b\) is therefore equality everywhere.
+
+Finally both sides of \eqref{jp-beta-equals} are
+sesquilinear on \(\mathcal C_A^5\).
+The integral defining the left side is absolutely convergent
+by Cauchy--Schwarz and the finite diagonal norms.
+Equality of the diagonal values, followed by complex
+polarization, proves \eqref{jp-beta-equals}.
+The last bound is \eqref{jp-Bbound} at \((1,1)\).
+\end{proof}
+
+\subsection{Adjoints without differentiation of an orbital integral}
+
+Let \(U\subset G_r\) be open and stable under left \(S_z\)
+and right \(S_{z'}\).
+Consider the finite order differential operator
+\[
+              \Theta F=\sum_T A_T(g)R_{w_T}F,
+ \qquad
+ \Theta^\dagger F'
+       =\sum_T(-1)^{|w_T|}
+                     R_{\operatorname{rev}(w_T)}(A_T(g)^*F').
+\]
+The coefficients and their pointwise adjoints are smooth
+on \(U\), and \(m=\max_T|w_T|\).
+Assume that \(\Theta\rho(p)F=\rho(p)\Theta F\) on \(U\)
+for \(C^m\) functions \(F\).
+The support of a function is its closed support in \(G_r\).
+
+\begin{lemma}\label{jp-ibp}
+If a \(C^1\) scalar function \(h\) and \(R_Xh\) are in
+\(L^1(G_r)\), then \(\int R_Xh\,dg=0\).
+Consequently integration by parts against a real Lie
+derivative has no boundary term whenever the three products
+\(\langle f,f'\rangle\),
+\(\langle R_Xf,f'\rangle\), and
+\(\langle f,R_Xf'\rangle\) are integrable.
+\end{lemma}
+
+\begin{proof}
+The fundamental theorem of calculus gives, for \(t>0\),
+\[
+       h(ge^{tX})-h(g)=\int_0^t(R_Xh)(ge^{sX})\,ds.
+\]
+The absolute double integral on the right is
+\(t\|R_Xh\|_1\), by right invariance of Haar measure.
+Fubini therefore applies.  Integration of the left side
+gives zero, and the right side gives \(t\int R_Xh\,dg\).
+For the second assertion use the product rule for the
+inner product, which is differentiated in a real parameter.
+\end{proof}
+
+\begin{theorem}\label{jp-adjoint}
+Suppose \(F,F'\) are \(C^{m+5}\), supported in \(U\), and
+\[
+       F,F',\Theta F,\Theta^\dagger F'\in\mathcal C_A^5 .
+\]
+For every \(p\in P\), every term \(T\), and
+\(0\leq i\leq j\leq|w_T|\), assume the actual integrability
+condition
+\begin{equation}\label{jp-intclause}
+ \int_{G_r}
+   \bigl\|R_{\operatorname{rev}(w_T[0:i])}(A_T^*F')(g)\bigr\|
+   \bigl\|R_{w_T[j:]}(\rho(p)F)(g)\bigr\|\,dg<\infty .
+\end{equation}
+Then, for every \(\tau\in\mathcal Q\),
+\begin{equation}\label{jp-adjoint-identity}
+            \beta_\tau(\Theta F,F')
+                         =\beta_\tau(F,\Theta^\dagger F').
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The product \(A_T^*F'\), extended by zero outside \(U\),
+is \(C^{m+5}\) on all of \(G_r\).
+At every point outside \(U\), the closed support hypothesis
+gives a neighborhood on which \(F'\) is zero, so no
+regularity of \(A_T\) outside \(U\) is needed.
+
+Fix \(p,T\), and transfer the letters of \(w_T\) one at a
+time from \(\rho(p)F\) to \(A_T^*F'\).
+At the \(j\)-th transfer, the three product norms needed in
+Lemma~\ref{jp-ibp} are exactly the cases
+\((i,j)=(j,j+1),(j,j),(j+1,j+1)\) of
+\eqref{jp-intclause}.  Thus each transfer is legitimate,
+and
+\[
+ \int\langle R_{w_T}\rho(p)F,A_T^*F'\rangle\,dg
+   =(-1)^{|w_T|}
+      \int\langle\rho(p)F,
+                 R_{\operatorname{rev}(w_T)}(A_T^*F')\rangle\,dg .
+\]
+The reversal of the word and the sign are both necessary.
+Summing and using commutation on \(U\), while \(F'\) is
+zero outside \(U\), proves
+\[
+                  \Phi_{\Theta F,F'}(p)
+                               =\Phi_{F,\Theta^\dagger F'}(p).
+\]
+The same identity holds at \(\delta_t p\).
+It therefore holds for their regularized brackets and their
+parameter derivatives, and gives equality of the two
+\(B_\tau\) forms.  Theorem~\ref{jp-pairing-equality} now
+gives \eqref{jp-adjoint-identity}.
+No derivative of the unweighted orbital integral was used.
+\end{proof}
+
+\subsection{The polynomial coefficient criterion}
+
+To check \eqref{jp-intclause} in the setting used by the
+source, put \(v_a=e_a\) for \(a<r\), \(v_r=z\), and use
+\(v'_r=z'\) on the right.
+Let
+\[
+ D_l(g)=\det\bigl(h_r(gv'_b,v_a)\bigr)_{0\leq a,b<l},
+ \quad D_0=1,\qquad
+ \mathcal G(g)=|D_{r+1}(g)|^2-TT'|D_r(g)|^2 .
+\]
+Here this notation for \(D_l\) refers to these Bessel
+minors, not the flag minors of Section~\ref{jm-section}.
+The function \(\mathcal G\) is a real polynomial in the
+real and imaginary matrix entries.
+Every \(S_z,S_{z'}\) change of the indicated frames is
+triangular with diagonal one.  Hence every \(D_l\),
+and therefore \(\mathcal G\), is invariant under those
+left and right actions.
+It follows that \(U=\{\mathcal G>0\}\) is stable and open.
+
+\begin{corollary}\label{jp-poly-adjoint}
+Let \(d\geq0\), \(\epsilon>0\), and suppose that for every
+coefficient \(A_T,A_T^*\), every left and right word of
+total length at most \(m+5\), and every
+\(\mathcal G(g)\geq\epsilon\), its derivative has norm at
+most \(C M(g)^d\), uniformly for Lie algebra letters in
+the fixed unit ball.
+Assume that \(\Theta\) is smooth and commutes with \(\rho\)
+on \(\{\mathcal G>0\}\).
+If \(F,F'\in\mathcal C_{A+d}^{m+5}\) vanish whenever
+\(\mathcal G<\epsilon\), then
+\[
+                         \beta(\Theta F,F')
+                                      =\beta(F,\Theta^\dagger F').
+\]
+\end{corollary}
+
+\begin{proof}
+Continuity of \(\mathcal G\) places both closed supports
+in \(\{\mathcal G\geq\epsilon\}\subset U\).
+The Leibniz rule gives
+\[
+                  F,F',\Theta F,\Theta^\dagger F'
+                                           \in\mathcal C_A^5 .
+\]
+Indeed each differentiated term is bounded by
+\(C M^d M^{-(A+d)}\), and uses at most \(m+5\)
+derivatives of either factor.  Fixed letters occurring in
+\(\Theta\) are handled by scaling them into the unit ball.
+All derivatives vanish locally where the function is
+outside its closed support.
+
+The first factor in \eqref{jp-intclause} is consequently
+bounded by \(C M(g)^{-A}\).
+For fixed \(p\), derivatives of the second factor are
+finite linear combinations of derivatives of \(F\) at
+\(s_p(g)\), with fixed conjugated Lie algebra letters.
+Submultiplicativity of \(M\) gives
+\(M(s_p(g))^{-(A+d)}\leq C_pM(g)^{-(A+d)}\).
+Their product is therefore at most
+\(C_p M(g)^{-2A-d}\leq C_pM(g)^{-A}\).
+This is integrable by Theorem~\ref{jg-lone}, proving
+every case of \eqref{jp-intclause}.
+The preceding theorem applies.
+\end{proof}
+
+In particular, polynomial matrix coefficients satisfy this
+criterion: invariant differentiation acts by linear vector
+fields on matrix entries and does not increase polynomial
+degree.  The criterion also covers coefficients
+\(P(g)\mathcal G(g)^{-q}\) on \(U\), for a polynomial \(P\)
+and integer \(q\geq0\).  After \(j\) derivatives, the
+Leibniz and chain rules give denominators
+\(\mathcal G^{q+i}\), \(i\leq j\), and numerator degree at
+most \(\deg P+j\deg\mathcal G\).
+On \(\mathcal G\geq\epsilon\) the denominators are bounded
+away from zero, giving the required polynomial growth for
+all the finitely many derivatives.
+
+This proves the source's pairing bound, equality with the
+regularized pairing, adjointness with its full integrability
+clause, and its polynomial coefficient version.
+The fifth derivative has a specific role: it gives continuity
+of dilations in the norm using four derivatives and upgrades
+the almost everywhere identity in the characters to an
+identity at \((1,1)\).
+Absolute convergence of \(J_\tau F(g)\) at every group
+element has neither been assumed nor concluded.
+All source correspondences are recorded in the accompanying
+trace and manifest \cite{alpo-uniform-source}.
+
+

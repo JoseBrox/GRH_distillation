@@ -1,0 +1,906 @@
+\section{The mass in the deepest part of the cusp}
+\label{dc-section}
+
+We now prove the remaining estimate \eqref{amb-deep-input}.
+The argument uses the zero constant term of a discrete-series
+automorphic form, a small fundamental domain for one unipotent
+radical, and an explicit local Sobolev inequality.  We import
+the classical Euclidean transference theorem of Banaszczyk,
+the cuspidality theorem for discrete-series matrix coefficients,
+and the usual analytic continuation and functional equation
+of a finite-order Hecke character.  These imports are stated
+precisely where they are used.  The quantitative estimates
+and their application to the actual kernel are proved below.
+
+\subsection{Statement and an absolute quotient-volume bound}
+
+Retain the notation of Sections~\ref{amb-section},
+\ref{ak-section}, \ref{rv-section}, and \ref{nu-section}.
+In particular, \(E/F\) is CM and unramified at every finite
+place, \([F:\mathbb Q]=f\), and the Hermitian lattice is
+self-dual.  Write
+\[
+ N=n^2f,\qquad X=nfr_Egb,\qquad \tau_0=X^{-11q}.
+\]
+Let \(K(x,y)\) be the orthogonal-projection kernel constructed
+in Section~\ref{ak-section}, of finite rank \(D\).
+
+\begin{theorem}\label{dc-main}
+Suppose \(\log n\ge20\), \(1\le q\), \(q^2\le n\),
+\(b\ge2\), \(g\ge1\), and
+\(\lvert\lambda_{v,i}\rvert\le b^2\).
+Suppose also that the hypotheses of
+Section~\ref{ak-section} hold, so its absolutely locally
+uniformly convergent projection kernel and finite-rank
+identity are available.  Then
+\begin{equation}\label{dc-main-bound}
+        \int_{\lambda_x<\tau_0}K(x,x)\,dx
+                                    \le e^{-N}D.
+\end{equation}
+No upper bound on \(f,r_E,g\), or \(\log b\) is needed
+in the estimates of this section.
+\end{theorem}
+
+We may normalize finite Haar measure by
+\(\operatorname{vol}(K_f)=1\), and archimedean Haar measure
+by the Hilbert--Schmidt density on each real Lie algebra.
+Changing Haar measure multiplies an integral kernel and
+its diagonal by the reciprocal factor and leaves its
+operator, rank, and integrated diagonal unchanged.
+Thus this normalization does not change
+\eqref{dc-main-bound}.
+
+Let \(\chi\) be the quadratic Hecke character of \(E/F\),
+and put \(d_F=|D_F|=r_E^f\).  It has finite conductor one
+and is odd at every real place.
+
+\begin{lemma}\label{dc-volume}
+In the preceding normalization,
+\begin{equation}\label{dc-volume-bound}
+ L_F(1,\chi)\le3^f d_F^{1/4},\qquad
+ \operatorname{vol}(\mathcal X)\le X^N,\qquad
+ \operatorname{vol}(K_f(g))^{-1}\le g^{2N}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+We use the classical Hecke theorem in the following form:
+for a nontrivial primitive finite-order character, the
+completed \(L\)-function is entire, satisfies its functional
+equation with root number of absolute value one, and the
+uncompleted function has polynomial growth on each fixed
+vertical strip.  The completion and functional equation
+are recorded in \cite[\S2.1, (2.1)--(2.3)]{zaman-hecke-estimates};
+the qualitative growth needed here also follows from
+the convexity estimate there, Lemma~2.1, together with
+the Euler product and the functional equation.
+For our totally odd character the completion is
+\[
+ \Lambda(s)=d_F^{s/2}
+       \left\{\pi^{-(s+1)/2}
+                    \Gamma\left(\frac{s+1}{2}\right)\right\}^{f}
+                    L_F(s,\chi).
+\]
+Since \(\chi\) is real, its functional equation is
+\(\Lambda(s)=W\Lambda(1-s)\), where \(|W|=1\).
+The Euler product and the integral test give
+\[
+ |L_F(3/2+it,\chi)|\le\zeta(3/2)^f\le3^f.
+\]
+On the other boundary of the strip, the functional equation
+and \(\Gamma(z+1)=z\Gamma(z)\) therefore give
+\[
+ |L_F(-1/2+it,\chi)|
+       \le d_F\left(\frac{3}{\pi}
+                            |1/4-it/2|\right)^f.
+\]
+Indeed the two gamma arguments are \(5/4-it/2\) and
+\(1/4+it/2\), whose quotient in absolute value is
+\(|1/4-it/2|\).
+
+Put \(F(s)=L_F(s,\chi)/(s+2)^f\).  On
+\(\Re s=3/2\), \(|F(s)|\le1\); on \(\Re s=-1/2\),
+\(|F(s)|\le d_F\), because
+\[
+ \frac{|1/4-it/2|}{|3/2+it|}\le\frac12,\qquad
+                         \frac{3}{2\pi}<1.
+\]
+The maximum principle on this strip consequently yields
+\[
+ |F(\sigma+it)|\le d_F^{(3/2-\sigma)/2}.
+\]
+For clarity, the unbounded-strip step follows by applying
+the ordinary maximum principle on rectangles to
+\[
+ F(s)d_F^{(s-3/2)/2}
+                  \exp\{\varepsilon(s^2-9/4)\}.
+\]
+Its vertical boundary values have absolute value at most
+one.  Polynomial vertical growth makes its horizontal
+boundary values tend to zero as the rectangle grows.
+Then let \(\varepsilon\) decrease to zero.  Evaluation at
+\(s=1\) proves the first assertion.
+
+By \eqref{rv-unitary-volume-formula},
+\[
+ \operatorname{vol}(\mathcal X)
+     =2d_F^{n^2/2}\prod_{\ell=1}^n L_F(\ell,\chi^\ell).
+\]
+For the remaining factors the Euler products give
+\[
+ \prod_{\ell=2}^n |L_F(\ell,\chi^\ell)|
+ \le\left(\prod_{\ell=2}^{\infty}\zeta(\ell)\right)^f
+ \le e^f.
+\]
+The last inequality follows from
+\[
+ \sum_{\ell=2}^{\infty}\log\zeta(\ell)
+ \le\sum_{\ell=2}^{\infty}\sum_{a=2}^{\infty}a^{-\ell}
+ =\sum_{a=2}^{\infty}\frac1{a(a-1)}=1.
+\]
+Thus the volume is at most
+\(18^f r_E^{N/2+f/4}\).
+Since \(X\ge18\), \(r_E\le X\), and \(n\ge2\), this is
+at most \(X^{N/2+5f/4}\le X^N\).
+
+Finally, reduction modulo \(g\) embeds \(K_f/K_f(g)\)
+in the endomorphisms of
+\(\widehat\Lambda_0/g\widehat\Lambda_0\).
+The latter additive group has order \(g^{2fn^2}\).
+This follows locally from freeness over a discrete
+valuation ring and hence holds for a projective lattice.
+The index, and therefore the reciprocal level volume,
+is at most \(g^{2N}\).
+\end{proof}
+
+\subsection{A small fundamental domain for a radical}
+
+We use the least sublattice size \(\lambda(L)\) and
+greatest quotient size \(\mu(L)\) of
+Section~\ref{nu-section}, always with induced and quotient
+positive metrics.  Conjugate duality gives
+\[
+            \lambda(\overline L^{\,*})=\mu(L)^{-1}.
+\]
+If \(\mathfrak a\) is a fractional ideal of \(E\), then
+\begin{equation}\label{dc-ideal-size}
+ \lambda(\mathfrak a L)
+     =|N_{E/\mathbb Q}\mathfrak a|^{1/(2f)}\lambda(L),
+ \qquad
+ \mu(\mathfrak a L)
+     =|N_{E/\mathbb Q}\mathfrak a|^{1/(2f)}\mu(L).
+\end{equation}
+Indeed \(M\mapsto\mathfrak aM\) is a bijection between
+sublattices, and between projective quotients, in the
+two modules.  On rank \(r\) covolumes it multiplies
+the normalized height by
+\(|N\mathfrak a|^r\), as follows by localization.
+Taking \(2fr\)-th roots proves the identities.
+
+For a real Euclidean lattice \(L\), denote its covering
+radius by \(\operatorname{covrad}(L)\), its first vector
+minimum by \(\lambda_1(L)\), and its Euclidean integral
+dual by \(L^\vee\).  We import Banaszczyk's theorem
+\begin{equation}\label{dc-transference}
+       \operatorname{covrad}(L)\lambda_1(L^\vee)
+                         \le\frac{\dim_{\mathbb R}L_{\mathbb R}}2.
+\end{equation}
+This is \cite[Theorem~2.2]{banaszczyk-transference},
+also stated with these Euclidean conventions in
+\cite[Theorem~3.7.2, (3.54)]{bost-kunnemann-extensions}.
+It is used for arbitrary lattices, without semistability.
+
+\begin{lemma}\label{dc-hom-cover}
+Let \(A,B\) be positive metrized projective
+\(\mathcal O_E\)-lattices of ranks \(a,b\ge1\).
+Give \(\operatorname{Hom}_{\mathcal O_E}(A,B)\) the
+Euclidean norm
+\((\sum_v\|T_v\|_{\rm HS}^2)^{1/2}\).  Then
+\begin{equation}\label{dc-hom-cover-bound}
+ \operatorname{covrad}\operatorname{Hom}(A,B)
+          \le\frac{ab\sqrt f\,r_E}{2}
+                                      \frac{\mu(B)}{\lambda(A)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Write \(\mathfrak d_E^{-1}\) for the absolute
+codifferent.  The trace pairing identifies the integral
+dual of \(\operatorname{Hom}(A,B)\) with
+\(\mathfrak d_E^{-1}\operatorname{Hom}(B,A)\).
+Under the Euclidean Riesz identification, a map \(U\)
+in this module corresponds to \(2U^*\), because
+\[
+ \operatorname{Tr}_{E/\mathbb Q}\operatorname{tr}(UT)
+                  =2\sum_v\Re\operatorname{tr}(U_vT_v).
+\]
+The trace pairing is perfect for projective modules:
+one checks this in free local bases at every finite
+prime.  Formula \eqref{dc-ideal-size} and
+\(|N\mathfrak d_E^{-1}|=|D_E|^{-1}=r_E^{-2f}\)
+give
+\(\lambda(\mathfrak d_E^{-1}A)=r_E^{-1}\lambda(A)\).
+For \(U\ne0\), Lemma~\ref{nu-map-size} and the
+arithmetic--geometric mean inequality give
+\[
+ \left(\sum_v\|2U_v^*\|_{\rm HS}^2\right)^{1/2}
+       \ge2\sqrt f\,r_E^{-1}\frac{\lambda(A)}{\mu(B)}.
+\]
+Apply \eqref{dc-transference} in real dimension \(2fab\).
+\end{proof}
+
+Fix a point \(x\) with \(0<\tau=\lambda_x<1/2\).
+Use the canonical isotropic flag of
+Proposition~\ref{nu-canonical-flag}, with successive
+semistable quotient sizes
+\[
+             0<\tau_1<\cdots<\tau_a<1/2,\qquad
+             \tau_1=\tau,\qquad a\le q.
+\]
+Set \(\tau_{a+1}=1/2\).
+
+\begin{lemma}\label{dc-radical-domain}
+There is a nonzero primitive isotropic sublattice \(P\)
+of rank \(j\le q\) such that the following holds.
+Let \(U\) be the unipotent radical of its stabilizer,
+and put
+\[
+ \Gamma_U(g)=
+ \{\gamma\in U(F):\gamma\Lambda_x=\Lambda_x,\
+                         (\gamma-1)\Lambda_x\subseteq g\Lambda_x\}.
+\]
+In orthonormal Witt coordinates at infinity, every
+class in \(\Gamma_U(g)\backslash U_\infty\) has a
+representative \(\exp A\exp C\), where \(C\) is central,
+\([A,C]=0\), and
+\begin{equation}\label{dc-radius}
+ \|A\|_{\rm HS}+\|C\|_{\rm HS}\le\rho,\qquad
+ \rho=\frac{n^2\sqrt f\,g r_E}{4}(2\tau)^{1/q}.
+\end{equation}
+Here and below a norm on a product of real places is
+the square root of the sum of the squared norms.
+\end{lemma}
+\begin{proof}
+An extension of lattices whose greatest quotient sizes
+are at most \(s\) again has greatest quotient size at
+most \(s\).  To see this, take any projective quotient,
+saturate the image of the sublattice, and use the exact
+covolume identity between this saturated image and
+the remaining quotient.  Saturation decreases
+covolume; both induced maps are contractions for
+quotient metrics.  Each of the two factors therefore
+has size at most \(s\).  Apply this successively to the
+semistable grades of \(P_i\) to obtain
+\(\mu(P_i)\le\tau_i\).
+The self-dual core \(P_i^\perp/P_i\) has least size
+\(\tau_{i+1}\) if \(i<a\), and at least \(1/2\)
+if \(i=a\), by construction of the flag.
+
+The product of the \(a\) ratios
+\(\tau_i/\tau_{i+1}\) is \(2\tau<1\).
+For some \(i\),
+\[
+ \frac{s}{t}:=\frac{\tau_i}{\tau_{i+1}}
+       \le(2\tau)^{1/a}\le(2\tau)^{1/q}=:R.
+\]
+Take \(P=P_i\), \(j=\operatorname{rank}P\), and
+\(M=P^\perp/P\), of rank \(m=n-2j\).
+Then
+\[
+ \mu(P)\le s,\quad
+ \lambda(\overline P^{\,*})\ge s^{-1},\quad
+ \lambda(M)\ge t,\quad \mu(M)\le t^{-1},\quad
+                         s^2\le R/4.
+\]
+The last assertion uses \(s/t\le R\) and \(t\le1/2\).
+
+Use the integral hyperbolic splitting proved in
+Section~\ref{rv-section}.  At infinity use orthogonal
+Witt coordinates \(P\oplus M\oplus\overline P^{\,*}\),
+so the Hermitian matrix is
+\[
+       \begin{pmatrix}0&0&I\\0&J_0&0\\I&0&0\end{pmatrix}.
+\]
+The first and central Lie coordinates of the radical are
+\[
+ A_Z=\begin{pmatrix}0&-Z^*J_0&0\\0&0&Z\\0&0&0\end{pmatrix},
+ \qquad
+ C_0=\begin{pmatrix}0&0&C\\0&0&0\\0&0&0\end{pmatrix},
+ \qquad C^*=-C.
+\]
+Thus \(\|A_Z\|_{\rm HS}=\sqrt2\|Z\|_{\rm HS}\).
+Projection of \(\Gamma_U(g)\) onto the \(Z\)-coordinate
+is exactly
+\[
+               g\operatorname{Hom}(\overline P^{\,*},M).
+\]
+For surjectivity, choose \(\theta\in\mathcal O_E\)
+with \(\theta+\bar\theta=1\), available because
+\(E/F\) is unramified at finite places.  For an integral
+\(Z\) divisible by \(g\), the group matrix with top
+right block \(B=-\theta Z^*J_0Z\) is integral and
+congruent to the identity modulo \(g\).
+This statement is intrinsic to the integral splitting;
+its expression in orthonormal real coordinates need not
+be integral.  It nevertheless identifies the projected
+lattice and its induced metric exactly.
+Lemma~\ref{dc-hom-cover} now gives first-coordinate
+covering radius, in the radical norm, at most
+\begin{equation}\label{dc-first-radius}
+                  \frac{jm\sqrt f\,g r_E}{\sqrt2}\frac{s}{t}.
+\end{equation}
+
+We give the corresponding duality for the center,
+including the prime two.  Let \(\mathcal C(P)\) be the
+skew-Hermitian maps \(\overline P^{\,*}\to P\).
+The \(\mathcal O_F\)-pairing
+\[
+ \mathcal C(P)\times\mathcal C(\overline P^{\,*})
+       \longrightarrow\mathcal O_F,\qquad
+                         (C,U)\longmapsto-\operatorname{tr}(CU)
+\]
+is perfect.  In local free bases, an off-diagonal pair
+is the trace pairing for the unramified quadratic
+algebra.  A diagonal coordinate is its trace-zero
+rank-one module.  At an inert prime choose a generator
+\(\alpha\) of the quadratic algebra with unit
+discriminant; then
+\(2\alpha-\operatorname{Tr}(\alpha)\) generates its
+trace-zero module and its square is a unit.
+This holds also at a dyadic inert prime: the trace of
+such an \(\alpha\) is a unit, and the equation
+\(2a+\operatorname{Tr}(\alpha)b=0\) forces
+\(b\in2\mathcal O_F\).
+At a split prime the generator is \((1,-1)\).
+These checks prove perfectness at every finite prime,
+and hence globally.
+
+The Euclidean integral dual of \(\mathcal C(P)\) is
+therefore represented by
+\(\mathfrak d_F^{-1}\mathcal C(\overline P^{\,*})\).
+There is no factor two here: the matrix trace already
+lies in \(F\), and the real inner product is
+\(-\sum_v\operatorname{tr}(C_vU_v)\).
+Because
+\[
+ |N_{E/\mathbb Q}(\mathfrak d_F^{-1}\mathcal O_E)|
+                        =d_F^{-2}=|D_E|^{-1},
+\]
+every nonzero dual vector, regarded as a map
+\(P\to\mathfrak d_F^{-1}\overline P^{\,*}\),
+has Euclidean norm at least
+\(\sqrt f/(r_Es^2)\), by Lemma~\ref{nu-map-size}.
+Its real dimension is \(fj^2\); transference gives
+central covering radius at most
+\begin{equation}\label{dc-central-radius}
+                        \frac{j^2\sqrt f\,g r_E}{2}s^2.
+\end{equation}
+
+Reduce the first coordinate by an element of
+\(\Gamma_U(g)\), using \eqref{dc-first-radius}, and
+then reduce the remaining central coordinate by
+\(g\mathcal C(P)\), using \eqref{dc-central-radius}.
+Group multiplication is triangular, so the second
+operation leaves the first coordinate unchanged.
+An affine translation of the central fiber has the
+same covering radius.  The resulting representative
+is \(\exp A_Z\exp C_0\); the two matrices commute.
+Its sum of norms is at most
+\[
+ \sqrt f\,g r_ER\left(\frac{jm}{\sqrt2}+\frac{j^2}{2}\right)
+ \le\sqrt f\,g r_ER\,j(n-j)
+ \le\frac{n^2\sqrt f\,g r_E}{4}R.
+\]
+This proves the assertion.
+\end{proof}
+
+\subsection{Zero constant terms for the actual projection}
+
+We use the following classical Harish--Chandra theorem.
+A matrix coefficient between compact-finite vectors
+of a discrete-series representation of a connected
+semisimple real Lie group with finite center belongs
+to its Harish--Chandra cusp Schwartz space.  In particular,
+for every proper parabolic radical \(U\) its integrals
+\[
+                   \int_{U(\mathbb R)}c(aub)\,du
+\]
+converge absolutely and vanish, for all fixed \(a,b\).
+The Schwartz assertion is in
+\cite[\S33, Lemma~65, Corollary~1]{harish-chandra-ds-ii};
+the cusp assertion and its constant-term application
+are explicitly recalled in
+\cite[\S4.1]{khare-larsen-savin}.
+We import this local theorem, rather than a statement
+about the global cuspidal spectrum.
+
+It applies to \(U(p,q)\) as follows.
+The map \(U(1)\times SU(p,q)\to U(p,q)\),
+\((z,g)\mapsto zg\), is onto with finite kernel.
+The pullback of an irreducible representation is a
+unitary central character times an irreducible
+representation of \(SU(p,q)\).  Square integrability
+and compact finiteness pass across this cover because
+the added center is compact.  A parabolic radical
+is contained in \(SU(p,q)\); its constant-term
+integral is thus covered by the stated theorem.
+The same reasoning applies to the contragredient
+coefficient and to a finite product of real places.
+
+\begin{lemma}\label{dc-cuspidal}
+Write the projection identity of Section~\ref{ak-section}
+as
+\[
+ K(x,y)=\sum_{i=1}^D F_i(x)\overline{F_i(y)},\qquad
+ F_i=T_iw,
+\]
+where each \(T_i:\sigma\to L^2(\mathcal X)\) is an
+isometric intertwiner and \(w\) is the fixed unit
+lowest-compact-type vector.  Every \(F_i\), every
+archimedean right translate of it, and every one of
+its right Lie derivatives is cuspidal.
+\end{lemma}
+\begin{proof}
+For fixed \(y\), integrate the kernel column along
+\(U(F)\backslash U(\mathbb A_F)\).
+This quotient is compact.  Absolute locally uniform
+convergence of the kernel series allows termwise
+integration, including absolute values.  Decomposing
+\(G(F)\) into left \(U(F)\)-cosets unfolds this integral
+to
+\[
+ \sum_{\gamma\in U(F)\backslash G(F)}
+       \int_{U(\mathbb A_F)}
+                   \Phi(x^{-1}u^{-1}\gamma y)\,du .
+\]
+The total integral of the absolute values is finite
+by the preceding compact-quotient calculation.
+Fubini is therefore applicable to the finite and
+infinite factors.  Each archimedean radical integral
+vanishes by the local theorem, so every kernel
+column has zero constant term.
+
+These columns span \(\operatorname{span}\{F_1,\ldots,F_D\}\).
+Indeed, if their coefficient vectors did not span
+\(\mathbb C^D\), a nonzero linear combination of the
+\(F_i\) would vanish at every point, contradicting
+their orthonormality in \(L^2\).
+Consequently all \(F_i\) are cuspidal.
+Right translations preserve constant terms.
+For Lie derivatives, differentiation under the
+constant-term integral is valid because its domain
+is compact and the functions are smooth.
+\end{proof}
+
+For the particular radical of Lemma~\ref{dc-radical-domain},
+cuspidality also means zero average on
+\(\Gamma_U(g)\backslash U_\infty\), with \(x_f\) fixed.
+Here is the finite-place justification.
+If
+\[
+ K_{U,f}(g)=U(\mathbb A_{F,f})\cap x_fK_f(g)x_f^{-1},
+\]
+then
+\[
+                 U(\mathbb A_{F,f})=U(F)K_{U,f}(g).
+\]
+This follows directly from the two-step coordinates:
+approximate the first additive coordinate by a rational
+one, lift it by the trace-one formula above, and then
+approximate the central coordinate.  Density of a
+finite-dimensional \(F\)-vector space in its finite
+adeles follows by clearing denominators and the
+Chinese remainder theorem.  Thus the adelic
+constant-term quotient, after imposing right level
+\(K_{U,f}(g)\), is precisely
+\(\Gamma_U(g)\backslash U_\infty\).
+The first-coordinate and central lattices also show
+directly that this real quotient is compact.
+Normalize its Haar measure to have total mass one.
+
+\subsection{Derivatives on a bounded range of compact types}
+
+At one real place use the Hilbert--Schmidt inner
+product on the real Lie algebra \(\mathfrak g\) of
+\(U(p,q)\), and let \(\mathfrak g=\mathfrak k\oplus
+\mathfrak p\) be its orthogonal Cartan decomposition.
+Put
+\[
+                \beta(P)=2\sqrt n\,b^2+4n^{3/2}+4P.
+\]
+In the product representation, let \(V_P\) be the
+span of all products of at most \(P\) complexified
+Lie algebra operators applied to the full lowest
+compact type \(W=\bigotimes_v W_v\).
+It is a finite-dimensional compact-invariant space
+of smooth vectors.
+
+\begin{lemma}\label{dc-derivative}
+For a Hilbert--Schmidt unit vector \(Y\) in the Lie
+algebra of one real place and \(u\in V_P\),
+\[
+                  \|d\sigma(Y)u\|\le\beta(P)\|u\|.
+\]
+For a general product Lie algebra vector \(Y\),
+\begin{equation}\label{dc-derivative-bound}
+       \|d\sigma(Y)u\|
+                   \le\sqrt f\,\beta(P)\|Y\|_{\rm HS}\|u\|.
+\end{equation}
+\end{lemma}
+\begin{proof}
+We include the Casimir computation to fix its sign.
+For orthonormal bases of \(\mathfrak k,\mathfrak p\)
+the invariant form is \(B(A,B)=\Re\operatorname{tr}(AB)\),
+negative on \(\mathfrak k\) and positive on
+\(\mathfrak p\).  Thus
+\[
+ \Omega_G=\sum_{\mathfrak p}Y^2-\sum_{\mathfrak k}Y^2,
+ \qquad \Omega_K=-\sum_{\mathfrak k}Y^2,
+ \qquad
+ \sum_{\mathfrak g}\|d\sigma(Y)u\|^2
+                    =\langle u,(2\Omega_K-\Omega_G)u\rangle.
+\]
+The Casimir eigenvalues in this normalization are
+\[
+ c_G=\|\lambda_v\|^2-\|\rho\|^2,\qquad
+ c_K(\mu)=\|\mu+\rho_K\|^2-\|\rho_K\|^2.
+\]
+These formulas follow by writing the complexified
+Casimir in matrix units \(E_{ij}\): move each positive
+root operator to the right of its negative root
+operator and apply it to a highest vector.  The
+commutators contribute \(2\rho\), and the diagonal
+terms contribute the squared weight.  The same
+calculation for the two compact blocks gives
+\(\rho_K\).  On the noncompact representation the
+Harish--Chandra parameter is, by definition, the
+shifted parameter for this central character.
+
+The lowest compact highest weight is
+\(\kappa=\lambda_v+\rho-2\rho_K\), as checked in
+Section~\ref{fd-section}.  We use the elementary bounds
+\[
+ \|\rho\|,\|\rho_K\|\le\frac12 n^{3/2},\qquad
+              \|\kappa\|\le\sqrt n\,b^2+\frac32n^{3/2}.
+\]
+All weights of the compact module of highest weight
+\(\kappa\) have norm at most \(\|\kappa\|\).
+For completeness, the highest-weight construction
+places each weight below \(\kappa\) by a sum of
+positive roots.  The set of weights is Weyl invariant.
+Testing an arbitrary real linear functional, and
+moving it into the dominant chamber, therefore
+places every weight in the convex hull of the Weyl
+orbit of \(\kappa\).  That convex hull lies in the
+closed ball of radius \(\|\kappa\|\).
+
+A highest weight \(\mu\) occurring in \(V_P\) occurs
+in \(W_v\otimes\mathfrak g_{\mathbb C}^{\otimes r}\)
+for some \(r\le P\).  The weights of the adjoint
+module are zero or \(e_i-e_j\), of norm \(\sqrt2\).
+Consequently
+\[
+ \|\mu\|\le\|\kappa\|+\sqrt2P,\qquad
+ c_K(\mu)\le
+             \bigl(\sqrt n\,b^2+2n^{3/2}+2P\bigr)^2.
+\]
+If the expression inside parentheses is \(a_P\),
+the energy above is at most
+\[
+ \left(2a_P^2+\frac14 n^3\right)\|u\|^2
+                                      \le4a_P^2\|u\|^2.
+\]
+This is \(\beta(P)^2\|u\|^2\).
+The calculation applies to the compact-isotypic
+decomposition of every \(u\in V_P\), including in
+the product representation.  Cauchy--Schwarz for a
+linear combination of the orthonormal Lie basis
+proves the single-place bound.  Sum over the \(f\)
+places and apply Cauchy--Schwarz once more to obtain
+\eqref{dc-derivative-bound}.
+\end{proof}
+
+\subsection{An explicit local Sobolev estimate}
+
+Write
+\[
+ {\bf F}(u,y)=\bigl((T_1u)(y),\ldots,(T_Du)(y)\bigr)
+                         \in\mathbb C^D,\qquad
+                  \tau_y=\min\{\lambda_y,1/2\}.
+\]
+For \(u\in V_P\) these are smooth representatives
+obtained by right differentiation and compact
+translation of the \(F_i\).  They satisfy pointwise
+equivariance and are right \(K_f(g)\)-invariant.
+Each \(T_i\) is isometric, so
+\begin{equation}\label{dc-L2}
+       \int_{\mathcal X}\|{\bf F}(u,y)\|^2\,dy=D\|u\|^2.
+\end{equation}
+
+\begin{lemma}\label{dc-sobolev}
+For \(u\in V_P\),
+\begin{equation}\label{dc-sobolev-bound}
+ \|{\bf F}(u,y)\|^2
+ \le
+  \bigl(200N^3\beta(P+N)^2\bigr)^N
+       \left(\frac7{\tau_y^2}\right)^{2N}
+          \frac{D}{\operatorname{vol}(K_f(g))}\|u\|^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Choose a Hilbert--Schmidt orthonormal basis
+\(Y_1,\ldots,Y_N\) of the product real Lie algebra,
+each basis vector supported at one place.  Set
+\[
+ r=\frac1{20N^2},\qquad
+ \Psi(t)=\exp(t_1Y_1)\cdots\exp(t_NY_N),
+                         \quad t\in[-r,r]^N.
+\]
+We record explicit chart bounds.  Put \(S=\sum_j|t_j|\),
+so \(S\le1/(20N)\).  In the ambient product of
+matrix spaces, the \(j\)-th derivative column differs
+from \(Y_j\) by norm at most \(e^S-1\le2S\).
+The operator norm of the difference between the full
+derivative and the linear isometry
+\(t\mapsto\sum t_jY_j\) is at most
+\(2S\sqrt N\le1/10\).
+Integrating along a straight segment in the cube
+shows that \(\Psi\) is injective.
+Its left Maurer--Cartan columns are
+\[
+ A_j(t)=\operatorname{Ad}
+       \bigl(\exp(-t_NY_N)\cdots\exp(-t_{j+1}Y_{j+1})\bigr)Y_j.
+\]
+They differ from \(Y_j\) by norm at most
+\(e^{2S}-1\le3S\).  Their full derivative matrix
+has smallest singular value at least
+\(1-3S\sqrt N>1/2\).
+Thus Haar measure in the chart has density at least
+\(2^{-N}\), and \(\|A_j(t)\|_{\rm HS}<2\).
+
+The map of the chart times \(K_f(g)\) into
+\(\mathcal X\), translated by \(y\), has multiplicity
+at most
+\[
+                    M_y=\left(\frac7{\tau_y^2}\right)^{2N}.
+\]
+Indeed any two lifts differ by a rational isometry
+preserving \(\Lambda_y\), of operator norm less than
+\(e^{2Nr}<2\) at every real place.
+The difference of two such isometries is a nonzero
+integral endomorphism.  Lemma~\ref{amb-map-separation}
+gives geometric mean operator norm at least
+\(\lambda_y^2\).  The packing argument of
+Lemma~\ref{amb-packing}, in real matrix dimension
+\(2n^2\) at each place, bounds their number by
+\[
+                  (1+4/\tau_y^2)^{2N}\le M_y.
+\]
+Consequently, for any fixed smooth vector \(v\)
+in the span under consideration,
+\begin{equation}\label{dc-chart-integral}
+ \int_{[-r,r]^N}\|{\bf F}(v,y\Psi(t))\|^2\,dt
+       \le\frac{2^N M_yD}{\operatorname{vol}(K_f(g))}\|v\|^2.
+\end{equation}
+This follows from the chart Jacobian, the multiplicity
+bound, right level invariance, and \eqref{dc-L2}.
+
+Here is an elementary Sobolev inequality sufficient
+for this chart.  The one-dimensional fundamental
+theorem of calculus, averaged over \([-r,r]\),
+expresses \(h(0)\) as its average plus an integral
+of \(h'\) with kernel of absolute value at most
+\(1/2\).  Iterating in the \(N\) coordinates gives
+\[
+ h(0)=\sum_{I\subseteq\{1,\ldots,N\}}
+          \int_{[-r,r]^N}k_I(t)\partial_Ih(t)\,dt,
+ \qquad |k_I(t)|\le(2r)^{-N}r^{|I|}.
+\]
+The same identity holds for a finite-dimensional
+Hilbert-space-valued function.  Cauchy--Schwarz gives
+\[
+ \|h(0)\|^2\le(2r)^{-N}(1+r^2)^N
+                     \sum_I\int\|\partial_Ih(t)\|^2\,dt
+              \le r^{-N}\sum_I\int\|\partial_Ih(t)\|^2\,dt.
+\]
+Use \(h(t)={\bf F}(u,y\Psi(t))\).
+For \(I=\{i_1<\cdots<i_k\}\), direct differentiation
+of the ordered product gives
+\[
+ \partial_Ih(t)=
+ {\bf F}\bigl(d\sigma(A_{i_1}(t))\cdots
+                       d\sigma(A_{i_k}(t))u,\ y\Psi(t)\bigr).
+\]
+Each coordinate is differentiated only once, so this
+identity has no additional derivative terms.
+Expand the \(A_j(t)\) in the fixed orthonormal basis.
+The squared sum of coefficients of their tensor
+product is at most \(4^k\); pointwise Cauchy--Schwarz
+therefore bounds the squared norm by \(4^k\) times
+the sum for all \(N^k\) fixed words of length \(k\).
+Lemma~\ref{dc-derivative} bounds each such word by
+\(\beta(P+N)^k\|u\|\).
+Applying \eqref{dc-chart-integral} word by word yields
+\[
+ \|{\bf F}(u,y)\|^2
+ \le r^{-N}\frac{2^NM_yD}{\operatorname{vol}(K_f(g))}
+                 (1+4N\beta(P+N)^2)^N\|u\|^2.
+\]
+Since \(N\ge1\), \(\beta(P+N)\ge1\), and
+\(r^{-1}=20N^2\), this proves the stated constant.
+\end{proof}
+
+\subsection{Iteration of the zero-average identity}
+
+Fix \(x\) with \(\tau=\lambda_x<\tau_0\), and use the
+radical and \(\rho\) of Lemma~\ref{dc-radical-domain}.
+Let \(\Omega_x\) consist of the points
+\(x\exp A\exp C\) with first and central radical
+coordinates satisfying
+\(\|A\|_{\rm HS}+\|C\|_{\rm HS}\le\rho\);
+the finite component remains \(x_f\).
+It contains \(x\), the paths
+\(x\exp(t(A+C))\), \(0\le t\le1\), and representatives,
+up to left rational and right \(K_f(g)\) action,
+of all points on the radical quotient through \(x\).
+
+If \(\rho\le\log2\), then throughout this set
+\begin{equation}\label{dc-size-nearby}
+                   \tau_y\ge\tau/2.
+\end{equation}
+Indeed at place \(v\) the positive metrics change
+by a map and inverse of norm at most
+\(\exp(\|A_v\|_{\rm HS}+\|C_v\|_{\rm HS})\).
+Taking the normalized product over the \(f\) places
+changes every sublattice size by at most
+\(\exp(\rho/\sqrt f)\).  Since \(\tau<1/2\),
+the same lower bound survives truncation at \(1/2\).
+
+Set
+\[
+ P_0=8qN,\qquad \beta_*=\beta(P_0+N).
+\]
+Our parameters give the following simple bounds:
+\begin{equation}\label{dc-numerical}
+ \beta_*\le X^3,\qquad N\le X^2,\qquad
+ 156800\le X,\qquad
+ \rho\le\tfrac12X^{-9}<\log2.
+\end{equation}
+For the first, \(q\le\sqrt n\) implies
+\[
+ \beta_*\le2\sqrt n\,b^2+4n^{3/2}+36n^{5/2}f.
+\]
+Divide by \(n^3f^3b^3\le X^3\); the quotient is at most
+\[
+        n^{-5/2}+\tfrac12n^{-3/2}+\tfrac92n^{-1/2}<1
+                         \qquad(n\ge100).
+\]
+The other elementary bounds follow from \(X\ge2n\),
+\(\log n\ge20\), and
+\[
+ \rho\le\frac{n^2\sqrt f\,gr_E}{2}\tau^{1/q}
+                          \le\tfrac12X^2X^{-11}.
+\]
+Equations \eqref{dc-sobolev-bound},
+\eqref{dc-size-nearby}, and \eqref{dc-numerical}
+give, uniformly for \(y\in\Omega_x\) and \(u\in V_{P_0}\),
+\begin{equation}\label{dc-initial-evaluation}
+ \|{\bf F}(u,y)\|^2
+   \le X^{13N}\tau^{-4N}
+       \frac{D}{\operatorname{vol}(K_f(g))}\|u\|^2.
+\end{equation}
+Here \(200\cdot28^2=156800\):
+the Sobolev constant contributes \(N^3\le X^6\),
+\(\beta_*^2\le X^6\), and the remaining constant
+contributes at most \(X\).
+
+\begin{lemma}\label{dc-iteration}
+Suppose \(M_{P+1}\) bounds
+\(\|{\bf F}(u,y)\|/\|u\|\) for all nonzero
+\(u\in V_{P+1}\), \(y\in\Omega_x\).
+For \(0\le P<P_0\), the same quantity on \(V_P\)
+is bounded by
+\[
+                   2\rho\sqrt f\,\beta_* M_{P+1}.
+\]
+\end{lemma}
+\begin{proof}
+For \(y=x\exp A\exp C\in\Omega_x\), differentiate
+along \(x\exp(t(A+C))\).  The two coordinates commute,
+and \(d\sigma(A+C)u\in V_{P+1}\).
+Lemma~\ref{dc-derivative} gives
+\[
+ \|{\bf F}(u,y)-{\bf F}(u,x)\|
+                  \le\rho\sqrt f\,\beta_*M_{P+1}\|u\|.
+\]
+The same inequality holds for every point of the
+radical quotient, by its representatives in
+\(\Omega_x\) and the rational and level invariance.
+Its average is zero by Lemma~\ref{dc-cuspidal} and
+the finite-place argument following it.
+Averaging the difference therefore bounds
+\(\|{\bf F}(u,x)\|\) by the same right side.
+The triangle inequality proves the assertion at
+all \(y\in\Omega_x\).
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{dc-main}]
+If \(D=0\), the finite-rank identity makes the kernel
+zero, and there is nothing to prove.
+Otherwise iterate Lemma~\ref{dc-iteration} \(P_0\)
+times, starting with \eqref{dc-initial-evaluation}.
+Since \(w\in V_0\) has norm one, the diagonal identity
+gives
+\[
+ K(x,x)\le(2\rho\sqrt f\,\beta_*)^{16qN}
+       X^{13N}\tau^{-4N}
+                   \frac{D}{\operatorname{vol}(K_f(g))}.
+\]
+Moreover
+\[
+ 2\rho\sqrt f\,\beta_*
+   =\frac{n^2fgr_E}{2}\,2^{1/q}\beta_*\tau^{1/q}
+                         \le X^5\tau^{1/q},
+\]
+because \(q\ge1\), \(n^2fgr_E\le X^2\),
+and \(\beta_*\le X^3\).
+It follows that
+\[
+ K(x,x)\le
+ X^{(80q+13)N}\tau^{12N}
+                   \frac{D}{\operatorname{vol}(K_f(g))}
+ \le X^{(-52q+13)N}
+                   \frac{D}{\operatorname{vol}(K_f(g))}.
+\]
+The diagonal is nonnegative.  Integrating this
+uniform bound over the deep subset, bounding its
+volume by the whole quotient volume, and using
+Lemma~\ref{dc-volume}, gives
+\[
+ \int_{\lambda_x<\tau_0}K(x,x)\,dx
+ \le X^{(-52q+16)N}D
+ \le X^{-36N}D
+ \le e^{-N}D.
+\]
+This is \eqref{dc-main-bound}.
+\end{proof}
+
+\begin{corollary}\label{dc-ambient-comparison}
+Assume the field, lattice, finite test-function,
+congruence, and discrete-series hypotheses in
+Section~\ref{amb-section}.  Suppose \(C_g\ge0\),
+\(b\ge2\), \(1\le q\), all the quantitative conditions
+\eqref{amb-parameters} hold, and
+\[
+              \log n\ge20,\qquad n\ge4\log(C_g+3).
+\]
+Then the actual ambient multiplicity is finite and
+\[
+             |D-D_*|\le
+                    \exp(-nf\log n/16)\,D_*.
+\]
+\end{corollary}
+\begin{proof}
+The compact-type estimate of Section~\ref{amb-section}
+supplies the local decay required in
+Section~\ref{ak-section}.  The lower bound for \(h\)
+in \eqref{amb-parameters} in particular implies its
+condition \(h/(8\sqrt{2q})>2n^2\).
+That section therefore constructs the finite-rank
+orthogonal projection, its absolutely convergent
+continuous kernel, and its pointwise diagonal.
+Theorem~\ref{nu-main} proves \eqref{amb-near-input}.
+The rare-cusp estimate \eqref{rv-probability} implies
+\eqref{amb-rare-input}, since
+\(\tau_0<1/2\) and \(e^{-nf\log n/3}\le e^{-nf\log n/4}\).
+Theorem~\ref{dc-main} proves \eqref{amb-deep-input},
+and Theorem~\ref{amb-far} supplies the distant terms.
+All hypotheses of Proposition~\ref{amb-final-reduction}
+are now proved, so it yields the asserted comparison.
+\end{proof}
+
+This corollary concerns the complex ambient multiplicity.
+It retains the explicitly stated classical imports of
+the preceding sections.  It does not assert that
+the remaining arithmetic and functorial steps of
+the submitted GRH argument have been verified.
+
+

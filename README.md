@@ -1,62 +1,59 @@
 # Distilling the Generalized Riemann Hypothesis
 
-This project studies Levent Alpöge's announced proof of the Riemann Hypothesis and the Generalized Riemann Hypothesis. Its purpose is to understand the argument, check its dependencies, and write a shorter proof in ordinary mathematical language, with complete definitions and proofs.
+**[Read the main manuscript](paper/main.pdf)** · **[Mathematical sections](paper/sections/recovered/)** · **[Analytic companion](paper/companion/main.pdf)**
 
-For a Dirichlet character $\chi$, the Dirichlet series
+We are developing a simpler, human-readable proof from Levent Alpöge's announced argument for the Riemann Hypothesis and the Generalized Riemann Hypothesis for Dirichlet characters. The aim is to understand the mathematics, replace long arguments by shorter ones where possible, and give complete definitions and proofs in ordinary mathematical language.
+
+For a Dirichlet character χ, the starting function is
 
 ```math
-L(s,\chi)=\sum_{n=1}^{\infty}\frac{\chi(n)}{n^s}\qquad (\mathrm{Re}\,s>1)
+L(s,\chi)=\sum_{n=1}^{\infty}\frac{\chi(n)}{n^s}
+\qquad (\mathrm{Re}\,s>1).
 ```
 
-extends beyond its initial domain of convergence. The version of GRH studied here says that every zero in the open strip $0<\mathrm{Re}\,s<1$ lies on the line $\mathrm{Re}\,s=1/2$. The original source also states nonvanishing to the right of that line, with the usual exception at the pole of a principal character.
+After analytic continuation, Dirichlet GRH says that every zero in the open strip between real parts zero and one lies on the line with real part one half. This is the version studied here; the project does not claim a theorem for every automorphic or number-field L-function.
 
-## Original result and attribution
+## Where the proof stands
 
-**Levent Alpöge, announced proof of RH and GRH, November 2026, in collaboration with Claude.** The project was initiated with the attribution **Fable 5.2**. The [author's announcement](https://alpo.ge/remark.pdf) names Claude but does not specify its model version. We retain the requested version attribution as information supplied with this project, pending confirmation in an original source.
+**The conventional reconstruction is not yet a complete proof of GRH.** It contains extensive proofs of intermediate results, together with explicitly stated classical inputs and conditional deductions. The decisive uniform arithmetic estimate remains open in this reconstruction.
 
-The original Lean archive is linked from the announcement. For stable file references we use the [public source mirror](https://github.com/jsmorph/rh/tree/ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de), pinned to commit `ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`. The mirror is a source reference, not an independent verification of the proof. See [the source notes](sources/README.md).
+The main manuscript now includes the entire recovered mathematical baseline, divided into 96 sections and eight thematic parts. The older files have been reconciled with the repository, and the short paper written at the restart is preserved as an analytic companion. The [recovery crosswalk](notes/recovery-crosswalk.md) identifies the later results that resolve earlier provisional gaps. The original files remain available in the [recovery archive](archive/recovered-2026-11-21/README.md).
 
-## Current status
+The argument has three broad stages:
 
-**[Recovered main manuscript](archive/recovered-2026-11-21/grh_reconstruction_v2.tex)** · **[Complete recovered bundle](archive/recovered-2026-11-21/grh_audit_reproducibility.zip)** · **[Restart analytic companion (PDF)](paper/main.pdf)** · **[Recovery inventory](archive/recovered-2026-11-21/README.md)**
+1. **Reduce the location of zeros to cancellation in prime sums.** A one-sided upper bound on arbitrarily large multiplicative intervals is sufficient; a bound for every large real number is unnecessary.
+2. **Construct arithmetic objects that control those sums.** Quadratic characters, cyclotomic cohomology, integral polynomial spaces, and theta lifts supply the ingredients.
+3. **Compare their sizes in compatible ways.** Divisibility and analytic norms must concern the same integral objects, with every denominator retained and constants controlled as the chain grows.
 
-The earlier work has now been recovered from the three files supplied by the project owner. It includes a 48,261-line mathematical reconstruction and a 622-file reproducibility bundle. The originals are preserved unchanged, with hashes. This much larger manuscript is the main baseline; its mathematical dependencies and current remaining obligations are being reconciled before editorial reorganization.
+The first stage is written out. Much of the second and third stages is also present, including a shorter cohomological route through algebraic K-theory, normalized theta measures, local orbital identities, an automorphic multiplicity comparison, and Jacquet adjointness and Fourier decay.
 
-The human-readable reconstruction remains incomplete. It does **not yet constitute a complete independently verified ordinary-mathematics proof of GRH**. Many inputs are proved in later sections, but the final arithmetic prime-sum estimate and some prerequisites remain open in this reconstruction. The formal verification evidence reported in the recovered audit is a separate question from the completeness of the written mathematical explanation.
+The remaining work concerns the full radial matrix and its successive restrictions, the global orbital-energy bounds, nonvanishing and divisibility at auxiliary level primes, the remaining complementary-parity Selmer bounds, and the final assembly with uniform constants. These obligations are stated precisely in the manuscript's last part.
 
-The shorter paper prepared at the restart is retained as an analytic companion. Its results are being compared with the recovered manuscript. In particular, its limitation of a coarse sixth-power estimate does not rule out the more refined exact prime-removal method already developed in the recovered work.
+## How the newer zero-free results help
 
-The source statements have been inspected. They concern all Dirichlet characters of positive modulus; they do not assert GRH for every automorphic or number-field L-function. The full Lean dependency chain has not been built or checked here.
+The quasi-Riemann hypothesis papers provide a fixed zero-free region and useful estimates for selecting auxiliary characters. The work on Landau–Siegel zeros supplies a separate real-zero argument. Both are used with their exact hypotheses and ranges.
 
-The repository records independently recomputed hashes for 29 selected source files. An exact-rational script checks the exponent calculations. The paper has been compiled with stable references. The [verification records](certificates/README.md) explain the scope of each check.
+These methods simplify particular steps. A fixed region to the right of the critical line does not itself give GRH, and a result about Dirichlet characters does not automatically apply to characters over varying number fields. The manuscript keeps these distinctions explicit.
 
-[The recovery record](notes/recovery.md) distinguishes what was available at the first checkpoint from the much larger body of work subsequently supplied. The preserved originals and complete ZIP ensure that no recovered proof, program, or certificate is lost during reorganization.
+## Reading the mathematics
 
-## How to read the project
-
-| Location | Purpose |
+| Part | Subject |
 | --- | --- |
-| [paper/](paper/README.md) | The developing mathematical paper, its TeX source, and its compiled PDF. |
-| [audit/](audit/README.md) | The source statements, dependency checks, and remaining verification work. |
-| [sources/](sources/README.md) | Original references, exact source versions, and attribution. |
-| [results/](results/README.md) | Short accounts of results proved in the paper. |
-| [negative-results/](negative-results/README.md) | Precise limitations of proposed arguments and proved examples of invalid inferences. |
-| `scripts/` | Reproducible computations and document-building tools. |
-| `data/` and `certificates/` | Inputs and independently checkable outputs of computations. |
-| [notes/](notes/recovery.md) | Project continuity records, kept separate from the mathematical exposition. |
+| I | Prime sums, the one-sided criterion, quadratic characters, and the slope comparison. |
+| II | Cyclotomic cohomology and Selmer groups, including shorter alternative arguments. |
+| III | Integral coefficient spaces, polynomial duality, and period pairings. |
+| IV | Ordinary theta measures, their normalizations, and integral columns. |
+| V | Local orbital identities, ideal sums, and unitary mass formulas. |
+| VI | Automorphic dimensions, formal degrees, and the multiplicity comparison. |
+| VII | Archimedean differential operators, radial forms, and Jacquet integrals. |
+| VIII | The uniform estimates still needed for the conclusion. |
 
-## Reproducing the checks
+For the main logical route, begin with Part I and the final part, then read the particular arithmetic input being used. Within Part II, the algebraic K-theory argument gives a shorter route to the coarse bound; the longer homology construction is retained as an alternative. The [analytic companion](paper/companion/main.pdf) supplies additional foundational proofs and clarifies the limits of proposed analytic shortcuts.
 
-```sh
-python3 scripts/build_paper.py
-python3 scripts/verify_exponents.py --check certificates/exponents.json
-python3 scripts/check_sources.py --output certificates/source_files.json
-```
+## Original sources and verification
 
-The first command needs a TeX installation; the other scripts use only the Python standard library. The source check downloads exactly the files pinned in the manifest and can subsequently run with `--offline`. No command is a full formal verification of GRH.
+The original work is attributed to **Levent Alpöge**, whose [announcement](https://alpo.ge/remark.pdf) credits collaboration with Claude. The [source notes](sources/README.md) identify the original archive, fixed source revisions, and the precise scope of inspection. The [September 30](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026) and [October 5](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026) papers are additional sources of methods.
 
-## Mathematical standards
+Preserving a proof text, checking a source hash, compiling a document, and verifying a mathematical argument are different checks. Their scopes are recorded separately in the [audit](audit/README.md) and [verification records](certificates/README.md). The full formal proof has not been independently rebuilt in this recovery session.
 
-Every result must say whether it is proved here, conditional on a stated hypothesis, quoted from an identified source, or still conjectural. Decisive estimates must state their ranges and the dependence of their constants. Numerical evidence must be labelled as such. The paper is organized by mathematical dependencies, not by the order in which the project developed.
-
-The [September 30](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026) and [October 5](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026) quasi-RH papers are additional sources of methods. Their estimates must be checked before being used, and a fixed zero-free region strictly weaker than GRH is never substituted for GRH.
+The [paper guide](paper/README.md) explains how to build both manuscripts. The [continuation index](notes/recovery-crosswalk.md) locates each recovered result and the next unresolved inputs, so further work can proceed one mathematical module at a time.

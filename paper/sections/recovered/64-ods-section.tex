@@ -1,0 +1,198 @@
+\section{A sharper dyadic estimate for the degenerate orbital integral}
+\label{ods-section}
+
+The last summation in the degenerate amplitude estimate is a
+measure-theoretic argument involving two size functions and two
+Gram determinants. We prove it independently and improve both its
+constant and its decay exponent. The geometric estimates supplying
+its hypotheses remain separate; in particular the relation between
+the determinant and the size functions cannot be omitted.
+\cite{alpo-uniform-source}
+
+Let $(X,\nu)$ be a measure space. All integrals of nonnegative
+functions below are allowed initially to be infinite. Let
+$A,B,S,S',Y,Y'$ be measurable nonnegative real functions, with
+$S,S'\ge1$ and $Y,Y'>0$ almost everywhere. Fix integers
+$r\ge1$, $j\ge0$, real numbers $m\ge1$, $e\ge0$, and
+\[
+ q\ge e+3r+1,\quad H,\Delta,\sigma\ge1,
+ \qquad D,K,K'>0.
+                                                               \tag{OD1}
+\]
+Suppose that almost everywhere
+\begin{align}
+ YY'D&\le2^j,& D&\le(SS')^r,\nonumber\\
+ Y,Y'&\le\max(S,S')^r\Delta,&
+ \sigma&\le\max\left(1,\frac{(SS')^r}{(2H)^{2r}}\right).
+                                                               \tag{OD2}
+\end{align}
+For $i\ge0$ write
+\[
+ E_i(S)=\{S\le2^{i+1}H\}\cap
+       \bigl(\{i=0\}\cup\{2^iH<S\}\bigr),
+\]
+where $\{i=0\}$ means all of $X$ if $i=0$ and the empty set
+otherwise. Define $E_i(S')$ in the same way. Suppose that for all
+$i,i'\ge0$ and $y>0$,
+\begin{align}
+ \int_{E_i(S)\cap\{S'\le2^{i'+1}H\}\cap\{y<Y\le2y\}}
+                    A^2\,d\nu
+ &\le K(2^{i+i'+1}H)^e y^{2m}2^{-2qi},\label{ods-first}\\
+ \int_{E_{i'}(S')\cap\{S\le2^{i+1}H\}\cap\{y<Y'\le2y\}}
+                    B^2\,d\nu
+ &\le K'(2^{i+i'+1}H)^e y^{2m}2^{-2qi'}.
+                                                               \label{ods-second}
+\end{align}
+
+\begin{theorem}\label{ods-dyadic}
+Under these hypotheses, $AB$ is integrable and
+\begin{equation}\label{ods-bound}
+ \int_X AB\,d\nu
+ \le 4\,2^{-j}\sqrt{KK'}(2H)^{e+4r}\Delta^2
+        \left(\frac{2^j}{D}\right)^m
+        \sigma^{-(q-e-3r-1)/r}.
+\end{equation}
+No local compactness or finiteness assumption on $\nu$ is required.
+\end{theorem}
+
+\begin{proof}
+Discard a null set so that the pointwise hypotheses hold everywhere.
+The sets $E_i(S)$ form a disjoint countable partition, and likewise
+for $S'$. On their intersection put
+\[
+ u=2^{i+i'},\qquad R=2Hu,\qquad M=R^r\Delta,
+ \qquad N=2^j/D.
+\]
+Then
+\begin{equation}\label{ods-size-product}
+ \max(S,S')\le R,\qquad SS'\le u(2H)^2,
+ \qquad \sigma\le u^r.
+\end{equation}
+In particular $0<Y,Y'\le M$. Subdivide into the measurable sets
+$P_{i,i',a,b}$, for $a,b\ge0$, on which
+\[
+       M2^{-a-1}<Y\le M2^{-a},\qquad
+       M2^{-b-1}<Y'\le M2^{-b}.
+\]
+These form a disjoint countable partition of the intersection.
+Set $y=M2^{-a-1}$, $y'=M2^{-b-1}$ and $w=yy'$.
+On a nonempty piece the product condition in (OD2) gives
+$w\le N$. Conditions \eqref{ods-first}--\eqref{ods-second},
+followed by Cauchy--Schwarz on this piece, give
+\begin{equation}\label{ods-piece-cs}
+ \int_{P_{i,i',a,b}}AB\,d\nu
+ \le \sqrt{KK'}R^e w^m u^{-q}.
+\end{equation}
+The square integrals in this use of Cauchy--Schwarz are finite by
+the same two hypotheses. Empty pieces contribute zero.
+
+We retain two factors that can be lost in a rougher summation.
+First,
+\[
+ w=M^2\,2^{-a-b-2}
+     =(2H)^{2r}u^{2r}\Delta^2\,2^{-a-b-2}.
+\]
+Second, on each nonempty piece the product bound in
+\eqref{ods-size-product} gives
+\[
+                    N^{-1}=D2^{-j}
+                          \le2^{-j}u^r(2H)^{2r}.
+\]
+As $m\ge1$ and $w\le N$, these imply
+\begin{equation}\label{ods-power}
+ \begin{split}
+ w^m&\le N^{m-1}w\\
+ &\le N^m\,2^{-j-2}(2H)^{4r}u^{3r}\Delta^2\,2^{-a-b}.
+ \end{split}
+\end{equation}
+Let $n=q-e-3r-1\ge0$. Since $\sigma\le u^r$, one has
+$u^{-n}\le\sigma^{-n/r}$. Substitution in
+\eqref{ods-piece-cs} yields
+\[
+ \int_{P_{i,i',a,b}}AB\,d\nu
+ \le C\,2^{-i-i'-a-b},
+ \quad
+ C=2^{-j-2}\sqrt{KK'}(2H)^{e+4r}\Delta^2N^m\sigma^{-n/r}.
+\]
+Finally, monotone convergence and the four geometric series give
+\[
+ \int_XAB\,d\nu
+ \le C\left(\sum_{h=0}^{\infty}2^{-h}\right)^4=16C.
+\]
+This is \eqref{ods-bound}; its right side is finite. The proof
+also covers $n=0$, so equality is allowed in the bound for $q$.
+\end{proof}
+
+\begin{corollary}\label{ods-source-bound}
+Suppose $m,e,q$ are integers, $m\ge1$, and
+$q\ge e+4r+2$, with all the other hypotheses above. Then
+\[
+ \int_X AB\,d\nu
+ \le16\sqrt{KK'}(2H)^{e+4r}\Delta^2
+          (2^j/D)^m\sigma^{-(q-e-4r-1)/r}.
+                                                               \tag{OD3}
+\]
+Thus the exact dyadic summation used for the submitted degenerate
+orbital estimate follows. In fact \eqref{ods-bound} improves its
+constant by a factor $4\cdot2^j$ and supplies one additional power
+of $\sigma^{-1}$ under these same hypotheses.
+\end{corollary}
+\begin{proof}
+The hypothesis on $q$ implies (OD1). In the decay exponent,
+$q-e-3r-1=(q-e-4r-1)+r$. Since $\sigma\ge1$ and $j\ge0$,
+the right side of \eqref{ods-bound} is at most the right side of
+(OD3), with precisely the stated factors.
+\end{proof}
+
+\subsection{Why the determinant--size condition is essential}
+
+\begin{example}\label{ods-counterexample}
+The assertion (OD3) is false if the condition $D\le(SS')^r$ is
+deleted while its other hypotheses are retained. To see this,
+let $L\ge512$ be an integer and give
+$X=\{0,1,\ldots,2L\}$ counting measure. Put
+\[
+ \begin{gathered}
+ r=m=H=\Delta=\sigma=K=K'=1,
+ \quad j=e=0,
+ \quad q=6,
+ \quad N=2^{-2L},\quad D=N^{-1},\\
+ S(a)=S'(a)=1,\quad
+ Y(a)=2^{-a},\quad Y'(a)=2^{a-2L},
+ \quad A(a)=Y(a)/2,\quad B(a)=Y'(a)/2.
+ \end{gathered}
+\]
+Here $YY'D=1$, both $Y,Y'$ are at most one, and the condition
+on $\sigma$ holds. Each interval $(y,2y]$ contains at most one
+of the distinct powers of two $Y(a)$. At that point
+$A(a)^2=Y(a)^2/4\le y^2$. Thus \eqref{ods-first} holds when
+$i=0$, independently of $i'$, and its domain is empty when
+$i\ge1$. The identical argument with $Y'$ proves
+\eqref{ods-second}. All the retained assumptions are satisfied.
+But
+\[
+                  \int_XAB\,d\nu=(2L+1)N/4>256N,
+\]
+whereas the right side of (OD3) is exactly $256N$.
+The failed hypothesis is $D\le1$.
+This example is not a counterexample to the submitted theorem,
+which includes the determinant--size condition explicitly.
+\end{example}
+
+\subsection{Role in the orbital estimate}
+
+In the degenerate orbital application, $m=k-1-j$, $e=16r^3$,
+$D$ is the absolute value of the nonzero leading determinant,
+and $Y,Y'$ are the corresponding normalized Gram determinants
+on the two sides. The functions $S,S'$ are the maxima of the
+flag lengths and their inverses. The two one-sided square-integral
+estimates supply \eqref{ods-first}--\eqref{ods-second}; their
+constants retain the unipotent Haar normalization and the stabilizer
+measure. All of these are actual hypotheses, not consequences of
+dyadic summation. Theorem~\ref{ods-dyadic} proves the final
+measure-theoretic passage as soon as those geometric and
+representation-theoretic estimates have been supplied. It does
+not assert that a polynomial tail estimate by itself controls a
+degenerate orbital integral.
+
+

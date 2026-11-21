@@ -1,0 +1,738 @@
+\section{Arithmetic coefficient maps and their singular values}
+\label{am-section}
+
+The coefficient lattices of Section~\ref{coef:section} give explicit
+arithmetic maps whose image ideals and archimedean norms can be computed.
+This section proves the estimates needed for these maps, including the
+normalizing constant in their metrics. It also gives sharper bounds in
+terms of elementary divisors and singular values. The comparison with the
+actual class components is stated at the end. These are coefficient maps;
+the different valuation inequalities for the iterated period pairing
+require additional arguments.\cite{alpo-uniform-source}
+
+\subsection{The actual map and its integral image}
+
+Let $K$ be a number field, $\mathcal O$ its ring of integers, and $n\ge1$.
+Fix a finite set $\mathcal T$. For each $\tau\in\mathcal T$ let
+$\lambda_\tau=(\lambda_{\tau,1},\ldots,\lambda_{\tau,n})$ be a
+nonincreasing tuple of integers. Put
+\[
+ a_\tau=\lambda_{\tau,n},\qquad
+ \nu_{\tau,i}=\lambda_{\tau,i}-a_\tau,\qquad
+ d_\tau=\sum_i\nu_{\tau,i}.
+\]
+Thus $\nu_\tau$ is a partition and $\nu_{\tau,n}=0$.
+The arguments below also apply to a partition with a nonzero last part
+and an independently specified integer $a_\tau$.
+
+Use a separate $n$ by $n$ variable matrix $X_\tau$ for each $\tau$ and set
+\[
+ V=\bigotimes_{\tau\in\mathcal T}V_{\nu_\tau,K},\qquad
+ \Delta_0=\bigotimes_\tau\Delta_{\nu_\tau}(\mathcal O),\qquad
+ \nabla_0=\bigotimes_\tau\nabla_{\nu_\tau}(\mathcal O).
+\]
+The tensor products are realized as products of polynomials in the
+disjoint variable blocks. Define
+\[
+ \rho_0(g)F((X_\tau)_\tau)=F((g_\tau^tX_\tau)_\tau),\qquad
+ \rho_\lambda(g)=\left(\prod_\tau\det(g_\tau)^{a_\tau}\right)\rho_0(g).
+ \tag{AM1}\label{am-action}
+\]
+Both are representations of $\prod_\tau\operatorname{GL}_n(K)$:
+substitution reverses multiplication, and the transpose reverses it
+again. The determinant powers in the second expression may be negative.
+
+Let $\mathcal A$ be the finite set of arrays
+$\alpha=(\alpha_{\tau,i,s})$ of nonnegative integers satisfying
+\[
+             \sum_{i=1}^n\alpha_{\tau,i,s}=\nu_{\tau,s}
+                       \quad\text{for every $\tau,s$}.
+\]
+Every polynomial in $V$ is supported on $\mathcal A$.
+For $g_\tau\in\operatorname{GL}_n(K)$ the coefficient map is
+\begin{equation}\label{am-map}
+ C_g:V\longrightarrow K^{\mathcal A},\qquad
+ C_g(F)_\alpha=[X^\alpha]\rho_0(g)F.
+\end{equation}
+In particular the determinant character is \emph{not} inserted into
+the definition of $C_g$. It will occur in its integral image ideal.
+The map is injective: all the coefficients of $\rho_0(g)F$ occur in
+\eqref{am-map}, and $\rho_0(g^{-1})$ is its inverse substitution.
+
+The translates of $\prod_\tau H_{\nu_\tau}$ under $\rho_\lambda$ span
+$V$. Here is a direct justification of the spanning statement. The
+integral duality theorem proves that the divided-row-operation words
+span $V$ over $K$. Each such word is a coefficient of a polynomial in
+finitely many shear parameters. Polynomial interpolation recovers that
+coefficient from finitely many values at nonnegative integers. Every
+off-diagonal shear is invertible, and a diagonal substitution
+$1+t$ is also invertible at these parameter values. Thus the relevant
+values are invertible-matrix translates of the extremal polynomial.
+Their determinant characters are nonzero scalars, which do not change
+their $K$-span. Tensoring the argument proves the assertion for all blocks.
+
+For full $\mathcal O$-lattices $M_\tau\subset K^n$, write
+$\mathfrak d(M_\tau)\subset K$ for their determinant ideals, using
+$e_1\wedge\cdots\wedge e_n$ to identify $\bigwedge^nK^n$ with $K$.
+At a nonzero prime $\mathfrak p$, choose local bases
+\[
+       M_{\tau,\mathfrak p}=B_{\tau,\mathfrak p}\mathcal O_{\mathfrak p}^n.
+\]
+Define the transported coefficient lattice $\Delta_\lambda(M)$ by
+\begin{equation}\label{am-local-lattice}
+ \Delta_\lambda(M)_{\mathfrak p}
+       =\rho_\lambda(B_{\mathfrak p})\Delta_{0,\mathfrak p}.
+\end{equation}
+The lattice $\nabla_\lambda(M)$ is defined in the same way with
+$\nabla_0$. These definitions agree with the intersection over all
+local bases used in Section~\ref{coef:section}.
+
+To check independence of the bases, column invariance immediately
+shows that $\rho_0(U)$ preserves $\nabla_0$ when
+$U_\tau\in\operatorname{GL}_n(\mathcal O_{\mathfrak p})$.
+It preserves $\Delta_0$ as well: the integral duality already proved in
+Theorem~\ref{coef:integral-duality} and the transpose adjoint identity
+identify $\Delta_0$ with the dual of $\nabla_0$ under the normalized
+bilinear Fock pairing. Apply the adjoint identity also to $U^{-1}$ to
+obtain equality. The determinant characters are units on this group,
+even for negative $a_\tau$. Only finitely many local lattices in
+\eqref{am-local-lattice} differ from the standard one, so their
+intersection is a full lattice, by the elementary local patching result
+of Section~\ref{div:section}.
+
+\begin{theorem}[Integral coefficient map]\label{am-integral}
+Suppose $g_\tau M_\tau\subset\mathcal O^n$ for every $\tau$, and put
+\begin{equation}\label{am-ideal}
+                  \mathfrak I=\prod_\tau\mathfrak d(M_\tau)^{a_\tau}.
+\end{equation}
+Then $\mathfrak I$ is a nonzero fractional ideal and
+\[
+ C_g(\Delta_\lambda(M))\subset\mathfrak I^{\mathcal A},
+ \qquad
+ C_g(\nabla_\lambda(M))\subset\mathfrak I^{\mathcal A}.
+ \tag{AM2}\label{am-image}
+\]
+Equivalently, every coordinate of the image has valuation at least
+$\sum_\tau a_\tau\operatorname{ord}_{\mathfrak p}\det B_{\tau,\mathfrak p}$
+at each $\mathfrak p$. The assertion is valid at primes above $2$ and
+does not require any $M_\tau$ to be free over $\mathcal O$.
+\end{theorem}
+\begin{proof}
+Localize at $\mathfrak p$ and write
+$F=\rho_\lambda(B)F_0$, where $F_0$ belongs to the appropriate standard
+lattice. Its coefficients are integral over $\mathcal O_{\mathfrak p}$.
+Since $g_\tau B_\tau$ has integral entries,
+\[
+ \rho_0(g)F
+   =\left(\prod_\tau\det B_\tau^{a_\tau}\right)\rho_0(gB)F_0
+\]
+has every coefficient in
+$\prod_\tau\det B_\tau^{a_\tau}\mathcal O_{\mathfrak p}$.
+This is exactly $\mathfrak I_{\mathfrak p}$, because
+$\mathfrak d(M_\tau)_{\mathfrak p}=\det B_\tau\mathcal O_{\mathfrak p}$.
+Intersect these inclusions over $\mathfrak p$. The same description also
+proves that the intersection defined by the conditions
+\[
+ \left(\prod_\tau\det B_\tau^{-a_\tau}\right)c
+                              \in\mathcal O_{\mathfrak p}
+\]
+for all local bases is precisely the fractional ideal \eqref{am-ideal}.
+\end{proof}
+
+\subsection{Row weights and a sharper local divisibility statement}
+
+For a polynomial in one variable block, its row degree is
+$\beta=(\beta_1,\ldots,\beta_n)$ if every monomial has total degree
+$\beta_i$ in row $i$. Projection to a row degree preserves the defining
+column identities of $V_\nu$.
+
+\begin{lemma}[Row weights]\label{am-weights}
+If the row-degree-$\beta$ subspace of $V_\nu$ is nonzero, then
+$\sum_i\beta_i=\sum_i\nu_i$, and for every subset
+$S\subset\{1,\ldots,n\}$ with $|S|=k$,
+\begin{equation}\label{am-majorization}
+       \sum_{i\in S}\beta_i\le\sum_{i=1}^k\nu_i.
+\end{equation}
+In particular, for every $k$,
+\[
+ \sum_{i=n-k+1}^n\nu_i\le\sum_{i=1}^k\beta_i
+                              \le\sum_{i=1}^k\nu_i.
+\]
+The weights $\nu$ and $(\nu_n,\ldots,\nu_1)$ both occur.
+\end{lemma}
+\begin{proof}
+For $S=\{1,\ldots,k\}$, restrict a nonzero polynomial of row degree
+$\beta$ to lower triangular matrices. The restriction is nonzero by
+Lemma~\ref{coef:restriction}. In a monomial of this restriction, the
+first $k$ rows use only the first $k$ columns. Their total degree is
+therefore at most $\sum_{i\le k}\nu_i$. Row permutations preserve
+column invariance and column degrees, which proves the assertion for
+every $S$. The lower bound follows by applying the upper bound to the
+complement of the first $k$ rows. The extremal polynomial $H_\nu$ has
+row degree $\nu$; reverse its rows for the other endpoint.
+\end{proof}
+
+The lemma requires the column-invariance identities. Column homogeneity
+alone would be insufficient. For example, in three rows the polynomial
+$x_{11}x_{12}$ has column degrees $(1,1,0)$ and row degree $(2,0,0)$;
+it violates \eqref{am-majorization} and is not column invariant.
+
+\begin{theorem}[Exact local coefficient ideal]\label{am-smith}
+Let $R$ be a discrete valuation ring of characteristic zero with fraction
+field $L$, uniformizer $\pi$, and normalized valuation $v(\pi)=1$.
+Let $M_\tau=B_\tau R^n$ and $g_\tau\in\operatorname{GL}_n(L)$, without
+requiring $g_\tau M_\tau\subset R^n$. Let
+$c_{\tau,1}\le\cdots\le c_{\tau,n}$ be the elementary-divisor
+exponents of $g_\tau B_\tau$. The fractional ideal generated by all
+coordinates $C_g(F)_\alpha$, as $F$ ranges over
+$\Delta_\lambda(M)$, is exactly
+\begin{equation}\label{am-sharp-local}
+ \pi^eR,\qquad
+ e=\sum_\tau\left(a_\tau v(\det B_\tau)
+                         +\sum_i\nu_{\tau,i}c_{\tau,i}\right).
+\end{equation}
+The same statement holds with $\nabla_\lambda(M)$.
+\end{theorem}
+\begin{proof}
+Smith reduction over $R$ gives
+$g_\tau B_\tau=U_\tau D_\tau V_\tau$ with $U_\tau,V_\tau$ unimodular
+and $D_\tau=\operatorname{diag}(\pi^{c_{\tau,1}},\ldots,
+\pi^{c_{\tau,n}})$. This also holds for matrices with denominators:
+first multiply the matrix by a power of $\pi$ and then subtract that
+power from every elementary-divisor exponent.
+For completeness, integral Smith reduction follows by moving an entry
+of least valuation to the upper left. It divides every entry. Integral
+row and column subtractions clear its row and column; induction treats
+the remaining block, whose entries are still divisible by the chosen
+pivot. Thus the successive pivot valuations are nondecreasing.
+
+Integral unimodular substitutions preserve both standard lattices and
+preserve the ideal generated by the coefficients of any polynomial:
+one inclusion follows from integrality of the substitution, and the
+reverse inclusion follows by applying its integral inverse.
+It remains to treat the diagonal matrices $D_\tau$.
+On a row-degree-$\beta$ term, $\rho_0(D_\tau)$ multiplies by
+$\pi^{\sum_i c_{\tau,i}\beta_i}$. Summation by parts and
+Lemma~\ref{am-weights} give
+\[
+ \sum_i c_{\tau,i}\beta_i
+ =c_{\tau,n}d_\tau
+   -\sum_{k<n}(c_{\tau,k+1}-c_{\tau,k})\sum_{i\le k}\beta_i
+ \ge\sum_i c_{\tau,i}\nu_{\tau,i}.
+\]
+The determinant character of $B$ supplies the first term of $e$.
+For equality take the product of the $H_{\nu_\tau}$ after undoing
+the substitutions $V_\tau$. Each $H_{\nu_\tau}$ belongs to the Weyl
+lattice, has row degree $\nu_\tau$, and has a coefficient equal to one:
+its restriction to lower triangular matrices is the diagonal monomial
+with coefficient one. Hence the lower bound is attained as the ideal
+of coefficients, even after the substitutions $U_\tau$.
+\end{proof}
+
+In Theorem~\ref{am-integral} all $c_{\tau,i}$ are nonnegative, so
+\eqref{am-sharp-local} implies the stated determinant-ideal bound.
+The sharper formula also identifies exactly how much divisibility is
+lost when the chosen linear functionals have denominators.
+
+\subsection{The Fock metric and exact singular-value bounds}
+
+Over $\mathbb C$ put
+\[
+ C_\tau=\sum_\alpha\alpha!\,|[X^\alpha]H_{\nu_\tau}|^2,
+ \qquad C=\prod_\tau C_\tau>0,
+ \qquad
+ \|F\|_V^2=C^{-1}\sum_\alpha\alpha!\,|F_\alpha|^2.
+\]
+Give $\mathbb C^{\mathcal A}$ the diagonal metric
+\begin{equation}\label{am-coordinate-metric}
+ \|z\|_{\mathcal A}^2
+       =\sum_{\alpha\in\mathcal A}w_\alpha|z_\alpha|^2,
+       \qquad w_\alpha=\alpha!/C.
+\end{equation}
+Then $C_1$ is an isometric embedding. This explains the factorial weights
+in the target metric; replacing them by the ordinary coordinate metric
+would change the operator estimates.
+
+\begin{theorem}[Largest and smallest singular values]\label{am-singular}
+For each $\tau$ let
+$s_{\tau,1}\ge\cdots\ge s_{\tau,n}>0$ be the singular values of
+$g_\tau\in\operatorname{GL}_n(\mathbb C)$. Then
+\begin{align}
+ \|C_g\|_{\mathrm{op}}
+       &=\prod_{\tau,i}s_{\tau,i}^{\nu_{\tau,i}},
+       \label{am-op-exact}\\
+ \inf_{F\ne0}\frac{\|C_gF\|_{\mathcal A}}{\|F\|_V}
+       &=\prod_{\tau,i}s_{\tau,i}^{\nu_{\tau,n+1-i}}.
+       \label{am-min-exact}
+\end{align}
+For $\rho_\lambda(g)$ multiply both expressions by
+$\prod_\tau|\det g_\tau|^{a_\tau}$; equivalently replace $\nu$ by
+$\lambda$ in the corresponding ordered products.
+In particular
+\begin{equation}\label{am-frobenius}
+ \|C_gF\|_{\mathcal A}^2
+ \le\left(\prod_\tau\|g_\tau\|_{\mathrm{op}}^{2d_\tau}\right)\|F\|_V^2
+ \le\left(\prod_\tau\|g_\tau\|_{\mathrm{HS}}^{2d_\tau}\right)\|F\|_V^2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The Hermitian version of Lemma~\ref{coef:adjoint} says that the adjoint
+of $\rho_0(g)$ for the Fock metric is $\rho_0(g^*)$.
+Thus unitary substitutions act unitarily on $V$. A singular-value
+decomposition reduces the problem to positive diagonal $g_\tau$.
+Distinct row weights are orthogonal, and on the weight $\beta$ the
+diagonal action has eigenvalue $\prod_i s_{\tau,i}^{\beta_i}$.
+Writing $u_i=\log s_{\tau,i}$, summation by parts gives
+\[
+ \sum_i u_i\beta_i=u_nd_\tau
+                   +\sum_{k<n}(u_k-u_{k+1})\sum_{i\le k}\beta_i.
+\]
+The two partial-sum bounds of Lemma~\ref{am-weights} prove the upper
+and lower estimates. Its endpoint weights attain both estimates.
+Their tensor products attain the endpoints simultaneously for all
+$\tau$. Finally $C_1$ is isometric, so the singular values of $C_g$
+are those of $\rho_0(g)$ on $V$. The scalar determinant twist gives
+the last assertion. The two inequalities in \eqref{am-frobenius}
+follow from $s_{\tau,i}\le s_{\tau,1}\le\|g_\tau\|_{\mathrm{HS}}$.
+\end{proof}
+
+No bound involving only $\det g$ could replace
+\eqref{am-op-exact}: for $\nu=(1,0)$ and
+$g=\operatorname{diag}(T,T^{-1})$, $T>1$, the determinant is one
+and the operator norm is $T$. Also, the column-homogeneous polynomial
+$x_{11}x_{12}$ above is multiplied by $T^2$ under
+$\operatorname{diag}(T,1,1)$, whereas the claimed bound for partition
+$(1,1,0)$ would be $T$. This confirms the necessity of column
+invariance in the exact formula.
+
+\begin{proposition}[Determinant of the substitution]\label{am-determinant}
+Let $r=\dim_KV$. The numbers $\kappa_\tau=rd_\tau/n$ are integers, and
+\[
+ \det(\rho_0(g)|V)=\prod_\tau\det(g_\tau)^{\kappa_\tau},\qquad
+ \det(\rho_\lambda(g)|V)
+                 =\prod_\tau\det(g_\tau)^{\kappa_\tau+ra_\tau}.
+ \tag{AM3}\label{am-det-formula}
+\]
+Over $\mathbb C$, in orthonormal source coordinates,
+$\det(C_g^*C_g)=\prod_\tau|\det g_\tau|^{2\kappa_\tau}$.
+\end{proposition}
+\begin{proof}
+Decompose $V$ into row-weight spaces in block $\tau$.
+Row permutations identify the relevant weight spaces, so the sum of
+the $i$th row degrees, counted with their dimensions, is independent
+of $i$. Its sum over $i$ is $rd_\tau$; hence each sum is the integer
+$\kappa_\tau$. This proves \eqref{am-det-formula} on diagonal matrices.
+An elementary shear has unipotent action on the polynomial space of
+degree $d_\tau$, since it changes one row degree in only one direction.
+Its restriction to the invariant space $V$ has determinant one.
+Gaussian elimination generates every invertible matrix by diagonal
+matrices and elementary shears (a row interchange is a product of
+three shears and a diagonal matrix). Thus the formula holds for every
+$g$. The determinant twist acts by a scalar on an $r$-dimensional
+space. The last formula follows because $C_1$ is isometric.
+\end{proof}
+
+\subsection{An elementary bound for the normalizing constant}
+
+The preceding formulas retain the exact constant $C_\nu$.
+Its required upper bound has a short proof by Gaussian integration;
+no dimension formula for polynomial representations is needed.
+
+\begin{theorem}[Norm of the extremal polynomial]\label{am-gaussian}
+For every partition $\nu$ of length $n\ge1$,
+\begin{equation}\label{am-normalization-bound}
+ \prod_i\nu_i!\ \le\ C_\nu\ \le\
+ \prod_{i=1}^n\frac{(\nu_i+n-i)!}{(n-i)!}
+ \ \le\left(\prod_i\nu_i!\right)(\nu_1+n)^{n(n-1)/2}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The diagonal monomial in $H_\nu$ has coefficient one, so its contribution
+to the Fock norm is $\prod_i\nu_i!$, proving the lower bound.
+
+Let $Z$ be an $n$ by $n$ matrix of independent complex Gaussian entries,
+each with density $\pi^{-1}e^{-|z|^2}$ on $\mathbb C$.
+Polar integration gives
+\[
+ \mathbb E(z^a\overline{z}^{b})=
+ \begin{cases}a!&a=b,\\0&a\ne b.\end{cases}
+\]
+Indeed the angular integral vanishes unless $a=b$; the remaining radial
+integral is $\int_0^\infty t^ae^{-t}\,dt=a!$, by integration by parts.
+Independence consequently proves
+$C_\nu=\mathbb E|H_\nu(Z)|^2$.
+
+Let $Z_j$ consist of the first $j$ columns of $Z$.
+Cauchy--Binet gives
+\[
+           |\Delta_j(Z)|^2\le\det(Z_j^*Z_j).
+\]
+Apply Gram--Schmidt to these columns, writing $r_i>0$ for the length
+of the component of column $i$ orthogonal to the preceding columns.
+The columns are independent with probability one: the zero set of a
+nonzero polynomial has Lebesgue measure zero, by induction on the
+number of variables and Fubini's theorem. Thus
+\[
+ |H_\nu(Z)|^2
+ \le\prod_j\det(Z_j^*Z_j)^{\nu_j-\nu_{j+1}}
+ =\prod_i r_i^{2\nu_i},\qquad \nu_{n+1}=0.
+\]
+Conditionally on the preceding columns, the orthogonal component of
+column $i$ is a standard complex Gaussian vector in dimension $n-i+1$.
+This follows directly from unitary invariance of its density.
+For such a vector in dimension $q$, the multinomial theorem and the
+one-variable moments give
+\[
+ \mathbb E\left(\sum_{j=1}^q|z_j|^2\right)^m
+ =\sum_{b_1+\cdots+b_q=m}\frac{m!}{b_1!\cdots b_q!}
+                                      \prod_j b_j!
+ =\frac{(m+q-1)!}{(q-1)!}.
+\]
+There are $\binom{m+q-1}{q-1}$ nonnegative $q$-tuples with sum $m$,
+as follows by inserting $q-1$ dividers into a string of $m$ symbols.
+Successive conditional integrations, starting with the last column,
+therefore prove the middle inequality of \eqref{am-normalization-bound}.
+Finally
+\[
+ \frac{(\nu_i+n-i)!}{(n-i)!\nu_i!}
+          =\prod_{j=1}^{n-i}\frac{\nu_i+j}{j}
+          \le(\nu_1+n)^{n-i}.
+\]
+Multiply over $i$.
+\end{proof}
+
+For $m\ge0$ write $m=nq+r$ with $0\le r<n$, and put
+\[
+                    b_n(m)=(q!)^{n-r}((q+1)!)^r.
+\]
+The least factorial weight in \eqref{am-coordinate-metric} is exactly
+\begin{equation}\label{am-min-weight}
+ w_{\min}=\min_{\alpha\in\mathcal A}w_\alpha
+                    =\frac{\prod_{\tau,s}b_n(\nu_{\tau,s})}{C}.
+\end{equation}
+To prove this, minimize the product of the factorials separately in
+each column. If two entries are $u\ge v+2$, replacing them by $u-1,v+1$
+decreases the product by the factor $(v+1)/u<1$. Repetition leaves
+entries differing by at most one, which are precisely the balanced
+entries in the definition of $b_n$.
+
+A less precise bound, but one expressed without factorial sums, is
+\begin{equation}\label{am-weight-lower}
+ w_{\min}\ge
+ \left(n^{\sum_\tau d_\tau}
+       \prod_\tau\prod_{i=1}^n
+        \frac{(\nu_{\tau,i}+n-i)!}{(n-i)!\nu_{\tau,i}!}\right)^{-1}
+ \ge
+ \left(n^{\sum_\tau d_\tau}
+       \prod_\tau(\nu_{\tau,1}+n)^{n(n-1)/2}\right)^{-1}.
+\end{equation}
+Indeed the multinomial theorem at $(1,\ldots,1)$ implies
+$m!\le n^m\prod_i b_i!$ whenever $\sum_i b_i=m$.
+Multiply this over the columns and apply Theorem~\ref{am-gaussian}.
+
+\subsection{The resulting slope bound, with ordinary degree conventions}
+
+Write $d_K=[K:\mathbb Q]$, and let $n_v=1$ or $2$ be the local degree
+at a real or complex archimedean place. All metrics below are compatible
+with complex conjugation. For a Hermitian lattice $L$ of rank $r>0$,
+choose $0\ne\omega\in\bigwedge^r_K(KL)$ and write
+$\bigwedge^r_{\mathcal O}L=\mathfrak a\omega$.
+Our normalized degree and slope are
+\begin{equation}\label{am-degree}
+ \widehat{\deg}L=-\frac{\log N\mathfrak a}{d_K}
+      -\frac1{d_K}\sum_{v\mid\infty}n_v\log\|\omega\|_v,
+ \qquad \mu(L)=\widehat{\deg}L/r.
+\end{equation}
+Here $N\mathfrak a$ is the absolute norm of a fractional ideal, a
+positive rational number. The product formula makes the definition
+independent of $\omega$. Let $\mu_{\max}(L)$ be the supremum of the
+slopes of its nonzero sublattices, with their induced metrics.
+
+\begin{lemma}[A diagonal target]\label{am-diagonal-slope}
+Suppose $\mathfrak I\subset K$ is a nonzero fractional ideal and
+$K^A$ has diagonal metrics with constant positive diagonal weights
+$w_a\ge w_0>0$ at every infinite place. Then every nonzero sublattice
+$L\subset\mathfrak I^A$ satisfies
+\[
+                 \mu(L)\le-\frac{\log N\mathfrak I}{d_K}
+                                      -\frac12\log w_0.
+\]
+\end{lemma}
+\begin{proof}
+Let $r$ be its rank, write $\bigwedge^rL=\mathfrak a\omega$, and
+choose a nonzero coordinate $b$ of the exterior vector $\omega$.
+Since all coordinates of $\bigwedge^rL$ lie in $\mathfrak I^r$,
+$b\mathfrak a\subset\mathfrak I^r$ and hence
+$\log N\mathfrak a+\log|N_{K/\mathbb Q}b|
+\ge r\log N\mathfrak I$. In the exterior metric,
+$\|\omega\|_v\ge w_0^{r/2}|v(b)|$, because its squared norm is the
+sum of its squared coordinates times products of $r$ diagonal weights.
+Insert these two inequalities into \eqref{am-degree} and use
+$\sum_vn_v\log|v(b)|=\log|N_{K/\mathbb Q}b|$.
+\end{proof}
+
+For an injective $K$-linear map $f$, put
+$h(f)=d_K^{-1}\sum_v n_v\log\|f\|_{v,\mathrm{op}}$.
+For every sublattice $L$, the exterior operator estimate gives
+$\widehat{\deg}L\le\widehat{\deg}f(L)+r h(f)$: use the same
+fractional ideal in the determinant generators $\omega$ and $f\omega$,
+and $\|f\omega\|_v\le\|f\|_{v,\mathrm{op}}^r\|\omega\|_v$.
+This proves the following bound directly for the map constructed here.
+
+\begin{corollary}[Slope of the coefficient lattice]\label{am-slope}
+Give $\Delta_\lambda(M)$ the normalized Fock metric at every infinite
+place and suppose $g_\tau M_\tau\subset\mathcal O^n$.
+With $\mathfrak I$ as in \eqref{am-ideal} and the singular values of
+$v(g_\tau)$ ordered decreasingly,
+\begin{equation}\label{am-slope-bound}
+ \mu_{\max}(\Delta_\lambda(M))
+ \le-\frac{\log N\mathfrak I}{d_K}-\frac12\log w_{\min}
+       +\frac1{d_K}\sum_v n_v\sum_{\tau,i}
+                                  \nu_{\tau,i}\log s_{\tau,i}(v).
+\end{equation}
+The same bound holds for $\nabla_\lambda(M)$.
+One may replace the last summand by
+\[
+ \frac1{2d_K}\sum_vn_v\sum_\tau d_\tau
+                          \log\|v(g_\tau)\|_{\mathrm{HS}}^2
+\]
+and bound $w_{\min}$ by \eqref{am-weight-lower}.
+\end{corollary}
+\begin{proof}
+Apply Theorem~\ref{am-integral}, Lemma~\ref{am-diagonal-slope}, and the
+preceding exterior operator inequality to $C_g$. Its injectivity and
+its exact operator norm were proved above. The weaker version is
+\eqref{am-frobenius}.
+\end{proof}
+
+The use of ordinary slopes in \eqref{am-degree} matters. A convention
+using logarithms of squared norms doubles both the slope and the height.
+Under that convention the right side of \eqref{am-slope-bound} must
+also be doubled; in particular the ideal term becomes
+$-2\log N\mathfrak I/d_K$.
+
+\subsection{The maps on actual class components}
+
+We describe precisely the additional data needed to apply the result
+to class components, and prove the resulting comparison.
+In the application, class values are obtained by evaluating equivariant
+functions on representatives of decorated-lattice isometry classes.
+At the level in question the stabilizers are trivial. Evaluation then
+identifies the space of such functions with the full product of their
+coefficient spaces: assign arbitrary values at the representatives and
+extend by the coefficient action. The extension is well defined because
+two isometries with the same image differ by a stabilizer. Conversely,
+equivariance determines the function from these values. The class-sum
+metric has reciprocal stabilizer weights, which are one at this level.
+For nontrivial stabilizers one must instead use their invariant
+coefficient spaces; the full-product assertion would be false in general.
+
+Let $\mathcal C$ be finite. For every $c\in\mathcal C$ and
+$\tau\in\mathcal T$, let $M_{c,\tau}\subset K^n$ be a full lattice.
+Consider the lattice in $\bigoplus_cV$ whose localization at
+$\mathfrak p$ consists of the tuples $(F_c)_c$ satisfying
+\begin{equation}\label{am-class-local}
+ \rho_\lambda(B_{c,\mathfrak p}^{-1})F_c
+                               \in\Delta_{0,\mathfrak p}\quad(c\in\mathcal C),
+\end{equation}
+where $B_{c,\tau,\mathfrak p}$ are local bases of $M_{c,\tau}$.
+This lattice is exactly
+$\mathcal L=\bigoplus_c\Delta_\lambda(M_c)$.
+Consequently the projection onto any class is integral, and the
+projection is injective on its class summand. The same assertions
+remain true if the right side of \eqref{am-class-local} is replaced by
+the integral span of the same divided-row words: this is the defining
+Weyl lattice, as proved in Section~\ref{coef:section}.
+
+At every infinite place choose invertible matrices $X_{c,\tau,v}$ and
+give $K^n$ the metric
+\[
+       h_{c,\tau,v}(z,z')=(X_{c,\tau,v}^{-1}z)^*
+                                      (X_{c,\tau,v}^{-1}z').
+\]
+Give $\mathcal L$ the direct-sum metric
+\begin{equation}\label{am-class-metric}
+       \|F\|_v^2=\sum_c
+             \|\rho_\lambda(X_{c,v}^{-1})F_c\|_V^2.
+\end{equation}
+Fix a class $c$. Choose, for every $\tau$, a basis
+$\ell_{\tau,1},\ldots,\ell_{\tau,n}$ of $(K^n)^*$ which is integral
+on $M_{c,\tau}$, and let $g_\tau$ be its row matrix.
+Define the actual map
+\[
+                     \Phi_c(F)=C_g(F_c).
+\]
+It is injective on the $c$th summand and takes that summand into
+$\mathfrak I_c^{\mathcal A}$, where
+$\mathfrak I_c=\prod_\tau\mathfrak d(M_{c,\tau})^{a_\tau}$.
+
+At $v$, write $y_{\tau,j,v}$ for the Riesz vector of
+$v(\ell_{\tau,j})$ for $h_{c,\tau,v}$, using the convention
+$\ell(z)=h(y,z)$, conjugate-linear in the first argument.
+Let $R_{\tau,v}$ be the matrix whose $j$th row is
+$(X_{c,\tau,v}^{-1}y_{\tau,j,v})^*$. Then
+\begin{equation}\label{am-riesz}
+       v(g_\tau)X_{c,\tau,v}=R_{\tau,v},\qquad
+       \|R_{\tau,v}\|_{\mathrm{HS}}^2
+                         =\sum_j\|y_{\tau,j,v}\|_{h_{c,\tau,v}}^2.
+\end{equation}
+Both identities follow by writing
+$h(y,z)=y^*(X^{-1})^*X^{-1}z$.
+They retain the conjugates; replacing $y^*$ by $y^t$ would generally
+give a different functional.
+
+\begin{proposition}[Class coefficient bound]\label{am-class-bound}
+Let $s_{\tau,1}(R_{\tau,v})\ge\cdots\ge s_{\tau,n}(R_{\tau,v})>0$
+be the singular values in \eqref{am-riesz}, and put
+$D_v=\prod_\tau|\det X_{c,\tau,v}|^{2a_\tau}$.
+Then for all $F\in\bigoplus_cV$,
+\begin{align}
+ \|\Phi_c(F)\|_{\mathcal A}^2
+ &\le D_v\left(\prod_{\tau,i}
+                   s_{\tau,i}(R_{\tau,v})^{2\nu_{\tau,i}}\right)\|F\|_v^2
+                          \label{am-class-sharp}\\
+ &\le D_v\left(\prod_\tau
+       \left(\sum_j\|y_{\tau,j,v}\|_{h_{c,\tau,v}}^2\right)^{d_\tau}\right)
+                                                        \|F\|_v^2.
+                          \label{am-class-hs}
+\end{align}
+The determinant contribution satisfies the exact identity
+\begin{equation}\label{am-det-cancel}
+ -\frac{\log N\mathfrak I_c}{d_K}
+       +\frac1{2d_K}\sum_v n_v\log D_v
+             =\sum_\tau a_\tau\widehat{\deg}(M_{c,\tau},h_{c,\tau}).
+\end{equation}
+\end{proposition}
+\begin{proof}
+Put $P_c=\rho_\lambda(X_{c,v}^{-1})F_c$ and
+$d_v=\prod_\tau\det X_{c,\tau,v}^{a_\tau}$. The representation law gives
+\[
+             \rho_0(v(g))F_c=d_v\rho_0(R_v)P_c.
+\]
+Apply Theorem~\ref{am-singular} and
+$\|P_c\|_V^2\le\sum_{c'}\|P_{c'}\|_V^2=\|F\|_v^2$.
+Equation \eqref{am-riesz} proves the weaker bound.
+Finally the exterior metric of the standard basis of $K^n$ is
+$|\det X_{c,\tau,v}|^{-1}$. Definition \eqref{am-degree} therefore gives
+\[
+ \widehat{\deg}(M_{c,\tau},h_{c,\tau})
+ =-\frac{\log N\mathfrak d(M_{c,\tau})}{d_K}
+        +\frac1{d_K}\sum_v n_v\log|\det X_{c,\tau,v}|.
+\]
+Multiply by $a_\tau$ and sum. This also proves that the expression is
+independent of all choices of coordinate bases and archimedean frames.
+\end{proof}
+
+\begin{corollary}[A bound from short integral functionals]\label{am-short}
+Suppose
+\[
+ \widehat{\deg}(M_{c,\tau},h_{c,\tau})=-\tfrac12\log T
+ \quad\text{for every $\tau$},\qquad T>0,
+\]
+and, for some $Q>0$,
+\begin{equation}\label{am-short-assumption}
+        \frac1{d_K}\sum_v n_v\|y_{\tau,j,v}\|_{h_{c,\tau,v}}^2
+                                      \le Q\quad(\tau,j).
+\end{equation}
+Then the $c$th summand, with the metric \eqref{am-class-metric}, satisfies
+\begin{equation}\label{am-final-slope}
+ 2\mu_{\max}(\Delta_\lambda(M_c))
+ \le-\log w_{\min}+\sum_\tau d_\tau\log(nQ)
+                                      -\sum_\tau a_\tau\log T.
+\end{equation}
+In particular, if $Q=n^2(2v_0)^2$ and
+$c_{\nu}=C_\nu/\prod_i\nu_i!$, then
+\begin{equation}\label{am-source-slope}
+ 2\mu_{\max}(\Delta_\lambda(M_c))
+ \le\sum_\tau\left(
+       d_\tau\log(4n^4v_0^2)+\log c_{\nu_\tau}-a_\tau\log T\right).
+\end{equation}
+One may further use
+$c_\nu\le\prod_i\binom{\nu_i+n-i}{n-i}
+\le(\nu_1+n)^{n(n-1)/2}$.
+\end{corollary}
+\begin{proof}
+All $\|y_{\tau,j,v}\|^2$ are positive because the functionals form a
+basis. The concavity bound $\log x\le x-1$, applied after division by
+the mean, gives
+\[
+ \frac1{d_K}\sum_v n_v\log\left(\sum_j\|y_{\tau,j,v}\|^2\right)
+ \le\log\left(\frac1{d_K}\sum_v n_v\sum_j\|y_{\tau,j,v}\|^2\right)
+ \le\log(nQ).
+\]
+Use the integral image inclusion, Lemma~\ref{am-diagonal-slope},
+\eqref{am-class-hs}, and the exact cancellation \eqref{am-det-cancel}.
+This proves \eqref{am-final-slope}.
+The multinomial bound preceding \eqref{am-weight-lower} gives
+$w_{\min}^{-1}\le n^{\sum_\tau d_\tau}\prod_\tau c_{\nu_\tau}$.
+For $Q=n^2(2v_0)^2$, combine the two logarithms of $n$ to obtain
+\eqref{am-source-slope}. The bound on $c_\nu$ is
+Theorem~\ref{am-gaussian}.
+\end{proof}
+
+\subsection{Base change, counterexamples, and the precise remaining input}
+
+The data in the preceding corollary have their usual arithmetic meaning.
+For a positive definite Hermitian space over a CM field $E$, integral
+vectors in the Hermitian dual of a lattice give integral linear
+functionals $z\mapsto h(y,z)$. A linearly independent $n$-tuple gives
+an invertible matrix $g$, since nondegeneracy identifies a basis with
+a basis of the dual. Upon an embedding $E\hookrightarrow K$, these
+functionals extend to the $\mathcal O_K$-span of the lattice and remain
+integral. Positivity and the Riesz identities persist at all embeddings.
+No unimodularity of the selected $n$-tuple is required.
+
+Normalized degree is unchanged by this base change. Indeed the
+determinant ideal becomes $\mathfrak d(M)\mathcal O_K$, whose norm is
+$N_E\mathfrak d(M)^{[K:E]}$; this follows prime by prime from
+$\sum_{\mathfrak P\mid\mathfrak p}e_{\mathfrak P}f_{\mathfrak P}=[K:E]$.
+Each archimedean term is repeated with total multiplicity $[K:E]$.
+Both repetitions cancel the change from $[E:\mathbb Q]$ to
+$[K:\mathbb Q]$ in \eqref{am-degree}. The same argument shows that
+the mean of the squared norms in \eqref{am-short-assumption} is unchanged.
+Thus a trace bound over the original CM field gives precisely the mean
+bound used above, with no extra factor from the coefficient field.
+
+Several possible simplifications are false, although none is used in
+the actual coefficient-map statement.
+
+\begin{itemize}
+\item Negative determinant weights cannot be discarded. For $n=1$,
+ $M=p\mathbb Z$, $a=-1$, and $\nu=0$, the transported lattice is
+ $p^{-1}\mathbb Z$ and the coefficient map is the identity on constants.
+ Its image is $p^{-1}\mathbb Z$, not $\mathbb Z$.
+\item Integral functionals are essential for the determinant-ideal
+ bound. For $M=\mathbb Z_p^2$, $a=0$, $\nu=(1,0)$, and
+ $g=\operatorname{diag}(p^{-1},1)$, the polynomial $x_{11}$ acquires
+ a coefficient $p^{-1}$. Formula \eqref{am-sharp-local}, which allows
+ negative elementary divisors, still gives the correct answer.
+\item The weighted coordinate metric is essential. For $\nu=(2,0)$
+ in two rows, $C_\nu=2$ and the monomial $x_{11}x_{21}$ has normalized
+ Fock norm $1/\sqrt2$. Its unweighted coefficient vector has norm one.
+ Thus even $g=1$ would not give a contraction for the unweighted metric.
+\item An integral independent $n$-tuple in a dual lattice need not be
+ an integral basis. For $M=\mathbb Z_p^2$, the rows $(p,0),(0,1)$
+ are independent and integral, but have index $p$ in the dual.
+ The proof above uses only the inclusion $gM\subset\mathcal O^n$.
+\item Stabilizers cannot be ignored when passing to class values. If
+ a group of order two fixes the sole class representative and acts as
+ $-1$ on a one-dimensional coefficient space in characteristic zero,
+ every equivariant value is zero. It is not a full copy of the
+ coefficient space. The actual full-product construction retains the
+ trivial-stabilizer hypothesis.
+\end{itemize}
+
+The actual application supplies a decomposition into polynomial class
+components, the local description \eqref{am-class-local}, and the
+metric identity \eqref{am-class-metric}. Given these identifications,
+this section proves the coefficient maps, their integral image,
+their norm bounds, the determinant-frame cancellation, and the complete
+deduction of \eqref{am-source-slope}. The existence of the decorated
+base lattices, their specified determinant degree, and short independent
+vectors in their Hermitian duals remain separate arithmetic inputs.
+The estimates for the iterated period maps and their local vanishing
+orders are also separate. In particular, the elementary-divisor formula
+proved here must not be substituted for a valuation inequality for a
+different map merely because both maps arise in the same construction.
+
+

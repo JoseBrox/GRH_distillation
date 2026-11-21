@@ -1,0 +1,302 @@
+\section{The compact branching law from polynomial representations}
+\label{cb-section}
+
+We prove the branching law needed both for the integral lowering map
+and for the terminal radial operator.  The proof uses the polynomial
+modules and their duality from Section~\ref{coef:section}.  In
+particular, multiplicity one and the precise interlacing inequalities
+will be proved, not assumed as additional representation-theoretic
+inputs.
+
+For a partition $\nu=(\nu_1,\ldots,\nu_r)$, use the polynomial
+module $V_\nu=\nabla_\nu(\mathbb C)$ on an $r$ by $r$ matrix.
+Zero last columns may be omitted: column degree zero means that
+the polynomial does not involve that column.  We use the representation
+\[
+             (\rho(g)F)(X)=F(g^tX),\qquad g\in\operatorname{GL}_r(\mathbb C).
+\]
+The transpose makes $\rho(g)\rho(h)=\rho(gh)$.
+Its infinitesimal operators are
+\[
+ E_{ab}=\sum_s x_{as}\frac{\partial}{\partial x_{bs}},
+ \qquad
+ [E_{ab},E_{cd}]=\delta_{bc}E_{ad}-\delta_{da}E_{cb}.
+ \tag{CB1}
+\]
+For the Hermitian Fock form, linear in its first argument,
+$E_{ab}^*=E_{ba}$.  This follows directly on monomials,
+or by Lemma~\ref{coef:adjoint}.  The restriction of $\rho$ to
+$U(r)$ is unitary.  The highest polynomial $H_\nu$ from
+Section~\ref{coef:section} has row weight $\nu$ and satisfies
+$E_{ab}H_\nu=0$ for $a<b$.
+
+For a dominant integral tuple $\lambda_1\ge\cdots\ge\lambda_r$,
+put $s=\lambda_r$ and define
+\[
+ V_\lambda=\det^{\,s}\otimes V_{\lambda-s(1,\ldots,1)}.
+ \tag{CB2}
+\]
+Negative $s$ causes no difficulty on $\operatorname{GL}_r$ or $U(r)$.
+The determinant character has absolute value one on the latter.
+Its infinitesimal action adds $s$ to every diagonal weight.
+
+\subsection{Highest weights and irreducibility}
+
+\begin{lemma}\label{cb-polynomial-irreducible}
+The representation $V_\lambda$ is irreducible, and its highest
+weight is $\lambda$.
+\end{lemma}
+\begin{proof}
+First suppose that $\lambda=\nu$ is a partition.  Theorem
+\ref{coef:integral-duality} shows that the divided row operators
+applied to $H_\nu$ span $\nabla_\nu(\mathbb Q)$.  The same is
+true over $\mathbb C$.  Indeed these spaces have a fixed finite
+monomial support, and their equations have rational coefficients:
+column homogeneity and $E^{\rm col}_{ij}F=0$ for $i<j$ give their
+defining equations.  In characteristic zero the latter differential
+equation is equivalent to invariance under the corresponding column
+addition, by the finite Taylor expansion.  Taking a kernel of a
+finite rational matrix commutes with extension to $\mathbb C$.
+
+Every divided off-diagonal row operator satisfies
+$D_{ab}^{(k)}=E_{ba}^k/k!$;
+the divided diagonal operator is $\binom{E_{aa}}k$ on each row
+degree.  Thus $H_\nu$ is cyclic for the operators (CB1).
+Suppose $W$ is a $U(r)$-invariant subspace of $V_\nu$ and let
+$P$ be its orthogonal projection.  Its orthogonal complement is
+invariant too, so $P$ commutes with $U(r)$ and hence with its
+complexified infinitesimal operators (CB1).  It preserves row
+weights.  Lemma~\ref{coef:extremal-weight} says that the row
+weight $\nu$ space is exactly $\mathbb C H_\nu$.
+Consequently $PH_\nu=cH_\nu$, and $P^2=P$ gives $c=0$ or $1$.
+Cyclicity then gives $P=0$ or $1$.  This proves irreducibility.
+Twisting by the one-dimensional determinant character preserves
+irreducibility and shifts the highest weight as in (CB2).
+\end{proof}
+
+\begin{lemma}\label{cb-highest-classification}
+Every irreducible finite-dimensional continuous unitary
+representation of $U(r)$ is isomorphic to exactly one $V_\lambda$,
+where $\lambda$ is a dominant integral tuple.  A highest vector
+of weight $\lambda$ determines an intertwiner from $V_\lambda$
+uniquely up to its prescribed nonzero scalar value on $H_\lambda$.
+\end{lemma}
+\begin{proof}
+Smoothness follows from the convolution argument of
+Lemma~\ref{rp-unitary-derivative}; that argument uses no
+classification theorem.  The diagonal torus acts by commuting
+unitary operators, which have a common orthonormal eigenbasis.
+Each continuous character of a circle is $e^{it}\mapsto e^{imt}$
+for an integer $m$: differentiating its smooth character gives
+$e^{ict}$ for a real $c$, and period $2\pi$ gives $c\in\mathbb Z$.
+Thus the torus weights are integral tuples, and only finitely
+many occur.
+
+Choose a nonzero vector $v$ of lexicographically maximal weight
+$\lambda$.  For $a<b$, the operator $E_{ab}$ increases that
+weight by $e_a-e_b$; the commutator with the diagonal operators
+proves this assertion.  Hence $E_{ab}v=0$.  Moreover,
+\[
+ \|E_{ba}v\|^2
+   =\langle E_{ab}E_{ba}v,v\rangle
+   =(\lambda_a-\lambda_b)\|v\|^2\ge0.
+\]
+Here we used $E_{ab}^*=E_{ba}$ and
+$[E_{ab},E_{ba}]=E_{aa}-E_{bb}$.
+It follows that $\lambda$ is dominant.
+
+We give the required uniqueness argument, including its
+existence assertion.  In any unitary representation, the
+Gram matrix of the vectors $Pv$, where $P$ ranges over words
+in the $E_{ab}$, is determined by $\lambda$ and $\|v\|^2$.
+To see this, write
+\[
+                    \langle Pv,Qv\rangle
+                         =\langle Q^*Pv,v\rangle.
+\]
+Use (CB1) to order every word with lowering operators
+$E_{ab}$, $a>b$, on the left, diagonal operators in the
+middle, and raising operators, $a<b$, on the right.
+This process terminates: swapping an adjacent pair removes
+an inversion, and the commutator term has smaller word length.
+Induct first on length, and then on the number of inversions.
+A nonempty raising part annihilates $v$.  The diagonal part
+acts by its polynomial in $\lambda$.  A nonempty lowering
+part changes the weight by a nonzero sum of negative positive
+roots and is therefore orthogonal to $v$.  Only the term
+with neither raising nor lowering operators contributes.
+This computes the Gram matrix using just $\lambda$.
+
+Apply this calculation to $v$ and to the highest vector in
+$V_\lambda$, normalizing both to have norm one.
+The rule $PH_\lambda\mapsto Pv$ is well-defined: a linear
+relation has squared norm zero on one side exactly when it
+has squared norm zero on the other.  It is an isometry and
+intertwines all $E_{ab}$.  Its image is the cyclic subspace
+generated by $v$.  The group $U(r)$ is connected and is
+generated by exponentials of its Lie algebra; explicitly,
+unitary diagonalization writes any unitary matrix as an
+exponential of a skew-Hermitian matrix.  The map is therefore
+a group intertwiner.  In an irreducible representation the
+cyclic subspace is the whole space.  Its uniqueness follows
+from cyclicity of $H_\lambda$.
+
+Finally the same normal ordering shows that every weight in
+$V_\lambda$ is obtained from $\lambda$ by subtracting a sum
+of positive roots: the module is cyclic and every word on
+its highest vector reduces to lowering words.  A nonempty
+such sum strictly decreases the lexicographic weight.
+Thus $\lambda$ is its unique maximal weight.  An isomorphism
+preserves weights, so different $\lambda$ give nonisomorphic
+representations.
+\end{proof}
+
+\subsection{The highest vectors on restriction}
+
+Let $N=n+1$ with $n\ge1$, and first let
+$\lambda=(\lambda_1,\ldots,\lambda_n,0)$ be a partition.
+Omit its unused last column and write the variable matrix as
+$X=\left(\begin{smallmatrix}A\\z\end{smallmatrix}\right)$,
+where $A$ is $n$ by $n$ and $z=(z_1,\ldots,z_n)$.
+Let $\Delta_i$ be the first $i$ by $i$ minor of $A$, and let
+$S_i$ be the minor with rows $1,\ldots,i-1,N$ and columns
+$1,\ldots,i$.  Thus $S_1=z_1$.
+
+\begin{lemma}\label{cb-joint-highest}
+The vectors in $V_\lambda$ which have top-row weight
+$\mu=(\mu_1,\ldots,\mu_n)$ and are annihilated by
+$E_{ab}$ for $1\le a<b\le n$ form a space of dimension
+one if
+\[
+                  \lambda_i\ge\mu_i\ge\lambda_{i+1}
+                                      \qquad(1\le i\le n),
+ \tag{CB3}
+\]
+and a zero space otherwise.  In the first case a generator is
+\[
+ \xi_{\lambda,\mu}(X)
+       =\prod_{i=1}^n\Delta_i(X)^{\mu_i-\lambda_{i+1}}
+                           S_i(X)^{\lambda_i-\mu_i}.
+ \tag{CB4}
+\]
+Its last-row degree is $|\lambda|-|\mu|$.
+\end{lemma}
+\begin{proof}
+The assertion that $E_{ab}F=0$ is equivalent, by finite
+Taylor expansion, to invariance under adding a multiple
+of top row $a$ to top row $b$.  These additions generate
+the lower unipotent row subgroup.  By definition, $F$
+is also invariant under the upper unipotent column subgroup.
+
+On the nonempty open set $\prod_i\Delta_i\ne0$, Gaussian
+elimination gives $A=LDU$, with $L$ lower unipotent,
+$U$ upper unipotent, and $D=\operatorname{diag}(d_1,\ldots,d_n)$.
+First multiply the columns by $U^{-1}$ and then the top
+rows by $L^{-1}$.  Invariance gives
+\[
+                         F(A,z)=F(D,zU^{-1}).
+ \tag{CB5}
+\]
+The row and column degrees force
+\[
+ F(D,w)=c\prod_i d_i^{\mu_i}w_i^{\lambda_i-\mu_i}.
+ \tag{CB6}
+\]
+If one of these exponents is negative, the restriction is
+zero, and (CB5) forces $F=0$.  In particular a nonzero
+vector has $\lambda_i-\mu_i\ge0$.
+
+On this diagonal matrix one has
+$\Delta_i=d_1\cdots d_i$ and
+$S_i=d_1\cdots d_{i-1}w_i$.  The Laurent product in
+(CB4), allowing temporarily negative exponents
+$\mu_i-\lambda_{i+1}$, restricts to the monomial in
+(CB6).  It is itself invariant under both unipotent
+groups.  Therefore (CB5) gives $F=c\xi_{\lambda,\mu}$
+as a rational function.
+
+The polynomials $\Delta_i,S_i$ are pairwise nonassociate
+irreducibles.  Here is the elementary determinant fact
+needed for this assertion.  A generic determinant is
+irreducible by induction on its size: as a polynomial
+in its last row it is linear, and its coefficients are
+the maximal cofactors of the other rows.  Those cofactors
+are irreducible by induction and no two are associates,
+since they involve different column variables.  Their
+greatest common divisor is one.  The polynomial is
+therefore primitive and is irreducible over the fraction
+field of the other-row variables, where it is a nonzero
+linear polynomial.  Gauss's lemma proves irreducibility.
+Size one is a variable.  Adjoining additional independent
+variables preserves this conclusion.  Finally different
+sizes have different degrees, and $S_i$ involves the last
+row whereas $\Delta_i$ does not; hence none of the
+displayed minors are associates.
+
+Unique factorization now implies
+$\mu_i-\lambda_{i+1}\ge0$ whenever $F\ne0$.
+This proves the necessity of (CB3) and the upper bound
+one on the dimension.  If (CB3) holds, (CB4) is a
+nonzero polynomial.  Each factor is invariant under
+the indicated column additions and top-row additions.
+Its column degrees are $\lambda_i$, and its top-row
+degrees telescope to $\mu_i$.
+Each $S_i$ has last-row degree one, so the remaining
+degree is $\sum_i(\lambda_i-\mu_i)$.
+Thus (CB4) belongs to the required space and proves
+the assertion.
+\end{proof}
+
+\begin{theorem}[Compact branching law]\label{ib-compact-branching}
+For $N\ge2$ and a dominant integral highest weight
+$\lambda=(\lambda_1,\ldots,\lambda_N)$, restriction
+of $V_\lambda$ to $U(N-1)\times U(1)$ is the orthogonal
+direct sum
+\[
+ V_\lambda\big|_{U(N-1)\times U(1)}
+     \simeq\bigoplus_{\lambda_i\ge\mu_i\ge\lambda_{i+1}}
+                           V_\mu\otimes t^{\,|\lambda|-|\mu|}.
+ \tag{CB7}
+\]
+Each summand occurs once.  The character of the last
+$U(1)$ is displayed, not suppressed.  For $N=1$ the
+restriction to the trivial group has one one-dimensional
+summand, of last-circle weight $\lambda_1$.
+\end{theorem}
+\begin{proof}
+First subtract $\lambda_N$ from every weight, so that
+the polynomial model of Lemma~\ref{cb-joint-highest}
+applies.  A finite-dimensional unitary representation
+is an orthogonal sum of irreducibles: choose a minimal
+nonzero invariant subspace, take its invariant orthogonal
+complement, and induct on dimension.
+Lemma~\ref{cb-highest-classification} identifies every
+summand of the restriction to $U(N-1)$ by a highest
+vector.  Lemma~\ref{cb-joint-highest} allows exactly
+the interlacing weights and at most one copy of each.
+Conversely (CB4) provides a highest vector for every
+interlacing weight.  The Gram-matrix argument in
+Lemma~\ref{cb-highest-classification} identifies its
+cyclic subspace with $V_\mu$, so every listed summand
+does occur.  The last-row degree in that lemma proves
+the $U(1)$ character.  Inequivalent unitary summands
+are orthogonal: their cross-pairing defines an
+intertwiner, which is zero by irreducibility and the
+distinct highest weights.
+
+Twisting back by $\det^{\lambda_N}$ adds $\lambda_N$
+to all the top weights and to the last-circle weight.
+It preserves (CB3) and changes the last exponent to
+$|\lambda|-|\mu|$, as stated.  For $N=1$ (CB2) is
+just the character $t\mapsto t^{\lambda_1}$.
+\end{proof}
+
+This proof also specifies the multiplicity-one normalization:
+in the polynomial case there is a unique intertwiner
+$J_{\lambda,\mu}:V_\mu\to V_\lambda$ with
+$J_{\lambda,\mu}H_\mu=\xi_{\lambda,\mu}$.
+The next section will address its integral denominator;
+multiplicity one alone does not assert that this
+normalization preserves the dual-Weyl lattice.
+
+

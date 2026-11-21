@@ -1,0 +1,614 @@
+\section{A regular coefficient for the inverse terminal operator}
+\label{rl-section}
+
+We next reconstruct an actual full-group coefficient used in the
+four-operator Fourier argument.  Radial coordinates involve ratios
+of consecutive minors, which may be undefined inside the relevant
+open subset of the full group.  The construction below has only the
+positive Gram polynomial in its denominator.  It gives the
+zero-order spectral factor used in the source
+\cite{alpo-uniform-source}, including covariance, growth of every
+derivative, and preservation of the coefficient class.
+
+\subsection{The Hermitian space, minors and cofactor vector}
+
+Let $k\geq1$ and $r\geq0$.  Fix a Witt decomposition
+\[
+ V=U\oplus W\oplus U^\vee,\qquad
+ U=\langle e_1,\ldots,e_r\rangle,\quad
+ U^\vee=\langle e_1^\vee,\ldots,e_r^\vee\rangle,
+\]
+for a Hermitian form $h$, linear in its first argument.
+The subspaces $U,U^\vee$ are isotropic,
+$h(e_i,e_j^\vee)=\delta_{ij}$, and $W$ is perpendicular
+to their sum and has signature $(k,1)$.
+Choose a basis of $W$ in which the form is
+$\operatorname{diag}(1,\ldots,1,-1)$.
+In the resulting basis of $V$ its matrix $H$ satisfies
+$H^*=H$ and $H^2=1$.
+Write $\mathbf G=U(V,h)$.
+
+Fix $z,z'\in W$ with
+\[
+                 h(z,z)=-T,\qquad h(z',z')=-T',
+                         \qquad T,T'>0.
+\]
+Put $f_i=e_i$, $f'_i=e_i$ for $1\leq i\leq r$, and
+$f_{r+1}=z$, $f'_{r+1}=z'$.
+For $g\in\mathbf G$ define
+\begin{align}
+ Z(g)_{ab}&=h(gf'_b,f_a),\qquad 1\leq a,b\leq r+1,
+                                      \label{rl-Z}\\
+ D(g)&=\det Z(g),\qquad
+ d(g)=\det Z(g)_{\{1,\ldots,r\},\{1,\ldots,r\}},\nonumber\\
+ \mathcal G(g)&=|D(g)|^2-TT'|d(g)|^2. \label{rl-Gram}
+\end{align}
+When $r=0$, $d(g)=1$.
+These are the last two minors and the actual Gram polynomial
+in the source, before passage to radial coordinates.
+Define
+\begin{equation}\label{rl-cofactor-vector}
+ L(g)=\sum_{a=1}^{r+1}
+        \overline{\operatorname{adj}(Z(g))_{r+1,a}}\,f_a,
+ \qquad y(g)=g^{-1}L(g).
+\end{equation}
+Let $\omega(g)$ be the projection of the $W$-component
+of $y(g)$ onto the positive space
+$W'_+=W\cap(z')^\perp$.
+Fix an orthonormal basis $B_1,\ldots,B_k$ of $W'_+$ and put
+\[
+                 \Omega_j(g)=h(y(g),B_j).
+\]
+Thus $\omega(g)=\sum_j\Omega_j(g)B_j$.
+
+\begin{lemma}\label{rl-cofactor-norm}
+For every $g\in\mathbf G$,
+\begin{align}
+ h(y(g),f'_b)&=\overline{D(g)}\,\delta_{b,r+1},
+                                                  \label{rl-dual-pairing}\\
+ h(y(g),y(g))&=-T|d(g)|^2,\label{rl-y-norm}\\
+ \sum_{j=1}^k|\Omega_j(g)|^2
+             &=\frac{\mathcal G(g)}{T'}.\label{rl-omega-norm}
+\end{align}
+In particular $\mathcal G(g)\geq0$.
+Each $\Omega_j$ is the restriction to $\mathbf G$ of a
+polynomial of degree $r+1$ in the conjugates of the
+matrix entries of $g$.
+No minor is required to be nonzero in these assertions.
+\end{lemma}
+
+\begin{proof}
+Since $g$ is unitary,
+\[
+ h(y,f'_b)=h(L,gf'_b)
+   =\sum_a
+     \overline{\operatorname{adj}(Z)_{r+1,a}}\,
+     \overline{Z_{ab}}
+   =\overline{D}\,\delta_{b,r+1}.
+\]
+This is the adjugate identity, valid also when $Z$ is singular.
+All $f_a$ with $a\leq r$ are mutually perpendicular
+and perpendicular to $z$, so
+\[
+ h(y,y)=h(L,L)
+       =-T|\operatorname{adj}(Z)_{r+1,r+1}|^2
+       =-T|d|^2.
+\]
+The first $r$ equations in \eqref{rl-dual-pairing}
+say that $y\in U^\perp=U\oplus W$.
+Its component along $z'$ is
+$-\overline D\,z'/T'$.  Consequently
+\[
+           y=u-\frac{\overline D}{T'}z'+\omega
+                          \qquad(u\in U,\ \omega\in W'_+).
+\]
+Taking its norm gives
+$-T|d|^2=-|D|^2/T'+h(\omega,\omega)$,
+which proves \eqref{rl-omega-norm}.
+
+For the polynomial assertion, $Z$ is linear in the
+entries of $g$, so every cofactor has degree $r$.
+On $\mathbf G$ one has $g^{-1}=Hg^*H$.
+Replacing $g^{-1}$ by this formula in
+\eqref{rl-cofactor-vector} gives a polynomial of
+degree $r+1$ in the conjugate entries.
+Pairing with the fixed $B_j$ is linear and does not
+change that degree.
+\end{proof}
+
+\subsection{Covariance, including the unipotent subgroups}
+
+Let $N\subset\mathbf G$ consist of the elements satisfying
+\[
+ n e_i-e_i\in\langle e_1,\ldots,e_{i-1}\rangle,
+       \qquad n w-w\in U\quad(w\in W).
+\]
+This is the source's upper unipotent subgroup in the
+chosen Witt basis.  It preserves $U^\perp$ and acts
+as the identity on $U^\perp/U$.  The same assertions
+hold for its inverse, by triangular inversion.
+Let $K_z$ and $K_{z'}$ fix every $e_i,e_i^\vee$
+and fix $z$ and $z'$, respectively.  They act on
+$W$ and are the compact groups isomorphic to $U(k)$.
+
+\begin{lemma}\label{rl-cofactor-covariance}
+Let $h_L\in K_z$, $h_R\in K_{z'}$ and
+$n_L,n_R\in N$, and set
+\[
+                  g'=h_L^{-1}n_L^{-1}g n_Rh_R.
+\]
+Every leading principal minor of $Z(g')$ equals the
+corresponding minor of $Z(g)$.  Moreover
+\begin{equation}\label{rl-omega-covariance}
+                \omega(g')=h_R^{-1}\omega(g),
+       \qquad \mathcal G(g')=\mathcal G(g).
+\end{equation}
+These statements hold also when intermediate minors vanish.
+\end{lemma}
+
+\begin{proof}
+Write $f$ for the matrix with columns $f_a$, and
+similarly $f'$ for $f'_b$.  There are upper triangular
+unipotent matrices $A,B$ of size $r+1$ with
+$n_Lf=fA$ and $n_Rf'=f'B$.
+Since the compact factors fix these columns,
+unitarity gives
+\[
+                         Z(g')=A^*Z(g)B.
+\]
+For a leading block, upper triangularity of $A,B$
+means that multiplication uses only the corresponding
+leading blocks.  Their determinants are one.
+This proves the minor identities, and hence the
+identity for $\mathcal G$.
+
+For completeness, the cofactor transformation can be
+obtained without assuming that $Z$ is invertible.
+The identity
+\[
+ \operatorname{adj}(A^* Z B)
+       =B^{-1}\operatorname{adj}(Z)(A^*)^{-1}
+\]
+holds for invertible $Z$ by the inverse formula;
+both sides are polynomial in the entries of $Z$,
+so it holds for every $Z$ by continuity and the
+density of invertible matrices.  The last row of
+$B^{-1}$ is the last coordinate row.  Transposing
+and conjugating that row identity in
+\eqref{rl-cofactor-vector} yields
+\[
+                 L(g')=n_L^{-1}L(g)
+                       =h_L^{-1}n_L^{-1}L(g).
+\]
+The second equality holds because
+$n_L^{-1}L(g)$ lies in $\langle f_1,\ldots,f_{r+1}\rangle$,
+which $h_L$ fixes pointwise.  Thus
+$y(g')=h_R^{-1}n_R^{-1}y(g)$.
+The vector $y(g)$ belongs to $U^\perp$ by
+Lemma~\ref{rl-cofactor-norm}, and $n_R^{-1}$
+does not change its $W$-component.
+Finally $h_R$ preserves $W$, fixes $z'$, and
+acts unitarily on $W'_+$.  Projecting onto $W'_+$
+proves \eqref{rl-omega-covariance}.
+\end{proof}
+
+\subsection{The radial cell and the compact Capelli contraction}
+
+For $c=(c_1,\ldots,c_r)\in(\mathbb C^\times)^r$,
+let $b(c)\in\mathbf G$ fix $W$ and satisfy
+\[
+ b(c)e_i=c_i e_i^\vee,\qquad
+ b(c)e_i^\vee=\overline c_i^{-1}e_i.
+\]
+Let $m\in U(W,h|_W)$, extended as the identity on
+$U\oplus U^\vee$.  Put
+\[
+             a(c)=\prod_{i=1}^r c_i,\qquad
+             \zeta(m)=h(mz',z),\qquad
+             G(m)=|\zeta(m)|^2-TT'.
+\]
+
+\begin{lemma}\label{rl-cell}
+For $g=b(c)m$ one has
+\begin{align}
+ Z(g)&=\operatorname{diag}(c_1,\ldots,c_r,\zeta(m)),\nonumber\\
+ \mathcal G(g)&=|a(c)|^2G(m),\label{rl-cell-Gram}\\
+ \Omega_j(g)&=\overline{a(c)}\,h(m^{-1}z,B_j).
+                                                 \label{rl-cell-omega}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Pair the images of the indicated basis vectors.
+The decomposition into $W$ and its perpendicular
+hyperbolic planes gives the diagonal matrix.
+Its last cofactor row has only the last entry
+$a(c)$, so $L(g)=\overline{a(c)}z$.
+Since $b(c)$ fixes $z$, it follows that
+$y(g)=\overline{a(c)}m^{-1}z$.
+The remaining statements follow from the definitions.
+\end{proof}
+
+Let $\pi':K_{z'}\to U(W_{\pi'})$ be a finite-dimensional
+continuous unitary representation.  Its complexified
+derivative in the fixed basis $B_1,\ldots,B_k$
+gives the operators $E_{ij}$ of
+Lemma~\ref{rp-capelli}.  For a unit vector
+$\nu=(\nu_1,\ldots,\nu_k)\in\mathbb C^k$ define
+\begin{equation}\label{rl-cap-vector}
+ C_\nu(Y)=\sum_{i,j=1}^k(-1)^{i+j}
+       \overline{\nu_i}\nu_j\,
+       Q_{\{1,\ldots,k\}\setminus\{i\},
+         \{1,\ldots,k\}\setminus\{j\}}
+          \left(Y+\frac{k-2}{2}\right).
+\end{equation}
+The indexing convention in the minor is that of
+Lemma~\ref{rp-capelli}, with positions starting at zero
+inside each ordered tuple.  The sign is unchanged
+when the ambient indices are shifted from zero to one.
+
+\begin{lemma}\label{rl-compressed-capelli}
+The operator $C_\nu(Y)$ is the compact Capelli
+determinant on the orthogonal complement of
+$\sum_i\nu_iB_i$, with shift $Y+(k-2)/2$.
+In particular it is independent of an orthonormal
+basis of that complement, and
+\[
+ C_\nu(Y)^*=C_\nu(\overline Y).
+\]
+If $h\in K_{z'}$ and $\nu'$ is the coordinate vector
+of $h^{-1}\sum_i\nu_iB_i$, then
+\begin{equation}\label{rl-cap-covariance}
+          C_{\nu'}(Y)=\pi'(h)^{-1}C_\nu(Y)\pi'(h).
+\end{equation}
+Also $C_{\lambda\nu}(Y)=C_\nu(Y)$ when $|\lambda|=1$.
+\end{lemma}
+
+\begin{proof}
+Complete $\nu$ to a unitary matrix
+$P=(v_1,\ldots,v_{k-1},\nu)$.
+Apply all-minor covariance from Lemma~\ref{rp-capelli}
+to the determinant on its first $k-1$ columns.
+The complementary-minor formula gives
+\[
+ \det P_{\widehat i,\{1,\ldots,k-1\}}
+                =(-1)^{i+k}\det P\,\overline{\nu_i}.
+\]
+The conjugate factor from the inverse matrix is
+$(-1)^{j+k}\overline{\det P}\,\nu_j$.
+Their product is
+$(-1)^{i+j}\overline{\nu_i}\nu_j$, which proves
+\eqref{rl-cap-vector} and its interpretation.
+Frame independence and the adjoint formula follow
+from the corresponding Capelli statements.
+Conjugation by $h^{-1}$ carries the complement and
+all its rank-one Lie algebra generators to the
+new complement, giving \eqref{rl-cap-covariance}.
+The scalar phase cancels directly in
+\eqref{rl-cap-vector}.  When $k=1$ this is the
+empty determinant $1$, so that case is included.
+\end{proof}
+
+On the open set $\mathbf G^+=\{g:\mathcal G(g)>0\}$,
+define
+\[
+     \nu(g)=\sqrt{T'/\mathcal G(g)}\,\Omega(g),
+                   \qquad C_g(Y)=C_{\nu(g)}(Y).
+\]
+Lemma~\ref{rl-cofactor-norm} makes $\nu(g)$ a unit vector.
+In particular the square root is the positive real one.
+Substitution into \eqref{rl-cap-vector} gives the
+formula without square roots
+\begin{equation}\label{rl-rational-matrix}
+ C_g(Y)=\frac{T'}{\mathcal G(g)}
+        \sum_{i,j=1}^k(-1)^{i+j}
+            \overline{\Omega_i(g)}\Omega_j(g)
+            Q_{\widehat i,\widehat j}
+                   \left(Y+\frac{k-2}{2}\right).
+\end{equation}
+It is smooth on $\mathbf G^+$, including at the
+zeros of intermediate principal minors.
+
+\begin{proposition}\label{rl-actual-terminal-lift}
+For a radial function $\Phi$ of Section~\ref{rd-section},
+at $g=b(c)m$ with $G(m)>0$,
+\begin{equation}\label{rl-terminal-match}
+   G(m)^{-1}(\mathcal T_{22}(Y)\Phi)(c,m)
+                              =\Phi(c,m)C_g(Y).
+\end{equation}
+Moreover, with $g'$ as in Lemma~\ref{rl-cofactor-covariance},
+\[
+                C_{g'}(Y)=\pi'(h_R)^{-1}C_g(Y)\pi'(h_R).
+\]
+\end{proposition}
+
+\begin{proof}
+By \eqref{rl-cell-omega}, $\nu(g)$ differs by the
+unit scalar $\overline{a(c)}/|a(c)|$ from the
+normalized projection of $m^{-1}z$ onto $W'_+$.
+Its orthogonal complement in $W'_+$ is therefore
+$\langle m^{-1}z,z'\rangle^\perp$.
+Lemma~\ref{rl-compressed-capelli} and the actual terminal
+identity of Corollary~\ref{rp-finite-terminal} prove
+\eqref{rl-terminal-match}.
+The covariance assertion follows from
+\eqref{rl-omega-covariance} and
+\eqref{rl-cap-covariance}.
+\end{proof}
+
+\subsection{The inverse polynomial and its regular full-group lift}
+
+Retain the common finite type set $\mathcal S$ and
+$p_\rho(Y)=\prod_{i=1}^{k-1}(Y+\rho_i)$ from
+Section~\ref{rd-section}.  It is nonempty under the
+interlacing hypotheses there.
+Let $\sigma\in\{1,-1\}$; for the actual signed
+source operator it is $\sigma=(-1)^{k-l_0}$.
+Choose $Y\in\mathbb C$ such that $p_\rho(Y)\ne0$
+for every $\rho\in\mathcal S$.  Define
+\begin{align}
+ P_Y(X)&=\prod_{\rho\in\mathcal S}
+                         (X-\sigma p_\rho(Y)),\nonumber\\
+ q_Y(X)&=\frac{1-P_Y(X)/P_Y(0)}{X}. \label{rl-inverse-polynomial}
+\end{align}
+The numerator has zero constant term, so $q_Y$ is
+a polynomial, of degree at most $|\mathcal S|-1$.
+Repeated values of $p_\rho(Y)$ cause no difficulty.
+For every $\rho$,
+$q_Y(\sigma p_\rho(Y))=(\sigma p_\rho(Y))^{-1}$.
+For real $Y$ this polynomial has real coefficients.
+An explicit simultaneous choice avoiding the zeros
+at $Y-1,Y,Y+1$ is
+\[
+ Y=2+\max\bigl(\{0\}\cup
+          \{|\rho_i|:\rho\in\mathcal S,\ 1\leq i<k\}\bigr).
+\]
+
+Let $W_\pi$ be the left coefficient space and set
+$\mathcal H=\operatorname{Hom}(W_{\pi'},W_\pi)$ with
+the Hilbert--Schmidt inner product.
+For $g\in\mathbf G^+$ define the endomorphism
+\begin{equation}\label{rl-zero-coefficient}
+       M_Y(g):A\longmapsto
+          \mathcal G(g)^{-1}A\,q_Y(\sigma C_g(Y)).
+\end{equation}
+
+\begin{theorem}\label{rl-regular-inverse}
+The coefficient \eqref{rl-zero-coefficient} is smooth
+on $\mathbf G^+$ and has the following properties.
+
+\begin{enumerate}
+\item On a radial cell it realizes exactly the signed
+terminal inverse multiplied by the reciprocal full
+Gram polynomial:
+\[
+ M_Y(b(c)m)\Phi(c,m)
+    =\frac1{|a(c)|^2G(m)}
+       \left(\kappa\bigl(
+            (\sigma p_\rho(Y))^{-1}\bigr)\Phi\right)(c,m).
+\]
+Thus it is the actual coefficient used for the product
+of this inverse and the reciprocal Gram factor.
+\item It commutes with the full compact and unipotent
+action on coefficient functions.  More explicitly,
+for the elements in Lemma~\ref{rl-cofactor-covariance},
+\[
+ M_Y(g)\bigl(\pi(h_L)A\pi'(h_R)^{-1}\bigr)
+    =\pi(h_L)\bigl(M_Y(g')A\bigr)\pi'(h_R)^{-1}.
+\]
+\item Its pointwise Hilbert--Schmidt adjoint is smooth
+and has the same derivative growth bounds as $M_Y$.
+For real $Y$ it equals $M_Y$.
+\item For every $\varepsilon>0$ and integer $m\geq0$,
+there is a finite constant $C_{\varepsilon,m}$ such that
+every word $D_1\cdots D_j$ of at most $m$ left or right
+Lie derivatives in matrices whose entries have absolute
+value at most one satisfies
+\begin{equation}\label{rl-growth}
+ \|D_1\cdots D_j M_Y(g)\|
+       \leq C_{\varepsilon,m}
+                      (1+\|g\|_{\rm F})^{(r+1)m}
+         \quad(\mathcal G(g)\geq\varepsilon).
+\end{equation}
+The same bound holds for its adjoint.
+The constant depends on the fixed Hermitian data,
+the finite representations, $Y,\sigma,\varepsilon,m$,
+and not on $g$ or on the selected unit Lie directions.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The finite decomposition of Theorem~\ref{rd-constructed-kappa}
+and \eqref{rl-terminal-match} identify
+$q_Y(\sigma C_g(Y))$ on the evaluated radial image
+with the specified inverse.
+No assertion that it is the inverse on unused
+right constituents is needed.  This proves the first
+part, using \eqref{rl-cell-Gram}.
+Smoothness follows from \eqref{rl-rational-matrix}.
+The covariance of $C_g$ and invariance of $\mathcal G$
+give the second part by moving $\pi'(h_R)^{-1}$
+through the polynomial.
+The adjoint of right multiplication by a matrix $B$
+on the Hilbert--Schmidt space is right multiplication
+by $B^*$.  The adjoint formula in
+Lemma~\ref{rl-compressed-capelli} therefore proves
+the third part; the final assertion for real $Y$
+also uses that $q_Y$ has real coefficients.
+
+Here is a direct derivative estimate, which avoids
+differentiating any orthonormal frame.  Write
+$d_0=r+1$, $n=2r+k+1$, and use the fixed polynomial
+extension of $\Omega$ from Lemma~\ref{rl-cofactor-norm}.
+There is a constant $C_\Omega$ such that any word
+$L$ of $a$ left or right unit Lie derivatives obeys
+\begin{equation}\label{rl-polynomial-derivative}
+               \|L\Omega(g)\|
+       \leq C_\Omega(nd_0)^a(1+\|g\|_{\rm F})^{d_0}.
+\end{equation}
+Indeed each such vector field replaces an entry
+of $g$ by a sum of at most $n$ entries with coefficients
+of absolute value at most one, and likewise for a
+conjugate entry.  On a monomial of degree $d_0$
+there are $d_0$ choices of a differentiated factor.
+Thus each derivative multiplies the coefficient
+sum by at most $nd_0$, without increasing the
+degree.  The Euclidean sum of the component coefficient
+norms gives a possible $C_\Omega$.
+
+For $v\in\mathbb C^k\setminus\{0\}$ set
+\[
+ \mathcal F_Y(v):A\longmapsto
+       \frac{1}{T'\|v\|^2}
+          A\,q_Y\bigl(\sigma C_{v/\|v\|}(Y)\bigr).
+\]
+This is a smooth function with values in
+$\operatorname{End}(\mathcal H)$, and
+$\mathcal F_Y(tv)=t^{-2}\mathcal F_Y(v)$ for real $t>0$.
+Consequently
+\[
+ \|D^\ell\mathcal F_Y(v)\|
+       \leq M_\ell\|v\|^{-2-\ell},\qquad
+ M_\ell=\max_{\|u\|=1}\|D^\ell\mathcal F_Y(u)\|<\infty.
+\]
+The finiteness follows from smoothness and compactness
+of the unit sphere.  These formulas define the
+constants entirely in the fixed finite coefficient space.
+By \eqref{rl-omega-norm},
+$M_Y(g)=\mathcal F_Y(\Omega(g))$, and
+$\|\Omega(g)\|\geq\delta=\sqrt{\varepsilon/T'}$
+on the set under consideration.
+
+The iterated chain rule for a word of $j$ vector fields
+expresses its derivative of $\mathcal F_Y(\Omega)$
+as a sum over partitions of those $j$ positions.
+A partition with $\ell$ blocks contributes
+$D^\ell\mathcal F_Y$ applied to $\ell$ derivatives
+of $\Omega$, using the original order within each
+block.  This statement follows by induction:
+the next derivative either differentiates
+$\mathcal F_Y$ or one of its arguments.
+It does not require the vector fields to commute.
+Using \eqref{rl-polynomial-derivative}, its norm is
+at most
+\[
+ (nd_0)^j
+ \sum_{\ell=0}^j
+    \left\{\begin{matrix}j\\\ell\end{matrix}\right\}
+       M_\ell\delta^{-2-\ell}C_\Omega^\ell
+                    (1+\|g\|_{\rm F})^{d_0\ell},
+\]
+where the braces count partitions into $\ell$ nonempty
+blocks, with the usual value $1$ at $(j,\ell)=(0,0)$.
+Take the maximum of the corresponding fixed constants
+over $0\leq j\leq m$, and use $\ell\leq j\leq m$.
+This proves \eqref{rl-growth}.
+Taking an adjoint is a fixed real-linear isometry
+on the finite coefficient space, so the same argument
+and bound apply to the adjoint coefficient.
+\end{proof}
+
+\subsection{Preservation of the actual rapidly decreasing class}
+
+For $\varepsilon>0$, let $\mathscr S_\varepsilon$
+consist of the smooth $\mathcal H$-valued functions
+on $\mathbf G$ which vanish on $\mathcal G<\varepsilon$
+and for which every mixed left and right Lie derivative
+decays faster than every power of $1+\|g\|_{\rm F}$,
+uniformly over unit Lie directions.
+This is the coefficient class in the source's
+smoothness, decay and support hypotheses.
+Its formulation with the norm $\|g\|_{\rm F}$ alone
+is equivalent: $|\det g|=1$, so Hadamard's determinant
+inequality implies $\|g\|_{\rm F}\geq1$.
+Hence $1+\|g\|_{\rm F}\leq2\|g\|_{\rm F}$.
+
+\begin{corollary}\label{rl-class-preserved}
+Extend $M_YF$ by zero on $\mathcal G\leq0$.
+Both $F\mapsto M_YF$ and its pointwise adjoint
+preserve $\mathscr S_\varepsilon$.
+They are zero-order differential operators with
+smooth coefficients on $\mathbf G^+$, they commute
+with the source compact and unipotent actions, and
+all their coefficient derivatives have polynomial
+growth on $\mathcal G\geq\varepsilon$.
+\end{corollary}
+
+\begin{proof}
+The functions in question vanish on the neighborhood
+$\mathcal G<\varepsilon$ of $\mathcal G=0$,
+so their zero extensions are smooth there.
+On $\mathbf G^+$ use the product rule.
+For a derivative of order at most $m$, every
+coefficient factor is bounded by
+\eqref{rl-growth}.  The differentiated $F$ can be
+bounded by an arbitrarily large negative power;
+choosing that power larger by $(r+1)m$ gives the
+required decay.  The support is not enlarged.
+Covariance and the adjoint properties were proved
+in Theorem~\ref{rl-regular-inverse}.
+\end{proof}
+
+The exponent $(r+1)m$ in \eqref{rl-growth} is sufficient
+for the actual qualitative coefficient condition.
+It also improves the exponent $3(r+1)m$ used in
+the corresponding source provider for this zero-order
+factor.  The constants are not claimed to be uniform
+as $Y$ approaches a forbidden spectral value.
+They can be chosen uniformly on a fixed compact set
+of $Y$ avoiding those finitely many values, since
+the coefficients of $q_Y$ and all sphere derivatives
+above then vary continuously on compact sets.
+
+\begin{example}\label{rl-vanishing-middle-minor}
+The domain $\mathbf G^+$ really contains points
+where a radial coordinate is unavailable.
+Take $k=r=1$, a basis $(e,a,z,e^\vee)$ with
+$h(e,e^\vee)=1$, $h(a,a)=1$, $h(z,z)=-1$,
+and all other required pairings zero.
+Set $z'=z$ and define
+\[
+ ge=a+z,\quad
+ ga=\tfrac12e+e^\vee,\quad
+ gz=\tfrac12e-e^\vee,\quad
+ ge^\vee=\tfrac12(a-z).
+\]
+The displayed images have exactly the same pairings
+as the basis, so $g\in\mathbf G$.
+Here
+\[
+             Z(g)=\begin{pmatrix}0&-1\\-1&0\end{pmatrix},
+       \qquad d(g)=0,\quad D(g)=-1,\quad\mathcal G(g)=1.
+\]
+Thus a proposed full-group lift involving $d(g)^{-1}$
+would be singular at an allowed point.
+The cofactor coefficient above is regular there:
+$L(g)=e$, $y(g)=a+z$, and $\Omega(g)=1$.
+This is not a counterexample to the source, whose
+construction uses the regular Gram denominator.
+\end{example}
+
+\subsection{What this completes}
+
+The preceding construction proves the actual
+zero-order spectral factor, rather than assuming
+a smooth matrix field with suitable bounds.
+The polynomial cofactor identity proves its full-group
+definition; the radial-cell calculation proves that
+it is the correct operator; and covariance and
+\eqref{rl-growth} prove the analytic coefficient
+conditions needed to compose it with other
+differential operators.
+
+The remaining full-group operators in the Fourier
+identity include two weighted radial transfer
+operators and terminal off-diagonal contractions.
+Their restriction identities and formal-adjoint
+passage through the Jacquet transform are not
+proved merely by the zero-order construction here.
+Likewise the integrated Jacquet pairing and the
+actual local uniform $L^2$ bounds remain separate.
+No full weighted Fourier decay theorem is asserted
+until those remaining identities are established.
+
+

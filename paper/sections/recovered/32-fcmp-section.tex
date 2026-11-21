@@ -1,0 +1,439 @@
+\section{The finite character comparison}
+\label{fcmp-section}
+
+We now pass from character Selmer groups over $\mathbb Q$ to
+the required eigenspace over an abelian CM field. The comparison
+is exact at primes not dividing the field degree. At the other
+odd primes an integral Fourier transform leaves a bounded
+torsion error. In the actual family of fields those primes and
+the necessary torsion exponents are fixed before the conductor
+grows. A class-field calculation bounds their total contribution
+by a fixed multiple of $N^2t\log N$.
+
+\subsection{The local conditions and the parity}
+
+Let $L/\mathbb Q$ be a finite abelian CM extension, let
+$\Delta=\operatorname{Gal}(L/\mathbb Q)$, let
+$d=[L:\mathbb Q]$, and let $j\in\Delta$ be complex
+conjugation. Fix $N\ge3$ such that
+$L\subset\mathbb Q(\mu_N)$, so $d\le\varphi(N)\le N$.
+For an odd prime $p$ and $e\ge1$, put
+$A_e=\mathbb Q_p/\mathbb Z_p(-e)$ and retain
+$\mathcal S_p(L,e)$ from (MS1). Its $\Delta$-action
+conjugates Galois arguments and acts on the coefficients.
+Set
+\[
+ a_p(L,e)=\operatorname{length}_{\mathbb Z_p}
+                  \mathcal S_p(L,e)^{\,j=(-1)^e}.
+                                                               \tag{FC1}
+\]
+Thus (FC1) is exactly the complementary-parity summand.
+
+Choose a finite extension $K/\mathbb Q_p$ containing the
+values of every character of $\Delta$, and let $\mathcal O$
+be its ring of integers, with ramification index $b$.
+For $\theta\in\widehat\Delta$ define
+\[
+ \begin{split}
+ A_{e,\theta}&=(K/\mathcal O)
+                         (\theta^{-1}\varepsilon_p^{-e}),\\
+ \mathcal V_p(e,\theta)
+   &=\ker\left(H^1(\mathbb Q,A_{e,\theta})
+              \longrightarrow\prod_{\ell\ {\rm prime}}
+                         H^1(\mathbb Q_\ell,A_{e,\theta})\right),\\
+ \ell_p(e,\theta)&=b^{-1}
+       \operatorname{length}_{\mathcal O}\mathcal V_p(e,\theta).
+ \end{split}                                                   \tag{FC2}
+\]
+We allow infinite length until finiteness is proved.
+
+\begin{lemma}\label{fcmp-local}
+For $e\ge1$, the strict Selmer group $\mathcal S_p(L,e)$
+is the kernel of restriction to every finite decomposition
+group. For a character $\theta$ of conductor dividing $N$,
+the group $\mathcal V_p(e,\theta)$ is equivalently defined
+by zero restriction to decomposition groups at primes
+dividing $pN$, and zero restriction to inertia at all
+other finite primes.
+\end{lemma}
+\begin{proof}
+Let $w\nmid p$ be a place of $L$. Inertia acts trivially on
+$A_e$, and arithmetic Frobenius acts by $q_w^{-e}$, where
+$q_w>1$ is the residue-field cardinality. A class trivial
+on inertia comes from a cocycle of the procyclic unramified
+quotient. Such a cocycle is determined by its value at
+Frobenius, modulo the coboundaries
+$(q_w^{-e}-1)A_e$. Multiplication by the nonzero
+element $q_w^{-e}-1$ of $\mathbb Z_p$ is surjective on $A_e$.
+After subtracting a coboundary the cocycle vanishes at
+Frobenius, hence on its dense cyclic subgroup, hence
+everywhere by continuity. Thus the unramified local
+cohomology group is zero.
+
+The same argument applies to $A_{e,\theta}$ at
+$\ell\nmid pN$. Its Frobenius scalar is
+$\theta(\ell)^{-1}\ell^{-e}$, which is not one: otherwise
+the rational number $\ell^e>1$ would be a root of unity.
+Again multiplication by the scalar minus one is
+surjective on $K/\mathcal O$. This proves both assertions.
+At real places $H^1$ is zero because $p$ is odd and the
+decomposition group has order two.
+\end{proof}
+
+In particular (FC2) has the additional zero local conditions
+used for the character groups in the submitted construction.
+The use of $e\ge1$ in Lemma~\ref{fcmp-local} is essential.
+At $e=0$ the Frobenius scalar can equal one.
+
+\subsection{Shapiro's lemma and integral Fourier maps}
+
+Put $G=G_{\mathbb Q}$, $H=G_L$, and write $\bar g$ for
+the image of $g$ in $\Delta$. Consider
+\[
+ \mathcal M=\operatorname{Map}(\Delta,K/\mathcal O),\qquad
+ (g f)(\delta)=\varepsilon_p(g)^{-e}
+                                      f(\bar g^{-1}\delta).
+                                                               \tag{FC3}
+\]
+Shapiro's lemma gives
+\[
+ H^1(G,\mathcal M)\simeq
+ H^1(H,(K/\mathcal O)(-e)).
+                                                               \tag{FC4}
+\]
+For clarity, the full cocycle calculation is as follows.
+The coinduced module consists of functions $F:G\to K/\mathcal O$
+with $F(hx)=\varepsilon_p(h)^{-e}F(x)$ and action
+$(gF)(x)=F(xg)$. The identification with (FC3) is
+$F(x)=\varepsilon_p(x)^{-e}f(\bar x^{-1})$.
+Choose representatives $s(x)$ for the finite right coset
+space $H\backslash G$, with $s(H)=1$, and set
+\[
+ h(x,g)=s(x)g\,s(xg)^{-1}\in H.
+                                                               \tag{FC5}
+\]
+Given a cocycle $c:H\to K/\mathcal O$, define
+$C(g)(s(x))=c(h(x,g))$ and extend by the coinduction rule.
+The identity
+$h(x,g_1g_2)=h(x,g_1)h(xg_1,g_2)$ verifies the cocycle
+identity. In the reverse direction use $c(h)=C(h)(1)$.
+For an arbitrary $C$, the difference from the reconstruction
+of this $c$ is the coboundary of the function
+$U(s(x))=C(s(x))(1)$: the cocycle identity gives
+\[
+ C(g)(s(x))=c(h(x,g))
+       +\varepsilon_p(h(x,g))^{-e}U(s(xg))-U(s(x)).
+                                                               \tag{FC6}
+\]
+The formulas preserve coboundaries and continuity, proving
+(FC4).
+
+For a rational place $\ell$, the restriction of the coinduced
+module to a decomposition group is the direct sum of the
+coinduced modules from the decomposition groups at places
+of $L$ above $\ell$. This follows by separating the finitely
+many orbits on $G/H$; the formulas (FC5)--(FC6) on each
+orbit give the corresponding local assertion. Consequently
+(FC4) identifies classes which are zero at every finite
+decomposition group on its two sides. By
+Lemma~\ref{fcmp-local}, this is the coefficient extension of
+$\mathcal S_p(L,e)$ on the right.
+
+There are integral, equivariant maps
+\[
+ \begin{aligned}
+ \mathcal F:\mathcal M&\longrightarrow
+                         \bigoplus_{\theta\in\widehat\Delta}A_{e,\theta},
+ &(\mathcal F f)_\theta
+       &=\sum_{\delta\in\Delta}\theta(\delta)^{-1}f(\delta),\\
+ \mathcal G:\bigoplus_{\theta\in\widehat\Delta}A_{e,\theta}
+                 &\longrightarrow\mathcal M,
+ &(\mathcal G a)(\delta)&=\sum_\theta\theta(\delta)a_\theta.
+ \end{aligned}                                                 \tag{FC7}
+\]
+All coefficients are units of $\mathcal O$. The change of
+variable $\delta=\bar g\gamma$ shows that the $\theta$
+coordinate transforms by
+$\theta(\bar g)^{-1}\varepsilon_p(g)^{-e}$, exactly the
+character in (FC2). Character orthogonality gives
+\[
+                    \mathcal G\mathcal F=d\,\mathrm{id},
+             \qquad \mathcal F\mathcal G=d\,\mathrm{id}.
+                                                               \tag{FC8}
+\]
+For example, the sum of a nontrivial character is zero
+because translation multiplies the sum by a value different
+from one; over $K$ this forces the sum to be zero. The
+identities in (FC8) are therefore identities over
+$\mathcal O$ and on its quotient $K/\mathcal O$.
+
+The action of $j$ under (FC4) corresponds to
+$T_jf(\delta)=f(\delta j)$. To check the coefficient sign,
+choose a complex conjugation $c\in G$ above $j$.
+For a cocycle $C$ with values in (FC3), put
+$c_H(h)=C(h)(1)$. The cocycle identity implies
+\[
+ C(h)(j)=\varepsilon_p(c)^{-e}c_H(chc^{-1})
+                      +(1-\varepsilon_p(h)^{-e})C(c)(j).
+                                                               \tag{FC9}
+\]
+The last term is a coboundary. The first is the usual
+action of complex conjugation on $H^1(H,(K/\mathcal O)(-e))$.
+On the $\theta$ coordinate of (FC7), $T_j$ acts by
+$\theta(j)$. Thus the required characters are precisely
+\[
+                 X_e(L)=\{\theta\in\widehat\Delta:
+                                      \theta(j)=(-1)^e\}.
+                                                               \tag{FC10}
+\]
+The factor $(-1)^e$ has not been lost in changing the
+coefficient module or the coinduction convention.
+
+\begin{proposition}\label{fcmp-fourier}
+Let $\nu=v_p(d)$.
+If $\mathcal V_p(e,\theta)$ is finite for every
+$\theta\in X_e(L)$, then $\mathcal S_p(L,e)^{j=(-1)^e}$
+is finite and
+\[
+ a_p(L,e)\le\sum_{\theta\in X_e(L)}\ell_p(e,\theta)
+             +\operatorname{length}_{\mathbb Z_p}
+                             \mathcal S_p(L,e)[p^\nu].
+                                                               \tag{FC11}
+\]
+When $p\nmid d$, the last term is zero and equality holds
+between $a_p(L,e)$ and the character sum.
+\end{proposition}
+\begin{proof}
+Since $p$ is odd, the two projectors $(1\pm T_j)/2$
+are integral. Apply (FC7) to the image of the projector
+$(1+(-1)^eT_j)/2$, and then to locally trivial cohomology.
+The resulting map lands in
+$\bigoplus_{\theta\in X_e(L)}\mathcal V_p(e,\theta)$.
+By (FC8), its kernel is killed by $d$, equivalently by
+$p^\nu$. Under (FC4), it is therefore contained in the
+$p^\nu$-torsion of $\mathcal S_p(L,e)\otimes_{\mathbb Z_p}\mathcal O$.
+When $\nu>0$, finiteness of this torsion, independently
+of finiteness of the whole Selmer group, is proved in
+Lemma~\ref{fcmp-torsion} below. Kernel and image are finite,
+so the stated eigenspace is finite.
+
+Coefficient extension commutes with cochains, cohomology
+and the local kernels because $\mathcal O$ is finite free
+over $\mathbb Z_p$. It also commutes with the two projectors
+and with $p^\nu$-torsion. For a finite $\mathbb Z_p$-module
+$T$,
+\[
+ \operatorname{length}_{\mathcal O}
+                  (T\otimes_{\mathbb Z_p}\mathcal O)
+                =b\,\operatorname{length}_{\mathbb Z_p}T.
+                                                               \tag{FC12}
+\]
+This follows first from $\mathcal O/p^a\mathcal O$ and
+then from the elementary-divisor decomposition of $T$.
+Taking lengths and dividing by $b$ proves (FC11).
+If $p\nmid d$, (FC8) makes the two Fourier maps inverse
+after division by the unit $d$. They preserve every
+local condition and the parity projector, which proves
+the equality.
+\end{proof}
+
+\begin{remark}\label{fcmp-integral-error}
+An exact integral decomposition cannot be substituted for
+(FC8) when $p\mid d$. For instance, take $\Delta=\mathbb Z/p\mathbb Z$,
+let $K$ contain a primitive root $\zeta_p$, and put
+$\pi=\zeta_p-1$. In $\operatorname{Map}(\Delta,K/\mathcal O)$
+let $f(0)=1/\pi$, $f(1)=-1/\pi$, and let all other
+coordinates be zero. This is a nonzero vector, but its
+Fourier coefficient at the character $a\mapsto\zeta_p^{ka}$
+is $(1-\zeta_p^{-k})/\pi\in\mathcal O$, hence is zero in
+$K/\mathcal O$. The same example occurs in either parity
+summand for $\mathbb Z/2\mathbb Z\times\mathbb Z/p\mathbb Z$
+by applying the integral projector for the first factor.
+This explains the necessity of controlling the kernel;
+it is not a counterexample to (FC11).
+\end{remark}
+
+\subsection{A torsion bound independent of the twist}
+
+\begin{lemma}\label{fcmp-torsion}
+Let $L$ be any number field, let $p$ be odd, let $e\ge1$,
+and let $\nu\ge1$. Set
+$F=L(\mu_{p^\nu})$, $u=[F:L]$, $n_F=[F:\mathbb Q]$,
+and let $s_F$ be the number of places of $F$ above $p$.
+Then
+\[
+ \operatorname{length}_{\mathbb Z_p}\mathcal S_p(L,e)[p^\nu]
+       \le \nu u+\nu(n_F+s_F)+\frac{\log h_F}{\log p}
+       \le \nu u+2\nu n_F+\frac{\log h_F}{\log p}.
+                                                               \tag{FC13}
+\]
+In particular the torsion on the left is finite. The
+bound is independent of $e$.
+\end{lemma}
+\begin{proof}
+Put $B=A_e[p^\nu]$. The coefficient exact sequence
+$0\to B\to A_e\xrightarrow{p^\nu}A_e\to0$ shows that
+every class in $\mathcal S_p(L,e)[p^\nu]$ lifts to
+$H^1(L,B)$. At a place away from $p$, inertia acts
+trivially on $A_e$ and multiplication by $p^\nu$ on
+$H^0(I_w,A_e)=A_e$ is surjective. Hence
+$H^1(I_w,B)\to H^1(I_w,A_e)$ is injective.
+Every such lift is consequently unramified away from $p$.
+It suffices to bound this larger finite-coefficient
+cohomology group; no choice of compatible local
+primitives above $p$ is required.
+
+Over $F$, the group $B$ is a trivial cyclic group of
+order $p^\nu$. Inflation--restriction has kernel
+$H^1(\operatorname{Gal}(F/L),B)$, whose cardinality is at
+most $p^{\nu u}$: its cocycles are a subgroup of the
+functions from a group of order $u$ to $B$. The image
+consists of homomorphisms $G_F\to\mathbb Z/p^\nu\mathbb Z$
+unramified away from $p$.
+
+The ray class exact sequence and global reciprocity give
+\[
+ \#\operatorname{Hom}_{\mathrm{unr}\ {\rm outside}\ p}
+                   (G_F,\mathbb Z/p^\nu\mathbb Z)
+ \le h_F\prod_{w\mid p}
+       \#\operatorname{Hom}_{\mathrm{cont}}
+                 (\mathcal O_{F_w}^{\times},\mathbb Z/p^\nu\mathbb Z).
+                                                               \tag{FC14}
+\]
+Here is the precise passage. Every homomorphism on the
+left factors through a ray class group with modulus
+supported above $p$, by reciprocity. The kernel of the
+map from that ray class group to the ideal class group
+is a quotient of the product of the corresponding
+local unit quotients. The number of homomorphisms from
+the class group is at most $h_F$; restriction to that
+kernel bounds the remaining choices by the displayed
+local factors. The groups of homomorphisms for increasing
+moduli form an increasing union. The uniform finite
+bound just obtained also bounds this union.
+These are the ray class exact sequence and reciprocity
+in Milne, Chapter~V, Theorems~1.7 and~3.5--3.6.
+\cite{milne-cft}
+
+For a finite extension $K_0/\mathbb Q_p$ of degree $n_0$,
+\[
+ \#\operatorname{Hom}_{\mathrm{cont}}
+        (\mathcal O_{K_0}^{\times},\mathbb Z/p^\nu\mathbb Z)
+                         \le p^{\nu(n_0+1)}.                   \tag{FC15}
+\]
+To justify this bound, the residue-field unit group has
+order prime to $p$ and its Teichm\"uller representatives
+split it off. The principal units form an abelian pro-$p$
+group. On a sufficiently deep principal-unit subgroup,
+the convergent logarithm and exponential give inverse
+isomorphisms with an ideal of $\mathcal O_{K_0}$: choose
+the depth to have $p$-adic valuation greater than
+$1/(p-1)$, and the usual series converge and their
+formal inverse identities hold. This subgroup is
+$\mathbb Z_p^{n_0}$ and has finite index. Thus the
+principal units are a finitely generated
+$\mathbb Z_p$-module of rank $n_0$. Their torsion is a
+finite subgroup of a field's multiplicative group,
+and is therefore cyclic. The structure theorem over
+$\mathbb Z_p$ gives $\mathbb Z_p^{n_0}$ plus one finite
+cyclic $p$-group. Each factor contributes at most
+$p^\nu$ characters, proving (FC15).
+
+Now $\sum_{w\mid p}[F_w:\mathbb Q_p]=n_F$.
+Equations (FC14)--(FC15) give the bound
+$h_Fp^{\nu(n_F+s_F)}$. Combining with the
+inflation--restriction kernel and taking $\log_p$
+proves the first inequality in (FC13).
+The second uses $s_F\le n_F$.
+\end{proof}
+
+\subsection{The growing family and its uniform error}
+
+Return to the fields
+$L=E_h=K_\chi R_h(\sqrt{-q},\sqrt{-d_0})$
+of (IV1), writing $d_0$ for the second auxiliary prime
+to distinguish it from the degree $d=[L:\mathbb Q]$.
+The fixed primitive character $\chi$ has conductor $M$
+and order $o$. The degree of $K_\chi$ is $o$ and that of
+$R_h$ is $2^h$; the two quadratic adjunctions show
+\[
+                            d\mid 2^{h+2}o.
+                                                               \tag{FC16}
+\]
+For each odd prime $p\mid o$, put
+\[
+ a_p^0=v_p(o),\qquad m_p=\varphi(p^{a_p^0}),\qquad
+ C_p=3a_p^0m_p\frac{\log p}{\log2}
+       +\frac{m_p^2}{2}
+                    \left(1+a_p^0\frac{\log p}{\log2}\right),
+ \quad C_o=\sum_{\substack{p\mid o\\p\ne2}}C_p.
+                                                               \tag{FC17}
+\]
+These constants depend only on the original character.
+In particular $C_o=0$ if $o$ is a power of two.
+
+\begin{theorem}\label{fcmp-uniform}
+Let $P$ be a finite set of odd primes and $t\ge2$ an integer.
+Suppose that the groups in (FC2) are finite for every
+$p\in P$, $1\le e<t$, and $\theta\in X_e(E_h)$. Then
+\[
+ \begin{split}
+ \sum_{p\in P}\log p\sum_{e=1}^{t-1}a_p(E_h,e)
+ &\le
+ \sum_{p\in P}\log p\sum_{e=1}^{t-1}
+                    \sum_{\theta\in X_e(E_h)}\ell_p(e,\theta)\\
+ &\quad+C_o N_h^2(t-1)\log N_h .
+ \end{split}                                                   \tag{FC18}
+\]
+The coefficient of each character length is exactly one,
+regardless of the coefficient extension. The error has
+a fixed polynomial bound in $N_ht$.
+\end{theorem}
+\begin{proof}
+By (FC16), the Fourier error is zero unless $p\mid o$,
+and otherwise $\nu=v_p(d)\le a_p^0$. In (FC13) one may
+enlarge $F$ to $E_h(\mu_{p^{a_p^0}})$; the same proof
+uses $p^\nu$ coefficients and gives the same formula
+with this larger field. Then
+\[
+ u\le m_p,\quad n_F\le dm_p,\quad
+ F\subset\mathbb Q(\mu_{N_hp^{a_p^0}}),\quad
+ |\operatorname{disc}F|
+                 \le (N_hp^{a_p^0})^{n_F}.                     \tag{FC19}
+\]
+The discriminant estimate follows from the tower formula
+and the cyclotomic derivative-norm argument in the proof
+of Lemma~\ref{sv-field}.
+Corollary~\ref{sl-class-number} and $\log(1+x)\le x$ give
+$\log h_F\le \tfrac12 n_F\log|\operatorname{disc}F|$.
+Consequently the error in (FC11), multiplied by $\log p$,
+is at most
+\[
+ a_p^0m_p\log p+2a_p^0dm_p\log p
+            +\frac12d^2m_p^2(\log N_h+a_p^0\log p)
+ \le C_p d^2\log N_h .
+                                                               \tag{FC20}
+\]
+For the last inequality use $d\ge1$ and $\log N_h\ge\log2$.
+Sum (FC20) over the fixed primes dividing $o$ and over
+$1\le e<t$, and use $d\le N_h$. Together with (FC11)
+this proves (FC18). Since $\log N_h\le N_h$ and $C_o$
+is fixed, its error is bounded by $(N_ht)^C$ for one
+integer $C$ chosen before $h,q,d_0,t$.
+\end{proof}
+
+In the source notation the characters in (FC10) are
+exactly the parity-restricted characters of the chosen
+abelian field, and (FC2) is the normalized length of
+the group with zero local conditions at primes dividing
+$pN_h$.\cite{alpo-uniform-source}
+Thus (FC18) supplies the whole-field comparison needed
+to assemble the complementary-parity estimates.
+It does not require that $p$ be prime to the field
+degree. In particular a bound $CB$ for the total
+fixed-conductor character contribution remains $CB$:
+the passage to $E_h$ adds only the polynomial error
+in (FC18). The unproved character estimates in the
+remaining automorphic cases are still required.
+
+

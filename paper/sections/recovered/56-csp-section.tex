@@ -1,0 +1,588 @@
+\section{The two supports of the arithmetic theta column}
+\label{csp-section}
+
+We identify the finite operator defining the column with an
+ordinary measure on each of the two required matrix supports.
+The calculation keeps the normalized Fourier denominator,
+the positive square root in the lattice move, and the
+determinant character.  Their combination gives the precise
+factor $p^{-fa}$ in the selected type.
+
+\subsection{The selected prime and the actual moment coordinates}
+
+Use the fields, ideal $I$ of norm $A$, inverse half different
+$\mathfrak a$, and normalized family of
+Section~\ref{te-section}; here the capital $A$ distinguishes
+the elliptic ideal norm from the matrix rank $a$.
+Let $a,b$ be positive even integers and let
+$N\subset E^a$, $N'\subset E^b$ be unimodular Hermitian
+$\mathcal O_E$-lattices.  Put
+\[
+ \mathcal M=I\mathfrak a\operatorname{Hom}_{\mathcal O_E}(N,N'),
+ \qquad \Lambda=\delta_I\operatorname{emb}(\mathcal M),
+                         \qquad F=e_\chi(N,N'),              \tag{CS1}
+\]
+where $\delta_I$ is the discriminant twelfth root used for
+the elliptic ideal lattice.  All embeddings in $\operatorname{emb}$
+belong to the CM type $\Sigma$, and $f=|\Sigma|$.
+
+The selected prime data are
+\[
+ p\ge5,\quad \pi\in\mathcal O_E,\quad
+ \pi\bar\pi=p,\quad (\pi,\bar\pi)=1,\quad
+ \mathcal P=\{P:P\mid\pi\},\quad
+                 |\mathcal P|=f,\quad N(P)=p.              \tag{CS2}
+\]
+Assume $p\nmid A$ and that $I\mathfrak a$ is a unit at
+every prime over $p$.  These are the actual selected-prime
+conditions.  In particular $p$ splits completely in $E$:
+$N_{E/\mathbb Q}(\pi)=p^f$, so each of the $f$ primes in
+$\mathcal P$ has multiplicity one; the conjugate primes
+are disjoint and account for the other $f$ primes over $p$.
+The inverse half different is a unit there because its inverse
+is an integral ideal whose product with its conjugate is the
+relative different, and this different is a unit at a completely
+split prime.  Thus (CS1) is locally the ordinary Hom lattice
+at these primes.
+
+For each $P\in\mathcal P$ fix nonzero residue functionals
+\[
+ \ell_P:N_P\longrightarrow\mathbb F_p,\qquad
+              \ell'_P:N'_P\longrightarrow\mathbb F_p.       \tag{CS3}
+\]
+They factor through reduction modulo $P$ and are surjective.
+They define the finite local test function
+\[
+ \phi_P(X)=\mathbf1_{\{\ell'_PX=\ell_P\}},\qquad
+             X\in\operatorname{Hom}_{\mathbb F_p}
+                       (N_P/PN_P,N'_P/PN'_P).               \tag{CS4}
+\]
+Outside the integral Hom lattice its value is zero.
+Let $\phi=\prod_{P\in\mathcal P}\phi_P$.
+
+There are two types of transported place used below.
+In the selected type, every map $\iota\eta$, $\eta\in\Sigma$,
+induces a prime in $\mathcal P$.  The ordinary measure
+variable in (GM8) then consists of the conjugate local
+components at $\overline{\mathcal P}$.
+In the conjugate type, every $\iota\eta$ induces a prime
+in $\overline{\mathcal P}$ and the measure variable consists
+of the components at $\mathcal P$.  These are precisely the
+two place conditions used for the two column bounds.
+
+We record the coordinate constants explicitly.  Let $B$ be a
+number field containing all embeddings of $E$ in $\Sigma$,
+and put
+\[
+ \mathcal L_B=\mathcal O_B\langle(\eta(x))_{\eta\in\Sigma}:
+                                      x\in\mathfrak a\rangle,
+ \qquad J_\eta=\{c\in B:c\,e_\eta\in\mathcal L_B\}.
+                                                               \tag{CS5}
+\]
+The prescribed eigen-direction generator $c_\eta$ satisfies
+$J_\eta=c_\eta\mathcal O_B$, after the finite extension in
+the arithmetic datum.
+
+\begin{lemma}\label{csp-coordinate-units}
+At every transported place above $p$ one has
+$|\iota(c_\eta)|_p=1$.
+With the common period $\omega=\Omega_0/\iota(\delta_0)$,
+put
+\[
+ \Omega_I=A\iota(\delta_I)\omega
+       =A\Omega_0\iota(\delta_I/\delta_0),\qquad
+            u_\eta=\frac{\iota(c_\eta)}{\Omega_I}.           \tag{CS6}
+\]
+All $u_\eta$ have absolute value one.  The moment of the
+mixed derivative with direction $c_\eta$ in entry $(i,j)$
+is exactly the corresponding product of the coordinates
+\[
+                         u_\eta\,\iota\eta((X^*)_{ji}).     \tag{CS7}
+\]
+There are no factorials in this mixed-derivative convention.
+\end{lemma}
+\begin{proof}
+Every coordinate of $\mathcal L_B$ is integral at the chosen
+place, since $\mathfrak a$ is a unit above $p$.  Hence
+$|\iota(c_\eta)|_p\le1$.
+For $\eta'\ne\eta$, complete splitting and the Chinese
+remainder theorem give $x\in\mathcal O_E$ for which
+$\iota\eta(x)-\iota\eta'(x)$ is a unit.  Start with the
+vector $(1)_\eta\in\mathcal L_B$, which belongs to this
+lattice because $1\in\mathfrak a$.  For each $\eta'\ne\eta$
+apply the operator
+\[
+         (v_\rho)_\rho\longmapsto
+                     ((\rho(x)-\eta'(x))v_\rho)_\rho.       \tag{CS8}
+\]
+It preserves $\mathcal L_B$, kills the $\eta'$ coordinate,
+and multiplies the $\eta$ coordinate by a unit at the chosen
+place.  After all the operators, the resulting vector is
+$c e_\eta$ with $c\in J_\eta$ and $|\iota(c)|_p=1$.
+Writing $c=c_\eta v$ with $v\in\mathcal O_B$ gives the
+reverse inequality for $|\iota(c_\eta)|_p$.
+
+The period and discriminant ratio in (CS6) are units by
+Proposition~\ref{ci-common-period} and the ideal discriminant
+comparison in that section; $p\nmid A$.  This proves the
+unit assertions.
+For a coordinate direction $v=c_\eta e_{\eta,i,j}$,
+the Hermitian form in (TE2) gives, on rational lattice points,
+\[
+ h\bigl(v,\delta_I\operatorname{emb}(X)\bigr)
+                 =\frac{c_\eta}{A\delta_I}\,
+                                      \eta((X^*)_{ji}).      \tag{CS9}
+\]
+Multiply by $\omega^{-1}$ as in the derivative form of
+(GM13).  This gives (CS7), with (CS6) exactly as stated.
+Multilinearity proves the mixed-derivative formula.  These
+coordinate directions lie in the algebraic linear span of
+$\delta_0^{-1}\Lambda$: the embedding matrix is algebraic
+and invertible, and $\delta_I/\delta_0$ is algebraic.
+Corollary~\ref{gm-algebraic-jets} therefore also proves
+algebraicity of these mixed derivatives, including all the
+rational translates occurring below.
+\end{proof}
+
+\subsection{The finite operator, with its normalization}
+
+Define the two commensurable self-dual lattices
+$\mathcal A,\mathcal B\subset\mathcal M\otimes\mathbb Q$
+by their localizations.  At a selected prime $P$, put
+\[
+ \mathcal A_P=p^{-1}\mathcal M_P,\quad
+ \mathcal B_P=p\mathcal M_P,\qquad
+ \mathcal A_{\bar P}=p\mathcal M_{\bar P},\quad
+ \mathcal B_{\bar P}=p^{-1}\mathcal M_{\bar P};              \tag{CS10}
+\]
+at other primes both equal $\mathcal M$.
+In formulas with $U,W,E$, identify rational matrices with
+their scaled embedded vectors in (CS1).
+The finite groups
+\[
+ T=(\mathcal M\cap\mathcal A)/(\mathcal A\cap\mathcal B),
+ \qquad Y=\mathcal B/(\mathcal M\cap\mathcal B)             \tag{CS11}
+\]
+have order $p^{fab}$ and pair perfectly by
+$\kappa(t,y)=e^{-2\pi iE(t,y)}$.
+The first is the product of the matrix spaces in (CS4).
+This follows directly from (CS10); the local trace duality
+is perfect because $\mathcal M$ is self-dual.
+
+For a function $\Phi$ on $T$, the finite theta operator is
+\[
+ \mathcal Q_\Phi F=
+       \frac1{|T|}\sum_{y\in Y}\sum_{t\in T}
+                  \Phi(t)\kappa(t,y)^{-1}W_yF.              \tag{CS12}
+\]
+Representatives in the indicated lattices are understood.
+The expression is independent of them: on $\mathcal B$ the
+operators $W_y$ are additive; representatives differing by
+$\mathcal M\cap\mathcal B$ act identically on $F$; and
+the characters factor through (CS11).
+
+Here is the precise connection with the actual theta indicator.
+At a general level $c$ and selected set of primes, use the
+two half lattices defined as in (CS10), with $c$ in place
+of $p$.  Put
+$n=[\mathcal M\cap\mathcal A:\mathcal A\cap\mathcal B]$
+and take representatives $R$ of
+$\mathcal B/(\mathcal M\cap\mathcal B)$.
+For a rational selected coset $x$, choose a lift $s_x$ in
+some half lattice $\mathcal A(c')$, with $c'>0$, whose
+selected components agree with $x$ modulo $c\mathcal M$.
+The Chinese remainder theorem supplies such a lift.
+The actual indicator is
+\[
+                  \Theta_x=\frac1n W_{-s_x}\sum_{y\in R}W_yF.
+                                                               \tag{CS12a}
+\]
+Indeed its definition has an outside factor
+$\mathrm{vol}^{-1/2}$.  Its Fourier coefficient at the
+indicator of $\mathcal B$ is
+$\mathrm{vol}^{-1/2}(\mathrm{vol}/n)$: only the zero
+class of $\mathcal M\cap\mathcal A$ contributes.  The
+two factors cancel exactly, giving $1/n$ in (CS12a).
+Here $\mathrm{vol}>0$, since all lattice indices are
+positive.  No assertion that this volume is a $p$-adic
+unit is involved.
+
+The lift in (CS12a) is independent of choice.  Two lifts
+$s,t$ differ by an element of $\mathcal B$.  Moreover they
+both belong to a common integral half lattice: if their
+levels are $c',c''$, use $\mathcal A(\gcd(c',c''))$.
+At a selected prime their difference is integral, so the
+smaller of the two possible denominator bounds bounds
+both; at the conjugate prime both have the corresponding
+integral divisibility.  At other primes they belong to
+$\mathcal M$.  Consequently $W_{-t}W_{t-s}=W_{-s}$
+by the semicharacter law on that half lattice.  The sum
+over $R$ is fixed by $W_{t-s}$, by permutation of its
+classes.  This proves the claimed independence, including
+its phase.
+
+At $p$, the cosets with nonzero (CS4) are the elements
+of $T$ in (CS11).  Choose their lifts in $\mathcal M$.
+Commuting $W_{-s_x}$ through the sum in (CS12a), and using
+$W_{s_x}F=F$, gives exactly (CS12).  Thus its denominator
+is $|T|$, with no further $p$-primary factor.
+
+\begin{lemma}\label{csp-fourier-fiber}
+Choose $X_0\in\mathcal M$ satisfying
+$\ell'_PX_0=\ell_P$ modulo $P$ for every selected $P$,
+and put $K=\ker(\prod_P(\ell'_P\cdot))\subset T$.
+Let $K^\perp\subset Y$ be its annihilator.  Then
+\[
+ |T/K|=|K^\perp|=p^{fa}=:h_0,
+ \qquad
+ \frac1{|T|}\sum_{t\in T}\phi(t)\kappa(t,y)^{-1}
+       =\begin{cases}
+          h_0^{-1}\kappa(X_0,y)^{-1},&y\in K^\perp,\\
+          0,&y\notin K^\perp.
+        \end{cases}                                       \tag{CS13}
+\]
+\end{lemma}
+\begin{proof}
+For each $P$, choose $v\in N'_P/PN'_P$ with
+$\ell'_P(v)=1$.  The map $X=v\ell_P$ is a solution of
+the affine equation.  Chinese remaindering lifts all these
+solutions to one $X_0\in\mathcal M$.
+The linear map $X\mapsto\ell'_PX$ onto the $a$-dimensional
+dual of $N_P/PN_P$ is surjective, so its kernel has
+codimension $a$.  Hence $|T/K|=p^{fa}$.
+The support of $\phi$ is the coset $X_0+K$.
+Summing a character on this coset gives zero unless it is
+trivial on $K$, in which case it gives
+$|K|\kappa(X_0,y)^{-1}$.  Division by $|T|$ proves (CS13).
+The equality $|K^\perp|=|T/K|$ follows from perfectness
+of the pairing in (CS11).
+\end{proof}
+
+\subsection{The conjugate type: exact restriction of the measure}
+
+Suppose first that $\iota$ has the conjugate type.  Then
+$Y$ is the formal $p$-torsion component, and the measure
+variable is the selected component of $\mathcal M$.
+Representatives of $Y$ can be chosen among the strong good
+lifts in (GM10), with any prescribed additional
+prime-to-$p$ multiple in $S$.  To see this explicitly,
+choose $\kappa\in\mathcal O_k$ whose formal component is
+$S^{-1}$ modulo $p^2$ and whose conjugate component is zero
+modulo $p^2$.  The vectors $S\kappa l/p$, $l\in\Lambda$,
+have selected component in $p\mathcal M_P$, lie in
+$\mathcal B$, and realize every class of $Y$.
+They differ from any other representatives by
+$\mathcal M\cap\mathcal B$, so the operator is unchanged.
+The exact law (GM14) therefore identifies (CS12) with the
+measure
+\[
+ \left(\frac1{|T|}\sum_{y\in Y}\sum_{t\in T}
+          \phi(t)\kappa(t,y)^{-1}\kappa(X,y)\right)d\mu_F(X)
+                              =\phi(X)\,d\mu_F(X).          \tag{CS14}
+\]
+The equality is finite Fourier inversion.  In particular its
+norm is at most one, with support
+\[
+ S_{\bar P}=\{X:\ XN_P\subset N'_P,\quad
+                        \ell'_PX=\ell_P\text{ for all }P\in\mathcal P\}.
+                                                               \tag{CS15}
+\]
+The Fourier denominator has disappeared by exact character
+orthogonality.  Bounding its terms separately would give an
+incorrect and unnecessarily large denominator.
+
+\subsection{The selected type: the companion lattice}
+
+Define a new unimodular lattice $N''$ by
+\[
+ N''_P=\ker\ell'_P\subset N'_P,\qquad
+ N''_{\bar P}=(N''_P)^\#,\qquad
+ N''_Q=N'_Q\quad(Q\nmid p).                               \tag{CS16}
+\]
+The dual at $\bar P$ is for the perfect Hermitian pairing
+between the two conjugate completions.
+Local patching, as in Lemma~\ref{acl-patching}, gives a
+global projective lattice with these completions; their
+duality proves global unimodularity.  Put
+\[
+           \mathcal M''=I\mathfrak a
+                         \operatorname{Hom}_{\mathcal O_E}(N,N'').
+                                                               \tag{CS17}
+\]
+
+\begin{lemma}\label{csp-companion}
+The group $K^\perp$ in (CS13) is the image of
+$\mathcal B\cap\mathcal M''$ in $Y$, and this image
+identifies with
+$\mathcal M''/(\mathcal M\cap\mathcal M'')$.
+This quotient has order $h_0=p^{fa}$.  Moreover
+\[
+        \det(N',N'')=(\pi/\bar\pi),\qquad
+        \pi N'\subset N'',\quad \bar\pi N''\subset N'.     \tag{CS18}
+\]
+\end{lemma}
+\begin{proof}
+At $P$, the kernel of $X\mapsto\ell'_PX$ consists of maps
+whose image is in $\ker\ell'_P$.  Under the perfect matrix
+trace pairing, its annihilator consists of adjoint matrices
+that take $\ker\ell'_P$ integrally into $N_P$.
+Equivalently, in bases with $\ell'_P$ the last coordinate,
+the only possibly nonintegral row of the adjoint matrix is
+its last row, with denominator $p$.  The other rows are
+integral.  This is exactly the dual of
+$\operatorname{Hom}(N_P,\ker\ell'_P)$ at $\bar P$,
+which is $\mathcal M''_{\bar P}$.
+It enlarges $\mathcal M_{\bar P}$ by an index $p^a$.
+
+At $P$ the lattice $\mathcal M''_P$ is contained in
+$\mathcal M_P$ and contains $p\mathcal M_P$.
+Thus its selected component creates no quotient modulo
+$\mathcal M$.  By the Chinese remainder theorem one may
+choose representatives of $\mathcal M''/(\mathcal M\cap\mathcal M'')$
+whose selected components are in $p\mathcal M_P$.
+They then belong to $\mathcal B$ and realize the indicated
+annihilator.  The quotient size is $\prod_Pp^a=h_0$.
+
+The relative determinant has valuation $1$ at each $P$,
+$-1$ at each $\bar P$, and zero elsewhere.  These are
+the valuations of $(\pi/\bar\pi)$ by (CS2), proving the
+first equality in (CS18).  The two inclusions follow
+locally from (CS16): at $P$ the kernel contains $pN'_P$,
+and at $\bar P$ its dual is contained in $p^{-1}N'_{\bar P}$.
+At all other primes the lattices agree and $\pi,\bar\pi$
+are units.
+\end{proof}
+
+The exact right-move identity (TE17) now gives
+\[
+ \sum_{y\in K^\perp}W_yF
+      =\sqrt{h_0}\,\chi((\pi/\bar\pi))^{a/2}
+                                      e_\chi(N,N'').        \tag{CS19}
+\]
+The positive real square root is the same one as in the
+definition of the averaging operator.  Since $X_0\in\mathcal M$,
+$W_{X_0}F=F$, and the Heisenberg commutator yields
+\[
+ \mathcal Q_\phi F
+    =h_0^{-1}W_{-X_0}\sum_{y\in K^\perp}W_yF
+    =h_0^{-1}\sqrt{h_0}\,
+       \chi((\pi/\bar\pi))^{a/2}
+                              W_{-X_0}e_\chi(N,N'').       \tag{CS20}
+\]
+This proves the needed identity of theta functions, before
+taking a valuation.
+
+Suppose $\iota$ has the selected type.  The character convention
+(TE16) and (CS2) give
+\[
+ \left|\iota\chi((\pi/\bar\pi))\right|_p=p^f,\qquad
+ \left|\iota\left(h_0^{-1}\sqrt{h_0}
+                         \chi((\pi/\bar\pi))^{a/2}\right)\right|_p
+                                                        =p^{fa}.
+                                                               \tag{CS21}
+\]
+Indeed every $\iota\eta(\pi)$ has absolute value $p^{-1}$,
+and every $\iota\eta(\bar\pi)$ has absolute value one.
+The square root has absolute value $p^{-fa/2}$, cancelling
+the absolute value $p^{fa/2}$ of the character factor.
+
+The class of $X_0$ modulo $\mathcal M''$ is formal
+$p$-torsion in this type: its selected component may have
+order $p$, while its conjugate component already lies in
+$\mathcal M''_{\bar P}$.  We spell out the harmless
+choice of its representative.  If $r$ is any rational
+formal $p^n$-torsion lift modulo a self-dual lattice, choose
+a strong good lift $y$ congruent to $r$ modulo that lattice,
+using the two ordinary idempotents and the Chinese remainder
+theorem as above.  For $l=r-y$ in the lattice,
+the Heisenberg formula and the lattice theta multiplier give
+\[
+                         W_rF'=\zeta W_yF',                 \tag{CS22}
+\]
+where $\zeta$ is a root of unity, since all quadratic and
+alternating values at rational lattice points are rational.
+The exact law for $y$ therefore gives a measure of norm
+at most one for $W_rF'$, on the same ordinary lattice
+component as for $F'$.  This observation needs only the
+absolute value of $\zeta$, not an unspecified equality of
+phases in (CS20).
+
+Apply this to $r=-X_0$ and $F'=e_\chi(N,N'')$.
+By (CS20)--(CS22), the selected-type measure for
+$\mathcal Q_\phi F$ has norm at most $p^{fa}$ and is
+supported on the conjugate ordinary component of
+$\mathcal M''$.  In the original matrix language its
+support is contained in
+\[
+ S_P=\{X:\ X^*(\ker\ell'_P)\subset N_P
+                               \text{ for all }P\in\mathcal P\}.
+                                                               \tag{CS23}
+\]
+To check the inclusion, let $z\in\ker\ell'_P=N''_P$.
+For $v\in N_{\bar P}$, the image $Xv$ lies in $N''_{\bar P}$
+on the conjugate component.  Perfect Hermitian duality
+gives $h(v,X^*z)=h(Xv,z)\in\mathcal O_{E,P}$.
+Since $N_P$ is its appropriate local dual, $X^*z\in N_P$.
+This is exactly the condition in (CS23).
+
+\subsection{The other primes and simultaneous moment approximation}
+
+We verify that restoring the other local test functions does
+not change either bound.  Let $S_0$ be the finite set of
+auxiliary primes, disjoint from the primes over $p$, and
+assume $S_0\cap\overline{S_0}=\varnothing$, as in the
+selected local datum.  Let $c_A,g$ be positive integers
+prime to $p$.
+The full test function has the form
+\[
+                              \Phi=\phi\,\Phi_0,             \tag{CS24}
+\]
+where $\Phi_0$ is supported in the prescribed
+$c_A^{-1}$ integral Hom lattice at $S_0$, is invariant under
+$pg$ times that local Hom lattice, and all its transported
+values have absolute value at most one.  Invariance means
+that it is a function on the finite quotient at $S_0$;
+it does not impose an additional condition at $p$.
+These are the away-from-$p$ datum conditions in the column.
+
+\begin{lemma}\label{csp-other-primes}
+The full finite theta operator associated to (CS24), with
+the same parameter $\mathrm{vol}=1$, is a finite sum
+\[
+                           \sum_j d_jW_{r_j}\mathcal Q_\phi F,
+                                                               \tag{CS25}
+\]
+where $|\iota(d_j)|_p\le1$, each $r_j$ has order prime to
+$p$ modulo both $\mathcal M$ and $\mathcal M''$, and the
+representatives may be chosen arbitrarily divisible by $p$
+at all primes over $p$.  In the conjugate type its measure
+has norm at most one and support (CS15); in the selected
+type it has norm at most $p^{fa}$ and support (CS23).
+\end{lemma}
+\begin{proof}
+All representative quotients in the finite formula split
+as the direct product of their $p$-primary part and their
+part of order prime to $p$.  This is the elementary primary
+decomposition of a finite abelian group, or equivalently
+the Chinese remainder theorem on each localized lattice.
+The alternating pairings between the factors are trivial:
+a character pairing value has order dividing the orders
+of both factors.  Each normalized Fourier denominator
+therefore factors as a power of $p$ times an integer prime
+to $p$.
+
+Use the indicator formula (CS12a), and sum it with the
+values of (CS24) over the finite selected coset quotient.
+Its $p$-part is $T$; the $p$-part of the representative
+group $R$ is $Y$; and the $p$-part of $n$ is $|T|$.
+These assertions follow directly from (CS10), since
+$p\nmid c_Ag$.  Choose $s_x=s_{x_p}+s_{x_0}$ according
+to the primary decomposition, with $s_{x_p}\in\mathcal M$
+and $s_{x_0}$ arbitrarily $p$-divisible.  Such representatives
+exist by Chinese remaindering.  Expand the remaining
+prime-to-$p$ finite sums in (CS12a).  Each coefficient is
+a value of $\Phi_0$, times roots of unity and the inverse
+of an integer prime to $p$, so has absolute value at most
+one.  The remaining $p$-primary sum is exactly (CS12),
+because (CS24) factors and its selected part is (CS4).
+
+Here are explicit compatible choices of representatives.
+If an away-from-$p$ class has order dividing $n$, choose
+an integer $j\equiv1\pmod n$ with $j\equiv0\pmod{p^m}$,
+and replace its representative $r$ by $jr$.
+The class is unchanged, and its $p$-components are as
+divisible as desired.  Choose the $p$-primary representatives
+with the additional factor $S$ in (GM10) divisible by all
+the finitely many away-from-$p$ denominators.  Their
+pairings with the other representatives are then integral
+at every prime.  Thus their $W$ operators commute exactly.
+Changing a representative in its own integral lattice
+quotient does not change the corresponding sum.  Combining
+the remaining two operators introduces at most a root of
+unity by the rational Heisenberg formula.  This proves
+(CS25).  Taking $m\ge2$ ensures in addition that $r_j$
+is integral in both lattices $\mathcal M,\mathcal M''$
+at $p$, so its order in either quotient is prime to $p$.
+
+For the conjugate type one may instead apply the $p$-primary
+Fourier sum after each away-from-$p$ translate.  It then
+restricts the norm-one measure of $W_{r_j}F$ by (CS14).
+The chosen $r_j$ has zero reduction at the selected primes,
+so the same affine condition (CS15) occurs.
+For the selected type commute $W_{r_j}$ with $W_{-X_0}$
+in (CS20).  The introduced factor is a root of unity.
+Apply the ordinary-torsion law to the prime-to-$p$ translate
+$W_{r_j}e_\chi(N,N'')$.  One can choose its strong lift
+congruent to $-X_0$ modulo an additional prime-to-$p$
+multiple of $\mathcal M''$, so the same argument (CS22)
+applies.  Its measure still has norm at most one on the
+ordinary component of $\mathcal M''$.
+Equation (CS21) gives the stated bound and (CS23) the
+support.  Finite sums with coefficients bounded by one
+preserve these bounds by the ultrametric inequality.
+\end{proof}
+
+\begin{theorem}\label{csp-two-supports}
+For the actual finite theta column with standard
+representatives at the selected primes, its mixed-derivative
+table has the simultaneous finite approximation required
+in (CV9)--(CV10).  In the conjugate type the approximating
+point matrices belong to $S_{\bar P}$ and their coefficients
+have absolute value at most one.  In the selected type
+they belong to $S_P$ and the table is approximated by
+\[
+       \sum_\nu b_\nu p^{-fa}
+             \prod_{\eta,i,j}
+                \bigl(u_\eta\iota\eta((X_\nu^*)_{ji})\bigr)^{m_{\eta,i,j}},
+                        \qquad |b_\nu|_p\le1.               \tag{CS26}
+\]
+The $u_\eta$ are the fixed units (CS6), independent of the
+derivative multi-index and the finite approximation.  Thus
+the two ordinary support inputs in
+Theorem~\ref{cv-two-kernels} are proved for this column.
+\end{theorem}
+\begin{proof}
+Lemmas~\ref{csp-coordinate-units} and
+\ref{csp-other-primes} give measures with the exact point
+moments and the stated bounds.  Global rational lattice
+points are dense in their ordinary completions, by the
+Chinese remainder theorem.  In the conjugate type impose
+the fixed residue equations (CS15); lifting those equations
+and then arbitrarily many additional $p$-adic digits proves
+density in the restricted support.  In the selected type
+the global points of $\mathcal M''$ are dense in its
+ordinary component and all satisfy (CS23).
+
+Apply Theorem~\ref{lm-finite-approximation} to any finite
+family of the point polynomials (CS7).  It approximates
+all of them at once by a finite sum of point masses,
+with coefficients bounded by the measure norm.
+For the selected type multiply the measure by $p^{fa}$
+first.  Its norm is then at most one, giving exactly
+(CS26) after division by $p^{fa}$.
+
+The arithmetic column also divides the theta jets by its
+determinant character and inserts the auxiliary local
+character values.  For standard representatives these
+are $p$-adic units, by the principal-ideal argument
+(GM17) and the prime-to-$p$ conductor condition.  The
+normalization is therefore a scalar of absolute value
+one and preserves both approximation assertions.
+Where the coefficient table is descended to its specified
+number field, apply the fixed embedding of that field;
+algebraicity and the equality of the two descriptions of
+the same jet identify the transported values.  This is
+the precise descent condition in the actual table and
+does not introduce an additional denominator.
+\end{proof}
+
+The two bounds above use the actual local affine equation,
+the actual companion lattice, and the exact determinant
+character.  A bounded measure with no character identities
+would not give (CS14), and an eighth-power comparison of
+theta vectors would not give (CS19).  Those dependencies
+were separately proved in Sections~\ref{gm-section} and
+\ref{te-section}.  The incidence identity between adjacent
+columns is a further statement and is not asserted here.
+
+
