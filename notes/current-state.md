@@ -42,7 +42,25 @@ construction; the preferred direct route needs neither.
 
 ## Smaller geometric and frame budget
 
-The [geometric combination](rh-geometric-combination.md) proves:
+The preferred [direct section-degree argument](geometric-degree-frontier.md)
+uses the short integral sections already supplied for the same component
+lattices. Their lower degree bound removes the separate negative-height
+moment. Summing the exact degree-weighted volume comparison first supplies
+one mean directly, without the earlier change of weights. The raw signed
+version removes all heights from its remaining cost, while retaining the
+actual section ranks and twist costs. A mean-volume estimate and an explicit
+rank/surplus bound still have to be supplied.
+
+The [theta-energy comparison](averaged-theta-energy.md) replaces separate
+word-pair inequalities by two exact aggregate energies. The source already
+contains the conditional bridge to the same integral maps and common target
+basis. Retained-energy compression has a sharper exact bound, including the
+sharp tight-frame case. Positive normalizers and the centered global energy
+estimate remain substantive inputs. The existing manuscript already had
+linear rank-loss control; no new exponent gain over that result is claimed.
+
+The earlier [geometric combination](rh-geometric-combination.md) proves
+useful general alternatives:
 
 - Covering descent preserves the coefficient of the section-degree error.
   Under the same source scalar contracts the numerical constant improves
@@ -56,8 +74,8 @@ The [geometric combination](rh-geometric-combination.md) proves:
   source-spread and target-height moments retain their correlations and
   the rank-loss and diagonal-error denominators.
 
-These deductions do not prove the actual growing-family height, section
-remainder or theta-frame bounds. The old
+These deductions do not prove the actual growing-family mean-volume,
+section remainder or theta-energy bounds. The old
 [determinant and component analysis](geometric-core-lower-bound.md),
 [covolume defect](covolume-defect-budget.md) and
 [averaged signed arithmetic identity](averaged-error-budget.md) locate the
@@ -93,17 +111,21 @@ These are exact acceptance conditions and limitations, not new constructors.
 
 ## Next mathematical work
 
-1. **Geometric core (W10).** Prove the actual two weighted height bounds and
-   total Hilbert–Samuel surplus for the cuspidal section lattice with its
-   prescribed Petersson metric. Carry the signed errors through determinant
-   descent, type indices and discarded degrees. Retain positive ranks and
-   uniformity in the growing family.
+1. **Geometric core (W10).** Prove the actual mean-volume estimate and explicit
+   section-rank/surplus cost for the cuspidal lattice with its prescribed
+   Petersson metric. Use short sections to remove the independent negative
+   height moment, then carry signed errors through determinant descent,
+   type indices and discarded degrees. Retain positive ranks and growing-family
+   uniformity.
 2. **Integral maps and global norms (W06/W08).** Supply nonzero integral
    theta maps, sharp auxiliary-level divisibility, normalized global
-   theta/orbital-energy estimates and their frame moments for those same maps.
+   centered theta/orbital-energy estimates for those same maps and exact
+   positive normalizers. A measured aggregate energy can supply the frame
+   moments directly.
 3. **Cohomology and assembly (W04/W02/W11).** Complete the remaining
    complementary-parity integral congruence bounds and prove the total
-   normalized discrepancy estimate throughout the required whole windows.
+   normalized discrepancy in the weighted positive-part scale integral.
+   The locally averaged budget uses the same expanded cofinal windows.
    Optimize numerical envelopes only within parameter ranges that the
    same construction actually supplies.
 
@@ -113,6 +135,14 @@ work packages and the [46-field ledger](../blueprint/endpoint-field-ledger.md).
 These are shared-object responsibilities, not independent assumptions.
 The main manuscript and [short guide](../paper/guide/main.tex) are organized
 by mathematics. The guide has a twelve-page editorial limit.
+
+The [project assessment](project-assessment.md) distinguishes the audited
+milestone count from an unsupported percentage of a completed proof, and
+records conditional paper-space budgets. The
+[RH construction frontier](rh-construction-frontier.md) explains why four
+characters do not bound integral indices or discharge the surviving source
+clauses. Its exact paired-construction alternative is not adopted without
+an actual paired supplier and signed relative estimate.
 
 ## Established structural and local reductions
 
