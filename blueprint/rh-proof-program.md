@@ -37,6 +37,16 @@ integer comparisons are required; they do not follow from an almost-everywhere
 bound. Only the total exponent loss must tend to zero. The analytic
 function remains the zeta sum even when auxiliary primes change.
 
+## Optional finite-prime-window criterion
+
+The [dyadic-tent analysis](../notes/dyadic-tent-filter-audit.md) gives an
+exact three-point relation involving only primes and prime powers in one
+multiplicative window. A short classical proof shows that RH is equivalent
+to eventual nonnegativity of an explicit ordinary-prime deficit. It is an
+alternative analytic target, not a completed arithmetic proof: the signed
+filter does not preserve the one-sided majorants supplied by the preferred
+construction. A new same-map finite-window estimate would be required.
+
 ## The preferred arithmetic comparison
 
 The construction separates larger, or thick, weights from smaller, or thin,
