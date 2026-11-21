@@ -2,6 +2,41 @@
 
 These are mathematical reductions and comparisons. Their proofs are in [the paper](../paper/main.pdf); none establishes the missing arithmetic input for a complete proof of GRH.
 
+## Recovering a matrix from one scalar operator
+
+Let D be the full Capelli differential operator, and let Z be multiplication
+by the relevant Hermitian matrix coefficient. With [A,B] = AB − BA, the full
+contracted matrix is
+
+```math
+\begin{pmatrix}
+D&-[D,Z]\\
+{[D,\overline Z]}&-[[D,Z],\overline Z]
+\end{pmatrix}.
+```
+
+The [new proof](../paper/sections/new/commutator-matrix.tex) retains the
+spectral shifts and coefficient order. It shows that the scalar restriction
+identity determines all four entries and gives their restrictions along any
+fixed finite standard flag. The group operators remain smooth without
+dividing by intermediate minors, and they preserve the support and decay
+conditions used in the Jacquet argument. The integrated residue pairing and
+estimates uniform in growing chains remain open.
+
+## A redundant real-zero assumption
+
+If every primitive Dirichlet L-function is zero-free for real part greater
+than a common number ϑ < 1, every real zero β of a primitive nonprincipal
+real character of conductor q ≥ 3 satisfies
+
+```math
+(1-\beta)\log q\ge (1-\vartheta)\log 3.
+```
+
+Thus the real-zero exclusion needed for the logarithmic-derivative estimate
+is already included in that uniform hypothesis. The determinant proof gives
+an independent route to the real-zero bound.
+
 ## Primitive characters and reflection
 
 If a character modulo $N$ is induced by a primitive character $\psi$ of conductor $q$, then
