@@ -127,13 +127,45 @@
           "sha256": "d4d50de02214ef05c2d952bdeacb5fe6e3e26926106839a84b1462e7848b5f0e"
         }
       ]
+    },
+    {
+      "id": "cm-integral-eigenframes",
+      "status": "PASS",
+      "reviewers": [
+        "root",
+        "finite_window_audit"
+      ],
+      "checked": [
+        "Trace-dual basis coefficients give the generic primitive idempotent and exactly the inverse-different integrality conditions.",
+        "The integral character line is the relative different times that idempotent, with no omission of ramified primes.",
+        "Conjugation invariance of the relative codifferent and localization at all primes over one rational prime make the conjugate generator ratio a unit.",
+        "Equal conjugate finite norms do not require E/E+ unramifiedness locally; separate global host hypotheses are retained.",
+        "The prescribed integral regular plus/minus blocks give the full scaled eigenframes, including when residue characters coincide at two.",
+        "The Q(zeta_8)/Q(i) example has the stated different, conjugate-unit ratio and ramified real extension; exact polynomial checks are supplemental.",
+        "Actual CM point, integral product-isogeny tangent comparison and archimedean period evaluation remain explicit inputs."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/cm-integral-eigenframes.md",
+          "sha256": "b2e61d5a50d0428239fdf23a901044fa2fea311034fe198bedb420596e19ffec"
+        },
+        {
+          "path": "scripts/check_cm_integral_eigenframes.py",
+          "sha256": "3e1aa79778ae6a62b3e3aedf831fbb0333904eef7cc4bb444a094bf2378b4a72"
+        },
+        {
+          "path": "certificates/cm-integral-eigenframes.json",
+          "sha256": "2973f16f6ff566ff803ad346b208d6e093086210e4873f8489e27a4b31c5ebfc"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
     "python scripts/check_determinant_torsion_rigidity.py --offline",
     "python scripts/check_basis_invariant_trace_obstruction.py",
     "python scripts/check_rh_selmer_conormal_pairing.py",
-    "python scripts/check_boundary_hodge_freeness.py"
+    "python scripts/check_boundary_hodge_freeness.py",
+    "python scripts/check_cm_integral_eigenframes.py --offline"
   ],
   "node_counts": {
     "rh": {

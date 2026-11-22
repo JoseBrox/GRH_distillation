@@ -147,6 +147,16 @@ arguments retain ramified coefficient lengths and all actual-model
 hypotheses. Identifying the boundary lattice and evaluating the common
 order at the prescribed CM point remain; constancy does not make it zero.
 
+The [CM integral-eigenframe calculation](cm-integral-eigenframes.md)
+is now exact by relative trace duality: the integral character line is
+the relative different times the generic eigenline. Conjugation
+invariance gives equal finite norms for any semilocal different
+generator, so this local calculation needs no real generator and no
+finite unramifiedness of the CM extension over its real subfield.
+The global construction's separate host conditions remain. Applying the
+calculation still needs its actual integral product frame and CM point;
+the archimedean period evaluation is separate.
+
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
 trace of a positive part. These may be small even when operator norms
