@@ -18,15 +18,15 @@ keeps the two applications and their extra hypotheses explicit.
 The [node counts](../blueprint/progress.md) distinguish finished stated
 implications or adopted inputs from open construction hypotheses. Moving
 files or adding a node is not recorded as closing an existing open node.
-The current continuation starts from main at
-`c9def8d66b96082ad46a06c161de6b8da800b440`, including its preceding
-geometric, sampling and cohomological checkpoints. The independently
-reviewed additions are indexed in
-[the frontier review](../certificates/frontier-progress-review-2026-11-22.json).
-The [integration record](../certificates/frontier-progress-integration-2026-11-22.json)
-pins the updated manuscripts, eight-page guide and route blueprints. The
-eight proof packages were committed separately as their reviews finished;
-the current guide retains the complete short RH analytic proof unchanged.
+This continuation recovered main at
+`4cc0c8b31a7af9954eaa2e83dab5bb7ac3f8bd8a`, including all eight
+previously integrated frontier packages. The earlier
+[frontier review](../certificates/frontier-progress-review-2026-11-22.json)
+remains their historical evidence. The new sharp return bound, exact
+chain denominator, finite section-rank theorem and graded point/tangent
+comparison were each checkpointed on main after independent review.
+Their current proofs and retained assumptions are summarized below.
+The guide retains the complete short RH analytic proof unchanged.
 The source-import atlas and documentary section atlas have no proof
 completion score. The published baseline is RH 6/9 and the GRH technical
 map 17/31; the generated progress table carries the current values.
@@ -82,6 +82,16 @@ relative loss is at most `D rho + (2D^2+4D)/t`, with the exact binomial
 ratio and excess-rank denominator retained. The actual nef and birational
 line-bundle identifications, mean-volume estimate and arithmetic section
 remainder still have to be supplied.
+
+The [cusp counting theorem](cusp-counting-mean.md) supplies the numerical
+mean estimate from the original quotient identities. Integral trace
+pairings put sufficiently short vectors in a small isotropic space;
+packing and a single tail integral bound the logarithmic minimum mean
+by `23/24`. Integral cyclotomic traces span the abelian coefficient field
+over the rationals, giving cusp allowance 3. Their integral span need
+not be the full ring of integers. The actual lattice and covolume,
+normalized quotient measure, counting homogeneity and signed boundary
+comparison remain required.
 
 The [mean-volume supplier](mean-volume-supplier.md) now isolates the
 required normalized arithmetic intersection inequality for the selected
@@ -633,11 +643,13 @@ identification and other period denominators remain required.
    comparisons and surviving character cases. The elementary resultant
    supplier does not prove the trace-to-Selmer estimate: construct the
    marked models and establish their chart, spanning, finiteness,
-   point-lifting, local tangent and trace conditions. Diagonal separation
+   local finite-cocycle and trace conditions. The weighted presentation
+   and finite degree-zero quotient supply the permitted point rescaling,
+   tangent lifting and cocycle determination. Diagonal separation
    and weight-zero rigidity follow from the proved local/class-field
    comparison, and qualitative finiteness supplies all negative base
-   weights. The explicit marking kills normalized coboundaries. Actual
-   tangent lifting/determination and two-sided rigidity remain.
+   weights. The explicit marking kills normalized base coboundaries.
+   The local finite condition and two-sided rigidity remain.
    The compatible conormal
    pairing and full abstract length theorem are now proved under those
    conditions. Its chart normalization and finite orbit cover follow
@@ -652,9 +664,12 @@ identification and other period denominators remain required.
    lattice then follow. The characteristic-zero
    generator, both filtrations, coefficient freeness, determinant torsion,
    vertical rigidity, local-norm comparison and signed CM value are proved
-   under these identifications. Then establish the signed cusp mean and
-   independent finite section-rank/surplus estimate, retaining the exact
-   selected abelian rank. The scalar prime and period bounds are supplied.
+   under these identifications. Identify the actual nef and birational
+   section data and apply the finite jet rank bound, retaining its exact
+   surplus denominator. Identify the quotient counting identity and the
+   signed boundary comparison for the cusp theorem, and bound the
+   arithmetic section remainder. The exact selected abelian rank is retained; the
+   scalar prime and period bounds are supplied.
 4. **Uniform assembly (W02/W11).** Assemble the signed
    finite fourth-power tables on arbitrarily late intervals, with all exponent losses
    and constants fixed at each accuracy.

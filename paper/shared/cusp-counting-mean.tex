@@ -1,0 +1,112 @@
+\subsection{Bounding the average cusp correction by counting}
+\label{sec:cusp-counting-mean}
+
+The averaging estimate has a short proof once the original quotient
+measure and counting identity are identified. Write $\log^+x=\max(0,\log x)$.
+
+\begin{lemma}\label{lem:cusp-counting-tail}
+On a probability space let $\lambda>0$ and $N_t\ge0$ be measurable,
+and fix $r>0$ and $0<a<k$. Suppose $N_r$ is integrable and, for
+$0<t\le r$,
+\[
+ \mathbf1_{\{\lambda<t\}}\le N_t,\qquad
+ N_r\le(3r/\lambda)^a\mathbf1_{\{\lambda<r\}},\qquad
+ \int N_t\le(t/r)^k\int N_r.
+\]
+Then $\log^+(r/\lambda)$ is integrable and
+\[
+ \int\log^+(r/\lambda)
+ \le\frac{a\log3+\log(k/(k-a))}{k-a}+\frac1k.
+\]
+For $a\ge2$ and $k\ge3a$, this is at most $23/24<1$.
+\end{lemma}
+
+\begin{proof}
+Put $M=\int N_r$. The hypotheses give
+$\Pr(\lambda<t)\le\min(1,M(t/r)^k)$. If $M\ge1$, integrating this
+tail, with the split at $u=M^{a/k}$, gives
+\[
+ M\le3^a\int(r/\lambda)^a\mathbf1_{\{\lambda<r\}}
+ \le3^a\left(1+\int_1^\infty\min(1,Mu^{-k/a})\,du\right)
+ =\frac{3^ak}{k-a}M^{a/k}.
+\]
+Thus $M\le M_*=(3^ak/(k-a))^{k/(k-a)}$, also when $M<1$.
+Tonelli's theorem now gives
+\[
+ \int\log^+(r/\lambda)
+ \le\int_0^\infty\min(1,M_*e^{-ks})\,ds
+ =\frac{\log M_*+1}{k}.
+\]
+This proves integrability as well as the claimed bound. For $a\ge2$,
+$k\ge3a$, it is at most
+$\frac12\log3+\frac14\log(3/2)+\frac16\le23/24$;
+use $\log3\le4/3$ and $\log(3/2)\le1/2$.
+\end{proof}
+
+Here is how the pointwise hypotheses arise. Let $E$ be CM of degree
+$d=2f$, let $L$ be an $\mathcal O_E$-stable full lattice in a Hermitian
+$E$-space of Witt index at most $j$, and let $\lambda$ be its shortest
+nonzero vector length in the original Hodge norm. Suppose
+$b(v,w)=\operatorname{Tr}_{E/\mathbb Q}(\xi h(v,w))$ is integral on
+$L$, with $\xi\ne0$, and
+\[
+ |b(v,w)|\le\|v\|\|w\|,\qquad
+ \|\alpha v\|\le\max_\sigma|\sigma\alpha|\,\|v\|.
+\]
+Choose integral elements spanning $E$ over $\mathbb Q$, all of whose
+conjugates have absolute value at most $v_r\ge1$, and put $r=v_r^{-1/2}$.
+For $\|v\|,\|w\|<r$, the integers $b(\alpha v,w)$ have absolute
+value less than one. They vanish; the spanning property and the trace
+pairing imply $h(v,w)=0$. All short vectors therefore span a totally
+isotropic $E$-space, of real dimension at most $2fj$. Balls of radius
+$\lambda/2$ around distinct vectors are disjoint. Comparing their
+volumes inside the ball of radius $t+\lambda/2$ gives, for the number
+$N_t$ of nonzero isotropic vectors of norm less than $t$,
+\[
+ 1\le N_t\le(3t/\lambda)^{2fj}\quad(\lambda<t\le r),
+ \qquad N_t=0\quad(t\le\lambda).
+\]
+Thus the lemma applies with $a=2fj$ and $k=2f(N-1)$ when $N\ge3j+1$,
+provided the original quotient probability measure makes $N_r$
+integrable and satisfies $\int N_t=(t/r)^k\int N_r$.
+
+For abelian $E/\mathbb Q$, the spanning elements admit a simple bound.
+Let $c$ be its conductor. The conductor--discriminant formula gives
+$c\le\operatorname{rd}(E)^2$: at each prime dividing $c$, the
+characters with smaller conductor exponent form a proper subgroup,
+so at least half the $d$ characters have the maximal exponent.
+The integral elements
+\[
+ \operatorname{Tr}_{\mathbb Q(\zeta_c)/E}(\zeta_c^i),
+ \qquad0\le i<\varphi(c),
+\]
+span $E$ over $\mathbb Q$ and have all conjugates bounded by
+$v_r=\varphi(c)/d$. This is a rational spanning assertion; their
+integral span may have nontrivial index in $\mathcal O_E$.
+The classical conductor identities and cyclotomic inclusion are in
+Milne, \emph{Class Field Theory}, v4.03,
+\href{https://www.jmilne.org/math/CourseNotes/CFT.pdf}{Theorems I.4.16
+and V.3.27, and Example V.3.10}.
+
+Assume the same measurable, nonnegative cusp correction $U$ satisfies
+the original pointwise comparison
+\[
+ U\le fj\bigl(2\log^+(1/\lambda)+\log(2fj\operatorname{rd}(E))\bigr).
+\]
+Since $\log^+(1/\lambda)\le\log^+(r/\lambda)+\tfrac12\log v_r$,
+the lemma proves its integrability and
+\[
+ \int U\le fj\bigl(2+\log v_r+\log(2fj\operatorname{rd}(E))\bigr)
+ \le fj\bigl(2+\log j+3\log\operatorname{rd}(E)\bigr).
+\]
+For $B\ge4fN^2$ and $j\ge1$, one has $B\ge64j$; hence, whenever
+$\Lambda_B\ge\log B+\log\operatorname{rd}(E)$,
+\[
+                         \int U\le3fj\Lambda_B.
+\]
+This supplies the numerical allowance $C_u=3$. Application to the
+arithmetic inequality still requires the original lattice and
+covolume, the normalized quotient measure and its counting identity,
+and the identification of this same integral with the signed cusp
+term. The arithmetic model and the one-sided boundary limit are
+retained hypotheses.
