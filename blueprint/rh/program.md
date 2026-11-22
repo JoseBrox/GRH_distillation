@@ -145,7 +145,7 @@ The [CM extension theorem](../../notes/cm-integral-map-extension.md)
 then uses properness and classical semiabelian uniqueness to identify its
 exact integral line and tangent eigenlattices. The actual global family,
 original cubical line, fibre comparisons and pointwise period data,
-cusp term and finite section estimate remain requirements. The
+original Haar quotient and one integrable lattice count, signed boundary comparison, and arithmetic section remainder remain requirements. The [cusp counting theorem](../../notes/cusp-counting-mean.md) supplies allowance 3 from the original measure and lattice identities. The
 [boundary period proof](../../notes/flat-family-boundary-extension.md)
 constructs the generic algebraic determinant and assembles its local norms
 on that model. Anchoring a weight entry
@@ -189,12 +189,13 @@ from absolute summability and square-integrable period sums.
 
 The prescribed-scale compression formulas use known dimension fractions,
 without division by unknown surviving mass. The older actual-mass formulas
-retain their own lost-mass conditions. The [return comparison](../../notes/seed-return-deficit.md) supplies an
-optional scalar bound for the source deficit: integrate the overlap of
-distinct rational returns, retaining the actual source cuts and target
-loss. Together with the target envelope it bounds both defects at the
-retained seed rank. The required smallness remains an arithmetic task;
-absolute overlaps may waste cancellation. Finite mass of \(F\) alone
+retain their own lost-mass conditions. The [sharp return comparison](../../notes/dominant-return-deficit.md)
+bounds source loss by the integrable scalar `B-(2m-A)_+^2`, retaining
+the actual source cuts and target loss. It caps crowded regions by their
+seed mass and preserves the part a dominant return cannot cancel.
+Together with the target envelope it bounds both defects at the retained
+seed rank. Smallness remains an arithmetic task; signed information may
+give a smaller bound. Finite mass of \(F\) alone
 does not control the weighted positive part.
 
 The [earlier energy reductions](../../notes/averaged-theta-energy.md) and
@@ -286,10 +287,12 @@ for every finite-order twist, without a numerical \(K\)-group bound.
 It treats all three actual negative adjoint summands and proves that
 the marked normalization makes a base-point coboundary zero.
 The scalar result includes the prime 2; the actual graded-model
-comparison still uses odd primes. Normalized tangent lifting, the local
-finite-cocycle comparison and tangent determination remain model inputs.
-Two-sided rigidity, construction of the marked model and integral
-lifting also remain. Neither characteristic-zero uniqueness nor tangent
+comparison still uses odd primes. The [graded comparison](../../notes/selmer-tangent-comparison.md)
+supplies the permitted point rescaling, tangent lifting and faithful
+cocycle comparison from the actual weighted presentation and finite
+degree-zero quotient. The [crystalline component comparison](../../notes/selmer-crystalline-component-comparison.md) supplies the local finite-cocycle condition from the original ordinary equations and local-ring factorization. The arithmetic model, two-sided
+rigidity, construction of the marked model and integral lifting remain.
+Neither characteristic-zero uniqueness nor tangent
 rigidity removes integral conormal torsion. The
 [arithmetic frontier](../../notes/rh-selmer-valuation-frontier.md) shows
 why generic rigidity alone cannot bound the missing integral torsion,
@@ -332,9 +335,13 @@ the relevant character phase depends on their difference and is unchanged.
 
 ## Next mathematical work
 
-1. Construct the actual integral theta maps, prove their sharp finite-prime
-   divisibility and retain the normalized global identities. Bound the
-   scalar return cost (or a sharper signed source deficit) and the scalar
+1. Construct the actual integral theta kernels and verify their local laws,
+   original value lattices, stabilizer units and twisted-source ties.
+   The [exact chain identity](../../notes/level-chain-integrality.md)
+   supplies the auxiliary-prime iteration, retaining the source factor
+   and every intermediate rank. Keep all other period denominators and
+   normalized global identities. Bound the sharp scalar return cost
+   (or a smaller signed source deficit) and the scalar
    target excess at a prescribed
    \(c>0\), with the same restrictions and arithmetic metrics.
    A strict source deficit supplies aggregate nonvanishing; any consumer
@@ -342,9 +349,9 @@ the relevant character phase depends on their difference and is unchanged.
    Seed mass before folding supplies neither trace estimate.
 2. Bound the finite weighted Selmer product on the actual twisted primes for
    the growing auxiliary fields. Construct the marked models and verify
-   the chart and finite quotient. Supply normalized tangent lifting,
-   the local finite-cocycle comparison and tangent determination to apply
-   the proved nonpositive base-point rigidity at odd primes. Establish
+   the weighted chart and finite degree-zero quotient. Apply the proved
+   point and tangent comparisons; identify the original local ordinary equations, local-ring factorization and finite inertia conditions for the crystalline comparison
+   to use nonpositive base-point rigidity at odd primes. Establish
    the two-sided rigidity and trace conditions. Use diagonal separation
    with its actual local and point-lifting hypotheses, the compatible
    conormal pairing and the full abstract length theorem. Retain every
@@ -357,7 +364,10 @@ the relevant character phase depends on their difference and is unchanged.
    The ramified determinant line is constructed
    from those data. Apply the supplied boundary, tangent-slope,
    determinant-torsion and CM-period arguments, then prove the signed
-   cusp mean and independent finite section-rank estimate. Use the
+   original Haar quotient and one integrable lattice count, signed boundary comparison and arithmetic section remainder. Apply the [cusp theorem](../../notes/cusp-counting-mean.md) after verifying its original measure and lattice identities. Identify the actual nef
+   and birational section data and apply the
+   [finite jet rank bound](../../notes/finite-section-jet-bound.md),
+   retaining its excess-rank denominator. Use the
    [selected degree comparison](../../notes/selected-eigenspace-degree.md),
    [base-test supplier](../../notes/base-test-height-supplier.md),
    [tower reduction](../../notes/tower-intersection-reduction.md) and

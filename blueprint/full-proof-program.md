@@ -94,6 +94,12 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Exact integral extension of the prescribed CM point | Properness and the classical semiabelian extension theorem supply the integral point and exact group isomorphism. Zero rigidification removes every vertical line twist. Actual model and generic component/original-line identifications remain. |
 | Negative-weight rigidity from qualitative finiteness | Proved for every finite-order twist: a finite strict torsion-Selmer group forces rational negative-weight vanishing, with finite coefficient descent and the exact three adjoint summands retained. The marked equations make base-point coboundaries zero. Actual normalized tangent lifting, local comparison and determination remain at odd primes; neither two-sided rigidity nor a uniform integral bound follows. |
 | Exact algebraicity of the prescribed pure-period CM point | Proved from actual fine-moduli point separation and the finite-index pure-period presentation. A CM elliptic quotient descends the original symmetric rigidified cubical line, coefficient action and both finite level maps; automorphism invariance fixes the same point and component. The actual model and pointwise chart remain required. |
+| Exact auxiliary-prime chain denominator | Proved from the original single-step integral laws and scalar commutation, including complex ambient spaces with embedded rational lattices. Retains the source prime-power gain and each intermediate rank; the actual local kernels and all other denominators remain required. |
+| Finite section rank from one fibre | Proved by resolving the base ideal and evaluating jets on one general finite fibre. Gives the exact binomial ratio and relative loss D rho+(2D^2+4D)/t under the actual nef, birational and degree hypotheses, without a uniform asymptotic threshold. |
+| Sharp source loss from return norms | Proved positive-trace bound with integrand B-(2m-A)_+^2, including arbitrary source cuts and exact target loss. It is always integrable and optimal from the scalar norms alone; arithmetic smallness remains open. |
+| Graded points and tangents from a finite degree-zero quotient | Proved point lifting after the permitted grading rescaling, tangent lifting, automatic continuity and cocycle determination from the actual weighted presentation and framed universal property. The marking gives at most one dimension at rigid points and zero at the base; local finite comparison and two-sided rigidity remain. |
+| A direct counting proof of the cusp mean | Proved a self-normalizing tail bound, short-vector isotropic packing and bounded integral rational spanning for abelian fields. Haar invariance on the original quotient supplies count homogeneity from one integrable radius, with no unknown normalization. The logarithmic minimum mean is at most 23/24 and cusp allowance 3 follows; original lattice/measure, signed boundary and arithmetic-model identifications remain. |
+| Local Selmer conditions from reduced ordinary components | Proved ordinary triangular flags by spectral projectors and crystalline field points by local duality. Saturation and the Jacobson generic fibre put the Kisin ideal inside the radical ordinary ideal, controlling every finite-algebra point including tangents; no unique-component theorem or nonreduced saturated-ideal lifting is needed here. The actual local equations/factorization, global rigidity and integral bounds remain. |
 
 ## Work packages
 
@@ -186,7 +192,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Construct the actual marked arithmetic models with their original chart, finite quotient, normalized tangent lifting, local finite-cocycle comparison, tangent determination and trace conditions. The proved nonpositive base-point vanishing and exact marked normalization then supply the required cotangent spanning at odd primes. Apply diagonal fixed-point separation with its actual local point and lifting/density hypotheses. Retain two-sided rigidity, automorphy, integral lifting and exceptional-prime inputs; apply the compatible conormal pairing and full abstract length theorem to bound the weighted Selmer product uniformly.
+**Next concrete task.** Construct the actual marked arithmetic models with their original weighted presentation, initial chart, finite degree-zero quotient, original ordinary local equations, local-ring factorization and finite inertia conditions and trace conditions. The graded comparison supplies point lifting after the permitted rescaling, tangent lifting and cocycle determination from those model data; the proved nonpositive base-point vanishing and marking then give cotangent spanning. The crystalline component theorem then supplies the local finite-cocycle condition, including dual-number points; for Tate exponent at least two the local argument needs no nonresonant saturation. Retain two-sided cohomological rigidity, automorphy, integral lifting and exceptional-prime inputs; apply the conormal pairing and abstract length theorem to the actual weighted Selmer product.
 
 **Acceptance conditions:**
 
@@ -213,8 +219,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The reduced slice gives one torus orbit per occurring degree-zero character, so the finite quotient supplies the finite cover; it is not an additional arithmetic construction premise.
 - Diagonal-point uniqueness retains the actual local inertia trace, residual separation, class-number exclusion and marked value at complex conjugation; it does not construct the ordinary local deformation condition.
 - Transferring diagonal uniqueness to model fixed-point separation retains point lifting, the finite degree-zero quotient and representation-detection/density properties.
-- Nonpositive base-point cohomological rigidity and the exact marked normalization are proved. The actual normalized deformation lifting, local finite-cocycle comparison and tangent determination remain; a zero cohomology class alone is not a zero framed tangent.
+- Nonpositive base-point cohomological rigidity and the exact marking are proved. The actual weighted presentation, finite quotient, ordinary local equations, local-ring factorization and finite inertia conditions remain model requirements. From these, the graded and crystalline comparisons supply the point/tangent lifts, tangent determination and finite local-cocycle condition. A zero cohomology class alone is not a zero framed tangent.
 - Negative rational finite-Selmer vanishing uses only qualitative strict torsion finiteness and covers every finite-order twist, including ell-divisible order and ell=2. The existing graded-model comparison still assumes odd ell; two-sided rigidity and uniform integral torsion bounds remain separate.
+- The local crystalline comparison uses the actual ordinary equations and fixed parallel Hodge type. Saturation gives dense nonresonant field points on every surviving component; Kisin’s all-finite-algebra theorem then controls tangents. Generic field points alone do not detect nilpotent equations.
 
 <a id="w05"></a>
 ### W05: Classical Galois representations with the required local conditions
@@ -249,7 +256,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, r60. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Construct the actual integral period maps and prove sharp level-prime divisibility with every clearing factor retained. For the prescribed-scale comparison, estimate the source deficit g_c at a known c>0; g_c<1 then proves at least one map nonzero. Any consumer requiring each individual map to be nonzero still needs that stronger statement.
+**Next concrete task.** Construct the original local theta kernels and integral value lattices, prove their commutation and single-step integral laws, and retain stabilizer units and the twisted initial-source identification. The exact chain product then gives auxiliary-prime divisibility with the original source factor and intermediate ranks retained. Keep all other period denominators. Estimate the prescribed source deficit for these same maps; a strict bound gives aggregate nonvanishing only.
 
 **Acceptance conditions:**
 
@@ -290,7 +297,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Bound the scalar return overlap (or a sharper signed source estimate) and the weighted scalar target excess for the actual integral maps, at prescribed mass c=R0 on the retained sources. Retain the exact target-loss term, every rational coset, original finite-level splitting, compact types, volumes, restrictions and heights. The proved seed and scalar inequalities do not establish arithmetic smallness. A strict source bound proves aggregate nonvanishing; individual nonvanishing needs its own supplier.
+**Next concrete task.** Bound the sharp return-norm integral B-(2m-A)_+^2, or a smaller signed source estimate, and the weighted scalar target excess for the actual maps at prescribed mass c=R0. Retain the target-loss term, all rational returns, finite-level splitting, compact types, volumes, source restrictions and arithmetic heights. The source envelope is optimal from norms alone and integrable by the seed identity, but its arithmetic smallness and the target bound remain open. The original projector kernel has an explicit normalized exponential far-return bound. Establish an exact transfer to the actual period Gram operators, or a quantitative quotient-distance Bessel estimate, while retaining near returns and cusp control. The logarithmic cusp estimate does not control the higher inverse moment in the current kernel majorant.
 
 **Acceptance conditions:**
 
@@ -351,7 +358,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Construct the actual proper arithmetic model with its global semiabelian family, original rigidified cubical line, coefficient adjunctions and required geometric fibre data. Retain moduli point separation and the prescribed pointwise pure-period presentations. These data now supply the integral determinant, the exact algebraic CM point on its chosen component, its original line and both finite level maps; properness and semiabelian extension give the integral map and tangent lattice. Then prove the signed cusp mean and independent finite section-rank/surplus estimate.
+**Next concrete task.** Construct the actual proper arithmetic model with its global semiabelian family, original cubical line, coefficient adjunctions and geometric fibre data; retain moduli point separation and the prescribed pure-period presentations. The determinant and CM comparison then follow as proved. Identify the actual section realization, nef weight differences, birational linear system and image degree; the finite jet theorem supplies the upper rank and exact surplus bound from them. Identify the original Haar quotient, lattice and covolume, one integrable count and signed boundary comparison; invariance supplies the count homogeneity and the cusp theorem supplies allowance 3. Bound the remaining arithmetic section remainder.
 
 **Acceptance conditions:**
 
@@ -402,6 +409,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - Geometric-fibre projectivity and the generic regular coefficient rank imply coefficient local freeness through characteristic-polynomial multiplicities and local basis lifting; all Artin lengths at ramified primes are retained.
 - The integral CM map and exact tangent comparison follow from a supplied generic point with its original rigidified line by properness and semiabelian full faithfulness; an isogeny or polarization class does not supply that generic identification.
 - The finite-index pure-period decomposition and actual moduli point separation imply algebraicity of the same chosen point with its original line and both entire finite level maps. No separate component choice or descent of an existential infinite Tate tower is required; the arithmetic model and pointwise period presentation remain hypotheses.
+- The cusp tail theorem supplies a logarithmic mean below one only for the same normalized quotient measure and counting functions. Integral cyclotomic traces span the field over the rationals; they are not asserted to form an integral basis.
 
 <a id="w11"></a>
 ### W11: Weighted slope comparison and the complete average budget
@@ -442,10 +450,10 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W06/W08 first: construct the actual integral maps and prove their divisibility, then estimate the source deficit g_c and the explicit scalar target envelope at a prescribed c>0; strict g_c<1 supplies aggregate nonvanishing only
-1. W04: construct the marked models, chart and finite quotient; supply actual normalized tangent lifting, local finite-cocycle comparison and determination to apply the proved nonpositive rigidity at odd primes, then establish two-sided rigidity and trace conditions and use the full abstract length theorem uniformly
-1. W10: construct the actual arithmetic family, original biextension, fibre data and prescribed pointwise period presentation; exact CM point descent and integral extension now follow from moduli separation, while signed cusp and finite section estimates remain
-1. RH and GRH: assemble the same signed fourth-power tables and meet the positive-part criterion at exponents tending to one half
+1. W06/W08: prove the actual local kernel laws and bound the sharp return-norm and target-excess integrals, with the same lattices, restrictions and normalizers; preserve the exact chain denominator.
+1. W04: identify the marked arithmetic model and finite quotient, establish its local finite-cocycle and two-sided rigidity conditions, and bound the actual weighted integral Selmer product.
+1. W10: identify the arithmetic model, pointwise periods and nef/birational section data; apply the finite jet rank and cusp counting theorems after identifying their geometric and measure hypotheses; prove the signed boundary comparison and arithmetic section remainder.
+1. W02/W11: assemble one compatible signed arithmetic budget on cofinal fourth-power tables, with all accuracy parameters fixed before the windows grow.
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
 

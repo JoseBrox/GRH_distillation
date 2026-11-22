@@ -2,6 +2,20 @@
 
 These are mathematical reductions and comparisons. Their proofs are in [the paper](../paper/main.pdf); none establishes the missing arithmetic input for a complete proof of GRH.
 
+## Shorter suppliers inside the remaining hard steps
+
+| Result | What is proved | What remains required |
+| --- | --- | --- |
+| [Average cusp correction](../notes/cusp-counting-mean.md) | Haar invariance gives count homogeneity from one integrable radius; a tail integral, isotropic packing and integral cyclotomic traces give a logarithmic mean below one and cusp allowance 3. | The actual lattice and covolume, original Haar quotient, one integrable count, and signed boundary comparison. |
+| [Crystalline local conditions](../notes/selmer-crystalline-component-comparison.md) | A matrix flag calculation, local duality and Kisin’s theorem control every finite-algebra point on the chosen reduced ordinary components, including tangent directions. | The original ordinary equations, local-ring factorization and finite inertia conditions; global rigidity and uniform integral bounds remain. |
+| [Finite section rank](../notes/finite-section-jet-bound.md) | Jets on one general fibre give an explicit binomial upper bound and a smaller relative rank loss, without a uniform asymptotic threshold. | The actual projective model, section realization, nef and birational comparisons, and arithmetic section remainder. |
+| [Point and tangent comparison](../notes/selmer-tangent-comparison.md) | A valuation interval gives the permitted point rescaling; finite coefficients and homogeneous tails give tangent lifting; universal matrix entries determine the tangent. The exact marking removes base coboundaries. | The actual weighted presentation, finite degree-zero quotient, local finite-cocycle condition, two-sided rigidity and uniform integral Selmer bound. |
+| [Exact chain denominator](../notes/level-chain-integrality.md) | A single product identity retains the original source prime-power factor and every intermediate dimension in the auxiliary-prime denominator. | The actual local kernels and value-lattice identities, stabilizer units, twisted-source ties and other period denominators. |
+| [Sharp loss from rational returns](../notes/dominant-return-deficit.md) | The positive source trace is bounded by `B-(2m-A)_+^2`, the optimal scalar bound from the return norms alone, with actual source and target restrictions. | A uniform arithmetic bound for this integral and the original target excess. |
+
+These results improve existing open nodes; they do not establish the
+remaining arithmetic construction or change the node counts.
+
 ## Arithmetic comparisons at fourth powers
 
 The exact shape of the corrected prime sums improves finite sampling from

@@ -22,9 +22,11 @@ This continuation recovered main at
 `4cc0c8b31a7af9954eaa2e83dab5bb7ac3f8bd8a`, including all eight
 previously integrated frontier packages. The earlier
 [frontier review](../certificates/frontier-progress-review-2026-11-22.json)
-remains their historical evidence. The new sharp return bound, exact
-chain denominator, finite section-rank theorem and graded point/tangent
-comparison were each checkpointed on main after independent review.
+remains their historical evidence. The sharp return bound, exact chain
+denominator, finite section-rank theorem, graded point/tangent comparison,
+cusp counting theorem and crystalline component comparison were each
+checkpointed on main after independent review. The normalized projector
+tail and its transfer and inverse-moment limitations are also preserved.
 Their current proofs and retained assumptions are summarized below.
 The guide retains the complete short RH analytic proof unchanged.
 The source-import atlas and documentary section atlas have no proof

@@ -142,7 +142,9 @@ def main() -> int:
     if "Overfull \\hbox" in log or "Overfull \\vbox" in log:
         raise RuntimeError(f"Overfull boxes remain; inspect {BUILD.relative_to(ROOT)}/main.log before delivery.")
     import re
-    matches = re.findall(r"Output written on .*?\((\d+) pages?", log, flags=re.S)
+    # TeX wraps its log at a fixed column, possibly inside the word "pages"
+    # when the absolute build path is long. Read through those line breaks.
+    matches = re.findall(r"Output written on .*?\((\d+)\s+p\s*a\s*g\s*e\s*s?", log, flags=re.S)
     if not matches:
         raise RuntimeError("Could not verify the document's page count.")
     page_count = int(matches[-1])

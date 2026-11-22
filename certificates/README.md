@@ -1,10 +1,44 @@
 # What these checks establish
 
-## Current difficult-node continuation
+## Current reduction continuation
+
+The [reduction review](reduction-continuation-review-2026-11-22.json)
+records six new mathematical suppliers and two precisely delimited norm
+checkpoints. It separates independent proof review, exact examples,
+authenticated source interfaces and adopted classical theorems. The
+[integration record](reduction-continuation-integration-2026-11-22.json)
+records the two manuscripts, the eight-page guide, visual checks and
+unchanged proof-map counts. Reproduce the current snapshot check with:
+
+```sh
+python scripts/check_reduction_continuation.py
+```
+
+The new mathematical checks are:
+
+```sh
+python scripts/check_dominant_return_deficit.py
+python scripts/check_level_chain_integrality.py
+python scripts/check_finite_section_jet_bound.py
+python scripts/check_selmer_tangent_comparison.py
+python scripts/check_cusp_counting_mean.py
+python scripts/check_selmer_crystalline_component_comparison.py --offline
+python scripts/check_projector_kernel_tail.py
+```
+
+The crystalline check also authenticates the downloaded primary-reference
+bytes and bounded extracts; omit `--offline` to populate an empty cache.
+The kernel checkpoint authenticates its stated upstream estimate and
+proves the cutoff simplification and moment limitation. It does not
+replace the full upstream proof of that estimate. No new Lean build or
+whole-node completion is claimed. All earlier review and integration
+records describe their own version-controlled snapshots.
+
+## Previous difficult-node continuation
 
 The [frontier proof review](frontier-progress-review-2026-11-22.json)
 records independent mathematical reviews and frozen proof/checker identities.
-The [current integration record](frontier-progress-integration-2026-11-22.json)
+The [earlier integration record](frontier-progress-integration-2026-11-22.json)
 separately records the manuscripts, short guide, blueprint updates and
 visual inspection. Reproduce its artifact checks with:
 

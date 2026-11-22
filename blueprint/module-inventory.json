@@ -238,7 +238,7 @@
       "package": "slope_assembly",
       "role": "primary",
       "status": "recovered",
-      "source_sha256": "a1696dd0cb3f1e92bb58e61c6fc8d3538915535fa9fb672e4c9b0245762d0f5b",
+      "source_sha256": "bb201d03ba8dabba3e34336ef3b6db5a78dc574b0fa0f05c70712ab59283f026",
       "included_proof_sources": {
         "paper/shared/period-bessel.tex": "314ff8d72cc3cd6f8ee95e1040ea6590d534fa890bb11d80cbe93836611a2b11",
         "paper/shared/trace-slope.tex": "a9aa0a2a81589084d0d5edccce83caf3cb8526336c03f7fcd654dd8bd457b00b",
@@ -246,6 +246,8 @@
         "paper/shared/code-rate-trace.tex": "01a7a77e97943a22f6b8b417e18f1840270edd3cf315bbce3dc073eb8cecc17e",
         "paper/shared/tower-intersection.tex": "807229e7fac1474d6959c062b399f6e0339521a65591e753f1d35c561c42e91f",
         "paper/shared/base-test-height.tex": "05b5ddef4d271e54bd16561879d00abf74f35d248ce293481c731c0e9aa5702d",
+        "paper/shared/cusp-counting-mean.tex": "a13099fe994b4e9f1045416fe1327e0c66b717beb6dbca7480f642f6478abaaf",
+        "paper/shared/finite-section-jet-bound.tex": "ddacf81ef5709babe044067d372b11854bc92d2b4ffb5c892fb2ea9da843cee5",
         "paper/shared/selected-tangent-bound.tex": "ea56c36fb5fb92ebf6d4eb1874e3e0d955c50069df75b1077a037589ba663163",
         "paper/shared/moret-bailly-tangent.tex": "55c0780285af96b825ee4fad8897d490eba22d3bc1cd2e93d9b047610613ebf1",
         "paper/shared/flat-determinant-comparison.tex": "5af13d62b5ca653f2c55f65304c7ec3123e38a8525093cc5d5289faad1f38181",
@@ -266,7 +268,8 @@
         "paper/shared/basis-invariant-trace-obstruction.tex": "44a40752546ae9445ebd019e4cc96700e3541bd9c5cc9c6c18fdd4ad44825707",
         "paper/shared/common-unipotent-periodization.tex": "7e9593516c396d347dce11baa30e9509f203108962dd938ed6387b9e32a7bffe",
         "paper/shared/whittaker-scalar-envelope.tex": "7772322cef70ce6708b62484dc107209ee0746696e06108629efe9b2e1074a7d",
-        "paper/shared/seed-return-deficit.tex": "445278ae4fef7292f4eb3298fd11dd6a6b8d3bd6c38dddb40c5916942540b831"
+        "paper/shared/seed-return-deficit.tex": "97be8b1b5affa96ec6c75ab40509d76d68059a11f493a90dfec78cec4f113b69",
+        "paper/shared/dominant-return-deficit.tex": "e8963114f84a3f920f2674c74763bc5b1b74e3a6df4236362dda9eae47de4be7"
       },
       "labels": [
         "cs-section",
@@ -341,6 +344,11 @@
         "geo-tower-block-bound",
         "geo-classical-height-lower",
         "geo-reciprocal-height-limit",
+        "sec:cusp-counting-mean",
+        "lem:cusp-counting-tail",
+        "prop:cusp-counting-haar",
+        "sec:finite-section-jets",
+        "prop:finite-section-jets",
         "cs-mean-volume-prime-cost",
         "eq:mean-volume-prime-cost",
         "cs-mean-volume-intersection",
@@ -452,7 +460,8 @@
         "shared-exact-seed-normalization",
         "shared-whittaker-scalar-envelope",
         "shared-whittaker-excess",
-        "shared-seed-return-deficit"
+        "shared-seed-return-deficit",
+        "shared-dominant-return-deficit"
       ],
       "placement": "preferred exposition"
     },
@@ -833,7 +842,7 @@
       "package": "coarse_cohomology",
       "role": "primary",
       "status": "cited",
-      "source_sha256": "7ae2db85e7a4993ad8f66e57167b94cce96bf1d27decdc1dd149f85706878b2f",
+      "source_sha256": "34b299725e90e09024bcbbd38bb60a12ed2e61075841820ff34251b1dfe27418",
       "included_proof_sources": {
         "paper/shared/selmer-reductions.tex": "3dc0fcdd83042eb015ce44d15af9e76de8616293d7afe51ed4941896d1f71618",
         "paper/shared/rh-selmer-product.tex": "96e68d5ed3f3c813b9c40fc59bcd97b4eec67aeada31f20c3d253c8cd2eea307",
@@ -845,7 +854,9 @@
         "paper/shared/selmer-upper-multiplicity.tex": "f4e3183f781a342393f18299176ece2ea842a9c0be2d8c36e3475939da0211c3",
         "paper/shared/selmer-core-wrapper.tex": "aa06ed18bd3aa32598568a8e04277f39104bf197381dfe9ce23e0954365bec9c",
         "paper/shared/selmer-diagonal-rigidity.tex": "b10b270387e39987281027dbaade62a086c1271c9882dc4b7195a7749f350abd",
-        "paper/shared/selmer-negative-weight-rigidity.tex": "6d37e68856bc18ac6b4f5ff06df6f93ab0401029feb45bfb6ee90d3f72419c2d",
+        "paper/shared/selmer-negative-weight-rigidity.tex": "7dcbc9bca0d8037a500d023e0016da1991190b6209903f0b49e4d9ecc238c2de",
+        "paper/shared/selmer-tangent-comparison.tex": "59ed0be2ead21327b3ca0c14256c31fde9a1e1eee687eaf7704444210e36896b",
+        "paper/shared/selmer-crystalline-component-comparison.tex": "5af8af14ae4399a20770f7a5816530117f16f78e4b4cd8da8e1aca274c43a836",
         "paper/shared/selmer-resultant.tex": "2a3e649f507a706d65786985eeb55f4d627561561602293ec51f68135b208471"
       },
       "labels": [
@@ -901,7 +912,10 @@
         "prop:selmer-zero-weight-rigidity",
         "subsec:selmer-negative-weight-rigidity",
         "prop:selmer-negative-weight-rigidity",
+        "prop:selmer-tangent-comparison",
+        "lem:selmer-normalized-coboundary",
         "lem:selmer-normalized-base-coboundary",
+        "prop:selmer-crystalline-components",
         "selmer-resultant",
         "selmer-resultant-certificate",
         "selmer-common-divisor",
@@ -1198,8 +1212,10 @@
       "package": "integral_coefficients",
       "role": "primary",
       "status": "recovered",
-      "source_sha256": "39e8aac50853e560233a9bb32de76e4dbfe6a66bd5a721c7bbf425b5f2841d36",
-      "included_proof_sources": {},
+      "source_sha256": "805793b613d1c89338d646afc6bfa683171b1de17920b34a4abaf911658d4b49",
+      "included_proof_sources": {
+        "paper/shared/level-chain-integrality.tex": "c248e2069f6544890991a64b8e83fa8b0e11913daf925427c64c6bc554b81c9c"
+      },
       "labels": [
         "div:section",
         "div:product-formula",
@@ -1249,7 +1265,10 @@
         "div:pairing-height",
         "div:pairing-factorization",
         "div:pairing-bound",
-        "div:integral-pairing"
+        "div:integral-pairing",
+        "shared-level-chain",
+        "shared-level-chain-integrality",
+        "shared-level-chain-exact-loss"
       ],
       "placement": "preferred exposition"
     },
@@ -3179,7 +3198,7 @@
       "package": "slope_assembly",
       "role": "context",
       "status": "open",
-      "source_sha256": "29178a02dd367533ac05c7bf907fce88a9f23b71711ca46c41989b5c5c2a98e2",
+      "source_sha256": "5ee9e0b09bc1cf95837616f1ed65b2f203842e42798cbe14702e4ec48aeac308",
       "included_proof_sources": {},
       "labels": [
         "sec:remaining"
@@ -4281,6 +4300,10 @@
     [
       "r96",
       "r34"
+    ],
+    [
+      "r96",
+      "r40"
     ],
     [
       "r96",

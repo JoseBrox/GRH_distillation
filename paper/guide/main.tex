@@ -304,7 +304,11 @@ The determinant norm is at most $e^{r_ZL}$, and the integral index
 improves the degree. With the required section-count inequality, this
 controls negative component heights. The mean
 $\overline h=\sum_Zw_Zh_Z/\sum_Zw_Z$, with the actual weights $w_Z>0$,
-then suffices; the finite section errors must still be bounded.
+then suffices. For the finite upper rank, values and derivatives at one
+general fibre determine a section: excessive vanishing would contradict
+its intersection degree. This gives an explicit binomial bound and
+smaller rank loss, without an asymptotic threshold. The arithmetic
+section remainder still needs a bound.
 \par
 \end{samepage}
 
@@ -314,42 +318,35 @@ height. The remaining bound uses one test intersection and a signed
 determinant term. Under the prescribed positivity conditions, Zhang's
 inequality reduces the test intersection to lower heights for all points,
 including the boundary, and a cusp correction~\cite{yuan-zhang}.
-All these bounds must be uniform.
+For the latter, integral pairings force short vectors into a small
+isotropic space. Haar invariance gives the counting identity from one
+integrable count; packing and a tail integral then bound the logarithmic
+shortest-vector mean by less than one. The original quotient, lattice
+and signed boundary comparison must still be identified.
 
-Classical integral theta sections and Siegel's lemma supply the required
-logarithmic bound for the largest tangent slope in its prescribed metric.
-For the determinant comparison, assume the prescribed proper semiabelian
-model with its original line and coefficient action. The existing level
-makes the period determinant single-valued. Continued periods give
-logarithmic bounds near the complex boundary; the determinant section
-and its reciprocal therefore extend in the actual tangent frames.
-Resolution and GAGA give an algebraic generator with constant complex norm.
+Classical integral theta sections and Siegel's lemma bound the largest
+tangent slope in the prescribed metric. For the determinant comparison,
+assume the original proper semiabelian model, line and coefficient action.
+Its level makes the period determinant single-valued; logarithmic
+boundary bounds extend it and its reciprocal. Resolution and GAGA then
+give an algebraic generator with constant complex norm.
 
-At finite primes, the universal vector extension, toric filtration and
-character identity give freeness for the full coefficient module,
-including ramified primes. First-order sections construct the Hodge
-and conjugate filtrations, including in characteristic two. Frobenius makes the
-character determinant torsion and its degree zero on test curves.
-An elementary cokernel identity gives the exact correction between this
-determinant and the tangent eigenlattices, also at ramified primes.
-The correction depends only on the coefficient field and signature.
-It constructs an invertible integral line without requiring the tangent
-eigensheaves themselves to be free. On the same normal proper flat model
-with connected special fibres, its order is constant after division by
-each fibre component's multiplicity.
+At finite primes, the full coefficient module and its two Hodge
+filtrations give a torsion character determinant. A cokernel identity
+supplies its exact integral correction, including at ramified primes,
+without requiring individual tangent eigensheaves to be free. On the
+same normal proper flat model with connected special fibres, the
+normalized vertical order is constant.
 
-One CM elliptic curve constructs the product and integral eigenbases;
-the discriminant and Kronecker limit formula evaluate its period mean.
-The prescribed pure-period decomposition gives an isogeny from this
-product to the actual fibre. Its original line and finite level maps
-descend to the algebraic numbers. Uniqueness in the moduli problem then
-makes the exact chosen point algebraic. Properness and uniqueness of
-semiabelian extensions identify its integral tangent lattice. Constant
-local norms and the product formula give the signed conjugate-degree
-difference; the period term cancels when ranks agree. The remaining
-inputs are the actual arithmetic model, its original family and fibre
-data, the pointwise period presentation, and the cusp and finite section
-bounds~\cite{reconstruction}.
+One CM elliptic curve supplies the test product and its signed period
+mean. The prescribed pure periods and moduli uniqueness make the exact
+chosen point algebraic, preserving its original line and finite level
+maps. Properness identifies its integral tangent lattice. Constant local
+norms and the product formula give the signed conjugate-degree difference;
+the period term cancels when ranks agree. The actual model, family and
+fibre data, pointwise periods, nef and birational section identifications,
+boundary comparison and arithmetic section remainder remain
+required~\cite{reconstruction}.
 
 \subsection*{Two trace errors for all the maps}
 
@@ -398,10 +395,12 @@ The maps use one common unipotent group. Compact-group orthogonality
 gives the exact seed norm before summing over rational translates.
 Weighted Cauchy--Schwarz bounds the complete sum by one explicit positive
 scalar function. Its excess above $c/D$, integrated against the diagonal
-kernel of the retained target, bounds $c\beta$. With $c=R$, overlaps of
-distinct rational translates, together with the actual mass discarded by
-the target restriction, bound the source deficit. Both scalar costs still
-need arithmetic estimates; keeping their phases can give a sharper bound.
+kernel of the retained target, bounds $c\beta$. For source return norms
+$w_j$, put $A=\sum w_j$, $B=\sum w_j^2$, and $m=\max w_j$.
+The smaller cost $B-(2m-A)_+^2$ bounds the source loss: it preserves
+mass that one dominant return cannot cancel and caps crowded regions by
+their seed mass. Retain the actual target restriction loss as well.
+Both scalar costs still need arithmetic estimates; phases can improve them.
 
 \subsection*{Average the losses before bounding them}
 
@@ -445,12 +444,17 @@ Diagonal point uniqueness follows by averaging on finite inertia groups,
 matching the three characters and using the Hilbert class field.
 Base-point infinitesimal rigidity uses qualitative finiteness, local
 cohomology and the prescribed normalization of the representation.
-The actual model, its local and lifting comparisons, rigidity at the
-other required points, and uniform bounds for the growing family remain
-to be supplied~\cite{reconstruction}.
+The weighted equations and finite degree-zero quotient now supply point
+lifting after rescaling, tangent lifting and recovery of tangents from
+matrix entries. A matrix flag calculation and Kisin's crystalline
+deformation theorem give the local condition on the chosen components,
+including their infinitesimal points. The actual model and local equations,
+rigidity at other points and uniform bounds remain required~\cite{reconstruction}.
 \item \textbf{Integral maps and analytic norms.}
 Construct integral theta maps with the required finite-prime divisibility
-and trace bounds on the same final spaces. A strict prescribed source
+and trace bounds on the same final spaces. One product identity gives
+the chain denominator from the local kernels, retaining the favorable
+source factor and every step's dimension. A strict prescribed source
 deficit can prove their aggregate nonvanishing as part of this estimate.
 The global bounds must hold in growing dimensions.
 \item \textbf{Geometric degrees.}

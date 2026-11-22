@@ -2,7 +2,7 @@
 
 This view covers every local Lean source file at the pinned source revision. It is separate from the manuscript section atlas and the mathematical proof program.
 
-## Freshly checked coverage
+## Coverage of the recorded full-source scan
 
 - **175,187 local Lean files**, all matched byte-for-byte to their pinned Git blob hashes.
 - **753,261 distinct local import edges**; the graph is acyclic.
@@ -64,3 +64,24 @@ the acceptance conditions for each proposed replacement. The
 local tree; the [complete subject table](source-subjects.md) lists all 343
 two-component groups. The complete import graph remains available when a
 dependency must be traced beyond the current mathematical boundary.
+
+## Bounded source comparisons in the current continuation
+
+The complete import inventory above is preserved evidence from its recorded
+scan. This continuation authenticated only the selected source files used
+below; it did not download or rebuild the entire development.
+
+| Mathematical supplier | Bounded source comparison and evidence |
+| --- | --- |
+| Exact auxiliary-prime iteration | [Chain note](../notes/level-chain-integrality.md) and [source certificate](../certificates/level-chain-integrality.json): original rational-image lattice, local kernel laws and triangular commutation factors. |
+| Finite upper section rank | [Jet theorem](../notes/finite-section-jet-bound.md) and [source certificate](../certificates/finite-section-jet-bound.json): component geometry, nef weight differences and exact binomial rank shares. |
+| Selmer point and tangent comparison | [Completed comparison](../notes/selmer-tangent-comparison.md) and [independent review](../certificates/selmer-tangent-comparison-review.json): the permitted grading rescaling, actual framed universal property and marked coboundaries. |
+| Crystalline local tangent condition | [Component comparison](../notes/selmer-crystalline-component-comparison.md) and [certificate](../certificates/selmer-crystalline-component-comparison.json): the original ordinary equations, fixed local subgroup, saturated radical and exact adjoint coefficient module; Kisin's finite-algebra theorem supplies the infinitesimal comparison. |
+| Sharp source trace loss | [Return theorem](../notes/dominant-return-deficit.md) and [certificate](../certificates/dominant-return-deficit.json): the original seed evaluations, rational returns and normalizers. |
+| Average cusp correction | [Counting theorem](../notes/cusp-counting-mean.md) and [certificate](../certificates/cusp-counting-mean.json): the original Hodge norm, integral rational spanning, probability measure, count homogeneity and signed metric comparison. |
+| Limits of finite support | [Return-support checkpoint](../notes/dominant-return-nonvanishing-frontier.md) and [certificate](../certificates/dominant-return-nonvanishing-frontier.json): infinitely many congruent rational returns in the isotropic case, with qualitative decay distinguished from a relative tail estimate. |
+| Quantitative projector tail | [Kernel checkpoint](../notes/projector-kernel-tail.md) and [certificate](../certificates/projector-kernel-tail.json): the normalized exponential far-return estimate, admissible cutoff, and missing period-Gram transfer; the cusp logarithmic mean does not supply the higher inverse moment in its current majorant. |
+
+These are conventional mathematical substitutions with explicit hypotheses.
+They do not identify an exact number of unnecessary Lean files or constitute
+a new kernel verification.

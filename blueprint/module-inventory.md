@@ -105,6 +105,6 @@ The preferred exposition still contains mixed sections and context. This is not 
 | r93 | [The integration formula and the dilation measure](../paper/sections/recovered/93-jg-section.tex) | radial_jacquet | primary | recovered | preferred exposition | r91, r92 |
 | r94 | [Regularization, unfolding, and Jacquet adjointness](../paper/sections/recovered/94-jp-section.tex) | radial_jacquet | primary | recovered | preferred exposition | r92, r93 |
 | r95 | [Fourier decay for the actual Jacquet transforms](../paper/sections/recovered/95-jf-section.tex) | radial_jacquet | primary | recovered | preferred exposition | n-commutator, n-integrated-descent, r84, r85, r86, r89, r91, r92, r93, r94 |
-| r96 | [The remaining mathematical construction](../paper/sections/recovered/96-sec-remaining.tex) | slope_assembly | context | open | preferred exposition | r03, r04, r10, r11, r27, r28, r33, r34, r65 |
+| r96 | [The remaining mathematical construction](../paper/sections/recovered/96-sec-remaining.tex) | slope_assembly | context | open | preferred exposition | r03, r04, r10, r11, r27, r28, r33, r34, r40, r65 |
 | n-commutator | [The full radial matrix from scalar commutators](../paper/sections/new/commutator-matrix.tex) | radial_jacquet | primary | new | preferred exposition | n-integrated-descent, r86, r87, r88, r89, r94, r95 |
 | n-integrated-descent | [Integration and positivity for finite residue words](../paper/sections/new/jacquet-integrated-descent.tex) | radial_jacquet | primary | new | preferred exposition | n-commutator, r81, r83, r89, r92, r94, r95 |

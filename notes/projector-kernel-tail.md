@@ -8,8 +8,7 @@ the original **reproducing projector kernel**, with its original formal
 degrees and finite-level idempotent. Its relative far-return bound is
 
 \[
- \frac{1}{M}\sum_{\gamma\ {
-m far}}
+ \frac{1}{M}\sum_{\gamma\ \mathrm{far}}
        |\phi(x^{-1}\gamma x)|
  \le 2f3^f
        \left(\frac{3\sqrt n}{\tau(x)^2}\right)^{2n^2f}
@@ -76,8 +75,7 @@ All of (2) then hold. Indeed \(n^{15}\ge64\), so
 Thus (1) becomes
 
 \[
- \frac{1}{M}\sum_{\gamma\ {
-m far}}
+ \frac{1}{M}\sum_{\gamma\ \mathrm{far}}
        |\phi(x^{-1}\gamma x)|
  \le 2f3^f
        \left(\frac{3\sqrt n}{\tau(x)^2}\right)^{2n^2f}

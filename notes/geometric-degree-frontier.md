@@ -368,8 +368,13 @@ The remaining geometric frontier is now precise:
 
 1. Supply the period-normalized mean-volume lower bound for the actual
    moving family, with its uniform order of quantifiers.
-2. Either retain the verified source upper-rank supplier and use (2.6),
-   or bound the explicit, height-free signed cost in (3.5).
+2. Apply the [finite jet bound](finite-section-jet-bound.md) to supply
+   the upper rank comparison from the actual section realization,
+   birational linear system, nef line-bundle inequalities and image-degree
+   bound. It gives the smaller relative loss
+   `D rho + (2D^2+4D)/t`, retaining the denominator in the excess rank.
+   The arithmetic section-degree remainder in (2.6), or the explicit
+   height-free signed cost in (3.5), still requires control.
 3. Transport this same component degree through the existing determinant
    descent and type-cut identities, retaining their indices and
    complementary degrees.

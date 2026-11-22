@@ -19,7 +19,7 @@ supported returns.
 An explicit probability model has exact counting homogeneity and an
 integrable logarithmic minimum, but its inverse moments diverge at and
 above the counting-tail exponent. The [kernel-tail analysis](../notes/projector-kernel-tail.md)
-proves both the available lower inverse-moment bound and this limitation.
+proves upper bounds for smaller inverse moments and this limitation.
 The currently inspected far-kernel majorant uses a higher inverse power
 when the two dimensions are identified. This shows that the counting
 contract alone cannot integrate that majorant; it asserts no divergence
