@@ -502,6 +502,15 @@ actual model's point lifting and representation comparison are supplied.
 Negative weights, two-sided rigidity, finite degree-zero algebra and
 integral conormal torsion remain separate requirements.
 
+The [scalar period bound](whittaker-scalar-envelope.md) gives the exact
+original seed normalization and bounds the complete normalized period
+operator by one positive sum of the Whittaker norms. Compact Schur
+orthogonality and weighted Cauchy--Schwarz give constant one. The target
+trace excess is bounded by a scalar positive-part integral against the
+actual retained target's diagonal kernel, with every rational orbit and
+original volume retained. This integral and the source deficit still
+need arithmetic bounds; the seed identity alone proves no nonvanishing.
+
 ## Next mathematical work
 
 1. **Integral maps and global norms (W06/W08).** Supply nonzero integral
