@@ -186,3 +186,11 @@ residue recursion. The [review](../certificates/global-norm-frontier-wave-isomet
 checks all signed tensor factors, actual integrating stabilizers, gauge
 and common Haar constant. The all-word equality is proved by induction;
 finite exact tests serve as independent checks of signs and order.
+
+The [level-system certificate](../certificates/geometry-arithmetic-frontier-level-system.json)
+authenticates the original `N0`, `IsTransition`, `N2` and
+`SiegelCompare` clauses, including the essential `Level.fromK`
+restriction. Its [independent review](../certificates/geometry-arithmetic-frontier-level-system-review.json)
+checks the fixed cones, original coefficient rings, simultaneous inert
+prime and exact intermediate model. No arbitrary half-ideal is
+substituted for the prescribed one.

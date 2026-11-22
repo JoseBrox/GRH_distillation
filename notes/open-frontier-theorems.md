@@ -173,8 +173,8 @@ separate from every local norm identity.
 
 ## W10: the exact integral geometric supplier
 
-**Frontier theorem G.** Complete the remaining simultaneous level,
-formal-arc and cover comparisons for the now-constructed original
+**Frontier theorem G.** Complete the remaining formal-arc and cover
+comparisons for the now-constructed original
 integral models. Identify their actual integral section lattices,
 heights and prescribed metrics, and construct the short spanning
 families and multiplication bounds required by the established
@@ -193,9 +193,13 @@ torsion action prove `PushInvertible` and full `Model.N3`;
 `SplitFibres` holds with degree one. The actual global `N6` model
 dominates every prescribed localization over the same number field,
 with the original cartesian family and primitive-line comparisons.
+The coordinated finite level transitions and exact Siegel comparison
+now prove the original `N0` and full `N2`. The auxiliary prime is uniform
+over all admissible half-levels, using their original imaginary-quadratic
+descent condition.
 
-**First missing construction.** Complete the simultaneous finite-level
-Siegel comparison and `Model.N4` formal-arc clause on one fixed rational
+**First missing construction.** Complete the `Model.N4` formal-arc
+clause on the same fixed rational
 cone system. Then identify the actual geometric section and height
 inputs and prove their numerical arithmetic remainder. The existing
 cusp, jet and signed-boundary lemmas are to be applied unchanged.

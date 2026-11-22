@@ -1,0 +1,298 @@
+\section{Compatible finite levels and the exact Siegel comparison}
+\label{sec:pel-level-system}
+
+The individual integral models can be coordinated without changing
+their primitive line, coefficient field, or lattice.  The important
+choice is to keep the rational cones fixed when the level changes.
+Refining a fan would only give a proper transition, whereas the source
+requires a finite one.
+
+\begin{theorem}[The original simultaneous level clauses]
+\label{thm:pel-level-system}
+The original Siegel family clause \texttt{N0} holds, with $j=1$.
+The individual models can be chosen simultaneously so that, for
+each prime $p$ and each original valuation subring $W$ of $\mathbb C$
+in which $p$ is a nonunit, the resulting local system satisfies
+the complete clause \texttt{N2}.
+In particular, every prescribed level and coefficient inclusion has
+the exact finite \texttt{IsTransition}, and one auxiliary odd prime
+works for every original level in the full \texttt{SiegelCompare}
+quantifier.  These choices are compatible with the global models of
+Theorem~\ref{thm:pel-global-domination}.
+\end{theorem}
+
+\subsection*{The precise Siegel moduli problem}
+
+Let $g\geq1$, let $n$ be an odd prime different from $p$, and put
+$R=\mathbb Z_{(p)}[\zeta_n]$, which is exactly the source's
+$\texttt{ZP}(p,n)$.  Use the fine moduli scheme of principally
+polarized abelian schemes of dimension $g$ with full symplectic
+$n$-level and fixed Weil-pairing root $\zeta_n$.  It is a smooth
+quasi-projective $R$-scheme of relative dimension $g(g+1)/2$
+\cite[Theorem 1.4.1.11, Corollaries 1.4.1.12 and 7.2.3.10]{level-system-lan}.
+The dimension is that of symmetric $g\times g$ deformation matrices.
+Use the original theta-commutator convention
+$e_\lambda(\alpha u,\alpha v)=\zeta_n^{\omega_{\rm std}(u,v)}$.
+To identify it with Lan's opposite Hodge-sign convention, relabel
+by the integral antisymplectic matrix $\operatorname{diag}(I_g,-I_g)$
+and recover the original labels by its inverse.  This works for every
+$g$, fixes $\zeta_n$, and changes neither the underlying lattice nor
+the labelled points in the recovered object.
+
+Write $(A,\lambda)$ for its universal polarized scheme and let
+\[
+                    P=(1\times\lambda)^*\mathcal P_A
+                    \quad\hbox{on } A\times A.
+\]
+This is the source's line $P$, not a theta line on $A$.
+Its diagonal pullback has polarization $2\lambda$.  Accordingly
+its $n$-torsion commutator is $\zeta_n^{2\omega}$, precisely the
+factor of two in \texttt{SiegPre.geom}.
+
+We verify the source's apparently broader valuation-ring property.
+A line $P$ rigidified on both axes of $A\times A$ determines, by
+the rigidified Picard functor and the rigidity lemma, a homomorphism
+$\lambda:A\to A^\vee$ with $P\simeq(1\times\lambda)^*\mathcal P_A$.
+Normalize the two given axis trivializations to agree at $(0,0)$.
+Symmetry of $P$ says $\lambda=\lambda^\vee$.
+These statements hold over arbitrary bases by finite presentation
+\cite[Sections 1.3.1--1.3.2]{level-system-lan}.
+The source's trivial-line-kernel condition is exactly that
+$\ker\lambda$ is the trivial group functor.  For a polarization,
+this is equivalent to principality.  Conversely, a principal
+polarization satisfies that condition on every test scheme.
+
+Now let $V$ be any unit ball specified in \texttt{SiegelFamily.points},
+with fraction field $C$.  The generic principal condition gives
+an isomorphism $\lambda_C$.  Its inverse extends over $V$ by the
+normal finite-approximation argument of the valuation-extension
+theorem: descend the two abelian schemes, $\lambda$, its generic
+inverse and their identities to a finite-type subalgebra of $V$
+over $R$; normalize it inside its fraction field; and apply
+normal-base full faithfulness for semiabelian schemes
+\cite[Proposition 3.3.1.5]{level-system-lan}.
+The normalization is finite because the original arithmetic ring
+is excellent, and remains inside the integrally closed ring $V$.
+Pullback gives the inverse over this very $V$.
+
+The given ampleness on the closed fibre implies relative ampleness
+of the diagonal line over the local base.  One may check this after
+finite presentation: the ample-fibre locus is open for a proper
+finitely presented family and contains the closed point, hence all
+of the local spectrum.  Lan's Proposition 1.3.2.15 now says that
+$\lambda$ is a polarization, including residue characteristic two.
+The full $n$-division conditions in \texttt{SiegPre} give an
+isomorphism of finite etale group schemes and force dimension $g$.
+Since $n$ is odd, the identity for the commutator of $2\lambda$
+uniquely recovers that for $\lambda$.  Thus the given object is an
+object of the fine Siegel moduli problem over $V$, and is represented
+by the required point.  This proves the complete \texttt{points}
+field without a discreteness assumption.  The source's
+dual-number \texttt{unram} field is immediate from the same fine
+representing property.  This proves \texttt{N0} with $j=1$.
+For $g=0$, when needed in \texttt{N2}, use $\operatorname{Spec}R$
+and the trivial abelian scheme and line.
+
+\subsection*{One rational fan for every level}
+
+Choose an integral symplectic basis of the original unimodular
+alternating lattice $(\Lambda,B)$.  Such a basis exists by successively
+splitting a pair with pairing one and taking its orthogonal complement.
+The basis identifies $B$ with the source's $\omega_{\rm std}$;
+there is no rational change of lattice.
+
+In the Siegel group on this fixed lattice, choose a smooth projective
+rational cone system at principal level three, invariant under the
+whole integral compact group $\operatorname{GSp}(\widehat\Lambda)$.
+This is possible by
+\cite[Proposition 2.8(1)--(2)]{level-system-projective}, since that
+compact group normalizes principal level three.  We keep its rational
+cones, rather than choosing new subdivisions at other levels.
+
+Here smoothness at varying auxiliary Siegel levels presents no hidden
+problem.  At a rational isotropic flag, the central unipotent matrices
+have the form $\left(\begin{smallmatrix}1&B_0\\0&1\end{smallmatrix}\right)$
+with $B_0$ symmetric.  Intersection with principal level $m$ replaces
+the integral lattice of these matrices by $m$ times that lattice.
+The dual cusp character lattice is therefore multiplied by $1/m$.
+All the relevant lattices are homothetic.  A cone smooth for one
+is smooth for each after rescaling its primitive generators.
+The invariant system consequently defines smooth projective auxiliary
+Siegel compactifications at every principal level $m\geq3$.
+Projectivity is unchanged: multiply the rational support function
+by a common denominator to make it integral at the chosen level.
+Compatibility along faces and under the integral compact group
+is unchanged as well.  This is the same-cone construction of
+\cite[Construction 7.3.1.6 and the proof of Theorem 7.3.3.4]{level-system-lan}.
+
+For an original level put $L=\operatorname{lcm}(M,A)$.
+Over its original coefficient field, the half/full-level equivalence
+identifies its group with the principal PEL subgroup $U(L)$.
+At residue characteristic $p$, set $m=L/p^{v_p(L)}$.
+The original \texttt{GoodAt} condition gives $m\geq3$.
+Its image is contained in the auxiliary Siegel principal subgroup
+of level $m$.  Use the singleton original symplectic lattice; the
+auxiliary abelian scheme is the same abelian scheme, with its
+principal polarization, not an isogenous replacement or a power.
+
+Pull the fixed Siegel cones back to the PEL cones.  This induced
+PEL system may be nonsmooth; that is allowed.  Define the integral
+PEL compactification by normalization of the auxiliary Siegel
+compactification in the original generic moduli function fields,
+with all original generic components and the prescribed cyclotomic
+component over the original coefficient ring.  These are exactly
+the models in
+\cite[(7.7)--(7.10), Theorem 7.14]{level-system-ramified}.
+Theorem 7.14 identifies the result canonically whenever another
+auxiliary level induces the same rational cones.  The individual
+model, line, integral theta and valuation-extension proofs apply
+to these choices.  In particular their complete
+\texttt{LevelStructureConditions} are already available.
+
+\subsection*{Finite transitions over the exact coefficient rings}
+
+Suppose $l\mid l_2$ and $F\subset F_2$ as in the source.  Then
+$L\mid L_2$.  Use for both models the lower auxiliary Siegel
+level $m=L/p^{v_p(L)}$, which contains both PEL groups, with the
+fixed rational cones.  Work over the larger original valuation ring
+$O_2=c_2.V\,W$.  Over an affine open of this common ambient scheme,
+let $A_0$ be its ring, let $B_1$ be the base-changed lower finite
+normalization ring, and let $B_2$ be the upper normalization ring.
+The generic forgetting map sends $B_1$ into the total fraction ring
+of $B_2$.  Its image is integral over $A_0$, hence lies in $B_2$.
+Moreover a finite set of $A_0$-module generators for $B_2$ also
+generates it as a module over $B_1$.  Thus the resulting map
+\[
+                       Y_2\longrightarrow Y\times_O O_2
+\]
+is finite.  This argument does not require the base-changed lower
+model to be normal.  Nor does it assert that the map of localized
+number rings is finite.  It applies componentwise if necessary.
+
+The maps glue uniquely by their generic restrictions.  Their
+compositions agree for the same reason.  The tautological family
+comparisons are cartesian on the common normalization presentation;
+normal-base full faithfulness extends the action and the original
+rigidified cubical-line comparisons.  On the generic moduli interior,
+forgetting labels gives exactly
+\[
+             \eta_2(a)^{M_2/M}=\eta(a),\qquad
+             \eta_{A,2}(a)^{A_2/A}=\eta_A(a).
+\]
+The half-level ideals cause no ambiguity: their stipulated inclusion
+is precisely the inclusion that makes this forgetting map defined.
+This supplies every field of \texttt{IsTransition}.  Its finite
+morphism is after the stipulated coefficient base change, as required.
+No claim of etaleness along the toroidal boundary is made.
+
+\subsection*{One auxiliary prime for every original level}
+
+Put $K_0=\mathbb Q(\sqrt{-d})$.  Since $d$ is prime and
+$d\equiv7\pmod {16}$, its ring of integers is
+$\mathbb Z[w_0]$.  The source's \texttt{Level.fromK} says
+\[
+      \mathfrak b=\mathfrak a\mathcal O_E,
+      \qquad \mathfrak a=\mathfrak b\cap\mathcal O_{K_0}.
+\]
+The extension $\mathcal O_E/\mathcal O_{K_0}$ is finite faithfully
+flat.  Contracting the two original ideal identities gives
+\[
+          \mathfrak a\overline{\mathfrak a}=(M),
+          \qquad \mathfrak a+\overline{\mathfrak a}=\mathcal O_{K_0}.
+\]
+An inert prime is fixed by conjugation, so these equalities imply
+that it does not divide $M$, for every original level.
+This conclusion uses \texttt{fromK}; arbitrary half-ideals in
+$E$ would not suffice.
+
+Choose an odd inert prime $n\ne p$.  Such a prime can be chosen
+outside any finite set without an analytic hypothesis.  For the
+nontrivial quadratic character of $K_0$, choose an integer with
+character $-1$, and use the Chinese remainder theorem to keep that
+character while making the integer one modulo every excluded
+unramified prime (including two and $p$ when applicable).
+A prime factor with character $-1$ is then new.  Thus
+$n$ is coprime to every $M$.  Take the Siegel family just constructed
+at level $n$, so $j=1$, independently of the original level and
+coefficient field.
+
+\subsection*{The finite etale comparison on the abelian loci}
+
+Let $l_1$ and $F_1$ be precisely those in \texttt{N2}:
+$M_1=M$, $\mathfrak b_1=\mathfrak b$,
+$A_1=\operatorname{lcm}(A,n)$, and $F_1=F(\zeta_n)$.
+Let $U$ and $U_1$ be the actual abelian loci.
+The extension of the original local number rings at $p$ is
+essentially etale, since $n\ne p$.  Thus $U\times_OO_1$ is normal.
+The missing compatible $n$-labels on its actual abelian scheme
+form a finite etale cover.  The conditions of being symplectic,
+$\mathcal O_E$-linear and of the prescribed liftable lattice type
+select the original generic components of this cover; they are
+open and closed.  Equivalently, take exactly the components whose
+generic fibre is the original generic forgetting cover.
+That generic cover is surjective, so the selected finite etale
+cover is surjective over each component of the base.
+
+The finite transition constructed above pulls back the original
+family, so the inverse image of $U$ is exactly $U_1$.
+Both $U_1$ and the selected cover are normal finite schemes over
+$U\times_OO_1$ with the same generic function fields.  Uniqueness
+of normalization identifies them.  This proves the complete finite
+etale surjectivity assertion in \texttt{SiegelCompare}, including
+the case $n\mid A$, when no new level is added.
+
+Using the fixed integral symplectic basis, the exact full-$A_1$
+label map gives the Siegel $n$-level
+$a\mapsto\eta_{A,1}(a)^{A_1/n}$.  Its actual abelian scheme and
+the line $\delta\mathcal L$ give the source's \texttt{SiegPre}.
+The map
+\[
+                     U_1\longrightarrow \mathcal A_{g,n}\times_R O_1
+\]
+is finite: choose this very Siegel space as the auxiliary interior
+in the normalization construction, as permitted by Theorem 7.14.
+The genus is exactly $[E:\mathbb Q](p_D+q_D)/2$.
+The product comparison preserves the biextension line and all
+label powers, proving the specified \texttt{SiegPB} and square.
+
+\subsection*{The reduced flat unramified intermediate model}
+
+Assume now the extra source hypothesis $p\nmid\operatorname{lcm}(M,A)$.
+Then every original label order, including $A_1$, is prime to $p$.
+Over the fine Siegel scheme just used, consider the scheme of
+$\mathcal O_E$-endomorphism structures with the required Rosati
+involution, together with both entire original finite label maps and their
+relations.  Endomorphism structures form a finite scheme by
+\cite[Proposition 1.3.3.7]{level-system-lan}, and are formally
+unramified by the rigidity of homomorphisms of abelian schemes
+\cite[Lemma 2.2.2.1]{level-system-lan}.  The prime-to-$p$ label
+schemes are finite etale, and imposing their identities is a closed
+condition.  The resulting scheme $P$ is finite and formally
+unramified over the Siegel base.
+
+The original generic moduli space maps to $P$ as a monomorphism:
+the abelian scheme, action and finite labels determine its object,
+and the primitive line is recovered uniquely from $w_0$.
+This morphism is finite, because the generic Siegel map is finite
+and $P$ is separated over that base.  Thus it is a closed immersion.
+Let $X'$ be its schematic closure in $P$ with the reduced structure.
+Its generic fibre is the unchanged original generic space.  Every
+component dominates $O_1$, so $X'$ is flat over this DVR.  It is
+reduced, finite and formally unramified over the Siegel base.
+
+The normalization of $X'$ in its generic fields is exactly $U_1$.
+It is finite and surjective, and is an isomorphism over a dense
+open $W\subset X'$; the inverse image of $W$ is dense as well.
+The actual Siegel abelian scheme pulls back to $X'$.  Its universal
+action, the primitive line $(1,\lambda\iota(w_0))^*\mathcal P$,
+and both finite label maps give the source's \texttt{SAB} and
+the two required extended sections.  Pulling back to $U_1$ gives
+the original family and line, by their generic equality and
+normal-base full faithfulness.  All the quantified generic-section
+equalities follow from these equalities of morphisms.
+These are precisely the remaining fields of \texttt{SiegelCompare}.
+
+The construction proves the entire original \texttt{N2}, not only
+proper level transitions or a generic Siegel map.  The remaining
+formal-arc and numerical height, section and global norm obligations
+are not supplied by this theorem.

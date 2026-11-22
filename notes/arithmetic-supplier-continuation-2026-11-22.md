@@ -41,6 +41,15 @@ The exact semiabelian family and primitive line descend effectively.
 This is a coordinated construction, not an assertion about arbitrary
 independently chosen local blowups.
 
+The [level-system theorem](geometry-arithmetic-frontier-level-system.md)
+proves the entire original `N0` and `N2` construction. One fixed rational
+cone system gives the finite transitions and exact Siegel comparison.
+An inert prime in the prescribed imaginary quadratic subfield avoids
+every admissible half-level simultaneously. The actual prime-to-p
+cover and intermediate finite unramified scheme retain the original
+primitive line, labels and coefficient field. The remaining clause of
+the arithmetic `PartI` construction is `N4`, the formal-arc contract.
+
 The full-primary trace, mixed pullback and arbitrary level-prime estimates
 remain in force for these actual constructions. Their final use still
 requires the good cover, formal-arc and map comparisons. Numerical
@@ -103,7 +112,7 @@ aggregate nonvanishing needed by the chosen consumer.
 
 ## Direct next attacks
 
-1. Complete all original simultaneous level/Siegel and formal-arc fields,
+1. Complete the original formal-arc fields on the coordinated level system,
    then identify and estimate the actual arithmetic section lattices.
 2. Complete the actual Taylor–Wiles auxiliary maps, then attack marked
    deformation support and the full integral Selmer budget.

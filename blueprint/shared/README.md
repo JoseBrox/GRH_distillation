@@ -130,8 +130,9 @@ The [complete-DVR construction](../../notes/geometry-arithmetic-frontier-dvr-uni
 and [level symmetry and valuation extension theorem](../../notes/geometry-arithmetic-frontier-level-symmetry.md)
 prove the original individual `LevelStructureConditions`, `PushInvertible`,
 `SplitFibres` with degree one, and `Model.N3`. All original lines, periods,
-normalizations and coefficient fields are preserved. Simultaneous transitions,
-Siegel comparison, global domination and numerical arithmetic estimates remain.
+normalizations and coefficient fields are preserved. The later level-system
+and global-model constructions below supply simultaneous transitions,
+Siegel comparison and global domination. Numerical arithmetic estimates remain.
 
 The [Hecke determinant construction](../../notes/selmer-integral-frontier-hecke-determinant.md)
 and [integral type construction](../../notes/selmer-integral-frontier-type-construction.md)
@@ -158,3 +159,10 @@ signed words. The phase and its prescribed component correction preserve
 the actual residue forms with constant exactly one; the original Haar
 constant and gauges cancel unchanged. The mixed determinant inequality,
 partial-head Fourier transfer and global period estimates remain.
+
+The [level-system theorem](../../notes/geometry-arithmetic-frontier-level-system.md)
+closes the full original `N0` and `N2` clauses. It constructs the fine
+Siegel scheme, finite transitions on one rational cone system, the
+auxiliary prime uniform in every admissible half-level, and the exact
+Siegel comparison including its intermediate finite unramified scheme.
+The remaining arithmetic `PartI` supplier is the formal-arc clause `N4`.
