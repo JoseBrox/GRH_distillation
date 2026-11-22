@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T20:03:21.813322+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Discriminant clearing for the original harmonic chart value under its integral biextension and trace-one hypotheses.",
+  "audit_groups": [
+    {
+      "topic": "Original integral graph",
+      "result": "PASS",
+      "finding": "The graph lattice with coordinates (u,phi-Su) is free and preserved by O_E. The adjoint gauge has no terms of degree below two, so its mixed exponential coefficient yields SA_a-A_bar_a^t S without a denominator 2."
+    },
+    {
+      "topic": "Discriminant projector",
+      "result": "PASS",
+      "finding": "The trace Gram adjugate gives Delta b_i^* integral. Every embedding takes O_E into the valuation ring, so Delta e_tau preserves the actual graph lattice and lifts Delta u_tau in the correct eigenspace."
+    },
+    {
+      "topic": "Conjugate support",
+      "result": "PASS",
+      "finding": "The alternating pairing is adjoint for CM conjugation. Separating embeddings cancels a nonzero field scalar, with no unit assumption in the valuation ring. Contractions consequently occur only between conjugate types."
+    },
+    {
+      "topic": "Integral differential operators",
+      "result": "PASS",
+      "finding": "The explicit conjugated first-order operator has integral vector-field and multiplication coefficients by logarithmic derivatives of integral unit cocycles. The integral element w with w+bar(w)=1 is retained; replacing it by 1/2 would be invalid at two."
+    },
+    {
+      "topic": "Harmonic cancellation and total degree",
+      "result": "PASS",
+      "finding": "The chosen CM-type ordering eliminates within-side commutators. The contraction operator is a linear combination of the defining pluriharmonic Laplacians, so all positive-order Wick corrections vanish in the fraction field before integrality. No nonzero integral coefficient is divided by a factorial. Homogeneity gives exactly Delta^d."
+    },
+    {
+      "topic": "Application and limits",
+      "result": "PASS",
+      "finding": "The chart bound uses the already allowed discriminant factor. It does not supply the normalized global theta trace, determinant-ideal scalar comparison, spanning or archimedean norm. Actual chart construction remains an input."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.TaylorDiscriminants.WickVanishing.HStable",
+      "sha256": "e271b9cfd9929146a4c66dacbd0221f988e60ea51b15dc395a96a7483f120d81",
+      "git_blob_sha1": "7079963d59e4525d78913d4871fd31d92105976a",
+      "independently_read_ranges": [
+        [
+          270,
+          302
+        ]
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.TaylorDiscriminants.WickVanishing.ExpConjConnectionIntegral",
+      "sha256": "8a041ddfd74058b6940cceafb3eb8bb5c0b181b6a768e6c304d8541f772cd902",
+      "git_blob_sha1": "74e12405d1de4172278fa40a2293c3c89b936aa8",
+      "independently_read_ranges": [
+        [
+          40,
+          90
+        ]
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.TaylorDiscriminants.WickVanishing.LemmaH",
+      "sha256": "f1a7d4ec048e5fe961e1658bc6f64f733a2f6d4584ff93b687dfb51301e01829",
+      "git_blob_sha1": "a996566f417e5af84805d1472c83c50869583659",
+      "independently_read_ranges": [
+        [
+          34,
+          67
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.HarmonicValueIntegralOfUnitDiscriminant",
+      "sha256": "2293e5a543079b545e51a752304a4adbf3199e5993dd659387e89adabbef2a0a",
+      "git_blob_sha1": "99e5e3f28452c0e8fb99ad1a6221fdbf6f099c72",
+      "independently_read_ranges": [
+        [
+          168,
+          203
+        ]
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PullbackSections.HolomorphicFamilies.ChartValJ",
+      "sha256": "c590e0e47779759fc7f016a5879c19ffc02c953c0478a41eb885baa836c4eb86",
+      "git_blob_sha1": "b1f152023e1e02bd0e1a165076b43d117d84bad9",
+      "independently_read_ranges": [
+        [
+          140,
+          158
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_geometry_arithmetic_frontier_discriminant_clearing.py --offline",
+    "result": "PASS",
+    "projector_and_graph_checks": {
+      "quadratic_fields": 12,
+      "projector_identities": 72,
+      "integral_graph_eigenlifts": 24,
+      "scope": "Exact integral-basis field arithmetic, including dyadic discriminants; these algebraic tests do not assert existence of a trace-one geometric datum in every field."
+    },
+    "harmonic_word_checks": {
+      "bidegree_spaces": 25,
+      "integral_harmonic_basis_polynomials": 125,
+      "normal_ordering_identities": 500,
+      "scaling_identities": 1500,
+      "integer_contraction_coefficients": 385,
+      "contraction_parameters": [
+        "-3",
+        "1/2",
+        "1",
+        "2"
+      ],
+      "negative_controls": [
+        "Nonharmonic X_1 Y_1 retains contraction 1/2 on constant input.",
+        "Z[i] has trace( a+b*i )=2a, so no integral trace-one element.",
+        "The normalized trace of (1,0) in Z_2 x Z_2 is 1/2."
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/geometry-arithmetic-frontier-discriminant-clearing.md",
+      "sha256": "e81e2aae8a2ead66f3fc969d5041d0b67e18c1027146ac83f0855756868d05d7"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-discriminant-clearing.tex",
+      "sha256": "f68d85b195f1fa38cdaf3f7ea4e3a7136479308bfdd5e4a708caf65ab4ffaa2e"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-discriminant-clearing-references.tex",
+      "sha256": "f0516cc3df36c78cda61f2fe971115818368e9a33b2da31ac0b09956bb1183db"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_discriminant_clearing.py",
+      "sha256": "928b1f595739f977205817a5b684e53e56d539da4f10e3274fdf3eec2ed004b8"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-discriminant-clearing.json",
+      "sha256": "71ae17db5d1e68b5c89299361a771c49f9e38bc9967cf12e7924abd87358d288"
+    }
+  ],
+  "limits": [
+    "The integral trace-one element is an actual retained hypothesis, not automatic for arbitrary CM fields.",
+    "This is a local chart theorem; normalized global theta trace and actual short families remain.",
+    "Exact finite checks supplement the human proof. No Lean build and no whole-node closure."
+  ]
+}

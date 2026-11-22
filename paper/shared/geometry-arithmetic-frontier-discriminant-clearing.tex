@@ -1,0 +1,205 @@
+\section{A discriminant denominator for harmonic derivatives}
+\label{sec:geometry-discriminant-clearing}
+
+The denominator needed for integral theta series permits a simpler local
+argument than a sharp estimate for every ramified eigenspace.  We prove
+the required, coarser bound directly.  The formal group, biextension,
+rigidifications, and integral sections in the statement are fixed geometric
+data; their construction is a separate matter.
+
+Let $R$ be a complete discrete valuation ring of characteristic zero, with
+fraction field $K$.  Let $E$ be a CM field whose embeddings take values in
+$K$, put $O=\mathcal O_E$ and $\Delta=|\operatorname{disc} E|$, and write
+$\bar\tau$ for the conjugate of an embedding $\tau$.  Consider a smooth
+commutative formal group $G$ of dimension $g$ over $R$, with an $O$-action
+and an integral formal biextension.  Retain its rigidifications, symmetry,
+and adjoint identification for complex conjugation.  Let $h(x,z)$ be a
+canonical logarithmic trivialization over $K$, vanishing on both axes.
+Assume that the given element $w\in O$ satisfies $w+\bar w=1$, and set
+\[
+ h_L(x)=h(x,[w]x),\qquad
+ \sigma_i(x)=-\left.\frac{\partial h(x,z)}{\partial z_i}\right|_{z=0},
+ \qquad S_{ij}=\left.\frac{\partial\sigma_i}{\partial x_j}\right|_{x=0}.
+\]
+All derivatives below are ordinary derivatives, without divided powers.
+
+For each embedding $\tau$, choose finitely many integral tangent vectors
+$u_{\tau i}\in\operatorname{Lie}(G)(R)$ satisfying
+$[a]u_{\tau i}=\tau(a)u_{\tau i}$ for $a\in O$.
+For $n\geq0$, let $P$ be a polynomial with coefficients in $R$ in the
+variables $X_{\tau i b}$, $1\leq b\leq n$, homogeneous of total degree $d$.
+Its required harmonicity is
+\begin{equation}\label{eq:discriminant-harmonic}
+ \sum_{b=1}^n
+ \frac{\partial^2P}{\partial X_{\tau i b}\,
+                 \partial X_{\bar\tau j b}}=0
+ \quad\hbox{for every $\tau,i,j$.}
+\end{equation}
+Write $D_u$ for the invariant derivation on $G_K$ with tangent vector $u$.
+Given $m\geq0$ and $f_b\in R[[x_1,\ldots,x_g]]$, define the harmonic value
+\begin{equation}\label{eq:discriminant-harmonic-value}
+ H(P;f)=\sum_\alpha P_\alpha
+   \prod_{b=1}^n
+    \left[\prod_{\tau,i}D_{u_{\tau i}}^{\alpha_{\tau i b}}
+                  \bigl(e^{m h_L}f_b\bigr)\right]_{x=0}.
+\end{equation}
+The exponential is taken over $K$; its coefficients need not be integral.
+
+\begin{theorem}\label{thm:discriminant-harmonic-clearing}
+Under these hypotheses,
+\[
+                  \Delta^d H(P;f)\in R.
+\]
+No assumption that $2$ is a unit, that $E/\mathbb Q$ is Galois, or that
+complex conjugation moves the primes above the residue characteristic is
+needed.  The given integral biextension and the element $w$ remain part of
+the hypotheses.
+\end{theorem}
+
+\begin{proof}
+We give the integral and differential details, since they control possible
+denominators at the prime $2$.
+
+\emph{The integral module.}
+Use the pairing
+$\beta((u,v),(u',v'))=u^t v'-v^t u'$ on $K^g\oplus K^g$ and the lattice
+\[
+             \mathcal H_R=\{(u,\phi-Su):u,\phi\in R^g\}.
+\]
+This is a free $R$-module with the displayed coordinates; a tangent vector
+$u$ has the integral lift $(u,-Su)$.  If $A_a$ is the differential of $[a]$,
+the action on $K^g\oplus K^g$ is
+\[
+             a\cdot(u,v)=(A_a u,A_{\bar a}^{t}v).
+\]
+It preserves $\mathcal H_R$.  Indeed $A_a$ is integral, and the mixed
+coefficient of the adjoint identification of the integral biextension gives
+\begin{equation}\label{eq:discriminant-graph-integral}
+                    S A_a-A_{\bar a}^{t}S\in M_g(R).
+\end{equation}
+The new second integral coordinate is
+$A_{\bar a}^{t}\phi+(S A_a-A_{\bar a}^{t}S)u$.
+For precision, the logarithm occurring in that adjoint identification has
+zero constant and linear terms.  Its mixed degree-two coefficient equals
+the corresponding coefficient of its exponential.  Thus
+\eqref{eq:discriminant-graph-integral} is an integral coefficient of the
+given unit cocycle, with no division by $2$.  Also $S_{ij}$ is the negative
+coefficient of $x_jz_i$ in $h$, with no extra factor of $2$.
+
+\emph{Integral eigenlifts after multiplication by $\Delta$.}
+Choose an integral basis $b_1,\ldots,b_r$ of $O$ and its trace-dual basis
+$b_1^*,\ldots,b_r^*$ in $E$.  The trace matrix has determinant
+$\operatorname{disc}E$, so its adjugate shows that $\Delta b_i^*\in O$.
+Every embedding of $O$ into $K$ takes values in $R$, because $R$ is
+integrally closed.  The projector on the $\tau$-eigenspace is
+\[
+ e_\tau=\sum_i\tau(b_i^*)[b_i].
+\]
+The trace-duality identity gives $e_\tau$ this action on every split
+$E$-module.  Consequently $\Delta e_\tau$ preserves $\mathcal H_R$.
+Apply it to $(u_{\tau i},-S u_{\tau i})$.  We obtain an integral eigenlift
+\[
+ \xi_{\tau i}=(u'_{\tau i},v_{\tau i})\in\mathcal H_R,
+                  \qquad u'_{\tau i}=\Delta u_{\tau i}.
+\]
+The pairing is adjoint for conjugation:
+$\beta(a\xi,\eta)=\beta(\xi,\bar a\eta)$.
+Applying this to the horizontal eigenvector $(u'_{\nu j},0)$ and to
+$\xi_{\tau i}$ shows
+\begin{equation}\label{eq:discriminant-contraction-support}
+          (u'_{\nu j})^t v_{\tau i}=0
+                         \quad\hbox{unless $\nu=\bar\tau$.}
+\end{equation}
+Distinct embeddings can be separated by an element of $O$; the resulting
+nonzero scalar is cancelled in the field $K$, without asserting that it
+is a unit of $R$.
+
+\emph{Integral differential words.}
+Let $\nabla_{(u,v)}$ denote the first-order operator on the formal
+biextension with central weight $m$.  Put $U=e^{m h_L}$.
+For $\xi=(u,\phi-Su)\in\mathcal H_R$, the conjugate operator
+$U^{-1}\nabla_\xi U$ preserves $R[[x,y]]$.
+Here is the coefficient check.  Its horizontal vector-field coefficients
+are those of $D_u$, hence integral.  Its vertical coefficients are
+\[
+             D_u\sigma_i-(Su)_i+\phi_i,
+\]
+and its multiplication term is
+\[
+        m\left(D_u h_L+\sum_i\sigma_i u_i-\sum_i y_i u_i\right).
+\]
+The biextension identities give
+$D_u\sigma_i-(Su)_i\in R[[x]]$ and
+$D_u h_L+\sum_i\sigma_i u_i\in R[[x]]$.
+To obtain them, differentiate the two addition identities and the symmetry
+and adjoint identities of the rigidified integral biextension; use
+$[w]+[\bar w]=[1]$ in the second expression.  Each logarithmic derivative
+of an integral unit is its derivative multiplied by its integral inverse.
+This proves these integrality assertions using ordinary derivatives and
+integer multiplication only.  Repeating such operators therefore
+introduces neither factorial denominators nor a denominator $2$.
+
+\emph{Harmonicity removes all contractions.}
+Choose one member of each pair $\{\tau,\bar\tau\}$ and order the operators
+from that side before those from the other side.  Write
+$\nabla_{\xi_\ell}=A_\ell+B_\ell$, where
+$A_\ell=\nabla_{(u'_\ell,0)}$ and
+$B_\ell=\nabla_{(0,v_\ell)}$.
+The $A$'s commute, the $B$'s commute, and
+$[B_\ell,A_{\ell'}]=m\beta((0,v_\ell),(u'_{\ell'},0))$ is a scalar.
+Within each chosen side this scalar is zero by
+\eqref{eq:discriminant-contraction-support}.
+Moving the $B$'s to the right of each ordered word gives the usual finite
+contraction expansion.  In the polynomial notation its correction is
+\[
+         \sum_{r\geq0}\frac{\mathcal Q^rP}{r!},\qquad
+ \mathcal Q=\sum_{\tau,i,j}c_{\tau i j}
+       \sum_b\frac{\partial^2}
+        {\partial X_{\tau i b}\,\partial X_{\bar\tau j b}},
+\]
+where the scalars $c_{\tau i j}$ are the displayed commutators with the
+chosen order.  One can verify this identity by expanding the generating
+exponentials for the two sides: commuting them contributes the exponential
+of the scalar cross commutator.  Since the commutator vanishes on each
+side, there is no additional half-diagonal term.
+Equation~\eqref{eq:discriminant-harmonic} gives $\mathcal QP=0$.
+Thus every term with $r>0$ is exactly zero in $K$ before integrality is
+considered.  There is no division of a nonzero integral coefficient by $r!$.
+
+The remaining horizontal value is precisely
+\eqref{eq:discriminant-harmonic-value} with directions $u'$.  This follows
+by restricting the horizontal operators to the graph of $\sigma$; the
+axis rigidification makes their constant value equal to the corresponding
+invariant derivatives on $G$.
+On the other hand, the ordered expression is integral: replace each
+operator by $U^{-1}\nabla_\xi U$, apply the resulting words to the integral
+$f_b$, and take constant coefficients.  Since $U(0)=1$, this replacement
+does not alter those constants.  The coefficients of $P$ and all the
+words are integral.  Finally, every monomial of $P$ has total degree $d$,
+so replacing all $u$ by $\Delta u$ multiplies the value by $\Delta^d$.
+\end{proof}
+
+\paragraph{Use in the theta denominator.}
+For a valuation normalized by $v/e$, $e>0$, the theorem gives the chart
+bound
+\[
+                        v(H(P;f))/e\geq-d\,v(\Delta)/e.
+\]
+The original row homogeneity makes $d$ the sum of the row degrees.  Thus
+the factor $\Delta^d$ already present in the proposed clearing integer
+\[
+                        Z=|Q|\,\Delta^d M^d
+\]
+absorbs this entire local loss.  Here $Q$ is the finite set of level
+characters and $M$ is the level.  This replaces the sharp ramified
+harmonic estimate in that application, including its pairing of ramified
+primes.  It does not prove the normalized primary-torsion trace identities,
+the determinant-ideal scalar comparison, theta spanning, or the independent
+archimedean norm estimate.  Those inputs are still required to place the
+actual theta family in the global section lattice.
+
+The trace-discriminant calculation is standard
+\cite{stacks-harmonic-discriminant}.  The formal identities used here,
+including the integral graph, integral first-order operators, and the
+contraction formula, are matched to the fixed original source
+\cite{alpoge-harmonic-discriminant}.
