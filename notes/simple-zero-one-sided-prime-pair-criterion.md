@@ -241,6 +241,31 @@ real zeta zero at $1/2$, and the functional equation
 takes any multiple left-half zero to one in the right half.
 This proves the assertion. QED.
 
+**Quantitative local consequence.** More generally, put
+
+```math
+A=\max\left\{0,\limsup_{x\to\infty}
+          \frac{H_2(x)}{\sqrt x\log x}\right\}.
+```
+
+If this number is finite, the same argument with a fixed
+majorant coefficient $A+\varepsilon$ excludes all multiple
+zeros off the critical line and gives, for a zero
+$\rho=1/2+i\tau$ of multiplicity $m\ge2$,
+
+```math
+\boxed{\frac{m(m-1)}{\tau^2+1/4}\le A.}
+```
+
+Indeed $\delta^2F_2(\rho+\delta)$ tends to the double-pole
+coefficient $m(m-1)/[\rho(\rho-1)]$, whereas positivity
+bounds its absolute value by $A+\varepsilon$.
+Let $\varepsilon\downarrow0$. Consequently an upper
+bound $A<2/(T^2+1/4)$ rules out every multiple
+zeta zero with $|\mathrm{Im}\,\rho|\le T$. At $A=0$
+this reduces to the all-height simplicity criterion (10).
+A numerical bound on $A$ has not been supplied.
+
 **Corollary (the positive-averaged endpoint).** Fix any $h\ge0$.
 The same conclusion holds if condition (10) is assumed for
 $\mathcal A_h H_2(x)$ in place of $H_2(x)$, where
