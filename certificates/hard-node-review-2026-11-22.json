@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-11-22",
   "baseline_main": "8a76dcbac8ae0ea879176df329ea720c5f8da1fa",
-  "scope": "Independent review of new hard-node reductions. This first checkpoint preserves the proofs and evidence; manuscript integration is recorded separately when complete.",
+  "scope": "Independent mathematical review of the hard-node reductions, with frozen proof and verification artifacts. Manuscript integration is recorded separately.",
   "packages": [
     {
       "id": "determinant-torsion-rigidity",
@@ -461,6 +461,38 @@
           "sha256": "24e2912445318f0a6cc04709d10a63fc4ce0d416e8ef094dc593517c2e376b58"
         }
       ]
+    },
+    {
+      "id": "half-level-determinant",
+      "status": "PASS",
+      "reviewers": [
+        "geometric_frontier",
+        "finite_window_audit",
+        "root"
+      ],
+      "checked": [
+        "Trace duality reconstructs the nondegenerate skew-Hermitian form from the original integral alternating form and coefficient adjunction.",
+        "Local bases of the projective lattice prove integrality and invertibility of the determinant; cancellation of the invertible conjugate ideal gives the exact source half-level congruence.",
+        "Unitary conjugation gives congruence modulo the conjugate ideal, and coprimality upgrades this to the full integer level.",
+        "The nonzero algebraic-integer norm lower bound contradicts the archimedean unit-circle upper bound for level at least three.",
+        "The exact quadratic-ring example at level two has the claimed coprime half-level ideals and a unimodular alternating form, proving the threshold sharp.",
+        "The conclusion concerns determinant monodromy on the abelian locus; extension in the actual boundary tangent frames, algebraic descent and finite-place norms remain separate.",
+        "Root read the complete note and TeX, checked the exact per_det_one contract, and reran the checker; the independent reviewer authenticated all three pinned source interfaces."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/half-level-determinant.md",
+          "sha256": "37dc56119bcef2abc20ef8d9c85e0ea8c2d48f95f14c88e6007ce4ac51465186"
+        },
+        {
+          "path": "scripts/check_half_level_determinant.py",
+          "sha256": "6e2f17c0b7ee8762c78b90a8fb9041a342d59ce71f78d26d4b30ba96ec9b1150"
+        },
+        {
+          "path": "certificates/half-level-determinant.json",
+          "sha256": "70e8a658cf8dd5f2fe823f8c319d37765b73a9c122b70898ddcf00b73076b3dc"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
@@ -477,7 +509,8 @@
     "python scripts/check_cm_product_period_calculation.py",
     "python scripts/check_rh_selmer_admissibility.py",
     "python scripts/check_rh_selmer_upper_multiplicity.py",
-    "python scripts/check_rh_selmer_core_wrapper.py"
+    "python scripts/check_rh_selmer_core_wrapper.py",
+    "python scripts/check_half_level_determinant.py"
   ],
   "node_counts": {
     "rh": {

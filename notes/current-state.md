@@ -153,8 +153,9 @@ torsion exponent for the character determinant, and a short effective-divisor
 argument gives one normalized finite order on the connected fibre.
 Its denominator divides the gcd of the fibre multiplicities. These
 arguments retain ramified coefficient lengths and all actual-model
-hypotheses. Identifying the boundary lattice and evaluating the common
-order at the prescribed CM point remain; constancy does not make it zero.
+hypotheses. Its application still needs the actual boundary lattice and
+the comparison with the prescribed CM point; constancy does not make
+the order zero.
 
 The [CM integral-eigenframe calculation](cm-integral-eigenframes.md)
 is now exact by relative trace duality: the integral character line is
@@ -176,6 +177,16 @@ then give the signed flat degree. The actual algebraic flat determinant
 family, its map to the chosen compactification and the same-model norm
 comparison remain hypotheses; a good CM object alone does not identify
 that map or establish constancy of its prescribed norm.
+
+The [direct determinant argument at the prescribed level](half-level-determinant.md)
+supplies determinant monodromy one on the abelian locus without a
+further level cover or a root-of-unity theorem. The actual half-level
+condition gives determinant congruence modulo its ideal; conjugation
+upgrades this to congruence modulo the full integer level. The norm
+lower bound then contradicts the unit-circle upper bound unless the
+determinant is one. A unimodular example at level two shows the threshold
+is sharp. Extension in the actual boundary tangent frames and algebraic
+descent remain separate geometric assertions.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
