@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "claim": "Pinned source identity and exact algebra checks supporting the complete fraction-field paired determinant identity.",
+  "result": "With the original frame including [G,G] subset H, all lambda_i and the corrected even phi have polarized primitives; this is DetAlg71-72.",
+  "sources": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/FrameWith.lean",
+      "git_blob_sha1": "870e5d03dc371704626c5433d8d0f936472fc697",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.FrameWith",
+      "sha256": "de3426f148c5c5358de1b548fb600ea3f2d434f107fdb852a45a88f57b74a60a",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 26,
+          "end": 72,
+          "sha256": "1af9dd8e1a841b25520549bf92b1cf923f339b03a0f1298097e84cdd0b1003bf"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/DetAlg.lean",
+      "git_blob_sha1": "212acfc9f6875e362346c332718dc3fa9a18065e",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.DetAlg",
+      "sha256": "d0c6b9fba87b031f71627a8593985408caf13d61aa0b04f8477daead83af41ae",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 71,
+          "end": 141,
+          "sha256": "846cafe7ebb1ef6a8b2ef699bb955fe2e4ee0180ebc4062ccb4d305a19d819b9"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/EvenPart.lean",
+      "git_blob_sha1": "9e9fdee1721a951b44a616222344fd34ceaeb7cd",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.EvenPart",
+      "sha256": "0c9075211d4a6d27298f6f87296950d2309ba639900e962ec3e969bcbfd51524",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 38,
+          "end": 82,
+          "sha256": "fbb8620104f114d8b09da9e8e1e57599ef56a87e915a5ef84a78a4338d06bfbb"
+        },
+        {
+          "start": 130,
+          "end": 214,
+          "sha256": "6e4659c09a5ce41b2cab5bc1fb567d29d4a3a8a366ab5254fc5e6f2a3c44071a"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/DerEv.lean",
+      "git_blob_sha1": "554e24a70a3039344804cd17bd17e8566b9ef744",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.DerEv",
+      "sha256": "786bd7f064da84c420924ea8511e9b3fb85247a8897f67141632fca688bf5a21",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 13,
+          "end": 98,
+          "sha256": "a323cc5bb6a42566b31228060f7daac3471bbeee0a23d1123cba78126db991d4"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/DetAsm.lean",
+      "git_blob_sha1": "e3d5cfea2aa99cd96ff5a2c784c46d90aac16e51",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.DetAsm",
+      "sha256": "5cbaa93c93024b226e2f65cff6a1f43d19eb55531fc4ef63a7dfd0a7a6515b22",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 213,
+          "end": 268,
+          "sha256": "8f1e12da22ee405f7e52e32adc010d2909275d76b48cddc6da7b5d721f1feee0"
+        }
+      ]
+    }
+  ],
+  "exact_checks": {
+    "correction": {
+      "correction_cocycle_identity": "PASS over the free associative algebra with central q,r",
+      "trace_identity": "tr((C+lambda*kappa)rho)=(chi-1)tr(Y*kappa*rho)",
+      "negative_controls_rejected": [
+        "reverse defect sign",
+        "claim trace zero for all chi",
+        "reverse lambda-kappa order"
+      ]
+    },
+    "even_derivations": [
+      {
+        "characteristic": 3,
+        "block_sizes": [
+          1,
+          0
+        ],
+        "derivation_dimension": 0,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 5,
+        "block_sizes": [
+          1,
+          0
+        ],
+        "derivation_dimension": 0,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 7,
+        "block_sizes": [
+          1,
+          0
+        ],
+        "derivation_dimension": 0,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 3,
+        "block_sizes": [
+          1,
+          1
+        ],
+        "derivation_dimension": 0,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 5,
+        "block_sizes": [
+          1,
+          1
+        ],
+        "derivation_dimension": 0,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 7,
+        "block_sizes": [
+          1,
+          1
+        ],
+        "derivation_dimension": 0,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 3,
+        "block_sizes": [
+          1,
+          2
+        ],
+        "derivation_dimension": 3,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 5,
+        "block_sizes": [
+          1,
+          2
+        ],
+        "derivation_dimension": 3,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 7,
+        "block_sizes": [
+          1,
+          2
+        ],
+        "derivation_dimension": 3,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 3,
+        "block_sizes": [
+          2,
+          2
+        ],
+        "derivation_dimension": 6,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 5,
+        "block_sizes": [
+          2,
+          2
+        ],
+        "derivation_dimension": 6,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 7,
+        "block_sizes": [
+          2,
+          2
+        ],
+        "derivation_dimension": 6,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 3,
+        "block_sizes": [
+          3,
+          0
+        ],
+        "derivation_dimension": 8,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 5,
+        "block_sizes": [
+          3,
+          0
+        ],
+        "derivation_dimension": 8,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      },
+      {
+        "characteristic": 7,
+        "block_sizes": [
+          3,
+          0
+        ],
+        "derivation_dimension": 8,
+        "matrix_unit_primitive": "delta(X)=S X-X S"
+      }
+    ],
+    "normality_alone_negative_control": {
+      "group": "F_5 semidirect F_5^x, affine multiplication",
+      "elements": 20,
+      "twisted_cocycle_pairs": 400,
+      "H": "identity subgroup, normal but not containing commutators",
+      "nonboundary_witness": "z(1,1)=1, whereas (chi(1,1)-1)Y=0 for every Y",
+      "commutator_witness": "[(2,0),(1,1)]=(1,1)",
+      "scope": "Negative control for dropping [G,G] subset H, not a source counterexample."
+    }
+  },
+  "limits": [
+    "The human proof is not certified by this script and no Lean compilation was run.",
+    "Finite-field derivation tests are finite exact checks; the note proves the result generally.",
+    "Integral paired-module assembly and finite simultaneous auxiliary choice remain separate.",
+    "No whole Selmer node closes; RH 6/9 and GRH 17/31 remain unchanged."
+  ],
+  "reproduce": "python3 scripts/check_selmer_integral_frontier_even_detection.py --offline",
+  "artifacts": {
+    "notes/selmer-integral-frontier-even-detection.md": "fa5e65b37e07e2116a9433ed66dfb1c43c1a6c77fa38463372c6226b02e44b0b",
+    "paper/shared/selmer-integral-frontier-even-detection.tex": "647f5cc132036795663a0798ecc62c94ba4c6a0f5afce08bf703096920c94347",
+    "paper/shared/selmer-integral-frontier-even-detection-references.tex": "9983be72542c67e88e28418af82275836f4c8035438e318aa77367fbdece4e9d",
+    "scripts/check_selmer_integral_frontier_even_detection.py": "f42075eea0b99ae8e9a568bc742bf1d9a4c970ceb32be7fd1fb34bc3ee348206"
+  },
+  "dependencies": {
+    "certificates/selmer-integral-frontier-odd-detection.json": "ae1e839d10ab88aad0b1fbca50116b5ddd1da01eaaec91c0a02098f670adb4c2",
+    "scripts/check_selmer_integral_frontier_odd_detection.py": "f32c8fd0f6b6563630f5065ca24c8d5c7c41a78b1bcd47ed62daee1e9cf8ff19"
+  }
+}

@@ -1,0 +1,67 @@
+\begin{corollary}[Completion of paired determinant detection]
+\label{cor:selmer-paired-detection}
+Under the hypotheses of Proposition~\ref{prop:selmer-odd-paired-detection},
+assume also $[G,G]\subseteq H$. Then the matrices $Y_i$ in that
+proposition can be supplemented by $Y_0\in E$, with $sY_0^T=Y_0$,
+such that
+\[
+ \varphi(g)=d_\chi Y_0(g)
+          +\chi(g)\sum_i[\kappa_i(g),A_gY_i].
+\]
+\end{corollary}
+
+\begin{proof}
+Put $C(g)=\chi(g)\sum_i[\kappa_i(g),A_gY_i]$ and
+$\psi=\varphi-C$. Substituting $\lambda_i=d_\chi Y_i$ gives
+\[
+ C(gh)=C(g)+\chi(g)A_gC(h)
+             +\chi(g)\sum_i[\kappa_i(g),A_g\lambda_i(h)].
+\]
+Thus $\psi$ is an even $\chi$-twisted cocycle. The polarization
+of $\kappa_i,Y_i$ gives $C(\sigma g)=sC(g)^T$, hence the same
+identity for $\psi$. For $h\in H$, cyclicity of trace gives
+\[
+ \operatorname{tr}\left(\left(C(h)+\sum_i\lambda_i(h)
+                   \kappa_i(h)\right)\rho(h)\right)=0.
+\]
+Consequently $\operatorname{tr}(\psi(h)\rho(h))=0$ on $H$.
+
+Let $R=F[H]$, let $\pi:R\twoheadrightarrow E$ extend $\rho$,
+and extend $D(h)=\psi(h)\rho(h)$ linearly. It is a derivation
+relative to $\pi$, with zero trace. For $x\in\ker\pi$,
+\[
+                 0=\operatorname{tr}D(xy)
+                    =\operatorname{tr}(D(x)\pi(y))\quad(y\in R).
+\]
+The trace pairing on $E$ is nondegenerate, as pairing with each
+$E_{ji}$ reads one entry. Thus $D$ factors through a derivation
+$\delta:E\to E$. Choose a base index $\beta(i)$ in the block
+containing $i$, the same choice throughout each nonempty block, and put
+\[
+                     S=\sum_i\delta(E_{i\beta(i)})E_{\beta(i)i}.
+\]
+For $k,l$ in the same block, the product rule gives
+$SE_{kl}=\delta(E_{k\beta(k)})E_{\beta(k)l}$ and
+$E_{kl}S=\delta(E_{k\beta(k)})E_{\beta(k)l}-\delta(E_{kl})$.
+Therefore $\delta(X)=SX-XS$ and $\psi=d_1(-S)$ on $H$.
+No division by a block size is needed.
+
+The residual even cocycle $z=\psi-d_\chi(-S)$ vanishes on $H$.
+Comparison on $hg=g(g^{-1}hg)$ shows that $z(g)$ commutes with
+$\rho(H)$, hence lies in the centre of $E$. It follows that
+$z(gg')=z(g)+\chi(g)z(g')$. Since $[G,G]\subseteq H$,
+$z(cg)=z(gc)$, giving
+\[
+            (\chi(c)-1)z(g)=(\chi(g)-1)z(c).
+\]
+Thus $z=d_\chi Z$ for $Z=z(c)/(\chi(c)-1)$. With $X=-S+Z$,
+we have $\psi=d_\chi X$ on $G$. Polarization gives
+$d_\chi(X^T)=s\psi$, so
+$Y_0=(X+sX^T)/2$ has $sY_0^T=Y_0$ and $d_\chi Y_0=\psi$.
+The field's odd characteristic permits this last division.
+\end{proof}
+
+This completes the determinant identity over $k((t))$
+\cite{alpo-even-detection}. Its integral coefficient comparison and
+the simultaneous choice of finitely many detecting auxiliary elements
+retain their separate arithmetic hypotheses.
