@@ -1,0 +1,253 @@
+\section{The mixed level identity and the remaining local theta branch}
+\label{sec:geometry-mixed-level}
+
+The two translations in the prescribed theta section can be moved
+through the original normalized pullbacks without changing a scalar.
+Together with reached-section regularity, this supplies the level-prime
+branch of the denominator argument.  The final all-place statement
+retains the actual model and cover, where those objects still have to
+be constructed.
+
+Write $[a]^\natural$ for the original normalized pullback by $a$, and
+$T_x^{(k)}$ for the canonical symmetric theta action at odd level $k$.
+Both use the fixed rigidification.  Thus the section specified by the
+source's \texttt{IsUUOver} relation is exactly
+\begin{equation}\label{eq:mixed-original-section}
+ U_N(x_1,x_2;s)=T_{x_2}^{(N^2)}T_{x_1}^{(N^2)}[N]^\natural s.
+\end{equation}
+The order of these translations is part of the formula.
+
+\begin{proposition}[Exact mixed pullback]\label{prop:exact-mixed-pullback}
+Suppose $N$ is positive and odd,
+\[
+ N=\beta\alpha n',\qquad
+ \alpha\bar\alpha=A,\qquad\beta\bar\beta=B,
+\]
+where $\alpha,\beta\in\mathcal O_E$ and $n',A,B$ are positive
+integers.  Let $x_1,x_2\in A[N^2]$ satisfy
+\[
+ [n'^2\alpha\beta]x_1=0,\qquad[n'^2A\beta]x_2=0.
+\]
+Then $N^2=n'^2AB$, and the explicitly reached section
+\begin{equation}\label{eq:mixed-reached-explicit}
+ h=T_{\beta x_2}^{(n'^2A)}[\alpha]^\natural
+          T_{\alpha\beta x_1}^{(n'^2)}[n']^\natural s
+\end{equation}
+satisfies
+\begin{equation}\label{eq:mixed-exact-factorization}
+                 [\beta]^\natural h=U_N(x_1,x_2;s).
+\end{equation}
+All sections, level changes and scalars are the original ones.
+\end{proposition}
+
+\begin{proof}
+Taking conjugates gives $N^2=n'^2AB$; hence all levels in
+\eqref{eq:mixed-reached-explicit} are odd.  The source's restriction on
+the intermediate input level holds because $n'^2=1$ or $n'^2\geq4$.
+The torsion assumptions are exactly those needed for the two lower-level
+translations, so $h$ is reached.
+
+Normalized pullback composes exactly:
+$[b]^\natural[a]^\natural=[ab]^\natural$.  The two composite line
+isomorphisms have the same rigidification; their ratio is a scalar on
+the proper connected abelian variety and is one at zero.  It also
+commutes with the prescribed symmetric action:
+\begin{equation}\label{eq:mixed-pull-move}
+ [a]^\natural T_{ax}^{(k)}=T_x^{(k,a\bar a)}[a]^\natural
+                  \quad(x\in A[k,a\bar a]).
+\end{equation}
+Indeed conjugating the source lift by the normalized line isomorphism
+produces a lift at $x$.  In its full odd-level power the line
+isomorphism factors telescope, and the source lift has trivial power;
+the same conjugation preserves the inversion symmetry.  Uniqueness
+of the odd symmetric lift identifies it with the canonical target
+lift.  A possible comparison scalar would have both square one and
+odd-level power one, hence be one.  This proves
+\eqref{eq:mixed-pull-move} with the original normalization.
+Apply it first to $\beta$ and $x_2$, then to $\alpha\beta$ and $x_1$,
+and compose the pullbacks.  The resulting expression is exactly
+\eqref{eq:mixed-original-section}.
+\end{proof}
+
+\begin{corollary}[The normalized mixed harmonic term]
+\label{cor:mixed-harmonic-term}
+Use the original supplied \texttt{Good3} model and chart with
+$\nu(H(P;f))\geq-\rho$ for integral harmonic input.  Suppose $n'$ is
+a unit in the valuation ring.  Let $P$ have its original row weights
+$w(\tau,i)$, be integral in that chart, and have total degree $d$.
+For an $n$-tuple of sections as in
+\eqref{eq:mixed-original-section},
+\[
+ \nu\!\left(\operatorname{nrm}(\alpha)N^{-d}
+               H(P;U_N(x_1,x_2;s))\right)\geq-\rho.
+\]
+Here the same factorization is used in every column.
+\end{corollary}
+\begin{proof}
+If $P=0$ the assertion is immediate.  Otherwise
+$d=\sum_{\tau,i}w(\tau,i)$.
+Theorem~\ref{thm:reached-sections-regular} makes the tuple $h$ integral
+with scalar one.  The original harmonic chain rule and
+Proposition~\ref{prop:exact-mixed-pullback} give
+$H(P;U_N)=\operatorname{nrm}(\beta)H(P;h)$.
+The original multiplicative type norm satisfies
+\[
+ \operatorname{nrm}(\alpha)N^{-d}\operatorname{nrm}(\beta)
+          =(n')^{-d},
+\]
+because $\operatorname{nrm}(N)=N^d$ and
+$N=\beta\alpha n'$.  The right side is a local unit.
+The chart estimate applied to $h$ proves the assertion.
+\end{proof}
+
+\subsection*{A rational factorization at every level prime}
+
+Retain the original self-dual lattice $\Lambda\subset E^n$, its
+level-compatible odd $N$ divisible by the original level $M$, and
+\[
+ I=[\Lambda\cap\mathcal O_E^n:N\mathcal O_E^n]^{p+q}.
+\]
+Let $\mathcal Z$ be the entire prescribed lattice-annihilator torsion
+group, with its original rational enumeration, and suppose
+$\Lambda$ is standard locally at the residue prime $\ell$.
+Let each $t_b$ satisfy $[N]t_b=\eta_b$, where the original level point
+$\eta_b$ is killed by $M$.  Put
+\[
+ S=\sum_{z\in\mathcal Z}H\bigl(P;(U_N(z_b,t_b;s))_b\bigr).
+\]
+The harmonic polynomial is the one prescribed by $\Lambda$; local
+standardness makes it integral in the original chart.
+
+\begin{theorem}\label{thm:local-level-theta-denominator}
+For the same model and chart,
+\begin{equation}\label{eq:local-level-theta-denominator}
+                  \nu(M^d I^{-1}N^{-d}S)\geq-\rho.
+\end{equation}
+There is no restriction on $v_\ell(M)$.
+\end{theorem}
+\begin{proof}
+Write $N=\ell^e n'$ and $M=\ell^k m$, with $k\leq e$,
+$(\ell,n'm)=1$, and $m\mid n'$.  Choose the actual rational elements
+\[
+ \alpha=\ell^k,\quad\beta=\ell^{e-k},\quad
+ A=\ell^{2k},\quad B=\ell^{2(e-k)}.
+\]
+These satisfy the factorization in
+Proposition~\ref{prop:exact-mixed-pullback}.  No ideal generator or
+new field is needed.  Since $[NM]t_b=0$ and
+$NM\mid\beta n'^2A$, its second torsion condition holds.  Also
+$NM\mid N^2$, so all $t_b$ are $N^2$-torsion.
+
+Decompose the full finite abelian group exactly as
+$\mathcal Z=J\oplus J'$, where $J$ is $\ell$-primary and $J'$ has
+order prime to $\ell$.  Local standardness identifies
+$J=A[\ell^{v_\ell N}]^n$.  This follows directly from the original
+annihilator row relations: their coefficients are integral locally,
+and the identity rows occur after multiplication by a local unit.
+It gives both $[N]J=0$ and
+\[
+             |J|=\ell^{v_\ell(I)}=:I_\ell.
+\]
+The rank here is the Tate-module rank $p+q$ over $E$, not the tangent
+rank.  Equivalently one computes both sides by the same local Smith
+forms.
+
+The normalized section $[N]^\natural s$ is fixed by canonical
+translation by $A[N]$.  Primary and prime-to-$\ell$ theta translations
+commute with scalar exactly one: their Weil pairing has order dividing
+two coprime integers, and the canonical odd composition scalar then
+has square one and odd order.  Therefore the full sections, before
+harmonic evaluation, satisfy
+\[
+ U_N(u+z',t;s)=U_N(z',t;s)\quad(u\in J, z'\in J').
+\]
+Hence $S=I_\ell\sum_{z'\in J'}H(P;U_N(z',t;s))$.
+Each $z'$ is killed by $n'^2$, since it is prime to $\ell$ and killed
+by $N^2=\ell^{2e}n'^2$.
+Corollary~\ref{cor:mixed-harmonic-term} now bounds each term after
+multiplication by $\alpha^dN^{-d}$.  Summation preserves the bound.
+The factor $I_\ell/I$ is a local unit.  Finally
+$M^d=\alpha^d m^d$ with $m$ a local unit, which proves
+\eqref{eq:local-level-theta-denominator}.
+The source's intervening type-ideal generator $\beta_H$ is also a unit
+at this place: all determinant ideals of $\Lambda$ are local units.
+It can therefore be retained on either side of the same estimate.
+\end{proof}
+
+\subsection*{Exact all-place assembly, with the model still explicit}
+
+Here is the resulting arithmetic supplier for the original theta
+family.  Retain the original good cover, original integral Fourier
+weights $a_q$, the exact comparison of its normalized theta section
+$\theta=\beta_H g$ with the cover, and all its model/chart hypotheses.
+Let $\mathcal Q$ be its finite set of level tuples, $C=|\mathcal Q|$,
+and $\Delta=|\operatorname{disc}(E)|$.  At every arithmetic test point,
+a permitted finite extension supplies the original model, rational
+$N^2$-torsion and the exact identity
+\begin{equation}\label{eq:mixed-original-cover-value}
+ \theta(y)=\frac{\zeta}{C}
+       \sum_{q\in\mathcal Q}a_q I^{-1}N^{-d} S_q.
+\end{equation}
+Here $S_q$ is the preceding full sum with the original translate
+$t_{q,b}$, $[N]t_{q,b}=\eta_{q,b}$, and $t_{q,b}$ is killed by a
+power of the half-level ideal.  The phase $\zeta$ is the original
+root of unity; it is one for the identity cover used by the theta
+supplier.  All $a_q$ are algebraic integers.  Formula
+\eqref{eq:mixed-original-cover-value}, including $\beta_H$ in
+$\theta=\beta_Hg$, is the source's \texttt{shortExpr}; no factor is
+absorbed into a new theta normalization.
+
+Suppose the original harmonic degree bound is $D\geq d$ and the
+already proved discriminant chart estimate is
+$\rho\leq D\nu(\Delta)$.  For every scalar $s$ satisfying the
+original determinant-ideal inclusion
+\begin{equation}\label{eq:mixed-clearing-ideal}
+ (s)\prod_\tau I_\tau(\Lambda\cap\mathcal O_E^n)^{m_\tau}
+       \subseteq\prod_\tau I_\tau(\Lambda)^{m_\tau},
+\end{equation}
+one has
+\begin{equation}\label{eq:mixed-single-clearing-integer}
+       Zs\theta\ \hbox{in the original integral cusp lattice},
+       \qquad Z=C\Delta^D M^D.
+\end{equation}
+The scalar $s$ need not be globally integral.
+
+To prove this, consider a finite place over $\ell$ in the original
+valuation set.  When $\ell\mid M$, the prescribed lattice is locally
+standard.  Condition~\eqref{eq:mixed-clearing-ideal} then gives
+$\nu(s)\geq0$.  Theorem~\ref{thm:local-level-theta-denominator}
+and $D\geq d$ bound each $sM^D I^{-1}N^{-d}S_q$ below by $-\rho$.
+When $\ell\nmid M$, the prescribed $t_{q,b}$ has order prime to
+$\ell$, since it is killed by a power of the half-level ideal, which
+contains $M$.  Decompose $\mathcal Z$ into primary and prime-to-$\ell$
+parts.  For each fixed prime-to-$\ell$ part, take its two prescribed
+translates of $[N]^\natural s_0$ as the base tuple for the primary
+trace.  They are reached and are fixed by primary $N$-torsion:
+the relevant Weil pairings again have coprime orders.  Product
+isotropy of $\mathcal Z$ is unchanged.  The adapted lattice theorem
+and \eqref{eq:mixed-clearing-ideal} supply
+$\nu(s\delta_p)\geq0$.  The full primary estimate, followed by the
+sum over the prime-to-$\ell$ part, gives
+$\nu(sI^{-1}N^{-d}S_q)\geq-\rho$.
+At this place $M$ is a unit.
+
+In both cases $\Delta^D$ clears the chart loss.  Multiply
+\eqref{eq:mixed-original-cover-value} by $Zs$; the entire average
+denominator $C$ cancels, and the integral weights and root-of-unity
+phase preserve nonnegativity.  A finite extension of ramification
+index $r$ changes $v$ to $rv$ and the original denominator $e$ to
+$re$, so the normalized value $v/e$ is unchanged.  Thus the conclusion
+holds in every original valuation test, and membership in the same
+integral cusp lattice follows.  It is independent of $N$, $\Lambda$,
+$P$, $s$, and the particular theta generator once the original weight
+and cover are fixed.  If the source's stated logarithmic bound for
+$Z$ is supplied, it applies without the extra doubling used for
+$Z^2$.
+
+The exact mixed compatibility and the full local level-prime estimate
+are proved above.  The all-place conclusion is an improved sufficient
+condition with the original cover and model suppliers still explicit;
+it is not an assertion that those geometric objects have already been
+constructed.  No whole proof-map node is closed by this section.
+The source interfaces and finite normalization checks are recorded
+separately\cite{mixed-level-source}.

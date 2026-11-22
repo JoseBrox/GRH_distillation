@@ -129,3 +129,11 @@ modules for the mixed period norm, signed exterior decomposition, full
 Harish-Chandra reserve and both original character-scale branches. Neither
 certificate asserts a full automorphic determinant/support construction,
 a global period-Gram identification or a Lean build.
+
+The classical specialization certificate authenticates thirteen original
+weight, ordinary-module and specialization interfaces, preserving the
+principal cyclotomic shift and the actual weight-zero consumer. The mixed
+level certificate authenticates twelve interfaces for ordered theta
+translations, normalized pullback, arbitrary level-prime powers, the exact
+cover value and the one-clearing-integer denominator. Both have independent
+mathematical reviews; their finite controls are not Lean builds.

@@ -1,0 +1,211 @@
+\subsection{Exact classical specialization of the ordinary modules}
+\label{sec:selmer-classical-control}
+
+Fix the original definite unitary datum, type lattice, auxiliary set,
+uniformizers, and unnormalized Hecke operators.  Write
+\(A=\mathcal O[[X_1,\ldots,X_D]]\), \(D=n[F:\mathbb Q]\), for its
+weight ring, and \(M(K,A,\theta)\) for the ordinary function module.
+The preceding integral ordinary construction supplies finite freeness,
+exact reduction, and the ordinary projector.  These facts give the
+following actual specialization theorem.
+
+\begin{proposition}[Coefficient change and classical control]
+\label{prop:selmer-classical-control}
+For every continuous local map \(f:A\to B\) of \(\mathcal O\)-algebras,
+with \(B\) complete Noetherian local and with finite residue field,
+pointwise coefficient change gives
+\[
+ M(K,A,\theta)\otimes_A B\simeq M(K,B,f\theta).
+\]
+This respects the original Hecke operators, auxiliary translations,
+diamond actions, traces, and prescribed residual Hecke summand.
+If \(B=\mathcal O_E\) for a finite coefficient extension and \(f\theta\)
+has finite image, these modules specialize faithfully to the classical
+weight-zero ordinary spaces at every level \(c\geq c_0(f)\), where
+\(c_0(f)\) is independent of \(K\).  The specialized basis is a basis
+of that space.
+\end{proposition}
+
+\begin{proof}
+Given \(k\), choose \(N\) with
+\(f(\mathfrak m_A^N)\subseteq\mathfrak m_B^k\), and choose \(c\) such
+that \(\theta(T_c)=1\) modulo \(\mathfrak m_A^N\).  At the same
+original double-coset representatives, the finite function spaces are
+free coordinate modules, and
+\[
+ E(K,A/\mathfrak m_A^N,c)\otimes_A B/\mathfrak m_B^k
+       =E(K,B/\mathfrak m_B^k,c).
+\]
+The integral sections and trivial stabilizers from the ordinary
+construction justify this equality; no flatness assumption or
+commutation of arbitrary invariants with base change is needed.
+The matrix of the original unnormalized operator
+\[
+ U_z=\sum_{u\in N/(zNz^{-1})}[uz],
+ \qquad z=\operatorname{diag}(\varpi^{n-1},\ldots,\varpi,1),
+\]
+and of its product over the places above \(\ell\), changes coefficients
+by \(f\).
+
+The finite Fitting decomposition into an invertible and a nilpotent
+part is split.  Tensoring preserves the direct sum, invertibility,
+and nilpotence, hence gives the Fitting decomposition after coefficient
+change.  Exact reduction of the ordinary module therefore yields
+\[
+ M(K,A,\theta)\otimes_A B/\mathfrak m_B^k
+       \simeq M(K,B,f\theta)/\mathfrak m_B^k.
+\]
+The maps are pointwise and compatible.  Taking inverse limits proves
+the assertion, since the original module is finite free.
+All operator identities follow from their finite-sum formulas.
+
+For residual localization, the finite commutative Hecke algebra has
+an idempotent factor on which every prescribed \(H_i-a_i\) is
+topologically nilpotent, while on the complementary factor these
+elements generate the unit ideal.  A finite set of operators suffices
+by Noetherianity.  Both conditions persist under local coefficient
+change, so the original residual idempotent is preserved.
+The Hecke family here remains the original spherical family outside
+the fixed \(S\cup Q\), together with the original positive diagonal
+operators above \(\ell\).
+
+Now suppose \(f\theta(T_{c_0})=1\) exactly.  For every \(k\) and
+\(c\geq c_0\), level lowering places the ordinary reduction inside
+\(E(K,\mathcal O_E/\mathfrak m_E^k,c)\).  Thus an integral ordinary
+vector is exactly \(\overline N(c)\)-invariant: every invariance
+difference belongs to all powers of \(\mathfrak m_E\).  It lies in
+the finite classical lattice \(E(K,\mathcal O_E,c)\), with the
+original type, tame level, \(N\)-invariance, and inverse torus
+character.
+
+On this lattice the integral ordinary decomposition has \(U\) and
+\(U^{-1}\) integral on its first summand and \(U\) nilpotent modulo
+\(\mathfrak m_E\) on the second.  Over
+\(\overline{\mathbb Q}_\ell\), these are exactly the generalized
+eigenspaces with eigenvalues of absolute value \(1\) and \(<1\).
+At weight zero the algebraic representation is trivial,
+\(\operatorname{lowW}=0\), and all source
+\(\operatorname{algPow}\) and \(\operatorname{lowVal}\) factors are
+\(1\).  Thus neither \(U\) nor any Hecke normalization changes.
+
+Apply \(\iota f\) pointwise, for the fixed
+\(\iota:\overline{\mathbb Q}_\ell\simeq\mathbb C\).
+Coefficient change proves independence of the specialized ordinary
+basis and that it spans the entire unit-slope space.  The classical
+space is finite-dimensional, its Hecke operators preserve the
+integral lattice and have integral eigenvalues, and all semilinear,
+Hecke, and auxiliary-action identities hold term by term.  This is
+the complete weight-zero specialization interface.
+\end{proof}
+
+\begin{proposition}[Enough good points at weight zero]
+\label{prop:selmer-good-zero}
+The original weight ring has a family of finite-order classical
+specializations with pairwise distinct local torus characters which
+detects every nonzero element of \(A\).  They detect every nonzero
+vector in the original ordinary modules, their prescribed residual
+summands, and their smooth auxiliary union.
+\end{proposition}
+
+\begin{proof}
+Local reciprocity identifies the free pro-\(\ell\) inertial quotient
+with \(\Gamma_v\simeq\mathbb Z_\ell^{d_v}\), where
+\(d_v=[F_v:\mathbb Q_\ell]>0\); see
+\cite{MilneClassicalControl}.  Its rank follows directly from
+logarithm and exponential on sufficiently deep principal units.
+Keep the original fixed characters on the finite torsion subgroup.
+Choose a finite-order lift \(\psi_{0,v,i}\) of each residual local
+character with precisely that torsion restriction: combine its
+Teichmuller lift with the prescribed finite torsion character using
+a splitting of the local abelian group.
+
+Write the original cyclotomic character as
+\(\varepsilon=\omega_\varepsilon\langle\varepsilon\rangle\).
+Here \(\omega_\varepsilon\) has order dividing \(\ell-1\), while
+\(\langle\varepsilon\rangle\) takes values in
+\(1+\ell\mathbb Z_\ell\).  Since \(\ell\) is odd, the latter group
+is torsion-free.  For arbitrary finite-order
+\(\chi_{v,i}:\Gamma_v\to\mu_{\ell^\infty}\), set
+\[
+ \kappa_{v,i}^x
+    =\psi_{0,v,i}\langle\varepsilon\rangle^{-i}\chi_{v,i}
+       \quad\text{on inertia}.
+\]
+Extend \(\chi_{v,i}\) to the local decomposition group with value
+\(1\) on a chosen uniformizer.  The residual and prescribed torsion
+restrictions are unchanged, so the original universal weight
+property gives \(x:A\to\mathcal O_E\) for a finite extension \(E\).
+This selects no unramified ordinary eigenvalue.
+
+The exact source identity
+\[
+ \kappa_{v,i}(g)\varepsilon(g)^i\theta(e_{v,i}(y))=1,
+ \qquad\operatorname{Art}(g)=y,
+\]
+now gives
+\[
+ x\theta(e_{v,i}(y))
+   =\bigl(\psi_{0,v,i}(g)\omega_\varepsilon(g)^i
+                       \chi_{v,i}(g)\bigr)^{-1}.
+\]
+It has finite order.  This principal cyclotomic twist retains the
+source's weight shift; unshifted torsion weights would not suffice.
+
+Take the original coordinates
+\[
+ 1+X_{v,i,j}
+   =\psi_{0,v,i}(\gamma_{v,j})^{-1}
+                 \kappa_{v,i}(\gamma_{v,j}),
+\]
+with \(\gamma_{v,j}\) projecting to a basis of \(\Gamma_v\).
+At the points just constructed,
+\[
+ 1+x(X_{v,i,j})=u_{v,i,j}\zeta_{v,i,j},\qquad
+ u_{v,i,j}=\langle\varepsilon(\gamma_{v,j})\rangle^{-i}
+     \in1+\mathfrak m_{\mathcal O},\quad
+ \zeta_{v,i,j}\in\mu_{\ell^\infty}.
+\]
+The substitution \(X=u(1+T)-1\) is an automorphism of the complete
+power-series ring.
+
+For a nonzero \(h(T)\in\mathcal O_E[[T]]\), remove the largest common
+uniformizer power from its coefficients and let \(r\) be the first
+unit coefficient.  If \(0<v_E(t)\) and \(rv_E(t)<1\), the \(r\)-th
+term is the unique term of least valuation, so \(h(t)\ne0\).
+Primitive roots of increasing \(\ell\)-power order have
+\[
+ v_E(\zeta_{\ell^a}-1)
+   =\frac{v_E(\ell)}{\ell^{a-1}(\ell-1)}\longrightarrow0.
+\]
+For \(r=0\) the same conclusion needs no upper bound on the valuation.
+In several variables, keep one nonzero coefficient in the last
+variable, specialize its other variables inductively, and then
+apply this one-variable argument.  All partial specializations lie
+in finite coefficient extensions.
+
+This induction also permits finitely many inequalities
+\(\alpha_s\zeta_s\ne\alpha_t\zeta_t\): each earlier choice forbids
+at most one value of the later root.  At one basis element for each
+\(\Gamma_v\), take
+\(\alpha_{v,i}=\psi_{0,v,i}(\gamma_{v,1})
+\omega_\varepsilon(\gamma_{v,1})^i\).
+The displayed local character formula then makes the characters
+pairwise distinct.  The source admits weight zero, so these points
+are good in its precise sense.
+
+Finally choose a nonzero coordinate of any nonzero ordinary vector
+in an \(A\)-basis.  A good point detects it; the first proposition
+and independence of the specialized basis detect the vector.
+A vector in the smooth union lies at one compact auxiliary level.
+\end{proof}
+
+\paragraph{Exact boundary.}
+The source's actual Hecke-ideal construction chooses weight zero,
+so these propositions supply its specialization and dense-weight
+inputs \cite{SelmerClassicalControlSource}.  They do not yet prove
+that classical Hecke eigencharacters separate the Hecke algebra,
+construct its continuous ordinary Galois determinant, or supply
+the full Galois-compatible classical-point interface.  In
+particular W04, its patched support and uniform integral Selmer
+bounds remain open.  The field degrees, \(D=n[F:\mathbb Q]\), and
+specialization conductors may grow also in the ordinary RH route.

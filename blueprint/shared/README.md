@@ -87,6 +87,14 @@ exact unnormalized trace. The [Jacquet transfer](../../notes/global-norm-frontie
 retains the original period normalization, real budget and both character
 scales. The determinant/support and global return estimates remain open.
 
+The [classical control theorem](../../notes/selmer-integral-frontier-classical-control.md)
+proves coefficient change and faithful good weight-zero specialization for
+those actual ordinary modules. The [mixed-level theta theorem](../../notes/geometry-arithmetic-frontier-mixed-level.md)
+proves exact translation/pullback compatibility and the complete local
+level-prime estimate, with one global clearing integer conditional on the
+original good cover and chart suppliers. Neither supplies the remaining
+Galois action or global theta norm.
+
 ## Concurrent research
 
 The [RH program](../rh/program.md) and [GRH program](../grh/program.md) are

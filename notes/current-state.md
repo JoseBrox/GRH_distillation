@@ -46,9 +46,9 @@ normal projective integral `Model` or `Good3` uniformization.
 Under that unchanged `Good3` contract, every prescribed reached theta
 section is now proved regular with scalar exactly one, including bad level
 primes. The adapted arithmetic lattice, full-primary theta trace and exact
-determinant/index cancellation are also proved. The remaining mixed
-level-torsion compatibility and all-place denominator assembly are being
-checked separately. These statements remove section and primary-trace
+determinant/index cancellation are also proved. The exact mixed level-torsion compatibility and the full local level-prime
+estimate are now proved. Together they give the original one-clearing-integer
+all-place conclusion once the specified good cover and chart inputs are supplied. These statements remove section and primary-trace
 hypotheses; they do not construct the missing model or global theta norm.
 
 The finite-to-limiting Selmer comparison supplies the three exact limiting
@@ -56,8 +56,10 @@ presentation conditions from the proved finite-level estimates. It retains
 the original local conditions, point and constants. The original ordinary automorphic modules are now constructed and finite
 free; their actual diamond-group trace is onto with exactly the
 augmentation kernel, including residue-characteristic group orders. The
-next W04 supplier is their universal determinant action, classical
-specialization compatibility and patched support. No uniform integral
+actual ordinary modules also commute with coefficient change and have enough
+faithful good classical specializations at weight zero. The next W04 supplier
+is their universal determinant action, exact classical constituent/Galois
+compatibility and patched support. No uniform integral
 torsion bound follows merely from rational rigidity.
 
 The exact local exterior-Pieri transfer now controls the prescribed
@@ -72,7 +74,9 @@ New proof packages and independent review certificates:
 `geometry-arithmetic-frontier-generic-pel`, and
 `geometry-arithmetic-frontier-reached-regularity`,
 `selmer-integral-frontier-ordinary-diamond`, and
-`global-norm-frontier-jacquet-gram`.
+`global-norm-frontier-jacquet-gram`,
+`selmer-integral-frontier-classical-control`, and
+`geometry-arithmetic-frontier-mixed-level`.
 Whole-node statuses are unchanged.
 
 ## Current arithmetic frontiers
