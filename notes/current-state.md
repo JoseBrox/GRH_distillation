@@ -35,6 +35,19 @@ The source-import atlas and documentary section atlas have no proof
 completion score. The published baseline is RH 6/9 and the GRH technical
 map 17/31; the generated progress table carries the current values.
 
+## Active continuation at the recovered main revision
+
+This continuation starts from `301e4a0adad8617d7ae4910d939687d95d4200e8`.
+The [finite-to-limiting Selmer comparison](selmer-integral-frontier-limit-comparison.md)
+now proves the exact three cohomological conditions on the original limiting
+auxiliary group from the established finite-level bounds. It retains the
+same constants, local witnesses and polarized boundaries. The Smith defect
+controls only the rank passage; it is not a moving-point integral torsion
+bound. The next W04 target is the actual automorphic tower and patched
+support. No whole-node status changes. Manuscript integration follows the
+reviewed arithmetic checkpoints, rather than treating old frontier text as
+current proof status.
+
 ## Current arithmetic frontiers
 
 The [current supplier continuation](arithmetic-supplier-continuation-2026-11-22.md)

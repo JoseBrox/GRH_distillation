@@ -1,0 +1,92 @@
+\paragraph{Passage to the original limiting group.}
+Keep the normalized point, odd family, auxiliary tower and its original
+limiting quotient. Put $A=k[[t]]$, $A_m=A/(t^m)$ and
+$D=n(d+q_{\rm aux})$. All coefficient modules, ordinary witnesses,
+diagonal restrictions, inertia conditions and polarizations below are
+the original ones.
+
+\begin{proposition}[The limiting Selmer conditions]
+\label{prop:selmer-limit-comparison}
+The finite-level estimates of Propositions
+\ref{prop:selmer-first-global-bound} and
+\ref{prop:selmer-second-global-bound} give the following conditions on
+the original limiting group.
+\begin{enumerate}
+\item At most $D$ integral first-order Selmer classes are independent
+modulo the prescribed polarized boundaries.
+\item Every $g+1$ tuples $p_{ij}$ of integral even Selmer cocycles admit
+an integral second-order Selmer cocycle $\Psi$ and coefficients
+$a_i=t^{C_2}c_i$, with some $c_i$ a unit, such that
+$\Psi_{\epsilon'_j}=\sum_i a_i p_{ij}$.
+\item Every integral odd Selmer cocycle is in the span of the original
+$\kappa_j$ modulo the allowed boundaries after multiplication by a
+power of $t$.
+\end{enumerate}
+The corresponding Laurent statements hold for the bounded continuous
+cocycles in the local deformation presentation.
+\end{proposition}
+
+\begin{proof}
+Write $P$ for the original common profinite cover, with quotient maps
+$\pi_N,\pi_\infty$. Its limit data assert, for every open normal
+$V\subset P$, that
+$(\ker\pi_N)V=(\ker\pi_\infty)V$ for almost every $N$ in the
+chosen free ultrafilter. The original base and local maps agree modulo
+$V$ in the same sense. The open subgroup $P^+$ is topologically
+finitely generated, so its continuous cocycles with any fixed finite
+coefficient module form a finite set: their generator values determine
+them. Each such cocycle is constant modulo some $V$. Intersecting the
+finitely many good sets therefore identifies the finite Selmer sets on
+the two quotients simultaneously. Their local restrictions agree and
+the same witness matrices work. The boundary sets also agree because
+the coefficient actions agree. Thus the finite Selmer quotients are
+identified, preserving both constants and every local condition.
+
+For the first condition, let $z_1,\ldots,z_e$ be independent integral
+classes. Evaluate $\sum_i c_i z_i-dY$ on fixed topological generators,
+with $Y$ ranging over the finite free module of allowed skew primitives.
+The kernel of this finite linear map projects to zero in $A^e$.
+Smith normal form gives $b\geq0$ such that a boundary congruence
+modulo $t^m$ forces every $c_i\in t^{\max(m-b,0)}A$.
+Allowed skew primitives modulo $t^m$ lift integrally by lifting one
+entry in each skew pair; odd characteristic makes the diagonal zero.
+Consequently
+\[
+ |k|^{e(m-b)}\leq
+ \#(\operatorname{Sel}^1_{\infty,m}/B^1_{\infty,m})
+ \leq |k|^{mD+C_1}\qquad(m\geq b).
+\]
+Letting $m$ increase gives $e\leq D$, with the finite congruence
+defect $b$ retained.
+
+For the second condition, at each $m\geq1$ keep all solutions
+consisting of a primitive coefficient vector in $A_m^{g+1}$,
+a second-order cocycle and its ordinary witness matrices. These are
+nonempty finite sets, and reduction preserves them. Their inverse
+limit is nonempty even when the reduction maps are not surjective:
+every finite compatibility system comes from a sufficiently high
+level. The resulting cocycle is continuous because each finite
+reduction is continuous. Separatedness of $A$ preserves every
+cocycle, polarization, inertia and ordinary equation. A coefficient
+nonzero modulo $t$ remains a unit; hence the vector $t^{C_2}c$ is
+nonzero. This proves the assertion with the original loss $C_2$.
+
+The third condition is the resultant descent following
+Lemma~\ref{lem:selmer-block-resultant}. The auxiliary inertia elements
+normally generate the limiting kernel, and their odd cocycle values
+commute with separated Frobenius blocks, so they vanish. Polarization
+also gives invariance under complex conjugation. The cocycle descends
+to the original base group and its chosen odd generators.
+
+Finally, a common power of $t$ makes any finite family of bounded
+Laurent cocycles and their finitely many local witness matrices
+integral. Apply the three integral assertions and invert that power.
+The full coefficient action, all local equations and the nonzero
+coefficient condition are preserved \cite{alpo-selmer-limit-comparison}.
+\end{proof}
+
+This supplies the three cohomological inputs of the local presentation
+and incidence argument. The actual arithmetic models and the patched
+automorphic support of dimension at least $1+D$ remain to be supplied.
+The rank conclusion does not bound integral torsion uniformly over
+moving points.

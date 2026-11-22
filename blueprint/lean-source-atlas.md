@@ -103,3 +103,5 @@ below; it did not download or rebuild the entire development.
 These are conventional mathematical substitutions with explicit hypotheses.
 They do not identify an exact number of unnecessary Lean files or constitute
 a new kernel verification.
+
+The [limiting Selmer contract](../notes/selmer-integral-frontier-limit-comparison.md) authenticates the original `Lim`, finite Selmer quotient comparison, `CohLim` and Laurent conversions. Its [certificate](../certificates/selmer-integral-frontier-limit-comparison.json) records 23 pinned modules and bounded ranges; the common arithmetic tower and patched support remain separate constructions.
