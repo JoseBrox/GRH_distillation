@@ -32,10 +32,16 @@ The new proof supplies the short-vector packing argument, the passage from
 counting to an integrable logarithmic mean, and the bounded integral
 spanning set for an abelian coefficient field. Section 1a also derives
 counting-mean homogeneity directly from the original Haar quotient and
-one integrable counting function. It does **not** construct the arithmetic
-model or identify its geometric measure with that quotient, nor identify
-this mean with the signed boundary term in an arithmetic intersection
-limit. Those remain explicit inputs. No new analytic hypothesis is added.
+one integrable counting function. The [arithmetic first-moment theorem](geometry-arithmetic-frontier-isotropic-integrability.md)
+supplies finite Haar volume and integrability of the full original count
+in dimension at least three: finite cusp lines and their unrestricted
+scalar multiples give convergent partial ideal zeta series. Together
+these proofs need no independent first-moment assumption. The
+[determinant-curvature and sheet argument](geometry-arithmetic-frontier-curvature-haar-mean.md)
+identifies the original geometric mean with the correctly weighted Haar
+mean from its prescribed sheet and Hodge-metric data. The geometric
+construction of those data and the signed boundary intersection limit
+remain explicit inputs. No new analytic hypothesis is added.
 
 ## 1. A probability lemma with its own normalization
 
@@ -233,10 +239,12 @@ only: the pointwise lower and packing bounds in Section 2 still use the
 original unweighted count, or require their own verification for a
 different weighted count.
 
-This supplies (18) from Haar invariance and one integrable count. It
-does not prove finite Haar volume, integrability of that one count, or
-the identification of (17) with the original geometric count and
-measure. In particular an abstract probability measure satisfying only
+This supplies (18) from Haar invariance and one integrable count. For the
+arithmetic unitary quotient with \(N\ge3\), the
+[first-moment theorem](geometry-arithmetic-frontier-isotropic-integrability.md)
+proves finite Haar volume and integrability of every original count.
+The identification of (17) with the original geometric count and
+measure remains necessary. In particular an abstract probability measure satisfying only
 the pointwise packing estimate still does not suffice.
 
 ## 2. Why short vectors fit in a small real space
@@ -371,10 +379,12 @@ Assume the following are identified for the *actual component*:
    for the invariant functions under discussion, their integrals equal
    the original geometric integral divided by its degree, with all
    component weights and stabilizer normalizations retained.
-2. The functions \(\lambda\) and \(N_t\) in (9) are measurable and
-   \(N_r\) is integrable. Either identify the actual Haar quotient and
-   lattice count of Section 1a, which proves the mean homogeneity, or
-   retain directly the source identity
+2. Identify the actual arithmetic Haar quotient and full lattice count
+   of Section 1a. Their measurability, finite Haar volume, count
+   integrability and mean homogeneity then follow from the
+   [first-moment theorem](geometry-arithmetic-frontier-isotropic-integrability.md);
+   the range \(N\ge3j+1\), \(j\ge1\), satisfies its dimension condition.
+   Alternatively, retain these properties directly and the source identity
    \(\int N_t\,d\nu=(t/r)^{2f(N-1)}\int N_r\,d\nu\).
 3. The same \(U\) occurring in the metric and boundary comparison is
    measurable, nonnegative, and has the source pointwise estimate

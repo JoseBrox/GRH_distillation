@@ -145,7 +145,15 @@ The [CM extension theorem](../../notes/cm-integral-map-extension.md)
 then uses properness and classical semiabelian uniqueness to identify its
 exact integral line and tangent eigenlattices. The actual global family,
 original cubical line, fibre comparisons and pointwise period data,
-original Haar quotient and one integrable lattice count, signed boundary comparison, and arithmetic section remainder remain requirements. The [cusp counting theorem](../../notes/cusp-counting-mean.md) supplies allowance 3 from the original measure and lattice identities. The
+original geometric sheets, Hodge metric and lattice identification, signed boundary comparison,
+and arithmetic section remainder remain requirements. The
+[arithmetic first-moment theorem](../../notes/geometry-arithmetic-frontier-isotropic-integrability.md)
+proves integrability of the full original count; the
+[cusp counting theorem](../../notes/cusp-counting-mean.md) then supplies
+allowance 3 from the original measure and lattice identities. The
+[curvature and sheet theorem](../../notes/geometry-arithmetic-frontier-curvature-haar-mean.md)
+supplies that exact mean comparison from the original geometric data,
+with no additional algebraic-degree normalization. The
 [boundary period proof](../../notes/flat-family-boundary-extension.md)
 constructs the generic algebraic determinant and assembles its local norms
 on that model. Anchoring a weight entry
@@ -337,6 +345,8 @@ the relevant character phase depends on their difference and is unchanged.
 
 1. Construct the actual integral theta kernels and verify their local laws,
    original value lattices, stabilizer units and twisted-source ties.
+   The [full type-prime mixed-jet bound](../../notes/theta-integral-frontier-type-prime-jets.md)
+   is now proved with the original denominator and local constant one.
    The [exact chain identity](../../notes/level-chain-integrality.md)
    supplies the auxiliary-prime iteration, retaining the source factor
    and every intermediate rank. Keep all other period denominators and
@@ -356,6 +366,13 @@ the relevant character phase depends on their difference and is unchanged.
    with its actual local and point-lifting hypotheses, the compatible
    conormal pairing and the full abstract length theorem. Retain every
    surviving character case and exceptional prime.
+   The [paired determinant theorem](../../notes/selmer-integral-frontier-even-detection.md)
+   is proved over the original fraction field, and the
+   [complete-equation argument](../../notes/selmer-integral-frontier-dual-detection.md)
+   controls all modular solutions from integral detection. Match them
+   through the original integral paired module, denominator transfer and
+   simultaneous auxiliary choice; then finish the remaining ordinary local
+   bounds and patched automorphic modules.
 3. Construct the actual global arithmetic family, its original cubical
    biextension and geometric fibre comparisons, with the moduli separation
    and prescribed pointwise pure-period presentations. The exact CM point,
@@ -363,8 +380,19 @@ the relevant character phase depends on their difference and is unchanged.
    extension give its integral map and exact tangent lattice.
    The ramified determinant line is constructed
    from those data. Apply the supplied boundary, tangent-slope,
-   determinant-torsion and CM-period arguments, then prove the signed
-   original Haar quotient and one integrable lattice count, signed boundary comparison and arithmetic section remainder. Apply the [cusp theorem](../../notes/cusp-counting-mean.md) after verifying its original measure and lattice identities. Identify the actual nef
+   determinant-torsion and CM-period arguments. Identify the geometric
+   sheets, Hodge metric and lattice; the
+   [curvature theorem](../../notes/geometry-arithmetic-frontier-curvature-haar-mean.md)
+   then gives the original arithmetic Haar mean. Both boundary energy
+   limits and the [exact arithmetic metric variation](../../notes/geometry-arithmetic-frontier-exact-metric-variation.md)
+   are proved, including metric locality and the rational-twist polynomial.
+   Identify their mixed integrals and common vertical curvature on the
+   actual compact model, then finish the signed comparison and arithmetic
+   section remainder.
+   The full count is integrable by the
+   [arithmetic first-moment theorem](../../notes/geometry-arithmetic-frontier-isotropic-integrability.md).
+   Apply the [cusp theorem](../../notes/cusp-counting-mean.md) with these
+   original measure and lattice identities. Identify the actual nef
    and birational section data and apply the
    [finite jet rank bound](../../notes/finite-section-jet-bound.md),
    retaining its excess-rank denominator. Use the

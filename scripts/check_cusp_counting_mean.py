@@ -166,7 +166,7 @@ def main():
                  "scripts/check_cusp_counting_mean.py"]
     certificate = {
         "status": "passed",
-        "claim": "Conditional cusp-mean supplier with constant Cu=3; count scaling follows from the original Haar quotient and one integrable count",
+        "claim": "Cusp-mean supplier with constant Cu=3; the companion arithmetic first-moment theorem supplies the full count's integrability, and Haar invariance supplies its scaling",
         "source_verification": "Pinned source bytes and bounded excerpts authenticated; no Lean build claim",
         "sources": sources,
         "classical_reference": {
@@ -178,7 +178,7 @@ def main():
         "retained_inputs": [
             "Actual arithmetic model, Hermitian lattice and original norm/covolume identifications",
             "Normalized Haar quotient probability measure and actual discrete lattice-vector count agreeing with the geometric mean, retaining component/stabilizer factors and finite-adelic support",
-            "Integrability of N_r at one positive radius; scaling at all radii is then proved by invariant coarea measure on the product of nonzero complex null cones",
+            "Identification with the original arithmetic lattice stabilizer in Hermitian dimension at least three; finite volume and full-count integrability are then supplied by the companion arithmetic first-moment theorem",
             "The same nonnegative measurable cusp U and its original pointwise lattice-covolume comparison",
             "Identification of this integral with the signed arithmetic boundary term and the one-sided boundary limit"],
         "not_claimed": ["Integral basis or index-one spanning in O_E", "New arithmetic model or quotient measure construction", "Full RH/GRH node closure", "Lean project compilation"],
@@ -188,6 +188,10 @@ def main():
             "Finite mean of one norm-ball count and transitivity imply local finiteness of the invariant averaged counting measure",
             "Coarea measure dS/||grad q|| is invariant and scales by 2N-2 per complex place; its bounded-ball mass is finite",
             "Invariant Radon measure uniqueness eliminates the unknown scalar; finite-adelic support and normalized component weights are retained"],
+        "arithmetic_first_moment_supplier": {
+            "path": "certificates/geometry-arithmetic-frontier-isotropic-integrability.json",
+            "sha256": sha((ROOT / "certificates/geometry-arithmetic-frontier-isotropic-integrability.json").read_bytes()),
+            "scope": "Companion proof supplies the arithmetic first moment; this checker does not replace its mathematical review or source verification."},
         "artifact_sha256": {name: sha((ROOT / name).read_bytes()) for name in artifacts},
     }
     output = ROOT / "certificates/cusp-counting-mean.json"

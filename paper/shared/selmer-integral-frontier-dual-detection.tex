@@ -1,0 +1,57 @@
+\subsection{Controlling every congruence solution}
+
+Integral cocycles need not lift every cocycle modulo a power of the
+uniformizer. Completeness supplies the required uniform bound directly.
+
+\begin{lemma}\label{shared-complete-solution-count}
+Let $A$ be a complete discrete valuation ring, with uniformizer $t$ and
+finite residue field $k$. Let $C$ be a complete separated torsion-free
+$A$-module, let $C'$ be separated and torsion-free, and let
+$\Phi:C\longrightarrow C'$ be linear. Put
+$S_m=\Phi^{-1}(t^mC')$ and $K=\ker\Phi$. Suppose $S_1/tC$ is finite
+and $B\subseteq K$ is a submodule with $K/B$ torsion. Then some $E$
+satisfies
+\[
+ \#(S_m/t^mC)\leq
+ \#\bigl((B+t^mC)/t^mC\bigr)\,|k|^E
+ \qquad(m\geq0).
+\]
+\end{lemma}
+
+\begin{proof}
+The descending images of $S_m$ in $S_1/tC$ stabilize at some $m_0$.
+Since $S_{r+1}\cap tC=tS_r$, induction lifts this stabilization to
+every power of $t$: a member of $S_{m_0+j}$ can be approximated modulo
+$t^jC$ by members of arbitrarily deep $S_m$. Choose successive
+approximations whose differences lie in $t^{j+r}C$.
+Completeness gives a limit in $K$, and cancellation in $C'$ gives
+\[
+                    S_{m_0+j}\subseteq K+t^jS_{m_0}.
+\]
+The kernel is closed and saturated, so it is complete and
+$K\cap t^mC=t^mK$. Thus $K/tK$ is finite; complete Nakayama makes
+$K$ finitely generated, and $K/B$ is finite. Reduction modulo $t$
+and the same cancellation identity show inductively that every
+$S_m/t^mC$ is finite. The displayed inclusion bounds its quotient by
+the image of $B$, for $m=m_0+j$, by the fixed number
+\[
+             \#(K/B)\,\#(S_{m_0}/t^{m_0}C).
+\]
+The finitely many smaller $m$ are absorbed in $|k|^E$.
+\end{proof}
+
+For the deformation problem, $C$ is the module of functions whose
+reductions are locally constant, and $\Phi$ lists the cocycle,
+polarization and detecting equations. Finite-level cocycles have
+function lifts; an integral cocycle lift is unnecessary. The residual
+finiteness hypothesis and integral detection therefore bound all
+modular solutions. Integral boundaries reduce into the full modular
+boundary set, which only enlarges the right side.
+
+The remaining detection statement concerns the paired first-order
+representation over $k((t))$. Its detecting functional is the specified
+coefficient of $\operatorname{tr}(z(\sigma)\rho_1(\sigma))$; the
+first-order terms contain the independent odd extension classes.
+Ordinary trace against the block-diagonal representation cannot replace
+this functional. Fixing the point and detecting elements precedes the
+constant $E$; the subsequent auxiliary level may depend on $m$.

@@ -1,0 +1,1160 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "status": "PASS",
+  "recovered_main": "1b856f01372ec4287347dbfdef26f0e1f83573e7",
+  "integration_base": "f333e9af8f50924572249579629fcdd365539224",
+  "source_pin": {
+    "repository": "jsmorph/rh",
+    "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+  },
+  "scope": "Integrate the fourteen separately published arithmetic-frontier checkpoints into both manuscripts, current programs, atlas and short guide. The mathematical proofs retain their explicit construction hypotheses. No complete RH/GRH proof or Lean replay is claimed.",
+  "packages": [
+    {
+      "id": "rank_correction",
+      "commit": "1891ad46f0135540218aa2afbd823539fc606bd0",
+      "paths": [
+        "notes/level-chain-integrality.md",
+        "paper/shared/level-chain-integrality.tex",
+        "scripts/check_level_chain_integrality.py",
+        "certificates/level-chain-integrality.json"
+      ],
+      "review_status": "PASS",
+      "title": "Correct original chain rank",
+      "classification": "Source correction and exact integral implication",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": []
+    },
+    {
+      "id": "conjugate",
+      "commit": "5abf77db36c7b8c7763a26033595de4def651f81",
+      "paths": [
+        "notes/theta-integral-frontier-conjugate-gain.md",
+        "scripts/check_theta_integral_frontier_conjugate_gain.py",
+        "certificates/theta-integral-frontier-conjugate-gain.json"
+      ],
+      "review_status": "PASS",
+      "title": "Conjugate-prime divisibility",
+      "classification": "Lower-order integral gain; no endpoint-exponent improvement",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": []
+    },
+    {
+      "id": "isotropic",
+      "commit": "d0de48e632e942940030f748d4d69ec02290f68a",
+      "paths": [
+        "notes/geometry-arithmetic-frontier-isotropic-integrability.md",
+        "paper/shared/geometry-arithmetic-frontier-isotropic-integrability.tex",
+        "paper/shared/geometry-arithmetic-frontier-isotropic-integrability-references.tex",
+        "scripts/check_geometry_arithmetic_frontier_isotropic_integrability.py",
+        "certificates/geometry-arithmetic-frontier-isotropic-integrability.json",
+        "certificates/geometry-arithmetic-frontier-isotropic-integrability-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "Full arithmetic isotropic count",
+      "classification": "Missing arithmetic first-moment supplier proved",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/geometry-arithmetic-frontier-isotropic-integrability-review.json"
+      ]
+    },
+    {
+      "id": "selmer_frontier",
+      "commit": "a15e1c073a08aeb79e0b199867d75d70e65a66b2",
+      "paths": [
+        "notes/selmer-integral-frontier-special-fibre.md",
+        "scripts/selmer-integral-frontier-check.py",
+        "certificates/selmer-integral-frontier-special-fibre.json"
+      ],
+      "review_status": "PASS",
+      "title": "Characteristic-prime fibre obstruction",
+      "classification": "Counterexample to a proposed shortcut, not an arithmetic representation counterexample",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": []
+    },
+    {
+      "id": "incidence",
+      "commit": "49e09355efa09ea8045abb01472045d2f373b538",
+      "paths": [
+        "notes/selmer-integral-frontier-incidence.md",
+        "paper/shared/selmer-integral-frontier-incidence.tex",
+        "scripts/selmer-integral-frontier-incidence-check.py",
+        "certificates/selmer-integral-frontier-incidence.json",
+        "certificates/selmer-integral-frontier-incidence-independent-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "Reducible local prime inclusion",
+      "classification": "Exact local algebra supplier proved",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/selmer-integral-frontier-incidence-independent-review.json"
+      ]
+    },
+    {
+      "id": "haar_mean",
+      "commit": "d5c51d347cbf5d0a294470a97eb9d760e40e7947",
+      "paths": [
+        "notes/geometry-arithmetic-frontier-curvature-haar-mean.md",
+        "paper/shared/geometry-arithmetic-frontier-curvature-haar-mean.tex",
+        "scripts/check_geometry_arithmetic_frontier_curvature_haar_mean.py",
+        "certificates/geometry-arithmetic-frontier-curvature-haar-mean.json",
+        "certificates/geometry-arithmetic-frontier-curvature-haar-mean-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "Original Hodge mean and Haar measure",
+      "classification": "Exact normalization under the original sheet and metric data",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/geometry-arithmetic-frontier-curvature-haar-mean-review.json"
+      ]
+    },
+    {
+      "id": "padded",
+      "commit": "63017c7bb665ece7e55b37acb4fa443b60555421",
+      "paths": [
+        "notes/selmer-integral-frontier-padded-relations.md",
+        "paper/shared/selmer-integral-frontier-padded-relations.tex",
+        "scripts/selmer-integral-frontier-padded-relations-check.py",
+        "certificates/selmer-integral-frontier-padded-relations.json",
+        "certificates/selmer-integral-frontier-padded-relations-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "Selmer relations and local resultant",
+      "classification": "Presentation supplier and uniform auxiliary local bound proved",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/selmer-integral-frontier-padded-relations-review.json"
+      ]
+    },
+    {
+      "id": "type_jets",
+      "commit": "05e74fcede6a3aa96d47b87fcc1a2b49086d8c5a",
+      "paths": [
+        "notes/theta-integral-frontier-type-prime-jets.md",
+        "paper/shared/theta-integral-frontier-type-prime-jets.tex",
+        "scripts/check_theta_integral_frontier_type_prime_jets.py",
+        "certificates/theta-integral-frontier-type-prime-jets.json",
+        "certificates/theta-integral-frontier-type-prime-jets-review.json",
+        "certificates/theta-integral-frontier-type-prime-jets-visual-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "Full type-prime mixed jets",
+      "classification": "Exact local bound with constant one under the original normalized family",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/theta-integral-frontier-type-prime-jets-review.json",
+        "certificates/theta-integral-frontier-type-prime-jets-visual-review.json"
+      ]
+    },
+    {
+      "id": "energy",
+      "commit": "dcb72545c92893d35a30f8476c2690dfd2d75cd8",
+      "paths": [
+        "notes/geometry-arithmetic-frontier-signed-boundary-energy.md",
+        "scripts/check_geometry_arithmetic_frontier_signed_boundary_energy.py",
+        "certificates/geometry-arithmetic-frontier-signed-boundary-energy.json",
+        "certificates/geometry-arithmetic-frontier-signed-boundary-energy-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "Signed analytic boundary energy",
+      "classification": "Finite energy, full mass and convergence under original regularization data",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/geometry-arithmetic-frontier-signed-boundary-energy-review.json"
+      ]
+    },
+    {
+      "id": "dual",
+      "commit": "e89f82e20dcbd46d96302f2540abd6996c4d3096",
+      "paths": [
+        "notes/selmer-integral-frontier-dual-detection.md",
+        "scripts/check_selmer_integral_frontier_dual_detection.py",
+        "certificates/selmer-integral-frontier-dual-detection.json",
+        "certificates/selmer-integral-frontier-dual-detection-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "All modular Selmer solutions",
+      "classification": "Complete-module implication from actual integral detection",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/selmer-integral-frontier-dual-detection-review.json"
+      ]
+    },
+    {
+      "id": "bounded_cusp",
+      "commit": "c990b916df5c69e04bcdea5795b72e601a7b6190",
+      "paths": [
+        "notes/geometry-arithmetic-frontier-bounded-cusp-energy.md",
+        "scripts/check_geometry_arithmetic_frontier_bounded_cusp_energy.py",
+        "certificates/geometry-arithmetic-frontier-bounded-cusp-energy.json",
+        "certificates/geometry-arithmetic-frontier-bounded-cusp-energy-review.json",
+        "paper/shared/geometry-arithmetic-frontier-boundary-energy.tex",
+        "paper/shared/geometry-arithmetic-frontier-boundary-energy-references.tex"
+      ],
+      "review_status": "PASS",
+      "title": "Original bounded cusp regularization",
+      "classification": "Specified approximation supplier proved",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/geometry-arithmetic-frontier-bounded-cusp-energy-review.json"
+      ]
+    },
+    {
+      "id": "metric_variation",
+      "commit": "1b044d19f488cb06f46af68a0a32d785a98ab900",
+      "paths": [
+        "notes/geometry-arithmetic-frontier-exact-metric-variation.md",
+        "paper/shared/geometry-arithmetic-frontier-exact-metric-variation.tex",
+        "scripts/check_geometry_arithmetic_frontier_exact_metric_variation.py",
+        "certificates/geometry-arithmetic-frontier-exact-metric-variation.json",
+        "certificates/geometry-arithmetic-frontier-exact-metric-variation-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "Exact metric variation and locality",
+      "classification": "Intersection-axiom consequence and original rational normalization proved",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/geometry-arithmetic-frontier-exact-metric-variation-review.json"
+      ]
+    },
+    {
+      "id": "odd_detection",
+      "commit": "0b488dc7a1627069469db6cddedb315a1d4fef0f",
+      "paths": [
+        "notes/selmer-integral-frontier-odd-detection.md",
+        "paper/shared/selmer-integral-frontier-odd-detection.tex",
+        "paper/shared/selmer-integral-frontier-odd-detection-references.tex",
+        "scripts/check_selmer_integral_frontier_odd_detection.py",
+        "certificates/selmer-integral-frontier-odd-detection.json",
+        "certificates/selmer-integral-frontier-odd-detection-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "Odd paired determinant detection",
+      "classification": "Exact fraction-field odd supplier proved",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/selmer-integral-frontier-odd-detection-review.json"
+      ]
+    },
+    {
+      "id": "even_detection",
+      "commit": "f333e9af8f50924572249579629fcdd365539224",
+      "paths": [
+        "notes/selmer-integral-frontier-even-detection.md",
+        "paper/shared/selmer-integral-frontier-even-detection.tex",
+        "paper/shared/selmer-integral-frontier-even-detection-references.tex",
+        "scripts/check_selmer_integral_frontier_even_detection.py",
+        "certificates/selmer-integral-frontier-even-detection.json",
+        "certificates/selmer-integral-frontier-even-detection-review.json"
+      ],
+      "review_status": "PASS",
+      "title": "Complete paired determinant detection",
+      "classification": "Full fraction-field algebraic supplier proved; integral transfer and auxiliary choice remain",
+      "review_scope": "Human mathematical review and retained source hypotheses, with the stated reproducible checks; no upstream Lean build.",
+      "review_records": [
+        "certificates/selmer-integral-frontier-even-detection-review.json"
+      ]
+    }
+  ],
+  "new_existing_nodes_completed": 0,
+  "node_counts": {
+    "rh": {
+      "finished": 6,
+      "total": 9
+    },
+    "grh": {
+      "finished": 17,
+      "total": 31
+    }
+  },
+  "count_meaning": "Finished stated implications or adopted inputs, not percentages of either full proof. Existing whole-node statuses are unchanged.",
+  "builds": {
+    "rh": {
+      "pages": 99,
+      "pdf": "paper/rh/main.pdf",
+      "sha256": "595d717d82a0144dece72a058f273e7f22afd554f3ba0799fdb5424bb17f4946",
+      "source_files": 75,
+      "status": "PASS"
+    },
+    "grh": {
+      "pages": 673,
+      "pdf": "paper/grh/main.pdf",
+      "sha256": "327a4817de73d1f9aa0fc981d59105676764c5d711342b504589266063b699db",
+      "source_files": 173,
+      "status": "PASS"
+    },
+    "guide": {
+      "pages": 8,
+      "pdf": "paper/guide/main.pdf",
+      "sha256": "eda10ae872d70e1e602d952bc9450d17956b7c82e41326b492a197ed1bf12a01",
+      "source_files": 1,
+      "status": "PASS"
+    }
+  },
+  "guide_analytic_proof_preservation": {
+    "baseline_commit": "c9def8d66b96082ad46a06c161de6b8da800b440",
+    "bytes": 2958,
+    "sha256": "d613c47bc1cceb431054283547e9a5942decea479a7fe7bff2f0c8a2f364b1d1",
+    "status": "byte-identical"
+  },
+  "visual_review": {
+    "status": "PASS",
+    "scope": "Only the specified new or updated page ranges were visually inspected; no full-manuscript visual-review claim. All PDFs passed the build checks for unresolved references and overfull boxes.",
+    "certificates": [
+      "certificates/arithmetic-frontier-rh-visual-review.json",
+      "certificates/arithmetic-frontier-grh-visual-review.json",
+      "certificates/arithmetic-frontier-guide-visual-review.json"
+    ],
+    "inspected_pages": {
+      "rh": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        45,
+        46,
+        47,
+        50,
+        51,
+        52,
+        82,
+        83
+      ],
+      "grh": [
+        54,
+        55,
+        56,
+        58,
+        59,
+        60,
+        61,
+        180,
+        181,
+        182,
+        183,
+        184,
+        343,
+        344
+      ],
+      "guide": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "renders": [
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-034.png",
+        "sha256": "528daaf3e4800f3ff84e5e0cd972e021bc0e10e889e8163dcef44fef5b087f76",
+        "route": "rh",
+        "page": 34
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-035.png",
+        "sha256": "70fd498cbd06b786e558af99c88a2c9561eed2fad9e903bb471a6a6cf200ea82",
+        "route": "rh",
+        "page": 35
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-036.png",
+        "sha256": "6dc37a3a44d6c7f87dfe4f1b86c59733660502a0564be8273208ee1b42e56d23",
+        "route": "rh",
+        "page": 36
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-037.png",
+        "sha256": "12783566bb8ff565c43ffcf0e6e5eed351a9ca522d7d6e3add20df98b348e210",
+        "route": "rh",
+        "page": 37
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-038.png",
+        "sha256": "d5ed03d32d2c0b68a57cb4e65cf5a5066038e4094527efbfc494ca8a82d7e7eb",
+        "route": "rh",
+        "page": 38
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-039.png",
+        "sha256": "df98a4ccabb45db100b3bb82c01d083e9a90059fafd9cd2432070de56df15421",
+        "route": "rh",
+        "page": 39
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-040.png",
+        "sha256": "c7231a9de12ee6fb16f2f5744f3a64f10865f424f0eb914078059df3bf20fc04",
+        "route": "rh",
+        "page": 40
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-045.png",
+        "sha256": "5fb73f8323fbd52539c6b9927dd524a563987f9a86b370daca6aa199d93ebc1d",
+        "route": "rh",
+        "page": 45
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-046.png",
+        "sha256": "1bdb43d2d778884c5d6716de87b8f8cfdf14689736703578a8b31e18abacb951",
+        "route": "rh",
+        "page": 46
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-047.png",
+        "sha256": "4ab776b8c1f7a47295787f504b8f037231e18b4ed77aa8ed0e5a5981dcddc999",
+        "route": "rh",
+        "page": 47
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-050.png",
+        "sha256": "52d0ca021221831fa64f2ed704f9181d88cf603024459226cd1a00ce120e52e5",
+        "route": "rh",
+        "page": 50
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-051.png",
+        "sha256": "cda00baec8c8fd665ccf6785a66ffad4c94051e0cc9fe75e620fe6a29f111231",
+        "route": "rh",
+        "page": 51
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-052.png",
+        "sha256": "0929f85a8c2b643b2627a5e4057ff8e18e132766a53fb4b5568a7aa44a8f4c80",
+        "route": "rh",
+        "page": 52
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-082.png",
+        "sha256": "ffe1f3cc593d63cf8267db8d19e91a2f535271247acf5637a2a938cd91bdb329",
+        "route": "rh",
+        "page": 82
+      },
+      {
+        "path": "build/review-arithmetic-frontier-rh/rh-083.png",
+        "sha256": "268b8ec3fb04ae363042ac89a5e9352bf772176cc8f4a9e904decc6d1b0df823",
+        "route": "rh",
+        "page": 83
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-054.png",
+        "sha256": "a85450ce6ed6131d272948e68bb2e035973c3a48ddad380e8b240afde7ef94f1",
+        "route": "grh",
+        "page": 54
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-055.png",
+        "sha256": "901cd7dbb0047454f4f6c0d0cc96d443a5faab5d56a26be6692c5da2c1c3b253",
+        "route": "grh",
+        "page": 55
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-056.png",
+        "sha256": "1a67c0a94600285c0c53796b26ccc8ccb1f2fa73f43953663a958d47c5028e4e",
+        "route": "grh",
+        "page": 56
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-058.png",
+        "sha256": "18fad771e5dd37778dd0836e6208fbe7e74719de42ae7581c777e54184deb8b8",
+        "route": "grh",
+        "page": 58
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-059.png",
+        "sha256": "edfdcc69a285e7e48d997f2437e14279d260baca1b3a82026ec0f6dbe1f8ce67",
+        "route": "grh",
+        "page": 59
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-060.png",
+        "sha256": "1a5d7db2e9aafec63cfe5e9a7e4ebeef6cc80ca17e6df93248cd385a0c4646e7",
+        "route": "grh",
+        "page": 60
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-061.png",
+        "sha256": "295e530731c95d65d9a7952b18b5a4c114e0ad8e3088215189b43847fda6fa79",
+        "route": "grh",
+        "page": 61
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-180.png",
+        "sha256": "b3e0078c4cd74820ae7cec3f38a225cccc775a6805031a290d5471527eb561b2",
+        "route": "grh",
+        "page": 180
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-181.png",
+        "sha256": "0e0ab6fd05269748746bfd1928acb63df08ab0ea431f7dbc297a7e1d85bedf15",
+        "route": "grh",
+        "page": 181
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-182.png",
+        "sha256": "8f2a902c1df3c46cd122b52b13539477a496428064799cf96401615bd47ec94d",
+        "route": "grh",
+        "page": 182
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-183.png",
+        "sha256": "8942fe1ed5e91df33733451eb8ec648427a433af34e49b5ef7739d932572bc76",
+        "route": "grh",
+        "page": 183
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-184.png",
+        "sha256": "df5cb68d9509821e9c3677e7105c9da587c54d589181e44d4a0f6e6c2fcba657",
+        "route": "grh",
+        "page": 184
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-343.png",
+        "sha256": "247ea6e89962f7009e0c5406af1d605099d42d753ab34bbfd05e2de46f20c7aa",
+        "route": "grh",
+        "page": 343
+      },
+      {
+        "path": "build/review-arithmetic-frontier-grh/grh-344.png",
+        "sha256": "eac44539b64f6ac63e19e8e75adfb2d03a7b109c033ea24d213d6a4fcae23809",
+        "route": "grh",
+        "page": 344
+      },
+      {
+        "path": "build/review-arithmetic-continuation-final-guide/guide-5.png",
+        "sha256": "d9e81f3e35795b64f22cf9d3142a93eeef7b81d2e6500579af3f09b3840f935d",
+        "page": 5,
+        "route": "guide"
+      },
+      {
+        "path": "build/review-arithmetic-continuation-final-guide/guide-6.png",
+        "sha256": "67cd9a49f71585b9998d6d460fd627ac631651465cc045a0afc3d5e0dcbee876",
+        "page": 6,
+        "route": "guide"
+      },
+      {
+        "path": "build/review-arithmetic-continuation-final-guide/guide-7.png",
+        "sha256": "048e26521e4648efcb1d68ab415ae30604c7392e780e4b9f7173ca4be278f886",
+        "page": 7,
+        "route": "guide"
+      },
+      {
+        "path": "build/review-arithmetic-continuation-final-guide/guide-8.png",
+        "sha256": "35ba75271756a2d97bfba6369ae4f5bba331551a9c17e4264cdb75f679e4c245",
+        "page": 8,
+        "route": "guide"
+      }
+    ]
+  },
+  "investigations": [
+    {
+      "path": "certificates/arithmetic-frontier-global-norm-audit.json",
+      "result": "Bounded audit of original normalized Gram, Poincare and global theta contracts. No new uniform normalized norm estimate; the inverse-moment and transfer obstacles remain explicit."
+    }
+  ],
+  "remaining_principal_obligations": [
+    "Actual normalized source-deficit and target-excess estimates for the same growing integral maps.",
+    "Original compact-model mixed-integral and common vertical-curvature dictionary, retaining component weights; arithmetic model, lattice and section-remainder inputs.",
+    "Original integral paired-module assembly and denominator transfer, finite simultaneous auxiliary choice, remaining global/ordinary local estimates and patched automorphic modules.",
+    "One compatible signed arithmetic budget meeting the final analytic criterion on the required cofinal tables."
+  ],
+  "integration_checks": {
+    "concurrent_routes": "certificates/concurrent-routes-check.json",
+    "current_blueprints": "certificates/route-blueprint-check.json",
+    "git_diff_check": "PASS",
+    "independent_scope_review": "geometry_frontier: current README/checkpoint/next-step scope passed; three stale earlier local-comparison labels were corrected and programs regenerated."
+  },
+  "verification_limits": [
+    "Pinned source-byte authentication and bounded excerpts are provenance, not an upstream kernel check.",
+    "Exact symbolic and finite checks verify the stated identities and negative controls; the general mathematical claims rest on the written proofs and reviews.",
+    "Historical review certificates remain evidence for their original published commits. This integration has its own immutable artifact record."
+  ],
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 21968,
+      "sha256": "ecb3179c41c17e2a36818062601b177d49088d8e853438da03f7b159baf0dca9"
+    },
+    {
+      "path": "blueprint/full-proof-program.json",
+      "bytes": 85805,
+      "sha256": "5e053fe6a3a915ed31f11a8f017c76c8100c99b7a853581d15d880ed2ba3c2e6"
+    },
+    {
+      "path": "blueprint/full-proof-program.md",
+      "bytes": 68217,
+      "sha256": "8048f8d7a671b99f88a9d218929386f0e8b313b0487354d45cb3ec17b6a5972b"
+    },
+    {
+      "path": "blueprint/grh/map.json",
+      "bytes": 17969,
+      "sha256": "54224a3752e556292d8da59e025680b0645ed1da685cb8dfc0b249175458becb"
+    },
+    {
+      "path": "blueprint/grh/program.json",
+      "bytes": 85805,
+      "sha256": "5e053fe6a3a915ed31f11a8f017c76c8100c99b7a853581d15d880ed2ba3c2e6"
+    },
+    {
+      "path": "blueprint/grh/program.md",
+      "bytes": 68259,
+      "sha256": "c74a6762901beb960e9356dea5b8eae1e313f95840ea1c19db03289f51fe0999"
+    },
+    {
+      "path": "blueprint/lean-source-atlas.md",
+      "bytes": 10647,
+      "sha256": "de17f7f66f454338da4f25296143937b7dfe6588f4c31cdca0e759f9c09403aa"
+    },
+    {
+      "path": "blueprint/module-inventory.json",
+      "bytes": 119371,
+      "sha256": "ca517804ff572221c552f61072cb6dcdec0daf611295578820faa586d1619758"
+    },
+    {
+      "path": "blueprint/proof-blueprint.json",
+      "bytes": 33491,
+      "sha256": "c7529b109d5e1f1f329540c2305b41c38fc1dc74eba19d3b0166797289d2e2c1"
+    },
+    {
+      "path": "blueprint/rh-proof-program.md",
+      "bytes": 25152,
+      "sha256": "c355c2a311c152249897da691c0b69b233cd92b1c371d0a2d7755c829ab9bbc3"
+    },
+    {
+      "path": "blueprint/rh/map.json",
+      "bytes": 9901,
+      "sha256": "75df448e5d9b84309c7076fffdeee8561a91a64f8d3d4fb835d027f1f77f85ae"
+    },
+    {
+      "path": "blueprint/rh/program.md",
+      "bytes": 25362,
+      "sha256": "e3fc94b7a9c003e9355b9a515d0d199aa2cda84ba0b32ea2852123b24c34e938"
+    },
+    {
+      "path": "blueprint/shared/README.md",
+      "bytes": 24635,
+      "sha256": "1fd4edc013ba50b3bcbfbf85887d114f3c7957183f4f329fd5880a01c918c264"
+    },
+    {
+      "path": "certificates/arithmetic-frontier-global-norm-audit.json",
+      "bytes": 6038,
+      "sha256": "36763466f43e9aa3bbd7e0eac2b6e888b7d31c3b172c43ed1a6cdfe55455133a"
+    },
+    {
+      "path": "certificates/arithmetic-frontier-grh-visual-review.json",
+      "bytes": 6819,
+      "sha256": "6fac8530eb5c43cb06880552841b5c6a66dbf78b6a7cce18fe97a9e6287f12ac"
+    },
+    {
+      "path": "certificates/arithmetic-frontier-guide-visual-review.json",
+      "bytes": 1501,
+      "sha256": "e5988ff2208debb1cf8049757933e1781f8e0968c86f3f9d89014d34ee86de89"
+    },
+    {
+      "path": "certificates/arithmetic-frontier-rh-visual-review.json",
+      "bytes": 10380,
+      "sha256": "8587800c098a65f1cb35f157f105a971222b03675e8100c2f1faa09b43ce8340"
+    },
+    {
+      "path": "certificates/blueprint-check.json",
+      "bytes": 2250,
+      "sha256": "8a4595748e4eb0380c4465d6fddec1a56c854c13891d5a38afb00c87213ab5c8"
+    },
+    {
+      "path": "certificates/concurrent-routes-check.json",
+      "bytes": 7960,
+      "sha256": "6f8416107db7b9ff372a3cd41231ec51ea413836a56b7f36a04123485ee6b6c8"
+    },
+    {
+      "path": "certificates/cusp-counting-mean.json",
+      "bytes": 9803,
+      "sha256": "0698ed53c7012f57b908712ca0ebc24639d29d4a8d5e2330a1673ecff165a89e"
+    },
+    {
+      "path": "certificates/full-proof-program-check.json",
+      "bytes": 22676,
+      "sha256": "1cc10b21eefb4309e581a29efa1baafe032957d44190ab48938044c92d5da111"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-bounded-cusp-energy-review.json",
+      "bytes": 13772,
+      "sha256": "a67c7fa5a43b821ee878ac945aed5c3d0503e3d6d0d7db1d8f281fe7c8e6fbf2"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-bounded-cusp-energy.json",
+      "bytes": 10973,
+      "sha256": "2ba199e5790cf7a0f4af2daa2099e33bb888b219868c3f545a90031a8df9aab2"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-curvature-haar-mean-review.json",
+      "bytes": 9251,
+      "sha256": "607920b6fc3c3c3925905f1715aba2eb94e0f9c59e965ab24dc6af9614aa99b5"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-curvature-haar-mean.json",
+      "bytes": 13241,
+      "sha256": "ca95b5960e6b9c504eec38773de576b358f5fbb4c2b5541c5a3018185c3738e0"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-exact-metric-variation-review.json",
+      "bytes": 16882,
+      "sha256": "979e3665d85fc7be34bc290a5d8aad22ddea65d1a77bdd13c79bbf57d55d6d2a"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-exact-metric-variation.json",
+      "bytes": 14970,
+      "sha256": "566382a56a049b00524a4fe1f8c2f9e2d1dca4c36cd735f976f801ab36ec7653"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-isotropic-integrability-review.json",
+      "bytes": 2470,
+      "sha256": "230d31c596bad9728b3eccf5f06f4b0500e898ac51eb2e564c54ba95ee6300ba"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-isotropic-integrability.json",
+      "bytes": 10637,
+      "sha256": "1fea23c4478a3affa02714ba760302b8707ae9da122f3a1fed760528a0867dab"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-signed-boundary-energy-review.json",
+      "bytes": 14299,
+      "sha256": "9d1b4c1217bee467e0526bd97d61a3c35cbdb9a3e64f94fbbb6dfa2ec956f44e"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-signed-boundary-energy.json",
+      "bytes": 11985,
+      "sha256": "77b948508c6f22c552b3076ee7f8e0a6b3f22ab4fe403a522f46bc88699f0603"
+    },
+    {
+      "path": "certificates/grh-build.json",
+      "bytes": 27792,
+      "sha256": "f128cd710667dc1296f76232d9555b0e7cee8e8e1ffde4b34bc28f273d2023bd"
+    },
+    {
+      "path": "certificates/guide-build.json",
+      "bytes": 668,
+      "sha256": "c162c5b64cac7b4a7ac1043d8daeb0e6452dd2849da854701dd23d75d1dcca36"
+    },
+    {
+      "path": "certificates/level-chain-integrality.json",
+      "bytes": 4855,
+      "sha256": "8dcb3e8efa198efb053a9d1da9915224cf3a79df243d296fef0c8378fb894ba5"
+    },
+    {
+      "path": "certificates/paper-build.json",
+      "bytes": 27792,
+      "sha256": "f128cd710667dc1296f76232d9555b0e7cee8e8e1ffde4b34bc28f273d2023bd"
+    },
+    {
+      "path": "certificates/rh-build.json",
+      "bytes": 12415,
+      "sha256": "f564c5bc3b06bd0e9c7e4fe29de9ec3b0097d7be4a9bbc586b62dec98b331055"
+    },
+    {
+      "path": "certificates/route-blueprint-check.json",
+      "bytes": 2203,
+      "sha256": "928af9d9b61c7504d58c807ba84d9bf1d099d022ce57dabe2ae96174b7506134"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-dual-detection-review.json",
+      "bytes": 3215,
+      "sha256": "fe51e297f689af6ae43292fc3450646653e18a861e05161d23100e54a7543dfc"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-dual-detection.json",
+      "bytes": 13003,
+      "sha256": "2f1eecb001f6deccbb99c52ace816cbece672eff30b8a6f757212bc78da10907"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-even-detection-review.json",
+      "bytes": 9231,
+      "sha256": "2d58869cdcb576f4c3e12319f2ad09570ac31c5ca13b789713b0dcd22a564058"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-even-detection.json",
+      "bytes": 9246,
+      "sha256": "26bddf2e9218d5870cdeeaf5ef6a42670d16b8f58ff6a6cca26a25c26e5575b3"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-incidence-independent-review.json",
+      "bytes": 3148,
+      "sha256": "4edc2557edafae0b3d62314afdd544b74009c21840869c91e6eb032d79e2cdee"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-incidence.json",
+      "bytes": 12703,
+      "sha256": "1df6d07a8912f837e43b7bcffc54681b0cc29ac335635fd6c9204d3c8b210252"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-odd-detection-review.json",
+      "bytes": 13179,
+      "sha256": "9c235132cacfeaf07d36d8e4b1993d775eccd41cc886d890de874d774a5f62a6"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-odd-detection.json",
+      "bytes": 14674,
+      "sha256": "ae1e839d10ab88aad0b1fbca50116b5ddd1da01eaaec91c0a02098f670adb4c2"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-padded-relations-review.json",
+      "bytes": 12036,
+      "sha256": "7cf97ca87667ebc121b42ac99a3cbc03fb3cd8d1cd60187e10dd2de49eba6181"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-padded-relations.json",
+      "bytes": 21915,
+      "sha256": "8b6e6072ff94b803b5e7835fb289fd09b597b95b839f6236072acc53fa00ce62"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-special-fibre.json",
+      "bytes": 21349,
+      "sha256": "601eb2ecff1da2106de22e55126502512ec39b03f0a0a6781c1b4ca756eaa479"
+    },
+    {
+      "path": "certificates/theta-integral-frontier-conjugate-gain.json",
+      "bytes": 5475,
+      "sha256": "8fe8eee87091d32c58a14b0935d4605c9581bc8354fcda76792777ff121071ea"
+    },
+    {
+      "path": "certificates/theta-integral-frontier-type-prime-jets-review.json",
+      "bytes": 14304,
+      "sha256": "e26bf208bd550e5698d40b4cb41335b2d8bc369d4682bea56b1983b0b4249610"
+    },
+    {
+      "path": "certificates/theta-integral-frontier-type-prime-jets-visual-review.json",
+      "bytes": 1149,
+      "sha256": "91bf790d974730e10653a4f32eb839272f349a70000914e432d68d8de3772c16"
+    },
+    {
+      "path": "certificates/theta-integral-frontier-type-prime-jets.json",
+      "bytes": 10803,
+      "sha256": "fba9062813c9f06a10281fa15483d63f8133fecef15db8a3d1a57d8fa901b2b2"
+    },
+    {
+      "path": "notes/arithmetic-frontier-continuation-2026-11-22.md",
+      "bytes": 11020,
+      "sha256": "7974857dc8ce5f76a09dff018d19ea1e2d0df993835fb5de10ffacec3d638d5d"
+    },
+    {
+      "path": "notes/current-state.md",
+      "bytes": 57178,
+      "sha256": "bb6d873af4a2e30054c6a0d5d796e199761d1e0cd5258cff286e01a896ce4af6"
+    },
+    {
+      "path": "notes/cusp-counting-mean.md",
+      "bytes": 19499,
+      "sha256": "d0800ecf8dd50831299206168ca782d9523192c40bfcc3343958431249a2d03d"
+    },
+    {
+      "path": "notes/geometry-arithmetic-frontier-bounded-cusp-energy.md",
+      "bytes": 8826,
+      "sha256": "59480c75cad4c251ef40d92bf89b699ace490fcc8b2deecabd042ab4ac3958cd"
+    },
+    {
+      "path": "notes/geometry-arithmetic-frontier-curvature-haar-mean.md",
+      "bytes": 15806,
+      "sha256": "ccc719bc70cc1be31bf964fccecc836b30af9960e8e93c8674aa2763dd62fcc2"
+    },
+    {
+      "path": "notes/geometry-arithmetic-frontier-exact-metric-variation.md",
+      "bytes": 11227,
+      "sha256": "8aec61c32146e7557af6eaf296f058ccd5dd04e6774fddbd7d776d24bd46f024"
+    },
+    {
+      "path": "notes/geometry-arithmetic-frontier-isotropic-integrability.md",
+      "bytes": 15729,
+      "sha256": "2714f1e3685929d0fc7e3ee911e10847cd0597d1e043a68b85ad01fe36998e7c"
+    },
+    {
+      "path": "notes/geometry-arithmetic-frontier-signed-boundary-energy.md",
+      "bytes": 13305,
+      "sha256": "4ec3cd1ca5003b00d507037b4b737b67a88b1c9301077ac83e50a941468c6f99"
+    },
+    {
+      "path": "notes/level-chain-integrality.md",
+      "bytes": 8257,
+      "sha256": "d8b8d25964177c1751c183301fca9d0ebee4c3879d26ef261b17e42b7bba65bd"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-dual-detection.md",
+      "bytes": 9927,
+      "sha256": "59a0f5a944fccd81c5a3f624f745a6d2d52bd4ca1276932e7a2ec2fcbc047399"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-even-detection.md",
+      "bytes": 6724,
+      "sha256": "fa5e65b37e07e2116a9433ed66dfb1c43c1a6c77fa38463372c6226b02e44b0b"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-incidence.md",
+      "bytes": 10265,
+      "sha256": "378989678a7b9c2ce8dfebfc0e3d7f017e2c931231a1bfd00013398d1dc11624"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-odd-detection.md",
+      "bytes": 10177,
+      "sha256": "75b172eb0db49b5b1d84e79106004807e1902fab6b4e05847b6d95e91975ef33"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-padded-relations.md",
+      "bytes": 15810,
+      "sha256": "7995acf48d8df6bdb2a825d721ae36eb5171485463ce72e22209c454938243d3"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-special-fibre.md",
+      "bytes": 8460,
+      "sha256": "60091309d79b5467c29bd22502604936f40c267fdce494b3d1473af7c52a4a9b"
+    },
+    {
+      "path": "notes/theta-integral-frontier-conjugate-gain.md",
+      "bytes": 7803,
+      "sha256": "9ae46f3504d1f6819cf3e52e97b0bedf02af4f2b44e8e1ee3f1d1cbea935d6fd"
+    },
+    {
+      "path": "notes/theta-integral-frontier-type-prime-jets.md",
+      "bytes": 16736,
+      "sha256": "8d8018c6cbeccc7e087910e9526d26fd3a0fd3bc78bf55057817d32193353322"
+    },
+    {
+      "path": "paper/grh/main.pdf",
+      "bytes": 3672243,
+      "sha256": "327a4817de73d1f9aa0fc981d59105676764c5d711342b504589266063b699db"
+    },
+    {
+      "path": "paper/guide/main.pdf",
+      "bytes": 94792,
+      "sha256": "eda10ae872d70e1e602d952bc9450d17956b7c82e41326b492a197ed1bf12a01"
+    },
+    {
+      "path": "paper/guide/main.tex",
+      "bytes": 27683,
+      "sha256": "d6d02306eeba129422c02dc2fcfe902acee19977e790a80081c2ff306acb2d2a"
+    },
+    {
+      "path": "paper/main.pdf",
+      "bytes": 3672243,
+      "sha256": "327a4817de73d1f9aa0fc981d59105676764c5d711342b504589266063b699db"
+    },
+    {
+      "path": "paper/references.tex",
+      "bytes": 17804,
+      "sha256": "fda7a962852c8cf636b4e2d68708ed0d0eb6ee6359b67a8041c42a41c6471e08"
+    },
+    {
+      "path": "paper/rh/main.pdf",
+      "bytes": 632642,
+      "sha256": "595d717d82a0144dece72a058f273e7f22afd554f3ba0799fdb5424bb17f4946"
+    },
+    {
+      "path": "paper/rh/sections/03a-selmer-estimates.tex",
+      "bytes": 1223,
+      "sha256": "e2d85e43fb554eabe24157d326877eb484aeb126f0db93f91055b2b82af1152d"
+    },
+    {
+      "path": "paper/rh/sections/04-geometric-degree.tex",
+      "bytes": 11417,
+      "sha256": "fab135157d092494dc288ec64143d5532d11cdf026a8ebccc98f392c7110248f"
+    },
+    {
+      "path": "paper/rh/sections/05-theta-energy.tex",
+      "bytes": 4406,
+      "sha256": "62cc49371899f05c30fcfe376722fce90839f7010773f1c36942cfdbe35055af"
+    },
+    {
+      "path": "paper/rh/sections/06-compatible-budget.tex",
+      "bytes": 13594,
+      "sha256": "c519c29ac996071eee02fb0cc46bccff8daa82bea1d3174d5137fcabd0fd853b"
+    },
+    {
+      "path": "paper/rh/sections/07-references.tex",
+      "bytes": 5021,
+      "sha256": "29adfe2f8a0518030015a3ed33baa52ce8b71736ce5c402bf464c20bc140b74a"
+    },
+    {
+      "path": "paper/sections/recovered/10-cs-section.tex",
+      "bytes": 105572,
+      "sha256": "969ea117a2c4330d32993903ba19d42acf52248b0dcc87a745ca427f2427d89b"
+    },
+    {
+      "path": "paper/sections/recovered/27-kt-section.tex",
+      "bytes": 12560,
+      "sha256": "d091d705e30ade479fab2ac1224fbd64921530bae9843c857295b29b79ef0dab"
+    },
+    {
+      "path": "paper/sections/recovered/56-csp-section.tex",
+      "bytes": 25488,
+      "sha256": "c5530522037e16b9bea2fca6f475637b02bcb8aca9ad82a01405313b22b8722c"
+    },
+    {
+      "path": "paper/shared/cusp-counting-mean.tex",
+      "bytes": 6732,
+      "sha256": "a73fbda1b1b75490a412ac9815c52c349e689bfd7bf750a1e1ac816ce1118314"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-boundary-energy-references.tex",
+      "bytes": 644,
+      "sha256": "60ece8f7f88433f465eec63a3b3103d632bc39a08c9aea07b524237ae11a38aa"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-boundary-energy.tex",
+      "bytes": 5468,
+      "sha256": "a79c18ace0c5743004fb7f6a8a65bba9ee599a274364c17df498d5608c1665c8"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-curvature-haar-mean.tex",
+      "bytes": 3961,
+      "sha256": "b6cb328573ae82f63e7158cc7b2ab95d13ee2623e0018b7a682332d980506690"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-exact-metric-variation.tex",
+      "bytes": 3380,
+      "sha256": "9a5b5f16f182f1f6605a820694adb045ca9a75d6fb6493ba2bae9c4b7a14c25f"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-isotropic-integrability-references.tex",
+      "bytes": 540,
+      "sha256": "608e5452d4ca79a5237b29da13a3be33b18036f25e728fc3d7f0c58a9e3d849c"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-isotropic-integrability.tex",
+      "bytes": 5001,
+      "sha256": "40f9ab508c77db3bb8be37f69bf3334fe6249c6ac41cdb6bba651821978df499"
+    },
+    {
+      "path": "paper/shared/level-chain-integrality.tex",
+      "bytes": 3804,
+      "sha256": "f3efa2c166a55c59075a318bae0a0ddbf01e33f9b14e0dc5f60c3662478b0d6d"
+    },
+    {
+      "path": "paper/shared/manifest.json",
+      "bytes": 17828,
+      "sha256": "5812287f6fa54a564d0056e06969754c5fb42bfb2f92ef39cf88e3cdf9264070"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-dual-detection.tex",
+      "bytes": 2601,
+      "sha256": "22e597f9c7cdf4bb14bbfda4d5a92eccb9e6f9490e92034efb3db3adf6de9c71"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-even-detection-references.tex",
+      "bytes": 496,
+      "sha256": "9983be72542c67e88e28418af82275836f4c8035438e318aa77367fbdece4e9d"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-even-detection.tex",
+      "bytes": 2677,
+      "sha256": "647f5cc132036795663a0798ecc62c94ba4c6a0f5afce08bf703096920c94347"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-incidence.tex",
+      "bytes": 3887,
+      "sha256": "ce737e58253a85fae575a5b39546ee4be6240c618f87bbd4b6e40c2844af2b31"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-odd-detection-references.tex",
+      "bytes": 477,
+      "sha256": "e98f3ebf1f2e73ecb6d2d8b0282a640a5806cb420a0e401c25a5793b7c0e2681"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-odd-detection.tex",
+      "bytes": 4994,
+      "sha256": "1b97098339ac9b7f2e75d0f9094fb3fa6411f81ac99c2cf31e16f3cc173c2680"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-overview.tex",
+      "bytes": 1777,
+      "sha256": "8eda84f83181de15b6e9a4756dc1140e4aa66b521c5465b5ad8bedabb62487d0"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-padded-relations.tex",
+      "bytes": 5014,
+      "sha256": "8092ec9e97213a6ef041b33b45a81a20095d7bd92ed35ea571637c2afbdfd159"
+    },
+    {
+      "path": "paper/shared/theta-integral-frontier-type-prime-jets.tex",
+      "bytes": 6052,
+      "sha256": "b285a835c4dc6e25afb9574909d92724acb1fdff67c88f1a27443e1bb8b69ee4"
+    },
+    {
+      "path": "scripts/check_arithmetic_frontier_continuation.py",
+      "bytes": 3855,
+      "sha256": "8346b373b60757fa50706e214b9fd178e8e72015890738a61c3f1b099c1033ad"
+    },
+    {
+      "path": "scripts/check_cusp_counting_mean.py",
+      "bytes": 10549,
+      "sha256": "14b0a9985acbcde7a96c26b10d46a68443386ff86619afc9a53c9fdd67d02599"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_bounded_cusp_energy.py",
+      "bytes": 8560,
+      "sha256": "da10bc78d83a93e417c571fd41d9c4fe351d7a8f2c2380fe3075c2f84e2a53aa"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_curvature_haar_mean.py",
+      "bytes": 13707,
+      "sha256": "a92c57abb1cdc51cbd2a7994e8338f8a5757b14ba8cf51183cfe1988c5b0b5fc"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_exact_metric_variation.py",
+      "bytes": 12577,
+      "sha256": "4542cf7c6074f05819035f85719f7c572ae4ffc6524a98ee1daa8ff0a26e3832"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_isotropic_integrability.py",
+      "bytes": 13124,
+      "sha256": "275e535bdca331d221c5261bc46cb7d72a0c9fc7989778bafe2f2919c2ab29b0"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_signed_boundary_energy.py",
+      "bytes": 9546,
+      "sha256": "8ff232e397616e65cad5113d94a4d9c06c54ad2f3dae9186ff3f140db0336c29"
+    },
+    {
+      "path": "scripts/check_level_chain_integrality.py",
+      "bytes": 7179,
+      "sha256": "a67b0608ae753c2e17821501097af77e33b933b5943b129571fb92feca284a9c"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_dual_detection.py",
+      "bytes": 6185,
+      "sha256": "b2864afc1ae093ab60881fd3a7424bd88d90409958f40f874e6777c3815bf95b"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_even_detection.py",
+      "bytes": 10513,
+      "sha256": "f42075eea0b99ae8e9a568bc742bf1d9a4c970ceb32be7fd1fb34bc3ee348206"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_odd_detection.py",
+      "bytes": 10172,
+      "sha256": "f32c8fd0f6b6563630f5065ca24c8d5c7c41a78b1bcd47ed62daee1e9cf8ff19"
+    },
+    {
+      "path": "scripts/check_theta_integral_frontier_conjugate_gain.py",
+      "bytes": 5765,
+      "sha256": "8c04c687261c1f003ece1df3c80b812ce706f6df3221a11591583e181c57c161"
+    },
+    {
+      "path": "scripts/check_theta_integral_frontier_type_prime_jets.py",
+      "bytes": 13005,
+      "sha256": "b3483f65d9c95ac36f72157c3135d848bd538a0220e66996eb19fb0c36c731d9"
+    },
+    {
+      "path": "scripts/selmer-integral-frontier-check.py",
+      "bytes": 8513,
+      "sha256": "d743b25680dcc65ffaee6b60e77211e6f0ddb5c6bdac8edfe6ebdd39e4d34583"
+    },
+    {
+      "path": "scripts/selmer-integral-frontier-incidence-check.py",
+      "bytes": 9799,
+      "sha256": "1e9937b4aeabaaa475f0065703427e928107dc40ebb29a0d187a7362dcf66977"
+    },
+    {
+      "path": "scripts/selmer-integral-frontier-padded-relations-check.py",
+      "bytes": 13396,
+      "sha256": "5caf3575a9b9d95de86ea8abd75be85c1ea7eb70854f63d7c7554495cdcaa284"
+    }
+  ]
+}

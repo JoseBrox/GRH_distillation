@@ -18,9 +18,9 @@ keeps the two applications and their extra hypotheses explicit.
 The [node counts](../blueprint/progress.md) distinguish finished stated
 implications or adopted inputs from open construction hypotheses. Moving
 files or adding a node is not recorded as closing an existing open node.
-This continuation recovered main at
-`4cc0c8b31a7af9954eaa2e83dab5bb7ac3f8bd8a`, including all eight
-previously integrated frontier packages. The earlier
+The current arithmetic continuation recovered main at
+`1b856f01372ec4287347dbfdef26f0e1f83573e7`, including the integrated
+reduction proofs and their review evidence. The earlier
 [frontier review](../certificates/frontier-progress-review-2026-11-22.json)
 remains their historical evidence. The sharp return bound, exact chain
 denominator, finite section-rank theorem, graded point/tangent comparison,
@@ -32,6 +32,89 @@ The guide retains the complete short RH analytic proof unchanged.
 The source-import atlas and documentary section atlas have no proof
 completion score. The published baseline is RH 6/9 and the GRH technical
 map 17/31; the generated progress table carries the current values.
+
+## Current arithmetic frontiers
+
+The [current arithmetic continuation](arithmetic-frontier-continuation-2026-11-22.md)
+classifies the new results, the unsuccessful shortcuts and the next exact
+obligations. Its [integration record](../certificates/arithmetic-frontier-integration-2026-11-22.json)
+identifies the fourteen published checkpoints, current manuscript builds,
+reviewed pages and unchanged short analytic RH proof. The earlier
+reduction-review certificates remain historical evidence for their original commits.
+
+The [full isotropic-count theorem](geometry-arithmetic-frontier-isotropic-integrability.md)
+removes a missing arithmetic premise inside the geometric node: finite
+arithmetic covolume and integrability of the unrestricted original count
+are now proved. Finitely many rational-line orbits and an ideal sum at
+exponent \(N-1>1\) suffice. The existing self-normalizing cusp proof needs
+no numerical bound on those orbit constants. The next task is the actual
+geometric sheets, Hodge metric and lattice identification, followed by
+the signed boundary comparison and arithmetic section remainder. The
+[curvature calculation](geometry-arithmetic-frontier-curvature-haar-mean.md)
+now proves the exact mean comparison from those sheet and metric data.
+Its denominator is already the integral of the same interior density
+against one; no additional algebraic-degree or boundary theorem is
+needed to normalize it. Original component volumes and sheet
+multiplicities are retained.
+
+The [boundary energy argument](geometry-arithmetic-frontier-signed-boundary-energy.md)
+proves finite energy and full mass from the prescribed logarithmic growth.
+The original regularizations converge after a positive correction, and
+polynomial interpolation recovers the original signed analytic energy.
+The original Hodge class need only be nef. The
+[bounded cusp argument](geometry-arithmetic-frontier-bounded-cusp-energy.md)
+now proves convergence for the exact specified bounded sequence, using its
+inner charts and circle-invariant smoothing kernel. The
+[metric-variation argument](geometry-arithmetic-frontier-exact-metric-variation.md)
+derives the positive single-slot sign, the factor \(n+1\), full metric
+locality and the original rational-twist polynomial directly from the
+intersection axioms. The remaining interface is the actual compact-model
+integral dictionary, including common vertical curvature and all component
+weights. Cancellation of a common metric factor in a ratio does not prove
+that its curvature vanishes.
+
+The [Selmer special-fibre checkpoint](selmer-integral-frontier-special-fibre.md)
+locates the remaining global arithmetic issue in the full normalized
+deformation ring. Rigidity after inverting the coefficient prime does not
+exclude characteristic-prime curves or bound their conormal torsion.
+The exact next supplier is propagation along reducible nonsemisimple
+component chains, retaining the actual patched modules and dimensions.
+The [local incidence theorem](selmer-integral-frontier-incidence.md)
+now supplies the precise prime inclusion in the reducible case. A proper
+projective incidence space is regular with connected closed fibre, hence
+irreducible. This proof works in the original complete local setting.
+The [presentation argument](selmer-integral-frontier-padded-relations.md)
+now constructs its independent coefficient rows by redundant coordinates
+from two cohomological bounds. A block resultant supplies the explicit
+auxiliary constant \(2\sum_jv_t(\delta_j)\), uniform in the truncation
+and sufficiently large auxiliary level. The actual index-two cocycle
+descent retains complex-conjugation compatibility. Global and ordinary
+local cohomological estimates and the patched modules remain inputs.
+The [complete-equation argument](selmer-integral-frontier-dual-detection.md)
+now controls every modular cocycle from the exact integral detection
+hypothesis, including classes that do not lift to integral cocycles.
+The [odd paired detection proof](selmer-integral-frontier-odd-detection.md)
+uses a central block idempotent, matrix units and the exact four-factor
+relation pairing. The [even correction](selmer-integral-frontier-even-detection.md)
+completes the fraction-field determinant argument, retaining the source's
+commutator-subgroup condition and its division by two. The next supplier
+is the integral paired-module assembly and denominator transfer, followed
+by the simultaneous finite auxiliary choice and remaining ordinary local
+estimates. Ordinary trace cannot replace the first-order paired functional.
+
+The chain calculation now uses the verified source rank
+\(N(i)=k+i(t+1)\), distinct from the auxiliary rank \(r+it\).
+The [conjugate kernel calculation](theta-integral-frontier-conjugate-gain.md)
+also supplies positive \(T^{mfh}\) divisibility on the original inactive
+lattice. This is a lower-order signed gain, with no new endpoint exponent.
+The [full type-prime jet proof](theta-integral-frontier-type-prime-jets.md)
+now supplies another actual local input: the original Fourier indicator
+has mixed-jet loss \(p^{fab}\), with local constant one. A torsion
+translation after multiplication handles the nonunit branch, and the
+existing ordinary CM measure handles the formal branch. The original
+differential periods and root phases are retained.
+These local results do not establish the small normalized source deficit or target excess;
+those actual analytic estimates remain a principal research priority.
 
 ## Preferred RH route: no weight symmetry
 
@@ -91,15 +174,23 @@ pairings put sufficiently short vectors in a small isotropic space;
 packing and a single tail integral bound the logarithmic minimum mean
 by `23/24`. Integral cyclotomic traces span the abelian coefficient field
 over the rationals, giving cusp allowance 3. Their integral span need
-not be the full ring of integers. The actual lattice and covolume,
-normalized quotient measure and signed boundary comparison remain
-required. The count homogeneity itself follows from Haar invariance:
+not be the full ring of integers. The actual geometric sheets, Hodge
+metric, lattice and covolume, and signed boundary comparison remain
+required. The normalized quotient mean follows from the
+[curvature and sheet theorem](geometry-arithmetic-frontier-curvature-haar-mean.md).
+The count homogeneity itself follows from Haar invariance:
 the averaged lattice count is an invariant measure on the product of
 nonzero isotropic cones, whose coarea measure has degree `2f(N-1)`.
-One integrable count suffices, and its unknown normalization cancels.
-The original Haar quotient, component weights and lattice count must
-still be identified; finite volume and that initial integrability are
-retained.
+The [arithmetic first-moment theorem](geometry-arithmetic-frontier-isotropic-integrability.md)
+now proves finite volume and integrability of the full original count,
+including all scalar multiples. Finitely many rational cusp lines and
+their actual stabilizers reduce the mean to partial ideal zeta values
+at `N-1>1`. No numerical covolume, cusp count or unit-index estimate is
+needed: its finite normalization cancels in the packing argument.
+The curvature theorem computes the exact component weights and mean
+from the original geometric sheet and metric data. Those data and the
+lattice identification must still be constructed; the signed boundary
+limit remains open.
 
 The [mean-volume supplier](mean-volume-supplier.md) now isolates the
 required normalized arithmetic intersection inequality for the selected
@@ -247,8 +338,9 @@ norms vanish. The prescribed pure-period points descend and extend to
 integral maps on the same component, giving the local-norm comparison.
 The remaining geometric inputs are the arithmetic model with its original
 global family and fibre data, the moduli separation and pointwise period
-presentations, the original Haar quotient and lattice count with one
-integrable radius, and the signed boundary limit. The actual nef and
+presentations, the original arithmetic Haar quotient and lattice count,
+and the signed boundary limit. Finite volume and integrability of that
+full count are now proved. The actual nef and
 birational section data and arithmetic section remainder also remain.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
@@ -686,7 +778,10 @@ identification and other period denominators remain required.
    comparison, and qualitative finiteness supplies all negative base
    weights. The explicit marking kills normalized base coboundaries.
    The crystalline component theorem supplies the local finite condition
-   from those equations. Two-sided global rigidity remains.
+   from those equations. The full characteristic-prime fibre still requires
+   the actual propagation argument. The incidence theorem supplies its local
+   prime inclusion; the presentation and patched-module dimension are the
+   remaining suppliers. Two-sided global rigidity remains.
    The compatible conormal
    pairing and full abstract length theorem are now proved under those
    conditions. Its chart normalization and finite orbit cover follow
@@ -703,8 +798,8 @@ identification and other period denominators remain required.
    vertical rigidity, local-norm comparison and signed CM value are proved
    under these identifications. Identify the actual nef and birational
    section data and apply the finite jet rank bound, retaining its exact
-   surplus denominator. Identify the original Haar quotient and lattice
-   count, with one integrable radius, and the signed boundary comparison
+   surplus denominator. Identify the original arithmetic Haar quotient
+   and lattice count, and the signed boundary comparison
    for the cusp theorem; then bound the
    arithmetic section remainder. The exact selected abelian rank is retained; the
    scalar prime and period bounds are supplied.

@@ -238,7 +238,7 @@
       "package": "slope_assembly",
       "role": "primary",
       "status": "recovered",
-      "source_sha256": "bb201d03ba8dabba3e34336ef3b6db5a78dc574b0fa0f05c70712ab59283f026",
+      "source_sha256": "969ea117a2c4330d32993903ba19d42acf52248b0dcc87a745ca427f2427d89b",
       "included_proof_sources": {
         "paper/shared/period-bessel.tex": "314ff8d72cc3cd6f8ee95e1040ea6590d534fa890bb11d80cbe93836611a2b11",
         "paper/shared/trace-slope.tex": "a9aa0a2a81589084d0d5edccce83caf3cb8526336c03f7fcd654dd8bd457b00b",
@@ -246,7 +246,11 @@
         "paper/shared/code-rate-trace.tex": "01a7a77e97943a22f6b8b417e18f1840270edd3cf315bbce3dc073eb8cecc17e",
         "paper/shared/tower-intersection.tex": "807229e7fac1474d6959c062b399f6e0339521a65591e753f1d35c561c42e91f",
         "paper/shared/base-test-height.tex": "05b5ddef4d271e54bd16561879d00abf74f35d248ce293481c731c0e9aa5702d",
-        "paper/shared/cusp-counting-mean.tex": "a13099fe994b4e9f1045416fe1327e0c66b717beb6dbca7480f642f6478abaaf",
+        "paper/shared/geometry-arithmetic-frontier-isotropic-integrability.tex": "40f9ab508c77db3bb8be37f69bf3334fe6249c6ac41cdb6bba651821978df499",
+        "paper/shared/geometry-arithmetic-frontier-curvature-haar-mean.tex": "b6cb328573ae82f63e7158cc7b2ab95d13ee2623e0018b7a682332d980506690",
+        "paper/shared/cusp-counting-mean.tex": "a73fbda1b1b75490a412ac9815c52c349e689bfd7bf750a1e1ac816ce1118314",
+        "paper/shared/geometry-arithmetic-frontier-exact-metric-variation.tex": "9a5b5f16f182f1f6605a820694adb045ca9a75d6fb6493ba2bae9c4b7a14c25f",
+        "paper/shared/geometry-arithmetic-frontier-boundary-energy.tex": "a79c18ace0c5743004fb7f6a8a65bba9ee599a274364c17df498d5608c1665c8",
         "paper/shared/finite-section-jet-bound.tex": "ddacf81ef5709babe044067d372b11854bc92d2b4ffb5c892fb2ea9da843cee5",
         "paper/shared/selected-tangent-bound.tex": "ea56c36fb5fb92ebf6d4eb1874e3e0d955c50069df75b1077a037589ba663163",
         "paper/shared/moret-bailly-tangent.tex": "55c0780285af96b825ee4fad8897d490eba22d3bc1cd2e93d9b047610613ebf1",
@@ -344,9 +348,20 @@
         "geo-tower-block-bound",
         "geo-classical-height-lower",
         "geo-reciprocal-height-limit",
+        "sec:arithmetic-isotropic-integrability",
+        "prop:arithmetic-isotropic-integrability",
+        "sec:curvature-haar-mean",
+        "prop:geometric-haar-mean",
         "sec:cusp-counting-mean",
         "lem:cusp-counting-tail",
         "prop:cusp-counting-haar",
+        "sec:exact-arithmetic-metric-variation",
+        "eq:metric-variation-single-slot",
+        "eq:metric-variation-top-intersection",
+        "eq:metric-variation-energy-factor",
+        "sec:boundary-energy",
+        "lem:boundary-energy",
+        "lem:bounded-cusp-energy",
         "sec:finite-section-jets",
         "prop:finite-section-jets",
         "cs-mean-volume-prime-cost",
@@ -842,7 +857,7 @@
       "package": "coarse_cohomology",
       "role": "primary",
       "status": "cited",
-      "source_sha256": "34b299725e90e09024bcbbd38bb60a12ed2e61075841820ff34251b1dfe27418",
+      "source_sha256": "d091d705e30ade479fab2ac1224fbd64921530bae9843c857295b29b79ef0dab",
       "included_proof_sources": {
         "paper/shared/selmer-reductions.tex": "3dc0fcdd83042eb015ce44d15af9e76de8616293d7afe51ed4941896d1f71618",
         "paper/shared/rh-selmer-product.tex": "96e68d5ed3f3c813b9c40fc59bcd97b4eec67aeada31f20c3d253c8cd2eea307",
@@ -857,6 +872,12 @@
         "paper/shared/selmer-negative-weight-rigidity.tex": "7dcbc9bca0d8037a500d023e0016da1991190b6209903f0b49e4d9ecc238c2de",
         "paper/shared/selmer-tangent-comparison.tex": "59ed0be2ead21327b3ca0c14256c31fde9a1e1eee687eaf7704444210e36896b",
         "paper/shared/selmer-crystalline-component-comparison.tex": "5af8af14ae4399a20770f7a5816530117f16f78e4b4cd8da8e1aca274c43a836",
+        "paper/shared/selmer-integral-frontier-overview.tex": "8eda84f83181de15b6e9a4756dc1140e4aa66b521c5465b5ad8bedabb62487d0",
+        "paper/shared/selmer-integral-frontier-incidence.tex": "ce737e58253a85fae575a5b39546ee4be6240c618f87bbd4b6e40c2844af2b31",
+        "paper/shared/selmer-integral-frontier-padded-relations.tex": "8092ec9e97213a6ef041b33b45a81a20095d7bd92ed35ea571637c2afbdfd159",
+        "paper/shared/selmer-integral-frontier-dual-detection.tex": "22e597f9c7cdf4bb14bbfda4d5a92eccb9e6f9490e92034efb3db3adf6de9c71",
+        "paper/shared/selmer-integral-frontier-odd-detection.tex": "1b97098339ac9b7f2e75d0f9094fb3fa6411f81ac99c2cf31e16f3cc173c2680",
+        "paper/shared/selmer-integral-frontier-even-detection.tex": "647f5cc132036795663a0798ecc62c94ba4c6a0f5afce08bf703096920c94347",
         "paper/shared/selmer-resultant.tex": "2a3e649f507a706d65786985eeb55f4d627561561602293ec51f68135b208471"
       },
       "labels": [
@@ -916,6 +937,14 @@
         "lem:selmer-normalized-coboundary",
         "lem:selmer-normalized-base-coboundary",
         "prop:selmer-crystalline-components",
+        "sec:selmer-integral-frontier",
+        "lem:selmer-local-incidence",
+        "lem:selmer-padded-relations",
+        "lem:selmer-block-resultant",
+        "lem:selmer-finite-obstruction",
+        "shared-complete-solution-count",
+        "prop:selmer-odd-paired-detection",
+        "cor:selmer-paired-detection",
         "selmer-resultant",
         "selmer-resultant-certificate",
         "selmer-common-divisor",
@@ -1214,7 +1243,7 @@
       "status": "recovered",
       "source_sha256": "805793b613d1c89338d646afc6bfa683171b1de17920b34a4abaf911658d4b49",
       "included_proof_sources": {
-        "paper/shared/level-chain-integrality.tex": "c248e2069f6544890991a64b8e83fa8b0e11913daf925427c64c6bc554b81c9c"
+        "paper/shared/level-chain-integrality.tex": "f3efa2c166a55c59075a318bae0a0ddbf01e33f9b14e0dc5f60c3662478b0d6d"
       },
       "labels": [
         "div:section",
@@ -1710,15 +1739,19 @@
       "package": "theta_integrality",
       "role": "primary",
       "status": "recovered",
-      "source_sha256": "6092ad27d9fe1e024be95fccfe82c3d2f2b41dfaf836642f73d2b2aa3115fd16",
-      "included_proof_sources": {},
+      "source_sha256": "c5530522037e16b9bea2fca6f475637b02bcb8aca9ad82a01405313b22b8722c",
+      "included_proof_sources": {
+        "paper/shared/theta-integral-frontier-type-prime-jets.tex": "b285a835c4dc6e25afb9574909d92724acb1fdff67c88f1a27443e1bb8b69ee4"
+      },
       "labels": [
         "csp-section",
         "csp-coordinate-units",
         "csp-fourier-fiber",
         "csp-companion",
         "csp-other-primes",
-        "csp-two-supports"
+        "csp-two-supports",
+        "sec:full-type-prime-jets",
+        "prop:torsion-dilation-jets"
       ],
       "placement": "preferred exposition"
     },
