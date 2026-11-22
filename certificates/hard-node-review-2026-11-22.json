@@ -392,6 +392,41 @@
           "sha256": "b07d4ce2662efc7a3a16af5c2991f3950d25609e152cb4513a4ac228a7fd2641"
         }
       ]
+    },
+    {
+      "id": "rh-selmer-upper-multiplicity",
+      "status": "PASS",
+      "reviewers": [
+        "rh_selmer_frontier",
+        "geometric_frontier (slice and squarefree filtration)",
+        "finite_window_audit",
+        "root"
+      ],
+      "checked": [
+        "The Noetherian radical-power argument gives one uniform eventual degree range and a finite degree-zero annihilator quotient over the original discrete valuation ring.",
+        "The same admissibility point classification removes the one-sided generic support using localization and Nakayama; no trace nonvanishing is used in this exclusion.",
+        "An invertible weight-minus-two element gives an exact Laurent normal form and a finite slice with degree-zero invariant subring, without a flatness assumption.",
+        "The nonzero Euler tangent is transverse to the slice; the tangent-dimension condition proves geometric reducedness and removes all degree-zero nilpotents.",
+        "The parity action has one orbit of one or two geometric points; localized weight lengths are at most one, with no extra residue-degree factor.",
+        "The squarefree-product filtration retains multiplicities and gives the stated power of two, with the optional single-point-slice improvement.",
+        "The actual three Rees modules become principal at two-sided primes; the polynomial algebra and degree-at-least-one comparison remain valid with nilpotents.",
+        "The exact determinant Euler identity and previously proved mixed-Koszul lower bound give the abstract core; the formal-chart hypothesis phi(a) != 0 remains separate from two-sided point nonvanishing.",
+        "Finite_window_audit checked all source interfaces and the complete TeX; root read the full proof, checked the M2/M4/M5 contracts and reran the exact checker."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/rh-selmer-upper-multiplicity.md",
+          "sha256": "c06a64b222eb581f4829a15c1d40b6b9406d8f76ad57c10e31e5aec19732fa07"
+        },
+        {
+          "path": "scripts/check_rh_selmer_upper_multiplicity.py",
+          "sha256": "db3b111a7706ca457b7a2105b0440205be04c1ded9d99dac3301360f1eba6c80"
+        },
+        {
+          "path": "certificates/rh-selmer-upper-multiplicity.json",
+          "sha256": "056290e0127007679f2f94e9a61ccae24ad6c61ab9a9ff1e6bbe3e969f4a7b14"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
@@ -406,7 +441,8 @@
     "python scripts/check_rh_selmer_koszul_comparison.py",
     "python scripts/check_common_unipotent_periodization.py",
     "python scripts/check_cm_product_period_calculation.py",
-    "python scripts/check_rh_selmer_admissibility.py"
+    "python scripts/check_rh_selmer_admissibility.py",
+    "python scripts/check_rh_selmer_upper_multiplicity.py"
   ],
   "node_counts": {
     "rh": {

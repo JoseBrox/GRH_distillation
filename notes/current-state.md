@@ -315,8 +315,8 @@ conormal quotient. Ambient torsion is removed before imposing the
 global equations; the new torsion they create is retained. Compatible
 normalized cocycles give one map at all coefficient levels, controlling
 the exponent and each elementary divisor as well as total length.
-Actual model existence and the upper graded-intersection estimate remain
-separate inputs. The ordinary-RH specialization retains all five local
+Actual model existence and its geometric conditions remain separate
+inputs. The ordinary-RH specialization retains all five local
 weights; its cyclotomic twist does not become self-inverse.
 
 The [upper numerical length calculation](rh-selmer-euler-determinant.md)
@@ -325,9 +325,9 @@ weight module, kernel and cokernel torsion cancel exactly. The remaining
 Euler characteristic is a determinant valuation, equivalently a sum
 over distinct degree-zero characters with their exact multiplicities.
 This preserves a sharper intermediate inequality before the coarse
-power-of-two bound. The graded specialization, eventual support and
-local multiplicity estimates linking this module to the conormal
-quotient remain genuine requirements.
+power-of-two bound. The following graded comparison and finite-slice
+argument supply the support and multiplicity estimates under the stated
+model conditions.
 
 The [leading quotient and mixed count](rh-selmer-mixed-count.md) now have
 elementary proofs. The leading coefficient image is a finite free lattice;
@@ -348,9 +348,20 @@ now establishes that precise power containment from the stated finite
 degree-zero quotient, negative cotangent spanning, fixed-point separation
 and trace separation. It uses even-degree subalgebras, elementary points
 over an algebraically closed field and a two-degree argument at the base
-point. Actual marked-model existence and verification of those geometric
-conditions remain; the upper determinant's eventual support and generic
-multiplicity estimates are separate suppliers.
+point. The [generic support and multiplicity proof](rh-selmer-upper-multiplicity.md)
+uses the same relevant-prime classification to obtain uniform eventual
+finite modules and to exclude one-sided generic support. On the remaining
+support the three Rees modules become principal. Setting an invertible
+weight-two element equal to one gives a finite slice. The one-dimensional
+tangent condition makes it reduced, and its involution has one orbit of
+one or two points. Each parity therefore has dimension at most one.
+A squarefree-product filtration accounts exactly for the power of two
+introduced by squaring the odd equations. Together these arguments prove
+the abstract numerical comparison, including an optional factor-two
+improvement at single-point slices. Actual marked-model existence and
+its chart, spanning, finiteness, separation, tangent and orbit-cover
+conditions remain. Formal-chart nonvanishing is a separate hypothesis
+of the numerical core and is not implied by generic point nonvanishing.
 
 The [resultant construction](rh-selmer-resultant.md) supplies the elementary
 integer in the nonresonant orbit estimate with full integrality,
@@ -443,9 +454,11 @@ theorem. Neither changes the existing node totals.
    Selmer product on the actual twisted places, retaining the integral local
    comparisons and surviving character cases. The elementary resultant
    supplier does not prove the trace-to-Selmer estimate: construct the
-   marked models, use the proved compatible conormal pairing and exact
-   numerical and Koszul comparisons, and supply their actual admissibility,
-   support and multiplicity bounds. Assemble the signed
+   marked models and establish their chart, spanning, finiteness,
+   separation, tangent and orbit-cover conditions. The compatible conormal
+   pairing and the abstract numerical comparison, including admissibility,
+   eventual support and multiplicity, are now proved under those conditions.
+   Assemble the signed
    finite fourth-power tables on arbitrarily late intervals, with all exponent losses
    and constants fixed at each accuracy.
 
