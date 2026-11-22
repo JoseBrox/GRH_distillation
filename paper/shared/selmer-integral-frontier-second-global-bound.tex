@@ -1,0 +1,124 @@
+\paragraph{The second-order lift.}
+Assume that $\ell$ is odd. Write $E_m$ and $O_m$ for the even and
+odd matrices over $A_m$. In the original commutative coefficient
+algebra
+\[
+ D_m=A_m\oplus\bigoplus_j A_m\epsilon_j
+       \oplus\bigoplus_j A_m\epsilon'_j\oplus A_m\eta,\qquad
+ \epsilon_i\epsilon'_j=\epsilon'_j\epsilon_i=\delta_{ij}\eta,
+\]
+all other products of nilpotent generators are zero. Put
+$R=(1+\sum_j\epsilon_j\kappa_j)\rho$ and
+$W_{2,m}=\bigoplus_j\epsilon'_jE_m\oplus\eta O_m$.
+
+\begin{proposition}[Second Selmer estimate]
+\label{prop:selmer-second-global-bound}
+Retain the original arithmetic system, normalized point, odd family
+and auxiliary tower. With the constant $C_2$ of Proposition
+\ref{prop:selmer-obstruction-quotients}, every $m$ and all sufficiently
+large $N$ have the following property. For any $g+1$ tuples
+$p_{ij}$ of original even Selmer cocycles, there are $c_i\in A$,
+at least one a unit, and a cocycle $\Psi$ in the original
+second-order Selmer set such that
+\[
+                   (\Psi)_{\epsilon'_j}
+                      =t^{C_2}\sum_i c_i p_{ij}.
+\]
+\end{proposition}
+
+\begin{proof}
+For $(P_j;Z)\in W_{2,m}$, multiplication gives
+\[
+ \gamma(P_j;Z)=
+ \left(\operatorname{Ad}\rho(\gamma)P_j;\
+       \operatorname{Ad}\rho(\gamma)Z+
+       \sum_j[\kappa_j(\gamma),\operatorname{Ad}\rho(\gamma)P_j]\right)
+\]
+on the index-two subgroup. Complex conjugation acts by minus
+transpose. The original polarization is
+$R(c\gamma c)=\chi(\gamma)^{1-n}R(\gamma)^{-T}$, with $\chi$
+the reduced cyclotomic character; its scalar cancels in conjugation.
+Thus the actual representations form an exact sequence
+\[
+                 0\to O_m\xrightarrow{\iota}W_{2,m}
+                        \xrightarrow{\mathrm{pr}}E_m^g\to0,
+ \qquad \iota(Z)=\eta Z.
+\]
+Its linear section is $(P_j)\mapsto(P_j;0)$.
+
+For an ordinary place, let $Y_{j,v}$ be the original witnesses
+for $\kappa_j$ and $w_{1,v}=(1-\sum_j\epsilon_jY_{j,v})w_v$.
+The exact basis-change formula is
+\[
+ w_{1,v}^{-1}(P_j;Z)w_{1,v}
+  =\left(w_v^{-1}P_jw_v;\
+     w_v^{-1}\left(Z+\sum_j[Y_{j,v},P_j]\right)w_v\right).
+\]
+Let $N_v$ impose upper triangularity in this basis. It is locally
+stable, and $\iota(Z)\in N_v$ if and only if $\pi_v(Z)=0$ for
+the original odd local quotient. If all the even components
+are upper triangular, subtracting
+$\iota(Z+\sum_j[Y_{j,v},P_j])$ puts the element in $N_v$.
+The transformed odd coefficient always has zero diagonal:
+it joins distinct block types in the ordinary basis.
+At old unramified places put $N_u=0$; the original $R$ is
+trivial on inertia.
+
+Extend each prescribed polarized cocycle $p_{ij}$ uniquely to the
+full group by $p_{ij}(\gamma c)=p_{ij}(\gamma)$ for $\gamma$
+in the index-two subgroup. This gives value zero at $c$ and
+keeps the prescribed restriction unchanged.
+Let $x_i=(p_{i1},\ldots,p_{ig};0)$ be its section lift.
+Then $dx_i=\iota z_i$ with $z_i$ a global
+two-cocycle. On the index-two subgroup,
+\[
+ z_i(\gamma,\delta)=
+       \sum_j[\kappa_j(\gamma),
+                    \operatorname{Ad}\rho(\gamma)p_{ij}(\delta)].
+\]
+At an ordinary place use the boundary $b_{i,v}=dS_{i,v}$ of
+the section of its original even local witnesses. The basis-change
+formula provides a continuous $\tau_{i,v}$ with
+$x_i-b_{i,v}-\iota\tau_{i,v}\in N_v$.
+At an old place the actual unramified lifting property supplies
+a local cocycle $b_{i,u}$ lifting the projected tuple and vanishing
+on inertia; then $x_i-b_{i,u}=\iota\tau_{i,u}$.
+Set $y_{i,w}=\pi_w\tau_{i,w}$. Differentiating gives
+$dy_{i,w}=\pi_w\operatorname{res}_wz_i$, so
+$\xi_i=[z_i,(y_{i,w})_w]\in H_{N,m}$.
+
+Suppose $\sum_i a_i\xi_i=0$. The definition of its boundary gives
+a global one-cochain $u$ such that
+$\Psi_0=\sum_i a_ix_i-\iota u$ is a cocycle, and local primitives
+$Y_w\in O_m$ such that
+\[
+          \Psi_0-\sum_i a_i b_{i,w}-d(\iota Y_w)\in N_w
+                     \quad\text{on }J_w.
+\]
+Since $\Psi_0(c)\in\iota(O_m)$ and $c\Psi_0(c)=-\Psi_0(c)$,
+put $v=\iota^{-1}(\Psi_0(c))/2$ and
+$\Psi=\Psi_0+d(\iota v)$. The plus sign makes $\Psi(c)=0$,
+without changing its projection. Replace $Y_w$ by $Y_w+v$.
+
+At old inertia, every term except $\Psi$ in the local condition
+vanishes, so $\Psi$ vanishes there. At an ordinary place the
+primitive is $\sum_i a_iS_{i,v}+\iota(Y_v+v)$, which gives the
+required upper triangularity. On the original subgroup $\mu_v$,
+the even diagonal coefficients vanish by the input local conditions;
+the transformed odd coefficient has zero diagonal identically.
+Thus the full original ordinary condition holds. Restriction to
+the index-two subgroup gives the original polarization, and all
+cochains are continuous over the finite coefficients.
+
+Proposition~\ref{prop:selmer-obstruction-quotients} and
+Lemma~\ref{lem:selmer-finite-obstruction} give $c_i$, at least one
+a unit, with $t^{C_2}\sum_i c_i\xi_i=0$. Take $a_i=t^{C_2}c_i$
+in the construction. This proves the assertion with precisely the
+original module, local conditions and quantifiers
+\cite{alpo-second-global-selmer}.
+\end{proof}
+
+Together with Proposition~\ref{prop:selmer-first-global-bound},
+this supplies both finite-level Selmer estimates under the retained
+arithmetic inputs. Their arithmetic realization and the patched
+automorphic modules remain separate steps.

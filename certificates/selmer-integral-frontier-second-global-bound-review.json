@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:56:25.579504+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Second finite-level Selmer estimate for the original W2, preserving its local conditions and quantifiers.",
+  "audit_groups": [
+    {
+      "topic": "Original representation",
+      "result": "PASS",
+      "finding": "The paired algebra has epsilon_i epsilon_prime_j=delta_ij eta. Its adjoint action on exactly W2=epsilon_prime E+eta O gives the mixed commutator defect. The cyclotomic polarization scalar is retained and cancels in the adjoint action."
+    },
+    {
+      "topic": "Prescribed input cocycles",
+      "result": "PASS",
+      "finding": "Polarized input cocycles extend uniquely with value zero at c, without altering their prescribed restrictions. No normalization by an arbitrary input coboundary is used."
+    },
+    {
+      "topic": "Ordinary and old local conditions",
+      "result": "PASS",
+      "finding": "The actual w1 basis change gives Z+sum[Y_j,P_j]. Odd coordinates have zero diagonal even for interleaved types. Thus the input even mu-diagonal condition is preserved. At old places a continuous unramified lift exists and all corrections vanish on inertia."
+    },
+    {
+      "topic": "Vanishing obstruction and signs",
+      "result": "PASS",
+      "finding": "A vanishing original obstruction class gives a genuine W2 cocycle with the required local primitives. Adding d(Psi0(c)/2), with a plus sign, kills its value at c; shifting each local primitive by the same vector preserves the local conditions."
+    },
+    {
+      "topic": "Generator and quantifiers",
+      "result": "PASS",
+      "finding": "The all-quotient bound and finite obstruction generator lemma yield a unit-containing combination multiplied by t^C2. The constant is fixed before m; the sufficiently large tower level depends on m and works for all input tuples."
+    },
+    {
+      "topic": "Exact scope",
+      "result": "PASS",
+      "finding": "This supplies the second finite-level estimate under the original arithmetic system and normalized point. It does not construct those objects or the patched automorphic modules."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.UniversalOrdinaryDeterminantRing",
+      "sha256": "b12275f242e0616546ead3569b88ed86fb245901849b470c1caf77c7b3c033d0",
+      "git_blob_sha1": "65ce51224af6634182dda7b48716e73279990d15",
+      "independently_read_ranges": [
+        [
+          97,
+          103
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.TranslDD",
+      "sha256": "0a91e404179f7f3f9bcfa4334b808275e98b235cb6d50b3b767afd6a75685fe4",
+      "git_blob_sha1": "d4882b4e1d6f419b72a6f90862776bf4c8d6b29f",
+      "independently_read_ranges": [
+        [
+          109,
+          153
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.Transl",
+      "sha256": "5bb082c4aa6ed6689b204081d72c5e280e2b03a9f4fc0b78d415300fd809102d",
+      "git_blob_sha1": "67e771193aae851c2fc367e8c78a8806f76f61a3",
+      "independently_read_ranges": [
+        [
+          215,
+          252
+        ],
+        [
+          292,
+          334
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.ObstructionBoundOfDuality",
+      "sha256": "e1bd2b2dd07879ca3e8ff783bb6695039ca1f0bea87e788c880fbdfbce63eb7e",
+      "git_blob_sha1": "2f13105b1713b37f51b4ea261b7e7bac37a30197",
+      "independently_read_ranges": [
+        [
+          197,
+          218
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_selmer_integral_frontier_second_global_bound.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "matrix_formulas": {
+        "original_algebra_matrix_and_local_formulas": 120,
+        "nonzero_mixed_commutators": 83,
+        "ordinary_bases_with_interleaved_types": 12
+      },
+      "cocycles": {
+        "finite_dihedral_cocycle_lifts": 16,
+        "full_group_cocycle_and_defect_equations": 1088,
+        "nonzero_normalization_sign_tests": 14,
+        "coefficient_lengths": [
+          1,
+          2
+        ],
+        "characteristics": [
+          3,
+          5
+        ]
+      },
+      "negative_controls": [
+        "Dropping the mixed epsilon-epsilon' product changes the actual action.",
+        "The even ordinary diagonal restriction cannot be supplied by an odd eta correction.",
+        "Characteristic2 can obstruct the cyclic lift; oddness and the division by2 are retained.",
+        "The wrong complex-conjugation normalization sign is rejected by the finite cocycle suite."
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-second-global-bound.md",
+      "sha256": "5cb89d5d50c3e6d0a42fe6c236931ce56a323f50cb77f734a494945a8450d158"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-second-global-bound.tex",
+      "sha256": "e1ebc3861b26b82fdd6d082cf22c81aea81c0f6ff51073e6845e24f6947bb297"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-second-global-bound-references.tex",
+      "sha256": "ea9bbd9489705bffaec120c47e42a22e7076532f3920afde302cc01919e65993"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_second_global_bound.py",
+      "sha256": "a38d3fa20d879beb0394086d0f30ec5cd86b5f881a19b9a9a0a43a5c67a7312d"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-second-global-bound.json",
+      "sha256": "99c1a4548e513bd58027c1cc1be4c7cd4ba06aa5b01c93ee350d53cf4c970560"
+    }
+  ],
+  "limits": [
+    "Arithmetic realization, normalized points and patched automorphic modules remain required.",
+    "Finite exact checks supplement the general human proof. No Lean build and no whole-node closure."
+  ]
+}
