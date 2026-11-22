@@ -274,6 +274,43 @@ below $C_2$ as expected from the positive omitted tail.
 The identity in (7) is proved symbolically; these numerical tests
 do not establish the required bound.
 
+## 5. The energy is exactly evaluable from finite prime tables
+
+For any integer $N\ge2$, write $A_k=\sum_{n\le k}\Lambda(n)/n$,
+$B_k=\sum_{n\le k}\Lambda(n)$, and $c_k=A_k+1+\gamma_E$.
+On each cell $k\le x<k+1$, the prime ramp has the exact form
+
+```math
+\frac{G(x)}x=c_k-\log x-\frac{B_k}{x}.
+```
+
+Define $y_k(x)=c_k-\log x$ and the elementary primitive
+
+```math
+\mathcal I_k(x)=x\big(y_k(x)^2+2y_k(x)+2\big)
+ -2B_k\big(c_k\log x-\tfrac12(\log x)^2\big)
+ -\frac{B_k^2}{x}.
+```
+
+Direct differentiation gives $\mathcal I'_k(x)
+=(c_k-\log x-B_k/x)^2$, whence
+
+```math
+\boxed{\mathcal M(N)=\frac{1}{\log N}
+  \sum_{k=1}^{N-1}\bigl[\mathcal I_k(k+1)-\mathcal I_k(k)\bigr].}
+\tag{12}
+```
+
+Thus every *finite-height* value of the target statistic is a
+closed expression in finitely many von Mangoldt coefficients and
+standard logarithms. No information about zeros is needed for
+its evaluation. The derivative identity was checked symbolically,
+and the formula at $N=21$ was checked independently by
+high-precision quadrature (agreement beyond 40 decimals).
+Such checks are **not** a proof of the limiting upper bound (3).
+In particular, the substantial lower-range transient in $G$
+makes convergence of $\mathcal M(N)$ slow.
+
 **Sources.** [Project's Mellin proof](../paper/rh/sections/02-analytic-endpoint.tex);
 [standard explicit formula for von Mangoldt's sum](https://mathworld.wolfram.com/MangoldtSummatoryFunction.html);
 [Alpöge--Furman 2026](https://arxiv.org/abs/2608.13637);
