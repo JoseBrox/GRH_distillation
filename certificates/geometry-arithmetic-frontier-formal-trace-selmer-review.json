@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewer": "selmer_next, independent of the geometry author",
+  "status": "PASS",
+  "classification": "Independent mathematical and source-interface review; no Lean build",
+  "claim_reviewed": "Under the stated finite-height, splitting and integral-section hypotheses, the actual formal kernel sum equals degree(q)*det(dp_0) times a pulled-back integral series, with the original gauge and odd symmetric lift normalization.",
+  "artifacts": {
+    "paper/shared/geometry-arithmetic-frontier-formal-trace.tex": "2c8065744a85bf1d23b4540a59afd4ef65e50f3557a40e22bf1a4c7ac730bb57",
+    "paper/shared/geometry-arithmetic-frontier-formal-trace-references.tex": "3063961b7b50d9af9071422188586ee580fd72478886fd959993b6eda5f3ae21",
+    "notes/geometry-arithmetic-frontier-formal-trace.md": "7d0ab76e54909b116448811ff24e5b256481b58fa8bc4b9c64f6bf6be5f17dc7",
+    "scripts/check_geometry_arithmetic_frontier_formal_trace.py": "cc736b9b738ccccf58ad9d8ae2bb977effc91f876ff98849403861cfbc215bd8",
+    "certificates/geometry-arithmetic-frontier-formal-trace.json": "af931527af39a4f594214c73ab0d81530422370864d9c42b8366b1187854c56c",
+    "certificates/geometry-arithmetic-frontier-discriminant-clearing.json": "71ae17db5d1e68b5c89299361a771c49f9e38bc9967cf12e7924abd87358d288"
+  },
+  "decisive_checks": [
+    "The finite-colength hypothesis and completeness make the composite substitution finite; tangent injectivity and the finite intermediate submodule give the two finite maps. Regular dimension equality verifies miracle flatness.",
+    "The finite algebra has Artinian complete-intersection closed fibre; the syntomic criterion applies to the ordinary finite algebra. No algebraization of the formal group or arbitrary power-series substitution is assumed.",
+    "The ordinary relative differential module is finite and complete. Its universal derivation is base-linear, hence continuous, and the formal chain rule gives the actual Jacobian presentation.",
+    "The different equals the zeroth Fitting ideal of this differential module; the finite complete-intersection dualizing module is invertible. The formal-group Jacobian is exactly det(dp_0) times an integral unit, which yields trace divisibility by the constant det(dp_0).",
+    "Splitting gives precisely degree(mu) small rational kernel points. Their translations realize the full fraction-field Galois group; normality gives integral descent of invariant series before any trace division.",
+    "Transitivity of trace contributes degree(q), while the different contributes det(dp_0). The proof never substitutes degree(p) for its Jacobian.",
+    "The canonical gauge has the exact positive pullback-minus-multiplier exponent; the integral-log quotient argument matches the original additivity and adjoint identities.",
+    "The cube identity yields t_a(chi)=c chi, the cyclic norm yields c^(m(m-1)/2)chi^m=1, and characteristic zero makes chi scalar. The four displayed symmetry equations yield chi^2=1; odd m then gives chi=1.",
+    "The final harmonic identity keeps the scalar clearing coefficient separate from the complement endomorphism, extends to full integral jets, and retains the discriminant loss and actual Jacobian normalization."
+  ],
+  "corrections_requested_and_resolved": [
+    "The complete-intersection/different step was clarified via the ordinary finite algebra and continuous derivations, avoiding an unproved algebraization assumption.",
+    "m is explicitly a positive odd integer in the symmetric theta application.",
+    "Logarithmic-gauge substitutions are restricted to integral formal points with zero constant term.",
+    "The scalar clearing coefficient is lambda in K, distinct from the complement endomorphism s.",
+    "The four scalar symmetry identities and the exact cyclic norm exponent are displayed."
+  ],
+  "primary_sources_independently_opened": [
+    {
+      "url": "https://stacks.math.columbia.edu/tag/00R4",
+      "result": "Lemma10.128.1, miracle flatness"
+    },
+    {
+      "url": "https://stacks.math.columbia.edu/tag/00SY",
+      "result": "Lemma10.136.15, flat finite presentation plus complete-intersection closed fibre"
+    },
+    {
+      "url": "https://stacks.math.columbia.edu/tag/0BWG",
+      "result": "Lemma49.12.3, different equals Kaehler different"
+    },
+    {
+      "url": "https://stacks.math.columbia.edu/tag/0BWF",
+      "result": "Lemma49.10.4, invertibility of the finite syntomic dualizing module"
+    },
+    {
+      "url": "https://stacks.math.columbia.edu/tag/0BTC",
+      "result": "Section49.9, different from the trace element and agreement with the Dedekind different"
+    }
+  ],
+  "independent_rerun": {
+    "command": "python scripts/check_geometry_arithmetic_frontier_formal_trace.py --offline",
+    "status": "PASS",
+    "source_modules": 11,
+    "finite_colength_models": 8,
+    "independent_matrix_traces": 360,
+    "split_primary_tori": 8,
+    "kernel_sums": 60,
+    "unit_twists": 180,
+    "negative_controls": 3
+  },
+  "source_pin": {
+    "repository": "jsmorph/rh",
+    "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+  },
+  "independently_reviewed_sources": [
+    {
+      "module": "Development.AbelianVarietyTheory.Definitions.PlaceAdaptation.AdaptStd",
+      "sha256": "cd4b6638b29729fd43c6499b8bcf7674cec03a21c8bca020fd29d8237ed360e7",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            27,
+            59
+          ],
+          "sha256": "40776c089515c14f4faaedca0bcc664497fca793bd25f5f7a180a21247c4e672"
+        },
+        {
+          "lines": [
+            65,
+            75
+          ],
+          "sha256": "aee1fb84a73cdb329a8ac6bc3fe84f33c4de36bfea3ac953343ce511e1da7893"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.JacobianNonzeroSplittingOfProduct",
+      "sha256": "b0d2eaa0347075a9a54079fb2c63d4532734fe391bd5de22ebd02471139f8255",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            198,
+            240
+          ],
+          "sha256": "1af2356e66d4c3674f5dc7adbe15ce6c46bbbbfe2a93afe8dfdd496361bdaf55"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.ExistsIntegralExponentialSimilitudeGauge",
+      "sha256": "8deae0add44b85a88846580ce18794ade30bd1f81874fd4e24647fadd8c8ba84",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            145,
+            198
+          ],
+          "sha256": "9654d762c8ed599c56ab7f0d4a28debb6e7c7f7cc43635d5f7a2f76ec1885a80"
+        },
+        {
+          "lines": [
+            335,
+            351
+          ],
+          "sha256": "3eb69d4b3797aeb1aadfc3ed35226951788b6884d9e00fca9ab3b763c554c3f4"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.ProdSymmetricTranslationUnitsEqKappaRatio",
+      "sha256": "f6707f77e1a6b51f09fc82ff228d91d5a317da90338634127aea303acd1a71e0",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            51,
+            130
+          ],
+          "sha256": "9f798abd62c8ee1ec171e4fb37929c4d7a9a38e3868c3534f1adcbb75a9a7722"
+        },
+        {
+          "lines": [
+            452,
+            548
+          ],
+          "sha256": "69c719538044cb1e8e5331a5403892c676479b9b09fdbdb48ba10367b1be9806"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.SumHarmonicValuesFormalKernelSimilitude",
+      "sha256": "50fc7557515557ea04d35ae3aafba3a9cbfd404baf045c273aca848c0053de29",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            94,
+            131
+          ],
+          "sha256": "dfd8093e4c823b697d1332966bf46c159ac3ce32b2c66dd6a9cf48f7bad0b616"
+        },
+        {
+          "lines": [
+            203,
+            237
+          ],
+          "sha256": "dfad64a926949e25d30e08539b81344f9a0a361657e5ba4491fbf1a059419abd"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Finite checks supplement the written proof and do not build Lean.",
+    "The global integral model, its finite-height and splitting data, regular theta sections, symmetric translation data, full-primary-kernel passage and determinant/index comparison remain explicit application requirements.",
+    "The raw theta norm, spanning and full global denominator are not supplied by this formal trace theorem.",
+    "This review covers mathematics and source interfaces; layout is reviewed separately."
+  ],
+  "whole_nodes_newly_closed": 0,
+  "node_counts": {
+    "RH": "6/9",
+    "Dirichlet_GRH": "17/31"
+  }
+}

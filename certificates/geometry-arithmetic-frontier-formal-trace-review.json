@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T20:23:04.525492+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Original formal kernel trace and Jacobian divisibility, including integral descent and the canonical gauge bridge.",
+  "audit_groups": [
+    {
+      "topic": "Finite flat maps",
+      "result": "PASS",
+      "finding": "The scalar complement makes the special-fibre coordinate ideal primary. Completeness and successive division give finite generation. Nonzero differential determinants give injective substitutions over the fraction field; the intermediate ring is finite as a submodule. The actual regular local rings and zero-dimensional fibres satisfy miracle flatness."
+    },
+    {
+      "topic": "Ordinary finite-algebra different",
+      "result": "PASS",
+      "finding": "The Artinian closed fibre is a regular-sequence quotient, so the finite flat map is syntomic. Its finite ordinary differential module is computed by the Jacobian: A-linear derivations to finite modules are continuous in the equivalent adic topologies. This avoids identifying arbitrary algebraic power-series differentials with continuous ones."
+    },
+    {
+      "topic": "Exact Jacobian trace factor",
+      "result": "PASS",
+      "finding": "The formal group derivative identity makes det Dp=j_p times an integral unit. The complete-intersection different formula and generic trace pairing give the codifferent j_p^-1 A1, hence Tr(A1) is contained in j_p A0. Kernel order is not substituted for the differential determinant."
+    },
+    {
+      "topic": "Split kernels and integral descent",
+      "result": "PASS",
+      "finding": "Generic etaleness and splitting give exactly degree-many distinct integral translation automorphisms. Integral coordinates are small because a unit coordinate would annihilate an invertible power series. Fixed-field descent puts an invariant series in the intermediate fraction field; normality then proves integral descent."
+    },
+    {
+      "topic": "Tower trace and canonical gauge",
+      "result": "PASS",
+      "finding": "The tower trace gives exactly degree(q)*j_p. The canonical kappa is an integral unit by biextension additivity modulo logarithms of integral units and the similitude equation. Cube, symmetry and odd order identities force the translation ratio to be1; no arbitrary rescaling is introduced."
+    },
+    {
+      "topic": "Harmonic application and scope",
+      "result": "PASS",
+      "finding": "The invariant-derivative chain rule retains the original scalar lambda, transformed harmonic polynomial and CM Jacobian. Finite jets extend the chart bound to general integral series. Actual uniformised model, reached sections, full primary-kernel comparison and determinant-ideal scalar conditions remain inputs."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.JacobianNonzeroSplittingOfProduct",
+      "sha256": "b0d2eaa0347075a9a54079fb2c63d4532734fe391bd5de22ebd02471139f8255",
+      "git_blob_sha1": "55d47bbcbcb87813838d6bcf54d054f30255ff14",
+      "independently_read_ranges": [
+        [
+          198,
+          240
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.SumHarmonicValuesFormalKernelSimilitude",
+      "sha256": "50fc7557515557ea04d35ae3aafba3a9cbfd404baf045c273aca848c0053de29",
+      "git_blob_sha1": "21a04bf4711f158dc9396f9bae37fe5e6aece21f",
+      "independently_read_ranges": [
+        [
+          288,
+          316
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.ExistsIntegralExponentialSimilitudeGauge",
+      "sha256": "8deae0add44b85a88846580ce18794ade30bd1f81874fd4e24647fadd8c8ba84",
+      "git_blob_sha1": "b51ac56be9caa1cd17ebcc0cb776a1a1446cdeb1",
+      "independently_read_ranges": [
+        [
+          335,
+          351
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.ProdSymmetricTranslationUnitsEqKappaRatio",
+      "sha256": "f6707f77e1a6b51f09fc82ff228d91d5a317da90338634127aea303acd1a71e0",
+      "git_blob_sha1": "a17745b704f0f016723223e43b95b2f5a284daf5",
+      "independently_read_ranges": [
+        [
+          51,
+          100
+        ],
+        [
+          452,
+          500
+        ]
+      ]
+    }
+  ],
+  "primary_reference_review": {
+    "urls": [
+      "https://stacks.math.columbia.edu/tag/00R4",
+      "https://stacks.math.columbia.edu/tag/00SY",
+      "https://stacks.math.columbia.edu/tag/0BWE",
+      "https://stacks.math.columbia.edu/tag/0BWG",
+      "https://stacks.math.columbia.edu/tag/0BTC"
+    ],
+    "result": "Read hypotheses and statements directly; checked regularity/dimension, closed-fibre CI, finite presentation and codifferent normalization."
+  },
+  "reproduced_check": {
+    "command": "python scripts/check_geometry_arithmetic_frontier_formal_trace.py --offline",
+    "result": "PASS",
+    "trace_pairing_models": {
+      "finite_colength_models": 8,
+      "perfect_normalized_trace_pairings": 8,
+      "independent_multiplication_matrix_traces": 360,
+      "models": [
+        {
+          "residue_prime": 2,
+          "degree": 2,
+          "jacobian_constant": 2,
+          "normalized_trace_gram_determinant_at_zero": "1"
+        },
+        {
+          "residue_prime": 2,
+          "degree": 4,
+          "jacobian_constant": 2,
+          "normalized_trace_gram_determinant_at_zero": "-27"
+        },
+        {
+          "residue_prime": 3,
+          "degree": 3,
+          "jacobian_constant": 3,
+          "normalized_trace_gram_determinant_at_zero": "-4"
+        },
+        {
+          "residue_prime": 3,
+          "degree": 6,
+          "jacobian_constant": 3,
+          "normalized_trace_gram_determinant_at_zero": "3125"
+        },
+        {
+          "residue_prime": 3,
+          "degree": 9,
+          "jacobian_constant": 3,
+          "normalized_trace_gram_determinant_at_zero": "16777216"
+        },
+        {
+          "residue_prime": 5,
+          "degree": 5,
+          "jacobian_constant": 5,
+          "normalized_trace_gram_determinant_at_zero": "256"
+        },
+        {
+          "residue_prime": 5,
+          "degree": 10,
+          "jacobian_constant": 5,
+          "normalized_trace_gram_determinant_at_zero": "387420489"
+        },
+        {
+          "residue_prime": 5,
+          "degree": 25,
+          "jacobian_constant": 5,
+          "normalized_trace_gram_determinant_at_zero": "1333735776850284124449081472843776"
+        }
+      ],
+      "scope": "Exact finite-flat power-series substitution models y=x^n+ell*x; not all models are asserted to be formal-group homomorphisms."
+    },
+    "split_kernel_tower_models": {
+      "split_primary_formal_tori": 8,
+      "invariant_monomials": 60,
+      "exact_tower_kernel_sums": 60,
+      "original_unit_twist_checks": 180,
+      "scope": "Exact cyclotomic character sums on formal multiplicative groups with primary torsion, preserving degree(q)*j_p and the unit-gauge ratio."
+    },
+    "normalization_checks": {
+      "scalar_normalization_ideal_check": "PASS",
+      "odd_orders_checked": 11,
+      "negative_controls": [
+        "For y=x^9+3x, Tr(x^8)=-24 is divisible by j=3 but not by degree9.",
+        "For y=x^2+3x, J(0)=3 alone does not divide Tr(1)=2; the Jacobian-unit identity is necessary.",
+        "The additive formal group [3] has infinite special-fibre colength, so the finite-flat trace is unavailable."
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/geometry-arithmetic-frontier-formal-trace.md",
+      "sha256": "7d0ab76e54909b116448811ff24e5b256481b58fa8bc4b9c64f6bf6be5f17dc7"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-formal-trace.tex",
+      "sha256": "2c8065744a85bf1d23b4540a59afd4ef65e50f3557a40e22bf1a4c7ac730bb57"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-formal-trace-references.tex",
+      "sha256": "3063961b7b50d9af9071422188586ee580fd72478886fd959993b6eda5f3ae21"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_formal_trace.py",
+      "sha256": "cc736b9b738ccccf58ad9d8ae2bb977effc91f876ff98849403861cfbc215bd8"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-formal-trace.json",
+      "sha256": "af931527af39a4f594214c73ab0d81530422370864d9c42b8366b1187854c56c"
+    }
+  ],
+  "limits": [
+    "Finite-height and splitting are retained geometric inputs supplied by the intended actual model, not established here for that model.",
+    "Reached sections, full primary kernel and determinant-ideal scalar comparisons remain separate.",
+    "Exact models supplement the human proof; no Lean build or whole-node closure."
+  ]
+}
