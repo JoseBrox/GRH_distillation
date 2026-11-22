@@ -1,0 +1,229 @@
+\section{The original half-level and an integral PEL model}
+\label{sec:integral-pel-frontier}
+
+The cyclotomic field already prescribed by the source resolves the
+prime-to-residue-characteristic neatness issue.  It also lets us apply
+ramified PEL compactification theorems to the original lattice and
+primitive line.  This supplies the source's individual \texttt{Model}
+object; its stronger simultaneous model, section and uniformization
+contracts are stated separately below.
+
+Retain the host, datum and notation of
+Section~\ref{sec:generic-pel-frontier}.  Put $L=\operatorname{lcm}(M,A)$,
+and write $K=c.F$ for an original coefficient field.  In particular
+$K$ already contains the prescribed root
+$\zeta_L=e^{2\pi i/L}$.  No coefficient-field extension is made.
+Write $\mathcal O=\mathcal O_E$ and $\overline{\mathfrak b}$ for the
+conjugate of the original half-level ideal.
+
+\begin{theorem}[Completing the original finite level]
+\label{thm:original-half-level-completion}
+Over $K$, the original half-$M$, full-$A$ moduli problem is equivalent
+to the moduli problem with the full, symplectically liftable $L$-level
+marking and the prescribed Weil-pairing root $\zeta_L$.
+The equivalence preserves the abelian scheme, polarization, coefficient
+action, rigidified cubical line, and both original label maps.
+Forgetting the added labels is an equivalence of functors, not a
+cover of positive degree.
+\end{theorem}
+\begin{proof}
+The coefficient idempotents modulo $M$ give complementary submodules
+\[
+ V_+=\overline{\mathfrak b}\Lambda/M\Lambda,
+ \qquad V_-=\mathfrak b\Lambda/M\Lambda,
+ \qquad \Lambda/M\Lambda=V_+\oplus V_-.
+\]
+Both are isotropic for $B$ modulo $M$.  For example, conjugate
+linearity of the adjoint moves one factor of
+$\overline{\mathfrak b}$ to $\mathfrak b$, so a pairing of two vectors
+in $\overline{\mathfrak b}\Lambda$ is divisible by $M$.
+Since $B$ is perfect, the cross-pairing $V_+\times V_-$ is perfect.
+The same decomposition and perfect cross-pairing hold in
+$\mathcal A[M]$ by the original geometric full-Tate condition.
+
+The given half-level restricts to an isomorphism on $V_+$.
+Cartier duality and the fixed root $\zeta_M=\zeta_L^{L/M}$ therefore
+give a unique marking on $V_-$ with the prescribed cross-pairing.
+These are morphisms of finite \'etale group schemes, so the construction
+is functorial over arbitrary $K$-schemes.  It gives a unique full
+$M$-marking $\alpha_M$.
+
+Let $d=\gcd(M,A)$.  The markings $\alpha_M$ and the given
+$\alpha_A$ agree on $d$-division.  This can be checked on geometric
+points: an original coherent Tate marking has root
+$\zeta'_A=\zeta_A$, hence
+$\zeta'_d=\zeta_A^{A/d}=\zeta_M^{M/d}$.  It agrees with the
+half-marking, and duality uniquely determines the missing factor
+modulo $d$.  The two compatible markings consequently glue to a
+unique full $L$-marking.  Explicitly, the map
+\[
+ \mathcal A[L]\longrightarrow
+ \mathcal A[M]\times\mathcal A[A],\qquad
+ x\longmapsto([L/M]x,[L/A]x)
+\]
+identifies its source with the pairs having the same image in
+$\mathcal A[d]$.  This assertion is checked prime by prime on the
+constant torsion modules.  It also proves uniqueness and agreement
+with both entire original label maps.
+
+We must still verify full-Tate liftability; a finite symplectic
+marking alone would not suffice.  At a geometric point choose the
+original coherent Tate marking $\alpha$ and roots $\zeta'_n$.
+There is an $r\in\widehat{\mathbb Z}^{\times}$ with
+\[
+  (\zeta'_L)^r=\zeta_L,\qquad r\equiv1\pmod A.
+\]
+We claim there is a unit $u\in\widehat{\mathcal O}^{\times}$ such
+that $u\bar u=r$, $u\equiv1\pmod A$, and $u$ acts as the identity
+on $V_+$.  At every finite place of $F$ above a rational prime
+dividing $M$, the extension $E/F$ is split: otherwise its unique
+prime would be fixed by conjugation, contradicting
+$\mathfrak b+\overline{\mathfrak b}=\mathcal O$ and
+$\mathfrak b\overline{\mathfrak b}=(M)$.
+On each split pair use $(1,r)$, with the first component corresponding
+to $V_+$.  This also respects the full $A$-level, even when $M$ and
+$A$ share prime powers.
+
+At the other places use surjectivity of the norm on units in an
+unramified quadratic extension.  If $p^a\mid A$, use its
+surjectivity from $1+p^a\mathcal O_{E,v}$ onto
+$1+p^a\mathcal O_{F,v}$.  To see the latter directly, write
+$p^a\mathcal O_{F,v}=(\varpi^e)$ and lift successively: on every
+quotient $1+\varpi^j\mathcal O$ modulo
+$1+\varpi^{j+1}\mathcal O$, the norm is the residue-field trace,
+which is onto.  Completeness gives a compatible unit.  The unrestricted
+unit assertion starts with the finite-field norm and then uses the
+same lifting.  This includes residue characteristic two and ramified
+$F/\mathbb Q$.  At split places the assertion is immediate.
+
+Now $\alpha\circ u$ has the chosen $L$-root, preserves the original
+half-$M$ and full-$A$ labels, and is a full Tate marking.  Its finite
+$L$-marking must be the unique one constructed above.  Thus the
+original liftability condition is preserved.  Restriction gives the
+inverse functor, and all constructions commute with base change and
+isomorphisms.
+\end{proof}
+
+\begin{corollary}[The exact neat subgroup]
+\label{cor:original-neat-level}
+Let $H$ be the integral similitude stabilizer of the original finite
+labels, with multiplier $\nu$.  Then
+\[
+ H_0:=H\cap\{g:\nu(g)\equiv1\pmod M\}
+       =U(L),
+\]
+the full principal congruence subgroup of level $L$.  If the original
+\texttt{GoodAt} condition holds at $p$, namely
+$M/p^{v_p(M)}\geq3$, then the prime-to-$p$ image $H_0^p$ is neat.
+\end{corollary}
+\begin{proof}
+For $g\in H_0$, fixing the half-labels gives
+$g-1,g^{-1}-1\in\mathfrak b\operatorname{End}_{\widehat{\mathcal O}}
+(\widehat\Lambda)$.  The integral adjoint satisfies
+$g^*=\nu(g)g^{-1}$.  Since $\nu(g)-1\in M\widehat{\mathbb Z}$,
+we have $g^*-1\in\mathfrak b\operatorname{End}(\widehat\Lambda)$.
+Taking adjoints gives
+$g-1\in\overline{\mathfrak b}\operatorname{End}(\widehat\Lambda)$.
+Intersection gives $g\equiv1\pmod M$, and the given full $A$-level
+gives $g\equiv1\pmod L$.  Conversely $U(L)\subset H_0$.
+The prime-to-$p$ image is contained in principal level
+$M/p^{v_p(M)}\geq3$, so Serre's congruence criterion applies
+\cite[Remark 1.4.1.9]{integral-pel-lan}.
+This uses the cyclotomic component equivalence just proved; actual
+automorphism rigidity by itself would not imply neatness of $H$.
+\end{proof}
+
+\begin{theorem}[The prescribed individual integral model]
+\label{thm:original-integral-pel-model}
+Let $v$ be a finite place of the original coefficient field $K$, with
+residue characteristic $p$, and suppose $\mathrm{GoodAt}(p)$.
+There is a normal flat projective scheme $\mathcal X/\mathcal O_{K,v}$
+containing the original $X_K$ as a dense open subscheme of its generic
+fibre, with the original semiabelian $\mathcal O_E$-family, rigidified
+symmetric cubical line and primitive identity.  Its generic-fibre
+abelian locus is exactly $X_K$.  Thus it supplies every field in the
+source's individual \texttt{Model} contract over $\mathcal O_{K,v}$.
+The marking comparison and the line comparison both have their
+original rigidifications; no power of the line or rescaling of its
+generic section lattice is introduced.
+\end{theorem}
+\begin{proof}
+If the datum has rank zero, use $\operatorname{Spec}\mathcal O_{K,v}$
+and the trivial group and line.  Otherwise use the original perfect
+alternating lattice and PEL datum from
+Theorem~\ref{thm:original-generic-pel-moduli}.  Its pairing convention
+is $-2\pi iB$, and the fixed norm-minus-one adelic unit from that
+theorem recovers the original labels exactly.  As that unit is
+coefficient-scalar, it commutes with $U(L)$; the level and neatness
+computed above are unchanged.
+
+Choose a projective compatible rational polyhedral cone decomposition
+$\Sigma$, which exists by
+\cite[Proposition 2.8]{integral-pel-projective}.  Use the singleton
+lattice collection $(1,\Lambda,B)$, without an isogeny twist.
+Lan's ramified compactification theorem
+\cite[Theorem 6.1]{integral-pel-projective} applies to $U(L)$ since
+its prime-to-$p$ image is neat.  It gives a normal flat projective
+scheme over the localization of the reflex ring at $p$, with its
+tautological semiabelian family and coefficient action.  The reflex
+field is contained in the source's $\mathbb Q(\sqrt{-d})\subset K$.
+
+Base change to $\mathcal O_{K,v}$, take the reduced closure of the
+generic cyclotomic fibre with root $\zeta_L$ (retaining all its
+connected components), and normalize.
+The normalization is finite because the schemes are of finite type
+over an excellent discrete valuation ring.  The result is projective
+and normal.  Each of its components dominates the base; hence it is
+torsion free, and therefore flat over the discrete valuation ring.
+Its generic fibre is the original full-level toroidal compactification
+on that component, because this generic fibre is already normal.
+Theorem~\ref{thm:original-half-level-completion} identifies its interior
+with precisely $X_K$.  If a \texttt{Moduli} object was already chosen,
+its original reduced-base representing property uniquely identifies
+it with this smooth moduli scheme: apply that property to the two
+reduced universal bases and compose the resulting maps.
+Pull back the tautological semiabelian family and its coefficient
+action; smoothness and the semiabelian fibre condition are preserved
+under this base change, including normalization.
+
+It remains to extend the actual line.  The primitive line
+$\mathcal L_w$ initially lives on the dense interior $X_K$, rather
+than on the entire generic toroidal fibre, and is symmetric and
+cubical there.  For a semiabelian scheme
+over a normal base, restriction of cubical lines to any dense open is
+fully faithful, and every symmetric generic cubical line extends
+\cite[Proposition 3.3.2.2 and Theorem 3.3.2.3(2)]{integral-pel-lan}.
+Thus $\mathcal L_w$ has a unique extension as a cubical line.
+The cubical structure includes its zero rigidification.  Symmetry,
+the coefficient adjoint identities and
+\[
+ \mathcal L_w\simeq
+ (\operatorname{id},\iota(w))^*\delta\mathcal L_w
+\]
+extend by full faithfulness.  Their relations hold because they do
+on the dense generic fibre.  This is exactly the original
+\texttt{SAB} line package, not merely its polarization or its square.
+
+Finally the formal boundary stratum indexed by a nonzero cusp has a
+positive-rank torus with the prescribed character lattice, whereas
+the zero cusp is the abelian interior
+\cite[Theorem 6.1(3)--(4)]{integral-pel-projective}
+\cite[Section 6.2.5]{integral-pel-lan}.
+Consequently the generic abelian locus is precisely the original
+open moduli scheme.  These assertions supply, respectively, the
+source's normality, projectivity, flatness, dense generic open,
+semiabelian line data, exact generic identification and
+\texttt{ab\_gen} fields.
+\end{proof}
+
+This closes an actual arithmetic model construction subobligation.
+It does not yet prove the stronger \texttt{LevelStructureConditions},
+their simultaneous finite level transitions and global domination,
+the rank-one integral section condition \texttt{PushInvertible}, or
+every field of \texttt{PELUnif}/\texttt{TorsionIso}.  Lan's theorem
+does give formal identifications with the original-lattice Mumford
+families, including ramified primes
+\cite[Theorem 11.2]{integral-pel-ramified}; checking the full coefficient,
+period and section reconstruction interfaces is the next geometric
+frontier.  The global theta denominator, section remainder, cusp
+comparison and global norm estimates therefore remain open.

@@ -73,19 +73,24 @@ only with its hypotheses, normalization and parameter dependence intact.
 The full-primary trace and adapted arithmetic lattice are proved in
 [`geometry-arithmetic-frontier-primary-trace`](../../notes/geometry-arithmetic-frontier-primary-trace.md).
 Its exact stabilizer, determinant ideals and normalized index are retained;
-the integral model and reached-section regularity remain inputs.
+the original Good3 chart contract remains an input; reached-section
+regularity and the local integral Model construction are now supplied separately.
 
 The [generic PEL construction](../../notes/geometry-arithmetic-frontier-generic-pel.md)
 supplies the actual characteristic-zero moduli object, including its exact
 primitive line and finite labels. The [reached-section theorem](../../notes/geometry-arithmetic-frontier-reached-regularity.md)
 supplies integral regularity from the original `Good3` uniformization,
-without a scalar loss. The integral model itself remains to be constructed.
+without a scalar loss. The [integral PEL construction](../../notes/geometry-arithmetic-frontier-integral-pel.md)
+now supplies each original local Model with its exact primitive line; the
+simultaneous level and full formal-uniformization contracts remain open.
 
 The [ordinary module construction](../../notes/selmer-integral-frontier-ordinary-diamond.md)
 constructs the actual finite-free modules, integral diamond projectivity and
 exact unnormalized trace. The [Jacquet transfer](../../notes/global-norm-frontier-jacquet-gram.md)
 retains the original period normalization, real budget and both character
-scales. The determinant/support and global return estimates remain open.
+scales. The [local representation and Bessel construction](../../notes/global-norm-frontier-pieri-family.md)
+supplies its representation and period prerequisites, including zero-map
+compatibility. The determinant/support and global return estimates remain open.
 
 The [classical control theorem](../../notes/selmer-integral-frontier-classical-control.md)
 proves coefficient change and faithful good weight-zero specialization for

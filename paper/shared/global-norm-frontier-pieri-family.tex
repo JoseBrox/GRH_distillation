@@ -1,0 +1,263 @@
+\subsection{Constructing the local representation and period families}
+\label{archimedean-pieri-family}
+
+The representation hypotheses in the preceding local norm estimates
+can be supplied by classical representation theory. We use
+Harish--Chandra's discrete-series classification, the tensor identity
+and good-range theorem for cohomological induction, and the
+Casselman--Wallach equivalence
+\cite{pieri-family-hks,pieri-family-kv,pieri-family-cw}.
+These are cited theorems, not formal-source assumptions.
+All maps below are continuous on smooth representation spaces;
+no boundedness of the tensor projections in the ambient Hilbert norm
+is asserted. Throughout the original local consumer has $k\ge1$,
+as required by both its numerical family predicate and
+$\mathrm{GapOK}$; the case $k=0$ is outside this obligation.
+
+\begin{theorem}\label{original-signed-pieri-family}
+For the original numerical family, choose a discrete series
+$H_\nu$ of parameter $\lambda_0+\nu$ at every
+$\|\nu\|_1\le q_{\rm fam}$. The choice may equal the prescribed
+representation at its given index.
+The exterior and dual-standard decompositions used by the local
+norm argument exist on their smooth spaces, with their exact
+parameter shifts and with signed isometric inclusions.
+Their inclusions and projections preserve the span of group
+translates of compact-finite vectors.
+\end{theorem}
+\begin{proof}
+The numerical family gives the correct integral lattice and gaps
+at least two at every permitted index. Harish--Chandra's
+classification supplies these representations and identifies
+the prescribed one by its parameter and signature.
+
+Fix a parameter $\mu$. Use the $\theta$-stable Borel determined by
+its ordered signature. In infinitesimal-character normalization,
+its cohomologically induced module is the discrete series at $\mu$.
+The finite-dimensional module $\bigwedge^\ell\mathbb C^n$ has
+one-dimensional weights $\mathbf1_I$, $|I|=\ell$;
+the dual standard module has weights $-e_s$.
+Filter either module by this Borel. The tensor identity gives a
+filtration with the induced modules at $\mu+\mathbf1_I$,
+or $\mu-e_s$, as its factors. All shifted parameters remain in
+the same open chamber. The good-range vanishing theorem therefore
+concentrates the induction in its one relevant degree.
+The shifted parameters are distinct and ordered, so their
+infinitesimal characters are distinct. The finite filtration splits
+by generalized central-character decomposition. Every factor is
+the indicated irreducible discrete series.
+
+Casselman--Wallach globalizes these isomorphisms to smooth
+representations, giving precisely the continuous smooth maps required
+by the original tensor interface. Pull back the tensor product of
+the finite-dimensional invariant Hermitian form and the unitary
+Hilbert form. Different summands are orthogonal: the resulting
+invariant sesquilinear pairing would otherwise intertwine distinct
+irreducible Harish--Chandra modules with their Hermitian duals.
+On one summand Schur's lemma makes the form a real scalar multiple
+of its unitary form. That scalar is nonzero. Otherwise that summand,
+being orthogonal to all the others, would lie in the radical of the
+nondegenerate tensor form. Rescale its inclusion by the reciprocal
+square root of the scalar's absolute value and rescale the
+projection inversely. The scalar becomes $+1$ or $-1$.
+The identities extend from compact-finite vectors to smooth vectors
+by continuity and density.
+
+An equivariant map sends compact-finite tensors to compact-finite
+tensors. For a group translate, intertwining expresses each tensor
+coordinate as a finite sum of translates of such vectors.
+This proves the last assertion.
+\end{proof}
+
+The following argument supplies the smooth coefficient estimate needed
+to construct the period maps. It uses auxiliary local representations
+outside the numerical family only to prove convergence; none is
+substituted for an original arithmetic representation.
+
+\begin{lemma}\label{original-stable-tensor-power}
+Let $\mu$ be a regular integral parameter whose noncompact root
+gaps are at least $h>0$. For every integer $M$ with $0\le M<h$,
+$(\mathbb C^n)^{\otimes M}\otimes H_\mu^\infty$ is a finite
+direct sum of smooth discrete series, with a signed orthogonal
+decomposition for its original tensor Hermitian form.
+Repeated final parameters are allowed.
+\end{lemma}
+\begin{proof}
+Iterate the one-step standard tensor identity, separately on every
+summand already constructed. A regular integral parameter has
+adjacent gaps at least one. Adding $e_s$ can therefore leave the
+open chamber only by an adjacent equality. After at most $M$
+steps, every noncompact gap is at least $h-M>0$, so an equality
+can involve only a compact simple root.
+
+Such a compact-wall factor is zero. Indeed, induction in stages
+through its compact rank-one Levi reduces it to the
+Borel--Weil--Bott calculation on $\mathbb P^1$ at degree $-1$:
+the infinitesimal-character pairing is zero, so the inducing
+weight pairs to $-1$ after subtracting $\rho$.
+Both cohomology groups of $\mathcal O_{\mathbb P^1}(-1)$ vanish.
+All other factors are regular discrete series in the same chamber.
+The one-step central characters are distinct, so that step splits,
+as in the proof of Proposition~5.5 of
+\cite{pieri-family-hks}. Normalize its Hermitian forms as above.
+
+Tensoring distributes over the previously obtained direct sum.
+Thus the induction constructs an actual direct sum labelled by
+paths. Equal final parameters in different paths do not require
+any assertion that self-extensions split: the relevant summands
+were already split at the preceding step. Their orthogonality is
+inherited from that step. This also proves the Hermitian assertion.
+\end{proof}
+
+\begin{theorem}\label{original-smooth-decay-from-tensor}
+Let $N(g)=(\sum_{i,j}|g_{ij}|^2)^{1/2}$ be the exact source norm.
+Suppose the actual noncompact gap is at least $h_*$ and the
+original condition $\mathrm{GapOK}(k,r,h_*)$ holds. Put
+$a=h_* /(8\sqrt{2r+2})$.
+There are a constant $C$ and a finite sum $p$ of the original
+derived Hilbert seminorms such that
+\[
+ |\langle\sigma(g)v,w\rangle|
+ \le C\,p(v)p(w)N(g)^{1-a}
+ \quad(v,w\in H_\mu^\infty,\ g\in G).
+\]
+No uniform bound on $C$ or on the order of $p$ is needed here.
+\end{theorem}
+\begin{proof}
+Set $M=\lceil a-1\rceil$. The original gap gives $a>1$,
+and $M\le a\le h_*/8<h_*$. Apply
+Lemma~\ref{original-stable-tensor-power}.
+Each projection, being continuous from the smooth space to the
+Hilbert space of its summand, is bounded by a finite sum of
+derived Hilbert seminorms. There are finitely many projections
+and finite-factor basis vectors, so one common such sum $p$
+and a finite constant suffice.
+
+Use the signed tensor decomposition to expand a matrix coefficient
+between two finite-factor basis vectors tensored with $v,w$.
+Unitarity on each summand bounds its absolute value by
+$Cp(v)p(w)$. The original finite-factor Hermitian matrix is a
+signed permutation matrix. Its tensor powers are likewise.
+Consequently this estimate applies to
+$g_{ij}^M\langle\sigma(g)v,w\rangle$ for every $i,j$.
+Since $N(g)\le n\max_{i,j}|g_{ij}|$,
+\[
+ N(g)^M|\langle\sigma(g)v,w\rangle|\le n^MCp(v)p(w).
+\]
+Absorb $n^M$ in the constant. On $G$, $N(g)\ge1$, and
+$M\ge a-1$, proving the assertion.
+In particular, fixing a compact-finite $w$ gives the exact
+existential smooth-seminorm estimate denoted $\mathrm{DecInf}$
+in the source. A uniform bound for these auxiliary seminorms
+has not been inserted into any later quantitative estimate.
+\end{proof}
+
+\begin{theorem}\label{original-normalized-bessel-family}
+For every representation in the original numerical family and each
+original Bessel side, there exists a continuous smooth Bessel map,
+possibly zero, normalized by the exact original subgroup period.
+The signed Pieri scalar and adjoint identities then hold.
+\end{theorem}
+\begin{proof}
+Write $S=U(W_0)N$ and
+$\lambda(hn)=\psi(n)\pi_W(h)$.
+The original compact and nilpotent measures give its Haar measure
+$ds$, unchanged. It is a closed unimodular amenable subgroup.
+The ambient-volume packing proof of
+Section~\ref{archimedean-quotient-mass} applies verbatim to $S$:
+left multiplication has ambient real determinant one, so
+$\operatorname{vol}\{s:N(s)\le R\}\le C_SR^{2n^2}$.
+For the original numerical family the common choice $h_*=h/4$
+is permitted by its shift reserve and its stated
+$\mathrm{GapOK}(k,r,h/4)$ condition. The last inequality in
+$\mathrm{GapOK}$ gives
+$a-1\ge9(r+1)n^2+3\,\mathrm{AG}(k,r)+2>2n^2$.
+The preceding theorem therefore makes every period absolutely
+convergent and continuous in both smooth inputs.
+
+Here use Hermitian forms linear in the first variable. On
+$E=H_\mu^\infty\otimes W^*$ consider the unitary $S$-representation
+$\tau=\sigma\otimes\lambda^\vee$ and its period form
+\[
+ Q(x,y)=\int_S\langle\tau(s)x,y\rangle\,ds .
+\]
+It is positive semidefinite. To see the sign with the original
+Haar mass, take a F{\o}lner net $A$ of finite positive measure.
+Then
+\[
+ \int_S\langle\tau(s)x,x\rangle
+       \frac{\operatorname{vol}(A\cap sA)}{\operatorname{vol}(A)}
+       \,ds
+ =\frac1{\operatorname{vol}(A)}
+       \left\|\int_A\tau(s^{-1})x\,ds\right\|^2\ge0 .
+\]
+The overlap ratio tends to one and is bounded by one.
+Absolute convergence and dominated convergence give $Q(x,x)\ge0$.
+
+Each $Q(\,\cdot\,,y)$ is a continuous invariant functional.
+The original group is $U(k+r,r+1)$, its compact smaller group is
+$U(k)$, and its nonzero flag character is generic in exactly the
+sense of Jiang--Sun--Zhu. Their Theorem A
+\cite{pieri-family-jsz} gives dimension at most one for these
+functionals. Thus $Q$ has rank at most one.
+If $Q=0$, take $B=0$. Otherwise choose $x_0$ with
+$Q(x_0,x_0)>0$ and put
+$f(x)=Q(x,x_0)/\sqrt{Q(x_0,x_0)}$.
+Positivity and rank one give
+$Q(x,y)=f(x)\overline{f(y)}$.
+Since $W$ is finite dimensional, there is a unique continuous
+map $B:H_\mu^\infty\to W$ with
+$f(v\otimes\xi)=\xi(Bv)$.
+Invariance gives $B\sigma(s)=\lambda(s)B$.
+Reading the matrix entries of $Q$ proves the original operator
+period identity
+\[
+ \int_S\langle\sigma(s)v,w\rangle\lambda(s)^{-1}\,ds
+   =R(Bv,Bw),\qquad R(u,z)\eta=\langle\eta,z\rangle u .
+\]
+In particular no Haar factor, dimension factor or positive
+normalizing constant was discarded.
+
+Write $A_Iv=p_I(\omega\otimes v)$ and
+$C_Iy=\operatorname{ev}_{\Gamma}(\omega,i_Iy)$.
+The original flag vector is $S$-fixed: for an exterior power this
+is the wedge of an initial flag segment, and for the dual standard
+module it is the flat of the fixed first flag vector.
+The signed tensor pairing and the unchanged subgroup period give,
+before any scalar is chosen,
+\[
+ R(BC_Iy,Bv)=\epsilon_I R(B_Iy,B_IA_Iv).
+\]
+This is the period comparison in
+Lemma~\ref{lowering-normalized-adjoint}; absolute convergence
+here makes it valid for all smooth $v,y$.
+If $B=0$ and $B_I\ne0$, choose $y$ with $B_Iy\ne0$.
+The displayed rank-one identity forces $B_IA_Iv=0$ for every $v$.
+If both maps are zero the same conclusion is immediate.
+Thus $\kappa_I=0$ supplies both the scalar and signed adjoint
+identities whenever $B=0$. This argument does not infer the
+absence of other Bessel functionals from a zero period form.
+
+If $B\ne0$, continuity and density make it nonzero on the original
+period test domain. Multiplicity one gives
+$B_IA_Iv=\kappa_I Bv$. Substitute this equality into the displayed
+period comparison and choose $v$ with $Bv\ne0$. It gives
+$BC_I=\epsilon_I\overline{\kappa_I}B_I$, including $B_I=0$,
+when $\kappa_I=0$.
+The tensor maps preserve that lemma's test domain by
+Theorem~\ref{original-signed-pieri-family}.
+The full Capelli character is the given discrete-series
+infinitesimal character; differentiating $B\sigma(h)=\pi_W(h)B$
+gives its compact Capelli character. Hence the exact
+normalized-lowering theorem applies with its stated shifts.
+\end{proof}
+
+Together these results supply the representation, period-normalization
+and scalar prerequisites of
+Propositions~\ref{jacquet-original-budget-transport} and
+\ref{jacquet-original-scale-transport}. They give the original local
+leading-minor Jacquet estimate, including both character scales.
+They do not prove that a prescribed global period map is nonzero:
+the constructed local map is nonzero precisely when its original
+period form is nonzero. The weighted orbital bound, rational-return
+assembly and arithmetic integral theta maps remain separate.

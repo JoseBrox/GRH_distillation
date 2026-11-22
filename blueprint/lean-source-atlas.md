@@ -137,3 +137,12 @@ level certificate authenticates twelve interfaces for ordered theta
 translations, normalized pullback, arbitrary level-prime powers, the exact
 cover value and the one-clearing-integer denominator. Both have independent
 mathematical reviews; their finite controls are not Lean builds.
+
+The integral PEL supplier compares five original level, Model and stronger
+uniformization interfaces with three exact Lan reference revisions. It
+constructs the individual Model; it does not mark the stronger contracts
+complete. The local representation/period supplier authenticates fifteen
+original interfaces and four primary references, including the exact
+numerical-family domain and zero-base period comparison. The classical
+representation and amenable-positivity arguments now supply the actual
+local leading-minor estimate. Full global return estimates remain open.

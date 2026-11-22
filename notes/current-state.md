@@ -35,49 +35,43 @@ The source-import atlas and documentary section atlas have no proof
 completion score. The published baseline is RH 6/9 and the GRH technical
 map 17/31; the generated progress table carries the current values.
 
-## Active continuation at the recovered main revision
+## Active construction frontier
 
-The current construction frontier is the actual integral geometric model
-and the actual universal automorphic determinant action. The exact generic
-PEL moduli object is now constructed, with its original primitive cubical
-line and both entire finite labels; this does not yet give the source's
-normal projective integral `Model` or `Good3` uniformization.
+The exact generic PEL moduli object and each prescribed local integral
+`Model` at a `GoodAt` prime are now constructed over the original
+coefficient ring. The primitive symmetric cubical line, original labels
+and generic abelian locus are preserved. The fixed cyclotomic component
+completes the half-level uniquely to full level and supplies the required
+prime-to-residue-characteristic neatness. Simultaneous level transitions,
+`PushInvertible` and the full `Good3` uniformization still require proof.
 
 Under that unchanged `Good3` contract, every prescribed reached theta
-section is now proved regular with scalar exactly one, including bad level
-primes. The adapted arithmetic lattice, full-primary theta trace and exact
-determinant/index cancellation are also proved. The exact mixed level-torsion compatibility and the full local level-prime
-estimate are now proved. Together they give the original one-clearing-integer
-all-place conclusion once the specified good cover and chart inputs are supplied. These statements remove section and primary-trace
-hypotheses; they do not construct the missing model or global theta norm.
+section is regular with scalar exactly one. The adapted arithmetic
+lattice, full-primary trace, mixed translation/pullback identity and full
+level-prime estimate are proved. Together they give the original single
+clearing integer once the actual good cover and chart inputs are supplied.
+Theta spanning and the global norm have not been inferred from this.
 
-The finite-to-limiting Selmer comparison supplies the three exact limiting
-presentation conditions from the proved finite-level estimates. It retains
-the original local conditions, point and constants. The original ordinary automorphic modules are now constructed and finite
-free; their actual diamond-group trace is onto with exactly the
-augmentation kernel, including residue-characteristic group orders. The
-actual ordinary modules also commute with coefficient change and have enough
-faithful good classical specializations at weight zero. The next W04 supplier
-is their universal determinant action, exact classical constituent/Galois
-compatibility and patched support. No uniform integral
-torsion bound follows merely from rational rigidity.
+Both finite-level Selmer bounds and their exact limiting comparison have
+proofs. The actual ordinary automorphic modules are finite free, have the
+exact integral diamond trace, commute with coefficient change and admit
+enough faithful good classical specializations at weight zero. The next
+supplier is their universal determinant action with the exact classical
+constituent/Galois compatibility, followed by patched support and the
+moving-family integral Selmer budget.
 
-The exact local exterior-Pieri transfer now controls the prescribed
-Jacquet norm with its original real budget and both character scales.
-Representation and period-normalized Bessel suppliers remain explicit;
-the weighted orbital estimate and global arithmetic return sum are still
-open. This is not a global period-Gram identification.
+The actual local discrete-series and period-normalized Bessel families
+now supply the exact leading-minor Jacquet estimate, retaining signed
+Pieri adjoints, the original real budget, both character scales and zero
+maps. The weighted orbital estimate and full global rational-return sum
+remain open. The local Gram identity is not the global period-Gram
+comparison needed for the final table.
 
-New proof packages and independent review certificates:
-`selmer-integral-frontier-limit-comparison`,
-`geometry-arithmetic-frontier-primary-trace`,
-`geometry-arithmetic-frontier-generic-pel`, and
-`geometry-arithmetic-frontier-reached-regularity`,
-`selmer-integral-frontier-ordinary-diamond`, and
-`global-norm-frontier-jacquet-gram`,
+The new construction proofs and their independent reviews have stems
+`geometry-arithmetic-frontier-integral-pel`,
+`geometry-arithmetic-frontier-mixed-level`,
 `selmer-integral-frontier-classical-control`, and
-`geometry-arithmetic-frontier-mixed-level`.
-Whole-node statuses are unchanged.
+`global-norm-frontier-pieri-family`. Whole-node statuses are unchanged.
 
 ## Current arithmetic frontiers
 
