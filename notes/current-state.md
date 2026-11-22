@@ -74,8 +74,14 @@ lattices. Their lower degree bound removes the separate negative-height
 moment. Summing the exact degree-weighted volume comparison first supplies
 one mean directly, without the earlier change of weights. The raw signed
 version removes all heights from its remaining cost, while retaining the
-actual section ranks and twist costs. A mean-volume estimate and an explicit
-rank/surplus bound still have to be supplied.
+actual section ranks and twist costs. The finite upper rank comparison
+now has a [direct jet proof](finite-section-jet-bound.md): values and
+derivatives on one general finite fibre determine a section once its
+vanishing order would exceed its intersection degree. The resulting
+relative loss is at most `D rho + (2D^2+4D)/t`, with the exact binomial
+ratio and excess-rank denominator retained. The actual nef and birational
+line-bundle identifications, mean-volume estimate and arithmetic section
+remainder still have to be supplied.
 
 The [mean-volume supplier](mean-volume-supplier.md) now isolates the
 required normalized arithmetic intersection inequality for the selected
