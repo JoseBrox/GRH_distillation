@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:16:06.192778+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Arithmetic degree bound for the full original section lattice through short generators and a Chow-form polynomial determinant; original generic geometric filtration and height/model inputs remain explicit.",
+  "audit_groups": [
+    {
+      "topic": "Novelty and dependency reduction",
+      "result": "PASS",
+      "finding": "The earlier finite section theorem controlled rank. This proof supplies the full arithmetic lattice degree from the retained generic geometric data. It avoids separate controlled integral jet lifts; the generic filtration itself is still a stated geometric input."
+    },
+    {
+      "topic": "Spherical height lower bound",
+      "result": "PASS",
+      "finding": "The Jensen estimate follows after unitary rotation by averaging coordinate phases and using the exact mean of log|z_1|. Cauchy coefficient bounds on the substituted polytorus and the product formula give H(P)>=-c deg(P), retaining the spherical mean and all embeddings."
+    },
+    {
+      "topic": "Finite determinant ideal",
+      "result": "PASS",
+      "finding": "The proof uses a K-basis and the fractional ideal of the top exterior power of the actual full lattice. Coefficient integrality gives the correct finite Gauss bound. Hadamard gives the archimedean term with the correct sign; no free integral basis or saturated image is assumed."
+    },
+    {
+      "topic": "Constructed nonzero determinant",
+      "result": "PASS",
+      "finding": "Original K-vectors from the short spanning families are selected using graded independence after field extension. Maximal deepest rank, a K-point avoiding finitely many extension-defined hyperplanes, and completion from the original top family give a nonzero determinant with explicit column bounds."
+    },
+    {
+      "topic": "Global divisibility",
+      "result": "PASS",
+      "finding": "At each good specialization the deep columns are dependent or span the deepest step by maximality. The graded determinant is a scalar times f^b. Cross multiplication at one last-block value and density turn this into a polynomial identity; irreducibility and positive last-block degree yield f^b divisibility."
+    },
+    {
+      "topic": "Counts and signed constants",
+      "result": "PASS",
+      "finding": "The monomial sum gives q=delta binomial(T-1,D) and (D+1)b=binomial(T-1,D)(T+D(D+1)). The cofactor degree is y(T-D)-qD(D+1)>=0. The exact intermediate bound and its weaker displayed slope bound retain the rank-defect factor and all logarithmic norm constants."
+    },
+    {
+      "topic": "Original consumer and limits",
+      "result": "PASS",
+      "finding": "Pinned geoBound_of_abstract identifies the system rank and degree with the original section lattice and inserts the retained height identity. The comparison with the original constant26 conclusion is valid. Original model, nef/big, generic section/filtration and short-family inputs are not silently constructed."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AbelianVarietyTheory.Definitions.Divisors.HermSysHypOneLeLambdaZero",
+      "sha256": "4759f0a59ebbc07f1e4c934ac7ab802183934718edbcabdd1113000e904110de",
+      "git_blob_sha1": "1ef1ca01da5512b76732c605ceb2fd6eb46ab1c5",
+      "independently_read_ranges": [
+        [
+          188,
+          240
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExplicitArithmeticHilbertSamuelBound",
+      "sha256": "37ed12f552a6cf8b917287f13a0e82f6a93ee795d3a8894c841e72cb403acca6",
+      "git_blob_sha1": "934c0ab8a3896a11b360b71b517c5e429c43ddd3",
+      "independently_read_ranges": [
+        [
+          5,
+          47
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.DivisorProofs.LatticeDegreeGeHeightPolynomialVectorsDet",
+      "sha256": "b9a972a12a901ce760c47bb69e4de63ddbb8fb1734582675a4174387d92ce7d4",
+      "git_blob_sha1": "b9a87a75727b42867db3b57e271f9c18a9fbf10a",
+      "independently_read_ranges": [
+        [
+          91,
+          121
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.DivisorProofs.PowDvdOfSpecialisations",
+      "sha256": "fbc1c6ed6959fc4559cfa469b3f26713b034aafd62b8131daf62ab35f58ccb23",
+      "git_blob_sha1": "5b3b238a7e6e70521a250738ab188eff57b5c0ac",
+      "independently_read_ranges": [
+        [
+          103,
+          129
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.DivisorProofs.SlopeLowerBoundTopLatticeOffHypersurface",
+      "sha256": "639e13a31f74a2f832606bfba37ccbb6ef029c3f37cf83768afd98772f08eb75",
+      "git_blob_sha1": "bc14c8d53180bb0c00486ed9d3570a09cd441aff",
+      "independently_read_ranges": [
+        [
+          100,
+          178
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.DivisorProofs.HermitianSystemSlopeBoundOfDeterminantSlopeInequ",
+      "sha256": "c943ba8b1f051598a27fd0b4a357c20c7eec10f39ccb3529eb3014d8f266215a",
+      "git_blob_sha1": "655904da0efc07305fa75fe754a22f2b295d594e",
+      "independently_read_ranges": [
+        [
+          38,
+          88
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_geometry_arithmetic_frontier_determinant_degree.py --offline",
+    "result": "PASS",
+    "source_modules": 14,
+    "monomial_count_cases": 288,
+    "signed_slope_cases": 945,
+    "actual_projective_line_determinants": 6,
+    "coefficient_ideal_cases": 4,
+    "negative_controls": 2
+  },
+  "artifacts": [
+    {
+      "path": "notes/geometry-arithmetic-frontier-determinant-degree.md",
+      "sha256": "20461c5462db13ca095b9133e6349fd3071faf2072c2eb43067c2d71bf5c1fd0"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-determinant-degree.tex",
+      "sha256": "91206cf03b5a3c258a340c3a59ba1e8f8a02112c69bbf15f9400b6ddff8336ef"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-determinant-degree-references.tex",
+      "sha256": "c770ff7eda1b1b94a94a263c414babe6a1de1155506c7d441a956397bf60ef76"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_determinant_degree.py",
+      "sha256": "3c2768c8ddd59f9cd992ad6bd603051d6481b1049953418d751bfdfacd01f1eb"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-determinant-degree.json",
+      "sha256": "24f03d9e6234e1e0d1566308c6eba78c7ab93c84d9d2fecdc6cb8ef38fdc1596"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-determinant-degree-layout.json",
+      "sha256": "deb54c3299f20a07bf2caa5e30da9169372b1a4fa69c2122794688efabb1365c"
+    }
+  ],
+  "limits": [
+    "This review does not discharge the generic geometric filtration, Bertini, height identity, arithmetic model or short spanning-family constructions.",
+    "The exact smaller component coefficient already present in the source is retained, not counted as new.",
+    "The standalone layout record concerns only its explicitly viewed pages; final integrated manuscripts are checked separately.",
+    "No Lean build or whole-node completion is claimed."
+  ]
+}

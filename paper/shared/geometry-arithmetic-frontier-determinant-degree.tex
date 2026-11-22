@@ -1,0 +1,193 @@
+\subsection{A determinant bound for the section lattice}
+\label{sec:arithmetic-determinant-degree}
+
+The arithmetic degree can be estimated before constructing integral
+lifts of individual jets.  We develop the determinant argument
+of~\cite{arithmetic-determinant-source}.  We use normalized degrees: all finite-place
+sums and sums over the complex embeddings of a number field $K$ are
+divided by $[K:\mathbf Q]$.  Finite absolute values are normalized by
+$|\pi|_v=(\#k_v)^{-1}$, and every complex embedding occurs in the
+archimedean sum.
+
+Let $1\leq N\leq n$, and let $w_1,\ldots,w_n$ span $K^N$.
+At every embedding $\sigma$ fix a
+Hermitian norm $|\cdot|_\sigma$ on $\mathbf C^N$, with
+$|w_i|_\sigma\leq\Lambda$, where $\Lambda\geq1$.  For a nonzero
+multihomogeneous polynomial $P$ in blocks of $N$ variables, write
+$H(P)$ for the sum of its finite Gauss heights after substituting
+$u=\sum_i z_iw_i$ in each block, and its mean logarithmic absolute
+value on the product of the Hermitian unit spheres at infinity.
+Thus no maximum norm replaces the spherical mean.  Put
+\[
+ c=\log(n\Lambda)+\frac{\log n+1}{2}.
+\]
+
+\begin{lemma}\label{lem:arithmetic-polynomial-determinant}
+For nonzero multihomogeneous polynomials,
+$H(PQ)=H(P)+H(Q)$, $H(a)=0$ for $a\in K^\times$, and
+$H(P)\geq-c\deg P$.  Let $M$ be a full lattice in a Hermitian
+$K$-space $V$ of dimension $d$.  Suppose $p_1(u),\ldots,p_d(u)$ are
+polynomial vectors, their coefficients after the above substitutions
+belong to $M$, and their determinant $P$ is nonzero and
+multihomogeneous.  If $\|p_j(u)\|_\sigma\leq B_j$ on every product
+of unit spheres, then
+\begin{equation}\label{eq:arithmetic-polynomial-determinant}
+             \widehat{\deg}M\geq H(P)-\sum_{j=1}^d\log B_j.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Multiplicativity follows from the Gauss lemma and addition of
+integrable logarithms; scalar invariance is the product formula.
+For a homogeneous polynomial of degree $a$ in $N$ complex variables,
+iterated Jensen inequalities on coordinate circles give
+\[
+ \log|P(u)|\leq\int_{|z|=1}\log|P(z)|\,d\mu(z)
+                    +\frac a2\sum_{j=1}^{N-1}\frac1j
+                 \qquad(|u|=1).
+\]
+Indeed rotate $u$ to the first coordinate, average the phases of the
+other coordinates, and use
+$\int\log|z_1|\,d\mu=-\frac12\sum_{j=1}^{N-1}j^{-1}$.
+Apply this in each block.  On the coefficient polytorus the substituted
+vectors have norm at most $n\Lambda$.  The Cauchy coefficient inequality
+and the product formula, applied to any nonzero coefficient, now give
+the asserted lower bound, since $N\leq n$ and
+$\sum_{j=1}^{N-1}j^{-1}\leq\log n+1$.
+
+For the determinant assertion, choose a $K$-basis $b$ of $V$, and let
+$I$ be the fractional ideal representing $\bigwedge^dM$ in that basis.
+Every coefficient of $P$ belongs to $I$, by multilinearity of the
+determinant.  Its finite Gauss contribution is therefore at most
+$-[K:\mathbf Q]^{-1}\log\operatorname{N}I$.
+At infinity, Hadamard's inequality gives
+\[
+ \log|P(u)|\leq\sum_j\log B_j
+                   -\tfrac12\log\det\operatorname{Gram}_\sigma(b).
+\]
+Average and add the finite contributions.  This is exactly the
+definition of $\widehat{\deg}M$.  A basis of $M$ over the ring of
+integers is neither chosen nor needed.
+\end{proof}
+
+We specify the geometric input to the next theorem.  Let $D\geq1$,
+$T\geq D+1$, and let $V_j$ be finite dimensional $K$-spaces in a
+common space with commuting multiplication operators $m(u)$, linear
+in $u\in K^N$, taking $V_j$ to $V_{j+1}$.  Let $M_j\subset V_j$
+be full lattices, stable under each $m(w_i)$.  Assume at infinity
+\[
+ \|m(u)x\|_{j+1,\sigma}\leq\sqrt\beta\,|u|_\sigma\|x\|_{j,\sigma},
+                  \qquad\beta\geq1,
+\]
+and assume that $M_0,M_D,M_T$ contain $K$-spanning families of norms
+at most $\Lambda_0,\Lambda_D,\Lambda_T$, respectively, all at least one.
+
+Let $f(s_1,\ldots,s_D,l)$ be irreducible, of degree $\delta\geq1$
+in every block.  On a nonempty principal open set of $D$-tuples $s$
+over $K$, assume the following finite-dimensional description, after
+a field extension if necessary.  There are nonzero linear forms
+$L_1,\ldots,L_\delta$, a surjection
+$e:V_0\otimes_K E\to E^\delta$, and a decreasing filtration $F_a$ in $V_T\otimes_K E$,
+$0\leq a\leq T-D$.  The middle two identities below hold for
+$0\leq a<T-D$; the last describes the deepest space:
+\begin{equation}\label{eq:arithmetic-generic-filtration}
+ \begin{split}
+ f(s,l)&=c_s\prod_{p=1}^{\delta}L_p(l),\qquad c_s\ne0,\\
+ F_a/F_{a+1}&\simeq\bigoplus_{|\alpha|=a}E^\delta,\\
+ m(s)^\alpha m(l)^{T-a}x&\longmapsto
+           \bigl(\mathbf1_{\alpha'=\alpha}L_p(l)^{T-a}e_p(x)\bigr)_{\alpha',p},\\
+ F_{T-D}&=\sum_{|\alpha|=T-D}m(s)^\alpha(V_D\otimes E).
+ \end{split}
+\end{equation}
+Here the product vectors in the third line belong to $F_a$; the
+isomorphism in the second line has kernel $F_{a+1}$.  These are
+geometric vector-space conditions.  They do not assert that arbitrary
+integral jets lift with controlled norm.
+
+\begin{theorem}\label{thm:arithmetic-determinant-degree}
+Under these hypotheses put
+\[
+ R=\binom{T-1}{D},\quad q=R\delta,\quad d=\dim_KV_T,\quad
+ h_f=\frac{H(f)}{(D+1)\delta},\quad\theta=\frac qd.
+\]
+Then $d\geq q>0$ and
+\begin{equation}\label{eq:arithmetic-determinant-slope}
+ \begin{split}
+ \frac{\widehat{\deg}M_T}{d}\geq{}&
+ \theta\left(Th_f-D(D+1)c-\log\Lambda_0-\frac T2\log\beta\right)\\
+ &-(1-\theta)\left(Tc+\frac T2\log\beta
+                          +\log\Lambda_D+\log\Lambda_T\right).
+ \end{split}
+\end{equation}
+If the geometric height $h$ satisfies
+$h_f\geq h-(\log n+1)/2$, the same bound holds with $Th_f$ replaced
+by $Th-T(\log n+1)/2$.
+\end{theorem}
+
+\begin{proof}
+Choose a good $s$ for which the dimension $y$ of the deepest space is
+maximal.  From the original $K$-vectors in the short family in $M_0$
+select $\delta$ vectors whose residues are independent over $E$.
+Choose $l\in K^N$ avoiding the finitely many hyperplanes $L_p(l)=0$;
+this is possible because $K$ is infinite and each $L_p$ is nonzero.
+For every $a<T-D$ and $|\alpha|=a$, their products
+$m(s)^\alpha m(l)^{T-a}x$ give a basis of that graded piece.
+Choose $y$ independent deepest vectors from the products of the original
+short family in $M_D$, and complete with vectors from the original
+short family in $M_T$.  All chosen vectors are over $K$; independence
+may be checked after extension to $E$.  There are exactly $q$ vectors
+of the first kind.
+
+Replace $s,l$ by variables in these fixed columns and take their
+determinant $P$.  It is nonzero, since the chosen specialization is a
+basis.  All substituted coefficients are in $M_T$ by multiplication
+stability.  The three types of column have bounds
+\[
+       \beta^{T/2}\Lambda_0,\qquad
+       \beta^{(T-D)/2}\Lambda_D,\qquad\Lambda_T,
+\]
+and occur $q,y,d-q-y$ times.
+
+Write
+\[
+ b=\sum_{a=0}^{T-D-1}\binom{a+D-1}{D-1}(T-a),\qquad
+                 (D+1)b=R\{T+D(D+1)\}.
+\]
+At any good specialization the selected deepest columns either become
+dependent, in which case $P(s,l)=0$, or form a basis of the deepest
+space by maximality of $y$.  In the latter case the determinant on the
+graded pieces is
+$\gamma_s(\prod_pL_p(l))^b$, with $\gamma_s$ independent of $l$.
+Thus $P(s,l)$ is a scalar multiple of $f(s,l)^b$ in both cases.
+To obtain divisibility over $K$, choose $l_0$ such that
+$f(s,l_0)$ is not the zero polynomial.  Zariski density gives
+\[
+       P(s,l)f(s,l_0)^b=P(s,l_0)f(s,l)^b.
+\]
+The irreducible polynomial $f$ cannot divide the nonzero polynomial
+$f(s,l_0)$, which has degree zero in $l$.  Hence $P=f^bG$ for a
+nonzero multihomogeneous polynomial $G$.  Its total degree is
+\[
+           e=y(T-D)-qD(D+1)\geq0.
+\]
+Lemma~\ref{lem:arithmetic-polynomial-determinant} proves the sharper
+intermediate bound
+\begin{equation}\label{eq:arithmetic-determinant-exact}
+ \begin{split}
+ \widehat{\deg}M_T\geq{}&bH(f)-ce-q\log(\beta^{T/2}\Lambda_0)\\
+ &-y\log(\beta^{(T-D)/2}\Lambda_D)
+   -(d-q-y)\log\Lambda_T.
+ \end{split}
+\end{equation}
+Finally $h_f\geq-c$, $e\leq T(d-q)$, and $y\leq d-q$.
+Together with the displayed formula for $b$, these inequalities give
+\eqref{eq:arithmetic-determinant-slope}.  The geometric-height version
+follows by substitution.  This estimates the degree of the full
+lattice $M_T$, including its finite-place contribution.
+\end{proof}
+
+The required geometric filtration, Chow form and height identity, as
+well as the full lattices and their short spanning families, remain
+inputs to an application.  Once these data are supplied, the argument
+uses only the short generators themselves; separate arithmetic jet
+lifts and their extension estimates are unnecessary.
