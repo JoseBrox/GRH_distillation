@@ -2,6 +2,18 @@
 
 These results concern deductions from specified estimates. They do not disprove GRH or establish a defect in Alpöge's proof.
 
+## Finite level alone does not isolate one rational return
+
+When the prescribed unitary space contains a hyperbolic plane, every
+supported finite adelic point has infinitely many distinct rational return
+cosets with the same finite support condition. An elementary congruence
+lattice in a unitary transvection group proves this for every depth of the
+original level. The [return-support checkpoint](../notes/dominant-return-nonvanishing-frontier.md)
+therefore leaves a genuine archimedean comparison: one must bound the
+other return norms relative to the chosen return. The observation neither
+rules out such dominance nor asserts nonzero archimedean values for all
+supported returns.
+
 ## Trace classes and generic rigidity leave integral arithmetic unresolved
 
 The [Selmer comparison audit](../notes/rh-selmer-valuation-frontier.md)
