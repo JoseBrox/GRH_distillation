@@ -286,6 +286,16 @@ Actual model existence and the upper graded-intersection estimate remain
 separate inputs. The ordinary-RH specialization retains all five local
 weights; its cyclotomic twist does not become self-inverse.
 
+The [upper numerical length calculation](rh-selmer-euler-determinant.md)
+also has a short determinant proof. On the actual finite multigraded
+weight module, kernel and cokernel torsion cancel exactly. The remaining
+Euler characteristic is a determinant valuation, equivalently a sum
+over distinct degree-zero characters with their exact multiplicities.
+This preserves a sharper intermediate inequality before the coarse
+power-of-two bound. The graded specialization, eventual support and
+local multiplicity estimates linking this module to the conormal
+quotient remain genuine requirements.
+
 The [resultant construction](rh-selmer-resultant.md) supplies the elementary
 integer in the nonresonant orbit estimate with full integrality,
 nonvanishing, simultaneous valuation domination and an explicit size

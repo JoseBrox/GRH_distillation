@@ -158,6 +158,37 @@
           "sha256": "2973f16f6ff566ff803ad346b208d6e093086210e4873f8489e27a4b31c5ebfc"
         }
       ]
+    },
+    {
+      "id": "rh-selmer-euler-determinant",
+      "status": "PASS",
+      "reviewers": [
+        "rh_selmer_frontier",
+        "root"
+      ],
+      "checked": [
+        "The kernel-cokernel exact sequence cancels integral torsion and leaves the determinant valuation on the free quotient, including generic rank zero.",
+        "Generic Artinian factors give the exact sum over embeddings with localized multiplicities; separability and common residue fields fix both length normalizations.",
+        "Distinct degree-zero characters are counted once in the exact formula; replacing them by orbit representatives uses the stated nonnegative valuations.",
+        "The three actual Rees modules and the quotient sections match ToDegInjective156\u2013218 and AlgMemCoef113\u2013143.",
+        "The resulting intermediate inequality keeps point multiplicities before the coarse power-of-two estimate.",
+        "Eventual support, multiplicity bounds and the mixed-intersection comparison remain hypotheses; a finite degree-zero determinant alone gives no negative conormal bound.",
+        "Root spot-checked HerbrandFinLen189\u2013259 and the primary Koszul multiplicity statements at Stacks0AZZ/0B00."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/rh-selmer-euler-determinant.md",
+          "sha256": "910c1654ffc4a6918676abefdf95c2ad1a7548e107d75c185f39fff104a79395"
+        },
+        {
+          "path": "scripts/check_rh_selmer_euler_determinant.py",
+          "sha256": "c252eecae85087c624b53c349ca5240d5f6dad6f534a3562fd2448b92663159f"
+        },
+        {
+          "path": "certificates/rh-selmer-euler-determinant.json",
+          "sha256": "cc991fe5c56659ad550e945c1978b18e83d909b34dabec778080d368ab41b4e7"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
@@ -165,7 +196,8 @@
     "python scripts/check_basis_invariant_trace_obstruction.py",
     "python scripts/check_rh_selmer_conormal_pairing.py",
     "python scripts/check_boundary_hodge_freeness.py",
-    "python scripts/check_cm_integral_eigenframes.py --offline"
+    "python scripts/check_cm_integral_eigenframes.py --offline",
+    "python scripts/check_rh_selmer_euler_determinant.py"
   ],
   "node_counts": {
     "rh": {
