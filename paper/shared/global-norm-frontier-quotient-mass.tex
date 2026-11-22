@@ -1,0 +1,234 @@
+\subsection{A quotient norm bound from an orthogonal projection}
+\label{archimedean-quotient-mass}
+
+The unweighted Bessel estimate has a short proof by positivity.  Only
+one integrable matrix coefficient is needed.  The resulting bound has
+constant one for the original Haar measures.
+
+Let $G$ be a second countable unimodular Lie group, $S$ a closed
+unimodular subgroup, and $dg,ds,dq$ the measures in the Weil formula
+on $G$, $S$, and $Q=S\backslash G$.  Let $\sigma$ be an irreducible
+unitary representation on $H$, with formal degree $d>0$ for $dg$.
+Inner products are conjugate linear in the first argument, and the
+formal-degree convention is
+\[
+ \int_G\langle a,\sigma(g)b\rangle
+       \overline{\langle c,\sigma(g)e\rangle}\,dg
+       =d^{-1}\langle e,b\rangle\langle a,c\rangle.
+\]
+Let $\lambda:S\to U(W)$, with $W$ finite dimensional, and let
+$B:H^\infty\to W$ be continuous and linear for the smooth-vector
+topology, with $B\sigma(s)=\lambda(s)B$.
+
+\begin{theorem}\label{original-quotient-mass-bound}
+Suppose a nonzero smooth vector $v_0$ has an integrable diagonal
+matrix coefficient.  Put
+$D_0=\operatorname{span}\{\sigma(g)v_0:g\in G\}$, and suppose the
+following operator integral is absolutely convergent for $u,v\in D_0$:
+\begin{equation}\label{quotient-mass-period}
+ \int_S\langle v,\sigma(s)u\rangle\lambda(s)^{-1}\,ds
+                  =B(u)B(v)^*.
+\end{equation}
+Here $a b^*$ denotes the rank-one map $z\mapsto a\langle b,z\rangle$.
+Then, for every $v\in H^\infty$,
+\begin{equation}\label{quotient-mass-result}
+       d\int_Q\|B\sigma(g)v\|^2\,dq(g)\le\|v\|^2.
+\end{equation}
+No nonvanishing condition on $B$ is required.
+\end{theorem}
+
+\begin{proof}
+Every $v=\sum_i a_i\sigma(g_i)v_0\in D_0$ has an integrable
+diagonal coefficient: it is the finite sum
+\[
+ \langle v,\sigma(t)v\rangle
+ =\sum_{i,j}\overline{a_i}a_j
+       \langle v_0,\sigma(g_i^{-1}tg_j)v_0\rangle.
+\]
+Fix a nonzero such $v$ and put
+\[
+       p(t)=\frac d{\|v\|^2}
+                    \overline{\langle v,\sigma(t)v\rangle}.
+\]
+Schur orthogonality gives $p*p=p$, where
+$(p*p)(x)=\int_Gp(t)p(t^{-1}x)\,dt$; explicitly, the unscaled
+integral is
+$d^{-1}\|v\|^2\overline{\langle v,\sigma(x)v\rangle}$.
+Unitarity also gives $\overline{p(t^{-1})}=p(t)$.
+
+Consider the Hilbert space of square-integrable sections represented
+by functions $F:G\to W$ satisfying $F(sg)=\lambda(s)F(g)$.
+Its norm is $\int_Q\|F(g)\|^2dq(g)$, and right translation is
+$(R(t)F)(g)=F(gt)$.  The Weil quotient measure is right invariant,
+so these are unitary operators.  Since $p\in L^1(G)$,
+\[
+                      P=\int_Gp(t)R(t)\,dt
+\]
+is a bounded self-adjoint idempotent, hence an orthogonal projection.
+
+Write $f(g)=B\sigma(g)v$.  This is a continuous equivariant section.
+For a bounded measurable section $F$ with compact support in $Q$,
+the convolution integral defines a representative of $PF$ and is
+absolutely convergent at every $g$, since it is bounded in norm by
+$\|F\|_\infty\|p\|_1$.  Substituting $x=gt$
+and applying the Weil formula therefore gives
+\[
+ (PF)(g)=\int_QK(g,h)F(h)\,dq(h),\qquad
+ K(g,h)=\int_Sp(g^{-1}sh)\lambda(s)\,ds.
+\]
+Both $\sigma(g)v$ and $\sigma(h)v$ belong to $D_0$.
+Taking the adjoint of \eqref{quotient-mass-period}, with
+$u=\sigma(h)v$ and $v=\sigma(g)v$, yields exactly
+\begin{equation}\label{quotient-mass-kernel}
+                    K(g,h)=\frac d{\|v\|^2}f(g)f(h)^*.
+\end{equation}
+The inverse in the period and its absence in this kernel are thus
+accounted for by the adjoint.
+
+The quotient map has continuous local sections.  They make the
+associated vector bundle and its measurable sections explicit;
+a countable cover also gives measurable representatives.  In
+particular, $\|f(g)\|$ is a continuous function on $Q$, bounded on
+each compact set.  If $E\subset Q$ is compact, then
+$F=f\,1_E$ is a bounded square-integrable section, although its
+support in $G$ need not be compact.  Put
+$A_E=\int_E\|f\|^2dq$.  Formula~\eqref{quotient-mass-kernel} gives
+\[
+       \frac d{\|v\|^2}A_E^2
+           =\langle F,PF\rangle_{L^2(Q)}
+           \le\|F\|_{L^2(Q)}^2=A_E.
+\]
+If $A_E=0$ the required bound is immediate; otherwise division by
+$A_E$ gives $d A_E\le\|v\|^2$.  Compact exhaustion of $Q$ proves
+\eqref{quotient-mass-result} for $v\in D_0$.  The vector $v=0$
+is immediate.  At no point has the integrability of $f$ been assumed.
+
+Finally $D_0$ is dense in $H^\infty$ for its smooth topology.
+Here is the required argument.  Its Hilbert closure is all of $H$
+by irreducibility.  For $\phi\in C_c^\infty(G)$, the map
+$\sigma(\phi):H\to H^\infty$ is continuous: each derived seminorm
+is bounded by an $L^1$ norm of the corresponding derivative of
+$\phi$ times the Hilbert norm of the input.  For $u\in D_0$,
+the vector $\sigma(\phi)u$ is a limit in the smooth topology of
+finite Riemann sums of translates of $u$, and hence lies in the
+smooth closure of $D_0$.  Hilbert approximation of an arbitrary
+$u\in H$ now gives the same assertion for $\sigma(\phi)u$.
+A smooth approximate identity then approximates every
+$u\in H^\infty$ in that topology.  Since it is a Fr\'echet
+topology, choose $v_j\in D_0$ converging to $v$ in it.
+Continuity of $B\sigma(g)$ gives pointwise convergence of the
+Bessel functions, and Fatou's lemma gives
+\[
+ d\int_Q\|B\sigma(g)v\|^2dq
+   \le\liminf_j d\int_Q\|B\sigma(g)v_j\|^2dq
+   \le\lim_j\|v_j\|^2=\|v\|^2.
+\]
+\end{proof}
+
+\begin{corollary}\label{original-quotient-mass-isometry}
+Under the same hypotheses, if $B$ is nonzero on $H^\infty$, then
+\eqref{quotient-mass-result} is an equality for every smooth vector.
+\end{corollary}
+\begin{proof}
+For nonzero $v\in D_0$, the function $f=B\sigma(\,\cdot\,)v$
+cannot vanish identically: the smooth-density argument above,
+applied to the orbit of $v$, would then force $B=0$.  Continuity
+therefore supplies a compact $E\subset Q$ with $A_E>0$.
+We already know that $f\in L^2(Q)$.  For $F=f1_E$ and
+$\alpha=d/\|v\|^2$, the kernel formula gives $PF=\alpha A_Ef$.
+The projection identity gives
+\[
+ \alpha^2A_E^2\|f\|_2^2=\|PF\|_2^2
+      =\langle F,PF\rangle=\alpha A_E^2.
+\]
+Division by the positive number $\alpha A_E^2$ gives
+$d\|f\|_2^2=\|v\|^2$.  Finally, smooth approximation $v_j\to v$
+and the already proved upper bound applied to $v_j-v$ give
+$\|B\sigma(\,\cdot\,)(v_j-v)\|_2\to0$.  Passing to the limit
+proves equality for every smooth $v$, including $v=0$.
+\end{proof}
+
+\paragraph{Why the original gap supplies the integrable vector.}
+For $G=U(k+r,r+1)$ put $n=2r+k+1$ and $q=r+1$.  The previously
+proved lowest compact-type estimate \cite{quotient-mass-lowest-type}
+provides a smooth unit vector $v_0$ with
+\[
+ |\langle v_0,\sigma(g)v_0\rangle|
+ \le\exp\left[-\frac h8
+          \min\left(t(g)^2,\frac{t(g)}{\sqrt{2q}}\right)\right],
+\]
+where $t(g)$ is the Euclidean norm of the logarithms of the singular
+values and $h$ is the gap between parameters of opposite signature
+signs.
+Since $t(g)\ge\log\|g\|_{\rm op}$ and
+$\min(t^2,t/c)\ge t/c-1/(4c^2)$ for $c>0$,
+\begin{equation}\label{quotient-mass-decay}
+ |\langle v_0,\sigma(g)v_0\rangle|
+      \le e^{h/(64q)}\|g\|_{\rm op}^{-a},
+             \qquad a=\frac h{8\sqrt{2q}}.
+\end{equation}
+
+For completeness, the needed volume bound is elementary.
+In the real vector space $M_n(\mathbb C)$, of dimension $2n^2$,
+take $U=\{x:\|x-I\|_{\rm op}<1/4\}$.  Left multiplication by
+$g\in G$ preserves ambient Lebesgue volume, because its real
+Jacobian is $|\det g|^{2n}=1$.  Thus disjoint sets $g_iU$ with
+$\|g_i\|_{\rm op}\le R$ all have the same positive volume and lie
+in the ambient ball of radius $5R/4$.  There are at most
+$C R^{2n^2}$ of them.  A finite maximal disjoint family covers
+the group norm ball by the sets
+$g_i(\overline{UU^{-1}}\cap G)$.  The factor in parentheses is
+compact, since $U$ is bounded and bounded away from singular
+matrices.  Haar measure of the group norm ball is consequently
+at most $C'R^{2n^2}$.  Summing over dyadic shells proves
+integrability of $\|g\|_{\rm op}^{-a}$ whenever $a>2n^2$.
+This argument uses equal-volume ellipsoids, rather than a claim
+that their Euclidean radii are fixed.
+
+The original gap assumptions include
+\[
+ a\ge9(r+1)n^2+3A_G+3,
+               \qquad A_G=4(k+r)(r+1),
+\]
+so $a>2n^2$.  Thus \eqref{quotient-mass-decay} supplies the needed
+$L^1$ coefficient without an additional hypothesis or a uniform
+bound for its $L^1$ norm.  That auxiliary constant disappears when
+$P$ is recognized as an orthogonal projection.
+For the original family of integer shifts, the supplied gap at a
+shifted parameter is $h/4$ and the supplied numerical hypothesis is
+the full gap condition at $h/4$.  Apply the preceding argument with
+that value.  This retains the same shift reserve; it does not use
+the larger unshifted gap in its place.
+
+\paragraph{Original Bessel normalization and quotient measure.}
+In the original setting $S=U(W_0)N$ and
+$\lambda(hn)=\psi(n)\pi_W(h)$, with the given unitary character
+and compact representation.  The subgroup is closed and unimodular.
+Its Haar measure is the pushforward of the original product measure
+on $U(W_0)\times N$.  The supplied subgroup-period normalization
+is \eqref{quotient-mass-period}; its second input is allowed in the
+span of translates of compact-finite vectors, which contains $D_0$.
+The original finite sum of derived seminorms bounding $B$ gives
+precisely the smooth continuity used above
+\cite{quotient-mass-original-normalization}.
+
+If the source writes the quotient integral using a measure $\nu$
+on matrix representatives, the same conclusion holds for that
+measure.  Its Weil identity first forces it to be supported on
+$G$.  Its pushforward to $Q$ is $dq$: for a compactly supported
+function $\varphi$ on $Q$, choose $b\in C_c(G)$, $b\ge0$, with
+$A b(g)=\int_S b(sg)ds>0$ on its support, using finitely many local
+sections.  Apply the two Weil formulas to
+$b(g)\varphi(Sg)/A b(g)$.  This proves equality on compactly
+supported test functions, local finiteness, and hence equality
+of the quotient measures.  All nonnegative invariant integrals
+therefore agree.  No Haar measure has been renormalized.
+
+In particular $F_v=\sqrt d\,B\sigma(\,\cdot\,)v$ satisfies the
+unweighted estimate used in the flag moments and the lowering
+recursion.  When $B\ne0$, the corollary also gives the exact
+isometry required by the original normalization.  Existence
+of the original discrete series, the classical lowest compact-type
+formula, and the supplied subgroup-period Bessel map remain
+representation-theoretic inputs.  No weighted orbital estimate or
+leading-minor identification is asserted here.

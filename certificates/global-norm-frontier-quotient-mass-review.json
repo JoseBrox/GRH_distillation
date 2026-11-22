@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T20:14:20.012927+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Original quotient mass bound and nonzero-family isometry by an induced orthogonal projection.",
+  "audit_groups": [
+    {
+      "topic": "Coefficient orientation and projection",
+      "result": "PASS",
+      "finding": "With the stated conjugate-first inner product, p=d conjugate(<v,sigma(t)v>)/||v||\u00b2 is an L1 self-adjoint convolution idempotent. Its right-translation action on the original induced Hilbert space is an orthogonal projection."
+    },
+    {
+      "topic": "Original period kernel",
+      "result": "PASS",
+      "finding": "Substitution x=gt and the left Weil formula give integral p(g^-1 s h)lambda(s). Taking the adjoint of the original normalized subgroup period gives exactly alpha f(g)f(h)*. The inverse character and representation are accounted for, not changed."
+    },
+    {
+      "topic": "Compact truncations without assumed mass",
+      "result": "PASS",
+      "finding": "For bounded sections supported on a compact quotient set, pointwise convolution is absolutely convergent by ||p||1. The quotient support need not be compact in G. The test f1_E yields alpha A_E\u00b2<=A_E, including zero A_E. Exhaustion supplies mass, with no prior quotient integrability."
+    },
+    {
+      "topic": "One integrable cyclic vector and smooth density",
+      "result": "PASS",
+      "finding": "The existing lowest compact-type decay supplies a nonzero integrable vector under the actual shifted h/4 gap. Equal-volume ambient ellipsoids, using |det g|=1, give Haar ball growth O(R^(2n\u00b2)). Compact smooth convolution maps H continuously to H^infty; Hilbert cyclicity, smooth Riemann sums and an approximate identity prove smooth density."
+    },
+    {
+      "topic": "Exact original isometry",
+      "result": "PASS",
+      "finding": "For B nonzero, the orbit of any nonzero vector in the smooth cyclic span cannot have zero Bessel function. Projection idempotence gives alpha integral||f||\u00b2=1; the proved upper bound on differences extends equality to all smooth vectors. The zero-B case retains the upper bound."
+    },
+    {
+      "topic": "Measures and remaining hypotheses",
+      "result": "PASS",
+      "finding": "The representative measure satisfies the nonnegative Weil identity, hence is supported on G and pushes to the same quotient measure. No Haar renormalization occurs. Original representation and normalized Bessel-family existence remain inputs; no weighted orbit or leading-minor identification is inferred."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Formalism.HermitianCurvature.BesselNonvanishingReduction",
+      "sha256": "e3ce49c4b8ef97c35a62b2546506216556021f271197657632a06b6802e3bfec",
+      "git_blob_sha1": "380fc621afcf4dee6851794acfd80d1203957dc6",
+      "independently_read_ranges": [
+        [
+          20,
+          54
+        ]
+      ]
+    },
+    {
+      "module": "Formalism.PeriodIntegrals.BesselMapUniq",
+      "sha256": "43591d0dacafdfc35c35b426ca2c46a5b2e1576816d935e0fbdb77da0655e60f",
+      "git_blob_sha1": "caf828403012c54cab50dd52bf1460b24ccd8b6f",
+      "independently_read_ranges": [
+        [
+          32,
+          46
+        ]
+      ]
+    },
+    {
+      "module": "Formalism.PeriodIntegrals.BesselPeriodGGP",
+      "sha256": "7b7806b16b14c74d19d43b4a242a093b6fef281ce7c35c79c0abdce69627a50b",
+      "git_blob_sha1": "d735dfa7014d46f10889ffa804397a2d78d72a8d",
+      "independently_read_ranges": [
+        [
+          59,
+          83
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Definitions.Jets.SumIoPrAlt",
+      "sha256": "970f57f4a3de5de638737040d3c31daa0c2b1563c9a5548a4c673313d5a6fc16",
+      "git_blob_sha1": "ce6c62731c098d40df190e9659c9e2b7c8b535f2",
+      "independently_read_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.FlagMeasures.BesselFormCoeffProductFubiniIntegrable",
+      "sha256": "d4874841fbd59b72b370b060b03629be5d43593cae1364f26b6bbda59aeb9228",
+      "git_blob_sha1": "a23b476637ab65c0bb17315b54152f1024f14c89",
+      "independently_read_ranges": [
+        [
+          24,
+          47
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.GapCoefficientDerivativeBound",
+      "sha256": "ee259a5fe502c3f419b371f0e041a91d14486193d83207b928750833f06f5338",
+      "git_blob_sha1": "106b008c9197c8806d89b583b67f397b5956df12",
+      "independently_read_ranges": [
+        [
+          35,
+          58
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.FamilySetupBesselGrowth",
+      "sha256": "20f61cd4c245f6e73c20466012f91aecfbfa05635baad831fa8cb4b7d9bec579",
+      "git_blob_sha1": "45c96d285e1634230b7ad2bff79f4026325ee5aa",
+      "independently_read_ranges": [
+        [
+          31,
+          60
+        ]
+      ]
+    }
+  ],
+  "existing_proof_review": {
+    "path": "paper/sections/recovered/73-amb-section.tex",
+    "ranges": [
+      [
+        641,
+        671
+      ],
+      [
+        785,
+        819
+      ]
+    ],
+    "result": "Existing lowest compact-type decay supplies the one-variable L1 coefficient; its representation-theoretic hypotheses remain explicit."
+  },
+  "reproduced_check": {
+    "command": "python scripts/check_global_norm_frontier_quotient_mass.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "symmetric_group": {
+        "models": 72,
+        "period_identities": 72,
+        "compact_truncations": 576,
+        "representative_weil_checks": 108,
+        "zero_bessel_period_model": true,
+        "negative_controls": 2
+      },
+      "complex_characters": {
+        "models": 8,
+        "nonreal_orientation_negative_controls": 1
+      },
+      "algebraic": {
+        "decay_square_completion": true,
+        "gap_margin_nonnegative_polynomial": "9*extra**2*r + 7*extra**2 + 36*extra*r**2 + 76*extra*r + 40*extra + 36*r**3 + 112*r**2 + 116*r + 43",
+        "ambient_volume_jacobians": 6
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/global-norm-frontier-quotient-mass.md",
+      "sha256": "0a3f32fa66a278fe3f558eb4366c239382f96f8b8e5557d47a81d58f756c8aaa"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-quotient-mass.tex",
+      "sha256": "15cd1711801a943486a770d43244c76189060ad5e3085c5cfffe31de86b55209"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-quotient-mass-references.tex",
+      "sha256": "5007b874721f8ab4cacfdce421237535ceb97d059843b80d37e8e6101eb8593c"
+    },
+    {
+      "path": "scripts/check_global_norm_frontier_quotient_mass.py",
+      "sha256": "ce5899dfa9ba3930387a6a577bdb1d3fa958f3bc11b163f52acfebadd066c8f3"
+    },
+    {
+      "path": "certificates/global-norm-frontier-quotient-mass.json",
+      "sha256": "c4c8872c5193f714a3853b5ab7da29dfb79c24fc4995c09a97b68ae9113702b6"
+    }
+  ],
+  "limits": [
+    "Original discrete-series and normalized subgroup-period family existence and identification remain.",
+    "No weighted orbital, source-deficit, target-excess or leading-minor theorem is claimed.",
+    "Finite exact models supplement the human proof. No Lean build or whole-node closure."
+  ]
+}
