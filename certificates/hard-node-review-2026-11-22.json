@@ -63,11 +63,43 @@
           "sha256": "56f65f577b2f9d725d105abadb05d172bac228a9051b0fe66207e376833f4d63"
         }
       ]
+    },
+    {
+      "id": "rh-selmer-conormal-pairing",
+      "status": "PASS",
+      "reviewers": [
+        "rh_selmer_frontier",
+        "root"
+      ],
+      "checked": [
+        "The finite conormal quotient removes ambient torsion before imposing the global equations; its finite-length torsion is retained.",
+        "The local unit condition supplies strict coboundaries at the same annihilator; integral local conjugation and first derivatives give the necessary ambient lifts.",
+        "The unique normalized cocycle is O-linear, and the explicit weight minus one adjoint matrix respects the semidirect action.",
+        "Coefficient transition u mod a to bu mod ab and universality make the dual-valued pairing independent of the annihilator, local lifts and representatives.",
+        "Matrix-entry preimages and their weight-compatible ambient coordinates give injectivity; elementary divisors and exponent follow from a single module embedding.",
+        "Actual model existence, odd residue characteristic, marking, local conditions and the upper graded-intersection bound remain stated assumptions.",
+        "Pinned ModelLower310\u2013365, ModelOfPres145\u2013153 and ShaInj29\u201337 independently spot-checked; no Lean kernel claim."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/rh-selmer-conormal-pairing.md",
+          "sha256": "34ea2b75437b58f5f93383ea42bad48a83d30bff19792f89315e9157d3fe1362"
+        },
+        {
+          "path": "scripts/check_rh_selmer_conormal_pairing.py",
+          "sha256": "7147d455e76f294193a48afcebc1aaea426c8f2389b08fdee7fefeef513f1fe1"
+        },
+        {
+          "path": "certificates/rh-selmer-conormal-pairing.json",
+          "sha256": "4cf963fc553b2d04ee9b438f517cad5a7a8c61d0f9d1699a00c15467eea9b33c"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
     "python scripts/check_determinant_torsion_rigidity.py --offline",
-    "python scripts/check_basis_invariant_trace_obstruction.py"
+    "python scripts/check_basis_invariant_trace_obstruction.py",
+    "python scripts/check_rh_selmer_conormal_pairing.py"
   ],
   "node_counts": {
     "rh": {

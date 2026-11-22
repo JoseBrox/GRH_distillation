@@ -260,6 +260,17 @@ so a nonzero Bernoulli-value formula does not supply the missing order
 bound. A valid substitute must retain its regulator or integral
 comparison and growing-family uniformity.
 
+The [conormal pairing](rh-selmer-conormal-pairing.md) gives a shorter
+lower deformation comparison. For the same marked model, the strict
+Selmer group embeds linearly in the dual of its finite negative-weight
+conormal quotient. Ambient torsion is removed before imposing the
+global equations; the new torsion they create is retained. Compatible
+normalized cocycles give one map at all coefficient levels, controlling
+the exponent and each elementary divisor as well as total length.
+Actual model existence and the upper graded-intersection estimate remain
+separate inputs. The ordinary-RH specialization retains all five local
+weights; its cyclotomic twist does not become self-inverse.
+
 The [resultant construction](rh-selmer-resultant.md) supplies the elementary
 integer in the nonresonant orbit estimate with full integrality,
 nonvanishing, simultaneous valuation domination and an explicit size
