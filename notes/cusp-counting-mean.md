@@ -30,12 +30,12 @@ the present proof gives less than 1 and hence the constant term 2.
 
 The new proof supplies the short-vector packing argument, the passage from
 counting to an integrable logarithmic mean, and the bounded integral
-spanning set for an abelian coefficient field. It does **not** construct the
-arithmetic model, the quotient measure, the counting-mean homogeneity, or
-the identification of this mean with the signed boundary term in an
-arithmetic intersection limit. Those remain explicit inputs. No new
-analytic hypothesis is added: the mean assumption used here is weaker
-than the exact homogeneity already stated in the source.
+spanning set for an abelian coefficient field. Section 1a also derives
+counting-mean homogeneity directly from the original Haar quotient and
+one integrable counting function. It does **not** construct the arithmetic
+model or identify its geometric measure with that quotient, nor identify
+this mean with the signed boundary term in an arithmetic intersection
+limit. Those remain explicit inputs. No new analytic hypothesis is added.
 
 ## 1. A probability lemma with its own normalization
 
@@ -105,6 +105,139 @@ and \(\log x\le x-1\); each follows by differentiating the difference.
 but the logarithmic mean is \(m\log2\), with no uniform bound. Counting
 and packing alone cannot supply the average; the scaling condition is
 essential to this argument.
+
+## 1a. Haar invariance supplies the scaling law
+
+The separate homogeneity assumption in (3) can be removed when the
+original lattice count and Haar quotient are identified. Here is the
+precise replacement, including convergence requirements.
+
+Let \(V\) be an \(N\)-dimensional Hermitian space over the CM field
+\(E\) of degree \(2f\), and choose one embedding from each conjugate
+pair. At embedding \(\sigma\), suppose the real quadratic form
+\(q_\sigma(v)=h_\sigma(v,v)\) has complex signature
+\((p_\sigma,N-p_\sigma)\) with \(1\le p_\sigma\le N-1\). Set
+
+\[
+ G=\prod_\sigma U(q_\sigma),\qquad
+ C=\prod_\sigma\{v\in\mathbb C^N\setminus\{0\}:q_\sigma(v)=0\}.
+ \tag{16}
+\]
+
+One may instead use the product of special unitary groups if \(N\ge3\).
+Let \(\Gamma\subset G\) preserve the actual full lattice \(L\subset V\),
+and assume \(\Gamma\backslash G\) has finite Haar volume. Normalize its
+right-invariant Haar measure to a probability measure \(\nu\). Fix a
+positive definite Euclidean norm on \(V\otimes_\mathbb Q\mathbb R\),
+and put
+
+\[
+ N_t(g)=\sum_{\substack{v\in L\setminus\{0\}\\h(v,v)=0}}
+               \mathbf1_{\{\|g^{-1}v\|<t\}}.
+ \tag{17}
+\]
+
+**Proposition.** If \(\int N_r\,d\nu<\infty\) for one \(r>0\), then
+every \(N_t\), \(t>0\), is integrable and
+
+\[
+       \int N_t\,d\nu=(t/r)^{2f(N-1)}\int N_r\,d\nu.          \tag{18}
+\]
+
+**Proof.** For a Borel subset \(A\subset C\), define the averaged
+counting measure
+
+\[
+ \mu(A)=\int_{\Gamma\backslash G}
+       \sum_{\substack{v\in L\setminus\{0\}\\h(v,v)=0}}
+                 \mathbf1_A(g^{-1}v)\,d\nu(g).
+ \tag{19}
+\]
+
+The count is well-defined on the left quotient because \(\Gamma\)
+permutes the lattice vectors. Every nonzero \(E\)-vector has nonzero
+image at **every** embedding; hence no partial-zero embedding stratum
+occurs in (19). Nonnegative Tonelli justifies countable additivity and
+changes of order before convergence is known. Right Haar invariance
+gives \(\mu(hA)=\mu(A)\) for \(h\in G\), by replacing \(g\) with
+\(gh\).
+
+The action of \(G\) on \(C\) is transitive. In one factor, complete two
+nonzero null vectors to hyperbolic pairs and send one pair to the
+other; the nondegenerate orthogonal complements have the same signature,
+so the map extends to a unitary isometry. If \(N\ge3\), the complement
+contains a nonisotropic line. Multiplying that line by a scalar of
+absolute value one adjusts the determinant to one while fixing the
+target null vector. Thus the special unitary action is transitive too.
+This determinant argument is why the special unitary version assumes
+\(N\ge3\).
+
+The set \(C\cap\{\|v\|<r\}\) is nonempty and open in \(C\), and
+has \(\mu\)-measure \(\int N_r\,d\nu<\infty\). Its translates cover
+\(C\); finitely many cover any compact subset. Thus \(\mu\) is locally
+finite and is a Radon measure on the second-countable smooth manifold
+\(C\).
+
+On the nonzero null cone in a single factor, define the smooth positive
+measure
+
+\[
+       d\omega_\sigma=\frac{dS_\sigma}{\|\nabla q_\sigma\|},
+       \qquad \omega=\prod_\sigma\omega_\sigma.              \tag{20}
+\]
+
+Here surface measure and gradient use the same Euclidean coordinates;
+equivalently (20) is the coarea measure on the regular level
+\(q_\sigma=0\). Unitary transformations preserve both \(q_\sigma\)
+and ambient real volume, so coarea gives invariance of \(\omega\).
+Scalar dilation by \(s>0\) scales surface measure by
+\(s^{2N-1}\) and the gradient norm by \(s\). Consequently
+
+\[
+                         \omega(sA)=s^{2f(N-1)}\omega(A).
+ \tag{21}
+\]
+
+The invariant Radon measure on a transitive homogeneous manifold is
+unique up to a nonnegative scalar. For completeness, average \(\mu\)
+against a smooth compactly supported probability density on \(G\).
+Invariance leaves \(\mu\) unchanged. The orbit maps are smooth
+submersions, so this average has a smooth density with respect to
+\(\omega\); local coordinates and ordinary Fubini give this assertion.
+Local finiteness permits differentiation on compact sets. The density
+is invariant, hence constant by transitivity. Therefore
+\(\mu=c\omega\) for a finite \(c\ge0\).
+
+The measure \(\omega\) of every ambient norm ball is finite: in one
+factor, polar coordinates on a null cone have radial density a constant
+times \(u^{2N-3}\,du\), integrable at zero since \(N\ge2\); the angular
+factors are compact. Products and equivalence of positive norms finish
+the assertion. Apply (21) to the balls in (17) to obtain (18). The case
+with no rational isotropic vector has \(\mu=0\) and is included.
+\(\square\)
+
+If the geometric space is \(\Gamma\backslash G/K\) with \(K\) compact
+and preserving the chosen norm, use its normalized Haar lift to
+\(\Gamma\backslash G\); (17) is right \(K\)-invariant, so its mean is
+unchanged. This is a quotient by a compact subgroup, not an assertion
+that the geometric quotient itself is compact. For several adelic
+components, keep their actual nonnegative normalized weights and apply
+the proof to each corresponding \((\Gamma,L)\). Fixed finite-adelic
+support is absorbed in the component lattice or in a
+\(\Gamma\)-invariant nonnegative weight on rational vectors. Archimedean
+right translation never alters that support. Tonelli then combines the
+component identities with precisely the original weights. No volume or
+stabilizer constant is set equal to one.
+The optional use of weights on individual vectors concerns homogeneity
+only: the pointwise lower and packing bounds in Section 2 still use the
+original unweighted count, or require their own verification for a
+different weighted count.
+
+This supplies (18) from Haar invariance and one integrable count. It
+does not prove finite Haar volume, integrability of that one count, or
+the identification of (17) with the original geometric count and
+measure. In particular an abstract probability measure satisfying only
+the pointwise packing estimate still does not suffice.
 
 ## 2. Why short vectors fit in a small real space
 
@@ -238,10 +371,11 @@ Assume the following are identified for the *actual component*:
    for the invariant functions under discussion, their integrals equal
    the original geometric integral divided by its degree, with all
    component weights and stabilizer normalizations retained.
-2. The functions \(\lambda\) and \(N_t\) in (9) are measurable,
-   \(N_r\) is integrable, and their means satisfy
-   \(\int N_t\,d\nu\le(t/r)^{2f(N-1)}\int N_r\,d\nu\) for
-   \(0<t\le r\). The source states equality for all positive dilations.
+2. The functions \(\lambda\) and \(N_t\) in (9) are measurable and
+   \(N_r\) is integrable. Either identify the actual Haar quotient and
+   lattice count of Section 1a, which proves the mean homogeneity, or
+   retain directly the source identity
+   \(\int N_t\,d\nu=(t/r)^{2f(N-1)}\int N_r\,d\nu\).
 3. The same \(U\) occurring in the metric and boundary comparison is
    measurable, nonnegative, and has the source pointwise estimate
 
@@ -310,7 +444,8 @@ The first six suffixes begin
 
 Run `python scripts/check_cusp_counting_mean.py`. It reauthenticates
 these bounded source anchors, checks the exact rational constant
-comparisons and finite character-filtration models, and records the
-counterexample without scaling. These computations supplement the
-proof; they do not construct the quotient or replay the Lean project.
+comparisons and finite character-filtration models, the coarea scaling
+exponents, and the counterexample without scaling. These computations
+supplement the proof; they do not construct the quotient or replay the
+Lean project.
 No existing RH or GRH node is marked complete by this package.

@@ -1,8 +1,8 @@
 \subsection{Bounding the average cusp correction by counting}
 \label{sec:cusp-counting-mean}
 
-The averaging estimate has a short proof once the original quotient
-measure and counting identity are identified. Write $\log^+x=\max(0,\log x)$.
+The averaging estimate follows from the original Haar quotient and one
+integrable lattice count. Write $\log^+x=\max(0,\log x)$.
 
 \begin{lemma}\label{lem:cusp-counting-tail}
 On a probability space let $\lambda>0$ and $N_t\ge0$ be measurable,
@@ -67,8 +67,51 @@ $N_t$ of nonzero isotropic vectors of norm less than $t$,
  \qquad N_t=0\quad(t\le\lambda).
 \]
 Thus the lemma applies with $a=2fj$ and $k=2f(N-1)$ when $N\ge3j+1$,
-provided the original quotient probability measure makes $N_r$
-integrable and satisfies $\int N_t=(t/r)^k\int N_r$.
+once the following quotient description is identified.
+
+\begin{proposition}\label{prop:cusp-counting-haar}
+Let $G=\prod_\sigma U(p_\sigma,N-p_\sigma)$, with
+$1\le p_\sigma\le N-1$, and let $\Gamma$ preserve $L$.
+Suppose $\Gamma\backslash G$ has finite Haar volume, normalized to one,
+and the original count is
+\[
+ N_t(g)=\sum_{\substack{v\in L\setminus\{0\}\\h(v,v)=0}}
+                  \mathbf1_{\{\|g^{-1}v\|<t\}},
+\]
+for a fixed positive norm. If $N_r$ is integrable for one $r>0$,
+then every $N_t$ is integrable and
+$\int N_t=(t/r)^{2f(N-1)}\int N_r$.
+The same holds with special unitary factors when $N\ge3$.
+\end{proposition}
+
+\begin{proof}
+Average the discrete lattice-vector counting measure over
+$\Gamma\backslash G$. Tonelli and right Haar invariance give a
+$G$-invariant measure $\mu$ on the product $C$ of nonzero complex null
+cones. Every nonzero $E$-vector is nonzero at every embedding, so no
+partial-zero stratum occurs. The group acts transitively: complete
+null vectors to hyperbolic pairs and identify their orthogonal
+complements. For special unitary groups, a unit scalar on a
+nonisotropic line in the complement adjusts the determinant, since
+$N\ge3$. Integrability of $N_r$ makes one nonempty open norm ball
+have finite $\mu$-measure. Its translates cover every compact set
+finitely; thus $\mu$ is Radon.
+
+On each null cone $q_\sigma=0$, the invariant coarea measure is
+$dS_\sigma/\|\nabla q_\sigma\|$. Uniqueness of invariant Radon
+measure on a transitive homogeneous space gives
+$\mu=c\prod_\sigma dS_\sigma/\|\nabla q_\sigma\|$.
+Dilation by $t$ scales each surface measure by $t^{2N-1}$ and its
+gradient by $t$, giving the exponent $2f(N-1)$. Norm balls have finite
+coarea measure: the radial density in one factor is a constant times
+$u^{2N-3}\,du$, with compact angular factors. This proves the claim,
+including $c=0$.
+\end{proof}
+
+For a quotient by a compact norm-preserving subgroup, use its normalized
+Haar lift. Apply the argument component by component with the original
+adelic weights and finite-adelic support. No stabilizer or volume
+constant is discarded; the scalar $c$ cancels from the scaling identity.
 
 For abelian $E/\mathbb Q$, the spanning elements admit a simple bound.
 Let $c$ be its conductor. The conductor--discriminant formula gives
@@ -106,7 +149,7 @@ $\Lambda_B\ge\log B+\log\operatorname{rd}(E)$,
 \]
 This supplies the numerical allowance $C_u=3$. Application to the
 arithmetic inequality still requires the original lattice and
-covolume, the normalized quotient measure and its counting identity,
+covolume, the normalized Haar quotient and one integrable count,
 and the identification of this same integral with the signed cusp
 term. The arithmetic model and the one-sided boundary limit are
 retained hypotheses.

@@ -90,8 +90,14 @@ packing and a single tail integral bound the logarithmic minimum mean
 by `23/24`. Integral cyclotomic traces span the abelian coefficient field
 over the rationals, giving cusp allowance 3. Their integral span need
 not be the full ring of integers. The actual lattice and covolume,
-normalized quotient measure, counting homogeneity and signed boundary
-comparison remain required.
+normalized quotient measure and signed boundary comparison remain
+required. The count homogeneity itself follows from Haar invariance:
+the averaged lattice count is an invariant measure on the product of
+nonzero isotropic cones, whose coarea measure has degree `2f(N-1)`.
+One integrable count suffices, and its unknown normalization cancels.
+The original Haar quotient, component weights and lattice count must
+still be identified; finite volume and that initial integrability are
+retained.
 
 The [mean-volume supplier](mean-volume-supplier.md) now isolates the
 required normalized arithmetic intersection inequality for the selected
@@ -666,8 +672,9 @@ identification and other period denominators remain required.
    vertical rigidity, local-norm comparison and signed CM value are proved
    under these identifications. Identify the actual nef and birational
    section data and apply the finite jet rank bound, retaining its exact
-   surplus denominator. Identify the quotient counting identity and the
-   signed boundary comparison for the cusp theorem, and bound the
+   surplus denominator. Identify the original Haar quotient and lattice
+   count, with one integrable radius, and the signed boundary comparison
+   for the cusp theorem; then bound the
    arithmetic section remainder. The exact selected abelian rank is retained; the
    scalar prime and period bounds are supplied.
 4. **Uniform assembly (W02/W11).** Assemble the signed

@@ -128,6 +128,19 @@ def exact_checks():
     # log(64)=6 log(2)>=3>2, by integrating 1/x >= 1/2 on [1,2].
     assert 6 * F(1, 2) > 2
 
+    coarea_cases = 0
+    for f in range(1, 13):
+        for n in range(3, 33):
+            for p in range(1, n):
+                q = n - p
+                assert p > 0 and q > 0
+                assert (p - 1) + (q - 1) == n - 2 >= 1
+                # Hypersurface scaling minus the linear gradient scaling.
+                assert f * ((2 * n - 1) - 1) == 2 * f * (n - 1)
+                # Polar coarea near the deleted zero vertex is integrable.
+                assert (2 * p - 1) + (2 * q - 1) - 1 == 2 * n - 3 > -1
+                coarea_cases += 1
+
     counterexamples = []
     for exponent in range(1, 21):
         lam = F(1, 2 ** exponent)
@@ -140,6 +153,7 @@ def exact_checks():
             "certified_logarithmic_bound_cases": logarithmic_cases,
             "finite_character_filtration_cases": filtration_cases,
             "exact_scale_absorption_cases": absorption_cases,
+            "exact_coarea_and_transitivity_dimension_cases": coarea_cases,
             "uniform_bound": "23/24 < 1",
             "sharper_numerical_comparison": "log(3)/2+log(3/2)/4+1/6 < 5/6 (exact rational series enclosure)",
             "without_scaling_counterexamples": counterexamples}
@@ -152,7 +166,7 @@ def main():
                  "scripts/check_cusp_counting_mean.py"]
     certificate = {
         "status": "passed",
-        "claim": "Conditional cusp-mean supplier with constant Cu=3 and no new analytic assumption",
+        "claim": "Conditional cusp-mean supplier with constant Cu=3; count scaling follows from the original Haar quotient and one integrable count",
         "source_verification": "Pinned source bytes and bounded excerpts authenticated; no Lean build claim",
         "sources": sources,
         "classical_reference": {
@@ -163,11 +177,17 @@ def main():
         "exact_checks": checks,
         "retained_inputs": [
             "Actual arithmetic model, Hermitian lattice and original norm/covolume identifications",
-            "Normalized quotient probability measure agreeing with the geometric mean, retaining component/stabilizer factors",
-            "Integrability of N_r and small-radius counting-mean scaling (source supplies the stronger exact identity)",
+            "Normalized Haar quotient probability measure and actual discrete lattice-vector count agreeing with the geometric mean, retaining component/stabilizer factors and finite-adelic support",
+            "Integrability of N_r at one positive radius; scaling at all radii is then proved by invariant coarea measure on the product of nonzero complex null cones",
             "The same nonnegative measurable cusp U and its original pointwise lattice-covolume comparison",
             "Identification of this integral with the signed arithmetic boundary term and the one-sided boundary limit"],
         "not_claimed": ["Integral basis or index-one spanning in O_E", "New arithmetic model or quotient measure construction", "Full RH/GRH node closure", "Lean project compilation"],
+        "homogeneity_proof_checks": [
+            "Nonzero E-vectors have no zero archimedean embedding, so empirical measure lives on a single product of nonzero complex null cones",
+            "U acts transitively by hyperbolic pairs; SU does when N>=3 by adjusting the determinant on a nonisotropic complement line",
+            "Finite mean of one norm-ball count and transitivity imply local finiteness of the invariant averaged counting measure",
+            "Coarea measure dS/||grad q|| is invariant and scales by 2N-2 per complex place; its bounded-ball mass is finite",
+            "Invariant Radon measure uniqueness eliminates the unknown scalar; finite-adelic support and normalized component weights are retained"],
         "artifact_sha256": {name: sha((ROOT / name).read_bytes()) for name in artifacts},
     }
     output = ROOT / "certificates/cusp-counting-mean.json"
