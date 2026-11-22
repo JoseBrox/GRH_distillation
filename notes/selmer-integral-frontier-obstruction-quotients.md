@@ -87,9 +87,15 @@ Arithmetic finiteness makes all terms finite and nonzero.
 
 Write \(n=a+b\) and \(R=q^{mab}\). The odd module has order \(R^2\),
 and its fixed module at a real involution has order \(R\).
-For example, its action is \(-PZ^TP^{-1}\) with \(P\) block diagonal
-and symmetric; multiplication by \(P\) identifies its fixed module
-with odd skew matrices, which have one free rectangular block.
+Indeed, its action is \(-PZ^TP^{-1}\) with \(P=\rho(c_vc)\) block
+diagonal. It exchanges the upper and lower rectangular blocks, each
+free of rank \(ab\), and its square is the identity because \(c_v\)
+is an involution. Thus it has the form
+\((x,y)\mapsto(Ay,Bx)\) with \(AB=BA=1\). Its fixed module is
+exactly the graph \(\{(x,Bx):x\in A_m^{ab}\}\), of order \(R\).
+This argument does not assert that \(P\) is symmetric and does not
+require a value for \(\chi(c_v)\). The weaker original cohomology
+system only requires \(\eta(c_v)=-1\) and \(c_v^2=1\) here.
 
 The ordinary basis assigns a block type to every basis vector.
 Invertibility gives exactly \(a\) vectors of the first type and

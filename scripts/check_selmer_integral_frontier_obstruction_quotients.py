@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 
 from check_sources import inspect_file
-from check_selmer_integral_frontier_first_global_bound import rank_mod_p
+from check_selmer_integral_frontier_first_global_bound import inverse, mm, rank_mod_p, transpose
 from check_selmer_integral_frontier_second_bound_suppliers import TruncatedRing
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -244,6 +244,52 @@ def finite_cochain_checks():
     return counts
 
 
+def real_exchange_checks():
+    counts = {"symmetric": 0, "alternating": 0}
+    for p, a, b, sign in itertools.product((3, 5), range(5), range(5), (1, -1)):
+        n = a+b
+        if not n or sign == -1 and (a % 2 or b % 2):
+            continue
+        same = lambda i, j: (i < a) == (j < a)
+        S = [[int(i == j)+(i+j+1 if i < j and same(i, j) else 0)
+              for j in range(n)] for i in range(n)]
+        J = [[0]*n for _ in range(n)]
+        if sign == 1:
+            for i in range(n):
+                J[i][i] = 1
+        else:
+            for start, size in ((0, a), (a, b)):
+                for j in range(0, size, 2):
+                    J[start+j][start+j+1] = 1
+                    J[start+j+1][start+j] = -1
+        P = mm(mm(S, J, p), transpose(S), p)
+        Pinv = inverse(P, p)
+        assert transpose(P) == [[sign*x % p for x in row] for row in P]
+        coords = [(i, j) for i in range(n) for j in range(n) if not same(i, j)]
+        dim = len(coords)
+        action = [[0]*dim for _ in range(dim)]
+        for column, (i, j) in enumerate(coords):
+            Z = [[0]*n for _ in range(n)]
+            Z[i][j] = 1
+            image = mm(mm(P, transpose(Z), p), Pinv, p)
+            for row, (u, v) in enumerate(coords):
+                action[row][column] = -image[u][v] % p
+                if (i < a) == (u < a):
+                    assert action[row][column] == 0
+        identity = [[int(i == j) for j in range(dim)] for i in range(dim)]
+        assert mm(action, action, p) == identity
+        difference = [[(action[i][j]-identity[i][j]) % p for j in range(dim)]
+                      for i in range(dim)]
+        assert dim-rank_mod_p(difference, p) == a*b
+        counts["symmetric" if sign == 1 else "alternating"] += 1
+    assert counts["alternating"] > 0
+    return {"actual_twisted_transpose_involutions": sum(counts.values()),
+            "cases": counts, "characteristics": [3, 5], "block_sizes": [0, 1, 2, 3, 4],
+            "result": "The actual odd action exchanges the two rectangles and has fixed rank ab in both symmetry cases, including empty blocks.",
+            "negative_control": "The alternating cases have P transpose equal to -P, so an unqualified symmetric-P premise fails while the graph proof remains valid.",
+            "scope": "Finite coefficient checks; the graph-of-an-isomorphism proof applies to every actual truncated coefficient ring."}
+
+
 def coefficient_checks():
     count = 0
     exact_sequences = 0
@@ -294,7 +340,8 @@ def main():
             excerpts.append({"start": start, "end": end, "sha256": hashlib.sha256(content).hexdigest()})
         sources.append({**item, "module": module, "sha256": checked["sha256"],
                         "matches_pinned_blob": True, "reviewed_excerpts": excerpts})
-    checks = {"finite_cochain_complexes": finite_cochain_checks(), "coefficients": coefficient_checks()}
+    checks = {"finite_cochain_complexes": finite_cochain_checks(), "coefficients": coefficient_checks(),
+              "real_fixed_modules": real_exchange_checks()}
     milne_path = ROOT/"build/reference-cache/milne-adt-2006.pdf"
     milne_hash = "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31"
     assert hashlib.sha256(milne_path.read_bytes()).hexdigest() == milne_hash

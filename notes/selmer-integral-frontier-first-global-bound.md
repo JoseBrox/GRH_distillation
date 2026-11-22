@@ -9,6 +9,10 @@ the tower hypotheses used in the preceding proofs. Retain also the
 original arithmetic system of local maps and its finite global and local
 duality counts. Write \(d\) for its number of real places and
 \(q_{\rm aux}\) for the fixed number of auxiliary places.
+Its chosen involutions satisfy \(\chi(c_v)=\chi(c)=-1\), as required
+by the original `ArData.cw_ε` and `ArData.c_ε` fields. These signs
+belong to the retained arithmetic data, not to the definition of an
+arbitrary group with an index-two subgroup.
 
 Then the original first Selmer count is
 \[
@@ -166,8 +170,10 @@ The eventual representation equality from the tower theorem and the
 simple-spectrum invariant count give the bound \(q^{mn+C_j}\).
 
 **Real places.** For a real involution \(c_v\), put
-\(P_v=R(c_vc)\). The original conjugate self-duality and
-\(\chi(c_vc)=1\) give \(P_v^T=P_v\). Its action on \(M_m\) is
+\(P_v=R(c_vc)\). The retained signs
+\(\chi(c_v)=\chi(c)=-1\) give \(\chi(c_vc)=1\). The original
+scalar conjugate self-duality therefore gives \(P_v^T=P_v\).
+Its action on \(M_m\) is
 \(Z\mapsto-P_vZ^TP_v^{-1}\). Multiplication by \(P_v\) gives a
 bijection from the skew part of \(M_m\) to the fixed part of this
 action. Both \(P_v\) and its inverse preserve \(M_m\), since this
@@ -177,6 +183,12 @@ The skew part has \(\nu\) free coordinates. Consequently
                          \#M_m^{c_v}=q^{m\nu}.             \tag{6}
 \]
 This is an exact count; the source needs only the lower bound.
+The signs are explicit in `DegreeCountCohomology.IsDualPair`91–92,
+and their use in the symmetry argument is explicit in
+`EpsilonEtaMatrices.OneLevel`380–388. The weaker cohomology system
+used for the second estimate need not supply these signs; its odd
+module has an independent rectangular-exchange proof of its real
+factor.
 
 ## Assembly and constant dependence
 

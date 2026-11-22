@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-11-22",
-  "reviewed_at_utc": "2026-11-22T19:27:58.305290+00:00",
+  "reviewed_at_utc": "2026-11-22T20:07:01.086142+00:00",
   "reviewer": "root, independent of the proof author",
   "verdict": "PASS",
   "scope": "First Selmer cocycle bound under the original supplied arithmetic system and preceding proved finite factors.",
@@ -61,6 +61,10 @@
         [
           307,
           359
+        ],
+        [
+          376,
+          392
         ]
       ]
     },
@@ -72,6 +76,17 @@
         [
           95,
           165
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DegreeCountCohomology.IsDualPair",
+      "sha256": "26d5c5f432a672ada591fd0826396c3ae8019e20c4e0299e5621d82ca6dbf9b0",
+      "git_blob_sha1": "2d6463c62009c2f2d32ff0c6b775855b0d22723b",
+      "independently_read_ranges": [
+        [
+          80,
+          95
         ]
       ]
     }
@@ -126,11 +141,11 @@
   "artifacts": [
     {
       "path": "notes/selmer-integral-frontier-first-global-bound.md",
-      "sha256": "cfc51e4b955d24e364c01cee608c9af2bb0263ddfe95fb12da700ecae0bd634c"
+      "sha256": "3fcd1f4c1d509671c98849fb8784a38e7e94bdd9737a605b36b444232bd5025c"
     },
     {
       "path": "paper/shared/selmer-integral-frontier-first-global-bound.tex",
-      "sha256": "a1d1ee531758b47d93c4fde72043ba8ed58fae7fa9d610158e80e168b881ed7a"
+      "sha256": "f3aae1f8cd47f7e260d7fb59100dc4ccb7472bc8506362e30aeeefc27e2a2dde"
     },
     {
       "path": "paper/shared/selmer-integral-frontier-first-global-bound-references.tex",
@@ -138,11 +153,11 @@
     },
     {
       "path": "scripts/check_selmer_integral_frontier_first_global_bound.py",
-      "sha256": "8ac7aabfb00abf69263360433ca29f668939b71d8ce994a8baa27128f9bc89ab"
+      "sha256": "1c7211dd4906ec46ee0ce3189775c2e230383062f7c5de889d55ce5459f57af9"
     },
     {
       "path": "certificates/selmer-integral-frontier-first-global-bound.json",
-      "sha256": "a66d7a119aa96a7cbec571525a10453aead63d31f1ffab25f7e520f7e1d9d889"
+      "sha256": "54371f1ec7abe1d49abdeedd4de18969ab751aacd5804adce33002c71b77b995"
     }
   ],
   "limits": [
@@ -151,5 +166,8 @@
     "The finite checks support the human proof and do not build Lean.",
     "The second Selmer estimate, normalized-point construction and patched modules remain separate.",
     "No whole node closes: RH 6/9 and Dirichlet GRH 17/31."
+  ],
+  "amendments": [
+    "Made explicit the two retained cyclotomic signs in ArSys. Independently read IsDualPair80-95 and OneLevel376-392: they imply chi(c_v c)=1 and justify the symmetric-P calculation. The exact rank and theorem are unchanged."
   ]
 }

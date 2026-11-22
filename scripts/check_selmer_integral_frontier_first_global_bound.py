@@ -215,6 +215,7 @@ def main():
         "sources": sources, "primary_references": [PRIMARY], "exact_checks": checks,
         "dependencies": {p: hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in dependencies},
         "retained_inputs": ["Original global and local arithmetic duality system and its actual local maps",
+                             "Original ArData.cw_epsilon and c_epsilon signs: chi(c_v)=chi(c)=-1, hence the first-order real twist is symmetric (IsDualPair91-92; OneLevel380-388)",
                             "Original ordinary Euler degrees and diagonal abelianization ranks separately at each place",
                             "Original normalized-point, distinguished-rigidity and simple-spectrum hypotheses",
                             "Original auxiliary tower kernel and convergence conditions"],

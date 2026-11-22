@@ -4,14 +4,14 @@
   "status": "PASS",
   "claim_reviewed": "Original obstruction quotient bound under the retained arithmetic cohomology system; no whole-node claim.",
   "files_sha256": {
-    "notes/selmer-integral-frontier-obstruction-quotients.md": "4661f9d444e1f08be1b626128710d8baa6bd1cba60eeceea2fa4231dac951363",
-    "paper/shared/selmer-integral-frontier-obstruction-quotients.tex": "9704a2a435519efb4c10c77361a41b503f61858fd645463970888a42814de480",
+    "notes/selmer-integral-frontier-obstruction-quotients.md": "db64f4c5218ec902dc902dad561c0fa2e2d4fd2b19944ba1ced3398d572c7667",
+    "paper/shared/selmer-integral-frontier-obstruction-quotients.tex": "7ecf52bbc68d5b3e8b89a93365c8cb8ac10af2972b2874f3a4ee17ef8c2b63af",
     "paper/shared/selmer-integral-frontier-obstruction-quotients-references.tex": "3e0abc5f8f21dde80889c95c3b154bcf5d18d673e3705f7ee3a8881110cb4c1c",
-    "scripts/check_selmer_integral_frontier_obstruction_quotients.py": "4a1d3107eec0d08745e63e9cf19cc829aa559b552b4d34b0822aa4f507e74097",
-    "certificates/selmer-integral-frontier-obstruction-quotients.json": "f7a11af7beba9b4a527f4501beefb143857de1637d1146bbedeffb76be781c52",
+    "scripts/check_selmer_integral_frontier_obstruction_quotients.py": "35ac9a0f7de09b704b48d20e0e47abb3a5b928cbeac07b0c63a656958110b988",
+    "certificates/selmer-integral-frontier-obstruction-quotients.json": "c2d408af1a77ca54ac4f038c473ad6f3926ba918640657cee6914e5421d748f9",
     "paper/shared/selmer-integral-frontier-second-bound-suppliers.tex": "12201f56f0d42a2fa5e314c6c20f03cc10b3baeb03671a1ef29203071e9ac40e",
     "notes/selmer-integral-frontier-second-bound-suppliers.md": "bc8702e4772f4ba26ec92c78323c8f5a91b9bb971948c34422be28522c47d530",
-    "certificates/selmer-integral-frontier-second-bound-suppliers.json": "af9ee5e1cd2ca0b4f9dd6249e819d9537c17a9fa8455f80235f1335cf123ac06"
+    "certificates/selmer-integral-frontier-second-bound-suppliers.json": "7deeda5e22cc4e01cf7979b19e7cb057d0f30aa81a5955f4c135603328ef8b9f"
   },
   "source_spots": [
     {
@@ -73,6 +73,27 @@
       "opposite_coefficient_compositions": 7108,
       "edge_cases": "e=0, e=m, m=0 and empty blocks included",
       "negative_control": "The finite cochain suite detects failures of global H2 surjectivity or allowed-local-cocycle lifting and does not apply the quotient lemma there."
+    },
+    "real_rectangular_exchange": {
+      "actual_twisted_transpose_involutions": 64,
+      "cases": {
+        "symmetric": 48,
+        "alternating": 16
+      },
+      "characteristics": [
+        3,
+        5
+      ],
+      "block_sizes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": "The actual odd action exchanges the two rectangles and has fixed rank ab in both symmetry cases, including empty blocks.",
+      "negative_control": "The alternating cases have P transpose equal to -P, so an unqualified symmetric-P premise fails while the graph proof remains valid.",
+      "scope": "Finite coefficient checks; the graph-of-an-isomorphism proof applies to every actual truncated coefficient ring."
     }
   },
   "limits": [
@@ -80,5 +101,12 @@
     "Finite cyclic computations test the algebraic hypotheses, not actual arithmetic duality.",
     "The original W2 cocycle translation is separate from this package.",
     "No Lean build and no RH/GRH whole-node closure is asserted."
+  ],
+  "amendments": [
+    {
+      "item": "Weaker CohAx real involution after removal of unnecessary symmetry premise",
+      "finding": "PASS. A block diagonal P sends an off-diagonal pair (x,y) to (A y,B x). Because the actual real-place action squares to one, AB=BA=1. Its fixed module is exactly the graph {(x,Bx)}, free of rank ab. No symmetry of P and no prescribed cyclotomic value of c_v is used. This covers the alternating-P cases while preserving the rank cancellation and all three constants.",
+      "scope": "Reviewed changed note/TeX passage and independently reran the 64 exact real-exchange models, including 16 alternating cases. The stronger first-ArSys symmetric-P argument is separate."
+    }
   ]
 }

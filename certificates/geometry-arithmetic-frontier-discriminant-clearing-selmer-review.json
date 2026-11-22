@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewer": "selmer_next, independent of the geometry author",
+  "status": "PASS",
+  "classification": "Independent mathematical and source-interface review; no Lean build",
+  "claim_reviewed": "Under the stated integral formal-biextension data, including the given integral trace-one element, Delta^d clears the original homogeneous pluriharmonic column value.",
+  "artifacts": {
+    "paper/shared/geometry-arithmetic-frontier-discriminant-clearing.tex": "f68d85b195f1fa38cdaf3f7ea4e3a7136479308bfdd5e4a708caf65ab4ffaa2e",
+    "paper/shared/geometry-arithmetic-frontier-discriminant-clearing-references.tex": "f0516cc3df36c78cda61f2fe971115818368e9a33b2da31ac0b09956bb1183db",
+    "notes/geometry-arithmetic-frontier-discriminant-clearing.md": "e81e2aae8a2ead66f3fc969d5041d0b67e18c1027146ac83f0855756868d05d7",
+    "scripts/check_geometry_arithmetic_frontier_discriminant_clearing.py": "928b1f595739f977205817a5b684e53e56d539da4f10e3274fdf3eec2ed004b8",
+    "certificates/geometry-arithmetic-frontier-discriminant-clearing.json": "71ae17db5d1e68b5c89299361a771c49f9e38bc9967cf12e7924abd87358d288"
+  },
+  "decisive_checks": [
+    "The original graph lattice is stable: its coordinate defect is S A_a - A_conj(a)^T S, not its negative or a half-scaled coefficient.",
+    "The trace-dual adjugate makes Delta times every projector integral; applying it to the graph lift gives a lift of Delta u, without an integral eigenspace splitting assumption.",
+    "The adjoint pairing forces contractions to vanish outside conjugate CM types; the normal-ordering correction is a linear combination of the stated column harmonic Laplacians.",
+    "All positive contraction terms vanish over the fraction field before integrality; ordinary integral differential words introduce no divided derivatives.",
+    "The original gauge is h(x,[w]x), with positive sign; the source connection integrality uses the retained integral w satisfying w+conj(w)=1.",
+    "The mixed x_j z_i coefficient gives S_ij with no extra factor2; degree-two logarithm/exponential comparison has no denominator2.",
+    "The actual original consumers supply Host.w0 and use its trace-one equation, so the hypothesis is neither invented nor asserted for arbitrary CM fields.",
+    "The actual column-value definition and homogeneity yield Delta^d. The global normalized theta trace is explicitly left open."
+  ],
+  "corrections_requested_and_resolved": [
+    "Three malformed transpose superscripts in the draft were corrected before this exact-hash review."
+  ],
+  "independent_rerun": {
+    "command": "python scripts/check_geometry_arithmetic_frontier_discriminant_clearing.py --offline",
+    "status": "PASS",
+    "source_modules": 14,
+    "quadratic_fields": 12,
+    "graph_lifts": 24,
+    "harmonic_polynomials": 125,
+    "normal_ordering_identities": 500,
+    "scaling_identities": 1500,
+    "negative_controls": 3
+  },
+  "source_pin": {
+    "repository": "jsmorph/rh",
+    "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+  },
+  "independently_reviewed_sources": [
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.TaylorDiscriminants.WickVanishing.HStable",
+      "sha256": "e271b9cfd9929146a4c66dacbd0221f988e60ea51b15dc395a96a7483f120d81",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            270,
+            302
+          ],
+          "sha256": "b35b4ab9a419e584cd7c08596dd8edf6b9c24435a924d72c8b280f35760d9bd3"
+        },
+        {
+          "lines": [
+            304,
+            334
+          ],
+          "sha256": "47ca06b939f714b86ca832d12dc38d625455bc3e49c2c5212269327e7f2f2631"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.TaylorDiscriminants.WickVanishing.ExpConjConnectionIntegral",
+      "sha256": "8a041ddfd74058b6940cceafb3eb8bb5c0b181b6a768e6c304d8541f772cd902",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            40,
+            82
+          ],
+          "sha256": "1dda1436997d296f8840ee34844312af812613b71caf141e16fecb9c95234537"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.TaylorDiscriminants.WickVanishing.LemmaH",
+      "sha256": "f1a7d4ec048e5fe961e1658bc6f64f733a2f6d4584ff93b687dfb51301e01829",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            34,
+            40
+          ],
+          "sha256": "e4a24e4c848b0d58815a5af762c2ad6c2801d7fb51bb06bdd160cb9a1f96523b"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.TaylorDiscriminants.WickVanishing.LemmaHCols",
+      "sha256": "485c6d66e3715638160650fd264a37679c29ff75386a4e5f201892f51a096d01",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            223,
+            237
+          ],
+          "sha256": "bfa1abc46b5662cbecc9332078a75688cf9b22e79b4415eb51667baa51715768"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.TaylorDiscriminants.WickVanishing.SigCancel",
+      "sha256": "736fd16420d9b67868d4e7979c95adfa51754627ed3928278a309d6bcc083d01",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            30,
+            48
+          ],
+          "sha256": "def4d9a34021dbd06c54a751d9a56f7c720aa2bc20fd8e6a7c2e209e105b29eb"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.TaylorDiscriminants.WickVanishing.GaugeBilinearTermEqNegDoubleSum",
+      "sha256": "00bc346c646a7d64a28ee7182b4174446223a96b69c727bc81eeda88a6c9e677",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            150,
+            167
+          ],
+          "sha256": "79947d9722a992b4ec85d0cf0e26690c1ac32291fc6a9bb5b358b26763993087"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PullbackSections.HolomorphicFamilies.ChartValJ",
+      "sha256": "c590e0e47779759fc7f016a5879c19ffc02c953c0478a41eb885baa836c4eb86",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            95,
+            158
+          ],
+          "sha256": "efa7e3bfe780d213a56799689d4a3de3d4d1d3614cb35a2af00b5e9a0d969582"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.HarmonicValueIntegralOfUnitDiscriminant",
+      "sha256": "2293e5a543079b545e51a752304a4adbf3199e5993dd659387e89adabbef2a0a",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            217,
+            234
+          ],
+          "sha256": "845f5f083efd7312b7065f335fdf5f2ec496e8b9de0a38f59f1f810fb87eca1b"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.RingsOfIntegers.HarmonicValueBoundIntegralChartRamified",
+      "sha256": "c2cae2f4b79907e334233762a15559e7fb206ca0a86d3dfa9ca583b571b00837",
+      "independently_read_excerpts": [
+        {
+          "lines": [
+            65,
+            91
+          ],
+          "sha256": "a09122e6e3bfdd0bc294fa95b804cdcfc492e33261e9966a29f7f5d14c0f3dd7"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Finite checks supplement the written proof; they do not prove every formal-biextension identity or build Lean.",
+    "No normalized primary-torsion trace, determinant scalar comparison, theta spanning, global integral model construction, or raw archimedean norm is claimed.",
+    "The integral trace-one element is retained; the theorem does not cover arbitrary CM data such as Gaussian integers lacking that element.",
+    "This review is mathematical/source-interface review; PDF layout is handled separately."
+  ],
+  "whole_nodes_newly_closed": 0,
+  "node_counts": {
+    "RH": "6/9",
+    "Dirichlet_GRH": "17/31"
+  }
+}

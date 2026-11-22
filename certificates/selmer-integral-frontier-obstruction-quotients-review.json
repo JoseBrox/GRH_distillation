@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-11-22",
-  "reviewed_at_utc": "2026-11-22T19:54:35.969304+00:00",
+  "reviewed_at_utc": "2026-11-22T20:07:01.087919+00:00",
   "reviewer": "root, independent of the proof author",
   "verdict": "PASS",
   "scope": "All original odd Selmer obstruction quotients, retaining the supplied arithmetic cohomology system.",
@@ -109,17 +109,38 @@
         "opposite_coefficient_compositions": 7108,
         "edge_cases": "e=0, e=m, m=0 and empty blocks included",
         "negative_control": "The finite cochain suite detects failures of global H2 surjectivity or allowed-local-cocycle lifting and does not apply the quotient lemma there."
+      },
+      "real_fixed_modules": {
+        "actual_twisted_transpose_involutions": 64,
+        "cases": {
+          "symmetric": 48,
+          "alternating": 16
+        },
+        "characteristics": [
+          3,
+          5
+        ],
+        "block_sizes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "result": "The actual odd action exchanges the two rectangles and has fixed rank ab in both symmetry cases, including empty blocks.",
+        "negative_control": "The alternating cases have P transpose equal to -P, so an unqualified symmetric-P premise fails while the graph proof remains valid.",
+        "scope": "Finite coefficient checks; the graph-of-an-isomorphism proof applies to every actual truncated coefficient ring."
       }
     }
   },
   "artifacts": [
     {
       "path": "notes/selmer-integral-frontier-obstruction-quotients.md",
-      "sha256": "4661f9d444e1f08be1b626128710d8baa6bd1cba60eeceea2fa4231dac951363"
+      "sha256": "db64f4c5218ec902dc902dad561c0fa2e2d4fd2b19944ba1ced3398d572c7667"
     },
     {
       "path": "paper/shared/selmer-integral-frontier-obstruction-quotients.tex",
-      "sha256": "9704a2a435519efb4c10c77361a41b503f61858fd645463970888a42814de480"
+      "sha256": "7ecf52bbc68d5b3e8b89a93365c8cb8ac10af2972b2874f3a4ee17ef8c2b63af"
     },
     {
       "path": "paper/shared/selmer-integral-frontier-obstruction-quotients-references.tex",
@@ -127,16 +148,19 @@
     },
     {
       "path": "scripts/check_selmer_integral_frontier_obstruction_quotients.py",
-      "sha256": "4a1d3107eec0d08745e63e9cf19cc829aa559b552b4d34b0822aa4f507e74097"
+      "sha256": "35ac9a0f7de09b704b48d20e0e47abb3a5b928cbeac07b0c63a656958110b988"
     },
     {
       "path": "certificates/selmer-integral-frontier-obstruction-quotients.json",
-      "sha256": "f7a11af7beba9b4a527f4501beefb143857de1637d1146bbedeffb76be781c52"
+      "sha256": "c2d408af1a77ca54ac4f038c473ad6f3926ba918640657cee6914e5421d748f9"
     }
   ],
   "limits": [
     "Original arithmetic systems, normalized points and patched modules remain supplied inputs.",
     "The full W2 translation is separate.",
     "Finite checks supplement the human proof; no Lean build; no whole-node closure."
+  ],
+  "amendments": [
+    "Replaced the unnecessary and unjustified symmetric-P illustration under the weaker cohomology system by the rectangular-exchange proof. An involution (Ay,Bx) has AB=BA=1, so its fixed module is the rank-ab graph of B, including alternating P. Independently reviewed the amended note and TeX and reran the expanded exact checker."
   ]
 }

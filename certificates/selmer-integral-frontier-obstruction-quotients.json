@@ -219,6 +219,27 @@
       "opposite_coefficient_compositions": 7108,
       "edge_cases": "e=0, e=m, m=0 and empty blocks included",
       "negative_control": "The finite cochain suite detects failures of global H2 surjectivity or allowed-local-cocycle lifting and does not apply the quotient lemma there."
+    },
+    "real_fixed_modules": {
+      "actual_twisted_transpose_involutions": 64,
+      "cases": {
+        "symmetric": 48,
+        "alternating": 16
+      },
+      "characteristics": [
+        3,
+        5
+      ],
+      "block_sizes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": "The actual odd action exchanges the two rectangles and has fixed rank ab in both symmetry cases, including empty blocks.",
+      "negative_control": "The alternating cases have P transpose equal to -P, so an unqualified symmetric-P premise fails while the graph proof remains valid.",
+      "scope": "Finite coefficient checks; the graph-of-an-isomorphism proof applies to every actual truncated coefficient ring."
     }
   },
   "primary_reference": {
@@ -228,7 +249,7 @@
     "scope": "Reuses the primary page visually verified for the first-global-bound package, with its degree-three statement rechecked in the bounded extracted text."
   },
   "dependencies": {
-    "certificates/selmer-integral-frontier-second-bound-suppliers.json": "af9ee5e1cd2ca0b4f9dd6249e819d9537c17a9fa8455f80235f1335cf123ac06",
+    "certificates/selmer-integral-frontier-second-bound-suppliers.json": "7deeda5e22cc4e01cf7979b19e7cb057d0f30aa81a5955f4c135603328ef8b9f",
     "certificates/selmer-integral-frontier-padded-relations.json": "8b6e6072ff94b803b5e7835fb289fd09b597b95b839f6236072acc53fa00ce62"
   },
   "retained_inputs": [
@@ -244,9 +265,9 @@
   ],
   "reproduce": "python3 scripts/check_selmer_integral_frontier_obstruction_quotients.py --offline",
   "artifacts": {
-    "notes/selmer-integral-frontier-obstruction-quotients.md": "4661f9d444e1f08be1b626128710d8baa6bd1cba60eeceea2fa4231dac951363",
-    "paper/shared/selmer-integral-frontier-obstruction-quotients.tex": "9704a2a435519efb4c10c77361a41b503f61858fd645463970888a42814de480",
+    "notes/selmer-integral-frontier-obstruction-quotients.md": "db64f4c5218ec902dc902dad561c0fa2e2d4fd2b19944ba1ced3398d572c7667",
+    "paper/shared/selmer-integral-frontier-obstruction-quotients.tex": "7ecf52bbc68d5b3e8b89a93365c8cb8ac10af2972b2874f3a4ee17ef8c2b63af",
     "paper/shared/selmer-integral-frontier-obstruction-quotients-references.tex": "3e0abc5f8f21dde80889c95c3b154bcf5d18d673e3705f7ee3a8881110cb4c1c",
-    "scripts/check_selmer_integral_frontier_obstruction_quotients.py": "4a1d3107eec0d08745e63e9cf19cc829aa559b552b4d34b0822aa4f507e74097"
+    "scripts/check_selmer_integral_frontier_obstruction_quotients.py": "35ac9a0f7de09b704b48d20e0e47abb3a5b928cbeac07b0c63a656958110b988"
   }
 }
