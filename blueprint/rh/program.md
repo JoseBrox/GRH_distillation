@@ -145,8 +145,9 @@ The [CM extension theorem](../../notes/cm-integral-map-extension.md)
 then uses properness and classical semiabelian uniqueness to identify its
 exact integral line and tangent eigenlattices. The actual global family,
 original cubical line, fibre comparisons and pointwise period data,
-original geometric sheets, Hodge metric and lattice identification, signed boundary comparison,
-and arithmetic section remainder remain requirements. The
+original geometric sheets, Hodge metric and lattice identification,
+required height inputs and arithmetic section remainder remain requirements.
+The supplied-model theorem proves the signed boundary comparison. The
 [arithmetic first-moment theorem](../../notes/geometry-arithmetic-frontier-isotropic-integrability.md)
 proves integrability of the full original count; the
 [cusp counting theorem](../../notes/cusp-counting-mean.md) then supplies
@@ -356,7 +357,12 @@ the relevant character phase depends on their difference and is unchanged.
    \(c>0\), with the same restrictions and arithmetic metrics.
    A strict source deficit supplies aggregate nonvanishing; any consumer
    requiring individual nonvanishing still needs that stronger statement.
-   Seed mass before folding supplies neither trace estimate.
+   Seed mass before folding supplies neither trace estimate. The
+   [scalar-pair lattice theorem](../../notes/global-norm-frontier-scalar-density.md)
+   now supplies equality of the original local densities, and the
+   [signed finite-place bound](../../notes/global-norm-frontier-primitive-density.md)
+   refines their existing count. Remaining local orbital laws and the
+   quantitative archimedean Bessel estimate are separate suppliers.
 2. Bound the finite weighted Selmer product on the actual twisted primes for
    the growing auxiliary fields. Construct the marked models and verify
    the weighted chart and finite degree-zero quotient. Apply the proved
@@ -369,10 +375,14 @@ the relevant character phase depends on their difference and is unchanged.
    The [paired determinant theorem](../../notes/selmer-integral-frontier-even-detection.md)
    is proved over the original fraction field, and the
    [complete-equation argument](../../notes/selmer-integral-frontier-dual-detection.md)
-   controls all modular solutions from integral detection. Match them
-   through the original integral paired module, denominator transfer and
-   simultaneous auxiliary choice; then finish the remaining ordinary local
-   bounds and patched automorphic modules.
+   controls all modular solutions. The [integral assembly](../../notes/selmer-integral-frontier-integral-detection.md),
+   [finite selection](../../notes/selmer-integral-frontier-finite-selection.md)
+   and [coefficient-extension theorem](../../notes/selmer-integral-frontier-coefficient-extension.md)
+   now prove the full simultaneous auxiliary choice under the original point,
+   group and spectral hypotheses. The [ordinary local count](../../notes/selmer-integral-frontier-ordinary-local-count.md)
+   now has one explicit constant for every truncation and auxiliary level
+   at fixed data. Finish the remaining global and distinguished-place bounds
+   and the actual patched automorphic modules and dimensions.
 3. Construct the actual global arithmetic family, its original cubical
    biextension and geometric fibre comparisons, with the moduli separation
    and prescribed pointwise pure-period presentations. The exact CM point,
@@ -386,9 +396,12 @@ the relevant character phase depends on their difference and is unchanged.
    then gives the original arithmetic Haar mean. Both boundary energy
    limits and the [exact arithmetic metric variation](../../notes/geometry-arithmetic-frontier-exact-metric-variation.md)
    are proved, including metric locality and the rational-twist polynomial.
-   Identify their mixed integrals and common vertical curvature on the
-   actual compact model, then finish the signed comparison and arithmetic
-   section remainder.
+   The [compact-model theorem](../../notes/geometry-arithmetic-frontier-compact-model-stokes.md)
+   identifies their original mixed integrals and proves zero vertical
+   curvature everywhere. Energy concavity and the same rational-twist
+   polynomial give the signed arithmetic boundary inequality. Construct
+   its actual model and height inputs and bound the arithmetic section
+   remainder.
    The full count is integrable by the
    [arithmetic first-moment theorem](../../notes/geometry-arithmetic-frontier-isotropic-integrability.md).
    Apply the [cusp theorem](../../notes/cusp-counting-mean.md) with these

@@ -18,9 +18,11 @@ keeps the two applications and their extra hypotheses explicit.
 The [node counts](../blueprint/progress.md) distinguish finished stated
 implications or adopted inputs from open construction hypotheses. Moving
 files or adding a node is not recorded as closing an existing open node.
-The current arithmetic continuation recovered main at
-`1b856f01372ec4287347dbfdef26f0e1f83573e7`, including the integrated
-reduction proofs and their review evidence. The earlier
+This continuation recovered main at
+`32de5c1887329aaa813007b7cf6f31e625f4ff8f`, including the fourteen
+arithmetic checkpoints and their manuscript integration. Integral paired
+detection and the full simultaneous auxiliary choice are now separately
+published at `eb5d5d0` and `a86977f`, with independent review evidence. The earlier
 [frontier review](../certificates/frontier-progress-review-2026-11-22.json)
 remains their historical evidence. The sharp return bound, exact chain
 denominator, finite section-rank theorem, graded point/tangent comparison,
@@ -35,9 +37,11 @@ map 17/31; the generated progress table carries the current values.
 
 ## Current arithmetic frontiers
 
-The [current arithmetic continuation](arithmetic-frontier-continuation-2026-11-22.md)
-classifies the new results, the unsuccessful shortcuts and the next exact
-obligations. Its [integration record](../certificates/arithmetic-frontier-integration-2026-11-22.json)
+The [current supplier continuation](arithmetic-supplier-continuation-2026-11-22.md)
+separates newly proved arithmetic suppliers from refinements of existing
+results and records the next exact obligations. The earlier
+[arithmetic continuation](arithmetic-frontier-continuation-2026-11-22.md)
+retains the preceding fourteen checkpoints. Its [integration record](../certificates/arithmetic-frontier-integration-2026-11-22.json)
 identifies the fourteen published checkpoints, current manuscript builds,
 reviewed pages and unchanged short analytic RH proof. The earlier
 reduction-review certificates remain historical evidence for their original commits.
@@ -48,8 +52,8 @@ arithmetic covolume and integrability of the unrestricted original count
 are now proved. Finitely many rational-line orbits and an ideal sum at
 exponent \(N-1>1\) suffice. The existing self-normalizing cusp proof needs
 no numerical bound on those orbit constants. The next task is the actual
-geometric sheets, Hodge metric and lattice identification, followed by
-the signed boundary comparison and arithmetic section remainder. The
+geometric sheets, Hodge metric and lattice identification, the required
+height inputs, and the arithmetic section remainder. The
 [curvature calculation](geometry-arithmetic-frontier-curvature-haar-mean.md)
 now proves the exact mean comparison from those sheet and metric data.
 Its denominator is already the integral of the same interior density
@@ -68,10 +72,15 @@ inner charts and circle-invariant smoothing kernel. The
 [metric-variation argument](geometry-arithmetic-frontier-exact-metric-variation.md)
 derives the positive single-slot sign, the factor \(n+1\), full metric
 locality and the original rational-twist polynomial directly from the
-intersection axioms. The remaining interface is the actual compact-model
-integral dictionary, including common vertical curvature and all component
-weights. Cancellation of a common metric factor in a ratio does not prove
-that its curvature vanishes.
+intersection axioms. The [compact-model comparison](geometry-arithmetic-frontier-compact-model-stokes.md)
+now supplies the original mixed-integral dictionary, with every complex
+component and sheet multiplicity retained. The original unit equations
+make every vertical factor locally the absolute value of a nonvanishing
+holomorphic function, including at the boundary, so its curvature is zero.
+Fixed positive rational twists, both energy limits and concavity then
+prove the original guarded signed arithmetic boundary inequality. The
+model, intersection system, smoothness and height inputs remain supplied
+data; their arithmetic construction and the section remainder remain open.
 
 The [Selmer special-fibre checkpoint](selmer-integral-frontier-special-fibre.md)
 locates the remaining global arithmetic issue in the full normalized
@@ -88,8 +97,9 @@ now constructs its independent coefficient rows by redundant coordinates
 from two cohomological bounds. A block resultant supplies the explicit
 auxiliary constant \(2\sum_jv_t(\delta_j)\), uniform in the truncation
 and sufficiently large auxiliary level. The actual index-two cocycle
-descent retains complex-conjugation compatibility. Global and ordinary
-local cohomological estimates and the patched modules remain inputs.
+descent retains complex-conjugation compatibility. The ordinary local
+count is now supplied below; global and distinguished-place estimates
+and the patched modules remain inputs.
 The [complete-equation argument](selmer-integral-frontier-dual-detection.md)
 now controls every modular cocycle from the exact integral detection
 hypothesis, including classes that do not lift to integral cocycles.
@@ -97,10 +107,21 @@ The [odd paired detection proof](selmer-integral-frontier-odd-detection.md)
 uses a central block idempotent, matrix units and the exact four-factor
 relation pairing. The [even correction](selmer-integral-frontier-even-detection.md)
 completes the fraction-field determinant argument, retaining the source's
-commutator-subgroup condition and its division by two. The next supplier
-is the integral paired-module assembly and denominator transfer, followed
-by the simultaneous finite auxiliary choice and remaining ordinary local
-estimates. Ordinary trace cannot replace the first-order paired functional.
+commutator-subgroup condition and its division by two. The [integral assembly](selmer-integral-frontier-integral-detection.md)
+now supplies the exact paired module and common denominator.
+[Finite selection](selmer-integral-frontier-finite-selection.md) constructs
+the odd families and one simultaneous detecting set, preserving the exact
+integral kernel. [Coefficient extension](selmer-integral-frontier-coefficient-extension.md)
+preserves all local witnesses and detection through ramification and
+finishes the original simultaneous-choice statement. The exponent can be
+uniform over integral cocycles at fixed arithmetic data; it is not asserted
+uniform over moving points or to lift modular cocycles. The [ordinary local count](selmer-integral-frontier-ordinary-local-count.md)
+now follows from local Tate duality, the exact coefficient pairing and a
+typed triangular filtration. Its explicit valuation constant works at
+every truncation and auxiliary level for fixed arithmetic data. Remaining
+global and distinguished-place estimates, patched modules and
+characteristic-prime propagation are the next arithmetic suppliers. Ordinary trace cannot
+replace the first-order paired functional.
 
 The chain calculation now uses the verified source rank
 \(N(i)=k+i(t+1)\), distinct from the auxiliary rank \(r+it\).
@@ -115,6 +136,18 @@ existing ordinary CM measure handles the formal branch. The original
 differential periods and root phases are retained.
 These local results do not establish the small normalized source deficit or target excess;
 those actual analytic estimates remain a principal research priority.
+The [signed primitive-density refinement](global-norm-frontier-primitive-density.md)
+uses the count already proved in the local-density chapter. It removes a
+rank multiplier and isolates positive errors at inert odd-corank places,
+with one extra residue-field power. This improves a finite-place coefficient;
+it is not a newly closed density theorem or a global operator-norm bound.
+The separate [scalar-pair lattice theorem](global-norm-frontier-scalar-density.md)
+is a new closure: the original quotient identifications and designated
+split-level graph preserve the complementary integral lattice. Self-duality
+then gives the same discriminant module and residue corank for the actual
+modified tuples. With the existing count this proves the full local density
+assertion, while the other local orbital laws and normalized global bounds
+remain open.
 
 ## Preferred RH route: no weight symmetry
 
@@ -175,8 +208,8 @@ packing and a single tail integral bound the logarithmic minimum mean
 by `23/24`. Integral cyclotomic traces span the abelian coefficient field
 over the rationals, giving cusp allowance 3. Their integral span need
 not be the full ring of integers. The actual geometric sheets, Hodge
-metric, lattice and covolume, and signed boundary comparison remain
-required. The normalized quotient mean follows from the
+metric, lattice, covolume and height inputs remain required. The supplied-model
+theorem above now proves the signed boundary comparison. The normalized quotient mean follows from the
 [curvature and sheet theorem](geometry-arithmetic-frontier-curvature-haar-mean.md).
 The count homogeneity itself follows from Haar invariance:
 the averaged lattice count is an invariant measure on the product of
@@ -189,8 +222,8 @@ at `N-1>1`. No numerical covolume, cusp count or unit-index estimate is
 needed: its finite normalization cancels in the packing argument.
 The curvature theorem computes the exact component weights and mean
 from the original geometric sheet and metric data. Those data and the
-lattice identification must still be constructed; the signed boundary
-limit remains open.
+lattice identification must still be constructed. Under the retained
+model and height data, the signed boundary limit is now proved.
 
 The [mean-volume supplier](mean-volume-supplier.md) now isolates the
 required normalized arithmetic intersection inequality for the selected
@@ -799,8 +832,8 @@ identification and other period denominators remain required.
    under these identifications. Identify the actual nef and birational
    section data and apply the finite jet rank bound, retaining its exact
    surplus denominator. Identify the original arithmetic Haar quotient
-   and lattice count, and the signed boundary comparison
-   for the cusp theorem; then bound the
+   and lattice count, construct the height inputs of the now-proved
+   signed boundary theorem, and then bound the
    arithmetic section remainder. The exact selected abelian rank is retained; the
    scalar prime and period bounds are supplied.
 4. **Uniform assembly (W02/W11).** Assemble the signed

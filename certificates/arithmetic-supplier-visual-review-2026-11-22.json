@@ -1,0 +1,149 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "geometry_frontier",
+  "verdict": "PASS",
+  "scope": "Scoped visual QA of final integrated RH and guide PDFs for the arithmetic supplier checkpoint.",
+  "rendering": {
+    "tool": "pdftoppm",
+    "format": "PNG",
+    "resolution_dpi": 140,
+    "pattern": "pdftoppm -f PAGE -l PAGE -singlefile -r 140 -png PDF build/supplier-visual/NAME"
+  },
+  "documents": [
+    {
+      "path": "paper/rh/main.pdf",
+      "sha256": "8f2904207146505b99e179f810295cbdcf0eb78689476c7e85a33658d45278a8",
+      "bytes": 677784,
+      "total_pages": 106,
+      "inspected_physical_pages": [
+        40,
+        43,
+        44,
+        57,
+        90,
+        91
+      ],
+      "page_reviews": [
+        {
+          "physical_page": 40,
+          "image_path": "build/supplier-visual/rh-040.png",
+          "image_sha256": "48e8c7aae77210030dbc924aa6216a74e2df24641dc1d300f981cf4a04a91ccf",
+          "image_dimensions_pixels": [
+            1158,
+            1638
+          ],
+          "actually_viewed": true,
+          "verdict": "PASS",
+          "finding": "Integral paired-detection statement and full proof fit the page. Displayed coefficient algebra, action/trace formulas, superscripts and primes are legible; no visible clipping or overlap."
+        },
+        {
+          "physical_page": 43,
+          "image_path": "build/supplier-visual/rh-043.png",
+          "image_sha256": "675a286f085be86895147caf536c8f16ccd02169ec614831db9e512a0412e53c",
+          "image_dimensions_pixels": [
+            1158,
+            1638
+          ],
+          "actually_viewed": true,
+          "verdict": "PASS",
+          "finding": "Ordinary local count and uniform-bound proposition are legible. The scalar-count equation number, Tate-pairing subscripts and typed multiplicities fit the text area. The proof continues on page 44."
+        },
+        {
+          "physical_page": 44,
+          "image_path": "build/supplier-visual/rh-044.png",
+          "image_sha256": "5a403b192a4d9edd97b815513ef8f8a8cdb3d236a05d13995b4b962b74ad87fe",
+          "image_dimensions_pixels": [
+            1158,
+            1638
+          ],
+          "actually_viewed": true,
+          "verdict": "PASS",
+          "finding": "Adjacent continuation inspected: the full local-bound proof starts cleanly at the top and concludes before the next subsection. The page break after the proposition is natural; no stranded heading or damaged formula."
+        },
+        {
+          "physical_page": 57,
+          "image_path": "build/supplier-visual/rh-057.png",
+          "image_sha256": "ff0506aec29c921b0928cd4a00c3fefd60adafae7689366ea2cb414933e37963",
+          "image_dimensions_pixels": [
+            1158,
+            1638
+          ],
+          "actually_viewed": true,
+          "verdict": "PASS",
+          "finding": "Signed arithmetic boundary comparison and proof are legible, including q-normalization, the fixed polynomial, finite-energy inequality and final signed mean. Equations fit the page and the proof closes normally."
+        },
+        {
+          "physical_page": 90,
+          "image_path": "build/supplier-visual/rh-090.png",
+          "image_sha256": "9465c2cf39cc52a3ae9a47a23ab15ff0354fbb428d4f0faef59ea11255ef948f",
+          "image_dimensions_pixels": [
+            1158,
+            1638
+          ],
+          "actually_viewed": true,
+          "verdict": "PASS",
+          "finding": "Signed-density refinement and scalar-pair density proposition are legible. The designated modified frame tuple, Gram determinant and divided congruence display fit. The proof continues on page 91."
+        },
+        {
+          "physical_page": 91,
+          "image_path": "build/supplier-visual/rh-091.png",
+          "image_sha256": "75b985b433183aa2fa9b71d8fc18f5ee4056dcf7923a80e0653cc3220760a3f2",
+          "image_dimensions_pixels": [
+            1158,
+            1638
+          ],
+          "actually_viewed": true,
+          "verdict": "PASS",
+          "finding": "Adjacent continuation inspected: the complement and discriminant-module argument concludes cleanly before the next subsection. The quotient-isomorphism display and corank discussion are intact; no clipping or missing symbols."
+        }
+      ]
+    },
+    {
+      "path": "paper/guide/main.pdf",
+      "sha256": "47fe5cf8624b1842b5ed580aeb622cff007354134ea6e65855673ae96bb83ad8",
+      "bytes": 94775,
+      "total_pages": 8,
+      "inspected_physical_pages": [
+        5,
+        7
+      ],
+      "page_reviews": [
+        {
+          "physical_page": 5,
+          "image_path": "build/supplier-visual/guide-005.png",
+          "image_sha256": "aae101500a57fec1a3454a84d03f7fa8d5369aee4ec95e149dfe313667152bf9",
+          "image_dimensions_pixels": [
+            1158,
+            1638
+          ],
+          "actually_viewed": true,
+          "verdict": "PASS",
+          "finding": "Geometric progress paragraph and trace-error formulas are legible. The page explicitly retains model, lattice, height and arithmetic section inputs. No visible clipping, overlapping text or broken mathematical glyphs."
+        },
+        {
+          "physical_page": 7,
+          "image_path": "build/supplier-visual/guide-007.png",
+          "image_sha256": "0cec09e74cd0897cd74279cbde76b0e9798fec2c28e8114e105b823a07183085",
+          "image_dimensions_pixels": [
+            1158,
+            1638
+          ],
+          "actually_viewed": true,
+          "verdict": "PASS",
+          "finding": "Supplier summary and ordinary-RH discussion are legible. Headings, list continuation and the signed-character equations fit the page; no visible clipping, missing symbols or stranded heading."
+        }
+      ]
+    }
+  ],
+  "overall_findings": [
+    "No visible clipping, overlapping equations, missing mathematical glyphs or broken equation displays on the inspected pages.",
+    "Adjacent RH pages 44 and 91 were additionally inspected to verify continuation of the ordinary local and scalar-pair density proofs. Both continuations are readable.",
+    "Final PDF hashes were checked before rendering and again after image inspection; the files did not change."
+  ],
+  "limitations": [
+    "Only RH physical pages 40,43,44,57,90,91 and guide physical pages 5,7 were visually inspected.",
+    "This certificate does not claim review of all 106 RH pages, all eight guide pages, or any GRH manuscript page.",
+    "This is layout and visual-symbol QA, not a new mathematical verification or a Lean build.",
+    "No manuscript source or previously reviewed artifact was changed."
+  ]
+}
