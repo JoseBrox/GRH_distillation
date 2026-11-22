@@ -595,6 +595,16 @@ the proved proper extension supplies the integral comparison from them.
 
 ## Next mathematical work
 
+The [chain denominator identity](level-chain-integrality.md) now supplies
+the auxiliary-prime iteration from the original single-step kernel and
+value-lattice laws. It retains the source's existing prime-power factor
+and every intermediate rank, improving the inspected common-step
+denominator by their exact signed contribution. The proof also works in
+the original complex function spaces with embedded integral lattices;
+no unproved rationality of the separate operators is assumed. The local
+kernel laws, their actual lattices, stabilizer units, twisted-source
+identification and other period denominators remain required.
+
 1. **Integral maps and global norms (W06/W08).** Supply the actual integral
    theta maps and sharp auxiliary-level divisibility. The original compact
    and finite-column data give exact positive seed normalizers. Bound the

@@ -1,0 +1,94 @@
+\subsection{The exact denominator of a chain}
+\label{shared-level-chain}
+
+The auxiliary-prime calculation can keep each step's cost and the
+positive factor already present in the source lattice.  The following
+identity does not require the intermediate operators to be invertible.
+
+\begin{proposition}\label{shared-level-chain-integrality}
+Let $R$ be a discrete valuation ring with fraction field $K$, normalized
+valuation $v$, and a field extension $E/K$.
+Fix $q\in R\setminus\{0\}$, with $e=v(q)>0$.
+For $0\le i\le m$, let $\Lambda_i$ be a finitely generated
+$R$-submodule of a finite-dimensional $E$-space $V_i$, and let
+$U_i\in\operatorname{End}_E(V_i)$.
+Let $F_i:V_{i-1}\to V_i$ satisfy
+\[
+ U_iF_i=q^{r_i}F_iU_{i-1},\qquad
+ A_i:=q^{d_i}U_iF_i,\qquad A_i\Lambda_{i-1}\subseteq\Lambda_i
+ \quad(1\le i\le m),
+\]
+where $r_i,d_i\in\mathbb Z$.  If
+$M\subseteq q^aU_0^m\Lambda_0$, with $a\in\mathbb Z$, put
+\[
+ F=F_m\cdots F_1,\qquad
+ \ell=\sum_{i=1}^m d_i+
+           \sum_{i=1}^m(m-i+1)r_i-a.
+\]
+Then $q^\ell F(M)\subseteq\Lambda_m$.  More generally,
+$cF(M)\subseteq\Lambda_m$ whenever $c\in K^\times$ and
+$v(c)\ge e\ell$.  Negative values of $\ell$ are allowed.
+\end{proposition}
+\begin{proof}
+Repeatedly move an operator $U_i$ across the maps to its right.  Each
+commutation with $F_i$ occurs $m-i+1$ times, giving
+\[
+ A_m\cdots A_1
+ =q^{\sum_i d_i+\sum_i(m-i+1)r_i}F U_0^m.
+\]
+The left side takes $\Lambda_0$ into $\Lambda_m$.  For
+$x=q^aU_0^my\in M$, this identity gives
+$q^\ell F(x)=A_m\cdots A_1(y)\in\Lambda_m$.
+Finally $v(cq^{-\ell})\ge0$, so multiplication by this element
+preserves $\Lambda_m$.
+\end{proof}
+
+This exponent is optimal from the displayed assumptions.  In rank one,
+take $\Lambda_i=R$, $U_0=1$,
+$U_i=q^{r_1+\cdots+r_i}$, and $F_i=q^{-d_i}U_i^{-1}$.
+Then $A_i=1$ and, for $M=q^aR$, one has
+$F(M)=q^{-\ell}R$.  The empty chain also gives the asserted formula.
+
+This formulation permits complex ambient function spaces with their
+embedded integral lattices. Membership in the original rational image
+supplies the vector $y$ used in the proof; each integral $A_i$ then
+supplies the next rational lift. No separate rationality of $F_i$ or
+$U_i$ is assumed.
+
+For the arithmetic chain, let $T$ be the auxiliary rational prime,
+$t$ odd, $h=(t+1)/2$, and $J$ the selected set of coefficient
+embeddings, of size $j$.  At an active place above $T$, the prescribed
+source lattice is contained in
+\[
+ T^a U_0^m\Lambda_0,\qquad
+ a=m\sum_{\tau\in J}b_\tau.
+\]
+The original local kernel and value-lattice identities give the
+single-step integers
+\[
+ d_i=fN_{i-1}+\sum_\tau s_{i-1,\tau}
+                    +\sum_{\tau\notin J}\lambda_{i,\tau},
+ \qquad r_i=hj.
+\]
+Here $s_{i-1,\tau}$ is the determinant shift to be cleared and
+$\lambda_{i,\tau}$ is the first residual highest weight after that
+shift.  These identities concern the actual coefficient lattices and
+the actual kernels; the stabilizer orders in their finite sums must
+be units at the place.  The resulting denominator is therefore
+\begin{equation}\label{shared-level-chain-exact-loss}
+ \ell=\sum_{i=1}^m d_i+hj\frac{m(m+1)}2
+                         -m\sum_{\tau\in J}b_\tau.
+\end{equation}
+If the original weight bounds give $d_i\le2W+fN_{i-1}$ and
+$N_i=k+it$, then the former common-step upper bound
+$B=m(2W+fN_m)+hj m(m+1)/2$ improves to
+\[
+ \ell\le B-\frac{ftm(m+1)}2-m\sum_{\tau\in J}b_\tau.
+\]
+The gain uses the same source lattice; its degree is not changed or
+counted a second time.  At inactive places, the integral-step argument
+still gives exponent zero.  The local kernel identities, rational
+realizations, twisted-chain identifications and all other period
+denominators remain required.  This computation supplies the passage
+from those local identities to the full-chain bound, not their
+arithmetic construction.

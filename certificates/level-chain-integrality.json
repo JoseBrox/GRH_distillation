@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "result": "PASS",
+  "scope": "General mathematical proof plus exact supplemental checks and source-byte provenance; no arithmetic-kernel construction or Lean rebuild.",
+  "checks": {
+    "exact_matrix_chains": 56,
+    "scalar_sharpness": 42,
+    "symbolic_rank_sum_saving": true,
+    "includes_rectangular_noninvertible_and_noncommuting_examples": true,
+    "includes_signed_exponents_and_empty_chain": true
+  },
+  "proved": [
+    "Exact chain clearing exponent sum(d_i)+sum((m-i+1)r_i)-a",
+    "Conditional same-lattice source-factor gain",
+    "Conditional individual-step rank gain ftm(m+1)/2 at active places"
+  ],
+  "remaining": [
+    "actual local kernel and point-pair laws",
+    "original value lattices and integral rational realizations",
+    "stabilizer-unit condition",
+    "twisted initial-source compatibility",
+    "other-prime period denominators",
+    "uniform final arithmetic assembly"
+  ],
+  "node_changes": [],
+  "sources": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/GlobalTwisting/LevelChainSharpColumnValuationOwnChainIff.lean",
+      "git_blob_sha1": "f38638448acf1870e40ffadee9425cb6d8b03432",
+      "sha256": "56d207f8ae8b1b9d54f495a9507e23f2176e688a72c2d2d73b05d98b068118a6",
+      "lines": 792,
+      "inspected_ranges": [
+        [
+          45,
+          75
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/GlobalTwisting/FormsStable.lean",
+      "git_blob_sha1": "b378bd06cdbb8f8eee2050f2879e30df26d56943",
+      "sha256": "369038f4f79b762685e21af51ee61c7277b9e11f5f08e65010abe989567b3ab0",
+      "lines": 330,
+      "inspected_ranges": [
+        [
+          211,
+          240
+        ],
+        [
+          307,
+          325
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/ExtInOfValIn.lean",
+      "git_blob_sha1": "402a72234274db6dc92498ab910ad84afe4c993c",
+      "sha256": "63bc10e66017a2f253eadf75445c2e727f103969447b2d2abb2454c3b7dcc064",
+      "lines": 200,
+      "inspected_ranges": [
+        [
+          98,
+          135
+        ],
+        [
+          139,
+          198
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/LevelChainSharpColumnValuationOfStability.lean",
+      "git_blob_sha1": "0392c5a26fdeecc55ec52567d7d96b97f6855579",
+      "sha256": "7bf2ca41d8b32c62ccabc3494bfafa8f2e7654ed97e19b2d79b19882d32e22c0",
+      "lines": 195,
+      "inspected_ranges": [
+        [
+          57,
+          114
+        ],
+        [
+          123,
+          193
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/GlobalSchurBounds/ProductFirstZerothParts.lean",
+      "git_blob_sha1": "ff23157550e2e099e8c823dc7cb5d143c9f9f04e",
+      "sha256": "d97f23d2c6c6252027e8182e77f79dd5fb597ed441a7353c170c4648c33aca78",
+      "lines": 607,
+      "inspected_ranges": [
+        [
+          291,
+          328
+        ]
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/LocalToGlobal/GroupLattices/AdmissibleAtGeneratorPlaces.lean",
+      "git_blob_sha1": "bbb2823b45cc69a4c648c8b009459c2f83caa014",
+      "sha256": "cca8ec256dd5a4f069c261f652088c4655a4cf3191e3d8c2c36d405cee2920a2",
+      "lines": 352,
+      "inspected_ranges": [
+        [
+          72,
+          105
+        ]
+      ]
+    }
+  ],
+  "artifacts": {
+    "notes/level-chain-integrality.md": "34330a9470b1a25527608814b8d42172ce51c39fb9e695cdcd83c157ed606fa6",
+    "paper/shared/level-chain-integrality.tex": "c248e2069f6544890991a64b8e83fa8b0e11913daf925427c64c6bc554b81c9c",
+    "scripts/check_level_chain_integrality.py": "f624ef89f722961bfb74d2ece558e90feafac018af382d05d72b1fa7a08b4fc5"
+  }
+}
