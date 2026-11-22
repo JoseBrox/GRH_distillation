@@ -131,8 +131,13 @@ The finite-place comparison now has a shorter
 [character-degree proof](flat-family-finite-place-frontier.md): the Hodge
 and conjugate filtrations force degree zero under Frobenius, and a
 composition series retains the multiplicities of a ramified coefficient
-algebra. The actual boundary Hodge lattice must still supply these
-filtrations and local freeness over the relevant coefficient factor.
+algebra. The [integral coefficient-freeness proof](boundary-hodge-freeness.md)
+identifies the proper formal module directly with a universal-extension
+tangent module. Its functorial Witt lift and a three-step toric
+filtration supply freeness, including ramified coefficient primes, once
+the actual semiabelian quotient and pullback line bundle are identified.
+The same local-stalk argument retains the prescribed lattice. The
+Hodge and conjugate filtrations must still be constructed on that lattice.
 The [determinant torsion and vertical rigidity](determinant-torsion-rigidity.md)
 now strengthen this calculation: the two filtrations give an explicit
 torsion exponent for the character determinant, and a short effective-divisor

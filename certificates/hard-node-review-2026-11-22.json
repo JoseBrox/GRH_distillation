@@ -69,7 +69,8 @@
       "status": "PASS",
       "reviewers": [
         "rh_selmer_frontier",
-        "root"
+        "root",
+        "geometric_frontier"
       ],
       "checked": [
         "The finite conormal quotient removes ambient torsion before imposing the global equations; its finite-length torsion is retained.",
@@ -94,12 +95,45 @@
           "sha256": "4cf963fc553b2d04ee9b438f517cad5a7a8c61d0f9d1699a00c15467eea9b33c"
         }
       ]
+    },
+    {
+      "id": "boundary-hodge-freeness",
+      "status": "PASS",
+      "reviewers": [
+        "geometric_frontier",
+        "finite_window_audit",
+        "root"
+      ],
+      "checked": [
+        "The first-infinitesimal rigidification gives the exact universal-extension tangent action, including inverse-adjunction sign, without division by p.",
+        "The functorial finite free Witt crystal lifts the coefficient action without asserting a simultaneous geometric lift.",
+        "Each ramified coefficient factor over Witt vectors is a DVR; torsion-freeness yields projectivity and residue-character multiplicities give common rank.",
+        "The actual pullback-line hypothesis and the units theorem yield the one gauge matrix used for the three-step projective toric filtration.",
+        "The integral toric lattice and its conjugate integer dual are projective; freeness descends and lifts on the same local stalk.",
+        "Root independently checked Mazur\u2013Messing I2.1,I2.6.7,II9,II15 and Conrad Theorem1.1 primary statements; finite_window_audit reviewed the full stated comparison.",
+        "Actual boundary quotient/pullback data, conjugate filtrations and CM evaluation remain distinct inputs; the prospective logarithmic comparison is not claimed."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/boundary-hodge-freeness.md",
+          "sha256": "a9e84a63eea4bf67adeb8319e84e1d863ada42fe2420814336b4a36c5b4d1235"
+        },
+        {
+          "path": "scripts/check_boundary_hodge_freeness.py",
+          "sha256": "3d570eaf5fa20c5ac8fc65dbe09071497ba46793e6bc28bafcfadef1810c22ea"
+        },
+        {
+          "path": "certificates/boundary-hodge-freeness.json",
+          "sha256": "d4d50de02214ef05c2d952bdeacb5fe6e3e26926106839a84b1462e7848b5f0e"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
     "python scripts/check_determinant_torsion_rigidity.py --offline",
     "python scripts/check_basis_invariant_trace_obstruction.py",
-    "python scripts/check_rh_selmer_conormal_pairing.py"
+    "python scripts/check_rh_selmer_conormal_pairing.py",
+    "python scripts/check_boundary_hodge_freeness.py"
   ],
   "node_counts": {
     "rh": {
