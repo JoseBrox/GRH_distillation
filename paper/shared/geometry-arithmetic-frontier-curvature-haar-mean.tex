@@ -1,0 +1,93 @@
+\subsection{The geometric mean is a Haar mean}
+\label{sec:curvature-haar-mean}
+
+We now identify the mean defined by the original Hodge metric, once
+its complex uniformization and local metric identifications are given.
+For the matrix domain
+\[
+ \mathcal D_{p,q}=\{Z\in M_{p,q}(\mathbf C):I_q-Z^*Z>0\},
+ \qquad \Phi(Z)=-\log\det(I_q-Z^*Z),
+\]
+the determinant quotient Hodge norm has local logarithm $\Phi/2$,
+up to a pluriharmonic term. Indeed, on the positive plane
+$\operatorname{graph}(W)$ the quotient metric has Gram matrix
+$(I_q-WW^*)^{-1}$; its determinant norm is the square root of
+its determinant. The transpose coordinate $Z=W^t$ gives the
+displayed potential.
+
+Put $\Phi=\sum_\sigma\Phi_\sigma$ on the product domain and
+$n=\sum_\sigma p_\sigma q_\sigma$. Direct differentiation gives
+\[
+ (\partial\bar\partial\Phi_\sigma)_Z(T,\bar T)
+ =\operatorname{tr}\bigl((I-ZZ^*)^{-1}
+                       T(I-Z^*Z)^{-1}T^*\bigr).
+\]
+The determinant of this Hessian is
+$\det(I-Z^*Z)^{-(p_\sigma+q_\sigma)}$. Therefore, with
+$dd^c=(i/\pi)\partial\bar\partial$,
+\[
+ (dd^c(\Phi/2))^n=c_n b\,dV,\qquad
+ c_n=\frac{n!}{\pi^n},\qquad
+ b=\prod_\sigma\det(I-Z_\sigma^*Z_\sigma)^{-(p_\sigma+q_\sigma)}.
+\]
+This includes zero-dimensional factors by the empty-determinant
+convention. In our equal-signature case, $b=\exp(N\Phi)$.
+
+The fractional linear unitary action changes $\Phi$ by
+$2\log|\det(CZ+D)|$. Its Levi form is unchanged, so $b\,dV$
+is invariant. Since the stabilizer $K$ is compact, the pushforward
+of Haar measure under $G\to G/K$ is $c\,b\,dV$ for some
+$0<c<\infty$.
+
+\begin{proposition}\label{prop:geometric-haar-mean}
+Retain the original finite collection of arithmetic components of
+complex dimension $n$, their measurable fundamental sets $\mathcal F_k$,
+and restrictions $\gamma_m:B_m\to X$ of local holomorphic sheets, with
+$B_m\subset\mathcal F_{k(m)}$. Suppose these sheets are disjoint
+and cover up to chart-null sets, their multiplicity over almost
+every point of $\mathcal F_k$ is $d_k\in\mathbf Z_{\ge0}$ with
+$\sum_k d_k>0$, and their original Hodge
+potential is $\Phi_k/2+\Re H_m$ locally. Then the original
+normalized geometric mean is
+\[
+ \operatorname{mean}_X(g)=
+ \sum_{k:d_k>0}\frac{d_kV_k}{\sum_\ell d_\ell V_\ell}
+                 \int\bar g_k\,d\nu_k,\qquad
+ V_k=\int_{\mathcal F_k}b_k\,dV,
+\]
+where $\nu_k$ is normalized arithmetic Haar measure and
+$\bar g_k$ averages the $d_k$ sheet values. The assertion holds
+for every absolutely integrable function $g$ on the projective variety.
+\end{proposition}
+
+\begin{proof}
+Holomorphic change of variables gives the original analytic
+integral as
+\[
+ I(g)=c_n\sum_m\int_{B_m}g(\gamma_m(t))b_{k(m)}(t)\,dV(t).
+\]
+Use nonnegative measures first; absolute integrability then
+justifies signed sums. The arithmetic finite-volume theorem gives
+$0<V_k<\infty$. Consequently
+$I(1)=c_n\sum_k d_kV_k>0$, and division gives the formula.
+The original denominator is defined by this same Hodge-potential
+integral against $1$, so it is exactly $I(1)$.
+
+For precision, let $s_k$ be the order of the kernel of
+$\Gamma_k$ on its domain, and write
+$(\pi_k)_*dg_k=c_kb_k\,dV$. Almost every point has stabilizer
+of order $s_k$: every additional fixed locus is a proper analytic
+subset. The raw quotient volume is
+$(c_k/s_k)V_k$. Thus normalized component Haar measure is
+$b_k\,dV/V_k$, while the weights retain $d_kV_k$.
+No stabilizer or relative volume is suppressed.
+\end{proof}
+
+For lattice invariants the prescribed fibre isometries make all
+sheet values equal. Proposition~\ref{prop:arithmetic-isotropic-integrability}
+therefore gives finite mean and the same radius scaling for the
+original isotropic count. The cusp bound applies with its original
+normalization. The required geometric input is the actual
+uniformization with these sheets and this metric; their existence
+is not inferred from a probability-measure contract. The arithmetic
+model and signed boundary intersection limit remain separate.
