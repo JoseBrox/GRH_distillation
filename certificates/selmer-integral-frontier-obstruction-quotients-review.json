@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:54:35.969304+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "All original odd Selmer obstruction quotients, retaining the supplied arithmetic cohomology system.",
+  "audit_groups": [
+    {
+      "topic": "Exact cochain quotient",
+      "result": "PASS",
+      "finding": "The boundary pairs, allowed local cocycles and exact sequence give the stated cardinality formula. The local quotients are the original lower odd coordinates; no replacement Selmer condition is used."
+    },
+    {
+      "topic": "Euler cancellation and duality",
+      "result": "PASS",
+      "finding": "The odd rank is 2ab, real invariant rank ab, and ordinary quotient rank ab. Global and local Euler factors cancel the leading degree terms. The duality cokernel is bounded by the additive prime-field dual already supplied, including residue extensions."
+    },
+    {
+      "topic": "Both coefficient sequences",
+      "result": "PASS",
+      "finding": "The maps i,p,r have explicit domains and satisfy ir=t^e. Ordinary allowed cocycles lift as boundaries; old unramified cocycles lift a Frobenius value. The proof does not assume arbitrary H1 surjectivity."
+    },
+    {
+      "topic": "Defect injection",
+      "result": "PASS",
+      "finding": "Odd-prime H3 vanishes, so the global H2 class lifts. Its chosen local defects, modulo global H2, classify lifting failure sufficiently for a choice-based injection. Equal defects make the difference lift; a canonical homomorphism is unnecessary."
+    },
+    {
+      "topic": "Uniform constants and endpoints",
+      "result": "PASS",
+      "finding": "The upper bound is q^(ge+C0+Caux+r_ell Ch+2Cd) for all 0<=e<=m. Zero-length coefficient modules obey both sequences. Constants precede m and only the tower threshold depends on m."
+    },
+    {
+      "topic": "Scope",
+      "result": "PASS",
+      "finding": "The quotient theorem feeds the previously proved generator lemma. Identification with the second-order W2 Selmer set is a separate theorem, not hidden in this result."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.ObstructionBoundFromDuality",
+      "sha256": "7a5da430721798673ce5acf91a7571fdaa013572a61313304aa0a4be427581ef",
+      "git_blob_sha1": "be6579aad5e4106685e6a39b36d4b9d102886213",
+      "independently_read_ranges": [
+        [
+          13,
+          28
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.ExactMid",
+      "sha256": "117addc97c162806f25edc8899e91354eb85467b8f7d00e5ac41bec18cadf01a",
+      "git_blob_sha1": "5ec6028b5e0fd3219a7da2b7e5a9a2116acd4967",
+      "independently_read_ranges": [
+        [
+          45,
+          115
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.CokerBound",
+      "sha256": "8ab559f293076f45353b9680c31cb3076f1c6b3ebf75d925c03de09a6f025f6a",
+      "git_blob_sha1": "62737e685a01081622c2e1d2cb3faae8622cad6a",
+      "independently_read_ranges": [
+        [
+          27,
+          72
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.ObstructionBoundOfDuality",
+      "sha256": "e1bd2b2dd07879ca3e8ff783bb6695039ca1f0bea87e788c880fbdfbce63eb7e",
+      "git_blob_sha1": "2f13105b1713b37f51b4ea261b7e7bac37a30197",
+      "independently_read_ranges": [
+        [
+          145,
+          199
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.PushforwardPreservesSelmerCocycles",
+      "sha256": "bbf1ecded1079fb7825554ceeedc2c7e33a1b8d43ed1228febd6ed052d5c4e8c",
+      "git_blob_sha1": "0835400045951e4ad060bb9d70cf8b90ccdaad6a",
+      "independently_read_ranges": [
+        [
+          184,
+          222
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_selmer_integral_frontier_obstruction_quotients.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "finite_cochain_complexes": {
+        "exact_cardinality_sequences": 96,
+        "opposite_coefficient_bounds": 216,
+        "hypothesis_gate_failures": 24,
+        "nonzero_local_defect_cokernels": 24
+      },
+      "coefficients": {
+        "exact_coefficient_sequences": 56,
+        "opposite_coefficient_compositions": 7108,
+        "edge_cases": "e=0, e=m, m=0 and empty blocks included",
+        "negative_control": "The finite cochain suite detects failures of global H2 surjectivity or allowed-local-cocycle lifting and does not apply the quotient lemma there."
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-obstruction-quotients.md",
+      "sha256": "4661f9d444e1f08be1b626128710d8baa6bd1cba60eeceea2fa4231dac951363"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-obstruction-quotients.tex",
+      "sha256": "9704a2a435519efb4c10c77361a41b503f61858fd645463970888a42814de480"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-obstruction-quotients-references.tex",
+      "sha256": "3e0abc5f8f21dde80889c95c3b154bcf5d18d673e3705f7ee3a8881110cb4c1c"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_obstruction_quotients.py",
+      "sha256": "4a1d3107eec0d08745e63e9cf19cc829aa559b552b4d34b0822aa4f507e74097"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-obstruction-quotients.json",
+      "sha256": "f7a11af7beba9b4a527f4501beefb143857de1637d1146bbedeffb76be781c52"
+    }
+  ],
+  "limits": [
+    "Original arithmetic systems, normalized points and patched modules remain supplied inputs.",
+    "The full W2 translation is separate.",
+    "Finite checks supplement the human proof; no Lean build; no whole-node closure."
+  ]
+}

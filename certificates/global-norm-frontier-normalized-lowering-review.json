@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:54:35.972239+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Original normalized Bessel lowering constant, from the original subgroup-period normalization and signed tensor family.",
+  "audit_groups": [
+    {
+      "topic": "Period domain and adjoint",
+      "result": "PASS",
+      "finding": "The test domain is the span of group translates of compact finite smooth vectors, as in the source. Tensor intertwiners preserve it. The absolutely convergent subgroup-period identity yields BC_s=epsilon_s conjugate(kappa_s)B_s by a nonzero Bessel test vector, without quotient L2 mass."
+    },
+    {
+      "topic": "Ordered quantum cofactor",
+      "result": "PASS",
+      "finding": "The existing ordered Capelli relations give the displayed comatrix identity with shift (n-1)/2. Evaluation at -mu_s extracts exactly the spectral projector times the product of parameter differences; the matrix-unit finite checks independently detect a unit shift error."
+    },
+    {
+      "topic": "Original frame and character strings",
+      "result": "PASS",
+      "finding": "The original Witt frame fixes the projector entry, not merely its magnitude. Row removals keep the parameter, column removals lower it by one, and the two strings contribute T0. At r=0 the tensor and evaluation factors are -sqrt(T0) and sqrt(T0); the same modulus survives."
+    },
+    {
+      "topic": "Scalar and formal degree",
+      "result": "PASS",
+      "finding": "The evaluated composition and normalized adjoint give |kappa_s|^2. The common-Haar formal-degree product cancels the unshifted denominator, leaving exactly the preceding numerical product. Different Haar constants are expressly excluded."
+    },
+    {
+      "topic": "Retained analytic inputs",
+      "result": "PASS",
+      "finding": "Signed Pieri existence, existence and original identification of the normalized Bessel family, and quotient mass remain separate. This proof supplies the lowering identity under the original period normalization, not an arbitrary normalized substitute."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AbelianVarietyTheory.Definitions.Jets.SumIoPrAlt",
+      "sha256": "970f57f4a3de5de638737040d3c31daa0c2b1563c9a5548a4c673313d5a6fc16",
+      "git_blob_sha1": "ce6c62731c098d40df190e9659c9e2b7c8b535f2",
+      "independently_read_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.TensorMomentEstimate",
+      "sha256": "94930a0d0e9fbfa8d976ebd3d4b3dc23e7bc7ac83942c69718ccd5137b0a81c2",
+      "git_blob_sha1": "cfb0dde17c63841e5bd4b266dde17f6865f5c486",
+      "independently_read_ranges": [
+        [
+          59,
+          83
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.QuantumMinorRowExpansionEigenFunctional",
+      "sha256": "5e277170bc7f924fc599d2ddf9fd80b005d0aba55ba447080c7730ff4d2400d2",
+      "git_blob_sha1": "efb26176f6fc3238cc1748f3dc897f7c90ee8ce5",
+      "independently_read_ranges": [
+        [
+          13,
+          47
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.QuantumMinorColumnExpansionUnderLinearMap",
+      "sha256": "bbe9d366bcd4c4d880f30310c61d72815ee185c38fc55cc81167865fedfbff96",
+      "git_blob_sha1": "d50e9d6735b39828508bb0892da9120acae0158d",
+      "independently_read_ranges": [
+        [
+          29,
+          72
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.DualTensorBesselMoment",
+      "sha256": "d4876992cf77fc15d7dbf4970f0ec57afe7440536f0badb3d9e5a0da7e1d9efb",
+      "git_blob_sha1": "1895e93c2b7575a871469484870e6aa3b45d66b5",
+      "independently_read_ranges": [
+        [
+          131,
+          174
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.FamilySetupMomentGrowth",
+      "sha256": "a9264b1f873342a5682f15f3a5aedc770311859b8bfc0a31bdebfdf6deeb8dfe",
+      "git_blob_sha1": "c0c0f10cdebc9d9fe43c32eb24d943cb79e79682",
+      "independently_read_ranges": [
+        [
+          66,
+          113
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.FrameWConjMatrixUnits",
+      "sha256": "848ae2a29a2eeba1cd3c9a7736c3a805c2eca482b9e299316ee6de336ff17890",
+      "git_blob_sha1": "713dff6fdd0f0a0fefbf0362b0c5d6685811dce7",
+      "independently_read_ranges": [
+        [
+          337,
+          340
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_global_norm_frontier_normalized_lowering.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "quantum_comatrices": {
+        "exact_matrix_unit_modules": 7,
+        "polynomial_identity_evaluations": 23,
+        "spectral_cofactor_extractions": 16,
+        "zero_spectral_summands": 4,
+        "scope": "Finite representations check ordered shifts, signs and polynomial extraction; general proof is in the TeX."
+      },
+      "character_strings": {
+        "original_row_column_configurations": 48,
+        "row_removals": 120,
+        "column_removals": 120,
+        "rank_zero_configurations": 8,
+        "exact_geometric_factor_and_final_shift": true
+      },
+      "formal_degrees": {
+        "same_constant_vandermonde_ratio_cases": 44
+      },
+      "negative_controls": {
+        "controls_rejected": 2,
+        "labels": [
+          "quantum comatrix right-hand shift changed by one",
+          "different Haar scaling constants cancelled as identical"
+        ]
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/global-norm-frontier-normalized-lowering.md",
+      "sha256": "090cc3fbfc7b8fb4fe4a3ac903a93b0b14a2ef68f32ec88e58fe14e06008c367"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-normalized-lowering.tex",
+      "sha256": "aa18dbd5d817f08fdc52bc29c3ebbe2d862a860412cbe7aff4e90483cfdfc71e"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-normalized-lowering-references.tex",
+      "sha256": "fd9dc25f2d48716744b100b6d62d22010c5e1f93ff0ed5ef7a0833fc09de5474"
+    },
+    {
+      "path": "scripts/check_global_norm_frontier_normalized_lowering.py",
+      "sha256": "a7d05178a50344653000f2c42aa8a673ff9501f2450f2c4a5d59cdb5a0a8d5f3"
+    },
+    {
+      "path": "certificates/global-norm-frontier-normalized-lowering.json",
+      "sha256": "25d5cd96fc968624752556b4fb04c8cbcbec71cef089ec97f8eefba9572120e1"
+    }
+  ],
+  "limits": [
+    "Original signed tensor and normalized Bessel-family existence are retained.",
+    "No quotient L2 mass, global orbit bound or complete leading-minor theorem is claimed.",
+    "Finite exact checks supplement the human proof; no Lean build; no whole-node closure."
+  ]
+}

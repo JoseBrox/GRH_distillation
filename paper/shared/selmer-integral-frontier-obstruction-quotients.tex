@@ -1,0 +1,121 @@
+\paragraph{The obstruction module at every truncation.}
+Assume that the prime $\ell$ is odd. For the original odd
+coefficient module $M_m=O_m$, let
+$\pi_w:M_m\twoheadrightarrow Q_{w,m}$ be its prescribed local
+quotients. Put
+$U_w=\ker(H^1(G_w,Q_{w,m})\to H^1(J_w,Q_{w,m}))$,
+where $J_w=G_w$ at an ordinary place and $J_w$ is the original
+inertia subgroup at an old place. Define $H_{N,m}$ by pairs
+\[
+ (z,(y_w)_w),\quad z\in Z^2(\Gamma_N,M_m),\quad
+ dy_w=\pi_w\operatorname{res}_wz,
+\]
+modulo pairs $(dx,(\pi_w\operatorname{res}_wx+u_w)_w)$ with
+$[u_w]\in U_w$. All cochains are continuous and
+$dx(g,h)=g x(h)-x(gh)+x(g)$.
+
+\begin{proposition}[All obstruction quotients]
+\label{prop:selmer-obstruction-quotients}
+Under the retained original arithmetic cohomology system,
+$H_{N,m}$ is finite and killed by $t^m$. Let
+$r_\ell=|\{v:v\mid\ell\}|$ be the number of ordinary places. For
+\[
+C_2=C_0+C_{\rm aux}+r_\ell C_h+2C_d
+\]
+and every $m$, all sufficiently large $N$ satisfy
+\[
+              |H_{N,m}/t^eH_{N,m}|\leq q^{ge+C_2}
+                    \qquad(0\leq e\leq m).
+\]
+\end{proposition}
+
+\begin{proof}
+Write $\mathcal T=\prod_wH^1(G_w,Q_{w,m})/U_w$ and let
+$K_{2,N,m}$ be the cokernel of the map from global to local
+second cohomology. Forgetting the local cochains and, in the
+other direction, adjoining a zero global cocycle give an exact
+sequence
+\[
+ 0\to\operatorname{coker}(H^1(\Gamma_N,M_m)\to\mathcal T)
+ \to H_{N,m}\to\ker(H^2(\Gamma_N,M_m)\to
+                  \prod_wH^2(G_w,Q_{w,m}))\to0.
+\]
+Exactness follows directly by subtracting a global primitive;
+surjectivity onto the right kernel follows by choosing local
+continuous primitives. If $S_{N,m}$ is the odd Selmer group,
+taking orders gives
+\[
+ |H_{N,m}|=|S_{N,m}|\,|K_{2,N,m}|
+ \frac{|H^2(\Gamma_N,M_m)|}{|H^1(\Gamma_N,M_m)|}
+ \prod_w\frac{|H^1(G_w,Q_{w,m})|}
+                 {|U_w|\,|H^2(G_w,Q_{w,m})|}.
+\]
+
+Put $R=q^{mab}$. The odd module has order $R^2$, its real
+fixed modules have order $R$, and each ordinary quotient has
+order $R$. The last assertion uses its $ab$ lower coordinates
+between distinct block types in the actual ordinary basis.
+Global and local Euler identities, the old unramified count,
+and $\sum_vd_v=d$ therefore imply
+\[
+ |H_{N,m}|\leq |S_{N,m}|
+       \prod_{v\mid\ell}|H^0(G_v,Q_{v,m})|\,|K_{2,N,m}|.
+\]
+The supplied global duality bounds $|K_{2,N,m}|$ by the
+cyclotomically equivariant additive dual. Proposition
+\ref{prop:selmer-second-bound-suppliers} and auxiliary descent give
+\[
+ |H_{N,e}|\leq q^{ge+C_0+C_{\rm aux}+r_\ell C_h+C_d},
+ \qquad |K_{2,N,e}|\leq q^{C_d},
+\]
+simultaneously for $e\leq m$ at sufficiently large level.
+
+Use both coefficient sequences
+\[
+ 0\to A_{m-e}\xrightarrow{t^e}A_m\to A_e\to0,\qquad
+ 0\to A_e\xrightarrow{t^{m-e}}A_m\to A_{m-e}\to0.
+\]
+They are exact on the global odd modules and on their free
+local-coordinate quotients. Their maps on the obstruction modules are
+\[
+ i:H_{N,m-e}\to H_{N,m},\qquad
+ p:H_{N,m}\to H_{N,e},\qquad
+ r:H_{N,m}\to H_{N,m-e},
+\]
+and $ir=t^e$.
+
+We have $\ker p\subseteq\operatorname{im}i$. To see this, lift
+a boundary pair representing the image of a class in $\ker p$.
+Its allowed local cocycles lift: at ordinary places lift their
+boundary primitives; at old places use the original unramified
+lifting property, which in the Galois case is lifting one
+Frobenius value. Subtract this pair and lift both remaining
+components through their exact coefficient kernels.
+
+Also
+\[
+ |H_{N,m-e}/r(H_{N,m})|\leq |K_{2,N,e}|.
+\]
+Indeed, the original global right exactness in degree two lifts
+the global cocycle component. For the actual odd-primary Galois
+coefficients it follows from degree-three vanishing
+\cite[I, Theorem 4.10(c)]{milne-adt}. Arbitrary lifts of the local
+one-cochains can fail their differential equations only by local
+two-cocycles with coefficients in $A_e$. Their classes modulo
+global second cohomology give the defect in $K_{2,N,e}$. Equal
+defects for two chosen representatives imply that their difference
+lifts, giving an injection of the displayed quotient set into
+$K_{2,N,e}$. No canonical homomorphism is needed.
+
+Finally, filter $H_{N,m}/t^eH_{N,m}$ by
+$\operatorname{im}i/t^eH_{N,m}$. Its quotient has at most
+$|H_{N,e}|$ elements, and that submodule has at most
+$|K_{2,N,e}|$ elements. Multiplying these bounds proves the
+claim, including coefficient length zero
+\cite{alpo-obstruction-quotients}.
+\end{proof}
+
+Lemma~\ref{lem:selmer-finite-obstruction} now applies with this
+one $C_2$. The remaining step identifies the obstruction attached
+to the actual even cocycle tuples and translates its vanishing
+into the prescribed second-order lift.

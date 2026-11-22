@@ -2,7 +2,8 @@
 
 ## Result and scope
 
-Fix the original normalized characteristic-prime point, with coefficient
+Assume that the prime \(\ell\) is odd. Fix the original normalized
+characteristic-prime point, with coefficient
 ring \(A=k[[t]]\), \(q=|k|\), representation \(\rho\), two block sizes
 \(a,b\), \(a+b=n\), and odd Selmer family
 \(\kappa_1,\ldots,\kappa_g\). Write \(O_m\) for the odd matrices over

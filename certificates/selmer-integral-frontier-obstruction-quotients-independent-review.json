@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "independent archimedean research agent",
+  "status": "PASS",
+  "claim_reviewed": "Original obstruction quotient bound under the retained arithmetic cohomology system; no whole-node claim.",
+  "files_sha256": {
+    "notes/selmer-integral-frontier-obstruction-quotients.md": "4661f9d444e1f08be1b626128710d8baa6bd1cba60eeceea2fa4231dac951363",
+    "paper/shared/selmer-integral-frontier-obstruction-quotients.tex": "9704a2a435519efb4c10c77361a41b503f61858fd645463970888a42814de480",
+    "paper/shared/selmer-integral-frontier-obstruction-quotients-references.tex": "3e0abc5f8f21dde80889c95c3b154bcf5d18d673e3705f7ee3a8881110cb4c1c",
+    "scripts/check_selmer_integral_frontier_obstruction_quotients.py": "4a1d3107eec0d08745e63e9cf19cc829aa559b552b4d34b0822aa4f507e74097",
+    "certificates/selmer-integral-frontier-obstruction-quotients.json": "f7a11af7beba9b4a527f4501beefb143857de1637d1146bbedeffb76be781c52",
+    "paper/shared/selmer-integral-frontier-second-bound-suppliers.tex": "12201f56f0d42a2fa5e314c6c20f03cc10b3baeb03671a1ef29203071e9ac40e",
+    "notes/selmer-integral-frontier-second-bound-suppliers.md": "bc8702e4772f4ba26ec92c78323c8f5a91b9bb971948c34422be28522c47d530",
+    "certificates/selmer-integral-frontier-second-bound-suppliers.json": "af9ee5e1cd2ca0b4f9dd6249e819d9537c17a9fa8455f80235f1335cf123ac06"
+  },
+  "source_spots": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.OdLam",
+      "revision": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "d7dbe2345a789baf20020040ac6e07f17b7358cc1712c1de44190dd481218b21",
+      "lines": [
+        5,
+        25
+      ],
+      "excerpt_sha256": "3852b0c8c5a750d40b5b8bb4857bf3ee5a4acb1ac0a866d5713580aad32fd605"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.CokerBound",
+      "revision": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "8ab559f293076f45353b9680c31cb3076f1c6b3ebf75d925c03de09a6f025f6a",
+      "lines": [
+        105,
+        168
+      ],
+      "excerpt_sha256": "e0e907e51345799da7a41de010faed58a3adb47aad150c388f9162352db5a8ff"
+    }
+  ],
+  "mathematical_checks": [
+    {
+      "item": "cohomological cardinality sequence",
+      "finding": "Exact sequence and order formula are correct. Forgetting local primitives maps onto the global H2 localization kernel; its kernel is the stated H1 cokernel."
+    },
+    {
+      "item": "allowed local cocycle lifting",
+      "finding": "At ordinary places lift zero-cochain primitives. At old places inertia acts trivially, so the allowed cocycle itself vanishes on inertia; a Frobenius value lifts. For a finite module any lifted value defines a continuous procyclic cocycle: choose a period divisible by the action order and the additive exponent. No arbitrary H1 surjectivity is used."
+    },
+    {
+      "item": "defect set injection",
+      "finding": "H2 surjectivity first lifts a global class, then a lifted one-cochain corrects to an exact cocycle lift. The local errors are kernel-valued 2-cocycles. Equality of two chosen defects modulo global H2 makes their representative difference lift. Choosing one representative per quotient class therefore gives an injection even without a canonical homomorphism."
+    },
+    {
+      "item": "opposite coefficient sequences",
+      "finding": "The two orientations are both needed. Their composite is t^e; middle exactness gives the first quotient factor H_e, and the reverse map defect bounds the remaining image factor by K2_e. No injectivity of the induced H2 map is assumed."
+    },
+    {
+      "item": "three odd constants and auxiliary descent",
+      "finding": "C0 plus C_aux bounds the odd Selmer factor. C_h appears once per ordinary place, not per local degree. The additive-dual bound C_d applies to the global H2 cokernel and appears twice: once in H_e and once in the reverse-sequence defect. Thus C2=C0+C_aux+r_ell*C_h+2*C_d has the stated quantifiers."
+    },
+    {
+      "item": "rank cancellation and boundaries",
+      "finding": "Odd rank 2ab, real fixed rank ab and ordinary quotient rank ab give cancellation using sum d_v=d. The coefficient-length-zero, e=0 and e=m cases are included."
+    }
+  ],
+  "rerun_exact_checks": {
+    "finite_cochain_complexes": {
+      "exact_cardinality_sequences": 96,
+      "opposite_coefficient_bounds": 216,
+      "hypothesis_gate_failures": 24,
+      "nonzero_local_defect_cokernels": 24
+    },
+    "coefficients": {
+      "exact_coefficient_sequences": 56,
+      "opposite_coefficient_compositions": 7108,
+      "edge_cases": "e=0, e=m, m=0 and empty blocks included",
+      "negative_control": "The finite cochain suite detects failures of global H2 surjectivity or allowed-local-cocycle lifting and does not apply the quotient lemma there."
+    }
+  },
+  "limits": [
+    "Arithmetic finiteness, Euler identities, global duality and global H2 right exactness remain retained inputs; this review does not reprove them.",
+    "Finite cyclic computations test the algebraic hypotheses, not actual arithmetic duality.",
+    "The original W2 cocycle translation is separate from this package.",
+    "No Lean build and no RH/GRH whole-node closure is asserted."
+  ]
+}

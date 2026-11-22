@@ -1,0 +1,245 @@
+\subsection{The degree-normalized Bessel lowering scalar}
+\label{archimedean-normalized-lowering}
+
+We now retain the original normalization by subgroup periods.  This
+normalization is an input to the original family; it is distinct from
+the still separate quotient $L^2$ isometry.  Under this input the
+normalized lowering scalar can be evaluated, and the preceding product
+estimate gives its required uniform bound
+\cite{normalized-lowering-source}.
+
+Let $n=2r+k+1$, $k\ge1$, and let $H,H_s$ be the original unitary
+representations with parameters $\mu,\mu-e_s$.  Retain their signed
+dual-standard tensor decomposition $i_s,p_s$, with signs $\epsilon_s$,
+as in Theorem~\ref{original-tensor-projection-bound}.  All operators
+below act on common invariant smooth domains.  For each representation
+write $\mathcal D$ for the linear span of group translates of its
+compact finite smooth vectors.  This is the original period test
+domain; it includes the compact finite vectors used in the norm
+recursion.  Write $S$ for the
+original Bessel subgroup, and $\mathcal B:H\to W$,
+$\mathcal B_s:H_s\to W$ for its Bessel maps.  Assume $\mathcal B$
+is nonzero on $\mathcal D$.
+
+The normalization is the following exact assertion.  With the
+original subgroup measure and character, the absolutely convergent
+operator period satisfies
+\begin{equation}\label{lowering-period-normalization}
+ \mathcal P_H(w,v)=R(\mathcal B w,\mathcal B v),\qquad
+ R(a,b)\xi=a\langle b,\xi\rangle,
+\end{equation}
+for smooth $w$ and $v\in\mathcal D$, and the same assertion holds
+for every $H_s$.  The kernel defining $\mathcal P_H$ is the original
+compact representation and unipotent character.  In particular all
+periods in the following comparison use the same subgroup measures.
+This is exactly the source's normalized Bessel-map condition, not a
+choice to make a weighted integral have mass one.
+
+Let $f_0$ be the original first flag vector, and let
+$\omega=\operatorname{flat}(f_0)$ in the dual standard representation.
+It is fixed by $S$.  Define
+\[
+ A_s v=p_s(\omega\otimes v),\qquad
+ C_s y=\operatorname{ev}_{\Gamma}(\omega,i_sy),
+\]
+where $\Gamma$ is the original invariant Hermitian form on the dual
+standard module.  The signed isometry gives the positive-Hilbert-space
+adjoint identity $C_s=\epsilon_s A_s^*$.  Suppose the original lowering
+scalar $\kappa_s$ is characterized by
+\begin{equation}\label{lowering-scalar-definition}
+                  \mathcal B_sA_s=\kappa_s\mathcal B
+\end{equation}
+on $\mathcal D$.  The tensor maps preserve these test domains:
+apply an intertwiner to a translated compact finite tensor and use
+finite dimensionality of the standard factor.  The existence of the Pieri decomposition
+and of the Bessel family is retained; no different family is introduced.
+
+\begin{lemma}\label{lowering-normalized-adjoint}
+Under \eqref{lowering-period-normalization} and
+\eqref{lowering-scalar-definition},
+\[
+                \mathcal B C_s=\epsilon_s\overline{\kappa_s}
+                                                    \mathcal B_s.
+\]
+\end{lemma}
+\begin{proof}
+Because $\omega$ is $S$-fixed, $C_s$ intertwines the $S$ actions.
+For every $g\in S$ its matrix coefficients therefore satisfy
+\[
+        \langle v,\sigma(g)C_sy\rangle
+                   =\epsilon_s\langle A_sv,\sigma_s(g)y\rangle.
+\]
+Multiply by the unchanged period kernel and integrate.  The absolute
+convergence in \eqref{lowering-period-normalization} justifies the
+comparison and gives
+\[
+ R(\mathcal B C_sy,\mathcal B v)
+       =\epsilon_s R(\mathcal B_s y,\mathcal B_sA_sv)
+       =\epsilon_s\overline{\kappa_s}
+                           R(\mathcal B_s y,\mathcal B v).
+\]
+Choose $v\in\mathcal D$ with $\mathcal B v\ne0$.  Applying both
+sides to $\mathcal B v$ cancels the positive number
+$\|\mathcal B v\|^2$ and proves the identity.  It also covers
+$\mathcal B_s=0$, when \eqref{lowering-scalar-definition} forces
+$\kappa_s=0$.
+\end{proof}
+
+We give the operator evaluation needed for the scalar, with the shifts
+visible.  For ordered row and column lists of length $d$ use the
+original Capelli minor
+\[
+ Q_{I,J}(u)=\sum_{\sigma\in\mathfrak S_d}\operatorname{sgn}(\sigma)
+       \prod_{a=0}^{d-1}
+       \bigl(E_{i_{\sigma(a)},j_a}+(u-a)\delta_{i_{\sigma(a)},j_a}\bigr),
+\]
+in the displayed order.  The empty minor is the identity.  The usual
+matrix-unit commutator relation implies row and column alternation and
+the ordered cofactor identity
+\begin{equation}\label{lowering-quantum-comatrix}
+ \mathcal C(Y)\bigl((Y-(n-1)/2)I-T\bigr)
+             =Q_n(Y+(n-1)/2)I,
+\end{equation}
+where $(Tx)_a=-\sum_bE_{ab}x_b$ and
+$\mathcal C(Y)_{ij}=(-1)^{i+j}Q_{\widehat j,\widehat i}(Y+(n-1)/2)$.
+The determinant on the right acts on each coordinate.  To obtain
+\eqref{lowering-quantum-comatrix}, append a row to a cofactor and use
+the ordered end-row expansion; a repeated row contributes zero, and
+the missing row contributes the full minor.  The appended row acts
+on the right at parameter $Y-(n-1)/2$.  Thus no adjacent noncommuting
+operators have been exchanged.  This is the same cofactor calculation
+as for the original ordered minors
+\cite{normalized-lowering-prior-minors}.
+
+The original central character and compact Capelli parameter give
+\begin{align}
+ Q_n(Y+(n-1)/2)&=\prod_t(Y+\mu_t)I,                  \label{lowering-full-character}\\
+ \mathcal B Q_{W,W}(v)
+   &=\prod_{i=1}^k(v-k/2+1/2+u_i)\mathcal B,        \label{lowering-compact-character}
+\end{align}
+where $W=(r,r+1,\ldots,r+k-1)$ is the positive compact block in an
+adapted Bessel frame.  These retain the original representation
+parameters; the compact identity is part of the original side datum.
+
+Let $P_s=i_sp_s$.  The tensor Casimir computation gives
+$TP_s=(-\mu_s-(n-1)/2)P_s$.  On this summand,
+\eqref{lowering-quantum-comatrix} and
+\eqref{lowering-full-character} imply the polynomial identity
+\[
+              \mathcal C(Y)P_s=\prod_{t\ne s}(Y+\mu_t)P_s.
+\]
+One first cancels $Y+\mu_s$ away from its single zero, and then uses
+equality of polynomial coefficients.  Consequently
+\begin{equation}\label{lowering-projector-cofactor}
+              \mathcal C(-\mu_s)=D_sP_s,
+        \qquad D_s=\prod_{t\ne s}(\mu_t-\mu_s)\ne0.
+\end{equation}
+
+To evaluate the relevant entry, choose the original Witt frame with
+the negative vector $z$ of norm $-T_0$, $T_0>0$, represented by
+$\tau e_{r+k}$, where $\tau=\sqrt{T_0}$.  The outer isotropic
+chains retain their original unit scale.  For an upper triangular
+matrix unit outside the central block, the differentiated Bessel
+character is a scalar $p_{ab}$, with
+\[
+ |p_{ab}|=
+ \begin{cases}
+ 1,&b=a+1,\quad b<r\text{ or }a>r+k,\\
+ \tau,&(a,b)=(r-1,r+k)\text{ or }(r+k,r+k+1),\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+The two entries involving nonexistent indices are omitted when $r=0$.
+This frame is obtained by choosing an orthonormal basis of the positive
+orthogonal complement of $z$ in the original central Hermitian space;
+it changes neither $T_0$ nor the flag vectors or the period measures.
+
+In this frame the inclusion--projection matrix $P_s$ gives exactly
+\[
+ C_sA_sv=
+ \begin{cases}
+       (P_s(e_{n-1}\otimes v))_0,&r>0,\\
+       -T_0(P_s(e_{n-1}\otimes v))_{n-1},&r=0.
+ \end{cases}
+\]
+Indeed the original dual flag vector has coordinates $e_{n-1}$
+and the evaluation selects coordinate $0$ when $r>0$.  For $r=0$
+these coordinates are $-\tau e_{n-1}$ and $\tau$ times evaluation
+at $n-1$.  This identifies the cofactor entry before taking its norm.
+
+For $r>0$, the required cofactor has rows $0,\ldots,n-2$ and columns
+$1,\ldots,n-1$.  Expand in its first row, putting that row factor on
+the left.  Only its character entry survives after applying
+$\mathcal B$.  Successively remove rows $0,\ldots,r-2$ with columns
+$1,\ldots,r-1$, then row $r-1$ with column $r+k$.  The product of
+these scalars has modulus $\tau$, and the minor parameter is unchanged.
+The remaining rows are $r,\ldots,n-2$; its columns are
+$r,\ldots,r+k-1,r+k+1,\ldots,n-1$.
+
+Next put the last remaining column first and expand in that column,
+again putting its factor on the left.  Only its last-row character
+entry survives.  Remove columns $n-1,n-2,\ldots,r+k+1$ in this way.
+Column alternation contributes only signs of modulus one.  Each
+first-column expansion lowers the parameter by one.  These $r$
+steps contribute a second factor of modulus $\tau$ and leave
+\[
+                    Q_{W,W}(u-r).
+\]
+The scalar terms on the removed diagonal positions are zero: at each
+row step the removed row is absent from the column list, and at each
+column step the removed column is absent from the row list.  Thus
+these are valid left eigenfunctional substitutions, not substitutions
+inside a noncommuting product.  At $u=-\mu_s+(n-1)/2$ the surviving
+parameter is exactly $-\mu_s+k/2$.
+
+For $r=0$ no row or column is removed.  The cofactor is already the
+compact minor at $-\mu_s+k/2$.  Here $f_0=z$; the dual tensor vector
+and its evaluation contribute respectively $-\tau$ and $\tau$.
+Their product has modulus $T_0$, the same factor as the two strings
+when $r>0$.
+
+Combining this calculation with
+\eqref{lowering-compact-character} and
+\eqref{lowering-projector-cofactor} gives a scalar $c_s$ with
+\begin{equation}\label{lowering-evaluation-scalar}
+ \mathcal B C_sA_s=c_s\mathcal B,
+ \qquad
+ |c_s|=T_0\frac{\prod_i|\mu_s-1/2-u_i|}
+                     {\prod_{t\ne s}|\mu_s-\mu_t|}.
+\end{equation}
+Lemma~\ref{lowering-normalized-adjoint} and
+\eqref{lowering-scalar-definition} also give
+$c_s=\epsilon_s|\kappa_s|^2$.  Nonvanishing of $\mathcal B$ justifies
+this scalar equality; no quotient-norm nonvanishing is used.
+
+\begin{theorem}\label{original-normalized-lowering-bound}
+Retain the preceding original period normalization, tensor family,
+characters and frame, and the parameter hypotheses of
+Theorem~\ref{original-lowering-product-bound}.  If
+$b\ge B\ge10^6n^7$, then
+\[
+            |\kappa_s|^2\frac{d_\mu}{d_{\mu-e_s}}\le T_0b^4,
+\]
+where both formal degrees use the same original Haar measure.
+\end{theorem}
+\begin{proof}
+For a fixed group and Haar measure the formal-degree constant is
+independent of the parameter, so the previously established
+Harish--Chandra product formula gives
+\[
+ \frac{d_\mu}{d_{\mu-e_s}}
+       =\frac{\prod_{t\ne s}|\mu_s-\mu_t|}
+                    {\prod_{t\ne s}|\mu_s-1-\mu_t|}.
+\]
+All denominators are nonzero by the original gap hypothesis.  Multiply
+this identity by \eqref{lowering-evaluation-scalar}, use
+$|c_s|=|\kappa_s|^2$, and apply
+Theorem~\ref{original-lowering-product-bound}.
+\end{proof}
+
+The theorem reconstructs the original normalized lowering-scalar
+supplier from the original subgroup-period normalization.  It does
+not prove existence of that normalized Bessel family, its identification
+with the original Jacquet transform, or the quotient $L^2$ mass bound.
+Those analytic obligations remain necessary for the leading-minor
+norm theorem.
