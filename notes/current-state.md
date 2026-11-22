@@ -506,8 +506,10 @@ inertia averaging, ordered character matching and the Hilbert class field.
 It also proves the weight-zero tangent statement from the retained local
 finite-to-unramified comparison. Fixed-point separation follows once the
 actual model's point lifting and representation comparison are supplied.
-Negative weights, two-sided rigidity, finite degree-zero algebra and
-integral conormal torsion remain separate requirements.
+The negative-weight argument below completes the global cohomological
+and normalization arguments at the base point.
+Two-sided rigidity, finite degree-zero algebra and integral conormal
+torsion remain separate requirements.
 
 The [scalar period bound](whittaker-scalar-envelope.md) gives the exact
 original seed normalization and bounds the complete normalized period
@@ -560,6 +562,19 @@ lifting, local finite-cocycle comparison, tangent determination, two-sided
 rigidity and uniform integral Selmer bounds remain; the existing model
 comparisons are used at odd coefficient primes.
 
+The [prescribed CM-point descent](cm-period-point-descent.md) replaces
+the separate generic-point comparison by an automorphism argument.
+The exact finite-index pure-period condition gives an isogeny from a
+CM elliptic product onto the actual universal fibre. Its original
+symmetric rigidified cubical line, coefficient action and both entire
+finite level maps descend to the algebraic numbers. Point separation
+then fixes the same complex point under every automorphism over those
+numbers; finite type places it over a number field. The exact component
+and original line are preserved. Only the pointwise period presentation
+is needed, with no descent of an infinite Tate tower. The actual moduli
+model, pointwise chart and boundary-fibre conditions remain hypotheses;
+the proved proper extension supplies the integral comparison from them.
+
 ## Next mathematical work
 
 1. **Integral maps and global norms (W06/W08).** Supply the actual integral
@@ -578,7 +593,9 @@ comparisons are used at odd coefficient primes.
    marked models and establish their chart, spanning, finiteness,
    point-lifting, local tangent and trace conditions. Diagonal separation
    and weight-zero rigidity follow from the proved local/class-field
-   comparison; negative weights and two-sided rigidity remain.
+   comparison, and qualitative finiteness supplies all negative base
+   weights. The explicit marking kills normalized coboundaries. Actual
+   tangent lifting/determination and two-sided rigidity remain.
    The compatible conormal
    pairing and full abstract length theorem are now proved under those
    conditions. Its chart normalization and finite orbit cover follow
