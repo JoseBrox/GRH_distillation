@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:38:36.130896+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "The original numerical lowering product, with a shorter positive-residue proof and the scalar identification still explicit.",
+  "audit_groups": [
+    {
+      "topic": "Positive residue identity",
+      "result": "PASS",
+      "finding": "Strict interlacing gives positive residues for -Q/P at the compact roots. The symmetric arrowhead characteristic polynomial is exactly Q, so its spectral norm is <=b and a^2+sum(w_t)<=b^2. This removes an unnecessary compact dimension factor."
+    },
+    {
+      "topic": "Compact parameter estimate",
+      "result": "PASS",
+      "finding": "The l1 shift bound, not separate coordinate bounds summed again, gives distance >=gamma|s-t|-q-1. The near-root quotient has residue sum <=b^2, and the two harmonic sums cost at most exp(3/4)sqrt(k). Zero numerators are handled by polynomial continuation."
+    },
+    {
+      "topic": "Exceptional parameter estimate",
+      "result": "PASS",
+      "finding": "The negative parameter interval stays at least3B/4 away from the unshifted compact roots. The same residue identity and the second shift reserve q<=B/4 bound the perturbation product by e, including k=1."
+    },
+    {
+      "topic": "Original range",
+      "result": "PASS",
+      "finding": "The original stronger gap and large-parameter hypotheses imply every condition of the new numerical theorem. Both original reserves are retained. The resulting 8e sqrt(k)b^2 and6e b^2 bounds imply b^4 in that range."
+    },
+    {
+      "topic": "Exact scope",
+      "result": "PASS",
+      "finding": "The Bessel scalar identity and the common-Haar formal-degree ratio are written as separate inputs. Only after these identifications does cancellation give the original degree-normalized lowering inequality; the numerical proof does not establish that analytic identification."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.LoweringBound",
+      "sha256": "491ab8e7b8bcffefe611097efd22297d003c4f17a705a551f2dc81120e0564c6",
+      "git_blob_sha1": "5ba8aed485e87288b07287919f97b8f087406e10",
+      "independently_read_ranges": [
+        [
+          12,
+          25
+        ],
+        [
+          43,
+          89
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.FamilySetupMomentGrowth",
+      "sha256": "a9264b1f873342a5682f15f3a5aedc770311859b8bfc0a31bdebfdf6deeb8dfe",
+      "git_blob_sha1": "c0c0f10cdebc9d9fe43c32eb24d943cb79e79682",
+      "independently_read_ranges": [
+        [
+          66,
+          113
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python3 scripts/check_global_norm_frontier_lowering_product.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "parameter_families": {
+        "interlacing_parameter_families": 72,
+        "exact_partial_fractions_and_arrowhead_polynomials": 72,
+        "exact_product_inequalities": 10140,
+        "zero_numerator_cases": 780,
+        "includes_k_one": true,
+        "includes_original_large_parameter_range": true,
+        "scope": "Finite rational checks supplement the general theorem."
+      },
+      "constants": {
+        "large_parameter_polynomial_certificates": 2,
+        "exact_coarse_constants": 3
+      },
+      "negative_controls": {
+        "controls_rejected": 2,
+        "labels": [
+          "interlacing removed from positive-residue argument",
+          "shifted denominator gap removed"
+        ]
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/global-norm-frontier-lowering-product.md",
+      "sha256": "8c419d25c0f202b11fb20fab114646f61f5468fe2b3a4dd582c28a180dc8b6a9"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-lowering-product.tex",
+      "sha256": "874a51567e90789246b6805071a3c4c6952c0b0d4fa3b7a88445be03e13788d5"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-lowering-product-references.tex",
+      "sha256": "9d495b9e4548291fba7ca160eb4638fbcf0aff201b96fcbe93aa282eaf0e20e0"
+    },
+    {
+      "path": "scripts/check_global_norm_frontier_lowering_product.py",
+      "sha256": "dc7da287ab6ea27340db6227a797d804d9e1414b3628c86ec69367ef28fd3a5e"
+    },
+    {
+      "path": "certificates/global-norm-frontier-lowering-product.json",
+      "sha256": "acc8147dadc2d24ba7e2adee9f48f2deefa436702fabb535c35fa479fe1eb7c9"
+    }
+  ],
+  "limits": [
+    "Bessel scalar identification and normalized adjoint identity remain explicit inputs.",
+    "Original quotient mass/isometry and Pieri existence are not supplied by this estimate.",
+    "Finite checks supplement the general proof; no Lean build.",
+    "No whole-node RH/GRH count change."
+  ]
+}

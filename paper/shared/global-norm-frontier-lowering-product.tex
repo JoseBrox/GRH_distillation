@@ -1,0 +1,140 @@
+\subsection{The numerical bound for the lowering constant}
+\label{archimedean-lowering-product}
+
+The degree-normalized lowering constant reduces to the following
+explicit product in the original source \cite{lowering-product-source}.
+The estimate below proves the numerical part directly from interlacing.
+The identity with the original Bessel scalar remains a separate input.
+
+Let $n\ge k+1$, $k\ge1$, and let
+$\lambda_0>\cdots>\lambda_{n-1}$ and $u_1>\cdots>u_k$ be real.
+Put $C=\{0,\ldots,k-2\}$ and $N=\{k-1,\ldots,n-1\}$.
+Suppose $b\ge B\ge2n$, $b\ge1$, $\gamma\ge4$, and
+\[
+ \begin{gathered}
+ |\lambda_a|,|u_i|\le b,\qquad
+ u_{a+1}>\lambda_a>u_{a+2}\quad(a\in C),\\
+ 0\le\lambda_a\le B/8\quad(a\in C),\qquad
+ -2B\le\lambda_a\le-B\quad(a\in N),\\
+ \lambda_a-\lambda_c\ge\gamma\quad(a<c,\ a,c\in C).
+ \end{gathered}
+\]
+Let $\mu=\lambda+\delta$, where
+\[
+ \sum_a|\delta_a|\le q,\qquad
+ q\le\gamma/8,\quad q\le B/4,\quad q\le b,
+ \qquad \mu_a-\mu_c\ge2\quad(a<c).
+\]
+For each $s$ set
+\[
+ R_s=\frac{\prod_{i=1}^k|\mu_s-\tfrac12-u_i|}
+                 {\prod_{a\ne s}|\mu_s-1-\mu_a|}.
+\]
+All denominator factors are at least one, by the last gap condition.
+
+\begin{theorem}\label{original-lowering-product-bound}
+Under these hypotheses,
+\[
+ R_s\le
+ \begin{cases}
+     8e\sqrt{k}\,b^2,&s\in C,\\
+     6e\,b^2,&s\in N.
+ \end{cases}
+\]
+In particular $R_s\le b^4$ throughout the original range
+$b\ge B\ge10^6n^7$.
+\end{theorem}
+
+\begin{proof}
+Put $P(y)=\prod_{a\in C}(y-\lambda_a)$ and
+$Q(y)=\prod_i(y-u_i)$.  Interlacing gives the partial fraction identity
+\begin{equation}\label{lowering-positive-residues}
+ \frac{Q(y)}{P(y)}=y-a-\sum_{t\in C}\frac{w_t}{y-\lambda_t},
+ \qquad w_t>0,\qquad |a|\le b,\qquad\sum_tw_t\le b^2.
+\end{equation}
+Here $w_t=-Q(\lambda_t)/P'(\lambda_t)>0$, and
+$a=\sum_i u_i-\sum_t\lambda_t$.  To verify the final bounds without
+introducing a factor $k$, form the real symmetric matrix with diagonal
+entries $(\lambda_t)_{t\in C},a$ and last column
+$(\sqrt{w_t})_{t\in C},a$.  Its other off-diagonal entries are zero.
+The determinant formula gives characteristic polynomial $Q$.
+Its eigenvalues are therefore the $u_i\in[-b,b]$, so its operator norm
+is at most $b$.  The last diagonal entry of its square is
+$a^2+\sum_tw_t\le b^2$.  The argument includes $k=1$, with no residues.
+
+Write $x=\mu_s-1$ and $y=x+1/2$.  First suppose $s\in C$.
+For $t\in C\setminus\{s\}$, summing consecutive cloud gaps gives
+$|\lambda_s-\lambda_t|\ge\gamma|s-t|$.  Since
+$|y-\lambda_s|\le q+1/2\le\gamma/4$, we have
+\[
+       \left|\frac{y-\lambda_s}{y-\lambda_t}\right|\le\frac13.
+\]
+Multiplying \eqref{lowering-positive-residues} by $y-\lambda_s$
+and using its residue sum gives
+\[
+ \frac{|Q(y)|}{\prod_{t\in C\setminus\{s\}}|y-\lambda_t|}
+ \le |y-\lambda_s|\,|y-a|+\sum_tw_t
+ \le\frac{25}{4}b^2\le8b^2.
+\]
+This identity remains valid at $y=\lambda_s$ by polynomial
+continuation.  For every $t\ne s$ in $C$,
+\[
+ |x-\mu_t|\ge\gamma|s-t|-q-1
+                   \ge\tfrac12\gamma|s-t|,
+ \quad
+ \frac{|y-\lambda_t|}{|x-\mu_t|}
+          \le1+\frac{|\delta_t|+1/2}{|x-\mu_t|}.
+\]
+The inequality $\log(1+z)\le z$ and the harmonic-sum bound give
+\[
+ \begin{split}
+ \log\prod_{t\in C\setminus\{s\}}
+               \frac{|y-\lambda_t|}{|x-\mu_t|}
+ &\le\frac{2q}{\gamma}
+              +\frac1\gamma\sum_{t\in C\setminus\{s\}}\frac1{|s-t|}\\
+ &\le\frac34+\frac12\log k.
+ \end{split}
+\]
+Thus this product is at most $e\sqrt{k}$.  Discarding the remaining
+denominator factors, each at least one, proves the asserted cloud bound.
+
+Now suppose $s\in N$.  Then $y\le-3B/4-1/2$, while every
+$\lambda_t$ with $t\in C$ is nonnegative.  Consequently
+\[
+ \frac{|Q(y)|}{|P(y)|}
+ \le |y-a|+\frac{4b^2}{3B}\le6b^2.
+\]
+Also $|x-\mu_t|\ge B/2$ for each $t\in C$, and hence
+\[
+ \log\prod_{t\in C}\frac{|y-\lambda_t|}{|x-\mu_t|}
+ \le\frac{2q}{B}+\frac{k-1}{B}\le1.
+\]
+This gives $R_s\le6eb^2$, again including the empty product $k=1$.
+
+Finally $e<3$, $\sqrt k\le n$, and $B\ge10^6n^7$ imply
+$8e\sqrt k\le24n\le b^2$ and $6e\le18\le b^2$.
+\end{proof}
+
+The original family supplies precisely these hypotheses after its
+integer shift, with $q$ bounded by both the cloud-gap reserve and the
+negative-parameter reserve.  The argument even permits real shifts;
+no integer or half-integer hypothesis has been substituted for a gap.
+
+For completeness, the exact remaining scalar identification is
+\begin{equation}\label{lowering-scalar-identity-input}
+ |\kappa_s|^2
+       =T\frac{\prod_i|\mu_s-\tfrac12-u_i|}
+                    {\prod_{t\ne s}|\mu_s-\mu_t|},\qquad
+ \frac{d_\mu}{d_{\mu-e_s}}
+       =\frac{\prod_{t\ne s}|\mu_s-\mu_t|}
+                    {\prod_{t\ne s}|\mu_s-1-\mu_t|}.
+\end{equation}
+When these identities hold with the original Bessel normalization and
+the same Haar measure, cancellation and
+Theorem~\ref{original-lowering-product-bound} give
+$|\kappa_s|^2d_\mu/d_{\mu-e_s}\le Tb^4$.
+The first identity in \eqref{lowering-scalar-identity-input} is not
+proved by the numerical estimate.  In the source it uses the original
+Capelli cofactor evaluation and the adjoint identity for the normalized
+Bessel functionals.  Those normalization and operator identities,
+and the original quotient mass bound, remain explicit obligations.
