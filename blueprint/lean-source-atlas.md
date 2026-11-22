@@ -120,3 +120,12 @@ Lan reference revision. The reached-section regularity certificate records
 twenty bounded modules for the actual quadratic coefficient filtration,
 canonical theta translations, scalar-one pullback and integral Fourier
 saturation. Both packages have independent review certificates.
+
+The ordinary automorphic module certificate authenticates twenty-five
+bounded modules for the fixed tame level, original unnormalized ordinary
+operator, integral sections, exact residue diamond quotient and commuting
+Hecke family. The Jacquet transfer certificate authenticates eighteen
+modules for the mixed period norm, signed exterior decomposition, full
+Harish-Chandra reserve and both original character-scale branches. Neither
+certificate asserts a full automorphic determinant/support construction,
+a global period-Gram identification or a Lean build.

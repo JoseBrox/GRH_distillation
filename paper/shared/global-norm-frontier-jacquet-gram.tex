@@ -1,0 +1,271 @@
+\subsection{The exact exterior transfer to the Jacquet norm}
+\label{archimedean-jacquet-gram}
+
+Retain the standard-character integer family, original measures,
+period-normalized maps $B_\mu,B'_\mu$, the exact normalized-lowering
+inputs, and gap hypotheses of
+Section~\ref{archimedean-first-length}. Put $n=2r+k+1$ and
+$m=2r+2$. The original signed exterior-Pieri decomposition
+is supplied:
+\[
+ \bigwedge^\ell\mathbb C^n\otimes H_\mu
+       =\bigoplus_{|I|=\ell}i_IH_{\mu+\mathbf1_I},\qquad
+ [i_Ix,i_Iy]=\epsilon_I\langle x,y\rangle,\quad\epsilon_I=\pm1.
+\]
+Its summands are orthogonal for the displayed Hermitian form.
+The inclusions need not be positive isometries. Write $p_I$ for
+their projections, and $\omega_\ell,\omega'_\ell$ for the original
+wedges of the first $\ell$ flag vectors. Their period-normalized
+scalars satisfy
+\[
+ B_{\mu+\mathbf1_I}p_I(\omega_\ell\otimes v)=\kappa_I B_\mu v,\quad
+ B_\mu(\operatorname{ev}_{\omega_\ell}i_Iy)
+ =\epsilon_I\overline{\kappa_I}B_{\mu+\mathbf1_I}y,
+\]
+with corresponding $\kappa'_I$ on the right. The adjoint identity
+uses the original period formula; equivariance alone is insufficient.
+Zero shifted maps have scalar zero. All formal degrees $d_\mu$
+refer to the same original group Haar measure.
+
+Use inner products linear in the first variable. For a finite
+coefficient $F(g)=\sum_a\langle\sigma_\mu(g)y_a,x_a\rangle A_a$ put
+$s_\mu(F)=\sum_a\langle A_aB'_\mu y_a,B_\mu x_a\rangle$.
+Let $\mathcal N(F)$ be the original radial squared
+Hilbert--Schmidt norm of $JF$. The exterior Hermitian coefficient
+$D_\ell(g)=\langle(\bigwedge^\ell g)\omega'_\ell,\omega_\ell\rangle$
+is precisely the original leading minor, equal to
+$\mathrm{Dbig}_\ell$ on the big cell.
+
+\begin{proposition}\label{jacquet-exterior-exact-gram}
+There is one $c_{\rm rad}>0$, fixed by the original measures and
+compact data, such that
+\[
+ \langle JF,JH\rangle_{\rm rad}
+ =c_{\rm rad}s_\mu(F)\overline{s_\mu(H)}/d_\mu.
+\]
+Mixed pairings from inequivalent parameters vanish. Moreover,
+\begin{equation}\label{jacquet-exterior-positive-sum}
+ \mathcal N(D_\ell F)
+ =c_{\rm rad}|s_\mu(F)|^2
+       \sum_{|I|=\ell}\frac{|\kappa_I\kappa'_I|^2}
+                            {d_{\mu+\mathbf1_I}}.
+\end{equation}
+The left side equals the original integral
+$\int|D_\ell|^2\|JF\|_{\rm HS}^2\,d\nu_{\rm rad}$.
+\end{proposition}
+\begin{proof}
+Apply the existing mixed unfolding identity
+(Theorem~\ref{jp-pairing-equality}) to finite coefficient sums.
+Schur orthogonality contributes $d_\mu^{-1}$; the two original
+subgroup period identities turn the finite double sum into
+$s_\mu(F)\overline{s_\mu(H)}$. The radial integration formula
+contributes one $c_{\rm rad}$, independent of $\mu$.
+The original gap supplies the required coefficient decay;
+the supplied absolute period integrals justify the diagonal
+calculation. For inequivalent parameters the group pairing is
+zero for every subgroup parameter before regularization.
+
+Both period subgroups fix the flag wedges by unitriangularity.
+Hence $J(D_\ell F)=D_\ell JF$ in the same original integral.
+The signed tensor decomposition gives $D_\ell F=\sum_I F_I$,
+where
+$s_{\mu+\mathbf1_I}(F_I)
+ =\epsilon_I\kappa'_I\overline{\kappa_I}s_\mu(F)$.
+Every $F_I$ is a finite compact-type coefficient. The gap
+preserves the parameter ordering, so different $I$ give
+inequivalent representations. The mixed orthogonality just
+proved gives \eqref{jacquet-exterior-positive-sum}.
+\end{proof}
+
+\begin{theorem}\label{jacquet-leading-minor-integer-family}
+Let $0\le\ell\le r+1$ and set
+$a_0=0$, $a_1=1$, $a_\ell=\ell+1$ for $\ell\ge2$.
+If the supplied family has reserve
+$\|\nu\|_1+\ell+a_\ell\le q_{\rm fam}$ at its starting index, then
+\[
+ \mathcal N(D_\ell F)
+ \le\binom{n}{\ell}(TT')^\ell b^{8m^2}\mathcal N(F).
+\]
+For $\ell=0$ the norms agree without that reserve.
+If $T,T'\le b^{Cm}$, $C\ge0$, the right side is at most
+$b^{(C+9)m^2}\mathcal N(F)$.
+\end{theorem}
+\begin{proof}
+The proved isometries
+$T_\mu=\sqrt{d_\mu}B_\mu\sigma_\mu(\cdot)$ have mutually
+orthogonal images: their cross pairing defines a bounded
+intertwiner. The tensor identity and Cauchy--Schwarz imply
+\[
+ |\kappa_I|^2\frac{d_\mu}{d_{\mu+\mathbf1_I}}\|y\|^2
+ \le\int\|(\bigwedge^\ell g^{-1})\omega_\ell\|^2
+                   \|T_{\mu+\mathbf1_I}y(g)\|^2\,dq.
+\]
+To check the indefinite form, write $i_Iy=(x_e)_e$ in a
+positive orthonormal exterior basis and test the tensor identity
+against $T_{\mu+\mathbf1_I}y$ with input $\Gamma e\otimes x_e$.
+The signed adjoint and Cauchy--Schwarz give
+$|\beta_I|^2\|x_e\|^2
+ \le\int|\langle\rho(g)\Gamma e,\omega_\ell\rangle_\Gamma|^2
+                  \|T_{\mu+\mathbf1_I}y(g)\|^2dq$,
+where $|\beta_I|^2=|\kappa_I|^2d_\mu/d_{\mu+\mathbf1_I}$.
+Handle $x_e=0$ before cancellation, then sum and use
+$\|y\|^2\le\sum_e\|x_e\|^2$. The scalar sum is the positive
+exterior norm in the display.
+
+Gram--Schmidt identifies it with $\prod_{a<\ell}L_a^2$.
+Apply Corollary~\ref{original-flag-product-norm-bound}
+to a nonzero lowest compact-type vector in the shifted family.
+The vector has level zero, and the reserve covers its exterior
+shift and first-length moments. Thus
+\[
+ |\kappa_I|^2d_\mu/d_{\mu+\mathbf1_I}\le T^\ell b^{4m^2},
+ \quad
+ |\kappa'_I|^2d_\mu/d_{\mu+\mathbf1_I}\le(T')^\ell b^{4m^2}.
+\]
+Zero shifted maps contribute zero.
+
+The formal-degree sum is exactly
+$\sum_{|I|=\ell}d_{\mu+\mathbf1_I}=\binom{n}{\ell}d_\mu$.
+Indeed, for $\Delta(x)=\prod_{i<j}(x_i-x_j)$ the polynomial
+$\sum_{|I|=\ell}\Delta(x+\mathbf1_I)$ is alternating and has
+degree at most $\deg\Delta$. Divisibility by $\Delta$ and its
+top homogeneous term prove the identity. The gap at least two
+preserves the chamber, so $d_\mu=c_G\Delta(\mu)$ has the same
+positive constant in all summands.
+Insert these facts into \eqref{jacquet-exterior-positive-sum}.
+When $s_\mu(F)=0$, $JF$ vanishes almost everywhere, so its
+weighted norm is zero directly. Finally
+$\binom{n}{\ell}\le n^\ell\le b^\ell$ and $2\ell\le m$ give
+the stated power.
+\end{proof}
+
+The original integer reserve $(r+1)(r+2)$ suffices, including
+$r=0$. We next retain the original real budget and both character
+scales \cite{jacquet-gram-original}.
+
+\begin{proposition}\label{jacquet-original-budget-transport}
+Suppose the original $\mathrm{LocOk}_0$ conditions hold, with
+$C_q\ge200$, $C_g\ge10^6$, and
+\[
+ \|\lambda-\lambda_0\|_1+(r+1)(r+2)
+ \le Q:=\min\{h_{\rm NC}(\lambda_0)/(C_q\sqrt m),
+                        g_{\rm cloud}(\lambda_0)\}/C_q .
+\]
+Then $\nu=\lambda-\lambda_0$ is integral, and the original
+numerical family predicate holds on both sides with
+$q_{\rm fam}=\lfloor Q\rfloor$ and with the full reserve
+$\|\nu\|_1+(r+1)(r+2)\le q_{\rm fam}$.
+\end{proposition}
+\begin{proof}
+Both parameters minus $(n-1)/2$ are integral coordinatewise.
+Thus the expression on the left of the hypothesis is an integer,
+and flooring loses nothing; $Q\ge q_{\rm fam}\ge2$.
+For a compact type, the highest weight is $u-\rho_c$.
+Its nonzero highest vector, evaluated on the $i$th diagonal
+circle at angle $2\pi$, gives $u_i-(k-1)/2\in\mathbb Z$.
+Hence $\lambda_{0,a}-u_i\in\mathbb Z+1/2$, as required.
+The same holds for $u'$.
+
+Interlacing makes the cloud exactly the first $k-1$ indices
+for both compact types. Set $g=g_{\rm cloud}(\lambda_0)$
+and $h=h_{\rm NC}(\lambda_0)$.
+Retain the source's totalized finite-infimum convention.
+Its empty cloud-pair set would give $Q=0$, so here both gap
+sets are nonempty. Therefore
+\[
+ g\ge C_qQ\ge100(q_{\rm fam}+1),\qquad
+ h\ge C_q^2\sqrt m\,Q\ge100(q_{\rm fam}+1).
+\]
+The original signature is exactly $\epsilon_{48}$; the
+shape, boundedness and interlacing clauses are unchanged.
+For completeness put $q=r+1$, so $n\ge2q$.
+The original numerical quantities obey
+$A_G\le4qn$, $d_N\le2qn$, $A_S\le2qn^2$ and $M\le2q^2$.
+Consequently
+\[
+ 2M(A_S+A_G)+A_G+3\le20q^3n^2,\qquad
+ 9qn^2+3A_G+3\le16qn^2.
+\]
+The original noncompact gap gives
+\[
+ \frac{h}{32\sqrt{2q}}
+ \ge\frac{C_g}{2}q^4(3qn^2+n^3).
+\]
+This supplies both inequalities in the original
+$\mathrm{GapOK}(h/4)$ gate, and $h/4\ge120n^3$.
+The original shape parameter is at least $C_gn^7$.
+These are all remaining clauses of the numerical family predicate.
+This verifies that predicate, without asserting existence of
+its representations or tensor decompositions.
+\end{proof}
+
+\begin{proposition}\label{jacquet-original-scale-transport}
+For $c_\kappa=\kappa c_{\rm std}$, $\kappa>0$, and the original
+period, quotient and radial measures, the estimate is
+\[
+ \mathcal N_\kappa(D_\ell F)
+ \le\binom n\ell\,\kappa^{4S_\ell}(TT')^\ell
+                   b^{8m^2}\mathcal N_\kappa(F),
+ \qquad S_\ell=r\ell-\ell(\ell-1)/2.
+\]
+Under the original hypotheses $\kappa\in\{1,a\}$ this is at most
+$b^{(2C_h+9)m^2}\mathcal N_\kappa(F)$.
+Thus $C_b\ge C_h+5$ supplies the original leading-minor
+norm bound, with the representation, exterior-Pieri, period-normalized
+Bessel and exact normalized-lowering suppliers still explicit.
+\end{proposition}
+\begin{proof}
+Let $t_\kappa$ be the original diagonal torus element with
+first isotropic entries $\kappa^{i-r}$, middle block the identity
+and reciprocal entries on the opposite flag.
+It fixes both $z,z'$, centralizes their compact stabilizers,
+normalizes $N$, and satisfies
+$\psi_{\rm std}(n)=\psi_\kappa(t_\kappa n t_\kappa^{-1})$.
+Moreover
+$(\bigwedge^\ell t_\kappa^{-1})\omega_\ell
+ =\kappa^{S_\ell}\omega_\ell$ on both flags.
+
+Set $B_1=B_\kappa\sigma(t_\kappa)$, push the original $N$
+measure by $\operatorname{Ad}(t_\kappa^{-1})$, and push the
+quotient measure by left multiplication by $t_\kappa^{-1}$.
+Keep the original group and compact Haar measures.
+Substitution in the period formula gives its exact standard
+normalization with these measures. The original $T,T'$ are
+unchanged. Intertwining the exterior projection gives
+\[
+ B_{\kappa,I}p_I(\omega_\ell\otimes v)
+ =B_{1,I}p_I\bigl((\bigwedge^\ell t_\kappa^{-1})\omega_\ell
+                          \otimes\sigma(t_\kappa^{-1})v\bigr)
+ =\kappa^{S_\ell}\kappa_I^{(1)}B_\kappa v .
+\]
+Thus $\kappa_I^{(\kappa)}=\kappa^{S_\ell}\kappa_I^{(1)}$,
+and similarly on the right. Apply the standard moment theorem
+with its exact pushed measures, and the positive Gram identity
+with the original character and original radial measure.
+This proves the first assertion without changing the big-cell
+coordinates. The moment theorem requires $T,T'>0$, and does
+not require either to be at least one.
+
+Set $X=T(\kappa/a)^{2r}$ and $X'=T'(\kappa/a)^{2r}$.
+The exact factor is
+\[
+ \kappa^{4S_\ell}(TT')^\ell
+ =(XX')^\ell a^{4r\ell}\kappa^{-2\ell(\ell-1)}.
+\]
+For $\kappa=1$ the exponent of $a$ is $4r\ell$;
+for $\kappa=a$ it is $2\ell(2r-\ell+1)\in[0,4r\ell]$.
+The original $b>1$, $a,a^{-1}\le b^{C_h}$ imply $C_h\ge0$.
+Using $X,X'\le b^{C_hm}$ and $a\le b^{C_h}$ yields
+\[
+ \kappa^{4S_\ell}(TT')^\ell
+ \le b^{2C_hm\ell+4C_hr\ell}\le b^{2C_hm^2}.
+\]
+Finally $\binom n\ell\le b^\ell$ and $\ell\le m/2$ give the
+claimed exponent, including $r=0$ and $\ell=0$.
+\end{proof}
+
+The representation, exterior-Pieri and period-normalized Bessel
+existence, the exact normalized-lowering inputs, the weighted
+orbital estimate and the global return sum remain separate.
+The exact local formula does not identify the automorphic
+global period Gram operator or close W08.

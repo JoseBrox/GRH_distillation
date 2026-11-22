@@ -53,15 +53,26 @@ hypotheses; they do not construct the missing model or global theta norm.
 
 The finite-to-limiting Selmer comparison supplies the three exact limiting
 presentation conditions from the proved finite-level estimates. It retains
-the original local conditions, point and constants. The next W04 supplier
-is the actual ordinary automorphic tower and its determinant/support data;
-no uniform integral torsion bound follows merely from rational rigidity.
+the original local conditions, point and constants. The original ordinary automorphic modules are now constructed and finite
+free; their actual diamond-group trace is onto with exactly the
+augmentation kernel, including residue-characteristic group orders. The
+next W04 supplier is their universal determinant action, classical
+specialization compatibility and patched support. No uniform integral
+torsion bound follows merely from rational rigidity.
+
+The exact local exterior-Pieri transfer now controls the prescribed
+Jacquet norm with its original real budget and both character scales.
+Representation and period-normalized Bessel suppliers remain explicit;
+the weighted orbital estimate and global arithmetic return sum are still
+open. This is not a global period-Gram identification.
 
 New proof packages and independent review certificates:
 `selmer-integral-frontier-limit-comparison`,
 `geometry-arithmetic-frontier-primary-trace`,
 `geometry-arithmetic-frontier-generic-pel`, and
-`geometry-arithmetic-frontier-reached-regularity`.
+`geometry-arithmetic-frontier-reached-regularity`,
+`selmer-integral-frontier-ordinary-diamond`, and
+`global-norm-frontier-jacquet-gram`.
 Whole-node statuses are unchanged.
 
 ## Current arithmetic frontiers

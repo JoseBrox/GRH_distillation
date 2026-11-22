@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "classification": [
+    "closed Gram-transfer, real-budget and character-scale subobligations",
+    "improved sufficient condition for the complete original leading-minor interface"
+  ],
+  "theorem": "Original weighted Jacquet norm <= binom(n,ell) kappa^(4 S_ell) (T T')^ell b^(8 m^2) times its same unweighted norm, including both original scales and original q0 reserve",
+  "exact_identity": "Mutually orthogonal exterior-Pieri Jacquet summands; sum of same-measure degree ratios is binom(n,ell)",
+  "checks": {
+    "formal_degrees": {
+      "symbolic_polynomial_identities": 20,
+      "exact_ordered_parameter_cases": 156,
+      "chamber_crossing_negative_control": {
+        "parameters": [
+          "1/4",
+          "0"
+        ],
+        "sum_positive_degrees": "2",
+        "claimed_without_gap": "1/2"
+      }
+    },
+    "signed_projections": {
+      "signed_adjoint_coordinate_checks": 12,
+      "nonisometric_inclusions_tested": true
+    },
+    "period_gram": {
+      "exact_C4_gram_models": 32,
+      "zero_models": 16,
+      "nonunit_Haar_and_period_masses_retained": true,
+      "wrong_period_mass_negative_control": true,
+      "formal_degree_cancellation": "symbolically exact"
+    },
+    "reserves": {
+      "all_integer_reserves_r_0_to_100": 21008,
+      "r_zero_included": true
+    },
+    "original_real_budget": {
+      "exact_rounding_cases": 2706,
+      "HC_lattice_cases": 2079,
+      "unbounded_gap_certificates": {
+        "dN": {
+          "substitution": "q=x+1, n=2q+y, x=r>=0, y=k-1>=0",
+          "positive_coefficient_polynomial": "2*x**2 + 5*x + 2*y + 4",
+          "terms": 4
+        },
+        "first_GapOK_gate": {
+          "substitution": "q=x+1, n=2q+y, x=r>=0, y=k-1>=0",
+          "positive_coefficient_polynomial": "64*x**5 + 56*x**4*y + 336*x**4 + 12*x**3*y**2 + 260*x**3*y + 692*x**3 + 52*x**2*y**2 + 404*x**2*y + 688*x**2 + 52*x*y**2 + 264*x*y + 332*x + 20*y**2 + 60*y + 57",
+          "terms": 15
+        },
+        "second_GapOK_gate": {
+          "substitution": "q=x+1, n=2q+y, x=r>=0, y=k-1>=0",
+          "positive_coefficient_polynomial": "28*x**3 + 28*x**2*y + 72*x**2 + 7*x*y**2 + 44*x*y + 60*x + 7*y**2 + 16*y + 13",
+          "terms": 9
+        }
+      },
+      "noncompact_gap_normalizer": "symbolically exact",
+      "empty_cloud_pair_convention": "retained as sInf(empty)=0; positive reserve impossible"
+    },
+    "original_character_scales": {
+      "exact_Hpk_torus_cases": 72,
+      "exact_original_flag_scalings": 324,
+      "two_scale_branch_exponent_cases": 10504,
+      "normalization": "Original subgroup/quotient measures are pushed; group and radial measures retained",
+      "sufficient_constants": {
+        "Cq": ">=200",
+        "Cg": ">=1000000",
+        "Cb": ">=Ch+5"
+      }
+    }
+  },
+  "sources": [
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.TensorMomentTransfer",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/CompanionTheory/AutomorphicTheory/PieriRules/ThetaBesselIsometries/TensorMomentTransfer.lean",
+      "bytes": 7576,
+      "sha256": "37ef6fc8767903bda2a1d5d292be648b73b8bf12b11c78bdae73d244a884adcd",
+      "git_blob_sha1": "23a5f1d457de3523583b10e69d31c82cd4ca933e",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            65,
+            108
+          ],
+          "bytes": 3985,
+          "sha256": "bc683dfa486ec2f5685a4fa156047fedb33c5eb557e6d2079c16a6e53cc87e86"
+        }
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.TensorMomentWeighted",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/CompanionTheory/AutomorphicTheory/PieriRules/ThetaBesselIsometries/TensorMomentWeighted.lean",
+      "bytes": 7793,
+      "sha256": "bb0d3beaf4d3b09f0a25f2fbab1bd504e437b87d62c860da290a05ae74d7310d",
+      "git_blob_sha1": "4d96037b3a0fcb57e923f2751799f581829f2c58",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            54,
+            120
+          ],
+          "bytes": 5307,
+          "sha256": "c84419edce2e8879185fc02189db44178075494fbdf85e5f159ca154b1537b5b"
+        }
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.TensorMomentEstimate",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/CompanionTheory/AutomorphicTheory/PieriRules/ThetaBesselIsometries/TensorMomentEstimate.lean",
+      "bytes": 8901,
+      "sha256": "94930a0d0e9fbfa8d976ebd3d4b3dc23e7bc7ac83942c69718ccd5137b0a81c2",
+      "git_blob_sha1": "cfb0dde17c63841e5bd4b266dde17f6865f5c486",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            59,
+            123
+          ],
+          "bytes": 5437,
+          "sha256": "8beb2cd884db24cb88b1c3b4ad50f54ba24d9b35b7d71080bea226a8d0e5fc67"
+        }
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.TensorWeightedBesselGap",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/CompanionTheory/AutomorphicTheory/PieriRules/ThetaBesselIsometries/TensorWeightedBesselGap.lean",
+      "bytes": 7262,
+      "sha256": "af0b9308b45ac422fc0341b989873fccdf13a20ce772045f53e9c4d426c5e357",
+      "git_blob_sha1": "7de259adc54021a92a776e23406e18aad05a489b",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            65,
+            83
+          ],
+          "bytes": 3252,
+          "sha256": "1535a66f7cb0c8963678cec030f8b2a39dbfd14a55e6994e2bb795c5631102ec"
+        }
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.BesselSettingUniformConstant",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/CompanionTheory/AutomorphicTheory/PieriRules/ThetaBesselIsometries/BesselSettingUniformConstant.lean",
+      "bytes": 7344,
+      "sha256": "4db7439ecc721947dd98802b82b76b943aa2ac960a33242476b03e5155104edd",
+      "git_blob_sha1": "bfc742769cc15d28a9cc119c8d86b58802d7e32e",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            62,
+            112
+          ],
+          "bytes": 4179,
+          "sha256": "60196102afe5de1f2f915b654032f10fc3122b002b6893af76a3c421c6968a20"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.FlagMeasures.BesselExteriorPowerConstantBoundLargeGap",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/FlagMeasures/BesselExteriorPowerConstantBoundLargeGap.lean",
+      "bytes": 8417,
+      "sha256": "561f557b3a1b35a805d43ee3e4cd74c4f143ab0bc1404e6ca0b304d8558ca823",
+      "git_blob_sha1": "2069cdcedeeb884bfc8aaa59391abebb71ea8867",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            34,
+            124
+          ],
+          "bytes": 6493,
+          "sha256": "cd8cf85bcc4c45417cc693491d497d32a594ea723bcd190e814fe09dffe2958f"
+        }
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.BesselWaveGrids.WaveBallEstimateWeightedDualAlt",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/CompanionTheory/AutomorphicTheory/BesselWaveGrids/WaveBallEstimateWeightedDualAlt.lean",
+      "bytes": 77228,
+      "sha256": "c62a615fbb97a238c5564cac1948424aed786f7cdebbd76468c1e3aa4276726e",
+      "git_blob_sha1": "999ba981f65fdcad0e94e240d9e1e16d798de7ac",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            44,
+            66
+          ],
+          "bytes": 1898,
+          "sha256": "78b0c9be825f06f16abec4d273b5c9435da308af4ef0734532a1a287f49c380b"
+        },
+        {
+          "lines": [
+            215,
+            258
+          ],
+          "bytes": 3435,
+          "sha256": "d7f263242c076341b077fda886158a1a3ce70d0f3e66039b4b0d5414511a573a"
+        },
+        {
+          "lines": [
+            766,
+            848
+          ],
+          "bytes": 6858,
+          "sha256": "53e97a96246fcbd03a506f3dcc39ae16bdd59e2ebf3e713110340cb232c4718e"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.BesselNormSqEqConstMulArchPairing",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/JetHarmonics/BesselNormSqEqConstMulArchPairing.lean",
+      "bytes": 4923,
+      "sha256": "cc9dea45e831a69c71093bcacc5853f3203a2f54b13e60cd1bbfa8c365a169b0",
+      "git_blob_sha1": "9c5c58476efd8e9065b80182330ec3d17c3e3c23",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            18,
+            53
+          ],
+          "bytes": 2258,
+          "sha256": "ff601a8760a2118be0e3cde17465aba1b3b61f2c7497de31ebd4ae81acaef210"
+        },
+        {
+          "lines": [
+            59,
+            76
+          ],
+          "bytes": 1787,
+          "sha256": "b2452c68e8fdfa7ad7a16a582a4e15e7944017bf3d0aadff9e522122ceca0e82"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.LeadMinorK",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/LeadMinorK.lean",
+      "bytes": 12942,
+      "sha256": "9a71f71e69ffd17937b8662b72be2dadc13d5e1ea17ea19155102e5815c76235",
+      "git_blob_sha1": "793b55df37e7be237b3cb7b37060255ff3c89a3b",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            18,
+            61
+          ],
+          "bytes": 3028,
+          "sha256": "4c945171ac6789272194460bebf0a46a55df69233b740c462220ef017f3d176f"
+        },
+        {
+          "lines": [
+            68,
+            115
+          ],
+          "bytes": 3189,
+          "sha256": "1c3e3001e88e39d95f450e23664edf93bf757a41473fef4f4e811a375b1951a9"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.OnePlaceEstimates",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/OnePlaceEstimates.lean",
+      "bytes": 62098,
+      "sha256": "0456723c948e279acd859284d76156a93e0d40b5d92a3b4b58d9caeb38ebb4a9",
+      "git_blob_sha1": "d641a2a34206975a819216642052bc0ca832b69a",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            57,
+            64
+          ],
+          "bytes": 672,
+          "sha256": "5a3f3449599f940f29630b824402da66d352f872d0bd761afccb1d6596460f55"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.RelevantZeroGramTerms",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/RelevantZeroGramTerms.lean",
+      "bytes": 31015,
+      "sha256": "3be6a65abf5c2a48523ea59af7fe7356bee69cf0246a60eaf0de2c360e053fed",
+      "git_blob_sha1": "d008b93b66125f83b7adb112628b058dde3b1096",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            138,
+            154
+          ],
+          "bytes": 903,
+          "sha256": "823d9389d01a152c1cd94ed8fd0d2d85d84b4f9c1587072aa275e25763f7ba51"
+        },
+        {
+          "lines": [
+            163,
+            176
+          ],
+          "bytes": 577,
+          "sha256": "b60c1de1f85209cb26637b0ae6cfb9a1a7285da71529f9ae71a32ae389dabc65"
+        },
+        {
+          "lines": [
+            256,
+            259
+          ],
+          "bytes": 302,
+          "sha256": "bf80311ca21a8da7071db9ddd5c16894536ebcbf8c3bc16db7a8b5b10db11d92"
+        },
+        {
+          "lines": [
+            460,
+            498
+          ],
+          "bytes": 1768,
+          "sha256": "f4208a2cee37902290019fff0220963e7f9979abdd5658403e5bd3157d1109f2"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.PeriodIntegrals.UpqRep",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/PeriodIntegrals/UpqRep.lean",
+      "bytes": 17944,
+      "sha256": "0754dd222144f93bd84bab322d4e0d9374e3dfff5a6089a264bdf3469a13cdd2",
+      "git_blob_sha1": "f6d29175fe6ff5884eb4eea417509f74bf51eee0",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            201,
+            207
+          ],
+          "bytes": 403,
+          "sha256": "84fe649a4346cb264b8676c2e5db36ee6b0a31da2bfff6e9c94689c28dbd8762"
+        },
+        {
+          "lines": [
+            228,
+            235
+          ],
+          "bytes": 489,
+          "sha256": "3bb35abbe20b0ddea9b3171e2f9f5f34186367d401c60c1adfa137e11aef35a3"
+        },
+        {
+          "lines": [
+            296,
+            302
+          ],
+          "bytes": 461,
+          "sha256": "25dc378be562a0c29037ac61629ec9581a39053fa3490e5c75ffe9bcd4adacf2"
+        },
+        {
+          "lines": [
+            327,
+            332
+          ],
+          "bytes": 299,
+          "sha256": "dbd209f8b72ac6e13ba6a28bb97127e4d9cbf30d930de6e5b5d6be1bfbfc182e"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.PeriodIntegrals.BesselPeriodGGP",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/PeriodIntegrals/BesselPeriodGGP.lean",
+      "bytes": 7214,
+      "sha256": "7b7806b16b14c74d19d43b4a242a093b6fef281ce7c35c79c0abdce69627a50b",
+      "git_blob_sha1": "d735dfa7014d46f10889ffa804397a2d78d72a8d",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            24,
+            25
+          ],
+          "bytes": 134,
+          "sha256": "b41f42a68b109135a616dd3c3f2bc470d2873e0e8177c127959c854921864560"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Definitions.Jets.SumIoPrAlt",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Definitions/Jets/SumIoPrAlt.lean",
+      "bytes": 9430,
+      "sha256": "970f57f4a3de5de638737040d3c31daa0c2b1563c9a5548a4c673313d5a6fc16",
+      "git_blob_sha1": "ce6c62731c098d40df190e9659c9e2b7c8b535f2",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            155,
+            169
+          ],
+          "bytes": 1199,
+          "sha256": "03749aea5e7aa61876d49f3e942d7ed90e2e5aede4332006588f0858f543857d"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.NumericalFamilyShapeGaps",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/JetHarmonics/NumericalFamilyShapeGaps.lean",
+      "bytes": 6660,
+      "sha256": "777e7619b7779555a4f1ab338f71051351e65ada546e45ae5033d50b6dde1079",
+      "git_blob_sha1": "a12e81d3c05bfdb8e98c485fd63990af15a97ba1",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            73,
+            116
+          ],
+          "bytes": 3271,
+          "sha256": "85602ed2b742b5cd3571155b4f874c291225553b25cb21dca2531e8deb72ebee"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.HermitianCurvature.BesselNonvanishingReduction",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/HermitianCurvature/BesselNonvanishingReduction.lean",
+      "bytes": 36704,
+      "sha256": "e3ce49c4b8ef97c35a62b2546506216556021f271197657632a06b6802e3bfec",
+      "git_blob_sha1": "380fc621afcf4dee6851794acfd80d1203957dc6",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            22,
+            34
+          ],
+          "bytes": 630,
+          "sha256": "fafde2ae381400b1d679292c18fbe4afc0bfbff191c0cde38b0013d56cc92153"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.FlagMeasures.ExistsUnitaryTorusScaleBesselCharacter",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/FlagMeasures/ExistsUnitaryTorusScaleBesselCharacter.lean",
+      "bytes": 10893,
+      "sha256": "1e25e840f7a0d8bd65b8ec068d72cfbfa04e6aa3f72c756c2a5ab5ade7de9e36",
+      "git_blob_sha1": "fdfbe0cf6f87178b36a66556c34085653593daad",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            15,
+            17
+          ],
+          "bytes": 180,
+          "sha256": "7fe567b1e73c15e7a65bf4d38211f73edc7f2208c3ab0cf6194ed8d90abb31f3"
+        },
+        {
+          "lines": [
+            178,
+            196
+          ],
+          "bytes": 957,
+          "sha256": "e7c446c6f1a1f8e1d8a91fd1985397458074e0e948ddcd05d9d64933874e078b"
+        },
+        {
+          "lines": [
+            207,
+            230
+          ],
+          "bytes": 1673,
+          "sha256": "231aa688db5f75b5d9b5306ca764325c3ebe1f47265f738b8ff79e9d81b9f513"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.FlagMeasures.NormalizedBesselMapsAnyScalePieriConstants",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/FlagMeasures/NormalizedBesselMapsAnyScalePieriConstants.lean",
+      "bytes": 4646,
+      "sha256": "963cd11503187d1ce3bdedb14c777e8a7ac00ea42b0dc4c7769e25fb3f2cb96e",
+      "git_blob_sha1": "a93f391c8aba83775fe12cc84c35358222bfd60b",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            18,
+            59
+          ],
+          "bytes": 3871,
+          "sha256": "14a2cbc41c853fdf41e053f4e32973316a7f698b295631607262afd04da1169e"
+        }
+      ]
+    }
+  ],
+  "artifact_hashes": {
+    "notes/global-norm-frontier-jacquet-gram.md": "e9abb45c8bece15ef16fdc9869928a2556adee3114fd926e3cdcbf6a0ce35b8b",
+    "paper/shared/global-norm-frontier-jacquet-gram.tex": "cb4bdcb97f9e9719699c371c68a5d32ab3fd83a8050af73922395033a1d7f10b",
+    "paper/shared/global-norm-frontier-jacquet-gram-references.tex": "6727f342d32f3fee0a3c0a67817d1c685b10c9b69d86715c746548141b0908cf",
+    "scripts/check_global_norm_frontier_jacquet_gram.py": "58f5ed42e7a5533390ac7be6b516e4e498d11898a6906a03f418a2a8817edc3a",
+    "paper/shared/global-norm-frontier-first-length.tex": "83f5ea54c7dd4b0edfb320a994eba4ef2fcdfb8980e74c4104f292fa5fb587c7",
+    "paper/shared/global-norm-frontier-quotient-mass.tex": "15cd1711801a943486a770d43244c76189060ad5e3085c5cfffe31de86b55209",
+    "paper/sections/recovered/72-fd-section.tex": "150519f246474bfa804cc4ce8cafdc559ad9f0b445330920e5f63252a37292e1",
+    "paper/sections/recovered/94-jp-section.tex": "d7cb31e0bff6d086240aa156a5e7f63d191466ec6c72d30182cab498330d236e"
+  },
+  "scope": {
+    "written_proof": "Shared TeX and mathematical note",
+    "computation": "Exact identities and bounded regressions supplement the written proof",
+    "not_verified": [
+      "Existence of the representation/Pieri families",
+      "Existence of the original period-normalized Bessel families",
+      "Exact normalized-lowering and Capelli inputs retained from the preceding theorem",
+      "Weighted orbital estimate",
+      "Global period Gram assembly",
+      "Any full Lean build"
+    ],
+    "whole_node_count_changed": false
+  }
+}

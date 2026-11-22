@@ -81,6 +81,12 @@ primitive line and finite labels. The [reached-section theorem](../../notes/geom
 supplies integral regularity from the original `Good3` uniformization,
 without a scalar loss. The integral model itself remains to be constructed.
 
+The [ordinary module construction](../../notes/selmer-integral-frontier-ordinary-diamond.md)
+constructs the actual finite-free modules, integral diamond projectivity and
+exact unnormalized trace. The [Jacquet transfer](../../notes/global-norm-frontier-jacquet-gram.md)
+retains the original period normalization, real budget and both character
+scales. The determinant/support and global return estimates remain open.
+
 ## Concurrent research
 
 The [RH program](../rh/program.md) and [GRH program](../grh/program.md) are

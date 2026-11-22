@@ -1,0 +1,180 @@
+\paragraph{The original ordinary modules at auxiliary levels.}
+Fix the original definite unitary group over $F=L^+$, its Hida
+setting, the coefficient representation $\tau$, and the continuous
+weight character $\theta$. Let $(A,\mathfrak m)$ be the original
+complete Noetherian coefficient algebra with finite residue field of
+characteristic $\ell$. At the split places above $\ell$, retain the
+source groups
+\[
+ I(c)=NT\overline N(c),\qquad
+ \overline N(c)=\overline N\cap K(c+1),\qquad
+ T_c=T\cap K(c+1),
+\]
+and its unnormalized operator
+$U=[NzN]$, where
+$z=\operatorname{diag}(\varpi^{n-1},\ldots,\varpi,1)$.
+For an original tame level $K$, let $S(K,A)$ be the original
+$A^m$-valued automorphic functions: left rational invariance, the
+$\tau$-twisted right $K$ action, right $N$ invariance,
+$f(gt)=\theta(t)^{-1}f(g)$, and uniform $\mathfrak m$-adic continuity
+under the groups $\overline N(c)$. Write $F^aS$ for functions whose
+values lie in $(\mathfrak m^a)^m$. Define
+\[
+ M(K,A)=\{f\in S(K,A):
+       \ \forall a\ \exists r\geq1,\ U^rf-f\in F^aS\}.
+ \tag{OD1}
+\]
+
+\begin{proposition}[Integral ordinary modules and level trace]
+\label{prop:selmer-ordinary-diamond}
+For every original compact auxiliary level $K$, the module $M(K,A)$
+is finite free over $A$, and
+$M(K,A)\cap F^aS=\mathfrak m^aM(K,A)$.
+If $K'\triangleleft K$ has finite quotient $\Delta$, then
+$M(K',A)$ is projective over $A[\Delta]$ and the original
+unnormalized trace satisfies
+\[
+ \operatorname{Tr}_{K'}^K:M(K',A)\twoheadrightarrow M(K,A),
+ \qquad
+ \ker\operatorname{Tr}_{K'}^K
+   =\sum_{\delta\in\Delta}(\delta-1)M(K',A).
+ \tag{OD2}
+\]
+The assertions persist after the prescribed residual Hecke
+localization.
+\end{proposition}
+
+\begin{proof}
+Borel's finite class-number theorem gives finite double cosets at
+every compact open level \cite{borel-ordinary-diamond}.
+Their stabilizers are trivial for the actual Hida setting. Indeed,
+the definite real group is compact, so a rational stabilizer is a
+finite group. At the fixed place $v_0$ it is conjugate into
+$1+pM_n(\mathcal O_{L_w})$. The source fixes $p$ odd and unramified
+in $L$, making this principal congruence subgroup torsion-free.
+For example, if $h=1+p^aC\ne1$ with some entry of $C$ a unit, a
+prime-to-$p$ power has the same leading valuation, while
+$h^p=1+p^{a+1}C'$ with $C'\equiv C\pmod p$.
+Thus the stabilizer is trivial. The place $v_0$ is unchanged by
+every allowed auxiliary level.
+
+Put $A_a=A/\mathfrak m^a$, $a\geq1$, and choose $c$ such that
+$\theta(T_c)\equiv1\pmod{\mathfrak m^a}$. The space $E_{a,c}$ of
+functions with the original transformation laws and exact
+$\overline N(c)$ invariance is finite free over $A_a$: evaluation
+on the finite double-coset representatives is an isomorphism.
+Gaussian elimination gives
+$I(c)=NT\overline N(c)=\overline N(c)TN$, and its upper/lower
+interchange changes the torus component only by $T_c$. This
+both proves the stated transformation rule over $A_a$ and
+constructs integral lifts of arbitrary representative values:
+use $\tau(u)^{-1}\theta(t(b))^{-1}$, with $t(b)$ the torus
+component in the latter factorization. Right multiplication by
+$\overline N(d)$ changes $t(b)$ by $T_d$, so these lifts have
+the required uniform continuity.
+
+The original double-coset formula for $U$ lowers
+$\overline N(d+1)$ invariance to $\overline N(d)$ invariance
+when $d\geq c$ and the vector is fixed by $T_c$. It follows
+from $z^{-1}\overline N(d)z\subset\overline N(d+1)$ and the
+same upper/lower interchange. Consequently $U$ preserves
+$E_{a,c}$ and
+$U^{c'-c}E_{a,c'}\subset E_{a,c}$ for $c'\geq c$.
+The invertible Fitting summand $M_a$ of $U$ on $E_{a,c}$ is
+therefore independent of $c$. It is a finite free $A_a$-module,
+and its projector is a sufficiently large factorial power of $U$.
+Choosing the same $c$ at two precisions gives, in the same
+double-coset bases,
+\[
+ M_a\otimes_{A_a}A_b=M_b\qquad(1\leq b\leq a).
+ \tag{OD3}
+\]
+Thus all ranks agree.
+
+For each $f\in S(K,A)$ and each $a$, a sufficiently high
+$U$-iterate lies in $E_{a,c}$ modulo $\mathfrak m^a$.
+Hence $U^{j!}f$ has compatible stabilized reductions, defining
+an $A$-linear projector $e$ on $S(K,A)$. Completeness preserves
+the covariance laws; continuity modulo each $\mathfrak m^a$
+preserves uniform continuity. The fixed space of $e$ is exactly
+(OD1). The integral sections give surjectivity onto each $M_a$,
+and a compatible sequence in the $M_a$ defines an original
+continuous automorphic function. Therefore
+$M(K,A)=\varprojlim_aM_a$. Compatible bases in (OD3) prove
+finite freeness and the asserted filtration equality.
+The construction commutes with tame translations and commuting
+Hecke operators.
+
+Now put $M=M(K',A)$. Neatness makes the $\Delta$-action on
+the original double cosets at level $K'I(0)$ free. Choose one
+representative per orbit, let $\chi$ be its characteristic
+function, and define $\phi=e\circ M_\chi$ on $M$.
+The identity $\sum_\delta\chi(g\delta)=1$ gives
+\[
+ \sum_{\delta\in\Delta}\delta\phi\delta^{-1}=1_M.
+ \tag{OD4}
+\]
+It follows that
+$m\mapsto\sum_\delta\delta\otimes\phi(\delta^{-1}m)$
+splits the action map $A[\Delta]\otimes_AM\to M$
+$A[\Delta]$-linearly. The domain is finite free, proving
+projectivity. For invariant $m$, (OD4) gives
+$\operatorname{Tr}(\phi m)=m$. If $\operatorname{Tr}(m)=0$,
+it gives
+$m=\sum_\delta(\delta-1)\phi(\delta^{-1}m)$.
+These are precisely (OD2), with no division by $|\Delta|$.
+
+The commutative Hecke algebra in $\operatorname{End}_A(M)$
+is finite over the complete Noetherian ring $A$. Its local
+factors supply the idempotent $e_{\mathfrak h}$ for the
+prescribed residual eigenvalues, or zero if they are absent.
+This idempotent commutes with $\Delta$ and restricts to the
+corresponding factor on the invariant space. Replacing $\phi$
+by $e_{\mathfrak h}\phi$ on $e_{\mathfrak h}M$ preserves
+(OD4), proving the localized assertion
+\cite{alpo-ordinary-diamond}.
+\end{proof}
+
+At the actual auxiliary places $w_j$, the prescribed quotient is
+\[
+ \Delta=\prod_j(\mathbb Z/\ell^{a_j}\mathbb Z)^n,\qquad
+ a_j=v_\ell(\mathrm Nw_j-1),
+\]
+obtained from the diagonal residue map by killing the
+prime-to-$\ell$ subgroup. The fixed tame subgroup has identity
+projection at each auxiliary place, while the original local
+sections project to their specified coordinates. Thus this is
+also the actual tame quotient, with no absorbed diamond factor.
+With the original generators
+$\delta_{ji}$, its group ring is exactly
+\[
+ A[\Delta]\simeq
+ A[[Y_{ji}]]/
+   \bigl((1+Y_{ji})^{\ell^{a_j}}-1\bigr)_{j,i},
+ \qquad Y_{ji}\longmapsto\delta_{ji}-1.
+ \tag{OD5}
+\]
+Division by the displayed monic distinguished polynomials proves
+the isomorphism. Modulo $\mathfrak m$ this is a truncated polynomial
+ring with its unique augmentation maximal ideal. Thus (OD5) is
+local, and the modules in the proposition are free over it.
+Any later commuting spectral idempotent gives a direct summand,
+again free over the same ring; its augmentation quotient is the
+corresponding projected Iwahori module by (OD2).
+These are the original module and trace clauses of the
+Taylor--Wiles construction. The smooth union over all auxiliary
+levels has exactly these finite invariant modules. Here the
+auxiliary set, coefficient representation, character and residual
+eigenvalues are fixed. The Hecke family is the original spherical
+family outside that fixed set together with the positive diagonal
+operators above $\ell$; it commutes with auxiliary translations
+at every level. No new Hecke condition is introduced in forming
+the union.
+
+The statement is valid for every $a_j\geq0$, including the
+original requirement $a_j\geq N$, without a new exponent loss.
+It neither bounds ranks uniformly as the arithmetic datum moves
+nor proves that an arbitrary residual component is nonzero.
+The original universal-determinant action, separating classical
+specializations with local Galois compatibility, and the
+spherical/Iwahori comparison maps remain to be supplied.
