@@ -181,7 +181,94 @@ $\zeta''/\zeta$ has at most a simple pole and might even be
 holomorphic if $\zeta''(\rho)=0$. The theorem targets
 *simplicity alone*, and (6) is not established.
 
-## 3. Dirichlet version: a two-sided sufficient condition
+## 3. A weaker one-sided criterion, and positive logarithmic averaging
+
+The bound $O(\sqrt x)$ in (6) is **not the weakest sufficient
+critical-scale bound**.
+
+**Theorem (little-o endpoint).** The one-sided condition
+
+```math
+\boxed{\limsup_{x\to\infty}
+ \frac{H_2(x)}{\sqrt x\,\log x}\le0}
+\tag{10}
+```
+
+already implies that every nontrivial zeta zero is simple,
+*without* assuming RH.
+
+**Proof.** Fix an arbitrary $\varepsilon>0$. Condition (10)
+gives $H_2(x)\le\varepsilon\sqrt x\log x$ for all $x\ge X_\varepsilon>1$.
+Set $f_\varepsilon(x)=\varepsilon\sqrt x\log x-H_2(x)\ge0$
+there. Its Mellin transform initially equals
+
+```math
+\widehat f_\varepsilon(s)
+=\varepsilon X_\varepsilon^{1/2-s}
+ \left(\frac{\log X_\varepsilon}{s-1/2}
+       +\frac1{(s-1/2)^2}\right)
+ -F_2(s)+E_\varepsilon(s),
+```
+
+where $E_\varepsilon$ is entire. The right side is holomorphic
+at all real $s>1/2$. Landau positivity again gives convergence
+of $\widehat f_\varepsilon$ for $\mathrm{Re}\,s>1/2$,
+excluding any double pole of $F_2$ there.
+
+Since $F_2$ is holomorphic at the real point $s=1/2$,
+
+```math
+\limsup_{\delta\downarrow0}\,
+ \delta^2\widehat f_\varepsilon(1/2+\delta)
+\le\varepsilon.
+```
+
+For any nonzero real $t$, positivity bounds
+$|\widehat f_\varepsilon(1/2+\delta+it)|$
+by the displayed real-axis transform. The explicit
+majorant transform and $E_\varepsilon$ remain bounded
+as $\delta\downarrow0$ when $t\ne0$. Therefore
+
+```math
+\limsup_{\delta\downarrow0}
+ \delta^2|F_2(1/2+\delta+it)|
+ \le\varepsilon.
+```
+
+Because $\varepsilon>0$ is arbitrary, a nonzero double-pole
+coefficient on the critical line is impossible. There is no
+real zeta zero at $1/2$, and the functional equation
+takes any multiple left-half zero to one in the right half.
+This proves the assertion. QED.
+
+**Corollary (the positive-averaged endpoint).** Fix any $h\ge0$.
+The same conclusion holds if condition (10) is assumed for
+$\mathcal A_h H_2(x)$ in place of $H_2(x)$, where
+
+```math
+\mathcal A_hH_2(x)=h^{-1}\int_0^h H_2(xe^v)\,dv
+\quad(h>0),\qquad \mathcal A_0H_2=H_2 .
+```
+
+Indeed the forward logarithmic average has Mellin transform
+$M_h(s)F_2(s)-E_h(s)$, with an entire finite-interval
+correction $E_h$ and the nonvanishing multiplier
+
+```math
+M_h(s)=\frac{e^{hs}-1}{hs}
+\qquad(h>0),\qquad M_0(s)=1.
+```
+
+This multiplier is nonzero for $\mathrm{Re}\,s>0$,
+so it preserves the order-two coefficient at any nontrivial
+zero. It is holomorphic and nonzero at $1/2$, and the
+one-sided proof just given applies verbatim. This is
+structurally compatible with the **positive averaging**
+already developed for the original GRH prime-sum criterion.
+The necessary critical-scale arithmetic estimate for
+$\mathcal A_hH_2$ is still open.
+
+## 4. Dirichlet version: a two-sided sufficient condition
 
 For nonprincipal primitive $\chi$, write
 $v_\chi(n)=\Lambda(n)\chi(n)$ and
@@ -217,7 +304,7 @@ the coefficients $b_\chi$ need not be real or positive, and
 a possible real central zero requires separate attention.
 Neither estimate has been established.
 
-## 4. What remains, and checks
+## 5. What remains, and checks
 
 This is a sharper **one-sided alternative** to the exact scalar
 energy criterion, not its proof. It asks for a square-root
