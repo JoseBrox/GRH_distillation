@@ -1,0 +1,132 @@
+\paragraph{Detecting the odd paired cocycles.}
+The odd part of the paired determinant argument has an elementary
+proof using the central block idempotents and matrix units
+\cite{alpo-odd-detection}. It applies over the characteristic-prime
+field $k((t))$.
+
+Let $F$ have characteristic different from two, let $H\triangleleft G$,
+and write $n=a+b$, with $a\geq1$, $b\geq0$. Denote the diagonal
+and off-diagonal block spaces in $M_n(F)$ by $E$ and $O$.
+Let $\rho:G\to E^\times$ and $\chi:G\to F^\times$ satisfy
+\[
+ \operatorname{span}_F\rho(H)=E,\qquad
+ \chi|_H=1,\qquad \chi(c)\ne1\quad\text{for some }c\in G.
+\]
+Suppose an involutive automorphism $\sigma$ of $G$ satisfies
+$\chi\circ\sigma=\chi$ and
+$\rho(g)^T\rho(\sigma g)=\mu(g)I_n$, with $\mu(g)\ne0$.
+Put $A_gX=\rho(g)X\rho(g)^{-1}$ and
+$d_\tau Y(g)=\tau(g)A_gY-Y$ for $\tau=1,\chi$.
+
+\begin{proposition}[Paired trace detection of the odd part]
+\label{prop:selmer-odd-paired-detection}
+Let $r\geq0$ and let $\kappa_i:G\to O$, $1\leq i\leq r$, be cocycles satisfying
+\[
+ \kappa_i(gh)=\kappa_i(g)+A_g\kappa_i(h),\qquad
+ \kappa_i(\sigma g)=-\kappa_i(g)^T.
+\]
+Assume $\sum_i\alpha_i\kappa_i=d_1Y$, with $Y\in O$ and
+$Y^T=-Y$, implies every $\alpha_i=0$.
+Let $s^2=1$. Suppose $\lambda_i:G\to O$, $\varphi:G\to E$ satisfy
+\[
+ \begin{aligned}
+ \lambda_i(gh)&=\lambda_i(g)+\chi(g)A_g\lambda_i(h),
+ &\lambda_i(\sigma g)&=s\lambda_i(g)^T,\\
+ \varphi(gh)&=\varphi(g)+\chi(g)\left(A_g\varphi(h)
+       +\sum_i[\kappa_i(g),A_g\lambda_i(h)]\right),
+ \end{aligned}
+\]
+$\varphi(\sigma g)=s\varphi(g)^T$, and, for every $h\in H$,
+\[
+ \operatorname{tr}(\varphi(h)\rho(h))
+   +\sum_i\operatorname{tr}(\lambda_i(h)\kappa_i(h)\rho(h))=0.
+\]
+Then, for each $i$, there is $Y_i\in O$ with
+$sY_i^T=Y_i$ and $\lambda_i=d_\chi Y_i$.
+\end{proposition}
+
+\begin{proof}
+Let $R=F[H]$, let $\pi:R\twoheadrightarrow E$ extend $\rho$, and
+put $I=\ker\pi$. For a cocycle $z$ on $H$, extend
+$D_z(h)=z(h)\rho(h)$ linearly. Then
+\[
+       D_z(xy)=D_z(x)\pi(y)+\pi(x)D_z(y).
+\]
+Both kinds of cocycle in the proposition are ordinary on $H$.
+
+First suppose $K=\sum_i\alpha_i\kappa_i$ and
+$L=\sum_i\beta_i\lambda_i$ satisfy $D_{K+L}(I)_{uv}=0$
+for one entry in an off-diagonal block $C$. For $x\in I$,
+$D_{K+L}(pxq)=\pi(p)D_{K+L}(x)\pi(q)$.
+Choosing $\pi(p)=E_{u u'}$ and $\pi(q)=E_{v'v}$ shows that
+the entire $C$-block vanishes on $I$. Its projection therefore
+factors through a derivation $\delta:E\to C$.
+Let $e$ be the central identity of the row block of $C$.
+For $Z\in C$, $eZ=Z$ and $Ze=0$, so expanding
+$\delta(eX)=\delta(Xe)$ gives
+\[
+                     \delta(X)=X\delta(e)-\delta(e)X.
+\]
+Thus, with $Y=\delta(e)\in C$, the projections satisfy
+$K_C+L_C=d_1Y$ on $H$.
+
+The different twists separate this sum. The cocycle identity gives
+\[
+ A_{c^{-1}}z(chc^{-1})
+   =\tau(c)z(h)-d_1\bigl(A_{c^{-1}}z(c)\bigr)(h)
+       \quad(h\in H)
+\]
+for a $\tau$-twisted cocycle with $\tau|_H=1$.
+Applying it to $K_C,L_C$ shows $L_C=d_1P_L$ on $H$, where
+\[
+ P_L=\frac{A_{c^{-1}}(Y+K_C(c)+L_C(c))-Y}{\chi(c)-1},
+ \qquad P_K=Y-P_L.
+\]
+Also $K_C=d_1P_K$ on $H$. Subtracting the corresponding
+$d_\tau P$ leaves a cocycle $z_0$ vanishing on $H$.
+Comparison on $hg=g(g^{-1}hg)$ shows that $z_0(g)$ commutes
+with $\rho(H)$, hence with $E$. Commuting with $e$ forces
+an element of $C$ to be zero. The two projected boundary
+equalities therefore hold on all of $G$.
+
+Polarization restores the other block: the identity for $\rho$
+implies
+$(d_\tau P(\sigma g))^T=d_\tau(P^T)(g)$.
+If $z(\sigma g)=\varepsilon z(g)^T$, $\varepsilon^2=1$,
+and $z_C=d_\tau P$, then
+\[
+             z=d_\tau(P+\varepsilon P^T),\qquad
+             \varepsilon(P+\varepsilon P^T)^T=P+\varepsilon P^T.
+\]
+Using $\varepsilon=-1$ for $K$ and $\varepsilon=s$ for $L$
+proves that every $\alpha_i=0$ and that $L$ is a boundary
+with the prescribed polarization.
+
+It remains to obtain the relation condition. Set
+$D_i=D_{\kappa_i}$, $T_i=D_{\lambda_i}$, and extend
+$Q(h)=(\varphi(h)+\sum_i\lambda_i(h)\kappa_i(h))\rho(h)$
+linearly to $R$. The paired cocycle identity expands to
+\[
+ Q(xy)=Q(x)\pi(y)+\pi(x)Q(y)
+       +\sum_i\bigl(D_i(x)T_i(y)+T_i(x)D_i(y)\bigr).
+\]
+Also $\operatorname{tr}Q(x)=0$ for every $x\in R$.
+For $x,y\in I$, choose $p_v,p_u\in R$ lifting
+$E_{vv},E_{uu}$. Apply this trace identity to $xp_vyp_u$.
+The preceding product law and
+$\operatorname{tr}(AE_{vv}BE_{uu})=A_{uv}B_{vu}$ give
+\[
+ \sum_i\bigl(D_i(x)_{uv}T_i(y)_{vu}
+                 +T_i(x)_{uv}D_i(y)_{vu}\bigr)=0.
+\]
+For fixed $y$, apply the first part with
+$\alpha_i=T_i(y)_{vu}$ and $\beta_i=D_i(y)_{vu}$.
+It yields $T_i(y)_{vu}=0$. As $y$ was arbitrary, apply the
+same argument in the opposite block to $K=0$, $L=\lambda_i$.
+This proves the proposition. When $b=0$, the odd space is zero;
+when $r=0$, there is no assertion to prove.
+\end{proof}
+
+This proves the odd part for one fixed characteristic-prime point.
+The even correction, clearing integral denominators, and the finite
+simultaneous choice of auxiliary elements are separate steps.
