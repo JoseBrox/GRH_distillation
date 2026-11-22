@@ -493,6 +493,15 @@ and the original arithmetic identifications still have to be proved.
 The [new frontier review](../certificates/frontier-progress-review-2026-11-22.json)
 records the exact proof and supplemental checks.
 
+The [diagonal arithmetic argument](rh-selmer-diagonal-rigidity.md) now
+supplies uniqueness of the actual diagonal point from prime-to-coefficient
+inertia averaging, ordered character matching and the Hilbert class field.
+It also proves the weight-zero tangent statement from the retained local
+finite-to-unramified comparison. Fixed-point separation follows once the
+actual model's point lifting and representation comparison are supplied.
+Negative weights, two-sided rigidity, finite degree-zero algebra and
+integral conormal torsion remain separate requirements.
+
 ## Next mathematical work
 
 1. **Integral maps and global norms (W06/W08).** Supply nonzero integral
