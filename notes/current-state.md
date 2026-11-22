@@ -162,9 +162,20 @@ the relative different times the generic eigenline. Conjugation
 invariance gives equal finite norms for any semilocal different
 generator, so this local calculation needs no real generator and no
 finite unramifiedness of the CM extension over its real subfield.
-The global construction's separate host conditions remain. Applying the
-calculation still needs its actual integral product frame and CM point;
-the archimedean period evaluation is separate.
+The global construction's separate host conditions remain. The
+[CM product and period calculation](cm-product-period-calculation.md)
+now constructs a pure CM object from one elliptic curve with its two
+conjugate actions. Semilocal Hermitian splitting, including at two, and
+archimedean approximation give the required lattice decomposition.
+Descent retains the original symmetric rigidified line; classical good
+reduction and the prime-to-residue-characteristic inverse isogeny give
+the exact integral product tangent basis. The unit discriminant and
+Kronecker limit formula evaluate the elliptic period mean, with all
+constants retained. Trace-dual Gram projection and the product formula
+then give the signed flat degree. The actual algebraic flat determinant
+family, its map to the chosen compactification and the same-model norm
+comparison remain hypotheses; a good CM object alone does not identify
+that map or establish constancy of its prescribed norm.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
@@ -332,10 +343,14 @@ inequality and exact extraction of the integral equation factors. Its
 short proof uses a finite graded prime filtration and ordinary exact
 sequences, retaining all higher homology and torsion kernels. It assumes
 no global flatness, regular sequence, infinite residue field or dimension
-bound. The remaining lower-side condition is a precise admissibility
-power containment from the geometry of the equation scheme. Actual
-marked-model existence, eventual support and generic multiplicity bounds
-for the upper determinant remain separate.
+bound. The [four-weight admissibility proof](rh-selmer-admissibility.md)
+now establishes that precise power containment from the stated finite
+degree-zero quotient, negative cotangent spanning, fixed-point separation
+and trace separation. It uses even-degree subalgebras, elementary points
+over an algebraically closed field and a two-degree argument at the base
+point. Actual marked-model existence and verification of those geometric
+conditions remain; the upper determinant's eventual support and generic
+multiplicity estimates are separate suppliers.
 
 The [resultant construction](rh-selmer-resultant.md) supplies the elementary
 integer in the nonresonant orbit estimate with full integrality,
@@ -413,7 +428,8 @@ theorem. Neither changes the existing node totals.
    semiabelian fibre pullback line and coefficient character identity.
    The integral Hodge comparison, both filtrations, coefficient freeness,
    determinant torsion and vertical rigidity are now supplied under these
-   hypotheses. Establish the CM product frame and period evaluation;
+   hypotheses. Identify the actual algebraic flat determinant family and
+   its same-model comparison with the now constructed CM object and value;
    retain the signed signature difference and exact selected abelian
    rank, and supply the signed cusp mean and independent finite
    section-rank/surplus estimate. The scalar prime and period bounds

@@ -324,6 +324,74 @@
           "sha256": "a14da13a33ed7bb2462274278fbbbd8465b10cd061a7c1e74ee2be6b13e50fc3"
         }
       ]
+    },
+    {
+      "id": "cm-product-period-calculation",
+      "status": "PASS",
+      "reviewers": [
+        "geometric_frontier",
+        "finite_window_audit",
+        "root"
+      ],
+      "checked": [
+        "The finite-place unramified host supplies the real different generator and an anti-invariant unit, including dyadic factors; semilocal Hermitian splitting retains the exact integral lattice.",
+        "Congruence-class Minkowski approximation gives the required positive global subspace while preserving local Gram units; its complementary lattices are projective and only asserted to split semilocally.",
+        "The elliptic product has homological cokernel killed by an integer prime to the selected residue characteristic; the algebraic inverse up to that integer gives the exact integral tangent comparison.",
+        "Algebraic descent retains the specified symmetric line via the alternating Tate-pairing criterion and Picard 2-torsion; good reduction and the existing Moret-Bailly comparison preserve its rigidification and canonical metric.",
+        "The linear-first skew-Hermitian convention is explicit and agrees with the trace-to-elliptic metric identity.",
+        "The modular discriminant and Kronecker limit normalization give the exact elliptic class-average mean, including all pi, two and discriminant factors.",
+        "The absolute trace-dual projector gives the product Gram matrices; the relative different supplies the local integral eigenframes.",
+        "Root independently derived the local/archimedean product-formula cancellation and both the actual and corrected flat degrees.",
+        "The fixed field contains the coefficient field, and actual algebraic flat-family existence and same-model local-norm constancy at the CM points remain explicit hypotheses.",
+        "Primary Milne, Conrad, Serre-Tate and Zagier statements were independently checked; no general higher-dimensional CM-height theorem or arbitrary compactification map is assumed."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/cm-product-period-calculation.md",
+          "sha256": "8ca0cd45d31b9ad8a61e3943e248e45cb82b615191545932aa0f7965930431f5"
+        },
+        {
+          "path": "scripts/check_cm_product_period_calculation.py",
+          "sha256": "519db3c84428557514697b57f6f4270f5c6e89fe51414295f51b8dd1460e1ece"
+        },
+        {
+          "path": "certificates/cm-product-period-calculation.json",
+          "sha256": "80a326d4ad66343e98a56a17a19a3232d3030bb68b2738964d7f4f7659f898d0"
+        }
+      ]
+    },
+    {
+      "id": "rh-selmer-admissibility",
+      "status": "PASS",
+      "reviewers": [
+        "rh_selmer_frontier",
+        "finite_window_audit",
+        "root"
+      ],
+      "checked": [
+        "The four-weight monomial factorization proves generation of both even halves and finite standard Rees generation over the actual local degree-zero ring.",
+        "Half-algebra points extend through the opposite-sign quotient by the exact square identity, finite integral extension and lying over.",
+        "Relevance and the clearing identities kill the whole degree-zero equation contraction, including the last negative equation in the third Rees direction.",
+        "Finite degree-zero quotient gives either the closed residue prime or a characteristic-zero finite field extension; faithfully-flat scalar extension and the weak Nullstellensatz preserve the selected nonzero Rees sections.",
+        "The direct degree-zero summand proves nonzeroness of the two-sided point fibre; no geometric invariant theory lifting theorem is assumed.",
+        "The fixed-point separation hypothesis excludes the two one-sided points away from the base point; negative cotangent spanning gives a direct two-degree contradiction at the base point.",
+        "The Noetherian radical criterion produces the exact single admissibility power.",
+        "Root and finite_window_audit independently checked the full proof and exact source contracts; actual arithmetic models, finite-quotient and separation hypotheses remain explicit."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/rh-selmer-admissibility.md",
+          "sha256": "a948df82a74c29c005febc250d4aa628d108fdeaeba42ca0d9d55ed438e75abf"
+        },
+        {
+          "path": "scripts/check_rh_selmer_admissibility.py",
+          "sha256": "125eb0becd1347dfdf720c7087aae8ad6405ed8112031c84e4ffeadeda606109"
+        },
+        {
+          "path": "certificates/rh-selmer-admissibility.json",
+          "sha256": "b07d4ce2662efc7a3a16af5c2991f3950d25609e152cb4513a4ac228a7fd2641"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
@@ -336,7 +404,9 @@
     "python scripts/check_biextension_conjugate_filtration.py",
     "python scripts/check_rh_selmer_mixed_count.py",
     "python scripts/check_rh_selmer_koszul_comparison.py",
-    "python scripts/check_common_unipotent_periodization.py"
+    "python scripts/check_common_unipotent_periodization.py",
+    "python scripts/check_cm_product_period_calculation.py",
+    "python scripts/check_rh_selmer_admissibility.py"
   ],
   "node_counts": {
     "rh": {
@@ -350,7 +420,7 @@
   },
   "new_existing_nodes_completed": [],
   "limits": [
-    "The actual arithmetic boundary chart/model construction, original fibre pullback data and CM value remain explicit inputs; the compatible-filtration implication is now proved.",
+    "The actual arithmetic boundary chart/model construction and algebraic flat-family norm comparison remain explicit inputs; compatible filtrations and the CM product/period calculation are now proved under their stated hypotheses.",
     "The pinned source checks authenticate bytes and bounded passages, not Lean proofs.",
     "No whole-proof node completion follows from a local refinement."
   ]
