@@ -358,7 +358,82 @@ the coefficients $b_\chi$ need not be real or positive, and
 a possible real central zero requires separate attention.
 Neither estimate has been established.
 
-## 5. What remains, and checks
+## 5. A cube-grid arithmetic criterion
+
+The one-sided endpoint (10) needs only samples at **integer cubes**.
+This is a rigorous discrete reduction and does not assert the sampled
+inequality itself.
+
+**Theorem (cube samples suffice for simplicity).** With $H_2$
+from (5), the condition
+
+```math
+\boxed{\limsup_{n\to\infty}
+ \frac{H_2(n^3)}{n^{3/2}\log(n^3)}\le0}
+\tag{12}
+```
+
+implies that every nontrivial zeta zero is simple, without assuming RH.
+
+**Proof.** Let $R_b(x)=\sum_{n\le x}b(n)(x/n-1)_+$,
+and $Q(x)=xP_2(\log x)$, so $H_2=R_b-Q$.
+Each ramp in $R_b$ is convex and $b(n)\ge0$,
+hence $R_b$ is convex. For $a\le x\le b$,
+let $\ell_{a,b}H_2(x)$ be the chord interpolant
+of its endpoint values. Then
+
+```math
+H_2(x)\le\ell_{a,b}H_2(x)
+ +\ell_{a,b}Q(x)-Q(x).
+```
+
+The chosen centering has the simple second derivative
+
+```math
+Q''(x)=\frac{2(\log x-\gamma_E)}{x}.
+```
+
+For $2\le a<b$, it follows from the chord error
+formula for a twice differentiable function that
+
+```math
+H_2(x)\le\ell_{a,b}H_2(x)
+ +\frac{(b-a)^2\log b}{4a}.
+\tag{13}
+```
+
+Take $a=n^3$, $b=(n+1)^3$.
+For $n\ge2$, the gap is
+$b-a=3n^2+3n+1\le5n^2$. Therefore the last
+error is at most
+$\frac{25}{4}n\log((n+1)^3)=O(n\log n)$,
+which is $o(n^{3/2}\log n)$. If (12) holds,
+then for any $\varepsilon>0$, both endpoint
+values are at most $\varepsilon\sqrt b\log b$
+for all sufficiently large $n$; so the same
+upper bound holds throughout each cube cell,
+up to an $o(\sqrt x\log x)$ error.
+This establishes (10), and its theorem proves simplicity. QED.
+
+More generally, the same argument works with any increasing
+mesh $x_n\to\infty$ satisfying
+
+```math
+x_{n+1}-x_n=o(x_n^{3/4}),
+```
+
+provided the sampled limsup of
+$H_2(x_n)/(\sqrt{x_n}\log x_n)$ is nonpositive.
+For integer powers $n^k$, $k<4$ meets this
+mesh requirement; $k=3$ is the sparsest
+ordinary fixed-integer-power choice it covers.
+At fourth powers, the same elementary convexity
+error is of size $\sqrt x\log x$, not little-o:
+the existing fourth-power sampling theorem for the
+**first** corrected prime ramp does **not**
+automatically imply (12) for this new second-prime ramp.
+
+## 6. What remains, and checks
 
 This is a sharper **one-sided alternative** to the exact scalar
 energy criterion, not its proof. It asks for a square-root
