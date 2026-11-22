@@ -137,7 +137,16 @@ tangent module. Its functorial Witt lift and a three-step toric
 filtration supply freeness, including ramified coefficient primes, once
 the actual semiabelian quotient and pullback line bundle are identified.
 The same local-stalk argument retains the prescribed lattice. The
-Hodge and conjugate filtrations must still be constructed on that lattice.
+[biextension construction](biextension-conjugate-filtration.md) now supplies
+both Hodge and conjugate filtrations on it. Pointed first-order sections,
+multiplication by the residue characteristic, and an alternating pairing
+give a direct proof, including characteristic two. Compatible integral
+formal charts on each test curve suffice; the geometric argument for
+injectivity is needed only on its residue fibres. This removes the power-map
+surjectivity hypothesis from this particular conclusion and requires no
+extra global semiabelian scheme along the whole curve. The actual compatible
+charts and original pullback line with scheme-theoretic self-duality remain
+inputs. A tensor power with a different polarization cannot replace that line.
 The [determinant torsion and vertical rigidity](determinant-torsion-rigidity.md)
 now strengthen this calculation: the two filtrations give an explicit
 torsion exponent for the character determinant, and a short effective-divisor
@@ -295,6 +304,17 @@ This preserves a sharper intermediate inequality before the coarse
 power-of-two bound. The graded specialization, eventual support and
 local multiplicity estimates linking this module to the conormal
 quotient remain genuine requirements.
+
+The [leading quotient and mixed count](rh-selmer-mixed-count.md) now have
+elementary proofs. The leading coefficient image is a finite free lattice;
+rational tangent surjectivity supplies its entire generic monomial space.
+This proves the exact Hilbert function without assuming flatness of the
+original deformation quotient. A generating-function cancellation gives
+the constant mixed difference and an explicit sufficient degree box,
+including the smallest admissible weight counts. The scalar factor in the
+lower bound is therefore accounted for. Admissibility, the positive Euler
+comparison with the leading quotient, and extraction of the integral
+equation factors are still required.
 
 The [resultant construction](rh-selmer-resultant.md) supplies the elementary
 integer in the nonresonant orbit estimate with full integrality,

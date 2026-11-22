@@ -189,6 +189,73 @@
           "sha256": "cc991fe5c56659ad550e945c1978b18e83d909b34dabec778080d368ab41b4e7"
         }
       ]
+    },
+    {
+      "id": "biextension-conjugate-filtration",
+      "status": "PASS",
+      "reviewers": [
+        "geometric_frontier",
+        "finite_window_audit",
+        "root"
+      ],
+      "checked": [
+        "Pointed sections on the first infinitesimal neighbourhood represent the exact integral vector extension and its Hodge sequence.",
+        "Multiplication by p descends and factors uniquely through relative Frobenius over arbitrary characteristic-p bases; the exact coefficient formula agrees with the source.",
+        "The symmetry/interchange identities give the isotropy relation with the full alternating matrix, including p=2.",
+        "The proper-fibre Dieudonne convention uses B dual and group Verschiebung; the toric quotient proves fibrewise injectivity even with varying toric rank.",
+        "The corrected transition orientation preserves the pairing, integral lattice and coefficient adjunction.",
+        "Compatible generic and local formal charts on a test curve suffice; no extra global semiabelian scheme on the whole curve is assumed.",
+        "The original line is identified by GeomPF, and KTriv tests all coefficient rings, so the quotient polarization has trivial scheme-theoretic kernel; no tensor power is substituted.",
+        "The actual arithmetic chart/model construction remains an input. Root independently read ToFirst18-42 and ExistsInKNeOne19-41; both reviewers checked the source conventions."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/biextension-conjugate-filtration.md",
+          "sha256": "95d9e71e1f111bfe3bbedb4e36412d6344f5bda62f56e38474638162baa1044d"
+        },
+        {
+          "path": "scripts/check_biextension_conjugate_filtration.py",
+          "sha256": "37063fc122d4b0e177cb30809aa4facad639bc456da6d88c8f5bab9df4719d7b"
+        },
+        {
+          "path": "certificates/biextension-conjugate-filtration.json",
+          "sha256": "dec607fd32a8649bdb99f2b0dfe45b5b7493589a7b7cfd582f210ecbecd140c3"
+        }
+      ]
+    },
+    {
+      "id": "rh-selmer-mixed-count",
+      "status": "PASS",
+      "reviewers": [
+        "rh_selmer_frontier",
+        "finite_window_audit",
+        "geometric_frontier",
+        "root"
+      ],
+      "checked": [
+        "The leading projection is multiplicative in the actual three graded directions; its image is a finite torsion-free O-module on which B acts through augmentation.",
+        "Rational tangent surjectivity and weight-one products isolate all pure weight-two monomials; even-weight block factorization proves full generic rank.",
+        "Kernel containment, scalar saturation and the square-congruence property match the pinned leading quotient contract.",
+        "The exact backward differences follow from a generating-series split with an explicit vanishing correction; the r=1 and r-prime=0 cases are retained.",
+        "The sufficient multidegree box keeps every shifted degree nonnegative and is independent of Smith exponents.",
+        "B-length equals O-length for this quotient; no global flatness or regular-sequence hypothesis is silently added.",
+        "Admissibility, positive Euler comparison, quotient comparison and scalar extraction remain separate requirements.",
+        "Root checked the complete written argument and LkHolds8-79; independent source review also checked ReesGradedPieceSurjection199-270 and AdmissibleMonoIdeal273-322."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/rh-selmer-mixed-count.md",
+          "sha256": "d02fc1c4cbd436d8339c3b2e347c149200403b6fa3b30d2061c311651c1c1e8a"
+        },
+        {
+          "path": "scripts/check_rh_selmer_mixed_count.py",
+          "sha256": "eeb1a2ee0e6b690efea7bb89a9d51e6a134077004a642c3b751e70e8b97f2a83"
+        },
+        {
+          "path": "certificates/rh-selmer-mixed-count.json",
+          "sha256": "7701eca868c70a6eddc0a1fc1d5d622a0ae9f879cee51630acd5a6f90c5dd9a5"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
@@ -197,7 +264,9 @@
     "python scripts/check_rh_selmer_conormal_pairing.py",
     "python scripts/check_boundary_hodge_freeness.py",
     "python scripts/check_cm_integral_eigenframes.py --offline",
-    "python scripts/check_rh_selmer_euler_determinant.py"
+    "python scripts/check_rh_selmer_euler_determinant.py",
+    "python scripts/check_biextension_conjugate_filtration.py",
+    "python scripts/check_rh_selmer_mixed_count.py"
   ],
   "node_counts": {
     "rh": {
@@ -211,7 +280,7 @@
   },
   "new_existing_nodes_completed": [],
   "limits": [
-    "No actual Hodge/boundary identification or CM value is supplied by the abstract comparisons.",
+    "The actual arithmetic boundary chart/model construction, original fibre pullback data and CM value remain explicit inputs; the compatible-filtration implication is now proved.",
     "The pinned source checks authenticate bytes and bounded passages, not Lean proofs.",
     "No whole-proof node completion follows from a local refinement."
   ]
