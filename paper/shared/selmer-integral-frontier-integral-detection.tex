@@ -1,0 +1,87 @@
+\paragraph{Returning to the original integral coefficients.}
+Let $A=k[[t]]$, $K=k((t))$, with $k$ of odd characteristic.
+Retain the group, twist and polarization data of
+Corollary~\ref{cor:selmer-paired-detection}, defined over $A$.
+Write $E_A,O_A$ for the two block spaces. Suppose a power of $t$
+times each even matrix unit lies in $\operatorname{span}_A\rho(H)$,
+and the integral $\kappa_i$ are independent modulo boundaries
+$d_1Y$ with $Y\in O_A$, $Y^T=-Y$.
+
+Let $D_A$ be the commutative $A$-algebra, free as an $A$-module with basis
+$1,\varepsilon_1,\ldots,\varepsilon_r,
+\varepsilon'_1,\ldots,\varepsilon'_r,\eta$ and products
+$\varepsilon_i\varepsilon'_j=\delta_{ij}\eta$;
+every other product of two nilpotent basis elements is zero.
+The original paired coefficient module and representation are
+\[
+ W_A=\eta E_A\oplus\bigoplus_i\varepsilon'_iO_A,
+ \qquad
+ \rho_1(g)=\left(1+\sum_i\varepsilon_i\kappa_i(g)\right)\rho(g).
+\]
+
+\begin{proposition}[Integral paired detection]
+\label{prop:selmer-integral-paired-detection}
+Let $z:G\to W_A$ be an integral paired cocycle, so that
+\[
+ z(gh)=z(g)+\chi(g)\rho_1(g)z(h)\rho_1(g)^{-1},
+ \qquad z(\sigma g)=s z(g)^T.
+\]
+If $[\eta]\operatorname{tr}(z(h)\rho_1(h))=0$ for every $h\in H$,
+there are $N\geq0$ and $Y\in W_A$ with $sY^T=Y$ such that
+\[
+          t^Nz(g)=\chi(g)\rho_1(g)Y\rho_1(g)^{-1}-Y
+                           \qquad(g\in G).
+\]
+Here the point, odd family and cocycle are fixed before $N$ is chosen.
+\end{proposition}
+
+\begin{proof}
+The integral span assumption gives the full even span over $K$.
+Independence also extends to $K$: multiply the coefficients of a
+relation and its skew odd primitive by a common power of $t$,
+then apply integral independence. Thus the fraction-field
+determinant theorem applies.
+
+The displayed coefficient module is an actual direct sum over $A$.
+For $Z=\eta Z_0+\sum_i\varepsilon'_iZ_i$, multiplication gives
+\[
+ \begin{aligned}
+ \rho_1(g)Z\rho_1(g)^{-1}
+   &=\eta\left(A_gZ_0+\sum_i[\kappa_i(g),A_gZ_i]\right)
+                       +\sum_i\varepsilon'_iA_gZ_i,\\
+ [\eta]\operatorname{tr}(Z\rho_1(g))
+   &=\operatorname{tr}(Z_0\rho(g))
+                       +\sum_i\operatorname{tr}(Z_i\kappa_i(g)\rho(g)).
+ \end{aligned}
+\]
+Indeed, writing $B_g=\sum_i\varepsilon_i\kappa_i(g)$, the
+cocycle law makes $(1+B_g)\rho(g)$ a representation, with inverse
+$\rho(g)^{-1}(1-B_g)$. Expand $(1+B_g)A_gZ(1-B_g)$;
+all products of three nilpotent generators vanish.
+These formulas also prove that conjugation preserves $W_A$.
+
+Write $z=\eta\varphi+\sum_i\varepsilon'_i\lambda_i$.
+The formulas give exactly the paired trace and cocycle identities
+of Corollary~\ref{cor:selmer-paired-detection}. Choose its primitives
+$Y_0\in E_K$, $Y_i\in O_K$, with $sY_j^T=Y_j$.
+There are finitely many entries, so one $N\geq0$ makes every
+$P_j=t^NY_j$ integral. Put
+\[
+                         Y=\eta P_0+\sum_i\varepsilon'_iP_i.
+\]
+Then $Y\in W_A$ and $sY^T=Y$. The coefficient formulas and the
+fraction-field determinant identity give the asserted boundary
+equality in $W_K$. The injection $W_A\hookrightarrow W_K$
+makes it an equality over $A$. Empty families, empty second blocks
+and zero matrices use the same argument, taking $N=0$ if all
+primitives vanish.
+\end{proof}
+
+For the normalized arithmetic point, $H$ is the original cyclotomic
+kernel and $s=-\chi(c)$, where $c^2=1$. Nontrivial cyclotomic
+reduction ensures that some $\chi(g)-1$ is a unit. The original
+integral span and odd Selmer independence supply precisely the two
+integral assumptions above \cite{alpo-integral-detection}.
+The exponent may depend on the cocycle. The finite detecting set
+and the uniform count of all congruence solutions are separate
+subsequent steps; no lifting of a cocycle modulo $t^m$ was assumed.
