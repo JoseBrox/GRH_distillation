@@ -1,168 +1,131 @@
 # Current arithmetic suppliers and remaining research
 
-This checkpoint continues main at
-`32de5c1887329aaa813007b7cf6f31e625f4ff8f`. The two conventional
-proofs remain incomplete. The purpose of this continuation is to finish
-specific missing suppliers inside the open Selmer, geometric and global
-norm nodes, and to distinguish that work from refinement of already
-proved estimates.
+The present objective is to remove the decisive missing arithmetic
+hypotheses, with ordinary RH as the preferred first case. The conventional
+RH and Dirichlet GRH proofs remain incomplete. The
+[frontier theorems](open-frontier-theorems.md) state the exact remaining
+quantifiers and the common final acceptance test.
 
-## Completed suppliers
+## Actual geometric models and integral theta
 
-### Integral detection and the complete auxiliary choice
+The [generic moduli construction](geometry-arithmetic-frontier-generic-pel.md)
+and [integral PEL theorem](geometry-arithmetic-frontier-integral-pel.md)
+construct the original objects over the original coefficient rings.
+The prescribed cyclotomic root uniquely completes the half-level,
+so the exact neat subgroup is available without adding a field.
+The symmetric cubical line is the original primitive line, with its
+rigidification, rather than a power or a changed integral lattice.
 
-The fraction-field paired determinant argument now returns to the
-**original integral module**. Its coefficient coordinates form an
-actual direct sum, so clearing one common denominator in finitely many
-primitive entries preserves block support and transpose polarization.
-This proves the original detection statement on the full cyclotomic
-kernel. The [proof](selmer-integral-frontier-integral-detection.md) was
-published at `eb5d5d0e4b93d5619008ee347fb50aa073681229`.
+The [DVR uniformization](geometry-arithmetic-frontier-dvr-uniformization.md)
+and [whole-model integral theta theorem](geometry-arithmetic-frontier-integral-theta.md)
+prove `PELUnif`, the exact torsion quotient/action, `PushInvertible`,
+degree-one `SplitFibres`, and the complete original `Model.N3`.
+An actual cleared section gives its coefficient expansions first.
+Artin–Rees cancels one denominator; Krull intersection and normality
+make the theta section regular globally. Generic dimension counting
+is used only after those integral witnesses are constructed.
 
-The exact open-subgroup finiteness condition makes continuous cocycle
-modules finite. It also constructs the original odd Selmer family from
-the quotient by skew boundaries, retaining every local witness. A basis
-of the detecting functionals over the fraction field preserves their
-**exact integral common kernel**, and finite intersections of the
-original open spectral loci give one simultaneous finite detecting set.
-Finite coordinate projections then preserve all local conditions,
-polarization and detection through ramified coefficient extensions.
-Splitting the selected characteristic polynomials and enlarging residue
-fields completes the original auxiliary-choice statement.
+The [level-symmetry theorem](geometry-arithmetic-frontier-level-symmetry.md)
+proves the original level actions and descent, prime-to-p label extension,
+and good-reduction extension over every specified valuation ring,
+including the nondiscrete ones. Normal finite approximation removes a
+Noetherian restriction without enlarging the fraction field. Together
+with integral theta this gives the full individual
+`LevelStructureConditions`.
 
-The [finite-selection](selmer-integral-frontier-finite-selection.md) and
-[coefficient-extension](selmer-integral-frontier-coefficient-extension.md)
-proofs, with independent reviews, were published at
-`a86977f7415b364639de07f35d611f9b0a4be591`.
-The given arithmetic points, group finiteness, spectral density and
-nontrivial residual cyclotomic character remain their original inputs.
-A single denominator works for integral detecting cocycles at each
-fixed point, without claiming uniformity over moving points or lifting
-of modular cocycles. The earlier complete-equation theorem still
-handles the full set of modular solutions.
+The [global model theorem](geometry-arithmetic-frontier-global-model.md)
+proves the all-place `N6` supplier. A genuine arithmetic model on the
+cofinite good-prime base agrees with the canonical local normalizations;
+a finite normalized projective graph handles the exceptional places.
+The exact semiabelian family and primitive line descend effectively.
+This is a coordinated construction, not an assertion about arbitrary
+independently chosen local blowups.
 
-### The original signed arithmetic boundary comparison
+The full-primary trace, mixed pullback and arbitrary level-prime estimates
+remain in force for these actual constructions. Their final use still
+requires the good cover, formal-arc and map comparisons. Numerical
+arithmetic section and height estimates remain separate.
 
-On the supplied smooth compact model, change of variables identifies
-the original sum over projection branches with the mixed curvature
-integral, retaining every complex component and existing cover weight.
-The original vertical unit equations express every vertical factor
-locally as the absolute value of a nonvanishing holomorphic function.
-Their curvature therefore vanishes **at the boundary as well**.
+## Actual ordinary modules, types and Galois determinants
 
-Exact metric variation, the two previously proved energy limits and
-energy concavity now give the signed arithmetic inequality at each
-fixed positive rational twist. One common polynomial recovers the
-untwisted limit. This removes the need for a separate convergence
-claim for the unbounded cusp function against varying regularized
-measures. No bounded metric at zero positive twist is assumed.
+The [ordinary module theorem](selmer-integral-frontier-ordinary-diamond.md)
+constructs the exact finite free modules, integral diamond trace and
+augmentation quotient. The [classical control theorem](selmer-integral-frontier-classical-control.md)
+gives faithful good weight-zero specializations on those same modules.
 
-The [complete comparison](geometry-arithmetic-frontier-compact-model-stokes.md)
-and its independent review were published at
-`f6b85addc3d98cb33d5810cd31bc84a752ed1143`.
-The arithmetic model, intersection system, smoothness and height
-hypotheses remain supplied data. The theorem does not construct them
-or bound the arithmetic section remainder.
+The [integral type theorem](selmer-integral-frontier-type-construction.md)
+constructs the source's compact types at arbitrary conductor, including
+wild inertia. It keeps the original coefficient DVR by restriction of
+scalars and records the resulting rank cost. It uses the local type
+theorem, not a global patching conclusion.
 
-### The ordinary local arithmetic count
+The [Hecke determinant theorem](selmer-integral-frontier-hecke-determinant.md)
+constructs the actual universal determinant action and the precise
+classical Galois compatibility. It retains all isobaric blocks and
+multiplicity spaces, exact ordinary q-powers, ordered local flags,
+and the original residual quotient. Integral Amitsur identities avoid
+dividing by n!, including when the residue characteristic is small.
 
-Local Tate duality and Euler characteristic give an exact rank-one
-cocycle count. The defect is the length of the annihilator of the ideal
-of differences between the original ordinary characters and the
-cyclotomic character. The exact typed triangular filtration then counts
-all entries in the original first-order module. This gives the original
-ordinary local bound with an explicit constant independent of both
-truncation and auxiliary level at fixed arithmetic data. The proof
-retains the local torsion subgroup and the residue-field trace pairing,
-including cases in which the trace of one vanishes.
+Both finite-level cohomological bounds and their exact limiting
+comparison are proved. The next arithmetic requirements are the actual
+auxiliary comparison maps, marked deformation models, patched support,
+full characteristic-prime propagation and two-sided rigidity. They must
+supply the moving-family integral Selmer product; qualitative finiteness
+or rational rigidity cannot replace that bound.
 
-See the [ordinary local theorem](selmer-integral-frontier-ordinary-local-count.md),
-published with its independent review at
-`e9b76c5b6bb238d446f2437f0cb88dcb6565c6b3`.
-Its remaining global and distinguished-place cohomological consumers
-are explicit; this is not uniformity over changing arithmetic points.
+## Actual local periods and remaining global norms
 
-### Equality of the original scalar-pair densities
+The [local representation and Bessel construction](global-norm-frontier-pieri-family.md)
+gives the prescribed normalized families. The
+[iterated weighted norm theorem](global-norm-frontier-iterated-minors.md)
+retains all intermediate parameters and colliding Pieri paths.
+The [big-cell theorem](global-norm-frontier-big-cell-continuity.md)
+proves absolute convergence, continuity and the coefficient expansion
+at every original big-cell point, resolving the earlier almost-everywhere
+limitation there.
 
-The [complementary-lattice argument](global-norm-frontier-scalar-density.md)
-proves a genuinely missing local equality. The original quotient
-isometries and designated split-level congruence graph identify the
-orthogonal integral lattices. Self-duality then identifies the
-discriminant modules of the actual primitive modified frame lattices,
-so their residue Gram coranks and their primitive densities agree.
-Together with the previously proved frame count, this finishes the
-original local density assertion with constant one. The raw tuple
-cannot replace the modified tuple: an exact original-data example has
-different residue coranks for them. The theorem and the three next-target
-checkpoints were published at
-`e26c5bace6641d96a18e21e6b163e170a3ca363c`.
+The [rank-zero pointwise theorem](global-norm-frontier-rank-zero-pointwise.md)
+proves the entire original orbital bound at r=0, with b^4/G and the exact
+Haar density. Its Casimir estimate uses the actual compact type and
+retains every multiplicity. Ordinary RH is not assumed to have r=0.
 
-## A refinement, correctly separated from a new closure
+The [wave isometry](global-norm-frontier-wave-isometry.md) now preserves
+the exact signed residue forms at every rank and word, with the original
+phase correction, gauges and Haar constant.
 
-The exact primitive Hermitian frame count, including singular residue
-Gram matrices and residue characteristic two, was **already proved**
-in the local-density chapter. Repeating it would not advance an open
-supplier. The [new local estimate](global-norm-frontier-primitive-density.md)
-is instead the signed refinement: pairing consecutive factors removes
-a rank multiplier, and the original even ranks force positive errors
-to occur only at inert places of odd corank, with one additional power
-of the residue-field size. The original primitive cutoff and modified
-split tuple remain unchanged.
+The next local target is the actual partial-head Fourier estimate at
+positive rank, including mixed signed residue forms and lower-dimensional
+root stabilizers. Its eventual global application must retain every
+rational return, all source/target cuts and all arithmetic normalizers.
+An ambient projector estimate or local Gram identity is not the required
+global period-Gram estimate. A strict source deficit must supply any
+aggregate nonvanishing needed by the chosen consumer.
 
-This refinement was published at
-`48ab6a2c9cdcc0b9f0c38dbe22be1857a19fd1b0`.
-It improves a finite-place coefficient. It does not prove the global
-period norm estimates or a new leading exponent in the final height
-contradiction. The main manuscripts reuse the existing count and add
-only the short signed estimate.
+## Direct next attacks
 
-## Priorities after these suppliers
+1. Complete all original simultaneous level/Siegel and formal-arc fields,
+   then identify and estimate the actual arithmetic section lattices.
+2. Complete the actual Taylor–Wiles auxiliary maps, then attack marked
+   deformation support and the full integral Selmer budget.
+3. Prove the positive-rank partial-head Fourier/orbital estimate and
+   transfer it to the complete period-Gram sum.
+4. Test every newly supplied result against the exact fourth-power tables
+   in frontier theorem A. Constants and all accuracy parameters precede
+   their cofinal windows; every table entry uses the same arithmetic maps.
 
-1. **Selmer arithmetic.** Apply the proved ordinary local count, then
-   establish the distinguished-place and global cohomological inputs and
-   construct the actual patched modules with their dimensions. Propagation must take place in
-   the full normalized ring, including its characteristic-prime fibre.
-2. **Global norms.** Use the now-proved scalar-pair density equality
-   with the remaining original local orbital laws. The principal
-   remaining estimate is the actual archimedean orbital/Bessel
-   contribution and its assembly
-   into a small normalized source deficit and target excess, with all
-   returns, restrictions, volumes and normalizers retained.
-3. **Geometry.** Construct the actual model, sheets, lattice and height
-   inputs used above. The arithmetic section remainder has a separate
-   supplier involving the original short-vector frames and jet lattices;
-   the finite jet-rank theorem alone does not supply it. Do not return to
-   the now-completed limiting-energy argument as a substitute.
+The already established frame, cohomological comparison and boundary
+lemmas should be applied with their existing constants. New simplification
+is useful only when it removes one of the missing hypotheses above.
 
-The next steps have bounded, authenticated restart records:
+## Verification scope
 
-- [Selmer invariant factors and tower descent](selmer-integral-frontier-after-ordinary-local-count.md).
-- [The exact normalized archimedean target](global-norm-frontier-archimedean-target.md).
-- [The arithmetic section and jet-lattice target](geometry-arithmetic-frontier-section-remainder-target.md).
+Every claimed supplier has a written standard proof, bounded pinned-source
+interfaces, primary-reference hashes and independent review. Exact checks
+verify finite identities where they add evidence; they are not substitutes
+for the all-parameter proofs. No Lean build has been performed.
 
-These checkpoints assert no additional closure. They retain the precise
-objects, constants and hypotheses needed to resume without loading
-large source files or reopening completed subarguments.
-
-## Verification and organization
-
-Each proved supplier has a full mathematical note, a compact shared
-manuscript fragment, pinned source hashes and an independent review.
-The coefficient identities, characteristic-two counts and rational
-normalizations have exact reproducible checks where useful. Source
-authentication and finite computations support the written proofs;
-**no Lean build has been performed**.
-
-The [integration record](../certificates/arithmetic-supplier-integration-2026-11-22.json)
-records the final builds, artifact hashes, scoped visual review and
-unchanged short analytic proof.
-
-Both routes use these shared results with their original hypotheses.
-The eight-page guide remains an organizational explanation, and its
-complete short analytic RH proof is preserved byte for byte. The
-blueprints record completed suppliers inside existing open nodes;
-no node has been subdivided to increase the count.
-
-**Whole-node counts: ordinary RH 6/9; Dirichlet GRH 17/31.** These are
-counts of stated interfaces, not percentages of either conjecture
-proved.
+Both manuscripts and the compact guide retain the distinction between
+proved suppliers, cited classical theorems, conditional assembly and the
+remaining arithmetic hypotheses. No fourth-power table satisfying the
+final criterion has yet been constructed. Whole-node counts remain
+ordinary RH **6/9** and Dirichlet GRH **17/31**.

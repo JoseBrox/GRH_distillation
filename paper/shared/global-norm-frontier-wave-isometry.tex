@@ -1,0 +1,193 @@
+\subsection{Exact wave isometry for the original residue forms}
+\label{actual-residue-wave-isometry}
+
+The Fourier estimate uses an isometry of the actual differential
+forms, including their auxiliary components.  Multiplication by a
+unit-modulus phase alone is insufficient for a differentiated form.
+The prescribed component correction gives an exact isometry, with no
+loss depending on the rank or the word length.
+
+At one level of the original tower, let $\beta_w$ denote the
+sesquilinear residue form for a finite signed word $w$.  We retain
+the original compact, unipotent and terminal Haar measures, the gauge
+$\prod_a|c_a|^{2(r-a)+k}$, and the outer measure
+$\prod_a|c_a|^{-2}dc_a$.  The established local compatibility theorem
+identifies this form with
+\begin{equation}\label{wave-isometry-form}
+ \beta_w(x,y)=C_r^{-1}\langle R_w\Phi_x,\Phi_y\rangle,
+ \qquad C_r>0,
+\end{equation}
+on compact smooth coefficients with positive Gram cutoff and on the
+corresponding smooth rapidly decreasing class.  The same $C_r$ works
+for every finite word; it is not set to one
+\cite{wave-isometry-established}.
+
+For $s\in\mathbb C$ set
+\[
+ f_s(z)=\exp(sz-\bar s\bar z),\qquad
+ U_s=\begin{pmatrix}1&0\\s&1\end{pmatrix}.
+\]
+At a plus letter the source component map is $U_s$, and at a
+minus letter it is $\bar U_s$.  Let $V_s(w)$ be their tensor product
+over the original word positions.  Its recursive action is precisely
+the source's $\mathrm{uInv}(s,w)$: the component with new index zero
+is unchanged, while the component with new index one gains $s$ times
+the zero component at a plus letter and $\bar s$ times it at a
+minus letter.  Define
+\[
+ (\mathcal W_{s,w}x)(g)
+       =f_s(D_1(g))\,V_s(w)x(g),
+\]
+where $D_1$ is the first original leading minor at the current
+level.  On the regular radial domain it is the first outer
+coordinate, or the terminal coordinate $\zeta$ when the residual
+unipotent rank is zero.
+
+\begin{theorem}\label{wave-isometry-actual}
+For every original admissible datum, every finite admissible signed
+word $w$, every $s\in\mathbb C$, and all coefficient vectors $x,y$
+in either class just specified,
+\begin{equation}\label{wave-isometry-exact}
+ \beta_w(\mathcal W_{s,w}x,\mathcal W_{s,w}y)=\beta_w(x,y).
+\end{equation}
+The wave preserves the same positive Gram cutoff and coefficient
+class.  Thus it supplies both original interfaces
+\texttt{VIso} and \texttt{VIsoCpt}, at all levels $j\le r$, with
+their original complex phase and component convention
+\cite{wave-isometry-source}.
+\end{theorem}
+
+\begin{proof}
+We give the terminal calculation, the mixed-word covariance and
+the analytic transfer separately.
+
+At residual rank zero write $Z=\zeta$ and $B=\bar\zeta$ as
+multiplication operators.  The recovered contracted matrix is
+\begin{equation}\label{wave-isometry-contracted}
+ Q(Y)=\sigma\begin{pmatrix}
+ D&-[D,Z]\\ [D,B]&-[[D,Z],B]
+ \end{pmatrix},\qquad \sigma\in\{1,-1\},
+\end{equation}
+where $D$ is the correctly shifted full Capelli determinant.
+The spectral shifts and the real sign are unchanged.  Its standard
+and dual coordinate laws are
+$[E_{ab},\eta_i]=\delta_{bi}\eta_a$ and
+$[E_{ab},y_j]=-\delta_{aj}y_b$, with
+$Z=\sum_jx_j\eta_j$ and $B=\sum_i\xi_i y_i$ for the fixed
+vectors $x,\xi$.  All coordinate multipliers commute.
+The cofactor formula
+$[D,Z]=\sum_{i,j}x_j\eta_i C_{ij}$, with the original shifted
+cofactors, gives
+\[
+                         [[D,Z],Z]=0.
+\]
+Indeed the second commutator is a sum of complementary two-row,
+two-column minors skew in the two omitted column indices, multiplied
+by the symmetric coefficients $x_jx_l$.  This cancellation is valid
+before commuting any minor past another operator.  The corresponding
+row expansion gives $[[D,B],B]=0$, by skewness in the two indices
+carrying $\xi$.  Jacobi's identity and $[Z,B]=0$ now show that
+$[[D,Z],B]$ commutes with both $Z$ and $B$.
+
+Let $M_s$ be multiplication by $f_s(Z)$.  Differentiating
+$M_{-ts}DM_{ts}$ in the real variable $t$ and using the preceding
+vanishing commutators gives the exact finite formula
+\[
+ M_{-s}DM_s=D+s[D,Z]-\bar s[D,B]
+                              -|s|^2[[D,Z],B].
+\]
+The three other entries follow by taking commutators with $Z,B$.
+Consequently
+\begin{equation}\label{wave-isometry-matrix}
+                 M_{-s}Q(Y)M_s=U_{-s}^*Q(Y)U_{-s}.
+\end{equation}
+This is a differential-operator identity on the common smooth
+domain, so no exponential of an unbounded closed operator is involved.
+
+At positive residual rank, the established one-pair restriction
+expresses the initial matrix as $T(Y)^*Q_{\rm inner}(Y)T(Y)$,
+with its original spectral shifts and
+\[
+ T(Y)=\begin{pmatrix}Y+p&-c\\c^{-1}&0\end{pmatrix},
+ \qquad p=c\partial_c.
+\]
+The inner matrix is independent of $c$.  Since
+$p f_s=f_s(p+sc)$,
+\[
+                  T(Y)M_s=M_sT(Y)U_{-s}.
+\]
+The formal adjoint for $|c|^{-2}dc$ has the corresponding identity.
+Thus \eqref{wave-isometry-matrix} holds at this rank too.  All
+remaining outer coordinates and their gauge factors are unchanged.
+
+We next verify that \eqref{wave-isometry-matrix} survives every
+mixed residue word.  This step cannot be replaced by treating a
+partial transpose as an adjoint.  For an arbitrary invertible scalar
+matrix $A$, replace an initial operator matrix $Q$ by $A^*QA$.
+For each processed plus position put $A$ in that auxiliary factor,
+and for each processed minus position put $\bar A$; denote the
+resulting tensor product by $V$.  The current main matrix $Q_w(Y)$
+and residue $R_w$ transform as
+\begin{equation}\label{wave-isometry-word-covariance}
+       Q_w(Y)\longmapsto V^{-1}A_0^*Q_w(Y)A_0V,
+       \qquad R_w\longmapsto V^*R_wV.
+\end{equation}
+Here $0$ is the main index.  To prove this, process the source
+list tail first, in its prescribed order.  At a plus step the
+main matrix is multiplied on the right by
+$((Y-y)I-\Pi_{0a})/(Y-y-1)$; at a minus step it is multiplied
+on the left by $((y-Y)I-\Omega_{0a})/(y-Y-1)$.
+The permutation and contraction identities
+\[
+ [\Pi_{0a},A_0A_a]=0,
+ \qquad
+ [\Omega_{0a},A_0^*\bar A_a^{-1}]=0
+\]
+prove the first transformation by induction.  The latter follows
+from $\Omega=\sum e_{ij}\otimes e_{ij}$ and the invariance of
+the evaluation tensor under $C\otimes C^{-t}$.
+For the residue update, the old $V^{-1}$ cancels the old $V$
+in $V^*R_wV$.  Inserting the new main matrix gives
+$A_a^*(\operatorname{ins}_aQ_w)A_a$ at a plus step.
+At a minus step, partial transposition of the main index gives
+$A_a^t(\operatorname{ins}_aQ_w^t)\bar A_a$.
+These are exactly the required new congruences.  No operator
+coefficients are commuted, and no rational denominator changes.
+This proves \eqref{wave-isometry-word-covariance} for every length.
+
+Apply it with $A=U_{-s}$.  Multiplication by $M_s$ commutes with
+all scalar auxiliary matrices, so the left transformation of the
+residue is $M_{-s}R_wM_s$.  Also
+$V_{-s}(w)V_s(w)=I$.  Since $|f_s|=1$, the original radial
+inner product therefore satisfies
+\[
+ \begin{split}
+ \langle R_wM_sV_s\Phi_x,M_sV_s\Phi_y\rangle
+ &=\langle V_{-s}^*R_wV_{-s}V_s\Phi_x,V_s\Phi_y\rangle\\
+ &=\langle R_w\Phi_x,\Phi_y\rangle.
+ \end{split}
+\]
+
+Finally, $D_1(g)=h(gf'_0,f_0)$ is invariant under the original
+integrating groups: each compact factor and each unipotent factor
+fixes the corresponding first paired vector, which is the first
+isotropic flag vector at positive rank and $z,z'$ at rank zero.
+Thus $D_1(s^{-1}gt)=D_1(g)$ for the actual left and right
+integrating elements $s,t$.  Hence the actual gauged Jacquet transform of the source
+wave is $M_sV_s\Phi_x$.  Multiplication by the phase preserves
+compact support and positive Gram support.  Every derivative of
+the phase is the same phase times a polynomial in matrix entries;
+for each fixed $s$ it therefore also preserves the class with
+arbitrarily fast decay of all derivatives.  The constant auxiliary
+shears preserve both classes.  All pairings and adjoint operations
+above are consequently on the common classes of the established
+compatibility theorem.  Multiplying the identity by the same
+$C_r^{-1}$ on both sides proves \eqref{wave-isometry-exact}.
+Its equality is uniform in $r,w,s$; no bound for a class-preservation
+seminorm has been substituted for a form estimate.
+\end{proof}
+
+This closes the wave-isometry input of the actual kernel estimate.
+The mixed determinant Cauchy inequality, the partial-head Fourier
+identity on all relevant strata, and the final uniform normalizer
+and rational-return comparisons remain separate obligations.

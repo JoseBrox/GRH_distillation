@@ -151,3 +151,10 @@ models. One arithmetic model covers the cofinite good-prime base, a finite
 normalized projective graph handles the exceptional places, and the original
 semiabelian family and primitive line descend effectively. No arbitrary
 infinite family of local blowups or coefficient-field enlargement is used.
+
+The [actual wave-isometry theorem](../../notes/global-norm-frontier-wave-isometry.md)
+proves `VIso` and `VIsoCpt` for all original levels and finite admissible
+signed words. The phase and its prescribed component correction preserve
+the actual residue forms with constant exactly one; the original Haar
+constant and gauges cancel unchanged. The mixed determinant inequality,
+partial-head Fourier transfer and global period estimates remain.

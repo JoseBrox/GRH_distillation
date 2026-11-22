@@ -179,3 +179,10 @@ authenticates `Model`, `Descends`, `Dominates` and the entire original `N6`
 valuation quantifier. The [independent review](../certificates/geometry-arithmetic-frontier-global-model-review.json)
 checks the arithmetic outside-finitely-many-primes agreement, effective
 scheme descent, and exact source comparison maps.
+
+The [wave-isometry certificate](../certificates/global-norm-frontier-wave-isometry.json)
+records the exact `waveG`, `uInv`, `VIso`, `VIsoCpt` and tail-first
+residue recursion. The [review](../certificates/global-norm-frontier-wave-isometry-review.json)
+checks all signed tensor factors, actual integrating stabilizers, gauge
+and common Haar constant. The all-word equality is proved by induction;
+finite exact tests serve as independent checks of signs and order.
