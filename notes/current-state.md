@@ -511,6 +511,19 @@ actual retained target's diagonal kernel, with every rational orbit and
 original volume retained. This integral and the source deficit still
 need arithmetic bounds; the seed identity alone proves no nonvanishing.
 
+The [ramified determinant calculation](ramified-hodge-determinant.md)
+constructs the actual integral conjugate determinant as the determinant
+of the full Hodge character quotient, twisted by a fixed ideal determined
+by the coefficient field and signature. A two-term cokernel identity
+identifies every integral point pullback, also at wild and dyadic primes,
+without assuming coefficient freeness of the tangent eigensheaves.
+First-order sections of the original global biextension supply the Hodge
+bundle; generic properness and flatness normalize its adjunctions
+coherently. The original fibre conditions give full coefficient freeness.
+Thus the ramified integral-line and special-curve identifications follow
+from these actual model data. Constructing that model, the integral CM
+maps to its selected component, and the cusp/section estimates remains.
+
 ## Next mathematical work
 
 1. **Integral maps and global norms (W06/W08).** Supply nonzero integral
