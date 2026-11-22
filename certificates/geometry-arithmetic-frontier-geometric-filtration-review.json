@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:32:21.854486+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Geometric filtration, deepest space and generic Chow specialization from the original geometric hypotheses.",
+  "audit_groups": [
+    {
+      "topic": "Vanishing hypotheses",
+      "result": "PASS",
+      "finding": "Only nef-and-big B times nonnegative powers of the generated L is used for residue surjectivity. Division uses nef-and-big A times powers n-i>=0, with n>=D. No unjustified negative twist of A is treated as nef."
+    },
+    {
+      "topic": "Higher-order division",
+      "result": "PASS",
+      "finding": "The regular sequence gives a free monomial basis in I^a/I^(a+1). After the induction at degree j+1, vanishing of the symbol forces every coefficient to vanish at Z. First-order Koszul division then gives the next power, without a resolution or a vanishing hypothesis for ideal powers."
+    },
+    {
+      "topic": "Original enlarged section spaces",
+      "result": "PASS",
+      "finding": "V_0=G_0 and only degrees through T are required. The non-global V_D remains in P_s. For W_s=G_T+P_s the deepest space is exactly P_s; no identification of V_D or V_T with all global sections is assumed."
+    },
+    {
+      "topic": "Residue coordinates and symbols",
+      "result": "PASS",
+      "finding": "Multiplication by e is invertible on the finite etale Z. Adjunction and etale duality give the original residue coordinates. One K-rational linear form avoids all split points, and its products with the onto degree-zero residues supply every graded symbol."
+    },
+    {
+      "topic": "Good tuples and Chow factor",
+      "result": "PASS",
+      "finding": "A finite etale fibre of the existing projection avoids the proper closed image of the excluded locus. Properness and the relative Jacobian give a nonempty principal open of good tuples over K. Distinct image points, incidence and total degree delta force the exact product of linear factors."
+    },
+    {
+      "topic": "Scope",
+      "result": "PASS",
+      "finding": "This supplies the geometric filtration in the already reviewed determinant degree theorem. Arithmetic model, metrics, multiplication and short integral families, and the geometric height identity remain separate application data."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AbelianVarietyTheory.Definitions.Divisors.HasBoundedPolesGlobalData",
+      "sha256": "d8090e4e187caa7591a761ce8130102b8e274754bd376db18bb39020411d4d5c",
+      "git_blob_sha1": "6431170014f8a450b40b707faabb1362a771970b",
+      "independently_read_ranges": [
+        [
+          109,
+          145
+        ],
+        [
+          179,
+          218
+        ],
+        [
+          336,
+          350
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.DivisorProofs.FilSpaceVEqSpaceP",
+      "sha256": "5ddf393d54f0c4a4d9e56979a870149592a30b1782f67ca2817d266008e13047",
+      "git_blob_sha1": "5359a5f27e6c750f242114794b250976cfbe8e07",
+      "independently_read_ranges": [
+        [
+          23,
+          45
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.DivisorProofs.HilbertSamuelFiltrationAtGoodSections",
+      "sha256": "154ba72def8d80dbbde40d08e9e4f8c731861cc22bd1ab28b1d540a3d315d6a2",
+      "git_blob_sha1": "830a724985978b30cdfca99c67faa0739995fc57",
+      "independently_read_ranges": [
+        [
+          19,
+          76
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_geometry_arithmetic_frontier_geometric_filtration.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "projective_spaces": {
+        "models": 180,
+        "graded_symbol_comparisons": 540,
+        "deepest_monomial_spans_equal": true,
+        "includes_D1_and_T_equals_D_plus_1": true,
+        "scope": "Exact monomial section spaces on P^D, D=1..4; these models have delta=1."
+      },
+      "multipoint_projective_lines": {
+        "models": 24,
+        "graded_symbol_comparisons": 48,
+        "scope": "Exact polynomial spaces on P^1 with L=O(2) or O(3), including all local derivative symbols and deepest kernels."
+      },
+      "negative_controls": [
+        {
+          "hypothesis": "B big",
+          "example": "Elliptic curve y^2=x^3-x; L=O(2 infinity), B=O, A=L, e=1, s=x-2.",
+          "exact_matrix_rank": 1,
+          "required_residue_dimension": 2,
+          "scope": "The matrix and the two distinct curve points are checked exactly; standard section-basis facts are explained in the mathematical note."
+        },
+        {
+          "hypothesis": "Z finite etale",
+          "example": "K[t]/(t^2)",
+          "coordinate_ring_dimension": 2,
+          "geometric_evaluation_rank": 1
+        }
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/geometry-arithmetic-frontier-geometric-filtration.md",
+      "sha256": "5267cd01d4ce3d26afe81cee9df92a6129857b07579c677ba9e3f76c06a8ce5b"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-geometric-filtration.tex",
+      "sha256": "6ef88158ddfb70998954a6840e8bf64f0b9626c181fd1d25e5f83c0962c39943"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-geometric-filtration-references.tex",
+      "sha256": "0c66ed84b921ab01e209acf806b36aca956f0f23bb6b32e44e294a531aa0f00a"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_geometric_filtration.py",
+      "sha256": "a808dab28587b017fe9acdabea1632056d07f2608c923b228c29461891a17371"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-geometric-filtration.json",
+      "sha256": "7fb1fb50ce0e12bbc592bbaa76960b7d230d99ceb524935337c441f06ea9824d"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-geometric-filtration-layout.json",
+      "sha256": "04b6a3e144d1b33fb20621053e994d7e8901a8c5ce20dc26bc825e5d28910d40"
+    }
+  ],
+  "limits": [
+    "The exact finite models check selected algebraic cases; the written proof supplies the general theorem.",
+    "No arithmetic compactification, integral metric identity or short-section family is constructed here.",
+    "No Lean build or whole-node completion is claimed."
+  ],
+  "primary_reference_review": {
+    "finding": "Independently read Viehweg Theorem2.28 at printed67/PDF73, using N=1 and divisor0; Stacks067M Lemmas31.21.1 and31.21.4; Stacks02KH Lemma30.5.2. The Viehweg page was visually inspected.",
+    "references": [
+      {
+        "path": "build/reference-cache/viehweg-moduli-1995.pdf",
+        "url": "https://page.mi.fu-berlin.de/esnault/books/vibuch.pdf",
+        "sha256": "57c4c714b7d22c05bd103fb3173643601460894da7506db10daa791de81af297",
+        "reference": "E. Viehweg, Quasi-Projective Moduli for Polarized Manifolds, Springer 1995, Theorem 2.28, printed page 67 / PDF page 73.",
+        "verified_scope": "Author-hosted theorem page was read and visually inspected; use N=1 and divisor zero for nef-and-big line-bundle vanishing."
+      },
+      {
+        "path": "build/reference-cache/stacks-067M.html",
+        "url": "https://stacks.math.columbia.edu/tag/067M",
+        "sha256": "da297a018c3dbdc96e14c56d42c43937436f0c1276e2b46b4b62c0ec7e2bac52",
+        "reference": "Stacks Project, Regular ideal sheaves, Lemmas 31.21.1 and 31.21.4.",
+        "verified_scope": "Regular sequences imply Koszul regularity and the symmetric description of the associated graded ideal."
+      },
+      {
+        "path": "build/reference-cache/stacks-02KH.html",
+        "url": "https://stacks.math.columbia.edu/tag/02KH",
+        "sha256": "9da5d88e9ba6915ffdea0b6191750eb65dcc108799c35dc54f4f9bad1fc29777",
+        "reference": "Stacks Project, Flat base change, Lemma 30.5.2.",
+        "verified_scope": "Cohomology commutes with flat extension of the base field for the projective schemes in the proof."
+      }
+    ]
+  }
+}
