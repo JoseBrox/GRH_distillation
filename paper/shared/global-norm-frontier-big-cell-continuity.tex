@@ -1,0 +1,195 @@
+\subsection{Pointwise convergence on the original big cell}
+\label{archimedean-big-cell-continuity}
+
+The almost-everywhere boundary in the preceding norm argument can be
+removed on the regular big cell. The key estimate concerns the
+original unipotent variables, rather than an abstract representative
+of a radial $L^2$ function.
+
+\begin{lemma}\label{block-gauss-polynomial-properness}
+Let $n=2r+k+1$, $k\ge1$, and $N$ be the original flag unipotent
+subgroup. Let $w$ exchange each outer isotropic vector with its
+paired opposite and fix the middle space. For
+$c=(c_0,\ldots,c_{r-1})\in(\mathbb C^\times)^r$ and
+$\mu\in U(k,1)$ write
+\[
+ g(c,\mu)=wD(c,\mu),\quad
+ D(c,\mu)=
+ \operatorname{diag}(c_0,\ldots,c_{r-1},\mu,
+                    \bar c_{r-1}^{-1},\ldots,\bar c_0^{-1}).
+\]
+For $c$ in a fixed compact subset of $(\mathbb C^\times)^r$,
+there is a constant $C$ such that, for all $n_L,n_R\in N$,
+\[
+ \max\{\|n_L\|_{\rm HS},\|n_R\|_{\rm HS}\}
+ \le C\|n_L^{-1}g(c,\mu)n_R\|_{\rm HS}^{\,n-1}.
+\]
+The constant is independent of $\mu$. The original compact
+stabilizers can be included on the two outside factors by changing
+$C$ by a fixed finite factor.
+\end{lemma}
+
+\begin{proof}
+Use the ordered block sizes $(1^r,k+1,1^r)$.
+The defining flag conditions and Hermitian invariance make $N$
+upper block-unitriangular with identity middle block.
+Hermitian invariance gives the opposite flag conditions, so there
+are no omitted entries below this block diagonal.
+Conjugation by $w$ makes it lower block-unitriangular.
+For $X=n_L^{-1}g(c,\mu)n_R$ we therefore have the exact
+block Gauss decomposition
+\[
+             w^{-1}X=LDU,\qquad
+ L=w^{-1}n_L^{-1}w,\quad U=n_R,\quad D=D(c,\mu).
+\]
+
+Let $J$ be an initial segment ending at a block boundary before
+the last block, and let $\Delta_J$ be the determinant of the
+corresponding principal submatrix of $w^{-1}X$.
+It equals the determinant of $D_J$.
+The permitted boundaries are
+\[
+                1,\ldots,r,\quad r+k+1,\ldots,n-1 .
+\]
+There is no boundary inside the middle $(k+1)$-dimensional block.
+Since $|\det\mu|=1$, the absolute values $|\Delta_J|$
+are products of $|c_a|$ and their reciprocals.
+They have a common positive lower bound $\delta$ on the specified
+compact set; decrease $\delta$ to at most one.
+
+Put $A=w^{-1}X$. If $i$ belongs to the last block of $J$ and
+$t$ lies after $J$, then
+\[
+ U_{it}=(A_J^{-1}A_{J,t})_i,\qquad
+ L_{ti}=(A_{t,J}A_J^{-1})_i .
+\]
+Indeed, multiplying the block factors cancels $L_JD_J$ in the
+first expression and $D_JU_J$ in the second; the last block row
+of $U_J^{-1}$ and last block column of $L_J^{-1}$ are the
+corresponding rows and columns of the identity.
+Cramer's rule expresses each entry as a determinant of size
+$|J|\le n-1$ divided by $\Delta_J$.
+Hadamard's inequality bounds its numerator by
+$\|A\|_{\rm HS}^{|J|}$.
+Since $\|X\|_{\rm HS}\ge1$ and $w$ is Euclidean unitary, this gives
+\[
+ \|L\|_{\rm HS},\|U\|_{\rm HS}
+       \le n\delta^{-1}\|X\|_{\rm HS}^{n-1}.
+\]
+The original Hermitian matrix is a unitary involution, so
+$n_L^{-1}=Hn_L^*H$ and
+$\|n_L^{-1}\|_{\rm HS}=\|n_L\|_{\rm HS}$.
+This proves the bound. For $r=0$, $N=\{1\}$ and it holds directly.
+
+Each original compact stabilizer acts only on the middle block.
+It normalizes $N$, commutes with $w$ and the outer diagonal
+entries, and its conjugation distorts the Hilbert--Schmidt norm
+by a bounded factor. Move the two compact factors into these
+conjugations and replace $\mu$ by their left-right translate.
+The latter still lies in $U(k,1)$. This proves the last assertion
+without changing any Haar measure.
+\end{proof}
+
+\begin{theorem}\label{original-big-cell-continuity}
+Let $F$ be a continuous original operator-valued coefficient with
+\[
+                  \|F(g)\|_{\rm HS}\le C_F\|g\|_{\rm HS}^{-A},
+             \qquad A>4n^2(n-1).
+\]
+Its original two-sided Bessel integral is absolutely convergent
+at every big-cell point. For every original smooth section,
+the integral is continuous on
+\[
+ \mathcal Q=(\mathbb C^\times)^r
+             \times\{\zeta\in\mathbb C:|\zeta|^2>TT'\}.
+\]
+Both assertions hold for every original unitary character scale.
+\end{theorem}
+
+\begin{proof}
+Keep the original compact, unipotent and character factors in
+the integral. The compact representation factors and the
+characters have operator norm one.
+For $c$ in a compact set away from zero, the preceding lemma
+majorizes the norm of its integrand by
+\[
+ C'\bigl(\max\{1,\|n_L\|_{\rm HS},\|n_R\|_{\rm HS}\}\bigr)^{-A/(n-1)} .
+\]
+The ambient packing argument of
+Section~\ref{archimedean-quotient-mass} applies to the closed
+unimodular subgroup $N$: its Haar volume in a matrix ball of radius
+$R\ge1$ is at most $C_NR^{2n^2}$.
+Consequently the product Haar volume in the displayed maximum ball
+is at most $C_N'C_NR^{4n^2}$, where the two constants retain their
+possibly different original Haar masses.
+Summing over dyadic annuli proves integrability, because
+$A/(n-1)>4n^2$. The compact measures are finite.
+No probability normalization or representative change has been
+made in the integral.
+
+The original section is smooth on the displayed exterior domain
+\cite{big-cell-continuity-source}. Thus the integrand is continuous
+in its big-cell parameters for each fixed integration variable.
+On every compact subset of $\mathcal Q$ the same integrable
+majorant applies. Dominated convergence gives continuity of the
+actual integral, with its prescribed values.
+\end{proof}
+
+For the family used above, this theorem has no additional gap cost.
+Set $q=r+1$ and let $h$ be its original noncompact gap.
+The common effective gap $h/4$ gives
+$A=h/(32\sqrt{2q})-1$. The original local hypotheses give
+\[
+ A\ge \frac{C_g}{2}q^4(3qn^2+n^3)-1
+       \ge 500000n^3-1>4n^2(n-1).
+\]
+The smooth coefficient estimate of
+Theorem~\ref{original-smooth-decay-from-tensor} supplies this
+decay for every coefficient in the finite shifted family.
+The constants in the integrable majorant are used only for
+convergence and continuity; none enters the uniform power of $b$.
+
+\begin{corollary}\label{original-pointwise-pieri-expansions}
+Under the exact hypotheses of
+Theorem~\ref{original-iterated-minor-norm}, its finite coefficient
+expansions hold at every point of the original big cell.
+With the source's normalized coefficient representatives, this
+supplies $\mathrm{BesselExpansionNearParameter}$ and
+$\mathrm{BesselExpansionCoefficientSum}$, with the same constants,
+support bound and original real parameter reserve.
+\end{corollary}
+
+\begin{proof}
+Fix any admissible datum and the finitely many prescribed
+coefficient representatives. Every term in its expansion,
+and the original coefficient multiplied by the scalar leading
+minors, is continuous on $\mathcal Q$ by the theorem.
+The preceding subsection proves equality almost everywhere for
+the original radial measure. That measure has positive density
+throughout $\mathcal Q$:
+\[
+ \prod_{a<r}|c_a|^{2(2r+k-2a-1)}
+                    (|\zeta|^2-TT')^{k-1}\,dc\,d\zeta ,
+\]
+up to its retained positive normalization.
+A nonzero continuous difference would be bounded away from zero
+on a nonempty open set of positive measure. Thus the difference
+vanishes at every point.
+
+The argument applies to the arbitrary normalized representatives
+quantified by the source. A representation whose entire Jacquet
+image is zero contributes no coefficient; continuity also makes
+that vanishing pointwise. The absolute coefficient sum remains
+at most $b^{C_bm^2|\alpha|}$ and its support remains
+$\|\eta\|_1\le(r+1)|\alpha|$, as already proved.
+No uniform exceptional set over changing arithmetic data is needed:
+the conclusion is pointwise for each admissible datum.
+\end{proof}
+
+This removes the big-cell representative-identification issue.
+It does not yet supply a uniform point-evaluation bound relative
+to the Jacquet norm. It also does not compare the original
+orbital measures on lower-dimensional relevant strata, where a
+block boundary minor used in the Gauss argument can vanish.
+Those strata occur in the rational-return problem and remain
+part of the weighted orbital frontier.

@@ -63,9 +63,7 @@ moving-family integral Selmer budget.
 The actual local discrete-series and period-normalized Bessel families
 now supply the exact leading-minor Jacquet estimate, retaining signed
 Pieri adjoints, the original real budget, both character scales and zero
-maps. The weighted orbital estimate and full global rational-return sum
-remain open. The local Gram identity is not the global period-Gram
-comparison needed for the final table.
+maps. The exact higher weighted norms and finite coefficient expansions now also hold on the entire original big cell. A block Gauss estimate proves absolute convergence and continuity of the actual integrals, removing the almost-everywhere limitation there. The uniform partial-head kernel estimate, lower-dimensional orbital strata and full global rational-return sum remain open. The local Gram identity is not the global period-Gram comparison needed for the final table.
 
 The new construction proofs and their independent reviews have stems
 `geometry-arithmetic-frontier-integral-pel`,

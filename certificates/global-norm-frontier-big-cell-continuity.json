@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "classification": "closed original regular-big-cell convergence, representative identification and pointwise coefficient-expansion subobligations",
+  "supplied_interfaces": [
+    "BesselExpansionNearParameter",
+    "BesselExpansionCoefficientSum"
+  ],
+  "theorem": "Actual two-sided orbital integrals converge absolutely and continuously on the original big cell; L2 expansions hold at every original big-cell point.",
+  "checks": {
+    "block_gauss": {
+      "exact_original_Hpk_unitary_cases": 18,
+      "block_entry_recovery_identities": 300,
+      "unchanged_boundary_determinants": 36,
+      "squared_polynomial_properness_bounds": 36,
+      "internal_scalar_pivot_negative_controls": 12,
+      "middle_block_example": {
+        "r": 1,
+        "k": 2,
+        "n": 5,
+        "block_boundaries": [
+          1,
+          4
+        ],
+        "vanishing_internal_scalar_pivot": 2,
+        "middle_block_det": "-1",
+        "all_required_boundary_pivots_nonzero": true
+      },
+      "scope": "Exact block identities and edge checks supplement the all-rank written Cramer/Hadamard proof."
+    },
+    "convergence_threshold": {
+      "exact_strong_gap_cases": 1550,
+      "unbounded_gap_certificate": "A>=500000 n^3-1>4 n^2(n-1), n>=2",
+      "product_haar_growth_exponent": "4 n^2",
+      "gauss_inverse_degree": "n-1",
+      "positive_radial_density": "All c_j!=0 and |zeta|^2>TT'; all original factors are positive on this open domain.",
+      "no_uniform_point_evaluation_claim_from_local_constants": true
+    }
+  },
+  "sources": [
+    {
+      "module": "Formalism.PeriodIntegrals.LongWeylElementSquare",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/PeriodIntegrals/LongWeylElementSquare.lean",
+      "bytes": 5129,
+      "sha256": "7c2e6c05cccc85718f8874e24862f376dd5544ce882ea2fb98fc4196d65a8d2e",
+      "git_blob_sha1": "44956f1b3e753ee4ee15e1873eebb0e28a1c220a",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            20,
+            59
+          ],
+          "bytes": 2027,
+          "sha256": "a25cae5e5df22f5a81c7fff5285f159e1e069188eda6a102c8e9d2b1521b137b"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.PeriodIntegrals.UnitaryGroupMassFormula.PhiBigCellForm.BigCellEqW0BMulTM",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/PhiBigCellForm/BigCellEqW0BMulTM.lean",
+      "bytes": 795,
+      "sha256": "7936c77ff24fa8eef4f8b8e83da051e16b81d84a311f7e12130536f379d82b3e",
+      "git_blob_sha1": "2762c0227c754713800d2c774e080e021cf5d958",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            15,
+            19
+          ],
+          "bytes": 202,
+          "sha256": "205d7daa63023136cf5da58d7cad58c85ee448b2e711ef024591a01cd63b109c"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.FormalDegreeBessel.StatementRP",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/FormalDegreeBessel/StatementRP.lean",
+      "bytes": 13086,
+      "sha256": "3c22711355711ccfe0ecf9db83afee006d7849d8603e4194388bfaf865069c45",
+      "git_blob_sha1": "08ba1721e22fd4de2e0e8e08f958508acaab8df2",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            74,
+            81
+          ],
+          "bytes": 617,
+          "sha256": "f797aa442e06bdf2223410a9cd9f7c30bb56befdbc647590b7f6bea9660d9280"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.HermitianCurvature.HermitianCurvatureProofs.SettingConstruction",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/HermitianCurvature/HermitianCurvatureProofs/SettingConstruction.lean",
+      "bytes": 19562,
+      "sha256": "042ad4aa25b4f5930d9d58839cb52b3239a4c96777fd8e25d97c8e0abb9c9d22",
+      "git_blob_sha1": "d5b9ad01dbeb957cfcae7f9b2888b7f1633cc37e",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            189,
+            215
+          ],
+          "bytes": 1903,
+          "sha256": "ef00e70fb7f35468ba6a283210797c47debdf092a9bd3118a208bdf87993afe4"
+        },
+        {
+          "lines": [
+            314,
+            321
+          ],
+          "bytes": 343,
+          "sha256": "4b42e55454c63d03c7cc5d2f79a293d57859d96b0518d8d5ce0bceba7fe669a4"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.FlagMeasures.BigCellQuotientNormalisesUnipotent",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/FlagMeasures/BigCellQuotientNormalisesUnipotent.lean",
+      "bytes": 8718,
+      "sha256": "f1f3e2a4c3bc7195b8b4700add29fff46d98cb29621583870df8f63e41daf90c",
+      "git_blob_sha1": "c2b80dd4c750dedc2e6e64022556efb25cfcb1c3",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            39,
+            50
+          ],
+          "bytes": 751,
+          "sha256": "77f9043f8eef73d291b1aed80b814efbbf8ae67c393c1a05c1e4c563b1d25dcd"
+        }
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.FlagMeasures.PairSpaceMajorantIntegrableBigCell",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/FlagMeasures/PairSpaceMajorantIntegrableBigCell.lean",
+      "bytes": 9294,
+      "sha256": "11947b103c839e98edfa633a3954c5f3492e0c13c0ced16000a673675b2a3329",
+      "git_blob_sha1": "724a3ddbd28ee4dce9255ae81b311f48f8ee466b",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            64,
+            69
+          ],
+          "bytes": 826,
+          "sha256": "5a22a39210b1bdf7eab2571ce5f6c0e353eb0a7deb7e3bae095dfdc8ec9a564b"
+        },
+        {
+          "lines": [
+            109,
+            128
+          ],
+          "bytes": 2116,
+          "sha256": "c6937f388969b0db9cf384cdb9668f4155b481bb63c5612cb66714670429ef29"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.OnePlaceEstimates",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/OnePlaceEstimates.lean",
+      "bytes": 62098,
+      "sha256": "0456723c948e279acd859284d76156a93e0d40b5d92a3b4b58d9caeb38ebb4a9",
+      "git_blob_sha1": "d641a2a34206975a819216642052bc0ca832b69a",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            82,
+            104
+          ],
+          "bytes": 1980,
+          "sha256": "524d2ce83fbac75e4b6e057402e9bae92f0bab9bac43b3fb71e76e49d95b7584"
+        },
+        {
+          "lines": [
+            185,
+            208
+          ],
+          "bytes": 2042,
+          "sha256": "5201ff853d7e317d8feefcd040ee9d9650b63b48215f0305f72eff2eb9c8f3d7"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.LeadMinorK",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/LeadMinorK.lean",
+      "bytes": 12942,
+      "sha256": "9a71f71e69ffd17937b8662b72be2dadc13d5e1ea17ea19155102e5815c76235",
+      "git_blob_sha1": "793b55df37e7be237b3cb7b37060255ff3c89a3b",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            45,
+            82
+          ],
+          "bytes": 2684,
+          "sha256": "c7f1912b271158a4875188504eb4b7dc1900165100a7d989dddf8e4511f5e8fb"
+        },
+        {
+          "lines": [
+            94,
+            115
+          ],
+          "bytes": 1300,
+          "sha256": "3f4f634aa13e00bf511faa5fe925f4485071a65ec0923ec4b75e43319cb89be5"
+        }
+      ]
+    }
+  ],
+  "artifact_hashes": {
+    "notes/global-norm-frontier-big-cell-continuity.md": "7e00d0d23e35d432432ca1e22c1b000b9bd988204662ef0683fa9fcc134a4e6e",
+    "paper/shared/global-norm-frontier-big-cell-continuity.tex": "28362d16b5de046309dac11a7a3879d2c55a79067fe7b8cfa4dae020316d554c",
+    "paper/shared/global-norm-frontier-big-cell-continuity-references.tex": "e51e03a06b2f2f9388634a10f26a2691563590f1221e9ffa1c2ac72c3b8d3416",
+    "scripts/check_global_norm_frontier_big_cell_continuity.py": "a46ddbe0dea57a37d3986048d1477058117716461cfdc62327be63e6ad04d2f3",
+    "paper/shared/global-norm-frontier-iterated-minors.tex": "6b2fd6dd15a15d0c72ef234f16a1a9ecf157184e4954fdc13303e401d03d7770",
+    "paper/shared/global-norm-frontier-pieri-family.tex": "e1481c7efe824c6d33cfc671a93bf664045024667d6b8e8b0d3c687427548c57",
+    "paper/shared/global-norm-frontier-jacquet-gram.tex": "09bea724139fe986509d4010efeef01aaed5fb2dc0f9459bf21f766f6903fc99",
+    "paper/sections/recovered/91-ju-section.tex": "308e4f94efbaae52b89b7e4e5f56e9e2916a1837f20a678f0186e01bd8953420",
+    "paper/sections/recovered/93-jg-section.tex": "e565911d51d5be0d9a450b7765f993c90fcb2c9d9892a2b335eb5894fdfd9742"
+  },
+  "scope": {
+    "quantifiers": "Every admissible datum, original smooth section, finite shift family, and every regular big-cell point; no common exceptional set is used.",
+    "normalizations": "Original compact/unipotent/radial measures and both character scales unchanged.",
+    "not_verified": [
+      "Uniform orbital point-evaluation estimate relative to the Jacquet norm",
+      "Orbital comparisons on all lower-dimensional relevant strata",
+      "Global rational-return/Gram assembly",
+      "Any full Lean build"
+    ],
+    "whole_node_count_changed": false
+  }
+}

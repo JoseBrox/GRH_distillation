@@ -1,0 +1,146 @@
+\subsection{Iterating the actual leading-minor maps}
+\label{archimedean-iterated-minors}
+
+The local family just constructed also supplies the original
+higher weighted norm estimates. The pointwise orbital bound remains
+a separate assertion: all equalities between orbital integrals in
+this subsection are equalities in the original radial $L^2$ space.
+
+Write $q=r+1$, $m=2q$, and $n=2r+k+1$, with $k\ge1$.
+Retain the original local datum, section, character scale
+$\kappa\in\{1,a\}$ and radial measure. Put
+\[
+ Q=q_0(C_q,m,\epsilon,u,\lambda_0),\qquad
+ \delta=\lambda-\lambda_0\in\mathbb Z^n .
+\]
+For $\alpha=(\alpha_1,\ldots,\alpha_q)\in\mathbb N^q$ put
+$|\alpha|=\sum_{\ell=1}^q\alpha_\ell$ and
+$D^\alpha=\prod_{\ell=1}^qD_\ell^{\alpha_\ell}$, with the
+original leading minors $D_\ell$.
+
+\begin{theorem}\label{original-iterated-minor-norm}
+Assume the original $\mathrm{LocOk}_0$ and near-parameter range
+hypotheses, including
+\[
+ \|\delta\|_1+q(p+q+1)\le Q,\qquad
+ \text{every gap of }\lambda_0\text{ is at least }C_gp\,m .
+\]
+If $C_q\ge200$, $C_g\ge10^6$ and $C_b\ge C_h+5$, then, for
+every original compact-finite coefficient $F$ and every
+$|\alpha|\le p$,
+\[
+ \mathcal N_\kappa(D^\alpha F)
+ \le b^{\,2C_bm^2|\alpha|}\mathcal N_\kappa(F).
+\]
+This supplies both the original near-parameter iteration statement
+and, on setting $\lambda_0=\lambda$, its derivative-iteration
+statement \cite{iterated-minors-source}.
+\end{theorem}
+
+\begin{proof}
+Every norm in the proof uses the same original radial measure.
+The integral lattice and flooring argument of
+Proposition~\ref{jacquet-original-budget-transport} gives the
+same family at all integer parameters needed below.
+For $\eta\in\mathbb N^n$ with $\|\eta\|_1\le qp$, the parameter
+$\lambda+\eta$ lies in this family, and
+\[
+ \|\delta+\eta\|_1+q(q+1)
+ \le\|\delta\|_1+qp+q(q+1)\le Q.
+\]
+Thus the full leading-minor reserve remains available at every
+intermediate parameter. The original all-gap hypothesis is retained.
+No numerical constant changes with $\eta$ or the chosen word.
+
+The mixed Jacquet identity says that the images of the coefficients
+of one representation form a subspace of dimension at most one in
+this radial $L^2$ space. The nonzero such subspaces at distinct
+parameters are orthogonal. Choose a unit vector $\Phi_\eta$ in each
+nonzero subspace; choose the zero vector when that subspace is zero.
+These choices can be represented by original compact-finite
+coefficients: a nonzero normalized Bessel map is nonzero on
+compact-finite vectors, and a rank-one operator between its two
+nonzero images supplies a coefficient with nonzero mixed period.
+The common norm identity then normalizes it.
+No nonvanishing is asserted for a subspace whose period is zero.
+
+For $1\le\ell\le q$, the actual exterior-Pieri decomposition gives
+\[
+ D_\ell\Phi_\eta
+    =\sum_{|I|=\ell}a_{\eta,I}^{(\ell)}
+                          \Phi_{\eta+\mathbf1_I}
+\]
+in this $L^2$ space. A term with zero target subspace is zero.
+If the source subspace is zero, set all coefficients to zero.
+For a nonzero source and target, the exact Gram identity gives
+\[
+ |a_{\eta,I}^{(\ell)}|^2
+   =|\kappa_{\eta,I}\kappa'_{\eta,I}|^2
+                              \frac{d_{\lambda+\eta}}
+                                   {d_{\lambda+\eta+\mathbf1_I}} .
+\]
+The period-normalized moment bounds therefore imply
+\[
+ |a_{\eta,I}^{(\ell)}|^2
+ \le \kappa^{4S_\ell}(TT')^\ell b^{8m^2}
+             \frac{d_{\lambda+\eta+\mathbf1_I}}
+                  {d_{\lambda+\eta}},\qquad
+ S_\ell=r\ell-\ell(\ell-1)/2.
+\]
+Apply Cauchy--Schwarz and the exact degree-ratio sum:
+\[
+ \sum_{|I|=\ell}|a_{\eta,I}^{(\ell)}|
+ \le \binom n\ell\,\kappa^{2S_\ell}(TT')^{\ell/2}b^{4m^2}.
+\]
+Proposition~\ref{jacquet-original-scale-transport} gives
+$\kappa^{2S_\ell}(TT')^{\ell/2}\le b^{C_hm^2}$.
+Also $\binom n\ell\le n^\ell\le b^\ell$ and
+$\ell\le q\le m^2$. Hence every such column obeys
+\[
+             \sum_I|a_{\eta,I}^{(\ell)}|
+                       \le B:=b^{C_bm^2}.
+\]
+This sum bound is needed because different paths can reach the
+same final parameter.
+
+Choose any ordered list of the $|\alpha|$ leading minors in
+$D^\alpha$. Starting with a unit vector at $\eta=0$, expand
+one factor at a time. If its current coefficients are $c_\eta$,
+the sum of the absolute values after the next factor is at most
+$B\sum_\eta|c_\eta|$. Combining terms at coincident endpoints
+uses the triangle inequality. Induction therefore gives
+\[
+ D^\alpha\Phi_0=\sum_\eta c_\eta\Phi_\eta,\qquad
+ \sum_\eta|c_\eta|\le B^{|\alpha|},\qquad
+ \|\eta\|_1\le q|\alpha|\quad(c_\eta\ne0).
+\]
+All sums have finite support. Orthogonality now yields
+$\|D^\alpha\Phi_0\|_2^2
+\le(\sum_\eta|c_\eta|)^2\le B^{2|\alpha|}$.
+
+The original norm of $F$ is finite by the mixed norm identity.
+If it is positive, choose
+$\Phi_0=J_\kappa F/\sqrt{\mathcal N_\kappa(F)}$ and rescale
+the preceding inequality. If it is zero, $J_\kappa F=0$
+almost everywhere, and multiplication by the finite polynomial
+$D^\alpha$ gives the conclusion directly. The empty word also
+has the asserted estimate.
+\end{proof}
+
+For any fixed admissible datum, finite shift range and chosen
+coefficient representatives, the finitely many expansions can be
+realized off one common null set for the original radial measure.
+Its choice may depend on that datum and those representatives.
+The argument neither chooses one null set for every arithmetic
+parameter nor changes a statement about a specified rational point
+into an almost-everywhere statement.
+
+In particular it proves the norm consumers
+$\mathrm{BesselIterationNearParameter}$ and
+$\mathrm{BesselDerivativeIteration}$ exactly.
+It does not yet prove the stronger source coefficient-expansion
+interface, which requires equality at every big-cell point.
+Nor does it prove the weighted orbital bound on every relevant
+stratum. The final rational-return sum can be supported on a
+Haar-null set, so that pointwise frontier cannot be removed
+by Tonelli alone.

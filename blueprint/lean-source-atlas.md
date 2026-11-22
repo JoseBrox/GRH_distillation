@@ -146,3 +146,12 @@ original interfaces and four primary references, including the exact
 numerical-family domain and zero-base period comparison. The classical
 representation and amenable-positivity arguments now supply the actual
 local leading-minor estimate. Full global return estimates remain open.
+
+The exact `OnePlaceEstimates` iteration and coefficient-expansion contracts
+are now supplied by the common iterated-minor and big-cell continuity
+proofs. The latter uses the original `Hpk`, `Nset`, `bigCell` and smooth
+section, without internal middle-block pivots or replacement of specified
+points by almost-everywhere representatives. `TBB.KernelFourierIntegralBound`
+and the global return assembly remain open. Source hashes and bounded
+excerpts are in `global-norm-frontier-iterated-minors` and
+`global-norm-frontier-big-cell-continuity` certificates.

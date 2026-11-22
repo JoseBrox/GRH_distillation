@@ -100,6 +100,13 @@ level-prime estimate, with one global clearing integer conditional on the
 original good cover and chart suppliers. Neither supplies the remaining
 Galois action or global theta norm.
 
+The [iterated-minor theorem](../../notes/global-norm-frontier-iterated-minors.md)
+now supplies both original higher weighted norm interfaces, including
+colliding Pieri paths. The [big-cell continuity theorem](../../notes/global-norm-frontier-big-cell-continuity.md)
+upgrades their finite coefficient expansions to every point of the exact
+original domain. The partial-head Fourier kernel, lower-dimensional orbital
+comparison and global rational returns remain separate.
+
 ## Concurrent research
 
 The [RH program](../rh/program.md) and [GRH program](../grh/program.md) are
