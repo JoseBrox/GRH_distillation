@@ -268,6 +268,35 @@ already developed for the original GRH prime-sum criterion.
 The necessary critical-scale arithmetic estimate for
 $\mathcal A_hH_2$ is still open.
 
+### Why the old subpower window condition is insufficient
+
+The source's zero-location criterion asks that a weighted
+window majorant have mass at most $e^{\eta U}$ for every
+$\eta>0$ on sufficiently late selected windows. This cannot
+by itself detect the *order* of a pole on the boundary.
+
+For instance let $g(u)=u e^{u/2}\cos(\tau u)$, with $\tau\ne0$.
+Its Laplace transform has order-two poles at
+$s=1/2\pm i\tau$. But the nonnegative majorant
+$R(u)=u e^{u/2}$ satisfies, for every fixed $\delta>0$,
+
+```math
+\int_U^{(1+\delta)U}R(u)e^{-u/2}\,du
+=\frac{(1+\delta)^2-1}{2}\,U^2
+\le e^{\eta U}
+```
+
+for every $\eta>0$ and all sufficiently large $U$.
+Thus a *subpower* window bound at exponent one half
+allows precisely the logarithmic $u$-growth of a double
+pole. The new bound (10) excludes that growth by
+requiring a genuinely $o(u)$ **one-sided pointwise**
+envelope (or its fixed positive average), not merely
+$e^{o(u)}$ window mass. The example fails the source's
+simple-pole premise, as it must; it tests the proposed
+*extension to pole multiplicities*, not the original
+zero-location theorem.
+
 ## 4. Dirichlet version: a two-sided sufficient condition
 
 For nonprincipal primitive $\chi$, write
