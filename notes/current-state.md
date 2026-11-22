@@ -18,8 +18,11 @@ keeps the two applications and their extra hypotheses explicit.
 The [node counts](../blueprint/progress.md) distinguish finished stated
 implications or adopted inputs from open construction hypotheses. Moving
 files or adding a node is not recorded as closing an existing open node.
-The continuation was recovered from main through `0ffbc6f7e190d4b007eb1109df215857539c60f5`,
-including its preceding geometric, sampling and cohomological checkpoints.
+The current continuation starts from main at
+`c9def8d66b96082ad46a06c161de6b8da800b440`, including its preceding
+geometric, sampling and cohomological checkpoints. The independently
+reviewed additions are indexed in
+[the frontier review](../certificates/frontier-progress-review-2026-11-22.json).
 The source-import atlas and documentary section atlas have no proof
 completion score. The published baseline is RH 6/9 and the GRH technical
 map 17/31; the generated progress table carries the current values.
@@ -176,7 +179,7 @@ the exact integral product tangent basis. The unit discriminant and
 Kronecker limit formula evaluate the elliptic period mean, with all
 constants retained. Trace-dual Gram projection and the product formula
 then give the signed flat degree. Applying this value requires the
-actual arithmetic model, its integral determinant line and the CM maps
+actual arithmetic model with its original global family and the CM maps
 with the prescribed tangent lattice on its selected component. A good
 CM object alone does not supply those identifications.
 
@@ -204,14 +207,16 @@ The source's global family, projective model and original line are
 explicitly matched; they are not inferred from the local chart names.
 
 The final assembly combines this generator with the proved finite-place
-rigidity. It retains an invertible prescribed integral determinant line,
-its exact pointwise eigenlattices and the curvewise same-line identification
-at ramified primes. Under these hypotheses the local norms are constant,
+rigidity. The [ramified lattice calculation](ramified-hodge-determinant.md)
+constructs the invertible integral line from the actual global Hodge
+extension and full coefficient freeness, and identifies its pointwise
+eigenlattices and special-curve degrees. Local norms are then constant,
 including after ramified extensions, and almost all finite logarithmic
-norms vanish. Actual integral CM maps to the same component then supply
+norms vanish. Actual integral CM maps to the same component supply
 the local-norm comparison used in the period calculation. The remaining
-geometric inputs are the arithmetic model and these determinant/CM
-identifications, followed by the signed cusp and finite-section estimates.
+geometric inputs are the arithmetic model with its original global family
+and fibre data, the CM comparison, and the signed cusp and finite-section
+estimates.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
@@ -510,6 +515,13 @@ trace excess is bounded by a scalar positive-part integral against the
 actual retained target's diagonal kernel, with every rational orbit and
 original volume retained. This integral and the source deficit still
 need arithmetic bounds; the seed identity alone proves no nonvanishing.
+The [scalar return comparison](seed-return-deficit.md) also bounds the
+source deficit by the summed overlap of distinct rational returns. It
+retains arbitrary source restrictions and bounds target loss using the
+discarded target's diagonal kernel. Together the two comparisons give an
+explicit scalar sufficient bound for both prescribed defects. Absolute
+returns can waste signed cancellation, so the signed operator route
+remains available; no small arithmetic overlap estimate is asserted.
 
 The [ramified determinant calculation](ramified-hodge-determinant.md)
 constructs the actual integral conjugate determinant as the determinant
@@ -526,26 +538,32 @@ maps to its selected component, and the cusp/section estimates remains.
 
 ## Next mathematical work
 
-1. **Integral maps and global norms (W06/W08).** Supply nonzero integral
-   theta maps, sharp auxiliary-level divisibility and positive normalizers.
-   Use the proved common unipotent group and exact periodization to bound
-   the full sum over rational orbits, with its original volumes, source
-   restrictions and arithmetic heights. Bound its calibrated trace costs
-   or a sufficient refined-energy cost. The sharp all-bases obstruction
-   rules out deriving the required improvement from pairwise bounds alone.
+1. **Integral maps and global norms (W06/W08).** Supply the actual integral
+   theta maps and sharp auxiliary-level divisibility. The original compact
+   and finite-column data give exact positive seed normalizers. Bound the
+   scalar positive-part integral for the complete period sum and the source
+   deficit, with their original volumes, restrictions and arithmetic heights.
+   A strict prescribed source bound also proves aggregate nonvanishing;
+   individual nonvanishing assertions require their own hypotheses.
+   Retain a smaller valid energy or signed-operator bound when available.
+   Pairwise estimates and basis changes alone do not suffice.
 2. **Arithmetic Selmer models (W04).** Quantify the finite weighted
    Selmer product on the actual twisted places, retaining the integral local
    comparisons and surviving character cases. The elementary resultant
    supplier does not prove the trace-to-Selmer estimate: construct the
    marked models and establish their chart, spanning, finiteness,
-   separation, tangent and trace conditions. The compatible conormal
+   point-lifting, local tangent and trace conditions. Diagonal separation
+   and weight-zero rigidity follow from the proved local/class-field
+   comparison; negative weights and two-sided rigidity remain.
+   The compatible conormal
    pairing and full abstract length theorem are now proved under those
    conditions. Its chart normalization and finite orbit cover follow
    within the abstract argument.
 3. **Geometric models and estimates (W10).** Identify the actual arithmetic
-   model, its original semiabelian fibre line and coefficient character
-   identity, its invertible integral determinant line, and the curvewise
-   comparison at ramified primes. Supply integral CM maps to the selected
+   model, its original global semiabelian family, cubical line, coefficient
+   adjunctions and self-dual abelian quotient on geometric fibres. These
+   data construct the integral determinant, including its ramified point
+   norms and test-curve comparison. Supply integral CM maps to the selected
    component with the prescribed tangent lattices. The characteristic-zero
    generator, both filtrations, coefficient freeness, determinant torsion,
    vertical rigidity, local-norm comparison and signed CM value are proved

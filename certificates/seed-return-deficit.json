@@ -1,0 +1,46 @@
+{
+  "result": "PASS",
+  "scope": "Exact finite scalar/vector returns, genuine source and target cuts, and frozen dependency hashes. No arithmetic return estimate or Lean replay.",
+  "independent_review_scope": "Independent mathematical reviews are recorded separately by the parent integration; automated checks only here.",
+  "dependency": {
+    "path": "certificates/whittaker-scalar-envelope.json",
+    "sha256": "2e94b5b8a498d832426493480519fb0872bf4ae9b01b0a8031bfcb01ed44f6e7",
+    "source_files_rechecked": 12
+  },
+  "files": [
+    {
+      "path": "notes/seed-return-deficit.md",
+      "sha256": "2d9967b1ee3da600dbeabf27f38530a367f017d5ce77e48d3a32bf2f315cc3c2"
+    },
+    {
+      "path": "paper/shared/seed-return-deficit.tex",
+      "sha256": "445278ae4fef7292f4eb3298fd11dd6a6b8d3bd6c38dddb40c5916942540b831"
+    },
+    {
+      "path": "scripts/check_seed_return_deficit.py",
+      "sha256": "94b081943f84df0f323d2d4284eb571b3c7cb863633805d25b6e87dc07b95e41"
+    }
+  ],
+  "exact_cases": {
+    "scalar_returns": 11688,
+    "both_restrictions": 972
+  },
+  "sharp_examples": [
+    {
+      "seed_values": [
+        1,
+        -1
+      ],
+      "source_deficit": "1",
+      "absolute_return_bound": "1"
+    },
+    {
+      "seed_values": [
+        1,
+        1
+      ],
+      "source_deficit": "0",
+      "absolute_return_bound": "1"
+    }
+  ]
+}
