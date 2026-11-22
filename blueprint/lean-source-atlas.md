@@ -112,3 +112,11 @@ It records the unramified host, actual adapted matrices, finite-height and
 rational-torsion splitting, full product-section invariance, exact Tate
 rank and local index, and original normalized chain rule. The reached
 section and mixed level-torsion suppliers remain separately identified.
+
+The generic PEL comparison authenticates the original host, primitive
+line, complete finite-level labels and distinct `Moduli`/`Model` interfaces
+in `geometry-arithmetic-frontier-generic-pel.json`, together with the exact
+Lan reference revision. The reached-section regularity certificate records
+twenty bounded modules for the actual quadratic coefficient filtration,
+canonical theta translations, scalar-one pullback and integral Fourier
+saturation. Both packages have independent review certificates.

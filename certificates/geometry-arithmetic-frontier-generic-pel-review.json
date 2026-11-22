@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "geometry_frontier independent research agent",
+  "status": "PASS",
+  "whole_nodes_newly_closed": 0,
+  "reviewed_proof": "paper/shared/geometry-arithmetic-frontier-generic-pel.tex",
+  "reviewed_proof_sha256": "219fe1ebb48aa4dcc8eec6a3e76a5cf6655abdc8ca5a072dc111a17d8e9188e0",
+  "conclusions": [
+    "Canonical graph pullback of the normalized Poincare line has polarization lambda because w+bar(w)=1; simultaneous inversion gives symmetry. The original primitive identity recovers this exact rigidified line uniquely.",
+    "Perfectness of the original alternating lattice makes the adjoint integral and conjugates coefficient ideals. Fixing the half-level and its inverse forces g-1 into both b End and bar(b) End, hence M End. Full-level rigidity applies without any assertion of neatness.",
+    "Lan positivity for h(i)=J requires the form -2 pi i B. Local unramified or split norm surjectivity provides an integral adelic unit of norm -1 and transports the markings while retaining the original roots of unity and recovered labels.",
+    "The source theta multiplier has line exponents (k,-k), hence is a lift t_x^*L^k to L^k. Its commutator agrees with Lan Definition5.2.4.6 and Proposition5.2.4.9 in precisely that orientation.",
+    "The prescribed Hodge multiplicities give the determinant polynomial over the original imaginary quadratic subfield. In characteristic zero the coefficient algebra splits etale locally and the geometric eigenspace ranks impose the determinant identity over nonreduced bases.",
+    "Lan Theorem1.4.1.11 explicitly allows arbitrary compact open H and gives an algebraic space when objects have no automorphisms. Corollary7.2.3.10 gives a quasi-projective coarse scheme for arbitrary H; the algebraic space is its own coarse space. The fine scheme inference therefore requires no neatness hypothesis.",
+    "PushInvertible lines29-38 specify reduced-base representability and the precise dual-number clause; full functor representability supplies both."
+  ],
+  "clarifications_requested": [
+    "Clarify that delta L uses the product map A times A to A times A-dual, while the primitive identity uses the graph of w. This is a notation clarification, not a mathematical gap."
+  ],
+  "primary_literature": {
+    "path": "build/reference-cache/lan-pel-revision.pdf",
+    "sha256": "a7a454f5d0735f4bf11f00a8afc14c361c5fc2cefd691d7466f7620ab4c3a079",
+    "url": "https://www.kwlan.org/articles/cpt-PEL-type-thesis-revision.pdf",
+    "version": "Author revision,14 March2021",
+    "text_path": "build/reference-cache/lan-pel-revision.txt",
+    "text_sha256": "f0b305b0a54e5557c5b9420526ccf79b90c42cf236e91f78e2645868f649af58",
+    "read_text_ranges": [
+      [
+        2270,
+        2338
+      ],
+      [
+        5078,
+        5120
+      ],
+      [
+        5358,
+        5415
+      ],
+      [
+        5440,
+        5505
+      ],
+      [
+        8555,
+        8610
+      ],
+      [
+        19072,
+        19148
+      ],
+      [
+        19165,
+        19265
+      ],
+      [
+        28265,
+        28325
+      ]
+    ],
+    "items": [
+      "Definition1.2.1.2",
+      "Definition1.3.7.6",
+      "Definition1.4.1.4",
+      "Theorem1.4.1.11",
+      "Lemma2.3.3.1",
+      "Definition5.2.4.6",
+      "Proposition5.2.4.9",
+      "Corollary7.2.3.10"
+    ]
+  },
+  "source_revision": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "sources": [
+    {
+      "path": "lean/src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/ToroidalCompactification/TwoWeightEqOneAddRoot.lean",
+      "sha256": "3646386e9cd25287a50eb1ad82456c5b26316207741b8ed7298d46aa4f9d7826",
+      "read_ranges": [
+        [
+          15,
+          89
+        ],
+        [
+          119,
+          160
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/ToroidalCompactification/PushInvertible.lean",
+      "sha256": "f3400474c76aa3eeaa0cb85edf2e9c549811616ee2d43fd74685088a42662554",
+      "read_ranges": [
+        [
+          18,
+          38
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ExtensionDescent/ConstGen.lean",
+      "sha256": "de10f97127d961778b5e12570526c8169f0ff5d142197ae983e4ee1c4a26ccc8",
+      "read_ranges": [
+        [
+          18,
+          56
+        ]
+      ]
+    }
+  ],
+  "scope": "Independent mathematical and bounded-source review. No Lean build or full generic PEL scheme construction by computation. The result remains a characteristic-zero moduli supplier, not an integral compactification, Good3 degeneration, metric, cusp estimate or whole-node completion.",
+  "clarification_resolution": "The biextension now explicitly uses id times lambda on A times A, and the primitive identity uses the graph of w."
+}

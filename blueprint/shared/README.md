@@ -75,6 +75,12 @@ The full-primary trace and adapted arithmetic lattice are proved in
 Its exact stabilizer, determinant ideals and normalized index are retained;
 the integral model and reached-section regularity remain inputs.
 
+The [generic PEL construction](../../notes/geometry-arithmetic-frontier-generic-pel.md)
+supplies the actual characteristic-zero moduli object, including its exact
+primitive line and finite labels. The [reached-section theorem](../../notes/geometry-arithmetic-frontier-reached-regularity.md)
+supplies integral regularity from the original `Good3` uniformization,
+without a scalar loss. The integral model itself remains to be constructed.
+
 ## Concurrent research
 
 The [RH program](../rh/program.md) and [GRH program](../grh/program.md) are

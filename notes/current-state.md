@@ -37,25 +37,32 @@ map 17/31; the generated progress table carries the current values.
 
 ## Active continuation at the recovered main revision
 
-The actual adapted Hermitian lattice, formal-to-full-primary theta trace,
-and exact determinant/index cancellation are now proved in
-`geometry-arithmetic-frontier-primary-trace.md`, with an independent
-review certificate. The argument retains the original integral model,
-all translated section germs and every normalization. The remaining
-geometric supplier is regularity of the reached sections on that model,
-followed by the mixed level-torsion identities; no global theta
-denominator or whole node is declared complete.
+The current construction frontier is the actual integral geometric model
+and the actual universal automorphic determinant action. The exact generic
+PEL moduli object is now constructed, with its original primitive cubical
+line and both entire finite labels; this does not yet give the source's
+normal projective integral `Model` or `Good3` uniformization.
 
-This continuation starts from `301e4a0adad8617d7ae4910d939687d95d4200e8`.
-The [finite-to-limiting Selmer comparison](selmer-integral-frontier-limit-comparison.md)
-now proves the exact three cohomological conditions on the original limiting
-auxiliary group from the established finite-level bounds. It retains the
-same constants, local witnesses and polarized boundaries. The Smith defect
-controls only the rank passage; it is not a moving-point integral torsion
-bound. The next W04 target is the actual automorphic tower and patched
-support. No whole-node status changes. Manuscript integration follows the
-reviewed arithmetic checkpoints, rather than treating old frontier text as
-current proof status.
+Under that unchanged `Good3` contract, every prescribed reached theta
+section is now proved regular with scalar exactly one, including bad level
+primes. The adapted arithmetic lattice, full-primary theta trace and exact
+determinant/index cancellation are also proved. The remaining mixed
+level-torsion compatibility and all-place denominator assembly are being
+checked separately. These statements remove section and primary-trace
+hypotheses; they do not construct the missing model or global theta norm.
+
+The finite-to-limiting Selmer comparison supplies the three exact limiting
+presentation conditions from the proved finite-level estimates. It retains
+the original local conditions, point and constants. The next W04 supplier
+is the actual ordinary automorphic tower and its determinant/support data;
+no uniform integral torsion bound follows merely from rational rigidity.
+
+New proof packages and independent review certificates:
+`selmer-integral-frontier-limit-comparison`,
+`geometry-arithmetic-frontier-primary-trace`,
+`geometry-arithmetic-frontier-generic-pel`, and
+`geometry-arithmetic-frontier-reached-regularity`.
+Whole-node statuses are unchanged.
 
 ## Current arithmetic frontiers
 

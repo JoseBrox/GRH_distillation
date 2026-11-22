@@ -1,0 +1,298 @@
+\section{Regularity of the prescribed reached theta sections}
+\label{sec:geometry-reached-regularity}
+
+The missing regularity input in the primary trace is arithmetic.  A
+finite-order operator need not preserve a specified integral lattice.
+For the original theta operators, however, the degeneration gives an
+exact coefficient valuation law.  That law proves regularity, including
+at primes dividing the torsion order, once the original integral model
+and its PEL uniformization have been supplied.
+
+\subsection*{The precise supplier and its retained model}
+
+Fix a complete discrete valuation ring $R$ of characteristic zero, with
+fraction field $K$, uniformizer $\pi$, and the original integral framed
+point.  Retain its smooth, separated, quasi-compact group model
+$\mathcal G$, its rigidified line $\mathscr L_{\mathcal G}$, and its
+PEL uniformization.  These are the actual objects in the source's
+\texttt{Good3} contract, not replacements with a different integral
+lattice.  In particular the uniformization retains the following data:
+its abelian scheme $\mathcal B/R$, its cubical rigidified line
+$\mathscr L$, its period lattice $X$ and map $c:X\to\mathcal B(R)$,
+its positive monodromy quadratic form $Q:X\to\mathbb Z$, and the
+coefficient-ring action with the original trace-one element $w_0$.
+The original formal expansions on every $\pi^m$-thickening, their
+unique generic-fibre counterparts, and their torsion identification
+are included.  Constructing this uniformization is a separate remaining
+geometric obligation.
+
+For $\chi\in X$ and $k\geq1$, the actual coefficient line and lattice are
+\begin{align*}
+ \mathscr M_{k,\chi}
+  &=\mathscr L^{\otimes(k-1)}\otimes t_{c(\chi)}^*\mathscr L
+       \otimes(c(\chi)^*\mathscr L)^{-1}\otimes e^*\mathscr L,\\
+ M_{k,\chi}&=H^0(\mathcal B,\mathscr M_{k,\chi}).
+\end{align*}
+The last two factors are pulled back from $\operatorname{Spec}R$.
+Thus the four original exponents are $(k-1,1,-1,1)$.
+Write $b(x,y)=Q(x+y)-Q(x)-Q(y)$.
+The period identities give $b$ bilinear, $b(x,x)=2Q(x)$, and
+$Q(x)>0$ for $x\ne0$.  The rank-zero case $X=0$ is allowed.
+
+Extend $v(\pi)=1$ to an algebraic closure $\Omega$ of $K$.
+For a coefficient $s_\chi$ over $\Omega$ write
+$s_\chi\in M_{k,\chi}^{\geq a}$ if
+$s_\chi=\sum_i z_i\sigma_i$, where $\sigma_i\in M_{k,\chi}$ and
+$v(z_i)\geq a$.  All sums in this definition are finite.  For the
+original Fourier family $s=(s_\chi)$ define
+\begin{equation}\label{eq:reached-weighted-filtration}
+ \mathcal N_k(s;r)\quad\Longleftrightarrow\quad
+ s_\chi\in M_{k,\chi}^{\geq r+Q(\chi)/k}
+                  \quad\hbox{for every }\chi\in X.
+\end{equation}
+This is exactly the source's \texttt{NuGe} filtration.  It uses the
+integral coefficient modules; it is not a valuation on a chosen
+rational coefficient basis.
+
+\begin{theorem}\label{thm:reached-sections-regular}
+Under the supplied model and uniformization above, every original
+reached theta section is regular on $\mathcal G$.  Here ``reached''
+means that it starts from the given framed level-one generator and is
+obtained by finitely many of the following original operations:
+normalized pullback by $a\in\mathcal O_E$ with
+$a\bar a=N$, $N$ positive and odd, from level $k$ to level $kN$,
+where $k=1$ or $k\geq4$; and canonical symmetric translation by a
+level-$k$ torsion point.  The integral section restricts to the
+prescribed generic section with scalar exactly one.
+
+More precisely, the expansion of every such section satisfies
+$\mathcal N_k(s;0)$.  No factor involving the residue characteristic,
+the torsion order, the rank of $X$, or the coefficient-field degree is
+introduced.
+\end{theorem}
+
+\subsection*{The exact theta valuation law}
+
+We first derive the arithmetic input to translation.  A torsion lift in
+the original uniformization is represented by an abelian point $m$ and
+a period $y\in X$ with $[k]m=c(y)$, together with its biextension
+multipliers.  Properness of $\mathcal B$ extends $m$ over the valuation
+ring of $\Omega$.  Choose integral generators for the fibre lines in
+these multipliers.  If $t_\chi$ is the scalar comparing the original
+biextension multiplier at $\chi$ with its integral generator, then
+\begin{equation}\label{eq:reached-biextension-ratio}
+                   k\,v(t_\chi)=b(y,\chi).
+\end{equation}
+Here the valuation is the rational extension of $v(\pi)=1$, so no
+rounding of $b(y,\chi)/k$ is permitted.
+
+For completeness, this identity follows directly from the integral
+cube law.  Take the $k$th tensor power of the multiplier for $(m,c(\chi))$
+and use $[k]m=c(y)$.  The resulting period comparison is the product of
+the original period generator with valuation
+$kQ(y)+b(y,\chi)$, the inverse $k$th power of the period generator at
+$y$ with valuation $-kQ(y)$, and the inverse $k$th power of the
+rigidification, of valuation zero.  Every remaining factor is the
+ratio of two integral generators of the same line, hence a unit of the
+valuation ring.  Taking valuations gives
+$k\,v(t_\chi)=kQ(y)+b(y,\chi)-kQ(y)$.
+In particular this argument remains valid when the residue
+characteristic divides $k$; it is an equality in $\mathbb Q$, not a
+division inside $R$.
+
+Let $w$ be the original scalar-line generator of the theta lift, and
+write $w=c_w e_w$ with $e_w$ integral.  If the action is multiplied by
+its original nonzero normalization scalar $\zeta$, the cubical
+translation rule sends coefficient $\chi$ to coefficient $\chi+y$ and
+shifts its scalar valuation by
+\[
+            \frac{b(y,\chi)}{k}+v(c_w)+v(\zeta).
+\]
+This assertion is two-sided.  Translation by $m$ and its inverse are
+integral automorphisms after base change to the valuation ring, and
+the integral cube-law generators are invertible.  Flat base change
+for $H^0$ therefore transfers precisely the lattices used in
+\eqref{eq:reached-weighted-filtration}.  To see that this uses the
+original pullback and not a free choice of scalar, the cube-law
+isomorphism has four line factors
+$\mathscr L_{c(\chi)+m},\mathscr L_{c(\chi)},\mathscr L_m,
+\mathscr L_0$ with exponents $(1,-1,-1,1)$; its multiplier is the
+specified $t_\chi c_w$, and $\zeta$ is retained separately.
+The inverse uses their exact inverses.
+
+Completing the quadratic identity gives the original action $T$ the
+following exact filtration law:
+\begin{equation}\label{eq:reached-exact-translation-shift}
+ \mathcal N_k(s;r)\ \Longleftrightarrow\
+ \mathcal N_k(Ts;r+c_T),\qquad
+ c_T=v(c_w)+v(\zeta)-\frac{Q(y)}k.
+\end{equation}
+Indeed
+$Q(\chi+y)=Q(\chi)+Q(y)+b(y,\chi)$.
+The comparison is uniform in $\chi$ and in the section $s$.
+
+If $T^h=1$, iteration gives
+$\mathcal N_k(s;r)\Longleftrightarrow\mathcal N_k(s;r+hc_T)$.
+The set of rational $r$ for which $\mathcal N_k(s;r)$ holds is downward
+closed.  A downward-closed subset of $\mathbb Q$ invariant under a
+nonzero rational translation is either empty or all of $\mathbb Q$:
+iterate in the positive direction, then use downward closure.
+Consequently it is invariant under $c_T$, whether or not $c_T=0$.
+Equation~\eqref{eq:reached-exact-translation-shift} thus implies
+\[
+                 \mathcal N_k(Ts;r)\Longleftrightarrow
+                 \mathcal N_k(s;r).
+\]
+This proof includes the zero section and does not require attainment
+of an infimum.  The original canonical symmetric theta lift has finite
+order.  If one first chooses a different finite-order lift via the
+torsion identification, the comparison scalar is a root of unity:
+raising both lifts to a common order shows this directly.  Its
+valuation is zero, so the same assertion holds for the prescribed
+canonical move, with its original scalar.
+
+\subsection*{The actual normalized pullback is integral}
+
+Suppose $a\bar a=N$.  The coefficient at
+$\beta=\bar a\chi$ of the original normalized pullback is
+\begin{equation}\label{eq:reached-pullback-coefficient}
+             s'_{\bar a\chi}=u_\chi\,a^*s_\chi;
+             \qquad s'_\beta=0\quad(\beta\notin\bar aX).
+\end{equation}
+The map $\chi\mapsto\bar a\chi$ is injective since $X$ is torsion-free
+and multiplication by $a$ composes with it to $[N]$.
+The generator $u_\chi$ is integral with integral inverse.  Here is why
+this is true for the prescribed normalization.
+
+The integral trace-form identification with the original $w_0$ and
+the Rosati identity construct the rigidified cubical isomorphism
+$a^*\mathscr L\simeq\mathscr L^{\otimes N}$.
+One can compute it on the Poincar\'e expression
+$(\mathrm{id},\lambda w_0)^*\mathscr P$:
+$\bar a w_0a=Nw_0$ gives the isomorphism by bilinearity.
+Equivalently the integral cube law and the trace-form identification
+give the same isomorphism on the original line.  Applying this to
+$\mathscr M_{k,\chi}$, and using
+$c(\bar a\chi)=\bar a\,c(\chi)$ and the Rosati biextension identity,
+constructs an integral generator
+\[
+ e_\chi\in
+ H^0\!\left(\mathcal B,
+   \mathscr M_{kN,\bar a\chi}\otimes(a^*\mathscr M_{k,\chi})^{-1}
+       \right)^\times.
+\]
+Its value at the zero section is the given rigidification to the
+power $k(N-1)$.  The original generic $u_\chi$ has exactly this value.
+Their ratio is a global invertible function on the proper geometrically
+connected abelian variety $\mathcal B_\Omega$, hence a scalar; its value
+at zero is one.  Therefore $u_\chi=e_\chi$ exactly.
+There is no extra integral scalar or denominator to estimate.
+
+The balanced period pairing gives
+$b(\bar a\chi,\bar a\chi)=b(\chi,a\bar a\chi)=Nb(\chi,\chi)$.
+Since $b(x,x)=2Q(x)$, equality of integers gives
+\[
+                 Q(\bar a\chi)=NQ(\chi).
+\]
+Thus the source threshold in \eqref{eq:reached-pullback-coefficient}
+is unchanged:
+$Q(\bar a\chi)/(kN)=Q(\chi)/k$.
+Integral pullback and the integral generator prove
+\begin{equation}\label{eq:reached-pullback-filtration}
+       \mathcal N_k(s;r)\ \Longrightarrow\
+       \mathcal N_{kN}(s';r).
+\end{equation}
+This is a forward statement, exactly what reaching a section requires;
+no inverse pullback or index bound is assumed.
+
+\subsection*{The initial coefficient and induction}
+
+The supplied framed level-one section is integral.  Its coefficient at
+$0$ lies in $M_{1,0}$: the integral formal expansion has precisely this
+coefficient, and the original line identification and framed section
+agree with scalar one.  The period recurrence moves a coefficient at
+$\alpha$ to that at $\alpha+kx$ by an integral line isomorphism and a
+scalar of valuation
+\[
+                         kQ(x)+b(x,\alpha).
+\]
+This is the same period comparison used above.  It agrees with the
+quadratic threshold because
+\[
+ Q(\alpha+kx)-Q(\alpha)=k^2Q(x)+kb(x,\alpha).
+\]
+For $k=1$, every element of $X$ is obtained from $0$.  Since $Q(0)=0$,
+the integral zero coefficient proves $\mathcal N_1(s;0)$ for the
+original framed generator.  Applying
+\eqref{eq:reached-pullback-filtration} and finite-order translation
+invariance inductively proves $\mathcal N_k(s;0)$ for every reached
+section.  All intermediate levels and the source restriction
+$k=1$ or $k\geq4$ are retained.
+
+\subsection*{Coefficient descent and integral extension}
+
+The remaining issue is genuine integral descent, not rational
+uniqueness.  We give both steps explicitly.
+
+First suppose a coefficient defined over $K$ is a finite sum
+$\sum_i z_i\sigma_i$ with $v(z_i)\geq0$ and
+$\sigma_i\in M_{k,\chi}$.  The finite $R$-module
+$V=R+\sum_iRz_i\subset\Omega$ is torsion-free, hence free.
+The element $1$ is primitive in $V$: otherwise
+$1=\pi z$ with $z\in V$, contradicting $v(z)\geq0$.
+Extend $1$ to an $R$-basis and take its coordinate projection
+$\ell:V\to R$.  Extend $\ell$ $K$-linearly to $\Omega$; it fixes $K$.
+Applying it to the coefficient identity gives
+$s_\chi=\sum_i\ell(z_i)\sigma_i\in M_{k,\chi}$.
+This works for an arbitrary valued extension and needs neither an
+integral trace nor division by its degree.
+
+Because $Q(\chi)\geq0$, the already proved $\mathcal N_k(s;0)$ makes
+every coefficient integral over the valuation ring.  The preceding
+argument puts each original $K$-coefficient in its exact $R$-module
+$M_{k,\chi}$.
+
+Now let $s$ be the original section over $K$.  Quasi-compactness and
+separatedness give an $m\geq0$ such that $\sigma=\pi^m s$ extends to
+$\mathcal G$: on a finite affine cover one clears its denominators.
+The integral expansion of $\sigma$ has every coefficient divisible by
+$\pi^m$.  If $m>0$, reduce the original expansion formula on the
+$\pi^m$-thickening.  Every coefficient is zero, so that formula makes
+$\sigma$ itself zero on this thickening.  The sheaf exact sequence
+\[
+ 0\longrightarrow\mathscr L_{\mathcal G}^{\otimes k}
+   \xrightarrow{\ \pi^m\ }
+   \mathscr L_{\mathcal G}^{\otimes k}
+   \longrightarrow
+   \mathscr L_{\mathcal G}^{\otimes k}/\pi^m
+   \longrightarrow0
+\]
+is exact because the smooth model is flat.  Left exactness of global
+sections supplies $\tau$ with $\sigma=\pi^m\tau$.
+On the generic fibre, cancellation gives $\tau=s$.  For $m=0$ no
+cancellation is necessary.  This proves Theorem~\ref{thm:reached-sections-regular}
+with scalar one.  The argument uses the reconstruction formula on
+each integral thickening; rational Fourier uniqueness alone would
+not supply this divisibility.
+
+\subsection*{Effect on the primary trace and remaining frontier}
+
+If the tuple $F$ in Theorem~\ref{thm:full-primary-theta-trace} is reached,
+then each of its prescribed translates $G_u$ is reached by definition.
+Theorem~\ref{thm:reached-sections-regular} supplies the exact integral
+sections needed there.  Their product invariance under the stabilizer
+is the section identity proved before formal trace, so no
+harmonic-value-only invariance is substituted.  Normalized pullback
+in the adapted lattice argument again produces reached sections.
+Accordingly the primary theta denominator estimate now needs no
+separate reached-section regularity assumption once the original
+\texttt{Good3} model is supplied.
+
+This closes the reached-section regularity subobligation under that
+model contract.  It does not construct the global integral model or
+its degeneration, prove the mixed level-torsion identities needed for
+the other local branch, or supply theta spanning and the raw global
+norm estimate.  The conductor-one specialization does not remove
+these retained geometric inputs.  Exact source interfaces and bounded
+excerpt hashes are recorded in the accompanying certificate
+\cite{reached-regularity-source}.

@@ -1,0 +1,177 @@
+\section{The prescribed generic PEL moduli space}
+\label{sec:generic-pel-frontier}
+
+We construct the characteristic-zero moduli space required by the
+geometric route, including its original line and finite level labels.
+This construction does not yet supply its integral compactification.
+Write $E/F$ for the source's CM extension, $B$ for its perfect
+alternating form on the projective $\mathcal O_E$-lattice $\Lambda$,
+and $w=(1+\sqrt{-d})/2$. In particular $w+\bar w=1$.
+The signature is $(p,q)$ at each embedding above the chosen embedding
+of $\mathbb Q(\sqrt{-d})$, and $f=[F:\mathbb Q]$.
+The level consists of odd $M\geq3$, an ideal $\mathfrak b$ with
+\[
+ \mathfrak b\overline{\mathfrak b}=(M),\qquad
+ \mathfrak b+\overline{\mathfrak b}=\mathcal O_E,
+\]
+and an integer $A\geq1$. Set
+$K_A=\mathbb Q(\sqrt{-d},e^{2\pi i/A})$ with the original embeddings.
+
+\begin{proposition}[The exact primitive line]\label{prop:pel-primitive-line}
+Let $(\mathcal A,\lambda,\iota)$ be a principally polarized abelian
+scheme with $\mathcal O_E$-action satisfying
+$\iota(a)^\vee\lambda=\lambda\iota(\bar a)$.
+For the normalized Poincar\'e line $\mathcal P$ on
+$\mathcal A\times\mathcal A^\vee$, put
+\[
+ \mathcal L_w=(1,\lambda\iota(w))^*\mathcal P.
+\]
+This is a rigidified symmetric cubical line, relatively ample and
+principally polarizing. It satisfies the source's adjoint identities
+and its exact primitive identity
+$\mathcal L_w\simeq(1,\iota(w))^*\delta\mathcal L_w$.
+Conversely every original primitive line inducing $\lambda$ is
+uniquely isomorphic to $\mathcal L_w$ as a rigidified cubical line.
+\end{proposition}
+\begin{proof}
+For a homomorphism $h:\mathcal A\to\mathcal A^\vee$, the polarization
+associated to $(1,h)^*\mathcal P$ is $h+h^\vee$. Thus
+\[
+ \lambda_{\mathcal L_w}
+ =\lambda\iota(w)+\iota(w)^\vee\lambda
+ =\lambda\iota(w+\bar w)=\lambda.
+\]
+Simultaneous inversion on the two factors preserves $\mathcal P$,
+giving symmetry. The theorem of the cube gives its unique cubical
+structure compatible with the rigidification. Relative ampleness
+follows fibrewise from the polarization just computed. The normalized
+biextension identity is
+$\delta\mathcal L_w=(\operatorname{id}\times\lambda)^*\mathcal P$
+on $\mathcal A\times\mathcal A$; the primitive identity then pulls
+this line back along the graph $x\mapsto(x,\iota(w)x)$.
+It gives both the adjoint identities and the primitive identity.
+For an original line $\mathcal L$, the same biextension identity and
+its stipulated primitive identity give $\mathcal L\simeq\mathcal L_w$.
+Normalize this isomorphism at zero. Since
+$\pi_*\mathcal O_{\mathcal A}=\mathcal O_S$, its normalized version
+is unique, hence respects the unique cubical structures and commutes
+with base change. No square root, tensor power, or replacement theta
+line is involved. These standard Poincar\'e identities are recalled
+in \cite[Sections 1.3.2, 3.2.2 and 5.2.4]{generic-pel-lan}.
+\end{proof}
+
+\begin{lemma}[The half-level kills actual automorphisms]
+\label{lem:pel-half-level-automorphisms}
+Every automorphism of a geometric original object preserving its
+polarization, coefficient action and half-level labels is the identity.
+The auxiliary full level $A$ is not needed for this assertion.
+\end{lemma}
+\begin{proof}
+Use any original full Tate marking. On
+$\widehat\Lambda=\Lambda\otimes\widehat{\mathbb Z}$ the resulting
+operator $g$ preserves the perfect form, and fixing the labels means
+$(g-1)\overline{\mathfrak b}\widehat\Lambda\subset M\widehat\Lambda$.
+Invertibility of the ideal $\overline{\mathfrak b}$ gives
+$g-1\in\mathfrak b\operatorname{End}_{\widehat{\mathcal O}_E}
+(\widehat\Lambda)$. The same holds for $g^{-1}-1$.
+The adjoint is integral because $B$ is perfect; it conjugates
+coefficient ideals and satisfies $g^*=g^{-1}$. Taking its adjoint
+gives $g-1\in\overline{\mathfrak b}\operatorname{End}(\widehat\Lambda)$.
+Their intersection is $M\operatorname{End}(\widehat\Lambda)$.
+Thus the automorphism fixes every point of $\mathcal A[M]$.
+The standard rigidity of polarized abelian varieties with full level
+$M\geq3$ makes it the identity
+\cite[Lemma 2.3.3.1]{generic-pel-lan}.
+This is an assertion about polarization-preserving automorphisms;
+it does not assert neatness of an adelic similitude subgroup.
+\end{proof}
+
+\begin{theorem}[Generic moduli supplier]\label{thm:original-generic-pel-moduli}
+For every original host, datum and level there is a smooth
+quasi-projective scheme $X/K_A$ of relative dimension $fpq$, with a
+universal object, representing the original moduli functor. In
+particular it supplies the source's \texttt{Moduli} object, including
+its reduced-base representing property and its dual-number
+unramified property. The universal line is the original primitive
+line, and both entire label maps are retained.
+\end{theorem}
+\begin{proof}
+The case $p+q=0$ is $\operatorname{Spec}K_A$ with the trivial abelian
+scheme and its rigidified trivial line; assume $p+q>0$.
+First keep track of the pairing convention. For a complex structure
+$J$ in the prescribed domain, the source assumes $B(Jx,x)>0$.
+Lan's positivity convention is therefore satisfied by the
+$\mathbb Z(1)$-valued form $-2\pi i B$ and $h(i)=J$
+\cite[Definition 1.2.1.2]{generic-pel-lan}.
+The Weil pairing of his polarization is the theta commutator for
+$\mathcal L^{\otimes n}$, with lifts
+$t_x^*\mathcal L^{\otimes n}\to\mathcal L^{\otimes n}$, by
+\cite[Definition 5.2.4.6 and Proposition 5.2.4.9]{generic-pel-lan};
+this is exactly the original commutator convention.
+
+The source's unramified CM hypothesis supplies a unit
+$u\in\widehat{\mathcal O}_E^\times$ with $u\bar u=-1$.
+At a split place use $(1,-1)$; at an unramified quadratic place
+the norm on units is onto, including residue characteristic two.
+For completeness, surjectivity follows from the finite-field norm
+and from the trace maps on successive principal-unit quotients,
+followed by completeness. Thus an original coherent Tate marking
+$\alpha$, with pairing $\zeta_n^{B(x,y)}$, gives the PEL marking
+$\alpha\circ u$, with pairing $\zeta_n^{-B(x,y)}$.
+The roots $\zeta_n$ and in particular the specified $\zeta_A$ do not
+change. Recover the original labels by applying this marking to
+$u^{-1}x$. This fixed integral adelic change of coordinates affects
+neither the abelian variety nor its line or its labelled points.
+
+The finite labels are precisely an integral finite-level orbit.
+Indeed, $\Lambda=\mathfrak b\Lambda+
+\overline{\mathfrak b}\Lambda$ and their intersection is $M\Lambda$.
+Consequently the map killed by $\mathfrak b\Lambda$ is uniquely
+determined by its restriction to $\overline{\mathfrak b}\Lambda$;
+that restriction is the original full $M$-division marking there.
+The other label map is the full $A$-division marking. Their simultaneous
+stabilizer $H$ is an open compact subgroup of the integral PEL
+similitude group, containing the principal congruence subgroup of
+level $\operatorname{lcm}(M,A)$, with cyclotomic multiplier one modulo
+$A$. The condition that a marking extend to the complete Tate module
+is retained: this is Lan's integral level of the prescribed lattice
+type, not merely a signature or a rational genus.
+Take the open-and-closed cyclotomic fibre specified by
+$\zeta_A=e^{2\pi i/A}$ after base change to $K_A$.
+
+The determinant polynomial is defined over
+$\mathbb Q(\sqrt{-d})$: for $a\in E$ its multiplicities are $p$ at
+embeddings over the chosen quadratic embedding and $q$ at their
+conjugates. Hence the reflex field is contained in this quadratic
+field. Because $\mathcal O_E$ is finite \'etale in characteristic zero,
+the original geometric eigenspace dimensions give precisely the PEL
+determinant condition, also over nonreduced bases: after an \'etale
+splitting, its eigensubbundles have the prescribed locally constant
+ranks. Likewise the finite label identities are identities of finite
+\'etale sections, so their geometric-point verification holds over
+such bases. This proves the equivalence of the original functor and
+the indicated PEL moduli problem. Proposition~\ref{prop:pel-primitive-line}
+recovers its exact cubical line and all line-preserving isomorphisms.
+
+Apply \cite[Theorem 1.4.1.11]{generic-pel-lan} with the set of retained
+good primes empty, so the base has characteristic zero. It gives a
+separated smooth algebraic stack of finite type. The preceding lemma
+makes its inertia trivial, hence it is an algebraic space.
+By \cite[Corollary 7.2.3.10]{generic-pel-lan}, the coarse moduli space
+for every such $H$ is a quasi-projective scheme. Since the stack is
+already an algebraic space, it equals its coarse space. This yields
+the required fine scheme and its universal object, without assuming
+that $H$ is neat. At each conjugate pair the Hodge filtration has
+Grassmannian dimension $pq$, giving the total dimension $fpq$.
+Representability makes two maps with isomorphic pulled-back objects
+equal, including a dual-number map and its constant reduction.
+\end{proof}
+
+This closes the generic moduli supplier in both routes. It does not
+yet supply the source's normal flat projective integral model, its
+semiabelian boundary with the same cubical line, the prescribed
+uniformization charts, or any metric, section, cusp or global norm
+estimate. In particular a compactification theorem requiring a neat
+prime-to-residue-characteristic level cannot be invoked merely from
+Lemma~\ref{lem:pel-half-level-automorphisms}.
+The source interfaces are pinned separately\cite{generic-pel-source}.
