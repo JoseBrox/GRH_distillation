@@ -1,6 +1,6 @@
 # The RH manuscript
 
-The current [38-page manuscript](main.pdf) develops the shorter route to
+The current [manuscript](main.pdf) develops the shorter route to
 the ordinary Riemann hypothesis. It contains a complete proof of the eventual one-sided
 prime-sum criterion, the direct positive-kernel transfer, and the
 geometric and matrix comparisons used to state the remaining arithmetic
@@ -14,13 +14,19 @@ The organization follows the mathematical dependencies:
 3. Primitive-character positivity at all primes, the thick/thin
    comparison, four surviving quadratic terms and zeta centering.
 4. Classical Selmer finiteness and finite prime support, the smaller
-   character family, the integral weighted product, and the resultant
-   and common-divisor comparisons; the uniform product estimate remains open.
+   character family, the integral weighted product, a compatible
+   conormal pairing, exact graded comparisons, four-weight admissibility,
+   and the finite-slice multiplicity bound. Resultants
+   and common divisors retain their same-orbit hypotheses; the actual
+   models and the uniform product estimate remain open.
 5. One mean volume, a single test intersection sensitive to the block
    weights, the classical all-point-height reduction, exact
    component-degree weights, selected tangent degrees, integral jets,
    the absolute Siegel lemma, classical theta sections, the signed
-   determinant comparison, the finite-place character degree, and descent.
+   determinant comparison, the integral Hodge module and its two
+   filtrations, a direct boundary period argument, determinant torsion,
+   constant finite order, exact CM
+   eigenframes, the elliptic product and period calculation, and descent.
 6. Two positive spectral traces, direct slope comparison, and control
    under the actual source and target restrictions. Squared energies
    remain available when they give a smaller cost.

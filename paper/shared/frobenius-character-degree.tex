@@ -1,99 +1,30 @@
-\paragraph{Degrees of character quotients in characteristic $p$.}
-The degree calculation on a special-fibre curve has a short proof that
-also explains the extra hypothesis needed at ramified coefficient primes.
-
-\begin{proposition}\label{geo-frobenius-character-degree}
-Let $k$ be a finite field of characteristic $p$, let $C/k$ be a smooth
-projective geometrically connected curve, and let $F:C\to C$ be absolute
-Frobenius. Let $A$ be a finite commutative $\mathbf F_p$-algebra and put
-$B=k\otimes_{\mathbf F_p}A$. Suppose vector bundles
-$\mathcal H,\mathcal U,\mathcal V$ on $C$ have $A$-actions and
-$A$-linear exact sequences
-\begin{equation}\label{geo-hodge-conjugate-sequences}
- 0\longrightarrow\mathcal U\longrightarrow\mathcal H
-       \longrightarrow\mathcal V\longrightarrow0,
- \qquad
- 0\longrightarrow F^*\mathcal V\longrightarrow\mathcal H
-       \longrightarrow F^*\mathcal U\longrightarrow0.
-\end{equation}
-The actions on the Frobenius pullbacks are the pulled-back $A$-actions.
-Then $\deg(e\mathcal H)=0$ for every idempotent $e\in B$.
-
-Let $\chi:B\to k$ be a $k$-algebra character, and let $e$ be the
-idempotent of its Artin local factor $B_e=eB$. If $e\mathcal H$ is
-locally free as a module over $\mathcal O_C\otimes_k B_e$, then
-\[
- \mathcal Q_\chi=\mathcal H\otimes_{B,\chi}k
- \quad\hbox{is a vector bundle and}\quad
-                         \deg\mathcal Q_\chi=0.
-\]
-Here local freeness over the coefficient algebra is stronger than
-local freeness merely over $\mathcal O_C$. If $B_e=k$, the stronger
-condition is automatic.
-\end{proposition}
+\paragraph{The curve criterion and ramified coefficients.}
+\begin{corollary}\label{geo-frobenius-character-degree}
+Under Proposition~\ref{geo-frobenius-determinant-torsion}, every
+idempotent part $e\mathcal H$ has degree zero on every proper curve.
+The same holds for a character quotient $\mathcal Q_\chi$ whenever
+the selected coefficient factor is locally free.
+\end{corollary}
 \begin{proof}
-Write $\sigma(c\otimes a)=c^p\otimes a$ on $B$; this acts on the
-finite field coefficients and leaves $A$ fixed. It is not the
-absolute Frobenius of the possibly nonreduced algebra $B$.
-For a bundle $\mathcal W$ with $A$-action, pulling back the action
-of $e=\sum_i c_i\otimes a_i$ raises the scalars $c_i$ to their
-$p$-th powers. Hence
-\[
- F^*(e\mathcal W)=\sigma(e)F^*\mathcal W.
-\]
-Idempotent images are direct summand bundles, so applying an
-idempotent preserves both exact sequences. Frobenius is finite flat
-on the smooth curve, and $\deg F^*\mathcal W=p\deg\mathcal W$.
-Taking the $\sigma(e)$ part of the second sequence and the $e$ part
-of the first gives
-\[
- \deg\bigl(\sigma(e)\mathcal H\bigr)
-       =p\{\deg(e\mathcal V)+\deg(e\mathcal U)\}
-       =p\deg(e\mathcal H).
-\]
-If $k=\mathbf F_{p^f}$, then $\sigma^f=1$. Iteration yields
-$\deg(e\mathcal H)=p^f\deg(e\mathcal H)$, proving the first claim.
-
-The residue field of $B_e$ is $k$. A composition series of its
-ideals has
-$n=\operatorname{length}_{B_e}B_e=\dim_kB_e>0$ successive quotients
-isomorphic to $k$. Local freeness over
-$\mathcal O_C\otimes_k B_e$ makes tensoring this series with
-$e\mathcal H$ exact. It gives a filtration by subbundles whose
-$n$ successive quotients are each isomorphic to $\mathcal Q_\chi$.
-In particular $\mathcal Q_\chi$ is locally free, and additivity of
-degree gives
-\[
- 0=\deg(e\mathcal H)=n\deg\mathcal Q_\chi.
-\]
-This proves the assertion, including rank zero.
+A torsion determinant has degree zero. Apply this first to
+$\mathcal D_e$ and then to
+\eqref{geo-character-determinant-torsion}.
 \end{proof}
 
-For $A=\mathcal O_E/p\mathcal O_E$ and $p$ unramified in $E$,
-the algebra becomes a product of copies of $k$ after a finite extension
-of the constant field. The character conclusion then follows from
-the two exact sequences alone. At a ramified prime the nilpotents
-must be retained, and local freeness over the Artin factor supplies
-their multiplicity in the proof.
+For $A=\mathcal O_E/p\mathcal O_E$ at an unramified prime,
+the coefficient algebra splits into fields after extending the
+finite constant field; local coefficient freeness is then automatic.
+At a ramified prime its nilpotents must be retained. The preceding
+universal-extension argument supplies that stronger freeness from
+the stated geometric fibre data.
 
-The following example shows why a zero degree for the whole bundle
-cannot replace that hypothesis. On $C=\mathbf P^1_k$ take
-$B=k[\epsilon]/(\epsilon^2)$ and
-$\mathcal H=\mathcal O(1)\oplus\mathcal O(-1)$, with
-$\epsilon(u,v)=(sv,0)$ for a nonzero
-$s\in H^0(C,\mathcal O(2))$. Although $\deg\mathcal H=0$, the
-torsion-free quotient by the image of $\epsilon$ is
-$\mathcal O(-1)$, of degree $-1$. The unsaturated quotient also
-has a torsion summand of length $2$. The $B$-module is not locally
-free at the zero divisor of $s$. This example concerns the inference
-from total degree alone; it is not claimed to satisfy
-\eqref{geo-hodge-conjugate-sequences} or to arise from the prescribed
-abelian family.
-
-To apply the proposition to the geometric construction, the two
-filtrations and the required coefficient freeness must hold for its
-actual integral Hodge bundle along each special-fibre curve. Its
-generic character determinant must also be identified with the ratio
-of the prescribed conjugate tangent determinants. These model
-comparisons, including their behaviour at the boundary, remain to be
-established; the abstract degree calculation does not supply them.
+A zero degree for the total underlying bundle alone does not suffice.
+On $\mathbf P^1_k$, let $B=k[\epsilon]/(\epsilon^2)$ act on
+$\mathcal H=\mathcal O(1)\oplus\mathcal O(-1)$ by
+$\epsilon(u,v)=(sv,0)$, where $s$ is a nonzero section of
+$\mathcal O(2)$. Then $\deg\mathcal H=0$, but the torsion-free
+quotient by the image of $\epsilon$ is $\mathcal O(-1)$.
+The unsaturated quotient also has torsion of length two, and the
+coefficient module is not locally free at the zeros of $s$.
+This example illustrates the coefficient condition; it is not asserted
+to satisfy the two filtrations or to arise from the prescribed family.

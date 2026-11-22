@@ -1,0 +1,135 @@
+\paragraph{A common unipotent group and arithmetic periodization.}
+Let \(E/F\) be a CM extension and \((V,h)\) a Hermitian space,
+with \(h\) conjugate-linear in its first argument. Fix hyperbolic pairs
+\(e_i,f_i\), \(1\le i\le r\), put \(X=\langle e_i\rangle\),
+and let the vectors \(z_u\) lie in
+\(W=\langle e_i,f_i\rangle^\perp\). The apparently different groups
+\(N_u\) in the period construction are all the same group:
+\[
+ N=\{n\in U(V): (n-1)e_i\in\langle e_j:j<i\rangle,
+                  \ (n-1)X^\perp\subset X\}.
+\]
+Indeed, their additional condition \((n-1)z_u\in X\) follows from
+\(z_u\in X^\perp\). This argument also holds over the original finite
+adelic coefficient algebra. The characters can still vary with \(u\):
+for \(r\ge1\), their ratio is
+\[
+ \chi_u(n)\overline{\chi_v(n)}
+ =\Psi_E\!\left(m^{-1}h(f_r,n(z_u-z_v))\right),
+\]
+where \(m>0\) is the level denominator. Distinct characters are
+orthogonal on the compact quotient \(N(F)\backslash N(\mathbb A_F)\)
+with probability measure. This gives Fourier orthogonality there;
+repeated characters and the other rational orbits remain to be treated.
+For \(r=0\), the group and its character are trivial.
+
+Keep the original normalizing constants
+\[
+ c_u=\frac{v_Kv_{N,u}v_{H,u}}{d_u}>0,\qquad d_u=\dim\pi_u,
+\]
+where \(v_K\) is the finite adelic level volume, \(v_{N,u}\) the
+archimedean unipotent lattice volume, and \(v_{H,u}\) the compact
+archimedean stabilizer volume. A common Haar measure on \(N_\infty\)
+is compatible with the normalized maps: if
+\(\mu_{N,u}=t_u\mu_N\), the new quotient measure is \(t_u\nu_u\),
+the unit vector becomes \(t_u^{-1/2}W_u\), and
+\(P'_u=t_u^{-1/2}P_u\), \(c'_u=c_u/t_u\). Thus
+\(P'_u/\sqrt{c'_u}=P_u/\sqrt{c_u}\). The arithmetic maps, their
+integral lattices and metrics remain the original ones.
+
+\begin{proposition}[Periodization on the actual seed spaces]
+\label{shared-common-periodization}
+Fix finitely many words. Write \(G=U(V)(\mathbb A_F)\),
+\(\Gamma=U(V)(F)\), and let \(\Delta_u\subset\Gamma\) be their
+rational stabilizers. Use compatible quotient measures on
+\(Y=\Gamma\backslash G\) and \(X_u=\Delta_u\backslash G\).
+Let \(C_u\) be the original finite-dimensional Hilbert column spaces
+and \(\Phi_u:C_u\to L^2(X_u)\) their linear maps to scalar,
+left-invariant seeds. Write
+\(P_ua(y)=\sum_{\delta\in\Delta_u\backslash\Gamma}
+\Phi_u(a)(\delta s(y))\).
+Assume, for each basis vector \(a\), that
+\(\sum_{\delta\in\Delta_u\backslash\Gamma}
+ |\Phi_u(a)(\delta s(y))|\) belongs to \(L^2(Y)\), where \(s\)
+is a measurable section. Then
+\[
+ \bigoplus_u L^2(X_u)\simeq
+ L^2\!\left(Y,\bigoplus_u\ell^2(\Delta_u\backslash\Gamma)\right),
+ \qquad f\longmapsto\bigl(f_u(\delta s(y))\bigr)_{u,\delta}
+\]
+is unitary, and the normalized synthesis is
+\[
+ Sa=\sum_uc_u^{-1/2}P_ua_u=\mathcal F Aa,\qquad
+ (Aa)_{u,\delta}(y)=\frac{\Phi_u(a_u)(\delta s(y))}{\sqrt{c_u}},
+ \quad \mathcal Fv=\sum_{u,\delta}v_{u,\delta}.
+\]
+Here \(\mathcal F\) is used on the domain where the sum of absolute
+values belongs to \(L^2(Y)\). Under absolute unfolding, its full norm is
+\begin{equation}\label{shared-periodization-orbits}
+ \|Sa\|^2=\sum_{u,v}\frac1{\sqrt{c_uc_v}}
+ \sum_{\gamma\in\Delta_u\backslash\Gamma/\Delta_v}
+ \int_{(\Delta_u\cap\gamma\Delta_v\gamma^{-1})\backslash G}
+ \Phi_u(a_u)(g)\overline{\Phi_v(a_v)(\gamma^{-1}g)}\,dg.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The sets \(\delta s(Y)\) partition a fundamental region for
+\(\Delta_u\). Integration over this partition proves the isometry
+and constructs its inverse. Summing the seed values gives the stated
+synthesis. Expanding its squared norm and partitioning the rational
+pairs into double cosets gives \eqref{shared-periodization-orbits};
+absolute unfolding justifies every rearrangement. For seeds covariant
+under a unitary representation, the same construction uses its
+associated bundle and unitary cocycle. The scalar seeds in the statement
+already include the compact coefficient contraction and are invariant.
+\end{proof}
+
+The unitary identification does not make \(A\) an isometry without
+the additional identity
+\(\int_{X_u}\Phi_u(a)\overline{\Phi_u(b)}=c_u\langle a,b\rangle\)
+for the actual column metric. Nor is unrestricted fibre summation
+bounded when \([\Gamma:\Delta_u]=\infty\). This index is infinite
+for \(r\ge1\): the rational unitary maps
+\(e_1\mapsto e_1+t f_1\), with \(\bar t=-t\), fixing \(f_1\)
+and the orthogonal complement, give distinct cosets because
+\(\Delta_u\) fixes \(e_1\). The estimate needed concerns the
+finite seed spaces with their prescribed restrictions.
+
+\begin{corollary}[A calibrated summation criterion]
+\label{shared-periodization-calibration}
+Let \(J_u:C'_u\hookrightarrow C_u\) be the actual isometric source
+inclusions and \(\Pi\) the orthogonal projection onto the final target
+\(H_0\subset L^2(Y)\), of dimension \(n>0\). Put
+\[
+ Q_0=\sum_uc_u^{-1}\Pi P_uJ_uJ_u^*P_u^*\Pi,
+ \qquad M_0=\operatorname{tr}Q_0>0.
+\]
+Suppose positive measurable weights satisfy, for all \(a_u\in C'_u\),
+\begin{equation}\label{shared-periodization-weights}
+ \sum_{u,\delta}w_{u,\delta}(y)\le L,\qquad
+ \int_Y\sum_{u,\delta}
+ \frac{|\Phi_u(J_ua_u)(\delta s(y))|^2}{c_uw_{u,\delta}(y)}\,dy
+ \le B\sum_u\|a_u\|^2,
+\end{equation}
+where \(L,B>0\), and the first inequality holds almost everywhere.
+If \(LB\le(1+\varepsilon)M_0/n\), with \(\varepsilon\ge0\), then
+\[
+ Q_0\le LB I_{H_0},\qquad
+ \frac{\operatorname{tr}(Q_0-(M_0/n)I_{H_0})_+}{M_0}
+ \le\frac{\varepsilon}{1+\varepsilon}.
+\]
+\end{corollary}
+\begin{proof}
+Weighted Cauchy--Schwarz gives
+\(\|\mathcal F AJ a\|^2\le LB\|a\|^2\); applying \(\Pi\)
+does not increase the norm. Thus every eigenvalue \(\lambda\) of
+\(Q_0\) lies in \([0,LB]\), and
+\((\lambda-M_0/n)_+\le(1-M_0/(nLB))\lambda\).
+Summing proves the trace bound. The mass assumption implies
+\(LB\ge M_0/n\).
+\end{proof}
+
+Constructing weights with this calibration, or proving the corresponding
+summed norm bound directly, remains an arithmetic estimate. All the
+orbits in \eqref{shared-periodization-orbits}, the fixed normalizing
+volumes, and the arithmetic height hypotheses must still be respected.

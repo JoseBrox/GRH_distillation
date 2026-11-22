@@ -115,9 +115,27 @@ norms, with a smaller tensor power. The
 provides those inputs in the prescribed metric, giving constant 12.
 The [determinant bridge](../notes/geometric-flat-determinant.md) keeps
 the exact signed signature difference and cancels the finite correction.
-Its actual flat-family and CM evaluation, the cusp term and finite
-section estimate remain to be established. Anchoring a weight entry does not make its sum
-zero or cancel its determinant contribution.
+The integral comparison has four shorter parts:
+[coefficient freeness](../notes/boundary-hodge-freeness.md) from a
+universal extension and the torus filtration,
+[both filtrations](../notes/biextension-conjugate-filtration.md) from
+first-order sections and relative Frobenius,
+[determinant torsion and constant finite order](../notes/determinant-torsion-rigidity.md),
+and [exact CM eigenframes](../notes/cm-integral-eigenframes.md) from
+the relative different. The local conjugate-norm calculation needs no
+real generator or finite unramifiedness over the real subfield; the
+global host requirements remain. Compatible formal charts along test
+curves suffice for the filtration argument, including in characteristic
+two; no extra global semiabelian family along the curve is required.
+The [elliptic product and period calculation](../notes/cm-product-period-calculation.md)
+now supplies the integral CM product and exact signed value, including
+the dyadic lattice comparison. The actual boundary charts and original
+fibre pullback data, integral determinant and same-component CM lattice
+identifications, cusp term and finite section estimate remain. The
+[boundary period proof](../notes/flat-family-boundary-extension.md)
+constructs the generic algebraic determinant and assembles its local norms
+under those precise arithmetic-model identifications. Anchoring a weight entry
+does not make its sum zero or cancel its determinant contribution.
 
 The preferred [slope comparison](../notes/one-sided-frame-slope.md) now
 uses two positive trace errors of the same maps: a source deficit and a
@@ -131,8 +149,10 @@ penalties; no useful regime is discarded.
 For the target error, synthesis and its adjoint have the same positive
 spectrum. Thus a spectral-tail bound on the full normalized block Gram
 matrix suffices; its signed orbital terms are combined before taking the
-positive part. The orbital expansion and convergence themselves remain
-inputs. The proved trace-compression formulas carry this bound through
+positive part. The [exact periodization formula](../notes/common-unipotent-periodization.md)
+now identifies the common unipotent group and the full arithmetic sum,
+with absolute convergence and the actual seed metric contract stated.
+The proved trace-compression formulas carry a calibrated bound through
 the actual source and target restrictions, retaining their lost mass and
 dimensions. The source trace error still needs its own bound. Estimates
 for an average operator alone do not bound the required correlated costs.
@@ -185,22 +205,55 @@ replaces their product; both exceptional primes are retained. This
 neither supplies the trace-to-Selmer inequality nor proves a uniform
 saving for the actual integers.
 
-The [next arithmetic bridge](../notes/rh-selmer-valuation-frontier.md)
-is the integral negative-weight cocycle and graded-model comparison,
-with its actual automorphy and rigidity inputs. A finite weight-zero
-algebra and generic rigidity alone do not bound the missing torsion.
-The same note proves that the trace-class hypotheses alone do not force
-a common-divisor saving smaller than linear growth in the twist.
+The [conormal pairing](../notes/rh-selmer-conormal-pairing.md) supplies
+the lower comparison at odd primes for the same marked model: the
+strict Selmer group embeds in the dual of one finite negative-weight
+conormal quotient. It controls every elementary divisor and the exponent.
+Ambient torsion is removed before imposing the global equations, whose
+new torsion is retained. The actual models remain, with their automorphy
+and rigidity inputs. The RH
+specialization does not remove the five local weights or make the
+cyclotomic twist self-inverse. The
+[exact Euler determinant](../notes/rh-selmer-euler-determinant.md)
+keeps every generic multiplicity before the coarse upper bound.
+The [finite free leading quotient and generating-function count](../notes/rh-selmer-mixed-count.md)
+give the lower numerical constant with an explicit degree threshold,
+without assuming global flatness. The
+[graded Koszul comparison](../notes/rh-selmer-koszul-comparison.md)
+proves positivity and exact scalar extraction; the
+[four-weight argument](../notes/rh-selmer-admissibility.md) proves
+admissibility. Finally, the
+[finite-slice argument](../notes/rh-selmer-upper-multiplicity.md)
+gives uniform eventual support and the generic multiplicity bound.
+These complete the abstract numerical comparison under the stated
+chart, spanning, finiteness, separation, tangent and trace conditions.
+The one- or two-point slice also identifies the exact source of its
+factor two. The [full abstract theorem](../notes/rh-selmer-core-wrapper.md)
+now supplies integral Smith normalization and the weight-zero chart cut.
+An equation-valued adjustment gives a nonzero chart representative with
+unchanged point values, and one orbit per degree-zero character supplies
+the finite cover. The original arithmetic-model hypotheses remain. The
+[arithmetic frontier](../notes/rh-selmer-valuation-frontier.md) shows
+why generic rigidity alone cannot bound the missing integral torsion,
+and why the trace classes alone give no uniform common-divisor saving.
 
 ## What the pairwise norm bounds do not give
 
 The [exact spectral examples](../notes/redundant-period-spectrum.md)
 show why the full nonidentity orbital contribution is necessarily large
 in this redundant normalization. The estimate must concern its positive
-tail above the mean eigenvalue. Even zero-error pairwise inequalities can
-give trace excess of square-root order. Preserve the smaller valid
-refined-energy penalty unless an additional global input improves it.
+tail above the mean eigenvalue. The
+[integral incidence construction](../notes/basis-invariant-trace-obstruction.md)
+attains the sharp square-root loss under every invertible comparison
+basis, with fixed height-zero arithmetic maps. Small arbitrary source
+and target cuts preserve an explicit part of that loss. Preserve the
+smaller valid energy penalty unless an actual global input improves it.
 An ambient projector is not automatically the sum of the chosen periods.
+The common unipotent group does give Fourier orthogonality for distinct
+characters on its compact adelic quotient. The full arithmetic
+periodization still contains the other rational orbits. Its exact
+quotient-space isometry and a weighted Cauchy--Schwarz criterion are
+proved; the required arithmetic calibration remains open.
 
 ## Why the earlier symmetry route is optional
 
@@ -220,10 +273,16 @@ the relevant character phase depends on their difference and is unchanged.
 
 ## Next mathematical work
 
-1. Use the supplied tangent-slope, determinant and character-degree arguments.
-   Identify the [actual boundary Hodge lattice](../notes/flat-family-finite-place-frontier.md),
-   including its filtrations and coefficient freeness, and establish its
-   constant finite order and CM degree evaluation. Use the
+1. Use the supplied tangent-slope, coefficient-freeness, determinant-torsion,
+   vertical-order and CM eigenframe arguments. Identify the
+   [actual boundary Hodge lattice](../notes/flat-family-finite-place-frontier.md)
+   and compatible filtrations. The CM product and period value are proved;
+   identify their comparison with the actual algebraic flat family and
+   its prescribed local norms. The [existing level](../notes/half-level-determinant.md)
+   already gives determinant monodromy one by a direct norm argument.
+   The boundary extension and local-norm assembly are proved under the
+   exact arithmetic-model, integral-line and same-component CM hypotheses.
+   Use the
    [selected degree comparison](../notes/selected-eigenspace-degree.md),
    and prove the point-height comparison and the cusp/metric hypotheses
    in the [base-test supplier](../notes/base-test-height-supplier.md), then use
@@ -237,8 +296,10 @@ the relevant character phase depends on their difference and is unchanged.
    maps. A signed block spectral-tail bound supplies the target estimate;
    retain the independent source estimate and the actual compression costs.
 3. Bound the finite weighted Selmer product on the actual twisted primes for
-   the growing auxiliary fields, including the trace-to-Selmer comparison
-   and the surviving character cases. Assemble signed fourth-power tables
+   the growing auxiliary fields. Construct the marked models and verify
+   their chart and geometric point conditions; the conormal pairing and
+   abstract graded estimate are supplied.
+   Retain the surviving character cases. Assemble signed fourth-power tables
    and bound their weighted positive parts on arbitrarily late intervals.
 
 The [GRH program](grh/program.md) retains the general Dirichlet

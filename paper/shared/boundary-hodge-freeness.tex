@@ -1,0 +1,198 @@
+\paragraph{Freeness at ramified coefficient primes.}
+The missing integral condition is stronger than a characteristic-polynomial
+identity. It can be proved on geometric fibres by using the universal
+extension of the abelian quotient, followed by a three-step filtration.
+The argument uses the full ring of integers, including its nilpotents
+after reduction.
+
+\begin{lemma}\label{geo-witt-coefficient-freeness}
+Let $k$ be an algebraically closed field of characteristic $p>0$,
+$W=W(k)$, and $\mathcal O$ the ring of integers of a number field $E$.
+If a finite free $W$-module $D$ has an $\mathcal O$-action, then $D/pD$
+is projective over $C=k\otimes_{\mathbf Z}\mathcal O$.
+If moreover, for every $a\in\mathcal O$,
+\begin{equation}\label{geo-regular-character-freeness}
+ \det(X-a\mid D/pD)
+ =\det(X-a\mid C)^r,
+\end{equation}
+for an integer $r\geq0$, then $D/pD$ is free of rank $r$ over $C$.
+\end{lemma}
+\begin{proof}
+The ring $W\otimes_{\mathbf Z}\mathcal O$ is a product of discrete
+valuation rings. Indeed, decompose $\mathcal O\otimes\mathbf Z_p$ by
+its primes over $p$. The maximal unramified subextension of each local
+field splits over $W$, and a uniformizer of the remaining totally
+ramified extension has an Eisenstein polynomial. Each resulting factor
+is a discrete valuation ring with uniformizer $\varpi$ and
+$p=u\varpi^e$, where $u$ is a unit.
+The corresponding summand of $D$ has no $\varpi$-torsion, since it has
+no $p$-torsion. It is therefore free over this factor. Reduction modulo
+$p$ proves projectivity over $C$.
+
+Write $C=\prod_i C_i$, where $C_i\simeq k[t]/(t^{e_i})$ and the
+residue character is $\tau_i:\mathcal O\to k$. If the rank on $C_i$
+is $r_i$, the characteristic polynomial of $a$ is
+$\prod_i(X-\tau_i(a))^{e_i r_i}$.
+For a selected prime of $\mathcal O$ above $p$, the Chinese remainder
+theorem gives an $a$ which is zero at the other primes and is a
+nonzero generator of its residue field at that prime. Its distinct
+residue embeddings give distinct nonzero roots. Comparing their
+multiplicities in \eqref{geo-regular-character-freeness} gives
+$e_i r_i=e_i r$, hence $r_i=r$ for every factor.
+\end{proof}
+
+For the next two propositions, retain an algebraically closed field
+$k$ of characteristic $p>0$, the full ring of integers $\mathcal O$
+of the number field $E$, and $C=k\otimes_{\mathbf Z}\mathcal O$.
+
+\begin{proposition}\label{geo-proper-formal-hodge-comparison}
+Let $B/k$ be an abelian variety with an $\mathcal O$-action and a
+rigidified line bundle $M$ whose associated map $B\to B^\vee$ is an
+isomorphism. Suppose its adjunction identifies the endomorphism
+$a$ with the dual of $\bar a$, for an involution
+$a\mapsto\bar a$ of $\mathcal O$.
+Put $V=\operatorname{Lie}B$.
+Choose formal coordinates at zero and a frame $e(x,y)$, rigidified
+on both axes, of the associated Poincar\'e biextension.
+Write its adjunction in this frame as
+\[
+             e(ax,y)\longmapsto u_a(x,y)e(x,\bar a y).
+\]
+If $\rho(a)$ is the tangent action and
+$b_a$ is the mixed bilinear coefficient of $u_a$, then the module
+$V\oplus V^*$ with action
+\begin{equation}\label{geo-formal-hodge-action}
+       a(v,\lambda)=
+       \bigl(\rho(a)v,\rho(\bar a)^t\lambda-b_a^t v\bigr)
+\end{equation}
+is projective over $C=k\otimes_{\mathbf Z}\mathcal O$.
+\end{proposition}
+\begin{proof}
+The universal vector extension of $B^\vee$ parametrizes extensions
+of $B$ by $\mathbf G_m$ together with a pointed section over the
+first infinitesimal neighbourhood of zero. This description is
+functorial and commutes with arbitrary base change
+\cite[I, \S2.1 and Proposition 2.6.7]{mazur-messing-universal}.
+Use $M$ to identify the parameter space $B^\vee$ with $B$.
+Over $k[\epsilon]/(\epsilon^2)$, a tangent point above $\epsilon v$
+has a unique rigidification of the form
+\[
+                  e(\epsilon v,y)(1+\epsilon\lambda(y)),
+                 \qquad \lambda\in V^*,
+\]
+on that first neighbourhood. This identifies the tangent space
+of the universal extension with $V\oplus V^*$.
+Pulling the rigidification back by $\bar a$ and then through the
+inverse adjunction gives
+\[
+ e(a\epsilon v,y)
+ \bigl(1+\epsilon\{\rho(\bar a)^t\lambda-b_a^t v\}(y)\bigr).
+\]
+This proves precisely \eqref{geo-formal-hodge-action}, with its
+minus sign. It uses only first infinitesimal neighbourhoods, so
+no logarithm or division by $p$ occurs.
+
+The Lie algebra of the universal extension is the reduction of
+the finite free $W(k)$-module furnished by its Dieudonn\'e crystal;
+the comparison is functorial in the abelian variety and its
+endomorphisms
+\cite[II, \S9, \S13 and \S15]{mazur-messing-universal}.
+Consequently the $\mathcal O$-action lifts to this module.
+Lemma~\ref{geo-witt-coefficient-freeness} applies. In particular,
+neither the abelian variety nor its endomorphisms need to lift
+together to characteristic zero.
+\end{proof}
+
+\begin{proposition}\label{geo-toric-hodge-filtration}
+Let $G/k$ be a semiabelian variety with an $\mathcal O$-action,
+and let $q:G\to B$ be an equivariant quotient with torus kernel.
+Put $V=\operatorname{Lie}G$, $U=\operatorname{Lie}B$, and
+$T=k\otimes_{\mathbf Z}\Lambda$, where $\Lambda$ is the
+cocharacter lattice of the torus. Write its exact tangent sequence
+as
+\[
+                 0\longrightarrow T\xrightarrow{j}V
+                    \xrightarrow{P}U\longrightarrow0.
+\]
+Suppose $B$ has the self-dual line bundle of
+Proposition~\ref{geo-proper-formal-hodge-comparison}, and that the
+rigidified line bundle defining the formal module on $G$ is the
+pullback of this line bundle. Give both biextensions their
+rigidified adjunctions.
+Then the module $V\oplus V^*$ with action
+\eqref{geo-formal-hodge-action} is projective over $C$.
+If its characteristic polynomials satisfy
+the $r$-fold regular identity for an integer $r\geq0$,
+it is free of rank $r$.
+\end{proposition}
+\begin{proof}
+Let $e_G,e_B$ be the frames, and write their comparison as
+$e_G(x,y)=\ell(x,y)^{-1}e_B(qx,qy)$, with $\ell$ equal to one
+on both axes. The two induced adjunctions agree: their ratio is
+a global unit on $G\times G$ equal to one on both axes, and hence
+is one by the theorem on units on products
+\cite[Theorem 1.1]{conrad-units-product}.
+If $b_a,c_a$ are the mixed coefficients of the two adjunctions
+and $Z$ is that of $\ell$, their relation is therefore
+\[
+ u_a^G(x,y)=u_a^B(qx,qy)\ell(x,\bar a y)/\ell(ax,y).
+\]
+Taking the mixed bilinear coefficient gives, for every $a$,
+\begin{equation}\label{geo-toric-gauge-comparison}
+ b_a+\rho(a)^tZ-Z\rho(\bar a)=P^t c_aP.
+\end{equation}
+The change $(v,\lambda)\mapsto(v,\lambda+Z^tv)$ identifies the
+action with bilinear term $P^tc_aP$ with the original action.
+In these new coordinates, the map
+\[
+       (v,\lambda)\longmapsto j^*\lambda
+          \quad\hbox{from }V\oplus V^*
+          \hbox{ to }T^\dagger
+\]
+is equivariant and surjective; the dagger denotes the
+conjugate dual action. Its kernel is $V\oplus P^*U^*$.
+The equivariant map
+\[
+           (v,P^*\mu)\longmapsto(Pv,\mu)
+\]
+from this kernel onto the proper abelian module $U\oplus U^*$
+has kernel $T\oplus0$.
+Thus the three successive quotients are
+$T$, $U\oplus U^*$, and $T^\dagger$.
+
+The $\mathcal O$-module $\Lambda$ is torsion-free: if $a\ne0$
+kills an element, multiplying by an integral $b$ with
+$ab=N_{E/\mathbf Q}(a)\ne0$ would give integer torsion.
+It is therefore projective over the Dedekind domain $\mathcal O$.
+The same argument applies to its integer dual, with conjugate
+action. Their scalar extensions give the two projective toric
+quotients. The middle quotient is projective by
+Proposition~\ref{geo-proper-formal-hodge-comparison}.
+Both exact sequences therefore split as $C$-modules, proving
+projectivity of the full module. The residue-character argument
+in Lemma~\ref{geo-witt-coefficient-freeness} gives the common rank.
+No trace pairing is used at a ramified prime.
+\end{proof}
+
+These are statements about the prescribed formal module, rather
+than its semisimplification. They pass to the actual local
+lattice as follows. Let $S$ be a local coefficient ring and let
+$\mathcal H$ be the underlying finite free $S$-module with its
+$\mathcal O$-action. If its geometric closed fibre is free of rank
+$r$ over $\mathcal O\otimes k$, then its residue-field fibre is
+free of that rank: on each Artin local factor, choose $r$ generators
+modulo the maximal ideal, apply Nakayama, and compare dimensions
+after algebraic closure. Lift these generators to $\mathcal H$.
+The resulting map
+$(S\otimes_{\mathbf Z}\mathcal O)^r\to\mathcal H$ is a map between
+free $S$-modules of the same rank and is an isomorphism modulo
+the maximal ideal. Its determinant is a unit, so it is an
+isomorphism over $S$.
+
+For the boundary application, identify the prescribed integral
+formal charts and their residue-fibre semiabelian quotients with
+the original self-dual pullback line bundle. The propositions
+then supply the frame comparison and coefficient freeness,
+including at ramified primes. The next construction supplies
+both filtrations on these same charts. The actual boundary
+model and its complex multiplication evaluation remain separate.

@@ -23,8 +23,18 @@ Summing the volume comparison first improves that mean, and the tower
 calculation reduces to a single normalized test intersection. Classical
 height theory identifies the required all-point lower bound and cusp
 correction. Classical theta sections now supply the tangent-slope estimate
-in the required metric, while the signed determinant comparison retains
-the actual flat-family and period hypotheses. Two trace errors control the slope comparison and allow
+in the required metric. First-order sections construct the two finite-field
+filtrations; determinant torsion and a connected-fibre argument then give
+one finite order. Relative trace duality supplies the exact CM eigenframe
+factor. A direct period argument extends the determinant section across
+the complex boundary on the prescribed model. One CM elliptic curve gives
+the product and period value. The actual arithmetic model, integral
+determinant line and same-component CM lattice identifications remain.
+The Selmer comparison combines a compatible conormal pairing, exact
+graded calculations and a finite slice with at most two points. Its
+abstract numerical estimate is proved under the stated arithmetic-model
+hypotheses, whose construction remains open.
+Two trace errors control the slope comparison and allow
 large errors on sufficiently little mass. These
 reductions retain the same actual maps and normalizations; the compatible
 construction, genuine global energy and geometric bounds remain open.

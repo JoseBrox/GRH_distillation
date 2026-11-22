@@ -1,0 +1,205 @@
+\paragraph{The determinant extends in the prescribed tangent frames.}
+The analytic boundary estimate can be proved directly from periods
+of the actual semiabelian family. The following local statement uses
+the original polarization and its prescribed tangent metric.
+
+\begin{lemma}\label{geo-boundary-gram}
+Let a smooth family of semiabelian varieties over a complex
+polydisc be the pullback of an algebraic family with a line bundle
+whose restriction off $z_1\cdots z_a=0$ is a principal polarization
+on an abelian scheme. Trivialize its actual Lie bundle, of rank $g$.
+For every holomorphic row frame $F$ of rank $k$ at zero, its Hodge
+Gram determinant satisfies, after shrinking,
+\[
+ c_F\left(1+\sum_{j=1}^a|\log|z_j||\right)^{-k}
+              \le \det\Gamma_F(z)\le C_F
+\]
+on the punctured polydisc, for positive constants $c_F,C_F$.
+The metric is the prescribed $\pi$ times the Riemann Hermitian form.
+\end{lemma}
+\begin{proof}
+Write the central fibre as an extension of an abelian variety
+$A$ of dimension $b$ by a torus of dimension $t$, where $g=b+t$.
+Its period lattice $\Gamma_0$ has an exact sequence
+\[
+ 0\longrightarrow2\pi i\mathbb Z^t\longrightarrow\Gamma_0
+                \longrightarrow H_1(A,\mathbb Z)\longrightarrow0.
+\]
+It spans the central Lie algebra over $\mathbb C$.
+Every algebraic line on this semiabelian variety pulls back from
+$A$: its restriction to the generic split torus has trivial
+Picard group, so a rational section can be chosen with vertical
+divisor; smoothness and integral fibres make each such prime
+divisor the multiplicity-one pullback of a divisor of $A$.
+Thus its Chern pairing kills the toric periods and induces an
+integral alternating form of type $(1,1)$ on $H_1(A,\mathbb Z)$.
+For the latter assertion, average the Chern curvature over
+translations of the compact complex torus.
+
+Such a form, even if degenerate or indefinite, admits a rational
+isotropic half-dimensional real subspace transverse to its
+imaginary translate. Indeed its rational kernel is stable under
+the complex structure. On the nondegenerate quotient, a Hermitian
+diagonal basis gives a real Lagrangian with this transversality;
+rational Lagrangians are dense, since their Darboux charts are
+symmetric matrices. Transversality is open. Choose a rational
+transverse half-subspace in the kernel as well, and lift and
+adjoin the two choices. Intersecting with the integral lattice
+makes the choice primitive. Lift it to $\Gamma_0$ and adjoin
+the toric periods. This gives a primitive isotropic rank-$g$
+subgroup whose periods form a complex basis.
+
+The family exponential is holomorphic: integrate the invariant
+vector fields near zero and extend using multiplication by an
+integer. Its derivative at a period is invertible, so the implicit
+function theorem continues the finitely many chosen periods
+holomorphically. Their alternating pairings remain constant,
+being continuous integer-valued signed Chern numbers. Their matrix $A(z)$
+is invertible at zero.
+
+These periods remain primitive in every nearby abelian period
+lattice. For a continued central period $S_\gamma$ and $n\ge1$,
+the section $\exp(S_\gamma/n)$ is $n$-torsion on the entire
+polydisc. Multiplication by $n$ is étale in characteristic zero.
+Its separated étale kernel makes equality of this section with
+zero an open and closed condition. Thus divisibility is detected
+at the central fibre, for every $n$ on the same connected
+polydisc.
+
+Complete the continued periods to an integral symplectic basis
+on the universal cover of the punctured polydisc, with
+$B(A_i,B_j)=-\delta_{ij}$ in the linear-first convention
+$B=\operatorname{Im}H$. Write the complementary period rows as
+$\Omega A$. With
+$z_j=e^{2\pi i w_j}$, the normalized matrix $\Omega$ is symmetric
+with positive imaginary part and
+\[
+ \Omega(w+e_j)=\Omega(w)+N_j,\qquad
+                    N_j\in\operatorname{Sym}_g(\mathbb Z).
+\]
+For $v\in\mathbb Z^g$, put $f=v^t\Omega v$ and
+$c=v^tN_jv$. The bounded single-valued function $e^{2\pi i f}$
+extends across $z_j=0$. Its zero order equals its winding
+number $c$, hence $c\ge0$. Dividing by $z_j^c$ and taking a
+local logarithm extends $f-cw_j$. Integer vectors and their
+pairwise sums recover every entry. First extend with parameters
+across the smooth parts of the coordinate divisors, then use
+Hartogs extension across their intersections. We obtain
+\[
+       N_j\ge0,\qquad
+       \Omega(w)=\sum_j w_jN_j+\Omega_0(z),
+\]
+with $\Omega_0$ holomorphic on the full polydisc.
+
+Put $N=\sum_jN_j$ and $K_0=\ker N$. For every nonzero
+$v\in K_0$, the function $v^t\operatorname{Im}\Omega_0v$ is positive
+off the boundary and harmonic everywhere. The minimum principle
+makes it strictly positive at zero. Thus
+$\operatorname{Im}\Omega_0(0)|_{K_0}$ is positive definite.
+On $K_0^\perp$, $N$ is positive definite, so a Schur-complement
+estimate makes $\operatorname{Im}\Omega_0(0)+TN$ positive
+definite for sufficiently large $T$. Shrink until
+$-\log|z_j|/(2\pi)\ge T$ and retain positivity by continuity.
+For $Y=\operatorname{Im}\Omega$ this gives
+\[
+       c\,1_g\le Y\le C D(z)\,1_g,\qquad
+                  D(z)=1+\sum_j|\log|z_j||.
+\]
+In row-vector notation the Riemann relations give
+$AHA^*=Y^{-1}$ for the actual tangent Hermitian form $H$.
+Consequently
+\[
+             \Gamma_F=\pi(FA^{-1})Y^{-1}(FA^{-1})^*.
+\]
+The nonzero singular values of $FA^{-1}$ are uniformly bounded
+above and away from zero. The asserted determinant bounds
+follow. Empty frames have determinant one.
+\end{proof}
+
+\begin{theorem}\label{geo-flat-family-generator}
+Let $K$ be a number field, $E$ a CM field with
+$\tau:E\to K$, and $\bar\tau=\tau\circ\mathrm{conj}$.
+Let $Y/K$ be a normal geometrically integral proper variety and
+$U\subset Y$ a dense smooth open. Suppose a smooth separated
+commutative group scheme $G/Y$ has semiabelian geometric fibres
+of constant dimension, is abelian over $U$, and has an original
+line bundle inducing a principal polarization there.
+Suppose its $\mathcal O_E$-action has the polarization
+adjunction, and its integral period lattice and level satisfy
+Proposition~\ref{geo-half-level-determinant}.
+For the actual bundle $\mathcal V=\operatorname{Lie}(G/Y)$, put
+\[
+              \mathcal D_\tau=
+              \det\mathcal V_\tau\otimes
+                    (\det\mathcal V_{\bar\tau})^{-1}.
+\]
+Then $\mathcal D_\tau$ has a nowhere-vanishing algebraic
+section, unique up to $K^\times$. Its prescribed Hodge norm is
+constant on each complex abelian locus.
+\end{theorem}
+\begin{proof}
+The level proposition makes the determinant of every period
+monodromy operator one. On the $\tau$-summand of complexified
+homology, the Hodge exact sequence has quotient $\mathcal V_\tau$
+and kernel identified by polarization with
+$\mathcal V_{\bar\tau}^*$. Its determinant is therefore
+$\mathcal D_\tau$, with a single-valued parallel generator.
+
+The metric assertion also has a direct check. Use the
+linear-first convention $B=\operatorname{Im}H$ on real homology,
+and put $e_\pm(v)=(v\mp iJv)/2$. The period map sends $e_+(v)$
+to $v$ and kills $e_-(v)$. Normalize the analytic kernel
+identification by
+\[
+ e_-(v)\longmapsto
+       \bigl(w\longmapsto 2iB(e_+(w),e_-(v))\bigr)=H(-,v).
+\]
+It is independent of the lift of $w$ and is holomorphic.
+The flat Hermitian form $2iB(z,\bar w)$ is $H$ on the
+positive summand and minus its conjugate dual on the kernel.
+Its absolute determinant norm is the ratio of the two tangent
+determinant norms. Replacing $H$ by the prescribed $\pi H$
+multiplies the squared norm by the fixed factor $\pi^{p-q}$,
+where $p,q$ are the two eigenranks. Thus the parallel generator
+has constant norm; normalize it analytically to norm one.
+
+In actual local eigenframes write
+$s=\varphi\,\det(F_+)\det(F_-)^{-1}$. Its unit norm gives
+\[
+       |\varphi|^2\det\Gamma_{F_+}=\det\Gamma_{F_-}.
+\]
+Lemma~\ref{geo-boundary-gram} yields
+$|\varphi|\le C D^{p/2}$ and
+$|\varphi^{-1}|\le C'D^{q/2}$.
+A holomorphic function of logarithmic growth has no negative
+Laurent coefficient: Cauchy's estimate bounds the coefficient
+of $z^{-m}$ by $r^m(1+|\log r|)^N$, tending to zero.
+Apply this at each smooth boundary divisor and use Hartogs
+extension at the intersections. Both $\varphi$ and its inverse
+extend holomorphically, so the section extends as a unit in the
+actual frames.
+
+For general proper $Y_{\mathbb C}$, Chow's lemma followed by
+resolution and principalization gives a smooth projective
+modification with a simple normal crossing boundary.
+Pull back the actual family and eigenline. The preceding
+argument gives a nowhere-vanishing analytic section there;
+projective GAGA makes it algebraic
+\cite[Theorems 1.0.1 and 1.0.3]{WlodarczykResolution}
+\cite[\S12, Theorem 1]{SerreGAGA}.
+For the proper birational map $f:Z\to Y_{\mathbb C}$,
+normality gives $f_*\mathcal O_Z=\mathcal O_{Y_{\mathbb C}}$:
+properness tests regularity of a rational function upstairs
+over every codimension-one discrete valuation ring downstairs,
+and normality then makes it regular. The projection formula
+descends the section, and surjectivity preserves its
+nonvanishing.
+
+Finally, flat base change identifies
+$H^0(Y,\mathcal D_\tau)\otimes_K\mathbb C$ with the
+one-dimensional space of sections of the now trivial line
+on $Y_{\mathbb C}$. A nonzero $K$-section is therefore a
+generator, unique up to $K^\times$. At every complex embedding
+it is a constant multiple of the parallel section just
+constructed, so its norm is constant.
+\end{proof}

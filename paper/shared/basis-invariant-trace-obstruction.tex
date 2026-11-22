@@ -1,0 +1,92 @@
+Changes of comparison basis below mean new identifications with standard
+Euclidean spaces, while the arithmetic metrics remain fixed separately.
+Transporting the physical Gram matrices with the coordinates would leave
+the spectral quantities unchanged and would give no optimization.
+
+\begin{proposition}[Sharp trace loss in every comparison basis]
+\label{shared-period-invariant-sharpness}
+\label{shared-period-chirp}
+\label{shared-period-simplex}
+For each integer $m\ge1$, put $a=m^2+1$ and choose a prime $q\ge a^2$.
+There are $q$ integral coordinate embeddings of common source rank
+$r=2aq(q-1)$ into dimension $D=2q^2(q-1)$ such that
+\[
+ R=aD,\qquad T_i^*T_i=I_r,\qquad
+ \|T_i^*T_j\|_{\rm HS}^2\le r^2/D\quad(i\ne j),
+\]
+but, over all independent invertible source bases and one common
+invertible target basis,
+\[
+ \inf(\gamma+\beta)=\frac{m}{2a}
+       =\frac12\sqrt{D/R}\sqrt{1-D/R}.
+\]
+The individual rank ratio $r/D=a/q$ can be arbitrarily small at fixed $m$.
+\end{proposition}
+
+\begin{proof}
+Set $k_\pm=a\pm m$, and choose subsets $A_\pm\subset\mathbf F_q$ of
+these cardinalities. Let $\mathcal G$ be the affine permutations
+$z\mapsto uz+v$ of $\mathbf F_q$, and put $L=|\mathcal G|=q(q-1)$.
+Index a target coordinate by $(g,\epsilon,z)\in
+\mathcal G\times\{+,-\}\times\mathbf F_q$, and a source coordinate
+by $(g,\epsilon,s)$ with $s\in A_\epsilon$. For $i\in\mathbf F_q$, define
+\[
+ T_i f_{g,\epsilon,s}=e_{g,\epsilon,s+g(i)}.
+\]
+These are isometric integral embeddings with $r=2aL$, $D=2qL$.
+For $i\ne j$, the map $g\mapsto(g(i),g(j))$ runs once through the
+ordered distinct pairs. A subset $A$ of size $k$ satisfies
+$\sum_{b\ne c}|(A+b)\cap(A+c)|=qk(k-1)$, by counting at each
+intersection coordinate. Therefore
+\[
+ \|T_i^*T_j\|_{\rm HS}^2
+ =q\{k_+(k_+-1)+k_-(k_--1)\}=2q(a^2-1)
+ \le2a^2(q-1)=r^2/D.
+\]
+Let $W$ be the plus-coordinate half of the target. Each plus coordinate
+occurs in $k_+$ images and each minus coordinate in $k_-$ images, so
+\[
+ Q=k_+I_W\oplus k_-I_{W^\perp},\qquad M=R,\qquad
+ \gamma=0,\qquad\beta=m/(2a).
+\]
+For the converse in every basis, put $V_i=T_i^{-1}W$.
+Their dimensions are $Lk_+$, whereas $\dim W=D/2$.
+For any family of maps and subspaces satisfying $T_iV_i\subset W$,
+orthogonal projection onto these subspaces gives
+\[
+ \frac MR\sum_i\dim V_i-M\gamma
+ \le\sum_i\|T_iP_{V_i}\|_{\rm HS}^2
+ \le\operatorname{tr}(P_WQ)
+ \le\frac MD\dim W+M\beta.
+\]
+Under $T_i\mapsto BT_iA_i$, use $A_i^{-1}V_i$ and $BW$; their
+dimensions are unchanged. Hence $\gamma+\beta\ge
+k_+/(2a)-1/2=m/(2a)$ in every comparison basis, attaining the claimed
+infimum in the original coordinate bases.
+\end{proof}
+
+For any isometric family with the displayed pairwise bound,
+\[
+ \operatorname{tr}Q^2\le R+\frac{R^2-\sum_i r_i^2}{D},\qquad
+ \beta\le\frac12\sqrt{\frac DR-\frac{\sum_i r_i^2}{R^2}}.
+\]
+Indeed, the centered target operator has trace zero, so its positive
+trace is half its trace norm; apply Hilbert--Schmidt Cauchy--Schwarz.
+The proposition asymptotically attains the constant $1/2$, even after
+all comparison-basis optimization. In particular the pairwise contract
+cannot imply a uniform bound $\inf(\gamma+\beta)=O(D/R)$.
+Making the target sum equal to the identity by $T_i\mapsto Q^{-1/2}T_i$
+merely transfers the defect: it gives $\beta'=0$ and
+$\gamma'=m/(2a)$.
+
+The example respects fixed arithmetic metrics as well as integrality.
+Over $\mathbf Q$, give plus coordinate vectors norm $e^{-1}$ and minus
+coordinate vectors norm $1$, with the induced source norms. The maps
+have height zero, all source mean slopes are $p=k_+/(2a)$, and the
+target mean slope is $1/2$. The source maximum and target minimum
+slopes are $1$ and $0$. Thus their slope loss is exactly
+$p-1/2=m/(2a)$. Auxiliary comparison-basis changes alter none of these
+arithmetic quantities. A stronger bound for the actual period family
+must therefore use additional information about those maps and the
+subspaces they carry into a common target. No realization of these
+examples by the theta construction is asserted.

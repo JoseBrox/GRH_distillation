@@ -62,12 +62,30 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Finite arithmetic tables | Proved: integer interpolation replaces a measurable family of arithmetic choices by finitely many comparisons per interval. |
 | Qualitative cohomological finiteness | Supplied by classical global duality and finite even K-groups, including the prime 2; finite all-prime support follows for each fixed host and twist range. |
 | Smaller congruence budget | Proved reduction to the actual twisted residue primes and their place fractions; RH omits the empty odd-order character branch. |
-| Selected tangent degrees and theta jets | Proved selected-degree comparison and short jet determinant argument; classical Moret--Bailly theta sections and the matrix lemma now supply tangent-slope constant 12 in the prescribed metric. Flat-family/CM evaluation, cusp and finite section estimates remain. |
+| Selected tangent degrees and theta jets | Proved selected-degree comparison and short jet determinant argument; classical Moret--Bailly theta sections and the matrix lemma now supply tangent-slope constant 12 in the prescribed metric. The actual arithmetic model, integral determinant/CM identifications, cusp and finite section estimates remain. |
 | Limits of pairwise norm estimates | Exact examples identify the additional global input needed by trace bounds; the valid refined-energy alternative is retained. |
 | Absolute Siegel without a new geometric hypothesis | Supplied by the classical minimum theorem and elementary line principalization in the prescribed metric; its theta section inputs are now supplied by the same-model Moret--Bailly comparison. |
 | Fourth-power arithmetic tables | Proved: the exact ramp shape permits O(Y^(b/4)) constructions on [Y,Y^b], retaining positive averaging and signed interpolation. The ordinary RH proof has no logarithmic interpolation error. |
 | Exact signed conjugate determinant | Proved local-to-global bridge and exact finite correction; conditional on the flat-family and CM input, only half the signature difference multiplies the period. |
 | Resultant and corrected common divisor | Proved integral nonzero simultaneous integer certificate and sharper same-orbit aggregation. No uniform saving or trace-to-Selmer estimate is inferred. |
+| Integral Hodge coefficients | Proved: rigidified universal extensions and a toric filtration give ramified coefficient freeness from the prescribed quotient, line bundle and character data. |
+| Frobenius determinant torsion | Proved: the two filtrations give a finite tensor power of the character determinant equal to the trivial line, retaining the Artin multiplicity. |
+| One normalized vertical order | Proved: a numerically trivial vertical line on a normal proper flat model has constant normalized order on a connected fibre, with exact multiplicity denominator. |
+| CM eigenframes by trace duality | Proved: the relative different gives the exact integral character basis; conjugation invariance removes the real-generator and finite-unramifiedness requirements from this local calculation only. |
+| Compatible Selmer conormal pairing | Proved under the actual marked-model hypotheses: one linear injection controls length, exponent and every elementary divisor; constructing that model and verifying its arithmetic conditions remain. |
+| Sharp square-root loss under all bases | Proved: integral zero-height examples retain the optimal asymptotic square-root trace loss under every invertible comparison basis; no actual period estimate is contradicted. |
+| Both filtrations from first-order biextension sections | Proved from compatible integral formal charts and actual semiabelian residue-fibre data, including p=2; no additional global family along each test curve or power-map hypothesis is needed for this conclusion. |
+| Exact Euler determinant for the numerical upper term | Proved with torsion cancellation and all generic multiplicities retained; the graded comparison and finite-slice theorem now provide its support and multiplicity suppliers under the model hypotheses. |
+| Finite free leading quotient and exact mixed count | Proved from the actual rational tangent chart; one generating-series identity supplies the constant and an explicit degree box without global flatness. |
+| Graded positivity and scalar extraction | Proved by a finite homogeneous prime filtration and ordinary exact sequences, retaining torsion kernels and requiring no global flatness, regular sequence or infinite residue field. |
+| Four-weight admissibility | Proved from the finite degree-zero quotient, negative cotangent spanning, fixed-point separation and trace nonvanishing; a single Noetherian power suffices. |
+| The numerical Selmer bound from a finite slice | Proved: uniform support exclusion and a reduced one- or two-point slice give every generic weight length; the squarefree filtration completes the abstract lower/upper comparison under the stated chart and model conditions. |
+| The CM value from one elliptic curve | Proved: a semilocal pure basis and a prime-to-residue-characteristic isogeny give the integral product; the elliptic period formula and product formula evaluate the exact signed degree under the flat-family norm contract. |
+| Common unipotent group and exact periodization | Proved for the actual invariant seed spaces, with original normalizers and every rational orbit retained. A calibrated summation bound remains the global analytic supplier. |
+| The full abstract length theorem | Proved under the original model hypotheses: finite cotangent length, integral Smith normalization, the zero-weight chart cut, a value-preserving representative adjustment and one orbit per degree-zero character complete the numerical comparison. |
+| Determinant monodromy at the existing level | Proved by ideal cancellation, conjugation and a norm bound; no extra level cover or root-of-unity theorem is needed. The actual-frame boundary theorem supplies its geometric continuation under the stated model hypotheses. |
+| Actual boundary extension by elementary period bounds | Proved: a primitive isotropic central period frame and bounded exponentials give exact logarithmic tangent bounds; the determinant and reciprocal extend, and projective GAGA plus normal and field descent give the algebraic generator. |
+| Local norms assembled on one arithmetic model | Proved under the exact integral-line and ramified curvewise identifications: vertical rigidity gives point-independent finite norms, the complex theorem gives the archimedean norms, and same-component integral CM maps give the signed degree. |
 
 ## Work packages
 
@@ -160,7 +178,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Bound the actual weighted Selmer product, retaining the surviving character cases and integral local conditions. Reconstruct the strict negative-weight cocycle-to-model comparison and graded upper-length theorem with their automorphy, rigidity and trace-separation hypotheses. The resultant and corrected common divisor apply only to the same orbit; trace classes alone do not give a uniform gcd saving.
+**Next concrete task.** Construct the actual marked arithmetic models and establish their original chart, finite quotient, cotangent spanning, point separation, tangent bound and trace conditions. The compatible conormal pairing and full abstract length theorem are proved; integral Smith normalization, the chart cut, a value-preserving nonzero representative and the finite orbit cover follow within that argument. Retain automorphy, rigidity, integral lifting and exceptional-prime inputs, then bound the weighted Selmer product uniformly.
 
 **Acceptance conditions:**
 
@@ -174,6 +192,17 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - LitThin is an analytic auxiliary-prime input, not a cohomological estimate.
 - The two auxiliary integers must bound the same orbit before taking their corrected greatest common divisor; retain both exceptional primes.
 - An explicit nonzero resultant and its size bound do not prove the arithmetic inequality linking it to Selmer lengths.
+- The compatible conormal pairing assumes odd residue characteristic and the stated marked local/global model; exceptional primes retain their separate treatment.
+- Remove ambient conormal torsion before imposing the negative equations; the torsion created by those equations is the quantity to bound.
+- The ordinary-RH specialization retains the five local weights and its non-self-inverse cyclotomic twist; real finite characters do not delete the mixed-intersection problem.
+- Torsion cancellation gives the exact Euler determinant only for a finite module with generically invertible scalar action; retain the distinct generic characters and their localized multiplicities.
+- The leading image lattice is finite free without global flatness; reducing its coordinates in an ambient vector space is not reduction modulo its own uniformizer multiple.
+- Graded prime filtrations supply eventual Euler positivity and scalar extraction; the four-weight point argument supplies admissibility. Every shifted degree must remain in the explicit nonnegative range.
+- The finite slice is proved reduced from the one-dimensional tangent condition; its one- or two-point parity action retains every generic multiplicity rather than discarding nilpotents.
+- The exact polynomial Rees chart is used only at two-sided primes and when every coordinate degree is positive; the support argument gives a single uniform eventual range.
+- The core numerical comparison retains the independent formal-chart nonvanishing hypothesis phi(a) != 0; generic trace nonvanishing alone does not prove it.
+- The original trace element may have zero chart value; adding a weight-zero equation product supplies a nonzero representative with identical values at every equation point. The original element is not silently assumed chart-nonzero.
+- The reduced slice gives one torus orbit per occurring degree-zero character, so the finite quotient supplies the finite cover; it is not an additional arithmetic construction premise.
 
 <a id="w05"></a>
 ### W05: Classical Galois representations with the required local conditions
@@ -247,7 +276,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Bound the actual source deficit and the calibrated target spectral tail, or retain the smaller valid refined-energy penalty. The full Gram matrix is highly redundant, so its nonidentity contribution must be large; seek cancellation at the mean-eigenvalue threshold. Pairwise estimates alone do not imply a linear trace error. A reproducing identity must concern these same weighted period maps, with their actual restrictions and arithmetic heights.
+**Next concrete task.** Use the proved common unipotent group and exact periodization on the actual invariant seed spaces. Construct calibrated weights for its full fibre sum, or bound the same signed orbital operator directly, retaining every rational orbit, the original volumes, source restrictions and arithmetic heights. The source trace deficit remains separate; retain the smaller valid trace or energy penalty.
 
 **Acceptance conditions:**
 
@@ -267,9 +296,12 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The source orbital interface describes full period maps; their actual restrictions must be carried through the proved comparison or separately identified
 - The ambient target comparison can retain the sharper discarded-rank times source-spread cost; source-only restriction needs its actual positive retained mass
 - Calibrate the full Gram matrix by its mean eigenvalue M/D; small absolute norm of its whole nonidentity contribution is incompatible with the actual redundancy.
-- Exact cyclotomic models satisfy the pairwise contract with zero error but have trace excess of square-root order; a linear trace estimate needs a genuinely additional input.
-- A common target change of basis must preserve the source bounds as well; the simplex block example has a positive basis-invariant rank defect.
 - An ambient automorphic projector is not automatically the weighted sum of the chosen period maps.
+- Integral coordinate embeddings attain the asymptotically sharp square-root trace loss under every invertible comparison basis, with fixed zero-height arithmetic maps.
+- Changing Euclidean comparison identifications is distinguished from transporting physical Hermitian Gram matrices; both source deficit and target excess must be controlled.
+- The unipotent group is common, but stabilizers and their volumes still vary; Haar changes preserve each normalized arithmetic map.
+- The quotient-space isometry does not establish the seed metric identity, and unrestricted fibre summation is unbounded when the coset set is infinite.
+- The calibrated weighted Cauchy-Schwarz criterion is proved; actual weights and the required arithmetic calibration are not supplied by character orthogonality.
 
 <a id="w09"></a>
 ### W09: Automorphic spectrum, finite-group characters and counting
@@ -301,7 +333,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Use the proved tangent-slope bound and exact determinant bridge. Identify the actual boundary Hodge lattice, its Hodge and conjugate filtrations and local coefficient freeness, retaining ramified multiplicities; then establish constant finite order, CM evaluation, signed cusp mean and the separate finite section-rank/surplus bound.
+**Next concrete task.** Construct the prescribed arithmetic model and identify its original fibre line, coefficient data and invertible integral determinant line, including the ramified curvewise comparison. Supply the integral CM maps to the selected component with the same tangent lattices. The characteristic-zero generator, both filtrations, coefficient freeness, determinant torsion, vertical rigidity, local-norm assembly and exact CM product/period value are proved under those model identifications. Then establish the signed cusp mean and independent finite section-rank/surplus bound.
 
 **Acceptance conditions:**
 
@@ -332,6 +364,22 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The smaller theta power retains uniform torsion-translate integrality, the primitive determinant norm and the isometric-extension hypothesis. The absolute Siegel comparison is supplied by the classical theorem in the same metric, with an elementary principalization argument.
 - The determinant scalar is algebraic and natural under field embeddings; unrelated local scalars do not supply the product formula.
 - The exact signed conjugate-degree identity requires the actual flat-family and CM-period inputs; the tangent-slope premise remains separate.
+- Universal-extension tangent comparison and toric projective filtration supply ramified coefficient freeness from the same geometric fibre data; regular characteristic polynomials alone do not.
+- Frobenius gives determinant torsion only where the compatible filtrations exist; curvewise data suffice for numerical triviality but do not imply a global bundle without gluing.
+- The unique vertical order has denominator dividing the gcd of fibre multiplicities; constancy does not evaluate it or make it zero.
+- Relative trace duality gives the exact integral CM eigenframes only after identifying the actual integral regular product basis.
+- Conjugation gives equal finite norms for any semilocal different generator; this local weakening removes no global host requirement.
+- The conjugate filtration is constructed by pointed first-order sections and relative Frobenius, with the alternating pairing retained at p=2 and under nonsymmetric frame changes.
+- Compatible generic and local formal charts on test curves suffice; algebraic fibre data prove injectivity, so no extra global semiabelian family on the whole curve is required.
+- The original pullback line must have trivial scheme-theoretic polarization kernel; a tensor power with a different polarization cannot replace it.
+- Power-map surjectivity is removed only from the conjugate-injectivity conclusion; unrelated uses in the global construction remain.
+- A single CM elliptic curve with conjugate actions supplies the pure product; the prime-to-residue-characteristic inverse isogeny preserves the exact tangent lattice, including at two.
+- The discriminant and Kronecker limit formula give the elliptic mean; relative trace duality and the product formula give the signed flat degree under the actual flat-family norm comparison.
+- The good CM object is not itself an identification with the chosen compactification, nor a proof of the prescribed local-norm constancy.
+- The direct period proof constructs the characteristic-zero generator on the actual eigenline: both the section and its reciprocal extend, so no boundary divisor is introduced.
+- The source Model has a global semiabelian family and original cubical line on a normal projective model; these are explicit construction inputs, not consequences of the names of local charts.
+- The ramified assembly assumes the exact invertible integral determinant line and its curvewise identification; projectivity of the full coefficient module does not automatically imply projectivity of Hodge tangent eigensummands.
+- The local-norm comparison follows once the same-component integral CM maps and exact determinant identifications are supplied; good reduction of an abstract CM object alone does not provide those maps.
 
 <a id="w11"></a>
 ### W11: Weighted slope comparison and the complete average budget
@@ -372,10 +420,10 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W10: identify the actual boundary Hodge lattice and coefficient freeness, then constant finite order, CM evaluation, signed cusp and finite section estimates; tangent slope and abstract character degree are supplied
-1. W06/W08: construct the nonzero integral maps and bound their calibrated global spectrum or refined energy, with actual divisibility and heights
-1. W04: reconstruct the integral negative-weight cocycle and graded upper-length comparisons with actual automorphy and rigidity, then the uniform Selmer product bound
-1. RH and GRH: assemble signed fourth-power tables and meet the positive-part criterion at exponents tending to one half
+1. W06/W08 first: construct the nonzero integral maps and estimate their calibrated full periodization operator, keeping actual divisibility, restrictions, normalizers and arithmetic heights
+1. W04: construct marked arithmetic models with the original chart, finite quotient, spanning, separation, tangent and trace conditions, then apply the full abstract Selmer length theorem uniformly
+1. W10: identify the actual arithmetic model, integral determinant at ramified primes and same-component integral CM maps; use the proved determinant chain, then establish the signed cusp and finite section estimates
+1. RH and GRH: assemble the same signed fourth-power tables and meet the positive-part criterion at exponents tending to one half
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
 

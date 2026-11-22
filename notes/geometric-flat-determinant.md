@@ -237,10 +237,14 @@ All source files are pinned to
 | `GeometryProofs.AbelianPartLieSignature` | 18–28 | The common shift from \((p,q)\) to \((p-r,q-r)\) |
 | `GeometryProofs.FlatDegreeHolds` | 60–118 | Upstream proof route for the corrected CM evaluation |
 
-The next geometric work is the independent flat-family/CM evaluation,
-followed by the integral-point comparison, regularized height identity,
-signed cusp mean, and finite section-degree estimate. The determinant
-bridge above is now written explicitly and need not be reopened as an
-unspecified extra comparison. Its geometric supplier is still required.
+The [CM product and period calculation](cm-product-period-calculation.md)
+and [boundary extension and local-norm assembly](flat-family-boundary-extension.md)
+now supply the flat-family/CM evaluation under explicit model hypotheses.
+The next geometric work is to identify the actual arithmetic model,
+its integral determinant line at ramified primes, and integral CM maps
+to the same component carrying the prescribed lattices. The regularized
+height identity, signed cusp mean, and finite section-degree estimate
+remain. The determinant bridge above need not be reopened as an
+unspecified extra comparison.
 The certificate records exact source and excerpt hashes and finite
 algebra checks; it makes no broader proof-completion claim.

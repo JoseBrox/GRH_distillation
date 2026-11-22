@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "baseline_main": "8a76dcbac8ae0ea879176df329ea720c5f8da1fa",
+  "prior_proof_checkpoint": "8ef46f30249f4f331cf2cc79f91ba507ecf2d93e",
+  "scope": "Integration of 16 reviewed hard-node proof packages into the two mathematical manuscripts, concise guide, dependency maps and persistent checkpoints. Exact source provenance, supplemental finite checks, written proof review and visual verification are separate claims.",
+  "mathematical_review": {
+    "path": "certificates/hard-node-review-2026-11-22.json",
+    "sha256": "8cf11faa726afd6cd2b6f61b4aa48d3129b5d7034f830623382e6c54ab0ef08c",
+    "bytes": 34866
+  },
+  "proof_package_ids": [
+    "determinant-torsion-rigidity",
+    "basis-invariant-trace-obstruction",
+    "rh-selmer-conormal-pairing",
+    "boundary-hodge-freeness",
+    "cm-integral-eigenframes",
+    "rh-selmer-euler-determinant",
+    "biextension-conjugate-filtration",
+    "rh-selmer-mixed-count",
+    "rh-selmer-koszul-comparison",
+    "common-unipotent-periodization",
+    "cm-product-period-calculation",
+    "rh-selmer-admissibility",
+    "rh-selmer-upper-multiplicity",
+    "rh-selmer-core-wrapper",
+    "half-level-determinant",
+    "flat-family-boundary-extension"
+  ],
+  "proof_checkpoints_on_main": [
+    {
+      "sha": "5be381f3c277ccb8574c83d608158e0ac39e9341",
+      "subject": "Prove determinant torsion and constant finite order with exact multiplicities"
+    },
+    {
+      "sha": "2337d5a6857de61302d3381106a198334415c72f",
+      "subject": "Prove sharp trace obstruction under every comparison basis"
+    },
+    {
+      "sha": "6844f1c58aa7069c7b95ccd1732822a802d6af1f",
+      "subject": "Embed strict Selmer modules in the dual of the integral conormal quotient"
+    },
+    {
+      "sha": "9eb742ea8b46195225bf8d3f732a8d1015a7faa5",
+      "subject": "Simplify ramified Hodge freeness through universal extensions and toric filtrations"
+    },
+    {
+      "sha": "4106321f2bf25ce5e70ee846e4924d1346ae8266",
+      "subject": "Derive exact CM eigenframes from trace duality with weaker local hypotheses"
+    },
+    {
+      "sha": "912ee042b11ec7653f68ad26f258ba21164fa23c",
+      "subject": "Replace the upper numerical length calculation by an exact determinant identity"
+    },
+    {
+      "sha": "410b8979247bbfc8c08d19ab8d6e67e3cda0f220",
+      "subject": "Construct the conjugate filtration and compute the exact leading mixed count"
+    },
+    {
+      "sha": "2c58e7a9df5644825c6f39d54f2f7c859f1140f1",
+      "subject": "Prove the mixed Selmer comparison by graded positivity and exact scalar extraction"
+    },
+    {
+      "sha": "5f08afe65885440faf86cefcc1b65946e162fdd2",
+      "subject": "Identify the common unipotent group and exact arithmetic periodization operator"
+    },
+    {
+      "sha": "3e8ab4f775e57cb544b694180d6c3438e23e6f4c",
+      "subject": "Construct the CM product and period value and prove Selmer admissibility"
+    },
+    {
+      "sha": "e684ef2492d20529d376f040e86285dda6f758af",
+      "subject": "Complete the abstract Selmer comparison by a finite reduced slice"
+    },
+    {
+      "sha": "fbb142db10d1993851761522b854f83b849cd70a",
+      "subject": "Prove the full abstract length theorem from the original model hypotheses"
+    },
+    {
+      "sha": "af70b111d50d803b9e377835990c22d971597cb1",
+      "subject": "Kill determinant monodromy at the prescribed half level by a norm argument"
+    },
+    {
+      "sha": "8ef46f30249f4f331cf2cc79f91ba507ecf2d93e",
+      "subject": "Extend the actual determinant across the boundary and assemble its local norms"
+    }
+  ],
+  "shared_structure": {
+    "scope": "Both routes use the same algebraic Selmer proofs and determinant chain. The common-group periodization calculation is developed in GRH; RH cites its role and retains the shorter final analytic target.",
+    "manifest": {
+      "path": "paper/shared/manifest.json",
+      "sha256": "e09fb1631da9d314f4fdefb632a8547451b4b1639cb5451da6614c958bb461ce",
+      "bytes": 9287
+    },
+    "proof_fragments_and_route_inputs": [
+      {
+        "path": "paper/grh/main.tex",
+        "sha256": "7899a5879f86b5ca46380be56601d555787f85d5b42ec791396b21df366eb4ff",
+        "bytes": 8365
+      },
+      {
+        "path": "paper/guide/main.tex",
+        "sha256": "4be207bd0fb9c636284065d2f2223bd2144c80fbf0303d8f4b2848c73e5ec291",
+        "bytes": 27041
+      },
+      {
+        "path": "paper/references.tex",
+        "sha256": "d32c53ad3f0791c4fccb47845407a4d4a93bfad39f47eea2b46d59fd4b07f575",
+        "bytes": 17235
+      },
+      {
+        "path": "paper/rh/main.tex",
+        "sha256": "bb373d86a241e62bc42c13b5d6fe045af5b22b406e1acf257304c3daba34bf38",
+        "bytes": 2440
+      },
+      {
+        "path": "paper/rh/sections/01-introduction.tex",
+        "sha256": "3c0068ef679d0ddd309355aab0adca68297dc6ceb4ecb793f2bedfbb59a9a864",
+        "bytes": 5103
+      },
+      {
+        "path": "paper/rh/sections/03a-selmer-estimates.tex",
+        "sha256": "49515c4f42f395abd6787a8f1bb5876f1926d761f8f5f9bb1790653fde82ffc9",
+        "bytes": 761
+      },
+      {
+        "path": "paper/rh/sections/04-geometric-degree.tex",
+        "sha256": "e6856fcefe000b245748cd3c5474f7373b100c9e1078dd1c6a7722fc6e433c7e",
+        "bytes": 10447
+      },
+      {
+        "path": "paper/rh/sections/05-theta-energy.tex",
+        "sha256": "ccec18e9e47b90cf4b0e8e8e8358a101f5148bf2120492d184203018882e44e0",
+        "bytes": 3598
+      },
+      {
+        "path": "paper/rh/sections/06-compatible-budget.tex",
+        "sha256": "40ac29998f04d7efb7d0c81620d04fcfde0d87f7fdfdddbb1915561e7197c809",
+        "bytes": 11121
+      },
+      {
+        "path": "paper/rh/sections/07-references.tex",
+        "sha256": "fed5d68d718d5c40719ef825b1dda4708995b2c2316be4e08197572592bbcc69",
+        "bytes": 3544
+      },
+      {
+        "path": "paper/sections/recovered/10-cs-section.tex",
+        "sha256": "2d7b658874b2d626da24e7a4242d4cf2dc6602dbae728d46f12081b511a33715",
+        "bytes": 105117
+      },
+      {
+        "path": "paper/sections/recovered/27-kt-section.tex",
+        "sha256": "8e0a5e25cca2cce7e305bea49bfd7018d9f15a3c3ee137594d2eb44adbdbac9a",
+        "bytes": 12098
+      },
+      {
+        "path": "paper/sections/recovered/96-sec-remaining.tex",
+        "sha256": "de6b46faa50d4c8d1fb79ba2aa872823c36f429d442e272828516bcf1287fbda",
+        "bytes": 11377
+      },
+      {
+        "path": "paper/shared/basis-invariant-trace-obstruction.tex",
+        "sha256": "44a40752546ae9445ebd019e4cc96700e3541bd9c5cc9c6c18fdd4ad44825707",
+        "bytes": 4018
+      },
+      {
+        "path": "paper/shared/biextension-conjugate-filtration.tex",
+        "sha256": "ad340cd2eb4d6edb9e9cfb3622b26765e6e5f25ed159d925af0b278fe5b7077a",
+        "bytes": 11577
+      },
+      {
+        "path": "paper/shared/biextension-conjugate-references.tex",
+        "sha256": "c31c58f478cb6a1b19c5ddb3f10e3059171a172bcec6bb04f35f1f8c602d8e27",
+        "bytes": 414
+      },
+      {
+        "path": "paper/shared/boundary-hodge-freeness.tex",
+        "sha256": "e7562d553f95839d1e27e6ecf0e6af7c5156ef9359739984d0d1a7eb3d5275f7",
+        "bytes": 9068
+      },
+      {
+        "path": "paper/shared/boundary-hodge-references.tex",
+        "sha256": "fff33628af250f070fa5c6b3110ed333bfb8a9b3073aaa1ae10fcc8f6a2606ed",
+        "bytes": 649
+      },
+      {
+        "path": "paper/shared/cm-integral-eigenframes.tex",
+        "sha256": "6efce497c213477024263cc5bd1751a1b205b6786a2fc0d120037941df65a89a",
+        "bytes": 4447
+      },
+      {
+        "path": "paper/shared/cm-product-period-calculation.tex",
+        "sha256": "b94ecd3b724f7f7f70b13a01a9fb00d0782c43285a2625e3481c679b0de6adfc",
+        "bytes": 15034
+      },
+      {
+        "path": "paper/shared/cm-product-period-references.tex",
+        "sha256": "04b03c927b9ab6fd5c110b74c329df652eeddfab8dcc40334a8ab2418b50b208",
+        "bytes": 1258
+      },
+      {
+        "path": "paper/shared/common-unipotent-periodization.tex",
+        "sha256": "7e9593516c396d347dce11baa30e9509f203108962dd938ed6387b9e32a7bffe",
+        "bytes": 6103
+      },
+      {
+        "path": "paper/shared/determinant-torsion-rigidity.tex",
+        "sha256": "8c58d462080e2cc46efd5ff13f8487e207b66f2c05ffecd76f86050f71e30a03",
+        "bytes": 6674
+      },
+      {
+        "path": "paper/shared/finite-place-determinant-references.tex",
+        "sha256": "a8b1ddebbe11a623793d6c54d5f3de385d951f531d722e79f8e6f827409d5433",
+        "bytes": 427
+      },
+      {
+        "path": "paper/shared/flat-determinant-assembly.tex",
+        "sha256": "a96e4637439737ec20f4b053c774f8ab7983515a437777116f449983e32285ca",
+        "bytes": 2320
+      },
+      {
+        "path": "paper/shared/flat-determinant-comparison.tex",
+        "sha256": "5af13d62b5ca653f2c55f65304c7ec3123e38a8525093cc5d5289faad1f38181",
+        "bytes": 4202
+      },
+      {
+        "path": "paper/shared/flat-family-boundary-extension.tex",
+        "sha256": "93ab119b9dde360f38e0b5491ec08bad58e27ddef95f1105ff1f0d99492c71ea",
+        "bytes": 9436
+      },
+      {
+        "path": "paper/shared/flat-family-boundary-references.tex",
+        "sha256": "400d2ace0af68a856bf38f95d2f69788ec39ccdec86e3e2e731f9afb4c52982b",
+        "bytes": 528
+      },
+      {
+        "path": "paper/shared/frobenius-character-degree.tex",
+        "sha256": "ac3cfc25a0cd33a106e1acde5c31cc7a466df266fb6bfafa14d84452dfb205e4",
+        "bytes": 1520
+      },
+      {
+        "path": "paper/shared/half-level-determinant.tex",
+        "sha256": "6cc86c84e2f4a018619dc4c0eab0868ba3aac7f5ab4f1a8f2d46343e711e6a78",
+        "bytes": 2098
+      },
+      {
+        "path": "paper/shared/integral-determinants.tex",
+        "sha256": "baefdaec5f0afa6779c4dc07dc454526613ab497f7aed4af579ab68ee680e0e4",
+        "bytes": 1437
+      },
+      {
+        "path": "paper/shared/period-comparison-limits.tex",
+        "sha256": "d45185a240b58631af4f6f0aa6ce49f8341f6e1c0651e67d07699987b73e5b91",
+        "bytes": 2659
+      },
+      {
+        "path": "paper/shared/selmer-admissibility.tex",
+        "sha256": "dffacfbce41c9a440c0c8e09f39714a6e2c9364fb10a5c70b0f22c65e6c28284",
+        "bytes": 6700
+      },
+      {
+        "path": "paper/shared/selmer-conormal-pairing.tex",
+        "sha256": "d69e1e30f217259996669dcb0515c5cc985d5350553a00368fdcb27f2d19616f",
+        "bytes": 10375
+      },
+      {
+        "path": "paper/shared/selmer-core-wrapper.tex",
+        "sha256": "aa06ed18bd3aa32598568a8e04277f39104bf197381dfe9ce23e0954365bec9c",
+        "bytes": 5355
+      },
+      {
+        "path": "paper/shared/selmer-euler-determinant.tex",
+        "sha256": "cbdf45a26bef31340cf9324de5bdf6ebd6afd87a38e493eba808ab825fd490f9",
+        "bytes": 5808
+      },
+      {
+        "path": "paper/shared/selmer-koszul-comparison.tex",
+        "sha256": "01cff6e9cc8845058ef288dd219c672da02d314512dfb38331c9abbd34b21773",
+        "bytes": 7139
+      },
+      {
+        "path": "paper/shared/selmer-mixed-count.tex",
+        "sha256": "907ea6d439e362e422ce0d16882235ad7ff3535291c447173d9436fff59889ec",
+        "bytes": 5147
+      },
+      {
+        "path": "paper/shared/selmer-upper-multiplicity.tex",
+        "sha256": "f4e3183f781a342393f18299176ece2ea842a9c0be2d8c36e3475939da0211c3",
+        "bytes": 7551
+      }
+    ]
+  },
+  "builds": {
+    "rh": {
+      "certificate": {
+        "path": "certificates/rh-build.json",
+        "sha256": "809bc3b9cc22f6948a2bfc0d59b4a52cd1b22eea09c24a64f0590a13e9f104fe",
+        "bytes": 7098
+      },
+      "pdf": {
+        "path": "paper/rh/main.pdf",
+        "bytes": 445944,
+        "sha256": "b9866446eb98c8e6864d5c84fe1a47adc46158934b47a89bbc0cc93750aeff27"
+      },
+      "pages": 65
+    },
+    "grh": {
+      "certificate": {
+        "path": "certificates/grh-build.json",
+        "sha256": "8c2d7550692ac8e5212578be9f8d46924c606c39a7f5aaafb9ef56cf620da0de",
+        "bytes": 22475
+      },
+      "pdf": {
+        "path": "paper/grh/main.pdf",
+        "bytes": 3489080,
+        "sha256": "13ee050aa3e80cf7e555d1f2f591adc54e940da3cd6a2d54eb7bd8f642331c8f"
+      },
+      "pages": 640
+    },
+    "guide": {
+      "certificate": {
+        "path": "certificates/guide-build.json",
+        "sha256": "5cb91fb8b4c6f7df0f27d66778b55e318472107966d6c72d4f98b950dcd89309",
+        "bytes": 668
+      },
+      "pdf": {
+        "path": "paper/guide/main.pdf",
+        "bytes": 93730,
+        "sha256": "037f1eed195a4f3d05912235f4481fe04d63e7e8fac79de0016f20463ff4abc2"
+      },
+      "pages": 8
+    }
+  },
+  "legacy_grh_pdf_mirror": {
+    "path": "paper/main.pdf",
+    "sha256": "13ee050aa3e80cf7e555d1f2f591adc54e940da3cd6a2d54eb7bd8f642331c8f",
+    "bytes": 3489080
+  },
+  "guide_review": {
+    "path": "certificates/guide-review.json",
+    "sha256": "8142cff6dceec9374b97ecbb4dd9fb9e96bb5469939b7f15e4aa86f68320aaec",
+    "bytes": 5157
+  },
+  "analytic_proof_preservation": {
+    "status": "PASS",
+    "baseline_commit": "8a76dcbac8ae0ea879176df329ea720c5f8da1fa",
+    "scope": "The complete short RH analytic section is byte-identical to the turn baseline.",
+    "bytes": 2958,
+    "block_sha256": "d613c47bc1cceb431054283547e9a5942decea479a7fe7bff2f0c8a2f364b1d1"
+  },
+  "blueprints": [
+    {
+      "path": "blueprint/rh/map.json",
+      "sha256": "7786df628b4dcb8090d7caeb9a0851321686b301fd5cc4a9e2ba02b3ad529974",
+      "bytes": 5461
+    },
+    {
+      "path": "blueprint/rh/program.md",
+      "sha256": "edaa9735e592bc7ffa5c76ed7ecaa7019e32d2516edf86dd0002794a27f7b5db",
+      "bytes": 18702
+    },
+    {
+      "path": "blueprint/grh/map.json",
+      "sha256": "e6a5a2a47565ee7602088fe5cc441585fc45db133398e96327afbe477e1d3bb4",
+      "bytes": 12976
+    },
+    {
+      "path": "blueprint/grh/program.json",
+      "sha256": "ec0e3081079a4469cbf6c90c04b1dd2d932b634ca677865f388fe27852b9e62b",
+      "bytes": 58750
+    },
+    {
+      "path": "blueprint/grh/program.md",
+      "sha256": "574f7b45cfb38918a3592cef79d6469781d66b98a76d0b6d00567029063ea87a",
+      "bytes": 47329
+    },
+    {
+      "path": "blueprint/shared/README.md",
+      "sha256": "2905221d8fce6a84db3d934c7bdf453806f7c944b7312bf5ab426f6c105c2839",
+      "bytes": 13646
+    },
+    {
+      "path": "blueprint/module-inventory.json",
+      "sha256": "050822a723ad7c5e36fec6c81a7078616378f82dd23541e796423201f334a31c",
+      "bytes": 113854
+    },
+    {
+      "path": "blueprint/proof-blueprint.json",
+      "sha256": "3b818e1c522fd4b90ce055958aa33f29fcc06935c454b3ae04b444b18d051765",
+      "bytes": 23756
+    }
+  ],
+  "current_frontiers": [
+    {
+      "path": "notes/current-state.md",
+      "sha256": "e9611e7dbcaabeda7cb3683f53d7cb62791a7868b64e16ad97262a749814017f",
+      "bytes": 37946
+    },
+    {
+      "path": "notes/actual-point-height-frontier.md",
+      "sha256": "1b63c089bf65749278f517402b8bb2715839375f99d4c54f18f1f0685c514de9",
+      "bytes": 12445
+    },
+    {
+      "path": "notes/flat-family-finite-place-frontier.md",
+      "sha256": "7fefe6c0243133f522936f3211a31acee58c78d307d929c235029ac1f82a2f98",
+      "bytes": 12153
+    },
+    {
+      "path": "notes/geometric-flat-determinant.md",
+      "sha256": "31054cedf8804832e91766c4251f89992d36030f6ac9f944811206fc49f34db2",
+      "bytes": 11182
+    },
+    {
+      "path": "notes/rh-selmer-valuation-frontier.md",
+      "sha256": "0abe3557f41ad84ad49cecc13fa2b8d5f7cbc3faeb978b8c344d79fec764380b",
+      "bytes": 8112
+    }
+  ],
+  "verification_records": [
+    {
+      "path": "certificates/concurrent-routes-check.json",
+      "sha256": "50ab2a5e802099c68ea932b06eb8140849981236ba7148e08736a4b84753dd4c",
+      "bytes": 4110
+    },
+    {
+      "path": "certificates/route-blueprint-check.json",
+      "sha256": "794b9bdbf94b886aaf29da5b37a9dd6ebb45d82c1a3cab59c83298b0d811cef0",
+      "bytes": 2203
+    },
+    {
+      "path": "certificates/blueprint-check.json",
+      "sha256": "5159043be019f04ce8140e5737f63cefb29c3292dc517485e2afff803b75fd69",
+      "bytes": 2250
+    },
+    {
+      "path": "certificates/full-proof-program-check.json",
+      "sha256": "f589f0081ba62a0ea606af24d2feb3c8c368b1b60f83b4f1068957d905aaca43",
+      "bytes": 12322
+    },
+    {
+      "path": "certificates/actual-point-height-frontier.json",
+      "sha256": "087b7517e4466547ffd0b4c6f5e7388e59b7a69ee46c238e09105e108550cb06",
+      "bytes": 13179
+    },
+    {
+      "path": "certificates/flat-family-finite-place-frontier.json",
+      "sha256": "01e2c76cc85980d05c9a50292a7f3acebac3e9af495a0d2c6c8f7fdb7ab13f67",
+      "bytes": 16072
+    },
+    {
+      "path": "certificates/geometric-flat-determinant.json",
+      "sha256": "c0e201b0ccfc7596e8badee9f926128b495786a8f9fb6c7daa9e2b5b75f2c9ab",
+      "bytes": 9622
+    },
+    {
+      "path": "certificates/remaining-point-height-comparisons.json",
+      "sha256": "f7d6a406c8a27734285797fc32509c76220d5fe7b50eabcdb4b33cda3c4f0b35",
+      "bytes": 10144
+    },
+    {
+      "path": "certificates/rh-selmer-valuation-frontier.json",
+      "sha256": "2b9b4e0a40c79a15893365a36268a008b8a13c36868538d2afe913ecbde896ae",
+      "bytes": 10786
+    }
+  ],
+  "visual_review": {
+    "reviewer": "root",
+    "status": "PASS",
+    "scope": "All eight guide pages, selected RH pages carrying new algebraic/geometric proofs and the final frontier, four GRH pages around exact periodization, and the regenerated GRH dependency diagram. This is not a visual audit of every manuscript page.",
+    "method": "PDF pages rendered with PyMuPDF at 1400-pixel height, inspected in two-page sheets; diagram inspected directly.",
+    "guide_pages": [
+      {
+        "page": 1,
+        "path": "build/review-hard-nodes/final/guide-001.png",
+        "sha256": "42fee9a150ad1679353c6f5e674cf83bfc1e4e5313a930dc6e2ffe1622dfcea9"
+      },
+      {
+        "page": 2,
+        "path": "build/review-hard-nodes/final/guide-002.png",
+        "sha256": "f8578a51957b6dfbdbbd486b3027e6d8eb81b674442e16449b7ad50c8602e2b6"
+      },
+      {
+        "page": 3,
+        "path": "build/review-hard-nodes/final/guide-003.png",
+        "sha256": "53584aaabc235dafac92676fa66499023ac24f2a4b1096e9708c32d30b3221e0"
+      },
+      {
+        "page": 4,
+        "path": "build/review-hard-nodes/final/guide-004.png",
+        "sha256": "03a22baebfe884baf08aa049eea39836454fdc599604626ec82b968b1bafe59d"
+      },
+      {
+        "page": 5,
+        "path": "build/review-hard-nodes/final/guide-005.png",
+        "sha256": "18ca6c661e09d3537394c7eaff0cf504dc93cadba175d4d34aeb201112ee6a61"
+      },
+      {
+        "page": 6,
+        "path": "build/review-hard-nodes/final/guide-006.png",
+        "sha256": "ba6690d3cec339734cb6e5a56dd863b6767aab58ae621b2a59665b8e54f5fb7c"
+      },
+      {
+        "page": 7,
+        "path": "build/review-hard-nodes/final/guide-007.png",
+        "sha256": "4263882adf6741318d27624bae87e3273f5776b4b798af97c200c2c8bd63d3d1"
+      },
+      {
+        "page": 8,
+        "path": "build/review-hard-nodes/final/guide-008.png",
+        "sha256": "11926fecd885f497950bc6138591f5890f45161e4240b92c485f0bc32989ab0c"
+      }
+    ],
+    "manuscript_pages": {
+      "rh": [
+        {
+          "page": 24,
+          "path": "build/review-hard-nodes/final/rh-024.png",
+          "sha256": "ffde2261c88b800019a34665cb23960d86ee37e21357843cd62f39f759b17e31"
+        },
+        {
+          "page": 26,
+          "path": "build/review-hard-nodes/final/rh-026.png",
+          "sha256": "a8e2b0b2f852a91433dfa0e134d0f7cb1b4a6b7480bf9c1d8b9c01bcac084109"
+        },
+        {
+          "page": 27,
+          "path": "build/review-hard-nodes/final/rh-027.png",
+          "sha256": "15d2a1259c3b5fd4f273c182f5ad8dae3bac6514165dc88f50874f6e3979431e"
+        },
+        {
+          "page": 40,
+          "path": "build/review-hard-nodes/final/rh-040.png",
+          "sha256": "9994a42673ede7b64f9cdbbad1c39ee95321fdbfec25784a79d1b5fb0b960ba1"
+        },
+        {
+          "page": 41,
+          "path": "build/review-hard-nodes/final/rh-041.png",
+          "sha256": "0028f12ee801608572a57212b2bda82f17462354431964bd3966d53559615fb5"
+        },
+        {
+          "page": 42,
+          "path": "build/review-hard-nodes/final/rh-042.png",
+          "sha256": "86b63a5eaeeae6009737921b75360b29a4de1cf624cd6bd7094f558a22dc7068"
+        },
+        {
+          "page": 43,
+          "path": "build/review-hard-nodes/final/rh-043.png",
+          "sha256": "359b36b8ede9f90defe371c339999650c6eb110193ad2f1402e4e071a54d47c4"
+        },
+        {
+          "page": 44,
+          "path": "build/review-hard-nodes/final/rh-044.png",
+          "sha256": "e59577fe886dc93055fe3ccd38bdc334600a7442a6a5f918e38529f9fbc4e183"
+        },
+        {
+          "page": 50,
+          "path": "build/review-hard-nodes/final/rh-050.png",
+          "sha256": "d769c940e5963923553a5d414d7551d687bb9052a4089258967d06a99b4bcd0b"
+        },
+        {
+          "page": 53,
+          "path": "build/review-hard-nodes/final/rh-053.png",
+          "sha256": "f48081b43e7a8c3bafd07ff253e1e3fbb0677c69b55b2c2cd701afb65920090d"
+        },
+        {
+          "page": 54,
+          "path": "build/review-hard-nodes/final/rh-054.png",
+          "sha256": "29ff9baeb22182a1e8b14c0f87d53ce94b6222a5ea798849144740909d52d2c5"
+        },
+        {
+          "page": 63,
+          "path": "build/review-hard-nodes/final/rh-063.png",
+          "sha256": "e66b2da7bcf96981124024978f3b6562af05a0f6b1be16a16bb7f050a8f0036d"
+        }
+      ],
+      "grh": [
+        {
+          "page": 97,
+          "path": "build/review-hard-nodes/final/grh-097.png",
+          "sha256": "a8944797bef8e309bb51d9c87c2be31e85329574320ba9049475b5288f83fe01"
+        },
+        {
+          "page": 98,
+          "path": "build/review-hard-nodes/final/grh-098.png",
+          "sha256": "d7fb76428ff3a29f760c2a148d0a485ea2a887079be21fe3fb880db74193be0e"
+        },
+        {
+          "page": 99,
+          "path": "build/review-hard-nodes/final/grh-099.png",
+          "sha256": "f43c42aafe92a4ab56d1e5795ca3743637d60e32ee891b15c84aeef75b2c0c6a"
+        },
+        {
+          "page": 100,
+          "path": "build/review-hard-nodes/final/grh-100.png",
+          "sha256": "b853dd2618a9705120faa8561da9a78947b9dadbe16383c431ff98d9ab52da0a"
+        }
+      ]
+    },
+    "diagram": {
+      "path": "blueprint/grh/proof.png",
+      "sha256": "7b8285d150f1fcc68dce0c7c19cf6fcb50fb82158a51dfd0e640a38fffc5eacc",
+      "bytes": 558048
+    },
+    "findings": "No clipping, overlaps or unresolved cross-references observed in inspected pages. The long CM metric formula is split over two lines. The diagram retains explicit open construction obligations."
+  },
+  "node_counts": {
+    "rh": {
+      "finished": 6,
+      "total": 9
+    },
+    "grh": {
+      "finished": 17,
+      "total": 31
+    }
+  },
+  "new_existing_nodes_completed": 0,
+  "next_mathematical_work": [
+    "Construct the actual nonzero integral theta maps, preserve their sharp auxiliary-level divisibility, and prove a calibrated bound for the full arithmetic periodization operator with all rational orbits and heights.",
+    "Construct the marked arithmetic Selmer models, verify the original chart, spanning, finite quotient, point separation, tangent and trace hypotheses, and bound the weighted product uniformly.",
+    "Identify the arithmetic boundary model, its original line and coefficient action, the invertible integral determinant with ramified curvewise comparison, and integral CM maps to the selected component; then prove cusp and finite-section estimates.",
+    "Assemble these estimates on the same finite fourth-power tables with every accuracy parameter fixed before the growing-window limit."
+  ],
+  "limits": [
+    "The complete RH and Dirichlet GRH proofs remain unfinished: original arithmetic-model and uniform global estimates are not supplied by the abstract reductions.",
+    "All new general mathematical deductions have written proofs and stated assumptions. Finite and symbolic calculations are supplemental, not substitutes for those proofs.",
+    "Pinned source-byte and excerpt checks do not constitute a Lean theorem audit. No full Lean build or kernel replay was performed.",
+    "Historical review certificates retain their original scopes; refreshed frontier certificates change only current artifact hashes where the mathematics was unchanged."
+  ],
+  "verification_script": {
+    "path": "scripts/check_hard_node_integration.py",
+    "sha256": "7c1c79736fddd681a247f9bce63192bc996c563803faa6c02a02d3757389125a",
+    "bytes": 2570
+  },
+  "reader_navigation": [
+    {
+      "path": "README.md",
+      "sha256": "ef258185155ef1979910df5fb386ba209cec4dcd42c52cf28e9f639bfd2dbb00",
+      "bytes": 17659
+    },
+    {
+      "path": "paper/guide/README.md",
+      "sha256": "1cc6e250a0abbf2ef89bd883db47e9572b4358b6cef20e53913bed15b75001c5",
+      "bytes": 2993
+    },
+    {
+      "path": "paper/rh/README.md",
+      "sha256": "7a36c5c494844ed53b295b4ef73b27f63f1b63ed98cde3bdd22905a6e38ea773",
+      "bytes": 2646
+    },
+    {
+      "path": "blueprint/shared/README.md",
+      "sha256": "2905221d8fce6a84db3d934c7bdf453806f7c944b7312bf5ab426f6c105c2839",
+      "bytes": 13646
+    }
+  ]
+}

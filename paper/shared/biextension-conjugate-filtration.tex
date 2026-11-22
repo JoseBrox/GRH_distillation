@@ -1,0 +1,256 @@
+\paragraph{Constructing both filtrations from the biextension.}
+The two filtrations can be built on the original family itself.
+The construction uses first infinitesimal neighbourhoods and
+multiplication by $p$.
+
+\begin{theorem}\label{geo-biextension-conjugate-filtration}
+Let $p$ be a prime, let $S$ be a scheme over $\mathbf F_p$,
+and let $G/S$ be a
+smooth separated commutative group scheme of relative dimension $d$.
+Let $\mathcal P$ be a symmetric biextension of $G\times_S G$ by
+$\mathbf G_m$, with its rigidifications on the axes and its symmetry
+equal to the identity on the diagonal.
+Suppose that, at every geometric point of $S$, the group is
+semiabelian and its biextension is the pullback from the Poincar\'e
+biextension of a line bundle inducing an isomorphism between its
+abelian quotient and the dual quotient.
+
+Put $\mathcal V=\operatorname{Lie}(G/S)$ and
+$\mathcal U=\mathcal V^*$.
+There is a vector bundle $\mathcal H$ on this same base with exact
+sequences
+\begin{equation}\label{geo-actual-two-filtrations}
+ 0\longrightarrow\mathcal U\longrightarrow\mathcal H
+       \longrightarrow\mathcal V\longrightarrow0,\qquad
+ 0\longrightarrow F_S^*\mathcal V\longrightarrow\mathcal H
+       \longrightarrow F_S^*\mathcal U\longrightarrow0.
+\end{equation}
+It has the formal-coordinate transition functions and integral
+lattices defined by the first derivatives and mixed bilinear
+coefficients of $\mathcal P$.
+An action of a commutative coefficient ring with involution
+$a\mapsto\bar a$ on $G$, with compatible adjunction on $\mathcal P$,
+makes both sequences equivariant; the action on $\mathcal U$ is
+the conjugate dual action.
+\end{theorem}
+\begin{proof}
+Let $G_1$ be the first infinitesimal neighbourhood of the zero
+section. It is finite locally free over $S$ of rank $d+1$, with
+square-zero ideal $\mathcal U$.
+Over a point $x$ of $G$, consider pointed sections of
+$\mathcal P_x|_{G_1}$. They form a torsor under the additive vector
+group $\mathcal U$.
+These torsors are representable: push the line bundle on
+$G\times_S G_1$ forward to $G$, and take the inverse image of the
+unit section under restriction to $G\times_S S$.
+The first biextension law gives this torsor a commutative group
+law. Denote the resulting vector extension by $\mathcal E$:
+\[
+        0\longrightarrow\mathcal U_{\mathrm{add}}
+          \longrightarrow\mathcal E\xrightarrow{\pi}G
+          \longrightarrow0.
+\]
+Taking Lie algebras gives the first sequence, with
+$\mathcal H=\operatorname{Lie}(\mathcal E/S)$.
+All these constructions commute with base change.
+
+Multiplication by $p$ on $\mathcal E$ kills its additive kernel.
+It therefore descends to a group homomorphism $j:G\to\mathcal E$
+with $j\pi=[p]_{\mathcal E}$.
+Differentiation at the identity gives $dj=0$, since $d\pi$ is
+surjective and $d[p]_{\mathcal E}=0$. Translation gives zero
+relative differential everywhere.
+For a smooth scheme in characteristic $p$, functions with zero
+relative differential are precisely the image under relative
+Frobenius; this follows in polynomial coordinates and passes to
+\'etale coordinates. Hence there is a unique homomorphism
+\[
+       \Phi:G^{(p)}\longrightarrow\mathcal E,\qquad
+       \Phi F_{G/S}=j.
+\]
+Its differential is a map
+$\alpha:F_S^*\mathcal V\to\mathcal H$.
+
+We first verify its exact coordinate formula and isotropy.
+Choose coordinates $x$ on the formal group and a frame $e(x,y)$
+of $\mathcal P$, rigidified on both axes. A pointed section on
+$G_1$ is written $e(x,y)(1+\lambda(y))$.
+Write $C(x,y)$ and $D(x,y)$ for the scalars of $p$-fold
+biextension multiplication in the first and second variable,
+respectively, and write the symmetry as
+\[
+               e(x,y)\longmapsto s(x,y)^{-1}e(y,x).
+\]
+Put
+\[
+ h_{ij}=[x_j^p]\,[p]_G(x)_i,\qquad
+ A_{ij}=[x_i^py_j]\,C(x,y),\qquad
+ \Sigma_{ij}=[x_i y_j]\,s(x,y).
+\]
+Multiplication in $\mathcal E$ adds the derivative in $y$ of the
+first biextension cocycle to the vector coordinate. Thus
+\[
+ j(x)=\bigl([p]_G(x),d_yC(x,0)\bigr),\qquad
+                         \alpha(v)=(hv,A^tv).
+\]
+In particular $dj=0$ gives $[x_i y_j]C=0$.
+The biextension symmetry and interchange laws give
+\begin{align*}
+ D(x,y)&=C(y,x)s(x,[p]y)s(x,y)^{-p},\\
+ C(x,[p]y)D(x,y)^p&=D([p]x,y)C(x,y)^p.
+\end{align*}
+The first identity also gives $[x_i y_j]D=0$.
+Since $[p]_G$ factors through Frobenius, its terms have degree at
+least $p$. Taking the coefficient of $x_i^py_j^p$ in the second
+identity, and then using the first, yields
+\begin{equation}\label{geo-biextension-isotropy-identity}
+                  Ah=h^tA^t+h^t\Sigma h.
+\end{equation}
+Indeed the $p$-th powers of $C,D$ contribute zero to that
+coefficient, while $s([p]x,y)^{-p}$ has first-variable degree at
+least $p^2$. The three remaining contributions are exactly those
+displayed in \eqref{geo-biextension-isotropy-identity}.
+
+The symmetry of $\mathcal P$ defines a perfect alternating
+pairing on $\mathcal H$. Intrinsically, compare the two pointed
+sections at a pair of first-order tangent points after swapping
+the two factors. In the chosen frame its value is
+\begin{equation}\label{geo-biextension-pairing}
+ \langle(v,\lambda),(w,\mu)\rangle
+              =\mu(v)-\lambda(w)+v^t\Sigma w.
+\end{equation}
+The diagonal condition gives $s(x,x)=1$ and makes $\Sigma$
+alternating, also when $p=2$. This description proves that the pairing is independent
+of the frame and is perfect. Equation
+\eqref{geo-biextension-isotropy-identity} says precisely that
+$\operatorname{im}\alpha$ is isotropic.
+
+It remains to prove injectivity of $\alpha$ on geometric fibres.
+For a proper abelian fibre $B$, the extension just constructed is
+its universal vector extension, after the prescribed self-duality.
+The universal extension of $V_B:B^{(p)}\to B$ kills its additive
+kernel: on that kernel the map is pullback by the dual
+homomorphism $F_{B^\vee}$, whose differential is zero.
+It consequently factors through a map $B^{(p)}\to\mathcal E$.
+Functoriality and $V_BF_B=[p]_B$ identify this map with $\Phi$.
+
+To fix the Frobenius convention, take the contravariant
+Dieudonn\'e module of $B^\vee[p^\infty]$.
+Its reduction is the Lie algebra of the universal extension of
+$B$, and the reduction of crystalline Frobenius is the differential
+of the universal extension of
+$(F_{B^\vee})^\vee=V_B$.
+Its kernel is the Frobenius pullback of the additive Hodge
+subspace. Therefore its induced map on $F_S^*\operatorname{Lie}B$
+is injective, as required
+\cite[II, \S\S9 and 13]{mazur-messing-universal}
+\cite[\S1.1.4, equation (1.1.4.1)]{madapusi-pera-realizations}.
+
+For a semiabelian geometric fibre let
+$0\to T\to G\xrightarrow{q}B\to0$ be its torus quotient.
+The pullback biextension is canonically trivial on $G\times T$.
+Restricting pointed sections to $T_1$ gives a homomorphism
+$\mathcal E\to\omega_T$. Its kernel is
+$\mathcal E'=G\times_B E_B$, where $E_B$ is the extension for $B$.
+Since $p$ kills $\omega_T$, the map $\Phi$ lands in $\mathcal E'$.
+The composite to $E_B$ is $\Phi_Bq^{(p)}$; this follows by
+composing with relative Frobenius and using multiplication by $p$.
+On $T^{(p)}$, the map is the toric Verschiebung into
+$T\subset\mathcal E'$, which is an isomorphism over the
+algebraically closed field.
+If $\alpha(v)=0$, its image in the proper quotient gives
+$dq^{(p)}(v)=0$. Thus $v$ lies in $\operatorname{Lie}T^{(p)}$,
+where toric Verschiebung is injective. Hence $v=0$.
+
+The fibrewise rank criterion now makes $\alpha$ a locally split
+injection of vector bundles over $S$.
+Define $\beta:\mathcal H\to(F_S^*\mathcal V)^*$ by
+$\beta(z)(v)=\langle\alpha(v),z\rangle$.
+Perfection of the pairing makes $\beta$ surjective; isotropy and
+the ranks give $\ker\beta=\operatorname{im}\alpha$.
+This is the second sequence in
+\eqref{geo-actual-two-filtrations}.
+
+Finally, an adjunction of the coefficient action induces
+endomorphisms of $\mathcal E$. They commute with multiplication
+by $p$, so the uniqueness of $\Phi$ proves equivariance of
+$\alpha$ with the pulled-back action. In coordinates, compatibility
+of adjunction with symmetry says
+\[
+ u_a(x,y)u_{\bar a}(y,x)
+                    =s(x,\bar a y)/s(ax,y).
+\]
+Its mixed coefficient is
+$b_a+b_{\bar a}^t=\Sigma\rho(\bar a)-\rho(a)^t\Sigma$.
+Together with \eqref{geo-formal-hodge-action}, this proves
+$\langle az,z'\rangle=\langle z,\bar a z'\rangle$.
+It gives the conjugate dual action on the quotient.
+The construction uses the original infinitesimal
+neighbourhood and line bundle at every stalk, so its lattices are
+the original integral lattices.
+\end{proof}
+
+For clarity, the coordinate formulas also specify the comparison
+with the initial formal construction. Write the two frames as
+$e_2(x,y)=\ell(x,y)e_1(\phi x,\phi y)$, with
+$L=d\phi$ and $Z$ the mixed matrix of $\ell$. Then the transition
+$T:\mathcal H_2\to\mathcal H_1$ satisfies
+\begin{align*}
+        T(v,\lambda)&=\bigl(Lv,L^{-t}(\lambda+Z^tv)\bigr),\\
+        \Sigma_2&=L^t\Sigma_1L+Z^t-Z.
+\end{align*}
+The coefficient action is \eqref{geo-formal-hodge-action},
+$\alpha=(h,A^t)$, and
+\[
+                  \beta(v,\lambda)
+                        =h^t\lambda-(A-h^t\Sigma)v.
+\]
+The matrix $\Sigma$ must be retained, including when $Z$ is
+nonsymmetric.
+These formulas preserve the projection to the actual Lie lattice
+and the actual dual sublattice.
+
+\begin{corollary}[Compatible formal charts on a curve]
+\label{geo-biextension-formal-curve}
+The same conclusion holds on a smooth curve in characteristic $p$
+when one is given
+compatible formal biextension charts at its generic point and
+over its local rings, with the displayed integral transition
+matrices, and each geometric residue chart comes from a
+semiabelian variety satisfying the theorem's fibre hypothesis.
+Here no semiabelian scheme over the whole curve is required.
+\end{corollary}
+\begin{proof}
+The first-neighbourhood construction and its multiplication law
+make sense formally. Over a ring of characteristic $p$, a formal
+power series with zero partial derivatives involves only powers
+divisible by $p$, so the same relative Frobenius factorization
+defines $\alpha$. Its formula, the pairing, and $\beta$ commute
+with all the displayed transitions. They therefore give maps of
+the prescribed integral vector bundles. The fibrewise argument
+proves injectivity of $\alpha$ at each geometric residue point.
+The locally split rank criterion, followed by isotropy, gives both
+exact sequences. This also proves their coefficient equivariance.
+\end{proof}
+
+In applying this result, the line bundle itself must be tracked.
+If the original line $L$ on a geometric fibre is isomorphic to
+$q^*M$ and the translation homomorphism
+$\lambda_M:B\to B^\vee$ has trivial scheme-theoretic kernel, then
+$\lambda_M$ is an isomorphism: its kernel is finite, so its image
+has the full dimension of $B^\vee$, and its degree is one.
+The associated biextension is the pullback of that of $M$.
+Indeed, after normalizing the line isomorphism at zero, any
+discrepancy in the multiplication laws is a unit on a product
+of connected reduced varieties, trivial on the coordinate axes,
+and is therefore one by \cite[Theorem~1.1]{conrad-units-product}.
+The canonical exchange of the two factors is identity on the
+diagonal. This supplies the required symmetry also in
+characteristic two. Tensoring $L$ by an untracked positive power
+would not justify this argument.
+
+Together with coefficient freeness, the result supplies the two
+filtered bundles from the prescribed compatible charts and
+geometric fibres. Constructing those data on the chosen integral
+model, and evaluating its integral complex multiplication
+determinant, remain separate inputs.

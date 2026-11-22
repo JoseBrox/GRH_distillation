@@ -1,0 +1,123 @@
+\subsection{The leading quotient and the mixed numerical factor}
+\label{subsec:selmer-mixed-count}
+
+The numerical factor in the lower comparison has an elementary origin.
+Retain the graded algebra, rational chart and three modules
+$N_0,N_1,N_2$ above. Assume $A_{-2}$ and $A_2$ are finite over $B$, that
+the chart preserves weights, has the augmentation as its constant term,
+and is surjective on linear terms over $F$. Assume also that
+$\varphi(F_*)$ has zero linear part. The chart variables have weights
+$-2,-1,1,2$.
+For a monomial, write $\nu_-$ and $\nu_+$ for the sums of its absolute
+negative and positive weights, counted with exponents. Put
+\[
+ a(\boldsymbol d)=2d_0+4d_2,\qquad b(\boldsymbol d)=2d_1+2d_2.
+\]
+
+\begin{lemma}[The finite free leading piece]
+\label{lem:selmer-leading-piece}
+In degree $\boldsymbol d\ge0$, retaining only the terms of negative
+weight $a(\boldsymbol d)$ in the chart defines a graded algebra map
+\[
+ \mathcal R\longrightarrow
+ \bigoplus_{\boldsymbol d\ge0}
+ F[z]_{a(\boldsymbol d),b(\boldsymbol d)}t^{\boldsymbol d},
+\]
+where the subscript specifies the pair $(\nu_-,\nu_+)$. Let
+$C=\mathcal R/\mathfrak q$ be its image. Each $C_{\boldsymbol d}$ is
+finite free over $\mathcal O$, with rank
+$\dim_F F[z]_{a(\boldsymbol d),b(\boldsymbol d)}$.
+The action of $B$ on $C$ is through the augmentation. The ideal
+$\mathfrak q$ contains $J_\varphi$ and all degree-zero elements of
+augmentation zero, and is saturated under nonzero scalars of
+$\mathcal O$. If $f,g\in A_{-1}$ have the same chart linear part, then
+$(f^2-g^2)t_0\in\mathfrak q$.
+\end{lemma}
+
+\begin{proof}
+The minimum negative weights in $N_0,N_1,N_2$ are respectively at least
+$2,0,4$. Indeed, a weight $-1$ series without a linear term has negative
+weight at least two. These bounds add under products, proving that the
+leading projection is multiplicative. A weight-zero series of
+augmentation zero has negative weight at least one, so $B$ acts through
+the augmentation. Thus each leading piece is finite over $\mathcal O$.
+It lies in an $F$-vector space, and hence is torsion free and free.
+
+To see full generic rank, choose rational homogeneous preimages of the
+linear variables. Products of the weight $-1$ preimages supply every
+quadratic monomial of pure negative weight two. A preimage of a weight
+$-2$ variable has that variable as its linear part; subtracting those
+quadratic products isolates it in leading weight two. Consequently
+$A_{-2}\otimes F$ fills $F[z]_{2,0}$. The positive variables give
+$A_2\otimes F$ filling $F[z]_{0,2}$. Every monomial of bidegree $(2u,2v)$
+factors into $u$ negative weight-two blocks and $v$ positive weight-two
+blocks, by pairing weight-one variables. Since
+\[
+ A_{-2}^{d_0+2d_2}A_2^{d_1+d_2}
+ \subset N_0^{d_0}N_1^{d_1}N_2^{d_2},
+\]
+the leading image has full rank. The kernel properties follow from the
+map into an $F$-algebra. Finally, $(f-g)(f+g)$ has negative weight at
+least three, so its degree-$e_0$ leading projection is zero.
+\end{proof}
+
+Let the variable counts in weights $-1,-2,1,2$ be
+$r,s,r'+1,s'+1$, respectively, with $r\ge1$ and $s,r',s'\ge0$.
+Write $H(a,b)$ for the number of monomials of bidegree $(a,b)$, and set
+it to zero if either index is negative. Define the backward difference
+$\Delta_{(u,v)}H(a,b)=H(a,b)-H(a-u,b-v)$.
+
+\begin{lemma}[Exact mixed count]
+\label{lem:selmer-mixed-count}
+For $a\ge r+3$ and $b\ge r'$, one has
+\[
+ \Delta_{(2,0)}^{r-1+s}\Delta_{(0,2)}^{r'+s'}
+ \Delta_{(4,2)}H(a,b)=2^{r-1+r'}.
+\]
+\end{lemma}
+
+\begin{proof}
+The generating series of $H$ is
+\[
+ \frac1{(1-X)^r(1-X^2)^s(1-Y)^{r'+1}(1-Y^2)^{s'+1}}.
+\]
+Applying the backward differences multiplies it by the corresponding
+factors $1-X^uY^v$, giving
+\[
+ \frac{(1+X)^{r-1}(1+Y)^{r'}(1-X^4Y^2)}
+      {(1-X)(1-Y)(1-Y^2)}.
+\]
+Use $1-X^4Y^2=(1-Y^2)+Y^2(1-X^4)$. The first resulting summand is
+$(1+X)^{r-1}(1+Y)^{r'}/((1-X)(1-Y))$, whose coefficient is
+$2^{r-1+r'}$ in the stated range. The second has numerator
+\[
+ Y^2(1+X)^{r-1}(1+X+X^2+X^3)(1+Y)^{r'}
+\]
+and denominator $(1-Y)(1-Y^2)$. Its degree in $X$ is at most $r+2$,
+so it contributes zero. This also covers $r=1$ and $r'=0$.
+\end{proof}
+
+For the Hilbert function
+$h(\boldsymbol d)=\ell_{\mathcal O}(C_{\boldsymbol d}/\pi C_{\boldsymbol d})$,
+Lemma~\ref{lem:selmer-leading-piece} gives
+$h(\boldsymbol d)=H(2d_0+4d_2,2d_1+2d_2)$ for $\boldsymbol d\ge0$.
+The length over $B$ is the same, since $B$ acts through the surjection
+$x:B\to\mathcal O$.
+The shifts by $e_0,e_1,e_2$ become $(2,0),(0,2),(4,2)$. Consequently
+\[
+ \Delta_0^{r-1+s}\Delta_1^{r'+s'}\Delta_2h(\boldsymbol d)
+ =2^{r-1+r'}
+\]
+throughout the explicit box
+\[
+ d_0\ge r-1+s,\qquad d_1\ge r'+s',\qquad d_2\ge1.
+\]
+Every shifted multidegree then stays nonnegative. Extracting the factors
+$\pi^{2c_i}$ in the remaining intersection argument gives the scalar
+\[
+ \left(\sum_i2c_i\right)2^{r-1+r'}=2^{r+r'}\sum_i c_i.
+\]
+The leading quotient and this scalar are now proved directly. The next
+argument supplies positivity, quotient comparison and exact extraction
+of the scalar factors, under the explicit admissibility condition
+needed for the lower bound in \eqref{eq:selmer-euler-retained-inputs}.

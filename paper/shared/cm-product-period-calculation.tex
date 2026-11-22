@@ -1,0 +1,339 @@
+\paragraph{The complex multiplication value comes from one elliptic curve.}
+The period calculation needs no height formula for higher dimensional
+CM abelian varieties. An elliptic curve, a local orthogonal decomposition,
+and the product formula suffice. We retain the prescribed host condition:
+$E$ is CM, $E/E^+$ is unramified at finite places, and
+$F=\mathbf Q(\sqrt{-d})\subset E$, where $-d$ is the prescribed
+odd fundamental discriminant. Put $m=[E:F]$.
+
+\begin{lemma}\label{geo-pure-cm-local-basis}
+Let $L$ be a projective $\mathcal O_E$-lattice of rank $p+q$,
+with a skew-Hermitian form $h$, linear in its first argument,
+taking values in
+$\mathfrak D_{E/\mathbf Q}^{-1}$. Suppose
+$\operatorname{Tr}_{E/\mathbf Q}h$ is a perfect alternating
+form on $L$. At the half of the complex embeddings extending
+one fixed embedding $F\hookrightarrow\mathbf C$, suppose
+$i\tau h$ has constant signature $(p,q)$.
+For every rational prime $\ell$ there are orthogonal $E$-subspaces
+$W_+,W_-$, positive and negative at all these embeddings, and
+vectors $x_1,\ldots,x_p\in L\cap W_+$ and
+$x_{p+1},\ldots,x_{p+q}\in L\cap W_-$ which form a basis of
+$L\otimes\mathbf Z_{(\ell)}$ over
+$\mathcal O_E\otimes\mathbf Z_{(\ell)}$.
+The intersections $L\cap W_\pm$ are saturated projective lattices;
+their direct sum equals $L$ after this localization.
+Writing $G_\pm$ for their Gram blocks, every $\ell$-adic embedding
+$j$ satisfies
+\[
+ \log|j\det G_+|=-pD_\ell(j),\qquad
+ \log|j\det G_-|=-qD_\ell(j),\qquad
+ D_\ell(j)=\log|j\mathfrak D_{E/\mathbf Q}|.
+\]
+The assertion includes $\ell=2$ and empty blocks.
+\end{lemma}
+\begin{proof}
+Write $A=\mathcal O_E\otimes\mathbf Z_{(\ell)}$.
+Unramifiedness over $E^+$ gives a real generator $\delta_0$ of
+the absolute different over $A$. Trace duality and perfection
+show that $\delta_0h$ is a unimodular skew-Hermitian form on $L_A$.
+There is an anti-invariant unit $u\in A$.
+At an inert dyadic place take $a$ with unit residue trace and
+$u=a-\bar a=2a-\operatorname{Tr}(a)$; at a split place choose
+$a$ with residues $(1,0)$, so $a-\bar a$ has residues $(1,-1)$.
+At the other inert places choose
+$a-\bar a$ nonzero in the quadratic residue field.
+Choose $a$ simultaneously by the Chinese remainder theorem and
+set $u=a-\bar a$, preserving exact anti-invariance.
+Thus $u\delta_0h$ is a unimodular Hermitian form.
+
+It has an orthogonal basis over the semilocal ring $A$.
+Indeed a nondegenerate Hermitian space over a quadratic finite
+field extension has a vector of nonzero norm, also in characteristic
+two: otherwise the values on $v+aw$ would force the nondegenerate
+trace pairing to vanish. At a split factor choose mutually dual
+vectors in the two factors. Lift these choices simultaneously,
+split off the resulting unit norm line, and induct.
+Clearing denominators prime to $\ell$ makes this basis $e_i$ integral.
+
+Choose a positive $p$-frame at every complex embedding in the
+specified half. In each coset $e_i+\ell L$, the Minkowski lattice
+has bounded covering radius. Approximate a sufficiently large
+positive scalar multiple of the prescribed frames. After rescaling,
+the errors tend to zero, so the resulting $x_1,\ldots,x_p$ are
+positive at every embedding. Their Gram matrix is still invertible
+over $A$, since it is unchanged modulo every prime above $\ell$.
+Consequently its inverse gives an integral orthogonal projector
+$L_A\to\sum A x_i$.
+Take $W_+$ to be their $E$-span and $W_-=W_+^\perp$.
+The complementary lattice is free over $A$; clear denominators
+prime to $\ell$ in a basis to obtain the remaining $x_i$.
+The signature gives negativity on $W_-$.
+The two Gram blocks of $u\delta_0h$ are unimodular, proving the
+valuation formulas. Intersections with $E$-subspaces are saturated
+and hence projective over the Dedekind domain $\mathcal O_E$.
+For rank zero the determinant is one.
+\end{proof}
+
+\begin{proposition}\label{geo-cm-integral-product}
+On $W_+$ use the fixed complex embedding of $F$, and on $W_-$
+its conjugate. Give the resulting complex torus the Riemann
+form $\operatorname{Tr}h$, and keep its specified symmetric
+principal line bundle rigidified at zero.
+It has a model over a number field, and after a finite extension
+it has good reduction everywhere, with that same rigidified line.
+For each chosen $\ell$, its tangent lattice is the exact image of
+a product of integral elliptic tangent lattices under an isogeny
+whose kernel is killed by an integer prime to $\ell$.
+\end{proposition}
+\begin{proof}
+Choose a CM elliptic curve with period lattice homothetic to
+$\mathcal O_F$. Use this one curve with the two conjugate
+$\mathcal O_F$-actions. The pure vectors in the preceding lemma
+give holomorphic homomorphisms from these curves to the torus.
+Choose an $\mathcal O_F\otimes\mathbf Z_{(\ell)}$-basis of
+$\mathcal O_E\otimes\mathbf Z_{(\ell)}$ and clear denominators
+prime to $\ell$. Its products with the $x_i$ span a sublattice
+of finite index prime to $\ell$. The product map $\psi$ is
+therefore an isogeny, and some integer $N$ prime to $\ell$
+kills its homology cokernel.
+
+Polarized complex tori and their homomorphisms are algebraic
+\cite[Theorems~2.8--2.9]{cm-milne-av}.
+The finite kernel of $\psi$ is contained in the algebraic
+$N$-torsion of the elliptic product, so the quotient descends to
+$\overline{\mathbf Q}$
+\cite[Remark~8.12]{cm-milne-av}.
+Homomorphisms between abelian varieties over an algebraically
+closed field do not increase after extending that field
+\cite[Corollary~16.4]{cm-milne-av}; hence the coefficient action
+and the principal polarization descend too. For
+$\overline{\mathbf Q}\subset\mathbf C$, define the homomorphism
+over a finitely generated regular subextension first.
+To retain the specified line, first choose an algebraic line
+inducing this polarization
+\cite[Proposition~13.6, in characteristic zero]{cm-milne-av}.
+Its Tate pairing is alternating because it becomes the prescribed
+polarization after complex base change; one may choose an
+auxiliary prime different from $2$.
+Adjust it by a square root in $\operatorname{Pic}^0$ to make it
+symmetric. Its difference from the specified symmetric complex
+line is in $\operatorname{Pic}^0[2]$, hence is algebraic.
+Choose the comparison to respect the zero rigidification.
+All this data, and any prescribed finite level structure, descend
+to one number field.
+
+CM elliptic curves acquire good reduction everywhere after a
+finite extension \cite[Theorem~12.14]{cm-milne-mf}.
+Good reduction is invariant under isogeny
+\cite[Theorem~1 and Corollary~2, p.~493]{cm-serre-tate},
+so the quotient also has good reduction everywhere.
+The Moret--Bailly theorem extends the specified symmetric
+rigidified line after another finite extension
+\cite[Theorem~3.4(i)]{pazuki-theta-faltings}.
+Its identity component is the same abelian scheme, by the
+N\'eron comparison already used in
+Theorem~\ref{geo-classical-tangent-slope}.
+The vertical divisor and zero rigidification argument there
+preserves the line and its canonical metric exactly.
+
+Finally $N\psi^{-1}$ sends period lattices into period lattices
+and is an algebraic homomorphism $\chi$.
+Both maps extend to the good models by the N\'eron mapping
+property \cite[Definition~5.1 and Example~5.3]{cm-conrad-minimal}.
+Their identities $\chi\psi=[N]$ and $\psi\chi=[N]$ extend.
+The coefficient action and its polarization adjunction identities
+extend by the same uniqueness. On products of the good model,
+the zero rigidification again removes the vertical divisor in
+the corresponding cubical line identifications.
+At a place above $\ell$, differentiation gives inverse integral
+maps $d\psi$ and $N^{-1}d\chi$. Thus the product tangent basis
+is a basis of the prescribed integral lattice, without an index.
+\end{proof}
+
+\begin{lemma}\label{geo-cm-elliptic-period}
+For a CM elliptic curve by $\mathcal O_F$, choose after finite
+extension an everywhere good model and an integral tangent basis
+$v$. In the metric $\|v\|_\sigma^2=\pi H_\sigma(v,v)$, put
+$n_\sigma=\|v\|_\sigma^2$. Then
+\[
+ -\frac1{[M:\mathbf Q]}\sum_{\sigma:M\hookrightarrow\mathbf C}
+       \log n_\sigma
+ =x_d:=\gamma+\log\frac{2\pi}{\sqrt d}
+                  -\frac{L'(1,\chi_{-d})}{L(1,\chi_{-d})}.
+\]
+Finite extension and reversal of the CM action preserve this mean.
+\end{lemma}
+\begin{proof}
+The invariant differential line can be principalized after finite
+extension: if an ideal $I$ satisfies $I^a=(b)$, adjoining an
+$a$th root of $b$ makes its extension principal, since the group
+of fractional ideals is torsion free. Let $\omega(v)=1$ and write
+its period lattice as $\omega_1(\mathbf Z+\tau\mathbf Z)$,
+with $y=\operatorname{Im}\tau>0$. The principal Riemann form gives
+\[
+ n_\sigma=\frac{\pi}{|\omega_1|^2y},\qquad
+ \Delta_\omega(\sigma)
+   =(2\pi)^{12}\omega_1^{-12}\eta(\tau)^{24}.
+\]
+The second formula is the classical discriminant product
+\cite[Theorem~4.21]{cm-milne-mf}.
+Good reduction and the integral differential make
+$\Delta_\omega$ a unit at every finite prime, including $2$ and $3$
+\cite[Example~5.3]{cm-conrad-minimal}.
+Consequently
+\[
+ \log n_\sigma
+   =-\log(4\pi y|\eta(\tau)|^4)
+                         +\tfrac16\log|\sigma\Delta_\omega|,
+\]
+and the last term has mean zero.
+
+The CM class theorem makes the ideal classes occur with equal
+multiplicity among the embeddings
+\cite[Theorem~12.18]{cm-milne-mf}.
+For
+$Z_\tau(s)=\sum' y^s/|m+n\tau|^{2s}$, the Kronecker limit formula is
+\[
+ Z_\tau(s)=\frac{\pi}{s-1}
+       +2\pi\left(\gamma-\log2
+                    -\log(\sqrt y|\eta(\tau)|^2)\right)+O(s-1)
+ \quad\cite[\S2]{cm-zagier}.
+\]
+If $h_F$ is the class number and $w_F$ the number of roots of unity,
+the ideal norm decomposition gives
+\[
+ \zeta_F(s)=\frac1{w_F}\left(\frac2{\sqrt d}\right)^s
+                       \sum_{[\mathfrak a]}Z_{\tau_{\mathfrak a}}(s).
+\]
+Compare the constant term divided by the residue with
+$\zeta_F(s)=\zeta(s)L(s,\chi_{-d})$. This gives
+\[
+ \frac1{h_F}\sum_{[\mathfrak a]}
+       \log(4\pi y_{\mathfrak a}|\eta(\tau_{\mathfrak a})|^4)=x_d.
+\]
+Conjugation permutes the ideal classes and preserves this real
+modular expression. The product formula and uniform class
+multiplicities prove the asserted mean.
+\end{proof}
+
+\begin{proposition}\label{geo-cm-flat-degree}
+Suppose the determinant family of
+Lemma~\ref{geo-flat-determinant-bridge} is algebraically defined,
+is constant in the period trivialization, and has the following
+local norm compatibility: at each place its prescribed flat norm
+at the point under comparison equals the norm at every allowed
+CM point above, computed on the same integral eigenlattices and
+canonical metric. This equality is independent of which CM
+point is chosen at that place.
+For constant signature $(p,q)$ its actual normalized degree is
+\[
+ \frac{p-q}{2}P_E,\qquad
+ P_E=\gamma+\log(2\pi)-\log\operatorname{rd}(E)
+                     -\frac{L'(1,\chi_{-d})}{L(1,\chi_{-d})}.
+\]
+If the finite logarithmic norms are corrected by subtracting
+$q(\log|\mathfrak D_E|-\log|d|)$, the degree is instead
+\[
+             \frac{p-q}{2}P_E
+                      +q(\log d-\log\operatorname{rd}(E)).
+\]
+These are the precise inputs of the calculation.
+Theorem~\ref{geo-flat-family-generator} constructs the generic family
+from the prescribed model, and Corollary~\ref{geo-flat-norm-assembly}
+supplies the norm comparison from its exact integral identifications.
+\end{proposition}
+\begin{proof}
+Fix an $E$-basis $e$ of the homology lattice, with Gram matrix $G_e$.
+At a pure CM point write $x=Te$ and $t=\det T$.
+For the algebraic eigenframes $v,w$ supplied by the elliptic product,
+let $\varphi(v,w)$ denote the scalar of the determinant section.
+The CM elliptic tangent vectors have period scalars $z_+,z_-$.
+In the pure basis, the period map on the positive space and the
+dual negative space has blocks
+$z_+I_p$ and $z_-^{-1}G_-^{-1}$.
+If $\rho$ is the constant in the flat period trivialization, then
+\[
+ \varphi(v,w)\tau(t)z_+^p=\rho z_-^q\tau(\det G_-).
+\]
+Thus
+$r=\varphi(v,w)\tau(t)/\tau(\det G_-)$ is a nonzero algebraic
+number and satisfies $rz_+^p=\rho z_-^q$.
+This same $r$ applies at every CM point. One curve with opposite
+actions can be used for both signs, so even $z_+=z_-$ is possible.
+
+There is no extra metric constant in the product Gram matrix.
+Indeed, with $\omega=(1+\sqrt{-d})/2$, the elliptic Hermitian
+pairing is
+\[
+ \begin{aligned}
+ h_F^\epsilon(x,y)
+ &=\epsilon\sqrt{-d}\operatorname{Tr}_{E/F}h(x,y)\\
+ &=\epsilon\bigl(B(\omega x,y)-B(x,y)+\omega B(x,y)\bigr),
+ \qquad B=\operatorname{Tr}_{E/\mathbf Q}h.
+ \end{aligned}
+\]
+Polarization adjunction therefore gives
+$\langle d\psi_xv,d\psi_yv\rangle
+=n_\sigma\,\sigma(h_F^\epsilon(x,y))$.
+For an integral basis $b_i$ of $\mathcal O_E$ and its absolute
+trace-dual $b_i^*$, the eigenprojection is
+$P_\tau=\sum_i\tau(b_i^*)\rho(b_i)$.
+The trace-dual identities collapse the two Gram sums, giving
+\[
+ \Gamma_+=n_+\epsilon_+\tau(\sqrt{-d}\,G_+),\qquad
+ \Gamma_-=n_-\epsilon_-\bar\tau(\sqrt{-d}\,G_-).
+\]
+Here $\epsilon_\pm=\pm1$ and $\bar\tau=\tau\circ\overline{(\cdot)}$.
+As
+$\det G_+\det G_-=t\bar t\det G_e$, the complex logarithmic norm is
+\[
+ a_\sigma=\log|\sigma r|
+ +\frac p2(\log n_{+,\sigma}+\tfrac12\log d)
+ -\frac q2(\log n_{-,\sigma}+\tfrac12\log d)
+ +\tfrac12\log|\sigma\tau(\det G_e)|.
+\]
+
+Fix a number field containing the given coefficient field
+(in particular $\tau(E)$), the elliptic data and $r$.
+At each $\ell$ choose the local pure basis in
+Lemma~\ref{geo-pure-cm-local-basis}. Proposition
+~\ref{geo-cm-integral-product} supplies its exact integral product
+tangent basis. Proposition~\ref{geo-relative-different-eigenframe}
+then supplies the integral eigenframes: multiply the positive
+and negative projected frames by $\delta$ and $\bar\delta$,
+where $\delta$ generates $\mathfrak D_{E/F}$ locally.
+Using
+$\log|j\delta|=\log|j\bar\delta|
+=D_\ell(j)-\log|j\sqrt{-d}|$, their logarithmic norm is exactly
+\[
+ a_{\ell,j}
+ =\log|jr|-\log|jt_\ell|-qD_\ell(j)
+             +(q-p)(D_\ell(j)-\log|j\sqrt{-d}|).
+\]
+The transition determinant also satisfies
+\[
+ \log|jt_\ell|+\log|j\bar t_\ell|
+ +\log|j\det G_e|=-(p+q)D_\ell(j).
+\]
+It has norm one at all embeddings for all but finitely many
+$\ell$, because $e$ is then itself an integral local basis.
+
+Average over all embeddings, with normalized absolute values.
+Conjugation permutes the embeddings, so the two transition terms
+have equal means. The product formula cancels $r$ and $\det G_e$.
+The remaining three sums are
+\[
+ \overline{\log n_+}=\overline{\log n_-}=-x_d,\qquad
+ \sum_\ell\overline{D_\ell}=-\log\operatorname{rd}(E),\qquad
+ \sum_\ell\overline{\log|\sqrt{-d}|_\ell}=-\tfrac12\log d.
+\]
+The negative of the total logarithmic norm is consequently
+$(p-q)(x_d+\tfrac12\log d-\log\operatorname{rd}(E))/2$.
+This is the asserted degree. Subtracting the specified finite
+correction increases the degree by
+$q(\log d-\log\operatorname{rd}(E))$.
+Each local CM calculation may use its own finite extension of
+the fixed number field. Normalized means descend to that field;
+there is no need for one extension containing every local CM point.
+\end{proof}

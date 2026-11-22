@@ -122,8 +122,10 @@ a direct proof using algebraic frame covariance, local Gram and lattice
 norms, flat base change and the product formula. The different/conductor
 correction cancels exactly. Conditional on the actual flat-family and CM
 evaluation, the signed total is `(2R-n) P_E/2`, independent of toric rank
-in constant signature. The flat-family and CM evaluation, signed cusp
-mean and independent finite section estimate remain. Grouping
+in constant signature. The flat-family construction and CM evaluation
+are now proved under the precise model and lattice hypotheses recorded
+below. Their actual arithmetic identifications, the signed cusp mean
+and independent finite section estimate remain. Grouping
 eigenspaces does not permit replacing the unramified host by the ramified
 quadratic field; see the [host obstruction](quadratic-host-descent-obstruction.md).
 
@@ -480,24 +482,14 @@ theorem. Neither changes the existing node totals.
 
 ## Next mathematical work
 
-1. **Geometric core (W10).** Use the now supplied tangent-slope estimate
-   on the prescribed lattice and the explicit determinant bridge.
-   Identify the actual compatible boundary charts, their original
-   semiabelian fibre pullback line and coefficient character identity.
-   The integral Hodge comparison, both filtrations, coefficient freeness,
-   determinant torsion and vertical rigidity are now supplied under these
-   hypotheses. Identify the actual algebraic flat determinant family and
-   its same-model comparison with the now constructed CM object and value;
-   retain the signed signature difference and exact selected abelian
-   rank, and supply the signed cusp mean and independent finite
-   section-rank/surplus estimate. The scalar prime and period bounds
-   are already supplied; they are not the remaining geometric gap.
-2. **Integral maps and global norms (W06/W08).** Supply nonzero integral
+1. **Integral maps and global norms (W06/W08).** Supply nonzero integral
    theta maps, sharp auxiliary-level divisibility and positive normalizers.
-   Bound their calibrated global trace costs or a sufficient refined-energy
-   cost, carrying actual restrictions and arithmetic heights throughout.
-   Pairwise matrix bounds do not automatically improve to a linear trace bound.
-3. **Cohomology and assembly (W04/W02/W11).** Quantify the finite weighted
+   Use the proved common unipotent group and exact periodization to bound
+   the full sum over rational orbits, with its original volumes, source
+   restrictions and arithmetic heights. Bound its calibrated trace costs
+   or a sufficient refined-energy cost. The sharp all-bases obstruction
+   rules out deriving the required improvement from pairwise bounds alone.
+2. **Arithmetic Selmer models (W04).** Quantify the finite weighted
    Selmer product on the actual twisted places, retaining the integral local
    comparisons and surviving character cases. The elementary resultant
    supplier does not prove the trace-to-Selmer estimate: construct the
@@ -506,7 +498,17 @@ theorem. Neither changes the existing node totals.
    pairing and full abstract length theorem are now proved under those
    conditions. Its chart normalization and finite orbit cover follow
    within the abstract argument.
-   Assemble the signed
+3. **Geometric models and estimates (W10).** Identify the actual arithmetic
+   model, its original semiabelian fibre line and coefficient character
+   identity, its invertible integral determinant line, and the curvewise
+   comparison at ramified primes. Supply integral CM maps to the selected
+   component with the prescribed tangent lattices. The characteristic-zero
+   generator, both filtrations, coefficient freeness, determinant torsion,
+   vertical rigidity, local-norm comparison and signed CM value are proved
+   under these identifications. Then establish the signed cusp mean and
+   independent finite section-rank/surplus estimate, retaining the exact
+   selected abelian rank. The scalar prime and period bounds are supplied.
+4. **Uniform assembly (W02/W11).** Assemble the signed
    finite fourth-power tables on arbitrarily late intervals, with all exponent losses
    and constants fixed at each accuracy.
 
@@ -573,14 +575,15 @@ checks. Certificates distinguish source-byte identity, written proof review,
 finite verification and unresolved construction hypotheses. Important early
 results are already committed; the polished integrated checkpoint includes
 updated TeX, compiled PDFs and regenerated proof maps.
-The [current mathematical review](../certificates/continuation-review-2026-11-22.json)
+The [current mathematical review](../certificates/hard-node-review-2026-11-22.json)
 ties the newly reviewed arguments to their exact artifacts. The
-[integration record](../certificates/continuation-integration-2026-11-22.json)
+[integration record](../certificates/hard-node-integration-2026-11-22.json)
 records the recovered proofs, manuscript inputs, built PDFs and inspected
 pages. Source-byte integrity, exact finite checks and mathematical review
 remain separate. Earlier certificates retain their original snapshot scopes.
 
 ```sh
+python scripts/check_hard_node_integration.py
 python scripts/source_excerpt.py --atlas --source Main --search theorem
 python scripts/reconcile_recovery.py --section 10
 python scripts/check_rh_direct_transfer.py

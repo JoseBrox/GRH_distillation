@@ -1,0 +1,51 @@
+\paragraph{The level already kills determinant monodromy.}
+There is a short direct argument at the prescribed level.
+Let $E$ be a CM field, let $\Lambda$ be a finite projective
+$\mathcal O_E$-module, and let $B$ be a rationally nondegenerate
+integral alternating form with
+$B(ax,y)=B(x,\bar a y)$.
+
+\begin{proposition}\label{geo-half-level-determinant}
+Let $I\subset\mathcal O_E$ and $M\ge3$ satisfy
+$I\bar I=M\mathcal O_E$ and $I+\bar I=\mathcal O_E$.
+If an $\mathcal O_E$-linear automorphism $g$ of $\Lambda$
+preserves $B$ and
+\[
+                 (g-1)(\bar I\Lambda)\subset M\Lambda,
+\]
+then $\det_E(g)=1$.
+\end{proposition}
+\begin{proof}
+Trace duality defines a nondegenerate skew-Hermitian form by
+$\operatorname{Tr}_{E/\mathbb Q}(a h(x,y))=B(ax,y)$.
+It is linear in its first argument and is preserved by $g$.
+Hence $\delta=\det_E(g)$ satisfies
+$\delta\bar\delta=1$. Local bases of the projective lattice give
+$\delta\in\mathcal O_E^\times$.
+
+Localizing at each finite prime and cancelling the invertible
+ideal $\bar I$ gives $(g-1)\Lambda\subset I\Lambda$, whence
+$\delta-1\in I$. Also
+$\delta-1=-\delta(\bar\delta-1)\in\bar I$. Therefore
+\[
+                  \delta-1\in I\cap\bar I
+                            =M\mathcal O_E.
+\]
+If $\delta\ne1$, the norm of $\delta-1$ has absolute value at least
+$M^{[E:\mathbb Q]}$. At every complex embedding
+$|\sigma(\delta)|=1$, so this absolute value is at most
+$2^{[E:\mathbb Q]}$, a contradiction. Rank zero is immediate.
+\end{proof}
+
+This proves that the corresponding determinant local system on
+the abelian locus has trivial monodromy, without a further level
+cover. The lower threshold is sharp: for
+$E=\mathbb Q(\sqrt{-7})$, $\omega=(1+\sqrt{-7})/2$,
+$I=(\omega)$ and $M=2$, multiplication by $-1$ on
+$\mathcal O_E$ satisfies the stated conditions and has determinant
+$-1$. One may take
+$B(x,y)=\operatorname{Tr}_{E/\mathbb Q}(x\bar y/\sqrt{-7})$.
+
+The next argument verifies extension in the actual tangent bundle.
+Trivial monodromy on the open set alone permits a boundary twist;
+controlling both the section and its reciprocal excludes it.

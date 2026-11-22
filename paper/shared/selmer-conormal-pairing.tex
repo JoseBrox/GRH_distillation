@@ -1,0 +1,228 @@
+\subsection{A conormal pairing for strict Selmer groups}
+\label{shared-selmer-conormal}
+
+The lower deformation comparison retains an entire finite module,
+not only its length. Let $\mathcal O$ be a complete discrete valuation
+ring of odd residue characteristic, with finite residue field, fraction
+field $K$, and uniformizer $\pi$. For a graded augmented
+$\mathcal O$-algebra $x:A\to\mathcal O$, put $I=\ker x$ and
+\[
+ I^{(2)}=\{f\in A:af\in I^2\text{ for some }0\ne a\in\mathcal O\}.
+\]
+Assume $x$ vanishes on nonzero weights. Then $I^{(2)}$ is a
+homogeneous ideal contained in $I$, and $I/I^{(2)}$ is its conormal
+module with $\mathcal O$-torsion removed. For a homogeneous ideal
+$J\subset I$, define
+\begin{equation}\label{selmer-conormal-quotient}
+ C^-=(I/I^{(2)})_{-1},\qquad
+ T^-=(I/(I^{(2)}+J))_{-1}.
+\end{equation}
+Suppose $C^-$ is finite free and the image of $J_{-1}$ spans
+$C^-\otimes K$. Thus $T^-$ is finite. It depends on the augmented
+pair $(A,J)$, independently of its coordinates or equation generators.
+If $J$ is homogeneously generated, only its weight $-1$ equations
+contribute: modulo $I^{(2)}$, a product $bf$, with $f\in J$, is
+$x(b)f$. Torsion is removed \emph{before} imposing the equations;
+the torsion newly produced by them is retained.
+
+\begin{lemma}\label{selmer-conormal-finite-level}
+Let $0\ne a=u\pi^k\in\mathcal O$. Suppose an additive injection
+from an $\mathcal O$-module $M$ assigns to each element a linear map
+$A\to\mathcal O/a$ which kills $J$ and lifts to an integral
+derivation at $x$ supported in weight $-1$. If
+$T^-\simeq\bigoplus_i\mathcal O/(\pi^{c_i})$, then
+\[
+ \operatorname{length}_{\mathcal O}M\le\sum_i\min(k,c_i).
+\]
+\end{lemma}
+\begin{proof}
+An integral derivation kills $I^2$, and then $I^{(2)}$ because
+$\mathcal O$ is torsion-free. Evaluation gives an additive injection
+$M\to\operatorname{Hom}_{\mathcal O}(T^-,\mathcal O/a)$.
+If the residue field has size $q$, the latter group has order
+$q^{\sum_i\min(k,c_i)}$. The injection makes $M$ finite, and every
+finite $\mathcal O$-module has order $q$ to its length.
+\end{proof}
+
+Here are the model hypotheses needed to make these finite-level maps
+compatible. Let $\Gamma$ be profinite, let
+$\alpha:\Gamma\to\mathcal O^\times$ be continuous, and let
+\[
+ S=\ker\left(H^1(\Gamma,(K/\mathcal O)(\alpha))
+       \longrightarrow\prod_vH^1(\Gamma_v,(K/\mathcal O)(\alpha))
+       \right)
+\]
+be the strict Selmer module. Fix marks $c,g_1$ with
+$c^2=1$, $\alpha(c)=1$, and $\alpha(g_1)-1\in\mathcal O^\times$.
+Fix a continuous quadratic character $\eta$ with
+$\eta(c)=-1$ and $\eta(g_1)=1$. Write $\Psi=\alpha^{-1}$ and
+\[
+ \rho_0(g)=
+  \bigl(\operatorname{diag}(\Psi(g),1,\Psi(g)^{-1}),\eta(g)\bigr)
+  \in\mathrm{GL}_3\rtimes\{\pm1\},
+\]
+where $-1$ acts by $U\mapsto J_3U^{-t}J_3$ and $J_3$ reverses the
+basis. Retain the following hypotheses on the fixed deformation model.
+
+\begin{enumerate}
+\item The global complete local ring $R$ represents deformations of
+$\rho_0$ with fixed $\eta$, the prescribed local condition, and the
+marking that the matrix at $c$ is the identity and the $(1,2)$ and
+$(2,1)$ entries of the difference at $g_1$ and $cg_1^{-1}c$ vanish.
+Each prescribed element to be killed lies in some $\Gamma_v$ and in
+$\ker\rho_0$.
+\item A local group $H\to\Gamma$, whose image is one of the strict
+local groups, has an element $h_0$ with
+$\alpha(h_0)-1\in\mathcal O^\times$. Its complete local deformation
+algebra $B$ contains the base point and its condition is stable under
+conjugation by matrices congruent to one.
+\item The graded ambient algebra $A$ is the algebra of finite sums of
+homogeneous elements in $\widehat A=B[[z_1,\ldots,z_m]]$, with a
+homogeneous presentation and compatible augmentations. A homomorphism
+$\widehat A\to R$ respects the local deformation data; its restriction
+to $A$ has kernel $J$. Every universal matrix entry has a homogeneous
+preimage in $A$ of its matrix weight. The modules in
+\eqref{selmer-conormal-quotient} satisfy the stated finiteness and
+generic-spanning conditions. At the base point, derivatives of the
+local and new ambient coordinates are $\mathcal O$-linear combinations
+of matrix-entry derivatives of the same weight.
+\end{enumerate}
+
+These are assumptions on the same marked local and global model.
+In particular, finiteness of a Selmer group alone supplies none of the
+model hypotheses.
+
+\begin{theorem}\label{selmer-conormal-pairing}
+Under these hypotheses there is an injective $\mathcal O$-linear map
+\[
+ S\longrightarrow\operatorname{Hom}_{\mathcal O}(T^-,K/\mathcal O).
+\]
+It is canonical relative to the fixed marked model. It is independent
+of cohomology representatives, annihilators, local coboundary choices,
+integral derivative lifts, and generators of $J$.
+\end{theorem}
+\begin{proof}
+For a class $s$ represented by a cocycle $z$, put
+\[
+ \nu_s(g)=z(g)-(\alpha(g)-1)
+                         (\alpha(g_1)-1)^{-1}z(g_1).
+\]
+This is the unique representative vanishing at $g_1$: changing $z$
+by a coboundary changes the two terms equally, while a coboundary
+vanishing at $g_1$ is zero. Consequently $s\mapsto\nu_s$ is linear,
+injective, and compatible with coefficient maps.
+
+Choose $0\ne a$ annihilating $s$. Such an $a$ exists because a
+continuous cocycle from a compact group to the discrete torsion module
+$K/\mathcal O$ has finite image. Use the isomorphism
+\[
+ \iota_a:(K/\mathcal O)[a]\longrightarrow\mathcal O/a,
+ \qquad z+\mathcal O\longmapsto az\pmod a,
+\]
+where $z$ is a representative in $K$. This is distinct from
+multiplication by $a$ within $K/\mathcal O$, which is zero here.
+Set $t_{a,s}=\iota_a\nu_s$ and
+\[
+ L(t)=\begin{pmatrix}0&0&0\\t&0&0\\0&-t&0\end{pmatrix},
+ \qquad \gamma_{a,s}(g)=L(t_{a,s}(g)).
+\]
+One has $-J_3L(t)^tJ_3=L(t)$ and
+$\operatorname{Ad}(\rho_0(g))L(t)=L(\alpha(g)t)$.
+Thus $\gamma_{a,s}$ is an adjoint cocycle of weight $-1$, and
+$(1+\varepsilon\gamma_{a,s}(g))\rho_0(g)$ is a representation over
+$\mathcal O\oplus(\mathcal O/a)\varepsilon$, with $\varepsilon^2=0$.
+
+The marking holds because $2\nu_s(c)=0$, while
+$\nu_s(g_1)=\nu_s(cg_1^{-1}c)=0$. At every prescribed killed
+element, strictness and $\alpha(g)=1$ give $\nu_s(g)=0$.
+On $H$, strictness gives $\nu_s(h)=(\alpha(h)-1)m$.
+The unit at $h_0$ implies $am=0$, so this local trivialization
+uses the same modulus $a$. Its adjoint cocycle is the coboundary of
+$-L(\iota_a m)$, with convention
+$X-\operatorname{Ad}(\rho_0(h))X$. Lift that matrix to an integral
+matrix $Y$ of weight $-1$. Conjugating the integral base point by
+$1+\varepsilon Y$ supplies an integral local deformation and an
+integral derivative $d_B$ on $B$; its reduction gives the local
+part of the modular deformation.
+
+Universality now supplies its unique global derivative $D_{a,s}$ at
+the base point of $R$. Pull it back to $\widehat A$ and to $A$.
+The matrix-entry formula and coordinate compatibility give weight
+$-1$ support on the ambient coordinates.
+It has an integral weight $-1$ lift: lift its values on each new
+variable of weight $-1$ to $y_j\in\mathcal O$, and take $y_j=0$
+in other weights. For $f=\sum_\beta f_\beta z^\beta$ in
+$B[[z_1,\ldots,z_m]]$, the required lift is
+\[
+ d(f)=d_B(f_0)+\sum_j x_B(f_{e_j})y_j,
+\]
+where $x_B$ is the local augmentation. The product rule follows
+from the constant and linear coefficients of a product. The formula
+agrees modulo $a$ with the prescribed derivative on $B$ and on all
+new variables, and hence on every first jet. Homogeneity gives its
+weight. It kills $I^{(2)}$ by torsion-freeness of $\mathcal O$.
+The modular derivative kills $J$, since $J$ maps to zero in $R$.
+
+For a weight $-1$ representative $f\in I$, define
+\begin{equation}\label{selmer-conormal-pair-value}
+ \langle s,[f]\rangle=\iota_a^{-1}(D_{a,s}(f))\in K/\mathcal O.
+\end{equation}
+The preceding facts show that this factors through $T^-$.
+For a larger annihilator $ab$, the coefficient map is
+$\mathcal O/a\to\mathcal O/(ab)$, $u\mapsto bu$.
+It sends $t_{a,s}$ to $t_{ab,s}$ and induces the corresponding map
+of square-zero algebras. Naturality and uniqueness of the universal
+point therefore give
+\[
+                       D_{ab,s}=bD_{a,s}\pmod {ab}.
+\]
+The inverse coefficient isomorphisms identify their values in
+$K/\mathcal O$. Two arbitrary annihilators are compared through
+their product. A common annihilator for two classes proves linearity
+in $s$; linearity in $[f]$ follows from the derivative. Neither a
+local coboundary nor an integral lift enters
+\eqref{selmer-conormal-pair-value}; these choices prove only that
+its fixed modular value kills $I^{(2)}$.
+
+Finally, if the pairing of $s$ is zero, the modular derivative is
+zero on $A_{-1}$ and, by its weight, on every other component.
+Every universal matrix entry therefore has zero derivative.
+Multiplication by the invertible base matrix gives
+$\gamma_{a,s}=0$, hence $\nu_s=0$ and $s=0$.
+\end{proof}
+
+\begin{corollary}\label{selmer-conormal-elementary}
+Write $T^-\simeq\bigoplus_i\mathcal O/(\pi^{c_i})$, with the
+$c_i$ in decreasing order. The Selmer module is finite, and its
+elementary-divisor exponents in decreasing order are bounded term by
+term by the $c_i$, padding with zeros. In particular
+\[
+ \operatorname{length}_{\mathcal O}S[\pi^k]
+       \le\sum_i\min(k,c_i),\qquad
+ \operatorname{length}_{\mathcal O}S\le\sum_i c_i,
+ \qquad \pi^{\max_i c_i}S=0.
+\]
+When $T^-=0$, these conclusions mean $S=0$.
+\end{corollary}
+\begin{proof}
+The dual of $T^-$ has the same elementary divisors. For each $k\ge1$,
+the injection carries $\pi^{k-1}S[\pi^k]$ into the corresponding
+residue-field vector space of that dual. Its dimension is the number
+of elementary divisors at least $k$. This proves the termwise bound
+and the displayed consequences.
+\end{proof}
+
+In a basis of $C^-$, let $F$ be the matrix of the linearized negative
+equations. Then
+\[
+ v_\pi\operatorname{Fitt}_0(T^-)
+     =\min\{v_\pi(\det F_U):F_U\text{ is a nonzero maximal minor}\}
+     =\sum_i c_i.
+\]
+This is Smith normal form. In the prescribed model $F$ has $r$ rows
+and $r+1$ columns. Divide lengths and valuations by the coefficient
+ramification index when using normalized $p$-adic lengths.
+The following graded argument bounds this same Fitting ideal by
+admissible trace differences. Its finite degree-zero quotient and point hypotheses must
+be verified for the marked model; the arithmetic rigidity and automorphy
+inputs used to construct that model remain explicit.

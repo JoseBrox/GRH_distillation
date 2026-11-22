@@ -1,0 +1,141 @@
+\paragraph{Determinants before degrees.}
+The two filtrations give more than a degree identity. They force a
+finite tensor power of the determinant to be trivial, even on a
+singular base.
+
+\begin{proposition}\label{geo-frobenius-determinant-torsion}
+Let $X$ be a scheme over $k=\mathbf F_{p^f}$, let $F$ be absolute
+Frobenius, and let $A$ be a finite commutative $\mathbf F_p$-algebra.
+Put $B=k\otimes_{\mathbf F_p}A$. Suppose finite locally free
+$\mathcal O_X$-modules with $A$-actions have $A$-linear exact sequences
+\begin{equation}\label{geo-hodge-conjugate-sequences}
+\begin{gathered}
+0\longrightarrow\mathcal U\longrightarrow\mathcal H
+ \longrightarrow\mathcal V\longrightarrow0,\\
+0\longrightarrow F^*\mathcal V\longrightarrow\mathcal H
+ \longrightarrow F^*\mathcal U\longrightarrow0.
+\end{gathered}
+\end{equation}
+The pullbacks carry the pulled-back $A$-actions. For any idempotent
+$e\in B$, put $\mathcal D_e=\det(e\mathcal H)$. Then
+\[
+                    \mathcal D_e^{\otimes(p^f-1)}
+                         \simeq\mathcal O_X.
+\]
+Let $\chi:B\to k$ be a $k$-algebra character and $B_e=eB$ its
+Artin local factor, of length $n=\dim_k B_e$. If $e\mathcal H$ is
+locally free over $\mathcal O_X\otimes_k B_e$, then
+$\mathcal Q_\chi=\mathcal H\otimes_{B,\chi}k$ is a vector bundle and
+\begin{equation}\label{geo-character-determinant-torsion}
+       (\det\mathcal Q_\chi)^{\otimes n(p^f-1)}
+                             \simeq\mathcal O_X.
+\end{equation}
+In particular every pullback of $\mathcal Q_\chi$ to a proper curve
+has degree zero.
+\end{proposition}
+\begin{proof}
+The automorphism $\sigma(c\otimes a)=c^p\otimes a$ of $B$ fixes $A$;
+it need not equal Frobenius on the possibly nonreduced algebra $B$.
+For any bundle $\mathcal W$ with this action,
+$F^*(e\mathcal W)=\sigma(e)F^*\mathcal W$. Project the second
+sequence by $\sigma(e)$ and the first by $e$, and take determinants:
+\[
+ \mathcal D_{\sigma(e)}
+ \simeq F^*\{\det(e\mathcal V)\otimes\det(e\mathcal U)\}
+ \simeq F^*\mathcal D_e
+ \simeq\mathcal D_e^{\otimes p}.
+\]
+The last identity follows directly by raising transition functions
+to their $p$-th powers. Since $\sigma^f=1$, iteration proves the
+first assertion. Idempotent images are direct summands, and the
+bundle sequences are locally split; no flatness of $F$ is required.
+
+The residue field of $B_e$ is $k$. Tensor a composition series of
+$B_e$ with the locally free coefficient module $e\mathcal H$.
+Its $n$ quotient bundles are all isomorphic to $\mathcal Q_\chi$,
+so $\mathcal D_e\simeq(\det\mathcal Q_\chi)^{\otimes n}$.
+This proves \eqref{geo-character-determinant-torsion}.
+Degree on a proper curve is additive under tensor products and
+takes integer values, giving the final assertion. Rank zero causes
+no exception.
+\end{proof}
+
+The factor $n$ retains the nilpotent multiplicity at a ramified
+coefficient prime. The proposition applies to the entire base only
+if its filtrations and coefficient module are defined there. If
+they are constructed only on test curves, its conclusion is
+curvewise numerical triviality, which already suffices below.
+
+\paragraph{One finite valuation on the whole fibre.}
+We use the elementary fact that a numerically trivial line bundle on
+a proper integral variety has no nonzero section with a zero.
+Indeed Chow's lemma reduces to a projective integral modification.
+A nonempty effective zero divisor then meets a projective curve
+not contained in it, after a finite field extension if necessary.
+The restricted section has positive degree. Pullback preserves
+numerical triviality, by the degree formula for maps of proper
+curves, giving a contradiction
+\cite[Tags 0200 and 0B40]{stacks-finite-place}.
+
+\begin{theorem}\label{geo-vertical-line-rigidity}
+Let $R$ be a discrete valuation ring with uniformizer $\pi$,
+fraction field $K$ and residue field $k$. Let $X$ be a normal
+integral proper flat $R$-scheme with nonempty connected special fibre.
+Let $\mathcal L$ be a line bundle whose restriction to every proper
+integral curve in $X_k$ has degree zero. Suppose $s$ generates
+$\mathcal L$ everywhere on $X_K$. Then there are integers $M>0$
+and $a$ for which
+\begin{equation}\label{geo-vertical-generator}
+                    s^{\otimes M}/\pi^a
+          \quad\hbox{generates }\mathcal L^{\otimes M}
+          \quad\hbox{on all of }X.
+\end{equation}
+Write the fibre divisor as $\operatorname{div}(\pi)=\sum_i m_iX_i$.
+The normalized order $q=a/M$ is unique, and its denominator in
+lowest terms divides $\gcd_i m_i$. In particular $M=1$ is possible
+when the fibre multiplicities are relatively prime.
+\end{theorem}
+\begin{proof}
+The divisor $D=\operatorname{div}(s)$ is vertical, so write
+$D=\sum_i d_iX_i$ and set $q=\min_i(d_i/m_i)=a/M$ in lowest terms,
+with $M>0$. The Cartier divisor
+\[
+                  E=MD-a\operatorname{div}(\pi)
+\]
+has nonnegative coefficients and omits at least one component.
+Normality implies that it is effective: locally a rational
+function with nonnegative order at every prime divisor is regular.
+
+Suppose $E$ is nonempty. The intersection graph of the irreducible
+components of the connected special fibre is connected. Hence
+some component $X_i$ omitted from $E$ meets its support. Restricting
+$E$ to the reduced integral scheme $X_i$ gives a nonempty effective
+Cartier divisor. Its line bundle is
+$\mathcal L^{\otimes M}|_{X_i}$, because the whole fibre is
+principal. This line bundle is numerically trivial, contradicting
+the preceding fact. Thus $E=0$. Normality again implies that a
+rational section with neither zeros nor poles is a generator,
+proving \eqref{geo-vertical-generator}.
+
+All ratios $d_i/m_i$ are therefore $q$. In lowest terms,
+$M d_i=a m_i$ and $\gcd(a,M)=1$, so $M$ divides every $m_i$.
+These identities also prove uniqueness.
+\end{proof}
+
+The theorem does not assert $q=0$. For example, the trivial line
+with generic generator $\pi$ has normalized order one. A totally
+ramified extension of degree $m$, with a uniformizer as generator,
+can give order $1/m$, so the multiplicities cannot be discarded.
+Connectedness is also essential: the generators $1$ and $\pi$
+on two disjoint copies of $\operatorname{Spec}R$ have different
+orders.
+
+For the prescribed conjugate determinant, the characteristic-$p$
+proposition supplies the curve degrees once the actual Hodge
+filtrations and coefficient freeness are identified. The theorem
+then makes the finite norm constant across the connected fibre.
+Its value still requires the same integral complex multiplication
+evaluation and different correction as in
+\eqref{geo-exact-conjugate-degree}. Neither that evaluation nor
+the boundary lattice identification follows from the abstract
+determinant argument.

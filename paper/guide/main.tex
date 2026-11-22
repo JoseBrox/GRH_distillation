@@ -293,41 +293,58 @@ requires its prescribed metric and initial lower degree bound. The
 discarded degree must also be controlled: small discarded dimension
 alone does not bound its slope.
 
-The actual short integral sections simplify the component calculation.
-If integral vectors of norm at most $e^L$, $L\ge0$, at every embedding span a
-component lattice $E_Z$ of rank $r_Z$ over its field, choosing a
-field basis from them gives
+Short integral sections simplify the component calculation. If integral vectors
+of norm at most $e^L$, $L\ge0$, at every embedding span a component
+lattice $E_Z$ of rank $r_Z$ over its field, choosing a field basis among them gives
 \[
                         \deg E_Z\ge-r_ZL.
 \]
-The determinant norm is at most $e^{r_ZL}$; the integral index only
-improves the degree. With the applicable section-count inequality and
-its size hypotheses, this bound controls very negative component heights.
-Thus the mean height $\overline h=\sum_Zw_Zh_Z/\sum_Zw_Z$,
-with the actual weights $w_Z>0$, suffices, with explicit
-section errors. A separate negative-height moment is unnecessary.
+\begin{samepage}
+The determinant norm is at most $e^{r_ZL}$, and the integral index
+improves the degree. With the required section-count inequality, this
+controls negative component heights. The mean
+$\overline h=\sum_Zw_Zh_Z/\sum_Zw_Z$, with the actual weights $w_Z>0$,
+then suffices; the finite section errors must still be bounded.
+\par
+\end{samepage}
 
-Summing the volume comparison cancels component degrees against the
-weights $w_Z$. With the required volume lower bound, equal component
-volumes control the mean height directly. Two scalar coefficients can
-then be replaced by one test intersection and a signed determinant term.
-Under the prescribed positivity conditions, Zhang's height inequality
-reduces the test bound to lower heights for all points, including the
-boundary, and a prescribed cusp correction~\cite{yuan-zhang}.
-Those geometric inputs and the section remainder must still be uniform.
-Anchoring one weight entry at zero does not remove the determinant term.
+Summing the volume comparison cancels component degrees against $w_Z$.
+With the volume lower bound, equal component volumes control the mean
+height. The remaining bound uses one test intersection and a signed
+determinant term. Under the prescribed positivity conditions, Zhang's
+inequality reduces the test intersection to lower heights for all points,
+including the boundary, and a cusp correction~\cite{yuan-zhang}.
+All these bounds must be uniform.
 
-One substantial geometric ingredient is already supplied. Classical
-integral theta sections, a determinant argument with their derivatives,
-and an absolute form of Siegel's lemma give the required logarithmic
-upper bound for the largest tangent slope, in its prescribed metric.
-For the conjugate eigenspaces, determinant lines and the product formula
-retain an exact signed degree difference, proportional to the difference
-of their ranks. This can remove a period error when the two ranks agree.
-Its flat-family and complex multiplication inputs, the cusp contribution
-and the finite section estimate still require the stated geometric
-comparisons. A bound for the total degree alone does not determine them
-\cite{reconstruction}.
+Classical integral theta sections and Siegel's lemma supply the required
+logarithmic bound for the largest tangent slope in its prescribed metric.
+For the determinant comparison, assume the prescribed proper semiabelian
+model with its original line and coefficient action. The existing level
+makes the period determinant single-valued. Continued periods give
+logarithmic bounds near the complex boundary; the determinant section
+and its reciprocal therefore extend in the actual tangent frames.
+Resolution and GAGA give an algebraic generator with constant complex norm.
+
+At finite primes, the universal vector extension, toric filtration and
+character identity give freeness for the full coefficient module,
+including ramified primes. First-order sections construct the Hodge
+and conjugate filtrations, including in characteristic two. Frobenius makes the
+character determinant torsion and its degree zero on test curves.
+On the same normal proper flat model with connected special fibres,
+an identified integral determinant
+line then has constant order after division by each fibre component's
+multiplicity. This retains the exact integral line identification;
+freeness of the full module alone does not establish it.
+
+One CM elliptic curve with its two conjugate actions constructs the
+required product and integral eigenbases. The discriminant and Kronecker
+limit formula evaluate its period mean. Once these CM points and their
+integral lattices are identified on the same component, the constant
+local norms and product formula give the signed conjugate-degree
+difference. The period term cancels when the ranks agree. The remaining
+inputs are the actual arithmetic model, its curvewise determinant and
+CM lattice identifications, the cusp bound and the finite section
+estimate~\cite{reconstruction}.
 
 \subsection*{Two trace errors for all the maps}
 
@@ -360,15 +377,19 @@ gives $p-\gamma\le q+\beta$. Integrating over $[s-H,s+U]$ proves
 the bound. The detailed theorem also retains a sharper source term
 when the source slopes occupy a shorter range.
 
-The required trace estimates must hold for the same integral maps and
-normalizations. They can be supplied before the source and target
-restrictions, provided the actual lost mass is carried through the
-proved compression formulas. For the target error, bound the positive spectral tail of the full
-joint Gram matrix above its mean eigenvalue. Its whole nonidentity
-contribution is large because the family has many more columns than
-target dimensions. Exact examples show that pairwise bounds alone need
-not give a sufficiently small trace error. Keep the smaller valid trace
-or squared-energy penalty; the source error needs its own estimate.
+These estimates must hold for the same integral maps and normalizations;
+source and target restrictions must retain their actual lost mass.
+The relevant target quantity is the positive spectral tail above the
+mean eigenvalue. The whole nonidentity contribution is large when there
+are many more columns than target dimensions. Moreover, exact integral
+examples satisfy the pairwise bounds with no error term but retain a trace error
+of order $\sqrt{D/R}$ after every comparison basis is optimized, with
+arithmetic metrics fixed. Basis changes alone cannot make that error of
+order $D/R$. A calibrated bound for the actual period maps is still
+needed; retain the smaller valid trace or squared-energy penalty.
+The maps use one common unipotent group, and an exact periodization
+formula identifies their global sum. Bounding that sum must retain
+all its rational orbits and the original arithmetic normalizations.
 
 \subsection*{Average the losses before bounding them}
 
@@ -402,15 +423,24 @@ Choose the auxiliary characters and levels. Classical duality and finite
 even $K$-groups supply Selmer finiteness, including at the prime two, and
 finite prime support for each fixed datum. For RH, integral character
 projectors combine the remaining sums into a single weighted product
-of orders of specified finite Selmer groups. Averaging the construction
-averages the prime weights in that same product. Its size must still be
-bounded uniformly, with the actual local conditions and rank factors.
-Finiteness alone gives no such estimate. For one part of the argument,
-a determinant of two explicit polynomials constructs integers whose
-prime factors control the same Selmer lengths. Using their common
-divisor, with the two exceptional primes retained, gives a bound no
-larger than the earlier product bound. The arithmetic comparison that makes those integers
-control the actual groups remains essential~\cite{reconstruction}.
+of orders of specified finite groups, with the actual averaged weights.
+At an odd prime, the stated marked deformation hypotheses give an
+injection of the strict Selmer group into the dual of one finite
+conormal quotient. This module records linearized equations: remove
+ambient torsion first, then impose the equations and retain the torsion
+they create. The injection proves the lower length comparison.
+The numerical factors have short proofs: an exact determinant
+identity gives the upper Euler characteristic, and a generating function
+counts the monomials in the finite free leading quotient. A short
+positivity argument then compares these terms, retaining the torsion
+kernels. Under the model hypotheses, the four small weights give
+the admissibility condition.
+Under the stated point and tangent hypotheses, a finite slice has at
+most two geometric points; a filtration by products of the equations
+then bounds every generic multiplicity. This completes the abstract
+numerical comparison. The prescribed arithmetic models and their
+chart, finiteness, separation and tangent conditions must still be
+established for the growing family~\cite{reconstruction}.
 \item \textbf{Integral maps and analytic norms.}
 Construct nonzero theta maps with the required finite-prime divisibility
 and trace bounds on the same final spaces. Local positivity and

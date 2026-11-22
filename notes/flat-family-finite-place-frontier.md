@@ -4,10 +4,17 @@
 
 The finite-place part is not supplied by the algebraic determinant
 calculation, complex flatness, GAGA, or a scalar CM-period formula.
-The next specific input is **degree zero for a character quotient of
+The required comparison is **degree zero for a character quotient of
 the actual Hodge lattice on every special-fibre curve**, followed by
-the theorem that a numerically trivial vertical line has constant
-normalized order on a connected proper normal fibre.
+constant normalized order for a numerically trivial vertical line on a
+connected proper normal fibre. The stronger
+[determinant-torsion and vertical-rigidity proof](determinant-torsion-rigidity.md)
+now supplies these deductions. The
+[coefficient-freeness argument](boundary-hodge-freeness.md) and
+[biextension construction](biextension-conjugate-filtration.md) supply their
+Hodge and conjugate hypotheses from compatible integral formal charts
+and the prescribed geometric fibre data. This note retains the short
+degree argument and the source interface for identifying those actual data.
 
 The elementary character-degree argument has now been reconstructed
 in [standard mathematical form](../paper/shared/frobenius-character-degree.tex).
@@ -142,15 +149,18 @@ is not a Lean replay or a full audit of their transitive dependencies.
 | `Proofs/GeometryProofs/LineDegreeSpecialFibre:11–12` | Exact normal/proper vertical-line rigidity contract; delegates to `NormalProperLineOrder`. |
 | `ToroidalCompactification/UniformisationConclusion:101–128` | Exact split-fibre and polarized torus-uniformization hypotheses, with torsion and pairing compatibility. |
 
-The next reconstruction should follow the genuine geometric edge:
+The actual-model identification follows the geometric edge:
 `EigenLinePAdicBound:193–251` → `GermSystemHeightFree:19–20` and
 `HodgeLatticeDvrDegree:163–201`. It must identify the bundles and their
 integral lattices supplied by the formal degeneration with the objects
-of (1), including coefficient freeness at ramified primes. The
-short degree argument itself is now available and should not be
-reproved through the longer source calculation.
+of (1). The new local proofs supply coefficient freeness at ramified
+primes and both filtrations once those charts, their coefficient
+character identity and their original residue-fibre pullback line are
+given. They do not require an additional global semiabelian family
+along the whole test curve. The degree argument is now a corollary
+of determinant torsion and need not be repeated in the manuscript.
 
-## 4. The separate CM evaluation must still retain the different
+## 4. The CM evaluation on the exact integral frames
 
 The finite norm's constancy does not evaluate its value. At a CM point,
 `FrameFunctionCmHeight:24–49` supplies the transition determinant \(t\)
@@ -170,8 +180,13 @@ The crucial local scalar satisfies
 \(\delta=\delta_0/\sqrt{-d}\), with \(\delta_0\in E^+\) generating
 the different locally. The existence of this **real** local generator
 uses the host hypothesis that \(E/E^+\) is unramified at finite places
-(`ExistsRealDifferentGenerator:8`). It is not justified by replacing
-the host with the ramified imaginary quadratic field alone.
+(`ExistsRealDifferentGenerator:8`). The
+[relative trace-duality replacement](cm-integral-eigenframes.md)
+shows that the local norm identity needs neither this real generator
+nor finite unramifiedness: conjugation preserves the relative different,
+so the ratio of conjugate semilocal generators is a unit. The separate
+global host hypotheses still cannot be removed by replacing the host
+with the ramified imaginary quadratic field.
 
 Finally `FlatDegreeHolds:60–118` combines these finite identities with
 the two quadratic CM periods and normalized embedding averages. This
@@ -179,6 +194,16 @@ is why the arithmetic input is larger than a scalar period formula.
 The full constant must be calculated on the same local frames before
 applying the exact conductor/different cancellation already proved in
 [the determinant note](geometric-flat-determinant.md).
+The [elliptic product and period proof](cm-product-period-calculation.md)
+now supplies that calculation: a prime-to-residue-characteristic product
+isogeny gives the integral frame, and the elliptic discriminant,
+Kronecker limit formula and product formula give its exact signed value.
+The [boundary extension and assembly proof](flat-family-boundary-extension.md)
+now constructs the algebraic characteristic-zero generator and proves
+the local-norm comparison under explicit model identifications. Applying
+it still requires the actual arithmetic compactification, its invertible
+integral determinant line with the ramified curvewise comparison, and
+integral CM maps to the same component carrying the prescribed lattices.
 
 ## Verification scope
 
@@ -187,5 +212,5 @@ application to the prescribed family is open. The accompanying script
 authenticates the inspected immutable source bytes and excerpt ranges,
 and hashes the new mathematical artifacts. It does not claim to prove
 the source theorems, construct the Hodge lattice, run Lean, or establish
-the missing boundary comparison. Independent mathematical review is
+the actual model identifications. Independent mathematical review is
 recorded separately from those automated provenance checks.

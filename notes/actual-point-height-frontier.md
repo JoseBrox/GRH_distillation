@@ -268,12 +268,13 @@ lattice example, not a counterexample in the source's abelian family.
 | Hodge versus Appell--Humbert normalization | GlobalGeometry.HodgeIPIffHodgeFormConj, 20--34 |
 | Separate flat/period input | GeometryProofs.PhiDegFibLatLeOfIsOFamilyOfIsAdapted, 126--158 |
 
-The next mathematical target is (2.3) on the actual selected
-eigensublattices, or a verified stronger theorem such as (3.1) with
-the exact integral and Archimedean metrics. A bare Faltings-height
-lower bound, the displayed classical slope bound, and the smooth
-positivity statements do not close this target. The cusp mean and
-the same-data intersection limit remain distinct requirements.
+The [Moret--Bailly theta argument](moret-bailly-theta-supplier.md)
+now supplies the stronger tangent-slope estimate with the prescribed
+integral lattice and Archimedean metric, and hence (2.3) for the selected
+eigensublattices under the stated geometric hypotheses. A bare
+Faltings-height lower bound or smooth positivity would not suffice.
+The actual arithmetic model and its lattice identifications, the cusp
+mean and the same-data intersection limit remain distinct requirements.
 
 The companion certificate records source-byte checks, exact scalar
 identities and the inspected classical PDF. It does not claim a Lean

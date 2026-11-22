@@ -1,0 +1,122 @@
+\subsection{The full abstract length theorem}
+\label{subsec:selmer-core-wrapper}
+
+The preceding numerical comparison has four additional requirements:
+a Smith basis for the negative equations, a chart without weight-zero
+variables, a chart-nonzero representative of $a$, and a finite orbit
+cover. Each follows from the original model hypotheses.
+
+Put $I=\ker x$ and
+$I^{(2)}=\{h:\exists\,0\ne c\in\mathcal O,\ ch\in I^2\}$, and
+write $T=I/I^{(2)}$. Assume the original graded chart
+\[
+ \Phi:A\longrightarrow F[[z_1,\ldots,z_m,y_1,\ldots,y_n]]
+\]
+has constant coefficient $x$ and induces an isomorphism from
+$T\otimes F$ to its space of linear forms, preserving weights.
+The $z_i$ have weight zero; the numbers of $y$ variables of weights
+$-1,-2,1,2$ are respectively $r,s,r'+1,s'+1$, with $r\ge1$.
+Assume the classes of $F_i,G_j,Z_i$ span the rational cotangent
+spaces of weights $-1,-2,0$, respectively. Retain the finite quotient,
+fixed-point separation, two-sided tangent bound, and trace
+nonvanishing hypotheses used above.
+
+\begin{theorem}[Abstract length bound]
+\label{thm:selmer-abstract-length}
+The two-sided points of $A/Q$ have finitely many
+$\mathbb G_m(K)$-orbits, in bijection with their restrictions to $B$.
+The module
+$\mathcal C^-=T_{-1}/\langle[F_i]\rangle_{\mathcal O}$ has finite
+length. For every finite set $U$ of two-sided points meeting every
+orbit,
+\[
+ \ell_{\mathcal O}\mathcal C^-
+ \le2\sum_{\xi\in U}v_\pi(\xi(a)).
+\]
+\end{theorem}
+
+\begin{proof}
+Since $A$ is Noetherian, $I/I^2$ is finite over
+$A/I=\mathcal O$. The ideal $I^{(2)}$ is the inverse image of its
+$\mathcal O$-torsion, and lies in $I$. Thus $T$ is finite free,
+as are its weight components. The chart identifies
+$T_{-1}\otimes F$ with an $r$-dimensional space. The submodule
+$L=\langle[F_i]\rangle_{\mathcal O}$ has full rank. Smith normal
+form gives
+\[
+ L=\bigoplus_{i=1}^r\mathcal O\pi^{c_i}e_i,\qquad
+ \ell_{\mathcal O}(T_{-1}/L)=\sum_i c_i.
+\]
+The surjection $\mathcal O^{r+1}\to L$ splits because $L$ is free.
+Choose preimages of $\pi^{c_i}e_i$ and a basis of its rank-one
+kernel. This basis change gives actual equations
+$F'_1,\ldots,F'_r,F'_*$ with the same integral span as the $F_i$,
+and homogeneous lifts $u_i\in A_{-1}$ satisfying
+\[
+ F'_i-\pi^{c_i}u_i\in I^{(2)},\qquad F'_*\in I^{(2)}.
+\]
+Consequently the ideal $Q$ and every point condition remain the same.
+
+Next put $H_i=\Phi(Z_i)$. Their linear terms span the $m$
+weight-zero variables, so their $z$-Jacobian $J$ is invertible.
+Write $H(z,y)=Jz+R(z,y)$ with $R\in(z,y)^2$. There is a unique
+$h(y)\in(y)^2F[[y]]^m$ satisfying $H(h(y),y)=0$: once the terms
+below ordinary degree $d$ are known, set
+\[
+ h_d=-J^{-1}[H(h_{<d}(y),y)]_d.
+\]
+The quadratic remainder does not alter lower degrees. Every
+correction has weight zero, so the substitution $z=h(y)$ is graded.
+It preserves the constant term and every nonzero-weight linear
+coefficient. Thus the resulting chart $\varphi:A\to F[[y]]$
+kills all $Z_i$ and has exactly the required four weights.
+For $m=0$ this is the identity substitution.
+
+If $\varphi(a)\ne0$, put $a'=a$. Otherwise the negative cotangent
+span and $r\ge1$ supply an $F'_i$ with nonzero linear part.
+The positive weight-one chart has dimension $r'+1\ge1$, so choose
+$g\in A_1$ with $\varphi(g)\ne0$. Then
+\[
+ a'=a+gF'_i,\qquad a'-a\in Q\cap B,\qquad x(a')=x(a),\qquad
+ \varphi(a')=\varphi(g)\varphi(F'_i)\ne0.
+\]
+The last inequality uses the domain $F[[y]]$. These are integral
+elements of $A$; no denominator is required. All equation points
+satisfy $\xi(a')=\xi(a)$, so their valuations and the nonvanishing
+condition are preserved. This establishes the chart condition for
+$a'$, without asserting it for the original $a$.
+
+Finally, every two-sided point has nonzero values in weights $-2$
+and $2$, by squaring and \eqref{eq:selmer-even-halves}. Its
+degree-zero character $\sigma$ is therefore nonzero on
+$A_{-2}A_2$. For a fixed $\sigma$, choose $f\in A_{-2}$ and
+$g\in A_2$ with $\sigma(fg)\ne0$. Every point above $\sigma$
+scales to $f=1$, since $K$ is algebraically closed; the two square
+roots differ by $\mu_2$. The finite reduced slice in
+\eqref{eq:selmer-slice-parities} is a single $\mu_2$-orbit, so this
+whole fibre is one $\mathbb G_m(K)$-orbit. Conversely the action
+fixes $B$. There are only finitely many characters, since they factor
+through the finite-dimensional $F$-algebra
+$(B/(Q\cap B))\otimes_{\mathcal O}F$. This proves the finite cover
+and its asserted bijection. Only the generic characteristic-zero
+slice is used.
+
+The normalized equations, cut chart, and adjusted element now
+satisfy every hypothesis of \eqref{eq:selmer-complete-abstract-core}.
+Using the Smith length and the equality of point values gives
+\[
+ \ell_{\mathcal O}\mathcal C^-=\sum_i c_i
+ \le2\sum_{\xi\in U}v_\pi(\xi(a'))
+ =2\sum_{\xi\in U}v_\pi(\xi(a)).
+\]
+All summands are nonnegative. Thus a cover with repeated orbits also
+satisfies the bound.
+\end{proof}
+
+With one representative per character, a single-point slice contributes
+coefficient one and a two-point slice coefficient two. The theorem
+completes the abstract commutative-algebra argument. The marked
+arithmetic model must still supply its original chart, spanning,
+finiteness, point separation, tangent bound, and trace element; the
+Selmer comparison also retains its marked representation and integral
+lifting conditions.

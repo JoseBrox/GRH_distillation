@@ -144,11 +144,14 @@ proposed shortcut, not a model of the actual Galois deformation problem:
 the additional graded presentation, local conditions and comparisons
 used in the source have not been imposed on (3.1).
 
-The next reconstruction should therefore begin with the actual
-negative-weight cocycle-to-model comparison and the precise graded
-upper-length theorem, retaining the automorphy and rigidity suppliers.
-Replacing them by a generic Fitting-ideal or spectral determinant claim
-would leave the essential integral assertion unproved.
+The [compatible conormal pairing](rh-selmer-conormal-pairing.md)
+and [full abstract length theorem](rh-selmer-core-wrapper.md) now supply
+the negative-weight comparison and graded length bound under the
+original model hypotheses. The remaining task is to construct the
+actual marked arithmetic models and verify those hypotheses, retaining
+automorphy, rigidity, integral lifting and exceptional primes, then
+bound the resulting weighted Selmer product uniformly. A generic
+Fitting-ideal or spectral determinant claim cannot supply these data.
 
 ## Verification scope
 

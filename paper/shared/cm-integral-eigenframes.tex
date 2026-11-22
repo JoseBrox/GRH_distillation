@@ -1,0 +1,100 @@
+\paragraph{The different gives the exact integral eigenframe.}
+The scalar needed at a complex multiplication point is an integral
+lattice calculation. Its local form does not require the CM extension
+to be unramified over its maximal real subfield.
+
+\begin{proposition}\label{geo-relative-different-eigenframe}
+Let $F\subset E$ be number fields, let $\ell$ be a rational prime,
+and put $A=\mathcal O_F\otimes\mathbf Z_{(\ell)}$ and
+$B=\mathcal O_E\otimes\mathbf Z_{(\ell)}$.
+Let $R$ be a discrete valuation ring with a map $A\to R$ and
+fraction field $K$ of characteristic zero splitting $E/F$ relative
+to that map. For an embedding $\sigma:E\to K$ extending the map
+on $F$, let $e_\sigma$ be its primitive idempotent in $K\otimes_F E$.
+Then the integral character module is exactly
+\begin{equation}\label{geo-relative-different-lattice}
+ (R\otimes_A B)[\sigma]
+          =\bigl(\sigma(\mathfrak D_{E/F})R\bigr)e_\sigma.
+\end{equation}
+The image of the relative different denotes its extended ideal in $R$.
+\end{proposition}
+\begin{proof}
+The finite projective module $B$ is free over the semilocal
+Dedekind domain $A$. Choose a basis $b_i$ and its trace-dual basis
+$b_i^*$, so $\operatorname{Tr}_{E/F}(b_i b_j^*)=\delta_{ij}$.
+The $A$-span of the dual basis is the inverse different
+\cite[Tag 0BW0]{stacks-finite-place}.
+In the splitting algebra,
+\[
+                  e_\sigma=\sum_i\sigma(b_i^*)b_i.
+\]
+Indeed the embedding matrix and the transpose of the dual-basis
+embedding matrix are inverses. Evaluating the displayed sum at
+another embedding gives the corresponding Kronecker delta.
+The integral basis $b_i$ now gives
+\[
+ c e_\sigma\in R\otimes_A B
+ \quad\Longleftrightarrow\quad
+ c\sigma(\mathfrak D_{E/F}^{-1})R\subset R
+ \quad\Longleftrightarrow\quad
+ c\in\sigma(\mathfrak D_{E/F})R.
+\]
+Here images of integral elements lie in $R$ by normality, and
+inverse fractional ideals remain inverse after extension to $R$.
+Every generic character vector is $c e_\sigma$, proving the claim.
+\end{proof}
+
+Suppose now that $E$ is CM and contains
+$F=\mathbf Q(\sqrt{-d})$, with
+$\mathfrak D_{F/\mathbf Q}=(\sqrt{-d})$.
+The relative different is conjugation-invariant: its inverse is
+preserved because
+\[
+ \operatorname{Tr}_{E/F}(b\bar x)
+       =\overline{\operatorname{Tr}_{E/F}(\bar b x)}.
+\]
+Choose a generator $\delta$ of the relative different over the
+semilocal ring at all primes above $\ell$. Then
+$\bar\delta/\delta$ is a unit of that ring. Every $\ell$-adic
+embedding sends this unit and its inverse to integral elements,
+so they have absolute value one. Multiplicativity of the different
+in the tower $E/F/\mathbf Q$ therefore gives
+\begin{equation}\label{geo-cm-local-different-norm}
+ \log|j\delta|
+  =\log|j\mathfrak D_{E/\mathbf Q}|-\log|j\sqrt{-d}|,
+ \qquad |j\bar\delta|=|j\delta|.
+\end{equation}
+For completeness, tower multiplicativity follows by composing field
+traces: locally, a generator of the lower inverse different multiplies
+the upper inverse different. Inverting the fractional ideals gives
+$\mathfrak D_{E/\mathbf Q}
+=\mathfrak D_{E/F}\mathfrak D_{F/\mathbf Q}\mathcal O_E$.
+No real generator is needed for
+\eqref{geo-cm-local-different-norm}. Under the stronger prescribed
+host condition that $E/E^+$ is unramified, one may instead take
+$\delta=\delta_0/\sqrt{-d}$ with $\delta_0\in E^+$ generating
+the absolute different locally. That choice gives $\bar\delta=-\delta$.
+The separate global host conditions remain in force.
+
+To apply the proposition, suppose the actual integral CM tangent
+lattice has basis
+\[
+ \{\rho(b_i)u_a\}_{i,\,1\le a\le r}
+       \ \cup\ \{\rho(b_i)u'_b\}_{i,\,1\le b\le s},
+\]
+where $u_a$ and $u'_b$ have the two conjugate $F$-actions.
+These are regular $B$-blocks for the two base embeddings.
+Generic character separation kills the opposite block, even if
+the residue characters coincide at $\ell=2$.
+Writing $P_\sigma$ for the generic eigenprojection, the integral
+$\sigma$-eigenframe is therefore exactly
+\[
+                  \{\sigma(\delta)P_\sigma u_a\}_{a=1}^r.
+\]
+The conjugate formula uses $\bar\sigma=\sigma\circ\overline{(\cdot)}$
+and the $u'_b$. Thus frame covariance and
+\eqref{geo-cm-local-different-norm} give the finite scaling in the
+determinant comparison. The next argument constructs this same
+integral product basis and its CM point, then evaluates the period mean.
+A generic basis or an isogeny of degree divisible by $\ell$ does not
+supply the integral-basis hypothesis.

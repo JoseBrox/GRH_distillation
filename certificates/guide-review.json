@@ -1,19 +1,22 @@
 {
   "schema_version": 1,
   "date": "2026-11-22",
-  "scope": "Current eight-page organizational guide, including complete zeta criterion, fourth-power finite tables, supplied tangent estimate, exact signed determinant and Selmer product; remaining construction hypotheses explicit.",
+  "scope": "Current eight-page organizational guide: complete short RH criterion preserved; hard algebraic and geometric reductions integrated with the remaining arithmetic hypotheses explicit.",
   "source": {
     "path": "paper/guide/main.tex",
-    "sha256": "d72285e0d12cf881f088777d2d895ac3bb069bc97f98fff03d70967b8c994207"
+    "sha256": "4be207bd0fb9c636284065d2f2223bd2144c80fbf0303d8f4b2848c73e5ec291",
+    "bytes": 27041
   },
   "pdf": {
     "path": "paper/guide/main.pdf",
-    "sha256": "82003b9a45a6d32f3737032f1e819ede14d0625f536c690eb6210baec7cab781",
+    "sha256": "037f1eed195a4f3d05912235f4481fe04d63e7e8fac79de0016f20463ff4abc2",
+    "bytes": 93730,
     "pages": 8
   },
   "readme": {
     "path": "paper/guide/README.md",
-    "sha256": "aec2f95e6c8b8451cca1675d01be17d787ba91aa4fcfb33c48fc5957bc81faf4"
+    "sha256": "1cc6e250a0abbf2ef89bd883db47e9572b4358b6cef20e53913bed15b75001c5",
+    "bytes": 2993
   },
   "page_limit": 12,
   "typography": {
@@ -23,32 +26,43 @@
     "formatting_reduced_to_fit": false
   },
   "previous_review": {
-    "commit": "0ffbc6f7e190d4b007eb1109df215857539c60f5",
+    "commit": "8a76dcbac8ae0ea879176df329ea720c5f8da1fa",
     "path": "certificates/guide-review.json",
-    "scope": "The original seven-page review and its independent proof checks are preserved in this commit."
+    "scope": "The prior eight-page review and its independent analytic checks remain preserved at the turn baseline."
   },
   "analytic_proof_preservation": {
     "status": "PASS",
-    "scope": "The complete short RH analytic section is byte-identical to recovered main.",
+    "baseline_commit": "8a76dcbac8ae0ea879176df329ea720c5f8da1fa",
+    "scope": "The complete short RH analytic section is byte-identical to the turn baseline.",
+    "bytes": 2958,
     "block_sha256": "d613c47bc1cceb431054283547e9a5942decea479a7fe7bff2f0c8a2f364b1d1"
   },
   "independent_mathematical_reviews": [
     {
       "reviewer": "rh_selmer_frontier",
-      "status": "PASS after recorded fixes",
-      "checked": [
-        "Correct fourth-power weighted positive-part condition",
-        "Signed prime-ramp coefficients for general character combinations",
-        "Prescribed tangent metric and retained flat-family/period hypotheses",
-        "Actual Selmer product, exceptional primes, no promise of strict gcd saving",
-        "Fixed-before-limit quantifiers and limits of quasi-RH/no-Siegel inputs"
-      ]
+      "status": "PASS",
+      "scope": "Guide, README and both arithmetic frontiers distinguish the completed abstract length theorem from actual marked-model construction and uniform weighted Selmer estimates."
+    },
+    {
+      "reviewer": "geometric_frontier",
+      "status": "PASS after explicit connected-fibre wording",
+      "scope": "Generic determinant extension, exact integral-line identification including ramified primes, constant finite order and same-component integral CM maps; no implication of individual integral eigenbundle freeness from full coefficient freeness."
+    },
+    {
+      "reviewer": "finite_window_audit",
+      "status": "PASS after stated corrections",
+      "scope": "Guide and README assumptions; all 16 proof packages and all 48 frozen artifact hashes; stale resumption directions corrected."
     }
   ],
+  "mathematical_review_record": {
+    "path": "certificates/hard-node-review-2026-11-22.json",
+    "sha256": "8cf11faa726afd6cd2b6f61b4aa48d3129b5d7034f830623382e6c54ab0ef08c",
+    "bytes": 34866
+  },
   "corrections": [
-    "Explicitly signed convex ramps in the general-character explanation.",
-    "Explicit subpower condition on finite-table cost.",
-    "Common-divisor comparison may improve the bound; it need not improve it strictly."
+    "Connected special fibres stated explicitly for constant normalized finite order.",
+    "The final determinant assembly explicitly refers to the characteristic-zero family theorem.",
+    "Completed conditional reductions distinguished from the remaining actual arithmetic-model and lattice identifications."
   ],
   "visual_review": {
     "reviewer": "root",
@@ -63,43 +77,51 @@
       7,
       8
     ],
-    "method": "All eight pages rendered with pdftoppm -scale-to 1400, reviewed in readable four-page sheets.",
+    "method": "All eight final PDF pages rendered with PyMuPDF at height 1400 pixels and inspected in two-page sheets.",
     "render_hashes": [
       {
         "page": 1,
-        "sha256": "ed3c5c327d1eab9f664e7335e5442728dc2a3b93dca3a62c60317d77d85fb70c"
+        "path": "build/review-hard-nodes/final/guide-001.png",
+        "sha256": "42fee9a150ad1679353c6f5e674cf83bfc1e4e5313a930dc6e2ffe1622dfcea9"
       },
       {
         "page": 2,
-        "sha256": "f5d4ea1d4fdb8f9d03ad3025509b2f913f7980b58fb7a8710ac0374873f7265a"
+        "path": "build/review-hard-nodes/final/guide-002.png",
+        "sha256": "f8578a51957b6dfbdbbd486b3027e6d8eb81b674442e16449b7ad50c8602e2b6"
       },
       {
         "page": 3,
-        "sha256": "d670d8939b7aaefd3407e678737a4ad9a30cad7c7db299501d9b0bb96de4da20"
+        "path": "build/review-hard-nodes/final/guide-003.png",
+        "sha256": "53584aaabc235dafac92676fa66499023ac24f2a4b1096e9708c32d30b3221e0"
       },
       {
         "page": 4,
-        "sha256": "10bea24366b3a9b2d70bcf2dc1cd556dd81b46bb9893300a937d0b3ab938bcd2"
+        "path": "build/review-hard-nodes/final/guide-004.png",
+        "sha256": "03a22baebfe884baf08aa049eea39836454fdc599604626ec82b968b1bafe59d"
       },
       {
         "page": 5,
-        "sha256": "23aae7821fae53f4f0b472db0002d1cf811d1acaecd6b88e91063e43204a2fea"
+        "path": "build/review-hard-nodes/final/guide-005.png",
+        "sha256": "18ca6c661e09d3537394c7eaff0cf504dc93cadba175d4d34aeb201112ee6a61"
       },
       {
         "page": 6,
-        "sha256": "c393379005ce125d46d985bf9311bc0e2377917ac53a522d489056e34b486ffd"
+        "path": "build/review-hard-nodes/final/guide-006.png",
+        "sha256": "ba6690d3cec339734cb6e5a56dd863b6767aab58ae621b2a59665b8e54f5fb7c"
       },
       {
         "page": 7,
-        "sha256": "79a562a9ed88f8bcb713dc9cd942e1c9e7863df7ef9e53e98c14955b041743a2"
+        "path": "build/review-hard-nodes/final/guide-007.png",
+        "sha256": "4263882adf6741318d27624bae87e3273f5776b4b798af97c200c2c8bd63d3d1"
       },
       {
         "page": 8,
-        "sha256": "cf4ab5ca730b6e86167277cf80943403e04c2ea66979ed6035cee5da7091d62a"
+        "path": "build/review-hard-nodes/final/guide-008.png",
+        "sha256": "11926fecd885f497950bc6138591f5890f45161e4240b92c485f0bc32989ab0c"
       }
     ],
-    "findings": "Readable equations and references; no clipping, overlap or isolated reference-only page."
+    "findings": "Readable equations, references and paragraphs; no clipping or overlapping content. Eight pages retained without reducing type size or margins."
   },
-  "integration_record": "certificates/continuation-integration-2026-11-22.json",
-  "limits": "This guide gives proved analytic implications and reductions, not a completed RH or GRH proof. No full Lean build or kernel replay."
+  "integration_record": "certificates/hard-node-integration-2026-11-22.json",
+  "limits": "This guide proves analytic implications and conditional reductions. The compatible arithmetic construction and uniform estimates remain incomplete. No full Lean build or kernel replay."
 }
