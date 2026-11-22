@@ -1,0 +1,70 @@
+\subsection{Metric variation and its normalization}
+\label{sec:exact-arithmetic-metric-variation}
+
+Write \(I(L_0,\ldots,L_n)\) for an arithmetic intersection satisfying
+symmetry, tensor additivity and the divisor recursion.  Use metric
+denominators \(h_L\), so that \(\|s\|=|s|/h_L\); the archimedean
+term in the recursion is minus the integral of \(\log\|s\|\).
+Denote its original mixed integral by
+\(\langle u;L_1,\ldots,L_n\rangle_\infty\), retaining every complex
+component and its weight.
+
+For two smooth metrics \(A,B\) of the same multidegree, put
+\(\delta=\log h_B-\log h_A\).  Then
+\begin{equation}\label{eq:metric-variation-single-slot}
+ I(L_1,\ldots,L_n,B)-I(L_1,\ldots,L_n,A)
+       =\langle\delta;L_1,\ldots,L_n\rangle_\infty .
+\end{equation}
+Indeed, the trivial line with denominator \(e^\delta\) has section \(1\),
+empty divisor and logarithmic section norm \(-\delta\).
+The two minus signs in the recursion give the positive sign in
+\eqref{eq:metric-variation-single-slot}.
+
+There is a short way to justify locality even when homogeneous metric
+data have arbitrary values at degenerate coordinate blocks.
+Let \(\mathcal C\) be the set where every block is nonzero and use
+\[
+                    h_C(z)=\prod_k
+                       \left(\sum_i|z_{ki}|^2\right)^{1/2}.
+\]
+This is a smooth positive metric on \(\mathcal C\), and vanishes
+outside it.  If two same-degree metrics agree on \(\mathcal C\),
+their tensor products with \(C\) agree everywhere; tensor additivity
+and cancellation give equal intersections.  Extend \(\delta\) by zero
+outside \(\mathcal C\) and apply this observation to
+\(A\otimes(\mathcal O,e^\delta)\) and \(B\), proving
+\eqref{eq:metric-variation-single-slot}.
+If \(A,B\) agree only on the variety, \(\delta\) vanishes at every
+point of its mixed integral, so \eqref{eq:metric-variation-single-slot}
+also gives locality on the variety.
+Thus changing a smooth representative does not change the intersection.
+
+Replacing the factors one at a time now gives
+\begin{equation}\label{eq:metric-variation-top-intersection}
+ I(B^{n+1})-I(A^{n+1})
+   =\sum_{j=0}^{n}
+          \langle\delta;B^{[j]},A^{[n-j]}\rangle_\infty .
+\end{equation}
+Here brackets indicate repeated arguments.  If the original mixed
+integrals are identified on a smooth compact complex model with the
+corresponding Chern integrals, write
+\(h_A=h_0e^\varphi\), \(h_B=h_0e^\psi\) and
+\(\theta=dd^c\log h_0\), with \(dd^c=i\partial\bar\partial/\pi\).
+Equation \eqref{eq:metric-variation-top-intersection} is precisely
+\begin{equation}\label{eq:metric-variation-energy-factor}
+ I(B^{n+1})-I(A^{n+1})
+                =(n+1)\bigl(E_\theta(\psi)-E_\theta(\varphi)\bigr),
+\end{equation}
+with the original weighted sum over components understood.
+The energy is unnormalized; the mixed difference formula is
+\cite[Proposition~2.1]{boundary-bbgz}.  There is no further factor \(1/2\):
+the half in the cusp comparison is the given difference
+\(\psi-\varphi=U/2\).
+
+For integers \(p\geq0\) and \(q\geq1\), multilinearity also gives
+\(q^{-(n+1)}I((L^{\otimes q}\otimes A^{\otimes p})^{n+1})
+ =I((L+(p/q)A)^{n+1})\), interpreted as the usual polynomial,
+whose constant term is \(I(L^{n+1})\).
+This establishes the algebraic normalization.  Identifying the original
+mixed integrals and common vertical curvature with the specified compact
+model remains a separate geometric requirement.
