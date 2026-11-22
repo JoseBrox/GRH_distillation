@@ -269,7 +269,7 @@ a single double zero arbitrarily high contributes a tiny but
 **Numerical cross-check only (not proof).** Computing $\xi$ and its
 second logarithmic derivative with 50-digit precision gives the
 constant (1). Direct sums over the first 100 positive zeta ordinates,
-including conjugates, give $0.00007416962834581\ldots$, strictly
+including conjugates, give $0.00007416962834545808\ldots$, strictly
 below $C_2$ as expected from the positive omitted tail.
 The identity in (7) is proved symbolically; these numerical tests
 do not establish the required bound.
