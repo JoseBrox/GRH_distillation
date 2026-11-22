@@ -37,6 +37,15 @@ map 17/31; the generated progress table carries the current values.
 
 ## Active continuation at the recovered main revision
 
+The actual adapted Hermitian lattice, formal-to-full-primary theta trace,
+and exact determinant/index cancellation are now proved in
+`geometry-arithmetic-frontier-primary-trace.md`, with an independent
+review certificate. The argument retains the original integral model,
+all translated section germs and every normalization. The remaining
+geometric supplier is regularity of the reached sections on that model,
+followed by the mixed level-torsion identities; no global theta
+denominator or whole node is declared complete.
+
 This continuation starts from `301e4a0adad8617d7ae4910d939687d95d4200e8`.
 The [finite-to-limiting Selmer comparison](selmer-integral-frontier-limit-comparison.md)
 now proves the exact three cohomological conditions on the original limiting

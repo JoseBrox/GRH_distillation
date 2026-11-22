@@ -70,6 +70,11 @@ only with its hypotheses, normalization and parameter dependence intact.
 
 | Exact limiting Selmer conditions | [Finite-to-limit proof](../../notes/selmer-integral-frontier-limit-comparison.md); [independent review](../../certificates/selmer-integral-frontier-limit-comparison-review.json) | The original finite quotients identify exactly; a retained Smith defect gives the rank bound, and finite inverse limits preserve second-order lifts with all local witnesses. | Fixed normalized point and original tower/limit only. The actual automorphic tower, patched support and moving-family integral bounds remain. |
 
+The full-primary trace and adapted arithmetic lattice are proved in
+[`geometry-arithmetic-frontier-primary-trace`](../../notes/geometry-arithmetic-frontier-primary-trace.md).
+Its exact stabilizer, determinant ideals and normalized index are retained;
+the integral model and reached-section regularity remain inputs.
+
 ## Concurrent research
 
 The [RH program](../rh/program.md) and [GRH program](../grh/program.md) are
