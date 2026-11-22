@@ -133,8 +133,14 @@ and conjugate filtrations force degree zero under Frobenius, and a
 composition series retains the multiplicities of a ramified coefficient
 algebra. The actual boundary Hodge lattice must still supply these
 filtrations and local freeness over the relevant coefficient factor.
-Identifying that lattice and proving constant normalized vertical order
-are the next geometric steps; complex flatness alone does not supply them.
+The [determinant torsion and vertical rigidity](determinant-torsion-rigidity.md)
+now strengthen this calculation: the two filtrations give an explicit
+torsion exponent for the character determinant, and a short effective-divisor
+argument gives one normalized finite order on the connected fibre.
+Its denominator divides the gcd of the fibre multiplicities. These
+arguments retain ramified coefficient lengths and all actual-model
+hypotheses. Identifying the boundary lattice and evaluating the common
+order at the prescribed CM point remain; constancy does not make it zero.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
@@ -323,8 +329,8 @@ theorem. Neither changes the existing node totals.
 1. **Geometric core (W10).** Use the now supplied tangent-slope estimate
    on the prescribed lattice and the explicit determinant bridge.
    Identify the actual boundary Hodge lattice, its two filtrations and
-   coefficient freeness at ramified primes, then reconstruct its
-   constant finite order and CM evaluation;
+   coefficient freeness at ramified primes, apply the proved determinant
+   torsion and vertical-line rigidity, and establish the CM evaluation;
    retain the signed signature difference and exact selected abelian
    rank, and supply the signed cusp mean and independent finite
    section-rank/surplus estimate. The scalar prime and period bounds
