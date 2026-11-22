@@ -532,6 +532,17 @@ explicit scalar sufficient bound for both prescribed defects. Absolute
 returns can waste signed cancellation, so the signed operator route
 remains available; no small arithmetic overlap estimate is asserted.
 
+The [sharp return-norm comparison](dominant-return-deficit.md) replaces
+that pair sum by the smaller integrand `B - (2m-A)_+^2`, where `A` is the
+sum of return norms, `B` their squared sum and `m` their largest norm.
+It caps crowded regions by their actual seed mass and preserves the
+mass that a dominant return cannot cancel. The proof controls the
+positive spectral trace, including arbitrary source restrictions; it
+does not require an integrable absolute double sum. The original target
+loss and normalization are retained. The new estimate is optimal from
+the scalar norms alone, but its arithmetic size remains open. This
+reviewed package does not change either route's node count.
+
 The [ramified determinant calculation](ramified-hodge-determinant.md)
 constructs the actual integral conjugate determinant as the determinant
 of the full Hodge character quotient, twisted by a fixed ideal determined
