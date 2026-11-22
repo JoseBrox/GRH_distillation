@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "reviewer": "independent selmer_frontier agent",
+  "review_kind": "Independent mathematical proof and exact pinned-source interface review",
+  "source_revision": "jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "verdict": "No mathematical correction requested; stated hypotheses and limits are preserved.",
+  "audit_groups": [
+    {
+      "title": "Exact original finiteness condition",
+      "status": "PASS",
+      "finding": "ResMapBijective334–338 asks for finitely many additive prime-field homomorphisms from every open subgroup, with open kernel. For the finite discrete target this is equivalent to continuity. PhiSub5–31 transfers it to the original open index-two subgroup."
+    },
+    {
+      "title": "Residual cocycle dimension",
+      "status": "PASS",
+      "finding": "The residual action kernel U is open and normal. Restriction to U and values on coset representatives inject residual cocycles into Hom_cont(U,k^D) plus (k^D)^[G:U]. Its k-dimension is at most D(d_ell(U)+[G:U]); the residue-field degree cancels correctly."
+    },
+    {
+      "title": "Completeness and saturation",
+      "status": "PASS",
+      "finding": "Uniform t-adic limits of continuous functions into the complete finite free coefficient module are continuous. Cocycle equations are closed. A cocycle valued in t^aM divides uniquely and continuously by t^a, so the inherited topology is the intrinsic t-adic topology and Z/tZ injects into residual cocycles. Successive lifting therefore gives finite generation without lifting all residual cocycles."
+    },
+    {
+      "title": "Actual odd family construction",
+      "status": "PASS",
+      "finding": "The local Selmer equations are linear in cocycles and their witnesses. S is a submodule of a finite cocycle module. Q=S/(S intersection B) is finite without assuming B is contained in S. A fraction-field basis represented by elements of S is integrally independent modulo skew odd boundaries; clearing denominators and killing the remaining torsion proves generation up to t-powers. Every chosen local witness is retained."
+    },
+    {
+      "title": "Finite exact integral kernel",
+      "status": "PASS",
+      "finding": "A basis of the fraction-field span of evaluation forms can be chosen from those forms. Its common integral kernel equals that of the whole family because A embeds in its fraction field. The selection has size at most rank_A Z; rank zero, an empty form family and zero forms are covered."
+    },
+    {
+      "title": "Actual paired module and functional",
+      "status": "PASS",
+      "finding": "DetFin127–213 uses the full continuous cocycle module on M_n(D_A), exactly with the twisted conjugation action and eta coefficient of tr(z(h)rho_1(h)). Its A-rank is n^2(2r+2), including r=0. The paired constraints define a submodule."
+    },
+    {
+      "title": "Simultaneous spectral density",
+      "status": "PASS",
+      "finding": "N3 is relative density in the original full cyclotomic kernel. Nonvanishing discriminant is open in the adic topology. Finite intersections of these open dense loci remain dense. Continuity of each detecting function carries vanishing on that locus to all of H, so the proved integral detection theorem applies with its odd-characteristic and residual-character hypotheses."
+    },
+    {
+      "title": "One finite simultaneous set",
+      "status": "PASS",
+      "finding": "Take the union of the finite selected sets at the finitely many points. All are selected inside the common simple-spectrum locus, so the union keeps separability at every point and detection at each point. The sum-of-ranks bound follows."
+    },
+    {
+      "title": "Fixed-point uniform denominator",
+      "status": "PASS",
+      "finding": "The actual paired detecting kernel K is a submodule of finite Z over Noetherian A, hence finite. Choose polarized primitives for powers of t times finitely many generators, equalize exponents using their maximum, and combine linearly. This gives one exponent for all integral elements at the fixed data. It asserts neither uniformity in moving points nor modular lifting."
+    },
+    {
+      "title": "Source and checker scope",
+      "status": "PASS",
+      "finding": "All 13 pinned source modules and their listed bounded ranges were independently authenticated and read. The offline checker was rerun successfully and its implementation inspected. It records source/artifact provenance; it is not an automated mathematical proof or a Lean build."
+    }
+  ],
+  "artifacts": {
+    "notes/selmer-integral-frontier-finite-selection.md": "043bc412687683a887ed38ffa8e0737e815b00027f49391426df1d88329d9fa1",
+    "paper/shared/selmer-integral-frontier-finite-selection.tex": "f8fb5c6458cd8c3700cec4ba6f771b7b4c750581b348aea54f7bf2532e1bbd31",
+    "paper/shared/selmer-integral-frontier-finite-selection-references.tex": "9daeee3b1c8147935a71af20d8565fdb523fafbb9ecf6561ba5e29e9f1102edf",
+    "scripts/check_selmer_integral_frontier_finite_selection.py": "dc03fc83300d47df537566ff7cc628343020c2931f068fd7751beb299d355472",
+    "certificates/selmer-integral-frontier-finite-selection.json": "d962202e2858ec990e38da3bf5c8e36978daaa608ad753cc0ea35631680f9591"
+  },
+  "dependency_certificates": {
+    "certificates/selmer-integral-frontier-integral-detection.json": "933657b6cb36840410424774f69618e8ea444c9ba2683ac5a6c19c310e08a1e2"
+  },
+  "independently_authenticated_source_ranges": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.CommutativeAlgebra.ResMapBijective",
+      "git_blob_sha1": "f4459dbda68c29e497387f5fe2f20191c3f45ba6",
+      "sha256": "20e63b53f95a2cd6e41afdd9ed4269a42e59ae5fc934ab620109a7fd6fbbed2e",
+      "bounded_ranges": [
+        [
+          334,
+          338
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.PhiSub",
+      "git_blob_sha1": "bb1086b3c5b788e209f2962d2137fa3a86663c7e",
+      "sha256": "8549e84c30e00cab234d5c67b156c4185f5f8ac90cc26123eedb2e8d9147fbe0",
+      "bounded_ranges": [
+        [
+          5,
+          31
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.LocallyConstantCocyclesFiniteOfPhi",
+      "git_blob_sha1": "fc158bd325fad86e18310fc313cabd7588fd1b74",
+      "sha256": "b15f8497df4b76780725fb8e7419fe17b53549e826a2e74dd7bdc995ae9d4aec",
+      "bounded_ranges": [
+        [
+          5,
+          78
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.AcConst",
+      "git_blob_sha1": "4bb1441dfeec0af69fb5b7b2904341ee982d3b40",
+      "sha256": "4b2b5feecdd8855fa0c0011a8f54babc45107ade256836374938b8881f1b13cc",
+      "bounded_ranges": [
+        [
+          51,
+          81
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.CharPOfPadic",
+      "git_blob_sha1": "e751bc9624300f271a82b791c4b5a6def0ba1d32",
+      "sha256": "4caee5f901c2cd0066c60e41fd0b7eec0b32d8d299e222a3daa156ed81cb6be6",
+      "bounded_ranges": [
+        [
+          25,
+          76
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.SelSub",
+      "git_blob_sha1": "6d37ccccaaa05e657dfc97972d821b3664415a06",
+      "sha256": "16fd8aaa7547e4c812b53d28246e4041f106dc48ee10363813b9819ebc514354",
+      "bounded_ranges": [
+        [
+          38,
+          105
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.MaxIndep",
+      "git_blob_sha1": "aca9cc98f4a32ff9d459aedddb024898e0b29431",
+      "sha256": "34a8318b3153f582ac2141ca8c1d82b93172887683f7a199a02b1a254f19cc5a",
+      "bounded_ranges": [
+        [
+          5,
+          54
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.DetFin",
+      "git_blob_sha1": "04bddc0fc0d94ae60dbe02a9879f61d63e31ff9c",
+      "sha256": "481ce663b20bb7f963f18dc69c332d6877ad40d7fd9ef574f68f602df45910b9",
+      "bounded_ranges": [
+        [
+          127,
+          213
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.FinSub",
+      "git_blob_sha1": "bf19b46f4383a192d95adeaf17cc6808430b5222",
+      "sha256": "8a164f0f39824e86c11b88c3c2c18d13d82d637edcdb4fdf40fd40da5cd17824",
+      "bounded_ranges": [
+        [
+          5,
+          33
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.OmDense",
+      "git_blob_sha1": "d26d29ef94c7671e2c789b3796177a0417d4b667",
+      "sha256": "dda65b194329d6cfd843353989ab66d5b12ecade00a43ec5a4b4b603f3a952ab",
+      "bounded_ranges": [
+        [
+          34,
+          87
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PairedDualFirstOrderDualMatrixSpace",
+      "git_blob_sha1": "83f8696963709ecaa3ea73e3d62e414f309b9a66",
+      "sha256": "2b3a062361caa5676d914456dd8fb20d52cf83b9ab464d8f8ff14a1663abe1b7",
+      "bounded_ranges": [
+        [
+          288,
+          315
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AutomorphicDetection.Choice",
+      "git_blob_sha1": "90562803a8af7373401478c419ddb52b68374a54",
+      "sha256": "4386d70673a69610f401c70ca3c37a839db28ff1d7675d4b6de45e6977fa0faf",
+      "bounded_ranges": [
+        [
+          10,
+          40
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PatchedSupportCompletions",
+      "git_blob_sha1": "1c247eb1556e13ecf8d24d6b96f1995f45248465",
+      "sha256": "e0b279fba4124f970ef8c4e78912dbb2f0950e14d836b9c57779085b7c51a354",
+      "bounded_ranges": [
+        [
+          215,
+          230
+        ]
+      ]
+    }
+  ],
+  "independent_checker_rerun": {
+    "command": "python3 scripts/check_selmer_integral_frontier_finite_selection.py --offline",
+    "exit_code": 0,
+    "output": {
+      "status": "PASS",
+      "pinned_modules": 13,
+      "scope": "source provenance and artifact integrity; human proof separate"
+    }
+  },
+  "limits": [
+    "Human mathematical review and authenticated source correspondence, not a Lean build or proof-kernel certification.",
+    "Given normalized arithmetic points and the original global group, residual-character and spectral hypotheses remain required.",
+    "Fixed-point integral denominators do not supply uniformity over moving arithmetic families or lifting of modular cocycles.",
+    "No whole proof node is closed: ordinary RH 6/9, Dirichlet GRH 17/31."
+  ]
+}

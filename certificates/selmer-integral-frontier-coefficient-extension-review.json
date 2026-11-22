@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "reviewer": "independent selmer_frontier agent",
+  "review_kind": "Independent mathematical proof and exact pinned-source interface review",
+  "source_revision": "jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "verdict": "No mathematical correction requested; stated hypotheses and limits are preserved.",
+  "audit_groups": [
+    {
+      "title": "Finite free coordinates and topology",
+      "status": "PASS",
+      "finding": "A finite injective local map of complete DVRs has j(t)=v*u^e with v a unit and e>=1. Torsion-free finiteness makes B a finite free A-module. Its coordinate maps satisfy p_a(u^(eN)B) subset t^N A, including ramified extensions."
+    },
+    {
+      "title": "Exact recombination factors",
+      "status": "PASS",
+      "finding": "For N=max s_a, coefficients v^(-N)*b_a*j(t^(N-s_a)) recombine j(t^s_a*p_a(y)) to u^(eN)*y. Both the inverse-unit factor and ramification exponent are necessary. The maximum, rather than a sum, is valid."
+    },
+    {
+      "title": "Original Selmer and boundary conditions",
+      "status": "PASS",
+      "finding": "Each projection commutes with multiplication by transported coefficients, transpose and the zero-entry conditions. It preserves all original local witnesses, inertial vanishings, cocycle equations, support and skew boundaries. It is not assumed to be a ring map or to commute with arbitrary B-coefficient products."
+    },
+    {
+      "title": "Independence and generation of odd family",
+      "status": "PASS",
+      "finding": "Project each coefficient of a relation and its skew primitive to get an original relation. Coordinate reconstruction proves independence over B. Project an arbitrary B-valued Selmer cocycle and every local witness, use original generation and recombine with the exact factors to obtain generation up to a power of u."
+    },
+    {
+      "title": "Paired detection on the same set",
+      "status": "PASS",
+      "finding": "The paired coefficient algebra and exact W module extend by tensor product. The paired representation, twist and eta functional are transported. Applying coordinate maps preserves the detecting zero and polarization; recombining original polarized primitives proves Detects over B on the same chosen set."
+    },
+    {
+      "title": "Full cyclotomic coefficient character",
+      "status": "PASS",
+      "finding": "Any unital map from Z_ell into a characteristic-ell ring factors through F_ell, so the old and transported cyclotomic coefficient characters agree. The original full cyclotomic subgroup and all group maps remain fixed."
+    },
+    {
+      "title": "Finite separable splitting and integral roots",
+      "status": "PASS",
+      "finding": "Each selected characteristic polynomial is monic and separable over k((t)); a common finite separable splitting field exists even if different polynomials share roots. Its integral closure is a finite local complete DVR. All roots are integral and pairwise distinct within each polynomial. Distinctness does not assert unit root differences."
+    },
+    {
+      "title": "Coefficient field and residue synchronization",
+      "status": "PASS",
+      "finding": "Unique Hensel lifts of the roots of X^Q-X form a coefficient field in equal characteristic. Uniformizer expansion gives B isomorphic to F_Q[[u]]. Finite constant-field extensions to a common degree synchronize residue cardinalities and preserve all previous conclusions. Empty selected-polynomial lists are covered."
+    },
+    {
+      "title": "Actual normalized-point extension",
+      "status": "PASS",
+      "finding": "PadicHomUnique84–163 constructs the normalized point after the finite local extension, preserving Ext2: representation, block partition, local basis and ordinary type. Original form, inertia, triangular identities and zero entries push along the ring map; ordinary-character inequalities use injectivity. Coordinate decomposition and recombination preserve the integral even-span property."
+    },
+    {
+      "title": "Complete original choice interface",
+      "status": "PASS",
+      "finding": "The new corollary matches PatchedSupportCompletions223–230: under given normalized points, Phi, odd characteristic, nontrivial residual cyclotomic character and N3, it provides finite local injective coefficient extensions, equal residue cardinalities, odd families, one common detecting set in the original H, and distinct splitting roots. The preceding finite-selection result constructs the odd family; no additional family-existence assumption remains."
+    },
+    {
+      "title": "Primary algebra references",
+      "status": "PASS",
+      "finding": "Stacks09E8 was independently opened and checked for finite integral closure, the Dedekind conclusion and a unique prime over a complete DVR. Stacks0C0S was independently opened and checked for the equal-characteristic complete regular local power-series description."
+    },
+    {
+      "title": "Source and exact-check scope",
+      "status": "PASS",
+      "finding": "All 11 pinned source modules and their listed bounded ranges were independently authenticated and read. The exact ramification-check code was inspected and rerun: 234 finite-polynomial cases, with rejected missing-unit and missing-ramification variants. These computations support the general written algebra proof; they do not prove it by sampling or certify a Lean build."
+    }
+  ],
+  "artifacts": {
+    "notes/selmer-integral-frontier-coefficient-extension.md": "d328f3d4dc82df1ddae65303543af2162d59ac6174f82608cd149b803886476e",
+    "paper/shared/selmer-integral-frontier-coefficient-extension.tex": "faee6b367545fe061b15697eb7a55531b09096796fe3ddb06f074d715bb8fbca",
+    "paper/shared/selmer-integral-frontier-coefficient-extension-references.tex": "e2093a129605d2820b99fd71350e0a0e677537d64ab3240b59f6fc6c000e648f",
+    "scripts/check_selmer_integral_frontier_coefficient_extension.py": "17b378f9bd70278bf790e498bbf1901e755e581361aff504ea9bf43e8fd01048",
+    "certificates/selmer-integral-frontier-coefficient-extension.json": "57bfc5b5565bb3769a44730fe8e211372f4e4c6b82dfb0bf8a621984177172fd"
+  },
+  "dependency_certificates": {
+    "certificates/selmer-integral-frontier-integral-detection.json": "933657b6cb36840410424774f69618e8ea444c9ba2683ac5a6c19c310e08a1e2",
+    "certificates/selmer-integral-frontier-finite-selection.json": "d962202e2858ec990e38da3bf5c8e36978daaa608ad753cc0ea35631680f9591"
+  },
+  "independently_authenticated_source_ranges": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PairedDualFirstOrderDualMatrixSpace",
+      "git_blob_sha1": "83f8696963709ecaa3ea73e3d62e414f309b9a66",
+      "sha256": "2b3a062361caa5676d914456dd8fb20d52cf83b9ab464d8f8ff14a1663abe1b7",
+      "bounded_ranges": [
+        [
+          232,
+          274
+        ],
+        [
+          306,
+          315
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PatchedSupportCompletions",
+      "git_blob_sha1": "1c247eb1556e13ecf8d24d6b96f1995f45248465",
+      "sha256": "e0b279fba4124f970ef8c4e78912dbb2f0950e14d836b9c57779085b7c51a354",
+      "bounded_ranges": [
+        [
+          220,
+          230
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.FrameWith",
+      "git_blob_sha1": "870e5d03dc371704626c5433d8d0f936472fc697",
+      "sha256": "de3426f148c5c5358de1b548fb600ea3f2d434f107fdb852a45a88f57b74a60a",
+      "bounded_ranges": [
+        [
+          78,
+          79
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.ExtFree",
+      "git_blob_sha1": "fdda12a9687041a18145a6849fcc0fda27d02581",
+      "sha256": "a250886866c6cab74c96c64a11ecdfa80ad20fb2f190923bad3c23f9c4bd2280",
+      "bounded_ranges": [
+        [
+          5,
+          57
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.CompSel",
+      "git_blob_sha1": "b96b1f7b4c25f20555b7f2111e6bcafb1fdf3260",
+      "sha256": "a2dc485836013129b51813fbeb0435c55d6b1ebe9e3f1a7898265dc0a90a5ed0",
+      "bounded_ranges": [
+        [
+          18,
+          91
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.PushSel",
+      "git_blob_sha1": "093ff0ec0c7945965d9a74828417eb12df3d7636",
+      "sha256": "6fa2f50e217f6fbcd8ff69695e5af874d2af2f9196fca756039bef869dcdd625",
+      "bounded_ranges": [
+        [
+          21,
+          79
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.KapPush",
+      "git_blob_sha1": "02be7f615b28ba3baea4ee7550d47993ad0ccb29",
+      "sha256": "51038f69bfe013c3c16b4786ea475480bd733f92ecae9b3dcf73e92915acf17c",
+      "bounded_ranges": [
+        [
+          8,
+          71
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.DetPush",
+      "git_blob_sha1": "6c4bfa3b14e3e4e6701797c0a0492bd9976a5367",
+      "sha256": "d8ea4f0de40e68fcedead0ae572cc32dfc78c9a72d39ea79acc615dd17d36db4",
+      "bounded_ranges": [
+        [
+          77,
+          167
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.CharPOfPadicAlt",
+      "git_blob_sha1": "760ece723e53c22245f13797732a50c738b1048b",
+      "sha256": "09847362e27debc231ac4d5245622a7fd54e3736e7af81111a60c8d07f533103",
+      "bounded_ranges": [
+        [
+          26,
+          59
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.PadicHomUnique",
+      "git_blob_sha1": "3ba623b8b3089fad1a59ec437503bd6a30bed1b1",
+      "sha256": "f58c4a40501713bbe0e4bc060fafb0380345cab4364753ca12917b9563fc1a3a",
+      "bounded_ranges": [
+        [
+          84,
+          140
+        ],
+        [
+          142,
+          163
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AutomorphicDetection.Choice",
+      "git_blob_sha1": "90562803a8af7373401478c419ddb52b68374a54",
+      "sha256": "4386d70673a69610f401c70ca3c37a839db28ff1d7675d4b6de45e6977fa0faf",
+      "bounded_ranges": [
+        [
+          10,
+          40
+        ]
+      ]
+    }
+  ],
+  "independent_checker_rerun": {
+    "command": "python3 scripts/check_selmer_integral_frontier_coefficient_extension.py --offline",
+    "exit_code": 0,
+    "output": {
+      "status": "PASS",
+      "pinned_modules": 11,
+      "ramified_recombination_cases": 234,
+      "scope": "source provenance and exact coefficient checks; human proof separate"
+    }
+  },
+  "limits": [
+    "Human mathematical review and authenticated source correspondence, not a Lean build or proof-kernel certification.",
+    "Given normalized arithmetic points and the original global group, residual-character and spectral hypotheses remain required.",
+    "Fixed-point integral denominators do not supply uniformity over moving arithmetic families or lifting of modular cocycles.",
+    "No whole proof node is closed: ordinary RH 6/9, Dirichlet GRH 17/31."
+  ],
+  "independently_checked_primary_references": [
+    {
+      "url": "https://stacks.math.columbia.edu/tag/09E8",
+      "verified_claim": "Finite integral closure in a finite separable extension; Dedekind property; unique prime for a complete DVR.",
+      "retrieval_ref": "turn711370695view0"
+    },
+    {
+      "url": "https://stacks.math.columbia.edu/tag/0C0S",
+      "verified_claim": "An equicharacteristic complete regular local ring is a power-series ring over its residue field.",
+      "retrieval_ref": "turn711370695view1"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+\paragraph{A finite simultaneous set of detecting elements.}
+Let $G$ be profinite, $A=k[[t]]$ with $k$ finite of characteristic
+$\ell$, and suppose every open subgroup $U$ has finitely many
+continuous homomorphisms $U\to\mathbf F_\ell$.
+
+\begin{lemma}[Finite generation and finite detection]
+\label{lem:selmer-finite-selection}
+For a continuous action on a finite free $A$-module $M$, the module
+$Z=Z^1_{\mathrm{cont}}(G,M)$ is finite free. Any family of linear forms
+$\lambda_s:Z\to A$ has a subfamily of at most $\operatorname{rank}_A Z$
+members with exactly the same common kernel over $A$.
+\end{lemma}
+
+\begin{proof}
+Let $U$ be the open kernel of the residual action. A cocycle into
+$M/tM$ is determined by its homomorphism on $U$ and its values on
+coset representatives. Thus the residual cocycle space is finite.
+Continuous functions $G\to M$ are complete for uniform $t$-adic
+convergence, and the cocycle equations are closed. Dividing a cocycle
+with values in $tM$ by $t$ preserves continuity and the equations.
+It follows that $Z$ is complete and
+$Z/tZ\hookrightarrow Z^1_{\mathrm{cont}}(G,M/tM)$.
+Lifting finitely many generators of $Z/tZ$ and successively correcting
+the remainder modulo powers of $t$ generates $Z$ over $A$.
+It is torsion-free, hence free.
+
+For the second assertion, extend the forms to the fraction field and
+choose a basis of their span from the forms themselves. Vanishing of
+these basis forms forces every original form to vanish in the fraction
+field, hence in $A$. No extra denominator enters the common kernel.
+\end{proof}
+
+The lemma also constructs the odd family used in integral detection.
+The actual odd Selmer conditions define a submodule $S$ of the finite
+cocycle module, because their local witnesses can be added and scaled.
+Let $B$ be the skew odd boundaries in all cochains. Choose a
+fraction-field basis of $(S/(S\cap B))\otimes_A k((t))$ from images of
+actual elements $\kappa_i\in S$. They are integrally independent
+modulo boundaries. Expressing any class in that basis, clearing
+denominators and killing the remaining torsion gives generation up to
+a power of $t$. The original local witnesses of each $\kappa_i$ are
+retained. This also covers an empty family and does not require
+$B\subset S$.
+
+Apply the lemma at each of finitely many normalized points to the
+original full matrix module over $D_A$, with action
+$Y\mapsto\chi(g)\rho_1(g)Y\rho_1(g)^{-1}$, and the forms
+\[
+                  \lambda_h(z)=[\eta]\operatorname{tr}(z(h)\rho_1(h)).
+\]
+The actual paired cocycles form a submodule. Retain the spectral
+hypothesis that the elements with separable characteristic polynomial
+are dense in the original cyclotomic kernel $H$ at each point. Each
+such locus is open: a nonzero discriminant is detected modulo some
+power of the uniformizer. Their finite intersection $S\subset H$ is
+dense. For fixed $z$, the displayed expression is continuous in $h$;
+vanishing on $S$ therefore implies vanishing on $H$.
+
+Proposition~\ref{prop:selmer-integral-paired-detection} and
+Lemma~\ref{lem:selmer-finite-selection} now give a finite subset of $S$
+detecting at each point. Their union is one finite set detecting at
+every point, and all its characteristic polynomials are separable at
+every point. Its size is at most the sum of the ranks of these
+continuous cocycle modules \cite{alpo-finite-selection}.
+
+There is also one denominator exponent for all integral cocycles in
+the detecting kernel at a \emph{fixed} point. Indeed, that kernel is a
+submodule of a finite module over $A$, hence has finitely many
+generators. Choose the polarized primitives supplied by integral
+detection for these generators, multiply them by powers of $t$ to
+make their exponents equal to the maximum, and take linear
+combinations. This preserves the original coefficient module and
+polarization. The exponent depends on the fixed arithmetic data.
+This argument neither lifts modular cocycles nor replaces the
+separate count of all solutions modulo $t^a$. In particular, equality
+of integral kernels need not persist modulo $t^a$: the forms $z$ and
+$tz$ already illustrate this distinction.

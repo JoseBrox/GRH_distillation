@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "geometry_frontier, independent of selmer_frontier",
+  "verdict": "PASS",
+  "scope": "Actual integral Detects(H) under the retained normalized-point and odd-family hypotheses; finite simultaneous auxiliary selection remains separate.",
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-integral-detection.md",
+      "sha256": "ba057fdadefd8f34bfcf59568e37ff99308da2126f046b139e2b80a61a0120cb"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-integral-detection.tex",
+      "sha256": "d19c437788d3e15ab1673f95205e6c84871a9acaa6d3d9424bf6f6ae9749f6e5"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-integral-detection-references.tex",
+      "sha256": "57aeb38ebf45106f10760856981e1976d2a5e118d0c1f11600d85cd3cf5c4e30"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_integral_detection.py",
+      "sha256": "f14e309c288d273eeb2eac608d01542f19828ed8b5ed9cb043b6a2a3eaea717a"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-integral-detection.json",
+      "sha256": "933657b6cb36840410424774f69618e8ea444c9ba2683ac5a6c19c310e08a1e2"
+    }
+  ],
+  "audit_groups": [
+    {
+      "topic": "Exact subgroup and coefficient characteristic",
+      "result": "PASS",
+      "details": "The original cyclotomic kernel ker(epsilon|G) is retained, even if the residual character has a larger kernel. Finite k with a unital Z_l map has characteristic l. Nontrivial cyclotomic reduction makes chi(g)-1 a unit, and c^2=1 gives s=-chi(c), s^2=1."
+    },
+    {
+      "topic": "Integral coefficient algebra and lattice",
+      "result": "PASS",
+      "details": "The source DD multiplication has epsilon_i epsilon_prime_j=delta_ij eta and every other nilpotent product zero. W_A is exactly eta E_A plus the epsilon_prime odd blocks; integral extraction, uniqueness and assembly hold before localization, including r=0 and the empty second block."
+    },
+    {
+      "topic": "Action, trace, and source cocycles",
+      "result": "PASS",
+      "details": "Expanding (1+B_g)A_g Z(1-B_g) gives the displayed commutator and eta-trace formulas with the correct order and signs; cubic nilpotents vanish. ThetaCoefficientMapEq244-258 identifies precisely TwZ, TwB and Detects. The transpose fixes coefficient generators and polarization is coefficientwise."
+    },
+    {
+      "topic": "Fraction-field hypotheses",
+      "result": "PASS",
+      "details": "The finitely many even matrix units and the original power-of-t span give the full even K-span. Multiplying both relation coefficients and a skew odd primitive by one common denominator transports integral Kap independence to K without a saturation assumption."
+    },
+    {
+      "topic": "Single integral polarized primitive",
+      "result": "PASS",
+      "details": "The previously proved odd/even fraction-field theorem gives finitely many polarized primitives. One finite maximum of their negative valuations makes every entry integral. Assembly lies in W_A, and injectivity W_A to W_K descends the exact boundary identity for every g simultaneously."
+    },
+    {
+      "topic": "Quantifiers and unresolved suppliers",
+      "result": "PASS",
+      "details": "The conclusion is forall z exists N,Y forall g. No uniform N over cocycles, lifting from A/t^m, construction of the normalized point, local Selmer data, or finite simultaneous auxiliary choice is claimed. These limitations match the actual DetAsm conclusion."
+    },
+    {
+      "topic": "Reproducible computations",
+      "result": "PASS",
+      "details": "The independent rerun python3 scripts/check_selmer_integral_frontier_integral_detection.py --offline returned PASS: seven pinned source blobs, 800 basis associativity triples, noncommutative action/trace/inverse checks, 108 denominator/polarization cases including 12 zero primitives, and three negative controls. These are exact finite checks supporting the written proof, not a Lean build."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.UniversalOrdinaryDeterminantRing",
+      "read_ranges": [
+        [
+          66,
+          103
+        ]
+      ],
+      "sha256": "b12275f242e0616546ead3569b88ed86fb245901849b470c1caf77c7b3c033d0",
+      "git_blob_sha1": "65ce51224af6634182dda7b48716e73279990d15"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PairedDualFirstOrderDualMatrixSpace",
+      "read_ranges": [
+        [
+          108,
+          150
+        ],
+        [
+          203,
+          264
+        ],
+        [
+          306,
+          322
+        ]
+      ],
+      "sha256": "2b3a062361caa5676d914456dd8fb20d52cf83b9ab464d8f8ff14a1663abe1b7",
+      "git_blob_sha1": "83f8696963709ecaa3ea73e3d62e414f309b9a66"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.W1sMem",
+      "read_ranges": [
+        [
+          5,
+          45
+        ]
+      ],
+      "sha256": "ea7b4661a5d64016b0293efabad740c226f80b24f118cfd6395e18388e41315d",
+      "git_blob_sha1": "1ad9fc2cedaa50693697e804773a69267d46a93c"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.ConstantAndLinearPartsZeroOfMem",
+      "read_ranges": [
+        [
+          157,
+          246
+        ]
+      ],
+      "sha256": "1b041ea6e80fc1a4dbaabf2970cf01d804ad27aded7bf7aee93fc4d3154a05dc",
+      "git_blob_sha1": "60061eacef06d3d9196eacce22efbced5b59353a"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.MapSpan",
+      "read_ranges": [
+        [
+          14,
+          90
+        ],
+        [
+          96,
+          150
+        ]
+      ],
+      "sha256": "73f2fddae0eea28611e1de923c3455a1b310dafde76ab944bbfd4e35ab044811",
+      "git_blob_sha1": "fb03d1724e0fd407d7f105451352541cd9724b84"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.DetAsm",
+      "read_ranges": [
+        [
+          110,
+          212
+        ],
+        [
+          213,
+          268
+        ]
+      ],
+      "sha256": "5cbaa93c93024b226e2f65cff6a1f43d19eb55531fc4ef63a7dfd0a7a6515b22",
+      "git_blob_sha1": "e3d5cfea2aa99cd96ff5a2c784c46d90aac16e51"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ThetaCoefficientMapEq",
+      "read_ranges": [
+        [
+          244,
+          258
+        ]
+      ],
+      "sha256": "47ad94ae8810970b4fdcf4e4cb9e22c31365a91a260ed3c7ba3ee02849daa9e8",
+      "git_blob_sha1": "948482f25d014b95ecf474745031014e97996a00"
+    }
+  ],
+  "limitations": [
+    "No full Lean proof build or new whole-node completion is asserted.",
+    "Existing fraction-field odd and even detection packages are explicit mathematical dependencies."
+  ]
+}

@@ -1,0 +1,89 @@
+\paragraph{Splitting the selected spectra without changing detection.}
+Let $j:A\hookrightarrow B$ be a finite injective local map of complete
+discrete valuation rings, with uniformizers $t,u$. Write
+$j(t)=vu^e$, where $v$ is a unit and $e\geq1$.
+The finite torsion-free $A$-module $B$ is free. Choose a basis $b_a$
+and its coordinate maps $p_a:B\to A$. Then
+\[
+ y=\sum_a j(p_a(y))b_a,
+ \qquad p_a(j(x)y)=xp_a(y),
+ \qquad p_a(u^{eN}B)\subset t^NA.
+\]
+The final inclusion proves continuity of every projection, including
+in the ramified case.
+
+Transport the representation, ordinary characters, local bases and
+block partition along $j$. The original Selmer conditions are linear
+in the cocycle and its local boundary witnesses: they prescribe block
+support, continuity, the cocycle identity, transpose polarization,
+inertial vanishing, and specified zero entries in
+$w^{-1}(z-dY)w$. Thus pushing along $j$ or applying $p_a$ to the
+cocycle and its witnesses preserves every condition. The same holds
+for skew odd boundary primitives.
+
+Consequently the given odd family remains independent modulo
+boundaries after extension: project a relation to each $A$-coordinate.
+It also continues to generate up to a power of the new uniformizer.
+Indeed, if the projected identities use exponents $s_a$, take
+$N=\max_a s_a$ and combine them with coefficients
+\[
+                 c_a=v^{-N}b_a j(t^{N-s_a}),
+ \qquad
+             \sum_a c_a j(t^{s_a}p_a(z))=u^{eN}z.
+\]
+This preserves all block and polarization conditions.
+
+The same calculation preserves paired detection on the \emph{same}
+finite set. Its coefficient module is
+$W_B=W_A\otimes_A B$. Each projection commutes with the transported
+twisted action, transpose and detecting trace:
+\[
+ p_a\!\left([\eta]\operatorname{tr}(z(h)\rho_{1,B}(h))\right)
+    =[\eta]\operatorname{tr}(p_a(z(h))\rho_{1,A}(h)).
+\]
+Project a detected cocycle, use its polarized primitive over $A$, and
+recombine with the displayed coefficients. This gives a polarized
+primitive for $u^{eN}z$ in the actual module $W_B$.
+
+For the selected separable monic characteristic polynomials, take a
+finite common splitting field of $k((t))$. Its integral closure of
+$k[[t]]$ is a finite complete discrete valuation ring, and all roots
+belong to it. It has the form $k'[[u]]$: the roots of
+$X^{|k'|}-X$ lift the residue field uniquely by Hensel's lemma, and
+expansion in $u$ gives the isomorphism
+\cite{stacks-selmer-dvr-extension,stacks-selmer-coefficient-field}.
+For finitely many points, enlarge their new finite residue fields to
+a common degree over $\mathbf F_\ell$. These constant-field
+extensions are finite free, so detection and the odd families are
+preserved throughout \cite{alpo-coefficient-extension}.
+
+The transported point satisfies the same form, inertia and ordinary
+identities. Its even-span condition follows by projecting an even
+matrix and recombining the old span identities; inequalities between
+ordinary characters persist by injectivity. The selected spectra
+are split with distinct roots over coefficient rings having residue
+fields of the same cardinality. Root differences need only be
+nonzero; their valuations remain in the subsequent local estimate.
+
+\begin{corollary}[Simultaneous auxiliary choice]
+\label{cor:selmer-simultaneous-choice}
+Given finitely many normalized points in odd characteristic, assume
+the preceding open-subgroup finiteness condition, the nontrivial
+residual cyclotomic character, and spectral density in the original
+cyclotomic kernel at each point. There are finite injective local
+extensions of their coefficient rings, with residue fields of one
+common cardinality, and one finite set of elements of that kernel
+such that all selected characteristic polynomials split with distinct
+roots. Each extended point has an independent odd Selmer family
+spanning up to powers of its uniformizer, and the same finite set
+detects its paired cocycles. The original local bases, block
+partitions, ordinary characters and their prescribed relations are
+preserved.
+\end{corollary}
+
+\begin{proof}
+Construct the odd families from the finite Selmer modules as above.
+Apply integral paired detection and finite simultaneous selection,
+then the splitting and coefficient-extension argument. Every step
+uses the original cyclotomic kernel and the same finite set.
+\end{proof}
