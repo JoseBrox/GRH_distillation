@@ -1,0 +1,125 @@
+\subsection{The original integral and the signed boundary bound}
+\label{sec:compact-model-signed-stokes}
+
+\begin{lemma}\label{lem:compact-model-integral}
+Let $Y$ be the original smooth complex projective variety, and let
+$X$ be a supplied compact complex manifold of the same dimension,
+whose projection from homogeneous coordinates has precisely the
+coordinate-scaling orbits as fibres and admits local holomorphic
+sections. Then $X\simeq Y$ biholomorphically. For an absolutely
+integrable mixed curvature density, the original sum over inverse
+projection branches equals its integral on $X$, with all complex
+components included.
+
+Moreover, an original vertical metric factor defined by a rational
+section that is a regular unit away from one arithmetic prime has
+zero curvature on $X$, including its complex boundary.
+\end{lemma}
+
+\begin{proof}
+Local sections define a holomorphic bijection $X\to Y$. It is
+biholomorphic by the injective holomorphic mapping theorem
+\cite[Theorem~1.6.6]{compact-stokes-lebl}. Smoothness of $Y$ here is
+the retained smooth-generic-fibre hypothesis.
+
+A linear projection whose centre misses the Segre embedding of $Y$
+is finite: its fibres are proper subvarieties of affine spaces,
+hence finite \cite{compact-stokes-projection}. Outside its critical
+values, infinity and the prescribed null boundary image, apply
+change of variables to every inverse holomorphic branch. Different
+homogeneous lifts change logarithmic metric potentials by
+pluriharmonic functions. With $dd^c=(i/\pi)\partial\bar\partial$,
+their mixed Hessian density is exactly the wedge of the curvature
+forms. Applying this argument to the absolute value first justifies
+the signed identity. Each projective point occurs once; any later
+finite-cover multiplicities and stabilizer factors retain their
+original values. In dimension zero this is a finite sum.
+
+At every complex point the arithmetic prime is invertible. The
+original unit relation supplies a local homogeneous quotient $G/H$
+with $G,H$ nonzero and vertical factor $|G/H|$. Its logarithm is
+locally the real part of a holomorphic logarithm, so its curvature
+vanishes there. This argument applies at boundary points as well
+\cite{compact-stokes-source}.
+\end{proof}
+
+Fix the original finite vertical cutoff and put $V$ for its product
+of vertical factors. Let $h_0$ be the common reference denominator,
+$\theta$ its curvature, and let the prescribed positive metric
+$A'$ have Kähler curvature $\omega$. Suppose the tied potentials
+$\varphi_t,\psi_{t'}$ satisfy the preceding boundary-energy lemmas,
+with limits $\varphi,\psi$ and
+$\psi-\varphi=U/2$. Write $T=\theta+dd^c\varphi\geq0$.
+The actual smooth lines have restricted denominators
+\[
+ h_{\mu_t}=h_0e^{\varphi_t}V,\qquad
+ h_{N_{p,q,t}}=h_{\mu_t}^{q}h_{A'}^p,\qquad
+ h_{M_{p,q,t'}}=(h_0e^{\psi_{t'}}V)^qh_{A'}^p.
+\]
+Retain eventual smoothness of $\mu_t$ and, for each
+$1\leq p\leq q$, of $M_{p,q,t'}$. The full intersection pairing
+and all the displayed geometric data are supplied hypotheses.
+
+\begin{proposition}[Signed arithmetic boundary comparison]
+\label{prop:compact-model-signed-stokes}
+Put $d(z)=\int_X(T+z\omega)^n$ and assume $d(0)>0$.
+Suppose the original normalized height inequalities give
+\[
+ q^{-(n+1)}I(M_{p,q,t'}^{n+1})
+       \geq(n+1)(a-(p/q)K_A)d(p/q)
+\]
+eventually for each $1\leq p\leq q$.
+Then the original arithmetic limit exists and satisfies
+\[
+ \mathcal A:=\lim_{t\to0}I(\mu_t^{n+1})
+ \geq(n+1)\left(a-\frac{\overline U}{2}\right)d(0),
+ \qquad \overline U=\frac{\int_XU\,T^n}{d(0)}.
+\]
+\end{proposition}
+
+\begin{proof}
+Metric locality and multilinearity give one polynomial
+\[
+ F_t(z)=\sum_{j=0}^{n+1}\binom{n+1}{j}z^j
+          I(\mu_t^{[n+1-j]},(A')^{[j]}),
+ \qquad F_t(p/q)=q^{-(n+1)}I(N_{p,q,t}^{n+1}).
+\]
+The model, cutoff, vertical factors and metrics in this polynomial
+are fixed independently of $p,q$. At each fixed rational
+$z\in(0,1]$, exact metric variation and energy convergence give
+a limit for $F_t(z)$. Values at $n+2$ distinct such points recover
+all coefficients by interpolation. Thus $F_t\to F$ coefficientwise,
+and $F(0)=\mathcal A$.
+
+For fixed $z=p/q>0$, the bounded energy convergence gives a limit
+$G(z)$ for the corresponding normalized bounded intersection.
+No bounded line with $p=0$ is needed. The integral dictionary and
+flatness of $V$ give the exact difference
+\[
+ G(z)-F(z)=(n+1)\bigl(E_z(\psi)-E_z(\varphi)\bigr).
+\]
+Here $E_z$ is unnormalized energy in the class of $\theta+z\omega$.
+Near semipositivity supplies a smooth positive reference in that
+class; $\theta$ itself need not be positive. The logarithmic metric
+ratio contributes $q$ and the $n$ curvature factors contribute $q^n$,
+exactly cancelling the original $q^{n+1}$.
+
+Finite-energy concavity and $\psi-\varphi=U/2$ yield
+\[
+ E_z(\psi)-E_z(\varphi)
+       \leq\frac12\int_XU\,(T+z\omega)^n.
+\]
+Together with the retained height inequality this gives
+\[
+ F(z)\geq(n+1)\left((a-zK_A)d(z)
+                    -\frac12\int_XU\,(T+z\omega)^n\right).
+\]
+Full mixed mass identifies the geometric degree with $d(z)$.
+Weighted mixed integrability makes the last integral a finite
+polynomial in $z$. Letting positive rational $z$ tend to zero proves
+the assertion with the original signed $U$. This also covers $n=0$.
+\end{proof}
+
+This proves the signed comparison for the given arithmetic and
+regularization data. The construction of those data and the
+arithmetic height and section estimates remain separate inputs.

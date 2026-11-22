@@ -1,0 +1,467 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "global_norm_frontier, independent of geometry_frontier",
+  "verdict": "PASS",
+  "scope": "Original guarded signed Stokes comparison, compact-model mixed-integral dictionary and zero curvature of the original common vertical factors; no whole-node completion.",
+  "artifacts": [
+    {
+      "path": "notes/geometry-arithmetic-frontier-compact-model-stokes.md",
+      "sha256": "409eecea8c845140a4f81d44a78a1e4054db472531baeef1f17629ccd229410f"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-compact-model-stokes.tex",
+      "sha256": "a170952c1351de42854778d6cbb8e866bedc990e503f9319f09a13ef44b64355"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-compact-model-stokes-references.tex",
+      "sha256": "6e17c7ea6e41ad5b948465942eb58572835e76b0eec0306a94d2ec1edc38c1b8"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_compact_model_stokes.py",
+      "sha256": "95f234de145581d386a9e551ed5227ddd6bc4316bcfad3c11836c77c4eaac5e1"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-compact-model-stokes.json",
+      "sha256": "529134287bd506b8ddd72a1eda86586146ad8039690130e6d3e52cbe319ea694"
+    }
+  ],
+  "audit_groups": [
+    {
+      "topic": "Supplied compact model",
+      "result": "PASS",
+      "details": "The actual smoothGeneric charts are the dehomogenized complex multiprojective variety. Local holomorphic lifts define a holomorphic bijection from the supplied compact complex manifold; equal dimensions and injectivity give a biholomorphism. All components and n=0 are retained. This is a comparison for supplied data, not a construction."
+    },
+    {
+      "topic": "Finite projection and original mixed integral",
+      "result": "PASS",
+      "details": "A good projection has proper affine fibres, hence finite fibres and is finite. The Jacobian is not identically zero on any component. Removing critical, infinite-chart and supplied chart-null sets is legitimate on source and target. On inverse branches the original lift changes potentials only pluriharmonically. The absolute change-of-variables identity precedes signed summation, with exactly n!(2/pi)^n and no conjugation quotient."
+    },
+    {
+      "topic": "Given resolution bridge",
+      "result": "PASS",
+      "details": "The actual resolution is proper and isomorphic off its explicitly chart-null exceptional inverse image. The nonzero section remains a non-zero-divisor after the flat complex extension. Every component meets the nonexceptional open. Weierstrass preparation and the bounded logarithmic-disc integral give local absolute integrability of the section logarithm; smooth curvature factors preserve it."
+    },
+    {
+      "topic": "Common vertical factors",
+      "result": "PASS",
+      "details": "The unit-off-fibre equation, homogeneous extraction and actual positivity give a nonvanishing holomorphic local representative of each original vertical factor at every complex point. Thus its logarithm is pluriharmonic on the entire compact model, including the boundary. Smooth positivity or off-boundary vanishing alone would not suffice."
+    },
+    {
+      "topic": "Positive corrections and reference choice",
+      "result": "PASS",
+      "details": "For each fixed z>0, original near semipositivity supplies a smooth Kahler representative after changing to one fixed regularized reference. Both original energies converge there, by the independently reviewed preceding packages. The argument does not assume that the initial reference form is positive."
+    },
+    {
+      "topic": "One exact rational-twist polynomial",
+      "result": "PASS",
+      "details": "The original unbounded line, ample line, cutoff and common vertical factors are independent of p,q. Multilinearity gives one degree at most n+1 polynomial before limits. n+2 distinct positive rational values recover all coefficients and the original constant term. No bounded line at p=0 and no bounded polynomial in p/q is assumed."
+    },
+    {
+      "topic": "Signed inequality and normalization",
+      "result": "PASS",
+      "details": "Exact metric variation gives G(z)-F(z)=(n+1)(E_z(psi)-E_z(phi)); q from the logarithmic ratio and q^n from curvature cancel q^(n+1). Energy concavity and psi-phi=U/2 give the signed upper bound by M(z)/2. The retained height bound then yields F(z)>=(n+1)((a-z K_A)d(z)-M(z)/2). Full mixed mass and weighted mixed integrability make d,M polynomials, so their limits preserve the original signed mean and exact (n+1)/2 coefficient."
+    },
+    {
+      "topic": "Scope and computation",
+      "result": "PASS",
+      "details": "This proves the guarded original Stokes comparison and the stated model-integral suppliers under the supplied arithmetic, smoothness, height and regularization data. Arithmetic model existence, full intersection construction and section remainders remain separate. Exact finite checks validate normalization and failure controls, not the general proof or a full Lean build."
+    }
+  ],
+  "source_checks": [
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.CoordinateIdeals",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/CoordinateIdeals.lean",
+      "bytes": 9852,
+      "git_blob_sha1": "bdc32bbbb0967d7279f7ef62262a732f3b9e488b",
+      "sha256": "556761f7e8c3d64089ca034cb949beebaa50a25185abf2ac7fae2f4dc9732b63",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            122,
+            129
+          ],
+          "sha256": "0ad38f337640ddb12f12c82bcc220992976624d7ba509382f2994089a97629f9"
+        },
+        {
+          "lines": [
+            160,
+            162
+          ],
+          "sha256": "1de11534b34b81517845ecd0e0ad63b29821798ffe9ab64ea36b2edef5958c73"
+        },
+        {
+          "lines": [
+            180,
+            225
+          ],
+          "sha256": "84f73a57535af1890fbf003a46979cb6478e14cd6722fc4ada10aca1235c7e41"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.ArithmeticHilbertSamuelLowerBound",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/ArithmeticHilbertSamuelLowerBound.lean",
+      "bytes": 9794,
+      "git_blob_sha1": "1f9b4523c73db041a9fa1333fcadf63a979cb758",
+      "sha256": "e21f4d735b586c6f60be199d03ba17a06f07f0eb50224feb4472c596daaa278d",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            15,
+            35
+          ],
+          "sha256": "352a226d1a09030a06993881db1442ddccd4ba82caa539bc65d5fa83a927758f"
+        },
+        {
+          "lines": [
+            73,
+            91
+          ],
+          "sha256": "928c146ac6e9cccf6562fc5e436c7695a64bc2d4411cf9d3d5416fab0cc43bf7"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.FrameDefinitions.Weights",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/FrameDefinitions/Weights.lean",
+      "bytes": 7980,
+      "git_blob_sha1": "9e69e9c80d57852e839749985aab4e0f3a5f2bb0",
+      "sha256": "539e80ecef5ef08eca3a978917697d6b39ec677ede3b7e4bbf2ccd9cfeb05bfc",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            20,
+            51
+          ],
+          "sha256": "6bb5ad7e89bf810e676f4530405bd02462deeccf825b77331fec137c055c80ab"
+        },
+        {
+          "lines": [
+            95,
+            112
+          ],
+          "sha256": "f9133c20e4d1de2eb0c8db5b4633276ff0f4acdc2ad2cc85a50af5f771ff7064"
+        },
+        {
+          "lines": [
+            126,
+            162
+          ],
+          "sha256": "2df47ce1d9ee8ad79824bd6c39e31603b89a9a2e97b0563eb4a0604ff169d206"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.IsIntersectionFamily",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/IsIntersectionFamily.lean",
+      "bytes": 8329,
+      "git_blob_sha1": "5e0608d52b410b7eef526a2d44bc8ff6fe830d01",
+      "sha256": "22c3d17dcb4b1f1d367e4446979860f23e6a358de5e7fc930ece6b845b21df1a",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            116,
+            145
+          ],
+          "sha256": "37b894060ad7e930777c7d4c031b71db112df6a86ac617ff12f9abc09bf19809"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterRes",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterRes.lean",
+      "bytes": 3322,
+      "git_blob_sha1": "5f4698596348b0b59d604239f72918129a53e80b",
+      "sha256": "b3cdbfdad948217edde620a5956664c276407865674adc69b2d1fc735e1eadec",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            18,
+            78
+          ],
+          "sha256": "1803072f6397257ea39344f0001c1a9cd96c39b18213b990725a44dfd3a2f608"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicSpectrum.Proofs.MetricProofs.MixedIntegralModelFormulaStatement",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/MetricProofs/MixedIntegralModelFormulaStatement.lean",
+      "bytes": 2938,
+      "git_blob_sha1": "17512f42f7ff3608118c2615c084c93321ab48af",
+      "sha256": "7a24ccda695b14ec22774bd097bc96825b2d4acec83b6ae38d7f9391fcbd7e05",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            10,
+            12
+          ],
+          "sha256": "bc4f154beda81503451116a0a015234c2e5b6df5e5a0828502ddba47afe65727"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicSpectrum.Proofs.MetricProofs.MixedIntegralModelFormula",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/MetricProofs/MixedIntegralModelFormula.lean",
+      "bytes": 7467,
+      "git_blob_sha1": "e68e6ccf2fdcf7bad2992215b73c1218d74d0ee4",
+      "sha256": "ac66883fe235fa0941c78feb805a04bc59da72d9647ce51ee8df4dcf25830d22",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            23,
+            73
+          ],
+          "sha256": "67a48f6696eeaee5b9c0e28a73ea7e59d7df11792e29fb4d39bc21d21a86a014"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.PVertFactorSmooth",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/PVertFactorSmooth.lean",
+      "bytes": 15703,
+      "git_blob_sha1": "167836d65fac9f7bcb61b5b9492b235428b9b523",
+      "sha256": "f80ed848a7924bdfa385be22ad4296f49385cee579374b33680e0b1b3480bea4",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            171,
+            239
+          ],
+          "sha256": "6d989a577e474d5253c2782534131da3504fb17ddf7e42aa8b51e765442a26a4"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.PVertFactorPos",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/PVertFactorPos.lean",
+      "bytes": 11059,
+      "git_blob_sha1": "de1b7fde291133f3d3a3855604524d745eb5f45a",
+      "sha256": "7ce86c145c759ffe4744041c634f1985e6019827c20309d7ab486adb6853cf0d",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            173,
+            209
+          ],
+          "sha256": "fd509c0bbeb7d4976c1f7800c4ab16c880f6f8aa6906f56057e53affed5ac6cb"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.ElementarySymmetric.PNbarLeviChartReg",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/ElementarySymmetric/PNbarLeviChartReg.lean",
+      "bytes": 15708,
+      "git_blob_sha1": "1800136ffd3577a232d0db3cfd98d6888e0fc2cc",
+      "sha256": "77b556e4e5fdfa4d895721c7f8d463fe8a8675e00977f710cca4bb8c06800ccb",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            46,
+            57
+          ],
+          "sha256": "e0cf0eeb73b7baf1d6da98c1975d51fb46104d07258d7e8335de183a2d1b66df"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicSpectrum.Proofs.MetricProofs.StokesLimitStatementHolds",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/MetricProofs/StokesLimitStatementHolds.lean",
+      "bytes": 26401,
+      "git_blob_sha1": "32f2d2daffec6ec635634bfe141df9bbd77712a0",
+      "sha256": "b8ced6cdbd5dfdc746c6b455a3fd9eb3f604fe20365f5bd1b88ebabee49a648c",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            194,
+            259
+          ],
+          "sha256": "161082ea153cc75fa17a28b6c3d0407ed885072cb68b2ad04253a479eceebda4"
+        },
+        {
+          "lines": [
+            309,
+            340
+          ],
+          "sha256": "db554f39072a1a7d0ad323d0841e50327eff5d1eaa7a2a4a59e05fd17aeed9e7"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.FrameDefinitions.CpRegPhRegOfNonneg",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/FrameDefinitions/CpRegPhRegOfNonneg.lean",
+      "bytes": 7009,
+      "git_blob_sha1": "153397f148e4e48261ba11fae1cbd291888cde62",
+      "sha256": "1c5861639dd75c124c17cd3d740384b940fba358530d3adff58679006a4ef965",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            35,
+            53
+          ],
+          "sha256": "a40f612ca23b1a23d4794d3c0810f4a9e9c2b544557d507eb84598d0ed59306c"
+        },
+        {
+          "lines": [
+            71,
+            87
+          ],
+          "sha256": "7494bf5739400a64d1f41f362f379993a087455e7c3eb877196e72f0ffc12899"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.StatementsStokesGeo",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/StatementsStokesGeo.lean",
+      "bytes": 6956,
+      "git_blob_sha1": "26b814c2335ac2b01a2cb573ec29c48a5367f459",
+      "sha256": "586897e80c74f9c79e6297b3e515ddd8dffdfe6ad4cc959ddb3250c54f422f8f",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            23,
+            39
+          ],
+          "sha256": "f32dcd7340ec662a7a1904634a7a0104eab0715b4cc5d33a551aeaa7bc5fdf54"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicSpectrum.ParallelStatements.ParallelGeometry.StokesLimitBound",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicSpectrum/ParallelStatements/ParallelGeometry/StokesLimitBound.lean",
+      "bytes": 6020,
+      "git_blob_sha1": "05457ba488941ef1cfe8519f1a82bb6100f057b5",
+      "sha256": "ba8e1fdc9b850d36b7fd804481d00abf309cd34e3d23a832b8c75657c5aca467",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            33,
+            58
+          ],
+          "sha256": "b94caad30e7a20a4a68cbd89f3a9159aa1c25f6e2e470b8c419ef7ab41763b5e"
+        },
+        {
+          "lines": [
+            65,
+            85
+          ],
+          "sha256": "ef28a85c0e3a28c0c7d777627904b63d86bd9963a6deabb7fdb16f2593627281"
+        }
+      ]
+    }
+  ],
+  "primary_checks": [
+    {
+      "path": "build/reference-cache/lebl-tasty-scv-4-4.pdf",
+      "sha256": "729cdb8a00685da581c0a67408b06fa2a375e02317e4937d363c70ca43718f77",
+      "independently_read_pdf_pages": [
+        43,
+        170
+      ],
+      "claims": "Injective equal-dimensional holomorphic map; Weierstrass preparation. Bounded PDF text reads; no new image review claimed."
+    },
+    {
+      "path": "build/reference-cache/stacks-0B1P.html",
+      "sha256": "0436150f0073a11090982e4f90f0c05292745ba0563e7e9125d749f36dded46e",
+      "claims": "Independently read primary proof: proper affine fibres are finite and proper with finite fibres is finite; same argument applies to a higher-dimensional disjoint projection centre."
+    },
+    {
+      "path": "build/reference-cache/bbgz-variational-monge-ampere-2013.pdf",
+      "sha256": "d4135747982e52c1ab31dacc7c2c2442cf5a0f277a5e0c9c845d001b9be99947",
+      "claims": "Proposition2.1 and Lemma2.7; prior independent energy reviews preserve the primary-reference audit."
+    }
+  ],
+  "prior_reviews": [
+    {
+      "path": "certificates/geometry-arithmetic-frontier-signed-boundary-energy-review.json",
+      "sha256": "9d1b4c1217bee467e0526bd97d61a3c35cbdb9a3e64f94fbbb6dfa2ec956f44e"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-bounded-cusp-energy-review.json",
+      "sha256": "a67c7fa5a43b821ee878ac945aed5c3d0503e3d6d0d7db1d8f281fe7c8e6fbf2"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-exact-metric-variation-review.json",
+      "sha256": "979e3665d85fc7be34bc290a5d8aad22ddea65d1a77bdd13c79bbf57d55d6d2a"
+    }
+  ],
+  "checker": {
+    "command": "python3 scripts/check_geometry_arithmetic_frontier_compact_model_stokes.py --offline",
+    "independently_rerun": true,
+    "status": "PASS",
+    "exact_checks": {
+      "polynomial": {
+        "dimensions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "interpolation_cases": 54,
+        "exact_rational_twist_cases": 396,
+        "negative_controls": 10
+      },
+      "signed_components": {
+        "component_and_sign_cases": 108,
+        "all_complex_components_retained": true,
+        "signed_negative_mean_control": true
+      },
+      "unit_curvature": {
+        "holomorphic_unit_examples": 3,
+        "smooth_positive_nonflat_control": true
+      }
+    }
+  },
+  "not_claimed": [
+    "No original arithmetic-data existence theorem is proved.",
+    "No integral is assigned a value before absolute integrability is established.",
+    "No bounded p=0 line or bounded twist polynomial is used.",
+    "No full Lean build or whole RH/GRH node completion."
+  ]
+}
