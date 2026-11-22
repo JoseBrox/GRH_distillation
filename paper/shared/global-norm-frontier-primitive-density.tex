@@ -1,0 +1,47 @@
+\subsection{The sign of the primitive density error}
+\label{sec:primitive-local-density}
+
+For a self-dual unramified local Hermitian lattice of rank $N$, let
+$\delta(A)$ be the primitive residue-frame density of an integral Gram
+matrix $A$ of size $m$ and residue corank $c$, with $m+c\le N$.
+Primitive frame counting, with denominator $q^{2Nm-m^2}$, gives
+\begin{equation}
+ \delta(A)=\prod_{j=d}^{N}(1-\eta^j q^{-j}),
+ \qquad d=N-m-c+1,
+ \label{eq:primitive-density-product}
+\end{equation}
+where $\eta=1$ at a split place and $\eta=-1$ at an inert place.
+This is the reconstructed primitive-frame count \cite{reconstruction}.
+The formula includes singular residue matrices and characteristic two.
+At a designated split level the original tuple
+$(f_a,\varpi^{-1}(f'_a-f_a))_a$ must be retained.
+
+In the split case all factors lie in $(0,1)$, so
+$0\le1-\delta(A)\le q^{-d}/(1-q^{-1})$.
+At an inert place the sharper signed bounds are
+\[
+ \begin{cases}
+  1-q^{-d}\le\delta(A)\le1,&d\text{ even},\\
+  1\le\delta(A)\le1+q^{-d},&d\text{ odd}.
+ \end{cases}
+\]
+To prove them, pair consecutive factors. A pair beginning at an odd
+index is $(1+t)(1-t/q)\ge1$, and one beginning at an even index is
+$(1-t)(1+t/q)\le1$. An unmatched last factor has the same sign of
+deviation as the first. Removing the first factor gives the opposite
+endpoint bound.
+
+For the original even parameters $m=2r+2$ and $N=k+m-1$, put
+$d_0=k-m\ge4$. Then $d=k-c$ and
+$|\delta-1|\le2q^{-d_0}$. Positive errors occur only at inert places
+with odd corank, hence $c\le m-1$ and
+\[
+ 0<\delta\le\exp(q^{-(d_0+1)}),\qquad
+ \log\prod_v\delta_v
+ \le f\,2^{-(d_0+1)}\left(1+\frac2{d_0}\right)
+\]
+over a number field of degree $f$. The product converges absolutely;
+the last bound follows by summing first over places above each rational
+prime, then bounding the tail by an integral. This sharpens the
+finite-place coefficient without supplying the archimedean orbital
+estimates or changing the restrictions of the period maps.

@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "geometry_frontier, independent of global_norm_frontier",
+  "verdict": "PASS",
+  "scope": "New signed/parity refinement of the already proved primitive local density, with exact original source normalization; no new count-supplier closure or global norm bound.",
+  "artifacts": [
+    {
+      "path": "notes/global-norm-frontier-primitive-density.md",
+      "sha256": "88a002b2b3bef5890a1232ca0b90f2504833a38c53a4987ff70eabe32ee5f141"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-primitive-density.tex",
+      "sha256": "a72f45c308f6e71eea21d51d8da4cfb4221e35dbb6ceb320705be800d2199855"
+    },
+    {
+      "path": "scripts/check_global_norm_frontier_primitive_density.py",
+      "sha256": "fe3c56127f9b4cc4358bdaf69542a094b9a5b35f5ed2583e51ac115bde99c11e"
+    },
+    {
+      "path": "certificates/global-norm-frontier-primitive-density.json",
+      "sha256": "aa5630d0a523ce5c15ac94e87c6fd63dd1736ad1148a8983e1c06409b2a2b90c"
+    }
+  ],
+  "audit_groups": [
+    {
+      "topic": "Prior coverage and novelty",
+      "result": "PASS",
+      "details": "The exact primitive count and dyadic lifting already appear in recovered70, md-frame-count and md-lifting, with an explicit application to the source density. The corrected note credits that result. The new shared fragment contains the signed/parity refinement, not a duplicate proof or new whole-node closure."
+    },
+    {
+      "topic": "Original local data",
+      "result": "PASS",
+      "details": "LocE is a reduced quadratic algebra over a characteristic-zero local field with its integral closure and reduced residue algebra; it is unramified quadratic or split. HermSp12-19 supplies finite freeness and nondegeneracy. Self-duality gives a free maximal-order lattice and nondegenerate reduced form. The nonmaximal split order used for other kernels does not replace this order."
+    },
+    {
+      "topic": "Primitive count and normalization",
+      "result": "PASS",
+      "details": "Source density is the range of primitive residue frames satisfying Gram congruences, normalized by q^(2Nm-m^2). Saturation is equivalent to independent residue classes; basis completion lifts every such residue tuple. No Hensel lifting of an exact Gram equation is required. The given split modified tuple is retained."
+    },
+    {
+      "topic": "Finite-field formulas including characteristic two",
+      "result": "PASS",
+      "details": "In the split case fixing X gives q^((N-m)(m-c)) times the independent restriction on ker A for Y. In the inert case trace and norm surjectivity diagonalize the Hermitian form without dividing by two. Additive-character orthogonality gives the stated V_D,Z_D. Quotienting an isotropic i-plane gives q^(2i) lifts of each nonzero null vector; the product and total q exponent are correct."
+    },
+    {
+      "topic": "Signed endpoint estimate",
+      "result": "PASS",
+      "details": "Odd-start adjacent products are at least one and even-start products at most one; removing the first factor bounds the opposite endpoint. Unmatched factors have the same sign as the first. The empty product is one. Hence the error has sign determined by d parity and absolute size at most q^(-d) in the inert case."
+    },
+    {
+      "topic": "Original ranks and quantitative refinement",
+      "result": "PASS",
+      "details": "Params has even k,m and m+3<=k, hence k-m>=4. With m=2r+2 and N=k+m-1, d=k-c. A positive inert error requires c odd and therefore c<=m-1, giving exponent k-m+1. The bound supplies the exact DensAt consumer and the estimate part of FamilyVolumeFourth with constant one; scalar-pair equality is a separate assertion."
+    },
+    {
+      "topic": "Signed global product",
+      "result": "PASS",
+      "details": "Absolute convergence follows from the uniform absolute deviations and s>1. Only the positive inert factors need enter the upper log bound. There are at most f places over each rational prime, and the integer-tail integral gives 2^(-s)(1+2/(s-1)). Determinant support is asserted only when one original global Gram matrix is supplied."
+    },
+    {
+      "topic": "Independent reproducible verification",
+      "result": "PASS",
+      "details": "Independently reran the frozen checker: six pinned sources, 24 finite-field cases comprising 454 Gram matrices, 2464 signed endpoint cases, 7680 original even-rank cases, 20 norm counts, and four rejected controls. In particular dropping primitivity produces split density5/4 and invalidates the split<=1 conclusion. This is supporting exact finite evidence, not a full Lean build."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Formalism.LocalRingCardinality.Params",
+      "sha256": "1de4e5a1230e9d93b5ace3e4f7e112f65e3d5264d75db227476986d179881e17",
+      "git_blob_sha1": "09d1aeec3049821ed6d190c7970cdca9ec5b34cf",
+      "ranges": [
+        [
+          6,
+          46
+        ]
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.FractionFieldToGenericStalkAlgebraMapEq",
+      "sha256": "6279e779358b26282318021b6a1efb212df0428d7c34e5674c8b9fe96712923e",
+      "git_blob_sha1": "fbe47d9bd812f07fccfc020cfb7494633b9e884a",
+      "ranges": [
+        [
+          10,
+          80
+        ]
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.LinQRawRange",
+      "sha256": "7cd2cac72ef1e6015819b1ae99d03d3ecaa9f825b85c25482c600dc7dbd9a2ef",
+      "git_blob_sha1": "f3003e68a3dc673a6a5a2b37408d826a02fc2f93",
+      "ranges": [
+        [
+          1,
+          52
+        ],
+        [
+          105,
+          120
+        ],
+        [
+          165,
+          174
+        ]
+      ]
+    },
+    {
+      "module": "Formalism.LocalToGlobal.SiegelLatticeTheory.SiegelMassRatios.DensExact",
+      "sha256": "027b6bc998adee2085fd58d3c047dd3cf4451163350a2b6543133c1a1dd1999a",
+      "git_blob_sha1": "43ff9d84fc76b86c756e5a90b235984f2b6549b1",
+      "ranges": [
+        [
+          9,
+          39
+        ]
+      ]
+    },
+    {
+      "module": "Formalism.PeriodIntegrals.UnitaryGroupMassFormula.LocalDensityCorank.CongruenceDensity",
+      "sha256": "4b0546efd77c00e995efda32bd4d081d5baa72457040d31be863a11607c6d879",
+      "git_blob_sha1": "7089b91935d553ec30a95eba25390952fa6c248e",
+      "ranges": [
+        [
+          43,
+          52
+        ]
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.LocalBesselAndTopKernel",
+      "sha256": "fb5ce636936e4faa12404fa21c4d53e9140b1677a04fd8a647ecf45a44e89384",
+      "git_blob_sha1": "4a96d6fc92d7471ba7980eb5177138076a778084",
+      "ranges": [
+        [
+          87,
+          96
+        ],
+        [
+          139,
+          167
+        ],
+        [
+          570,
+          581
+        ]
+      ]
+    }
+  ],
+  "limitations": [
+    "No construction of the original global period maps or archimedean operator estimates.",
+    "Scalar-pair density invariance is not proved by this package.",
+    "No full Lean compilation or whole-node change."
+  ]
+}
