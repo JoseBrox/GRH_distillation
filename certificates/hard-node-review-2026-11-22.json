@@ -493,6 +493,52 @@
           "sha256": "70e8a658cf8dd5f2fe823f8c319d37765b73a9c122b70898ddcf00b73076b3dc"
         }
       ]
+    },
+    {
+      "id": "flat-family-boundary-extension",
+      "status": "PASS",
+      "reviewers": [
+        "geometric_frontier",
+        "finite_window_audit",
+        "root"
+      ],
+      "checked": [
+        "The central algebraic line pulls back from the proper quotient via a vertical-divisor argument; a rational isotropic complex period frame exists even for a degenerate or indefinite quotient form.",
+        "Continuation preserves integral primitivity uniformly for all division orders through the separated etale torsion schemes on one fixed connected polydisc.",
+        "The exact linear-first symplectic orientation is retained; bounded exponentials and integer winding produce positive semidefinite logarithmic residues and a holomorphic remainder.",
+        "The common-kernel minimum principle and Schur-complement estimate give both actual tangent metric bounds, including the original pi factor and arbitrary full local eigenframes.",
+        "The Hodge determinant identification uses 2iB and the exact pi^(p-q) squared-norm factor; the half-level theorem supplies single-valued determinant monodromy.",
+        "Both the section and its reciprocal extend in the actual Lie frames; projective modification precedes classical GAGA, followed by normal birational and constant-field descent.",
+        "The global Model/SAB/projectivity, original line and constant-field source fields are explicitly matched. IsCptGen23-25 additionally identifies the generic stalk with the stated function field.",
+        "The assembly retains an invertible integral determinant line, exact pointwise eigenlattices and ramified curvewise same-line identification; it does not infer Hodge eigensummand projectivity from full-module freeness.",
+        "Vertical rigidity proves point-independent finite norms after ramified extension; algebraicity gives finite support. Same-component integral CM maps remain an explicit arithmetic construction requirement.",
+        "Root read the complete note and TeX, checked the principal source model contracts and primary Serre/Wlodarczyk/Chow statements, and reran the checker. Independent review passed the entire mathematical chain and its assembly."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/flat-family-boundary-extension.md",
+          "sha256": "67b2b9e6d84d00743ed54c93091fa622e32bd08b51af77dd0b6d5664791f2520"
+        },
+        {
+          "path": "scripts/check_flat_family_boundary_extension.py",
+          "sha256": "bd25d78c987740ea03ae0b0658cb874ed14d95afb36ee46d03230a1b803c0578"
+        },
+        {
+          "path": "certificates/flat-family-boundary-extension.json",
+          "sha256": "0b27b1a63ed3e8a93adbda77df04fbc84f614ec1d2877c2f6b0f2a8c93e38d3b"
+        }
+      ],
+      "manual_source_checks": [
+        {
+          "path": "lean/src/Development/AutomorphicSpectrum/Definitions/GlobalGeometry/IsCptGen.lean",
+          "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+          "lines": [
+            23,
+            25
+          ],
+          "sha256": "368276f16ea1f2a352e0f18d965391a314af6ea58f0f1622b22446aabc3e77ef"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
@@ -510,7 +556,8 @@
     "python scripts/check_rh_selmer_admissibility.py",
     "python scripts/check_rh_selmer_upper_multiplicity.py",
     "python scripts/check_rh_selmer_core_wrapper.py",
-    "python scripts/check_half_level_determinant.py"
+    "python scripts/check_half_level_determinant.py",
+    "python scripts/check_flat_family_boundary_extension.py"
   ],
   "node_counts": {
     "rh": {
@@ -524,7 +571,7 @@
   },
   "new_existing_nodes_completed": [],
   "limits": [
-    "The actual arithmetic boundary chart/model construction and algebraic flat-family norm comparison remain explicit inputs; compatible filtrations and the CM product/period calculation are now proved under their stated hypotheses.",
+    "The actual arithmetic model, integral determinant and ramified curvewise same-line identification, and same-component integral CM maps remain explicit inputs. The characteristic-zero generator, compatible filtrations, local-norm assembly and CM product/period calculation are proved under their stated hypotheses.",
     "The pinned source checks authenticate bytes and bounded passages, not Lean proofs.",
     "No whole-proof node completion follows from a local refinement."
   ]

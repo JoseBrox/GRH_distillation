@@ -173,10 +173,10 @@ reduction and the prime-to-residue-characteristic inverse isogeny give
 the exact integral product tangent basis. The unit discriminant and
 Kronecker limit formula evaluate the elliptic period mean, with all
 constants retained. Trace-dual Gram projection and the product formula
-then give the signed flat degree. The actual algebraic flat determinant
-family, its map to the chosen compactification and the same-model norm
-comparison remain hypotheses; a good CM object alone does not identify
-that map or establish constancy of its prescribed norm.
+then give the signed flat degree. Applying this value requires the
+actual arithmetic model, its integral determinant line and the CM maps
+with the prescribed tangent lattice on its selected component. A good
+CM object alone does not supply those identifications.
 
 The [direct determinant argument at the prescribed level](half-level-determinant.md)
 supplies determinant monodromy one on the abelian locus without a
@@ -185,8 +185,31 @@ condition gives determinant congruence modulo its ideal; conjugation
 upgrades this to congruence modulo the full integer level. The norm
 lower bound then contradicts the unit-circle upper bound unless the
 determinant is one. A unimodular example at level two shows the threshold
-is sharp. Extension in the actual boundary tangent frames and algebraic
-descent remain separate geometric assertions.
+is sharp.
+
+The [boundary extension and flat-family proof](flat-family-boundary-extension.md)
+now supplies the characteristic-zero generator from the prescribed proper
+semiabelian model. An algebraic line on the central semiabelian fibre
+pulls back from its abelian quotient; even a degenerate or indefinite
+quotient form gives a rational isotropic period frame. Continuation and
+the separated étale torsion schemes preserve its integral primitivity.
+Bounded exponential functions then give positive semidefinite logarithmic
+period residues. The common-kernel argument gives both actual tangent
+metric bounds, with the exact pi normalization. The determinant section
+and its reciprocal extend as units. Projective GAGA, normal descent and
+constant-field descent give the algebraic generator, unique up to a scalar.
+The source's global family, projective model and original line are
+explicitly matched; they are not inferred from the local chart names.
+
+The final assembly combines this generator with the proved finite-place
+rigidity. It retains an invertible prescribed integral determinant line,
+its exact pointwise eigenlattices and the curvewise same-line identification
+at ramified primes. Under these hypotheses the local norms are constant,
+including after ramified extensions, and almost all finite logarithmic
+norms vanish. Actual integral CM maps to the same component then supply
+the local-norm comparison used in the period calculation. The remaining
+geometric inputs are the arithmetic model and these determinant/CM
+identifications, followed by the signed cusp and finite-section estimates.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
