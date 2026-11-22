@@ -427,6 +427,40 @@
           "sha256": "056290e0127007679f2f94e9a61ccae24ad6c61ab9a9ff1e6bbe3e969f4a7b14"
         }
       ]
+    },
+    {
+      "id": "rh-selmer-core-wrapper",
+      "status": "PASS",
+      "reviewers": [
+        "rh_selmer_frontier",
+        "finite_window_audit",
+        "geometric_frontier (orbit corollary)",
+        "root"
+      ],
+      "checked": [
+        "Noetherianity makes the augmented cotangent module finite; scalar saturation removes exactly its coefficient torsion and yields finite free weight lattices.",
+        "The integral equation-list surjection splits over the discrete valuation ring, producing a unimodular Smith change with exactly the same integral span and equation ideal.",
+        "The explicit formal recursion solves the weight-zero equations with corrections of weight zero and ordinary degree at least two, preserving all nonzero-weight linear coefficients.",
+        "When the trace element has zero chart value, adding g times a negative equation gives a nonzero chart value in the formal domain while preserving every original equation-point value.",
+        "Even-half factorization puts every two-sided point on the invertible weight-two locus; normalization to the finite parity slice proves one torus orbit per degree-zero character.",
+        "The finite degree-zero quotient supplies finitely many characters and hence the required finite orbit cover; no independent geometric quotient or covering theorem is assumed.",
+        "The earlier lower and upper comparisons now prove the original abstract finite-length theorem and valuation bound for every finite covering set; actual arithmetic models remain inputs.",
+        "Root read the complete note and TeX, checked the original M1 and LemmaM source hypotheses, and reran the exact checker; finite_window_audit independently checked all eight source contracts."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/rh-selmer-core-wrapper.md",
+          "sha256": "c1245e2496656a104527aaf8dbf81058ef9276d4795c42288ad83612823a69eb"
+        },
+        {
+          "path": "scripts/check_rh_selmer_core_wrapper.py",
+          "sha256": "90ab9355026272cb134d282890dbb22bdc875272d673234a7878557a4008d956"
+        },
+        {
+          "path": "certificates/rh-selmer-core-wrapper.json",
+          "sha256": "24e2912445318f0a6cc04709d10a63fc4ce0d416e8ef094dc593517c2e376b58"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
@@ -442,7 +476,8 @@
     "python scripts/check_common_unipotent_periodization.py",
     "python scripts/check_cm_product_period_calculation.py",
     "python scripts/check_rh_selmer_admissibility.py",
-    "python scripts/check_rh_selmer_upper_multiplicity.py"
+    "python scripts/check_rh_selmer_upper_multiplicity.py",
+    "python scripts/check_rh_selmer_core_wrapper.py"
   ],
   "node_counts": {
     "rh": {

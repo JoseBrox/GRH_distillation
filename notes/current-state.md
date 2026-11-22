@@ -358,10 +358,23 @@ one or two points. Each parity therefore has dimension at most one.
 A squarefree-product filtration accounts exactly for the power of two
 introduced by squaring the odd equations. Together these arguments prove
 the abstract numerical comparison, including an optional factor-two
-improvement at single-point slices. Actual marked-model existence and
-its chart, spanning, finiteness, separation, tangent and orbit-cover
-conditions remain. Formal-chart nonvanishing is a separate hypothesis
-of the numerical core and is not implied by generic point nonvanishing.
+improvement at single-point slices.
+
+The [full abstract length theorem](rh-selmer-core-wrapper.md) now closes
+the preparation steps as well. Saturation gives a finite free cotangent
+lattice, an integral Smith change preserves the original equations, and
+an explicit weighted formal substitution removes the zero-weight chart
+variables. If the trace element has zero chart image, adding an equation
+times a positive-weight function makes that image nonzero while preserving
+every equation-point value. Formal-chart nonvanishing is established for
+this representative, not inferred for the original element from point
+nonvanishing. The reduced slice gives exactly one torus orbit per occurring
+degree-zero character; the finite quotient therefore supplies the finite
+orbit cover. This proves the full abstract length inequality under the
+original model hypotheses. Actual marked-model existence and its initial
+chart, spanning, finite quotient, point separation, tangent bound and
+trace condition remain, together with the representation and integral
+lifting conditions of the Selmer pairing.
 
 The [resultant construction](rh-selmer-resultant.md) supplies the elementary
 integer in the nonresonant orbit estimate with full integrality,
@@ -455,9 +468,10 @@ theorem. Neither changes the existing node totals.
    comparisons and surviving character cases. The elementary resultant
    supplier does not prove the trace-to-Selmer estimate: construct the
    marked models and establish their chart, spanning, finiteness,
-   separation, tangent and orbit-cover conditions. The compatible conormal
-   pairing and the abstract numerical comparison, including admissibility,
-   eventual support and multiplicity, are now proved under those conditions.
+   separation, tangent and trace conditions. The compatible conormal
+   pairing and full abstract length theorem are now proved under those
+   conditions. Its chart normalization and finite orbit cover follow
+   within the abstract argument.
    Assemble the signed
    finite fourth-power tables on arbitrarily late intervals, with all exponent losses
    and constants fixed at each accuracy.
