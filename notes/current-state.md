@@ -44,8 +44,10 @@ and good reduction over all specified valuation rings. Their actual
 `PushInvertible`, degree-one `SplitFibres`, and full `Model.N3` integral
 theta and uniformization clause are proved. The proof retains the original
 primitive line, periods, torsion action and coefficient field. Coordinated
-finite level transitions, the exact Siegel comparison, global domination,
-and numerical arithmetic section and height estimates remain separate.
+finite level transitions, the exact Siegel comparison, and numerical
+arithmetic section and height estimates remain separate. The actual global
+`N6` model now dominates all prescribed local models over the original
+number field, with their cartesian family and primitive-line comparisons.
 
 The reached-section, adapted lattice, full-primary trace and mixed-level
 identities apply to these actual models. They supply the original single

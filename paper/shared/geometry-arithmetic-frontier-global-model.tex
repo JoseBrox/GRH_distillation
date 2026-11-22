@@ -1,0 +1,208 @@
+\section{One arithmetic model dominating all places}
+\label{sec:pel-global-model}
+
+The global model requires coordination over all finite places.
+Finitely many arbitrary local models can be incorporated by a
+projective graph construction.  At the other places we use the
+same arithmetic toroidal construction over one ring of integers
+with finitely many primes inverted.
+
+Fix the invariant projective rational cone data used for the
+individual models, presented as the pullback of auxiliary Siegel
+cone data on the original singleton symplectic lattice.
+Use the corresponding canonical normalization models throughout.
+Their independence of the auxiliary presentation is
+\cite[Theorem 7.14]{global-model-lan-ramified}.
+
+\begin{theorem}[The original global domination clause]
+\label{thm:pel-global-domination}
+The individual models can be chosen with these fixed cone data so
+that they satisfy the source's \texttt{N6}.  Precisely, for every
+original level $l$ with $A=1$ and $\mathrm{GoodAt}(p)$ for every
+prime $p$, and for every original coefficient field $F=c.F$, there
+is a normal projective flat model over $\mathcal O_F$, carrying
+the original semiabelian family and primitive cubical line.  Its
+generic compactification has the original descent to $K_A$, and
+its localization dominates every prescribed local model, with
+the exact original family comparisons in \texttt{Dominates}.
+No extension of $F$ is needed.
+\end{theorem}
+
+\subsection*{Only finitely many exceptional localizations}
+
+Let $O=\mathcal O_F$ and write $X_F$ for the fixed generic
+toroidal compactification, with its original family and line.
+Choose a positive integer $N$ containing the finitely many bad
+primes of the integral PEL datum and its fixed auxiliary level.
+There is a genuine arithmetic toroidal model $Y_U$ over
+$U=\operatorname{Spec}O[1/N]$ whose generic fibre is $X_F$.
+
+Here this statement does not rely on arbitrary spreading of a
+generic compactification.  The set of good primes in
+\cite[Definition 1.4.1.1]{global-model-lan} may be the entire
+cofinite set away from $N$.  Theorems 6.4.1.1 and 7.3.3.4 there
+give the projective auxiliary Siegel toroidal scheme over this
+ring, with its actual semiabelian family.  Normalize the closure
+of the original generic PEL locus in this scheme in its original
+generic function fields, using all its original components.
+This is the same normalization construction as
+\cite[(7.7)--(7.10)]{global-model-lan-ramified}, now over $O[1/N]$.
+Normalization is finite over the excellent arithmetic base.
+The original singleton lattice makes the pulled-back Siegel
+family the required underlying family.  The coefficient action
+and the original symmetric cubical primitive line extend by
+the normal-base extension theorems already used in
+Theorem~\ref{thm:original-integral-pel-model}.
+
+Normalization and schematic closure commute with localization.
+Consequently, for each finite place $v\nmid N$, $(Y_U)_{O_v}$
+is precisely the prescribed canonical local model, with its
+tautological family.  At a place where a different auxiliary
+Siegel presentation was used, Theorem 7.14 identifies the models
+canonically because the induced rational cone data are the same.
+This proves the necessary outside-$N$ agreement; a generic
+isomorphism alone would not prove it.
+
+There are only finitely many places $v\mid N$.  At each one,
+use the actual local model $Y_v/O_v$ already constructed, with
+the same generic compactification $X_F$.
+
+\subsection*{A finite projective graph construction}
+
+Choose a closed projective embedding of $Y_U$ over $O[1/N]$.
+Take the closure of its generic embedded $X_F$ in the same
+projective space over $O$, and normalize.  Denote the result by
+$C_0$.  It is normal, projective and flat over $O$, has generic
+fibre $X_F$, and restricts to $Y_U$ over $U$.
+
+For each exceptional place $v$, choose a closed embedding
+$Y_v\hookrightarrow\mathbb P^{n_v}_{O_v}$.  Let $C_v$ be the
+normalization of the closure of its generic embedded $X_F$ in
+$\mathbb P^{n_v}_O$.  Then
+\[
+                         (C_v)_{O_v}\simeq Y_v.
+\]
+Indeed $Y_v$ is flat and is the schematic closure of its generic
+fibre in $\mathbb P^{n_v}_{O_v}$; it is already normal.
+Localization of the closure and of normalization gives the stated
+equality.  Every normalization here is finite, because the rings
+are of finite type over the excellent Dedekind ring $O$.
+
+Define $Z$ to be the normalization of the closure of the
+diagonal copy of $X_F$ in
+\[
+                         C_0\times_O\prod_{v\mid N} C_v.
+\]
+This is a finite product.  The generic diagonal is closed since
+$X_F$ is proper and separated, and is already normal.
+Thus $Z_F=X_F$.  The scheme $Z$ is normal and projective over
+$O$.  All its irreducible components dominate $\operatorname{Spec}O$,
+so its structure sheaf is torsion-free as an $O$-module and
+$Z\to\operatorname{Spec}O$ is flat.  This argument is applied
+componentwise if $X_F$ is disconnected.
+
+The projections give actual morphisms
+\[
+             Z_U\longrightarrow Y_U,
+             \qquad Z_{O_v}\longrightarrow Y_v\quad(v\mid N),
+\]
+each equal to the identity on the common generic compactification.
+For $v\nmid N$, the first projection gives
+$Z_{O_v}\to(Y_U)_{O_v}=Y_v$.  Hence the base model already
+dominates every local model.  No finiteness of these projection
+morphisms is asserted or required by \texttt{Dominates}.
+
+\subsection*{Descent of the exact family and line}
+
+The finite collection
+\[
+ U\ \amalg\ \coprod_{v\mid N}\operatorname{Spec}O_v
+                      \longrightarrow\operatorname{Spec}O
+\]
+is faithfully flat and quasi-compact.  Two different members
+intersect in $\operatorname{Spec}F$: both
+$O_v\otimes_OO_w=F$ for $v\ne w$ and
+$O[1/N]\otimes_OO_v=F$ for $v\mid N$.
+Pull this cover back to $Z$.
+
+On $Z_U$ and each $Z_{O_v}$, pull back the corresponding actual
+semiabelian family and its rigidified primitive line.
+On every overlap the two pullbacks are canonically the original
+family and line over $X_F$.  The comparisons agree on the
+original moduli interior and extend uniquely across the generic
+boundary by normal-base full faithfulness.  Therefore they
+satisfy the cocycle identity and preserve the coefficient action,
+rigidification, symmetry, adjunction and primitive identities.
+
+For completeness, scheme descent here is effective for a
+specific reason.  The original symmetric cubical line on each
+piece is relatively ample, by the generic ampleness criterion
+already used above.  Let $\pi_i:G_i\to Z_i$ and $\mathscr L_i$
+denote these pieces.  Flat base change gives descent data on the
+quasi-coherent graded algebras
+\[
+                 \mathcal A_i=\bigoplus_{n\geq0}
+                           \pi_{i*}\mathscr L_i^n.
+\]
+They descend to a graded algebra $\mathcal A$ on $Z$.
+Relative ampleness identifies each $G_i$ with its canonical
+open subscheme of $\operatorname{Proj}_{Z_i}\mathcal A_i$.
+These opens agree on overlaps and hence descend to an open
+subscheme $G$ of $\operatorname{Proj}_Z\mathcal A$.
+This constructs the descended scheme directly; arbitrary
+projective descent is not being assumed
+\cite[Tags 02KH, 01VJ and 0D2P]{global-model-stacks}.
+The line, group operations and all specified comparison maps
+then descend by faithfully flat descent.  The resulting family
+is smooth, separated and semiabelian, as can be checked on this
+cover.
+
+The generic fibre of $(Z,G,\mathscr L)$ is the unchanged
+$(X_F,G_F,\mathscr L_F)$.  Its generic abelian locus is
+therefore exactly the original moduli interior, retaining the
+source's \texttt{ab\_gen}.  These data define the actual
+global \texttt{Model}.  Since $A=1$ and the invariant cones
+give the original $K_A$-descent of the generic compactification
+and family, they also give \texttt{Descends} for this global
+model.  Vertical modifications in the graph construction have
+not changed that generic descent.
+
+\subsection*{Every original valuation and every comparison}
+
+It remains to check the source quantifier over valuation subrings
+$W$ of $\mathbb C$.  Let $p$ be nonunit in $W$ and put
+$V=F\cap W$, precisely the source's $c.V\,W$.
+Every integer of $F$ is integral over $\mathbb Z\subset V$;
+since a valuation ring is integrally closed, $O\subset V$.
+The maximal ideal of $V$ contracts to a place $v\mid p$ of $O$.
+Thus $O_v\subset V\subset F$.  A discrete valuation ring has
+no proper overring in its fraction field other than the field:
+an element of negative valuation would invert a power of its
+uniformizer.  The condition that $p$ is nonunit excludes $V=F$.
+Consequently
+\[
+                              c.V\,W=O_v.
+\]
+There are only finitely many such places above each rational
+prime, and all $W$ with the same restriction give this same
+original subring of $F$.
+
+Choose the local systems using the canonical model for this
+place, as above.  The projection $Z_{O_v}\to Y_v$ together
+with the descended cartesian family comparison supplies the
+map $f$ and the two \texttt{SABMap}s in \texttt{Dominates}.
+Their restrictions to the original moduli interior are the
+specified original comparisons, so its universal equalities
+for every test scheme hold as equalities of these maps.
+The base map $O\to c.V\,W$ in the source is forced to be this
+inclusion by its prescribed equality inside $F$.  The generic
+open lift is unique, because localization is a monomorphism.
+This verifies all fields and all valuation quantifiers of
+\texttt{N6}\cite{global-model-source}.
+
+The theorem does not assert that any independently chosen
+infinite family of local blowups has a global dominator.
+Its outside-finitely-many-primes agreement is part of the
+actual construction.  Coordinated finite level transitions,
+the exact Siegel comparison and the numerical height and
+section estimates remain separate obligations.

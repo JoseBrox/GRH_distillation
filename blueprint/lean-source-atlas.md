@@ -173,3 +173,9 @@ excerpts are in `global-norm-frontier-iterated-minors` and
   `TheoremBPrimePointwise` at r=0, with exact density and parameter losses.
 
 No Lean build or completion of the larger proof-map nodes is claimed.
+
+The [global model certificate](../certificates/geometry-arithmetic-frontier-global-model.json)
+authenticates `Model`, `Descends`, `Dominates` and the entire original `N6`
+valuation quantifier. The [independent review](../certificates/geometry-arithmetic-frontier-global-model-review.json)
+checks the arithmetic outside-finitely-many-primes agreement, effective
+scheme descent, and exact source comparison maps.

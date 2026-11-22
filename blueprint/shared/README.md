@@ -144,3 +144,10 @@ The [rank-zero pointwise theorem](../../notes/global-norm-frontier-rank-zero-poi
 proves the entire original pointwise orbital requirement at r=0 with b^4/G,
 using the exact Haar density and compact-type Casimir. Positive-rank partial-head
 kernels and global period estimates are not consequences of this special case.
+
+The [global model theorem](../../notes/geometry-arithmetic-frontier-global-model.md)
+closes the original all-place `N6` clause for these coordinated canonical
+models. One arithmetic model covers the cofinite good-prime base, a finite
+normalized projective graph handles the exceptional places, and the original
+semiabelian family and primitive line descend effectively. No arbitrary
+infinite family of local blowups or coefficient-field enlargement is used.
