@@ -1,0 +1,138 @@
+\subsection{Integral jets of the full type-prime indicator}
+\label{sec:full-type-prime-jets}
+
+We retain the ordinary CM normalization of the theta family,
+its integral invariant directions, and its simultaneous bounded
+measure for prime-to-$p$ translates. The following extension
+also treats translations whose order is divisible by $p$.
+The direction normalization is essential. For the good
+elliptic lattice $L_0=\delta_0\mathcal O_k$, write
+$\omega=\Omega/\iota(\delta_0)$ with $|\Omega|_p=1$.
+The integral invariant directions are the
+$\mathcal O_{\mathbf C_p}$-span of the transported $v$
+with $L_0v\subset\Lambda$: the existing period-scaled
+expansion in $\omega\delta_0v$ is exactly the expansion
+in $\Omega v$. Neither $\omega$ nor $\delta_0$ is assumed
+to be a unit.
+
+\begin{proposition}\label{prop:torsion-dilation-jets}
+Let $F$ be such a normalized theta vector on a self-dual CM
+lattice $\Lambda$, at a split prime $p\ge5$. If $Mt\in\Lambda$,
+$M\ge1$, then, for integral invariant directions $v_j$,
+\[
+ \left|D_{v_1}^{m_1}\cdots D_{v_r}^{m_r}U_tF(0)\right|_p
+                     |M|_p^{m_1+\cdots+m_r}\le1.
+\]
+There is no restriction on the mixed degree or on $v_p(M)$.
+All coefficients use the same fixed complex-to-$p$-adic
+field embedding as the original normalization.
+\end{proposition}
+
+\begin{proof}
+Choose an orthogonal CM sublattice of index prime to $p$.
+Its elliptic coordinates identify $F$ with a section of
+$\mathscr L=\boxtimes_i\mathcal O([h])^{\otimes a_i}$ on a
+product of good ordinary elliptic schemes, where $h$ is the
+chosen nonzero two-torsion point and $p\nmid a_i$.
+The product even theta section gives an integral trivialization
+at the origin, with integral-unit reduced series.
+The previously proved integral formal expansion of $F$ makes
+it an integral global section: a section of negative valuation
+would reduce, after scaling, to a nonzero section on the integral
+special fibre with zero formal germ.
+
+Choose $N$ prime to $p$ killing the sublattice quotient, and
+put $Q=NM$. Then $Qt$ is a lattice point in these coordinates.
+Pull the section back by $[Q]$ and set $v=t/Q$.
+The exact reduced translation lift on
+$\mathscr L_Q=[Q]^*\mathscr L$ is
+\[
+ A_vs(z)=
+ e^{-\pi Q^2H(z,v)-\pi Q^2H(v,v)/2}s(z+v),
+ \qquad A_v(F(Qz))=(U_tF)(Qz).
+\]
+It preserves the generic line bundle, and its $Q^2$-th power
+is a lattice translation, hence a root-of-unity scalar.
+This is the reduced Mumford lift, with both original
+exponential factors retained
+\cite[Lemma~2.7 and Proposition~2.8]{bannai-kobayashi-2007}.
+
+Such a lift is integral even when $p\mid Q$. Indeed, its
+vertical divisor is a multiple of the integral special fibre.
+After removing that divisor the lift is $cB$, where $B$ is an
+integral line-bundle isomorphism. Its finite-order relation
+forces $c$ to be a unit. This argument also shows that the
+exact analytic lift is defined after finite extension: its
+ratio with an algebraic lift has an algebraic positive power.
+
+The pullback of the product even theta section still
+trivializes $\mathscr L_Q$ at the closed origin, since
+$[Q](0)=0\ne h$. Its reduced series is an integral unit by
+the forward substitution $T\mapsto(1+T)^Q-1$.
+Thus $(U_tF)(Q\Omega\log(1+T))$ is integral, where
+$\Omega$ is the unit period of the good invariant differential.
+Remove $N$ by the integral inverse substitution for $[N]$;
+we never invert $[M]$. Iterating
+$(1+T_i)\partial/\partial T_i$ gives the asserted mixed
+derivatives. The original direction lattice has integral
+coordinates in this frame. No factorial is divided out.
+\end{proof}
+
+The original coordinate directions satisfy
+$c_D(\tau)e_{\tau ij}=\sum_\ell M_{\ell,\tau ij}\iota(v_\ell)$
+with $|M_{\ell,\tau ij}|_p\le1$ and $L_0v_\ell\subset\Lambda$.
+Thus these are exactly the directions of the original mixed
+jet. Multiplying them by $\bar\pi$ multiplies a jet of total
+degree $|m|$ by $\bar\pi^{|m|}$.
+
+Now let $p=\pi\bar\pi$ be an original type prime and let
+$g=fab$ be the full theta dimension. The original indicator
+at level $pc'$, with $p\nmid c'$, has the exact finite form
+\[
+ \Theta_{\rm ind}
+ =\frac1{u p^g}
+      \sum_{k\in S_1}\sum_{a\in S_2}
+                    \epsilon_{k,a}U_{t_k+a}F,
+ \qquad p\nmid u,\quad c't_k\in\Lambda,\quad
+ a=\frac{\bar\pi^2}{p}l,\ l\in\Lambda.
+\]
+Here $u=|S_1|$, $|S_2|=p^g$,
+$S_2$ represents
+$(\bar\pi/\pi)\Lambda/\bar\pi\Lambda$, and every
+$\epsilon_{k,a}$ is a root of unity. Splitting the original
+finite quotient into its $p$ and prime-to-$p$ parts gives
+this formula, including its original volume normalization.
+
+If $|\bar\pi|_p=|p|_p$, apply
+Proposition~\ref{prop:torsion-dilation-jets} with $M=pc'$.
+The prescribed directions are multiplied by $\bar\pi$,
+so every summand has integral mixed derivatives in those
+directions. If $|\bar\pi|_p=1$, then $|\pi|_p=|p|_p$ and
+the conjugate of the numerator $\bar\pi^2$ lies in
+$p^2\mathbf Z_p$. These are exactly the formal
+$p$-torsion translations of the existing ordinary measure
+law. They multiply the same measure of $U_{t_k}F$ by a
+unit-valued character and preserve its norm. Any fixed
+prime-to-$p$ integer in that law is removed modulo $p$;
+the resulting lattice shift contributes only a root of unity.
+The law uses $W_a=e^{\pi iQ(a)}U_a$.
+Since $Q$ is rational on rational lattice points, this Weyl
+factor is a root of unity too; the commutator converting
+$W_aU_{t_k}$ to $U_{t_k+a}$ has the same property.
+All mixed derivatives in the original integral directions
+are therefore integral in this branch as well.
+
+The ultrametric inequality and the original denominator give
+\[
+ \boxed{\quad
+   |\operatorname{jet}(pc',x;m)|_p\,
+   |\bar\pi|_p^{|m|}\,|p|_p^{fab}\le1 .
+ \quad}
+\]
+The determinant character is a unit, so this is the bound
+for the original algebraic jet. The actual type-prime family
+uses the unit elliptic ideal and hence satisfies the earlier
+ordinary normalization hypotheses. The bound supplies its
+original local jet-loss constant $1$; the global arithmetic
+model, remaining integral constructions and theta
+nonvanishing are separate requirements.

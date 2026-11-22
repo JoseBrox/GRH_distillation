@@ -1,0 +1,343 @@
+{
+  "status": "pass",
+  "reviewer": "independent selmer_frontier agent",
+  "date": "2026-11-22",
+  "claim": "Independent review of the actual type-prime mixed-jet supplier, including arbitrary torsion denominators in the dilation step.",
+  "artifacts": [
+    {
+      "path": "notes/theta-integral-frontier-type-prime-jets.md",
+      "sha256": "8d8018c6cbeccc7e087910e9526d26fd3a0fd3bc78bf55057817d32193353322"
+    },
+    {
+      "path": "paper/shared/theta-integral-frontier-type-prime-jets.tex",
+      "sha256": "b285a835c4dc6e25afb9574909d92724acb1fdff67c88f1a27443e1bb8b69ee4"
+    },
+    {
+      "path": "scripts/check_theta_integral_frontier_type_prime_jets.py",
+      "sha256": "b3483f65d9c95ac36f72157c3135d848bd538a0220e66996eb19fb0c36c731d9"
+    },
+    {
+      "path": "certificates/theta-integral-frontier-type-prime-jets.json",
+      "sha256": "fba9062813c9f06a10281fa15483d63f8133fecef15db8a3d1a57d8fa901b2b2"
+    }
+  ],
+  "audit_groups": [
+    {
+      "name": "integral_section_from_formal_expansion",
+      "status": "pass",
+      "reason": "The selected finite coefficient minor in the existing saturated-expansion proof is a unit. The argument extends to a product of smooth elliptic curves: the special fibre is integral and its regular local ring injects into its completion. This also controls arbitrary C_p coefficients, without a finite-extension assumption on the section."
+    },
+    {
+      "name": "pullback_when_p_divides_M",
+      "status": "pass",
+      "reason": "For Q=NM with N prime to p and Qt in the frame lattice, [Q] is an integral morphism. The point v=t/Q satisfies Q^2v=Qt in that lattice, and hence belongs to the theta kernel of [Q]^*L. The reduced lift has Q^2-th power equal to a lattice semicharacter scalar. Its vertical divisor is a multiple of the reduced integral special fibre; after its removal, the finite-order relation forces the remaining scalar to be a unit. This uses no inversion of Q, M, or the order of the lift."
+    },
+    {
+      "name": "exact_reduced_lift_and_trivializer",
+      "status": "pass",
+      "reason": "Bannai-Kobayashi Lemma 2.7 and Proposition 2.8 retain both Hermitian exponential terms and give A_v(F(Qz))=(U_tF)(Qz) in the stated reduced convention. The pullback of the product even theta section remains a local trivializer at the closed origin. Its series is an integral unit under the forward [Q] substitution. Only the [N] substitution is inverted, using N in Z_p^times."
+    },
+    {
+      "name": "ordinary_period_and_original_frame",
+      "status": "pass",
+      "reason": "The good invariant period is Omega with absolute value one; the lattice-coordinate period is omega=Omega/iota(delta_0), not assumed a unit. The expansion in omega*iota(delta_0*v) equals that in Omega*iota(v). Original directions are exactly the O_Cp-span of v with L_0 v contained in Lambda. StatementKer48-50 and CardTwoSidedQuotient569-590 identify the frameM columns with c_D(tau)e_(tau,i,j), and their bar-pi multiples with the scaled jet directions."
+    },
+    {
+      "name": "mixed_derivatives_without_factorial_loss",
+      "status": "pass",
+      "reason": "Iterated (1+T_i)d/dT_i preserves integral formal series and evaluates to invariant derivatives, with Omega a unit. Constant direction changes have integral coefficients and preserve the bound by multilinearity. The original jet is the factorial-weighted Taylor coefficient, as authenticated in CardTwoSidedQuotient565-601; no factorial inverse is introduced."
+    },
+    {
+      "name": "original_indicator_and_full_dimension",
+      "status": "pass",
+      "reason": "KernelIndexForm14-84 cancels the two original square-root-volume factors exactly into the inverse two-sided quotient cardinality. CardTwoSidedQuotient393-417 and KerHalf367-473 give the coprime-factor decomposition, p not dividing u, and the full p-primary quotient cardinality p^(f*a*b). LiftKill retains c-prime t_k in the original lattice. All phases are original norm-semicharacter or Heisenberg phases at rational lattice points and are roots of unity."
+    },
+    {
+      "name": "both_split_prime_branches",
+      "status": "pass",
+      "reason": "When |bar-pi|=|p|, the M=pc-prime dilation bound is exactly compensated by the bar-pi scaling of every original direction. When |bar-pi|=1, the numerator kappa=bar-pi^2 has conjugate pi^2 in p^2 Z_p and meets GM14. A fixed auxiliary S prime to p is removed modulo p, producing only a lattice shift. W_a=exp(pi*i*Q(a))U_a differs by a root of unity because Q is rational on rational lattice points; the commutator phase with t_k is likewise a root of unity. The simultaneous measure norm remains at most one."
+    },
+    {
+      "name": "actual_arithmetic_application",
+      "status": "pass",
+      "reason": "HostTie61-62 makes the elliptic ideal the unit ideal; the previous ordinary normalization therefore applies in the actual family. The actual type-prime consumer supplies p>=5, unramified split data, original integral direction frame and a unit determinant character. The ultrametric bound retains exactly |p|^(f*a*b). The original C1=1 consumer retains its independent size, pairing and chain-agreement requirements."
+    }
+  ],
+  "reviewed_existing_human_inputs": [
+    {
+      "path": "paper/sections/recovered/49-ct-section.tex",
+      "reviewed_excerpts": [
+        {
+          "lines": [
+            241,
+            333
+          ],
+          "sha256": "723fe16e1fc99ea5e2b4c30963d9f5820e56fdc70af7372dc81b2e5a3d30b86b"
+        }
+      ]
+    },
+    {
+      "path": "paper/sections/recovered/53-ts-section.tex",
+      "reviewed_excerpts": [
+        {
+          "lines": [
+            255,
+            302
+          ],
+          "sha256": "9f14f11f4a853f9261d75bd00e38f3e18e6332fcc88db6053dc7821a1f0351bc"
+        }
+      ]
+    },
+    {
+      "path": "paper/sections/recovered/55-gm-section.tex",
+      "reviewed_excerpts": [
+        {
+          "lines": [
+            12,
+            90
+          ],
+          "sha256": "ca05298437d5b8e8bb2bd864e87a92d68861a87a7d87cb26020926e36a738fe3"
+        },
+        {
+          "lines": [
+            138,
+            216
+          ],
+          "sha256": "4158811d4876281cecb2a517aa6b3f15af372a09d34a5ece0c3a199919064f96"
+        }
+      ]
+    }
+  ],
+  "pinned_source_pin": {
+    "repository": "jsmorph/rh",
+    "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+  },
+  "pinned_source_records": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/LocalToGlobal/AlgebraicTheory/StatementKer.lean",
+      "bytes": 4165,
+      "git_blob_sha1": "dd027ddfc65899f02bce85d1a042b6f7b3de471c",
+      "sha256": "e6f1c7833418f840e2033cfd76d24d124f8b910e9b0783b8d515b1b7e220a74c",
+      "matches_pinned_blob": true,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            35,
+            68
+          ],
+          "sha256": "86fb1ee18339aaef4c74ea60a3e9ad47c4a5d921f6dbe9464f39ebee2bda88e5"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/LocalToGlobal/AlgebraicTheory/DefsKer.lean",
+      "bytes": 5504,
+      "git_blob_sha1": "8fdb4f8cef4f5b36c3933a338688a8e449b2745d",
+      "sha256": "06dec779129343ac2994ca7575671c58413014de7c1c0439df23bbf16e4de294",
+      "matches_pinned_blob": true,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            19,
+            32
+          ],
+          "sha256": "b365ff2d1d98967a372301b4c89fdcabd86f27db8bb270bf51a4c1dd89fc6d17"
+        },
+        {
+          "lines": [
+            40,
+            75
+          ],
+          "sha256": "9d805f296e4a416eaebf0f882f6a5aa6455fd1aa9a2bd6adeb6cca0f00636f3e"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/LocalToGlobal/AlgebraicTheory/AlgebraicTheoryProofs/CardTwoSidedQuotient.lean",
+      "bytes": 31648,
+      "git_blob_sha1": "4b75e44b4d34a16d956cdb56ea2ce63cea2e5aed",
+      "sha256": "d5a8b194ae7927e304ae5e0442e96d00a23df94b5cffc2088821fdcb42b04893",
+      "matches_pinned_blob": true,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            349,
+            455
+          ],
+          "sha256": "3630441e542c77c7856be8ff13835b6ecc2eb9d361868f7ce662116d09d95afb"
+        },
+        {
+          "lines": [
+            455,
+            565
+          ],
+          "sha256": "eea6d9b7ca87fdcb869532480fa5eb8e3438e11f3604e2e96592a6ab96d20d93"
+        },
+        {
+          "lines": [
+            565,
+            603
+          ],
+          "sha256": "20ec0311c27bff30bc7a115f3fa2ada4039a1605affcb4ec495789680ad39253"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/LocalToGlobal/AlgebraicTheory/AlgebraicTheoryProofs/KernelIndexForm.lean",
+      "bytes": 4266,
+      "git_blob_sha1": "37ea7b7d3a1f3bd9396ad09583a995b066f51534",
+      "sha256": "1290e6fd96a454cea6439fc8263a51bb40ecc9806d32512bed32460ca2e50a68",
+      "matches_pinned_blob": true,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            14,
+            84
+          ],
+          "sha256": "1d4d8a9238ffb2298ebec53fc1bbd2efc6cc45a6d911db0f1a99474d1ee6ae33"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/LocalToGlobal/AlgebraicTheory/AlgebraicTheoryProofs/KerHalf.lean",
+      "bytes": 25116,
+      "git_blob_sha1": "885f570c20a368b5aa172a4dac188d819276bbc7",
+      "sha256": "e4c4ab3eae9042cfffa7e9712ac13384a27721f05154bdf3e34d0de6ef6b1505",
+      "matches_pinned_blob": true,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            57,
+            125
+          ],
+          "sha256": "56115810e59fbd8fa065cbcced4c39a042ba14356fc776b74c0b5b1214b19aba"
+        },
+        {
+          "lines": [
+            367,
+            473
+          ],
+          "sha256": "643e22787903fbc1029bd9e13c9dcf8e541768e6e10c85cc3ccf62afdbde7bf3"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/BlockTheory/ThetaLiftGeometry/BadPrimesPeriodBound.lean",
+      "bytes": 9024,
+      "git_blob_sha1": "72f2d3c6c1c5fc8ce5d3c1992ce3c52e70f84d81",
+      "sha256": "840cc4b5ccc10d768142bf1ecbdb82f9313317cad6696245ebd1cb22ffba3297",
+      "matches_pinned_blob": true,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            61,
+            76
+          ],
+          "sha256": "eeef202f23869be78aacc7177aadbb59287db02837a526e51da2d499c575a0e5"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/ThetaJetIntegralityTypePrimeOfSplitTableBound.lean",
+      "bytes": 19892,
+      "git_blob_sha1": "e0cfba1f0c97247d4e673dc339d207456da8369e",
+      "sha256": "f2ed060fbf04698e52c2a08689518024479c529bd11b2ef049760df9fb1ece47",
+      "matches_pinned_blob": true,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            221,
+            294
+          ],
+          "sha256": "63f906d16620bc67d9d918f3850bbe09164832f4605fdcfbaa83450a5122e8ec"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/JetTableBoundConstantOneOfChainAgreement.lean",
+      "bytes": 1176,
+      "git_blob_sha1": "9fff280d2849d888eca759836ec4d888814346cf",
+      "sha256": "3f5ac0a1183f5537d7918a38f7b2aba36bed44ddce2129ebe5ddf82101d17057",
+      "matches_pinned_blob": true,
+      "inspected_excerpts": [
+        {
+          "lines": [
+            1,
+            17
+          ],
+          "sha256": "3f5ac0a1183f5537d7918a38f7b2aba36bed44ddce2129ebe5ddf82101d17057"
+        }
+      ]
+    }
+  ],
+  "primary_source": {
+    "url": "https://arxiv.org/pdf/math/0610163",
+    "cached_path": "build/reference-cache/bannai-kobayashi-0610163v4.pdf",
+    "sha256": "eea5e9a0d75d4a5b6ab7a801d5a9d861c0d2591bc360bed64cfa121bbe79267e",
+    "reviewed_passages": [
+      {
+        "pdf_pages": [
+          14,
+          14
+        ],
+        "extracted_text_sha256": "e44ac439fcc9ce07154696c4af7da4a31c474f6ed0844e7a6f1e81293881c5fe"
+      },
+      {
+        "pdf_pages": [
+          24,
+          25
+        ],
+        "extracted_text_sha256": "f4f76cbd4ab7d12d6c84e22b83d56da7d7bb12c62cb8dfa90263337e4404156f"
+      },
+      {
+        "pdf_pages": [
+          28,
+          29
+        ],
+        "extracted_text_sha256": "1799e13e22643eb09ce5829a61dfee84467dcaf6eac0c15e4d0f493c03577b19"
+      }
+    ],
+    "scope": "Section 1.3 establishes the reduced-translation conventions. Lemma2.7/Proposition2.8 establish the exact Mumford expression. Proposition2.15/Corollary2.16 supply only the earlier prime-to-p input; they are not used as an arbitrary-torsion theorem."
+  },
+  "independent_checker_run": {
+    "command": "python3 scripts/check_theta_integral_frontier_type_prime_jets.py --offline",
+    "status": "pass",
+    "pinned_source_modules": 8,
+    "mixed_derivative_cases": 42,
+    "branch_cases": 240
+  },
+  "scope_limitations": [
+    "This is a mathematical and source-contract review, not a Lean compilation or complete audit of all transitive source dependencies.",
+    "The established ordinary normalized family and its simultaneous measure law are retained inputs; targeted input passages were reviewed, not re-proved in full.",
+    "The review does not establish the more general arbitrary-elliptic-ideal source interface.",
+    "The global arithmetic model, remaining integral constructions and theta nonvanishing remain open.",
+    "The finite checks verify exact algebra and valuation bookkeeping; they do not by themselves prove line-bundle extension or the measure law."
+  ],
+  "remaining_objections": [],
+  "completed_nodes_unchanged": {
+    "RH": [
+      6,
+      9
+    ],
+    "GRH": [
+      17,
+      31
+    ]
+  }
+}
