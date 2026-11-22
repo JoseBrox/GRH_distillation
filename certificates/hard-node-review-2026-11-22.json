@@ -290,6 +290,40 @@
           "sha256": "3fdb9e9a2255c7d4cad463ac296ac8e142bce0b11e7fe67eaa847690bf94a5e2"
         }
       ]
+    },
+    {
+      "id": "common-unipotent-periodization",
+      "status": "PASS",
+      "reviewers": [
+        "finite_window_audit",
+        "rh_selmer_frontier",
+        "root"
+      ],
+      "checked": [
+        "The displayed condition on z_u is redundant because every z_u lies in the common flag orthogonal complement; the finite-adelic coefficient algebra is retained.",
+        "The exact character ratio and a unitary Heisenberg transvection distinguish distinct vectors, while repeated vectors are not counted as orthogonal characters.",
+        "Archimedean Haar rescaling and Whittaker renormalization leave the normalized period operator unchanged; finite-adelic measures and original arithmetic maps remain fixed.",
+        "The common quotient isometry uses exact coset measures and preserves unitary cocycles if present; the actual scalar seed contract is invariant.",
+        "Absolute folding transfers to the absolute value of a seed and supplies the stated summation domain; no unconditional boundedness of infinite fibre summation is claimed.",
+        "Every rational double-coset contribution remains in the synthesis formula, and the actual opposite-root subgroup proves the covering has infinite degree.",
+        "The one-cell seed isometry is distinguished from the quotient isometry; its Schur, measure and column-metric hypotheses remain explicit.",
+        "The calibrated weighted criterion retains positive normalization, actual source/target cuts and actual total trace, and proves the exact epsilon/(1+epsilon) target trace allowance.",
+        "Root and Selmer reviewer independently checked the note and bounded source definitions; no actual global calibrated weights or period estimate is supplied."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/common-unipotent-periodization.md",
+          "sha256": "364b5e634d5ad6690948713410924d0c4c08c15862d5d7437e41e80af3cc1877"
+        },
+        {
+          "path": "scripts/check_common_unipotent_periodization.py",
+          "sha256": "cdd36f1f700959e0fe41ead747b5b5ba2a84bad39e0adc05154303fbdcd220dd"
+        },
+        {
+          "path": "certificates/common-unipotent-periodization.json",
+          "sha256": "a14da13a33ed7bb2462274278fbbbd8465b10cd061a7c1e74ee2be6b13e50fc3"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
@@ -301,7 +335,8 @@
     "python scripts/check_rh_selmer_euler_determinant.py",
     "python scripts/check_biextension_conjugate_filtration.py",
     "python scripts/check_rh_selmer_mixed_count.py",
-    "python scripts/check_rh_selmer_koszul_comparison.py"
+    "python scripts/check_rh_selmer_koszul_comparison.py",
+    "python scripts/check_common_unipotent_periodization.py"
   ],
   "node_counts": {
     "rh": {

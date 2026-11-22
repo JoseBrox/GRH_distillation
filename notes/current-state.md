@@ -205,6 +205,19 @@ implication, not to the actual theta construction. Keep the smaller
 valid trace or energy penalty and seek the calibrated estimate for the
 actual period maps; the ambient projector does not identify their sum.
 
+The [common-unipotent reduction](common-unipotent-periodization.md)
+identifies every word's unipotent group with one fixed group; the extra
+condition on its distinguished vector is redundant. Its characters may
+still repeat, and its stabilizers, quotient measures and normalizing
+volumes remain distinct. A precise quotient isometry puts the original
+scalar seeds in one Hilbert space, where the normalized synthesis is
+arithmetic periodization with every rational double-coset term retained.
+The actual infinite covering explains why ordinary Fourier orthogonality
+does not supply its global norm. A weighted summation criterion now states
+the needed calibrated bound on the finite seed spaces with their exact
+source and target restrictions. No weights attaining that bound, or
+global period estimate, have yet been supplied.
+
 The actual source restrictions can be carried through positive retained
 mass and then an ambient target comparison, preserving the discarded
 rank times source-spread term. Alternatively, the full trace-compression
