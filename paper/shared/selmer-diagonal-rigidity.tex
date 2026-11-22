@@ -1,0 +1,151 @@
+\subsection{Diagonal arithmetic points and weight-zero rigidity}
+\label{subsec:selmer-diagonal-rigidity}
+
+Return to the arithmetic setting. Let $K$ be an imaginary quadratic
+field, let $\ell$ be an odd prime, and let
+$E=\overline{\mathbf Q}_\ell$, with valuation ring $\mathcal O_E$
+and maximal ideal $\mathfrak m_E$. Write
+\[
+ \Psi=\chi_\ell^e\psi,\qquad e\ge1,\qquad
+ (w_1,w_2,w_3)=(1,0,-1),
+\]
+where $\psi:G_{\mathbf Q}\to E^\times$ has finite order prime to
+$\ell$. The prescribed representation on $G_K$ is
+$\rho_0=\operatorname{diag}(\Psi,1,\Psi^{-1})$.
+
+\begin{lemma}[Integral comparison on finite groups]
+\label{lem:selmer-inertia-averaging}
+Let $R$ be a commutative local ring and let $H$ be a finite group
+whose order is a unit in $R$. If
+$\rho,\rho_0:H\to\mathrm{GL}_n(R)$ have the same residual
+representation, then
+\[
+ M=\frac1{|H|}\sum_{h\in H}\rho_0(h)\rho(h)^{-1}
+\]
+is invertible, reduces to the identity, and satisfies
+$\rho_0(g)M=M\rho(g)$. It commutes with coefficient homomorphisms.
+If both representations are diagonal, they are equal.
+\end{lemma}
+
+\begin{proof}
+Every summand reduces to the identity, so $\det M$ is a unit.
+Replacing $h$ by $gh$ in
+$\rho_0(g)M\rho(g)^{-1}$ proves the intertwining identity.
+The finite formula commutes with coefficient maps. In the diagonal
+case, $M$ is diagonal with unit entries, and the identity gives
+coordinatewise equality.
+\end{proof}
+
+\begin{proposition}[Uniqueness of a diagonal arithmetic point]
+\label{prop:selmer-diagonal-point}
+Assume $\ell\nmid h_K$. Let
+$\rho|_{G_K}=\operatorname{diag}(\alpha_1,\alpha_2,\alpha_3)$
+be a continuous representation with unit entries, residually equal
+to $\rho_0$. Suppose that:
+\begin{enumerate}
+\item for each finite $v\nmid\ell$, $\rho$ kills
+      $\ker(\psi|_{I_v})$;
+\item for each $v\mid\ell$,
+      $\operatorname{tr}\rho|_{I_v}=\Psi+1+\Psi^{-1}$, and
+      some $s_v\in I_v$ satisfies
+      $\overline{\Psi(s_v)}^{\,2}\ne1$.
+\end{enumerate}
+Then $\alpha_i=\Psi^{w_i}$ for every $i$.
+If the two polarized representations of $G_{\mathbf Q}$ also
+have the same prescribed value at complex conjugation, they are equal.
+\end{proposition}
+
+\begin{proof}
+For $v\nmid\ell$, the cyclotomic character is unramified, so
+both inertia representations factor through the same finite image
+of $\psi$. Its order is prime to $\ell$.
+Lemma~\ref{lem:selmer-inertia-averaging} proves coordinatewise
+equality on $I_v$.
+
+For $v\mid\ell$, distinct characters of $I_v$ are linearly
+independent: a shortest nonzero relation, translated by an element
+distinguishing two characters and subtracted from a scalar multiple
+of itself, would give a shorter nonzero relation.
+The trace identity therefore identifies the multisets
+$\{\alpha_1,\alpha_2,\alpha_3\}$ and $\{\Psi,1,\Psi^{-1}\}$
+on $I_v$. Characteristic zero ensures equality of their
+multiplicities. At $s_v$, the three residual values are pairwise
+distinct, so the residual identities force the ordered matching
+$\alpha_i|_{I_v}=\Psi^{w_i}|_{I_v}$.
+
+Thus $\beta_i=\alpha_i\Psi^{-w_i}$ is everywhere unramified
+and takes values in $1+\mathfrak m_E$.
+Hilbert class field reciprocity identifies the maximal unramified
+abelian quotient of $G_K$ with its finite ideal class group
+\cite{milne-cft}. Hence $\beta_i^{h_K}=1$.
+This also holds for $E$-valued characters: their compact,
+totally disconnected images are profinite, and every finite
+quotient factors through the same class group.
+If $u\in1+\mathfrak m_E$ and $u^{h_K}=1$, then
+\[
+ (u-1)(1+u+\cdots+u^{h_K-1})=0.
+\]
+The second factor is a unit, since it reduces to $h_K$.
+Therefore $\beta_i=1$.
+Finally $G_{\mathbf Q}=G_K\sqcup G_Kc$ for complex
+conjugation $c$, so agreement on $G_K$ and at $c$ suffices.
+\end{proof}
+
+For the prescribed family, $\ell\nmid\operatorname{disc}K$,
+$\psi^2|_{I_v}=1$ at $v\mid\ell$, and
+$\ell-1\nmid2e$ give the separating element directly.
+Indeed, inertia has a surjective mod-$\ell$ cyclotomic character
+and $\overline\Psi^{\,2}=\overline\chi_\ell^{\,2e}$ there.
+An ordinary invariant flag with ordered inertia quotients
+$\Psi,1,\Psi^{-1}$ supplies the required trace.
+This local ordinary statement remains an input; prescribed
+Hodge--Tate weights alone are not being used to infer it.
+For a character $\psi$ of order a power of $2$, its order is
+automatically prime to odd $\ell$; the other exclusions remain.
+
+The proposition gives the fixed-point separation of the graded model
+once its point comparison is supplied. More precisely, retain the
+lifting of each equation point, up to the torus action, to a local
+point of the marked representation ring satisfying the proposition's
+residual and local conditions; the identification of
+negative and positive vanishing with upper and lower triangularity;
+and the determination of a model point by its representation.
+A point vanishing on every nonzero weight then lifts to a diagonal
+representation, which the proposition identifies with the base
+representation. Its model point is the augmentation, fixed by the
+torus. The lifting and determination properties, including their
+finiteness and density hypotheses, remain separate requirements.
+
+\begin{proposition}[Weight-zero cocycles]
+\label{prop:selmer-zero-weight-rigidity}
+Let $V$ be a finite-dimensional continuous $E$-representation of
+$G_{\mathbf Q}$ on which $G_K$ acts trivially.
+If a continuous cocycle $\gamma:G_{\mathbf Q}\to V$ vanishes
+on every finite inertia group of $K$, then it is a coboundary,
+with primitive
+\[
+ m=-\frac12\gamma(c),\qquad \gamma(g)=gm-m.
+\]
+If $\gamma(c)=0$, then $\gamma=0$. This statement does not
+require $\ell\nmid h_K$.
+\end{proposition}
+
+\begin{proof}
+On $G_K$ the cocycle is an additive homomorphism. Its coordinates
+factor through the finite class group; the additive group of $E$
+has no nonzero finite subgroup, so the restriction vanishes.
+On the other coset its value is $\gamma(c)$.
+The identity $c^2=1$ gives $c\gamma(c)=-\gamma(c)$, and hence
+$cm-m=\gamma(c)$ for the stated $m$.
+\end{proof}
+
+The weight-zero adjoint space of $\rho_0$ consists of diagonal
+matrices, on which $G_K$ acts trivially. The last proposition
+therefore proves its rigidity once the actual local finite Selmer
+condition is identified with unramified cohomology for the trivial
+character. The passage from ring derivations to those Selmer
+cocycles is also retained. Neither characteristic-zero point
+uniqueness nor this tangent statement removes integral conormal
+torsion. The next subsection supplies negative-weight base rigidity.
+Rigidity at two-sided points and construction of the marked arithmetic
+model remain separate requirements.

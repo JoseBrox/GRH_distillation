@@ -1,0 +1,161 @@
+\paragraph{An explicit scalar bound for the full period sum.}
+Keep the original unitary group, its common unipotent subgroup \(N\),
+the stabilizers \(S_u=N\rtimes H_u\) for a fixed finite set of words, and
+\(\Delta_u=S_u(F)\). Write
+\(Y=G(F)\backslash G(\mathbb A_F)\), with its specified Haar measure.
+Let \(K\subset G(\mathbb A_{F,f})\) be the original compact open
+level, with unitary character \(\chi_K\), and let \(x_u\) be the
+specified finite translate. Set
+\[
+ U_u=N_f\cap x_uKx_u^{-1},\qquad
+ K_{H,u}=H_{u,f}\cap x_uKx_u^{-1},\qquad v_K=\operatorname{vol}(K).
+\]
+Assume the actual finite-level splitting
+\(S_{u,f}\cap x_uKx_u^{-1}=U_u\rtimes K_{H,u}\), finitely many
+representatives \(h_{u,\rho}\) for
+\(H_u(F)\backslash H_{u,f}/K_{H,u}\), and trivial stabilizers
+\(H_u(F)\cap h_{u,\rho}K_{H,u}h_{u,\rho}^{-1}=\{1\}\).
+Retain the original character compatibility. For every column vector,
+assume its period series converges absolutely almost everywhere and
+its sum belongs to \(L^2(Y)\).
+
+Let \(\pi_u\) be the specified irreducible unitary representation of
+the compact group \(H_{u,\infty}\), of dimension \(d_u>0\), and let
+\(W_u\) be its original Whittaker vector. Use compatible measures
+\(dn_u,dh_u,d\nu_u\) on \(N_\infty,H_{u,\infty}\) and
+\(S_{u,\infty}\backslash G_\infty\), so that
+\[
+ W_u(nhg)=\chi_u(n)\pi_u(h)W_u(g),\qquad
+ \int\|W_u\|^2d\nu_u=1,\qquad
+ a_u=\int\|W_u\|d\nu_u<\infty.
+\]
+The original column norm is
+\(\|T\|^2=\sum_\rho\|\ell_{T,\rho}\|^2\), where
+\(\ell_{T,\rho}\in V_u^*\). Its scalar seed satisfies
+\[
+ \Phi_u(T)(g,h_{u,\rho}x_uk)
+   =\chi_K(k)\ell_{T,\rho}(W_u(g)),
+\]
+and is supported on \(G_\infty\times N_fH_{u,f}x_uK\).
+
+\begin{lemma}[The exact seed normalization]
+\label{shared-exact-seed-normalization}
+Put
+\[
+ \Lambda_{u,h}=\{n\in N(F):n_f\in hU_uh^{-1}\},\qquad
+ v_{N,u}=\operatorname{vol}(\Lambda_{u,1}\backslash N_\infty),
+ \qquad v_{H,u}=\operatorname{vol}(H_{u,\infty}).
+\]
+Every \(\Lambda_{u,h}\) has the same positive finite covolume
+\(v_{N,u}\). For \(c_u=v_Kv_{N,u}v_{H,u}/d_u\),
+\[
+ \int_{\Delta_u\backslash G(\mathbb A_F)}|\Phi_u(T)|^2
+       =c_u\|T\|^2.
+\]
+Thus the normalized retained seed mass is its total column rank.
+\end{lemma}
+
+\begin{proof}
+On the Lie algebra of \(N\), conjugation by \(h\in H_u\) acts only
+on the blocks \(B\in\operatorname{Hom}_E(W,X)\), by
+\(B\mapsto Bh^{-1}\). The other blocks are fixed. Its determinant
+over \(F\) is \(\operatorname{Norm}_{E/F}(\det_Eh)^{-r}=1\),
+so it preserves unipotent Haar measure at every place.
+Unipotent strong approximation gives \(N_f=N(F)hU_uh^{-1}\).
+One can see this directly from polynomial logarithm and exponential
+and approximation in the Lie algebra. A product fundamental domain gives
+\[
+ \operatorname{vol}(N(F)\backslash N(\mathbb A_F))
+ =\operatorname{vol}(\Lambda_{u,h}\backslash N_\infty)
+                  \operatorname{vol}(hU_uh^{-1}).
+\]
+The finite factor is independent of \(h\). Compactness of the
+unipotent adelic quotient follows from its additive central filtration.
+
+The finite-level splitting and trivial stabilizers decompose the seed
+support into the cells
+\((\Lambda_{u,h_{u,\rho}}\backslash G_\infty)
+\times h_{u,\rho}x_uK\), with product quotient measure.
+Indeed, reduce the finite Levi component to \(h_{u,\rho}\), remove
+the finite unipotent component by strong approximation, and observe
+that overlap forces the same \(\rho\) and then a trivial rational
+Levi component. The remaining ambiguity is exactly \(\Lambda_{u,h_{u,\rho}}\).
+Disintegration of each cell and compact Schur orthogonality give
+\[
+ \int_H|\ell(\pi_u(h)w)|^2dh_u
+       =\frac{v_{H,u}}{d_u}\|\ell\|^2\|w\|^2.
+\]
+For this last identity, average the rank-one operator of \(w\) under
+the irreducible representation and take its trace. The remaining
+factors are \(v_K,v_{N,u}\) and \(\int\|W_u\|^2=1\).
+\end{proof}
+
+Let \(P_u\) be the full period map,
+\(P_uT(y)=\sum_{\Delta_u\backslash G(F)}\Phi_u(T)(\delta y)\).
+Define the nonnegative arithmetic sum
+\[
+ F(y)=\sum_u a_u\sum_{\delta\in\Delta_u\backslash G(F)}
+ \mathbf1_{N_fH_{u,f}x_uK}((\delta y)_f)
+                  \|W_u((\delta y)_\infty)\|.
+\]
+All rational cosets and the original finite supports occur here.
+Tonelli's theorem and the same cell decomposition give
+\[
+ \int_YF=\sum_u c_u\dim(C_u)a_u^2<\infty.
+\]
+
+\begin{theorem}[A scalar sufficient bound]
+\label{shared-whittaker-scalar-envelope}
+Let \(J_u:C_u^0\hookrightarrow C_u\) and \(\Pi\) be the actual
+isometric source restrictions and orthogonal target projection. Write
+\(H_0=\operatorname{im}\Pi\), \(n=\dim H_0>0\), and
+\[
+ Q_0=\sum_u c_u^{-1}\Pi P_uJ_uJ_u^*P_u^*\Pi,
+ \qquad B_0(y)=\sum_{j=1}^n|e_j(y)|^2,
+\]
+where \((e_j)\) is an orthonormal basis of \(H_0\). For every
+\(\alpha>0\) with finite right side,
+\begin{equation}\label{shared-whittaker-excess}
+ \operatorname{tr}(Q_0-\alpha I)_+
+       \le\int_Y(F-\alpha)_+B_0.
+\end{equation}
+The kernel \(B_0\) is basis-independent and has integral \(n\).
+\end{theorem}
+
+\begin{proof}
+For one word, put
+\(p_u(g)=\mathbf1_{N_fH_{u,f}x_uK}(g_f)\|W_u(g_\infty)\|\).
+The same Schur and cell calculation gives the exact weighted identity
+\[
+ \int_{\Delta_u\backslash G(\mathbb A_F)}
+             \frac{|\Phi_u(T)|^2}{p_u}=c_ua_u\|T\|^2,
+\]
+with zero integrand where the seed vanishes. If \(\int p_u|h|^2\)
+is finite, weighted Cauchy--Schwarz makes the pairing absolutely
+integrable, so Tonelli's theorem justifies one unfolding. It then gives
+\[
+ c_u^{-1}\|P_u^*h\|^2
+ \le a_u\int_{\Delta_u\backslash G(\mathbb A_F)}
+     \mathbf1_{N_fH_{u,f}x_uK}(g_f)\|W_u(g_\infty)\|\,|h(g)|^2dg.
+\]
+Indeed, apply the weighted inequality to \(\langle P_uT,h\rangle\)
+and take the supremum over unit \(T\). The bound is automatic when
+the right side is infinite. No right-level condition on \(h\), global
+\(L^2\) bound for the absolute fold, or orthogonality of words is used.
+Restrictions are contractions. Summing and unfolding the positive
+terms therefore gives \(\langle Q_0h,h\rangle\le\int F|h|^2\)
+for \(h\in H_0\). Apply this inequality on the positive spectral
+subspace of \(Q_0-\alpha I\). Its diagonal kernel lies between zero
+and \(B_0\), which proves the result. Finiteness of the stated right
+side implies \(\int FB_0<\infty\), so all compressed quadratic
+forms are defined; no boundedness of \(F\) is required.
+\end{proof}
+
+At a prescribed \(c>0\), take \(\alpha=c/n\) and divide
+\eqref{shared-whittaker-excess} by \(c\) to bound the target defect
+in Theorem~\ref{shared-prescribed-trace}. The scalar integral still
+requires an arithmetic estimate. The seed identity does not control
+the source deficit after periodization: other rational orbits remain.
+No change has been made to the integral maps, their heights, lattices
+or restrictions, and no global norm estimate or nonvanishing is inferred
+from the seed normalization alone.

@@ -1,0 +1,85 @@
+\paragraph{The prescribed complex multiplication point.}
+The period construction supplies the exact generic point needed for
+the integral comparison; a separate choice of moduli component is
+unnecessary.
+
+\begin{proposition}\label{geo-cm-period-point-descent}
+Let $X$ be a scheme of finite type over a number field $k$, carrying
+an abelian family with coefficient action, its original symmetric
+ample rigidified cubical line, and two prescribed finite level maps.
+Assume that complex points of $X$ are separated by isomorphism classes
+of these labelled objects, preserving both entire level maps.
+Let $z\in X(\mathbf C)$ have a holomorphic period presentation
+$A_z(\mathbf C)=\mathbf C^g/P\Lambda$, where $P$ identifies $\Lambda$
+with a full period lattice, with the prescribed action of
+an imaginary quadratic integer ring $\mathcal O_F$.
+For its two embeddings $\iota_\pm$, set
+\[
+ \Lambda^\varepsilon=
+ \{x\in\Lambda:P(ax)=\iota_\varepsilon(a)P(x)
+                   \text{ for every }a\in\mathcal O_F\}.
+\]
+If $N\Lambda\subset\Lambda^++\Lambda^-$ for some integer $N>0$,
+then the same point $z$ is defined over a number field containing $k$.
+Its original line, coefficient action and finite level maps descend
+with it. The field may contain any prescribed auxiliary number field.
+\end{proposition}
+\begin{proof}
+The two rational pure subspaces have zero intersection, since the
+embeddings of a nonreal element of $F$ differ. The finite-index
+condition therefore gives pure integral vectors $x_1,\ldots,x_g$
+forming an $F$-basis of $\Lambda\otimes\mathbf Q$.
+Their $\mathcal O_F$-span has finite index in $\Lambda$, so the complex
+span of the $P(x_j)$ contains a full period lattice and equals
+$\mathbf C^g$.
+The maps $w\mapsto\exp_{A_z}(wP(x_j))$ give an isogeny from a
+power of the CM elliptic curve with period lattice
+$\iota_+(\mathcal O_F)$ to the actual fibre $A_z$.
+Use the conjugate coefficient action on a negative-pure factor.
+The elliptic curve has algebraic $j$-invariant
+\cite[Corollary~12.9]{cm-milne-mf}, and these holomorphic homomorphisms are algebraic
+\cite[Theorems~2.8--2.9]{cm-milne-av}.
+
+The finite kernel lies in algebraic torsion, so its quotient is defined
+over $\overline{\mathbf Q}$. Homomorphism rigidity descends the
+coefficient action and polarization. The exact symmetric-line descent
+in Proposition~\ref{geo-cm-integral-product} retains the original line:
+make an algebraic reference line symmetric by a square-root adjustment
+in $\operatorname{Pic}^0$; its ratio with the specified line is then in
+$\operatorname{Pic}^0[2]$. Normalize the comparison at zero, preserving
+the cubical structure. The finite level maps have algebraic torsion
+values. Thus the entire labelled object descends to
+$\overline{\mathbf Q}$.
+
+For every $\gamma\in\operatorname{Aut}(\mathbf C/\overline{\mathbf Q})$,
+the objects at $z$ and $z^\gamma$ are labelled-isomorphic. Point
+separation gives $z^\gamma=z$. On a $k$-affine open containing $z$,
+every coordinate is therefore in $\overline{\mathbf Q}$. Indeed, a
+transcendental coordinate $t$ can be included in a transcendence basis;
+the automorphism $t\mapsto t+1$, fixing the other basis elements,
+extends to $\mathbf C$. Finite type puts the coordinates in one number
+field. Enlarge it to contain the desired auxiliary field.
+Homomorphism rigidity and normalization at zero descend the product
+maps and original-line comparison after a further finite extension.
+The finite level maps agree by faithful base change.
+The zero-dimensional case uses the empty elliptic
+product and the same argument.
+\end{proof}
+
+For the fine moduli problem, uniqueness of the classifying map over
+the reduced scheme $\operatorname{Spec}\mathbf C$ gives the stated
+point separation. Let $\Lambda_0$ be the fixed lattice indexing the
+level maps. If the first ideal is $I$ with $I\bar I=(M)$, then
+$M\Lambda_0\subset I\Lambda_0$, and the second map is killed by
+its specified positive integer. Thus both level maps are finite.
+An existential compatible Tate system is not an additional labelled
+tower. The proof compares two existing complex fibres, and therefore
+requires no descent of such a tower.
+
+The exact complex point is unchanged, so its chosen component and
+original line are unchanged. Given the required proper arithmetic
+model, its integral extension is supplied by
+Proposition~\ref{geo-cm-integral-map-extension}.
+The actual arithmetic moduli model and the pointwise period
+presentation remain required; global surjectivity or algebraicity of
+the period map is unnecessary for this point-descent argument.

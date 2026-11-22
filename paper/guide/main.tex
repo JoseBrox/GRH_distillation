@@ -330,39 +330,46 @@ character identity give freeness for the full coefficient module,
 including ramified primes. First-order sections construct the Hodge
 and conjugate filtrations, including in characteristic two. Frobenius makes the
 character determinant torsion and its degree zero on test curves.
-On the same normal proper flat model with connected special fibres,
-an identified integral determinant
-line then has constant order after division by each fibre component's
-multiplicity. This retains the exact integral line identification;
-freeness of the full module alone does not establish it.
+An elementary cokernel identity gives the exact correction between this
+determinant and the tangent eigenlattices, also at ramified primes.
+The correction depends only on the coefficient field and signature.
+It constructs an invertible integral line without requiring the tangent
+eigensheaves themselves to be free. On the same normal proper flat model
+with connected special fibres, its order is constant after division by
+each fibre component's multiplicity.
 
-One CM elliptic curve with its two conjugate actions constructs the
-required product and integral eigenbases. The discriminant and Kronecker
-limit formula evaluate its period mean. Once these CM points and their
-integral lattices are identified on the same component, the constant
-local norms and product formula give the signed conjugate-degree
-difference. The period term cancels when the ranks agree. The remaining
-inputs are the actual arithmetic model, its curvewise determinant and
-CM lattice identifications, the cusp bound and the finite section
-estimate~\cite{reconstruction}.
+One CM elliptic curve constructs the product and integral eigenbases;
+the discriminant and Kronecker limit formula evaluate its period mean.
+The prescribed pure-period decomposition gives an isogeny from this
+product to the actual fibre. Its original line and finite level maps
+descend to the algebraic numbers. Uniqueness in the moduli problem then
+makes the exact chosen point algebraic. Properness and uniqueness of
+semiabelian extensions identify its integral tangent lattice. Constant
+local norms and the product formula give the signed conjugate-degree
+difference; the period term cancels when ranks agree. The remaining
+inputs are the actual arithmetic model, its original family and fibre
+data, the pointwise period presentation, and the cusp and finite section
+bounds~\cite{reconstruction}.
 
 \subsection*{Two trace errors for all the maps}
 
 Let $T_i$ represent the actual normalized maps, with total source rank
-$R>0$ and final target rank $D>0$, in one common target basis. Put
+$R>0$ and final target rank $D>0$, in one common target basis.
+Choose an expected total mass $c>0$ before estimating the maps. Put
 \[
  \mathcal S=\bigoplus_iT_i^*T_i,\qquad
- Q=\sum_iT_iT_i^*,\qquad M=\operatorname{tr}Q>0,
+ Q=\sum_iT_iT_i^*,
 \]
 \[
- \gamma=\frac{\operatorname{tr}((M/R)I_R-\mathcal S)_+}{M},
+ \gamma=\frac{\operatorname{tr}((c/R)I_R-\mathcal S)_+}{c},
  \qquad
- \beta=\frac{\operatorname{tr}(Q-(M/D)I_D)_+}{M}.
+ \beta=\frac{\operatorname{tr}(Q-(c/D)I_D)_+}{c}.
 \]
 For a self-adjoint matrix, the trace of its positive part is the sum
 of its positive eigenvalues. The first error measures source mass
-below its uniform average; the second measures target mass above its
-uniform average. Both allow large errors on sufficiently little mass.
+below the expected average; the second measures target mass above it.
+The actual mass is at least $c(1-\gamma)$, so $\gamma<1$ proves that
+the family is nonzero. The comparison remains valid even for zero maps.
 
 Subtract a stated finite upper bound on each map's height from its source
 slopes. Suppose their mean, counted with multiplicity, is at least $s$,
@@ -374,22 +381,27 @@ every target slope is at least $s-H$, with $U,H\ge0$. Then
 The proof compares corresponding subspaces in the slope filtrations.
 If their normalized dimensions are $p$ and $q$, a trace comparison
 gives $p-\gamma\le q+\beta$. Integrating over $[s-H,s+U]$ proves
-the bound. The detailed theorem also retains a sharper source term
-when the source slopes occupy a shorter range.
+the bound. Choosing $c=\operatorname{tr}Q>0$ recovers normalization by
+the actual mass; a prescribed $c$ avoids having to prove nonvanishing first.
 
 These estimates must hold for the same integral maps and normalizations;
 source and target restrictions must retain their actual lost mass.
 The relevant target quantity is the positive spectral tail above the
-mean eigenvalue. The whole nonidentity contribution is large when there
+chosen target average. The whole nonidentity contribution is large when there
 are many more columns than target dimensions. Moreover, exact integral
-examples satisfy the pairwise bounds with no error term but retain a trace error
+examples, normalized by actual mass, satisfy the pairwise bounds with no error term but retain a trace error
 of order $\sqrt{D/R}$ after every comparison basis is optimized, with
 arithmetic metrics fixed. Basis changes alone cannot make that error of
 order $D/R$. A calibrated bound for the actual period maps is still
 needed; retain the smaller valid trace or squared-energy penalty.
-The maps use one common unipotent group, and an exact periodization
-formula identifies their global sum. Bounding that sum must retain
-all its rational orbits and the original arithmetic normalizations.
+The maps use one common unipotent group. Compact-group orthogonality
+gives the exact seed norm before summing over rational translates.
+Weighted Cauchy--Schwarz bounds the complete sum by one explicit positive
+scalar function. Its excess above $c/D$, integrated against the diagonal
+kernel of the retained target, bounds $c\beta$. With $c=R$, overlaps of
+distinct rational translates, together with the actual mass discarded by
+the target restriction, bound the source deficit. Both scalar costs still
+need arithmetic estimates; keeping their phases can give a sharper bound.
 
 \subsection*{Average the losses before bounding them}
 
@@ -421,30 +433,26 @@ Three groups of input feed the arithmetic comparison.
 \item \textbf{Arithmetic selection and cohomology.}
 Choose the auxiliary characters and levels. Classical duality and finite
 even $K$-groups supply Selmer finiteness, including at the prime two, and
-finite prime support for each fixed datum. For RH, integral character
-projectors combine the remaining sums into a single weighted product
-of orders of specified finite groups, with the actual averaged weights.
-At an odd prime, the stated marked deformation hypotheses give an
-injection of the strict Selmer group into the dual of one finite
-conormal quotient. This module records linearized equations: remove
-ambient torsion first, then impose the equations and retain the torsion
-they create. The injection proves the lower length comparison.
-The numerical factors have short proofs: an exact determinant
-identity gives the upper Euler characteristic, and a generating function
-counts the monomials in the finite free leading quotient. A short
-positivity argument then compares these terms, retaining the torsion
-kernels. Under the model hypotheses, the four small weights give
-the admissibility condition.
-Under the stated point and tangent hypotheses, a finite slice has at
-most two geometric points; a filtration by products of the equations
-then bounds every generic multiplicity. This completes the abstract
-numerical comparison. The prescribed arithmetic models and their
-chart, finiteness, separation and tangent conditions must still be
-established for the growing family~\cite{reconstruction}.
+finite prime support for each fixed datum. For RH, character projectors
+combine the required group orders into one weighted product.
+Under the stated marked-model hypotheses, compatible cocycles embed
+the strict Selmer group in the dual of a finite module of linearized
+equations. An exact determinant identity, a monomial count and a finite
+slice with at most two points then prove the abstract numerical bound,
+with integral torsion retained.
+
+Diagonal point uniqueness follows by averaging on finite inertia groups,
+matching the three characters and using the Hilbert class field.
+Base-point infinitesimal rigidity uses qualitative finiteness, local
+cohomology and the prescribed normalization of the representation.
+The actual model, its local and lifting comparisons, rigidity at the
+other required points, and uniform bounds for the growing family remain
+to be supplied~\cite{reconstruction}.
 \item \textbf{Integral maps and analytic norms.}
-Construct nonzero theta maps with the required finite-prime divisibility
-and trace bounds on the same final spaces. Local positivity and
-conditional identities still need global bounds in growing dimensions.
+Construct integral theta maps with the required finite-prime divisibility
+and trace bounds on the same final spaces. A strict prescribed source
+deficit can prove their aggregate nonvanishing as part of this estimate.
+The global bounds must hold in growing dimensions.
 \item \textbf{Geometric degrees.}
 Identify the lattice with its prescribed metric, prove its lower slope,
 and control the discarded-degree and index terms in~\eqref{cut}.

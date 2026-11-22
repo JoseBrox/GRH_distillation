@@ -28,14 +28,25 @@ filtrations; determinant torsion and a connected-fibre argument then give
 one finite order. Relative trace duality supplies the exact CM eigenframe
 factor. A direct period argument extends the determinant section across
 the complex boundary on the prescribed model. One CM elliptic curve gives
-the product and period value. The actual arithmetic model, integral
-determinant line and same-component CM lattice identifications remain.
+the product and period value. A short cokernel identity constructs the
+exact integral determinant at ramified primes. The prescribed pure-period
+point descends to a number field with its original line and finite level
+maps. Properness and classical uniqueness then extend its exact line and
+tangent lattice integrally. The actual arithmetic model, its original
+global family and fibre data, and the pointwise period presentation remain
+required.
 The Selmer comparison combines a compatible conormal pairing, exact
 graded calculations and a finite slice with at most two points. Its
 abstract numerical estimate is proved under the stated arithmetic-model
-hypotheses, whose construction remains open.
-Two trace errors control the slope comparison and allow
-large errors on sufficiently little mass. These
+hypotheses. Finite inertia averaging and the Hilbert class field supply
+diagonal point uniqueness. Qualitative Selmer finiteness, local cohomology
+and the explicit marking give all nonpositive base-point rigidity. The
+actual local/model comparisons, two-sided rigidity and uniform integral
+bounds remain.
+Two trace errors control the slope comparison at any prescribed positive
+mass. A strict source deficit also proves aggregate nonvanishing. Exact
+seed norms and weighted Cauchy--Schwarz give a scalar sufficient bound for
+the complete period sum, including all rational translates. These
 reductions retain the same actual maps and normalizations; the compatible
 construction, genuine global energy and geometric bounds remain open.
 

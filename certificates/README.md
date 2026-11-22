@@ -1,5 +1,40 @@
 # What these checks establish
 
+## Current difficult-node continuation
+
+The [frontier proof review](frontier-progress-review-2026-11-22.json)
+records independent mathematical reviews and frozen proof/checker identities.
+The [current integration record](frontier-progress-integration-2026-11-22.json)
+separately records the manuscripts, short guide, blueprint updates and
+visual inspection. Reproduce its artifact checks with:
+
+```sh
+python scripts/check_frontier_progress_integration.py
+```
+
+The supplemental exact calculations and authenticated source excerpts are
+reproduced by:
+
+```sh
+python scripts/check_prescribed_trace_calibration.py
+python scripts/check_rh_selmer_diagonal_rigidity.py
+python scripts/check_ramified_hodge_determinant.py
+python scripts/check_whittaker_scalar_envelope.py
+python scripts/check_seed_return_deficit.py
+python scripts/check_cm_integral_map_extension.py
+python scripts/check_rh_selmer_negative_weight_rigidity.py
+python scripts/check_cm_period_point_descent.py
+```
+
+These checks distinguish written proofs, classical inputs, source identity
+and finite examples. They do not build the upstream Lean project or prove
+the remaining arithmetic estimates. The previous hard-node integration and
+its validator retain the earlier manuscript snapshot at
+`c9def8d66b96082ad46a06c161de6b8da800b440`; they are historical records,
+not assertions that today's manuscripts have their former hashes.
+
+## Pinned source files
+
 `source_files.json` records the exact bytes and hashes of the selected source files. Reproduce it with:
 
 ```sh

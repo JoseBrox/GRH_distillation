@@ -17,20 +17,24 @@ supply the same quantities.
 \subsection{A direct trace comparison}
 
 \input{shared/trace-slope}
+\input{shared/prescribed-trace-calibration}
 
 \subsection{The period maps and their restrictions}
 
 For the theta application, write the actual full normalized maps as
-\(T_i=c_i^{-1/2}P_i\), with every \(c_i>0\). Their source Gram
-expansion must concern these same maps and these normalizers.
+\(T_i=c_i^{-1/2}P_i\), with every \(c_i>0\). The exact seed
+normalization below supplies these constants from the original volumes.
+Their source Gram expansion must concern these same maps and normalizers.
 Lemma~\ref{shared-trace-spectrum} permits a direct estimate of its
 positive spectral trace. Restrict to the actual source subspaces and
 use \eqref{shared-trace-source-only} when the first rows already
 represent the arithmetic maps. If an estimate on the fully projected
 operators is preferable, Lemma~\ref{shared-trace-restriction}
 retains the actual target projection and positive retained mass.
-If the spectral estimate is supplied directly on the final maps,
-no ambient restriction loss is added.
+Alternatively, Corollary~\ref{shared-prescribed-restrictions} uses a
+prescribed positive mass and the retained rank fractions, without division
+by unknown surviving mass. A direct estimate on the final maps incurs
+no ambient restriction loss.
 
 The source-only comparison retains the target-rank cost proportional
 to \(U\), without imposing a separate positive lower bound for the
@@ -44,30 +48,37 @@ The remaining input is quantitative: the actual source and target
 trace errors, or a stronger valid energy or period bound, must be
 small enough after multiplication by the same \(U,H\) and the final
 arithmetic weights. The integral maps, common target identification,
-positive normalizers and map-height bounds must also be supplied.
+and original normalizers must be used, and the integral construction
+and map-height bounds still have to be supplied.
 Bounds for an average matrix alone do not estimate the average
 of these nonlinear slope costs.
 
 \subsection{The correct global normalization}
 
-Let $S$ synthesize the full maps, $K=S^*S$, and write $K=I_R+N$
+Let $S$ synthesize the full maps, $K=S^*S$, $M=\operatorname{tr}K$,
+and write $K=I_R+N$
 when the prescribed diagonal identity terms sum to $I_R$.
 If $r=\operatorname{rank}S\le D$, then $N$ has $R-r$ eigenvalues
 equal to $-1$. Its positive eigenvalues have total at least $M-r$.
 Thus the highly redundant family cannot have a small entire
 nonidentity contribution. The target error instead has the exact form
 \[
- \beta=M^{-1}\operatorname{tr}
-             \left(N-(M/D-1)I_R\right)_+.
+ b_c=c^{-1}\operatorname{tr}
+             \left(N-(c/D-1)I_R\right)_+\qquad(c>0).
 \]
-Only the excess above the correct mean-eigenvalue threshold is relevant.
+Only the excess above the chosen target threshold is relevant.
 The identity follows from the common positive spectra of $S^*S$ and $SS^*$.
 
 Pairwise inequalities alone do not make the combined trace error of
 order $D/R$, even after every invertible comparison-basis change.
-Integral examples with height-zero maps attain
+In the actual-mass normalization, integral examples with height-zero maps attain
 $\inf(\gamma+\beta)=\tfrac12\sqrt{D/R}\sqrt{1-D/R}$.
 The GRH manuscript proves this exact obstruction and compares the
 available trace and squared-energy estimates~\cite{rh-companion}.
 A smaller error for the prescribed theta maps requires additional
 information about those maps.
+
+\subsection{A scalar bound for the complete period sum}
+
+\input{shared/whittaker-scalar-envelope}
+\input{shared/seed-return-deficit}

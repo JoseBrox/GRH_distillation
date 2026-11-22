@@ -62,7 +62,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Finite arithmetic tables | Proved: integer interpolation replaces a measurable family of arithmetic choices by finitely many comparisons per interval. |
 | Qualitative cohomological finiteness | Supplied by classical global duality and finite even K-groups, including the prime 2; finite all-prime support follows for each fixed host and twist range. |
 | Smaller congruence budget | Proved reduction to the actual twisted residue primes and their place fractions; RH omits the empty odd-order character branch. |
-| Selected tangent degrees and theta jets | Proved selected-degree comparison and short jet determinant argument; classical Moret--Bailly theta sections and the matrix lemma now supply tangent-slope constant 12 in the prescribed metric. The actual arithmetic model, integral determinant/CM identifications, cusp and finite section estimates remain. |
+| Selected tangent degrees and theta jets | Proved selected-degree comparison and short jet determinant argument; classical Moret--Bailly theta sections and the matrix lemma supply tangent-slope constant 12 in the prescribed metric. The ramified determinant line is constructed from the actual global family and fibre data; that family and its pointwise period data, cusp and finite section estimates remain. Exact CM point descent and proper extension supply the same-component integral maps under their stated moduli hypotheses. |
 | Limits of pairwise norm estimates | Exact examples identify the additional global input needed by trace bounds; the valid refined-energy alternative is retained. |
 | Absolute Siegel without a new geometric hypothesis | Supplied by the classical minimum theorem and elementary line principalization in the prescribed metric; its theta section inputs are now supplied by the same-model Moret--Bailly comparison. |
 | Fourth-power arithmetic tables | Proved: the exact ramp shape permits O(Y^(b/4)) constructions on [Y,Y^b], retaining positive averaging and signed interpolation. The ordinary RH proof has no logarithmic interpolation error. |
@@ -85,7 +85,15 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | The full abstract length theorem | Proved under the original model hypotheses: finite cotangent length, integral Smith normalization, the zero-weight chart cut, a value-preserving representative adjustment and one orbit per degree-zero character complete the numerical comparison. |
 | Determinant monodromy at the existing level | Proved by ideal cancellation, conjugation and a norm bound; no extra level cover or root-of-unity theorem is needed. The actual-frame boundary theorem supplies its geometric continuation under the stated model hypotheses. |
 | Actual boundary extension by elementary period bounds | Proved: a primitive isotropic central period frame and bounded exponentials give exact logarithmic tangent bounds; the determinant and reciprocal extend, and projective GAGA plus normal and field descent give the algebraic generator. |
-| Local norms assembled on one arithmetic model | Proved under the exact integral-line and ramified curvewise identifications: vertical rigidity gives point-independent finite norms, the complex theorem gives the archimedean norms, and same-component integral CM maps give the signed degree. |
+| Local norms assembled on one arithmetic model | Proved from the actual global family and fibre data: the corrected character determinant now constructs the integral line at ramified primes; vertical rigidity gives point-independent finite norms, the complex theorem gives archimedean norms, and moduli point separation and the prescribed pure periods supply the exact CM maps for evaluating the signed degree. The arithmetic model and its pointwise period data remain required. |
+| Trace comparison at a prescribed positive scale | Proved for arbitrary maps, including zero maps, without division by unknown actual or surviving mass. Both trace defects remain; g_c<1 yields aggregate nonvanishing only, and the actual estimates are still required. |
+| Ramified integral determinant from the global biextension | Proved from the actual global semiabelian family, original cubical line, adjunctions and fibre projectivity: first-order sections construct the Hodge bundle, normalized adjunctions are coherent, and the corrected character determinant has the exact integral tangent pullbacks. |
+| Diagonal arithmetic points and weight-zero cocycles | Proved by integral inertia averaging, character independence and the Hilbert class field under the actual local and good-prime conditions. Model lifting/density and the local tangent comparison remain; the negative-weight argument is now supplied by qualitative finiteness, while two-sided rigidity remains separate. |
+| Exact seed mass and a scalar period-envelope bound | Proved with the original finite-level cells, compact representation and Haar measures. The weighted seed identity gives a constant-one scalar bound for the complete target operator; the source deficit and the weighted positive-part estimate remain arithmetic tasks. |
+| Scalar source loss from distinct rational returns | Proved optional bound with sharp constant one, arbitrary source cuts and exact target loss. Together with the scalar envelope it bounds both prescribed defects; uniform smallness remains open, and signed estimates may be sharper. |
+| Exact integral extension of the prescribed CM point | Properness and the classical semiabelian extension theorem supply the integral point and exact group isomorphism. Zero rigidification removes every vertical line twist. Actual model and generic component/original-line identifications remain. |
+| Negative-weight rigidity from qualitative finiteness | Proved for every finite-order twist: a finite strict torsion-Selmer group forces rational negative-weight vanishing, with finite coefficient descent and the exact three adjoint summands retained. The marked equations make base-point coboundaries zero. Actual normalized tangent lifting, local comparison and determination remain at odd primes; neither two-sided rigidity nor a uniform integral bound follows. |
+| Exact algebraicity of the prescribed pure-period CM point | Proved from actual fine-moduli point separation and the finite-index pure-period presentation. A CM elliptic quotient descends the original symmetric rigidified cubical line, coefficient action and both finite level maps; automorphism invariance fixes the same point and component. The actual model and pointwise chart remain required. |
 
 ## Work packages
 
@@ -178,7 +186,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Construct the actual marked arithmetic models and establish their original chart, finite quotient, cotangent spanning, point separation, tangent bound and trace conditions. The compatible conormal pairing and full abstract length theorem are proved; integral Smith normalization, the chart cut, a value-preserving nonzero representative and the finite orbit cover follow within that argument. Retain automorphy, rigidity, integral lifting and exceptional-prime inputs, then bound the weighted Selmer product uniformly.
+**Next concrete task.** Construct the actual marked arithmetic models with their original chart, finite quotient, normalized tangent lifting, local finite-cocycle comparison, tangent determination and trace conditions. The proved nonpositive base-point vanishing and exact marked normalization then supply the required cotangent spanning at odd primes. Apply diagonal fixed-point separation with its actual local point and lifting/density hypotheses. Retain two-sided rigidity, automorphy, integral lifting and exceptional-prime inputs; apply the compatible conormal pairing and full abstract length theorem to bound the weighted Selmer product uniformly.
 
 **Acceptance conditions:**
 
@@ -203,6 +211,10 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The core numerical comparison retains the independent formal-chart nonvanishing hypothesis phi(a) != 0; generic trace nonvanishing alone does not prove it.
 - The original trace element may have zero chart value; adding a weight-zero equation product supplies a nonzero representative with identical values at every equation point. The original element is not silently assumed chart-nonzero.
 - The reduced slice gives one torus orbit per occurring degree-zero character, so the finite quotient supplies the finite cover; it is not an additional arithmetic construction premise.
+- Diagonal-point uniqueness retains the actual local inertia trace, residual separation, class-number exclusion and marked value at complex conjugation; it does not construct the ordinary local deformation condition.
+- Transferring diagonal uniqueness to model fixed-point separation retains point lifting, the finite degree-zero quotient and representation-detection/density properties.
+- Nonpositive base-point cohomological rigidity and the exact marked normalization are proved. The actual normalized deformation lifting, local finite-cocycle comparison and tangent determination remain; a zero cohomology class alone is not a zero framed tangent.
+- Negative rational finite-Selmer vanishing uses only qualitative strict torsion finiteness and covers every finite-order twist, including ell-divisible order and ell=2. The existing graded-model comparison still assumes odd ell; two-sided rigidity and uniform integral torsion bounds remain separate.
 
 <a id="w05"></a>
 ### W05: Classical Galois representations with the required local conditions
@@ -229,7 +241,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 <a id="w06"></a>
 ### W06: Integral theta maps and divisibility
 
-**Required result.** Construct the actual nonzero maps on specified integral lattices and prove selected-prime and auxiliary-level divisibility for every test vector.
+**Required result.** Construct the actual maps on specified integral lattices and prove selected-prime and auxiliary-level divisibility for every test vector. Establish the nonvanishing required by the chosen consumer; the prescribed-trace route allows individual zero maps and supplies aggregate nonvanishing only from a strict source-deficit bound.
 
 **Quantifiers and uniformity.** Coefficient fields, ordinary periods, lattice denominators and chosen primes are fixed in the order used by the same analytic maps.
 
@@ -237,13 +249,15 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, r60. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Prove seed nonvanishing and sharp level-prime divisibility; retain all clearing factors and period normalizations.
+**Next concrete task.** Construct the actual integral period maps and prove sharp level-prime divisibility with every clearing factor retained. For the prescribed-scale comparison, estimate the source deficit g_c at a known c>0; g_c<1 then proves at least one map nonzero. Any consumer requiring each individual map to be nonzero still needs that stronger statement.
 
 **Acceptance conditions:**
 
 - The map whose divisibility is proved is the map whose norm is estimated
 - No dropped denominator
-- Nonzero map and actual integral image, not a formal surrogate
+- The divisibility estimate concerns the actual integral image; a formal surrogate is insufficient.
+- The prescribed c>0 is fixed independently of the evaluated maps and permits zero maps; it is not their unknown total squared norm.
+- The inequality g_c<1 proves aggregate nonvanishing only. Exact seed mass before periodization does not prove any folded map is nonzero.
 
 <a id="w07"></a>
 ### W07: Archimedean restriction and local residue positivity
@@ -268,7 +282,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 <a id="w08"></a>
 ### W08: Global theta matching, orbital energy and norms
 
-**Required result.** Prove normalized global theta identities, exact positive word normalizers, and the required source and target trace estimates for the same integral maps; retain the actual common-basis, restriction and weighted-average hypotheses. Squared-energy estimates remain sufficient alternatives.
+**Required result.** Prove the normalized global theta identities and the required source and target trace estimates for the same integral maps. The exact unperiodized seed normalizers and a scalar sufficient target bound are supplied under the actual finite-level and metric hypotheses; their arithmetic smallness remains to be proved. Squared-energy estimates remain alternatives.
 
 **Quantifiers and uniformity.** Common Haar measures, local normalizations, Hecke L-values and rank thresholds; estimates uniform in the scale for each accuracy.
 
@@ -276,12 +290,12 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Use the proved common unipotent group and exact periodization on the actual invariant seed spaces. Construct calibrated weights for its full fibre sum, or bound the same signed orbital operator directly, retaining every rational orbit, the original volumes, source restrictions and arithmetic heights. The source trace deficit remains separate; retain the smaller valid trace or energy penalty.
+**Next concrete task.** Bound the scalar return overlap (or a sharper signed source estimate) and the weighted scalar target excess for the actual integral maps, at prescribed mass c=R0 on the retained sources. Retain the exact target-loss term, every rational coset, original finite-level splitting, compact types, volumes, restrictions and heights. The proved seed and scalar inequalities do not establish arithmetic smallness. A strict source bound proves aggregate nonvanishing; individual nonvanishing needs its own supplier.
 
 **Acceptance conditions:**
 
 - Local positivity alone does not prove the global identity
-- Unique nonzero scalar with the exact normalization
+- Every invoked global theta identity retains its exact scalar and map normalization; a prescribed-c trace estimate is a separate sufficient comparison, not a proof of that identity.
 - All required absolute convergence or justified iterated pairings
 - No omitted rank or level dependence
 - Total kernel mass does not control its centered variance
@@ -294,14 +308,18 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The trace theorem permits a positive error of small trace even when its operator norm and squared-energy error are large
 - A source-Gram spectral-tail bound supplies only the target error; source trace deficit and arithmetic slope hypotheses remain separate
 - The source orbital interface describes full period maps; their actual restrictions must be carried through the proved comparison or separately identified
-- The ambient target comparison can retain the sharper discarded-rank times source-spread cost; source-only restriction needs its actual positive retained mass
-- Calibrate the full Gram matrix by its mean eigenvalue M/D; small absolute norm of its whole nonidentity contribution is incompatible with the actual redundancy.
+- The older actual-mass compression formulas retain their positive surviving-mass hypotheses. The prescribed-scale formulas instead use known dimension fractions and no division by unknown surviving mass.
+- Use M/D for the mean-centered route, or c/D together with both defects for the prescribed-scale route. Small absolute norm of the whole nonidentity contribution remains incompatible with actual redundancy.
 - An ambient automorphic projector is not automatically the weighted sum of the chosen period maps.
 - Integral coordinate embeddings attain the asymptotically sharp square-root trace loss under every invertible comparison basis, with fixed zero-height arithmetic maps.
 - Changing Euclidean comparison identifications is distinguished from transporting physical Hermitian Gram matrices; both source deficit and target excess must be controlled.
 - The unipotent group is common, but stabilizers and their volumes still vary; Haar changes preserve each normalized arithmetic map.
-- The quotient-space isometry does not establish the seed metric identity, and unrestricted fibre summation is unbounded when the coset set is infinite.
-- The calibrated weighted Cauchy-Schwarz criterion is proved; actual weights and the required arithmetic calibration are not supplied by character orthogonality.
+- The seed metric identity is now proved from the original compact irreducible type and finite column cells: c_u=v_K v_N v_H/d_u. It is an identity before arithmetic folding; unrestricted fibre summation remains unbounded for infinitely many cosets.
+- The weight p_u=||W_u|| gives an explicit scalar arithmetic envelope with constant one. The weighted seed identity justifies unfolding under the actual absolute-summability and L2-period conditions; no global L2 bound for the absolute fold is required.
+- The scalar envelope bounds only the target excess. Its finite total mass does not bound the required positive-part integral against the target diagonal kernel.
+- The word family is finite; the actual finite-level splitting, trivial column stabilizers, compact irreducibility and prescribed Riesz column norm are retained.
+- Zero maps have g_c=1 and b_c=0. A strict source deficit g_c<1 gives aggregate nonvanishing; neither the choice of c nor the target bound alone supplies it.
+- The scalar return bound keeps all distinct rational cosets and both actual restrictions; absolute overlaps can lose cancellation, so it is optional and has no asserted uniform smallness.
 
 <a id="w09"></a>
 ### W09: Automorphic spectrum, finite-group characters and counting
@@ -333,7 +351,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Construct the prescribed arithmetic model and identify its original fibre line, coefficient data and invertible integral determinant line, including the ramified curvewise comparison. Supply the integral CM maps to the selected component with the same tangent lattices. The characteristic-zero generator, both filtrations, coefficient freeness, determinant torsion, vertical rigidity, local-norm assembly and exact CM product/period value are proved under those model identifications. Then establish the signed cusp mean and independent finite section-rank/surplus bound.
+**Next concrete task.** Construct the actual proper arithmetic model with its global semiabelian family, original rigidified cubical line, coefficient adjunctions and required geometric fibre data. Retain moduli point separation and the prescribed pointwise pure-period presentations. These data now supply the integral determinant, the exact algebraic CM point on its chosen component, its original line and both finite level maps; properness and semiabelian extension give the integral map and tangent lattice. Then prove the signed cusp mean and independent finite section-rank/surplus estimate.
 
 **Acceptance conditions:**
 
@@ -378,8 +396,12 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The good CM object is not itself an identification with the chosen compactification, nor a proof of the prescribed local-norm constancy.
 - The direct period proof constructs the characteristic-zero generator on the actual eigenline: both the section and its reciprocal extend, so no boundary divisor is introduced.
 - The source Model has a global semiabelian family and original cubical line on a normal projective model; these are explicit construction inputs, not consequences of the names of local charts.
-- The ramified assembly assumes the exact invertible integral determinant line and its curvewise identification; projectivity of the full coefficient module does not automatically imply projectivity of Hodge tangent eigensummands.
-- The local-norm comparison follows once the same-component integral CM maps and exact determinant identifications are supplied; good reduction of an abstract CM object alone does not provide those maps.
+- The ramified line is constructed as the character determinant of the actual Hodge bundle tensored with the signature correction ideal. It has the exact tangent-eigenlattice pullback after finite ramified extension; tangent eigensummands need not be coefficient-projective.
+- The local-norm comparison uses the exact determinant identifications on the actual global model. Moduli point separation and the prescribed pure periods now supply the same-component CM points and their integral maps; good reduction of an unrelated abstract CM object alone does not identify them.
+- Pointed sections of the original global biextension construct the integral Hodge extension. Generic properness and flatness give unique coherent adjunction normalization; curvewise charts alone do not supply this global family.
+- Geometric-fibre projectivity and the generic regular coefficient rank imply coefficient local freeness through characteristic-polynomial multiplicities and local basis lifting; all Artin lengths at ramified primes are retained.
+- The integral CM map and exact tangent comparison follow from a supplied generic point with its original rigidified line by properness and semiabelian full faithfulness; an isogeny or polarization class does not supply that generic identification.
+- The finite-index pure-period decomposition and actual moduli point separation imply algebraicity of the same chosen point with its original line and both entire finite level maps. No separate component choice or descent of an existential infinite Tate tower is required; the arithmetic model and pointwise period presentation remain hypotheses.
 
 <a id="w11"></a>
 ### W11: Weighted slope comparison and the complete average budget
@@ -420,9 +442,9 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W06/W08 first: construct the nonzero integral maps and estimate their calibrated full periodization operator, keeping actual divisibility, restrictions, normalizers and arithmetic heights
-1. W04: construct marked arithmetic models with the original chart, finite quotient, spanning, separation, tangent and trace conditions, then apply the full abstract Selmer length theorem uniformly
-1. W10: identify the actual arithmetic model, integral determinant at ramified primes and same-component integral CM maps; use the proved determinant chain, then establish the signed cusp and finite section estimates
+1. W06/W08 first: construct the actual integral maps and prove their divisibility, then estimate the source deficit g_c and the explicit scalar target envelope at a prescribed c>0; strict g_c<1 supplies aggregate nonvanishing only
+1. W04: construct the marked models, chart and finite quotient; supply actual normalized tangent lifting, local finite-cocycle comparison and determination to apply the proved nonpositive rigidity at odd primes, then establish two-sided rigidity and trace conditions and use the full abstract length theorem uniformly
+1. W10: construct the actual arithmetic family, original biextension, fibre data and prescribed pointwise period presentation; exact CM point descent and integral extension now follow from moduli separation, while signed cusp and finite section estimates remain
 1. RH and GRH: assemble the same signed fourth-power tables and meet the positive-part criterion at exponents tending to one half
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.

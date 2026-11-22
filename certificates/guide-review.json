@@ -1,22 +1,21 @@
 {
   "schema_version": 1,
   "date": "2026-11-22",
-  "scope": "Current eight-page organizational guide: complete short RH criterion preserved; hard algebraic and geometric reductions integrated with the remaining arithmetic hypotheses explicit.",
+  "scope": "Current eight-page organizational guide with the exact CM-point supplier, nonpositive base-point rigidity, prescribed trace scale and optional scalar bounds; actual arithmetic construction and uniform estimates remain open.",
   "source": {
     "path": "paper/guide/main.tex",
-    "sha256": "4be207bd0fb9c636284065d2f2223bd2144c80fbf0303d8f4b2848c73e5ec291",
-    "bytes": 27041
+    "sha256": "a943eec17c685e46222d6784e7c113c04ba402fae3b87582c395039d1b46427c",
+    "bytes": 27620
   },
   "pdf": {
     "path": "paper/guide/main.pdf",
-    "sha256": "037f1eed195a4f3d05912235f4481fe04d63e7e8fac79de0016f20463ff4abc2",
-    "bytes": 93730,
-    "pages": 8
+    "sha256": "fd86fd63387be51407d63801384febc02ccd6903732a42ae2fe0d7d9777c02e1",
+    "bytes": 94607
   },
   "readme": {
     "path": "paper/guide/README.md",
-    "sha256": "1cc6e250a0abbf2ef89bd883db47e9572b4358b6cef20e53913bed15b75001c5",
-    "bytes": 2993
+    "sha256": "5dff4e29e4a08c79ac8f4dd774fb95ad61727a2deaf4bb5aef9a3037920de31c",
+    "bytes": 3742
   },
   "page_limit": 12,
   "typography": {
@@ -26,43 +25,33 @@
     "formatting_reduced_to_fit": false
   },
   "previous_review": {
-    "commit": "8a76dcbac8ae0ea879176df329ea720c5f8da1fa",
-    "path": "certificates/guide-review.json",
-    "scope": "The prior eight-page review and its independent analytic checks remain preserved at the turn baseline."
+    "commit": "c9def8d66b96082ad46a06c161de6b8da800b440",
+    "path": "certificates/guide-review.json"
   },
   "analytic_proof_preservation": {
     "status": "PASS",
-    "baseline_commit": "8a76dcbac8ae0ea879176df329ea720c5f8da1fa",
-    "scope": "The complete short RH analytic section is byte-identical to the turn baseline.",
+    "baseline_commit": "c9def8d66b96082ad46a06c161de6b8da800b440",
+    "scope": "The complete short RH analytic section is byte-identical to the continuation baseline.",
     "bytes": 2958,
     "block_sha256": "d613c47bc1cceb431054283547e9a5942decea479a7fe7bff2f0c8a2f364b1d1"
   },
   "independent_mathematical_reviews": [
     {
+      "reviewer": "finite_window_audit",
+      "status": "PASS",
+      "scope": "Current guide geometry, Selmer and trace summaries, main README and shared blueprint. Verified the complete analytic proof block unchanged. Rechecked the corrected c=R calibration and target-loss term."
+    },
+    {
       "reviewer": "rh_selmer_frontier",
       "status": "PASS",
-      "scope": "Guide, README and both arithmetic frontiers distinguish the completed abstract length theorem from actual marked-model construction and uniform weighted Selmer estimates."
-    },
-    {
-      "reviewer": "geometric_frontier",
-      "status": "PASS after explicit connected-fibre wording",
-      "scope": "Generic determinant extension, exact integral-line identification including ramified primes, constant finite order and same-component integral CM maps; no implication of individual integral eigenbundle freeness from full coefficient freeness."
-    },
-    {
-      "reviewer": "finite_window_audit",
-      "status": "PASS after stated corrections",
-      "scope": "Guide and README assumptions; all 16 proof packages and all 48 frozen artifact hashes; stale resumption directions corrected."
+      "scope": "Arithmetic integration distinguishes nonpositive cohomology and marking from actual model lifting, local comparison, determination, two-sided rigidity and uniform integral bounds."
     }
   ],
-  "mathematical_review_record": {
-    "path": "certificates/hard-node-review-2026-11-22.json",
-    "sha256": "8cf11faa726afd6cd2b6f61b4aa48d3129b5d7034f830623382e6c54ab0ef08c",
-    "bytes": 34866
-  },
+  "mathematical_review_record": "certificates/frontier-progress-review-2026-11-22.json",
   "corrections": [
-    "Connected special fibres stated explicitly for constant normalized finite order.",
-    "The final determinant assembly explicitly refers to the characteristic-zero family theorem.",
-    "Completed conditional reductions distinguished from the remaining actual arithmetic-model and lattice identifications."
+    "At arbitrary prescribed c, target excess has threshold c/D. The return-overlap sufficient source bound is stated at c=R and retains the mass lost through the target restriction.",
+    "The original-line CM-point identification follows from the proved point-descent implication; actual moduli separation and pointwise period data remain required.",
+    "Uniform Selmer finiteness and model comparisons are not inferred from qualitative base-point rigidity."
   ],
   "visual_review": {
     "reviewer": "root",
@@ -77,51 +66,59 @@
       7,
       8
     ],
-    "method": "All eight final PDF pages rendered with PyMuPDF at height 1400 pixels and inspected in two-page sheets.",
+    "method": "All final pages rendered at height 1400 pixels and inspected in two-page sheets.",
     "render_hashes": [
       {
         "page": 1,
-        "path": "build/review-hard-nodes/final/guide-001.png",
-        "sha256": "42fee9a150ad1679353c6f5e674cf83bfc1e4e5313a930dc6e2ffe1622dfcea9"
+        "path": "build/review-frontier/final/guide-001.png",
+        "sha256": "42fee9a150ad1679353c6f5e674cf83bfc1e4e5313a930dc6e2ffe1622dfcea9",
+        "bytes": 162167
       },
       {
         "page": 2,
-        "path": "build/review-hard-nodes/final/guide-002.png",
-        "sha256": "f8578a51957b6dfbdbbd486b3027e6d8eb81b674442e16449b7ad50c8602e2b6"
+        "path": "build/review-frontier/final/guide-002.png",
+        "sha256": "f8578a51957b6dfbdbbd486b3027e6d8eb81b674442e16449b7ad50c8602e2b6",
+        "bytes": 184709
       },
       {
         "page": 3,
-        "path": "build/review-hard-nodes/final/guide-003.png",
-        "sha256": "53584aaabc235dafac92676fa66499023ac24f2a4b1096e9708c32d30b3221e0"
+        "path": "build/review-frontier/final/guide-003.png",
+        "sha256": "53584aaabc235dafac92676fa66499023ac24f2a4b1096e9708c32d30b3221e0",
+        "bytes": 211107
       },
       {
         "page": 4,
-        "path": "build/review-hard-nodes/final/guide-004.png",
-        "sha256": "03a22baebfe884baf08aa049eea39836454fdc599604626ec82b968b1bafe59d"
+        "path": "build/review-frontier/final/guide-004.png",
+        "sha256": "03a22baebfe884baf08aa049eea39836454fdc599604626ec82b968b1bafe59d",
+        "bytes": 232642
       },
       {
         "page": 5,
-        "path": "build/review-hard-nodes/final/guide-005.png",
-        "sha256": "18ca6c661e09d3537394c7eaff0cf504dc93cadba175d4d34aeb201112ee6a61"
+        "path": "build/review-frontier/final/guide-005.png",
+        "sha256": "1562883dd06c67ec3fe74e960ee78284ae0c006b346ca2623726c3235991a81d",
+        "bytes": 273409
       },
       {
         "page": 6,
-        "path": "build/review-hard-nodes/final/guide-006.png",
-        "sha256": "ba6690d3cec339734cb6e5a56dd863b6767aab58ae621b2a59665b8e54f5fb7c"
+        "path": "build/review-frontier/final/guide-006.png",
+        "sha256": "8160131e74fa3c3c02e48acb63fc6be30edc51bfa389797afd00b9aead057961",
+        "bytes": 250146
       },
       {
         "page": 7,
-        "path": "build/review-hard-nodes/final/guide-007.png",
-        "sha256": "4263882adf6741318d27624bae87e3273f5776b4b798af97c200c2c8bd63d3d1"
+        "path": "build/review-frontier/final/guide-007.png",
+        "sha256": "02d464e2ae2460549aefd91e795fc5ea90014032f45cdd8c7034e50046a03fac",
+        "bytes": 251748
       },
       {
         "page": 8,
-        "path": "build/review-hard-nodes/final/guide-008.png",
-        "sha256": "11926fecd885f497950bc6138591f5890f45161e4240b92c485f0bc32989ab0c"
+        "path": "build/review-frontier/final/guide-008.png",
+        "sha256": "a4eefcdd11382390348c5acbb44fdee625fe889003660788864f56dd7fb8d65d",
+        "bytes": 247807
       }
     ],
-    "findings": "Readable equations, references and paragraphs; no clipping or overlapping content. Eight pages retained without reducing type size or margins."
+    "findings": "Readable equations, references and paragraphs; no clipping or overlap. Eight pages retained without reducing type size or margins."
   },
-  "integration_record": "certificates/hard-node-integration-2026-11-22.json",
-  "limits": "This guide proves analytic implications and conditional reductions. The compatible arithmetic construction and uniform estimates remain incomplete. No full Lean build or kernel replay."
+  "integration_record": "certificates/frontier-progress-integration-2026-11-22.json",
+  "limits": "A guide to proved implications and explicit remaining hypotheses. No complete RH/GRH proof or upstream Lean replay is asserted."
 }

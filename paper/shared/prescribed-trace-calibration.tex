@@ -1,0 +1,119 @@
+\paragraph{A prescribed normalization also proves nonvanishing.}
+There is no need to divide by an unknown total squared norm. Let
+\(T_i:V_i\to W\) be arbitrary maps of finite-dimensional Hermitian
+spaces, including zero maps. Put
+\[
+ R=\sum_i\dim V_i>0,\quad D=\dim W>0,\quad
+ S=\bigoplus_iT_i^*T_i,\quad Q=\sum_iT_iT_i^*.
+\]
+For any prescribed \(c>0\), define
+\[
+ g_c=\frac{\operatorname{tr}((c/R)I_R-S)_+}{c},\qquad
+ b_c=\frac{\operatorname{tr}(Q-(c/D)I_D)_+}{c}.
+\]
+The scalar \(c\) is a comparison parameter; it changes neither an
+arithmetic map nor its height, lattice or metric.
+
+\begin{theorem}[Prescribed trace comparison]
+\label{shared-prescribed-trace}
+If \(T_iV_i'\subseteq W'\) for subspaces \(V_i'\subseteq V_i\) and
+\(W'\subseteq W\), then
+\[
+ \frac{\sum_i\dim V_i'}R-\frac{\dim W'}D\le g_c+b_c.
+\]
+Furthermore,
+\[
+ c(1-g_c)\le\operatorname{tr}Q\le c(1+b_c).
+\]
+Thus \(g_c<1\) proves that at least one map is nonzero.
+Under the arithmetic height and slope hypotheses of
+Theorem~\ref{shared-trace-slope}, with \(D=\operatorname{rank}F\)
+and these same maps on the final spaces, one has
+\begin{equation}\label{shared-prescribed-slope}
+ s-\mu(F)\le\min\{H,(g_c+b_c)(U+H)\}.
+\end{equation}
+No nonvanishing assumption is required.
+\end{theorem}
+
+\begin{proof}
+For a self-adjoint operator \(A\),
+\(\operatorname{tr}A_+=\max_{0\le P\le I}\operatorname{tr}(PA)\).
+Let \(P=\bigoplus P_i\) and \(P_W\) be the orthogonal projections
+onto the given subspaces, whose normalized dimensions are \(p,q\).
+The image inclusion gives
+\[
+ c(p-g_c)\le\operatorname{tr}(PS)
+ =\operatorname{tr}\sum_iT_iP_iT_i^*
+ \le\operatorname{tr}(P_WQ)\le c(q+b_c).
+\]
+Taking identity projections separately proves the mass bounds.
+For the arithmetic assertion, rescale the source norms by \(e^{h_i}\).
+The map heights become nonpositive, so their slope filtrations satisfy
+the required image inclusions. On \([s-H,s+U]\), the source mean and
+maximum give \(\int p\ge H\); the target minimum gives
+\(\mu(F)\ge s-H+\int q\). Integrate the preceding inequality.
+The target minimum independently gives the bound by \(H\), including
+the case \(U+H=0\). For zero maps, \(g_c=1\) and \(b_c=0\), so
+the comparison remains valid.
+\end{proof}
+
+A direct operator upper bound can be preferable. If
+\[
+ Q\le(1+\lambda)\frac cD I_D+E,\quad E\ge0,\quad
+ \operatorname{tr}E\le\varepsilon c,\quad \lambda,\varepsilon\ge0,
+\]
+the same proof uses \(p-g_c\le(1+\lambda)q+\varepsilon\) and gives
+\[
+ s-\mu(F)\le
+ \min\left\{H,
+ \frac{g_c(U+H)+\lambda H+\varepsilon(U+H)}{1+\lambda}\right\}.
+\]
+
+\begin{corollary}[Restrictions with a prescribed normalization]
+\label{shared-prescribed-restrictions}
+Let \(J_i:V_i^0\to V_i\) be isometries and \(\Pi\) an orthogonal
+target projection, with \(R_0=\sum_i\dim V_i^0>0\) and
+\(n=\operatorname{rank}\Pi>0\). Put \(r=R_0/R\), \(v=n/D\).
+For the actual restricted maps \(T_{i,0}=\Pi T_iJ_i\), define
+\(g_0,b_0\) using the final dimensions and
+\(c_0=c\max(r,v)\). Then
+\begin{equation}\label{shared-prescribed-restriction-bound}
+ g_0+b_0\le\frac{g_c+2b_c+1-\min(r,v)}{\max(r,v)},\qquad
+ \sum_i\|T_{i,0}\|_{\rm HS}^2
+ \ge c(r+v-1-g_c-b_c).
+\end{equation}
+In particular, \(r+v>1+g_c+b_c\) proves nonvanishing after both
+restrictions, without assuming any positive mass beforehand.
+\end{corollary}
+
+\begin{proof}
+Write \(Q'=\sum_iT_iJ_iJ_i^*T_i^*\le Q\).
+The mass lost at the target is at most \(c(1-v+b_c)\), while
+source compression retains at least \(c(r-g_c)\). This proves
+the second assertion. Compression cannot increase a positive trace.
+If, more generally, the final normalization is \(c\theta\), then
+compression, positive-trace subadditivity and the scalar threshold
+changes give
+\[
+ g_0\le\frac{g_c+1-v+b_c+(\theta-r)_+}{\theta},\qquad
+ b_0\le\frac{b_c+(v-\theta)_+}{\theta}.
+\]
+Substitute \(\theta=\max(r,v)\).
+\end{proof}
+
+The constants can improve when the mass decreases under restriction.
+For \(T=\operatorname{diag}(1,1,0)\) on \(\mathbb C^3\), the
+choice \(c=3\) gives \(g_c+b_c=1/3\); normalization by the actual
+mass \(2\) gives \(2/3\). The former bound is sharp on \(\ker T\).
+It is also attained in the restriction corollary: restrict the identity
+of \(\mathbb C^4\) to different coordinate three-planes with a
+two-dimensional intersection, taking \(c=4\).
+
+The actual-mass and prescribed comparisons are both available. Small
+actual-mass errors do not determine a prescribed scale: for \(T=tI\),
+\(t\ne0\), they vanish for every \(t\), whereas at \(c=R=D\) the
+defect sum is \(|1-|t|^2|\). In the theta construction, a natural
+prescribed scale comes from the unfolded seed norms. Its small trace
+defects still require a bound for the complete arithmetic periodization.
+When that bound is supplied, nonvanishing follows within the comparison;
+local divisibility and the original arithmetic identifications remain.

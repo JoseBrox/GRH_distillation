@@ -16,7 +16,9 @@ The organization follows the mathematical dependencies:
 4. Classical Selmer finiteness and finite prime support, the smaller
    character family, the integral weighted product, a compatible
    conormal pairing, exact graded comparisons, four-weight admissibility,
-   and the finite-slice multiplicity bound. Resultants
+   the finite-slice multiplicity bound, diagonal point uniqueness and
+   nonpositive base-point rigidity from qualitative finiteness and the actual
+   marking. Resultants
    and common divisors retain their same-orbit hypotheses; the actual
    models and the uniform product estimate remain open.
 5. One mean volume, a single test intersection sensitive to the block
@@ -25,10 +27,13 @@ The organization follows the mathematical dependencies:
    the absolute Siegel lemma, classical theta sections, the signed
    determinant comparison, the integral Hodge module and its two
    filtrations, a direct boundary period argument, determinant torsion,
-   constant finite order, exact CM
-   eigenframes, the elliptic product and period calculation, and descent.
+   constant finite order, an exact ramified determinant calculation, CM
+   eigenframes, the elliptic product and period calculation, and exact
+   exact algebraic descent and integral extension of the prescribed CM point.
 6. Two positive spectral traces, direct slope comparison, and control
-   under the actual source and target restrictions. Squared energies
+   under the actual source and target restrictions, with a prescribed mass
+   and explicit scalar sufficient bounds for the complete period sum and
+   its rational returns. Squared energies
    remain available when they give a smaller cost.
 7. The combined signed arithmetic budget, scalar parameter losses and
    the construction estimates still required.

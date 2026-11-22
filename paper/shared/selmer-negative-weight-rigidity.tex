@@ -1,0 +1,166 @@
+\subsection{Negative-weight rigidity from qualitative finiteness}
+\label{subsec:selmer-negative-weight-rigidity}
+
+The global rigidity needed at the distinguished representation requires
+only qualitative finiteness. No estimate for the size of an algebraic
+\(K\)-group enters this step.
+
+\begin{proposition}\label{prop:selmer-negative-weight-rigidity}
+Let \(k\) be a number field, let \(\ell\) be any prime, and let
+\(\epsilon:G_k\to\overline{\mathbf Q}_\ell^\times\) be a continuous
+finite-order character. For every integer \(m\ge1\),
+\[
+ H_f^1\bigl(k,\overline{\mathbf Q}_\ell(-m)\otimes\epsilon\bigr)=0.
+\]
+Here the local condition is unramifiedness away from \(\ell\) and the
+Bloch--Kato finite condition at \(\ell\), with algebraic coefficient
+extensions. There is no restriction on
+\(\operatorname{ord}(\epsilon)\) relative to \(\ell\).
+\end{proposition}
+
+\begin{proof}
+First put a continuous cocycle \(z\) over one finite coefficient field.
+Its character has values in a finite extension \(E_0/\mathbf Q_\ell\).
+There are finitely many extensions of each degree up to isomorphism,
+and finitely many embeddings of each into the algebraic closure.
+Thus \(\overline{\mathbf Q}_\ell\) is covered by countably many
+finite extensions \(E_i\).\cite[Proposition 7.64 and Remark 7.65]{milne-ant}
+The preimages
+\[
+                 H_i=\{g:z(g)\in E_0E_i\}
+\]
+are closed subgroups, by the cocycle equation. They cover the compact
+Galois group. Baire's theorem gives one with nonempty interior, hence
+finite index. Adjoining the cocycle values on its finitely many coset
+representatives puts all values in one finite extension \(E\).
+This uses the cocycle equation, not a claim about arbitrary compact
+subsets of the algebraic closure. Enlarge \(E\) further to contain the
+finitely many coefficients of the local crystalline-period witnesses.
+The defining coboundary equations then hold over
+\(E\otimes_{\mathbf Q_\ell}B_{\mathrm{cris}}\), since this tensor
+product injects into the one over the algebraic closure.
+
+Choose a finite Galois extension \(L/k\) killing \(\epsilon\) and
+containing \(i\), so \(L\) is totally imaginary. Restriction preserves
+both local finite conditions. The restricted character is
+\(\theta=\chi_\ell^{-m}\). At a place above \(\ell\), the
+Bloch--Kato formula gives
+\[
+ \dim_{\mathbf Q_\ell} H_f^1(L_v,V)
+ =\dim_{\mathbf Q_\ell}\bigl(D_{\mathrm{dR}}(V)/
+                                      \operatorname{Fil}^0\bigr)
+       +\dim_{\mathbf Q_\ell}H^0(L_v,V).
+\]
+Both terms vanish for \(V=E(-m)\), so the class is a full-local
+coboundary.\cite[Corollary 3.8.4 and Example 3.9]{bloch-kato-tamagawa}
+Away from \(\ell\), the coefficient action on inertia is trivial;
+an inertia coboundary is therefore zero. Thus the cocycle factors
+through \(G_{L,S}\), where \(S\) consists of the \(\ell\)-adic and
+archimedean places.
+
+Let \(O\) be the ring of integers of \(E\). Proposition
+\ref{shared-selmer-finite}, applied to a \(\mathbf Z_\ell\)-basis
+of \(O\), makes
+\[
+ \mathcal S_E=\ker\left(
+ H^1(G_{L,S},(E/O)(-m))
+ \longrightarrow\prod_{v\mid\ell}H^1(L_v,(E/O)(-m))\right)
+\]
+finite. Choose \(a\ge0\) with \(\ell^a\mathcal S_E=0\).
+No bound for \(a\) is needed. The cyclotomic character has infinite
+image over \(L\), so choose \(g_0\) with
+\(d=\theta(g_0)-1\ne0\). Subtract the coboundary with primitive
+\(z(g_0)/d\), making \(z(g_0)=0\).
+For every \(n\ge a\), the cocycle \(\ell^{-n}z\bmod O\) gives
+a class in \(\mathcal S_E\). Hence some \(t_n\in E/O\) satisfies
+\[
+ \ell^{a-n}z(g)=(\theta(g)-1)t_n\quad\text{in }E/O.
+\]
+At \(g_0\) this says \(dt_n=0\), so \(t_n\) has a representative
+in \(d^{-1}O\). Multiplying by \(d\) gives
+\[
+                      dz(g)\in\ell^{n-a}O
+                              \qquad(n\ge a).
+\]
+The intersection is zero, so the normalized cocycle vanishes.
+No compatibility among the primitives \(t_n\) is required.
+
+The original class is therefore a coboundary on \(G_L\).
+Subtract its primitive globally, so \(z|_{G_L}=0\). Normality gives,
+for \(h\in G_L\) and \(g\in G_k\),
+\[
+  \theta(h)z(g)=z(hg)=z\bigl(g(g^{-1}hg)\bigr)=z(g).
+\]
+One \(h\) has \(\theta(h)\ne1\), so \(z=0\) everywhere. This last
+step explains why the order of the finite character and the extension
+degree may both be divisible by \(\ell\).
+\end{proof}
+
+For the distinguished three-dimensional representation, write
+\(\Psi=\chi_\ell^e\psi\), with \(e\ge1\), \(\psi\) finite order,
+and \(\eta\) the imaginary quadratic character. With weights
+\((1,0,-1)\), put \(R(X)_{ab}=X_{4-b,4-a}\). On weight \(j\),
+the adjoint action is \(\Psi(g)^jX\) if \(\eta(g)=1\), and
+\(-\Psi(g)^jR(X)\) otherwise. The projections
+\((1\pm R)/2\) commute with the action and preserve the finite
+local condition. The negative part is therefore exactly
+\[
+\begin{array}{c|c|c}
+ \text{weight}&\text{generator}&\text{character}\\ \hline
+ -1&E_{21}-E_{32}&\chi_\ell^{-e}\psi^{-1}\\
+ -1&E_{21}+E_{32}&\chi_\ell^{-e}\psi^{-1}\eta\\
+ -2&E_{31}&\chi_\ell^{-2e}\psi^{-2}\eta .
+\end{array}
+\]
+Proposition \ref{prop:selmer-negative-weight-rigidity} treats all
+three summands. In weight zero, restriction to the imaginary quadratic
+field makes the action trivial. The same local calculation identifies
+the finite classes with unramified classes at \(\ell\), so Proposition
+\ref{prop:selmer-zero-weight-rigidity} supplies that case.
+
+\begin{lemma}\label{lem:selmer-normalized-base-coboundary}
+At this base representation, a coboundary satisfying the actual
+marked normalization is the zero cocycle.
+\end{lemma}
+
+\begin{proof}
+Write \(D(p)=\operatorname{diag}(p,1,p^{-1})\) and
+\(T=\operatorname{diag}(1,0,-1)\). The marking provides \(c,g_1\)
+with
+\[
+ c^2=1,\quad \eta(c)=-1,\quad\Psi(c)=1,\quad
+ \eta(g_1)=1,\quad p=\Psi(g_1),\quad p^2-1\ne0.
+\]
+The integral marking has \(p^2-1\) a unit. Set
+\(g_1^*=cg_1^{-1}c\). For a normalized tangent cocycle \(\gamma\),
+\[
+ \gamma(c)=0,\qquad Z_{12}=Z_{21}=0,\qquad
+ Z=\gamma(g_1)D(p)-\gamma(g_1^*)D(p^{-1}).
+\]
+If \(\gamma(g)=X-g\cdot X\), then \(\gamma(c)=0\) gives
+\[
+ X=-R(X)=
+ \begin{pmatrix}a&b&0\\d&0&-b\\0&-d&-a\end{pmatrix}.
+\]
+Furthermore
+\[
+ Z=(p-p^{-1})[X,T],\qquad
+ Z_{12}=-(p-p^{-1})b,\qquad Z_{21}=(p-p^{-1})d.
+\]
+Since \(p-p^{-1}=p^{-1}(p^2-1)\ne0\), we get \(b=d=0\).
+Thus \(X=aT\), which is fixed by the entire adjoint action, and
+\(\gamma=0\).
+\end{proof}
+
+These results separate the remaining model requirements precisely.
+A homogeneous derivation annihilating the equations must lift to a
+normalized representation deformation; its tangent cocycle must
+satisfy the finite local conditions above and determine the derivation
+on the model. Under those comparisons, every nonpositive such
+derivation is zero, giving the required cotangent spanning.
+The global cohomological and marking arguments are now supplied.
+The construction and local comparison of the arithmetic model,
+non-diagonal two-sided rigidity, and uniform bounds for integral
+Selmer torsion remain separate.
+The scalar and matrix arguments include \(\ell=2\); the existing
+arithmetic model comparisons are used only at odd \(\ell\).

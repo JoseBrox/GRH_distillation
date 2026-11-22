@@ -23,6 +23,10 @@ The current continuation starts from main at
 geometric, sampling and cohomological checkpoints. The independently
 reviewed additions are indexed in
 [the frontier review](../certificates/frontier-progress-review-2026-11-22.json).
+The [integration record](../certificates/frontier-progress-integration-2026-11-22.json)
+pins the updated manuscripts, eight-page guide and route blueprints. The
+eight proof packages were committed separately as their reviews finished;
+the current guide retains the complete short RH analytic proof unchanged.
 The source-import atlas and documentary section atlas have no proof
 completion score. The published baseline is RH 6/9 and the GRH technical
 map 17/31; the generated progress table carries the current values.
@@ -178,12 +182,13 @@ reduction and the prime-to-residue-characteristic inverse isogeny give
 the exact integral product tangent basis. The unit discriminant and
 Kronecker limit formula evaluate the elliptic period mean, with all
 constants retained. Trace-dual Gram projection and the product formula
-then give the signed flat degree. Applying this value requires the
-actual arithmetic model with its original global family and the generic
-CM point on its selected component, with the given coefficient action
-and original rigidified line. Properness and classical semiabelian
-uniqueness then extend the point and identify its exact tangent lattice.
-A good CM object alone does not supply the generic moduli identification.
+then give the signed flat degree. The [pure-period descent](cm-period-point-descent.md)
+identifies the same algebraic CM point, with its original line and both
+finite level maps, from actual moduli point separation and the prescribed
+pointwise periods. Properness and classical semiabelian uniqueness then
+extend that point and identify its exact tangent lattice. The actual
+arithmetic model, original global family, fibre data and pointwise period
+presentation remain required.
 
 The [direct determinant argument at the prescribed level](half-level-determinant.md)
 supplies determinant monodromy one on the abelian locus without a
@@ -214,11 +219,11 @@ constructs the invertible integral line from the actual global Hodge
 extension and full coefficient freeness, and identifies its pointwise
 eigenlattices and special-curve degrees. Local norms are then constant,
 including after ramified extensions, and almost all finite logarithmic
-norms vanish. The supplied generic CM points extend to integral maps on the same
-component and give the local-norm comparison used in the period calculation. The remaining
-geometric inputs are the arithmetic model with its original global family
-and fibre data, the generic CM identification, and the signed cusp and finite-section
-estimates.
+norms vanish. The prescribed pure-period points descend and extend to
+integral maps on the same component, giving the local-norm comparison.
+The remaining geometric inputs are the arithmetic model with its original
+global family and fibre data, the moduli separation and pointwise period
+presentations, and the signed cusp and finite-section estimates.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
@@ -537,8 +542,8 @@ First-order sections of the original global biextension supply the Hodge
 bundle; generic properness and flatness normalize its adjunctions
 coherently. The original fibre conditions give full coefficient freeness.
 Thus the ramified integral-line and special-curve identifications follow
-from these actual model data. Constructing that model, the generic CM point with its original line
-on the selected component, and the cusp/section estimates remains.
+from these actual model data. Constructing that model with the required
+pointwise periods, and proving the cusp and section estimates, remain.
 
 The [CM extension argument](cm-integral-map-extension.md) reduces that
 integral-map requirement to the supplied generic CM point on the correct
@@ -546,8 +551,10 @@ component, with its exact original rigidified line and coefficient action.
 Properness extends the point; the classical full faithfulness of
 semiabelian schemes extends the generic isomorphism. A vertical-divisor
 argument preserves the exact line and scalar, so the actual tangent
-eigenlattices agree. The arithmetic model and generic moduli/period
-identification remain; no new choice of integral CM map is required.
+eigenlattices agree. The point-descent argument below supplies the exact
+generic identification from the actual moduli separation and pointwise
+period data. The arithmetic model remains required; no new choice of
+integral CM map is necessary.
 
 The [negative-weight rigidity proof](rh-selmer-negative-weight-rigidity.md)
 uses only the existing qualitative strict Selmer finiteness and the local
@@ -604,9 +611,10 @@ the proved proper extension supplies the integral comparison from them.
    model, its original global semiabelian family, cubical line, coefficient
    adjunctions and self-dual abelian quotient on geometric fibres. These
    data construct the integral determinant, including its ramified point
-   norms and test-curve comparison. Supply the generic CM point on the
-   selected component with its original line and coefficient action; the
-   exact integral extension and tangent lattice then follow. The characteristic-zero
+   norms and test-curve comparison. Retain moduli point separation and the
+   prescribed pointwise pure-period presentations; the exact algebraic CM
+   point, its original line and component, integral extension and tangent
+   lattice then follow. The characteristic-zero
    generator, both filtrations, coefficient freeness, determinant torsion,
    vertical rigidity, local-norm comparison and signed CM value are proved
    under these identifications. Then establish the signed cusp mean and

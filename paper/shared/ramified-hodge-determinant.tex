@@ -1,0 +1,209 @@
+\paragraph{The integral determinant at ramified primes.}
+The image of an eigenprojection and its integral eigenkernel need not
+coincide. Their exact discrepancy follows from one cokernel calculation.
+
+\begin{lemma}\label{geo-ramified-resultant-index}
+Let $R$ be a discrete valuation ring with fraction field $F$, and let
+$a_i\in R$, $i\in I$, be distinct, with $I$ finite and nonempty.
+Put $B=R[t]/\prod_i(t-a_i)$ and $H=B^n$.
+Suppose $L$ is a $B$-linear quotient of $H$, finite free over $R$,
+and write $K$ for its kernel. Let $e_i$ be the rational coefficient
+idempotents, $L_i=e_iL_F$, $d_i=\dim_F L_i$,
+$L^i=L\cap L_i$ and $Q_i=e_iH$.
+Then the rational determinant isomorphism gives
+\begin{equation}\label{geo-ramified-resultant-index-eq}
+ \det(e_iK)\otimes\det L^i
+   =\left(\prod_{j\ne i}(a_i-a_j)^{d_j}\right)\det Q_i
+\end{equation}
+as rank-one $R$-lattices. Empty determinants and products equal one.
+\end{lemma}
+\begin{proof}
+Write $T$ for multiplication by $t$. Since
+$H/(T-a_i)H=Q_i$, right exactness gives
+\[
+ Q_i/e_iK\simeq L/(T-a_i)L.
+\]
+Set $L_0=L\cap\bigoplus_{j\ne i}L_j$ and $P_0=(1-e_i)L$.
+Projection identifies
+\[
+ P_0/L_0\simeq e_iL/L^i,
+ \qquad
+ \operatorname{tors}(L/(T-a_i)L)=L_0/(T-a_i)P_0.
+\]
+The exact sequence
+\[
+ 0\longrightarrow L_0/(T-a_i)P_0
+ \longrightarrow P_0/(T-a_i)P_0
+ \longrightarrow P_0/L_0\longrightarrow0
+\]
+therefore shows that the sum of these two lengths is
+$\sum_{j\ne i}d_jv(a_i-a_j)$: it is the valuation of the
+determinant of $T-a_i$ on $\bigoplus_{j\ne i}L_j$.
+Here $v$ takes value one on a uniformizer.
+
+The kernel $K_0$ of $Q_i\to e_iL$ is saturated, and
+$K_0/e_iK$ is the torsion module just displayed.
+A basis of $e_iK$, together with lifts of a basis of $L^i$,
+has index
+$\operatorname{length}(K_0/e_iK)+
+ \operatorname{length}(e_iL/L^i)$ in $Q_i$.
+This proves \eqref{geo-ramified-resultant-index-eq}.
+The order of the determinant factors changes only a unit sign.
+\end{proof}
+
+Let $E$ be a number field with involution $c$, and let $K$ contain
+its normal closure. Fix a signature $d_\tau$, indexed by the
+embeddings $\tau:E\hookrightarrow K$. At a finite place $v$ of $K$,
+write $R=\mathcal O_{K_v}$ and let $S_{\sigma,v}$ consist of the
+embeddings with the same residue character as $\sigma$.
+The corresponding factor of $\mathcal O_E\otimes R$ is
+\[
+ B_{\sigma,v}=R[t]/\prod_{\tau\in S_{\sigma,v}}(t-a_\tau).
+\]
+Indeed, the largest unramified subfield of the relevant completion of
+$E$ splits over $R$, and a uniformizer generates its remaining totally
+ramified integer ring. This holds also at $2$ and with wild ramification.
+\cite[Proposition 7.50, Corollary 7.51, Proposition 7.55 and
+Remark 7.56]{milne-ant}
+Define an ideal of $\mathcal O_K$ by
+\begin{equation}\label{geo-signature-correction-ideal}
+ \mathfrak c_\sigma R
+   =\left(\prod_{\substack{\tau\in S_{\sigma,v}\\\tau\ne\sigma}}
+                   (a_\sigma-a_\tau)^{d_\tau}\right)R.
+\end{equation}
+Each local ideal is independent of the generator: two generators
+are polynomials in one another, so their character differences divide
+one another. The ideal is the unit ideal away from the discriminant
+of $E$, and its formation commutes with finite extensions of splitting
+valuation rings.
+
+\begin{proposition}\label{geo-ramified-hodge-determinant}
+Let $\mathcal Y/\mathcal O_K$ be a flat arithmetic model carrying
+its prescribed tangent bundle $\mathcal L$ and an exact Hodge sequence
+\[
+ 0\longrightarrow\mathcal L^\vee\longrightarrow\mathcal H
+   \longrightarrow\mathcal L\longrightarrow0.
+\]
+Assume all terms are locally free over $\mathcal O_{\mathcal Y}$,
+the sequence is $\mathcal O_E$-equivariant, and the kernel action is
+$a\lambda=\lambda\circ c(a)$.
+Assume $\mathcal H$ is locally free of rank $n$ over
+$\mathcal O_E\otimes\mathcal O_{\mathcal Y}$ and the generic
+signature of $\mathcal L$ is $d_\tau$, constant on the selected
+component. Then $d_\tau+d_{\tau c}=n$, and
+\begin{equation}\label{geo-actual-integral-determinant}
+ \mathcal Q_\sigma
+   =\mathcal H\otimes_{\mathcal O_E\otimes\mathcal O_{\mathcal Y},\sigma}
+                      \mathcal O_{\mathcal Y},
+ \qquad
+ \mathcal M_\sigma
+   =\det\mathcal Q_\sigma\otimes
+                         \operatorname{pr}^*\mathfrak c_\sigma
+\end{equation}
+are a vector bundle and an invertible sheaf, respectively.
+On the generic fibre $\mathcal M_\sigma$ is the conjugate tangent
+determinant. At every integral point, also after finite ramified
+extension, its pullback is exactly
+\[
+ \det L^\sigma\otimes(\det L^{\sigma c})^{-1},
+\]
+where these are the actual saturated tangent eigenlattices.
+On every special-fibre curve its degree equals that of the character
+determinant $\det\mathcal Q_\sigma$.
+\end{proposition}
+\begin{proof}
+Work first over a splitting complete valuation ring $R$.
+The rational Hodge sequence identifies
+$\det(H_F)_\sigma$ with
+$\det(L_F)_\sigma\otimes\det(L_F)_{\sigma c}^{-1}$.
+Integrally, restriction gives
+\[
+ e_\sigma(L^\vee)=(L^{\sigma c})^\vee:
+\]
+the lattice $L^{\sigma c}$ is saturated in $L$, so every integral
+functional on it extends to $L$. The appropriate factor of $H$ is
+free over the local ring $B_{\sigma,v}$.
+Lemma~\ref{geo-ramified-resultant-index} gives
+\[
+ \det L^\sigma\otimes(\det L^{\sigma c})^{-1}
+      =(\mathfrak c_\sigma R)\det Q_\sigma.
+\]
+This proves the claimed integral identification. Completion is
+faithfully flat; coefficient eigenkernels commute with flat extension,
+as kernels of finitely many action equations. Formula
+\eqref{geo-signature-correction-ideal} commutes with finite extension,
+so the same conclusion holds for every stated integral point.
+The base ideal is an invertible sheaf and restricts to a constant
+one-dimensional line on each special-fibre curve. Its degree there
+is zero.
+\end{proof}
+
+For the prescribed global family, the Hodge extension in the proposition
+is constructed directly from the original rigidified biextension
+$\mathcal P$. This first-order part of the construction of
+Theorem~\ref{geo-biextension-conjugate-filtration} works in mixed
+characteristic. If $G_1$ is the first neighbourhood of zero and
+$q:G\times G_1\to G$, then
+\[
+ 0\longrightarrow\operatorname{pr}_G^*\omega_G
+ \longrightarrow q_*\mathcal P\longrightarrow\mathcal O_G
+ \longrightarrow0.
+\]
+The inverse image of $1$ is an additive $\omega_G$-torsor. Its group
+law comes from the first biextension law, and its Lie algebra is
+$\mathcal H$. Global adjunction, compatible with addition,
+multiplication, rigidification and symmetry, defines its coefficient
+action by pullback along $c(a)$ on $G_1$ followed by inverse adjunction.
+All these operations commute with base change and glue on the actual
+charts. Thus the kernel is the exact integral conjugate dual.
+
+On the actual integral model, whose group has abelian generic fibre,
+the global adjunction isomorphisms admit a unique coherent normalization.
+Every regular function on $G^m$ equals its zero-section value: this holds
+on the proper geometrically connected generic fibre, and flatness makes
+that fibre schematically dense. Divide each adjunction by its origin
+unit. Any two isomorphisms of the same line bundles with that normalized
+origin value are consequently equal. For addition the common source
+and target are $\mathcal P((a+b)x,y)$ and $\mathcal P(x,c(a+b)y)$,
+using the two biextension laws. For multiplication the intermediate
+line is $\mathcal P(bx,c(a)y)$ and the final line is
+$\mathcal P(x,c(b)c(a)y)$. The biextension laws similarly compare
+splitting $x+x'$ or $y+y'$. Symmetry compares adjunction followed by
+exchange with exchange followed by inverse adjunction for $c(a)$.
+All canonical identifications preserve the rigidification, so these
+diagrams commute, as do the unit and zero diagrams. This supplies the
+required coherence from the original global cubical data.
+
+Under the stated self-dual quotient hypotheses, the proper and toric
+comparisons make every geometric fibre projective over its coefficient
+algebra. To recover the common rank $n$, use an integral basis $b_j$
+of $\mathcal O_E$: the polynomial
+$\det(T-\sum_jX_jb_j\mid\mathcal H)$ is the $n$-th power of the
+regular coefficient polynomial generically, hence everywhere by
+flatness. At a geometric special point its distinct character factors
+have multiplicities $m_\chi r_\chi$, including the full local Artin
+length $m_\chi$. Comparison gives $r_\chi=n$.
+This freeness descends to the closed residue field: on each Artin local
+factor, lift a residue-field basis and compare dimensions after extending
+the field. At a stalk with local ring $A$, lift a coefficient basis of
+the closed fibre. The resulting
+map from $(\mathcal O_E\otimes A)^n$ to $\mathcal H_A$ is a map of
+free $A$-modules of the same rank, invertible modulo the maximal
+ideal, and hence invertible. This proves coefficient local freeness
+on the same model. It requires the stated global biextension and
+adjunction isomorphisms; compatible charts only on test curves do not assert a
+global family.
+
+The proposition constructs the ramified integral line without assuming
+that the individual tangent eigensheaves are locally free over the
+coefficient algebra. If the actual curvewise Hodge and conjugate
+filtrations satisfy Proposition~\ref{geo-frobenius-determinant-torsion},
+the character determinant has degree zero. If the model is normal and
+proper with nonempty connected special fibres,
+Theorem~\ref{geo-vertical-line-rigidity} consequently makes a determinant
+section generating the whole generic fibre have point-independent finite norms on
+these exact tangent eigenlattices.
+The arithmetic model and its prescribed pointwise period data remain
+required. Propositions~\ref{geo-cm-period-point-descent}
+and~\ref{geo-cm-integral-map-extension} below supply the exact CM maps
+from those data and moduli point separation.

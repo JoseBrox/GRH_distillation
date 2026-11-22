@@ -1,0 +1,56 @@
+\paragraph{Extending the original complex multiplication point.}
+Once the prescribed generic point lies on a proper arithmetic model,
+its integral extension has the exact CM tangent lattice.
+
+\begin{proposition}\label{geo-cm-integral-map-extension}
+Let $R$ be a discrete valuation ring with fraction field $F$, and let
+$\mathcal Y/R$ be proper. Let $G/\mathcal Y$ be a smooth separated
+commutative group scheme of finite type with semiabelian geometric fibres,
+equipped with its original rigidified symmetric cubical line $\Theta$ and coefficient
+action. Suppose a generic point $x_F:\operatorname{Spec}F\to\mathcal Y$
+is supplied, together with an abelian scheme $A/R$ with coefficient action
+and a rigidified symmetric cubical line, and a generic
+isomorphism $f_F:A_F\simeq x_F^*G$. Assume $f_F$ respects the coefficient
+action and a given isomorphism of the original rigidified cubical lines.
+Then $x_F$ extends uniquely to an integral point $x_R$, and $f_F$
+extends uniquely to an integral isomorphism respecting those same data.
+It identifies the exact tangent lattices and their coefficient
+eigenkernels.
+\end{proposition}
+\begin{proof}
+The valuative criterion for properness gives $x_R$.
+The extension theorem for semiabelian schemes over a normal base
+\cite[\S2, Lemma~1]{faltings-semiabelian-extension}
+extends both $f_F$ and its inverse. Uniqueness makes their composites
+the identity, and also proves compatibility with every coefficient
+endomorphism.
+
+Transport the pulled-back line to $A$. The given generic line
+isomorphism is a rational section of its ratio with the prescribed line
+on $A$. Since $A$ is regular and its special fibre is geometrically
+integral and reduced, its divisor is $mA_s$ for some integer $m$.
+Pullback along zero gives $m[s]$. The rigidification makes this
+rational section equal to $1$ at zero, so $m=0$. Thus the original
+generic isomorphism extends to a nowhere vanishing section, with no
+vertical twist or change of scalar. Use adjunctions normalized at the
+origin; properness of $A_F$ makes that normalization unique.
+The cubical and symmetry comparisons, and these normalized adjunction
+comparisons, agree generically and hence everywhere by flatness.
+Differentiating the resulting group isomorphism identifies the integral
+Lie modules and all kernels of their coefficient eigenvalue equations.
+\end{proof}
+
+Apply the proposition after the finite extension used to obtain the
+good CM model in Proposition~\ref{geo-cm-integral-product}.
+The integral point stays in the closure of its selected generic
+component, since the ideal of that closure vanishes generically and
+$R\hookrightarrow F$. Its tangent eigenlattices are therefore the
+same lattices computed by the product isogeny and the different.
+Together with Proposition~\ref{geo-ramified-hodge-determinant}, this
+supplies the integral comparison used in
+Corollary~\ref{geo-flat-norm-assembly} whenever the prescribed generic
+CM point and its original-line identification are available.
+Proposition~\ref{geo-cm-period-point-descent} supplies that exact generic
+identification from moduli point separation and the prescribed pure
+periods. The arithmetic model and its pointwise period presentation
+remain required.

@@ -69,15 +69,17 @@ especially unstable unit of work.
 
 ## A provisional page budget
 
-The current compiled artifacts have a seven-page didactic guide, a
-30-page RH manuscript, a 21-page analytic companion and a 596-page
+The current compiled artifacts have an eight-page didactic guide, a
+78-page RH manuscript, a 21-page analytic companion and a 652-page
 Dirichlet-GRH working manuscript. These are measured PDF lengths. The RH
 manuscript gives complete reductions and explicit remaining arithmetic
-hypotheses; it is not a 30-page proof of RH. The long manuscript preserves detailed arguments
-and alternatives; it is not a finished short paper and its length is not
-a lower bound for one. The current integration adds proved scale, energy
-and degree reductions while shortening the organizational account of the
-remaining tasks; it does not claim that the full manuscript is already short.
+hypotheses; it is not a complete proof of RH. The long manuscript preserves
+detailed arguments and alternatives; it is not a finished short paper and
+its length is not a lower bound for one. The additional pages provide
+proofs of previously isolated algebraic and geometric steps. Structural
+simplification can therefore increase the present written record while
+reducing the number of independent obligations. The didactic guide remains
+eight pages with the same type size and margins.
 
 For planning the eventual fully argued papers, a **very low-confidence
 editorial budget**, conditional on completing and substantially compressing
@@ -87,7 +89,7 @@ the present route, is:
 | --- | --- |
 | Complete ordinary-RH argument | roughly 100–200 pages, including necessary technical appendices |
 | Complete Dirichlet-GRH argument | roughly 150–300 pages, including necessary technical appendices |
-| Didactic overview | keep the existing guide within its twelve-page limit; it currently fits in seven |
+| Didactic overview | keep the existing guide within its twelve-page limit; it currently fits in eight |
 
 These ranges are judgments about exposition, not predicted proof lengths or
 mathematical bounds. A major replacement of the arithmetic construction
