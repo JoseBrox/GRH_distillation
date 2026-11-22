@@ -606,9 +606,23 @@ coordinate small; a finite coefficient field and homogeneous tails give
 the complete local point and tangent. The general marked coboundary
 calculation leaves at most one dimension at a rigid point, and zero at
 the base. The actual arithmetic model, its initial chart and finite
-quotient, local finite-cocycle condition, two-sided rigidity and uniform
-integral Selmer bounds remain. The existing arithmetic model comparison
-is still used at odd coefficient primes.
+quotient, local-ring equations and factorization, two-sided rigidity and
+uniform integral Selmer bounds remain. The existing arithmetic model
+comparison is still used at odd coefficient primes.
+
+The [crystalline component comparison](selmer-crystalline-component-comparison.md)
+supplies the local finite-cocycle condition from those exact local
+equations. Spectral projectors give the ordinary flag and its two
+nonresonance factors. Positive Tate exponents and local duality make
+the nonresonant field representations crystalline of one fixed Hodge
+type. Saturation makes this locus dense in every reduced component;
+Kisin's theorem for all finite coefficient algebras then includes
+dual-number points, even above the resonant locus. For exponent at
+least two, nonresonance follows from inertia and saturation is not
+needed for this local comparison. The actual adjoint representation
+becomes the full matrix endomorphism representation on the finite local
+subgroup; averaging descends its finite condition. No uniform integral
+bound or non-diagonal global rigidity is inferred.
 
 The [prescribed CM-point descent](cm-period-point-descent.md) replaces
 the separate generic-point comparison by an automorphism argument.
@@ -649,13 +663,15 @@ identification and other period denominators remain required.
    comparisons and surviving character cases. The elementary resultant
    supplier does not prove the trace-to-Selmer estimate: construct the
    marked models and establish their chart, spanning, finiteness,
-   local finite-cocycle and trace conditions. The weighted presentation
+   original ordinary local equations, local-ring factorization, finite inertia
+   and trace conditions. The weighted presentation
    and finite degree-zero quotient supply the permitted point rescaling,
    tangent lifting and cocycle determination. Diagonal separation
    and weight-zero rigidity follow from the proved local/class-field
    comparison, and qualitative finiteness supplies all negative base
    weights. The explicit marking kills normalized base coboundaries.
-   The local finite condition and two-sided rigidity remain.
+   The crystalline component theorem supplies the local finite condition
+   from those equations. Two-sided global rigidity remains.
    The compatible conormal
    pairing and full abstract length theorem are now proved under those
    conditions. Its chart normalization and finite orbit cover follow

@@ -1,0 +1,118 @@
+{
+  "status": "pass",
+  "reviewer": "independent geometry frontier agent",
+  "date": "2026-11-22",
+  "reviewed_artifacts": [
+    {
+      "path": "notes/selmer-crystalline-component-comparison.md",
+      "sha256": "595216c6863fbd47ba950f1608ad0d48c2776e0c6e033997286cbb4909e8505d"
+    },
+    {
+      "path": "paper/shared/selmer-crystalline-component-comparison.tex",
+      "sha256": "5af8af14ae4399a20770f7a5816530117f16f78e4b4cd8da8e1aca274c43a836"
+    },
+    {
+      "path": "paper/shared/selmer-crystalline-component-references.tex",
+      "sha256": "8875eef77f43c74256c61de4f30e999f036a2703d52bbb9479cac90182a68db8"
+    },
+    {
+      "path": "scripts/check_selmer_crystalline_component_comparison.py",
+      "sha256": "8da09141dea60ca24ad373ae42b19421a668c3f57e71fa3b50f262b574ca6155"
+    },
+    {
+      "path": "certificates/selmer-crystalline-component-comparison.json",
+      "sha256": "aa269519c1ebf5b48317834ff874d399d66c4240292f398a2e2a92b0c8038619"
+    }
+  ],
+  "checks": [
+    {
+      "item": "saturation_and_density",
+      "status": "PASS",
+      "finding": "Multiplication by δ on R/(J:δ^∞) is injective; localization at a minimal prime is Artinian local, so δ cannot belong to that prime. Thus D(δ) is dense on each surviving component. Reducedness alone was not substituted for saturation."
+    },
+    {
+      "item": "jacobson_generic_fibre",
+      "status": "PASS",
+      "finding": "Conrad printed pp.2–3 explicitly treat R[1/ℓ], show Jacobson and finite closed residue fields, and automatic locality of field-valued maps. Dense finite-field points therefore detect the radical ideal on this algebraic generic fibre."
+    },
+    {
+      "item": "ordinary_matrix_flag",
+      "status": "PASS",
+      "finding": "The three ordered-product substitutions (s,t,t),(t,s,t),(t,t,s) force column 0, row 2, and the middle diagonal. Distinct eigenvalues ensure the common first-character line and last-character quotient plane are unique. Normal inertia and conjugation-invariant characters make them stable under G_L. Source ordinary equations and spectral trace definitions match exactly."
+    },
+    {
+      "item": "nonresonance_factors",
+      "status": "PASS",
+      "finding": "The projectors give T_i=c_i κ_i(σ), hence d_i=c_i c_{i+1} κ_{i+1}(σ)(κ_i/κ_{i+1}(σ)−χ(σ)). Source IsFr includes σ∈G_L; the chosen Frobenius theorem supplies that membership. There is no unverified restriction of character inequalities from a larger group."
+    },
+    {
+      "item": "positive_ordinary_crystallinity",
+      "status": "PASS",
+      "finding": "Local Tate duality and Bloch–Kato dimension give dim(H1/Hf)=dim Hom(W,E′(1)) for crystalline W with strictly negative weights. The first ratio excludes χ. For the nonsplit second extension, constituents have exponents 2e and e, and neither is χ; the Hom exact sequence proves vanishing. Parallel weights −e,0,e fix every embedding multiplicity. For e≥2 inertia supplies nonresonance without saturation."
+    },
+    {
+      "item": "kisin_finite_coefficient_algebras",
+      "status": "PASS",
+      "finding": "Kisin author DVI (2.7.5)–(2.7.7), printed p.23, treats an arbitrary continuous complete-ring family and every finite E-algebra, with no residual irreducibility assumption. Removing ℓ-power torsion leaves the generic fibre unchanged. For trivial inertial type its proof may use the original local field; N=0 gives crystalline, not merely unspecified potentially crystalline. Vanishing on dense field points puts the Kisin ideal inside the radical saturated ideal; subsequent finite-algebra points factor through it, including dual numbers over δ=0."
+    },
+    {
+      "item": "tangent_and_full_local_group",
+      "status": "PASS",
+      "finding": "Crystalline periods split over L0⊗E′, a product of fields, so the Bcris splitting is E′-linear and kills the End_E′ cocycle. Source DualCr49–55 identifies the restricted adjoint with End(V). Finite-index restriction is injective after scalar extension to Bcris by finite-group averaging in characteristic zero, including the full involution action. Away-prime inertia averaging has the same finite-index justification."
+    },
+    {
+      "item": "scope_and_counterexamples",
+      "status": "PASS",
+      "finding": "Actual global-to-local ring maps, ordinary matrix equations, finite inertia conditions, and classical local p-adic Hodge theorems remain explicit. Neither full global Selmer rigidity nor integral bounds nor an RH/GRH node closure is claimed. The nonsaturated component and dual-number counterexamples correctly delimit the proof."
+    }
+  ],
+  "independent_primary_reads": [
+    "Kisin author DVI lines582–591 and1376–1415: general coefficient-ring setup and finite-algebra crystalline quotient",
+    "Conrad Generic fibers of deformation rings printed pp.2–3: Jacobson/locality claim and proof",
+    "Bloch–Kato Corollary3.8.4 printed p.355: finite cohomology dimension",
+    "Feng Theorem2.1 printed pp.4–5 and Remark4.8/Proposition4.10 printed p.12: duality, Euler sign, crystalline extension criterion"
+  ],
+  "source_review_ranges": {
+    "PadicHodgeTheory.IsInertiaInfiniteCyclotomic": [
+      [
+        11,
+        57
+      ],
+      [
+        72,
+        104
+      ],
+      [
+        93,
+        151
+      ]
+    ],
+    "ModularityArgument.CrystallineOrdinaryIdeals.TriangularConjOfOrdIdealEqBot": [
+      [
+        100,
+        129
+      ]
+    ],
+    "ModularityArgument.CrystallineOrdinaryIdeals.ChosenFrobeniusIsFrobenius": [
+      [
+        70,
+        83
+      ]
+    ],
+    "PadicHodgeTheory.DualCr": [
+      [
+        30,
+        62
+      ]
+    ],
+    "PublishedTheorems.KisinCrTrivial": [
+      [
+        9,
+        28
+      ]
+    ]
+  },
+  "rerun_evidence": "check_selmer_crystalline_component_comparison.py --offline passed: 9 pinned source modules, 5 byte-hashed primary references, exact ordinary-product/projector and boundary algebra",
+  "primary_reference_caution": "Feng Example2.3 has an apparent H2 Tate-twist index typo; this review uses the correctly stated duality/Euler theorem2.1 and does not propagate that typo.",
+  "verification_limit": "Mathematical review plus bounded source and reference authentication; no Lean compilation, no independent proof of the cited classical p-adic Hodge theorems."
+}

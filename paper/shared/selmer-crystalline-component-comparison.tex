@@ -1,0 +1,136 @@
+\begin{proposition}[Crystalline local tangent condition]
+\label{prop:selmer-crystalline-components}
+Let $O$ be the integers of a finite extension $E/\mathbf Q_\ell$,
+let $R$ be a complete Noetherian local quotient of
+$O[[z_1,\ldots,z_d]]$, and let
+$\rho:G_L\to\mathrm{GL}_3(R)$ be continuous, where
+$L/\mathbf Q_\ell$ is finite.  Fix $e\ge1$, an ideal $J\subset R$,
+an element $\delta\in R$, and an ideal
+\[
+                 I_t\supseteq\sqrt{J:\delta^\infty}.
+\]
+Suppose that every finite field-valued point of $R/J$ at which
+$\delta\ne0$ gives a representation with a flag whose successive
+characters $\kappa_0,\kappa_1,\kappa_2$ satisfy
+\[
+ \kappa_i|_{I_L}=\chi^{(1-i)e}|_{I_L},\qquad
+ \kappa_0/\kappa_1\ne\chi,\qquad
+ \kappa_1/\kappa_2\ne\chi,
+\]
+where $\chi$ is the cyclotomic character of $G_L$.
+Then every point of $R/I_t$ over a finite $E$-algebra is crystalline
+with Hodge--Tate weights $-e,0,e$ at every embedding of $L$.
+In particular, its tangent cocycles satisfy the finite local condition.
+\end{proposition}
+
+\begin{proof}
+For a crystalline representation $W$ with strictly negative
+Hodge--Tate weights, local Tate duality and the Bloch--Kato dimension
+formula give
+\[
+ \dim H^1(L,W)-\dim H_f^1(L,W)
+               =\dim\operatorname{Hom}_{G_L}(W,E'(1)),
+\]
+where $E'$ is its finite coefficient field
+\cite{bloch-kato-tamagawa,feng-local-bloch-kato}.
+Every $\kappa_i$ is an unramified twist of a Tate character and is
+crystalline.  Applying the formula to $\kappa_0/\kappa_1$ shows that
+the first two steps $V_2$ of the flag form a crystalline extension.
+The representation $V_2\otimes\kappa_2^{-1}$ then has successive
+characters $\kappa_0/\kappa_2$ and $\kappa_1/\kappa_2$, of positive
+Tate exponents $2e,e$.  Neither character is $\chi$: for the first,
+their inertia exponents differ; the second is excluded by hypothesis.
+Applying $\operatorname{Hom}_{G_L}(-,E'(1))$ to this flag gives zero,
+even when the flag does not split.  Thus its entire first cohomology
+is finite, and the last extension is crystalline as well.  Its Hodge
+type is the same fixed multiset $\{-e,0,e\}$ at every point.
+
+Put $I=J:\delta^\infty$ and $A=R[1/\ell]$.  Multiplication by
+$\delta$ on $R/I$ is injective.  Therefore $\delta$ belongs to no
+minimal prime: localization at such a prime is Artinian local,
+where an element of the maximal ideal is nilpotent and cannot act
+injectively.  Consequently $D(\delta)$ is dense in every component
+of $V(IA)$.  The ring $A$ is Jacobson, with finite extensions of
+$E$ as its closed residue fields
+\cite{conrad-generic-deformation-fibres}.  Their maps on $R$ are
+automatically local and continuous.  Hence the crystalline
+field points considered above are dense in $V(IA)$.
+
+Kisin's theorem supplies an ideal $K\subset A$ cutting out
+crystallinity of this fixed Hodge type, with trivial inertial type
+over $L$, for \emph{every finite $E$-algebra}
+\cite{kisin-potentially-semistable}.
+One first removes the $\ell$-power torsion from $R$ if necessary;
+this leaves $A$ unchanged.  Since the dense field points kill $K$,
+\[
+                         K\subseteq\sqrt{IA}\subseteq I_tA.
+\]
+Every finite algebra-valued point of $R/I_t$ therefore factors
+through Kisin's quotient.  This includes points over the dual
+numbers, even above the locus $\delta=0$.
+
+A crystalline dual-number representation is a crystalline
+self-extension of its specialization.  Applying crystalline periods
+splits its period sequence over $L_0\otimes_{\mathbf Q_\ell}E'$, a
+product of fields.  Comparison then gives an $E'$-linear splitting
+over $B_{\mathrm{cris}}$.  Its tangent class is therefore in $H_f^1$.
+\end{proof}
+
+The field-flag hypothesis follows directly from the ordinary equations.
+Write $a_i(s)=\chi(s)^{(1-i)e}$ for $s\in I_L$, and choose
+$t\in I_L$ such that $p_i=a_i(t)$ are distinct.  Those equations say
+that $\rho(t)$ has characteristic roots $p_i$ and that
+\[
+  \prod_{i=0}^{2}\bigl(\rho(s_i)-a_i(s_i)1\bigr)=0
+                   \qquad(s_i\in I_L).
+\]
+At a field point, diagonalize $D=\rho(t)$ in the order $p_0,p_1,p_2$.
+Put $D_i=D-p_i1$ and $c_i=\prod_{j\ne i}(p_i-p_j)$.
+For $A=\rho(s)$, the three substitutions $(s,t,t),(t,s,t),(t,t,s)$
+give
+\[
+ (A-a_0(s)1)D_1D_2=0,\quad
+ D_0(A-a_1(s)1)D_2=0,\quad
+ D_0D_1(A-a_2(s)1)=0.
+\]
+The first fixes the first column, the last fixes the last row, and
+the middle fixes $A_{11}$; hence $A$ is upper triangular with diagonal
+$a_0(s),a_1(s),a_2(s)$.  Distinct eigenvalues make its common $a_0$
+line and $a_2$ quotient plane unique.  Inertia is normal and the
+$a_i$ are conjugation invariant, so the whole local group preserves
+this flag.
+
+For $\sigma\in G_L$, spectral projectors give
+\[
+ \begin{aligned}
+ T_i&=\operatorname{tr}(D_{i+1}D_{i+2}\rho(\sigma))
+       =c_i\kappa_i(\sigma),\\
+ d_i&=c_{i+1}T_i-\chi(\sigma)c_iT_{i+1}\\
+    &=c_ic_{i+1}\kappa_{i+1}(\sigma)
+       \left(\frac{\kappa_i(\sigma)}{\kappa_{i+1}(\sigma)}
+                         -\chi(\sigma)\right).
+ \end{aligned}
+\]
+where indices on $D_i,c_i,T_i$ are cyclic and $i=0,1$ in the
+second formula.  These are the factors defining
+$\delta=\ell d_0d_1$ in the ordinary equations.
+Thus $\delta\ne0$ supplies the two required inequalities.
+The selected local component ideal contains
+$\sqrt{J:\delta^\infty}$, so the proposition applies directly.
+The restriction to $G_L=\ker\eta\cap\ker\tau$ removes the finite
+inertial characters; its Hodge type remains the fixed parallel
+multiset $\{-e,0,e\}$.
+If $e\ge2$, the two nonresonance inequalities already follow from
+inertia.  Taking $\delta=1$ then proves crystallinity on the reduced
+ordinary locus itself; saturation is unnecessary for this local step.
+
+The finite condition descends from this subgroup to the full local
+group by averaging a $B_{\mathrm{cris}}$-valued primitive over its
+finitely many cosets.  Here the restricted adjoint module is exactly
+$\operatorname{End}(V)$, with its conjugation action.
+Away from $\ell$, the same averaging makes
+a tangent cocycle unramified whenever it vanishes on a subgroup of
+finite index in inertia.  Thus the required local Selmer conditions
+follow once the global deformation ring factors through these local
+rings and imposes the stated finite inertia conditions.  These are
+explicit conditions on the arithmetic model.
