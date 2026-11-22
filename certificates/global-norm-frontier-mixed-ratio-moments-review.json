@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:32:21.891056+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Simultaneous original flag-ratio moments and a conditional reduction of the first-length shift reserve.",
+  "audit_groups": [
+    {
+      "topic": "Novelty and original data",
+      "result": "PASS",
+      "finding": "The Casimir identity and coarse derivative method already occur in recovered chapter77; the new result is their simultaneous application to the actual adjacent ratios and the smaller integer-shift reserve. Original quotient measure, formal degree and Bessel map are retained."
+    },
+    {
+      "topic": "Longer word energy",
+      "result": "PASS",
+      "finding": "Compact row energy on the adjoint module is at most4n. Tensor triangle inequalities and inheritance of Casimir eigenvalues under compact intertwiners control words through n^3; a positive isometry of the intertwiner is not assumed. The original stronger shape implies the displayed coarse numerical hypotheses."
+    },
+    {
+      "topic": "Adjacent root",
+      "result": "PASS",
+      "finding": "The explicitly constructed J-skew rank-two X has cube zero, the correct original unipotent character, and norm at most2L_aL_(a+1). This remains valid for the last ratio with the anisotropic last flag vector. The source normalized-X formula differs only by the stated scalar rescaling."
+    },
+    {
+      "topic": "Mixed moments",
+      "result": "PASS",
+      "finding": "Pointwise differentiation followed by Cauchy--Schwarz, Tonelli and induction proves the multi-index moment bound without a factor equal to the number of ratios. The same original mass inequality is an explicit input on the longer word spaces."
+    },
+    {
+      "topic": "Holder reserve and edge cases",
+      "result": "PASS",
+      "finding": "For ell>=2 use Holder exponents(ell+1)/ell and ell+1, giving total ratio order ell(ell^2-1)/2<=n^3 and first-length order ell+1. A>0 is explicit; ell=0 uses only mass, ell=1 uses order1, and v=0 is handled by linearity."
+    },
+    {
+      "topic": "Retained hard inputs",
+      "result": "PASS",
+      "finding": "The first-length recursion, degree-normalized lowering scalar and original mass/isometry remain unproved by this package. A common rescaling of all lengths leaves ratios fixed, preventing ratio bounds alone from closing the original weighted norm target."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AbelianVarietyTheory.Definitions.Jets.SumIoPr",
+      "sha256": "68974d4a593807f6264331d5d4fef76a09bda222ce5fb80addf46429846f4155",
+      "git_blob_sha1": "f074801e449e394d499ec97cf4c501dfc6f3415d",
+      "independently_read_ranges": [
+        [
+          16,
+          57
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.ExistsLieUnitaryElementSimpleRoot",
+      "sha256": "17e683d09e0cf903b0070f048315024012efe30acbce0c79dea2cb3d32afbb7a",
+      "git_blob_sha1": "79ee40452ca03241afaaeccbc41425d6006c4184",
+      "independently_read_ranges": [
+        [
+          55,
+          112
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.BesselCayleySideBound",
+      "sha256": "3b3d66c43e1e34ac8485c39cfbf58da868d12035f1dae523b55cd49607a2a0bb",
+      "git_blob_sha1": "f1849084b797675d1a966db0828d641dbbeb6d2c",
+      "independently_read_ranges": [
+        [
+          60,
+          118
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.FamilySetupCayleyBound",
+      "sha256": "37b0b684872ccd71d19ef7a97f65be1ed79d1cbe7301be0dd90266bcc9545ccc",
+      "git_blob_sha1": "9b658e33b9780b1500f7ecfe94675c2b442090a3",
+      "independently_read_ranges": [
+        [
+          78,
+          127
+        ],
+        [
+          185,
+          213
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.FamilySetupCayleyRecursion",
+      "sha256": "61bcc7884ac79d6a61fd33c037e4a47bc034f2518034f68518380616c7ea21cc",
+      "git_blob_sha1": "b52d96d19ad7fa83de32f3d3389a7d6547774b26",
+      "independently_read_ranges": [
+        [
+          19,
+          49
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.FlagMeasures.ProductMomentFirstLengthsLowestVector",
+      "sha256": "896c244c57df1abda957079290be47a703b7ca0f9adbfdc8b90b69b0e5e5fb30",
+      "git_blob_sha1": "89f0d5bf68aa3ae22152db34f40b8c79b32eb8ef",
+      "independently_read_ranges": [
+        [
+          66,
+          115
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_global_norm_frontier_mixed_ratio_moments.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "flag_geometry": {
+        "exact_complex_rational_unitary_flags": 6,
+        "rank_two_adjacent_root_cases": 12,
+        "checked": [
+          "original Hermitian form",
+          "positive Gram--Schmidt lengths",
+          "skew adjointness for the indefinite form",
+          "nilpotence of order three",
+          "Hilbert--Schmidt coefficient bound",
+          "adjacent character coordinate",
+          "vanishing of all earlier adjacent coordinates"
+        ]
+      },
+      "polynomials": {
+        "substitution": "n=x+1, B0=16*n^3+y, x,y>=0",
+        "energy_inequalities": [
+          {
+            "polynomial": "30*x**4 + 104*x**3 + 132*x**2 + 2*x*y + 72*x + 2*y + 14",
+            "all_coefficients_nonnegative": true
+          },
+          {
+            "polynomial": "256*x**8 + 2048*x**7 + 7168*x**6 + 32*x**5*y + 14336*x**5 + 160*x**4*y + 17920*x**4 + 320*x**3*y + 14335*x**3 + x**2*y**2 + 320*x**2*y + 7165*x**2 + 2*x*y**2 + 160*x*y + 2045*x + y**2 + 32*y + 255",
+            "all_coefficients_nonnegative": true
+          },
+          {
+            "polynomial": "256*x**6 + 1536*x**5 + 3840*x**4 + 32*x**3*y + 5120*x**3 + 96*x**2*y + 3767*x**2 + 96*x*y + 1390*x + y**2 + 32*y + 183",
+            "all_coefficients_nonnegative": true
+          }
+        ],
+        "symbolic_holder_exponent_identities": 2
+      },
+      "reserves": {
+        "boundary_and_reserve_cases": 3402,
+        "includes_r_zero": true,
+        "includes_l_zero_and_one": true,
+        "old_integer_shift_budget_replaced_only_conditionally": true
+      },
+      "negative_controls": {
+        "controls_rejected": 2,
+        "labels": [
+          "ratio estimates used to control common length scale",
+          "mass bound substituted for a weighted norm bound"
+        ]
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/global-norm-frontier-mixed-ratio-moments.md",
+      "sha256": "2411bfcc25afe801355b8d81639a602687082b1f7cdec70d0d38879c4672c6aa"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-mixed-ratio-moments.tex",
+      "sha256": "793a9c09c09da253adf5720ae6c4421aa69eac126c02edd947ae51195b4de67c"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-mixed-ratio-moments-references.tex",
+      "sha256": "1b7116e9949e0906271f0535c37c943fdcc70b6f7b22a68acff27afbe1c25d6d"
+    },
+    {
+      "path": "scripts/check_global_norm_frontier_mixed_ratio_moments.py",
+      "sha256": "4f3e18a4ec09718f16013e711483b4bcece25ff52a888a82fba8d2bbc03b51d2"
+    },
+    {
+      "path": "certificates/global-norm-frontier-mixed-ratio-moments.json",
+      "sha256": "87086bb2dc25286e13d9e6c9a63150041362435867eabf25362e198704384bc3"
+    }
+  ],
+  "limits": [
+    "The general proof retains the original mass bound and first-length moment hypothesis.",
+    "No identification with the leading-minor Jacquet norm or change to the original gap-budget function is claimed.",
+    "This is a quantitative refinement inside an open node; no Lean build or whole-node completion."
+  ]
+}

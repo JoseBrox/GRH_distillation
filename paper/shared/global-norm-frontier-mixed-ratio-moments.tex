@@ -1,0 +1,178 @@
+\subsection{Simultaneous moments of flag-length ratios}
+\label{mixed-flag-ratio-moments}
+
+We retain the quotient measure and formal-degree normalization of the
+Bessel model.  The derivative energy argument is the Casimir argument
+already established in the local discrete-series calculation
+\cite{mixed-ratio-casimir}.  The point here is to apply it simultaneously
+to the adjacent flag ratios, thereby reducing the first-length moment
+needed for a product of lengths.
+
+Let $J=J^*=J^{-1}$ on $\mathbb C^n$, with Hermitian form
+$h(x,y)=x^*Jy$.  Fix independent vectors $f_0,\ldots,f_r$ whose first
+$r$ vectors span a totally isotropic space, with $f_r$ orthogonal to
+that space and $h(f_r,f_r)=-T<0$.  For $g\in U(J)$ put
+\[
+ L_a(g)=\operatorname{dist}\left(g^{-1}f_a,
+             \operatorname{span}_{j<a}(g^{-1}f_j)\right),
+ \qquad R_a(g)=L_{a+1}(g)/L_a(g)\quad(a<r).
+\]
+These lengths are positive.  Let $\sigma$ be a unitary representation
+on a Hilbert space, with a common invariant smooth domain for its
+derived operators.  Let $\mathcal B$ be a smooth Bessel map
+for the original character, normalized so that an adjacent imaginary
+coordinate $it$ contributes $e^{-2it}$.  Set
+$F_v(g)=\sqrt d\,\mathcal B(\sigma(g)v)$, where $d>0$ is the original
+formal degree, and let $\nu$ be the original quotient measure.  All
+functions integrated below are assumed measurable.
+
+Write $E_{ij}$ for the complexified matrix units on the common smooth
+domain.  In a basis in which $J$ has signs $s_i$, they satisfy
+\[
+ [E_{ij},E_{ab}]=\delta_{ja}E_{ib}-\delta_{bi}E_{aj},\qquad
+ E_{ij}^*=s_i s_jE_{ji}.
+\]
+Let $S_0$ be a finite-dimensional compact-invariant space, and let
+$S_t$ span words of length at most $t$ applied to $S_0$.  Suppose
+\begin{equation}\label{mixed-ratio-energy-assumptions}
+ \Omega=c_G I,\quad c_G\ge-n^3,\quad
+ \Omega_K|_{S_0}\le A_0^2I,\quad
+ 0\le A_0\le4nB_0+16n^3,\quad b\ge B_0\ge16n^3,
+\end{equation}
+where $\Omega=\sum E_{ij}E_{ji}$ and
+$\Omega_K=\sum_{s_i=s_j}E_{ij}E_{ji}$.
+The analytic input is the unchanged norm bound
+\begin{equation}\label{mixed-ratio-mass-input}
+             \int\|F_v\|^2\,d\nu\le\|v\|^2
+                      \qquad(v\in S_{n^3}).
+\end{equation}
+This is a hypothesis about the original Bessel realization; it is not
+a definition or a probability normalization of $\nu$.
+
+\begin{lemma}\label{mixed-ratio-energy}
+Under \eqref{mixed-ratio-energy-assumptions}, for $0\le t\le n^3$,
+\[
+                  \sum_{i,j}\|E_{ij}v\|^2\le b^4\|v\|^2
+                         \qquad(v\in S_t).
+\]
+\end{lemma}
+\begin{proof}
+The Casimir identity gives
+$\sum\|E_{ij}v\|^2=2\langle v,\Omega_Kv\rangle-c_G\|v\|^2$.
+On the adjoint module with Hilbert--Schmidt norm,
+\[
+ \sum_{s_i=s_j}\|[e_{ij},A]\|_{\rm HS}^2
+ \le2\sum_{i,j}\bigl(\|e_{ij}A\|_{\rm HS}^2+
+                     \|Ae_{ij}\|_{\rm HS}^2\bigr)
+ =4n\|A\|_{\rm HS}^2.
+\]
+The row-operator triangle inequality on tensor products, followed by
+the intertwiner $e_{ij}\otimes v\mapsto E_{ij}v$, gives
+$\Omega_K|_{S_t}\le(A_0+2nt)^2I$.  No isometry of the intertwiner is
+needed: a finite-dimensional compact-module image inherits only
+Casimir eigenvalues already occurring in its source.  These values
+are bounded because the Casimir is self-adjoint.  It follows that
+\[
+ 2(A_0+2nt)^2-c_G
+ \le72n^2B_0^2+n^3\le73n^2B_0^2\le B_0^4\le b^4.
+\]
+\end{proof}
+
+\begin{lemma}\label{mixed-ratio-pointwise}
+For each $a<r$ and each smooth vector $v$,
+\[
+              R_a(g)^2\|F_v(g)\|^2
+                         \le\sum_{i,j}\|F_{E_{ij}v}(g)\|^2.
+\]
+\end{lemma}
+\begin{proof}
+Put $v_j=g^{-1}f_j$.  Let $e$ be the Euclidean residual of $v_a$
+against its predecessors, and $p$ the residual of $v_{a+1}$ against
+$v_0,\ldots,v_a$.  The rank-two matrix
+\[
+                 w=-iJp,\qquad X=e w^*J-w e^*J
+\]
+satisfies $X^*J+JX=0$, $X^3=0$, and
+$\|X\|_{\rm HS}\le2L_aL_{a+1}$.  Indeed,
+$h(e,e)=h(e,w)=0$, $Xv_j=0$ for $j\le a$, and
+$Xv_{a+1}=iL_{a+1}^2e$; later flag vectors map into the first
+$a+1$ flag directions.  The induced action on the orthogonal quotient
+of the isotropic flag is zero.  Hence $g\exp(tX)g^{-1}$ belongs to
+the original unipotent radical and has Bessel character
+$\exp(-2itL_{a+1}^2)$, with the stated original character convention
+\cite{mixed-ratio-source}.
+
+Differentiating equivariance and using the unitary Cayley basis $Q$
+gives
+\[
+ -2iL_{a+1}^2F_v(g)
+                   =\sum_{i,j}(QXQ^{-1})_{ij}F_{E_{ij}v}(g).
+\]
+Cauchy--Schwarz, unitary invariance of the Hilbert--Schmidt norm and
+positivity of the lengths prove the inequality.
+\end{proof}
+
+\begin{proposition}\label{mixed-ratio-moment}
+Under \eqref{mixed-ratio-energy-assumptions} and
+\eqref{mixed-ratio-mass-input}, for $v\in S_s$ and
+$\alpha\in\mathbb N^r$ with $s+|\alpha|\le n^3$,
+\[
+ \int\prod_{a<r}R_a^{2\alpha_a}\|F_v\|^2\,d\nu
+                                  \le b^{4|\alpha|}\|v\|^2.
+\]
+\end{proposition}
+\begin{proof}
+Induct on $|\alpha|$.  The zero case is
+\eqref{mixed-ratio-mass-input}.  If $\alpha_a>0$, multiply
+Lemma~\ref{mixed-ratio-pointwise} by the remaining ratio product.
+After integration, Tonelli and the induction hypothesis give
+$b^{4(|\alpha|-1)}\sum_{i,j}\|E_{ij}v\|^2$.
+Lemma~\ref{mixed-ratio-energy} proves the assertion.  In particular,
+the weighted integral is finite.  No division by a norm occurs.
+\end{proof}
+
+\begin{corollary}\label{mixed-ratio-length-product}
+Suppose $n=2r+k+1$, $k\ge1$, $0\le\ell\le r+1$, $A>0$, and $v\in S_0$.
+In addition to the preceding hypotheses, suppose the original
+first-length moment satisfies
+\[
+             \int L_0^{2h}\|F_v\|^2\,d\nu\le A^h\|v\|^2,
+\]
+where $h=1$ if $\ell=1$, and $h=\ell+1$ if $\ell\ge2$.
+Then
+\[
+ \int\prod_{a<\ell}L_a^2\|F_v\|^2\,d\nu
+                  \le A^\ell b^{2\ell(\ell-1)}\|v\|^2.
+\]
+For $\ell=0$ no first-length hypothesis is required: the assertion is
+simply the mass bound.
+\end{corollary}
+\begin{proof}
+The cases $\ell=0,1$ are immediate.  Otherwise use
+\[
+ \prod_{a<\ell}L_a^2
+         =L_0^{2\ell}\prod_{a=0}^{\ell-2}R_a^{2(\ell-1-a)}
+\]
+and apply H\"older for the measure $\|F_v\|^2d\nu$, with exponents
+$(\ell+1)/\ell$ and $\ell+1$.  The first factor is bounded by
+$A^\ell\|v\|^{2\ell/(\ell+1)}$.  For the second, the total
+ratio order is $\ell(\ell^2-1)/2\le n^3$, and
+Proposition~\ref{mixed-ratio-moment} bounds it by
+$b^{2\ell(\ell-1)}\|v\|^{2/(\ell+1)}$.  If $v=0$, linearity
+proves the assertion directly.
+\end{proof}
+
+For the original first-length family,
+$A=n^2Tb^4(6B_0)^{2(2r+2)}$.  Its moment of order $h$ uses the
+integer-shift reserve $\|\eta\|_1+h\le q_0$
+\cite{mixed-ratio-source}.  The corollary therefore uses $\ell+1$
+rather than $(r+1)^2$ additional shifts when $\ell\ge2$.
+After an exterior shift of size $\ell$, a sufficient reserve is
+$2\ell+1$, rather than $(r+1)(r+2)$.  The cases $\ell=0,1$ need
+respectively $0,2$ shifts at this latter stage.  These comparisons
+retain the original first-length estimate and its representation
+hypotheses.  They do not yet identify the weighted integral with the
+original leading-minor Jacquet norm, nor prove that norm estimate.
+In particular, simultaneous ratio bounds cannot control the common
+scale of all lengths: multiplying every $L_a$ by a common positive
+constant leaves every $R_a$ unchanged.
