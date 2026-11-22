@@ -194,3 +194,12 @@ restriction. Its [independent review](../certificates/geometry-arithmetic-fronti
 checks the fixed cones, original coefficient rings, simultaneous inert
 prime and exact intermediate model. No arbitrary half-ideal is
 substituted for the prescribed one.
+
+The [Taylor--Wiles certificate](../certificates/selmer-integral-frontier-taylor-wiles.json)
+authenticates the full `TWBase`, `TWRing`, `TWMaps` and `TWAut`
+contracts and their actual arithmetic realization. Its
+[independent review](../certificates/selmer-integral-frontier-taylor-wiles-review.json)
+checks the integral trace/dual-tensor maps, exact original multiplier,
+residual block, weight coordinates and uniform n! relation exponent.
+Source authentication and finite symbolic checks are distinguished from
+the general mathematical argument.

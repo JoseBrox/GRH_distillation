@@ -93,11 +93,13 @@ Coefficient change, faithful good weight-zero classical specialization,
 the actual integral Hecke determinant and exact classical Galois
 compatibility are proved. The original compact types exist at arbitrary
 conductor over the original coefficient ring; their full restriction-of-scalars
-rank cost is retained.
+rank cost is retained. The actual Taylor--Wiles auxiliary modules and
+both integral comparison maps now supply the full original `TWAut`
+contract for each given arithmetic realization, with the exact source
+multiplier and uniform exponent n!.
 
-**First missing construction.** Complete the original integral auxiliary
-spherical/Iwahori comparison on these very modules, then construct the
-marked deformation models and prove patched support with the required
+**First missing construction.** Construct the marked deformation
+models and prove patched support on these very modules with the required
 dimension. Propagation must retain the entire characteristic-prime fibre
 and the actual two-sided rigidity. Neither qualitative finiteness,
 fixed-point constants nor a torsion-free quotient proves the displayed

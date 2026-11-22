@@ -75,9 +75,16 @@ multiplicity spaces, exact ordinary q-powers, ordered local flags,
 and the original residual quotient. Integral Amitsur identities avoid
 dividing by n!, including when the residue characteristic is small.
 
+The [Taylor--Wiles theorem](selmer-integral-frontier-taylor-wiles.md)
+constructs the actual auxiliary modules and their two integral comparison
+maps. An explicit integral dual tensor gives the exact original multiplier,
+without dividing by a spherical index. The local Jacquet dimension gives
+the uniform exponent n!, retaining global multiplicities. The completed
+ordered-root factor and full coefficient-ring linearity are verified.
+
 Both finite-level cohomological bounds and their exact limiting
 comparison are proved. The next arithmetic requirements are the actual
-auxiliary comparison maps, marked deformation models, patched support,
+marked deformation models, patched support,
 full characteristic-prime propagation and two-sided rigidity. They must
 supply the moving-family integral Selmer product; qualitative finiteness
 or rational rigidity cannot replace that bound.

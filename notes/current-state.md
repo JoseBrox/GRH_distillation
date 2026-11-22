@@ -54,8 +54,10 @@ specializations, and now carry the original universal integral Hecke
 determinant with its exact classical Galois compatibility. The prescribed
 integral compact types are constructed at arbitrary finite conductor,
 including wild inertia, over the original coefficient ring. Restriction
-of scalars and its rank cost are retained. Auxiliary comparison maps,
-patched support, two-sided rigidity and the moving-family integral
+of scalars and its rank cost are retained. The actual Taylor--Wiles
+modules now have the two prescribed integral comparison maps, with
+the exact source multiplier and uniform relation exponent n!.
+Patched support, two-sided rigidity and the moving-family integral
 Selmer budget remain open.
 
 The actual local Bessel families satisfy the iterated weighted norm

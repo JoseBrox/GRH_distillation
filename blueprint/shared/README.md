@@ -138,8 +138,8 @@ The [Hecke determinant construction](../../notes/selmer-integral-frontier-hecke-
 and [integral type construction](../../notes/selmer-integral-frontier-type-construction.md)
 provide the exact original determinant/classical Galois action and arbitrary-conductor
 compact types. Global multiplicities and restriction-of-scalars rank costs remain
-explicit. These do not yet supply auxiliary maps, patched support or uniform
-integral Selmer bounds.
+explicit. The Taylor--Wiles construction below supplies the auxiliary
+maps. Patched support and uniform integral Selmer bounds remain separate.
 
 The [rank-zero pointwise theorem](../../notes/global-norm-frontier-rank-zero-pointwise.md)
 proves the entire original pointwise orbital requirement at r=0 with b^4/G,
@@ -166,3 +166,11 @@ Siegel scheme, finite transitions on one rational cone system, the
 auxiliary prime uniform in every admissible half-level, and the exact
 Siegel comparison including its intermediate finite unramified scheme.
 The remaining arithmetic `PartI` supplier is the formal-arc clause `N4`.
+
+The [Taylor--Wiles theorem](../../notes/selmer-integral-frontier-taylor-wiles.md)
+closes the actual `TWAut` supplier for each original arithmetic
+realization. Both integral maps have exactly the prescribed multiplier;
+their uniform relation exponent is n!, with all global multiplicities
+retained. The original residual block, coefficient map and ordered-root
+completion are checked. No nonzero seed or patched-support conclusion
+is inferred from this construction.

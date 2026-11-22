@@ -1,0 +1,250 @@
+\subsection{Actual Taylor--Wiles modules and comparison maps}
+\label{sec:selmer-taylor-wiles}
+
+Retain the original ordinary Hecke datum, its integral type, weight
+algebra \(\Lambda=\mathcal O[[X_1,\ldots,X_D]]\),
+\(D=n[F:\mathbb Q]\), and universal ordinary ring \(B\).
+Let \(M_0\) be its actual finite free ordinary module, with the
+Hecke determinant action, and \(J=\operatorname{Ann}_B M_0\).
+This is the original kernel ideal when \(M_0\ne0\), and \(J=B\)
+in the source's zero-module branch.
+
+\begin{theorem}[The arithmetic auxiliary-module supplier]
+\label{thm:selmer-taylor-wiles}
+For every original Taylor--Wiles datum with its prescribed arithmetic
+realization, the actual ordinary modules supply all fields of
+\(\mathrm{TWAut}\).  The two comparison maps have the exact
+multiplier
+\[
+ f(U)=\prod_j\prod_{i\ne k}
+                (U_{ji}-U_{jk})(U_{ji}-Q_jU_{jk}),
+\]
+and both determinant relation families have exponent \(n!\),
+independent of the auxiliary level.  The ideal \(J\), weight
+coordinates, ordered residue lifts and original coefficient ring
+are retained.  No nonvanishing assertion is included.
+\end{theorem}
+
+\begin{proof}
+Fix the auxiliary level \(N\).  At its prescribed distinct split
+places \(w_j\), put \(Q_j=\#k_{w_j}\) and
+\(a_j=v_\ell(Q_j-1)\ge N\).
+Let \(K_j=\mathrm{GL}_n(\mathcal O_{L_{w_j}})\), let \(I_j\)
+be the upper Iwahori, and let \(I_{1j}\) have diagonal residues
+in the prime-to-\(\ell\) subgroup.  With products over \(j\),
+\[
+ \Delta=I/I_1=\prod_{j,i}\mathbb Z/\ell^{a_j}\mathbb Z,\qquad
+ \Lambda[\Delta]=
+ \Lambda[[Y_{ji}]]/
+       \bigl((1+Y_{ji})^{\ell^{a_j}}-1\bigr)_{j,i}.
+\]
+The actual ordinary smooth union \(\mathcal P\), with the fixed
+Hecke set outside the enlarged ramification set, has
+\(M_1=\mathcal P^{I_1}\) finite free over this local group ring.
+The unnormalized diamond trace onto \(W=\mathcal P^I\) is
+surjective with kernel \((Y_{ji})M_1\).
+
+\emph{Coefficients and the base residual block.}
+The enlarged ordinary determinant ring \(B_N\) is an actual complete
+Noetherian local \(\mathcal O\)-algebra.  Number-field Galois groups
+with finite allowed ramification satisfy Mazur's finiteness
+condition.  Chenevier's determinant representability theorem
+therefore applies, including when \(\ell\le n\)
+\cite[Propositions 3.3 and 3.7, Example 3.6]{SelmerTWChenevier}.
+Adjoin the finitely many local character deformation rings and
+impose the exact prescribed-unit, polarization, ordered ordinary
+and type-inertia equations.  These are closed equations in a
+Noetherian ring.  The pulled-back original pair supplies a point
+over \(B\), so their quotient is proper.  Universality gives
+\(\beta:B_N\to B\), preserving both the determinant and ordinary
+characters.
+
+The determinant theorem acts on \(\mathcal P\), and its good
+classical maps separate vectors.  On \(\mathcal P^K\), those
+classical representations are spherical at every \(w_j\); their
+Galois representations are unramified there.  Separation descends
+the determinant integrally to the original Galois quotient.
+The omitted spherical operators satisfy
+\[
+ \det(X-\rho(\phi_j))
+   =\sum_{k=0}^n(-1)^k Q_j^{k(k-1)/2}T_{j,k}X^{n-k}.
+\]
+Thus they lie in the same finite local Hecke algebra and already
+have the prescribed residual values.  Imposing their residual
+conditions removes no vectors.  Consequently
+\(\mathcal P^K=M_0\), with \(B_N\)-action through \(\beta\).
+This verifies the residual-block compatibility that deleting
+operators alone would not supply.
+
+\emph{The integral maps.}
+Let \(x_j\) and \(\delta_j\) be the exact Artin images of the
+prescribed geometric Frobenius \(\phi_j\) and inertia generator
+\(\tau_j\).  The integral Iwahori--Matsumoto relations make all
+standard pro-\(p\) Iwahori elements invertible since \(Q_j\) is a
+unit.  Positive diagonal double cosets multiply without a factor;
+quotients of positive diagonals give the commuting operators
+\(\Theta\) on each \(I_C\)-invariant module
+\cite[Theorem 1, Propositions 4 and 6]{SelmerTWVigneras}.
+Their restriction from pro-\(p\) Iwahori invariants retains the
+actual unnormalized sums, with no division by \(|C|\).
+For \(n=1\) this is ordinary torus translation.  Put
+\[
+ U_{ji}=Q_j^i\Theta(e_ix_j),\qquad
+ 1+Y_{ji}=\Theta(e_i\delta_j),\qquad 0\le i<n.
+\]
+On a normalized Jacquet character \(\xi\), these have eigenvalues
+\(Q_j^{(n-1)/2}\xi_i(x_j)\) and \(\xi_i(\delta_j)\):
+the modulus exponent \((n-1)/2-i\) cancels the inserted \(i\).
+These are exactly the parameters of
+\(\pi_j|\det|^{(1-n)/2}\).
+
+Here is an integral construction of both spherical comparison maps.
+For one place set
+\[
+ P=\mathcal O[Z_0,\ldots,Z_{n-1}],\quad S=P^{\mathfrak S_n},
+ \quad D_Z=\prod_{i<k}(Z_k-Z_i),\quad
+ N_Q=\prod_{i<k}(Z_k-QZ_i),\quad
+ d(h)=\frac{\operatorname{Alt}(h)}{D_Z}.
+\]
+The quotient defining \(d\) is integral.  The Bernstein polynomial
+action and the unnormalized spherical trace \(E=\sum_wT_w\) give
+\[
+ T_i h=Q s_i h+(Q-1)Z_i\frac{h-s_i h}{Z_i-Z_{i+1}},
+ \qquad Eh=d(N_Qh).
+\]
+The Bernstein basis proves these identities in the actual Hecke
+algebra; no square root of \(Q\) is needed
+\cite[\S\S1.6--1.7, 1.15 and 2.3]{SelmerTWHKP}.
+For each subset \(A\subseteq\{(i,k):i<k\}\), put
+\[
+ a_A=\prod_{(i,k)\in A}Z_k,\qquad
+ c_A=\prod_{(i,k)\notin A}(-Z_i).
+\]
+Direct expansion yields
+\[
+ \sum_Aa_Aw(c_A)=D_Z\,1_{w=1},\qquad
+ \sum_Aa_Ad(c_Ah)=h,\qquad
+ \sum_Aa_AEc_A=N_Q.
+\]
+Indeed a nonidentity permutation has \(i<w(i)\), giving a zero
+factor \(Z_{w(i)}-Z_{w(i)}\) in the first expression.
+Since \(P\) is finite free over \(S\), these identities exhibit the
+perfect pairing \(d(hh')\); its dual tensor intertwines the two
+\(P\)-actions on \(P\otimes_SP\).
+
+Let \(\mathcal S\) be the finite ordered-root algebra over \(B\)
+for the polynomials \(D_B(X-\phi_j)\), with roots \(z_{ji}\).
+Using the product \(\operatorname{Tr}:W\to M_0\) of actual spherical
+traces, define
+\[
+ \Phi(p\otimes m)=p(U)m,\qquad
+ \Psi(w)=\sum_{\boldsymbol A}\prod_j a_{A_j}(z_j)\otimes
+       \operatorname{Tr}\!\left(\prod_jc_{A_j}(U_j)w\right).
+\]
+The spherical polynomial identity makes \(\Phi\) well defined.
+The dual-tensor identity makes \(\Psi\) intertwine every \(U_{ji}\).
+All maps commute with \(B_N\), acting on the left through \(\beta\).
+The preceding identities give
+\[
+ \Phi\Psi=\prod_jN_{Q_j}(U_j),\qquad
+ \Psi\Phi=\prod_jN_{Q_j}(z_j).
+\]
+For the second equality use \(Ec(U)m=d(N_Qc)(U)m\) on a
+\(K\)-fixed vector.  The integral polynomial
+\(f/\prod_jN_{Q_j}\) multiplies \(\Psi\) to make both compositions
+exactly \(f\).  No spherical index or Poincar\'e polynomial is
+inverted.
+
+\emph{The one uniform exponent.}
+For every irreducible smooth local \(\pi\), its \(I_C\)-invariants
+inject into its upper Jacquet module: an element of the Jacquet
+kernel is killed by sufficiently deep unipotent averaging, hence
+by a power of an invertible positive \(\Theta\)-operator.
+A Jacquet character quotient embeds \(\pi\) into a principal
+series.  Exact Jacquet restriction and its Weyl filtration imply
+\[
+                         \dim\pi^{I_C}\le n!
+\]
+\cite[Proposition 2.3 and Lemma 2.12]{SelmerTWBZ}.
+Repeated characters count with multiplicity.
+
+At a separating good classical point, write
+\((\alpha_i,\beta_i)\) for a joint character of
+\((U_{ji},1+Y_{ji})\).
+If \(f_j(\alpha)\ne0\), the \(\alpha_i\) are distinct and no
+ratio is \(Q_j\) or \(Q_j^{-1}\).  Local monodromy is therefore
+zero.  Exact local compatibility identifies the actual
+\(\rho(\phi_j),\rho(\tau_j)\) with simultaneous eigenvalues
+\((\alpha_i,\beta_i)\); distinct Frobenius eigenvalues and finite
+inertia remove the semisimplification ambiguity.  Consequently
+\[
+ \prod_k(\rho(\phi_j)-\alpha_k)=0,\qquad
+ \prod_{k\ne i}(\rho(\phi_j)-\alpha_k)
+                         (\rho(\tau_j)-\beta_i)=0.
+\]
+If \(f_j(\alpha)=0\), multiplying by that factor already kills
+the scalar evaluation.  After left multiplication by \(\rho(g)\)
+and taking traces, simultaneous triangularization on a space
+of dimension at most \(n!\) kills the \(n!\)-th power.
+The other local \(f_k\) commute and add no exponent.
+Global multiplicity spaces are retained with identity action.
+Classical separation therefore gives, integrally and for every
+\(g,j,i\),
+\begin{align*}
+ \left(f(U)\operatorname{tr}D_N
+       \left(g\prod_k(\phi_j-U_{jk})\right)\right)^{n!}M_1&=0,\\
+ \left(f(U)\operatorname{tr}D_N
+       \left(g\prod_{k\ne i}(\phi_j-U_{jk})
+                             (\tau_j-1-Y_{ji})\right)\right)^{n!}M_1&=0.
+\end{align*}
+
+\emph{Completion and all coefficient maps.}
+Fix the source's ordered lifts \(u^0_{ji}\in\mathcal O\) of
+\(\bar\chi_i(T.sg_j)\).  Take the common Fitting summand
+\(M_N\subseteq M_1\) on which every \(U_{ji}-u^0_{ji}\) is
+topologically nilpotent.  The source's \texttt{T.ph\_H} and
+\texttt{TWPl.H\_eq}
+make these lifts a residue-root tuple for \(D_B(X-\phi_j)\).
+Its commuting projectors are
+\(\Lambda[\Delta]\)-linear, so \(M_N\) is finite free over this
+local ring.  Set
+\[
+ R_N=B_N[[Z_{ji},Y_{ji}]],\qquad U^{\rm ring}_{ji}=u^0_{ji}+Z_{ji},
+\]
+letting \(Z_{ji}\) act by \(U_{ji}-u^0_{ji}\) and \(Y_{ji}\) by
+diamond minus one.  The complete finite Hecke algebra makes this
+power-series action convergent.  Extend the original determinant
+pair by the coefficient inclusion.
+
+The source ring \(\mathrm{Sp}\) is the complete local factor
+\(\mathcal S^\wedge_{u^0}\) at the ordered residue roots.
+Lifting the residue idempotents selects matching summands of
+the two maps, and the exact diamond trace gives
+\[
+ \mathrm{Sp}\otimes_B M_0
+      \ \underset{\Psi}{\stackrel{\Phi}{\rightleftarrows}}\
+                         M_N/(Y_{ji})M_N.
+\]
+Their compositions remain \(f\).  Define the coefficient map by
+\[
+ \theta:R_N\longrightarrow\mathrm{Sp},\qquad
+ b\longmapsto\beta(b),\quad Z_{ji}\longmapsto z_{ji}-u^0_{ji},
+ \quad Y_{ji}\longmapsto0.
+\]
+It preserves the determinant, the ordered ordinary characters and
+the root operators.  On \(\Lambda[[Y_{ji}]]\) it is exactly the
+constant-coefficient map followed by the original weight map.
+The unchanged weight formulas
+\(X_k=c_k\psi_{v_k,i_k}(\gamma_k)-1\) verify both weight fields.
+The displayed relation powers restrict to \(M_N\).
+Finally the arithmetic realization map is continuous, injective
+and surjective between compact Hausdorff groups; transport by
+this isomorphism retains every original local map, Frobenius
+representative and inertia generator.  These constructions give
+every field of the original contract \cite{SelmerTWSource}.
+Empty auxiliary sets and zero modules are included.
+\end{proof}
+
+This closes the actual auxiliary-module and comparison supplier.
+Patched support, the arithmetic seed, two-sided rigidity and
+the moving-family integral Selmer bound remain separate.
