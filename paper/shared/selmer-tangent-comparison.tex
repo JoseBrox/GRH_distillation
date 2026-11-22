@@ -1,0 +1,148 @@
+\paragraph{Passing from equations to representation tangents.}
+The following comparison supplies point lifting and the lifting and
+determination of tangents once the prescribed weighted presentation is available.
+All coefficient extensions in its proof are finite and may depend on
+the point and tangent vector.
+
+\begin{proposition}\label{prop:selmer-tangent-comparison}
+Let \(\mathcal O\) be the ring of integers of a finite extension of
+\(\mathbb Q_\ell\), and put \(P=\mathcal O[[z_1,\ldots,z_d]]\),
+with integer weights on the variables. Let \(J\) be an ideal stable
+under weight components, \(R=P/J\), and \(A\subset R\) the
+algebra of finite sums of homogeneous series. Let \(Q\subset A\)
+be a finitely generated homogeneous ideal and \(S=R/QR\). Suppose
+\((A/Q)_0\) is finite over \(\mathcal O\).
+
+Every \(\overline{\mathbb Q}_\ell\)-point of \(A/Q\) becomes,
+after one grading rescaling, the restriction of a point
+\(f:S\to\overline{\mathbb Q}_\ell\) satisfying
+\(|f(\mathfrak m_S)|<1\). Every derivation on \(A\) at \(f\)
+annihilating \(Q\) extends uniquely to a continuous derivation on
+\(S\). If \(S\) represents the prescribed framed deformation
+problem, its tangent cocycle determines this derivation.
+\end{proposition}
+
+\begin{proof}
+First let \(B\) be any complete Noetherian local \(\mathcal O\)-algebra
+with the same residue field, and \(h:B\to\overline{\mathbb Q}_\ell\)
+such a local point. Put \(\mathfrak p=\ker h\). We have
+\(|h(B)|\le1\), so \(B/\mathfrak p\) is integral over
+\(\mathcal O\). Every prime containing \((\pi)+\mathfrak p^2\)
+is therefore maximal, giving
+\(\mathfrak m_B^N\subseteq(\pi)+\mathfrak p^2\).
+Consequently \(B/\mathfrak p^2\) is \(\pi\)-adically complete
+and finite modulo \(\pi\). Successively lifting generators modulo
+\(\pi\) makes it finite over \(\mathcal O\). A derivation
+\(\delta\) at \(h\) kills \(\mathfrak p^2\), hence has bounded
+image in one finite coefficient extension; moreover
+\[
+ |\delta(\mathfrak m_B^{Nn})|
+       \le |\pi|^n\sup_{b\in B}|\delta(b)|\longrightarrow0.
+\]
+Thus every algebraic derivation at this point is continuous.
+
+Homogeneous series satisfy
+\(A=A_0[z_1,\ldots,z_d]\): the exponent vectors of a fixed
+weight have finitely many coordinatewise minimal elements, and every
+other exponent differs from one of them by a nonnegative vector of
+weight zero. Also \(A_0\) is local: a weight-zero series with unit
+constant term has a weight-zero inverse. Thus \(B=(A/Q)_0\) is
+finite local. Since \(\mathfrak m_B^n\subseteq\pi B\) for some
+\(n\), every point \(\xi\) has \(v(\xi(\mathfrak m_B))>0\).
+Put \(a_i=\xi(z_i)\) and \(w_i=\operatorname{wt}(z_i)\), omitting zero values. Mixed invariant
+monomials give
+\[
+ \max_{w_i>0}\frac{-v(a_i)}{w_i}
+ <r<\min_{w_j<0}\frac{-v(a_j)}{w_j}.
+\]
+Absent constraints leave an unbounded endpoint; weight-zero coordinates
+already have positive valuation. Choose rational \(r\) in this
+interval and \(t\) with \(v(t)=r\). Then all \(t^{w_i}a_i\)
+have positive valuation. The homogeneous equations are preserved.
+Their degree-zero image and finitely many coordinates lie in one finite
+extension. The substitution below with no nilpotent part therefore
+extends precisely this rescaled point to a local point of \(S\).
+With no nonzero coordinate constraints take \(t=1\).
+
+For a tangent at such a point, set
+\(\tau(a)=f(a)+\epsilon D(a)\), where \(\epsilon^2=0\).
+The finite module \(\tau(A_0)\), together with the
+finitely many \(\tau(z_i)\), therefore lies in
+\[
+ C_b=\mathcal O_E+\epsilon\pi_E^{-b}\mathcal O_E
+\]
+for some finite extension \(E\) and integer \(b\ge0\).
+Its scalar coordinates are integral. The \(\tau(z_i)\) generate
+a topologically nilpotent ideal: their scalar coordinates have
+absolute value less than one and a product contains at most one
+\(\epsilon\)-term. Substitution consequently defines \(P\to C_b\).
+
+This substitution agrees with \(\tau\) on a homogeneous series:
+after truncation at total degree \(n\), its tail is a finite sum
+of degree-\(n\) monomials times homogeneous series whose images
+stay in \(C_b\). The tail tends to zero. Weightwise stability
+of \(J\), followed by the same truncation, shows that substitution
+kills \(J\). It also kills \(Q\), so descends to \(S\).
+Its scalar component equals \(f\) by boundedness and polynomial
+density. Its second component is the desired extension. The preceding
+continuity argument and density prove uniqueness.
+
+Finally, universal matrix entries topologically generate a framed
+deformation ring. Otherwise a nonzero residual tangent functional
+annihilating them would give two different maps to the residual dual
+numbers with the same representation. Choose finitely many entries
+spanning that cotangent space; Nakayama and completeness give the
+topological generation. The cocycle is
+\(c_\delta(g)=\delta(\rho(g))f(\rho(g))^{-1}\).
+If it vanishes, \(\delta\) kills every entry and hence their dense
+polynomial algebra. Continuity gives \(\delta=0\).
+\end{proof}
+
+\begin{lemma}\label{lem:selmer-normalized-coboundary}
+At every prescribed marked point, the primitives of normalized
+coboundaries lie in the line spanned by
+\(T=\operatorname{diag}(1,0,-1)\).
+\end{lemma}
+
+\begin{proof}
+Write \(R(X)=J_3X^tJ_3\), with \(J_3\) antidiagonal, and
+\(M=\rho(g_1)\). The marking has \(\rho(c)=I\) in the
+negative component, \(g_1\) in the positive component, and
+\(g_1^*=cg_1^{-1}c\); thus \(\rho(g_1^*)=R(M)\).
+Its two marked entries give
+\[
+ M-R(M)=\zeta T,\qquad \zeta=M_{11}-M_{33}\ne0.
+\]
+For a coboundary with primitive \(X\), the differentiated marking is
+\(X+R(X)=0\) and \([X,\zeta T]_{12}=[X,\zeta T]_{21}=0\).
+The first identity gives
+\(X=\left(\begin{smallmatrix}a&b&0\\d&0&-b\\0&-d&-a\end{smallmatrix}\right)\);
+the last two give \(-\zeta b=\zeta d=0\). Hence \(X=aT\).
+\end{proof}
+
+\begin{corollary}\label{lem:selmer-normalized-base-coboundary}
+At the base representation, every normalized coboundary is zero.
+Under the stated local finite condition and entry-weight compatibility, the nonpositive equation
+classes span the corresponding rational cotangent spaces. At any
+graded point whose local rescaling has only coboundary cocycles, the tangent
+space of the marked equation algebra has dimension at most one.
+\end{corollary}
+
+\begin{proof}
+The base adjoint action fixes \(T\). Apply the preceding lemma,
+Proposition~\ref{prop:selmer-tangent-comparison}, and the nonpositive
+vanishing already proved. Entry-weight compatibility preserves the
+weight of a base tangent cocycle; cotangent duality gives spanning. At other
+rigid points the faithful cocycle map has image in the line of
+coboundaries with primitive in \(\overline{\mathbb Q}_\ell T\).
+Grading rescaling transports a tangent by \(D_t(a)=t^jD(a)\)
+on weight \(j\), preserving its dimension, the equations, and
+all degree-zero trace values.
+\end{proof}
+
+The weighted presentation, finite degree-zero quotient,
+local finite condition, and non-diagonal cohomological rigidity
+remain arithmetic inputs. These comparisons give no uniform bound on
+integral torsion. The characteristic-zero argument includes
+\(\ell=2\); the separate odd-prime restriction of the arithmetic
+model is retained.

@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "status": "pass",
+  "review_scope": "Independent mathematical reading of the finite-neighbourhood, graded point/tangent lifting, universal-entry determination and marking proofs, with bounded source-contract comparison; not a Lean kernel verification.",
+  "artifacts": [
+    {
+      "path": "notes/selmer-tangent-comparison.md",
+      "sha256": "3067b06fbd0a6f1277b6e4f9848aaf25a6e2b6d84767c702c9efb8c890d94f9b"
+    },
+    {
+      "path": "paper/shared/selmer-tangent-comparison.tex",
+      "sha256": "59ed0be2ead21327b3ca0c14256c31fde9a1e1eee687eaf7704444210e36896b"
+    },
+    {
+      "path": "scripts/check_selmer_tangent_comparison.py",
+      "sha256": "60ce26e83c0fbe1a49a9d6c4e409370f48e5149ffb3b64a67dc1152cdd0b1da0"
+    },
+    {
+      "path": "certificates/selmer-tangent-comparison.json",
+      "sha256": "d6a92513bc40096acafce5cab23703cd6c1ac3b54aed19cf85a14ba60cd4eb0b"
+    }
+  ],
+  "decisive_checks": [
+    {
+      "claim": "R/p^2 is finite over the coefficient DVR",
+      "review": "Local-point boundedness gives integrality of R/p. Every prime over (pi)+p^2 is maximal; completeness and the resulting equivalent pi-adic topology give finite generation without a flatness assumption. Derivations kill p^2, so boundedness and continuity follow."
+    },
+    {
+      "claim": "Homogeneous derivations extend without assuming continuity",
+      "review": "Dickson minimal exponents give A=A0[z]. Finite degree-zero image and finitely many coordinate images lie in one finite coefficient extension and one bounded dual-number lattice. Total-degree tails are finite sums of shrinking monomials times uniformly bounded homogeneous images. This proves agreement and kills the full homogeneous-complete ideal, without circular use of continuity."
+    },
+    {
+      "claim": "Every graded point has an allowed local torus rescaling",
+      "review": "The degree-zero algebra is local by homogeneous inversion and its finite quotient has nilpotent maximal ideal modulo pi. Mixed invariant monomials therefore have strictly positive valuation. This yields a nonempty strict interval of rescaling valuations, with zeros and missing sign constraints handled. The rescaling preserves the homogeneous equations and extends exactly, rather than approximating the point."
+    },
+    {
+      "claim": "Matrix entries faithfully determine tangents",
+      "review": "The pinned universal property is for raw framed lifts and uniquely determines the algebra map. Residual dual-number tests imply cotangent spanning by finitely many entry differences; Nakayama and completeness give topological generation. Continuous derivations killing those entries vanish."
+    },
+    {
+      "claim": "The normalized coboundary space has at most one parameter",
+      "review": "Semidirect inverse-transpose signs give X+J X^t J=0. The exact marking gives M-J M^t J=zeta diag(1,0,-1). Its two differentiated off-diagonal entries force the remaining entries to vanish when 2 and zeta are units. Thus X=a diag(1,0,-1), including the original primitive, not merely an equivalence class."
+    },
+    {
+      "claim": "Torus transport preserves the two-sided tangent conclusion",
+      "review": "On homogeneous degree j, multiply both point and tangent by t^j. This is an invertible linear map on tangent spaces, preserves equation annihilation and sign-coordinate vanishing, and matches the precise source interface. The local finite condition and non-diagonal rigidity remain assumptions."
+    }
+  ],
+  "bounded_source_ranges": [
+    {
+      "module": "GRepresents",
+      "lines": [
+        [
+          41,
+          85
+        ],
+        [
+          110,
+          141
+        ]
+      ]
+    },
+    {
+      "module": "ExistsTorusTwistEqLocalPointOfWeightedPres",
+      "lines": [
+        [
+          83,
+          137
+        ]
+      ]
+    },
+    {
+      "module": "TanDet",
+      "lines": [
+        [
+          175,
+          272
+        ]
+      ]
+    },
+    {
+      "module": "NormCob",
+      "lines": [
+        [
+          30,
+          103
+        ]
+      ]
+    },
+    {
+      "module": "GradedModelDerivationConditionOfPtHyp",
+      "lines": [
+        [
+          93,
+          132
+        ],
+        [
+          153,
+          228
+        ]
+      ]
+    }
+  ],
+  "source_prefix": "Development.AutomorphicArithmetic.AutomorphicVarieties.UnitaryThreeGroups",
+  "source_repository": "jsmorph/rh",
+  "source_revision": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "rerun": "python scripts/check_selmer_tangent_comparison.py",
+  "rerun_result": {
+    "status": "pass",
+    "source_files": 9,
+    "exact_dual_number_checks": 270,
+    "valuation_balancing_cases": 1296
+  },
+  "retained_obligations": [
+    "actual weighted model, initial chart and finite degree-zero quotient",
+    "arithmetic local finite condition",
+    "non-diagonal two-sided cohomological rigidity",
+    "uniform bounds for integral Selmer torsion"
+  ],
+  "node_status_change": false,
+  "limits": [
+    "Finite calculations do not prove infinite-series limits or representability.",
+    "Coefficient extensions and bounds are pointwise; no uniform numerical field-degree or denominator estimate follows.",
+    "No full proof of RH or Dirichlet GRH is asserted."
+  ]
+}

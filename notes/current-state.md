@@ -581,10 +581,18 @@ of all divided cocycles, forcing rational strict vanishing. Finite-order
 twists of any order are allowed. The three actual negative adjoint
 characters and the exact two marked matrix entries are computed explicitly.
 Together with weight zero, this supplies all nonpositive base-point
-cohomological rigidity and removes normalized coboundaries. Actual model
-lifting, local finite-cocycle comparison, tangent determination, two-sided
-rigidity and uniform integral Selmer bounds remain; the existing model
-comparisons are used at odd coefficient primes.
+cohomological rigidity and removes normalized coboundaries.
+The [graded-to-completed comparison](selmer-tangent-comparison.md) now
+supplies point lifting after the permitted grading rescaling, tangent
+lifting and cocycle determination from the actual weighted presentation
+and finite degree-zero quotient. One valuation interval makes every
+coordinate small; a finite coefficient field and homogeneous tails give
+the complete local point and tangent. The general marked coboundary
+calculation leaves at most one dimension at a rigid point, and zero at
+the base. The actual arithmetic model, its initial chart and finite
+quotient, local finite-cocycle condition, two-sided rigidity and uniform
+integral Selmer bounds remain. The existing arithmetic model comparison
+is still used at odd coefficient primes.
 
 The [prescribed CM-point descent](cm-period-point-descent.md) replaces
 the separate generic-point comparison by an automorphism argument.
