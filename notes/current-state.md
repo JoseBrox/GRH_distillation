@@ -166,16 +166,20 @@ hypotheses; signed terms are combined before taking the positive part.
 The source trace deficit needs its own estimate. The actual arithmetic
 spectral-tail bound is not supplied by positivity or total mass alone.
 
-The [exact period-spectrum models](redundant-period-spectrum.md) now
-show why the actual redundancy forces a large nonidentity contribution.
-The tail must be measured above the mean eigenvalue, not around zero.
-Integral cyclotomic columns satisfy the pairwise estimates with zero
-error but have square-root trace excess; a block-simplex model has a
-positive rank defect under every comparison-basis change. These are
-countermodels to specific matrix implications, not to the actual theta
-construction. Keep the minimum of the trace and refined-energy penalties.
-The ambient automorphic projector does not itself identify the sum of
-the chosen period maps.
+The [exact period-spectrum models](redundant-period-spectrum.md) show
+why redundancy forces a large nonidentity contribution: the tail must
+be measured above the mean eigenvalue. A single
+[integral incidence construction](basis-invariant-trace-obstruction.md)
+now proves the stronger limitation. It satisfies the diagonal and
+pairwise estimates with zero error, yet retains the asymptotically sharp
+square-root trace loss under every invertible comparison basis. The
+same fixed arithmetic lattices have zero map height and attain the
+slope loss. Small arbitrary source and target cuts retain an explicit
+part of the obstruction. Thus basis changes alone cannot halve the
+code redundancy exponent. These are countermodels to a matrix
+implication, not to the actual theta construction. Keep the smaller
+valid trace or energy penalty and seek the calibrated estimate for the
+actual period maps; the ambient projector does not identify their sum.
 
 The actual source restrictions can be carried through positive retained
 mass and then an ambient target comparison, preserving the discarded
