@@ -53,7 +53,8 @@ in (2), proving that its exponent cannot be improved from these hypotheses.
 
 Fix a word and a coefficient-field place above its auxiliary rational
 prime T. Let J be the source's selected set of embeddings, j=|J|,
-t its odd rank increment, and h=(t+1)/2. At an active place, the source
+t its odd step parameter, and h=(t+1)/2. The chain ranks are
+N_i=k+i(t+1); the separate auxiliary rank Y grows by t. At an active place, the source
 defines the lattice as the rational image of
 
 \[
@@ -104,10 +105,10 @@ The old source exponent is
  B=m(2W+fN_m)+hj\frac{m(m+1)}2.
 \]
 
-The same weight inequalities give d_i≤2W+fN_(i−1). As N_i=k+it,
+The same weight inequalities give d_i≤2W+fN_(i−1). As N_i=k+i(t+1),
 
 \[
- \ell\le B-\frac{ftm(m+1)}2-m\sum_{\tau\in J}b_\tau. \tag{6}
+ \ell\le B-\frac{f(t+1)m(m+1)}2-m\sum_{\tau\in J}b_\tau. \tag{6}
 \]
 
 In particular (even without (4)), the source's already stated uniform
@@ -145,6 +146,7 @@ needed in conversational context.
 
 | Source module | Lines | What is used |
 | --- | --- | --- |
+| `Formalism/LocalRingCardinality/Params.lean` | 6–42 | Odd step parameter t; actual chain rank N_i=k+i(t+1), distinct from the auxiliary rank growing by t. |
 | `Development/AbelianVarietyTheory/Definitions/GlobalTwisting/LevelChainSharpColumnValuationOwnChainIff.lean` | 45–75 | Ordered U product, rational image, original ramified submodule and the exact power a. |
 | `Development/AbelianVarietyTheory/Definitions/GlobalTwisting/FormsStable.lean` | 211–240, 307–325 | Point kernel commutation and integral laws; stabilizer units; uniform step and actual source tie. |
 | `Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/ExtInOfValIn.lean` | 98–135, 139–198 | Removing value-lattice allowances; orbit sum denominators; exact d_i before uniform enlargement. |

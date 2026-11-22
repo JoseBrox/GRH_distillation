@@ -97,15 +97,16 @@ def main() -> None:
     sharp_count = sharp_cases()
     m, k, t, f, w, h, j, a = sp.symbols('m k t f W h j a', integer=True)
     i = sp.symbols('i', integer=True)
-    exact = sp.summation(2*w + f*(k+i*t), (i, 0, m-1)) + h*j*m*(m+1)/2-a
-    old = m*(2*w+f*(k+m*t)) + h*j*m*(m+1)/2
-    assert sp.expand(old-exact-(f*t*m*(m+1)/2+a)) == 0
+    exact = sp.summation(2*w + f*(k+i*(t+1)), (i, 0, m-1)) + h*j*m*(m+1)/2-a
+    old = m*(2*w+f*(k+m*(t+1))) + h*j*m*(m+1)/2
+    assert sp.expand(old-exact-(f*(t+1)*m*(m+1)/2+a)) == 0
 
     packed_path = ROOT/'blueprint/lean-source-imports.json.gz'
     inventory = json.loads((ROOT/'certificates/lean-source-inventory.json').read_text())
     assert sha(packed_path) == inventory['compressed_graph']['sha256']
     atlas = json.loads(gzip.decompress(packed_path.read_bytes()))
     ranges = {
+        'Formalism.LocalRingCardinality.Params': [[6,42]],
         'Development.AbelianVarietyTheory.Definitions.GlobalTwisting.LevelChainSharpColumnValuationOwnChainIff': [[45,75]],
         'Development.AbelianVarietyTheory.Definitions.GlobalTwisting.FormsStable': [[211,240],[307,325]],
         'Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.ExtInOfValIn': [[98,135],[139,198]],
@@ -120,6 +121,10 @@ def main() -> None:
                 'path': 'lean/src/'+name.replace('.', '/')+'.lean',
                 'git_blob_sha1': rows[name][1]}
         record = inspect_file(item, offline=True)
+        if name == 'Formalism.LocalRingCardinality.Params':
+            data = (ROOT/'build/source-cache'/atlas['repository']/atlas['commit']/item['path']).read_text()
+            assert 'def N (j : ℕ) : ℕ := R.k + j * (R.t + 1)' in data
+            assert 'def rankY (j : ℕ) : ℕ := R.r + j * R.t' in data
         records.append({key:record[key] for key in ['repository','commit','path','git_blob_sha1','sha256','lines']}
                        | {'inspected_ranges':spans})
     paths = ['notes/level-chain-integrality.md', 'paper/shared/level-chain-integrality.tex',
@@ -129,11 +134,12 @@ def main() -> None:
         'scope':'General mathematical proof plus exact supplemental checks and source-byte provenance; no arithmetic-kernel construction or Lean rebuild.',
         'checks': {'exact_matrix_chains':matrix_count, 'scalar_sharpness':sharp_count,
                    'symbolic_rank_sum_saving':True,
+                   'actual_chain_rank_checked_against_pinned_definition':True,
                    'includes_rectangular_noninvertible_and_noncommuting_examples':True,
                    'includes_signed_exponents_and_empty_chain':True},
         'proved': ['Exact chain clearing exponent sum(d_i)+sum((m-i+1)r_i)-a',
                    'Conditional same-lattice source-factor gain',
-                   'Conditional individual-step rank gain ftm(m+1)/2 at active places'],
+                   'Conditional individual-step rank gain f(t+1)m(m+1)/2 at active places'],
         'remaining': ['actual local kernel and point-pair laws','original value lattices and integral rational realizations',
                       'stabilizer-unit condition','twisted initial-source compatibility',
                       'other-prime period denominators','uniform final arithmetic assembly'],
