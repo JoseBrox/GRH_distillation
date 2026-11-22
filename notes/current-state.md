@@ -179,9 +179,11 @@ the exact integral product tangent basis. The unit discriminant and
 Kronecker limit formula evaluate the elliptic period mean, with all
 constants retained. Trace-dual Gram projection and the product formula
 then give the signed flat degree. Applying this value requires the
-actual arithmetic model with its original global family and the CM maps
-with the prescribed tangent lattice on its selected component. A good
-CM object alone does not supply those identifications.
+actual arithmetic model with its original global family and the generic
+CM point on its selected component, with the given coefficient action
+and original rigidified line. Properness and classical semiabelian
+uniqueness then extend the point and identify its exact tangent lattice.
+A good CM object alone does not supply the generic moduli identification.
 
 The [direct determinant argument at the prescribed level](half-level-determinant.md)
 supplies determinant monodromy one on the abelian locus without a
@@ -212,10 +214,10 @@ constructs the invertible integral line from the actual global Hodge
 extension and full coefficient freeness, and identifies its pointwise
 eigenlattices and special-curve degrees. Local norms are then constant,
 including after ramified extensions, and almost all finite logarithmic
-norms vanish. Actual integral CM maps to the same component supply
-the local-norm comparison used in the period calculation. The remaining
+norms vanish. The supplied generic CM points extend to integral maps on the same
+component and give the local-norm comparison used in the period calculation. The remaining
 geometric inputs are the arithmetic model with its original global family
-and fibre data, the CM comparison, and the signed cusp and finite-section
+and fibre data, the generic CM identification, and the signed cusp and finite-section
 estimates.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
@@ -533,8 +535,8 @@ First-order sections of the original global biextension supply the Hodge
 bundle; generic properness and flatness normalize its adjunctions
 coherently. The original fibre conditions give full coefficient freeness.
 Thus the ramified integral-line and special-curve identifications follow
-from these actual model data. Constructing that model, the integral CM
-maps to its selected component, and the cusp/section estimates remains.
+from these actual model data. Constructing that model, the generic CM point with its original line
+on the selected component, and the cusp/section estimates remains.
 
 The [CM extension argument](cm-integral-map-extension.md) reduces that
 integral-map requirement to the supplied generic CM point on the correct
@@ -544,6 +546,19 @@ semiabelian schemes extends the generic isomorphism. A vertical-divisor
 argument preserves the exact line and scalar, so the actual tangent
 eigenlattices agree. The arithmetic model and generic moduli/period
 identification remain; no new choice of integral CM map is required.
+
+The [negative-weight rigidity proof](rh-selmer-negative-weight-rigidity.md)
+uses only the existing qualitative strict Selmer finiteness and the local
+Bloch--Kato calculation. A Baire argument puts each cocycle in one finite
+coefficient field. Normalizing at one group element bounds the denominators
+of all divided cocycles, forcing rational strict vanishing. Finite-order
+twists of any order are allowed. The three actual negative adjoint
+characters and the exact two marked matrix entries are computed explicitly.
+Together with weight zero, this supplies all nonpositive base-point
+cohomological rigidity and removes normalized coboundaries. Actual model
+lifting, local finite-cocycle comparison, tangent determination, two-sided
+rigidity and uniform integral Selmer bounds remain; the existing model
+comparisons are used at odd coefficient primes.
 
 ## Next mathematical work
 
@@ -572,8 +587,9 @@ identification remain; no new choice of integral CM map is required.
    model, its original global semiabelian family, cubical line, coefficient
    adjunctions and self-dual abelian quotient on geometric fibres. These
    data construct the integral determinant, including its ramified point
-   norms and test-curve comparison. Supply integral CM maps to the selected
-   component with the prescribed tangent lattices. The characteristic-zero
+   norms and test-curve comparison. Supply the generic CM point on the
+   selected component with its original line and coefficient action; the
+   exact integral extension and tangent lattice then follow. The characteristic-zero
    generator, both filtrations, coefficient freeness, determinant torsion,
    vertical rigidity, local-norm comparison and signed CM value are proved
    under these identifications. Then establish the signed cusp mean and
