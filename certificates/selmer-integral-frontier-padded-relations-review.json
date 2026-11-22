@@ -1,0 +1,274 @@
+{
+  "status": "pass",
+  "date": "2026-11-22",
+  "reviewer": "independent geometry-frontier agent",
+  "scope": "Independent mathematical and bounded pinned-source interface review; checker independently rerun offline. No Lean build or closure of a whole RH/GRH node is claimed.",
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-padded-relations.md",
+      "sha256": "7995acf48d8df6bdb2a825d721ae36eb5171485463ce72e22209c454938243d3"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-padded-relations.tex",
+      "sha256": "8092ec9e97213a6ef041b33b45a81a20095d7bd92ed35ea571637c2afbdfd159"
+    },
+    {
+      "path": "scripts/selmer-integral-frontier-padded-relations-check.py",
+      "sha256": "5caf3575a9b9d95de86ea8abd75be85c1ea7eb70854f63d7c7554495cdcaa284"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-padded-relations.json",
+      "sha256": "8b6e6072ff94b803b5e7835fb289fd09b597b95b839f6236072acc53fa00ce62"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Redundant-coordinate construction",
+      "result": "pass",
+      "detail": "The listed component forms span with dim(W) complement; standard coordinate vectors remain independent even for repeated or zero images. The g=0 and T=0 cases are valid."
+    },
+    {
+      "name": "Separated-block commutator",
+      "result": "pass",
+      "detail": "Triangularization over an algebraic closure gives determinant (-1)^(ab) times the square of the resultant, with no diagonalizability or within-block separation assumption. Smith normal form gives one bound |k|^(2 v_t(delta)) for every truncation; empty blocks are covered."
+    },
+    {
+      "name": "Actual odd-cocycle descent",
+      "result": "pass after correction",
+      "detail": "The cocycle lives on the index-two subgroup Gamma-plus. The zero subgroup in ker(h) is normal under Gamma-plus by the cocycle law, and stable under the chosen complex conjugation by the conjugate-dual condition. These jointly give normality in Gamma. CocKer54-84 and106-119 support the exact descent; source local-condition descent remains explicit."
+    },
+    {
+      "name": "Actual finite-level local count",
+      "result": "pass",
+      "detail": "ExistsCore305-330 supplies one m-dependent threshold for Frobenius agreement simultaneously for all e<=m. ExistsCore385-453 gives the bound for every IsOd identification under PL-killing and finite base H1. C_aux=2 sum_j v_t(delta_j) is independent of m and N; other uses of the full split-distinct-eigenvalue hypothesis remain retained."
+    },
+    {
+      "name": "Finite obstruction module",
+      "result": "pass",
+      "detail": "The inequality at e=C+1 bounds the number of elementary divisors longer than C by g. Clearing denominators in the g by (g+1) lift matrix produces a kernel vector with a unit coordinate. All truncations and a single C are necessary; the supplied negative controls address both points."
+    },
+    {
+      "name": "B1 and B2 quantifier order",
+      "result": "pass",
+      "detail": "ThetaCoefficientMapEq54-61 has exists C, forall m, eventually N. The all-level variants at SecondSelmerSpanBoundAtAllLevels158-165 and the arithmetic hypotheses at TaylorWilesObstructionBound126-143 agree with the note. No uniformity over all representation points or conductors is asserted."
+    },
+    {
+      "name": "Passage to limiting group",
+      "result": "pass within retained tower inputs",
+      "detail": "The first bound controls rank by (m-C)r <= mD+C1. The second uses compactness with one surviving unit coordinate and fixed nonzero t^C. Actual limiting-group construction, global/local duality estimates and patched modules are not supplied by these elementary lemmas."
+    }
+  ],
+  "independent_rerun": {
+    "command": "python scripts/selmer-integral-frontier-padded-relations-check.py --offline",
+    "exit_code": 0,
+    "pinned_source_files": 19,
+    "padded_presentations": 6302,
+    "generic_symbolic_sylvester_identities": 5,
+    "elementary_divisor_cases": 12936,
+    "admissible_elementary_divisor_cases": 3280
+  },
+  "independently_read_sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.SeparableMatrixStability.CocKer",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "a027c8a91a6db64b3f35350926666b000a5eb8e28b03ef2174971a13ea55d185",
+      "ranges_reviewed": [
+        {
+          "first_line": 23,
+          "last_line": 53,
+          "sha256": "cbad83509149bcd0fa5368f629b4abcbe3c7873cd428c8894c3e379fd26839ea"
+        },
+        {
+          "first_line": 54,
+          "last_line": 105,
+          "sha256": "b64cd06939f167ed74f15d63ceb5867396d710d0b71086daece569ed29aa85b6"
+        },
+        {
+          "first_line": 106,
+          "last_line": 119,
+          "sha256": "71c5e17887f54939d7e538be8328d61dbb2c9906cae09ad0ff14ee919718416d"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.SeparableMatrixStability.KoszulThreeOfDet",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "08e2a86663bb5eac41c1a1831c580da603d0dedf32cb68019f7b8d53e9bb4573",
+      "ranges_reviewed": [
+        {
+          "first_line": 8,
+          "last_line": 49,
+          "sha256": "2fdf819dd4f56ca5340eb0338995c35e7b2488cab20071ef615ce1b8c95f27f6"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.SeparableMatrixStability.KerOo",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "22606e7ac6c33da86650c0c4ae43230b49888ba0acd7862b8d3d475c79a32e0c",
+      "ranges_reviewed": [
+        {
+          "first_line": 15,
+          "last_line": 79,
+          "sha256": "40bebebbd848b253bf67cdd52d28da12371d6a1dc5312e8a577cdbda25f39dad"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.SeparableMatrixStability.OdComm",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "b2e2edc423d958bba27f736562a1190a374aee854713abda80875a3c12291c49",
+      "ranges_reviewed": [
+        {
+          "first_line": 48,
+          "last_line": 94,
+          "sha256": "31f178d287e89faeb223f5c1cb06f1f551ee275f11f4e8c89e1d8da8d94ae036"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.ExistsCore",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "f28385d1377e2919bb821c482b162c4c281ecd3e7257cef52e5de9a0e23ae0c5",
+      "ranges_reviewed": [
+        {
+          "first_line": 142,
+          "last_line": 160,
+          "sha256": "3ea70b122eef0c4847daa912ef274b21e93b72b614e25e53a1d8865ff04d8c53"
+        },
+        {
+          "first_line": 305,
+          "last_line": 330,
+          "sha256": "2231ae7fe02aacf3afd27627557401fd12693f49c9140f3a572407782f579830"
+        },
+        {
+          "first_line": 385,
+          "last_line": 453,
+          "sha256": "f05cf1cc6aa0e02a3a464d2d853f73008bc76284424db40c0b06e9095df1c3e6"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ThetaCoefficientMapEq",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "47ad94ae8810970b4fdcf4e4cb9e22c31365a91a260ed3c7ba3ee02849daa9e8",
+      "ranges_reviewed": [
+        {
+          "first_line": 35,
+          "last_line": 70,
+          "sha256": "2343c5a2173cd6f4e9da7ff9375ff8d4af2b528a2c97639e552019c348e80b05"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.SeparableMatrixStability.SecondSelmerSpanBoundAtAllLevels",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "244f91af46f50de30bdb7354554b05d61818ac56e8a6106df1d8ca8bf1a33a73",
+      "ranges_reviewed": [
+        {
+          "first_line": 143,
+          "last_line": 176,
+          "sha256": "2127d9a82ed3673ff77645330813d38916760a044bbcef28236d363f4c0b49ef"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.TaylorWilesObstructionBound",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "816d33e7fe98c91165560c1ce4568b0ae9283446d1234db82a72a72d4a71fc63",
+      "ranges_reviewed": [
+        {
+          "first_line": 126,
+          "last_line": 146,
+          "sha256": "1924524e2d327fde05d5c6068901227622a29948791c3a3a34ca1641ae7ff442"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.W1BoundArithmeticRankTwo",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "a80d9403d8992b03a6694875e85b362aec5cedc3a512f42f7de280c597dc4fe8",
+      "ranges_reviewed": [
+        {
+          "first_line": 40,
+          "last_line": 74,
+          "sha256": "236dec963861af15148eabdc87ec57756b17ca3c327ff3ff9027aca48783d4a0"
+        },
+        {
+          "first_line": 135,
+          "last_line": 165,
+          "sha256": "d91519343bbcb38f7626131bd6146c9f7546aa22f3395a6daf495220746456bb"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.ObstructionBoundOfDuality",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "e1bd2b2dd07879ca3e8ff783bb6695039ca1f0bea87e788c880fbdfbce63eb7e",
+      "ranges_reviewed": [
+        {
+          "first_line": 145,
+          "last_line": 218,
+          "sha256": "20180986ee26200591dda1899874a94ba4395368b06e9d25f64189b74077659d"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AutomorphicDetection.TaylorWilesObstructionBound",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "ba4f36204473e1e5f259bf83367cdd9931d74484b1f36746ed3efed4d06d5bdc",
+      "ranges_reviewed": [
+        {
+          "first_line": 1,
+          "last_line": 48,
+          "sha256": "ba4f36204473e1e5f259bf83367cdd9931d74484b1f36746ed3efed4d06d5bdc"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AutomorphicDetection.BoundW1Arithmetic",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "5743065731856792b914eb4b59fb455f7400953e6343da63b0c0df0b66c4cfc0",
+      "ranges_reviewed": [
+        {
+          "first_line": 1,
+          "last_line": 18,
+          "sha256": "5743065731856792b914eb4b59fb455f7400953e6343da63b0c0df0b66c4cfc0"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.SeparableMatrixStability.FirstCohomologyBoundOfBoundaryBound",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "7cbc3dc670574dcfcdb81bfec01150037359ff68a6cf8f2f24e53531d3d76803",
+      "ranges_reviewed": [
+        {
+          "first_line": 1,
+          "last_line": 79,
+          "sha256": "7cbc3dc670574dcfcdb81bfec01150037359ff68a6cf8f2f24e53531d3d76803"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.SeparableMatrixStability.SecondCohomologyBoundOfBoundaryBound",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "sha256": "87452f892c72ff7f61e95c3858b3b93ee779ce62ddfc804f5290de00c01a9900",
+      "ranges_reviewed": [
+        {
+          "first_line": 1,
+          "last_line": 119,
+          "sha256": "87452f892c72ff7f61e95c3858b3b93ee779ce62ddfc804f5290de00c01a9900"
+        }
+      ]
+    }
+  ],
+  "remaining": [
+    "Actual uniform global and ordinary-local cohomology counts",
+    "Actual limiting auxiliary-group construction and retained local descent conditions",
+    "Actual patched automorphic modules and global rigidity"
+  ],
+  "node_progress_unchanged": {
+    "RH": "6/9",
+    "GRH": "17/31"
+  }
+}
