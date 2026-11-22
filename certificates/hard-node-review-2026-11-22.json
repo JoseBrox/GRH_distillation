@@ -256,6 +256,40 @@
           "sha256": "7701eca868c70a6eddc0a1fc1d5d622a0ae9f879cee51630acd5a6f90c5dd9a5"
         }
       ]
+    },
+    {
+      "id": "rh-selmer-koszul-comparison",
+      "status": "PASS",
+      "reviewers": [
+        "rh_selmer_frontier",
+        "finite_window_audit",
+        "root"
+      ],
+      "checked": [
+        "Exact admissibility and standardness make all required graded Koszul homology lengths finite in one eventual range.",
+        "Positivity uses induction on the number of sections and a finite homogeneous prime filtration, with no dimension or infinite-residue-field hypothesis.",
+        "A zero first section is replaced only when the tail is already admissible; the replacement is justified by an ordinary exact sequence.",
+        "Quotient monotonicity and the upper quotient inequality retain the torsion kernels until their nonnegative Euler characteristics are legitimately discarded.",
+        "The six-term kernel-cokernel sequence for composite multiplication gives product additivity with the correct grading shift.",
+        "Scalar extraction is exact and uses pi-injectivity only on the previously proved free leading quotient; all higher Koszul homology remains accounted for.",
+        "The actual chain uses P/aP surjecting onto the leading quotient, and injectivity of a on the formal-chart image; it never uses the zero Euler characteristic of a acting on the leading quotient.",
+        "The remaining actual admissibility containment, arithmetic models, eventual support and generic multiplicity bounds are explicit.",
+        "Root and finite_window_audit independently checked the general proofs and the pinned recursion, product, positivity, admissibility and final-chain contracts."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/rh-selmer-koszul-comparison.md",
+          "sha256": "c0350d8024ac28060cd6edf949111c7690387511ea331a68513dea3d3d69cdb5"
+        },
+        {
+          "path": "scripts/check_rh_selmer_koszul_comparison.py",
+          "sha256": "9de044d3909fcb1edeb146cbb2bd5c7cf23537625a07bedab534732049c0f995"
+        },
+        {
+          "path": "certificates/rh-selmer-koszul-comparison.json",
+          "sha256": "3fdb9e9a2255c7d4cad463ac296ac8e142bce0b11e7fe67eaa847690bf94a5e2"
+        }
+      ]
     }
   ],
   "source_checks_rerun": [
@@ -266,7 +300,8 @@
     "python scripts/check_cm_integral_eigenframes.py --offline",
     "python scripts/check_rh_selmer_euler_determinant.py",
     "python scripts/check_biextension_conjugate_filtration.py",
-    "python scripts/check_rh_selmer_mixed_count.py"
+    "python scripts/check_rh_selmer_mixed_count.py",
+    "python scripts/check_rh_selmer_koszul_comparison.py"
   ],
   "node_counts": {
     "rh": {

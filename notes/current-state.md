@@ -312,9 +312,17 @@ This proves the exact Hilbert function without assuming flatness of the
 original deformation quotient. A generating-function cancellation gives
 the constant mixed difference and an explicit sufficient degree box,
 including the smallest admissible weight counts. The scalar factor in the
-lower bound is therefore accounted for. Admissibility, the positive Euler
-comparison with the leading quotient, and extraction of the integral
-equation factors are still required.
+lower bound is therefore accounted for. The
+[graded Koszul comparison](rh-selmer-koszul-comparison.md) now supplies
+eventual positivity, passage to the leading quotient, the upper quotient
+inequality and exact extraction of the integral equation factors. Its
+short proof uses a finite graded prime filtration and ordinary exact
+sequences, retaining all higher homology and torsion kernels. It assumes
+no global flatness, regular sequence, infinite residue field or dimension
+bound. The remaining lower-side condition is a precise admissibility
+power containment from the geometry of the equation scheme. Actual
+marked-model existence, eventual support and generic multiplicity bounds
+for the upper determinant remain separate.
 
 The [resultant construction](rh-selmer-resultant.md) supplies the elementary
 integer in the nonresonant orbit estimate with full integrality,
@@ -388,9 +396,11 @@ theorem. Neither changes the existing node totals.
 
 1. **Geometric core (W10).** Use the now supplied tangent-slope estimate
    on the prescribed lattice and the explicit determinant bridge.
-   Identify the actual boundary Hodge lattice, its two filtrations and
-   coefficient freeness at ramified primes, apply the proved determinant
-   torsion and vertical-line rigidity, and establish the CM evaluation;
+   Identify the actual compatible boundary charts, their original
+   semiabelian fibre pullback line and coefficient character identity.
+   The integral Hodge comparison, both filtrations, coefficient freeness,
+   determinant torsion and vertical rigidity are now supplied under these
+   hypotheses. Establish the CM product frame and period evaluation;
    retain the signed signature difference and exact selected abelian
    rank, and supply the signed cusp mean and independent finite
    section-rank/surplus estimate. The scalar prime and period bounds
@@ -403,9 +413,10 @@ theorem. Neither changes the existing node totals.
 3. **Cohomology and assembly (W04/W02/W11).** Quantify the finite weighted
    Selmer product on the actual twisted places, retaining the integral local
    comparisons and surviving character cases. The elementary resultant
-   supplier does not prove the trace-to-Selmer estimate: reconstruct the
-   negative-weight cocycle comparison and graded upper-length bound with
-   their automorphy and rigidity hypotheses. Assemble the signed
+   supplier does not prove the trace-to-Selmer estimate: construct the
+   marked models, use the proved compatible conormal pairing and exact
+   numerical and Koszul comparisons, and supply their actual admissibility,
+   support and multiplicity bounds. Assemble the signed
    finite fourth-power tables on arbitrarily late intervals, with all exponent losses
    and constants fixed at each accuracy.
 
