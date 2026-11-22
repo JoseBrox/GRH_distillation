@@ -1,0 +1,144 @@
+% Shared by the ordinary RH and Dirichlet GRH manuscripts.
+\section{The original integral types}
+\label{sec:selmer-integral-type}
+
+Fix the original Hida setting, rank \(n\geq1\), coefficient DVR \(O\),
+residual datum and embedding
+\(\iota:\overline{\mathbb Q}_\ell\simeq\mathbb C\).
+Put \(E_0=\operatorname{Frac}(O)\).
+At each original type place \(u\), write
+\(F_u=L_{w(u)}\) and \(K_u=\mathrm{GL}_n(O_{F_u})\).
+Its residue characteristic is different from \(\ell\).
+The characters \(\chi_{ui}\) are the restrictions of the original
+Teichm\"uller lifts to the local decomposition group.
+
+\begin{theorem}[Integral types over the original ring]
+\label{thm:original-integral-type}
+There is a finite free \(O\)-lattice \(V\), of positive rank \(m\),
+with an open-kernel action
+\(\tau_0:\prod_uK_u\to\mathrm{GL}_m(O)\), satisfying the original
+\texttt{TypeForAlt} condition.
+Explicitly, if \(M\ne0\) is a complex representation of
+\(\prod_u\mathrm{GL}_n(F_u)\) that is isotypic for an irreducible
+smooth representation \(\pi_u\) on each factor, then
+\[
+ \exists(F_i)\ne0:\quad
+ \sum_j\iota(\tau_0(k)_{ij})\rho(k)F_j=F_i\quad(k,i)
+\]
+if and only if, at every \(u\) and for every allowed weak local
+correspondence \(R'\),
+\[
+ N\!\left(R'(\operatorname{algNorm}\pi_u)\right)=0,\qquad
+ R'(\operatorname{algNorm}\pi_u)|_{I_{F_u}}
+       \simeq\bigoplus_i\iota\chi_{ui}|_{I_{F_u}},
+ \qquad
+ \operatorname{algNorm}\pi_u=\pi_u|\det|^{(1-n)/2}.
+\]
+Repeated inertial characters and arbitrary conductor are allowed.
+\end{theorem}
+
+\begin{proof}
+First work at one local field \(F\). For the classical correspondence put
+\[
+ r_\ell(\pi)=\iota^{-1}
+       \operatorname{rec}_F\!\left(\iota\pi|\det|^{(1-n)/2}\right),
+ \qquad \tau=\bigoplus_i\chi_i|_{I_F},\quad N=0.
+\]
+Shotton's Theorem~3.7(1),(2), proved by his local construction and
+Corollary~6.21, gives a smooth irreducible compact type \(\sigma(\tau)\).
+Its occurrence implies that the full inertial parameter of
+\(r_\ell(\pi)\) is dominated by \(\tau\); equality implies occurrence.
+These clauses hold for every irreducible admissible \(\pi\).
+The separate genericity clause is unused
+\cite{SelmerTypeShotton}.
+
+For every basic inertial constituent of multiplicity \(a\), the partition
+of the target is \((1,\ldots,1)\) with \(a\) entries.
+A partition dominated by this one has largest part at most one and hence
+equals it. Thus
+\begin{equation}
+\label{eq:original-type-local}
+ \operatorname{Hom}_K(\sigma(\tau),\pi)\ne0
+ \quad\Longleftrightarrow\quad
+ N(r_\ell(\pi))=0,\qquad r_\ell(\pi)|_{I_F}\simeq\tau.
+\end{equation}
+The full simple type construction applies also to wild characters and
+small residue characteristic. No global patching theorem is used here.
+For an orientation check, the trivial rank-two inertial target with
+\(N=0\) has partition \((1,1)\) and trivial compact type. The Steinberg
+parameter has partition \((2)\), so is excluded.
+
+The compact type is finite dimensional and factors through a finite
+quotient \(H\). Its matrices have a model \(\sigma_E\) over a finite
+extension \(E/E_0\). For a full \(O_E\)-lattice \(L_0\), the finite sum
+\[
+                  L=\sum_{h\in H}\sigma_E(h)L_0
+\]
+is a stable full lattice. The original \(O\)-lattice
+\(\mathcal L=\operatorname{Res}_{O_E/O}L\) is free of rank
+\([E:E_0]\dim_E\sigma_E\).
+After extending scalars,
+\[
+ \mathcal L\otimes_O\overline{\mathbb Q}_\ell
+ \simeq\bigoplus_{\substack{\eta:E\hookrightarrow\overline{\mathbb Q}_\ell\\
+                         \eta|_{E_0}=1}}\sigma_E\otimes_{E,\eta}
+                                  \overline{\mathbb Q}_\ell .
+\]
+Each \(\eta\) extends to an automorphism fixing \(E_0\).
+The normalized correspondence \(r_\ell\) commutes with these
+automorphisms, by Henniart \S7.4 in the normalization of Shotton \S3.4
+\cite{SelmerTypeHenniart,SelmerTypeShotton}.
+Since \(\tau\) is defined over \(E_0\), every conjugate summand satisfies
+the same equivalence \eqref{eq:original-type-local}.
+Restriction of scalars therefore introduces no extraneous inertial
+parameter. The source permits reducible compact types.
+
+Use \(V_u=\mathcal L^\vee\) for the coefficient lattice.
+Indeed the source's covariance law for a tuple \(F_i\) is equivalent to
+\[
+                    \pi(k)F_i
+                        =\sum_j\tau_0(k)^{-1}_{ij}F_j,
+\]
+which says that \(e_i^*\mapsto F_i\) intertwines \(V_u^\vee\) with
+\(\pi\). This fixes the dual convention without changing \(O\).
+
+The target inertial characters extend to \(G_F\), so Frobenius preserves
+each of their isotypic spaces. Frobenius semisimplicity diagonalizes each
+space, even when characters repeat. A parameter with this inertia and
+\(N=0\) is therefore toral. The established good-preimage and restricted
+uniqueness argument identifies it with the classical parameter for every
+allowed weak correspondence. This proves the full local quantifier in
+the theorem.
+
+Teichm\"uller lifts exist and are unique in \(O\): Hensel's lemma gives
+the unique lift of each element of \(k^\times\) to a root of
+\(X^{|k|-1}-1\), and uniqueness makes the lifting multiplicative.
+Their kernels equal the original residual kernels. Thus the
+universal Teichm\"uller-lift clause introduces no new choice.
+
+Finally take
+\[
+ V=\bigotimes_{u,\,O}V_u,\qquad
+ m=\prod_u [E_u:E_0]\dim_{E_u}\sigma_u.
+\]
+The product kernel is open. The isotypy assumption gives
+\(M\simeq(\bigotimes_u\pi_u)\otimes W\) with \(W\ne0\):
+apply evaluation from each irreducible factor and its multiplicity
+space in turn, using Schur's lemma and cyclicity. The other factors act
+on that multiplicity space; it is a submodule for each of them and
+remains isotypic. The compact Hom space for the tensor product is
+nonzero exactly when all local Hom spaces are nonzero.
+For an empty set of type places, take the rank-one trivial lattice.
+This is precisely the original source contract
+\cite{SelmerTypeSource}.
+\end{proof}
+
+\paragraph{Scope.}
+This closes the integral type-existence subobligation used in the actual
+ordinary Hecke determinant construction. It retains the original
+coefficient ring and every local and residual character.
+The displayed rank expansion is recorded, not bounded uniformly in
+the moving arithmetic data.
+Nonzero residual automorphic spaces, the remaining Taylor--Wiles level
+maps, patched support, two-sided rigidity and uniform integral Selmer
+bounds remain separate obligations. The whole Selmer node is open.

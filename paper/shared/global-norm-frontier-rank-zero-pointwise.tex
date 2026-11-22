@@ -1,0 +1,207 @@
+\subsection{The original pointwise orbital estimate at rank zero}
+\label{rank-zero-pointwise}
+
+The compact terminal case admits a direct argument.  It supplies the
+original pointwise theorem at $r=0$, including its quotient measures,
+rather than an almost-everywhere substitute.  This specialization does
+not assert that the ordinary RH construction has $r=0$.
+
+Put $n=k+1$, $k\ge1$, and $G=U(k,1)$.  Let $L$ be the original
+rank-zero local Bessel datum, with discrete-series parameter $\lambda$,
+compact parameters $u,u'$, negative vectors $z,z'$ and
+$T=-h(z,z)>0$, $T'=-h(z',z')>0$.  Write $J=J_LF$ for its original
+compact and unipotent average of a finite matrix coefficient $F$.
+Compact Haar measures have mass one; the original unipotent Haar
+measure is $\kappa_N\delta_1$, with $0<\kappa_N<\infty$.
+For any prescribed exterior section $\mu$, put
+\begin{equation}\label{rank-zero-original-norm}
+ \mathcal N(F)=\int_{|\zeta|^2>TT'}
+       (|\zeta|^2-TT')^{k-1}\|J(\mu(\zeta))\|_{\rm HS}^2\,d\zeta.
+\end{equation}
+This is exactly the original $\mathrm{jNorm2}$: the source density
+is zero for $|\zeta|^2<TT'$, and its boundary circle has planar
+measure zero, including when $k=1$ \cite{rank-zero-pointwise-source}.
+
+\begin{theorem}\label{rank-zero-original-pointwise}
+Suppose $b\ge5n$, $|\lambda_a|\le b$ for all $a$, and
+$|u'_i|\le b$ for all $i$.  For every original point
+$\gamma\in\mathrm{Point}(\mathbb C,1)$ with
+$\mathcal G(\gamma)\ne0$,
+\begin{equation}\label{rank-zero-orbital-bound}
+ \mathrm{ptWeight}(k,0,T,T',\gamma)\,
+       \mathrm{orbSq}_L(F,\gamma)
+ \le b^4\max\{1,\mathcal G(\gamma)^{-1}\}\,\mathcal N(F).
+\end{equation}
+The left side is understood with the original nonnegative-real
+convention.  If $\mathcal G(\gamma)>0$, the stronger bound with
+$b^4/\mathcal G(\gamma)$ holds.  Consequently, for $C_g\ge10^6$
+and $C_b\ge1$, this proves the original
+\texttt{TheoremBPrimePointwise} whenever $D.R.rS=0$.
+\end{theorem}
+
+\begin{proof}
+We first identify the actual functions and measures.  At $r=0$ the
+original unipotent group is $N=\{1\}$, its Lie algebra is zero,
+and its pinned Haar construction gives $\mu_N=\kappa_N\delta_1$.
+Every point is a single block $(\zeta,1)$ with $\zeta\ne0$.
+The original root pattern is empty and the stabilizer
+$R_g=N\cap gNg^{-1}$ is trivial.  The root-measure condition
+therefore forces $\mu_R=\delta_1$: its support is a singleton and
+its pushforward to the zero-dimensional root space has mass one.
+The original Weil identity then gives $\nu=\mathrm{pairMeas}$,
+by testing indicators of all measurable sets.  Thus every permitted
+orbital integral is exactly $J(g)$, retaining the factor
+$\kappa_N^2$ in $J$ and $\kappa_N^4$ in its squared norm.  No
+volume of a compact stabilizer is inserted in this quotient.
+
+For a representative $g$ one has
+$h(gz',z)=\zeta$ and hence, by the reverse Cauchy--Schwarz
+inequality for negative vectors, $|\zeta|^2\ge TT'$.
+If $\mathcal G=|\zeta|^2-TT'<0$, there are no representatives,
+so the defining supremum for $\mathrm{orbSq}$ is zero.
+If $\mathcal G>0$, every fiber is one
+$K_z\times K_{z'}$ orbit, where $K_z=\operatorname{Stab}(z)$.
+Indeed, after sending $z/\sqrt T$ to the last basis vector,
+the last coordinate of $gz'$ is fixed and its first $k$
+coordinates run over a sphere; $U(k)$ acts transitively on that
+sphere.  Two elements with the same image of $z'$ differ on
+the right by $K_{z'}$.  The equivariances of $J$ and unitarity
+of the compact types show that
+\begin{equation}\label{rank-zero-point-identification}
+ \mathrm{orbSq}_L(F,\gamma)=\|J(\mu(\zeta))\|_{\rm HS}^2,
+ \qquad \mathrm{ptWeight}(k,0,T,T',\gamma)=\mathcal G^{k-1}.
+\end{equation}
+
+Choose frames sending $z,z'$ to multiples of the last negative
+basis vector and translate $J$ on its two sides.  Haar measure
+is unchanged, and the two compact stabilizers become
+$K_0=\{\operatorname{diag}(A,1):A\in U(k)\}$.  Call the resulting
+function $H$.  Its compact averages have the form
+$\kappa_N^2 P_0\sigma(g)Q_0$, with $Q_0$ an intertwiner from
+the prescribed right compact type and $P_0^*$ an intertwiner
+from the left one.  These maps are obtained by compactly averaging
+the original finite coefficient maps; all their images consist of
+smooth vectors.  The center of $G$ acts on $\sigma$ by the
+character of weight $s=\sum_a\lambda_a$, since the sums of both
+compact and full half-root sums are zero.  Thus the finite-dimensional
+image of $Q_0$ is invariant under the full maximal compact group
+$K=U(k)\times U(1)$.  Its $U(1)$ weight is
+\[
+                \ell_0=s-\sum_i u'_i.
+\]
+The same argument applies on the left.  In particular, no bound
+on the dimension or multiplicity of a compact type is needed.
+
+Let $Y_1,\ldots,Y_{n^2}$ be a real Hilbert--Schmidt orthonormal
+basis of $\mathfrak u(k,1)$ adapted to its compact and noncompact
+parts.  The Casimir energy identity, in the normalization
+$B(X,Y)=\Re\operatorname{tr}(XY)$, is
+\begin{equation}\label{rank-zero-casimir-energy}
+ \sum_j\|R_{Y_j}H\|_{L^2(G)}^2
+             =(2c_K-c_G)\|H\|_{L^2(G)}^2,
+\end{equation}
+where
+\[
+ c_G=\sum_a\lambda_a^2-\|\rho_n\|^2,\qquad
+ c_K=\sum_i(u'_i)^2-\|\rho_k\|^2+\ell_0^2.
+\]
+To check the sign, $\Omega_G=\sum_{\mathfrak p}Y^2-
+\sum_{\mathfrak k}Y^2$ and $\Omega_K=-\sum_{\mathfrak k}Y^2$,
+so $-\sum_jY_j^2=2\Omega_K-\Omega_G$.  Moving positive root
+matrix units past negative ones gives the displayed eigenvalues;
+the compact highest weight is $u'-\rho_k$.  Schur orthogonality
+makes these finite matrix coefficients and their derivatives
+square integrable.  Equivalently one may apply the skew-adjoint
+derived operators in the right regular representation, so no
+boundary term or formal integration by parts is assumed.
+
+Now $|\ell_0|\le(n+k)b\le2nb$, $c_K\le5n^2b^2$ and
+$c_G\ge-n^3$.  Since $b\ge5n$,
+\begin{equation}\label{rank-zero-energy-bound}
+                   2c_K-c_G\le11n^2b^2\le b^4.
+\end{equation}
+Let $a_t$ be the positive boost on the first positive and last
+negative coordinates, with entries $\cosh t,\sinh t$, and put
+$\Phi(t)=H(a_t)$ for $t>0$.  The compact equivariances and central
+unitarity imply that its Hilbert--Schmidt norm is the norm of
+$J(\mu(\zeta))$ whenever $|\zeta|=\sqrt{TT'}\cosh t$.
+The exact terminal integration formula, or its direct
+hyperboloid change of variables, has radial density
+\[
+ w(t)=(\sinh t)^{2k-1}\cosh t,
+ \qquad M=\int_0^\infty w(t)\|\Phi(t)\|_{\rm HS}^2\,dt.
+\]
+In particular the angular integral and planar Jacobian give
+\begin{equation}\label{rank-zero-radial-normalization}
+                        \mathcal N(F)=2\pi(TT')^k M.
+\end{equation}
+For clarity the associated Haar formula on $G$ may have an
+arbitrary positive constant; it is the same constant in both
+integrals in the following energy comparison and cancels.
+The boost generator $X$ has $\|X\|_{\rm HS}^2=2$.
+On $k_1a_tk_2$, its radial derivative is the right derivative
+in $\operatorname{Ad}(k_2^{-1})X$.  Conjugation by $K$ preserves
+the Hilbert--Schmidt norm, and the compact factors act unitarily
+on $H$ and $\Phi'$.  Cauchy--Schwarz, the Haar formula and
+\eqref{rank-zero-energy-bound} therefore yield
+\begin{equation}\label{rank-zero-radial-energy}
+ E:=\int_0^\infty w(t)\|\Phi'(t)\|_{\rm HS}^2\,dt
+                                  \le2b^4 M.
+\end{equation}
+
+It remains to turn this actual derivative estimate into point
+evaluation.  Fix $t>0$ and put
+$\delta=\tanh t/(8k)$ and $I=[t-\delta,t+\delta]$.
+Here $\delta\le t/8$ and $s\ge7t/8$ on $I$.  Concavity of
+$\tanh$ gives $\coth s\le(8/7)\coth t$ there.  Hence
+\[
+ (\log w)'(s)=(2k-1)\coth s+\tanh s\le2k\coth s,
+ \qquad |\log w(s)-\log w(t)|\le2/7<1.
+\]
+The fundamental theorem of calculus, Cauchy--Schwarz and
+averaging over $s\in I$ give the Hilbert-valued estimate
+\[
+ \|\Phi(t)\|^2\le\delta^{-1}\int_I\|\Phi(s)\|^2\,ds
+                       +2\delta\int_I\|\Phi'(s)\|^2\,ds.
+\]
+Using $\mathrm e^{-1}w(t)\le w(s)\le\mathrm e w(t)$ and
+\eqref{rank-zero-radial-energy}, one obtains
+\[
+ w(t)\|\Phi(t)\|^2
+       \le\mathrm e\left(8k\coth t+\frac{b^4}{2k}\tanh t\right)M.
+\]
+Multiply by $(TT')^{k-1}/(\sinh t\cosh t)$ and use
+\eqref{rank-zero-radial-normalization}.  Since
+$\mathcal G=TT'\sinh^2t$, this gives
+\[
+ \mathcal G^{k-1}\|J(\mu(\zeta))\|^2
+ \le \frac{\mathrm e}{2\pi}
+           \left(8k+\frac{b^4}{2k}\right)
+            \frac{\mathcal N(F)}{\mathcal G}
+ \le \frac{b^4}{\mathcal G}\mathcal N(F).
+\]
+The last estimate uses $\mathrm e/(2\pi)<1/2$, $k\ge1$, $k\le b$ and
+$b\ge2$.  All inequalities are homogeneous; when $M=0$ the
+same argument gives pointwise vanishing, without division by $M$.
+
+Finally, the original $\mathrm{LocOk}$ with $\lambda_0=\lambda$
+has $|\lambda_a|,|u'_i|\le b$.  Its noncompact gap, at $r=0$,
+is at least $C_g2^{9/2}(3n^2+n^3)$.  Both signs occur because
+the underlying form has signature $(k,1)$; thus this gap is at
+most $2b$, implying $b\ge5n$.  For $m=2$ and $C_b\ge1$,
+\[
+ b^4\max(1,\mathcal G^{-1})
+ \le b^{16C_b}\max(1,\mathcal G^{-1})^{4C_b},
+\]
+which is exactly the original $\mathrm{BpIneq}$ budget.
+This proves its universally quantified pointwise interface,
+including all original representatives and permitted measures.
+\end{proof}
+
+The theorem closes the entire rank-zero local pointwise supplier.
+For $r>0$, partial-head kernels still involve unipotent quotient
+measures, root stabilizers and their density and gauge factors.
+The compact Casimir argument above does not identify those kernels
+with matrix coefficients of a fixed $U(k,1)$ discrete series.
+That identification or a substitute uniform kernel estimate remains
+necessary before this terminal argument can be iterated.

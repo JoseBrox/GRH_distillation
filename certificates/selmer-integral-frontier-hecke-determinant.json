@@ -1,0 +1,602 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "classification": "closed subobligation inside W04 for each original fixed type datum",
+  "verification_kind": "Pinned source and primary-PDF provenance, exact symbolic normalization and universal low-rank identity checks; the standard mathematical proof is in the note.",
+  "claim": "Actual original ordinary Hecke eigencharacters separate; their actual classical constituents supply Galois representations and ordinary flags; compact integral determinant descent produces the exact surjective B-to-T map and compatible auxiliary classical specialization.",
+  "quantifiers": [
+    "Every original fixed Hida setting, positive rank n, odd ell, original O, original integral type satisfying TypeForAlt, original torus character and residual Hecke data.",
+    "Every original compact auxiliary level; a nonzero residual module has its exact finite Hecke algebra, and a zero module gets its unique action.",
+    "Every nonzero vector in the smooth auxiliary union has a detecting good weight-zero classical constituent, retaining all global multiplicities.",
+    "Every allowed weak local correspondence and period model is handled by the previously audited guarded comparison transport."
+  ],
+  "decisive_interfaces": {
+    "Jacquet_scalar_action": {
+      "proof": "A kernel vector is killed by compact-unipotent averaging and hence by a power of the actual unnormalized U. Its ordinary inverse makes the map injective. Distinct compact characters give an irreducible principal series and one selected Jacquet line.",
+      "normalization": "U_j=q^(j(n-j)/2)*product_(i<j) chi_i(varpi); b_i=U_(i+1)/U_i=q^((n-1)/2-i)*chi_i(varpi).",
+      "multiplicity": "Only the local selected Jacquet factor is one dimensional. Every global type multiplicity space is retained."
+    },
+    "base_change": {
+      "input": "Labesse Corollary 5.3 in its exact definite, degree >=2 scope.",
+      "discrete_blocks": "Moeglin-Waldspurger plus distinct unit characters excludes Speh lengths >1; it does not assert that the isobaric sum is cuspidal.",
+      "rank_shift": "pi_alpha=Pi_alpha*|det|^((m_alpha-n)/2); algNorm_m(pi_alpha)=Pi_alpha*|det|^((1-n)/2).",
+      "polarizing_character": "delta_(L/F)^m_alpha*|.|^(m_alpha-n), with real sign (-1)^m_alpha and delta trivial under norm pullback.",
+      "Galois_supplier": "The already adopted W05 theorem applies separately to all regular algebraic polarized cuspidal shifted blocks; take their direct sum."
+    },
+    "ordinary_characters": {
+      "exact_formula": "psi_i=xi_i*epsilon^(-i), xi_i|units=theta_i^(-1), xi_i(varpi)=U_(i+1)/U_i.",
+      "retained_conditions": "Continuity, full residual character, original finite torsion restriction, original inertial weight character, and original cumulative uniformizer products.",
+      "cyclotomic_warning": "WD(epsilon) on geometric Frobenius is q^-1; the Galois cyclotomic character on a local uniformizer at ell is not replaced by q^-1.",
+      "flag": "Weak admissibility identifies each smallest-Hodge-weight Frobenius line with the already constructed rank-one admissible character; full faithfulness with descent gives the subrepresentation, then induction.",
+      "source": "ExistsOrdinaryCharactersHeckeAlgebra:15-74; UniversalOrdinaryDeterminantRing:131-146."
+    },
+    "integral_determinant": {
+      "compactness": "T is finite over the actual weight ring and embeds continuously as a closed subring of the product over its separating continuous eigencharacters.",
+      "density": "The original split Frobenius representatives outside S' are dense; their exact characteristic polynomials put every coefficient tuple in T.",
+      "polynomial_law": "The primitive-cyclic-word Amitsur identity descends all finite group-algebra determinants integrally; multiplicativity and naturality are coefficient identities detected by the separating maps.",
+      "small_prime_scope": "No use of 1/n!; ell<=n is allowed."
+    },
+    "Pair": {
+      "fields": [
+        "D",
+        "psi",
+        "cont",
+        "red",
+        "psi.cont/red/mu",
+        "P",
+        "Ord",
+        "I"
+      ],
+      "ordinary_order": "The rightmost factor lowers the last flag step, so product_(i=0)^(n-1)(rho(g_i)-psi_i(g_i))=0.",
+      "type_kernel": "TypeForAlt supplies N=0 and finite diagonal Teichmuller inertia; Ip=Iu intersect all residual character kernels acts trivially.",
+      "universality": "Original Pair yields B-to-T; the exact original generator formulas prove surjectivity and weight compatibility."
+    },
+    "weak_local_comparison": {
+      "guard": "WDT/Gd is toral with zero monodromy; outside the guard one only supplies existence of the actual WD representation.",
+      "transport": "The existing full local preimage/uniqueness/injectivity argument identifies any weak guarded parameter with the classical parameter of the same local representation.",
+      "scope": "Works for the whole isobaric direct sum and every auxiliary local factor; no genericity or global cuspidality is inferred from distinct inertia.",
+      "source": "GalUnitaryT:18-50; PaLevel:24-42."
+    }
+  },
+  "limitations": [
+    "The separate exact integral type-existence supplier TTypeEx/PTypeEx is retained as input and is not identified with W05's depth-zero type law.",
+    "No residual module is asserted nonzero.",
+    "The original auxiliary level maps with one uniform exponent, full Taylor-Wiles construction, patched support, two-sided rigidity and uniform integral Selmer bounds remain separate.",
+    "No whole W04 or other proof-map node is completed.",
+    "No Lean project build or complete RH/GRH proof is certified."
+  ],
+  "exact_checks": {
+    "status": "PASS",
+    "normalizations": [
+      "U_successive_ratio",
+      "block_algNorm",
+      "Frobenius_Hecke_exponent",
+      "ordinary_WD_exponent"
+    ],
+    "normalization_scope": "Identities in the exact rational polynomial ring, with symbolic n,j,m.",
+    "Amitsur": {
+      "matrices": "Two universal 3x3 matrices over Z[a0,...,a8,b0,...,b8]",
+      "primitive_words": [
+        "A",
+        "B",
+        "AB",
+        "AAB",
+        "ABB"
+      ],
+      "checked_bidegrees": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "scope": "Exact independent low-rank check; the all-rank integral proof is in note section 6."
+    }
+  },
+  "primary_references": [
+    {
+      "file": "bz1977.pdf",
+      "url": "https://www.math.tau.ac.il/~bernstei/Publication_list/publication_texts/BZ-induced-1.pdf",
+      "sha256": "b379d3cb70d0fb94d9efbddd5f39a576bd2dc2b43a3f5bdc78f4ef084db10eda",
+      "reference": "Bernstein-Zelevinsky, Induced representations I (1977)",
+      "reviewed": "Proposition 2.3, printed p.446; geometric lemma 2.12, p.448; support and Theorem 4.2, p.454.",
+      "use": "Jacquet adjunction/admissibility, Weyl filtration, uniqueness of support, and principal-series irreducibility.",
+      "bytes": 3078205,
+      "local_hash_verified": true
+    },
+    {
+      "file": "labesse-cbcm.pdf",
+      "url": "https://webusers.imj-prg.fr/~michael.harris/CBCM.pdf",
+      "sha256": "5df9d8fcfa158064fe362d4fdf46858648991eb32dddabc63a4a998840785865",
+      "reference": "Labesse, Changement de base CM et series discretes (2011)",
+      "reviewed": "Author pp.41-43: degree >=2, property (*), and Corollary 5.3.",
+      "use": "Definite weight-zero base change with all discrete CSD blocks; exact split/unramified comparison and infinitesimal character.",
+      "hypotheses": "Original F has degree >=2 because original CM L/F is unramified at all finite places; compact infinity gives discrete series and (*). Corollary 5.3 imposes no extra finite-place quasi-split or parity assumption.",
+      "bytes": 614645,
+      "local_hash_verified": true
+    },
+    {
+      "file": "moeglin-waldspurger1989.pdf",
+      "url": "https://www.numdam.org/item/10.24033/asens.1595.pdf",
+      "sha256": "a46e3549d05d2cd39f396ef326840f4484f3935ff3daa17e6339091962de9e94",
+      "reference": "Moeglin-Waldspurger, Le spectre residuel de GL(n) (1989)",
+      "reviewed": "Main theorem, printed pp.605-606; normalized induction, section I.1.1, pp.606-607.",
+      "use": "Speh classification; repeated unramified twists would repeat inertial characters at a good ell-place, so every discrete block is cuspidal. Multiple isobaric blocks are retained.",
+      "bytes": 6048150,
+      "local_hash_verified": true
+    },
+    {
+      "file": "colmez-fontaine2000.pdf",
+      "url": "https://webusers.imj-prg.fr/~pierre.colmez/CF.pdf",
+      "sha256": "f0b5c51191831415b39cd363cc9eb5ba759d1ea7e46d9b4c1d15cea0a7aa6490",
+      "reference": "Colmez-Fontaine, Construction des representations p-adiques semi-stables (2000)",
+      "reviewed": "Author section 3.4, pp.21-22; Proposition 4.2, p.23.",
+      "use": "Weak admissibility, exact full faithfulness, and stability under subquotients. Rank-one characters have already been constructed, so essential surjectivity is not needed for the flag proof.",
+      "bytes": 493808,
+      "local_hash_verified": true
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "notes/selmer-integral-frontier-ordinary-diamond.md",
+      "sha256": "383e24d3da77020e58269b75b04c041f485dcce32ed01acdd7ca94b47e1f6bb1"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-ordinary-diamond.json",
+      "sha256": "0440a66e836b46d95049349b718334e4dcfa247e5ed02630eb93d6e71383f0eb"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-classical-control.md",
+      "sha256": "e9e0a12925885fd487071a3d9a88e4a60b12e91e6c5aac0f3ab673b0f5e6c2ba"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-classical-control.json",
+      "sha256": "ac9000766ebbcf3aeaa5d411c0c5bebb308207046052638cc487edf09db512b3"
+    },
+    {
+      "path": "notes/classical-galois-substitution.md",
+      "sha256": "770dbea1b6143c6c1752a896f1827ba469fc6845bd2c0e514ca658d0dc2a1581"
+    },
+    {
+      "path": "notes/galois-period-dictionary.md",
+      "sha256": "c517a086614c5ad4fa090c46287624944a3f4bc4e88bffeecc6cfc0cc7fe71a4"
+    },
+    {
+      "path": "notes/classical-local-correspondence.md",
+      "sha256": "37bff32de508ca260b1e8e5c02bf446ed3f2d445db49b77fb15ab9c6c558e2f7"
+    },
+    {
+      "path": "notes/local-correspondence-bridge.md",
+      "sha256": "bb7ae1f43251929774aaf5282bcedf50340e60f572fa48559ee0952f2f598b20"
+    },
+    {
+      "path": "notes/fixed-correspondence-reduction.md",
+      "sha256": "3c93f8cfbd70315d143b87ca4b60aed6ab81ec410350e8be5a053df43ee85a91"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/WeilGroupCharacters/ContinuousResP.lean",
+      "git_blob_sha1": "924c083d348beb2446a41e0ec51848db9bc36604",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.ContinuousResP",
+      "sha256": "cc2d91ff3b018935e24d2218aebc53c6433460b7683b62732f94306ebc462ebb",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 73,
+          "end": 92,
+          "sha256": "12240522b3f5a09d157af2004ac668c4f779c942357eadb90ae7b141b702842a"
+        },
+        {
+          "start": 111,
+          "end": 130,
+          "sha256": "12009d365787655785020af35adca1048c120985e38ffc51d38b9ae08bf5e078"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/WeilGroupCharacters/UniversalOrdinaryDeterminantRing.lean",
+      "git_blob_sha1": "65ce51224af6634182dda7b48716e73279990d15",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.UniversalOrdinaryDeterminantRing",
+      "sha256": "b12275f242e0616546ead3569b88ed86fb245901849b470c1caf77c7b3c033d0",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 80,
+          "end": 103,
+          "sha256": "e32c112c6a613d4449e376c445b171c516219a6fb49d13563d89ed95579c8f39"
+        },
+        {
+          "start": 109,
+          "end": 176,
+          "sha256": "0f2aa25008126788ad90d54a6a1fb12a08375fc4fc1746a3ffd2822c91223c64"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/IsTheta.lean",
+      "git_blob_sha1": "0bcdfbc7e402154a2586c7252766f92fb5459d6d",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.IsTheta",
+      "sha256": "e52772c94eb589b1a1a64a204fcb49cbd8eebe737cb7046be4c594b9e2ad6c1e",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 40,
+          "end": 52,
+          "sha256": "e1a1446675391d46111b3013b8f717c9f87be4264a9ba72cd82ab456527078ce"
+        },
+        {
+          "start": 100,
+          "end": 143,
+          "sha256": "1e95615f2c0f721954bfe6f0870ef9e4b0e5a19a8fb92bff26104d78c6bdcbb7"
+        },
+        {
+          "start": 147,
+          "end": 168,
+          "sha256": "e3ff8a36b37a570c169ea66001968329baa725f476961d9548a35b6299f173ff"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/UnitaryHeckeData.lean",
+      "git_blob_sha1": "fda77999362f26a1072090403ba0726f0597fe39",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.UnitaryHeckeData",
+      "sha256": "2d1cab55f190ebb5c0ebf1876cf5509a13e2d98256e274731e0c4f42fa8bc476",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 18,
+          "end": 67,
+          "sha256": "918038e5cf5b87d8a8a700c71fe5303c1a77a6068bdfd6b0fb2de32872dee780"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/TCoreSep.lean",
+      "git_blob_sha1": "54e3b199b2909d4a1f3e94772ca1ef25b3763e7a",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.TCoreSep",
+      "sha256": "e65422468a71d22328b46a9da4a814bcb08b090548820e7ad244979006cb3f9d",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 37,
+          "end": 65,
+          "sha256": "ca4b6502e88d418d3b3feaf5d7ed12a6975b8e55921fc31bfad63173ec32ee75"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HeckeOperatorPreservesPart.lean",
+      "git_blob_sha1": "15bee68f660314b64d8c4a7a07516f25e61c09e9",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.HeckeOperatorPreservesPart",
+      "sha256": "f646c06d55dc2e8a6cbfb9396c9bff8d2eb4ac96614504e2e9e59f5709662b41",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 308,
+          "end": 336,
+          "sha256": "23f7cd1bd793c1bdfc26fcb22e0743e44a6cc216a9fbb4b9efbc6132402ade32"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/TCoreDet.lean",
+      "git_blob_sha1": "c962072d81e1a0c3ed5df56fb3b5f08210964f47",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.TCoreDet",
+      "sha256": "022f57cedc7b460c8d200bad99409312b7fd6ac51d9f573bd78f255bd5512741",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 42,
+          "end": 96,
+          "sha256": "467346ad81d4d144ba4ff1a1cd108a29448b8ffb3276a12a7b0daf90d35bdbbc"
+        },
+        {
+          "start": 191,
+          "end": 250,
+          "sha256": "d4ef1d32495ba61587297a59903b4190fcb09f9741428c07e3d5be6be60e1cdc"
+        },
+        {
+          "start": 251,
+          "end": 280,
+          "sha256": "912c235752c30105b6bce94f66b74aad77deb57322d3d9baf2f49bb57d01096f"
+        },
+        {
+          "start": 291,
+          "end": 323,
+          "sha256": "0b071a9a64421456e7afc144d4f6904b4836ed4d05c0e2e45e4674753639fd02"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/OrdCoreH.lean",
+      "git_blob_sha1": "df693a31f9e2ce24ece34fc4786c9f1251eb570b",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.OrdCoreH",
+      "sha256": "d55f8588365f0686c001e8e0ef010ccd8c863bdf8728e62c833b5e6bf36d20d3",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 20,
+          "end": 61,
+          "sha256": "c219ac67dae0c4ba869e8b5c4d087209bd6619806a13aae178f4fbab1bc3eb3e"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/LocOrdFlag.lean",
+      "git_blob_sha1": "fbfc4711f87f2a5cb1c7558c6a3bb2352040d9ea",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.LocOrdFlag",
+      "sha256": "289e385c341ad3b6eec7d0ee1c47dffcd213207124844c526eed61630fed8bc1",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 116,
+          "end": 169,
+          "sha256": "23d83a7bb1675e92beaa8e8cd87fd7f1f4d6ed84d23b492cc2f378c87472828a"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/AutomorphyLifting/GalUnitaryT.lean",
+      "git_blob_sha1": "c8abf18366a433b84cc2f0148ccdc171fe1dfd31",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.AutomorphyLifting.GalUnitaryT",
+      "sha256": "9208718fbae4a8ec21d138d47b2f9dc60bb2d9916f152216f869c320c72def09",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 18,
+          "end": 50,
+          "sha256": "eb8faffeb0e5581cc3a77592ff9e6dabc893ad6e03f4cc8abbfe33a361aad515"
+        },
+        {
+          "start": 74,
+          "end": 95,
+          "sha256": "0e17f3a7dd09482a527de1d0049b0093e8b7983ee38cec575c664d8fa8503582"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/ExistsOrdinaryCharactersHeckeAlgebra.lean",
+      "git_blob_sha1": "bc1bebca90e8e41e8e81a8a8d4c09f3bee5fa249",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.ExistsOrdinaryCharactersHeckeAlgebra",
+      "sha256": "1453cfd708d52c63cb287acac5cb6591cf4511c74949fd83b238b041634f3d0c",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 15,
+          "end": 74,
+          "sha256": "ccd645352a46b73eb4bfb2cc7caeaf1dfdcecd6e9934a09dc50bfcdcd609893f"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HeckeDeterminantReductionEqResidual.lean",
+      "git_blob_sha1": "d0b09f41565e76f672eef9eff9e60ca6e7a9df73",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.HeckeDeterminantReductionEqResidual",
+      "sha256": "57351237a3beb4792f44d6f31b08acee1f5a8a53c3b121bbc2414462897a5f00",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 15,
+          "end": 35,
+          "sha256": "8a049a6155dbb01f41b084cf6474b05a818d6f070e2d708f6207824dae08296e"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HeckeDeterminantSatisfiesDeformationRelations.lean",
+      "git_blob_sha1": "e2cbd141e2e5e30293afd28acde758e88aa72726",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.HeckeDeterminantSatisfiesDeformationRelations",
+      "sha256": "99bde633bc11413b88f0318eba1ab9a3d2b3436412fd1fdf1c9efbc6b7b66c7f",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 15,
+          "end": 35,
+          "sha256": "56df47962fe0971d8ac36598f5776c6dff45d3e4b84c1b692c0b5269e4fb0a31"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HidaLevelX.lean",
+      "git_blob_sha1": "12a1031d202aa116d87dc82213ad0a4376e5471a",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.HidaLevelX",
+      "sha256": "87de3a0d75d9074c029732bcff6dd4c277908f9eb4adaa08b3785c21384a0889",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 62,
+          "end": 79,
+          "sha256": "e004db75e2816947820cb3f481f5a3debd6c06fba2a3bd33852fd95b2f141770"
+        },
+        {
+          "start": 115,
+          "end": 143,
+          "sha256": "497697e701df84760f1930be381571441c7cb3e3399330721c7c1cc2ff407bf7"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/PaLevel.lean",
+      "git_blob_sha1": "81e6d358df32a524b425fbc5c3b24f709c7d7e0c",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.PaLevel",
+      "sha256": "31fac649fcb59b77061cbd7b173a9d23d890aaa8891e8f66586436804adef28a",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 24,
+          "end": 57,
+          "sha256": "20610cb883daf9ae0b9739586fd2cef2f9d494f3acc895736de44d2fb059631d"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/NonemptyUnitaryHeckeParts.lean",
+      "git_blob_sha1": "e9d317c0e07e3736ce8ce8fe419ce240006064eb",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.NonemptyUnitaryHeckeParts",
+      "sha256": "785552c60c050f2fc160e26c6ca4e84bb4e8582ca7ff073cb93c5e179d691faf",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 30,
+          "end": 84,
+          "sha256": "8b4be82026a7db4612ca1505e55fa260b995893d38c9fbf626ecdedc42c8b01a"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/PTypeEx.lean",
+      "git_blob_sha1": "a279822666636fc8588393ea32596e270e2b3007",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.PTypeEx",
+      "sha256": "bfcbd89a64d1b044ec4b58f9a9a571c3cc0ae4d2236e74185af9a8fc9362165d",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 29,
+          "end": 71,
+          "sha256": "854b5b5d6266f4433044c07de8a6c9fefa0dbd08ac2ba012da3aac6f7ec40e96"
+        },
+        {
+          "start": 88,
+          "end": 136,
+          "sha256": "4335b8d7bdfc9413fc09ba4138cc897f2088e06db8f4a81e51a663cf6b4f141e"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/TTypeEx.lean",
+      "git_blob_sha1": "2cbb3dfc498375dd0610cb2177ccb0e3c280194c",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.TTypeEx",
+      "sha256": "fae0222f35612aa5b91fc2c1e531239ebd6fcfcfe5f6e4f205809e995298e10d",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 18,
+          "end": 21,
+          "sha256": "c07e667cd1271d127404bc492455a6cceafe47691a4718cffb03f0a445a6ed29"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/WeilBound/RepresentationTheoryGL/ArchimedeanBaseChange/ArchimedeanBaseChangeProof/BaseChangeIsobaricNOf.lean",
+      "git_blob_sha1": "81910ddd39b22a471f01b5175778ada1ade1bbc2",
+      "module": "Development.WeilBound.RepresentationTheoryGL.ArchimedeanBaseChange.ArchimedeanBaseChangeProof.BaseChangeIsobaricNOf",
+      "sha256": "19fcd2a406d997a516b39cf09e7a928a102951a2eb7345fa37cef15928423bcd",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 18,
+          "end": 45,
+          "sha256": "d147abc781c1735fd619b7c8028460e01f98c12f994a3487bf16ad366a06a2e1"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AlgebraTools/DeterminantRepresentations/GlueRep.lean",
+      "git_blob_sha1": "67274c71b496210de66c80b847bc074c19d5fa3b",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.AlgebraTools.DeterminantRepresentations.GlueRep",
+      "sha256": "f86c5e96209eb2cf49c86f2678fdacc23598398cc5a700ec45399320d8194fc1",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 19,
+          "end": 24,
+          "sha256": "d7942ea0a26f8ff41942e9dbc18b54e5fe912705db437941ccf6f2cf3cc8c2b7"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-hecke-determinant.md",
+      "sha256": "4775ca95ddb4ff156b8704a4b599905d8dd05b26a8c40407a87a5ede2c2f9ee1"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-hecke-determinant.tex",
+      "sha256": "62dec953533f68c2df9c155a0a680f7e722603b969aeb42d7768677bf2e2797f"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-hecke-determinant-references.tex",
+      "sha256": "e008ffeaf46fe96ba00c3d890ebbdc112193c5c9baa506fb09dcbd4749b7618c"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_hecke_determinant.py",
+      "sha256": "b1e33180a85169721345b5b31471da7caae50f310f1cfcb1df511175de73d307"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+\section{Level symmetries and the original generic descent}
+\label{sec:pel-level-symmetry}
+
+The local integral model can be chosen to preserve the original finite
+level symmetries.  Its generic compactification also descends to the
+original smaller field when the full auxiliary level is one.  These
+are actual clauses of the geometric construction; they do not assert
+the whole simultaneous level-system contract.
+
+Put $L=\operatorname{lcm}(M,A)$ and let $U(L)$ be full principal
+level in the integral PEL similitude group $K_0=G(\widehat{\mathbb Z})$.
+Choose the projective cone decomposition in
+Theorem~\ref{thm:original-integral-pel-model} to be $K_0$-invariant.
+This is possible because $U(L)$ is normal in $K_0$, by
+\cite[Proposition 2.8(2)]{level-symmetry-lan-cones}.
+Use the singleton original lattice throughout.
+
+\begin{proposition}[Extending the prescribed level actions]
+\label{prop:pel-original-level-actions}
+The resulting local model satisfies the source's
+\texttt{LevelActs} condition.  The extension preserves the actual
+semiabelian family, coefficient action and rigidified primitive line.
+\end{proposition}
+\begin{proof}
+Start with an automorphism $r$ of the original generic moduli space,
+an isomorphism of its original semiabelian line data over $r$, and
+the two fixed coefficient-linear label maps in the definition of
+\texttt{LevelActs}.  Complete the half-labels using the prescribed
+root, as in Theorem~\ref{thm:original-half-level-completion}.
+The two label maps then determine one automorphism of the full
+$L$-level module: on the missing half it is forced by the perfect
+cross-pairing, and the overlap with $A$-division is unchanged.
+This automorphism preserves the $L$-pairing root.
+
+It is liftable to $K_0$.  At a geometric moduli point compare
+coherent Tate markings before and after the given family
+isomorphism.  Their ratio is an integral PEL similitude, and its
+reduction is the just-determined finite-level automorphism.  This
+uses the original full-Tate condition; arbitrary surjectivity of
+an integral group onto its reduction is not being assumed.
+The ratio may be chosen at any nonempty component, since the
+finite-level action has already been fixed by the two given maps.
+If the moduli space is empty, its dense integral model is empty
+and the assertion is immediate.
+
+Thus $r$ is the action of this element of $K_0/U(L)$.  Indeed the
+two actions give the same underlying object and all labels, and
+the original fine moduli property and automorphism rigidity give
+equality.  The same uniqueness identifies the specified generic
+family isomorphism.
+
+The equivariant toroidal construction extends this action when
+the cones are invariant
+\cite[Section 7, especially Proposition 7.3]{level-symmetry-lan-cones}.
+For an element of $K_0$ the lattice is unchanged: this is a change
+of labels, with no isogeny of the abelian family.  The fixed-root
+component is preserved because its multiplier is one modulo $L$.
+The action extends to its reduced closure and then to its finite
+normalization by functoriality of normalization.  These extensions
+are inverse to those of the inverse group element.
+
+The extended tautological family has the original coefficient
+action.  Full faithfulness for cubical lines over the normal base
+extends the original line comparison uniquely, including its
+rigidification, adjunction and primitive identities.  The resulting
+automorphism and family map satisfy every equality in
+\texttt{LevelActs}, since those equalities hold on the dense
+generic open.  No extra scalar is chosen.
+\end{proof}
+
+\begin{proposition}[Descent of the generic compactification]
+\label{prop:pel-original-generic-descent}
+If $A=1$, the same choices can be made so that the local model
+satisfies the original \texttt{Descends} condition.  In particular
+its generic compactification and semiabelian family descend to
+the source field $K_A$, while their pullbacks give exactly the
+original objects over the prescribed coefficient field.
+\end{proposition}
+\begin{proof}
+Let $H$ be the original half-level stabilizer.  The completed-level
+calculation gives
+\[
+ H_0=H\cap\{\nu\equiv1\pmod M\}=U(M).
+\]
+The multiplier induces an isomorphism
+$H/H_0\simeq(\mathbb Z/M\mathbb Z)^\times$.
+Injectivity was proved in Corollary~\ref{cor:original-neat-level}.
+For surjectivity, choose a profinite lift of a residue unit.  At
+the split places above $M$ use the coefficient unit $(1,r)$,
+which fixes the half-marking and has norm $r$; at the other places
+use the unramified norm on units.  This constructs an element of
+$H$ with the required multiplier, over the same original lattice.
+
+Consider the full-$M$ toroidal compactification over $K_A$, keeping
+all primitive pairing roots, with the invariant cones chosen above.
+Its root map to the finite \(K_A\)-scheme of primitive $M$-th
+roots extends across the boundary: roots are integral, and the
+compactification is normal.  The action of $H/H_0$ on these roots
+is simply transitive on every geometric fibre.  It is therefore
+free on the compactification, including its boundary.
+
+The finite quotient is a scheme and the quotient morphism is
+finite \'etale.  One can form it using an invariant ample bundle:
+tensor the translates of an ample bundle on the projective
+compactification.  The same equivariant construction carries the
+tautological semiabelian family.  Its symmetric cubical line is
+relatively ample: apply the generic ampleness criterion
+\cite[Lemma 4.2.1.6]{level-symmetry-lan} after completion at each
+normal local base ring, and descend relative ampleness by faithful
+flatness.  Hence the family is
+quasi-projective locally on the base and its equivariant descent
+is effective in schemes.  All group, coefficient and cubical
+structures descend by finite \'etale descent.
+
+On the dense interior this quotient is the original half-level
+moduli object over $K_A$.  Over the prescribed coefficient field,
+the already chosen root $\zeta_M$ selects one member of each
+$H/H_0$-orbit.  Consequently its fixed-root compactification is
+canonically the base change of the quotient.  The same statement
+holds for the entire semiabelian family and its comparison on the
+interior.  This gives the objects, cartesian squares and original
+generic family equalities required by \texttt{Descends}.
+The coefficient field need not be Galois over $K_A$.
+\end{proof}
+
+\begin{proposition}[The elementary extension clauses]
+\label{prop:pel-prime-to-p-and-dvr-extension}
+On the abelian locus of the actual local model, every prescribed
+generic torsion label of order prime to $p$ extends uniquely.
+The model satisfies the original \texttt{GoodRedExt} clause over
+every valuation ring with the specified fraction field.  This
+includes both valuation-ring classes in
+\texttt{LevelStructureConditions}.
+\end{proposition}
+\begin{proof}
+The abelian locus is open, and its family is an abelian scheme.
+For $(n,p)=1$ its $n$-torsion is finite \'etale.  A section on the
+dense generic open selects a generic component with the same
+function field as the normal base.  Its finite normal closure is
+the base itself, giving the unique extension.  Applying this on
+each component extends the original labels and every relation
+between them.  This is precisely \texttt{Extends} for those labels.
+
+For the second assertion, let $V$ be the specified valuation
+ring and $K=\operatorname{Frac}V$.  Properness extends the generic
+point uniquely to $y_V:\operatorname{Spec}V\to Y$.
+Write $\mathcal G_V$ for the pulled-back semiabelian family and
+$\mathcal B_V$ for the supplied abelian scheme.  The hypothesis
+gives a group isomorphism between their generic fibres.  We
+extend this particular isomorphism, without replacing $K$.
+
+Choose an affine open of $Y$ containing the image of the closed
+point of $\operatorname{Spec}V$.  It contains the entire image,
+since every point of this local spectrum is a generization of
+its closed point.  Its coordinate ring has image a finite-type
+algebra over the original excellent arithmetic DVR $O$, inside
+$V$.  Over any larger such subalgebra the pullback of the actual
+family is still semiabelian.
+
+Finite-presentation approximation descends $\mathcal B_V$, its
+group operations and their identities to a finitely generated
+$O$-subalgebra $R_1\subset V$.  Enlarge $R_1$ so that this
+model is proper and smooth.  The locus of geometrically
+connected fibres is open and contains the image of the closed
+point of $V$; localize at one element outside that point, whose
+inverse still belongs to $V$.  The descended group is then an
+abelian scheme.  These are exactly the limit and connected-fibre
+results of \cite{level-symmetry-approximation}.
+
+The generic isomorphism and its inverse involve finitely many
+coefficients in $K$.  Write them as fractions of elements of
+$V$, and adjoin these numerators and denominators.  Finite
+presentation, including the inverse and group identities, then
+defines the two maps over $R_2[1/d]$ for a finite-type
+$O$-domain $R_2\subset V$ and a nonzero $d\in R_2$.
+Normalize $R_2$ in its fraction field.  The result $R$ is finite
+over $R_2$, since $O$ is excellent.  It is contained in $V$:
+every element of $R$ lies in $K$ and is integral over the
+integrally closed valuation ring $V$.
+
+We have thus obtained two semiabelian schemes over the normal
+noetherian domain $R$, with the required inverse isomorphisms
+on the dense open $D(d)$.  Proposition~3.3.1.5 of
+\cite{level-symmetry-lan} extends both maps over $R$.
+Uniqueness makes their composites identities.  Pulling back to
+$V$ identifies $\mathcal G_V$ with $\mathcal B_V$, so every
+point in the image of $y_V$ lies in the abelian locus.
+
+A unit ball in the original nonarchimedean field is a valuation
+ring with that fraction field.  Thus the argument proves the
+nondiscrete clause as well as the complete-DVR clause, with all
+original maps retained.  Completeness and discreteness are not
+needed by this extension argument.
+\end{proof}
+
+These results, together with the whole-model integral theta
+theorem, supply every field of \texttt{LevelStructureConditions}.
+The simultaneous finite transitions and \texttt{SiegelCompare},
+and the global domination clause, remain separate.
+In particular a projective morphism between toroidal models is
+not automatically the finite transition required by the source;
+one must control its cone decomposition and integral normalization.
+The remaining contracts stay explicit\cite{level-symmetry-source}.

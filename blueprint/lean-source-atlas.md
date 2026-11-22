@@ -155,3 +155,21 @@ points by almost-everywhere representatives. `TBB.KernelFourierIntegralBound`
 and the global return assembly remain open. Source hashes and bounded
 excerpts are in `global-norm-frontier-iterated-minors` and
 `global-norm-frontier-big-cell-continuity` certificates.
+
+## Newly verified actual suppliers
+
+- [DVR uniformization](../notes/geometry-arithmetic-frontier-dvr-uniformization.md),
+  [integral theta](../notes/geometry-arithmetic-frontier-integral-theta.md), and
+  [level symmetries](../notes/geometry-arithmetic-frontier-level-symmetry.md): the exact
+  original `PELUnif`, `TorsionIso`, `PushInvertible`, `SplitFibres`, `Model.N3` and
+  `LevelStructureConditions`, including nondiscrete valuation rings. Their
+  certificates authenticate bounded source interfaces and primary references.
+- [Hecke determinant](../notes/selmer-integral-frontier-hecke-determinant.md) and
+  [integral types](../notes/selmer-integral-frontier-type-construction.md): the original
+  ordered ordinary relations, actual finite Hecke algebra, all classical isobaric
+  blocks, exact compact-type covariance and arbitrary-conductor inertia.
+- [Rank-zero pointwise bound](../notes/global-norm-frontier-rank-zero-pointwise.md):
+  original `RootMeasBig`, quotient measure, full `orbSq` supremum and
+  `TheoremBPrimePointwise` at r=0, with exact density and parameter losses.
+
+No Lean build or completion of the larger proof-map nodes is claimed.

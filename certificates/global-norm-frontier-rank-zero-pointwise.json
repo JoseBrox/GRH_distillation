@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "classification": "closed original rank-zero pointwise orbital obligation",
+  "supplied_interface": "TheoremBPrimePointwise when D.R.rS=0",
+  "bound": "ptWeight*orbSq <= b^4/G * jNorm2 for every representable point with G!=0",
+  "checks": {
+    "exact": {
+      "unbounded_casimir_energy": {
+        "expanded_polynomial": "x**4 + 20*x**3*y + 40*x**3 + 140*x**2*y**2 + 560*x**2*y + 560*x**2 + 400*x*y**3 + 2400*x*y**2 + 4800*x*y + 3200*x + 375*y**4 + 2999*y**3 + 8994*y**2 + 11988*y + 5992",
+        "all_coefficients_nonnegative": true,
+        "constant_term_positive": true
+      },
+      "unbounded_sobolev_prefactor": {
+        "expanded_polynomial": "4*x**4*y + 3*x**4 + 80*x**3*y**2 + 220*x**3*y + 120*x**3 + 600*x**2*y**3 + 2850*x**2*y**2 + 4200*x**2*y + 1800*x**2 + 2000*x*y**4 + 13500*x*y**3 + 33000*x*y**2 + 34000*x*y + 12000*x + 2500*y**5 + 21875*y**4 + 75000*y**3 + 124984*y**2 + 99968*y + 29984",
+        "all_coefficients_nonnegative": true,
+        "constant_term_positive": true
+      },
+      "boost_preserves_form_if_c_squared_minus_s_squared_equals_one": true,
+      "boost_generator_hs_norm_squared": 2,
+      "exact_radial_jacobian_cases": 24,
+      "exact_beta_profile_tests": 180,
+      "all_T_T_prime_powers_retained": true,
+      "unipotent_mass_in_J": "kappa_N^2",
+      "unipotent_mass_in_squared_norm": "kappa_N^4",
+      "original_root_measure": "dirac(identity)",
+      "original_quotient_measure": "pairMeas, not a compact-stabilizer quotient"
+    },
+    "interval_diagnostics": {
+      "diagnostic_checks": 175,
+      "maximum_observed_log_weight_change": "0.25",
+      "proof_bound": "2/7, established for all t>0 and k>=1 in TeX",
+      "not_used_as_all_parameter_proof": true
+    }
+  },
+  "sources": [
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.Point",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/Point.lean",
+      "bytes": 606,
+      "sha256": "4abd793e9294e092396ca5b0b57682e6a325c3c1013f6845c47712d54713e4f9",
+      "git_blob_sha1": "dbf5f722fe192facd6c88f11de9673665eba3399",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            5,
+            15
+          ],
+          "bytes": 526,
+          "sha256": "67b3a867fb5e2840c3055daf919e4b712138bcd4056c89effccae1ac4b974597"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.PeriodIntegrals.LongWeylElementSquare",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/PeriodIntegrals/LongWeylElementSquare.lean",
+      "bytes": 5129,
+      "sha256": "7c2e6c05cccc85718f8874e24862f376dd5544ce882ea2fb98fc4196d65a8d2e",
+      "git_blob_sha1": "44956f1b3e753ee4ee15e1873eebb0e28a1c220a",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            20,
+            33
+          ],
+          "bytes": 736,
+          "sha256": "40ebda6adb565bd9c4cb964e219df9f4b23473a2f9141a0474afffe30ece81bc"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.PeriodIntegrals.UpqRep",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/PeriodIntegrals/UpqRep.lean",
+      "bytes": 17944,
+      "sha256": "0754dd222144f93bd84bab322d4e0d9374e3dfff5a6089a264bdf3469a13cdd2",
+      "git_blob_sha1": "f6d29175fe6ff5884eb4eea417509f74bf51eee0",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            224,
+            231
+          ],
+          "bytes": 508,
+          "sha256": "41b1ae0571a3e98c3b07dc50d2167cb11e89345c3f526c6be9de9d46edf19811"
+        },
+        {
+          "lines": [
+            303,
+            331
+          ],
+          "bytes": 1671,
+          "sha256": "72e399060921caf00e2261ee26cc1ced8503281e4983f5c2799c6988ff216eca"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.RootMeasBig",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/RootMeasBig.lean",
+      "bytes": 4891,
+      "sha256": "594d3106ee8ea84f5909fce64dd0a58908433cf96052278b07b40dd4d70d9c6d",
+      "git_blob_sha1": "f8dc96616ccec4598ee82de3c398243682160beb",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            17,
+            68
+          ],
+          "bytes": 3092,
+          "sha256": "b10d1d63453dd04ffa5dcff3ce7457d360e1f743de0252b28cb11779a6a90b49"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.FormalDegreeBessel.StatementBF",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/FormalDegreeBessel/StatementBF.lean",
+      "bytes": 9704,
+      "sha256": "917720f5cf0f73eac5d4ae5aa6950d7fc0db6345583d389af9c78e162e6d5438",
+      "git_blob_sha1": "5119a377c67c6efc89e092f95be997aad476d7cb",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            144,
+            153
+          ],
+          "bytes": 507,
+          "sha256": "c2a07b905c675fbf8d9aeb1e5b36dbc91da16288ac0ef68ffa2d06de64aab288"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.FormalDegreeBessel.StatementRP",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/FormalDegreeBessel/StatementRP.lean",
+      "bytes": 13086,
+      "sha256": "3c22711355711ccfe0ecf9db83afee006d7849d8603e4194388bfaf865069c45",
+      "git_blob_sha1": "08ba1721e22fd4de2e0e8e08f958508acaab8df2",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            74,
+            81
+          ],
+          "bytes": 617,
+          "sha256": "f797aa442e06bdf2223410a9cd9f7c30bb56befdbc647590b7f6bea9660d9280"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.RelevantZeroGramTerms",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/RelevantZeroGramTerms.lean",
+      "bytes": 31015,
+      "sha256": "3be6a65abf5c2a48523ea59af7fe7356bee69cf0246a60eaf0de2c360e053fed",
+      "git_blob_sha1": "d008b93b66125f83b7adb112628b058dde3b1096",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            104,
+            140
+          ],
+          "bytes": 2629,
+          "sha256": "b0c3b45d5c59f54219a08a20f905dfaa3867b1b7fe79e1a3d91500892b9b93e4"
+        },
+        {
+          "lines": [
+            238,
+            246
+          ],
+          "bytes": 442,
+          "sha256": "bbea5fb2e325f5a66101883ce85be3a7a0e702b6aae22c99f65181259116209e"
+        },
+        {
+          "lines": [
+            388,
+            396
+          ],
+          "bytes": 647,
+          "sha256": "daee133b261e016a11954fb05a89e8048f5826f764401d6dcf5e6e737e24b22c"
+        },
+        {
+          "lines": [
+            460,
+            503
+          ],
+          "bytes": 2089,
+          "sha256": "318819153b2da68334585672e302e720bad03166eb020cb018370f270bb5448b"
+        },
+        {
+          "lines": [
+            565,
+            571
+          ],
+          "bytes": 652,
+          "sha256": "50909b8a1efbf5a63805eacaa793962afe542fad6ea9c3eb8497b8d010720b47"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.LeadMinorK",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/LeadMinorK.lean",
+      "bytes": 12942,
+      "sha256": "9a71f71e69ffd17937b8662b72be2dadc13d5e1ea17ea19155102e5815c76235",
+      "git_blob_sha1": "793b55df37e7be237b3cb7b37060255ff3c89a3b",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            47,
+            80
+          ],
+          "bytes": 2431,
+          "sha256": "77159f9958ce4784156fa23f67fe7107d8e51b986aaf07114c23912331d29340"
+        },
+        {
+          "lines": [
+            86,
+            106
+          ],
+          "bytes": 1393,
+          "sha256": "e51fafbdaf931c1b70e46eaf852705d31047f7a563730396291b9cf48233d655"
+        },
+        {
+          "lines": [
+            211,
+            216
+          ],
+          "bytes": 547,
+          "sha256": "3ddb838e4354a22f8b6527a1403ba77cad23554c3c5ab10c38cee42fc7e52c04"
+        }
+      ]
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.OnePlaceEstimates",
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Formalism/SharpRestriction/CuspSpanNormBounds/OnePlaceEstimates.lean",
+      "bytes": 62098,
+      "sha256": "0456723c948e279acd859284d76156a93e0d40b5d92a3b4b58d9caeb38ebb4a9",
+      "git_blob_sha1": "d641a2a34206975a819216642052bc0ca832b69a",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "lines": [
+            23,
+            27
+          ],
+          "bytes": 457,
+          "sha256": "261e982a726d49a2cd12d94d93ca66094086e70e93db7f2c06e84e3c13d613e3"
+        }
+      ]
+    }
+  ],
+  "artifact_hashes": {
+    "notes/global-norm-frontier-rank-zero-pointwise.md": "eead00c0ec650a2fd7e05446350d6a0c0413e2ef107131dca11dc25b7c16f96d",
+    "paper/shared/global-norm-frontier-rank-zero-pointwise.tex": "9c9ae53b23b6fea15cf7e83499b3a4125eac4cd4c1631bd6ad70b48c0fb075d3",
+    "paper/shared/global-norm-frontier-rank-zero-pointwise-references.tex": "68de3faf96919b3bc2b1468e96fcb256cc0b773d30625c03e516098696fe403c",
+    "scripts/check_global_norm_frontier_rank_zero_pointwise.py": "531208016c71acfc7923de58d5b7b20cfaa59f7e72687d0d32c7925979c23e77",
+    "paper/sections/recovered/77-dc-section.tex": "96211de9423d7aa86002ea4ef2f1793f503468fe636bc0789113c22f8874496b",
+    "paper/sections/recovered/93-jg-section.tex": "e565911d51d5be0d9a450b7765f993c90fcb2c9d9892a2b335eb5894fdfd9742",
+    "paper/shared/global-norm-frontier-pieri-family.tex": "e1481c7efe824c6d33cfc671a93bf664045024667d6b8e8b0d3c687427548c57"
+  },
+  "scope": {
+    "all_representatives_and_permitted_measures": true,
+    "pointwise_not_almost_everywhere": true,
+    "uniform_in_k_T_T_prime_and_original_haar_scalars": true,
+    "b_threshold": "b>=5(k+1), implied by original LocOk with Cg>=10^6",
+    "whole_node_count_changed": false,
+    "not_verified": [
+      "Positive-unipotent-rank partial-head kernel estimate",
+      "Global rational-return sum or Gram defects",
+      "Any full Lean build"
+    ]
+  }
+}

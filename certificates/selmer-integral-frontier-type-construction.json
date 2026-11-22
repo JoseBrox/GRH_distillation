@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "classification": "closed integral type-existence subobligation inside W04",
+  "verification_kind": "Pinned-source and primary-PDF provenance, exact finite dominance and dual-convention checks; the all-rank standard mathematical proof is in the note.",
+  "claim": "The exact TTypeEx/TypeForAlt integral type exists over the original coefficient DVR, with arbitrary conductor, zero-monodromy discrimination and all weak-correspondence quantifiers.",
+  "quantifiers": [
+    "Every original Hida setting, positive n, original coefficient DVR O, residual datum r, and complex embedding.",
+    "Every original type place, whose residue characteristic p differs from ell by St_l; repeated inertial characters and wild ramification are allowed.",
+    "Every irreducible admissible local representation; no genericity or temperedness assumption.",
+    "Every allowed weak local correspondence; every nonzero representation isotypic for each original group factor.",
+    "Every Teichmuller lift in the source contract, handled by uniqueness in the original complete DVR."
+  ],
+  "decisive_interfaces": {
+    "zero_monodromy": "All-ones partitions are dominance-minimal at fixed basic support, so Shotton 3.7(1),(2) become an exact iff including N=0.",
+    "original_coefficients": "Choose a finite model E/E0, take a stable O_E lattice by the finite orbit sum, restrict scalars to O, and use normalized LLC equivariance for every conjugate summand.",
+    "rank": "The local O-rank is [E_u:E0] dim_Eu sigma_u; the simultaneous rank is their product. Empty type set has rank one.",
+    "covariance": "The source tuple condition is Hom_K(V^dual,pi); choose V=(Res L)^dual.",
+    "weak_local_laws": "Inertia characters extend to the full local Galois group; Frobenius preserves their isotypic spaces. Semisimplicity makes the parameter toral even with repeats, so the established good-preimage/restricted-uniqueness bridge applies.",
+    "isotypic_product": "Successive evaluation and Schur's lemma give M=(tensor pi_u) tensor W with W nonzero, retaining all multiplicity spaces.",
+    "Teichmuller": "Hensel lifts roots of X^(|k|-1)-1 uniquely and multiplicatively; the lift has exactly the residual kernel.",
+    "scope_in_source": {
+      "p_ne_ell": "ContinuousResP:82-83",
+      "exact_type": "Distinct:103-105",
+      "universal_Teichmuller_and_product": "UnitaryHeckeData:22-41",
+      "frontier": "TTypeEx:18-21; PTypeEx:29-71,88-136",
+      "reducibility_allowed": "UnitaryHeckeData:38-41 imposes open-kernel covariance detection, not irreducibility of tau0"
+    }
+  },
+  "limitations": [
+    "No uniform bound on the coefficient-field enlargement or compact type rank.",
+    "No nonzero residual automorphic summand is asserted.",
+    "No patched support, full Taylor-Wiles level comparison, two-sided rigidity or moving-family integral Selmer bound is proved.",
+    "No whole proof-map node is completed, and no Lean project build is certified."
+  ],
+  "exact_checks": {
+    "status": "PASS",
+    "dominance": {
+      "ranks": [
+        0,
+        12
+      ],
+      "partition_counts": {
+        "0": 1,
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 5,
+        "5": 7,
+        "6": 11,
+        "7": 15,
+        "8": 22,
+        "9": 30,
+        "10": 42,
+        "11": 56,
+        "12": 77
+      },
+      "scope": "Every partition through rank 12 checked against the all-ones minimum; the note proves this in every rank."
+    },
+    "covariance": {
+      "identity": "A adj(A) = det(A) I for the universal 3x3 matrix over Z[a0,...,a8]",
+      "scope": "Exact polynomial check of the dual convention; the note gives the all-rank matrix argument."
+    },
+    "negative_controls": [
+      "GL2 partition (2) is not dominated by the N=0 partition (1,1); the primary source identifies these with the Steinberg and trivial compact-type cases.",
+      "For p=3, ell=7, the order-three character of (1+3Z_3)/(1+9Z_3) is nontrivial on wild inertia and cannot be inflated from F_3^times."
+    ]
+  },
+  "primary_references": [
+    {
+      "file": "shotton-gln.pdf",
+      "url": "https://maths.dur.ac.uk/users/jack.g.shotton/papers/gln.pdf",
+      "sha256": "1924aaf7f67ff68852ae8ceb4f9d0edacb36a53447cdd9411f499a4e91994372",
+      "reference": "Shotton, The Breuil-Mezard conjecture when l != p (2018)",
+      "reviewed": [
+        "Author pp.10-12: inertial types include monodromy through the associated continuous inertia representation; partitions and dominance.",
+        "Author p.13: normalized r_l and independence of the complex embedding; Theorem 3.7(1),(2).",
+        "Author p.14: Example 3.8, trivial GL2 compact type versus the Steinberg parameter.",
+        "Author pp.38-45: arbitrary simple characters and the local SZ construction; Corollary 6.21(1),(2)."
+      ],
+      "use": "An actual compact type isolates the prescribed zero-monodromy inertial parameter. No genericity, depth-zero, quasi-banal, ell>n or p>n condition is used.",
+      "dependency_scope": "Only the local representation-theoretic construction in section 6, not the global patching or Breuil-Mezard theorem.",
+      "bytes": 669491,
+      "local_hash_verified": true
+    },
+    {
+      "file": "henniart2001.pdf",
+      "url": "https://www.numdam.org/item/JTNB_2001__13_1_167_0.pdf",
+      "sha256": "c9db009ee2f2e561d834b9e1ef07a8b27ff40d0edd19546d3351f38f39b2dac5",
+      "reference": "Henniart, Sur la conjecture de Langlands locale pour GL_n (2001)",
+      "reviewed": "Section 7.4, printed pp.185-186; the exact normalization is also stated in Shotton section 3.4.",
+      "use": "Equivariance of normalized LLC under coefficient-field automorphisms; all conjugates introduced by restriction of scalars detect the same E0-defined type.",
+      "bytes": 2469208,
+      "local_hash_verified": true
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "notes/classical-local-correspondence.md",
+      "sha256": "37bff32de508ca260b1e8e5c02bf446ed3f2d445db49b77fb15ab9c6c558e2f7"
+    },
+    {
+      "path": "notes/local-correspondence-bridge.md",
+      "sha256": "bb7ae1f43251929774aaf5282bcedf50340e60f572fa48559ee0952f2f598b20"
+    },
+    {
+      "path": "certificates/classical-local-correspondence.json",
+      "sha256": "7064028f6e03fe60465bf8d2c0023a16230cd247259f749d1b626bbf207001fb"
+    },
+    {
+      "path": "certificates/local-correspondence-bridge.json",
+      "sha256": "6227d38c9f60a46096d963fa09f41414f4697585394b28f08b1e554ffad409ba"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/WeilGroupCharacters/ContinuousResP.lean",
+      "git_blob_sha1": "924c083d348beb2446a41e0ec51848db9bc36604",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.ContinuousResP",
+      "sha256": "cc2d91ff3b018935e24d2218aebc53c6433460b7683b62732f94306ebc462ebb",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 73,
+          "end": 92,
+          "sha256": "12240522b3f5a09d157af2004ac668c4f779c942357eadb90ae7b141b702842a"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/WeilGroupCharacters/UniversalOrdinaryDeterminantRing.lean",
+      "git_blob_sha1": "65ce51224af6634182dda7b48716e73279990d15",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.UniversalOrdinaryDeterminantRing",
+      "sha256": "b12275f242e0616546ead3569b88ed86fb245901849b470c1caf77c7b3c033d0",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 109,
+          "end": 127,
+          "sha256": "272e84afc3ad298247f70e9f1d7a675fba69a4dbbdcbc02a2df865f981744727"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/WeilGroupCharacters/ArithmeticPointClassicality.lean",
+      "git_blob_sha1": "d80e67f1209b8e6140abba145cf01398375cd74d",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.ArithmeticPointClassicality",
+      "sha256": "0e0065fad53945edb6d5408c2a31c789d8e90a6a96a441eb1a887aef2eebaecf",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 12,
+          "end": 18,
+          "sha256": "6bb2e25bbbce284258a48f064c06e4c1ffae24485291d30c139c710123da59c0"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/Distinct.lean",
+      "git_blob_sha1": "8f89d55ad7e1bd9f6e92af1739fcc3de971f576b",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.Distinct",
+      "sha256": "caa6f6e88562a4121375c8d7c6d451ad417cc799d7bb253b67712f90173d50c0",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 103,
+          "end": 105,
+          "sha256": "4fe6a475adb4dda86db4554de114b548294eaf5d9bbb8ae27aaa6933f37c5c22"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/UnitaryHeckeData.lean",
+      "git_blob_sha1": "fda77999362f26a1072090403ba0726f0597fe39",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.UnitaryHeckeData",
+      "sha256": "2d1cab55f190ebb5c0ebf1876cf5509a13e2d98256e274731e0c4f42fa8bc476",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 18,
+          "end": 41,
+          "sha256": "4aaf5702ee7b3b76ed2647c88f452640aece14a0ef3a1cfe78aa648ebe715790"
+        },
+        {
+          "start": 59,
+          "end": 67,
+          "sha256": "3806f6ee89e157523360c275625b24ee3f3df06fef9125f0c3ac5d887ee9da93"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/PTypeEx.lean",
+      "git_blob_sha1": "a279822666636fc8588393ea32596e270e2b3007",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.PTypeEx",
+      "sha256": "bfcbd89a64d1b044ec4b58f9a9a571c3cc0ae4d2236e74185af9a8fc9362165d",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 29,
+          "end": 71,
+          "sha256": "854b5b5d6266f4433044c07de8a6c9fefa0dbd08ac2ba012da3aac6f7ec40e96"
+        },
+        {
+          "start": 88,
+          "end": 136,
+          "sha256": "4335b8d7bdfc9413fc09ba4138cc897f2088e06db8f4a81e51a663cf6b4f141e"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/TTypeEx.lean",
+      "git_blob_sha1": "2cbb3dfc498375dd0610cb2177ccb0e3c280194c",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.TTypeEx",
+      "sha256": "fae0222f35612aa5b91fc2c1e531239ebd6fcfcfe5f6e4f205809e995298e10d",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 18,
+          "end": 21,
+          "sha256": "c07e667cd1271d127404bc492455a6cceafe47691a4718cffb03f0a445a6ed29"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/TypesNZeroKIface.lean",
+      "git_blob_sha1": "a7cbd47d8c983be9fa7452c9459ab3a02a71e7c2",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.TypesNZeroKIface",
+      "sha256": "5482d80751c202c93b67d39ec3cd1cf41a925027eec7c738fe69777dfd7ca0ed",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 16,
+          "end": 34,
+          "sha256": "fe650993a1e4605aece88e45212655e3e22d4c3cd0dacb3befa0b7c6f96ec9e0"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-type-construction.md",
+      "sha256": "ebc45756426d5a1d3e1337d5a62842f0f562caab21ad1a5d1aa649053e9e67bb"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-type-construction.tex",
+      "sha256": "fb14ddbea6550e3924c14e9b79f5daca80d0701795b202062845fe56074888ed"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-type-construction-references.tex",
+      "sha256": "3a4a11cc2c3455c71eeec475bcd32ea7d9b718208cddc79c86044eb622773373"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_type_construction.py",
+      "sha256": "5a7f510b9b0626a6f7909e4a2e8aaf825c5858a320254e3cf87df0ee67008625"
+    }
+  ]
+}

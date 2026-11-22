@@ -1,0 +1,304 @@
+\section{Integral theta sections over the whole model}
+\label{sec:pel-integral-theta}
+
+The discrete valuation argument extends to the actual higher-dimensional
+model.  The essential extra step is cancellation of one common
+denominator in the maximal-ideal topology.  It supplies the full local
+section clause, not only its restriction to arithmetic curves.
+
+\begin{theorem}[The actual integral theta and uniformization clauses]
+\label{thm:pel-integral-theta}
+The original individual model of
+Theorem~\ref{thm:original-integral-pel-model} satisfies
+\texttt{PushInvertible}, \texttt{SplitFibres} and \texttt{N3}.
+The line in these assertions is its original rigidified primitive line.
+No coefficient-field extension, line rescaling or auxiliary lattice
+index is introduced.  All ranks of period lattices are retained.
+\end{theorem}
+
+\subsection*{The complete normal local construction}
+
+Let $(R,\mathfrak m)$ be a complete noetherian normal local domain of
+characteristic zero, with fraction field $K$.  Pull back the actual
+family to $\operatorname{Spec}R$, and suppose its abelian locus is
+nonempty and its closed torus is split.  These are exactly the
+hypotheses of \texttt{N3}.  Nonemptiness of that open locus implies
+that the generic fibre is abelian.  The exact source clause
+\texttt{ab\_gen} identifies it with an original moduli object.
+Write $\mathcal G/R$ for this family and $\mathscr L$ for its line.
+
+The construction of Theorem~\ref{thm:dvr-original-pel-unif}, up to
+its valuation argument, applies over this $R$.  Indeed the setting of
+\cite[Section 4.1]{integral-theta-lan} is precisely a complete
+noetherian normal domain and a radical ideal.  Symmetry and generic
+ampleness give ampleness of the actual $\mathscr L$ before using the
+ample degeneration equivalence.  The split torus supplies the
+Raynaud algebraization of this cubical line.  The original principal
+polarization and the exact formula
+\[
+             \deg\lambda=[X:\phi(Y)]^2\deg\lambda_B
+\]
+identify $Y$ with $X$ by the original $\phi$ and make the abelian
+quotient $\mathcal B/R$ principally polarized.
+
+Transporting the original primitive identity fixes
+\[
+ \mathscr M=(\operatorname{id},\lambda_B\iota_B(w_0))^*\mathcal P_B,
+ \qquad \mathscr L^\natural=q_B^*\mathscr M,
+\]
+including the torus character, rigidification and period action.
+Consequently the coefficient action, the inverse-biextension
+coordinates, and the normalized identity
+$\tau(y,w_0y)u(c(y))=\psi_y\,\mathrm{rig}$ are exactly those
+already verified in the discrete valuation construction.  None of
+these identities uses a valuation or division by the residue
+characteristic.
+
+We give a direct proof of the remaining maximal-ideal positivity and
+convergence.  Choose integral generators for the invertible fibre
+modules in which the period factors lie.  Let $d_y\in K$ be the
+scalar of $\psi_y$.  The symmetry and cube identities give
+\[
+              d_y^2=\epsilon_y\,t_y,\qquad
+              \epsilon_y\in R^\times,
+\]
+where $t_y$ is the scalar of $\tau(y,y)$ in the corresponding
+integral fibre generator.  The Riemann positivity condition says
+$t_y\in R$, and $t_y\in\mathfrak m$ if $y\ne0$
+\cite[Definition 4.2.1.10]{integral-theta-lan}.
+Normality therefore gives $d_y\in R$: it is integral over $R$ and
+belongs to $K$.  If $y\ne0$, then $d_y\in\mathfrak m$ as well.
+This proves the exact \texttt{psi\_pos} condition.  It remains to
+prove convergence uniformly in the index $y$ for each fixed
+maximal-ideal power.
+
+The proper abelian scheme has
+$H^0(\mathcal B,\mathscr M)=R\theta_0$, with $\theta_0$ nonzero
+on the closed fibre.  This follows from the principal polarization,
+Riemann--Roch, vanishing of higher cohomology of an ample line on an
+abelian variety, and proper cohomology and base change.  The same
+base-change statement holds for every translate of $\mathscr M$.
+
+Begin with an actual generic theta section.  Its actual Fourier
+expansion is obtained by clearing one denominator on the
+quasi-compact $\mathcal G$, expanding on each infinitesimal
+thickening, and applying proper formal functions on $\mathcal B$.
+This construction uses the formal Raynaud isomorphism and retains
+the original line; it does not require a convergence conclusion
+for an arbitrarily prescribed family of coefficients.  The Fourier
+map is injective.  Indeed, zero expansion gives a section zero on
+every thickening; Krull intersection at a closed-fibre point gives
+zero near that point, hence zero on the integral generic family.
+
+At level one the exact recurrence and $Y=X$ show that coefficient
+zero determines all coefficients.  Thus it is nonzero for a
+nonzero generic theta section.  Normalize that section, denoted
+$\theta$, to have coefficient zero $\theta_0$.  Its coefficient
+at $y$ is
+\[
+        \psi_y\,\mathrm{rig}\,t_{c(y)}^*\theta_0
+                        = d_y\theta_y,
+\]
+where $\theta_y$ generates the corresponding integral rank-one
+coefficient module.  Choose $f\in R\setminus\{0\}$ with
+$\sigma=f\theta\in H^0(\mathcal G,\mathscr L)$.
+On every thickening $R/\mathfrak m^n$, the torus-coordinate
+algebra is a direct sum over characters.  A section on the
+quasi-compact abelian base therefore has finite character support.
+Its actual coefficients are $fd_y\theta_y$.  Proper base change
+for these coefficient modules gives
+\[
+       fd_y\in\mathfrak m^n
+                 \quad\hbox{for all but finitely many }y.
+\]
+
+Apply Artin--Rees to the single finite submodule $fR\subset R$.
+There is $C$ such that
+\[
+          \mathfrak m^{n+C}\cap fR\subset f\mathfrak m^n
+                      \qquad(n\geq0).
+\]
+Since every $d_y$ is already integral, the preceding finite-support
+statement and cancellation of the nonzero $f$ imply
+\[
+              d_y\in\mathfrak m^n
+                    \quad\hbox{for all but finitely many }y.
+\]
+This is exactly \texttt{psi\_tendsto}.  The constant $C$ is used
+only for convergence of this particular local construction; no
+uniform arithmetic bound on it is claimed
+\cite[Tag 00IN]{integral-theta-stacks}.
+
+\subsection*{Cancellation on the actual semiabelian scheme}
+
+The integral, convergent coefficients just constructed define a
+compatible formal section $\widehat\theta$.  Its product with $f$
+is the formal restriction of the actual section $\sigma$.
+We must prove regularity of the particular generic section
+$\theta$, since formal algebraization on a nonproper scheme
+cannot be assumed.
+
+At any point $z$ of the closed fibre, let
+$A_z=\mathcal O_{\mathcal G,z}$.  Formal equality implies
+\[
+ \sigma_z\in f\mathscr L_z+\mathfrak m^n\mathscr L_z
+                       \qquad\hbox{for every }n.
+\]
+The quotient $\mathscr L_z/f\mathscr L_z$ is a finite module over
+the noetherian local ring $A_z$, and
+$\mathfrak m A_z$ lies in its maximal ideal.  Krull intersection
+therefore gives $\sigma_z\in f\mathscr L_z$
+\cite[Tag 00IP]{integral-theta-stacks}.  The generic section
+$\theta$ is regular near every point of the closed fibre.
+
+It is regular everywhere.  The scheme $\mathcal G$ is normal,
+being smooth over normal $R$, and its fibres are geometrically
+integral.  A horizontal codimension-one point has no pole, because
+$\theta$ is a regular section on the generic abelian variety.
+A vertical codimension-one point lies over a height-one prime
+$\mathfrak p$ of $R$, by flat going-down.  Over $R_{\mathfrak p}$
+the special fibre is integral, so this point is the generic point
+of the unique vertical divisor.  Its closure is
+$\mathcal G\times_R\operatorname{Spec}(R/\mathfrak p)$, which
+is integral and contains the closed fibre.  It is consequently a
+generization of a point where $\theta$ is already regular.
+There are no codimension-one poles.  Normality, equivalently the
+intersection of height-one valuation rings on each affine normal
+chart, now gives
+$\theta\in H^0(\mathcal G,\mathscr L)$.
+
+Every other global section is $a\theta$ for some $a\in K$.
+Its coefficient zero is $a\theta_0$; integrality of that
+coefficient forces $a\in R$.  Hence
+\[
+                   H^0(\mathcal G,\mathscr L)=R\theta.
+\]
+On the closed fibre, all coefficients except zero vanish and the
+restriction is $q_B^*\theta_0\ne0$.  The image of the nonzero
+locus of $\theta$ under the smooth map
+$\mathcal G\to\operatorname{Spec}R$ is open and contains the
+closed point.  It is therefore the whole local spectrum.  Thus
+$\theta$ is nonzero on every fibre.
+
+\subsection*{The full uniformization conclusion}
+
+The actual expansion construction applies to every power
+$\mathscr L^k$, with one common denominator for each generic
+section and reconstruction on every $R/\mathfrak m^{e+1}$.
+The coefficient lines and recurrence remain
+\[
+ \mathscr M^{k-1}\otimes t_{c(\chi)}^*\mathscr M
+             \otimes\mathscr M_{c(\chi)}^{-1}\otimes\mathscr M_0,
+ \qquad
+ s_{\chi+ky}=\psi_y^k\tau_{y,\chi}\mathrm{rig}^{\,k}
+                                      t_{c(y)}^*s_\chi.
+\]
+The generic dimension argument of
+Theorem~\ref{thm:dvr-original-pel-unif} then proves \texttt{ExpBij}:
+the recurrence gives $|X/kX|$ coefficient spaces of dimension
+$k^{\dim\mathcal B}$, exactly $k^{\dim\mathcal G_K}$ in total.
+All integral expansion witnesses were constructed before this
+dimension argument.  Flat base change on the generic proper
+abelian varieties gives the prescribed field-extension expansions.
+
+The all-integer torsion construction and the cubical translation
+formula used there are valid over the same complete normal local
+base.  They give the identical period quotient, original
+\texttt{PhiRel} with shift $+y$ and exponents $(k,-k)$, and
+theta-commutator convention.  Thus they prove all of
+\texttt{TorsionIso}, including residue-characteristic multiples.
+The statements for Mumford's constructed model transfer to the
+actual family by the unpolarized equivalence in
+\cite[Theorem 4.4.16]{integral-theta-lan}; any auxiliary ample power
+used in that construction does not change the underlying family,
+period lattice or period embedding.
+
+The remaining field of \texttt{UniformisationConclusion} is
+\texttt{PsiUnitOn} on the original abelian locus.  For a point $s$
+of $\operatorname{Spec}R$, put
+\[
+      Y_s=\{y\in Y:\tau(y,y)\text{ is a unit at }s\}.
+\]
+By \cite[Proposition 4.5.3.11 and Corollary 4.5.3.12]
+{integral-theta-lan}, this is a subgroup and the torsion sequence is
+\[
+ 0\longrightarrow\mathcal G^\natural[n]_s
+  \longrightarrow\mathcal G[n]_s
+  \longrightarrow n^{-1}Y_s/Y_s\longrightarrow0.
+\]
+The diagonal bimultiplicative identity makes $Y_s$ saturated:
+if a nonzero multiple of $y$ lies in $Y_s$, a positive power of
+the diagonal factor is a unit, so the factor itself is a unit.
+Let $t$ be the closed-fibre torus rank and $t_s$ the torus rank
+at $s$.  Take any $n>1$ invertible at $s$ and compare the finite
+geometric-fibre ranks in this sequence.  They are
+$n^{2g-t}$ and $n^{2g-t_s}$, respectively, so
+$\operatorname{rank}Y_s=t-t_s$.  At an abelian point $t_s=0$;
+the saturated full-rank subgroup $Y_s$ is therefore all of $Y$.
+Since $d_y^2$ differs from the diagonal factor by an integral
+unit, $d_y$ is a unit at every abelian point.  This is the
+source's \texttt{PsiUnitOn} in each prescribed local line
+trivialization and hence on every affine open in that locus.
+All fields of \texttt{N3} are now supplied.
+
+\subsection*{From local completions to the exact model clauses}
+
+Fix a point $x$ of the individual model $Y$ and put
+$R=\widehat{\mathcal O}_{Y,x}$.  The model is excellent and normal,
+so this is a complete noetherian normal local domain; its residue
+field is the original $\kappa(x)$.
+The original \texttt{GoodAt} level supplies an odd prime
+$q\mid M$ invertible in that field.  The split-torus proof of
+Theorem~\ref{thm:dvr-original-pel-unif} uses only a normal
+henselian base, and applies here: the whole-base finite \'etale
+torus part of $\mathcal G[q]$ is a subgroup of the original
+constant generic $\mathcal A[q]$, hence is constant; the prescribed
+$\mu_q$ is constant; and the finite Galois image on the character
+lattice is trivial because it is trivial modulo odd $q$.
+This proves that the fibre torus is already split over
+$\kappa(x)$.  In particular \texttt{SplitFibres} holds with a
+separable extension of degree one.  The complete local construction
+above consequently applies at every $x$.
+
+Write $A=\mathcal O_{Y,x}$.  Flat base change for the
+quasi-compact separated family gives
+\[
+ H^0(\mathcal G_A,\mathscr L)\otimes_A\widehat A
+       \simeq H^0(\mathcal G_{\widehat A},\mathscr L)
+\]
+\cite[Tag 02KH]{integral-theta-stacks}.  This uses the flat
+completion map, not residue-field base change for a nonproper
+family.  Express the completed generator as a finite sum of tensors
+of actual sections.  Because it is nonzero on the closed fibre,
+at least one of those sections is nonzero on that fibre.
+Spread it to a section $\theta_U$ over a neighborhood $U$ of $x$.
+The smooth image of its nonzero locus is open; shrinking $U$ to
+that image makes $\theta_U$ nonzero on every fibre.
+
+Shrink also to the integral component containing $x$.
+For every open $W\subset U$ and every section $s$ on
+$\mathcal G_W$, the generic principal polarization gives
+$s=a\theta_U$ with $a\in K(Y)$.  At any $w\in W$, choose a
+point $z$ of its fibre where $\theta_U$ is nonzero.  There
+$a=s/\theta_U$ belongs to $\mathcal O_{\mathcal G,z}$.
+The local map
+$\mathcal O_{Y,w}\to\mathcal O_{\mathcal G,z}$ is faithfully
+flat.  Writing $a=u/v$ in $\operatorname{Frac}\mathcal O_{Y,w}$,
+the equality $u\in v\mathcal O_{\mathcal G,z}$ contracts to
+$u\in v\mathcal O_{Y,w}$.  Thus $a$ is regular at every $w$,
+and is a unique section of $\mathcal O_Y(W)$.
+
+This proves the entire all-open generation and fibrewise
+nonvanishing contract of \texttt{PushInvertible}.  It does not
+infer an open free neighborhood merely from a free stalk of a
+possibly noncoherent pushforward.  Together with the preceding
+uniformization and splitting proofs it establishes the theorem
+\cite{integral-theta-source}.
+
+Together with the normal-approximation extension argument in
+Proposition~\ref{prop:pel-prime-to-p-and-dvr-extension}, the model
+now satisfies all of \texttt{LevelStructureConditions}.
+The coordinated finite level transitions, \texttt{SiegelCompare},
+global domination, and the arithmetic height and section-remainder
+estimates remain separate frontiers.  No whole proof-map node is
+closed by these construction clauses.

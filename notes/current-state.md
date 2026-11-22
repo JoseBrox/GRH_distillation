@@ -37,39 +37,41 @@ map 17/31; the generated progress table carries the current values.
 
 ## Active construction frontier
 
-The exact generic PEL moduli object and each prescribed local integral
-`Model` at a `GoodAt` prime are now constructed over the original
-coefficient ring. The primitive symmetric cubical line, original labels
-and generic abelian locus are preserved. The fixed cyclotomic component
-completes the half-level uniquely to full level and supplies the required
-prime-to-residue-characteristic neatness. Simultaneous level transitions,
-`PushInvertible` and the full `Good3` uniformization still require proof.
+The original integral PEL models now satisfy the complete individual
+`LevelStructureConditions`. This includes the prescribed level actions,
+coefficient descent, prime-to-residue-characteristic label extension,
+and good reduction over all specified valuation rings. Their actual
+`PushInvertible`, degree-one `SplitFibres`, and full `Model.N3` integral
+theta and uniformization clause are proved. The proof retains the original
+primitive line, periods, torsion action and coefficient field. Coordinated
+finite level transitions, the exact Siegel comparison, global domination,
+and numerical arithmetic section and height estimates remain separate.
 
-Under that unchanged `Good3` contract, every prescribed reached theta
-section is regular with scalar exactly one. The adapted arithmetic
-lattice, full-primary trace, mixed translation/pullback identity and full
-level-prime estimate are proved. Together they give the original single
-clearing integer once the actual good cover and chart inputs are supplied.
-Theta spanning and the global norm have not been inferred from this.
+The reached-section, adapted lattice, full-primary trace and mixed-level
+identities apply to these actual models. They supply the original single
+clearing integer once the remaining good cover and chart inputs are
+constructed. Theta spanning and the global norm are not inferred from
+integral regularity.
 
-Both finite-level Selmer bounds and their exact limiting comparison have
-proofs. The actual ordinary automorphic modules are finite free, have the
-exact integral diamond trace, commute with coefficient change and admit
-enough faithful good classical specializations at weight zero. The next
-supplier is their universal determinant action with the exact classical
-constituent/Galois compatibility, followed by patched support and the
-moving-family integral Selmer budget.
+The actual ordinary automorphic modules have faithful good classical
+specializations, and now carry the original universal integral Hecke
+determinant with its exact classical Galois compatibility. The prescribed
+integral compact types are constructed at arbitrary finite conductor,
+including wild inertia, over the original coefficient ring. Restriction
+of scalars and its rank cost are retained. Auxiliary comparison maps,
+patched support, two-sided rigidity and the moving-family integral
+Selmer budget remain open.
 
-The actual local discrete-series and period-normalized Bessel families
-now supply the exact leading-minor Jacquet estimate, retaining signed
-Pieri adjoints, the original real budget, both character scales and zero
-maps. The exact higher weighted norms and finite coefficient expansions now also hold on the entire original big cell. A block Gauss estimate proves absolute convergence and continuity of the actual integrals, removing the almost-everywhere limitation there. The uniform partial-head kernel estimate, lower-dimensional orbital strata and full global rational-return sum remain open. The local Gram identity is not the global period-Gram comparison needed for the final table.
+The actual local Bessel families satisfy the iterated weighted norm
+identities and finite coefficient expansion everywhere on the original
+big cell. The complete original pointwise orbital bound is now proved
+in rank zero, with the stronger estimate b^4/G. No assertion identifies
+ordinary RH with this rank-zero case. Positive-rank partial-head kernels,
+lower orbital strata, and the complete global rational-return/period-Gram
+estimate remain open.
 
-The new construction proofs and their independent reviews have stems
-`geometry-arithmetic-frontier-integral-pel`,
-`geometry-arithmetic-frontier-mixed-level`,
-`selmer-integral-frontier-classical-control`, and
-`global-norm-frontier-pieri-family`. Whole-node statuses are unchanged.
+These are closed supplier obligations within larger nodes. Whole-node
+statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.
 
 ## Current arithmetic frontiers
 

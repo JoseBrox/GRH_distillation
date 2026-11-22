@@ -122,3 +122,25 @@ can cite a longer valid alternative kept in the GRH text. Route-specific
 exposition belongs in its own manuscript. Verification records remain outside the
 papers. The [progress table](../progress.md) counts each route separately;
 overlapping shared results are never added to form a proof percentage.
+
+### Actual integral constructions and rank-zero pointwise estimate
+
+The [complete-DVR construction](../../notes/geometry-arithmetic-frontier-dvr-uniformization.md),
+[whole-model integral theta theorem](../../notes/geometry-arithmetic-frontier-integral-theta.md),
+and [level symmetry and valuation extension theorem](../../notes/geometry-arithmetic-frontier-level-symmetry.md)
+prove the original individual `LevelStructureConditions`, `PushInvertible`,
+`SplitFibres` with degree one, and `Model.N3`. All original lines, periods,
+normalizations and coefficient fields are preserved. Simultaneous transitions,
+Siegel comparison, global domination and numerical arithmetic estimates remain.
+
+The [Hecke determinant construction](../../notes/selmer-integral-frontier-hecke-determinant.md)
+and [integral type construction](../../notes/selmer-integral-frontier-type-construction.md)
+provide the exact original determinant/classical Galois action and arbitrary-conductor
+compact types. Global multiplicities and restriction-of-scalars rank costs remain
+explicit. These do not yet supply auxiliary maps, patched support or uniform
+integral Selmer bounds.
+
+The [rank-zero pointwise theorem](../../notes/global-norm-frontier-rank-zero-pointwise.md)
+proves the entire original pointwise orbital requirement at r=0 with b^4/G,
+using the exact Haar density and compact-type Casimir. Positive-rank partial-head
+kernels and global period estimates are not consequences of this special case.

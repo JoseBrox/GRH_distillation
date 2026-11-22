@@ -1,0 +1,365 @@
+\section{The actual PEL uniformization at an arithmetic point}
+\label{sec:dvr-pel-uniformization}
+
+The individual integral model now gives the required degeneration at
+every arithmetic point.  We verify its period, line, section and
+torsion interfaces.  The original level even supplies a split torus
+over the same discrete valuation ring.
+
+Let $R$ be a complete discrete valuation ring of characteristic zero,
+with fraction field $K$, residue field $\kappa$ of characteristic $p$,
+and uniformizer $\pi$.  Let $c.F\hookrightarrow K$ be the original
+coefficient embedding, and let $\mathcal A/K$ be an original moduli
+object at a level satisfying $\mathrm{GoodAt}(p)$.
+Pull back the individual projective model of
+Theorem~\ref{thm:original-integral-pel-model} along the unique
+valuative extension of this point.  Denote its semiabelian family by
+$\mathcal G/R$ and its original primitive cubical line by $\mathscr L$.
+The same argument applies to any semiabelian model of the original
+object: homomorphisms of semiabelian schemes over a normal base extend
+uniquely from a dense open, and the original cubical lines have unique
+extensions\cite[Propositions 3.3.1.5 and 3.3.2.2]{dvr-unif-lan}.
+
+\begin{theorem}[Actual arithmetic-point supplier]
+\label{thm:dvr-original-pel-unif}
+Over this same $R$, the original model has a
+\texttt{PELUnif} with \texttt{TorsionIso}.  Its line is precisely
+$\mathscr L$, with the given zero rigidification.  Its Fourier
+expansions reconstruct every integral thickening and retain one
+common denominator for every generic section.  The torsion
+identification holds for every integer $k\geq1$, including multiples
+of the residue characteristic, and over every algebraically closed
+extension of $K$.
+
+Moreover $H^0(\mathcal G,\mathscr L)$ is a free rank-one $R$-module
+whose generator is nonzero on the closed fibre.  Thus the original
+\texttt{PushInvertible} condition holds over this discrete valuation
+base.  Theorem~\ref{thm:pel-integral-theta} supplies the corresponding
+statement over the entire higher-dimensional model.
+\end{theorem}
+
+\subsection*{The level splits the torus without enlarging the field}
+
+Choose an odd prime $q\mid M$ with $q\ne p$, which exists by
+$M/p^{v_p(M)}\geq3$.  The functorial half-to-full equivalence of
+Theorem~\ref{thm:original-half-level-completion}, after the given
+embedding $c.F\hookrightarrow K$, makes $\mathcal A[q]$ a constant
+group over $K$.  The prescribed $\zeta_q\in c.F$ is also in $R$:
+it and its inverse are integral over $R$.  Its reduction remains
+primitive since $q$ is a unit.  Therefore $\mu_q$ is constant over
+$R$ as well.
+
+The kernel $\mathcal G[q]$ is quasi-finite and flat over $R$.
+Its torus part $\mathcal G[q]^\mu$ is a finite flat subgroup over
+the \emph{whole} henselian base, with closed fibre $T_\kappa[q]$;
+it is canonically the $q$-torsion of the Raynaud torus
+\cite[Section 3.4.1 and (3.4.2.1)]{dvr-unif-lan}.
+Since $q$ is invertible, it is finite \'etale.  Its generic fibre is
+a subgroup of the constant $\mathcal A[q]$, so is constant.  A finite
+\'etale scheme over a normal discrete valuation ring with constant
+generic fibre is constant: each generic component has function field
+$K$, and its finite normal closure is $\operatorname{Spec}R$.
+Thus $T_\kappa[q]$ is constant.
+
+For the character lattice $X$ of $T_\kappa$, the constancy of both
+$T_\kappa[q]$ and $\mu_q$ says that the Galois action on $X/qX$ is
+trivial.  Its action on $X$ has finite image.  The principal
+$q$-congruence subgroup of $\operatorname{GL}(X)$ has no torsion:
+for odd $q$, the $q$-adic logarithm is injective on
+$1+q\operatorname{End}(X\otimes\mathbb Z_q)$, and a finite-order
+element has logarithm zero.  Hence the entire Galois action is
+trivial.  The closed torus and the Raynaud torus are split over the
+original base.  This includes $X=0$.
+
+\subsection*{The exact principal line and period data}
+
+The actual cubical line $\mathscr L$ is ample over $R$.
+Indeed it is symmetric, its generic restriction is ample, and for
+a symmetric cubical line on a semiabelian scheme over the normal
+base, generic ampleness is equivalent to ampleness
+\cite[Lemma 4.2.1.6]{dvr-unif-lan}.
+The closed torus has just been shown split, so the associated formal
+line algebraizes on the Raynaud extension by
+\cite[Proposition 3.3.3.11]{dvr-unif-lan}.
+Thus the hypotheses of the \emph{ample} degeneration equivalence
+are met for this same line, before we apply that equivalence.
+
+Raynaud's construction and the equivalence for polarized degenerations
+give
+\[
+ 0\longrightarrow T\longrightarrow\mathcal G^\natural
+   \xrightarrow{\,q_B\,}\mathcal B\longrightarrow0,
+ \qquad \iota:Y\longrightarrow\mathcal G^\natural_K,
+ \qquad \phi:Y\longrightarrow X,
+\]
+with $X,Y$ free lattices of finite rank and $\mathcal B/R$ abelian
+\cite[Sections 3.3.3, 4.2.1 and Theorem 4.4.16]{dvr-unif-lan}.
+If $\lambda$ and $\lambda_B$ are the generic and abelian-part
+polarizations, the exact degree formula is
+\[
+       \deg\lambda=[X:\phi(Y)]^2\deg\lambda_B.
+\]
+The square is essential\cite[Lemma 3.4.4.3]{dvr-unif-lan}.
+Since the original polarization is principal, both positive integers
+on the right are one.  We therefore identify $Y$ with $X$ using
+\emph{this} $\phi$, and $\lambda_B$ is principal.  The period lattice
+is consequently split too.  Its rank is retained throughout.
+
+Write $w=w_0$ for the original element with $w+\bar w=1$.
+The line on the abelian part is
+\[
+  \mathscr M=(\operatorname{id},\lambda_B\iota_B(w))^*
+                    \mathcal P_B.
+\]
+It is the same primitive, principally polarizing line as in
+Proposition~\ref{prop:pel-primitive-line}.  The cubical line
+$\mathscr L^\natural$ on the Raynaud extension has
+\[
+ \delta\mathscr L^\natural
+   =(q_B\times q_B)^*(\operatorname{id}\times\lambda_B)^*\mathcal P_B.
+\]
+Transport the \emph{original} primitive identity through the
+equivalence of cubical degeneration data and pull back along the
+graph of $w$.  This gives
+$\mathscr L^\natural\simeq q_B^*\mathscr M$ with its original
+rigidification and period action.  This is not a choice of an
+arbitrary trivialization on the torus: its possible character
+ambiguity is fixed by the transported primitive identity.
+The equivalence respects tensor operations and homomorphisms
+\cite[Theorem 4.4.16 and Section 5.1.1]{dvr-unif-lan}.
+
+Let $c:X\to\mathcal B(R)$ be the resulting period point map.
+The period factors are the original generators
+\[
+ \psi_y\in\mathscr M_{c(y)}^{-1}\otimes_R K,
+ \qquad
+ \tau_{y,\chi}
+   =\psi_{y+\chi}\psi_y^{-1}\psi_\chi^{-1}\mathrm{rig}^{-1},
+\]
+with the indicated line contractions.  They are even and bimultiplicative
+in precisely the source's cubical sense.  In particular the
+coefficient-ring action is the original one: $c(ay)=\iota_B(a)c(y)$,
+and its action on torus characters is $\bar a$, as follows from
+Rosati adjunction.  This gives every action identity in
+\texttt{DegPre.OAct} and \texttt{UnifPre.OLinear}.
+
+For clarity, the transported primitive identity gives an integral
+generator $u$ of the line on $\mathcal B$ with pullback maps
+$(1+w,1,w,0)$ and exponents $(1,-2,-1,2)$, normalized at zero, and
+the exact relation
+\[
+       \tau_{y,wy}\,u(c(y))=\psi_y\,\mathrm{rig}.
+\]
+This is the source's \texttt{TraceFormTwistIso}; the equality is an
+identity of period descent data, with no additional character or
+scalar.  It supplies its \texttt{w0} field.
+
+Choose integral generators of the fibre lines when computing
+valuations.  Symmetry and the cube relation imply that
+$Q(y)=v(\psi_y)$ is an integer-valued quadratic form, with
+$b(y,\chi)=v(\tau_{y,\chi})$ its polarization.  The Riemann
+positivity condition gives $2Q(y)>0$ for $y\ne0$; hence $Q$ is
+positive definite.  It follows that $\psi_y\in\pi R$ for nonzero
+$y$ and, for every $m$, all but finitely many $\psi_y$ belong to
+$\pi^mR$.  These are the exact \texttt{psi\_pos} and
+\texttt{psi\_tendsto} fields, not a uniform lower bound independent
+of the arithmetic point
+\cite[Definitions 4.2.1.10--11 and Theorem 4.2.1.14]{dvr-unif-lan}.
+The valuation is always $v(\pi)=1$; no integral division by two is used.
+
+\subsection*{Integral expansions before the dimension argument}
+
+On each thickening $R/\pi^{e+1}$, the formal Raynaud isomorphism
+identifies $\mathcal G$ with the corresponding torus extension of
+$\mathcal B$ and identifies $\mathscr L$ with $q_B^*\mathscr M$.
+The character-$\chi$ coefficient line at level $k$ is exactly
+\[
+ \mathscr M_{k,\chi}
+ =\mathscr M^{k-1}\otimes t_{c(\chi)}^*\mathscr M
+        \otimes\mathscr M_{c(\chi)}^{-1}\otimes\mathscr M_0.
+\]
+Thus the four exponents remain $(k-1,1,-1,1)$.  The coordinate
+algebra of the split torus torsor gives a direct sum over characters
+on every thickening.  Its transitions and its normalization at zero
+give the source's \texttt{GtCoord} and the compatible integral line
+isomorphisms, including their symmetry and cubical identities.
+
+Now start with an actual generic section
+$s\in H^0(\mathcal A,\mathscr L_K^k)$.  Quasi-compactness of
+$\mathcal G$ supplies \emph{one} $r\in R\setminus\{0\}$ such that
+$r s$ extends to an integral section $\sigma$ on $\mathcal G$.
+Expand $\sigma$ on all thickenings.  For each $\chi$, its compatible
+coefficients are an element of
+$H^0(\mathcal B,\mathscr M_{k,\chi})$ by proper formal functions on
+$\mathcal B$.  On each thickening only finitely many coefficients
+are nonzero, and their finite sum reconstructs $\sigma$ there.
+After dividing by this same $r$, one obtains the generic coefficient
+family of $s$.  In particular this is exactly the source's
+\texttt{Expands}: a single denominator, an actual integral section,
+integral coefficient sections, and reconstruction on every
+$R/\pi^{e+1}$.  No integral conclusion is inferred from equal generic
+dimensions\cite[Section 4.3.1]{dvr-unif-lan}.
+
+In the original line-contraction notation the period recurrence is
+\[
+ s_{\chi+ky}
+ =\bigl(\psi_y^k\tau_{y,\chi}\mathrm{rig}^{\,k}\bigr)
+                       t_{c(y)}^*s_\chi.
+\]
+It is the defining \texttt{FamFE}, with the same signs and powers.
+The Fourier map is injective by the formal Raynaud comparison.
+Let $t=\operatorname{rank}X$ and $b=\dim\mathcal B$, so
+$g=\dim\mathcal A=t+b$.  A family satisfying this recurrence is
+uniquely and freely determined by its coefficients at representatives
+of $X/kX$: consistency of successive transports is exactly the
+cubical period cocycle.  Each coefficient space has dimension $k^b$,
+because its line is $\mathscr M^k$ tensored with a line in
+$\operatorname{Pic}^0(\mathcal B_K)$, with principal polarization.
+Consequently the space of these families has dimension
+\[
+                  |X/kX|\,k^b=k^{t+b}=k^g.
+\]
+The generic section space also has dimension $k^g$.  The injective
+Fourier map is therefore onto.  Since its expansions were constructed
+with the integral common-denominator data first, this proves the
+source's \texttt{ExpBij} for every $k\geq1$.  The same construction
+commutes with field extension: generic sections and their coefficient
+sections satisfy flat base change on the proper abelian varieties.
+In particular it supplies the original \texttt{ExpandsF}, retaining
+the specified line comparison rather than changing its scalar.
+
+\subsection*{Torsion and its exact theta action, including $p$-torsion}
+
+The source's \texttt{GtPtF} is the point description of
+$\mathcal G^\natural$: over $b\in\mathcal B$, its coordinates are
+generators of the inverse biextension fibres
+$\delta\mathscr M(c(\chi),b)^{-1}$.  Their exponents
+$(-1,1,1,-1)$ and multiplication are the original cube law.
+This agrees with the minus-pushout convention for the Raynaud
+extension\cite[Definition 4.2.1.13]{dvr-unif-lan}.
+
+Accordingly a source \texttt{QkPt} is a pair $(y,z)$ satisfying
+$[k]z=\iota(y)$, and its equivalence relation is
+\[
+              (y,z)\sim(y+kx,z+\iota(x)),\qquad x\in X.
+\]
+Mumford's torsion construction gives an isomorphism from this quotient
+to $\mathcal A[k]$.  The construction is valid for every $k\geq1$:
+\cite[Theorem 4.5.3.10]{dvr-unif-lan} describes the actual quasi-finite
+group scheme $\mathcal G[k]$ using the period division pieces.
+It does not require $k$ to be invertible in $R$.  We use its generic
+fibre, and do not assert that all of $\mathcal G[k]$ is finite over
+$R$.  Addition and the coefficient action commute with the quotient.
+All the division points involved are algebraic over $K$, so the same
+description holds over every algebraically closed extension field.
+
+It remains to verify the source's stronger definition of the
+identification by theta action.  Put
+$\mathscr P(u,x)=\delta\mathscr M(u,x)$, and let $b=q_B(z)$,
+so $kb=c(y)$.  In this notation the coefficient line is
+$\mathscr C_{k,\alpha}(x)=\mathscr M_x^k\otimes
+\mathscr P(c(\alpha),x)$.  The cube identities give the following
+\emph{constant} ratio line on $\mathcal B_F$:
+\[
+ \begin{split}
+ \mathscr C_{k,\alpha+y}\otimes
+           (t_b^*\mathscr C_{k,\alpha})^{-1}
+ &\simeq
+ \underline{\mathscr P(c(\alpha),b)^{-1}
+                  \otimes\mathscr M_0^k\otimes\mathscr M_b^{-k}}.
+ \end{split}
+\]
+Indeed $\mathscr P(c(y),x)=\mathscr P(b,x)^k$ and
+$\mathscr P(c(\alpha),x+b)=
+\mathscr P(c(\alpha),x)\mathscr P(c(\alpha),b)$;
+substituting
+$\mathscr M_{x+b}=\mathscr M_x\mathscr M_b\mathscr M_0^{-1}
+\mathscr P(b,x)$ cancels every $x$-dependent factor.
+
+The coordinate $z.s(\alpha)$ is the original generator of
+$\mathscr P(c(\alpha),b)^{-1}$.  Evaluating a theta lift at zero
+provides one generator
+$w\in\mathscr M_0^k\otimes\mathscr M_b^{-k}$.
+Let $u_\alpha$ be the ratio-line generator whose zero value is
+$z.s(\alpha)\otimes w$.  Pulling the lift through Mumford's
+period charts, the cube isomorphism for translation gives
+\[
+             s'_{\alpha+y}=u_\alpha\,t_b^*s_\alpha,
+ \qquad u_\alpha(0)=z.s(\alpha)\otimes w.
+\]
+The equality $[k]z=\iota(y)$, including its torus coordinates,
+makes these formulas compatible with every period transition.
+The zero-fibre ratio has exponents
+$(k-1,1-k,1,-1)$ at $(0,b,c(\alpha),b+c(\alpha))$:
+these are exactly the sum of the inverse-biextension exponents
+$(-1,1,1,-1)$ and the fibre-line exponents $(k,-k,0,0)$.
+Thus the formula is the source's \texttt{PhiRel}, with its
+\emph{positive} index shift $+y$ and its exact zero normalization.
+Any ratio-line generator with that zero value is the same generator,
+since the abelian variety has only constant global units.  This
+verifies the source's quantifier over all such generators, for
+every theta lift and every section
+\cite[Section 5.2.5]{dvr-unif-lan}.
+
+This proves that the quotient point satisfies \texttt{QkToAkU}.
+Conversely, if another $k$-torsion point satisfies that relation, its
+projective theta action is the same, by the expansion bijection.
+The difference has scalar theta action.  Commuting it with every
+theta lift gives trivial Weil pairing with every $k$-torsion point.
+The Weil pairing for the principal polarization in characteristic
+zero is perfect, so the difference is zero.  This proves the exact
+``if and only if'' in \texttt{TorsionIso}, also for $k=1$.
+Comparing two orders of these same coefficient actions gives its
+Weil-pairing field.  The convention is the original commutator of
+lifts $t_x^*\mathscr L_K^k\to\mathscr L_K^k$, which equals the
+polarization Weil pairing
+\cite[Proposition 5.2.4.9]{dvr-unif-lan}.
+Thus no pairing inversion or root-of-unity factor is omitted.
+
+\subsection*{The exact integral theta module}
+
+Since $\mathscr M$ is principal, $H^0(\mathcal B,\mathscr M)$ is
+free of rank one over $R$, and a generator $\theta_0$ is nonzero on
+the closed fibre.  At level one the period recurrence determines all
+coefficients from coefficient zero.  By the expansion bijection,
+there is a unique generic theta section $\theta$ with coefficient
+zero $\theta_0$.  Its coefficient at $y$ is
+$\psi_y\,\mathrm{rig}\,t_{c(y)}^*\theta_0$ in the original line
+identifications.  Every coefficient is integral, and every nonzero
+coefficient index is divisible by $\pi$.
+
+We now prove regularity on the actual $\mathcal G$ without using
+cohomology base change for this nonproper family.  Choose $m\geq0$
+so that $\pi^m\theta$ extends to a section $\sigma$ on
+$\mathcal G$.  Its coefficients are all divisible by $\pi^m$.
+The exact expansion on the thickening $R/\pi^m$ says that $\sigma$
+vanishes there.  Since $\mathcal G$ is flat over $R$ and
+$\mathscr L$ is invertible, the sequence
+\[
+ 0\longrightarrow\mathscr L\xrightarrow{\pi^m}\mathscr L
+        \longrightarrow\mathscr L/\pi^m\mathscr L\longrightarrow0
+\]
+is exact.  Taking its kernel on global sections gives
+$\sigma=\pi^m\widetilde\theta$ with
+$\widetilde\theta\in H^0(\mathcal G,\mathscr L)$ and generic
+restriction exactly $\theta$.  No scalar or extra power remains.
+
+Every other integral section is $a\theta$ for some $a\in K$,
+because the generic section space has dimension one.  Its coefficient
+zero is $a\theta_0$, which is integral only if $a\in R$.
+Thus $H^0(\mathcal G,\mathscr L)=R\theta$.  On the closed fibre all
+coefficients except zero vanish, so $\theta$ restricts to
+$q_B^*\theta_0$.  The map $q_B$ is surjective and $\theta_0$ is
+nonzero, so the restriction is nonzero.  The generic restriction is
+nonzero too.  These are precisely generation and fibrewise
+nonvanishing in \texttt{PushInvertible} over $\operatorname{Spec}R$.
+
+The theorem supplies the previously missing PEL degeneration and
+torsion premises for the original complete-DVR arithmetic estimates.
+Smooth formal coordinates at the identity supply their ordinary
+formal truncations; compatibility with a chosen integral framed
+chart uses its prescribed integral tangent basis.  The remaining
+geometric construction gates are the coordinated finite level and
+cover comparisons, global domination, and the height, section
+remainder and cusp estimates.  No whole proof-map
+node is declared closed by this local supplier.
