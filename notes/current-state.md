@@ -480,6 +480,19 @@ any nonnegative arithmetic kernel. The RH manuscript gives the shorter
 zeta proof; the GRH manuscript gives the general character-combination
 theorem. Neither changes the existing node totals.
 
+The [prescribed trace comparison](prescribed-trace-calibration.md) now
+permits a positive normalization chosen before the maps are evaluated.
+It remains valid for zero maps, and a strict source-defect bound proves
+nonvanishing. For source and target retained fractions r and v, its
+combined final defect is at most (g + 2b + 1 - min(r,v))/max(r,v),
+without division by an unknown surviving mass. A sharp partial-identity
+example improves the former actual-mass cost from 2/3 to 1/3. This gives
+an alternative sufficient route that can derive nonvanishing within the
+trace estimate; actual prescribed-scale smallness, local divisibility,
+and the original arithmetic identifications still have to be proved.
+The [new frontier review](../certificates/frontier-progress-review-2026-11-22.json)
+records the exact proof and supplemental checks.
+
 ## Next mathematical work
 
 1. **Integral maps and global norms (W06/W08).** Supply nonzero integral

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "baseline_main": "c9def8d66b96082ad46a06c161de6b8da800b440",
+  "scope": "New hard-frontier mathematical results. Written proof review, source identity checks and finite calculations are separate claims.",
+  "packages": [
+    {
+      "id": "prescribed-trace-calibration",
+      "status": "PASS",
+      "reviewers": [
+        "root",
+        "finite_window_audit"
+      ],
+      "checked": [
+        "Incidence and arithmetic slope comparison at any prescribed positive calibration, including zero maps.",
+        "Both restriction bounds at c0=c max(r,v), positive mass criterion and sharp examples.",
+        "No inference of absolute calibration from actual-mass errors; no arithmetic theta estimate inferred."
+      ],
+      "artifacts": [
+        {
+          "path": "notes/prescribed-trace-calibration.md",
+          "sha256": "cd99b8f95401cb3243fccb3ab32e986f4af28691d1cf7b7ebe63d24b51502daa",
+          "bytes": 7440
+        },
+        {
+          "path": "scripts/check_prescribed_trace_calibration.py",
+          "sha256": "be8ce4aa1edefdedec9198fb2e44ba0223bb91088ef3ea730e96f0c5702e3f9e",
+          "bytes": 5921
+        },
+        {
+          "path": "certificates/prescribed-trace-calibration.json",
+          "sha256": "840ada0e2315dd0bb280c80fec8b58cbbf63abd1a33f1f40c764ddd6342c0d5a",
+          "bytes": 1248
+        }
+      ]
+    }
+  ],
+  "node_counts": {
+    "rh": {
+      "finished": 6,
+      "total": 9
+    },
+    "grh": {
+      "finished": 17,
+      "total": 31
+    }
+  },
+  "new_existing_nodes_completed": 0,
+  "limits": [
+    "The actual global smallness estimates and arithmetic constructions remain open.",
+    "No full Lean build or kernel replay."
+  ]
+}
