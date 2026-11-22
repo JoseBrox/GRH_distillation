@@ -245,7 +245,9 @@ norms vanish. The prescribed pure-period points descend and extend to
 integral maps on the same component, giving the local-norm comparison.
 The remaining geometric inputs are the arithmetic model with its original
 global family and fibre data, the moduli separation and pointwise period
-presentations, and the signed cusp and finite-section estimates.
+presentations, the original Haar quotient and lattice count with one
+integrable radius, and the signed boundary limit. The actual nef and
+birational section data and arithmetic section remainder also remain.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
@@ -658,6 +660,17 @@ identification and other period denominators remain required.
    individual nonvanishing assertions require their own hypotheses.
    Retain a smaller valid energy or signed-operator bound when available.
    Pairwise estimates and basis changes alone do not suffice.
+   The [projector-kernel checkpoint](projector-kernel-tail.md) locates an
+   exponential far-return estimate with every original normalizer retained.
+   Its simple cutoff gives decay `exp(-n^15/64)` multiplied by the actual
+   field-degree and lattice-minimum factor. The next interface is an exact
+   period-Gram comparison with this projector, or a quotient-distance
+   Bessel estimate with retained leading mass. Being in the projector's
+   range alone gives neither. The cusp counting theorem supplies inverse
+   moments only below its tail exponent; an exact probability example
+   proves that it cannot by itself integrate the much higher inverse
+   power in the current kernel majorant. Near returns, cusp control and
+   the final source and target cuts remain.
 2. **Arithmetic Selmer models (W04).** Quantify the finite weighted
    Selmer product on the actual twisted places, retaining the integral local
    comparisons and surviving character cases. The elementary resultant

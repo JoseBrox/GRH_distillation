@@ -14,6 +14,19 @@ other return norms relative to the chosen return. The observation neither
 rules out such dominance nor asserts nonzero archimedean values for all
 supported returns.
 
+## A logarithmic cusp bound does not control every inverse moment
+
+An explicit probability model has exact counting homogeneity and an
+integrable logarithmic minimum, but its inverse moments diverge at and
+above the counting-tail exponent. The [kernel-tail analysis](../notes/projector-kernel-tail.md)
+proves both the available lower inverse-moment bound and this limitation.
+The currently inspected far-kernel majorant uses a higher inverse power
+when the two dimensions are identified. This shows that the counting
+contract alone cannot integrate that majorant; it asserts no divergence
+of the actual arithmetic kernel or theta trace. A separate covariance
+argument also explains why full-group matrix-coefficient decay cannot
+be applied directly to a nonzero Whittaker function on a left quotient.
+
 ## Trace classes and generic rigidity leave integral arithmetic unresolved
 
 The [Selmer comparison audit](../notes/rh-selmer-valuation-frontier.md)
