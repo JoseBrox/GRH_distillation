@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "root, independent of selmer_frontier",
+  "status": "PASS",
+  "scope": "Human review of the complete-module proof and original counting interface, two decisive pinned source excerpts, and offline provenance and finite-example check. No Lean build; paired determinant detection remains open.",
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-dual-detection.md",
+      "sha256": "59a0f5a944fccd81c5a3f624f745a6d2d52bd4ca1276932e7a2ec2fcbc047399"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_dual_detection.py",
+      "sha256": "b2864afc1ae093ab60881fd3a7424bd88d90409958f40f874e6777c3815bf95b"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-dual-detection.json",
+      "sha256": "2f1eecb001f6deccbb99c52ace816cbece672eff30b8a6f757212bc78da10907"
+    }
+  ],
+  "checks": [
+    {
+      "topic": "Stabilization and approximate solutions",
+      "result": "PASS",
+      "detail": "Finite S1/tC makes descending images stabilize. Induction using S_(r+1) intersect tC=t S_r lifts stabilization to each power. Successive approximations in deeper S_m form a Cauchy sequence. Completeness and separatedness give K; target torsion-freeness gives S_(m0+j) subset K+t^j S_m0."
+    },
+    {
+      "topic": "Kernel and uniform count",
+      "result": "PASS",
+      "detail": "K is closed and saturated, hence complete with its intrinsic t-adic topology. Finite K/tK gives finite generation. K/B is a finite torsion module. A fixed cover of K/B and S_m0/t^m0 C bounds every sufficiently deep quotient; the finitely many smaller quotients are finite by successive reduction."
+    },
+    {
+      "topic": "Modular classes and boundary comparison",
+      "result": "PASS",
+      "detail": "Only function lifts are needed. Compatible linear equations recover finite-level cocycles. Integral boundaries map into the full modular boundary set; surjectivity onto all modular boundaries is unnecessary for the upper bound."
+    },
+    {
+      "topic": "Actual source and quantifiers",
+      "result": "PASS",
+      "detail": "Directly read SolCnt293-393 and ExistsNcardAnnihilatedCocyclesLeCoboundariesMul349-430. Their hypotheses retain finite residual solutions, completeness, target torsion-freeness and separatedness, PhiCond, and integral Detects. The constant follows the fixed point and auxiliary set and precedes all m."
+    },
+    {
+      "topic": "Ordinary trace counterexample",
+      "result": "PASS",
+      "detail": "For upper triangular g, z(g)=(b/d)E12 obeys z(gh)=z(g)+Ad(rho(g))z(h), is nonzero on the unipotent kernel where all boundaries vanish, and has identically zero ordinary trace against rho(g). The diagonal image spans both even blocks. This does not contradict the coupled determinant theorem."
+    }
+  ],
+  "offline_check": {
+    "command": "python scripts/check_selmer_integral_frontier_dual_detection.py --offline",
+    "status": "PASS",
+    "source_modules": 14,
+    "bounded_excerpts": 18,
+    "exact_cocycle_pairs": 6400
+  },
+  "new_existing_nodes_completed": 0,
+  "node_counts": {
+    "rh": {
+      "finished": 6,
+      "total": 9
+    },
+    "grh": {
+      "finished": 17,
+      "total": 31
+    }
+  }
+}

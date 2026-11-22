@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "claim": "Bounded source bytes authenticated and illustrative finite-group counterexample checked exactly.",
+  "mathematical_assessment": {
+    "proved_in_note": "Complete linear-equation counting controls every finite-level solution under finite residual solutions and integral detection up to torsion.",
+    "extra_bockstein_hypothesis": "Not needed in the actual SolCnt approach; completeness and stabilization control nonliftable modular solutions.",
+    "remaining_human_reconstruction": "Actual paired determinant detection: OddPart/RelPair/BlockPrinc, followed by DetAlg, finite detection and simultaneous auxiliary choice.",
+    "coefficient_field": "k((t)), of characteristic ell",
+    "constant_order": "Fix point and auxiliary set, then exists C for all m; DualN has exists C, for all m, eventually N."
+  },
+  "limits": [
+    "The algebraic proof in the note is a human proof, not checked by this script or a proof assistant.",
+    "No Lean compilation or whole-source audit was run.",
+    "Determinant suppliers are located and their contracts inspected, not fully reconstructed here.",
+    "No whole proof node is closed; RH 6/9 and GRH 17/31 remain unchanged."
+  ],
+  "reproduce": "python3 scripts/check_selmer_integral_frontier_dual_detection.py --offline",
+  "sources": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/ThetaCoefficientMapEq.lean",
+      "git_blob_sha1": "948482f25d014b95ecf474745031014e97996a00",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ThetaCoefficientMapEq",
+      "sha256": "47ad94ae8810970b4fdcf4e4cb9e22c31365a91a260ed3c7ba3ee02849daa9e8",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 54,
+          "end": 61,
+          "sha256": "d9808ad6ee32ead08bada7722cfb606aca2114fdf85d0e81bc4ad49d69d97819"
+        },
+        {
+          "start": 235,
+          "end": 264,
+          "sha256": "ace647871120f7765c7d24662e23a2d7848cf216548dbae7a2fbe1cb0a0ba27e"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/EpsilonEtaMatrices/ExistsNcardAnnihilatedCocyclesLeCoboundariesMul.lean",
+      "git_blob_sha1": "c776b9f092b45851656c0e801c7a18d426b1b350",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.ExistsNcardAnnihilatedCocyclesLeCoboundariesMul",
+      "sha256": "0babcdbd1d12d9783eccfb41a7835bd1ab290a57f749d3fa7a52614331a6b1e3",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 21,
+          "end": 130,
+          "sha256": "9a819b19f5877ca7c23426a9cf14a9b02bce474704114e882ab7842aa736de7d"
+        },
+        {
+          "start": 349,
+          "end": 430,
+          "sha256": "bac39504c845517f9d9d5403246af73bcf7ebad4a6c37f9c99fdbb2fd6e98f73"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DegreeCountCohomology/SolCnt.lean",
+      "git_blob_sha1": "d09091d81b567dc070db31b79301d728998254a4",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DegreeCountCohomology.SolCnt",
+      "sha256": "5aac87d1a5811fa43096b46168f63a223f02538067a25b6e4704d44e3d8bbeb7",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 128,
+          "end": 242,
+          "sha256": "57e78f218fd30d3ef21bfe82835cd101dc898237667143ada496718cf5eda604"
+        },
+        {
+          "start": 293,
+          "end": 393,
+          "sha256": "f806b40f928cf8e7d703d90576d84f717280c210731af1b10665ec1d5b08a081"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/EpsilonEtaMatrices/FinTwLc.lean",
+      "git_blob_sha1": "45e1559b6ea76905ff6da9927bb8b14530fe5c18",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.FinTwLc",
+      "sha256": "15151f2b7afe1fe053de9fbadcf898d4427a46d306268dd924ea8dbe754d4beb",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 23,
+          "end": 56,
+          "sha256": "c95527f6f5a03fe1d91f2c737de907ed46701ab5029a937e4d58363c2645c9cc"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/EpsilonEtaMatrices/DualN.lean",
+      "git_blob_sha1": "9583bf18356cb96fe1231d85400f78016002688a",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.DualN",
+      "sha256": "af19c180819f4f6b34541cbc8eb984785b88d39f53b11bf1fa4ab7707781c73c",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 10,
+          "end": 16,
+          "sha256": "70eb6c447806aa0a623837c1059250647d34c7665ac8424971d3257e343da6a7"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/EpsilonEtaMatrices/W1BoundArithmeticRankTwo.lean",
+      "git_blob_sha1": "6f4feefa208f473cb853e5a74a2aa357faf88c32",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.W1BoundArithmeticRankTwo",
+      "sha256": "a80d9403d8992b03a6694875e85b362aec5cedc3a512f42f7de280c597dc4fe8",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 40,
+          "end": 61,
+          "sha256": "a3980b1b17ff83298eb152ace34979d70ef60f1711ef6ad8d5b6f8137eb92a84"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/FrameWith.lean",
+      "git_blob_sha1": "870e5d03dc371704626c5433d8d0f936472fc697",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.FrameWith",
+      "sha256": "de3426f148c5c5358de1b548fb600ea3f2d434f107fdb852a45a88f57b74a60a",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 26,
+          "end": 72,
+          "sha256": "1af9dd8e1a841b25520549bf92b1cf923f339b03a0f1298097e84cdd0b1003bf"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/MapSpan.lean",
+      "git_blob_sha1": "fb03d1724e0fd407d7f105451352541cd9724b84",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.MapSpan",
+      "sha256": "73f2fddae0eea28611e1de923c3455a1b310dafde76ab944bbfd4e35ab044811",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 14,
+          "end": 83,
+          "sha256": "02899e5d44accc4c891b8ada6df01d5c7864a106451e05d1814caea1be4deba8"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/DetAsm.lean",
+      "git_blob_sha1": "e3d5cfea2aa99cd96ff5a2c784c46d90aac16e51",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.DetAsm",
+      "sha256": "5cbaa93c93024b226e2f65cff6a1f43d19eb55531fc4ef63a7dfd0a7a6515b22",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 160,
+          "end": 268,
+          "sha256": "1ee677d5d17f68b4db0ec4ac7f2da10a45a4d4a34cd90ff86549b266de3beddc"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/DetAlg.lean",
+      "git_blob_sha1": "212acfc9f6875e362346c332718dc3fa9a18065e",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.DetAlg",
+      "sha256": "d0c6b9fba87b031f71627a8593985408caf13d61aa0b04f8477daead83af41ae",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 71,
+          "end": 141,
+          "sha256": "846cafe7ebb1ef6a8b2ef699bb955fe2e4ee0180ebc4062ccb4d305a19d819b9"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/OddPart.lean",
+      "git_blob_sha1": "df22827a80d98ca534b03c620d3aa4abce7a7c23",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.OddPart",
+      "sha256": "4010ae1168565d755680677c105f81d78a0e64e67e67db2c093756080ac4c5cf",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 18,
+          "end": 61,
+          "sha256": "5142a621679f0333a9319230e711770f3e26c4db91ef597d1aea1f08f7abbbfa"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DeterminantPadicFree/DetFin.lean",
+      "git_blob_sha1": "04bddc0fc0d94ae60dbe02a9879f61d63e31ff9c",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DeterminantPadicFree.DetFin",
+      "sha256": "481ce663b20bb7f963f18dc69c332d6877ad40d7fd9ef574f68f602df45910b9",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 127,
+          "end": 213,
+          "sha256": "46d90cea15327977e9e2ad4c6db086cfdb04071202dbccb2fc8d4413d3da807f"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/AutomorphicDetection/Choice.lean",
+      "git_blob_sha1": "90562803a8af7373401478c419ddb52b68374a54",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AutomorphicDetection.Choice",
+      "sha256": "4386d70673a69610f401c70ca3c37a839db28ff1d7675d4b6de45e6977fa0faf",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 14,
+          "end": 40,
+          "sha256": "93385211596e6db7dd128403dfe0bb975406a5e53c27e8f4416e15f89faf9aab"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/ChebotarevFamilies/PFromAutOf.lean",
+      "git_blob_sha1": "6a1bdaee5e90b4823a5f4a050662524cb76d3535",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ChebotarevFamilies.PFromAutOf",
+      "sha256": "cfa8899974c354e77d406716de55d7e646236c9c29939df369fd6d611a9cfed0",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 42,
+          "end": 49,
+          "sha256": "2b674854a426fd01899ed0f4a0fa9d6ba0aa60e04a79150a518bc00c17f0fcb5"
+        },
+        {
+          "start": 83,
+          "end": 91,
+          "sha256": "06e19dd87804da90e6a0aa4086de82bfc3c6f86d81141c8a646ac46ed1b91dca"
+        }
+      ]
+    }
+  ],
+  "finite_counterexample": {
+    "field": "F_5",
+    "group_order": 80,
+    "cocycle_pairs_checked": 6400,
+    "zero_trace_checks": 80,
+    "nonboundary_witness": "z([[1,1],[0,1]])=E12; rho is identity on the unipotent subgroup",
+    "full_even_span_witness": "diag(1,1), diag(1,2) have independent diagonal vectors",
+    "scope": "Ordinary untwisted trace alone does not detect odd extensions; not a counterexample to the paired source theorem."
+  },
+  "artifacts": {
+    "notes/selmer-integral-frontier-dual-detection.md": "59a0f5a944fccd81c5a3f624f745a6d2d52bd4ca1276932e7a2ec2fcbc047399",
+    "scripts/check_selmer_integral_frontier_dual_detection.py": "b2864afc1ae093ab60881fd3a7424bd88d90409958f40f874e6777c3815bf95b"
+  }
+}
