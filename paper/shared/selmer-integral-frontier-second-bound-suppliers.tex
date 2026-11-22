@@ -1,0 +1,98 @@
+\paragraph{Three bounds for the odd obstruction.}
+Write $A=k[[t]]$, $q=|k|$, $n=a+b$, and let $O_m$ be the odd
+matrices over $A/(t^m)$. Fix the normalized point, its original
+odd family $\kappa_1,\ldots,\kappa_g$ and its ordinary bases.
+Retain the original even matrix span, pairwise distinct ordinary
+characters and supplied arithmetic finiteness.
+
+\begin{proposition}[Uniform odd bounds]
+\label{prop:selmer-second-bound-suppliers}
+There are constants $C_0,C_h,C_d$, independent of $m$ and of
+the compatible auxiliary group, with the following properties:
+\begin{enumerate}
+\item The base odd Selmer group has order at most $q^{gm+C_0}$.
+\item Each original ordinary local quotient has at most $q^{C_h}$
+invariants.
+\item The additive maps $f:O_m\to\mathbb F_\ell$ satisfying
+$f(\gamma Y)=\bar\chi(\gamma)f(Y)$ have order at most $q^{C_d}$.
+\end{enumerate}
+The compatible group acts through its given surjection to the
+base group, and the coefficient twist is pulled back along that
+same map.
+\end{proposition}
+
+\begin{proof}
+For the first assertion, list all the linear equations defining
+the original polarized odd Selmer cocycles, retaining one local
+witness at every ordinary place. Their complete solution module
+has finite reduction modulo $t$: the residual cocycles and the
+finite witness coordinates are finite. Let $K$ be the integral
+kernel and let $B\subseteq K$ consist of solutions whose cocycle
+part belongs to $\sum_iA\kappa_i$ plus integral skew boundaries.
+The original spanning property of the odd family gives $K/B$
+torsion.
+
+Apply the complete-equation count to this $B$, then project away
+the witnesses. It bounds every finite-level cocycle set by a
+fixed factor times the projected image of $B$. That image has
+at most $q^{gm}$ times the number of allowed modular boundaries.
+Projection cannot increase the number of cosets. Normalization
+at complex conjugation identifies the quotient with the odd
+cohomological Selmer group. This proves the first assertion,
+including classes that do not lift to integral cocycles.
+
+At an ordinary place $v$, the actual quotient embeds in
+\[
+ T_m=M_n(A/(t^m))/\{\text{upper triangular matrices}\}
+\]
+through the lower coordinates in the given ordinary basis.
+The kernel and surjectivity of its given quotient map prove this
+injection, without assuming that the basis preserves the ordering
+of the two blocks. Filter $T_m$ by distance below the diagonal.
+Conjugation by an upper triangular matrix preserves that filtration,
+whose successive characters are $\psi_{v,i}\psi_{v,j}^{-1}$,
+one for each $i>j$. Choose $g_{v,ij}$ where these two characters
+differ and put
+\[
+ C_{h,v}=\sum_{i>j}v_t\!\left(
+       \psi_{v,i}(g_{v,ij})\psi_{v,j}(g_{v,ij})^{-1}-1\right).
+\]
+Each rank-one invariant module has at most the corresponding
+$q$-power elements. Left exactness of invariants bounds the full
+order by $q^{C_{h,v}}$. Use $C_h=\max_vC_{h,v}$, or zero if
+there are no ordinary places. The local data are unchanged in
+the compatible auxiliary groups.
+
+For the last assertion, let $Q=\operatorname{diag}(I_a,0_b)$.
+Choose the integer $s$ supplied by the original span:
+\[
+                       t^sQ=\sum_r u_r\rho(h_r),
+ \qquad u_r\in A,\quad h_r\in\ker\chi.
+\]
+Choose preimages of the $h_r$ in the compatible group.
+Equivariance on its cyclotomic kernel gives
+$f(\rho(h_r)Y)=f(Y\rho(h_r))$. Replacing $Y$ by $u_rY$
+and adding yields $f(t^s[Q,Y])=0$. This step does not require
+$A$-linearity of $f$.
+The commutator with $Q$ fixes the upper rectangular block and
+negates the lower one, so it is an automorphism of $O_m$.
+Thus $f$ factors through $O_m/t^sO_m$. Its full additive dual
+has order $q^{2ab\min(m,s)}$, since additive maps are linear
+over the prime field. Take $C_d=2ab\,s$. Empty blocks give
+the zero module and $C_d=0$.
+\end{proof}
+
+Together with Lemma~\ref{lem:selmer-block-resultant} and its
+original tame descent, the first assertion gives
+$|\operatorname{Sel}_{N,e}|\leq q^{ge+C_0+C_{\rm aux}}$
+simultaneously for $e\leq m$ at sufficiently large level depending
+on $m$. The four constants in the second estimate are therefore
+supplied, with
+\[
+          C_2=C_0+C_{\rm aux}
+                     +|\{v:v\mid\ell\}|C_h+2C_d.
+\]
+Passing from these counts to the second obstruction module requires
+its coefficient exact sequences and local-condition comparison;
+identifying a vanishing obstruction with the prescribed second-order
+lift is a further step \cite{alpo-second-bound-suppliers}.

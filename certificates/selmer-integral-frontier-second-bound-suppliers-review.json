@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:36:26.086364+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Base odd Selmer growth, ordinary quotient invariants, and prime-field additive dual functionals supplying three constants for the second estimate.",
+  "audit_groups": [
+    {
+      "topic": "Every modular class",
+      "result": "PASS",
+      "finding": "The complete-equation theorem applies to continuous functions together with all original local witnesses. Finite residual solutions and torsion of K/B give a uniform defect. Finite-level function lifts are sufficient; no integral cocycle lifting is assumed."
+    },
+    {
+      "topic": "Projection away from witnesses",
+      "result": "PASS",
+      "finding": "Projecting the bounded quotient before counting keeps only the original g odd cocycles and the allowed modular boundaries. Projection cannot increase a coset count, so no spurious linear-in-m witness contribution remains."
+    },
+    {
+      "topic": "Actual ordinary quotient",
+      "result": "PASS",
+      "finding": "The given quotient map and its kernel identify the actual quotient with an equivariant submodule of all lower matrix coordinates. No compatibility of the ordinary basis with the order of the original two blocks is required."
+    },
+    {
+      "topic": "Filtration and distinct characters",
+      "result": "PASS",
+      "finding": "Conjugation by an upper triangular matrix lowers distance below the diagonal. Each distance layer is a direct sum of its diagonal ratio characters. Separate separating elements for different pairs suffice; a simultaneous simple-spectrum element or residual distinctness is not assumed."
+    },
+    {
+      "topic": "Additive rather than A-linear dual",
+      "result": "PASS",
+      "finding": "The original even span contains t^s Q. Cyclotomic-kernel invariance applied to u_r Y gives annihilation of t^s[Q,Y] using only additivity. The commutator with Q is invertible on odd matrices, forcing factorization through O_m/t^s O_m and the exact bound q^(2ab min(m,s))."
+    },
+    {
+      "topic": "Scope and quantifiers",
+      "result": "PASS",
+      "finding": "All constants are fixed at the normalized point before truncation or tower level. The existing resultant supplies C_aux. Coefficient exact sequences for H2 and the translation to the specified second-order obstruction still require separate proofs."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PairedDualFirstOrderDualMatrixSpace",
+      "sha256": "2b3a062361caa5676d914456dd8fb20d52cf83b9ab464d8f8ff14a1663abe1b7",
+      "git_blob_sha1": "83f8696963709ecaa3ea73e3d62e414f309b9a66",
+      "independently_read_ranges": [
+        [
+          251,
+          274
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.ImgCard",
+      "sha256": "0183b7809ef5e64e5f54e5de895a3e187c5c25c8b9062fdeebeaa04a79ea32c8",
+      "git_blob_sha1": "bdaa20baeb11ef9858fd46e170984c4b89687966",
+      "independently_read_ranges": [
+        [
+          340,
+          364
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.H0LocalCardBoundedOfClsKerLeKer",
+      "sha256": "efbe75389af2eb93ef1c02f5ff39ff7ad120d6529c00528f27fca1361db2c3dd",
+      "git_blob_sha1": "47331c39ab81ef96c906e191dd361136b9b4d152",
+      "independently_read_ranges": [
+        [
+          191,
+          247
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ArchimedeanH0Cards.DualBound",
+      "sha256": "a8b1783287fe633169c0fece8e1fd8ac44121a994b88fbcd90e50133721a2202",
+      "git_blob_sha1": "dd555a583435f0f2fd351ea9a6ef99a08c13ff52",
+      "independently_read_ranges": [
+        [
+          214,
+          245
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_selmer_integral_frontier_second_bound_suppliers.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "ordinary_quotients": {
+        "single_generator_truncated_actions": 120,
+        "multiple_generator_truncated_actions": 10,
+        "filtration_zero_coordinate_checks": 1680,
+        "negative_control": "Coincident diagonal characters permit q^m invariants."
+      },
+      "twisted_dual": {
+        "odd_projector_matrix_units": 140,
+        "prime_field_additive_dual_dimension_checks": 3600,
+        "residue_extension_degrees": [
+          1,
+          2,
+          3
+        ],
+        "negative_control": "A scalar representation without the even span has q^(2abm) dual functionals."
+      },
+      "projected_base_count": {
+        "projected_congruence_modules": 40,
+        "negative_controls": [
+          "Ignoring nonliftable classes loses min(m,r).",
+          "Counting free witnesses before projection introduces another m."
+        ]
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-second-bound-suppliers.md",
+      "sha256": "46719e4195cc680435aa61d4b1d6b49580a3af3bd776dca8d205a33ad41ff2a1"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-second-bound-suppliers.tex",
+      "sha256": "c1ba755da20f1b85b93f0edba942b431fdb973079d660e85bcec5d2ebaa5a39c"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-second-bound-suppliers-references.tex",
+      "sha256": "97241cf24f5ff62480763ffcdd6e63ffc905f05fcd5c30ddfa82b39019a108dd"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_second_bound_suppliers.py",
+      "sha256": "4df463ad2c4b144909c4ceccb622f16dd54251d17f1081ba8991b3b4e76a713c"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-second-bound-suppliers.json",
+      "sha256": "6a52eb293fc51142867fd3cdf065c7aeaed9fe826340e6678590e0f45ae6ffb5"
+    }
+  ],
+  "limits": [
+    "The original normalized point, spanning family, ordinary characters and arithmetic finiteness remain inputs.",
+    "The second-cohomology comparison and obstruction translation are not concluded here.",
+    "Finite tests do not compute actual Galois cohomology or build Lean; no whole node closes."
+  ]
+}
