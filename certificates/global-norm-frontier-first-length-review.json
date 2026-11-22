@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T20:20:17.975884+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Original first-length moments and same-Bessel-norm flag-product bound assembled from the proved suppliers.",
+  "audit_groups": [
+    {
+      "topic": "Original flag evaluation",
+      "result": "PASS",
+      "finding": "Positive orthonormal dual coordinates give sum |(rho(g)e_d)(f0)|\u00b2=||g^-1 f0||\u00b2. The original Gamma-flat identity identifies evaluation at f0 with the normalized lowering contraction, including the opposite tensor/evaluation signs when r=0."
+    },
+    {
+      "topic": "Exact tensor transfer",
+      "result": "PASS",
+      "finding": "The signed decomposition and intertwining give the displayed finite sum with epsilon_s conjugate(kappa_s) sqrt(d_nu/d_nu-e_s). Applying Cauchy--Schwarz once over s and summing over d gives the first factor n, with the original scale T retained."
+    },
+    {
+      "topic": "Projection and induction reserves",
+      "result": "PASS",
+      "finding": "Each projected vector raises level by at most2 and a lowering changes the l1 shift by at most1. The stated two reserves pass to the induction hypothesis. Summing the projection bound over the n basis coordinates gives the second n and exactly K=n\u00b2Tb\u2074(6B)^(2m)."
+    },
+    {
+      "topic": "Base and zero cases",
+      "result": "PASS",
+      "finding": "The proved original quotient mass is the zero-moment base. Nonnegative integration avoids a prior integrability hypothesis. The zero Bessel map is handled directly; no undefined lowering scalar is needed."
+    },
+    {
+      "topic": "Same-norm product bound",
+      "result": "PASS",
+      "finding": "The existing mixed-ratio theorem and new first-length moments give K^ell b^(2ell(ell-1))||v||\u00b2. The original isometry converts to the same Bessel quotient norm, and both sides vanish for a zero map. K<=Tb^(6m) and2ell<=m give the displayed T^ell b^(4m\u00b2) bound."
+    },
+    {
+      "topic": "Scope",
+      "result": "PASS",
+      "finding": "This supplies the first-length recursion and original flag-product estimate under the supplied tensor and Bessel family. Jacquet/leading-minor identification and translating integer-family reserves to the real gap budget remain separate."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.TensorBesselTransfer",
+      "sha256": "60e259ed97b32515faa41fcea9af5ab5ebacaed53f43da9ff990647a53c63847",
+      "git_blob_sha1": "29c624dca45194315fcf69f77ed68cf470a869d4",
+      "independently_read_ranges": [
+        [
+          31,
+          63
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.FamilySetupCayleyRecursion",
+      "sha256": "61bcc7884ac79d6a61fd33c037e4a47bc034f2518034f68518380616c7ea21cc",
+      "git_blob_sha1": "b52d96d19ad7fa83de32f3d3389a7d6547774b26",
+      "independently_read_ranges": [
+        [
+          19,
+          48
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.DualTensorCayleyWeighted",
+      "sha256": "943432dcc3e13c65f36cd749a84f936b9314a1a5bb6b88cb69f281c077ca5857",
+      "git_blob_sha1": "ba17195e93aa481ef4e67a2d9ca4f4577078ffff",
+      "independently_read_ranges": [
+        [
+          30,
+          68
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.FamilySetupBesselGrowth",
+      "sha256": "20f61cd4c245f6e73c20466012f91aecfbfa05635baad831fa8cb4b7d9bec579",
+      "git_blob_sha1": "45c96d285e1634230b7ad2bff79f4026325ee5aa",
+      "independently_read_ranges": [
+        [
+          31,
+          60
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_global_norm_frontier_first_length.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "flag_evaluation": {
+        "complex_flag_evaluations": 16,
+        "r_zero_cases": 12,
+        "isotropic_first_vector_cases": 4
+      },
+      "cauchy": {
+        "exact_vector_cauchy_cases": 25,
+        "zero_summand_cases": 5,
+        "missing_dimension_factor_negative_control": true
+      },
+      "reserves": {
+        "shift_and_level_transitions": 23400,
+        "zero_moment_boundaries": 1550,
+        "missing_shift_reserve_negative_control": true
+      },
+      "power_comparisons": {
+        "squared_base_comparison": "x**3 + 3*x**2*y + 108*x**2 + 3*x*y**2 + 216*x*y + 3888*x + y**3 + 72*y**2 + 1296*y",
+        "product_exponent_margin": "2*ell**2 + 10*ell*spare + 2*ell + 4*spare**2",
+        "auxiliary_nonnegative_polynomials": 3
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/global-norm-frontier-first-length.md",
+      "sha256": "5999890205a169bce2c734ea0bd33c516c6cb72e791e0a74dc5d0eb3c1e8b7eb"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-first-length.tex",
+      "sha256": "83f5ea54c7dd4b0edfb320a994eba4ef2fcdfb8980e74c4104f292fa5fb587c7"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-first-length-references.tex",
+      "sha256": "8822f8905154ca7182a604183ab3def8f34561cff4901762b07c6fab08b97984"
+    },
+    {
+      "path": "scripts/check_global_norm_frontier_first_length.py",
+      "sha256": "85a8174492563003a88892496b13af36fef35e4e3f570f358be339f77de455c9"
+    },
+    {
+      "path": "certificates/global-norm-frontier-first-length.json",
+      "sha256": "f57bf3b7ec8e8a2340d55e915da7b6b78733b8fa812e84ad416144c6012ddaf1"
+    }
+  ],
+  "limits": [
+    "Original representation and normalized Bessel-family existence remain.",
+    "Original Jacquet/leading-minor identification and full global estimates are not supplied.",
+    "Finite exact checks supplement the human proof. No Lean build or whole-node closure."
+  ]
+}

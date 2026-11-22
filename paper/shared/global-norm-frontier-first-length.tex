@@ -1,0 +1,167 @@
+\subsection{Moments of the first flag length}
+\label{archimedean-first-length}
+
+The preceding estimates now give the original first-length recursion.
+Let $n=2r+k+1$, $k\ge1$, $m=2r+2$, and
+$b\ge B\ge10^6n^7$.  Fix $T>0$ and a family indexed by
+$\nu\in\mathbb Z^n$ with $\|\nu\|_1\le q_0$.  Its Harish--Chandra
+parameters are $\mu_\nu=\lambda_0+\nu$.  Write
+$(\sigma_\nu,H_\nu,B_\nu,d_\nu)$ for its discrete series, its
+subgroup-period normalized Bessel map, and its formal degree.
+All representations use the same group and subgroup Haar measures,
+the same quotient measure $dq$, and the same Bessel character.
+Put
+\[
+       F_\nu(v;g)=\sqrt{d_\nu}\,B_\nu\sigma_\nu(g)v,
+       \qquad L_0(g)=\|g^{-1}f_0\|.
+\]
+Here $f_0$ is the original first flag vector, and $T$ is the positive
+parameter in the original normalized lowering estimate, including
+the case $r=0$.  The flag lengths descend to $Q$ because the
+subgroup preserves the flag by unitriangular transformations.
+
+Assume that the supplied signed dual-standard Pieri decompositions
+exist at every shift used below and satisfy the parameter hypotheses
+of Theorems~\ref{original-tensor-projection-bound} and
+\ref{original-normalized-lowering-bound}.  The Bessel maps satisfy
+the hypotheses of Theorem~\ref{original-quotient-mass-bound}, using
+the original reduced gap in each shifted representation.
+The level of a vector has the meaning fixed in the tensor-projection
+estimate.  These assumptions retain representation existence and the
+original interlacing and gap reserves; no moment estimate is assumed.
+
+\begin{theorem}\label{original-first-length-moment-bound}
+Put
+\[
+                 K=n^2T b^4(6B)^{2m}.
+\]
+If $v\in H_\nu^\infty$ has level at most $j$, $a\ge0$ is an
+integer, and
+\begin{equation}\label{first-length-reserve}
+          \|\nu\|_1+a\le q_0,\qquad j+2a\le4n^2,
+\end{equation}
+then
+\begin{equation}\label{first-length-moment-result}
+       \int_Q L_0(g)^{2a}\|F_\nu(v;g)\|^2dq(g)
+                            \le K^a\|v\|^2.
+\end{equation}
+In particular, the weighted integral is finite.  Moreover
+$K\le T b^{6m}$.
+\end{theorem}
+
+\begin{proof}
+If $B_\nu=0$, the desired bound is immediate.  We may therefore
+assume $B_\nu\ne0$ whenever its lowering scalars are used.
+Let $V^*$ be the dual standard representation, and use a positive
+orthonormal basis $e_1,\ldots,e_n$ in the same unitary coordinates
+as the tensor-projection bound.  Its action is
+$(\rho(g)x)(z)=x(g^{-1}z)$.  Thus the coefficients
+\[
+         a_d(g)=(\rho(g)e_d)(f_0)
+\]
+satisfy $\sum_d|a_d(g)|^2=L_0(g)^2$.  This is evaluation in the
+original flag direction, including its scale; it is not a new
+choice of flag length.
+
+Write $i_s,p_s$ for the signed Pieri inclusions and projections
+from $V^*\otimes H_\nu$ to $H_{\nu-e_s}$, and let
+$C_s=(\operatorname{ev}_{f_0}\otimes1)i_s$.  Under the Hermitian
+identification $\omega=\operatorname{flat}(f_0)$, evaluation at
+$f_0$ is the same contraction used in the normalized-adjoint lemma:
+the original real Hermitian matrix satisfies $\Gamma^2=1$, so
+\[
+ \operatorname{flat}(f_0)=\Gamma\overline{f_0},\qquad
+ \operatorname{flat}(f_0)^*\Gamma x=f_0^Tx=x(f_0).
+\]
+In the adapted $r=0$ frame, $f_0=\sqrt T\,e_{n-1}$ has negative
+Hermitian sign; thus its flat vector is $-\sqrt T\,e_{n-1}$,
+whereas evaluation contributes $+\sqrt T$.  Both original factors
+are retained.
+The normalized-adjoint lemma gives
+$B_\nu C_s=\epsilon_s\overline{\kappa_s}B_{\nu-e_s}$, with
+$\epsilon_s\in\{1,-1\}$.  Apply $B_\nu$ after evaluation at
+$f_0$ to the tensor decomposition of
+$\rho(g)e_d\otimes\sigma_\nu(g)v$.  Intertwining gives
+\begin{equation}\label{first-length-tensor-transfer}
+ a_d(g)F_\nu(v;g)
+    =\sum_{s=1}^n c_s F_{\nu-e_s}(y_{ds};g),\qquad
+ y_{ds}=p_s(e_d\otimes v),\qquad
+ c_s=\epsilon_s\overline{\kappa_s}
+                         \sqrt{d_\nu/d_{\nu-e_s}}.
+\end{equation}
+The scalar estimate supplies $|c_s|^2\le T b^4$.
+Consequently Cauchy--Schwarz and the sum over $d$ give
+\begin{equation}\label{first-length-pointwise}
+ L_0^2\|F_\nu(v)\|^2
+       \le nT b^4\sum_{d,s}\|F_{\nu-e_s}(y_{ds})\|^2.
+\end{equation}
+Zero projected vectors and zero maps at shifted indices cause no
+difficulty.
+
+Induct on $a$.  For $a=0$,
+Theorem~\ref{original-quotient-mass-bound} is exactly the claim.
+For the step from $a$ to $a+1$, each $y_{ds}$ has level at most
+$j+2$ and
+\[
+       \sum_s\|y_{ds}\|^2\le(6B)^{2m}\|v\|^2.
+\]
+Also $\|\nu-e_s\|_1\le\|\nu\|_1+1$, so the two reserves
+in \eqref{first-length-reserve} imply precisely those needed for
+the induction hypothesis at $(\nu-e_s,j+2,a)$.
+Multiply \eqref{first-length-pointwise} by $L_0^{2a}$ and
+integrate nonnegative functions.  The induction hypothesis and the
+projection sum yield
+\[
+ \int_Q L_0^{2(a+1)}\|F_\nu(v)\|^2dq
+ \le nT b^4K^a\sum_{d,s}\|y_{ds}\|^2
+ \le n^2T b^4(6B)^{2m}K^a\|v\|^2.
+\]
+This proves the step without a prior integrability assumption.
+Finally $b\ge36$, $n^2\le b$, and $B\le b$ give
+$(6B)^{2m}\le b^{3m}$ and
+$n^2b^4\le b^5$.  Since $m\ge2$, $3m+5\le6m$, proving
+$K\le T b^{6m}$.
+\end{proof}
+
+\begin{corollary}\label{original-flag-product-norm-bound}
+Let $0\le\ell\le r+1$, and assume the derivative-energy and
+flag-ratio hypotheses of Corollary~\ref{mixed-ratio-length-product}
+for $v\in S_0\subset H_\nu^\infty$.  Set
+\[
+ a_\ell=\begin{cases}
+ 0,&\ell=0,\\
+ 1,&\ell=1,\\
+ \ell+1,&\ell\ge2.
+ \end{cases}
+\]
+If $v$ has level at most $j$ and
+$\|\nu\|_1+a_\ell\le q_0$, $j+2a_\ell\le4n^2$, then
+\begin{align*}
+ \int_Q\prod_{i<\ell}L_i^2\,\|F_\nu(v)\|^2dq
+ &\le K^\ell b^{2\ell(\ell-1)}
+                           \int_Q\|F_\nu(v)\|^2dq\\
+ &\le T^\ell b^{4m^2}\int_Q\|F_\nu(v)\|^2dq.
+\end{align*}
+For $\ell=0$ the first line is an identity without any level or
+shift-reserve condition.
+\end{corollary}
+\begin{proof}
+The first-length theorem supplies the formerly missing moment in
+Corollary~\ref{mixed-ratio-length-product}.  That corollary gives
+the first displayed bound with $\|v\|^2$ on the right.
+If $B_\nu\ne0$, Corollary~\ref{original-quotient-mass-isometry}
+identifies this with the same unweighted quotient norm.  If
+$B_\nu=0$, both sides vanish directly.  The second line follows
+from $K\le T b^{6m}$ and
+$6m\ell+2\ell(\ell-1)\le4m^2$ for $2\ell\le m$.
+\end{proof}
+
+For an additional exterior shift of size $\ell$, the needed
+integer-shift reserves are therefore $0$, $2$, and $2\ell+1$
+for $\ell=0$, $\ell=1$, and $\ell\ge2$, respectively.  This
+assembles the original first-length estimate and the simultaneous
+flag moments \cite{first-length-original-recursion}.  The quotient
+norm in the corollary is the original one.  Its identification with
+the original leading-minor Jacquet norm, and the conversion of the
+integer-family reserve to the original real-parameter gap budget,
+remain separate obligations.  No factor $T^\ell$ is dropped.
