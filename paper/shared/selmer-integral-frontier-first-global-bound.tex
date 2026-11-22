@@ -1,0 +1,114 @@
+\paragraph{The first global Selmer bound.}
+Put $q=|k|$ and
+$\nu=\binom a2+\binom{n-a}2+s\,a(n-a)$, where $s$ is the size
+of the odd family. Retain the arithmetic tower and its local maps,
+the ordinary hypotheses, distinguished rigidity and auxiliary simple
+spectrum used above. Its arithmetic system supplies finite global
+duality, the local Euler identities and the unramified count. For
+Galois groups with finite allowed ramification including the primes
+above $\ell$, these are the classical Poitou--Tate and Euler theorems
+\cite[I, Theorems 2.3, 2.8, 4.10, 5.1 and Corollary 4.15]{milne-adt}.
+Realizing the supplied groups and local maps as that arithmetic
+system remains part of the arithmetic construction.
+At an ordinary place, $d_v$ is its local Euler degree, and
+$d_v'+1$ is the rank of the torsion-free pro-$\ell$ abelian quotient
+used by the original diagonal condition. For the actual local
+Galois group, $d_v'=d_v=[F_v:\mathbf Q_\ell]$.
+
+\begin{proposition}[First Selmer estimate]
+\label{prop:selmer-first-global-bound}
+Let the arithmetic system have $d$ real places and $q_{\rm aux}$
+auxiliary places, with ordinary degrees satisfying
+$\sum_vd_v=\sum_vd_v'=d$. There is a constant $C$ such that, for
+every $m\geq0$ and all sufficiently large $N$, the original first
+Selmer cocycle set is finite and
+\[
+ \#\operatorname{Sel}^{1}_{N,m}
+ \leq \#B^{1,\mathrm{pol}}_{N,m}\,
+               q^{mn(d+q_{\rm aux})+C}.
+\]
+Here $B^{1,\mathrm{pol}}_{N,m}$ is its group of boundaries with skew
+primitives. One may take
+\[
+          C=C_G+C_{\rm det}+C_0+\sum_vC_v+\sum_jC_j,
+\]
+using the invariant, detecting and ordinary constants already proved.
+\end{proposition}
+\begin{proof}
+The case $m=0$ is immediate. For $m\geq1$, the primal and paired
+modules are Tate dual under
+\[
+ (X,Y)\longmapsto\operatorname{Tr}_{k/\mathbb F_\ell}
+                       [t^{m-1}\eta]\operatorname{tr}(XY).
+\]
+Matrix units, nilpotent generators and powers of $t$ pair in complementary
+coordinates. The finite-field trace pairing is perfect; its value at
+1 need not be nonzero. Conjugation and transpose prove equivariance.
+
+Normalizing a global cocycle to be zero at $c$ identifies
+$\operatorname{Sel}^{1}_{N,m}/B^{1,\mathrm{pol}}_{N,m}$ with the
+cohomological Selmer group for $M_m$. Its ordinary condition is the
+image of $Z_{v,m}$, its old unramified condition is unramified
+cohomology, and its distinguished and auxiliary conditions are
+unrestricted. The normalizing boundary preserves these conditions.
+
+Write $L_v$ for the local cohomology conditions. The finite global
+duality inequality bounds this Selmer group by
+\[
+ \#H^0(\Gamma_N,M_m)\,
+ \#H^1_{\rm rel}(\Gamma_N,W_m)
+ \prod_{v\ \mathrm{finite}}\frac{\#L_v}{\#H^0(G_v,M_m)}
+ \prod_{v\mid\infty}\frac1{\#M_m^{c_v}}.
+\]
+The relaxed dual group retains only the boundary conditions at the
+unrestricted primal places. This inequality follows from the usual
+Selmer-dual Selmer cardinality identity by discarding the denominator
+$\#H^0(\Gamma_N,W_m)$ and the other dual local conditions.
+
+At an ordinary place, let $\mathfrak b_{v,m}$ be the actual
+transported upper triangular primitive module. It has
+$q^{m(n+\nu)}$ elements, and its boundaries belong to $Z_{v,m}$.
+The preceding filtration counts its $n$ diagonal homomorphisms
+using $d_v'+1$ and its $\nu$ strictly upper coordinates using
+the local Euler degree $d_v$.
+Writing $B_v$ for all local boundaries gives
+\[
+ \frac{\#L_v}{\#H^0(G_v,M_m)}
+ =\frac{\#(B_v+Z_{v,m})}{\#M_m}
+ \leq\frac{\#Z_{v,m}}{\#\mathfrak b_{v,m}}
+ \leq q^{m(nd_v'+\nu d_v)+C_v}.
+\]
+For the middle inequality, the boundary map on $\mathfrak b_{v,m}$
+has kernel $\mathfrak b_{v,m}\cap H^0(G_v,M_m)$; insert its image
+in $B_v\cap Z_{v,m}$. Unramified factors are one, since a finite
+module has equally many Frobenius invariants and coinvariants.
+At the distinguished and auxiliary places, local Euler degree zero
+and local duality identify the factor with $\#H^0(G_v,W_m)$.
+Proposition~\ref{prop:selmer-three-invariant-bounds} and eventual
+matching bound these by $q^{C_0}$ and $q^{mn+C_j}$, respectively.
+
+For a real involution $c_v$, put $P_v=R(c_vc)$. The original
+conjugate self-duality gives $P_v^T=P_v$, and the action is
+$Z\mapsto-P_vZ^TP_v^{-1}$. Multiplication by $P_v$ identifies
+its fixed module with the skew part of $M_m$, which has $\nu$
+free coordinates. Both $P_v$ and its inverse preserve the primal
+coefficient algebra. Thus $\#M_m^{c_v}=q^{m\nu}$ exactly.
+
+The global invariant factor is at most $q^{C_G}$. The relaxed dual
+group injects into the auxiliary-local quotient bounded by
+Proposition~\ref{prop:selmer-tower-detection}, so its order is at most
+$q^{C_{\rm det}}$. Multiplication of the displayed factors leaves
+the exponent
+\[
+ m\left(n\sum_vd_v'+\nu\sum_vd_v+nq_{\rm aux}-\nu d\right)+C
+                         =mn(d+q_{\rm aux})+C.
+\]
+The arithmetic finiteness theorem and the finite boundary group give
+finiteness of the original cocycle set. All constants were chosen
+before $m$; only the eventual level threshold depends on it
+\cite{alpo-first-global-selmer}.
+\end{proof}
+
+This finishes the first Selmer estimate under its retained arithmetic
+inputs. The second estimate and the construction of the patched
+modules are separate steps.

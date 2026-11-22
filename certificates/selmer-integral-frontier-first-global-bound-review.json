@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:27:58.305290+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "First Selmer cocycle bound under the original supplied arithmetic system and preceding proved finite factors.",
+  "audit_groups": [
+    {
+      "topic": "Original Tate dual and polarization",
+      "result": "PASS",
+      "finding": "The coefficient-of-t^(m-1) eta trace pairing is perfect over the prime field even when the trace of 1 vanishes. Odd characteristic permits normalization at the involution, preserving the local cohomology conditions and giving precisely the polarized boundary quotient."
+    },
+    {
+      "topic": "Global duality identity",
+      "result": "PASS",
+      "finding": "The finite subspace annihilator identity, the Poitou--Tate tail, and local/global Euler characteristics give the stated Selmer ratio. Discarding the dual invariant denominator and enlarging the dual local conditions have the correct inequality directions."
+    },
+    {
+      "topic": "Ordinary factors and separate degrees",
+      "result": "PASS",
+      "finding": "The boundary image of the actual triangular primitive module lies in the ordinary cocycle condition. Its kernel is its intersection with invariants, giving the quotient inequality. The local Euler degree and diagonal abelianization rank remain separate until their global sums are used."
+    },
+    {
+      "topic": "Unramified and auxiliary factors",
+      "result": "PASS",
+      "finding": "Frobenius invariants and coinvariants have equal order. At the non-prime auxiliary and distinguished places, local Euler degree zero converts the unrestricted factor into the already proved paired invariant count; eventual equality is used only after fixing the truncation."
+    },
+    {
+      "topic": "Real-place exact rank",
+      "result": "PASS",
+      "finding": "For symmetric P, right multiplication Z -> ZP identifies the fixed space of Z -> -P Z^T P^-1 with the skew module, with inverse Y -> YP^-1. The primal algebra is preserved by both units, so the free rank is exactly nu at every truncation."
+    },
+    {
+      "topic": "Exponent and quantifiers",
+      "result": "PASS",
+      "finding": "The nu terms cancel against the d real-place factors, leaving mn(d+q_aux). Every constant is fixed before m; only the eventual tower threshold depends on m. The arithmetic system, points, second estimate and patching are retained separate requirements."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PairedDualFirstOrderDualMatrixSpace",
+      "sha256": "2b3a062361caa5676d914456dd8fb20d52cf83b9ab464d8f8ff14a1663abe1b7",
+      "git_blob_sha1": "83f8696963709ecaa3ea73e3d62e414f309b9a66",
+      "independently_read_ranges": [
+        [
+          328,
+          346
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.OneLevel",
+      "sha256": "d6eddcf63302232b74af101dceb60f6a47f3e0e765562687c4491dcd2a6f6b39",
+      "git_blob_sha1": "f834b91b6b956c16738163b85be151dfdae9e1e7",
+      "independently_read_ranges": [
+        [
+          236,
+          270
+        ],
+        [
+          307,
+          359
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.W1BoundArithmeticRankTwo",
+      "sha256": "a80d9403d8992b03a6694875e85b362aec5cedc3a512f42f7de280c597dc4fe8",
+      "git_blob_sha1": "6f4feefa208f473cb853e5a74a2aa357faf88c32",
+      "independently_read_ranges": [
+        [
+          95,
+          165
+        ]
+      ]
+    }
+  ],
+  "primary_reference_review": {
+    "url": "https://www.jmilne.org/math/Books/ADTnot.pdf",
+    "sha256": "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31",
+    "visually_read_pdf_pages": [
+      65,
+      75
+    ],
+    "printed_pages": [
+      57,
+      67
+    ],
+    "results": [
+      "I.4.10(a,b), including exact tail and perfect pairing",
+      "I.5.1 global Euler characteristic"
+    ],
+    "separate_local_degree_review": "notes/selmer-integral-frontier-ordinary-local-count.md, lines 203--210"
+  },
+  "reproduced_check": {
+    "command": "python3 scripts/check_selmer_integral_frontier_first_global_bound.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "finite_cardinalities": {
+        "perfect_duality_subspace_identities": 848,
+        "ordinary_quotient_inequalities": 1396,
+        "negative_control": "The ordinary denominator requires delta(b) subset Z."
+      },
+      "real_places": {
+        "twisted_transpose_fixed_space_matrices": 84,
+        "characteristics": [
+          3,
+          5
+        ],
+        "matrix_sizes": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "result": "Each non-scalar symmetric first-order twist has fixed rank exactly nu.",
+        "scope": "Finite coefficient checks; the human module isomorphism proves every truncation."
+      },
+      "exponent": {
+        "exact_identity": "sum ordinary m(n d'_v+nu d_v) + m n q_aux - m nu d = m n(d+q_aux), when both degree sums equal d",
+        "negative_control": "Omitting the real-place invariant factor leaves the extra m nu d."
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-first-global-bound.md",
+      "sha256": "cfc51e4b955d24e364c01cee608c9af2bb0263ddfe95fb12da700ecae0bd634c"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-first-global-bound.tex",
+      "sha256": "a1d1ee531758b47d93c4fde72043ba8ed58fae7fa9d610158e80e168b881ed7a"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-first-global-bound-references.tex",
+      "sha256": "235995e8d225797f48be5afb38b702f9e1170732ebcdb78b92a39da6f96d0308"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_first_global_bound.py",
+      "sha256": "8ac7aabfb00abf69263360433ca29f668939b71d8ce994a8baa27128f9bc89ab"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-first-global-bound.json",
+      "sha256": "a66d7a119aa96a7cbec571525a10453aead63d31f1ffab25f7e520f7e1d9d889"
+    }
+  ],
+  "limits": [
+    "The first Selmer estimate is proved under the supplied arithmetic system; its realization or construction is not asserted.",
+    "Poitou\u2013Tate duality and local/global Euler characteristics are cited primary theorems, not computational conclusions.",
+    "The finite checks support the human proof and do not build Lean.",
+    "The second Selmer estimate, normalized-point construction and patched modules remain separate.",
+    "No whole node closes: RH 6/9 and Dirichlet GRH 17/31."
+  ]
+}
