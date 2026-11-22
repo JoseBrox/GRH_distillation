@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:16:06.189170+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "Original dual detecting bound through the auxiliary tower, with the original constant, all finite-level cocycles, and retained tower and point hypotheses.",
+  "audit_groups": [
+    {
+      "topic": "Original pro-prime residual",
+      "result": "PASS",
+      "finding": "For open normal H, finite normal cores of kernels of finite prime-group quotients give exactly the original ambient intersection. Openness and normality are explicit; no argument for a nonopen subgroup is silently used."
+    },
+    {
+      "topic": "Actual affine-action descent",
+      "result": "PASS",
+      "finding": "The linear image of H is a prime-group because rho kills its maximal pro-prime residual. First-order coefficients and affine translations extend it by prime-groups. Vanishing at the original kernel generators and the original closed-normal-kernel condition force descent. Both the representation and cyclotomic twist are pulled back."
+    },
+    {
+      "topic": "Simultaneous eventual matching",
+      "result": "PASS",
+      "finding": "The original open-subgroup finiteness condition makes all base finite-module cocycles finite in number. Their finite affine kernels and the representation/character kernels yield one ambient open normal subgroup containing the residual subgroup. Original tower convergence then matches all base evaluations at fixed truncation."
+    },
+    {
+      "topic": "Polarization and boundary normalization",
+      "result": "PASS",
+      "finding": "With v=-y(c)/2, delta(v)(c)=y(c). Local witnesses become Y_j-v. Normalizing a global boundary gives the c-fixed primitive (w+beta(c)w)/2. The quotient injection is well defined and injective, with no extra factor of two."
+    },
+    {
+      "topic": "Detecting trace and same constant",
+      "result": "PASS",
+      "finding": "Eventual representation equality and trivial cyclotomic twist at detecting elements make the eta-trace of the local boundary times R(sigma) zero by cyclicity of trace. The restricted quotient embeds in the already bounded polarized detecting quotient."
+    },
+    {
+      "topic": "Finiteness and quantifiers",
+      "result": "PASS",
+      "finding": "The restricted upstairs cocycle set is finite because its quotient and boundary subgroup are finite. A separate finite cardinality assertion for all tower cocycles is unnecessary. The level threshold may depend on m; the same detecting constant does not."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ThetaCoefficientMapEq",
+      "sha256": "47ad94ae8810970b4fdcf4e4cb9e22c31365a91a260ed3c7ba3ee02849daa9e8",
+      "git_blob_sha1": "948482f25d014b95ecf474745031014e97996a00",
+      "independently_read_ranges": [
+        [
+          15,
+          39
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.Descend",
+      "sha256": "1606351fad0b9ab06eaaf409f79bbfa72cfee2d5e66a8598dbd459086c243854",
+      "git_blob_sha1": "73c1cefe6adcc74430b4cefec3b754c43910873d",
+      "independently_read_ranges": [
+        [
+          8,
+          65
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.TwistedCocycleApplyOne",
+      "sha256": "df11ae72026223317126694545a40e755eef1fe277c72b3abc486fa28e165f99",
+      "git_blob_sha1": "9f7c8cafa8c71cfcbf1df6044aff99839c895acd",
+      "independently_read_ranges": [
+        [
+          202,
+          269
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.DualN",
+      "sha256": "af19c180819f4f6b34541cbc8eb984785b88d39f53b11bf1fa4ab7707781c73c",
+      "git_blob_sha1": "9583bf18356cb96fe1231d85400f78016002688a",
+      "independently_read_ranges": [
+        [
+          67,
+          115
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_selmer_integral_frontier_tower_detection.py --offline",
+    "result": "PASS",
+    "finite_groups": 16,
+    "ambient_intrinsic_residual_equalities": 171,
+    "finite_cocycles": 152,
+    "complete_cocycle_equations": 321248,
+    "negative_controls": 4
+  },
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-tower-detection.md",
+      "sha256": "e8228a18178344784caf73dba6ede9cb0c648b403baad3e5fbadf9afaf6f2f60"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-tower-detection.tex",
+      "sha256": "eb2f22659544358b0cef25e2d83147f487f9de3bbacaecb3fe3cbe189351d476"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-tower-detection-references.tex",
+      "sha256": "79a9d88365723657432f203d9da5c8d32cb9d9f959c16455576e3ff5e6f52246"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_tower_detection.py",
+      "sha256": "d1fe89d260046535fb90e31742497a53fa3568252ed3d30481753155ca4d5e94"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-tower-detection.json",
+      "sha256": "3115d1262de42fcb50f84097562e58c6cd7eec08614e624e5bb1ec78f1695f6a"
+    }
+  ],
+  "limits": [
+    "No arithmetic tower or normalized point is constructed by this proof.",
+    "No modular cocycle lifting, extra Bockstein condition or moving-point uniformity is asserted.",
+    "No Lean build or whole-node completion is claimed."
+  ]
+}

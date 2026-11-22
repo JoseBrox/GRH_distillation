@@ -1,0 +1,111 @@
+\paragraph{Passing the detecting count through the auxiliary tower.}
+Let $\ell=\operatorname{char}k\ne2$, and retain the original finite
+paired modules $W_m$. Write $\Gamma=G\rtimes\langle c\rangle$,
+$c^2=1$, and let $\beta$ be their original action, with
+\[
+ \beta(g)Z=\chi(g)R(g)ZR(g)^{-1},\qquad
+ \beta(c)Z=-\chi(c)Z^T.
+\]
+For an open normal subgroup $H$ of a profinite group, write
+$P_\ell(H)$ for the kernel of its maximal pro-$\ell$ quotient.
+The original subgroup defined using ambient open normal quotients is
+the same: taking the finite normal core of a kernel of an
+$\ell$-group quotient of $H$ preserves an $\ell$-group quotient.
+
+Retain the original tower $p_N:\Gamma_N\twoheadrightarrow\Gamma$
+and its compatible involutions. The action upstairs is the pullback
+$\beta\circ p_N$. Let $H$ be the original open normal subgroup of
+$\Gamma$, with $H\subset G\cap\ker\chi$, and retain
+$\rho(P_\ell(H))=1$. Put $H_N=p_N^{-1}(H)$.
+The actual tower conditions used here are
+\[
+ \begin{gathered}
+ p_N(\tau_{N,j})=1,\\
+ \ker p_N\subseteq
+ \overline{\langle\!\langle\tau_{N,j}\rangle\!\rangle P_\ell(H_N)},\\
+ p_N(\varphi_{N,j})\sigma_j^{-1}\longrightarrow1
+                  \text{ in }\Gamma/P_\ell(H).
+ \end{gathered}
+\]
+where $\sigma_j$ are the fixed detecting elements in the cyclotomic
+kernel. Assume the original finiteness condition on continuous
+homomorphisms from open subgroups to $\mathbb F_\ell$.
+
+\begin{proposition}[The unchanged detecting constant]
+\label{prop:selmer-tower-detection}
+Let $D_m$ be the detecting kernel among polarized paired base
+cocycles, and $B_m$ its polarized boundaries. If
+$\#(D_m/B_m)\leq q^C$ for all $m$, then, for each $m$ and all
+sufficiently large $N$, the set $S_{N,m}$ of continuous cocycles
+satisfying
+\[
+ \forall j\ \exists Y_j:\quad
+ y(\varphi_{N,j})=\delta Y_j(\varphi_{N,j}),\qquad
+ y(\tau_{N,j})=\delta Y_j(\tau_{N,j})
+\]
+is finite and obeys
+\[
+        \#S_{N,m}\leq\#B^1(\Gamma_N,W_m)\,q^C.
+\]
+The same $C$ supplied by integral detection and
+Lemma~\ref{shared-complete-solution-count} therefore works throughout
+the tower. Only the level threshold depends on $m$.
+\end{proposition}
+\begin{proof}
+At fixed $m$, the image of $H$ under $\rho$ is an $\ell$-group.
+Passing to $R$ adds a subgroup of
+$1+\sum_i\varepsilon_iM_n(A/(t^m))$, an elementary abelian
+$\ell$-group. Since $\chi|_H=1$, the image of $H$, and of $H_N$,
+under the paired action is also an $\ell$-group.
+
+For a cocycle $y$, the affine action $v\mapsto y(g)+\beta(g)v$
+on $H_N$ extends this image by a subgroup of the additive
+$\ell$-group $W_m$. Its open normal kernel contains $P_\ell(H_N)$.
+If $y(\tau_{N,j})=0$, it also contains every $\tau_{N,j}$:
+both the representation and twist are trivial there. The tower
+kernel condition therefore makes $y$ descend continuously to the
+base. Continuity follows from the compact-to-Hausdorff quotient map.
+
+There are only finitely many base cocycles at fixed $m$: restrict to
+an open kernel of the finite action and then choose finitely many
+coset values. The original finiteness condition controls the
+homomorphisms on that kernel. For each such cocycle its affine
+action on $H$ has $\ell$-group image. Intersect the finite normal
+cores of its kernel with the representation and character kernels.
+This gives an ambient open normal subgroup containing $P_\ell(H)$.
+Tower convergence consequently implies, for all large $N$ and
+simultaneously for every base cocycle $z$ and every $j$,
+\[
+ R(p_N\varphi_{N,j})=R(\sigma_j),\qquad
+ \chi(p_N\varphi_{N,j})=1,\qquad
+ z(p_N\varphi_{N,j})=z(\sigma_j).
+\]
+
+Every $y\in S_{N,m}$ vanishes at $\tau_{N,j}$ and hence descends.
+The identity $\beta(c_N)y(c_N)=-y(c_N)$ gives
+\[
+ v=-y(c_N)/2,\qquad \delta v(c_N)=y(c_N).
+\]
+Thus $y^\circ=y-\delta v$ is zero at $c_N$, has local boundary
+primitives $Y_j-v$, and descends to a polarized base cocycle
+$z$. At a detecting element, the eventual equalities give
+$z(\sigma_j)=R(\sigma_j)Y_jR(\sigma_j)^{-1}-Y_j$.
+Cyclicity of trace makes
+$[\eta]\operatorname{tr}(z(\sigma_j)R(\sigma_j))=0$.
+
+This induces an injection
+\[
+       S_{N,m}/B^1(\Gamma_N,W_m)\hookrightarrow D_m/B_m.
+\]
+Indeed, normalizing a boundary $\delta w$ replaces its primitive
+by $(w+\beta(c_N)w)/2$, which is fixed by $c_N$. Conversely a
+polarized primitive for $z$ gives a global boundary agreeing with
+$y^\circ$ on the index-two subgroup and at $c_N$, hence everywhere.
+The right quotient is bounded by $q^C$ and the boundary group is
+finite. This proves both assertions, with no additional factor
+\cite{alpo-tower-detection}.
+\end{proof}
+
+The argument uses all modular cocycles and retains the original
+kernel and convergence conditions. It does not assume that finite
+cocycles lift, nor construct the arithmetic tower or its points.
