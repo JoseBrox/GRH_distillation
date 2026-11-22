@@ -1,0 +1,89 @@
+\subsection{Why equivalent local data have the same density}
+\label{sec:scalar-pair-local-density}
+
+Let $F$ be a nonarchimedean local field of characteristic zero,
+$E/F$ an unramified quadratic field or $E=F\times F$, and $O$ its
+maximal integral algebra. In nondegenerate Hermitian $E$-spaces of the
+same rank $N$, let $\Lambda_i$ be self-dual lattices and
+$(f_i,f'_i)$ pairs of frames of length $r+1$. In each frame the first
+$r$ vectors are totally isotropic and perpendicular to the last.
+Assume the combined raw spans are nondegenerate. Let $M_i$ be generated
+by $(f_i,f'_i)$ away from the designated split level and by
+\[
+       \left(f_i,\frac{f'_i-f_i}{\varpi_s}\right)
+\]
+at that level. Assume the displayed tuples are linearly independent
+and primitive in $\Lambda_i$. The generator $\varpi_s$ is prescribed.
+Put $P_i=EM_i$, $W_i=P_i^\perp$ and $K_i=\Lambda_i\cap W_i$.
+Let $X_i,X'_i$ denote the spans of the first $r$ frame vectors.
+
+Assume the two quotient spaces $X_i^\perp/X_i$ and
+$(X'_i)^\perp/X'_i$ are identified isometrically, with the following
+compatibilities. Each vector of $W_1$ has a representative in $W_2$
+with both transported quotient classes; the integral quotient-lattice
+images are preserved; and, at the split level, the relation represented
+by integral pairs $u,u'$ with $u-u'\in\varpi_s\Lambda_i$ is preserved
+in both directions. These are among the original equivalence
+conditions.
+
+\begin{proposition}
+The lattices $K_1,K_2$ are isometric. The discriminant modules of
+$M_1,M_2$ are isomorphic, and their original primitive local densities
+are equal.
+\end{proposition}
+
+\begin{proof}
+For the original data, writing the last frame norms as $-T_i,-T'_i$,
+the raw frame Gram determinant is
+\[
+ (-1)^{r+1}
+ \left(\operatorname{Nm}\det Z_i
+       -T_iT'_i\operatorname{Nm}\det Z_i^\circ\right)\ne0,
+\]
+where $Z_i=(h(f'_{i,b},f_{i,a}))_{a,b}$ and $Z_i^\circ$ deletes its
+last row and column. The rank-two determinant formula gives this
+identity, and the original hypotheses give its nonvanishing.
+Thus the assumed nondegeneracy is satisfied. Since
+$W_i\cap X_i=0$, the transported representative is unique and defines
+an isometry $\alpha:W_1\to W_2$. It is onto by equal dimensions,
+componentwise in the split algebra.
+
+For $w\in K_1$, put $w_2=\alpha(w)$. Away from the designated level,
+the integral quotient images give
+$u=w_2+\sum a_jf_{2,j}$ and
+$u'=w_2+\sum b_jf'_{2,j}$ in $\Lambda_2$.
+Their difference belongs to $\Lambda_2\cap P_2=M_2$.
+Primitivity of the raw tuple forces the coefficients to be integral,
+hence $w_2$ is integral.
+
+At the designated level, the congruence relation instead gives these
+representatives with $u-u'\in\varpi_s\Lambda_2$. Extend their
+first-$r$ coefficient lists by zero in the last position. Then
+\[
+ \frac{u-u'}{\varpi_s}
+   =\sum_j\frac{a_j-b_j}{\varpi_s}f_{2,j}
+     -\sum_j b_j\frac{f'_{2,j}-f_{2,j}}{\varpi_s}\in M_2.
+\]
+Primitivity of the modified tuple forces
+$b_j,(a_j-b_j)/\varpi_s\in O$, so again $w_2$ is integral.
+The inverse identifications prove $\alpha(K_1)=K_2$.
+
+For a primitive nondegenerate sublattice $M$ of a self-dual lattice
+$\Lambda$, its orthogonal intersection $K$ is also primitive.
+Both are module direct summands. Restricting the self-duality pairing
+to $M$, and then to $K$, gives
+\[
+ M^\#/M\ \simeq\ \Lambda/(M+K)\ \simeq\ K^\#/K.
+\]
+The isometry of the $K_i$ therefore identifies the discriminant
+modules of the $M_i$. Reducing these modules modulo a uniformizer
+shows equality of the residue Gram coranks, in each split component.
+The reconstructed primitive-frame formula depends only on this
+corank and the common ranks and residue field \cite{reconstruction}.
+It gives the required equality with the original normalizers.
+\end{proof}
+
+For the original ranks $m=2r+2$, $N=k+m-1$ and $k-m\ge4$, put
+$q=\#k_F$. Together with $|\delta-1|\le2q^{-(k-2r-2)}$ and $2r+2\ge2$,
+this proves the full original local density assertion with constant
+one. It does not supply the remaining orbital or global norm estimates.

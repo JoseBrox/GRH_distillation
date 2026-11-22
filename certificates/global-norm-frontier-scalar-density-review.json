@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "geometry_frontier, independent of global_norm_frontier",
+  "verdict": "PASS",
+  "scope": "Actual scalar-pair density equality; together with the already reconstructed primitive count, full original FamilyVolumeFourth and T1(D,1).",
+  "artifacts": [
+    {
+      "path": "notes/global-norm-frontier-scalar-density.md",
+      "sha256": "6377d052d989143150eb1699cad09d3f33edfcc8768fbf2e753483396f4dba15"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-scalar-density.tex",
+      "sha256": "d54e0cf5bc3b15b68fa8e0d62c6bbc89fb12e26b65605141716bda3ac54e08df"
+    },
+    {
+      "path": "scripts/check_global_norm_frontier_scalar_density.py",
+      "sha256": "469e908a988b184712c8eed871e15ec78803f56cc0eb1695a49b1d9082fa8c58"
+    },
+    {
+      "path": "certificates/global-norm-frontier-scalar-density.json",
+      "sha256": "2db212d9c16bed9aaa81b4d28acd158a5b9b883b5a534d8082abe0d4d640e356"
+    }
+  ],
+  "audit_groups": [
+    {
+      "topic": "Exact local algebra and source scope",
+      "result": "PASS",
+      "details": "The source LocE is a reduced quadratic algebra over a characteristic-zero local field, with maximal integral algebra and radical uniformizer ideal; this is the split or unramified case used. The designated split generator is the original g.q, while the density quantifies over an arbitrary irreducible uniformizer. The separate nonmaximal congruence order is never substituted for O."
+    },
+    {
+      "topic": "Raw Gram determinant and complementary spaces",
+      "result": "PASS",
+      "details": "The displayed determinant is (-1)^(r+1) times Gdet. Nonzero Gdet lies in the fixed field and is a unit of E even in the split case. The original modified tuple has the same E-span as the raw pair. The first-r isotropic spans and the full-r+1 raw spans are correctly distinguished; complementary rank is N-2(r+1), including zero."
+    },
+    {
+      "topic": "Actual Ident gives an onto isometry",
+      "result": "PASS",
+      "details": "Every original SendsTo condition is nonvacuous on W0, since it is contained in both first-r perpendiculars. W0 intersects each first-r isotropic span trivially. The simultaneous representative is unique, linear and isometric. Equal component dimensions make it onto over a field and over both factors of E=F times F. Its inverse intertwines both quotient maps without assuming a reverse Ident hypothesis."
+    },
+    {
+      "topic": "Complementary integral lattices",
+      "result": "PASS",
+      "details": "Away from the designated split level, integral quotient representatives and primitivity of the raw tuple make their first-r coefficients integral. At that level, the exact iotaGraph supplies difference in g.q Lambda. Dividing by the original g.q and using the modified basis gives coefficients b_j and (a_j-b_j)/g.q in O, hence a_j in O. Equality of quotient lattice images and graphs makes the argument valid in reverse, proving alpha(K1)=K2."
+    },
+    {
+      "topic": "Two discriminant-module maps",
+      "result": "PASS",
+      "details": "Primitive M and K are module direct summands over the DVR or product of two DVRs. Self-duality makes restriction Lambda to the conjugate dual of M surjective with kernel K; modulo M this is Lambda/(M+K) isomorphic to D(M). Reversing M and K gives D(K). No orthogonal integral splitting or claim about discriminant-pairing signs is assumed."
+    },
+    {
+      "topic": "Residue coranks, original density and T1",
+      "result": "PASS",
+      "details": "An isomorphism of finite O discriminant modules gives the same residue Gram corank. In the split case conjugate transpose gives equal component coranks. The reconstructed primitive density uses exactly the source tuple and denominator, so it is equal for scalar pairs. Original m=2r+2, N=k+m-1 and even-rank assumptions give k-m>=4, hence the prior bound 2 q^(-(k-m)) is at most m q^(-(k-m)). This supplies both FamilyVolumeFourth clauses and T1(D,1) for every original local model."
+    },
+    {
+      "topic": "Novelty and limitations",
+      "result": "PASS",
+      "details": "The scalar-pair equality is new. The primitive frame count and its density application were already reconstructed in paper/sections/recovered/70-md-section.tex; the separate primitive-density package adds the signed/parity refinement. Neither this package nor its review supplies orbital, archimedean or global norm estimates or closes a whole RH/GRH node."
+    },
+    {
+      "topic": "Independent exact checker",
+      "result": "PASS",
+      "details": "Independent --offline rerun returned PASS: four pinned blobs, two symbolic determinant identities, 24 conjugate determinant cases, 72 modified-tuple determinants, 72 split discriminant-module cases, 288 residue-rank checks, 9129 exact split-level coefficient cases and five negative controls. These checks support the general written proof and are not a Lean build."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.FractionFieldToGenericStalkAlgebraMapEq",
+      "read_ranges": [
+        [
+          10,
+          26
+        ],
+        [
+          31,
+          59
+        ],
+        [
+          76,
+          80
+        ]
+      ],
+      "sha256": "6279e779358b26282318021b6a1efb212df0428d7c34e5674c8b9fe96712923e",
+      "git_blob_sha1": "fbe47d9bd812f07fccfc020cfb7494633b9e884a",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.LinQRawRange",
+      "read_ranges": [
+        [
+          12,
+          19
+        ],
+        [
+          43,
+          78
+        ],
+        [
+          105,
+          120
+        ],
+        [
+          133,
+          174
+        ]
+      ],
+      "sha256": "7cd2cac72ef1e6015819b1ae99d03d3ecaa9f825b85c25482c600dc7dbd9a2ef",
+      "git_blob_sha1": "f3003e68a3dc673a6a5a2b37408d826a02fc2f93",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Formalism.SharpRestriction.CuspSpanNormBounds.LocalBesselAndTopKernel",
+      "read_ranges": [
+        [
+          87,
+          96
+        ],
+        [
+          149,
+          167
+        ]
+      ],
+      "sha256": "fb5ce636936e4faa12404fa21c4d53e9140b1677a04fd8a647ecf45a44e89384",
+      "git_blob_sha1": "4a96d6fc92d7471ba7980eb5177138076a778084",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Formalism.LocalRingCardinality.Params",
+      "read_ranges": [
+        [
+          6,
+          46
+        ]
+      ],
+      "sha256": "1de4e5a1230e9d93b5ace3e4f7e112f65e3d5264d75db227476986d179881e17",
+      "git_blob_sha1": "09d1aeec3049821ed6d190c7970cdca9ec5b34cf",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "certificates/global-norm-frontier-primitive-density.json",
+      "sha256": "aa5630d0a523ce5c15ac94e87c6fd63dd1736ad1148a8983e1c06409b2a2b90c"
+    },
+    {
+      "path": "paper/sections/recovered/70-md-section.tex",
+      "sha256": "18440089fb0ff7ad6536a45c5ea9dcb902812f50e47b93435c95438235d3f14a"
+    }
+  ],
+  "limitations": [
+    "Independent mathematical and exact source-interface review; no Lean compilation.",
+    "No manuscript or PDF visual review is claimed in this certificate.",
+    "Full global norms and the other original local assertions remain open."
+  ]
+}
