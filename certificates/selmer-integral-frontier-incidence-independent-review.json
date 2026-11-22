@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "global_norm_frontier",
+  "result": "PASS",
+  "scope": "Independent mathematical and bounded source review; checker rerun. No Lean rebuild or arithmetic-presentation construction.",
+  "artifacts": {
+    "notes/selmer-integral-frontier-incidence.md": "378989678a7b9c2ce8dfebfc0e3d7f017e2c931231a1bfd00013398d1dc11624",
+    "paper/shared/selmer-integral-frontier-incidence.tex": "ce737e58253a85fae575a5b39546ee4be6240c618f87bbd4b6e40c2844af2b31",
+    "scripts/selmer-integral-frontier-incidence-check.py": "1e9937b4aeabaaa475f0065703427e928107dc40ebb29a0d187a7362dcf66977",
+    "certificates/selmer-integral-frontier-incidence.json": "1df6d07a8912f837e43b7bcffc54681b0cc29ac335635fd6c9204d3c8b210252"
+  },
+  "mathematical_checks": [
+    "Regular polynomial chart over an arbitrary regular local ring, including mixed characteristic and inseparable closed-point residue extensions.",
+    "Independent base cotangent classes and the 2g-1 chart pivots give regular closed local rings of dimension d-g.",
+    "Properness and the connected projective closed fibre force irreducibility of the regular incidence scheme.",
+    "Closed surjective maps of Noetherian spaces lift chains of irreducible closed sets, giving the required dimension upper bound.",
+    "Exact prime inclusion follows from the dimension threshold and the nonzero kernel vector; g=1 and g=0 boundaries retained.",
+    "The source finite complete B plus N presentation gives the power-series surjection, independent lifted relations, determinant annihilator and integral dimension equality needed for presOut1."
+  ],
+  "source_reads": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.AlgebraTools.CaDetLocus",
+      "ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "sha256": "2b60ba8e35f7547b4137d0f5490115954a2fbb792816658f930c082a39d84143"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.AlgebraTools.CaDetCore",
+      "ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "sha256": "78f63127186b6db9e1a7935b433ce63b0a0fd226cab81ada8fa7bb72e7ae1b18"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.SelmerScaling.CotangentIndependentOfResidues",
+      "ranges": [
+        [
+          74,
+          158
+        ],
+        [
+          158,
+          211
+        ]
+      ],
+      "sha256": "4279ef3fb0ae0dfc7ed2fbba145bec2f11e630dd913f58d3ccd3ee3e45928616"
+    }
+  ],
+  "primary_pages_independently_opened": [
+    "https://stacks.math.columbia.edu/tag/00NQ",
+    "https://stacks.math.columbia.edu/tag/02IT",
+    "https://stacks.math.columbia.edu/tag/01W1"
+  ],
+  "checker_rerun": {
+    "source_files": 8,
+    "primary_snapshots": 5,
+    "symbolic_charts": 15,
+    "finite_field_pairs": 20527,
+    "negative_controls": true
+  },
+  "remaining": [
+    "Actual arithmetic first-order presentation and independent coefficient rows",
+    "Actual patched automorphic dimension bound",
+    "Whole Selmer proof node"
+  ],
+  "node_counts_unchanged": {
+    "RH": "6/9",
+    "GRH": "17/31"
+  }
+}
