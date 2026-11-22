@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:04:53.176940+00:00",
+  "reviewer": "root, independent of selmer_next",
+  "verdict": "PASS",
+  "scope": "The exact finite-equation count and the original h0G, h0v0, h0q invariant estimates, under their retained arithmetic-point hypotheses.",
+  "audit_groups": [
+    {
+      "topic": "Exact equation module at every truncation",
+      "result": "PASS",
+      "finding": "Noetherianity of the finite free dual gives a finite subset of original rows spanning the same integral row module. Thus reductions have exactly the original solution sets for every m; generic-kernel equality alone is not substituted."
+    },
+    {
+      "topic": "Smith count including torsion",
+      "result": "PASS",
+      "finding": "Integral invertible row/column operations give q^(m r+sum min(m,a_i)), including m=0, zero rank, empty systems and finite congruence solutions that do not lift. The total Smith defect stays in the constant."
+    },
+    {
+      "topic": "Actual primal and paired modules",
+      "result": "PASS",
+      "finding": "The coordinate modules agree with original W1 and pairedDualFirstOrderDualMatrixSpace; transpose fixes nilpotent coefficient generators. No ambient submodule saturation is silently assumed."
+    },
+    {
+      "topic": "Global skew invariants",
+      "result": "PASS",
+      "finding": "The original even-span property permits cancellation of a t power for each diagonal matrix unit. Commutation forces diagonal entries only; odd characteristic and skewness kill them. Successive coefficient extraction handles the primal first-order representation."
+    },
+    {
+      "topic": "Distinguished invariants",
+      "result": "PASS",
+      "finding": "The exact characteristic-prime N4 condition kills epsilon-prime coefficients, then eta. Its construction remains an input; no characteristic-zero substitute is used."
+    },
+    {
+      "topic": "Auxiliary simple spectrum",
+      "result": "PASS",
+      "finding": "Over the fraction field the full simple-spectrum centralizer is commutative of dimension n. The commuting block projector kills odd coefficients; eta times every centralizer element gives the reverse inclusion. Eigenvalue differences need not be integral units."
+    },
+    {
+      "topic": "Quantifiers and limits",
+      "result": "PASS",
+      "finding": "Constants precede every truncation at the fixed arithmetic point and chosen auxiliary elements. No uniform moving-point defect or full-node completion is claimed."
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_selmer_integral_frontier_invariant_counts.py --offline",
+    "result": "PASS",
+    "polynomial_smith_matrices": 108,
+    "independent_finite_congruence_counts": 540,
+    "zero_integral_kernel_defect_cases": 56,
+    "negative_controls": 5
+  },
+  "independently_read_sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PairedDualFirstOrderDualMatrixSpace",
+      "sha256": "2b3a062361caa5676d914456dd8fb20d52cf83b9ab464d8f8ff14a1663abe1b7",
+      "git_blob_sha1": "83f8696963709ecaa3ea73e3d62e414f309b9a66",
+      "independently_read_ranges": [
+        [
+          203,
+          224
+        ],
+        [
+          288,
+          294
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.EpsilonEtaTensorDual",
+      "sha256": "9fad01de37fdfcf732b37db17993ed9a91fb107481ddc10d5d31e99882e8f14c",
+      "git_blob_sha1": "e5d4ef4baadda82af9421bfdda8ed8c67835aa80",
+      "independently_read_ranges": [
+        [
+          11,
+          41
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.FixBdQZero",
+      "sha256": "db8628986b8f0426c0a276ecc9f8df9851821bac9b96373bdbb8ecbcc1769a45",
+      "git_blob_sha1": "6d1402ae67e7101dc1708de14b00eaeac2df6ced",
+      "independently_read_ranges": [
+        [
+          151,
+          207
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.CommutingMatrixOffdiagZero",
+      "sha256": "e17805d949676037f930e5099796020f80178f2296103547b332a16ccd230509",
+      "git_blob_sha1": "eec69e6fe73ff78df11a2a5418d3b9e3ea47a25a",
+      "independently_read_ranges": [
+        [
+          5,
+          95
+        ],
+        [
+          140,
+          188
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.Rho1MapReductionLevel",
+      "sha256": "6950ed5b1ac680dfb74f5d5491fb419795058b5aae05a2ce96abaeaf7457fa3f",
+      "git_blob_sha1": "299824ea5d8536221a0d3d4cfb476fc975718738",
+      "independently_read_ranges": [
+        [
+          39,
+          91
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.FinrankCentralizerW1Le",
+      "sha256": "833cf232e5ac849d51715ff3d94ad8c1a1264395b74d9fdbaf4087b6633b9fa2",
+      "git_blob_sha1": "edd188a918ffa52c9743f6021e42dbe5c19fbb9e",
+      "independently_read_ranges": [
+        [
+          84,
+          131
+        ]
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-invariant-counts.md",
+      "sha256": "4e2d8f8de4e1be1e3ac25d623b5e029e131547ce40b329503e04cfc0b9676904"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-invariant-counts.tex",
+      "sha256": "d09da46da449bdb3fbc281d507579d9c8fbe92d4a0f99631780e383de5e9f6f8"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-invariant-counts-references.tex",
+      "sha256": "255f7a07aedc2e2ff1636165e6ac47d306ad51817cedb5b8d9a00156b1c15080"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_invariant_counts.py",
+      "sha256": "622e002193cf6908ff5f30b3a62194c8ff3a55da88271b7d9dc19a885df7e5b1"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-invariant-counts.json",
+      "sha256": "2e7071313f451ae018ea9a93965d6e20bc9aad6a6c4add9a87d14d7ba7f3ea42"
+    }
+  ],
+  "limits": [
+    "Human proof review and exact finite checks do not constitute a Lean build.",
+    "The actual point hypotheses, tower detecting count, global duality assembly and patched modules remain separate obligations.",
+    "No whole-node status change is asserted."
+  ]
+}
