@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "reviewed_at_utc": "2026-11-22T19:36:26.055469+00:00",
+  "reviewer": "root, independent of the proof author",
+  "verdict": "PASS",
+  "scope": "The original tensor projection factor (6B)^(2(n+1-k)) and level increase by two, retaining the supplied tensor decomposition.",
+  "audit_groups": [
+    {
+      "topic": "Original algebraic contract",
+      "result": "PASS",
+      "finding": "The shape, level, signed tensor isometries, mutual orthogonality and shifted Casimir scalars match SumIoPr and the original projection theorem. No positive norm isometry of an indefinite inclusion is presumed."
+    },
+    {
+      "topic": "Small off-diagonal energy",
+      "result": "PASS",
+      "finding": "The exact identity 2kappa-c_G-||Lambda||^2 cancels all quadratic parameter terms. Orthogonal weight decomposition gives the required diagonal lower bound. Explicit estimates then prove n times off-diagonal energy <=(B/16)^2 at level <=4n^2+2."
+    },
+    {
+      "topic": "Level transfer",
+      "result": "PASS",
+      "finding": "Projection from the dual standard tensor adds at most sqrt(n) to compact energy; comparison of the shifted lowest-weight scalar gives the target level j+2. Inclusion followed by coordinate contraction adds one further sqrt(n), so every projected component is also at level j+2 in the original module."
+    },
+    {
+      "topic": "Resolvent on the correct finite space",
+      "result": "PASS",
+      "finding": "V is the finite span of the actual projected vector components, invariant under T. D need not preserve V: its weight bounds and the small off-diagonal estimate still give a lower bound for z-T on V, hence the inverse bound. The stated circle separates the two spectral intervals with distance15B/32."
+    },
+    {
+      "topic": "Exponent independent of compact cluster size",
+      "result": "PASS",
+      "finding": "The contour gives the combined compact projection norm18/13. Its eigenspaces have nonnegative indefinite form because their negative coordinates are small. Orthogonality therefore sums the compact cluster once. Polynomial interpolation involves only m exceptional eigenvalues, giving the original exponent2m."
+    },
+    {
+      "topic": "Edge cases and retained inputs",
+      "result": "PASS",
+      "finding": "The estimates include an empty compact cluster and the zero vector. The supplied Pieri tensor decomposition and shifted modules are retained; no existence theorem, Bessel mass identity or degree-normalized lowering scalar is proved by this package."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AbelianVarietyTheory.Definitions.Jets.SumIoPr",
+      "sha256": "68974d4a593807f6264331d5d4fef76a09bda222ce5fb80addf46429846f4155",
+      "git_blob_sha1": "f074801e449e394d499ec97cf4c501dfc6f3415d",
+      "independently_read_ranges": [
+        [
+          16,
+          57
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.UnitaryGlModuleLevelOffDiagNormSqLe",
+      "sha256": "e4a2e0e801b5860fcf70f2f476ffc5034be0cde44b2a9bb8a68d73715bdd31f0",
+      "git_blob_sha1": "2b136090c12602d36b7a83546aba7a67a6cbe417",
+      "independently_read_ranges": [
+        [
+          148,
+          172
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.UnitaryGlModuleProjDualTensorLevelAddTwo",
+      "sha256": "7b40570b32e0bfe880953c3e7b251444c2e76628e894da62a73a32d5a5865bb6",
+      "git_blob_sha1": "7bebdbf30ef9c96a8a794470322dcb76e35587d6",
+      "independently_read_ranges": [
+        [
+          13,
+          43
+        ]
+      ]
+    },
+    {
+      "module": "Development.AbelianVarietyTheory.Proofs.JetHarmonics.SumNormSqProjectionsTensorUnitaryGlLe",
+      "sha256": "0e2ca95a8fba11a2ff2a9e78074d9d54e025248fa911b13345c1b315d9460014",
+      "git_blob_sha1": "5dcafb5583d0084ec0b01b38da43e473c1ccf786",
+      "independently_read_ranges": [
+        [
+          15,
+          44
+        ]
+      ]
+    },
+    {
+      "module": "CompanionTheory.AutomorphicTheory.PieriRules.ThetaBesselIsometries.FamilySetupCayleyMoment",
+      "sha256": "8b1a9cf088b74648c036b623644b349ae387b5a147f274b0decbf4de9f1f0618",
+      "git_blob_sha1": "9f7eaae0d349c16fce01a28b35cf7e2efde8c0ef",
+      "independently_read_ranges": [
+        [
+          134,
+          163
+        ]
+      ]
+    }
+  ],
+  "reproduced_check": {
+    "command": "python scripts/check_global_norm_frontier_tensor_projections.py --offline",
+    "result": "PASS",
+    "exact_checks": {
+      "algebra_and_constants": {
+        "casimir_cancellation": true,
+        "substitution": "n=x+1, B0=10^6*n^7+y, x,y>=0",
+        "coefficient_certificates": [
+          {
+            "inequality": "small_off_diagonal",
+            "degree": 11,
+            "terms": 17,
+            "all_coefficients_nonnegative": true
+          },
+          {
+            "inequality": "off_diagonal_scale",
+            "degree": 7,
+            "terms": 9,
+            "all_coefficients_nonnegative": true
+          },
+          {
+            "inequality": "weight_interval_reserve",
+            "degree": 7,
+            "terms": 9,
+            "all_coefficients_nonnegative": true
+          },
+          {
+            "inequality": "lowest_weight_bound",
+            "degree": 7,
+            "terms": 9,
+            "all_coefficients_nonnegative": true
+          },
+          {
+            "inequality": "projection_sum_constant",
+            "degree": 14,
+            "terms": 24,
+            "all_coefficients_nonnegative": true
+          }
+        ],
+        "exact_circle_and_sign_constants": 6
+      },
+      "projection_models": {
+        "exact_indefinite_projection_models": 10,
+        "exceptional_projection_interpolations": 30,
+        "empty_cloud_models": 2,
+        "scope": "Finite models check the spectral/sign algebra, not existence of the original representations."
+      },
+      "negative_control": {
+        "controls_rejected": 1,
+        "label": "fixed eigenvalue gap and signed isometries without small off-diagonal control",
+        "rank_one_projector_squared_operator_norm": "4245955921/130321"
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "path": "notes/global-norm-frontier-tensor-projections.md",
+      "sha256": "d6e3aaa29b0ac29d16e42ee0467a3ce26bec7ccfc274f97a4e08ec83ad7d1458"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-tensor-projections.tex",
+      "sha256": "ddf1725560c29b80283b03ecd85212ce1392261a3a28c015d1f79d3348f88046"
+    },
+    {
+      "path": "paper/shared/global-norm-frontier-tensor-projections-references.tex",
+      "sha256": "ffc6033dea3879ed30a6f49d188c98bbea0d627cc141cf08ce9518e112754e7b"
+    },
+    {
+      "path": "scripts/check_global_norm_frontier_tensor_projections.py",
+      "sha256": "a4fa1a9a4507f389c6560b2f67ed70b794a557df67875542c7d1a39207a3ff1e"
+    },
+    {
+      "path": "certificates/global-norm-frontier-tensor-projections.json",
+      "sha256": "977d7a0f932181e650f3e5ce26481640b1f41dd48c821a339296bb6b8dea9f07"
+    }
+  ],
+  "limits": [
+    "The original tensor decomposition and representation hypotheses remain supplied data.",
+    "No Bessel measure, formal degree or lowering scalar is renormalized or constructed.",
+    "No Lean build or whole-node completion is claimed."
+  ]
+}

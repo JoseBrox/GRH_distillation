@@ -1,0 +1,220 @@
+\subsection{A quantitative bound for the original tensor projections}
+\label{archimedean-tensor-projections}
+
+The first-length Bessel recursion needs a bound for projections in an
+indefinite tensor product.  An arbitrary such projection can have a
+large norm.  The parameter separation below controls all the closely
+spaced compact parameters together; only the remaining $m$ parameters
+enter the exponent.  This proves the original algebraic projection
+estimate used by that recursion \cite{tensor-projection-source}.
+
+Let $n\ge2$, $1\le k\le n-1$, $m=n+1-k$, and $B\ge10^6n^7$.
+Number coordinates from $0$ to $n-1$, and put
+\[
+ C=\{0,\ldots,k-2\},\qquad N=\{k-1,\ldots,n-1\}.
+\]
+Thus $C$ may be empty and $|N|=m$.  Let $s_a\in\{1,-1\}$, with
+$s_a=1$ for $a\in C$, and let real parameters $\mu_a$ satisfy
+\begin{equation}\label{tensor-projection-shape}
+ \begin{split}
+ \mu_a-\mu_b&\ge2 &&(a<b),\\
+ -B/100\le\mu_a&\le B/8+B/100 &&(a\in C),\\
+ -2B-B/100\le\mu_a&\le-B+B/100 &&(a\in N).
+ \end{split}
+\end{equation}
+Let $H$ be a unitary module on a common smooth domain, with matrix
+units $E_{ab}$ satisfying the usual commutator relations and
+$E_{ab}^*=s_as_bE_{ba}$.  Put
+\[
+ \rho_a=(n-1)/2-a,\qquad
+ (\rho_K)_a=\frac12\bigl(\#\{b>a:s_b=s_a\}
+                         -\#\{b<a:s_b=s_a\}\bigr),
+ \quad \Lambda=\mu+\rho-2\rho_K.
+\]
+The full Casimir acts by
+$c_G=\|\mu\|^2-\|\rho\|^2$.  Set
+$\kappa=\|\Lambda+\rho_K\|^2-\|\rho_K\|^2$.
+The weight $\Lambda$ is dominant within each compact block, so
+$\kappa\ge\|\Lambda\|^2\ge0$.
+
+A vector has level at most $j$ if it belongs to a finite-dimensional
+compact-invariant space on which
+\[
+              \Omega_K\le(\sqrt\kappa+4nj)^2 I
+\]
+and is a finite sum of joint weight vectors of weights $\omega$ with
+$\|\omega-\Lambda\|_1\le j$.  This is the original level condition.
+For fixed $j$ these vectors form a subspace: add the finite compact
+witnesses and use the self-adjoint compact Casimir decomposition.
+
+Give $H^n=(\mathbb C^n)^*\otimes H$ its positive Hilbert norm and
+the separate indefinite form
+\[
+             [x,y]=\sum_a s_a\langle x_a,y_a\rangle.
+\]
+Its tensor action is
+$(E^{\rm ten}_{ab}x)_c=E_{ab}x_c-\delta_{bc}x_a$.
+Retain the original tensor decomposition: unitary modules $H_t$ of
+parameters $\mu-e_t$ and intertwining maps
+\[
+ i_t:H_t\longrightarrow H^n,\qquad p_t:H^n\longrightarrow H_t,
+ \quad p_ti_u=\delta_{tu}I,
+ \quad\sum_ti_tp_t=I.
+\]
+Their images are pairwise orthogonal for $[\ ,\ ]$, and
+$[i_ty,i_ty]=\epsilon_t\|y\|^2$ with $\epsilon_t\in\{1,-1\}$.
+All maps preserve the smooth domains.  No positive isometry of $i_t$
+is assumed.
+
+\begin{theorem}\label{original-tensor-projection-bound}
+For a vector $v$ of level at most $j\le4n^2$, and every coordinate $c$,
+each $p_t(e_c\otimes v)$ has level at most $j+2$ in $H_t$, and
+\[
+             \sum_t\|p_t(e_c\otimes v)\|^2
+                              \le(6B)^{2m}\|v\|^2.
+\]
+\end{theorem}
+
+\begin{proof}
+We first obtain the small off-diagonal estimate which the original
+coarse derivative bound does not by itself supply.  If $u$ has level
+$J\le4n^2+2$, the Casimir energy identity gives
+\[
+ \sum_{a\ne b}\|E_{ab}u\|^2
+   =2\langle u,\Omega_Ku\rangle-c_G\|u\|^2
+                                      -\sum_a\|E_{aa}u\|^2.
+\]
+Joint weight spaces are orthogonal, and hence
+$\sum_a\|E_{aa}u\|^2
+\ge(\|\Lambda\|^2-2\|\Lambda\|_\infty J)\|u\|^2$.
+The large quadratic parameter terms cancel exactly:
+\begin{equation}\label{tensor-projection-cancellation}
+ 2\kappa-c_G-\|\Lambda\|^2
+              =2\langle\mu,\rho\rangle
+                         +2\|\rho\|^2-4\|\rho_K\|^2.
+\end{equation}
+Here $|\rho_a|,|(\rho_K)_a|\le n/2$, $|\mu_a|\le3B$,
+$\|\Lambda\|_\infty\le4B$, $\sqrt\kappa\le4nB$, and
+$J\le6n^2$.  Consequently
+\[
+ \begin{split}
+ \sum_{a\ne b}\|E_{ab}u\|^2
+ &\le\bigl((384n^4+51n^2)B+1152n^6+n^3/2\bigr)\|u\|^2\\
+ &\le512n^4B\|u\|^2.
+ \end{split}
+\]
+Since $B\ge10^6n^7\ge131072n^5$, this proves the original estimate
+\begin{equation}\label{tensor-projection-small-offdiagonal}
+          n\sum_{a\ne b}\|E_{ab}u\|^2
+                                \le(B/16)^2\|u\|^2.
+\end{equation}
+Thus we reuse the Casimir identity, but require its explicit
+cancellation against the diagonal energy.
+
+Write $P_t=i_tp_t$.  The compact Casimir on the standard or dual
+standard module is at most $n$.  Tensoring therefore adds at most
+$\sqrt n$ to the square root of a compact energy bound.  A compact
+intertwiner carries only Casimir eigenvalues already occurring in its
+source, whether or not the intertwiner is an isometry.  It follows
+that $p_t(e_c\otimes v)$ has compact energy bounded by
+$(\sqrt\kappa+4nj+\sqrt n)^2$.
+
+The shifted lowest weight is $\Lambda-e_t$, still compact dominant.
+Let its compact scalar be $\kappa_t$.  For $a=\Lambda-e_t$,
+$\kappa_t\ge\|a\|^2$ and
+$\kappa-\kappa_t=2a_t+1+2(\rho_K)_t
+\le2\sqrt{\kappa_t}+n$.
+Therefore $\sqrt\kappa\le\sqrt{\kappa_t}+\sqrt n$.
+The weights in $p_t(e_c\otimes v)$ are $\omega-e_c$, whose distances
+from $\Lambda-e_t$ are at most $j+2$.  This proves its level assertion.
+Applying the inclusion and contracting with a standard coordinate
+adds a second $\sqrt n$ to the compact bound and changes the weight
+to $\omega-e_c+e_a$.  Thus every component of $P_t(e_c\otimes v)$
+has level at most $j+2$ in $H$ as well.
+
+Define the split Casimir by
+\[
+                    (Tx)_a=-\sum_b E_{ab}x_b.
+\]
+It is self-adjoint for the indefinite form.  Expanding the tensor
+Casimir gives $\Omega^{\rm ten}=c_G I+nI+2T$.  On the summand of
+parameter $\mu-e_t$ this proves
+\[
+                   TP_t=\zeta_tP_t,\qquad
+                   \zeta_t=-\mu_t+(1-n)/2.
+\]
+In particular the eigenvalues are distinct and
+$|\zeta_t-\zeta_u|\ge2$ for $t\ne u$.
+
+Fix $x=e_c\otimes v$ and let $V$ be the finite span of $P_tx$.
+It is $T$-invariant, and all its components have level at most $j+2$.
+On such vectors write $T=D+O$, where $(Dy)_a=-E_{aa}y_a$.
+Cauchy--Schwarz in each row and
+\eqref{tensor-projection-small-offdiagonal} give
+\begin{equation}\label{tensor-projection-perturbation}
+                     \|Oy\|\le B\|y\|/16\qquad(y\in V).
+\end{equation}
+The shape inequalities and
+$j+2+3n/2\le17B/800$ show that the joint weight values of $D$
+belong to
+\[
+          [-5B/32,B/32]\quad\hbox{on coordinates in }C,
+ \qquad [31B/32,65B/32]\quad\hbox{on coordinates in }N.
+\]
+The same two intervals contain respectively the $\zeta_t$ with
+$t\in C,N$.  These are bounds on finite sums of orthogonal weight
+vectors; $D$ need not preserve $V$.
+
+On the circle $|z+B/16|=9B/16$, the distance to both intervals is
+at least $15B/32$.  Thus
+\[
+ \|(z-D)y\|\ge15B\|y\|/32,\quad
+ \|(z-T)y\|\ge13B\|y\|/32,\quad
+                            \|Ty\|\le3B\|y\|.
+\]
+The resolvent of $T|_V$ exists on that circle.  Integrating its finite
+eigenspace expansion gives the sum $P_C=\sum_{t\in C}P_t$ and
+\begin{equation}\label{tensor-projection-cloud-bound}
+                         \|P_C|_V\|\le18/13.
+\end{equation}
+This contour identity also follows by integrating the scalar functions
+$(z-\zeta_t)^{-1}$, equal to one for the enclosed eigenvalues and zero
+for the others.  Hence $\|(I-P_C)|_V\|<3$.
+For each $t\in N$, polynomial interpolation now uses only those
+$m$ exceptional parameters:
+\[
+ P_t|_V=
+ \prod_{u\in N\setminus\{t\}}
+          \frac{T-\zeta_u I}{\zeta_t-\zeta_u}(I-P_C)|_V,
+ \qquad \|P_t|_V\|\le3(6B)^{m-1}.
+\]
+
+It remains to use the indefinite form without summing all the compact
+parameters separately.  If $y=P_tx$ and $t\in C$, then on its $N$
+coordinates the eigenvalue equation and the gap of $15B/16$ imply
+\[
+        \|y_N\|\le\frac{16}{15B}\|Oy\|\le\|y\|/15.
+\]
+All negative signs lie among these coordinates.  Therefore
+$[y,y]\ge(1-2/225)\|y\|^2\ge0$.  Orthogonality of the summands gives
+\[
+ \begin{split}
+ \sum_t\|p_tx\|^2
+ &=\sum_t|[P_tx,P_tx]|\\
+ &=[P_Cx,P_Cx]+\sum_{t\in N}|[P_tx,P_tx]|\\
+ &\le\bigl((18/13)^2+9m(6B)^{2m-2}\bigr)\|x\|^2\\
+ &\le(6B)^{2m}\|x\|^2.
+ \end{split}
+\]
+The final inequality uses $1\le m\le n\le B$ and
+$9B+2\le36B^2$.  The argument includes $C=\varnothing$ and $v=0$.
+Since $\|e_c\otimes v\|=\|v\|$, the theorem follows.
+\end{proof}
+
+In the Bessel application $n=2r+k+1$, so $m=2r+2$.  The theorem
+therefore supplies exactly the projection factor
+$(6B)^{2(2r+2)}$ and the level increase by two in the original
+first-length recursion.  Existence of the original tensor
+decomposition, its normalized Bessel lowering scalar, and the original
+mass/isometry input remain separate obligations; the projection
+estimate does not assume or prove those analytic identities.
