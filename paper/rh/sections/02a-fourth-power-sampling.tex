@@ -1,0 +1,102 @@
+\subsection{Arithmetic comparisons at fourth powers}
+\label{rh-fourth-sampling}
+
+The arithmetic choices need be made only at fourth powers. The reason
+is the shape of $G$: every prime ramp is convex, and the only concave
+term is $-x\log x$. If $1\le u<v$, and $\ell_{u,v}G$ is the affine
+function agreeing with $G$ at $u,v$, then
+\begin{equation}\label{rh-fourth-chord}
+ G(x)\le\ell_{u,v}G(x)+\frac{(v-u)^2}{8u}
+       \qquad(u\le x\le v).
+\end{equation}
+Indeed the ramps lie below their chords, the linear correction has
+zero error, and the second derivative of $-x\log x$ is $-1/x$.
+Its excess above its chord is at most
+$(x-u)(v-x)/(2u)\le(v-u)^2/(8u)$.
+
+Fix $N\ge2$, $b>1$, $h\ge0$, and $1/2<\theta<1$. Put
+\[
+ Y=N^4,\qquad L=\lceil N^b\rceil,\qquad
+ K=\lceil e^{h/4}L\rceil,\qquad x_k=k^4.
+\]
+Suppose real numbers $B_k$, $N\le k\le K$, satisfy $G(x_k)\le B_k$.
+Let $P_B$ be the continuous affine interpolant of these values: on
+$[x_k,x_{k+1}]$, it equals
+\[
+ P_B(t)=\frac{x_{k+1}-t}{x_{k+1}-x_k}B_k
+                  +\frac{t-x_k}{x_{k+1}-x_k}B_{k+1}.
+\]
+For $N\le n\le L$, form the signed averages
+\begin{equation}\label{rh-fourth-rows}
+ \beta_n=\frac1h\int_0^hP_B(x_ne^v)\,dv\quad(h>0),
+ \qquad \beta_n=B_n\quad(h=0).
+\end{equation}
+Each row is a convex combination of the supplied values. Its weights
+are obtained by integrating the two nonnegative affine coefficients
+on each cell $N\le k<K$; they sum to one. The endpoint $K$ is included,
+so every argument up to $e^hL^4$ is covered, also when $e^{h/4}L$
+is an integer.
+
+Let $J_\beta$ interpolate the values $\beta_N,\ldots,\beta_L$
+affinely, and define
+\begin{equation}\label{rh-fourth-cost}
+ S^{(4)}(N)=\sum_{n=N}^{L-1}\int_{x_n}^{x_{n+1}}
+                    (J_\beta(x))_+x^{-1-\theta}\,dx.
+\end{equation}
+This is a finite calculation from the table. If a cell's affine
+function is $s x+t$ and is positive on the interval with endpoints
+$u,v$, its contribution is
+\[
+ \frac{s(v^{1-\theta}-u^{1-\theta})}{1-\theta}
+             +\frac{t(u^{-\theta}-v^{-\theta})}{\theta}.
+\]
+An empty positive interval contributes zero, and the only possible
+interior endpoint is $-t/s$. Thus cancellation is retained within
+each average and between adjacent row values.
+
+For $u>0$ put $d_u=(e^u-1)/u$, and set
+\[
+ \kappa_h=\begin{cases}1,&h=0,\\d_h+d_{h/2},&h>0,\end{cases}
+ \qquad\delta=\theta-\tfrac12.
+\]
+\begin{theorem}[A finite criterion at fourth powers]\label{rh-fourth-theorem}
+The supplied comparisons imply
+\begin{equation}\label{rh-fourth-estimate}
+ \int_Y^{Y^b}(\mathcal A_hG(x))_+x^{-1-\theta}\,dx
+ \le S^{(4)}(N)+\frac{81}{8}\kappa_h\frac{Y^{-\delta}}\delta.
+\end{equation}
+\end{theorem}
+\begin{proof}
+For $a=n^4$, $c=(n+1)^4$, $n\ge2$, the cell length
+$\Delta=c-a$ satisfies $\Delta\le9n^3$, so
+$\Delta^2/a\le81n^2$. Equation~\eqref{rh-fourth-chord} gives
+\[
+ G(t)\le P_B(t)+\frac{81}{8}\sqrt t
+                         \qquad(Y\le t\le K^4).
+\]
+For $h>0$, averaging at $x_n$ therefore gives
+$\mathcal A_hG(x_n)\le\beta_n+(81/8)d_{h/2}\sqrt{x_n}$.
+On a cell $[a,c]$, apply \eqref{rh-fourth-chord} to
+$[ae^v,ce^v]$. Its excess is at most $e^v\Delta^2/(8a)$,
+and its interpolation parameter is unchanged. After averaging,
+the excess of $\mathcal A_hG$ above its endpoint interpolant
+is at most $(81/8)d_h\sqrt x$.
+Concavity of $\sqrt x$ bounds the interpolated endpoint errors
+by $(81/8)d_{h/2}\sqrt x$. Hence
+\[
+ \mathcal A_hG(x)\le J_\beta(x)+\frac{81}{8}\kappa_h\sqrt x.
+\]
+For $h=0$, this follows directly from the chord estimate, with no
+averaging error at the nodes. Take positive parts and integrate.
+Since $L^4\ge Y^b$, only the nonnegative table cost is enlarged.
+The error is at most $(81/8)\kappa_h\int_Y^\infty x^{-1-\delta}\,dx$,
+which proves the formula.
+\end{proof}
+
+For each fixed accuracy, the error tends to zero. Consequently
+Corollary~\ref{rh-averaged} applies whenever the tables exist on an
+unbounded set of integers $N$, their cost has
+$\liminf\log(1+S^{(4)}(N))/\log N=0$, and the fixed exponents
+$\theta$ tend to $1/2$ through the accuracy stages. There are
+$K-N+1=O_h(Y^{b/4})$ comparisons. Each still requires its compatible
+arithmetic data; no measurable choice over a real interval is needed.

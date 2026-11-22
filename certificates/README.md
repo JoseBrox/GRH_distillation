@@ -10,6 +10,32 @@ The manifest fixes the repository, commit, path, and expected Git blob hash. The
 
 This is a **source-file integrity check**. It is not a Lean build, a kernel certificate, a complete dependency audit, or a certificate of GRH. The optional lexical inventory applies only to the listed files and includes comments.
 
+## Fourth-power, determinant and integer comparisons
+
+The [continuation review](continuation-review-2026-11-22.json) records
+independent mathematical reviews, exact artifact hashes and their scope.
+The accompanying supplemental checks are reproduced with:
+
+```sh
+python scripts/check_fourth_power_sampling.py
+python scripts/check_geometric_flat_determinant.py
+python scripts/check_rh_selmer_resultant.py
+python scripts/check_rh_selmer_valuation_frontier.py
+python scripts/check_flat_family_finite_place_frontier.py
+```
+
+They check the interpolation and endpoint algebra, bounded pinned source
+passages, determinant normalization, exact resultants and the exceptional
+prime factors in the common-divisor bound. Finite checks supplement the
+written universal proofs. The reviewed reductions do not supply the
+remaining arithmetic construction or complete an existing proof-map node.
+
+The two frontier checks also record the exact source hypotheses at the
+remaining arithmetic and geometric comparisons. The
+[integration record](continuation-integration-2026-11-22.json) separately
+records the recovered classical proofs, final manuscript builds, page
+review and current diagram checks.
+
 ## Exponent calculations
 
 `exponents.json` contains exact rational evaluations of the two affine exponents in the power argument, their intersection, and the sextic specializations. Reproduce the check with:

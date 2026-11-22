@@ -2,6 +2,43 @@
 
 These are mathematical reductions and comparisons. Their proofs are in [the paper](../paper/main.pdf); none establishes the missing arithmetic input for a complete proof of GRH.
 
+## Arithmetic comparisons at fourth powers
+
+The exact shape of the corrected prime sums improves finite sampling from
+squares to fourth powers. On a window from Y to its b-th power, only order
+\(Y^{b/4}\) arithmetic comparisons are needed. Convexity of the prime
+ramps and the known concave correction give an upper interpolation error
+of square-root order for zeta, with one additional logarithm for a general
+positive character combination. Its weighted tail tends to zero. Positive
+averaging and signed interpolation occur before the positive part is taken.
+See the [complete argument](../notes/fourth-power-sampling.md) and the
+[short RH proof](../paper/rh/sections/02a-fourth-power-sampling.tex).
+
+## Exact geometric and arithmetic comparisons
+
+The [determinant-line argument](../notes/geometric-flat-determinant.md)
+identifies the degree difference of the prescribed conjugate eigenlattices
+and cancels the different/conductor correction exactly. Conditional on the
+flat-family and CM-period input, the cost is half the signed rank difference
+times the period. The separate tangent-slope condition is now supplied by
+the [classical theta construction](../paper/shared/moret-bailly-tangent.tex).
+The actual flat-family, cusp and finite section estimates remain open.
+
+The [character-degree argument](../paper/shared/frobenius-character-degree.tex)
+reduces the finite-place degree calculation to the Hodge and conjugate
+filtrations and a composition series. It retains multiplicities at ramified
+coefficient primes. The actual boundary model still has to supply the
+filtrations and the required local freeness; the
+[geometric continuation](../notes/flat-family-finite-place-frontier.md)
+identifies those precise obligations.
+
+The [resultant theorem](../notes/rh-selmer-resultant.md) constructs a nonzero
+integer with simultaneous coefficient-prime valuation bounds and an explicit
+size estimate. When two auxiliary integers bound the same Selmer orbit,
+a corrected greatest common divisor replaces their product. The two
+exceptional-prime factors remain. This improves the precise bound without
+asserting a uniform saving or supplying the trace-to-Selmer comparison.
+
 ## Averaging the final estimate over scale
 
 The final analytic argument needs only a weighted positive-part integral on

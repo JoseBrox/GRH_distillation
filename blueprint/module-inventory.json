@@ -54,9 +54,11 @@
       "package": "analytic_criterion",
       "role": "primary",
       "status": "recovered",
-      "source_sha256": "805a4937e8596e0673275139e0df31a866990a92a6bdd423e80a7697f0700455",
+      "source_sha256": "10ab770316a99fa36a252ee296f639a7046e93bd1319d3eae78aa89a4ced96a4",
       "included_proof_sources": {
-        "paper/shared/finite-sampling.tex": "cf2b7fe425881146bbb47bc920bd93d373ec0d373b10b042f0118017f53a79da"
+        "paper/shared/finite-sampling.tex": "cf2b7fe425881146bbb47bc920bd93d373ec0d373b10b042f0118017f53a79da",
+        "paper/shared/square-grid-sampling.tex": "dfe970ea4dd2b6c60bd632505afd17332d011dbddfdfe1d37f76d348b722395c",
+        "paper/shared/fourth-power-sampling.tex": "27545fa12cf2b912b3aae4724817f9dafab33a0dc6b60173fc0e72aeb90b22d0"
       },
       "labels": [
         "sec:one-sided",
@@ -79,7 +81,23 @@
         "shared-discrete-average",
         "shared-integer-table",
         "shared-integer-bound",
-        "shared-finite-criterion"
+        "shared-finite-criterion",
+        "shared-square-sampling",
+        "shared-square-derivative",
+        "shared-square-table",
+        "shared-square-bound",
+        "shared-fourth-powers",
+        "shared-fourth-constants",
+        "shared-fourth-chord",
+        "shared-fourth-chord-bound",
+        "shared-fourth-grid",
+        "shared-fourth-rows",
+        "shared-fourth-hats",
+        "shared-fourth-cost",
+        "shared-fourth-theorem",
+        "shared-fourth-estimate",
+        "shared-fourth-nonnegative",
+        "shared-fourth-criterion"
       ],
       "placement": "preferred exposition"
     },
@@ -220,13 +238,17 @@
       "package": "slope_assembly",
       "role": "primary",
       "status": "recovered",
-      "source_sha256": "c66f7c6a2eb9e3b92e3da61c07f6a086a12750f95fc5c1811ac9ac412787489d",
+      "source_sha256": "9e903e46065266c983dbf6d5613917e802fbb983f672d89eddd6f450d1c0f805",
       "included_proof_sources": {
         "paper/shared/period-bessel.tex": "314ff8d72cc3cd6f8ee95e1040ea6590d534fa890bb11d80cbe93836611a2b11",
         "paper/shared/trace-slope.tex": "a9aa0a2a81589084d0d5edccce83caf3cb8526336c03f7fcd654dd8bd457b00b",
+        "paper/shared/code-rate-trace.tex": "01a7a77e97943a22f6b8b417e18f1840270edd3cf315bbce3dc073eb8cecc17e",
         "paper/shared/tower-intersection.tex": "807229e7fac1474d6959c062b399f6e0339521a65591e753f1d35c561c42e91f",
         "paper/shared/base-test-height.tex": "05b5ddef4d271e54bd16561879d00abf74f35d248ce293481c731c0e9aa5702d",
-        "paper/shared/selected-tangent-bound.tex": "4f3efb0b526fa5c045d2c07a531019268adb17d6be81b21b23fc54e14df0fa40",
+        "paper/shared/selected-tangent-bound.tex": "ea56c36fb5fb92ebf6d4eb1874e3e0d955c50069df75b1077a037589ba663163",
+        "paper/shared/moret-bailly-tangent.tex": "55c0780285af96b825ee4fad8897d490eba22d3bc1cd2e93d9b047610613ebf1",
+        "paper/shared/flat-determinant-comparison.tex": "420089f6f6c27895813b771ac8c79853668d041ea9d4859cecf105e745231ea3",
+        "paper/shared/frobenius-character-degree.tex": "3d437d1aa1a840f8cc0ce476f5505b1abe7d3689efcfc385d742fd139ac5c378",
         "paper/shared/period-comparison-limits.tex": "9c7a0715b4244dba7963a6e30b6c5625397f3ea19a1a29f2b748b5e21a1a4a74"
       },
       "labels": [
@@ -282,6 +304,9 @@
         "shared-trace-source-only",
         "shared-trace-spectrum",
         "shared-trace-spectrum-identity",
+        "shared-code-trace",
+        "shared-code-trace-bound",
+        "shared-code-height-separation",
         "cs-orthogonal-cut",
         "cs-exceptional-budget",
         "cs-polynomial-exceptional",
@@ -351,6 +376,15 @@
         "geo-theta-jet-bound",
         "geo-exact-jet-cost",
         "geo-logarithmic-tangent-line",
+        "geo-classical-tangent-slope",
+        "geo-classical-tangent-twelve",
+        "geo-theta-ltwo-supplier",
+        "geo-theta-sup-supplier",
+        "geo-flat-determinant-bridge",
+        "geo-exact-conjugate-degree",
+        "geo-signed-signature-budget",
+        "geo-frobenius-character-degree",
+        "geo-hodge-conjugate-sequences",
         "shared-period-comparison-limits",
         "shared-period-redundancy",
         "shared-period-chirp",
@@ -735,9 +769,11 @@
       "package": "coarse_cohomology",
       "role": "primary",
       "status": "cited",
-      "source_sha256": "3c7e3dcf17d87867af44feda605ba8d309ebeb3a18e7ed9ccff8b1e01ea84e48",
+      "source_sha256": "cc5f203e9579f4c64695b40c8e1248eaea54741de0a6f98c1d8bb4c3ad808e5a",
       "included_proof_sources": {
-        "paper/shared/selmer-reductions.tex": "3dc0fcdd83042eb015ce44d15af9e76de8616293d7afe51ed4941896d1f71618"
+        "paper/shared/selmer-reductions.tex": "3dc0fcdd83042eb015ce44d15af9e76de8616293d7afe51ed4941896d1f71618",
+        "paper/shared/rh-selmer-product.tex": "96e68d5ed3f3c813b9c40fc59bcd97b4eec67aeada31f20c3d253c8cd2eea307",
+        "paper/shared/selmer-resultant.tex": "2a3e649f507a706d65786985eeb55f4d627561561602293ec51f68135b208471"
       },
       "labels": [
         "kt-section",
@@ -747,7 +783,19 @@
         "shared-selmer-finite",
         "shared-selmer-finite-support",
         "shared-prime-twist-count",
-        "shared-twisted-selmer-budget"
+        "shared-twisted-selmer-budget",
+        "shared-rh-selmer-product",
+        "shared-rh-selmer-projectors",
+        "shared-rh-integral-product",
+        "shared-rh-relative-selmer",
+        "shared-rh-selmer-allowance",
+        "shared-rh-supplied-cases",
+        "shared-rh-residual-budget",
+        "shared-rh-product-target",
+        "selmer-resultant",
+        "selmer-resultant-certificate",
+        "selmer-common-divisor",
+        "selmer-corrected-gcd"
       ],
       "placement": "preferred exposition"
     },

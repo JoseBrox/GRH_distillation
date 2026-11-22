@@ -116,10 +116,25 @@ tangent lattice with its exact metric. Together these arguments prove
 the required tangent-slope bound with absolute constant 12. The
 [remaining point-height comparison](remaining-point-height-comparisons.md)
 also supplies the finite-prime allowance with constant 16 at the eventual
-scales and the scalar period bound. The same-lattice determinant comparison,
-signed cusp mean and independent finite section estimate remain. Grouping
+scales and the scalar period bound. The
+[same-lattice determinant bridge](geometric-flat-determinant.md) now has
+a direct proof using algebraic frame covariance, local Gram and lattice
+norms, flat base change and the product formula. The different/conductor
+correction cancels exactly. Conditional on the actual flat-family and CM
+evaluation, the signed total is `(2R-n) P_E/2`, independent of toric rank
+in constant signature. The flat-family and CM evaluation, signed cusp
+mean and independent finite section estimate remain. Grouping
 eigenspaces does not permit replacing the unramified host by the ramified
 quadratic field; see the [host obstruction](quadratic-host-descent-obstruction.md).
+
+The finite-place comparison now has a shorter
+[character-degree proof](flat-family-finite-place-frontier.md): the Hodge
+and conjugate filtrations force degree zero under Frobenius, and a
+composition series retains the multiplicities of a ramified coefficient
+algebra. The actual boundary Hodge lattice must still supply these
+filtrations and local freeness over the relevant coefficient factor.
+Identifying that lattice and proving constant normalized vertical order
+are the next geometric steps; complex flatness alone does not supply them.
 
 The preferred [trace slope comparison](one-sided-frame-slope.md) now
 uses one source deficit and one target excess, both measured by the
@@ -235,6 +250,24 @@ so a nonzero Bernoulli-value formula does not supply the missing order
 bound. A valid substitute must retain its regulator or integral
 comparison and growing-family uniformity.
 
+The [resultant construction](rh-selmer-resultant.md) supplies the elementary
+integer in the nonresonant orbit estimate with full integrality,
+nonvanishing, simultaneous valuation domination and an explicit size
+bound. Two auxiliary integers bounding the same orbit may be replaced
+by their corrected greatest common divisor; the exceptional-prime factors
+are retained. This is a sharper exact bound, not a proved uniform saving
+for the actual integers. The trace-to-Selmer deformation comparison and
+the remaining cases are still required.
+
+The [arithmetic frontier](rh-selmer-valuation-frontier.md) now locates the
+missing bridge in the integral negative-weight deformation comparison.
+Two exact examples rule out shortcuts from the currently available
+hypotheses: trace classes alone allow a corrected common divisor whose
+logarithm is linear in the twist, and a finite weight-zero algebra with
+rigid generic fibre can still hide arbitrary integral negative-weight
+torsion. These are limitations of those hypotheses, not counterexamples
+to the actual automorphic construction or to its desired Selmer estimate.
+
 ## Scalar acceptance conditions
 
 The [scale-averaged criterion](scale-averaged-criterion.md) weakens the
@@ -275,13 +308,24 @@ arguments. Its positive averaging coefficients preserve the signed
 budget, and its interpolation error tends to zero for every exponent
 strictly above one half. On a window from Y to its b-th power it reduces
 the table size from order \(Y^b\) to order \(Y^{b/2}\), without changing
-the analytic target.
+the analytic target. The preferred
+[fourth-power refinement](fourth-power-sampling.md) uses the actual convex
+ramps and concave correction rather than only a derivative bound. It
+reduces the table size further to order \(Y^{b/4}\). Positive affine
+averages retain signed cancellation even between adjacent rows. The
+interpolation tail tends to zero, with no logarithmic factor for zeta or
+any nonnegative arithmetic kernel. The RH manuscript gives the shorter
+zeta proof; the GRH manuscript gives the general character-combination
+theorem. Neither changes the existing node totals.
 
 ## Next mathematical work
 
 1. **Geometric core (W10).** Use the now supplied tangent-slope estimate
-   on the prescribed lattice. Independently reconstruct the conjugate
-   eigenspace determinant comparison, retain the exact selected abelian
+   on the prescribed lattice and the explicit determinant bridge.
+   Identify the actual boundary Hodge lattice, its two filtrations and
+   coefficient freeness at ramified primes, then reconstruct its
+   constant finite order and CM evaluation;
+   retain the signed signature difference and exact selected abelian
    rank, and supply the signed cusp mean and independent finite
    section-rank/surplus estimate. The scalar prime and period bounds
    are already supplied; they are not the remaining geometric gap.
@@ -291,9 +335,12 @@ the analytic target.
    cost, carrying actual restrictions and arithmetic heights throughout.
    Pairwise matrix bounds do not automatically improve to a linear trace bound.
 3. **Cohomology and assembly (W04/W02/W11).** Quantify the finite weighted
-   Selmer sum on the actual twisted places, retaining the integral local
-   comparisons and surviving character cases. Assemble the signed finite
-   integer tables on arbitrarily late intervals, with all exponent losses
+   Selmer product on the actual twisted places, retaining the integral local
+   comparisons and surviving character cases. The elementary resultant
+   supplier does not prove the trace-to-Selmer estimate: reconstruct the
+   negative-weight cocycle comparison and graded upper-length bound with
+   their automorphy and rigidity hypotheses. Assemble the signed
+   finite fourth-power tables on arbitrarily late intervals, with all exponent losses
    and constants fixed at each accuracy.
 
 The [RH program](../blueprint/rh/program.md) is the shorter first case.
@@ -359,11 +406,12 @@ checks. Certificates distinguish source-byte identity, written proof review,
 finite verification and unresolved construction hypotheses. Important early
 results are already committed; the polished integrated checkpoint includes
 updated TeX, compiled PDFs and regenerated proof maps.
-The [current integration record](../certificates/rh-continuation-review.json)
-ties the reviewed arguments and inspected pages to their exact artifacts;
-the [offline integrity check](../certificates/rh-continuation-integrity.json)
-verifies the new source excerpts, current notes and compiled-document inputs.
-Earlier certificates retain their original snapshot scopes.
+The [current mathematical review](../certificates/continuation-review-2026-11-22.json)
+ties the newly reviewed arguments to their exact artifacts. The
+[integration record](../certificates/continuation-integration-2026-11-22.json)
+records the recovered proofs, manuscript inputs, built PDFs and inspected
+pages. Source-byte integrity, exact finite checks and mathematical review
+remain separate. Earlier certificates retain their original snapshot scopes.
 
 ```sh
 python scripts/source_excerpt.py --atlas --source Main --search theorem

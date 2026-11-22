@@ -24,7 +24,7 @@
         },
         {
           "path": "paper/shared/fourth-power-sampling.tex",
-          "sha256": "315b9c7b9bec68837a283e7a40a360eb5b19fbd95cf837e554cc9da997c06b3a"
+          "sha256": "27545fa12cf2b912b3aae4724817f9dafab33a0dc6b60173fc0e72aeb90b22d0"
         },
         {
           "path": "scripts/check_fourth_power_sampling.py",
@@ -32,7 +32,7 @@
         },
         {
           "path": "certificates/fourth-power-sampling.json",
-          "sha256": "2aa2462167dc147d5905614c0dead997eff2666fd68e0e87f354e6f4ef9a5a4b"
+          "sha256": "0df9d74f1f8454a06ba000d9aaf7f4cf7ae0297cb452a6d7e4e29b02d6193b06"
         }
       ]
     },
@@ -99,6 +99,67 @@
           "sha256": "0c54b4e3dd6b56faeaa43a94740bcccb5d673096ed45a9c8b897395cb705f9dd"
         }
       ]
+    },
+    {
+      "id": "frobenius-character-degree",
+      "reviewers": [
+        "root",
+        "finite_window_audit"
+      ],
+      "status": "passed",
+      "checked": [
+        "Correct coefficient-only Frobenius action and finite-orbit degree recursion",
+        "Artin-factor composition length and explicit coefficient-freeness hypothesis at ramified primes",
+        "Nilpotent diagnostic with its unsaturated torsion and stated limited scope",
+        "Bounded pinned source chain; actual boundary Hodge and finite-order suppliers retained"
+      ],
+      "artifacts": [
+        {
+          "path": "notes/flat-family-finite-place-frontier.md",
+          "sha256": "c3730423a619541d79b2a26a4856f64cac2c38c8ad0bb962def0e963e6cfc593"
+        },
+        {
+          "path": "paper/shared/frobenius-character-degree.tex",
+          "sha256": "3d437d1aa1a840f8cc0ce476f5505b1abe7d3689efcfc385d742fd139ac5c378"
+        },
+        {
+          "path": "scripts/check_flat_family_finite_place_frontier.py",
+          "sha256": "df42647ae7aa5fbbbc33fd458170d2785791194e5c2eaa0ba8b52b4e7b00c5cf"
+        },
+        {
+          "path": "certificates/flat-family-finite-place-frontier.json",
+          "sha256": "1b5c96000072868b3f0e0102b41cc8f355b82526aa958ed3bbc73d98770f56e4"
+        }
+      ]
+    },
+    {
+      "id": "rh-selmer-valuation-frontier",
+      "reviewers": [
+        "root",
+        "finite_window_audit",
+        "geometric_frontier"
+      ],
+      "status": "passed",
+      "checked": [
+        "Fixed auxiliary and coefficient primes with a common twist and trace-class conditions",
+        "Linear logarithmic corrected-gcd lower bound and explicit exclusion of actual automorphic spectra",
+        "Finite flat weight-zero algebra and rigid generic fibre with arbitrary integral negative-weight torsion",
+        "Strict negative-weight cocycle comparison and graded upper-length hypotheses retained"
+      ],
+      "artifacts": [
+        {
+          "path": "notes/rh-selmer-valuation-frontier.md",
+          "sha256": "aa158ae9be9c4f308a40867a0260ca75756fe3e93bd91d1b2d433bf1c918bb63"
+        },
+        {
+          "path": "scripts/check_rh_selmer_valuation_frontier.py",
+          "sha256": "4fd47c9c0aa0c45e58e3c0acf580de11bf2de071fe527ed5f793fd3ab85fd7fd"
+        },
+        {
+          "path": "certificates/rh-selmer-valuation-frontier.json",
+          "sha256": "2b685197f856804bb5f7e9c8f85f3fbcf22c26f55f8cbad965989b870b4d024c"
+        }
+      ]
     }
   ],
   "corrections_during_review": [
@@ -109,7 +170,9 @@
   "automated_checks_rerun_by_root": [
     "scripts/check_fourth_power_sampling.py",
     "scripts/check_geometric_flat_determinant.py",
-    "scripts/check_rh_selmer_resultant.py"
+    "scripts/check_rh_selmer_resultant.py",
+    "scripts/check_rh_selmer_valuation_frontier.py",
+    "scripts/check_flat_family_finite_place_frontier.py"
   ],
   "node_counts": {
     "rh": {
@@ -122,10 +185,11 @@
     }
   },
   "new_existing_nodes_completed": [],
-  "manuscript_integration": "The reviewed TeX fragments are checkpointed; compilation and route integration are recorded separately when complete.",
+  "manuscript_integration": "The positive mathematical reductions are included directly in the appropriate manuscripts; detailed integration and visual review are recorded in certificates/continuation-integration-2026-11-22.json.",
   "limits": [
     "The retained open arithmetic, geometric and analytic inputs are not supplied by these reductions.",
     "Finite exact checks supplement the general written proofs.",
-    "Earlier source-wide import verification is preserved historical evidence, not newly rerun."
+    "Earlier source-wide import verification is preserved historical evidence, not newly rerun.",
+    "The synthetic counterexamples concern the stated weak hypotheses; no counterexample to actual Selmer estimates, automorphic families or the prescribed geometric model is claimed."
   ]
 }

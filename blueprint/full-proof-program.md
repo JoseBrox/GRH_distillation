@@ -4,7 +4,7 @@ A proof-wide work program traced from the pinned source endpoint. Complete sourc
 
 ## Preferred target
 
-One compatible arithmetic construction at the finitely many sampled integers of each chosen interval, with a signed finite-table bound whose weighted positive part has subpower growth at exponents tending to one half. The continuous averaged criterion remains available.
+One compatible arithmetic construction at each required fourth-power argument of every chosen interval, with a signed finite-table bound whose averaged and interpolated positive part has subpower growth at exponents tending to one half. The continuous averaged criterion remains available.
 
 The complete coherent-family route remains an available supplier. Its separate Galois-construction supplier is replaced in the preferred route by the fully compared classical theorem; independent theta and geometric obligations are retained.
 
@@ -62,9 +62,12 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Finite arithmetic tables | Proved: integer interpolation replaces a measurable family of arithmetic choices by finitely many comparisons per interval. |
 | Qualitative cohomological finiteness | Supplied by classical global duality and finite even K-groups, including the prime 2; finite all-prime support follows for each fixed host and twist range. |
 | Smaller congruence budget | Proved reduction to the actual twisted residue primes and their place fractions; RH omits the empty odd-order character branch. |
-| Selected tangent degrees and theta jets | Proved conditional two-case degree comparison, exact abelian rank and shorter integral-jet proof with a smaller tensor exponent; actual theta integrality and norm suppliers remain. |
+| Selected tangent degrees and theta jets | Proved selected-degree comparison and short jet determinant argument; classical Moret--Bailly theta sections and the matrix lemma now supply tangent-slope constant 12 in the prescribed metric. Flat-family/CM evaluation, cusp and finite section estimates remain. |
 | Limits of pairwise norm estimates | Exact examples identify the additional global input needed by trace bounds; the valid refined-energy alternative is retained. |
-| Absolute Siegel without a new geometric hypothesis | Supplied by the precise classical minimum theorem and elementary line principalization in the prescribed metric; the theta section construction remains open. |
+| Absolute Siegel without a new geometric hypothesis | Supplied by the classical minimum theorem and elementary line principalization in the prescribed metric; its theta section inputs are now supplied by the same-model Moret--Bailly comparison. |
+| Fourth-power arithmetic tables | Proved: the exact ramp shape permits O(Y^(b/4)) constructions on [Y,Y^b], retaining positive averaging and signed interpolation. The ordinary RH proof has no logarithmic interpolation error. |
+| Exact signed conjugate determinant | Proved local-to-global bridge and exact finite correction; conditional on the flat-family and CM input, only half the signature difference multiplies the period. |
+| Resultant and corrected common divisor | Proved integral nonzero simultaneous integer certificate and sharper same-orbit aggregation. No uniform saving or trace-to-Selmer estimate is inferred. |
 
 ## Work packages
 
@@ -105,7 +108,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 <a id="w02"></a>
 ### W02: Compatible constructions with controlled average losses
 
-**Required result.** Construct compatible arithmetic and theta data at the required sampled integers, so that the combined signed normalized discrepancy satisfies the finite-table analytic criterion. The full pointwise source package is a stronger sufficient supplier.
+**Required result.** Construct compatible arithmetic and theta data at the required sampled fourth powers, so that the combined signed normalized discrepancy satisfies the finite-table analytic criterion. The full pointwise source package is a stronger sufficient supplier.
 
 **Quantifiers and uniformity.** For each accuracy, fix the analytic target, exponents and all constants before the intervals grow. Arithmetic choices may vary with the sampled integer and with the interval.
 
@@ -113,7 +116,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Use the direct thick/thin comparison and retain the signed companion. Construct finite tables on arbitrarily late integer windows; bound the weighted positive parts after any fixed local logarithmic averaging. No measurable choice of arithmetic objects is needed on this discrete route.
+**Next concrete task.** Use the direct thick/thin comparison and retain the signed companion. Construct finite fourth-power tables on arbitrarily late windows; bound their signed averaged-interpolation cost. Every sampled construction retains the same-map and same-lattice conditions; no measurable family over a continuum is needed.
 
 **Acceptance conditions:**
 
@@ -157,7 +160,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Prove the quantitative weighted budget on the actual finite twisted support. Keep its ramification-inertia fractions away from generator primes; the generator estimate is already aggregated. For RH, omit the empty nontrivial odd-order character branch, apply the existing complementary-parity and exceptional-prime suppliers with the actual group and local conditions, and use the sharper harmonic prime-twist count.
+**Next concrete task.** Bound the actual weighted Selmer product, retaining the surviving character cases and integral local conditions. Reconstruct the strict negative-weight cocycle-to-model comparison and graded upper-length theorem with their automorphy, rigidity and trace-separation hypotheses. The resultant and corrected common divisor apply only to the same orbit; trace classes alone do not give a uniform gcd saving.
 
 **Acceptance conditions:**
 
@@ -169,6 +172,8 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The actual prime support is fixed by the same construction and cannot be selected after observing large Selmer lengths.
 - The empty odd-order character branch is omitted only for target order a power of two; the universal general-character theorem retains it.
 - LitThin is an analytic auxiliary-prime input, not a cohomological estimate.
+- The two auxiliary integers must bound the same orbit before taking their corrected greatest common divisor; retain both exceptional primes.
+- An explicit nonzero resultant and its size bound do not prove the arithmetic inequality linking it to Selmer lengths.
 
 <a id="w05"></a>
 ### W05: Classical Galois representations with the required local conditions
@@ -296,7 +301,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Supply a primitive integral theta section with its mean norm bound and its uniformly bounded integral normalized torsion translates in the prescribed model. The short jet determinant proof then gives the logarithmic tangent bound using a much smaller tensor power. Combine only the selected eigenspace degrees with the signed conjugate imbalance, retaining favorable indices and the exact abelian rank; prove the cusp comparison and independent finite section estimate.
+**Next concrete task.** Use the proved tangent-slope bound and exact determinant bridge. Identify the actual boundary Hodge lattice, its Hodge and conjugate filtrations and local coefficient freeness, retaining ramified multiplicities; then establish constant finite order, CM evaluation, signed cusp mean and the separate finite section-rank/surplus bound.
 
 **Acceptance conditions:**
 
@@ -325,6 +330,8 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 - The selected abelian rank is f(m-r), not fm; a purely toric selected space needs no abelian tangent estimate.
 - Very ampleness supplies generic jet rank, while integrality belongs to the undivided leading derivatives of the actual sections.
 - The smaller theta power retains uniform torsion-translate integrality, the primitive determinant norm and the isometric-extension hypothesis. The absolute Siegel comparison is supplied by the classical theorem in the same metric, with an elementary principalization argument.
+- The determinant scalar is algebraic and natural under field embeddings; unrelated local scalars do not supply the product formula.
+- The exact signed conjugate-degree identity requires the actual flat-family and CM-period inputs; the tangent-slope premise remains separate.
 
 <a id="w11"></a>
 ### W11: Weighted slope comparison and the complete average budget
@@ -337,7 +344,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Combine the one-mean degree bounds, finite twisted-place congruence sum and the minimum of the valid trace and refined-energy penalties for the same maps. Use finite integer tables to avoid a measurable family of arithmetic choices. Preserve signed cancellation before local averaging and the positive part.
+**Next concrete task.** Combine the one-mean geometric bound, the actual finite-place Selmer product and valid trace or energy penalties for the same maps. Assemble fourth-power tables and bound their signed averaged-interpolation positive parts. All accuracy parameters remain fixed while the cofinal windows grow.
 
 **Acceptance conditions:**
 
@@ -365,10 +372,10 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W10: prove the primitive theta norm and normalized torsion-translate integrality in the same semistable model; retain the cusp and finite-section requirements
+1. W10: identify the actual boundary Hodge lattice and coefficient freeness, then constant finite order, CM evaluation, signed cusp and finite section estimates; tangent slope and abstract character degree are supplied
 1. W06/W08: construct the nonzero integral maps and bound their calibrated global spectrum or refined energy, with actual divisibility and heights
-1. W04: quantify the finite weighted Selmer sum on the actual twisted support; qualitative finiteness and summability are already supplied
-1. RH and GRH: assemble the signed finite-table budgets at exponents tending to one half
+1. W04: reconstruct the integral negative-weight cocycle and graded upper-length comparisons with actual automorphy and rigidity, then the uniform Selmer product bound
+1. RH and GRH: assemble signed fourth-power tables and meet the positive-part criterion at exponents tending to one half
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
 

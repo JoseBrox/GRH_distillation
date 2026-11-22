@@ -30,10 +30,12 @@ nearby range of scales: this logarithmic average preserves every detecting
 pole. A pointwise upper bound is a stronger sufficient supplier. At each
 accuracy the interval shape and averaging width are fixed before Y varies,
 and the arithmetic comparison holds on the same expanded intervals. The
-[finite-table criterion](../../notes/finite-window-sampling.md) now permits
-independent finite tables of comparisons at integer arguments. This avoids
+[fourth-power criterion](../../notes/fourth-power-sampling.md) now permits
+independent finite tables of comparisons only at fourth-power arguments.
+It uses convexity of the prime ramps and the known concave correction,
+so its interpolation error is of square-root order for zeta. This avoids
 a measurable choice of arithmetic objects over a continuum. The explicit
-integer comparisons are required; they do not follow from an almost-everywhere
+sampled comparisons are required; they do not follow from an almost-everywhere
 bound. Only the total exponent loss must tend to zero. The analytic
 function remains the zeta sum even when auxiliary primes change.
 
@@ -108,8 +110,13 @@ now gives a two-case proof retaining the favorable integral indices and
 only the signed total conjugate imbalance. The exact abelian rank is kept
 separate from the toric rank. A [short theta-jet proof](../../notes/theta-jet-slope-reduction.md)
 reduces the tangent bound to integral theta sections and their uniform
-norms, with a smaller tensor power. These actual geometric suppliers and
-the exact metric comparisons remain to be established. Anchoring a weight entry does not make its sum
+norms, with a smaller tensor power. The
+[classical theta supplier](../../notes/moret-bailly-theta-supplier.md) now
+provides those inputs in the prescribed metric, giving constant 12.
+The [determinant bridge](../../notes/geometric-flat-determinant.md) keeps
+the exact signed signature difference and cancels the finite correction.
+Its actual flat-family and CM evaluation, the cusp term and finite
+section estimate remain to be established. Anchoring a weight entry does not make its sum
 zero or cancel its determinant contribution.
 
 The preferred [slope comparison](../../notes/one-sided-frame-slope.md) now
@@ -166,6 +173,25 @@ Keep the ramification-inertia fractions away from generator primes;
 the latter already have aggregate estimates. The support must be the
 one chosen by the same arithmetic construction.
 
+For the actual RH host, the
+[residual decomposition](../../notes/rh-selmer-residual-budget.md) and
+[integral projectors](../../notes/rh-selmer-product-criterion.md) leave
+one weighted product of orders of finite Selmer direct factors. Its
+quantitative bound remains open. The
+[resultant calculation](../../notes/rh-selmer-resultant.md) supplies the
+elementary integer certificate in one orbit estimate. When two such
+integers bound the same orbit, a corrected greatest common divisor
+replaces their product; both exceptional primes are retained. This
+neither supplies the trace-to-Selmer inequality nor proves a uniform
+saving for the actual integers.
+
+The [next arithmetic bridge](../../notes/rh-selmer-valuation-frontier.md)
+is the integral negative-weight cocycle and graded-model comparison,
+with its actual automorphy and rigidity inputs. A finite weight-zero
+algebra and generic rigidity alone do not bound the missing torsion.
+The same note proves that the trace-class hypotheses alone do not force
+a common-divisor saving smaller than linear growth in the twist.
+
 ## What the pairwise norm bounds do not give
 
 The [exact spectral examples](../../notes/redundant-period-spectrum.md)
@@ -194,10 +220,12 @@ the relevant character phase depends on their difference and is unchanged.
 
 ## Next mathematical work
 
-1. Supply the integral theta sections and their uniform norms for the
-   [short jet argument](../../notes/theta-jet-slope-reduction.md), use the
+1. Use the supplied tangent-slope, determinant and character-degree arguments.
+   Identify the [actual boundary Hodge lattice](../../notes/flat-family-finite-place-frontier.md),
+   including its filtrations and coefficient freeness, and establish its
+   constant finite order and CM degree evaluation. Use the
    [selected degree comparison](../../notes/selected-eigenspace-degree.md),
-   and prove the exact point-height comparison and the cusp/metric hypotheses
+   and prove the point-height comparison and the cusp/metric hypotheses
    in the [base-test supplier](../../notes/base-test-height-supplier.md), then use
    the [tower reduction](../../notes/tower-intersection-reduction.md) and
    [mean-volume supplier](../../notes/mean-volume-supplier.md).
@@ -208,8 +236,9 @@ the relevant character phase depends on their difference and is unchanged.
    normalized global identities and the two trace estimates for those same
    maps. A signed block spectral-tail bound supplies the target estimate;
    retain the independent source estimate and the actual compression costs.
-3. Bound the finite weighted Selmer sum on the actual twisted primes for
-   the growing auxiliary fields. Assemble the signed finite integer tables
+3. Bound the finite weighted Selmer product on the actual twisted primes for
+   the growing auxiliary fields, including the trace-to-Selmer comparison
+   and the surviving character cases. Assemble signed fourth-power tables
    and bound their weighted positive parts on arbitrarily late intervals.
 
 The [GRH program](../grh/program.md) retains the general Dirichlet

@@ -1,0 +1,156 @@
+\paragraph{Classical theta sections supply the tangent estimate.}
+The arithmetic inputs to the preceding jet argument can be supplied on
+the prescribed lattice. The distinction between an even theta level and
+an arbitrary positive level is retained in the parameter choice below.
+
+\begin{theorem}\label{geo-classical-tangent-slope}
+Let $G/\mathcal O_K$ be a smooth separated group scheme of finite type
+with geometrically connected semiabelian fibres and abelian generic
+fibre $A$ of dimension $g\ge1$. Let $\mathcal L_0$ be a symmetric
+cubical line bundle, rigidified at zero, whose generic fibre $L$
+defines a principal polarization. Give it the canonical metric and
+give $V=\operatorname{Lie}(G)$ the metric
+$\|v\|_\sigma^2=\pi H_\sigma(v,v)$, where $H_\sigma$ is the
+Appell--Humbert form of $L$. With ordinary normalized Arakelov degree
+$d=\widehat{\deg}_{\rm n}V$, one has
+\begin{equation}\label{geo-classical-tangent-twelve}
+ \widehat\mu_{\max}(V)
+       \le12\log\bigl(2+g+(-d)_+\bigr).
+\end{equation}
+Here maximal slope is the supremum of the mean degrees of nonzero
+integral submodules with inherited metrics. The bound has the same
+constant after every finite extension of $K$.
+\end{theorem}
+\begin{proof}
+\emph{The same integral lattice and line.}
+The semistable comparison theorem identifies $G$ with the identity
+component of the N\'eron model of $A$, and preserves that identity
+component under finite extension
+\cite[Theorem~4.4 and Corollary~4.5]{conrad-semistable}.
+Thus the identity component of a Moret--Bailly model over an extension
+$K'$ is $G_{\mathcal O_{K'}}$; its tangent module is precisely
+$V\otimes\mathcal O_{K'}$.
+
+The Moret--Bailly extension of the specified $L$ restricts to
+$\mathcal L_0$ on this component. Indeed the divisor of the generic
+rigidified isomorphism is vertical. Locally over a discrete valuation
+ring, the total space is regular and its special fibre is integral,
+so that divisor is a multiple of the special fibre. Pullback at zero
+shows that its multiplicity is zero. Normality extends the isomorphism,
+and generic density makes it unique. Its canonical metrics agree:
+their logarithmic ratio is harmonic on the compact complex torus and
+vanishes at the zero rigidification. No integral index or metric
+change is introduced.
+
+\emph{One integral theta section.}
+In symplectic coordinates with period matrix $\tau$, the squared norm
+on the dual tangent determinant is
+\[
+ \det(\operatorname{Im}\tau)/\pi^g
+  =\frac{i^{g^2}}{(2\pi)^g}\int_A
+        dz_1\wedge\cdots\wedge dz_g\wedge
+        d\bar z_1\wedge\cdots\wedge d\bar z_g.
+\]
+At finite places this is the invariant Hodge line of the same model.
+Consequently the Faltings height in this convention is $h_F(A)=-d$.
+Write $h=(-d)_+$ and $Y=2+g+h$.
+
+For a Moret--Bailly model $\pi:\mathcal A\to\operatorname{Spec}
+\mathcal O_{K'}$, the rank-one module $\pi_*\mathcal L$, with the
+$L^2$ norm for Haar probability measure, has degree
+$-h_F(A)/2-g\log(2\pi)/4$. It is preserved isometrically under
+change of model and finite extension
+\cite[Definition~2.1 and Theorem~3.4(i),(iii)--(v)]{pazuki-theta-faltings}.
+Principalize this rank-one module by the ideal argument used above
+for the absolute Siegel lemma. An integral generator $\theta$ then
+satisfies
+\begin{equation}\label{geo-theta-ltwo-supplier}
+ \operatorname{av}\log\|\theta\|_2
+          \le h/2+g\log(2\pi)/4.
+\end{equation}
+Restriction gives an integral section of the prescribed line bundle.
+
+For every positive even integer $m$, extend the field to contain
+$A[m^2]$ and use a model containing these torsion sections. The normalized
+theta-group maps $[m]^*L\simeq L^{m^2}$ and
+$t_a^*L^{m^2}\simeq L^{m^2}$ extend integrally and isometrically
+\cite[Propositions~2.5 and~5.1]{pazuki-theta-faltings}.
+Representatives $a\in A[m^2]/A[m]$ produce $m^{2g}$ integral
+sections $s_a$ spanning $H^0(A,L^{m^2})$, with
+\[
+ \|s_a(z)\|=\|\theta([m](z+a))\|,
+ \qquad \|s_a\|_{\infty,\sigma}=\|\theta\|_{\infty,\sigma}.
+\]
+The first section remains integral on each new model by model
+independence. The integral spanning assertion is only generic spanning;
+an integral basis of the whole section module is unnecessary.
+
+\emph{A uniform supremum bound.}
+Let $\rho_\sigma$ be the shortest nonzero period in the metric
+$H_\sigma$, and put $r_\sigma=\min(1,\rho_\sigma/2)$.
+The principal period lattice has real $H_\sigma$-covolume one.
+In a Gaussian holomorphic frame centred at any point, the squared
+norm is $|f(w)|^2e^{-\pi H_\sigma(w,w)}$. The ball of radius
+$r_\sigma$ embeds in the torus. Its volume in Haar probability units
+is $\pi^g r_\sigma^{2g}/g!$, so the holomorphic mean-value inequality gives
+\[
+ \frac{\|\theta\|_{\infty,\sigma}^2}{\|\theta\|_{2,\sigma}^2}
+       \le\frac{g!e^{\pi r_\sigma^2}}{\pi^g r_\sigma^{2g}}.
+\]
+Autissier's matrix lemma uses the height
+$h_{\rm Fa}=h_F-g\log\pi/2$. Its corollary at $\varepsilon=1/2$
+gives exactly
+\cite[Corollary~1.4 and the height convention in Section~2]{autissier-matrix}
+\[
+ \operatorname{av}\rho_\sigma^{-2}
+ \le\frac{12}{\pi}h_F+\frac{6g}{\pi}\log(4\pi)
+ \le4h+6g,\qquad
+ \operatorname{av}r_\sigma^{-2}\le24Y.
+\]
+Take logarithms, average, and use Jensen's inequality together with
+$\log(g!)\le g\log g$. Combining with
+\eqref{geo-theta-ltwo-supplier} yields, for
+$M_\sigma=\|\theta\|_{\infty,\sigma}$,
+\begin{equation}\label{geo-theta-sup-supplier}
+ U:=\operatorname{av}\log M_\sigma
+                 \le h/2+5g+g\log Y.
+\end{equation}
+For the constant, it suffices that
+$2+\tfrac12\log24+\tfrac14\log(2\pi)<5$.
+All these averages are unchanged under finite extension.
+
+\emph{Even level and the slope.}
+Set
+\[
+ Z=1+11g+h+2g\log Y,\quad a=\lceil\sqrt Z\rceil,
+ \quad m=6a,\quad k=12a^2,\quad n=m^2=3k.
+\]
+Then $12Z\le k\le48Z$ and $Z\le13Y\log Y$. The level $m$
+is even, so the preceding integral sections apply. In
+\eqref{geo-exact-jet-cost} their number is $n^g$, giving every
+nonzero integral tangent vector the bound
+\[
+ -\operatorname{av}\log\|x\|
+ \le\log k+\tfrac12\log(3e)+\frac{g\log(3k)+2U}{k}
+ \le\frac{13}{12}\log(48Z)+\frac7{12}\log3+\frac12.
+\]
+Here $g+2U_+\le Z$, $Z/k\le1/12$, and $\log(3k)>1$.
+Thus the line bound has coefficient
+\[
+ C_{\rm line}=\frac{13}{6}+\frac{13}{12}\log624
+                              +\frac7{12}\log3+\frac12
+\]
+in front of $\log Y$. Apply the already established absolute Siegel
+comparison, after an isometric finite extension, to each nonzero
+integral submodule. Its additional coefficient is at most $1/2$.
+Since $\log624<7$ and $\log3<2$,
+$C_{\rm line}+1/2<143/12<12$, proving
+\eqref{geo-classical-tangent-twelve}.
+\end{proof}
+
+For selected submodules of total rank $R$, the theorem supplies
+$T\le12R\log(2+g+(-d)_+)$ on these same lattices. In particular
+Proposition~\ref{geo-selected-tangent-sum} applies with $C_s=12$.
+If the abelian rank is zero, the selected degree sum is zero without
+using theta sections. The flat determinant, point-height, cusp and
+finite section-degree comparisons are separate geometric requirements.

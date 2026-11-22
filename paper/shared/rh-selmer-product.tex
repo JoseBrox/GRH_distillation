@@ -1,0 +1,210 @@
+\subsection{The exact remaining Selmer product for RH}
+\label{shared-rh-selmer-product}
+
+For the trivial target character the host can be written
+\[
+ E=E_h=\mathbf Q(\mu_{2^{h+2}})^+(\sqrt{-q},\sqrt{-d}),
+ \quad \Delta=\operatorname{Gal}(E/\mathbf Q),\quad
+ N=2^{h+2}qd,\quad [E:\mathbf Q]=4\cdot2^h.
+\]
+Here \(h\ge0\), and \(q,d\) are the distinct odd primes selected
+by the arithmetic construction. Let \(P\) be its fixed finite set of
+exceptional odd coefficient primes, containing \(3\), with
+\(q,d>\max P\) and \(q,d>2t+1\), where \(t\ge2\) is the twist
+cutoff. For \(p\) odd put \(S_{p,e}=\mathcal S(E,p,e)\),
+\(1\le e<t\), and let \(j\in\Delta\) denote complex conjugation.
+
+The strict condition can equivalently be imposed at every finite place.
+Indeed, outside \(p\), the unramified local group is the quotient of
+\(\mathbf Q_p/\mathbf Z_p(-e)\) by a nonzero Frobenius scalar minus
+one, and this quotient is zero. We use the same full-local definition
+over subfields when \(p\) is odd.
+
+Since \(p\nmid|\Delta|\), the following are commuting integral
+idempotents on \(S_{p,e}\):
+\[
+ C_e=\frac{1+(-1)^e j}{2},\qquad
+ A_H=\frac1{|H|}\sum_{g\in H}g\quad(H\le\Delta).
+\]
+For \(p\in P\), define fixed thresholds and intermediate fields by
+\[
+ f_p=\begin{cases}1,&p\equiv1\pmod4,\\2,&p\equiv3\pmod4,\end{cases}
+ \quad R_p=16p^2 4^{v_2(p^{f_p}-1)},\quad
+ c_p=\max\{c\ge0:2^c<R_p\},
+\]
+\[
+ F_p=\mathbf Q(\mu_{2^{\min(h+2,c_p)}})^+
+                       (\sqrt{-q},\sqrt{-d}),
+ \qquad H_p=\operatorname{Gal}(E/F_p).
+\]
+These fields retain the same \(q,d\); only their cyclotomic layers are
+bounded independently of \(h\). Set
+\begin{equation}\label{shared-rh-selmer-projectors}
+ \Pi_{p,e}=\begin{cases}
+ C_e,&p\notin P,\\
+ C_e(1-A_\Delta),&p\in P,\ e\ge2,\\
+ C_1(1-A_{H_p}),&p\in P,\ e=1,
+ \end{cases}
+ \qquad M_{p,e}=\Pi_{p,e}S_{p,e}.
+\end{equation}
+Every \(M_{p,e}\) is an integral direct factor of a finite group.
+
+\begin{proposition}[Character coefficients and relative growth]
+\label{shared-rh-integral-product}
+Let \(\mathcal O\) be the integers of a finite extension of
+\(\mathbf Q_p\) splitting \(\Delta\), with ramification index
+\(b_{\mathcal O}\). For a character \(\theta\) of \(\Delta\), put
+\(A_{\theta,e}=(\operatorname{Frac}\mathcal O/\mathcal O)
+(\theta^{-1}\varepsilon_p^{-e})\), where \(\varepsilon_p\) is the
+cyclotomic character, and let
+\[
+ \ell(p,e,\theta)=\frac1{b_{\mathcal O}}\operatorname{length}_{\mathcal O}
+ \ker\left(H^1(\mathbf Q,A_{\theta,e})
+       \longrightarrow\prod_{v<\infty}
+         H^1(\mathbf Q_v,A_{\theta,e})\right).
+\]
+Then
+\(\operatorname{length}_{\mathbf Z_p}M_{p,e}\) is the sum of
+\(\ell(p,e,\theta)\) over the following characters:
+\begin{enumerate}
+\item \(p\notin P\): all \(\theta(-1)=(-1)^e\);
+\item \(p\in P,e\ge2\): all nontrivial \(\theta(-1)=(-1)^e\);
+\item \(p\in P,e=1\): the odd characters whose local conductor at
+      \(2\) is at least \(R_p\).
+\end{enumerate}
+The equality is independent of the chosen splitting extension. Moreover,
+\begin{equation}\label{shared-rh-relative-selmer}
+ \#M_{p,1}=\frac{\#\mathcal S(E,p,1)^{j=-1}}
+                  {\#\mathcal S(F_p,p,1)^{j=-1}}\quad(p\in P).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The integral Fourier decomposition is an isomorphism because
+\(|\Delta|\) is a unit in \(\mathcal O\). Its maps commute with
+restriction to every decomposition group. The finite character
+decomposition therefore identifies the kernel of the full localization
+map with the direct sum of the twisted strict kernels, including the
+ramified places. The projector \(C_e\) selects the stated parity,
+\(A_\Delta\) the trivial character, and \(A_{H_p}\) the characters
+factoring through \(F_p\). The quadratic factors have local conductor
+at \(2\) at most \(4\), since their radicands are odd, and
+\(c_p\ge2\). Thus these last characters are precisely those with
+local conductor at \(2\) strictly less than \(R_p\).
+Scalar extension multiplies integral lengths by
+\(b_{\mathcal O}\), which cancels the displayed normalization.
+
+For a Galois extension of degree prime to \(p\), inflation--restriction
+identifies global first cohomology downstairs with the invariant part
+upstairs: positive-degree cohomology of the finite quotient vanishes by
+averaging. Local restriction is injective for the same reason, including
+at ramified places. Thus restriction identifies the strict kernels.
+Apply this to \(E/F_p\) and the commuting parity projector.
+The invariant subgroup is a direct summand, so its order divides the
+numerator in \eqref{shared-rh-relative-selmer}. If \(F_p=E\), the
+quotient equals one.
+\end{proof}
+
+In the usual character partition, the only additionally omitted term
+outside \(P\) is trivial, with \(p-1\mid2e\). Its removal uses the
+separate strict trivial-character vanishing theorem for
+\(p\ge5\), even \(e\ge2\), and \(p-1\mid2e\).
+All its hypotheses hold: \(3\in P\) and trivial-character parity
+forces \(e\) even. Thus \eqref{shared-rh-selmer-projectors} retains
+exactly the three residual character families when that vanishing
+theorem is supplied. It does not require that all trivial-character
+groups vanish. A nontrivial odd-order character cannot occur because
+\(\Delta\) is a \(2\)-group.
+
+\subsection{The supplied remainder and the required allowance}
+\label{shared-rh-selmer-allowance}
+
+Keep the actual prime weights from
+Proposition~\ref{shared-twisted-selmer-budget}, and put \(w_p=0\)
+outside their finite support. Write
+\[
+ \mathcal V=\sum_p w_p\log p\sum_{e=1}^{t-1}
+                  \operatorname{length}_{\mathbf Z_p}\mathcal S(E,p,e),
+ \qquad
+ \mathcal P(w)=\prod_{p\ne2}\prod_{e=1}^{t-1}(\#M_{p,e})^{w_p}.
+\]
+The weighted product is a positive real number; its exponents need not
+be integers. The precise supplied-case hypotheses can be stated without
+character coefficients. Let
+\[
+\begin{split}
+ U_0={}&(\log2)\sum_{e<t}\operatorname{length}_{\mathbf Z_2}
+                       \mathcal S(E,2,e)
+       +\sum_{p\in P}\sum_{\substack{1\le e<t\\2\mid e}}
+                            \log\#\mathcal S(\mathbf Q,p,e),\\
+ U_-={}&\sum_{p\ne2}\sum_{e=1}^{t-1}\log\#((1-C_e)S_{p,e}),
+ \qquad
+ U_{\rm low}=\sum_{p\in P}\log\#\mathcal S(F_p,p,1)^{j=-1}.
+\end{split}
+\]
+Here and below \(\sum_{e<t}\) means \(1\le e<t\).
+Assume that the common-window, opposite-parity and bounded-layer
+estimates, respectively, supply on the same whole interval
+\begin{equation}\label{shared-rh-supplied-cases}
+ U_0\le C_0e^{x^{4\varepsilon/5}}+C_1(t-1),\qquad
+ U_-\le [E:\mathbf Q](t^2+t-2)\log(Nt),\qquad
+ U_{\rm low}\le(Nt)^{C_s},
+\end{equation}
+with fixed nonnegative constants \(C_0,C_1,C_s\). These are explicit
+inputs to the following assembly statement, not consequences of
+qualitative finiteness.
+
+\begin{proposition}[Exact residual budget]\label{shared-rh-residual-budget}
+Under \eqref{shared-rh-supplied-cases},
+\[
+ 0\le\mathcal V-\log\mathcal P(w)\le\mathcal K,
+\]
+where
+\[
+ \mathcal K=C_0e^{x^{4\varepsilon/5}}+C_1(t-1)
+       +(Nt)^{C_s}+[E:\mathbf Q](t^2+t-2)\log(Nt).
+\]
+Fix \(0<\varepsilon<1/52\) and the constants in
+\eqref{shared-rh-supplied-cases} before \(x\) varies. If
+\(t\le x^{400}\), \([E:\mathbf Q]\le8x^{2+8\varepsilon}\), and
+\(\log(Nt)\le2x^{\varepsilon/4}\), then
+\(\mathcal K=o(e^{x^\varepsilon})\) as \(x\to\infty\), uniformly
+on the stipulated windows. With \(y=x^\varepsilon\), \(B_0=fm e^y y\),
+\(f,m\ge1\), \(N_c\ge0\), and a fixed \(C_V>0\), the sufficient
+remaining condition is
+\begin{equation}\label{shared-rh-product-target}
+ \log\mathcal P(w)\le\tfrac12 C_V y(B_0+N_c).
+\end{equation}
+It implies \(\mathcal V\le C_Vy(B_0+N_c)\) eventually.
+\end{proposition}
+\begin{proof}
+The complementary direct factors of \(M_{p,e}\) are exactly the
+opposite-parity part, the rational invariant part for even \(e\) at
+\(p\in P\), and the lower-layer odd part at \(e=1,p\in P\).
+The prime \(2\) is retained separately. Orders multiply in each direct
+sum. Removing the original weights, each between zero and one, bounds
+the remainder by \(U_0+U_-+U_{\rm low}\), proving the first claim.
+
+The opposite-parity contribution is at most
+\(18t^2x^{2+33\varepsilon/4}\), since
+\(t^2+t-2\le9t^2/8\). Also
+\((Nt)^{C_s}\le\exp(2C_sx^{\varepsilon/4})\).
+Every displayed contribution is \(o(e^{x^\varepsilon})\), uniformly
+for \(t\le x^{400}\), with all constants fixed first.
+Finally \(y(B_0+N_c)\ge e^y y^2\); the remainder is eventually
+at most half the stated allowance.
+\end{proof}
+
+For a finite family sharing the same \(E,h,q,d,t\), only the prime
+weights need change. If \(a_i\ge0\), \(\sum_i a_i=1\), and
+\(\overline w_p=\sum_i a_iw_{i,p}\), then exactly
+\[
+ \sum_i a_i\log\mathcal P(w_i)=\log\mathcal P(\overline w).
+\]
+Actual rank factors must enter these averaging weights: for coefficients
+\(u_i d_i\ge0\) with total \(D>0\), use
+\(a_i=u_id_i/D\) and multiply the last equality by \(D\).
+If \(D=0\), the weighted sum is zero before any division.
+The same-host identification, the estimates
+\eqref{shared-rh-supplied-cases}, the integral local comparisons and the
+uniform bound \eqref{shared-rh-product-target} remain necessary.
+Finiteness and this exact product identity do not supply the last bound.

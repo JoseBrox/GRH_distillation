@@ -2,6 +2,27 @@
 
 These results concern deductions from specified estimates. They do not disprove GRH or establish a defect in Alpöge's proof.
 
+## Trace classes and generic rigidity leave integral arithmetic unresolved
+
+The [Selmer comparison audit](../notes/rh-selmer-valuation-frontier.md)
+gives two exact limitations. Two fixed auxiliary primes can have trace
+classes satisfying the elementary resultant hypotheses whose corrected
+common divisor has logarithm growing linearly in the same twist. Thus a
+uniform saving needs additional information about the actual spectra.
+A graded algebra can also have finite flat weight-zero part and rigid
+generic fibre while retaining arbitrarily large integral negative-weight
+torsion. The actual cocycle and graded deformation comparisons remain
+essential; neither example claims to be an automorphic or Selmer model.
+
+## Total degree does not determine a ramified character quotient
+
+A degree-zero bundle with a nilpotent coefficient action can have a
+torsion-free character quotient of negative degree. The
+[explicit example and positive theorem](../notes/flat-family-finite-place-frontier.md)
+show precisely where local freeness over the ramified coefficient factor
+enters the Hodge-filtration argument. The example concerns total degree
+alone and is not asserted to satisfy the two geometric filtrations.
+
 ## A signed long-window mean can hide detecting poles
 
 An exponentially growing cosine can have negative signed integrals on

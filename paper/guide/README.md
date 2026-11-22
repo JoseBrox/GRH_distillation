@@ -13,6 +13,8 @@ flexible final target combines the arithmetic terms with their signs,
 averages nearby scales, and bounds the weighted integral of the positive
 part. The guide explains why that averaging preserves the poles detecting
 zeros.
+Finite tables at fourth powers suffice when their interpolated positive
+weighted cost meets the stated growth condition.
 
 For RH, positivity and translation averaging handle the thick weights,
 and the uniform quasi-RH input controls the thin samples. Short integral
@@ -20,7 +22,9 @@ sections reduce the geometric comparison to one weighted mean height.
 Summing the volume comparison first improves that mean, and the tower
 calculation reduces to a single normalized test intersection. Classical
 height theory identifies the required all-point lower bound and cusp
-correction. Two trace errors control the slope comparison and allow
+correction. Classical theta sections now supply the tangent-slope estimate
+in the required metric, while the signed determinant comparison retains
+the actual flat-family and period hypotheses. Two trace errors control the slope comparison and allow
 large errors on sufficiently little mass. These
 reductions retain the same actual maps and normalizations; the compatible
 construction, genuine global energy and geometric bounds remain open.

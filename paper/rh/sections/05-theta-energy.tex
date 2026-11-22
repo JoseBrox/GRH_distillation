@@ -18,100 +18,7 @@ supply the same quantities.
 
 \input{shared/trace-slope}
 
-\subsection{Squared energies remain useful suppliers}
-
-On the final spaces of Theorem~\ref{shared-trace-slope}, define
-\begin{equation}\label{rh-energies}
- \Delta=\sum_i\|T_i^*T_i-I_{r_i}\|_{\rm HS}^2,\qquad
- V=\left\|Q-\frac Mn I_n\right\|_{\rm HS}^2,\qquad
- e=\Delta/R,\qquad \eta=nV/M^2.
-\end{equation}
-These are aggregate quantities; they require no separate bound for
-each ordered pair of maps.
-
-\begin{lemma}[Exact energy identities]\label{rh-energy-identities}
-With the notation of the trace comparison,
-\[
- a^2=\frac{R\Delta-(M-R)^2}{M^2},\qquad
- \eta=\frac{n\operatorname{tr}(Q^2)}{M^2}-1,\qquad
- |M-R|\le\sqrt{R\Delta}.
-\]
-If \(\Omega=\sum_{i\ne j}\|T_i^*T_j\|_{\rm HS}^2\), then
-\[
- \operatorname{tr}(Q^2)=\Omega+2M-R+\Delta.
-\]
-\end{lemma}
-
-\begin{proof}
-Expanding the square gives
-\(\Delta=\operatorname{tr}(\mathcal S^2)-2M+R\).
-Center \(\mathcal S\) to obtain the first identity, and center
-\(Q\) for the second. Cauchy--Schwarz applied to
-\(\operatorname{tr}(\mathcal S-I_R)\) gives the inequality.
-Expanding \(\operatorname{tr}(Q^2)\) into its diagonal and
-off-diagonal terms proves the last formula.
-\end{proof}
-
-The GRH manuscript's \emph{Refined slope comparison}
-\cite{rh-companion}, under the same arithmetic hypotheses and
-\(e<1\), gives the additional bound
-\[
- P_{\rm ref}=A+B/2+\sqrt{AB+B^2/4},\qquad B=\eta H,
-\]
-\[
- A=\frac{U\log(1+H/U)+
-             2\sqrt e\{\sqrt{U(U+H)}-U\}}{1-\sqrt e}.
-\]
-At \(U=0\), set \(A=0\). This can be smaller than the trace
-bound when the target squared energy is very small and \(H\) is
-large. Whenever its hypotheses hold, use
-\(\min\{P_{\rm tr},P_{\rm ref}\}\), together with any supplied
-bound from Corollary~\ref{shared-trace-bessel}.
-
-One may improve \(e\) by a common positive rescaling of the
-matrices. Completing the square gives
-\[
- \min_{t>0}\frac1R\|t\mathcal S-I_R\|_{\rm HS}^2
-   =1-\frac{M^2}{R\operatorname{tr}(\mathcal S^2)}
-   =\frac{a^2}{1+a^2}<1,
-\]
-with minimum at \(t=M/\operatorname{tr}(\mathcal S^2)\).
-Absorb the factor \(\sqrt t\) into the source bases; the arithmetic
-maps and heights remain the same. The quantities \(a,\gamma,\beta,\eta\)
-are unchanged. The refined denominator \(1-\sqrt e\) must still
-be retained. Exact retained-energy inequalities and the global
-\(L^2\)-kernel formulation are proved in the GRH manuscript's
-\emph{Slope comparison} chapter \cite{rh-companion}.
-
-The ambient trace comparison in
-Corollary~\ref{shared-trace-ambient} already retains a target-rank
-cost proportional to \(U\). It also permits source restriction alone,
-as in \eqref{shared-trace-source-only}; no target compression is
-needed when the first rows are the actual arithmetic maps.
-
-\subsection{When trace and energy estimates are useful}
-
-The trace condition is strictly more flexible than a small squared
-target energy. For an integer \(N\ge2\), take \(n=N^3\) unit
-rank-one integral maps: \(N^2\) copies of the first coordinate
-vector and one copy of each of \(n-N^2\) further coordinate vectors.
-Then \(R=M=n\), \(a=\gamma=\Delta=0\), and
-\[
- Q=\operatorname{diag}
-       (N^2,\underbrace{1,\ldots,1}_{n-N^2},
-                    \underbrace{0,\ldots,0}_{N^2-1}),
-\]
-\[
- \beta=\frac{N^2-1}{N^3}\longrightarrow0,\qquad
- \eta=N-\frac1N\longrightarrow\infty.
-\]
-These formulas follow directly by summing the positive and squared
-deviations from \(I_n\). Give the image coordinates slope zero and
-the omitted target coordinates slope \(-H\), with unit source
-metrics. The maps have height zero, \(U=0\), and the target slope
-deficit is exactly \(\beta H\). Thus the trace bound is sharp for
-this family. This example establishes the distinction between the
-conditions; it does not construct the required arithmetic family.
+\subsection{The period maps and their restrictions}
 
 For the theta application, write the actual full normalized maps as
 \(T_i=c_i^{-1/2}P_i\), with every \(c_i>0\). Their source Gram
@@ -124,6 +31,14 @@ operators is preferable, Lemma~\ref{shared-trace-restriction}
 retains the actual target projection and positive retained mass.
 If the spectral estimate is supplied directly on the final maps,
 no ambient restriction loss is added.
+
+The source-only comparison retains the target-rank cost proportional
+to \(U\), without imposing a separate positive lower bound for the
+compressed target mass. Additional estimates using squared energies,
+including the refined slope comparison and its optimal common
+rescaling, are proved in the GRH manuscript~\cite{rh-companion}.
+They can be used whenever their own hypotheses hold; taking the
+minimum of valid bounds preserves every improvement.
 
 The remaining input is quantitative: the actual source and target
 trace errors, or a stronger valid energy or period bound, must be
@@ -148,13 +63,7 @@ nonidentity contribution. The target error instead has the exact form
 Only the excess above the correct mean-eigenvalue threshold is relevant.
 The identity follows from the common positive spectra of $S^*S$ and $SS^*$.
 
-Pairwise inequalities alone do not improve this error to first order
-in $D/R$. There are explicit integral cyclotomic columns with unit
-source Gram matrices and squared inner products at most $1/D$, but
-with $\beta$ of order $\sqrt{D/R}$ and centered squared energy of
-order $D/R$. Their exact spectrum and a higher-rank example whose
-rank obstruction survives every change of comparison bases are proved
-in the GRH manuscript's \emph{What the global period estimate must
-control}~\cite{rh-companion}. These examples concern the matrix
-hypotheses, not the actual theta family. They explain why the smaller
-of the valid trace and refined-energy penalties should be retained.
+Pairwise inequalities alone do not make this error of order $D/R$.
+The GRH manuscript gives exact examples and compares the available
+trace and squared-energy estimates~\cite{rh-companion}. A smaller
+error for the prescribed theta maps still requires its own proof.

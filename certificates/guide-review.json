@@ -1,19 +1,19 @@
 {
-  "schema_version": 6,
-  "date": "2026-11-21",
-  "scope": "Current seven-page organizational guide: separate RH/GRH routes, finite integer-table analytic alternative, qualitative Selmer finiteness and finite prime support, and calibrated trace comparisons. The uniform compatible arithmetic construction remains open.",
+  "schema_version": 1,
+  "date": "2026-11-22",
+  "scope": "Current eight-page organizational guide, including complete zeta criterion, fourth-power finite tables, supplied tangent estimate, exact signed determinant and Selmer product; remaining construction hypotheses explicit.",
   "source": {
     "path": "paper/guide/main.tex",
-    "sha256": "8cd6fb1d469deef5049e45e8f74a4a1de76eb0f81b77398453779dd071ac9561"
+    "sha256": "d72285e0d12cf881f088777d2d895ac3bb069bc97f98fff03d70967b8c994207"
   },
   "pdf": {
     "path": "paper/guide/main.pdf",
-    "sha256": "18bb05c748d9d6988146f22aa6a09d16fa85725ac06ca42367133ef09645da17",
-    "pages": 7
+    "sha256": "82003b9a45a6d32f3737032f1e819ede14d0625f536c690eb6210baec7cab781",
+    "pages": 8
   },
   "readme": {
     "path": "paper/guide/README.md",
-    "sha256": "fd660358b78245158e56410594c5a79fabc54b73feabcd6a1cb092630e2021f0"
+    "sha256": "aec2f95e6c8b8451cca1675d01be17d787ba91aa4fcfb33c48fc5957bc81faf4"
   },
   "page_limit": 12,
   "typography": {
@@ -23,30 +23,36 @@
     "formatting_reduced_to_fit": false
   },
   "previous_review": {
-    "commit": "447b7224e111d0acbec9b454ea3b63d35080e608",
+    "commit": "0ffbc6f7e190d4b007eb1109df215857539c60f5",
     "path": "certificates/guide-review.json",
-    "scope": "Previous seven-page guide and independent mathematical reviews; the complete short RH analytic proof remains byte-identical."
+    "scope": "The original seven-page review and its independent proof checks are preserved in this commit."
   },
   "analytic_proof_preservation": {
     "status": "PASS",
-    "scope": "The complete section A particularly short analytic route for RH, including theorem, positivity lemma and both proofs, is byte-identical to the previous reviewed commit.",
+    "scope": "The complete short RH analytic section is byte-identical to recovered main.",
     "block_sha256": "d613c47bc1cceb431054283547e9a5942decea479a7fe7bff2f0c8a2f364b1d1"
   },
-  "independent_mathematical_reviews": {
-    "unchanged_analytic_criterion": "Preserved earlier independent PASS for Mellin residues, Taylor-Tonelli positivity argument and eventual RH implication; exact proof block checked unchanged.",
-    "scale_averaging": "The guide summarizes the reviewed theorem in notes/scale-averaged-criterion.md: fixed character family and averaging width at each accuracy, positive part, cofinal multiplicative windows, nonvanishing Mellin multiplier, measurable locally integrable budgets on the same expanded windows.",
-    "geometric_mean": "The guide summarizes the independently reviewed results in notes/geometric-degree-frontier.md: short integral generators at every embedding, the applicable section-count and size hypotheses, one actual positive weighted mean, and summation before cancelling component degrees.",
-    "theta_energy": "Detailed Sections1-2 of notes/averaged-theta-energy.md passed geometric and parent review; Sections3-4 and the critical same-map source bridge passed independent source review. The guide retains actual normalizers, common target basis and missing global energy estimate.",
-    "summary_scope": "Parent and source reviewer checked the current geometry and two-trace paragraphs. The unchanged analytic proof is preserved exactly. This does not audit the full upstream construction.",
-    "tower_test": "Parent and geometric/source agents reviewed the full shared tower argument; transport independently checked this guide summary. The volume lower bound, test lower bound and surviving signed determinant term are explicit.",
-    "joint_period_bound": "Parent and source/geometric agents reviewed the shared Bessel-to-energy proof. Transport independently checked the guide implication and the same-map, positive-mass and calibrated-normalization hypotheses.",
-    "two_trace_errors": "Parent, source and transport reviewers checked the shared full theorem and its final/ambient/restricted forms. The guide gives the valid pure-trace corollary, retains common maps/basis, positive mass, adjusted source slopes, source spread and target lower slope, and explicitly keeps the independent source error.",
-    "all_point_height_reduction": "Parent, geometry, source and transport reviewers checked the classical height supplier, including relative semipositivity, all-point lower bounds including boundary, prescribed reciprocal regularizations and signed cusp correction. The actual height bounds remain open.",
-    "finite_integer_tables": "Parent and transport reviewers checked the full interpolation proof, expanded intervals, signed averaging before positive part, fixed analytic data and vanishing interpolation error. Independent source reviewer checked the guide summary.",
-    "qualitative_selmer": "Parent and geometry/source reviewers checked the finite-duality and even-K-group proof, including p=2 and e=1, exact local conditions and absence of a uniform size estimate.",
-    "spectral_calibration": "Parent, geometry and source reviewers checked the exact redundant-frame limits and countermodels; the guide retains the calibrated positive tail and the separate source error."
-  },
+  "independent_mathematical_reviews": [
+    {
+      "reviewer": "rh_selmer_frontier",
+      "status": "PASS after recorded fixes",
+      "checked": [
+        "Correct fourth-power weighted positive-part condition",
+        "Signed prime-ramp coefficients for general character combinations",
+        "Prescribed tangent metric and retained flat-family/period hypotheses",
+        "Actual Selmer product, exceptional primes, no promise of strict gcd saving",
+        "Fixed-before-limit quantifiers and limits of quasi-RH/no-Siegel inputs"
+      ]
+    }
+  ],
+  "corrections": [
+    "Explicitly signed convex ramps in the general-character explanation.",
+    "Explicit subpower condition on finite-table cost.",
+    "Common-divisor comparison may improve the bound; it need not improve it strictly."
+  ],
   "visual_review": {
+    "reviewer": "root",
+    "status": "PASS",
     "pages_inspected": [
       1,
       2,
@@ -54,14 +60,14 @@
       4,
       5,
       6,
-      7
+      7,
+      8
     ],
-    "reviewer": "parent",
-    "method": "Individually viewed all seven current pages rendered by pdftoppm at maximum dimension1400 pixels.",
-    "final_render_hashes": [
+    "method": "All eight pages rendered with pdftoppm -scale-to 1400, reviewed in readable four-page sheets.",
+    "render_hashes": [
       {
         "page": 1,
-        "sha256": "e4f44d2f42d7bfe348e92e8e6ac4c306663f62c3bd1cf55302d77f1fcd7747b5"
+        "sha256": "ed3c5c327d1eab9f664e7335e5442728dc2a3b93dca3a62c60317d77d85fb70c"
       },
       {
         "page": 2,
@@ -73,32 +79,27 @@
       },
       {
         "page": 4,
-        "sha256": "eb8f9e37798307676a1fc4c13948038c80b5c7f7b416a783e788902f1d41acfd"
+        "sha256": "10bea24366b3a9b2d70bcf2dc1cd556dd81b46bb9893300a937d0b3ab938bcd2"
       },
       {
         "page": 5,
-        "sha256": "c8333ee5450ad7b4a21cbfa0f279ebbec1e0f1e8c1dc354d1105df963be7a829"
+        "sha256": "23aae7821fae53f4f0b472db0002d1cf811d1acaecd6b88e91063e43204a2fea"
       },
       {
         "page": 6,
-        "sha256": "b89a6004ce031a034347dd019fa78590870b6564c54763277b679def0c861d42"
+        "sha256": "c393379005ce125d46d985bf9311bc0e2377917ac53a522d489056e34b486ffd"
       },
       {
         "page": 7,
-        "sha256": "80198fb495f64418bec271c9c83646eda45aa8060b8d474870ef99cb6f5eaa98"
+        "sha256": "79a562a9ed88f8bcb713dc9cd942e1c9e7863df7ef9e53e98c14955b041743a2"
+      },
+      {
+        "page": 8,
+        "sha256": "cf4ab5ca730b6e86167277cf80943403e04c2ea66979ed6035cee5da7091d62a"
       }
     ],
-    "result": "PASS: readable mathematics, consistent headings, no clipped lines, overlap or isolated bibliography page.",
-    "coverage": {
-      "1": "Problem and corrected prime sum.",
-      "2": "Mellin identity and positivity lemma.",
-      "3": "Complete zeta implication and averaged analytic target.",
-      "4": "Finite integer-table alternative and arithmetic lattices.",
-      "5": "Geometric reduction, calibrated trace errors and averaging.",
-      "6": "Classical Selmer finiteness, open quantitative construction and RH parity reduction.",
-      "7": "Normalized RH budget, zero-free premises and bibliography."
-    }
+    "findings": "Readable equations and references; no clipping, overlap or isolated reference-only page."
   },
-  "final_integration_review": "Updated in place without increasing the seven-page guide or reducing its11pt body type and24mm margins. The finite table and qualitative cohomology improvements are explicit; the remaining uniform estimates are clearly separated.",
-  "limits": "The compatible growing arithmetic construction, actual trace estimates, prescribed point-height bounds and cusp limits remain open. Compilation, finite exact checks and visual review do not prove RH or GRH; no Lean build or kernel replay was performed."
+  "integration_record": "certificates/continuation-integration-2026-11-22.json",
+  "limits": "This guide gives proved analytic implications and reductions, not a completed RH or GRH proof. No full Lean build or kernel replay."
 }

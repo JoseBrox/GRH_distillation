@@ -25,7 +25,7 @@ The [shared-results index](../blueprint/shared/README.md) records the applicatio
 and extra hypotheses of each route. Improvements are reviewed in both routes;
 an RH-specific simplification is not silently generalized to all characters.
 
-The seven-page guide remains an organizational introduction to both routes,
+The eight-page guide remains an organizational introduction to both routes,
 with a twelve-page editorial limit. Audit records, source identifiers and
 chronological checkpoints stay outside the mathematical exposition.
 
