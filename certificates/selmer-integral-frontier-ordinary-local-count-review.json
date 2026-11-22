@@ -1,0 +1,326 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "geometry_frontier, independent of selmer_frontier",
+  "verdict": "PASS",
+  "scope": "Actual finite-coefficient ordinary local Selmer bound under retained normalized ordinary data; exact truncation and auxiliary-level quantifiers.",
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-ordinary-local-count.md",
+      "sha256": "47cdc4c9884e75eb1eec8b73e3e9608d74a79efb69a50d974c087f98b84431a5"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-ordinary-local-count.tex",
+      "sha256": "d4023873fc0a2f64da7ef946066313edbb41845513b57284286d401580b812c3"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-ordinary-local-count-references.tex",
+      "sha256": "4e19eb602916b268f36e0112759ee1e1efba8d8b22837859455f9c8cf3e8eab5"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_ordinary_local_count.py",
+      "sha256": "3ce9959f0eb314558b30e27738c229d85f47b9715f0096e0576f06f2f0132c43"
+    },
+    {
+      "path": "certificates/selmer-integral-frontier-ordinary-local-count.json",
+      "sha256": "cc8c21c3597125b0f1f4eb9fa3aabd9d963672ab473e48ca3ffae28c70fe63ee"
+    }
+  ],
+  "audit_groups": [
+    {
+      "topic": "Finite Tate pairing and exact scalar count",
+      "result": "PASS",
+      "details": "The coefficient pairing Tr_k/F_l([t^(m-1)]xy) is perfect even when the residue degree is divisible by l. Its Tate dual is A_m(epsilon alpha^-1). Local duality and the Euler characteristic give the exact exponent m(d+1)+min(m,c_alpha); no residue-degree division or finite-cocycle lifting occurs. m=0 and the resonant negative control are treated correctly."
+    },
+    {
+      "topic": "Exact torsion subgroup and diagonal count",
+      "result": "PASS",
+      "details": "The source muG is the preimage of l-primary torsion in topological abelianization, not a pro-l Sylow subgroup. Local reciprocity and the deep-unit logarithm give torsion-free rank d+1; additive maps vanishing on muG are counted by q^(m(d+1)). The stated source inertia and finite torsion projection conditions are preserved."
+    },
+    {
+      "topic": "Original primal module and prescribed basis",
+      "result": "PASS",
+      "details": "The count uses source W1, E_A plus epsilon odd blocks, not the paired dual. The explicit w1=(1-P)w conjugation has the correct coboundary sign, preserves the square-zero primal module and gives the same continuous diagonal characters. Typed columns have exactly a and b entries; full rank is n+2nu and upper rank n+nu, including an empty odd family or block."
+    },
+    {
+      "topic": "Successive width filtration",
+      "result": "PASS",
+      "details": "After smaller widths vanish, the (i,j) conjugation coefficient is exactly psi_i psi_j^-1. Each quotient injects into scalar cocycles; no lifting or splitting is assumed. Multiplicities are one for equal types and r for unequal types. The resulting C_v=sum w_ij c_ij is finite by the actual nonresonance condition."
+    },
+    {
+      "topic": "Arithmetic source interface and quantifiers",
+      "result": "PASS",
+      "details": "The original local group is unrestricted by global transpose polarization. At split ordinary places the Euler and local-abelianization degrees agree and sum to [L+:Q]. Glob.Hom preserves each fixed local map, so fixed point, characters, odd family and witnesses give one C_v for every truncation and every auxiliary level. The exact leading-term cancellation matches W1BoundArithmeticRankTwo."
+    },
+    {
+      "topic": "Scope",
+      "result": "PASS",
+      "details": "Only the ordinary local supplier is supplied. The normalized arithmetic point, global duality, distinguished-place estimates, patched-module arguments and other global suppliers remain separate. No whole RH or GRH node closes."
+    },
+    {
+      "topic": "Independent reproducibility",
+      "result": "PASS",
+      "details": "The checker was rerun independently with --offline and returned PASS for 13 pinned modules, 25 perfect trace-pairing matrices, 360 annihilator matrices, 588 typed square-zero filtration cases, 988 type-dimension cases and explicit negative controls. The written proof and arithmetic primary references, not these finite checks alone, justify the general result."
+    }
+  ],
+  "independently_read_sources": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.Inertia",
+      "read_ranges": [
+        [
+          9,
+          22
+        ]
+      ],
+      "sha256": "5379909b06f10c0bb923d54b8bf443b368fb1968e8c5b398c49b5061395333b7",
+      "git_blob_sha1": "1c0d2149ce936a95514f7321b6493281cc060342",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DegreeCountCohomology.IsDualPair",
+      "read_ranges": [
+        [
+          44,
+          55
+        ],
+        [
+          158,
+          160
+        ]
+      ],
+      "sha256": "26d5c5f432a672ada591fd0826396c3ae8019e20c4e0299e5621d82ca6dbf9b0",
+      "git_blob_sha1": "2d6463c62009c2f2d32ff0c6b775855b0d22723b",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DegreeCountCohomology.OneCount",
+      "read_ranges": [
+        [
+          39,
+          77
+        ]
+      ],
+      "sha256": "73692ff9102b343f97b13cccef00893af7c41dde96ae65c441ed6a999cee884f",
+      "git_blob_sha1": "2393d14aa38401acb1702bfff1e1de0949e94d0d",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DegreeCountCohomology.HomCount",
+      "read_ranges": [
+        [
+          100,
+          133
+        ]
+      ],
+      "sha256": "f36a2d9650d5a3abf3c9d80e7288defdca982c9bcc7fa899b36e525752ffc80b",
+      "git_blob_sha1": "cf9fa72cd9af6d769e1a099c0b94abe138c23faf",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.EpsilonEtaTensorDual",
+      "read_ranges": [
+        [
+          11,
+          41
+        ]
+      ],
+      "sha256": "9fad01de37fdfcf732b37db17993ed9a91fb107481ddc10d5d31e99882e8f14c",
+      "git_blob_sha1": "e5d4ef4baadda82af9421bfdda8ed8c67835aa80",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PairedDualFirstOrderDualMatrixSpace",
+      "read_ranges": [
+        [
+          78,
+          86
+        ],
+        [
+          192,
+          224
+        ],
+        [
+          251,
+          274
+        ]
+      ],
+      "sha256": "2b3a062361caa5676d914456dd8fb20d52cf83b9ab464d8f8ff14a1663abe1b7",
+      "git_blob_sha1": "83f8696963709ecaa3ea73e3d62e414f309b9a66",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.MemW1IffPattern",
+      "read_ranges": [
+        [
+          107,
+          142
+        ],
+        [
+          146,
+          200
+        ]
+      ],
+      "sha256": "f6a3c9d1fa74fe484465ecfa46bd3d2fa9b166c9eccb3468a900b887296980eb",
+      "git_blob_sha1": "e0ef21182e9152ccb6850e023047bad6774b54a0",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DegreeCountCohomology.TyCard",
+      "read_ranges": [
+        [
+          102,
+          127
+        ]
+      ],
+      "sha256": "d26fdc0f7d9047a5f0992b3bd24f80cd1d4f24fe1b8c5d982fe8c6cb1b83bb55",
+      "git_blob_sha1": "6c9062912c7793ffc8d45c27a0189f53903e036c",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.EntryZero",
+      "read_ranges": [
+        [
+          102,
+          145
+        ],
+        [
+          154,
+          202
+        ],
+        [
+          204,
+          280
+        ],
+        [
+          281,
+          322
+        ]
+      ],
+      "sha256": "8a74727aabdd43e9dea939433e1f52fc9b6ac3a280ad4331f93d5adae035f3a0",
+      "git_blob_sha1": "bc36e32a8bd9c3c000217006f07df160d90ce0e7",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.DegreeCountCohomology.PresCounts",
+      "read_ranges": [
+        [
+          9,
+          39
+        ]
+      ],
+      "sha256": "fdc54064052f23dd992599aa7f33328f7307b7e9a89aadb5a6e514f69e3cbc7a",
+      "git_blob_sha1": "81ec8e141318e1a1b1d503f350b158956444e38b",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.WeilCharactersModular.LocCFT",
+      "read_ranges": [
+        [
+          31,
+          63
+        ],
+        [
+          65,
+          90
+        ]
+      ],
+      "sha256": "8bf42ea7876de38b760f9c88de5e80213c9361bce8623867f10e1d123e07fe4f",
+      "git_blob_sha1": "a0095b5863b62943ea32109d0ead61bd2d961530",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.EpsilonEtaMatrices.W1BoundArithmeticRankTwo",
+      "read_ranges": [
+        [
+          30,
+          61
+        ],
+        [
+          143,
+          165
+        ]
+      ],
+      "sha256": "a80d9403d8992b03a6694875e85b362aec5cedc3a512f42f7de280c597dc4fe8",
+      "git_blob_sha1": "6f4feefa208f473cb853e5a74a2aa357faf88c32",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ThetaCoefficientMapEq",
+      "read_ranges": [
+        [
+          15,
+          39
+        ],
+        [
+          54,
+          61
+        ]
+      ],
+      "sha256": "47ad94ae8810970b4fdcf4e4cb9e22c31365a91a260ed3c7ba3ee02849daa9e8",
+      "git_blob_sha1": "948482f25d014b95ecf474745031014e97996a00",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+    }
+  ],
+  "primary_references": [
+    {
+      "path": "build/reference-cache/milne-adt-2006.pdf",
+      "url": "https://www.jmilne.org/math/Books/ADTnot.pdf",
+      "sha256": "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31",
+      "results": [
+        "I.2.3: finite local duality",
+        "I.2.8: local Euler characteristic"
+      ],
+      "pdf_pages": [
+        36,
+        39
+      ],
+      "printed_pages": [
+        28,
+        31
+      ]
+    },
+    {
+      "path": "build/reference-cache/milne-cft-v403.pdf",
+      "url": "https://www.jmilne.org/math/CourseNotes/CFT.pdf",
+      "sha256": "50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5",
+      "results": [
+        "I.1.1: local reciprocity",
+        "I.1.4: local existence theorem"
+      ],
+      "pdf_pages": [
+        29,
+        31
+      ],
+      "printed_pages": [
+        20,
+        22
+      ]
+    }
+  ],
+  "primary_visual_review": [
+    {
+      "path": "build/review-ordinary-local-count/milne-adt-2006-036.png",
+      "sha256": "96cb957c50ccb715105314ffa9bba8bfc82a25818243c8b79b53a9172ac8ced3",
+      "finding": "The stated theorem and hypotheses were actually viewed and agree with the use in the note."
+    },
+    {
+      "path": "build/review-ordinary-local-count/milne-adt-2006-039.png",
+      "sha256": "592234fba7596236c948765a7180dfbc29560b247e056604cca8a2a772309d99",
+      "finding": "The stated theorem and hypotheses were actually viewed and agree with the use in the note."
+    },
+    {
+      "path": "build/review-ordinary-local-count/milne-cft-v403-029.png",
+      "sha256": "fcae98666bc7fed6f8cdcec139adb45cec8a7e088cddd19315dbc34ffed08e28",
+      "finding": "The stated theorem and hypotheses were actually viewed and agree with the use in the note."
+    },
+    {
+      "path": "build/review-ordinary-local-count/milne-cft-v403-031.png",
+      "sha256": "2ce04c3063ec8995ab7b817c4c07a7be8d8c2222d9020e67d9655a5f444f569e",
+      "finding": "The stated theorem and hypotheses were actually viewed and agree with the use in the note."
+    }
+  ],
+  "limitations": [
+    "Independent mathematical and source-interface review; no Lean compilation.",
+    "Primary theorem pages and bounded source excerpts were read; no complete large source file was retrieved into conversational context.",
+    "No manuscript visual review is claimed in this certificate."
+  ]
+}

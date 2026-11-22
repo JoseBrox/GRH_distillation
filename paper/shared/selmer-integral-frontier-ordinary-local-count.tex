@@ -1,0 +1,121 @@
+\paragraph{The ordinary local count.}
+The ordinary places admit a direct estimate for every finite
+coefficient module. Let $F/\mathbf Q_\ell$ have degree $d$, let
+$G_F$ be its absolute Galois group, and let $\bar\varepsilon$
+be the mod-$\ell$ cyclotomic character. Put $A=k[[t]]$ and
+$q=|k|$, where $k$ is finite of characteristic $\ell$.
+For a continuous character $\alpha\ne\bar\varepsilon$, define
+$c_\alpha$ by
+\[
+ (\alpha(g)-\bar\varepsilon(g):g\in G_F)=(t^{c_\alpha}).
+\]
+This exponent is finite. Local Tate duality and the local Euler
+characteristic give the exact formula
+\begin{equation}
+ \#Z^1(G_F,(A/t^m)(\alpha))
+       =q^{m(d+1)+\min(m,c_\alpha)}\qquad(m\geq0).
+ \label{eq:selmer-ordinary-scalar-count}
+\end{equation}
+Indeed, for $m>0$ the perfect additive pairing
+$\operatorname{Tr}_{k/\mathbf F_\ell}([t^{m-1}](xy))$
+identifies the Tate dual with
+$(A/t^m)(\bar\varepsilon\alpha^{-1})$.
+The factors $\#H^0$ cancel between
+$\#B^1=q^m/\#H^0$ and
+$\#H^0\#H^2/\#H^1=q^{-md}$.
+Thus $\#Z^1=q^{m(d+1)}\#H^0$ of the dual, whose invariants
+are exactly the annihilator of $t^{c_\alpha}$.
+Its length is $\min(m,c_\alpha)$; $m=0$ is immediate
+\cite[I, Corollary~2.3 and Theorem~2.8]{milne-ordinary-local-duality}.
+In particular, no cocycle lifting and no division by the residue
+degree occurs.
+
+Let $\mu_G$ be the inverse image of the $\ell$-primary torsion in
+the topological abelianization. Local reciprocity, the logarithm on
+deep principal units, and the structure theorem over $\mathbf Z_\ell$
+give
+\[
+ G_F^{\mathrm{ab},\ell}\simeq
+ \mu_{\ell^\infty}(F)\times\mathbf Z_\ell^{d+1}.
+\]
+Consequently there are exactly $q^{m(d+1)}$ continuous additive
+homomorphisms $G_F\to A/t^m$ vanishing on $\mu_G$
+\cite[I, Theorems~1.1 and~1.4]{milne-ordinary-local-reciprocity}.
+
+Retain the normalized arithmetic point and its chosen odd family
+$\kappa_1,\ldots,\kappa_r$. Write $n=a+b$ for the two block
+sizes, and set
+\[
+ M_1=E_A\oplus\bigoplus_{s=1}^r\epsilon_sO_A,
+ \qquad \epsilon_s\epsilon_u=0,\qquad
+ \nu=\binom a2+\binom b2+rab.
+\]
+This is the original first-order coefficient module, of rank
+$n+2\nu$, inside the paired algebra. Let $w$ be the ordinary
+basis, with types $\tau_i\in\{0,1\}$ and diagonal characters
+$\psi_i$. Exactly $a$ types are one and $b$ are zero.
+For the prescribed local witnesses $Y_s$, put
+$P=\sum_s\epsilon_sY_s$, $K(g)=\sum_s\epsilon_s\kappa_s(g)$
+and $w_1=(1-P)w$. Then
+\[
+ w_1^{-1}(1+K(g))\rho(g)w_1
+ =\left(1+\sum_s\epsilon_s
+ w^{-1}(\kappa_s(g)-dY_s(g))w\right)w^{-1}\rho(g)w.
+\]
+The local conditions make this upper triangular with diagonal
+$\psi_i$. Thus the $\psi_i$ are continuous, and the original
+nonresonance condition gives
+$\psi_i\psi_j^{-1}\ne\bar\varepsilon$ for $i<j$.
+Define $c_{ij}=c_{\psi_i\psi_j^{-1}}$ and
+\[
+ w_{ij}=\begin{cases}
+ 1,&\tau_i=\tau_j,\\ r,&\tau_i\ne\tau_j,
+ \end{cases}
+ \qquad C_v=\sum_{i<j}w_{ij}c_{ij}.
+\]
+
+\begin{proposition}[Uniform ordinary local bound]
+\label{prop:selmer-ordinary-local-bound}
+Let $Z_{v,m}$ be the continuous local cocycles in $M_1/t^mM_1$
+whose matrices in the $w_1$ basis are upper triangular and whose
+diagonal vanishes on $\mu_G$. For every $m\geq0$,
+\[
+ \#Z_{v,m}\leq
+ q^{m(n+\nu)(d+1)+\sum_{i<j}w_{ij}\min(m,c_{ij})}
+ \leq q^{m(n+\nu)(d+1)+C_v}.
+\]
+The point, coefficient field and odd family are fixed before $C_v$;
+the same constant works at every auxiliary level.
+\end{proposition}
+
+\begin{proof}
+Conjugation by $1-P$ preserves $M_1$ because all products of two
+$\epsilon$ terms vanish. The basis $w$ then replaces block support
+by type support. There are $n$ scalar diagonal coordinates and
+$w_{ij}$ scalar coordinates in each upper slot, with
+$\sum_{i<j}w_{ij}=\nu$.
+
+Filter cocycles by successively vanishing widths $j-i$.
+For upper triangular $T,B,T^{-1}$, the $(i,j)$ entry of
+$TBT^{-1}$ only uses $B_{pq}$ with $i\leq p\leq q\leq j$.
+After the smaller widths vanish, only $T_{ii}B_{ij}T_{jj}^{-1}$
+remains. Thus each width quotient injects into the product of
+scalar cocycle groups with characters $\psi_i\psi_j^{-1}$.
+The diagonal quotient injects into the $n$ homomorphism groups
+just counted. Multiplying their finite orders proves the bound.
+The local groups, representations and witnesses are unchanged
+under the auxiliary-system maps, so $C_v$ is independent of the
+auxiliary level as well as of $m$.
+\end{proof}
+
+The estimate covers the full local group; global transpose
+polarization is imposed in the subsequent global calculation.
+At the original split ordinary places,
+$\sum_{v\mid\ell}d_v=[L^+:\mathbf Q]$.
+The estimate therefore supplies exactly the ordinary local term
+in the first Selmer count, with leading contribution
+$n[L^+:\mathbf Q]$ after the global cancellations
+\cite{alpo-ordinary-local-count}.
+The remaining global and distinguished-place estimates remain
+separate inputs. If a ratio equals $\bar\varepsilon$, the scalar
+count instead has exponent $m(d+2)$; nonresonance cannot be omitted.
