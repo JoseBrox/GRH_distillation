@@ -536,6 +536,15 @@ Thus the ramified integral-line and special-curve identifications follow
 from these actual model data. Constructing that model, the integral CM
 maps to its selected component, and the cusp/section estimates remains.
 
+The [CM extension argument](cm-integral-map-extension.md) reduces that
+integral-map requirement to the supplied generic CM point on the correct
+component, with its exact original rigidified line and coefficient action.
+Properness extends the point; the classical full faithfulness of
+semiabelian schemes extends the generic isomorphism. A vertical-divisor
+argument preserves the exact line and scalar, so the actual tangent
+eigenlattices agree. The arithmetic model and generic moduli/period
+identification remain; no new choice of integral CM map is required.
+
 ## Next mathematical work
 
 1. **Integral maps and global norms (W06/W08).** Supply the actual integral
