@@ -1,0 +1,132 @@
+\subsection{Logarithmic boundary growth and energy}
+\label{sec:boundary-energy}
+
+Let $X$ be a compact Kähler manifold of dimension $n$, let $\omega$
+be Kähler, and let $D$ be a normal-crossing divisor. We use unnormalized
+Monge--Ampère energy. Its monotonicity and upper semicontinuity, and the
+full-mass property of finite-energy potentials, are
+\cite[Propositions~2.10--2.11]{boundary-begz} and
+\cite[Propositions~2.4 and~2.8]{boundary-bbgz}.
+
+\begin{lemma}\label{lem:boundary-energy}
+Let $\theta$ be smooth and closed, and suppose
+$T=\theta+dd^c\varphi\geq0$, with $\varphi$ smooth off $D$,
+bounded above, and
+\[
+ \varphi\geq-C\log r-C,\qquad
+ r=O(1)+\sum_i\log|z_i|^{-2}\geq1
+\]
+in normal-crossing coordinates. Suppose smooth $\varphi_t$ satisfy
+$\varphi\leq\varphi_t\leq C_0$, converge locally in $C^2$ off $D$,
+and $\theta+dd^c\varphi_t+\varepsilon\omega\geq0$ eventually for
+every $\varepsilon>0$. Then
+\[
+ \int_{X\setminus D}T^k\wedge\omega^{n-k}
+      =\int_X\theta^k\wedge\omega^{n-k}\quad(0\leq k\leq n).
+\]
+All the corresponding integrals weighted by $|\varphi|$ are finite.
+The original signed analytic energies also converge.
+\end{lemma}
+
+\begin{proof}
+For $n=0$ the conclusion is immediate; assume $n\geq1$.
+First take a Kähler reference form $\Omega$ with
+$\Omega+dd^c\varphi\geq0$. Choose
+$\rho=\log\|s_D\|^2\ll-1$, so that
+$\log(-\rho)=\log r+O(1)$. A barrier
+$v=-b\log(-\rho)-c\leq\varphi$ is $\Omega$-plurisubharmonic
+after decreasing the norm of $s_D$. Indeed, if $dd^c\rho=-\eta$
+off $D$, then
+$dd^cv=-b\eta/(-\rho)+b\,d\rho\wedge d^c\rho/\rho^2$.
+Smooth convex truncations $v_j=h_j(\rho)$ have
+$0\leq h_j'\leq b/(-\rho)$ and $h_j''\geq0$.
+In
+$dv_j\wedge d^cv_j\wedge(\Omega+dd^cv_j)^{k-1}$ the rank-one
+term containing $h_j''$ vanishes. Integration by parts therefore
+bounds their energies using
+\[
+ \int|\log(-\rho)|\,\Omega^n<\infty,\qquad
+ \int\frac{d\rho\wedge d^c\rho\wedge\Omega^{n-1}}{\rho^2}<\infty.
+\]
+At a crossing the second assertion follows by integrating
+$ds_i/(A+\sum s_j)^2$ first, with exponential volume factors in
+the other variables. Thus $v$, and by domination $\varphi$, have
+finite energy.
+
+Apply this with $\Omega=\theta+B\omega$ for large $B$.
+Fatou's lemma for the positively corrected smooth approximations
+bounds every mixed mass by its cohomological value. Full mass for
+$T+B\omega$ makes the positive polynomial combination of these
+deficits zero, so every deficit vanishes. Finite energy also gives
+all the asserted weighted integrability.
+
+For any fixed positive correction, choose a smooth positive reference
+in its class. Then $\varphi_t\geq\varphi$ and $L^1$ convergence,
+together with monotonicity and upper semicontinuity, give energy
+convergence. Finally
+\[
+ Q_t(B)=\frac1{n+1}\sum_{k=0}^n
+  \int_X\varphi_t
+       (\theta+dd^c\varphi_t+B\omega)^k
+                       \wedge(\theta+B\omega)^{n-k}
+\]
+is a polynomial of degree at most $n$ in $B$. Its limit is the same
+expression off $D$ with $\varphi$, whose coefficients are absolutely
+integrable. Convergence at $n+1$ distinct large values of $B$
+implies coefficientwise convergence, including the original signed
+quantity $Q_t(0)$.
+\end{proof}
+
+For the bounded correction, let $\psi$ be bounded, and take finitely
+many charts $V_j$ with
+$\overline I_j\subset M_j$, $\overline M_j\subset V_j$ and
+$\bigcup_jI_j=X$. Let $q_j$ be smooth local potentials of $\theta$,
+with $q_j+\psi$ plurisubharmonic. Use a nonnegative smooth kernel
+of integral one, supported in the unit ball and invariant under
+simultaneous complex rotations. Put $f_{j,t}=M_t(q_j+\psi)-q_j$.
+The cutoffs satisfy $-1\leq\eta_j\leq0$ and $\eta_j=0$ on $I_j$.
+Let $\epsilon(t)\geq t$ tend to zero, with
+$|f_{j,t}-f_{k,t}|\leq\epsilon(t)$ on overlaps. The original gluing
+satisfies $\max a_j\leq\mathcal G_\epsilon(a)\leq\max a_j+\epsilon$,
+with maxima over the active regions $M_j$.
+Its smooth output and curvature bound are
+\[
+ \psi_t=\mathcal G_{\epsilon(t)}(f_{j,t}+4\epsilon(t)\eta_j),
+ \qquad \theta+dd^c\psi_t\geq-C\epsilon(t)\omega.
+\]
+
+\begin{lemma}\label{lem:bounded-cusp-energy}
+Under these finite-chart regularization conditions, $\psi_t\to\psi$
+pointwise and in $L^1$, and their energies converge in every
+positively corrected class.
+\end{lemma}
+
+\begin{proof}
+Averaging over complex rotations and using the complex-line
+mean-value inequality
+gives $u_j\leq M_tu_j\leq\sup_{\overline B(\cdot,t)}u_j$.
+Here $u_j=q_j+\psi$, so $f_{j,t}$ tends pointwise to $\psi$.
+
+At each point choose an inner chart, where its cutoff is zero.
+The original overlap error $\epsilon(t)\to0$, the nonpositive
+cutoffs, and the regularized maximum give
+\[
+             \psi\leq f_{j,t}\leq\psi_t
+                            \leq f_{j,t}+2\epsilon(t).
+\]
+Compactness gives a common bound, hence $L^1$ convergence.
+The curvature bound gives a positive smooth reference in every
+positively corrected class. Energy is then squeezed between its value at $\psi$
+and its upper semicontinuous limit. This proves convergence without
+requiring $\psi$ to be continuous or $\psi_t$ to be monotone.
+\end{proof}
+
+For the original cusp correction, $\psi-\varphi=U/2$. Concavity gives
+\[
+ E_z(\psi)-E_z(\varphi)
+       \leq\frac12\int_X U\,(T+z\omega)^n,\qquad z>0.
+\]
+These arguments supply the analytic boundary limits. Their application
+to the original arithmetic height still requires its metric-variation
+identity, the compact-model integration dictionary, and the specified
+vertical and rational twists.

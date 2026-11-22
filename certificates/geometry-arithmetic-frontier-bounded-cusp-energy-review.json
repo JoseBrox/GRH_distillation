@@ -1,0 +1,290 @@
+{
+  "date": "2026-11-22",
+  "reviewer": "global_norm_frontier, independent of geometry_frontier",
+  "verdict": "PASS",
+  "scope": "The original bounded cusp approximation converges pointwise, in L1, and in every positively corrected unnormalized energy under its original finite-chart and tied-parameter hypotheses. The combined analytic fragment was also independently checked. No arithmetic model construction or complete signed arithmetic comparison is claimed.",
+  "artifacts": [
+    {
+      "path": "notes/geometry-arithmetic-frontier-bounded-cusp-energy.md",
+      "sha256": "59480c75cad4c251ef40d92bf89b699ace490fcc8b2deecabd042ab4ac3958cd"
+    },
+    {
+      "path": "scripts/check_geometry_arithmetic_frontier_bounded_cusp_energy.py",
+      "sha256": "da10bc78d83a93e417c571fd41d9c4fe351d7a8f2c2380fe3075c2f84e2a53aa"
+    },
+    {
+      "path": "certificates/geometry-arithmetic-frontier-bounded-cusp-energy.json",
+      "sha256": "2ba199e5790cf7a0f4af2daa2099e33bb888b219868c3f545a90031a8df9aab2"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-boundary-energy.tex",
+      "sha256": "a79c18ace0c5743004fb7f6a8a65bba9ee599a274364c17df498d5608c1665c8"
+    },
+    {
+      "path": "paper/shared/geometry-arithmetic-frontier-boundary-energy-references.tex",
+      "sha256": "60ece8f7f88433f465eec63a3b3103d632bc39a08c9aea07b524237ae11a38aa"
+    }
+  ],
+  "audit_groups": [
+    {
+      "topic": "Actual kernel symmetry",
+      "result": "PASS",
+      "details": "The pinned kernel is invariant under simultaneous S1 rotation, not arbitrary radial transformations. Rotation averaging with the actual complex-disc submean inequality gives convolution domination. Its nonnegative normalized shrinking support gives the upper bound and pointwise convergence. Boundedness of the actual local potentials justifies Fubini directly."
+    },
+    {
+      "topic": "Exact gluing sandwich",
+      "result": "PASS",
+      "details": "At a fixed point choose an inner chart, whose cutoff is zero. The source le_glue gives psi<=f_j,t<=psi_t. For every active chart, the overlap error contributes at most epsilon and its cutoff is nonpositive; glue_le contributes at most one more epsilon. Thus psi_t<=f_j,t+2epsilon. The chosen inner chart is independent of t."
+    },
+    {
+      "topic": "Global boundedness and L1",
+      "result": "PASS",
+      "details": "Compactness of the finitely many closures of intermediate charts gives fixed compact convolution neighborhoods. The bounded potential and smooth reference potentials then give a common bound. No continuity of the original bounded cusp potential is assumed."
+    },
+    {
+      "topic": "Near-semipositivity in the original class",
+      "result": "PASS",
+      "details": "The actual BRegWeightLevi theorem gives error 4 C_eta e1(t) in every intermediate chart. Finite compact chart comparisons give a global error against a fixed K\u00e4hler form. Every strictly positive correction is therefore eventually positive; the uncorrected reference need not be K\u00e4hler."
+    },
+    {
+      "topic": "Energy convergence",
+      "result": "PASS",
+      "details": "For fixed positive correction choose one smooth positive representative from the sequence. The original approximants dominate the bounded limiting potential and converge in L1. Monotonicity and upper semicontinuity sandwich their unnormalized energies. Changing the fixed smooth reference adds a constant and does not change the convergence."
+    },
+    {
+      "topic": "Actual source application",
+      "result": "PASS",
+      "details": "Weights70-91 and CpRegPhRegOfNonneg26-29 give exactly the constructed sequence and compatibility conditions. The actual signed-limit Ties requires the same reference on the original variety. CpRegPhRegOfNonneg71-73 gives psi-phi=U/2, so no factor is silently changed."
+    },
+    {
+      "topic": "Combined fragment and zero dimension",
+      "result": "PASS",
+      "details": "The combined fragment retains every finite-chart kernel/cutoff/overlap/gluing and curvature hypothesis, the original C2 convergence off the divisor, the positive-polynomial full-mass proof, and signed-energy interpolation. The n=0 case is now explicitly separated before the rank-one gradient calculation."
+    },
+    {
+      "topic": "Scope and negative controls",
+      "result": "PASS",
+      "details": "This closes item2 of the prior signed-energy checkpoint under the supplied original geometry. The compact-model integration dictionary, common vertical curvature and construction of the actual arithmetic data remain separate. The finite checks do not replace the analytic proof or a Lean build."
+    }
+  ],
+  "source_checks": [
+    {
+      "module": "ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.IsPshLocallyIntegrableStatement",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/ReciprocityTheory/AnalyticForms/PlurisubharmonicFunctions/IsPshLocallyIntegrableStatement.lean",
+      "git_blob_sha1": "d63662008fbd919a3313a15e2fdb794a9395c385",
+      "sha256": "1379ceebfb056c3fe8c53abbe2da657996365931a99a0e51b6ebacb55ee664d8",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 13,
+          "last_line": 17,
+          "sha256": "bf6a164a76dee7999eb2006230de0e7ea5c9b47abe30e3d9171ed35e9cb96bbf"
+        },
+        {
+          "first_line": 72,
+          "last_line": 98,
+          "sha256": "b41cbf82bc96b327a931065db68a61c9102ecdd4e3311073299d93f3350cb0bc"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshMollB",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/ReciprocityTheory/AnalyticForms/PlurisubharmonicFunctions/PshMollB.lean",
+      "git_blob_sha1": "b789f5bf4c9949a00a84368d8a9a3630e4281bec",
+      "sha256": "d26beba4655334f669d3c2a252cc6fac31c4035d08dbf1486292767bc5a2423b",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 142,
+          "last_line": 185,
+          "sha256": "90c97970386afd4c616e129270c127169800485bf8a80028b300550a3c279e5a"
+        },
+        {
+          "first_line": 269,
+          "last_line": 277,
+          "sha256": "602b5cd01885f1546e6c3048d8c0908e703fb2db5981f36ada96f5b8bda38321"
+        }
+      ]
+    },
+    {
+      "module": "ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshMoll",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/ReciprocityTheory/AnalyticForms/PlurisubharmonicFunctions/PshMoll.lean",
+      "git_blob_sha1": "b39ef592b8b28e88ddf0ef8fb7b26751a54e6845",
+      "sha256": "a17dac39ddcd37343177ee7799057e9c6c7d6c2f245a30a85892c73e75f53035",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 315,
+          "last_line": 328,
+          "sha256": "e8c3bd3a070e993858c98b5fca9dcabccc6b1453498c756d4d2d0e25312b7f17"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.Regularisation.Statements",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/Regularisation/Statements.lean",
+      "git_blob_sha1": "793e525b5e7cb94c40b120f6c20a967a199e4c50",
+      "sha256": "372b09a2df983ea3ed8be0986ea8a9b6395e0e564295eb0ca76ab8d5fab4282a",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 32,
+          "last_line": 56,
+          "sha256": "2e2d129f1b2fc073f3cda3bc6d045f5936ba4011e96ee2e9ab622c20bdd62ae5"
+        },
+        {
+          "first_line": 79,
+          "last_line": 88,
+          "sha256": "34244f03c3a4f828c2418cebe74ff6f2b292a2c6ba209a72f6cb1aeb65799e5a"
+        },
+        {
+          "first_line": 121,
+          "last_line": 125,
+          "sha256": "9face1d6c4542a818519ecfe6646d22d573fecb72bf6034e6f58ba41b666314a"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.Regularisation.BoundedStatements",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/Regularisation/BoundedStatements.lean",
+      "git_blob_sha1": "a21c2730485e73f48dc058557354c15a64aea94f",
+      "sha256": "2093ee2ada815d142b87c9befa5b450f71687517e3974e99e47ba1bca6773530",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 19,
+          "last_line": 28,
+          "sha256": "e135ba52659416a8001d86e3f413533806e17cf2229009afc4fc0856450b2391"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.Regularisation.ChartFun",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/Regularisation/ChartFun.lean",
+      "git_blob_sha1": "481aed488b58893f841f7be26e6f6f87777d3abf",
+      "sha256": "6f701fc78b7ebe474be6905df9ca647cb76ee9fb1e034cbbde063f1e55e45bb3",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 20,
+          "last_line": 33,
+          "sha256": "3d0150597b7b61e76b99fa6adb7e4bfcf6322ae225bfc5ae4b78916ece7901fb"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.Regularisation.PBoundedGlue",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/Regularisation/PBoundedGlue.lean",
+      "git_blob_sha1": "5126fdbdbaed9b4f88ba8b302f213fd8101e28e7",
+      "sha256": "674fce10afd52ef201b8b76d1c4fc958f1c572fd93ae90498b3ee02020c56289",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 109,
+          "last_line": 145,
+          "sha256": "caa490821055d0a36d210abd601c4dcc592747d0153cc67895340f4766410d95"
+        },
+        {
+          "first_line": 195,
+          "last_line": 215,
+          "sha256": "832a8085f324c4cf5da36bbd8116441ddac74c00e9a5e8c769458277ccf4e25a"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.FrameDefinitions.Weights",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/FrameDefinitions/Weights.lean",
+      "git_blob_sha1": "9e69e9c80d57852e839749985aab4e0f3a5f2bb0",
+      "sha256": "539e80ecef5ef08eca3a978917697d6b39ec677ede3b7e4bbf2ccd9cfeb05bfc",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 70,
+          "last_line": 91,
+          "sha256": "527e0d665b8dba80fd22f200510ff2c21a93dd4577005f72fa5825417693c06d"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.FrameDefinitions.CpRegPhRegOfNonneg",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/FrameDefinitions/CpRegPhRegOfNonneg.lean",
+      "git_blob_sha1": "153397f148e4e48261ba11fae1cbd291888cde62",
+      "sha256": "1c5861639dd75c124c17cd3d740384b940fba358530d3adff58679006a4ef965",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 26,
+          "last_line": 29,
+          "sha256": "85767dd741ad7b41f3a359339597df74980d4fc12550c2fb42d1088a8a7704fe"
+        },
+        {
+          "first_line": 71,
+          "last_line": 73,
+          "sha256": "b8250e0d320e12cfbdb83af65fc04140eef04a4b4bf9c3ab6ba31e5c8894314d"
+        }
+      ]
+    },
+    {
+      "module": "GroundTheory.HeightsAndTheta.Heights.StabilizerCovolume.BRegWeightLevi",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/GroundTheory/HeightsAndTheta/Heights/StabilizerCovolume/BRegWeightLevi.lean",
+      "git_blob_sha1": "5ae0865e64aaab5d34c62008590f3de30d4187f8",
+      "sha256": "1f45bc28cb402e8838cc83b4e953a7362cd3a262d587e4a03a76723dc7db5e7f",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 17,
+          "last_line": 40,
+          "sha256": "bddbe22533107b782f7b4e9b0a29fd8822e879ce0dbb70067f6821021c0bd26b"
+        }
+      ]
+    },
+    {
+      "module": "Development.AutomorphicSpectrum.ParallelStatements.ParallelGeometry.StokesLimitBound",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicSpectrum/ParallelStatements/ParallelGeometry/StokesLimitBound.lean",
+      "git_blob_sha1": "05457ba488941ef1cfe8519f1a82bb6100f057b5",
+      "sha256": "ba8e1fdc9b850d36b7fd804481d00abf309cd34e3d23a832b8c75657c5aca467",
+      "matches_pinned_blob": true,
+      "excerpts": [
+        {
+          "first_line": 33,
+          "last_line": 34,
+          "sha256": "63da1abd72830758319da47c4977cd2ee0db600494ecc210848907d0322d027b"
+        },
+        {
+          "first_line": 76,
+          "last_line": 85,
+          "sha256": "5975b011512b49b1b24f144ac71611f20db8b62cb5545df510e7d1a051a384cc"
+        }
+      ]
+    }
+  ],
+  "primary_reference": {
+    "path": "build/reference-cache/bbgz-variational-monge-ampere-2013.pdf",
+    "sha256": "d4135747982e52c1ab31dacc7c2c2442cf5a0f277a5e0c9c845d001b9be99947",
+    "url": "https://www.numdam.org/item/10.1007/s10240-012-0046-6.pdf",
+    "independently_checked": "BBGZ Proposition2.4 printed195; the actual page image was independently viewed in the preceding signed-boundary review. The positive volume converts normalized energy to the original unnormalized energy."
+  },
+  "checker": {
+    "command": "python3 scripts/check_geometry_arithmetic_frontier_bounded_cusp_energy.py --offline",
+    "exit_code": 0,
+    "result": "PASS",
+    "source_modules": 11,
+    "exact_rational_gluing_cases": 1812,
+    "negative_controls": 2
+  },
+  "node_progress_unchanged": {
+    "RH": "6/9",
+    "GRH": "17/31"
+  }
+}
