@@ -1,0 +1,109 @@
+\subsection{Integrability of the isotropic lattice count}
+\label{sec:arithmetic-isotropic-integrability}
+
+The finite-volume and integrability assumptions in
+Proposition~\ref{prop:cusp-counting-haar} follow from the arithmetic
+unitary quotient itself.
+
+\begin{proposition}\label{prop:arithmetic-isotropic-integrability}
+Let $E/F$ be a CM extension with $[F:\mathbf Q]=f$, let $(V,h)$
+be a nondegenerate Hermitian $E$-space of dimension $N\ge3$, and
+let $L$ be a full $\mathcal O_E$-lattice. Let $\Gamma$ have finite
+index in its unitary lattice stabilizer, and put
+$G=\prod_{\sigma:F\hookrightarrow\mathbf R}U(h_\sigma)$.
+The quotient $\Gamma\backslash G$ has finite Haar volume. For its
+normalized Haar measure $\nu$ and any fixed positive norm, the count
+\[
+ N_t(g)=\#\{v\in L\setminus\{0\}:h(v,v)=0,\ \|g^{-1}v\|<t\}
+\]
+is integrable for every $t>0$, and
+\[
+            \int N_t\,d\nu=t^{2f(N-1)}\int N_1\,d\nu.
+\]
+The same holds for the special unitary group.
+\end{proposition}
+
+\begin{proof}
+The rational group $\operatorname{Res}_{F/\mathbf Q}U(h)$ has
+semisimple derived group and a norm-one center with compact real
+points. It therefore has no rational characters. The
+Borel--Harish-Chandra theorem gives finite arithmetic covolume
+\cite{arithmetic-borel-harish-chandra}. If no rational isotropic
+vector exists, all counts vanish. This includes any case with a
+definite archimedean factor.
+
+Otherwise, reduction theory gives finitely many $\Gamma$-orbits
+of rational isotropic lines \cite{arithmetic-platonov-rapinchuk}.
+Choose representatives $Ee_j$ with $e_j\in L$, and put
+\[
+ J_j=\{a\in E:ae_j\in L\},\qquad
+ U_j=\{u:\gamma e_j=ue_j\text{ for some }\gamma\in\Gamma_{Ee_j}\}.
+\]
+Then $J_j$ is a fractional ideal and $U_j\subset\mathcal O_E^\times$
+has finite index. To see the latter directly, complete $e_j$ to a
+hyperbolic pair and clear the denominators of its two projections by
+an integer $m$. Every unit $u\equiv1\pmod{m\mathcal O_E}$ then
+gives a lattice isometry
+$\operatorname{diag}(u,1,\bar u^{-1})$. Its inverse also preserves
+the lattice. The preimage of the prescribed finite-index group
+$\Gamma$ still has finite index in these congruence units.
+
+Let $H_j$ fix the vector $e_j$. Fixing the vector removes the
+multiplicative factor present in its line stabilizer: $H_j$ is an
+extension of $U(e_j^\perp/Ee_j)$ by a unipotent group. It is
+connected and has no rational characters. Thus
+$\Gamma_{e_j}\backslash H_j$ has finite volume by the same theorem.
+Tonelli and unfolding give
+\[
+ A(e_j;t):=\int\sum_{v\in\Gamma e_j}
+           \mathbf1_{\{\|g^{-1}v\|<t\}}\,d\nu(g)
+ =\frac{\operatorname{vol}(\Gamma_{e_j}\backslash H_j)}
+        {\operatorname{vol}(\Gamma\backslash G)}
+   \int_{H_j\backslash G}\mathbf1_{\{\|g^{-1}e_j\|<t\}}\,d\bar g.
+\]
+The last quotient is the product of nonzero complex null cones.
+Its invariant measure is proportional to
+$\prod_\sigma dS_\sigma/\|\nabla h_\sigma(v,v)\|$.
+Its radial density in each factor is $r^{2N-3}\,dr$, so bounded
+norm balls have finite measure. Hence $A(e_j;1)<\infty$.
+
+For $a\in E^\times$, the vectors $e_j$ and $ae_j$ have
+\emph{the same} real and arithmetic stabilizers. Keep these same
+Haar measures. Multiplication by $a$ scales the cone measure by
+$|N_{E/\mathbf Q}(a)|^{N-1}$. Therefore, with $s=N-1$,
+\[
+ A(ae_j;t)=t^{2fs}|N_{E/\mathbf Q}(a)|^{-s}A(e_j;1).
+\]
+The vector orbits above $Ee_j$ are $(J_j\setminus\{0\})/U_j$.
+The ideal $\mathfrak a=a\mathcal O_EJ_j^{-1}$ is integral, has
+class $[J_j]^{-1}$ and norm $|N(a)|/NJ_j$. Every such ideal has
+$[\mathcal O_E^\times:U_j]$ preimages. Thus
+\[
+ \int N_t\,d\nu
+ =t^{2fs}\sum_j A(e_j;1)[\mathcal O_E^\times:U_j]
+           (NJ_j)^{-s}\zeta_{[J_j]^{-1}}(s).
+\]
+All terms are finite: $s>1$, and each partial ideal zeta series is
+bounded by $\zeta_E(s)\le\zeta(s)^{2f}$. This proves both assertions.
+
+For $SU$, determinant correction on a nonisotropic line in the
+hyperbolic complement gives rational and real transitivity; here
+$N-2\ge1$. Use real congruence units in the scalar lift. They
+have finite index in the CM units, since $u/\bar u$ is a root of
+unity for every CM unit $u$. The vector stabilizer has special
+unitary reductive quotient, and the remaining proof is unchanged.
+\end{proof}
+
+On $\Gamma\backslash G/K$, with $K$ compact and preserving the
+norm, use the normalized Haar lift. Apply the proposition on each
+of finitely many arithmetic components with its original weight.
+A bounded, invariant finite-adelic weight of compact support is
+dominated by a constant times the count on $m^{-1}L$ for some
+integer $m$, so it is integrable too; Haar invariance supplies its
+scaling law. The original packing estimate uses the original count.
+
+In the cusp bound, $N\ge3j+1$ and $j\ge1$, so the dimension
+condition holds. No numerical covolume or cusp count is required.
+The remaining geometric inputs are the actual arithmetic model,
+its lattice and norm, equality of its geometric mean with this
+normalized Haar mean, and the signed boundary intersection limit.
