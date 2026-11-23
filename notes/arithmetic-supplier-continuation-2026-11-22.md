@@ -95,6 +95,10 @@ constructs every original `URep/S6` field at a supplied normalized curve.
 It retains the full determinant, closed equation ideal, residual radical
 and annihilator torsion. The actual identity polarization supplies the
 commutative even--odd algebra without a coefficient-field enlargement.
+The [local propagation theorem](selmer-integral-frontier-local-propagation.md)
+supplies the actual tangent maps, second-order ordinary compatibility
+and integral presentation, proving the original `GalOut` for all of its
+primes. It does not assert existence of its stable prime or arithmetic seed.
 
 Both finite-level cohomological bounds and their exact limiting
 comparison are proved. The next arithmetic requirements are the actual

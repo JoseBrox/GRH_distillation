@@ -22,6 +22,7 @@ RANGES = {
     C+"GrAlg": [(13, 73)],
     C+"HatEx": [(43, 118)],
     C+"PairMf": [(7, 38)],
+    C+"PhiFg": [(35, 47)],
     C+"GrDet": [(7, 46)],
     C+"GrThick": [(6, 85)],
     C+"UrepOf": [(8, 103)],

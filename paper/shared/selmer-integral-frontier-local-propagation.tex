@@ -1,0 +1,258 @@
+\subsection{Local propagation at every supplied coefficient curve}
+\label{sec:selmer-local-propagation}
+
+The polarized equation model supplies the actual representation at a
+normalized characteristic-prime curve.  We now apply the existing
+padded-presentation and incidence theorems to that model, including
+their tangent and local-compatibility inputs.
+
+Retain the original ordinary pair over \(B\), the normalized point
+over \(A=k[[t]]\), its auxiliary roots and inertia parameters, and
+the specified independent odd classes \(\kappa_1,\ldots,\kappa_g\).
+Put \(F=k((t))\), \(R=\widehat{B_{\ker f}}\), and
+\(\mathfrak m=\mathfrak m_R\).  Assume the source's three conditions
+\(\mathrm K_1(h,\kappa,D_0)\), \(\mathrm K_2(h,\kappa)\), and
+\(\mathrm K_3(h,\kappa)\), with their original groups, local flags
+and skew primitives.  The integral-limit comparison supplies their
+bounded Laurent versions.
+
+\begin{proposition}[The full local propagation statement]
+\label{prop:selmer-local-propagation}
+For every pair of primes \(Z,Q\subset R\), if
+\[
+ \mathrm{DiscSt}(D_R,Z),\qquad \dim(R/Z)\geq1+D_0,
+ \qquad
+ \mathrm{DiscSt}(D_R,Q)\ \text{or}\ \mathrm{NonSS}(I,R,Q),
+\]
+then \(Z\subseteq Q\).
+Here \(I\) is the original already-closed equation ideal, and its
+base change in \(\mathrm{NonSS}\) is the literal algebraic span.
+This supplies exactly the source's \(\mathrm{GalOut}\) contract.
+\end{proposition}
+
+\begin{proof}
+\emph{The actual coefficient and tangent objects.}
+The polarized model gives \(\mathcal A=R\oplus N\) and \(v\),
+with \(N^2\subseteq\mathfrak m\), transpose involution and the full
+prescribed block span.  Evaluation of the original curve variable
+gives the coefficient DVR
+\[
+ O'=\widehat{O[[s]]_{(\pi)}}\longrightarrow R,
+ \qquad O'/(\pi)=F.
+\]
+Its image contains the original coefficients and \(s\); this uses
+\(f(s)=t\) and the surjection \(O\to k\).
+With \(\mathfrak r=(N^2)\), set
+\[
+ H=\pi R+\mathfrak m^2+\mathfrak r,\qquad
+ T=\operatorname{Der}_{O'}(R,F)_{\mathfrak r=0}
+       =(\mathfrak m/H)^*,\qquad
+ L=\operatorname{Hom}_R(N,F).
+\]
+
+All infinitesimal tests below have bounded Laurent coordinates.
+Indeed, for an \(O'\)-constant map to a finite augmented \(F\)-algebra
+with augmentation ideal of exponent \(r\), its restriction to \(B\)
+kills \(p^r\), where \(p=\ker f\).  The filtration by \(p^j/p^{j+1}\)
+makes \(B/p^r\) finite over \(C=O[[s]]\), since \(B/p=C/(\pi)\).
+The image is therefore finite over \(A\).  As
+\(\mathfrak m_B=(s)+p\), its image of \(\mathfrak m_B^j\) is
+contained in \(t^{j-r+1}\) times that finite \(A\)-module for
+\(j\geq r-1\).  Apply this to the finite original \(B\)-lattice
+of \(v\).  It gives both bounded denominators and the required
+continuity, with no assumption about arbitrary maps into \(F\).
+
+\emph{The original ordinary identities give local corrections.}
+Over any finite local augmented \(F\)-algebra, retain the ordered
+identity
+\[
+ \prod_i\bigl(\sigma(g_i)-\chi_i(g_i)\bigr)=0
+                              \quad\text{for all }(g_i).
+\]
+The residue has the prescribed flag with each distinct character
+once.  Choose \(z\in F[H_v]\) separating the finitely many character
+values; finitely many proper hyperplanes cannot cover an
+\(F\)-vector space.  Multilinearity permits this group-algebra input.
+The Lagrange projectors
+\[
+ P_i=\prod_{j\ne i}
+      \frac{\sigma(z)-\chi_j(z)}{\chi_i(z)-\chi_j(z)}
+\]
+give its ordered ordinary flag.  To check the order, let
+\(J_i=\ker\chi_i\).  The identity \(J_1\cdots J_nE^n=0\)
+says that \(J_2\cdots J_nE^n\) is the first eigenline: it is
+contained there and contains it by the product of the other
+spectral factors.  Repeat on the quotient.
+
+For two representations and character systems agreeing modulo a
+square-zero ideal, their projectors satisfy
+\[
+ S=\sum_iP_i^1P_i^0=1-Y,\qquad S^{-1}=1+Y.
+\]
+They match the ordered flags.  Thus
+\[
+ \sigma_1(g)\sigma_0(g)^{-1}-1
+       -\bigl(\sigma_0(g)Y\sigma_0(g)^{-1}-Y\bigr)
+\]
+is upper triangular in the original flag, with diagonal
+\((\chi_i^1-\chi_i^0)/\chi_i^0\).  The matrix \(Y\) stays in the
+specified parity subalgebra: all projectors belong to it, and unit
+inverses are finite geometric polynomials in nilpotents.  The corrected
+cocycle's diagonal vanishes on \(\mu_v\).  The original inertia and polarization
+identities supply the remaining Selmer conditions.
+
+\emph{The tangent maps are injective modulo the allowed boundaries.}
+Writing \(v=v_0+v_1\) and \(\bar\rho=\rho\circ h\), the actual maps are
+\[
+ a_\alpha=\alpha(v_0)\bar\rho^{-1},\qquad
+ b_\mu=\mu(v_1)\bar\rho^{-1}\qquad(\alpha\in T,\ \mu\in L).
+\]
+Their dual-number tests are ring homomorphisms, and the preceding
+argument makes them bounded even and odd Selmer cocycles.
+If \(b_\mu=dY\), extend
+\(\mu(v_1)=\bar\rho Y-Y\bar\rho\) to the full block span.
+A pure cross-corner entry \(m\in N\) has zero even reduction,
+forcing \(\mu(m)=0\).
+
+If \(a_\alpha=dY\), conjugation by \(1+\epsilon Y\) makes the
+test representation constant, hence fixes all determinant
+coefficients.  Its ordered ordinary characters are fixed as well:
+in the \(i\)-th diagonal ordinary identity, separate \(\psi_i\)
+from each other character using separate group elements.  The
+other factors are units, forcing the remaining one to vanish.
+The same argument on the actual distinct Frobenius eigenlines
+fixes every auxiliary root \(U_{ji}\).  The original partial-root
+equation then kills \(y_{ji}\), since \(h(\tau_j)=1\).
+The coefficients and \(s\) are fixed by \(O'\)-linearity.
+The exact generator condition and bounded continuity give
+constancy on \(B\), then on \(R\); therefore \(\alpha=0\).
+
+An invariant even skew matrix is zero: the full block span makes
+it scalar on each block, and \(2\ne0\) kills the skew scalars.
+Condition \(\mathrm K_3\) and the odd injection now give generators
+\(m_1,\ldots,m_g\) of \(N\) such that
+\[
+ b_\mu-\sum_j\mu(m_j)\kappa_j
+                    \quad\text{is an allowed odd boundary}.
+\]
+Duality gives these generators modulo \(\mathfrak mN\), and
+Nakayama lifts generation.  No freeness of \(N\) is used.
+
+\emph{The second-order functional really lifts.}
+Let \(\Phi:N\to F\) be residue-linear over \(O'\) and kill \(HN\).
+Then
+\[
+ \alpha_m(r)=\Phi(rm)-\bar r\Phi(m)\in T,\qquad
+ \alpha_{rm}=\bar r\alpha_m.
+\]
+A basis \(\alpha_k\) of \(T\) gives \(\mu_k\in L\) with
+\(\Phi(rm)=\bar r\Phi(m)+\sum_k\alpha_k(r)\mu_k(m)\).
+In the source's commutative algebra
+\[
+ \mathcal D_e=F\oplus F^e\epsilon\oplus F^e\epsilon'\oplus F\eta,
+ \qquad \epsilon_k\epsilon'_j=\delta_{kj}\eta,
+\]
+all other augmentation products are zero.  There is a ring map
+\[
+ r+m\longmapsto
+ \bar r+\sum_k\mu_k(m)\epsilon_k+
+              \sum_k\alpha_k(r)\epsilon'_k+\Phi(m)\eta.
+\]
+The three product checks are the derivation rule, the displayed
+formula for \(\Phi\), and \(\alpha_k(\mathfrak r)=0\).
+It supplies an actual representation with every original equation.
+
+Conjugate the odd first-order coefficients to
+\(\sum_jc_{kj}\kappa_j\), where \(c_{kj}=\mu_k(m_j)\).
+The original skew primitives give an exactly orthogonal conjugator
+\(1+\sum_k\epsilon_kY_k\).  Replace the first-order part by the
+prescribed \(\rho^1=(1+\sum_j\epsilon_j\kappa_j)\bar\rho\),
+send the old \(\epsilon'_k\) coefficients to their sums weighted
+by \(c_{kj}\), and keep \(\eta\).  The sole mixed-product check is
+\[
+ \sum_k\Bigl(\sum_jc_{kj}\kappa_j\Bigr)A_k
+       =\sum_j\kappa_j\Bigl(\sum_kc_{kj}A_k\Bigr),
+\]
+with its reverse-order version.  The original block-compatible
+flag makes the odd diagonal zero, so \(\rho^1\) has the original
+ordinary characters.  Thus group law, polarization and all
+ordinary equations survive.  Explicitly, the relation between old
+and new coefficients keeps constants and \(\eta\), sends
+\(\epsilon_{\rm old}=c\epsilon_{\rm new}\) and
+\(\epsilon'_{\rm new}=c^T\epsilon'_{\rm old}\), and is closed
+under products.  Apply it to every ordinary factor, with the same
+character transformation.  Its old zero product forces the new
+constant, \(\epsilon'\) and mixed \(\eta\) parts to vanish;
+the remaining \(\epsilon\) part vanishes by the original
+ordinary equation for \(\rho^1\).  No inverse of \(c\) is needed.
+Divide by \(\rho^1\), subtract one, and apply the square-zero
+local correction above.  This gives the prescribed second-order
+lift of \((a_{\alpha_{m_j}})_j\).
+
+\emph{First-order compatibility keeps the local flag.}
+Let \(U\subseteq T^g\) be the space of lifting tuples and
+\(W=\{\alpha:e_j\alpha\in U\ \forall j\}\).
+Condition \(\mathrm K_2\) gives \(\operatorname{codim}U\leq g\).
+For an even cocycle \(z\) with lifts
+\(\Psi_j=\epsilon'_jz+\eta H_j\), put
+\(y=z+\sum_j\epsilon_jH_j\).  Then
+\(\epsilon'_jy=\Psi_j\), proving all global conditions.
+
+Locally choose one even primitive \(Y\) and second-order primitives
+\(Y_j\).  Their discrepancies
+\(Q_{jk}=(Y_j)_{\epsilon'_k}-\delta_{jk}Y\) have upper-triangular
+coboundary.  Distinct ordinary characters force \(Q_{jk}\) itself
+upper triangular, by descending through its lower diagonals.
+With the original flags \(w,w^1\), subtract
+\[
+ C_j=w^1\left(\sum_k\epsilon'_k w^{-1}Q_{jk}w\right)(w^1)^{-1}
+\]
+from \(Y_j\).  This remains in the allowed second-order space.
+Its coboundary is upper triangular with zero diagonal, so the
+local condition is unchanged.  The corrected primitives have
+coefficients \(\delta_{jk}Y\); their \(\eta\) coefficients assemble
+a first-order primitive \(Y'\) with
+\(\epsilon'_jY'=Y_j-C_j\).  This proves the local condition for
+\(y\), with no averaging.
+
+A basis of \(W\) gives first-order classes with independent
+constant parts.  Adjoin the \(g^2\) classes \(\epsilon_j\kappa_i\).
+A boundary relation first vanishes by the tangent injection; its
+constant primitive then vanishes by the invariant-skew assertion.
+The remaining coefficients vanish by the independence of
+\(\kappa_i\).  Condition \(\mathrm K_1\) gives
+\[
+                         \dim W+g^2\leq D_0.
+\]
+The case \(g=0\) uses \(y=z\).
+
+\emph{The actual presentation and prime conclusion.}
+Apply the established padded construction.  Lift its spanning
+forms to \(X_a\in\mathfrak m\) and its \(g^2\) independent
+coefficient rows \(c_{ij}\) to \(O'\).  Cotangent duality gives
+\[
+ \mathfrak m=(X_a)+H,\qquad
+             \sum_{j,a}c_{ij,a}X_am_j\in HN.
+\]
+For the second assertion, apply any \(\Phi\) above, use its
+actual lifting tuple and the defining row relation on \(U\),
+then use separation by the dual of the finite \(F\)-space \(N/HN\).
+This proves the entire integral presentation on the original objects.
+
+For two nonzero blocks, stability implies
+\(\mathfrak r\nsubseteq Z\).  At \(Q\), stability gives
+\(\mathfrak r\nsubseteq Q\); nonsemisimplicity instead gives
+\(\operatorname{Ann}_RN\subseteq Q\) by the exact polarized model.
+The local incidence theorem gives \(Z\subseteq Q\).
+For one block, \(N=0\), and tangent generation gives
+\(O'[[X_1,\ldots,X_{D_0}]]\twoheadrightarrow R\).
+The dimension hypothesis forces the inverse image of \(Z\) to be
+the zero prime of that regular local domain.  Hence \(Z=0\).
+All source quantifiers are retained \cite{SelmerLocalPropagationSource}.
+\end{proof}
+
+This closes local propagation at every supplied curve.  It does
+not produce a stable prime or a nonzero automorphic support point.
+The remaining support assembly must still supply its arithmetic seed
+and the original curve chain.  No numerical integral annihilator
+bound follows from \(\operatorname{Ann}N\subseteq Q\).

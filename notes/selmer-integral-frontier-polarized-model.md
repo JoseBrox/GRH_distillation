@@ -21,7 +21,11 @@ normalized point
  A=k[[t]],\quad F=k((t)),\quad \ell=\operatorname{char}k\ne2.
 \]
 The original finite residue field and coefficient DVR \(O\) are retained.
-The source's \(G\) is topologically finitely generated. The original
+Here \(G\) denotes the equation group: the source's open index-two
+subgroup \(G.\mathrm G_0=\ker\eta\) of \(G.\Gamma\).
+The OoPt.fg field gives finite generation of \(G.\Gamma\);
+profinite Schreier gives finite generation of this open subgroup,
+and of each of its open subgroups. The original
 point map \(f:B\to A\) preserves the determinant and the ordinary
 characters, and a specified \(s\in B\) maps to \(t\). The coefficient map
 \(O\to k\) is surjective. The prescribed local ordinary relations,

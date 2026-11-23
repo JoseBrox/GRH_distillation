@@ -207,3 +207,11 @@ and `RadHead` at every nonterminal block head. Explicit quotient-coordinate
 inverses and the general-head Capelli recurrence retain stabilizers,
 original Haar measures, all signed-word orders and the exact appended
 singleton density. The terminal `HeadTop` and global estimates remain.
+
+The [local propagation theorem](../../notes/selmer-integral-frontier-local-propagation.md)
+proves the entire original `GalOut` from each supplied normalized curve
+and its original three Selmer conditions. The actual tangent maps,
+bounded Laurent continuity, second-order ordinary compatibility and
+integral presentation are constructed. Repeated or zero coefficient
+rows and annihilator torsion are retained. A stable prime, nonzero seed,
+patched support and the final numerical Selmer bound remain distinct.

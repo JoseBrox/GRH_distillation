@@ -235,3 +235,11 @@ verify the actual restricted-root quotient, Gram cutoff, undressed
 operator recursion and arbitrary representative quantifier. They supply
 `SliceCpt`, `HeadJ` and nonterminal `RadHead`, while retaining the separate
 terminal orbital-density and top-lift obligations.
+
+The [local propagation certificate](../certificates/selmer-integral-frontier-local-propagation.json)
+and [independent review](../certificates/selmer-integral-frontier-local-propagation-review.json)
+match the full `GalOut` quantifiers. They check the original finite-lattice
+continuity, ordinary ordered product, paired second-order algebra and
+actual integral presentation. The separate source finite-generation
+field concerns the full group; profinite Schreier transfers it to the
+open index-two equation group. Neither construction supplies a nonzero seed.

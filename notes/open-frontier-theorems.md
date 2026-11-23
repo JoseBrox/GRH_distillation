@@ -100,10 +100,12 @@ multiplier and uniform exponent n!. The actual polarized coefficient
 model now supplies every original `URep/S6` field at each supplied
 normalized curve. Its exact original closed ideal and entire residual
 radical are retained; its annihilator-prime implication gives no uniform
-annihilator exponent.
+annihilator exponent. The actual tangent injections, second-order
+ordinary compatibility and integral presentation now prove the full
+original `GalOut` at every supplied curve, under exactly the original
+three Selmer conditions.
 
-**First missing construction.** Complete the tangent and second-order
-lifting interface for this model. Construct the global marked deformation
+**First missing construction.** Construct the global marked deformation
 models and prove patched support on these very modules with the required
 dimension. Propagation must retain the entire characteristic-prime fibre
 and the actual two-sided rigidity. Neither qualitative finiteness,
