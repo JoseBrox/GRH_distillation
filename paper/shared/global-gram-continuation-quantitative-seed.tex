@@ -1,0 +1,464 @@
+\subsection{A quantitative moment for the prescribed seed}
+\label{global-gram-quantitative-seed}
+
+The qualitative seed theorem contains an uncontrolled reciprocal
+compact mass.  We remove it by estimating the actual normalized
+seed directly.  The additional tensor steps below are proved here;
+they are not claimed to lie in the earlier numerical family
+$q_{\rm fam}$.  The original arithmetic representations, periods,
+finite columns and Haar measures are retained.
+
+First work at one real place.  Put $G=U(p,q)$, where
+$p=k+r$, $q=r+1$, $k\ge1$, $n=p+q\ge1801$, and $m=2r+2$.
+Use a Euclidean orthonormal Witt basis with
+$h(e_a,f_b)=\delta_{ab}$ and a central vector
+$z=\sqrt T\,e_-$ of Hermitian norm $-T$, where $T\ge1$.
+Write $S=N\rtimes U(k)$ for the flag Bessel subgroup.  Its
+character is the literal standard character
+\[
+ \psi(n)=\exp\bigl(2i\operatorname{Im}\ell(n)\bigr),\qquad
+ \ell(n)=\sum_{a<r}h(f_a,n e_{a+1}),\quad e_r:=z.
+\]
+Indeed the source defines $c_{\rm Std}=-2i$ and
+$\psi_c=\exp(i\operatorname{Re}(c\ell))$.
+The empty sum is zero when $r=0$.
+Let $\sigma$ be the actual discrete series of integral
+Harish--Chandra parameter $\lambda$, let $w$ be any unit vector
+in its lowest compact type, and retain the actual compact target
+of parameter $u=(u_1,\ldots,u_k)$.  Assume that every noncompact
+root gap is at least $16n^{19}$.  Set
+\begin{equation}\label{global-gram-quantitative-B}
+ B=10^6n^7+1+\max_a|\lambda_a|+\max_i|u_i|,
+ \qquad H=100n^2B,
+ \qquad K=T H^{5n}.
+\end{equation}
+All group and subgroup measures are the given measures; their
+quotient $dq$ is defined by the Weil formula.
+\cite{global-gram-quantitative-source}
+
+\paragraph{The additional dual tensor family.}
+Starting at $\lambda$, construct the nonzero factors of every
+path of at most $M=10n^2$ successive dual-standard tensor
+products.  A path replaces $\mu$ by $\mu-e_s$ at each step.
+Every noncompact gap stays at least
+$16n^{19}-10n^2\ge8n^{19}$.  An integral ordered parameter can
+leave its open chamber in a single such step only by an adjacent
+equality.  That root must be compact.  The corresponding induced
+factor is zero: induction in stages through its compact rank-one
+Levi gives $\mathcal O_{\mathbb P^1}(-1)$, whose cohomology is
+zero in both degrees.  This proves the zero-factor convention,
+including when an earlier compact gap equals one.
+
+All other factors are regular discrete series in the same chamber.
+The tensor identity and good-range vanishing give the finite
+filtration, and its distinct one-step central characters split it.
+Casselman--Wallach globalization and the invariant Hermitian form
+give smooth intertwiners $i_s,p_s$ with
+\[
+ p_si_t=\delta_{st},\qquad \sum_s i_sp_s=1,\qquad
+ [i_sv,i_sv]=\epsilon_s\|v\|^2,\quad \epsilon_s\in\{1,-1\}.
+\]
+For a zero factor set $i_s=p_s=0$; the sum runs over the
+nonzero factors.  Iteration keeps path labels, so repeated final
+parameters never require a self-extension splitting assertion.
+This is the proof of the established stable tensor lemma with
+the dual weights $-e_s$ in place of $+e_s$, using its cited
+Harish--Chandra, cohomological-induction and globalization
+theorems.\cite{current-construction-record}
+
+The normalized Bessel-family theorem in ``Constructing the local
+representation and period families'' applies to every one of
+these auxiliary representations.\cite{current-construction-record}
+Its convergence proof
+uses the noncompact gap, not compact cloud separation or target
+interlacing.  The gap $8n^{19}$ satisfies its displayed numerical
+bounds.  Amenability and Bessel multiplicity one then give a
+possibly zero map $\mathcal B_\mu$, normalized by the unchanged
+subgroup period.  The same quotient-mass theorem gives
+\begin{equation}\label{global-gram-quantitative-mass}
+ F_\mu(v;g)=\sqrt{d_\mu}\,\mathcal B_\mu\sigma_\mu(g)v,
+ \qquad \int\|F_\mu(v;g)\|^2dq(g)\le\|v\|^2.
+\end{equation}
+If the map is nonzero this is an equality.  No nonvanishing is
+assumed for the auxiliary maps.
+
+\begin{lemma}[Coarse projection bound with the larger reserve]
+\label{global-gram-quantitative-projection}
+Start with the whole lowest compact type at $\lambda$.  Permit
+at most $10n^2$ successive tensor projections and at most
+$6n^3$ Lie-algebra letters, in any order for which the path exists.
+For every resulting vector $v$, whenever another tensor step is
+permitted, and every positive orthonormal dual coordinate $e_c$,
+\[
+       \sum_s\|p_s(e_c\otimes v)\|^2\le H^{2n}\|v\|^2.
+\]
+On all the compact modules needed in this argument,
+$\sum_{a,b}\|E_{ab}v\|^2\le H^2\|v\|^2$.
+\end{lemma}
+\begin{proof}
+The lowest compact Casimir has square-root bound $2\sqrt nB$:
+its highest weight is $\Lambda=\lambda+\rho-2\rho_K$, so its
+Casimir is $\|\lambda+\rho-\rho_K\|^2-\|\rho_K\|^2$.
+Every auxiliary parameter has absolute value at most $B$.
+Tensoring with a standard or dual coordinate adds at most
+$\sqrt n$ to the square root of a compact energy bound.
+A Lie letter adds at most $2n$, by the Hilbert--Schmidt adjoint
+Casimir calculation in ``Simultaneous moments of flag-length
+ratios''.\cite{current-construction-record}
+A compact intertwiner introduces no new compact Casimir
+eigenvalues; this assertion does not require a Hilbert isometry.
+Applying an inclusion and then taking a coordinate costs at most
+two extra $\sqrt n$ terms.  Thus all components used below have
+compact energy radius at most
+\[
+ 2\sqrt nB+(10n^2+2)\sqrt n+2n(6n^3+2)\le4nB.
+\]
+The full Casimir is $c_\mu=\|\mu\|^2-\|\rho\|^2\ge-n^3$.
+Consequently the exact energy identity gives
+\begin{equation}\label{global-gram-quantitative-energy}
+ \sum_{a,b}\|E_{ab}v\|^2
+ =2\langle v,\Omega_Kv\rangle-c_\mu\|v\|^2
+ \le33n^2B^2\|v\|^2\le(6nB)^2\|v\|^2.
+\end{equation}
+
+Put $P_s=i_sp_s$ and $(\mathcal Tx)_a=-\sum_bE_{ab}x_b$.
+For $x=e_c\otimes v$, let $V_x$ be the finite span of $P_sx$.
+The tensor Casimir identity gives
+$\mathcal TP_s=\zeta_sP_s$, where
+$\zeta_s=-\mu_s+(1-n)/2$.
+The components of $V_x$ satisfy the bound just proved.
+Cauchy--Schwarz in each row gives
+$\|\mathcal T|_{V_x}\|\le6n^2B$.
+Furthermore $|\zeta_s|\le2B$ and
+$|\zeta_s-\zeta_t|=|\mu_s-\mu_t|\ge1$ for $s\ne t$.
+Polynomial interpolation, including the harmless zero-factor
+labels, therefore gives
+\[
+ P_s|_{V_x}=\prod_{t\ne s}
+       \frac{\mathcal T-\zeta_t}{\zeta_s-\zeta_t},
+ \qquad \|P_s|_{V_x}\|\le H^{n-1}.
+\]
+This is a statement on a finite invariant space, so no bound for
+an unbounded Lie operator on the ambient Hilbert space is used.
+Finally
+\[
+ \sum_s\|p_sx\|^2
+ =\sum_s|[P_sx,P_sx]|
+ \le nH^{2n-2}\|x\|^2\le H^{2n}\|v\|^2.
+\]
+Equation~\eqref{global-gram-quantitative-energy} also proves the
+asserted derivative bound, since $6nB\le H$.
+\end{proof}
+
+\paragraph{Lowering constants without an interlacing reserve.}
+For every nonzero base period map and every regular shifted
+factor, the exact cofactor evaluation and period-adjoint argument
+in ``The degree-normalized Bessel lowering scalar'' give
+\cite{current-construction-record}
+\begin{equation}\label{global-gram-quantitative-lowering}
+ |\kappa_s|^2\frac{d_\mu}{d_{\mu-e_s}}
+ =T\frac{\prod_{i=1}^k|\mu_s-1/2-u_i|}
+          {\prod_{t\ne s}|\mu_s-1-\mu_t|}
+ \le T H^n.
+\end{equation}
+The denominator factors are nonzero integers and have absolute
+value at least one.  The numerator factors are at most $3B$.
+These facts replace the earlier finer interlacing estimate.
+The actual root character has the opposite sign to the adjacent
+imaginary-coordinate convention in the earlier ratio display;
+the Capelli root factors still have moduli $1$ and $\sqrt T$,
+so this absolute scalar identity is unchanged.  If a target
+period map is zero its scalar is zero.  If a compact-wall factor
+is zero, omit it before applying the displayed formal-degree
+ratio; division by its zero denominator is never made.
+If the base map is zero all its moments vanish directly.
+
+\begin{lemma}[High flag moments]
+\label{global-gram-quantitative-flag-moments}
+Let $L_i(g)$ be the Euclidean Gram--Schmidt lengths of
+$g^{-1}e_0,\ldots,g^{-1}e_{r-1},g^{-1}z$, and put
+$R_i=L_{i+1}/L_i$.  For the lowest-type unit vector $w$,
+\[
+ \int L_0^{2a}\|F_\lambda(w)\|^2dq\le K^a
+       \quad(0\le a\le10n^2),
+ \qquad
+ \int\prod_{i<r}R_i^{2\alpha_i}\|F_\lambda(w)\|^2dq
+       \le H^{2|\alpha|}\quad(|\alpha|\le6n^3).
+\]
+\end{lemma}
+\begin{proof}
+The exact dual-tensor transfer identity in the proof of
+``Moments of the first flag length'',\cite{current-construction-record} with
+\eqref{global-gram-quantitative-lowering}, gives
+\[
+ L_0^2\|F_\mu(v)\|^2
+ \le nT H^n\sum_{d,s}
+           \|F_{\mu-e_s}(p_s(e_d\otimes v))\|^2.
+\]
+At each induction step the sum of squared vector norms is at most
+$nH^{2n}\|v\|^2$.  Thus the cost is
+$n^2TH^{3n}\le TH^{5n}=K$.
+Use \eqref{global-gram-quantitative-mass} for the zero-order
+case and induct, decreasing the remaining tensor depth at every
+step.  All vectors stay in the larger reserve just proved.
+Tonelli justifies the induction without assuming a weighted
+integral finite in advance.
+
+For completeness, the rank-two adjacent-root vector in the proof
+of ``Simultaneous moments of flag-length ratios''
+\cite{current-construction-record} differentiates the present
+character to $+2iL_{i+1}^2$, instead of $-2iL_{i+1}^2$.
+Taking squared norms gives the same pointwise inequality
+\[
+ R_i^2\|F_v\|^2\le\sum_{a,b}\|F_{E_{ab}v}\|^2.
+\]
+Induct on $|\alpha|$, using
+\eqref{global-gram-quantitative-energy} at every derivative
+step and the mass bound at the last step.  This proves the
+second assertion through the stated $6n^3$ reserve.
+\end{proof}
+
+\begin{lemma}[The quotient norm in flag coordinates]
+\label{global-gram-quantitative-quotient-geometry}
+For $\nu(g)=\inf_{s\in S}\|sg\|_{\rm op}$ one has
+\begin{equation}\label{global-gram-quantitative-nu}
+ 1\le\nu(g)\le
+ \max\left(\{1,\sqrt2L_r(g)/\sqrt T\}\cup
+                  \{L_i(g),L_i(g)^{-1}:i<r\}\right).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Gram--Schmidt subtraction on the ordered flag is upper
+unitriangular.  It preserves its Hermitian Gram matrix and
+extends by Witt's lemma to an element of $S$.
+The residual isotropic vectors are Euclidean orthogonal and
+Hermitian orthogonal.  Their positive and negative components
+are consequently two orthogonal systems with lengths
+$L_i/\sqrt2$.  A maximal compact element sends their normalized
+vectors to the standard Witt vectors.
+
+The last residual is Euclidean and Hermitian orthogonal to this
+isotropic system and has Hermitian norm $-T$.  Its two component
+lengths are
+\[
+ \alpha=\sqrt{(L_r^2-T)/2},\qquad
+ \beta=\sqrt{(L_r^2+T)/2}.
+\]
+In particular $L_r\ge\sqrt T$.  The remaining compact group
+moves it to one positive and one negative coordinate; $k\ge1$
+ensures the positive coordinate is available.  It is the image
+of $z$ by a boost with
+$\sinh t=\alpha/\sqrt T$, $\cosh t=\beta/\sqrt T$.
+Its operator norm is
+$e^t=(\alpha+\beta)/\sqrt T\le\sqrt2L_r/\sqrt T$.
+
+Together with the boosts
+$e_i\mapsto L_i e_i$, $f_i\mapsto L_i^{-1}f_i$, this constructs
+a representative in $g^{-1}S$ of operator norm at most the
+displayed maximum.  Indeed it and the Gram--Schmidt-adjusted
+$g^{-1}$ agree on the full flag, and their quotient fixes that
+flag pointwise, hence belongs to $S$.
+An indefinite unitary matrix and its inverse have the same
+operator norm.  Inverting this representative proves the upper
+bound in \eqref{global-gram-quantitative-nu}; the lower bound
+follows from the determinant having modulus one.
+The argument also covers $r=0$ using only the last boost.
+\end{proof}
+
+\begin{theorem}[An explicit normalized quotient moment]
+\label{global-gram-quantitative-moment}
+With the exact period normalization above,
+\begin{equation}\label{global-gram-quantitative-moment-bound}
+ \int\nu(g)^{10n^2}\|F_\lambda(w;g)\|^2dq(g)
+       \le m\bigl(2T H^{6n}\bigr)^{5n^2}.
+\end{equation}
+This bound applies to the actual unit seed fixed by its original
+matrix-coefficient projector.
+\end{theorem}
+\begin{proof}
+For $a=5n^2$ and $0\le i\le r$, write
+$L_i=L_0\prod_{j<i}R_j$ and apply Cauchy--Schwarz to the
+measure $\|F_\lambda(w)\|^2dq$.  The first factor requires the
+first-length order $2a=10n^2$, and the second the ratio order
+$2ai\le10n^2r\le5n^3$.  Lemma~\ref{global-gram-quantitative-flag-moments}
+therefore gives
+\[
+ \int L_i^{2a}\|F_\lambda(w)\|^2dq\le K^aH^{2ai}.
+\]
+Also $L_i^{-1}=L_r^{-1}\prod_{j=i}^{r-1}R_j$, so
+\[
+ \int L_i^{-2a}\|F_\lambda(w)\|^2dq
+       \le T^{-a}H^{2a(r-i)}\quad(i<r).
+\]
+Raise \eqref{global-gram-quantitative-nu} to $2a$ and bound the
+maximum by the sum of its $2r+2$ entries.  Since $T\ge1$,
+$K=TH^{5n}$ and $5n+2r\le6n$, every resulting integral is at
+most $(2TH^{6n})^a$.  This proves the first assertion.
+
+For the last assertion let
+$p(g)=d_\lambda\overline{\langle w,\sigma(g)w\rangle}$.
+The original gap makes $p$ integrable, and $R(p)$ is the
+orthogonal projection from the quotient-mass proof.
+Its kernel on compactly supported bounded sections is exactly
+$F_\lambda(w;g)F_\lambda(w;h)^*$, with the original measures.
+If $\mathcal B_\lambda=0$ this kernel is zero, so density gives
+$R(p)=0$.  A prescribed unit seed $W$ with $R(p)W=W$ excludes
+that case.  The mass isometry and the same kernel show that
+$R(p)$ has range $\mathbb C F_\lambda(w)$.
+Consequently $W$ differs from $F_\lambda(w)$ by a unit scalar.
+The displayed estimate is therefore for the prescribed seed;
+it makes no additional Bessel nonvanishing assumption.
+\end{proof}
+
+\paragraph{The original quotient measure in the $L^1$ bound.}
+Define $c_G>0$ by the exact Cartan integration formula for $dg$,
+using probability maximal-compact measures and radial density
+\[
+ J(t)=\prod_{i<j}\sinh(t_i-t_j)^2\sinh(t_i+t_j)^2
+       \prod_i\sinh(t_i)^{2(p-q)}\sinh(2t_i),
+ \quad t_1\ge\cdots\ge t_q\ge0.
+\]
+Any fixed root-coordinate factor is included in $c_G$.
+Put $s_0=\mu_S\{s:\|s\|_{\rm op}\le2\}>0$.
+This set is compact and contains a neighborhood of the identity.
+Let $d_0=2pq+1$.  Since
+$J(t)\le\exp(2\sum_i(n-2i+1)t_i)$, integration over
+$t_1\le\log R$ gives
+\[
+ \mu_G\{g:\|g\|_{\rm op}\le R\}\le c_G R^{d_0}
+ \quad(R\ge1);
+\]
+here $(\log R)^q/q!\le R$.  A quotient point with $\nu\le R$
+has a representative of norm at most $2R$.  Its translates by
+the subgroup ball of norm two lie in the group ball of norm
+$4R$.  The Weil formula thus gives
+\[
+ \mu_Q\{\nu\le R\}\le(c_G/s_0)4^{d_0}R^{d_0},\qquad
+ \int_Q\nu^{-2n^2}dq\le2(c_G/s_0)4^{d_0}.
+\]
+The last inequality is layer cake and
+$2n^2/(2n^2-d_0)\le2$.
+Cauchy--Schwarz with
+\eqref{global-gram-quantitative-moment-bound} proves the actual
+weighted bound
+\begin{equation}\label{global-gram-quantitative-L1}
+ \int_Q\nu^{4n^2}\|W\|dq
+ \le {\cal L}(T,B;c_G,s_0):=
+ \sqrt{\frac{2m c_G}{s_0}}\,2^{2pq+1}
+                    (2T H^{6n})^{5n^2/2}.
+\end{equation}
+The ratio $c_G/s_0$ is retained.  Rescaling $ds$ changes the
+normalized seed and this $L^1$ norm, so it cannot be silently
+replaced by one.
+
+\paragraph{Exact transport from the original arithmetic frame.}
+At every real place use the source coordinates $P_v^{-1}$.
+Let $t_{{\rm fr},v}\in G_v$ carry the standard Witt frame, the
+vector $\sqrt{T_u}e_-$, and its positive orthonormal complement
+to the actual $e_a,f_a,z_u,w_{u,v}$.  Such an isometry exists
+because their Hermitian Gram matrices agree.  Put
+\begin{equation}\label{global-gram-quantitative-character-scale}
+ c=\frac{g}{2\pi},\qquad
+ \eta_a=(-ic)^{r-a},\qquad
+ D_\eta e_a=\eta_a e_a,\quad
+ D_\eta f_a=\overline{\eta_a}^{-1}f_a,\quad
+ D_\eta z=z,\qquad t_v=t_{{\rm fr},v}D_\eta.
+\end{equation}
+Here $g$ is the actual product of the two selected rational
+primes; it is the same scalar at every embedding.
+Every adjacent root coordinate, including the last one involving
+$z$, is multiplied under conjugation by $D_\eta$ by $-ic$.
+The literal arithmetic character is
+$\exp((4\pi i/g)\operatorname{Re}\sum_a B_a)$ at each place.
+Thus
+\[
+ \psi_{u,v}(t_vnt_v^{-1})
+ =\exp\bigl((4\pi i/g)\operatorname{Re}(-ic\ell(n))\bigr)
+ =\exp(2i\operatorname{Im}\ell(n)).
+\]
+Multiplying these equalities proves the exact global character
+identity; no degree or embedding factor is removed.
+The diagonal $D_\eta$ is the identity on the positive compact
+complement, so the compact target remains the prescribed one.
+
+Set $\widetilde W_u(g)=W_u(tg)$, push $ds_u$ by
+$s\mapsto t^{-1}st$, and push the given representative measure
+$\nu_Q(u)$ by $x\mapsto t^{-1}x$.  Left invariance keeps $dg$
+unchanged, and the Weil formula gives exactly the quotient
+measure used above.  Right convolution by the actual $p$ is
+unchanged.  Haar uniqueness allows the given product-group
+subgroup measure to be factored into local Haar measures whose
+product is exactly that measure; no total scalar is changed.
+
+The source's actual tensor identity for $W_u$ then gives local
+continuous sections.  Its global equivariance implies their
+local equivariance by fixing nonzero factors at the other
+places.  Its unit norm and Tonelli give finite positive local
+norms $a_v$ with $\prod_v a_v=1$.  The product projector fixes
+their tensor, hence each normalized local section is fixed by
+its local orthogonal projector.  The last part of
+Theorem~\ref{global-gram-quantitative-moment} applies to each.
+Since the norm is the product of local norms, the resulting
+global estimate is exactly
+\begin{equation}\label{global-gram-quantitative-global-L1}
+ \int\left(\prod_v\nu_v(g_v)\right)^{4n^2}
+           \|\widetilde W_u(g)\|\,dq(g)
+ \le\prod_{v\mid\infty}{\cal L}(T_u,B_v;c_{G,v},s_{0,v}).
+\end{equation}
+The infimum for the product quotient norm equals the product
+of the local infima, since the subgroup is a direct product.
+All $f=[F:\mathbb Q]$ factors remain.
+
+\paragraph{The exact weighted far-return consequence.}
+The arithmetic minimum proof can now be applied at the original
+point $(tg,a_{u,\rho}k)$ using the vectors $t_v^{-1}y_v$.
+This is an equality of its actual metric realization
+$(t_vg_v)^{-1}y_v=g_v^{-1}t_v^{-1}y_v$, not a change of the
+arithmetic lattice.  The transformed norms of its flag vectors
+are $c^{-(r-a)}$, $c^{r-a}$ and $\sqrt{T_u}$.
+The four arithmetic pairing cases and every higher-rank
+covolume normalization therefore give
+\[
+ \theta_u^{\rm st}=
+ \min\bigl(\{1,T_u^{-1/2}\}\cup
+ \{c^{r-a},D_F^{-(r-a)/f}c^{-(r-a)}:a<r\}\bigr),\qquad
+ \tau_u^{\rm st}=\min\left\{\tfrac12,
+       \frac{\theta_u^{\rm st}}{\sqrt nD_E^{1/(4f)}}\right\},
+\]
+and
+\[
+ \tau(tg,a_{u,\rho}k)\ge
+           \tau_u^{\rm st}\left(\prod_v\nu_v(g_v)\right)^{-1/f}.
+\]
+The fractional different is unchanged: its absolute $E$-norm
+is still $D_F^2$.  In particular no $f_a$ is declared integral.
+
+Under precisely the cited \texttt{Deep.FarBound} hypotheses
+in Section~\ref{global-gram-arithmetic-minimum}, define
+\[
+ C_u^{\rm st}=2f3^f
+        \left(\frac{3\sqrt n}{(\tau_u^{\rm st})^2}\right)^{2n^2f}.
+\]
+The original normalized far-return sum $\mathcal T_{h,\varepsilon}$
+then satisfies, for every original column and every $k\in K_2$,
+\begin{equation}\label{global-gram-quantitative-far}
+ \int \mathcal T_{h,\varepsilon}(tg,a_{u,\rho}k)
+         \|\widetilde W_u(g)\|\,d(t^{-1}_*\nu_Q(u))(g)
+ \le C_u^{\rm st}e^{-h\varepsilon^2/16}
+       \prod_v {\cal L}(T_u,B_v;c_{G,v},s_{0,v}).
+\end{equation}
+The original normalizer is
+$(\prod_vd_v)e(1)$, with $e(1)=\operatorname{vol}(K_2)^{-1}$.
+The far-return factor itself need not descend to the $S$ quotient;
+the displayed representative measure is consequently retained.
+Its majorant does descend, which is exactly what
+\eqref{global-gram-quantitative-global-L1} uses.
+
+This is a quantitative bound for the actual seed and its actual
+far-return integral.  It replaces the unknown compact-mass
+reciprocal and unknown frame heights by the displayed arithmetic,
+weight and Haar quantities.  Bounds for those quantities across
+the moving family, the near returns, and the exact retained
+arithmetic-chain trace remain required for W08.  The cited
+\texttt{Deep.FarBound} is not reproved here, and no final numerical
+trace budget follows merely from this estimate.

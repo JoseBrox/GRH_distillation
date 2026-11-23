@@ -61,8 +61,8 @@ window grows. No alteration of this exponent accounting is made here.
 ## W04: the actual integral Selmer product
 
 **Frontier theorem S.** Construct the original marked local/global
-deformation models' remaining global support and two-sided rigidity
-argument for the now-constructed ordinary modules and integral Hecke
+deformation models' remaining two-sided rigidity
+argument for the now-constructed support, ordinary modules and integral Hecke
 determinant, retaining their stated ordinary local conditions. For those same
 models prove the integral congruence comparison used by the weighted
 Selmer consumer, together with its required bound on the actual prime
@@ -153,12 +153,11 @@ and the exact arithmetic `P1` condition. It uses algebraized entry fields
 before completion; no bound on a completed fraction-field transcendence
 degree is assumed.
 
-**First missing construction.** For rank three construct the finite-weight
-ideal covering every original type-E support prime and the actual
-nonsplit thick links needed to propagate through its determinant section.
-Then prove the retained global two-sided rigidity and integral Selmer
-budget. The entire characteristic-prime fibre, nilpotents and integral
-torsion remain part of these requirements.
+The [rank-three propagation theorem](selmer-support-continuation-rank-three-propagation.md) now supplies the actual type-E finite-weight ideal and the Sharp determinant section with its nonsplit thick links. The [arithmetic transfer](selmer-support-continuation-rank-three-transfer.md) verifies the original coefficient surjection, Nice/Thick conditions and full P1/P23 chain, including characteristic three. Thus the original rank-three AllGood/OffFin conclusion holds for the actual Hecke ideal.
+
+The [finite-point theorem](selmer-support-continuation-finite-points.md) now supplies the complete original AbsMain: both GoodPt assertions and FinPt with every original DVR/field-test quantifier. A residue-pullback coefficient ring gives the exact universal map, and one balanced upper/lower monomial forces triangularity at fixed characteristic-prime weight.
+
+**First missing construction.** Supply the actual GalLink/auxiliary frame and finite-endomorphism transfer giving two-sided global rigidity, then discharge the moving-family integral Selmer budget. The entire characteristic-prime fibre, nilpotents and integral torsion remain part of these requirements; support coverage gives no uniform nilpotence exponent.
 
 ## W06: the integral theta construction
 
@@ -211,9 +210,9 @@ component and coefficient embedding. The determinant scalar keeps and
 cancels the exact lattice index. The [actual key shift](theta-spanning-continuation-key.md) now
 removes the tag integrally, retains the original primitive boundary line
 and all dyadic/ramified factors, and supplies the exact shifted family.
-The first missing input is selected-prime divisibility and arithmetic-chain
-compatibility for these same maps.
-A constructed integral theta section does not supply the global norm.
+The [actual local-chain theorem](theta-spanning-continuation-chain.md) now constructs the point/phase models, exact integral coefficient coordinates, all local kernel laws and the literal twisted initial source. It supplies the selected exponent and positive conjugate gain for the original finite TC/ColIn chain, keeping its frame form and class masses.
+
+**First missing identity.** Identify that specified chain, after its original source twist and all retained cuts, with the global Poincare operators normalized by the original c0X. Retain the exact coefficient norm, periods, finite Haar masses, compact types and radial factors. Neither representation-type agreement nor local divisibility supplies this identity or the global trace bound. The original growing coefficient field remains part of its quantifiers.
 
 ## W08: the actual global period Gram operators
 
@@ -308,15 +307,13 @@ projector theorem](global-gram-continuation-projectors.md) supplies full
 that particular target cut has exactly zero loss. The
 [arithmetic minimum](global-gram-continuation-minimum.md) controls the
 source's higher-rank `leastSize` by the original quotient norm uniformly
-over the finite columns. With the cited `FarBound`, it yields a finite
-weighted far-return majorant, not a uniform moment bound.
+over the finite columns. The [quantitative seed theorem](global-gram-continuation-quantitative.md) now proves an explicit normalized moment of order `10n^2` and its weighted L1 consequence, without an unspecified compact-mass reciprocal. Exact transport of the original additive character removes uncontrolled frame heights. Under the cited `FarBound`, this gives an explicit far-return integral in terms of the field, T, weights and original Haar ratio. It does not by itself make that contribution small in the final trace budget.
 
 **First missing construction.** Identify this Poincare Gram operator with
 the final restricted arithmetic chain and its scalar class-kernel
 dictionary, retaining every further target projection. Prove the uniform
 positive trace deficit/excess bounds for these same maps. In particular
-the weighted quotient-norm moment and near-return contributions must be
-controlled as the field and frame grow.
+the remaining intrinsic Haar/covolume factors and near-return contributions must be controlled as the field grows, and the explicit far bound must be absorbed with the actual final normalizers.
 
 ## W10: the exact integral geometric supplier
 
@@ -398,3 +395,5 @@ arithmetic section construction, the marked characteristic-prime support and
 global marked deformation models, and the
 global period-return estimate, not further optimization of the already
 proved frame inequalities.
+
+The [actual thick-region theorem](geometry-bergman-continuation-thick.md) now supplies the precise lower Bergman estimate `exp(-C(l1(u1)+(fr)^8))`, with an absolute constant and the original chart, metric, component probability and Haar normalization. A tensor/Minkowski argument uses the exact trace-self-dual lattice to prove thick injectivity; a complete-quotient dbar construction and regular-weight cuspidality give the actual cusp peak. The original numerical host inequalities connecting this exponent to `lenT`/`unitE` remain explicit. The next analytic inputs are the thin theta-pivot lower bound and the global integral cusp-frame upper bound.

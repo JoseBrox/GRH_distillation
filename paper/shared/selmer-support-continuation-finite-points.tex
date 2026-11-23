@@ -1,0 +1,148 @@
+\subsection{Every original DVR point and fixed-weight rigidity}
+\label{sec:support-finite-points}
+
+Retain the original coefficient DVR $O$, its finite residue field $k$
+of odd characteristic $\ell$, the frame $F$ with all its original
+\texttt{Ok} hypotheses, and the original normalized spaces $S_n$.
+An \emph{original DVR lift} means a complete DVR $A$ with finite
+residue field, a local $O$-algebra structure, and an original
+normalized representation $\rho$ satisfying \texttt{IsLiftA}.
+In particular, its residual representation is diagonal, with the
+specified diagonal characters, and the representation and ordered
+local characters are adically continuous.  These are the literal
+point quantifiers, including residue extensions, in
+\cite{support-finite-points-source}.
+
+\begin{lemma}[A coefficient ring with the original residue field]
+\label{lem:support-residue-pullback}
+Every original DVR lift is the image of the original universal
+representation under an $O$-algebra map $S_n.R\to A$.
+\end{lemma}
+
+\begin{proof}
+Write $k'=k(A)$ and identify $k$ with its image in $k'$.  Set
+\[
+ C=A\mathbin{\times}_{k'}k
+   =\{a\in A:\overline a\in k\}.
+\]
+This is a local $O$-algebra with maximal ideal $\mathfrak m_A$ and
+residue field $k$.  Lifts of a $k$-basis of $k'$, together with $1$,
+generate $A$ over $C$: subtract the corresponding combination with
+coefficients lifted from $O$, leaving an element of
+$\mathfrak m_A\subset C$.  For a uniformizer $\pi_A$,
+\[
+ \mathfrak m_C^r=\mathfrak m_A^r=\pi_A^rA\qquad(r\geq1),       \tag{FP1}
+\]
+since $\pi_A^rb$ is a product of $r$ elements of $C$.
+Thus $C$ is closed and complete with its own adic topology.
+For a nonzero proper ideal $J\subset C$, take $a\in J$ of least
+$A$-valuation $r$.  The submodule
+$a\mathfrak m_A=\pi_A^{r+1}A\subset J$ is finite over $C$, and
+$J/(a\mathfrak m_A)$ is finite because $A/\pi_A^{r+1}A$ is finite.
+Every ideal of $C$ is therefore finitely generated.  The field case,
+if allowed in the DVR convention, simply gives $C=k$.
+
+All entries of $\rho$, its inverse matrices, and the local character
+values and inverses lie in $C$, since their prescribed residues lie
+in $k$.  The normalized equations descend through the injection
+$C\hookrightarrow A$, and (FP1) preserves their continuity.
+The lift over $C$ is therefore in the original complete local
+category with residue field $k$.  Its universal map
+$S_n.R\to C$, followed by inclusion, is the required map.
+\end{proof}
+
+\begin{theorem}[The literal finite-point output]
+\label{thm:support-finite-points}
+For $n=2,3$, \texttt{AllGood} for the actual Hecke ideal implies
+the original \texttt{GoodPt}: every original DVR lift satisfying
+the original irreducibility test after any injective map to a field
+has its full twisted determinant law and ordered local characters
+factoring through the actual Hecke quotient over the same $A$.
+
+For $n=3$, the original \texttt{OffFin} implies the literal
+\texttt{FinPt}.  More precisely, let $A$ additionally be a
+$k$-algebra with the original $O$--$k$--$A$ scalar tower, and assume
+\[
+ \psi_{v,i}(g)=1\quad
+ (g\in I_v,\ \Psi(\operatorname{loc}_vg)=1).                 \tag{FP2}
+\]
+Then $\rho$ is globally upper triangular or globally lower triangular
+in its original coordinates, its diagonal is
+$(\Psi,1,\Psi^{-1})$, and for every $g$,
+\[
+ \det(X-\rho(g))=(X-\Psi(g))(X-1)(X-\Psi(g)^{-1}).           \tag{FP3}
+\]
+Consequently the original rank-two and rank-three \texttt{ModIn}
+inputs give the complete original \texttt{AbsMain} output.
+\end{theorem}
+
+\begin{proof}
+Use Lemma~\ref{lem:support-residue-pullback} and let
+$P=\ker(A_n\to A)$.  It is prime.  For the first assertion,
+irreducibility after the specified injective field map excludes
+both triangular loci and, in rank three, the corner-plus-middle
+splitting on $E$.  Thus $P$ is type I.  If $J$ is the original
+Hecke ideal and $\Phi:B_{\rm det}\to B_n$ its compatible map,
+\texttt{AllGood} gives
+$\Phi(J)\subset P\cap B_n$.  The composite
+$B_{\rm det}\to B_n\to A$ kills $J$ and carries the full determinant
+law and ordered characters to the prescribed twisted ones by the
+original compatibility.  This proves \texttt{GoodPt} integrally,
+with every original $A$ and field-test quantifier.
+
+For the second assertion, write $I\subset B_3$ for the actual
+\texttt{OffFin} ideal.  Thus
+\[
+ \mathfrak m_{B_3}\subset\sqrt{I+\lambda_3},\qquad
+ I\subset P'\cap B_3\quad\hbox{for every off-triangular prime }P'.
+                                                               \tag{FP4}
+\]
+If $P$ were off triangular, the first ideal $I$ would vanish in $A$.
+So would $\lambda_3$: its uniformizer vanishes through $O\to k\to A$,
+and its original fixed-inertia generators vanish by (FP2).
+Primality and (FP4) then kill $\mathfrak m_{B_3}$.
+But off-triangularity supplies nonzero upper and lower entries
+$u,v$ of degrees $a,-b$, where $a,b\in\{1,2\}$.
+Their balanced product $u^bv^a$ belongs to $B_3$ and has zero
+original residue, so lies in $\mathfrak m_{B_3}$.
+Its image cannot vanish in the domain $A$.  This contradiction
+proves global triangularity with the original coordinate ordering.
+
+The diagonal entries $a_i$ are now continuous characters residually
+$\Psi^{w_i}$.  The original ordered local equations give local
+characteristic polynomial $\prod_i(X-\psi_{v,i})$; this follows from
+the original \texttt{f3} element has residual $\Psi^2\ne1$, hence
+three distinct residual eigenvalues and separating local projectors.
+The resulting ordered flag over $\operatorname{Frac}A$ gives the identity,
+which descends to $A$ by injection.  Under (FP2),
+$(a_i(g)-1)^3=0$, hence $a_i(g)=1$, including when $\ell=3$.
+The characters $b_i=a_i/\Psi^{w_i}$ have residue one.
+For arbitrary inertia $g$, its power $g^{|k|-1}$ belongs to the
+subgroup in (FP2), so $b_i(g)^{|k|-1}=1$ and $b_i(g)=1$.
+Here the principal units of a characteristic-$\ell$ domain have
+no nontrivial finite-order elements: $\ell$-power torsion is
+excluded by Frobenius and prime-to-$\ell$ torsion by the simple
+root at $1$.  The original polarization similarly makes every
+$b_i$ trivial on conjugate inertia.
+
+Modulo $\mathfrak m_A^N$, each $b_i$ has finite $\ell$-group image
+and open kernel.  The literal original class-group exponent
+condition \texttt{cl} gives one nonzero $h$ such that
+$b_i(g)^h=1$ in every such quotient.  Krull intersection gives the
+identity in $A$, and principal-unit torsion-freeness gives $b_i=1$.
+The triangular determinant proves (FP3).
+
+Apply the first assertion to the rank-two and rank-three
+\texttt{AllGood} conclusions, and the second to their actual
+rank-three \texttt{OffFin} ideal $I\cap I_3$.
+These are precisely \texttt{GoodPt} in both ranks and
+\texttt{FinPt} in rank three, the three outputs of \texttt{AbsMain}.
+All original arithmetic \texttt{ModIn} hypotheses remain explicit.
+\end{proof}
+
+The triangularity assertion is about the original DVR domains.
+It supplies neither a uniform nilpotence exponent over Artinian
+rings nor an integral lattice-length bound.  The next arithmetic
+interface is the original \texttt{GalLink} transfer to one fixed
+finite-index Galois subgroup, followed by the two-sided finite-ring
+criterion and the moving-family Selmer estimate.

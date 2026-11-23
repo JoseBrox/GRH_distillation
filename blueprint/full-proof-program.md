@@ -210,7 +210,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The original normalized SeedIn and complete rank-two PropagationTheoremGL2 are now supplied, including characteristic-prime Nice curves, the actual obstruction presentation and arithmetic P1. Construct the rank-three type-E finite-weight ideal and nonsplit thick links; then prove two-sided rigidity and the moving-family integral Selmer product for the same equations, torsion and local-degree conditions.
+**Next concrete task.** The actual rank-two/rank-three support and full AbsMain point contracts are now proved, retaining every DVR, field-test and characteristic-three condition. Construct the actual GalLink/auxiliary frame and finite-endomorphism transfer for global two-sided rigidity, then prove the uniform integral Selmer product. Fixed-weight triangularity gives no uniform Artinian nilpotence or lattice-length bound.
 
 **Acceptance conditions:**
 
@@ -279,7 +279,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, r60. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The actual integral raw span and original key/parallel shifts now supply the complete shifted short family and literal h0/hsh. Finish selected-prime divisibility and arithmetic-chain compatibility for the same maps, retaining the common clearing integer, coefficient fields, ramified eigenlattice factors, all finite phases and source twists.
+**Next concrete task.** The actual local TC/ColIn chain now has its point/phase models, exact integral value lattices, literal kernels, selected and conjugate divisibility and twisted initial-source compatibility. Identify it with the final normalized global Poincare maps and all prescribed restrictions, retaining c0X, periods, original frame forms, finite Haar masses and compact types. No uniform bound on the growing coefficient field is inferred.
 
 **Acceptance conditions:**
 
@@ -322,7 +322,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The actual full rational-return sum now equals the Poincare Gram operator, the original target projector fixes all periods exactly, and the original higher-rank lattice minimum is bounded on every period cell. Identify the final restricted arithmetic chain and scalar class-kernel dictionary with this operator, keeping further target cuts; prove the uniform weighted moment and positive trace deficit/excess bounds. Fixed-setting convergence and the conditional far-return majorant are not a uniform small trace bound.
+**Next concrete task.** The exact Poincare Gram identity, original target projector and all-submodule minimum are supplied. A direct normalized quotient moment removes the uncontrolled compact-mass reciprocal and frame heights, retaining explicit field, weight, T and Haar dependence. Prove the final arithmetic-chain/scalar-kernel identity, intrinsic Haar/covolume control, near-return bounds and the required restricted positive traces. The explicit far integral still retains the cited FarBound hypotheses.
 
 **Acceptance conditions:**
 
@@ -383,7 +383,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The actual models now supply positivity, birational cusp systems, exact flat degree, unramified integral frames, parallel/key shifts and both literal h0/hsh short families. Prove the required pointwise Bergman/height and multiplication comparisons, then the numerical arithmetic section remainder in the original metrics and lattices.
+**Next concrete task.** The actual models, positivity, birational systems, flat degree, all integral shifts, h0/hsh and the original thick-region Bergman lower bound are supplied. Prove the exact thin theta-pivot estimate and global integral cusp-frame upper bound, verify their numerical host wrappers, and finish the original point-height and section-remainder estimates.
 
 **Acceptance conditions:**
 

@@ -1,0 +1,347 @@
+\subsection{A peak section on the actual thick quotient}
+\label{shared-bergman-actual-thick}
+
+The following argument concerns the original good cover and its
+Hermitian line, at one coefficient embedding.  It uses a complete
+quotient metric, so no estimate for a separately periodized peak or for
+an arithmetic fundamental volume is needed.  Write
+$f=[E:\mathbb Q]/2$, $A=fr$, and $D=f\binom r2$.
+At an orthogonal frame the sign matrix is
+$J=\operatorname{diag}(1_p,-1_q)$, where $p,q\geq1$ and $p+q=r$.
+For an integral weight $\lambda$ put
+$S=\sum_{\tau,i}|\lambda_{\tau i}|$.
+The original norm of a section is denoted by $\|P\|_\lambda$.
+
+\begin{theorem}[The actual thick peak]
+\label{bergman-actual-thick-peak}
+There is an absolute constant $C\geq1$ with the following property.
+On any component of the original good cover, suppose
+\[
+ \begin{gathered}
+ \lambda_{\tau i}-\lambda_{\tau,i+1}\geq CA^8
+       \quad(i+1\ne p),\\
+ \lambda_{\tau,r-1}-\lambda_{\tau0}\geq CA^8
+       \quad\text{for every }\tau.
+ \end{gathered}
+\]
+Let $x$ be an orthogonal frame with
+\begin{equation}
+ \label{bergman-actual-thick-test}
+  M\,\operatorname{firstMinimumSq}(x)\geq100A^4,
+\end{equation}
+where $M$ is the original level and the auxiliary level factor is one.
+Then the original cusp space contains a section $P$ with $P(x)\ne0$ and
+\begin{equation}
+ \label{bergman-actual-thick-peak-bound}
+ e^{-C(S+A^8)}\int_{\mathcal F}\|P\|_\lambda^2\,d\mu_F
+ \leq \|P(x)\|_\lambda^2\,\mu_F(\mathcal F)
+\end{equation}
+for every original fundamental set $\mathcal F$.
+The same conclusion holds whenever the original chart ball of radius
+$1/(100r^2)$ injects in the quotient, without assumption
+\eqref{bergman-actual-thick-test}.
+\end{theorem}
+
+All arithmetic hypotheses here are those of the constructed good cover:
+the original self-dual lattice, full level markings, fine moduli
+uniformization and its exact automorphic dictionary.  The assertion is
+not an extension to an arbitrary analytic lattice with an unspecified
+multiplier.  In particular it applies to the untagged weights in the
+original thick Bergman consumer.\cite{bergman-thick-source}
+
+\begin{proof}
+\emph{A tensor test for a short return.}
+For Euclidean lattices $L_1,L_2$ and a nonzero integral tensor
+$T\in L_1\otimes L_2$ of rank $k$,
+\begin{equation}
+ \label{bergman-tensor-minimum}
+ \|T\|_{\mathrm{HS}}\geq
+      \frac{\lambda_1(L_1)\lambda_1(L_2)}{\sqrt{k}}.
+\end{equation}
+Indeed, choose a basis $u_1,\ldots,u_k$ of the saturated first support
+in $L_1$ and write $T=\sum_i u_i\otimes v_i$.  The $v_i$ are independent
+elements of $L_2$.  If $U,V$ are their Gram matrices, the arithmetic--
+geometric mean inequality for the positive eigenvalues of
+$U^{1/2}VU^{1/2}$ gives
+\[
+ \|T\|_{\mathrm{HS}}^2
+ \geq k(\det U\det V)^{1/k}.
+\]
+The cube form of Minkowski's theorem gives
+$\operatorname{covol}(L)^{1/k}\geq\lambda_1(L)/\sqrt{k}$
+for every rank-$k$ Euclidean lattice.  Apply it to the two support
+lattices, whose first minima are at least those of $L_1,L_2$.
+This proves \eqref{bergman-tensor-minimum} without a restriction on rank.
+
+For the original lattice $\Lambda$, use the actual majorant
+\[
+ Q_x(v)=\sum_\tau2|\tau\xi_0|\,
+                 \operatorname{maj}_{x,\tau}(v_\tau).
+\]
+Its real dimension is $N=2fr$.  If $L$ is its Euclidean realization,
+the original alternating trace self-duality identifies $L^*$
+isometrically with $L$.  More explicitly, the two trace-dual
+realizations $\phi,\psi$ satisfy
+\[
+ \langle\phi u,\psi w\rangle=\operatorname{Tr}_{E/\mathbb Q}h(u,w),
+ \qquad \|\psi(-\xi_0w)\|^2=Q_x(w),
+ \qquad L^*=\psi(-\xi_0\Lambda).
+\]
+Thus $\lambda_1(L)^2=\lambda_1(L^*)^2$
+is exactly $\operatorname{firstMinimumSq}(x)$; there is no division by
+$f$ and no replacement by a rank-one covolume.
+
+Suppose $\gamma$ preserves $h,\Lambda$, is congruent to one modulo $M$,
+and takes two points of the stated small chart ball to the same flag.
+The two chart majorants differ from $Q_x$ by factors between $1/2$ and
+$2$, so $\|\gamma\|_{\mathrm{op}}\leq2$ in $Q_x$.
+For completeness, write a chart frame as $x(I+N(z))$, with $N$ strictly
+triangular.  Each coordinate is bounded by $\|z\|$, and
+$\|N\|_{\mathrm{op}}\leq r\|z\|\leq1/(100r)$.
+The leading Gram matrices are perturbations of the corresponding
+blocks of $J$.  Indefinite Gram--Schmidt, or its successive Schur
+complements, gives a unitary representative with norm and inverse norm
+at most $\sqrt2$.  Its ambiguity is the compact diagonal torus.
+This proves the asserted majorant comparison and return bound.
+
+If $\gamma\ne1$, then
+$(\gamma-1)/M\in\operatorname{End}_{\mathbb Z}\Lambda=L\otimes L^*$
+is nonzero.  Equation \eqref{bergman-tensor-minimum} yields
+\[
+ M\operatorname{firstMinimumSq}(x)
+ \leq \sqrt N\,\|\gamma-1\|_{\mathrm{HS}}
+ \leq3N=6A.
+\]
+This contradicts \eqref{bergman-actual-thick-test}.
+
+One must still pass from this principal subgroup to the original
+uniformizing group.  The actual moduli comparison supplies this step.
+An identification of two flags by an original return gives an
+$\mathcal O_E$-linear, polarization-preserving isomorphism of their
+marked complex tori.  On their homology lattice it is a unitary
+$\gamma'$ preserving $\Lambda$.  Preservation of the two original
+level markings gives congruence on the two conjugate level ideals.
+Their coprimality and trace self-duality give
+$(\gamma'-1)\Lambda\subset M\Lambda$.  In the general mixed level the
+modulus is $\operatorname{lcm}(M,A_{\rm lev})$; here
+$A_{\rm lev}=1$, so it is precisely $M$.
+The two lifted flags differ by the original upper triangular frame
+change.  The preceding argument makes $\gamma'=1$; faithfulness of
+the fine level uniformization then makes the original return trivial.
+This uses the actual orbit comparison, not an assertion that its
+original group is itself principal.\cite{bergman-thick-source}
+
+\emph{A complete metric with a uniform local chart.}
+Let $\mathscr D=\prod_\tau U(p,q)/T$ be the full flag domain and
+$Y=\Gamma\backslash\mathscr D$ its actual component.
+For one embedding put
+\[
+ \lambda^0_i=\begin{cases}-i&i<p,\\ r-i&i\geq p.
+                        \end{cases}
+\]
+The original squared line metric in the chart $I+N(z)$ is
+$e^{-\varphi_\lambda}$, where
+\begin{equation}
+ \label{bergman-exact-metric}
+ \varphi_\lambda(z)=\sum_{\tau,i}\lambda_{\tau i}
+       \bigl(\log|\Delta_{\tau,i+1}(z)|-
+             \log|\Delta_{\tau,i}(z)|\bigr).
+\end{equation}
+Here $\Delta_{\tau,j}$ is the leading $j$ by $j$ Gram determinant,
+and $\Delta_{\tau,0}=1$.
+Differentiation at zero gives the coefficient
+\[
+ \epsilon_i\epsilon_j(\lambda_{\tau i}-\lambda_{\tau j})
+       \quad(i<j),\qquad
+ \epsilon_i=\begin{cases}1&i<p,\\-1&i\geq p.\end{cases}
+\]
+For $\lambda^0$ these coefficients are between $1$ and $r$.
+Write $\omega_0=i\partial\bar\partial\varphi_{\lambda^0}$.
+It is a positive invariant K\"ahler form.  Its homogeneous Riemannian
+metric is complete, and so is the quotient metric on $Y$.
+If $m$ is the least of the gaps in the theorem, telescoping the gaps,
+including the gap from the last to the first weight, gives globally
+\begin{equation}
+ \label{bergman-curvature-positive}
+ i\Theta(L_\lambda)\geq m\omega_0.
+\end{equation}
+The invariant canonical weight is the sum of the flag roots; its
+successive coefficients have absolute value at most $2r$.
+The same root calculation therefore gives
+$\operatorname{Ric}(\omega_0)\geq-Cr\omega_0$.
+
+There is an absolute $c>0$ such that, on the coordinate ball of radius
+\[
+ \eta=cA^{-3},
+\]
+the metric $\omega_0$ is between one half and $2r$ times the Euclidean
+metric, and $|\varphi_\lambda|\leq CS$.
+Here and below $c$ can be decreased by an absolute factor.
+These are uniform matrix estimates, not an appeal to compactness in
+varying dimension.  On this ball each leading Gram matrix has inverse
+norm at most $2$.  Differentiate
+$d\log\det G=\operatorname{tr}(G^{-1}dG)$ three times.
+For unit Hilbert--Schmidt directions every resulting trace is bounded
+by $Cr$; the sum of the absolute coefficients of $\lambda^0$ is at
+most $r^2$.  Thus the third derivative is bounded by $Cr^3$ on each
+embedding block.  The blocks are orthogonal, so this is also an
+operator bound for their product.  It gives the stated Hessian
+comparison for $\eta=cA^{-3}$.  The same determinant formula bounds
+\eqref{bergman-exact-metric} by $CS$.
+This smaller ball lies in the injective original chart.
+
+\emph{Solve once on the quotient.}
+Choose a holomorphic line frame $e$ with $\|e(x)\|=1$ and a smooth
+cutoff $\chi$, equal to one for $|z|\leq\eta/8$, supported in
+$|z|<\eta/4$, with $|\bar\partial\chi|_{\omega_0}\leq C/\eta$.
+Let $\chi_0$ be one on $|z|\leq\eta/2$, zero for $|z|\geq\eta$,
+and define on the quotient
+\[
+ \psi_\varepsilon=(D+1)\chi_0(z)
+       \log\frac{|z|^2+\varepsilon^2}{\eta^2+\varepsilon^2},
+       \qquad0<\varepsilon<\eta/16.
+\]
+Extend it by zero outside the chart.  Then $\psi_\varepsilon\leq0$ and
+\[
+ i\partial\bar\partial\psi_\varepsilon
+       \geq-C(D+1)\eta^{-2}\omega_0\geq-CA^8\omega_0.
+\]
+The logarithm is plurisubharmonic where $\chi_0=1$; on the cutoff
+annulus it and its first two scaled derivatives have absolute bounds.
+Since $D\leq A^2$, the power $A^8$ includes every dimension factor.
+
+Regard $\bar\partial(\chi e)$ as a $(D,1)$ form with values in
+$L_\lambda\otimes K_Y^{-1}$.  Its canonical identification with an
+$L_\lambda$-valued $(0,1)$ form is isometric for the induced metrics.
+By \eqref{bergman-curvature-positive}, the Ricci estimate and a large
+enough absolute $C$ in the gap hypothesis, this bundle with weight
+$e^{-\psi_\varepsilon}$ has curvature at least $\omega_0$.
+The complete K\"ahler $L^2$ theorem\cite{bergman-demailly}
+therefore solves
+$\bar\partial u_\varepsilon=\bar\partial(\chi e)$ with
+\begin{equation}
+ \label{bergman-solved-norm}
+ \int_Y\|u_\varepsilon\|_\lambda^2e^{-\psi_\varepsilon}\,dV_0
+ \leq C\eta^{-2}e^{C(S+D)}\operatorname{vol}_0(B_\eta).
+\end{equation}
+The right side follows on the support of $\bar\partial\chi$, where
+$e^{-\psi_\varepsilon}\leq64^{D+1}$.
+No pseudoconvexity assumption on the quotient is used.
+
+Take a weak $L^2$ limit.  On every closed annulus about $x$ the weights
+converge uniformly, and weak lower semicontinuity followed by monotone
+exhaustion gives \eqref{bergman-solved-norm} with
+$\psi=(D+1)\chi_0\log(|z|^2/\eta^2)$.
+The limit $u$ is holomorphic near $x$.  Its weighted square integrability
+forces $u(x)=0$.  Consequently $P=\chi e-u$ is global and holomorphic,
+$P(x)=e(x)$, and
+\begin{equation}
+ \label{bergman-quotient-l2}
+ \int_Y\|P\|_\lambda^2\,dV_0
+       \leq e^{C(S+A^8)}\operatorname{vol}_0(B_\eta).
+\end{equation}
+
+\emph{Membership in the original cusp space.}
+This last point requires the actual arithmetic quotient and the deep
+weight range.  Restriction to a compact flag fibre gives the fixed
+Borel--Weil representation of $U(p)\times U(q)$.
+The resulting automorphic function is $K$-finite, and holomorphicity
+gives its holomorphic discrete-series infinitesimal character.
+One convention for its lowest compact highest weight is
+$\mu=-w_{0,K}\lambda$.
+The associated finite-dimensional highest weight is
+\[
+ \nu=\mu-(\underbrace{q,\ldots,q}_{p},
+                   \underbrace{-p,\ldots,-p}_{q}).
+\]
+The adjacent gaps of $\nu$ inside the two blocks are at least $m$;
+its central gap is at least $m-r$.  Thus $\nu$ is integral and strictly
+dominant at every real place.  A simultaneous dual convention has the
+same regularity property.
+
+The $L^2$ holomorphic section defines a square-integrable automorphic
+form in the corresponding coherent degree-zero space.
+To check the growth qualification, a local holomorphic mean-value
+estimate on a fixed translated chart bounds its value by its local
+$L^2$ mass.  The overlap multiplicity is bounded by the number of
+integral matrices in a ball of radius polynomial in
+$\|g\|+\|g^{-1}\|$.  This is a polynomial count on the fixed
+arithmetic lattice.  It gives moderate growth; the highest-weight
+relations give finiteness under the centre of the enveloping algebra.
+These are qualitative assertions at each fixed setting and introduce
+no constant into \eqref{bergman-quotient-l2}.
+The actual dictionary supplies the algebraic automorphic bundle.
+Its multiplier on the present tag-zero weight is trivial, as follows
+directly from the constructed good-cover law.  For a nonnegative
+antitone exponent array $a$, that law gives
+$\chi(\operatorname{laU}(a,0),\gamma)=1$.
+At tag zero, $\operatorname{laU}$ is the signed permutation taking
+the first block in reverse order with a minus sign and the second
+block in its original order with a plus sign, with the prescribed
+conjugate embedding relabeling.  Given any integral flag weight,
+pull it back to an integer array $c$.  Choose an integer $B$ larger
+than every $|c_j|$ and $|c_j-c_{j+1}|$, including the last jump to
+zero.  The arrays $b_j=B(r-j)$ for $j<r$ and zero afterward, and
+$a=b+c$, are nonnegative and antitone.  Since
+$\lambda=\operatorname{laU}(a,0)-\operatorname{laU}(b,0)$,
+the original weight-addition law gives $\chi(\lambda,\gamma)=1$.
+Thus no inference from finite character image to a congruence kernel,
+and no new level cover, is needed.
+
+For unitary groups, square-integrable coherent cohomology at the
+infinitesimal character of an integral strictly dominant weight equals
+cuspidal coherent cohomology.\cite{bergman-harris}
+The cited formulation uses the unitary similitude Shimura variety.
+Use its connected component with a compact finite level intersecting
+the unitary group in the given level and with similitude in
+$\widehat{\mathbb Z}^{\times}$.  A positive rational similitude in
+that finite level is one.  Consequently its component arithmetic
+group is exactly the original unitary arithmetic group.
+An integral unitary weight extends to the similitude group over
+$\mathbb C$; its complexification is a product of the original
+general linear factors and a multiplicative group.  This identifies
+the same coherent bundle on the same component, with no change of
+the section or its metric.  The preceding calculation checks the
+regularity hypothesis of the cited result, so $P$ is cuspidal.
+Rapid decay of a cuspidal automorphic form of moderate
+growth, applied to this finite compact type, makes its original
+invariant point norm bounded.\cite{raw-theta-rapid-decay}
+The constructed good-cover dictionary therefore puts it in the
+literal space $X.\mathrm{SS}(\lambda)$.
+In particular, square integrability alone has not been used to infer
+cuspidality.
+
+Finally $dV_0$ and the original flag Haar measure differ by a positive
+constant, since both are invariant.  The injective ball has volume at
+most that of the quotient.  These two facts turn
+\eqref{bergman-quotient-l2} into
+\eqref{bergman-actual-thick-peak-bound}, with every original Haar
+normalization intact.
+\end{proof}
+
+\paragraph{The exact Bergman consequence.}
+On the actual component extend $P$ by zero to the other components.
+The original dictionary identifies its invariant point norm and its
+component mean square.  A component's probability mass in the original
+global Petersson norm is at most one.  The variational characterization
+of the squared norm of evaluation therefore gives
+\[
+ \operatorname{bergOn}(y)\geq e^{-C(S+A^8)}
+\]
+at every point satisfying \eqref{bergman-actual-thick-test}; orthogonal
+frame transfer preserves both sides.  This is the exact comparison
+used by the original component Bergman consumer, rather than a change
+to an independently normalized $L^2$ space.
+For its untagged weight $u_1$, the model permutation preserves the
+absolute weight sum, so $S=\ell_1(u_1)$.
+If the original numerical data give
+$\operatorname{lenT}\ell_1(u_1)\leq C_2\operatorname{unitE}$ and
+$\operatorname{lenT}A^8\leq\operatorname{unitE}$, then the same
+$B=C(\ell_1(u_1)+A^8)$ satisfies
+$\operatorname{lenT}B\leq C(C_2+1)\operatorname{unitE}$.
+These numerical inequalities must be checked in their original host
+range when invoking that asymptotic wrapper.
+The theorem supplies the thick analytic estimate and its actual
+arithmetic injectivity.  The thin estimate, global upper section-frame
+bound, point-height estimate and final section remainder remain
+separate obligations.

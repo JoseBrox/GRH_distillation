@@ -64,8 +64,7 @@ now supplies nefness, bigness, generation on the interior and both
 prescribed birational cusp systems, with the exact canonical weight.
 The actual flat determinant degree and integral parallel twists are now
 supplied over the same coefficient field. The original key shift and
-both exact short-family hypotheses are now proved as well. Pointwise
-Bergman bounds, arithmetic heights and the numerical remainder remain.
+both exact short-family hypotheses are now proved as well. The [actual thick peak](geometry-bergman-continuation-thick.md) now gives the original thick-region Bergman lower bound, with its exact arithmetic chart injectivity. The thin estimate, upper cusp-frame bound, arithmetic heights and numerical remainder remain.
 
 The reached-section, adapted lattice, full-primary trace and mixed-level
 identities now supply the [original integral raw-theta implication](geometry-arithmetic-frontier-actual-theta-denominator.md)
@@ -104,8 +103,7 @@ now supplies integral tag removal and both literal `h0`/`hsh` families.
 Moret–Bailly's all-prime key formula and the actual positive quadratic
 period expansion retain the dyadic and ramified eigenlattice factors.
 The uniform constant is `400000`; the fixed larger starting threshold
-is permitted by the original asymptotic quantifier. Selected-prime
-compatibility and the geometric height/Bergman estimates remain.
+is permitted by the original asymptotic quantifier. The [actual selected-prime chain](theta-spanning-continuation-chain.md) now has its original point models, exact value lattices, phase kernels and twisted initial source. It retains the exact selected exponent and positive conjugate-prime gain. Its identification with the final global Poincare maps and the geometric height/Bergman estimates remain.
 
 The actual ordinary automorphic modules have faithful good classical
 specializations, and now carry the original universal integral Hecke
@@ -156,8 +154,7 @@ now constructs the required characteristic-prime Nice curves, with the
 original local degree and cohomology bounds. The [rank-two propagation theorem](selmer-support-continuation-rank-two-propagation.md)
 proves the original `PropagationTheoremGL2`: the chart presentation,
 connectedness, arithmetic `P1` and connected cocycle fibre reach every
-stable component. Rank-three type-E and thick links, global two-sided
-rigidity and the moving-family integral Selmer budget remain.
+stable component. The [rank-three construction](selmer-support-continuation-rank-three-propagation.md) now supplies the type-E finite-weight ideal, determinant-section components and actual nonsplit thick links. The [arithmetic transfer](selmer-support-continuation-rank-three-transfer.md) supplies every original Nice/Thick condition, including all open subgroups and characteristic three. The complete original rank-three AllGood/OffFin conclusion follows for the actual Hecke ideal. The [finite-point theorem](selmer-support-continuation-finite-points.md) now proves the complete original AbsMain output for every prescribed complete-DVR point. At fixed characteristic-prime weight, the original representation is triangular and its diagonal characters are exactly residual. The transfer through the actual GalLink/auxiliary frame to global two-sided rigidity, and the moving-family integral Selmer budget, remain.
 
 The actual local Bessel families satisfy the iterated weighted norm
 identities and finite coefficient expansion everywhere on the original
@@ -214,7 +211,7 @@ Further target cuts remain separate. The [arithmetic
 minimum theorem](global-gram-continuation-minimum.md) bounds the original
 Harder–Narasimhan minimum over all submodules on every period cell. It
 gives an explicit weighted far-return majorant when the cited source
-tail theorem applies. Compatibility with the final arithmetic chain,
+tail theorem applies. The [quantitative seed theorem](global-gram-continuation-quantitative.md) now bounds the normalized quotient-norm moment directly, with an explicit larger tensor reserve. Exact character transport removes uncontrolled frame heights and compact-mass reciprocals; the field, weight and original Haar factors remain visible. Compatibility with the final arithmetic chain,
 further target cuts and the uniform rank-weighted trace budget remain.
 
 These are closed supplier obligations within larger nodes. Whole-node

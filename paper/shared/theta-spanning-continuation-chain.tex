@@ -1,0 +1,392 @@
+\subsection{The actual selected-prime theta chain}
+\label{sec:actual-theta-chain}
+
+The ordinary CM construction gives normalized theta functions and their
+simultaneous finite moment laws.  We now identify the resulting local
+operators with the original arithmetic chain, including its point
+models, integral coefficient lattices, and twisted initial source.
+The phases in this identification are retained, rather than replaced by
+their absolute values.  The source interfaces are attributed to
+Alp\"oge's pinned construction.\cite{theta-chain-source}
+
+Fix one of its admissible finite column data, a word prime $T$, a column
+index, and the common coefficient field $K$ already chosen for its
+characters, normalized theta jets and direction constants.  Write
+$E$ for the CM field, $[E:\mathbb Q]=2f$, and
+\[
+ h=(t+1)/2,\qquad N_i=k+i(t+1)\quad(0\le i\le m).
+\]
+Here $t$ is odd and the $N_i$ are even, as in the original datum.
+The selected primes over $T$ have residue field $\mathbb F_T$, are
+distinct from their conjugates and from the auxiliary levels and the
+different.  Retain the original coefficient weights, all character
+values, the primitive theta normalization and the differential
+directions.  The numerical admissibility includes the original hook
+bound at each target and $T>2fN_m+1$.  It also includes the original
+coefficient weight inequalities used below.  These are conditions on
+the admitted column datum, not new estimates on a varying field.
+
+Let $\mathscr S_i(w)$ be the original local integral lattice of
+equivariant class functions, embedded in its original complex space by
+$\sigma:K\hookrightarrow\mathbb C$.  Write $K_i$ for the original
+class operator from stage $i-1$ to stage $i$, with its original
+automorphism masses, and $C_m=K_m\cdots K_1$.  At $w\mid T$ of
+selected type, let $J$ be the prescribed selected embedding set and
+let $U_i$ be the ordered product of its local neighbor operators.
+
+\begin{theorem}[Actual local realization and initial-source compatibility]
+\label{thm:actual-theta-chain}
+For the finite column datum just specified, the normalized CM theta
+construction supplies the original point kernels and their original
+integral value-lattice identifications.  The kernels agree with the
+literal class maps $K_i$, with scalar one.  They satisfy the original
+target equivariance, simultaneous dilation and Hecke laws, and both
+selected and conjugate integral kernel laws.
+
+In particular, put
+\[
+ d_i=fN_{i-1}+\sum_\tau s_{i-1,\tau}
+               +\sum_{\tau\notin J}r_{i,\tau}.
+\]
+Here $s_{i-1,\tau}$ is the original determinant shift and
+$r_{i,\tau}$ is the first part of the original residual target
+partition in the allowance-removal calculation.  Then
+\begin{align}
+ T^{d_i}U_iK_i\mathscr S_{i-1}(w)&\subseteq\mathscr S_i(w),
+       &U_iK_i&=T^{h|J|}K_iU_{i-1}.
+       \label{eq:actual-chain-step}
+\end{align}
+The original twisted initial lattice $\mathscr N(w)$ is the
+\emph{rational image} of
+\[
+ T^aU_0^m\mathscr S_{\rm ram}(w),\qquad
+ a=m\sum_{\tau\in J}b_\tau,\qquad
+ \mathscr S_{\rm ram}(w)\subseteq\mathscr S_0(w),
+\]
+under the original initial class identification.  Consequently
+\[
+ T^\ell C_m\mathscr N(w)\subseteq\mathscr S_m(w),\qquad
+ \ell=\sum_{i=1}^m d_i+h|J|\frac{m(m+1)}2-a.
+ \label{eq:actual-chain-selected}
+\]
+At a conjugate place the same actual maps satisfy
+\[
+ K_i\mathscr S_{i-1}(w)\subseteq T^{fh}\mathscr S_i(w),
+ \qquad C_m\mathscr S_0(w)\subseteq T^{mfh}\mathscr S_m(w).
+ \label{eq:actual-chain-conjugate}
+\]
+All inclusions are assertions about the prescribed embedded lattices;
+they construct their unique rational target lifts.  The point-model
+Hermitian form is exactly the original frame form, and the class form
+has the original automorphism masses.  No normalization of these forms
+or change of coefficient field is made.
+\end{theorem}
+
+\begin{proof}
+We give the construction in five steps.
+
+\emph{1. Points, phases and local modifications.}
+At rank $N_i$, let $d$ denote one of the original decorated lattices:
+its self-dual Hermitian lattice, selected residue functionals,
+prime-to-$T$ level structures, and the additional fixed markings.
+At a selected prime $P$ record the pair
+$(N_P,\ell_P)$, where $\ell_P:N_P\to\mathbb F_T$ is the original
+nonzero functional.  Record all the remaining data as an off-$T$
+class.  Retain a phase $\zeta\in\mu(K)$ as well.
+
+More precisely, within an original component $b$, identify
+$(\zeta,d)$ and $(\zeta',d')$ in the off-$T$ record if an original
+change of markings $g$ has underlying rational unitary map $1$,
+if $\zeta=\zeta'\chi_b(g)$, and if $gd,d'$ agree off $T$.
+Let $Z_i$ be the disjoint union of these quotients and set
+\[
+ P_i=Z_i\times\prod_{P\mid T\ {
+m selected}}
+           \{(N_P,\ell_P)\}.
+\]
+Every such point has a representative $(b,\zeta,d)$.  To see this,
+prescribe the displayed lattices at the selected primes and their
+Hermitian duals at the conjugate primes, keeping the old lattices
+elsewhere.  The intersection of these finitely many local conditions
+is a global lattice with exactly those localizations; duality gives
+self-duality.  The residue functionals lift by the Chinese remainder
+theorem.  All other markings transport through unchanged localizations,
+because their levels are prime to $T$.  The same construction makes
+one prescribed upper or lower neighbor, or one residue-functional
+dilation, leaving every other local component unchanged.
+
+Equality of two representatives as full points is therefore exactly
+\[
+ \exists g:\quad \gamma(g)=1,\quad
+ \zeta=\zeta'\chi_b(g),\quad gd=d'.                 \tag{1}
+\]
+Indeed the off-$T$ equality and equality of the selected pairs imply
+equality of the global decorated lattices by localization; the reverse
+implication is immediate.  This retains the original level markings,
+not just the underlying lattices.
+
+The group $G_i=U(E^{N_i})\times\mu(K)$ acts as follows.  If
+$g$ is any original lift of $\gamma\in U(E^{N_i})$, define
+\[
+ (\gamma,\eta)(b,\zeta,d)
+   =(b,\eta\zeta\chi_b(g)^{-1},gd).                 \tag{2}
+\]
+The original marking group surjects onto the rational unitary group:
+act by that unitary map on the lattice and transport the markings.
+Equation (1) makes (2) independent of the lift and representative;
+the character multiplication law proves the group law.  Its orbits
+are exactly the original classes.  On a stabilizer the map
+$g\mapsto(\gamma(g),\chi_b(g))$ is bijective: surjectivity follows
+from (1), and injectivity follows because an automorphism fixing the
+decorated lattice with underlying map $1$ fixes every marking.
+Thus the stabilizer orders, and hence all class masses, are unchanged.
+
+\emph{2. Coefficients and their integral lattices.}
+Let $V_i(K)$ be the original highest-weight polynomial space with its
+determinant twist.  The actual point value space is its evaluation on
+the original frames, extended to $\mathbb C$.  Evaluation is injective:
+after multiplying by the fixed determinant character, a polynomial
+vanishing on all invertible frames vanishes on a Zariski-dense open
+set.  Its image spans the value space by its definition.  Consequently
+evaluation has an inverse coordinate map on that space.  In these
+coordinates the stage-$i$ weight is the original frame weight shifted
+by $ih$ in every entry.  This is exactly the source's shift
+$i(t+1)/2$, since $t+1=2h$; the underlying polynomial partition is
+unchanged.  This observation retains the determinant twist in the
+coordinate identification.
+
+At $w\mid T$, use the embedding $\tau:E\to K$ in selected type
+and $\tau\circ\overline{\phantom{x}}$ in conjugate type.
+For a subset $A$ of selected primes, the allowed local lattice is
+$N_P$ in selected type at $P\notin A$, and $\ker\ell_P$ otherwise.
+Choose a local basis of each such lattice and act on the original
+integral highest-weight lattice by its exact determinant-twisted
+polynomial action.  Changing the basis by $\operatorname{GL}_{N_i}$
+over the local ring does not change this lattice: the action and its
+inverse are integral.  In conjugate type the frame is the dual frame,
+so this construction is the original coefficient lattice on the
+Hermitian dual of the patched lattice.  In selected type it is the
+original coefficient lattice on the patched lattice itself.  In
+particular $A=\varnothing$ gives the original source value lattice,
+$A$ equal to all selected primes gives its fully allowed kernel
+target, and $A=\{P\}$ gives the original single-prime allowance.
+There is no intervening index or saturation.
+
+Off $T$, define the value lattice at an off-$T$ point by requiring
+membership in the original transported coefficient lattice for
+\emph{every} presentation of that point.  This is precisely the
+intersection of those transported lattices.  Its invariance follows
+by reindexing the presentations.  The root-of-unity factor in (2) is
+an integral unit at every finite place.
+
+These pointwise conditions characterize the embedded original local
+class lattice, in both directions.  For the nontrivial direction,
+recover from each integral point value its unique $K$-polynomial
+using the coordinate map just constructed.  Equivariance over
+$\mathbb C$ and injectivity of evaluation imply the original
+stabilizer equations over $K$.  There are finitely many classes.
+For each class choose a coefficient denominator outside $w$; their
+product remains outside $w$ and clears all values simultaneously.
+The resulting rational equivariant class function belongs to the
+original localized lattice.  This proves rationality of the lift;
+it does not assert that an arbitrary complex vector is rational.
+
+The Hermitian form used throughout is the original frame form
+$\operatorname{ipVal}$, restricted to its value space.
+The action (2) on values is the original frame action multiplied by
+$\sigma(\eta)$.  Unitarity of $\gamma$ preserves that frame form
+and $|\sigma(\eta)|=1$.  Thus this construction keeps its exact form;
+it does not compare it with a separately chosen coefficient norm.
+
+\emph{3. The same theta kernel, including its phase.}
+For an actual pair $d,d'$, form the finite indicator on the original
+Hom-lattice cosets.  Apply the original normalized theta family and
+its prescribed mixed derivatives in the directions $c_{D,\tau}$.
+With source weight $\lambda$ and the original nonnegative determinant
+exponents $n_\tau$, expand
+\[
+ F(X)\prod_\tau\det(X_\tau)^{n_\tau}
+       \bigg|_{X_\tau=Z_\tau Y_{\tau,[1,N_{i-1}]}}
+       =\sum_\alpha Z^\alpha Q_\alpha(F)(Y).
+\]
+The actual coefficient kernel is
+\[
+ k_i(d,d')F=\eta_i(d,d')\sum_\alpha J_\alpha(d,d')Q_\alpha(F).
+                                                               \tag{3}
+\]
+Here $J_\alpha$ is the finite indicator sum of the original ordinary
+mixed derivatives; it is not a divided Taylor coefficient.
+The previously established normalized CM construction supplies these
+same $J_\alpha$ and their simultaneous moment laws.  Here is the
+target-representation check, including its determinant shifts.
+At one embedding put $a=N_{i-1}<b=N_i$ and
+$\nu_j=\lambda_j-\lambda_{a-1}$.  The original weight recursion is
+\[
+ n=\lambda_{a-1}+s^{\sharp},\qquad
+ \lambda'_j=\begin{cases}
+       \lambda_j+s^{\sharp}-s^{\rm div}&j<a,\\
+       -s^{\rm div}&j\ge a.
+                 \end{cases}
+\]
+Consequently the target residual partition is
+$(\nu_0+n,\ldots,\nu_{a-1}+n,0,\ldots,0)$.
+For any upper triangular $B\in\operatorname{GL}_b$,
+$(YB)_{[1,a]}=Y_{[1,a]}B_{[1,a],[1,a]}$.  The original
+column-highest identity for $F$ therefore gives
+\[
+ [F\det^n]\bigl(Z(YB)_{[1,a]}\bigr)
+    =\left(\prod_{j<a}B_{jj}^{\nu_j+n}\right)
+                     [F\det^n]\bigl(ZY_{[1,a]}\bigr).
+\]
+Taking coefficients in $Z$ gives precisely the target homogeneous
+degrees and all target column-addition identities, separately at every
+embedding.  Thus every $Q_\alpha(F)$ belongs to the original target
+representation.  This is the actual $\operatorname{JetInVV}$ condition;
+any target projection in the original definition acts as the identity.
+
+The scalar in (3) is exactly
+\[
+ \eta_i(d,d')=
+ \frac{\sigma\bigl(\mu_i^{-1}\!\det(N,\mathrm{fr})/
+                          \mu_i^{-1}\!\det(N',\mathrm{fr}')\bigr)}
+      {\chi_F(N,N')}.                                         \tag{4}
+\]
+The notation $\mu_i^{-1}\!\det$ denotes the original local
+determinant-character factor.  To check (4), evaluate each such
+factor on the specified frame: its character is the inverse of
+the original finite Hecke character on the corresponding determinant
+ideal.  This equality uses both its values on the chosen uniformizers
+and its restrictions to local units.  Substituting it in the two
+original $\rho$ factors cancels the intermediate determinant ideals
+and leaves precisely (4).  The determinant multiplications in the
+polynomial definition cancel the original frame shifts in the same
+calculation.  Hence evaluation of (3) at the original class
+representatives is literally the original $K_i$ kernel.  The original
+Fourier average, positive index square root and period normalization
+remain inside $J_\alpha$; this comparison adds no factor.
+
+The original theta change-of-lattice identity, proved by reindexing
+the normalized finite indicators, makes (3) equivariant under the
+original marking groups.  Extend (3) complex linearly through
+evaluation.  For arbitrary points represented as
+$(b,\zeta,d)$ and $(b',\zeta',d')$, set
+\[
+ \widetilde k_i((b,\zeta,d),(b',\zeta',d'))
+     =\sigma(\zeta')\,k_i(d,d')_{\mathbb C}\,\sigma(\zeta)^{-1}.
+                                                               \tag{5}
+\]
+Equations (1) and equivariance of (3) prove that (5) is independent
+of both representatives.  Formula (2) now gives source and target
+equivariance.  At class representatives (5) is the literal $K_i$
+kernel just identified.  This constructs the required point kernel;
+there is no choice of a new projection or extension on a complement.
+
+\emph{4. Local bounds and the Hecke identity.}
+The established ordinary CM moment theorem for (3) has selected
+support scalar $T^{-fN_{i-1}}$ and conjugate support scalar $1$.
+In standard selected local frames, the actual source kernel lattice
+has determinant $1$, and the target functional kernel has a basis
+of determinant $T$.  Polynomial substitution therefore contributes
+exactly $T^{-\sum_\tau s_{i-1,\tau}}$ in selected type.  In conjugate
+type both dual lattices have determinant valuation $-1$ and the
+difference of determinant shifts is exactly $h$, giving $T^{fh}$.
+The direction scalars are the units furnished by the same ordinary
+normalization.  The character ratio (4) is a unit as well: its ideal
+arguments are prime to $T$, and a positive power of each algebraic
+Hecke character has its original principal-ideal formula.  Raising
+the ideal to its ray-class order reduces the assertion to a product
+of powers of $T$-units.  Finite-order factors are units directly.
+
+For completeness the passage from moments to the \emph{Weyl}
+lattice is not left as a representation-theoretic hypothesis.
+The established hook-product formula makes the normalized
+highest-vector pairing a local unit under the original target hook
+bound $\mu_1-\mu_{N_i}+N_i-1\le T$.  Indeed the residual partition
+has last part zero, so its largest hook is at most
+$\mu_1-\mu_{N_i}+N_i-2<T$; the endpoint introduces no hook equal
+to $T$.  Its pairing is then integral
+on the dual-Weyl lattice, proving equality with the Weyl lattice.
+Integral substitution and simultaneous approximation of the finitely
+many moments give exactly the selected and conjugate coefficient
+kernel bounds in these identical lattices.  Unitary approximation
+transports standard frames to all the actual local frames, using
+the exact change-of-lattice identity already used for (5).
+Step 2 transfers these bounds to the original point-value conditions.
+
+Upper and lower neighbors in $P_i$ are the original neighbors: their
+residue vectors satisfy the same equation $\ell(x)=1$, and their
+other components are unchanged.  The finite matrix-incidence identity
+for the same theta indicator is consequently
+\[
+ \sum_{p_1\ {
+m above}\ p'}\widetilde k_i(p,p_1)
+       =T^h\sum_{p_0\ {
+m below}\ p}\widetilde k_i(p_0,p').
+                                                               \tag{6}
+\]
+The equality follows on the rational polynomial evaluation basis
+from the established indicator identity and hence on all values.
+It includes its Hom-lattice covolume factor $T^h$.  Simultaneous
+dilation of both residue functionals gives the same indicator and
+proves the dilation law.  Distinct-prime neighbor operators commute,
+since their local modifications have disjoint support.  Their ordered
+product gives the commutation in \eqref{eq:actual-chain-step}.
+
+Every class stabilizer is a finite subgroup of
+$\operatorname{GL}_{2fN_i}(\mathbb Q)$.  If $T$ divided its order,
+an element of order $T$ would have a primitive $T$-th root of unity
+as an eigenvalue, forcing $T-1\le2fN_i$.  The retained strict bound
+$T>2fN_m+1$ therefore makes each original mass denominator a local
+unit.  Thus the finite orbit sum preserves both pointwise bounds.
+Applying each selected neighbor removes its own allowance; removing
+each remaining allowance costs exactly its residual first part
+$r_{i,\tau}$.  This is the original integral weight decomposition
+calculation, and yields the displayed $d_i$ and
+\eqref{eq:actual-chain-step}.  In conjugate type retain the positive
+factor $T^{fh}$ through the finite orbit sum and use the rational
+image characterization of Step 2.  This proves the one-step part
+of \eqref{eq:actual-chain-conjugate}.
+
+\emph{5. The original initial source.}
+At stage zero the reference character is trivial on the forgotten
+extra markings.  Pullback along the actual forgetful class map
+therefore leaves the underlying decorated lattice and its coefficient
+value unchanged.  It preserves the original base integral lattice,
+including every condition in $\mathscr S_{\rm ram}(w)$.  The
+coefficient evaluation maps commute with this pullback, since the
+frames and the polynomial are the same.  The original residue-dilation
+norm operator $\mathrm{Nm}$ commutes as well: it is the same finite
+sum over nonzero residue scalars, and every summand has the same
+decorated lattice and value before and after the identification.
+The upper neighbors also
+commute with it: their unchanged underlying lattice and their equation
+$\ell(x)=1$ give a bijection before and after forgetting the marking.
+Thus the ordered product $U_0$, every iterate $U_0^m$, and the
+prescribed scalar $T^a$ commute with the original initial
+identification.  This proves precisely the original twisted source
+tie, including its definition as a rational image, rather than
+assuming it from isomorphism of ambient complex spaces.
+
+Finally, multiply the integral maps $T^{d_i}U_iK_i$ in order.
+Moving each $U_i$ to the right using
+\eqref{eq:actual-chain-step} gives
+\[
+ (T^{d_m}U_mK_m)\cdots(T^{d_1}U_1K_1)
+    =T^{\sum_i d_i+h|J|m(m+1)/2}C_mU_0^m.
+\]
+For an original rational-image member, divide by the already present
+$T^a$ in that equality.  Step 2 gives the unique rational integral
+target.  This proves \eqref{eq:actual-chain-selected}, also when
+$\ell<0$.  Iterating the divided conjugate maps proves
+\eqref{eq:actual-chain-conjugate}.  No inverse or nonvanishing of
+any theta or neighbor map has been used.
+\end{proof}
+
+This discharges the selected-prime point-model, integral-coordinate,
+kernel and twisted-source compatibility obligations for the actual
+finite arithmetic theta chain.  It supplies no uniform bound for
+the degree or discriminant of $K$.  The comparison of this chain
+with the separately normalized global Poincar\'e period operators,
+and their final retained source and target restrictions, is a further
+identity; it is not inferred from agreement of representation types
+or from the local estimates above.

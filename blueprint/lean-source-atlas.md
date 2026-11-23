@@ -548,3 +548,11 @@ determinant; the odd elliptic boundary counterexample excludes a broader
 principal-line claim. The output is the literal `h0`/`hsh` family, not a
 replacement integral basis. Its independent review is in the combined
 quantitative review above.
+
+### Current support, local-chain and quantitative analytic frontiers
+
+The [rank-three transfer](../certificates/selmer-support-continuation-rank-three-transfer.json) and [finite-point](../certificates/selmer-support-continuation-finite-points.json) ledgers retain the original determinant law, closed ordinary/inertia algebra, all-open-subgroup conditions and every complete-DVR test. The type-E, Sharp and normalized-propagation ledgers distinguish nilpotent equations from dimension arguments.
+
+The [local theta-chain ledger](../certificates/theta-spanning-continuation-chain.json) checks the actual phase quotient, stabilizer masses, target polynomial identities, original integral coordinate images and twisted initial source. It does not substitute that chain for the separate Poincare maps. The [quantitative seed ledger](../certificates/global-gram-continuation-quantitative.json) authenticates actual characters, original projectors and measures, with exact diagnostics for the larger tensor reserve and transformed Witt frames.
+
+The [thick-peak ledger](../certificates/geometry-bergman-continuation-thick.json) authenticates the exact squared minimum, nonprincipal-to-principal orbit comparison, tag-zero character law and component norm dictionary. It separately hashes Demailly and Harris primary references and records exact curvature/weight diagnostics. The complete quotient solve and regular-weight cuspidality are ordinary mathematical proofs, not inferred from those computations. The [combined independent review](../certificates/arithmetic-frontier-second-review.json) records the decisive checks and remaining limits. No whole-node completion or Lean build is asserted.
