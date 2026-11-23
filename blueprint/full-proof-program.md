@@ -383,7 +383,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The original models, short integral families, lower and upper norm bounds, full integral frame and actual component section-degree inequality are proved. Its literal remainder retains the original short-family exponent, and component summation needs only the signed weighted mean height. Supply that height comparison and the actual rank losses, and finish the original numerical family constructions.
+**Next concrete task.** The original models, short integral families, norm bounds, full integral frame and component section-degree inequality are proved. The actual boundary-point tangent degrees are now bounded with both integral indices retained. Prove the Hodge–Tate-corrected fibre specialization and regularized point-height identity, then bound the signed weighted mean height and rank losses and finish the numerical family constructions.
 
 **Acceptance conditions:**
 

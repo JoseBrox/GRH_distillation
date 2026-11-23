@@ -82,6 +82,7 @@ below; it did not download or rebuild the entire development.
 
 | Mathematical supplier | Bounded source comparison and evidence |
 | --- | --- |
+| Actual abelian quotients at boundary points | [Point theorem](../notes/geometry-point-continuation.md) and [certificate](../certificates/geometry-point-continuation.json): original quotient signature, fresh integral moduli datum and selected tangent-degree consumer; semistable Néron comparison preserves the exact lattices. The Hodge--Tate-corrected fibre remains a separate construction. |
 | Exact auxiliary-prime iteration | [Chain note](../notes/level-chain-integrality.md) and [source certificate](../certificates/level-chain-integrality.json): original rational-image lattice, local kernel laws and triangular commutation factors. |
 | Finite upper section rank | [Jet theorem](../notes/finite-section-jet-bound.md) and [source certificate](../certificates/finite-section-jet-bound.json): component geometry, nef weight differences and exact binomial rank shares. |
 | Selmer point and tangent comparison | [Completed comparison](../notes/selmer-tangent-comparison.md) and [independent review](../certificates/selmer-tangent-comparison-review.json): the permitted grading rescaling, actual framed universal property and marked coboundaries. |

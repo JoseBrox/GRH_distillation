@@ -402,7 +402,9 @@ The [thin-region theorem](geometry-bergman-continuation-thin.md) supplies the or
 
 The [component section theorem](geometry-section-continuation.md) supplies the original arithmetic section-degree inequality and its literal numerical remainder. Principalizing the two original cusp systems gives the geometric filtration; the original lattices and Petersson metrics are transported exactly. The intrinsic Chow height has the original harmonic correction. The resulting estimate depends linearly on the signed weighted mean height, and uses exactly the original short-family exponent.
 
-**First missing construction.** Bound that mean height and the required rank losses for the same family, prove the actual point-height comparison wherever it is used, and construct the remaining original numerical records. The existing cusp, jet and signed-boundary lemmas are to be applied unchanged.
+The [actual boundary-point theorem](geometry-point-continuation.md) now supplies the signed conjugate-degree identity and the selected abelian-degree bound `36 f(m-r) Lambda_B` on the original integral lattices. It realizes each abelian quotient in its own integral moduli datum and uses semistable uniqueness; arbitrary auxiliary field extensions preserve normalized degree. Both integral indices have favourable signs and remain explicit.
+
+**First missing construction.** For the original Hodge--Tate-corrected point fibre, prove the integral comparison with the abelian quotient eigenlattice, with cost at most `2 sum_(p in S) log(p)/(p-1) + 2 log rd(E)`. This requires the actual polarized divisible-group realization and compatible specialization, not just Fargues's theorem for an abstract divisible group. Then prove the regularized point-height comparison, bound the signed mean height and rank losses for the same family, and complete the original numerical records. The existing cusp, jet and signed-boundary lemmas are to be applied unchanged.
 
 ## Completion discipline
 
@@ -411,5 +413,5 @@ the exact proven subobligations. The work-package acceptance lists remain
 in `blueprint/grh/program.json`; the RH product and final budget remain
 in its separate manuscript. No whole node is newly closed by the local
 constructions above. The next research effort belongs to the actual
-point-height and arithmetic section estimates, type-II rigidity and
-uniform integral Selmer orders, and near returns in the actual global period maps.
+point-height and rank estimates, uniform integral Selmer orders, and
+near returns in the actual global period maps.

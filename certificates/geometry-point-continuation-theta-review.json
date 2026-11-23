@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "reviewer": "independent theta-compatibility agent",
+  "classification": "Independent mathematical and exact-hypothesis review; no Lean build",
+  "result": "pass; requested exposition clarifications applied",
+  "reviewed_files": {
+    "paper/shared/geometry-point-continuation.tex": "a7341e09d06c481687f69655ed6e867ce27a82665d75c920d96beeb005a6f496",
+    "paper/shared/theta-spanning-continuation-flat.tex": "fbad32fb9b5ae24e2fca272d9530bfab2bd416a14b755818635dc620fb8daaad",
+    "paper/shared/flat-determinant-comparison.tex": "5af13d62b5ca653f2c55f65304c7ec3123e38a8525093cc5d5289faad1f38181",
+    "paper/shared/selected-tangent-bound.tex": "ea56c36fb5fb92ebf6d4eb1874e3e0d955c50069df75b1077a037589ba663163"
+  },
+  "pinned_source": {
+    "repository": "jsmorph/rh",
+    "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+    "path": "Development/AutomorphicSpectrum/Proofs/GeometryProofs/PhiDegFibLatLeOfIsOFamilyOfIsAdapted.lean",
+    "sha256": "983a1eda3160559c93228668d49cdd99f035ec8738ec6b1ea998107d7e1cec28",
+    "ranges": [
+      [
+        20,
+        71
+      ],
+      [
+        73,
+        124
+      ]
+    ],
+    "finding": "The actual source constructs a fresh moduli datum from the abelian quotient Tate lattice, realizes the actual point after a finite extension, and applies flat degree. No replacement by a fixed standard genus is warranted or needed."
+  },
+  "primary_reference": {
+    "url": "https://math.stanford.edu/~conrad/DarmonCM/2011Notes/SemistableReduction.pdf",
+    "checked": "Theorem 4.4 and Corollary 4.5, printed pages 10-11, inspected directly through primary PDF retrieval",
+    "finding": "A semiabelian scheme over a DVR with abelian generic fibre equals the identity component of the Neron model; after semistable reduction this identity component commutes with arbitrary DVR extension."
+  },
+  "checks": [
+    {
+      "claim": "Actual abelian quotient signature",
+      "finding": "Subtracts the same O_E torus rank from both conjugate multiplicities; principal degeneration identity forces a principal abelian polarization."
+    },
+    {
+      "claim": "Same integral lattice and metric",
+      "finding": "The actual point is realized with the primitive line; properness plus semistable Neron uniqueness identifies integral Lie modules. Flat extension preserves eigenlattice kernels, even at ramified places."
+    },
+    {
+      "claim": "Finite corrections",
+      "finding": "Uses the established exact conjugate determinant formula with original different and d correction; no correction discarded."
+    },
+    {
+      "claim": "Integral index signs",
+      "finding": "d_V=2T-b+delta+2nu is correct with both indices nonnegative."
+    },
+    {
+      "claim": "Numerical constant and boundaries",
+      "finding": "C_f=1+gamma+log(2pi)<4, 12(1+log(3+C_f))<36; |f(p-q)|<=g, g<=f(p+q)<=B. Both zero abelian rank and zero selected rank are included."
+    }
+  ],
+  "requested_clarifications": [
+    "Explicitly retain the original odd fundamental discriminant and primitive w data in the setup.",
+    "Say the PEL/global-model theorem is applied to the quotient own integral Betti/Tate datum, allowing the required common finite extension for its auxiliary cover; no field-size estimate is used."
+  ],
+  "limitations": [
+    "Does not close W10 or prove corrected Hodge-Tate lattice specialization, regularized point height, or mean volume.",
+    "Relies on the already reconstructed flat-degree and actual PEL construction suppliers, rather than independently rebuilding their entire proofs."
+  ],
+  "clarifications_status": "Both requested clarifications applied and reviewed in the final artifact hash."
+}

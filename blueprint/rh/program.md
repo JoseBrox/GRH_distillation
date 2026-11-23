@@ -382,7 +382,7 @@ the relevant character phase depends on their difference and is unchanged.
    and target-excess traces with all phase and rank factors retained.
 3. **Sections and heights.** The [global upper bound and entire integral
    cusp frame](../../notes/geometry-bergman-continuation-upper.md) are
-   supplied, as is the [original thin-region lower bound](../../notes/geometry-bergman-continuation-thin.md). The [actual section-degree theorem](../../notes/geometry-section-continuation.md) supplies the literal component inequality and its remainder. Prove the signed mean-height comparison, the remaining rank losses and original numerical records. Use the constructed
+   supplied, as is the [original thin-region lower bound](../../notes/geometry-bergman-continuation-thin.md). The [actual section-degree theorem](../../notes/geometry-section-continuation.md) supplies the literal component inequality and its remainder. The [actual point tangent degrees](../../notes/geometry-point-continuation.md) are bounded on the original lattices. Prove the corrected-fibre specialization and point-height identity, then the signed mean-height comparison, rank losses and numerical records. Use the constructed
    models, metrics and short sections throughout.
 4. **Final comparison.** Assemble compatible signed fourth-power tables
    and bound their weighted positive parts on arbitrarily late intervals.

@@ -1,0 +1,183 @@
+\subsection{The actual abelian quotients at boundary points}
+\label{sec:actual-point-tangent-degrees}
+
+The flat determinant construction applies to the abelian quotient at
+an actual boundary point. This supplies the signed degree comparison
+used in the point-height argument. The integral image of the tangent
+lattice need not be saturated; its index has a favourable sign and is
+retained below.
+
+Keep the original host $E$, with $f=[E^+:\mathbb Q]$, the prescribed
+quadratic subfield $\mathbb Q(\sqrt{-d})$, and the hypotheses that
+$-d$ is the original odd fundamental discriminant and
+$E/E^+$ is unramified at every finite prime. Retain the original
+primitive element $w=(1+\sqrt{-d})/2$, with $w+\bar w=1$. Put
+\[
+ P_E=\gamma+\log(2\pi)-\log\operatorname{rd}(E)
+             -\frac{L'(1,\chi_{-d})}{L(1,\chi_{-d})}.
+\]
+Let an algebraic point of the original compactification have toric
+$\mathcal O_E$-rank $r$ and signature $(p,q)$, with
+$0\le r\le\min(p,q)$. Its abelian quotient $A$ has signature
+$(p-r,q-r)$. After a finite extension $L$ containing the coefficient
+embeddings and admitting semistable reduction, let $\bar V$ be the
+Lie lattice of the N\'eron identity component of $A$, with the
+prescribed metric $\|v\|^2=\pi H(v,v)$. At every conjugate pair of
+embeddings, write $W_\tau,W'_\tau$ for its saturated integral
+eigenlattices, with inherited metrics. The chosen half has rank
+$m-r$, where $m$ is either $p$ or $q$; the other half has rank
+$p+q-m-r$. All degrees below are divided by $[L:\mathbb Q]$.
+
+\begin{theorem}[Conjugate degrees at the actual points]
+\label{thm:actual-point-conjugate-degrees}
+For these lattices,
+\begin{equation}\label{eq:actual-point-conjugate-degrees}
+ \widehat{\deg}_{\rm n}W_\tau-
+ \widehat{\deg}_{\rm n}W'_\tau
+                    =\frac{2m-p-q}{2}P_E.
+\end{equation}
+This is an identity on the actual integral lattices, including the
+places ramified in $E$ and the places above two. It is unchanged by
+further finite extension. The extension used to realize the point
+does not introduce a field-size term in this normalized identity.
+\end{theorem}
+
+\begin{proof}
+\emph{The quotient and its polarization.}
+The original primitive line and polarization restrict to the
+semiabelian fibre. Its toric character module is a projective
+$\mathcal O_E$-module of rank $r$, so every coefficient embedding
+occurs $r$ times in its Lie algebra. Exactness of the Lie sequence
+in characteristic zero gives the stated quotient signature. The
+principal degeneration formula
+\[
+                 1=[X:\phi(Y)]^2\deg\lambda_A
+\]
+makes $\lambda_A$ principal. The original primitive identity gives
+the rigidified line
+$(1,\lambda_A\iota(w))^*\mathcal P_A$, with
+$w+\bar w=1$. These are precisely the quotient and line
+identifications in the arithmetic-point uniformization theorem
+\cite{current-construction-record}; no independent polarization or
+translate of its line is chosen.
+
+\emph{Realization in the appropriate moduli space.}
+If $p+q-2r=0$, both eigenlattices are zero and the assertion follows.
+Otherwise fix one complex embedding and take the integral Betti
+lattice of this principally polarized quotient, with its coefficient
+action and perfect alternating form. Betti--\'etale comparison gives
+the required complete Tate genus. The moduli construction is rerun
+for this quotient's own integral Betti and Tate datum. Choose an
+allowed odd half-level,
+and pass to a finite field extension over which its finite torsion
+labels and the required roots are defined. The generic PEL moduli
+theorem then represents this very abelian variety, primitive line and
+both entire finite labels. The component-field and global-model
+constructions apply to its signature, including either definite
+signature \cite{current-construction-record}. Their bounds are not
+being used to bound the field of definition of the point. Passing
+to the auxiliary cover may enlarge $L$ again; this is permitted
+because the conclusion is invariant under normalized semistable
+base change, with no bound on that extension required.
+
+The global model is proper. Thus the resulting point extends over
+every valuation ring of its number field. Its semiabelian family
+has the same generic fibre as the prescribed semistable model of
+$A$. The semistable N\'eron comparison, with the zero section fixed,
+identifies their identity components and their integral Lie modules
+\cite[Theorem 4.4 and Corollary 4.5]{conrad-semistable}.
+The rigidified restriction argument in the theta construction
+identifies the original lines and their canonical metrics. Hence
+the integral eigenlattices and their Hermitian norms are exactly
+the ones in the statement. This argument also applies after
+ramified field extension; it does not compare only generic fibres.
+
+\emph{Evaluation of the same determinant.}
+Apply the actual flat-degree theorem to this component and to the
+signature $(a,b)=(m-r,p+q-m-r)$. Its corrected flat degree is
+\[
+ \frac{a-b}{2}P_E+b(\log d-\log\operatorname{rd}(E)).
+\]
+On integral eigenframes, the prescribed finite logarithmic norms
+add $b(\log|\mathfrak D_E|-\log|d|)$. Their normalized sum is
+$b(\log d-\log\operatorname{rd}(E))$. Degree is the negative
+sum of logarithmic norms, so this term cancels the displayed finite
+correction. The exact determinant comparison
+\eqref{geo-exact-conjugate-degree} therefore gives
+$(a-b)P_E/2$ for the actual eigenlattice degree difference.
+Since $a-b=2m-p-q$, this is
+\eqref{eq:actual-point-conjugate-degrees}.
+
+Eigenlattices are kernels of the finitely many integral coefficient
+action equations. Flat base change preserves these kernels.
+Semistable base change preserves the Lie lattice, and normalized
+Hermitian degree is unchanged. This proves the field-extension
+assertion, with every original finite correction retained.
+\end{proof}
+
+Let $V_\tau\subset W_\tau$ be the image of the original integral
+tangent lattice in the selected quotient eigenspace. The quotient
+map extends to the N\'eron model by its mapping property, so the
+inclusion is integral. It has full generic rank. Set
+\[
+ g=f(p+q-2r),\qquad R=f(m-r),\qquad
+ T=\sum_\tau\widehat{\deg}_{\rm n}V_\tau,\qquad
+ b=\frac{f(2m-p-q)}2P_E.
+\]
+The coefficient summands are orthogonal for the prescribed Hodge
+metric. Let $\delta\ge0$ be the normalized logarithmic index of
+$\bigoplus_\tau(W_\tau\oplus W'_\tau)$ in $V$, and let
+$\nu\ge0$ be the sum of the normalized logarithmic indices
+$[W_\tau:V_\tau]$.
+
+\begin{corollary}[The selected degrees for the actual family]
+\label{cor:actual-selected-point-degrees}
+For the original lattices,
+\begin{equation}\label{eq:actual-selected-point-degrees}
+ T\le12R\log\bigl(2+g+(b-\delta-2\nu)_+\bigr).
+\end{equation}
+If $B\ge\max\{128,4f(p+q)^2\}$ and
+\[
+ \Lambda_B=\log B+\log\operatorname{rd}(E)
+                  +\left|\frac{L'(1,\chi_{-d})}{L(1,\chi_{-d})}\right|,
+\]
+then
+\begin{equation}\label{eq:actual-selected-point-budget}
+                       T\le36f(m-r)\Lambda_B.
+\end{equation}
+Neither statement assumes a bound on either integral index.
+\end{corollary}
+
+\begin{proof}
+Write $d_V=\widehat{\deg}_{\rm n}V$. Orthogonality and the two
+integral inclusions give
+\[
+                        d_V=2T-b+\delta+2\nu.
+\]
+The classical theta construction supplies the tangent-slope estimate
+with constant $12$ on this exact principally polarized semistable
+lattice and its metric. Applied to the selected integral images,
+it gives $T\le12R\log(2+g+(-d_V)_+)$. If $T>0$, the displayed
+identity gives $(-d_V)_+\le(b-\delta-2\nu)_+$; if $T\le0$,
+\eqref{eq:actual-selected-point-degrees} is immediate. The case
+$g=0$ has $T=R=0$ and needs no slope theorem.
+
+The previously established period estimate is
+$|P_E|\le C_f\Lambda_B$, with
+$C_f=1+\gamma+|\log(2\pi)|<4$. Moreover
+$g\le G=f(p+q)\le B\le e^{\Lambda_B}$ and
+$|f(2m-p-q)|\le g$. Thus $b\le C_fG\Lambda_B$.
+The selected-degree calculation in
+Proposition~\ref{geo-selected-tangent-sum} gives
+$T\le12\{1+\log(3+C_f)\}R\Lambda_B<36R\Lambda_B$.
+The weak inequality in \eqref{eq:actual-selected-point-budget}
+includes all zero-rank cases.
+\end{proof}
+
+This removes the conjugate-degree and selected-abelian-degree
+hypotheses from the actual point-height application. The next
+required comparison concerns the original Hodge--Tate-corrected
+fibre lattice. Its integral specialization and the regularized
+point-height identity remain distinct; the result above does not
+yet assert an all-point height bound or the final mean-volume
+estimate.
