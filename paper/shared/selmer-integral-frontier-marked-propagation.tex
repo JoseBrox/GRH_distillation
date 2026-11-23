@@ -1,0 +1,299 @@
+\subsection{The actual marked ring and propagation through coefficient curves}
+\label{sec:selmer-marked-propagation}
+
+The local prime-inclusion theorem and the patched-support theorem now
+apply to their prescribed arithmetic rings.  This supplies the full
+marked propagation contract, with every prime link and the original
+integral equation ideal retained~\cite{SelmerMarkedSource}.
+
+\begin{theorem}\label{thm:selmer-marked-propagation}
+Let $\ell\ne2$, and retain the original ordinary determinant pair
+$u=(D,\psi)$ over $B$, coefficient DVR $O$, adapted Taylor--Wiles datum
+$T$, weight rank $D_{\rm wt}$, and actual modules with base ideal $J$.
+Assume $B$ is topologically generated over $O$ by the pair values.
+Let
+\[
+ f_i:B\longrightarrow A_i=k_i[[t_i]],\qquad 0\le i\le h,
+\]
+be any finite family of the original normalized points, with the
+original odd Selmer families, distinct auxiliary eigenvalues, and
+bounds B1/B2 with $D_0=D_{\rm wt}+nq$.
+Assume the finite $k_i$ have the same cardinality.  Put $p_i=\ker f_i$.
+Let $e_i\subseteq p_i,p_{i+1}$ be primes at which the original ordinary
+Cayley--Hamilton equation algebra is nonsemisimple after a residue-field
+extension.  If
+\[
+ q_0\subseteq p_0,\qquad J\subseteq q_0,\qquad
+                         \operatorname{DiscSt}(D,q_0),
+\]
+for a prime $q_0$, then every prime $q_*\subseteq p_h$ which is stable
+or has the same nonsemisimplicity property contains $J$.
+Here stability is exactly the original predicate
+\[
+ \operatorname{DiscSt}(D,p):\quad
+ \det\bigl(\operatorname{tr}D(g_a h_b)\bigr)_{a,b=1}^{n^2}\notin p
+                  \quad\hbox{for some }g_a,h_b.             \tag{MP1}
+\]
+The conclusion holds for every finite chain, with its original kernels
+and linking primes.  It is the complete source contract \texttt{Raw},
+including its \texttt{Core} and \texttt{CoreBC} forms.
+\end{theorem}
+
+\begin{proof}
+We give the actual construction, so that no patched-support or
+marked-model existence hypothesis is hidden in the statement.
+
+\emph{A single limiting group.}
+First take the maximal pro-$\ell$ quotients of the fixed open residual
+kernels; their harmlessness is proved below.  The uniform bound on
+$\operatorname{Hom}(H_N,\mathbb F_\ell)$ gives a uniform number of
+pro-$\ell$ generators.  A free profinite group $P$ on these generators,
+fixed lifts of the finite base quotient, and the original conjugation
+therefore surjects onto every $\Gamma_N$, compatibly modulo the fixed
+open kernel.  Fix a free ultrafilter.  In every finite quotient $P/V$,
+the images of $\ker\pi_N$ stabilize.  Compactness gives a closed normal
+$K\subset P$ with
+\[
+                    (\ker\pi_N)V=KV
+                  \quad\hbox{for almost all }N.             \tag{MP2}
+\]
+Put $\Gamma_\infty=P/K$.  Finitely many homomorphisms into each finite
+group give compatible limits of the base and local maps, uniformly on
+the common cover.  For each local group $Y$, its maps factor through the fixed finitely
+generated quotient $Y/\operatorname{PL}(f_0^{-1}H)$, by local
+class-field finiteness.  Choose a free profinite presentation of this
+quotient.  Lift its finitely many generator images individually to $P$
+at every level, and take their ultralimits.  Every relator maps into
+$K$ by (MP2), so the limit descends to the local quotient.  Congruence
+on the finite generator set gives the required uniform congruence on
+the whole group.  A homomorphic lift of $Y$ to $P$ was never assumed.
+The limiting auxiliary
+Frobenius and inertia commute: in each finite pro-$\ell$ quotient,
+$Q_N\equiv1\pmod{\ell^N}$ makes the tame commutator trivial eventually.
+Conjugation and every original local subgroup are preserved.  This
+constructs the full \texttt{Lim}; its index-two equation group $P^+$
+is topologically finitely generated.  Every limiting eventuality below
+uses this same ultrafilter, exactly as in Lim and S5; the only use of
+cofinite bounds is that they belong to it.
+
+\emph{The marked coefficient ring.}
+First suppose $O\twoheadrightarrow k_i$ and that one original curve
+variable $s$ satisfies $f_i(s)=t_i$.  Put
+\[
+ \Lambda=O[[s,X_1,\ldots,X_{D_{\rm wt}}]],\qquad
+ S_\infty=\Lambda[[Y_{ji}]]_{1\le j\le q,\,0\le i<n}.
+\]
+The continuous determinant of $P^+$ and its original residual value
+have a complete Noetherian universal ring.  Chenevier's representability
+and Wang--Erickson's finite-$H^1$ criterion apply because $P^+$ is
+finitely generated~\cite{SelmerMarkedChenevier,SelmerMarkedWE};
+there is no requirement $\ell>n$.
+Take its completed tensor product $R_1$ with the finitely many local
+character deformation rings, retaining the prescribed values on
+$\mu_v$ and their finite torsion relations.  Define
+\[
+ R=R_1[[s,Z_{ji},Y_{ji}]],\qquad U_{ji}=u^0_{ji}+Z_{ji}.     \tag{MP3}
+\]
+This represents exactly the original determinant, ordered characters,
+curve variable, auxiliary roots and diamond variables before imposing
+the global equations.  It is the source's \texttt{RRObj}.
+
+Its universal property gives maps $\rho_N:R\to R_N$ into the actual
+auxiliary coefficient rings.  The original map $S_\infty\to R$ is
+\[
+ s\longmapsto s,\qquad
+ X_a\longmapsto c_a\psi_{v_a i_a}(\gamma_a)-1,\qquad
+ Y_{ji}\longmapsto Y_{ji}.                                  \tag{MP4}
+\]
+The residual weight identity puts these values in $\mathfrak m_R$;
+completeness defines the map, and equality on the variables proves its
+compatibility with every original module action.
+
+Let $C/B$ be the local splitting algebra of the $q$ original
+polynomials $\chi_D(\sigma_j)$, with their prescribed residual ordered
+roots.  The full splitting algebra is finite free of rank $(n!)^q$.
+Its selected local factor is a nonzero direct summand over complete
+local $B$, hence finite free and faithfully flat.  Its actual rank is
+retained.  The universal map
+\[
+ \pi:R\longrightarrow C,\qquad U_{ji}\longmapsto u_{ji},
+                         \quad Y_{ji}\longmapsto0            \tag{MP5}
+\]
+is surjective: its compact image contains all pair coefficients, $s$,
+and the roots, which topologically generate $C$.
+
+\emph{The exact equation quotient.}
+Let $I\subset R$ be generated by the original six scalar relation
+families: traces of the limiting-group kernel, every polarization
+coefficient, the ordered ordinary products, the prescribed tame
+inertia, the auxiliary characteristic polynomial, and its partial
+polynomial times $\tau_j-1-Y_{ji}$.  Thus the last two are
+\[
+ \operatorname{tr}D\!\left(g\prod_i(\phi_j-U_{ji})\right),\qquad
+ \operatorname{tr}D\!\left(
+ g\prod_{a\ne i}(\phi_j-U_{ja})(\tau_j-1-Y_{ji})\right).
+                                                               \tag{MP6}
+\]
+All test elements and original local lifts are quantified.  This is
+literally $I=(\texttt{Rel})$, before any localization or radical.
+It is closed because $R$ is complete Noetherian.  Every relation maps
+to zero under $\pi$, so $\bar\pi:R/I\twoheadrightarrow C$.
+
+The full determinant descends to the limiting group.  Indeed the finite
+continuous Cayley--Hamilton algebra has a generalized matrix algebra
+with rank-one residual corners.  A two-sided trace-radical ideal has
+zero diagonal corners.  Every term involving it in the canonical
+cycle formula for the determinant vanishes, after every scalar
+extension.  Thus the kernel trace equations kill the full determinant
+law without dividing by $n!$.  The remaining equations and their
+polarized partners give the prescribed pair and auxiliary relations.
+Its equation algebra uses precisely the already closed ideal
+\[
+             \mathcal I=D.\operatorname{chBar}
+                  (\texttt{pairGens}\cup\texttt{qGens}).     \tag{MP7}
+\]
+The algebraic span of its image is used after base change, as in the
+original contract.
+
+Lift the entire prime chain from $B$ to $C$ using lying over, flat going
+down and integral going up.  Write $P_i$ for the primes over $p_i$ and
+$E_i\subseteq P_i,P_{i+1}$ for the lifted links.  Every $P_i$ is the
+kernel of a map $x'_i:C\to A_i$ extending $f_i$.  For clarity, these
+maps are local: a nonzero image of an element of the source maximal
+ideal in the finite target residue field would, by a monic polynomial
+of its inverse, make a unit map to a nonunit.  They are therefore
+continuous.  The image of $f_i$ contains $k_i,t_i$ and is compact,
+so it is all $A_i$.  The root polynomials split with distinct roots in
+$k_i((t_i))$; their roots are in $A_i$.  Normality of $A_i$ then gives
+the asserted lift with its exact kernel.  The resulting point of $R/I$
+is the original \texttt{OoPt}, with $s\mapsto t_i$, $Y\mapsto0$ and
+all roots still distinct.
+
+\emph{Verify the actual patching hypotheses.}
+Give $M_N$ its $R$-action through $\rho_N$ and set
+\[
+ X=C\otimes_BM_0,\qquad
+ f=\operatorname{fEl}(1,U)=
+                 \prod_j\prod_{i\ne a}(U_{ji}-U_{ja})^2.    \tag{MP8}
+\]
+If $C$ has rank $r$, then $X$ is the direct sum of $r$ copies of $M_0$
+over $\Lambda$, and $YX=0$.  The original equations
+$(1+Y_{ji})^{\ell^{a_j(N)}}-1$ lie in
+$(Y)^k+\mathfrak m_\Lambda^b$ when $N\ge k+b$.  Thus the original
+finite-level freeness gives the exact S5 freeness at every fixed
+$k,b$, with the actual possibly varying ranks.
+
+For a fixed coefficient order $b$, finiteness of
+$M_0/\mathfrak m_\Lambda^bM_0$ and Nakayama give some $c$ with
+$\mathfrak m_B^cM_0\subseteq\mathfrak m_\Lambda^bM_0$.
+The limiting determinant and character congruences identify the
+original splitting presentations on that quotient.  The actual
+Taylor--Wiles maps therefore give the required $R$-linear comparison
+maps between $X/\mathfrak m_\Lambda^bX$ and
+$M_N/((Y)+\mathfrak m_\Lambda^b)M_N$.
+Their composites are multiplication by $f$, since
+$\operatorname{fEl}(Q_N,U)\equiv f\pmod{\ell^N}$.
+
+For each relation $a\in\texttt{Rel}$ and each $c$, (MP2) and the
+original local-map convergence give, eventually, $a_N\equiv a$
+modulo $\mathfrak m_R^c$ whose level-$N$ value is zero or satisfies
+the original auxiliary annihilation identity.  The kernel, ordinary
+and inertia cases use level-$N$ lifts of the finitely many prescribed
+elements; polarization also retains the converging cyclotomic factor.
+The root and partial-root cases are exactly TWAut.
+If $e_T$ is its single exponent, the difference-of-powers identity gives
+\[
+ (fa)^{e_T+1}\equiv b_N\pmod{\mathfrak m_R^c},
+                   \qquad b_N\in\operatorname{Ann}_RM_N.     \tag{MP9}
+\]
+For the constructed modules $e_T=n!$.  The source exponent $e_T+1$
+is retained, including the zero-exponent edge case.  The quantifiers
+are exactly $\forall a\ \forall c\ \text{eventually }N\ \exists b_N$.
+
+At $q_i=\pi^{-1}(P_i)$, $f$ is nonzero because the roots are distinct.
+The weight map is onto $A_i$ and sends $s$ to $t_i$.  The completion of
+$\Lambda$ at its kernel is regular of dimension $D_{\rm wt}+1$:
+$\dim\Lambda=D_{\rm wt}+2$ and its quotient has dimension one.
+S5 now supplies its actual support ideals $S_i$ in
+\[
+ B_i=\widehat{(R/I)_{q_i/I}},\qquad
+ \dim B_i/Z\ge 1+D_{\rm wt}+nq=1+D_0                         \tag{MP10}
+\]
+for every minimal support prime $Z$, together with its exact $Y=0$
+fibre and prime-moving property.
+
+\emph{Retain nonsemisimplicity and move nonzero support.}
+The limiting group map and $\bar\pi$ give a surjection of the finite
+limiting equation algebra onto the original equation algebra after
+base change to $C$.  Ordinary, tame and starred equations map to the
+originals; the root equation maps to Cayley--Hamilton and the
+partial-root equation to zero.  The target is finite and complete,
+so it also kills the already closed ideal (MP7).  No saturation or
+reduction is used.  Nonsemisimplicity passes to every lifted link:
+a nonzero nilpotent ideal survives further field extension, and a
+semisimple algebra cannot have a nonsemisimple quotient.  For unrelated
+field extensions use a common field over both.  This retains the
+source's geometric NonSS predicate even with inseparable residues.
+
+The established B1/B2 comparison gives K1,K2,K3 for each actual OoPt.
+GalOut therefore forces $Z\subseteq Q$ whenever $Z$ is stable and
+satisfies (MP10), and $Q$ is stable or a lifted nonsemisimple prime.
+Moreover finite-module support and $\pi$ surjective give
+\[
+ \operatorname{Ann}_RX\subseteq\pi^{-1}(P)
+                   \quad\Longleftrightarrow\quad J\subseteq P\cap B.
+                                                               \tag{MP11}
+\]
+Lift the initial $q_0$ to $B_0$.  The S5 fibre identity and (MP11)
+give a nonzero support prime.  Choose a minimal support prime below
+it; (MP1) preserves stability under generalization and (MP10) gives
+its dimension.  GalOut puts it below a prime over the first link.
+S5 moves it to the next completion with the same contraction.
+Repeat through the whole finite chain.  At $q_*$ apply GalOut once
+more, then the fibre identity and (MP11), to obtain $J\subseteq q_*$.
+This proves marked Core, without assuming that support is nonempty
+before the given initial prime is used.
+
+\emph{Remove the marking and coefficient restrictions.}
+Choose the unramified finite extension $O'/O$ with residue field of
+the common cardinality $|k_i|$, and put
+\[
+                         B'=(O'\otimes_OB)[[s]].             \tag{MP12}
+\]
+The original IsCO condition makes $O/\mathfrak m_O\to B/\mathfrak m_B$
+an isomorphism.  Thus $(O'\otimes_OB)/\mathfrak m_B(O'\otimes_OB)$
+is the field $O'/\mathfrak m_{O'}$, proving that this finite complete
+algebra is local.  Base change every original module and map, and
+extend in this one formal variable.  Freeness, diamond quotients, compositions and the
+single exponent are unchanged.  First lift the entire prime chain
+through the finite flat coefficient extension.  The chosen monic
+generator polynomial of $O'$ splits in each $k_i$; each lifted prime
+thus gives a map into the same $A_i$, with $O'\twoheadrightarrow k_i$.
+Send $s$ to $t_i$ and extend the linking, initial and terminal primes
+as power-series ideals.  They remain prime and lie below the required
+curve kernels.  The finite base-changed equation algebra kills the
+new closed relations continuously, so the same quotient argument
+retains NonSS.  Apply Core and contract to $B$.  This is CoreBC.
+
+Finally quotient each open residual kernel $H$ by the kernel of its
+maximal pro-$\ell$ quotient.  The finite $H^1(H,\mathbb F_\ell)$
+bound gives finite residual-adjoint $H^1$ by restriction and finitely
+many coset values, so the continuous Cayley--Hamilton algebra is
+finite even before this quotient.  Since all residual characters
+are trivial on $H$, its image lies in a pro-$\ell$ group: modulo
+the coefficient maximal ideal it is in the nilpotent radical, and
+higher congruence kernels are pro-$\ell$.  Thus every determinant,
+point and auxiliary action factors through the quotient.  A finite
+Selmer cocycle together with its coefficient action has values in
+a finite semidirect $\ell$-group on $H$ and factors as well.  This
+identifies the original cocycles, local witnesses and boundaries,
+so B1/B2 and the odd families descend without loss.  The finite
+equation algebras, their closed ideals and (MP1) also descend exactly.
+CoreBC applied to this tower gives Raw for the original data.
+\end{proof}
+
+This closes the actual marked-model and chain-propagation supplier.
+The initial stable prime below a prescribed coefficient curve remains
+an explicit input.  The subsequent global component argument and
+its uniform integral Selmer budget are not consequences of a nonzero
+characteristic-zero automorphic point alone.

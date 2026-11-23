@@ -94,9 +94,13 @@ exponent prime to ell kills every permitted finite inertia group, even
 when ell divides the class number. The full original [arithmetic-point
 implication](selmer-integral-frontier-arithmetic-point.md) now places every
 permitted higher-weight classical point in the original ordinary Hecke
-support, without higher-weight control surjectivity. Characteristic-prime
-marked support, global two-sided rigidity and the moving-family integral
-Selmer budget remain.
+support, without higher-weight control surjectivity. The [marked propagation
+theorem](selmer-integral-frontier-marked-propagation.md) now constructs the
+actual universal ring and verifies every patching hypothesis, proving
+the full original `Core`, `CoreBC` and `Raw` prime-chain contracts.
+It retains the given stable starting prime in support. Normalized arithmetic
+curves, starting support in the required characteristic-prime fibres,
+global two-sided rigidity and the moving-family integral Selmer budget remain.
 
 The actual local Bessel families satisfy the iterated weighted norm
 identities and finite coefficient expansion everywhere on the original

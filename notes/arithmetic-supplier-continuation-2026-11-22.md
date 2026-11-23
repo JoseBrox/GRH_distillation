@@ -138,10 +138,18 @@ classical ordinary point lies in the actual Hecke support. Its saturated
 coefficient lattice and contracting lowest-weight evaluation require no
 higher-weight control surjectivity.
 
+The [marked propagation theorem](selmer-integral-frontier-marked-propagation.md)
+now constructs the original universal determinant ring, ordered characters,
+all six relation families and their exact approximate annihilators.
+Finite-flat splitting and the actual modules supply every S5 hypothesis.
+Local prime movement, coefficient extension and the justified pro-ell
+quotient prove the full original `Core`, `CoreBC` and `Raw` contracts.
+The stable starting prime in support is retained as an explicit input.
+
 Both finite-level cohomological bounds and their exact limiting
-comparison are proved. The next arithmetic requirements are that
-characteristic-prime support, global marked
-deformation models, full characteristic-prime propagation and two-sided rigidity. They must
+comparison are proved. The next arithmetic requirements are normalized
+arithmetic coefficient curves, their characteristic-prime starting support,
+the global component argument and two-sided rigidity. They must
 supply the moving-family integral Selmer product; qualitative finiteness
 or rational rigidity cannot replace that bound.
 

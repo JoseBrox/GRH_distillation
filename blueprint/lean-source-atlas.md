@@ -364,3 +364,13 @@ old-word density and every lattice sample. Exact diagnostics cover 303
 lower weights, 177 terminal weights, 708 terminal word factors and twelve
 free-block inverses. The source cutoff, punctured complex limsup and
 positive residual Gram term remain; finite-decay extension is separate.
+
+The [marked-propagation certificate](../certificates/selmer-integral-frontier-marked-propagation.json)
+and [independent review](../certificates/selmer-integral-frontier-marked-propagation-review.json)
+authenticate 41 bounded source interfaces and two primary determinant
+theorems. The audit retains every Core/CoreBC/Raw quantifier, all six scalar
+relation families, the original closed equation ideal, varying splitting
+ranks and the same ultrafilter throughout. Free generator lifts avoid an
+unavailable homomorphic lift; full polynomial laws avoid division by n!.
+Exact coefficient, exponent and dimension checks supplement the human
+proof. The starting stable prime remains a hypothesis.

@@ -342,3 +342,13 @@ the original inequality at every sample, with its full complex reciprocal
 limsup. No uniform stationary-phase remainder constant remains in that
 inequality. Finite-decay extension, controlled top lifts and global period
 norms remain separate.
+
+The [actual marked propagation theorem](../../notes/selmer-integral-frontier-marked-propagation.md)
+constructs the prescribed universal determinant ring and ordered local
+characters, retaining every scalar relation before completion. The original
+modules, splitting algebra and multiplier verify all S5 hypotheses. Their
+support propagates through every original NonSS prime chain by GalOut and
+the exact movement between completions; finite coefficient extension and
+the pro-ell quotient give the full `Core`, `CoreBC` and `Raw` contracts.
+The initial stable support prime is an explicit hypothesis. Neither a
+nonempty characteristic-prime fibre nor a uniform torsion bound is inferred.

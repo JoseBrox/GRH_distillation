@@ -122,10 +122,17 @@ ranks two through four. Lowest-weight evaluation embeds the constructed
 classical ordinary eigenvector into the original completed scalar module,
 with the exact residual block and every local uniformizer factor.
 
-**First missing construction.** Construct the marked characteristic-prime
-support and original prime-chain application. The characteristic-zero
+The actual marked universal ring and its exact six relation families now
+supply all S5 hypotheses. Finite-flat splitting, local completion and
+coefficient descent prove the full original `Core`, `CoreBC` and `Raw`
+prime-chain propagation contracts, retaining every original linking prime
+and an explicitly supplied stable starting prime in support.
+
+**First missing construction.** Construct the normalized arithmetic
+coefficient curves and the stable starting support required by global
+characteristic-prime propagation. The characteristic-zero
 arithmetic points do not by themselves prove nonemptiness of every
-required characteristic-prime fibre. Propagation must retain
+required characteristic-prime fibre. The final global argument must retain
 the entire characteristic-prime fibre
 and the actual two-sided rigidity. Neither qualitative finiteness,
 fixed-point constants nor a torsion-free quotient proves the displayed
