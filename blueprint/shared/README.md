@@ -200,3 +200,10 @@ algebra; the full determinant, exact closed equation ideal, residual
 radical and annihilator torsion are retained. The exact nonsemisimple-prime
 and original finite-lattice continuity fields are proved. Tangent lifting,
 patched support, a nonzero seed and the numerical Selmer budget remain.
+
+The [partial-head transfer theorem](../../notes/global-norm-frontier-partial-head-transfer.md)
+supplies actual compact slices at every level and the original `HeadJ`
+and `RadHead` at every nonterminal block head. Explicit quotient-coordinate
+inverses and the general-head Capelli recurrence retain stabilizers,
+original Haar measures, all signed-word orders and the exact appended
+singleton density. The terminal `HeadTop` and global estimates remain.

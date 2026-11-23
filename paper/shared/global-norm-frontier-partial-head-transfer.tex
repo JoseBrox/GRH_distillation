@@ -1,0 +1,337 @@
+\subsection{The actual transfer at an arbitrary partial head}
+\label{actual-partial-head-transfer}
+
+The previous form inequalities apply to a partial-head coefficient
+only after its integral and its next-level coefficient have been
+identified.  We establish that identification below every terminal
+level.  A head can contain blocks of any positive sizes; its internal
+leading minors are allowed to vanish.
+
+Fix the original normalized tower, its compact probability measures,
+its recursively defined unipotent Haar measures, and a compact smooth
+coefficient $F$ with positive Gram cutoff.  Write
+\[
+ h=((s_1,t_1),\ldots,(s_a,t_a)),\qquad
+ j=\sum_b s_b\le r,\qquad t_b\ne0,
+ \qquad Z_h=\operatorname{diag}(t_1J_{s_1},\ldots,t_aJ_{s_a}),
+\]
+where $J_s$ reverses the $s$ coordinates.  The source slice
+$S_hF$ is the integral \texttt{sliceAt}; it uses the actual
+Lebesgue root coordinates, phase and block matrix
+\texttt{PhiFun}, not a different orbit measure.
+For an original signed word $w$ and a component $e$, put
+\[
+       F_{j,w,h,e}=S_h(\mathsf V_{j,w,e}F).
+\]
+Here $\mathsf V_{j,w,e}$ is exactly the tail-first composition
+\texttt{uwG} of the normalized isotropic Capelli letters.
+At $j=0$ its component with a letter index $1$ is zero,
+as in the original definition.
+
+\begin{theorem}\label{partial-head-transfer-actual}
+Every $F_{j,w,h,e}$ is a compact smooth coefficient on $G_{r-j}$
+with a positive Gram cutoff.  These coefficients and all their
+parameter derivatives have common compact support and a common
+positive cutoff when the nonzero head parameters range in a compact
+set of a fixed block pattern.
+
+If $j<r$, adjoining a singleton $(1,c)$, $c\ne0$, transfers the
+Jacquet transforms of these vectors by the original one-coordinate
+word operator.  In particular, for all heads $h,h'$ of size $j$
+and every original admissible finite signed word $w$, the actual
+radial marginal at $c$ equals
+\begin{equation}\label{partial-head-density}
+ |c|^{\,2(2(r-j)+k-1)}
+    \operatorname{RR}_{j+1,w}
+          (h\mathbin{\|}(1,c),h'\mathbin{\|}(1,c)).
+\end{equation}
+It has the continuous integrable extension and Fourier identity
+provided by the established one-coordinate radial theorem.
+This supplies the original compact-slice, head-Jacquet and
+below-terminal radial-head interfaces, with no new norm constant.
+\end{theorem}
+
+\paragraph{The quotient coordinates and their properness.}
+Let $p$ be the size of a fixed head and let $\rho=r-p$.
+In the ordered decomposition of dimensions $(p,2\rho+k+1,p)$,
+write $J=J_p$ and let $H$ be the middle Hermitian matrix.  The
+original radical coordinate is
+\[
+ R(X,K)=
+ \begin{pmatrix}
+ I&-JX^*H&J(-\tfrac12X^*HX+K)\\
+ 0&I&X\\0&0&I
+ \end{pmatrix},\qquad K^*=-K.
+\]
+Its coordinates are the complex entries of $X$, the strict upper
+complex entries of $K$, and the real numbers $-iK_{aa}$.
+Their product Lebesgue measure is the prescribed one.
+For $\det Z\ne0$ set
+\[
+ m(Z,\gamma)=
+ \begin{pmatrix}0&0&(Z^*)^{-1}J\\0&\gamma&0\\JZ&0&0\end{pmatrix}.
+\]
+For $g=R(X_L,K_L)^{-1}m(Z,\gamma)R(X_R,K_R)$, put
+$D=g_{31}=JZ$.  Block multiplication gives
+\begin{equation}\label{partial-head-inverse-coordinates}
+ \begin{aligned}
+ X_L&=-g_{21}D^{-1},&
+ X_R^*&=-JD^{-1}g_{32}H^{-1},\\
+ K_L&=-Jg_{11}D^{-1}-\tfrac12X_L^*HX_L,&
+ K_R&=JD^{-1}g_{33}+\tfrac12X_R^*HX_R,\\
+ \gamma&=g_{22}-g_{21}D^{-1}g_{32}.&&
+ \end{aligned}
+\end{equation}
+Thus these coordinates are recovered rationally from $g$, with
+denominators only powers of $\det Z$ and its conjugate.
+
+For the head itself write $Z=LZ_hU$, where $L$ is block lower
+unitriangular for $(s_1,\ldots,s_a)$, and $U$ is upper
+unitriangular.  This is precisely the source's restricted
+lower-root chart: conjugation by the block reversing permutation
+makes an internal lower root upper, so it is omitted from $L$.
+Block Gaussian elimination recovers $L$ and $B=Z_hU$ from $Z$:
+\[
+ B_{bc}=Z_{bc}-\sum_{d<b}L_{bd}B_{dc}\quad(c\ge b),\qquad
+ L_{cb}=\left(Z_{cb}-\sum_{d<b}L_{cd}B_{db}\right)B_{bb}^{-1}
+       \quad(c>b).
+\]
+Here $\det B_{bb}=\det(t_bJ_{s_b})\ne0$.  Adjugates therefore
+give polynomial bounds for $L,B,U$ in the entries of $Z$, locally
+uniformly in the nonzero $t_b$.  Internal principal minors inside
+a block are never divided by.  Together with
+\eqref{partial-head-inverse-coordinates}, this proves that the
+preimage of a compact set of group matrices is compact in all
+the quotient coordinates and in $\gamma$.
+
+The omitted roots are essential.  In a block of size two,
+\[
+ \begin{pmatrix}1&0\\a&1\end{pmatrix}
+ J_2
+ \begin{pmatrix}1&-a\\0&1\end{pmatrix}=J_2
+ \qquad(a\in\mathbb C).
+\]
+Integrating both full triangular groups would introduce an
+unbounded stabilizer fibre, even over a compact coefficient.
+The restricted chart removes exactly this fibre.  Its use does
+not replace or renormalize the original stabilizer quotient.
+
+The same calculation with a final unfixed invertible block $Z_0$
+uses the Schur coordinates
+\[
+ Z=\begin{pmatrix}I&0\\ A&I\end{pmatrix}
+       \begin{pmatrix}H_0&0\\0&Z_0\end{pmatrix}
+       \begin{pmatrix}I&B\\0&I\end{pmatrix},
+ \quad A=Z_{21}H_0^{-1},\quad B=H_0^{-1}Z_{12}.
+\]
+On a compact subset of $\det Z_0\ne0$ all inverse bounds remain
+valid.  The source phase has modulus one.  Hence differentiation
+under the partial-head integral is justified by a common compact
+support in its integration variables.  The Gram identity is
+\begin{equation}\label{partial-head-gram}
+ \mathcal G_r\bigl(R_L^{-1}m(Z,\gamma)R_R\bigr)
+                        =|\det Z|^2\mathcal G_\rho(\gamma).
+\end{equation}
+Indeed each larger flag minor is $\det Z$ times its smaller
+counterpart; the two terms defining the full Gram polynomial
+have the same factor.  Thus the cutoff is
+$\varepsilon/|\det Z_h|^2$, with its minimum over the parameter
+compact set when a family is considered.
+The operators $\mathsf V_{j,w,e}$ have coefficients smooth on
+$D_j\ne0$ and do not enlarge support.  On the integration chart
+$D_j=\det Z_h$ is fixed and nonzero.  The same compact-support
+argument applies to every derivative of every finite word.
+This proves the first assertion of the theorem, including $p=0$.
+
+\paragraph{Adjoining a singleton, with the original measure.}
+The coordinate factorization can be done before taking any
+quadratic form.  Denote the head permutation by $\sigma$ and write
+its original matrix as $H_0=w_\sigma L_0D_0U_0$.
+The new lower and upper off-diagonal blocks, initially $V$ and $B_0$,
+are changed to
+\[
+                  A=VL_0^{-1}w_\sigma^{-1},\qquad
+                  B=U_0^{-1}B_0.
+\]
+Their real Jacobian is one: $L_0,U_0$ are unitriangular and
+$w_\sigma$ is a permutation.  The resulting head matrix is
+\[
+ \begin{pmatrix}I&0\\ A&1\end{pmatrix}
+       \operatorname{diag}(H_0,c)
+       \begin{pmatrix}I&B\\0&1\end{pmatrix}.
+\]
+The lower subdiagonal and upper superdiagonal sums in the phase
+split into the old sums plus $A_{p-1}$ and $B_{p-1}$.
+For example the last column of the old lower unitriangular
+matrix is the last coordinate vector, so the new subdiagonal
+entry of $A L$ is exactly $A_{p-1}$.  This verifies the phase,
+including the two corner terms, not just its modulus.
+
+Splitting the radical first at $p$ and then at one paired vector
+gives the same coordinates as splitting first at $p+1$ and then
+making the displayed shear change.  This equality follows by
+multiplying the three displayed block matrices $R,m,R$.
+Its Haar Jacobian is also one.  One way to see the normalization
+directly is to order the original root coordinates by height:
+the changed coordinate for each root is its old coordinate plus
+a polynomial in lower-height coordinates.  The possible signs
+and coordinate permutations come from $J$ and $w_\sigma$ and
+have real Jacobian of absolute value one.  The central terms
+$-X^*HX/2$ are translations in the central coordinates.  The
+restriction to each new radical is consequently exactly its
+Lebesgue Haar measure in the recursion defining $\mu_N$.
+Compact conjugation has determinant of absolute value one and
+preserves the restricted characters; its probability measures
+agree under the tower embeddings.  Fubini is legitimate by the
+proved properness.  We obtain, for the empty word,
+\begin{equation}\label{partial-head-empty-step}
+ J_{r-j-1}(S_{h\mathbin{\|}(1,c)}F)(\gamma)
+       =J_{r-j}(S_hF)(m(c,\gamma)),\qquad c\ne0.
+\end{equation}
+No power of $c$ occurs in this ungauged identity.
+
+\paragraph{The Capelli calculation at an invertible head.}
+The word identity requires more than
+\eqref{partial-head-empty-step}.  Put
+$\kappa=(r-j)+k/2$.  At
+$g=m(\operatorname{diag}(Z,c),\gamma)$, where
+$Z\in\operatorname{GL}_j(\mathbb C)$, the relevant equivariant
+coefficient has the right upper-root character law and the left
+character law for the roots joining the first $j$ vectors to
+the next one.  If $\Lambda(X)=(XF)(g)$, these laws give
+\[
+ \Lambda(XE_{i,j+1})=\delta_{ij}\Lambda(X),\qquad
+ \Lambda(E_{j+1,b}X)=c(Z^{-1})_{bj}\Lambda(X).
+\]
+Indices here start at one.  The second equality holds after
+every word of right derivatives, since those derivatives commute
+with left translations.  The two real torus directions give
+$E_{j+1,j+1}=c\partial_c$ on this one-parameter restriction.
+In the dual basis their values are the conjugate lower-root
+scalars and $-\bar c\partial_{\bar c}$.
+
+Apply the established last-border Capelli identity to the first
+$j$ indices and the new one.  Only the last right-root scalar
+survives.  The sum of the remaining cofactors is
+\[
+ \sum_{b=1}^j(-1)^{j+b}(Z^{-1})_{bj}
+       Q_{[j]\setminus j,[j]\setminus b}(u)
+       =(\det Z)^{-1}\mathcal A_{j-1}(u),
+\]
+because
+$(-1)^{j+b}\det Z\,(Z^{-1})_{bj}$ is the determinant of
+the first $j-1$ rows with column $b$ omitted.  This is the
+ordinary adjugate formula; it does not assume that $Z$ is
+diagonal.  The full size-$j$ contraction is
+$\det Z\,Q_{[j],[j]}(u)$.  Dividing by the actual size-$j$
+and size-$(j+1)$ minors gives the plus recurrence.  Apply the
+reverse-row border identity in the dual ordering to obtain the
+minus recurrence.  With the original spectral shifts they are
+\begin{equation}\label{partial-head-letter-recurrence}
+ \binom{v^+_{j+1,0}}{v^+_{j+1,1}}
+  =\begin{pmatrix}Y+\kappa+c\partial_c&-c\\c^{-1}&0\end{pmatrix}
+          \binom{v^+_{j,0}}{v^+_{j,1}},\qquad
+ \binom{v^-_{j+1,0}}{v^-_{j+1,1}}
+  =\begin{pmatrix}Y-\kappa-\bar c\partial_{\bar c}&-\bar c\\
+                   \bar c^{-1}&0\end{pmatrix}
+          \binom{v^-_{j,0}}{v^-_{j,1}}.
+\end{equation}
+The case $j=0$ follows directly from the empty determinant and
+the prescribed zero second component.  In the first calculation
+$u=Y+(2r+k)/2$, so $u-j=Y+\kappa$; in the second it is
+$Y-(2r+k)/2+j=Y-\kappa$.
+
+In this argument the coefficient minors must be frozen at the
+point before forming the enveloping-algebra expression.  Their
+first $j$ rows at $m(\operatorname{diag}(Z,c),\gamma)$ depend
+only on $Z$, so they are constant as $c$ varies.  They and their
+dual versions also commute with the new torus generator.
+These observations justify replacing that generator by the
+parameter derivative in \eqref{partial-head-letter-recurrence}.
+They avoid differentiating a coefficient which was meant to
+be frozen.
+
+There is one further point needed for word induction.  A size-$j$
+letter restricted to this chart differentiates only the head
+matrix $Z$.  After evaluating its coefficient minors, all surviving
+quantum-minor indices lie in the first $j$ coordinates.  Their
+complexified right directions change $Z$ and its Hermitian inverse
+block, and leave $c$ and $\gamma$ fixed.  The resulting
+$Z$-differential expression is independent of $c$.  It therefore
+commutes with multiplication by $c,\bar c$ and with
+$\partial_c,\partial_{\bar c}$.  This is the specific commutation
+used in the induction; no commutation of two arbitrary head
+letters is asserted.
+
+The normalized letters preserve the character laws just used.
+Indeed the first $j$ flag vectors are fixed by the relevant
+left subgroup, and right upper-unipotent translation changes
+the contracted rows and quantum columns by inverse triangular
+operations.  Exterior covariance cancels these operations,
+while $D_j$ is invariant.  The same argument applies to the
+dual contraction.  Thus it applies after every earlier letter.
+All partial averages in the preceding paragraph commute with
+these covariant operators.  The common compact majorants justify
+moving each derivative through the integral.  Induction in the
+original tail-first order therefore proves the word form of
+\eqref{partial-head-letter-recurrence}, with a fresh auxiliary
+index at each step.  This is exactly the original one-coordinate
+head-Jacquet operator.  No two noncommuting letter operators
+are interchanged.
+
+For clarity, the source's \texttt{oneBT} is the matrix action of
+\texttt{bT} at the site with operators
+$c\partial_c+\kappa$, $-(\bar c\partial_{\bar c}+\kappa)$,
+$c,\bar c,c^{-1},\bar c^{-1}$.
+Its defining recursion is $bT(\varnothing)=1$ and
+$bT(l::w)=T_l\,bT(w)$, with $T_l$ inserted at the tensor position
+of $l$.  This is the same head-after-tail order as
+\texttt{uwG}; no rational $R$-matrix dressing enters this operator.
+If two punctured-smooth representatives agree on $c\ne0$, all
+their local derivatives there agree.  Every finite product just
+displayed therefore gives the same values there, irrespective
+of the representatives' values at zero.  This verifies the
+representative quantifier in the original head-Jacquet interface.
+
+\paragraph{The density and Fourier transfer.}
+The radial gauge at the step is
+$\lambda(c)=|c|^{2(r-j)+k}=|c|^{2\kappa}$.
+Conjugating \eqref{partial-head-letter-recurrence} by $\lambda$
+removes $\kappa$ and gives precisely
+\[
+       \begin{pmatrix}Y+c\partial_c&-c\\c^{-1}&0\end{pmatrix},
+       \qquad
+       \begin{pmatrix}Y-\bar c\partial_{\bar c}&-\bar c\\
+                         \bar c^{-1}&0\end{pmatrix}.
+\]
+The existing residue-congruence and integrated-descent calculation
+now applies to the actual compact vectors $F_{j,w,h,e}$.
+Its measure in this coordinate is $|c|^{-2}dc$, and hence its
+ungauged scalar density is exactly
+\[
+             |c|^{-2}\lambda(c)^2
+                      =|c|^{2(2(r-j)+k-1)}.
+\]
+The normalized terminal Haar measure and the tower give the same
+positive Jacquet factor on both sides; equivalently the recursive
+one-pair integration formula supplies this equality before a
+constant is introduced.  Thus no unknown ratio of level constants
+is used in \eqref{partial-head-density}.
+
+The established Schwartz-marginal theorem, including its finite-word
+version, supplies a Schwartz extension of this density and the
+Fourier pairing with the actual wave $\exp(sc-\bar s\bar c)$.
+At every $c\ne0$ the just-proved compact-family regularity identifies
+the density with that extension, not merely almost everywhere.
+For two different heads the same argument is sesquilinear and
+uses a common minimum of their positive cutoffs.
+This proves the theorem \cite{partial-head-source,partial-head-established}.
+
+The terminal comparison is deliberately separate.  For $j=r$ the
+next expression is built from the original top lift and the root
+quotient orbital vector, rather than a lower-rank residue form.
+The top-lift hypothesis identifies its action on the regular radial
+cell.  Extending that identity to an arbitrary block head, with
+the prescribed stabilizer measure, is the remaining terminal
+compatibility statement.  The theorem above does not assume it
+and does not declare the complete all-level kernel estimate proved.

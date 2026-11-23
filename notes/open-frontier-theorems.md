@@ -175,8 +175,10 @@ with the stronger estimate b^4/G. No assertion identifies ordinary RH
 with rank zero. The exact wave isometry for all signed residue words is also proved.
 The mixed determinant inequality now supplies the original `SizeStd`
 and `SizeStdCpt`, with every rational word correction and no inverse of
-a degenerate residue form. The positive-rank partial-head Fourier
-kernel and lower-dimensional orbital comparisons remain first local targets.
+a degenerate residue form. Actual compact slices and the nonterminal
+partial-head Fourier transfer are proved for every original block head
+and admissible word. The terminal orbital transfer is the next local
+target; regular-cell identities alone do not determine the singular heads.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 

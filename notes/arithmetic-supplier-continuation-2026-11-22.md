@@ -129,9 +129,11 @@ retains all rational corrections and the adjacent shift. Cauchy--Schwarz
 is applied on the actual invariant Jacquet image without inverting a
 possibly degenerate old residue form.
 
-The next local target is the actual partial-head Fourier estimate at
-positive rank, including mixed signed residue forms and lower-dimensional
-root stabilizers. Its eventual global application must retain every
+The [partial-head transfer theorem](global-norm-frontier-partial-head-transfer.md)
+proves actual compact slices and every nonterminal head identity, with
+the original lower-root quotient, Haar recursion and all-word operator
+order. The next local target is the terminal orbital transfer, including
+its singular heads. Its eventual global application must retain every
 rational return, all source/target cuts and all arithmetic normalizers.
 An ambient projector estimate or local Gram identity is not the required
 global period-Gram estimate. A strict source deficit must supply any
@@ -143,7 +145,7 @@ aggregate nonvanishing needed by the chosen consumer.
    then identify and estimate the actual arithmetic section lattices.
 2. Use the actual Taylor–Wiles auxiliary maps to attack marked
    deformation support and the full integral Selmer budget.
-3. Prove the positive-rank partial-head Fourier/orbital estimate and
+3. Prove the terminal orbital transfer and positive-rank estimate, then
    transfer it to the complete period-Gram sum.
 4. Test every newly supplied result against the exact fourth-power tables
    in frontier theorem A. Constants and all accuracy parameters precede

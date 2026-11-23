@@ -228,3 +228,10 @@ checks the distinction between the relation generators, their original
 closure, and the algebraic span after coefficient-curve completion.
 The full determinant is verified by the primary cycle formula in arbitrary
 odd residue characteristic. No radical or torsion is discarded.
+
+The [partial-head certificate](../certificates/global-norm-frontier-partial-head-transfer.json)
+and [independent review](../certificates/global-norm-frontier-partial-head-transfer-review.json)
+verify the actual restricted-root quotient, Gram cutoff, undressed
+operator recursion and arbitrary representative quantifier. They supply
+`SliceCpt`, `HeadJ` and nonterminal `RadHead`, while retaining the separate
+terminal orbital-density and top-lift obligations.

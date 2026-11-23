@@ -76,10 +76,11 @@ in rank zero, with the stronger estimate b^4/G. No assertion identifies
 ordinary RH with this rank-zero case. The exact wave isometry now holds at every rank and finite admissible
 word, with its prescribed component correction and constant one. The
 mixed determinant inequality is now proved with every original rational
-correction, including degenerate residue forms. The partial-head Fourier
-transfer, lower orbital strata, and the complete
-global rational-return/period-Gram
-estimate remain open.
+correction, including degenerate residue forms. Actual compact slices
+and the partial-head Fourier transfer are proved at every nonterminal
+head, with the original stabilizer quotient and measures. The terminal
+orbital transfer and complete global rational-return/period-Gram estimate
+remain open.
 
 These are closed supplier obligations within larger nodes. Whole-node
 statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.
