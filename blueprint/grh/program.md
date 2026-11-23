@@ -118,6 +118,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Signed refinement of existing primitive density | The primitive-frame count was already proved in the recovered local-density chapter. Consecutive factor pairing supplies a sharper signed bound: positive errors occur only at inert odd-corank places and gain one residue-field power. No global norm closure is claimed. |
 | Ordinary local Selmer count with one valuation constant | Proved from finite-coefficient local Tate duality, Euler characteristic and local reciprocity. The exact primal typed matrix filtration gives n diagonal and nu upper coordinates; the defect is sum w_ij min(m,c_ij), bounded independently of truncation and auxiliary level at fixed data. Global and distinguished-place inputs remain. |
 | Original scalar-pair density equality from primitive complements | The original local quotient isometries and designated split-level graph preserve the complementary integral lattice. Self-duality identifies the discriminant modules of the actual modified frame lattices and their residue coranks. Combined with the already proved primitive count, this supplies the full local density assertion with constant one; global norms remain open. |
+| Uniform Frobenius spectrum and original nonresonant Selmer case | Closed actual supplier obligation; full work package remains open. |
+| Original embedded-isometry genus mean | Closed actual supplier obligation; full work package remains open. |
+| Original all-point determinant and regularized height floor | Closed actual supplier obligation; full work package remains open. |
 
 ## Work packages
 
@@ -210,7 +213,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original local chart and integral strict-cocycle comparison now give the actual one-character trace inequality. Construct and count the same admissible Frobenius trace families, retaining conductors, coefficient primes and the original order of field-dependent constants. Prove the uniform weighted Selmer product.
+**Next concrete task.** The original local chart, integral strict-cocycle comparison and fixed-field Frobenius spectrum prove the actual nonresonant character-case bound. Complete the exceptional and resonant coefficient-prime cases, retaining the original support, then prove the full weighted Selmer product.
 
 **Acceptance conditions:**
 
@@ -322,7 +325,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original local degenerate operators, exact different-ideal divisibility, distinct-minor label sum and product of local bounds are supplied. Prove the genus-weighted fixed-label multiplicities, then the complete zero-Gram sum, generic returns, finite-column sums and final positive traces with their original normalizers.
+**Next concrete task.** The distinct-minor label sum, exact mass comparison, primitive-sublattice mean and original embedded-isometry genus count are supplied. Prove the weighted flag-to-isometry correspondence with its integral stabilizer covolumes, then the zero-Gram sum, generic returns, finite columns and final positive traces.
 
 **Acceptance conditions:**
 
@@ -383,7 +386,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original models, short integral families, norm bounds, full integral frame and component section-degree inequality are proved. The actual boundary-point tangent degrees are now bounded with both integral indices retained. The corrected tangent fibres and required local-freeness construction are proved. Prove the regularized point-height identity, then bound the signed weighted mean height and rank losses and finish the numerical family constructions.
+**Next concrete task.** The actual models, integral section families, component degree bound, tangent degrees, corrected fibres and uniform all-point height floor are proved. Supply the finite-fibre relative nefness needed for the intersection argument; complete the signed weighted mean-height comparison, rank losses and final numerical family.
 
 **Acceptance conditions:**
 
@@ -479,9 +482,9 @@ The [adopted classical Galois substitution](../../notes/classical-galois-substit
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W04: full two-sided rational rigidity, integral weight-zero finiteness and the actual weighted relative presentation are supplied. The original local chart and integral comparison now give the one-character trace inequality. Bound its actual trace families and prove the weighted Selmer budget. Ordinary RH remains the preferred testing ground.
-1. W06/W08: the original degenerate local orbital bound is supplied. The distinct-minor sum and local product are now proved. Bound fixed-label multiplicities and complete the zero-Gram and generic near-return sums, with all ranks, finite columns, characters and measure factors retained. Compare the same final arithmetic maps and traces.
-1. W10: the original component section-degree inequality and literal numerical remainder are supplied. Bound its signed mean height and rank losses in the same family; complete the original numerical records and every point-height comparison actually used.
+1. W04: The original local chart, integral strict-cocycle comparison and fixed-field Frobenius spectrum prove the actual nonresonant character-case bound. Complete the exceptional and resonant coefficient-prime cases, retaining the original support, then prove the full weighted Selmer product. Ordinary RH remains the preferred testing ground.
+1. W06/W08: The distinct-minor label sum, exact mass comparison, primitive-sublattice mean and original embedded-isometry genus count are supplied. Prove the weighted flag-to-isometry correspondence with its integral stabilizer covolumes, then the zero-Gram sum, generic returns, finite columns and final positive traces. The exact terminal period is supplied; original row realization and the intervening seesaw comparison remain.
+1. W10: The actual models, integral section families, component degree bound, tangent degrees, corrected fibres and uniform all-point height floor are proved. Supply the finite-fibre relative nefness needed for the intersection argument; complete the signed weighted mean-height comparison, rank losses and final numerical family.
 1. W02/W11: assemble compatible signed arithmetic budgets at every required fourth-power sample, with all accuracy parameters fixed before the windows grow.
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.

@@ -1,0 +1,600 @@
+\subsection{A common Frobenius polynomial for the actual representations}
+\label{sec:support-spectrum}
+
+Fix an imaginary quadratic field $K$, and put $d_K=|\operatorname{disc}K|$.
+Constants in this subsection may depend on $K$.  They are independent of
+the conductor, the twist, both auxiliary primes, every coefficient prime,
+and every coefficient field.  This order of quantifiers is essential.
+
+Here is the precise local condition used below.  If $F$ is a number field,
+$M\ge1$, and $r$ is an $n$-dimensional $\ell$-adic representation, say
+that $r$ has the original level condition with exponents
+$m_1>\cdots>m_n$ and modulus $M$ if it is continuous and has the
+following properties.  At each finite $v\nmid\ell$, its restriction
+to inertia is diagonal with characters that factor through
+$\operatorname{Gal}(F(\mu_M)/F)$.  At each $v\mid\ell$, it has a
+full invariant flag whose successive characters $\kappa_i$ satisfy
+\[
+ \kappa_i|_{I_v}=\varepsilon^{m_i}\chi_i|_{I_v},\qquad
+ \chi_i\text{ factors through }\operatorname{Gal}(F(\mu_M)/F).
+                                                               \tag{SP1}
+\]
+In addition, either $r|_{G_{F_v}}$ is potentially crystalline, or
+$\kappa_i\ne\kappa_j\varepsilon$ for every $i,j$.  The latter
+condition compares the whole characters of $G_{F_v}$, not only
+their restrictions to inertia.  This is exactly the original
+local condition, including its alternative at the coefficient
+prime \cite{support-spectrum-source}.
+
+We use two classes of representations, with the source's normalizations.
+In rank three, $r$ is absolutely irreducible, has (SP1) with
+$(m_1,m_2,m_3)=(e,0,-e)$ and $M=N$, and
+$r\varepsilon^{-1}$ is attached to a regular algebraic,
+conjugate self-dual cuspidal representation $\pi$ of
+$\mathrm{GL}_3(\mathbf A_K)$.  Thus, at an unramified place
+$w$ of residue cardinality $Q$, if $\beta_{\pi,w,i}$ are the
+unitarily normalized Satake parameters, then
+\[
+ \operatorname{Eig}\bigl((r\varepsilon^{-1})
+                         (\operatorname{Frob}_w^{-1})\bigr)
+       =\{Q\beta_{\pi,w,1},Q\beta_{\pi,w,2},Q\beta_{\pi,w,3}\}.
+                                                               \tag{SP2}
+\]
+Throughout, $\operatorname{Frob}_w$ is arithmetic Frobenius,
+so $\varepsilon(\operatorname{Frob}_w^{-1})=Q^{-1}$.
+In rank two, $r\simeq W|_{G_K}\oplus1$, where $W$ is an
+irreducible representation of $G_{\mathbf Q}$ with (SP1) for
+$(e,-e)$ and $M=Nd_K$, and $W\varepsilon^{-e}$ is attached to
+a holomorphic normalized newform of weight $2e+1$.  The actual
+rank-two class also has the original weight-zero determinant
+condition.  The counting argument below holds for the larger class
+just described, so requires no change to that condition or to $W$.
+Theorems~\ref{thm:support-type-one-rigidity}
+and~\ref{thm:support-type-two-rigidity} place the actual
+representations from the integral Selmer model in these classes,
+with the indicated Tate twists and the original level bounds.
+
+\begin{theorem}[The original uniform Frobenius polynomial]
+\label{thm:support-spectrum}
+There are positive integers $C_K,A_K$ with the following property.
+Let $e,N\ge1$, let $p\ge7$ be a rational prime not dividing
+$Nd_K$, and let $w\mid p$, with $Q=\#(\mathcal O_K/w)$.
+There is a finite multiset of algebraic numbers
+$\{\alpha_s:s\in\Sigma\}$, independent of the coefficient prime,
+such that
+\[
+ \begin{split}
+ R:=|\Sigma|&\le C_K[N(e+1)]^{A_K},\\
+ |\sigma(\alpha_s)|&\le3
+       \quad\text{for every complex embedding }\sigma,\\
+ Q^e\alpha_s&\in\overline{\mathbf Z}.
+ \end{split}                                                   \tag{SP3}
+\]
+The indexed multiset is stable under
+$\operatorname{Gal}(\overline{\mathbf Q}/\mathbf Q)$.
+For every $\ell\ne2,p$, every isomorphism
+$\iota:\overline{\mathbf Q}_\ell\simeq\mathbf C$, and every
+finite family $X$ of pairwise nonisomorphic representations of the
+two original classes, there is an injection $j:X\hookrightarrow\Sigma$
+such that
+\[
+ \iota\!\left(\operatorname{tr}r(\operatorname{Frob}_w^{-1})\right)
+                 =\alpha_{j(r)}.                              \tag{SP4}
+\]
+Repeated trace values retain their multiplicities in $\Sigma$.
+
+Consequently, for every finite Galois-stable indexed multiset
+of roots of unity $\{z_o:o\in\mathcal O\}$, there is an integer
+$B\ne0$, independent of $\ell$ and $\iota$, satisfying
+\[
+ \log|B|\le C_K|\mathcal O|[N(e+1)]^{A_K}\log p.                \tag{SP5}
+\]
+After increasing the same constants if necessary, for every family
+$X_o$ as above one has
+\[
+ \begin{split}
+ \operatorname{tr}r(\operatorname{Frob}_w^{-1})
+   &\ne\iota^{-1}(Q^{-e}z_o+1+Q^ez_o^{-1}),\\
+ \sum_o\sum_{r\in X_o}v_\ell\!\left(
+   \operatorname{tr}r(\operatorname{Frob}_w^{-1})
+      -\iota^{-1}(Q^{-e}z_o+1+Q^ez_o^{-1})\right)
+   &\le v_\ell(B),\qquad v_\ell(\ell)=1.
+ \end{split}                                                   \tag{SP6}
+\]
+These are the full original Frobenius congruence-number requirements.
+\end{theorem}
+
+\begin{proof}
+We first bound the level, including its factor at the coefficient
+prime.  We then count a common spectrum, check its integral
+normalization, and form one integer.
+
+\emph{The coefficient-prime flag.}
+Let $F_v/\mathbf Q_\ell$ be the local field.  A character
+in (SP1) is de Rham, since after a finite extension it is an
+unramified character times a power of $\varepsilon$.  If the
+potentially crystalline alternative in (SP1) holds, its Weil--Deligne
+monodromy is zero and its inertia characters are the $\chi_i$.
+Suppose instead that all the stated character inequalities hold.
+We prove the same assertion from the flag.
+
+For a de Rham representation $V$ all of whose Hodge--Tate weights
+are strictly negative, Bloch--Kato's dimension formula and local
+Euler characteristic give
+\[
+ \begin{split}
+ \dim H_f^1(F_v,V)&=[F_v:\mathbf Q_\ell]\dim V+\dim H^0(F_v,V),\\
+ \dim H^1(F_v,V)&=[F_v:\mathbf Q_\ell]\dim V+\dim H^0(F_v,V)
+                          +\dim H^0(F_v,V^*(1)).
+ \end{split}                                                   \tag{SP7}
+\]
+The first formula applies to de Rham representations, not only
+to representations already crystalline over $F_v$
+\cite[Corollary~3.8.4]{bloch-kato-tamagawa}.
+Our convention is that $\varepsilon$ has Hodge--Tate weight $-1$.
+For the extension of $\kappa_2$ by $\kappa_1$, the relevant
+representation is $\kappa_1\kappa_2^{-1}$.  Its cyclotomic
+exponent is $e$ in rank three and $2e$ in rank two, so its
+Hodge--Tate weight is strictly negative.  The nonresonance
+assumption is precisely
+$H^0(F_v,\kappa_1^{-1}\kappa_2\varepsilon)=0$.
+Thus (SP7) gives $H^1=H_f^1$.
+
+In rank three, let $U$ be this two-dimensional extension.
+It is de Rham.  The final extension is measured by
+$V=U\kappa_3^{-1}$.  Its successive cyclotomic exponents
+are $2e,e$, hence both Hodge--Tate weights are negative;
+the two possible constituents of $V^*(1)$ are nontrivial
+by the same original nonresonance condition.  Therefore
+$H^0(F_v,V^*(1))=0$ and again $H^1=H_f^1$.
+After a finite extension killing the $\chi_i$, these finite
+extension classes are crystalline extension classes.  Inducting
+up the flag proves potential crystallinity.  Exactness of the
+potentially semistable comparison functor shows that its finite
+inertia representation has the successive characters $\chi_i$;
+finite inertia is semisimple in characteristic zero.  Its
+monodromy is zero.  The possibly large degree of this finite
+extension enters none of the bounds below.
+
+This argument includes $e=1$.  In rank three that is exactly
+where a ratio can equal $\varepsilon$ and give a noncrystalline
+semistable extension.  We used the explicit alternative in
+(SP1) to exclude that case; we did not infer crystallinity from
+the weights alone.
+
+\emph{The conductor at every finite place.}
+For a finite character factoring through
+$\operatorname{Gal}(F(\mu_M)/F)$, local reciprocity shows
+that its conductor exponent at $v$ is at most $v(M)$.
+Indeed the character extends from the image of $G_F$ in
+$(\mathbf Z/M\mathbf Z)^\times$ to a character of that
+finite abelian group.  If $v\mid M$, the norm of an element
+of $1+M\mathcal O_{F_v}$ is in $1+M\mathbf Z_\ell$:
+write multiplication by the element in an integral basis and
+take its determinant.  Norm compatibility in local reciprocity
+therefore kills the character on $1+M\mathcal O_{F_v}$.
+If $v\nmid M$, the cyclotomic extension in question is
+unramified at $v$, giving conductor exponent zero.
+
+At $v\nmid\ell$, (SP1) already makes inertia finite and
+diagonal, so the monodromy is zero.  At $v\mid\ell$, this
+was proved above.  In both cases additivity of the Artin
+conductor gives
+\[
+       a_v(\operatorname{WD}(r))\le n\,v(M).                  \tag{SP8}
+\]
+Tate twists are unramified on Weil--Deligne inertia and do
+not change this conductor.
+
+The original attachment condition gives equality of characteristic
+polynomials at almost all Frobenius elements.  Chebotarev and
+semisimple character theory therefore identify the original
+$r\varepsilon^{-1}$, or $W\varepsilon^{-e}$, with the
+corresponding compatible automorphic Galois representation.
+Full local--global compatibility consequently identifies these
+Weil--Deligne representations, including their monodromy,
+with the local automorphic parameters.  For the rank-three
+representations use Caraiani's Theorem~1.1 both away from
+and at the coefficient prime; for classical newforms use
+the classical local compatibility theorem and Saito's
+coefficient-prime comparison with its weight-monodromy supplement
+\cite{support-spectrum-Caraiani2012,support-spectrum-Caraiani2014,
+support-spectrum-Saito}.  These theorems have no bound on
+the weight relative to $\ell$.  Equality only after ordinary
+semisimplification would not justify (SP8) for the
+automorphic conductor.  The local new-vector theorem,
+with its corrected proof, now gives fixed vectors under
+\[
+ K_3(N^3)=\ker\!\left(\mathrm{GL}_3(\widehat{\mathcal O}_K)
+       \longrightarrow\mathrm{GL}_3(\mathcal O_K/N^3)\right)
+                                                               \tag{SP9}
+\]
+in rank three, and a classical newform level dividing $M^2$
+in rank two \cite{support-spectrum-newvector}.  Passing to
+these larger counting levels keeps every original representation
+and its polarization; it changes neither its local condition
+nor its trace.
+
+\emph{Counting the common spectra.}
+The local Hodge--Tate weights in rank three determine the
+infinitesimal character of $\pi$ to be $(e,0,-e)$ at both
+complex embeddings.  The corresponding algebraic coefficient
+representation of $\operatorname{Res}_{K/\mathbf Q}
+\mathrm{GL}_3$ has highest weight
+\[
+                      (e-1,0,1-e)                             \tag{SP10}
+\]
+at each embedding.  The Weyl dimension formula gives dimension
+$e^3$ at either embedding and $e^6$ for the full coefficient
+system.  This remains valid at $e=1$, when that coefficient
+system is trivial.  The infinitesimal character is still regular.
+
+Let $\Sigma_3$ be the set of regular algebraic conjugate self-dual
+cuspidal $\pi$ with (SP10) and a $K_3(N^3)$-fixed vector.
+Fix once a neat compact open subgroup $U_0$ of
+$\mathrm{GL}_3(\widehat{\mathcal O}_K)$, and let
+$U=U_0\cap K_3(N^3)$.  Borel--Serre compactification gives
+a finite cell complex for the locally symmetric space at
+level $U_0$, with finitely many components.  The space at
+level $U$ is a finite covering of degree at most
+\[
+ [U_0:U]\le
+ |\mathrm{GL}_3(\mathcal O_K/N^3)|\le N^{54}.                  \tag{SP11}
+\]
+The split real centre is divided out in defining these spaces.
+The coefficient system (SP10) has trivial central weight.
+Lift a fixed cell structure through the covering.  Cellular
+cochains with this local system have total dimension at most
+the number of lifted cells times $e^6$.
+
+Every member of $\Sigma_3$ contributes a nonzero summand to
+cuspidal cohomology with these coefficients, and cuspidal
+cohomology injects into ordinary cohomology.  The standard
+cohomological decomposition and strong multiplicity one
+separate the summands.  Borel--Serre and Clozel's
+Lemmas~3.14--3.15 therefore give
+\[
+                  |\Sigma_3|\le C_KN^{54}e^6.                 \tag{SP12}
+\]
+This is a count of representations, so no upper bound for
+their Hecke fields is needed
+\cite{support-spectrum-BorelSerre,support-spectrum-Clozel}.
+All dependence on the fixed field, including the number of
+components and cells, is confined to $C_K$.
+
+Let $\Sigma_2$ be the set of normalized primitive holomorphic
+newforms of weight $k=2e+1$ and level dividing $M^2=(Nd_K)^2$,
+with all nebentypes included.  Their eigenlines are independent
+in the space of cusp forms at level $\Gamma_1(M^2)$.
+For completeness a coarse uniform dimension bound suffices.
+Intersect with a fixed neat principal subgroup of level three.
+The covering degree is at most a constant times $M^8$, by
+bounding it by the number of two-by-two matrices modulo $M^2$.
+The corresponding modular curve has a cell decomposition lifted
+from a fixed finite one, and the local system
+$\operatorname{Sym}^{k-2}$ has rank $k-1=2e$.
+The holomorphic Eichler--Shimura summand injects into its first
+cohomology.  Hence
+\[
+                  |\Sigma_2|\le C e(Nd_K)^8.                 \tag{SP13}
+\]
+This also holds for the smallest weight $k=3$.
+
+Clozel's rationality theorem makes $\Sigma_3$ Galois-stable
+\cite[Theorem~3.13]{support-spectrum-Clozel}.
+Scalar conjugation preserves both the fixed finite level and
+conjugate self-duality.  It permutes the two coefficient
+embeddings of $K$, whose weights in (SP10) agree.
+The analogous statement for $\Sigma_2$ is the classical
+rationality of normalized newforms and their Hecke action.
+Thus both spectra are finite and Galois-stable.  Notice that
+the rank-three normalization (SP2) uses the rational number
+$Q$, not a square root of $Q$.
+
+\emph{Traces and integrality.}
+For $\pi\in\Sigma_3$, put
+$\alpha_\pi=\sum_i\beta_{\pi,w,i}$.  Caraiani's temperedness
+theorem gives $|\beta_{\pi,w,i}|=1$, hence
+$|\alpha_\pi|\le3$; the same holds for every conjugate
+\cite[Theorem~1.2]{support-spectrum-Caraiani2012}.
+Rationality makes these numbers algebraic.  To check the
+denominator, consider the compatible Galois representation
+for $\pi$ at each coefficient prime, in the normalization
+obtained by multiplying (SP2) by $\varepsilon$.
+At any coefficient prime $\ell\ne p$, continuity gives a
+stable integral lattice.  Since the local automorphic
+representation at $w$ is unramified, full local compatibility
+makes this Galois representation unramified there.  Its
+Frobenius eigenvalues, and their inverses, are integral at $\ell$.
+
+At the coefficient prime $p$, the representation is crystalline
+at $w$, with Hodge--Tate weights $-e,0,e$ at each embedding.
+The existence, Hodge--Tate description, and crystalline assertion
+are the basic automorphic Galois-representation theorem
+\cite[Theorem~2.1.1]{support-spectrum-BLGGT}; unramified local
+components are within its Iwahori-fixed case.
+Weak admissibility puts each Newton slope between $-e$ and $e$.
+Equivalently, for the eigenvalues of $\varphi^f$, where
+$Q=p^f$, their valuations normalized by $v_p(p)=1$ lie
+between $-ef$ and $ef$.  For the upper bound, one can also
+apply the lower bound to the dual representation.
+These eigenvalues are the parameters $\beta_{\pi,w,i}$ in
+the normalization (SP2).  Thus $Q^e\alpha_\pi$ is integral
+at every place above $p$, as well as at every other finite
+place.  It is an algebraic integer.
+
+For $g\in\Sigma_2$, let $\lambda_1,\lambda_2$ be the roots of
+\[
+                 T^2-a_p(g)T+\eta_g(p)p^{2e}.                 \tag{SP14}
+\]
+Here $p\nmid M$, so these are the usual good-prime roots.
+The modular-form Galois representation uses inverse arithmetic
+Frobenius in (SP14), exactly as in the preceding rank-two
+comparison.  Set
+\[
+       \alpha_g=1+p^{-ef}(\lambda_1^f+\lambda_2^f),
+               \qquad f=[\mathcal O_K/w:\mathbf F_p]\in\{1,2\}.
+                                                               \tag{SP15}
+\]
+Deligne's bound gives $|\lambda_i|=p^e$, so
+$|\alpha_g|\le3$.  The roots in (SP14) are algebraic
+integers, and (SP15) gives $Q^e\alpha_g$ integral directly.
+The same facts hold for each Galois conjugate
+\cite{support-spectrum-Deligne}.
+
+Take $\Sigma$ to be the disjoint union $\Sigma_3\sqcup\Sigma_2$
+with these traces.  The bounds (SP12)--(SP13) prove (SP3).
+Given an original representation of the first class, its
+attached $\pi$ belongs to $\Sigma_3$ by (SP8)--(SP10), and
+(SP2) gives (SP4).  If two such representations had the same
+$\pi$, their characteristic polynomials at almost all
+Frobenius elements would agree; Chebotarev and semisimple
+character theory would make them isomorphic.  In the second
+class choose its primitive newform.  The same newform gives
+the same $W$, hence the same $W|_{G_K}\oplus1$.
+Thus a pairwise nonisomorphic family injects into $\Sigma$.
+Different newforms can restrict to isomorphic representations
+over $K$, but this only leaves unused indices in $\Sigma_2$;
+it never invalidates the injection.  Repeated numerical
+traces are not removed.
+
+\emph{One integer for all coefficient primes.}
+Put $a=Q^e$ and form
+\[
+ \begin{gathered}
+ P(T)=\prod_{s\in\Sigma}(T-a\alpha_s)\in\mathbf Z[T],\qquad
+ Z(X)=\prod_{o\in\mathcal O}(X-z_o)\in\mathbf Z[X],\\
+ B=\operatorname{Res}_X\!\left(Z(X),X^R P(X+a+a^2/X)\right).
+ \end{gathered}
+                                                               \tag{SP16}
+\]
+The verified spectra now satisfy every hypothesis of
+Proposition~\ref{selmer-resultant-certificate}.  It gives
+$B\ne0$, all the trace separations in (SP6), and
+\[
+             \log|B|\le |\mathcal O|R(2e\log Q+\log2).        \tag{SP17}
+\]
+Since $f\le2$, the extra factor $e$ and the factor $\log Q$
+are absorbed in (SP5) by increasing the polynomial exponent
+once.  For example the coarse bounds above allow $A_K=55$;
+the precise exponent has no role below.
+
+The injections (SP4), separately for each $o$, select
+subsets of its indexed factors, including their multiplicities.
+The valuation conclusion of that proposition gives (SP6).
+Empty spectra or empty multisets give $B=1$ and satisfy
+the same assertions.
+\end{proof}
+
+For clarity, the good-data hypotheses in the next corollary are
+the following explicit ones.  Write
+$\psi=\psi^{(\ell)}\psi_\ell$ for its decomposition by the
+prime-to-$\ell$ and $\ell$-power parts of the modulus, and let
+$F_{\psi^{(\ell)}}$ be the abelian field cut out by
+$\psi^{(\ell)}$.  They are
+\[
+ \begin{gathered}
+ \ell\ne2,\quad e\ge1,\quad 2\mid N,\quad
+ \ell\nmid\operatorname{ord}\psi,\quad \psi_\ell^2=1,
+ \quad\psi(-1)=(-1)^e,\\
+ K\text{ imaginary quadratic},\quad
+ \ell\nmid d_K h_K,\quad (d_K,N)=1,\quad
+ K\not\subset\mathbf Q(\mu_\ell)F_{\psi^{(\ell)}},\quad
+ \ell-1\nmid2e,
+ \end{gathered}                                                \tag{SP18a}
+\]
+where $h_K$ is the class number.  These are precisely the
+original conditions \cite{support-spectrum-orbit-source}.
+The prime-to-$\ell$ order in (SP18a) implies that
+$\psi_\ell$ has conductor dividing $\ell$; there is no
+wild $\ell$-power conductor left in that factor.
+
+\begin{corollary}[The original good-character orbit bound]
+\label{cor:support-spectrum-orbit}
+Fix $K$.  There are integers $C_K,A_K>0$ such that for every
+$e,N\ge1$, subgroup $H\le(\mathbf Z/N\mathbf Z)^\times$,
+and prime $p\nmid30Nd_K$, there is a nonzero integer $B_p$ with
+\[
+ \log|B_p|\le C_K\varphi([(\mathbf Z/N\mathbf Z)^\times:H])
+                      [N(e+1)]^{A_K}\log p.                   \tag{SP18}
+\]
+For every coefficient prime $\ell\ne p$ and every original
+coefficient ring $O$ for which a character $\psi$ of kernel $H$
+satisfies all the original good-data hypotheses, all the
+characters in that orbit have finite strict Selmer length and
+\[
+ \sum_{\ker\psi=H}
+     \frac{\operatorname{length}_O\mathcal S(O,e,\psi)}
+          {e(O/\mathbf Z_\ell)}
+                    \le2v_\ell(B_p).                         \tag{SP19}
+\]
+Both the Selmer group and its strict local conditions are the
+original ones in Corollary~\ref{cor:support-one-character-trace}.
+For two distinct allowed primes $p,p'$ and any finite set $L$
+of coefficient primes satisfying those hypotheses, one has
+\[
+ \sum_{\ell\in L}\log\ell\sum_{\ker\psi=H}
+     \frac{\operatorname{length}_{O_\ell}\mathcal S(O_\ell,e,\psi)}
+          {e(O_\ell/\mathbf Z_\ell)}
+ \le2C_K\varphi([(\mathbf Z/N\mathbf Z)^\times:H])
+          [N(e+1)]^{A_K}(\log p+\log p').                      \tag{SP20}
+\]
+These are the full original fixed-$K$ orbit and two-prime
+requirements.  No assertion here is uniform as $K$ varies.
+\end{corollary}
+
+\begin{proof}
+If the character orbit is empty, take $B_p=1$; there are no
+good data to check.  Otherwise the quotient by $H$ is
+cyclic of order $m=[(\mathbf Z/N\mathbf Z)^\times:H]$.
+Its faithful characters form a Galois-stable set of size
+$\varphi(m)$.  Choose $w\mid p$ and in Theorem~\ref{thm:support-spectrum}
+use the multiset $z_\chi=\chi(Q)^{-1}$, indexed by these complex
+characters, retaining repetitions of their values at $Q$.
+All such values are roots of unity since $(Q,N)=1$.
+Any one faithful character valued in $O$ generates all of them
+by powers prime to $m$, so a coefficient embedding identifies
+this index set with the original orbit over $O$.
+
+We recall why the good-data condition survives that identification.
+For $\psi' =\psi^j$, $(j,m)=1$, the order, kernel and parity
+are unchanged.  The $\ell$-part of the conductor character
+has order at most two in the original good-data hypotheses;
+it is unchanged by such a power.  The kernel of the
+remaining prime-to-$\ell$ character is unchanged as well.
+These are the character-dependent conditions in the original
+definition; the conditions on $K,N,\ell,e$ are fixed.
+Thus every character in the orbit has the same good-data
+properties.  This is the elementary argument underlying
+the original orbit lemma, including its quadratic local
+factor \cite{support-spectrum-orbit-source}.
+
+At inverse arithmetic Frobenius the toral trace is exactly
+$Q^{-e}\psi(Q)^{-1}+1+Q^e\psi(Q)$, not its oppositely
+twisted version.  Apply
+Corollary~\ref{cor:support-one-character-trace} to each orbit
+character.  Its finite family consists of pairwise
+nonisomorphic representations of the exact classes above.
+The separation and valuation sum (SP6), summed over the
+orbit, give (SP19).  The good-data hypotheses imply
+$\ell\ne2$, so every coefficient prime under consideration
+is allowed in (SP6).  This proves (SP18)--(SP19).
+
+For $\ell\ne p$, use (SP19) with $B_p$; for $\ell=p$ use
+the analogous integer $B_{p'}$.  Nonnegativity permits the
+common bound $2v_\ell(B_p)+2v_\ell(B_{p'})$ for every
+$\ell\in L$.  Unique factorization gives
+$\sum_{\ell\in L}v_\ell(B)\log\ell\le\log|B|$ for every
+nonzero integer $B$.  Summing and using (SP18) proves (SP20).
+If $L$ is empty, the assertion is immediate; otherwise the
+good-data hypotheses force $e\ge1$.  If $K$ is not imaginary
+quadratic, there are no such good data, so the corresponding
+source statement for arbitrary number fields is vacuous.
+\end{proof}
+
+The constants in (SP18)--(SP20) are chosen after $K$ and before
+$e,N,H,p,p'$ and all coefficient primes.  The field used to
+obtain automorphy upstream need not have bounded degree; the
+representations counted here have already descended to the
+original $K$ or $\mathbf Q$.  The corollary addresses the
+original good-data range.  It supplies neither an extension
+to resonant exceptional characters nor a bound uniform in a
+moving imaginary quadratic field.
+
+\begin{corollary}[The nonresonant contribution in the original family]
+\label{cor:support-spectrum-case-one}
+Fix a primitive Dirichlet character $\chi$ of conductor $n_0$
+and order $o$, and let $F_\chi$ be the field cut out by its
+kernel.  Let $b\ge7$
+be the original fixed prime with $b\equiv3\pmod4$ and
+$(b,n_0)=1$.  Set $K=\mathbf Q(\sqrt{-b})$.
+Let $P_\chi$ be the original fixed exceptional set of odd
+primes.  In particular it contains $3$ and every odd prime
+dividing $on_0b h_K$.
+
+There are an integer $C_\chi>0$ and two fixed distinct
+primes $r_1,r_2$ such that the following holds for the
+original arithmetic family.  Write
+\[
+ E=\mathbf Q(\mu_{2^a})^+F_\chi(\sqrt{-q},\sqrt{-d}),
+ \qquad N=\operatorname{lcm}(2^a,n_0)qd,\qquad a\ge2,
+                                                               \tag{SP21}
+\]
+where $q,d\equiv3\pmod4$ are the two distinct auxiliary
+primes, prime to $n_0$.  Retain its original size conditions,
+and assume additionally $r_i<q,d$.  For $1\le e<t$, and
+any finite set $L$ of odd coefficient primes satisfying
+\[
+              \ell\notin P_\chi,\qquad \ell-1\nmid2e,
+                                                               \tag{SP22}
+\]
+all the original strict Selmer lengths are finite and
+\[
+ \sum_{\ell\in L}\log\ell
+       \sum_{\substack{\psi\in\widehat{\operatorname{Gal}(E/\mathbf Q)}
+                         (O_\ell)\\\psi(-1)=(-1)^e}}
+       \frac{\operatorname{length}_{O_\ell}\mathcal S(O_\ell,e,\psi)}
+            {e(O_\ell/\mathbf Z_\ell)}
+                      \le (Nt)^{C_\chi}.                     \tag{SP23}
+\]
+Here the inner set consists of the characters valued in the
+original coefficient ring $O_\ell$; it need not be a full
+splitting ring.  This proves the entire original Case~I
+requirement for both RH and Dirichlet GRH.
+\end{corollary}
+
+\begin{proof}
+We verify every good-data hypothesis for the actual family,
+then sum over kernels.  The degree of $E/\mathbf Q$ divides
+$2^ao$, so (SP22) makes every occurring character have
+order prime to $\ell$.  At an odd prime not dividing $n_0$,
+the local character of $E$ is either unramified or comes
+from one of the two quadratic fields in (SP21).  Thus its
+$\ell$-component has order at most two.  The modulus is even
+and the parity condition is imposed in the inner sum.
+The exceptional set excludes all prime divisors of $bh_K$.
+The original size conditions include $b<q,d$, so
+$b\nmid N$ and $(d_K,N)=1$.  Finally
+$\mathbf Q(\mu_\ell)F_{\psi^{(\ell)}}$ is unramified at $b$,
+because $b\ne\ell$ and the conductor of $\psi^{(\ell)}$
+divides $N$.  Since $K$ is ramified at $b$, it cannot be a
+subfield of that compositum.  The last good-data condition
+is precisely the second inequality in (SP22).  This proves
+(SP18a), including its field exclusion.  It is also a direct
+proof of the original good-data verification for this family
+\cite{support-spectrum-case-one-source}.
+
+Choose two distinct primes $r_1,r_2>30n_0b$ once and for all.
+When $q,d>r_1,r_2$, neither divides $30Nd_K$.  The constants
+in Corollary~\ref{cor:support-spectrum-orbit} are now fixed
+before $a,q,d,N,e,t$ vary.
+
+Put $G=(\mathbf Z/N\mathbf Z)^\times$ and group all the
+characters in (SP23) by their kernels $H\le G$.  For each
+kernel use (SP20) on the subset of coefficient primes where
+it occurs, and enlarge the character set to the full orbit
+of that kernel.  All lengths are nonnegative.  A kernel of
+a character has cyclic quotient, and the number of
+characters with that kernel is $\varphi([G:H])$.  Distinct
+kernels give disjoint sets of complex characters, so
+\[
+                 \sum_H\varphi([G:H])\le|\widehat G|
+                                   =|G|\le N.                \tag{SP24}
+\]
+Consequently the left side of (SP23) is at most
+\[
+ D_\chi N[N(e+1)]^{A_K},\qquad
+       D_\chi=2C_K(\log r_1+\log r_2).                        \tag{SP25}
+\]
+The original family has $N\ge16$, and $e+1\le t$.
+Choose an integer $k\ge0$ with $D_\chi\le16^k$.
+Then (SP25) is at most $(Nt)^{k+1+A_K}$, proving
+(SP23) with $C_\chi=k+1+A_K$.
+
+The fixed prime $b$, the class number $h_K$, and both
+auxiliary primes were chosen from the fixed target
+character.  Thus no varying-field constant has been
+absorbed in $C_\chi$.  For ordinary RH, $n_0=o=1$ and
+$F_\chi=\mathbf Q$; the same argument applies without a
+separate arithmetic construction.
+\end{proof}

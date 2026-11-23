@@ -77,16 +77,14 @@ class-number bound and no replacement of the arithmetic lattices.
 
 ## The next frontier
 
-The next original arithmetic theorem is the genus mean of triples
-of two embedded data and an isometry between them:
-DiscNResNeZero.main, lines 312--430. Its proof separates the
-isometry by the dimension of its fixed subspace. The primitive
-sublattice mean needed for the intermediate fixed-space dimensions
-is now supplied; the counts of isometries with a prescribed fixed
-space and with no fixed vector still need complete reconstruction.
+The [full embedded-isometry genus mean](embedded-isometry-genus-count.md)
+now supplies DiscNResNeZero.main, lines 312--430, including
+the original counts for every fixed-space dimension and the
+case with no fixed vector. Its proof uses the primitive mean
+here with exact cancellation of the discriminant powers.
 
-After those estimates, the original weighted row-to-lattice
-correspondence must deliver the fixed-label pair bound PairsP.
+The next frontier is the original weighted row-to-lattice
+correspondence, which must deliver the fixed-label pair bound PairsP.
 The new theorem is not itself a bound on all return multiplicities,
 and it does not assert the full zero-Gram operator estimate.
 

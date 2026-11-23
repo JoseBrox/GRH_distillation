@@ -1,0 +1,339 @@
+{
+  "review": "Independent mathematical review of the actual all-point height proof",
+  "reviewer": "theta_compatibility",
+  "status": "passed",
+  "classification": "closed supplier obligations in W10, not a completed proof-map node",
+  "reviewed_files": {
+    "paper/shared/geometry-point-height.tex": "0d93e5db4f2f184237593bba0181ee1f7f777d171ebd74f8bf6f3fb70e1f5ff9",
+    "paper/shared/geometry-point-height-references.tex": "a795f27ad133816a46d97ebc3f1fe6319ee3a7632b02f51d489513c57709b4b1",
+    "notes/geometry-point-height.md": "c2121d8c010fb056ea8a2c3a34d25c8c15dae075a6ada209be6f9ffd0da82007"
+  },
+  "dependency_artifacts": {
+    "paper/shared/geometry-hodge-specialization.tex": "f1f8e8d9dab45777a81ef3a5788421750743509f6b6f3e15bd04dbdbdcb4b239",
+    "paper/shared/geometry-point-continuation.tex": "d5edf8a6872fd151b3d2a635f13d12cbf3da1a53a2aed22b9c907202e7b7b8a0"
+  },
+  "checks": [
+    {
+      "id": "integral_torus_kernel",
+      "result": "pass",
+      "reason": "Lan 3.3.1.5 and 3.3.1.7 apply over the original noetherian normal valuation rings. The generic split torus closes to a smooth closed torus and the splitting extends. Its tangent map is injective modulo each prime, hence saturated; generic tangent exactness identifies the integral kernel exactly. The quotient image remains unsaturated when necessary."
+    },
+    {
+      "id": "toric_different_index",
+      "result": "pass",
+      "reason": "Trace-dual coefficient projectors identify the supported eigenlattice with the embedded absolute different. Signed normalized index is -r log rd(E)+log(i_T)/(2f), including r=0. Summation cancels precisely the negative log(i_T)/2 in Phi."
+    },
+    {
+      "id": "corrected_fibre_cost",
+      "result": "pass",
+      "reason": "Actual Hodge inclusions a_tau F_tau subset Lambda_tau subset F_tau imply index cost at most m log N(a_tau)/[L:Q]. The proof keeps full quotient eigenlattice, actual image lattice and corrected fibre distinct. Selected-image degree input gives the stated 52 f m Lambda_B bound, also for zero quotient rank."
+    },
+    {
+      "id": "actual_period_supplier",
+      "result": "pass",
+      "reason": "The actual source chain constructs the logarithmic period family from the original SNC chart, family exponential, central-period continuation and original polarization. The symplectic basis, holomorphic regular part, positive semidefinite monodromy blocks and invertible central period frame are supplied, rather than assumed for a replacement degeneration."
+    },
+    {
+      "id": "all_paths_boundary_limit",
+      "result": "pass",
+      "reason": "Positive semidefiniteness gives B_a Pi=0 for every a. The compressed inverse is the exact quotient metric, with representative p=Y C y, before taking limits. Exact moving toric period eigenvectors and CM orthogonality give exact Gram factorization and cancellation. Arbitrary relative rates of normal-crossing coordinates are allowed."
+    },
+    {
+      "id": "toric_metric_normalization",
+      "result": "pass",
+      "reason": "The cocharacter period is 2 pi i times its tangent vector. The selected full tangent metric pi H, quotient metric pi H, and period factor combine to (4 pi)^(-r). The squared determinant limit has i_T in the numerator and |det C_tau|^2 in the denominator, matching the actual source formula."
+    },
+    {
+      "id": "finite_frame_dictionary",
+      "result": "pass",
+      "reason": "For the actual coordinate degree, product_tau |det T_tau,v|_v times R_v equals |g|_v. The one nonzero algebraic scalar g=u_L product_{S_new(B)}t_p is used at all places. The full correction set S_B=S0 union S_new(B) is kept separate from the additional vertical factor index set; the initial correction is already in u_L and a_mu."
+    },
+    {
+      "id": "height_identity_signs",
+      "result": "pass",
+      "reason": "J(F,b)=sum_finite log|det T|+sum_embeddings log|det C| has the stated sign. Substituting the actual squared norm and applying the product formula yields h_B^0+average(x)=-Phi without dropping vertical factors or replacing metrics."
+    },
+    {
+      "id": "global_regularization_quantifiers",
+      "result": "pass",
+      "reason": "The boundary lower-limit inequality and upper semicontinuity give x_iota at most the bounded potential plus reference logarithm. The prescribed regularizations dominate globally with threshold selected before the point and its field. The ample height lower bound is finite on the fixed model and multiplied by a/b."
+    },
+    {
+      "id": "model_construction_order",
+      "result": "pass",
+      "reason": "Local freeness is arranged before constructing the prescribed determinant coordinates and vertical factors. No equality between a newly flattened determinant and the pullback of an old nonfree determinant is asserted. Already locally free modules do pull back exactly."
+    },
+    {
+      "id": "scope",
+      "result": "pass",
+      "reason": "The result supplies the actual all-point floor for the existing reciprocal perturbation argument. Signed-intersection assembly, weighted mean-height comparison and final finite losses are explicitly left open. Neither RH nor GRH, nor an entire geometric proof-map node, is declared complete."
+    }
+  ],
+  "primary_reference": {
+    "author": "Kai-Wen Lan",
+    "title": "Arithmetic compactifications of PEL-type Shimura varieties",
+    "version": "Revised thesis, 14 March 2021",
+    "url": "https://www.kwlan.org/articles/cpt-PEL-type-thesis-revision.pdf",
+    "local_path": "build/reference-cache/lan-pel-thesis-2021.pdf",
+    "sha256": "a7a454f5d0735f4bf11f00a8afc14c361c5fc2cefd691d7466f7620ab4c3a079",
+    "printed_page": 192,
+    "pdf_page_one_based": 220,
+    "statements": [
+      "Proposition 3.3.1.5",
+      "Proposition 3.3.1.7"
+    ],
+    "hypotheses_checked": [
+      "noetherian normal base",
+      "semiabelian source and target",
+      "generic subtorus is closed"
+    ]
+  },
+  "source_pin": {
+    "repository": "jsmorph/rh",
+    "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de"
+  },
+  "source_evidence": [
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Definitions/MetricPeriods/IsAdapted.lean",
+      "sha256": "c662e60bc7ff8d80c010932874bb95d627f339a3f235c37da2e7baf928ceabb7",
+      "git_blob_sha1": "98b77f79a0fb14c6c4f9b4bfcf3e5b737abfb83c",
+      "reviewed_ranges": [
+        [
+          11,
+          65
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/SemiAbelianPullbackTorusExtension.lean",
+      "sha256": "98283c13aeab2f243fe44736bea5cff41395c161854ae446729db2dc8090d5b6",
+      "git_blob_sha1": "0e2bd98a978b92af3e9df86e9a33b8e68ee035f3",
+      "reviewed_ranges": [
+        [
+          119,
+          144
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/TorusExtensionLieLattice.lean",
+      "sha256": "92e2812f8b1e5ff002eebf1c0bd1ca5e57fc656f418a500d8bd2eba81506b573",
+      "git_blob_sha1": "dfb3957a05dac9323766fc6c1eb2b450d70e4967",
+      "reviewed_ranges": [
+        [
+          128,
+          174
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/TorusEmbeddingLieInjective.lean",
+      "sha256": "a1db5327365fa4ab6b393a4706f06901472f2fcc1b1b12fe594f585c1865c5c6",
+      "git_blob_sha1": "f2f57fb1cbea0e8ace1fc274cee0bb4abcbabaf5",
+      "reviewed_ranges": [
+        [
+          41,
+          80
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/TorusInjectiveLieMap.lean",
+      "sha256": "744b95c6d1f6e0bd95c13085d58c43e3e527b5f6f700bb75d8ecab81428ac1ee",
+      "git_blob_sha1": "86482a73293663b762bd4e919cb9a2417f629ccb",
+      "reviewed_ranges": [
+        [
+          78,
+          101
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LogIndexOfOrthogonalFamily.lean",
+      "sha256": "c1d3d1107ff59244475eac9d6a9c6eeac8ed1508723481736c6504945a106969",
+      "git_blob_sha1": "e2918859c4ed4636774de759493df8e9ada0f632",
+      "reviewed_ranges": [
+        [
+          563,
+          638
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/AbelianPartIntegralLattice.lean",
+      "sha256": "a7bd3bc97b862296ed921cf1a41050fd3d8818af9c69ed143eb57ec50d029a33",
+      "git_blob_sha1": "e5fadf3bc775304573cabed27c93888aee8b4351",
+      "reviewed_ranges": [
+        [
+          35,
+          86
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/ComponentDataHodgeBound.lean",
+      "sha256": "e90a82288189eb2a58f113b08a3a21811393670921fb0243c4643d9adeaf5906",
+      "git_blob_sha1": "0eeadf3ca902d646c38b935d12ac12dd538ac9a0",
+      "reviewed_ranges": [
+        [
+          42,
+          129
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/BoundaryChartLogPeriodFamily.lean",
+      "sha256": "9d61b9dc30068ea19708d025d851e8604a26647b0d9e1fd2a1e04d0930bd9a4d",
+      "git_blob_sha1": "02e0f62b1165d36decf4a9e552718e31f6c41b38",
+      "reviewed_ranges": [
+        [
+          118,
+          194
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/SymplecticPolydiscPeriodBasis.lean",
+      "sha256": "38ea156e36800516149203dd79faa7e834f116bdaeaddeac71179f1ffdeb06f5",
+      "git_blob_sha1": "5a16e0eeabe1e3b5f1c9a2b918c335e6126186df",
+      "reviewed_ranges": [
+        [
+          109,
+          216
+        ],
+        [
+          217,
+          316
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ExistsIsChart.lean",
+      "sha256": "ebcd92611359decc802ff7d612411a2afb6947bb8982d8576a6157dec30f1ed8",
+      "git_blob_sha1": "3b346278f83a50b5e60b8550d398510836ce3b4d",
+      "reviewed_ranges": [
+        [
+          20,
+          95
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ChartQContinuousAtAndLocalSolution.lean",
+      "sha256": "e747dd8421b1d1c111752f8646b81767a5cd8048f014dad846534ec75b034931",
+      "git_blob_sha1": "6b72bf09c702b3e8e0b1b354a0ed93ce1ed466aa",
+      "reviewed_ranges": [
+        [
+          186,
+          216
+        ],
+        [
+          350,
+          400
+        ],
+        [
+          435,
+          483
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/MetricProofs/PeriodDecompositionNearBoundary.lean",
+      "sha256": "abf90e2de131fc5e3fea4b92e15d287088e5164bb73934e624ac530136dda61a",
+      "git_blob_sha1": "7b5afba36228b9d4da810580b7925449fc1a0a38",
+      "reviewed_ranges": [
+        [
+          62,
+          135
+        ],
+        [
+          245,
+          325
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/ComponentDataAbelianPartBound.lean",
+      "sha256": "cab349fa308ea5c0fc1c597ccac1be44130a1cfc631b98ed8c10c6f892659faa",
+      "git_blob_sha1": "8f4de25d0278800bae6c253e7a99809bdcd67c8f",
+      "reviewed_ranges": [
+        [
+          83,
+          149
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/WeilBound/CoreStatements/PlurisubharmonicCones/DetLatticeTensorIsDegOnMuTwDeg.lean",
+      "sha256": "3a2cd768e21bce5a1a2f2b257391cab24181ef12573f2a4580305360713f51c9",
+      "git_blob_sha1": "ac1b58ea241ba082797e244177eb25d6538c23e2",
+      "reviewed_ranges": [
+        [
+          148,
+          197
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/CuspIntersectionHeight.lean",
+      "sha256": "4ba85e090bf97d72e7f4de0342e13590c5172e5448f791b246efb4c8a9ac436e",
+      "git_blob_sha1": "c96110b00cba0c89a66fa2069cd2fc58de66be75",
+      "reviewed_ranges": [
+        [
+          71,
+          119
+        ],
+        [
+          162,
+          260
+        ],
+        [
+          261,
+          315
+        ],
+        [
+          335,
+          428
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/CuspIntersectionComparison.lean",
+      "sha256": "9e5f622fb501da376b0192b7ca6b81f0504bfd9342dc9bd7471df29f3e081070",
+      "git_blob_sha1": "6d53415b0de4a0c1fe865191637d676783c76cd2",
+      "reviewed_ranges": [
+        [
+          222,
+          298
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/CuspIntersectionFinite.lean",
+      "sha256": "fee9501033875988d9892383e4f585aa5d342055cdbe16765dba77e6896fac3a",
+      "git_blob_sha1": "56ab40fefd9db671e804c2521150e51b38f02367",
+      "reviewed_ranges": [
+        [
+          15,
+          36
+        ]
+      ]
+    },
+    {
+      "path": "lean/src/Development/AutomorphicSpectrum/Proofs/GeometryProofs/CuspHeightUpper.lean",
+      "sha256": "92acda917ce886dcbe003b2d949e8ab4a0b4a7cba8a1511d2a38e1724df12912",
+      "git_blob_sha1": "8221fb34e115cdf270083a993c228125625eab33",
+      "reviewed_ranges": [
+        [
+          128,
+          205
+        ]
+      ]
+    }
+  ],
+  "limits": [
+    "Human mathematical audit with authenticated bounded source interfaces; no Lean build or kernel verification is claimed.",
+    "The matrix and sign checker belongs to the parent result; this certificate does not count finite diagnostics as a universal geometric proof.",
+    "Cited earlier actual tangent-degree and Hodge-specialization theorems remain explicit dependencies."
+  ]
+}

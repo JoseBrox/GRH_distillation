@@ -191,9 +191,8 @@ def main():
         "written_proof_labels":["thm:primitive-sublattice-genus-mean",
                                 "thm:normalized-primitive-sublattice-genus-mean"],
         "artifact_sha256":{p:sha((ROOT/p).read_bytes()) for p in ARTIFACTS},
-        "remaining":["isometries with prescribed fixed space",
-                     "pairs of isometries with no fixed vector",
-                     "original weighted row-to-lattice correspondence",
+        "downstream_supplier":"The complete embedded-isometry genus mean is proved and separately certified in certificates/embedded-isometry-genus-count.json.",
+        "remaining":["original weighted row-to-lattice correspondence",
                      "full fixed-label pair bound and zero-Gram sum"],
         "verification_scope":"Pinned source bytes, exact symbolic comparisons and finite nonsemisimple-module diagnostics. General arguments are written proofs using cited classical theorems. No Lean build, no complete W08 claim.",
     }

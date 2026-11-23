@@ -1,0 +1,398 @@
+\subsection{A height bound at every arithmetic point}
+\label{sec:actual-point-height}
+
+We now use the corrected fibres on the actual model to bound the
+prescribed regularized height, including at boundary points. All
+degrees and heights are normalized by the degree of the field of
+definition. Auxiliary field extensions are allowed, but no bound for
+their degrees is assumed or needed.
+
+Retain the original host $E$, $f=[E^+:\mathbf Q]$, signature $(p,q)$,
+selected rank $m\in\{p,q\}$, and cutoff $B$. Write
+\[
+ \Lambda_B=\log B+\log\operatorname{rd}(E)
+       +\left|L'(1,\chi_{-d})/L(1,\chi_{-d})\right|,
+ \qquad X_B=2\sum_{\ell\in S_B}\frac{\log\ell}{\ell-1}
+                         +2\log\operatorname{rd}(E).
+ \tag{PH1}
+\]
+Here $S_B=S_0\cup S_{\rm new}(B)$ is the original full set of
+correction primes. The set $S_{\rm new}(B)$ is the prescribed index
+set for the additional vertical factors. We use
+its proved bound $X_B\le16\Lambda_B$ and assume
+$B\ge\max\{128,4f(p+q)^2\}$, as well as the original initial-cutoff
+conditions, in particular $|S_0|\le B$ and
+$S_B\subset S_0\cup\{\ell\text{ prime}:\ell\le B\}$.
+Choose the original admitted normal model with its locally free
+corrected modules first, using
+Proposition~\ref{prop:actual-hodge-free-model}; form its prescribed
+determinant coordinates and vertical factors on that model, and
+retain them throughout the argument. This order is part of the
+original construction. Flattening a previously nonfree module is
+not being asserted to preserve its old determinant: it can introduce
+an exceptional vertical divisor. If these modules were already
+locally free, their later pullbacks are exact by that proposition.
+
+\paragraph{The point and its determinant.}
+Fix a point, extend its field $L$ if necessary, and write $G_z$ for
+the original semiabelian fibre and $A_z$ for its abelian quotient.
+Let $\Lambda$ be the integral tangent lattice, let $I$ be the
+cocharacter lattice of its split generic torus, embedded in the
+tangent space by differentiation at one, and let $r$ be its
+$\mathcal O_E$-rank. Thus $0\le r\le m$. The integral
+arithmetic-point construction gives an exact sequence onto its image
+\[
+ 0\longrightarrow I\otimes_{\mathbf Z}\mathcal O_L
+   \longrightarrow\Lambda\longrightarrow V\longrightarrow0,
+ \qquad V\subset\operatorname{Lie}(\mathcal A_z/\mathcal O_L),
+ \tag{PH2}
+\]
+where $\mathcal A_z$ is the semistable N\'eron identity component.
+This is the original sequence. Over each normal valuation ring,
+the closure of the generic torus is a closed smooth torus, and its
+generic splitting extends uniquely \cite[Propositions 3.3.1.5
+and 3.3.1.7]{point-height-lan}. Its tangent map is injective on
+the special fibre, so its integral tangent image is saturated.
+The quotient map extends to the N\'eron model by its mapping
+property. Its generic tangent kernel is the torus tangent space.
+Saturation therefore identifies its integral kernel with
+$I\otimes\mathcal O_L$, proving \textup{(PH2)}. Passing to an
+eigenlattice takes the image actually obtained, without assuming
+that the image is saturated. These identifications are preserved
+by semistable base change \cite{conrad-semistable,actual-point-height-source}.
+
+Let $\Lambda_\tau$ be a selected integral eigenlattice and
+$V_\tau$ its image in the quotient. Choose $v_1,\ldots,v_r\in I$
+independent over $E$ with finite index
+\[
+                  i_T=[I:\textstyle\sum_a\mathcal O_Ev_a].
+\]
+Choose $q_{\tau,1},\ldots,q_{\tau,m-r}\in\Lambda_\tau$
+whose images form an $L$-basis of the quotient eigenspace. Then
+$b_\tau=(e_\tau v,q_\tau)$ is an $L$-basis of the full
+eigenspace, where $e_\tau$ is the coefficient projector.
+For a full lattice $M$ and an $L$-basis $b$, put
+\[
+ J(M,b)=\log[M:C]-\log[\mathcal O_L b:C],
+ \tag{PH3}
+\]
+where $C$ is any common sublattice of finite index. This signed
+quantity is independent of $C$. With the prescribed quotient
+metric $\pi H$, set
+\[
+ \begin{split}
+ d_\tau(F)&=\frac{1}{[L:\mathbf Q]}
+   \left(J(F_\tau,b_\tau)
+     -\frac12\sum_{\iota:L\hookrightarrow\mathbf C}
+                     \log\det\operatorname{Gram}_\iota(q_\tau)\right),\\
+ \Phi_B(z)&=\sum_\tau d_\tau(F)-\frac12\log i_T
+                                  +\frac{fr}{2}\log(4\pi).
+ \end{split}
+ \tag{PH4}
+\]
+Here $F_\tau$ is the fibre of the original corrected bundle.
+These formulas are the original labelled determinant and point
+quantity, including the signs of the toric index and $4\pi$ term.
+
+\begin{proposition}[The actual determinant bound]
+\label{prop:actual-point-determinant-bound}
+For every original arithmetic point, including the boundary,
+\[
+ \Phi_B(z)\le fmX_B+T-fr\log\operatorname{rd}(E)
+                                  +\frac{fr}{2}\log(4\pi)
+                    \le52fm\Lambda_B,
+ \qquad T=\sum_\tau\widehat{\deg}_{\rm n}V_\tau.
+ \tag{PH5}
+\]
+The same bound covers $r=m$ and zero-dimensional abelian quotients.
+\end{proposition}
+
+\begin{proof}
+We first compute the toric determinant, rather than discarding its
+finite index. The trace-dual basis description of the coefficient
+projectors identifies the saturated $\tau$-eigenlattice of
+$I\otimes\mathcal O_L$ with the $\tau$-image of the determinant
+ideal of $I$, multiplied by $\tau(\mathfrak D_E)^r$ on determinants.
+To see the factor, first take $I=\mathcal O_E$. In the decomposition
+$E\otimes L=\prod_\sigma L$, the integral elements supported on
+the $\tau$ factor are precisely
+$\tau(\mathfrak D_E)\mathcal O_L e_\tau$. This follows by writing
+$e_\tau$ in a trace-dual integral basis; the inverse different is
+the trace dual of $\mathcal O_E$. Localization proves the same
+identity for every projective $I$, and taking determinants proves
+the rank-$r$ assertion. Consequently
+\[
+ \frac{J((I\otimes\mathcal O_L)_\tau,e_\tau v)}{[L:\mathbf Q]}
+       =-r\log\operatorname{rd}(E)+\frac{\log i_T}{2f}.
+ \tag{PH6}
+\]
+The formula also holds for $r=0$, with $i_T=1$.
+
+The exact sequence of lattices in \textup{(PH2)}, restricted to the
+chosen eigenlattice and its actual image, gives an exact sequence
+of determinant lines. Equivalently, choose local integral bases
+for the kernel and image and lift the latter: the change-of-basis
+matrix is block triangular. At infinity the quotient block has
+the stated Gram determinant. Thus
+\[
+ d_\tau(\Lambda)
+   =-r\log\operatorname{rd}(E)+\frac{\log i_T}{2f}
+                              +\widehat{\deg}_{\rm n}V_\tau.
+ \tag{PH7}
+\]
+Theorem~\ref{thm:actual-hodge-specialization} gives
+$\mathfrak a_\tau F_\tau\subset\Lambda_\tau\subset F_\tau$
+and $\log N\mathfrak a_\tau/[L:\mathbf Q]\le X_B$.
+Locally a quotient of a rank-$m$ lattice killed by this ideal
+has length at most $m$ times its valuation. Hence
+\[
+       0\le d_\tau(F)-d_\tau(\Lambda)\le mX_B.
+\]
+Sum \textup{(PH7)} over the $f$ labels. The term $\log i_T/2$
+cancels the negative term in \textup{(PH4)}, proving the first
+inequality of \textup{(PH5)}.
+
+Corollary~\ref{cor:actual-selected-point-degrees} gives
+$T\le36f(m-r)\Lambda_B$, with both integral indices retained.
+Also $X_B\le16\Lambda_B$, $\log\operatorname{rd}(E)\ge0$,
+and $\log(4\pi)\le\Lambda_B$. Therefore the right side of
+\textup{(PH5)} is at most
+$f\{16m+36(m-r)+r/2\}\Lambda_B\le52fm\Lambda_B$.
+No slope estimate is applied when the quotient rank is zero.
+\end{proof}
+
+\paragraph{The boundary metric on the same determinant.}
+We give the limiting calculation needed to compare \textup{(PH4)}
+with the regularized metric. On an original normal-crossing chart,
+choose the symplectic period coordinates of the semiabelian family.
+Their period map has the form
+\[
+ M(z)(u+\tau(z)v),\qquad
+ \tau(z)=T_0(z)+\sum_{a=1}^{h}\frac{\log z_a}{2\pi i}B_a,
+ \tag{PH8}
+\]
+where $M(0)$ is invertible, $M,T_0$ are holomorphic at the centre,
+and the $B_a$ are symmetric integral positive semidefinite matrices.
+The polarization fixes the symplectic form. The extension of the
+semiabelian family identifies the bounded periods with its original
+central periods and the radical with its actual torus. The positive
+definite form on the abelian quotient is the one from the same
+polarization. To recall their construction, the central periods continue
+holomorphically and span the central tangent space. Their rational
+period subspace is coisotropic. Choose a Lagrangian in it fixed by
+all monodromies and extend it to a symplectic basis. The resulting
+monodromies have the upper triangular form with integral symmetric
+blocks $B_a$. Positivity gives positive semidefiniteness of those
+blocks; subtracting their logarithms gives the holomorphic $T_0$
+by the removable-singularity argument for these weight-one periods.
+Central spanning makes $M(0)$ invertible. Thus these are the period
+coordinates of the original boundary construction
+\cite{actual-point-height-source}.
+
+Here is the exact cancellation that makes the limit valid for all
+rates of approach. Put $K=\ker\sum_aB_a$ and let $\Pi$ be the real
+orthogonal projector onto $K$. Positive semidefiniteness gives
+$B_a\Pi=\Pi B_a=0$ for every $a$. In period coordinates the raw
+Hermitian form is $Y(z)^{-1}$, where $Y=\operatorname{Im}\tau$.
+Its quotient by the toric space $K^\perp$ is represented by
+\[
+ C(z)=\Pi\bigl(\Pi\operatorname{Im}T_0(z)\Pi+1-\Pi\bigr)^{-1}\Pi.
+ \tag{PH9}
+\]
+Indeed $\Pi Y\Pi=\Pi\operatorname{Im}T_0\Pi$. For a vector $y$,
+the vector $p=YC(z)y$ satisfies $p-y\in K^\perp$ and is
+$Y^{-1}$-orthogonal to $K^\perp$; its pairing with $y'$ is
+$y'^*C(z)y$. This proves the formula without an asymptotic error.
+The restriction of $\operatorname{Im}T_0(0)$ to $K$ is positive
+definite, since it is the Riemann form of the abelian quotient.
+Thus \textup{(PH9)} and its transport by $M(z)$ extend
+continuously to the centre, including $K=0$ and $K=\mathbf R^g$.
+
+Let $s_\tau(z)$ be the actual selected tangent frames. Use the exact
+moving toric period vectors, project them to the coefficient
+eigenspaces, and complete them by continuous transverse vectors.
+The coefficient projectors vary continuously, so this is an
+eigenframe whose change-of-basis determinant from $s_\tau(z)$
+is continuous and nonzero at the centre. The determinant of its
+Gram matrix factors exactly as
+\[
+ \det\operatorname{Gram}(\hbox{toric vectors})\,
+           \det\operatorname{Gram}_{C(z)}(\hbox{transverse vectors}).
+ \tag{PH10}
+\]
+The coefficient eigenspaces are orthogonal. Thus the quotient by
+the toric part in one eigenspace is the restriction of the full
+toric quotient. This is the determinant formula for an orthogonal projection,
+or the Schur-complement identity. If $n_z(I)$ denotes the original
+product of toric Gram determinants divided by $i_T$, division by
+$n_z(I)$ cancels the first factors in \textup{(PH10)} exactly.
+The remaining factors converge by \textup{(PH9)} and the
+nonzero frame determinants. No estimate of a small holomorphic
+error times a divergent logarithm is being made.
+
+At the centre write $b_\tau=C_\tau s_\tau$. A cocharacter
+derivative has period $2\pi i$ times that derivative. Converting
+the raw quotient form to the prescribed metric $\pi H$ therefore
+gives the following limiting squared determinant norm:
+\[
+ \nu_\iota=i_T\prod_\tau
+       \frac{(4\pi)^{-r}\det\operatorname{Gram}_\iota(q_\tau)}
+                                {|\iota(\det C_\tau)|^2}>0.
+ \tag{PH11}
+\]
+In detail, each selected label contributes $\pi^m$ from the
+full tangent metric, $\pi^{-(m-r)}$ from the quotient Gram
+matrix, and $|2\pi i|^{-2r}$ from the toric period vectors.
+Their product is $(4\pi)^{-r}$. This verifies the normalization
+in \textup{(PH11)} directly.
+
+The original cusp correction $U$ satisfies
+$U(z)\ge-\log n_z(I)$ for every saturated isotropic $I$.
+For the zero lattice this says $U\ge0$. It is the original
+first-minimum bound, with the same counting function.
+The corrected interior logarithmic weight is the Hodge weight
+plus $U/2$. Formulae \textup{(PH9)--(PH11)} show that its lower
+limit at the point is at least the algebraic frame weight plus
+$\tfrac12\log\nu_\iota$. Call this latter value $x_\iota$.
+Changing projective coordinate charts only adds the prescribed
+continuous algebraic frame term, so the statement holds in the
+original homogeneous coordinates.
+
+\begin{theorem}[The original all-point height floor]
+\label{thm:actual-all-point-height}
+Let $\overline{\mathcal L}_{B,a/b,t}$ be the prescribed smooth
+regularization with positive rational perturbation $a/b$ by the
+original ample line $\overline{\mathcal A}$. There is a finite
+$K_{\mathcal A}\ge0$, independent of the point, such that for
+every fixed $a/b>0$ and all sufficiently small $t>0$,
+\[
+ h_{\overline{\mathcal L}_{B,a/b,t}}(P)
+        \ge-52fm\Lambda_B-(a/b)K_{\mathcal A}
+                  \qquad(P\in X(\overline{\mathbf Q})).
+ \tag{PH12}
+\]
+The threshold is chosen before $P$ and its field of definition.
+All finite vertical factors and the original complex metrics
+are retained. Thus \textup{(PH12)} supplies the all-point
+hypothesis of Proposition~\ref{geo-reciprocal-height-limit}.
+\end{theorem}
+
+\begin{proof}
+First verify the arithmetic metric identity. The determinant
+tensor of the inverse corrected bundles is the original
+coordinate line of degree $\mu_B$, with its prescribed vertical
+correction factors. This can be checked on its local frames:
+if $T_{\tau,v}$ changes a rational frame to an integral frame
+of $F_\tau$ at a finite place, the transition of the tensor is
+the product of $\det T_{\tau,v}^{-1}$. The original coordinate
+and vertical transitions have exactly this product. Their ratio
+on an arithmetic point is one element $g\in L^\times$, obtained
+from the original algebraic frame factor multiplied by its
+vertical factors. In particular this is a single algebraic
+element at every embedding and every finite place.
+
+More explicitly, choose nonzero homogeneous coordinates $w_{k,c_k}$
+at the point and put
+\[
+ R_v=\prod_k\left(\frac{\max_j|w_{k,j}|_v}{|w_{k,c_k}|_v}
+                         \right)^{\mu_{B,k}}.
+\]
+For the original finite factors write
+$t_\ell=(v_{{\rm num},\ell}/v_{{\rm den},\ell})
+\prod_k w_{k,c_k}^{-v_{\ell,k}}$ at the point. These are
+nonzero: the normalized rational ratio is a unit at every
+characteristic-zero point of the original chart. With its
+algebraic Hodge frame factor $u_L$, which already includes the
+initial $S_0$ correction, the original local
+determinant presentation gives exactly
+\[
+ \left(\prod_\tau|\det T_{\tau,v}|_v\right)R_v=|g|_v,
+ \qquad g=u_L\prod_{\ell\in S_{\rm new}(B)}t_\ell.
+ \tag{PH13a}
+\]
+At infinity its vertical factor is
+$|\iota(t_\ell)|\prod_k|\iota(w_{k,c_k})|^{v_{\ell,k}}$,
+and $\mu_{B,k}=a_{\mu,k}+\sum_{\ell\in S_{\rm new}(B)}v_{\ell,k}$.
+These identities verify the transition assertion for the exact
+coordinate line, including every finite factor.
+
+The signed index formula is
+\[
+ J(F_\tau,b_\tau)
+   =\sum_{v\nmid\infty}\log|\det T_{\tau,v}|_v
+       +\sum_{\iota:L\hookrightarrow\mathbf C}
+                                      \log|\iota\det C_\tau|.
+ \tag{PH13}
+\]
+Normalize the finite absolute values so the product formula
+sums over all complex embeddings, counted separately.
+The finite transition identity just described and
+\textup{(PH11)} give
+\[
+                    h_B^0(P)+\frac1{[L:\mathbf Q]}
+                         \sum_\iota x_\iota=-\Phi_B(P).
+ \tag{PH14}
+\]
+Here $h_B^0$ consists of the finite homogeneous-coordinate height
+of degree $\mu_B$ and the archimedean logarithms of the
+additional vertical factors indexed by $S_{\rm new}(B)$. To check the signs, substitute
+\textup{(PH13)} and
+\[
+ \tfrac12\log\nu_\iota
+  =\tfrac12\log i_T-\tfrac{fr}{2}\log(4\pi)
+    +\tfrac12\sum_\tau\log\det\operatorname{Gram}_\iota(q_\tau)
+    -\sum_\tau\log|\iota\det C_\tau|.
+\]
+The terms in $C_\tau$ cancel; the remaining algebraic scalar
+$g$ cancels by the product formula. What remains is precisely
+the negative of \textup{(PH4)}. This proves
+\textup{(PH14)} on the actual determinant line.
+
+Let $\varphi$ be the original bounded upper semicontinuous
+potential, relative to the fixed smooth reference metric. The
+interior is dense. The preceding boundary lower-limit comparison
+and upper semicontinuity give
+\[
+                 x_\iota\le\log h_{\rm ref}(w_\iota)
+                                      +\varphi(P_\iota).
+ \tag{PH15}
+\]
+The prescribed smooth regularizations satisfy
+$\varphi\le\varphi_t$ at every point for all sufficiently small
+$t>0$. For clarity, their threshold is global: a finite cover by
+the original inner charts has a positive common margin;
+submean inequalities for the circle-invariant smoothing kernel
+and the prescribed positive correction give domination on each
+inner chart. Their maximum construction gives domination on the
+whole compact space. The same margin and smoothness conditions
+are fixed before evaluating any point
+\cite{actual-point-height-source}.
+
+The exact degree and metric formula for the prescribed rational
+line now reads
+\[
+ h_{\overline{\mathcal L}_{B,a/b,t}}(P)
+   =h_B^0(P)+\frac1{[L:\mathbf Q]}\sum_\iota
+        \{\log h_{\rm ref}(w_\iota)+\varphi_t(P_\iota)\}
+                                      +(a/b)h_{\overline{\mathcal A}}(P).
+ \tag{PH16}
+\]
+The ample height is bounded below: compare a positive tensor
+power of $\mathcal A$ with its projective-coordinate height,
+whose reference height is nonnegative; the logarithm of the
+ratio of continuous positive metrics is bounded on the compact
+complex space. This supplies $K_{\mathcal A}$, which may
+depend on the fixed model and metric but not on $P$.
+Combining \textup{(PH14)--(PH16)} with \textup{(PH5)} proves
+\textup{(PH12)}. Properness realizes every algebraic point on the
+model, after the harmless field extensions already allowed.
+Normalized base change preserves all terms. If $m=0$, the
+selected determinant is the unit line and the assertion follows
+from the ample-height bound alone.
+\end{proof}
+
+The all-point floor is now an established input. The signed
+intersection limit, the original weighted mean-height comparison,
+and the finite rank losses must still be assembled on the same
+family. No whole geometric proof-map node is closed by this
+pointwise result alone.
