@@ -76,8 +76,11 @@ reproducing theorem](geometry-arithmetic-frontier-gaussian-reproduction.md)
 now proves the full thin-slab integral and reproduction with the original
 frame measure, including the endpoint `n=2r`. Its positive scalar is the
 literal squared-kernel integral divided by its diagonal, and is retained
-in the spanning consumer. The finite Schwartz system, exact global
-class-sum identity and uniform archimedean norms remain separate.
+in the spanning consumer. The [exact Siegel--Weil comparison](geometry-arithmetic-frontier-siegel-weil.md)
+now supplies the original class-sum identity for every actual Host,
+retaining principal-level markings, automorphism weights, the determinant
+phase and finite Fourier discriminant. The finite Schwartz and harmonic
+heat comparison needed for spanning, and uniform archimedean norms, remain.
 
 The actual ordinary automorphic modules have faithful good classical
 specializations, and now carry the original universal integral Hecke

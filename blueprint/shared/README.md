@@ -416,3 +416,13 @@ equality and all definite/rank-zero endpoints. Compact-torus uniqueness
 gives reproduction with the original positive scalar. All derivative
 factorials, frame measures and the separate global kernel scalar survive;
 no uniform growing-family lower bound or global period estimate is inferred.
+
+The [exact Siegel--Weil comparison](../../notes/geometry-arithmetic-frontier-siegel-weil.md)
+proves the literal original `SWAt` for every actual Host, all admitted
+families and all original positive levels, in even rank `n>4N`. It keeps
+principal markings, `1/|Aut_M|`, rational Weil phases and the Fourier
+discriminant. The unramified local-genus proof includes the dyadic case;
+CRT is used before global family identification. The published convergent
+formula has exactly the probability normalization needed to recover the
+original unnormalized class sum. The stronger arbitrary ramified-field
+statement and uniform period norms are not inferred.

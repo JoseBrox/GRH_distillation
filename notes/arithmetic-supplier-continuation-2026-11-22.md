@@ -97,7 +97,16 @@ literal original kernel. Indefinite Gram coordinates retain the original
 Lebesgue density; the matrix-ball exponent is `n/2-r`, including zero.
 Compact-torus averaging gives the exact positive scalar, with every
 Fischer derivative factor retained. The finite Schwartz and global
-class-sum inputs to spanning remain separate, as do uniform period norms.
+class-sum inputs to spanning are separated from uniform period norms.
+
+The [exact Siegel--Weil comparison](geometry-arithmetic-frontier-siegel-weil.md)
+now supplies the original `SWAt` class sum for every actual Host. Its
+finite unramifiedness gives the precise lattice genus, including dyadic
+places. CRT glues each admitted family to one finite Schwartz vector.
+The holomorphic splitting character and probability integral preserve
+the exact determinant phase and unnormalized automorphism mass. No field,
+level or finite Fourier normalization is changed. The finite test system
+and its harmonic heat comparison remain the next spanning requirements.
 
 ## Actual ordinary modules, types and Galois determinants
 

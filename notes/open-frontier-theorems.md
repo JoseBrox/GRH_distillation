@@ -188,8 +188,12 @@ thin-slab integrability and reproducing contracts, including even `n=2r`,
 rank zero and definite signatures. The proof retains the actual frame
 Jacobian, every derivative factor and the positive reproducing scalar;
 no arithmetic uniform lower bound is inferred.
-The first missing inputs are the finite Schwartz system and exact
-class-sum comparison needed for raw-theta spanning,
+The exact original Siegel--Weil class-sum comparison now holds for every
+actual Host and every admitted family, with its principal-level marking,
+automorphism mass, determinant phase and original rational Weil operator.
+The Host's everywhere-finite-unramified condition is retained in the
+local-genus identification. The first missing inputs are the finite
+Schwartz system and harmonic heat comparison needed for raw-theta spanning,
 its uniform archimedean estimate and the remaining selected-prime
 divisibility laws for the same maps.
 A constructed integral theta section does not supply the global norm.

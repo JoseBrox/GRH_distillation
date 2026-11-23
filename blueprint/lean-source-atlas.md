@@ -448,3 +448,14 @@ Gaussian, harmonic contractions, full frame Jacobian and reproducing
 scalar. Exact matrix, minor, Jacobian and Fischer diagnostics check signs
 and normalizations; the endpoint integral follows analytically. These
 records assert neither a Lean build nor a uniform arithmetic period norm.
+
+### Exact actual-Host Siegel--Weil comparison
+
+The [class-sum certificate](../certificates/geometry-arithmetic-frontier-siegel-weil.json)
+and [independent review](../certificates/geometry-arithmetic-frontier-siegel-weil-review.json)
+authenticate six pinned modules and three primary references. The audit
+checks the exact Host unramifiedness, admitted-family and rational `TransH`
+contracts against the convergent Gan--Qiu--Takeda formula, its probability
+measure and unitary constant. Local unit norms, character extension,
+CRT replacement, central phase and automorphism mass are explicit. No
+arbitrary ramified-genus comparison or Lean build is asserted.

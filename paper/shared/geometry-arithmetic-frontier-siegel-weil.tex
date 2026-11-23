@@ -1,0 +1,261 @@
+\subsection{The original Hermitian class sum from convergent Siegel--Weil}
+\label{actual-hermitian-siegel-weil}
+
+Let $E/F$ be the CM extension of an original Host. In particular,
+$E/F$ is unramified at every finite place. Retain its prescribed CM
+type $\Psi$, the positive Hermitian space $V=(E^n,1)$, and the
+source's $\mathrm{Vset}(E,n,M)$, $\mathrm{DH}(E,n,M)$ and
+$\mathrm{classSum}$. Thus a lattice is self-dual for the
+$\mathcal O_E$-valued Hermitian form, is standard at primes
+dividing the positive integer $M$, and has weight
+\[
+ w_M(\Lambda)=|\operatorname{Aut}_M(\Lambda)|^{-1},\qquad
+ \operatorname{Aut}_M(\Lambda)=
+ \{h\in\mathrm{DH}(E,n,M):h\Lambda=\Lambda\}.
+\]
+These are the original weights, without a mass normalization.
+
+\begin{theorem}\label{actual-hermitian-siegel-weil-theorem}
+For every even $n$, every $N$ with $4N<n$, all positive integers
+$M,R$, and every original admitted family
+$\varphi=(\varphi_\Lambda)_{\Lambda\in\mathrm{Vset}(E,n,M)}$
+of degree $N$, one has, for every $Z\in\mathfrak H_N^\Psi$,
+\begin{equation}\label{actual-sw-class-identity}
+ \sum_{[\Lambda]}w_M(\Lambda)
+ \bigl(\theta_{\varphi_\Lambda}(Z,0,0)
+                   -E_{\varphi_\Lambda}(Z,0,0)\bigr)=0.
+\end{equation}
+The theta series, Eisenstein terms, rational Weil action and
+indexing of rational maximal isotropic spaces are literally those
+in \texttt{FirstCoordinateAdmissible}. All sums converge absolutely.
+This supplies the original \texttt{SWAt} instance for every
+actual Host, with all its $M,R,\varphi,Z$ quantifiers.
+\end{theorem}
+
+\begin{proof}
+If $N=0$, both series have a single term, so assume $N>0$.
+Put $H=U(V)$ and let $K_M\subset H(\mathbb A_{F,f})$ be the
+standard lattice stabilizer, with principal congruence condition
+$h\equiv1\pmod M$ at primes dividing $M$.
+
+\textbf{The exact lattice classes.}
+Every self-dual lattice in $V_v$ is isometric to
+$\mathcal O_{E,v}^n$. At a split place the two summands are
+mutually dual, so choose a basis in one and the dual basis in the
+other. At an unramified field place, a nondegenerate residual
+Hermitian form has a vector of nonzero norm. Indeed, if all
+diagonal norms vanished, polarization with a scalar of nonzero
+residual trace would contradict nondegeneracy. Lift that vector,
+split off its unit-norm line, and continue by orthogonal
+induction. Every resulting diagonal unit is a norm of a unit in
+the unramified quadratic extension. Rescaling gives the standard
+lattice. This proof includes residue characteristic two
+\cite{actual-sw-unit-norms}.
+
+The group $H$ has weak approximation at any finite set of places.
+For completeness, its Cayley chart
+\[
+             X^*=-X,\qquad c(X)=(1-X)(1+X)^{-1}
+\]
+is a rational open chart containing $1$. The excluded determinant
+locus has empty interior over every local field; approximate the
+given local elements inside the chart and then approximate their
+skew-Hermitian coordinates over $F$. No integrality away from the
+specified finite set is asserted or needed.
+
+For every $\Lambda\in\mathrm{Vset}$ choose $h_\Lambda$ carrying
+$\widehat{\mathcal O}_E^n$ to $\widehat\Lambda$, and equal to $1$
+at the primes of $M$. Conversely, weak approximation makes any
+adelic representative principal congruent to $1$ at those primes
+by a left rational unitary translation. Its lattice is then in
+the original $\mathrm{Vset}$. Two representatives give the same
+double coset exactly when their lattices differ by a rational
+unitary matrix congruent to $1$ modulo $M$ at those primes.
+Clearing its finitely many remaining denominators by an integer
+prime to $M$ identifies that condition with the original
+definition of $\mathrm{DH}$. Consequently
+\begin{equation}\label{actual-sw-class-bijection}
+ \mathrm{Cls}(E,n,M)\simeq
+              H(F)\backslash H(\mathbb A_{F,f})/K_M,
+ \qquad
+ H(F)\cap h_\Lambda K_Mh_\Lambda^{-1}
+                  =\operatorname{Aut}_M(\Lambda).
+\end{equation}
+The class set is finite and each stabilizer is finite. One
+elementary verification uses the positive integral trace form on
+$\Lambda$: its rank and determinant are fixed, the latter by
+$|\operatorname{disc}E|^n$. Minkowski reduction gives finitely many
+integral Gram matrices. For each such matrix, multiplication by
+fixed generators of $\mathcal O_E$ has bounded operator norm,
+hence only finitely many possible integral matrices. This gives
+finitely many Hermitian lattice classes. Their possible
+$M$-markings form a finite set. An integral automorphism of a
+positive form lies in a compact group and hence is one of
+finitely many integral matrices.
+
+\textbf{An admitted family is one finite Schwartz vector.}
+The original support and period conditions are
+\[
+ \operatorname{supp}\varphi_\Lambda\subset R^{-1}\Lambda^N,
+ \qquad \varphi_\Lambda(x+Ry)=\varphi_\Lambda(x)
+                         \quad(y\in\Lambda^N).
+\]
+They extend $\varphi_\Lambda$ uniquely to a locally constant,
+compactly supported function $\varphi_{\Lambda,f}$ on
+$V(\mathbb A_{F,f})^N$. Write $\varphi_f$ for the standard
+lattice's extension. The full admitted contract gives
+\begin{equation}\label{actual-sw-family-equiv}
+ \varphi_{\Lambda,f}(x)=\varphi_f(h_\Lambda^{-1}x),
+ \qquad \varphi_f(k^{-1}x)=\varphi_f(x)\quad(k\in K_M).
+\end{equation}
+Here is the locality argument, including its global integrality
+point. Approximate $h_\Lambda$ at the primes of $RM$ by
+$q\in\mathrm{DH}$, closely enough to identify the two lattices
+there and their $R^{-1}/R$ coefficient quotients. Then
+$q\mathcal O_E^n$ and $\Lambda$ satisfy the original
+$\mathrm{Agree}(RM)$ condition. For a rational $x$ in
+$R^{-1}\Lambda^N$, the Chinese remainder theorem chooses
+\[
+ y\in R^{-1}\Lambda^N\cap R^{-1}(q\mathcal O_E^n)^N,
+               \qquad y-x\in R\Lambda^N,
+\]
+with $q^{-1}y$ representing the same coefficient class as
+$h_\Lambda^{-1}x$. At the primes of $R$ the two lattices agree;
+away from $R$ the affine condition is just membership in
+$\Lambda$, so these requirements are compatible. Periodicity,
+admitted locality, and admitted rational equivariance now give
+\[
+ \varphi_\Lambda(x)=\varphi_\Lambda(y)
+ =\varphi_{q\mathcal O_E^n}(y)
+ =\varphi_{\mathcal O_E^n}(q^{-1}y)
+ =\varphi_f(h_\Lambda^{-1}x).
+\]
+Outside the common support both sides are zero. Density of
+rational points gives the first identity in
+\eqref{actual-sw-family-equiv}. The same argument with
+$\Lambda=\mathcal O_E^n$ and $h_\Lambda=k\in K_M$ gives the
+second. Thus no strong approximation or new level is used.
+
+\textbf{The original determinant and additive characters.}
+Use the additive character of $\mathbb A_F/F$ whose infinite
+part is $e^{2\pi i\operatorname{Tr}_{F/\mathbb Q}}$.
+Choose a unitary Hecke character $\chi$ of $E$ trivial on
+$\mathbb A_F^\times$ and having infinite component
+\begin{equation}\label{actual-sw-infinity-type}
+ \chi_\infty(a)=\prod_{\tau\in\Psi}
+          \left(\frac{\overline{\tau(a)}}{|\tau(a)|}\right)^n.
+\end{equation}
+Such a character exists without enlarging $E$. The compact
+archimedean norm-one torus embeds as a closed subgroup of the
+compact group $T(F)\backslash T(\mathbb A_F)$,
+$T=\ker(\operatorname{Res}_{E/F}\mathbb G_m\to\mathbb G_m)$.
+Extend its character $t\mapsto\prod_\tau t_\tau^{-n/2}$ to that
+compact abelian group, and compose with $a\mapsto a/\bar a$.
+The character-extension theorem applies to closed subgroups
+\cite{actual-sw-character-extension};
+evenness of $n$ gives integral exponents. Compactness here follows
+also from finiteness of ideal classes and the finite index of
+unit norms, which contain the squares of $\mathcal O_F^\times$.
+The resulting character is trivial on $E^\times\mathbb A_F^\times$.
+Its possible finite conductor plays no role in a level or a
+coefficient-field assertion.
+
+Use the classical Weil representation for $U(N,N)\times H$
+with this $\chi$; the $H$-action is exactly
+$\varphi(x)\mapsto\varphi(h^{-1}x)$.
+Its archimedean Gaussian is
+\[
+ \Phi_\infty(x)=
+       \exp\left(-2\pi\sum_{\tau\in\Psi}\sum_{b,a}
+                                      |\tau(x_{ba})|^2\right).
+\]
+The holomorphic Gaussian transforms with the exact factor
+$\prod_\tau\det(C_\tau Z_\tau+D_\tau)^{-n}$.
+This can be checked on the Siegel generators. A Hermitian
+unipotent multiplies by the exponential of its quadratic form.
+For $\operatorname{diag}(a,\bar a^{-t})$, the scalar is
+\[
+ \chi_\infty(\det a)|\det a|_E^{n/2}
+            =\prod_\tau\overline{\det\tau(a)}^{n},
+\]
+which is precisely the inverse $n$th power of its denominator.
+The Fourier generator uses self-dual measure $2\,d\Re z\,d\Im z$
+in each complex coordinate; completing the square gives
+$\det(-iZ)^{-n}$ and the oscillator phase $i^{-nN}$, whose
+product is $\det Z^{-n}$. Adding the two Jacobi linear terms
+in the same calculation gives exactly the original
+$\mathrm{hFac}$ and the two denominator actions in
+$\mathrm{TransH}$, including its $2\pi i$ exponent.
+
+Global Poisson summation therefore says that the finite Weil
+operator at every rational $\gamma$ satisfies the literal
+original $\mathrm{TransH}(\gamma,\varphi,\psi)$.
+That relation determines $\psi$ uniquely among Schwartz--Bruhat
+functions: hold $Z$ fixed and extract the Fourier coefficients
+in the independent Jacobi variables $z,z'$. Their characters
+separate all rational matrices $x$, and the Gaussian series is
+absolutely convergent. Thus it is the chosen source
+$\mathrm{weil}(\gamma)\varphi$, not an operator differing by an
+unspecified phase. The choice of the global extension in
+\eqref{actual-sw-infinity-type} cannot change this conclusion;
+its values on rational determinants are forced by that infinite
+component.
+
+The original finite Haar integral gives
+$\widehat{\mathcal O}_E$ volume one. The self-dual trace measure
+used in Poisson summation gives it volume
+$|\operatorname{disc}E|^{-1/2}$ per $E$-coordinate. These are
+distinct measures. The preceding comparison retains the latter
+inside the Fourier operator, and does not replace the original
+inner product or any original class weight.
+
+\textbf{The probability integral and its exact class mass.}
+Set
+\[
+       \mathfrak m_M=\sum_{[\Lambda]}w_M(\Lambda)>0.
+\]
+The Gaussian is invariant under the compact group $H(F_\infty)$.
+The double-coset decomposition \eqref{actual-sw-class-bijection}
+and \eqref{actual-sw-family-equiv} consequently give
+\begin{equation}\label{actual-sw-probability-mass}
+ \int_{H(F)\backslash H(\mathbb A_F)}
+           \Theta(g,h;\varphi_f\Phi_\infty)\,dh_{\rm prob}
+   =\mathfrak m_M^{-1}\sum_{[\Lambda]}w_M(\Lambda)
+                    \Theta(g,1;\varphi_{\Lambda,f}\Phi_\infty).
+\end{equation}
+Indeed every component has volume the same constant divided by
+$|\operatorname{Aut}_M(\Lambda)|$; total volume one fixes that
+constant to $\mathfrak m_M^{-1}$.
+
+Apply Gan--Qiu--Takeda, Theorem~7.1, with Hermitian dimension
+$m=n$, split skew-Hermitian dimension $2N$, and Witt index zero.
+The group $H$ is anisotropic because $V$ is positive at every
+archimedean place. Their $d(N)=N$ in the unitary case, and
+$n>4N$ lies in Weil's absolutely convergent range $n>2N$.
+Their integral is explicitly probability normalized in
+\S3.1. Their factor is
+$c_{n,N}\tau(H)/[E:F]=1$: $c_{n,N}=1$ since $n>N$, and
+$\tau(H)/[E:F]=1$ for a unitary group.
+Thus their Eisenstein series equals the integral in
+\eqref{actual-sw-probability-mass} exactly
+\cite{actual-sw-gqt,actual-sw-source}.
+
+At $g=(g_\infty,1)$ remove the same nonzero archimedean
+Gaussian factor from both sides. The resulting theta series is
+the original $\theta_\varphi(Z,0,0)$. The identification
+$P(F)\backslash U(N,N)(F)$ with bottom-row maximal isotropic
+spaces gives the original $\mathrm{Lag}$ indexing. The Gaussian
+calculation identifies each summand with
+$\mathrm{weil}(\gamma)\varphi(0)\mathrm{hFac}(\gamma,Z,0,0)^{-1}$,
+so the resulting Eisenstein series is the original one as well.
+Moreover it is independent of $\Lambda$: the finite Weil action
+commutes with $H(\mathbb A_{F,f})$, and evaluation at zero is
+$H$-invariant. Multiplying by $\mathfrak m_M$ now proves
+\eqref{actual-sw-class-identity} with precisely its original
+unnormalized class weights.
+\end{proof}
+
+Only the value at $z=z'=0$ is claimed here, as in the original
+$\mathrm{SWAt}$ contract. The harmonic Jacobi comparison and
+spanning argument must still use their actual heat equations,
+finite test functions and reproducing scalar.

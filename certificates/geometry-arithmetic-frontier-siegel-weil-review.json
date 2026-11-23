@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-23",
+  "status": "PASS",
+  "reviewer": "Independent root mathematical proof and primary-source review",
+  "classification": "Closed original SWAt supplier for every actual Host, retaining all admitted-family quantifiers and normalizations; no whole W06/W10 closure",
+  "whole_nodes_newly_closed": 0,
+  "source_revision": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "reviewed_hashes": {
+    "notes/geometry-arithmetic-frontier-siegel-weil.md": "ebb439f81d83dfbbda5bc7bb3318386e45290f92e56dbacbf8bca52280f1ce3e",
+    "paper/shared/geometry-arithmetic-frontier-siegel-weil.tex": "d4f0c5957efdf1cf621c722d3b3b947e99b17b8f93957d65f0b6536e438af273",
+    "paper/shared/geometry-arithmetic-frontier-siegel-weil-references.tex": "ab782d741eb83714fdc8d3d791492bf2af44253b2dab74b6009fe1ee0f0eeea0",
+    "scripts/check_geometry_arithmetic_frontier_siegel_weil.py": "db00a269646da11cef4f07d7295b9556ca881f002ed4f68b62fd98898f00ea1f",
+    "certificates/geometry-arithmetic-frontier-siegel-weil.json": "4fe191f7ee6a6d7a0bc6ce995e4efd62b98c159a5bdfacc72255192905654e30"
+  },
+  "checked": [
+    "Read the entire proof and note. Compared original Host 14-24, Vset/DH/Agree/classSum/admitted 103-150, exact thH/TransH/weil/eis 24-79, haarAt 14-30 and SWAt 13-19 with the theorem. The result is intentionally restricted to actual Hosts, not arbitrary ramified CM fields.",
+    "Checked unramified self-dual Hermitian lattice classification, including residue characteristic two: residual nondegeneracy gives a unit-norm vector and unramified unit norms give diagonal normalization. Read Milne CFT III.1.2 and its successive trace/norm proof.",
+    "Checked Cayley weak approximation, preservation of the principal-M marking, the exact rational denominator condition defining DH, stabilizer weights and finiteness of the class set via fixed positive trace discriminant and bounded integral endomorphisms. No strong approximation is assumed.",
+    "Checked the admitted-family gluing with a CRT point in the intersection of the two global lattices. Rational approximation alone would not preserve membership of the original point. Support, period, locality and rational equivariance are all used, giving one K_M-invariant finite Schwartz function.",
+    "Read the primary character-extension theorem for a closed subgroup of a compact abelian group. Checked the embedding of the compact archimedean norm-one torus, the exponent minus n/2 and the resulting Hecke character trivial on E-star times A_F-star. Its finite conductor is not used to change the arithmetic level.",
+    "Checked the exact Levi determinant scalar, unipotent quadratic exponent, complex self-dual Fourier measure and oscillator phase. The fixed global rational finite Weil operator satisfies the original orientation of TransH; Jacobi Fourier uniqueness identifies it with the source choice. The source Haar volume one and trace self-dual discriminant measure remain distinct.",
+    "Read Gan-Qiu-Takeda sections 2.5,2.8,3.1 and Theorem7.1 in the primary PDF. Checked anisotropy, dimensions, n>4N, the absolutely convergent range, probability normalization and exact unitary factor tau(H)/[E:F]=1, with c=1. The N=0 singleton branch is treated separately.",
+    "Checked the original bottom-row isotropic-space indexing and Eisenstein summand. Finite Weil commutation with H and evaluation at zero make that series independent of the lattice; multiplication by the original class mass yields the precise unnormalized identity.",
+    "Independently reran the checker: six authenticated pinned modules, three primary PDF hashes, 16 exact phase cases and finite unit-norm, class-mass and CRT diagnostics with negative controls. These supplement the all-place proof and do not constitute a Lean build."
+  ],
+  "retained_frontiers": [
+    "Actual finite theta test-function system and harmonic heat-to-kernel comparison",
+    "Spanning by the same integral raw theta generators and their quantitative size",
+    "Uniform global arithmetic period-Gram and signed geometric estimates"
+  ],
+  "no_Lean_build": true,
+  "reproduce": "python scripts/check_geometry_arithmetic_frontier_siegel_weil.py --offline"
+}
