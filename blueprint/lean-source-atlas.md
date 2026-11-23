@@ -416,6 +416,17 @@ and all grid/word quantifiers. Independent review and exact unitary,
 PBW, Toda and grid diagnostics are recorded in the companion review.
 These records do not assert a Lean build or global norm estimate.
 
+### Actual controlled top lift
+
+The [top-lift certificate](../certificates/global-norm-frontier-top-lift.json)
+and [independent review](../certificates/global-norm-frontier-top-lift-review.json)
+authenticate 24 pinned modules for literal `TopLiftExists3` and `InDDplus2`.
+The audit checks the common-type inverse, finite determinant conjugations,
+noncommuting recursive slopes, weighted adjoint and all-rank differential
+budget. Exact matrix, Weyl-algebra and exponent diagnostics supplement
+the human construction. The valid-cut bounds and `k=1` endpoint are
+explicit; no global norm estimate or Lean build is asserted.
+
 ### Actual raw-theta construction and cusp target
 
 The [raw-theta certificate](../certificates/geometry-arithmetic-frontier-raw-theta.json)

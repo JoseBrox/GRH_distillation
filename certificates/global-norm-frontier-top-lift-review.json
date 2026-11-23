@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-23",
+  "status": "PASS",
+  "reviewer": "Independent root mathematical proof and exact-consumer review",
+  "classification": "Closed actual valid-cut TL.TopLiftExists3 with Cb=11 and original InDDplus2; no whole W08 closure",
+  "whole_nodes_newly_closed": 0,
+  "source_revision": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "reviewed_hashes": {
+    "notes/global-norm-frontier-top-lift.md": "06600685d1959aeff526816000e4612aac6cadd892550757137f2d4e5dae0501",
+    "paper/shared/global-norm-frontier-top-lift.tex": "4f872b472b206777954ef7183a4675713c84639ab53a4d271ea52b5a179a0ff5",
+    "paper/shared/global-norm-frontier-top-lift-references.tex": "e8a8c45cec17c845285cc1366a22bf2f1d63bae43715096306736facd3fa98bc",
+    "scripts/check_global_norm_frontier_top_lift.py": "a761188c1f0ae36482b3e236344688267a990024d55c4d77d59010354935b606",
+    "certificates/global-norm-frontier-top-lift.json": "eaaeb2d4edd86e9a6c2228422f1e1aeb1178cd831eb4fa198fc939a9ed00a44d"
+  },
+  "checked": [
+    "Read the complete TeX proof and note. Checked literal TopLiftExists3 13-20, LiftSys 63-73 and WordLift 153-157 against StatementTL, retaining 1<=l0<=k. The local k=1 case has an empty compact Capelli product; the actual arithmetic place has the separate k>=2 hypothesis.",
+    "Checked use of the established cofactor construction, original radial identification, compact Capelli spectrum and inverse polynomial on the covariant common-type space. Repeated eigenvalues are permitted; unused constituents need not be invertible. The actual sign sigma is retained.",
+    "Checked all-order homogeneous-sphere derivative bounds, including order zero, and conversion to original FibBound. Constants may depend on the fixed representation and inverse parameter; no moving spectral-gap bound is inferred.",
+    "Checked the exact InDDPlus expression, ordered fibre products and composition cost (o1+o2,kappa1+kappa2+2(r+1)o1). Full Gram and determinant denominators extend across zero internal leading minors; no separate inverse of D_r is constructed.",
+    "Checked the prescribed full Capelli normalization and inherited bordered radial identity. Finite determinant conjugations recover b-plus and b-minus with the opposite sign and exact finite-difference constants; adjacent inverse parameters recover a-plus and a-minus with the stated order and degree costs.",
+    "Checked the recursive slope induction with every old-word rational correction and adjacent shift. The true weighted minus adjoint includes the term minus word-length times phi-star tau-star; omitting that term would fail the original contract.",
+    "Checked the K-matrix algebra, scalar commutators, letter-column estimate independent of old-word length and tail-first product. The recurrence gives differential order m*d and numerator degree at most 11*m*(r+1)*d, including empty-word identity on the full coefficient space.",
+    "Checked locality for arbitrary agreeing smooth radial representatives, actual compact/unipotent covariance and preservation of the original rapid-decay cutoff class. Neither a replacement operator nor an unweighted adjoint is used.",
+    "Independently reran the final checker: 24 authenticated modules, 24 noncommuting slope cases, seven weighted-adjoint cases, 30 rational Weyl-algebra identities including r=0, six restricted-inverse cases including repeated eigenvalues and a singular unused constituent, and symbolic all-rank degree budgets. These finite diagnostics supplement the human proof and are not a Lean kernel check."
+  ],
+  "retained_frontiers": [
+    "Actual global rational-return summability and equality with the prescribed period Gram operators",
+    "Uniform arithmetic source and target restrictions, aggregate nonvanishing and all normalizing factors",
+    "Final finite fourth-power tables and common arithmetic exponent budget"
+  ],
+  "no_Lean_build": true,
+  "reproduce": "python scripts/check_global_norm_frontier_top_lift.py --offline"
+}

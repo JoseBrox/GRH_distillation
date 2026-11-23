@@ -234,7 +234,12 @@ required polynomial properness. The [terminal-degree theorem](global-norm-fronti
 now supplies the actual terminal normal form, the ordered radial recurrence
 and the full `DegTop` extraction on arbitrary grids. Its exact leading
 factor is `(-1)^(s-1)/t`; no internal terminal-block minor is inverted.
-Controlled top lifts on the actual valid cuts remain. The global application must retain every
+The [controlled top-lift theorem](global-norm-frontier-top-lift.md) now
+constructs the actual `TopLiftExists3` on every valid cut, with `Cb=11`
+and the original linear differential budget. Compact cofactor fields and
+their restricted inverses extend across internal-minor zeros; the full
+recursive slope and its weighted adjoint retain all old-word corrections.
+The global application must retain every
 rational return, all source/target cuts and all arithmetic normalizers.
 An ambient projector estimate or local Gram identity is not the required
 global period-Gram estimate. A strict source deficit must supply any
@@ -246,8 +251,8 @@ aggregate nonvanishing needed by the chosen consumer.
    completed original good cover; construct the raw-theta spanning family.
 2. Construct the original marked characteristic-prime support and apply
    propagation globally; prove two-sided rigidity and the integral Selmer budget.
-3. Complete the controlled top lift on the valid source cuts, then
-   transfer the supplied local estimates to the complete period-Gram sum.
+3. Transfer the supplied local top lift and decay estimates to the actual
+   complete rational-return and period-Gram sum, with its original measures.
 4. Test every newly supplied result against the exact fourth-power tables
    in frontier theorem A. Constants and all accuracy parameters precede
    their cofinal windows; every table entry uses the same arithmetic maps.

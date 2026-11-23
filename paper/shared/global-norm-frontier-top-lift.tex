@@ -1,0 +1,434 @@
+\subsection{Construction of the actual top lift on every valid cut}
+\label{actual-top-lift}
+
+Put $R=r+1$ and $d=2r+k+1$.  Retain the original real-place data,
+finite compact representations, actual radial operators and their
+normalizations.  Let $1\le l_0\le k$ and
+$\sigma=(-1)^{k-l_0}$.  A word is always an original cut word:
+its real parameters satisfy the specified cut inequalities, and
+distinct parameters have distance greater than two.  The cut
+admissibility theorem therefore applies with every required adjacent
+shift; no inverse below is taken outside its prescribed domain.
+The construction supplies the valid-cut statement in the source,
+whose unrestricted differently named version omits the bounds on
+$l_0$.  The local contract permits $k=1$, where the compact
+Capelli product below is empty; its proof includes that case.
+Every arithmetic place package contains these cut bounds and
+the additional hypothesis $k\ge2$.\cite{top-lift-contract-source}
+
+Write $D=D_R$, $D_r$ for the indicated leading determinants, and
+\[
+ \mathcal G=|D|^2-TT'|D_r|^2,\qquad
+ \mathbf G^+=\{g:\mathcal G(g)>0\}.
+\]
+The regular radial coordinates satisfy
+$D=D_r\zeta$ and $\mathcal G=|D_r|^2G$, where
+$G=\zeta\bar\zeta-TT'$.  These formulas will only identify
+operators on the regular cell: the constructed group operators
+are smooth on all of $\mathbf G^+$, including $D_r=0$.
+
+\begin{theorem}\label{actual-top-lift-theorem}
+For the data above there is a top-lift family $\Theta_{w,e}$ with
+the original regular radial action
+\begin{equation}\label{actual-top-lift-radial}
+ \mathcal J(\Theta_{w,e}F)
+   =\bigl[\mathcal F_w\mathcal B_w\bigr]_{e,\mathbf0}
+                                                     \mathcal JF.
+\end{equation}
+Here $\mathcal F_w$ is the prescribed recursive terminal frame,
+$\mathcal B_w$ is the original tail-first product of the site
+matrices, and $\mathbf0$ is their fixed initial tensor index.
+All signs, shifted arguments and rational corrections in those
+operators are retained.  The identity applies to every original
+smooth compact coefficient; $\mathcal J$ uses the original Haar
+measures and leading-minor gauge.
+Equivalently the right side may be applied to any smooth covariant
+radial function agreeing with $\mathcal JF$ on the regular domain:
+all operators there are local, so equality on that open domain
+also gives equality of their derivatives.
+
+For $m=|w|$, each component is a finite differential operator in
+the original class $\mathrm{InDDPlus}$ with
+\begin{equation}\label{actual-top-lift-cost}
+                 o=md,\qquad \kappa=11mRd.
+\end{equation}
+In particular it satisfies the original $\mathrm{InDDplus2}$
+condition with the absolute constant $C_b=11$.  Only $D^{-1}$,
+$\bar D^{-1}$ and $\mathcal G^{-1}$ occur as scalar denominators;
+there is no inverse of an intermediate leading minor.
+The empty-word operator is the identity on the entire coefficient
+space.  These operators preserve the original smooth rapidly
+decreasing class supported on $\mathcal G\ge\varepsilon>0$.
+\end{theorem}
+
+\begin{proof}
+We give the analytic generators first, then the word construction.
+This also makes clear why the inverse finite-type operator does
+not introduce an unproved uniform spectral gap.
+
+\paragraph{The actual fibre generators.}
+Use the cofactor vector $\Omega(g)$ constructed in
+\TopLiftPriorReference{Section}{rl-section}{cofactor construction}.
+Its coordinates are polynomials of
+degree at most $R$ in the matrix entries and their conjugates,
+and $\|\Omega(g)\|^2=\mathcal G(g)/T'$.  Put
+$\nu(g)=\Omega(g)/\|\Omega(g)\|$ on $\mathbf G^+$.
+The compressed compact Capelli matrix $C_\nu(Y)$ is the actual
+Capelli operator on $\nu^\perp$, with parameter
+$Y+(k-2)/2$.  The result on compressed Capelli matrices in
+\TopLiftPriorReference{Section}{rl-section}{cofactor construction} proves its
+phase invariance, compact covariance and adjoint identity.
+\TopLiftPriorReference{Proposition}{rl-actual-terminal-lift}{actual terminal lift proposition}
+gives precisely
+\begin{equation}\label{actual-top-lift-fibre}
+ x(Y)\Phi=\Phi\,\sigma C_\nu(Y),\qquad
+ x(Y)=\sigma G^{-1}t_{11}(Y),
+\end{equation}
+where the last matrix uses indices $0,1$.  Thus $x(Y)$ is lifted
+by right multiplication by $\sigma C_{\nu(g)}(Y)$.
+
+For the original common finite type set $\mathcal S$, put
+$p_\rho(Y)=\prod_{i=1}^{k-1}(Y+\rho_i)$.  At a prescribed
+invertible parameter, define
+\[
+ P_Y(X)=\prod_{\rho\in\mathcal S}(X-\sigma p_\rho(Y)),\qquad
+ q_Y(X)=\frac{1-P_Y(X)/P_Y(0)}{X}.
+\]
+The numerator is divisible by $X$.  The field of right
+multiplications by $q_Y(\sigma C_{\nu(g)}(Y))$ therefore lifts
+the exact $\xi(Y)=x(Y)^{-1}$ on the original covariant radial
+image, by \TopLiftPriorReference{Theorem}{rl-regular-inverse}{regular inverse theorem}.
+Repeated spectral
+values cause no problem.  No invertibility assertion is made
+on unused right constituents.
+
+Here are the bounds needed for these fields, including order
+zero.  For either matrix function $H(v)$ just used, dependence
+on $v\ne0$ is smooth and homogeneous of degree zero.  Hence
+\[
+ \|D^aH(v)\|\le C_a\|v\|^{-a},\qquad
+ \|L\Omega(g)\|\le C_i(1+\|g\|_{\rm F})^R
+                       \quad(|L|\le i).
+\]
+The second inequality follows by differentiating the fixed
+polynomials with left or right invariant unit vector fields;
+their degree does not increase.  The ordered chain rule gives
+\[
+ \|L(H\circ\Omega)(g)\|
+   \le C_{\varepsilon,i}(1+\|g\|_{\rm F})^{Ri}
+                \quad(|L|=i,\ \mathcal G(g)\ge\varepsilon).
+\]
+At $i=0$ use the maximum of $H$ on the unit sphere.  Since
+$\|g\|_{\rm F}\ge1$ on the unitary group, this implies exactly
+the required exponent $3Ri$ for any two unit Lie words whose
+total length is $i$.  Smoothness, covariance and the same
+adjoint bounds follow from the cofactor construction.  This
+is the source's full $\mathrm{FibBound}$, with constants allowed
+to depend on the fixed representations, $Y$, $\varepsilon$
+and $i$.  In particular no uniform bound as $P_Y(0)\to0$
+has been used.\cite{top-lift-fibre-source}
+
+\paragraph{The differential class.}
+Say that a radial operator has cost $(o,\kappa)$ if it has a
+group lift commuting with the prescribed compact and unipotent
+actions, with the stated radial identity, and is a finite sum
+of terms
+\begin{equation}\label{actual-top-lift-class}
+ P(g)D^{-a}\bar D^{-b}\mathcal G^{-c}
+       \prod_j(R_{v_j}E_j)(g)\ R_uF(g),
+ \quad \deg P\le\kappa,\quad |u|+\sum_j|v_j|\le o.
+\end{equation}
+The product of fibre endomorphisms has its written order;
+each $E_j$ satisfies $\mathrm{FibBound}$.  This is exactly
+the original class with an empty set of additional minors.
+Addition and scalar multiplication preserve a common cost.
+The product rule proves the composition rule
+\begin{equation}\label{actual-top-lift-compose}
+ (o_1,\kappa_1)(o_2,\kappa_2)
+  \longmapsto(o_1+o_2,\kappa_1+\kappa_2+2Ro_1).
+\end{equation}
+Indeed derivatives of a polynomial do not increase its degree;
+each derivative falling on a scalar inverse contributes a
+numerator of degree at most $2R$, and a derivative falling on
+a fibre factor is recorded in its word $v_j$.  This proves
+the assertion for every ordered product without commuting
+fibre matrices.  The group covariance is preserved by
+composition.  Compact support is preserved by locality, so
+the radial identities compose as well.
+
+The preceding fields give cost $(0,0)$ for $x(Y)$ and
+$\xi(Y)$.  Every polynomial, finite product or matrix in
+these fields also has cost $(0,0)$, irrespective of its
+polynomial degree.  Multiplication by $D,\bar D$ has cost
+$(0,R)$, and by $D_r,\bar D_r$ cost $(0,r)$.
+The multipliers $D^{-1},\bar D^{-1},\mathcal G^{-1}$ have
+cost $(0,0)$.  Thus the radial expression
+$D_r^{-1}\bar D_r^{-1}G^{-1}$ is lifted as the single
+smooth multiplier $\mathcal G^{-1}$; its factors are not
+lifted separately.
+
+The signed full Capelli determinant
+$\sigma\mathcal D_V(Y)$, with parameter $Y+(d-1)/2$,
+has constant invariant-derivative coefficients and order at
+most $d$, hence cost $(d,0)$.  Its exact radial image is
+\begin{equation}\label{actual-top-lift-central}
+ C(Y)=A_r^\vee(Y)n_0(Y)+B_r^\vee(Y)n_1(Y),\qquad
+ n_i(Y)=Q_{i0}(Y)A_r(Y)+Q_{i1}(Y)B_r(Y),
+\end{equation}
+where $Q=\sigma t$ is the actual terminal matrix.  This
+follows by applying the bordered Capelli identity of
+\TopLiftPriorReference{Lemma}{rr-radial-capelli}{bordered radial Capelli identity}
+once for each isotropic pair.
+At each step its gauge is the prescribed
+$|c_j|^{2(r-j)+k}$, so its shift is exactly the one displayed.
+The right and left site products retain their original
+order.  Compact quotient properness justifies differentiation
+of the Jacquet integral at each step, and the central
+Capelli operator commutes with both group actions.
+This proves the full group-to-radial identity, not merely a
+principal-symbol identity.\cite{top-lift-generators-source}
+
+\paragraph{Four basic operators.}
+Put
+\[
+ b_+=\bar\zeta^{-1}n_1,\quad
+ b_-=\zeta^{-1}(Q_{01}A_r^\vee+Q_{11}B_r^\vee),\quad
+ a_+=\zeta^{-1}A_r,\quad a_-=\bar\zeta^{-1}A_r^\vee.
+\]
+All operators in each formula have the common parameter $Y$.
+The terminal commutations proved in
+\TopLiftPriorReference{Section}{re-section}{recursive frame construction}
+and their adjoints give
+\[
+ [Q_{10},\zeta]=-Q_{11},\quad
+ [Q_{01},\bar\zeta]=Q_{11},\quad
+ [Q_{00},\zeta]=-Q_{01},\quad
+ [Q_{00},\bar\zeta]=Q_{10}.
+\]
+The crossed commutators for $Q_{10},Q_{01}$ and both
+commutators for $Q_{11}$ vanish.  The two $Q_{00}$ identities
+use the terminal determinant relation and invertibility at
+$Y$ and one adjacent parameter.  All $Q_{ij}$ commute with
+the site operators.  Conjugation by $D_r$ shifts every
+unbarred Euler derivative by $1$, and conjugation by
+$\bar D_r$ shifts every barred Euler derivative by $1$.
+Consequently induction on $s\ge0$ gives
+\begin{align}
+ \bar D^{-s}C(Y)\bar D^s
+ &=A_r^\vee(Y-s)\{n_0(Y)+s b_+(Y)\}
+                         +B_r^\vee(Y-s)n_1(Y),\label{actual-top-lift-conjplus}\\
+ D^{-s}C(Y)D^s
+ &=\{A_r^\vee(Y)Q_{00}(Y)+B_r^\vee(Y)Q_{10}(Y)-s b_-(Y)\}
+                                                    A_r(Y+s)\nonumber\\
+ &\quad+\{A_r^\vee(Y)Q_{01}(Y)+B_r^\vee(Y)Q_{11}(Y)\}
+                                                    B_r(Y+s).
+                                                    \label{actual-top-lift-conjminus}
+\end{align}
+For clarity, one conjugation sends $(n_0,n_1,b_+)$ to
+$(n_0+b_+,n_1,b_+)$ in the first formula.  In the second
+it sends the first brace before its $s$ term to itself
+minus $b_-$, and fixes the other brace and $b_-$.  This
+proves the induction while preserving the multiplication order.
+
+The site recurrence makes $A_r,A_r^\vee$ monic of degree $r$,
+and $B_r,B_r^\vee$ of degree at most $r-1$ (zero when $r=0$).
+Both right sides are polynomials in $s$ of degree at most
+$R$, with leading coefficients $(-1)^rb_+$ and $-b_-$.
+The shifted site polynomials need no additional inverse-domain
+assumption at $Y\pm s$.
+Set $\lambda_s=(-1)^{R-s}/(s!(R-s)!)$ for $0\le s\le R$.
+Lagrange coefficient extraction therefore lifts
+\[
+ b_+=(-1)^r\sum_{s=0}^R\lambda_s\bar D^{-s}C(Y)\bar D^s,
+ \qquad
+ b_-=-\sum_{s=0}^R\lambda_s D^{-s}C(Y)D^s.
+\]
+The cost is $(d,3Rd)$: the numerator degree is at most
+$R^2+2Rd\le3Rd$.  The same terminal commutations give
+\begin{align}
+ a_+(Y+1)&=\bar D\mathcal G^{-1}\xi(Y)
+       \{b_+(Y)D_r-D_rD^{-1}b_+(Y)D\},\label{actual-top-lift-ap}\\
+ a_-(Y-1)&=-D\mathcal G^{-1}\xi(Y)
+       \{b_-(Y)\bar D_r-\bar D_r\bar D^{-1}b_-(Y)\bar D\}.
+                                                    \label{actual-top-lift-am}
+\end{align}
+For example the first brace, after factoring $D_r$, is
+$\bar\zeta^{-1}\zeta^{-1}Q_{11}(Y)A_r(Y+1)$;
+use $Q_{11}=Gx(Y)$ and $D=D_r\zeta$ to cancel the
+displayed factors.  The second identity has the opposite
+sign from $[Q_{01},\bar\zeta]=Q_{11}$.
+Applying these formulas at the adjacent arguments gives
+cost $(d,8Rd)$ for $a_\pm(Y)$, when $Y-1,Y,Y+1$ are
+in the original inverse set.  The second terms inside
+the braces cost at most $(d,6Rd)$; their left scalar
+factor adds $R$, which is within $8Rd$.
+All denominators are still the three allowed full-group
+ones.\cite{top-lift-basic-source}
+
+\paragraph{The word slopes have bounded shape.}
+Let $\mathcal K$ be the algebra generated by $x(Y)$ for
+real $Y$ and by $\xi(Y)$ at real invertible parameters.
+It is closed under adjoints and all its elements have
+cost $(0,0)$.  The recursive formulas in
+\TopLiftPriorReference{Theorem}{re-recursive-frame}{recursive frame theorem}
+show that every entry of
+$x_w(Y),\xi_w(Y),c_w,c_w^{-1}$ belongs to $\mathcal K$ at
+the indicated real parameters.  This assertion includes
+every old-word rational factor and every shifted scalar
+$q_w$.
+
+For a fixed matrix operator $L$, let
+\[
+ \mathscr S(L;\phi,\tau)=\operatorname{span}_{\mathbb C}
+  \{A[L,B]C,\ \phi C,\ \phi\tau C:
+                       A,B,C\in\operatorname{Mat}(\mathcal K)\},
+ \quad \phi=\frac{\bar\zeta}{\zeta G},\quad
+ \tau=\frac{TT'}{\bar\zeta}.
+\]
+Scalar diagonal embeddings into the word tensor space are
+understood.  The two scalars commute with $\mathcal K$, so
+this span is stable under left and right multiplication
+by matrices over $\mathcal K$.
+Write $L(Y)=\ell_\varnothing(Y)$ and
+$\delta_w(Y)=\ell_w(Y)-L(Y)$.  We claim
+\begin{equation}\label{actual-top-lift-lshape}
+ \delta_w(Y)\in\mathscr S(L(Y);\phi,\tau)
+           \quad(Y,Y+1\hbox{ in the current inverse set}).
+\end{equation}
+Here is the full induction, with fresh matrix units
+$e_{ij}$.  At a plus step of parameter $a$, set
+$X=x_w(a)$ and $X^{-1}=\xi_w(a)$.  The exact RTT relation
+identifies the divided difference of the old $e$ entry
+with $X^{-1}e_w(Y)X-e_w(Y)$.  Substitution in its two-by-two
+update gives
+\begin{align}
+ \delta_{+}(Y)=\delta_w(Y)&+\phi\tau e_{00}
+             -\frac{\phi}{Y-a}e_{01}\nonumber\\
+ &+(e_{11}-e_{00})
+    \{X^{-1}[L(Y),X]+X^{-1}\delta_w(Y)X-\delta_w(Y)\}.
+                                                    \label{actual-top-lift-plusshape}
+\end{align}
+The connection part commutes with $X$; expanding the
+braces directly proves this equality.  At a minus step
+of parameter $a$ the same RTT relation cancels the lower
+diagonal divided difference, giving exactly
+\begin{equation}\label{actual-top-lift-minusshape}
+ \delta_-(Y)=\delta_w(Y)+\phi\tau e_{11}
+ -\phi\frac{q_w(a-1)}{a-Y-1}\,
+                      e_{10}\xi_w(a)\xi_w(a-1).
+\end{equation}
+In particular the $a-1$ shift, both inverse factors and
+the original scalar correction have all survived.
+Each displayed term is in the required span, proving
+\eqref{actual-top-lift-lshape} from $\delta_\varnothing=0$.
+
+The minus slope is not obtained by an unweighted adjoint.
+Its exact definition is
+\[
+ m_w(Y)=d_w^{-1}\ell_w(Y-1)^*d_w,\qquad
+ d_w=\omega^{|w|}c_w,\qquad \omega=\zeta\bar\zeta/G.
+\]
+Put $M(Y)=m_\varnothing(Y)=L(Y-1)^*$,
+$\phi^*=\zeta/(\bar\zeta G)$ and $\tau^*=TT'/\zeta$.
+The original connection identities
+$[\nabla^*,\bar\zeta]=-1$, $[\nabla^*,\zeta]=0$ and
+$[\nabla^*,G]=-\zeta$ give
+\[
+ \omega^{-1}M(Y)\omega=M(Y)-\phi^*\tau^*.
+\]
+Indeed $[\nabla^*,\omega]=TT'\zeta/G^2$; the remaining
+terms of $M(Y)$ commute with $\omega$.
+Taking adjoints maps the span in
+\eqref{actual-top-lift-lshape} at $Y-1$ to
+$\mathscr S(M(Y);\phi^*,\tau^*)$.
+Every member of this latter span commutes with $\omega$:
+this follows for the commutators by the Jacobi identity,
+since $[M,\omega]=-\omega\phi^*\tau^*$ commutes with
+$\mathcal K$.  Thus, for real $Y$ in the stated domains,
+\begin{align}
+ m_w(Y)-M(Y)
+  &=c_w^{-1}[M(Y),c_w]
+     +c_w^{-1}\delta_w(Y-1)^*c_w-|w|\phi^*\tau^*\nonumber\\
+  &\in\mathscr S(M(Y);\phi^*,\tau^*).
+                                                    \label{actual-top-lift-mshape}
+\end{align}
+This proves the two slope assertions for words of arbitrary
+length, with the original weighted adjoint.\cite{top-lift-shape-source}
+
+\paragraph{One letter and every word.}
+For a plus letter of parameter $Y$, its exact two entries are
+\[
+ a_+(Y),\qquad s\{\ell_w(Y)V+W\},\qquad
+ s=\bar\zeta^{-1}G,\quad V=A_r(Y),\quad W=B_r(Y).
+\]
+The initial second entry is
+$u=s\{L(Y)V+W\}=\xi(Y)b_+(Y)$, of cost $(d,3Rd)$.
+All of $s,V,W,\phi,\tau$ commute with $\mathcal K$.
+The three types of slope corrections have the exact reductions
+\[
+ sA[L,B]CV=A[u,B]C,\qquad s\phi CV=a_+C,\qquad
+                      s\phi\tau CV=\tau a_+C.
+\]
+The first has cost at most $(d,7Rd)$ by
+\eqref{actual-top-lift-compose}.  For the other two, the
+following scalar reduction avoids an unnecessary derivative
+cost.  Since $V,W$
+commute with every matrix in $\mathcal K$, so do $a_+$
+and $\tau$.  Therefore $a_+C=Ca_+$ and
+$\tau a_+C=C\tau a_+$: left multiplication by $C$
+has no derivative cost.  The multiplier
+$\tau=TT'\bar D_r/\bar D$ has cost $(0,r)$.
+Thus these two terms cost $(d,8Rd)$ and $(d,8Rd+r)$,
+respectively, within $(d,9Rd)$.
+For a minus letter use
+$s=\zeta^{-1}G$, $V=A_r^\vee(Y)$, $W=B_r^\vee(Y)$,
+$M(Y)$, $\phi^*,\tau^*$ and $u=\xi(Y)b_-(Y)$.
+The weighted identity \eqref{actual-top-lift-mshape}
+gives the identical estimates, preserving all operator orders.
+Both components of every letter therefore have cost $(d,9Rd)$,
+independently of the old-word length.
+
+Finally the actual tail-first site product and the recursive
+frame obey
+\begin{equation}\label{actual-top-lift-word}
+ [\mathcal F_{l::w}\mathcal B_{l::w}]_{e,\mathbf0}
+ =\left[\left(\sum_{i=0}^1 e_{i0}^{\rm new}
+                           \mathcal C_{l,w,i}\right)
+                       \mathcal F_w\mathcal B_w\right]_{e,\mathbf0},
+\end{equation}
+where $\mathcal C_{l,w}$ is the letter column just lifted.
+This is ordinary two-by-two multiplication: the old frame
+commutes with the site entries and is free at the new tensor
+position, while the first column of the new site product is
+$(A_r,B_r)$, or its original dual.  It introduces no extra
+rational dressing.  Iterating
+\eqref{actual-top-lift-compose}, the cost changes from
+$(md,11mRd)$ to at most
+\[
+ ((m+1)d,\ 9Rd+11mRd+2Rd)
+                       =((m+1)d,11(m+1)Rd).
+\]
+Starting with the identity proves \eqref{actual-top-lift-cost}
+and the exact radial action.  This includes $r=0$ and the
+empty word.  Extend the constructed coefficient fields by
+zero off $\mathbf G^+$; no smoothness there is required of
+the coefficients.  The original input cutoff makes every
+resulting output smooth across that boundary.  Define
+operators arbitrarily for non-cut words, where the assertion
+imposes no condition, and impose the empty-word identity
+globally.  Formula
+\eqref{actual-top-lift-class} proves smoothness throughout
+$\mathbf G^+$; its polynomial coefficient bounds and
+$\mathrm{FibBound}$ prove preservation of the rapidly
+decreasing class by the product rule.  This completes the
+construction.\cite{top-lift-word-source}
+\end{proof}
+
+The theorem supplies an actual choice of the top-lift family
+and its uniform differential complexity for every valid cut.
+Together with the preceding terminal, Fourier and finite-decay
+suppliers it removes this local analytic hypothesis.  Its
+constant $11$ bounds differential order and numerator degree,
+not the norms of the moving compact-type inverses.  The
+arithmetic period maps, their integral lattices and the global
+rational-return sums remain separate requirements.

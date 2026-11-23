@@ -341,7 +341,7 @@ mean retains the residual positive-definite term; finite Fejer sums prove
 the original inequality at every sample, with its full complex reciprocal
 limsup. No uniform stationary-phase remainder constant remains in that
 inequality. The finite-decay supplier below extends its application;
-controlled top lifts and global period norms remain separate.
+the controlled top lift is supplied below and global period norms remain separate.
 
 The [finite-decay theorem](../../notes/global-norm-frontier-finite-decay.md)
 proves the full original `KB.FormLimit` for the same kernels and exact
@@ -350,7 +350,7 @@ orders; its threshold has the original rank and word-length dependence,
 with its constant depending only on the given top-lift constant. Explicit
 inverse quotient coordinates and the positive-complement projection give
 absolute convergence, including the original terminal orbital integral.
-Actual controlled top lifts and global period-Gram bounds remain separate.
+The actual controlled top lift is supplied below; global period-Gram bounds remain separate.
 
 The [arithmetic propagation theorem](../../notes/selmer-integral-frontier-arithmetic-propagation.md)
 constructs the original normalized curves, arithmetic auxiliary tower
@@ -388,7 +388,18 @@ and the arbitrary-grid degree extraction for all old words and heads.
 Its unitary normal form and ordered radial recurrence retain every
 character, gauge and rational correction. The prescribed top operator
 and its differential realization remain inputs; controlled valid-cut
-top lifts and the global period-Gram estimate are still separate.
+top lifts are supplied by the theorem below. The global period-Gram
+estimate remains separate.
+
+The [controlled top-lift theorem](../../notes/global-norm-frontier-top-lift.md)
+constructs every actual valid-cut operator with `Cb=11`, exact radial action
+and the original linear differential order and numerator-degree bounds.
+Only full determinant and Gram inverses occur. Its compact fibre inverse
+is required only on the original covariant common-type space, and its
+constants may depend on the fixed spectral parameters. Both signs and
+the weighted old-word adjoint are retained. This supplies the local lift
+hypothesis of the preceding terminal-degree and finite-decay results,
+without asserting a uniform spectral gap or global period norm bound.
 
 The [actual raw-theta construction](../../notes/geometry-arithmetic-frontier-raw-theta.md)
 proves existence over every coefficient algebra, the literal beta-one

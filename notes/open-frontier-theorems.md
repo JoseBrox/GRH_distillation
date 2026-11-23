@@ -260,8 +260,11 @@ The terminal normal form now proves the original `PolyTop` degree drop
 and its exact leading factor. The ordered radial recurrence and the
 actual first-component word update give `RadAATop`, `TopFirst` and the
 full arbitrary-grid `DegTop`, retaining the prescribed operator and its
-differential realization. The next local target is the actual controlled
-top lift on the valid source cuts.
+differential realization. The actual controlled top lift is now constructed
+on every valid source cut: `TopLiftExists3` holds with `Cb=11`, original
+`InDDplus2`, the exact recursive radial action and full empty-word identity.
+It permits `k=1`; the actual arithmetic place package also has `k>=2`.
+The unrestricted differently named source predicate is not substituted.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 
