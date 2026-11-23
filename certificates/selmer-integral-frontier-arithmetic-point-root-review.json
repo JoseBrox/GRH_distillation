@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-23",
+  "status": "PASS",
+  "reviewer": "Independent root mathematical and source-normalization review",
+  "classification": "Full original arithmetic-point PT supplier; no whole W04 node closure",
+  "whole_nodes_newly_closed": 0,
+  "source_revision": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "reviewed_hashes": {
+    "paper/shared/selmer-integral-frontier-arithmetic-point.tex": "fc0eda325858ff40035914ce25378807bed0d1537bc49791ff335e9c1f6022f9",
+    "paper/shared/selmer-integral-frontier-arithmetic-point-references.tex": "0c800257359e4970936d46bebda46c0fdc006a7066c61373e93eedbf9d38d9c4",
+    "notes/selmer-integral-frontier-arithmetic-point.md": "171283fcf32d6cfe68d4c8d3ce3fd02d37e80e4db603c0c72abeb67a113769be",
+    "scripts/check_selmer_integral_frontier_arithmetic_point.py": "9bc840c4058442d61c1243e96050f8314e14e5ebb4ae3a7fcdb8cdd900cf5f27",
+    "certificates/selmer-integral-frontier-arithmetic-point.json": "e4cc0fc8d5c6ba0a5ecb2a5109d3538e8c0f43d837a853bc1f43d31a91f464ba"
+  },
+  "checked": [
+    "Read the entire human proof, original ArithmeticPointClassicality 61–87, IsJ/IsMap and S-prime/S Taylor–Wiles contracts. Af.IsAutCsd already includes semisimplicity; no extra hypothesis is imposed.",
+    "The complete local algebra point is automatically integral and continuous by the monic equation for an inverse image of a maximal-ideal element; finite maximal-ideal generators put its image in one finite complete coefficient field.",
+    "Read Labesse 5.4 and 5.9 in the primary PDF, including the spherical test function argument. The finite-unramified CM hypothesis makes the original group quasi-split at inert places; global reciprocity on -1 forces even degree and preserves the original definite inner form.",
+    "Read BLGGT Theorem2.1.1 and Local-global compatibility II Theorem1.1. The latter supplies semisimplified local compatibility without Shin-regularity or Iwahori hypotheses. Strict integer weights plus the actual noncritical character condition exclude every linked smooth character pair; thus monodromy is zero and BZ4.2 applies.",
+    "Checked the exterior-power Cartan lattice construction, primitive lowest-weight tensor, exact positive-cone contraction and all coefficient rank costs. No division by a Young symmetrizer occurs.",
+    "Checked q^(j(n-j)), the normalized Borel character, algebraic weight division and the exact Norm(varpi)/q factor. Root found and corrected a prose label: arithmetic Frobenius maps to inverse uniformizer under the geometric reciprocity convention. EpsArt27–42 and UnifVal73–89 confirm the formula; no mathematical equation changed.",
+    "Checked nonzero lowest-weight evaluation by integral contraction on its kernel; all-value boundedness comes from the actual finite definite quotient, and opposite-unipotent constancy is only modulo each coefficient precision. No fixed-depth invariance or higher-weight control surjectivity is claimed.",
+    "Checked residual ordinary block, full polynomial-law determinant coefficients and ordered local characters. Their universal finite-quotient generation identifies yf=x on the original ring and hence the original ideal J.",
+    "Independently reran checker: 21 authenticated modules, four primary PDFs, 156 integral tensor models and 2982 weight cases. These exact finite checks accompany the general written argument."
+  ],
+  "retained_frontiers": [
+    "Initial stable characteristic-prime support in the marked global deformation model",
+    "Complete global prime propagation and two-sided rigidity",
+    "Moving-field integral Selmer torsion and prime-support bound"
+  ],
+  "no_Lean_build": true,
+  "reproduce": "python scripts/check_selmer_integral_frontier_arithmetic_point.py --offline"
+}

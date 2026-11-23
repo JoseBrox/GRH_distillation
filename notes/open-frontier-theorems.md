@@ -117,13 +117,15 @@ identities and one inertia exponent prime to ell. This includes
 ramification at two and both fields with extra units, without any
 class-number restriction or arithmetic field extension.
 
-**First missing construction.** Prove the actual algebraic-weight
-ordinary-control and automorphic-occurrence statement `PT` needed to put
-the new seed in the original deformation support; prior weight-zero
-control alone does not supply it. Then finish the marked model and
-prime-chain application.
-The patched support may be empty until the seed-to-support bridge is supplied.
-Propagation must retain
+The full original `PT` arithmetic-point implication is now proved for
+ranks two through four. Lowest-weight evaluation embeds the constructed
+classical ordinary eigenvector into the original completed scalar module,
+with the exact residual block and every local uniformizer factor.
+
+**First missing construction.** Construct the marked characteristic-prime
+support and original prime-chain application. The characteristic-zero
+arithmetic points do not by themselves prove nonemptiness of every
+required characteristic-prime fibre. Propagation must retain
 the entire characteristic-prime fibre
 and the actual two-sided rigidity. Neither qualitative finiteness,
 fixed-point constants nor a torsion-free quotient proves the displayed
@@ -274,7 +276,7 @@ the exact proven subobligations. The work-package acceptance lists remain
 in `blueprint/grh/program.json`; the RH product and final budget remain
 in its separate manuscript. No whole node is newly closed by the local
 constructions above. The next research effort belongs to the actual
-arithmetic section construction, the exact arithmetic seed and
+arithmetic section construction, the marked characteristic-prime support and
 global marked deformation models, and the
 global period-return estimate, not further optimization of the already
 proved frame inequalities.

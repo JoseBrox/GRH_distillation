@@ -277,8 +277,8 @@ actual prime-to-ell inputs. An integral Eisenstein congruence at every
 cusp and a same-character lift retain the exact conductor, including
 at ell=3. Exact local compatibility, symmetric conjugate pairings and
 cuspidal base change supply every `IsSeed` field. The rank-two half-norm
-and prescribed CM twist are explicit. Algebraic-weight ordinary control
-must still place this seed in the original deformation support.
+is explicit. The CM twist and full arithmetic-point implication are now
+supplied below; marked characteristic-prime support remains.
 
 The [normalized Fourier theorem](../../notes/global-norm-frontier-kernel-fourier.md)
 proves the actual compact one-coordinate Fourier bound, continuity at
@@ -312,3 +312,14 @@ and outside-coset square identities. The common finite-inertia exponent
 is 32, or 54 for discriminant -3, and is prime to every allowed ell.
 Class-number divisibility creates no new arithmetic ramification.
 No coefficient-degree or integral Selmer bound is inferred.
+
+The [arithmetic-point theorem](../../notes/selmer-integral-frontier-arithmetic-point.md)
+proves the full original `PT` in ranks two through four. Classical descent
+uses the original definite group and field. A saturated integral
+coefficient lattice and lowest-weight evaluation produce a nonzero vector
+in the original residual ordinary module; all torus and uniformizer
+factors are retained. Universal determinant and ordered-character
+coefficients identify the original point and give `J` in its kernel.
+This supplies the prescribed seeds' occurrence, with no higher-weight
+control surjectivity. Marked characteristic-prime support, global rigidity
+and a moving-family integral torsion bound remain separate.

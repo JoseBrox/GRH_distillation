@@ -336,3 +336,13 @@ primary sources. Exact finite-group checks include all ramified quadratic
 2-adic unit models, both exceptional root-of-unity fields, and a case
 with ell dividing the class number; split/inert determinant signs are
 checked independently. The human theorem supplies all original inputs.
+
+The [arithmetic-point certificate](../certificates/selmer-integral-frontier-arithmetic-point.json)
+and [independent review](../certificates/selmer-integral-frontier-arithmetic-point-review.json)
+authenticate 21 exact source interfaces and four primary theorems.
+The audit checks original-field Labesse descent, semisimplified local
+compatibility without an extra regularity hypothesis, saturated integral
+weights, completed-module evaluation and universal-point identification.
+The exact `epsArt` and `UnifVal` contracts fix geometric reciprocity and
+the retained factor `Norm(varpi)/q`. No characteristic-prime support or
+uniform integral torsion conclusion is inferred from this theorem.

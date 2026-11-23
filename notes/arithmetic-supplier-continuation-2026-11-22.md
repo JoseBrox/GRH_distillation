@@ -129,13 +129,15 @@ polarization and automorphic clause is retained, including the rank-two
 half-norm. The [CM twist theorem](selmer-integral-frontier-cm-twist.md)
 now supplies the full original twist, including its square law on the
 other Galois coset and a single prime-to-ell inertia exponent. Class
-number divisibility changes coefficients only. Actual algebraic-weight ordinary
-control must still establish the source `PT` and put these seeds in the
-original deformation support.
+number divisibility changes coefficients only. The [arithmetic-point theorem](selmer-integral-frontier-arithmetic-point.md)
+now proves the full original `PT`: every permitted rank-two through rank-four
+classical ordinary point lies in the actual Hecke support. Its saturated
+coefficient lattice and contracting lowest-weight evaluation require no
+higher-weight control surjectivity.
 
 Both finite-level cohomological bounds and their exact limiting
 comparison are proved. The next arithmetic requirements are that
-seed-to-support bridge, global marked
+characteristic-prime support, global marked
 deformation models, full characteristic-prime propagation and two-sided rigidity. They must
 supply the moving-family integral Selmer product; qualitative finiteness
 or rational rigidity cannot replace that bound.
@@ -190,9 +192,8 @@ aggregate nonvanishing needed by the chosen consumer.
 
 1. Identify and estimate the actual arithmetic section lattices on the
    completed original good cover; verify the exact raw-map comparison.
-2. Prove algebraic-weight ordinary control and place the new arithmetic
-   seed in the actual patched support; apply propagation globally and
-   prove the integral Selmer budget.
+2. Construct the original marked characteristic-prime support and apply
+   propagation globally; prove two-sided rigidity and the integral Selmer budget.
 3. Complete the positive-rank decaying-function and block estimates, then
    transfer it to the complete period-Gram sum.
 4. Test every newly supplied result against the exact fourth-power tables

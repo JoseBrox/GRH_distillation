@@ -89,9 +89,12 @@ condition and the source automorphic normalization. The rank-two case
 now uses the [constructed CM twist](selmer-integral-frontier-cm-twist.md):
 the full original square and conjugate identities hold, and a single
 exponent prime to ell kills every permitted finite inertia group, even
-when ell divides the class number. Actual algebraic-weight ordinary
-control must still place the seed in the deformation support; global
-two-sided rigidity and the moving-family integral Selmer budget remain.
+when ell divides the class number. The full original [arithmetic-point
+implication](selmer-integral-frontier-arithmetic-point.md) now places every
+permitted higher-weight classical point in the original ordinary Hecke
+support, without higher-weight control surjectivity. Characteristic-prime
+marked support, global two-sided rigidity and the moving-family integral
+Selmer budget remain.
 
 The actual local Bessel families satisfy the iterated weighted norm
 identities and finite coefficient expansion everywhere on the original

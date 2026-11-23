@@ -1,0 +1,815 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "classification": "closed arithmetic-point subobligation inside W04; independent review recorded separately",
+  "claim": "For every original PT arithmetic point in rank 2 through 4, construct a nonzero eigenvector in the original residual ordinary module and prove J is contained in its kernel, preserving all original characters, levels and normalizations.",
+  "verification_kind": "Nineteen authenticated pinned interfaces, four primary PDF checks, symbolic Hecke normalization and exact finite lattice/chamber/negative-control diagnostics; the universal proof is in the note.",
+  "quantifiers": [
+    "Every odd ell and original Hida datum, with original CM L/F unramified at all finite places and original S'=S.",
+    "Every original residual datum, integral type, weight ring, ordinary module and ideal satisfying IsJ; the zero-module branch is excluded by the constructed vector.",
+    "Every algebraic O-point x, strictly increasing labeled integer weight family h, and continuous semisimple attached RACSDC representation rho of rank 2<=n<=4.",
+    "The exact v0 unramifiedness, ordered locally algebraic flags and all inequalities psi_i != psi_j epsilon are retained.",
+    "Finite coefficient extensions and larger allowed ell-adic congruence depth are permitted; no enlargement of the original arithmetic field, original tame level, type lattice or residual block occurs."
+  ],
+  "decisive_interfaces": {
+    "algebraic_points": "Local integral equations for x(b)^-1 imply positive valuation on m_B; finite generation yields continuity and a finite coefficient field.",
+    "descent": "Original definite U is split at split places and quasi-split at inert unramified places; the unramified quadratic idele character on -1 forces degree F even; spherical test functions in Labesse 5.4 select inert spherical descent, and 5.9 gives strong split comparison.",
+    "noncritical": "Strict integer ordering plus valuation sums excludes equal smooth characters and both norm ratios. The only boundary is adjacent gaps all one, excluded by the original psi_i != psi_j epsilon condition.",
+    "actual_weight_lattice": "Saturated Cartan-component intersection inside integral exterior-tensor lattice; primitive unique lowest tensor; exact positive-cone integrality and strict z contraction; no Young symmetrizer division.",
+    "local_vector": "A principal-series function on B I1(c) supplies evaluation eigenfunctional; commuting generalized eigenspaces supply an actual eigenvector without ramified Hecke semisimplicity.",
+    "normalization": "U_j=chi_lambda(a_j)^-1 product_{i<j}(omega_i(varpi) q^-i)=product_{i<j}psi_i(g_varpi) epsilon(g_varpi)^i, with epsilon(g_varpi)=Norm(varpi)/q.",
+    "original_module": "Nonzero lowest-weight evaluation by integral kernel contraction; exact coefficient change and original spherical/ordinary residual congruences place it in the original residual M_A.",
+    "universal_point": "The eigencharacter has the exact dense Frobenius polynomials and ordered local unit/uniformizer values; density of all universal polynomial-law coefficients and character values gives x=yf.",
+    "seed_consumer": "SeedPtOf 244-260 consumes exactly the proved PT implication, with m>=2 and prime-to-ell away inertia providing all retained hypotheses."
+  },
+  "limitations": [
+    "No whole W04 node completion is asserted.",
+    "No higher-weight control surjectivity is asserted or needed.",
+    "No bound on weights, coefficient-field degrees, coefficient ranks, lattice scaling, number of double cosets, Selmer lengths or global budgets is supplied.",
+    "No characteristic-prime marked-support nonvanishing or two-sided global rigidity follows merely from the characteristic-zero eigenvector."
+  ],
+  "sources": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/WeilGroupCharacters/ContinuousResP.lean",
+      "git_blob_sha1": "924c083d348beb2446a41e0ec51848db9bc36604",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.ContinuousResP",
+      "sha256": "cc2d91ff3b018935e24d2218aebc53c6433460b7683b62732f94306ebc462ebb",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 64,
+          "end": 164,
+          "sha256": "ee15d6dc19e46e7807fd166c2ad83cdb8fc1c699d9bd9767228e67db95fe05b5"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/WeilGroupCharacters/ArithmeticPointClassicality.lean",
+      "git_blob_sha1": "d80e67f1209b8e6140abba145cf01398375cd74d",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.ArithmeticPointClassicality",
+      "sha256": "0e0065fad53945edb6d5408c2a31c789d8e90a6a96a441eb1a887aef2eebaecf",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 61,
+          "end": 87,
+          "sha256": "a4d8cd02984646f7a689e974c91302c2830ec84b9832fc4be4f32426d0ec21ca"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/WeilGroupCharacters/UniversalOrdinaryDeterminantRing.lean",
+      "git_blob_sha1": "65ce51224af6634182dda7b48716e73279990d15",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.UniversalOrdinaryDeterminantRing",
+      "sha256": "b12275f242e0616546ead3569b88ed86fb245901849b470c1caf77c7b3c033d0",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 109,
+          "end": 161,
+          "sha256": "021e65e1aea344cc590fcf209479cf65a0d32d341bafc7a50ae3060d2836f273"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/IsTheta.lean",
+      "git_blob_sha1": "0bcdfbc7e402154a2586c7252766f92fb5459d6d",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.IsTheta",
+      "sha256": "e52772c94eb589b1a1a64a204fcb49cbd8eebe737cb7046be4c594b9e2ad6c1e",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 40,
+          "end": 52,
+          "sha256": "e1a1446675391d46111b3013b8f717c9f87be4264a9ba72cd82ab456527078ce"
+        },
+        {
+          "start": 96,
+          "end": 113,
+          "sha256": "e384e09a7c69b0e2e65de4eb6cd060d4ef88a9a224e64fa8a1bf8de621e344a3"
+        },
+        {
+          "start": 147,
+          "end": 168,
+          "sha256": "e3ff8a36b37a570c169ea66001968329baa725f476961d9548a35b6299f173ff"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/UnitaryHeckeData.lean",
+      "git_blob_sha1": "fda77999362f26a1072090403ba0726f0597fe39",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.UnitaryHeckeData",
+      "sha256": "2d1cab55f190ebb5c0ebf1876cf5509a13e2d98256e274731e0c4f42fa8bc476",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 38,
+          "end": 70,
+          "sha256": "788e28155fe81b1882bc74548f45bf1f2a4bf64eafcfbf785d5098ed070b08cd"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/CuspidalDescent/DescWeak.lean",
+      "git_blob_sha1": "7840bf87b8a05227de01b555ee7a3ba1922d2d39",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.CuspidalDescent.DescWeak",
+      "sha256": "e327e543cbdda6cf6725e448b86c4f35d41c1ea5d0960d8d9f9d186dde69ab3e",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 10,
+          "end": 21,
+          "sha256": "a3aa1dd838aec5934b42167f3f92bb2cfd258dbc36791dde28d9ec6e3101549d"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/CuspidalDescent/DualOfWeights.lean",
+      "git_blob_sha1": "1c5c1dd991f7525ef8c9d06c065b70db90943667",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.CuspidalDescent.DualOfWeights",
+      "sha256": "218a397d6556d9062ba6e4dee8f8832997bd96b35c8ac34ab947c06aab556b6e",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 83,
+          "end": 149,
+          "sha256": "6dddf0fde932b684257d972aa0a1181664fbbb44d50d62e4a8a76907d59d5374"
+        },
+        {
+          "start": 153,
+          "end": 172,
+          "sha256": "9d487fc189f6a2bf7751fba4d5e0b7c668f7e31bf0a96370c497c35866ab51da"
+        },
+        {
+          "start": 216,
+          "end": 244,
+          "sha256": "b61bf9ef7d8af2795dc36db20075febbb5c964a2bb8ca232ad4984616a670dc9"
+        },
+        {
+          "start": 315,
+          "end": 411,
+          "sha256": "62acf67820c77ced956968bba568787d40e1cf48242bb4f5e22d669b21c2df97"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/Distinct.lean",
+      "git_blob_sha1": "8f89d55ad7e1bd9f6e92af1739fcc3de971f576b",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.Distinct",
+      "sha256": "caa6f6e88562a4121375c8d7c6d451ad417cc799d7bb253b67712f90173d50c0",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 28,
+          "end": 35,
+          "sha256": "143fd8fb2a4d3db1b3a9331b212cda7dd7bdef3b986f66b80898aa1b10cb090c"
+        },
+        {
+          "start": 58,
+          "end": 66,
+          "sha256": "6ecba025bf3cfc48de09227d3d9ceff746d05198b5daf38a992616b7f3c64538"
+        },
+        {
+          "start": 97,
+          "end": 101,
+          "sha256": "3c4a5484ecb8510a5b78a4af8eab642d9c2cd14e32488edac22a1b236a99eb46"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/ContinuousTorusCharacter.lean",
+      "git_blob_sha1": "f9e20e1f8fc7a385686832fbeebc9e6236038243",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.ContinuousTorusCharacter",
+      "sha256": "8bbb8fe3dcd47b7602d1e59b6f8067bf51f6bf97b7285ef1d27afece6877b7f1",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 123,
+          "end": 130,
+          "sha256": "f7e665252f17c7b0de6cdbe85ec00bed1514983fb8694c3c52ec5afcaf9dc6c0"
+        },
+        {
+          "start": 269,
+          "end": 285,
+          "sha256": "cb0c5b568ea36c8080e275b238b427d61e090ea848446f232f59b045fac2fca8"
+        },
+        {
+          "start": 339,
+          "end": 359,
+          "sha256": "1fa02025feb3ad4c7154cfc981ca8e5aa019b189b3f2ce5f814a827a30dfdaf3"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/OrdinaryHeckeCharacters/ProdZpowConst.lean",
+      "git_blob_sha1": "1190f0511357957b8ccf7f54a30f781e89effb3c",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.OrdinaryHeckeCharacters.ProdZpowConst",
+      "sha256": "5fcfc48fcd292785acbc8443557e8afbeeb696640ad071d9baf347f57683a476",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 10,
+          "end": 22,
+          "sha256": "e5f1ed9041e1a12cd1fe60f715573f84a0ce8e126bd78fbcdcedfd8f3a38fa02"
+        },
+        {
+          "start": 95,
+          "end": 125,
+          "sha256": "287770309c7e4281d719a98ab14e86d0b1eda6d83607c6b2f020ec555969c5ba"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/OrdinaryHeckeCharacters/CtrlEq.lean",
+      "git_blob_sha1": "ae78e3e03cc12c30a299ce2aa86373c2885b21d2",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.OrdinaryHeckeCharacters.CtrlEq",
+      "sha256": "31655f3bd8f0f26bc2671e48aa58aaa0a49c448f390a8a756d33878b378a2b3a",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 23,
+          "end": 43,
+          "sha256": "abea015779a9771750595754ccf6c47a68dc214b701e1bf90572b7cdef0d9150"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/OrdinaryHeckeCharacters/CtrlOrd.lean",
+      "git_blob_sha1": "4d27f60dedbe2c2c3f77268901ef9d4f5c693fdf",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.OrdinaryHeckeCharacters.CtrlOrd",
+      "sha256": "1b79d1db4c6b824b753eafca722d30e37d70a85d4ea34b5697aaaffdc1500e4e",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 84,
+          "end": 139,
+          "sha256": "55f8e43b5a56338a75101a27cd14b44f20c84bd1a00c77519722e79322b47d91"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/OrdinaryHeckeCharacters/OrdA.lean",
+      "git_blob_sha1": "9cd8907663554d8bb92fb7933890b5ba43e3efb1",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.OrdinaryHeckeCharacters.OrdA",
+      "sha256": "5d826e13eaacdfbb72c572c831fe4878588a50bc4efb8f08592eef95df378a56",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 12,
+          "end": 100,
+          "sha256": "92a6fe10e4aeca9a1bdb47f79e291c7b75cf158dfece688e073cb06eb3e200cf"
+        },
+        {
+          "start": 117,
+          "end": 165,
+          "sha256": "49ea6d6b7a46ec7c967134e13ad4e73699d49b3a23e9e6e5a0cb00428817b732"
+        },
+        {
+          "start": 166,
+          "end": 252,
+          "sha256": "a27c4ca44118e7abe3e92cd54189d6c2ec627aab866f664345a525526e403fcc"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/CoefficientRepTrivialOnUnramified.lean",
+      "git_blob_sha1": "db78d43c578781c31c4f25f8a5513d68eeaa98de",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.CoefficientRepTrivialOnUnramified",
+      "sha256": "c5d39a434917828a7dc4abdde0b8f2a48b2ca5a95648b7d9d9ff9d206b391bfd",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 263,
+          "end": 274,
+          "sha256": "c545934e98b52a5824e965701c20822163ad94dc65f592ce7a03212ca8267516"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/UpOperatorEigenvalues/SplitW.lean",
+      "git_blob_sha1": "45866f72f67c1ee25d5726c7f5b6513aa427cdbf",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.UpOperatorEigenvalues.SplitW",
+      "sha256": "a12bbd7b2b7f78e839f8753777a9ab8d1b9405219b4601bfbf36b77a765eb46e",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 28,
+          "end": 57,
+          "sha256": "7979e6833083418288fd81a27dfe1d8ae23967fb866d56fde98da8260345509c"
+        },
+        {
+          "start": 67,
+          "end": 146,
+          "sha256": "275e349bead4ae8ff236bb1402bc1f2111c7322cd0977d05c65da33eb4ea289a"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/OrdinaryHeckeCharacters/WtBridge.lean",
+      "git_blob_sha1": "f7ef2503464b7c700a4e92939d1a668d53484005",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.OrdinaryHeckeCharacters.WtBridge",
+      "sha256": "19736a14bd29237f2a4bc8906ef0068ab0f8a61e5233138fb847e549363d650c",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 191,
+          "end": 244,
+          "sha256": "f858886f70986f29df8d92c82747dd3f64daac0bd56d9b68eeb104245f05908c"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeckeAlgebras/OrdinaryHeckeCharacters/JPT.lean",
+      "git_blob_sha1": "8dead201d416a351905e50d6d4fca43c3e5d31f5",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeckeAlgebras.OrdinaryHeckeCharacters.JPT",
+      "sha256": "c053a6910c0f402f9c01b82fb80ce7d6769d3a6141270532d3e01ce79b9f30d5",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 9,
+          "end": 12,
+          "sha256": "965169322177b0359b67f5909e6ba3f2ab8aa01aded6cfad4248fcb23c52394c"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PadicHodgeTheory/EpsArt.lean",
+      "git_blob_sha1": "a1eb88a7c6e52d6e3bd6ab9a9b6003b3dab7230b",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PadicHodgeTheory.EpsArt",
+      "sha256": "ab2540289a51cc1684cf79c33106a8475f9f4d3600677a8ea637182a88307fc3",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 27,
+          "end": 42,
+          "sha256": "c542d24952752907ec6d6ca6f1124569b4ad881e592b613409b2493bdc82c127"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/UnifVal.lean",
+      "git_blob_sha1": "a3afa3937af1d980de7bc4ea238ad42ca2d190f4",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.UnifVal",
+      "sha256": "5f8eb32d2585e525aaf31a183e84d4dfdd46cc280ae914f7574c18dbaa569507",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 20,
+          "end": 36,
+          "sha256": "a898481cc2b3338919812534ffe1603b29ce5c1b0701b865e83b79157b91be5b"
+        },
+        {
+          "start": 68,
+          "end": 97,
+          "sha256": "bf88b5213ffde54ccd89a2140207202533c1f09d3ab4eaf32040145d7f959686"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CurveDVRSpecialization/SeedPtOf.lean",
+      "git_blob_sha1": "fd4e8ebf97af76625ecb024608beb6fbb704f302",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.CurveDVRSpecialization.SeedPtOf",
+      "sha256": "98a45b8ecd97d0ff958626beab5e88b65444eaa103f9d847cf377c692732cc19",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 174,
+          "end": 179,
+          "sha256": "37f6d9289849afcdef4dc1bec2d4d089aa85607996da4aab240ce8fd4ac2be3e"
+        },
+        {
+          "start": 220,
+          "end": 260,
+          "sha256": "344f03ed413bbdb898024ccc46bf8a60f75dcd227fede72efcff1b546aa0c4bb"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CurveDVRSpecialization/DiagonalCharactersRegularAlgebraicOfInertiaWeigh.lean",
+      "git_blob_sha1": "33d9f458795928813e2a79a53d180de4502795dc",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.CurveDVRSpecialization.DiagonalCharactersRegularAlgebraicOfInertiaWeigh",
+      "sha256": "93e8ad0386bc1beb49a6c85351d36b1377dae399447331eaf10000a1afbe1cec",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 68,
+          "end": 129,
+          "sha256": "ab7347d5895f103b606b85fce9ffdafd83ba4a45f47f9f0191d419782454af8f"
+        }
+      ]
+    }
+  ],
+  "primary_literature": [
+    {
+      "file": "build/selmer-determinant-sources/labesse-cbcm.pdf",
+      "url": "https://webusers.imj-prg.fr/~michael.harris/CBCM.pdf",
+      "sha256": "5df9d8fcfa158064fe362d4fdf46858648991eb32dddabc63a4a998840785865",
+      "pdf_pages_reviewed": [
+        1,
+        41,
+        42,
+        43,
+        45,
+        46,
+        49,
+        50
+      ],
+      "interface": "Section 5.2 and Theorem 5.4: descent to the original inner form under everywhere finite unramified CM extension and quasi-split inert finite group; spherical test functions select inert spherical constituents. Theorem 5.9: strong local comparison at all split places. Compact infinity gives discrete series and property (*). The original quadratic idele character on -1 forces degree F even, so the definite even-rank parity and degree F>=2 are checked.",
+      "bytes": 614645,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "build/selmer-pt-sources/blggt-potential.pdf",
+      "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p03-p.pdf",
+      "sha256": "c9d6c7107bcde7fb26f9388abea5209f28457076bae59d70ccb6c34bbe1d621b",
+      "pdf_pages_reviewed": [
+        38
+      ],
+      "printed_pages": [
+        538
+      ],
+      "interface": "Theorem 2.1.1: adopted global representation, full away-from-ell local compatibility, and exact labeled de Rham weights. The given semisimple attached representation equals it by Chebotarev.",
+      "bytes": 1031664,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "build/selmer-pt-sources/blggt-lg2.pdf",
+      "url": "https://virtualmath1.stanford.edu/~rltaylor/lg2.pdf",
+      "sha256": "9badc24926b69c0c606fad193b4705b9cbb21c6081a544f082c18c78031bc67f",
+      "pdf_pages_reviewed": [
+        2,
+        5,
+        6
+      ],
+      "interface": "Theorem 1.1: semisimplified compatibility at every ell place, without Shin-regularity or Iwahori hypotheses. The proof excludes linked smooth characters before forcing monodromy zero.",
+      "bytes": 197141,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "build/selmer-determinant-sources/bz1977.pdf",
+      "url": "https://www.math.tau.ac.il/~bernstei/Publication_list/publication_texts/BZ-induced-1.pdf",
+      "sha256": "b379d3cb70d0fb94d9efbddd5f39a576bd2dc2b43a3f5bdc78f4ef084db10eda",
+      "pdf_pages_reviewed": [
+        15
+      ],
+      "printed_pages": [
+        454
+      ],
+      "interface": "Theorem 4.2 and the adopted full local correspondence: unlinked principal series are irreducible; all original smooth character and normalization factors are retained.",
+      "bytes": 3078205,
+      "matches_reviewed_pdf": true
+    }
+  ],
+  "exact_diagnostics": {
+    "symbolic_root_count_identity": "j(n-j)-sum_{i<j}(n-1-i)=-sum_{i<j}i",
+    "chamber_and_noncritical_cases": 2982,
+    "linked_boundary_cases": 1782,
+    "exterior_tensor_lattice_models": 156,
+    "exterior_tensor_weight_checks": 5556,
+    "lowest_weight": "Unique primitive tensor; every other weight is above it in the positive-root cone and has strictly positive z exponent.",
+    "ordinary_scalar_cancellation": "Exact symbolic products for ranks 2,3,4 retain Norm(varpi)/q and all character values.",
+    "ramified_negative_control": {
+      "ell": 3,
+      "minimal_polynomial": "X^2-3",
+      "norm_varpi": -3,
+      "q": 3,
+      "norm_ratio": -1,
+      "omitted_factor_changes_U2": true
+    },
+    "noncritical_negative_control": "psi=(epsilon,1), h=(-1,0) gives linked omega=(norm,1); dropping the original noncriticality hypothesis is invalid.",
+    "seed_weight_cases": [
+      {
+        "m": 2,
+        "h": [
+          -1,
+          1,
+          3
+        ],
+        "lambda": [
+          1,
+          0,
+          -1
+        ]
+      },
+      {
+        "m": 2,
+        "h": [
+          -1,
+          3
+        ],
+        "lambda": [
+          2,
+          -1
+        ]
+      },
+      {
+        "m": 2,
+        "h": [
+          -2,
+          2
+        ],
+        "lambda": [
+          1,
+          -2
+        ]
+      },
+      {
+        "m": 3,
+        "h": [
+          -2,
+          1,
+          4
+        ],
+        "lambda": [
+          2,
+          0,
+          -2
+        ]
+      },
+      {
+        "m": 3,
+        "h": [
+          -2,
+          4
+        ],
+        "lambda": [
+          3,
+          -2
+        ]
+      },
+      {
+        "m": 3,
+        "h": [
+          -3,
+          3
+        ],
+        "lambda": [
+          2,
+          -3
+        ]
+      },
+      {
+        "m": 4,
+        "h": [
+          -3,
+          1,
+          5
+        ],
+        "lambda": [
+          3,
+          0,
+          -3
+        ]
+      },
+      {
+        "m": 4,
+        "h": [
+          -3,
+          5
+        ],
+        "lambda": [
+          4,
+          -3
+        ]
+      },
+      {
+        "m": 4,
+        "h": [
+          -4,
+          4
+        ],
+        "lambda": [
+          3,
+          -4
+        ]
+      },
+      {
+        "m": 5,
+        "h": [
+          -4,
+          1,
+          6
+        ],
+        "lambda": [
+          4,
+          0,
+          -4
+        ]
+      },
+      {
+        "m": 5,
+        "h": [
+          -4,
+          6
+        ],
+        "lambda": [
+          5,
+          -4
+        ]
+      },
+      {
+        "m": 5,
+        "h": [
+          -5,
+          5
+        ],
+        "lambda": [
+          4,
+          -5
+        ]
+      },
+      {
+        "m": 6,
+        "h": [
+          -5,
+          1,
+          7
+        ],
+        "lambda": [
+          5,
+          0,
+          -5
+        ]
+      },
+      {
+        "m": 6,
+        "h": [
+          -5,
+          7
+        ],
+        "lambda": [
+          6,
+          -5
+        ]
+      },
+      {
+        "m": 6,
+        "h": [
+          -6,
+          6
+        ],
+        "lambda": [
+          5,
+          -6
+        ]
+      },
+      {
+        "m": 7,
+        "h": [
+          -6,
+          1,
+          8
+        ],
+        "lambda": [
+          6,
+          0,
+          -6
+        ]
+      },
+      {
+        "m": 7,
+        "h": [
+          -6,
+          8
+        ],
+        "lambda": [
+          7,
+          -6
+        ]
+      },
+      {
+        "m": 7,
+        "h": [
+          -7,
+          7
+        ],
+        "lambda": [
+          6,
+          -7
+        ]
+      },
+      {
+        "m": 8,
+        "h": [
+          -7,
+          1,
+          9
+        ],
+        "lambda": [
+          7,
+          0,
+          -7
+        ]
+      },
+      {
+        "m": 8,
+        "h": [
+          -7,
+          9
+        ],
+        "lambda": [
+          8,
+          -7
+        ]
+      },
+      {
+        "m": 8,
+        "h": [
+          -8,
+          8
+        ],
+        "lambda": [
+          7,
+          -8
+        ]
+      }
+    ],
+    "scope": "Finite exact diagnostics plus a symbolic scalar identity. The universal lattice and arithmetic occurrence proofs are in the note; no numerical test proves PT."
+  },
+  "dependencies": [
+    {
+      "path": "notes/selmer-integral-frontier-classical-control.md",
+      "sha256": "e9e0a12925885fd487071a3d9a88e4a60b12e91e6c5aac0f3ab673b0f5e6c2ba"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-hecke-determinant.md",
+      "sha256": "4775ca95ddb4ff156b8704a4b599905d8dd05b26a8c40407a87a5ede2c2f9ee1"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-type-construction.md",
+      "sha256": "ebc45756426d5a1d3e1337d5a62842f0f562caab21ad1a5d1aa649053e9e67bb"
+    },
+    {
+      "path": "notes/selmer-integral-frontier-arithmetic-seed.md",
+      "sha256": "fa2e9fc173190e54e0c39c6b03ae5adac20e089926a600990ee6cadbaa3b7df3"
+    },
+    {
+      "path": "notes/classical-galois-substitution.md",
+      "sha256": "770dbea1b6143c6c1752a896f1827ba469fc6845bd2c0e514ca658d0dc2a1581"
+    },
+    {
+      "path": "notes/galois-period-dictionary.md",
+      "sha256": "c517a086614c5ad4fa090c46287624944a3f4bc4e88bffeecc6cfc0cc7fe71a4"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-arithmetic-point.md",
+      "sha256": "171283fcf32d6cfe68d4c8d3ce3fd02d37e80e4db603c0c72abeb67a113769be"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-arithmetic-point.tex",
+      "sha256": "fc0eda325858ff40035914ce25378807bed0d1537bc49791ff335e9c1f6022f9"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-arithmetic-point-references.tex",
+      "sha256": "0c800257359e4970936d46bebda46c0fdc006a7066c61373e93eedbf9d38d9c4"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_arithmetic_point.py",
+      "sha256": "9bc840c4058442d61c1243e96050f8314e14e5ebb4ae3a7fcdb8cdd900cf5f27"
+    }
+  ]
+}

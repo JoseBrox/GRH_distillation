@@ -1,0 +1,264 @@
+\subsection{Actual higher-weight occurrence}
+\label{sec:selmer-arithmetic-point}
+
+The arithmetic-point implication can be proved directly on the original
+ordinary modules.  The only higher-weight comparison needed is
+nonvanishing of lowest-weight evaluation on a classical ordinary
+vector.
+
+Fix the original Hida datum: an odd prime \(\ell\), a CM extension
+\(L/F\) unramified at every finite place, its definite unitary group,
+and the original coefficient ring, residual characters, tame type,
+weight ring \(A\), universal ordinary determinant ring \(B\), and
+residual ordinary Hecke module \(M_A\).  Assume \(S'=S\).  The exact
+equality \(S'=S\cup\operatorname{image}(Q)\), with \(Q\) outside
+\(S\), then makes the auxiliary Taylor--Wiles set empty.  Keep the
+original principal level at \(v_0\).
+
+\begin{proposition}[The full original arithmetic-point implication]
+\label{prop:selmer-arithmetic-point}
+Let \(J\) be the original Hecke ideal: either \(M_A=0,J=B\), or
+\(J=\ker f\) for the prescribed surjection
+\(f:B\twoheadrightarrow T\subseteq\operatorname{End}_A(M_A)\)
+identifying the universal determinant and ordered characters with the
+actual Hecke determinant and characters.
+
+For every \(\mathcal O\)-algebra point
+\(x:B\to\overline{\mathbb Q}_\ell\), let \(\rho\) be a continuous
+semisimple representation of rank \(2\leq n\leq4\) whose determinant
+is \(xD_B\).  Suppose \(\rho\) is attached in the original normalization
+to a regular algebraic conjugate self-dual cuspidal representation,
+is unramified at the prescribed place above \(v_0\), and has at every
+chosen \(w\mid\ell\) the ordered flag with characters
+\(\psi_i=x\psi_{B,i}\).  Assume these characters are locally algebraic
+of integral labeled weights
+\[
+ h_{0,\tau}<\cdots<h_{n-1,\tau},\qquad
+                  \psi_i\ne\psi_j\epsilon\quad\hbox{for all }i,j.
+                                                        \tag{AP1}
+\]
+Then \(M_A\ne0\) and \(J\subseteq\ker x\).  This supplies the entire
+original \(\mathrm{PT}\) contract, without an additional distinctness
+hypothesis on finite inertial characters.
+\end{proposition}
+
+\begin{proof}
+\emph{Points and descent.}
+Algebraic points of \(B\) are automatically integral and continuous.
+Indeed, if \(b\in\mathfrak m_B\) and \(|x(b)|_\ell\geq1\), a monic
+integral equation for \(x(b)^{-1}\) makes
+\(1+c_1b+\cdots+c_db^d\), a unit of \(B\), map to zero.
+Thus \(x(\mathfrak m_B)\) has positive valuation.  Every element of
+\(B\) is a residue lift from \(\mathcal O\) plus an element of
+\(\mathfrak m_B\), so all coefficient images are integral.  Finite generators
+of \(\mathfrak m_B\) give a positive lower valuation bound on their
+nonzero images, proving continuity.  Their images generate a finite
+extension \(E\) containing \(x(B)\), by completeness and polynomial
+approximation.  Coefficients may henceforth be enlarged inside
+\(\overline{\mathbb Q}_\ell\).
+
+The universal trace relations and nondegeneracy of the trace pairing
+on the image algebra of a semisimple characteristic-zero representation
+make \(\rho\) factor through the original \(G_0\).  Thus it is
+unramified outside \(S\).  The adopted classical local/global theorem
+makes its cuspidal representation \(\Pi\) spherical there and at
+\(v_0\).  The original unitary group is quasi-split at every finite
+place: at an inert place choose a unit of norm \(-1\) in the unramified
+quadratic extension and split the standard form into hyperbolic planes
+and at most one line.  The degree \([F:\mathbb Q]\) is even: the quadratic idele character
+of \(L/F\) is one on \(-1\) at finite places and minus one at real
+places, so its value on the principal idele \(-1\) gives the parity.
+Thus the definite even-rank parity and the required degree at least
+two both hold over the original field.
+
+Labesse's Theorem~5.4 gives a descent \(\sigma\) to this definite group
+\cite{SelmerPTLabesse}.  Its finite-place unramifiedness and quasi-split
+hypotheses have just been checked.  In the proof, spherical test
+functions at inert places retain the nonzero twisted trace of \(\Pi\)
+by the unramified fundamental lemma; thus the descent may be chosen
+spherical at all those places.  Compact infinity gives discrete series
+and property \((*)\); Theorem~5.9 gives strong split-place base change
+and the matching infinitesimal character.  No multiplicity-one
+assertion is needed.
+
+At a prescribed type place the universal relation \(\mathrm{Pair.I}\)
+and the same trace pairing kill
+\(I_u\cap\bigcap_i\ker\bar\chi_i\).  The remaining inertia quotient
+is finite abelian of order prime to \(\ell\).  Its residual determinant
+therefore identifies the exact Teichm\"uller characters and their
+multiplicities, with zero monodromy.  The established exact type theorem
+supplies a vector for the original tame lattice.  At \(v_0\) use the
+spherical vector, which is fixed by the original principal level.
+
+\emph{The local principal series.}
+For \(k=L_w\), let \(q\) be its residue cardinality and use the original
+Artin map: \(v_k(\operatorname{art}(g))=-\deg(g)\), where
+arithmetic Frobenius has degree one.  Thus \(g_\varpi\) has degree
+minus one.
+The locally algebraic characters give smooth \(\omega_i:k^\times\to
+\mathbb C^\times\) satisfying
+\[
+ \psi_i(g_a)=\iota^{-1}\omega_i(a)
+       \prod_{\tau:k\hookrightarrow E}\tau(a)^{-h_{i,\tau}},
+ \qquad
+ \epsilon(g_a)=|a|_kN_{k/\mathbb Q_\ell}(a).             \tag{AP2}
+\]
+The second identity is the source's exact \texttt{epsArt} formula
+\(\epsilon(g)=q^{\deg(g)}N(\operatorname{art}(g))\); its
+\texttt{UnifVal} calculation explicitly gives
+\(\epsilon(g_\varpi)=N(\varpi)/q\)~\cite{SelmerPTSource}.
+The rank-one de Rham dictionary, exactness on the given flag, and
+semisimplified local compatibility \cite[Theorem~1.1]{SelmerPTBLGGTLocal}
+give
+\(\operatorname{rec}(\Pi_w|\det|^{(1-n)/2})^{\mathrm{ss}}
+=\bigoplus_i\omega_i\).
+Every \(\psi_i(g_a)\) is an \(\ell\)-adic unit by compactness.
+Equality \(\omega_i=\omega_j\) would therefore force
+\(\sum_\tau(h_{i,\tau}-h_{j,\tau})=0\), contrary to strict ordering.
+If \(\omega_i/\omega_j=|\cdot|_k\), valuation at \(\varpi\) gives
+\[
+ \sum_\tau(h_{j,\tau}-h_{i,\tau})=[k:\mathbb Q_\ell].    \tag{AP3}
+\]
+All summands have the same sign and are integers.  Hence \(j=i+1\)
+and each difference is one.  Equation~\textup{(AP2)} then gives
+\(\psi_i=\psi_j\epsilon\), contradicting \textup{(AP1)}.
+Interchanging the indices excludes the inverse norm ratio.
+Monodromy would join characters with one of these ratios, so it is
+zero.  Principal-series irreducibility \cite[Theorem~4.2]{SelmerPTBZ}
+and the exact local correspondence give
+\[
+ \sigma_w\simeq\Pi_w\simeq
+ \operatorname{Ind}_{B(k)}^{\mathrm{GL}_n(k),\mathrm{norm}}
+       (\omega_i|\cdot|_k^{(n-1)/2})_{0\leq i<n}.        \tag{AP4}
+\]
+This argument requires neither Shin-regularity nor a preliminary
+Iwahori condition.
+
+\emph{The integral coefficient representation.}
+Set \(\lambda_{\tau,n-1-i}=h_{i,\tau}-i\); these are dominant
+integral weights.  The exact Hodge--Tate formula
+\cite[Theorem~2.1.1]{SelmerPTBLGGT} identifies the infinity coefficient
+of \(\sigma\) with \(\lambda^\vee\), including the reversal and sign.
+Construct its dual coefficient lattice as follows.  For one embedding,
+put \(d_i=\lambda_{i-1}-\lambda_i\) and take
+\[
+ \mathcal T_\lambda=
+ \bigotimes_{i=1}^{n-1}(\bigwedge^i\mathcal O_E^n)^{\otimes d_i}
+                          \otimes\det^{\lambda_{n-1}}.
+                                                        \tag{AP5}
+\]
+Intersect with the characteristic-zero Cartan component of highest
+weight \(\lambda\).  The resulting lattice is saturated, finite free,
+and stable under the compact integral group.  Its unique lowest-weight
+tensor is primitive; decompose by the ambient integral weight spaces
+and choose it as the first basis vector.  Every other weight differs
+from it by a nonzero sum of positive roots.  Tensor over the original
+chosen embeddings.  With
+\[
+ \chi_\lambda(a)=\prod_{\tau,i}\tau(a_i)^{h_{i,\tau}-i},
+ \qquad R_a=\chi_\lambda(a)^{-1}\xi_\lambda(a),            \tag{AP6}
+\]
+\(R_a\) is integral on the original positive cone, and
+\(R_z\), for \(z=\operatorname{diag}(\varpi^{n-1},\ldots,1)\),
+contracts all nonlowest coordinates into \(\mathfrak m_E\).
+The lowest row is fixed by the upper unipotent and has torus
+character \(\chi_\lambda\).  Deep compact congruence subgroups act
+as one to arbitrary integral precision, first in \textup{(AP5)} and
+then in its saturated intersection.  This constructs all the original
+weight-lattice requirements without division by a symmetrizer.  Retain
+the actual coefficient rank and the original tame type lattice.
+
+\emph{An ordinary vector.}
+Put \(\phi=x\theta/\chi_\lambda\).  The original torus equation gives
+\(\phi_i(u)=\omega_i(u)^{-1}\) on units.  At a finite depth killing
+these characters, evaluation at one in \textup{(AP4)} is a nonzero joint
+eigenfunctional on the finite-dimensional congruence-fixed space:
+a function supported on \(B(k)I_1(c)\) has value one there.
+The torus and positive double-coset operators commute.  Their simultaneous
+generalized eigenspace detected by evaluation is nonzero; the commuting
+nilpotent parts have a common nonzero kernel.  This gives an actual
+joint eigenvector, without assuming semisimplicity of ramified Hecke
+operators.
+
+For \(a_j=\operatorname{diag}(\varpi,\ldots,\varpi,1,\ldots,1)\),
+with \(j\) copies of \(\varpi\), the unnormalized double coset has
+\(q^{j(n-j)}\) terms.  Its Borel character and half modulus give
+\[
+ q^{j(n-j)}\prod_{i<j}\omega_i(\varpi)q^{-(n-1-i)}
+                       =\prod_{i<j}\omega_i(\varpi)q^{-i}.
+                                                        \tag{AP7}
+\]
+After the actual normalization by \(\chi_\lambda(a_j)\), the eigenvalue is
+\[
+ u_{v,j}=\prod_{i<j}\psi_i(g_\varpi)
+              \left(\frac{N_{k/\mathbb Q_\ell}(\varpi)}q\right)^i
+          =\prod_{i<j}\psi_i(g_\varpi)\epsilon(g_\varpi)^i.
+                                                        \tag{AP8}
+\]
+It is a unit and gives exactly the original uniformizer equation.
+The factor \(N(\varpi)/q\) is retained: it need not equal one.
+Tensor the local vectors with the original tame, spherical and infinity
+vectors.  This gives a nonzero global classical eigenvector \(F\).
+Its finite-dimensional algebraic eigenspace is defined over a finite
+coefficient extension.  Scale its finitely many untwisted coset values
+into the lattice \textup{(AP5)}; integral compact actions then make all
+untwisted values integral.
+
+\emph{Nonzero evaluation in the original module.}
+Define
+\[
+       \operatorname{ev}(F)(g)=e_0^*\xi_\lambda(g_\ell)^{-1}F(g).
+                                                        \tag{AP9}
+\]
+Its torus character is \(x\theta\); its tame type and levels are the
+original ones.  At each finite coefficient precision, deeper opposite
+unipotent levels follow from the lattice congruence property.
+The lowest-row identities intertwine normalized classical operators
+with the original scalar operators, term by term.
+
+If \(\operatorname{ev}(F)=0\), every untwisted value has zero lowest
+coordinate.  In each normalized \(U_z\) summand, \(R_z\) contracts
+that value and the upper-unipotent matrix is integral.  Thus \(U_z\)
+sends the kernel lattice into \(\mathfrak m_E\) times itself.  Its
+eigenvalue on \(F\) is a unit by \textup{(AP8)}; iteration and separatedness
+force \(F=0\), a contradiction.  Hence evaluation is nonzero.
+After scaling, its unit eigenvalue puts it in the original integral
+ordinary module over \(\mathcal O_E\).  The established exact coefficient
+change identifies this with \(M(A,\theta)\otimes_A\mathcal O_E\).
+Frobenius polynomial reduction and \textup{(AP8)} give all original
+spherical and ordinary residual eigenvalues, so the prescribed residual
+Hecke idempotent acts as one.  This proves \(M_A\ne0\).
+
+\emph{Identification of the point.}
+The resulting eigenline gives \(y:T\to E\) on the actual integral
+Hecke algebra.  Finiteness over \(A\) and the residual congruences make
+\(y\) integral, local and continuous.  At the original dense Frobenius
+set, \(yf\) and \(x\) have equal determinant polynomials, hence equal
+determinants.  The torus equation and \textup{(AP8)} identify their
+ordered characters on units and the original uniformizer, hence on
+the whole local Galois group.
+
+These polynomial-law coefficients and character values topologically
+generate \(B\): in each finite quotient, the subalgebra they generate
+carries the same universal pair, so uniqueness in the universal
+property makes it the whole quotient.  The continuous maps \(yf\)
+and \(x\) consequently agree.  Therefore \(J=\ker f\subseteq\ker x\).
+\end{proof}
+
+For the actual seeds, the exact ordered weights and coefficient weights
+are respectively
+\[
+\begin{array}{c|c|c}
+ & h & \lambda\\ \hline
+ n=3 &(1-m,1,m+1)&(m-1,0,1-m)\\
+ n=2,\ a_\infty=-1 &(1-m,1+m)&(m,1-m)\\
+ n=2,\ a_\infty=0 &(-m,m)&(m-1,-m).
+\end{array}
+\]
+Here \(m\geq2\) supplies the noncritical gaps, and the original
+prime-to-\(\ell\) inertia argument supplies unramifiedness at \(v_0\).
+Thus the arithmetic-point hypothesis in the seed specialization is
+now supplied.  Characteristic-prime marked support, two-sided global
+rigidity and the uniform integral torsion budget remain separate:
+a characteristic-zero eigenvector alone does not prove nonemptiness
+of every required characteristic-prime fibre.
