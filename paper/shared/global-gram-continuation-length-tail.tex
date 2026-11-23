@@ -1,0 +1,300 @@
+\subsection{Uniform tails for every original flag length}
+\label{global-gram-continuation-length-tail}
+
+The nonidentity terms with zero Gram determinant require a tail
+estimate for every flag length and its inverse.  The first-length
+and simultaneous-ratio estimates supply this assertion with the
+original range of moments.  We first explain why a given square
+integrable Bessel coefficient has the required normalization.
+
+\begin{lemma}\label{global-gram-finite-bessel-realization}
+Let $\sigma$ be an irreducible unitary representation on $H$, let
+$S$ be a closed unimodular subgroup of a unimodular Lie group $G$,
+and let $\rho$ be a finite-dimensional unitary representation of $S$.
+Use the given Haar measures and their quotient measure.  Suppose
+$B:H^\infty\to W$ is a continuous smooth $S$-equivariant map.
+If, for some $v_0\in H^\infty$,
+\[
+       0<\int_{S\backslash G}\|B\sigma(g)v_0\|^2dq(g)<\infty,
+\]
+then $v\mapsto B\sigma(\cdot)v$ extends to a positive scalar
+multiple of an isometric $G$-embedding of $H$ into the original
+$L^2(S\backslash G,W)$.
+\end{lemma}
+\begin{proof}
+Let $D$ consist of the smooth vectors whose displayed coefficients
+belong to $L^2$, and define $T$ on $D$ by that coefficient.
+The domain is invariant under $G$ and contains the span of the
+translates of $v_0$.  It is therefore dense in $H$.
+
+We prove closability before using Schur's lemma.  For a compactly
+supported smooth section $\phi$ of the quotient bundle, choose
+local sections of $G\to S\backslash G$, a finite partition of
+unity over its support, and a compactly supported smooth function
+on $S$ of Haar integral one.  The Weil formula then writes
+$\langle Tv,\phi\rangle$ as a finite sum of expressions
+\[
+                 \xi\bigl(B\sigma(\eta)v\bigr),
+        \qquad \eta\in C_c^\infty(G),\quad \xi\in W^*.
+\]
+Each expression is bounded in the Hilbert norm of $v$.
+Indeed compact smooth convolution maps $H$ continuously into
+$H^\infty$: for any word $D_1$ in the Lie algebra, its derivative
+is convolution by the corresponding derivative of $\eta$, with
+operator norm at most that derivative's $L^1$ norm.  Continuity
+of $B$ uses only finitely many such seminorms.
+If $v_j\to0$ in $H$ and $Tv_j\to F$ in $L^2$, all these
+test pairings vanish.  Density of the compact smooth sections
+gives $F=0$.
+
+The closure $\overline T$ still intertwines the unitary actions.
+Every spectral projection of $\overline T^*\overline T$ therefore
+commutes with $\sigma$ and is zero or the identity.  The projections
+of the intervals $[0,N]$ increase strongly to the identity, so one
+already equals the identity.  Schur's lemma now gives
+$\overline T^*\overline T=aI$ for a finite $a>0$.
+Thus the closure is defined on all of $H$.  The same compact-test
+identity identifies its value at every smooth $v$ with
+$B\sigma(\cdot)v$ as a distribution, hence as the original smooth
+coefficient.  Square integrability of derivatives is a consequence,
+not a premise, of this argument.
+\end{proof}
+
+Let $r\ge0$, $k\ge1$, $n=2r+k+1$, $m=2r+2$, and let
+$G=U(k+r,r+1)$ in the original unitary Witt coordinates.
+Write $e_0,\ldots,e_{r-1}$ for its standard isotropic flag,
+$f_0,\ldots,f_{r-1}$ for the opposite Witt vectors with
+$h(e_i,f_j)=\delta_{ij}$, and let $z$ lie in the central
+space, with Hermitian norm $-T<0$.  Put $e_r=z$ and
+\[
+ L_i(g)=\operatorname{dist}\left(g^{-1}e_i,
+                    \operatorname{span}_{j<i}g^{-1}e_j\right)
+                       \quad(0\le i\le r).
+\]
+The distance is Euclidean.  Retain the original flag Bessel
+subgroup, its compact target, character, and quotient measure.
+Let $\Phi(g)=B\sigma(g)w$, where $w$ is a unit vector in the
+lowest compact type and $0<\|\Phi\|_2^2<\infty$.
+
+Here are the mathematical size hypotheses used below.  They are
+clauses or consequences of the original standing hypotheses.
+Let $E/F$ be the original CM extension and $f=[F:\mathbb Q]$.
+Write $b=e^L$, $L>1$, $d=\operatorname{rd}(E)$, and $g=g_1g_2$.
+Assume $C_g,C_T\ge0$, $C_\ell\ge1000(1+C_1)+10^8$,
+$C_1>0$, and
+\begin{gather*}
+ m^4\le f\le k,\qquad C_\ell\le m,\qquad
+ 1\le d/2,\qquad \log d\le L/C_\ell,\\
+ 1\le g\le b^{2C_g},\qquad 1\le T\le b^{C_Tm},\\
+ |\lambda_a|\le b^2,\qquad |u_i|\le b^U,
+                    \qquad U=\max(2,C_u).
+\end{gather*}
+The Harish--Chandra parameter $\lambda$ satisfies
+$\lambda_a-(n-1)/2\in\mathbb Z$.  Its first $k-1$ signs are
+positive and its remaining $m$ signs alternate $+,-$.
+It interlaces the compact parameter $u$ on its first $k-1$
+coordinates.  For a
+number $B_v$ the first $k-1$ coordinates of $\lambda$ belong
+to $[0,B_v/8]$, and the remaining $m$ coordinates belong to
+$[-2B_v,-B_v]$, where $10^8n^7\le B_v\le b^2$.
+Every adjacent gap is larger than $C_\ell k m^4+n m^{10}$,
+and every noncompact root gap is at least $C_\ell n^{19}f^5L$.
+The local character is exactly
+\[
+ \psi(n_0)=\exp\left(i\operatorname{Re}
+                 \left(\frac{2\pi}{(d/2)g}\,\ell(n_0)\right)\right),
+\]
+where $\ell$ is the sum of the original adjacent flag coordinates,
+including its final coordinate involving $z$.
+These definitions retain the original scalar $d/2$.
+\cite{global-gram-length-tail-source}
+
+\begin{theorem}\label{global-gram-original-all-length-tail}
+Put
+\[
+ A=U+5,\qquad A_c=2C_g+2,\qquad
+ C_H=C_T+8A+A_c.
+\]
+Let $q\ge1$ be an integer such that
+\[
+ q\le C_1kr,\qquad mq\le Q,\qquad
+                   mq\le\frac{B_v}{10^8n^4},
+\]
+where $Q$ is the original real shift allowance.  Only the integer
+shifts of size at most $2q\le Q$ are used.  For every $t>0$,
+\begin{equation}\label{global-gram-original-length-tail-bound}
+ \int_{\{g:\,\exists i,\ \max(L_i(g),L_i(g)^{-1})
+                                  \ge t b^{C_Hm}\}}
+       \|\Phi(g)\|^2dq(g)
+       \le m t^{-2q}\|\Phi\|_2^2.
+\end{equation}
+In particular this gives the original assertion with constant
+$2m$.  For $q=0$ that assertion follows directly from positivity.
+The constants $A,A_c,C_H$ are independent of $C_1$, the field,
+the word, the compact unit vector, and every Haar scaling.
+\end{theorem}
+\begin{proof}
+First use the standard character
+$\exp(2i\operatorname{Im}\ell)$ and the vector
+$z=\sqrt T\,e_-$.  Set $\beta=b^A$ and
+$K=n^2T\beta^4(6B_v)^{2m}\le T\beta^{6m}$.
+We check the reserves for the established first-length and ratio
+estimates, rather than increasing them.
+Since $m\ge2C_1$ and $k\ge m^4$,
+\[
+ q\le C_1kr\le km^2/4\le k^2\le n^2,
+ \qquad
+ 2rq\le C_1km^2/2\le km^3/4\le k^2\le n^3.
+\]
+The moment of the first length used below has order $2q$ and
+therefore uses exactly $2q$ integer shifts and level $4q\le4n^2$.
+The simultaneous ratio moment has total order $2iq\le2rq\le n^3$.
+Also $2q\le mq\le Q$ and
+$2q\le B_v/(10^8n^4)\le B_v/100$.
+The displayed condition $mq\le B_v/(10^8n^4)$ is a separate
+original hypothesis.  It also follows in the present range from
+$mq\le n^3$ and $B_v\ge10^8n^7$; no factor $n^4$ is inferred
+from a bound involving only $mk$.
+The adjacent-gap bound gives gaps at least $100(2q+1)$
+before shifting.  After every shift used here they are at least two,
+the two parameter intervals lie in their original $B_v/100$
+enlargements, and the noncompact gap remains at least
+$8n^{19}$.  Thus the original signed Pieri and normalized Bessel
+families exist throughout these shifts, by the already proved
+family construction.  No additional tensor reserve is requested.
+The derivative-energy bound applies with base $\beta$:
+the lowest compact Casimir radius is at most $4nB_v$ and
+$\beta\ge3B_v$.  All quotient measures are the given ones.
+\cite{current-construction-record}
+
+We also retain the character sign.  The rank-two Lie algebra
+element in the ratio calculation has adjacent coordinate
+$itL_{i+1}^2$.  The present character differentiates to
+$+2iL_{i+1}^2$, whereas the earlier ratio display used the
+negative of this scalar.  Taking squared norms gives exactly
+the same ratio inequality.  In the first-length calculation
+the signed tensor transfer and projection estimates do not
+depend on that sign.  The adjacent root factors in its Capelli
+evaluation have the same moduli $1$ and $\sqrt T$, so the
+degree-normalized lowering bound remains $T\beta^4$.
+This is the direct sign check used in the quantitative-seed
+proof; no representation or compact parameter is conjugated.
+
+Choose a compact-highest unit vector $w_0$ in the lowest compact
+type.  This vector has level zero.  Write
+$F_v=\sqrt{d_\sigma}\,\mathcal B\sigma(\cdot)v$ for the
+subgroup-period normalized realization, and put
+$R_i=L_{i+1}/L_i$.  The established first-length and mixed-ratio
+estimates give
+\[
+ \int L_0^{4q}\|F_{w_0}\|^2dq\le K^{2q},\qquad
+ \int\prod_{j<i}R_j^{4q}\|F_{w_0}\|^2dq
+                                  \le\beta^{8iq}.
+\]
+Their zero-order norm is one when $\mathcal B\ne0$.
+Since $L_i=L_0\prod_{j<i}R_j$, Cauchy--Schwarz gives
+\begin{equation}\label{global-gram-length-positive-moment}
+ \int L_i^{2q}\|F_{w_0}\|^2dq
+                  \le K^q\beta^{4iq}
+                  \le b^{(C_T+8A)mq}.
+\end{equation}
+The residual last vector has Hermitian norm $-T$, so
+$L_r\ge\sqrt T$.  Consequently
+$L_i^{-1}=L_r^{-1}\prod_{j=i}^{r-1}R_j$ and the ratio
+moment of total order $(r-i)q$ gives
+\begin{equation}\label{global-gram-length-negative-moment}
+ \int L_i^{-2q}\|F_{w_0}\|^2dq
+       \le T^{-q}\beta^{4(r-i)q}\le b^{2Amq}.
+\end{equation}
+This includes $i=r$ with an empty product.
+
+Neither estimate requires all lowest-type vectors to have level
+zero.  The weights $L_i^{2q}$ and $L_i^{-2q}$ are invariant
+under right multiplication by the maximal compact group.
+The compact orbit of $w_0$ spans the lowest compact type.
+The weighted integrals are finite on this entire finite-dimensional
+space, by the triangle inequality and their finiteness on that
+orbit.  Each is a compact-invariant Hermitian form, hence a
+scalar multiple of the original form.  Thus the same bounds
+hold for every unit vector in that type.
+
+For the given Bessel map, Lemma~\ref{global-gram-finite-bessel-realization}
+gives a bounded embedding.  It legitimately intertwines convolution
+by the integrable lowest-vector matrix-coefficient projector.
+The original projector kernel is
+$F_w(g)F_w(h)^*$, as proved in the quotient-mass argument.
+Its range is therefore $\mathbb C F_w$; if $\mathcal B=0$
+its range is zero.  The given positive-norm coefficient is fixed
+by this projector, so the zero case is excluded and its unit
+normalization differs from $F_w$ by a unit scalar.
+Equations~\eqref{global-gram-length-positive-moment} and
+\eqref{global-gram-length-negative-moment} therefore hold relative
+to its same unweighted norm.  This argument does not assume
+boundedness of a smooth Bessel functional on $H$.
+
+Finally transport the original character and vector exactly.
+A central unitary isometry sends $\sqrt T e_-$ to $z$ and
+fixes the isotropic flag.  Next set
+\[
+ c=\frac{g d}{2\pi},\qquad
+ \eta_i=(-ic)^{r-i},\qquad
+ D_\eta e_i=\eta_i e_i,
+ \quad D_\eta f_i=\overline{\eta_i}^{-1}f_i,
+ \quad D_\eta z=z.
+\]
+Conjugation multiplies each adjacent root coordinate by $-ic$,
+so the original character becomes the standard one.
+Push the original subgroup and quotient measures by these
+changes of variables; the Weil formula introduces no unspecified
+factor.  The compact target and the input vector are unchanged.
+For the $i$th original length the change is exactly
+$L_i\mapsto c^{-(r-i)}L_i$.
+Since
+\[
+ \max(c,c^{-1})\le b^{A_c},\qquad 2r<m,
+\]
+each of the two moment bounds costs at most an additional
+$b^{A_cmq}$.  Notice that this normalized local-coordinate
+scale contains the root discriminant.
+
+Each positive and inverse moment is now at most
+$b^{C_Hmq}\|\Phi\|_2^2$.
+Markov's inequality at the threshold $t b^{C_Hm}$ bounds
+each corresponding tail by $t^{-2q}\|\Phi\|_2^2$.
+There are $2(r+1)=m$ tails.  Their union gives
+\eqref{global-gram-original-length-tail-bound}.
+\end{proof}
+
+The original shift allowance is
+$Q=\min\{c_q h_{\rm NC}/\sqrt m,4\Delta\}/C_q$.
+Choose $C_q=10^8$ and $c_q=C_q^{-1}$ once, before choosing
+$C_1$.  Thus the two branches are exactly
+$h_{\rm NC}/(C_q^2\sqrt m)$ and $4\Delta/C_q$.
+The preceding theorem retains both branches and the original
+condition $mq\le Q$.  The original interval condition says
+$C_qn^7\le B_v$, $0\le v_l\le B_v/8$, and
+$B_v\le b_j\le2B_v$.  The actual ordered parameter is
+\[
+             \lambda=(v_1,\ldots,v_{k-1},-b_1,\ldots,-b_m).
+\]
+It gives exactly the two parameter intervals used above, and
+$B_v\le b_1\le b^2$.  The remaining size assumptions follow
+from the original standing data after increasing the final fixed
+threshold $C_\ell$, before constructing the arithmetic data.
+In particular $|u_i|\le b^U$ follows from compact interlacing,
+$u_1\le b^{C_u}$ and $u_k>-b_1\ge-b^2$.
+The negative adjacent gaps and the cloud-to-negative gap give
+the displayed noncompact gap, using
+$b_1\ge C_\ell mk\Delta$ and $\Delta\ge(kfL)^{C_\ell}$.
+Indeed $n\le2k$, $k\ge2$, $f\ge1$, $L>1$ and
+$C_\ell\ge40$ give
+$mk(kfL)^{C_\ell}\ge2^{19}k^{19}f^5L\ge n^{19}f^5L$.
+The constants $c_q,C_q,C_H$ depend only on the fixed original
+size constants, whereas the final threshold may also depend on
+$C_1$.  This is the original order of quantifiers.
+The proof is independent of the permitted Haar factor $\theta$.
+When $C_1=0$ only $q=0$ is allowed, and when $C_1<0$ there is
+no allowed nonnegative $q$ in the actual range $r\ge1$.
+It supplies the original all-length tail assertion, including its
+quantifier order.  The local bound for the remaining zero-Gram
+orbital operators and their global sum are still separate obligations.

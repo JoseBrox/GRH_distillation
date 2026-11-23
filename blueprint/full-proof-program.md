@@ -210,7 +210,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The actual support, full DVR point tests, common-subgroup finite-end descent and original auxiliary arithmetic frame are proved, including both initial families, strict classes, cohomology inequality, local degrees and seed. Prove finiteness of the entire original integral weight-zero ring, then two-sided global rigidity and the moving-family weighted integral Selmer bound. No uniform integral torsion or nilpotence bound is inferred from qualitative finiteness.
+**Next concrete task.** The actual auxiliary frame and common-subgroup finite-end theorem now imply integral finiteness of the original weight-zero algebra for every local/global model pair, with nilpotents and torsion retained. Prove the two-sided characteristic-zero global rigidity and moving-family weighted integral Selmer bound. Finiteness gives no uniform conormal length or effective annihilator exponent.
 
 **Acceptance conditions:**
 
@@ -322,7 +322,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The exact period Gram identity, original target projector, arithmetic minimum, weighted seed norms, intrinsic covolume and Haar cancellation are supplied. The actual two-point far-return integral is exponentially small at the literal cutoff, uniformly with growing fields and ranks. Prove the original near-return bounds, actual finite-column sums, final arithmetic-chain identity and restricted positive traces.
+**Next concrete task.** The exact period Gram identity, arithmetic minimum, normalized seed norms and intrinsic Haar budget are supplied. The actual two-point far-return integral is uniformly exponentially small. The original tails for every flag length and inverse are now proved with the same character, quotient measure, coefficient and moment range. Prove the zero-Gram local orbital-operator bound and its global sum, generic returns, actual finite-column sums, final arithmetic-chain identity and restricted positive traces.
 
 **Acceptance conditions:**
 
@@ -479,8 +479,8 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W04: use the constructed original auxiliary frame and uniform finite-end theorem to prove integral weight-zero finiteness without removing nilpotents or torsion; then establish two-sided global rigidity and the uniform weighted Selmer-order bound. Ordinary RH is the preferred first target.
-1. W06/W08: the actual two-point far-return bound is supplied. Attack the nongeneric near-return diagonal and generic orbital contribution, retain all finite-column and rank factors, and identify the same arithmetic chains with the final normalized period maps and trace errors.
+1. W04: the entire original weight-zero algebra is now finite over the coefficient ring. Prove two-sided global rigidity for the actual automorphic points, then bound the growing integral conormal lengths and the weighted Selmer orders. Ordinary RH remains the preferred first target.
+1. W06/W08: the actual two-point far bound and all original flag-length tails are supplied. Attack the remaining zero-Gram local orbital-operator bound and global near-return sums, retain finite-column and rank factors, then identify the same arithmetic chains with the final normalized period maps and trace errors.
 1. W10: use the supplied upper bound and entire integral cusp frame. Construct the original thin-region theta lower bound with its harmonic jets and exact scale, then establish the prescribed point-height comparison and numerical section remainder.
 1. W02/W11: assemble compatible signed arithmetic budgets at every required fourth-power sample, with all accuracy parameters fixed before the windows grow.
 

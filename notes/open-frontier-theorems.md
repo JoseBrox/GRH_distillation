@@ -161,7 +161,9 @@ The [finite-end transfer](selmer-support-continuation-finite-end.md) supplies ex
 
 The [auxiliary arithmetic frame](selmer-support-continuation-auxiliary-tower.md) is now constructed for both original character families. It supplies the exact fields, Galois quotient, two strict classes, local degrees, relative cohomology inequality and seed. The class-rank bound is fixed before the cyclotomic height; it is not uniform in a changing base field.
 
-**First missing construction.** Prove finiteness of the entire original integral weight-zero ring from this frame and the finite-end theorem, complete two-sided global rigidity, then discharge the moving-family integral Selmer budget. Nilpotents and integral torsion remain part of these requirements; support coverage gives no uniform nilpotence exponent.
+The [integral finiteness theorem](selmer-support-continuation-integral-finiteness.md) now proves the full original weight-zero algebra finite over the coefficient ring for every original local/global model pair. Integral spectral projectors for the original decomposition-group element and specialization on each selected component retain the ordered local characters, including at the coefficient prime three. Weight-zero projection keeps the entire original global equation quotient, including nilpotents and torsion.
+
+**First missing construction.** Complete two-sided characteristic-zero global rigidity, then discharge the moving-family integral Selmer budget. The new finiteness proof gives no effective nilpotence exponent or uniform integral conormal length.
 
 ## W06: the integral theta construction
 
@@ -318,6 +320,8 @@ the final restricted arithmetic chain and its scalar class-kernel
 dictionary, retaining every further target projection. Prove the uniform
 positive trace deficit/excess bounds for these same maps. In particular
 the near-return contributions and finite-column sums must be controlled as the field grows. The far-return weighted double integral is now exponentially small at the literal source cutoff and with the actual period normalizers; its identification with the final Gram operator is still required.
+
+The [all-length tail theorem](global-gram-continuation-length-tail.md) now supplies the original simultaneous tail estimate for every flag length and its inverse, with the same Bessel coefficient, local character, quotient measure and moment range. Its constants have the original quantifier order. The next near-return requirement is the exact local zero-Gram orbital-operator bound and its global sum; generic returns and final trace comparisons remain separate.
 
 ## W10: the exact integral geometric supplier
 

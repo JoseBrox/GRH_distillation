@@ -367,15 +367,16 @@ the relevant character phase depends on their difference and is unchanged.
 
 1. **Integral Selmer estimate.** Use the [constructed auxiliary arithmetic
    frame](../../notes/selmer-support-continuation-auxiliary-tower.md) and
-   common-subgroup finite-end theorem to prove finiteness of the entire
-   original weight-zero ring, preserving nilpotents and integral torsion.
-   Establish two-sided global rigidity and the uniform weighted product
+   common-subgroup finite-end theorem. The [entire original weight-zero
+   algebra is now finite](../../notes/selmer-support-continuation-integral-finiteness.md),
+   preserving nilpotents and integral torsion. Establish two-sided global rigidity and the uniform weighted product
    of Selmer orders on the growing fields. The four surviving characters
    do not bound the auxiliary degrees or conormal lengths.
 2. **The same global period maps.** The [actual two-point far-return
    bound](../../notes/global-gram-continuation-two-point-far.md) is now
    exponentially small at the original cutoff. Prove the nongeneric
-   near-return diagonal and generic orbital estimates, sum the actual
+   near-return diagonal and generic orbital estimates, using the proved
+   [tails for every flag length](../../notes/global-gram-continuation-length-tail.md). Sum the actual
    finite columns, and identify the integral theta chain with the final
    restricted, normalized maps. Bound their prescribed source-deficit
    and target-excess traces with all phase and rank factors retained.

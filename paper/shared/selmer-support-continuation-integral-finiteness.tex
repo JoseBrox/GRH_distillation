@@ -1,0 +1,339 @@
+\subsection{Integral finiteness of the actual weight-zero algebra}
+\label{sec:support-integral-finiteness}
+
+The preceding finite-end theorem controls characteristic-$\ell$ curves.
+This is enough to prove the required integral finiteness, including the
+part of the deformation ring killed by powers of $\ell$.  We first
+explain why the original local ordinary condition survives passage to
+such a curve.  Throughout, $\mathcal O$ is a complete discrete valuation
+ring of mixed characteristic $(0,\ell)$, $\ell\ne2$, with finite residue
+field $k$ and uniformizer $\pi$.  Write $E=\operatorname{Frac}(\mathcal O)$.
+
+\begin{lemma}[Specialization of the ordered ordinary flag]
+\label{lem:support-integral-ordinary-flag}
+Let $R$ be the original universal local deformation ring.  Its residual
+representation is $\operatorname{diag}(\psi,1,\psi^{-1})$.  Let $I_t$ be
+the intersection of the selected minimal primes of the radical of the
+ordinary ideal saturated by the original element $\delta$.  Each selected
+prime is contained in the kernel of the base point $R\to\mathcal O$.
+Retain the original local character $\Psi$, the inertia group $I$, and
+the multiplier-one subgroup $G^0$.  The quadratic character $\eta$
+is unramified at $\ell$, so $I\subseteq G^0$.  The original character has $\Psi|_I=\varepsilon^e\tau$, with
+$e\ge1$ and $\tau$ of finite order.  The original normalizing
+element has the form $\delta=\ell\delta_0\delta_1$, where
+$\delta_0,\delta_1$ are conjugation-invariant trace expressions.
+Suppose $x\in G^0$ is in the local decomposition group and satisfies
+$\overline\Psi(x)^2\ne1$.  The element $x$ need not belong to inertia.
+These are the local conditions of the constructed datum\cite{integral-finiteness-source}.
+
+Every local map $R/I_t\to A$, where $A$ is a complete local domain,
+gives an ordinary representation over that same $A$: there is
+$h\in1+\mathfrak m_A M_3(A)$ for which the multiplier-one matrices
+are upper triangular and the ordered inertia characters are exactly
+$\Psi,1,\Psi^{-1}$, mapped to $A$.  This includes characteristic
+$\ell$ domains.
+\end{lemma}
+
+\begin{proof}
+Here is the field-point argument, retaining the finite inertial
+characters.  Put $H=I\cap\ker\eta\cap\ker\tau$, where $\tau$ is the
+original finite local character.  This is normal in $G^0$.  The ordinary
+ideal imposes, for all $s_i\in H$, the characteristic polynomials and
+ordered products
+\[
+ \operatorname{charpol}(r(s))=
+       \prod_{i=0}^2(X-\Psi(s)^{1-i}),\qquad
+ \prod_{i=0}^2\bigl(r(s_i)-\Psi(s_i)^{1-i}I_3\bigr)=0.
+                                                               \tag{IF1}
+\]
+The displayed order is part of the equations.  Its saturation contains
+these equations.  No minimal prime of that saturation's radical
+contains $\delta$: multiplication by $\delta$ is injective on the
+quotient by the saturation, and also on its reduced quotient.
+Since $\ell$ divides $\delta$, every selected component has
+characteristic zero.
+
+Fix a selected prime $P$ and set $D=R/P$, $L=\operatorname{Frac}(D)$.
+Choose the original $t\in H$ for which $\Psi(t)$ has infinite order.
+Its three prescribed eigenvalues are distinct.  Diagonalize $r(t)$ in
+that order.  In (IF1), substitute successively $(s,t,t)$, $(t,s,t)$ and
+$(t,t,s)$.  The first product fixes the first column, the last fixes
+the last row, and the middle product fixes the middle diagonal entry.
+Thus the matrices for $H$ are upper triangular with diagonal
+$\Psi,1,\Psi^{-1}$.  The first common eigenspace and the kernel of the
+last common eigenfunctional are unique.  Normality of $H$ and
+conjugation invariance of its three characters make this ordered flag
+$G^0$-stable.  Denote its three characters by $\kappa_i$.
+
+We must still identify them on the full inertia group.  If $s\in I$,
+some $s^n$ belongs to $H$.  Every eigenvalue of $r(s)$ is therefore
+algebraic over $E$, and so is every coefficient of its characteristic
+polynomial.  The base point gives $D\to\mathcal O$; localize
+$D[1/\pi]$ at the kernel of the resulting map to $E$.  In this local
+domain an element algebraic over $E$ and congruent to $a\in E$ is
+equal to $a$: a nonzero algebraic element over a field is a unit,
+whereas its difference from $a$ belongs to the maximal ideal.
+Applying this observation coefficient by coefficient gives
+\[
+ \operatorname{charpol}(r(s))=
+          (X-\Psi(s))(X-1)(X-\Psi(s)^{-1})\qquad(s\in I).
+                                                               \tag{IF2}
+\]
+Apply the trace identity in (IF2) to $s,st,st^2$.  The resulting
+Vandermonde matrix on $\Psi(t),1,\Psi(t)^{-1}$ is invertible.
+Consequently $\kappa_i(s)=\Psi(s)^{1-i}$ for every $s\in I$.
+
+The decomposition-group mark is sufficient to make this flag
+integral; it need not be an inertia element.  Over the complete local
+ring $R$, Hensel's lemma factors the characteristic polynomial of
+$r(x)$ into distinct linear factors with roots $\alpha_i\in R$,
+uniquely ordered by
+$\overline\alpha_i=\overline\Psi(x)^{1-i}$.  Their differences are
+units.  The spectral idempotents
+\[
+ e_i=\prod_{j\ne i}
+               \frac{r(x)-\alpha_j I_3}{\alpha_i-\alpha_j}
+                                                               \tag{IF3}
+\]
+belong to $M_3(R)$ and reduce to the three coordinate projectors.
+The vectors $e_i\mathbf e_i$, rescaled to have $i$th coordinate one,
+form a matrix $h\equiv I_3\pmod{\mathfrak m_R}$.  At the base point
+these projectors are exactly the coordinate projectors and $h=I_3$.
+
+On a selected component $D=R/P$, the generic ordered flag already
+constructed is $x$-stable.  Since $r(x)$ has three distinct
+eigenvalues, this flag is the flag of the columns of $h$ in one
+of their six possible orders.  Each of these six flags is defined
+over $D$.  Its $G^0$-stability and the prescribed scalar action of
+inertia on its quotients are closed matrix equations.  They hold
+over $\operatorname{Frac}(D)$ and hence over $D$.  Specialize along
+the original map $D\to\mathcal O$ and then to $E$.  At that base
+point the three inertia characters $\Psi,1,\Psi^{-1}$ are distinct,
+because $\Psi(t)$ has infinite order.  Their ordered flag is unique,
+so the permutation must be the identity.  This also explains
+directly the role of selecting components through the base point.
+
+It follows that the lower-triangular entries of $h^{-1}r(g)h$, and
+the differences between its inertia diagonal and
+$\Psi,1,\Psi^{-1}$, belong to every selected $P$.  They therefore
+vanish modulo $I_t$.  Mapping this same matrix $h$ to $A$ proves
+the assertion.  No residual inertia distinctness is used, and the
+argument remains valid when $\ell=3$; indeed it also works for
+non-domain local targets of $R/I_t$.
+\end{proof}
+
+\begin{lemma}[Global triangularity in characteristic $\ell$]
+\label{lem:support-integral-global-triangularity}
+Let $A$ be a local domain containing $k$, and let $r$ be an original
+normalized rank-three representation over $A$ with residual diagonal
+characters $\psi,1,\psi^{-1}$.  Suppose that on a finite-index subgroup
+its multiplier-one characteristic polynomials equal those of the base
+representation.  Then all its diagonal entries equal the corresponding
+base entries, and it is globally upper triangular or globally lower
+triangular, in the original coordinate ordering.
+\end{lemma}
+
+\begin{proof}
+Write $G^0=\ker\eta$.  For $g\in G^0$, some positive power $g^n$
+belongs to the given subgroup.  The eigenvalues of $r(g)^n$ are
+algebraic over $k$, so the eigenvalues of $r(g)$ and its characteristic
+polynomial coefficients are algebraic over $k$.  Reduction gives
+their prescribed constants in $k$.  The local-domain observation
+used above, now over $k$, proves
+\[
+ \operatorname{charpol}(r(g))=(X-\psi(g))(X-1)(X-\psi(g)^{-1})
+                 \qquad(g\in G^0).                           \tag{IF4}
+\]
+
+Work temporarily over $F=\operatorname{Frac}(A)$.  Write $c$ and
+$g_1$ for the original marks and $g^*=cg^{-1}c$.  Let $J$ be the
+anti-diagonal matrix with anti-diagonal entries one.  Polarization and
+the original normalization give
+\[
+ r(g^*)=Jr(g)^{\mathsf t}J,\qquad
+ r(g_1)-r(g_1^*)=\operatorname{diag}(\zeta,0,-\zeta).
+                                                               \tag{IF5}
+\]
+The residue of $\zeta$ is $\psi(g_1)-\psi(g_1)^{-1}\ne0$.
+The three diagonal eigenvalues in (IF5) are therefore distinct.
+Their coordinate projectors belong to the algebra generated by
+$r(G^0)$.
+
+We record an elementary replacement for a semisimplification argument.
+If this representation were irreducible, those projectors and the
+nonzero matrix entries would generate all of $M_3(F)$.  Indeed a
+nonzero $(i,j)$ entry supplies the matrix unit $E_{ij}$ by multiplying
+on either side by projectors.  A failure to reach every vertex from
+every other vertex gives a proper invariant coordinate subspace;
+otherwise products give all the matrix units.  Form the algebra
+spanned by
+\[
+       \bigl(r(g),\psi(g),1,\psi(g)^{-1}\bigr)
+                  \quad(g\in G^0)
+          \quad\hbox{in }M_3(F)\times F^3.
+\]
+The image in $M_3(F)$ of the kernel of its projection to $F^3$ is a
+two-sided ideal.  It cannot be zero, since that would make $M_3(F)$
+commutative.  It is therefore all of $M_3(F)$.  But the trace equality
+from (IF4), extended linearly, would then give
+$\operatorname{tr}(E_{00})=0$, a contradiction.  This proof is valid
+also when $\ell=3$.
+
+There is consequently a proper invariant subspace.  Since it is
+stable under the diagonal matrix in (IF5), it is a coordinate
+subspace.  The symmetry of vanishing entries in (IF5) is
+$(i,j)\leftrightarrow(2-j,2-i)$.  A subspace on coordinates
+$\{0\}$ or $\{0,1\}$ makes all matrices upper triangular; one
+on $\{2\}$ or $\{1,2\}$ makes them lower triangular.  The two
+remaining cases, $\{1\}$ and $\{0,2\}$, force all four entries
+joining the middle coordinate to the outer two to vanish.
+In that case the middle diagonal entry is an eigenvalue, is algebraic
+over $k$ by (IF4), and reduces to one, so is one.  The outer
+two-dimensional representation has characteristic polynomial
+$(X-\psi(g))(X-\psi(g)^{-1})$.  The same matrix-algebra argument,
+using $\operatorname{diag}(\zeta,-\zeta)$, makes it reducible.
+Its invariant coordinate line makes the full representation upper
+or lower triangular.  All these zero entries descend from $F$ to $A$.
+
+Each diagonal entry of a triangular matrix in (IF4) is algebraic over
+$k$ and reduces to its prescribed base value, so equals that value.
+Finally $r(c)$ has matrix part one.  Multiplication by $c$ transfers
+all these assertions from $G^0$ to its other coset.
+\end{proof}
+
+\begin{proposition}[Finiteness from characteristic-$\ell$ curves]
+\label{prop:support-integral-finiteness-criterion}
+Give the variables of $P=\mathcal O[[z_1,\ldots,z_d]]$ integer
+weights $w_i$.  Let $J\subset P$ be an ideal stable under taking
+weight components, and put $S=P/J$.  Let $S_0$ be the image of the
+weight-zero formal series.  Assume that every local homomorphism
+$f:S\to A$ to a complete discrete valuation ring of characteristic
+$\ell$ with finite residue field satisfies
+\[
+ f(z_i)=0\quad(w_i=0),\qquad
+ \bigl[f(z_i)=0\text{ for all }w_i>0\bigr]\quad\hbox{or}\quad
+ \bigl[f(z_i)=0\text{ for all }w_i<0\bigr].             \tag{IF6}
+\]
+Then $S_0$ is finite as an $\mathcal O$-module.  No reducedness or
+$\mathcal O$-flatness hypothesis on $S$ is required.
+\end{proposition}
+
+\begin{proof}
+The monoid $\{a\in\mathbb N^d:\sum_iw_i a_i=0\}$ is finitely
+generated.  For completeness, its nonzero elements minimal under
+coordinatewise comparison form a finite set by Dickson's lemma;
+subtracting one such element and inducting on total degree proves
+generation.  Let $b_1,\ldots,b_s$ be the corresponding nonconstant
+monomials.  Every weight-zero formal series is a formal series in
+these monomials.  This substitution converges: if $D$ is the largest
+total degree of a chosen generator, a monomial of total degree $n$
+uses at least $n/D$ generators.  Conversely every generator has
+positive degree.  Thus the two adic filtrations are cofinal.
+Consequently $S_0$ is a complete Noetherian local quotient of
+$\mathcal O[[u_1,\ldots,u_s]]$, with maximal ideal generated by
+$\pi,b_1,\ldots,b_s$.  When $s=0$ the conclusion is immediate.
+
+We claim that every $b_j$ belongs to $\sqrt{\pi S}$.  Otherwise
+choose a prime $Q\supseteq\pi S$ avoiding $b_j$.  In the complete
+local domain $D'=S/Q$, the image $b$ of $b_j$ is nonzero and is a
+nonunit.  Extend $b$ to a system of parameters.  Among the minimal
+primes of the ideal generated by the other parameters, one avoids
+$b$: otherwise that ideal would be primary to the maximal ideal,
+contrary to the height theorem.  Quotient by such a prime.  Its
+radical after adjoining $b$ is maximal, so the principal ideal
+theorem shows that the resulting complete local domain has
+dimension one.
+
+A complete Noetherian local ring is excellent; normalization of this
+one-dimensional domain is therefore finite\cite{integral-finiteness-stacks}.  It is a complete local
+discrete valuation ring $A$ with finite residue field.  Equivalently,
+one may take a local factor of the finite normalization; completeness
+and the domain condition leave just one factor.  The composite
+$S\to A$ is local, has characteristic $\ell$, and does not kill
+$b_j$.  However a nonconstant monomial of total weight zero either
+uses a weight-zero variable or uses variables of both signs.  Equation
+(IF6) makes its image zero.  This contradiction proves the claim.
+
+The weight-zero projection on $P$ is $\mathcal O$-linear and
+preserves $J$.  It therefore gives an $S_0$-linear projection
+$S\to S_0$ and proves the exact contraction
+\[
+                  (\pi S)\cap S_0=\pi S_0.             \tag{IF7}
+\]
+In particular, from $b_j^{n_j}\in\pi S$ we obtain
+$b_j^{n_j}\in\pi S_0$, even when $S$ has $\pi$-torsion.
+Thus $\mathfrak m_{S_0}\subseteq\sqrt{\pi S_0}$, and finite
+generation gives $\mathfrak m_{S_0}^N\subseteq\pi S_0$ for some
+$N$.  The quotient $S_0/\pi S_0$ has finite length over $k$.
+The two adic topologies are now equivalent, so $S_0$ is also
+$\pi$-adically complete.  Lifting a finite $k$-basis of its
+quotient and successive $\pi$-adic approximation proves that these
+lifts generate $S_0$ over $\mathcal O$.
+\end{proof}
+
+\begin{theorem}[The original integral finiteness assertion]
+\label{thm:support-actual-integral-finiteness}
+For each original admissible rank-three datum and its marks supplied
+by the actual auxiliary-frame construction, let $U$ be any original
+universal local ring and $S$ any associated normalized universal global
+ring.  The $\mathcal O$-subalgebra of $S$ generated by weight-zero
+products of its original representation entries is finite over
+$\mathcal O$.  This is the literal assertion $\mathrm{FinA}$, with
+all its quantifiers over $U$ and $S$\cite{integral-finiteness-source}.
+\end{theorem}
+
+\begin{proof}
+Let $S$ be that global ring.  Its representation entries determine
+maps out of $S$ by its universal property.  Their displacements from
+the residual diagonal lift therefore generate the relative
+cotangent space.  Choose finitely many of them, giving a surjection
+$\mathcal O[[z_1,\ldots,z_d]]\to S$.  Conjugation by
+$\operatorname{diag}(t,1,t^{-1})$ preserves the original normalizing,
+away-from-$\ell$, and local component conditions.  For the last
+condition use $t=1+T$.  The universal local representation gives an
+automorphism of $R[[T]]$ fixing $T$ and reducing to the identity at
+$T=0$.  The ordinary matrix equations are conjugated, while the traces
+defining $\delta$ are unchanged.  Thus it preserves the saturated
+ordinary ideal and its radical.  The minimal primes of the extended
+radical are precisely $P[[T]]$ for its finitely many original minimal
+primes $P$.  They are permuted by the automorphism; reduction at
+$T=0$ shows that each is fixed.  The base representation is fixed as
+well.  In particular the intersection defining $I_t$ is preserved.
+
+Assign each chosen entry displacement its original matrix weight.
+The kernel $J$ of the presentation is stable under weight components.
+One can check this integrally using the universal unit $t=1+T$:
+modulo any power of $\mathfrak m_S$, a relation has only finitely
+many relevant weights, and its conjugates give a Laurent polynomial
+in $1+T$ with those weight components as coefficients.  Substitution
+$t\mapsto1+T$ is injective on Laurent polynomials over any ring.
+Thus each component vanishes modulo every power of $\mathfrak m_S$,
+and completeness proves the assertion.  The same argument gives
+every unchosen entry its original weight.
+
+Now let $f:S\to A$ be any curve tested in
+Proposition~\ref{prop:support-integral-finiteness-criterion}.
+Normalization and the original away-from-$\ell$ inertia equations
+survive this local map.  Adic continuity follows by reduction modulo
+powers of $\mathfrak m_A$.  Lemma~\ref{lem:support-integral-ordinary-flag}
+supplies exactly the remaining ordered local condition, over $A$
+itself.  This is therefore an original ordinary point.  The actual
+auxiliary frame, finite-point theorem and
+Theorem~\ref{thm:support-finite-end} give the base characteristic
+polynomials on one finite-index subgroup chosen before $A$ and $f$.
+Lemma~\ref{lem:support-integral-global-triangularity} now gives
+(IF6).  The criterion proves that $S_0$ is finite over $\mathcal O$.
+
+Every weight-zero product of original matrix entries belongs to
+$S_0$.  The literal algebra in $\mathrm{FinA}$ is consequently an
+$\mathcal O$-submodule of this finite module.  Since $\mathcal O$
+is Noetherian, it too is finite.  This argument has used the original
+global equation quotient throughout; it has not inverted $\pi$ or
+discarded torsion from that quotient.
+\end{proof}
+
+Finiteness supplies an exponent for each fixed arithmetic datum.  The
+proof does not bound that exponent, the length of the integral
+augmentation conormal module, or their growth as the original fields,
+characters and primes vary.  These quantitative requirements and
+characteristic-zero two-sided global rigidity remain separate.
