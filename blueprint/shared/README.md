@@ -192,3 +192,11 @@ adjacent shift. The proof works on the actual invariant Jacquet image
 and includes degenerate old forms. The common Haar constant cancels
 without changing the measures. The complete partial-head Fourier
 transfer and arithmetic return sum remain open.
+
+The [polarized coefficient-model theorem](../../notes/selmer-integral-frontier-polarized-model.md)
+constructs the actual original `URep/S6` at every supplied normalized
+curve. Self-adjoint matrix units give a commutative even--odd coefficient
+algebra; the full determinant, exact closed equation ideal, residual
+radical and annihilator torsion are retained. The exact nonsemisimple-prime
+and original finite-lattice continuity fields are proved. Tangent lifting,
+patched support, a nonzero seed and the numerical Selmer budget remain.

@@ -96,9 +96,14 @@ conductor over the original coefficient ring; their full restriction-of-scalars
 rank cost is retained. The actual Taylor--Wiles auxiliary modules and
 both integral comparison maps now supply the full original `TWAut`
 contract for each given arithmetic realization, with the exact source
-multiplier and uniform exponent n!.
+multiplier and uniform exponent n!. The actual polarized coefficient
+model now supplies every original `URep/S6` field at each supplied
+normalized curve. Its exact original closed ideal and entire residual
+radical are retained; its annihilator-prime implication gives no uniform
+annihilator exponent.
 
-**First missing construction.** Construct the marked deformation
+**First missing construction.** Complete the tangent and second-order
+lifting interface for this model. Construct the global marked deformation
 models and prove patched support on these very modules with the required
 dimension. Propagation must retain the entire characteristic-prime fibre
 and the actual two-sided rigidity. Neither qualitative finiteness,

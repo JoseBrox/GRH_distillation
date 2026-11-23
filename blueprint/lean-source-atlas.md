@@ -220,3 +220,11 @@ signed determinant corrections. Its
 checks all-word order, invariant Jacquet domains and degenerate forms;
 it also preserves a separate exact group-algebra order check. Finite
 tests supplement the all-word proof and do not assert a global norm bound.
+
+The [polarized-model certificate](../certificates/selmer-integral-frontier-polarized-model.json)
+authenticates the exact `URep`, `Hat.ker`, `OoPt.ker` and `chBar`
+interfaces. Its [independent review](../certificates/selmer-integral-frontier-polarized-model-review.json)
+checks the distinction between the relation generators, their original
+closure, and the algebraic span after coefficient-curve completion.
+The full determinant is verified by the primary cycle formula in arbitrary
+odd residue characteristic. No radical or torsion is discarded.

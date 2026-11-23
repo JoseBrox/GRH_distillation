@@ -90,6 +90,12 @@ without dividing by a spherical index. The local Jacquet dimension gives
 the uniform exponent n!, retaining global multiplicities. The completed
 ordered-root factor and full coefficient-ring linearity are verified.
 
+The [polarized coefficient-model theorem](selmer-integral-frontier-polarized-model.md)
+constructs every original `URep/S6` field at a supplied normalized curve.
+It retains the full determinant, closed equation ideal, residual radical
+and annihilator torsion. The actual identity polarization supplies the
+commutative even--odd algebra without a coefficient-field enlargement.
+
 Both finite-level cohomological bounds and their exact limiting
 comparison are proved. The next arithmetic requirements are the actual
 marked deformation models, patched support,

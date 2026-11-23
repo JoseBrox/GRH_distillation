@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "classification": "closed actual URep/S6 model-construction subobligation inside W04",
+  "claim": "The original polarized closed Cayley-Hamilton equation algebra at every supplied normalized coefficient curve admits the exact finite commutative even-odd coefficient model with all URep fields.",
+  "verification_kind": "Authenticated pinned fields and primary theorems; exact algebra controls; the all-rank standard mathematical construction is in the note.",
+  "quantifiers": [
+    "Every original OoPt datum and normalized one- or two-block curve; every odd residue characteristic.",
+    "Original B, completion at ker(f), residue field k((t)), coefficient map, polarization and complete equation ideal.",
+    "Every prime Q and every coefficient-field witness to the source NonSS condition.",
+    "All original group elements, all levels of the B-adic continuity condition, and all allowed coefficient extensions in the determinant law."
+  ],
+  "decisive_interfaces": {
+    "finite_actual_equation_algebra": "Wang-Erickson Prop.3.6; finite H1 follows from the original topologically finitely generated group. The dense image of B[G] is closed because it is a submodule of a finite B-module, hence surjective. Its kernel is the intersection of the finite-level relation ideals, exactly P.ker=D.chBar(P.gens).",
+    "exact_base_change_kernel": "P.gens=pairGens union qGens differs from P.ker, the already-closed original ideal. HatEx 43-77 passes P.ker to Hat; right exactness gives the literal algebraic two-sided span of its image over Bhat. No further closure or saturation is introduced.",
+    "determinant_not_trace_only": "The residual multiplicity-free GMA has primitive trace-one corners; trace-radical relation ideals have zero primitive diagonal corners. Every determinant cycle containing such a relation vanishes, after arbitrary base change.",
+    "curve_residue": "The coefficient field and the specified element mapping to t make f surjective; completion has residue exactly k((t)).",
+    "polarization": "NP.form is the identity symmetric form, so star reduces to transpose on each block. Self-adjoint idempotents and transpose-compatible matrix units lift using only 2 invertible and square roots of 1+m units.",
+    "commutative_product": "mn*=b(m,n)e; star makes b symmetric; cyclic trace gives n*m=b(m,n)f; associativity gives b(m,n)p=b(n,p)m.",
+    "odd_square": "Cross corners vanish in the prescribed semisimple residual quotient, so b(N,N) lies in the maximal ideal. The full special fibre may retain a nilpotent radical and N/mN.",
+    "torsion": "A=R direct_sum N; no reduction, saturation or torsion-free quotient. Ann(N) is retained.",
+    "nonsemisimple_prime": "If Ann(N) is not contained in Q, then N becomes zero over every field of kernel Q and the exact original equation quotient is a product of matrix algebras.",
+    "continuity": "The image of the finite original B-algebra E0 is the required finite B-lattice, stable under multiplication by every group image.",
+    "next_support_dimension": "After adjoining the curve variable the completed weight ring has dimension 1+D; regular diamond directions give 1+D+nq when the patched module is supplied. Rank zero has empty support."
+  },
+  "limitations": [
+    "This is the actual local polarized model at a supplied coefficient curve, not yet the full normalized global marked deformation model.",
+    "The complete tangent/presentation interface, localized patched support and characteristic-prime component propagation remain separate.",
+    "No nonzero automorphic seed, two-sided marked-model rigidity or moving-family integral Selmer budget is inferred.",
+    "No whole proof-map node or Lean project build is certified."
+  ],
+  "exact_checks": {
+    "status": "PASS",
+    "torsion_model": {
+      "R": "Z/27",
+      "N": "Z/9",
+      "pairing": "b(m,n)=3mn modulo 27",
+      "checked_triples": 729,
+      "annihilator_N": [
+        0,
+        9,
+        18
+      ],
+      "scope": "The coefficient algebra is commutative and associative, N^2 is in the maximal ideal, and N retains nonzero annihilator torsion."
+    },
+    "negative_controls": [
+      "A symmetric dot pairing on F3^2 fails b(m,n)p=b(n,p)m, so symmetry alone would not prove associativity.",
+      "An alternating 2x2 polarization swaps the two primitive idempotents; the source's identity polarization, reducing to transpose on each block, is essential."
+    ],
+    "Newton_defect": "(new^2-new)=(x^2-x)^2/(2x-1)^2",
+    "scope": "Exact finite and rational-polynomial checks supplement the all-rank construction; they do not verify Galois arithmetic, a Lean build or patched propagation."
+  },
+  "primary_references": [
+    {
+      "file": "chenevier-determinants.pdf",
+      "url": "https://arxiv.org/pdf/0809.0415",
+      "sha256": "f3c0e0d86e803301c617d3023d425752e30da46673ed5af932647eb284286953",
+      "reviewed": "Theorem 2.22 and its proof, printed pp.34-35; rank-one Cayley-Hamilton corners and multiplicity-free split residual algebra.",
+      "use": "Generalized matrix algebra over the original complete local curve ring, with no perfect residue-field, flatness, or ell>n assumption.",
+      "bytes": 692658,
+      "local_hash_verified": true
+    },
+    {
+      "file": "wang-erickson-algfam.pdf",
+      "url": "https://arxiv.org/pdf/1501.05629",
+      "sha256": "cd2f131fce547c5d9fd873751417683e904d2075b064531ddc1f5e2c13df7382",
+      "reviewed": "Proposition 2.23 and Theorem 2.27, author pp.15-18; Proposition 3.6, pp.21-22.",
+      "use": "Full canonical determinant in arbitrary characteristic, and finiteness/continuity of the actual Cayley-Hamilton algebra under finite H1. No Hodge-locus quotient or saturation is used.",
+      "bytes": 778358,
+      "local_hash_verified": true
+    }
+  ],
+  "sources": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/WeilGroupCharacters/UniversalOrdinaryDeterminantRing.lean",
+      "git_blob_sha1": "65ce51224af6634182dda7b48716e73279990d15",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.WeilGroupCharacters.UniversalOrdinaryDeterminantRing",
+      "sha256": "b12275f242e0616546ead3569b88ed86fb245901849b470c1caf77c7b3c033d0",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 80,
+          "end": 146,
+          "sha256": "b989e8153e940c4d675009caad64de0741eaf5878c02b8d573985ad1cf9005a0"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/PairedDualFirstOrderDualMatrixSpace.lean",
+      "git_blob_sha1": "83f8696963709ecaa3ea73e3d62e414f309b9a66",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PairedDualFirstOrderDualMatrixSpace",
+      "sha256": "2b3a062361caa5676d914456dd8fb20d52cf83b9ab464d8f8ff14a1663abe1b7",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 70,
+          "end": 98,
+          "sha256": "1739d361ee04e56d271a8cc986627f838d4d82497b58a0542978f46c82fd487f"
+        },
+        {
+          "start": 251,
+          "end": 315,
+          "sha256": "b268d09e0e640346e1b6f688a6f132e3de5bf30a0bd03569cd414ae05bc70971"
+        },
+        {
+          "start": 352,
+          "end": 368,
+          "sha256": "dda1d0473271443601605c4339fe25fd6fdaf259b6887a2d6d616f1de88ce887"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/ThetaCoefficientMapEq.lean",
+      "git_blob_sha1": "948482f25d014b95ecf474745031014e97996a00",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ThetaCoefficientMapEq",
+      "sha256": "47ad94ae8810970b4fdcf4e4cb9e22c31365a91a260ed3c7ba3ee02849daa9e8",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 125,
+          "end": 143,
+          "sha256": "a6ceac2f3774360d8824c34f7d4b7e3fd8147d1321d06042b18a1c6e014dfd41"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/PatchedSupportCompletions.lean",
+      "git_blob_sha1": "1c247eb1556e13ecf8d24d6b96f1995f45248465",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PatchedSupportCompletions",
+      "sha256": "e0b279fba4124f970ef8c4e78912dbb2f0950e14d836b9c57779085b7c51a354",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 23,
+          "end": 70,
+          "sha256": "0a0808ba6f6bca990f5c49e090c0aaa17744f08c778e44bcf64c246399e37931"
+        },
+        {
+          "start": 72,
+          "end": 157,
+          "sha256": "0bcffb10e055d8651a34c85dd0b9615d2980b4613f38b39fbbdc0306194ba497"
+        },
+        {
+          "start": 179,
+          "end": 205,
+          "sha256": "845ad01e0548518845387047e90c4a106d3b3ad936d3491bf4d0677c47e36226"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/ClosureConjugation/GrAlg.lean",
+      "git_blob_sha1": "4bdf522c82bdbea0d301dd98ced176c46aea5366",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ClosureConjugation.GrAlg",
+      "sha256": "6e69ee37494001faa1d09bea64634d9a34bd3e44e05d9f993a1430f6e38f06ea",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 13,
+          "end": 73,
+          "sha256": "c49c3f5c7050580efc03ca71033b2afcfcb40a153086c9ba1f6d9407fbf40ed4"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/ClosureConjugation/HatEx.lean",
+      "git_blob_sha1": "b95269daf92628c83dc64cd060ea4e7145dba990",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ClosureConjugation.HatEx",
+      "sha256": "c7e0e10d801a7cc7d2de4edf4a85d636b19661cba5d11ef1759c75657707a54b",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 43,
+          "end": 118,
+          "sha256": "cf8ae0f1cfd187a3064f8a5ca6407c8bf938c6ed2fd756432682e662a902a907"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/ClosureConjugation/PairMf.lean",
+      "git_blob_sha1": "4c78ef8386743429aa7351a9a10d3b8c33b630a0",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ClosureConjugation.PairMf",
+      "sha256": "04c7a261371504fff27d9bb89294095274d4ecf24c2c8992ffa15799df9d4361",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 7,
+          "end": 38,
+          "sha256": "63682e9602a919e61c11d1d840dfcc0b849f90f46f438b42bef7ab2e2a884853"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/ClosureConjugation/GrDet.lean",
+      "git_blob_sha1": "0b4e9d96de51e2daf33561c1ec7c70277006baef",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ClosureConjugation.GrDet",
+      "sha256": "53aca16896fbb3915dbe3288c432e654f8c76d87a85ab320131ead050d001bd0",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 7,
+          "end": 46,
+          "sha256": "8a8396d2e0cf267ed55b0d0a24d6f0dedf1a86e7ec127386d2ae95b330b56770"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/ClosureConjugation/GrThick.lean",
+      "git_blob_sha1": "45f07774f5fbe8cf984f709b743df07f8affac8b",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ClosureConjugation.GrThick",
+      "sha256": "f26f3c89ef455cc9a9c931b457d30d49ee158e7414f87d38252238839428c4dd",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 6,
+          "end": 85,
+          "sha256": "7ace5c808aac4b7e328d36f43417215419f18edf47459473134b87943388ba7f"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/ClosureConjugation/UrepOf.lean",
+      "git_blob_sha1": "486da3f3f1b4bf1ddc87dfaaa47eb59c88217ee7",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.ClosureConjugation.UrepOf",
+      "sha256": "095ca954830a6937bb2600c4e5da59ed41d1e14d59bb4f51100f27382453a51f",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 8,
+          "end": 103,
+          "sha256": "22f3549a600c36647bd213f2f9d49f0b7985e15bc6c13793e8056a962560056f"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/AutomorphicDetection/S6.lean",
+      "git_blob_sha1": "021537f2d934b4a984629e60869cabada25ff627",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AutomorphicDetection.S6",
+      "sha256": "c0ea02babf1d3acca2958858074e733f6d041fe16719036c32c2563155901073",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 15,
+          "end": 55,
+          "sha256": "c7ac8107b8708b66862246764eccbf21dc7f8dba4adbe0418c0bd3815163fc88"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/AutomorphicDetection/GalOut.lean",
+      "git_blob_sha1": "7a1a9b75a5f4582f660f38cfed5f422b9347c6ba",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AutomorphicDetection.GalOut",
+      "sha256": "09a084ab848b8a4f1b019de442a266a763c3f318f79fe42bcd2df5c829af964b",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 16,
+          "end": 48,
+          "sha256": "d24ac6bce64da1fdb8e509be50fe9992486609a3c8c4a72e1c11413278d06c2f"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/SelmerScaling/DiscImp.lean",
+      "git_blob_sha1": "4982e1a7fe623980c03330e9ea49aef72c8b31cb",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.SelmerScaling.DiscImp",
+      "sha256": "fc52e7068687ff78c52515e39da28e9cab071299d81d3da259b2b9b4dc3d263e",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 1,
+          "end": 10,
+          "sha256": "fc52e7068687ff78c52515e39da28e9cab071299d81d3da259b2b9b4dc3d263e"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebraHeight/FinE.lean",
+      "git_blob_sha1": "a8df2e93c57f449b1a5bdee19cdf05332686de6c",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.CommutativeAlgebraHeight.FinE",
+      "sha256": "7c1f28e5396c5ea68085f3d71c6c7d01be741e56e0c7153d85980f94b568ebf7",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 7,
+          "end": 58,
+          "sha256": "ebf2230e83cb1278c1d485479ffb68e8b9d09b120886602fe9271c7bcfae6e7e"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebraHeight/OfDetToDet.lean",
+      "git_blob_sha1": "716ccf437332a2818396f12ae37354a6494bdfc6",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.CommutativeAlgebraHeight.OfDetToDet",
+      "sha256": "d43af07eaef2fd79c414f687fadc9d310ec1cd149e731216f4078354d42a35a9",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 219,
+          "end": 227,
+          "sha256": "15754c1aeda2f7d1451f17a628e0e32fd052cc72bd70a14c42c32a995f4e775d"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebraHeight/ClosureIdeal.lean",
+      "git_blob_sha1": "ce57880a195f946545994377d7a74771e9e4b001",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.CommutativeAlgebraHeight.ClosureIdeal",
+      "sha256": "84d1f80b2862c58ae02f41c84c4bdbc7897de7d17b18fdeabbca73ee3ff753c5",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 60,
+          "end": 77,
+          "sha256": "d2007a571fc98e2e2ddbcd91e4672aca08bfe8b82274846e8843f0d354be9022"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/AnnihilatorBaseChange/LaDimArith.lean",
+      "git_blob_sha1": "ab3cb1c831b2d620a708c6212e58dcc0dafa78a4",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AnnihilatorBaseChange.LaDimArith",
+      "sha256": "e6f7a4989898b75672b430a9deec9e00e15995fcb606e64a6cf51476b9022710",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 45,
+          "end": 73,
+          "sha256": "ee0fa997dde453dce145187129d5df4b6cb982e5a5cb2c188853166988ee5470"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/AnnihilatorBaseChange/PmDimQuot.lean",
+      "git_blob_sha1": "0af2ea79937ed40704899a8ef96f9a72e388efe2",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AnnihilatorBaseChange.PmDimQuot",
+      "sha256": "a175f0a289027db9c6842faf00c13d036b1941fb510ee5a517ff8f4dd5f528ef",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 74,
+          "end": 149,
+          "sha256": "d16ed030174f2ebd2678f7e5f66cd2ae767d16dc3a189de3292ec5da3bfbcb29"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-polarized-model.md",
+      "sha256": "3516f3d5f338130a73fac7dba2d3deaf28e3b09bc4d0355d9d61437eb31bbc9b"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-polarized-model.tex",
+      "sha256": "6c3f33405b88e7796a6bead232ab803e3c88ddd8a228616a78a5e23c43021999"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-polarized-model-references.tex",
+      "sha256": "50a49692d6fe25e7a76c7e9bb9910ed313b3dea9fde1f7ed1d012fc0864df395"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_polarized_model.py",
+      "sha256": "1bd571d6920119a3049dda1ab48859c20ae3ab65f8d7bf24f2dd51132f2f8f28"
+    }
+  ]
+}
