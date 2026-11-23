@@ -165,7 +165,7 @@ closes the full original `N0` and `N2` clauses. It constructs the fine
 Siegel scheme, finite transitions on one rational cone system, the
 auxiliary prime uniform in every admissible half-level, and the exact
 Siegel comparison including its intermediate finite unramified scheme.
-The remaining arithmetic `PartI` supplier is the formal-arc clause `N4`.
+The formal-arc theorem below supplies the remaining `PartI` clause.
 
 The [Taylor--Wiles theorem](../../notes/selmer-integral-frontier-taylor-wiles.md)
 closes the actual `TWAut` supplier for each original arithmetic
@@ -174,3 +174,12 @@ their uniform relation exponent is n!, with all global multiplicities
 retained. The original residual block, coefficient map and ordered-root
 completion are checked. No nonzero seed or patched-support conclusion
 is inferred from this construction.
+
+The [formal-arc theorem](../../notes/geometry-arithmetic-frontier-formal-arcs.md)
+closes the exact `N4` clause and completes the original arithmetic
+`PartI` construction together with the preceding suppliers. It retains
+the original positive period exponents, selected half-label, cusp
+filtration and primitive line. All-power theta expansions prove the
+required uniqueness, and the actual monomial chart algebras prove
+nonflat specialization. The good cover, numerical section and height
+estimates, and global norms remain distinct obligations.

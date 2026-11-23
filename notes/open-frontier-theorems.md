@@ -122,7 +122,7 @@ full `Model.N3` uniformization and torsion action, `PushInvertible`,
 and degree-one `SplitFibres`. Reached-section regularity has scalar one.
 Exact mixed pullback and all-place assembly give one original clearing
 integer once the remaining good cover and chart comparisons are supplied.
-The first missing inputs are the exact formal-arc/cover compatibility,
+The first missing inputs are the exact good-cover compatibility,
 theta spanning and the remaining divisibility laws for the same maps.
 A constructed integral theta section does not supply the global norm.
 
@@ -175,8 +175,8 @@ separate from every local norm identity.
 
 ## W10: the exact integral geometric supplier
 
-**Frontier theorem G.** Complete the remaining formal-arc and cover
-comparisons for the now-constructed original
+**Frontier theorem G.** Complete the remaining good-cover comparisons
+for the now-constructed original
 integral models. Identify their actual integral section lattices,
 heights and prescribed metrics, and construct the short spanning
 families and multiplication bounds required by the established
@@ -199,10 +199,14 @@ The coordinated finite level transitions and exact Siegel comparison
 now prove the original `N0` and full `N2`. The auxiliary prime is uniform
 over all admissible half-levels, using their original imaginary-quadratic
 descent condition.
+The full formal-arc clause `N4` is now proved, including arbitrary
+permitted evaluation maps and the original selected half-label. Thus
+the complete source `PartI` construction is supplied on the coordinated
+models, with its original coefficient fields and primitive lines.
 
-**First missing construction.** Complete the `Model.N4` formal-arc
-clause on the same fixed rational
-cone system. Then identify the actual geometric section and height
+**First missing construction.** Construct the original good cover and
+its precise field/component and integral-lattice comparisons. Identify
+the actual geometric section and height
 inputs and prove their numerical arithmetic remainder. The existing
 cusp, jet and signed-boundary lemmas are to be applied unchanged.
 

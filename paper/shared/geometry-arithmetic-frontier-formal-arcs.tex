@@ -1,0 +1,373 @@
+\section{The original formal arcs and their specialization}
+\label{sec:pel-formal-arcs}
+
+The remaining formal-arc clause prescribes the period factors, the
+torsion labels and the specialization map exactly.  Its input
+already says that every original period factor is a unit.  Thus
+the construction has one monodromy ray, including when the
+coefficient ring is itself a discrete valuation ring.
+
+\begin{theorem}[The exact original arc clause]
+\label{thm:pel-original-arcs}
+Every canonical local model constructed above satisfies the full
+source clause \texttt{N4}: the prescribed power-series arc exists
+uniquely, has exactly the prescribed abelian locus, realizes the
+original signed period and torsion formulas, and has the required
+specialization for every ring map in that clause.
+\end{theorem}
+
+Let $O'$ and $a$ be the source's \texttt{ArcIn} data.  Thus $O'$
+is a characteristic-zero field, with $\varpi=1$, or a complete
+discrete valuation ring with uniformizer $\varpi$.
+Write $B_0,\mathscr M_0,X,c_0,\psi^0,\tau^0$ for its original
+abelian and period data.  The nonzero lattice $X$ has the original
+$\mathcal O_E$-action.  The specified symmetric integral form
+$b$ is positive definite, adjoint-compatible, and takes values
+in $2M'\mathbb Z$, where $M'=\operatorname{lcm}(M,A)$.
+Put
+\[
+       R=O'[[t]],\quad I=(t),\quad Q(y)=b(y,y)/2.
+\]
+No division in $O'$ is intended: $Q(y)$ is an integer by the
+given divisibility, including in residue characteristic two.
+
+\subsection*{The actual period construction}
+
+Keep $B=B_0\times_{O'}R$, its original line, rigidification,
+coefficient action and point map $c$.  Change only the prescribed
+period generators, by
+\[
+       \psi_y=\psi^0_y\,t^{Q(y)},\qquad
+       \tau_{y,z}=\tau^0_{y,z}\,t^{b(y,z)}.
+\]
+The second formula follows from the first and the original
+definition of $\tau$, since
+$Q(y+z)-Q(y)-Q(z)=b(y,z)$.
+Every $\psi^0_y$ is an integral unit generator by
+\texttt{ArcIn.gen}.  Positivity of $Q$ gives
+$\psi_y\in I$ for $y\ne0$, and for every $n$ all but finitely
+many $\psi_y$ lie in $I^n$.  The original evenness and
+bimultiplicativity are preserved.  These are the complete
+\texttt{DegData} conditions for the ideal $(t)$, not merely for
+the maximal ideal of $R$.
+
+The coefficient adjunction identity for $b$ preserves the
+coefficient action on the new period data.  More specifically,
+with $w=w_0$ and $w+\bar w=1$, symmetry and adjunction give
+\[
+               b(y,wy)=b(y,\bar w y)=Q(y).
+\]
+The original normalized generator $u$ in
+\texttt{TraceFormTwistIso} consequently still satisfies
+$\tau_{y,wy}u(c(y))=\psi_y\,\mathrm{rig}$.
+Its line, with exponents $(1,-2,-1,2)$, is precisely the
+primitive-line comparison on $B$.  The last identity says that
+this comparison respects the new period action.
+
+Apply the actual Mumford degeneration equivalence over the
+complete noetherian normal pair $(R,(t))$.  It constructs a
+semiabelian scheme $G/R$ and its actual symmetric ample cubical
+line $\mathscr L$.  The period lattice is the same $X$, with
+$\phi=1$.  The degree formula gives a principal generic
+polarization.  Tensor compatibility carries the original
+coefficient, adjunction and primitive identities to this family,
+so it is the required original \texttt{SAB}, with no extra
+power or scalar\cite[Theorems 4.2.1.14 and 4.4.16]{formal-arcs-lan}.
+
+The integral expansion and all-integer torsion arguments of
+Theorem~\ref{thm:dvr-original-pel-unif} work for this complete
+pair: their formal comparison is on every $R/(t^{e+1})$, and
+the needed period positivity has just been proved directly.
+They supply the exact \texttt{PELUnif}, the original line
+comparison and the theta-action description of all torsion.
+
+\subsection*{The original finite labels}
+
+Let $k=M$ or $k=A$, and let $(y,z)$ be one of the original
+selected \texttt{QkPt}s over $\operatorname{Frac}O'$.
+Keep its point on $B_0$ and change its inverse-biextension
+coordinates by
+\[
+                       z_t.s(\chi)
+          =z.s(\chi)\,t^{b(y,\chi)/k}.
+\]
+The exponent is an integer because $k\mid M'$.
+Bilinearity makes this a point of the same torus extension, and
+the full equality $[k]z=\iota^0(y)$ becomes
+$[k]z_t=\iota(y)$.  Period equivalence is preserved because
+\[
+     b(y+kx,\chi)/k-b(y,\chi)/k=b(x,\chi).
+\]
+Addition and the coefficient action are preserved too, using
+$b(ay,\chi)=b(y,\bar a\chi)$.
+The change in the torsion commutator is
+$t^{(b(y,y')-b(y',y))/k}=1$; thus the original Weil-pairing
+root and sign are unchanged.
+
+The source's geometric full-Tate condition also persists.
+Over any algebraically closed generic field choose compatible
+roots $t^{1/n}$ for all $n$, and apply the same formula to the
+original \texttt{TateIsoQ}, using
+$(t^{1/n})^{b(y,\chi)}$.  The period, addition and tower
+identities above give the entire coherent Tate marking, and
+symmetry preserves its pairing roots.  For $n=M,A$, divisibility
+reduces it to the displayed integral-exponent formula, independent
+of the chosen roots.  The original Lie multiplicities on $B_0$,
+together with the constant torus contribution
+$\operatorname{rank}_{\mathcal O_E}X$ at each embedding, give
+exactly the original signature.  This retains the entire period
+rank and the source's full-Tate, rather than merely finite-label,
+hypothesis.
+
+Only the prescribed restriction of $a.\eta$ is used here.
+Choose $e_+\in\overline{\mathfrak b}$ with
+$1-e_+\in\mathfrak b$, and define the new half-label at
+$x\in\Lambda$ from the transformed point $a.\eta(e_+x)$.
+The geometric Tate comparison on
+$\overline{\mathfrak b}\Lambda$ proves that this is independent
+of the choice, is $\mathcal O_E$-linear, has kernel
+$\mathfrak b\Lambda$, and agrees with the prescribed transformed
+points on $\overline{\mathfrak b}\Lambda$.
+Indeed $\mathfrak b\overline{\mathfrak b}=M\mathcal O_E$,
+so the changes in these assertions lie in $M\Lambda$.
+Geometric equality descends for these rational torsion points.
+The full-$A$ label uses the given $a.\eta_A$ on all of $\Lambda$.
+Thus no additivity of the unconstrained values of $a.\eta$
+outside the selected submodule is assumed.
+
+Consequently $G$ gives the original moduli object over
+$D(\varpi t)$.  The label coordinates are defined there over
+the original coefficient field: their only new factors are
+the displayed integral powers of $t$.  The actual torsion
+quotient is defined over that field, so no geometric point or
+coefficient extension has been substituted for a rational label.
+
+\subsection*{The map to the prescribed toroidal model}
+
+The original period factors are unit generators on all of $O'$.
+Hence, for every discrete valuation centered on
+$\operatorname{Spec}R$, the monodromy pairing is
+\[
+                           v(t)\,b.
+\]
+There is no additional $\varpi$-direction contribution.
+The cusp lattice, coefficient action and admissible filtration
+are obtained from the same exact all-level torsion sequence and
+the transported full Tate marking.  In particular the torus
+submodule and its annihilator, and hence the filtration and
+torus argument at the original level, are fixed as the centered
+valuation varies at a point of $t=0$.  On the original singleton
+lattice the auxiliary Siegel degeneration is precisely this
+family with the verified finite-level symplectic relabeling;
+its period form is the corresponding image of $b$.
+For any additional auxiliary presentation the induced tuple
+has the images of this same filtration and form, as in the
+proof of Lan's Theorem 11.4.  Thus the pairings lie in one ray
+in the \emph{specified} cusp cone, including every member of
+the auxiliary tuple.  The fixed admissible cone decomposition
+contains that ray in a cone; at points where $t$ is a unit the
+pairing is zero.  This is exactly the centered-valuation cone
+condition of Theorem 7.14, with the original filtration and
+torus argument retained.  The exact toroidal universal property gives
+\[
+              \chi:\operatorname{Spec}O'[[t]]\longrightarrow Y,
+\]
+extending the original moduli object and carrying its actual
+family\cite[Theorem 11.4]{formal-arcs-ramified}.
+This applies to the possibly two-dimensional normal base itself;
+separate extensions along curves would not suffice.
+
+The abelian locus is exactly $D(t)$.  Indeed, the subgroup of
+unit periods at a point is all of $X$ if $t$ is a unit and is
+zero otherwise, since $b(y,y)>0$ for $y\ne0$.  The exact
+unit-period torsion sequence then gives torus rank zero in the
+first case and $\operatorname{rank}_{\mathbb Z}X>0$ in the
+second\cite[Proposition 4.5.3.11 and Corollary 4.5.3.12]
+{formal-arcs-lan}.  The map on $D(\varpi t)$ lies in the
+original generic moduli interior, as already constructed.
+
+With the identity base change of $B_0$, its original line and
+the identity on $X$, the period and torsion formulas above are
+exactly the two \texttt{GenRel} identities in
+\texttt{HasArcData}: the factors are
+$t^{b(y,y)/2}$ and $t^{b(y,z)/k}$, with their positive signs.
+The previously verified \texttt{PhiRel} calculation identifies
+the latter points with the actual original labels, for every
+geometric field and every lift appearing in that definition.
+This proves the asserted existence with all its stated fields.
+
+\subsection*{Why the source's expansion contract gives uniqueness}
+
+We record the needed recovery argument, since a vector-space
+bijection of theta functions alone would not determine the
+abelian variety.  Suppose two source \texttt{PELUnif}s have
+the same integral abelian, line and period data, up to the
+specified rigidified isomorphisms.  Their all-power
+\texttt{ExpBij}s identify the graded section spaces
+\[
+                     \bigoplus_{k\geq0}H^0(A,\mathscr L^k).
+\]
+In degree zero use the fraction field as the scalar ring.
+This identification is an isomorphism of graded rings.
+To check multiplication, clear the two actual common
+denominators in \texttt{Expands}.  On every integral thickening,
+\texttt{ExpandsAt} is the literal finite character expansion.
+The source's \texttt{t\_mul} and the cube identity multiply it
+by coefficient convolution.  The coefficient-line products
+are those of the same original $B$ and its biextension.
+The compatibility fields \texttt{gt\_t} and
+\texttt{w\_compat} make these products agree on all thickenings.
+Convolution is finite on each thickening by \texttt{ExpandsAt};
+the compatible coefficient limits are actual sections, because
+the coefficient lines lie on the proper abelian part and their
+finite section modules are complete over $R$.
+Thus after clearing the two common denominators we have an
+actual coefficient family, before using \texttt{ExpBij}.
+Separatedness of the complete ring and the nonzero common
+denominators give the equality of generic products.  Thus no
+ring structure is inferred solely from equal dimensions.
+
+The generic line is ample.  The entire graded section ring
+therefore recovers the polarized generic variety by
+$\operatorname{Proj}$, with its original line.
+The resulting isomorphism preserves the identity: evaluation
+at zero is the same convergent coefficient sum, because the
+source's \texttt{t\_unit} is one and \texttt{w\_rig}
+preserves the original rigidification.  Clear a denominator
+and check this evaluation on every thickening as before.
+An isomorphism of abelian varieties preserving zero is a group
+isomorphism.
+
+It also preserves the original coefficient action.  Extend
+the generic group isomorphism and its inverse over the normal
+base by semiabelian full faithfulness, and extend the
+rigidified cubical line comparison.  Its formal restriction
+is the one prescribed by the common torus and abelian
+coordinates: pullbacks of every integral theta power agree
+on all thickenings.  Here the line on \emph{each} competing
+source \texttt{SAB} is relatively ample: it is symmetric
+cubical, and its generic fibre is ample by that source
+\texttt{PELUnif}'s polarized abelian variety; Lan's
+Lemma 4.2.1.6 applies over the normal base.
+The relatively ample line therefore
+separates maps through its canonical relative-Proj open
+immersion\cite[Lemma 4.2.1.6 and Propositions 3.3.1.5,
+3.3.2.2]{formal-arcs-lan}\cite{formal-arcs-relative-proj}.
+The \texttt{OLinear} fields identify the
+coefficient actions in those formal coordinates: they give the
+same map on the abelian quotient and on the torus.  Two such
+endomorphisms of a torus extension differ by a homomorphism
+from its proper abelian quotient to the torus; this homomorphism
+is zero.  Their
+composites consequently agree formally, and then generically
+by separatedness and the integral thickening comparisons.
+The extended group isomorphism intertwines them.
+
+Finally the \texttt{PhiRel} condition determines each selected
+torsion label.  Under the recovered line and group
+isomorphism it specifies the same projective theta action.
+Two $k$-torsion points with that action have quotient pairing
+trivially with every $k$-torsion point.  Perfectness of the
+principal Weil pairing in characteristic zero makes them
+equal.  For the half-label it suffices to check the source's
+selected arguments in $\overline{\mathfrak b}\Lambda$:
+$\Lambda=\mathfrak b\Lambda+
+\overline{\mathfrak b}\Lambda$, and the original label
+vanishes on $\mathfrak b\Lambda$.  Thus the entire original
+half-label and full-$A$ label maps are recovered.
+
+Now take any competing $\chi'$ in the source's proposed
+characterization.  Its \texttt{HasArcData} identifies its
+abelian part, rigidified line, coefficient action, period
+points and factors with precisely the twisted data above.
+The normalized line comparison preserves the cube and
+symmetry, which are unique on the abelian part.
+The recovery argument identifies the generic original
+moduli objects and their finite labels.  The fine moduli
+property makes the generic points equal, and separatedness
+of $Y$ gives $\chi'=\chi$ on all of $\operatorname{Spec}R$.
+Conversely the constructed $\chi$ has every stated property.
+This proves the exact ``if and only if'' uniqueness clause.
+
+\subsection*{The prescribed specialization}
+
+Suppose $O'$ is a complete discrete valuation ring.  Evaluation
+at $t=\varpi$ is defined by the convergent power series and is
+compatible with the adic pairs $(R,(t))\to(O',(\varpi))$.
+In the Mumford construction this base change gives the
+degeneration data
+\[
+                  \psi^0_y\,\varpi^{Q(y)},
+                  \qquad \tau^0_{y,z}\,\varpi^{b(y,z)},
+\]
+and the same label formulas with $t$ replaced by $\varpi$.
+Because this base change is not flat, we verify it in the
+actual construction.  Choose the same sufficiently positive
+auxiliary powers and finite character set for the relatively
+complete Mumford model.  The required positivity inequalities
+depend only on the integer exponents of $b$, since all the
+original period coefficients are units, so the same choice
+works before and after evaluation.
+
+Lan's affine charts are character-graded algebras generated by
+the coefficient modules
+\[
+ I_y^{-1}I_{y,\alpha}^{-1}I_zI_{z,\beta}\,
+       \mathcal O_{\beta-\alpha+\phi(z-y)}.
+\]
+Here every $I$ is a unit times a principal integral power of
+$t$, and the character line $\mathcal O_\gamma$ is pulled
+back from the original abelian scheme over $O'$.
+For a fixed character, the coefficient ideal is the sum of
+the resulting powers of $t$.  If their exponents are bounded
+below, this is the principal power with the smallest exponent;
+if they are unbounded below, it is the localization $R[1/t]$.
+Both descriptions commute with the specified evaluation:
+$t^aR$ becomes $\varpi^aO'$, and $R[1/t]$ becomes $O'[1/\varpi]$.
+Consequently each character module and its multiplication
+base change to the identical module with $t^a$ replaced by
+$\varpi^a$.  This remains true for the fractional modules
+appearing on localized charts.  The torus coordinates and
+the period translation maps specialize by the same explicit
+formulas\cite[Corollary 4.5.1.8 and the following affine-chart
+formula]{formal-arcs-lan}.
+
+The formal quotient is constructed on each thickening by
+gluing the translated charts and taking the represented
+fpqc period quotient.  These operations and the descended
+line commute with this chartwise base change.  Thus the
+proper formal Mumford model, with its line, specializes to
+the model for the displayed $\varpi$-periods.
+Uniqueness of proper algebraization identifies their actual
+proper models and semiabelian opens; the tensor-compatible
+line construction recovers the original primitive line
+from the auxiliary powers\cite[Proposition 4.5.2.15 and
+Theorem 4.4.16]{formal-arcs-lan}.
+In particular we have verified the period action, not just
+the formal Raynaud group.  No fraction-field map sending the whole
+$\operatorname{Frac}(O'[[t]])$ to $\operatorname{Frac}O'$
+is needed or asserted.
+
+If a map $y':\operatorname{Spec}O'\to Y$ has the source's
+specified \texttt{HasArcData} and generic interior property,
+the recovery argument over $(O',(\varpi))$ identifies its
+generic moduli object with this specialization, including
+all original labels.  Separatedness gives equality of the
+two maps on $\operatorname{Spec}O'$.
+
+The conclusion holds for every ring map $\mathrm{ev}$ in
+\texttt{N4}, not only for a chosen continuous one.  If such a
+map fixes $O'$ and sends $t$ to $\varpi$, the difference
+between a series and its first $r$ terms maps into
+$\varpi^rO'$.  Completeness and separatedness force its value
+to be the ordinary evaluation sum.  Thus every permitted
+$\mathrm{ev}$ is that evaluation map, and the exact final
+specialization equality follows\cite{formal-arcs-source}.
+
+Together with the preceding \texttt{N0}, \texttt{N2},
+\texttt{SplitFibres}, \texttt{N3} and \texttt{N6} suppliers,
+this establishes the original geometric \texttt{PartI}
+construction.  Quantitative height, section-remainder,
+boundary comparison and global theta-norm estimates remain
+separate arithmetic obligations; no whole proof-map node is
+declared complete by this construction alone.

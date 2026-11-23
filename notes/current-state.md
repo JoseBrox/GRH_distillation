@@ -1,6 +1,6 @@
 # Current continuation checkpoint
 
-Updated 22 November 2026. The conventional reconstruction is not a complete
+Updated 23 November 2026. The conventional reconstruction is not a complete
 proof of RH or Dirichlet GRH. Start from the preferred mathematical route,
 then inspect only the relevant bounded source contracts. The repository is
 the persistent record; the archive is a baseline, not a file to reload.
@@ -38,10 +38,15 @@ primitive line, periods, torsion action and coefficient field. The
 [level-system theorem](geometry-arithmetic-frontier-level-system.md)
 now proves the original `N0` and complete `N2`: coordinated finite level
 transitions, one auxiliary prime for all admissible half-levels, and the
-exact Siegel comparison. Formal arcs and numerical arithmetic section
-and height estimates remain separate. The actual global
+exact Siegel comparison. The
+[formal-arc theorem](geometry-arithmetic-frontier-formal-arcs.md)
+now proves full `N4`, including the original period and torsion formulas,
+uniqueness from the actual all-power expansions, and nonflat
+specialization. The actual global
 `N6` model now dominates all prescribed local models over the original
 number field, with their cartesian family and primitive-line comparisons.
+Together these discharge the complete original `PartI` construction.
+Numerical arithmetic section and height estimates remain separate.
 
 The reached-section, adapted lattice, full-primary trace and mixed-level
 identities apply to these actual models. They supply the original single
@@ -706,7 +711,7 @@ the proved proper extension supplies the integral comparison from them.
 ## Next mathematical work
 
 1. **Actual theta maps and global norms (W06/W08).** Complete the original
-   formal-arc and cover comparison and identify the same integral maps in
+   good-cover comparison and identify the same integral maps in
    the divisibility and norm arguments. Prove the positive-rank partial-head
    Fourier estimate and all lower-stratum comparisons, then sum every
    rational return. The final requirement is the source deficit and target

@@ -203,3 +203,12 @@ checks the integral trace/dual-tensor maps, exact original multiplier,
 residual block, weight coordinates and uniform n! relation exponent.
 Source authentication and finite symbolic checks are distinguished from
 the general mathematical argument.
+
+The [formal-arc certificate](../certificates/geometry-arithmetic-frontier-formal-arcs.json)
+authenticates `ArcIn`, `HasArcData`, `N4`, the exact all-power
+expansion and torsion contracts, and the original `PartI` conjunction.
+Its [independent review](../certificates/geometry-arithmetic-frontier-formal-arcs-review.json)
+checks all of the uniqueness and specialization quantifiers, including
+the unconstrained values outside the selected half-label submodule and
+the actual two-dimensional toroidal extension. `PartI` is now supplied;
+the larger quantitative W10 obligation remains open.

@@ -47,12 +47,20 @@ cone system gives the finite transitions and exact Siegel comparison.
 An inert prime in the prescribed imaginary quadratic subfield avoids
 every admissible half-level simultaneously. The actual prime-to-p
 cover and intermediate finite unramified scheme retain the original
-primitive line, labels and coefficient field. The remaining clause of
-the arithmetic `PartI` construction is `N4`, the formal-arc contract.
+primitive line, labels and coefficient field.
+
+The [formal-arc theorem](geometry-arithmetic-frontier-formal-arcs.md)
+proves full `N4`, completing the original arithmetic `PartI` construction.
+The source's unit periods give one monodromy ray. Literal all-power
+theta expansions recover the graded ring, origin, coefficient action
+and selected torsion labels, proving uniqueness. The actual Mumford
+chart algebras verify specialization at a uniformizer even though that
+base change is not flat. Every abstract evaluation map in the source
+clause is covered.
 
 The full-primary trace, mixed pullback and arbitrary level-prime estimates
 remain in force for these actual constructions. Their final use still
-requires the good cover, formal-arc and map comparisons. Numerical
+requires the good cover and map comparisons. Numerical
 arithmetic section and height estimates remain separate.
 
 ## Actual ordinary modules, types and Galois determinants
@@ -119,7 +127,7 @@ aggregate nonvanishing needed by the chosen consumer.
 
 ## Direct next attacks
 
-1. Complete the original formal-arc fields on the coordinated level system,
+1. Construct the original good cover on the completed arithmetic level system,
    then identify and estimate the actual arithmetic section lattices.
 2. Complete the actual Taylor–Wiles auxiliary maps, then attack marked
    deformation support and the full integral Selmer budget.
