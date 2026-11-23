@@ -192,9 +192,11 @@ The exact original Siegel--Weil class-sum comparison now holds for every
 actual Host and every admitted family, with its principal-level marking,
 automorphism mass, determinant phase and original rational Weil operator.
 The Host's everywhere-finite-unramified condition is retained in the
-local-genus identification. The first missing inputs are the finite
-Schwartz system and harmonic heat comparison needed for raw-theta spanning,
-its uniform archimedean estimate and the remaining selected-prime
+local-genus identification. The exact harmonic heat comparison is now
+proved for the actual class-sum difference, including its doubled
+Gaussian and invariant derivatives. The first missing inputs are the
+finite Schwartz system and remaining transfer needed for raw-theta
+spanning, its uniform archimedean estimate and the remaining selected-prime
 divisibility laws for the same maps.
 A constructed integral theta section does not supply the global norm.
 

@@ -1,0 +1,148 @@
+\subsection{The actual harmonic heat comparison}
+\label{actual-theta-heat-comparison}
+
+Retain the original Host, CM type $\Psi$, even $n$, and $r$ with
+$4r<n$. All Fourier measures, doubled coordinates and Gaussian
+determinant factors are the prescribed ones. For an admitted family
+$\varphi=(\varphi_\Lambda)$ put
+\[
+ D(Z,z,z')=\sum_{[\Lambda]}w_M(\Lambda)
+       \bigl(\theta_{\varphi_\Lambda}(Z,z,z')
+                         -E_{\varphi_\Lambda}(Z,z,z')\bigr).
+\]
+Theorem~\ref{actual-hermitian-siegel-weil-theorem} gives
+$D(Z,0,0)=0$. This is not a uniqueness assertion for arbitrary
+functions of the Jacobi variables. The following result proves
+precisely the derivatives required by the spanning argument.
+
+\begin{theorem}\label{actual-theta-heat-theorem}
+Let $(P_j)$ be any finite family of the original harmonic polynomials
+whose coefficient pairing is invariant under the column action of
+$\prod_{\tau\in\Psi}U(n)$. For every pair of original frames
+$x_1,x_2$ in the period domain,
+\begin{equation}\label{actual-theta-heat-vanishing}
+ \sum_j P_j(\partial_{z_1})\overline{P_j}(\partial_w)
+ \left[
+ K_0(x_1,x_2;z_1,w)
+ D\bigl(Z_{12},z_{12}(z_1,w),z'_{12}(z_1,w)\bigr)
+ \right]_{z_1=w=0}=0.
+\end{equation}
+Here the derivatives use the original letter directions;
+$Z_{12},z_{12},z'_{12}$ and $K_0$ are literally the original doubled
+period, linear Jacobi maps and Gaussian, including its determinant
+factor. This supplies the original invariant harmonic heat comparison
+for the actual class-sum difference, with no new analytic hypothesis
+and no scalar normalization change.
+The source target is the original contracted-jet theorem and its use in
+\texttt{KernelIdentity}, not an assertion of full Jacobi equality
+\cite{actual-sw-source}.
+\end{theorem}
+
+\begin{proof}
+\textbf{The actual heat equation.}
+The theta and Eisenstein expressions are holomorphic jointly in
+$Z,z,z'$ on the original domain, and satisfy
+\begin{equation}\label{actual-theta-heat-equation}
+ \Delta_{\tau ab}D:=
+ \sum_{k=1}^{n}\partial_{z_{\tau ka}}\partial_{z'_{\tau kb}}D
+       =2\pi i\,\partial_{Z_{\tau ab}}D.
+\end{equation}
+For theta series, differentiate their defining exponential; its
+quadratic coefficient is the product of the two linear coefficients.
+On a compact subset of the period domain, its positive imaginary
+part is bounded below. A Gaussian therefore dominates every fixed
+derivative, uniformly on bounded Jacobi sets.
+
+For an Eisenstein term write $A=CZ+D_0$ and $T=A^{-1}C$.
+Its Jacobi factor is exactly
+\[
+ \det(A)^{-n}
+ \exp\!\left(-2\pi i\sum_k z'_kTz_k\right).
+\]
+The identities $d\log\det A=\operatorname{tr}(T\,dZ)$ and
+$dT=-T(dZ)T$ prove \eqref{actual-theta-heat-equation}, including
+the term $-2\pi i nT_{ba}$ from the $n$ diagonal contractions.
+This calculation retains the original exponent $n$.
+On a compact set with $\operatorname{Im}Z\ge\delta I$ and bounded
+coordinates, the unitary block relations give
+\[
+ \|T\|\le\delta^{-1},\qquad
+ |\det(CZ+D_0)|\ge c_K|\det(CiI+D_0)|,
+ \quad c_K>0.
+\]
+For the second inequality, normalize $(C,D_0)$ by
+$(CC^*+D_0D_0^*)^{-1/2}$ and use compactness; positivity of
+$\operatorname{Im}Z$ excludes a zero determinant. The same block
+relations give the first inequality. Consequently the absolute
+value of each term on that compact set is bounded by a fixed
+multiple of its absolute value at $(iI,0,0)$. The absolutely
+convergent series in the range $4r<n$ is thus locally normally
+convergent, including the Jacobi variables. Cauchy's formula
+justifies all derivatives. The finite weighted class sum preserves
+the equation. No uniform estimate over different arithmetic settings
+has been used.
+
+\textbf{A direct invariant-polynomial argument.}
+For $n\ge r$, every polynomial $R(X,Y)$ on
+$\operatorname{Mat}_{n,r}(\mathbb C)\times
+\operatorname{Mat}_{r,n}(\mathbb C)$ invariant under
+$(X,Y)\mapsto(uX,Yu^{-1})$, $u\in U(n)$, is a polynomial in the
+entries of $YX$. Here is a proof in exactly the needed range.
+The unitary group is Zariski dense in $\mathrm{GL}_n(\mathbb C)$:
+analytic continuation along exponentials of skew-Hermitian matrices,
+whose complex span is all matrices, gives the same polynomial
+identities on the general linear group. On the dense open set
+$\det(YX)\ne0$, send $X$ to $X_0=(I_r,0)^t$. Write the resulting
+$Y=(T,B)$. The stabilizer
+$\left(\begin{smallmatrix}I_r&T^{-1}B\\0&I\end{smallmatrix}\right)$
+then sends $Y$ to $(T,0)$. Thus
+\[
+ R(X,Y)=s(YX),\qquad s(T):=R(X_0,(T,0)).
+\]
+The right side is a polynomial, so the identity extends across the
+complement of that dense open set. Applying this argument one
+embedding at a time proves the product-group version. When $r=0$
+the assertion is simply that a polynomial in no variables is constant.
+
+\textbf{Absorb the Gaussian without losing its coefficients.}
+Write $y=(y^-,y^+)$ for the two independent doubled Jacobi matrices.
+Their column action is $(y^-,y^+)\mapsto
+(u y^-,\overline u y^+)$, so the invariant pairings are
+$q_{\tau ab}=\sum_k y^-_{\tau ka}y^+_{\tau kb}$.
+The original maps $z_{12},z'_{12}$ act only on the row coordinates;
+their two complementary row blocks therefore intertwine precisely
+this action. The invariant pairing of the $P_j$ becomes an invariant
+constant-coefficient differential symbol $Q$ after this change of
+variables. The Gaussian is a nonzero frame-dependent scalar times
+the exponential of a linear combination of the $q_{\tau ab}$.
+
+Leibniz's rule gives a finite polynomial $R$ characterized by
+\[
+ Q(\partial_y)\bigl(K(y)F(y)\bigr)\big|_{y=0}
+       =R(\partial_y)F(0).
+\]
+Explicitly its symbol is
+$R(\xi)=Q(\partial_y)[K(y)e^{\langle y,\xi\rangle}]_{y=0}$.
+This expression retains every Gaussian coefficient, factorial and
+the constant determinant multiplier. Invariance of $Q$, $K$ and
+evaluation at zero makes $R$ invariant for the dual column action.
+The preceding argument expresses it as a polynomial $s$ in the
+pairing symbols. Hence the left side of
+\eqref{actual-theta-heat-vanishing} is
+\[
+ \left.s\bigl(\Delta_{\tau ab}\bigr)D(Z,z,z')
+                                      \right|_{Z=Z_{12},\ z=z'=0}
+ =\left.s\bigl(2\pi i\partial_{Z_{\tau ab}}\bigr)
+                                      D(Z,0,0)\right|_{Z=Z_{12}}=0.
+\]
+All derivatives commute on the open holomorphic domain. The constant-term
+contribution also vanishes because $D(Z,0,0)=0$. This proves the
+literal contracted-jet identity, rather than falsely asserting that
+all Jacobi derivatives vanish.
+\end{proof}
+
+The result applies to the original doubled family whenever that family
+has been shown admitted. In the kernel identity the doubled-test
+scalar $\kappa\ne0$, the class mass and the Gaussian reproducing
+scalar $\rho>0$ remain unchanged. Neither the finite Schwartz system
+nor a uniform global period norm follows from the heat equation alone.

@@ -19,7 +19,7 @@ The [node counts](../blueprint/progress.md) distinguish finished stated
 implications or adopted inputs from open construction hypotheses. Moving
 files or adding a node is not recorded as closing an existing open node.
 The current continuation recovered main at
-`301e4a0adad8617d7ae4910d939687d95d4200e8` and has committed the
+`ea212c0f76fd1a672dabe213e079d9db4243dc96` and has committed the
 verified supplier constructions as they were completed. The active
 mathematics is summarized below and indexed in the shared results.
 The guide retains the short RH analytic proof. The source-import atlas
@@ -79,8 +79,12 @@ literal squared-kernel integral divided by its diagonal, and is retained
 in the spanning consumer. The [exact Siegel--Weil comparison](geometry-arithmetic-frontier-siegel-weil.md)
 now supplies the original class-sum identity for every actual Host,
 retaining principal-level markings, automorphism weights, the determinant
-phase and finite Fourier discriminant. The finite Schwartz and harmonic
-heat comparison needed for spanning, and uniform archimedean norms, remain.
+phase and finite Fourier discriminant. The [harmonic heat comparison](theta-spanning-continuation-heat.md) now
+transfers that identity to the exact invariant contracted jets in the
+original doubled Gaussian. A direct invariant-polynomial argument and
+normal convergence prove this supplier without changing a scalar. The
+finite Schwartz system, spanning transfer and uniform archimedean norms
+remain.
 
 The actual ordinary automorphic modules have faithful good classical
 specializations, and now carry the original universal integral Hecke

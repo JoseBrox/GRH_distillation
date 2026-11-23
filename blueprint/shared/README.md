@@ -434,3 +434,11 @@ CRT is used before global family identification. The published convergent
 formula has exactly the probability normalization needed to recover the
 original unnormalized class sum. The stronger arbitrary ramified-field
 statement and uniform period norms are not inferred.
+
+The [actual harmonic heat comparison](../../notes/theta-spanning-continuation-heat.md)
+proves the original invariant contracted-jet identity from the actual
+Siegel--Weil class sum. Locally normal convergence supplies the precise
+heat equations; a direct polynomial argument converts invariant Gaussian
+jets to period derivatives. Every original doubled scalar and measure
+is retained. This closes that exact supplier in both routes, while the
+finite Schwartz system, spanning transfer and uniform norms remain open.

@@ -48,6 +48,15 @@ python scripts/scan_lean_backbone.py --mirror build/lean-mirror
 
 The scanner reads and verifies the large artifact locally and prints only aggregate counts. It refuses unclassified imports or unsupported import headers.
 
+## Current exact heat interface
+
+The [harmonic heat proof](../notes/theta-spanning-continuation-heat.md) and
+[bounded-source certificate](../certificates/theta-spanning-continuation-heat.json)
+authenticate the original heat equations, doubled coordinates and
+`KernelIdentity` consumer at the pinned revision. The mathematical proof
+retains the invariant contracted jets, not all Jacobi derivatives.
+No Lean build or uniform arithmetic norm estimate is asserted.
+
 ## Mathematical backbone and remaining interpretation
 
 The [endpoint backbone](../notes/lean-endpoint-backbone.md) traces the final sufficient interfaces and the one coherent construction they require. The [global input review](../notes/lean-global-inputs.md) unfolds the Galois compatibility, stable theta lift, theta-integral matching and geometric covolume contracts. These are mathematical interpretation checkpoints, not a claim that every source lemma has been independently verified.

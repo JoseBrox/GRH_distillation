@@ -16,6 +16,17 @@ Green means a written deduction under its stated inputs. Blue means a cited
 input. Red means a remaining construction or estimate. In particular, a green
 transfer theorem can depend on an unresolved arithmetic construction.
 
+## Present construction frontier
+
+The original model system, good cover, raw integral theta sections and
+ordinary automorphic families are constructed. Exact Gaussian reproduction,
+the weighted Siegel--Weil identity and the actual harmonic heat comparison
+retain the prescribed scalars. The [frontier theorems](../notes/open-frontier-theorems.md)
+now concentrate on support and uniform Selmer bounds, finite theta spanning
+and local divisibility, the actual global return/Gram estimate, and short
+integral geometric sections. Four characters do not bound the auxiliary
+fields, ranks or integral defects. No whole node is closed by these suppliers.
+
 ## The analytic target
 
 Only the corrected zeta prime sum must be bounded. An eventual upper bound
