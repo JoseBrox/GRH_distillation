@@ -158,8 +158,10 @@ the original lower-root quotient, Haar recursion and all-word operator
 order. The [compact terminal density theorem](global-norm-frontier-terminal-density.md)
 now proves the original complex `KloostDens` for every block pattern. An
 exact compact stationary-phase germ isolates each long-orbit value without
-a rank-uniform remainder. The unitary density transfer and terminal top
-lift are the next local targets. Their eventual global application must retain every
+a rank-uniform remainder. The actual unitary density transfer now proves
+`PhiZero` and `DensC`, and the compact top lift proves terminal `HeadTop`
+under the original place and operator hypotheses. The next local target
+is the exact Fourier kernel estimate. Its global application must retain every
 rational return, all source/target cuts and all arithmetic normalizers.
 An ambient projector estimate or local Gram identity is not the required
 global period-Gram estimate. A strict source deficit must supply any
@@ -171,7 +173,7 @@ aggregate nonvanishing needed by the chosen consumer.
    then identify and estimate the actual arithmetic section lattices.
 2. Construct the exact arithmetic seed, apply the new patched support
    and local propagation globally, and prove the integral Selmer budget.
-3. Prove the terminal orbital transfer and positive-rank estimate, then
+3. Prove the full positive-rank Fourier estimate, then
    transfer it to the complete period-Gram sum.
 4. Test every newly supplied result against the exact fourth-power tables
    in frontier theorem A. Constants and all accuracy parameters precede

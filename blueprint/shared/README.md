@@ -260,3 +260,12 @@ integral determinant lifts and the exact reflex map fix all indefinite
 components; the actual central CM action handles both definite endpoints.
 The proof retains every lattice class and generic flag variable. The
 normalized complex theta dictionary and numerical section bounds remain.
+
+The [terminal-transfer theorem](../../notes/global-norm-frontier-terminal-transfer.md)
+constructs the original compact top lift and proves `HeadTop` at every
+block head. An exact upper-root cutoff and two radical bumps retain the
+original nonzero scalar; it cancels in the final identity. The actual
+signed Capelli algebra realizes inverse factors locally, and density
+extends the regular radial identity to all heads. The original operator
+and its specified differential realization remain hypotheses; a global
+period-norm estimate is not inferred.

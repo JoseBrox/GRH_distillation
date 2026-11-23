@@ -96,8 +96,9 @@ compact complex Kloosterman density now holds at every block head, by
 an exactly normalized stationary-phase germ. The actual unitary density
 transfer now supplies `PhiZero` and `DensC`, with the original cofactor
 frames, compact representations and Haar constants at every head.
-The terminal top lift and complete global rational-return/period-Gram
-estimate remain open.
+The exact compact top lift and terminal `HeadTop` now hold under their
+original place and operator hypotheses. The complete local kernel bound
+and global rational-return/period-Gram estimate remain open.
 
 These are closed supplier obligations within larger nodes. Whole-node
 statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.

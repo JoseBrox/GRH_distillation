@@ -194,7 +194,10 @@ stationary-phase constants depend on the fixed compact coefficient, which
 is sufficient for the exact density conclusion. The actual unitary-to-complex
 transfer now supplies `PhiZero` and `DensC` at every original head,
 with the exact compact factors, cofactor normalization and Haar constants.
-The next local supplier is the terminal top lift.
+The actual compact top lift and terminal `HeadTop` are now proved
+under their unchanged original place and operator hypotheses. Their
+cutoffs and inverse spectral factors enter exact identities only.
+The next local target is the normalized Fourier kernel estimate.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 

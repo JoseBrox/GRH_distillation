@@ -1,0 +1,392 @@
+\subsection{The actual terminal transfer at every head}
+\label{actual-terminal-transfer}
+
+The compact density theorem now allows a regular radial identity to
+determine every orbital vector.  To use it, one must construct a compact
+coefficient having the required terminal radial image.  The following
+lift keeps its scalar normalization explicit.
+
+\begin{lemma}\label{terminal-transfer-upper-cut}
+For every $r\ge0$ there is a nonnegative smooth function $b_U$ on
+$\operatorname{GL}_r(\mathbb C)$ such that
+\[
+       \int_{N_r}b_U(Zu)\,du=1\qquad(Z\in\operatorname{GL}_r(\mathbb C)),
+\]
+where $du$ is planar Lebesgue measure in strict upper entries.
+Moreover $b_U$ cuts every compact subset modulo right $N_r$ to a
+compact subset of $\operatorname{GL}_r(\mathbb C)$, also with any
+additional parameter in an arbitrary topological space.
+\end{lemma}
+
+\begin{proof}
+Use the unique smooth QR decomposition $Z=QAU$, where $Q$ is
+unitary, $A$ is positive diagonal, and $U\in N_r$.  It follows
+directly by Gram--Schmidt with positive square roots.  Right
+multiplication by $u\in N_r$ leaves $Q,A$ fixed and replaces
+$U$ by $Uu$.  Choose $b\in C_c^\infty(N_r)$, $b\ge0$,
+$\int b=1$, and put $b_U(Z)=b(U(Z))$.  Left invariance of the
+upper-entry measure proves the integral formula.
+
+For a compact $K\subset\operatorname{GL}_r(\mathbb C)\times X$,
+the image of $K\times\operatorname{supp}b$ under
+\[
+       ((Z_0,x),u_0)\longmapsto(Q(Z_0)A(Z_0)u_0,x)
+\]
+is compact and consists of invertible matrices.  It contains
+every $(Z,x)$ with $b_U(Z)\ne0$ and $(Zu,x)\in K$ for some
+$u\in N_r$.  This proves the parameter version too.  For
+$r=0$ the groups and coordinate spaces are points with their
+original unit mass, and $b_U=1$.
+\end{proof}
+
+Retain the original normalized level tower.  At the last level
+its residual group is $G_0=U(k,1)$, its compact Haar measures
+have mass one, and its unipotent measure is the unit mass at
+the identity.  These are hypotheses of that prescribed tower,
+not new normalizations.  Write the original open chart as
+\[
+       (a,a',Z,\gamma)\longmapsto
+          R(a)^{-1}m(Z,\gamma)R(a'),
+       \qquad Z\in\operatorname{GL}_r(\mathbb C),\quad\gamma\in G_0.
+\]
+Let $P_rF(Z,\gamma)$ denote its prescribed partial Jacquet
+average: all right upper roots are integrated, while the
+remaining head-lower roots have not yet been integrated.
+We use the original radical measure $d\mu_{RC}$ and the
+characters $\chi_z(R(a))=\psi_{c_{\rm Std}}(\ell_z(R(a)))$.
+
+\begin{theorem}\label{terminal-transfer-compact-lift}
+There are real smooth compact radical bumps $b_L,b_R$ and a
+nonzero scalar
+\begin{equation}\label{terminal-transfer-kappa}
+ \kappa=\left(\int b_L(a)\chi_z(R(a))\,d\mu_{RC}(a)\right)
+        \left(\int b_R(a')\overline{\chi_{z'}(R(a'))}
+                                              \,d\mu_{RC}(a')\right)
+\end{equation}
+with the following property.  Suppose $\Phi(Z,\gamma)$ is
+smooth on $\det Z\ne0$, $G_0(\gamma)>0$, has the prescribed
+left and right compact covariance, and satisfies
+\[
+       \Phi(Zu,\gamma)=\chi_{z'}(\mu(u))\Phi(Z,\gamma)
+                                      \quad(u\in N_r).
+\]
+If its support modulo this right action lies in a compact
+subset of that positive domain, then
+\begin{equation}\label{terminal-transfer-chart-lift}
+ H\bigl(R(a)^{-1}m(Z,\gamma)R(a')\bigr)
+       =b_L(a)b_R(a')b_U(Z)\Phi(Z,\gamma),
+\end{equation}
+extended by zero, is an original compact coefficient, supported
+away from the vanishing of the leading $r$ by $r$ determinant,
+and
+\begin{equation}\label{terminal-transfer-lift-image}
+                   P_rH(Z,\gamma)=\kappa\Phi(Z,\gamma).
+\end{equation}
+This is an exact identity with the original tower measures.
+\end{theorem}
+
+\begin{proof}
+Both characters in \eqref{terminal-transfer-kappa} are
+continuous and equal to one at zero.  Choose nonnegative
+nonzero real bumps supported where their real parts exceed
+$1/2$.  Each integral then has positive real part and is
+nonzero.  This works simultaneously for the two characters;
+no estimate for $\kappa^{-1}$ is used.
+
+The chart and its inverse are smooth on $\det Z\ne0$, by the
+already established block Schur-complement formulas.  The
+upper-cut lemma makes $b_U\Phi$ compactly supported there,
+with positive residual Gram bounded away from zero.
+Multiplication by the two radical bumps and extension by
+zero therefore give a smooth compact coefficient.  On the
+chart the full positive Gram is
+$|\det Z|^2G_0(\gamma)$, so it too stays uniformly positive
+on this support.
+
+For the integral identity, first perform the right Jacquet
+average.  Its exact root-coordinate decomposition consists
+of the residual compact group, the residual unipotent group,
+$a'$ and $u$.  The residual unipotent group is trivial.
+The compact covariance cancels the two representation
+matrices, and its normalized Haar mass is one.  The factor
+$\chi_{z'}(\mu(u))$ from $\Phi(Zu,\gamma)$ cancels the
+inverse Jacquet character.  The $u$ integral is
+$\int b_U(Zu)\,du=1$.  The result at
+$R(a)^{-1}h^{-1}m(Z,\gamma)$ is consequently
+\[
+       b_L(a)\kappa_R\,\pi(h^{-1})\Phi(Z,\gamma).
+\]
+The left compact average cancels $\pi(h^{-1})$ and has mass
+one; its remaining radical integral is exactly $\kappa_L$.
+Thus the result is \eqref{terminal-transfer-lift-image}.
+The radical actions by compact residual isometries preserve
+the original real measure, and the ordered root-coordinate
+splittings have diagonal Jacobian one.  These are the same
+chart and measure decompositions used in the actual
+partial-head transfer.  The compact supports above justify
+Fubini throughout.
+\end{proof}
+
+We next state the operator comparison with all its original
+hypotheses.  Fix the place parameters $P$, $1\le l_0\le k$,
+$k\ge2$, the normalized tower, the prescribed finite type
+projectors $E_\rho$, and the original operator $\Theta$.
+Retain both its specified regular radial identity and its
+original differential-operator realization.  For every word
+$w=((\varepsilon_a,y_a))$ used below, retain the source cut
+condition on every $y_a$ and $|y_a-y_b|>2$ for $a\ne b$.
+In particular all source denominators at $y_a,y_a\pm1$ and
+all shifted pair differences remain invertible.
+
+Write $B_w^{(r)}F$ for the actual tensor family of leading
+minor operators at level $r$ and $\mathcal F_w^{(r)}$ for
+the prescribed terminal frame operator.  This notation
+retains the word order, tensor indices, both signs, every
+spectral shift and all the original rational factors.
+Let $\mathcal J_rS_h$ be the actual last-level Jacquet
+transform of the slice at a head $h$ of size $r$.
+
+\begin{theorem}\label{terminal-transfer-every-head}
+For every original compact coefficient $F$, every such word
+$w$, every tensor index $e$, every relevant head $h$ of size
+$r$, and every $\zeta$ with $|\zeta|^2>TT'$, choose any
+last-level $D$-frame $\gamma_\zeta$ with reduced scalar
+$\zeta$.  Then
+\begin{equation}\label{terminal-transfer-vector}
+ V_{\Theta_{w,e}F}(h\mathbin{\|}(1,\zeta))
+   =\left[\mathcal F_w^{(r)}
+           \bigl(\mathcal J_rS_h(B_w^{(r)}F)\bigr)\right]_e
+                                                  (\gamma_\zeta).
+\end{equation}
+The original scalar normalizations and stabilizer measures
+agree exactly.  In particular the original terminal
+density equals the original terminal Gram expression,
+pointwise at every last-level group element in the positive
+domain and for every pair of heads $h,h'$.
+\end{theorem}
+
+\begin{proof}
+We first construct a single compact coefficient giving the
+right-hand side for every head, after a harmless localization
+at the chosen head.
+
+Put $\delta_h=\det H_h\ne0$.  Choose a smooth cutoff in
+the leading determinant $D_r(g)$, equal to one near
+$\delta_h$ and supported away from zero, and call the
+resulting coefficient $F_1$.  Every point of the orbit
+$h\mathbin{\|}(1,\zeta)$ has $D_r=\delta_h$.
+The original $\Theta_{w,e}$ is a differential operator on
+the positive domain, so it has the same value there on
+$F$ and $F_1$.  The same holds for every component of
+$B_w^{(r)}$, including all its derivatives.  Thus the
+localization leaves both sides of
+\eqref{terminal-transfer-vector} unchanged.  This uses
+local equality on an open neighborhood of the orbit,
+not merely equality of values on that orbit.
+
+Set $F_e^u=(B_w^{(r)}F_1)_e$ and
+$\Psi_e(Z,\gamma)=P_rF_e^u(Z,\gamma)$.
+The actual leading-minor operators are differential on
+$D_r\ne0$; their coefficients are smooth there.  Locality
+therefore keeps each $F_e^u$ in the support of $F_1$, so it
+is compact with its leading determinant supported away
+from zero.  The chart inverse and compactness show that
+$\Psi$ is smooth and compact modulo right $N_r$; it has
+exactly the compact covariance and upper character of the
+preceding theorem.  More explicitly, a nonzero integrand
+puts $(Zu,h^{-1}\gamma h')$ in a fixed compact chart image
+of $\operatorname{supp}F_e^u$.  The compact $h,h'$ can be
+absorbed into a single compact set.  Conversely, on a
+compact positive parameter set, this relation bounds $u$
+and both radical coordinates by the chart inverse.  It
+justifies smooth dependence and all subsequent integrals.
+
+Apply the terminal operator in the $\gamma$ variable:
+\[
+       \Phi_e(Z,\gamma)
+            =[\mathcal F_w^{(r)}\Psi(Z,\cdot)]_e(\gamma).
+\]
+This operation is local, preserves the support, and commutes
+with integration over a compact head-parameter set.  To
+check this for the actual operator, its generators are
+multiplication by
+\[
+ \zeta,\ \zeta^{-1},\ \overline\zeta,
+ \ \overline\zeta^{-1},\ G_0,\ G_0^{-1}
+\]
+and the prescribed finite Lie differential operators on
+$G_0$.  All multipliers are smooth on $G_0>0$ because
+$TT'>0$ forces $\zeta\ne0$.  Here the finite spectral
+algebra is the one already constructed for the actual
+terminal Capelli operator.  If $E_g=\langle g^{-1}z,z'\rangle^\perp$
+and $D_{ab}=d\pi'_{\mathbb C}(b_a h(\,\cdot\,,b_b))$ for
+an orthonormal basis of $E_g$, the exact identities are
+\[
+ G_0(g)^{-1}(\mathcal T_{22}(Y)\Phi)(g)
+       =\Phi(g)Q_{k-1}(D;Y+(k-2)/2),\qquad
+ p_\rho(Y)=\prod_{i=1}^{k-1}(Y+\rho_i).
+\]
+The first identity follows by contracting the two negative
+frame vectors in the ordered determinant; right compact
+equivariance replaces each remaining Lie derivative by
+$D_{ab}$.  Compact branching restricts the surviving fibres
+to the common types $\rho$, on which the displayed matrix
+acts by $p_\rho(Y)$.  Consequently the original sign
+$\sigma=(-1)^{k-l_0}$ gives
+\[
+ \mathrm{st}.x(Y)=\sigma G_0^{-1}\mathcal T_{22}(Y)
+      =\kappa\bigl((\sigma p_\rho(Y))_\rho\bigr),\qquad
+ \mathrm{st}.x^{\mathrm{inv}}(Y)
+      =\kappa\bigl(((\sigma p_\rho(Y))^{-1})_\rho\bigr).
+\]
+The second formula is used on the original prescribed
+inverse set.  The already constructed $\kappa$ consists
+of pointwise smooth compact-type projections and satisfies
+these identities on the actual covariant functions
+\cite{terminal-transfer-actual-spectrum}.
+For a fixed spectral function $f$, interpolation of $t^{-1}$
+on its distinct values expresses $\kappa(f^{-1})$ as a
+polynomial in $\kappa(f)$.  This covers repeated eigenvalues
+and gives precisely the prescribed inverse, rather than
+an inverse on a different function space.  Therefore
+each entry of $\mathcal F_w^{(r)}$ is a finite sum of
+compositions of these local generators.  The induction
+over the actual word proves the stated locality and
+parameter properties.  No uniform degree or coefficient
+bound for this interpolation is asserted or needed.
+
+The union of the finitely many supports modulo $N_r$ is
+compact.  Apply the compact lift to $\kappa^{-1}\Phi_e$,
+obtaining a compact coefficient $F_2$ with
+\begin{equation}\label{terminal-transfer-pullback-F2}
+                       P_rF_2=\Phi_e.
+\end{equation}
+For any relevant head $a$ of size $r$, the exact partial
+unfolding is
+\[
+ \mathcal J_rS_aG(\gamma)
+      =\int_{L_a}\psi_{\beta_U}(\theta_-(L))
+                       P_rG(LH_a,\gamma)\,dL,
+\]
+where $L_a$ consists of the original restricted head-lower
+roots.  This formula includes the nonsingleton blocks of
+$a$.  Compact support modulo right $N_r$ makes this lower
+integral compactly supported: if $LH_a u$ belongs to the
+compact support representative, block Gaussian elimination
+bounds $L,u$.  The actual root quotient removes all internal
+stabilizer directions.  The support bound is also uniform
+for $\gamma$ in a compact positive neighborhood, so the
+finite terminal differential operators pass through the
+integral.  Equation \eqref{terminal-transfer-pullback-F2}
+therefore gives, for every such $a$,
+\begin{equation}\label{terminal-transfer-all-slices}
+ \mathcal J_rS_aF_2
+       =\left[\mathcal F_w^{(r)}
+                 \bigl(\mathcal J_rS_a(B_w^{(r)}F_1)\bigr)
+                                                \right]_e.
+\end{equation}
+
+On the regular heads this is exactly the regular radial
+picture prescribed for $\Theta_{w,e}F_1$.  We spell out
+the compatibility: restriction of the last group to its
+embedded $U(k,1)$ preserves $\zeta,G_0,T,T'$ and the six
+displayed multiplier functions, and restriction intertwines
+every terminal Lie direction.  Hence it intertwines the
+word operator, including its polynomially realized inverse
+spectral factors.  The leading-minor part contributes the
+same previously proved radial gauge on both sides,
+\[
+                  \prod_{j=0}^{r-1}|c_j|^{2(r-j)+k}.
+\]
+The exact leading-minor radial identity thus identifies the
+regular radial transform of $F_2$ with that of
+$\Theta_{w,e}F_1$, with no scalar left over.
+
+The differential realization of $\Theta_{w,e}F_1$ has a
+compact smooth representative on the full unitary group.
+Indeed its coefficients are smooth on $G>0$, all derivatives
+of $F_1$ vanish outside its compact support, and that support
+lies in $G\ge\epsilon$.  Extend the differential expression
+by zero across $G=0$.  This compact representative agrees
+with the original operator on the positive domain and
+hence in every nonzero orbital vector.  Subtract $F_2$.
+The difference has zero regular radial transform, so the
+every-head density corollary of
+Section~\ref{actual-unitary-density} gives
+\[
+             V_{\Theta_{w,e}F_1}(b)=V_{F_2}(b)
+                                  \quad\hbox{for every head }b.
+\]
+Finally the exact root-coordinate factorization at an
+appended singleton gives
+\[
+      V_{F_2}(h\mathbin{\|}(1,\zeta))
+            =\mathcal J_rS_hF_2(\gamma_\zeta).
+\]
+At rank zero the unipotent group is the identity, so this
+last assertion is the same normalized compact average.
+At positive rank it is the same radical and restricted
+root disintegration already used above.  All base frames
+are the prescribed embedded frames.  Combining with
+\eqref{terminal-transfer-all-slices} and undoing the
+localization proves \eqref{terminal-transfer-vector}.
+
+For completeness we verify the terminal weights.  At
+$b=h\mathbin{\|}(1,\zeta)$ the source weight is
+\[
+ w_{\rm pt}(b)=\frac{|\det H_b|^2}{G(H_b)}
+                  =\frac{|\zeta|^2}{|\zeta|^2-TT'},
+\]
+independent of $h$.  For type $\rho$ and tensor index $e$
+let $c_{w,e,\rho}$ be the original positive rational word
+product, with its unchanged plus and minus recursion.
+The diagonal terminal operator acts on that type by
+\[
+       \lambda_{w,e,\rho}(\zeta)
+         =\left(\frac{|\zeta|^2}{|\zeta|^2-TT'}\right)^{|w|}
+                    c_{w,e,\rho}=d_H(b,e,\rho)^2.
+\]
+This follows by diagonalizing the finite compact type
+algebra: select a real spectral parameter separating its
+finitely many distinct type polynomials, then interpolate
+the prescribed word eigenvalues there.  The original
+interlacing and cut conditions give
+$c_{w,e,\rho}>0$, so the square root in $d_H$ is the
+positive one.  The orbital vector is fixed by the original
+diagonal compact stabilizer of the remaining positive
+complement, by its defining compact average.  The prescribed
+compact branching decomposition and type-projector
+completeness therefore apply on this vector; completeness
+is not assumed on an unrelated larger representation space.
+These type projections are mutually orthogonal and
+self-adjoint.  Thus
+the terminal density is precisely
+\[
+ \sum_{e,\rho}\lambda_{w,e,\rho}(\zeta)
+   \left\langle E_\rho V_{\Theta_{w,e}F}(h\mathbin{\|}(1,\zeta)),
+       E_\rho V_{\Theta_{w,e}F}(h'\mathbin{\|}(1,\zeta))
+   \right\rangle_{\rm HS},
+\]
+which is the original terminal Gram expression, since
+$d_H(h\mathbin{\|}(1,\zeta),e,\rho)
+ =d_H(h'\mathbin{\|}(1,\zeta),e,\rho)$.
+For the empty word the operators and weights are identities
+and the expression is the original Hilbert--Schmidt pairing.
+Compact covariance and unitary invariance of this pairing
+extend the identity from the chosen $D$-frame to every
+last-level group element with the same $\zeta$.
+\end{proof}
+
+\paragraph{Closed interface and remaining input.}
+This proves the original compact top-lift and terminal
+transfer contracts, including all block heads, all admissible
+words, the empty word, and the rank-zero case
+\cite{terminal-transfer-source}.  The existence of the
+original place and operator with its prescribed regular
+radial identity and uniform differential bounds remains
+exactly a hypothesis where the source places it.  No estimate
+for the auxiliary cutoffs, interpolation degree or
+$\kappa^{-1}$ has been inserted into an arithmetic bound;
+they cancel in exact identities.  The terminal transfer
+alone does not establish the global weighted kernel estimate
+or complete W06/W08.

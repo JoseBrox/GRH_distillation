@@ -287,3 +287,10 @@ fields with flag variables and the exact sized-field consumer. Primary
 Shimura, CM and class-field theorems are checked with their rational-class,
 definite-signature and polarization hypotheses. Local congruence diagnostics
 include the dyadic case and a ramified negative control.
+
+The [terminal-transfer certificate](../certificates/global-norm-frontier-terminal-transfer.json)
+and [independent review](../certificates/global-norm-frontier-terminal-transfer-review.json)
+match the original `MkTopCut`, `MkTop` and `HeadTop` interfaces. They
+retain `IsTopLift2`, `InDDplus2`, the exact radial gauge, actual signed
+Capelli inverse and all terminal type weights. The support construction
+uses no unproved uniform bound for its auxiliary cutoffs.
