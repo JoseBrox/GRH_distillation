@@ -352,6 +352,16 @@ inverse quotient coordinates and the positive-complement projection give
 absolute convergence, including the original terminal orbital integral.
 Actual controlled top lifts and global period-Gram bounds remain separate.
 
+The [arithmetic propagation theorem](../../notes/selmer-integral-frontier-arithmetic-propagation.md)
+constructs the original normalized curves, arithmetic auxiliary tower
+and both local/global cohomology systems, and proves `PfromAut` with
+all `P1core`--`P3core` quantifiers. The two stable lattices give an
+entrywise valuation proof of integral normalization after a rank-four
+coefficient extension. Chebotarev preserves the full cyclotomic kernel;
+duality retains the old inertia quotient and the exact modules killed by
+ell. Every curve kernel and the first-bound exponent remain unchanged.
+Global characteristic-prime support and integral torsion bounds remain.
+
 The [actual marked propagation theorem](../../notes/selmer-integral-frontier-marked-propagation.md)
 constructs the prescribed universal determinant ring and ordered local
 characters, retaining every scalar relation before completion. The original

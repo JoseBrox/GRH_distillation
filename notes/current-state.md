@@ -98,8 +98,12 @@ support, without higher-weight control surjectivity. The [marked propagation
 theorem](selmer-integral-frontier-marked-propagation.md) now constructs the
 actual universal ring and verifies every patching hypothesis, proving
 the full original `Core`, `CoreBC` and `Raw` prime-chain contracts.
-It retains the given stable starting prime in support. Normalized arithmetic
-curves, starting support in the required characteristic-prime fibres,
+It retains the given stable starting prime in support. The [arithmetic
+propagation theorem](selmer-integral-frontier-arithmetic-propagation.md)
+now constructs the normalized curves, actual auxiliary primes and both
+arithmetic cohomology systems. It proves the full original `PfromAut`
+and `P1core`--`P3core`, with every kernel and local condition retained.
+Starting support in the required characteristic-prime components,
 global two-sided rigidity and the moving-family integral Selmer budget remain.
 
 The actual local Bessel families satisfy the iterated weighted norm

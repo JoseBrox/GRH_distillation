@@ -383,3 +383,14 @@ The original normalized quotient cut proves noncompact orbital existence
 before any limit identity is used. Exact coordinate diagnostics and eight
 nonnegative-coefficient polynomial certificates check the all-parameter
 exponent budgets. The original top-lift supplier remains a hypothesis.
+
+The [arithmetic-propagation certificate](../certificates/selmer-integral-frontier-arithmetic-propagation.json)
+and [independent review](../certificates/selmer-integral-frontier-arithmetic-propagation-review.json)
+authenticate 31 bounded source interfaces and two primary references.
+The audit checks the literal Point/Nice/IsPt/P1--P3 contracts, integral
+normalization, full cyclotomic Chebotarev congruence and every ArSys/CohAx
+field. Milne's real-place qualification makes degree-three cohomology
+vanish at odd ell; the original cokernel contract uses modules killed
+by ell. Exact valuation, unit-root and local-cocycle diagnostics accompany
+the arbitrary-rank proof. No auxiliary-prime size or lattice-index bound
+is inferred.

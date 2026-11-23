@@ -61,9 +61,9 @@ window grows. No alteration of this exponent accounting is made here.
 ## W04: the actual integral Selmer product
 
 **Frontier theorem S.** Construct the original marked local/global
-deformation models for the now-constructed ordinary modules and integral
-Hecke determinant, with their stated ordinary local conditions and
-two-sided rigidity. For those same
+deformation models' remaining global support and two-sided rigidity
+argument for the now-constructed ordinary modules and integral Hecke
+determinant, retaining their stated ordinary local conditions. For those same
 models prove the integral congruence comparison used by the weighted
 Selmer consumer, together with its required bound on the actual prime
 support. In the conductor-one specialization its remaining numerical
@@ -128,8 +128,14 @@ coefficient descent prove the full original `Core`, `CoreBC` and `Raw`
 prime-chain propagation contracts, retaining every original linking prime
 and an explicitly supplied stable starting prime in support.
 
-**First missing construction.** Construct the normalized arithmetic
-coefficient curves and the stable starting support required by global
+The exact normalized coefficient curves and arithmetic auxiliary tower
+are now constructed. Their actual local/global cohomology systems retain
+the original inertia quotient, cyclotomic action and all local degrees.
+These supply the full original `PfromAut`, hence `P1core`, `P2core` and
+`P3core`, with exponent `n*[F:Q]+n*q` and unchanged curve kernels.
+
+**First missing construction.** Prove the global component/curve argument
+and the stable starting support required by global
 characteristic-prime propagation. The characteristic-zero
 arithmetic points do not by themselves prove nonemptiness of every
 required characteristic-prime fibre. The final global argument must retain

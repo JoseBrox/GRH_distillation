@@ -1,0 +1,272 @@
+\subsection{Arithmetic realization and propagation of ordinary support}
+\label{subsec:selmer-arithmetic-propagation}
+
+The normalized curves, auxiliary primes and cohomology systems can now
+be constructed with the original arithmetic data.  This supplies the
+source's full \texttt{PfromAut} implication, including both
+\texttt{P1core} and \texttt{P3core}\cite{SelmerArPropSource}.
+
+\begin{theorem}\label{thm:selmer-arithmetic-propagation}
+Retain the original odd prime $\ell$, CM field $L/F$, Hida setting,
+base ramification set $S$, coefficient DVR $O$, rank $n>0$, residual
+datum, universal ordinary determinant pair $(B,u)$ and ordinary Hecke
+support ideal $J$.  Assume the original local class field theory input,
+nontrivial residual cyclotomic character, and actual \texttt{HasAut}
+module supplier, and take the original base level with $V_0.S'=S$.
+Every coefficient curve below maps $u$ to the full determinant and
+ordered characters of its stated representation, exactly as in
+the original \texttt{IsPt} condition.
+Use classical finite local/global duality and Euler
+characteristics.  Put $d=[F:\mathbb Q]$.
+
+For every original NiceI coefficient curve
+$f:B\to k[[t]]$, if $J\subseteq\ker f$, then
+$J\subseteq\mathfrak q$ for every prime $\mathfrak q\subseteq\ker f$.
+For every finite chain of original NiceE coefficient curves, suppose
+successive kernels contain a common thick prime and the first kernel
+contains a stable prime containing $J$.  Then every stable or thick
+prime below the last kernel contains $J$.
+
+Here the original distinct ordered ordinary characters, noncriticality,
+simple-spectrum density on the full cyclotomic kernel $G'$, and
+distinguished-decomposition-group rigidity remain hypotheses of
+``nice.''  Stable means absolutely irreducible determinant; thick means
+nonstable with nonsemisimple original ordinary equation algebra after
+the prescribed algebraic scalar extension.  In particular the theorem
+does not replace that closed equation ideal by a reduced or trace ideal.
+\end{theorem}
+
+\begin{proof}
+\emph{Normalize the actual integral representation.}
+Write $A=k[[t]]$ and $K=k((t))$.  The source polarization is exactly
+\[
+ \rho(g)^tP\rho(cgc^{-1})=\epsilon(g)^{1-n}P.               \tag{RP1}
+\]
+For NiceI use one block; for NiceE use the two prescribed nonisomorphic
+absolutely irreducible $G'$-blocks.  Their given polarizations and
+Schur's lemma make the cross blocks of $P$ zero, so its restrictions
+are nondegenerate and symmetric.  The commutant consists of one scalar
+on each block, so the double-centralizer theorem gives the full rational
+matrix algebra, or product of the two block algebras
+\cite[IV.1.14--1.16]{SelmerArPropCFT}.
+
+The original integral representation is bounded.  After its fixed
+rational block change of basis it remains bounded, so the span of the
+translates of a lattice in each block is a stable finite free lattice.
+Take their direct sum $M$.  Equation (RP1), its unit multiplier and
+the involution $g\mapsto cgc^{-1}$ make the polarization dual $M^\#$
+stable too.  Since $2$ is invertible, integral Gram--Schmidt in each
+block gives
+\[
+ P=\operatorname{diag}(t^{a_i}u_i),\qquad
+ u_i\in A^\times,\quad a_i\in\mathbb Z.
+\]
+Indeed choose a diagonal entry of minimum valuation; if there is none,
+the sum of the basis vectors for an off-diagonal minimum supplies one.
+All Gram--Schmidt subtraction coefficients are integral.  The dual
+basis is $t^{-a_i}u_i^{-1}e_i$, so both stabilities give
+\[
+ v_t(\rho(g)_{ij})\ge\max(0,a_j-a_i).                      \tag{RP2}
+\]
+
+Take the quadratic finite-field extension $k_2/k$ and $A'=k_2[[s]]$
+with $t=s^2$.  Every nonzero element of $k$ becomes a square in $k_2$;
+Hensel's lemma therefore supplies square roots of all $u_i(s^2)$ in
+this same ring.  With
+\[
+ T=\operatorname{diag}(s^{-a_i}u_i(s^2)^{-1/2}),\qquad
+ \rho'=T^{-1}\rho T,
+\]
+we have $T^tPT=1$ and, by (RP2),
+\[
+ v_s(\rho'(g)_{ij})\ge
+ 2\max(0,a_j-a_i)+a_i-a_j=|a_i-a_j|\ge0.                  \tag{RP3}
+\]
+The same holds for $g^{-1}$.  Thus $\rho'$ is integral and has form
+matrix $1$, with the original blocks.  The coefficient extension is
+finite, injective and local, of rank four.  This is not an index bound
+for the two lattices.  Continuity survives fixed conjugation.  Conjugate
+$\sum X_g\rho(g)$ over the fraction field and descend its determinant
+identity coefficient by coefficient: this preserves the full polynomial
+law, including when $\ell\le n$.
+
+The rational ordinary flag respects the blocks.  A block idempotent's
+map from a flag step to its quotient is zero because their character
+composition factors are disjoint.  Intersect the flag with the normalized
+lattice and choose compatible bases of its saturated steps.  Each new
+rank-one vector lies in its prescribed block.  These are the exact
+integral local bases, zero-entry conditions and ordered diagonal
+characters required by NP.  The characters are continuous by rational
+triangularization.  They kill the closed commutator and the
+$\ell$-primary torsion in the topological abelianization, since $A'^\times$
+has no nontrivial $\ell$-power torsion.  Thus the source condition
+$\psi_\mu=1$ holds.
+
+Clear denominators in the full rational block span to obtain precisely
+the required power-saturated integral span.  Original inertia vanishing,
+distinctness and noncriticality survive the injective extension, as does
+density of simple spectra.  The equations defining the distinguished
+$\epsilon$-twisted intertwiners have the same kernel after extension:
+finitely many suffice on the finite matrix space.  The irreducible
+case retains $a=n$.  This constructs every field of \texttt{Norm}.
+
+\emph{Construct the arithmetic auxiliary tower.}
+For any chosen finite detecting tuple $\sigma_1,\ldots,\sigma_q\in G'$,
+use the original open subgroup
+\[
+ H=\ker\eta\cap\bigcap_i\ker\bar\chi_i\cap\ker\bar\epsilon
+      \quad\text{in }\Gamma_0=G_{F,S}.                    \tag{RP4}
+\]
+Class field theory gives finite $\operatorname{Hom}(U,\mathbb F_\ell)$
+for every open subgroup $U$ of $\Gamma_0$ and of each original local
+group.  Iterated $\ell$-Frattini kernels give open normal $W_N\subseteq H$
+cofinal among neighborhoods of the kernel $\operatorname{PL}(H)$ of
+the maximal pro-$\ell$ quotient.  This follows first in every finite
+$\ell$-quotient, then by compactness.
+
+Lift $\sigma_j$ to $g_j\in G_L$.  Since $S$ contains all $\ell$ places,
+the original cyclotomic compatibility gives
+$\epsilon_L(g_j)=\epsilon_{\Gamma_0}(\sigma_j)=1$ in
+$\mathbb Z_\ell^\times$, not merely modulo $\ell$.
+Impose the finite congruences to
+$g_j^{-1}$ modulo $W_N$ and the cyclotomic character modulo $\ell^N$.
+They are compatible because $\sigma_j\in G'$.  Apply Chebotarev in a
+finite Galois extension over $F$ cutting out these conditions
+\cite[V.3.23]{SelmerArPropCFT}.  Select the place over the prime to
+obtain the specified Frobenius element, and choose the primes
+successively outside $S$ and the preceding choices.  They split in
+$L/F$ because the chosen Frobenius restricts trivially to $L$.
+
+For arithmetic Frobenius $\alpha_j(N)$ put
+$\phi_j(N)=\alpha_j(N)^{-1}$, the geometric Frobenius in the source.
+With the selected prime $w_j(N)$ of $L$ and its prime $v_j(N)$ of $F$,
+\[
+ \begin{split}
+ Q_j(N)&=Nw_j(N)=Nv_j(N)\equiv1\pmod{\ell^N},\\
+ h_N(\phi_j(N))\sigma_j^{-1}&\in W_N.
+ \end{split}                                               \tag{RP5}
+\]
+Take $S_N=S\cup\{v_j(N)\}$, the original level with this set,
+$\Gamma_N=G_{F,S_N}$, its restriction $h_N$, and the actual tame
+pro-$\ell$ inertia generators $\tau_j(N)$.  The exact relation is
+\[
+ \phi_j(N)^{-1}\tau_j(N)\phi_j(N)=\tau_j(N)^{Q_j(N)}
+                         \pmod{\operatorname{PL}(H_N)},
+ \qquad H_N=h_N^{-1}H.                                    \tag{RP6}
+\]
+The kernel of $h_N$ is normally topologically generated by new inertia.
+In the pro-$\ell$ quotient the wild and prime-to-$\ell$ parts vanish,
+leaving the chosen generators.  Evaluate a character of $H_N$ on their
+conjugates by representatives of $\Gamma_N/H_N$.  Characters with the
+same values differ by one descending to $H$.  Consequently
+\[
+ \#\operatorname{Hom}(H_N,\mathbb F_\ell)
+ \le \#\operatorname{Hom}(H,\mathbb F_\ell)
+                      \ell^{q[\Gamma_0:H]}.                \tag{RP7}
+\]
+This is the original cardinal bound, with its growing arithmetic index
+retained.  The actual restriction maps, places, local embeddings,
+inertia generators and (RP4)--(RP7) supply all TWGrp/TWPl fields, also
+for $q=0$.  No quantitative prime-size estimate is asserted.
+
+\emph{Realize the two arithmetic cohomology systems.}
+Their local indices are precisely the disjoint union of the $\ell$
+places, the original old places, $v_0$ and the new primes; this is
+bijective with $S_N$.  Every place is split in $L/F$, so the original
+decomposition groups over $L$ are the corresponding groups over $F$,
+with the same local maps.  The $v_0$ image in $\Gamma_0$ is the original
+$D_0$, and the new local groups contain both $\phi_j$ and $\tau_j$.
+The local degrees $d_v=[F_v:\mathbb Q_\ell]=[L_w:\mathbb Q_\ell]$
+sum to $d$.  Each real embedding gives its actual involution $c_v$,
+with $c_v^2=1$ and $\eta(c_v)=\epsilon(c_v)=-1$.
+
+Finite local duality and the Euler formula give
+\[
+ \#Z^1(G_v,M)=|M|^{1+d_v}|(M^\vee(1))^{G_v}|,
+\]
+where $d_v=0$ away from $\ell$.  A perfect source pairing into
+$\mathbb F_\ell$ forces $\ell M=0$ and identifies its second module
+with $M^\vee(1)$, so this covers every original local-count input.
+The global Selmer ratio gives exactly the established first-system
+Greenberg--Wiles inequality with all these places and real factors
+\cite[I.2.1, I.2.3, I.2.8, I.4.10, I.4.15, I.5.1]{SelmerArPropADT}.
+
+At an old place retain
+$J_u=I_u\cap\bigcap_i\ker\bar\chi_i$, whose quotient $I_u/J_u$
+is finite of order prime to $\ell$.  For $M$ trivial on $J_u$, averaging
+over this quotient and the procyclic unramified group give
+\[
+ H^1(G_u/J_u,M)=M^{I_u/J_u}/(\mathrm{Frob}-1)M^{I_u/J_u},
+ \qquad \#H^1(G_u/J_u,M)=|M^{G_u}|.
+\]
+Hence there are exactly $|M|$ cocycles vanishing on $J_u$.
+This quotient has $\ell$-cohomological dimension at most one.
+For any prescribed module surjection, first lift an unramified class
+and then its correcting boundary primitive.  This lifts the specified
+cocycle itself and proves the entire original \texttt{UrAx} input.
+
+Local and global $H^1,H^2$ are finite.  Their $H^3$ vanishes for these
+finite $\ell$-modules: locally by cohomological dimension two, globally
+by the real-place description and odd $\ell$.  Thus $H^2$ is right exact
+for the original coefficient surjections.  The exact global Euler
+formula is
+\[
+ |H^0(M)|\,|H^2(M)|\,|M|^d
+       =|H^1(M)|\prod_{v\text{ real}}|M^{c_v}|.             \tag{RP8}
+\]
+For the source obstruction cokernel the contract explicitly requires
+$\ell M=0$, as holds for the actual characteristic-$\ell$ truncations.
+Local right exactness maps the
+full $S_N$ sum of local $H^2(M)$ onto its prescribed local-quotient
+$H^2$ groups, compatibly with global restriction.  Its cokernel is a
+quotient of the full localization cokernel.  The Poitou--Tate tail
+therefore gives
+\[
+             |\operatorname{Ck2}|
+                 \le |\operatorname{Hom}_G(M,\mathbb F_\ell(1))|.
+\]
+This proves every ArSys and CohAx field with the original quotients
+and cyclotomic action.  The established B1/B2 theorems now apply to
+these actual systems; B1 has exactly the exponent $nd+nq$.
+Local reciprocity supplies the retained local class field input from
+the finite unit torsion, the free $\mathbb Z_\ell^{[F_v:\mathbb Q_\ell]}$
+unit factor and the one valuation factor\cite[I.1.1]{SelmerArPropCFT}.
+
+\emph{Apply the actual marked propagation.}
+Normalize every curve as above.  Established finite simultaneous
+detection and coefficient extension provide one detecting tuple,
+the original odd families, distinct split auxiliary roots and equal
+residue-field cardinalities.  Each coefficient map is injective;
+all original kernels in $B$ remain unchanged.  Construct the tower,
+the two arithmetic systems and their B1/B2 bounds as just proved.
+On $H$ every residual matrix is unipotent, so its finite image is an
+$\ell$-group by Cauchy's theorem.  Higher congruence kernels are
+$\ell$-groups too; hence each point and its finite cocycle actions
+factor through the required pro-$\ell$ quotient.
+
+HasAut supplies the actual TWAut modules.  The universal ring is
+generated topologically by its full determinant coefficients and
+ordered characters: construct their universal rings and quotient by
+the original Pair equations; uniqueness identifies this quotient
+with $B$.  The image of the old $J_u$ is exactly $r.Ip_u$.
+Every hypothesis of the proved Raw theorem is therefore satisfied.
+
+Stable is equivalent to the explicit nonzero $n^2$ by $n^2$ trace-Gram
+discriminant.  Indeed the trace pairing on $M_n$ is nondegenerate in
+every characteristic; a reducible semisimple representation has image
+algebra of dimension less than $n^2$.  Thick implies NonSS directly
+for the same original equation algebra.
+
+At a NiceI point the rational group span already gives a nonzero
+trace-Gram determinant outside its kernel and every smaller prime.
+Apply Raw with a zero-length chain and that kernel as the initial
+stable prime containing $J$; this proves P1core.  At a NiceE chain,
+the original thick links and starting stable prime are exactly the
+Raw hypotheses.  Its conclusion is P3core, whose zero-length case is
+P2core.  All ranks, ordered characters and exponent losses are retained.
+\end{proof}
+
+The next obligation is the global component argument that reaches the
+required characteristic-prime support from the actual seed.  The
+theorem does not infer that starting support from a characteristic-zero
+point, or supply the final uniform integral Selmer budget.

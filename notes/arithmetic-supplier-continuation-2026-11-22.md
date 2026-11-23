@@ -146,9 +146,18 @@ Local prime movement, coefficient extension and the justified pro-ell
 quotient prove the full original `Core`, `CoreBC` and `Raw` contracts.
 The stable starting prime in support is retained as an explicit input.
 
+The [arithmetic propagation theorem](selmer-integral-frontier-arithmetic-propagation.md)
+now normalizes each original coefficient curve integrally, using its
+stable lattice and polarization dual. The actual Chebotarev tower and
+local/global cohomology systems supply all remaining arithmetic inputs
+to marked propagation. This proves `PfromAut` and the original
+`P1core`--`P3core`, keeping all kernels, ordered flags and the exponent
+`n*[F:Q]+n*q`. The coefficient extension has rank four; no bound on the
+index of the normalized lattice is inferred.
+
 Both finite-level cohomological bounds and their exact limiting
-comparison are proved. The next arithmetic requirements are normalized
-arithmetic coefficient curves, their characteristic-prime starting support,
+comparison are proved. The next arithmetic requirements are
+characteristic-prime starting support,
 the global component argument and two-sided rigidity. They must
 supply the moving-family integral Selmer product; qualitative finiteness
 or rational rigidity cannot replace that bound.
