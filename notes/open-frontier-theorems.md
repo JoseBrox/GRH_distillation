@@ -146,15 +146,19 @@ starting chart of dimension `n*[F:Q]+2`. It uses a finite homogeneous
 entry algebra and recovers exactly the original Hecke quotient, with
 no integral realization of generic matrix entries assumed.
 
-**First missing construction.** Prove the global characteristic-prime
-component/curve argument and its propagation from that exact starting
-support. The characteristic-zero
-arithmetic points do not by themselves prove nonemptiness of every
-required characteristic-prime fibre. The final global argument must retain
-the entire characteristic-prime fibre
-and the actual two-sided rigidity. Neither qualitative finiteness,
-fixed-point constants nor a torsion-free quotient proves the displayed
-moving-family bound.
+The [actual rank-two curve and propagation theorem](selmer-support-continuation-rank-two-propagation.md)
+now supplies the original `PropagationTheoremGL2`. It preserves `FinLam`,
+all `Ok`/`Big` local-degree inequalities, the ordinary obstruction cone
+and the exact arithmetic `P1` condition. It uses algebraized entry fields
+before completion; no bound on a completed fraction-field transcendence
+degree is assumed.
+
+**First missing construction.** For rank three construct the finite-weight
+ideal covering every original type-E support prime and the actual
+nonsplit thick links needed to propagate through its determinant section.
+Then prove the retained global two-sided rigidity and integral Selmer
+budget. The entire characteristic-prime fibre, nilpotents and integral
+torsion remain part of these requirements.
 
 ## W06: the integral theta construction
 
@@ -200,9 +204,15 @@ Gaussian and invariant derivatives. The explicit finite Schwartz
 system now satisfies all the original `IsSystem` clauses and gives
 the level-theta span. The identity-cover transfer proves the actual
 `HolSub0LeSpanRaw`, retaining the full arithmetic character, common
-component coordinates and prescribed principal level. The first
-missing inputs are quantitative short integral spanning bounds and
-the remaining selected-prime divisibility compatibility for these same maps.
+component coordinates and prescribed principal level. The [short theta theorem](theta-spanning-continuation-short.md)
+now proves the literal `ExistsGoodCoverAtMinimalLevel`: a finite integral
+K-span with norm at most `exp(30000 X^2 kappa)` in every original
+component and coefficient embedding. The determinant scalar keeps and
+cancels the exact lattice index. The [actual key shift](theta-spanning-continuation-key.md) now
+removes the tag integrally, retains the original primitive boundary line
+and all dyadic/ramified factors, and supplies the exact shifted family.
+The first missing input is selected-prime divisibility and arithmetic-chain
+compatibility for these same maps.
 A constructed integral theta section does not supply the global norm.
 
 ## W08: the actual global period Gram operators
@@ -290,11 +300,23 @@ nor a uniform bound is inferred. Actual arithmetic folding now supplies
 `MultPoly` and `IUnfold`; the original finite phases and level splitting
 supply `PhWellDef`. Every framed rational return is absolutely summable
 in the established gap range, with the original unipotent intersections,
-finite indices and Haar factors. The first missing global step is the
-original raw-kernel/period-Gram identification for these very maps,
-followed by the uniform trace estimates. The normalized
-mass datum's replacement of its kernel by `Sig/rho0` does not prove that
-identity for the actual raw kernel.
+finite indices and Haar factors. The [period identity](global-gram-continuation-period-identity.md)
+now supplies actual `EntryUnfold` and `KExpansion`, including the exact
+antiunitary coefficient dictionary and original normalizers. The [actual
+projector theorem](global-gram-continuation-projectors.md) supplies full
+`InHH` and `PuLinear`: the original `HHX` projector fixes all periods, so
+that particular target cut has exactly zero loss. The
+[arithmetic minimum](global-gram-continuation-minimum.md) controls the
+source's higher-rank `leastSize` by the original quotient norm uniformly
+over the finite columns. With the cited `FarBound`, it yields a finite
+weighted far-return majorant, not a uniform moment bound.
+
+**First missing construction.** Identify this Poincare Gram operator with
+the final restricted arithmetic chain and its scalar class-kernel
+dictionary, retaining every further target projection. Prove the uniform
+positive trace deficit/excess bounds for these same maps. In particular
+the weighted quotient-norm moment and near-return contributions must be
+controlled as the field and frame grow.
 
 ## W10: the exact integral geometric supplier
 
@@ -347,10 +369,23 @@ adjoint separation now prove the required nef/big lines, generation
 on the interior and both birational cusp systems under the original
 weight gaps.
 
-**First missing construction.** Construct short integral spanning families
-and their exact height and multiplication bounds, then prove the
-numerical arithmetic section remainder for the same lattices. The existing
-cusp, jet and signed-boundary lemmas are to be applied unchanged.
+The actual minimal-level short integral span now has its uniform
+Petersson bound. The [flat-degree theorem](theta-spanning-continuation-flat.md)
+supplies `FlatExistsAt` with the exact finite correction; the
+[parallel-twist theorem](theta-spanning-continuation-twist.md) supplies
+`UnramPts` and controlled integral parallel sections over the original
+field, including the normalized bad-prime rounding cost.
+
+The [key-weight theorem](theta-spanning-continuation-key.md) now proves
+the original integral shift, including at two and on the prescribed
+boundary arcs, and supplies both literal `h0` and `hsh`. Its same-field
+short-span bound is `exp(400000*(X^3*S+X^5))`; the original size
+inequalities absorb this after a permitted fixed starting threshold.
+
+**First missing construction.** Supply the actual pointwise Bergman,
+height and multiplication comparisons, then prove the numerical
+arithmetic section remainder for these same lattices.
+The existing cusp, jet and signed-boundary lemmas are to be applied unchanged.
 
 ## Completion discipline
 

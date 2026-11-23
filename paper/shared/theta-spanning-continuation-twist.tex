@@ -1,0 +1,171 @@
+\subsection{Integral parallel twists on the actual cover}
+\label{sec:actual-integral-parallel-twists}
+
+\begin{proposition}\label{prop:actual-unramified-frames}
+Use the original good cover, with $A=1$, coefficient field $K$,
+and level $M$.  Put
+\[
+       B=\{\ell:\ell\text{ prime},\ \ell\mid
+                                  2d\operatorname{disc}(E)M\}.
+\]
+For every original component and every finite place $v$ of $K$
+above $\ell\notin B$, there is an original integral framed point
+on that component over a finite unramified extension of $K_v$.
+Its normalized valuation index over $K_v$ is one.  In particular,
+the original $\mathrm{UnramPts}(B)$ assertion holds.
+\end{proposition}
+
+\begin{proof}
+The original PEL order is the maximal order $\mathcal O_E$,
+its alternating lattice is self-dual, and $\ell$ divides neither
+its coefficient discriminant nor its level.  The datum is of type A,
+so the extra invariant $I_{\rm bad}$ of Lan's definition is one.
+These facts check every good-prime condition in
+\cite[Definition 1.4.1.1]{theta-twist-lan}.  The maximal-order
+condition in his Condition 1.4.3.10 is automatic here.
+Choose a smooth projective admissible fan and the exact original
+full level completed from the half-level.  The completion is the
+one already proved in the actual level construction; since $\ell$
+does not divide $M$, the prescribed cyclotomic fibre is an open and
+closed finite-\'etale choice.  Theorem 6.4.1.1 of the same reference
+gives the original smooth proper toroidal PEL model at $\ell$,
+with relative normal-crossings boundary and the tautological family.
+Base change to $R=\mathcal O_{K_v}$ preserves all these properties.
+
+In a proper smooth family, the Stein algebra is finite \'etale and
+its fibres are the connected-component algebra.  The selected
+geometrically integral generic component therefore extends to an
+open and closed proper smooth component over $R$; its generic
+constant field is already $K_v$.  It has a nonempty special fibre.
+A relative normal-crossings divisor contains no component of a
+fibre, so this special fibre has a closed point outside the
+boundary.  Its residue field is a finite extension of the finite
+residue field of $R$.  Pass to the corresponding finite unramified
+extension $R'/R$.  Smoothness and Hensel's lemma lift that point to
+an $R'$-point of the same abelian interior.
+
+The lifted object retains the original polarization, coefficient
+action, both labelled level maps, and primitive rigidified line.
+Since $\ell\nmid\operatorname{disc}(E)$ and $K$ contains every
+specified image of $E$, the coefficient algebra over $R'$ splits
+as the product of the original embedding factors.  Its tangent
+eigenspaces are free with precisely the prescribed ranks; choose
+bases.  The primitive principal line has rank-one space of sections
+over $R'$, compatible with base change, so choose a generator and
+its original rigidified generic comparison.  These choices give
+exactly an original integral framed point.  They are evaluations
+of the finite-type framed moduli charts, hence satisfy the original
+test-frame condition.  The residue field remains finite: the
+source's $\mathrm{IntFr.IsAlg}$ means precisely this condition,
+not algebraicity of the complete fraction field over $K$
+\cite{theta-twist-source}.
+
+The extension $R'/R$ is unramified, so restriction of its integer
+valuation is the integer valuation of $K_v$.  Every evaluated rule
+has value zero or an integral normalized valuation.  This is the
+literal index-one criterion defining $\mathrm{UnramPts}(B)$.
+\end{proof}
+
+\begin{theorem}\label{thm:actual-short-parallel-twist}
+Use the actual flat determinant sections of
+Theorem~\ref{thm:actual-flat-degree}.  On each original component,
+for every integer parallel shift $w=(w_\tau)_\tau$, there is a
+nonzero section $t_w$ of the original parallel weight
+$\operatorname{parWt}(w)$, with theta tag zero, such that
+\[
+ v(t_w)\ge0\quad\hbox{at every original integral test frame},
+\]
+and, at every complex embedding and every frame on the component,
+\begin{equation}\label{eq:actual-parallel-twist-bound}
+ \log\|t_w\|\le
+ \frac{|p-q|}{2}|P_E|\sum_\tau|w_\tau|
+       +\frac12\log\operatorname{rd}(K)
+       +\sum_{\ell\in B}\log\ell+1.
+\end{equation}
+Both $t_w$ and its generic inverse have constant complex norm and
+preserve the original cusp spaces under multiplication, with the
+corresponding weight shifts.  The inverse is not asserted integral.
+
+Under $|P_E|\le3L_b$, $\log\operatorname{rd}(E)\le3L_b$,
+$\log M\le30L_b$, $\log d\le L_b$, $f=[E:\mathbf Q]/2\ge1$,
+and $L_b\ge1$, the right side is at most
+\[
+       \tfrac32 rL_b\sum_\tau|w_\tau|
+                  +\tfrac12\log\operatorname{rd}(K)+40fL_b+1.
+\]
+\end{theorem}
+
+\begin{proof}
+Let $s_\tau$ be the actual uncorrected determinant generator,
+with the original tangent-frame norm and finite valuations.  Form
+\[
+                       t=\prod_\tau s_\tau^{-w_\tau}.
+\]
+The identity $\operatorname{parWt}(w)=
+\sum_\tau(-w_\tau)\operatorname{flatWt}(\tau)$ shows that this
+is the required original weight, with theta tag zero.
+Let $r_\sigma>0$ be its constant complex norm and $\rho_v$ its
+point-independent normalized finite valuation.  The latter have
+finite support.  By Proposition~\ref{prop:actual-unramified-frames},
+$\rho_v$ is an integer whenever $v$ lies above a prime outside $B$:
+evaluate the same constant valuation at the index-one point.
+
+The uncorrected degree of $s_\tau$ is $(p-q)P_E/2$; hence
+\[
+ D(t)=\sum_v\rho_v\frac{\log N v}{[K:\mathbf Q]}
+         -\frac{1}{[K:\mathbf Q]}\sum_\sigma\log r_\sigma
+       =-\frac{p-q}{2}P_E\sum_\tau w_\tau.
+\]
+We use the uncorrected frame here deliberately.  The correction
+$q(\log d-\log\operatorname{rd}(E))$ in
+$\mathrm{FlatSec}$ changes its degree bookkeeping, not the
+actual evaluated section or its integral tangent lattice.
+
+For completeness, put
+$I=\prod_v\mathfrak p_v^{\lceil-\rho_v\rceil}$, a nonzero
+fractional ideal.  Its logarithmic norm satisfies
+\[
+ \frac{\log N I}{[K:\mathbf Q]}
+ \le-\sum_v\rho_v\frac{\log N v}{[K:\mathbf Q]}
+                     +\sum_{\ell\in B}\log\ell.
+\]
+Indeed rounding costs zero outside $B$, and for each remaining
+rational prime
+$\sum_{v\mid\ell}\log N v\le[K:\mathbf Q]\log\ell$.
+Minkowski's theorem, applied to the embedding box with radii
+$R/r_\sigma$ (discs at complex places), gives $b\in I\setminus\{0\}$
+with
+\[
+ \log(r_\sigma|\sigma b|)
+ \le -D(t)+\tfrac12\log\operatorname{rd}(K)
+                 +\sum_{\ell\in B}\log\ell+1
+ \quad\hbox{for all }\sigma.
+\]
+The additive constant $1$ makes the volume strictly larger than
+$2^{[K:\mathbf Q]}$ times the lattice covolume; the conjugate
+radii agree because the original metric respects complex
+conjugation.  This is the exact scalar construction, with the
+field-degree normalization retained.
+
+Set $t_w=bt$.  The inequalities
+$v(b)\ge\lceil-\rho_v\rceil$ prove integrality at every original
+test frame, and $-D(t)\le |p-q||P_E|\sum|w_\tau|/2$ proves
+\eqref{eq:actual-parallel-twist-bound}.  The determinant generator
+and its inverse extend as units on the generic compactification;
+equivalently their original normalized norms are constant.
+Multiplication by them therefore preserves holomorphy, the row
+weight conditions, and cusp vanishing, in both directions.  This
+argument does not require the separate theta key section.
+
+Finally
+\[
+ \sum_{\ell\in B}\log\ell
+ \le\log2+\log d+2f\log\operatorname{rd}(E)+\log M
+ \le(6f+32)L_b\le40fL_b.
+\]
+\end{proof}
+
+This supplies the actual unramified-point and integral parallel-shift
+inputs.  Section~\ref{sec:actual-key-short-span} constructs the separate
+key-weight shift with its finite-place normalization and applies both
+shifts to the exact short-family consumer.

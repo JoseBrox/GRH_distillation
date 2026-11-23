@@ -47,9 +47,9 @@ The [short guide](paper/guide/main.pdf) explains the mechanisms; the manuscripts
 
 - **Analytic reductions and the RH specialization.** The prime-sum criterion, fourth-power sampling and direct positive-kernel comparison are proved. The RH comparison retains four characters without requiring an artificial symmetry of their weights.
 - **The prescribed geometric models.** The integral models, compatible level changes, boundary comparisons and normalized complex theta dictionary are constructed. They retain the original coefficient fields, primitive line bundles and finite level maps. The required positivity and point-separation properties of the cusp section spaces are proved.
-- **Actual integral theta sections.** The original sections exist in the required cusp spaces with a common clearing denominator. The Gaussian reproducing formula and the exact weighted Siegel–Weil identity are proved with their original measures and scalars. The harmonic heat comparison and an explicit finite theta system now prove algebraic spanning by the actual raw theta sections, with the original level and weight hypotheses.
-- **Arithmetic deformation and automorphic inputs.** The ordinary families, integral Hecke determinant, compact types and patching comparisons are constructed. The actual seed transfers to the normalized deformation space with the same integral Hecke quotient. Local propagation retains its support and integral torsion. Reaching the required characteristic-prime components and bounding the moving-family Selmer product remain separate tasks.
-- **Local analytic and geometric comparisons.** The original local differential operators, arithmetic folding and complete return summation are supplied at each fixed setting, with the exact finite phases. Exact degree, lattice-index and boundary-energy comparisons retain the terms needed for the final budget. Their existence does not give the required uniform global estimates.
+- **Actual integral theta sections.** The original cusp sections now have a finite integral spanning family with the required uniform norm bound. The proof retains the original coefficient field, lattice indices and normalization. The flat determinant degree and integral weight shifts now give the exact short section families required by the degree argument, including all finite primes and boundary points.
+- **Arithmetic deformation and automorphic inputs.** The ordinary families, integral Hecke determinant, compact types and patching comparisons are constructed. The actual seed transfers with the same integral Hecke quotient. In rank two, the required characteristic-prime curves and propagation through every stable component are now proved. The rank-three argument and the uniform Selmer bound remain.
+- **Global analytic and geometric comparisons.** The full return sum now equals the prescribed Poincaré Gram operator, with its original phases and measures. The arithmetic flag also bounds the actual lattice minimum on every period cell. Compatibility with the final arithmetic maps and sufficiently small uniform trace errors are still required.
 
 These results remove concrete inputs from the open frontier. Their scope matters: an identity at fixed arithmetic data does not establish a useful bound across a growing family.
 
@@ -61,11 +61,11 @@ The [technical frontier](notes/open-frontier-theorems.md) separates five connect
 | --- | --- |
 | Final arithmetic comparison | Compatible finite tables whose total signed cost satisfies the analytic criterion. |
 | Integral Selmer bound | The required support and rigidity statements, and a uniform bound for the specified weighted product of finite group orders. |
-| Integral theta maps | Short integral spanning bounds and the remaining local divisibility compatibility for the original maps. |
-| Global analytic norms | The genuine global return and Gram identities, followed by sufficiently small rank-weighted trace errors. |
-| Geometric sections and heights | Short integral spanning families, exact height comparisons and the numerical section remainder in the prescribed metrics. |
+| Integral theta maps | The remaining local divisibility and arithmetic-chain compatibility for the original maps. |
+| Global analytic norms | Compatibility of the proved Gram identity with the final arithmetic maps, and sufficiently small rank-weighted trace errors. |
+| Geometric sections and heights | The required pointwise norm and height comparisons, and the numerical section remainder in the prescribed metrics. |
 
-A construction at one level, a finite constant depending on that construction, or an estimate for a different map does not complete these obligations. In particular, qualitative Selmer finiteness does not control growing torsion, and algebraic spanning does not give short integral generators. Four surviving characters do not bound auxiliary field degrees or geometric dimensions.
+A construction at one level, a finite constant depending on that construction, or an estimate for a different map does not complete these obligations. Qualitative Selmer finiteness does not control growing torsion. The new short section families still require the prescribed height and pointwise norm estimates. Four surviving characters do not bound auxiliary field degrees or geometric dimensions.
 
 ![The principal mathematical dependencies](blueprint/overview.svg)
 

@@ -210,7 +210,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original seed now transfers to the normalized Space with its exact integral Hecke quotient and a stable starting chart in ranks two and three. Construct the required characteristic-prime curves and global component propagation, then prove two-sided rigidity and the moving-family integral Selmer product for the same equations and local conditions. Preserve integral torsion and all original local-degree hypotheses.
+**Next concrete task.** The original normalized SeedIn and complete rank-two PropagationTheoremGL2 are now supplied, including characteristic-prime Nice curves, the actual obstruction presentation and arithmetic P1. Construct the rank-three type-E finite-weight ideal and nonsplit thick links; then prove two-sided rigidity and the moving-family integral Selmer product for the same equations, torsion and local-degree conditions.
 
 **Acceptance conditions:**
 
@@ -279,7 +279,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, r60. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original finite Schwartz system, level-theta span and exact identity-cover transfer now prove algebraic raw-theta spanning on the actual good cover. Construct short integral spanning families with uniform archimedean norms, and complete selected-prime divisibility compatibility for these same maps. Retain the common clearing integer, determinant ideals, component fields, full arithmetic character and original principal level.
+**Next concrete task.** The actual integral raw span and original key/parallel shifts now supply the complete shifted short family and literal h0/hsh. Finish selected-prime divisibility and arithmetic-chain compatibility for the same maps, retaining the common clearing integer, coefficient fields, ramified eigenlattice factors, all finite phases and source twists.
 
 **Acceptance conditions:**
 
@@ -322,7 +322,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Actual arithmetic folding, finite phase matching and the complete framed-return sum are now proved under the original gap, retaining all stabilizers, unipotent intersections, finite indices and Haar volumes. Identify the literal period Gram operators with the original raw kernel, then bound the rank-weighted positive trace deficits and excesses after all target restrictions. Fixed-setting convergence does not supply a uniform small trace error.
+**Next concrete task.** The actual full rational-return sum now equals the Poincare Gram operator, the original target projector fixes all periods exactly, and the original higher-rank lattice minimum is bounded on every period cell. Identify the final restricted arithmetic chain and scalar class-kernel dictionary with this operator, keeping further target cuts; prove the uniform weighted moment and positive trace deficit/excess bounds. Fixed-setting convergence and the conditional far-return majorant are not a uniform small trace bound.
 
 **Acceptance conditions:**
 
@@ -383,7 +383,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original models and good cover now have the required nef/big lines, generation on the interior and both birational cusp systems, with the exact canonical weight. Construct short integral spanning families and exact height and multiplication bounds; apply the established geometric filtration and determinant comparison to those same lattices and bound the numerical arithmetic section remainder.
+**Next concrete task.** The actual models now supply positivity, birational cusp systems, exact flat degree, unramified integral frames, parallel/key shifts and both literal h0/hsh short families. Prove the required pointwise Bergman/height and multiplication comparisons, then the numerical arithmetic section remainder in the original metrics and lattices.
 
 **Acceptance conditions:**
 

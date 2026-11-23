@@ -1,0 +1,134 @@
+\subsection{The actual flat determinant degree}
+\label{sec:actual-flat-degree}
+
+The arithmetic model and period presentations constructed above supply
+the hypotheses of the determinant calculation.  We record this
+application explicitly, because a flat line of the correct generic
+weight alone does not supply its prescribed finite norms.
+
+\begin{theorem}\label{thm:actual-flat-degree}
+Retain the original host: $E$ is CM, contains
+$\mathbf Q(\sqrt{-d})$, $-d$ is its prescribed odd fundamental
+quadratic discriminant, and $E/E^+$ is unramified at finite primes.
+Let $p+q=r\ge1$ and use an actual sized good cover\cite{current-construction-record}, with its original
+coefficient field $K$, level, primitive line, and component marking.
+Write
+\[
+ P_E=\gamma+\log(2\pi)-\log\operatorname{rd}(E)
+          -\frac{L'(1,\chi_{-d})}{L(1,\chi_{-d})},\qquad
+ a=-\frac{p-q}{2}P_E-q\bigl(\log d-\log\operatorname{rd}(E)\bigr).
+\]
+For every original component $Z$ and every prescribed half-embedding
+$\tau$, the original $\mathrm{FlatSec}(Z,\tau)$ is nonempty, and
+every such section has degree $-a$.  Thus the actual source
+assertion $\mathrm{FlatExistsAt}(a)$ holds, and its averaged
+coefficient satisfies $c_1(\tau)=a$ for every $\tau$.
+
+Under the original numerical bounds
+\[
+ |P_E|\le3L_b,\qquad 0\le\log d\le L_b,\qquad
+ 0\le\log\operatorname{rd}(E)\le2L_b,
+\]
+one has $|c_1(\tau)|\le\tfrac72rL_b<9rL_b$.
+There is no extension of $K$ in this conclusion.
+\end{theorem}
+
+\begin{proof}
+\emph{The same global component.}
+The established global domination theorem\cite{current-construction-record} gives the normal projective
+flat $\mathcal O_K$-model carrying the original semiabelian family,
+coefficient action and primitive cubical line.  Normalize the closure
+of the selected generic component.  The original
+$\mathrm{FnAlgClosed}$ clause makes its generic fibre geometrically
+integral.  Its proper Stein factor is $\operatorname{Spec}\mathcal O_K$:
+the finite algebra of global functions embeds in the generic
+constant field $K$ and is integral over the integrally closed
+$\mathcal O_K$.  Its nonempty special fibres are consequently
+connected.  Restriction and normalization retain the same family and
+rigidified line.
+
+\emph{The required boundary fibres.}
+The original principal polarization gives the exact Raynaud formula
+\[
+       1=[X:\phi(Y)]^2\deg\lambda_B.
+\]
+Hence the abelian quotient is principally polarized and the period
+map $\phi$ has index one.  The transported primitive identity gives
+the actual line $q_B^*(1,w_0)^*\mathcal P_{\lambda_B}$, with its
+specified rigidification; this is precisely the calculation in
+the actual DVR uniformization theorem\cite{current-construction-record}.  These are the
+self-dual-quotient and line-pullback hypotheses in
+Theorem~\ref{geo-biextension-conjugate-filtration}.
+They hold at every geometric fibre.  Equivalently, they may be
+checked on a trait through a closed point with characteristic-zero
+generic point: such a trait is obtained by a horizontal curve in the
+flat finite-type model and normalization.  The Raynaud quotient of
+that trait specializes to the same torus quotient, and the primitive
+identity fixes the same quotient line.  Closed points suffice for
+these bundle identities and freeness, since the model is Jacobson.
+
+The global normalized adjunctions therefore construct the actual
+first-order Hodge extension, with conjugate-dual kernel, as in
+Proposition~\ref{geo-ramified-hodge-determinant}.  The proper and
+toric comparisons prove coefficient freeness; no freeness of the
+individual tangent eigensheaves at ramified primes is assumed.
+The proposition supplies the integral determinant line whose
+pullback is the exact original tangent eigenlattice at every
+integral point, after arbitrary ramified extensions too.
+
+\emph{A section with the original local norms.}
+The half-level has $M\ge3$ and satisfies
+Proposition~\ref{geo-half-level-determinant}.  Apply
+Theorem~\ref{geo-flat-family-generator} on the selected generic
+component to obtain an algebraic generator of
+\[
+      \det\operatorname{Lie}(G)_\tau\otimes
+       \det\operatorname{Lie}(G)_{\bar\tau}^{-1}
+\]
+with constant original complex norm.  The Hodge and conjugate
+filtrations make its character determinant have degree zero on
+every special-fibre curve.  Theorem~\ref{geo-vertical-line-rigidity}
+then makes its normalized finite order independent of the integral
+point.  These orders vanish at all but finitely many places.
+The original local models have the same orders: their generic
+points lift to the proper dominating model by the valuative
+criterion, and its family comparisons identify the actual tangent
+lattices.  Thus this is the original constant section, not a
+substitute norm on its generic line.
+
+\emph{Its degree.}
+The fine labelled moduli family and every required pure period
+presentation are supplied by
+the actual normalized-member theorem\cite{current-construction-record}.  Consequently
+Propositions~\ref{geo-cm-period-point-descent}
+and~\ref{geo-cm-integral-map-extension} give the exact CM points
+on this component and their integral comparisons.  Apply
+Corollary~\ref{geo-flat-norm-assembly} and
+Proposition~\ref{geo-cm-flat-degree}.  The uncorrected signed
+determinant degree is $(p-q)P_E/2$.  The original
+$\mathrm{flDefect}$ changes it by
+$q(\log d-\log\operatorname{rd}(E))$; hence it is $-a$.
+This is exactly the source's passage from a constant frame to
+$\mathrm{FlatSec}$, including its sign
+\cite{theta-flat-source}.
+
+Any two generators differ by $K^\times$, so the product formula
+makes their degrees equal.  More generally, any original constant
+section is a nonzero scalar multiple: its quotient has constant
+complex norm and is holomorphic on the connected component, so it
+is constant, and the original constant-field clause places the
+scalar in $K$.  This proves the universal quantifier over sections
+in $\mathrm{FlatExistsAt}$.  The definition of $c_1$ is the
+negative average of these degrees, so $c_1(\tau)=a$ independently
+of the component and half-embedding.
+
+Finally $|p-q|\le r$, $q\le r$, and
+$|\log d-\log\operatorname{rd}(E)|\le2L_b$ give
+$|a|\le(3/2+2)rL_b$.  The numerical hypotheses are precisely
+the retained host and weight bounds in the original consumer.
+\end{proof}
+
+The theorem closes the actual flat-degree supplier.  The parallel
+integral twists are supplied in Theorem~\ref{thm:actual-short-parallel-twist};
+the original theta key section and the full shifted short families
+are supplied in Section~\ref{sec:actual-key-short-span}.

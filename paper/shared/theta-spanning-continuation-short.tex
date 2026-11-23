@@ -1,0 +1,385 @@
+\subsection{Short integral generators from the actual theta series}
+\label{sec:actual-short-theta-generators}
+
+The spanning result becomes quantitative without bounding its spanning
+coefficients.  We choose short integral harmonic polynomials, estimate
+their actual raw theta series, and multiply each series by a small
+element of its prescribed determinant ideal.  The last multiplication
+cancels the lattice index in the analytic estimate.  All the fields,
+levels, lattices and theta normalizations remain those of the construction
+\cite{theta-short-source}.
+
+Use the actual sized good cover and all the original
+\texttt{CovGmin.Hyp} assumptions.  In particular put
+\[
+ f=[E:\mathbb Q]/2,\quad r=p+q,\quad K=c.F,\quad
+ X=frL_b,\quad d=\mathrm{DF}(\mathrm{Dw},a),\quad
+ \kappa=d+\frac n2fr.
+\]
+Thus $p,q\ge1$, $f>2$, $n$ is even, $n\ge8fr+4$, and the
+original positive-weight condition holds.  Retain
+\[
+ \begin{gathered}
+ L_b\ge1,\quad \log M\le30L_b,\quad
+ \operatorname{fieldSz}(E)\le3L_b,\\
+ \log(fr)\le L_b,\quad \log\kappa\le20L_b,\quad
+ \operatorname{fieldSz}(K)\le o\le391X^2.
+ \end{gathered}
+\]
+The datum, principal-level laws, common component matrix and form
+constant, full trivial arithmetic character, and normalized dictionary
+are the actual ones constructed earlier.  The condition on $K$ retains
+both its degree and root discriminant; $K$ is not fixed as the table
+varies.
+
+\begin{theorem}[Short integral theta spans]
+\label{thm:actual-short-theta-generators}
+The original cusp space $Y.V(\mathrm{wtZ}(a,n))$ has a finite
+$K$-spanning family in its original integral cusp lattice whose global
+Petersson norm and every original component Petersson norm, at every
+embedding of $K$, are at most
+\begin{equation}\label{eq:actual-short-theta-bound}
+                         \exp(30000X^2\kappa).
+\end{equation}
+Every member has the form $Zs_\Lambda\theta_{\Lambda,N,x_0,P}$,
+where $\theta$ is the actual raw theta section, $P$ belongs to the
+original $\mathrm{harmL}$, $N$ has the original odd level condition,
+$s_\Lambda\ne0$ satisfies the original determinant-ideal inclusion,
+and
+\[
+             Z=M^{frn+d}|\operatorname{disc}E|^d
+\]
+is the same clearing integer for the whole family.  No claim that this
+family generates the integral module is required or made.
+\end{theorem}
+
+\begin{proof}
+\emph{Short vectors in a unimodular Hermitian lattice.}
+Let $\Lambda\subset E^n$ be one of the positive definite unimodular
+lattices used in the actual theta span.  It has $2fn$ rationally
+independent vectors $v_j\in\Lambda$ satisfying, for every embedding,
+\begin{equation}\label{eq:actual-short-lattice-vectors}
+             \|\tau v_j\|\le B_0,
+             \qquad B_0=2f^{3/2}n^2\operatorname{rd}(E).
+\end{equation}
+Here is a proof that also retains the different.  For the Euclidean
+form $B(u,v)=\operatorname{Tr}_{E/\mathbb Q}h(u,v)$, an element of
+the trace-dual lattice has $h(u,\Lambda)\subset\mathfrak D_E^{-1}$.
+Hermitian self-duality gives $\mathfrak D_Eu\subset\Lambda$, hence
+$h(u,u)\in\mathfrak D_E^{-2}$.  If $u\ne0$, the ideal norm and
+arithmetic--geometric mean give
+\[
+ B(u,u)\ge 2f\,|N_{E/\mathbb Q}h(u,u)|^{1/(2f)}
+              \ge\frac{2f}{\operatorname{rd}(E)^2}.
+\]
+These are trace-dual ideals, including at ramified primes.
+
+We use the elementary Euclidean transference bound
+$\lambda_m(L)\lambda_1(L^*)\le m^2$.  For completeness,
+Minkowski applied to cubes gives
+$\lambda_1(L)\lambda_1(L^*)\le m$.  Choose a primitive short
+dual vector $y$, of length at most $m/\lambda_1(L)$, and apply
+induction to $L\cap y^\perp$.  Its minimum is at least
+$\lambda_1(L)$.  Extend each of the resulting dual vectors to
+$L^*$ by adding a multiple of $y$, with coefficient of absolute
+value at most $1/2$ after rounding.  The squared length is at most
+$((m-1)^4+m^2/4)/\lambda_1(L)^2\le m^4/\lambda_1(L)^2$.
+Together with $y$ these vectors are independent.  Applying the result
+to the trace dual with $m=2fn$, and using
+$2\|\tau v\|^2\le B(v,v)$, proves
+\eqref{eq:actual-short-lattice-vectors}.  This argument requires no
+free $\mathcal O_E$-basis of $\Lambda$.
+
+\emph{Short integral harmonic polynomials.}
+The actual harmonic highest-weight space of total degree $d$ is
+spanned over $K$ by integral polynomials $P$ with
+\begin{equation}\label{eq:actual-short-harmonic-bound}
+ \log\sum_\alpha|\sigma(P_\alpha)|\le140rL_*d
+ \quad(\sigma:K\hookrightarrow\mathbb C),
+ \qquad
+ L_*=2+3L_b+\log(1+d)+\log n\le50L_b.
+\end{equation}
+We give the finite arithmetic construction.  Put $b=(2r+1)d$ and
+choose three arrays of vectors $U,A,W$ from the grid
+$\{\sum_j a_jv_j:0\le a_j\le b,\ a_j\in\mathbb Z\}$, of
+lengths $p,p,q$.  Every grid vector has embedding norm at most
+$R=(2fn)bB_0$.  With $H_{ab}=h(A_b,U_a)$ define
+\[
+ V_c=(\det H)W_c-
+       \sum_b A_b\bigl(\operatorname{adj}(H)
+                         (h(W_c,U_a))_a\bigr)_b.
+\]
+Here the original Hermitian convention is explicitly
+$h(x,y)=\sum_kx_k\overline{y_k}$, linear in the first variable
+(\texttt{EmbeddingHermSelf}, lines 14--26).  Thus the coefficients
+in this formula are not conjugated.
+Then $V_c\in\Lambda$ and $h(V_c,U_a)=0$, including when $H$ is
+singular.  The integral leading-minor products made from $U$ and $V$
+are the original harmonic row-highest polynomials, after the fixed
+letter dictionary.  Indeed contractions between the two sets of linear
+forms are zero, and their coefficients belong to the original symmetric
+integral algebra of $\Lambda$.
+
+These products span the full harmonic space.  One elementary
+highest-weight proof is as follows.  Write the two arrays of variables
+as $z_{ik}$ and $y_{jk}$, with $p$ and $q$ rows.  For row partitions
+$\alpha,\beta$ and $p+q\le n$, put
+\[
+ \nu=(\alpha_1,\ldots,\alpha_p,0,\ldots,0,
+                         -\beta_q,\ldots,-\beta_1).
+\]
+Row-highest invariance, in addition to the row degrees, implies that
+the degree of any monomial in a set $S$ of $\ell$ columns of the first
+array is at most $\sum_{i\le\min(\ell,p)}\alpha_i$.
+For $\ell<p$, prove this on the open set where the first $\ell$ rows
+restricted to $S$ are independent.  Adding earlier rows to later rows
+eliminates the entries of $S$ in every later row and leaves the
+polynomial unchanged.  Scaling the columns $S$ by $t$ leaves these
+elimination coefficients unchanged, so the resulting $t$-degree is
+at most $\alpha_1+\cdots+\alpha_\ell$.  The identity on this dense
+open set proves the bound everywhere.  For $\ell\ge p$ it is the
+total degree bound.  The same argument applies to $y$ and $\beta$.
+Consequently every column weight $\mu$ satisfies
+\[
+ \sum_{k\le\ell}\mu_k
+ \le\sum_{i\le\min(\ell,p)}\alpha_i-|\beta|
+       +\sum_{j\le\min(n-\ell,q)}\beta_j
+ =\sum_{k\le\ell}\nu_k.
+\]
+Thus every dominant column-highest weight is dominated by $\nu$.
+
+For clarity, the exact differential-operator identity used next is
+\[
+ \Omega_{\rm col}=\Omega_z+(n-p)E_z
+                   +\Omega_y+(n-q)E_y
+                     -2\sum_{i,j}R_{ij}\Delta_{ij},
+\]
+where $E_z,E_y$ are total degrees,
+$R_{ij}=\sum_k z_{ik}y_{jk}$,
+$\Delta_{ij}=\sum_k\partial_{z_{ik}}\partial_{y_{jk}}$,
+the row Casimirs are $\sum_{i,j}(\sum_kz_{ik}\partial_{z_{jk}})
+(\sum_kz_{jk}\partial_{z_{ik}})$ and its $y$ analogue, and
+the column Casimir is $\sum_{k,l}L_{kl}L_{lk}$ with
+$L_{kl}=\sum_i z_{ik}\partial_{z_{il}}-
+\sum_j y_{jl}\partial_{y_{jk}}$.
+Expansion and the product rule prove the identity.
+The row Casimir on a highest vector of weight $\alpha$ is
+$\sum_i\alpha_i(\alpha_i+p+1-2i)$, by commuting each raising
+operator past its lowering operator; similarly for $\beta$.
+Harmonicity therefore makes the column Casimir equal to
+$\sum_i\nu_i(\nu_i+n+1-2i)$.  This value is strictly increasing
+under strict dominance: summation by parts has positive coefficients
+$(\nu_j-\nu_{j+1})+(\mu_j-\mu_{j+1})+2$.
+Consequently $\mu=\nu$.  The monomial degrees then exclude all
+columns except the first $p$ in the first block and the last $q$ in
+the second.  On the open set where the successive leading minors
+are nonzero, row and column unipotent elimination reduces these two
+square blocks to diagonal matrices.  The diagonal weights fix the
+single product of leading minors, with exponents
+$\alpha_i-\alpha_{i+1}$ and $\beta_j-\beta_{j+1}$.
+Polynomial identity extends this uniqueness off the open set.
+In the Fock inner product, column raising
+and lowering operators are adjoints.  The orthogonal complement of
+the span of this product's column orbit, if nonzero, would contain
+another highest vector and hence this same product, a contradiction.
+This proves orbit spanning.  The assertion descends from $\mathbb C$
+to $K$ because all the defining equations and operators are linear
+over $K$.
+
+The adjugate construction parametrizes this orbit on the open set of
+independent $U$: take $A$ dual to $U$, so that $H=1$, and take any
+prescribed orthogonal $V=W$.  The distinct CM embeddings and their
+conjugates are independent after scalar extension; the rational basis
+$(v_j)$ therefore supplies all these parameters simultaneously.
+As a polynomial in the grid coordinates each minor product has degree
+at most $(2p+1)d\le b$.  Interpolation on $\{0,\ldots,b\}$ in
+each coordinate proves that the stated integral grid already spans.
+Its cardinality is at most
+$((2r+1)d+1)^{2fn(2p+q)}$.
+
+The adjugate formula gives
+$\|\tau V_c\|\le(p+1)!R^{2p+1}$.
+Hadamard expansion and the coefficient $\ell^1$ norm bound every
+minor product by
+\[
+ \left(r\sqrt n\,(r+1)!R^{2r+1}\right)^d.
+\]
+Using $r\le n$, $\log\operatorname{rd}(E),\log f,
+\log(1+d)\le2L_*$ and $\log n\le L_*$ gives
+\eqref{eq:actual-short-harmonic-bound}.  If $d=0$, use $\{1\}$
+when the harmonic space is nonzero, and the empty family otherwise.
+Thus no logarithm of a zero degree is taken.  For the source's global
+coefficient norm,
+\[
+ \operatorname{polyNorm}(P)
+ \le\sqrt{[K:\mathbb Q]}\max_\sigma\sum_\alpha|\sigma P_\alpha|
+ \le\exp(20000X^2\kappa).
+\]
+The term $\tfrac12\log[K:\mathbb Q]\le o/2$ is retained in this
+inequality.
+
+\emph{The norm of the actual raw theta section.}
+Write $m_\Lambda=[\Lambda:\Lambda\cap\mathcal O_E^n]$.  For a
+homogeneous original $P$ with $\operatorname{polyNorm}(P)\le\rho$,
+the actual section has normalized point norm bounded by
+\begin{equation}\label{eq:actual-raw-theta-uniform-norm}
+ \operatorname{homN}_\sigma(\theta;z)
+       \le m_\Lambda^{r/2}\rho\exp(9000X^2\kappa).
+\end{equation}
+We verify the decisive analytic estimates and the index.
+
+First, a nonzero bounded cusp form has a frame at which its point norm
+is at least half its supremum.  Normalize that frame orthogonally.
+At this frame the original period lattice has minimum at least
+\begin{equation}\label{eq:actual-halfmax-minimum}
+                                \lambda=\exp(-40L_b).
+\end{equation}
+Here no uniform fundamental domain is assumed.  The actual principal
+level transvections give a direct proof.  On the integral Hermitian
+lattice $L'$ with $\Lambda_{\rm per}=\mathrm{AA}L'$, the majorant
+of a vector smaller than one at every embedding forces its Hermitian
+norm to vanish, by integrality and the product formula.  For such an
+isotropic vector use its rank-one unipotent flow with complex parameter
+$\zeta$.  If all majorants are at most $\epsilon$, the orbit remains
+in the domain for $\Im\zeta>-T$, $T=(k_0\epsilon)^{-1}$.
+The original arithmetic group makes the evaluated form periodic of
+period $M_*$, with
+\[
+             k_0=2\xi_R,\qquad M_*k_0=2M\sqrt{d_H},
+\]
+where $d_H$ is the Host's original quadratic parameter.  The trivial
+arithmetic character gives genuine periodicity.  Cuspidality gives
+vanishing at $\Im\zeta=+\infty$.  On $\Im\zeta=-T/2$ the
+frame-norm distortion is at most $2^{w/2}$, where
+$w=3\kappa$ bounds the sum of the weight spreads.  The periodic
+Schwarz lemma and the half-supremum choice would imply
+\[
+                  1\le2\,2^{w/2}\exp(-\pi T/M_*).
+\]
+This is impossible for
+\[
+ \epsilon\le\epsilon_{\rm lev}
+ =\min\left\{1,
+       \frac{\pi}{2M\sqrt{d_H}(fw+2)\log2}\right\}.
+\]
+The actual trace-dual identity
+$(\xi_0)\mathrm{AA}\,\overline{\mathrm{AA}}\mathfrak D_E=1$
+and Minkowski give $b\ne0$ with $b\mathrm{AA}\subset\mathcal O_E$
+and $|\tau b|^2\le\xi_R\operatorname{rd}(E)^2$.  Applying the
+majorant conclusion to $b\Lambda_{\rm per}\subset L'$ gives
+$\lambda_1(\Lambda_{\rm per})^2
+ \ge2\epsilon_{\rm lev}/\operatorname{rd}(E)^2$.
+Finally $\log\sqrt{d_H}\le\log\operatorname{rd}(E)\le3L_b$
+and the displayed size assumptions give
+$\epsilon_{\rm lev}\ge e^{-57L_b}$ and hence
+\eqref{eq:actual-halfmax-minimum}.
+
+For completeness the remaining theta bound is a Gaussian estimate.
+The tensor period lattice $\Lambda\otimes\Lambda_{\rm per}$ has
+minimum at least $\lambda/B_0$: contraction with one of the vectors
+in \eqref{eq:actual-short-lattice-vectors} is a nonzero original
+period and has norm at most $B_0$ times the tensor's norm.
+On a principal torus of complex dimension $g=frn$ and period minimum
+$\lambda'$, Gaussian submean on a ball of radius $\sqrt{2g/\pi}$
+and Euclidean packing give
+\[
+ \|s\|_\infty\le\sqrt2
+   \left(1+\frac{4\sqrt{2g}}{\sqrt\pi\lambda'}\right)^g
+   \|s\|_2.
+\]
+The Gaussian mass of this ball is at least one half; its translated
+lattice multiplicity is at most
+$(1+4\sqrt{2g}/(\sqrt\pi\lambda'))^{2g}$.
+This proves the inequality with the original average $L^2$ norm.
+The finite isogeny sum defining the projected vacuum has squared
+$L^2$ norm equal to the number of its cosets times the old squared
+norm.  This is finite Heisenberg character orthogonality on their
+common cover.  Dividing by the original square root of that coset
+number gives norm one, without any assumption on the relative index.
+
+Cauchy's estimate for ordinary derivatives of total degree $d$, with
+the radius $\sqrt{\alpha_j/\pi}$ in coordinate $j$, gives the
+factor $(\pi e d)^{d/2}$.  The actual derivative directions contribute
+$t^{d/2}$, $t=2\xi_R$; no factorial is inserted into the harmonic
+operator.  Consequently at the chosen frame the actual raw value is
+at most
+\[
+ m_\Lambda^{r/2}\Bigl(\sum_\alpha|\sigma P_\alpha|\Bigr)
+ (\pi e t d)^{d/2}\sqrt2
+ \left(1+\frac{4\sqrt{2frn}\,B_0}{\sqrt\pi\lambda}\right)^{frn}.
+\]
+The normalized finite Fourier mean has coefficients of modulus one;
+its full cardinality cancels its denominator.  Combining the actual
+raw prefactor with the normalized vacuum leaves exactly
+$m_\Lambda^{r/2}$, as in the raw-span calculation.  The original
+Lie normalization is $(\pi t)^{-d/2}$ and cancels its matching
+derivative factor.  For $d=0$ these factors are one.
+Now $d\le\kappa$, $frn\le2\kappa$,
+$\#\operatorname{supp}P\le(d+1)^{frn}$, and
+$\sum|\sigma P_\alpha|\le\sqrt{\#\operatorname{supp}P}\,\rho$.
+The logarithms of these factors, including the half-supremum factor,
+are bounded by $9000X^2\kappa$.  For example
+$\log n\le21L_b$ and the logarithm of the packing parenthesis
+is at most $101L_b$; their sum is already less than
+$300\kappa L_b\le9000X^2\kappa$.
+This proves \eqref{eq:actual-raw-theta-uniform-norm} on every component
+and at every embedding with the original normalization.
+
+\emph{Cancelling the index while preserving integrality.}
+Let $\mathfrak a=\det(\Lambda\cap\mathcal O_E^n)(\det\Lambda)^{-1}$.
+It is integral and $N\mathfrak a=m_\Lambda$.  In $K$ put
+\[
+ \mathfrak B=\prod_{\tau:E\hookrightarrow\mathbb C}
+                 (\tau\mathfrak a)^{\mathrm{Dw.mult}(\tau)}.
+\]
+Because $\sum_\tau\mathrm{Dw.mult}(\tau)=fr$, its norm is
+$N_K\mathfrak B=m_\Lambda^{r[K:\mathbb Q]/2}$.
+Minkowski in the inverse fractional ideal, using a product of equal
+complex discs, gives a nonzero $s_\Lambda\in\mathfrak B^{-1}$ with
+\begin{equation}\label{eq:actual-small-determinant-scalar}
+        |\sigma s_\Lambda|\,m_\Lambda^{r/2}
+                  \le e^{\operatorname{fieldSz}(K)}
+                  \qquad\hbox{for every }\sigma.
+\end{equation}
+Indeed, writing $[K:\mathbb Q]=2h$, the discs of radius
+$e^{\operatorname{fieldSz}(K)}m_\Lambda^{-r/2}$ have volume
+$\pi^h e^{2h\operatorname{fieldSz}(K)}m_\Lambda^{-rh}$,
+whereas the required Minkowski threshold is
+$2^h\sqrt{|\operatorname{disc}K|}m_\Lambda^{-rh}$.
+The former is strictly larger since
+$\operatorname{fieldSz}(K)\ge\log\operatorname{rd}(K)$.
+Membership in $\mathfrak B^{-1}$ is precisely the original
+determinant-ideal inclusion.  Thus this is the same scalar in both
+the integral and analytic arguments.
+
+The established actual denominator theorem\cite{current-construction-record} makes
+$Zs_\Lambda\theta$ integral, with $\log Z\le67X^2\kappa$.
+Equations \eqref{eq:actual-short-harmonic-bound},
+\eqref{eq:actual-raw-theta-uniform-norm} and
+\eqref{eq:actual-small-determinant-scalar} give total logarithmic
+bound
+\[
+        (20000+9000+391+67)X^2\kappa<30000X^2\kappa.
+\]
+The original global and component Petersson measures have mass at
+most one, so the same bound holds for their $L^2$ norms.  The actual
+raw-span theorem and the harmonic grid span show that these series
+span the original cusp space.  Multiplication of individual generators
+by nonzero $Zs_\Lambda$ preserves that $K$-span.  Finite dimensionality
+then permits selection of a finite spanning subset without increasing
+any norm.  This proves the theorem.
+\end{proof}
+
+\paragraph{The precise downstream gain.}
+This supplies the original \texttt{ExistsGoodCoverAtMinimalLevel}
+conclusion on the actual cover.  Its argument does not use the
+\texttt{PublishedHodgeBundleTheorems} package appearing in the source
+wrapper.  The next weight-shift supplier must still be applied to the
+same cover and its actual integral flat-line and key-unit twists.
+Once its integral $K$-spanning set has the displayed component norm,
+the $h_0,h_{\rm sh}$ consumers in
+\texttt{ExistsDegreeParametersBound} require only a finite subset.
+The intervening conversion to generators of the whole integral module,
+with its additional rank and Tamagawa inputs, is unnecessary for these
+consumers.  This observation does not assert that the twists or their
+flat degree have been supplied by the present theorem.

@@ -21,15 +21,21 @@ transfer theorem can depend on an unresolved arithmetic construction.
 The original model system, good cover, raw integral theta sections and
 ordinary automorphic families are constructed. Exact Gaussian reproduction,
 the weighted Siegel--Weil identity and the actual harmonic heat comparison
-retain the prescribed scalars. The finite theta system now gives actual
-raw-theta spanning; the original seed transfers to normalized support.
-Arithmetic folding and the full framed-return sum are supplied, as are
-the required positive and birational cusp systems. The
-[frontier theorems](../notes/open-frontier-theorems.md) concentrate on
-characteristic-prime propagation and uniform Selmer bounds, short integral
-spanning and local divisibility compatibility, the actual period Gram
-identity and trace estimate, and arithmetic heights. Four characters do not bound the auxiliary
-fields, ranks or integral defects. No whole node is closed by these suppliers.
+retain the prescribed scalars. The actual raw theta system now has a
+short integral K-span with uniform component and embedding norms. The
+flat determinant degree and integral parallel twists are supplied.
+The rank-two characteristic-prime curves and full stable-component
+propagation are proved. The complete rational-return sum is the actual
+Poincare Gram operator; its original target projector fixes the periods
+exactly. The arithmetic flag controls the original higher-rank minimum.
+The [frontier theorems](../notes/open-frontier-theorems.md) concentrate
+on rank-three thick support and the uniform integral Selmer bound,
+selected-prime divisibility compatibility, final arithmetic-map
+identification and uniform trace estimates, and pointwise norm/height
+bounds. The original key shift now supplies both exact short-family
+hypotheses of the degree argument. Four
+characters do not bound fields, ranks or integral defects. No whole node
+is closed by these suppliers.
 
 ## The analytic target
 

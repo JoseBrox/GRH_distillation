@@ -1,0 +1,221 @@
+\subsection{The arithmetic flag controls the actual lattice minimum}
+\label{global-gram-arithmetic-minimum}
+
+Retain one original arithmetic setting.  Let $f=[F:\mathbb Q]$,
+$[E:F]=2$, $n=\dim_E V$, $D_F=|\operatorname{disc}F|$ and
+$D_E=|\operatorname{disc}E|$.  All vector norms below are the
+original Euclidean norms after the coordinate change $P_v^{-1}$;
+thus the Hermitian matrix is diagonal with entries $\pm1$.
+Use the original $e_a,f_a,z_u$, $0\le a<r$, and put
+\[
+ E_a=\Bigl(\prod_{v\mid\infty}\|e_{a,v}\|\Bigr)^{1/f},\quad
+ F_a=\Bigl(\prod_{v\mid\infty}\|f_{a,v}\|\Bigr)^{1/f},\quad
+ Z_u=\Bigl(\prod_{v\mid\infty}\|z_{u,v}\|\Bigr)^{1/f},
+\]
+\begin{equation}\label{global-gram-minimum-constant}
+ \theta_u=\min\bigl(\{1,Z_u^{-1}\}\cup
+    \{E_a^{-1},D_F^{-(r-a)/f}F_a^{-1}:0\le a<r\}\bigr)>0,
+ \qquad
+ \tau_{0,u}=\min\left\{\frac12,
+              \frac{\theta_u}{\sqrt n\,D_E^{1/(4f)}}\right\}.
+\end{equation}
+The sets indexed by $a$ are empty when $r=0$.  These constants
+do not depend on the original finite column representative.
+They still depend on the actual field and frame.
+
+For an original column $\rho$, write
+$a_{u,\rho}=h_{u,\rho}x_u$ and
+$\Lambda_{u,\rho}=V(E)\cap a_{u,\rho}L_f$.  Since $x_u$ preserves
+$L_f$ and $h_{u,\rho}$ fixes every $e_a,f_a,z_u$, these lattices
+are integral for the original Hermitian form and satisfy
+\begin{equation}\label{global-gram-minimum-flag}
+ e_a,z_u\in\Lambda_{u,\rho},\qquad
+ \Lambda_{u,\rho}\cap X=\bigoplus_{a=0}^{r-1}
+        \mathfrak d^{a-r}e_a,\qquad X=\langle e_0,\ldots,e_{r-1}\rangle_E.
+\end{equation}
+Here $\mathfrak d$ is the extension of the different of $F/\mathbb Q$,
+so $N_E(\mathfrak d)=D_F^2$.  In particular its fractional powers
+are retained; the $f_a$ need not be integral.
+These are the literal original lattice and column conventions.
+\cite{global-gram-minimum-source}
+
+\begin{theorem}[A column-independent bound for the original minimum]
+\label{global-gram-actual-minimum-theorem}
+For every original word $u$, column $\rho$, $g\in G_\infty$ and
+$k\in K_2$, the source's exact functions satisfy
+\begin{equation}\label{global-gram-actual-minimum}
+ \operatorname{least}(g,a_{u,\rho}k)
+       \ge\frac{\theta_u}{\sqrt n\,D_E^{1/(4f)}}
+                      \nu_u(g)^{-1/f},\qquad
+ \tau(g,a_{u,\rho}k)\ge\tau_{0,u}\nu_u(g)^{-1/f}.
+\end{equation}
+Here $\nu_u(g)=\inf_{s\in S_u(F_\infty)}\prod_v\|s_vg_v\|_{\rm op}$
+is the original quotient norm.  The function
+$\operatorname{least}$ is the infimum of normalized covolume
+sizes over \emph{all} nonzero $\mathcal O_E$-submodules of the
+original lattice, as in \texttt{leastSize}; it is not replaced
+by the shortest-vector length or an infimum over lines.
+\end{theorem}
+
+\begin{proof}
+First, for every $0\ne y\in\Lambda_{u,\rho}$ and every
+$s\in S_u(F_\infty)$ we prove
+\begin{equation}\label{global-gram-minimum-product}
+                  \prod_v\|s_vy_v\|\ge\theta_u^f.
+\end{equation}
+The original group acts upper unitriangularly on the ordered
+$e$ flag and sends $z_u$ to $z_u+X$.  Its inverse has these
+same properties.  There are four exhaustive cases.
+
+If some $\beta_a=h(e_a,y)$ is nonzero, choose the least such
+index $a$.  Every $\beta_a$ is in $\mathcal O_E$ by
+\eqref{global-gram-minimum-flag}.  At each place, unitarity and
+the earlier vanishing pairings give
+\[
+ h(e_{a,v},s_vy_v)=h(s_v^{-1}e_{a,v},y_v)=\beta_{a,v}.
+\]
+The diagonal sign matrix has operator norm one.  Consequently
+\[
+ \prod_v\|s_vy_v\|\ge
+   \frac{\prod_v|\beta_{a,v}|}{\prod_v\|e_{a,v}\|}
+ =\frac{|N_{E/\mathbb Q}\beta_a|^{1/2}}{E_a^f}
+ \ge E_a^{-f}\ge\theta_u^f.
+\]
+
+If every $\beta_a$ vanishes, then $y\in X^\perp$.  The number
+$b=h(z_u,y)\in\mathcal O_E$ is unchanged by $s$, because
+$s^{-1}z_u-z_u\in X$.  If $b\ne0$, the same calculation gives
+$\prod_v\|s_vy_v\|\ge Z_u^{-f}\ge\theta_u^f$.
+
+Suppose also $b=0$ but $y\notin X$.  The original signature
+and $h(z_u,z_u)<0$ make
+$(X^\perp\cap z_u^\perp)/X$ positive definite at every real place.
+Thus $c=h(y,y)$ is a nonzero totally positive integer of $F$.
+For each place $\|s_vy_v\|^2\ge c_v$, so the product is at
+least $N_{F/\mathbb Q}(c)^{1/2}\ge1$.
+
+Finally, if $y\in X$, write $y=\sum_a\alpha_ae_a$, with
+$\alpha_a\in\mathfrak d^{a-r}$, and choose the largest index
+$a$ with $\alpha_a\ne0$.  Upper unitriangularity preserves this
+last coefficient, so $h(f_{a,v},s_vy_v)=\alpha_{a,v}$.
+Inclusion of fractional ideals $(\alpha_a)\subseteq\mathfrak d^{a-r}$
+gives $|N_{E/\mathbb Q}\alpha_a|\ge D_F^{2(a-r)}$.  Hence
+\[
+ \prod_v\|s_vy_v\|\ge D_F^{a-r}F_a^{-f}\ge\theta_u^f.
+\]
+This proves \eqref{global-gram-minimum-product} without choosing
+bounded unipotent representatives or changing the metric.
+
+Since $g_v^{-1}y_v=(s_vg_v)^{-1}s_vy_v$, the operator norm
+inequality and then the infimum over $s$ yield
+\[
+ \prod_v\|g_v^{-1}y_v\|\ge\theta_u^f\nu_u(g)^{-1}.
+\]
+Here $1\le\nu_u(g)<\infty$, because an indefinite unitary matrix
+and its inverse have the same operator norm and their product
+norm is at least one.  Arithmetic--geometric mean now gives
+\begin{equation}\label{global-gram-minimum-shortest}
+ \left(\sum_v\|g_v^{-1}y_v\|^2\right)^{1/2}
+                 \ge\sqrt f\,\theta_u\nu_u(g)^{-1/f}.
+\end{equation}
+
+It remains to pass to the actual higher-rank minimum.  Let
+$0\ne R\subseteq\Lambda_{u,\rho}$ be any
+$\mathcal O_E$-submodule, of $E$-rank $j$, $1\le j\le n$.
+Its original real realization is a lattice in a real space
+of dimension $D=2fj$.  It is finitely generated because
+$\Lambda_{u,\rho}$ is a lattice over the Noetherian ring
+$\mathcal O_E$.  The realization uses real and imaginary
+coordinates with the ordinary Euclidean norm, without an
+extra $\sqrt2$ factor.  If $\Delta_R$ is its covolume in its
+real span, Minkowski's convex body theorem applied to a cube
+in that span gives
+\[
+ \lambda_1(R)\le\sqrt{2fj}\,\Delta_R^{1/(2fj)}.
+\]
+One can take cubes with side $2(1+\epsilon)\Delta_R^{1/(2fj)}$
+and let $\epsilon$ decrease to zero; their vertices have the
+displayed Euclidean radius.  The original definition is exactly
+\[
+ \operatorname{size}(R)
+    =\left(2^{fj}D_E^{-j/2}\Delta_R\right)^{1/(2fj)}
+    =\sqrt2\,D_E^{-1/(4f)}\Delta_R^{1/(2fj)}.
+\]
+Together with \eqref{global-gram-minimum-shortest}, this yields
+\[
+ \operatorname{size}(R)\ge
+     \frac{\theta_u}{\sqrt j\,D_E^{1/(4f)}}\nu_u(g)^{-1/f}
+ \ge\frac{\theta_u}{\sqrt n\,D_E^{1/(4f)}}\nu_u(g)^{-1/f}.
+\]
+The source's $\operatorname{lamX}(g,a_{u,\rho}k)$ is precisely
+$\Lambda_{u,\rho}$, since $k\in K_2$ preserves $L_f$; its
+\texttt{frm} inverse is precisely $g_v^{-1}P_v^{-1}$, or its
+complex conjugate at the other representative of a complex
+place.  Thus these are the actual covolumes in
+\texttt{leastSize}.  Taking its infimum proves the first
+assertion.  The second follows from $\nu_u\ge1$ and
+$\tau=\min\{1/2,\operatorname{least}\}$.
+\cite{global-gram-minimum-source}
+\end{proof}
+
+\paragraph{Exact effect on the projector's far-return bound.}
+Retain the original projector kernel $\phi$, its finite idempotent,
+formal degrees and positive normalizer
+$\mathcal M_\phi=(\prod_vd_v)e(1)>0$.
+For a cutoff $\varepsilon$, write
+\[
+ \mathcal T_{h,\varepsilon}(x)=
+    \mathcal M_\phi^{-1}\sum_{\gamma\in G(F)\text{ far at }x}
+                                  |\phi(x^{-1}\gamma x)|.
+\]
+Assume the literal source \texttt{Deep.FarBound}, with its
+discrete-series, signature and gap hypotheses and the conditions
+\[
+ \begin{gathered}
+ q=\min(p,q)\ge1,\quad0<\varepsilon\le(2q)^{-1/2},\quad
+  2n^2\varepsilon\le\log2,\\
+ 64n^2\le h\varepsilon,\quad
+ 1\le h\varepsilon^2/16,\quad120nq^{3/2}\le h.
+ \end{gathered}
+\]
+That source estimate has authenticated interfaces; its entire
+dependency chain is not reproved here.  Substitution into it gives
+the actual pointwise bound, uniformly over the original columns
+and $k\in K_2$,
+\begin{equation}\label{global-gram-minimum-far}
+ \mathcal T_{h,\varepsilon}(g,a_{u,\rho}k)
+ \le C_u e^{-h\varepsilon^2/16}\nu_u(g)^{4n^2},\qquad
+ C_u=2f3^f\left(\frac{3\sqrt n}{\tau_{0,u}^2}\right)^{2n^2f}.
+\end{equation}
+The exponent is exactly $4n^2$, since the original factor is
+$\tau^{-4n^2f}$ and \eqref{global-gram-actual-minimum} has
+$\nu^{-1/f}$; no degree has been suppressed.
+
+In the original seed-decay gap regime, set
+\[
+ \mathcal W_u=\int_{S_u\backslash G_\infty}
+                \nu_u(g)^{4n^2}\|W_u(g)\|\,dq_u(g)<\infty.
+\]
+Finiteness follows from Theorem~\ref{actual-seed-decay-theorem},
+whose exponent is $N_X\ge4n^2$, and $\nu_u\ge1$.
+Using the original representative measure $\nu_Q(u)$ gives
+\begin{equation}\label{global-gram-minimum-weighted-far}
+ \int_{G_\infty}\mathcal T_{h,\varepsilon}(g,a_{u,\rho}k)
+                      \|W_u(g)\|\,d\nu_Q(u)(g)
+          \le C_u e^{-h\varepsilon^2/16}\mathcal W_u<\infty.
+\end{equation}
+The integrand's far-return factor need not descend to the
+$S_u$ quotient; the displayed measure is therefore kept
+explicit.  Its majorant does descend, and the established
+Weil comparison gives the stated right side.  At the already
+admissible choice $h\ge16n^{19}$ and
+$\varepsilon=(8n^2)^{-1}$ the exponential is at most
+$e^{-n^{15}/64}$.\cite{global-gram-minimum-source}
+
+This supplies an arithmetic minimum estimate and a finite weighted
+far-return majorant on the actual period cells.  A bound for
+$C_u\mathcal W_u$ across the moving arithmetic family, control
+of the near returns, and identification with the original
+restricted arithmetic chain and its positive trace remain required
+for the numerical budget.  None is a consequence of finiteness
+in \eqref{global-gram-minimum-weighted-far}.

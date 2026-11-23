@@ -514,3 +514,37 @@ sum, without a uniform trace estimate or a replacement of the raw kernel
 by a normalized abstract Gram matrix. The
 [combined independent review](../certificates/arithmetic-construction-continuation-review.json)
 records the reviewed conventional arguments and their precise limits.
+
+### Quantitative theta spans, rank-two support and exact period target
+
+The [short-span certificate](../certificates/theta-spanning-continuation-short.json)
+and [independent review](../certificates/selmer-support-continuation-theta-review.json)
+retain the literal minimal-level consumer and every norm normalization.
+The [flat-degree](../certificates/theta-spanning-continuation-flat.json) and
+[parallel-twist](../certificates/theta-spanning-continuation-twist.json)
+ledgers authenticate `FlatExistsAt`, integral frames, `UnramPts` and the
+exact scalar-rounding cost, including primary good-reduction hypotheses.
+The [curve](../certificates/selmer-support-continuation-rank-two-curve.json)
+and [propagation](../certificates/selmer-support-continuation-rank-two-propagation.json)
+ledgers retain the full rank-two source quantifiers and ordinary cone.
+
+The [period](../certificates/global-gram-continuation-period.json),
+[projector](../certificates/global-gram-continuation-projectors.json) and
+[minimum](../certificates/global-gram-continuation-minimum.json) ledgers
+check `EntryUnfold`, `KExpansion`, `InHH`, `PuLinear`, the exact original
+target, and `leastSize` over all submodules. Exact diagnostics test complex
+phases, noncommutative convolution, fractional differents and covolume
+normalization; general proofs are in the corresponding TeX. The
+[independent review](../certificates/arithmetic-quantitative-continuation-review.json)
+records decisive checks and limitations. No Lean build or whole-node
+completion is asserted.
+
+The [key-shift certificate](../certificates/theta-spanning-continuation-key.json)
+authenticates fifteen source interfaces and Moret–Bailly's all-prime key
+formula. Exact diagnostics verify both metric exponents, 1,215 weight
+cases and 2,673 downstream budget cases. The conventional proof retains
+the actual positive quadratic period expansion and ramified eigenframe
+determinant; the odd elliptic boundary counterexample excludes a broader
+principal-line claim. The output is the literal `h0`/`hsh` family, not a
+replacement integral basis. Its independent review is in the combined
+quantitative review above.

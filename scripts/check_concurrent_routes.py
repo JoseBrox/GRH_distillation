@@ -9,6 +9,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -42,11 +43,37 @@ def main():
     assert len(declared) == len(manifest["fragments"]), "Duplicate proof-library declaration"
     actual_files = {str(p.relative_to(ROOT)) for p in (ROOT/"paper/shared").glob("*.tex")}
     assert set(declared) == actual_files, "The proof-library manifest must cover every fragment"
+    cited = []
+    records = {item["path"]: item for item in manifest["fragments"]}
     for path, expected in declared.items():
         assert expected and expected <= {"rh", "grh"}
         actual = {route for route, data in builds.items()
                   if path in {s["path"] for s in data["sources"]}}
-        assert actual == expected, ("Declared proof inclusion differs from actual TeX inputs", path, actual, expected)
+        item = records[path]
+        presentation = item.get("presentation", "included")
+        assert presentation in {"included", "cited"}, (path, presentation)
+        if presentation == "included":
+            assert actual == expected, ("Declared proof inclusion differs from actual TeX inputs", path, actual, expected)
+        else:
+            assert not actual, ("A printed proof must be declared included", path)
+            assert re.fullmatch(r"[0-9a-f]{40}", item["source_commit"])
+            original = subprocess.check_output(
+                ["git", "show", item["source_commit"] + ":" + path], cwd=ROOT)
+            assert original == (ROOT/path).read_bytes(), ("Cited proof changed since its cited revision", path)
+            assert hashlib.sha256(original).hexdigest() == item["sha256"]
+            blob = b"blob " + str(len(original)).encode() + b"\0" + original
+            assert hashlib.sha1(blob).hexdigest() == item["git_blob_sha1"]
+            reference = "paper/shared/current-arithmetic-constructions-references.tex"
+            body = (ROOT/reference).read_text()
+            assert r"\bibitem{" + item["citation_key"] + "}" in body
+            assert item["source_commit"] in body
+            for route in expected:
+                inputs = {s["path"] for s in builds[route]["sources"]}
+                assert reference in inputs, ("Missing construction citation", route, path)
+                assert any(r"\cite{" + item["citation_key"] + "}" in (ROOT/s).read_text()
+                           for s in inputs if s.endswith(".tex"))
+            cited.append({key: item[key] for key in
+                          ["path", "source_commit", "sha256", "git_blob_sha1"]})
     aggregate = read("blueprint/proof-blueprint.json")
     progress = read("blueprint/progress.json")
     for route, key in [("rh", "rh"), ("grh", "technical")]:
@@ -75,10 +102,11 @@ def main():
             file = target.partition("#")[0]
             assert (ROOT/path).parent.joinpath(file).exists(), (path, target)
             links += 1
-    result = {"passed": True, "scope": "Actual source/PDF hashes, distinct routes, common proof inclusion, stable node counts and public local links. No mathematical theorem is inferred from these checks.",
+    result = {"passed": True, "scope": "Actual source/PDF hashes, distinct routes, printed proof inclusion, byte-exact established construction citations at their immutable revision, stable node counts and public local links. No mathematical theorem is inferred from these checks.",
               "pages": {k: v["page_count"] for k,v in builds.items()},
               "counts": {k: {x:v[x] for x in ["finished","total"]} for k,v in progress["maps"].items()},
               "common_tex_inputs": common, "common_proof_fragments": fragments,
+              "cited_proof_fragments": cited,
               "proof_library_manifest": {"path":"paper/shared/manifest.json", "sha256":sha("paper/shared/manifest.json")},
               "local_links_checked": links,
               "build_certificates": {route:sha(f"certificates/{route}-build.json") for route in builds},

@@ -1,0 +1,144 @@
+\subsection{The original projectors fix the actual periods}
+\label{global-gram-original-projectors}
+
+Retain the original arithmetic setting, its given
+\texttt{LevelSubgroupCharacter}, and the established seed-decay
+gap range.  Write $K=K_2$, $v_K=\mu_f(K)$ and
+\[
+ e(k)=v_K^{-1}1_K(k)\overline{\chi_2(k)},\qquad
+ p(g)=\Bigl(\prod_vd_v\Bigr)
+             \overline{\prod_v\langle w_v,\sigma_v(g_v)w_v\rangle}.
+\]
+These are exactly the finite idempotent and infinite coefficient
+in the original setting, not substitute projectors.
+Let $R_e$ and $R_p$ denote the original operators
+\texttt{Re} and \texttt{Rph} on
+$L^2(G(F)\backslash G(\mathbb A_F))$, with its original Haar measure.
+The setting defines them by their weak convolution identities.
+The conclusion below identifies precisely the original target
+$HH_X=\operatorname{im}(R_eR_p)$.
+\cite{global-gram-projector-source}
+
+\begin{theorem}[The actual \texttt{InHH} supplier]
+\label{global-gram-inhh-theorem}
+The original level is measurable and compact open, with
+$0<v_K<\infty$, and satisfies the original
+\texttt{LevelSubgroupNormalized} condition.  For every original
+column $T$, the complete Poincare period satisfies
+\begin{equation}\label{global-gram-projectors-fix}
+              R_pP_uT=P_uT,
+              \qquad R_eP_uT=P_uT.
+\end{equation}
+Together with the established convergence and representative
+independence, these are the entire original \texttt{InHH}
+assertion.  The original $P_u$ is a continuous linear map from
+its finite-dimensional column space to $HH_X$; in particular
+the original \texttt{PuLinear} assertion also holds.
+\end{theorem}
+
+\begin{proof}
+\emph{The literal finite level and its measure.}
+Let $K_0$ be the full stabilizer of the original finite lattice,
+and let $K(g)$ be the kernel of its action on $L_f/gL_f$.
+The stabilizer is compact open.  For example, integral matrices
+on a finite projective lattice form a compact set; preservation
+of the nondegenerate Hermitian form is closed and determines
+the inverse.  The finite quotients give the specified congruence
+neighborhoods.  No free global integral basis is required.
+The definitions give $K(g)\subseteq K\subseteq K_0$.
+Indeed every defining $K_2$ difference is in $gL_f$ for an
+element of $K(g)$, and one may take all its flag coefficients
+equal to zero.
+
+All vectors occurring in the original character argument $A(k)$
+are in $L_f$, and the Hermitian form is integral there.
+Thus for $k\in K(g)$,
+$A(k)-A(1)\in g\widehat{\mathcal O}_E$.  The prescribed
+finite additive character is trivial on
+$\widehat{\mathcal O}_E$, so $\chi_2(k)=\chi_2(1)=1$.
+The last equality follows from the given character law and
+unit norm.  As $K$ is a subgroup containing the open subgroup
+$K(g)$, it is open; it is also closed and hence compact in
+$K_0$.  Haar measure is therefore positive and finite on $K$.
+This proves exactly \texttt{LevelSubgroupNormalized}, and the
+same finite-quotient description proves measurability and local
+constancy of its character.\cite{global-gram-projector-source}
+
+\emph{The finite projector.}
+The established finite phase theorem gives the literal seed law
+$\Phi_u(T)(y(1,k))=\chi_2(k)\Phi_u(T)(y)$ for $k\in K$.
+Its absolutely convergent Poincare sum has the same law.
+Consequently, pointwise for every $y$,
+\[
+ \int_{G_f}e(k)P_uT(y(1,k))\,dk
+  =v_K^{-1}\int_K\overline{\chi_2(k)}\chi_2(k)P_uT(y)\,dk
+  =P_uT(y).
+\]
+This uses the actual $v_K$, without probability renormalization
+of any other measure.  Since $e\in L^1(G_f)$, its strong
+convolution on $L^2$ is bounded.  The original weak identity
+for $R_e$ identifies it with this operator, proving the second
+identity in \eqref{global-gram-projectors-fix}.
+
+\emph{The infinite projector, including the full return sum.}
+Write $\Phi=\Phi_u(T)$ and set
+\[
+ P_{\rm abs}(y)=\sum_{\delta\in S_u(F)\backslash G(F)}
+                                    |\Phi(\delta y)|.
+\]
+The finite column decomposition bounds
+$|\Phi|\le M_TF_u^+$ for a fixed finite $M_T$, using precisely
+the auxiliary positive seed of
+Theorem~\ref{global-gram-framed-sum}.  Its proved positive
+Poincare series lies in $L^2$; hence $P_{\rm abs}\in L^2$.
+The source coefficient $p$ is in $L^1(G_\infty)$ by
+Theorem~\ref{actual-seed-decay-theorem}.  Right translation
+is unitary for the original quotient Haar measure.  Therefore
+Minkowski's integral inequality gives
+\begin{equation}\label{global-gram-convolution-majorant}
+ \left\|\int_{G_\infty}|p(t)|P_{\rm abs}(\,\cdot\,(t,1))\,dt
+                                                     \right\|_2
+       \le\|p\|_1\|P_{\rm abs}\|_2<\infty.
+\end{equation}
+Tonelli, applied to this nonnegative majorant, shows that for
+almost every $y$ the entire series may be interchanged with
+the noncompact $t$ integral.  The original pointwise seed
+reproduction then gives
+\begin{align*}
+ \int_{G_\infty}p(t)P_uT(y(t,1))\,dt
+ &=\sum_\delta\int_{G_\infty}p(t)\Phi(\delta y(t,1))\,dt\\
+ &=\sum_\delta\Phi(\delta y)=P_uT(y).
+\end{align*}
+In particular no compact truncation or omitted rational return
+is used.  Since $p\in L^1$, the same weak-to-strong convolution
+identification using the literal \texttt{IsOpInt} contract
+gives $R_pP_uT=P_uT$ in $L^2$.
+
+The earlier folding theorem supplies convergence at every point,
+independence of the original rational transversal and $L^2$
+membership.  The phase theorem supplies the seed invariance
+and measurability.  Thus all conjuncts of the original
+\texttt{InHH} statement now hold.  Linearity follows termwise
+from absolute convergence; it is continuous because the source
+column space is finite dimensional.  This proves the original
+\texttt{PuLinear}, with no change to its map or norm.
+\end{proof}
+
+\paragraph{The exact target cut that has been removed.}
+The actual $e$ and $p$ are self-adjoint convolution idempotents:
+for $e$ this follows directly from the unitary character and
+the displayed level volume, and for $p$ from Schur orthogonality
+with its prescribed formal degrees.  Their convolution operators
+commute because the finite and infinite factors commute.
+Hence $Q_H=R_eR_p$ is the orthogonal projector onto $HH_X$.
+For the actual normalized maps $A_u=P_u/\sqrt{c_u}$, the theorem
+gives, for every pair $u,u'$ and every retained source inclusion,
+\[
+                  A_u^*Q_HA_{u'}=A_u^*A_{u'}.
+\]
+Thus the period Gram identity is an identity in precisely this
+original target, with zero loss from $Q_H$.  If a further
+target projector $Q$ is prescribed inside $HH_X$, its loss
+$A_u^*(Q_H-Q)A_{u'}$ remains.  The original arithmetic chain
+dictionary and its quantitative trace estimates are separate
+obligations.

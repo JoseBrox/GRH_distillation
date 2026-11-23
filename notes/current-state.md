@@ -62,8 +62,10 @@ Together these construct the full original sized `Deep.Good` cover.
 The [actual positivity theorem](geometry-positivity-continuation.md)
 now supplies nefness, bigness, generation on the interior and both
 prescribed birational cusp systems, with the exact canonical weight.
-Short integral sections, arithmetic heights and the numerical remainder
-remain separate.
+The actual flat determinant degree and integral parallel twists are now
+supplied over the same coefficient field. The original key shift and
+both exact short-family hypotheses are now proved as well. Pointwise
+Bergman bounds, arithmetic heights and the numerical remainder remain.
 
 The reached-section, adapted lattice, full-primary trace and mixed-level
 identities now supply the [original integral raw-theta implication](geometry-arithmetic-frontier-actual-theta-denominator.md)
@@ -91,8 +93,19 @@ normal convergence prove this supplier without changing a scalar. The
 supplies the original `IsSystem` and level-theta span. The exact
 [identity-cover transfer](theta-spanning-continuation-raw.md) proves
 `HolSub0LeSpanRaw` for the original good data, with the full arithmetic
-character and level conditions retained. Uniform short integral bounds
-and selected-prime compatibility remain.
+character and level conditions retained. The [short integral theta theorem](theta-spanning-continuation-short.md)
+now supplies the literal finite integral K-span, with all component and
+coefficient-embedding Petersson norms bounded by `exp(30000 X^2 kappa)`.
+The trace-dual different and determinant ideal cancel the exact lattice
+index in the same scalar. The actual [flat degree](theta-spanning-continuation-flat.md)
+and [integral parallel twists](theta-spanning-continuation-twist.md) are
+also supplied. The [key and shifted-span theorem](theta-spanning-continuation-key.md)
+now supplies integral tag removal and both literal `h0`/`hsh` families.
+Moret–Bailly's all-prime key formula and the actual positive quadratic
+period expansion retain the dyadic and ramified eigenlattice factors.
+The uniform constant is `400000`; the fixed larger starting threshold
+is permitted by the original asymptotic quantifier. Selected-prime
+compatibility and the geometric height/Bergman estimates remain.
 
 The actual ordinary automorphic modules have faithful good classical
 specializations, and now carry the original universal integral Hecke
@@ -138,8 +151,13 @@ The [normalized seed-transfer theorem](selmer-support-continuation-seed-transfer
 now proves the actual `SeedIn` transfer and starting-chart support in
 ranks two and three, retaining the entire integral Hecke quotient.
 Its homogeneous finite entry algebra avoids assuming integral generic
-matrix entries. Reaching the required characteristic-prime components,
-global two-sided rigidity and the moving-family integral Selmer budget remain.
+matrix entries. The [rank-two curve theorem](selmer-support-continuation-rank-two-curve.md)
+now constructs the required characteristic-prime Nice curves, with the
+original local degree and cohomology bounds. The [rank-two propagation theorem](selmer-support-continuation-rank-two-propagation.md)
+proves the original `PropagationTheoremGL2`: the chart presentation,
+connectedness, arithmetic `P1` and connected cocycle fibre reach every
+stable component. Rank-three type-E and thick links, global two-sided
+rigidity and the moving-family integral Selmer budget remain.
 
 The actual local Bessel families satisfy the iterated weighted norm
 identities and finite coefficient expansion everywhere on the original
@@ -175,7 +193,7 @@ theorem](global-norm-frontier-top-lift.md) now constructs those operators on
 every original valid cut, with exact differential cost
 `(m*d,11*m*(r+1)*d)` and no internal-minor denominator. The complete old-word
 rational corrections and weighted adjoint are retained. The global
-rational-return/period-Gram identity and uniform estimate remain.
+arithmetic chain compatibility and uniform period estimate remain.
 The [actual seed-decay theorem](global-norm-frontier-seed-decay.md)
 now supplies the original weighted integral and exact compact reproducer
 for each existing arithmetic setting. It uses the original coefficient
@@ -186,8 +204,18 @@ original multiplicity and unfolding requirements. The
 level splitting and `PhWellDef`, including ramified primes outside the
 level. The [complete framed-return theorem](global-gram-continuation-framed-returns.md)
 proves the original absolute operator summation in the established gap
-range. The actual raw-kernel/period-Gram identification and uniform
-rank-weighted trace budget remain.
+range. The [actual period identity](global-gram-continuation-period-identity.md)
+now proves `EntryUnfold` and `KExpansion`, with the original columns,
+antilinear Riesz identification, phases and Haar factors. The [projector
+compatibility theorem](global-gram-continuation-projectors.md) proves full
+`InHH`, `PuLinear` and finite-level normalization: the original target
+projector fixes every period exactly, with zero loss from this cut.
+Further target cuts remain separate. The [arithmetic
+minimum theorem](global-gram-continuation-minimum.md) bounds the original
+Harder–Narasimhan minimum over all submodules on every period cell. It
+gives an explicit weighted far-return majorant when the cited source
+tail theorem applies. Compatibility with the final arithmetic chain,
+further target cuts and the uniform rank-weighted trace budget remain.
 
 These are closed supplier obligations within larger nodes. Whole-node
 statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.

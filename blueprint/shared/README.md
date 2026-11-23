@@ -447,40 +447,46 @@ finite Schwartz system and spanning transfer are supplied below; uniform
 short norms remain separate.
 
 
-### Actual support, spanning, positivity and arithmetic folding
+### Actual support, short sections and global period identities
 
 The [normalized seed transfer](../../notes/selmer-support-continuation-seed-transfer.md)
-proves the original `SeedIn` and starting-chart supplier in ranks two and
-three. The homogeneous entry algebra preserves exactly the integral Hecke
-quotient and supplies dimension `n*[F:Q]+2`; no generic integral matrix
-basis or characteristic-prime curve is assumed. Both routes retain their
-actual arithmetic frames. Global characteristic-prime propagation and the
-uniform Selmer product remain.
+retains the entire original Hecke quotient in ranks two and three.
+The [rank-two curve theorem](../../notes/selmer-support-continuation-rank-two-curve.md)
+and [complete propagation](../../notes/selmer-support-continuation-rank-two-propagation.md)
+now supply the original `PropagationTheoremGL2`, with its `Ok`, `Big`,
+finite-weight and arithmetic `P1` hypotheses. The proof uses the actual
+ordinary obstruction cone and completed chart, retaining equal
+characteristic and all local-degree costs. Rank-three thick links and
+the uniform integral Selmer budget remain in both routes.
 
-The [finite theta system](../../notes/theta-spanning-continuation-system.md)
-and [identity-cover transfer](../../notes/theta-spanning-continuation-raw.md)
-prove the original `IsSystem`, level-theta span and `HolSub0LeSpanRaw`.
-Finite Heisenberg projections, the exact doubled phases and the original
-class-mass matrix are retained. The raw comparison uses the same
-coefficient field, common component coordinates, full arithmetic character
-condition and prescribed principal level. It supplies algebraic spanning
-in both routes, without asserting short integral norms or changing the
-selected-prime maps.
+The [finite theta system](../../notes/theta-spanning-continuation-system.md),
+[identity-cover transfer](../../notes/theta-spanning-continuation-raw.md)
+and [short integral theorem](../../notes/theta-spanning-continuation-short.md)
+supply the exact finite integral K-span with norm at most
+`exp(30000 X^2 kappa)` on every component and at every embedding. The
+same determinant scalar supplies integrality and cancels the lattice
+index; the different and coefficient-field degree are retained.
+This is the literal minimal-level span, not integral-module generation.
 
-The [actual positivity theorem](../../notes/geometry-positivity-continuation.md)
-proves nefness and bigness of the prescribed automorphic lines and both
-birational cusp systems. The exact canonical weight and all original gap
-conditions survive Hodge semipositivity and effective adjoint separation.
-This applies to both routes on the constructed models. Short integral
-spanning families, exact height bounds and the numerical section remainder
-remain separate.
+The [positivity theorem](../../notes/geometry-positivity-continuation.md)
+supplies the required birational cusp systems. The [flat degree](../../notes/theta-spanning-continuation-flat.md)
+now applies the constructed model and CM data with their exact finite
+norm correction. [Unramified frames and parallel twists](../../notes/theta-spanning-continuation-twist.md)
+supply controlled integral sections over the same field. The [original
+key shift and shifted families](../../notes/theta-spanning-continuation-key.md)
+now supply the exact `h0` and `hsh`, with all finite-place and boundary
+factors. The pointwise norm/height estimates and numerical section
+remainder remain.
 
-The [arithmetic folding theorem](../../notes/global-gram-continuation.md),
+[Arithmetic folding](../../notes/global-gram-continuation.md),
 [finite phases](../../notes/global-gram-continuation-phases.md) and
 [complete framed returns](../../notes/global-gram-continuation-framed-returns.md)
-prove the original multiplicity, unfolding, level-splitting and absolute
-operator-summation suppliers under the established gap. The proofs retain
-the inverse different at every finite prime, original unipotent
-intersections and all Haar and stabilizer factors. Both routes use the
-same fixed-setting theorem. The literal period-Gram dictionary and the
-uniform rank-weighted trace budget remain separate requirements.
+now give the [actual period identity](../../notes/global-gram-continuation-period-identity.md),
+including original unipotent intersections, stabilizers, antiunitary
+Riesz maps and all Haar factors. The [projector theorem](../../notes/global-gram-continuation-projectors.md)
+proves full `InHH` and `PuLinear`, removing exactly the original `HHX`
+projection loss. The [arithmetic minimum theorem](../../notes/global-gram-continuation-minimum.md)
+controls `leastSize` over all nonzero integral submodules on the actual
+period cells. Its weighted far-return consequence retains the cited tail
+theorem and the still nonuniform seed moment. Final arithmetic-chain
+compatibility, further target cuts and the uniform trace budget remain.
