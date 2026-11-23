@@ -1,0 +1,312 @@
+\subsection{The rank-two constituents and the remaining rigidity}
+\label{sec:support-type-two-rigidity}
+
+For the original good datum, the remaining constituents are covered by
+Kato's theorem at a noncentral critical twist.  The fact that the
+classical weight is odd is decisive: no central-value hypothesis is
+required.
+
+Retain the original datum $D$, its imaginary quadratic field $K$, odd
+prime $\ell$, coefficient ring $O$, character
+$\Psi=\varepsilon^e\chi$, and all its original good-prime hypotheses.
+In particular $e\ge1$, $\chi$ has order prime to $\ell$,
+$K$ is unramified at $\ell$, and $\ell\nmid h_K$, where $h_K$
+is the class number.  These are original hypotheses, not consequences
+of having finitely many target characters.  The full original
+good-data hypotheses, including their conductor coprimality, are retained.
+No assertion that arbitrary first-family data satisfy these hypotheses
+is made: that family's original end condition requests only finite-end
+control and rank-three automorphy.  The rank-two end condition and the
+two-sided rigidity consumer quantify precisely these good data
+\cite{support-type-two-source}.
+
+Let $f$ be a local characteristic-zero point of any original global
+ring $S$, with its original selected local ring.  Write $r=r_f$ and
+suppose it is type II.  Thus on $G_K$ its matrix part has the form
+\[
+ r(g)_{\rm mat}=
+ \begin{pmatrix}a(g)&0&b(g)\\0&d(g)&0\\c(g)&0&d'(g)\end{pmatrix},
+ \qquad
+ A(g)=\begin{pmatrix}a(g)&b(g)\\c(g)&d'(g)\end{pmatrix},          \tag{RR1}
+\]
+and the two-dimensional representation $A$ is absolutely irreducible.
+Use one finite coefficient field $E$ and its invariant original
+lattice, supplied by the finite-neighbourhood argument.
+
+\begin{lemma}[The original rank-two representation]
+\label{lem:support-type-two-representation}
+In (RR1), $d=1$ and $\det A=1$ on $G_K$.  There is a continuous
+representation $W:G_{\mathbf Q}\to\mathrm{GL}_2(E)$ extending $A$,
+with
+\[
+ W(c)=C=\operatorname{diag}(-1,1),\qquad \det W=\eta.            \tag{RR2}
+\]
+It is absolutely irreducible on every open subgroup and on the kernel
+of the cyclotomic character.  It is the original rank-two extension
+required at a type-II point.
+\end{lemma}
+
+\begin{proof}
+Both $d$ and the determinant of the full matrix representation on
+$G_K$ are characters congruent to one.  At $\ell$, the ordered
+ordinary-flag lemma~\ref{lem:support-integral-ordinary-flag} supplies
+the flag over the original coefficient ring.  Its Hensel spectral
+basis at the decomposition-group mark respects the outer block and
+the middle line in (RR1): the middle eigenvalue is the unique root
+congruent to one.  Hence the middle inertia character is exactly
+one, the outer two are $\Psi,\Psi^{-1}$, and the full determinant
+is one on inertia.
+
+At any other finite prime the original equations kill inertia in
+$\ker\eta\cap\ker\Psi$.  Since $\varepsilon$ is unramified there,
+the remaining quotient of inertia in $G_K$ has order dividing
+$\operatorname{ord}(\chi)$, prime to $\ell$.  The characters $d$
+and the full determinant therefore have prime-to-$\ell$ order there
+and are congruent to one, so are one.  They are consequently everywhere
+unramified characters of $G_K$.  Class field theory makes their orders
+divide $h_K$.  Since $\ell\nmid h_K$, reduction to one makes both
+characters trivial.  This proves $d=\det A=1$.
+
+Put $J_2=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$.
+The original polarization and the normalization at $c$ give
+\[
+ A(cgc^{-1})=J_2A(g)^{-\mathsf t}J_2=CA(g)C,\qquad g\in G_K.
+                                                               \tag{RR3}
+\]
+The second equality uses $\det A=1$.  Define $W(g)=A(g)$ on
+$G_K$ and $W(gc)=A(g)C$ there.  Equation (RR3) and $c^2=1$ prove
+multiplicativity, and give (RR2).  All its matrices and inverses
+remain in the same coefficient lattice.
+
+The proof of Lemma~\ref{lem:support-type-one-strong-irreducibility}
+has the following rank-two form.  Reducibility on an open normal
+subgroup gives a scalar action or two permuted lines.  An ordinary
+inertia element with $\Psi$ of infinite order excludes the scalar
+case.  The local ordinary flag makes the local decomposition group
+fix both lines.  A global element interchanging them has trace zero
+after multiplication by $1$ and by the decomposition mark $x$.
+Reducing these identities gives
+\[
+        \alpha+\alpha^{-1}=0,\qquad
+        \alpha\beta+(\alpha\beta)^{-1}=0,
+        \quad\beta=\psi(x).
+\]
+They imply $\alpha^2=-1$ and $\alpha^2\beta^2=-1$, contradicting
+$\beta^2\ne1$.  Thus $A$ is irreducible on every open subgroup of
+$G_K$, and $W$ is irreducible on every open subgroup of
+$G_{\mathbf Q}$ by intersection with $G_K$.
+The connected reductive monodromy and derived-group argument in
+that lemma then proves irreducibility on every kernel with abelian
+quotient, in particular the cyclotomic kernel and the cyclotomic
+kernel after any finite extension.
+\end{proof}
+
+\begin{lemma}[The actual odd-weight newform]
+\label{lem:support-type-two-newform}
+There is a classical normalized cuspidal newform $g$ of weight
+$k=2e+1$ whose representation in the original geometric-Frobenius
+normalization is
+\[
+                       V_g=W\varepsilon^{-e}.                  \tag{RR4}
+\]
+Consequently $W=V_g(e)$, with exactly Kato's convention for this twist.
+\end{lemma}
+
+\begin{proof}
+Use the already constructed original auxiliary frame and its abelian
+CM field $L/\mathbf Q$.  The normalized-lift transfer gives a
+rank-three normalized representation.  Taking its outer block gives
+the original rank-two normalized representation over the same $O_E$.
+Indeed the middle line is trivial by the preceding lemma; the
+polarization restricts to $J_2$, the marked diagonal relation
+restricts to its two outer entries, and the residual characters are
+$\psi,\psi^{-1}$.  The local Hensel basis in the preceding proof
+restricts to an integral basis of the corner, congruent to the
+identity, with ordered inertia characters $\Psi,\Psi^{-1}$.
+Their two ordered factors lower this two-step flag successively,
+giving the original rank-two local product equations.  Continuity
+and the quotient identities are inherited without changing the
+coefficient ring.
+
+Use the actual algebraic CM character $\kappa_2$ from
+Theorem~\ref{thm:actual-cm-twist}.  It has the original polarization
+identity $\kappa_2\kappa_2^c=\varepsilon^{-1}$ on $G_L$.
+The irreducibility just proved permits the rank-two part of
+Theorem~\ref{thm:support-finite-points} to be applied.  The resulting
+point of the actual Hecke quotient has determinant that of
+$W|_{G_L}\kappa_2$.  If the labeled Hodge--Tate weights of
+$\kappa_2$ are $a_\tau$, its two ordered labels are
+$a_\tau-e,a_\tau+e$, so are strictly increasing.  The point is
+arithmetic.  The full classicality in
+Theorem~\ref{thm:selmer-ordinary-families} makes
+$W|_{G_L}\kappa_2$ regular algebraic, conjugate self-dual and
+cuspidal automorphic.
+
+Algebraic twisting preserves polarized automorphy by
+BLGGT, Lemma~2.2.1; apply it to $\kappa_2^{-1}$.
+The multiplier after untwisting is trivial on $G_L$ and is $-1$
+at complex conjugation: the transfer character of $\kappa_2^{-1}$
+has value one there, because $c^2=1$.  Thus it is
+$\eta|_{G_{L^+}}$.
+The global representation $W$ is polarized by its alternating
+determinant pairing with odd multiplier $\eta$.
+The extension $L/\mathbf Q$ is finite, Galois and abelian, hence
+solvable, and $W|_{G_L}$ is irreducible.  BLGGT, Lemma~2.2.2,
+therefore descends automorphy to $W$ over $\mathbf Q$
+\cite{support-type-two-blggt}.  These lemmas have no residual
+irreducibility or image-size hypothesis.
+
+The local flag makes the Hodge--Tate weights of $W$ equal to
+$-e,e$, and $W(c)$ has eigenvalues $-1,1$.  After twisting by
+$\varepsilon^{-e}$ the labels are $0,2e$.  The classical
+description of regular algebraic cuspidal representations of
+$\mathrm{GL}_2/\mathbf Q$ gives a holomorphic cuspidal newform of
+weight $2e+1$ with this representation.  More explicitly the difference
+of its two infinitesimal-character labels is $2e$, so its discrete
+series weight is $2e+1$; the algebraic norm twist is fixed by the
+labels $0,2e$.  Passing to the new vector fixes the normalized
+newform and does not change the representation.  Its nebentype is
+$\eta$, since its determinant is $\eta\varepsilon^{-2e}$.
+
+There is no dual or inverse twist hidden in (RR4).  In the source,
+at every good prime $q$, the characteristic polynomial at inverse
+arithmetic Frobenius is
+$X^2-a_q(g)X+\eta(q)q^{k-1}$.  Kato's formula (14.10.3), on
+p.~240, uses the same inverse arithmetic Frobenius and the same
+polynomial.  His determinant formula (14.10.2) is
+$\varepsilon^{1-k}\eta^{-1}$, also the determinant just obtained.
+Chebotarev and semisimple character theory therefore identify his
+$V_g$ with (RR4), after a finite coefficient extension
+\cite{support-type-two-kato}.
+
+The original rank-two end condition permits any extension of $A$,
+not just (RR2).  If $W'$ is another extension, Schur's lemma on
+the absolutely irreducible restriction to $G_K$ gives
+$W'(c)=\lambda W(c)$; the relation $c^2=1$ gives
+$\lambda^2=1$.  Thus $W'=W$ or $W\eta$.  In the second case
+the classical twist $g\otimes\eta$ has representation
+$V_g\eta=W'\varepsilon^{-e}$.  It has the same weight and
+is again cuspidal, so the full original extension quantifier is covered.
+\end{proof}
+
+\begin{lemma}[The two rank-two Selmer groups]
+\label{lem:support-type-two-kato}
+For the original $W$,
+\[
+          H_f^1(\mathbf Q,W)=H_f^1(\mathbf Q,W\eta)=0.            \tag{RR5}
+\]
+\end{lemma}
+
+\begin{proof}
+Apply Kato's Theorem~14.2(1) over the original finite abelian
+extension $K/\mathbf Q$, with $r=e$ and $k=2e+1$.
+Its inequalities are
+\[
+             1\le e\le2e=k-1,\qquad e\ne k/2.
+\]
+Thus for every coefficient place and every stable lattice $T$ in
+$V_g(e)$, Kato's discrete Selmer group $\operatorname{Sel}(K,T)$
+is finite.  His \S14.1 defines its local conditions as the images
+of the same unramified and Bloch--Kato finite conditions used here.
+The theorem includes forms with complex multiplication, treated
+in his \S15, and excludes no coefficient prime.
+
+Here is the precise passage from this finite discrete group to
+rational vanishing.  Work first over a coefficient field of $g$ and
+write $V=V_g(e)$, with stable lattice $T$.  Choose
+$u\in I\cap G_K$ with $\Psi(u)$ of infinite order.
+The matrix $B=V(u)-1$ is invertible, since its eigenvalues before
+subtracting one are $\Psi(u),\Psi(u)^{-1}$.
+For a cocycle $z$ representing a class in $H_f^1(K,V)$,
+subtract the coboundary with primitive $B^{-1}z(u)$, making
+$z(u)=0$.  Choose $a$ such that $\ell^a\operatorname{Sel}(K,T)=0$.
+For every $n\ge a$, the class of $\ell^{-n}z$ modulo $T$ belongs
+to this discrete Selmer group.  Consequently there is $t_n\in V/T$
+with
+\[
+   \ell^{a-n}z(s)=(V(s)-1)t_n\pmod T,\qquad s\in G_K.
+\]
+At $s=u$ we have $Bt_n=0$ modulo $T$, so $t_n$ has a lift in
+$B^{-1}T$.  Choose $b$ with $B^{-1}T\subseteq\ell^{-b}T$.
+Because $T$ is stable, this gives
+$z(s)\in\ell^{n-a-b}T$ for every $n\ge a$.
+Their intersection is zero, so the normalized cocycle vanishes.
+No compatibility among the $t_n$ is required.
+
+This proves $H_f^1(K,V_g(e))=0$.  Finite coefficient extension
+commutes with these cohomology groups and local kernels, as is
+seen by choosing a basis of the coefficient extension; (RR4)
+therefore gives $H_f^1(K,W)=0$.  Both $W$ and $W\eta$ restrict
+to $W$ over $K$.  Characteristic-zero restriction injectivity
+now gives (RR5).
+\end{proof}
+
+\begin{theorem}[The original type-II rigidity]
+\label{thm:support-type-two-rigidity}
+For every original good datum and every type-II local
+characteristic-zero point of any of its original global rings,
+\[
+                    H_f^1(\mathbf Q,\operatorname{ad}r)=0.
+                                                               \tag{RR6}
+\]
+Every original dual-number lift at that point is a coboundary.
+Together with Theorem~\ref{thm:support-type-one-rigidity}, this
+supplies the full two-sided characteristic-zero rigidity requirement
+of the original good-data deformation argument.
+\end{theorem}
+
+\begin{proof}
+We give the full coefficient-module decomposition.  The outer block
+of the polarized adjoint has action $Y\mapsto A(s)YA(s)^{-1}$ on
+$G_K$ and $Y\mapsto-J_2Y^{\mathsf t}J_2$ at $c$.  On traceless
+matrices the latter is $Y\mapsto CYC$; on scalars it is minus one.
+Thus this four-dimensional block is
+$\operatorname{ad}^0W\oplus E(\eta)$.  The independent middle
+diagonal line is another $E(\eta)$.
+
+Write the remaining four entries as an outer column $u$ and an
+outer row $v$.  Put
+$\Omega=\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)$
+and $w=\Omega v^{\mathsf t}$.  On $G_K$, both $u$ and $w$ transform
+by $A$.  At $c$, negative antitranspose gives
+$(u,w)\mapsto(Cw,Cu)$.  Hence $u+w$ and $u-w$ give respectively
+$W$ and $W\eta$; division by two recovers $u,w$.
+The exact decomposition is consequently
+\[
+ \operatorname{ad}r\simeq
+   \operatorname{ad}^0W\oplus E(\eta)^{\oplus2}
+                  \oplus W\oplus W\eta.                        \tag{RR7}
+\]
+These are equivariant direct summands, so the finite local conditions
+and Selmer groups decompose in the same way.
+
+To treat the adjoint block, use the already obtained cuspidal
+representation $W|_{G_L}\kappa_2$.  The rank-two irreducibility
+lemma gives its irreducibility over $L(\mu_{\ell^\infty})$.
+Its polarization matrix is $J_2$ and its multiplier on $G_{L^+}$
+is $\varepsilon^{-1}$: its restriction to $G_L$ follows from
+$\kappa_2\kappa_2^c=\varepsilon^{-1}$, and the value at $c$ is
+$-1$.  Thorne's Theorem~6.1 applies in rank two.  Its adjoint is
+exactly the restriction of the outer four-dimensional block above,
+since scalar twisting does not change this action.  Restriction
+injectivity descends its Selmer vanishing from $L^+$ to $\mathbf Q$
+\cite{support-type-one-thorne}.
+
+Since $E(\eta)$ is an equivariant direct summand of the outer
+block, that same vanishing also kills the second copy of $E(\eta)$.
+The two rank-two groups vanish by (RR5).  Equation (RR7) now proves
+(RR6).
+
+Finally every actual dual-number tangent satisfies the finite local
+conditions by the same crystalline-component and finite-inertia
+arguments used in Theorem~\ref{thm:support-type-one-rigidity}.
+Those arguments are independent of irreducibility.  Equation (RR6)
+makes its cocycle a coboundary, with all original dual-number and
+local-ring quantifiers unchanged.
+\end{proof}
+
+This proves rational rigidity.  Neither Kato's qualitative
+finiteness nor characteristic-zero corestriction bounds the torsion
+in the original integral deformation modules uniformly as the
+characters, levels and auxiliary fields vary.  That integral
+estimate remains an independent frontier.

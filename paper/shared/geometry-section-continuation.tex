@@ -1,0 +1,332 @@
+\subsection{The arithmetic degree of the original component lattice}
+\label{sec:actual-component-section-degree}
+
+We now apply the determinant theorem to the actual cusp lattices.
+The geometric realization, its canonical line, the finite determinant
+ideals and the Petersson norms are all retained.  In particular the
+argument does not require integral lifts of arbitrary jets or the
+selection of algebraic points of controlled height.
+
+\paragraph{The original spaces.}
+Fix one of the constructed components over its original totally complex
+coefficient field $K$.  Let $X$ be its smooth projective toroidal full
+flag compactification, $B_X$ its reduced boundary, and $U=X\setminus B_X$.
+Write $D=\dim X\ge1$, and use the original automorphic lines
+$\mathcal L(a)$ and canonical weight $\kappa_{\mathrm{can}}$.  Their
+prescribed multiplicative identifications and
+\[
+                  \omega_X(B_X)=\mathcal L(\kappa_{\mathrm{can}})
+\]
+are those proved in Section~\ref{actual-geometric-positivity}.
+Take the two original divided weights $u_1,u_2$ and the original integer
+$T\ge D+1$.  Retain their original strict gap bounds
+$\operatorname{gap}(u_i)\ge(D+3)^2+2r$, $i=1,2$, where
+$r=p+q$ is the original rank.  Put
+\[
+ a_j=\kappa_{\mathrm{can}}+u_2+(D+j)u_1,\qquad 0\le j\le T.
+\]
+For any weight $a$ used here, let $C(a)$ be its original $K$-space of
+cuspidal sections supported on this component, with its original
+integral lattice $M(a)$ and component Petersson norms
+$\|\cdot\|_{\sigma,a}$, for all embeddings $\sigma:K\hookrightarrow
+\mathbb C$.  These norms use the original component probability
+measure.
+
+Choose the full integral frame of $C(u_1)$ constructed in
+Section~\ref{shared-actual-integral-cusp-frame}.  Denote its generators
+by $w_1,\ldots,w_n$, its dimension by $N$, its generator bound by
+$\Lambda\ge1$, and its upper Bergman bound by $\beta\ge1$.
+Thus the $\mathcal O_K$-span of the $w_i$ is exactly $M(u_1)$,
+$1\le N\le n$, and
+\begin{equation}\label{eq:actual-section-frame}
+ \|w_i\|_{\sigma,u_1}\le\Lambda,\qquad
+ \|s(x)\|^2\le\beta\|s\|_{\sigma,u_1}^2.
+\end{equation}
+Let $\Lambda_0,\Lambda_D,\Lambda_T\ge1$ be the supplied short
+spanning bounds for $M(a_0),M(a_D),M(a_T)$.
+
+Write $\delta$ and $h$ for the original image degree and normalized
+image height of the system $C(u_1)$ on this component.  These use
+the full lattice $M(u_1)$ and its stated Hermitian norms.  The precise
+height formula is recalled and verified below.  Put
+\begin{gather*}
+ d=\dim_K C(a_T),\qquad
+ q=\binom{T-1}{D}\delta,\qquad \vartheta=\frac qd,\\
+ c=\log(n\Lambda)+\frac{\log n+1}{2},\qquad
+ a_n=\frac{\log n+1}{2}.
+\end{gather*}
+
+\begin{theorem}[The original component section estimate]
+\label{thm:actual-component-section-degree}
+For the constructed geometric data and the original weight-size
+conditions, one has $d\ge q>0$ and
+\begin{equation}\label{eq:actual-component-section-strong}
+\begin{split}
+\frac{\widehat{\deg} M(a_T)}d\ge{}&
+ \vartheta\left(Th-Ta_n-D(D+1)c-\log\Lambda_0
+                                      -\frac T2\log\beta\right)\\
+&-(1-\vartheta)\left(Tc+\frac T2\log\beta
+                             +\log\Lambda_D+\log\Lambda_T\right).
+\end{split}
+\end{equation}
+Arithmetic degree is divided by $[K:\mathbb Q]$ and is the original
+component degree.
+
+In particular, set
+\[
+ \rho=\log\Lambda+
+ 26\log\!\left(nD\delta(2+|h|+\log\Lambda)\right),
+ \qquad G=\frac{(D+1)(\log n+1)}2+1,\qquad z=1-\vartheta .
+\]
+Then $0\le z\le1$ and the literal numerical estimate required by
+the component construction holds:
+\begin{equation}\label{eq:actual-component-section-original}
+\begin{split}
+\frac{\widehat{\deg}M(a_T)}d\ge{}&
+(1-z)\bigl(Th-3(D+1)|h|-\log\Lambda_0
+ -26D^2\log(e^\rho T)\\[-2pt]
+&\hspace{36mm}-(T+D+1)\log\beta-(T+D^2)(G+2)\bigr)\\
+&-z\bigl(T\log(2e^\rho\sqrt\beta)
+                              +\log\Lambda_D+\log\Lambda_T\bigr).
+\end{split}
+\end{equation}
+At the original family size $P\ge0$ and weight size $\kappa\ge0$, the already
+constructed short families give
+\[
+ \Lambda_0=\exp\!\left(DP(\kappa/T+1)\right),\qquad
+ \Lambda_D=\Lambda_T=\exp(P\kappa).
+\]
+Thus the original remainder coefficient is exactly
+$J=DP(\kappa/T+1)$.  The theorem supplies the component arithmetic
+section inequality; the separate all-point height comparison and
+any still unconstructed numerical family are not assumptions
+silently discharged by this application.
+\end{theorem}
+
+\begin{proof}
+\emph{The cusp space and the canonical extension.}
+For each weight under consideration there is an equality over $K$
+\begin{equation}\label{eq:actual-section-cusp-extension}
+             C(a)=H^0(X,\mathcal L(a)(-B_X)).
+\end{equation}
+Here the line on the right is the subcanonical extension.  The
+analytic--algebraic toroidal comparison identifies its automorphic
+bundle and Fourier--Jacobi coordinates with those of the original
+moduli problem; the subcanonical comparison identifies its sections
+with holomorphic cuspidal forms
+\cite{positive-lan-analytic,positive-lan-stroh}.
+The passage from the automorphic bundle to its full flag line is the
+usual highest-weight realization, with the same ordered characters.
+The original weights satisfy the needed dominance conditions.
+
+We spell out why no growth condition changes this space.  In a smooth
+toroidal boundary chart, a canonical Hodge frame and its inverse have
+at most a fixed power of the logarithmic cusp coordinates as growth.
+The same holds for every fixed tensor and flag character.  Rapid decay
+of a holomorphic cuspidal form therefore makes its coefficient tend
+to zero at a generic point of each boundary divisor
+\cite{positive-cusp-decay}.  Its algebraic meromorphic coefficient
+has positive order there.  Smoothness, hence normality, extends it
+across the remaining codimension at least two subset.  It is a
+section of the negative reduced boundary.  Conversely such a section
+has vanishing constant Fourier--Jacobi coefficients, so its
+automorphic reading is cuspidal; the same rapid-decay theorem gives
+the original bounded Petersson reading.  The forms have the
+prescribed holomorphic highest weight and hence finite infinitesimal
+character, as in the earlier cusp verification.  Finally the
+identifications are algebraic over the given $K$, and cohomology
+base change descends their equality from an embedding into
+$\mathbb C$.  This is an equality of rational spaces, and does not
+replace their integral lattices.
+
+\emph{The exact geometric realization.}
+Principalize the base ideals of $C(u_1)$ and $C(u_2)$
+simultaneously over $K$, using their prescribed birational
+modification $\pi:Y\to X$~\cite{WlodarczykResolution}.
+One can principalize their product; the two factors of an invertible
+product ideal are invertible fractional ideals, so both original
+ideals become invertible.  Both systems are generated on $U$, so
+the modification is an isomorphism there.  The constructed $X$
+is smooth projective, and the principalization has smooth projective
+source $Y$.  Let $F_1,F_2$ be the actual effective fixed divisors of
+the pulled-back systems.  They are supported outside $U$.  Set
+\begin{equation}\label{eq:actual-section-lines}
+ L=\pi^*\mathcal L(u_1)(-F_1),\qquad
+ L_2=\pi^*\mathcal L(u_2)(-F_2),\qquad
+ A=\pi^*\mathcal L(u_2+Du_1).
+\end{equation}
+The two divided systems generate $L,L_2$ everywhere and are
+birational.  Thus $L,L_2$ are nef and big.  The original weight gaps
+make $\mathcal L(u_2+Du_1)$ nef and big by
+Theorem~\ref{actual-positive-cusp-theorem}; pullback under $\pi$
+preserves both properties.  This proves the required assertion for
+$A$.  The canonical section with divisor $F_2+DF_1$ is a section
+\[
+            e\in H^0(Y,A\otimes L_2^{-1}\otimes L^{-D})
+\]
+which is nonzero throughout $U$.
+
+Put $\mathcal G_j=\omega_Y\otimes A\otimes L^j$.
+Use the prescribed Kodaira--Spencer canonical identification on $U$
+and the actual sections of the $F_i$ to identify $C(a_j)$ with
+a space $V_j\subset H^0(U,\mathcal G_j)$.
+For clarity the needed inclusions follow without a vanishing
+theorem for higher direct images.  One has
+\begin{equation}\label{eq:actual-section-canonical-pushforward}
+                         \pi_*\omega_Y=\omega_X.
+\end{equation}
+Indeed a proper birational morphism to the smooth $X$ is an
+isomorphism above the generic point of every divisor.  A regular
+top form on $Y$ is therefore a regular top form on $X$ outside
+codimension at least two, and extends uniquely because $\omega_X$
+is locally free and $X$ is normal.  Conversely the pullback of a
+regular top form is regular: locally its coefficients are multiplied
+by the Jacobian determinant of a morphism between smooth varieties.
+These two operations are inverse on a dense open.
+
+By the projection formula, \eqref{eq:actual-section-canonical-pushforward}
+and \eqref{eq:actual-section-cusp-extension},
+\[
+ H^0(Y,\omega_Y A)
+   =H^0(X,\omega_X\mathcal L(u_2+Du_1))=C(a_0).
+\]
+Thus $V_0=H^0(Y,\mathcal G_0)$.  Multiplication by the section
+of $jF_1$ embeds
+$\mathcal G_j$ into
+$\omega_Y\otimes\pi^*\mathcal L(u_2+(D+j)u_1)$.
+Its global sections descend, by the same argument, to $C(a_j)$.
+Hence
+\[
+                    H^0(Y,\mathcal G_j)\subset V_j
+                         \quad(0\le j\le T).
+\]
+Multiplication by the divided section of $L$ corresponds exactly
+to multiplication by the original cusp section of weight $u_1$:
+the additional factor of $F_1$ is cancelled by the next division.
+These are precisely the spaces and products in
+Proposition~\ref{prop:geometric-section-filtration}.  Its finite
+section and Koszul argument supplies all of the required geometric
+filtration, including the surjection at degree zero and the equality
+at the deepest step.  No arithmetic estimate on $e$ or the $F_i$
+enters that argument.
+
+\emph{The original arithmetic data.}
+Transport $M(a_j)$ and its Hermitian norms through the preceding
+$K$-linear identification.  This is exactly how the original
+component section system assigns its lattice and metric
+\cite{actual-section-source}.  Thus lattice membership and every
+archimedean norm are equal before and after transport.
+In particular no lattice of all integral global sections on $Y$
+is substituted for $M(a_j)$.
+
+Multiplication of two original integral cusp sections remains
+integral at every original integral test object, and preserves the
+component support.  The exact weight identity
+$u_1+a_j=a_{j+1}$ proves the required lattice stability.
+Pointwise metric multiplicativity and the original probability
+measure, together with \eqref{eq:actual-section-frame}, give
+\[
+ \|s\,v\|_{\sigma,a_{j+1}}^2
+   \le \|s\|_{\sup,\sigma,u_1}^2\|v\|_{\sigma,a_j}^2
+   \le\beta\|s\|_{\sigma,u_1}^2\|v\|_{\sigma,a_j}^2.
+\]
+The short families at $0,D,T$ transport without a change in bound.
+
+There is also no factor of two hidden in the degree.  If
+$a=[K:\mathbb Q]$ and the covolume uses one complex embedding
+per conjugate pair with its underlying real Euclidean measure,
+then for a rank-$d$ full Hermitian lattice $M$
+\[
+ \widehat{\deg}M
+   =-\frac1a\log\operatorname{covol}(M)
+      -\frac d2\log2+\frac d2\log\operatorname{rd}(K).
+\]
+To verify this, express $\bigwedge^dM$ by a fractional ideal
+$I$ in any $K$-basis.  Its real covolume is
+$2^{-ad/2}|\Delta_K|^{d/2}\operatorname NI$
+times the product of the Hermitian Gram determinants over the
+complex places.  Substitution gives
+$-a^{-1}(\log\operatorname NI+
+\tfrac12\sum_\sigma\log\det\operatorname{Gram}_\sigma)$,
+the normalized arithmetic degree used in the determinant theorem.
+The original squared-norm slope is twice this degree divided by
+rank.  Hence the degree just transported is the stated original
+component degree.
+
+\emph{The exact image height.}
+Use any $K$-basis of $C(u_1)$, and let $f$ be the irreducible Chow
+form of its image, of degree $\delta$ in each of $D+1$ blocks.
+Its finite height is the Gauss height after substituting the full
+integral generators $w_i$.  Its archimedean height is the mean of
+$\log|f|$ over the product of the intrinsic Hermitian unit spheres.
+Denote their normalized sum by $H(f)$, exactly as in
+Section~\ref{sec:arithmetic-determinant-degree}.  The original image
+height satisfies
+\begin{equation}\label{eq:actual-section-height}
+       h=\frac{H(f)}{(D+1)\delta}
+                   +\frac12\sum_{i=1}^{N-1}\frac1i .
+\end{equation}
+This is its defining Chow-height normalization, not an estimate on
+selected algebraic points.
+
+To check independence of the actual frame, two finite generating
+families of the same full lattice express one another by integral
+matrices.  Integral linear substitution cannot increase a finite
+Gauss norm, so the two opposite substitutions prove equality at
+every finite place.  At infinity the change between the two coordinate
+realizations, each with its transported Hermitian Gram matrix, is
+an isometry of the same Hermitian space.  It preserves the spherical
+probability measure; the basis-change matrix need not be unitary
+for an unrelated standard form.  Chow forms in two bases correspond by that
+linear substitution, up to a nonzero scalar; the product formula
+cancels the scalar.  This proves \eqref{eq:actual-section-height}
+for the original frame and the original $h$, without a projective
+maximum norm or an extra period factor.  Birationality identifies
+the image degree with the degree of the good finite section in
+the geometric filtration.  Since $N\le n$,
+\[
+        \frac{H(f)}{(D+1)\delta}\ge h-a_n.
+\]
+All hypotheses of Theorem~\ref{thm:arithmetic-determinant-degree}
+are now supplied for the original component spaces and lattices.
+It gives \eqref{eq:actual-component-section-strong} and $d\ge q>0$.
+
+\emph{The literal numerical remainder.}
+The argument of the logarithm in $\rho-\log\Lambda$ is at least
+$2n$.  As $n,\Lambda\ge1$, this implies $0\le c\le\rho$.
+Also $D(D+1)\le2D^2$ and $T\ge2$, so
+\[
+ D(D+1)c\le26D^2(\rho+\log T),\qquad
+ \frac T2\log\beta\le(T+D+1)\log\beta,\qquad
+ Ta_n\le(T+D^2)(G+2).
+\]
+The added $3(D+1)|h|$ is nonnegative.  The complementary term
+is bounded because
+$c+\tfrac12\log\beta\le
+\log(2e^\rho\sqrt\beta)$.
+Multiplication by the nonnegative factors $\vartheta$ and
+$1-\vartheta$ now proves \eqref{eq:actual-component-section-original}.
+Finally Corollary~\ref{cor:actual-hs-short-families} supplies the displayed
+$\Lambda_0,\Lambda_D,\Lambda_T$ in the original family, while
+the full frame theorem supplies $n,\Lambda,\beta$ with their
+original bounds.  This proves the stated value of $J$.
+\end{proof}
+
+The stronger estimate also combines linearly over components.
+If $d_Z,q_Z,h_Z$ are the quantities above, put
+$d_{\mathrm{tot}}=\sum_Zd_Z$,
+$\Theta=\sum_Zq_Z/d_{\mathrm{tot}}$ and
+$\bar h=(\sum_Zq_Zh_Z)/(\sum_Zq_Z)$.
+With common upper bounds for the logarithmic costs, summation gives
+\[
+\begin{split}
+\frac{\sum_Z\widehat{\deg}M_Z(a_T)}{d_{\mathrm{tot}}}
+\ge{}&\Theta T\bar h-\frac T2\log\beta\\
+&-\Theta\bigl(Ta_n+D(D+1)c+\log\Lambda_0\bigr)\\
+&-(1-\Theta)\bigl(Tc+\log\Lambda_D+\log\Lambda_T\bigr).
+\end{split}
+\]
+All dependence on heights is through the original signed weighted
+mean.  Bounds for that mean, the rank ratios and the remaining
+original numerical family are still required at the final
+geometric deduction.

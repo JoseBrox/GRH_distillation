@@ -165,7 +165,9 @@ The [integral finiteness theorem](selmer-support-continuation-integral-finitenes
 
 The [type-I rigidity theorem](selmer-support-continuation-type-one-rigidity.md) proves vanishing of the original polarized adjoint Selmer group at every irreducible characteristic-zero point. A decomposition-group mark and infinite inertia prove strong irreducibility, including at three. Actual arithmetic-point classicality over the constructed auxiliary field permits Thorne’s adjoint theorem; the full crystalline-component comparison puts every original tangent in its finite local condition.
 
-**First missing construction.** At type-II points, prove vanishing for the two rank-two representation summands, their polarized adjoint and the remaining character line with the original twists. Then discharge the moving-family integral Selmer budget. Neither rational rigidity nor integral finiteness gives an effective nilpotence exponent or uniform integral conormal length.
+The [type-II theorem](selmer-support-continuation-type-two-rigidity.md) supplies the remaining good-data rigidity. The actual rank-two constituent descends to an odd-weight modular form; Kato applies at exactly the original noncentral twist. The complete polarized adjoint splits into its rank-two adjoint, two quadratic lines and two rank-two representations, all with vanishing finite Selmer group. The original arbitrary extension quantifier is retained. The broader first-family end condition does not request rank-two automorphy.
+
+**First missing construction.** Construct the actual weighted relative presentation and original local chart used in the one-character integral comparison, then discharge the moving-family Selmer budget. Neither rational rigidity nor integral finiteness gives an effective nilpotence exponent or uniform integral conormal length.
 
 ## W06: the integral theta construction
 
@@ -323,7 +325,7 @@ dictionary, retaining every further target projection. Prove the uniform
 positive trace deficit/excess bounds for these same maps. In particular
 the near-return contributions and finite-column sums must be controlled as the field grows. The far-return weighted double integral is now exponentially small at the literal source cutoff and with the actual period normalizers; its identification with the final Gram operator is still required.
 
-The [all-length tail theorem](global-gram-continuation-length-tail.md) now supplies the original simultaneous tail estimate for every flag length and its inverse, with the same Bessel coefficient, local character, quotient measure and moment range. Its constants have the original quantifier order. The [degenerate-fibre theorem](global-gram-continuation-degenerate-fibres.md) supplies the exact original projected Gram-volume bound, including the common-stabilizer scalar and arbitrary right translates. A block-minor determinant bounds the actual coordinates; all intervening real Jacobians are one. The next near-return requirement is the exact local zero-Gram orbital-operator bound and its global sum; generic returns and final trace comparisons remain separate.
+The [all-length tail theorem](global-gram-continuation-length-tail.md) now supplies the original simultaneous tail estimate for every flag length and its inverse, with the same Bessel coefficient, local character, quotient measure and moment range. Its constants have the original quantifier order. The [degenerate-fibre theorem](global-gram-continuation-degenerate-fibres.md) supplies the exact original projected Gram-volume bound, including the common-stabilizer scalar and arbitrary right translates. A block-minor determinant bounds the actual coordinates; all intervening real Jacobians are one. The [original local orbital theorem](global-gram-continuation-degenerate-operator.md) now supplies its exact operator consumer, including integrability, the inverse stabilizer scalar, the compact-dimension cancellation and every required moment in the original allowance. Its proof gives the two projected Gram volumes the product bound required by the dyadic estimate. The next near-return requirement is the actual arithmetic zero-Gram sum; generic returns and final trace comparisons remain separate.
 
 ## W10: the exact integral geometric supplier
 
@@ -395,8 +397,9 @@ The [global upper bound and integral frame](geometry-bergman-continuation-upper.
 
 The [thin-region theorem](geometry-bergman-continuation-thin.md) supplies the original lower Bergman bound exp(-2f/(625 rd(E)^2 lambda^2)). It constructs the prescribed determinant jet on the original period torus, retaining the semicharacter and every ordinary-derivative factorial. Exact Gaussian periodization, the finite theta basis and the constant metric comparison on the same component transfer the bound to the actual integral cusp sections. No bound on projected lattice condition numbers is assumed.
 
-**First missing construction.** Prove the actual point-height comparison and numerical arithmetic section remainder for these same lattices, and construct the remaining original numerical family records.
-The existing cusp, jet and signed-boundary lemmas are to be applied unchanged.
+The [component section theorem](geometry-section-continuation.md) supplies the original arithmetic section-degree inequality and its literal numerical remainder. Principalizing the two original cusp systems gives the geometric filtration; the original lattices and Petersson metrics are transported exactly. The intrinsic Chow height has the original harmonic correction. The resulting estimate depends linearly on the signed weighted mean height, and uses exactly the original short-family exponent.
+
+**First missing construction.** Bound that mean height and the required rank losses for the same family, prove the actual point-height comparison wherever it is used, and construct the remaining original numerical records. The existing cusp, jet and signed-boundary lemmas are to be applied unchanged.
 
 ## Completion discipline
 

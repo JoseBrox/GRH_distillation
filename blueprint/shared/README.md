@@ -497,3 +497,9 @@ projection loss. The [arithmetic minimum theorem](../../notes/global-gram-contin
 controls `leastSize` over all nonzero integral submodules on the actual
 period cells. Its weighted far-return consequence retains the cited tail
 theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-quantitative.md) now supplies an explicit normalized moment and weighted L1 bound, with actual character transport removing unspecified frame heights and compact masses. The [actual covolume and normalized budget](../../notes/global-gram-continuation-haar-budget.md) supply literal CovolN and cancel all arbitrary Haar scales. Field, weight and T dependence remain explicit. The [two-point far estimate](../../notes/global-gram-continuation-two-point-far.md) now supplies an exponentially small weighted period integral at the literal cutoff, from the existing local decay and two-lattice packing argument. Final arithmetic-chain compatibility, near-return control, finite-column sums, further target cuts and the uniform trace budget remain.
+
+## Original rigidity, section degree and degenerate operators
+
+- [Complete good-data rigidity](../../notes/selmer-support-continuation-type-two-rigidity.md): the original rank-two representation has weight 2e+1 and twist e in Kato’s convention; Thorne and the exact polarized decomposition give full two-sided rational rigidity. No integral torsion bound is inferred.
+- [Actual component section degree](../../notes/geometry-section-continuation.md): the original cusp lattices, canonical line, intrinsic Chow height, metric and multiplication realize the determinant theorem, with the literal short-family exponent and component remainder.
+- [Original degenerate orbital operator](../../notes/global-gram-continuation-degenerate-operator.md): exact quotient realization, stabilizer scalar, projected Gram product and compact-dimension cancellation; the remaining global arithmetic zero-Gram sum is not supplied.

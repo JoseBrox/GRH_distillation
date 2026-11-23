@@ -1,0 +1,366 @@
+\subsection{The original degenerate orbital operator}
+\label{shared-original-degenerate-operator}
+
+The flag fibre estimate now supplies the local operator bound used
+for the nonidentity terms with zero Gram determinant.  We retain
+the original Haar measures, quotient measures, compact
+representations and complex phases.  The argument below proves
+the exact local assertion of the pinned
+source~\cite{global-gram-degenerate-operator-source}.
+
+Use the notation and normal-form hypotheses of
+Theorem~\ref{thm:original-degenerate-fibre-estimate}.  Thus
+$1\le j\le r$, $j+2\le k$, $D=|D_j(\gamma)|>0$,
+$\Delta\ge1$ bounds the inverses of the nonzero leading minors,
+and the common-stabilizer measure is the prescribed transport of
+$s\,d\rho$, with $s>0$.  Put $a=k-1-j\ge1$.
+
+For a negative $z\in W$, let $H_z$ be its stabilizer in
+$U(J_W)$, embedded as the identity on $E_0\oplus F_0$.
+It is compact; give it probability Haar measure $dh_z$.
+Let $\pi:H_z\to U(\mathcal V)$ and
+$\pi':H_{z'}\to U(\mathcal V')$ be continuous irreducible
+representations on nonzero finite-dimensional complex Hilbert
+spaces.  Suppose continuous functions $\Phi:G\to\mathcal V$ and
+$\Phi':G\to\mathcal V'$ satisfy
+\[
+ \Phi(hnx)=\psi(n)\pi(h)\Phi(x),\qquad
+ \Phi'(h'nx)=\psi'(n)\pi'(h')\Phi'(x),
+ \qquad |\psi(n)|=|\psi'(n)|=1.
+\]
+Here $h\in H_z$, $h'\in H_{z'}$, $n\in N$, and $x\in G$.
+
+Fix the original Haar measure $dg$ of $G$.  Use the original
+quotient measures $\nu_z,\nu_{z'},\nu_R$, with the Weil formulas
+\[
+ \int_G f(g)\,dg
+   =\kappa\int_G\int_{H_z}\int_N f(hnx)\,dn\,dh_z\,d\nu_z(x)
+   =\int_G\int_{R_\gamma}f(\rho x)\,d\mu_R(\rho)\,d\nu_R(x)
+\]
+for nonnegative measurable $f$, and the corresponding formula
+for $z'$.  The same $\kappa>0$ is used on both sides.  This
+formulation permits the original realization of a quotient measure
+as a measure on $G$.
+Assume, for one $c_\Phi>0$,
+\[
+ \int_G\|\Phi\|^2d\nu_z=c_\Phi\dim\mathcal V,\qquad
+ \int_G\|\Phi'\|^2d\nu_{z'}=c_\Phi\dim\mathcal V'.
+\]
+For an integer $q\ge16r^3+4r+2$ and $H\ge1$, assume the
+original length-tail bounds
+\begin{align*}
+ \int_{\{S_z\ge tH\}}\|\Phi\|^2d\nu_z
+       &\le(4r+4)t^{-2q}c_\Phi\dim\mathcal V,\\
+ \int_{\{S_{z'}\ge tH\}}\|\Phi'\|^2d\nu_{z'}
+       &\le(4r+4)t^{-2q}c_\Phi\dim\mathcal V'
+                                     \qquad(t>0).
+\end{align*}
+Theorem~\ref{global-gram-original-all-length-tail} supplies
+these bounds with the smaller coefficient $2r+2$ in the actual
+arithmetic family.
+
+Put
+\[
+ \sigma=\max\left(1,\frac{|D_l(\gamma)|}{(2H)^{2r}}:
+                                               0\le l\le r\right).
+\]
+For $u\in\mathcal V$ and $v\in\mathcal V'$ write
+$[u,v]w=\langle w,v\rangle u$, with the inner product linear
+in its first argument.
+
+\begin{theorem}[The actual local degenerate bound]
+\label{thm:actual-local-degenerate-bound}
+Under these hypotheses the original rank-one kernel is
+$\nu_R$-integrable, and the original operator
+\[
+             J_\gamma=\frac1{c_\Phi}
+                \int_G[\Phi(\gamma x),\Phi'(x)]\,d\nu_R(x)
+\]
+satisfies
+\begin{align}
+ \|J_\gamma\|_{\rm op}\le{}&
+ \frac{\kappa}{s}\,
+ 16(4r+4)(4r)^{4r^2}(2H)^{16r^3+4r}
+                       \Delta^{8r^2+2}\notag\\
+    &{}\cdot\left(\frac{8\pi\mathrm e}{a}\right)^{ja}
+    D^{-a}\,
+    \sigma^{-(q-16r^3-4r-1)/r}.
+ \label{eq:actual-local-degenerate-bound}
+\end{align}
+The assertion keeps the given quotient realization and every
+complex phase.  Its norm estimate uses the absolute scalar
+pairings, which are invariant under $R_\gamma$.
+\end{theorem}
+
+\begin{proof}
+We supply the measure-theoretic and geometric inputs of the
+already proved dyadic estimate (OD3)~\cite{global-gram-degenerate-dyadic}.
+
+\emph{The measure when the two sides are interchanged.}
+Conjugation by $\gamma$ sends $R_\gamma$ to $R_{\gamma^{-1}}$.
+It sends $\mu_R$ to the original normal-form measure for
+$\gamma^{-1}$ with the same scalar $s$.  To check the scalar,
+first work at $g_0$.  On the first $j$ coordinates its block
+matrix, in $E_j\oplus F_j$, is
+\[
+                  \begin{pmatrix}0&Z^{-*}\\ Z&0\end{pmatrix}.
+\]
+Within an antidiagonal block, conjugation sends an upper
+unitriangular $u$ to $(Zu^{-1}Z^{-1})^*$.  Inversion in
+upper unitriangular coordinates has absolute real Jacobian one.
+The remaining operations are a permutation, conjugation, and
+entrywise multiplications by ratios of entries of $Z$.
+Those ratios have absolute value one within a block.
+On the last block the action on $u$ is the identity.
+If $m_0=g_0|_W$, the top radical coordinates transform as
+\[
+                    B_{\rm top}\longmapsto
+                         \overline c\,m_0B_{\rm top},
+                  \qquad S_{\rm top}\longmapsto S_{\rm top}.
+\]
+Since $m_0\in U(J_W)$ and $|c|=1$, their real Jacobian is
+one.  Hence conjugation by $g_0$ preserves $d\rho$.
+The prescribed transports by $n_1,n_2$ now prove the assertion
+for $\gamma=n_1g_0n_2$.
+The inverse cross matrix is $Z_\gamma^*$, so all leading-minor
+absolute values, including $D$, are unchanged.  The quotient
+measure on the reversed side is exactly
+$(x\mapsto\gamma x)_*\nu_R$, by left invariance of $dg$
+and the Weil formula.
+
+\emph{A cutoff for the given quotient measure.}
+There is a nonnegative continuous $\chi$ on $G$ such that
+\[
+               \int_{R_\gamma}\chi(\rho x)\,d\mu_R(\rho)=1
+                                              \qquad(x\in G).
+\]
+One construction also verifies the convergence needed here.
+Choose compactly supported nonnegative continuous $f_i$ whose
+positive sets cover $G$.  Their averages
+$F_i(x)=\int_{R_\gamma}f_i(\rho x)\,d\mu_R(\rho)$ are finite
+and continuous, and bounded on compact sets: for $x$ in a
+fixed compact set, the possible $\rho$ lie in a fixed compact
+subset of the closed group $R_\gamma$.
+Choose positive coefficients tending to zero fast enough that
+both $\sum_i\epsilon_i f_i$ and $\sum_i\epsilon_i F_i$
+converge uniformly on each member of a compact exhaustion.
+Their sums $f$ and $F$ are positive, and $F(x)=\int f(\rho x)d\mu_R$.
+The group $R_\gamma$ is unipotent and unimodular, so
+$F(\rho x)=F(x)$.  Thus $\chi=f/F$ has the asserted property.
+For every nonnegative measurable $R_\gamma$-invariant $F_0$,
+the original Weil formula gives
+\begin{equation}\label{eq:degenerate-cutoff-identity}
+                      \int_G F_0\,d\nu_R
+                          =\int_G\chi F_0\,dg.
+\end{equation}
+This applies to absolute scalar pairings; no phase compatibility
+is inserted into the definition of the original operator.
+
+\emph{The one-sided estimate and the compact dimension.}
+For $R\ge1,y>0$ let
+\[
+ \mathcal E(R,y)=
+  \{x:S_{z'}(x),S_z(\gamma x)\le R,\quad y<Y_\gamma(x)\le2y\},
+\]
+and put $Q_i=\{i=0\}\cup\{S_{z'}>2^iH\}$.
+The first set is $R_\gamma$-invariant; the second is
+$H_{z'}N$-invariant.  The latter fact uses that $H_{z'}$
+fixes the original flag vectors, not that it is Euclidean
+unitary in these coordinates.
+For a unit vector $w\in\mathcal V'$, unfold
+the left side of \eqref{eq:degenerate-cutoff-identity} with
+$F_0={\bf1}_{\mathcal E(R,y)\cap Q_i}
+|\langle w,\Phi'\rangle|^2$ over $H_{z'}N$.
+The compact group preserves $dn$: its modulus on $N$ is
+a continuous homomorphism to $\mathbb R_{>0}$ and is trivial.
+Changing $hn$ to $nh$ and applying
+Theorem~\ref{thm:original-degenerate-fibre-estimate} therefore gives
+\begin{align*}
+ &\int_{\mathcal E(R,y)\cap Q_i}
+                  |\langle w,\Phi'(x)\rangle|^2d\nu_R(x)\\
+ &\quad\le\frac{\kappa}{s}V(R,y)
+       \int_{Q_i}\int_{H_{z'}}
+                  |\langle w,\pi'(h)\Phi'(x)\rangle|^2dh\,d\nu_{z'}(x),
+\end{align*}
+where
+\[
+ V(R,y)=(4r)^{4r^2}R^{16r^3}\Delta^{8r^2}
+                    \left(\frac{\pi\mathrm e}{a}\right)^{ja}(2y)^{2a}.
+\]
+The compact integral is exactly
+$\|\Phi'(x)\|^2/\dim\mathcal V'$.
+Indeed the average of the corresponding rank-one operators
+commutes with the irreducible compact representation, so its
+eigenspaces force it to be scalar; its trace determines that scalar.
+The length tail, or the total mass when $i=0$, consequently gives
+\begin{equation}\label{eq:actual-degenerate-one-side}
+ \int_{\mathcal E(R,y)\cap Q_i}
+       |\langle w,\Phi'\rangle|^2d\nu_R
+ \le\frac{\kappa}{s}V(R,y)(4r+4)2^{-2qi}c_\Phi.
+\end{equation}
+The compact dimension has canceled exactly.
+The fibre null-set assertion, followed by the same nonnegative
+unfolding and cutoff, also shows $Y_\gamma>0$ $\nu_R$-almost
+everywhere.  The reversed argument gives the corresponding
+assertions for $\Phi$, $\gamma^{-1}$ and its transported measure.
+
+\emph{The two projected Gram volumes.}
+Write
+\[
+ S=S_z(\gamma x),\quad S'=S_{z'}(x),\quad
+ Y=Y_{\gamma^{-1}}(\gamma x),\quad Y'=Y_\gamma(x).
+\]
+Exterior Cauchy--Schwarz for the first $l$ flag vectors gives
+$|D_l(\gamma)|\le(SS')^l\le(SS')^r$ for $0\le l\le r$.
+Projection decreases an exterior volume, so the two Gram
+volumes also satisfy
+\[
+ Y,Y'\le\max(S,S')^r\Delta,\qquad
+ \sigma\le\max\left(1,\frac{(SS')^r}{(2H)^{2r}}\right).
+\]
+In particular, the essential bound $D\le(SS')^r$ is retained.
+
+We now prove the remaining product estimate
+\begin{equation}\label{eq:actual-degenerate-Gram-product}
+                                  YY'D\le2^j.
+\end{equation}
+In the original Euclidean space let
+\[
+ A=x^{-1}E_0,\quad B=x^{-1}\gamma^{-1}E_0,\quad
+ C=x^{-1}\mathcal C_\gamma,\quad V_+=\ker(J-I).
+\]
+The two projection spaces are
+$P=V_+\cap(C+A)$ and $Q=V_+\cap(C+B)$.
+The form $h$ is positive semidefinite on $C$.
+To see this, apply $x$: the common orthogonal space lies in
+$E_0^{\perp_h}\cap z'^{\perp_h}$, whose radical is $E_0$
+and whose middle part is the positive definite space
+$z'^{\perp_{h_W}}\subset W$.
+
+For $p\in P$, $p'\in Q$, choose decompositions
+$p=c+a_0$, $p'=c'+b_0$ with $c,c'\in C$, $a_0\in A$,
+$b_0\in B$.  The common space is orthogonal to both
+isotropic spaces.  Since $p,p'\in V_+$,
+\[
+ h(c,c)=\|p\|^2,\qquad h(c',c')=\|p'\|^2,\qquad
+ h(a_0,b_0)=\langle p,p'\rangle-h(c,c').
+\]
+The Cauchy--Schwarz inequality for the positive semidefinite
+form on $C$ gives
+\begin{equation}\label{eq:positive-common-space-pairing}
+                         |h(a_0,b_0)|\le2\|p\|\|p'\|.
+\end{equation}
+
+Put $a_i=x^{-1}e_i$, $b_i=x^{-1}\gamma^{-1}e_i$ for
+$1\le i\le j$, and write $Z_\gamma=(h(a_b,b_a))_{a,b\le j}$.
+The common intersection $A\cap B$ has dimension $r-j$.
+This follows first from the normal form and then by unipotent
+transport.  The invertible cross matrix $Z_\gamma$ shows that
+$a_1,\ldots,a_j$ and $b_1,\ldots,b_j$ complement that
+intersection in $A$ and $B$.  The intersection is orthogonal
+to $A+B$, so replacing $a_0,b_0$ by those complements does
+not change their pairing.
+
+Let $L_A:\mathbb C^j\to Q$ have columns $Q a_i$, and let
+$L_B:\mathbb C^j\to P$ have columns $P b_i$, with $P,Q$
+also denoting the orthogonal projections.  Solving for the
+coordinates in the two complements gives exactly
+\[
+                  h(a_0,b_0)
+                        =\langle L_A Z_\gamma^{-1}L_B^*p,p'\rangle.
+\]
+For example the first coordinate vector is
+$Z_\gamma^{-1}(h(p,b_i))_i=Z_\gamma^{-1}L_B^*p$; the other
+pairing row is $(h(a_i,p'))_i$.  Thus
+\eqref{eq:positive-common-space-pairing} proves
+$\|L_A Z_\gamma^{-1}L_B^*\|_{\rm op}\le2$.
+Its $j$th exterior operator has norm
+\[
+ \frac{\|Qa_1\wedge\cdots\wedge Qa_j\|
+          \|Pb_1\wedge\cdots\wedge Pb_j\|}{|\det Z_\gamma|}
+                      =YY'D.
+\]
+This identity also holds if either family is dependent, when
+both sides are zero.  The exterior operator norm is at most
+$2^j$, proving \eqref{eq:actual-degenerate-Gram-product}.
+
+\emph{The original dyadic estimate.}
+For unit $v\in\mathcal V$, $w\in\mathcal V'$, set
+$A_v(x)=|\langle v,\Phi(\gamma x)\rangle|$ and
+$B_w(x)=|\langle w,\Phi'(x)\rangle|$.
+In the dyadic estimate take
+\[
+ e=16r^3,\qquad m=a,\qquad
+ K=K'=\frac{\kappa}{s}c_\Phi(4r+4)(4r)^{4r^2}\Delta^{8r^2}
+                 \left(\frac{\pi\mathrm e}{a}\right)^{ja}4^a.
+\]
+For shell indices $i,i'$, use $R=2^{i+i'+1}H$ in
+\eqref{eq:actual-degenerate-one-side} and in its reversed
+counterpart.  This supplies exactly the two one-sided square
+integrals in (OD3), with the specified $K,K'$.
+All the pointwise requirements, including positivity almost
+everywhere and $D\le(SS')^r$, were proved above.
+Therefore
+\[
+ \int_G A_vB_w\,d\nu_R
+ \le16K(2H)^{16r^3+4r}\Delta^2
+       (2^j/D)^a\,\sigma^{-(q-16r^3-4r-1)/r}.
+\]
+The right side is finite.  Applying this to finite orthonormal
+bases of $\mathcal V,\mathcal V'$ proves integrability of
+$\|\Phi(\gamma x)\|\,\|\Phi'(x)\|$, hence of the original
+rank-one kernel.  The bound is uniform for unit $v,w$;
+dividing by $c_\Phi$ therefore bounds the operator norm,
+without inserting either dimension.  Finally
+$4^a2^{ja}=2^{(j+2)a}\le8^{ja}$ because $j\ge1$.
+This gives \eqref{eq:actual-local-degenerate-bound}.
+\end{proof}
+
+\paragraph{The required moments fit the original arithmetic allowance.}
+There is no further moment-range hypothesis in this local
+application.  To state this precisely, retain the mathematical
+standing conditions of
+Theorem~\ref{global-gram-original-all-length-tail}, and denote
+the original cloud parameter by $\delta_{\rm ar}$, to
+distinguish it from the reciprocal-minor bound $\Delta$.
+The standing data give
+\[
+ \delta_{\rm ar}\ge(kfL)^{C_\ell},\qquad
+ h_{\rm NC}\ge C_\ell n^{19}f^5L,\qquad
+ Q=\min\left(\frac{h_{\rm NC}}{10^{16}\sqrt m},
+                                  \frac{4\delta_{\rm ar}}{10^8}\right).
+\]
+Every integer $1\le q\le C_1kr$ already satisfies both
+extra numerical conditions of the length-tail theorem.
+Indeed its proof gives $mq\le n^3$.
+The interval hypothesis $B_v\ge10^8n^7$ gives
+$B_v/(10^8n^4)\ge n^3$.
+Since $m\le n$, $n\ge C_\ell\ge10^8$, $f,L\ge1$,
+\[
+ \frac{h_{\rm NC}}{10^{16}\sqrt m}
+       \ge\frac{C_\ell n^{18}}{10^{16}}\ge n^3.
+\]
+Also $C_\ell\ge4$, $n\le2k$, and
+$k\ge m^4\ge10^{32}$ give
+\[
+ \frac{4\delta_{\rm ar}}{10^8}
+       \ge\frac{4k^4}{10^8}\ge8k^3\ge n^3.
+\]
+Thus $mq\le Q$ as well.  For $C_1\ge1$ the whole required
+interval is nonempty: $k\ge(2r+2)^4$ and $r\ge1$ imply
+\[
+             16r^3+4r+2\le kr\le C_1kr.
+\]
+In particular $q=\lfloor C_1kr\rfloor$ is permitted.
+The constants $c_q=10^{-8}$, $C_q=10^8$ and $C_H$ were
+fixed before $C_1$, as in the original quantifier order.
+We have enlarged neither a constructed tensor family nor
+its shift range.  This verifies the actual moment input of
+the local orbital theorem.
+
+The remaining diagonal zero-Gram obligation is arithmetic:
+assemble these local bounds with the actual leading-minor
+count, stabilizer masses and global normalizers, and prove
+absolute summability with the prescribed exponential saving.
+The generic returns and final arithmetic Gram comparison
+remain separate.

@@ -210,7 +210,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original auxiliary frame, common-subgroup finite-end theorem and integral weight-zero finiteness are proved, with torsion and nilpotents retained. Type-I rigidity now follows from strong irreducibility, actual automorphy over the same auxiliary CM field and Thorne’s polarized adjoint theorem; the full local crystalline comparison applies to original tangents. Prove the remaining type-II summand vanishing and the moving-family weighted integral Selmer bound. No uniform integral length follows from rational vanishing.
+**Next concrete task.** The original auxiliary frame, integral weight-zero finiteness and complete good-data characteristic-zero rigidity are proved. Thorne treats the adjoints; Kato treats the exact noncentral odd-weight rank-two twists. Construct the actual weighted relative presentation and local twelve-variable chart, then prove the original moving-family integral Selmer bound. Keep every torsion class and nilpotent; rational vanishing supplies no uniform length.
 
 **Acceptance conditions:**
 
@@ -322,7 +322,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The exact period Gram identity, normalized seed norms and Haar budget are supplied, as are the uniformly small actual two-point far integral and all flag-length tails. The original degenerate fibre bound now retains the exact projected Gram normalization, coordinate Haar measure and stabilizer scalar. Prove its actual local orbital-operator consumer and global near-return sum, generic returns, finite-column sums, final arithmetic-chain identity and restricted positive traces.
+**Next concrete task.** The exact period identity, Haar budget, exponentially small two-point far integral, all flag-length tails, original degenerate fibres and their local orbital operator are proved. Sum the actual arithmetic zero-Gram returns with their finite-place weights and stabilizer masses. Then control generic near returns and finite columns, identify the same restricted arithmetic maps, and bound both prescribed positive traces.
 
 **Acceptance conditions:**
 
@@ -383,7 +383,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original geometric models, short sections, key shifts, thick and thin lower Bergman bounds, global upper bound, multiplication estimate and short generators of the entire integral cusp lattice are supplied in their original metrics. Prove the point-height comparison and numerical arithmetic section remainder for these same lattices, and finish the remaining original numerical family constructions.
+**Next concrete task.** The original models, short integral families, lower and upper norm bounds, full integral frame and actual component section-degree inequality are proved. Its literal remainder retains the original short-family exponent, and component summation needs only the signed weighted mean height. Supply that height comparison and the actual rank losses, and finish the original numerical family constructions.
 
 **Acceptance conditions:**
 
@@ -479,9 +479,9 @@ The [adopted classical Galois substitution](../../notes/classical-galois-substit
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W04: type-I rigidity and full integral weight-zero finiteness are supplied. Prove the exact type-II representation and adjoint summand vanishing, then bound growing integral conormal lengths and weighted Selmer orders. Ordinary RH remains the preferred testing ground.
-1. W06/W08: use the proved all-length tails and exact degenerate fibre measure to prove the original zero-Gram orbital operator and global sum. Retain all ranks, finite columns, characters and measure factors before comparing the same final arithmetic maps and traces.
-1. W10: the original thin and thick lower bounds, global upper bound and entire integral cusp frame are proved. Apply them to the actual point-height/section-degree comparison and its numerical remainder, completing any original family records still assumed.
+1. W04: full good-data rational rigidity and integral weight-zero finiteness are supplied. Construct the actual weighted relative presentation and local chart, then bound the integral conormal lengths and weighted Selmer orders. Ordinary RH remains the preferred testing ground.
+1. W06/W08: the original degenerate local orbital bound is supplied. Prove its arithmetic global zero-Gram sum and the generic near-return sums, with all ranks, finite columns, characters and measure factors retained. Compare the same final arithmetic maps and traces.
+1. W10: the original component section-degree inequality and literal numerical remainder are supplied. Bound its signed mean height and rank losses in the same family; complete the original numerical records and every point-height comparison actually used.
 1. W02/W11: assemble compatible signed arithmetic budgets at every required fourth-power sample, with all accuracy parameters fixed before the windows grow.
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
