@@ -108,11 +108,18 @@ now has an explicit construction: exact fibre support, dimension
 `1+D_wt+n*q_TW`, and movement with unchanged prime contraction. Its
 approximate-annihilation step preserves the original multiplier and
 relation exponent; varying finite free ranks are allowed.
+For the actual prime-to-ell character inputs, the ordinary arithmetic
+seed is now constructed at the original level and field, with every
+residual, inertial, ordinary, polarization and automorphic clause.
+The rank-two construction retains the original supplied CM twist.
 
-**First missing construction.** Construct the original nonzero arithmetic
-seed with every prescribed residual and local condition, and finish the
-global marked deformation model and prime-chain application. The patched
-support may be empty and cannot replace this seed. Propagation must retain
+**First missing construction.** Prove the actual algebraic-weight
+ordinary-control and automorphic-occurrence statement `PT` needed to put
+the new seed in the original deformation support; prior weight-zero
+control alone does not supply it. Construct the prescribed rank-two CM
+twist where needed, then finish the marked model and prime-chain application.
+The patched support may be empty until the seed-to-support bridge is supplied.
+Propagation must retain
 the entire characteristic-prime fibre
 and the actual two-sided rigidity. Neither qualitative finiteness,
 fixed-point constants nor a torsion-free quotient proves the displayed
@@ -197,7 +204,12 @@ with the exact compact factors, cofactor normalization and Haar constants.
 The actual compact top lift and terminal `HeadTop` are now proved
 under their unchanged original place and operator hypotheses. Their
 cutoffs and inverse spectral factors enter exact identities only.
-The next local target is the normalized Fourier kernel estimate.
+The original compact `KernelFourierIntegralBound`, continuity at zero
+and full diagonal positivity are now proved with the exact point
+normalization. Every original admissible old word is covered by the
+unused-block construction, and all rational word corrections remain.
+The next local targets are the decaying-eigenfunction extension,
+off-diagonal and block-growth estimates, and the actual controlled top lift.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 

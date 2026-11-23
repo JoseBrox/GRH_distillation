@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "classification": "closed actual prime-to-ell arithmetic seed subobligation inside W04, independently reviewed",
+  "claim": "For every original field-character datum with ell not dividing order chi', construct the complete rank-two and rank-three IsSeed representations in arbitrarily large prescribed weight classes, retaining the rank-two supplied CM twist.",
+  "verification_kind": "Authenticated bounded pinned interfaces; eight directly inspected primary references; exact generic polarization identities and small-prime Bernoulli controls. The complete existence proof is in the note.",
+  "quantifiers": [
+    "Every odd ell, including 3; every original N,w,K,L,chi',eta,theta,j satisfying the full field-character contract and ell not dividing order chi'.",
+    "Every prescribed Qbar_ell-to-C embedding and every lower weight bound B; finite coefficient extensions are allowed inside Qbar_ell, without enlarging K or L.",
+    "Rank three when chi' differs from eta; rank two for the original supplied IsTwist character kappa and its prescribed restriction ka.",
+    "Residual characteristic-polynomial identities hold on every Galois element; away inertia is exact at every prime including 2; each ell-adic place has the original ordered flag and full residual decomposition-group characters."
+  ],
+  "decisive_interfaces": {
+    "integral_constants": "Nontrivial prime-to-ell phi supplies a unit 1-phi(a)a^k with a=1 mod w ell. Integral smoothed congruences yield the exact w Euler factor and lambda-divisibility, without a Bernoulli denominator loss.",
+    "all_cusps": "The primitive constant-term formula vanishes off the infinity class; all remaining constants are unit multiples of L(1-k,chi)/2.",
+    "same_character_lift": "Cusp stabilizers have order dividing 2C, so the boundary eigensheaf sequence is exact even when ell divides the diamond group order. omega^12 descends to an ample line; Serre vanishing gives the exact boundary lift.",
+    "ordinary": "The lifted packet has a_ell=1 mod lambda. Kato 17.1/17.7 applies without residual irreducibility; converting its arithmetic Frobenius alpha^{-1} on the cohomological line gives the unit quotient alpha.",
+    "away_type": "Carayol Theorem A over Q plus equality of central-character and representation conductor forces principal series with one unramified character and zero monodromy.",
+    "rank_three": "phi=chi' eta, k=m+1, r3=Sym^2 rho/det rho. The nonquadratic residual condition excludes quadratic self-twists; infinite ordinary projective inertia then forces connected PGL2 and irreducibility on every open subgroup.",
+    "rank_two": "phi=chi'^2 eta, k=2m+1, sigma=rho epsilon^{-m} chi'^{-1}; det sigma=eta theta. Clifford theory and the exact residual condition prove irreducibility on G_L.",
+    "polarization": "Q=[[0,0,-2],[0,1,0],[-2,0,0]], P3=Q ad0(rho)(c); J=[[0,1],[-1,0]], P2=J sigma(c). Both pairings are symmetric with original multiplier one.",
+    "automorphy": "Gelbart-Jacquet adjoint transfer; cyclic prime-degree Arthur-Clozel base change, with norm self-twists excluded by irreducible restrictions. Rank three uses exactly epsilon^{-1}. Rank two uses BC(pi_f^vee) tensor |det|^{1/2} tensor Xi_chi tensor the prescribed Xi_ka; its CM infinitesimal parameters are {m-1/2,-m-1/2} and {m+1/2,-m+1/2}, with exact geometric-Frobenius and positive algSat factors."
+  },
+  "limitations": [
+    "This does not assert unrestricted Seed2, Seed3 or PropEG for arbitrary ell-power character order; it supplies the exact prime-to-ell character case used in SeedPtOf.",
+    "The particular IsTwist character remains an explicit rank-two input.",
+    "No uniform bound on weight, coefficient degree, automorphic dimension or integral Selmer torsion is asserted.",
+    "The marked PointTheorem, characteristic-prime curve point, support localization and complete prime chain must still be applied with their exact hypotheses.",
+    "No whole RH or GRH proof-map node and no Lean project build is certified."
+  ],
+  "sources": [
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/IdeleGenerators/SlopeTestRemainingChoices.lean",
+      "git_blob_sha1": "2c61cfeb338274cb92e18d20a518293fadcbf023",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.IdeleGenerators.SlopeTestRemainingChoices",
+      "sha256": "9038338bf39ff6126b79aad2487c88029d84b2da6cd791f106197c90dd9f18c9",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 24,
+          "end": 46,
+          "sha256": "c58bd89f49b68ddee57c7661e318c1ac735c4e859ba47c63841c03c1ba335fbf"
+        },
+        {
+          "start": 55,
+          "end": 109,
+          "sha256": "de6a73a6861e63c5c5e93c7185535fe3b8bf4c162c86d19c412390899e18294f"
+        },
+        {
+          "start": 111,
+          "end": 160,
+          "sha256": "1877d938bc18fc7d88ea2cb26ed8165fb0a9585407022f495eb97ac2053c6212"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/IdeleGenerators/ShapeFacts.lean",
+      "git_blob_sha1": "004f17b6fc928749d70f972f374d4448c39c990b",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.IdeleGenerators.ShapeFacts",
+      "sha256": "42b519659025e33f795e74bb3ffa1b31c64c80a08ac2dc06b7423a8107867685",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 28,
+          "end": 54,
+          "sha256": "3a00b3a95be8a0e200bcd22254dbc4b5cc13ef6512f268156f7b0698a23df88d"
+        },
+        {
+          "start": 167,
+          "end": 192,
+          "sha256": "e8e456f591cc8870f80ad1208298e4a6018ab205cbc537cb8c6f19bb78dd40d6"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CurveDVRSpecialization/SeedPtOf.lean",
+      "git_blob_sha1": "fd4e8ebf97af76625ecb024608beb6fbb704f302",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.CurveDVRSpecialization.SeedPtOf",
+      "sha256": "98a45b8ecd97d0ff958626beab5e88b65444eaa103f9d847cf377c692732cc19",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 174,
+          "end": 179,
+          "sha256": "37f6d9289849afcdef4dc1bec2d4d089aa85607996da4aab240ce8fd4ac2be3e"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PublishedTheorems/CyclicBaseChangeC.lean",
+      "git_blob_sha1": "04b178c97d888b602b1bac3598931e4d331b5747",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PublishedTheorems.CyclicBaseChangeC",
+      "sha256": "bf7bf283c30607529b3d8cb0cb5a131ace036090e0f79784ab8b7f75e1a78ca2",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 13,
+          "end": 26,
+          "sha256": "b61095a86c2aff48e402b7e822ca452a510019876cbf176747751855d566e981"
+        },
+        {
+          "start": 32,
+          "end": 71,
+          "sha256": "37eace555abd73fd2b46f995833e20650265e8172aee4af29d920511277ecd84"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/BlochKatoSelmerVanishes.lean",
+      "git_blob_sha1": "f342e0eb41bf3129145addd7b04d3f3ed303050b",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.AutomorphicForms.BlochKatoSelmerVanishes",
+      "sha256": "33de4f2e443f2719745274393c43a1e167ce510963f2d69bd959c49779210b71",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 18,
+          "end": 39,
+          "sha256": "1bb237d975b1dddd5e1a154998f18df385b5a337606f71b5093a119892e0bb76"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/BcDefs.lean",
+      "git_blob_sha1": "8d993474a875273ff2d79bbbc2dbf0fff11bae57",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.AutomorphicForms.BcDefs",
+      "sha256": "e9f0a15c4f45529bebc20a18cf10372db0461855b6c0fa41c55e4b3d07d4f7ba",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 18,
+          "end": 20,
+          "sha256": "6a207e6cf24fcd17fae8416a488031c42dbbd1993914596e5b5cf74a18e2aa4f"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/IdeleGenerators/HolomorphicIrreducibility/SelfTwGal.lean",
+      "git_blob_sha1": "6d165a7924b7f71ff667b72ec66645c7aa84d741",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.IdeleGenerators.HolomorphicIrreducibility.SelfTwGal",
+      "sha256": "b635a52949e6a889068ce5f0e4b8d3a0488a73d6d1e6f60a063e35ffd79dcc90",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 31,
+          "end": 33,
+          "sha256": "2c8202824fc9eb237173e897a6ddaa5a01e70834aa42f9232253016927de4647"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/IdeleGenerators/HolomorphicIrreducibility/EigAut.lean",
+      "git_blob_sha1": "1d78a32a0b77e7cdb0760d0c921069f46f2a64cb",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.IdeleGenerators.HolomorphicIrreducibility.EigAut",
+      "sha256": "7431940da8c195407f4c6c8f85dd3d0ab1396315636ade4eb69cea0bac45780f",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 47,
+          "end": 97,
+          "sha256": "35a386451469e3ce5413f47da3c66a3a92bd5ee675761176aa8c050f1f87b091"
+        }
+      ]
+    },
+    {
+      "repository": "jsmorph/rh",
+      "commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/CongruenceNumberRankThree.lean",
+      "git_blob_sha1": "569159efe66ad557ddc574ce2d53053c29c21e9a",
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.AutomorphicForms.CongruenceNumberRankThree",
+      "sha256": "77f54b0b28f2cf6294160689867cbf3721215c8b8a0b53b37ebbe677a9822efc",
+      "matches_pinned_blob": true,
+      "reviewed_excerpts": [
+        {
+          "start": 20,
+          "end": 28,
+          "sha256": "0f3f6d81cf8282844e1fdc5c2990a205eb0c90e32643512472274c3ad75863f2"
+        }
+      ]
+    }
+  ],
+  "primary_sources": [
+    {
+      "file": "deligne-ribet.pdf",
+      "url": "https://math.berkeley.edu/~ribet/Articles/deligne-ribet.pdf",
+      "sha256": "4ff26bab2723a01434e6ee4066d0b0907d6bb5540e2bf78b02a11a86d84d0a2b",
+      "pdf_pages_reviewed": [
+        53,
+        54
+      ],
+      "printed_pages": [
+        278,
+        279
+      ],
+      "interface": "Main Theorem 8.2: smoothed integral measure and integral Kummer congruences; the unit smoothing factor is supplied in the proof.",
+      "bytes": 5340089,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "dasgupta-kakde.pdf",
+      "url": "https://arxiv.org/pdf/2010.00650v1",
+      "sha256": "eb0bfdab63f56d653f302209fc92f2d81cc0894430ef88a7bbf2a2f830783d1d",
+      "pdf_pages_reviewed": [
+        17,
+        18
+      ],
+      "interface": "Definition 4.2, Remark 4.3, Theorem 4.5(1): chi1=1, chi2=chi primitive, level=f=conductor chi; Gauss ratio cancels and extra Euler-factor set is empty.",
+      "bytes": 319155,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "katz-padic-modular.pdf",
+      "url": "https://web.math.princeton.edu/~nmk/old/padicpropMFMS.pdf",
+      "sha256": "f9c14dc0c8da65bbe355926d149141b548a03e4016b883c4b800b14150cc2b1a",
+      "pdf_pages_reviewed": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "interface": "Sections 1.4-1.6 and Corollary 1.6.2: fine modular curves and integral q-expansion principle. The coarse diamond eigensheaf cusp lift is proved in the note; blanket eigensheaf base change is not cited.",
+      "bytes": 5003549,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "deligne-serre.pdf",
+      "url": "https://numdam.org/item/10.24033/asens.1277.pdf",
+      "sha256": "65b390f6d33e827e30c6c66bbc15421eca51db3180bdf5996dcee19047be97fc",
+      "pdf_pages_reviewed": [
+        15,
+        17
+      ],
+      "printed_pages": [
+        520,
+        522
+      ],
+      "interface": "Theorem 6.1 and Lemma 6.11: classical Galois representations and lifting a residual eigenpacket in a finite free DVR module. A specified eigenvector lift is not claimed.",
+      "bytes": 2402609,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "carayol.pdf",
+      "url": "https://numdam.org/item/10.24033/asens.1512.pdf",
+      "sha256": "d4a5fb6b1cd76f944f8948e06df1c7ad5656ae5ee14b9189178ee1e8f2b0dab8",
+      "pdf_pages_reviewed": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "printed_pages": [
+        409,
+        410,
+        411,
+        412
+      ],
+      "interface": "Hypotheses 0.3 and Theorem A. F=Q has odd degree, so no added finite discrete-series place is required. Exact primitive central conductor forces zero monodromy by the conductor argument in the note.",
+      "bytes": 5887969,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "kato.pdf",
+      "url": "https://www.numdam.org/article/AST_2004__295__117_0.pdf",
+      "sha256": "3c6e14b11fa60262db8aff782ce3cf4d83e9100c0be83621a7e4ce502cec605d",
+      "pdf_pages_reviewed": [
+        157,
+        159,
+        160
+      ],
+      "printed_pages": [
+        272,
+        274,
+        275
+      ],
+      "interface": "Proposition 17.1 and Section 17.7, no residual irreducibility. The cohomological unramified line has arithmetic Frobenius alpha^{-1}; its dual gives the arithmetic normalization's unramified quotient alpha.",
+      "bytes": 18010813,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "gelbart-jacquet.pdf",
+      "url": "https://www.math.columbia.edu/~hj/Forms%20on%20GL%282%29%20and%20GL%283%29.pdf",
+      "sha256": "7bd1a452341797cda3886b67ffceb7de81cfb79dc8e3d1eeeeaa6b8bcfda2d06",
+      "pdf_pages_reviewed": [
+        65,
+        71,
+        72
+      ],
+      "printed_pages": [
+        534,
+        540,
+        541
+      ],
+      "interface": "Theorem 9.3 and Remark 9.9: adjoint transfer with cuspidality outside the quadratic self-twist case.",
+      "bytes": 5290357,
+      "matches_reviewed_pdf": true
+    },
+    {
+      "file": "arthur-clozel.pdf",
+      "url": "https://www.math.toronto.edu/arthur/pdf/30.pdf",
+      "sha256": "3033d863634f5a1e8c26e48ba5b5ec9d8f95fb411b2a6d21c1580db80bc01737",
+      "pdf_pages_reviewed": [
+        218,
+        219,
+        228
+      ],
+      "printed_pages": [
+        202,
+        203,
+        212
+      ],
+      "interface": "Chapter III Theorems 4.2(a,b) and 5.1: cyclic prime-degree cuspidal base change and strong local compatibility; iterate from K to the original L. No solvable descent is used.",
+      "bytes": 17549338,
+      "matches_reviewed_pdf": true
+    }
+  ],
+  "exact_checks": {
+    "status": "PASS",
+    "symbolic_identities_over_Z": [
+      "The exact source symmetric-square matrix satisfies S(g)^t Q S(g)=det(g)^2 Q and det S(g)=det(g)^3, with det Q=-4.",
+      "g^t J g=det(g)J; for trace-zero involution C of determinant -1, JC is symmetric.",
+      "For that same C, A=-Sym^2(C) satisfies A^2=1 and QA is symmetric, modulo the exact relation u^2+vz=1."
+    ],
+    "exact_bernoulli_examples": [
+      {
+        "ell": 3,
+        "phi_conductor": 4,
+        "w": 13,
+        "weight": 3,
+        "L_value_in_zeta3": "254*x - 110",
+        "residue_mod_zeta3_minus_one": 0
+      },
+      {
+        "ell": 3,
+        "phi_conductor": 4,
+        "w": 13,
+        "weight": 5,
+        "L_value_in_zeta3": "80290 - 209410*x",
+        "residue_mod_zeta3_minus_one": 0
+      },
+      {
+        "ell": 3,
+        "phi_conductor": 4,
+        "w": 13,
+        "weight": 7,
+        "L_value_in_zeta3": "430733054*x - 162772430",
+        "residue_mod_zeta3_minus_one": 0
+      },
+      {
+        "ell": 3,
+        "phi_conductor": 4,
+        "w": 13,
+        "weight": 9,
+        "L_value_in_zeta3": "623401233730 - 1652356871170*x",
+        "residue_mod_zeta3_minus_one": 0
+      },
+      {
+        "ell": 3,
+        "phi_conductor": 4,
+        "w": 13,
+        "weight": 11,
+        "L_value_in_zeta3": "10185925196160254*x - 3842247417397550",
+        "residue_mod_zeta3_minus_one": 0
+      },
+      {
+        "ell": 3,
+        "phi_conductor": 4,
+        "w": 13,
+        "weight": 13,
+        "L_value_in_zeta3": "34737474798707833570 - 92092057801191638530*x",
+        "residue_mod_zeta3_minus_one": 0
+      },
+      {
+        "ell": 3,
+        "phi_conductor": 4,
+        "w": 13,
+        "weight": 15,
+        "L_value_in_zeta3": "1147996613509410450240254*x - 433027720534373436195470",
+        "residue_mod_zeta3_minus_one": 0
+      }
+    ],
+    "negative_controls": [
+      {
+        "omitted_hypothesis": "phi(w)=1",
+        "ell": 3,
+        "phi_conductor": 4,
+        "w": 7,
+        "weight": 3,
+        "L_value_in_zeta3": "78*x + 32",
+        "residue": 2
+      },
+      {
+        "omitted_hypothesis": "nontrivial residual phi",
+        "ell": 3,
+        "phi": "1",
+        "w": 7,
+        "weight": 2,
+        "L_value_in_zeta3": "2*x/7 - 4/7",
+        "residue": 1
+      }
+    ],
+    "scope": "Polynomial identities are exact generic calculations. The finite Bernoulli examples test normalization and indispensable hypotheses, not the general existence theorem."
+  },
+  "artifacts": [
+    {
+      "path": "notes/selmer-integral-frontier-arithmetic-seed.md",
+      "sha256": "fa2e9fc173190e54e0c39c6b03ae5adac20e089926a600990ee6cadbaa3b7df3"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-arithmetic-seed.tex",
+      "sha256": "19267a96f21ee8dd0c0a285adf1fe8efbc6790432fe406ac84a37cf17b6f0b23"
+    },
+    {
+      "path": "paper/shared/selmer-integral-frontier-arithmetic-seed-references.tex",
+      "sha256": "904fd8306ef6de821a186c81df8405d63025f1434ca22e3198005b13fb9f79a2"
+    },
+    {
+      "path": "scripts/check_selmer_integral_frontier_arithmetic_seed.py",
+      "sha256": "8d61c1868f875c61376e42ac72c3fdb27bab61cc71159116cc66ba5bab4adf15"
+    }
+  ]
+}

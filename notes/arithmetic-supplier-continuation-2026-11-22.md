@@ -119,9 +119,17 @@ to every localized jet with the same relation exponent; no fixed module
 rank or compatible finite-level maps are assumed. This support may be
 empty, so arithmetic nonvanishing remains a separate construction.
 
+The [arithmetic seed theorem](selmer-integral-frontier-arithmetic-seed.md)
+now constructs the exact ordinary seeds for the actual prime-to-ell inputs,
+at the original field and conductor. Every residual, inertial, ordinary,
+polarization and automorphic clause is retained, including the rank-two
+half-norm and prescribed CM twist. Actual algebraic-weight ordinary
+control must still establish the source `PT` and put these seeds in the
+original deformation support.
+
 Both finite-level cohomological bounds and their exact limiting
-comparison are proved. The next arithmetic requirements are the original
-nonzero seed with all residual and local conditions, global marked
+comparison are proved. The next arithmetic requirements are that
+seed-to-support bridge, the prescribed rank-two CM twist, global marked
 deformation models, full characteristic-prime propagation and two-sided rigidity. They must
 supply the moving-family integral Selmer product; qualitative finiteness
 or rational rigidity cannot replace that bound.
@@ -160,8 +168,11 @@ now proves the original complex `KloostDens` for every block pattern. An
 exact compact stationary-phase germ isolates each long-orbit value without
 a rank-uniform remainder. The actual unitary density transfer now proves
 `PhiZero` and `DensC`, and the compact top lift proves terminal `HeadTop`
-under the original place and operator hypotheses. The next local target
-is the exact Fourier kernel estimate. Its global application must retain every
+under the original place and operator hypotheses. The exact compact
+Fourier kernel estimate, continuity at zero and diagonal positivity are
+now supplied with every original word and normalization. The remaining
+decaying-function, off-diagonal, block-growth and controlled-top-lift
+steps must still be proved. The global application must retain every
 rational return, all source/target cuts and all arithmetic normalizers.
 An ambient projector estimate or local Gram identity is not the required
 global period-Gram estimate. A strict source deficit must supply any
@@ -171,9 +182,10 @@ aggregate nonvanishing needed by the chosen consumer.
 
 1. Construct the original good cover on the completed arithmetic level system,
    then identify and estimate the actual arithmetic section lattices.
-2. Construct the exact arithmetic seed, apply the new patched support
-   and local propagation globally, and prove the integral Selmer budget.
-3. Prove the full positive-rank Fourier estimate, then
+2. Prove algebraic-weight ordinary control and place the new arithmetic
+   seed in the actual patched support; apply propagation globally and
+   prove the integral Selmer budget.
+3. Complete the positive-rank decaying-function and block estimates, then
    transfer it to the complete period-Gram sum.
 4. Test every newly supplied result against the exact fourth-power tables
    in frontier theorem A. Constants and all accuracy parameters precede

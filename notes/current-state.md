@@ -78,9 +78,13 @@ closed equation ideal and all annihilator torsion. The actual tangent,
 second-order ordinary lifting and integral presentation now prove full
 local propagation at every supplied normalized curve. The complete
 patched-support supplier now preserves the exact fibre, required dimension
-and movement between completions, without a fixed-rank hypothesis. A
-nonzero seed, global two-sided rigidity and the moving-family integral
-Selmer budget remain open.
+and movement between completions, without a fixed-rank hypothesis.
+The prescribed ordinary arithmetic seed is now constructed for the actual
+prime-to-ell inputs, at the original field and level, retaining every local
+condition and the source automorphic normalization. The rank-two case
+uses the original supplied CM twist. Actual algebraic-weight ordinary
+control must still place the seed in the deformation support; global
+two-sided rigidity and the moving-family integral Selmer budget remain.
 
 The actual local Bessel families satisfy the iterated weighted norm
 identities and finite coefficient expansion everywhere on the original
@@ -97,8 +101,12 @@ an exactly normalized stationary-phase germ. The actual unitary density
 transfer now supplies `PhiZero` and `DensC`, with the original cofactor
 frames, compact representations and Haar constants at every head.
 The exact compact top lift and terminal `HeadTop` now hold under their
-original place and operator hypotheses. The complete local kernel bound
-and global rational-return/period-Gram estimate remain open.
+original place and operator hypotheses. The actual compact normalized
+one-coordinate Fourier bound, continuity and diagonal positivity are now
+proved for every original admissible word. Extension to the prescribed
+decaying functions, off-diagonal and block-growth estimates, the controlled
+top-lift construction and the global rational-return/period-Gram estimate
+remain separate.
 
 These are closed supplier obligations within larger nodes. Whole-node
 statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.

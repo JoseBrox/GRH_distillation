@@ -1,0 +1,282 @@
+\subsection{The normalized Fourier bound at every actual head}
+\label{actual-kernel-fourier}
+
+We now obtain the original one-coordinate Fourier estimate from
+the actual coefficient maps.  The point normalization, terminal
+density and old-word rational factors are retained throughout.
+This result concerns a supplied original place and top lift; it
+does not construct that arithmetic place or its integral lattices.
+
+Fix the original data $P,p$ with $k\ge2$, its normalized tower,
+compact types, base frame, and top lift $\Theta$.  Retain the
+original regular-radial top-lift identity and
+$\mathrm{InDDplus2}(C_b)$ for a fixed $C_b$.
+Let $F$ be a smooth compact coefficient with positive Gram cutoff.
+The word operators, root quotient measures, and forms are the
+original ones.  Put
+\[
+ q_0(Y)=-TT'\prod_{i=1}^k
+       (Y+\tfrac12+u_i)(Y+\tfrac12+u'_i),\qquad
+ S_w=\prod_{(\varepsilon,a)\in w}n(a),
+\]
+where $n$ is strictly positive at all parameters used below.
+Here $n(a)=|P_{\mathrm{eig}}(a)|$ in the original eigenfunction
+application; it is not the dimension of a representation.
+For a head $h$ of size $j\le r$, write
+\[
+ a_h=n\mathrm{Pt}(k,r,TT',h)>0,\qquad
+ x_{w,h}=\bigl(S_h\mathsf V_{j,w,e}F\bigr)_e,
+ \qquad \beta_{j,w}=\mathrm{formLev}_{j,w}.
+\]
+Thus $\mathrm{RR}_{j,w}(h,h')=
+\beta_{j,w}(x_{w,h},x_{w,h'})$.
+Denote the original normalized kernel and its diagonal by
+\[
+ N_{i,w}(a,b)=\frac{\sqrt{n\mathrm{Pt}(a)}
+                          \sqrt{n\mathrm{Pt}(b)}}{S_w}
+                       \mathrm{RR}_{i,w}(a,b),\qquad
+ E_{i,w}(a)=\operatorname{Re}N_{i,w}(a,a).
+\]
+These are exactly the source's $\mathrm{NP}$ and $\mathrm{Ew}$
+\cite{kernel-fourier-source}.
+
+Use the already constructed finite grids
+$\mathcal G_0,\mathcal G_1,\ldots,\mathcal G_N$ in
+$[\alpha,\beta]$ contained in the original cut, with
+\[
+ N=20(r+1),\qquad I=\beta-\alpha\ge6N^3+6N,
+ \qquad \mathcal Y=\bigcup_{a=0}^N\mathcal G_a.
+\]
+Every $y,y+1$ belongs to the original cut.  The short grid
+has $N$ points.  Different long grids, and a long and a
+short grid, are separated by at least $N^2+1$ after either
+zero or one shift; distinct short nodes have the lower bound
+$N^2/8$.  Each long grid contains $2j+1$ interpolation
+nodes whose sum of absolute leading-coefficient weights is
+at most $(28N/I)^{2j}$, for $1\le j\le r$.
+These are the original grid ranges; no boundedness of $r$
+is assumed \cite{kernel-fourier-established}.
+
+Set
+\[
+ A_0=\max_{y\in\mathcal G_0}
+       \sqrt{\frac{n(y)n(y+1)}{q_0(y)}},\qquad
+ A_1=\max_{y\in\mathcal Y}
+       \sqrt{\frac{n(y)n(y+1)}{q_0(y)}}.
+\]
+The original cut gives $q_0(y)>0$, so these are finite and
+positive.  Define
+\begin{equation}\label{kernel-fourier-Lambda}
+ \Lambda_j=
+ \begin{cases}
+ e^{10/49}A_0,&j=0,\\
+ e^{10/49}A_1(28N/I)^{2j},&1\le j\le r,
+ \end{cases}
+ \qquad \Lambda=\max_{0\le j\le r}\Lambda_j.
+\end{equation}
+One may enlarge $\Lambda$, in particular to $\max(1,\Lambda)$
+when the downstream statement requires it.
+
+\begin{theorem}\label{kernel-fourier-actual}
+For every integer $0\le K\le N$, every $j\le r$, every
+relevant head $h$ of size $j$, and every original cut word
+$w$ of length $|w|+K\le N$ whose letters are
+$(+,y)$ or $(-,y+1)$ with $y\in\mathcal Y$, the following holds.
+For every $s\in\mathbb C$ there is a word $w'=L\mathbin{\|}w$
+on that same grid, satisfying the same original cut and
+separation, with $|L|\le K$ and $|w'|\le N$, such that
+\begin{equation}\label{kernel-fourier-bound}
+ \left|\int_{\mathbb C} e^{sc-\bar s\bar c}
+ N_{j+1,w}\bigl(h\mathbin{\|}(1,c),h\mathbin{\|}(1,c)\bigr)
+ \,dc\right|
+ \le m(\Lambda,K,|s|)E_{j,w'}(h),
+\end{equation}
+where $m(\Lambda,K,0)=1$ and
+$m(\Lambda,K,t)=\min(1,(\Lambda/t)^K)$ for $t>0$.
+The density has a continuous integrable representative agreeing
+with it at every $c\ne0$.
+All original $E_{i,w}(a)$ are nonnegative, including terminal
+and invalid heads.  Thus this supplies the original
+\texttt{KernelFourierIntegralBound},
+\texttt{HeadContinuityAtZero} and \texttt{PosAt} on these grids.
+\end{theorem}
+
+\begin{proof}
+First identify the measure and the head normalization.
+The original recursion for $n\mathrm{Pt}$ gives, for $j<r$,
+\[
+ n\mathrm{Pt}\bigl(h\mathbin{\|}(1,c)\bigr)
+       =a_h|c|^{2(2(r-j)+k-1)}.
+\]
+At $j=r$, the factor is instead
+$(|c|^2-TT')^{k-1}$ on $|c|^2>TT'$.
+The original orbital vectors vanish outside this positive
+domain, including its boundary.  Therefore negative values
+of the formal power outside the domain do not enter a
+square-root simplification.  Both cases give the same
+normalized integral identity
+\begin{equation}\label{kernel-fourier-pairing}
+ \widehat H_{w,h}(s)
+   =\frac{a_h}{S_w}
+      \beta_{j,w}(U_sx_{w,h},x_{w,h}),
+\end{equation}
+where $\widehat H$ is the integral in
+\eqref{kernel-fourier-bound}, and $U_s$ is the actual
+phase together with its prescribed triangular tensor action.
+
+For $j<r$, this is the proved partial-head transfer and
+one-coordinate radial Fourier formula.  For $j=r$, the
+proved terminal transfer identifies the actual terminal
+vectors and all their type weights; integration over the
+original normalized terminal group pushes forward to
+$(|c|^2-TT')^{k-1}dc$ on the positive domain.  Its compact
+support away from the boundary gives a continuous compactly
+supported density.  Below the terminal level, the proved
+Schwartz-marginal theorem supplies a continuous integrable
+extension, identified pointwise on $c\ne0$ by the actual
+compact-family regularity.  Multiplication by the fixed
+positive scalar $a_h/S_w$ proves the stated continuity.
+The value at zero has measure zero; every nonzero point,
+including every relevant rational point, is covered by
+the actual identity.  No ratio of Haar constants occurs
+in \eqref{kernel-fourier-pairing}.
+
+The forms in \eqref{kernel-fourier-pairing} are positive
+semidefinite on the actual compact coefficient class.
+The proved wave identity preserves them and that class.
+Cauchy--Schwarz therefore gives
+\begin{equation}\label{kernel-fourier-unweighted}
+                |\widehat H_{w,h}(s)|\le E_{j,w}(h).
+\end{equation}
+The same positivity gives nonnegative $E$ below the terminal
+level.  At the terminal level its definition is a sum of
+positive type weights times Hilbert--Schmidt squares; invalid
+heads have value zero.  This proves the full stated positivity.
+
+We must choose extension grids for \emph{every} word in
+the theorem.  No position condition on the old grid blocks
+is being assumed.  Assign to each old letter its underlying
+node $a$ for $(+,a)$ and $a-1$ for $(-,a)$.  The grids
+are disjoint.  At most $|w|$ long blocks are occupied by
+old underlying nodes; hence at least $K$ long blocks are
+unoccupied.  If $j\ge1$, choose any $K$ distinct such
+blocks and take their degree-$2j$ interpolation nodes.
+For $j=0$, at most $|w|$ points of the short grid are
+occupied; choose $K$ distinct unused short nodes, each
+as a one-point degree-zero interpolation grid.  Every
+choice of one node in each selected grid then produces
+both admissible extensions
+\[
+ w_+(\boldsymbol y)=((+,y_1),\ldots,(+,y_K),w),\qquad
+ w_-(\boldsymbol y)=((-,y_1+1),\ldots,(-,y_K+1),w).
+\]
+Their length is $|w|+K$, their parameters remain in the
+original cut, and every new--old or new--new parameter
+distance is greater than two.  This argument also covers
+old words with several letters in a single long block.
+
+For each selected node the exact modified determinant is
+\[
+ q_w(y)=q_0(y)
+  \prod_{(+,a)\in w}\frac{y-a+1}{y-a}
+  \prod_{(-,a)\in w}\frac{a-y}{a-y-1}.
+\]
+Its denominators have modulus at least $D=N^2/8$.
+The already proved logarithmic estimate gives
+$|\log(q_w(y)/q_0(y))|\le |w|/(D-1)\le20/49$.
+Consequently
+\begin{equation}\label{kernel-fourier-q-ratio}
+ \sqrt{\frac{n(y)n(y+1)}{q_w(y)}}
+       \le e^{10/49}A_0\quad(j=0),\qquad
+       \le e^{10/49}A_1\quad(j>0).
+\end{equation}
+Every rational correction from the old word is included here.
+
+Write $c_{a,i}$ for the Lagrange leading-coefficient weights,
+$C_a=\sum_i|c_{a,i}|$, and
+$\theta_{\boldsymbol i}=\prod_a|c_{a,i_a}|/\prod_a C_a$.
+These are nonnegative and sum to one.  The proved actual
+Capelli leading-coefficient identity, with degree $2j$ at
+each insertion, gives exactly
+\[
+ s^K\beta_{j,w}(U_sx_{w,h},x_{w,h})
+  =\sum_{\boldsymbol i}\left(\prod_a c_{a,i_a}\right)
+       \mathcal B_w\bigl(U_sx_{w_+(\boldsymbol y),h},
+                              x_{w_-(\boldsymbol y),h}\bigr).
+\]
+Lists are processed tail first.  The negative insertion is
+at $y+1$, and the mixed contraction is
+$\beta(x_1,y_0)-\beta(x_0,y_1)$.  Thus the displayed
+coefficient is $s^K$, with no conjugation or sign loss.
+All polynomial coefficients lie in the actual compact
+coefficient class: the slice theorem and finite Vandermonde
+inversion give this directly, without interchanging an
+unjustified derivative and integral.
+
+Apply the actual mixed determinant inequality to each
+summand and remove $U_s$ from its positive diagonal by
+the actual wave isometry.  The word normalizers obey the
+exact identities
+\[
+ S_{w_+}=S_w\prod_a n(y_a),\qquad
+ S_{w_-}=S_w\prod_a n(y_a+1).
+\]
+After multiplication by $a_h/S_w$, the factors $a_h$ and
+$S_w$ cancel against these normalizers.  Using
+\eqref{kernel-fourier-q-ratio}, and then the triangle
+inequality, yields
+\begin{equation}\label{kernel-fourier-weighted}
+ |s|^K|\widehat H_{w,h}(s)|
+  \le \Lambda_j^K\sum_{\boldsymbol i}\theta_{\boldsymbol i}
+       \sqrt{E_{j,w_+(\boldsymbol y)}(h)
+                     E_{j,w_-(\boldsymbol y)}(h)}.
+\end{equation}
+This is an estimate for the original normalized integral,
+not just an abstract form.
+
+Let $\mathcal E$ consist of $w$ and the finitely many
+positive and negative extensions just constructed.
+Choose $w'\in\mathcal E$ maximizing $E_{j,w'}(h)$, and
+write this nonnegative maximum as $M$.  Each geometric
+mean in \eqref{kernel-fourier-weighted} is at most $M$,
+while \eqref{kernel-fourier-unweighted} is at most $M$.
+For $s\ne0$ take the stronger of these two bounds and
+use $\Lambda_j\le\Lambda$.  At $s=0$ use
+\eqref{kernel-fourier-unweighted}.  When $K=0$ the
+extension set is just $\{w\}$ and the same conclusion
+holds with every empty product equal to one.  Every
+element of $\mathcal E$ satisfies the original
+$\mathrm{IsExt}(N,K,w,\cdot)$ contract.  This proves
+\eqref{kernel-fourier-bound} with all its quantifiers.
+\end{proof}
+
+\paragraph{Arithmetic scale and remaining inputs.}
+For the prescribed eigenpolynomial take $n(y)=|P_{\mathrm{eig}}(y)|$.
+Let $m=2r+2$, retain the original $g,\kappa>0$, and write
+$t_v=\sqrt{T_{\epsilon,v}T_{\epsilon',v}/(TT')}$.
+The established boundary-polynomial theorem gives
+\[
+ A_0\le g^{-m}\kappa^{m-1}\,80t_v\sqrt{k}
+                       \sqrt{N^3/\Delta},\qquad
+ A_1\le g^{-m}\kappa^{m-1}\,80t_v\sqrt{k}.
+\]
+Its hypotheses include the original binary spectral
+construction and a differing index, together with the
+stated interval condition.  Inserting these bounds in
+\eqref{kernel-fourier-Lambda} preserves every arithmetic
+parameter and every power of $g,\kappa,I,N$.
+For the original character
+$\exp(4\pi i\operatorname{Re}(\ell c)/g)$ and the original
+variable change $z=\lambda c$, the wave parameter is
+$s=2\pi i\ell/(g\lambda)$; hence its frequency scale is
+exactly $(g\lambda/(2\pi))\Lambda_j$.  The Jacobian of the
+same change belongs to the original normalized integral
+and is not absorbed in this frequency scale.
+
+This closes the actual one-coordinate Fourier supplier on
+compact coefficients.  Passing to the prescribed decaying
+eigenfunctions, establishing the remaining block-growth
+comparison, constructing the original uniformly controlled
+top lift, and identifying the arithmetic source and target
+Gram operators remain separate obligations.  None is
+replaced by a bound on this finite extension maximum.

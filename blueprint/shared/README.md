@@ -269,3 +269,20 @@ signed Capelli algebra realizes inverse factors locally, and density
 extends the regular radial identity to all heads. The original operator
 and its specified differential realization remain hypotheses; a global
 period-norm estimate is not inferred.
+
+The [arithmetic seed theorem](../../notes/selmer-integral-frontier-arithmetic-seed.md)
+constructs the original rank-two and rank-three ordinary seeds for the
+actual prime-to-ell inputs. An integral Eisenstein congruence at every
+cusp and a same-character lift retain the exact conductor, including
+at ell=3. Exact local compatibility, symmetric conjugate pairings and
+cuspidal base change supply every `IsSeed` field. The rank-two half-norm
+and prescribed CM twist are explicit. Algebraic-weight ordinary control
+must still place this seed in the original deformation support.
+
+The [normalized Fourier theorem](../../notes/global-norm-frontier-kernel-fourier.md)
+proves the actual compact one-coordinate Fourier bound, continuity at
+zero and diagonal positivity with the source point and word normalizers.
+Unused grid blocks cover every original admissible word; the same finite
+extension maximum gives both parts of the Fourier minimum. All spectral
+and arithmetic factors remain. Decaying coefficients, block growth,
+controlled top-lift construction and global period norms remain separate.

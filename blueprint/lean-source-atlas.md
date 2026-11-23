@@ -294,3 +294,18 @@ match the original `MkTopCut`, `MkTop` and `HeadTop` interfaces. They
 retain `IsTopLift2`, `InDDplus2`, the exact radial gauge, actual signed
 Capelli inverse and all terminal type weights. The support construction
 uses no unproved uniform bound for its auxiliary cutoffs.
+
+The [arithmetic-seed certificate](../certificates/selmer-integral-frontier-arithmetic-seed.json)
+and [independent review](../certificates/selmer-integral-frontier-arithmetic-seed-review.json)
+verify the literal `IsSeed` fields and the actual prime-to-ell `SeedPtOf`
+input. Eight primary theorem interfaces retain every cusp, primitive
+conductor, small-prime ordinary condition and base-change hypothesis.
+The review corrects the rank-two half-norm normalization; exact ell=3
+controls test both indispensable Eisenstein congruence hypotheses.
+
+The [kernel-Fourier certificate](../certificates/global-norm-frontier-kernel-fourier.json)
+and [independent review](../certificates/global-norm-frontier-kernel-fourier-review.json)
+match `NP`, `Ew`, every-word `IsExt`, `KernelFourierIntegralBound`,
+`HeadContinuityAtZero` and the full-index `PosAt`. Terminal nonpositive
+Gram parameters are treated by the original zero convention. Exact
+normalization and word-occupancy diagnostics supplement the analytic proof.
