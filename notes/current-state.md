@@ -1,968 +1,145 @@
 # Current continuation checkpoint
 
-Updated 23 November 2026. The conventional reconstruction is not a complete
-proof of RH or Dirichlet GRH. Start from the preferred mathematical route,
-then inspect only the relevant bounded source contracts. The repository is
-the persistent record; the archive is a baseline, not a file to reload.
-
-## Two manuscripts and concurrent research
-
-The [ordinary RH manuscript](../paper/rh/main.tex) and
-[Dirichlet GRH manuscript](../paper/grh/main.tex) now have separate route
-folders, with corresponding [RH](../blueprint/rh/README.md) and
-[GRH](../blueprint/grh/README.md) programs. The common technical chapters
-remain in `paper/sections/`; small proofs included by both papers belong
-in `paper/shared/`. The [shared-results index](../blueprint/shared/README.md)
-keeps the two applications and their extra hypotheses explicit.
-
-The [node counts](../blueprint/progress.md) distinguish finished stated
-implications or adopted inputs from open construction hypotheses. Moving
-files or adding a node is not recorded as closing an existing open node.
-The current continuation recovered main at
-`ea212c0f76fd1a672dabe213e079d9db4243dc96` and has committed the
-verified supplier constructions as they were completed. The active
-mathematics is summarized below and indexed in the shared results.
-The guide retains the short RH analytic proof. The source-import atlas
-and documentary section atlas have no proof-completion score. Whole-node
-counts remain RH **6/9** and Dirichlet GRH **17/31**.
-
-## Active construction frontier
-
-The original integral PEL models now satisfy the complete individual
-`LevelStructureConditions`. This includes the prescribed level actions,
-coefficient descent, prime-to-residue-characteristic label extension,
-and good reduction over all specified valuation rings. Their actual
-`PushInvertible`, degree-one `SplitFibres`, and full `Model.N3` integral
-theta and uniformization clause are proved. The proof retains the original
-primitive line, periods, torsion action and coefficient field. The
-[level-system theorem](geometry-arithmetic-frontier-level-system.md)
-now proves the original `N0` and complete `N2`: coordinated finite level
-transitions, one auxiliary prime for all admissible half-levels, and the
-exact Siegel comparison. The
-[formal-arc theorem](geometry-arithmetic-frontier-formal-arcs.md)
-now proves full `N4`, including the original period and torsion formulas,
-uniqueness from the actual all-power expansions, and nonflat
-specialization. The actual global
-`N6` model now dominates all prescribed local models over the original
-number field, with their cartesian family and primitive-line comparisons.
-Together these discharge the complete original `PartI` construction.
-The actual local `Good3` charts are now constructed after an unramified
-extension, with the original eigenlattices, canonical gauge, all-model
-uniformization and harmonic values. No additional valuation loss occurs.
-The actual finite level cover now has the prescribed formal connection
-over every coefficient algebra, including nonreduced algebras, and exact
-framed-point lifting. The component-field theorem fixes every original
-component over the quadratic ray-class compositum with the original
-field-size bound, in every rank and including the definite signatures.
-The [normalized complex theta dictionary](geometry-arithmetic-frontier-member.md)
-now supplies the original `IsUnf`, `Member`, all six adelic dictionary laws
-and exact integral marking. Its primitive theta section has probability
-norm one and the prescribed squared multiplier for all even weights.
-Together these construct the full original sized `Deep.Good` cover.
-The [actual positivity theorem](geometry-positivity-continuation.md)
-now supplies nefness, bigness, generation on the interior and both
-prescribed birational cusp systems, with the exact canonical weight.
-The actual flat determinant degree and integral parallel twists are now
-supplied over the same coefficient field. The original key shift and
-both exact short-family hypotheses are now proved as well. The [actual thick peak](geometry-bergman-continuation-thick.md) now gives the original thick-region Bergman lower bound, with its exact arithmetic chart injectivity and complete numerical budget from the original HostNum/WtNum records. Construction of those records remains a separate input. The thin estimate, upper cusp-frame bound, arithmetic heights and numerical remainder remain.
-
-The reached-section, adapted lattice, full-primary trace and mixed-level
-identities now supply the [original integral raw-theta implication](geometry-arithmetic-frontier-actual-theta-denominator.md)
-on the actual cover. Its exact value contract is transported to every
-valuation test, retaining both finite indices and determinant ideals.
-One original clearing integer, fixed before the individual generator,
-has the required uniform size. The [actual raw-theta construction](geometry-arithmetic-frontier-raw-theta.md)
-now supplies the section over every coefficient algebra, its literal value
-and exact classical scalar. The original positive row weights kill every
-zero Fourier--Jacobi coefficient; a verified moderate-growth and rapid-decay
-argument puts it in the required bounded cusp space. Thus the same clearing
-integer applies to these actual generators. The [actual Gaussian
-reproducing theorem](geometry-arithmetic-frontier-gaussian-reproduction.md)
-now proves the full thin-slab integral and reproduction with the original
-frame measure, including the endpoint `n=2r`. Its positive scalar is the
-literal squared-kernel integral divided by its diagonal, and is retained
-in the spanning consumer. The [exact Siegel--Weil comparison](geometry-arithmetic-frontier-siegel-weil.md)
-now supplies the original class-sum identity for every actual Host,
-retaining principal-level markings, automorphism weights, the determinant
-phase and finite Fourier discriminant. The [harmonic heat comparison](theta-spanning-continuation-heat.md) now
-transfers that identity to the exact invariant contracted jets in the
-original doubled Gaussian. A direct invariant-polynomial argument and
-normal convergence prove this supplier without changing a scalar. The
-[finite Schwartz system](theta-spanning-continuation-system.md) now
-supplies the original `IsSystem` and level-theta span. The exact
-[identity-cover transfer](theta-spanning-continuation-raw.md) proves
-`HolSub0LeSpanRaw` for the original good data, with the full arithmetic
-character and level conditions retained. The [short integral theta theorem](theta-spanning-continuation-short.md)
-now supplies the literal finite integral K-span, with all component and
-coefficient-embedding Petersson norms bounded by `exp(30000 X^2 kappa)`.
-The trace-dual different and determinant ideal cancel the exact lattice
-index in the same scalar. The actual [flat degree](theta-spanning-continuation-flat.md)
-and [integral parallel twists](theta-spanning-continuation-twist.md) are
-also supplied. The [key and shifted-span theorem](theta-spanning-continuation-key.md)
-now supplies integral tag removal and both literal `h0`/`hsh` families.
-Moret–Bailly's all-prime key formula and the actual positive quadratic
-period expansion retain the dyadic and ramified eigenlattice factors.
-The uniform constant is `400000`; the fixed larger starting threshold
-is permitted by the original asymptotic quantifier. The [actual selected-prime chain](theta-spanning-continuation-chain.md) now has its original point models, exact value lattices, phase kernels and twisted initial source. It retains the exact selected exponent and positive conjugate-prime gain. Its identification with the final global Poincare maps and the geometric height/Bergman estimates remain.
-
-The actual ordinary automorphic modules have faithful good classical
-specializations, and now carry the original universal integral Hecke
-determinant with its exact classical Galois compatibility. The prescribed
-integral compact types are constructed at arbitrary finite conductor,
-including wild inertia, over the original coefficient ring. Restriction
-of scalars and its rank cost are retained. The actual Taylor--Wiles
-modules now have the two prescribed integral comparison maps, with
-the exact source multiplier and uniform relation exponent n!. The
-[polarized model theorem](selmer-integral-frontier-polarized-model.md)
-constructs the actual finite commutative coefficient model at every
-supplied normalized curve, preserving the full determinant, original
-closed equation ideal and all annihilator torsion. The actual tangent,
-second-order ordinary lifting and integral presentation now prove full
-local propagation at every supplied normalized curve. The complete
-patched-support supplier now preserves the exact fibre, required dimension
-and movement between completions, without a fixed-rank hypothesis.
-The prescribed ordinary arithmetic seed is now constructed for the actual
-prime-to-ell inputs, at the original field and level, retaining every local
-condition and the source automorphic normalization. The rank-two case
-now uses the [constructed CM twist](selmer-integral-frontier-cm-twist.md):
-the full original square and conjugate identities hold, and a single
-exponent prime to ell kills every permitted finite inertia group, even
-when ell divides the class number. The full original [arithmetic-point
-implication](selmer-integral-frontier-arithmetic-point.md) now places every
-permitted higher-weight classical point in the original ordinary Hecke
-support, without higher-weight control surjectivity. The [marked propagation
-theorem](selmer-integral-frontier-marked-propagation.md) now constructs the
-actual universal ring and verifies every patching hypothesis, proving
-the full original `Core`, `CoreBC` and `Raw` prime-chain contracts.
-It retains the given stable starting prime in support. The [arithmetic
-propagation theorem](selmer-integral-frontier-arithmetic-propagation.md)
-now constructs the normalized curves, actual auxiliary primes and both
-arithmetic cohomology systems. It proves the full original `PfromAut`
-and `P1core`--`P3core`, with every kernel and local condition retained.
-The [ordinary-family theorem](selmer-integral-frontier-ordinary-families.md)
-now proves the full original `HidaProps` and `Modular` contract for this
-same Hecke ideal: integral higher-weight control, density at every fixed
-weight, every arithmetic-point decomposition, distinguished-prime
-unramifiedness and the exact finite twist. The original `ModU` retains
-its no-primitive-ellth-root hypothesis; the stronger `ModUAlt` is not inferred.
-The [normalized seed-transfer theorem](selmer-support-continuation-seed-transfer.md)
-now proves the actual `SeedIn` transfer and starting-chart support in
-ranks two and three, retaining the entire integral Hecke quotient.
-Its homogeneous finite entry algebra avoids assuming integral generic
-matrix entries. The [rank-two curve theorem](selmer-support-continuation-rank-two-curve.md)
-now constructs the required characteristic-prime Nice curves, with the
-original local degree and cohomology bounds. The [rank-two propagation theorem](selmer-support-continuation-rank-two-propagation.md)
-proves the original `PropagationTheoremGL2`: the chart presentation,
-connectedness, arithmetic `P1` and connected cocycle fibre reach every
-stable component. The [rank-three construction](selmer-support-continuation-rank-three-propagation.md) now supplies the type-E finite-weight ideal, determinant-section components and actual nonsplit thick links. The [arithmetic transfer](selmer-support-continuation-rank-three-transfer.md) supplies every original Nice/Thick condition, including all open subgroups and characteristic three. The complete original rank-three AllGood/OffFin conclusion follows for the actual Hecke ideal. The [finite-point theorem](selmer-support-continuation-finite-points.md) now proves the complete original AbsMain output for every prescribed complete-DVR point. At fixed characteristic-prime weight, the original representation is triangular and its diagonal characters are exactly residual. The [finite-end transfer](selmer-support-continuation-finite-end.md) now descends the original integral representation through the exact GalLink and gives one common finite-index subgroup for every tested DVR and representation. The auxiliary frame, full global two-sided rigidity, and moving-family integral Selmer budget remain.
-
-The actual local Bessel families satisfy the iterated weighted norm
-identities and finite coefficient expansion everywhere on the original
-big cell. The complete original pointwise orbital bound is now proved
-in rank zero, with the stronger estimate b^4/G. No assertion identifies
-ordinary RH with this rank-zero case. The exact wave isometry now holds at every rank and finite admissible
-word, with its prescribed component correction and constant one. The
-mixed determinant inequality is now proved with every original rational
-correction, including degenerate residue forms. Actual compact slices
-and the partial-head Fourier transfer are proved at every nonterminal
-head, with the original stabilizer quotient and measures. The actual
-compact complex Kloosterman density now holds at every block head, by
-an exactly normalized stationary-phase germ. The actual unitary density
-transfer now supplies `PhiZero` and `DensC`, with the original cofactor
-frames, compact representations and Haar constants at every head.
-The exact compact top lift and terminal `HeadTop` now hold under their
-original place and operator hypotheses. The actual compact normalized
-one-coordinate Fourier bound, continuity and diagonal positivity are now
-proved for every original admissible word. The actual off-diagonal kernel
-bound now follows from the prescribed inverse-parameter operator identity,
-with its exact degree reduction after Jacquet transform. The [actual compact
-block-growth theorem](global-norm-frontier-block-growth.md) now connects the
-normalized matrix germs to every original lattice sum, preserving all word
-factors, the positive residual Gram term and the full complex limsup.
-The [finite-decay theorem](global-norm-frontier-finite-decay.md) now proves
-the entire original compact-exhaustion contract at every head, with one
-finite decay exponent for all derivative orders and the original rank and
-word-length threshold. The [terminal-degree theorem](global-norm-frontier-terminal-degree.md)
-now proves the exact polynomial reduction, radial identity and arbitrary-grid
-degree extraction for every original head and old word. It retains the
-prescribed operator and its differential realization. The [controlled top-lift
-theorem](global-norm-frontier-top-lift.md) now constructs those operators on
-every original valid cut, with exact differential cost
-`(m*d,11*m*(r+1)*d)` and no internal-minor denominator. The complete old-word
-rational corrections and weighted adjoint are retained. The global
-arithmetic chain compatibility and uniform period estimate remain.
-The [actual seed-decay theorem](global-norm-frontier-seed-decay.md)
-now supplies the original weighted integral and exact compact reproducer
-for each existing arithmetic setting. It uses the original coefficient
-idempotent and Bessel multiplicity one; all Haar and formal-degree factors
-survive. The constants are allowed to depend on that setting. [Arithmetic folding](global-gram-continuation.md) now proves the
-original multiplicity and unfolding requirements. The
-[finite-phase theorem](global-gram-continuation-phases.md) proves actual
-level splitting and `PhWellDef`, including ramified primes outside the
-level. The [complete framed-return theorem](global-gram-continuation-framed-returns.md)
-proves the original absolute operator summation in the established gap
-range. The [actual period identity](global-gram-continuation-period-identity.md)
-now proves `EntryUnfold` and `KExpansion`, with the original columns,
-antilinear Riesz identification, phases and Haar factors. The [projector
-compatibility theorem](global-gram-continuation-projectors.md) proves full
-`InHH`, `PuLinear` and finite-level normalization: the original target
-projector fixes every period exactly, with zero loss from this cut.
-Further target cuts remain separate. The [arithmetic
-minimum theorem](global-gram-continuation-minimum.md) bounds the original
-Harder–Narasimhan minimum over all submodules on every period cell. It
-gives an explicit weighted far-return majorant when the cited source
-tail theorem applies. The [quantitative seed theorem](global-gram-continuation-quantitative.md) now bounds the normalized quotient-norm moment directly, with an explicit larger tensor reserve. Exact character transport removes uncontrolled frame heights and compact-mass reciprocals; the field and weight factors remain visible. The [actual covolume and normalized budget](global-gram-continuation-haar-budget.md) now cancel all arbitrary Haar scales and give the literal CovolN, retaining the full integral unipotent lattice and all dyadic factors. Compatibility with the final arithmetic chain,
-further target cuts and the uniform rank-weighted trace budget remain.
-
-These are closed supplier obligations within larger nodes. Whole-node
-statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.
-
-## Current arithmetic frontiers
-
-The [frontier theorems](open-frontier-theorems.md) state the smallest
-remaining construction and estimate targets, including their common
-quantifiers. The [current supplier checkpoint](arithmetic-supplier-continuation-2026-11-22.md)
-records the proven interfaces and the first missing step in each branch.
-The preferred architecture is fixed: direct arithmetic constructions
-and uniform estimates take priority, and ordinary RH is the first
-specialization to test. The earlier finite-detection, cohomology, cusp,
-metric-variation and signed-boundary proofs remain available through
-[the shared index](../blueprint/shared/README.md); their constants need
-no further optimization before the current suppliers are constructed.
-
-## Preferred RH route: no weight symmetry
-
-The [direct RH comparison](rh-direct-transfer.md) is the active continuation.
-The complete primitive-character kernel is nonnegative, including at ramified
-primes. Compare the actual thick weights with their common lower endpoint,
-then average translations before bounding the perturbation. This removes
-both the field-degree and inverse-density factors from that error.
-The existing uniform QRH bound handles the actual thin samples at their
-larger arguments. It still concerns the whole thin character family,
-including the separately corrected principal character.
-
-The resulting zeta estimate consists of the normalized averaged arithmetic
-discrepancy, one signed quadratic companion, and negligible size and
-centering errors. The companion can use the manuscript's simultaneous
-quadratic selection on an interval covering every shifted sample, under its
-explicit uniform QRH hypothesis. There is no new pooled symmetry,
-logarithmic-dispersion or thick logarithmic-derivative obligation.
-The original weight lower endpoint gives centering radius one.
-
-The [general quotient version](positive-kernel-transfer.md) applies to every
-subgroup used in the Dirichlet construction. Its thick error depends on
-four times the quotient index, which is the fixed target character order
-in the existing program, instead of the growing ambient group. It does not
-remove the signed projection or the all-character thin estimate.
-
-The [source audit](rh-weight-symmetry.md) proves that the common sparse top
-set actually forbids exact pooled symmetry, even for first moments, once
-it is proper. Simultaneously translating top labels and weights leaves the
-character phase unchanged. The [transport theorem](transport-symmetry-defect.md)
-removes the field-degree factor from a quantitative alternative, but its
-absolute majorant is too large for the current separated weights. These
-are preserved results and limits, not tasks to repeat. The old three-mean
-and complete-top projections remain conditional alternatives for a changed
-construction; the preferred direct route needs neither.
-
-## Smaller geometric and frame budget
-
-The preferred [direct section-degree argument](geometric-degree-frontier.md)
-uses the short integral sections already supplied for the same component
-lattices. Their lower degree bound removes the separate negative-height
-moment. Summing the exact degree-weighted volume comparison first supplies
-one mean directly, without the earlier change of weights. The raw signed
-version removes all heights from its remaining cost, while retaining the
-actual section ranks and twist costs. The finite upper rank comparison
-now has a [direct jet proof](finite-section-jet-bound.md): values and
-derivatives on one general finite fibre determine a section once its
-vanishing order would exceed its intersection degree. The resulting
-relative loss is at most `D rho + (2D^2+4D)/t`, with the exact binomial
-ratio and excess-rank denominator retained. The actual nef and birational
-line-bundle identifications, mean-volume estimate and arithmetic section
-remainder still have to be supplied.
-
-The [cusp counting theorem](cusp-counting-mean.md) supplies the numerical
-mean estimate from the original quotient identities. Integral trace
-pairings put sufficiently short vectors in a small isotropic space;
-packing and a single tail integral bound the logarithmic minimum mean
-by `23/24`. Integral cyclotomic traces span the abelian coefficient field
-over the rationals, giving cusp allowance 3. Their integral span need
-not be the full ring of integers. The actual geometric sheets, Hodge
-metric, lattice, covolume and height inputs remain required. The supplied-model
-theorem above now proves the signed boundary comparison. The normalized quotient mean follows from the
-[curvature and sheet theorem](geometry-arithmetic-frontier-curvature-haar-mean.md).
-The count homogeneity itself follows from Haar invariance:
-the averaged lattice count is an invariant measure on the product of
-nonzero isotropic cones, whose coarea measure has degree `2f(N-1)`.
-The [arithmetic first-moment theorem](geometry-arithmetic-frontier-isotropic-integrability.md)
-now proves finite volume and integrability of the full original count,
-including all scalar multiples. Finitely many rational cusp lines and
-their actual stabilizers reduce the mean to partial ideal zeta values
-at `N-1>1`. No numerical covolume, cusp count or unit-index estimate is
-needed: its finite normalization cancels in the packing argument.
-The curvature theorem computes the exact component weights and mean
-from the original geometric sheet and metric data. Those data and the
-lattice identification must still be constructed. Under the retained
-model and height data, the signed boundary limit is now proved.
-
-The [mean-volume supplier](mean-volume-supplier.md) now isolates the
-required normalized arithmetic intersection inequality for the selected
-towers and weights, together with the prescribed norm and counting
-comparison. Equal component volumes then give the mean by exact division.
-An elementary finite-prime bound improves the additive allowance from
-120 to 80. The auxiliary volume limit fixes each datum before taking the
-section power to infinity, so it needs no uniform finite convergence
-threshold. Uniform intersection control and the separate finite section
-estimate remain unresolved; quasi-RH and no-Siegel bounds only control
-the arithmetic error parameter in that geometric inequality.
-
-The [tower-intersection reduction](tower-intersection-reduction.md) now
-eliminates the two common scalar coefficients using a single normalized
-Grassmannian test. The exact formula retains the block contrast, the factor
-N/p and the smaller test remainder 8/(5fq). The actual anchored weights
-need not have zero sum. Their central translation incurs an exact signed
-determinant term, including the cutoff metric's finite-place correction;
-no cancellation with a different period normalization is assumed.
-The [classical height step](base-test-height-supplier.md) supplies this
-test from all-point height floors and the signed cusp comparison using
-only reciprocal perturbations and a one-sided limit. The
-[actual point-height frontier](actual-point-height-frontier.md) reduces its
-arithmetic supplier to a sum of degrees of the selected small image
-eigensublattices. The [selected-degree identity](selected-eigenspace-degree.md) retains
-both favorable integral indices and gives a two-case proof from only the
-signed total conjugate imbalance. It also retains the exact selected
-abelian rank f(m-r). The prescribed integral/metric comparison and cusp
-mean remain required. A bare total
-Faltings-height lower bound does not supply the selected degrees, and
-the inspected published tangent-slope estimate does not imply the source's
-stronger universal logarithmic interface. No claim that that interface is
-false is made.
-
-The [theta-jet reduction](theta-jet-slope-reduction.md) replaces the
-longer tangent argument by leading-jet integrality, a flag determinant,
-the product formula and very ampleness of the third tensor power. A much
-smaller theta power suffices. The
-[classical absolute Siegel supplier](absolute-siegel-supplier.md) supplies
-the short integral vector in the same metric after finite extension;
-principalizing its saturated line preserves the exact height. The
-arithmetic and archimedean theta inputs are now supplied by the
-[Moret--Bailly comparison](moret-bailly-theta-supplier.md), on the prescribed
-tangent lattice with its exact metric. Together these arguments prove
-the required tangent-slope bound with absolute constant 12. The
-[remaining point-height comparison](remaining-point-height-comparisons.md)
-also supplies the finite-prime allowance with constant 16 at the eventual
-scales and the scalar period bound. The
-[same-lattice determinant bridge](geometric-flat-determinant.md) now has
-a direct proof using algebraic frame covariance, local Gram and lattice
-norms, flat base change and the product formula. The different/conductor
-correction cancels exactly. Conditional on the actual flat-family and CM
-evaluation, the signed total is `(2R-n) P_E/2`, independent of toric rank
-in constant signature. The flat-family construction and CM evaluation
-are now proved under the precise model and lattice hypotheses recorded
-below. Their actual arithmetic identifications, the signed cusp mean
-and independent finite section estimate remain. Grouping
-eigenspaces does not permit replacing the unramified host by the ramified
-quadratic field; see the [host obstruction](quadratic-host-descent-obstruction.md).
-
-The finite-place comparison now has a shorter
-[character-degree proof](flat-family-finite-place-frontier.md): the Hodge
-and conjugate filtrations force degree zero under Frobenius, and a
-composition series retains the multiplicities of a ramified coefficient
-algebra. The [integral coefficient-freeness proof](boundary-hodge-freeness.md)
-identifies the proper formal module directly with a universal-extension
-tangent module. Its functorial Witt lift and a three-step toric
-filtration supply freeness, including ramified coefficient primes, once
-the actual semiabelian quotient and pullback line bundle are identified.
-The same local-stalk argument retains the prescribed lattice. The
-[biextension construction](biextension-conjugate-filtration.md) now supplies
-both Hodge and conjugate filtrations on it. Pointed first-order sections,
-multiplication by the residue characteristic, and an alternating pairing
-give a direct proof, including characteristic two. Compatible integral
-formal charts on each test curve suffice; the geometric argument for
-injectivity is needed only on its residue fibres. This removes the power-map
-surjectivity hypothesis from this particular conclusion and requires no
-extra global semiabelian scheme along the whole curve. The actual compatible
-charts and original pullback line with scheme-theoretic self-duality remain
-inputs. A tensor power with a different polarization cannot replace that line.
-The [determinant torsion and vertical rigidity](determinant-torsion-rigidity.md)
-now strengthen this calculation: the two filtrations give an explicit
-torsion exponent for the character determinant, and a short effective-divisor
-argument gives one normalized finite order on the connected fibre.
-Its denominator divides the gcd of the fibre multiplicities. These
-arguments retain ramified coefficient lengths and all actual-model
-hypotheses. Its application still needs the actual boundary lattice and
-the comparison with the prescribed CM point; constancy does not make
-the order zero.
-
-The [CM integral-eigenframe calculation](cm-integral-eigenframes.md)
-is now exact by relative trace duality: the integral character line is
-the relative different times the generic eigenline. Conjugation
-invariance gives equal finite norms for any semilocal different
-generator, so this local calculation needs no real generator and no
-finite unramifiedness of the CM extension over its real subfield.
-The global construction's separate host conditions remain. The
-[CM product and period calculation](cm-product-period-calculation.md)
-now constructs a pure CM object from one elliptic curve with its two
-conjugate actions. Semilocal Hermitian splitting, including at two, and
-archimedean approximation give the required lattice decomposition.
-Descent retains the original symmetric rigidified line; classical good
-reduction and the prime-to-residue-characteristic inverse isogeny give
-the exact integral product tangent basis. The unit discriminant and
-Kronecker limit formula evaluate the elliptic period mean, with all
-constants retained. Trace-dual Gram projection and the product formula
-then give the signed flat degree. The [pure-period descent](cm-period-point-descent.md)
-identifies the same algebraic CM point, with its original line and both
-finite level maps, from actual moduli point separation and the prescribed
-pointwise periods. Properness and classical semiabelian uniqueness then
-extend that point and identify its exact tangent lattice. The actual
-arithmetic model, original global family, fibre data and pointwise period
-presentation remain required.
-
-The [direct determinant argument at the prescribed level](half-level-determinant.md)
-supplies determinant monodromy one on the abelian locus without a
-further level cover or a root-of-unity theorem. The actual half-level
-condition gives determinant congruence modulo its ideal; conjugation
-upgrades this to congruence modulo the full integer level. The norm
-lower bound then contradicts the unit-circle upper bound unless the
-determinant is one. A unimodular example at level two shows the threshold
-is sharp.
-
-The [boundary extension and flat-family proof](flat-family-boundary-extension.md)
-now supplies the characteristic-zero generator from the prescribed proper
-semiabelian model. An algebraic line on the central semiabelian fibre
-pulls back from its abelian quotient; even a degenerate or indefinite
-quotient form gives a rational isotropic period frame. Continuation and
-the separated étale torsion schemes preserve its integral primitivity.
-Bounded exponential functions then give positive semidefinite logarithmic
-period residues. The common-kernel argument gives both actual tangent
-metric bounds, with the exact pi normalization. The determinant section
-and its reciprocal extend as units. Projective GAGA, normal descent and
-constant-field descent give the algebraic generator, unique up to a scalar.
-The source's global family, projective model and original line are
-explicitly matched; they are not inferred from the local chart names.
-
-The final assembly combines this generator with the proved finite-place
-rigidity. The [ramified lattice calculation](ramified-hodge-determinant.md)
-constructs the invertible integral line from the actual global Hodge
-extension and full coefficient freeness, and identifies its pointwise
-eigenlattices and special-curve degrees. Local norms are then constant,
-including after ramified extensions, and almost all finite logarithmic
-norms vanish. The prescribed pure-period points descend and extend to
-integral maps on the same component, giving the local-norm comparison.
-The remaining geometric inputs are the arithmetic model with its original
-global family and fibre data, the moduli separation and pointwise period
-presentations, the original arithmetic Haar quotient and lattice count,
-and the signed boundary limit. Finite volume and integrability of that
-full count are now proved. The actual nef and
-birational section data and arithmetic section remainder also remain.
-
-The preferred [trace slope comparison](one-sided-frame-slope.md) now
-uses one source deficit and one target excess, both measured by the
-trace of a positive part. These may be small even when operator norms
-or squared-energy errors are large. The source centered term is retained
-where sharper, and one takes the minimum with older valid penalties.
-The source slope spread, target lower slope and actual normalizers remain.
-A perfect analytic frame still does not supply the intermediate geometric
-component degree or the separate counting, divisor and quotient losses.
-
-The [separation of code size and arithmetic height](code-rate-height-separation.md)
-uses the source's existing quantified order to choose the code exponent
-independently. Under the same full-map estimates and restrictions, its
-frame cost is at most the source slope spread plus a decaying multiple
-of the original height scale. This is a proved parameter improvement;
-the global estimates and geometric height conditions are still inputs.
-
-The positive spectral trace of the target operator equals that of the
-normalized source block Gram matrix. Thus the full-period orbital
-interface can supply the new target trace estimate without a new
-common-target unfolding. Its exact expansion and convergence remain
-hypotheses; signed terms are combined before taking the positive part.
-The source trace deficit needs its own estimate. The actual arithmetic
-spectral-tail bound is not supplied by positivity or total mass alone.
-
-The [exact period-spectrum models](redundant-period-spectrum.md) show
-why redundancy forces a large nonidentity contribution: the tail must
-be measured above the mean eigenvalue. A single
-[integral incidence construction](basis-invariant-trace-obstruction.md)
-now proves the stronger limitation. It satisfies the diagonal and
-pairwise estimates with zero error, yet retains the asymptotically sharp
-square-root trace loss under every invertible comparison basis. The
-same fixed arithmetic lattices have zero map height and attain the
-slope loss. Small arbitrary source and target cuts retain an explicit
-part of the obstruction. Thus basis changes alone cannot halve the
-code redundancy exponent. These are countermodels to a matrix
-implication, not to the actual theta construction. Keep the smaller
-valid trace or energy penalty and seek the calibrated estimate for the
-actual period maps; the ambient projector does not identify their sum.
-
-The [common-unipotent reduction](common-unipotent-periodization.md)
-identifies every word's unipotent group with one fixed group; the extra
-condition on its distinguished vector is redundant. Its characters may
-still repeat, and its stabilizers, quotient measures and normalizing
-volumes remain distinct. A precise quotient isometry puts the original
-scalar seeds in one Hilbert space, where the normalized synthesis is
-arithmetic periodization with every rational double-coset term retained.
-The actual infinite covering explains why ordinary Fourier orthogonality
-does not supply its global norm. A weighted summation criterion now states
-the needed calibrated bound on the finite seed spaces with their exact
-source and target restrictions. No weights attaining that bound, or
-global period estimate, have yet been supplied.
-
-The actual source restrictions can be carried through positive retained
-mass and then an ambient target comparison, preserving the discarded
-rank times source-spread term. Alternatively, the full trace-compression
-lemma estimates both final restrictions. Every application uses the
-same restricted lattices, maps and common target basis. The source-only
-formula has fewer formal mass hypotheses, but its coarse upper bound
-can be trivial in the omitted regime; no automatic quantitative gain is
-claimed there.
-
-The [aggregate energies](averaged-theta-energy.md),
-[centered frame estimates](frame-degree-compatibility.md), and
-[joint uniform period bound](centered-global-energy-reduction.md) remain
-valid alternative suppliers. The [actual source bridge](rh-centered-frame-bridge.md)
-retains the correct slope units and nonframe losses. The
-[finite-symmetry calculation](finite-symmetry-energy.md) still excludes
-an unsupported appeal to ambient symmetry on the retained target.
-
-The earlier [geometric combination](rh-geometric-combination.md) proves
-useful general alternatives:
-
-- Covering descent preserves the coefficient of the section-degree error.
-  Under the same source scalar contracts the numerical constant improves
-  from twice that coefficient plus nine to that coefficient plus seven;
-  the exact formula retains the actual rank ratio.
-- A weighted mean height and weighted negative-height moment suffice for
-  the component estimate. The optimized bound retains the signed total
-  Hilbert–Samuel surplus, excess-rank and twist costs. Uniform pointwise
-  lower heights are one sufficient supplier, not an intrinsic condition.
-- Average the refined frame penalty before bounding it. The resulting
-  source-spread and target-height moments retain their correlations and
-  the rank-loss and diagonal-error denominators.
-
-These deductions do not prove the actual growing-family mean-volume,
-section remainder or theta-energy bounds. The old
-[determinant and component analysis](geometric-core-lower-bound.md),
-[covolume defect](covolume-defect-budget.md) and
-[averaged signed arithmetic identity](averaged-error-budget.md) locate the
-remaining same-lattice and same-map identifications.
-
-## Cohomology: finiteness is supplied, a uniform budget remains
-
-[Classical global duality and even K-groups](qualitative-selmer-finiteness.md)
-give an injection of the actual strict Selmer dual into the corresponding
-finite even K-group. The CM host condition covers the prime two. For a
-fixed host and finite twist range, the all-prime Selmer sum has finite
-support and is bounded by the logarithm of a finite product of K-group
-orders. No numerical prime cutoff or useful growing-family bound follows
-from this qualitative statement.
-
-The [finite-place reduction](finite-twisted-place-budget.md) keeps only
-the actual twisted residue primes and their ramification-inertia fractions.
-Generator primes use their already aggregated bound, with no extra fraction.
-The local congruence comparison then needs one weighted finite Selmer budget.
-The [two-primary character reduction](two-primary-selmer-reduction.md)
-omits the nontrivial odd-order branch for RH, and a joint harmonic count
-improves the resonant prime--twist exponent. The trivial character,
-complementary parity, exceptional primes and integral local bounds remain.
-The existing manuscript already provides an opposite-parity all-odd-prime
-estimate (Theorem14.1 in the current GRH PDF); this supplier is to be
-applied with the exact source group and local conditions, not reproved
-merely because the odd-order branch has disappeared.
-The source's LitThin is an analytic short-interval input, not cohomology.
-The [coarse-bound assessment](coarse-selmer-budget.md) quantifies why the
-existing exponent-14 bound, applied directly to the growing host, does
-not fit the allowed budget. It remains useful after the existing
-common-interval descent; no lower bound on actual Selmer sizes is inferred.
-
-For RH, the [residual decomposition](rh-selmer-residual-budget.md) applies
-the supplied cases and isolates three remaining sums. The
-[integral Selmer product](rh-selmer-product-criterion.md) identifies those
-sums exactly with one weighted logarithm of orders of finite integral
-direct factors. Family averaging changes only the prime weights after
-the actual common-host identifications. Its exponent-one part is relative
-growth above a fixed lower layer of the two-power cyclotomic tower.
-The retained parity gives trivial zeros at the ordinary special values,
-so a nonzero Bernoulli-value formula does not supply the missing order
-bound. A valid substitute must retain its regulator or integral
-comparison and growing-family uniformity.
-
-The [conormal pairing](rh-selmer-conormal-pairing.md) gives a shorter
-lower deformation comparison. For the same marked model, the strict
-Selmer group embeds linearly in the dual of its finite negative-weight
-conormal quotient. Ambient torsion is removed before imposing the
-global equations; the new torsion they create is retained. Compatible
-normalized cocycles give one map at all coefficient levels, controlling
-the exponent and each elementary divisor as well as total length.
-Actual model existence and its geometric conditions remain separate
-inputs. The ordinary-RH specialization retains all five local
-weights; its cyclotomic twist does not become self-inverse.
-
-The [upper numerical length calculation](rh-selmer-euler-determinant.md)
-also has a short determinant proof. On the actual finite multigraded
-weight module, kernel and cokernel torsion cancel exactly. The remaining
-Euler characteristic is a determinant valuation, equivalently a sum
-over distinct degree-zero characters with their exact multiplicities.
-This preserves a sharper intermediate inequality before the coarse
-power-of-two bound. The following graded comparison and finite-slice
-argument supply the support and multiplicity estimates under the stated
-model conditions.
-
-The [leading quotient and mixed count](rh-selmer-mixed-count.md) now have
-elementary proofs. The leading coefficient image is a finite free lattice;
-rational tangent surjectivity supplies its entire generic monomial space.
-This proves the exact Hilbert function without assuming flatness of the
-original deformation quotient. A generating-function cancellation gives
-the constant mixed difference and an explicit sufficient degree box,
-including the smallest admissible weight counts. The scalar factor in the
-lower bound is therefore accounted for. The
-[graded Koszul comparison](rh-selmer-koszul-comparison.md) now supplies
-eventual positivity, passage to the leading quotient, the upper quotient
-inequality and exact extraction of the integral equation factors. Its
-short proof uses a finite graded prime filtration and ordinary exact
-sequences, retaining all higher homology and torsion kernels. It assumes
-no global flatness, regular sequence, infinite residue field or dimension
-bound. The [four-weight admissibility proof](rh-selmer-admissibility.md)
-now establishes that precise power containment from the stated finite
-degree-zero quotient, negative cotangent spanning, fixed-point separation
-and trace separation. It uses even-degree subalgebras, elementary points
-over an algebraically closed field and a two-degree argument at the base
-point. The [generic support and multiplicity proof](rh-selmer-upper-multiplicity.md)
-uses the same relevant-prime classification to obtain uniform eventual
-finite modules and to exclude one-sided generic support. On the remaining
-support the three Rees modules become principal. Setting an invertible
-weight-two element equal to one gives a finite slice. The one-dimensional
-tangent condition makes it reduced, and its involution has one orbit of
-one or two points. Each parity therefore has dimension at most one.
-A squarefree-product filtration accounts exactly for the power of two
-introduced by squaring the odd equations. Together these arguments prove
-the abstract numerical comparison, including an optional factor-two
-improvement at single-point slices.
-
-The [full abstract length theorem](rh-selmer-core-wrapper.md) now closes
-the preparation steps as well. Saturation gives a finite free cotangent
-lattice, an integral Smith change preserves the original equations, and
-an explicit weighted formal substitution removes the zero-weight chart
-variables. If the trace element has zero chart image, adding an equation
-times a positive-weight function makes that image nonzero while preserving
-every equation-point value. Formal-chart nonvanishing is established for
-this representative, not inferred for the original element from point
-nonvanishing. The reduced slice gives exactly one torus orbit per occurring
-degree-zero character; the finite quotient therefore supplies the finite
-orbit cover. This proves the full abstract length inequality under the
-original model hypotheses. Actual marked-model existence and its initial
-chart, spanning, finite quotient, point separation, tangent bound and
-trace condition remain, together with the representation and integral
-lifting conditions of the Selmer pairing.
-
-The [resultant construction](rh-selmer-resultant.md) supplies the elementary
-integer in the nonresonant orbit estimate with full integrality,
-nonvanishing, simultaneous valuation domination and an explicit size
-bound. Two auxiliary integers bounding the same orbit may be replaced
-by their corrected greatest common divisor; the exceptional-prime factors
-are retained. This is a sharper exact bound, not a proved uniform saving
-for the actual integers. The trace-to-Selmer deformation comparison and
-the remaining cases are still required.
-
-The [arithmetic frontier](rh-selmer-valuation-frontier.md) now locates the
-missing bridge in the integral negative-weight deformation comparison.
-Two exact examples rule out shortcuts from the currently available
-hypotheses: trace classes alone allow a corrected common divisor whose
-logarithm is linear in the twist, and a finite weight-zero algebra with
-rigid generic fibre can still hide arbitrary integral negative-weight
-torsion. These are limitations of those hypotheses, not counterexamples
-to the actual automorphic construction or to its desired Selmer estimate.
-
-## Scalar acceptance conditions
-
-The [scale-averaged criterion](scale-averaged-criterion.md) weakens the
-final analytic target further. At each fixed accuracy it suffices to
-control a weighted positive-part integral on arbitrarily late whole
-windows. The combined signed arithmetic budget may first be averaged
-over a fixed nearby range of scales: its transform multiplier preserves
-every detecting pole. This permits cancellation before taking the
-positive part. Pointwise bounds remain a sufficient supplier, but are
-not intrinsically necessary. The arithmetic comparison must hold almost
-everywhere on the slightly expanded windows used by local averaging.
-An uncontrolled signed mean or a small unweighted exceptional proportion
-does not suffice; explicit counterexamples are preserved in the note.
-
-The [minimal budget](rh-minimal-budget.md) keeps the four normalized
-arithmetic terms separate. With the actual source rank ranges, the old
-conditional envelope improves to a factor 36 times a power with exponent
-one half plus `(C+33/16) epsilon`. The explicit constant can remain.
-The refined frame supplier is bounded by four thirds of its two
-nonnegative correlated moments. Existing word-count entropy is already
-negligible at the source scales.
-
-A polynomial thin scale suffices for the final analytic transfer when
-the conductor logarithm and dimension have polynomial growth. Replacing
-the source's exponential scale, or adopting the formally optimal smaller
-chain rank, has not been justified for the other arithmetic clauses.
-These are exact acceptance conditions and limitations, not new constructors.
-
-The [finite-table theorem](finite-window-sampling.md) is now the smaller
-construction interface. At each fixed accuracy and each chosen large
-integer interval, construct a finite table bounding the analytic target at
-all sampled integers. The exact positive averaging matrix preserves signed
-cancellation, and the interpolation error tends to zero. Tables may differ
-on overlaps, so no measurable family of arithmetic choices is needed.
-An almost-everywhere comparison is not silently promoted to integer data.
-The [square-grid refinement](square-grid-sampling.md) needs only square
-arguments. Its positive averaging coefficients preserve the signed
-budget, and its interpolation error tends to zero for every exponent
-strictly above one half. On a window from Y to its b-th power it reduces
-the table size from order \(Y^b\) to order \(Y^{b/2}\), without changing
-the analytic target. The preferred
-[fourth-power refinement](fourth-power-sampling.md) uses the actual convex
-ramps and concave correction rather than only a derivative bound. It
-reduces the table size further to order \(Y^{b/4}\). Positive affine
-averages retain signed cancellation even between adjacent rows. The
-interpolation tail tends to zero, with no logarithmic factor for zeta or
-any nonnegative arithmetic kernel. The RH manuscript gives the shorter
-zeta proof; the GRH manuscript gives the general character-combination
-theorem. Neither changes the existing node totals.
-
-The [prescribed trace comparison](prescribed-trace-calibration.md) now
-permits a positive normalization chosen before the maps are evaluated.
-It remains valid for zero maps, and a strict source-defect bound proves
-nonvanishing. For source and target retained fractions r and v, its
-combined final defect is at most (g + 2b + 1 - min(r,v))/max(r,v),
-without division by an unknown surviving mass. A sharp partial-identity
-example improves the former actual-mass cost from 2/3 to 1/3. This gives
-an alternative sufficient route that can derive nonvanishing within the
-trace estimate; actual prescribed-scale smallness, local divisibility,
-and the original arithmetic identifications still have to be proved.
-The [new frontier review](../certificates/frontier-progress-review-2026-11-22.json)
-records the exact proof and supplemental checks.
-
-The [diagonal arithmetic argument](rh-selmer-diagonal-rigidity.md) now
-supplies uniqueness of the actual diagonal point from prime-to-coefficient
-inertia averaging, ordered character matching and the Hilbert class field.
-It also proves the weight-zero tangent statement from the retained local
-finite-to-unramified comparison. Fixed-point separation follows once the
-actual model's point lifting and representation comparison are supplied.
-The negative-weight argument below completes the global cohomological
-and normalization arguments at the base point.
-Two-sided rigidity, finite degree-zero algebra and integral conormal
-torsion remain separate requirements.
-
-The [scalar period bound](whittaker-scalar-envelope.md) gives the exact
-original seed normalization and bounds the complete normalized period
-operator by one positive sum of the Whittaker norms. Compact Schur
-orthogonality and weighted Cauchy--Schwarz give constant one. The target
-trace excess is bounded by a scalar positive-part integral against the
-actual retained target's diagonal kernel, with every rational orbit and
-original volume retained. This integral and the source deficit still
-need arithmetic bounds; the seed identity alone proves no nonvanishing.
-The [scalar return comparison](seed-return-deficit.md) also bounds the
-source deficit by the summed overlap of distinct rational returns. It
-retains arbitrary source restrictions and bounds target loss using the
-discarded target's diagonal kernel. Together the two comparisons give an
-explicit scalar sufficient bound for both prescribed defects. Absolute
-returns can waste signed cancellation, so the signed operator route
-remains available; no small arithmetic overlap estimate is asserted.
-
-The [sharp return-norm comparison](dominant-return-deficit.md) replaces
-that pair sum by the smaller integrand `B - (2m-A)_+^2`, where `A` is the
-sum of return norms, `B` their squared sum and `m` their largest norm.
-It caps crowded regions by their actual seed mass and preserves the
-mass that a dominant return cannot cancel. The proof controls the
-positive spectral trace, including arbitrary source restrictions; it
-does not require an integrable absolute double sum. The original target
-loss and normalization are retained. The new estimate is optimal from
-the scalar norms alone, but its arithmetic size remains open. This
-reviewed package does not change either route's node count.
-
-The [ramified determinant calculation](ramified-hodge-determinant.md)
-constructs the actual integral conjugate determinant as the determinant
-of the full Hodge character quotient, twisted by a fixed ideal determined
-by the coefficient field and signature. A two-term cokernel identity
-identifies every integral point pullback, also at wild and dyadic primes,
-without assuming coefficient freeness of the tangent eigensheaves.
-First-order sections of the original global biextension supply the Hodge
-bundle; generic properness and flatness normalize its adjunctions
-coherently. The original fibre conditions give full coefficient freeness.
-Thus the ramified integral-line and special-curve identifications follow
-from these actual model data. Constructing that model with the required
-pointwise periods, and proving the cusp and section estimates, remain.
-
-The [CM extension argument](cm-integral-map-extension.md) reduces that
-integral-map requirement to the supplied generic CM point on the correct
-component, with its exact original rigidified line and coefficient action.
-Properness extends the point; the classical full faithfulness of
-semiabelian schemes extends the generic isomorphism. A vertical-divisor
-argument preserves the exact line and scalar, so the actual tangent
-eigenlattices agree. The point-descent argument below supplies the exact
-generic identification from the actual moduli separation and pointwise
-period data. The arithmetic model remains required; no new choice of
-integral CM map is necessary.
-
-The [negative-weight rigidity proof](rh-selmer-negative-weight-rigidity.md)
-uses only the existing qualitative strict Selmer finiteness and the local
-Bloch--Kato calculation. A Baire argument puts each cocycle in one finite
-coefficient field. Normalizing at one group element bounds the denominators
-of all divided cocycles, forcing rational strict vanishing. Finite-order
-twists of any order are allowed. The three actual negative adjoint
-characters and the exact two marked matrix entries are computed explicitly.
-Together with weight zero, this supplies all nonpositive base-point
-cohomological rigidity and removes normalized coboundaries.
-The [graded-to-completed comparison](selmer-tangent-comparison.md) now
-supplies point lifting after the permitted grading rescaling, tangent
-lifting and cocycle determination from the actual weighted presentation
-and finite degree-zero quotient. One valuation interval makes every
-coordinate small; a finite coefficient field and homogeneous tails give
-the complete local point and tangent. The general marked coboundary
-calculation leaves at most one dimension at a rigid point, and zero at
-the base. The actual arithmetic model, its initial chart and finite
-quotient, local-ring equations and factorization, two-sided rigidity and
-uniform integral Selmer bounds remain. The existing arithmetic model
-comparison is still used at odd coefficient primes.
-
-The [crystalline component comparison](selmer-crystalline-component-comparison.md)
-supplies the local finite-cocycle condition from those exact local
-equations. Spectral projectors give the ordinary flag and its two
-nonresonance factors. Positive Tate exponents and local duality make
-the nonresonant field representations crystalline of one fixed Hodge
-type. Saturation makes this locus dense in every reduced component;
-Kisin's theorem for all finite coefficient algebras then includes
-dual-number points, even above the resonant locus. For exponent at
-least two, nonresonance follows from inertia and saturation is not
-needed for this local comparison. The actual adjoint representation
-becomes the full matrix endomorphism representation on the finite local
-subgroup; averaging descends its finite condition. No uniform integral
-bound or non-diagonal global rigidity is inferred.
-
-The [prescribed CM-point descent](cm-period-point-descent.md) replaces
-the separate generic-point comparison by an automorphism argument.
-The exact finite-index pure-period condition gives an isogeny from a
-CM elliptic product onto the actual universal fibre. Its original
-symmetric rigidified cubical line, coefficient action and both entire
-finite level maps descend to the algebraic numbers. Point separation
-then fixes the same complex point under every automorphism over those
-numbers; finite type places it over a number field. The exact component
-and original line are preserved. Only the pointwise period presentation
-is needed, with no descent of an infinite Tate tower. The actual moduli
-model, pointwise chart and boundary-fibre conditions remain hypotheses;
-the proved proper extension supplies the integral comparison from them.
-
-## Next mathematical work
-
-1. **Actual theta maps and global norms (W06/W08).** Complete the original
-   good-cover comparison and identify the same integral maps in
-   the divisibility and norm arguments. Prove the positive-rank partial-head
-   Fourier estimate and all lower-stratum comparisons, then sum every
-   rational return. The final requirement is the source deficit and target
-   excess of the actual restricted period operators; seed mass does not
-   prove nonvanishing.
-2. **Arithmetic Selmer models (W04).** Starting from the constructed
-   ordinary modules, compact types and integral Galois determinant, supply
-   the marked deformation models,
-   patched support and two-sided rigidity. Prove the moving-family
-   integral product, keeping the full characteristic-prime fibre and
-   all exceptional primes. Apply the existing finite and limiting
-   cohomological comparisons unchanged.
-3. **Geometric estimates (W10).** Use the completed original `PartI`
-   models to construct the good cover and prescribed section lattices, short
-   generators, metrics and height inputs. Apply the existing jet,
-   determinant, CM and signed-boundary theorems to those actual objects.
-   The numerical arithmetic section remainder is still a separate target.
-4. **Uniform assembly (W02/W11).** Build every entry of the finite
-   fourth-power tables and verify frontier theorem A. Fix accuracy,
-   target characters, interval exponent and averaging width before
-   the cofinal windows grow, retaining all rank factors and exponent losses.
-
-The [RH program](../blueprint/rh/program.md) remains the preferred first
-case; the [GRH program](../blueprint/grh/program.md) retains its general
-character and conductor. Four RH characters do not bound auxiliary
-fields, dimensions or integral lattice defects. The twelve-page guide
-is organized by mathematics, not by the sequence of research attempts.
-
-## Established structural and local reductions
-
-- All five exported targets reduce to right-half-plane nonvanishing.
-  Only total exponent loss tending to zero is necessary. Constants and
-  window shapes may depend on accuracy, and a positive auxiliary family
-  may change with accuracy while retaining the target character. Each such
-  family stays fixed throughout its own arbitrarily late whole-window
-  sequence. See [vanishing loss](vanishing-loss-program.md).
-- The K-theory replacement reduces exponent 86 to 14 and moves ten older
-  cohomological sections and four analytic alternatives out of the preferred
-  route. The manuscript has 98 section files: 96 recovered plus two new,
-  with 84 in the preferred exposition and 14 alternatives.
-- The classical Galois substitution supplies W05, including all fifteen
-  local laws, the global period dictionary and one common representation
-  across the required correspondences. Its original stable theta-lift
-  supplier is optional. Independent theta and geometric branches remain.
-  See [the adoption proof](classical-galois-substitution.md).
-- The local residue comparison is proved on the stated smooth classes:
-  commutator matrix, Schwartz marginals, ordered mixed-word congruence,
-  finite-decay approximation and one positive reciprocal Haar constant.
-  Source lists recurse tail first; operators cannot be freely reordered.
-  Original admissible parameters are retained without assuming shifted
-  separation. See [the dictionary](residue-source-dictionary.md).
-  Growing-rank global norm bounds are not supplied by these fixed-word
-  local identities.
-
-## Source, recovery and verification scope
-
-The prior complete import audit read and matched all 175,187 local files at
-`jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`. Its preserved graph has
-753,261 distinct local edges, no cycles, depth 203, and all files reachable
-from Main. The 348 external import names remain boundaries; package internals
-were not traversed. Reachability does not identify indispensable declarations.
-The source atlas and its compressed graph are version controlled. This
-continuation rechecks only the selected new source files and bounded passages,
-not the entire old traversal. No new Lean build or kernel replay was run.
-
-The recovery archive preserves all 622 bundle files and 621 manifest entries,
-96 original sections, 1,522 labels, 646 result environments and 611 proofs.
-Preservation is not an independent review of every proof. Unavailable chats
-have not been invented as recovered work. The
-[recovery crosswalk](recovery-crosswalk.md) supplies bounded resumption cards.
-
-New mathematical results have independent reviews and exact supplemental
-checks. Certificates distinguish source-byte identity, written proof review,
-finite verification and unresolved construction hypotheses. Important early
-results are already committed; the polished integrated checkpoint includes
-updated TeX, compiled PDFs and regenerated proof maps.
-The [current mathematical review](../certificates/hard-node-review-2026-11-22.json)
-ties the newly reviewed arguments to their exact artifacts. The
-[integration record](../certificates/hard-node-integration-2026-11-22.json)
-records the recovered proofs, manuscript inputs, built PDFs and inspected
-pages. Source-byte integrity, exact finite checks and mathematical review
-remain separate. Earlier certificates retain their original snapshot scopes.
-
-```sh
-python scripts/check_hard_node_integration.py
-python scripts/source_excerpt.py --atlas --source Main --search theorem
-python scripts/reconcile_recovery.py --section 10
-python scripts/check_rh_direct_transfer.py
-python scripts/check_rh_weight_symmetry.py
-python scripts/check_rh_geometric_combination.py
-python scripts/check_transport_symmetry_defect.py
-python scripts/check_rh_minimal_budget.py
-python scripts/check_geometric_degree_frontier.py
-python scripts/check_averaged_theta_energy.py
-python scripts/check_rh_construction_frontier.py
-python scripts/check_finite_symmetry_energy.py
-python scripts/check_frame_degree_compatibility.py
-python scripts/check_rh_centered_frame_bridge.py
-python scripts/check_mean_volume_supplier.py
-python scripts/check_finite_window_sampling.py
-python scripts/check_two_primary_selmer_reduction.py
-python scripts/check_selected_eigenspace_degree.py
-python scripts/check_finite_twisted_place_budget.py
-python scripts/check_qualitative_selmer_finiteness.py
-python scripts/check_theta_jet_slope_reduction.py
-python scripts/check_absolute_siegel_supplier.py
-python scripts/check_redundant_period_spectrum.py
-python scripts/build_full_proof_program.py
-python scripts/build_blueprint.py
-python scripts/check_rh_continuation.py
+Updated 23 November 2026. RH and Dirichlet GRH are **not yet proved** by
+this reconstruction. This is a short resumption index; complete statements,
+proofs and source evidence belong in the linked files. Earlier versions
+remain in Git history. The latest recovered baseline is
+`103f0de0e8d9002081218e40d4df700dd90bb13b`.
+
+## Start here
+
+1. Read this file and the relevant row below. Keep the preferred proof
+   architecture fixed unless a substantial mathematical improvement appears.
+2. Open the corresponding target in [frontier theorems](open-frontier-theorems.md),
+   then its latest proof note. Locate a declaration before reading source.
+3. Attack the missing arithmetic construction or uniform bound. Check that
+   it supplies the same objects and quantifiers as its downstream consumer.
+4. Commit a reviewed result or a precise obstruction promptly. Update the
+   current target, rather than appending another history to this file.
+
+Prioritize ordinary RH. Aim for roughly 70% direct attacks, 20% verification
+and 10% consequential simplification. Four surviving RH characters do not
+bound the auxiliary field degrees, geometric dimensions or lattice defects.
+
+## Active obligations
+
+| Obligation | Latest established input | First remaining task |
+| --- | --- | --- |
+| W04: integral Selmer estimate | [Finite-end descent](selmer-support-continuation-finite-end.md) through the exact Galois quotient, on one common finite-index subgroup; the rank-two/rank-three support and ordinary families are supplied. | Construct the original auxiliary frame, including every size and seed clause; prove two-sided global rigidity and the uniform weighted integral Selmer bound. |
+| W06: integral theta chain | [Actual selected-prime chain](theta-spanning-continuation-chain.md), including point models, value lattices, phases, both local divisibilities and the original twisted initial source. | Identify that same chain with the final normalized global operators, including all restrictions, periods and finite masses. |
+| W08: global norms | [Period Gram identity](global-gram-continuation-period-identity.md), [actual target projector](global-gram-continuation-projectors.md), [arithmetic minimum](global-gram-continuation-minimum.md), [quantitative seed](global-gram-continuation-quantitative.md), and [exact covolume and Haar cancellation](global-gram-continuation-haar-budget.md). | Absorb the explicit far-return bound at the literal source cutoff; control near returns and the positive traces of the same final restricted maps. |
+| W10: geometric sections and heights | Original integral models and sized cover; [short integral span](theta-spanning-continuation-short.md), [key shifts](theta-spanning-continuation-key.md), and [thick-region section bound](geometry-bergman-continuation-thick.md) with its original numerical records. | Prove the thin-region and upper cusp-frame estimates, actual point-height and multiplication comparisons, then the numerical section remainder. Construction of the numerical records is still required. |
+| W02/W11: final arithmetic comparison | [Fourth-power sampling](fourth-power-sampling.md), [direct RH transfer](rh-direct-transfer.md), and [signed averaged criterion](scale-averaged-criterion.md). | Construct compatible finite tables meeting frontier theorem A, with all losses and auxiliary data controlled on the same windows. |
+
+These are larger obligations than their individual suppliers. No table
+satisfying the final criterion has been constructed. No whole proof-map
+node is closed merely because one supplier is proved.
+
+## Exact acceptance conditions
+
+At each accuracy stage fix `1/2 < theta < 1`, the interval exponent `b>1`,
+the averaging width, and (for GRH) a nonnegative character combination
+retaining the target. These remain fixed on an unbounded sequence of
+windows. The accuracy stages must permit `theta -> 1/2`.
+
+Construct arithmetic comparisons at **every required fourth-power sample**,
+including the expanded range needed for averaging. Different finite tables
+may use different choices. Within one entry, however, the geometric,
+integral and analytic arguments must concern exactly the same maps and
+lattices. Average the signed total bound before taking its positive part.
+The required weighted positive-part integral has logarithm `o(log N)`
+along the chosen sequence; see theorem A for its literal formula.
+
+For the final restricted maps, the norm penalty is
+
+```math
+P_{\mathrm{norm}}(x)=\kappa(x)^{-1}\operatorname{avg}_u
+\min\{H_u,(g_u+b_u)(U_u+H_u)\},
 ```
 
-The source reader verifies pinned bytes and limits output to 25 matches or
-120 lines/12 KB. Large analyses stay local. Commit coherent results to main
-promptly; bounded output never excuses weakening mathematical verification.
+where `g_u` and `b_u` are the prescribed normalized positive source-deficit
+and target-excess traces. Their original positive normalizer is retained.
+A bounded seed, an ambient projector or a Gram expansion at fixed data
+does not supply this moving-family estimate. The RH final signed budget is
+`rh-final-budget` in `paper/rh/sections/06-compatible-budget.tex`.
+
+For RH the remaining Selmer product is exactly
+
+```math
+\log\mathcal P(w)\le\tfrac12 C_V y(B_0+N_c),\qquad
+\mathcal P(w)=\prod_{p\ne2}\prod_{e=1}^{t-1}
+(\#\Pi_{p,e}\mathcal S(E,p,e))^{w_p}.
+```
+
+Its projectors, exceptional primes, lower layers and supplied cases are
+those in the RH manuscript. Qualitative finiteness and rational rigidity
+do not bound growing integral torsion. GRH keeps its own character weights
+and ramification-normalized lengths.
+
+## Established inputs to reuse without re-optimizing
+
+- **Analytic route:** the [positive-kernel comparison](positive-kernel-transfer.md)
+  and direct RH transfer remove the proposed weight-symmetry requirement.
+  [The symmetry obstruction](rh-weight-symmetry.md) explains why that older
+  route fails for the actual sparse weights. Uniform quasi-RH applies only
+  with its stated character and conductor hypotheses. The source exponent
+  loss `(C+33/16) epsilon` must still tend to zero.
+- **Geometric route:** the original PartI models, sized good cover and
+  normalized complex theta dictionary are supplied. Use the [direct
+  section-degree argument](geometric-degree-frontier.md), [finite jet
+  bound](finite-section-jet-bound.md), actual short sections, determinant
+  degree and parallel twists. The signed boundary and quotient-mean
+  identities retain their original metrics and finite-place corrections.
+- **Selmer route:** finite cohomological comparisons, integral compact
+  types, ordinary modules and determinant, arithmetic seed, normalized
+  curves and full rank-two/rank-three support are supplied in the cited
+  construction notes. Preserve the entire characteristic-prime fibre,
+  nilpotents, equation ideal and ordinary local conditions.
+- **Norm route:** the local operator, Bessel, Fourier and terminal-degree
+  arguments are indexed in [shared results](../blueprint/shared/README.md).
+  The global expansion includes every rational return and the exact
+  antilinear coefficient dictionary. The target projector already shown
+  to fix period images causes zero loss; further projections need proof.
+
+## Manuscripts and navigation
+
+The [RH manuscript](../paper/rh/main.tex) and
+[GRH manuscript](../paper/grh/main.tex) have separate route folders and
+[RH](../blueprint/rh/program.md)/[GRH](../blueprint/grh/program.md) programs.
+Common technical proofs are in `paper/shared/` and `paper/sections/`.
+The [shared-results index](../blueprint/shared/README.md) records exact
+applications and extra hypotheses. The [short guide](../paper/guide/main.tex)
+is a didactic account organized by mathematics, not by research chronology.
+
+Whole-node counts remain **RH 6/9; Dirichlet GRH 17/31**. They count proved
+stated implications or adopted cited inputs, not fractions of completed
+proofs. The authoritative status data are
+[progress.json](../blueprint/progress.json).
+
+## Source and verification discipline
+
+The pinned Lean mirror is
+`jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`.
+The [source atlas](../blueprint/lean-source-atlas.md) and compressed import
+index preserve the earlier traversal of 175,187 local modules. Reachability,
+source-byte hashes, finite computations, conventional proof review and
+Lean kernel verification are distinct. The full Lean development has not
+been independently rebuilt or kernel-audited in this project.
+
+Use the bounded reader for selected source files:
+
+```sh
+python scripts/source_excerpt.py --atlas --source MODULE --search DECLARATION
+python scripts/source_excerpt.py --atlas --source MODULE --lines FIRST:LAST --offline
+```
+
+It authenticates pinned bytes and limits excerpts to 120 lines/12 KB.
+Keep large analyses local and return only decisive ranges to conversation.
+The [recovery crosswalk](recovery-crosswalk.md) locates archived sections;
+recover only a relevant resumption card. Do not reload the archive or
+entire manuscripts. Historical certificates remain tied to their original
+snapshots; do not rerun them as if they asserted current artifact hashes.
+
+Run the new result's meaningful checks, independent proof review, relevant
+manuscript builds and affected-page inspection. Do not repeat every old
+check. Keep unresolved dependencies explicit in both proof and checkpoint.

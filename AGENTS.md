@@ -20,3 +20,5 @@ Develop a rigorous, readable distillation of the announced GRH proof. Attribute 
 - Locate a declaration or label first, then read a bounded range. `scripts/source_excerpt.py` verifies one pinned source before printing a bounded search or excerpt. For other sources, record the immutable revision, file hash, and exact line ranges beside the result.
 - Keep mathematical claims, dependencies, counterexamples, and verification evidence in version-controlled files. Update the current checkpoint and commit coherent progress to `main` promptly, without force-pushing.
 - Bounded output is a context-management measure, never a reason to skip a decisive proof check. Distinguish preserved historical evidence, checks rerun now, cited external verification, and open obligations.
+
+- Keep `notes/current-state.md` below 200 lines as a current resumption index. Link full statements, proofs and verification evidence; do not accumulate historical results or obsolete next steps there. Preserve mathematical detail in the referenced files.
