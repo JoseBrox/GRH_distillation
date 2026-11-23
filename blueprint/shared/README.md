@@ -285,7 +285,7 @@ proves the actual compact one-coordinate Fourier bound, continuity at
 zero and diagonal positivity with the source point and word normalizers.
 Unused grid blocks cover every original admissible word; the same finite
 extension maximum gives both parts of the Fourier minimum. All spectral
-and arithmetic factors remain. Decaying coefficients, block growth,
+and arithmetic factors remain. The later block-growth and finite-decay suppliers apply these estimates;
 controlled top-lift construction and global period norms remain separate.
 
 The [off-diagonal kernel theorem](../../notes/global-norm-frontier-off-diagonal.md)
@@ -340,8 +340,17 @@ Lebesgue conversion factors survive to the lattice estimate. A translation
 mean retains the residual positive-definite term; finite Fejer sums prove
 the original inequality at every sample, with its full complex reciprocal
 limsup. No uniform stationary-phase remainder constant remains in that
-inequality. Finite-decay extension, controlled top lifts and global period
-norms remain separate.
+inequality. The finite-decay supplier below extends its application;
+controlled top lifts and global period norms remain separate.
+
+The [finite-decay theorem](../../notes/global-norm-frontier-finite-decay.md)
+proves the full original `KB.FormLimit` for the same kernels and exact
+cutoff at every head. The decay exponent stays fixed for all derivative
+orders; its threshold has the original rank and word-length dependence,
+with its constant depending only on the given top-lift constant. Explicit
+inverse quotient coordinates and the positive-complement projection give
+absolute convergence, including the original terminal orbital integral.
+Actual controlled top lifts and global period-Gram bounds remain separate.
 
 The [actual marked propagation theorem](../../notes/selmer-integral-frontier-marked-propagation.md)
 constructs the prescribed universal determinant ring and ordered local

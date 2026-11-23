@@ -1,0 +1,374 @@
+\subsection{Compact exhaustion with the original finite decay budget}
+\label{actual-finite-decay-exhaustion}
+
+The compact kernel estimates require a passage to the prescribed
+coefficient with a fixed finite decay exponent.  This passage must
+hold at every head, since subsequent arithmetic sums sample individual
+points.  Polynomial bounds for the actual quotient coordinates give
+that passage with the original dependence on dimension and word length.
+The exact cutoff and differential contracts are those in
+\cite{finite-decay-source}.
+
+Put
+\[
+ R=r+1,\qquad d=2r+k+1,\qquad
+ X=Nd^2+d^3,\qquad k\ge2.
+\]
+Retain the original place, normalized tower, top lift, compact type
+projections, and all their measures and scalar normalizers.  Assume
+the original differential description of the top lift with constant
+$C_b$: for each admissible word $w$ and component, its operator on
+$G>0$ has order $o$ and polynomial degree $\kappa$, with
+\begin{equation}\label{finite-decay-top-budget}
+ o\le |C_b|\,|w|d,\qquad
+ \kappa\le |C_b|Ro,
+\end{equation}
+and belongs to the prescribed class \texttt{InDDPlus} with no
+internal-minor denominators.  This is precisely the original
+\texttt{InDDplus2} hypothesis; its construction is not assumed to
+follow from compact exhaustion.
+
+Use the original Frobenius norm
+$M(g)=(\sum_{a,b}|g_{ab}|^2)^{1/2}$ and its invariant derivative
+seminorms $\|\cdot\|_{A,m}$, as in \JacquetUnfoldingReference.
+Constants in estimates below may depend on a fixed place,
+head, word, cutoff and representation; their exponent bounds do not.
+
+\begin{theorem}\label{finite-decay-form-limit}
+There is a constant $C_c$ depending only on $C_b$ such that the
+following holds.  Suppose $f$ is smooth and
+$\|f\|_{A,m}<\infty$ for every finite $m$, with the \emph{same}
+exponent $A$, and
+\[
+                       C_cR^4X\le A.
+\]
+For the original Gram cutoff $F=\chi(G/\epsilon)f$, $\epsilon>0$,
+let
+\[
+ c_n(g)=\operatorname{smoothTransition}
+    \left(\frac{4-(n+1)^{-2}\sum_{a,b}|g_{ab}|^2}{3}\right),
+       \qquad F_n=c_nF.
+\]
+Every $F_n$ is an original compact smooth coefficient with a common
+positive Gram cutoff.  For every level, every original admissible
+word $|w|\le N$, and every pair of heads $a,b$, the prescribed
+kernels satisfy
+\begin{equation}\label{finite-decay-kernel-limit}
+                    \operatorname{RR}_{i,w}(F_n;a,b)
+             \longrightarrow \operatorname{RR}_{i,w}(F;a,b).
+\end{equation}
+The assertion is pointwise at every head, including all relevant
+lower dimensional strata.  It supplies the original
+\texttt{KB.FormLimit}, with its stated quantifiers and cutoff.
+For example, $C_c=10^4(1+|C_b|)^2$ is sufficient.
+\end{theorem}
+
+\begin{proof}
+We prove quantitative continuity of the actual slices and terminal
+orbital vectors, then apply it to this specific exhaustion.
+
+\paragraph{The cutoff and one unit of decay.}
+The definition of $\chi$ gives $\delta>0$ such that $\chi(x)=0$
+for $x<\delta$, and $\chi(x)=1$ for $x\ge1$.  All its derivatives
+are bounded.  Thus all coefficients in question vanish for
+$G<\epsilon_0:=\delta\epsilon$.  The Gram polynomial has degree
+$2R$.  Invariant differentiation preserves polynomial degree, so
+the product rule gives
+\begin{equation}\label{finite-decay-gram-cost}
+ \|\chi(G/\epsilon)h\|_{B,q}
+                       \le C_q\|h\|_{B+2Rq,q}
+\end{equation}
+for every finite $q$.  The same statement applies to differences.
+
+Every invariant derivative of $c_n$ is bounded uniformly in $n$.
+Indeed, the nonconstant derivatives are supported where
+$n+1\le\|g\|_{\mathrm F}\le2(n+1)$; each differentiation of
+the quadratic argument contributes a factor $(n+1)^{-2}$ and
+a polynomial of degree two.  Repeated product and chain rules give
+the asserted bound.  On the support of $c_n-1$, or of any of its
+derivatives, $\|g\|_{\mathrm F}\ge n+1$.  Hence for every fixed $q$,
+\begin{equation}\label{finite-decay-cutoff-convergence}
+ \|(c_n-1)f\|_{A-1,q}\le C_q(n+1)^{-1}\|f\|_{A,q}
+                                  \longrightarrow0.
+\end{equation}
+The compact support and common Gram cutoff of $F_n$ follow directly.
+No increase of the exponent $A$ with $q$ is used.
+
+\paragraph{Polynomial recovery below the terminal level.}
+Fix a head of size $j\le r$, with all block parameters nonzero,
+and put $\rho=r-j$.  Use exactly the restricted lower roots,
+upper roots and radical coordinates of
+Theorem~\ref{partial-head-transfer-actual}.  Write their collection
+as $y\in\mathbb R^D$; one may take $D\le2d^2$.  The phase has
+absolute value one and is independent of the residual matrix
+$\gamma\in G_\rho$.
+
+The inverse formulas \eqref{partial-head-inverse-coordinates} give
+radical coordinates of degree at most $2j$ in the entries of the
+full matrix $g$, because $\det Z$ is the fixed nonzero head
+determinant.  Here and below polynomial means polynomial in real
+and imaginary matrix entries; fixed nonzero head determinants
+are allowed in its constant coefficients.
+
+For clarity, the block Gaussian step also has a linear, rather than
+an iterated exponential, degree bound.  If $Z=L B$, with $L$ block
+lower unitriangular and $B=Z_hU$ block upper triangular, let
+$I_b$ denote the indices up to the end of block $b$, and $I_{<b}$
+the preceding indices.  The exact formulas are
+\[
+ L_{cb}=\bigl(Z_{c,I_b}Z_{I_b,I_b}^{-1}\bigr)_{b},\qquad
+ B_{bc}=Z_{bc}-Z_{b,I_{<b}}Z_{I_{<b},I_{<b}}^{-1}Z_{I_{<b},c}.
+\]
+All the displayed determinants are products of complete head-block
+determinants, hence fixed and nonzero.  Cramer's rule bounds the
+degrees of $L,B,U$ by $j+1$; it bounds $L^{-1}$ by $j$ using the
+second formula for its strictly lower rows, and $U^{-1}=Z^{-1}LZ_h$
+by $2j$.  No internal principal minor inside a head block is used.
+Consequently, with a constant depending on this head,
+\begin{equation}\label{finite-decay-polynomial-properness}
+           1+|y|+M(\gamma)\le C M(g)^{4R}.
+\end{equation}
+This also proves properness jointly in $y$ and $\gamma$.
+
+A residual left derivative is an ambient left derivative conjugated
+by the fixed left radical matrix; a residual right derivative is
+conjugated by the right radical matrix.  Each radical matrix and
+its inverse has degree at most $2j$ in $g$.  Thus $m$ residual
+derivatives cost at most $4jm$ powers of $M(g)$.  The conjugating
+matrices are independent of $\gamma$, so no derivatives of them
+are inserted in this pullback.  The fixed determinant $D_j$ stays
+constant under these residual variations.
+
+\paragraph{The original word operators.}
+Expanding the prescribed ordered quantum minors, one letter at
+level $j$ has order at most $j$.  Its numerator coefficients have
+degree at most $j$, and its only denominators are powers of $D_j$
+and $\overline{D_j}$.  An invariant derivative of a polynomial
+preserves its degree; differentiating such a denominator adds at
+most $j$ to the numerator degree.  Applying the next letter to a
+tail therefore increases order by at most $j$ and numerator degree
+by at most $j+j^2$.  Induction in the original tail-first order
+gives
+\begin{equation}\label{finite-decay-word-degree}
+        o_w\le |w|j,\qquad
+        \kappa_w\le |w|(j+j^2).
+\end{equation}
+This is an expansion of the actual $\mathsf V_{j,w,e}$, including
+the two original signed shifts and both determinant denominators.
+The scalar spectral factors and the tensor ordering are unchanged.
+For $j=0$, the prescribed zero components vanish and the remaining
+components have order zero.
+
+Let $S_{j,w,a,e}h$ be the original normalized partial-head slice
+of $\mathsf V_{j,w,e}(\chi(G/\epsilon)h)$.  Combining
+\eqref{finite-decay-gram-cost},
+\eqref{finite-decay-polynomial-properness} and
+\eqref{finite-decay-word-degree}, differentiation under its
+\emph{original} integral gives
+\begin{equation}\label{finite-decay-slice-bound}
+ \|S_{j,w,a,e}h\|_{B,m}\le C\|h\|_{A',m+Nj}
+\end{equation}
+provided
+\begin{equation}\label{finite-decay-slice-budget}
+ A'\ge 3NR^2+6Rm+4R(B+2d^2+1).
+\end{equation}
+Here is the integrability argument in detail.  The differentiated
+integrand is bounded by a constant times
+\[
+ \|h\|_{A',m+Nj}
+       M(g)^{-A'+N(j+j^2)+4jm+2R(m+Nj)}.
+\]
+After multiplication by $M(\gamma)^B$, inequality
+\eqref{finite-decay-polynomial-properness} bounds this by
+$C\|h\|_{A',m+Nj}(1+|y|)^{-D-1}$ under
+\eqref{finite-decay-slice-budget}.  This integrable majorant is
+independent of $\gamma$ and of the unit derivative directions.
+It proves the asserted seminorm bound, absolute convergence and
+all required differentiations.  The exact Gram identity
+\eqref{partial-head-gram} gives the common residual cutoff
+$\epsilon_0/|\det Z_h|^2$.  The estimate applies to every fixed
+head, without restricting its internal minors.
+
+Use the original finite regularity parameters
+\[
+ B=127R^3X+1,\qquad m=5+3R(N+2)d+Nr.
+\]
+Since $R\le d$, $d\ge3$ and $X\ge d^3$, we have $m\le8X$.
+Thus the right side of \eqref{finite-decay-slice-budget}, plus
+one, is at most $600R^4X$.  Our choice of $C_c$ gives this budget
+with $A'=A-1$.  Applying \eqref{finite-decay-slice-bound} to
+$h_n=(c_n-1)f$ and using
+\eqref{finite-decay-cutoff-convergence} proves convergence of
+every actual slice in this weighted $C^m$ norm.
+
+\paragraph{Continuity of the original lower-level forms.}
+Each entry of the original contracted matrix $tL$ has differential
+order at most the residual matrix size and polynomial coefficient
+degree at most two: the two vectors depending on $g$ are linear
+in $g$ or $g^{-1}$, and $g^{-1}=Jg^*J$ on the unitary group.
+Invariant differentiation preserves these degrees.  The exact
+residue recursion consequently has order at most $d|w|$ and
+coefficient degree at most $2|w|$.  Its old-word rational
+corrections are fixed scalars and are retained.
+
+The established Jacquet pairing bound therefore makes the original
+form $\mathcal B_w$ continuous on the preceding finite weighted
+class.  Explicitly, the threshold for the residual Haar integral
+is at most $2(k+\rho)(\rho+1)+1$; our $B$ exceeds it by more
+than $2N$, and $m\ge5+dN$.  Apply the pairing bound after the
+residue operator, then use the exact sesquilinear identity
+\[
+ \mathcal B_w(x_n,y_n)-\mathcal B_w(x,y)
+   =\mathcal B_w(x_n-x,y_n)+\mathcal B_w(x,y_n-y).
+\]
+The slice convergence proves \eqref{finite-decay-kernel-limit}
+for the original $\operatorname{RR}$ at every $i\le r$.
+Any later fixed head weights and word normalizers commute with
+this convergence.  No almost-everywhere
+representative is substituted at any point.
+
+\paragraph{A quantitative terminal quotient bound.}
+For a terminal head $a$ with positive Gram, keep its fixed original
+$D$-frame $\gamma_a$.  The exact fibre decomposition in
+Theorem~\ref{unitary-density-compact-representative} expresses
+its orbital integral using the restricted head roots, the two
+pointwise flag kernels $N_0$, and the two original compact groups.
+Its noncompact coordinates $y$ again have dimension $D\le2d^2$.
+We show
+\begin{equation}\label{finite-decay-terminal-properness}
+                         1+|y|\le C_a M(g)^{64R^2}.
+\end{equation}
+This bound concerns the actual quotient, including its discarded
+stabilizer roots and its original Haar constants.
+
+First recover the two flag matrices from $Z(g)$ using the preceding
+block Cramer formulas with $j=R$.  Their matrices and inverses
+are bounded by $C M(g)^{2R}$.  The original Eichler section for
+$u=\left(\begin{smallmatrix}A&b\\0&1\end{smallmatrix}\right)$
+has blocks
+\[
+             A,\quad (A^*)^{-1},\quad b,\quad
+       b^*(A^*)^{-1}/T,\quad bb^*(A^*)^{-1}/(2T).
+\]
+The fixed change between $z$ and $z'$ only changes constants.
+Since $A$ is unipotent of size $r$, these entries and the inverse
+section have degree at most $R+1$ in the flag coordinates.
+Stripping both flag actions leaves a matrix $g_0$ with the fixed
+reduced matrix $Z_a$, satisfying
+\[
+                         M(g_0)\le C M(g)^{9R^2}.
+\]
+
+Here the positive complement gives a particularly simple bound
+for the remaining two $N_0$ factors.  The paired frame
+$(f,g_0f')$ has a fixed nondegenerate Gram matrix $H_a$.
+Its orthogonal-complement projection is
+\[
+        \Pi=I-VH_a^{-1}V^*J,\qquad V=(f,g_0f'),
+                         \qquad \|\Pi\|\le C M(g_0)^2.
+\]
+This complement is positive.  If $Q$ is a Euclidean orthonormal
+basis of it, then
+\[
+ \Pi=Q(Q^*JQ)^{-1}Q^*J,\qquad
+        \|(Q^*JQ)^{-1}\|=\|\Pi\|.
+\]
+An isometry from a fixed positive space to this complement is
+therefore bounded by $C\sqrt{\|\Pi\|}$.  On the paired-frame
+span the corresponding isometry is bounded by $CM(g_0)$ directly.
+This bounds every isometry with the prescribed paired-frame action:
+the remaining freedom is its isometry on the fixed positive
+complement, whose stabilizer is compact.  Thus the bound applies
+to every actual fibre representative, not just a chosen factorization.
+Apply this to the left pointwise flag stabilizer $\ell$ in
+$g_0=\ell\gamma_a u$.  It fixes $f$ and sends $\gamma_af'$
+to $g_0f'$, so $\|\ell\|\le CM(g_0)$.  Its inverse has the
+same Frobenius bound, since $\ell^{-1}=J\ell^*J$.  The identity
+$u=\gamma_a^{-1}\ell^{-1}g_0$ then gives
+$\|u\|\le CM(g_0)^2$.  Removing the uniformly bounded original
+compact factors gives these same bounds for the two $N_0$
+matrices.  Their standard radical coordinates are linear or
+quadratic in their matrix entries, hence are bounded by
+$CM(g)^{36R^2}$.  This proves the convenient larger bound
+\eqref{finite-decay-terminal-properness}.  The measure is exactly
+the product root measure and compact Haar measure from the
+established fibre decomposition; its fixed positive constants
+remain in $C_a$.  No change of orbit or stabilizer measure occurs.
+
+\paragraph{The actual terminal differential class.}
+For completeness, the original \texttt{InDDPlus} coefficient is
+a finite sum of terms
+\[
+       P(g)\,D_R(g)^{-a}\overline{D_R(g)}^{-b}G(g)^{-c}
+                    \prod_\nu R_{v_\nu}E_\nu(g),
+\]
+where $\deg P\le\kappa$ and the sum of the derivative lengths
+in the fibre factors plus the derivative order applied to the
+coefficient is at most $o$.  The prescribed \texttt{FibBound}
+gives
+\[
+        \|R_vE_\nu(g)\|\le C_{v,\epsilon_0}M(g)^{3R|v|}
+                         \qquad(G(g)\ge\epsilon_0).
+\]
+Only $D_R$ and $G$ occur in the denominator, since its set of
+internal minors is empty.  They are bounded away from zero on
+this domain: $|D_R|^2\ge G\ge\epsilon_0$.  Including the Gram
+cutoff derivatives, we obtain
+\begin{equation}\label{finite-decay-top-pointwise}
+ \|\Theta_{w,e}(\chi(G/\epsilon)h)(g)\|
+       \le C\|h\|_{A',o}M(g)^{-A'+\kappa+5Ro}.
+\end{equation}
+This uses precisely the fibre-derivative allowance in the original
+class, rather than treating its differentiated fibre factors as
+bounded.
+
+Combine \eqref{finite-decay-top-pointwise} with
+\eqref{finite-decay-terminal-properness}.  The original terminal
+orbital integral is absolutely convergent and continuous in the
+indicated input norm whenever
+\[
+ A'\ge\kappa+5Ro+64R^2(2d^2+1).
+\]
+To identify this integral with the original definition for a
+noncompact coefficient, use the normalized quotient cut in the
+established root-coordinate construction: choose a fixed
+integral-one compact bump in the discarded stabilizer roots.
+This cut depends on the head and the measures, not on the
+coefficient.  The new absolute quotient bound and Tonelli's
+theorem show that the cut times the full orbital integrand is
+integrable.  Hence the existence branch in the original
+$\operatorname{orbJ}$ definition applies, and disintegration gives
+exactly this quotient integral with its original normalization.
+This extends the compact fibre identity directly; no prior limit
+identity is being used.
+By \eqref{finite-decay-top-budget}, this right side plus one is
+at most $200(1+|C_b|)^2R^4X$.  Thus our choice of $C_c$ gives
+the required budget with $A'=A-1$.  Applying the estimate to
+$h_n=(c_n-1)f$ proves convergence of each actual terminal vector
+$V_{\Theta_{w,e}F_n}(a)$ to $V_{\Theta_{w,e}F}(a)$.
+Linearity follows on $G>0$ from the differential description;
+the orbital integral stays entirely in that domain.
+
+For a nonempty word, the original terminal kernel is a finite sum
+of Hilbert--Schmidt pairings of these vectors after the prescribed
+type projections, with the original factors $dH$.  For the empty
+word it is the direct Hilbert--Schmidt pairing of $V_F(a)$ and
+$V_F(b)$.  The factors are fixed for the heads under consideration,
+so the vector convergence proves both kernel limits.  Any subsequent
+head weights and word normalization likewise remain unchanged.
+Heads of the
+wrong size, invalid block heads, and heads with nonpositive Gram
+have zero terminal vector by definition.  Invalid lower heads
+likewise have zero defining coefficient, and levels $i>r+1$ have
+zero original kernel.  This covers every head and level
+in the universal quantifier of \eqref{finite-decay-kernel-limit}.
+In rank zero the lower quotient has no root variables and the
+terminal argument reduces to the original compact quotient; all
+the estimates above remain valid.
+\end{proof}
+
+The new result removes the finite-decay compact-exhaustion hypothesis
+from the local kernel assembly.  It does not construct the arithmetic
+top lift or identify a global rational-return sum with the Gram
+operator of an integral theta map.  Those retain their full arithmetic
+parameters and remain separate obligations.

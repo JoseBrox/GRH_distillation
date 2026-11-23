@@ -374,3 +374,12 @@ ranks and the same ultrafilter throughout. Free generator lifts avoid an
 unavailable homomorphic lift; full polynomial laws avoid division by n!.
 Exact coefficient, exponent and dimension checks supplement the human
 proof. The starting stable prime remains a hypothesis.
+
+The [finite-decay certificate](../certificates/global-norm-frontier-finite-decay.json)
+and [independent review](../certificates/global-norm-frontier-finite-decay-review.json)
+authenticate fifteen bounded source interfaces, including the literal
+all-head `FormLimit` and finite-derivative allowance in `InDDPlus`.
+The original normalized quotient cut proves noncompact orbital existence
+before any limit identity is used. Exact coordinate diagnostics and eight
+nonnegative-coefficient polynomial certificates check the all-parameter
+exponent budgets. The original top-lift supplier remains a hypothesis.

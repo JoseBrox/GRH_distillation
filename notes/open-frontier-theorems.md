@@ -233,7 +233,11 @@ Jacquet transform, with every sign, shift and two-head normalizer retained.
 The original compact block-growth estimate is now proved by the actual
 Banach-valued matrix germ, an invariant mean retaining the residual Gram
 term, and a pointwise Fejer argument on the exact sampling lattice. The
-next local targets are finite-decay extension and actual controlled top lifts.
+full original `FormLimit` now extends these kernels through the prescribed
+compact exhaustion at every head, with one fixed finite decay exponent
+and a threshold depending only on the original top-lift constant.
+The next local targets are actual controlled top lifts and the terminal
+degree identity.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 

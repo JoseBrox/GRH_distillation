@@ -196,7 +196,13 @@ its lower degree after Jacquet transform, preserving both head normalizers.
 The [actual compact block-growth theorem](global-norm-frontier-block-growth.md)
 now supplies every original lattice sum with its covolume/pi factor,
 old-word weights, positive residual Gram term and full complex limsup.
-The finite-decay extension and controlled-top-lift steps remain. The global application must retain every
+The [finite-decay theorem](global-norm-frontier-finite-decay.md) now supplies
+the original `FormLimit`: the exact cutoff converges at every head, under
+one fixed decay exponent and a threshold depending only on the original
+top-lift constant. Complete-block inverse coordinates avoid internal-minor
+denominators; the terminal positive-complement projection supplies the
+required polynomial properness. Controlled top lifts and the terminal
+degree identity remain. The global application must retain every
 rational return, all source/target cuts and all arithmetic normalizers.
 An ambient projector estimate or local Gram identity is not the required
 global period-Gram estimate. A strict source deficit must supply any

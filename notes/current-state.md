@@ -125,8 +125,11 @@ with its exact degree reduction after Jacquet transform. The [actual compact
 block-growth theorem](global-norm-frontier-block-growth.md) now connects the
 normalized matrix germs to every original lattice sum, preserving all word
 factors, the positive residual Gram term and the full complex limsup.
-Extension to the prescribed decaying functions, controlled top lifts and
-the global rational-return/period-Gram estimate remain separate.
+The [finite-decay theorem](global-norm-frontier-finite-decay.md) now proves
+the entire original compact-exhaustion contract at every head, with one
+finite decay exponent for all derivative orders and the original rank and
+word-length threshold. Controlled top lifts, the terminal degree identity
+and the global rational-return/period-Gram estimate remain separate.
 
 These are closed supplier obligations within larger nodes. Whole-node
 statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.
