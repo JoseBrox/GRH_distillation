@@ -1,0 +1,80 @@
+{
+  "classification": "closed two-point far-integral supplier under existing lattice, local decay and arithmetic size hypotheses",
+  "proof_files": [
+    {
+      "path": "paper/shared/global-gram-continuation-two-point-far.tex",
+      "sha256": "c5d9124143d649d2e478debaaf46546e5005079278ca5df98189050f7a9d3b89"
+    },
+    {
+      "path": "notes/global-gram-continuation-two-point-far.md",
+      "sha256": "506b0f737b704f365386c19ff5a02add8f5e46b63b6738d79dfd433eed216cbd"
+    },
+    {
+      "path": "scripts/global-gram-continuation-two-point-check.py",
+      "sha256": "72ddc81675f3a008cc8a63eec6e2e0db16ca17160f6bde76cd7a073dae5f7216"
+    }
+  ],
+  "established_dependencies": [
+    {
+      "path": "paper/sections/recovered/73-amb-section.tex",
+      "sha256": "10b5c1d7ebab8bebd28ba0c8a780ccc3afc66567db8badb8ea0e9d2cc147fd0b",
+      "used_statements": [
+        "amb-shells",
+        "amb-shell-hypotheses",
+        "amb-shell-bound"
+      ]
+    },
+    {
+      "path": "paper/sections/recovered/74-ak-section.tex",
+      "sha256": "a22e447ba31d7885dac3d4f07b34fe99d6324a9be915041c5f66325d8eb40ca9",
+      "used_statements": [
+        "ak-count",
+        "AK7",
+        "AK8",
+        "AK10"
+      ]
+    },
+    {
+      "path": "paper/shared/global-gram-continuation-minimum.tex",
+      "sha256": "1fd429ab88ae4c98f1d0f80f46c41cd49d3219f33553cf63ba57aa5e627c800b",
+      "used_statements": [
+        "global-gram-actual-minimum"
+      ]
+    },
+    {
+      "path": "paper/shared/global-gram-continuation-quantitative-seed.tex",
+      "sha256": "cf05c9456bc4469b7a07a1a7fb33cd3940b9140feb5cd38e64df6da28cecd598",
+      "used_statements": [
+        "global-gram-quantitative-global-L1"
+      ]
+    },
+    {
+      "path": "paper/shared/global-gram-continuation-haar-budget.tex",
+      "sha256": "151e63b100c1e8427c265f059efbe7d86dfda07eea3dca21c2309fba61491974",
+      "used_statements": [
+        "global-gram-haar-normalized-budget"
+      ]
+    },
+    {
+      "path": "paper/shared/global-gram-continuation-far-absorption.tex",
+      "sha256": "d1114b72e2d68014b26ad635b14ba643333a1557138494ac2095a538df3b5bd1",
+      "used_statements": [
+        "global-gram-far-absorption"
+      ]
+    }
+  ],
+  "exact_checks": {
+    "two_point_constant": "Cxy=sqrt(Cu*Cu') after using each actual cell's minimum",
+    "each_quotient_norm_exponent": "2*n^2; bounded by existing 4*n^2 moment",
+    "positive_logarithmic_cost": "7*CT + 8*Cg + 35*U + 493",
+    "original_fixed_threshold": "144000000000000*CT + 256000000000000*Cg + 560000000000000*U + 8432000000000000",
+    "remaining_logarithmic_margin": "-2*CT - 8*Cg - 34",
+    "shell_hypothesis_transfer": "32*kappa=64*n^2; no changed cutoff"
+  },
+  "remaining": [
+    "final Gram identification",
+    "finite column ranks",
+    "near-return phases and positive trace estimate"
+  ],
+  "scope": "Exact two-point coefficient/exponent accounting and established proof dependencies; no Lean build, no whole-node completion."
+}

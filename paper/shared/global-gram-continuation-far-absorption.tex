@@ -1,0 +1,205 @@
+\subsection{The far-return bound at the original cutoff}
+\label{global-gram-far-absorption-section}
+
+The explicit period normalization permits the field degree, the word
+norm and the highest weights to grow together.  We now prove that their
+entire contribution to the far-return estimate is absorbed by the
+original gap.  The cutoff is the one used in the source's separation
+of near and far rational returns; it is not enlarged for this argument.
+
+Write $n=2r+k+1$, $m=2r+2$, $f=[F:\mathbb Q]$, and
+\[
+ d=|\operatorname{disc}(F)|^{1/f}
+   =|\operatorname{disc}(E)|^{1/(2f)},\qquad
+ b=e^L,\qquad g=g_1g_2,\qquad c=g/(2\pi).
+\]
+Here $E/F$ is the original CM extension, unramified at finite places.
+The symbols $r$ and $n$ denote respectively the isotropic flag length
+and the full Hermitian dimension.  In the source these are
+\texttt{D.R.rS} and \texttt{D.R.r}.  For each original word $u$,
+retain its positive integer $T_u$, its compact parameter $u_{v,i}$,
+and the Harish--Chandra parameter $\lambda_{v,a}$.  Put
+\[
+ B_v=10^6n^7+1+\max_a|\lambda_{v,a}|+\max_i|u_{v,i}|,
+ \qquad H_v=100n^2B_v.
+\]
+These are exactly the parameters of
+Theorem~\ref{global-gram-haar-normalized-budget}.
+
+\begin{theorem}[Absorption for the actual weighted period integral]
+\label{global-gram-far-absorption}
+Retain the actual seed, representative measure, finite idempotent and
+period normalizer of Theorem~\ref{global-gram-haar-normalized-budget}.
+Assume $n\geq1801$, $1\leq q\leq n$, $L>1$, and
+$\log f\leq\sqrt r$.  For fixed $C_g,C_u,C_T\geq0$ assume
+\[
+ \log d\leq L/C_\ell,\quad g\leq b^{2C_g},\quad
+ 1\leq T_u\leq b^{C_Tm},\quad
+ |\lambda_{v,a}|\leq b^2,\quad
+ -b^2<u_{v,i}\leq b^{C_u}
+\]
+for every word, embedding and indicated coordinate.  Assume that
+every noncompact parameter gap is at least
+$h=C_\ell n^{19}f^5L$.  These are the precise size consequences
+of the original arithmetic construction used below; their derivation
+from its standing conditions is included in the proof.  Define
+\[
+ U=\max\{2,C_u\},\qquad
+ Z=526+16C_g+9C_T+35U.
+\]
+It suffices that the original gap constant satisfy
+\begin{equation}\label{global-gram-far-Cl}
+ C_\ell\geq8\cdot10^{12}(Z+1).
+\end{equation}
+At the literal source cutoff
+\begin{equation}\label{global-gram-far-literal-cutoff}
+ \varepsilon=\frac1{10^6n^8f^2},\qquad
+ h=C_\ell n^{19}f^5L,
+\end{equation}
+all the numerical hypotheses of the cited far-return estimate
+hold.  Under that cited estimate, let $I_u$ be the integral of its
+normalized far sum against the norm of the original transported seed,
+using the original transported representative measure.  Then
+\begin{equation}\label{global-gram-far-absorbed}
+ \mathcal M_\phi c_{0,u}I_u^2
+ \leq \frac{\exp(-n^3fL)}{\dim_{\mathbb C}V_{\pi_u}},
+ \qquad \mathcal M_\phi=(\prod_vd_v)e(1).
+\end{equation}
+The bound holds simultaneously for every original word and every
+finite column.  No field degree or geometric dimension is fixed.
+\end{theorem}
+
+\begin{proof}
+We first extract the exact bounds furnished by the original size
+conditions.  They give $L=\log b>1$, $m\leq n$, $1\leq d$,
+\begin{equation}\label{global-gram-far-size-extraction}
+ \log d\leq L/C_\ell,\quad
+ 1\leq g\leq b^{2C_g},\quad
+ 1\leq T_u\leq b^{C_Tm},\quad
+ |\lambda_{v,a}|\leq b^2.
+\end{equation}
+The successive noncompact gaps are at least $h$.  To see the last
+assertion in the original parameterization, consecutive positive
+$b_j$ differ by at least $h$, and $b_m\leq2b_1$ gives
+$b_1\geq b_m-b_1\geq h$ since $m\geq2$.  Cloud coordinates
+are nonnegative; opposite-sign gaps are consequently at least $h$
+as well.  The bound for $\lambda$ follows from $b_j\leq b^2$
+and the original cloud bound $v_l\leq4k\Delta$, since
+$C_\ell mk\Delta\leq b_1$ and $C_\ell m\geq4$.
+These are the same inequalities used in the original
+verification of the counting hypotheses, with no change of parameters.
+\cite{global-gram-far-source}
+
+The compact coordinates satisfy
+$u_1>v_1>u_2>\cdots>v_{k-1}>u_k>-b_1$.
+The original top-coordinate bound is $u_1\leq b^{C_u}$.
+Thus $\max_i|u_{v,i}|\leq b^U$; no bound for a different compact
+representation is being used.  As a noncompact pair exists,
+$h\leq2b^2$.  In particular $n^{19}\leq b^2$ and $n\leq b$,
+because $C_\ell f^5L\geq2$.  Since $b\geq n\geq1801$,
+$10^6+3\leq b^2$ and $100\leq b$.  Therefore
+\[
+ B_v\leq(10^6+3)b^{\max\{7,U\}}
+       \leq b^{\max\{7,U\}+2},\qquad
+ H_v\leq b^{\max\{7,U\}+5}\leq b^{U+13}.
+\]
+Set $G=2C_g$, $A_T=C_T$, and $A_H=U+13$.  The bounds just proved
+imply
+\begin{equation}\label{global-gram-far-log-bounds}
+ \log n\leq L,\quad \log d\leq L,\quad
+ \log g\leq GL,\quad \log T_u\leq A_TnL,\quad
+ \log H_v\leq A_HL.
+\end{equation}
+
+We retain the arithmetic minimum in the transported coordinates.
+The preceding quantitative theorem gives
+\[
+ \theta=\min\bigl(1,T_u^{-1/2},c^{r-a},
+                   d^{-(r-a)}c^{-(r-a)}:0\leq a<r\bigr),
+ \qquad \tau=\min\{1/2,\theta/(\sqrt n\,d^{1/2})\}.
+\]
+For $r=0$ the indexed terms are absent.  In every case
+\[
+ \log\tau^{-1}
+ \leq\log2+\tfrac12\log n+\tfrac12\log d+
+       \tfrac12\log T_u+r(\log d+|\log c|).
+\]
+Since $g\geq1$ and $2\pi<e^3$, we have
+$|\log c|\leq\log g+3$.  Using $r\leq n$ and $L>1$ yields
+\begin{equation}\label{global-gram-far-tau-log}
+ \log\tau^{-1}\leq A nL,
+ \qquad A=G+6+A_T/2.
+\end{equation}
+This step keeps the root discriminant and the character scale; it
+does not assume that the arithmetic lattices have a uniform minimum.
+
+The precise counting constant is
+\[
+ C^{\rm st}_u=2f3^f
+       \left(\frac{3\sqrt n}{\tau^2}\right)^{2n^2f}.
+\]
+The standing hypotheses give $\log f\leq\sqrt r\leq nL$.
+Thus $\log(2f)\leq2nL$, $f\log3\leq2fL$, and
+\eqref{global-gram-far-tau-log} gives
+\[
+ \log C^{\rm st}_u\leq(9+4A)n^3fL.
+\]
+On the other hand, \eqref{global-gram-far-log-bounds} gives
+\[
+ \log\prod_{v\mid\infty}(2T_uH_v^{7n})^{5n^2}
+ \leq 5(1+A_T+7A_H)n^3fL.
+\]
+There are exactly $f$ factors.  Combining the last two inequalities,
+\begin{equation}\label{global-gram-far-total-positive}
+ 2\log C^{\rm st}_u+
+ \log\prod_v(2T_uH_v^{7n})^{5n^2}
+ \leq(71+8G+9A_T+35A_H)n^3fL=Zn^3fL.
+\end{equation}
+
+For completeness the cutoff satisfies every required numerical
+condition.  We have $0<\varepsilon\leq(2q)^{-1/2}$, since
+$q\leq n$ and $2q\leq10^{12}n^{16}f^4$, and
+$2n^2\varepsilon\leq2\cdot10^{-6}<\log2$.
+Furthermore
+\[
+ h\varepsilon=C_\ell10^{-6}n^{11}f^3L\geq64n^2,
+ \qquad h\varepsilon^2/16
+       =\frac{C_\ell}{16\cdot10^{12}}n^3fL\geq1.
+\]
+Finally $120nq^{3/2}\leq120n^{5/2}\leq h$.
+The actual discrete-series and signature identifications are those
+of the retained arithmetic setting.
+
+Apply the normalized bound already proved:
+\[
+ \mathcal M_\phi c_{0,u}I_u^2
+ \leq\frac1{\dim V_{\pi_u}}
+    (C^{\rm st}_u)^2e^{-h\varepsilon^2/8}
+               \prod_v(2T_uH_v^{7n})^{5n^2}.
+\]
+Its logarithmic exponent is at most
+$(Z-C_\ell/(8\cdot10^{12}))n^3fL\leq-n^3fL$.
+This proves \eqref{global-gram-far-absorbed}.
+\end{proof}
+
+\paragraph{Order of the choices and the remaining estimate.}
+The constants $C_g,C_u,C_T$ are fixed before the original final
+threshold for $C_\ell$ is chosen.  Increasing that threshold is
+permitted by the source's quantified family conditions: combine it
+with the other fixed thresholds by taking their maximum, then choose
+the family.  In particular the standing condition $C_\ell\leq m$
+is retained; $C_\ell$ cannot be increased after fixing a datum of
+dimension $m$.  The theorem is a uniform implication for every
+original datum satisfying these size conditions, and does not
+construct the entire arithmetic family.
+\cite{global-gram-far-source}
+
+No new tensor operation, weight shift or change of the original
+arithmetic word occurs in this argument.  The already proved seed
+moment is used at its existing order.  The original far-return
+estimate remains a cited input.  Near rational returns,
+their original phases, compatibility with the final restricted
+theta maps and the positive trace comparison remain to be supplied.
+In particular \eqref{global-gram-far-absorbed} is an estimate for the
+actual weighted period integral, not a replacement by an ambient
+Haar average and not yet a theorem about the final frame penalty.

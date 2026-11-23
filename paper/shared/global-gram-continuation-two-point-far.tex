@@ -1,0 +1,177 @@
+\subsection{Far returns between two actual period cells}
+\label{global-gram-two-point-far-section}
+
+A diagonal kernel estimate is not, by itself, a bound for the
+off-diagonal terms in a period pairing.  The required two-point
+estimate follows directly from the same lattice separation and
+local matrix-coefficient decay.  We give that argument before
+integrating over the actual period measures.
+
+Let $G$ be the original unitary group and let
+$\phi(g_\infty,g_f)=p(g_\infty)e(g_f)$ be its given projector
+test function.  Write
+$\mathcal M_\phi=(\prod_vd_v)e(1)>0$.
+For $x,y\in G(\mathbb A_F)$ and $\gamma\in G(F)$, set
+\[
+ d_v(\gamma;x,y)=
+ \left(\sum_{i=1}^n(\log s_i(x_v^{-1}\gamma y_v))^2\right)^{1/2},
+\]
+where $s_i$ are the singular values in the original positive metric.
+Let $\Gamma_{\rm far}(x,y)$ consist of those $\gamma$ for which
+$\phi(x^{-1}\gamma y)\ne0$ and $d_v(\gamma;x,y)>\varepsilon$
+at at least one real place.  Define the nonnegative absolute sum
+\[
+ K^{\rm abs}_{\rm far}(x,y)
+  =\sum_{\gamma\in\Gamma_{\rm far}(x,y)}
+                         |\phi(x^{-1}\gamma y)|.
+\]
+Every rational return, finite column and finite phase is included
+before taking this absolute value.
+
+\begin{lemma}[Two-point far-return estimate]
+\label{global-gram-two-point-far}
+Retain the original local matrix-coefficient estimate, the given
+finite idempotent, and their lattice support.  Let $n\geq3$ and
+$1\leq q\leq n/2$, where $(n-q,q)$ is the original real
+signature.  Suppose
+\[
+ 0<\varepsilon\leq(2q)^{-1/2},\quad
+ 2n^2\varepsilon\leq\log2,\quad
+ 64n^2\leq h\varepsilon,\quad
+ h\varepsilon^2/16\geq1.
+\]
+Then the far sum converges absolutely and
+\begin{equation}\label{global-gram-two-point-far-bound}
+ K^{\rm abs}_{\rm far}(x,y)
+ \leq\mathcal M_\phi\,2f3^f
+ \left(\frac{3\sqrt n}{\tau(x)\tau(y)}\right)^{2n^2f}
+                           e^{-h\varepsilon^2/16},
+\end{equation}
+where $\tau(x)=\min\{1/2,\operatorname{least}(x)\}$ is the
+actual lattice minimum.  The points $x$ and $y$ need not be equal,
+or lie in the same period cell.
+\end{lemma}
+
+\begin{proof}
+The two-point lattice estimate already proved in
+the automorphic projection argument~\cite{global-gram-two-point-inputs} is
+\[
+ \#\{\gamma:\phi(x^{-1}\gamma y)\ne0,
+                   \ d_v(\gamma;x,y)\leq t_v\ (\forall v)\}
+ \leq A_{x,y}\exp(2n^2\sum_vt_v),\qquad
+ A_{x,y}=\left(\frac{3\sqrt n}{\tau(x)\tau(y)}\right)^{2n^2f}.
+\]
+Its arithmetic separation concerns maps from the lattice at $y$
+to the lattice at $x$; it does not identify those two lattices.
+The actual finite idempotent has $|e(g_f)|\leq e(1)$, and its
+support is contained in the original full lattice stabilizer.
+The local lowest-compact-type estimate gives
+\[
+ \frac{|\phi(x^{-1}\gamma y)|}{\mathcal M_\phi}
+ \leq\prod_v\exp\left[-\frac h8
+                \min\{d_v^2,d_v/\sqrt{2q}\}\right].
+\]
+Apply the already proved shell estimate
+from the same argument~\cite{global-gram-two-point-inputs} with $A=A_{x,y}$, $\kappa=2n^2$ and
+$c=\sqrt{2q}$.  Every one of its hypotheses is displayed above.
+It proves both absolute convergence and
+\eqref{global-gram-two-point-far-bound}.
+This is a direct application of the proved lattice and local
+decay arguments; no inference from the diagonal bound is used.
+\end{proof}
+
+For an original word $u$ and finite column $\rho$, write
+\[
+ x_{u,\rho}(g)=(t_ug,a_{u,\rho}),
+\]
+where $t_u$ is the exact character transport of the quantitative
+seed theorem, $a_{u,\rho}$ is the original finite representative,
+and $g\in G_\infty$.  Let $d\widetilde\nu_u$ be the transported
+original representative measure, and let $\widetilde W_u$ be the
+transported unit seed.  Define the actual nonnegative double integral
+\[
+ \mathcal J_{u\rho,u'\rho'}=
+ \int\!\!\int
+ K^{\rm abs}_{\rm far}(x_{u,\rho}(g),x_{u',\rho'}(g'))
+ \|\widetilde W_u(g)\|\|\widetilde W_{u'}(g')\|
+               \,d\widetilde\nu_u(g)d\widetilde\nu_{u'}(g').
+\]
+The kernel factor need not descend to either Bessel quotient, so
+both representative measures remain in this definition.
+
+\begin{theorem}[An exponentially small far contribution to period pairings]
+\label{global-gram-two-point-period-bound}
+Assume the hypotheses and notation of
+Theorem~\ref{global-gram-far-absorption}, and strengthen its fixed
+threshold to
+\[
+ C_\ell\geq16\cdot10^{12}(Z+1).
+\]
+The actual signature index is $q=r+1$; thus $2q\leq n$
+because $n=2r+k+1$ and $k\geq1$.
+At the same literal cutoff $\varepsilon=10^{-6}n^{-8}f^{-2}$,
+every original pair of words and finite columns satisfies
+\begin{equation}\label{global-gram-two-point-period-estimate}
+ \sqrt{c_{0,u}c_{0,u'}}\,\mathcal J_{u\rho,u'\rho'}
+ \leq
+ \frac{e^{-n^3fL}}{
+          \sqrt{\dim V_{\pi_u}\,\dim V_{\pi_{u'}}}}.
+\end{equation}
+In particular the double integral is finite.  The same estimate
+holds with fixed right translates by elements of the original
+finite level subgroup.
+\end{theorem}
+
+\begin{proof}
+Let $\tau_u$ and $C^{\rm st}_u$ be the exact quantities in the
+preceding absorption proof.  The arithmetic minimum on the
+transported actual cell gives
+$\tau(x_{u,\rho}(g))\geq\tau_u\nu_u(g)^{-1/f}$.
+Consequently \eqref{global-gram-two-point-far-bound} is at most
+\[
+ \mathcal M_\phi\sqrt{C^{\rm st}_uC^{\rm st}_{u'}}
+ e^{-h\varepsilon^2/16}\,
+          \nu_u(g)^{2n^2}\nu_{u'}(g')^{2n^2}.
+\]
+The powers are exactly $2n^2$, since the field degree in the
+counting exponent cancels the denominator in the minimum bound.
+Since $\nu_u\geq1$, the existing moments of order $4n^2$ bound
+both factors after integration.  Their majorants descend to the
+appropriate quotients.  The original Weil formulas and Tonelli's
+theorem therefore give
+\[
+ \mathcal J_{u\rho,u'\rho'}\leq
+ \mathcal M_\phi\sqrt{C^{\rm st}_uC^{\rm st}_{u'}}
+ e^{-h\varepsilon^2/16}\,
+             \mathcal W^{\rm st}_u\mathcal W^{\rm st}_{u'}.
+\]
+The given finite representatives preserve the lattices used by the
+minimum theorem, which proves uniformity in the columns and finite
+right translates.
+
+The normalized moment theorem, applied separately and then multiplied,
+gives
+\[
+ \mathcal M_\phi\sqrt{c_{0,u}c_{0,u'}}
+ \mathcal W^{\rm st}_u\mathcal W^{\rm st}_{u'}
+ \leq\frac{\exp(Sn^3fL)}{
+                  \sqrt{\dim V_{\pi_u}\dim V_{\pi_{u'}}}},
+ \quad S=5(1+C_T+7(U+13)).
+\]
+The absorption proof gives
+$\log C^{\rm st}_u\leq Cn^3fL$ for every $u$, where
+$C=9+4(2C_g+6+C_T/2)>0$, and $Z=2C+S$.
+Thus the exponent of the resulting bound is at most
+\[
+ \left(C+S-\frac{C_\ell}{16\cdot10^{12}}\right)n^3fL
+ \leq(C+S-Z-1)n^3fL\leq-n^3fL.
+\]
+This proves \eqref{global-gram-two-point-period-estimate}.
+\end{proof}
+
+The estimate controls the full far part of these two-point weighted
+kernel integrals with the actual measures and normalizers.  It does
+not identify those integrals with a prescribed final arithmetic Gram
+operator, and summing over the finite columns still requires their
+actual ranks.  The near part is not bounded by this theorem.  In
+particular, no positive-trace estimate follows by discarding it.

@@ -309,13 +309,13 @@ projector theorem](global-gram-continuation-projectors.md) supplies full
 that particular target cut has exactly zero loss. The
 [arithmetic minimum](global-gram-continuation-minimum.md) controls the
 source's higher-rank `leastSize` by the original quotient norm uniformly
-over the finite columns. The [quantitative seed theorem](global-gram-continuation-quantitative.md) now proves an explicit normalized moment of order `10n^2` and its weighted L1 consequence, without an unspecified compact-mass reciprocal. Exact transport of the original additive character removes uncontrolled frame heights. The [actual covolume theorem](global-gram-continuation-haar-budget.md) now proves literal CovolN and cancels every arbitrary Haar scale against the prescribed period normalizer. Under the cited `FarBound`, the resulting far-return integral has fully explicit field, T and weight dependence. It still requires absorption at the exact source cutoff and the final trace comparison.
+over the finite columns. The [quantitative seed theorem](global-gram-continuation-quantitative.md) now proves an explicit normalized moment of order `10n^2` and its weighted L1 consequence, without an unspecified compact-mass reciprocal. Exact transport of the original additive character removes uncontrolled frame heights. The [actual covolume theorem](global-gram-continuation-haar-budget.md) now proves literal CovolN and cancels every arbitrary Haar scale against the prescribed period normalizer. Under the cited `FarBound`, the resulting far-return integral has fully explicit field, T and weight dependence. The [literal-cutoff estimate](global-gram-continuation-far-absorption.md) now absorbs every explicit field, weight and word factor after one admissible fixed threshold. The [two-point proof](global-gram-continuation-two-point-far.md) obtains the far-return bound directly from the existing lattice separation and local decay, and proves an exponentially small double integral on the actual period cells. The final trace comparison remains.
 
 **First missing construction.** Identify this Poincare Gram operator with
 the final restricted arithmetic chain and its scalar class-kernel
 dictionary, retaining every further target projection. Prove the uniform
 positive trace deficit/excess bounds for these same maps. In particular
-the near-return contributions must be controlled as the field grows, and the explicit far bound must be absorbed at the literal source cutoff with the actual final normalizers.
+the near-return contributions and finite-column sums must be controlled as the field grows. The far-return weighted double integral is now exponentially small at the literal source cutoff and with the actual period normalizers; its identification with the final Gram operator is still required.
 
 ## W10: the exact integral geometric supplier
 
