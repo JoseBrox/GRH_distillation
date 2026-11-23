@@ -1,15 +1,15 @@
 # Results proved in the manuscript
 
-> **Current navigation (23 November 2026).** This is a cumulative results catalogue, **not** the live list of open obligations. Earlier “what remains” statements below describe their original checkpoints and may be superseded. For the live status, use the [current checkpoint](../notes/current-state.md), [precise frontier theorems](../notes/open-frontier-theorems.md), [RH manuscript](../paper/rh/main.pdf), [GRH manuscript](../paper/grh/main.pdf), and [shared-results index](../blueprint/shared/README.md). Neither main theorem is established by the reconstruction.
+> **Current navigation (23 November 2026).** This is a cumulative results catalogue, **not** the live list of open obligations. Earlier “what remains” statements below describe historical checkpoints and may be superseded. For the live status, use the [current checkpoint](../notes/current-state.md), [precise frontier theorems](../notes/open-frontier-theorems.md), [RH manuscript](../paper/rh/main.pdf), [GRH manuscript](../paper/grh/main.pdf), and [shared-results index](../blueprint/shared/README.md). Neither main theorem is established by the reconstruction.
 
 ## Current navigation: major supplier updates
 
 | Workstream | Later established suppliers | Still required |
 | --- | --- | --- |
-| W04: integral Selmer | [Type-II rigidity](../notes/selmer-support-continuation-type-two-rigidity.md), [relative equations](../notes/selmer-support-continuation-relative-presentation.md), and [actual local chart](../notes/selmer-support-continuation-local-chart.md) | Admissible trace-family bounds and a uniform moving-family integral Selmer product |
+| W04: integral Selmer | [Every RH nonresonant prime](../notes/rh-selmer-nonresonant.md), [dyadic Bernoulli units and residual vanishing at 3](../notes/rh-dyadic-bernoulli-unit.md), and the original local chart and Frobenius spectrum | Resonant integral comparisons and the complete weighted Selmer product |
 | W06: theta | [Integral chain](../notes/theta-spanning-continuation-chain.md) and [terminal period/unfolding](../notes/theta-period-continuation.md) | Intervening see-saw, row realization, and identification with the final restricted maps |
-| W08: global norms | [Degenerate local operator](../notes/global-gram-continuation-degenerate-operator.md), [integral minors](../notes/global-gram-continuation-integral-minors.md), and [primitive-subspace mean](../notes/primitive-sublattice-genus-mean.md) | Remaining arithmetic return sums, map compatibility, and positive trace estimates |
-| W10: geometric heights | [Thin-region lower bound](../notes/geometry-bergman-continuation-thin.md), [component section degree](../notes/geometry-section-continuation.md), and [corrected tangent fibres](../notes/geometry-hodge-specialization.md) | Regularized point-height identity, rank/mean-height losses, and numerical family records |
+| W08: global norms | [Integral frame transport](../notes/flag-lattice-transport.md), [stabilizer covolumes](../notes/unipotent-stabilizer-covolume.md), [weighted normal-form sum](../notes/weighted-flag-lattice-sum.md), and the embedded-isometry genus mean | Original term-class correspondence, reciprocal automorphism weights, remaining return sums and final traces |
+| W10: geometric heights | [Actual all-point height](../notes/geometry-point-height.md) and [finite-fibre nefness, original smoothing and signed test](../notes/geometry-height-assembly.md) | General flag positivity and Frobenius-linked corrections, weighted mean height, rank losses and numerical records |
 
 The results below are retained for their original statements, derivations and provenance. **Do not interpret an old “remaining” column as a current research instruction.**
 

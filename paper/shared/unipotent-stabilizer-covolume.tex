@@ -1,0 +1,291 @@
+\subsection{The middle unipotent stabilizer}
+\label{sec:unipotent-stabilizer-covolume}
+
+The weight of a flag class is a ratio of stabilizer covolumes.
+Its dependence on the large definite rank comes from one
+unipotent quotient.  We prove the precise estimate for that
+quotient.  The exponent of the integral lattice defect is
+the definite rank itself; no factor depending on the degree
+of the field is lost.
+
+\paragraph{The normal form and its lattices.}
+Let $E/F$ be a CM extension unramified at every finite place,
+and put $\mathcal O=\mathcal O_E$.  In this subsection the
+Hermitian form $h$ is linear in the first variable, as in the
+source's normal form.  Replacing $h(x,y)$ by $h(y,x)$ converts
+to the opposite convention without changing any lattice,
+index or covolume below.
+
+Let $0\leq j\leq r$.  Write
+\[
+ X=\langle e_0,\ldots,e_{r-1}\rangle_E,\qquad
+ X'=\langle e'_0,\ldots,e'_{r-1}\rangle_E
+\]
+for two totally isotropic spaces.  Suppose the pairing between
+their first $j$ vectors is nondegenerate, and that
+$e'_a=c e_a$ for $j\leq a<r$, where $c\bar c=1$.
+Put $X_j=\langle e_a:a<j\rangle_E$ and
+\[
+ I=X\cap X'=\langle e_j,\ldots,e_{r-1}\rangle_E.
+\]
+Let $z$ be perpendicular to $X+X'$, with $h(z,z)=-T\ne0$.
+Choose a totally isotropic dual space with basis
+$f_j,\ldots,f_{r-1}$ satisfying
+\[
+ h(e_b,f_a)=\delta_{ba}\quad(0\leq b<r),\qquad
+ h(e'_b,f_a)=0\quad(b<j),\qquad h(z,f_a)=0.
+\]
+Let $W$ be the orthogonal complement of all these vectors,
+and write $k=\dim_E W$.  Thus
+\[
+ V=\bigl(X_j+\langle e'_a:a<j\rangle_E\bigr)
+       \mathbin\perp(I+\langle f_a:a\geq j\rangle_E)
+       \mathbin\perp Ez\mathbin\perp W.
+ \tag{US1}
+\]
+Set $V_0=X+X'+Ez$.  Then $V_0^\perp=W+I$.
+The source's normal form has exactly these spaces and vectors.
+\cite{unipotent-stabilizer-source}
+
+Fix nonzero fractional ideals $A_0,\ldots,A_{r-1}$ invariant
+under conjugation.  In the original construction
+$A_a=\mathfrak d^{-(r-a)}$.  Let $\Lambda$ be an integral
+full $\mathcal O$-lattice.  Its prescribed flag condition is
+\[
+ \{t\in E:t e_a\in\Lambda+X_a\}=A_a\quad(a<r),
+ \qquad \{t\in E:t z\in\Lambda+X\}=\mathcal O,
+ \tag{US2}
+\]
+where $X_a=\langle e_b:b<a\rangle_E$.
+This is the condition on successive flag quotients used for
+the adapted normal form.  The original row flags satisfy the
+stronger literal weighted-lattice containment used in
+Section~\ref{shared-integral-leading-minors}; no substitution
+of those two interfaces is being made.
+
+Define full lattices
+\[
+ M=\Lambda\cap W,\qquad L=(\Lambda+X)\cap W,\qquad
+ J=(\Lambda+X)\cap(W+Ez),
+\]
+and the reference lattice
+\begin{align*}
+ P_0&=\sum_{a<r} A_a e_a+\sum_{a<j} A_a e'_a
+                      +\mathcal O z+\sum_{a=j}^{r-1}A_a^{-1}f_a,\\
+ \Lambda_{\mathrm{ref}}&=P_0+J.
+ \tag{US3}
+\end{align*}
+These are the source's definite intersection, reference
+module and reference lattice.  The redundant perpendicular
+conditions in its definitions disappear because
+$W+Ez\subset(X+X')^\perp$.  Equation (US2) gives
+$J\cap Ez=\mathcal O z$.  Consequently projection onto $W$
+in (US1) sends
+\[
+ \Lambda_{\mathrm{ref}}\cap(W+I)\quad\hbox{onto }L.
+ \tag{US4}
+\]
+Indeed the $z$-coordinate of the $P_0$ term lies in
+$\mathcal O z$, so any cancellation of that coordinate
+can be performed inside $J$.
+
+Put
+\[
+ b=[\Lambda\cap X:(\Lambda\cap X_j)+(\Lambda\cap I)],
+ \qquad d=[L:M].
+ \tag{US5}
+\]
+Both are positive integers.  All indices mean cardinalities
+of additive quotients, including the residue degrees.
+
+\paragraph{The group and the meaning of the weight.}
+Let $U$ be the group of unitary transformations fixing $V_0$
+pointwise and inducing the identity on $V_0^\perp/I$.
+Let $Z\subset U$ be the subgroup fixing $W$ pointwise.
+This is precisely the source's group $R_1$ and its subgroup
+$Z_I$.  Indeed its flag unipotent group consists of the
+unitary transformations acting identically on every
+successive quotient of $X_0\subset\cdots\subset X_r=X$
+and on $X^\perp/X$.  The two such flag groups are
+subgroups, so their intersection is already the subgroup
+generated in the definition of $R$.  An element of $R$
+fixing $V_0$ sends $w\in W$ to $w$ modulo both $X$ and
+$X'$, hence modulo $I$.  Conversely an element of $U$
+fixes all flag vectors and acts identically modulo $X$
+on $X^\perp=X+Ez+W$; the same argument applies to
+$X'$.  It therefore belongs to both original flag groups.
+This proves the asserted equality of groups.
+For a full lattice $B$ write
+$\Gamma_B=\{u\in U:uB=B\}$.  For commensurable subgroups
+$A,B$ define
+\[
+ \operatorname{ivol}(A,B)=
+            \frac{[A:A\cap B]}{[B:A\cap B]}.
+ \tag{US6}
+\]
+This definition is the source's inverse covolume ratio.  It
+introduces no choice of Haar measure.  The groups
+$(\Gamma_{\Lambda_{\mathrm{ref}}})Z$ and
+$(\Gamma_\Lambda)Z$ have the common normal subgroup $Z$;
+their ratio is computed in the additive quotient $U/Z$.
+
+\begin{theorem}[The middle stabilizer estimate]
+\label{thm:middle-unipotent-stabilizer}
+With the preceding data,
+\[
+ \operatorname{ivol}
+       (\Gamma_{\Lambda_{\mathrm{ref}}}Z,\Gamma_\Lambda Z)
+                         \leq b^k d^{\,r-j}.
+ \tag{US7}
+\]
+For $j=r$, both sides are $1$.  In the original split normal
+form, $d\leq xi$, where $x$ and $i$ are its two successive
+fixed-lattice indices.  Thus (US7) supplies the source's exact
+bound
+\[
+                         b^k(xi)^{r-j}.
+ \tag{US8}
+\]
+\end{theorem}
+
+\begin{proof}
+First, there is $w_0\in\mathcal O$ with $w_0+\bar w_0=1$.
+To see this, localize the trace ideal at a prime of
+$\mathcal O_F$.  In the split case the trace is addition.
+In the unramified quadratic case its reduction is the
+surjective trace of finite fields; Nakayama's lemma gives
+surjectivity over the local ring.  The trace ideal is
+therefore $\mathcal O_F$, which proves the assertion
+globally.  This includes primes above $2$.
+
+For $a\geq j$ define
+\[
+             \rho_a(u)=\operatorname{pr}_W(uf_a-f_a).
+\]
+Since $u$ fixes $V_0$, the displacement lies in $W+I$.
+The action on that space modulo $I$ is the identity, so
+$\rho=(\rho_a)_{a\geq j}$ is a homomorphism
+$U\to W^{r-j}$, with the additive group law on the target.
+Its kernel is $Z$.  For example, if every row is zero,
+$uf_a-f_a\in I$.  Pairing with $uw$ for $w\in W$, and
+using $uw-w\in I$, shows that every coordinate of
+$uw-w$ on the basis $e_j,\ldots,e_{r-1}$ is zero.
+The converse follows by the same pairing.
+
+The images of both lattice stabilizers under $\rho$ are
+full additive lattices.  An upper lattice bound follows by
+applying their elements to a fixed set of rational basis
+vectors with bounded denominators.  For the lower bound,
+the explicit transformations below, with the isotropic and
+definite vectors multiplied by sufficiently divisible
+integers, produce full lattices in every row.  Such multiples
+can be chosen in both $B$ and its Hermitian dual for any
+full lattice $B$.  The formulas and their inverses then
+preserve $B$.  This also proves the commensurability required
+in (US6).
+
+For $u\in\Gamma_{\Lambda_{\mathrm{ref}}}$ and
+$t\in A_a^{-1}$, the vector $tf_a$ lies in $P_0$.
+Hence $t(uf_a-f_a)$ lies in the left side of (US4).
+Projection to $W$ gives $t\rho_a(u)\in L$.  Invertibility
+of $A_a$ implies
+\[
+ \rho(\Gamma_{\Lambda_{\mathrm{ref}}})
+                         \subset\prod_{a=j}^{r-1}A_aL.
+ \tag{US9}
+\]
+No freeness assumption on $L$ or $A_a$ is used.
+
+For each $a\geq j$, let $C_a$ be the ideal of coefficients
+$h(f_a,x)$ of vectors $x\in\Lambda\cap I$ satisfying
+$h(f_b,x)=0$ for $b>a$.  Since conjugation preserves $A_a$,
+the leading coefficient condition (US2) gives $C_a\subset A_a$.
+The quotient of $\Lambda\cap X$ by $\Lambda\cap X_j$ is
+the projected lattice in $I$, with successive leading
+ideals $A_j,\ldots,A_{r-1}$.  The corresponding leading
+ideals of $\Lambda\cap I$ are the conjugates of $C_a$.
+The index formula for these filtrations gives
+\[
+                     \prod_{a=j}^{r-1}[A_a:C_a]=b.
+ \tag{US10}
+\]
+One may check this formula after localization, where it is
+the determinant of a triangular change of lattice basis;
+the finite local quotients multiply to the global index.
+
+Here is the required transformation inside the actual
+integral stabilizer.  For $x\in\Lambda\cap I$ and
+$v\in M$, set $u=-v$ and $q=-w_0h(u,u)$.  The map
+\[
+ E_{x,u,q}(y)=y+h(y,u)x-h(y,x)u+q h(y,x)x
+ \tag{US11}
+\]
+is unitary because $h(x,x)=h(x,u)=0$ and
+$q+\bar q=-h(u,u)$.  Expanding its Hermitian pairing
+verifies this identity directly.  Its inverse is
+$E_{x,-u,\bar q}$.  Integrality of $\Lambda$ implies
+that both formulas preserve $\Lambda$.
+They fix $V_0$ and act trivially on $W$ modulo $I$, so
+$E_{x,u,q}\in\Gamma_\Lambda$.  Its rows are
+\[
+                     \rho_a(E_{x,-v,q})=h(f_a,x)v.
+ \tag{US12}
+\]
+The signs in (US12) follow by projecting (US11) to $W$;
+all terms proportional to $x$ disappear.
+
+Order the rows from the largest index downwards.  Let $Q_a$
+be the projection to row $a$ of those elements of
+$\rho(\Gamma_\Lambda)$ whose rows with index greater than
+$a$ vanish.  Equation (US12), and addition in the quotient
+$U/Z$, give
+\[
+                              C_aM\subset Q_a.
+ \tag{US13}
+\]
+Use product Lebesgue measure in any fixed real coordinates
+on $W^{r-j}$.  Covolumes multiply along the row filtration.
+Writing $A=\rho(\Gamma_{\Lambda_{\mathrm{ref}}})$ and
+$B=\rho(\Gamma_\Lambda)$, (US9) and (US13) give
+\[
+ \frac{\operatorname{covol}B}{\operatorname{covol}A}
+ \leq\prod_{a=j}^{r-1}
+             \frac{\operatorname{covol}(C_aM)}
+                  {\operatorname{covol}(A_aL)}
+ =\prod_{a=j}^{r-1}[A_aL:C_aM].
+\]
+For any invertible ideals $C\subset A$ and full lattices
+$M\subset L$ of rank $k$,
+\[
+                       [AL:CM]=[A:C]^k[L:M].
+ \tag{US14}
+\]
+This follows locally by using a basis over the discrete
+valuation ring, and then multiplying the resulting finite
+quotients.  Equations (US10) and (US14) prove (US7), because
+the covolume ratio is precisely (US6) after quotienting by
+the common kernel $Z$.
+
+For the original split normal form,
+$\Lambda\cap(W+I)=M+(\Lambda\cap I)$.  The definite
+quotient lattice is $L$, and its fixed lattice $K$ satisfies
+$M\subset K\subset L$.  In the source notation
+$x=[L:K]$ and $i=[K:M]$ after projection modulo $I$.
+Thus $d=xi$; the weaker inequality $d\leq xi$ used by
+the source follows as well.  More explicitly, $K$ is the
+set of $w\in L\cap L'$ admitting lifts
+$\lambda-w\in X$ and $\lambda'-w\in X'$, with
+$\lambda,\lambda'\in\Lambda$ and
+$\lambda-\lambda'\in g\Lambda+(\Lambda\cap X)$;
+here $L'=(\Lambda+X')\cap W$.
+This is its original diagonal congruence condition.
+\end{proof}
+
+The bound proves the large-rank part of the original
+stabilizer estimate.  To finish the complete weighted
+flag-class sum, one must still construct the common
+unipotent transport placing the rank-$(2r+1)$ lattice
+between the specified ideal multiples of $P_0$, and
+verify the top and central stabilizer bounds on those
+same integral lattices.  Those obligations are not
+consequences of (US7).

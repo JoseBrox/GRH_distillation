@@ -1,0 +1,428 @@
+\subsection{Integral transport of the original flag lattices}
+\label{sec:flag-lattice-transport}
+
+We now construct the representative required by the weighted
+flag count.  The transformations are in the common unipotent
+group of the two flags.  The lattice, its congruence condition
+and its integral defects are retained throughout.
+
+Use the normal form, spaces and notation of
+Section~\ref{sec:unipotent-stabilizer-covolume}.  In addition,
+assume that $\Lambda$ is unimodular, that both flags have the
+prescribed leading ideals, and that their last vectors are
+$z$ and $cz$, with $c\bar c=1$ and $h(z,z)=-T$ for a
+positive integer $T$.  Write
+\[
+ A_a=\mathfrak d^{-(r-a)},\qquad
+ H_0=X_j+X'_j+Ez,\qquad \Pi=H_0\mathbin\perp
+                 (I+\langle f_a:a\geq j\rangle_E).
+\]
+Thus $V=\Pi\perp W$ and $\dim_E\Pi=2r+1$.
+Here $\mathfrak d$ is the extension of an ideal of
+$\mathcal O_F$, as in the original construction.
+Equivalently, in this everywhere finite-unramified extension,
+it is enough that $\mathfrak d$ be fixed by conjugation:
+equal exponents at the two primes above a split prime, and
+the single exponent at an inert prime, descend to $F$.
+
+The ordered pairing matrix
+$B=(h(e_a,e'_b))_{a,b<j}$ is a direct sum of signed scalar
+antidiagonal blocks on consecutive intervals.  A block on
+$[a,b)$ has entries
+\[
+       B_{uv}=t\epsilon_v\,\mathbf1_{u+v=a+b-1},
+                    \qquad \epsilon_v\in\{1,-1\},\ t\ne0.
+ \tag{FT1}
+\]
+The scalar antidiagonal blocks occupy the prescribed consecutive
+intervals, with column $v$ multiplied by its original sign
+$\epsilon_v$.
+The source's reference module is exactly
+\[
+ P_0=\sum_{a<r}A_ae_a+
+       \sum_{a<j}A_ae'_a+\mathcal O z+
+       \sum_{j\leq a<r}A_a^{-1}f_a.
+\]
+These are the original ordered pairing and reference module;
+the exact defining interfaces are recorded in
+\cite{flag-lattice-transport-source}.
+Let $\delta_l$ be its leading $l$-minor, set
+$a_l=\sum_{a<l}(r-a)$, and put
+\[
+ \mathfrak a_l=(\delta_l)\mathfrak d^{-2a_l},\quad
+ \Delta=N\mathfrak a_j,\quad
+ D_b=\prod_{\substack{1\leq l\leq j\\\delta_l\ne0}}
+                         N\mathfrak a_l,\quad N_T=T^f.
+\]
+The empty products are $1$.  In particular, when $j=0$,
+$\Delta=D_b=1$.
+
+\begin{lemma}[The ideal controlling the integral normal form]
+\label{lem:flag-reference-dual-ideal}
+Every nonzero $\mathfrak a_l$ above is integral.  The ideal
+\[
+ \mathfrak c=(T)\prod_{\substack{1\leq l\leq j\\\delta_l\ne0}}
+                             \mathfrak a_l\overline{\mathfrak a_l}
+ \tag{FT2}
+\]
+is nonzero, integral and fixed by conjugation, and
+\[
+ N\mathfrak c=(D_bN_T)^2,\qquad
+ \mathfrak cP_0\subset P_0^\#,
+ \qquad \mathfrak cP_0^\#\subset P_0.
+ \tag{FT3}
+\]
+The dual in (FT3) is taken inside $\Pi$.
+\end{lemma}
+
+\begin{proof}
+The successive quotients of $\Lambda\cap X$ are the
+specified ideals $A_a$.  Since fractional ideals over a
+Dedekind domain are projective, these quotients can be split
+successively.  Thus, for $a<j$, there are vectors
+$u_a=e_a+\sum_{b<a}q_{ba}e_b$ such that
+\[
+                  \Lambda\cap X_j=\bigoplus_{a<j}A_au_a.
+ \tag{FT4}
+\]
+The same assertion holds for the primed flag.  This does
+not assert that $A_ae_a$ itself lies in $\Lambda$.
+At a finite prime choose a generator $\varpi$ for the
+localization of $\mathfrak d$ in the real field.  The
+vectors $\varpi^{-(r-a)}u_a$ are a local lattice basis.
+Their leading Gram determinant against the primed basis is
+$\delta_l\varpi^{-2a_l}$, because both triangular changes
+have determinant $1$.  Its entries are integral.  This
+proves the integrality of $\mathfrak a_l$ at every prime,
+under the actual successive-quotient hypothesis.
+
+In these weighted coordinates a block in (FT1) is again
+scalar antidiagonal, since $u+v$ is constant on its support.
+If the block has length $b-a$, its scalar $\lambda$ satisfies
+\[
+ (b-a)v(\lambda)=
+       v(\delta_b\varpi^{-2a_b})-
+       v(\delta_a\varpi^{-2a_a}).
+\]
+Both endpoint valuations are nonnegative and at most
+$v(\mathfrak c)$.  Consequently
+$|v(\lambda)|\leq v(\mathfrak c)$.
+The same argument applies to the conjugate block.  Thus
+multiplication by $\mathfrak c$ makes both the weighted
+pairing matrix on $X_j+X'_j$ and its inverse integral.
+The pairing on the weighted $I,I^*$ summands is perfect.
+The final block is $-T$, whose inverse denominator is
+absorbed by $\mathfrak c\subset(T)$.  This proves (FT3).
+The norm identity follows directly from (FT2), including
+the rational degree factor $N(T)=T^{2f}=N_T^2$.
+\end{proof}
+
+Let $R$ denote the intersection of the two original flag
+unipotent groups, and let $R_s$ be its subgroup fixing $W$
+pointwise.  An admissible mod-$g$ flag congruence is also
+preserved by $R$: pulling a lattice lift back by an element
+of $R$ preserves its leading coefficient, and applying that
+element again preserves the difference in $g\Lambda$.
+This is the original congruence condition, not a choice of
+a new graph.
+
+\begin{theorem}[A nearby representative in the original orbit]
+\label{thm:flag-lattice-near-representative}
+There is $u\in R$ such that $\Lambda'=u\Lambda$ satisfies
+\[
+ \Lambda'\cap(W+I)=(\Lambda'\cap W)+(\Lambda'\cap I),
+ \qquad
+ \mathfrak c^{12r+50}P_0\subset\Lambda'\cap\Pi
+                  \subset\mathfrak c^{-(12r+50)}P_0.
+ \tag{FT5}
+\]
+The transformation giving the two inclusions can be chosen
+in $R_s$ once the first, splitting condition holds.  All
+successive flag ideals and the original mod-$g$ condition
+are preserved.
+\end{theorem}
+
+The first condition in (FT5) implies the source's
+\texttt{Split} condition.  Its theta lattice is
+$\bigl(\Lambda'\cap(W+I)\bigr)+I$; after this splitting
+it is $(\Lambda'\cap W)+I$, as required by that definition.
+
+\begin{proof}
+We give the construction, with the smaller exponent $6r+10$.
+
+\smallskip\noindent\emph{Splitting the definite quotient.}
+The module $\Lambda\cap I$ is saturated in
+$\Lambda\cap(W+I)$, and its quotient is projective.
+Choose a module splitting and take the $E$-span of its
+image.  This gives a complement $W'$ to $I$ in $W+I$,
+with the same integral quotient lattice.  Write
+$W'=\{w+a(w):w\in W\}$, where $a:W\to I$ is linear.
+A unitary transformation fixing $V_0$ can send this graph
+to $W$ and act identically on $(W+I)/I$.
+For completeness, if $A:W\to I$ is linear and $A^*:I^*\to W$
+is its adjoint for the perfect $I,I^*$ pairing, the matrix
+on $I\oplus W\oplus I^*$
+\[
+ n_A=
+ \begin{pmatrix}
+  1&A&-w_0AA^*\\
+  0&1&-A^*\\
+  0&0&1
+ \end{pmatrix},\qquad w_0+\bar w_0=1,
+ \tag{FT6}
+\]
+is unitary.  It is the identity on $X_j+X'_j+Ez$.
+Taking $A=-a$ proves the assertion.  The pairing identities
+in (FT6) use only $w_0+\bar w_0=1$.  Thus this transformation
+is in the original $R_1\subset R$, identified above.
+
+\smallskip\noindent\emph{Simultaneous control of the paired flags.}
+Choose the two splittings (FT4), with upper unitriangular
+basis matrices $U,U'$.  Their integral Gram matrix is
+\[
+                         G=U^tB\overline{U'}.
+\]
+There is a single common flag isometry making every
+diagonal block of $U^t$ the identity.  In fact let $S$ be
+block diagonal, with upper unitriangular blocks equal to
+the inverses of the corresponding blocks of $U$, and put
+\[
+                    S'=\overline{B^{-1}(S^t)^{-1}B}.
+ \tag{FT7}
+\]
+Conjugation by a signed antidiagonal block reverses the
+triangular order, so $S'$ is upper unitriangular on the
+same blocks.  The identity $S^tB\overline{S'}=B$ proves
+that these two actions extend to one unitary map, equal
+to the identity on $I+I^*+Ez+W$.  It lies in $R_s$.
+This verifies simultaneity even when $j=r$.
+
+After applying (FT7), write the unchanged matrix as
+$G=ABC$, where $A$ is lower unitriangular with identity
+diagonal blocks, and $C$ is upper unitriangular.  Work
+locally in the weighted coordinates used above, so $G$
+is integral.  For a column in a block ending at $l$,
+replace that row of the leading $l\times l$ minor of
+$G$ by any later row.  The determinant is, up to sign,
+$\det(B_l)$ times the corresponding entry of $A$.
+Indeed the relevant column of $A_l^{-1}$ is the standard
+basis column, since the last diagonal block of $A_l$ is
+the identity.  Thus $\mathfrak cA$ is integral.
+
+For a block beginning at $l'$, elimination of the preceding
+rows gives the Schur complement
+\[
+ G_{\mathrm{block},*}
+  -G_{\mathrm{block},<l'}G_{<l',<l'}^{-1}G_{<l',*}
+                       =B_{\mathrm{block}}C_{\mathrm{block},*}.
+ \tag{FT8}
+\]
+Its entries have denominators dividing the preceding
+leading determinant, which is absorbed by $\mathfrak c$.
+By (FT3), the inverse block costs at most one further
+power of $\mathfrak c$.  Hence $\mathfrak c^2C$ is
+integral.  This argument is also valid for the first
+block, with empty Schur complement.
+
+An upper or lower unitriangular $j\times j$ matrix has
+inverse $\sum_{a=0}^{j-1}(-N)^a$.  Therefore the two
+transformed flag lattices and their reference lattices
+contain each other after multiplication by
+$\mathfrak c^n$, where $n=2r+2$.  All statements are
+local ideal inclusions, so they hold globally without a
+choice of a global generator of $\mathfrak d$ or
+$\mathfrak c$.
+
+\smallskip\noindent\emph{The common isotropic part and the last vector.}
+Let $U_X=\Lambda\cap X$ and $U'_j=\Lambda\cap X'_j$,
+using the transformed lattice.  Projection along $X_j$
+maps $U_X$ to a lattice $\widetilde I\subset I$ with
+successive ideals $A_j,\ldots,A_{r-1}$.  The pairing
+between $\Lambda\cap X_j$ and $U'_j$ has determinant
+ideal $\mathfrak a_j$ or its conjugate.  Its adjugate
+therefore shows
+\[
+                      \mathfrak c\widetilde I
+                           \subset\Lambda\cap I
+                           \subset\widetilde I.
+ \tag{FT9}
+\]
+Explicitly, if $x+i\in U_X$ with $x\in X_j$, then
+integrality against $U'_j$ places $x$ in its paired
+dual; multiplication by $\mathfrak c$ puts $x$ in
+$\Lambda\cap X_j$.  Subtraction proves (FT9).
+
+Split the flag filtration of $\widetilde I$ projectively.
+An upper unitriangular map $D$ on $I$ carries it to
+$P_I=\sum_{a\geq j}A_ae_a$.  Extend $D$ to the dual
+space by the inverse adjoint and fix $H_0+W$.  This is
+again a single element of $R_s$ and does not alter the
+paired flag bounds.  Now
+\[
+                  \mathfrak cP_I\subset\Lambda\cap I\subset P_I.
+ \tag{FT10}
+\]
+The last leading coefficient gives a lift
+$z+x+i\in\Lambda$, with $x\in X_j$ and $i\in I$.
+The same adjugate argument gives
+$\mathfrak c(z+i)\subset\Lambda$.  The Eichler
+transformation (US11), with isotropic vector $i$ and
+$u=z/T$, sends $z+i$ to $z$, fixes $I$, and fixes
+$X_j+X'_j+W$.  It lies in $R_s$.  We have reached
+\[
+ \mathfrak c^n A_0\subset\Lambda,
+ \qquad A_0=P_0\cap V_0=P_I+(P_0\cap H_0),
+ \qquad \Lambda\cap I\subset P_I.
+ \tag{FT11}
+\]
+Every transformation used since the first step fixes $W$,
+so the splitting condition is preserved.
+
+\smallskip\noindent\emph{The dual isotropic directions.}
+Let $P_{I^*}=\sum_{a\geq j}A_a^{-1}f_a$.
+The split module
+$M+(\Lambda\cap I)=\Lambda\cap(W+I)$ is saturated
+in $\Lambda$.  For $y\in P_{I^*}$ prescribe on it the
+Hermitian functional equal to $h(y,\cdot)$ on
+$\Lambda\cap I$ and zero on $M$.
+It is integral by (FT10).  Projectivity and unimodularity
+extend it to pairing with an element $\Phi y\in\Lambda$.
+The extension can be chosen $\mathcal O$-linearly in $y$,
+since $P_{I^*}$ is projective.  Extend it to an $E$-linear
+map.  Its values are perpendicular to $W$, and
+\[
+       \Phi y=y+a(y)+b(y),\qquad
+       a(y)\in H_0,\quad b(y)\in I,
+       \qquad\Phi(P_{I^*})\subset\Lambda\cap\Pi.
+ \tag{FT12}
+\]
+
+Write $P_H=P_0\cap H_0$.  Pairing (FT12) with
+$\mathfrak c^nP_H\subset\Lambda$ gives
+$a(P_{I^*})\subset\mathfrak c^{-(n+1)}P_H$ by (FT3).
+Pairing two values of $\Phi$ then shows
+\[
+        (b+b^*)(P_{I^*})\subset\mathfrak c^{-(2n+3)}P_I.
+ \tag{FT13}
+\]
+Here $b^*$ is the adjoint for the perfect $I,I^*$ pairing.
+Indeed the Hermitian form of $b+b^*$ is
+$h(\Phi y,\Phi y')-h(a(y),a(y'))$; the first term is
+integral, and the second has denominator at most
+$\mathfrak c^{2n+3}$, because
+$h(P_H,P_H)\subset\mathfrak c^{-1}$.
+
+The map $K=b-w_0(b+b^*)$ is skew adjoint.  The
+transformation that sends $y\in I^*$ to $y-Ky$ and
+fixes $V_0+W$ is unitary and belongs to $R_s$.
+Its transformed lift is
+$y+a(y)+w_0(b+b^*)y$.  Equations (FT11)--(FT13) imply
+\[
+       \mathfrak c^{3n+3}P_0\subset\Lambda'\cap\Pi.
+\]
+Conversely integrality of $\Lambda'$ and (FT3) give
+$\Lambda'\cap\Pi\subset\mathfrak c^{-(3n+4)}P_0$.
+Thus the two-sided exponent $3n+4=6r+10$ suffices, and
+implies (FT5).  If $j=r$ the dual isotropic module is
+zero and this last step is vacuous.  If $j=0$ the
+paired-flag step is vacuous.  The construction also
+applies when $r=1$ or $r=0$.
+\end{proof}
+
+\begin{theorem}[The two remaining stabilizer quotients]
+\label{thm:flag-small-stabilizer-quotients}
+Suppose the original lattice is split and
+$\mathfrak c^eP_0\subset\Lambda\cap\Pi
+\subset\mathfrak c^{-e}P_0$ for an integer $e\geq0$.
+Let $\Gamma_B=R\cap\operatorname{Stab}(B)$, let $R_1$
+fix $V_0$, and let $Z_I\subset R_1$ fix $W$.
+Each of the source's central and top covolume ratios
+is at most
+\[
+                     (N\mathfrak c)^{(3e+11)(2r+1)^2}.
+ \tag{FT14}
+\]
+Together with (US7), this proves the original bound
+\[
+ \operatorname{ivol}(\Gamma_{\Lambda_{\mathrm{ref}}},\Gamma_\Lambda)
+ \leq b^k\Delta^r
+                  (N\mathfrak c)^{2(3e+11)(2r+1)^2},
+ \tag{FT15}
+\]
+whenever the original index constraint $xi\leq\Delta$
+holds.
+\end{theorem}
+
+\begin{proof}
+Put $P=\Lambda\cap\Pi$.  The inclusions and (FT3) give
+$P^\#\subset\mathfrak c^{-(e+1)}P_0$.
+If a unitary map $s$ fixes $W$ and
+\[
+                      (s-1)P_0\subset\mathfrak c^{2e+1}P_0,
+ \tag{FT16}
+\]
+then $(s-1)P^\#\subset P$.
+The $\Pi$-projection of $\Lambda$ is contained in $P^\#$,
+so $(s-1)\Lambda\subset P\subset\Lambda$.
+Unitarity makes the additive index $[\Lambda:s\Lambda]$
+equal to $1$.  Thus $s\Lambda=\Lambda$.
+
+For the central quotient, elements of
+$\Gamma_{\Lambda_{\mathrm{ref}}}\cap Z_I$ preserve
+$P_0=\Lambda_{\mathrm{ref}}\cap\Pi$.
+The kernel of reduction on
+$P_0/\mathfrak c^{3e+11}P_0$ satisfies (FT16) and
+lies in $\Gamma_\Lambda\cap Z_I$.
+For a projective rank-$q$ module, the number of
+endomorphisms modulo an ideal $\mathfrak a$ is
+$(N\mathfrak a)^{q^2}$: localize and use a basis,
+then combine the finite primary components.
+Taking $q=2r+1$ proves the central bound.
+
+For the top quotient, work on
+$A_0=\Lambda_{\mathrm{ref}}\cap V_0=P_I\oplus P_H$.
+An element $s\in R$ induces on $I\oplus H_0$ a
+matrix
+\[
+             \begin{pmatrix}D&B\\0&A\end{pmatrix},
+\]
+with $A$ unitary and $D$ upper unitriangular on the
+isotropic flag.  Suppose $(s-1)A_0\subset\mathfrak c^NA_0$,
+where $N=3e+11$.  Then $A,D$ preserve their respective
+lattices, as do their inverses: their additive determinant
+norms are $1$.  Moreover their differences from the
+identity lie in $\mathfrak c^N$.
+Put $C=BA^{-1}:H_0\to I$.  It sends $P_H$ to
+$\mathfrak c^NP_I$, while its adjoint sends $P_{I^*}$
+to $\mathfrak c^{N-1}P_H$, by (FT3).
+
+Let $n_C$ denote (FT6), formed with $H_0$ and $C$.
+The ordered product
+\[
+                    n_{BA^{-1}}
+                       \operatorname{diag}(D,A,D^{-*})
+\]
+gives a unitary lift of the action of $s$ on $V_0$,
+fixing $W$: its upper right block on $I\oplus H_0$
+is $CA=B$.
+The quadratic entry $-w_0CC^*$ lies in
+$\mathfrak c^{2N-1}$, so this lift differs from the
+identity on $P_0$ by an element of
+$\mathfrak c^{N-1}P_0$.  It belongs to $R_s$, because
+it has the same action as $s$ on both flags and fixes
+$W$.  Since $N-1\geq2e+1$, (FT16) makes it preserve
+$\Lambda$.  Its action on $V_0$ is therefore in the
+image of $\Gamma_\Lambda$.
+
+Reduction on $A_0/\mathfrak c^NA_0$ consequently bounds
+the top relative index by
+$(N\mathfrak c)^{N(\dim V_0)^2}$, at most (FT14).
+The inverse covolume ratio is bounded by that relative
+index.  Finally $Z_I\subset R_1\subset R$ are normal,
+because $R$ preserves $V_0$ and sends $W$ into $W+I$;
+thus it preserves $V_0+W$, whose pointwise stabilizer
+in $R$ is $Z_I$.  The index formula along this chain factors the full
+covolume ratio into the central, middle and top ratios.
+Apply (US7) and $(xi)^{r-j}\leq\Delta^r$ to obtain
+(FT15).
+\end{proof}

@@ -121,6 +121,11 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Uniform Frobenius spectrum and original nonresonant Selmer case | Closed actual supplier obligation; full work package remains open. |
 | Original embedded-isometry genus mean | Closed actual supplier obligation; full work package remains open. |
 | Original all-point determinant and regularized height floor | Closed actual supplier obligation; full work package remains open. |
+| Every nonresonant coefficient prime for ordinary RH | Closed stated supplier obligation with original objects and quantifiers; the full work package remains open. |
+| Dyadic Bernoulli units at three and the original unramified vanishing | Closed stated supplier obligation with original objects and quantifiers; the full work package remains open. |
+| Integral normal-form transport and all stabilizer layers | Closed stated supplier obligation with original objects and quantifiers; the full work package remains open. |
+| Exact weighted lattice sum at each fixed normal form | Closed stated supplier obligation with original objects and quantifiers; the full work package remains open. |
+| Actual finite-fibre nefness, regularizations and signed determinant test | Closed stated supplier obligation with original objects and quantifiers; the full work package remains open. |
 
 ## Work packages
 
@@ -213,7 +218,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The original local chart, integral strict-cocycle comparison and fixed-field Frobenius spectrum prove the actual nonresonant character-case bound. Complete the exceptional and resonant coefficient-prime cases, retaining the original support, then prove the full weighted Selmer product.
+**Next concrete task.** The local chart and fixed-field spectrum supply the original nonresonant case; for RH this covers every nonresonant prime. Dyadic Bernoulli units supply its residual unramified vanishing at3. Complete the resonant integral comparisons and the original weighted product; retain nontrivial odd-conductor twists in GRH.
 
 **Acceptance conditions:**
 
@@ -325,7 +330,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The distinct-minor label sum, exact mass comparison, primitive-sublattice mean and original embedded-isometry genus count are supplied. Prove the weighted flag-to-isometry correspondence with its integral stabilizer covolumes, then the zero-Gram sum, generic returns, finite columns and final positive traces.
+**Next concrete task.** The embedded-isometry genus mean, integral reference-lattice transport, all stabilizer layers and exact fixed-normal-form weighted sum are supplied. Prove the original term-class correspondence with reciprocal row-automorphism weights, then the zero-Gram sum, generic returns, finite columns and final positive traces.
 
 **Acceptance conditions:**
 
@@ -386,7 +391,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The actual models, integral section families, component degree bound, tangent degrees, corrected fibres and uniform all-point height floor are proved. Supply the finite-fibre relative nefness needed for the intersection argument; complete the signed weighted mean-height comparison, rank losses and final numerical family.
+**Next concrete task.** The actual all-point height floor, finite-fibre determinant nefness, tied regularizations and signed base-test bound beta_B >= -107 Lambda_B/2 are supplied. Construct the general flag positivity and exact Frobenius-linked correction sequences for the weighted mean; then bound rank losses and finish the numerical family.
 
 **Acceptance conditions:**
 
@@ -482,9 +487,9 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W04: The original local chart, integral strict-cocycle comparison and fixed-field Frobenius spectrum prove the actual nonresonant character-case bound. Complete the exceptional and resonant coefficient-prime cases, retaining the original support, then prove the full weighted Selmer product. Ordinary RH remains the preferred testing ground.
-1. W06/W08: The distinct-minor label sum, exact mass comparison, primitive-sublattice mean and original embedded-isometry genus count are supplied. Prove the weighted flag-to-isometry correspondence with its integral stabilizer covolumes, then the zero-Gram sum, generic returns, finite columns and final positive traces. The exact terminal period is supplied; original row realization and the intervening seesaw comparison remain.
-1. W10: The actual models, integral section families, component degree bound, tangent degrees, corrected fibres and uniform all-point height floor are proved. Supply the finite-fibre relative nefness needed for the intersection argument; complete the signed weighted mean-height comparison, rank losses and final numerical family.
+1. W04: The local chart and fixed-field spectrum supply the original nonresonant case; for RH this covers every nonresonant prime. Dyadic Bernoulli units supply its residual unramified vanishing at3. Complete the resonant integral comparisons and the original weighted product; retain nontrivial odd-conductor twists in GRH. Ordinary RH remains the preferred testing ground.
+1. W06/W08: The embedded-isometry genus mean, integral reference-lattice transport, all stabilizer layers and exact fixed-normal-form weighted sum are supplied. Prove the original term-class correspondence with reciprocal row-automorphism weights, then the zero-Gram sum, generic returns, finite columns and final positive traces. The terminal period is supplied; original row realization and intervening seesaw identities remain.
+1. W10: The actual all-point height floor, finite-fibre determinant nefness, tied regularizations and signed base-test bound beta_B >= -107 Lambda_B/2 are supplied. Construct the general flag positivity and exact Frobenius-linked correction sequences for the weighted mean; then bound rank losses and finish the numerical family.
 1. W02/W11: assemble compatible signed arithmetic budgets at every required fourth-power sample, with all accuracy parameters fixed before the windows grow.
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.

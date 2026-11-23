@@ -1,0 +1,171 @@
+\subsection{All nonresonant coefficient primes for ordinary RH}
+\label{sec:rh-selmer-nonresonant}
+
+For ordinary RH one fixed quadratic field removes the exceptional-set
+restriction from the nonresonant estimate.  Keep the actual fields
+\[
+ E=\mathbf Q(\mu_{2^a})^+(\sqrt{-q},\sqrt{-d}),\qquad
+ N=2^aqd,\qquad \Delta=\operatorname{Gal}(E/\mathbf Q),
+                                                               \tag{RN1}
+\]
+where $a\ge2$ and $q,d>3$ are the distinct original primes,
+both congruent to $3$ modulo $4$.  For an odd prime $\ell$ and
+$e\ge1$, let
+\[
+ S_{\ell,e}=\ker\!\left(
+ H^1(E,\mathbf Q_\ell/\mathbf Z_\ell(-e))
+   \longrightarrow\prod_{v<\infty}
+                 H^1(E_v,\mathbf Q_\ell/\mathbf Z_\ell(-e))
+                         \right),\qquad
+ C_e=\frac{1+(-1)^ej}{2},                                    \tag{RN2}
+\]
+where $j$ is complex conjugation, with its original action on
+cohomology and on the coefficient twist.  These are the same
+strict Selmer groups and integral parity projections as in
+Proposition~\ref{shared-rh-integral-product}.
+Indeed, at a finite place away from $\ell$, the unramified
+first cohomology is zero: its description as the quotient
+by $\operatorname{Frob}_v-1$ vanishes because the nonzero
+scalar $(Nv)^{-e}-1$ acts surjectively on
+$\mathbf Q_\ell/\mathbf Z_\ell(-e)$.
+
+\begin{theorem}[Uniform bound away from resonance]
+\label{thm:rh-selmer-all-nonresonant}
+There are absolute constants $C,A>0$ such that for every
+field (RN1), every $e\ge1$, and every finite set $L$ of odd
+coefficient primes with $\ell-1\nmid2e$, one has
+\[
+ \sum_{\ell\in L}(\log\ell)
+           \operatorname{length}_{\mathbf Z_\ell}(C_eS_{\ell,e})
+              \le C N[N(e+1)]^A.                            \tag{RN3}
+\]
+The constants are independent of $a,q,d,e,L$.  In particular,
+for $e=1$ this bounds the sum over every odd coefficient
+prime except $3$, with no condition on the character's
+$2$-power conductor.
+\end{theorem}
+
+\begin{proof}
+Use $K=\mathbf Q(\sqrt{-3})$, which has discriminant $-3$
+and class number one.  The latter fact can be seen directly:
+for $\omega=(-1+\sqrt{-3})/2$, every complex number differs
+from an element of $\mathbf Z[\omega]$ by $x+y\omega$ with
+$|x|,|y|\le1/2$.  Its squared absolute value is
+$x^2-xy+y^2\le3/4<1$.  The norm is therefore Euclidean.
+
+Let $\psi$ be any character of $\Delta$ with
+$\psi(-1)=(-1)^e$.  Every such character has power-of-two
+order.  At an odd prime, its local conductor component is
+quadratic or trivial, since the cyclotomic factor of (RN1)
+is ramified only at $2$ and the other factors are quadratic.
+Thus the character-order, local-component and parity
+conditions in (SP18a) all hold.  The nonresonance condition
+forces $\ell\ge5$, so $\ell\nmid d_Kh_K$.
+Also $3\nmid N$.
+
+The field $\mathbf Q(\mu_\ell)F_{\psi^{(\ell)}}$ is
+unramified at $3$: its two factors have conductors prime
+to $3$.  Since $K$ ramifies at $3$, it is not contained
+in that compositum.  This verifies the field-exclusion
+condition in (SP18a), without imposing
+$\ell\notin P$.  Every original good-data hypothesis
+is now satisfied for this one fixed $K$
+\cite{rh-selmer-nonresonant-source}.
+
+Choose the two auxiliary primes $13$ and $17$.  They do
+not divide $30Nd_K$, since $q,d\equiv3\pmod4$ whereas
+$13,17\equiv1\pmod4$.  Corollary~\ref{cor:support-spectrum-orbit}
+therefore gives its two-prime estimate for every character
+orbit and every coefficient prime in $L$, with constants
+depending only on $\mathbf Q(\sqrt{-3})$.
+Group the characters by their kernels in
+$(\mathbf Z/N\mathbf Z)^\times$ and apply (SP24).
+The orbit sum is at most $N$, so the total character
+length is at most
+$2C_KN[N(e+1)]^{A_K}(\log13+\log17)$.
+Finally the integral Fourier identity in
+Proposition~\ref{shared-rh-integral-product} identifies
+that character sum with the length on the left of (RN3),
+including its coefficient ramification normalization.
+Absorb the two fixed logarithms into $C$.
+
+For $e=1$, an odd prime satisfies $\ell-1\mid2$ exactly
+when it is $3$.  The final assertion follows.
+\end{proof}
+
+\paragraph{The remaining RH estimate.}
+Theorem~\ref{thm:rh-selmer-all-nonresonant} also bounds
+the nonresonant part of Case~II inside the original
+exceptional set, and all of Case~V at $\ell\ge5$.
+The remaining coefficient primes satisfy
+\[
+                        \ell-1\mid2e,
+               \qquad \ell\le2e+1.                           \tag{RN4}
+\]
+Thus for twists $e<t$ all remaining odd coefficient
+primes are at most $2t-1$, independently of the growing
+cyclotomic layer.  The original size conditions give
+$q,d>2t+1$ and $q,d>\max P$, where $P$ is the original
+finite exceptional set\cite{rh-selmer-nonresonant-source}.
+Hence every remaining resonant
+prime is prime to $N$.  At such a prime the local conductor
+component of every character is trivial.  Every nontrivial
+character of the $2$-group $\Delta$ has even order.
+Consequently the nontrivial characters with $e\ge2$
+are exactly the remaining Case~II characters; the trivial
+character is covered by the existing fixed-field contribution.
+
+Here is one precise sufficient frontier for the residual
+Selmer estimates.  For $e\ge2$ put
+\[
+       T_{\ell,e}=C_e(1-A_\Delta)S_{\ell,e},\qquad
+       A_\Delta=|\Delta|^{-1}\sum_{g\in\Delta}g.              \tag{RN5}
+\]
+For $e=1$ the only remaining prime is $3$.  The original
+threshold is
+\[
+ R_3=16\cdot3^2\cdot4^{v_2(3^2-1)}=9216,
+       \qquad \max\{c:2^c<R_3\}=13.
+\]
+Set
+\[
+ E_{3,\mathrm{low}}=
+       \mathbf Q(\mu_{2^{\min(a,13)}})^+(\sqrt{-q},\sqrt{-d}),
+ \quad H_3=\operatorname{Gal}(E/E_{3,\mathrm{low}}),
+ \quad T_{3,1}=C_1(1-A_{H_3})S_{3,1}.                         \tag{RN6}
+\]
+The field in (RN6) retains the original $q,d$; it is not
+one absolute field as those primes vary.
+
+\emph{Open frontier.}  Prove that there is a constant
+$B>0$, independent of the original family and of $e$,
+such that in the original twist range, for every odd
+prime satisfying (RN4),
+\[
+             (\log\ell)\,
+             \operatorname{length}_{\mathbf Z_\ell}T_{\ell,e}
+                         \le[N(e+1)]^B.                      \tag{RN7}
+\]
+The original Case~II character bound, summed over at most
+$N$ characters, and the original Case~V bound at $3$
+would imply (RN7).  Conversely, the integral direct-sum
+decomposition makes each relevant character length no
+larger than the total in (RN7).  Thus a proof of (RN7)
+would supply both remaining RH Selmer estimates, after
+the already established fixed-field and small-conductor
+contributions are included.  All the groups in (RN5)--(RN6)
+retain their integral torsion.
+
+For precision, the source requires one exponent $C$ for
+all hosts of the fixed target, all $t$ satisfying the
+original size conditions, all $0<e<t$, and all coefficient
+primes and characters in the stated cases.  Its individual
+bound is $(\ell Ne)^C$\cite{rh-selmer-nonresonant-source}.
+Since $N\ge2$ and $\ell\le2e+1$, summing at most $N$
+characters gives
+\[
+ N(\ell Ne)^C\le[N(e+1)]^{2C+1}.
+\]
+In the other direction $N(e+1)\le\ell Ne$, so (RN7)
+gives the original individual bound with exponent $B$.
+These inequalities preserve the required uniform quantifiers.

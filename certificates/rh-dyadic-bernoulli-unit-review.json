@@ -1,0 +1,33 @@
+{
+  "classification": "Independent mathematical proof review: accepted.",
+  "reviewer": "selmer_frontier research agent, independent of the author",
+  "artifacts": [
+    {
+      "path": "paper/shared/rh-dyadic-bernoulli-unit.tex",
+      "sha256": "4ac0543326a81e5b7705e02bcd563b23bcd5280547476f5ec1bf27fdd8962bab"
+    },
+    {
+      "path": "paper/shared/rh-dyadic-bernoulli-unit-references.tex",
+      "sha256": "ac539e1db54a905d3d189924507fd7b0d391ed014e824123bd1ad1a859acefa6"
+    }
+  ],
+  "reviewed_statements": [
+    "DB1--DB7: all odd primitive dyadic Bernoulli values are units at every prime above 3; minus 3-primary class group vanishes.",
+    "DB8: locally constant cocycles for odd dyadic characters, with the exact prime-to-3 inertia-index condition, are coboundaries.",
+    "DB9: the original RH weight-minus-two residual character equals eta4 times psi2^(-2); both odd quadratic factors and the square of the residual cyclotomic character cancel."
+  ],
+  "decisive_checks": [
+    "The exact +/- pairing gives coefficients 2(a_j-a_{j+m/2})/2^n in {+1,-1}; no missing denominator or factor 2.",
+    "The two factors of X^(4h)+1 over F3 have degree 2h=ord_(8h)(3); every root has order 8h, so both factors are irreducible.",
+    "Modulo Y^2+sY-1, Y^3=-s-Y in F3, giving the stated two remainder coefficients. The required two zero three-sign sums contradict each other.",
+    "The small conductors 4,8,16 are handled separately and correctly.",
+    "The relative class-number formula is used only for the minus 3-primary part. Norm and extension of ideals give the required plus-part identification because 2 is invertible on 3-groups.",
+    "The inertia-index divisibility uses normality of I_K=I intersect G_K, now explicit in the frozen proof.",
+    "The actual source ML.IsCoc contains IsLocallyConstant by PrimitiveFrobeniusFixed/IsAdmissiblePrimeListNil.lean:98--99."
+  ],
+  "independent_exact_computations": {
+    "all_sign_quadruples": "All 16 quadruples in {+1,-1}^4 checked for both s=+1,-1; no simultaneous zero remainder.",
+    "conductors": "For n=3,...,12 the exact integer Bernoulli coefficients were computed from least residues of 5^j modulo 2^n, verified to be +/-1, and their polynomial gcd with Phi_(2^(n-2)) over F3 verified to equal 1."
+  },
+  "limits": "The all-n proof is mathematical, not inferred from finite tests. This review does not compute the integral Selmer groups, rebuild Lean, or close W04."
+}

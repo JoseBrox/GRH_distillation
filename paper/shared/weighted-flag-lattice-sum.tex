@@ -1,0 +1,367 @@
+\subsection{The weighted lattice sum for a fixed flag normal form}
+\label{sec:weighted-flag-lattice-sum}
+
+The integral transport theorem now supplies the lattice
+representatives used in the arithmetic count.  We retain
+the original common unipotent group and its stabilizer
+weight.  The main cancellation is between the index of
+the common isotropic lattice and the discriminant of the
+paired flags.
+
+Continue with the data of
+Section~\ref{sec:flag-lattice-transport}, and put
+\[
+        q=2r+1,\qquad c_E=1+\log_2(2f),\qquad
+        Q=D_b\Delta N_T.
+\]
+For an admissible lattice $\Lambda$, let
+\[
+ \mathcal J=(\Lambda+X)\cap(W+Ez),\qquad
+ \mathcal J'=(\Lambda+X')\cap(W+Ez),\qquad
+ L=\mathcal J\cap W,\quad L'=\mathcal J'\cap W.
+ \tag{WF1}
+\]
+The actual congruence graph in $W\times W$ consists of
+the pairs $(w',w)\in L'\times L$ admitting lifts
+$\lambda'-w'\in X'$ and $\lambda-w\in X$, with
+$\lambda',\lambda\in\Lambda$ and
+\[
+                 \lambda-\lambda'
+                         \in g\Lambda+(\Lambda\cap X).
+ \tag{WF2}
+\]
+Write $K$ for its diagonal fixed lattice.  The quotient
+of the original theta lattice by $I$ is
+\[
+          M_0=\operatorname{pr}_W(\Lambda\cap(W+I)).
+\]
+Then $M_0\subset K\subset L$, and the original indices
+are
+\[
+                     x=[L:K],\qquad i=[K:M_0].
+ \tag{WF3}
+\]
+The common-isotropic index $b$ is as in (US5).
+
+\begin{lemma}[The full integral index constraint]
+\label{lem:flag-fixed-index-constraint}
+For every original admissible lattice,
+\[
+                            xi^2b^2\leq\Delta.
+ \tag{WF4}
+\]
+Moreover $\mathcal J$ and $\mathcal J'$ are unimodular;
+their intersections with $Ez$ are respectively
+$\mathcal O z$ and $\mathcal O cz$.
+The definite lattice $L$ has cyclic discriminant module
+$\mathcal O/T\mathcal O$, of order $N_T^2$.
+\end{lemma}
+
+\begin{proof}
+We use the elementary integral isotropic-quotient fact:
+if $A$ is a primitive isotropic submodule of a unimodular
+Hermitian lattice, then $A^\perp/A$ is unimodular.
+Here is a proof valid for nonfree modules.  Projectivity
+and unimodularity give a lift of the Hermitian dual of
+$A$ whose pairing with $A$ is perfect.  Subtract from
+this lift the form $w_0$ times its own Gram form, using
+the perfect pairing with $A$ to regard that form as a
+map into $A$.  Since $w_0+\bar w_0=1$, the corrected
+lift is isotropic.  It and $A$ form a unimodular
+hyperbolic summand.  Its orthogonal complement is the
+stated quotient and is unimodular.  This construction
+uses the integral trace-one element already proved to
+exist, so it also applies above $2$.
+
+Apply this fact first to $\Lambda\cap I$.  In the
+resulting unimodular lattice $\Lambda_I$, let
+$\overline U,\overline U'$ be the images of
+$\Lambda\cap X,\Lambda\cap X'$.  They are primitive
+isotropic lattices of rank $j$ in the paired space
+$H_j=X_j+X'_j$.  Let
+\[
+ B=\overline U+\overline U',\qquad
+ P=\Lambda_I\cap H_j,\qquad
+ C=\Lambda_I\cap(W+Ez),\qquad a=[P:B].
+\]
+The images of $\Lambda\cap X_j$ and
+$\Lambda\cap X'_j$ have indices $b$ and $b'$ in
+$\overline U$ and $\overline U'$.  These two indices
+are equal.  Indeed projection to $I$ along the first
+$j$ vectors has leading ideals $A_j,\ldots,A_{r-1}$
+for the first flag and $cA_j,\ldots,cA_{r-1}$ for
+the second.  Their covolumes coincide because
+$|N_{E/\mathbf Q}c|=1$, and both contain the same
+lattice $\Lambda\cap I$.
+
+Let $\delta$ denote normalized Hermitian covolume, as
+defined in the proof of (EI3).  The cross Gram determinant
+of the two first-$j$ lattice flags gives
+\[
+        \delta(B)=\frac{\Delta}{b^2},\qquad
+        \delta(P)=\frac{\Delta}{ab^2}.
+ \tag{WF5}
+\]
+The sublattices $P,C$ are primitive orthogonal complements
+in a unimodular lattice, so their discriminant modules
+are paired by an anti-isometry.  In particular
+$\delta(C)=\delta(P)$.
+
+The isotropic-quotient fact applied to $\overline U$
+and $\overline U'$ identifies the two quotient lattices
+with $\mathcal J$ and $\mathcal J'$ in (WF1).  Both
+are unimodular and contain $C$.  Therefore
+\[
+                         n=[\mathcal J:C]
+                                =\frac{\Delta}{ab^2}.
+ \tag{WF6}
+\]
+There is also the bound
+\[
+                         [\mathcal J\cap\mathcal J':C]\leq a.
+ \tag{WF7}
+\]
+To verify it, use the discriminant-module gluing of
+$P\perp C$ to $\Lambda_I$.  The subgroups corresponding
+to $\mathcal J/C$ and $\mathcal J'/C$ consist of the
+classes in $P^\#/P$ represented in the two isotropic
+spaces.  A common class has representatives $u,u'$ in
+those spaces, with $u-u'\in P$.  Sending the class to
+$u-u'$ modulo $B$ is well-defined: changing either
+representative changes it by an element of
+$P\cap X_j=\overline U$ or
+$P\cap X'_j=\overline U'$, respectively.
+It is injective into $P/B$.  If the image
+is zero, uniqueness of the two isotropic components
+puts $u\in\overline U$ and $u'\in\overline U'$, so
+the class was zero.  This proves (WF7).
+
+Now $M_0=C\cap W$.  Thus $L/M_0$ injects into
+$\mathcal J/C$, and $K/M_0$ injects into
+$(\mathcal J\cap\mathcal J')/C$.
+Equations (WF3), (WF6) and (WF7) give $xi\leq n$ and
+$i\leq a$.  Multiplication proves (WF4).
+
+Finally the leading conditions on the last vectors give
+$\mathcal J\cap Ez=\mathcal O z$ and
+$\mathcal J'\cap Ez=\mathcal O cz$.
+The first is a primitive rank-one lattice of norm $-T$
+inside a unimodular lattice.  Discriminant gluing with
+its primitive orthogonal complement $L$ identifies
+$L^\#/L$ with the opposite discriminant module of
+$\mathcal O z$, namely $\mathcal O/T\mathcal O$.
+This proves the last assertion.
+\end{proof}
+
+For a lattice $B$, write $\Gamma_B=R\cap\operatorname{Stab}(B)$.
+The weight in the source is
+\[
+           \omega(\Lambda)=
+           \operatorname{ivol}(\Gamma_{\Lambda_{\mathrm{ref}}},
+                               \Gamma_\Lambda).
+ \tag{WF8}
+\]
+Fix the two actual lattices $\mathcal J,\mathcal J'$
+and the graph (WF2).  In particular $L,L',K$ and $x$
+are fixed.  The weight sum below runs over common
+unipotent $R$-orbits of integral unimodular lattices
+with precisely those data and the prescribed flag and
+congruence conditions.
+
+\begin{theorem}[The original fixed-normal-form weighted sum]
+\label{thm:fixed-normal-form-weighted-sum}
+For specified positive integers $i,b$, the weight sum
+over lattices having those indices is at most
+\[
+                  (ib)^k i^{c_E}Q^{10000(r+1)^3}.
+ \tag{WF9}
+\]
+Without fixing $i,b$, it is at most
+\[
+              (\Delta/x)^{k/2}\Delta^{c_E+2}
+                                     Q^{10000(r+1)^3}.
+ \tag{WF10}
+\]
+If only $\mathcal J,L'$ and the congruence graph are
+fixed, multiply the right side of (WF10) by $N_T^2$.
+These are the original quantitative bounds, with their
+original stabilizer weights.
+\end{theorem}
+
+\begin{proof}
+The fixed data and indices are unchanged by $R$.
+For instance its action on $(X+X')^\perp/I$ is the
+identity, while its action on each flag is the identity
+on the successive quotients.  The descriptions (WF1)
+and (WF2) are consequently preserved.  The index $b$
+is unchanged because $X,X_j,I$ are preserved.
+
+The weight is also invariant under this action.  Here
+one can avoid a Haar normalization entirely.  Stabilizers
+of any two full lattices in a rational linear group are
+commensurable: a sufficiently deep integer congruence
+subgroup for either lattice preserves the other.
+For such a stabilizer $\Gamma$, the relative-index
+modulus
+\[
+       u\longmapsto
+          \operatorname{ivol}(\Gamma,u\Gamma u^{-1})
+\]
+is a homomorphism to $\mathbf Q_{>0}$, by the finite-index
+multiplication rule.  Every element of the rational
+unipotent group $R$ has an $n$th root in $R$, for every
+$n\geq1$, given by the finite binomial polynomial in
+$u-1$.  That polynomial remains unitary and preserves
+both flag filtrations: its adjoint is its inverse,
+and its differences have the same strictly triangular
+containments.  The displayed positive rational number
+is therefore an $n$th power in $\mathbf Q$ for every
+$n$.  Its prime valuations are all zero, so it is $1$.
+Apply this to $\Gamma=\Gamma_\Lambda$ and use
+$\Gamma_{u\Lambda}=u\Gamma_\Lambda u^{-1}$.
+The relative-index multiplication rule in (WF8)
+now proves weight invariance.
+
+Apply Theorem~\ref{thm:flag-lattice-near-representative}
+with $e=12r+50$.  Every orbit has a split representative
+whose lattice $P=\Lambda\cap\Pi$ satisfies
+$\mathfrak c^eP_0\subset P\subset\mathfrak c^{-e}P_0$.
+For such a representative, $M=\Lambda\cap W=M_0$.
+There are at most $i^{k+c_E}$ choices for $M\subset K$
+of index $i$, by the rank-$k$ sublattice count proved
+with (MM13).  The finite module
+\[
+                     \mathfrak c^{-e}P_0/\mathfrak c^eP_0
+\]
+has $(N\mathfrak c)^{2eq}$ elements and at most $q$
+generators.  Every submodule also has at most $q$
+generators, by localization and the Chinese remainder
+theorem.  Thus there are at most
+$(N\mathfrak c)^{2eq^2}$ choices for $P$.
+
+For fixed $M,P$, unimodularity makes $\Lambda/(M\perp P)$
+the graph of an anti-isometry between their full
+discriminant modules.  Conversely such a graph determines
+$\Lambda$.  The module $P^\#/P$ has at most $q$
+generators.  Since (WF4) gives $xi\leq\Delta$,
+\[
+                   \Delta(M)=N_T^2(xi)^2
+                              \leq(\Delta N_T)^2.
+\]
+There are consequently at most
+$(\Delta N_T)^{2q}$ gluings.  This is only an upper
+bound, so retaining all anti-isometries can enlarge
+the count without discarding any original congruence.
+
+The stabilizer estimate (FT15) bounds each representative's
+weight by
+$b^k\Delta^r(N\mathfrak c)^{2(3e+11)q^2}$.
+Multiplying the three counts gives
+\[
+ \sum\omega(\Lambda)
+ \leq (ib)^k i^{c_E}\Delta^r
+       (\Delta N_T)^{2q}
+       (N\mathfrak c)^{(8e+22)q^2}.
+ \tag{WF11}
+\]
+Here $N\mathfrak c=(D_bN_T)^2\leq Q^2$ and every
+factor $D_b,\Delta,N_T$ is at least $1$.  For
+$q=2r+1$ and $e=12r+50$,
+\[
+ r+2q+2(8e+22)q^2
+       =768r^3+4144r^2+3573r+846
+       \leq10000(r+1)^3.
+\]
+This proves (WF9) and in particular finiteness of the
+set of relevant orbits.
+
+For all allowed pairs $(i,b)$, (WF4) gives
+$(ib)^k\leq(\Delta/x)^{k/2}$ and $i^{c_E}\leq\Delta^{c_E}$.
+There are at most $\Delta^2$ such pairs.  Summing (WF9)
+proves (WF10).
+
+To remove the specification of $\mathcal J'$, note that
+it is a unimodular gluing of the fixed $L'$ and the
+fixed rank-one lattice $\mathcal O cz$.  The latter's
+discriminant module is cyclic of order $N_T^2$.
+An anti-isometry from it is determined by the image of
+one generator, so there are at most $N_T^2$ possible
+gluings.  This proves the final assertion.
+\end{proof}
+
+\paragraph{The finite normal-form parameters.}
+For a prescribed leading-minor label, the ordered signed
+block antidiagonal matrix in (FT1) has at most $8^j$
+possibilities.  There are at most $2^j$ sign choices
+and $2^{j-1}$ consecutive-block decompositions.  For a
+block of length $d$, its scalar satisfies an equation
+of degree $d$, determined by the adjacent leading
+determinants; it therefore has at most $d$ choices.
+The product of the block lengths is at most $2^j$.
+This proves the stated bound, including the empty
+matrix when $j=0$.
+
+The scalar $c$ with $c\bar c=1$ also has a uniform
+finite bound.  Define the fractional ideal
+\[
+                  C_z=\{t\in E:tz\in\Lambda+X+X'\}.
+\]
+Both $\mathcal O$ and $c\mathcal O$ lie in $C_z$.
+The paired Gram determinant shows
+$\mathfrak a_jC_z\subset\mathcal O$ or the same
+inclusion with $\overline{\mathfrak a_j}$.
+Indeed, in a lattice lift $tz+x+x'$, integrality
+against $\Lambda\cap X_j$ controls the $X'_j$
+component; the adjugate puts its product with the
+terminal determinant ideal into $\Lambda\cap X'_j$.
+Subtracting it leaves a first-flag lift, whose last
+leading coefficient is integral.
+Consequently
+\[
+        (c)=\mathfrak b\mathfrak a^{-1},\qquad
+        \mathfrak a=C_z^{-1},\quad
+        \mathfrak b=cC_z^{-1},\qquad
+        N\mathfrak a=N\mathfrak b\leq\Delta.
+ \tag{WF12}
+\]
+Both ideals are integral.  For fixed ideals, two such
+scalars differ by a unit all of whose conjugates have
+absolute value $1$, hence by a root of unity.
+Indeed the characteristic polynomials over $\mathbf Q$
+of all positive powers of such a unit have integral
+coefficients bounded by the binomial coefficients in
+degree $2f$.  Only finitely many polynomials, and hence
+finitely many complex roots, occur; two powers coincide.
+The
+elementary inequality $\varphi(n)^2\geq n/2$ shows
+that $E$ has at most $8f^2$ roots of unity: prove the
+inequality prime-power by prime-power, with the only
+factor below $1$ being $1/2$ for $2^1$.
+The ideal-count bound already used above gives at most
+$\Delta^{1+\log_2(2f)}$ ideals of norm at most $\Delta$.
+Thus the number of scalars in (WF12) is at most
+\[
+                     8f^2\Delta^{2(2+c_E)}.
+ \tag{WF13}
+\]
+The exponent stated here is the original, looser one.
+Combining (WF10), the $N_T^2$ extension count, (WF13)
+and the signed block count gives the original finite-data
+bound
+\[
+ (\Delta/x)^{k/2}\,
+ 8^{r+1}f^2\Delta^{3c_E+6}N_T^2
+                   (D_b\Delta N_T)^{10000(r+1)^3}.
+ \tag{WF14}
+\]
+This expression is precisely \texttt{datBd} in the source's
+\texttt{AdaptSelf}, lines 42--44: its $d_b,d,x$ are
+our $D_b,\Delta,x$, its $\mathrm{NT}$ is $N_T$, and
+its $k$ is $\dim_EW$~\cite{weighted-flag-lattice-source}.
+To use (WF14) as the full per-row term bound, one must
+still verify the original normal-form assignment,
+the equivalence of flag classes under its transport,
+and the reciprocal row-automorphism multiplicity.
+The fixed-normal-form arithmetic and its covolume
+weight are fully supplied by (WF9)--(WF13); those
+remaining term interfaces are separate obligations.

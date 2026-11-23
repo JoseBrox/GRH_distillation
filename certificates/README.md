@@ -6,10 +6,10 @@
 
 | Workstream | Selected recent proof and review records |
 | --- | --- |
-| Selmer and deformation | [Type-II rigidity](selmer-support-continuation-type-two-rigidity.json), [relative equations](selmer-support-continuation-relative-presentation.json), [local ordinary chart](selmer-support-continuation-local-chart.json) |
+| Selmer and deformation | [Uniform spectrum](selmer-support-continuation-spectrum.json), [RH nonresonant primes](rh-selmer-nonresonant.json), [dyadic Bernoulli theorem](rh-dyadic-bernoulli-unit.json) and [independent review](rh-dyadic-bernoulli-unit-review.json) |
 | Integral theta | [Terminal period and Bessel unfolding](theta-period-continuation.json) |
-| Global norms | [Degenerate orbital operator](global-gram-continuation-degenerate-operator.json), [integral minor count](global-gram-continuation-integral-minors.json), [maximal Hermitian mass](maximal-hermitian-mass.json), [primitive genus mean](primitive-sublattice-genus-mean.json) |
-| Geometry | [Thin-region lower bound](geometry-bergman-continuation-thin.json), [actual section degree](geometry-section-continuation.json), [corrected Hodge fibres](geometry-hodge-specialization.json), [boundary-point tangent degrees](geometry-point-continuation.json) |
+| Global norms | [Embedded-isometry mean](embedded-isometry-genus-count.json), [unipotent covolume](unipotent-stabilizer-covolume.json), [integral transport](flag-lattice-transport.json), [weighted normal-form sum](weighted-flag-lattice-sum.json) and [review](weighted-flag-lattice-sum-review.json) |
+| Geometry | [All-point height](geometry-point-height.json), [signed determinant assembly](geometry-height-assembly.json) and [independent review](geometry-height-assembly-review.json) |
 | Current compiled manuscripts | [RH build](rh-build.json), [GRH build](grh-build.json), [short guide build](guide-build.json) |
 
 The remainder of this file is a **historical index of checks**, with commands and claims preserved at their original scope. The “current” label in dated sections refers to that historical checkpoint.

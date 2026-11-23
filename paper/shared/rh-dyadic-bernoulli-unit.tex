@@ -1,0 +1,211 @@
+\subsection{A direct calculation at the exceptional prime three}
+\label{sec:rh-dyadic-bernoulli-unit}
+
+The exceptional coefficient prime $3$ in the ordinary RH construction
+leads to an odd character of power-of-two conductor.  Its required
+unramified cohomology vanishes for an elementary arithmetic reason.
+The result below is uniform through the entire cyclotomic tower.
+
+For a nontrivial primitive Dirichlet character $\chi$ of conductor $M$,
+use the convention
+\[
+                 B_{1,\chi}=\frac1M\sum_{a=1}^{M}a\chi(a).
+                                                               \tag{DB1}
+\]
+All reductions in characteristic $3$ are taken at an arbitrary prime
+above $3$ in the character-value field.
+
+\begin{theorem}[Dyadic Bernoulli values at three]
+\label{thm:dyadic-bernoulli-three-unit}
+If $\chi$ is odd and primitive of conductor $2^n$, then $n\ge2$
+and $B_{1,\chi}$ is a unit at every prime above $3$.
+Consequently, for every $n\ge2$,
+\[
+       3\nmid h^-(\mathbf Q(\mu_{2^n})),\qquad
+       \operatorname{Cl}(\mathbf Q(\mu_{2^n}))[3^\infty]^- =0.
+                                                               \tag{DB2}
+\]
+The superscript minus denotes the part on which complex conjugation
+acts by $-1$; no assertion about the full real class number is needed.
+\end{theorem}
+
+\begin{proof}
+The character of conductor $4$ gives $B_{1,\chi}=-1/2$.
+Suppose $n\ge3$, put $M=2^n$ and $m=2^{n-2}$, and write
+$\zeta=\chi(5)$.  The decomposition
+\[
+ (\mathbf Z/2^n\mathbf Z)^\times=\langle-1\rangle\times
+                                      \langle5\rangle
+\]
+and primitivity show that $\zeta$ has order $m$.
+Let $a_j$ be the least positive residue of $5^j$ modulo $M$.
+Pairing $a_j$ with $M-a_j$ in (DB1), and using
+$\sum_{j=0}^{m-1}\zeta^j=0$, gives
+\[
+ B_{1,\chi}=\frac2M\sum_{j=0}^{m-1}a_j\zeta^j
+           =\sum_{j=0}^{m/2-1}s_j\zeta^j,
+ \qquad s_j=\frac{2(a_j-a_{j+m/2})}{M}\in\{1,-1\}.
+                                                               \tag{DB3}
+\]
+Indeed $5^{m/2}\equiv1+M/2\pmod M$, so the two residues
+in the numerator differ by exactly $M/2$ or $-M/2$.
+For example, the congruence follows by induction from
+$v_2(5^{2^u}-1)=u+2$.
+
+The reduction of $\zeta$ still has order $m$, because reduction
+is injective on roots of unity of order prime to $3$.
+When $n=3$, (DB3) is $1$ or $-1$.  When $n=4$, it is
+a linear polynomial with coefficients $1$ or $-1$ evaluated
+at a root of the irreducible polynomial $X^2+1$ over
+$\mathbf F_3$, and hence is nonzero.
+
+For $n\ge5$ put $h=2^{n-5}$.  In $\mathbf F_3[X]$ one has
+\[
+ \Phi_m(X)=X^{4h}+1
+    =(X^{2h}+X^h-1)(X^{2h}-X^h-1).                            \tag{DB4}
+\]
+Both displayed factors are irreducible.  Every root of
+$\Phi_m$ has order $m=8h$, and the degree of its minimal
+polynomial is
+\[
+                 \operatorname{ord}_{2^{n-2}}(3)=2^{n-4}=2h.
+                                                               \tag{DB5}
+\]
+For completeness, $v_2(3^{2^u}-1)=u+2$ for $u\ge1$;
+this follows from $3^2-1=8$ by repeated squaring.
+Together with $3\not\equiv1\pmod4$, it proves (DB5).
+
+Write the polynomial in (DB3) as
+$A_0+X^hA_1+X^{2h}A_2+X^{3h}A_3$, where each $A_i$
+has degree less than $h$ and every coefficient is $1$ or $-1$.
+For $s\in\{1,-1\}$, reduction modulo
+$P_s=X^{2h}+sX^h-1$ gives
+\[
+           A_0+A_2-sA_3+X^h(A_1-sA_2-A_3).                    \tag{DB6}
+\]
+This cannot vanish.  Otherwise, at each of the $h$ coefficient
+positions the four signs $a_0,a_1,a_2,a_3$ would satisfy
+\[
+           a_0+a_2-sa_3=0,\qquad a_1-sa_2-a_3=0
+                                \quad\hbox{in }\mathbf F_3.
+\]
+Three signs have sum zero in $\mathbf F_3$ precisely when
+all three are equal.  The first equality therefore gives
+$a_2=-sa_3$, whereas the second gives $-sa_2=-a_3$.
+These imply $a_3=-a_3$, a contradiction.
+Neither irreducible factor in (DB4) divides the polynomial
+in (DB3).  Its value at the reduction of $\zeta$ is nonzero.
+This proves the unit assertion at every prime above $3$.
+
+Set $K=\mathbf Q(\mu_{2^n})$ and $K^+=\mathbf Q(\mu_{2^n})^+$.
+The relative class-number formula is
+\[
+ \frac{h_K}{h_{K^+}}=Q_Kw_K
+       \prod_{\substack{\chi\in X(K)\\\chi(-1)=-1}}
+                                    \left(-\frac{B_{1,\chi}}2\right),
+ \quad Q_K=[\mathcal O_K^\times:
+                 \mu(K)\mathcal O_{K^+}^\times]\in\{1,2\}.
+                                                               \tag{DB7}
+\]
+Here $X(K)$ uses each character with its primitive conductor;
+the formula and the unit-index statement are
+\cite[Theorem 4.2.20 and Lemma 4.2.16]{dyadic-bernoulli-sharifi}.
+Every such odd conductor is a power of $2$, and $w_K=2^n$.
+Every factor in (DB7) is a $3$-adic unit, so its left side is
+a $3$-adic unit.
+
+Extension and norm of ideals identify
+$\operatorname{Cl}(K^+)[3^\infty]$ with
+$\operatorname{Cl}(K)[3^\infty]^+$: their composite on the
+former is multiplication by $2$, and their other composite
+is $1+j$, where $j$ is complex conjugation.  Multiplication
+by $2$ is invertible on a $3$-group.  The ratio of the orders
+of the two full $3$-primary class groups is therefore the
+order of the minus part.  Since that ratio is one, (DB2) follows.
+\end{proof}
+
+\begin{corollary}[The actual unramified cocycle vanishing]
+\label{cor:dyadic-three-unramified-vanishing}
+Let $k$ be a field of characteristic $3$ with the discrete topology.
+Let $\gamma:G_{\mathbf Q}\longrightarrow k^\times$ be an odd
+character that factors through $\operatorname{Gal}(K/\mathbf Q)$,
+where $K=\mathbf Q(\mu_{2^n})$ for some $n\ge2$.
+Let $z:G_{\mathbf Q}\longrightarrow k$ be a locally constant
+cocycle, so
+$z(gh)=z(g)+\gamma(g)z(h)$.
+Suppose that for every finite inertia subgroup $I$ there is
+a subgroup $H\subset I\cap\ker\gamma$ of finite index prime
+to $3$ on which $z$ vanishes.  Then there is $b\in k$ with
+\[
+                         z(g)=\gamma(g)b-b
+                                      \quad(g\in G_{\mathbf Q}).
+                                                               \tag{DB8}
+\]
+The same statement applies to the inverse of $\gamma$.
+\end{corollary}
+
+\begin{proof}
+The restriction $u=z|_{G_K}$ is a continuous homomorphism to
+the additive group of $k$.  It has finite image, since $G_K$
+is compact and $k$ is discrete.  For every inertia group
+$I_K\subset G_K$, the index
+$[I_K:I_K\cap H]$ divides $[I\cap\ker\gamma:H]$.
+Here $I_K=I\cap G_K$ is normal in $I\cap\ker\gamma$, so
+the asserted index divisibility also holds when $H$ is not normal.
+The image $u(I_K)$ is a group of exponent $3$ whose order
+divides that prime-to-$3$ index, and hence it is zero.
+The maximal unramified abelian extension and the Artin map
+therefore identify $u$ with a homomorphism from
+$\operatorname{Cl}(K)[3^\infty]$ to $k$
+\cite[Chapter V, Example 3.9]{dyadic-bernoulli-milne}.
+There are no real places of $K$ requiring a further condition.
+
+The cocycle identity gives
+$u(jgj^{-1})=\gamma(j)u(g)=-u(g)$.
+Artin reciprocity is compatible with conjugation.
+By (DB2) the $3$-primary class group has only its plus part,
+so this odd homomorphism is zero.  Thus $z$ descends to a
+cocycle of the finite group $G=\operatorname{Gal}(K/\mathbf Q)$.
+Its order is a power of $2$.  Averaging proves (DB8) explicitly:
+take $b=-|G|^{-1}\sum_{g\in G}z(g)$ and sum the cocycle
+identity over its second argument.  Replacing $\gamma$
+by its inverse preserves oddness and all the hypotheses.
+\end{proof}
+
+\paragraph{Application to the ordinary RH character.}
+Write the actual finite character as $\psi=\psi_2\psi_{\rm odd}$.
+In the ordinary RH host its odd-conductor factors are quadratic,
+so $\psi_{\rm odd}^2=1$.  At coefficient prime $3$ the square
+of the residual cyclotomic character is also trivial.
+Consequently the residual character in the original weight-$-2$
+vanishing requirement is exactly
+\[
+              \gamma=\overline{\eta_4\psi_2^{-2}},
+              \qquad \xi=\eta_4\psi_2^2,                    \tag{DB9}
+\]
+where $\eta_4$ is the nontrivial character modulo $4$ and
+$\gamma=\bar\xi^{-1}$.  If $\psi_2$ has conductor $2^c$
+with $c\ge4$, then $\xi$ is odd and primitive of conductor
+$2^{c-1}$: squaring halves the order on $\langle5\rangle$,
+and multiplication by $\eta_4$ changes only the value at $-1$.
+The original large-conductor case has $c\ge14$.
+
+Thus Theorem~\ref{thm:dyadic-bernoulli-three-unit} supplies the
+original Bernoulli-unit statement at $\ell=3$, odd conductor
+$f=1$, and the original residual character.  Its source threshold
+would only require $64\le2^{c-1}$; the proof works even without
+that threshold.  Corollary~\ref{cor:dyadic-three-unramified-vanishing}
+supplies the associated unramified-cocycle assertion with the
+original prime-to-$3$ inertia indices.  If the source specifies
+an arbitrary subgroup of $G_{\mathbf Q}$, intersect it with
+$I\cap\ker\gamma$; its relative index is precisely the index
+used above.  The source cocycle is locally constant, not an
+arbitrary abstract cocycle\cite{dyadic-bernoulli-source}.
+
+This discharges the residual unramified-vanishing input in this
+ordinary RH branch.  The integral Selmer length estimate still
+requires its actual deformation and spectral comparison.
+For a general Dirichlet target, the odd-conductor factor of
+$\psi^2$ need not be trivial; (DB9) and this application must
+then be checked again.  No twisted Bernoulli-unit assertion
+for a nontrivial odd-conductor character is claimed here.
