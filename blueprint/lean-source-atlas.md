@@ -427,6 +427,17 @@ budget. Exact matrix, Weyl-algebra and exponent diagnostics supplement
 the human construction. The valid-cut bounds and `k=1` endpoint are
 explicit; no global norm estimate or Lean build is asserted.
 
+### Actual weighted arithmetic seeds
+
+The [seed-decay certificate](../certificates/global-norm-frontier-seed-decay.json)
+and [independent review](../certificates/global-norm-frontier-seed-decay-review.json)
+authenticate eight pinned modules and four primary references. The audit
+checks the exact signed parameter and gap, original `IsWu`, `WuWeighted`
+and `WuReprod`, formal-degree idempotent, induced-space multiplicity and
+all measure conventions. Nonnegative polynomial certificates and finite
+nonabelian convolution diagnostics supplement the analytic proof. The
+arithmetic setting and uniform global bounds remain separate.
+
 ### Actual raw-theta construction and cusp target
 
 The [raw-theta certificate](../certificates/geometry-arithmetic-frontier-raw-theta.json)

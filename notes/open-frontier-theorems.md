@@ -275,8 +275,15 @@ on every valid source cut: `TopLiftExists3` holds with `Cb=11`, original
 `InDDplus2`, the exact recursive radial action and full empty-word identity.
 It permits `k=1`; the actual arithmetic place package also has `k>=2`.
 The unrestricted differently named source predicate is not substituted.
-The global arithmetic return sum and period-Gram identity remain
-separate from every local norm identity.
+The original `WuDecay` and coefficient integrability now hold for every
+existing arithmetic setting under its exact gap hypothesis. Weighted
+Tonelli in the actual induced space gives the original exponent, and a
+compact reproducer fixes its prescribed seed exactly. Neither the setting
+nor a uniform bound is inferred. The first global step is now actual
+arithmetic folding and absolute convergence of every rational return,
+followed by the original raw-kernel/period-Gram identity. The normalized
+mass datum's replacement of its kernel by `Sig/rho0` does not prove that
+identity for the actual raw kernel.
 
 ## W10: the exact integral geometric supplier
 

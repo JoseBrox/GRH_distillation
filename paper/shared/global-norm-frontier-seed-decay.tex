@@ -1,0 +1,239 @@
+\subsection{Weighted integrability of the prescribed global seeds}
+\label{actual-seed-decay}
+
+This result supplies the convergence input for the original rational
+return expansion.  Its constants are allowed to depend on the fixed
+arithmetic data; it asserts no uniform bound for that expansion.
+In particular it does not construct the underlying arithmetic setting.
+
+Retain an original setting $X$ and all its Haar measures.  Write
+$G_\infty=\prod_{v\mid\infty}G_v$, where
+$G_v=U(k+r,r+1)$ and $n=2r+k+1$ is the original moving dimension.
+The original gap hypothesis is
+\[
+ n\ge1801,\qquad b_{j+1}-b_j\ge16n^{19}
+\]
+at every real place and every prescribed adjacent index.  For an
+original arithmetic word $u$, put
+$S_u=N_u\rtimes H_u\subset G_\infty$ and
+$\lambda_u=\psi_u\pi_u$.  The compact group $H_u$ is the product
+of the prescribed $U(k)$ groups, and $\psi_u$ is the original
+generic flag character.  Let
+\[
+ M(g)=\prod_v\|g_v\|_{\rm op},\qquad
+ \nu_u(g)=\inf_{s\in S_u}M(sg),\qquad
+ N_X=4n^2\sqrt{2\max_v q_v}.
+\]
+These are exactly the original quotient norm and exponent, with
+$q_v$ the negative index at $v$.  Inner products are conjugate
+linear in their first argument.  Set
+\[
+ m(g)=\prod_v\langle w_v,\sigma_v(g_v)w_v\rangle,
+ \qquad p(g)=\Bigl(\prod_vd_v\Bigr)\overline{m(g)},
+\]
+where $w_v$ is the original unit vector in the lowest compact
+type and $d_v$ is its formal degree for the original $dg_v$.
+The source specifies precisely this $p$, the continuous section
+$W_u$, and the identities
+\begin{equation}\label{actual-seed-original}
+ \begin{gathered}
+ W_u(sg)=\lambda_u(s)W_u(g),\qquad
+ \int_{S_u\backslash G_\infty}\|W_u\|^2\,dq_u=1,\\
+ \int_{G_\infty}p(t)W_u(gt)\,dt=W_u(g).
+ \end{gathered}
+\end{equation}
+The last integral is already required to be absolutely convergent
+pointwise in the setting.  The quotient measure $dq_u$ is the
+pushforward of its specified representative measure $\nu_Q(u)$;
+it uses $ds_u=(\mu_N(u)\times\mu_H(u))_*$ and the given Weil
+formula.\cite{seed-decay-original}
+
+\begin{theorem}\label{actual-seed-decay-theorem}
+For every original setting satisfying the gap hypothesis,
+\begin{equation}\label{actual-seed-weighted}
+ \int_{S_u\backslash G_\infty}\nu_u(g)^{N_X}
+                       \|W_u(g)\|\,dq_u(g)<\infty
+ \qquad\text{for every original word }u.
+\end{equation}
+Moreover, there are a compact $\Omega\subset G_\infty$ containing
+$1$, a smooth compactly supported scalar function $\alpha$, and
+a finite $A\ge0$, such that
+\[
+ \operatorname{supp}\alpha\subset\Omega,\qquad
+ |\alpha|\le A,\qquad
+ \int_{G_\infty}\alpha(t)W_u(gt)\,dt=W_u(g)
+ \quad(g\in G_\infty).
+\]
+The integrals here are absolutely convergent for every $g$.
+Also $p\in L^1(G_\infty)$, with the stronger bound
+\begin{equation}\label{actual-seed-coefficient-weight}
+             \int_{G_\infty}|p(t)|M(t)^{N_X}\,dt<\infty.
+\end{equation}
+Consequently these are the full original weighted-seed and compact
+reproduction conditions, and the original coefficient kernel is
+integrable.  No extra local or global period nonvanishing hypothesis
+is needed for this implication from an existing setting.
+\end{theorem}
+
+\begin{proof}
+\noindent\emph{The actual coefficient has enough decay.}
+The ordered parameter at each place is
+\[
+ (v_1,\ldots,v_{k-1},-b_0,-b_1,\ldots,-b_{2r+1}),
+\]
+with positive signs on the $v_i$ and alternating positive and
+negative signs on the $-b_j$, beginning with positive.  Strict
+decrease of the full parameter puts every $v_i$ above $-b_0$.
+Thus every pair of opposite signs has difference at least
+$h=16n^{19}$: for two tail entries sum adjacent increments, and
+for a head entry and a negative tail entry use the increment from
+$b_0$ to $b_1$.  This verifies the actual noncompact gap, rather
+than a gap for a different parameter.\cite{seed-decay-gap-source}
+
+Put $R=r+1$ and $a=h/(8\sqrt{2R})$.  Here $2R\le n$.
+For the quantities in the established smooth-decay theorem,
+\[
+ A_G\le4n^2,\qquad A_S\le2n^3,\qquad M_{\rm exp}\le6n^2.
+\]
+Its two remaining numerical lower bounds are at most $79n^5$,
+whereas $a\ge2n^{18}$.  Also $h\ge120n^3$.  They hold for
+every $n\ge1801$.  Theorem~\ref{original-smooth-decay-from-tensor}
+therefore gives, for the actual fixed lowest-type vectors,
+\[
+ |\langle w_v,\sigma_v(g)w_v\rangle|
+                    \le C_v\|g\|_{\rm F}^{1-a}.
+\]
+The constants and the seminorms producing them need not be uniform.
+
+For completeness, the integrability test used here is elementary.
+In a Cartan decomposition of $U(p,q)$, let
+$t_1\ge\cdots\ge t_q\ge0$; the present groups have $p\ge q$.
+Then $\|g\|_{\rm op}=e^{t_1}$, while the radial Haar density is
+bounded by a constant times
+\[
+ \exp\!\left(2\sum_{i=1}^q(n-2i+1)t_i\right)
+                                      \le e^{2pq t_1}.
+\]
+The remaining $q-1$ coordinates have volume at most a polynomial
+of degree $q-1$ in $t_1$.  Hence
+$\int_G\|g\|_{\rm F}^{-B}dg<\infty$ for $B>2pq$.
+This argument retains the original Haar scalar.  Since
+$N_X\le4n^3$ and $a-1-N_X>4n^2$, it proves the weighted
+integrability of each factor.  The product formula and Tonelli
+give \eqref{actual-seed-coefficient-weight}.  In particular $p$
+is integrable because $M\ge1$.
+
+\medskip\noindent\emph{A rank-one projection in the actual induced space.}
+Let $\mathcal I_u=L^2(S_u\backslash G_\infty,\lambda_u)$, with
+right translation $R(t)F(g)=F(gt)$.  The group $S_u$ is
+unimodular: $N_u$ is unipotent and the compact Levi has trivial
+positive modular character.  Thus the original Weil quotient
+measure is right invariant.  The representative measure in the
+source gives this same quotient measure, by the local-section
+argument in Section~\ref{archimedean-quotient-mass}.  No measure
+is rescaled in passing to $\mathcal I_u$.
+
+Write $\sigma=\bigotimes_v\sigma_v$ and $w=\bigotimes_vw_v$.
+Schur orthogonality, with exactly the formal degrees above, gives
+\[
+ p*p=p=p^*,\qquad
+ p*\delta_t*p=\langle w,\sigma(t)w\rangle p.
+\]
+The second equality follows by integrating the two matrix
+coefficients against one another; $\delta_t$ denotes point mass
+at $t$.  Consequently $P=R(p)$ is an orthogonal projection and
+\begin{equation}\label{actual-seed-corner}
+        PR(t)P=\langle w,\sigma(t)w\rangle P.
+\end{equation}
+These identities concern bounded operators, since $p\in L^1$.
+
+Here is why $P$ has rank at most one.  For $F\in\operatorname{im}P$,
+\eqref{actual-seed-corner} shows that
+$\sigma(t)w\mapsto R(t)F$ preserves all finite Gram matrices,
+up to the scalar $\|F\|^2$.  It therefore extends to a bounded
+intertwiner $T_F:H_\sigma\to\mathcal I_u$, and $T_Fw=F$.
+Evaluation at the identity on smooth vectors embeds this
+intertwining space into
+\[
+       \operatorname{Hom}_{S_u}(H_\sigma^\infty,V_{\pi_u}).
+\]
+To justify evaluation, right Lie derivatives on the induced bundle
+span its tangent directions.  Local Sobolev estimates make every
+smooth induced vector a smooth section and bound evaluation by
+finitely many derived Hilbert seminorms.  Evaluation is injective
+on intertwiners, since its translates are evaluation at every
+group point.  The original generic flag character and the actual
+compact type are precisely those of the Bessel multiplicity-one
+theorem.  Its bound is one at each real place.  For a finite
+product the same bound follows by successively fixing the other
+tensor factors; the usual smooth external tensor product is
+the completed tensor product of the admissible smooth spaces.
+Thus $\dim\operatorname{im}P\le1$.\cite{pieri-family-jsz,pieri-family-cw}
+
+By \eqref{actual-seed-original}, $PW_u=W_u$ in this Hilbert
+space and $\|W_u\|_2=1$.  Thus
+\begin{equation}\label{actual-seed-projection}
+             PF=W_u\langle W_u,F\rangle_{\mathcal I_u}.
+\end{equation}
+This uses the prescribed nonzero normalized section already
+present in $X$; it proves no existence statement for such a section.
+
+\medskip\noindent\emph{Weighted integrability without an additional period map.}
+Choose a compact measurable set $E\subset S_u\backslash G_\infty$
+such that
+$A_E=\int_E\|W_u\|^2dq_u>0$; compact exhaustion and the unit
+norm guarantee its existence.  The section $\beta=1_EW_u$ is
+bounded and has compact quotient support.  Formula
+\eqref{actual-seed-projection} says $P\beta=A_EW_u$.
+On an indefinite unitary group
+$\|g^{-1}\|_{\rm op}=\|g\|_{\rm op}$, so
+\[
+ \nu_u(yt^{-1})\le\nu_u(y)M(t),\qquad M(t)\ge1.
+\]
+The quotient function $\nu_u$ is locally bounded, using local
+sections of $G_\infty\to S_u\backslash G_\infty$.  Tonelli and
+right invariance of $dq_u$ now give the exact useful majorant
+\begin{align*}
+ A_E\int\nu_u(x)^{N_X}\|W_u(x)\|\,dq_u(x)
+ &\le\int\!\int\nu_u(x)^{N_X}|p(t)|\|\beta(xt)\|\,dt\,dq_u(x)\\
+ &\le\left(\int_E\nu_u(y)^{N_X}\|W_u(y)\|\,dq_u(y)\right)
+       \left(\int|p(t)|M(t)^{N_X}\,dt\right)<\infty.
+\end{align*}
+The first integral on the right is finite by compactness and
+continuity, and the second by
+\eqref{actual-seed-coefficient-weight}.  Division by $A_E>0$
+proves \eqref{actual-seed-weighted}.  In particular, no norm bound
+for $A_E^{-1}$ has entered any claimed uniform arithmetic estimate.
+
+\medskip\noindent\emph{An exact compact reproducing function.}
+The lowest compact type of a discrete series has multiplicity
+one.\cite{seed-decay-lowest-type}
+Let $K=\prod_v K_v$.  Average a smooth compact approximate
+identity on $G_\infty$ under conjugation by $K$, using probability
+Haar only for this auxiliary averaging.  The resulting functions
+$\eta_j$ remain smooth and compactly supported,
+$\sigma(\eta_j)\to1$ strongly, and $\sigma(\eta_j)$ commutes
+with $K$.  It therefore acts by a scalar $c_j$ on the actual
+lowest compact type containing $w$, and $c_j\to1$.
+Choose $c_j\ne0$ and put $\alpha=\eta_j/c_j$.
+Then $\sigma(\alpha)w=w$.
+
+The intertwiner $T_{W_u}$ constructed above gives
+$R(\alpha)W_u=T_{W_u}\sigma(\alpha)w=W_u$ in $\mathcal I_u$.
+Both sides have continuous equivariant representatives: for
+the left side use compact support of $\alpha$ and continuity
+of $W_u$.  The invariant quotient Haar measure has full support,
+so their equality is pointwise on the quotient, and hence on
+the whole group.  The same compactness proves absolute
+convergence for every $g$.  Taking $\Omega$ to contain the
+compact support and $1$, and $A=\sup|\alpha|$, gives the exact
+source compact-reproduction condition.  Auxiliary probability
+averaging has not altered $dg_v$, $ds_u$, $dq_u$, $d_v$, or $p$.
+\end{proof}
+
+The conclusion applies word by word with every moving arithmetic
+parameter retained, for ordinary RH and for Dirichlet GRH.  It
+removes the actual seed convergence input.  The remaining global
+task is the original rational-return unfolding and row comparison,
+followed by its uniform estimates; these are not consequences of
+qualitative finiteness alone.

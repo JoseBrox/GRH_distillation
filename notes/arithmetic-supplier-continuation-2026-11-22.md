@@ -262,6 +262,15 @@ An ambient projector estimate or local Gram identity is not the required
 global period-Gram estimate. A strict source deficit must supply any
 aggregate nonvanishing needed by the chosen consumer.
 
+The [actual seed-decay theorem](global-norm-frontier-seed-decay.md)
+now proves the prescribed `WuDecay` under the original arithmetic gap,
+including weighted L1 and an exact compact reproducer. The actual
+formal-degree coefficient is a rank-one projector in the original induced
+space; weighted Tonelli proves convergence without a new period
+nonvanishing assumption. This uses the normalized seed already present in
+the setting. Actual arithmetic folding and complete rational-return
+unfolding are next; the normalized mass datum is not a raw Gram identity.
+
 ## Direct next attacks
 
 1. Identify and estimate the actual arithmetic section lattices on the

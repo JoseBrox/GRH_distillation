@@ -401,6 +401,14 @@ the weighted old-word adjoint are retained. This supplies the local lift
 hypothesis of the preceding terminal-degree and finite-decay results,
 without asserting a uniform spectral gap or global period norm bound.
 
+The [actual seed-decay theorem](../../notes/global-norm-frontier-seed-decay.md)
+proves the original weighted L1 and compact-reproduction conditions for
+every existing arithmetic setting under its exact gap. The original
+formal-degree idempotent, Bessel multiplicity one and weighted Tonelli
+give the prescribed exponent and seed, retaining every Haar factor.
+Constants may depend on the setting; existence, global arithmetic folding
+and a uniform period-Gram estimate are separate obligations in both routes.
+
 The [actual raw-theta construction](../../notes/geometry-arithmetic-frontier-raw-theta.md)
 proves existence over every coefficient algebra, the literal beta-one
 value, Borel weight and exact classical scalar. Its original positive-row

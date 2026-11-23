@@ -160,6 +160,12 @@ every original valid cut, with exact differential cost
 `(m*d,11*m*(r+1)*d)` and no internal-minor denominator. The complete old-word
 rational corrections and weighted adjoint are retained. The global
 rational-return/period-Gram identity and uniform estimate remain.
+The [actual seed-decay theorem](global-norm-frontier-seed-decay.md)
+now supplies the original weighted integral and exact compact reproducer
+for each existing arithmetic setting. It uses the original coefficient
+idempotent and Bessel multiplicity one; all Haar and formal-degree factors
+survive. The constants are allowed to depend on that setting. Arithmetic
+folding, complete return summation and the raw kernel/Gram identity remain.
 
 These are closed supplier obligations within larger nodes. Whole-node
 statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.
