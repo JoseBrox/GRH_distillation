@@ -59,7 +59,11 @@ now supplies the original `IsUnf`, `Member`, all six adelic dictionary laws
 and exact integral marking. Its primitive theta section has probability
 norm one and the prescribed squared multiplier for all even weights.
 Together these construct the full original sized `Deep.Good` cover.
-Numerical arithmetic section and height estimates remain separate.
+The [actual positivity theorem](geometry-positivity-continuation.md)
+now supplies nefness, bigness, generation on the interior and both
+prescribed birational cusp systems, with the exact canonical weight.
+Short integral sections, arithmetic heights and the numerical remainder
+remain separate.
 
 The reached-section, adapted lattice, full-primary trace and mixed-level
 identities now supply the [original integral raw-theta implication](geometry-arithmetic-frontier-actual-theta-denominator.md)
@@ -83,8 +87,12 @@ phase and finite Fourier discriminant. The [harmonic heat comparison](theta-span
 transfers that identity to the exact invariant contracted jets in the
 original doubled Gaussian. A direct invariant-polynomial argument and
 normal convergence prove this supplier without changing a scalar. The
-finite Schwartz system, spanning transfer and uniform archimedean norms
-remain.
+[finite Schwartz system](theta-spanning-continuation-system.md) now
+supplies the original `IsSystem` and level-theta span. The exact
+[identity-cover transfer](theta-spanning-continuation-raw.md) proves
+`HolSub0LeSpanRaw` for the original good data, with the full arithmetic
+character and level conditions retained. Uniform short integral bounds
+and selected-prime compatibility remain.
 
 The actual ordinary automorphic modules have faithful good classical
 specializations, and now carry the original universal integral Hecke
@@ -126,7 +134,11 @@ same Hecke ideal: integral higher-weight control, density at every fixed
 weight, every arithmetic-point decomposition, distinguished-prime
 unramifiedness and the exact finite twist. The original `ModU` retains
 its no-primitive-ellth-root hypothesis; the stronger `ModUAlt` is not inferred.
-The normalized-Space/`SeedIn` transfer, starting support in the required characteristic-prime components,
+The [normalized seed-transfer theorem](selmer-support-continuation-seed-transfer.md)
+now proves the actual `SeedIn` transfer and starting-chart support in
+ranks two and three, retaining the entire integral Hecke quotient.
+Its homogeneous finite entry algebra avoids assuming integral generic
+matrix entries. Reaching the required characteristic-prime components,
 global two-sided rigidity and the moving-family integral Selmer budget remain.
 
 The actual local Bessel families satisfy the iterated weighted norm
@@ -168,8 +180,14 @@ The [actual seed-decay theorem](global-norm-frontier-seed-decay.md)
 now supplies the original weighted integral and exact compact reproducer
 for each existing arithmetic setting. It uses the original coefficient
 idempotent and Bessel multiplicity one; all Haar and formal-degree factors
-survive. The constants are allowed to depend on that setting. Arithmetic
-folding, complete return summation and the raw kernel/Gram identity remain.
+survive. The constants are allowed to depend on that setting. [Arithmetic folding](global-gram-continuation.md) now proves the
+original multiplicity and unfolding requirements. The
+[finite-phase theorem](global-gram-continuation-phases.md) proves actual
+level splitting and `PhWellDef`, including ramified primes outside the
+level. The [complete framed-return theorem](global-gram-continuation-framed-returns.md)
+proves the original absolute operator summation in the established gap
+range. The actual raw-kernel/period-Gram identification and uniform
+rank-weighted trace budget remain.
 
 These are closed supplier obligations within larger nodes. Whole-node
 statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.

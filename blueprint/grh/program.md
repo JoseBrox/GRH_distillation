@@ -210,7 +210,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original ordinary modules, integral Hecke determinant, compact types, Taylor--Wiles comparisons, local propagation and full ordinary families are constructed. Supply the normalized-Space/SeedIn transfer and a stable starting prime on the required characteristic-prime components, then prove two-sided global rigidity and the moving-family integral Selmer budget for the same equations and local conditions. Preserve integral torsion; characteristic-zero density is insufficient.
+**Next concrete task.** The original seed now transfers to the normalized Space with its exact integral Hecke quotient and a stable starting chart in ranks two and three. Construct the required characteristic-prime curves and global component propagation, then prove two-sided rigidity and the moving-family integral Selmer product for the same equations and local conditions. Preserve integral torsion and all original local-degree hypotheses.
 
 **Acceptance conditions:**
 
@@ -279,7 +279,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, r60. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original sized good cover, raw integral theta sections, common clearing integer, Gaussian reproduction and exact Hermitian Siegel--Weil class sum are constructed. The actual harmonic heat comparison now proves precisely the invariant doubled jets needed by KernelIdentity. Construct the finite Schwartz system and finish the original spanning transfer; prove the remaining selected-prime divisibility laws and uniform archimedean estimates for these same maps.
+**Next concrete task.** The original finite Schwartz system, level-theta span and exact identity-cover transfer now prove algebraic raw-theta spanning on the actual good cover. Construct short integral spanning families with uniform archimedean norms, and complete selected-prime divisibility compatibility for these same maps. Retain the common clearing integer, determinant ideals, component fields, full arithmetic character and original principal level.
 
 **Acceptance conditions:**
 
@@ -322,7 +322,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original local operators, terminal degree and controlled top lifts now supply weighted seed integrability and exact compact reproduction for each existing arithmetic setting. Prove arithmetic folding, complete rational-return summation and the raw global kernel/period-Gram identity, retaining stabilizers, phases, measures and target restrictions. Then bound the rank-weighted positive trace deficits and excesses in the final signed table budget. Per-setting finite constants do not supply uniform estimates.
+**Next concrete task.** Actual arithmetic folding, finite phase matching and the complete framed-return sum are now proved under the original gap, retaining all stabilizers, unipotent intersections, finite indices and Haar volumes. Identify the literal period Gram operators with the original raw kernel, then bound the rank-weighted positive trace deficits and excesses after all target restrictions. Fixed-setting convergence does not supply a uniform small trace error.
 
 **Acceptance conditions:**
 
@@ -383,7 +383,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original complete PartI models and sized Deep.Good cover, including all period and integral marking comparisons, are constructed. Identify the actual nef and birational section systems and heights. Construct short integral spanning families with the prescribed metrics and multiplication bounds, apply the proved geometric-filtration and determinant-degree estimates to these same lattices, and bound the numerical arithmetic section remainder. Algebraic spanning alone does not supply short generators.
+**Next concrete task.** The original models and good cover now have the required nef/big lines, generation on the interior and both birational cusp systems, with the exact canonical weight. Construct short integral spanning families and exact height and multiplication bounds; apply the established geometric filtration and determinant comparison to those same lattices and bound the numerical arithmetic section remainder.
 
 **Acceptance conditions:**
 

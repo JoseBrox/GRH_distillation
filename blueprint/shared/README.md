@@ -406,15 +406,17 @@ proves the original weighted L1 and compact-reproduction conditions for
 every existing arithmetic setting under its exact gap. The original
 formal-degree idempotent, Bessel multiplicity one and weighted Tonelli
 give the prescribed exponent and seed, retaining every Haar factor.
-Constants may depend on the setting; existence, global arithmetic folding
-and a uniform period-Gram estimate are separate obligations in both routes.
+Constants may depend on the setting. The arithmetic folding and complete
+return-summation results below now supply convergence; the uniform
+period-Gram estimate remains separate in both routes.
 
 The [actual raw-theta construction](../../notes/geometry-arithmetic-frontier-raw-theta.md)
 proves existence over every coefficient algebra, the literal beta-one
 value, Borel weight and exact classical scalar. Its original positive-row
 condition gives vanishing Fourier--Jacobi constants, and verified rapid
 decay supplies the actual bounded cusp target. Thus the uniform clearing
-integer applies to these generators. Spanning and uniform norms remain.
+integer applies to these generators. The exact spanning transfer below
+now supplies algebraic spanning; uniform short norms remain separate.
 
 The [actual Gaussian reproducing theorem](../../notes/geometry-arithmetic-frontier-gaussian-reproduction.md)
 supplies the original full-slab integrability and reproducing contracts
@@ -441,4 +443,44 @@ Siegel--Weil class sum. Locally normal convergence supplies the precise
 heat equations; a direct polynomial argument converts invariant Gaussian
 jets to period derivatives. Every original doubled scalar and measure
 is retained. This closes that exact supplier in both routes, while the
-finite Schwartz system, spanning transfer and uniform norms remain open.
+finite Schwartz system and spanning transfer are supplied below; uniform
+short norms remain separate.
+
+
+### Actual support, spanning, positivity and arithmetic folding
+
+The [normalized seed transfer](../../notes/selmer-support-continuation-seed-transfer.md)
+proves the original `SeedIn` and starting-chart supplier in ranks two and
+three. The homogeneous entry algebra preserves exactly the integral Hecke
+quotient and supplies dimension `n*[F:Q]+2`; no generic integral matrix
+basis or characteristic-prime curve is assumed. Both routes retain their
+actual arithmetic frames. Global characteristic-prime propagation and the
+uniform Selmer product remain.
+
+The [finite theta system](../../notes/theta-spanning-continuation-system.md)
+and [identity-cover transfer](../../notes/theta-spanning-continuation-raw.md)
+prove the original `IsSystem`, level-theta span and `HolSub0LeSpanRaw`.
+Finite Heisenberg projections, the exact doubled phases and the original
+class-mass matrix are retained. The raw comparison uses the same
+coefficient field, common component coordinates, full arithmetic character
+condition and prescribed principal level. It supplies algebraic spanning
+in both routes, without asserting short integral norms or changing the
+selected-prime maps.
+
+The [actual positivity theorem](../../notes/geometry-positivity-continuation.md)
+proves nefness and bigness of the prescribed automorphic lines and both
+birational cusp systems. The exact canonical weight and all original gap
+conditions survive Hodge semipositivity and effective adjoint separation.
+This applies to both routes on the constructed models. Short integral
+spanning families, exact height bounds and the numerical section remainder
+remain separate.
+
+The [arithmetic folding theorem](../../notes/global-gram-continuation.md),
+[finite phases](../../notes/global-gram-continuation-phases.md) and
+[complete framed returns](../../notes/global-gram-continuation-framed-returns.md)
+prove the original multiplicity, unfolding, level-splitting and absolute
+operator-summation suppliers under the established gap. The proofs retain
+the inverse different at every finite prime, original unipotent
+intersections and all Haar and stabilizer factors. Both routes use the
+same fixed-setting theorem. The literal period-Gram dictionary and the
+uniform rank-weighted trace budget remain separate requirements.

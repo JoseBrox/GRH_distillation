@@ -1,0 +1,221 @@
+\subsection{Positivity and birationality for the actual cusp systems}
+\label{actual-geometric-positivity}
+
+Use an original constructed Host and its smooth projective toroidal
+component $T$ over the prescribed coefficient field $K$. Let
+$\pi:Y\to T$ be the original full flag space of the eigenspaces of
+the semiabelian Lie bundle, $B$ its reduced toroidal boundary, and
+$U=Y\setminus B$. Retain the original automorphic line bundle
+$\mathcal L(a)$ for a weight $a=(a_{\tau,i})$, $0\le i<r=p+q$.
+In the arithmetic application $p,q\ge1$. Put
+\[
+ f=|\Psi|,\qquad D=f\binom r2,\qquad
+ \operatorname{gap}(a)=\min_{\tau,\ i<r-1}(a_{\tau,i}-a_{\tau,i+1}).
+\]
+The original canonical weight is independent of $\tau$ and equals
+\begin{equation}\label{actual-positive-kappa}
+ \kappa_i=\begin{cases}
+ q-p+1+2i,&i<p,\\
+ 2i-3p-q+1,&i\ge p.
+ \end{cases}
+\end{equation}
+This is the source's weight, with its original order and signs.
+No tensor power replaces $\mathcal L(a)$ in the conclusions.
+
+\begin{theorem}\label{actual-positive-cusp-theorem}
+For these actual models the following assertions hold.
+\begin{enumerate}
+\item If $\operatorname{gap}(a)\ge0$, then $\mathcal L(a)$ is nef.
+If $\operatorname{gap}(a)\ge1$, it is also big, and
+$(c_1(\mathcal L(a))^{\dim V}\cdot V)\ge1$ for every
+positive-dimensional integral $V\subset Y_{\mathbb C}$ meeting $U$.
+\item Put $m_1=\binom{D+1}{2}+1$ and $m_2=\binom{D+2}{2}$.
+If $\operatorname{gap}(a-\kappa)\ge m_1$, the original cusp
+linear system has no base point on $U$. If
+$\operatorname{gap}(a-\kappa)\ge m_2$, that system separates
+every pair of distinct complex points of $U$ and is birational.
+\item Consequently the original bound
+$\operatorname{gap}(a)\ge(D+3)^2+2r$ supplies the source's
+birationality condition. It applies to both prescribed weight
+systems whenever the original weight-size condition holds.
+\end{enumerate}
+These are the actual nef, big, open generation and birational
+suppliers. They assert no bound for integral generator norms,
+coefficient-field degrees or arithmetic heights.
+\end{theorem}
+
+\begin{proof}
+We may check the geometric assertions after an embedding $K\hookrightarrow
+\mathbb C$. The constructed component is geometrically integral.
+All line bundles and section spaces below descend to the original $K$.
+
+\paragraph{Nefness with the determinant characters retained.}
+The canonical Hodge extension on $T$ is the dual of the original
+semiabelian Lie bundle. Lan's algebraic and analytic comparisons
+identify these very extensions\cite{positive-lan-kuga,positive-lan-analytic}.
+The boundary monodromy is unipotent, and $T$ is smooth projective
+with normal-crossing boundary. Hodge semipositivity therefore makes
+the Hodge bundle and each of its exterior powers nef: for the latter,
+apply the same theorem to the exterior power of the polarized
+weight-one variation\cite{positive-fujino-fujisawa}.
+This proves nefness on the whole compactification, including curves
+contained in the boundary.
+
+For a head step weight, $\mathcal L$ is the dual determinant of
+the corresponding tautological subbundle of $\operatorname{Lie}_\tau$.
+The eigenspaces are quotient direct summands of the Hodge bundle.
+The line in question is therefore a quotient of the corresponding
+exterior power of the pulled-back Hodge bundle, hence nef. The conjugate tail steps have
+the identical description. A weight constant on all $r$ entries
+at $\tau$ gives the power of
+\[
+ (\det\operatorname{Lie}_\tau)^{-1}
+       \otimes\det\operatorname{Lie}_{\bar\tau}
+       =\det\mathcal H^1_{\mathrm{dR},\tau}.
+\]
+The equality follows from the Hodge filtration and polarization.
+Its monodromy determinant preserves an $\mathcal O_E$-lattice
+and has absolute value one at every embedding. It is thus a root
+of unity, of order bounded for the fixed field $E$. Boundary
+monodromy has determinant one. Its canonical extension is a
+torsion line bundle, so either sign of this step is numerically
+trivial. No uniform bound on that order is used.
+
+Here is the exact weight decomposition. Put
+$d_i=a_i-a_{i+1}$. For $i<p$ let $h_i$ be one on the first
+$i+1$ entries and zero elsewhere; for $i\ge p$ let $t_i$ be
+minus one on the entries after $i$, and zero elsewhere. Then
+\[
+ a=a_p{\bf1}+\sum_{i=0}^{p-1}d_i h_i
++\sum_{i=p}^{r-2}d_i t_i.
+\]
+Checking each coordinate proves the identity. Every $d_i\ge0$,
+so the preceding nef and numerically trivial factors prove the
+first assertion. The argument is applied independently at each $\tau$.
+
+\paragraph{Strict gaps are positive at every interior subvariety.}
+Let $s_i=r-1-i$, let $\chi_i=1$ for $i<p$ and $\chi_i=-1$
+otherwise, and put
+\[
+ \rho_i=\begin{cases}i-p,&i<p,\\ i-p+1,&i\ge p.\end{cases}
+\]
+The bundle $\mathcal L(-\rho)$ is relatively ample for $\pi$,
+by the Pl\"ucker embeddings of the two full flags. The bundle
+$\mathcal L(\chi)$ is the pullback of the determinant Hodge
+bundle $\omega$ on $T$. This is an identity of the prescribed
+characters, not a change of metric or level.
+
+Choose an ample line bundle $A$ on $T$ and $t>0$ so that
+$H=\pi^*A^t\otimes\mathcal L(-\rho)$ is ample on $Y$.
+The original toroidal map $v:T\to T^{\min}$ is an isomorphism
+over the interior, and $\omega$ is the pullback of an ample
+line bundle on $T^{\min}$, with a positive power if the level
+is not neat\cite[Theorem 7.2.4.1(1)--(3)]{positive-lan-pel}.
+For any $y\in U$, Serre generation applied to
+$v_*A^{-t}$ gives some $l>0$, a multiple of that Hodge power, and a section of
+$\omega^l\otimes A^{-t}$ nonzero at $\pi(y)$. Its pullback
+has effective divisor $E_y$ avoiding $y$.
+
+Choose $b$ so large that $\mu=bs-l\chi+\rho$ is dominant;
+for example $b\ge2l+2$ suffices. The exact line identity is
+\[
+ \mathcal L(s)^b
+  =(H\otimes\mathcal L(\mu))\otimes\mathcal O(E_y).
+\]
+The first factor is ample, since $\mathcal L(\mu)$ is nef.
+If $V$ passes through $y$, it is not contained in $E_y$.
+Restrict this identity to $V$. Expanding the difference of
+the top self-intersections as a telescoping sum of nef classes
+intersected with the effective divisor gives
+\[
+ b^{\dim V}(c_1(\mathcal L(s))^{\dim V}\cdot V)
+   \ge(c_1(H\otimes\mathcal L(\mu))^{\dim V}\cdot V)>0.
+\]
+The intersection on the left before multiplication by $b^{\dim V}$
+is an integer, hence at least one. The same identity also proves
+bigness. If $\operatorname{gap}(a)\ge1$, then $a-s$ is
+dominant. Tensoring with its nef line bundle preserves the
+intersection lower bounds and bigness. This proves assertion 1.
+
+\paragraph{The exact canonical bundle and cusp reading.}
+The extended Kodaira--Spencer isomorphism on the constructed
+toroidal model identifies its logarithmic cotangent bundle with
+the prescribed polarized Hodge tensor\cite[Theorem 6.4.1.1(4)]{positive-lan-pel}.
+Taking its determinant and the relative flag canonical bundle gives
+\begin{equation}\label{actual-positive-canonical}
+                 \omega_Y(B)=\mathcal L(\kappa).
+\end{equation}
+For a direct sign check, on the first Lie flag the relative
+canonical exponents are $p-1-2i$, and the base canonical exponent
+is $-q$; on the conjugate flag they are $q-1-2j$ and $-p$.
+The original reversed conjugate weight convention gives exactly
+\eqref{actual-positive-kappa}. Thus
+\[
+ H^0(Y,\omega_Y\otimes\mathcal L(a-\kappa))
+                =H^0(Y,\mathcal L(a)(-B)).
+\]
+In the original normalized analytic reading these are cusp
+sections: the subcanonical extension is the canonical extension
+with the negative reduced boundary, and its algebraic sections
+read as cuspidal automorphic forms
+\cite{positive-lan-analytic,positive-lan-stroh}.
+Their fixed holomorphic highest-weight equations give an
+infinitesimal character, hence finiteness under the center of
+the enveloping algebra; canonical-extension
+coordinates give moderate growth. The group has compact real
+center, as in the already verified raw-theta cusp argument.
+The rapid-decay theorem therefore places these very sections
+in the original bounded cusp space\cite{positive-cusp-decay}.
+Only this inclusion is needed for generation and the birational
+subsystem; no integral section-lattice identification is inferred.
+
+\paragraph{Effective generation and separation.}
+Set $N=\mathcal L(a-\kappa)$ and suppose
+$\operatorname{gap}(a-\kappa)\ge m$. Then
+$N=\mathcal L(s)^m\otimes\mathcal L(a-\kappa-ms)$,
+where the second factor is nef. Assertion 1 gives
+$(c_1(N)^k\cdot V)\ge m^k$ for every $k$-dimensional
+integral $V$ through any prescribed point of $U$.
+
+Apply Koll\'ar's effective adjoint theorems for a smooth variety
+and a nef and big $N$\cite[Theorems 5.8--5.9]{positive-kollar}.
+For generation take $m=m_1$ and $c(k)=m_1-\tfrac12$.
+The strict intersection hypotheses hold, and
+\[
+ \sum_{k=1}^D\frac{k}{c(k)}
+       =\frac{m_1-1}{m_1-\tfrac12}<1.
+\]
+For separation of two distinct points take $m=m_2$ and
+$c(k)=m_2-\tfrac12$. Since
+$2^{1/k}\le1+1/k$ for integral $k\ge1$,
+\[
+ \sum_{k=1}^D\frac{k2^{1/k}}{c(k)}
+ \le\frac{D(D+3)/2}{m_2-\tfrac12}
+ =\frac{m_2-1}{m_2-\tfrac12}<1.
+\]
+The conclusions apply to $\omega_Y\otimes N$, which is
+exactly the cusp bundle in \eqref{actual-positive-canonical}.
+The resulting map on $U$ separates all complex points, so in
+characteristic zero it is birational onto its image. Proper
+cohomology base change descends generation and the equality
+of ratio fields to $K$; no coefficient-field enlargement is
+introduced in the conclusion.
+
+Finally, the consecutive gaps of $\kappa$ are $-2$ within
+each block and $2r-2$ at the middle break. Hence the original
+bound in assertion 3 gives
+$\operatorname{gap}(a-\kappa)\ge(D+3)^2+2\ge m_2$.
+This proves assertion 3 with room to spare, including $D=1$.
+The original weight-size inequalities supply that displayed gap
+for both $u_1$ and $u_2$; their exact consuming statement and
+size quantifiers are recorded in the companion source certificate.
+\end{proof}
+
+For the actual Hilbert--Samuel consumer, a pullback of the
+strict-gap line is nef and big under its prescribed birational
+modification. Principalizing the other original cusp base ideal
+gives a generated line whose map is birational; it too is nef
+and big. Thus these geometric hypotheses and both original
+birationality conditions are supplied. The common integral
+section lattices, their short spanning bounds and the numerical
+arithmetic remainder are not inferred from geometric positivity.

@@ -140,13 +140,15 @@ algebraic weight, fixed-weight density, all arithmetic-point Speh
 decompositions, the distinguished-prime kernel conditions and exact
 finite twisting are proved. This is original `ModU`, not the stronger
 `ModUAlt`. An actual absolutely irreducible seed lies on a stable Hecke
-component of dimension `1+n*[F:Q]`; its transfer to the original
-normalized Space remains a separate requirement.
+component of dimension `1+n*[F:Q]`. The actual normalized `SeedIn`
+transfer is now proved in ranks two and three, together with a stable
+starting chart of dimension `n*[F:Q]+2`. It uses a finite homogeneous
+entry algebra and recovers exactly the original Hecke quotient, with
+no integral realization of generic matrix entries assumed.
 
-**First missing construction.** Prove the normalized-Space/`SeedIn`
-transfer and global component/curve argument
-and the stable starting support required by global
-characteristic-prime propagation. The characteristic-zero
+**First missing construction.** Prove the global characteristic-prime
+component/curve argument and its propagation from that exact starting
+support. The characteristic-zero
 arithmetic points do not by themselves prove nonemptiness of every
 required characteristic-prime fibre. The final global argument must retain
 the entire characteristic-prime fibre
@@ -194,10 +196,13 @@ automorphism mass, determinant phase and original rational Weil operator.
 The Host's everywhere-finite-unramified condition is retained in the
 local-genus identification. The exact harmonic heat comparison is now
 proved for the actual class-sum difference, including its doubled
-Gaussian and invariant derivatives. The first missing inputs are the
-finite Schwartz system and remaining transfer needed for raw-theta
-spanning, its uniform archimedean estimate and the remaining selected-prime
-divisibility laws for the same maps.
+Gaussian and invariant derivatives. The explicit finite Schwartz
+system now satisfies all the original `IsSystem` clauses and gives
+the level-theta span. The identity-cover transfer proves the actual
+`HolSub0LeSpanRaw`, retaining the full arithmetic character, common
+component coordinates and prescribed principal level. The first
+missing inputs are quantitative short integral spanning bounds and
+the remaining selected-prime divisibility compatibility for these same maps.
 A constructed integral theta section does not supply the global norm.
 
 ## W08: the actual global period Gram operators
@@ -281,9 +286,13 @@ The original `WuDecay` and coefficient integrability now hold for every
 existing arithmetic setting under its exact gap hypothesis. Weighted
 Tonelli in the actual induced space gives the original exponent, and a
 compact reproducer fixes its prescribed seed exactly. Neither the setting
-nor a uniform bound is inferred. The first global step is now actual
-arithmetic folding and absolute convergence of every rational return,
-followed by the original raw-kernel/period-Gram identity. The normalized
+nor a uniform bound is inferred. Actual arithmetic folding now supplies
+`MultPoly` and `IUnfold`; the original finite phases and level splitting
+supply `PhWellDef`. Every framed rational return is absolutely summable
+in the established gap range, with the original unipotent intersections,
+finite indices and Haar factors. The first missing global step is the
+original raw-kernel/period-Gram identification for these very maps,
+followed by the uniform trace estimates. The normalized
 mass datum's replacement of its kernel by `Sig/rho0` does not prove that
 identity for the actual raw kernel.
 
@@ -331,11 +340,16 @@ the whole original sized `Deep.Good` contract. The actual raw-theta sections
 now descend over arbitrary coefficient algebras and lie in the original
 bounded cusp space under `CovGmin.Hyp`, with all normalization factors and
 both finite indices retained. Their integral image follows from the
-established uniform clearing integer. Spanning and the quantitative norm
-and section estimates remain.
+established uniform clearing integer. The actual finite theta system
+and identity-cover comparison now give algebraic spanning. Hodge
+semipositivity, the exact logarithmic canonical weight and effective
+adjoint separation now prove the required nef/big lines, generation
+on the interior and both birational cusp systems under the original
+weight gaps.
 
-**First missing construction.** Identify the actual geometric section and
-height inputs and prove their numerical arithmetic remainder. The existing
+**First missing construction.** Construct short integral spanning families
+and their exact height and multiplication bounds, then prove the
+numerical arithmetic section remainder for the same lattices. The existing
 cusp, jet and signed-boundary lemmas are to be applied unchanged.
 
 ## Completion discipline

@@ -1,0 +1,320 @@
+\subsection{Arithmetic folding with the original quotient norm}
+\label{global-gram-continuation}
+
+Retain an existing arithmetic setting $X$ and an original word $u$.
+Write $E/F$ for its CM extension, $n$ for its moving dimension,
+$G=U(V)$, $\Gamma=G(F)$ diagonally embedded in $G(\mathbb A_F)$,
+and $S_u=N_u\rtimes H_u$.  The group $H_u$ is the unitary group of
+the original positive definite orthogonal complement.  It is compact
+at every infinite place.  All Haar measures and the quotient measure
+$dq_u$ of Theorem~\ref{actual-seed-decay-theorem} remain fixed.
+Put
+\[
+ M(g)=\prod_{v\mid\infty}\|g_v\|_{\rm op},\qquad
+ \nu_u(g)=\inf_{s\in S_u(F_\infty)}M(sg),\qquad
+ N_X=4n^2\sqrt{2\max_vq_v}.
+\]
+For compact $\Omega\subset G(\mathbb A_F)$ define
+\[
+ m_\Omega(x)=\sup_{y\in G(\mathbb A_F)}
+ \#\{\gamma\in\Gamma:x^{-1}\gamma y\in\Omega\}.
+\]
+This is the original return multiplicity.  Constants below may depend
+on the entire fixed arithmetic setting.  They are not uniform estimates
+for the final growing family.\cite{global-gram-continuation-source}
+
+\begin{theorem}[Arithmetic return multiplicity]
+\label{global-gram-multiplicity}
+For every pair of compact sets $\Omega,C\subset G(\mathbb A_F)$
+there is a finite $A_{X,\Omega,C}\ge0$ such that
+\begin{equation}\label{global-gram-mult-bound}
+ m_\Omega(c(g,1))\le A_{X,\Omega,C}M(g)^{4n^2}
+ \qquad(c\in C,\ g\in G(F_\infty)).
+\end{equation}
+Consequently the original condition \texttt{MultPoly}, with exponent
+$N_X$, holds.  Neither $[F:\mathbb Q]$ nor $n$ is assumed bounded.
+\end{theorem}
+
+\begin{proof}
+Fix $x=c(g,1)$ and $y$.  If the return set is nonempty, choose
+$\gamma_0$ in it.  The injective map $\gamma\mapsto\gamma\gamma_0^{-1}$
+sends that set into
+\[
+ \Gamma\cap x\Omega\Omega^{-1}x^{-1}.
+\]
+The finite components of the latter compact set lie in the fixed
+compact set $C_f\Omega_f\Omega_f^{-1}C_f^{-1}$.  In a fixed
+$E$-basis of $V$, its matrix entries therefore belong to
+$a^{-1}\widehat{\mathcal O}_E$ for one positive integer $a$.
+A rational matrix in this set has entries in $a^{-1}\mathcal O_E$.
+Thus all candidates belong to the single Minkowski lattice
+$\Lambda=(a^{-1}\mathcal O_E)^{n^2}$ in
+$\prod_{v\mid\infty}\operatorname{Mat}_n(\mathbb C)$.
+
+In the original normalized real coordinates, $g_v^{-1}=J_vg_v^*J_v$
+with $J_v$ a diagonal matrix of signs.  Hence
+$\|g_v^{-1}\|_{\rm op}=\|g_v\|_{\rm op}$ and
+$\|g_v\|_{\rm op}\ge1$.  Compactness of $C$ and $\Omega$, including
+the fixed change from the $E$-basis to these real coordinates, gives
+constants $B_v$ for which every candidate matrix has Frobenius norm
+at most $B_v\|g_v\|_{\rm op}^2$ in the $v$-block.
+
+Choose a bounded half-open fundamental parallelepiped $P$ of
+$\Lambda$, with $v$-block radius $p_v$.  Its translates by distinct
+lattice points have disjoint interiors.  The translates associated
+with our candidates lie in the product of balls of radii
+$(B_v+p_v)\|g_v\|_{\rm op}^2$.  Comparing Euclidean volumes gives
+\[
+ \#\bigl(\Gamma\cap x\Omega\Omega^{-1}x^{-1}\bigr)
+ \le \frac{\prod_v\operatorname{vol}_{2n^2}(B(0,B_v+p_v))}
+                {\operatorname{covol}(\Lambda)}
+       \prod_v\|g_v\|_{\rm op}^{4n^2}.
+\]
+This is independent of $y$.  It proves \eqref{global-gram-mult-bound};
+empty compact sets cause no difficulty.  If some $q_v>0$, then
+$N_X\ge4n^2$.  If every $q_v=0$, every $g_v$ is unitary and
+$M(g)=1$, so the required exponent $N_X=0$ also works.
+The multiplicity is Borel measurable.  For each integer $j$, the
+condition $m_\Omega(x)\ge j$ is a countable union over distinct
+$\gamma_1,\ldots,\gamma_j\in\Gamma$ of closed conditions: eliminate
+$y$ using the first return, and project the resulting closed set
+in $G(\mathbb A_F)\times\Omega$ along its compact second factor.
+\end{proof}
+
+Here is its exact application to the original scalar seeds.  Write
+$K=K_2$, $x_u\in G(\mathbb A_{F,f})$ for the prescribed finite translate,
+and $T\in\mathcal C_u$ for one original column.  Its seed is zero
+off $N_u(\mathbb A_{F,f})H_u(\mathbb A_{F,f})x_uK$, and on that set is
+\begin{equation}\label{global-gram-original-seed}
+ \Phi_T(g,nhx_uk)=\psi_{u,f}(n)\chi_2(k)
+                       T(W_u(g))(1,h).
+\end{equation}
+In the next theorem the original decomposition-independence condition
+\texttt{PhWellDef} is retained explicitly.  It is exactly a premise
+of the source's \texttt{IUnfold} contract.  It concerns the original
+finite lattice and phases; replacing them by a convenient level is
+not permitted.
+
+\begin{theorem}[The actual weighted folding integral]
+\label{global-gram-ifinite}
+For every original setting, the full original \texttt{IUnfold}
+implication holds.  More explicitly, suppose the prescribed seeds
+\eqref{global-gram-original-seed} satisfy \texttt{PhWellDef}, and
+the original weighted-seed condition holds.  Then for every original
+column $T$ and every compact $\Omega$,
+\begin{equation}\label{global-gram-ifinite-eq}
+ I_\Omega(T):=
+ \int_{S_u(F)\backslash G(\mathbb A_F)}
+              m_\Omega(y)|\Phi_T(y)|\,dy<\infty.
+\end{equation}
+The quotient uses counting measure on $S_u(F)$ and the original
+adelic Haar measure; the value is independent of the measurable
+fundamental domain.  In particular the original gap hypothesis
+supplies the weighted-seed premise through
+Theorem~\ref{actual-seed-decay-theorem}.
+\end{theorem}
+
+\begin{proof}
+The arithmetic quotient $S_u(F)\backslash S_u(\mathbb A_F)$ is
+compact.  Indeed, $H_u$ is positive definite at every real place.
+Its finite adelic double quotient by a compact open subgroup is
+finite: it classifies lattices of one fixed positive definite
+Hermitian genus, and finiteness follows from integral positive
+definite lattice reduction.  One may use the trace quadratic form;
+the matrices giving the action of fixed generators of
+$\mathcal O_E$ are bounded on each of the finitely many resulting
+quadratic lattices.  A finite level adds only finitely many choices.
+Together with compactness of $H_u(F_\infty)$ this proves compactness
+of its full arithmetic quotient.  The unipotent group $N_u$ has a
+central filtration with additive vector-group quotients, whose
+arithmetic quotients are compact.  Induction on that filtration,
+then the semidirect product, proves the assertion for $S_u$.
+Choose a compact representative set $C_S$.
+
+There is a finite $M_T$ such that
+\begin{equation}\label{global-gram-col-bound}
+                 |T(\xi)(1,h)|\le M_T\|\xi\|
+                 \qquad(h\in H_u(\mathbb A_{F,f})).
+\end{equation}
+To see this, take the finitely many classes modulo $H_u(F)$ and
+the original compact open column level.  Evaluation on each class
+is a linear functional on the finite-dimensional $V_{\pi,u}$.
+The rational left action is transported through the unitary
+representation of $H_u(F_\infty)$, and the right level character
+has absolute value one.  The maximum of these finitely many
+functional norms gives \eqref{global-gram-col-bound}.
+The finite characters in \eqref{global-gram-original-seed} have
+absolute value one: their arguments have an integral multiple in
+the annihilating integral lattice, so their values are roots of
+unity.  Thus $|\Phi_T(g,y_f)|\le M_T\|W_u(g)\|$ on its support.
+
+Let $y=(g,y_f)$ be in that support and fix any $s\in S_u(F_\infty)$.
+Write $y_f=s_fx_uk$.  Then
+\[
+ y=(s^{-1},s_f)(sg,x_uk)
+   =\gamma c(1,x_uk)(sg,1)
+ \quad(\gamma\in S_u(F),\ c\in C_S).
+\]
+Return multiplicity is invariant under left multiplication by
+$\Gamma$.  Apply Theorem~\ref{global-gram-multiplicity} to the
+compact set $C_S(1,x_uK)$ and then take the infimum over $s$.
+There is no measurable-choice step and no change of quotient norm:
+\begin{equation}\label{global-gram-weight-majorant}
+ m_\Omega(y)|\Phi_T(y)|
+ \le A M_T\nu_u(g)^{N_X}\|W_u(g)\|
+       1_{S_u(\mathbb A_{F,f})x_uK}(y_f).
+\end{equation}
+The right side is left $S_u(\mathbb A_F)$-invariant.
+
+Use the original $ds_{u,\infty}=d\mu_Nd\mu_H$ and any finite
+Haar measure $ds_{u,f}$, and define their quotient measures by
+Weil's formula.  The groups in this calculation are unimodular.
+For $S_u$ this follows also because the determinant character of
+the action of its anisotropic unitary Levi on the unipotent radical
+is trivial.  Disintegrating first by $S_u(F)\backslash S_u(\mathbb A_F)$,
+then at infinity and at the finite places, bounds
+\eqref{global-gram-ifinite-eq} by
+\[
+ A M_T\operatorname{vol}(S_u(F)\backslash S_u(\mathbb A_F))
+       \nu_{u,f}(S_u(\mathbb A_{F,f})x_uK)
+       \int_{S_u(F_\infty)\backslash G(F_\infty)}
+                \nu_u(g)^{N_X}\|W_u(g)\|\,dq_u(g).
+\]
+Every factor is finite.  The finite quotient set is the image of
+a compact set, and its quotient Haar measure is locally finite.
+The product of the two finite-place factors is unchanged if
+$ds_{u,f}$ is rescaled.  The fixed infinite-place and adelic
+normalizations have not been changed.
+
+Finally the original rational character product and column
+equivariance make $\Phi_T$ left $S_u(F)$-invariant; these identities
+are applied to the well-defined formula in the hypothesis.
+Its measurability follows from the continuous infinite-place seed
+and the locally constant finite-level factors.  Therefore Weil's
+formula and fundamental-domain independence apply to the actual
+seed, proving the original \texttt{IUnfold} contract.
+\end{proof}
+
+\begin{corollary}[Absolute Poincar\'e returns and their Gram identity]
+\label{global-gram-poincare}
+Under the preceding original local decomposition hypothesis, retain
+the original gap and finite level.  Set
+\[
+ P_T(x)=\sum_{\delta\in S_u(F)\backslash\Gamma}\Phi_T(\delta x).
+\]
+This series converges absolutely at every $x$, independently of its
+representatives, and belongs to the original $L^2(\Gamma\backslash G(\mathbb A_F))$.
+For two original words and columns, put
+$S_0=S_u(F)$, $S_1=S_{u'}(F)$ and
+$S_r=S_0\cap rS_1r^{-1}$.  Then
+\begin{equation}\label{global-gram-unfolding}
+ \int_{\Gamma\backslash G(\mathbb A_F)}P_T(x)\overline{P_{T'}(x)}\,dx
+ =\sum_{r\in S_0\backslash\Gamma/S_1}
+       \int_{S_r\backslash G(\mathbb A_F)}
+          \Phi_T(x)\overline{\Phi_{T'}(r^{-1}x)}\,dx .
+\end{equation}
+The sum of the corresponding absolute integrals is finite.  Every
+double coset and its actual stabilizer occurs; no identity-return
+truncation is made.
+\end{corollary}
+
+\begin{proof}
+Let $\alpha$ be the compact reproducer supplied by
+Theorem~\ref{actual-seed-decay-theorem}.  Combining it with
+$\overline{\chi_2(k)}1_K(k)/\mu_f(K)$ gives a bounded compact
+reproducer for $\Phi_T$ with the actual adelic Haar measure.
+The reciprocal level volume is essential.  On a common compact
+support $\Omega$ containing $1$, write its absolute bound as $a$.
+The positive unfolding of this reproduction inequality gives
+\[
+ \sum_{\delta\in S_0\backslash\Gamma}|\Phi_T(\delta x)|
+ \le a\,m_\Omega(x)\,A_T,
+ \qquad A_T=\int_{S_0\backslash G(\mathbb A_F)}|\Phi_T|.
+\]
+Indeed, after integrating over $S_0\backslash G$ the pairs
+$(\delta,s)\mapsto\delta^{-1}s$ run through $\Gamma$ exactly once.
+The point count is $m_\Omega(x)$.  Theorem~\ref{global-gram-ifinite}
+gives $A_T<\infty$ because $m_\Omega\ge1$, and
+Theorem~\ref{global-gram-multiplicity} makes each $m_\Omega(x)$ finite.
+Unfolding the positive square majorant gives
+$\|P_T\|_2^2\le a A_T I_\Omega(T)<\infty$.
+For two seeds the same argument bounds their single unfolded
+absolute product by $a A_T I_\Omega(T')$.  Tonelli then permits
+the decomposition into all double cosets, with stabilizer $S_r$.
+Absolute convergence justifies the complex-valued unfolding and
+proves \eqref{global-gram-unfolding} with the displayed conjugation.
+\end{proof}
+
+\begin{theorem}[Finite arithmetic fibres of the framed returns]
+\label{global-gram-levi-fibres}
+Retain one original flag, with isotropic subspace $X$, fixed vector
+$z$ modulo $X$, and positive definite complement $W$.  For every
+original lattice $\Lambda$ let
+\[
+ A_\Lambda=\{s\in S_u(F):s\Lambda=\Lambda\},\qquad
+ N_\Lambda=A_\Lambda\cap N_u(F).
+\]
+Then $A_\Lambda/N_\Lambda$ is finite.  More precisely, with $p_W$
+the projection associated to the original hyperbolic vectors and $z$,
+put
+\[
+ L_W=p_W(\Lambda\cap X^\perp)\subset W.
+\]
+The quotient $A_\Lambda/N_\Lambda$ injects into the finite isometry
+group of the positive definite rational trace lattice
+$(L_W,\operatorname{Tr}_{E/\mathbb Q}h)$.
+For each pair of original lattices $\Lambda_1,\Lambda_2$ there is
+a finite set $F_{12}\subset S_u(F)$ such that every
+$s\in S_u(F)$ with $s\Lambda_2=\Lambda_1$ satisfies
+$f^{-1}s\in N_{\Lambda_2}$ for some $f\in F_{12}$.
+This is the full original \texttt{LeviFinC} assertion.
+\end{theorem}
+
+\begin{proof}
+The rational subspace $X^\perp$ is the direct sum
+$X\oplus Ez\oplus W$.  The map $p_W$ is rational and fixes $W$.
+Consequently $L_W$ is a full $\mathcal O_E$-lattice in $W$:
+the intersection $\Lambda\cap X^\perp$ spans $X^\perp$, and its
+image is finitely generated and spans $W$.  The denominators of
+the projection are retained in $L_W$; no saturation is performed.
+
+An element of $S_u(F)$ acts unipotently on the successive pieces
+of the original isotropic flag, fixes the class of $z$ in
+$X^\perp/X$, and induces a unitary transformation $s_W$ on $W$.
+For $x\in X^\perp$ one has $p_W(sx)=s_Wp_W(x)$.  Thus
+$s\Lambda=\Lambda$ implies $s_WL_W=L_W$.  Conversely the kernel
+of $s\mapsto s_W$ on $S_u(F)$ is exactly its prescribed unipotent
+radical: it acts trivially on $X^\perp/X$, including its $Ez$
+summand, as well as on every graded piece of the flag.  Intersecting
+with $A_\Lambda$ gives precisely the original subgroup
+$N_\Lambda$, with the original lattice condition intact.
+
+Choose a $\mathbb Z$-basis $b_1,\ldots,b_d$ of $L_W$.  After
+clearing one fixed denominator, its trace form is integral and
+positive definite.  An isometry sends $b_i$ to a lattice vector
+of the fixed norm of $b_i$.  Each such norm sphere meets the lattice
+in finitely many points, so only finitely many tuples of images
+are possible.  This proves the asserted finiteness without an
+estimate uniform in $d$, the discriminant or the projected lattice.
+
+If no $s$ sends $\Lambda_2$ to $\Lambda_1$, take $F_{12}$ empty.
+Otherwise fix $s_0$ doing so, choose representatives $T$ for the
+finite quotient $A_{\Lambda_2}/N_{\Lambda_2}$, and set
+$F_{12}=s_0T$.  Since $s_0^{-1}s\in A_{\Lambda_2}$,
+the asserted right-coset factorization follows.  The description
+of $N_\Lambda$ above is exactly the flag and orthogonal-quotient
+definition of \texttt{NLam}, so it proves the stated source
+contract, not a quotient by a larger unipotent group.
+\end{proof}
+
+This closes the actual arithmetic \texttt{MultPoly},
+\texttt{IUnfold} and \texttt{LeviFinC} suppliers, and proves the
+displayed Poincar\'e identity under the explicit original local
+decomposition hypothesis.
+It does not yet prove the finer original \texttt{OOLintSumC}
+statement for all framed returns, the class-frame identification
+\texttt{SigRowsC}, or the normalized \texttt{RowFormC} formula.
+Their finite level weights, phases, torsors and Haar constants still
+have to be matched.  No bound uniform in $X$ follows from the
+finite constants above.  In particular this is not yet the required
+positive-trace estimate or an aggregate nonvanishing theorem.

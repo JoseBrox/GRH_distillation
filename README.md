@@ -46,10 +46,10 @@ For ordinary RH, an eventual one-sided bound for the corrected zeta prime sum, w
 The [short guide](paper/guide/main.pdf) explains the mechanisms; the manuscripts and linked construction files give the technical statements and proofs.
 
 - **Analytic reductions and the RH specialization.** The prime-sum criterion, fourth-power sampling and direct positive-kernel comparison are proved. The RH comparison retains four characters without requiring an artificial symmetry of their weights.
-- **The prescribed geometric models.** The integral models, compatible level changes, boundary comparisons and normalized complex theta dictionary are constructed. They retain the original coefficient fields, primitive line bundles and finite level maps.
-- **Actual integral theta sections.** The original sections exist in the required cusp spaces with a common clearing denominator. The Gaussian reproducing formula and the exact weighted Siegel–Weil identity are proved with their original measures and scalars. The harmonic heat comparison now transfers that identity to precisely the derivatives needed by the spanning argument.
-- **Arithmetic deformation and automorphic inputs.** The ordinary families, integral Hecke determinant, compact types and patching comparisons are constructed. Local propagation retains the given support prime and integral torsion. Reaching the required characteristic-prime components and bounding the moving-family Selmer product remain separate tasks.
-- **Local analytic and geometric comparisons.** The original local differential operators and weighted seed integrals are supplied at each fixed arithmetic setting. Exact degree, lattice-index and boundary-energy comparisons retain the terms needed for the final budget. Their existence does not give the required uniform global estimates.
+- **The prescribed geometric models.** The integral models, compatible level changes, boundary comparisons and normalized complex theta dictionary are constructed. They retain the original coefficient fields, primitive line bundles and finite level maps. The required positivity and point-separation properties of the cusp section spaces are proved.
+- **Actual integral theta sections.** The original sections exist in the required cusp spaces with a common clearing denominator. The Gaussian reproducing formula and the exact weighted Siegel–Weil identity are proved with their original measures and scalars. The harmonic heat comparison and an explicit finite theta system now prove algebraic spanning by the actual raw theta sections, with the original level and weight hypotheses.
+- **Arithmetic deformation and automorphic inputs.** The ordinary families, integral Hecke determinant, compact types and patching comparisons are constructed. The actual seed transfers to the normalized deformation space with the same integral Hecke quotient. Local propagation retains its support and integral torsion. Reaching the required characteristic-prime components and bounding the moving-family Selmer product remain separate tasks.
+- **Local analytic and geometric comparisons.** The original local differential operators, arithmetic folding and complete return summation are supplied at each fixed setting, with the exact finite phases. Exact degree, lattice-index and boundary-energy comparisons retain the terms needed for the final budget. Their existence does not give the required uniform global estimates.
 
 These results remove concrete inputs from the open frontier. Their scope matters: an identity at fixed arithmetic data does not establish a useful bound across a growing family.
 
@@ -61,9 +61,9 @@ The [technical frontier](notes/open-frontier-theorems.md) separates five connect
 | --- | --- |
 | Final arithmetic comparison | Compatible finite tables whose total signed cost satisfies the analytic criterion. |
 | Integral Selmer bound | The required support and rigidity statements, and a uniform bound for the specified weighted product of finite group orders. |
-| Integral theta maps | The remaining spanning and local divisibility statements for the original maps, with their quantitative norm bounds. |
+| Integral theta maps | Short integral spanning bounds and the remaining local divisibility compatibility for the original maps. |
 | Global analytic norms | The genuine global return and Gram identities, followed by sufficiently small rank-weighted trace errors. |
-| Geometric sections and heights | The remaining positivity and birational identifications, short integral spanning families, and the numerical section remainder in the prescribed metrics. |
+| Geometric sections and heights | Short integral spanning families, exact height comparisons and the numerical section remainder in the prescribed metrics. |
 
 A construction at one level, a finite constant depending on that construction, or an estimate for a different map does not complete these obligations. In particular, qualitative Selmer finiteness does not control growing torsion, and algebraic spanning does not give short integral generators. Four surviving characters do not bound auxiliary field degrees or geometric dimensions.
 

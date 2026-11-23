@@ -1,0 +1,223 @@
+\subsection{Spanning by the actual raw theta sections}
+\label{actual-raw-theta-spanning}
+
+The raw spanning problem uses the identity cover. This specialization
+removes the auxiliary change of the lower rows: its auxiliary ideal is
+$\mathcal O_E$, its level subgroup $J$ is trivial, and its
+$\phi^F$ is exactly the finite vector $\Phi$ of
+Theorem~\ref{actual-finite-theta-system-theorem}.
+The following supplies the original
+\texttt{HolSub0LeSpanRaw} contract.\cite{actual-sw-source}
+
+\begin{theorem}\label{actual-raw-theta-spanning-theorem}
+Fix the original Host, datum, level, coefficient field $K=c.F$,
+connection and normalized complex uniformization $U$ of
+the established normalized-Member construction
+\cite{current-construction-record}. Suppose $r\ge1$,
+$l.A=1$, all component spaces have the same Hermitian matrix and
+$\xi_0$, the original principal congruence groups at $M=l.M$ are
+contained in their arithmetic groups, and the original weight
+character is trivial on every element of each arithmetic group
+($\mathrm{ChiOne}$). Let $b>0$, let $(a,n)$ satisfy the original
+$\mathrm{Dom}(a,n)$, and suppose
+\[
+                        n\ge4[E:\mathbb Q]r+4.
+\]
+Every element of the original $\operatorname{holSub}_0$ is a
+finite complex linear combination of readings of the actual raw
+sections $\mathcal T_{\Lambda,N,\widehat{1_{x_0}}}(P)$ of
+Theorem~\ref{thm:actual-raw-theta-existence}, with
+\[
+ \Lambda\text{ unimodular and standard at }bM,\qquad
+ \mathrm{LevOK}(\Lambda,N,M),\qquad
+ P\in\operatorname{harmL}_K(\Lambda,a),
+\]
+and with $x_0$ spanning the original complementary half-level
+quotient. Their values satisfy the literal raw rule over every
+$K$-algebra. No field extension or rescaling of that rule occurs.
+\end{theorem}
+
+\begin{proof}
+Write $\mathfrak m=\mathrm{Mfr}(l)$ and $S_L=
+\mathfrak m\bar{\mathfrak m}^{-1}L$. In the identity cover
+$p_\delta=1$, $I_\delta=\mathcal O_E$, $l_2=l$ and
+$\varphi_\delta=1$. The original classical level construction
+therefore takes $J$ to be the kernel of the identity map on
+$\mathrm{GL}_r(\mathcal O_E/\mathfrak m)$. Thus $J=\{1\}$
+and $\lambda=1$. Both $\Phi$ and $\phi^F$ impose zero on
+the lower rows modulo $\mathfrak m$, so they agree term by term.
+In particular no moving-lattice comparison is required here.
+
+\textbf{The component lattices and their phases.}
+Choose $r$ elements of the original source lattice whose classes
+form a basis modulo $\mathfrak m$, and take the remaining entries
+of $x_0$ to be zero. Such a basis exists because a projective
+module of rank $r$ over the finite product of local rings
+$\mathcal O_E/\mathfrak m$ is free. The actual dual half-level
+marking identifies this quotient with $L/\mathfrak mL$ on each
+component. Move each component lattice by a rational unitary
+matrix so that these marked elements become the prescribed
+$\beta_i$ modulo $\mathfrak m$ and its lattice belongs to
+$\mathcal L$.
+
+For clarity, the approximation used in this step requires no
+extension of $E$. At a prime of $\mathfrak m$, choose the
+matrix taking the two local marked bases to each other. The
+conjugate prime is distinct, and the unitary equation determines
+the conjugate matrix; self-duality then also matches the
+conjugate lattices. These finitely many local unitary matrices
+can be approximated by one rational unitary matrix. Indeed the
+Cayley map $T\mapsto(1-T)(1+T)^{-1}$ identifies a dense open
+set of the unitary group with a dense open set of its
+skew-adjoint vector space. Move the local targets, if necessary,
+within their prescribed congruence neighborhoods into this open
+set, and apply ordinary weak approximation to its coordinates.
+The resulting rational matrix satisfies the same congruences.
+
+Denote the resulting lattices by $L_i$. They are in distinct
+$\Delta$-orbits: an element of $\Delta$ carrying $L_i$ to
+$L_j$ preserves the marked basis modulo $\mathfrak m$.
+The perfect alternating pairing carries this to equality of the
+original complementary half-level marking modulo $M$, and the
+normalized uniformization dictionary identifies the components.
+This uses the original half-level marking, not a full-level
+marking chosen independently.
+
+The original multiplier $\mu$ is one on the stabilizer of each
+$L_i$. Such a stabilizer element is principal at $M$ on $L_i$:
+the congruence on one half and its dual on the conjugate half
+give the congruence modulo $M$. Its $E$-determinant is one.
+Indeed that determinant is an integral unit of modulus one at
+every embedding; if it differs from one, the norm of its
+difference from one is at least $M^{[E:\mathbb Q]}$ and at
+most $2^{[E:\mathbb Q]}$, contrary to $M\ge3$.
+The actual $w_0^4$-adapted symplectic marking makes the two
+off-diagonal blocks divisible by eight and the relevant
+determinant congruent to one modulo eight. The squared theta
+transformation is therefore one. Since $n$ is even, the
+original $n$-fold vacuum is fixed. These are precisely the
+phase cancellations established in the normalized member
+construction; $\lambda=1$ contributes no new factor.
+
+\textbf{The exact raw reading.}
+Set
+\[
+ m_\Lambda=[\Lambda:\Lambda\cap\mathcal O_E^n],\qquad
+ C=M^{[E:\mathbb Q]rn/2}.
+\]
+At a component lattice $L$, let $v$ be its standard-lattice
+vacuum and $v_{0,L}$ the chosen unit vacuum for
+$\mathcal O_E^n\otimes S_L$. Write $P_A$ for the original
+orthogonal vacuum projection. We use the original convention
+$\langle v,w\rangle=\int v\bar w$, linear in its first
+variable; thus $P_{\mathbb Cw}v=\langle v,w\rangle w$
+for a unit $w$. Because $\Lambda$ is standard
+at the primes of $M$, its modification of the standard lattice
+is supported away from the modification $L\mapsto S_L$.
+The finite Heisenberg projections consequently give the exact
+identity
+\begin{equation}\label{raw-span-projection}
+ P_{\Lambda\otimes S_L}P_{\Lambda\otimes L}v
+   =\langle v,v_{0,L}\rangle\,
+       m_\Lambda^{-r/2}v_{\Lambda,L}.
+\end{equation}
+One can check it without a choice of local tensor factors:
+Bezout for their coprime support integers decomposes each
+intermediate lattice as the sum of its intersections with the
+other two. Averaging the common semicharacter then gives
+$P_CP_BP_A=P_CP_A$ for each of the two decompositions.
+The remaining projection has positive norm $m_\Lambda^{-r/2}$
+by the exact tensor-index identity. The factor
+$\langle v,v_{0,L}\rangle$ is nonzero, with modulus
+$[S_L:S_L\cap L]^{-n/2}$, independent of $\Lambda$ and $N$.
+
+Let $Q=\mathrm{LevQ}(D_w,l)^n$. Its order is $C$:
+$\mathfrak b\bar{\mathfrak b}=(M)$ gives
+$|\mathcal O_E/\mathfrak b|=M^{[E:\mathbb Q]/2}$,
+and the original marked module has rank $r$.
+The original finite Fourier pairing gives, for the prescribed
+half-level roots $Y_q$ and allowed marked representative $c$,
+\begin{equation}\label{raw-span-finite-fourier}
+ \sum_{q\in Q}e^{-2\pi i\sum_b e(c_b,Y_{q,b})}
+                   H(Y_q)p
+       =C\,H(c)P_{\Lambda\otimes S_L}p,
+ \qquad p=P_{\Lambda\otimes L}v.
+\end{equation}
+Here $Y_q$ represent
+$(\Lambda\otimes S_L)/(\Lambda\otimes S_L\cap
+\Lambda\otimes L)$. Their original odd lifts have
+semicharacter one: multiplication by two is invertible on this
+finite quotient. Averaging these lifts is the stated projection;
+commuting $H(c)$ through the sum gives exactly the displayed
+negative sign. The dual marking identifies the Fourier
+coefficients $\widehat{1_{x_0}}(q)$ with these characters, up
+to a single unit scalar fixed by the component marking. This
+scalar is independent of $\Lambda,N$ because changing the
+allowed representatives changes each alternating pairing by an
+integer. It is retained below.
+
+Combine \eqref{raw-span-projection} and
+\eqref{raw-span-finite-fourier} with the literal raw reading
+\eqref{eq:actual-raw-theta-classical}. Its two indices satisfy
+$J/I=m_\Lambda^r$. Hence, on the $i$th component, the result is
+\begin{equation}\label{raw-span-reading}
+ \operatorname{rd}_U\mathcal T_{\Lambda,N,
+          \widehat{1_{x_0}}}(P)(i,x)
+   =A_i\,m_\Lambda^{r/2}\,
+         \operatorname{thP}(\Phi_{L_i,\Lambda},P^\sigma)(g_i x),
+                \qquad A_i\ne0.
+\end{equation}
+The coefficient $A_i$ retains the actual theta comparison,
+the finite Fourier phase and the standard-vacuum overlap.
+It depends on the component, but not on $\Lambda,N,P$.
+In particular the factors $C$ cancel rather than being reset
+to one. The original normalized theta dictionary makes the
+comparison constant on each component. Equivalently, on unit
+frames its modulus is fixed; its holomorphic ratio, where a
+nonzero reading is available, has constant modulus and is
+constant. Holomorphic continuation gives the same constant
+for all readings. If all readings on a component vanish,
+any nonzero constant supplies that vacuous identity.
+
+\textbf{Spanning and descent of the polynomials.}
+For a bounded form $F$ in $\operatorname{holSub}_0$, pull
+$A_i^{-1}F_i$ to $L_i$ and extend it to its $\Delta$-orbit
+using the original multiplier; put zero on the other orbits.
+The stabilizer calculation makes this well-defined.
+The modulus-one multiplier, the finite number of components,
+and the original $\mathrm{ChiOne}$ condition give an element
+of the exact bounded-family space used by the level spanning
+conclusion in Section~\ref{actual-finite-theta-system}.
+Apply that conclusion with $M_{\rm aux}=2bM$.
+It gives a finite sum of the $\Phi_{L_i,\Lambda}$ with
+$\Lambda\in\mathrm{Vset}(E,n,2bM)$ and row-highest harmonic
+polynomials.
+
+Each such $\Lambda$ is standard at $2bM$, so an odd $N$,
+divisible by $M$, can be chosen with
+$N\mathcal O_E^n\subset\Lambda\cap\mathcal O_E^n$.
+This is the original $\mathrm{LevOK}$ condition. In each
+fixed total degree, the harmonic and row-highest equations
+are linear equations over $K$ on a finite-dimensional
+polynomial space. Kernel formation commutes with extension
+to $\mathbb C$. Clearing the finitely many coefficient
+denominators and the powers of $N$ expresses every complex
+solution as a finite complex combination of elements of
+$\operatorname{harmL}_K(\Lambda,a)$; it does not change
+the harmonic equations or $K$.
+Apply \eqref{raw-span-reading} to those polynomials and
+divide their coefficients by the positive
+$m_\Lambda^{r/2}$. The actual raw sections from
+Theorem~\ref{thm:actual-raw-theta-existence} then give the
+required reading of $F$, simultaneously on every component.
+Both readings are zero off the frame domain by their original
+definitions. The empty-component case is immediate.
+\end{proof}
+
+This closes the actual raw spanning supplier. It does not bound
+the chosen integral polynomial generators or the spanning
+coefficients uniformly. The exact factors
+$m_\Lambda^{r/2}$ and $A_i$ have been retained; no estimate
+for the short integral families $h_0,h_{\rm sh}$ or for the
+remaining selected-prime theta maps follows from qualitative
+spanning alone.

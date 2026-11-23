@@ -1,0 +1,219 @@
+\subsection{Absolute convergence of all original framed returns}
+\label{global-gram-framed-returns}
+
+The preceding arithmetic count also controls the finer return set
+used by the raw kernel.  A positive dominating function avoids the
+finite phases altogether at this convergence step.  It is used only
+for domination; the original scalar seeds, level, maps and norms are
+not replaced.
+
+Retain an original setting in the gap range of
+Theorem~\ref{actual-seed-decay-theorem}, and its original finite
+sets $\mathcal L_u,\mathcal L_{u'}$ of framed lattices.  Put
+$f_u(g)=\|W_u(g)\|$.  For $\Lambda\in\mathcal L_u$, the original
+column data give
+\[
+ a_\Lambda=c_\Lambda x_u,\qquad
+ \widehat\Lambda=a_\Lambda L_f,
+ \qquad c_\Lambda\in H_u(\mathbb A_{F,f}).
+\]
+Here $L_f$ is the original finite adelic lattice.  Let
+$K_0=\operatorname{Stab}_{G(\mathbb A_{F,f})}(L_f)$, the actual
+compact open lattice stabilizer.  Its Haar volume is denoted
+$v_0=\mu_f(K_0)>0$.  Define
+\begin{equation}\label{global-gram-positive-seed}
+ F_u^+(g,y_f)=f_u(g)1_{S_u(\mathbb A_{F,f})x_uK_0}(y_f),
+ \qquad
+ P_u^+(y)=\sum_{S_u(F)\backslash\Gamma}F_u^+(\delta y).
+\end{equation}
+These are explicitly auxiliary nonnegative functions, not new
+arithmetic theta maps.  In particular $v_0$ will not be substituted
+for the original level volume in any kernel formula.
+
+For an original framed return $t=(\Lambda,\Lambda',[r])$, its
+representative $r\in\Gamma$ satisfies $r\Lambda'=\Lambda$.
+The equivalence is the original double relation by
+$N_\Lambda$ and $N_{\Lambda'}$, not by the larger $S$ groups.
+Write
+\[
+ R_t=N_\Lambda\cap rN_{\Lambda'}r^{-1},\qquad
+ A_\Lambda=S_u(F)\cap\operatorname{Stab}(\Lambda),\qquad
+ h_\Lambda=[A_\Lambda:N_\Lambda].
+\]
+All quotients at infinity below use counting measure on these
+discrete groups and the original infinite-place Haar measure.
+They are precisely the source's \texttt{ROinf} and
+\texttt{FundOf} quotients.\cite{global-gram-framed-source}
+
+\begin{theorem}[The full framed-return sum]
+\label{global-gram-framed-sum}
+For every such original setting and every pair of original words,
+\begin{equation}\label{global-gram-original-oolint}
+ \sum_{t\in\mathcal T_{u,u'}}
+ \int_{R_t\backslash G(F_\infty)}
+       f_u(x)f_{u'}(r_\infty^{-1}x)\,dx<\infty.
+\end{equation}
+Here $\mathcal T_{u,u'}$ is the entire original
+\texttt{GTerm} set, including its original admissibility condition.
+In particular this is the literal \texttt{OOLintSum} conclusion,
+for the original fundamental domains, throughout the already
+established gap regime.  It implies absolute convergence of the
+corresponding orbital rank-one operators.  No finite phase
+well-definedness or column lower-frame premise is needed for this
+positive convergence result.
+\end{theorem}
+
+\begin{proof}
+\emph{The auxiliary positive series has finite $L^2$ norm.}
+The function $f_u$ is left $S_u(F_\infty)$-invariant by the original
+unitary covariance of $W_u$.  The finite support in
+\eqref{global-gram-positive-seed} is open, right $K_0$-invariant
+and left $S_u(\mathbb A_{F,f})$-invariant.  Thus $F_u^+$ is Borel
+and left $S_u(F)$-invariant, without using a finite character.
+
+The proof of Theorem~\ref{global-gram-ifinite} applies directly
+to this explicit function, with column bound $M_T=1$ and $K_0$
+in place of the support set $K$.  Namely the compact arithmetic
+quotient of $S_u$, the actual multiplicity theorem, and the
+infimum over $S_u(F_\infty)$ give, for every compact $\Omega$,
+\[
+ \int_{S_u(F)\backslash G(\mathbb A_F)}
+                  m_\Omega(y)F_u^+(y)\,dy<\infty.
+\]
+This invocation does not use \texttt{PhWellDef}: $F_u^+$ is
+defined by a norm and a support indicator, so there is no
+choice of finite decomposition.
+
+The original compact reproducer gives
+$f_u(g)\le\int|\alpha(t)|f_u(gt)\,dt$.
+Multiply by the finite support indicator and average over $K_0$
+with kernel $1_{K_0}/v_0$.  This is a compact reproducing
+\emph{inequality} for $F_u^+$, with bounded kernel and the original
+adelic Haar measure.  The positive folding argument in
+Corollary~\ref{global-gram-poincare} therefore proves that $P_u^+$
+is finite everywhere and lies in $L^2(\Gamma\backslash G(\mathbb A_F))$.
+The same holds for $u'$.  Consequently
+\begin{equation}\label{global-gram-positive-J}
+ J_{u,u'}:=\int_{\Gamma\backslash G(\mathbb A_F)}P_u^+P_{u'}^+
+   =\int_{S_u(F)\backslash G(\mathbb A_F)}F_u^+P_{u'}^+
+   <\infty.
+\end{equation}
+The equality is positive unfolding; finiteness follows from
+Cauchy--Schwarz in the original quotient norm.
+
+\emph{The exact finite-support slice.}
+For each $\Lambda$ put
+\[
+ Q_\Lambda(x)=f_u(x)P_{u'}^+(x,a_\Lambda).
+\]
+The group $A_\Lambda$ acts discretely at infinity.  This follows
+either from the lattice matrix entries or from the same fixed
+denominator argument as Theorem~\ref{global-gram-multiplicity}.
+The infinite projection is injective on rational matrices.
+For $s\in S_u(F)$, the translates of
+$G(F_\infty)\times a_\Lambda K_0$ meet if and only if
+$s_f\in a_\Lambda K_0a_\Lambda^{-1}$, equivalently
+$s\in A_\Lambda$.
+The lattice equivalence uses the original completions:
+a full finite adelic lattice is the closure of its intersection
+with $V(F)$, by additive approximation.  No unipotent strong
+approximation or changed level is needed here.
+
+If $D_A$ is an infinite-place fundamental domain for $A_\Lambda$,
+then $D_A\times a_\Lambda K_0$ is a fundamental domain for
+this slice in $S_u(F)\backslash G(\mathbb A_F)$.
+The integrand in \eqref{global-gram-positive-J} is right $K_0$-invariant.
+Integration over the finite factor is therefore exactly $v_0$.
+The function $Q_\Lambda$ is $A_\Lambda$-invariant.  Since
+$h_\Lambda<\infty$ by Theorem~\ref{global-gram-levi-fibres},
+passing from $A_\Lambda$ to $N_\Lambda$ gives
+\begin{equation}\label{global-gram-slice}
+ \int_{N_\Lambda\backslash G(F_\infty)}Q_\Lambda(x)\,dx
+ =h_\Lambda\int_{A_\Lambda\backslash G(F_\infty)}Q_\Lambda(x)\,dx
+ \le {h_\Lambda\over v_0}J_{u,u'}.
+\end{equation}
+This retains the finite stabilizer index and the Haar volume.
+Different lattice slices need not be disjoint; the inequality
+is used separately for the finite list of $\Lambda$.
+
+\emph{Finite fibres of the actual return indexing.}
+Fix $\Lambda$.  For each original $t$ beginning at $\Lambda$,
+take representatives $E_t$ of $R_t\backslash N_\Lambda$.
+Transversal unfolding gives
+\begin{align*}
+ &\sum_{t:\,t.\Lambda=\Lambda}
+    \int_{R_t\backslash G(F_\infty)}
+                         f_u(x)f_{u'}(r_\infty^{-1}x)\,dx\\
+ &\quad=\int_{N_\Lambda\backslash G(F_\infty)}
+      f_u(x)\sum_{t:\,t.\Lambda=\Lambda}\sum_{m\in E_t}
+                         f_{u'}(r_\infty^{-1}m_\infty x)\,dx .
+\end{align*}
+Everything is nonnegative, so Tonelli requires no prior
+convergence.  The integrands are invariant under their stated
+groups, since those groups lie in the original unipotent
+stabilizers of the two norm seeds.
+
+Send $i=(t,m)$ to the rational coset
+\[
+                 \varphi(i)=S_{u'}(F)r^{-1}m.
+\]
+There is a finite bound $M$ on all its fibres.  Here is the
+explicit arithmetic proof, rather than an assumed counting
+hypothesis.  Choose the finite sets $F_{\Lambda_1',\Lambda_2'}$
+from Theorem~\ref{global-gram-levi-fibres}, and put
+\[
+ M=\sum_{\Lambda_1',\Lambda_2'\in\mathcal L_{u'}}
+                              |F_{\Lambda_1',\Lambda_2'}|.
+\]
+In a nonempty fibre choose $i_0=(t_0,m_0)$ and write
+$g_i=r_i^{-1}m_i$.  Then
+$\sigma_i=g_{i_0}g_i^{-1}\in S_{u'}(F)$ carries
+$\Lambda_i'$ to $\Lambda_{i_0}'$.  Choose
+$f_i\in F_{\Lambda_{i_0}',\Lambda_i'}$ with
+$f_i^{-1}\sigma_i\in N_{\Lambda_i'}$.
+The map $i\mapsto(\Lambda_i',f_i)$ is injective.
+Indeed equality for $i,j$ gives $g_jg_i^{-1}\in N_{\Lambda_i'}$,
+so
+\[
+ r_j\in N_\Lambda r_iN_{\Lambda_i'}.
+\]
+The original double-coset relation therefore gives $t_i=t_j$.
+Their fixed representatives now agree, and
+$m_jm_i^{-1}\in R_{t_i}$; the chosen transversals give $m_i=m_j$.
+This proves the fibre bound, also when the admissibility condition
+selects only part of the possible double-coset set.
+
+Finally $m$ preserves $\Lambda$ and $r\Lambda'=\Lambda$ imply
+\[
+                   r_f^{-1}m_fa_\Lambda\in a_{\Lambda'}K_0.
+\]
+Thus the relevant value of $F_{u'}^+$ equals
+$f_{u'}(r_\infty^{-1}m_\infty x)$ exactly.
+Its left rational $S_{u'}$-invariance identifies this value with
+the term of $P_{u'}^+(x,a_\Lambda)$ indexed by $\varphi(i)$.
+The fibre bound therefore majorizes the preceding double sum
+by $M P_{u'}^+(x,a_\Lambda)$.
+Using \eqref{global-gram-slice} and summing over the original
+finite source lattices gives the explicit finite bound
+\begin{equation}\label{global-gram-finite-ool-bound}
+ \sum_{t\in\mathcal T_{u,u'}}\int_{R_t\backslash G(F_\infty)}
+                       f_u(x)f_{u'}(r_\infty^{-1}x)\,dx
+ \le {M\over v_0}\Bigl(\sum_{\Lambda\in\mathcal L_u}h_\Lambda\Bigr)
+                                                       J_{u,u'}<\infty.
+\end{equation}
+The norm of each rank-one integrand is exactly the product in
+\eqref{global-gram-original-oolint}.  This also proves integrability
+of every original orbital operator and summability of their norms.
+\end{proof}
+
+This proves the entire original framed-return summability statement
+in the arithmetic gap range already used by the construction.
+The source's unrestricted predicate \texttt{OOLintSumC} is phrased
+with \texttt{FoldOK} premises alone; no stronger quantifier is
+silently substituted for the statement above.  Its downstream
+\texttt{OOIntAll} and orbital absolute-convergence conclusions apply
+to these very settings and representatives.  There is still no
+uniform estimate for $M$, $h_\Lambda$, $v_0^{-1}$ or $J_{u,u'}$.
+The complex raw-kernel identity must separately match its phases,
+original $K_2$ volume, class frames and final restrictions; a
+positive majorant does not identify that operator.

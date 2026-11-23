@@ -1,0 +1,217 @@
+\subsection{The original finite phase is well defined}
+\label{global-gram-finite-phases}
+
+Retain the original arithmetic setting, its level subgroup character,
+its modulus $g>0$, and all its original finite vectors.  In this
+subsection $\mathfrak d$ denotes the extension to $\mathcal O_E$ of
+the different of $F/\mathbb Q$, the source's \texttt{ddS}; it is
+not replaced by a unit ideal.  The original lattice splitting is
+\begin{equation}\label{global-gram-phase-split}
+ L=\bigoplus_{a=0}^{r-1}\mathfrak a_a e_a\ \oplus L_b\ \oplus
+                      \bigoplus_{a=0}^{r-1}\mathfrak a_a^{-1}f_a,
+ \qquad \mathfrak a_a=\mathfrak d^{a-r}.
+\end{equation}
+The hyperbolic vectors satisfy $h(e_a,f_b)=\delta_{ab}$, with
+$h$ conjugate linear in its first argument.  The lattice $L_b$ is
+orthogonal to them and contains the original $z=z_u$.
+The fixed finite lattice $L_f$ is the completion of $L$ in the
+original coordinates.  Write $K_0$ for its full stabilizer.
+
+The original finite approximation and $x=x_u\in K_0$ give, at
+every prime dividing $g$,
+\begin{equation}\label{global-gram-phase-congruence}
+ e_a\equiv e_a^0,\qquad f_a\equiv f_a^0,\qquad
+ z\equiv xz^0\pmod{gL_f},\qquad xe_a=e_a,\quad xf_a=f_a.
+\end{equation}
+These are localized assertions.  They follow by inverting the
+prescribed common integer $C$ coprime to $g$; no assertion that
+the rational hyperbolic vectors are globally integral is used.
+The vectors $e^0,f^0,z^0,b_i,b_i^\vee$ are in $L_f$ and satisfy
+the original integral Gram congruences.  In particular, modulo
+$g$, $e^0,f^0$ are dual hyperbolic frames,
+$b_i,b_i^\vee$ are orthogonal to them and $z^0$, and
+$h(b_i^\vee,b_j)=\delta_{ij}\epsilon$, with the original finite
+idempotent $\epsilon$.\cite{global-gram-phase-source}
+
+Set $w_a=e_{a+1}$ for $a<r-1$ and $w_{r-1}=z$, with the same
+convention for $w_a^0$.  When $r=0$ all root sums are empty and
+the last-index assertions below are absent.  The original two
+character arguments are
+\begin{align*}
+ B(n)&=\sum_a h(f_a,nw_a),\\
+ A(\kappa)&=\sum_a h(f_a^0,\kappa w_a^0)
+                  +\sum_{i+1<k}h(b_i^\vee,\kappa b_{i+1}).
+\end{align*}
+Thus $\psi_{u,f}(n)=\Psi_f(B(n)/g)$ and
+$\chi_2(\kappa)=\Psi_f(A(\kappa)/g)$, with the very same finite
+additive character $\Psi_f$ as in the original construction.
+
+\begin{theorem}[Exact unipotent phase matching]
+\label{global-gram-phase-match}
+For every $n\in N_u(\mathbb A_{F,f})\cap K_0$,
+\[
+ \kappa=x_u^{-1}nx_u\in K_2,
+ \qquad \chi_2(\kappa)=\psi_{u,f}(n).
+\]
+If $n\in N_u(\mathbb A_{F,f})$, $h\in H_u(\mathbb A_{F,f})$
+and $x_u^{-1}nhx_u\in K_2$, then
+\[
+ x_u^{-1}hx_u\in K_2,\qquad
+ \chi_2(x_u^{-1}nhx_u)
+       =\psi_{u,f}(n)\chi_2(x_u^{-1}hx_u).
+\]
+Consequently the original scalar seed formula
+\eqref{global-gram-original-seed} is independent of its finite
+decomposition: the original \texttt{PhWellDef} premise is supplied.
+\end{theorem}
+
+\begin{proof}
+\emph{The inverse different is an actual annihilator.}
+For $y\in\mathfrak d^{-1}$ and $o\in\mathcal O_E$,
+$\operatorname{Tr}_{E/F}(oy)$ belongs to the inverse different
+of $F/\mathbb Q$.  Indeed multiplication by every element of
+that different makes $oy$ integral, so makes its relative trace
+integral.  Trace duality then gives
+$\operatorname{Tr}_{E/\mathbb Q}(oy)\in\mathbb Z$.
+For a finite adele $v\in\widehat{\mathfrak d}^{-1}$, the finite
+Chinese remainder theorem chooses $q\in\mathfrak d^{-1}$ such
+that $v-q\in\widehat{\mathcal O}_E$.  The character is trivial
+on the latter lattice.  Its original rational product formula
+therefore gives
+\[
+ \Psi_f(v)=\Psi_f(q)
+          =\exp(-2\pi i\operatorname{Tr}_{E/\mathbb Q}q)=1.
+\]
+This uses the actual extended different, including all its
+ramified prime factors.
+
+\emph{The unipotent is in the original level subgroup.}
+Work first in the product of the local integer rings at primes
+dividing $g$; this product is preserved by conjugation.  By
+\eqref{global-gram-phase-congruence}, the actual $e_a,f_a,z$
+are integral there.  For a vector in the span of the $e_a$,
+its coefficient of $e_a$ is $h(f_a,\cdot)$; hence an integral
+vector in that span has integral coefficients.  The same is
+true for every initial subflag.  Since $n$ preserves $L_f$ and
+is unipotent for the original flag, reduction modulo $g$ gives
+\[
+ (\kappa-1)e_a^0\in\langle e_b^0:b<a\rangle,
+ \qquad (\kappa-1)z^0\in\langle e_b^0:b<r\rangle.
+\]
+Here and in the next display the spans are over the localized
+integer ring modulo $g$.  For the third level condition put
+$\beta=xb_i$.  Its pairings $h(e_a,\beta)=h(e_a,b_i)$ lie
+in $g\mathcal O_{E,v}$.  The corrected vector
+\[
+          \widetilde\beta=\beta-\sum_a h(e_a,\beta)f_a
+\]
+is integral, lies in the orthogonal complement of the isotropic
+span, and is congruent to $\beta$ modulo $g$.  Thus
+$(n-1)\widetilde\beta$ is an integral vector in that isotropic
+span.  Applying $x^{-1}$ and reducing gives
+\[
+               (\kappa-1)b_i\in\langle e_a^0:a<r\rangle.
+\]
+This is stronger than the original third level condition, which
+also allows the earlier $b_j$.  At primes not dividing $g$,
+$gL_f=L_f$, so all three congruence conditions are automatic.
+Since $x,n\in K_0$, also $\kappa\in K_0$.  These are exactly
+the original defining conditions for $K_2$.
+
+\emph{The complete character argument.}
+First $A(\kappa)\in\widehat{\mathcal O}_E$: all vectors in
+its expression and their images under $\kappa$ lie in the
+original integral Hermitian lattice.  Next
+\begin{equation}\label{global-gram-phase-B-different}
+                         B(n)\in\widehat{\mathfrak d}^{-1}.
+\end{equation}
+For $a<r-1$, the $e_a$ coefficient of $(n-1)e_{a+1}$ belongs
+to $\widehat{\mathfrak a_a\mathfrak a_{a+1}^{-1}}
+=\widehat{\mathfrak d}^{-1}$ by preservation of
+\eqref{global-gram-phase-split}.  For the last term,
+$(n-1)z\in L_f$ and its $e_{r-1}$ coefficient belongs to
+$\widehat{\mathfrak a}_{r-1}=\widehat{\mathfrak d}^{-1}$.
+The identity terms have zero pairings with the corresponding
+$f_a$.  This proves \eqref{global-gram-phase-B-different}; the
+argument uses the original fractional ideals, without declaring
+the flag lattice free or saturated.
+
+At primes dividing $g$, unitarity of $x$ and
+\eqref{global-gram-phase-congruence} give
+\[
+ h(f_a^0,\kappa w_a^0)=h(xf_a^0,nxw_a^0)
+                         \equiv h(f_a,nw_a)\pmod{g}.
+\]
+All paired vectors here are integral at these primes, and $n$
+preserves the local lattice.  The third level congruence just
+proved and the original Gram congruences also give
+\[
+ h(b_i^\vee,\kappa b_{i+1})
+ \equiv h(b_i^\vee,b_{i+1})=0\pmod{g}.
+\]
+Therefore $(A(\kappa)-B(n))/g$ is integral at primes dividing
+$g$.  At every other prime $g$ is a unit, and integrality of
+$A$ together with \eqref{global-gram-phase-B-different} puts
+the same difference in the inverse extended different.  Globally,
+\[
+          (A(\kappa)-B(n))/g\in\widehat{\mathfrak d}^{-1}.
+\]
+Applying its actual annihilator proves the exact phase equality.
+In particular this argument keeps the contribution outside the
+level primes; a congruence only modulo $g$ would not suffice.
+
+\emph{Splitting a product in the integral stabilizer.}
+Let $p$ be projection off the hyperbolic pairs onto their
+orthogonal complement.  The original splitting
+\eqref{global-gram-phase-split} proves $pL_f\subset L_f$.
+The element $h$ fixes every $e_a,f_a$ and preserves this
+orthogonal complement.  If $nh\in K_0$ and $y\in L_f$, set
+$q=hpy$.  Then $nhpy\in L_f$, while $nq-q$ lies in the
+isotropic span.  Hence $p(nq)=q\in L_f$.  Also
+$hy=(y-py)+q\in L_f$.  Apply the same argument to
+$(nh)^{-1}=(h^{-1}n^{-1}h)h^{-1}$ to prove $hL_f=L_f$.
+It follows that both $h$ and $n$ lie in $K_0$.
+
+Now $x^{-1}nx\in K_2$ by the preceding argument.  If
+$x^{-1}nhx\in K_2$, the subgroup law gives
+$x^{-1}hx\in K_2$, and its original character law gives the
+second assertion of the theorem.
+
+\emph{Independence of the seed decomposition.}
+The functions $n\mapsto B(n)$ are additive on $N_u$ and
+unchanged by $H_u$-conjugation: they are the adjacent
+coefficients of its unipotent flag, and $H_u$ fixes the actual
+$e_a,f_a,z$.  Thus $\psi_{u,f}$ is a character of $N_u$
+invariant under $H_u$.  If
+$nhxk=n'h'xk'$, put
+\[
+ q=h'^{-1}n'^{-1}nh',\qquad \ell=h'^{-1}h.
+\]
+Then $q\in N_u$ and $x^{-1}q\ell x=k'k^{-1}\in K_2$.
+The just-proved product statement yields
+$x^{-1}\ell x\in K_2$ and
+\[
+ \chi_2(k'k^{-1})
+       =\psi_{u,f}(n')^{-1}\psi_{u,f}(n)\chi_2(x^{-1}\ell x).
+\]
+The original column law is
+\[
+       T(\xi)(1,h)=\chi_2(x^{-1}\ell x)T(\xi)(1,h').
+\]
+Substitution gives, for every $\xi$,
+\[
+ \psi_{u,f}(n)\chi_2(k)T(\xi)(1,h)
+ =\psi_{u,f}(n')\chi_2(k')T(\xi)(1,h').
+\]
+Taking $\xi=W_u(g)$ proves the literal \texttt{PhWellDef}
+condition.
+\end{proof}
+
+In an existing original arithmetic setting this discharges the
+explicit local decomposition premise of
+Theorem~\ref{global-gram-ifinite} and
+Corollary~\ref{global-gram-poincare}.  It changes no lattice,
+finite phase, support, or scalar normalization.  The separate
+class-frame regrouping and raw-kernel identification still have
+to be supplied before the scalar Gram identity can be used as
+the final restricted operator identity.

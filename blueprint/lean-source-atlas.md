@@ -479,3 +479,38 @@ contracts against the convergent Gan--Qiu--Takeda formula, its probability
 measure and unitary constant. Local unit norms, character extension,
 CRT replacement, central phase and automorphism mass are explicit. No
 arbitrary ramified-genus comparison or Lean build is asserted.
+
+
+### Normalized support and actual spanning suppliers
+
+The [seed-transfer certificate](../certificates/selmer-support-continuation-seed-transfer.json)
+authenticates fifteen pinned modules, the original normalized `SeedIn`
+contract and starting-chart consumer. The proof keeps the integral Hecke
+quotient through a homogeneous finite entry algebra. The
+[finite-system](../certificates/theta-spanning-continuation-system.json)
+and [raw-span](../certificates/theta-spanning-continuation-raw.json)
+certificates record the literal `IsSystem`, level span and identity-cover
+`HolSub0LeSpanRaw` interfaces, including Schrödinger inner-product
+conventions, full `ChiOne`, original index factors and harmonic descent.
+Their finite diagnostics check normalization; the proofs are conventional
+mathematics, not Lean builds.
+
+### Positivity and complete arithmetic return summation
+
+The [positivity certificate](../certificates/geometry-positivity-continuation.json)
+and [independent review](../certificates/geometry-positivity-continuation-review.json)
+record fifteen pinned source modules, seven primary references and the
+exact canonical-weight and dimension checks. The applied semipositivity
+and effective separation theorems match the original compactification,
+boundary extension and nef/big intersection hypotheses.
+
+The [folding](../certificates/global-gram-continuation.json),
+[finite-phase](../certificates/global-gram-continuation-phases.json) and
+[framed-return](../certificates/global-gram-continuation-framed.json)
+certificates retain the original gap, finite lattice integrality,
+extended different, level character, stabilizer and Haar definitions.
+They prove fixed-setting convergence of the entire original framed-return
+sum, without a uniform trace estimate or a replacement of the raw kernel
+by a normalized abstract Gram matrix. The
+[combined independent review](../certificates/arithmetic-construction-continuation-review.json)
+records the reviewed conventional arguments and their precise limits.
