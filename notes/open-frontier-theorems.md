@@ -111,13 +111,17 @@ relation exponent; varying finite free ranks are allowed.
 For the actual prime-to-ell character inputs, the ordinary arithmetic
 seed is now constructed at the original level and field, with every
 residual, inertial, ordinary, polarization and automorphic clause.
-The rank-two construction retains the original supplied CM twist.
+The rank-two CM twist is now constructed under the full original
+`Twist` contract, with its exact conjugate and outside-coset square
+identities and one inertia exponent prime to ell. This includes
+ramification at two and both fields with extra units, without any
+class-number restriction or arithmetic field extension.
 
 **First missing construction.** Prove the actual algebraic-weight
 ordinary-control and automorphic-occurrence statement `PT` needed to put
 the new seed in the original deformation support; prior weight-zero
-control alone does not supply it. Construct the prescribed rank-two CM
-twist where needed, then finish the marked model and prime-chain application.
+control alone does not supply it. Then finish the marked model and
+prime-chain application.
 The patched support may be empty until the seed-to-support bridge is supplied.
 Propagation must retain
 the entire characteristic-prime fibre

@@ -126,13 +126,16 @@ The [arithmetic seed theorem](selmer-integral-frontier-arithmetic-seed.md)
 now constructs the exact ordinary seeds for the actual prime-to-ell inputs,
 at the original field and conductor. Every residual, inertial, ordinary,
 polarization and automorphic clause is retained, including the rank-two
-half-norm and prescribed CM twist. Actual algebraic-weight ordinary
+half-norm. The [CM twist theorem](selmer-integral-frontier-cm-twist.md)
+now supplies the full original twist, including its square law on the
+other Galois coset and a single prime-to-ell inertia exponent. Class
+number divisibility changes coefficients only. Actual algebraic-weight ordinary
 control must still establish the source `PT` and put these seeds in the
 original deformation support.
 
 Both finite-level cohomological bounds and their exact limiting
 comparison are proved. The next arithmetic requirements are that
-seed-to-support bridge, the prescribed rank-two CM twist, global marked
+seed-to-support bridge, global marked
 deformation models, full characteristic-prime propagation and two-sided rigidity. They must
 supply the moving-family integral Selmer product; qualitative finiteness
 or rational rigidity cannot replace that bound.

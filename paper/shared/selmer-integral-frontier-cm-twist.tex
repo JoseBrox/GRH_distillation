@@ -1,0 +1,205 @@
+\subsection{The prescribed imaginary-quadratic twist}
+\label{sec:actual-cm-twist}
+
+The rank-two seed uses an algebraic character with a specified
+polarization and prime-to-$\ell$ finite inertia.  We construct that
+character over the original field, with every field of the prescribed
+contract retained~\cite{cm-twist-source}.
+
+\begin{theorem}\label{thm:actual-cm-twist}
+Let $K$ be any imaginary quadratic field of discriminant $D$, let
+$\ell$ be odd with $\ell\nmid D$, and fix the original coefficient
+isomorphism $\iota:\overline{\mathbb Q}_\ell\simeq\mathbb C$ and
+complex conjugation $c$.  There is a continuous character
+$\kappa:G_K\to\overline{\mathbb Q}_\ell^{\,\times}$ satisfying the
+entire original \texttt{IsTwist} contract.  More explicitly, it is the
+geometric-Artin avatar of an algebraic Hecke character $Y$ with
+infinity type $(-1,0)$ and conductor supported on $D$, and
+\[
+ \kappa(s)\kappa(csc^{-1})=\varepsilon(s)^{-1},\qquad
+ \kappa(t^2)=-\varepsilon(t)^{-1}
+       \quad(s\in G_K,\ t\in G_{\mathbb Q}\setminus G_K).
+\]
+It is unramified outside $D\ell$.  At every finite place away from
+$\ell$, its inertia image is killed by the integer
+\[
+ m_K=\begin{cases}54,&D=-3,\\32,&D\ne-3.\end{cases}
+\]
+In particular $\ell\nmid m_K$.  Its values lie in a finite extension
+of $\mathbb Q_\ell$.  No restriction on the class number of $K$ is
+required.
+\end{theorem}
+
+\begin{proof}
+Let $S$ be the rational primes dividing $D$ and let $\eta$ be the
+quadratic idele-class character of $\mathbb Q$ associated with
+$K/\mathbb Q$.  Its infinity component is the sign character.
+Fix a complex embedding $\tau:K\hookrightarrow\mathbb C$.
+
+\par\medskip\noindent\textbf{Finite unit characters with the required order.}
+We first construct
+\[
+ \nu=\prod_{p\in S}\nu_p:
+       \prod_{\mathfrak p\mid D}\mathcal O_{K,\mathfrak p}^{\times}
+                    \longrightarrow\mu_{m_K}
+\]
+such that $\nu_p$ restricts to $\eta_p$ on $\mathbb Z_p^\times$
+and $\nu(u)=\tau(u)$ for every global unit $u$.
+At an odd ramified prime other than the exceptional case $K=\mathbb
+Q(\sqrt{-3})$, take the quadratic character of the residue field
+$\mathbb F_p^\times$.  Its restriction is $\eta_p$: principal
+units are squares when $p$ is odd, and the ramified quadratic
+character is the nontrivial quadratic residue character on units.
+Its order divides two.
+
+At a ramified prime two, use the finite unit group
+\[
+                    U_2=(\mathcal O_K/8\mathcal O_K)^\times.
+\]
+It has order $32$, since the ring has $64$ elements and residue
+field $\mathbb F_2$.  The rational unit character $\eta_2$ factors
+through $(\mathbb Z/8)^\times$, because $1+8\mathbb Z_2$ consists
+of squares.  Its embedded rational unit subgroup is literally
+$(\mathbb Z/8)^\times$, since $\mathcal O_K$ is free over
+$\mathbb Z$.  A character of a subgroup of a finite abelian group
+extends to the whole group: adjoining one element $a$, choose a
+root of the prescribed value of its first power lying in the
+old subgroup.  Induction proves the assertion.  The resulting
+character has values among the roots of unity of order dividing
+the order of the whole group.  Thus $\eta_2$ extends to a
+$\mu_{32}$-valued character of $U_2$.
+
+For $K=\mathbb Q(i)$, prescribe on the larger subgroup generated
+by rational units and $i$ the value $\nu_2(i)=\tau(i)$ before
+extending.  These prescriptions agree on the intersection
+$\{1,-1\}$, because $\eta_2(-1)=-1$.  The same intersection
+statement holds modulo $8$, as is seen in the basis $1,i$.
+For $K=\mathbb Q(\sqrt{-3})$, write $\zeta^2+\zeta+1=0$ and
+instead use $(\mathcal O_K/9)^\times$, of order $54$.
+Prescribe $\eta_3$ on rational units and $\tau$ on $\mu_6$.
+Their intersection modulo $9$ is again exactly $\{1,-1\}$,
+and $\eta_3(-1)=-1$; hence they extend to the whole finite group.
+These prescriptions prove the global-unit condition in the two
+exceptional fields.  In every other imaginary quadratic field
+the only units are $\pm1$, and global reciprocity gives
+\[
+       \nu(-1)=\prod_{p\mid D}\eta_p(-1)=-1=\tau(-1).
+\]
+This constructs $\nu$ with its claimed order.  Let $\mathfrak f$
+be the product of the chosen local moduli; it is supported on $D$.
+
+\par\medskip\noindent\textbf{Extension across the actual ideal class group.}
+Let $I_{\mathfrak f}$ be the group of fractional ideals prime to
+$\mathfrak f$, and let $P_{\mathfrak f}$ denote its subgroup of
+all principal ideals.  Thus a generator $a$ of an ideal in
+$P_{\mathfrak f}$ is a unit at every prime in $\mathfrak f$;
+no congruence $a\equiv1$ is imposed here.  Set
+\[
+             \psi_0((a))=\frac{\tau(a)}{\nu(a)}.
+\]
+The global-unit identity makes this independent of the generator.
+The quotient $I_{\mathfrak f}/P_{\mathfrak f}$ is the finite
+ordinary ideal class group: every ideal class has a representative
+prime to a prescribed finite set, by approximation.
+
+Decompose that finite quotient into independent cyclic factors.
+Choose one generator in each factor, represented by an ideal
+$\mathfrak a_i$ of order $h_i$, and write
+$\mathfrak a_i^{h_i}=(a_i)$.  Choose once and for all an
+$h_i$-th root of $\psi_0((a_i))$.  Assign these roots to the
+$\mathfrak a_i$ and use the unique expression consisting of a
+principal ideal times $\prod_i\mathfrak a_i^{e_i}$,
+$0\le e_i<h_i$, to extend $\psi_0$ to a homomorphism
+\[
+                  \psi:I_{\mathfrak f}\longrightarrow
+                                      \overline{\mathbb Q}^{\times}.
+\]
+The relations $\mathfrak a_i^{h_i}=(a_i)$ prove multiplicativity.
+All values lie in one number field, obtained by adjoining the
+finitely many chosen roots to $\tau(K)(\mu_{m_K})$.
+An $\ell$-factor in a class-group order may enlarge this coefficient
+field, but introduces no new finite inertia character.
+
+Here is an explicit idele character, to keep its conductor visible.
+For an idele $x$, choose $a\in K^\times$ such that $ax$ is a unit
+at every prime in $\mathfrak f$, and let $I(ax)$ be its fractional
+ideal outside that set.  Under the chosen complex identification put
+\[
+             Y(x)=(\tau(a)x_\infty)^{-1}
+                         \nu((ax)_{\mathfrak f})\,\psi(I(ax)).
+\]
+Replacing $a$ by $ba$, with $b$ a unit at $\mathfrak f$,
+multiplies the three factors by $\tau(b)^{-1}$, $\nu(b)$ and
+$\tau(b)/\nu(b)$, respectively.  Thus $Y$ is well-defined.
+It is multiplicative, continuous, and trivial on $K^\times$.
+Its infinity component is $z^{-1}$, its unit component at a
+bad prime is precisely $\nu_p$, and it is unramified at every
+other finite prime.  A good local uniformizer has value
+$\psi(\mathfrak q)$.
+
+For every positive rational $b$ prime to $D$, quadratic reciprocity,
+or the restriction of $\eta$ to the rational principal ideles, gives
+\[
+                \nu(b)=\eta_D(b),\qquad
+                \psi((b))=b\eta_D(b),                 \tag{*}
+\]
+where $\eta_D$ is the primitive quadratic Dirichlet character of
+discriminant $D$.  In particular, for $q\nmid D$,
+$\psi((q))=q$ if $q$ splits, and $\psi((q))=-q$ if it is inert.
+These identities hold for every choice made in extending the class
+character.
+
+\par\medskip\noindent\textbf{The original Galois normalization and polarization.}
+Apply the algebraic-Hecke-character correspondence to $Y$
+\cite{cm-twist-cht}.  The source's Artin map takes a uniformizer
+to geometric Frobenius.  With infinity exponents $a=(-1,0)$,
+the avatar is explicitly
+\[
+ \kappa(\operatorname{Art}_K(x))
+ =\iota^{-1}\!\left(Y(x)\prod_\sigma x_\infty^{-a_\sigma}\right)
+                         \prod_{\sigma\mid\ell}x_\sigma^{a_\sigma}.
+\]
+This is exactly the original \texttt{IsLAdicOf} formula.
+The correspondence gives continuity and a finite coefficient field;
+at $\mathfrak q\nmid D\ell$ it gives
+\[
+       \iota\bigl(\kappa(\operatorname{Frob}_{\mathfrak q}^{\rm ar})\bigr)
+                                  =\psi(\mathfrak q)^{-1}.
+\]
+At every prime away from $\ell$, local reciprocity identifies its
+inertia values with those of $\nu_p$, or with one at a good prime.
+This proves both the original unramified clause and its single
+prime-to-$\ell$ inertia exponent.  The trivial valuation has trivial
+inertia, so the original valuation-subring formulation is included.
+
+Consider the two-dimensional induced representation
+$R=\operatorname{Ind}_{G_K}^{G_{\mathbb Q}}\kappa$.
+At a split good prime $q=\mathfrak q\bar{\mathfrak q}$,
+\[
+       \det R(\operatorname{Frob}_q^{\rm ar})
+         =(\psi(\mathfrak q)\psi(\bar{\mathfrak q}))^{-1}=q^{-1}.
+\]
+At an inert good prime, the induced matrix exchanges its two cosets,
+so its determinant is
+$-\kappa((\operatorname{Frob}_q^{\rm ar})^2)
+ =-\psi((q))^{-1}=q^{-1}$ by (*).
+Chebotarev and continuity therefore give
+$\det R=\varepsilon^{-1}$ on all of $G_{\mathbb Q}$
+\cite{cm-twist-cft}.  For every $t\notin G_K$, the same coset
+matrix has determinant $-\kappa(t^2)$.  This is the required
+\texttt{ver} identity for every such $t$, not only Frobenius elements.
+Finally apply it to $t=sc$, using $c^2=1$ and
+$\varepsilon(c)=-1$.  It gives
+\[
+      \kappa(s)\kappa(csc^{-1})
+       =\kappa((sc)^2)=-\varepsilon(sc)^{-1}
+       =\varepsilon(s)^{-1}.
+\]
+Every field of the original \texttt{IsTwist} record is now supplied.
+\end{proof}
+
+Restrict this very character to the original CM field used in the
+rank-two seed.  Its source and normalization are unchanged.  This
+discharges that seed's previously supplied CM-twist input; it does
+not supply global marked deformation support, two-sided rigidity
+or a uniform integral Selmer bound.

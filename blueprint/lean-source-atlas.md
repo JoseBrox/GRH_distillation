@@ -327,3 +327,12 @@ Grauert's original base-change theorem and corrigendum are separately
 recorded direct readings. The arithmetic and downstream audit is recorded
 in the [root review](../certificates/geometry-arithmetic-frontier-member-arithmetic-review.json).
 These establish the original sized good-cover supplier, not all W10.
+
+The [CM twist certificate](../certificates/selmer-integral-frontier-cm-twist.json)
+and [independent review](../certificates/selmer-integral-frontier-cm-twist-review.json)
+authenticate the literal `IsTwist`, universal `Twist` and geometric-Artin
+avatar interfaces. CHT Lemma 4.1.3 and Chebotarev are checked against
+primary sources. Exact finite-group checks include all ramified quadratic
+2-adic unit models, both exceptional root-of-unity fields, and a case
+with ell dividing the class number; split/inert determinant signs are
+checked independently. The human theorem supplies all original inputs.

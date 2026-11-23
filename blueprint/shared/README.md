@@ -303,3 +303,12 @@ adelic dictionary/marking law. It retains `AA*L0`, all rational returns,
 all even weights and the original sign conventions. With the level and
 component-field suppliers it closes the full original sized `Deep.Good`
 contract in both routes. Short-section bounds and the global norm remain.
+
+The [CM twist theorem](../../notes/selmer-integral-frontier-cm-twist.md)
+constructs the full original rank-two `Twist` supplier over the original
+imaginary quadratic field. Explicit finite unit characters, ideal-class
+root extensions and the Hecke-character avatar give the exact conjugate
+and outside-coset square identities. The common finite-inertia exponent
+is 32, or 54 for discriminant -3, and is prime to every allowed ell.
+Class-number divisibility creates no new arithmetic ramification.
+No coefficient-degree or integral Selmer bound is inferred.

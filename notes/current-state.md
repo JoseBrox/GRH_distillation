@@ -86,7 +86,10 @@ and movement between completions, without a fixed-rank hypothesis.
 The prescribed ordinary arithmetic seed is now constructed for the actual
 prime-to-ell inputs, at the original field and level, retaining every local
 condition and the source automorphic normalization. The rank-two case
-uses the original supplied CM twist. Actual algebraic-weight ordinary
+now uses the [constructed CM twist](selmer-integral-frontier-cm-twist.md):
+the full original square and conjugate identities hold, and a single
+exponent prime to ell kills every permitted finite inertia group, even
+when ell divides the class number. Actual algebraic-weight ordinary
 control must still place the seed in the deformation support; global
 two-sided rigidity and the moving-family integral Selmer budget remain.
 
