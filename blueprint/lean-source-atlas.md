@@ -273,3 +273,17 @@ head and the zero convention for invalid heads. They authenticate the
 cofactor frame, compact-factor cancellation and exact quotient measures.
 Twenty exact frame diagnostics supplement the arbitrary-rank human proof;
 no uniform analytic or global period estimate follows from density alone.
+
+The [level-cover certificate](../certificates/geometry-arithmetic-frontier-level-cover.json)
+and [independent review](../certificates/geometry-arithmetic-frontier-level-cover-review.json)
+verify the universal coefficient-algebra quantifier of `IsNab`, reduced
+test-ring descent and every original `DeltaDat.IsLev` field. Exact nilpotent
+and nonflat diagnostics supplement the formal-geometric proof.
+
+The [component-field certificate](../certificates/geometry-arithmetic-frontier-component-field.json)
+and [independent review](../certificates/geometry-arithmetic-frontier-component-field-review.json)
+authenticate the original everywhere-unramified host, component function
+fields with flag variables and the exact sized-field consumer. Primary
+Shimura, CM and class-field theorems are checked with their rational-class,
+definite-signature and polarization hypotheses. Local congruence diagnostics
+include the dyadic case and a ramified negative control.

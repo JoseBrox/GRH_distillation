@@ -231,12 +231,16 @@ models, with its original coefficient fields and primitive lines.
 The full local `Good3` chart and all-model uniformization are now supplied
 at each original integral framed point after an unramified extension.
 The harmonic-value comparison preserves the existing discriminant bound.
+The actual level cover now supplies every `DeltaDat.IsLev` field, the
+formal connection over every coefficient algebra and exact framed lifting.
+The ray-class compositum now supplies the literal `FnAlgClosed`, relative
+normality and the prescribed field-size bound for every original component,
+including all ranks and both definite signatures.
 
-**First missing construction.** Construct the original good cover and
-its precise field/component and integral-lattice comparisons. The
-[component-field checkpoint](geometry-component-field-frontier.md)
-constructs a ray-class field of the required numerical size; its action
-on every original component is still unproved. Identify
+**First missing construction.** Complete the original good cover's
+normalized complex `Member` dictionary, including the probability-normalized
+primitive theta section and exact squared multiplier. Preserve its
+integral-lattice comparisons. Identify
 the actual geometric section and height
 inputs and prove their numerical arithmetic remainder. The existing
 cusp, jet and signed-boundary lemmas are to be applied unchanged.

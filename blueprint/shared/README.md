@@ -229,9 +229,8 @@ closes the original `Good3` at each integral framed point after a finite
 unramified extension. It constructs one compatible jet frame and the
 canonical gauge, retains every integral eigenspace, and gives all-model
 PEL uniformization and exact harmonic values. The existing discriminant
-loss is unchanged. The [component-field frontier](../../notes/geometry-component-field-frontier.md)
-is explicitly unfinished; a field-size calculation alone does not fix
-the original geometric components.
+loss is unchanged. The level-cover and component-field constructions
+below supply the next original interfaces.
 
 The [patched-support theorem](../../notes/selmer-integral-frontier-patched-support.md)
 closes the complete original `S5` on the actual Taylor--Wiles inputs.
@@ -247,3 +246,17 @@ joint-frame complement give proper fibre integration. All three frame
 conditions cancel the compact representation factors; both Haar constants
 and character signs are retained. This closes the exact density supplier,
 without a rank-uniform norm estimate or global nonvanishing claim.
+
+The [level-cover theorem](../../notes/geometry-arithmetic-frontier-level-cover.md)
+constructs every original `DeltaDat.IsLev` field, `IsNab` over all
+coefficient algebras and `AllTest`. The formal exponential, exact primitive
+line and gauge work with nilpotents and nonflat base change. Full labels,
+cyclotomic roots, tangent frames and the theta generator are preserved.
+
+The [component-field theorem](../../notes/geometry-arithmetic-frontier-component-field.md)
+supplies the literal `FnAlgClosed` over the original quadratic ray-class
+compositum with its required normality and field-size bound. Unramified
+integral determinant lifts and the exact reflex map fix all indefinite
+components; the actual central CM action handles both definite endpoints.
+The proof retains every lattice class and generic flag variable. The
+normalized complex theta dictionary and numerical section bounds remain.

@@ -1,0 +1,236 @@
+\section{The actual level cover and its formal theta connection}
+\label{sec:actual-level-cover}
+
+The local integral charts already constructed do not by themselves
+provide a connection over every coefficient algebra.  The latter is a
+separate quantifier in the original level-cover datum.  Over the original
+coefficient field it can be supplied directly by the formal exponential.
+This also constructs the actual finite cover with its framed-point
+lifting property.  No new number field is required.
+
+Write $K=c.F$, $\mathcal O=\mathcal O_E$, and retain the original
+datum, primitive cubical line, and coefficient embeddings.  In
+particular $K$ contains all conjugates of $E$ and the prescribed
+cyclotomic roots, and the original rank satisfies $p+q\ge1$.
+All moduli schemes below are the actual ones already
+constructed in Sections~\ref{sec:integral-pel-frontier} and
+\ref{sec:pel-level-system}.
+
+\begin{theorem}\label{thm:actual-level-cover}
+The following suppliers exist with the original source contracts.
+\begin{enumerate}
+\item On each original moduli scheme there is a family of formal theta
+derivatives satisfying \texttt{IsNab}, for every commutative $K$-algebra
+$S$, including nonreduced and nonnoetherian algebras.  Every original
+framed point over a reduced $K$-algebra satisfies \texttt{FromTest}.
+The original harmonic combinations of these derivatives commute with
+framed base change over arbitrary $K$-algebras.
+\item Suppose $l\mid l_2$, $M_2=M p_d$, $(p_d,M)=1$,
+$\mathfrak b_2=\mathfrak b I$, and $I+\bar I=\mathcal O$.
+Suppose the original coefficient data have the same field
+$c_2.F=c.F$.  For every $n\ge0$ there is an actual
+$d:\texttt{DeltaDat}(X,c,n)$ with precisely these $p_d,I,l_2,X_2,c_2$,
+with $c_\delta=1$, $\phi_\delta=1$, and
+\[
+               d.\texttt{IsLev},\qquad
+               \texttt{IsNab}(X_2,c_2,d.\nabla_2).
+\]
+The morphism on generic moduli over the common field is finite,
+\'etale and surjective.  Its map of universal families is the original
+level-forgetting isomorphism and preserves the primitive line,
+rigidification and cube structure.  Every original framed geometric
+point lifts with its exact tangent frames and section generator.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\paragraph{Formal coordinates over an arbitrary coefficient algebra.}
+Let $y$ be an original framed point over $S$ and let
+$A/S$ be its abelian scheme.  The finite \'etale algebra
+\[
+                   E\otimes_{\mathbb Q}K
+                       \simeq\prod_{\tau:E\hookrightarrow K}K
+\]
+splits after tensoring with $S$.  Its orthogonal idempotents decompose
+$\operatorname{Lie}(A/S)$ into exactly the eigenspaces in the source
+definition of $y$.  Thus the specified separate eigenbases concatenate
+to a basis $v_1,\ldots,v_g$ of the full tangent module.  This argument
+uses units in $K$; it makes no assertion about the sum of the separate
+integral eigenspaces over a valuation ring.
+
+Translate $v_i$ to the invariant derivations $D_i$ on the formal group.
+They commute because $A$ is commutative.  For a formal function $f$ set
+\begin{equation}\label{eq:level-cover-formal-exponential}
+       \exp_A^*f
+          =\sum_{\alpha\in\mathbb N^g}
+             \frac{(D^\alpha f)(0)}{\alpha!}\,t^\alpha.
+\end{equation}
+Each coefficient uses only a finite derivative; the series is formal.
+The Leibniz formula proves that this is a homomorphism of complete
+$S$-algebras.  Invariance and commutation prove that it carries group
+addition to $t+t'$.  Its linear term is the identity on the specified
+cotangent basis.  The ideal of a smooth section is a regular ideal
+with associated graded algebra the symmetric algebra of its conormal
+module.  Induction on the infinitesimal order consequently makes
+\eqref{eq:level-cover-formal-exponential} an isomorphism at every finite
+order and then on the inverse limit.  This proof is valid over any
+$\mathbb Q$-algebra; neither noetherianity nor reducedness is used.
+It also shows directly that the original coefficient action becomes
+its given linear tangent action.  The construction commutes with
+arbitrary change of $K$-algebra.
+
+\paragraph{The original biextension and primitive line.}
+Pull the actual rigidified biextension to
+$\operatorname{Spf}S[[t,z]]$.  It has a frame compatible with its
+zero rigidification.  Indeed, at each finite order the coordinate ring
+is a nilpotent extension of $S$.  An invertible module whose reduction
+has a chosen generator has a lift of that generator, and the lift is a
+generator by the nilpotent form of Nakayama's lemma.  Successive
+generators can be made compatible: their ratio on the preceding order
+is a unit, which lifts across a nilpotent ideal.  Passing to the inverse
+limit gives a formal frame.  If its two axis values are $a(t)$ and
+$b(z)$, multiplication by $a(0)/(a(t)b(z))$ gives the exact prescribed
+frames on both axes.
+
+Use the transported \emph{original} primitive identity on the graph
+$(\mathrm{id},w_0)$ to frame the original line $L$; this is not a new
+theta characteristic or a choice made merely from its polarization.
+The actual cube, symmetry and adjoint identities give the four formal
+cocycles used in \texttt{ChartAt}.  Their constant terms are one.
+The gauge construction in the proof of Theorem~\ref{thm:actual-good3}
+works verbatim over $S$: its Euler homotopies divide only by positive
+integers, its adjoint correction uses the separability idempotent of
+$E/\mathbb Q$, and its symmetry correction divides by two.  All these
+scalars are units in $S$.  No step uses division by a nonzero element
+of $S$ or passage to a fraction field.  Since the coordinates above
+already linearize the group and coefficient action, this constructs
+the required canonical gauge for the actual framed biextension.
+
+Every actual section of $L^k$, $k\ge0$, has its formal germ in this
+frame: restrict it to each infinitesimal neighbourhood and use the
+compatible trivializations.  The restrictions are compatible before
+taking the limit.  Therefore all the original \texttt{FrTruncC},
+\texttt{IsPrim}, and \texttt{IsGerm} clauses hold, not just equality
+of values at the zero section.  Choose such a chart for each $S,y$
+and define its theta derivatives by the source's ordinary-derivative
+formula
+\[
+     \nabla_y^\alpha(F)
+       =\left.\partial^\alpha
+          \bigl(\exp(kh(t,w_0t))\,f_F(t)\bigr)\right|_{t=0},
+                    \qquad k\ge0.
+\]
+If the source regards the power as an arbitrary integer, set the
+unused negative-power entries to zero, as its \texttt{IsNab} contract
+does.  Uniqueness of the formal germ proves that this definition
+satisfies the entire \texttt{IsNab} clause, including its universal
+quantifier over all representatives of the germ.
+
+The choice of gauge need not give canonical nonharmonic derivatives.
+For harmonic combinations it does: two gauges differ by a balanced
+symmetric bilinear form $B$ in the additive coordinates, and
+$B(t,w_0t)=B(t,t)/2$.  The associated finite differential correction
+is a sum of the original paired Laplacians and vanishes on the
+original harmonic polynomial.  This proof is a coefficient identity
+over $S$.  Distinct coefficient embeddings remain separated by units
+coming from $K$, so it is still valid with nilpotents and after
+nonflat base change.  Comparing a chosen target chart with the
+base-changed source chart proves the asserted harmonic compatibility.
+
+\paragraph{Framed points and the actual test rings.}
+On the moduli scheme over $K$, the eigenspaces of the Hodge bundle
+are vector bundles of the prescribed ranks.  The actual theta
+pushforward is an invertible sheaf and commutes with base change,
+by the previously constructed section supplier, restricted to the
+abelian locus.  Thus the framed-point functor is represented by the
+product of their frame bundles and the nonzero-vector bundle of
+this theta line.  It is a scheme of finite presentation over $K$.
+
+Write an arbitrary reduced $K$-algebra $S$ as the filtered union of
+its finitely generated $K$-subalgebras.  A morphism from
+$\operatorname{Spec}S$ to this finite-presentation frame scheme
+descends to some such subalgebra $S_0$; this follows from the
+finite-presentation limit theorem \cite{level-cover-limits}.
+The algebra $S_0$ is reduced because it is a subalgebra of $S$.
+Its point is an actual framed point and pulls back to $y$, with
+its section and every tangent vector.  Presenting $S_0$ as a quotient
+of a polynomial algebra gives precisely an original reduced test
+ring.  This proves \texttt{AllTest}, including every algebraically
+closed coefficient field.  In particular the natural rule $1$ has
+value exactly one at all the framed points used below.
+
+\paragraph{Forgetting the added level.}
+Theorem~\ref{thm:original-half-level-completion} identifies the
+original moduli problem over $K$ with its full, symplectically
+liftable $\operatorname{lcm}(M,A)$-marking, using the original
+cyclotomic root.  Apply it at both levels.  The completion preserves
+the original labels even when $M$ and $A$ share prime powers.
+Forgetting the extra finite Tate labels is represented by a finite
+\'etale cover: the possible compatible markings form the finite
+locally constant sheaf of reductions of integral Tate isometries.
+At each geometric point an original full Tate marking supplies a
+lift, so the cover is surjective.  Here liftability is part of the
+original marking condition; an arbitrary finite symplectic marking
+is not substituted.  The simultaneous root adjustment in the
+half-level completion theorem preserves all the old labels and
+chooses the prescribed new roots.  More explicitly, put
+$L=\operatorname{lcm}(M,A)$ and $L_2=\operatorname{lcm}(M_2,A_2)$.
+Starting with a full Tate marking having the prescribed $L$-root,
+the multiplier needed for the prescribed $L_2$-root is
+$r_0\in\widehat{\mathbb Z}^{\times}$ with $r_0\equiv1\pmod L$.
+At every finite place the original extension $E/E^+$ is split or
+unramified.  Norm surjectivity on the corresponding principal-unit
+groups gives $u\in\widehat{\mathcal O}^{\times}$ with
+$u\bar u=r_0$ and $u\equiv1\pmod{L\widehat{\mathcal O}}$.
+Composing with $u$ changes the cyclotomic multiplier and preserves
+the entire old $L$-marking.  Thus the prescribed higher-root
+condition does not remove any geometric point of the cover.
+
+Before extension to $K$, the same forgetful natural transformation
+gives a morphism $r:X_2\to X$ over the prescribed map of cyclotomic
+base fields.  Its universal abelian scheme is the pullback of the
+old one, with its coefficient action and polarization.  Functoriality
+of the Poincar\'e bundle and the original primitive graph gives the
+exact isomorphism of rigidified cubical lines and hence the source
+map $m$ of universal semiabelian data on these generic moduli.
+The two label identities are exactly
+\begin{equation}\label{eq:level-cover-labels}
+ m\circ[p_d]\eta_{M_2}(a)=\eta_M(a)\circ r,
+ \qquad
+ m\circ[A_2/A]\eta_{A_2}(a)=\eta_A(a)\circ r.
+\end{equation}
+They follow by restricting the same Tate marking: a point labelled
+$a/M_2$ becomes $a/M$ after multiplication by $p_d$, and similarly
+for $A$.  The forced complementary labels agree by the perfect
+pairing, so these equations hold for the entire original maps,
+not only their selected half-submodules.
+
+Let $y$ be a framed point over any algebraically closed $K$-field.
+Choose a geometric point $x_2$ above it, using surjectivity.  Pull
+back its tangent bases and its exact section generator through the
+universal-family and primitive-line isomorphisms.  These are actual
+isomorphisms, so the tangent eigenspace bases and rank-one section
+module remain exactly the ones specified by $y$.  This gives the
+full \texttt{FrOver} identity, including the local transition-frame
+formula for the section.  The construction also commutes with base
+change and triangular changes of the prescribed tangent frames.
+
+Finally choose the connection constructed above on $X_2$ and set
+$c_\delta=1$ and $\phi_\delta=1$.  The constant rule is a section
+of weight $(0,0)$, and its value on every framed geometric point
+is one by \texttt{AllTest}.  The arithmetic level hypotheses,
+\eqref{eq:level-cover-labels}, framed lifting, and this nonvanishing
+are exactly the successive fields of \texttt{DeltaDat.IsLev}
+\cite{level-cover-source}.  This proves both assertions.
+\end{proof}
+
+\paragraph{What this removes.}
+The level cover, connection, test-ring descent and framed-point lift
+are now actual suppliers on the original arithmetic moduli.  This
+result introduces no component-field extension or additional local
+lattice index.  It does not yet construct the full sized
+\texttt{Deep.Good} cover.  Its remaining inputs include the exact
+component-field statement and the complex \texttt{Member}
+uniformization with its probability-normalized theta section and
+squared multiplier identity.  The theta-series/section identification
+and its global norm estimates remain separate obligations.

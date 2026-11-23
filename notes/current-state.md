@@ -49,6 +49,12 @@ Together these discharge the complete original `PartI` construction.
 The actual local `Good3` charts are now constructed after an unramified
 extension, with the original eigenlattices, canonical gauge, all-model
 uniformization and harmonic values. No additional valuation loss occurs.
+The actual finite level cover now has the prescribed formal connection
+over every coefficient algebra, including nonreduced algebras, and exact
+framed-point lifting. The component-field theorem fixes every original
+component over the quadratic ray-class compositum with the original
+field-size bound, in every rank and including the definite signatures.
+The normalized complex theta dictionary remains the next good-cover input.
 Numerical arithmetic section and height estimates remain separate.
 
 The reached-section, adapted lattice, full-primary trace and mixed-level

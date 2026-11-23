@@ -63,9 +63,12 @@ constructs the original `Good3` over a finite unramified extension. It
 retains the primitive theta generator, every eigenspace lattice and a
 single compatible jet frame. An explicit fraction-field canonical gauge
 and harmonic invariance give the exact original local values without
-extra valuation loss. The [component-field checkpoint](geometry-component-field-frontier.md)
-records a field with the required numerical size and the still-missing
-proof that it fixes every original geometric component.
+extra valuation loss. The [level-cover theorem](geometry-arithmetic-frontier-level-cover.md)
+constructs the exact finite cover, formal connection over every coefficient
+algebra and original framed lift. The [component-field theorem](geometry-arithmetic-frontier-component-field.md)
+proves that the quadratic ray-class compositum fixes every original
+component, with the prescribed size and normality bounds in every rank.
+The normalized complex theta dictionary remains the next good-cover input.
 
 The full-primary trace, mixed pullback and arbitrary level-prime estimates
 remain in force for these actual constructions. Their final use still
