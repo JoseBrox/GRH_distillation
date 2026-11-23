@@ -1,0 +1,264 @@
+\subsection{The actual relative deformation equations}
+\label{sec:support-relative-presentation}
+
+The number of global equations is fixed by an exact Galois cohomology
+calculation.  This calculation concerns the original finite inertia
+quotients and the original local ring; it does not require a bound on
+the degree of the auxiliary automorphic field.
+
+Retain an original good datum over $\mathbf Q$, its complete
+coefficient DVR $O$ with residue field $k$ of odd characteristic
+$\ell$, and its base representation
+\[
+ r_0(g)=\bigl(\operatorname{diag}(\Psi(g),1,\Psi(g)^{-1}),
+                  \eta(g)\bigr),
+ \qquad \Psi(c)=1,\quad\eta(c)=-1.
+                                                               \tag{RP1}
+\]
+Here $c$ is complex conjugation, $\Psi=\varepsilon^e\chi$, and
+$\chi$ has order prime to $\ell$.  Write $\psi=\overline\Psi$
+and $\omega=\overline\varepsilon$.  Let $R_\ell$ be the original
+chosen quotient of the framed local deformation ring, carrying its
+universal local representation.  It is kept intact, including all
+its integral equations.  Its formal torus action is conjugation by
+$\operatorname{diag}(t,1,t^{-1})$.
+Fix any supplied weighted local presentation
+$O[[Y_u]]/J_\ell\simeq R_\ell$ whose coordinates are the prescribed
+local entry differences and whose matrix entries have their matrix
+weights.  This is the original local presentation condition, with
+no assertion about a twelve-variable characteristic-zero chart.
+
+Let $R$ represent the global deformations with fixed multiplier $\eta$,
+the prescribed local representation obtained from $R_\ell$, and the
+original condition away from $\ell$: inertia acts trivially on
+$\ker\eta\cap\ker\Psi$.  The normalizations at $c$ and the second
+mark are imposed later.  All these are framed deformations; no
+quotient by conjugacy is taken in their definition.
+
+\begin{theorem}[The original relative presentation]
+\label{thm:support-relative-presentation}
+There are nonnegative integers $a_j$, zero outside
+$j\in\{-2,-1,0,1,2\}$, and a homogeneous presentation
+\[
+ R\simeq
+ R_\ell[[X_{j,s}:1\le s\le a_j]]/(F_{j,t}),
+ \qquad
+ \#\{t:F_{j,t}\text{ has weight }j\}
+       =a_j+\begin{cases}1,&|j|\le1,\\0,&|j|=2.\end{cases}
+                                                               \tag{RP2}
+\]
+Each variable has weight $j$ and maps to a difference between an
+actual global matrix entry and its base value.  The old local
+coordinates and every matrix entry retain their original weights.
+Relative to every supplied local presentation above, the presentation
+is $O[[Y_u,X_{j,s}]]/(J_\ell,F_{j,t})$, with the same old
+coordinates and equations.
+Zero equations may be used to reach the displayed counts.  The
+result is the original relative-presentation assertion for every
+choice of the original local ring \cite{support-relative-presentation-source}.
+\end{theorem}
+
+\begin{proof}
+Choose a finite set $\Sigma$ of rational places containing $\ell$,
+the ramification of $\eta$, and the conductor of $\chi$.
+The global representations factor through $G_{\mathbf Q,\Sigma}$.
+For $q\in\Sigma\setminus\{\ell\}$ put
+\[
+             N_q=I_q\cap\ker\overline r_0.
+\]
+On inertia away from $\ell$, $\Psi=\chi$ has prime-to-$\ell$
+order.  Reduction is injective on both its image and that of $\eta$.
+Thus $N_q=I_q\cap\ker r_0$, and these are exactly the inertia
+subgroups killed in the original deformation problem.  The group
+$I_q/N_q$ has order prime to $\ell$, and $D_q/I_q$ is procyclic.
+
+The deformation condition of factoring through $D_q/N_q$ is formally
+smooth.  To see this over a small extension, first lift the finite
+inertia representation: averaging makes its positive cohomology
+zero, so it lifts uniquely up to conjugation congruent to one.
+Its lift and its Frobenius conjugate can therefore be identified by
+such a conjugation.  A lift of Frobenius then completes the
+representation.  Equivalently, $D_q/N_q$ has $\ell$-cohomological
+dimension at most one.  This argument preserves the literal inertia
+quotient; it does not replace it by all of $I_q$.
+
+Let $M_j$ be the weight-$j$ part of the residual polarized adjoint.
+It has dimensions $1,2,3,2,1$ at weights $-2,-1,0,1,2$.
+At $c$ its action is $X\mapsto-JX^{\mathsf t}J$.  Consequently
+\[
+ b_j:=\dim_kM_j^{c=1}
+       =\begin{cases}1,&j=-1,0,1,\\0,&j=-2,2.\end{cases}
+                                                               \tag{RP3}
+\]
+For weight zero the fixed line is
+$\operatorname{diag}(1,0,-1)$; for each of weights $1,-1$ it is
+the negative combination of the two reflected entries.  The
+outer-corner entries at weights $2,-2$ have eigenvalue $-1$.
+
+The original kernel-separation condition provides an element $h$
+such that $\eta(h)=-1$ and $\psi(h)=\omega(h)=1$.  Since
+$\psi(c)=1$ and $\omega(c)=-1$, the element $ch$ acts trivially
+on every $M_j$ while $\omega(ch)=-1$.  It follows that
+\[
+                  H^0(\mathbf Q,M_j^\vee(1))=0.               \tag{RP4}
+\]
+This is an exact consequence of the original good-data condition;
+it is not a residual largeness hypothesis.
+
+We spell out the relative complex, so that the framing correction is
+visible.  Use continuous cochains, and write
+\[
+ \begin{aligned}
+ Q_q^\bullet&=
+ C^\bullet(D_q,M_j)/C^\bullet(D_q/N_q,M_j),
+ \\
+ C_{\rm rel}^\bullet&=
+ \operatorname{Cone}\left(
+ C^\bullet(G_{\mathbf Q,\Sigma},M_j)
+ \longrightarrow C^\bullet(G_{\mathbf Q_\ell},M_j)
+                  \oplus\bigoplus_{q\ne\ell}Q_q^\bullet
+                         \right)[-1].
+ \end{aligned}                                                \tag{RP5}
+\]
+The inflation map in the first expression is injective on cochains.
+The original maps from local absolute Galois groups are used; no
+embedding of a local group into $G_{\mathbf Q,\Sigma}$ is assumed.
+Degree zero at $\ell$ is retained.  A relative first cohomology class
+can be represented by a global cocycle and a local degree-zero
+element.  Subtracting that element as a global coboundary makes the
+local degree-zero component zero.  It then consists exactly of the
+global framed cocycles which vanish at $\ell$ and on every $N_q$.
+Thus
+\[
+ a_j=\dim_kH^1(C_{\rm rel}^\bullet)
+\]
+is the number of minimal new relative matrix coordinates of weight $j$.
+
+All these cohomology groups are finite.  Finite Poitou--Tate duality
+and (RP4) make \cite{AuxTowerDuality}
+\[
+ H^2(G_{\mathbf Q,\Sigma},M_j)\longrightarrow
+ H^2(G_{\mathbf Q_\ell},M_j)
+              \oplus\bigoplus_{q\ne\ell}H^2(D_q,M_j)
+\]
+surjective.  Hence $H^3(C_{\rm rel}^\bullet)=0$.
+Also $H^0(C_{\rm rel}^\bullet)=0$, because restriction on invariants
+to the distinguished local group is injective.
+
+The local Euler characteristic is $-\dim_kM_j$ at $\ell$ and
+zero at the other finite places.  Since $I_q/N_q$ has order prime
+to $\ell$, inflation and the cohomology of a procyclic group give
+\[
+ H^i(D_q/N_q,M_j)=0\ (i\ge2),\qquad
+ \dim H^1(D_q/N_q,M_j)=\dim H^0(D_q,M_j).
+\]
+Thus $Q_q^\bullet$ has Euler characteristic zero.  The global
+Euler characteristic over $\mathbf Q$ is $-\dim_kM_j^{c=-1}$.
+Taking Euler characteristics in (RP5) now gives the exact identity
+\[
+ \dim_kH^2(C_{\rm rel}^\bullet)-a_j
+       =\dim_kM_j-\dim_kM_j^{c=-1}=b_j.                        \tag{RP6}
+\]
+
+For clarity we give the presentation argument, including its integral
+relation bound.  Local and global Galois groups with the stated finite
+ramification have finite first cohomology for every finite residual
+module.  Here is an explicit consequence for representability.
+Let $H$ be the kernel of the residual representation.  A lift sends
+$H$ into the pro-$\ell$ group of matrices congruent to one, so factors
+on $H$ through its maximal pro-$\ell$ quotient $P$.
+The group $P$ is finitely generated: its Frattini quotient is dual to
+the finite space $H^1(H,\mathbf F_\ell)$.  The kernel of $H\to P$
+is characteristic in $H$ and hence normal in the whole group.
+The resulting quotient is an extension of the finitely generated
+group $P$ by the finite residual image, so is finitely generated.
+
+Choose finitely many topological generators of that quotient.  Their
+matrix entries give finitely many formal coordinates with the prescribed
+residual values and multiplier.  Invertibility is automatic since the
+residual determinants are units.  In their power-series ring impose
+the entries of every group relation, using the closed ideal they
+generate.  Profinite words are evaluated by continuity in each finite
+coefficient quotient.  This constructs the universal framed ring as
+a complete Noetherian quotient of a power-series ring over $O$.
+It also proves uniqueness from the generating matrices.  The same
+argument applies locally.  Imposing the original local quotient and
+the specified inertia kernels adds their literal closed equations.
+
+Matrix-entry functionals separate framed relative tangent vectors.
+Choose a basis of their dual space, weight by weight, from those
+functionals.  The corresponding actual entry differences, together
+with the local coordinates, topologically generate $R$.  This gives
+a surjection
+\[
+                   A=R_\ell[[X_{j,s}]]\longrightarrow R
+\]
+with $a_j$ new variables of weight $j$.  Its kernel $J$ is
+homogeneous for the formal torus action.  Weight components of a
+formal series are preserved exactly, over $O$ and over $k$; in
+particular no use is made of the possibly small group $k^\times$.
+Choose homogeneous lifts of a basis of $J/\mathfrak m_AJ$.
+They generate the entire closed ideal $J$ by Nakayama and completeness.
+
+Their number in weight $j$ is at most
+$\dim_kH^2(C_{\rm rel}^\bullet)$.  Here is the usual obstruction
+injection in this specific setting.  A linear functional on
+$J/\mathfrak m_AJ$ pushes out
+$A/\mathfrak m_AJ\to R$ to a small extension with one-dimensional
+kernel.  Continuous matrix lifts exist also for this complete small
+extension.  Its finite kernel has zero intersection with some open
+additive subgroup of the source.  That subgroup maps homeomorphically
+onto an open subgroup of the target; choosing finitely many coset
+representatives extends its inverse to a continuous set-theoretic
+section.  Invertible residual matrices then have continuous invertible
+lifts.  Their product
+defects form a global two-cocycle.  Comparing at $\ell$ with the
+given $R_\ell$ representation supplies its local one-cochain;
+at the other places compare with the formally smooth lifts through
+$D_q/N_q$.  Modulo the allowed local cochains these are exactly a
+degree-two cocycle in (RP5).  Changing the chosen lifts changes it by
+a coboundary.  The obstruction is zero precisely when a compatible
+global representation lifts.  The construction is linear in the
+functional.  For a relation functional supported in weight $j$, give
+the one-dimensional kernel a generator of weight $j$.  Conjugation
+multiplies a matrix entry in position $(i,i')$ by
+$t^{w_i-w_{i'}}$.  Its product defect has coefficients in that kernel,
+so only positions with $w_i-w_{i'}=j$ can occur.  The obstruction
+therefore takes values in $M_j$, with the same $j$ as the relation;
+no opposite weight is introduced by dualizing the relation space.
+
+If this obstruction is zero, representability gives a section of
+the small extension over $R_\ell$.  Compose the section with
+$A\to R$.  Every $X_{j,s}$ changes by an element of the small kernel.
+Minimality of the relative variables says
+\[
+                 J\subseteq\mathfrak m_{R_\ell}A+(X)^2.
+\]
+Taylor expansion therefore shows that this change acts trivially on
+the image of $J/\mathfrak m_AJ$: its linear coefficients lie in
+$\mathfrak m_A$, which annihilates the small kernel.  The composite
+also kills $J$, so the original functional was zero.  This proves
+the injection from the dual relation space into the obstruction
+space without a flatness assumption or saturation of $J$.
+
+By (RP6) at most $a_j+b_j$ equations of weight $j$ are required.
+Adding zero equations reaches that number exactly.  For weights
+outside the displayed five, the tangent and obstruction modules
+are zero.  Finally lift each homogeneous equation from
+$R_\ell[[X]]$ to $O[[Y,X]]$ and take its same-weight component;
+the homogeneous local presentation makes this a lift of the original
+equation.  The kernel of $O[[Y,X]]\to R_\ell[[X]]$ is exactly
+the extended ideal $J_\ell$, so these lifts together with the unchanged
+old equations generate precisely the global kernel.  The inclusion
+of old coordinates is the specified local map, and every new
+coordinate is still its chosen actual entry difference.
+All coordinates and local data have therefore been preserved,
+which proves (RP2).
+\end{proof}
+
+The theorem supplies the global equations used in the original graded
+model.  Its separate local input is the twelve-dimensional ordinary
+chart at the base representation, with its prescribed five weight
+multiplicities.  The integral lower comparison must still use that
+same chart and the original strict local conditions.  Neither assertion
+is inferred merely from the equation count.

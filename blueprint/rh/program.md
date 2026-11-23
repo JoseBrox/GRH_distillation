@@ -369,7 +369,7 @@ the relevant character phase depends on their difference and is unchanged.
    frame](../../notes/selmer-support-continuation-auxiliary-tower.md) and
    common-subgroup finite-end theorem. The [entire original weight-zero
    algebra is now finite](../../notes/selmer-support-continuation-integral-finiteness.md),
-   preserving nilpotents and integral torsion. [Complete good-data rigidity](../../notes/selmer-support-continuation-type-two-rigidity.md) is proved, including the exact rank-two twists. Construct the actual weighted relative presentation and local chart, then prove the uniform weighted product
+   preserving nilpotents and integral torsion. [Complete good-data rigidity](../../notes/selmer-support-continuation-type-two-rigidity.md) is proved, including the exact rank-two twists. The [actual weighted relative presentation](../../notes/selmer-support-continuation-relative-presentation.md) is proved. Construct the original local chart and strict-cocycle comparison, then prove the uniform weighted product
    of Selmer orders on the growing fields. The four surviving characters
    do not bound the auxiliary degrees or conormal lengths.
 2. **The same global period maps.** The [actual two-point far-return

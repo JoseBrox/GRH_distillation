@@ -48,7 +48,7 @@ The [short guide](paper/guide/main.pdf) explains the mechanisms; the manuscripts
 - **Analytic reductions.** The criteria detecting zeros through prime sums, the finite sampling argument and the four-character RH comparison are proved.
 - **The prescribed geometric spaces.** The original models, line bundles, boundary comparisons and level changes are constructed. Both lower section-norm bounds, the global upper bound and short generators of the entire integral cusp lattice are proved. The arithmetic degree of that same lattice now satisfies the required component inequality, with its stated error term.
 - **Integral theta maps.** The actual sections have finite integral spanning families with uniform norm bounds. The local chain preserves its exact divisibility, phases and initial integral source. Its comparison with the final global maps remains to be made.
-- **Arithmetic rigidity.** The original auxiliary fields, ordinary families and support constructions are supplied. The weight-zero deformation algebra is finite, including its torsion and nilpotents. The original good-data argument now has rigidity at both irreducible and reducible characteristic-zero points, using Thorne's and Kato's theorems with the exact twists. The remaining integral bound must control torsion as the arithmetic data grow.
+- **Arithmetic rigidity.** The original auxiliary fields, ordinary families and support constructions are supplied. The weight-zero deformation algebra is finite, including its torsion and nilpotents. The original good-data argument now has rigidity at both irreducible and reducible characteristic-zero points, using Thorne's and Kato's theorems with the exact twists. The global deformation equations now have their exact weighted counts, with the full integral ideal retained. The local comparison and the uniform torsion bound remain.
 - **Global norm estimates.** The prescribed global return identity and measure normalizations are proved. Far returns have an exponentially small bound. All required flag-length tails, degenerate-fibre volumes and the original degenerate local operator bound are supplied. The global arithmetic sums and the final trace errors remain open.
 
 These results remove concrete inputs from the open frontier. Their scope matters: an identity at fixed arithmetic data does not establish a useful bound across a growing family.
@@ -60,7 +60,7 @@ The [technical frontier](notes/open-frontier-theorems.md) separates five connect
 | Obligation | The missing output |
 | --- | --- |
 | Final arithmetic comparison | Compatible finite tables whose total signed cost satisfies the analytic criterion. |
-| Integral Selmer bound | The actual integral presentation and local comparison, followed by a uniform bound for the specified weighted product of finite group orders. |
+| Integral Selmer bound | The original local deformation chart and integral comparison, followed by a uniform bound for the specified weighted product of finite group orders. |
 | Integral theta maps | Compatibility of the constructed local theta chain with the final normalized global maps and their restrictions. |
 | Global analytic norms | Compatibility of the proved Gram identity with the final arithmetic maps, and sufficiently small rank-weighted trace errors. |
 | Geometric sections and heights | The signed mean-height bound and rank losses for the same section family, with the point-height comparison and remaining numerical constructions. |

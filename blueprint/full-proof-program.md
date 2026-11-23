@@ -210,7 +210,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The original auxiliary frame, integral weight-zero finiteness and complete good-data characteristic-zero rigidity are proved. Thorne treats the adjoints; Kato treats the exact noncentral odd-weight rank-two twists. Construct the actual weighted relative presentation and local twelve-variable chart, then prove the original moving-family integral Selmer bound. Keep every torsion class and nilpotent; rational vanishing supplies no uniform length.
+**Next concrete task.** The original auxiliary frame, integral weight-zero finiteness, complete two-sided rational rigidity and actual weighted relative presentation are proved. Construct the original local ordinary chart and its integral strict-cocycle comparison, then apply the established lower and upper length comparisons to the same marked model and prove the moving-family weighted Selmer bound. Retain all torsion and nilpotents; rational smoothness does not assert integral smoothness or uniform denominators.
 
 **Acceptance conditions:**
 
@@ -479,7 +479,7 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W04: full good-data rational rigidity and integral weight-zero finiteness are supplied. Construct the actual weighted relative presentation and local chart, then bound the integral conormal lengths and weighted Selmer orders. Ordinary RH remains the preferred testing ground.
+1. W04: full two-sided rational rigidity, integral weight-zero finiteness and the actual weighted relative presentation are supplied. Prove the original local ordinary chart and integral strict-cocycle comparison, then the weighted Selmer budget. Ordinary RH remains the preferred testing ground.
 1. W06/W08: the original degenerate local orbital bound is supplied. Prove its arithmetic global zero-Gram sum and the generic near-return sums, with all ranks, finite columns, characters and measure factors retained. Compare the same final arithmetic maps and traces.
 1. W10: the original component section-degree inequality and literal numerical remainder are supplied. Bound its signed mean height and rank losses in the same family; complete the original numerical records and every point-height comparison actually used.
 1. W02/W11: assemble compatible signed arithmetic budgets at every required fourth-power sample, with all accuracy parameters fixed before the windows grow.

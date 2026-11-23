@@ -60,13 +60,14 @@ window grows. No alteration of this exponent accounting is made here.
 
 ## W04: the actual integral Selmer product
 
-**Frontier theorem S.** Construct the original marked local/global
-deformation models' remaining two-sided rigidity
-argument for the now-constructed support, ordinary modules and integral Hecke
-determinant, retaining their stated ordinary local conditions. For those same
-models prove the integral congruence comparison used by the weighted
-Selmer consumer, together with its required bound on the actual prime
-support. In the conductor-one specialization its remaining numerical
+**Frontier theorem S.** For the original marked local/global deformation
+models, construct the ordinary local chart and strict-cocycle comparison
+needed by the integral congruence estimate. Retain the original local
+conditions, complete equation ideals and integral lattices. The support,
+ordinary modules, Hecke determinant, two-sided rigidity and relative global
+equation count are now supplied. Prove the resulting integral congruence
+comparison used by the weighted Selmer consumer, together with its required
+bound on the actual prime support. In the conductor-one specialization its remaining numerical
 part is exactly
 
 \[
@@ -167,7 +168,9 @@ The [type-I rigidity theorem](selmer-support-continuation-type-one-rigidity.md) 
 
 The [type-II theorem](selmer-support-continuation-type-two-rigidity.md) supplies the remaining good-data rigidity. The actual rank-two constituent descends to an odd-weight modular form; Kato applies at exactly the original noncentral twist. The complete polarized adjoint splits into its rank-two adjoint, two quadratic lines and two rank-two representations, all with vanishing finite Selmer group. The original arbitrary extension quantifier is retained. The broader first-family end condition does not request rank-two automorphy.
 
-**First missing construction.** Construct the actual weighted relative presentation and original local chart used in the one-character integral comparison, then discharge the moving-family Selmer budget. Neither rational rigidity nor integral finiteness gives an effective nilpotence exponent or uniform integral conormal length.
+The [relative presentation theorem](selmer-support-continuation-relative-presentation.md) supplies the exact global equation count over every original chosen local ring and every supplied local weighted presentation. Relative Galois cohomology gives one excess equation in weights -1, 0 and 1, and none in weights -2 and 2. The relation-ideal argument preserves all integral torsion and the original entry coordinates.
+
+**First missing construction.** Construct the original local ordinary chart and its integral strict-cocycle comparison, then apply the established lower and upper length comparisons to the same marked model and discharge the moving-family Selmer budget. Rational rigidity and integral finiteness do not alone bound conormal length.
 
 ## W06: the integral theta construction
 
