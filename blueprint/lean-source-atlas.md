@@ -404,3 +404,14 @@ character, ordered Capelli factors, radial gauge, terminal normalizer
 and all grid/word quantifiers. Independent review and exact unitary,
 PBW, Toda and grid diagnostics are recorded in the companion review.
 These records do not assert a Lean build or global norm estimate.
+
+### Actual raw-theta construction and cusp target
+
+The [raw-theta certificate](../certificates/geometry-arithmetic-frontier-raw-theta.json)
+authenticates 37 pinned modules, the original row-weight and period
+dictionaries, and the primary Miller--Schmid rapid-decay theorem including
+central finiteness. Independent review checks arbitrary-base descent,
+full product commutators, distinct finite indices, exact classical scalar,
+adapted period/gauge identities and the original bounded cusp target.
+Exact finite diagnostics and negative controls supplement the human proof;
+no Lean build, spanning theorem or uniform archimedean estimate is asserted.

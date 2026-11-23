@@ -169,8 +169,12 @@ The actual local `Good3` chart is now constructed over a finite unramified
 extension, retaining every eigenlattice defect, the canonical gauge and
 all original harmonic values with no additional valuation loss.
 The full original sized good cover and its normalized complex dictionary
-are now constructed. The first missing inputs are actual raw-theta
-existence/spanning, its archimedean estimate and the remaining selected-prime
+are now constructed. The actual raw theta section is now constructed over
+every coefficient algebra, with its literal value and original classical
+scalar. In the required positive-weight range it belongs to the original
+bounded cusp space, so the same clearing integer gives its integral image.
+The first missing inputs are raw-theta spanning,
+its uniform archimedean estimate and the remaining selected-prime
 divisibility laws for the same maps.
 A constructed integral theta section does not supply the global norm.
 
@@ -291,7 +295,12 @@ including all ranks and both definite signatures.
 The normalized complex `Member` theorem now constructs the original
 primitive theta section, probability norm, squared multiplier, all six
 adelic dictionary laws and exact `AA*L0` marking. Together these supply
-the whole original sized `Deep.Good` contract.
+the whole original sized `Deep.Good` contract. The actual raw-theta sections
+now descend over arbitrary coefficient algebras and lie in the original
+bounded cusp space under `CovGmin.Hyp`, with all normalization factors and
+both finite indices retained. Their integral image follows from the
+established uniform clearing integer. Spanning and the quantitative norm
+and section estimates remain.
 
 **First missing construction.** Identify the actual geometric section and
 height inputs and prove their numerical arithmetic remainder. The existing

@@ -379,3 +379,10 @@ Its unitary normal form and ordered radial recurrence retain every
 character, gauge and rational correction. The prescribed top operator
 and its differential realization remain inputs; controlled valid-cut
 top lifts and the global period-Gram estimate are still separate.
+
+The [actual raw-theta construction](../../notes/geometry-arithmetic-frontier-raw-theta.md)
+proves existence over every coefficient algebra, the literal beta-one
+value, Borel weight and exact classical scalar. Its original positive-row
+condition gives vanishing Fourier--Jacobi constants, and verified rapid
+decay supplies the actual bounded cusp target. Thus the uniform clearing
+integer applies to these generators. Spanning and uniform norms remain.

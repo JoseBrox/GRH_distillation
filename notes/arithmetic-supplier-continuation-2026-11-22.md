@@ -78,8 +78,18 @@ now applies the full-primary trace, mixed pullback and level-prime bounds
 to the literal raw-theta value contract. AllTest and harmonic base change
 give the original identity at every valuation test. One `intZ` has the
 required uniform size and keeps the full torsion enumeration, distinct
-normalizing index and determinant ideals. Raw-theta existence/spanning,
+normalizing index and determinant ideals. Spanning, uniform
 archimedean norms and numerical height estimates remain separate.
+
+The [actual raw-theta construction](geometry-arithmetic-frontier-raw-theta.md)
+now descends the prescribed finite torsion sum over every coefficient
+algebra, including nonreduced bases. It retains `J/(I C)`, the original
+comparison scalar, the ordered translations and all homogeneous factors.
+The original positive row weights kill zero Fourier--Jacobi coefficients;
+moderate growth and central finiteness justify rapid decay on the original
+unitary group. This gives the actual bounded cusp target and hence the
+integral image with the established clearing integer. Full spanning and
+uniform archimedean estimates remain.
 
 ## Actual ordinary modules, types and Galois determinants
 

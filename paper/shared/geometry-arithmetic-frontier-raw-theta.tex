@@ -1,0 +1,543 @@
+\subsection{The actual algebraic raw theta sections}
+\label{sec:actual-raw-theta}
+
+The normalized finite theta sum defines an algebraic section on the
+original moduli space.  Its construction works over every coefficient
+algebra, including nonreduced algebras.  In the actual positive weight
+range it is a cusp section, with exactly the value used by the integral
+denominator theorem.  Thus that theorem applies to constructed sections
+in its original target space.
+
+Keep the actual host, datum, primitive line, coefficient field $K=c.F$
+and an arbitrary original $\mathrm{IsNab}$ rule.  Put $r=p+q$ and
+write $\mathfrak b=\mathrm{Mb}$, so
+$\mathfrak b\bar{\mathfrak b}=(M)$ and
+$\mathfrak b+\bar{\mathfrak b}=\mathcal O_E$.
+Let $\Lambda\subset E^n$ be an original self-dual lattice, standard
+locally at $M$.  Let $N$ be positive and odd, with
+$M\mid N$ and $N\mathcal O_E^n\subset\Lambda\cap\mathcal O_E^n$.
+For the original row weight $a$, let $\mathcal H_a$ be the
+$K$-space of harmonic row-highest polynomials in the prescribed
+variables, and retain the original $\mathrm{Dom}(a,n)$ hypothesis.
+Set
+\[
+ I=[\Lambda\cap\mathcal O_E^n:N\mathcal O_E^n]^r,
+ \qquad J=[\Lambda:N\mathcal O_E^n]^r,
+ \qquad C=\#(\mathrm{LevQ}^{,n})=M^{[E:\mathbb Q]rn/2}.
+\]
+These two indices are different and are not interchanged below.
+
+\begin{theorem}[Exact raw-theta existence and integral image]
+\label{thm:actual-raw-theta-existence}
+For every function $w:\mathrm{LevQ}^{,n}\to K$ there is a
+$K$-linear map
+\[
+ \mathcal T_{\Lambda,N,w}:\mathcal H_a
+                    \longrightarrow\operatorname{sec}(a,n)
+\]
+with the following property.  For every $K$-algebra $S$, every
+original framed point $y/S$, and every $P\in\mathcal H_a$, there
+is a unique value $v_y\in S$ satisfying the original
+$\mathrm{thLaValAt}(w,\Lambda,N,P,y,v_y)$ contract.
+The values commute with every algebra map and every original
+$\mathrm{FrMap}$.  On test rings they are exactly the values of
+$\mathcal T_{\Lambda,N,w}(P)$; on every field they also agree with
+the original evaluation $\mathrm{evR}$.
+
+Under the actual $\mathrm{CovGmin.Hyp}$ conditions the image lies in
+\[
+       Y.V(\mathrm{wtZ}(a,n))
+           =\operatorname{cuspW}(\mathrm{wtZ}(a,n)).
+\]
+In particular take
+$w=\widehat{\mathbf1}_{x_0}$ for any original
+$x_0\in\mathrm{LevQc}^{,n}$.  Under the unchanged hypotheses of
+the actual denominator theorem, for every
+$P\in\operatorname{harmL}(\Lambda,a)$ and every original
+determinant-ideal scalar $s$,
+\[
+ Zs\,\mathcal T_{\Lambda,N,\widehat{\mathbf1}_{x_0}}(P)
+                 \in\operatorname{latW},
+ \qquad
+ Z=M^{[E:\mathbb Q]rn/2+d_a}|\operatorname{disc}E|^{d_a},
+ \qquad d_a=\mathrm{DF}(D_w,a).
+\]
+The integer $Z$ and its previously proved size bound are unchanged.
+The coefficient field, primitive line, connection, separate
+eigenlattices and finite level labels are the original ones.
+\end{theorem}
+
+\begin{proof}
+\emph{The finite scheme on which the value is constructed.}
+Over a $K$-algebra, all positive integers are units.  Hence the
+$N^2$-torsion of the original abelian scheme is finite \'etale.
+Inside its $n$th power take the subgroup $Z_\Lambda$ cut out by
+the original annihilator equations $\mathrm{InZh}$.
+Those equations involve finitely many generators of a projective
+$\mathcal O_E$-module; the definition using all annihilator rows
+cuts out the same subgroup.  Its geometric fibres, in the given
+Tate marking, are
+\[
+ Z_\Lambda=(N^{-1}\Lambda\otimes_{\mathcal O_E}L)/L^n,
+                                                        \tag{RT1}
+\]
+where $L$ is the original period lattice of rank $r$ over
+$\mathcal O_E$.  To check the formula, a class represented by
+$v/N^2$ satisfies the row equations precisely when every row of
+the dual of $\Lambda$ sends $v/N$ into $L$.  Double duality of
+projective lattices gives $v/N\in\Lambda\otimes L$.
+Self-duality gives $\Lambda\subset N^{-1}\mathcal O_E^n$, so
+the displayed quotient is indeed killed by $N^2$.
+Localization at every prime, followed by the determinant-index
+formula, gives its order $J$.  Thus $Z_\Lambda$ is finite \'etale
+of constant rank $J$ over the original base.
+
+For each $q\in\mathrm{LevQ}^{,n}$ choose, after a finite
+\'etale surjective base change, roots $t_{q,b}$ with
+$[N]t_{q,b}=\eta(q_b)$ that are killed by a power of
+$\mathfrak b$.  Such roots exist: project an arbitrary
+$N^2$-torsion root to its $\mathfrak b$-primary factor by the
+Chinese remainder decomposition of the $N^2$-torsion module.
+The complementary factor includes both the
+$\bar{\mathfrak b}$-primary part and any primes dividing $N$
+but not $M$.  The prescribed $\eta(q_b)$ is
+$\mathfrak b$-primary, so this projection preserves its image
+under $[N]$.
+Since $[N]\eta(q_b)=0$, these roots are killed by $N^2$.
+The same finite cover splits $Z_\Lambda$ into $J$ labelled
+sections.  The canonical odd theta lifts and normalized pullback
+of the original primitive line give, for every $q,z,b$, the
+unique section
+\[
+          F_{q,z,b}\in H^0(A_S,\mathscr L^{N^2})
+\]
+specified by $\mathrm{IsUUOver}(N,y.s,z_b,t_{q,b})$.
+They use the original order of the two translations and the
+original pullback normalization.  Existence follows from the
+cubical pullback identity and the theta-group action.  One can
+check descent of the odd lifts directly.  Put $m=N^2$.
+For any local lift $U$, write $a=U^m$ and
+$b=U\iota(U)$, where $\iota$ is induced by inversion.
+These are central units and $a^2=b^m$.  Multiplying $U$ by
+$c=ab^{-(m+1)/2}$ makes its $m$th power and its product with
+its image under inversion both one.  Two such lifts differ by a scalar
+with $c^2=c^m=1$, hence by one.  Uniqueness descends the
+normalized lift.  The original normalized pullback and ordered
+action consequently give the unique section, as in the actual
+integral-theta construction.\cite{raw-theta-source}
+
+For $d=\deg P$ form the finite expression
+\begin{equation}\label{eq:actual-raw-theta-sum}
+ V_y(P)=\frac{1}{ICN^d}
+       \sum_{q\in\mathrm{LevQ}^{,n}}w(q)
+       \sum_{z\in Z_\Lambda}
+          H_y\bigl(P;(F_{q,z,b})_{b=1}^n\bigr).
+\end{equation}
+Here $H_y$ is literally the original product of column connection
+values, summed against the coefficients of $P$.  In particular
+this is the expression with $\beta=1$ in
+$\mathrm{ShortValAt}$, which defines $\mathrm{thLaValAt}$.
+
+\emph{Independence of the finite choices.}
+The product Weil pairing is one on
+$Z_\Lambda\times Z_\Lambda$.  Indeed, for the representatives
+in \textup{(RT1)}, the product pairing is the exponential of the
+integral trace pairing on $\Lambda\otimes L$; integrality follows
+from the original self-duality and adjoint identity.
+Also the Weil pairing is one between two
+$\mathfrak b$-primary points.  Choose
+$b+\bar c=1$ with $b,c\in\mathfrak b^e$ annihilating those
+points, and apply the adjoint identity in the two factors.
+These statements hold over nonreduced coefficient algebras too:
+the relevant values lie in the finite \'etale group
+$\mu_{N^2}$, and equality of its sections is detected on
+geometric fibres.  Equivalently, if $u^{N^2}=1$ and $u-1$ is
+nilpotent, then
+$1+u+\cdots+u^{N^2-1}$ is a unit, so $u=1$.
+
+Changing $t_q$ to another allowed choice changes it by an
+$N$-torsion, $\mathfrak b$-primary vector $u$.
+The condition that $\Lambda$ is standard at $M$ puts $u$ in
+$Z_\Lambda$: clear the lattice comparison by an integer prime
+to $M$, and invert that integer on the $\mathfrak b$-primary
+group in each annihilator equation.
+The translation $z\mapsto z+u$ permutes the full group.
+An arbitrary original witness also enumerates that full group:
+its $J$ sections are geometrically distinct in every fibre of
+the finite \'etale scheme of rank $J$.  Two enumerations
+therefore differ by a locally constant permutation; their
+finite sums can be compared on the corresponding clopen
+pieces of a common cover.
+The canonical odd theta lifts compare the column sections by
+scalars $r_b$ satisfying
+\[
+       r_b^2=e_{N^2}(u_b,z_b),\qquad r_b^{N^2}=1.
+\]
+There is no additional factor from $t_q$, by half-primary
+isotropy.  Since $\prod_b e_{N^2}(u_b,z_b)=1$ and $N$ is
+odd, $\prod_b r_b=1$.  Multilinearity in the column sections
+therefore identifies each reindexed product value exactly.
+This proves independence of the roots and enumeration before
+any harmonic value is taken; in particular it does not assume
+that the individual column commutators are one.
+
+The actual connection construction proves that harmonic product
+values commute with arbitrary base change and are independent
+of the allowed canonical formal chart.  The remaining changes of
+gauge contribute the paired contraction operators, which kill
+$P$.  Thus the two pullbacks of
+\eqref{eq:actual-raw-theta-sum} to the tensor square of the finite
+faithfully flat cover agree.  The faithfully flat equalizer
+\[
+                   S\longrightarrow S'
+                         \rightrightarrows S'\otimes_S S'
+\]
+gives a unique $v_y\in S$.  The same comparison on a common
+cover proves the original value contract for every permitted
+witness and proves its uniqueness.  Pulling the construction
+along any algebra map proves its stated naturality.
+No reduction of $S$ or enlargement of $K$ has been made.
+
+\emph{The weight and the algebraic section.}
+For a triangular frame change with diagonal units
+$(t_0,t_{\tau i})$, the theta generator contributes $t_0^n$.
+The derivative directions transform by that same triangular
+matrix, and the row-highest identity for $P$ contributes
+$\prod_{\tau,i}t_{\tau i}^{a(\tau,i)}$.  Consequently
+\[
+ V_{y'}(P)=t_0^n\prod_{\tau,i}t_{\tau i}^{a(\tau,i)}V_y(P).
+                                                        \tag{RT2}
+\]
+This is exactly $\mathrm{wchar}(\mathrm{ex}(D_w,a,n),t)$,
+including the line coordinate of exponent $n$.
+The naturality just proved and \textup{(RT2)} are precisely the
+two original clauses of $\operatorname{sec}(a,n)$.
+Equivalently, on the actual frame torsor the finite expression is
+regular and descends with this character to the flag line.
+All its ingredients are algebraic finite torsion, cubical
+comparisons and finite formal jets.
+
+Every nonzero polynomial in $\mathcal H_a$ has the same total
+degree $d_a$.  Hence one may use $N^{-d_a}$ throughout the
+linear formula; the zero polynomial contributes zero regardless
+of its convention for total degree.  This proves $K$-linearity.
+The original $\mathrm{AllTest}$ presentation of a field point,
+together with naturality, identifies $v_y$ with $\mathrm{evR}$.
+The cusp verification below puts these sections in the original
+$Y.V(\mathrm{wtZ}(a,n))$ under $\mathrm{CovGmin.Hyp}$.
+The actual denominator theorem then gives the last assertion with
+its same $Z$ and every original valuation test.
+\end{proof}
+
+\paragraph{The classical reading with both indices retained.}
+For the original even $n$ (as required by $\mathrm{Dom}(a,n)$),
+at a complex framed point choose its already constructed
+analytic fibre, original symplectic marking and letter dictionary.
+Let $v_0$ be the norm-one finite vacuum for
+$\mathcal O_E^n\otimes L$, and write the exact product of the
+chosen primitive theta generator as
+$\prod_b\theta(z_b)=\kappa\,\operatorname{thA}(v_0)(z)$.
+Here $\kappa\ne0$ is the actual comparison scalar; it is not
+reset to one.  For the original half-level roots $Y_q$ set
+\[
+ g\phi=\sum_q\sigma(w(q))\,\operatorname{heis}(Y_q)
+             \operatorname{proj}_{\Lambda\otimes L,w_0}(v_0).
+\]
+Then the constructed section satisfies the exact formula
+\begin{equation}\label{eq:actual-raw-theta-classical}
+ \operatorname{ev}_y\mathcal T_{\Lambda,N,w}(P)
+   =\sigma\!\left(\frac{J}{IC}\right)\kappa\,
+             \operatorname{thP}(g\phi,P^\sigma)(x).
+\end{equation}
+This is the original $\beta=1$ complex reading.
+For the convention with $\beta_H$ the right side is multiplied
+by $\sigma(\beta_H)^{-1}$; multiplying that section by the
+original $\beta_H$ recovers the literal raw value.
+
+To verify \eqref{eq:actual-raw-theta-classical}, choose
+$u_1,\ldots,u_J\in2(\Lambda\otimes L)$ representing
+$(\Lambda\otimes L)/(NL^n)$; multiplication by two permutes
+this quotient, whose exponent divides the odd number $N^2$.
+The corresponding points of \textup{(RT1)} are $u_i/N$,
+and $Nu_i\in2L^n$.  The original characteristic is one
+on these even representatives.  Averaging the genuine
+character-twisted lattice action therefore gives
+\[
+ \sum_{i=1}^J\operatorname{heis}(u_i)v_0
+       =J\operatorname{proj}_{\Lambda\otimes L,w_0}v_0.
+\]
+Indeed the average is invariant for that lattice action, and
+vectors in its intersection with $L^n$ act trivially on the
+vacuum; repeated representatives contribute exactly their
+common multiplicity.  Thus the average is the original
+orthogonal projection, including its normalization.
+Choose the original half-level representatives so that the
+torsion root is $Y_q/N$ and $NY_q\in2L^n$.
+The canonical ordered translation sections then read as
+$\operatorname{heis}(Y_q)\operatorname{heis}(u_i)v_0$
+evaluated at $Nz$, with $z$ the analytic variable.
+The harmonic connection value is the original
+polynomial differential operator on that product.  Its
+homogeneous scaling contributes exactly $N^d$, cancelling the
+$N^{-d}$ in \eqref{eq:actual-raw-theta-sum}; the source uses
+ordinary derivatives, so no divided-power factorial is inserted.
+The theta series and each fixed finite derivative converge
+normally on compact positive-period domains, by the Gaussian
+majorant.  This justifies all differentiations and finite sums.
+The established relative rigidified line comparison supplies
+joint holomorphy; a fibrewise metric gauge is not used as a
+holomorphic trivialization.\cite{raw-theta-source}
+
+Along each original complex component, the scalar in
+\eqref{eq:actual-raw-theta-classical} is constant when the prescribed
+normalized theta frames are used.  Indeed, writing $\rho(x)$ for the
+single-column scalar in the Member construction, that construction gives
+$\rho(x)^2=C_\xi\det h(x)$.  Since $n$ is even,
+$\rho(x)^n=C_\xi^{n/2}\det h(x)^{n/2}$, and the determinant is
+already the one in $\operatorname{thA}$.
+The fixed finite vacuum contributes only its fixed scalar.
+Thus the actual $\kappa$, including its characteristic and marking
+dependence, is retained; no varying holomorphic multiplier is dropped.
+The marked rational representatives $Y_q$ and the finite projection
+are fixed on that component.  Consequently its reading is a finite
+linear combination of the original theta series with rational
+characteristics and harmonic polynomial $P$.
+
+\paragraph{The original cusp target.}
+Suppose first that $p,q>0$ and that every first-$p$ row degree is
+positive.  This is exactly the extra condition needed here from
+$\mathrm{CovGmin.Hyp}$: on those rows
+$\mathrm{laOf}(a,n)_{\tau i}=a(\tau,i)+n/2$, so its strict
+inequality gives $a(\tau,i)>0$.
+The original letter dictionary carries these degrees to the $p$-row
+block on every component and for every $\mathrm{GoodEmb}$:
+its differences $\mathrm{Dc.k}$ satisfy
+$\mathrm{partOf}(\mathrm{Dc.k})=a$ after the specified relabelling.
+
+An elementary consequence of the row-highest condition will be useful.
+Let $X$ be the $p$-by-$n$ block of polynomial variables, keeping all
+other variables fixed.  The original triangular action adds an earlier
+row to a later row: $X_b\mapsto X_b+sX_a$ for $a<b$.
+Its defining invariance for integral $s$ extends to every complex $s$
+by polynomial identity.  The polynomial has positive degree in every
+row.  If $X$ has rank less than $p$, choose a nonzero row relation and
+its last nonzero coefficient.  Adding the earlier rows to that row
+makes it zero by allowed triangular operations.  Homogeneity in that row
+then gives $P(X)=0$.  In particular, for every nonzero $v\in\mathbb C^p$,
+$P$ vanishes on matrices whose columns lie in $v^\perp$ for the bilinear
+coordinate pairing.  Therefore $P(\partial)$ kills any holomorphic
+function invariant under translation in the direction $v$ in each
+column.  To see the last assertion directly, choose coordinates with
+$v$ the last basis vector.  Restriction of the symbol $P$ to the
+remaining derivative variables is zero, so each term contains a
+derivative in one of the translation directions.
+
+We check this for the \emph{actual} zero Fourier--Jacobi coefficient.
+Fix any nonzero rational isotropic vector $\xi$.  The lattice
+$E\xi\cap L$ is saturated and isotropic for the original unimodular
+alternating form; successive symplectic completion gives an adapted
+integral symplectic basis $(a_j,b_j)$.  The ordinary theta transformation
+in this basis changes our fixed finite Schwartz vector into a finite
+sum of rational characteristics, with its actual scalar factors.
+For one such characteristic $(\alpha,\beta)$ put
+\[
+ \ell_{\tau j}=\tau\bigl(h(b_j,\xi)\bigr),\qquad
+ C_{\tau,jk}=c_\tau^2\operatorname{Re}
+                  (\ell_{\tau j}\overline{\ell_{\tau k}}),\qquad
+ \nu_{m,\tau}=\frac{c_\tau^2}{4}
+       \sum_{b=1}^n\left|\sum_j(m_{bj}+\alpha_{bj})\ell_{\tau j}\right|^2,
+                                                        \tag{RT3}
+\]
+where $c_\tau=2|\tau(\xi_0)|$ is the original source constant.
+The adapted period identities give
+$\tau(x\cdot s)=\tau(x)+\sum_\tau s_\tau C_\tau$;
+the matrices $h(x)$ and $Q(x)=\mathrm{splitMat}(x)$ are unchanged.
+Thus the exact harmonic theta reading along the original flow is
+\[
+ \sum_m A_m\exp\left(4\pi i\sum_\tau\nu_{m,\tau}s_\tau\right),
+ \qquad
+ A_m=\det h(x)^{n/2}P(\partial_{\mathrm{letter}})F_m(0),
+                                                        \tag{RT4}
+\]
+where
+\[
+ F_m(z)=\prod_{b=1}^n
+       e^{\pi z_b^tQ(x)z_b/2}
+       \theta_{m_b}\bigl(\tau(x),\alpha_b,\beta_b;h(x)z_b\bigr).
+\]
+Here $\theta_{m_b}$ is the single summand of the ordinary theta
+series.  Its Gaussian majorant, also after each of the finitely many
+derivatives in $P$, proves $\sum_m|A_m|<\infty$.
+Harmonicity removes precisely the paired contractions in the original
+split gauge, which is why \textup{(RT4)} is the reading of our section.
+
+For completeness the permissible Borel gauge can always be chosen so
+that $\mathrm{coper}(x,\xi)=0$.  In the two blocks write the period
+vectors as $w,l$, with $\sum_iw_il_i=0$.
+Their relevant projections are nonzero, since a nonzero isotropic
+vector cannot lie in either definite summand.  Choose $d,e$ with
+$\sum_{c\ge q}d_cw_c=1$ and $\sum_{a<q}e_al_a=1$, and put
+$t=\sum_{a<q}w_al_a$.
+The rectangular block
+$K_{ac}=w_ad_c-e_al_c-te_ad_c$ satisfies
+$\sum_{c\ge q}K_{ac}w_c=w_a$ and
+$\sum_{a<q}K_{ac}l_a=-l_c$.
+The corresponding upper unipotent frame change gives the asserted
+gauge and has weight character one.
+In this gauge the original $p$-row direction $v_\tau\ne0$, expressed
+in the full period coordinates as $d_\tau$, satisfies
+\[
+       Q(x)d_\tau=0,\qquad
+       (h(x)d_\tau)_j=-\frac{i c_\tau}{2}
+                                      \overline{\ell_{\tau j}}.
+                                                        \tag{RT5}
+\]
+These are the adapted period and adjoint identities; their signs and
+the factor $1/2$ agree with the prescribed letter directions.
+
+Here is a coordinate derivation of the identities used in
+\textup{(RT3)--(RT5)}.  Write $\mathcal P_x$ and $\mathcal C_x$ for
+the original period and co-period maps, including the $c_\tau$ factors
+in $\mathcal C_x$.  Set
+$A=(\mathcal P_x(a_j))_j$ and $B=(\mathcal P_x(b_j))_j$.
+By definition
+$h=A^{-1}$, $\tau=hB$ and
+$Q=(\mathcal C_x(a_j))_jA^{-1}$.
+The bilinear Riemann identity on the isotropic $a$-span makes $Q$
+symmetric.  Let $d_\tau,e_\tau$ be respectively the $p$- and
+$q$-block parts of $\mathcal P_x(\xi)$.  The eigenperiod convention is
+\[
+ \mathcal P_x(\alpha\xi)
+       =\sum_\tau\bigl(\tau(\alpha)d_\tau
+                             +\overline{\tau(\alpha)}e_\tau\bigr).
+\]
+The actual symplectic sign is $B_0(a_i,b_j)=-\delta_{ij}$.
+Since $\alpha\xi$ is in the $a$-span, its $j$th $a$-coordinate
+is $-B_0(\alpha\xi,b_j)$.  The original trace form gives
+\[
+ (h\mathcal P_x(\alpha\xi))_j
+   =\sum_\tau\left(
+      -\frac{i c_\tau}{2}\tau(\alpha)\overline{\ell_{\tau j}}
+      +\frac{i c_\tau}{2}\overline{\tau(\alpha)}\ell_{\tau j}
+                \right).                              \tag{RT7}
+\]
+Linear independence of the distinct complex embeddings on
+$\mathcal O_E$ proves the two individual identities for $hd_\tau$
+and $he_\tau$.  In the chosen gauge
+$\mathcal C_x(\alpha\xi)=0$ for all $\alpha$, by its conjugate
+eigencharacter rule.  The definition of $Q$ on the $a$-span then gives
+$Q\mathcal P_x(\alpha\xi)=0$; the same independence gives
+$Qd_\tau=Qe_\tau=0$.
+
+Finally the original rank-one flow and its inverse are
+$v\mapsto v-i c_\tau s_\tau h_\tau(v,\xi)\xi$ and the same
+expression with $s_\tau$ negated.  Substitution in the two period
+blocks gives
+\[
+ \mathcal P_{x\cdot s}(v)-\mathcal P_x(v)
+   =\sum_\tau s_\tau\left(
+       i c_\tau\tau(h(v,\xi))d_\tau
+       -i c_\tau\overline{\tau(h(v,\xi))}e_\tau\right).
+\]
+The trace pairing and adaptation imply $h(a_j,\xi)=0$, so $A$ and
+the co-period $a$-matrix, hence $h$ and $Q$, are fixed.
+For $v=b_k$, applying $h$ and \textup{(RT7)} gives
+$c_\tau^2(\ell_{\tau k}\overline{\ell_{\tau j}}+
+\overline{\ell_{\tau k}}\ell_{\tau j})/2=C_{\tau,jk}$.
+This proves the stated period shift.  For a real vector $u$,
+$u^tC_\tau u=c_\tau^2|\sum_j u_j\ell_{\tau j}|^2$;
+the ordinary theta exponent $\pi i u^t\tau u$ therefore gives
+exactly the $4\pi i\nu_{m,\tau}$ in \textup{(RT4)}.
+
+If $\nu_m=0$, nonnegativity in \textup{(RT3)} makes every displayed
+linear form zero, as well as its complex conjugate.
+Equations \textup{(RT5)} then make $F_m$ invariant under translation
+by $d_\tau$ separately in each column.  The quadratic factor contributes
+no residual linear or constant term because $Q(x)d_\tau=0$ and $Q$ is
+symmetric.  The row argument therefore gives $A_m=0$.
+The average of \textup{(RT4)} over expanding real boxes is zero:
+each remaining frequency vector is nonzero and the absolutely summable
+majorant permits passage to the limit.  Since the section is periodic
+under the original arithmetic transvections, this average is its actual
+zero Fourier--Jacobi coefficient.  This argument does not require each
+individual characteristic summand to have the same period lattice.
+It applies to every rational isotropic line, every component frame and
+every original good embedding.\cite{raw-theta-cusp-source}
+
+We also verify boundedness, which is a separate clause of the source
+cusp space.  In an orthonormal frame let $\lambda$ be the shortest
+nonzero period and $g=[E:\mathbb Q]r/2$.  The original probability
+normalization gives squared $L^2$ norm one for the principal theta
+section.  Projection of a Euclidean ball of fixed radius to the torus
+has multiplicity at most $C_g(1+\lambda^{-1})^{2g}$,
+by disjoint-ball packing in each translate of the period lattice.
+The invariant metric in a fixed-radius holomorphic gauge is bounded
+above and below by fixed Gaussian factors.  The holomorphic submean
+inequality and Cauchy's inequality for the fixed finite jet of $P$
+therefore give, for our finite sum of translated theta products,
+\[
+       \operatorname{pnorm}(\mathcal T(P),x)
+           \le C(1+\lambda(x)^{-1})^{gn}.                \tag{RT6}
+\]
+All translations use the unitary theta metric; their finite number
+changes $C$ only.  The covolume is fixed by the principal polarization,
+so the passage between probability measure and Euclidean measure adds
+only a fixed constant.  These period norms are the original positive
+majorant norms, with their fixed $c_\tau$ factors retained.
+In group coordinates $x=g_0x_0$,
+$\lambda(x)\ge c/\|g_0^{-1}\|$ for the fixed period lattice.
+Thus the associated automorphic function has moderate growth.
+
+Here the rapid-decay theorem is applicable with all of its hypotheses.
+The real group is the original
+$\operatorname{Res}_{E^+/\mathbb Q}U(h)$, with compact real center
+a product of norm-one circles.  Pass to the finite-index kernel of the
+original finite theta character.  The function is smooth and
+$K$-finite: on each compact full-flag fibre its right translates lie
+in the finite-dimensional space of holomorphic sections of the fixed
+weight line.  It is also $\mathfrak Z(\mathfrak g)$-finite.
+Indeed the holomorphic Borel-equivariant frame reading is annihilated
+by the right nilpotent Borel algebra and is an eigenvector for its
+Cartan algebra; the Harish--Chandra projection of a central element
+therefore acts by the corresponding weight scalar.
+Finally every proper rational parabolic stabilizes an isotropic flag.
+Choose $\xi$ in its first space $I_1$, of any dimension.
+For the original purely imaginary parameter $t$, the transvection
+$T_\xi(t)v=v+t h(v,\xi)\xi$ has
+$(T_\xi(t)-1)V\subset I_1$ and fixes $I_1^\perp$.
+It acts trivially on the associated graded flag, hence lies in the
+unipotent radical.  That radical fixes $I_1$ pointwise, and
+$uT_\xi(t)u^{-1}=T_{u\xi}(t)=T_\xi(t)$ proves centrality.
+This includes $\dim I_1>1$.
+Integration first over this rational central subgroup, whose average
+is zero, proves the full parabolic constant term zero.
+Miller--Schmid's Theorem~A now gives rapid decay
+on every Siegel set.  Finitely many such sets cover the arithmetic
+quotient, so the invariant norm is bounded everywhere.
+This uses their central-finiteness hypothesis explicitly, as stated in
+their equation~(6.1).\cite{raw-theta-rapid-decay}
+
+If $p=0$ or $q=0$, the real unitary group and the full-flag quotient
+are compact, and there is no nonzero rational isotropic vector.
+Holomorphy gives boundedness directly, and the cusp condition is empty.
+Thus the definite endpoints do not require the positive row argument.
+In the indefinite range of $\mathrm{CovGmin.Hyp}$, the preceding
+proof gives precisely membership in each original $X.\mathrm{SS}$.
+Together with the algebraic section property and the intersection over
+all $\mathrm{GoodEmb}$, the definition of $\mathrm{cuspW}$ gives
+\[
+       \mathcal T_{\Lambda,N,w}(P)
+          \in\operatorname{cuspW}(\mathrm{wtZ}(a,n))
+          =Y.V(\mathrm{wtZ}(a,n)).
+\]
+The constants in this cusp verification may depend on the fixed data,
+level and polynomial.  No uniform archimedean norm estimate is asserted.
+
+For an indicator $x_0$ the finite Fourier weight in this formula
+is exactly $\zeta_M^{\langle x_0,q\rangle}$, with no additional
+averaging factor.  Thus the constructed family meets the value
+and arithmetic-lattice interfaces of the original raw generators.
+Surjectivity onto the full holomorphic cusp space requires the
+separate stable-range theta-spanning argument; neither this
+construction nor the denominator estimate asserts that
+surjectivity or the archimedean norm estimate.

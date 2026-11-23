@@ -66,8 +66,13 @@ identities now supply the [original integral raw-theta implication](geometry-ari
 on the actual cover. Its exact value contract is transported to every
 valuation test, retaining both finite indices and determinant ideals.
 One original clearing integer, fixed before the individual generator,
-has the required uniform size. Theta existence/spanning and archimedean
-norms remain separate.
+has the required uniform size. The [actual raw-theta construction](geometry-arithmetic-frontier-raw-theta.md)
+now supplies the section over every coefficient algebra, its literal value
+and exact classical scalar. The original positive row weights kill every
+zero Fourier--Jacobi coefficient; a verified moderate-growth and rapid-decay
+argument puts it in the required bounded cusp space. Thus the same clearing
+integer applies to these actual generators. Spanning and uniform
+archimedean norms remain separate.
 
 The actual ordinary automorphic modules have faithful good classical
 specializations, and now carry the original universal integral Hecke
