@@ -1,5 +1,7 @@
 # Complete pinned Lean source atlas
 
+The actual corrected Hodge fibres and their permitted projective model refinement are proved in [the specialization note](../notes/geometry-hodge-specialization.md); bounded source and primary-reference evidence is in [the certificate](../certificates/geometry-hodge-specialization.json).
+
 This view covers every local Lean source file at the pinned source revision. It is separate from the manuscript section atlas and the mathematical proof program.
 
 ## Coverage of the recorded full-source scan
@@ -82,6 +84,10 @@ below; it did not download or rebuild the entire development.
 
 | Mathematical supplier | Bounded source comparison and evidence |
 | --- | --- |
+| Original local chart and integral Selmer comparison | [Chart theorem](../notes/selmer-support-continuation-local-chart.md) and [certificate](../certificates/selmer-support-continuation-local-chart.json): thirteen pinned files; the actual selected component, weights, marked equations and one-character trace consumer. |
+| Terminal theta period and Poincare unfolding | [Period theorem](../notes/theta-period-continuation.md) and [certificate](../certificates/theta-period-continuation.json): original finite kernels, branching, class masses, Haar disintegration and distinct remaining row/see-saw comparison. |
+| Different-ideal normalization in the degenerate sum | [Integral minors](../notes/global-gram-continuation-integral-minors.md) and [certificate](../certificates/global-gram-continuation-integral-minors.json): both weighted flags lie in the same integral lattice; the original label sum and local-product consumer retain all normalization factors. |
+| Maximal masses and the primitive-sublattice mean | [Mass theorem](../notes/maximal-hermitian-mass.md) and [primitive mean](../notes/primitive-sublattice-genus-mean.md): exact source quantifiers, Kirschmer's general mass and stabilized local densities, fixed-space discriminant count and weighted gluing. The normalized return sum remains distinct. |
 | Actual abelian quotients at boundary points | [Point theorem](../notes/geometry-point-continuation.md) and [certificate](../certificates/geometry-point-continuation.json): original quotient signature, fresh integral moduli datum and selected tangent-degree consumer; semistable Néron comparison preserves the exact lattices. The Hodge--Tate-corrected fibre remains a separate construction. |
 | Exact auxiliary-prime iteration | [Chain note](../notes/level-chain-integrality.md) and [source certificate](../certificates/level-chain-integrality.json): original rational-image lattice, local kernel laws and triangular commutation factors. |
 | Finite upper section rank | [Jet theorem](../notes/finite-section-jet-bound.md) and [source certificate](../certificates/finite-section-jet-bound.json): component geometry, nef weight differences and exact binomial rank shares. |

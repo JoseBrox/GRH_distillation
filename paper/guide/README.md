@@ -32,17 +32,15 @@ the product and period value. A short cokernel identity constructs the
 exact integral determinant at ramified primes. The prescribed pure-period
 point descends to a number field with its original line and finite level
 maps. Properness and classical uniqueness then extend its exact line and
-tangent lattice integrally. The actual arithmetic model, its original
-global family and fibre data, and the pointwise period presentation remain
-required.
-The Selmer comparison combines a compatible conormal pairing, exact
-graded calculations and a finite slice with at most two points. Its
-abstract numerical estimate is proved under the stated arithmetic-model
-hypotheses. Finite inertia averaging and the Hilbert class field supply
-diagonal point uniqueness. Qualitative Selmer finiteness, local cohomology
-and the explicit marking give all nonpositive base-point rigidity. The
-actual local/model comparisons, two-sided rigidity and uniform integral
-bounds remain.
+tangent lattice integrally. The original arithmetic models, global families and period data are now
+constructed. The signed comparison also applies to each actual boundary
+point's abelian quotient and bounds its selected tangent degrees. The
+Hodge–Tate-corrected fibre and regularized point-height comparison remain
+separate requirements.
+The Selmer comparison now uses the original local crystalline component,
+full global equation ideal and integral strict-cocycle lift. It gives the
+actual one-character trace inequality. The uniform weighted product still
+requires arithmetic bounds for the same admissible trace families.
 Two trace errors control the slope comparison at any prescribed positive
 mass. A strict source deficit also proves aggregate nonvanishing. Exact
 seed norms and weighted Cauchy--Schwarz give a scalar sufficient bound for

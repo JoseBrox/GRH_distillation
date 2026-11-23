@@ -210,7 +210,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original auxiliary frame, integral weight-zero finiteness, complete two-sided rational rigidity and actual weighted relative presentation are proved. Construct the original local ordinary chart and its integral strict-cocycle comparison, then apply the established lower and upper length comparisons to the same marked model and prove the moving-family weighted Selmer bound. Retain all torsion and nilpotents; rational smoothness does not assert integral smoothness or uniform denominators.
+**Next concrete task.** The original local chart and integral strict-cocycle comparison now give the actual one-character trace inequality. Construct and count the same admissible Frobenius trace families, retaining conductors, coefficient primes and the original order of field-dependent constants. Prove the uniform weighted Selmer product.
 
 **Acceptance conditions:**
 
@@ -279,7 +279,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, r60. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The actual local TC/ColIn chain now has its point/phase models, exact integral value lattices, literal kernels, selected and conjugate divisibility and twisted initial-source compatibility. Identify it with the final normalized global Poincare maps and all prescribed restrictions, retaining c0X, periods, original frame forms, finite Haar masses and compact types. No uniform bound on the growing coefficient field is inferred.
+**Next concrete task.** The actual integral chain, terminal algebraic period and exact Poincare–Bessel unfolding are supplied. Prove the intervening seesaw identities and actual smooth row realization, retain their proportionality factors and restrictions, then identify the same final global maps.
 
 **Acceptance conditions:**
 
@@ -322,7 +322,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The exact period identity, Haar budget, exponentially small two-point far integral, all flag-length tails, original degenerate fibres and their local orbital operator are proved. Sum the actual arithmetic zero-Gram returns with their finite-place weights and stabilizer masses. Then control generic near returns and finite columns, identify the same restricted arithmetic maps, and bound both prescribed positive traces.
+**Next concrete task.** The original local degenerate operators, exact different-ideal divisibility, distinct-minor label sum and product of local bounds are supplied. Prove the genus-weighted fixed-label multiplicities, then the complete zero-Gram sum, generic returns, finite-column sums and final positive traces with their original normalizers.
 
 **Acceptance conditions:**
 
@@ -383,7 +383,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The original models, short integral families, norm bounds, full integral frame and component section-degree inequality are proved. The actual boundary-point tangent degrees are now bounded with both integral indices retained. Prove the Hodge–Tate-corrected fibre specialization and regularized point-height identity, then bound the signed weighted mean height and rank losses and finish the numerical family constructions.
+**Next concrete task.** The original models, short integral families, norm bounds, full integral frame and component section-degree inequality are proved. The actual boundary-point tangent degrees are now bounded with both integral indices retained. The corrected tangent fibres and required local-freeness construction are proved. Prove the regularized point-height identity, then bound the signed weighted mean height and rank losses and finish the numerical family constructions.
 
 **Acceptance conditions:**
 
@@ -479,8 +479,8 @@ The [adopted classical Galois substitution](../../notes/classical-galois-substit
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W04: full two-sided rational rigidity, integral weight-zero finiteness and the actual weighted relative presentation are supplied. Prove the original local ordinary chart and integral strict-cocycle comparison, then the weighted Selmer budget. Ordinary RH remains the preferred testing ground.
-1. W06/W08: the original degenerate local orbital bound is supplied. Prove its arithmetic global zero-Gram sum and the generic near-return sums, with all ranks, finite columns, characters and measure factors retained. Compare the same final arithmetic maps and traces.
+1. W04: full two-sided rational rigidity, integral weight-zero finiteness and the actual weighted relative presentation are supplied. The original local chart and integral comparison now give the one-character trace inequality. Bound its actual trace families and prove the weighted Selmer budget. Ordinary RH remains the preferred testing ground.
+1. W06/W08: the original degenerate local orbital bound is supplied. The distinct-minor sum and local product are now proved. Bound fixed-label multiplicities and complete the zero-Gram and generic near-return sums, with all ranks, finite columns, characters and measure factors retained. Compare the same final arithmetic maps and traces.
 1. W10: the original component section-degree inequality and literal numerical remainder are supplied. Bound its signed mean height and rank losses in the same family; complete the original numerical records and every point-height comparison actually used.
 1. W02/W11: assemble compatible signed arithmetic budgets at every required fourth-power sample, with all accuracy parameters fixed before the windows grow.
 

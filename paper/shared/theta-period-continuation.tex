@@ -1,0 +1,272 @@
+\subsection{The terminal class period and the Bessel integral}
+\label{sec:actual-theta-period-comparison}
+
+There are two different period comparisons. The first identifies the
+terminal pairing of the integral theta chain with an algebraic class
+sum. The second unfolds the scalar Poincar\'e series into an integral
+of Bessel periods. We prove both comparisons with their original
+normalizations. An additional comparison between the two periods is
+still required. The original source preserves linear relations in that
+comparison; it does not identify their normalizing factors by declaring
+them to be one.\cite{theta-period-source}
+
+\paragraph{The finite terminal pairing.}
+Keep an admitted datum of Theorem~\ref{thm:actual-theta-chain}, its
+coefficient field $K$, embedding $\sigma:K\hookrightarrow\mathbb C$,
+word prime $T$, original prime element $\pi_T$, and all its characters
+and point representatives. Write $\mathcal C_i$ for its stage-$i$
+classes, $w_i(c)=|\operatorname{Aut}(c)|$, and $V_i(K)$ for its
+polynomial coefficient module. With the original kernels, set
+\[
+ x_0=\varphi,\qquad
+ x_{i+1}(c')=\sum_{c\in\mathcal C_i}
+                 \frac{K_i(c,c')x_i(c)}{w_i(c)}.
+ \tag{TP1}
+\]
+The notation is independent of the indexing convention for the
+single-step maps in Theorem~\ref{thm:actual-theta-chain}.
+
+Let $\mathcal C'$ be the original terminal row classes. A representative
+$d$ has rank $N_m-1$. Its prescribed lift $\widetilde d$ has rank
+$N_m$, obtained by adjoining the original line with parameter $\pi_T$;
+its frame is transported by the original change of representatives.
+Write $x_m(\widetilde d)$ for the resulting polynomial value. Let
+$B_{\rm pol}$ be the original normalized bilinear polynomial pairing,
+and let $\mathcal B_T:V_m(K)\to V'(K)$ be the original branching map.
+In particular this is a bilinear, not a Hermitian, pairing.
+
+Here is an explicit description fixing the branching scalar. At an
+embedding, let $\lambda$ and $\mu$ be the interlacing residual
+partitions of ranks $N=n+1$ and $n$, and retain their common determinant
+shift. Put $a_i=\mu_i-\lambda_{i+1}$ and
+$b_i=\lambda_i-\mu_i$. The previously proved integral branching
+formula, with its original normalization\cite{theta-period-branching}, uses the polynomial
+$\xi_{\lambda,\mu}$ formed from the initial-column minors, with
+exponents $a_i,b_i$, and the constant
+\[
+ c_{\lambda,\mu}=
+ \prod_{i=1}^n\space
+ \prod_{v\in [\lambda_{i+1},\,\min(\lambda_i,\lambda_{i+1}+
+                                     \sum_j a_j)]\cap\mathbb Z
+                       \setminus\{\mu_i\}}
+ \prod_{j=1}^n\bigl((v-i)-(\mu_j-j)\bigr).
+\]
+Let $\Pi_\mu$ be the projection specified by the inverse Gram matrix
+for $B_{\rm pol}$, and $[z^b]$ the coefficient of the indicated
+last-row monomial, after discarding monomials involving the last
+column. The branching map is the tensor product of
+\[
+ \tau(\overline{\pi_T})^{-n_{\lambda,\mu}}
+ c_{\lambda,\mu}
+ \frac{B_{\rm Fock}(\xi_{\lambda,\mu},\xi_{\lambda,\mu})}
+      {B_{\rm Fock}(H_\lambda,H_\lambda)}
+                 \Pi_\mu[z^b],
+ \tag{TP2}
+\]
+where $H_\lambda$ is the standard extremal polynomial and
+$n_{\lambda,\mu}$ is the difference of the sums of the original
+weights, including their determinant shifts. This is precisely the
+previously proved integral branching normalization. All powers of
+$\overline{\pi_T}$ and all factorials in the Fock pairings remain.
+
+For an algebraic row $z$, define
+\[
+ \mathcal P_K(\varphi,z)=
+ \sum_{d\in\mathcal C'}\frac{
+   B_{\rm pol}\bigl(\mathcal B_T x_m(\widetilde d),z(d)\bigr)}
+                              {|\operatorname{Aut}(d)|}.
+ \tag{TP3}
+\]
+The complex terminal period $\mathcal P_{\mathbb C}$ is the original
+one: compose the original complex chain, evaluate at the same lifted
+row points, apply its normalized lowering map, and pair with the
+original row using the original class masses.
+
+\begin{theorem}[Exact algebraic terminal period]
+\label{thm:actual-algebraic-terminal-period}
+For every original algebraic column $\varphi$ and row $z$,
+\[
+ \mathcal P_{\mathbb C}(\operatorname{ev}_\sigma\varphi,
+                       \operatorname{ev}_\sigma z)
+                         =\sigma\bigl(\mathcal P_K(\varphi,z)\bigr).
+ \tag{TP4}
+\]
+The constant is one. The identity holds on the original twisted
+initial source and on every retained source subspace. It introduces
+no new finite denominator; the branching and pairing denominators
+in (TP2)--(TP3) have not been removed.
+\end{theorem}
+
+\begin{proof}
+The actual local-chain theorem identifies each point kernel, including
+its root phases, with the corresponding polynomial kernel. Evaluation
+commutes with a finite sum, with multiplication by a coefficient, and
+with $w_i(c)^{-1}$. Induction in (TP1) therefore identifies the complex
+chain at every stage with evaluation of $x_i$.
+
+At the last two steps, the original coupled class space only changes
+the representatives used for this sum. Its underlying decorated
+lattice and automorphism group are the same as in the original
+stage. In general, if a class is written by an intermediate choice
+on which its automorphism group $\Gamma$ acts, the sum of the
+weights $1/|\operatorname{Stab}_\Gamma(y)|$ over the choice orbits
+equals $|Y|/|\Gamma|$. This is the orbit--stabilizer formula applied
+to each orbit. Applying it to the original intermediate classes
+recovers exactly the two coupled kernels, with no extra class count.
+The final lift is the prescribed $\widetilde d$ because its
+coefficient element and its conjugate satisfy
+$\pi_T\overline{\pi_T}=T$ and avoid every retained auxiliary level.
+Thus the same local lattices and residue functionals are used on
+both sides.\cite{theta-period-source}
+
+The normalized lowering map is (TP2) in the original frame. To check
+its compatibility with evaluation, extract one polynomial coefficient
+at a time, then apply the inverse Gram projection. Field embeddings
+commute with both finite operations and with the displayed nonzero
+Gram denominators. The original frame change precedes lowering on
+both sides. Its equivariance follows from interlacing and the common
+determinant shift, already proved for the exact branching map.
+
+The two terminal polynomial values transform by opposite character
+factors. The first carries the inverse factor and the second the
+factor itself; $B_{\rm pol}$ is invariant under the corresponding
+dual matrix actions. Their product is therefore invariant, with
+its phase exactly cancelled. The point/phase equivalence preserves
+the stabilizer orders. The original terminal period is consequently
+the image under $\sigma$ of precisely (TP3). This proves (TP4).
+Precomposing the identity with the already specified initial twist
+or restricting its argument proves the final assertions.
+\end{proof}
+
+\paragraph{The analytic period, with its Haar factor.}
+Fix one original global word $u$ in the admitted arithmetic gap regime,
+where the original scalar Poincar\'e series belongs to the specified
+$L^2$ space. Use its rational flag and its specified
+nonisotropic vector to write the Bessel stabilizer as
+$S_u=N_u\rtimes H_u$. Its real and finite parts are
+$S_{u,\infty}$ and $S_{u,f}$; $H_u$ is the original anisotropic
+unitary group. These are subgroups of the original ambient group,
+not abstract groups substituted for them. Keep the rational subgroup
+$S_u(F)$, compact open $K_2$, finite representative $x_u$, the
+original scalar seed $\Phi_{u,T}$, and its periodization $P_uT$.
+
+Let $\mu_f$ be the original finite Haar measure and $v_K=\mu_f(K_2)$.
+Normalize an auxiliary Haar measure $\nu_{u,f}$ on $S_{u,f}$ by
+\[
+ \nu_{u,f}(S_{u,f}\cap x_uK_2x_u^{-1})=1.
+\]
+The real stabilizer measure is the prescribed product measure
+$\mu_{u,S}=\mu_{u,N}\mu_{u,H}$. The original Bessel Haar measure
+$\mu_{u,B}$ has a unique conversion factor $\beta_u>0$:
+\[
+ \mu_{u,B}=\beta_u(\mu_{u,S}\times\nu_{u,f})
+ \tag{TP5}
+\]
+under the original rational-model identification. This is a specified
+ratio of Haar measures, not a free normalization. It can equivalently
+be computed by evaluating the two measures on any fixed relatively
+compact set of positive measure.
+
+Let $\nu_{u,Q}$ be the original real quotient measure and $W_u(y)$
+the original vector-valued seed. For a bounded continuous automorphic
+row $f$ with right character $\overline{\chi_2}$, put
+\[
+ \mathcal I_u(T,f;y)=
+ \int_{S_u(F)\backslash S_u(\mathbb A)}
+  \Psi_u(s)\,T(W_u(y))(h_s)\,
+                    f\bigl(s(y,x_u)\bigr)\,d\mu_{u,B}(s).
+ \tag{TP6}
+\]
+Here $s=n_sh_s$ in the fixed semidirect product, $T$ is read using
+the original column dictionary, and $\Psi_u$ is the inverse Bessel
+character: in the original coordinates it is the product of the
+prescribed infinite and finite unipotent characters. The integral
+uses the original quotient measure, retaining the finite class
+masses. This is the original Bessel period, with its radial variable
+$y$ still present.
+
+\begin{theorem}[Normalized Poincar\'e--Bessel pairing]
+\label{thm:actual-poincare-bessel-pairing}
+Let $\phi$ be the $L^2$ class of the row $f$. With the Hilbert
+inner product conjugate-linear in its first argument, one has
+\[
+ \left\langle\overline\phi,\,c_{0,u}^{-1/2}P_uT\right\rangle
+   =\frac{v_K}{\beta_u\sqrt{c_{0,u}}}
+             \int\mathcal I_u(T,f;y)\,d\nu_{u,Q}(y),
+ \tag{TP7}
+\]
+where the original positive normalizer is
+\[
+ c_{0,u}=\frac{v_K\,\mu_{u,N}(\mathcal F_{u,N})
+                         \mu_{u,H}(H_{u,\infty})}{\dim V_u}.
+\]
+Here $\mathcal F_{u,N}$ is the original real fundamental domain for
+the rational unipotent subgroup whose finite component preserves
+$x_uK_2x_u^{-1}$. In particular its volume has not been replaced by
+one.
+All integrals in this identity are absolutely convergent. The factor
+in (TP7) is fixed before choosing the test column or row and is
+strictly positive. No uniform estimate for $\beta_u$ is asserted.
+\end{theorem}
+
+\begin{proof}
+First consider a nonnegative function supported on $S_{u,f}x_uK_2$.
+For $g$ in this set, the set of $s\in S_{u,f}$ with
+$s^{-1}g\in x_uK_2$ is a left coset of
+$S_{u,f}\cap x_uK_2x_u^{-1}$, so its $\nu_{u,f}$-mass is one.
+Fubini and left invariance of $\mu_f$ give
+\[
+ \int F(g)\,d\mu_f(g)=
+ \int_{S_{u,f}}\int_{K_2}F(sx_uk)\,d\mu_f(k)\,d\nu_{u,f}(s).
+ \tag{TP8}
+\]
+Combine this with the original real Weil formula and (TP5).
+The resulting adelic disintegration factor is $\beta_u^{-1}$.
+
+Choose a measurable fundamental domain for the discrete rational
+subgroup $S_u(F)$. Folding the preceding disintegration to that
+domain is justified first for nonnegative functions by Tonelli.
+The rational translates of its indicator add to one almost
+everywhere. For a right-$K_2$-invariant function, the remaining
+integration over $K_2$ gives exactly $v_K$. Thus the folded factor
+is $v_K/\beta_u$. No stabilizer or level volume has been discarded.
+
+For the seed, the original character law gives, on its support,
+\[
+ \Phi_{u,T}\bigl(s(y,x_u)\bigr)
+                       =\Psi_u(s)T(W_u(y))(h_s).
+\]
+This is the original column evaluation, read at the rational flag
+and the same finite representative. The finite-level covariance
+of $f$ is the inverse of that of the seed; their product is
+right-$K_2$ invariant. The original compact anisotropic quotient
+and the finite-dimensional column dictionary give a bound
+$|\Phi_{u,T}(s(y,x_u))|\le C_T\|W_u(y)\|$ on the compact
+rational Bessel quotient. The proved seed decay gives
+$\int\|W_u(y)\|\,d\nu_{u,Q}(y)<\infty$.
+The row $f$ is bounded. Hence the same folded formula proves
+absolute convergence for the seed and for $f\Phi_{u,T}$.
+
+The original absolute Poincar\'e convergence then permits unfolding
+the periodized integral:
+\[
+ \langle\overline\phi,P_uT\rangle
+  =\int_{S_u(F)\backslash G(\mathbb A)}f(g)\Phi_{u,T}(g)\,dg
+  =\frac{v_K}{\beta_u}
+                        \int\mathcal I_u(T,f;y)\,d\nu_{u,Q}(y).
+\]
+The first equality has $f$, rather than $\overline f$, because the
+first argument is $\overline\phi$. Division by the original
+positive square root proves (TP7).
+\end{proof}
+
+The finite comparison (TP4) and the analytic comparison (TP7) remove
+two actual period-identification obligations. They do not identify
+the radial Bessel integral with (TP3). The remaining comparison must
+retain the actual smooth row realization, its restrictions and the
+see-saw identities for the intermediate theta lifts. In the source,
+two-term linear relations are transported first; a nonzero Poincar\'e
+pairing then supplies nonzero proportionality factors. These factors
+may depend on the row tuple. The original period normalizer $c_{0,u}$
+does not by itself determine them. Thus neither W06 nor the final
+source and target trace bounds are concluded here.

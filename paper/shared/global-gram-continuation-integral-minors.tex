@@ -1,0 +1,314 @@
+\subsection{Integral leading minors and their arithmetic sum}
+\label{shared-integral-leading-minors}
+
+The arithmetic normalization of the leading minors is useful before
+the sum over rational returns is taken.  The prescribed weighted flag
+lattices give more than integrality of the unnormalized determinants:
+they give their exact different-ideal divisibility.  We prove that
+divisibility directly, use it to sum the actual labels, and then
+combine the real-place orbital estimates.  The estimate for the
+number of returns with a fixed label remains a separate arithmetic
+requirement.  All source identifications below refer to the pinned
+revision in~\cite{global-gram-integral-minors-source}.
+
+\paragraph{The original weighted lattices.}
+Let $E/F$ be the original CM extension, let $[F:\mathbf Q]=f$,
+and write $\mathcal O=\mathcal O_E$.  Complex conjugation is denoted
+by a bar.  Let $\mathfrak d=\mathfrak D_{F/\mathbf Q}\mathcal O$
+be the extension of the different of $F$.  It is a nonzero integral
+ideal fixed by conjugation.  In the original family $E/F$ is
+unramified at finite places.  Consequently, if
+$\rho=|\operatorname{disc} E|^{1/(2f)}$, then
+\begin{equation}\label{eq:minor-different-norm}
+ N\mathfrak d=|\operatorname{disc}F|^2
+             =|\operatorname{disc}E|=\rho^{2f}.
+\end{equation}
+The first equality follows by extending an ideal through a degree-two
+extension, and the second is the relative discriminant formula.
+
+Let $V$ carry the original Hermitian form $h$, conjugate-linear in
+its first variable, and let $\Lambda\subset V$ be the integral
+lattice common to the two flags.  Its original unimodularity
+implies $h(\Lambda,\Lambda)\subset\mathcal O$.
+Number the isotropic vectors in the flags as
+$e_0,\ldots,e_{r-1}$ and $e'_0,\ldots,e'_{r-1}$.
+The prescribed flag lattice is
+\[
+ X_{\mathcal O}(e)=\sum_{a=0}^{r-1}\mathfrak d^{-(r-a)}e_a.
+\]
+The original two flag conditions say
+$X_{\mathcal O}(e)\subset\Lambda$ and
+$X_{\mathcal O}(e')\subset\Lambda$; in fact each is the indicated
+intersection of $\Lambda$ with its isotropic subspace.
+For $0\le l\le r$, put
+\[
+ a_l=\sum_{a=0}^{l-1}(r-a),\qquad
+ \delta_l=\det\bigl(h(e'_b,e_a)\bigr)_{0\le a,b<l},
+ \qquad \delta_0=1.
+\]
+Changing the convention for which flag is listed first conjugates a
+minor and leaves every ideal norm and estimate below unchanged.
+
+\begin{theorem}[Divisibility of the prescribed minors]
+\label{thm:actual-minor-ideal}
+For every $0\le l\le r$,
+\[
+ \delta_l\in\mathfrak d^{2a_l}.
+\]
+If $\delta_l\ne0$, the fractional ideal
+$\mathfrak a_l=(\delta_l)\mathfrak d^{-2a_l}$ is a nonzero
+integral ideal.  In particular,
+\begin{equation}\label{eq:actual-minor-product}
+ 1\le N\mathfrak a_l
+   =|N_{E/\mathbf Q}\delta_l|(N\mathfrak d)^{-2a_l}
+   =\prod_{\tau\in\Phi}
+       \bigl(|\tau(\delta_l)|\rho^{-2a_l}\bigr)^2,
+\end{equation}
+where $\Phi$ contains one embedding from each conjugate pair.
+\end{theorem}
+
+\begin{proof}
+For $x\in\mathfrak d^{-(r-a)}$ and
+$y\in\mathfrak d^{-(r-b)}$, both $xe_a$ and $ye'_b$ belong
+to $\Lambda$.  Integrality of $h$ gives
+$\overline y x h(e'_b,e_a)\in\mathcal O$.
+Since $\overline{\mathfrak d}=\mathfrak d$ and every nonzero
+fractional ideal of $\mathcal O$ is invertible, this is exactly
+\[
+ h(e'_b,e_a)\in\mathfrak d^{2r-a-b}.
+\]
+For example, the assertion follows after localization at each prime
+ideal, where multiplying by the two inverse ideal powers subtracts
+their valuations.  Each summand in the determinant expansion has
+ideal valuation at least
+$\sum_{a=0}^{l-1}(2r-a-\sigma(a))=2a_l$.
+This proves the divisibility without choosing a generator of
+$\mathfrak d$ or a basis of $\Lambda$ over $\mathcal O$.
+The ideal $\mathfrak a_l$ is therefore integral.  Its norm is a
+positive integer if $\delta_l\ne0$.  The last identity follows
+from~\eqref{eq:minor-different-norm} and the product formula for
+the field norm in a CM field.
+\end{proof}
+
+This proves the normalized lower bound directly for every nonzero
+leading minor of the original flags.  Unnormalized integrality
+alone would not do so: dividing the norm of an arbitrary integral
+element by $(N\mathfrak d)^{2a_l}$ can give a number smaller than
+one.  The weighted flag condition is essential.
+
+\paragraph{A packing estimate with the actual normalization.}
+We use the following elementary estimate.  For a finite set
+$P\subset\mathbf C^f$, suppose
+\[
+ \prod_{\tau=1}^f|p_\tau-q_\tau|\ge1
+       \quad(p,q\in P,\ p\ne q).
+\]
+For $R\ge1$ one then has
+\begin{equation}\label{eq:minor-packing}
+ \sum_{p\in P}\prod_{\tau=1}^f
+        \max\{1,|p_\tau|/R\}^{-3}\le(64R)^{2f}.
+\end{equation}
+Here is a proof retaining an absolute constant.  Assign $z\in\mathbf C$
+to the square with indices
+$(\lfloor2\operatorname{Re}z\rfloor,
+  \lfloor2\operatorname{Im}z\rfloor)$.
+Two tuples in the same product of squares have every coordinate
+distance smaller than $1$, so at most one point of $P$ occupies
+each such product.  Set
+\[
+ w(n)=\max\{1,(|n|-1)/(2R)\}^{-3/2}\quad(n\in\mathbf Z).
+\]
+The weight of $z$ is at most the product of the two corresponding
+$w$'s.  Indeed $|z|$ is at least each real coordinate's absolute
+value, and
+$\max(1,|z|/R)^2$ is at least the product of the two coordinate
+maxima.  The floor inequalities then give the claimed bound.
+The decreasing function $u\mapsto\max(1,u/(2R))^{-3/2}$ has
+integral $6R$ on $[0,\infty)$.  Hence
+\[
+ \sum_{n\in\mathbf Z}w(n)
+ =3+2\sum_{n=1}^{\infty}\max\{1,n/(2R)\}^{-3/2}
+ \le3+12R\le15R.
+\]
+Summing over all product squares proves~\eqref{eq:minor-packing},
+in fact with $15$ in place of $64$.
+
+Fix $H\ge1$, $1\le r$, and $0\le j\le r$.  For a label
+$\delta=(\delta_0,\delta_1,\ldots)$ with
+$\delta_0=1$, $\delta_l=0$ for $l>j$, and
+$\delta_l\in\mathfrak d^{2a_l}$ for $1\le l\le j$, define
+\begin{align*}
+ D_{\tau l}(\delta)&=|\tau(\delta_l)|\rho^{-2a_l},&
+ M&=(2H)^{2r},\\
+ \sigma_\tau(\delta)&=
+    \max\bigl(1,D_{\tau l}(\delta)/M:1\le l\le j\bigr),&
+ S(\delta)&=\prod_{\tau\in\Phi}\sigma_\tau(\delta).
+\end{align*}
+Zero internal minors are permitted.  They contribute zero to the
+maximum; they are never inverted.
+
+\begin{theorem}[The actual leading-minor sum]
+\label{thm:actual-normalized-minor-sum}
+For any set $\mathcal T$ of distinct labels satisfying these
+conditions, the nonnegative series is summable and
+\begin{equation}\label{eq:normalized-label-sum}
+ \sum_{\delta\in\mathcal T}S(\delta)^{-3r}
+       \le2^j\bigl(64(2H)^{2r}\bigr)^{2fj}.
+\end{equation}
+There is no factor depending on the root discriminant in this
+bound.  For the original scale $H=b^{C_Hm}$, with $b\ge2$,
+$m=2r+2$ and $C_H\ge0$, it implies the original consumer's bound
+\begin{equation}\label{eq:original-minor-label-budget}
+ \sum_{\delta\in\mathcal T}S(\delta)^{-3r}
+     \le b^{C_c^2m^2fr},\qquad C_c=21+4C_H.
+\end{equation}
+The constants are chosen before the field, rank, words, and finite
+table entries.
+\end{theorem}
+
+\begin{proof}
+For a fixed $l$, consider the normalized embedding
+$x\mapsto(\rho^{-2a_l}\tau(x))_{\tau\in\Phi}$ of
+$\mathfrak d^{2a_l}$.  If $x\ne y$, their difference is a
+nonzero element of the same ideal.  The proof of
+Theorem~\ref{thm:actual-minor-ideal} applied to this element gives
+\[
+ \prod_{\tau\in\Phi}
+       |\rho^{-2a_l}\tau(x-y)|\ge1.
+\]
+Thus~\eqref{eq:minor-packing} applies to every finite subset of
+this exact normalized ideal, with $R=M$.
+
+Partition any finite subset of $\mathcal T$ according to
+$A=\{1\le l\le j:\delta_l\ne0\}$.
+Since $|A|\le r$ and $\sigma_\tau\ge1$,
+\[
+ S(\delta)^{-3r}\le
+ \prod_{l\in A}\prod_{\tau\in\Phi}
+       \max\{1,D_{\tau l}(\delta)/M\}^{-3}.
+\]
+For fixed $A$ the selected coordinates determine the label.
+Enlarge their allowed sets to the product of their individual
+coordinate sets and apply~\eqref{eq:minor-packing} separately to
+each ideal.  The resulting sum is at most $(64M)^{2f|A|}$.
+There are $2^j$ possible supports, so the finite sum is bounded
+by the right side of~\eqref{eq:normalized-label-sum}.
+The labels form a countable set; increasing finite subsets proves
+both summability and the same bound for the full series.
+For $j=0$ there is one possible label and the bound is $1$.
+
+For the final assertion take logarithms to base $b$.  The right
+side of~\eqref{eq:normalized-label-sum} has logarithm at most
+\[
+ j+2fj\{6+2r(1+C_Hm)\}
+ \le fr\{13+4r+4C_Hmr\}
+ \le (17+4C_H)m^2fr
+ \le C_c^2m^2fr.
+\]
+Here $f,r\ge1$, $j\le r\le m$ and $b\ge2$ were the only
+inequalities used.  In particular this step does not need an
+extra restriction relating the root discriminant to $b$.
+\end{proof}
+
+\paragraph{The normalized discriminant bound.}
+For every nonzero selected minor define
+$\Delta_l=N((\delta_l)\mathfrak d^{-2a_l})$.
+Equations~\eqref{eq:actual-minor-product} and the definition of
+$\sigma_\tau$ give
+\begin{equation}\label{eq:minor-height-bound}
+ 1\le\Delta_l\le M^{2f}S(\delta)^2
+       \le b^{C m^2f}S(\delta)^2
+       \quad\bigl(C\ge2(C_H+1)\bigr).
+\end{equation}
+Indeed $\log_bM^{2f}\le4rf(1+C_Hm)\le2(C_H+1)m^2f$.
+The product of the nonzero minor norms is correspondingly bounded by
+$(b^{Cm^2f}S^2)^r$.  These are the original normalized ideal norms,
+not the norms of unnormalized integral determinants.
+
+\paragraph{Combining the real-place estimates.}
+For one actual relevant nonidentity return with zero Gram
+determinant, let $1\le j\le r$ be its original index.  The
+original normal form has $\delta_j\ne0$ and
+$\delta_l=0$ for $j<l\le r$.  Set $\Delta=\Delta_j$ and
+$a=k-1-j$.  The local minor dictionary identifies $D_{\tau l}$
+above with the leading-minor absolute values in
+Theorem~\ref{thm:actual-local-degenerate-bound}.
+Retain the original positive Haar factors $\kappa_\tau/s_\tau$.
+
+\begin{theorem}[The product of the original local bounds]
+\label{thm:actual-degenerate-product}
+Suppose $k\ge40r^4$ and $k\ge5r$.  Fix $C_s\ge0$ and
+$q=(\lceil C_s\rceil+2)kr$.  Under the original local hypotheses
+and their proved moment allowance, the actual local orbital
+operators satisfy
+\begin{align}
+ \prod_{\tau\in\Phi}\|J_\tau\|_{\mathrm{op}}
+ &\le\left(\prod_{\tau\in\Phi}\frac{\kappa_\tau}{s_\tau}\right)
+       \left(\frac{16\pi e}{k}\right)^{j(k-1-j)f}
+       \Delta^{-(k-1-j)/2}\notag\\
+ &\hspace{12mm}\cdot(8rH)^{80r^4f}S(\delta)^{-C_sk}.
+ \label{eq:actual-degenerate-product}
+\end{align}
+Every factor on the right has the original arithmetic
+normalization.  The finite-place stabilizer factors have not
+been cancelled or discarded.
+\end{theorem}
+
+\begin{proof}
+Put $E_0=8r^2+2$ and
+$B_\tau=\max(1,D_{\tau l}^{-1}:0\le l\le r,\ D_{\tau l}>0)$.
+Theorem~\ref{thm:actual-minor-ideal} says that a nonzero minor
+has positive values at all places and their product is at least
+one.  For each such $l$,
+\[
+ \prod_\tau\max(1,D_{\tau l}^{-1})
+ =\frac{\prod_\tau\max(1,D_{\tau l})}{\prod_\tau D_{\tau l}}
+ \le\prod_\tau\max(1,D_{\tau l}).
+\]
+Using $\max(1,D_{\tau l})\le M\sigma_\tau$, including
+$l=0$, gives
+\begin{equation}\label{eq:reciprocal-minor-product}
+ \prod_\tau B_\tau\le M^{f(r+1)}S^{r+1}.
+\end{equation}
+All real-place Haar scalars remain unchanged while we multiply
+Theorem~\ref{thm:actual-local-degenerate-bound}.
+The powers of $D_{\tau j}$ combine to $\Delta^{-a/2}$.
+Since $a\ge k/2$, its factor $8\pi e/a$ is at most
+$16\pi e/k$.
+
+The total exponent of $S$ after
+\eqref{eq:reciprocal-minor-product} is
+\[
+ (r+1)(8r^2+2)-\frac{q-16r^3-4r-1}{r}
+ \le-C_sk.
+\]
+To check this, the positive terms are at most
+$8r^3+24r^2+2r+6+1/r\le41r^3\le2k$,
+whereas $q/r\ge(C_s+2)k$.
+The remaining constant at each place is
+\[
+ 16(4r+4)(4r)^{4r^2}
+ (2H)^{16r^3+4r+2r(r+1)(8r^2+2)}.
+\]
+Since $16(4r+4)\le(8r)^3$ and $H\ge1$, it is at most
+$(8rH)^{16r^4+32r^3+8r^2+8r+3}$, hence at most
+$(8rH)^{80r^4}$.  This proves the stated product estimate.
+The chosen $q$ exceeds $16r^3+4r+2$ under $k\ge40r^4$;
+the original moment theorem allows the fixed constant
+$\lceil C_s\rceil+2$ before the arithmetic data are chosen.
+\end{proof}
+
+\paragraph{What remains in the arithmetic sum.}
+The preceding theorems supply the exact minor-label sum, the
+normalized discriminant upper bound and the product of local
+orbital bounds.  They apply to the actual weighted flag lattices
+in both the RH and Dirichlet-GRH routes.  The next requirement is
+a count of the returns sharing each label, with the original
+inverse-automorphism weights and stabilizer covolumes.
+Those multiplicities are absent from~\eqref{eq:normalized-label-sum}.
+The source obtains them by a mean over a genus of definite
+Hermitian lattices, including pairs of embedded data and their
+isometries.  A count of distinct minors does not establish that
+mean.  Until it is proved and combined with the remaining
+normalizers, neither the full zero-Gram operator bound nor the
+final positive trace estimates follow from this subsection.

@@ -1,0 +1,470 @@
+\subsection{The original local chart and integral Selmer comparison}
+\label{sec:support-local-chart}
+
+We now construct the local chart at the diagonal representation.  The
+chart is over the fraction field.  The local and global equation ideals
+used in the integral length comparison remain the original ideals.
+
+Let $O$ be the integers of a finite extension $E/\mathbf Q_\ell$,
+where $\ell\ne2$.  On $G=G_{\mathbf Q_\ell}$ retain the original
+unramified quadratic character $\eta$, finite character $\tau$, and
+continuous character $\Psi$ satisfying
+\[
+ \Psi|_{I_\ell}=\varepsilon^e\tau|_{I_\ell},\qquad e\ge1.
+                                                               \tag{LC1}
+\]
+Set $G_L=\ker\eta\cap\ker\tau$.  This fixes the finite local
+extension $L$; its degree is not bounded in this argument.  Let $R$ be
+the universal framed local ring for the residual representation of
+\[
+ r_0(g)=\bigl(\operatorname{diag}(\Psi(g),1,\Psi(g)^{-1}),
+                    \eta(g)\bigr)
+ \quad\hbox{in}\quad
+ \mathrm{GL}_3\rtimes\{\pm1\},
+                                                               \tag{LC2}
+\]
+where the nonidentity component acts by $A\mapsto JA^{-\mathsf t}J$
+and $J$ reverses the basis.  Write $x:R\to O$ for its base point.
+The multiplier is fixed to be $\eta$.
+
+Use exactly the ordinary ideal $J_{\rm ord}$ and element $\delta$
+of Proposition~\ref{prop:selmer-crystalline-components}.  Thus
+$J_{\rm ord}$ imposes the characteristic polynomials and the ordered
+three-factor products on $G_L\cap I_\ell$, and
+$\delta=\ell d_0d_1$ uses the original inertia element and Frobenius
+in $G_L$.  Put
+\[
+ J_Y=J_{\rm ord}:\delta^\infty,\qquad
+ J_{\rm red}=\sqrt{J_Y},\qquad
+ J_t=\bigcap_{\substack{P\text{ minimal over }J_{\rm red}\\
+                               P\subset\ker x}}P.
+                                                               \tag{LC3}
+\]
+The universal property makes the base point $x$ unique, so the last
+condition is the source's condition at every base point.  The selected
+local ring is $R_\ell=R/J_t$.
+
+\begin{theorem}[The actual local component and chart]
+\label{thm:support-local-chart}
+There is exactly one prime in the intersection in (LC3), and it is
+$J_t$.  The ring $R_\ell$ is stable under conjugation by every matrix
+congruent to one over every complete local coefficient algebra.
+There are twelve actual matrix-entry differences $u_i\in\ker x$
+and a homomorphism
+\[
+ \phi:R\longrightarrow E[[z_1,\ldots,z_{12}]],\qquad
+ \phi(u_i)=z_i,\qquad \ker\phi=J_t,
+                                                               \tag{LC4}
+\]
+whose constant term is $x$.  The entries are homogeneous for
+conjugation by $\operatorname{diag}(t,1,t^{-1})$, with the original
+matrix weights.  The coordinate multiplicities are
+\[
+\begin{array}{c|rrrrr}
+ j&-2&-1&0&1&2\\ \hline
+ \#\{i:\deg z_i=j\}&1&2&3&4&2.
+\end{array}                                                    \tag{LC5}
+\]
+If $x(a)=0$ and the linear part of $\phi(a)$ vanishes, some
+$0\ne c\in O$ satisfies
+$ca\in (\ker x)^2+J_t$.  Every linear coordinate direction is
+represented by an integral element of $R$, up to a nonzero scalar
+in $O$.  These are the full original local-chart requirements
+\cite{support-local-chart-source}.
+\end{theorem}
+
+\begin{proof}
+We first identify the completed characteristic-zero local ring, then
+return to the integral selected component.
+
+\emph{The crystalline deformation ring.}
+Fix the Hodge type and inertial type of $r_0$ in (LC2).  They are
+defined over $E$; on $G_L$ the type is crystalline with the three
+distinct Hodge--Tate weights $-e,0,e$, using the convention that
+$\varepsilon$ has weight $-1$.  The characteristic-zero framed
+deformation ring of this type is regular.  We use
+Bellovin--Gee, Theorem~3.3.7, which allows disconnected reductive
+groups \cite{support-local-chart-BG}.  Here the group is
+$\mathrm{GL}_3\rtimes\{\pm1\}$; its identity component has
+dimension nine and its regular Hodge flag has dimension three.
+The component character is discrete and fixed by reduction.  Its
+centre is smooth because $\ell$ is odd.  Thus the completion at
+$r_0$, with its specified residue-field map to $E$, is
+\[
+                         C\simeq E[[z_1,\ldots,z_{12}]].       \tag{LC6}
+\]
+Only this complete local regularity is used, not a claim of integral
+smoothness.  The cited theorem follows by imposing zero monodromy
+in the crystalline deformation problem: the obstruction complex has
+two terms in degrees zero and one.  This also explains why a possible
+equality of adjacent Frobenius ratios with the cyclotomic character
+does not invalidate (LC6).
+
+\emph{Crystalline deformations near the base are ordinary.}
+We include this step because smoothness of an unrelated local ring
+would not prove the theorem.  Let $B$ be a finite local Artinian
+$E$-algebra, and let a deformation of $r_0$ to $B$ have the fixed
+potentially crystalline type.  Restrict to $G_L$ and take its filtered
+crystalline module.  After a finite scalar extension, a positive
+iterate of Frobenius acts linearly on each coefficient factor.  Its
+three residual eigenvalues have distinct valuations, proportional to
+$-e,0,e$.  Hensel factorization of its characteristic polynomial
+therefore gives three rank-one generalized eigenspaces over $B$.
+The sums of the first one and first two, ordered by increasing
+valuation, are independent of the iterate and the splitting extension.
+They are stable under Frobenius and the finite descent action.
+
+Write $D_{\le k}$ for the first $k$ slope lines.  At every embedding
+of $L$, the Hodge filtration of the split base is opposite to this
+slope flag.  In particular $D_{\le1}$ misses the two-dimensional
+filtration step, $D_{\le2}$ misses the one-dimensional step, and
+$D_{\le2}$ meets the two-dimensional step in dimension one.
+These are the minimal possible intersection dimensions.  The minors
+expressing these transversality conditions are nonzero at the base,
+hence units over $B$.  Consequently all intersections with the Hodge
+filtration, and all quotient filtrations, are direct summands of the
+same ranks over $B$.
+
+This also verifies strictness for the nilpotent coefficient
+filtration, a point needed before applying field-valued comparison
+theorems.  Choose a $B$-basis of each $D_{\le k}$ adapted to its
+induced Hodge filtration.  For every $n$ and every filtration step
+$F$, one then has
+\[
+ (\mathfrak m_B^nD_{\le k})\cap F
+                  =\mathfrak m_B^n(D_{\le k}\cap F).
+\]
+The associated filtered Frobenius modules for the
+$\mathfrak m_B$-adic filtration are therefore
+$(\mathfrak m_B^n/\mathfrak m_B^{n+1})\otimes_E D_{\le k,0}$;
+the same assertion holds for successive slope quotients.  They are
+sums of the corresponding admissible modules of the split base.
+Weak admissibility is preserved by strict extensions: Newton and
+Hodge numbers are additive, and the required inequalities for a
+subobject follow by intersecting it with the subobject and projecting
+it to the quotient.  Induction through the finite coefficient
+filtration proves that every $D_{\le k}$ and successive quotient
+is weakly admissible.
+
+Apply the Colmez--Fontaine equivalence to these finite-dimensional
+$\mathbf Q_\ell$-objects \cite{support-local-chart-CF}.  Full
+faithfulness retains the $B$-action, and exactness carries the
+strict coefficient filtrations to the corresponding representation
+filtrations.  The representation associated with $D_{\le k}$ has
+reduction of $E$-dimension $k$ and total $E$-dimension
+$k\dim_E B$.  Nakayama gives a surjection from $B^k$, which is an
+isomorphism by those dimensions.  Thus we obtain a free
+rank-one/rank-two Galois flag with free successive quotients.
+Uniqueness of the Frobenius flag makes the construction descend
+through the scalar extension and respect the polarization.
+
+On each rank-one quotient, fixed inertial type and fixed Hodge weight
+make the inertia character exactly $\Psi,1,\Psi^{-1}$, in that
+order.  There is no infinitesimal variation of its finite inertia
+character: averaging over the finite inertia quotient is valid in
+characteristic zero.  Nor can its Hodge weight vary in a crystalline
+Artinian deformation.  Consequently every such deformation satisfies
+the literal equations of $J_{\rm ord}$.  This proves that their
+images in the reduced ring $C$ vanish.
+
+\emph{The saturation selects this same component.}
+Proposition~\ref{prop:selmer-crystalline-components} proves the
+opposite inclusion: every finite-algebra point of $R/J_{\rm red}$
+is crystalline on the same $G_L$.  Near $x$ its finite inertial
+type and Hodge type are those of $r_0$.  Indeed the descent inertia
+factors through a fixed finite group.  Its representations over
+Artinian $E$-algebras are rigid up to conjugacy: averaging kills
+the first cohomology at each square-zero coefficient step.  The
+Hodge ranks are locally constant ranks of the filtered direct
+summands and reduce to the ranks at $r_0$.  Thus it factors through the
+fixed-type crystalline deformation ring, including at nilpotent
+Artinian points.  In the other direction, $\delta$ is a nonzero
+element of $C$.  To check this even when $\delta(x)=0$, vary
+$\Psi$ by an unramified character $\nu$ with Frobenius value
+$1+T$.  The diagonal representation (LC2) with $\Psi\nu$ has the
+same crystalline type.  If the original Frobenius is of degree
+$m\ge1$ in the unramified quotient, both adjacent factors become,
+up to nonzero constant factors,
+\[
+                  \Psi(\mathrm{fr})(1+T)^m
+                           -\varepsilon(\mathrm{fr}).         \tag{LC7}
+\]
+This power series is nonzero in characteristic zero.  The original
+inertia eigenvalue differences are also nonzero, since the selected
+cyclotomic inertia value has infinite order.  Hence $\delta$ is
+nonzero in the domain $C$.
+
+Since $J_{\rm ord}$ vanishes in $C$ and $\delta$ is not a zero
+divisor there, its saturation and radical vanish there as well.
+Conversely, the preceding finite-algebra comparison implies that the
+completed local quotient by $J_{\rm red}$ factors through $C$.
+These two maps are inverse: both are quotients of the completed
+universal local ring and agree on its universal representation.
+The completion of $(R/J_{\rm red})[1/\ell]$ at $x$ is therefore
+exactly $C$.
+
+Here the local passage is legitimate for the full ideals.  The
+universal ring is a quotient of a finite power-series ring over $O$
+and is excellent.  Localization and completion are flat; completion
+of its reduced local quotient is reduced.  The closed-locus comparison
+uses Kisin's characterization on every finite coefficient algebra,
+as proved in Proposition~\ref{prop:selmer-crystalline-components}.
+It is not an inference that field points detect nilpotents.  The
+domain $C$ and faithful flatness of local completion show that
+exactly one minimal prime of $J_{\rm red}$ passes through $x$.
+Call it $P$.  Its contraction is the original $J_t=P$; thus
+$R_\ell$ is a domain, and its map to $C$ is injective.
+
+\emph{The weights and integral entry coordinates.}
+The tangent space of the framed crystalline functor is the space
+$Z_f^1(G,\operatorname{ad}r_0)$ of cocycles whose classes satisfy the
+finite local condition.  The weight-$j$ adjoint subspace has matrix
+dimension $d_j$, where
+\[
+                    (d_{-2},d_{-1},d_0,d_1,d_2)=(1,2,3,2,1).
+\]
+The involution on matrices is $X\mapsto-JX^{\mathsf t}J$.
+It preserves each weight.  Since $2$ is invertible, its reflected
+pairs split into their two eigenlines.  Each resulting character
+has Tate exponent $ej$, the finite twist $\tau^j$, an unramified
+factor, and possibly the unramified quadratic factor $\eta$.
+Bloch--Kato gives zero finite first cohomology for negative exponent
+and one dimension for positive exponent.  Adding coboundaries gives
+one cocycle dimension per negative matrix direction and two per
+positive direction.  At weight zero the characters are unramified;
+the finite classes are unramified classes, whose dimension plus the
+coboundary dimension is one per direction.  This gives
+\[
+ \dim_E Z_f^1(G,\operatorname{ad}r_0)_j
+       =\begin{cases}d_j,&j\le0,\\2d_j,&j>0,\end{cases}
+                                                               \tag{LC8}
+\]
+and hence (LC5).  The same calculation applies with the finite
+character in (LC1): its inertia twist does not change the nonzero
+Tate-exponent formula, and the weight-zero factors remain unramified.
+
+Actual matrix-entry differences separate framed tangent vectors.
+Choose twelve of their linear parts forming a basis, weight by
+weight.  The formal inverse-function theorem makes these entries
+parameters in $C$.  Their transformation under the diagonal torus
+is exactly by their matrix weights, so the parameter isomorphism and
+all matrix entries are homogeneous.  The composite $R\to C$ is
+the map (LC4), with the asserted kernel.
+
+To check the integral tangent assertion, put $\mathfrak p=\ker x$.
+If $x(a)=0$ and the linear part of $\phi(a)$ vanishes, faithful
+flatness gives $a\in\mathfrak p^2+J_t$ after localization at the
+characteristic-zero point.  Clear denominators to obtain
+$ba\in\mathfrak p^2+J_t$ for some $b\in R$ with $x(b)\ne0$.
+Since $(b-x(b))a\in\mathfrak p^2$, the required scalar is
+$c=x(b)$.  Clearing an additional power of $\ell$, if needed,
+keeps $c\ne0$.  The same localization argument supplies finite
+jets up to a nonzero scalar in $O$; in degree one the selected
+integral entries already supply every coordinate.
+
+\emph{Conjugation on the integral component.}
+In $R[[Z_{ab}]]$, conjugation by the universal matrix $1+Z$ is an
+automorphism with inverse given by $(1+Z)^{-1}$.  Characteristic
+polynomials, the ordered product equations, and $\delta$ are
+conjugation invariant, so this automorphism preserves $J_{\rm red}$
+extended to the power-series ring.  It fixes the base point at $Z=0$.
+The unique minimal prime through that point is $P[[Z]]$, since its
+completed local quotient is $C[[Z]]$, a domain.  Thus it preserves
+$P[[Z]]$.  Specializing $Z$ to the entries of any matrix in
+$1+\mathfrak m_A M_3(A)$ proves the stated conjugation stability
+over every complete local algebra $A$, including algebras with
+nilpotents and $\ell$-torsion.
+\end{proof}
+
+\begin{theorem}[The actual integral local lifting]
+\label{thm:support-actual-integral-lifting}
+For each original good global datum, the actual marked global model
+exists with the original local ring $R_\ell$ and full global
+equation ideal.  Every original normalized strict cocycle modulo a
+nonzero $a\in O$ gives a weight-$-1$ derivative on that model which
+lifts to an integral derivative on its ambient algebra.  The modulus
+remains $a$.  In particular the strict Selmer module embeds into
+the dual of the original negative conormal quotient.
+\end{theorem}
+
+\begin{proof}
+Choose a finite weighted presentation of $R_\ell$ by actual
+matrix-entry differences.  Such differences topologically generate
+the framed ring, and the preceding conjugation action gives their
+matrix weights and a homogeneous kernel.  Theorem
+\ref{thm:support-relative-presentation} supplies the relative global
+presentation over this very local presentation.  Before imposing the
+global and marking equations, its ambient complete algebra is
+\[
+                       \widehat A=R_\ell[[X_{j,s}]].           \tag{LC9}
+\]
+Let $A$ be its algebra of finite sums of homogeneous elements, and
+let $Q$ be the full homogeneous ideal of global and marking equations
+in $A$.  With $a_j$ as in that theorem, put
+\[
+ r=a_{-1}+2,\quad s=a_{-2}+1,\quad
+ r'=a_1+3,\quad s'=a_2+1,\quad m=a_0+3.
+\]
+The numbers of equations of weights $-1,-2,1,2,0$ are
+$r+1,s,r',s',m$.  The local chart and the free variables give
+chart dimensions $r,s,r'+1,s'+1,m$ in those same weights.
+All entries have homogeneous preimages in $A$.  Its coordinate
+derivatives are integral multiples of derivatives of entries of the
+same weight; inverse-matrix entries have this property by
+$d(B^{-1})=-B^{-1}(dB)B^{-1}$ at the diagonal base.
+
+For completeness, the passage from algebraic points of $A/Q$ to
+local points of the completed marked ring adds no arithmetic input.
+Its weight-zero quotient is finite and local over $O$ by
+Theorem~\ref{thm:support-actual-integral-finiteness}, with the
+original augmentation as its residual point.  For its maximal ideal
+$\mathfrak n$, some power of $\mathfrak n$ is contained in
+$\ell$ times that quotient.  Thus every characteristic-zero point
+sends $\mathfrak n$ to elements of strictly positive valuation.
+Opposite-weight generator products of weight zero belong to
+$\mathfrak n$, as do the weight-zero augmentation generators.
+Consequently the strict
+inequalities making all nonzero-weight generators small after
+scaling by $t^j$ have a common solution for $v(t)$: each lower
+bound is smaller than each upper bound precisely by one of those
+product inequalities.  Weight-zero generators are already small.
+Choose such $t$ in a finite coefficient extension.  Power-series
+evaluation then gives the local point.  The same convergent
+first-order substitution extends any derivative annihilating $Q$;
+its finitely many generator values lie in one finite coefficient
+field.  This proves the point and derivative parts of the original
+model, as well as its chart and equation counts.
+
+Now take a normalized strict cocycle $\gamma$ with coefficients
+$O/a$ in weight $-1$.  On the local group it is
+$X-\operatorname{Ad}(r_0)X$ for a weight-$-1$ matrix $X$ over
+$O/a$.  Lift its two possibly nonzero entries to a matrix $Y$ over
+$O$.  Both $\eta$ and $\Psi$ are continuous, so conjugating the
+integral base representation by $1+\epsilon Y$ over
+$O[\epsilon]/(\epsilon^2)$ gives a continuous integral local
+deformation.  Theorem~\ref{thm:support-local-chart} puts it on
+the original $R_\ell$.  Its derivative is integral and reduces
+to the required local coboundary.
+
+The square-zero deformation defined by $\gamma$ satisfies the
+actual global equations: its normalization gives the two markings,
+it vanishes on the prescribed killed inertia subgroups, and its
+local restriction is the just constructed point of $R_\ell$.
+Universality gives a derivative $D$ on the original global ring.
+Extend its integral local derivative to (LC9) by lifting the values
+of $D$ on the new variables of weight $-1$ and using zero at every
+other weight.  On a power series this derivative reads only its
+linear coefficients.  It kills the extended local ideal and
+reduces to $D$, because both agree on the entry coordinates.
+This proves the original integral lifting assertion.
+
+Write $I=\ker(A\to O)$ and
+$I^{(2)}=\{f:\exists,0\ne c\in O, cf\in I^2\}$.
+The integral derivative kills $I^{(2)}$ because its target $O$ is
+torsion-free, and its reduction kills $Q$.  The established normalized
+cocycle construction therefore gives the compatible injections
+\[
+ \mathcal S[a]\hookrightarrow
+ \operatorname{Hom}_O\!\left(
+    (I/(I^{(2)}+Q))_{-1},\,O/a\right),\qquad
+ \mathcal S\hookrightarrow
+ \operatorname{Hom}_O\!\left(
+    (I/(I^{(2)}+Q))_{-1},\,E/O\right).                         \tag{LC10}
+\]
+Here $\mathcal S$ is the original strict module with character
+$\Psi^{-1}$.  The original local unit condition makes a local
+primitive of an $a$-torsion class itself $a$-torsion, so no modulus
+is enlarged.  Compatibility follows from the coefficient map
+$O/a\to O/(ab)$, $u\mapsto bu$.  Matrix entries recover
+$\gamma$, proving injectivity.  No torsion is removed after $Q$
+is imposed; that torsion is the quantity measured in (LC10).
+\end{proof}
+
+\begin{corollary}[The original one-character trace inequality]
+\label{cor:support-one-character-trace}
+Retain every original good-data hypothesis for the character $\chi$,
+twist $e$, imaginary quadratic field $K$, and coefficient prime
+$\ell$.  For $\sigma\in G_K$ put
+$t_\sigma=\Psi(\sigma)+1+\Psi(\sigma)^{-1}$.
+Suppose every original admissible rank-three representation, including
+the original rank-two-plus-line alternative, has trace at $\sigma$
+different from $t_\sigma$.  There is a finite set $\mathcal X$ of
+pairwise nonisomorphic such representations for which
+\[
+ \frac{\operatorname{length}_O\mathcal S}
+      {e(O/\mathbf Z_\ell)}
+ \le 2\sum_{\rho\in\mathcal X}
+       v_\ell\bigl(\operatorname{tr}\rho(\sigma)-t_\sigma\bigr),
+ \qquad v_\ell(\ell)=1.                                     \tag{LC11}
+\]
+The admissibility bounds are the original $e,N$ bounds in rank
+three and $e,N|\operatorname{disc}K|$ bounds in the rank-two
+alternative.  In particular $\mathcal S$ has finite length.
+\end{corollary}
+
+\begin{proof}
+Apply Theorem~\ref{thm:selmer-abstract-length} to the actual model
+just constructed.  The negative and zero cotangent spanning,
+fixed-point separation, integral weight-zero finiteness, and
+two-sided tangent bounds are the previously proved arithmetic
+statements, including Theorems~\ref{thm:support-type-one-rigidity}
+and~\ref{thm:support-type-two-rigidity}.  Use as trace element the
+actual difference at $\sigma$.  The nonvanishing assumption is
+exactly the hypothesis required by that theorem.  Combining its
+upper length bound with (LC10) gives (LC11), before division by
+the coefficient ramification index.
+
+The actual type-I and type-II identifications put these very
+representations in the stated admissible families.  We verify the
+isomorphism issue, since otherwise the trace sum could acquire an
+unjustified multiplicity.  Write $T=\operatorname{diag}(1,0,-1)$
+and $g^*=cg^{-1}c$.  The original marking gives
+$r(g_1)-r(g_1^*)=\zeta T$, with $\zeta$ congruent to a fixed
+unit at every local point.  For two such points, $\zeta$ and
+$\zeta'$ are nonzero and $\zeta'\ne-\zeta$: their common
+residue is a unit and $2$ is a unit.  An intertwiner $M$ on $G_K$
+satisfies $M\zeta T=\zeta'TM$.  The three diagonal eigenvalues
+and the preceding exclusion force every off-diagonal entry of $M$
+to be zero.  Write $M=\operatorname{diag}(m_0,m_1,m_2)$, with
+all $m_i\ne0$.
+
+For a matrix $A=r(g)$ and $A'=r'(g)$, $g\in G_K$, the
+intertwining identities at $g$ and $g^*$ give
+\[
+ m_i A_{ij}=A'_{ij}m_j,\qquad
+ m_{2-j}A_{ij}=A'_{ij}m_{2-i}.
+\]
+If $m_0m_2=m_1^2$, put $t=m_0/m_1$; these identities give
+$A'_{ij}=t^{j-i}A_{ij}$.  Otherwise they force all entries
+joining the middle coordinate to either outside coordinate to
+vanish.  Choose $t^2=m_0/m_2$ in the algebraically closed
+coefficient field; the same equality then holds for the remaining
+entries.  Hence $r'$ is conjugate to $r$ by
+$\operatorname{diag}(t,1,t^{-1})$ on $G_K$.  Both markings at
+$c$ equal the identity matrix and are preserved by this torus, so
+the equality holds on the full group.  Thus the original marking
+identifies isomorphic two-sided representations precisely up to
+the allowed torus action.
+Take one representative from each orbit in the finite cover of the
+abstract length theorem.  This gives pairwise nonisomorphic
+representations and preserves their traces; no extra multiplicity
+factor is introduced \cite{support-local-chart-source}.
+
+For a general original coefficient ring, the prime-to-$\ell$
+character values lie in a finite unramified coefficient subring
+$O_0$.  Flat extension of the same local/global cochain kernels
+gives $\mathcal S_O=\mathcal S_{O_0}\otimes_{O_0}O$.
+Length is multiplied by $e(O/O_0)$, and dividing by
+$e(O/\mathbf Z_\ell)$ cancels this factor.  The trace values in
+$\overline{\mathbf Q}_\ell$ are unchanged.  This supplies the
+full original coefficient quantifier.
+\end{proof}
+
+This closes the local-chart and integral-comparison requirements for
+one good character.  It does not bound the sum in (LC11) throughout
+the growing family.  The next arithmetic task is to realize these
+same admissible trace families at the auxiliary Frobenius elements,
+with their conductor, cardinality and integral polynomial bounds,
+and to sum the resulting valuations with the original weights and
+exceptional primes.  No uniform Selmer product estimate follows
+from the fixed-data inequality alone.

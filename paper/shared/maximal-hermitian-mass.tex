@@ -1,0 +1,426 @@
+\subsection{The mass of a maximal integral Hermitian lattice}
+\label{sec:maximal-hermitian-mass}
+
+The genus count in the degenerate return sum requires the mass of a
+maximal integral lattice, which need not be unimodular.  The following
+formula supplies that input.  It follows from the classical Hermitian
+mass formula; the local argument below identifies every correction
+factor, including at primes above \(2\).
+
+Let \(E/F\) be a CM quadratic extension, unramified at every finite
+place, with \(F\) totally real of degree \(f\).  Write \(\mathcal O_E\)
+and \(\mathcal O_F\) for their rings of integers, \(D_F\) for the
+absolute discriminant of \(F\), and \(\eta\) for the quadratic Hecke
+character associated with \(E/F\).  Thus, at a finite prime
+\(\mathfrak p\) of \(F\), \(\eta(\mathfrak p)=1\) if the prime splits
+and \(\eta(\mathfrak p)=-1\) if it is inert.  All \(L\)-functions below
+are finite Hecke \(L\)-functions, without their archimedean factors.
+
+Let \(V\) be an \(n\)-dimensional Hermitian \(E\)-space, \(n\geq1\),
+positive definite at every real place of \(F\).  An integral lattice
+is a full, finitely generated \(\mathcal O_E\)-submodule \(L\subset V\)
+such that \(h(L,L)\subset\mathcal O_E\).  Its dual is
+\[
+ L^\#=\{x\in V:h(x,L)\subset\mathcal O_E\}.
+\]
+The lattice is maximal integral if it has no proper integral
+overlattice.  Its genus consists of the lattices isometric to \(L\)
+at every finite place; write
+\[
+ \operatorname{Mass}(L)
+   =\sum_{[M]\in\operatorname{gen}(L)}
+                         \frac1{|\operatorname{Aut}_{\mathcal O_E,h}(M)|}.
+\]
+All automorphisms here are \(E\)-linear isometries.  In particular, no
+determinant-one condition and no extra quotient by scalar
+automorphisms is imposed.
+
+\begin{theorem}[Maximal integral Hermitian mass]
+\label{thm:maximal-hermitian-mass}
+For fixed \(E\) and \(n\), set
+\[
+ C(E,n)=
+ 2D_F^{n^2/2}
+ \left(\prod_{a=1}^{n}\frac{(a-1)!}{(2\pi)^a}\right)^f
+ \prod_{a=1}^{n}L_F(a,\eta^a).
+ \tag{MM1}
+\]
+This is a positive real number independent of \(V\) and \(L\).
+If \(L\) is maximal integral, all primes of \(\mathcal O_E\) at which
+\(L\) is not unimodular are inert over \(F\).  There are finitely many
+such primes.  If \(B(L)\) denotes this set and
+\(q_P=\sqrt{N_{E/\mathbf Q}P}\), then
+\[
+ \operatorname{Mass}(L)
+   =C(E,n)\prod_{P\in B(L)}
+               \frac{q_P^{\,n}-(-1)^n}{q_P+1}.
+ \tag{MM2}
+\]
+For \(n=1\), every factor in this finite product is \(1\).
+\end{theorem}
+
+\begin{proof}
+We first determine the local lattices.  Maximality is a local
+condition: if a completion has a proper integral overlattice, its
+quotient by the original completion is a nonzero submodule of the
+corresponding primary part of \(L^\#/L\).  Taking the inverse image
+of that submodule in \(L^\#\) gives a global proper overlattice.
+Its integrality can be tested at every finite place.  Conversely,
+a proper global integral overlattice remains proper at a prime
+dividing its finite index.
+
+At a split place \(v\), write
+\(E_v=F_v\times F_v\); conjugation exchanges the factors.  The local
+lattice decomposes as \(L_+\oplus L_-\), and the Hermitian form is
+determined by a perfect pairing between the two corresponding
+vector spaces.  Integrality says \(L_-\subset L_+^\vee\).
+Replacing \(L_-\) by \(L_+^\vee\) preserves integrality, so
+maximality gives equality.  The pairing on the two modules is then
+perfect, and \(L_v\) is unimodular.
+
+Now let \(v\) be inert.  Put \(A=\mathcal O_{F_v}\),
+\(B=\mathcal O_{E_v}\), and choose a uniformizer \(\pi\in A\).
+The extension \(B/A\) is unramified of degree two.  An integral
+Hermitian \(B\)-lattice has an orthogonal basis with Gram matrix
+\[
+ \operatorname{diag}(\pi^{a_1}u_1,\ldots,\pi^{a_n}u_n),
+ \qquad a_i\geq0,\quad u_i\in A^\times.
+ \tag{MM3}
+\]
+For completeness, let \(s\) be the least valuation of a Gram-matrix
+entry.  If a diagonal entry has valuation \(s\), its vector can
+be split off.  Otherwise, take two basis vectors whose off-diagonal
+pairing has valuation \(s\).  The trace pairing of the quadratic
+residue-field extension is nondegenerate, so a linear combination
+of those vectors has norm of valuation \(s\).  Division by that
+norm gives an integral orthogonal projection onto its line.
+Induction gives (MM3).  This argument uses the residue-field trace,
+which is surjective also in characteristic \(2\); it does not
+divide by \(2\).
+
+If any \(a_i\geq2\), adjoining \(\pi^{-1}e_i\) gives a proper
+integral overlattice.  Hence \(a_i\in\{0,1\}\).  If two exponents
+are \(1\), the corresponding binary form after division by \(\pi\)
+has a nonzero isotropic vector over the residue field.  Indeed,
+surjectivity of
+\(\mathbf F_{q^2}^{\times}\to\mathbf F_q^\times\),
+\(z\mapsto z\overline z\), solves
+\(u_1+u_2z\overline z=0\).  Lifting such a vector to a primitive
+vector \(w\in Be_i+Be_j\) gives
+\[
+ h(w,L_v)\subset\pi B,\qquad h(w,w)\in\pi^2A.
+\]
+Adjoining \(\pi^{-1}w\) again gives a proper integral overlattice.
+Thus a maximal lattice is either unimodular or has the form
+\[
+ L_v=L_{v,0}\perp Be,\qquad
+ L_{v,0}\text{ unimodular of rank }n-1,\qquad h(e,e)=\pi u
+ \quad(u\in A^\times).
+ \tag{MM4}
+\]
+Conversely, (MM4) is maximal.  Its dual quotient is one-dimensional
+over \(B/\pi B\).  Every nonzero element of that quotient has a
+representative whose norm has valuation \(-1\); consequently it
+cannot lie in an integral overlattice.  This also proves
+\[
+ |L_v^\#/L_v|=q^2
+ \quad\text{at a nonunimodular place,}
+ \tag{MM5}
+\]
+where \(q=N_{F/\mathbf Q}v\).  At this inert place \(q_P=q\).
+The quotient \(L^\#/L\) is finite, so only finitely many such places
+occur.
+
+We use the classical Siegel mass formula for Hermitian lattices
+in the normalization
+\[
+ \operatorname{Mass}(L)=
+ 2D_F^{n^2/2}
+ \left(\prod_{a=1}^{n}\frac{(a-1)!}{(2\pi)^a}\right)^f
+ |L^\#/L|^{n/2}\prod_v\beta(L_v)^{-1}.
+ \tag{MM6}
+\]
+Here the relative discriminant of \(E/F\) is \(1\), and
+\[
+ \beta(L_v)=
+ \lim_{N\longrightarrow\infty}
+ q^{-Nn^2}
+ \#\{g\in\operatorname{End}_{B/\pi^N B}(L_v/\pi^NL_v):
+                    h(gx,gy)=h(x,y)\bmod\pi^N\}.
+ \tag{MM7}
+\]
+The split version uses \(B=A\times A\).  Formula (MM6), the
+stabilized-density convention (MM7), and the Jordan-block density
+formula are the classical mass theorem as stated in
+\cite[Theorems 4.2.3--4.2.4 and Lemma 4.2.5]{kirschmer-herm};
+its proof is attributed
+there to Gan--Yu, Section 10, and the local formula to their
+Theorem 7.3.  In the present setting every finite prime is a good
+prime in that theorem: the excluded unitary case is a ramified
+quadratic extension in residue characteristic \(2\), which is
+absent here.  The base field \(F_v/\mathbf Q_2\) need not be
+unramified.
+
+Define
+\[
+ b_t(q,\epsilon)=\prod_{a=1}^{t}(1-\epsilon^a q^{-a}),
+ \qquad b_0(q,\epsilon)=1.
+ \tag{MM8}
+\]
+At a unimodular place the local factor is
+\(\beta(L_v)=b_n(q,\eta(v))\).  At an inert place of type (MM4),
+the two Jordan blocks have ranks \(n-1,1\), exponents \(0,1\),
+and reductive quotients \(U_{n-1}\) and \(U_1\).  In the cited
+local density formula their power of \(q\) is \(q^1\): the first
+block contributes exponent zero, the second contributes one,
+and the cross term has the first block's exponent zero.  Using
+\[
+ |U_t(\mathbf F_q)|
+   =q^{t(t-1)/2}\prod_{a=1}^{t}(q^a-(-1)^a)
+\]
+therefore gives
+\[
+ \beta(L_v)
+ =q\,b_{n-1}(q,-1)b_1(q,-1)
+ =(q+1)b_{n-1}(q,-1).
+ \tag{MM9}
+\]
+For \(n=1\), this is the single exponent-one rank-one block and
+the same formula holds with \(b_0=1\).  Notice that the density
+is a stabilized congruence count.  At a nonunimodular place one
+cannot replace it by the count modulo \(\pi\) without checking
+stabilization.
+
+Relative to a unimodular local factor, (MM5)--(MM9) change the
+right side of (MM6) by exactly
+\[
+ \frac{q^n b_n(q,-1)}{(q+1)b_{n-1}(q,-1)}
+                =\frac{q^n-(-1)^n}{q+1}.
+ \tag{MM10}
+\]
+At all other places the change is \(1\).  The remaining standard
+Euler factors are
+\[
+ \prod_v b_n(q_v,\eta(v))^{-1}
+                    =\prod_{a=1}^{n}L_F(a,\eta^a),
+\]
+with the \(a=1\) factor understood by its Hecke \(L\)-value, as
+in the mass formula.  The factor \(L_F(1,\eta)\) is positive
+by the quadratic relative class number formula; all other
+factors have positive convergent Euler products.  This gives
+(MM1)--(MM2), uniformly for every positive definite Hermitian
+space of rank \(n\).
+\end{proof}
+
+\paragraph{The exact input supplied to the return count.}
+In the original source, the required maximal-lattice mass statement
+quantifies first over \(E\) and \(n\), then over all positive definite
+rank-\(n\) Hermitian spaces and their maximal integral lattices.
+Its product runs over prime ideals \(P\) of \(\mathcal O_E\) at
+which the lattice is not unimodular, with
+\(q_P=\lfloor\sqrt{N P}\rfloor\).
+The local proof above shows that each such prime is inert and
+\(N P=q_P^2\); it also identifies this product exactly with (MM2).
+Thus Theorem~\ref{thm:maximal-hermitian-mass} supplies that entire
+mass statement, with \(C(E,n)\) chosen before either the space or
+the lattice varies.\cite{maximal-hermitian-mass-source}
+
+This closes the mass input, but not the fixed-label return count.
+That count still requires uniform genus averages of primitive
+sublattices, the counts of isometries with prescribed fixed space,
+and the original row-to-lattice correspondence.  None of those
+estimates follows from the mass formula alone.
+
+\begin{corollary}[The mass of the original cyclic-discriminant genus]
+\label{cor:cyclic-discriminant-mass}
+Keep \(E/F\) as above.  Let \(T\) be a rational prime that splits
+completely in \(E\), and let \(L\) be an integral positive definite
+Hermitian lattice of rank \(n\geq1\) such that
+\[
+ L^\#/L\simeq\mathcal O_E/T\mathcal O_E
+                     \quad\text{as }\mathcal O_E\text{-modules}.
+ \tag{MM11}
+\]
+Then
+\[
+ \operatorname{Mass}(L)
+  =C(E,n)\left(\frac{T^n-1}{T-1}\right)^f.
+ \tag{MM12}
+\]
+If \(I\) is any unimodular positive definite Hermitian lattice of
+rank \(n\), then \(C(E,n)=\operatorname{Mass}(I)\).  Moreover, any
+two lattices satisfying (MM11) in the same Hermitian space belong
+to the same genus.
+\end{corollary}
+
+\begin{proof}
+Away from \(T\), (MM11) makes \(L_v\) unimodular.  At a place over
+\(T\), both components of the split algebra have a one-dimensional
+dual quotient over the residue field.  The elementary divisor
+theorem applied to the pairing between \(L_+\) and \(L_-\) gives
+one exponent \(1\) and \(n-1\) exponents \(0\).  The two Jordan
+blocks now have reductive quotients \(GL_{n-1}\) and \(GL_1\).
+The same local density formula as above gives
+\[
+ \beta(L_v)=T\,b_{n-1}(T,1)b_1(T,1)
+                         =(T-1)b_{n-1}(T,1).
+\]
+The local discriminant quotient has size \(T^2\), so the
+correction to the standard local factor is
+\[
+ \frac{T^n b_n(T,1)}
+             {(T-1)b_{n-1}(T,1)}
+                         =\frac{T^n-1}{T-1}.
+\]
+There are exactly \(f\) primes of \(F\) over \(T\).  Substitution
+in (MM6) proves (MM12), and the same formula with all local
+exponents zero proves the assertion about \(I\).
+
+The elementary divisors determine the split local lattice up to
+isometry.  At an inert place, a unimodular lattice is also unique
+up to isometry: the integral diagonalization used in (MM3) has
+only unit coefficients, and every unit of \(A\) is a norm from
+the unramified quadratic extension \(B\).  To see the last fact
+without excluding residue characteristic \(2\), first use
+surjectivity of the residue-field norm, then lift one power of
+\(\pi\) at a time using
+\[
+ N(1+\pi^a z)\equiv
+          1+\pi^a\operatorname{Tr}(\bar z)\pmod{\pi^{a+1}}
+                    \qquad(a\geq1).
+\]
+The residue-field trace is onto, and completeness gives the
+desired unit norm.  Thus two lattices satisfying (MM11) are
+isometric at every finite place, proving the genus assertion.
+\end{proof}
+
+The factor in (MM12) is the original normalization in the
+primitive-sublattice genus mean.  In particular its size and its
+dependence on the degree \(f\) are not replaced by an unspecified
+constant.\cite{maximal-hermitian-mass-source}
+
+\begin{theorem}[Mass at a fixed discriminant in a fixed space]
+\label{thm:integral-lattice-fixed-discriminant-mass}
+Let \(V\) be a fixed positive definite Hermitian \(E\)-space of
+rank \(a\geq1\).  Put \(d=[E:\mathbf Q]=2f\) and
+\(\ell=\log_2d\).  For every integer \(n\geq1\),
+\[
+ \sum_{\substack{[L]\text{ integral in }V\\ |L^\#/L|=n}}
+                   \frac1{|\operatorname{Aut}(L)|}
+          \leq C(E,a)\,n^{(a+\ell)/2}.
+ \tag{MM13}
+\]
+The sum is over isometry classes inside this fixed rational space;
+it is not a sum over different rational Hermitian spaces.
+\end{theorem}
+
+\begin{proof}
+All maximal integral lattices in \(V\) form one genus.  At a split
+place they are unimodular.  At an inert place the two possibilities
+(MM3)--(MM4) are distinguished by the parity of the valuation of
+their determinants, which is invariant under an \(E_v\)-linear
+isometry.  Within either possibility the unit coefficients are
+norms, so the local maximal lattice is unique up to isometry.
+The rational space \(V\) fixes the parity, hence fixes the genus.
+
+Choose a maximal integral lattice \(M\).  Such a lattice exists:
+start with an integral full lattice and take a maximal integral
+intermediate module between it and its dual.  There are only
+finitely many intermediate modules.  By (MM5),
+\[
+ |M^\#/M|=D^2,\qquad
+ D=\prod_{v\text{ nonunimodular}}q_v\in\mathbf Z_{\geq1}.
+\]
+The number \(D\) is the same throughout the maximal genus.
+Theorem~\ref{thm:maximal-hermitian-mass} gives
+\[
+ \operatorname{Mass}(M)\leq C(E,a)D^a,
+ \tag{MM14}
+\]
+because \((q^a-(-1)^a)/(q+1)\leq q^a\) for \(q\geq2\).
+
+Every integral lattice \(L\) is contained in a maximal integral
+lattice \(M'\), and such an overlattice lies in \(L^\#\).
+Write \(z=[M':L]\), where indices are cardinalities of finite
+additive quotients.  The dual index equality gives
+\[
+ |L^\#/L|=|M'^\#/M'|\,[M':L]^2=D^2z^2.
+ \tag{MM15}
+\]
+Consequently the sum in (MM13) is empty unless \(n=D^2z^2\)
+for an integer \(z\geq1\).  When this happens, \(z\) is fixed.
+There is no sum over maximal discriminants or over divisors
+arising from different choices of \(V\).
+
+We need an elementary count of \(\mathcal O_E\)-sublattices of
+index \(z\) in a fixed rank-\(a\) lattice.  Over a discrete
+valuation ring with residue cardinality \(Q\), let \(A_a(e)\)
+be the number of submodules of colength \(e\) in a free module
+of rank \(a\).  Hermite normal form gives
+\[
+ \sum_{e\geq0}A_a(e)X^e
+                 =\prod_{i=0}^{a-1}(1-Q^iX)^{-1}.
+\]
+In particular
+\[
+ A_a(e)=A_{a-1}(e)+Q^{a-1}A_a(e-1),\qquad
+                         A_a(e)\leq Q^{ae}.
+ \tag{MM16}
+\]
+For the inequality, use induction on \(a+e\), with \(e=0\)
+or \(a=1\) immediate.  When \(a,e\geq1\), the two inductive
+terms divided by \(Q^{ae}\) are at most \(Q^{-e}\) and
+\(Q^{-1}\), whose sum is at most \(1\).
+
+For a nonzero integral ideal \(\mathfrak a\), the quotient
+lengths at its primes determine an index ideal.  Localizing
+the lattice, applying (MM16), and using the Chinese remainder
+theorem shows that the number of sublattices with index ideal
+\(\mathfrak a\) is at most \((N\mathfrak a)^a\).
+This does not require the lattice to be globally free.
+
+Let \(I_E(z)\) be the number of ideals of norm \(z\).
+At a rational prime \(p\), at most \(d\) prime ideals lie
+above \(p\), and their residue degrees are positive.  The
+coefficient of \(X^e\) in their ideal-counting product is
+at most
+\[
+ [X^e](1-X)^{-d}
+          =\binom{e+d-1}{d-1}\leq d^e.
+ \tag{MM17}
+\]
+The last inequality counts weak compositions of \(e\) by
+forgetting the order in words of length \(e\) on \(d\) letters.
+Multiplying over rational primes and using \(p\geq2\) gives
+\[
+ I_E(z)\leq d^{\Omega(z)}\leq z^\ell.
+\]
+Thus a rank-\(a\) lattice has at most \(z^{a+\ell}\)
+sublattices of additive index \(z\).
+
+To retain the weights, count pairs \(L\subset M'\), with
+\(M'\) maximal and \([M':L]=z\), modulo isometries of \(V\).
+Grouping first by \(M'\) and applying the finite
+orbit--stabilizer formula gives pair mass at most
+\(\operatorname{Mass}(M)z^{a+\ell}\).
+Grouping instead by \(L\) gives its mass multiplied by the
+number of maximal integral overlattices of \(L\).  That
+number is finite and at least one.  The required sum is
+therefore at most the pair mass.  Equations (MM14)--(MM15)
+now give
+\[
+ \operatorname{Mass}(M)z^{a+\ell}
+ \leq C(E,a)D^az^{a+\ell}
+ \leq C(E,a)(Dz)^{a+\ell}
+ =C(E,a)n^{(a+\ell)/2}.
+\]
+All sums are finite: the maximal genus has finite class
+number, and each of its representatives has finitely many
+sublattices of index \(z\).  This proves (MM13).
+\end{proof}
+
+If the reference rank-\(a\) lattice is the original orthogonal
+unimodular lattice \(I_a\), then \(C(E,a)=\operatorname{Mass}(I_a)\).
+Thus (MM13) is the precise mass bound used in the original
+primitive-sublattice genus count, including its
+\(\log_2[E:\mathbf Q]\) exponent.

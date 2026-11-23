@@ -60,15 +60,16 @@ window grows. No alteration of this exponent accounting is made here.
 
 ## W04: the actual integral Selmer product
 
-**Frontier theorem S.** For the original marked local/global deformation
-models, construct the ordinary local chart and strict-cocycle comparison
-needed by the integral congruence estimate. Retain the original local
+**Frontier theorem S.** Prove the uniform weighted Selmer estimate for
+the original marked local/global models, with their unchanged local
 conditions, complete equation ideals and integral lattices. The support,
-ordinary modules, Hecke determinant, two-sided rigidity and relative global
-equation count are now supplied. Prove the resulting integral congruence
-comparison used by the weighted Selmer consumer, together with its required
-bound on the actual prime support. In the conductor-one specialization its remaining numerical
-part is exactly
+ordinary modules, Hecke determinant, two-sided rigidity and relative
+equation count are supplied. The [original local chart and integral
+comparison](selmer-support-continuation-local-chart.md) now give the
+actual one-character trace inequality. Bound those admissible trace
+families and their valuation sums, including the actual prime support.
+In the conductor-one specialization the remaining numerical statement
+is exactly
 
 \[
  \log\mathcal P(w)\le\tfrac12 C_V y(B_0+N_c),\qquad
@@ -223,7 +224,7 @@ component and coefficient embedding. The determinant scalar keeps and
 cancels the exact lattice index. The [actual key shift](theta-spanning-continuation-key.md) now
 removes the tag integrally, retains the original primitive boundary line
 and all dyadic/ramified factors, and supplies the exact shifted family.
-The [actual local-chain theorem](theta-spanning-continuation-chain.md) now constructs the point/phase models, exact integral coefficient coordinates, all local kernel laws and the literal twisted initial source. It supplies the selected exponent and positive conjugate gain for the original finite TC/ColIn chain, keeping its frame form and class masses.
+The [actual local-chain theorem](theta-spanning-continuation-chain.md) now constructs the point/phase models, exact integral coefficient coordinates, all local kernel laws and the literal twisted initial source. It supplies the selected exponent and positive conjugate gain for the original finite TC/ColIn chain, keeping its frame form and class masses. The [terminal finite period and analytic unfolding](theta-period-continuation.md) are now proved with their exact scalars. The intervening seesaw comparison and actual row realization remain; their row-dependent proportionality factors are not fixed by the Poincare normalizer.
 
 **First missing identity.** Identify that specified chain, after its original source twist and all retained cuts, with the global Poincare operators normalized by the original c0X. Retain the exact coefficient norm, periods, finite Haar masses, compact types and radial factors. Neither representation-type agreement nor local divisibility supplies this identity or the global trace bound. The original growing coefficient field remains part of its quantifiers.
 
@@ -328,7 +329,7 @@ dictionary, retaining every further target projection. Prove the uniform
 positive trace deficit/excess bounds for these same maps. In particular
 the near-return contributions and finite-column sums must be controlled as the field grows. The far-return weighted double integral is now exponentially small at the literal source cutoff and with the actual period normalizers; its identification with the final Gram operator is still required.
 
-The [all-length tail theorem](global-gram-continuation-length-tail.md) now supplies the original simultaneous tail estimate for every flag length and its inverse, with the same Bessel coefficient, local character, quotient measure and moment range. Its constants have the original quantifier order. The [degenerate-fibre theorem](global-gram-continuation-degenerate-fibres.md) supplies the exact original projected Gram-volume bound, including the common-stabilizer scalar and arbitrary right translates. A block-minor determinant bounds the actual coordinates; all intervening real Jacobians are one. The [original local orbital theorem](global-gram-continuation-degenerate-operator.md) now supplies its exact operator consumer, including integrability, the inverse stabilizer scalar, the compact-dimension cancellation and every required moment in the original allowance. Its proof gives the two projected Gram volumes the product bound required by the dyadic estimate. The next near-return requirement is the actual arithmetic zero-Gram sum; generic returns and final trace comparisons remain separate.
+The [all-length tail theorem](global-gram-continuation-length-tail.md) now supplies the original simultaneous tail estimate for every flag length and its inverse, with the same Bessel coefficient, local character, quotient measure and moment range. Its constants have the original quantifier order. The [degenerate-fibre theorem](global-gram-continuation-degenerate-fibres.md) supplies the exact original projected Gram-volume bound, including the common-stabilizer scalar and arbitrary right translates. A block-minor determinant bounds the actual coordinates; all intervening real Jacobians are one. The [original local orbital theorem](global-gram-continuation-degenerate-operator.md) now supplies its exact operator consumer, including integrability, the inverse stabilizer scalar, the compact-dimension cancellation and every required moment in the original allowance. Its proof gives the two projected Gram volumes the product bound required by the dyadic estimate. The [integral-minor theorem](global-gram-continuation-integral-minors.md) supplies the exact distinct-label sum and product of local bounds. The [maximal mass formula](maximal-hermitian-mass.md) and [primitive-sublattice genus mean](primitive-sublattice-genus-mean.md) now supply two actual arithmetic inputs to the fixed-label count, with all automorphism weights retained. The normalized reference-mass comparison is also supplied. The first remaining step is the fixed-space isometry/row correspondence needed for that count. The full zero-Gram sum, generic returns and final traces remain open.
 
 ## W10: the exact integral geometric supplier
 
@@ -404,7 +405,7 @@ The [component section theorem](geometry-section-continuation.md) supplies the o
 
 The [actual boundary-point theorem](geometry-point-continuation.md) now supplies the signed conjugate-degree identity and the selected abelian-degree bound `36 f(m-r) Lambda_B` on the original integral lattices. It realizes each abelian quotient in its own integral moduli datum and uses semistable uniqueness; arbitrary auxiliary field extensions preserve normalized degree. Both integral indices have favourable signs and remain explicit.
 
-**First missing construction.** For the original Hodge--Tate-corrected point fibre, prove the integral comparison with the abelian quotient eigenlattice, with cost at most `2 sum_(p in S) log(p)/(p-1) + 2 log rd(E)`. This requires the actual polarized divisible-group realization and compatible specialization, not just Fargues's theorem for an abstract divisible group. Then prove the regularized point-height comparison, bound the signed mean height and rank losses for the same family, and complete the original numerical records. The existing cusp, jet and signed-boundary lemmas are to be applied unchanged.
+The [actual corrected-fibre theorem](geometry-hodge-specialization.md) supplies the original point-fibre comparison with cost at most `2 sum_(p in S) log(p)/(p-1) + 2 log rd(E)`. Its proof uses the original cubical pairing and a single induced finite flat group; simultaneous vertical Fitting blowups construct the required locally free modules before specialization. The actual image in the abelian quotient is retained. **First missing construction.** Prove the regularized point-height comparison, bound the signed mean height and rank losses for the same family, and complete the original numerical records. The existing cusp, jet and signed-boundary lemmas are to be applied unchanged.
 
 ## Completion discipline
 

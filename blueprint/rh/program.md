@@ -369,20 +369,20 @@ the relevant character phase depends on their difference and is unchanged.
    frame](../../notes/selmer-support-continuation-auxiliary-tower.md) and
    common-subgroup finite-end theorem. The [entire original weight-zero
    algebra is now finite](../../notes/selmer-support-continuation-integral-finiteness.md),
-   preserving nilpotents and integral torsion. [Complete good-data rigidity](../../notes/selmer-support-continuation-type-two-rigidity.md) is proved, including the exact rank-two twists. The [actual weighted relative presentation](../../notes/selmer-support-continuation-relative-presentation.md) is proved. Construct the original local chart and strict-cocycle comparison, then prove the uniform weighted product
+   preserving nilpotents and integral torsion. [Complete good-data rigidity](../../notes/selmer-support-continuation-type-two-rigidity.md) is proved, including the exact rank-two twists. The [actual weighted relative presentation](../../notes/selmer-support-continuation-relative-presentation.md) is proved. The [original local chart and integral comparison](../../notes/selmer-support-continuation-local-chart.md) now give the actual one-character trace inequality. Bound its admissible trace families and prove the uniform weighted product
    of Selmer orders on the growing fields. The four surviving characters
    do not bound the auxiliary degrees or conormal lengths.
 2. **The same global period maps.** The [actual two-point far-return
    bound](../../notes/global-gram-continuation-two-point-far.md) is now
    exponentially small at the original cutoff. Prove the nongeneric
    near-return diagonal and generic orbital estimates, using the proved
-   [tails for every flag length](../../notes/global-gram-continuation-length-tail.md), [degenerate fibres](../../notes/global-gram-continuation-degenerate-fibres.md) and their [local orbital operator](../../notes/global-gram-continuation-degenerate-operator.md), with the original stabilizer measure. Prove the arithmetic zero-Gram sum and sum the actual
+   [tails for every flag length](../../notes/global-gram-continuation-length-tail.md), [degenerate fibres](../../notes/global-gram-continuation-degenerate-fibres.md) and their [local orbital operator](../../notes/global-gram-continuation-degenerate-operator.md), with the original stabilizer measure. The [integral minor theorem](../../notes/global-gram-continuation-integral-minors.md) supplies the distinct-label sum and local product. Bound the multiplicities at fixed labels, finish the arithmetic zero-Gram sum and sum the actual
    finite columns, and identify the integral theta chain with the final
    restricted, normalized maps. Bound their prescribed source-deficit
    and target-excess traces with all phase and rank factors retained.
 3. **Sections and heights.** The [global upper bound and entire integral
    cusp frame](../../notes/geometry-bergman-continuation-upper.md) are
-   supplied, as is the [original thin-region lower bound](../../notes/geometry-bergman-continuation-thin.md). The [actual section-degree theorem](../../notes/geometry-section-continuation.md) supplies the literal component inequality and its remainder. The [actual point tangent degrees](../../notes/geometry-point-continuation.md) are bounded on the original lattices. Prove the corrected-fibre specialization and point-height identity, then the signed mean-height comparison, rank losses and numerical records. Use the constructed
+   supplied, as is the [original thin-region lower bound](../../notes/geometry-bergman-continuation-thin.md). The [actual section-degree theorem](../../notes/geometry-section-continuation.md) supplies the literal component inequality and its remainder. The [actual point tangent degrees](../../notes/geometry-point-continuation.md) are bounded on the original lattices. The [corrected-fibre specialization and local-freeness construction](../../notes/geometry-hodge-specialization.md) are supplied. Prove the point-height identity, then the signed mean-height comparison, rank losses and numerical records. Use the constructed
    models, metrics and short sections throughout.
 4. **Final comparison.** Assemble compatible signed fourth-power tables
    and bound their weighted positive parts on arbitrarily late intervals.
