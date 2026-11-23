@@ -191,8 +191,10 @@ partial-head Fourier transfer are proved for every original block head
 and admissible word. The actual compact complex Kloosterman density is
 now proved at every block head, including singular internal minors. Its
 stationary-phase constants depend on the fixed compact coefficient, which
-is sufficient for the exact density conclusion. The next local suppliers
-are the unitary-to-complex density transfer and terminal top lift.
+is sufficient for the exact density conclusion. The actual unitary-to-complex
+transfer now supplies `PhiZero` and `DensC` at every original head,
+with the exact compact factors, cofactor normalization and Haar constants.
+The next local supplier is the terminal top lift.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 

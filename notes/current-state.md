@@ -87,9 +87,11 @@ correction, including degenerate residue forms. Actual compact slices
 and the partial-head Fourier transfer are proved at every nonterminal
 head, with the original stabilizer quotient and measures. The actual
 compact complex Kloosterman density now holds at every block head, by
-an exactly normalized stationary-phase germ. The unitary density transfer,
-terminal top lift and complete global rational-return/period-Gram estimate
-remain open.
+an exactly normalized stationary-phase germ. The actual unitary density
+transfer now supplies `PhiZero` and `DensC`, with the original cofactor
+frames, compact representations and Haar constants at every head.
+The terminal top lift and complete global rational-return/period-Gram
+estimate remain open.
 
 These are closed supplier obligations within larger nodes. Whole-node
 statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.

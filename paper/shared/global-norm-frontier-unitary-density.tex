@@ -1,0 +1,351 @@
+\subsection{A compact matrix representative for every unitary orbital vector}
+\label{actual-unitary-density}
+
+The remaining density transfer requires a coefficient for all relevant
+heads at once.  A section of the reduced-matrix map, followed by
+integration over its actual fibres, supplies it.  The positive Gram
+condition is essential: it makes the complement of the two flag frames
+positive definite and hence makes the fibre integration proper.
+
+Fix the original real-place data, with $k\ge1$, $r\ge0$, $n=r+1$,
+negative middle vectors $z,z'$, and
+$T=-h(z,z)>0$, $T'=-h(z',z')>0$.  The Hermitian form is linear in
+its first variable.  Write $f=(e_1,\ldots,e_r,z)$,
+$f'=(e_1,\ldots,e_r,z')$ and
+\[
+ Z(g)_{ab}=h(gf'_b,f_a),\qquad
+ G(Z)=|\det Z|^2-TT'|\det Z_{[r],[r]}|^2.
+\]
+All groups, compact representations and Haar measures below are the
+prescribed ones.  In particular the compact Haar measures are not
+renormalized to have mass one.  Let $N_0(z)$ be the kernel of the
+flag-action map $u_z:N\to N_n$; its elements fix every $f_a$.
+Let $K_z$ be the original compact group fixing the hyperbolic pairs
+and $z$.  The fixed base frame consists of a positive unit vector
+$\nu'\perp z'$ in the middle space and an isometry $m_0$ fixing
+the hyperbolic pairs, with $m_0z'=\sqrt{T'/T}\,z$.
+
+\begin{theorem}\label{unitary-density-compact-representative}
+For every finite-dimensional coefficient space
+$V=\operatorname{Hom}(W',W)$ and every original compact coefficient
+$F$, there is $\Phi_F\in C_c^\infty(\operatorname{Mat}_n(\mathbb C),V)$
+whose support consists of invertible matrices and for which
+\begin{equation}\label{unitary-density-orbital-identity}
+       V_F(a)=\operatorname{PhiTop}_{\beta_U}(a;\Phi_F)
+\end{equation}
+for every relevant block head $a$ of total size $n$.
+The character is the original $\beta_U=2i$, and the right-hand side
+uses the original planar Lebesgue measure in its restricted lower
+and full upper root coordinates.  No internal leading minor is
+assumed nonzero.  The assertion includes $r=0$ and $k=1$.
+
+Here ``original compact coefficient'' means that $F$ is smooth on
+the unitary group and there are $R<\infty$ and $\epsilon>0$ such
+that $F(g)\ne0$ implies $\|g\|\le R$ and $G(Z(g))\ge\epsilon$.
+The construction preserves the original representation factors,
+quotient stabilizer measures and the two positive Haar constants.
+\end{theorem}
+
+\begin{proof}
+We give the section, its properness, and the exact orbital comparison.
+
+\paragraph{The global section.}
+Work first in the space spanned by
+$(e_i,e_i^*,z',\nu')$, with coordinates $(a,b,\alpha,\beta)$ and
+form
+\[
+ h((a,b,\alpha,\beta),(a',b',\alpha',\beta'))
+ =a^t\overline{b'}+b^t\overline{a'}
+       -T'\alpha\overline{\alpha'}+\beta\overline{\beta'}.
+\]
+For $G(Z)>0$, put
+\[
+ \kappa=\operatorname{adj}(Z)e_n,\quad N=\kappa^*\kappa,
+ \quad\varphi=\frac{\det Z}{|\det Z|},\quad
+ s=\sqrt{G(Z)/T},\quad s'=\sqrt{G(Z)/T'}.
+\]
+Thus $\det Z\ne0$, $N>0$ and $s,s'>0$.  Define
+\[
+ \alpha_b=-\frac{Z_{nb}}{\sqrt{TT'}},\qquad
+ \beta_b=\frac{\overline{\kappa_b}}N s\varphi,
+ \qquad A'=-T'e_ne_n^*.
+\]
+Let $R$ be the usual conjugate-first Gram defect of the middle
+vectors $(\alpha_b,\beta_b)$ from $A'$; explicitly
+\[
+ R_{cb}=A'_{cb}
+       +T'\overline{\alpha_c}\alpha_b
+       -\overline{\beta_c}\beta_b.
+\]
+Set
+\[
+ Q=\frac{\kappa\kappa^*}{N},\quad P=I-Q,\quad
+ K=\tfrac12PRP+PRQ,\quad M=(Z^{-1})^*K.
+\]
+The identities $Z\kappa=(\det Z)e_n$ and
+$\kappa_n=\det Z_{[r],[r]}$ give
+\[
+ \kappa^*R\kappa
+   =-T'|\kappa_n|^2+|\det Z|^2/T-G(Z)/T=0.
+\]
+Consequently $QRQ=0$, $K+K^*=R$, $QK=0$, and the last row of
+$M$ is zero.  The vectors
+\[
+ x_b=(M_{[r],b},Z_{[r],b},\alpha_b,\beta_b)
+\]
+therefore have Gram matrix $A'$ and satisfy
+$h(x_b,f_a^0)=Z_{ab}$, where
+$f_a^0=e_a$ for $a<n$ and $f_n^0=\sqrt{T/T'}\,z'$.
+This verifies the required reduced matrix without dividing by
+any internal minor.
+
+Complete these vectors by the following explicit indefinite
+Gram--Schmidt procedure.  For $i<n$ put
+\[
+ y_i^0=\sum_a((Z^{-1})^*)_{ai}f_a^0,\qquad
+ y_i=y_i^0-\tfrac12\sum_{j<n}h(y_i^0,y_j^0)x_j.
+\]
+Then $h(y_i,x_j)=\delta_{ij}$ for $j<n$,
+$h(y_i,x_n)=0$, and $h(y_i,y_j)=0$.
+Put $c=\sum_a\overline{\operatorname{adj}(Z)_{na}}f_a^0$ and
+\[
+ p=c-\sum_{i<n}h(c,y_i)x_i-\sum_{i<n}h(c,x_i)y_i
+                       +\frac{h(c,x_n)}{T'}x_n,
+ \qquad v=\frac{\varphi}{s'}p.
+\]
+The adjugate identity gives $h(c,x_b)=\overline{\det Z}\,
+\delta_{nb}$ and $h(c,c)=-T|\kappa_n|^2$.  Thus $p$ is
+orthogonal to the $x_b,y_i$, its norm is $G(Z)/T'$, and $v$ is
+a positive unit vector.  There is now a unique isometry $\sigma_Z$
+of this $2n$-dimensional space sending
+\[
+       (e_i,e_i^*,z',\nu')\longmapsto(x_i,y_i,x_n,v).
+\]
+Extend it by the identity on the middle space
+$W_0=\{z',\nu'\}^{\perp}$, and set $\gamma_Z=m_0\sigma_Z$.
+Every displayed formula is smooth on $G>0$.
+
+We check the prescribed frame normalization, which is needed for
+vector-valued orbital integrals.  The right cofactor vector is
+$\sum_b\kappa_b\gamma_Z f'_b$; its middle projection orthogonal
+to $z$ is $s\varphi\,m_0\nu'$.  The corresponding inverse left
+cofactor has projection $(s'/\varphi)\nu'$.  The two positive
+normalizing scalars are therefore $s/|\det Z|$ and
+$s'/|\det Z|$, exactly as required by the original $D$-frame.
+For the third condition, the Gram matrix of $(f^0,x)$ in the
+conjugate-first convention is
+\begin{equation}\label{unitary-density-paired-gram}
+       \begin{pmatrix}-Te_ne_n^*&Z\\Z^*&-T'e_ne_n^*\end{pmatrix},
+       \qquad \det=(-1)^nG(Z).
+\end{equation}
+The two frames thus span the whole $2n$-dimensional space above.
+Their common orthogonal complement is $W_0$, on which $\sigma_Z$
+is the identity; the third frame condition follows.  Also
+$\sigma_Z$ commutes with every isometry fixing the hyperbolic
+pairs, $z'$ and $\nu'$, because such an isometry is the identity
+on that $2n$-dimensional space.  This will remove compact-frame
+ambiguity below.
+
+\paragraph{Properness and smooth integration.}
+For arbitrary $g$ with $G(Z(g))>0$, the matrix in
+\eqref{unitary-density-paired-gram} is nondegenerate and has
+signature $(n,n)$.  Indeed, scale both diagonal blocks by
+$t\in[0,1]$; its determinant remains
+$(-1)^n(|\det Z|^2-t^2TT'|\kappa_n|^2)\ne0$, and at $t=0$
+the signature is $(n,n)$.  The paired frame $(f,gf')$ therefore
+has a positive definite orthogonal complement of dimension $k-1$.
+
+Let $g$ vary in a compact subset of $G(Z(g))>0$.  If
+\[
+       y=h^{-1}n_0^{-1}g n'_0h'
+\]
+lies in the fixed compact support of $F$, where
+$h\in K_z$, $h'\in K_{z'}$, $n_0\in N_0(z)$,
+$n'_0\in N_0(z')$, then all four integration variables lie in
+one compact set.  To see this, $t=h^{-1}n_0^{-1}$ fixes $f$
+and sends $gf'$ to $yf'$.  The two paired Gram matrices agree
+and have inverses bounded uniformly on these compact sets.
+Thus $t$ is bounded on their spans.  On their positive
+orthogonal complements it is an isometry; the positive forms
+and Euclidean norms are uniformly equivalent, so $t$ is
+bounded there too.  The orthogonal projections are uniformly
+bounded because the paired Gram inverses are.  Hence $t$, then
+$n_0$, are bounded.  Apply the same argument to $g^{-1},y^{-1}$
+to bound $n'_0$.  The groups $N_0(z),N_0(z')$ are closed, so the
+bounded sets in question have compact closure.
+
+Choose arbitrary nonzero Haar measures $\mu_0,\mu'_0$ on these
+two kernels and use the original compact Haar measures.  Define
+\begin{equation}\label{unitary-density-fibre-integral}
+ I_F(g)=\int
+ \pi(h)F(h^{-1}n_0^{-1}g n'_0h')\pi'(h'^{-1})
+           \,d\mu_W(h)\,d\mu_0(n_0)
+                 \,d\mu_{W'}(h')\,d\mu'_0(n'_0).
+\end{equation}
+The preceding compactness is local and uniform in $g$.  It
+justifies every differentiation under this integral, using
+local smooth extensions of $F$ off the unitary group.  Only
+continuity of the two compact representations is needed: they
+are bounded and the derivatives act on $F$ and $\gamma_Z$.
+Thus $I_F(\gamma_Z)$ is smooth on $G>0$.
+
+The fibre preserves $Z$.  Nonvanishing of this integral implies
+that some $y$ in the compact support of $F$ has $Z(y)=Z$.
+Consequently its support is contained in a compact set of
+matrices satisfying $G(Z)\ge\epsilon$.  Extending it by zero
+on $G\le0$ is smooth and compactly supported, with
+$|\det Z|^2\ge\epsilon$ on its support.
+
+\paragraph{Why the section has the original frame.}
+We record the precise uniqueness needed to compare the fibre
+integral with the original orbital vector.  If $g_1,g_2$ have
+the same reduced matrix with positive Gram, the isometry
+$(f,g_1f')\mapsto(f,g_2f')$ extends to the whole space: extend
+it by any isometry between their positive orthogonal
+complements.  It follows that
+\[
+       g_2=(h_A n_A)^{-1}g_1(h_B n_B),
+       \qquad h_A\in K_z,\ h_B\in K_{z'},\
+                         n_A\in N_0(z),\ n_B\in N_0(z').
+\]
+Here the decomposition of the pointwise flag stabilizer is
+obtained by its induced isometry on the positive middle
+quotient; removing that isometry leaves the indicated
+unipotent kernel.
+
+Suppose $g_1=m_0\sigma$ is a $D$-frame, with $\sigma$ fixing
+$W_0$ and commuting with the compact group fixing $\nu'$, as
+our constructed section does, and $g_2$ is also a $D$-frame.
+The first positive cofactor normalization forces
+$h_A^{-1}m_0\nu'=m_0\nu'$: its possible scalar is positive
+real and both vectors have norm one.  The second similarly
+forces $h_B^{-1}\nu'=\nu'$.  For $w\in W_0$, apply the third
+frame condition to $(h_A n_A)^{-1}m_0w$; it gives
+\[
+       h_A^{-1}m_0w=m_0h_B^{-1}w.
+\]
+In making this projection the $N_0$ terms disappear, since
+they act trivially on the middle quotient of the orthogonal
+complement of the isotropic flag.  The same identity holds on
+the hyperbolic pairs and on $z',\nu'$, which these compact
+elements already fix.  Hence $h_A^{-1}m_0=m_0h_B^{-1}$ and
+$h_A^{-1}g_1h_B=g_1$.  It follows that
+$g_2=n_A^{-1}g_1n_B$ and therefore $I_F(g_2)=I_F(g_1)$ by
+left invariance of $\mu_0,\mu'_0$.
+
+The same conclusion holds for
+$g_1=\tau_z(v)^{-1}m_0\sigma\tau_{z'}(u)$, where $v,u\in N_n$
+and $\tau_z$ is the original upper-flag section.  Indeed,
+$\tau_z(v)$ commutes with $K_z$, normalizes $N_0(z)$, and
+preserves the projection onto the middle complement of $z$.
+Its action on the flag is $f\mapsto fv$.  The adjugate
+identities consequently show that the $D$-frame conditions
+are preserved by left and right $\tau$ translations.  Undo
+the two translations, apply the preceding compact cancellation,
+and redo them.  This proves the equality of the two fibre
+integrals with no representation scalar or conjugation factor.
+These are direct identities for the prescribed Eichler
+section, not a choice of a different flag action.
+
+\paragraph{The measures and the character.}
+The map $(u,n_0)\mapsto\tau_z(u)n_0$ is a smooth
+coordinate decomposition of $N$, with quotient $N_n$.
+The product of upper-entry planar Lebesgue measure and
+$\mu_0$ pushes forward to a Haar measure: left translation
+acts by left translation on $N_n$ and by a left translation
+on each $N_0$ fibre.  This follows directly by applying
+$u_z$ and then solving for the kernel coordinate.  The
+coordinate map and its inverse are continuous, so the
+pushforward is locally finite and nonzero.  Haar uniqueness
+gives the exact positive constants $c_L,c_R$ satisfying
+\begin{equation}\label{unitary-density-haar-constants}
+ d\mu_N=c_L\,d u\,d\mu_0,
+ \qquad d\mu_N=c_R\,d u'\,d\mu'_0.
+\end{equation}
+No value for either constant is presumed.  Changing a kernel
+Haar measure changes its constant inversely and leaves the
+construction unchanged.
+
+At a relevant head matrix $H_a$, decompose the two upper
+groups by their stabilizer roots.  The complementary lower
+roots are precisely those between the reversed blocks of
+$a$, and all upper roots remain.  In increasing root-height
+coordinates this decomposition is triangular with diagonal
+entries one.  Thus it preserves the product planar measure.
+The original stabilizer measure is the pushforward of these
+same discarded root coordinates.  The normalized quotient
+cut has integral one along them, so that integration removes
+exactly that factor.  Under an $N_0$ change of representative,
+the flag-action map on the stabilizer is unchanged; it is
+injective there because a unipotent element in the compact
+joint-frame stabilizer is the identity.  Hence its specified
+measure also has no scalar ambiguity.  Its image is the full
+discarded root group: for $v^*H_a u=H_a$, the actions $v,u$ on
+the paired frames define an isometry, which extends by the
+identity on their positive complement.  It is unipotent, so
+its compact middle quotients are the identity and it belongs
+to $N\cap\gamma N\gamma^{-1}$.  Thus the prescribed inverse
+flag-action map gives exactly this root measure, not a
+Haar measure merely proportional to it.
+
+All changes of order are absolutely convergent.  The
+restricted block-lower/full-upper coordinates are bounded
+when $LH_aU$ is in a compact subset of invertible matrices,
+by block Gaussian elimination.  The fibre properness just
+proved bounds the remaining unipotent coordinates, while
+the compact groups have finite Haar measure.  This also
+constructs an admissible normalized quotient cut in the
+discarded root coordinates.
+
+Since $\ell_z(\tau_z(v))$ is the superdiagonal sum and
+$\ell_z(N_0(z))=0$, the left character after $L=v^*$ is
+$\psi_{c_{\rm Std}}(\overline{\theta_-(L)})
+=\psi_{\beta_U}(\theta_-(L))$; the inverse right character
+is $\overline{\psi_{c_{\rm Std}}(\theta(U))}
+=\psi_{\beta_U}(\theta(U))$.
+Here $c_{\rm Std}=-2i$ and $\beta_U=-c_{\rm Std}=2i$.
+The quotient integral is therefore exactly
+\[
+ c_Lc_R\int_{L,U}
+       \psi_{\beta_U}(\theta_-(L)+\theta(U))
+              I_F(\gamma_{LH_aU})\,dL\,dU.
+\]
+The preceding frame cancellation identifies this integrand
+with the one obtained from the original chosen $D$-frame.
+The formula proves \eqref{unitary-density-orbital-identity}
+with $\Phi_F=c_Lc_R I_F(\gamma_Z)$ on $G>0$, and zero
+elsewhere.  If $G(H_a)\le0$, both sides vanish: $G(LH_aU)=G(H_a)$.
+This includes every relevant head and completes the construction.
+\end{proof}
+
+\begin{corollary}\label{unitary-density-every-head}
+For every original compact coefficient $F$, if its regular
+radial transform is zero, then $V_F(a)=0$ at every relevant
+head $a$.
+\end{corollary}
+
+\begin{proof}
+The established big-cell pointwise theorem makes every regular
+orbital integral of $\Phi_F$ vanish.  The compact complex density
+theorem of Section~\ref{actual-terminal-density} then makes all
+its relevant orbital integrals vanish.  Apply
+\eqref{unitary-density-orbital-identity}.  This is a pointwise
+statement, including the lower-dimensional heads sampled
+arithmetically; no null-set replacement is used.
+Heads failing the total-size, positive-block-size or nonzero-entry
+conditions have $V_F(a)=0$ by its original definition, so the
+universal quantifier over all heads in the source density contract
+is also covered.
+\end{proof}
+
+\paragraph{Scope.}
+The theorem supplies the original compact matrix-representative
+contract and the resulting every-head density contract
+\cite{unitary-density-source}.  Its local compactness constants
+may depend on the place data, rank and compact support.  Only
+an exact zero conclusion is transferred, so none enters a
+uniform arithmetic norm bound.  Completing the terminal
+operator transfer still requires the compact top-lift
+construction with the prescribed operator and all word
+parameters.  This result alone does not prove the full kernel
+estimate or complete W06/W08.

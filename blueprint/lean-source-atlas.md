@@ -265,3 +265,11 @@ verify all `S5` fields and its original annihilation quantifiers. The
 prequotient module is retained for the dimension proof; only its radical
 support descends through the equation ideal. The arithmetic substitution
 keeps all `n*q_TW` diamond directions. No nonzero seed is supplied by patching.
+
+The [unitary-density certificate](../certificates/global-norm-frontier-unitary-density.json)
+and [independent review](../certificates/global-norm-frontier-unitary-density-review.json)
+verify the original `PhiZero` and `DensC` contracts, including every relevant
+head and the zero convention for invalid heads. They authenticate the
+cofactor frame, compact-factor cancellation and exact quotient measures.
+Twenty exact frame diagnostics supplement the arbitrary-rank human proof;
+no uniform analytic or global period estimate follows from density alone.

@@ -239,3 +239,11 @@ Reduced products and localization preserve the exact comparison multiplier
 and relation exponent, including varying finite ranks. The support has
 the exact fibre, required dimension and movement between completions.
 It may be empty; the original arithmetic seed is still required.
+
+The [unitary density transfer](../../notes/global-norm-frontier-unitary-density.md)
+constructs the actual `PhiZero` compact coefficient and proves `DensC`
+at every original block head. The global cofactor section and positive
+joint-frame complement give proper fibre integration. All three frame
+conditions cancel the compact representation factors; both Haar constants
+and character signs are retained. This closes the exact density supplier,
+without a rank-uniform norm estimate or global nonvanishing claim.
