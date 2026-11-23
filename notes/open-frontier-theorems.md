@@ -103,11 +103,17 @@ radical are retained; its annihilator-prime implication gives no uniform
 annihilator exponent. The actual tangent injections, second-order
 ordinary compatibility and integral presentation now prove the full
 original `GalOut` at every supplied curve, under exactly the original
-three Selmer conditions.
+three Selmer conditions. The full original `S5` patched-support supplier
+now has an explicit construction: exact fibre support, dimension
+`1+D_wt+n*q_TW`, and movement with unchanged prime contraction. Its
+approximate-annihilation step preserves the original multiplier and
+relation exponent; varying finite free ranks are allowed.
 
-**First missing construction.** Construct the global marked deformation
-models and prove patched support on these very modules with the required
-dimension. Propagation must retain the entire characteristic-prime fibre
+**First missing construction.** Construct the original nonzero arithmetic
+seed with every prescribed residual and local condition, and finish the
+global marked deformation model and prime-chain application. The patched
+support may be empty and cannot replace this seed. Propagation must retain
+the entire characteristic-prime fibre
 and the actual two-sided rigidity. Neither qualitative finiteness,
 fixed-point constants nor a torsion-free quotient proves the displayed
 moving-family bound.
@@ -240,7 +246,7 @@ the exact proven subobligations. The work-package acceptance lists remain
 in `blueprint/grh/program.json`; the RH product and final budget remain
 in its separate manuscript. No whole node is newly closed by the local
 constructions above. The next research effort belongs to the actual
-good-cover and section construction, actual marked deformation models
-and patched support, and the
+good-cover and section construction, the exact arithmetic seed and
+global marked deformation models, and the
 global period-return estimate, not further optimization of the already
 proved frame inequalities.

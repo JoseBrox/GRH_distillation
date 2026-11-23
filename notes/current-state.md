@@ -70,8 +70,10 @@ constructs the actual finite commutative coefficient model at every
 supplied normalized curve, preserving the full determinant, original
 closed equation ideal and all annihilator torsion. The actual tangent,
 second-order ordinary lifting and integral presentation now prove full
-local propagation at every supplied normalized curve. Patched support,
-a nonzero seed, global two-sided rigidity and the moving-family integral
+local propagation at every supplied normalized curve. The complete
+patched-support supplier now preserves the exact fibre, required dimension
+and movement between completions, without a fixed-rank hypothesis. A
+nonzero seed, global two-sided rigidity and the moving-family integral
 Selmer budget remain open.
 
 The actual local Bessel families satisfy the iterated weighted norm

@@ -198,8 +198,9 @@ constructs the actual original `URep/S6` at every supplied normalized
 curve. Self-adjoint matrix units give a commutative even--odd coefficient
 algebra; the full determinant, exact closed equation ideal, residual
 radical and annihilator torsion are retained. The exact nonsemisimple-prime
-and original finite-lattice continuity fields are proved. Tangent lifting,
-patched support, a nonzero seed and the numerical Selmer budget remain.
+and original finite-lattice continuity fields are proved. The local
+propagation and patched-support theorems below supply their next interfaces;
+a nonzero seed and the numerical Selmer budget remain.
 
 The [partial-head transfer theorem](../../notes/global-norm-frontier-partial-head-transfer.md)
 supplies actual compact slices at every level and the original `HeadJ`
@@ -213,8 +214,8 @@ proves the entire original `GalOut` from each supplied normalized curve
 and its original three Selmer conditions. The actual tangent maps,
 bounded Laurent continuity, second-order ordinary compatibility and
 integral presentation are constructed. Repeated or zero coefficient
-rows and annihilator torsion are retained. A stable prime, nonzero seed,
-patched support and the final numerical Selmer bound remain distinct.
+rows and annihilator torsion are retained. A stable prime, nonzero seed
+and the final numerical Selmer bound remain distinct.
 
 The [compact terminal density theorem](../../notes/global-norm-frontier-terminal-density.md)
 proves the original complex `KloostDens` for every block head. Its exact
@@ -231,3 +232,10 @@ PEL uniformization and exact harmonic values. The existing discriminant
 loss is unchanged. The [component-field frontier](../../notes/geometry-component-field-frontier.md)
 is explicitly unfinished; a field-size calculation alone does not fix
 the original geometric components.
+
+The [patched-support theorem](../../notes/selmer-integral-frontier-patched-support.md)
+closes the complete original `S5` on the actual Taylor--Wiles inputs.
+Reduced products and localization preserve the exact comparison multiplier
+and relation exponent, including varying finite ranks. The support has
+the exact fibre, required dimension and movement between completions.
+It may be empty; the original arithmetic seed is still required.

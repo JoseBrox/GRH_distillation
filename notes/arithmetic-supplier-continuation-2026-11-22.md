@@ -109,10 +109,17 @@ supplies the actual tangent maps, second-order ordinary compatibility
 and integral presentation, proving the original `GalOut` for all of its
 primes. It does not assert existence of its stable prime or arithmetic seed.
 
+The [patched-support theorem](selmer-integral-frontier-patched-support.md)
+now constructs the complete original `S5`, with exact fibre support,
+dimension and prime movement. The original approximate annihilators pass
+to every localized jet with the same relation exponent; no fixed module
+rank or compatible finite-level maps are assumed. This support may be
+empty, so arithmetic nonvanishing remains a separate construction.
+
 Both finite-level cohomological bounds and their exact limiting
-comparison are proved. The next arithmetic requirements are the actual
-marked deformation models, patched support,
-full characteristic-prime propagation and two-sided rigidity. They must
+comparison are proved. The next arithmetic requirements are the original
+nonzero seed with all residual and local conditions, global marked
+deformation models, full characteristic-prime propagation and two-sided rigidity. They must
 supply the moving-family integral Selmer product; qualitative finiteness
 or rational rigidity cannot replace that bound.
 
@@ -159,8 +166,8 @@ aggregate nonvanishing needed by the chosen consumer.
 
 1. Construct the original good cover on the completed arithmetic level system,
    then identify and estimate the actual arithmetic section lattices.
-2. Use the actual Taylor–Wiles auxiliary maps to attack marked
-   deformation support and the full integral Selmer budget.
+2. Construct the exact arithmetic seed, apply the new patched support
+   and local propagation globally, and prove the integral Selmer budget.
 3. Prove the terminal orbital transfer and positive-rank estimate, then
    transfer it to the complete period-Gram sum.
 4. Test every newly supplied result against the exact fourth-power tables

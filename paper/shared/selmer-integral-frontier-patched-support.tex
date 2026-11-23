@@ -1,0 +1,217 @@
+\subsection{The actual localized patched support}
+\label{sec:selmer-patched-support}
+
+We construct the exact support required by the arithmetic
+Taylor--Wiles modules, preserving their original multiplier and
+possibly varying ranks.  This construction allows empty support;
+an arithmetic seed remains a separate input.
+
+Let \(\Lambda\) be complete Noetherian local with finite residue field,
+let \(R\) be Noetherian local, and let
+\[
+ s:\Lambda[[Y_1,\ldots,Y_q]]\longrightarrow R,\qquad
+ Y=(s(Y_1),\ldots,s(Y_q)),\qquad
+ \mathfrak a=\mathfrak m_\Lambda R.
+\]
+Fix the given cofinal ultrafilter \(\mathcal U\), multiplier \(f\in R\),
+ideal \(I\), and \(R\)-modules \(M_N\).  Let \(X\) be finite free over
+\(\Lambda\), compatibly with its \(R\)-action, with \(YX=0\).
+Assume the original three inputs:
+\begin{enumerate}
+\item For every \(k,j\), eventually along \(\mathcal U\),
+ \(M_N/(Y^k+\mathfrak a^j)M_N\) is finite free over
+ \(\Lambda[[Y]]/((Y)^k+\mathfrak m_\Lambda^j)\).
+\item For every \(j\), eventually there are \(R\)-linear maps between
+ \(X/\mathfrak a^jX\) and \(M_N/(Y+\mathfrak a^j)M_N\)
+ whose two composites are multiplication by \(f\).
+\item There are one \(e\in\mathbb N\) and a generating set
+ \(\mathcal G\) of \(I\) such that, for every \(r\in\mathcal G\)
+ and every \(c\), eventually some \(a_N\in\operatorname{Ann}_RM_N\)
+ satisfies \((fr)^e-a_N\in\mathfrak m_R^c\).
+\end{enumerate}
+Neither a fixed rank nor compatible finite-level comparison maps
+are assumed.
+
+\begin{proposition}[The full patched-support supplier]
+\label{prop:selmer-patched-support}
+Let \(q_i\) be any family of primes containing \(I+Y\) and avoiding
+\(f\).  Suppose
+\(\Lambda_i=\widehat{\Lambda_{q_i\cap\Lambda}}\) is regular local
+of the specified common dimension \(d\).  In
+\(B_i=\widehat{(R/I)_{q_i/I}}\) there are ideals \(S_i\) such that:
+\begin{enumerate}
+\item Every minimal prime \(P\) of \(S_i\) satisfies
+ \(\dim(B_i/P)\geq d+q\).
+\item For every prime \(Q\subset B_i\) containing \(Y\),
+ \[
+ S_i\subseteq Q
+ \quad\Longleftrightarrow\quad
+ \operatorname{Ann}_RX\subseteq Q\cap R.
+ \]
+\item If \(Z\subseteq Q\) are primes of \(B_i\), with
+ \(S_i\subseteq Z\), \(Y\subseteq Q\), and
+ \(Q\cap R\subseteq q_{i'}\), then there is a prime
+ \(Z'\subset B_{i'}\) containing \(S_{i'}\) with the same
+ contraction to \(R/I\) as \(Z\).
+\end{enumerate}
+These are exactly the three fields of the source's
+\(\mathrm{S5}\) contract.
+\end{proposition}
+
+\begin{proof}
+\emph{Reduced products and the exact fibre.}
+For \(k\geq1\), put
+\[
+ P_k=\prod_NM_N\Big/
+ \{(m_N):\ \forall j,\
+ m_N\in(Y^k+\mathfrak a^j)M_N
+ \text{ for }\mathcal U\text{-almost all }N\}.
+\]
+The transition \(P_{k+1}\to P_k\) is onto and has kernel
+\(Y^kP_{k+1}\).  Indeed, for any fixed finitely generated ideal
+\(J\), a sequence eventually in
+\(JM_N+(Y^{k+1}+\mathfrak a^j)M_N\) for every \(j\) can be
+decomposed at levels \(\nu(N)\to\infty\) along \(\mathcal U\).
+Use fixed generators of \(J\) for its first part; the remainder
+vanishes in \(P_{k+1}\).  This proves the kernel assertion with
+\(J=Y^k\).  The same argument and finite-level freeness show
+\[
+ \sum_{|\alpha|=a}Y^\alpha x_\alpha\in Y^{a+1}P_k,\quad a<k
+ \quad\Longrightarrow\quad x_\alpha\in YP_k
+ \quad\text{for every }\alpha.                              \tag{PS1}
+\]
+
+Choose the original comparison maps at levels
+\(\nu(N)\to\infty\).  They give \(R\)-linear maps
+\(\Phi:X\to P_1\) and \(\Psi:P_1\to X\), with
+\(\Phi\Psi=f\) and \(\Psi\Phi=f\).
+For \(\Psi\), take the unique ultrafilter value in each finite
+set \(X/\mathfrak a^jX\) and use completeness of \(X\).
+All identities hold modulo every \(\mathfrak a^j\);
+no compatibility of the initially chosen maps is needed.
+
+Write
+\[
+ R_f=R[1/f],\qquad Q_k=R_f\otimes_RP_k,\qquad
+ D=\widehat{R_f}^{\,Y},\qquad M=\varprojlim_kQ_k.
+\]
+Then \(Q_1\simeq X_f\).  Each \(Q_k\) is finite over \(R_f\):
+its successive kernels are quotients of finitely many copies of
+\(Q_1\), indexed by monomials.  Compatible lifts of generators
+of \(Q_1\) generate \(M\) over \(D\).  To see this without a
+rank assumption, correct an approximation at degree \(k\) by
+degree-\(k\) monomials times those same generators; the coefficients
+converge in \(D\).  The same corrections give
+\[
+ M/Y^kM=Q_k,\qquad M/YM=X_f,\qquad
+ \operatorname{gr}_YM=(M/YM)[Y_1,\ldots,Y_q].                 \tag{PS2}
+\]
+Thus \(M\) is finite over the Noetherian \(D\), and (PS1)--(PS2)
+make the \(Y_j\) a regular sequence on every nonzero localization
+where they lie in the maximal ideal.  This is the usual
+quasi-regular criterion for a finite module, with separatedness
+provided by \(Y\)-adic completeness.
+
+\emph{Keep the annihilation quantifiers.}
+For each \(j\), the finite set \(X/\mathfrak a^jX\) is a
+finite-length \(R\)-module.  Choose \(c_j\) with
+\(\mathfrak m_R^{c_j}(X/\mathfrak a^jX)=0\).
+The original comparison maps give, eventually,
+\[
+ f\mathfrak m_R^{c_j}M_N\subseteq(Y+\mathfrak a^j)M_N,
+ \qquad
+ f^k\mathfrak m_R^{kc_j}M_N\subseteq(Y^k+\mathfrak a^j)M_N.
+                                                               \tag{PS3}
+\]
+Use the approximate annihilator of \(r\in\mathcal G\) at
+precision \(kc_j\).  The second inclusion implies
+\[
+ f^k(fr)^eM_N\subseteq(Y^k+\mathfrak a^j)M_N
+ \quad\text{eventually}.
+\]
+Hence \(f^k(fr)^eP_k=0\), so \(r^eQ_k=0\) and \(r^eM=0\).
+In particular
+\[
+                   ID\subseteq\sqrt{\operatorname{Ann}_DM}. \tag{PS4}
+\]
+The original \(e\) works for every generator.  The extra \(f^k\)
+is removed only by the prescribed localization; neither a rate
+uniform in \(j\) nor an equality
+\(\mathfrak m_R=\mathfrak a+Y\) has been used.
+
+\emph{Complete before taking the equation quotient.}
+There is a unique prime \(q_iD\) above \(q_i\) containing \(Y\),
+since \(D/YD=R_f/YR_f\).  Set
+\[
+ C_i=\widehat{D_{q_iD}}\simeq\widehat{R_{q_i}},\qquad
+ M_i=C_i\otimes_DM,\qquad
+ S_i=\sqrt{\operatorname{Ann}_{C_i}M_i}/IC_i.
+                                                               \tag{PS5}
+\]
+Here \(B_i=C_i/IC_i\), and (PS4) makes \(S_i\) well-defined.
+The displayed completion isomorphism follows already modulo each
+power of \(q_i\), because that power contains a power of \(Y\).
+We retain \(M_i\) over the prequotient ring \(C_i\);
+no regular-sequence assertion is made after quotienting \(M_i\)
+by \(I\).
+
+If \(Q\supseteq Y\), local Nakayama and (PS2) give
+\[
+ (M_i)_Q\ne0
+ \ \Longleftrightarrow\
+ (M_i/YM_i)_Q\ne0,\qquad
+ M_i/YM_i=C_i\otimes_RX.
+ \]
+Support under finite-module base change proves the exact fibre
+assertion for every such prime \(Q\).
+
+\emph{Dimension with all original multiplicities.}
+The image \(A\) of \(R\) in \(\operatorname{End}_\Lambda X\)
+is finite over \(\Lambda\).  After base change to the complete
+local \(\Lambda_i\), the finitely many factors above its closed
+point split by idempotents.  The factor specified by \(q_i\)
+is \(C_i\otimes_RX\).  Consequently this module is a direct
+summand of the finite free \(\Lambda_i\otimes_\Lambda X\),
+and is finite free over \(\Lambda_i\); it is zero when \(q_i\)
+is outside the support of \(X\).
+
+Flatness of \(D\to C_i\) preserves the regular \(Y\)-sequence
+on nonzero \(M_i\).  Append a regular system of parameters
+of \(\Lambda_i\), using the just-proved freeness of its quotient.
+The resulting \(M_i\)-regular sequence has length \(q+d\).
+Every minimal support prime of a finite module is associated,
+and any such regular-sequence length is at most the dimension
+of the quotient by an associated prime.  Therefore
+\(\dim(C_i/P)\geq q+d\) at every minimal support prime.
+Under (PS5), these are exactly the minimal primes of \(S_i\),
+with unchanged quotient rings.  The zero-module case is vacuous.
+
+\emph{Move the same support prime.}
+Lift \(Z\subseteq Q\) to \(C_i\) and contract to
+\(P\subseteq T\) in \(D\).  Because \(Y\subseteq Q\),
+\(T=(Q\cap R)D\).  Thus \(P\subseteq q_{i'}D\).
+The support condition implies \(M_P\ne0\).
+Faithfully flat completion of \(D_{q_{i'}D}\) lifts \(P\)
+to a prime \(Z'\subset C_{i'}\); the localized map is faithfully
+flat, so \((M_{i'})_{Z'}\ne0\).  By (PS4), this prime contains
+\(IC_{i'}\), and descends to the required prime of \(B_{i'}\).
+Its contraction to \(R/I\) is exactly that of \(Z\).
+\end{proof}
+
+For the actual arithmetic application,
+\(d=1+D_{\rm wt}\), \(q=nq_{\rm TW}\), and the local
+propagation parameter is \(D_0=D_{\rm wt}+nq_{\rm TW}\).
+Thus the lower bound is exactly \(1+D_0\), as required.
+The actual Taylor--Wiles package supplies all three hypotheses,
+with its original \(f_{\rm El}\), ranks and coefficient
+multiplicities.  The construction closes \(\mathrm{S5}\);
+the source interfaces and precise quotient order are recorded
+in~\cite{SelmerPatchedSupportSource}.
+
+The remaining prime-chain input is an actual stable seed prime
+below the initial curve, containing the automorphic annihilator.
+The source's \(\mathrm{SeedPtOf}\) takes an
+\(\mathrm{IsSeed}\) representation and its point theorem as
+inputs.  Empty ordinary modules satisfy all three patching
+hypotheses and have empty support, so the present argument
+does not supply that arithmetic nonvanishing.

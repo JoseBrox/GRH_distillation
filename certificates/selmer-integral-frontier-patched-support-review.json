@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-23",
+  "status": "PASS",
+  "reviewer": "root independent mathematical and exact-interface review",
+  "classification": "closed complete original S5 patched-support supplier inside W04",
+  "whole_nodes_newly_closed": 0,
+  "reviewed_proof": "paper/shared/selmer-integral-frontier-patched-support.tex",
+  "reviewed_proof_sha256": "4d5a4cacbfe9fee047db788e5d88fbf1fb4de8c9d734ef91c8d73c02b1681b43",
+  "reviewed_references": "paper/shared/selmer-integral-frontier-patched-support-references.tex",
+  "reviewed_references_sha256": "3a5a4d67f256dd95f66dcfeca8fb590002dcc2c9ee90899af94147e75260003c",
+  "source_revision": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "conclusions": [
+    "The statement matches every S5 quantifier in PatchedSupportCompletions lines 50-70, including arbitrary cofinal ultrafilters, varying finite free ranks, the original multiplier f, one exponent for all relation generators and every family of admissible completion primes.",
+    "Finite-generator diagonal decompositions in the reduced product give the exact Y^k transition kernels. Eventual free finite jets give independence of homogeneous monomials without any bound on module ranks.",
+    "Choosing the comparison maps at levels tending to infinity gives R-linear maps X to P1 and back. Finiteness of each coefficient quotient of X supplies its unique ultrafilter value, so no compatibility between finite-level maps is assumed. Both composites remain exactly f.",
+    "After inverting the original f, the first fibre is X[1/f]. Every subsequent jet is finite, and compatible generator lifts with homogeneous corrections give a finite module over the Y-adic completed ring. Its exact quotients and polynomial associated graded prove the Y regular sequence.",
+    "For each coefficient order j, the finite-length R-module X/a^j X supplies c_j. The original comparisons imply f^k m_R^(k c_j) M_N is contained in (Y^k+a^j)M_N. Applying the given approximate annihilator at precision k c_j gives r^e on every localized jet with the original e; no uniform rate in j is inserted.",
+    "Completion is performed over the prequotient ring C_i. Since I is contained in the radical of Ann M_i, the support ideal then descends to B_i=C_i/I. The proof does not incorrectly pass a regular sequence through a quotient of the module by I.",
+    "For every prime containing Y, local Nakayama and finite-module base change identify the support exactly with the pullback of Ann_R X, including nonmaximal primes.",
+    "The image A of R in End_Lambda X is a finite Lambda-algebra. Completion at a prime above p selects an idempotent factor of Lambda_i tensor X: localizing A at p and completing splits the finitely many primes above p. This identifies C_i tensor_R X with a finite free Lambda_i summand, possibly zero.",
+    "Flat completion preserves the Y regular sequence; a regular system of d coefficient parameters is regular on its finite free quotient. Every minimal support prime is associated, so its quotient dimension is at least q+d. The zero module case is vacuous.",
+    "For MOVE, contraction of the upper prime containing Y is determined by the common completed quotient modulo Y. The lower support prime lies below the next completion prime, and faithfully flat completion lifts it with exactly the same contraction to R/I and nonzero localized module.",
+    "The arithmetic substitution is d=1+D_wt and q=n q_TW. Thus q+d=1+(D_wt+n q_TW), exactly the original GalOut dimension, with all diamond multiplicities retained.",
+    "The theorem allows empty support. Even a positive-rank base module may be killed by f-localization; the explicit example in the checker has X of rank one and zero localized support. No stable seed, global two-sided rigidity or uniform integral Selmer budget follows automatically."
+  ],
+  "independently_read_source_ranges": [
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.PatchedSupportCompletions",
+      "ranges": [
+        [
+          23,
+          70
+        ],
+        [
+          179,
+          185
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AutomorphicDetection.AnnBc",
+      "ranges": [
+        [
+          24,
+          87
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AnnihilatorBaseChange.LaDimArith",
+      "ranges": [
+        [
+          1,
+          73
+        ]
+      ]
+    },
+    {
+      "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PatchingModules.AutomorphicDetection.LiftPt",
+      "ranges": [
+        [
+          90,
+          175
+        ]
+      ]
+    }
+  ],
+  "exact_diagnostics": {
+    "command": "python scripts/check_selmer_integral_frontier_patched_support.py --offline",
+    "independent_result": "PASS; 18 authenticated modules, two actual-construction dependencies, exact monomial-product tests and empty-support controls",
+    "scope": "Supplementary finite algebra checks; the mathematical proof establishes all orders and original quantifiers."
+  },
+  "not_claimed": [
+    "Existence of a nonzero arithmetic seed with the original residual and local types",
+    "Global two-sided rigidity",
+    "Moving-family integral torsion bound",
+    "Whole proof-map node closure",
+    "Lean compilation"
+  ],
+  "presentation_changes": [
+    "Removed trailing whitespace and final blank lines only."
+  ]
+}

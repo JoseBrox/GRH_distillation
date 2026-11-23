@@ -258,3 +258,10 @@ and the exact `Good3` supplier. The primary henselian, flat-section and
 normal-base theorems are checked on the original models. Exact cocycle
 and harmonic tests supplement the all-degree proof; no global field-size
 or nonharmonic gauge-independence claim is made.
+
+The [patched-support certificate](../certificates/selmer-integral-frontier-patched-support.json)
+and [independent review](../certificates/selmer-integral-frontier-patched-support-review.json)
+verify all `S5` fields and its original annihilation quantifiers. The
+prequotient module is retained for the dimension proof; only its radical
+support descends through the equation ideal. The arithmetic substitution
+keeps all `n*q_TW` diamond directions. No nonzero seed is supplied by patching.
