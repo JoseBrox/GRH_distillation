@@ -136,8 +136,11 @@ possibly degenerate old residue form.
 The [partial-head transfer theorem](global-norm-frontier-partial-head-transfer.md)
 proves actual compact slices and every nonterminal head identity, with
 the original lower-root quotient, Haar recursion and all-word operator
-order. The next local target is the terminal orbital transfer, including
-its singular heads. Its eventual global application must retain every
+order. The [compact terminal density theorem](global-norm-frontier-terminal-density.md)
+now proves the original complex `KloostDens` for every block pattern. An
+exact compact stationary-phase germ isolates each long-orbit value without
+a rank-uniform remainder. The unitary density transfer and terminal top
+lift are the next local targets. Their eventual global application must retain every
 rational return, all source/target cuts and all arithmetic normalizers.
 An ambient projector estimate or local Gram identity is not the required
 global period-Gram estimate. A strict source deficit must supply any

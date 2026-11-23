@@ -243,3 +243,10 @@ continuity, ordinary ordered product, paired second-order algebra and
 actual integral presentation. The separate source finite-generation
 field concerns the full group; profinite Schreier transfers it to the
 open index-two equation group. Neither construction supplies a nonzero seed.
+
+The [terminal-density certificate](../certificates/global-norm-frontier-terminal-density.json)
+and [independent review](../certificates/global-norm-frontier-terminal-density-review.json)
+match the original complex `KloostDens`, all block heads and the exact
+source additive character. They verify the compact-support germ, its
+Jacobian and stationary-phase coefficient against the primary theorem.
+The result supplies exact density, not the stronger rank-uniform `GermRate`.

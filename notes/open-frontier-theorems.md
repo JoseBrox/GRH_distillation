@@ -179,8 +179,11 @@ The mixed determinant inequality now supplies the original `SizeStd`
 and `SizeStdCpt`, with every rational word correction and no inverse of
 a degenerate residue form. Actual compact slices and the nonterminal
 partial-head Fourier transfer are proved for every original block head
-and admissible word. The terminal orbital transfer is the next local
-target; regular-cell identities alone do not determine the singular heads.
+and admissible word. The actual compact complex Kloosterman density is
+now proved at every block head, including singular internal minors. Its
+stationary-phase constants depend on the fixed compact coefficient, which
+is sufficient for the exact density conclusion. The next local suppliers
+are the unitary-to-complex density transfer and terminal top lift.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 

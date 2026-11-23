@@ -1,0 +1,258 @@
+\subsection{Density at every terminal block head}
+\label{actual-terminal-density}
+
+The regular radial transform must determine the nonregular orbital
+vectors, including heads with vanishing internal leading minors.
+The required density statement involves compact smooth coefficients.
+For this purpose a compact-support stationary-phase argument supplies
+the actual complex germ; no estimate uniform in the rank or in a
+Schwartz decay exponent is needed.
+
+Put $\psi_\beta(z)=\exp(i\operatorname{Re}(\beta z))$ and
+$d\mu_\beta(z)=b_\beta\,d\operatorname{Re}z\,d\operatorname{Im}z$,
+where $b_\beta=|\beta|/(2\pi)>0$.  Let $J_d$ reverse $d$
+coordinates, and let $N_d$ be the upper unitriangular group.
+All products of $d\mu_\beta$ below are in the original strict
+upper-entry coordinates.  Write $\theta(u)$ and $\theta_-(l)$
+for the superdiagonal and subdiagonal sums.
+For $\Phi\in C_c^\infty(\operatorname{Mat}_{n+1}(\mathbb C),V)$,
+where $V$ is a complex Banach space, define the actual source integrals
+\begin{align*}
+ \Omega_L(\Phi;z)
+  &=\int_{N_{n+1}}\psi_\beta(\theta(u))\,
+                         \Phi(zJ_{n+1}u)\,d\mu_\beta(u),\\
+ \Omega_B(\Phi;t,c)
+  &=\int_{a,v,b}\psi_\beta(a_{n-1}+\theta(u_v)+b_{n-1})\,
+       \Phi\left(
+       \begin{pmatrix}I&0\\a&1\end{pmatrix}
+       \begin{pmatrix}tJ_n&0\\0&c\end{pmatrix}
+       \begin{pmatrix}u_v&b\\0&1\end{pmatrix}\right)
+                     d\mu_\beta(a,v,b).
+\end{align*}
+Here $a$ is a row, $b$ a column, and $u_v=I+v$ with $v$ strictly
+upper triangular.  These are the quotient integrals, with internal
+stabilizer roots already removed.  Their complex integration
+dimensions are $n(n+1)/2$ and $n(n+3)/2$ respectively.
+
+\begin{theorem}\label{terminal-density-compact-germ}
+Fix $n\ge1$, $\beta\ne0$, $D\ne0$ and the compact smooth function
+$\Phi$.  Uniformly over the argument of $t\in\mathbb C^\times$,
+as $t\longrightarrow0$,
+\begin{equation}\label{terminal-density-germ}
+ |t|^{n^2}\Omega_B(\Phi;t,D/t^n)
+  =\frac1{n+1}\sum_{z^{n+1}=(-1)^nD}
+        |z|^{n^2}\psi_\beta((n+1)z/t)\Omega_L(\Phi;z)
+        +O_{\Phi,n,\beta,D}(|t|).
+\end{equation}
+The remainder is in the norm of $V$.  The leading coefficient and
+phase are exactly those of the prescribed source measures.
+\end{theorem}
+
+\begin{proof}
+We first put the integral into bounded matrix-entry coordinates.
+Set $X=tv$, $B=tb$ and $\rho=t aJ_nu_v$.  The matrix inside
+$\Phi$ becomes
+\[
+ M=\begin{pmatrix}J_n(tI+X)&J_nB\\ \rho&\sigma\end{pmatrix},
+ \qquad \sigma=c+aJ_nB.
+\]
+After reversal of its $n+1$ rows it has the Hessenberg form
+\begin{equation}\label{terminal-density-hessenberg}
+ J_{n+1}M=tS+\operatorname{diag}(\rho_0,x_1,\ldots,x_n)+Y,
+\end{equation}
+where $S_{i+1,i}=1$, all other entries of $S$ vanish, and $Y$
+is strictly upper triangular.  The coordinates $x$ are the
+superdiagonal entries of the block $(X\ B)$; the other entries
+of $X,B,\rho,\sigma$ form $Y$.  This last change is a coordinate
+permutation with real Jacobian of absolute value one.  The phase
+is exactly $\psi_\beta((\rho_0+\sum_i x_i)/t)$.
+
+Write $D'=(-1)^nD$ and
+\[
+ \det\bigl(tS+\operatorname{diag}(q,x)+Y\bigr)
+                       =A(t,x,Y)q+B_0(t,x,Y).
+\]
+Here $A$ is the determinant of the bottom right $n$ by $n$ block,
+$A(0,x,Y)=\prod_i x_i$, and $B_0(0,x,Y)=0$.
+On $A\ne0$ the determinant condition gives
+\[
+ q_t(x,Y)=\frac{D'-B_0(t,x,Y)}{A(t,x,Y)},\qquad
+ M_t=J_{n+1}\bigl(tS+\operatorname{diag}(q_t,x)+Y\bigr).
+\]
+The source cofactor is $(-1)^{n-1}A$.  The first change of
+variables has real Jacobian $|t|^{n(n+3)}$.  Replacing
+$\rho_0$ by $\sigma$ contributes $|t|^{2n}|A|^{-2}$,
+since the derivative of $\sigma$ in $\rho_0$ is the source
+cofactor divided by $t^n$.  No measure scalar is lost when one
+complex coordinate is replaced by another.  Consequently
+\begin{equation}\label{terminal-density-reduction}
+ |t|^{n(n+1)}\Omega_B(\Phi;t,D/t^n)
+   =\int_{\mathbb C^n\times\mathfrak n_{n+1}}
+      \psi_\beta\left(\frac{q_t+\sum_i x_i}{t}\right)
+          |A(t,x,Y)|^{-2}\Phi(M_t)\,d\mu_\beta(x,Y).
+\end{equation}
+The excluded cofactor-zero set is null: for fixed $t\ne0$ its
+cofactor is a nonzero polynomial in $X,B$.  Fubini and these
+changes are legitimate because the original quotient coordinates
+are bounded on the support for each fixed $t,c\ne0$.
+
+The essential compactness is uniform as $t\to0$.  Every entry
+of $M_t$ in the support of $\Phi$ is bounded by a fixed $R$;
+therefore $x,Y,q_t$ are bounded.  On this bounded set
+$B_0=O(|t|)$ and $A-\prod_i x_i=O(|t|)$.  The identity
+$Aq_t+B_0=D'\ne0$ forces $|A|\ge\delta>0$ for small $t$,
+and hence $|\prod_i x_i|\ge\delta/2$.  Since every $x_i$ is
+bounded, each is bounded away from zero.  Choose one compact
+smooth cutoff $\chi(x,Y)$ equal to one on all these supports,
+and supported where every $x_i\ne0$.  It can also be chosen
+equal to one wherever $\Phi(M_0)\ne0$.  Decreasing the allowed
+$|t|$, $A$ is bounded away from zero on its support.
+
+Set
+\[
+ g_0(x)=\sum_i x_i+\frac{D'}{\prod_i x_i},\qquad
+ a_t(x)=\int \chi(x,Y)|A(t,x,Y)|^{-2}\Phi(M_t)
+          \psi_\beta\left(\frac{q_t-q_0}{t}\right)d\mu_\beta(Y).
+\]
+The quotient $(q_t-q_0)/t$ extends smoothly to $t=0$, because
+$q_t$ is rational and holomorphic in $t$ on this common compact
+set.  Thus $a_t$ has one compact support in $(\mathbb C^\times)^n$,
+with every needed derivative bounded uniformly for small $t$,
+and $a_t-a_0=O(|t|)$ in every fixed smooth seminorm.
+Equation~\eqref{terminal-density-reduction} is
+$\int\psi_\beta(g_0(x)/t)a_t(x)d\mu_\beta(x)$.
+
+The critical points of $g_0$ are precisely $x=(z,\ldots,z)$ with
+$z^{n+1}=D'$.  At such a point
+\[
+ g_0=(n+1)z,\qquad H_z=g_0''=z^{-1}(I+\boldsymbol1\boldsymbol1^t),
+ \qquad\det H_z=(n+1)z^{-n}.
+\]
+For $t=he^{i\vartheta}$, the real phase is
+$\operatorname{Re}(\beta e^{-i\vartheta}g_0)$ on $\mathbb R^{2n}$.
+Its real Hessian has signature zero and determinant of absolute
+value $|\beta|^{2n}|\det H_z|^2$.  Indeed multiplication by $i$
+changes the sign of its quadratic form, and complex diagonalization
+reduces its determinant to $n$ real two-dimensional blocks.
+Real stationary phase therefore gives the leading factor
+\[
+ \left(\frac{|\beta|}{2\pi}\right)^n
+ \frac{(2\pi h)^n}{|\beta|^n|\det H_z|}
+                    =\frac{|t|^n|z|^n}{n+1},
+\]
+with no additional phase.  The error is $O(|t|^{n+1})$.
+Uniformity in $\vartheta$ follows by compactness of the circle:
+the critical points are fixed, the Hessians stay nondegenerate,
+and the real gradient is uniformly bounded away from zero on
+the compact complement of their neighborhoods.  The usual
+integration-by-parts and Morse-coordinate proof has uniform
+constants under precisely these conditions.  The scalar theorem
+and its seminorm estimate also give the Banach-valued assertion,
+by applying norm-one continuous linear functionals.\cite{terminal-density-stationary-phase}
+
+At a critical point the first derivative of the determinant in
+\eqref{terminal-density-hessenberg} gives
+\[
+ z^n\left.\partial_tq_t\right|_0
+          -z^{n-1}\sum_{i=0}^{n-1}Y_{i,i+1}=0.
+\]
+Only an adjacent transposition can contribute a term with one
+subdiagonal entry; this also proves the formula when $n=1$.
+It follows that
+\[
+ a_0(z,\ldots,z)=|z|^{-2n}
+    \int\psi_\beta\left(z^{-1}\sum_iY_{i,i+1}\right)
+                  \Phi(J_{n+1}(zI+Y))\,d\mu_\beta(Y)
+                =|z|^{n(n+1)-2n}\Omega_L(\Phi;z).
+\]
+The last equality is the exact scaling $Y=zv$, whose real
+Jacobian is $|z|^{n(n+1)}$.  Combining it with the stationary
+factor and $|t|^{-n(n+1)}$ in
+\eqref{terminal-density-reduction} proves
+\eqref{terminal-density-germ}, including its $O(|t|)$ remainder.
+\end{proof}
+
+\begin{theorem}\label{terminal-density-all-heads}
+Let $\Psi\in C_c^\infty(\operatorname{GL}_N(\mathbb C),V)$,
+extended by zero to all matrices.  If its original orbital
+integrals at every invertible diagonal matrix vanish, then its
+original orbital integrals vanish at every relevant block head
+\[
+       \operatorname{diag}(t_1J_{s_1},\ldots,t_aJ_{s_a}),
+       \qquad s_i\ge1,\quad t_i\ne0,\quad\sum_i s_i=N.
+\]
+This supplies the original \texttt{KloostDens} interface for
+$\beta=\beta_U$, including Banach-valued coefficients.
+\end{theorem}
+
+\begin{proof}
+We use the actual restricted lower-root and full upper-root
+quotient coordinates.  Their block elimination, proved in the
+partial-head transfer theorem, has denominators only in the
+fixed nonzero block determinants.  For a fixed head $h$, the
+partial average $\Phi_h(C)$ is therefore compact smooth in the
+remaining matrix $C$.  More explicitly, the total matrix is
+\[
+ Z=\begin{pmatrix}H&HB\\AH&AHB+C\end{pmatrix},
+ \qquad C=Z_{22}-Z_{21}H^{-1}Z_{12}.
+\]
+On the compact support of $\Psi$, the head coordinates are
+bounded by block elimination, $H^{-1}$ is bounded since its
+determinant is fixed, and $A,B,C$ are bounded.  Also
+$\det C=\det Z/\det H$ stays away from zero.  This proves
+compact smooth extension through singular $C$ by zero and
+justifies every subsequent Fubini interchange.
+
+The block factorization of the quotient variables has Jacobian
+one and splits the character into the old sub/superdiagonal sums
+and the two new corner entries.  Hence averaging first over $h$
+and then over a further block is exactly the source partial
+average over their concatenation.  No stabilizer factor is
+discarded.  The source \texttt{PhiTop} uses product Lebesgue
+measure.  Thus its long and two-block integrals differ from
+$\Omega_L$ and $\Omega_B$ by the explicit nonzero scalars
+$b_\beta^{n(n+1)/2}$ and $b_\beta^{n(n+3)/2}$ respectively.
+These scalars are retained when applying the germ; they do not
+affect the asserted vanishing.
+
+Induct on $N$, starting with the empty and one-dimensional heads.
+For any fixed $c\ne0$, integrate the last row and column radicals
+at $\operatorname{diag}(C,c)$ to obtain $\Psi_c(C)$.  The same
+Schur-complement argument shows that $\Psi_c$ is compact smooth
+and supported on invertible matrices.  Its regular orbital
+integrals are regular orbital integrals of $\Psi$, so they
+vanish.  Induction and Fubini prove vanishing at every head
+ending with a singleton $(1,c)$.
+
+Now fix any shorter head $h$ followed by a block of size $n+1\ge2$.
+For the compact function $\Phi_h$, every two-block integral at
+$\operatorname{diag}(tJ_n,c)$ vanishes, because the concatenated
+head ends with a singleton.  Fix $z_0\ne0$ and choose
+$D=(-1)^n z_0^{n+1}$.  The germ gives
+\[
+ \sum_{z^{n+1}=z_0^{n+1}}
+           \psi_\beta((n+1)z x)\Omega_L(\Phi_h;z)
+                         =O(|x|^{-1})\qquad(|x|\to\infty),
+\]
+since all these roots have the same positive modulus.
+Multiply by $\psi_\beta(-(n+1)z_0x)$ and average with
+$R^{-2}\eta(x/R)d\operatorname{Re}x\,d\operatorname{Im}x$,
+where $\eta$ is a smooth function of integral one supported in
+$1<|x|<2$.  The error tends to zero.  Every other frequency tends
+to zero by Fourier decay of $\eta$, because $\beta\ne0$ and the
+roots are distinct.  The remaining term is
+$\Omega_L(\Phi_h;z_0)$, so it vanishes.  Fubini and the retained
+nonzero measure scalar prove vanishing at the full head.
+This completes the induction.
+\end{proof}
+
+The conclusion is an exact density theorem for the prescribed
+compact class, in every rank and at every relevant block head.
+It is not the rank-uniform source assertion \texttt{GermRate}.
+The passage from this general-linear density theorem to the
+unitary orbital vectors still requires their exact compact
+matrix-coefficient representation (\texttt{PhiZero}); together
+with that representation and regular-cell vanishing, it gives
+the density input used by the terminal head transfer.
+The full kernel estimate and its global arithmetic application
+are not asserted here.\cite{terminal-density-source}

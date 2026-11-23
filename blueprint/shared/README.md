@@ -215,3 +215,10 @@ bounded Laurent continuity, second-order ordinary compatibility and
 integral presentation are constructed. Repeated or zero coefficient
 rows and annihilator torsion are retained. A stable prime, nonzero seed,
 patched support and the final numerical Selmer bound remain distinct.
+
+The [compact terminal density theorem](../../notes/global-norm-frontier-terminal-density.md)
+proves the original complex `KloostDens` for every block head. Its exact
+Hessenberg coordinates, determinant relation and stationary-phase coefficient
+retain the source character and Haar measures. A fixed compact cutoff and
+annular frequency separation suffice; no rank-uniform germ estimate is
+claimed. The unitary density transfer and terminal top lift remain separate.

@@ -80,8 +80,10 @@ word, with its prescribed component correction and constant one. The
 mixed determinant inequality is now proved with every original rational
 correction, including degenerate residue forms. Actual compact slices
 and the partial-head Fourier transfer are proved at every nonterminal
-head, with the original stabilizer quotient and measures. The terminal
-orbital transfer and complete global rational-return/period-Gram estimate
+head, with the original stabilizer quotient and measures. The actual
+compact complex Kloosterman density now holds at every block head, by
+an exactly normalized stationary-phase germ. The unitary density transfer,
+terminal top lift and complete global rational-return/period-Gram estimate
 remain open.
 
 These are closed supplier obligations within larger nodes. Whole-node
