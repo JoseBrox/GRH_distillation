@@ -165,9 +165,19 @@ to marked propagation. This proves `PfromAut` and the original
 `n*[F:Q]+n*q`. The coefficient extension has rank four; no bound on the
 index of the normalized lattice is inferred.
 
+The [ordinary-family theorem](selmer-integral-frontier-ordinary-families.md)
+now supplies every original `HidaProps` field for this same ideal.
+Full integral higher-weight control gives all arithmetic-point
+decompositions, while fixed-weight density, distinguished-prime
+unramifiedness and the original finite anticyclotomic twist are verified.
+Together with P1/P3 this supplies original `Modular`/`ModU`, retaining
+the no-primitive-ellth-root condition. The alternative stronger contract
+is not inferred. An actual irreducible seed has a stable Hecke component
+of the required dimension.
+
 Both finite-level cohomological bounds and their exact limiting
-comparison are proved. The next arithmetic requirements are
-characteristic-prime starting support,
+comparison are proved. The next arithmetic requirements are the exact
+normalized-Space/`SeedIn` transfer, characteristic-prime starting support,
 the global component argument and two-sided rigidity. They must
 supply the moving-family integral Selmer product; qualitative finiteness
 or rational rigidity cannot replace that bound.

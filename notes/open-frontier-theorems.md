@@ -134,7 +134,17 @@ the original inertia quotient, cyclotomic action and all local degrees.
 These supply the full original `PfromAut`, hence `P1core`, `P2core` and
 `P3core`, with exponent `n*[F:Q]+n*q` and unchanged curve kernels.
 
-**First missing construction.** Prove the global component/curve argument
+The same actual Hecke ideal now satisfies the complete original
+`HidaProps` and `Modular` contracts. Full integral control at every
+algebraic weight, fixed-weight density, all arithmetic-point Speh
+decompositions, the distinguished-prime kernel conditions and exact
+finite twisting are proved. This is original `ModU`, not the stronger
+`ModUAlt`. An actual absolutely irreducible seed lies on a stable Hecke
+component of dimension `1+n*[F:Q]`; its transfer to the original
+normalized Space remains a separate requirement.
+
+**First missing construction.** Prove the normalized-Space/`SeedIn`
+transfer and global component/curve argument
 and the stable starting support required by global
 characteristic-prime propagation. The characteristic-zero
 arithmetic points do not by themselves prove nonemptiness of every

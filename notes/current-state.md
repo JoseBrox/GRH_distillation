@@ -108,7 +108,13 @@ propagation theorem](selmer-integral-frontier-arithmetic-propagation.md)
 now constructs the normalized curves, actual auxiliary primes and both
 arithmetic cohomology systems. It proves the full original `PfromAut`
 and `P1core`--`P3core`, with every kernel and local condition retained.
-Starting support in the required characteristic-prime components,
+The [ordinary-family theorem](selmer-integral-frontier-ordinary-families.md)
+now proves the full original `HidaProps` and `Modular` contract for this
+same Hecke ideal: integral higher-weight control, density at every fixed
+weight, every arithmetic-point decomposition, distinguished-prime
+unramifiedness and the exact finite twist. The original `ModU` retains
+its no-primitive-ellth-root hypothesis; the stronger `ModUAlt` is not inferred.
+The normalized-Space/`SeedIn` transfer, starting support in the required characteristic-prime components,
 global two-sided rigidity and the moving-family integral Selmer budget remain.
 
 The actual local Bessel families satisfy the iterated weighted norm

@@ -395,6 +395,17 @@ by ell. Exact valuation, unit-root and local-cocycle diagnostics accompany
 the arbitrary-rank proof. No auxiliary-prime size or lattice-index bound
 is inferred.
 
+### Actual ordinary-family supplier
+
+The [ordinary-family certificate](../certificates/selmer-integral-frontier-ordinary-families.json)
+and [independent review](../certificates/selmer-integral-frontier-ordinary-families-review.json)
+authenticate 20 bounded source interfaces and four primary references.
+The audit checks full integral control, all fixed-weight and arithmetic-point
+quantifiers, exact Speh normalization, the original `RingProps.unr0`,
+finite twisting and the distinction between `ModU` and `ModUAlt`.
+Exact integral-projector, adjoint and exponent diagnostics supplement
+the human proof; no Lean build or final Selmer length bound is asserted.
+
 ### Actual terminal-degree supplier
 
 The [terminal-degree certificate](../certificates/global-norm-frontier-terminal-degree.json)

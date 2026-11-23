@@ -362,6 +362,16 @@ duality retains the old inertia quotient and the exact modules killed by
 ell. Every curve kernel and the first-bound exponent remain unchanged.
 Global characteristic-prime support and integral torsion bounds remain.
 
+The [ordinary-family theorem](../../notes/selmer-integral-frontier-ordinary-families.md)
+proves every original `HidaProps` field for the same actual Hecke ideal.
+Integral higher-weight control retains the saturated coefficient lattice
+and normalized operators; fixed-weight density and every arithmetic-point
+decomposition retain all Speh lengths. Exact local inertia elimination
+and anticyclotomic twisting give the remaining kernel and twist fields.
+Together with P1/P3 this supplies original `Modular`/`ModU`, with the
+original root-of-unity exclusion. Normalized support, global component
+propagation and uniform integral torsion remain separate in both routes.
+
 The [actual marked propagation theorem](../../notes/selmer-integral-frontier-marked-propagation.md)
 constructs the prescribed universal determinant ring and ordered local
 characters, retaining every scalar relation before completion. The original

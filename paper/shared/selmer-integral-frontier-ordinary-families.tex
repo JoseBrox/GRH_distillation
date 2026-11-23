@@ -1,0 +1,295 @@
+\subsection{The actual ordinary family and all arithmetic points}
+\label{subsec:selmer-ordinary-families}
+
+The original Hecke ideal satisfies the full family contract.  The
+additional argument supplies classical control at every algebraic
+weight, density at each fixed weight, the distinguished-prime condition,
+and the exact decomposition and twist statements
+\cite{SelmerFamiliesSource}.
+
+\begin{theorem}\label{thm:selmer-ordinary-families}
+Retain the original odd prime $\ell$, Hida setting $L/F$, level $V$
+with $V.S'=S$, large coefficient DVR $O$, rank $n\ge1$, residual
+datum, universal ordinary pair $B$, and weight ring
+$A=O[[X_1,\ldots,X_D]]$, $D=n[F:\mathbb Q]$.  Retain also the
+original type lattice, Hecke operators and residual summand.
+Let $M$ be the constructed ordinary module.  For $M\ne0$ let
+$T=A[H_i]\subseteq\operatorname{End}_A(M)$, let $f:B\twoheadrightarrow T$
+be its constructed determinant map, and set $J=\ker f$; for $M=0$
+set $J=B$.
+
+This same $J$ satisfies every original \texttt{HidaProps} field:
+\texttt{RingProps}, density at every fixed strictly increasing labeled
+weight, PT, arithmetic-point purity and classicality, and
+\texttt{TwistOk}.  With the proved P1/P3 propagation it satisfies the
+original \texttt{Modular} contract and the already constructed
+\texttt{HasAut}.  The \texttt{HidaU} application retains its hypothesis
+that $L$ contains no primitive $\ell$th root of unity.
+\end{theorem}
+
+\begin{proof}
+\emph{Full integral control.}
+Fix an arithmetic weight specialization $x:A\to O_E$ and write
+$\theta_x=\phi\chi_\lambda$, where $\phi$ has finite image and
+$\lambda_{\tau,n-1-i}=h_{i,\tau}-i$ is dominant.  Use the previously
+constructed saturated exterior-tensor lattice $L_\lambda$, its
+primitive lowest vector $e_0$ and lowest-coordinate functional $e_0^*$.
+The actual normalized operators
+$R_a=\chi_\lambda(a)^{-1}\xi_\lambda(a)$ are integral, and $R_z$
+contracts every nonlowest coordinate by the maximal ideal, for the
+original $z=\operatorname{diag}(\varpi^{n-1},\ldots,1)$.
+
+For $c\ge n$ beyond the compact-integrality depth and conductor of $\phi$,
+let $C_c$ be the original classical coefficient lattice.  Untwisted
+values at its finite double-coset representatives make it finite free.
+The established arithmetic stabilizer calculation justifies arbitrary
+values: a possible central stabilizer acts by $\theta_x$ times the
+original type, hence trivially.  Evaluation is
+\[
+ \operatorname{ev}(F)(g)
+   =e_0^*\xi_\lambda(g_\ell)^{-1}F(g),\qquad
+ \operatorname{ev}(U_a^{\rm cl,norm}F)=U_a\operatorname{ev}(F).
+                                                               \tag{OF1}
+\]
+It lies in the completed scalar module, with opposite-unipotent
+invariance at each finite precision.  All original tame, spherical
+and auxiliary actions commute with this map.
+
+The original unnormalized coset sums give
+\[
+ U^mC_{c+e}\subseteq C_c\quad(m\ge e).                  \tag{OF2}
+\]
+Here the original $T_c$ and $\overline N(c)$ have depth $c+1$.
+Translation by $N$ reindexes $N/(zNz^{-1})$, leaving an $N$-factor
+after $z$; conjugation by $T$ permutes that set and gives precisely
+the factor $\phi(t)^{-1}$.  For $y\in\overline N(c)$ and a coset
+representative $u$, integral Gaussian elimination gives
+$u^{-1}yu=n_+tn_-$, with $n_+\in N\cap K(c+1)$,
+$t\in T_c$, and $n_-\in\overline N(c)$.
+Since $c\ge n$,
+\[
+ y u z=u z\,(z^{-1}n_+z)t(z^{-1}n_-z),\qquad
+ z^{-1}n_+z\in N,\quad z^{-1}n_-z\in\overline N(c+1).
+\]
+The positive-root exponents are at most $n-1$ and the negative ones
+increase depth by at least one.  Thus every summand is fixed by $y$
+on $C_{c+1}$, because $\phi(t)=1$.  This proves one-step lowering,
+and iteration proves (OF2).  The original normalization
+$\chi_\lambda(z)^{-1}$ is one common scalar; it introduces no new
+torus factor or denominator in this calculation.
+In untwisted coordinates
+each summand is $\xi_\lambda(u)R_z$ times a value.  Therefore
+\[
+ F\in\varpi_E^{a-1}C,\quad
+ \operatorname{ev}(F)\in\varpi_E^a\text{ functions}
+ \quad\Longrightarrow\quad UF\in\varpi_E^aC.           \tag{OF3}
+\]
+Here $\xi_\lambda(u)$ is integral, the lowest coordinate already
+has the required divisibility, and every other column contracts.
+The same statements hold for the product over the $\ell$ places.
+
+Let $e_c$ be the integral factorial-limit ordinary projector on $C_c$.
+Both $U$ and $U^{-1}$ preserve $C_c^{\rm ord}=e_cC_c$.
+Evaluation maps this lattice into $M_x=M\otimes_A O_E$.  It is
+injective: applying (OF3) repeatedly to $U^{-r}F$ for a kernel vector
+puts $F$ in every $\varpi_E^rC_c$.
+
+For surjectivity take $f_0\in M_x$.  Choose $c'\ge c$ so that
+$f_0$ and $\xi_\lambda$ are invariant modulo $\varpi_E$ under
+$\overline N(c')$.  Prescribe the untwisted values $f_0(g)e_0$
+at the original level-$c'$ representatives, in every type coordinate.
+The resulting $F'\in C_{c'}$ has
+$\operatorname{ev}(F')\equiv f_0\pmod{\varpi_E}$ everywhere:
+the exact $N,T$ and tame transformation rules, and the chosen two
+$\overline N(c')$ congruences, propagate the equality from the
+representatives.  Choose $r\ge c'-c$ divisible by the period of
+$f_0$ under $U$ modulo $\varpi_E$.  Then $G=U^rF'\in C_c$ and
+$\operatorname{ev}(G)\equiv f_0$.  Applying $e_c$ preserves this
+congruence.  The finite image lattice $L=\operatorname{ev}(C_c^{\rm ord})$
+thus satisfies $L+\varpi_E M_x=M_x$; Nakayama gives
+\[
+       C_c^{\rm ord}\xrightarrow[\operatorname{ev}]{\ \sim\ }
+                     M\otimes_A O_E\qquad(c\ge c_0).             \tag{OF4}
+\]
+This is the full specialization interface, with the original integral
+coefficient lattice and all Hecke and residual actions.  Neither
+the depth $c_0$ nor the coefficient rank is declared uniformly bounded.
+
+\emph{Density at each weight, and occurrence of every arithmetic point.}
+Fix $h$.  Local reciprocity describes its algebraic unit character
+as $u\mapsto\prod_\tau\tau(u)^{-h_{i,\tau}}$.  Adjust its finite
+torsion restriction and residual character by a finite character,
+using the finite-torsion plus free-pro-$\ell$ decomposition of local
+units.  Vary the $\ell$-power finite characters of the free factor.
+After a fixed finite coefficient extension the original coordinates are
+\[
+          1+X_j=u_j\zeta_j,\qquad
+ u_j\in1+\mathfrak m,\quad\zeta_j\in\mu_{\ell^\infty}.           \tag{OF5}
+\]
+Translation by $u_j$ is a power-series automorphism.  A nonzero
+one-variable series, after removing its common coefficient valuation,
+has its first unit-coefficient term uniquely minimal at roots
+$\zeta_{\ell^a}-1$ of sufficiently small positive valuation.
+Induction gives multivariable density, still allowing finitely many
+excluded roots at each step.  Exclude equalities between the finite
+unit characters at one free generator for each place.  These are
+exactly good points of the fixed $h$.
+
+For a nonzero $t\in T$ choose $v$ with $tv\ne0$ and such a point
+where a coordinate survives.  By (OF4) this is a classical space.
+Its original ordinary summands inject into full Jacquet coinvariants;
+distinct finite unit characters select one Jacquet line.  The
+principal-series and geometric-lemma proof already used for the
+Hecke determinant therefore makes every original normalized ordinary
+operator scalar on each automorphic summand.  Spherical operators
+are scalar too; all global multiplicities remain.  A classical
+eigencharacter detects $t$.  This proves the literal fixed-weight
+\texttt{Dense} condition.
+
+Now let $x:B\to\overline{\mathbb Q}_\ell$ kill $J$ and be arithmetic,
+without a good condition.  It induces $y:T\to\overline{\mathbb Q}_\ell$.
+The established automatic-continuity argument puts its image in a
+finite $O_E$.  In particular every coefficient is a residue lift from
+$O$ plus a maximal-ideal element, so its image is integral before the
+uniform valuation bound from finitely many ideal generators is used.
+The finite faithful $T$-module $M$ has full support; localization and
+Nakayama give a nonzero $y$-summand of $M\otimes_A E$.
+Its local Artinian operator algebra has nonzero socle, yielding a
+common eigenvector.  Thus no faithfulness assertion after a nonflat
+weight change is needed.  Equation (OF4) realizes this character in
+an actual classical automorphic constituent $\sigma$ on the original
+unitary group, even when ramified operators are not semisimple.
+
+\emph{All arithmetic-point decompositions.}
+Labesse's Corollary 5.3 applies: $[F:\mathbb Q]\ge2$ since the CM
+extension is unramified at every finite place, and compact infinity
+supplies discrete series and condition $(*)$.
+It gives discrete conjugate-self-dual base-change blocks, with matching
+infinitesimal character and split/unramified parameters
+\cite[Corollary 5.3]{SelmerFamiliesLabesse}.
+Write these as $\operatorname{Speh}(\tau_a,m_a)$ by
+M\oe glin--Waldspurger, where $\tau_a$ is unitary cuspidal of rank $d_a$,
+$m_a\ge1$, and $\sum_a d_am_a=n$
+\cite[pp.~605--607]{SelmerFamiliesMW}.  Uniqueness of cuspidal support
+gives $\tau_a^c=\tau_a^\vee$.  Set
+\[
+ \pi_a=\tau_a|\det|^{(d_a+m_a-n-1)/2},\qquad
+ \operatorname{algNorm}_{d_a}(\pi_a)
+                 =\tau_a|\det|^{(m_a-n)/2}.             \tag{OF6}
+\]
+At the top of a Speh string the entry of $\tau_a$ is
+$(n-m_a)/2-h_i$; the shift in (OF6) makes it $(d_a-1)/2-h_i$.
+Thus $\pi_a$ is regular algebraic in precisely rank $d_a$.
+It is polarized with character
+$\delta_{L/F}^{d_a}|\cdot|^{d_a+m_a-n-1}$, retaining the real sign.
+BLGGT's adopted Galois theorem gives its continuous semisimple $r_a$
+\cite[Theorem 2.1.1]{SelmerFamiliesBLGGT}.  The exact representation
+at $x$ is
+\[
+       \rho_x=\bigoplus_a\,
+                   \bigoplus_{j=0}^{m_a-1}r_a\epsilon^{-j}.       \tag{OF7}
+\]
+The Speh inducing exponents $(m_a-1)/2-j$ and (OF6) give exactly
+the rank-$n$ Frobenius polynomial.  Unramified comparison outside
+$S$ and Chebotarev identify its full determinant with $xD_B$.
+Every rank and multiplicity in the source decomposition is retained.
+
+If all $m_a=1$, the multiplier of $r_a$ is $\epsilon^{1-n}$.
+BLGGT purity then has weight $n-1$: a pure weight $w$ satisfies
+$w=2(n-1)-w$ under this polarization.  The source \texttt{FrobEig}
+predicate includes unramifiedness, so at every such place away from
+$\ell$ all eigenvalues have absolute value $(Nw)^{(n-1)/2}$.
+This proves \texttt{arithmeticPointPurity}.  If a representation with
+determinant $xD_B$ is absolutely irreducible, character theory identifies
+it with (OF7); there is one block, $m_1=1$, $d_1=n$.
+Then $\pi_1=\tau_1$ without a half-norm shift, which gives the exact
+regular algebraic conjugate-self-dual cuspidality statement.  Its
+fixed conjugation to (OF7) also supplies continuity if that was not
+an input.
+
+\emph{The distinguished prime and the remaining ring fields.}
+Here is the local point needed by \texttt{RingProps.unr0}.
+Suppose $p\ne\ell$, $q\not\equiv1\pmod\ell$, and a continuous
+ell-adic representation has unramified residual semisimplification
+with Frobenius polynomial $(X-a)^n$.  In any stable lattice its
+residual inertia image is an $\ell$-group: every element is unipotent,
+and Cauchy's theorem applies.  Wild and prime-to-$\ell$ tame inertia
+therefore vanish, including in all higher congruence quotients.
+Write $T$ for the remaining pro-$\ell$ tame generator and $\Phi$
+for arithmetic Frobenius, so $\Phi T\Phi^{-1}=T^q$.
+The conjugation of $\overline\Phi$, a scalar times a unipotent matrix,
+has $\ell$-power order on $\langle\overline T\rangle$.
+If this cyclic group were nontrivial, raising to $q$ would have
+nontrivial prime-to-$\ell$ order.  Thus $\overline T=1$.
+The successive congruence equation is
+\[
+  (\operatorname{Ad}(\overline\Phi)-q)
+                (T-1)/\varpi_E^r=0.                              \tag{OF8}
+\]
+Its operator is invertible because $\operatorname{Ad}(\overline\Phi)$
+is unipotent.  Induction gives $T=1$.  No semisimple residual lattice
+or rank restriction was imposed.
+
+These are exactly the original \texttt{V0ok} conditions.  Apply this
+fact at the separating weight-zero Galois points, then use coefficient
+separation to obtain both literal determinant-kernel relations at
+$I_0$, including the polarization star.  The other ring fields follow
+from the existing determinant theorem: finiteness and torsion-freeness
+over $A$, polarization, ordered ordinary relations and the prescribed
+types.  Thus the entire \texttt{RingProps} contract holds.
+
+\emph{Twist on the original unitary group.}
+Let $\beta$ have the exact \texttt{TwistOk} hypotheses: finite
+$\ell$-power order, $\beta^c=\beta^{-1}$, and triviality on all old
+inertia and $I_0$.  Use the source convention
+$v(\operatorname{art}g)=-\deg g$: arithmetic Frobenius maps to an
+inverse uniformizer, whereas $\operatorname{art}(g_\varpi)=\varpi$
+has degree $-1$.  Define
+$b_w(a)=\iota\beta(\operatorname{rec}_{\rm geom}(a))$, using the
+inverse of the arithmetic reciprocity map
+\cite[V.5.2--5.3]{SelmerFamiliesCFT}.
+The finite-character avatar identity has no algebraic correction,
+so $b_w(\varpi)=\iota\beta(g_\varpi)$ exactly.
+On $\mathbb A_F^\times$ it satisfies $b^2=1$, hence is
+trivial because its order is odd.  If $2r\equiv1\pmod{\operatorname{ord}b}$,
+define on the norm-one torus
+\[
+                 b_U(t)=b(t)^r.                                  \tag{OF9}
+\]
+It is trivial on $U(1)(F)$.  Equivalently $b_U(a/a^c)=b(a)$.
+At a split place $b_U(u,u^{-1})=b_w(u)$, so this is the correct
+character, without an erroneous square.
+
+Multiply an actual classical eigenform for $x$ by $b_U(\det g)$.
+This preserves the original rational group, infinity coefficient,
+tame type and principal level at $v_0$.  Outside $S$ it preserves
+hyperspecial level; at nonsplit unramified places $b_U$ is trivial
+on the compact norm-one group.  At $\ell$ the finite torus character
+changes by $b_w^{-1}$ and normalized $U_j$ is multiplied by
+$\beta(g_\varpi)^j$, a unit.  The residual block is unchanged since
+these $\ell$-power roots reduce to one.  Full control yields a
+character of the original $T$.  Its determinant and its ordered
+local characters are exactly the prescribed twists.  Dense Frobenius,
+local reciprocity and topological generation by the full determinant
+coefficients and ordered characters identify the induced point with
+the given $x'$.  Hence $J\subseteq\ker x'$, proving \texttt{TwistOk}.
+
+Finally PT is already proved in its complete original range.
+Together the fields above give \texttt{HidaProps}; the established
+arithmetic propagation supplies P1/P3 for the same ideal and actual
+modules.  If $M=0$, all conditions requiring a point of $V(J)$ are
+vacuous and the ring quotient is zero; the separate PT proof excludes
+its input by constructing a nonzero ordinary vector.  This covers
+the original zero branch as well.
+\end{proof}
+
+For an actual absolutely irreducible seed there is now a starting
+component of dimension $1+n[F:\mathbb Q]$.  Indeed $T$ is finite and
+$A$-torsion-free, so its minimal primes contract to zero: a nonzero
+element of $A$ in a minimal associated prime would give torsion.
+Each component therefore has the dimension of $A$.  Choose one below
+the seed's kernel.  Stability follows separately from the seed's
+nonzero $n^2$ trace-Gram discriminant, which stays outside every
+smaller prime.  The remaining frontier is the exact normalized-Space
+and \texttt{SeedIn} transfer followed by the global component argument
+to \texttt{FinA}; no final uniform integral torsion bound is claimed.
