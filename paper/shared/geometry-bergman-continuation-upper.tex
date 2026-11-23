@@ -1,0 +1,423 @@
+\subsection{A uniform upper bound for the original cusp norms}
+\label{shared-bergman-actual-upper}
+
+We retain the integral model, its complex uniformization and its
+Hermitian metric.  The probability measure on a component is the one
+induced by the original adelic measure~\cite{bergman-upper-source}.
+In particular, normalizing a
+component does not permit us to discard its arithmetic volume.
+
+Let $E$ be the original CM field, let $F=E^+$, and put
+\[
+ f=[F:\mathbb Q],\qquad \Delta=|\operatorname{disc}E|,
+ \qquad \operatorname{rd}(E)=\Delta^{1/(2f)}.
+\]
+The original hypotheses include that $E/F$ is unramified at all finite
+primes.  The rank-$r$, $r\ge2$, Hermitian lattice used in the principal-level
+description is self-dual over $\mathcal O_E$; it need not be free.
+Write $M\ge3$ for the level and $d_H\ge1$ for the original positive
+quadratic parameter.  At an orthogonal frame $x$, write
+\[
+ q_x(v)=\sum_{\tau\in\Psi}\operatorname{maj}_{x,\tau}(v)
+\]
+for the sum of the positive Hermitian majorants, where $\Psi$ contains
+one embedding from each conjugate pair.  If $\lambda_{\tau,i}$ are
+the model weights, assume
+\[
+ \sum_{\tau\in\Psi}
+ \bigl(\max_i\lambda_{\tau,i}-\min_i\lambda_{\tau,i}\bigr)
+ \le w,\qquad w\ge1.
+\]
+The weights in this statement are the actual model weights after the
+prescribed signed permutation.  Let $\mathcal H_Z$ be the original
+finite-dimensional cusp section space on a component $Z$, with its
+component probability norm $\|\cdot\|_{2,Z}$.  Its Bergman function is
+\[
+ B_Z(x)=\sup_{0\ne s\in\mathcal H_Z}
+              \frac{\|s(x)\|^2}{\|s\|_{2,Z}^2},
+\]
+with value zero when $\mathcal H_Z=0$.
+
+Set
+\begin{align}
+ D&=fr(r-1)/2,&
+ \rho&=\frac1{200r^3(w+f)},\label{eq:actual-upper-radius}\\
+ \epsilon&=\min\left\{1,
+ \frac{\pi}{2M\sqrt{d_H}(fw+2)\log2}\right\},&
+ A_\epsilon&=
+ \left(1+\frac{2(2fr)^2\Delta}{\epsilon}\right)^{2fr^2},
+ \label{eq:actual-upper-multiplicity}\\
+ V&=2h_E M^{2f(r^2+1)}
+       \operatorname{rd}(E)^{f(r^2-1)/2},&
+ C_{\mathrm{sup}}&=
+       \frac{8D!}{(\pi\rho^2)^D}A_\epsilon V,
+ \label{eq:actual-upper-constant}
+\end{align}
+where $h_E$ denotes the ideal class number of $E$.
+
+\begin{theorem}[The original upper Bergman bound]
+\label{thm:actual-upper-bergman}
+For the original good principal-level cover, every coefficient
+embedding, every component $Z$ and every $s\in\mathcal H_Z$ satisfy
+\[
+ \sup_{x\in Z}\|s(x)\|^2
+       \le C_{\mathrm{sup}}\|s\|_{2,Z}^2,
+ \qquad B_Z(x)\le C_{\mathrm{sup}},
+ \qquad \dim\mathcal H_Z\le C_{\mathrm{sup}}.
+\]
+The statement uses the classical Tamagawa-number theorem for special
+unitary groups.  All comparisons from its invariant differential
+measure to the displayed constant are given below.  No bound is
+asserted here for a ramified extension $E/F$ or a different integral
+lattice.
+
+If $L\ge1$ and
+\begin{gather}
+ \log(fr)\le L,\quad \log M\le30L,
+ \quad \log\Delta\le4fL,\quad
+ \log d_H\le4L,\quad \log w\le2L,
+ \label{eq:actual-upper-size}
+\end{gather}
+then
+\begin{equation}\label{eq:actual-upper-logbound}
+            1\le C_{\mathrm{sup}},\qquad
+            \log C_{\mathrm{sup}}\le250f^2r^2L.
+\end{equation}
+In the original family, let $L_b\ge1$.  Suppose
+\[
+ \log M\le30L_b,\qquad
+ \log(2f)\le3L_b,\qquad \log\operatorname{rd}(E)\le3L_b,\qquad
+ \log(fr)\le L_b,
+\]
+and put $S=\sum_{\tau,i}|u_{\tau,i}|$.  If $S=0$ or
+$\log S\le20L_b$, then one may take
+\begin{equation}\label{eq:actual-upper-family}
+                   B_Z(x)\le \exp\bigl(4000(frL_b)^3\bigr).
+\end{equation}
+Here $u$ is the original integral weight and the original host
+discriminant relation $d_H^f\le\Delta$ is retained.
+\end{theorem}
+
+\begin{proof}
+\emph{A half-maximum point has a lower lattice minimum.}
+The zero section requires no argument.  For a nonzero section choose
+a frame $x$ with point norm greater than half its supremum, then
+orthogonalize the frame.  The original norm is unchanged.  The
+integral Hermitian lattice $L'$ and principal-level transvections
+constructed in the short-theta proof give
+\begin{equation}\label{eq:actual-upper-minimum}
+                    q_x(v)\ge\epsilon
+                  \qquad(0\ne v\in L').
+\end{equation}
+We recall why this estimate has precisely the displayed level
+dependence.  If all embedding majorants of $v$ are less than
+$\epsilon\le1$, its integral Hermitian norm has all conjugates of
+absolute value less than one and is therefore zero.  Its rank-one
+unipotent orbit, with complex parameter $\zeta$, remains in the
+domain for $\Im\zeta>-T$, where
+$T=(k_0\epsilon)^{-1}$.  The period $M_*$ of the original
+principal-level action obeys
+\[
+                       M_*k_0=2M\sqrt{d_H}.
+\]
+The actual arithmetic character is trivial on this action, so the
+evaluated section is periodic with period $M_*$.  Its constant
+Fourier coefficient is zero by cuspidality.  On the line
+$\Im\zeta=-T/2$, its norm differs from the norm at $x$ by at most
+$2^{w/2}$ in the frame factor.  Applying the disk Schwarz lemma
+after $q=\exp(2\pi i\zeta/M_*)$ gives
+\[
+              1\le2\,2^{w/2}\exp(-\pi T/M_*).
+\]
+But the definition of $\epsilon$ makes the right side at most
+$2^{1+w/2-(fw+2)}<1$.  This contradiction proves
+\eqref{eq:actual-upper-minimum}.  The arithmetic character assertion
+is the one for the constructed bundle: its character law on all
+nonnegative antitone exponent arrays extends, by differences, to
+all integral model weights.  Finite image alone would not suffice.
+
+\emph{The actual chart has bounded multiplicity.}
+Put $n=2fr$.  The real quadratic form $q_x$ has dimension $n$.
+For its Euclidean dual lattice $(L')^*$, the trace-pairing identity
+and Hermitian self-duality imply
+\[
+             \frac{\Delta}{2}J_x(L')^*\subseteq L',
+\]
+where $J_x$ is the orthogonal involution of the Hermitian majorant.
+Indeed, trace duality gives the inverse different, the integer
+$\Delta$ clears that different, and the sum over a CM type is
+half the full trace.  Thus the dual minimum is at least
+$2\sqrt\epsilon/\Delta$.
+
+The elementary transference argument already proved for the short
+theta span gives
+$\lambda_n(L')\lambda_1((L')^*)\le n^2$.
+Consequently $L'$ contains $r$ vectors $v_1,\ldots,v_r$ independent
+over $E$, with
+\begin{equation}\label{eq:actual-upper-short-basis}
+                  q_x(v_i)\le\frac{n^4\Delta^2}{4\epsilon}.
+\end{equation}
+The argument first gives $n$ vectors independent over $\mathbb Q$;
+one then selects an $E$-basis.  It does not select a free
+$\mathcal O_E$-basis or change the integral lattice.
+
+Use the original lower-triangular flag chart of radius $\rho$ at
+$x$.  Comparing the two positive/negative orthogonal projections
+in its Gram matrices gives
+\[
+ \tfrac12q_x(v)\le q_z(v)\le2q_x(v)
+       \qquad(\|z\|\le\rho).
+\]
+For clarity, write the chart matrix as $I+N$ in an orthogonal frame.
+Its entries satisfy $|N_{ab}|\le\rho$ and
+$\|N\|_{\mathrm{op}}\le r\rho$; the Gram perturbation has norm
+at most $2r\rho+r^2\rho^2$.  The positive block and its inverse
+remain within the same bounds by the Neumann series.  In the
+formula for the positive projection this gives an operator norm
+error at most $8r^2\rho<1/2$.  This proves the displayed
+comparison, for the indefinite signatures as well as for the
+definite endpoints.
+
+If an arithmetic element $\gamma$ returns this chart to itself,
+the intermediate upper-triangular change of flag leaves the
+majorant invariant.  Hence
+$q_x(\gamma v)\le4q_x(v)$.  The map
+\[
+               \gamma\longmapsto(\gamma v_1,\ldots,\gamma v_r)
+\]
+is injective.  Balls of radius $\sqrt\epsilon/2$ around lattice
+points are disjoint.  Comparing their volumes shows that a ball
+of radius $R$ contains at most
+$(1+2R/\sqrt\epsilon)^n$ lattice points.  Taking
+$R=n^2\Delta/\sqrt\epsilon$ in
+\eqref{eq:actual-upper-short-basis}, and then taking the $r$-th
+power, bounds the number of returning elements by $A_\epsilon$.
+
+\emph{A local mean inequality retains the metric and measure.}
+In the same chart let $\delta_{\tau,j}$ be the leading Hermitian
+Gram determinants, with $\delta_{\tau,0}=1$.
+The triangular chart has determinant one, so
+$|\delta_{\tau,r}|=1$.  The same matrix estimates give
+\[
+        \bigl|\log|\delta_{\tau,j}|\bigr|\le9r^2\rho.
+\]
+In the exact metric formula, subtracting the midpoint of the
+largest and smallest weights costs nothing because the two end
+determinants have absolute value one.  Summation by parts therefore
+gives a squared frame factor at least $\exp(-1/20)$.
+The invariant flag density is the product of
+$|\delta_{\tau,j}|^{-2}$, and is at least $\exp(-1/10)$.
+Both assertions follow directly from
+$200r^3\rho(w+f)=1$.  Their product exceeds $1/2$.
+
+The mean-value inequality for the squared absolute value of the
+holomorphic coefficient, on a ball in $\mathbb C^D$, now gives
+\[
+ \|s(x)\|^2\le
+ \frac{2D!}{(\pi\rho^2)^D}
+           \int_{\|z\|<\rho}\|s(z)\|^2\,d\mu_{\mathrm{flag}}(z).
+\]
+Unfolding this nonnegative integral to a fundamental set multiplies
+it by at most $A_\epsilon$.  The half-maximum choice costs a factor
+four.  Thus, on this uniformizing component,
+\begin{equation}\label{eq:actual-upper-raw}
+ \sup\|s\|^2\le
+ \frac{8D!}{(\pi\rho^2)^D}A_\epsilon
+       \int_{\mathcal F}\|s\|^2\,d\mu_{\mathrm{flag}}.
+\end{equation}
+Tonelli's theorem applies throughout.  The argument needs neither
+an injective chart nor an unspecified compactness constant.
+
+\emph{The arithmetic volume in the probability normalization.}
+The required bound for the sum of the original fundamental-set
+volumes is
+\begin{equation}\label{eq:actual-upper-mass}
+             \sum_k\mu_{\mathrm{flag}}(\mathcal F_k)\le V.
+\end{equation}
+Here is the normalization calculation.  At a finite place of $F$
+with residue size $q$, the self-dual lattice in the unramified
+quadratic algebra defines a smooth special unitary group scheme.
+Its volume for an integral invariant differential is
+\[
+ a_v=\prod_{j=2}^r(1-\chi_v^j q^{-j}),
+ \qquad
+ \chi_v=\begin{cases}1&\text{at a split place},\\-1&\text{at an inert place}.
+                    \end{cases}
+\]
+The formula follows from the orders of the split and unitary
+finite groups and smooth lifting.  It holds at primes over two
+and at primes dividing $r$; no division by these primes is used.
+It also gives
+\[
+                 \prod_v a_v^{-1}
+                   \le\prod_{j=2}^r\zeta_F(j)
+                   \le\left(\prod_{j=2}^r\zeta(j)\right)^f.
+\]
+
+The only global volume theorem used is that the Tamagawa number
+of the simply connected group $\operatorname{SU}(h)$ is one.
+For example, this is the outer type-$A$ case recorded in
+Prasad~\cite[\S3.3]{bergman-upper-prasad}; his \S3.7 gives the corresponding local-factor
+formula.  Summing over all finite double cosets gives the same
+identity when all real factors are compact, so no isotropy or
+strong-approximation assumption is imposed at this step.
+
+To compare its differential measure with the original Riemannian
+measure, choose any integral $F$-basis of the trace-zero
+anti-Hermitian Lie algebra, spanning a sublattice of index $a$.
+The trace form on the full endomorphism lattice is unimodular
+locally because $E/F$ is unramified and the Hermitian lattice is
+self-dual.  Passing to trace zero contributes the determinant
+$r$: in diagonal coordinates its Gram matrix is
+$I_{r-1}+\mathbf1\mathbf1^t$, of determinant $r$.
+The off-diagonal pairs have unit determinant.  This computation
+may be made after unramified faithfully flat extension and hence
+gives the same determinant ideal before extension.  It proves
+that the real volume conversion is $r^{f/2}a$.
+The same $a$ occurs inversely in the finite differential volumes,
+so it cancels.  The sum of the Riemannian covolumes at level one is
+therefore
+\[
+        r^{f/2}|\operatorname{disc}F|^{(r^2-1)/2}
+                             \prod_v a_v^{-1}.
+\]
+This computation allows a projective integral Lie lattice and
+does not assume it has a global integral basis.
+
+The compact diagonal torus has Riemannian volume
+$(2\pi)^{r-1}\sqrt r$ at each real place; the determinant-one
+condition gives the Gram matrix
+$I_{r-1}+\mathbf1\mathbf1^t$.  Each complex off-diagonal flag
+coordinate contributes the factor two.  Consequently the exact
+conversion from a flag fundamental-set volume to its special
+unitary covolume, for a torsion-free arithmetic group, is
+\[
+       \left(2^{r(r-1)/2}(2\pi)^{r-1}\sqrt r\right)^f.
+\]
+Since $\zeta(j)<2$ for $j\ge2$, the ratio of the sum of
+level-one group covolumes to this factor is at most
+$|\operatorname{disc}F|^{(r^2-1)/2}$.  At level one this is a
+volume with stabilizer weights.  We use the ordinary flag
+fundamental-set volume only after passing to the principal level.
+
+It remains to retain the determinant classes and level.
+An element of the principal congruence group has determinant
+$a\in\mathcal O_E^\times$ with $a\bar a=1$ and
+$a-1\in M\mathcal O_E$.  If $a\ne1$, the norm of $a-1$ is
+both at most $2^{2f}$ and at least $M^{2f}$, a contradiction.
+Thus these rational stabilizers really lie in the special unitary
+group; this is where $M\ge3$ is used.
+The principal group is also torsion-free.  Represent it on the
+underlying integral lattice.  If an odd prime $p$ divides $M$,
+the group $1+p\operatorname{Mat}_n(\mathbb Z_p)$ is torsion-free;
+if $M$ has no odd prime factor then $4\mid M$, and one uses
+$1+4\operatorname{Mat}_n(\mathbb Z_2)$.
+For completeness, if $A-1=p^aB$ has least entry valuation $a$,
+the binomial expansion shows that $A^p-1$ has least entry
+valuation $a+1$ in these ranges.  Reduction shows that any
+finite order would be a power of $p$, which is impossible.
+The action on the flag domain is therefore free, since a
+discrete subgroup meets its compact point stabilizer in a
+finite group.  This justifies the preceding measure conversion
+at the actual level, including the central stabilizers.
+Hilbert 90 writes a finite norm-one idele as $b/\bar b$.
+Choose the ideal class of $b$ among $h_E$ representatives; the
+remaining integral units, modulo $M$, have at most $M^{2f}$
+residue classes.  Their quotient has norm one and is congruent
+to one modulo $M$.  Locally it is the determinant of an integral
+unitary transformation congruent to one: diagonalize the
+unramified unimodular Hermitian lattice and act on one line.
+Descent gives the assertion for its original lattice.
+Thus the number of determinant classes is at most
+$h_E M^{2f}$.  In each determinant class the principal level
+index is at most $M^{2fr^2}$, by its injection into endomorphisms
+of the rank-$r$ module modulo $M$.  These two bounds, with the
+harmless factor two retained in $V$, prove
+\eqref{eq:actual-upper-mass}.  Finally,
+$\Delta=|\operatorname{disc}F|^2$ follows from finite
+unramifiedness, giving the exponent in
+\eqref{eq:actual-upper-constant}.
+
+The constructed component dictionary identifies its probability
+norm with the sum of these integrals divided by the mass of the
+corresponding components.  That mass is at most the full sum in
+\eqref{eq:actual-upper-mass}.  Applying
+\eqref{eq:actual-upper-raw} and then this exact normalization proves
+the asserted pointwise norm inequality.  Taking its supremum over
+unit sections proves the Bergman bound.  Integrating an orthonormal
+basis gives $\int_Z B_Z\,d\mu_Z=\dim\mathcal H_Z$, and proves the
+dimension bound.
+
+\emph{The numerical estimate.}
+Minkowski's ideal-class theorem gives an integral ideal of norm
+at most $\sqrt\Delta$ in each class.  Indeed its CM constant is
+at most $(2/\pi)^f<1$, by bounding the first $f$ factors in
+$(2f)!/(2f)^{2f}$ by $1/2$.  Counting ideals with the Dirichlet
+series at two gives
+\[
+                 h_E\le\Delta\zeta_E(2)
+                        \le4^f\Delta.
+\]
+Under \eqref{eq:actual-upper-size} this implies
+$\log V\le80fr^2L$.
+Also
+\[
+       \epsilon^{-1}\le3fwM\sqrt{d_H},\qquad
+       \log\epsilon^{-1}\le2+35L.
+\]
+Using $1+2n^2\Delta/\epsilon\le3n^2\Delta/\epsilon$
+and $n=2fr$, we obtain
+\[
+          \log A_\epsilon
+                  \le86fr^2L+8f^2r^2L.
+\]
+Since $D!\le D^D$, $D\le fr^2/2$, $\log D\le2L$,
+$\log(w+f)\le\log2+2L$ and $\log2<3/4$, the chart factor obeys
+\[
+        \log\frac{8D!}{(\pi\rho^2)^D}\le14fr^2L.
+\]
+Adding gives at most $188f^2r^2L$, and hence the stated bound
+$250f^2r^2L$.  Each factor in $C_{\mathrm{sup}}$ is at least
+one, so its lower bound also holds.
+
+For the family statement put $S=\sum_{\tau,i}|u_{\tau,i}|$ and
+$w=4fS+1$.  The exact model-weight formula gives total spread at
+most $4fS$.  If $S=0$, then $w=1$.  Otherwise $S\ge1$ because
+the weights are integral; the displayed hypotheses imply
+$\log w\le25L_b$.  The root-discriminant bound gives
+$\log\Delta\le6fL_b$, and $d_H^f\le\Delta$ gives
+$\log d_H\le6L_b$.  Apply
+\eqref{eq:actual-upper-logbound} with $L=25L_b/2$.
+It gives
+\[
+      \log C_{\mathrm{sup}}\le3125f^2r^2L_b
+                                 \le4000(frL_b)^3.
+\]
+All constants are independent of the component, embedding and
+growing arithmetic field.
+\end{proof}
+
+\begin{corollary}[The multiplication norm for the original sections]
+\label{cor:actual-upper-multiplication}
+If $s$ has the first weight and $t$ the second weight in the
+original section multiplication, then
+\[
+       \|st\|_{2,Z}\le\sqrt{C_{\mathrm{sup}}}
+                              \|s\|_{2,Z}\|t\|_{2,Z}.
+\]
+This holds for the original integral multiplication map whenever
+$s,t$ are integral sections, since their pointwise metrics multiply.
+\end{corollary}
+\begin{proof}
+Integrate $\|s(x)t(x)\|^2\le
+(\sup\|s\|^2)\|t(x)\|^2$ against the same component probability
+measure and apply Theorem~\ref{thm:actual-upper-bergman}.
+\end{proof}
+
+The theorem supplies the global upper Bergman, supremum and rank
+estimates with their original numerical family bound, and the
+corollary supplies the corresponding multiplication norm.  The
+thin-region lower bound, point-height comparison and final arithmetic
+section remainder remain separate.  Generation of the entire
+integral cusp lattice from the short coefficient-field spanning
+family is treated in Section~\ref{shared-actual-integral-cusp-frame}.

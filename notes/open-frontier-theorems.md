@@ -159,7 +159,9 @@ The [finite-point theorem](selmer-support-continuation-finite-points.md) now sup
 
 The [finite-end transfer](selmer-support-continuation-finite-end.md) supplies exact integral Galois descent and the literal FinEnd on one subgroup chosen before every tested DVR and ordinary representation. Its index is exactly the degree of the supplied field; no uniform degree bound is inferred.
 
-**First missing construction.** Construct the actual GalLink/auxiliary frame with every Ok/Big and seed clause, complete two-sided global rigidity, then discharge the moving-family integral Selmer budget. The entire characteristic-prime fibre, nilpotents and integral torsion remain part of these requirements; support coverage gives no uniform nilpotence exponent.
+The [auxiliary arithmetic frame](selmer-support-continuation-auxiliary-tower.md) is now constructed for both original character families. It supplies the exact fields, Galois quotient, two strict classes, local degrees, relative cohomology inequality and seed. The class-rank bound is fixed before the cyclotomic height; it is not uniform in a changing base field.
+
+**First missing construction.** Prove finiteness of the entire original integral weight-zero ring from this frame and the finite-end theorem, complete two-sided global rigidity, then discharge the moving-family integral Selmer budget. Nilpotents and integral torsion remain part of these requirements; support coverage gives no uniform nilpotence exponent.
 
 ## W06: the integral theta construction
 
@@ -381,9 +383,11 @@ boundary arcs, and supplies both literal `h0` and `hsh`. Its same-field
 short-span bound is `exp(400000*(X^3*S+X^5))`; the original size
 inequalities absorb this after a permitted fixed starting threshold.
 
-**First missing construction.** Supply the actual pointwise Bergman,
-height and multiplication comparisons, then prove the numerical
-arithmetic section remainder for these same lattices.
+The [actual thick-region theorem](geometry-bergman-continuation-thick.md) now supplies the precise lower Bergman estimate `exp(-C(l1(u1)+(fr)^8))`, with an absolute constant and the original chart, metric, component probability and Haar normalization. A tensor/Minkowski argument uses the exact trace-self-dual lattice to prove thick injectivity; a complete-quotient dbar construction and regular-weight cuspidality give the actual cusp peak. The original numerical host inequalities connecting this exponent to `lenT`/`unitE` remain explicit. The remaining analytic lower bound is the thin theta-pivot estimate; the upper bound and entire integral frame are now supplied.
+
+The [global upper bound and integral frame](geometry-bergman-continuation-upper.md) now supply the original pointwise upper Bergman, rank and multiplication bounds, and short Z-generators of the entire original cusp lattice. The construction retains the coefficient field, all component masses and the exact numerical frame budgets; no bound on an unspecified integral index is assumed.
+
+**First missing construction.** Prove the thin-region theta lower bound, the actual point-height comparison and the numerical arithmetic section remainder for these same lattices.
 The existing cusp, jet and signed-boundary lemmas are to be applied unchanged.
 
 ## Completion discipline
@@ -393,9 +397,6 @@ the exact proven subobligations. The work-package acceptance lists remain
 in `blueprint/grh/program.json`; the RH product and final budget remain
 in its separate manuscript. No whole node is newly closed by the local
 constructions above. The next research effort belongs to the actual
-arithmetic section construction, the marked characteristic-prime support and
-global marked deformation models, and the
-global period-return estimate, not further optimization of the already
+thin-region section and height estimates, integral global rigidity and
+uniform Selmer orders, and near returns in the actual global period maps, not further optimization of the already
 proved frame inequalities.
-
-The [actual thick-region theorem](geometry-bergman-continuation-thick.md) now supplies the precise lower Bergman estimate `exp(-C(l1(u1)+(fr)^8))`, with an absolute constant and the original chart, metric, component probability and Haar normalization. A tensor/Minkowski argument uses the exact trace-self-dual lattice to prove thick injectivity; a complete-quotient dbar construction and regular-weight cuspidality give the actual cusp peak. The original numerical host inequalities connecting this exponent to `lenT`/`unitE` remain explicit. The next analytic inputs are the thin theta-pivot lower bound and the global integral cusp-frame upper bound.

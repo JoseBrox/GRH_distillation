@@ -1,0 +1,325 @@
+\subsection{The finite-coefficient comparisons on the auxiliary field}
+\label{sec:support-auxiliary-frame}
+
+We complete the cohomological and seed conditions for the Galois
+quotient just constructed.  This step concerns one auxiliary field;
+it does not give the uniform integral estimate as the initial
+arithmetic data vary.
+
+Fix the notation of Theorem~\ref{thm:support-auxiliary-tower},
+choose $m$ with $\ell^m>3C_0+7$, and abbreviate
+$F=F_m^+$, $L=L_m$, $E=E_m$ and $\Gamma=\Gamma_m$.
+Write $\delta,\psi_\Gamma,\varepsilon_\Gamma$ for the descended
+characters, $\Gamma_0=\ker\delta$, and
+$d_v=[F_v:\mathbb Q_\ell]$.  The local groups are the actual
+absolute Galois groups of $F_v$, with the inclusions specified
+in Corollary~\ref{cor:support-auxiliary-galois-quotient}.
+
+For a finite-dimensional representation $W$ of $\Gamma$ over a
+finite field $k'$ of characteristic $\ell$, and stable local
+subspaces $B_v\subseteq W$, let $H^i_C(W,B)$ be the cohomology
+of
+\[
+ \operatorname{Cone}\left(C^\bullet(\Gamma,W)
+      \longrightarrow\bigoplus_{v\mid\ell}
+              C^\bullet(G_{F_v},W/B_v)\right)[-1].       \tag{AF1}
+\]
+Here all cochains are continuous.  In degree one this is the
+space of global cocycles equipped with local primitives modulo
+$B_v$, divided by simultaneous global coboundaries.  In degree
+zero it consists of global invariant vectors lying in every
+$B_v$.  Thus (AF1) specifies both the local choices and the
+normalization of the cohomology used below.
+
+\begin{theorem}[All finite-coefficient conditions]
+\label{thm:support-auxiliary-frame}
+The quotient and local maps just constructed have the following
+properties.
+\begin{enumerate}
+\item Every open subgroup of $\Gamma$ has only finitely many
+  continuous homomorphisms to $\mathbb F_\ell$.
+  There is $g\in\Gamma_0$ with
+  $\psi_\Gamma(g)=1$ and $\omega(g)=-1$.
+\item Both strict cohomology groups
+  $H^1_C(k(\psi_\Gamma^{-b}\delta),0)$, $b=1,2$, are
+  nonzero and have dimension at most $C_0$.
+  The strict group on $\Gamma_0$ for $\psi_\Gamma^{-1}$,
+  using both conjugate local maps above each $v\mid\ell$,
+  also has dimension at most $C_0$.  Moreover
+  \[
+                    \dim_k H^1(\Gamma,k)\leq1+C_0.       \tag{AF2}
+  \]
+\item For each $v\mid\ell$ there are $d_v$ inertia elements
+  $u_{v,1},\ldots,u_{v,d_v}$ with $\psi_\Gamma(u_{v,i})=1$,
+  all but one in $\ker\varepsilon_\Gamma$, such that every
+  continuous character of $G_{F_v}$ with finite abelian
+  $\ell$-primary image and trivial values at these elements
+  is unramified.  There is a positive integer $h$ such that
+  every continuous finite abelian $\ell$-primary character
+  of $\Gamma_0$ unramified at all the specified local maps
+  has exponent dividing $h$.
+\item For every $W,B$ as in (AF1), if
+  $\operatorname{Hom}_{\Gamma}(W,k'(\omega))=0$, then
+  $H^1_C(W,B)$ and $H^2_C(W,B)$ are finite-dimensional and
+  \[
+   \dim H^2_C(W,B)+\dim H^0_C(W,B)
+        +\sum_{v\mid\ell}d_v\dim B_v
+     \leq \dim H^1_C(W,B)+\sum_{\tau:F\hookrightarrow\mathbb R}
+                                      \dim W^{c_\tau}.   \tag{AF3}
+  \]
+\end{enumerate}
+Together with the exact local identities already constructed,
+these are all the original finite-coefficient arithmetic
+conditions.  The degree inequalities are
+$\sum_vd_v>3C_0+7$ and $d_v>5$ for every $v$.
+\end{theorem}
+
+\begin{proof}
+Put $K_0=G_F\cap\ker\eta\cap\ker\psi$.
+Its index in $G_F$ is prime to $\ell$.  The group $\Gamma$
+is the quotient of $G_F$ by the closed normal closure of
+$I_v\cap K_0$ for $v\nmid\ell$.  In particular it is a
+quotient of $G_{F,S'}$ for a finite set $S'$ containing the
+primes above $\ell$ and the ramification of the fixed field
+of $K_0$.  An open subgroup therefore comes from a number
+field with a fixed finite set of permitted ramification.
+Global class field theory, or the finite Kummer exact
+sequence after adjoining $\mu_\ell$, makes its group of
+$\mathbb F_\ell$-valued characters finite.  Passage to a
+quotient preserves this finiteness.
+
+For the indicated element, choose
+$s\in\ker\omega\cap\ker\psi$ with $\eta(s)=-1$ and
+multiply it by the original complex conjugation $\sigma$.
+The resulting element has $\eta=\psi=1$ and $\omega=-1$.
+If it does not fix $F_0$, multiply it by inertia at the
+new prime $q$ that acts nontrivially on $F_0$.  Such inertia
+has $\eta=\psi=\omega=1$, since these characters are
+unramified at $q$.  Now raise the element to
+$\ell^{h_b+m+1}$, where $[F_b:\mathbb Q]=\ell^{h_b}$.
+It fixes all factors of $F$ and retains $\eta=\psi=1$,
+$\omega=-1$.  Its image in $\Gamma_0$ proves the assertion.
+It also proves, for every integer $a$,
+$\omega\psi_\Gamma^a\ne1$ on $\Gamma_0$.  The original
+noncyclotomic and character-separation conditions follow
+with the same witnesses, including the powers $a=\pm1,\pm2$.
+
+We next give the strict dimension bounds.  For each of the
+two characters on $\Gamma$, the local invariant space at
+every $v\mid\ell$ is zero: locally $\delta=1$ and there
+is an element with $\psi_\Gamma^2\ne1$.  The same is true
+for $\psi_\Gamma^{-1}$ at both conjugate local maps on
+$\Gamma_0$.  Consequently the local-primitive terms in
+(AF1) contribute no kernel, and these relative groups
+identify with the respective strict Selmer groups in
+ordinary $H^1$.  Their restriction to $G_E$ is injective,
+since $[E:F]$ and $[E:L]$ are prime to $\ell$, and the
+characters become trivial there.  The resulting
+homomorphisms $G_E\to k$ are unramified everywhere: the
+quotient definition kills inertia away from $\ell$, and
+the strict local condition kills inertia at $\ell$.
+Global class field theory embeds each of these spaces in
+$\operatorname{Hom}(\operatorname{Cl}(E),k)$, whose
+dimension over $k$ is the $\ell$-rank of
+$\operatorname{Cl}(E)$.  This is at most $C_0$.
+Nonvanishing for the two groups on $\Gamma$ was proved
+in Corollary~\ref{cor:support-auxiliary-galois-quotient}.
+
+For (AF2), restrict again to $E$ and use Kummer theory.
+Let $\Delta=\operatorname{Gal}(E/F)$; its order is prime
+to $\ell$.  A character in $H^1(\Gamma,\mathbb F_\ell)$
+gives, after the Kummer identification, a class in the
+$\omega$-eigenspace of
+$H^1(G_{E,S},\mu_\ell)$, where $S$ contains just the primes
+over $\ell$ and the infinite places.  The exact sequence is
+\[
+ 0\longrightarrow\mathcal O_{E,S}^{\times}/
+                     \mathcal O_{E,S}^{\times\ell}
+ \longrightarrow H^1(G_{E,S},\mu_\ell)
+ \longrightarrow\operatorname{Cl}(\mathcal O_{E,S})[\ell]
+ \longrightarrow0.                                      \tag{AF4}
+\]
+Taking an eigenspace is exact, because $|\Delta|$ is a unit
+modulo $\ell$.  The divisor module on the primes above
+$\ell$ has no $\omega$-eigenspace: at every such prime its
+decomposition group contains an element with $\omega\ne1$.
+The $\omega$-part of the $S$-units therefore comes from
+ordinary units.  The field $E$ is CM.  For a unit $u$,
+$u/\overline u$ has absolute value one at every complex
+embedding and is a root of unity by Kronecker's theorem.
+Since $\ell$ is odd, the odd part of the units modulo
+$\ell$ is thus a quotient of the cyclic group of roots
+of unity and has dimension at most one.  The class-group
+term in (AF4) has dimension at most $C_0$, since
+$\operatorname{Cl}(\mathcal O_{E,S})$ is a quotient of
+$\operatorname{Cl}(E)$.  This proves (AF2), and scalar
+extension gives the displayed bound over $k$.
+
+The field $F_v$ does not contain $\mu_\ell$.  By local
+reciprocity its maximal abelian pro-$\ell$ inertia
+quotient is the group of principal units, a free
+$\mathbb Z_\ell$-module of rank $d_v$.  The cyclotomic
+character on it is the local norm, up to inversion.  Its
+image is an open subgroup of $1+\ell\mathbb Z_\ell$;
+the kernel is therefore a direct summand of rank $d_v-1$.
+Choose a basis adapted to this summand and lift it to
+actual inertia elements.  The residual character $\psi$
+has prime-to-$\ell$ order on inertia and kills these
+principal-unit elements.  The resulting lifts have all
+the required properties and detect every finite abelian
+$\ell$-primary character by local reciprocity.
+For the global exponent assertion, an $\ell$-primary
+character of $\Gamma_0$ kills inertia away from $\ell$:
+the image of such inertia is a quotient of the
+prime-to-$\ell$ character group cut out by $\psi$.
+If it also kills the specified inertia at $\ell$, its
+inflation to $G_L$ is everywhere unramified.  The exponent
+of the $\ell$-primary part of $\operatorname{Cl}(L)$ is a
+valid positive $h$ for every such character.
+
+For clarity, we give the quotient and dimension argument
+needed in (AF3).  This avoids applying an arithmetic
+Euler formula directly to an unspecified quotient.
+Write $G'=G_{F,S'}$ and let $J=\ker(G'\to\Gamma)$.
+For each additional prime $a\in S'\setminus S$, with
+$S=\{v:v\mid\ell\}$, let $J_a$ be the image of
+$I_a\cap K_0$ in $G'$.  These subgroups normally generate
+$J$.  Since $[G_F:K_0]$ is prime to $\ell$, the local
+quotient of the full local group by $I_a\cap K_0$ has
+finite prime-to-$\ell$ inertia and an unramified procyclic
+quotient.  Its $\ell$-cohomological dimension is at most
+one.  Pullback along $I_a\cap K_0\to J_a$ is injective
+on equivariant homomorphisms.  Local inflation--restriction
+and the Euler formula at $a\nmid\ell$ therefore give
+\[
+ \dim\operatorname{Hom}_{D_a}(J_a,W)
+             \leq\dim H^2(F_a,W).                        \tag{AF5}
+\]
+Indeed restriction from $H^1(F_a,W)$ to the equivariant
+homomorphisms on the full $I_a\cap K_0$ is surjective,
+its kernel has dimension $\dim H^0(F_a,W)$, and
+$h^1-h^0=h^2$ at a prime different from $\ell$.
+No injection of local inertia into $G'$ is assumed.
+
+Restriction to the normally generating subgroups is
+injective on $\operatorname{Hom}(J,W)^{G'}$; a homomorphism
+which vanishes there vanishes on their conjugates and,
+by continuity, on their closed normal closure.  Thus its
+dimension is at most the sum in (AF5).  The five-term
+inflation--restriction sequence yields
+\[
+ \dim\ker\bigl(H^2(\Gamma,W)\to H^2(G',W)\bigr)
+ \leq h^1(\Gamma,W)-h^1(G',W)
+             +\sum_{a\in S'\setminus S}h^2(F_a,W).       \tag{AF6}
+\]
+The kernel of restriction from $H^2(\Gamma,W)$ to the
+local groups at $S$ inflates into the kernel of all
+local restrictions from $H^2(G',W)$: at an additional
+prime its restriction factors through the local quotient
+of cohomological dimension at most one.  Combining (AF6)
+with the Poitou--Tate tail and the global Euler formula
+for $G'$ gives
+\[
+ \begin{aligned}
+ &\dim\ker\!\left(H^2(\Gamma,W)\to
+                   \bigoplus_{v\in S}H^2(F_v,W)\right)\\
+ &\quad+\sum_{v\in S}h^2(F_v,W)+h^0(\Gamma,W)
+       +[F:\mathbb Q]\dim W\\
+ &\leq h^1(\Gamma,W)+\sum_\tau\dim W^{c_\tau}
+       +\dim\operatorname{Hom}_{\Gamma}(W,k'(\omega)).
+ \end{aligned}                                           \tag{AF7}
+\]
+All terms are finite.  Finiteness of $H^2(\Gamma,W)$ also
+follows from (AF6), its finite target and the injection
+used before it.  The cancellation of the additional
+prime terms is exact; their ramification is not discarded.
+The classical local and global statements used here are
+precisely those in \cite{AuxTowerDuality}.
+
+Let $Q_v=W/B_v$, and put
+$Z=\ker(H^2(\Gamma,W)\to\bigoplus_vH^2(F_v,Q_v))$.
+Local $H^2(F_v,W)\to H^2(F_v,Q_v)$ is surjective, since
+local cohomological dimension is two.  The elementary
+dimension inequality for the resulting composition
+allows the first two terms in (AF7) to be replaced by
+$\dim Z+\sum_v h^2(F_v,Q_v)$.  The long exact sequence
+of (AF1) gives
+\[
+ \begin{split}
+  h_C^2+h_C^0+h^1(\Gamma,W)+\sum_v h^0(F_v,Q_v)
+   =h_C^1+h^0(\Gamma,W)+\sum_v h^1(F_v,Q_v)+\dim Z.
+ \end{split}                                             \tag{AF8}
+\]
+At $v\mid\ell$, the local Euler identity is
+$h^1(F_v,Q_v)-h^0(F_v,Q_v)=h^2(F_v,Q_v)+d_v\dim Q_v$.
+Insert this in (AF8), use (AF7) with its last term zero,
+and use $\sum_vd_v=[F:\mathbb Q]$.  The result is (AF3).
+Finally every $d_v\geq\ell^m>3C_0+7$, so the two
+degree inequalities follow, since there is at least
+one place above $\ell$.
+\end{proof}
+
+\begin{proposition}[The prescribed finite seed characters]
+\label{prop:support-auxiliary-seed}
+Suppose the coefficient ring is the original finite extension
+of $\mathbb Z_\ell$, with its fixed embedding in
+$\overline{\mathbb Q}_\ell$.  Before choosing $w$, one can
+choose a positive integer $N$ prime to $\ell$, a finite
+character $\chi'$ of order prime to $\ell$, and the lift
+$\eta'$ of $\eta$, so that choosing $Q=N$ in
+Theorem~\ref{thm:support-auxiliary-tower} also supplies
+the original seed conditions on these same fields.
+Explicitly, there is a character $\theta$ of exact order
+$\ell$ and conductor $w$, trivial on $G_L$, such that
+\[
+ \begin{gathered}
+ \chi'\ne\eta',\qquad
+ \chi'(\sigma)=(-1)^j,\qquad
+ \overline{\varepsilon^j\chi'}=\psi,\qquad
+ \ell\nmid\operatorname{disc}(K),                         \tag{AF9}\\
+ \chi'\text{ and }\eta'\text{ have conductor dividing }N,
+ \quad w\equiv1\pmod N,
+ \quad \exists s\in G_L:\ (\varepsilon^j\chi'(s))^2\ne1.
+ \end{gathered}
+\]
+The reduction in (AF9) is through the original coefficient
+embedding, and $K\subset L$ is the original quadratic field.
+\end{proposition}
+
+\begin{proof}
+Let $T:k^\times\to\overline{\mathbb Q}_\ell^\times$ be
+the Teichm\"uller lift compatible with the fixed residue
+embedding, and put
+$\chi'=T(\psi\omega^{-j})$ and $\eta'=\eta$ under the
+fixed inclusion of $\{\pm1\}$.
+Both finite characters are unramified at $\ell$: this
+uses exactly the assumed inertia identity
+$\psi|_{I_\ell}=\omega^j$ and the unramifiedness of $\eta$.
+Let $N$ be a common conductor, chosen prime to $\ell$.
+Their orders are prime to $\ell$; for $\chi'$ the order
+divides $|k|-1$.  The original element in
+$\ker\omega\cap\ker\psi$ on which $\eta=-1$ has
+$\chi'=1$, proving $\chi'\ne\eta'$.  Their parity and
+the reduction identity in (AF9) follow immediately from
+$\psi(\sigma)=1$ and $\omega(\sigma)=-1$.
+
+The prime $w$ now splits for both finite characters.
+Choose a faithful character of
+$\operatorname{Gal}(F_w/\mathbb Q)$ with values in the
+$\ell$th roots of unity.  Inflating it gives $\theta$,
+whose kernel is exactly $G_{F_w}$, whose order is $\ell$
+and whose conductor is $w$.  Since $F_w\subset F\subset L$,
+it is trivial on $G_L$.  The element $t_B$ already chosen
+belongs to $G_L$ and has $\psi(t_B)^2\ne1$.  Reduction
+therefore proves $(\varepsilon^j\chi'(t_B))^2\ne1$.
+Finally $\eta$ unramified at $\ell$ is equivalent to
+$\ell\nmid\operatorname{disc}(K)$.  This verifies all
+the assertions on the very same fields and local maps.
+\end{proof}
+
+The two results complete the auxiliary arithmetic data from the
+explicit hypotheses of Theorem~\ref{thm:support-auxiliary-tower}.
+They supply no quantitative bound for $C_0$ or the class-group
+exponent as those original inputs vary, and no uniform exponent
+for nilpotents in the integral deformation rings.  Those issues
+belong to global integral rigidity and the final Selmer bound.

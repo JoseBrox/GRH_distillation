@@ -210,7 +210,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The actual rank-two/rank-three support and full AbsMain point contracts are now proved, retaining every DVR, field-test and characteristic-three condition. Construct the actual GalLink/auxiliary frame and finite-endomorphism transfer for global two-sided rigidity, then prove the uniform integral Selmer product. Fixed-weight triangularity gives no uniform Artinian nilpotence or lattice-length bound.
+**Next concrete task.** The actual support, full DVR point tests, common-subgroup finite-end descent and original auxiliary arithmetic frame are proved, including both initial families, strict classes, cohomology inequality, local degrees and seed. Prove finiteness of the entire original integral weight-zero ring, then two-sided global rigidity and the moving-family weighted integral Selmer bound. No uniform integral torsion or nilpotence bound is inferred from qualitative finiteness.
 
 **Acceptance conditions:**
 
@@ -322,7 +322,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The exact Poincare Gram identity, original target projector and all-submodule minimum are supplied. A direct normalized quotient moment removes the uncontrolled compact-mass reciprocal and frame heights, retaining explicit field, weight, T and Haar dependence. Prove the final arithmetic-chain/scalar-kernel identity, intrinsic Haar/covolume control, near-return bounds and the required restricted positive traces. The explicit far integral still retains the cited FarBound hypotheses.
+**Next concrete task.** The exact period Gram identity, original target projector, arithmetic minimum, weighted seed norms, intrinsic covolume and Haar cancellation are supplied. The actual two-point far-return integral is exponentially small at the literal cutoff, uniformly with growing fields and ranks. Prove the original near-return bounds, actual finite-column sums, final arithmetic-chain identity and restricted positive traces.
 
 **Acceptance conditions:**
 
@@ -383,7 +383,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The actual models, positivity, birational systems, flat degree, all integral shifts, h0/hsh and the original thick-region Bergman lower bound are supplied. Prove the exact thin theta-pivot estimate and global integral cusp-frame upper bound, verify their numerical host wrappers, and finish the original point-height and section-remainder estimates.
+**Next concrete task.** The original models, positivity, short sections, exact shifts and thick-region lower bound are supplied. The global upper Bergman, rank and multiplication bounds and short Z-generators of the entire integral cusp lattice now meet the literal source budgets. Prove the quantitative thin theta lower bound, complete its remaining numerical wrappers, and finish the original point-height comparison and arithmetic section remainder.
 
 **Acceptance conditions:**
 
@@ -479,10 +479,10 @@ The [adopted classical Galois substitution](../../notes/classical-galois-substit
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W06/W08: apply the proved full type-prime jet bound and corrected chain divisibility to the original period maps; supply the other remaining local laws and estimate the actual normalized source deficit and target excess, retaining the same cuts, normalizers and heights. The original scalar-pair density assertion is now supplied; the remaining local orbital laws and archimedean normalized bounds are the next suppliers.
-1. W04: use the proved integral detection, simultaneous auxiliary choice and uniform ordinary local count. Establish the remaining global and distinguished-place bounds and construct the actual patched modules with their dimensions; propagate in the full characteristic-prime fibre.
-1. W10: construct the original arithmetic model, sheets, Hodge metric, lattice and height inputs. The supplied-model mixed-integral dictionary, vertical flatness and signed boundary inequality are now proved. Bound the arithmetic section remainder for those same objects.
-1. W02/W11: assemble one compatible signed arithmetic budget on cofinal fourth-power tables, with all accuracy parameters fixed before the windows grow.
+1. W04: use the constructed original auxiliary frame and uniform finite-end theorem to prove integral weight-zero finiteness without removing nilpotents or torsion; then establish two-sided global rigidity and the uniform weighted Selmer-order bound. Ordinary RH is the preferred first target.
+1. W06/W08: the actual two-point far-return bound is supplied. Attack the nongeneric near-return diagonal and generic orbital contribution, retain all finite-column and rank factors, and identify the same arithmetic chains with the final normalized period maps and trace errors.
+1. W10: use the supplied upper bound and entire integral cusp frame. Construct the original thin-region theta lower bound with its harmonic jets and exact scale, then establish the prescribed point-height comparison and numerical section remainder.
+1. W02/W11: assemble compatible signed arithmetic budgets at every required fourth-power sample, with all accuracy parameters fixed before the windows grow.
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
 

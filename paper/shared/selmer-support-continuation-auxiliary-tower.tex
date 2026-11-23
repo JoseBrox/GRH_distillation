@@ -1,0 +1,330 @@
+\subsection{The auxiliary abelian tower and its strict cohomology classes}
+\label{sec:support-auxiliary-tower}
+
+The auxiliary field must meet three requirements at once: its completions
+at the distinguished prime must be large, the relevant ideal class ranks
+must remain bounded as its cyclotomic layer grows, and two prescribed
+strict cohomology classes must survive restriction.  The following
+construction supplies these requirements for the same fields and also
+constructs the Galois quotient used in
+Theorem~\ref{thm:support-finite-end}.  Its bound is uniform in the
+cyclotomic layer, with the initial arithmetic data fixed.
+
+Write $G_{\mathbb Q}=\operatorname{Gal}(\overline{\mathbb Q}/\mathbb Q)$.
+For a place $v$ of $\overline{\mathbb Q}$ over a rational prime, let
+$D_v$ and $I_v$ denote its decomposition and inertia subgroups.  Let
+$\ell$ be an odd prime, $k$ a finite field of characteristic $\ell$,
+$\varepsilon:G_{\mathbb Q}\to\mathbb Z_\ell^\times$ the cyclotomic
+character, and $\omega$ its reduction to $k^\times$.  The original
+character $\Psi$ takes values in the units of a local coefficient
+ring with residue field $k$; write $\psi=\overline\Psi$.
+
+\begin{theorem}[The actual auxiliary tower]
+\label{thm:support-auxiliary-tower}
+Let $\eta$ be the character of an imaginary quadratic field
+$K=\mathbb Q(\sqrt{-D})$, where $D>0$.  Fix a positive integer
+$M$ divisible by $2\ell$, containing every prime factor of $D$.
+Assume the following conditions.
+\begin{enumerate}
+\item The finite characters $\eta$ and $\psi$ factor through
+  $\operatorname{Gal}(\mathbb Q(\mu_{M^a})/\mathbb Q)$ for some
+  $a\geq1$.  The character $\eta$ is unramified at $\ell$, and
+  $\psi$ is even.  For some $j\geq0$, its restriction to inertia
+  at $\ell$ is $\omega^j$.
+\item The inclusion $\ker\omega\cap\ker\psi\subseteq\ker\eta$
+  fails.  At the fixed place $B$ above $\ell$ there is
+  $t\in D_B$ with $\eta(t)=1$ and $\psi(t)^2\ne1$.
+\item There is a fixed abelian extension $F_b/\mathbb Q$ of
+  $\ell$-power degree, unramified at $\ell$.  If $p\ne\ell$,
+  $v\mid p$, and $s\in I_v\cap G_{F_b}$ has $\psi(s)=1$,
+  then $\Psi(s)=1$.
+\end{enumerate}
+For every prescribed positive integer $Q$, one can choose primes
+$q,w$, a real quadratic field $F_0$, and the degree-$\ell$
+subfield $F_w$ of $\mathbb Q(\mu_w)$, independently of $m$, such
+that, with $\mathbb Q_m$ the degree-$\ell^m$ subfield of
+$\mathbb Q(\mu_{\ell^{m+1}})$,
+\[
+ F_m^+=F_0F_wF_b\mathbb Q_m,\qquad
+ L_m=F_m^+K,\qquad U_m=G_{F_m^+},                         \tag{AT1}
+\]
+the following assertions hold for every $m\geq0$.
+\begin{enumerate}
+\item $F_m^+$ is totally real and abelian over $\mathbb Q$;
+  $L_m$ is abelian and CM, with maximal real subfield $F_m^+$.
+  Its quadratic extension $L_m/F_m^+$ is unramified at every
+  finite place and split at every place above $M$.
+\item At every $v\mid\ell$,
+  $[F_{m,v}^+:\mathbb Q_\ell]\geq\ell^m$,
+  $\omega(I_v\cap U_m)\ne\{1\}$, and there is
+  $t_v\in D_v\cap U_m$ with $\psi(t_v)^2\ne1$.
+\item If $E_m$ is the fixed field of
+  $U_m\cap\ker\eta\cap\ker\psi\cap\ker\omega$, then
+  there is an integer $C_0$, independent of $m$, such that
+  $\dim_{\mathbb F_\ell}\operatorname{Cl}(E_m)/
+       \ell\operatorname{Cl}(E_m)\leq C_0$.
+\item For each $b\in\{1,2\}$, put $\kappa_b=\psi^{-b}\eta$.
+  There is a continuous cocycle $z_b:G_{\mathbb Q}\to k(\kappa_b)$
+  whose restriction to $U_m$ is not a coboundary, whose
+  restriction to every $D_v$ with $v\mid\ell$ is a coboundary,
+  and which satisfies
+  \[
+   z_b(s)=0\quad\text{if }p\ne\ell,\ v\mid p,
+   \ s\in I_v\cap U_m,\ \eta(s)=\psi(s)=1.               \tag{AT2}
+  \]
+  In fact the same cocycle $z_b$ can be chosen for all $m$.
+\end{enumerate}
+The prime $w$ is prime to $M$, satisfies $w\equiv1\pmod{\ell Q}$,
+and splits completely in the fields cut out by $\eta$, $\psi$
+and $\omega$.  In particular $m$ may be chosen, after $C_0$,
+so that $\ell^m>3C_0+7$.
+\end{theorem}
+
+\begin{proof}
+Choose a prime $q>4D+M$ with $q\equiv-1\pmod{4M}$, and set
+$F_0=\mathbb Q(\sqrt{Dq})$.  Dirichlet's theorem applies because
+$-1$ is coprime to $4M$.  Since $q\nmid D$, this is a real
+quadratic field.  Put $K'=\mathbb Q(\sqrt{-q})$.
+For an odd $p\mid M$, the congruence $-q\equiv1\pmod p$
+and Hensel's lemma show that $K'$ is split at $p$.
+For $p=2$, the congruence is modulo $8$, since $2\mid M$;
+an odd $2$-adic unit is a square exactly when it is $1$ modulo
+$8$.  Thus $K'$ is split at every prime dividing $M$.
+The character of $F_0$ is the product of the characters of
+$K$ and $K'$.  It therefore restricts to $\eta$ on every
+$D_v$ above $M$.  It is ramified at $q$, where $\eta$ is
+unramified.  In particular the character of $F_0$ cannot be
+a character unramified outside $M$.
+
+Choose $w>q$ prime with
+$w\equiv1\pmod{\ell Q M^a}$.  This again uses only Dirichlet's
+theorem.  Its Frobenius acts trivially on all the indicated
+roots of unity, so the splitting assertions hold.  The cyclic
+group $(\mathbb Z/w\mathbb Z)^\times$ has a unique quotient
+of order $\ell$, giving $F_w$.  It is totally real, unramified
+away from $w$, and totally ramified of degree $\ell$ at $w$.
+The fields $F_b$ and $\mathbb Q_m$ are also totally real,
+because they are Galois of odd degree over $\mathbb Q$.
+This proves the asserted properties of $F_m^+$.
+
+Complex conjugation fixes $F_m^+$ and acts nontrivially on
+$K$.  Hence $[L_m:F_m^+]=2$ and $F_m^+$ is its maximal real
+subfield.  At a prime dividing $M$, the equality of the two
+quadratic local characters says that $K$ is contained in the
+local field supplied by $F_0$, unless both are already split.
+Thus $L_m/F_m^+$ is split there.  Away from $M$, $K/\mathbb Q$
+is unramified; unramifiedness is preserved by local base change.
+This proves the first assertion without any restriction on
+ramification in the other factors of (AT1).
+
+The completion of $\mathbb Q_m$ at $\ell$ is totally ramified
+of degree $\ell^m$, which gives the local degree lower bound.
+The fields $F_0,F_w,F_b$ are unramified at $\ell$.  On inertia
+at $\ell$, the mod-$\ell^{m+1}$ cyclotomic character is
+surjective.  Choose an element with cyclotomic value $-1$.
+It fixes the three unramified factors and fixes $\mathbb Q_m$,
+because $(-1)^{\ell-1}=1$.  Its value under $\omega$ is $-1$,
+which is not $1$.  This proves the second cyclotomic assertion;
+in particular none of these completions contains $\mu_\ell$.
+
+Conjugate the given $t\in D_B$ to a place $v\mid\ell$.
+Characters are conjugation invariant, so it still satisfies
+$\eta(t)=1$ and $\psi(t)^2\ne1$.  It fixes $F_0$ by the
+local equality of quadratic characters.  If $[F_b:\mathbb Q]
+=\ell^h$, then $t^{\ell^{h+m+1}}$ fixes each of
+$F_w,F_b,\mathbb Q_m$ and hence belongs to $D_v\cap U_m$.
+The order of $\psi(t)$ is prime to $\ell$, so taking this
+power does not make its square equal to $1$.
+
+For the class-rank bound, put
+\[
+ E=F_0F_wF_bK K_\psi\mathbb Q(\mu_\ell),
+ \qquad K_\psi=\overline{\mathbb Q}^{\ker\psi}.
+\]
+This is one fixed abelian number field.  The definition of
+$\mathbb Q_m$ gives the exact equality
+\[
+ E_m=E(\mu_{\ell^{m+1}}).                                \tag{AT3}
+\]
+Indeed, on $(\mathbb Z/\ell^{m+1}\mathbb Z)^\times$, the
+kernel of the $(\ell-1)$st power intersects the kernel of
+reduction modulo $\ell$ trivially.  Therefore adjoining
+$\mathbb Q_m$ and $\mu_\ell$ is exactly adjoining
+$\mu_{\ell^{m+1}}$.
+
+Ferrero--Washington says that the unramified Iwasawa module
+of the cyclotomic $\mathbb Z_\ell$-extension of this abelian
+$E$ has $\mu=0$\cite{AuxTowerFW}.  The structure theorem
+then makes it finitely generated over $\mathbb Z_\ell$:
+the elementary factors are quotients by distinguished
+polynomials, with finite kernels and cokernels, and there
+are no factors $\mathbb Z_\ell[[T]]/(\ell^r)$.
+After a fixed initial level the primes above $\ell$ are
+totally ramified in the cyclotomic tower.  Norm maps on the
+$\ell$-primary ideal class groups are then surjective.
+To see the last assertion, the cokernel of the norm for a
+cyclic degree-$\ell$ step is the Galois group of the
+intersection of the step with the Hilbert class field of
+the lower field.  A nontrivial degree-$\ell$ step ramified
+at $\ell$ has trivial such intersection.  The inverse limit
+therefore surjects onto every sufficiently late class group.
+A fixed number of $\mathbb Z_\ell$-generators bounds all their
+$\ell$-ranks.  Enlarge this number to include the finitely
+many earlier fields.  This proves the assertion with $C_0$.
+The tower structure and the norm argument are also described
+in \cite{AuxTowerIwasawa}, Sections 2.4 and 3.2.
+
+It remains to construct the two classes.  Fix $b\in\{1,2\}$
+and write $\kappa=\kappa_b$.  It is odd, because
+\[
+ \psi(\sigma)=1,\qquad \eta(\sigma)=-1,
+ \qquad \kappa(\sigma)=-1                               \tag{AT4}
+\]
+for complex conjugation $\sigma$.  This calculation uses
+the parity of the actual character $\psi$, including its
+cyclotomic factor.  By hypothesis there is
+$s\in\ker\omega\cap\ker\psi$ with $\eta(s)=-1$; hence
+$\kappa(s)=-1\ne\omega(s)$, so $\kappa\ne\omega$.
+At $\ell$, the element with $\eta(t)=1$ and
+$\psi(t)^2\ne1$ makes $\kappa|_{D_B}$ nontrivial for both
+$b=1$ and $b=2$.  The same holds at every conjugate place.
+
+Let $S$ consist of $\ell,w$ and the primes at which $\kappa$
+is ramified.  On $H^1(\mathbb Q_p,k(\kappa))$ prescribe the
+zero condition for $p\in S\setminus\{w\}$, the full
+condition at $w$, and the unramified condition outside $S$.
+At infinity use the zero condition.  Denote this Selmer
+group by $H^1_{\mathcal L}$.  Finite Poitou--Tate duality
+and the local and global Euler formulas give
+\[
+ \dim_k H^1_{\mathcal L}(\mathbb Q,k(\kappa))
+ -\dim_k H^1_{\mathcal L^\perp}
+          (\mathbb Q,k(\kappa^{-1}\omega))
+ =1.                                                       \tag{AT5}
+\]
+Here every term can be checked separately.  Both global
+$H^0$ terms vanish, since $\kappa\ne1,\omega$.  At each
+finite prime in $S\setminus\{w\}$ the local $H^0$ term
+vanishes: at $\ell$ this was just proved, and at the other
+primes the character is ramified.  At $w$ both $\kappa$ and
+$\omega$ are trivial; local duality and the Euler formula
+at $w\ne\ell$ give $\dim H^1=2$ and $\dim H^0=1$.
+Thus its contribution is $2-1=1$.  The real-place term is
+zero by (AT4).  These are the full terms of the
+Greenberg--Wiles formula derived from the duality statements
+in \cite{AuxTowerDuality}; no sign or local term is omitted.
+Since the second dimension in (AT5) is nonnegative, choose
+a nonzero class and a continuous cocycle representative $z_b$.
+
+The restriction of this class to every $U_m$ is nonzero.
+Indeed $U_m$ is normal, and the element $t_v$ constructed
+above has $\kappa(t_v)\ne1$.  Hence $k(\kappa)^{U_m}=0$.
+Inflation--restriction gives an injection
+\[
+ H^1(G_{\mathbb Q},k(\kappa))\longrightarrow
+                       H^1(U_m,k(\kappa)).               \tag{AT6}
+\]
+This does not require the index of $U_m$ to be prime to
+$\ell$.  The local zero conditions give the required
+coboundaries at every place above $\ell$.
+
+For (AT2), first let $p\ne w,\ell$.  If $\kappa$ is
+ramified at $p$, the local class is zero, so on inertia
+$z_b(s)=(\kappa(s)-1)c$ for some $c$.  If it is unramified,
+the unramified local condition gives zero on inertia.
+In either case $\eta(s)=\psi(s)=1$ implies $z_b(s)=0$.
+At $w$, the local character $\kappa$ is trivial, so $z_b$
+is a homomorphism on $D_w$.  Its restriction to inertia
+kills wild inertia, which is pro-$w$, and factors through
+the tame pro-$\ell$ quotient $\mathbb Z_\ell$.  Its target
+has exponent $\ell$, so it kills $\ell\mathbb Z_\ell$.
+The extension $F_w/\mathbb Q$ has inertia degree $\ell$ at
+$w$, and $I_w\cap G_{F_w}$ maps exactly to this subgroup.
+Since $U_m\subseteq G_{F_w}$, (AT2) follows also at $w$.
+The choice of $z_b$ preceded $m$, as asserted.
+\end{proof}
+
+\begin{corollary}[The prescribed Galois quotient and local maps]
+\label{cor:support-auxiliary-galois-quotient}
+For every field in Theorem~\ref{thm:support-auxiliary-tower},
+let $N_m$ be the closed normal subgroup of $U_m$ generated
+by all elements
+\[
+ s\in I_v\cap U_m,\qquad v\nmid\ell,\qquad
+                   \eta(s)=\psi(s)=1,
+ \qquad \Gamma_m=U_m/N_m.                                \tag{AT7}
+\]
+Then the quotient map $p:U_m\to\Gamma_m$ and its actual
+decomposition groups give precisely the Galois quotient,
+markings, local maps and local degrees required in
+Theorem~\ref{thm:support-finite-end}.  The two classes above
+descend to nonzero strict classes on $\Gamma_m$.
+\end{corollary}
+
+\begin{proof}
+The characters $\eta,\psi,\varepsilon$ kill $N_m$.
+For $\eta$ and $\psi$ this follows from the generators; for
+$\varepsilon$ it follows from the absence of cyclotomic
+ramification away from $\ell$.  Their descended characters
+have exactly their original values after composition with
+$p$.  This is a continuous surjection of profinite groups,
+with the literal kernel (AT7).
+
+Take one place above each prime of $F_m^+$ over $\ell$.
+Each may be written $\gamma B$ with $\eta(\gamma)=1$:
+start with any such representative, and if necessary
+multiply $\gamma$ on the left by complex conjugation in
+$U_m$.  This changes neither its $U_m$-orbit nor the
+prime of $F_m^+$, and reverses the sign of $\eta(\gamma)$.
+Let $G_v=U_m\cap D_{\gamma B}$, give it its actual profinite
+topology, take the local inclusion $j_v:G_v\hookrightarrow U_m$,
+and define its local quotient map as $p\circ j_v$.  Its
+inertia group is $U_m\cap I_{\gamma B}$.  Splitting at
+$\ell$ puts its image in $\ker\eta$.  Its prescribed
+integer degree is exactly
+\[
+ [D_{\gamma B}:D_{\gamma B}\cap U_m]
+                         =[F_{m,v}^+:\mathbb Q_\ell].    \tag{AT8}
+\]
+The chosen representatives give the required exhaustive,
+unique list of $U_m$-orbits of places.  Each local inclusion
+is continuous and injective, with the specified image.
+
+Take $c=p(\sigma)$, where $\sigma$ is the original complex
+conjugation, and $g_0=p(t_B)$ with the local $t_B$ in the
+proof of the theorem.  Then $c^2=1$, $\eta(c)=-1$,
+$\psi(c)=1$, $\eta(g_0)=1$ and $\psi(g_0)^2\ne1$.
+For every real embedding of $F_m^+$ take its actual
+complex conjugation; their images give the remaining
+archimedean markings.  The number of these embeddings is
+$[F_m^+:\mathbb Q]=\sum_{v\mid\ell}[F_{m,v}^+:\mathbb Q_\ell]$.
+The required original condition $\Psi=1$ on the indicated
+inertia elements follows from $U_m\subseteq G_{F_b}$ and
+the last hypothesis of the theorem.  All other splitting,
+unramifiedness and local cyclotomic assertions were proved
+for these very fields in the theorem.
+
+Finally $z_b$ vanishes on the generators of $N_m$ by (AT2).
+As $\kappa_b=1$ there, the cocycle identity shows that the zero locus
+on $\ker\kappa_b$ is a normal subgroup of $U_m$.  It is
+closed because $k$ is finite and $z_b$ is continuous.
+Thus $z_b|_{U_m}$ descends through $p$.  A descended
+coboundary would inflate to a coboundary on $U_m$,
+contrary to (AT6), and its local classes are zero by
+the original local conditions.  Choosing local primitives
+gives nonzero classes in the prescribed relative
+cohomology groups as well: a relative coboundary would
+in particular make the global class a coboundary.
+\end{proof}
+
+The class-rank constant $C_0$ may depend on $\ell$, $q$, $w$,
+$F_b$, $\eta$ and $\psi$.  No uniform bound over changing
+initial data, and no bound for the orders of growing Selmer
+groups, follows from this construction.  The construction
+discharges the actual auxiliary field, strict-class and
+Galois-quotient requirements.
+Theorem~\ref{thm:support-auxiliary-frame} and
+Proposition~\ref{prop:support-auxiliary-seed} supply the
+finite-coefficient comparisons and seed conditions.
+Global integral rigidity and the weighted Selmer estimate
+still require their separate arguments.

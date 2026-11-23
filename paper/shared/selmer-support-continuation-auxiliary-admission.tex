@@ -1,0 +1,164 @@
+\subsection{The original character data satisfy the construction hypotheses}
+\label{sec:support-auxiliary-admission}
+
+We check the two families of characters used in the arithmetic
+argument.  In both, the character entering the deformation problem
+is the compensated character $\Psi=\varepsilon^e\chi$, where
+$\chi$ is the given finite Dirichlet character.  Its parity, its
+prime-power components and its residual character must all be kept.
+
+\begin{lemma}[A character of large $2$-power conductor]
+\label{lem:support-dyadic-character}
+Let $\alpha$ be a character of $\mathbb Z_2^\times$ of primitive
+conductor $2^c$, with $c\geq4$.  If $p>1$ is odd and $o\geq1$
+satisfies $8op^2<2^c$, then $\alpha(p)^{4o}\ne1$.
+There is also $u\equiv-1\pmod4$ with $\alpha(u)=1$.
+\end{lemma}
+
+\begin{proof}
+On $1+4\mathbb Z_2$, the character has kernel exactly
+$1+2^c\mathbb Z_2$.  Indeed $1+4\mathbb Z_2$ is procyclic
+with generator $5$, and a smaller order for $\alpha(5)$
+would lower its conductor.  Write
+$s=v_2(p^2-1)$ and $r=v_2(o)$.  Repeatedly factoring
+$x^2-1$ gives
+\[
+ v_2(p^{4o}-1)=s+r+1,
+ \qquad 2^{s+r+1}\leq2o(p^2-1)<8op^2<2^c.
+\]
+Thus $p^{4o}$ is outside the kernel on $1+4\mathbb Z_2$.
+For the last assertion, $\alpha(-1)\in\{\pm1\}$ lies in
+the image of $1+4\mathbb Z_2$, whose image is cyclic of
+order $2^{c-2}\geq4$.  Choose $v\in1+4\mathbb Z_2$ with
+$\alpha(v)=\alpha(-1)^{-1}$ and take $u=-v$.
+\end{proof}
+
+\begin{proposition}[The family with quadratic field $\mathbb Q(i)$]
+\label{prop:support-host-admission}
+Let $\ell$ be odd and let $\chi$ be the original finite character
+of modulus $N$, with $\Psi=\varepsilon^e\chi$ even.  Write
+$\chi^{(0)}$ and $\chi^{(\ell)}$ for its parts of order
+prime to $\ell$ and of $\ell$-power order, respectively.
+Let $2^c$ be the conductor of its component at $2$.
+Assume $c\geq4$ and, for the given $o\geq1$,
+\[
+  \operatorname{ord}(\chi^{(0)}_p)\mid2o\quad
+       \text{for every odd prime }p,
+  \qquad 8o\ell^2<2^c.                                   \tag{AA1}
+\]
+Then the hypotheses of Theorem~\ref{thm:support-auxiliary-tower}
+hold for the original $\eta=\eta_4$, $M=\ell N$, and the
+field $F_b$ cut out by the product of the components of
+$\chi^{(\ell)}$ away from $\ell$.
+\end{proposition}
+
+\begin{proof}
+The field $F_b$ is abelian of $\ell$-power degree and
+unramified at $\ell$ by its definition.  At an inertia
+group above $p\ne\ell$, the cyclotomic character and the
+$\ell$-component of the finite character are trivial.
+On $G_{F_b}$ the remaining $\ell$-power part is trivial
+as well.  Hence $\Psi$ on this inertia is a root of unity
+of order prime to $\ell$.  Such a root whose residue is
+$1$ equals $1$; reduction is injective on roots of unity
+of order prime to $\ell$.  This proves the precise
+condition on $\Psi$ away from $\ell$.
+
+The characters $\eta_4$ and $\overline\Psi$ factor through
+roots of unity of order dividing a power of $M$.
+The field $\mathbb Q(i)$ is unramified at odd $\ell$,
+and $\overline\Psi$ is even.  Its inertia character at
+$\ell$ is a power of $\omega$: wild inertia has pro-$\ell$
+image and hence trivial image in $k^\times$, while the
+tame abelian quotient of inertia maps through
+$\mathbb F_\ell^\times$.
+
+Use the last assertion of Lemma~\ref{lem:support-dyadic-character}
+for the component $\chi_2$, whose order is prime to $\ell$.
+Local cyclotomic surjectivity at $2$ gives inertia with
+this value $u$ on the $2$-power roots of unity.  Its
+values on all odd-primary character components and on
+$\omega$ are $1$.  Hence $\overline\Psi=\omega=1$ there
+while $\eta_4=-1$.  This proves the required failure of
+the kernel inclusion.
+
+Finally choose a Frobenius lift $s\in D_B$ at $\ell$
+which has $\omega(s)=1$.  Such a lift exists because
+$\mathbb Q_\ell(\mu_\ell)$ is totally ramified, and its
+intersection with the maximal unramified extension is
+trivial.  On roots of unity of order prime to $\ell$,
+$s$ acts by the $\ell$th power.  Its value on the
+prime-to-$\ell$ part of the local character at $\ell$
+is $1$, since that character factors through $\omega$.
+By (AA1), raising the other odd-prime components of
+$\chi^{(0)}(s)$ to $4o$ kills them all.  Consequently
+\[
+     \chi^{(0)}(s)^{4o}=\chi_2(\ell)^{4o}\ne1.
+\]
+Reduction preserves this inequality, and kills the
+$\ell$-power part of $\chi$.  Thus
+$\overline\Psi(s)^4\ne1$.  For $t=s^2$ we have
+$\eta_4(t)=1$ and $\overline\Psi(t)^2\ne1$, exactly the
+local condition needed in the tower construction.
+\end{proof}
+
+\begin{proposition}[The original quadratic character data]
+\label{prop:support-good-admission}
+Let $K$ be the original imaginary quadratic field, unramified
+at $\ell$, and let $\eta$ be its character.  In the second
+family, the original finite character $\chi$ has order
+prime to $\ell$, its local component at $\ell$ has square
+$1$, and the compensated character $\Psi=\varepsilon^e\chi$
+is even.  Retain the original conditions
+\[
+ \ell-1\nmid2e,
+ \qquad \ker\omega\cap\ker\chi\nsubseteq\ker\eta.      \tag{AA2}
+\]
+Then the hypotheses of Theorem~\ref{thm:support-auxiliary-tower}
+hold with the original $K$, $M=\ell N|\operatorname{disc}(K)|$
+and $F_b=\mathbb Q$.
+\end{proposition}
+
+\begin{proof}
+Away from $\ell$, $\Psi$ is a root of unity of order
+prime to $\ell$, so the required implication from
+residual triviality to triviality follows by injectivity
+of reduction.  The cyclotomic and conductor assertions
+are immediate from the given moduli.  In particular the
+negative quadratic discriminant supplies $D>0$ with
+$K=\mathbb Q(\sqrt{-D})$ and all its prime factors in $M$.
+The original modulus is even, so $2\ell\mid M$.
+
+The local character of $\chi$ at $\ell$ is a power
+$\omega^a$ after reduction.  Its square being trivial
+means $\ell-1\mid2a$.  Thus
+$\overline\Psi|_{I_\ell}=\omega^{e+a}$ has nontrivial
+square by (AA2).  Choose inertia where its square is
+nontrivial; $\eta=1$ on that inertia because $K$ is
+unramified at $\ell$.  This gives the required local
+element.  Reduction is injective on the values of
+$\chi$, so on $\ker\omega$ the kernels of $\chi$ and
+$\overline\Psi$ agree.  The second condition in (AA2)
+is therefore precisely the required kernel condition.
+The parity condition is the parity of $\Psi$ itself.
+All hypotheses have now been checked on the original
+fields and characters.
+\end{proof}
+
+In the first family, the original conductor condition applies
+at every prime in its prescribed set, which includes $\ell$;
+only that instance was used in (AA1).  In the second family,
+the character away from $\ell$ used in the original kernel
+condition differs from $\chi$ by a power of $\omega$, so
+their kernels agree after intersection with $\ker\omega$.
+Consequently neither proposition strengthens the original
+input hypotheses\cite{AuxTowerSource}.  Together with
+Theorems~\ref{thm:support-auxiliary-tower} and
+\ref{thm:support-auxiliary-frame} and
+Proposition~\ref{prop:support-auxiliary-seed}, they supply
+the complete original auxiliary field, Galois quotient,
+cohomology, degree and seed conditions in both families.
+The fixed-index subgroup in Theorem~\ref{thm:support-finite-end}
+can therefore be chosen from these constructed arithmetic
+data; its degree is still allowed to grow with the original
+parameters.

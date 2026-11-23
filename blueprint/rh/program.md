@@ -365,81 +365,29 @@ the relevant character phase depends on their difference and is unchanged.
 
 ## Next mathematical work
 
-1. Construct the actual integral theta kernels and verify their local laws,
-   original value lattices, stabilizer units and twisted-source ties.
-   The [full type-prime mixed-jet bound](../../notes/theta-integral-frontier-type-prime-jets.md)
-   is now proved with the original denominator and local constant one.
-   The [exact chain identity](../../notes/level-chain-integrality.md)
-   supplies the auxiliary-prime iteration, retaining the source factor
-   and every intermediate rank. Keep all other period denominators and
-   normalized global identities. Bound the sharp scalar return cost
-   (or a smaller signed source deficit) and the scalar
-   target excess at a prescribed
-   \(c>0\), with the same restrictions and arithmetic metrics.
-   A strict source deficit supplies aggregate nonvanishing; any consumer
-   requiring individual nonvanishing still needs that stronger statement.
-   Seed mass before folding supplies neither trace estimate. The
-   [scalar-pair lattice theorem](../../notes/global-norm-frontier-scalar-density.md)
-   now supplies equality of the original local densities, and the
-   [signed finite-place bound](../../notes/global-norm-frontier-primitive-density.md)
-   refines their existing count. Remaining local orbital laws and the
-   quantitative archimedean Bessel estimate are separate suppliers.
-2. Bound the finite weighted Selmer product on the actual twisted primes for
-   the growing auxiliary fields. Construct the marked models and verify
-   the weighted chart and finite degree-zero quotient. Apply the proved
-   point and tangent comparisons; identify the original local ordinary equations, local-ring factorization and finite inertia conditions for the crystalline comparison
-   to use nonpositive base-point rigidity at odd primes. Establish
-   the two-sided rigidity and trace conditions. Use diagonal separation
-   with its actual local and point-lifting hypotheses, the compatible
-   conormal pairing and the full abstract length theorem. Retain every
-   surviving character case and exceptional prime.
-   The [paired determinant theorem](../../notes/selmer-integral-frontier-even-detection.md)
-   is proved over the original fraction field, and the
-   [complete-equation argument](../../notes/selmer-integral-frontier-dual-detection.md)
-   controls all modular solutions. The [integral assembly](../../notes/selmer-integral-frontier-integral-detection.md),
-   [finite selection](../../notes/selmer-integral-frontier-finite-selection.md)
-   and [coefficient-extension theorem](../../notes/selmer-integral-frontier-coefficient-extension.md)
-   now prove the full simultaneous auxiliary choice under the original point,
-   group and spectral hypotheses. The [ordinary local count](../../notes/selmer-integral-frontier-ordinary-local-count.md)
-   now has one explicit constant for every truncation and auxiliary level
-   at fixed data. Finish the remaining global and distinguished-place bounds
-   and the actual patched automorphic modules and dimensions.
-3. Construct the actual global arithmetic family, its original cubical
-   biextension and geometric fibre comparisons, with the moduli separation
-   and prescribed pointwise pure-period presentations. The exact CM point,
-   original line and component then descend; properness and semiabelian
-   extension give its integral map and exact tangent lattice.
-   The ramified determinant line is constructed
-   from those data. Apply the supplied boundary, tangent-slope,
-   determinant-torsion and CM-period arguments. Identify the geometric
-   sheets, Hodge metric and lattice; the
-   [curvature theorem](../../notes/geometry-arithmetic-frontier-curvature-haar-mean.md)
-   then gives the original arithmetic Haar mean. Both boundary energy
-   limits and the [exact arithmetic metric variation](../../notes/geometry-arithmetic-frontier-exact-metric-variation.md)
-   are proved, including metric locality and the rational-twist polynomial.
-   The [compact-model theorem](../../notes/geometry-arithmetic-frontier-compact-model-stokes.md)
-   identifies their original mixed integrals and proves zero vertical
-   curvature everywhere. Energy concavity and the same rational-twist
-   polynomial give the signed arithmetic boundary inequality. Construct
-   its actual model and height inputs and bound the arithmetic section
-   remainder.
-   The full count is integrable by the
-   [arithmetic first-moment theorem](../../notes/geometry-arithmetic-frontier-isotropic-integrability.md).
-   Apply the [cusp theorem](../../notes/cusp-counting-mean.md) with these
-   original measure and lattice identities. Identify the actual nef
-   and birational section data and apply the
-   [finite jet rank bound](../../notes/finite-section-jet-bound.md),
-   retaining its excess-rank denominator. Use the
-   [selected degree comparison](../../notes/selected-eigenspace-degree.md),
-   [base-test supplier](../../notes/base-test-height-supplier.md),
-   [tower reduction](../../notes/tower-intersection-reduction.md) and
-   [mean-volume supplier](../../notes/mean-volume-supplier.md) in the same
-   prescribed metrics.
-
-Assemble signed fourth-power tables from these same constructions and
-bound their weighted positive parts on arbitrarily late intervals.
+1. **Integral Selmer estimate.** Use the [constructed auxiliary arithmetic
+   frame](../../notes/selmer-support-continuation-auxiliary-tower.md) and
+   common-subgroup finite-end theorem to prove finiteness of the entire
+   original weight-zero ring, preserving nilpotents and integral torsion.
+   Establish two-sided global rigidity and the uniform weighted product
+   of Selmer orders on the growing fields. The four surviving characters
+   do not bound the auxiliary degrees or conormal lengths.
+2. **The same global period maps.** The [actual two-point far-return
+   bound](../../notes/global-gram-continuation-two-point-far.md) is now
+   exponentially small at the original cutoff. Prove the nongeneric
+   near-return diagonal and generic orbital estimates, sum the actual
+   finite columns, and identify the integral theta chain with the final
+   restricted, normalized maps. Bound their prescribed source-deficit
+   and target-excess traces with all phase and rank factors retained.
+3. **Sections and heights.** The [global upper bound and entire integral
+   cusp frame](../../notes/geometry-bergman-continuation-upper.md) are
+   supplied. Prove the original thin-region theta lower bound, point-height
+   comparison and arithmetic section remainder. Use the constructed
+   models, metrics and short sections throughout.
+4. **Final comparison.** Assemble compatible signed fourth-power tables
+   and bound their weighted positive parts on arbitrarily late intervals.
+   Every accuracy parameter must be fixed before its windows grow.
 
 The [GRH program](../grh/program.md) retains the general Dirichlet
-target and every surviving compatibility condition. The RH case is a
-substantially smaller first target, but its central arithmetic estimate is
-still unproved in this reconstruction.
+character and its original weights. Both routes still require the stated
+arithmetic estimates; neither proof is complete.

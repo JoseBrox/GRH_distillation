@@ -1,0 +1,166 @@
+\subsection{Generators of the original integral cusp lattice}
+\label{shared-actual-integral-cusp-frame}
+
+The short theta sections span over the coefficient field.  The
+arithmetic section argument also uses a finite family generating the
+whole integral lattice~\cite{bergman-integral-frame-source}.
+Its index in the lattice spanned by the
+known sections can be arbitrarily large.  The following construction
+retains that index without putting it into the norm bound.
+
+\begin{lemma}[Integral generators from a short spanning family]
+\label{lem:actual-integral-generator-conversion}
+Let $K$ be a number field of degree $a$, let $V$ have dimension
+$q\ge1$ over $K$, and let $\mathcal M\subset V$ be a full,
+finitely generated torsion-free $\mathcal O_K$-module.  Give every
+$V\otimes_{K,\sigma}\mathbb C$ a Hermitian norm.  Suppose
+$\mathcal M$ contains a $K$-spanning family with norm at most
+$R\ge1$ at every embedding.  Then $\mathcal M$ has at most $2aq$
+generators over $\mathbb Z$, each with every embedding norm at most
+\begin{equation}\label{eq:actual-integral-generator-bound}
+                      a^3q\operatorname{rd}(K)R.
+\end{equation}
+No freeness over $\mathcal O_K$ or bound for a lattice index is
+assumed.
+\end{lemma}
+
+\begin{proof}
+Use the canonical Euclidean norm
+$\|x\|^2=\sum_{\sigma:K\hookrightarrow\mathbb C}|\sigma x|^2$,
+where both members of a conjugate pair are included.  The Euclidean
+dual of $\mathcal O_K$ is the conjugate of the inverse different.
+For $0\ne b\in\mathfrak D_K^{-1}$, its ideal norm gives
+$|N_{K/\mathbb Q}b|\ge|\operatorname{disc}K|^{-1}$.
+Arithmetic--geometric mean therefore gives dual minimum at least
+$\sqrt a/\operatorname{rd}(K)$.
+The elementary transference bound
+$\lambda_a(L)\lambda_1(L^*)\le a^2$ gives integral elements
+$b_1,\ldots,b_a$, independent over $\mathbb Q$, such that
+\[
+           |\sigma b_j|\le a^{3/2}\operatorname{rd}(K)
+                         \le a^2\operatorname{rd}(K)
+                      \quad\text{for every }\sigma,j.
+\]
+Select a $K$-basis $s_1,\ldots,s_q$ from the given short family.
+The $aq$ elements $b_js_i$ form a $\mathbb Q$-basis and belong to
+$\mathcal M$.  Their integral span $\mathcal N$ has finite index
+in $\mathcal M$.
+
+The finite abelian group $\mathcal M/\mathcal N$ has at most
+$aq$ generators: the images of any integral basis of the rank-$aq$
+abelian group $\mathcal M$ suffice.  Reduce a representative of
+each chosen generator in the parallelepiped of the basis $b_js_i$,
+so that all its real coordinates lie in $[-1/2,1/2]$.
+The reduced representative remains in $\mathcal M$ and has norm
+at most
+\[
+          \frac{aq}{2}\,a^2\operatorname{rd}(K)R
+                          \le a^3q\operatorname{rd}(K)R
+\]
+at every embedding.  The basis vectors of $\mathcal N$ satisfy
+the same bound.  These two finite families generate
+$\mathcal M$ over $\mathbb Z$ and have at most $2aq$ members.
+The reduction is purely in the underlying real vector space;
+it subtracts integral multiples of elements of $\mathcal N$
+and so introduces no denominators into $\mathcal M$.
+\end{proof}
+
+\begin{theorem}[The prescribed integral cusp frame]
+\label{thm:actual-integral-cusp-frame}
+Use the original good cover and coefficient field $K$, with all
+the hypotheses of Theorem~\ref{thm:actual-upper-bergman} for the
+first divided weight $u_1$.  Put
+\[
+ X=frL_b,\qquad Y=\kappa/T+1,
+ \qquad T\ge1,\quad\kappa\ge0.
+\]
+Suppose the original numerical conditions give
+\begin{gather}
+ X\ge8,\qquad P\ge X^{12},\qquad
+ \log[K:\mathbb Q]\le391X^2,\qquad
+ \log\operatorname{rd}(K)\le391X^2,\label{eq:actual-cusp-frame-size}\\
+ \sum_{\tau,i}|u_{1,\tau,i}|\le X^2Y,
+ \label{eq:actual-cusp-frame-weight}
+\end{gather}
+and give the antitonicity and central gap $8fr+10$ required by
+Theorem~\ref{thm:actual-shifted-short-span}.
+Then the original integral cusp lattice on each component admits
+a finite family of integral generators $w_1,\ldots,w_n$ and
+numbers $\Lambda,\beta\ge1$ with
+\begin{gather}
+ \log n\le P,\qquad \log\beta\le P,\qquad
+ \log\Lambda\le P(\kappa/T+1),
+ \label{eq:actual-cusp-frame-budget}\\
+ \|w_i\|_{2,Z,\sigma}\le\Lambda\quad\text{for all }i,\sigma,
+ \qquad B_{Z,\sigma}(x)\le\beta.
+\end{gather}
+Here the norms are the original integral cusp-lattice Hermitian
+norms, as identified with the component Petersson norms by the
+constructed dictionary.  The coordinate matrix of these generators,
+together with that Hermitian Gram matrix, is a frame for the
+original lattice.  Its integral span, even over $\mathbb Z$, is
+the whole lattice.
+
+If a component's section space is zero, its integral lattice is
+zero and the assertion is interpreted using one zero generator;
+then $n=\Lambda=1$ is allowed.  The positive-dimensional spaces
+in the original section comparison are covered without this
+convention.
+\end{theorem}
+
+\begin{proof}
+For a nonzero section space write $q$ for its dimension over $K$
+and $a=[K:\mathbb Q]$.  The integral lattice is full and finite:
+the integral model is projective, the cusp condition is the
+prescribed linear restriction, and its ambient section module is
+torsion-free.  These are the same finite modules used in the
+short-section construction; no saturation at a finite prime is
+changed here.
+
+Theorem~\ref{thm:actual-shifted-short-span} supplies a finite
+integral $K$-spanning family with all its original Hermitian norms
+at most
+\[
+ R=\exp\left(400000\left[X^3
+                   \sum_{\tau,i}|u_{1,\tau,i}|+X^5\right]\right).
+\]
+Apply Lemma~\ref{lem:actual-integral-generator-conversion} to
+this very lattice and these norms.  Theorem
+\ref{thm:actual-upper-bergman} gives
+\[
+           q\le\beta,\qquad \beta=\exp(4000X^3).
+\]
+We may therefore choose $n\le2aq$ and
+$\Lambda=a^3q\operatorname{rd}(K)R$.
+Writing the generators in any $K$-basis gives their required
+coordinate matrix; the Gram matrix is that of the original
+Hermitian norm in this basis.  The isometry and generation
+properties follow from these definitions.  This construction
+does not require a free integral basis.
+
+Since $Y\ge1$,
+\begin{align*}
+ \log n&\le\log2+391X^2+4000X^3\le5000X^3,\\
+ \log\Lambda
+ &\le1564X^2+4000X^3
+                      +400000X^5(Y+1)\\
+ &\le806000X^5Y.
+\end{align*}
+For $X\ge8$ one has $5000X^3\le X^{12}$,
+$4000X^3\le X^{12}$ and $806000X^5\le X^{12}$.
+Together with $P\ge X^{12}$, these are precisely
+\eqref{eq:actual-cusp-frame-budget}.
+\end{proof}
+
+In the original section construction, $P$ is its prescribed size
+parameter and $T$ its prescribed integer length.  The existing
+weight and size calculations give
+\eqref{eq:actual-cusp-frame-size}--\eqref{eq:actual-cusp-frame-weight}
+for the actual anchored division of the weight.  Thus the theorem
+supplies the upper cusp frame required there, without a new
+coefficient field, a free-lattice hypothesis or a hidden index
+factor.  The second divided weight already has its finite
+Hermitian lattice by the constructed positivity and section
+theorems, and requires no additional quantitative frame bound.
+The thin-region lower norm, point heights and final section
+remainder remain open.
