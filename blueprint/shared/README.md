@@ -222,3 +222,12 @@ Hessenberg coordinates, determinant relation and stationary-phase coefficient
 retain the source character and Haar measures. A fixed compact cutoff and
 annular frequency separation suffice; no rank-uniform germ estimate is
 claimed. The unitary density transfer and terminal top lift remain separate.
+
+The [actual local-chart theorem](../../notes/geometry-arithmetic-frontier-good3.md)
+closes the original `Good3` at each integral framed point after a finite
+unramified extension. It constructs one compatible jet frame and the
+canonical gauge, retains every integral eigenspace, and gives all-model
+PEL uniformization and exact harmonic values. The existing discriminant
+loss is unchanged. The [component-field frontier](../../notes/geometry-component-field-frontier.md)
+is explicitly unfinished; a field-size calculation alone does not fix
+the original geometric components.

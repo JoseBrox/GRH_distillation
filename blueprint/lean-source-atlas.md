@@ -250,3 +250,11 @@ match the original complex `KloostDens`, all block heads and the exact
 source additive character. They verify the compact-support germ, its
 Jacobian and stationary-phase coefficient against the primary theorem.
 The result supplies exact density, not the stronger rank-uniform `GermRate`.
+
+The [local-chart certificate](../certificates/geometry-arithmetic-frontier-good3.json)
+and [independent review](../certificates/geometry-arithmetic-frontier-good3-review.json)
+verify `IntegralChartA3`, `FrTrunc`, all four canonical-gauge identities
+and the exact `Good3` supplier. The primary henselian, flat-section and
+normal-base theorems are checked on the original models. Exact cocycle
+and harmonic tests supplement the all-degree proof; no global field-size
+or nonharmonic gauge-independence claim is made.

@@ -58,6 +58,15 @@ chart algebras verify specialization at a uniformizer even though that
 base change is not flat. Every abstract evaluation map in the source
 clause is covered.
 
+The [actual local-chart theorem](geometry-arithmetic-frontier-good3.md)
+constructs the original `Good3` over a finite unramified extension. It
+retains the primitive theta generator, every eigenspace lattice and a
+single compatible jet frame. An explicit fraction-field canonical gauge
+and harmonic invariance give the exact original local values without
+extra valuation loss. The [component-field checkpoint](geometry-component-field-frontier.md)
+records a field with the required numerical size and the still-missing
+proof that it fixes every original geometric component.
+
 The full-primary trace, mixed pullback and arbitrary level-prime estimates
 remain in force for these actual constructions. Their final use still
 requires the good cover and map comparisons. Numerical

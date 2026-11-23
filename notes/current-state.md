@@ -46,11 +46,14 @@ specialization. The actual global
 `N6` model now dominates all prescribed local models over the original
 number field, with their cartesian family and primitive-line comparisons.
 Together these discharge the complete original `PartI` construction.
+The actual local `Good3` charts are now constructed after an unramified
+extension, with the original eigenlattices, canonical gauge, all-model
+uniformization and harmonic values. No additional valuation loss occurs.
 Numerical arithmetic section and height estimates remain separate.
 
 The reached-section, adapted lattice, full-primary trace and mixed-level
 identities apply to these actual models. They supply the original single
-clearing integer once the remaining good cover and chart inputs are
+clearing integer once the remaining good-cover and map comparisons are
 constructed. Theta spanning and the global norm are not inferred from
 integral regularity.
 

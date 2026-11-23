@@ -128,7 +128,10 @@ are proved. The actual models now have their integral theta section,
 full `Model.N3` uniformization and torsion action, `PushInvertible`,
 and degree-one `SplitFibres`. Reached-section regularity has scalar one.
 Exact mixed pullback and all-place assembly give one original clearing
-integer once the remaining good cover and chart comparisons are supplied.
+integer once the remaining good-cover and map comparisons are supplied.
+The actual local `Good3` chart is now constructed over a finite unramified
+extension, retaining every eigenlattice defect, the canonical gauge and
+all original harmonic values with no additional valuation loss.
 The first missing inputs are the exact good-cover compatibility,
 theta spanning and the remaining divisibility laws for the same maps.
 A constructed integral theta section does not supply the global norm.
@@ -217,9 +220,15 @@ The full formal-arc clause `N4` is now proved, including arbitrary
 permitted evaluation maps and the original selected half-label. Thus
 the complete source `PartI` construction is supplied on the coordinated
 models, with its original coefficient fields and primitive lines.
+The full local `Good3` chart and all-model uniformization are now supplied
+at each original integral framed point after an unramified extension.
+The harmonic-value comparison preserves the existing discriminant bound.
 
 **First missing construction.** Construct the original good cover and
-its precise field/component and integral-lattice comparisons. Identify
+its precise field/component and integral-lattice comparisons. The
+[component-field checkpoint](geometry-component-field-frontier.md)
+constructs a ray-class field of the required numerical size; its action
+on every original component is still unproved. Identify
 the actual geometric section and height
 inputs and prove their numerical arithmetic remainder. The existing
 cusp, jet and signed-boundary lemmas are to be applied unchanged.

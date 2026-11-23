@@ -1,0 +1,295 @@
+\section{Integral charts at the actual arithmetic points}
+\label{sec:actual-good3}
+
+The local theta arguments require a formal chart of the same integral
+semiabelian model that carries the prescribed tangent frames and theta
+generator.  We now construct that chart and its degeneration.  In
+particular, the hypothesis called \texttt{Good3} is supplied at every
+original integral framed point after an unramified local extension.
+
+Fix the original host, coefficient field, moduli space and primitive
+line.  Let $R$ be a complete discrete valuation ring of characteristic
+zero, with fraction field $K$, finite residue field $\kappa$, and the
+given embedding $c.F\hookrightarrow K$.  Let $y$ be an original
+\texttt{IntFr} point.  Thus its data include an actual semiabelian
+model $\mathcal G/R$ of the generic moduli object, its original
+rigidified cubical line $\mathscr L$, integral bases
+$u_{\tau i}$ of the separate $\tau$-eigenspaces of its Lie algebra,
+and a section $\theta$ generating $H^0(\mathcal G,\mathscr L)$.
+Their generic identifications with $y$ are part of the data.
+Write $w=w_0\in\mathcal O_E$, where $w+\bar w=1$.
+
+\begin{theorem}[Actual integral-chart supplier]
+\label{thm:actual-good3}
+There is a finite unramified extension of complete discrete valuation
+rings $R\subset R'$, with fraction fields $K\subset K'$, and a
+base-changed integral framed point $y'$ with the exact original
+\texttt{FrMap}.  The ramification index is one and
+\[
+                      v_{R'}(a)=v_R(a)\qquad(a\in K^\times).
+\]
+For every integral model in the original \texttt{IntData} of $y'$,
+there is an original \texttt{PELUnif} with \texttt{TorsionIso} for
+every integer $k\geq1$.  There is an actual
+\texttt{IntegralChartA3} $C$ at $y'$ whose frames obey all truncation
+identities.  Consequently $C$ satisfies the full original
+\texttt{Good3} condition.
+
+Every integral section of every power of the original primitive line
+has an integral formal germ in this chart.  The original eigenspace
+bases and theta generator are pulled back exactly; no lattice index
+or scalar rescaling is removed.  Harmonic theta values computed by
+any original \texttt{IsNab} rule commute with this base change.
+\end{theorem}
+
+\begin{proof}
+\emph{Splitting over an unramified extension.}
+Let $T_\kappa$ be the torus in the closed fibre of $\mathcal G$.
+The continuous Galois action on its free character lattice has finite
+image, since the source is compact and the lattice is discrete.
+It therefore becomes trivial over a finite extension $\kappa'/\kappa$.
+The equivalence between finite \'etale algebras over a henselian local
+ring and over its residue field lifts $\kappa'$ to a finite \'etale
+local $R$-algebra $R'$\cite{good3-henselian}.
+This ring is a complete discrete valuation ring, its uniformizer is
+the original uniformizer, and its residue field is finite.
+In particular the valuation scaling is exactly one.  The closed torus
+and its Raynaud torus over $R'$ are split.
+
+The prescribed framed data survive this extension without a change of
+lattice.  To check the eigenspaces, take an integral basis
+$b_1,\ldots,b_d$ of $\mathcal O_E$.  The integral $\tau$-eigenspace is
+\[
+ U_\tau=\ker\left(\operatorname{Lie}(\mathcal G/R)
+       \longrightarrow\operatorname{Lie}(\mathcal G/R)^d,\quad
+       v\longmapsto(([b_i]-\tau(b_i))v)_i\right).
+\]
+Every $\tau(b_i)$ belongs to $R$ by integral closedness.  Flat base
+change commutes with this kernel, so the specified $u_{\tau i}$ remain
+its exact basis over $R'$.  The assertion does not identify
+$\bigoplus_\tau U_\tau$ with the full integral Lie algebra.
+The scheme $\mathcal G$ is quasi-compact and separated; flat base
+change for sections therefore gives
+\[
+ H^0(\mathcal G_{R'},\mathscr L_{R'})
+       =H^0(\mathcal G,\mathscr L)\otimes_R R'=R'\theta
+       \quad\text{\cite{good3-flat-sections}}.
+\]
+All rigidified line comparisons are pulled back, so this is the same
+generic theta generator in the required \texttt{FrMap}.  A finite-type
+test realization of $y$ remains a test realization after composition
+with $K\hookrightarrow K'$.  This proves every clause of
+\texttt{IntFr} and \texttt{IsExt}, with $e=1$.
+
+\emph{Uniformization of every integral model.}
+After its splitting paragraph, the proof of
+Theorem~\ref{thm:dvr-original-pel-unif} uses only a split closed torus,
+the actual original cubical line and its primitive identity, and a
+principally polarized abelian generic fibre.  Its level assumption
+was used solely to obtain splitting over the original base.
+Apply the remainder of that proof to $\mathcal G_{R'}$.
+In particular, ampleness is supplied before the ample degeneration
+equivalence; the degree identity
+\[
+       1=\deg\lambda=[X:\phi(Y)]^2\deg\lambda_B
+\]
+identifies the period and character lattices by the original
+$\phi$, and the original primitive identity fixes the character
+ambiguity of the coefficient line.  The exact all-thickening
+expansions, their common denominators, and the original torsion
+translation formula follow with every integer $k$, including the
+residue characteristic.  No assertion that the entire torsion kernel
+is finite flat is required.
+
+If $\mathcal H/R'$ is any other \texttt{IntData} model of $y'$,
+the two given generic identifications give an isomorphism
+$\mathcal H_{K'}\simeq\mathcal G_{K'}$.
+Homomorphisms of semiabelian schemes over a normal base extend
+uniquely from a dense open.  Extend this isomorphism and its inverse;
+their compositions are the identity by the same uniqueness.
+The actual generic cubical comparison of the primitive lines also
+extends uniquely\cite[Propositions 3.3.1.5 and 3.3.2.2]{good3-lan}.
+This uses that comparison, not zero rigidification alone.
+It carries the original action, adjoint identifications and primitive
+identity to those of $\mathcal H$.  Hence its closed torus is split
+and the same uniformization construction applies to \emph{every}
+such model.  This proves the universal model quantifier in the
+original extension supplier.
+
+\emph{One integral chart and one compatible sequence of frames.}
+Choose a basis of the full free module
+$\operatorname{Lie}(\mathcal G_{R'}/R')$, independently of the
+eigenspace bases.  Smoothness at the identity gives formal coordinates
+with this tangent basis:
+\[
+                  \widehat{\mathcal G}_{0}
+                         \simeq\operatorname{Spf}R'[[x_1,\ldots,x_g]]
+                         \quad\text{\cite{good3-formal-coordinates}}.
+\]
+The formal group law and the $\mathcal O_E$-action therefore have
+coefficients in $R'$.  Record each prescribed $u_{\tau i}$ by its
+integral coordinates in this full basis.  This is precisely the
+original \texttt{uvecT}; its matrix need not be unimodular.
+The coordinate map gives all jet maps $x_m$ by restriction.
+
+On the formal product, the line $\delta\mathscr L$ is free over
+the local ring $R'[[x,z]]$.  Choose a generator and normalize it on
+both axes: if its axis restrictions are $a(x)$ and $b(z)$ relative
+to the prescribed rigidifications, multiply by
+$a(0)/(a(x)b(z))$.  Compatibility at the origin makes this generator
+equal to one on each axis.  Its restrictions to the jets give a
+single compatible system $e_m$.  Thus \texttt{FrTrunc} holds as an
+actual equality for every $m$, not merely after separate choices of
+frames on each thickening.
+
+The ratios of the original two addition maps, symmetry, and adjoint
+maps in this frame are integral unit series
+$\phi_1,\phi_2,\mathrm{sy},\mathrm{ad}(a)$.  Their identities are
+the literal identities of the original cubical biextension, so they
+give the required integral formal-biextension data.  Restrict the
+frame along $(x,[w]x)$ and apply the \emph{given} primitive identity.
+This is the original frame of $\mathscr L$, with value one at zero.
+Every integral section of $\mathscr L^k$ consequently has an integral
+power-series germ, for every $k\geq0$.
+All these constructions commute with passage to the generic fibre.
+It remains to supply the canonical gauge required by
+\texttt{ChartAt}; its existence is proved next over $K'$.
+\end{proof}
+
+\paragraph{An explicit canonical gauge.}
+We give the construction because integral chart coordinates alone
+do not supply this part of the original connection interface.
+The logarithm of a commutative formal group over a characteristic-zero
+field gives additive coordinates with tangent map the identity.
+For completeness, the matrix of invariant differentials is the
+inverse of the derivative of the group law in its second variable
+at zero.  Associativity gives invariance and commutativity makes these
+forms closed.  Integrating their homogeneous pieces by the formal
+Euler homotopy gives the logarithm.  All divisions in this paragraph
+take place in $K'$, not in the integral chart ring.
+
+Use these additive coordinates temporarily.  A normalized symmetric
+formal additive two-cocycle $c(x,x')$ is a coboundary.  Indeed the
+cocycle identity makes
+$-\partial_{x'}c(x,0)\,dx$ closed; its formal integral $H$ with zero
+constant and linear terms satisfies
+\[
+                  c(x,x')=H(x)+H(x')-H(x+x').
+\]
+The integration is linear in the cocycle and works coefficientwise
+with additional formal parameters.  Applying it first to
+$\log\phi_1(x,x',z)$ kills the first addition law by a gauge $H_1$.
+The biextension interchange law then makes the logarithm of the
+remaining second addition cocycle additive, hence linear, in $x$.
+Apply the same homotopy in its two $z$ variables, coefficientwise in
+$x$, to obtain $H_2$ linear in $x$.  It kills the second addition
+law and leaves the first one unchanged.  Both gauges vanish on the
+axes.
+
+After these changes, $\delta(a)=\log\mathrm{ad}(a)$ is bilinear.
+Let $M$ be the vector space of bilinear forms on the formal Lie
+algebra, with commuting actions
+\[
+        (l_a B)(x,z)=B(ax,z),\qquad
+        (r_a B)(x,z)=B(x,\bar a z).
+\]
+The original adjoint identities give
+\[
+ \delta(a+b)=\delta(a)+\delta(b),\qquad
+ \delta(ab)=l_b\delta(a)+r_a\delta(b).
+\]
+They extend from $\mathcal O_E$ to $E$ by rational linearity.
+Choose a trace-dual pair of bases of the separable algebra
+$E/\mathbb Q$ and write its separability idempotent as
+$\sum_i u_i\otimes v_i$.  Thus $\sum_i u_iv_i=1$ and
+$\sum_i au_i\otimes v_i=\sum_i u_i\otimes v_i a$.
+Set
+\[
+                         H_3=\sum_i l_{u_i}\delta(v_i).
+\]
+Commutativity of $E$ gives also
+$\delta(ab)=l_a\delta(b)+r_b\delta(a)$.
+Applying the idempotent identity to the map
+$u\otimes v\mapsto l_u\delta(v)$ yields
+$l_aH_3=\delta(a)+r_aH_3$.  Therefore
+$\delta(a)=l_aH_3-r_aH_3$, the exact adjoint coboundary.
+This bilinear gauge preserves both addition laws.
+
+The remaining $s(x,z)=\log\mathrm{sy}(x,z)$ is bilinear,
+skew-symmetric and balanced for the adjoint action.  The gauge
+$H_4=-s/2$ preserves both addition laws and the adjoint identity,
+and satisfies $H_4(z,x)-H_4(x,z)=s(x,z)$.
+Transporting the sum of the four gauges back to the original
+coordinates gives a series $h$, zero on both axes, satisfying
+exactly
+\begin{align*}
+ \phi_1(x,x',z)&=
+   \exp\bigl(h(x,z)+h(x',z)-h(F(x,x'),z)\bigr),\\
+ \phi_2(x,z,z')&=
+   \exp\bigl(h(x,z)+h(x,z')-h(x,F(z,z'))\bigr),\\
+ \mathrm{sy}(x,z)&=\exp\bigl(h(z,x)-h(x,z)\bigr),\\
+ \mathrm{ad}(a;x,z)&=
+   \exp\bigl(h([a]x,z)-h(x,[\bar a]z)\bigr).
+\end{align*}
+These are the source's four \texttt{IsCanonGauge} identities, with
+their original signs\cite{good3-source}.  Together with the integral
+chart above they finish every clause of \texttt{IntegralChartA3}.
+Its compatible frames and the proved \texttt{PELUnif/TorsionIso}
+are exactly the two clauses of \texttt{Good3}.
+
+\paragraph{The original harmonic values and local denominators.}
+Two canonical gauges for the same biextension differ, in logarithm
+coordinates, by a balanced symmetric bilinear form $B(x,z)$.
+The difference on the primitive graph is
+\[
+ B(x,wx)=\tfrac12 B(x,x),
+\]
+because $B$ is symmetric, adjoint-balanced, and $w+\bar w=1$.
+A change of formal coordinates or of biextension frame first
+transports the actual section germ and gauge; their remaining
+ambiguity is precisely such a bilinear form.
+For tangent eigenvectors, balancing implies
+$B(u_{\tau i},u_{\nu j})=0$ unless $\nu=\bar\tau$.
+Consequently the effect on a column product of ordinary derivatives
+is the finite contraction operator
+\[
+ \exp\!\left(\sum_{\tau,i,j} b_{\tau ij}
+       \sum_{b=1}^{n}
+       \frac{\partial^2}
+        {\partial X_{\tau i b}\partial X_{\bar\tau j b}}\right)
+\]
+applied to the polynomial prescribing that value.  This identity
+follows by multiplying the generating series by the displayed
+quadratic exponential; it is a finite identity in each degree.
+Every positive-order contraction vanishes for the original harmonic
+polynomials.  The original \texttt{IsNab} value may therefore be
+computed in the integral chart just constructed.  This argument
+asserts no gauge independence for arbitrary nonharmonic derivatives.
+
+Choose the chart and gauge over $K$ and pull them to $K'$ when
+comparing the two generic values.  The same harmonic invariance
+compares them with any chart chosen by the original \texttt{IsNab}
+rule at either point.  Hence $\iota(H_y)=H_{y'}$ with the exact
+original section, tangent vectors and polynomial coefficients.
+Normalized valuations are unchanged because $e=1$.
+
+In particular Theorem~\ref{thm:discriminant-harmonic-clearing}
+now applies to the \emph{actual} chart and every actual integral
+section in it.  If $P$ has total degree $d$ and
+$\Delta=|\operatorname{disc}E|$, it gives
+\[
+                         \Delta^d H(P;f)\in R'.
+\]
+When the section data and their value descend to $K$, this also
+belongs to $R$, since $K\cap R'=R$.
+Thus passage to the splitting extension introduces no additional
+valuation loss.  The torus rank, the eigenspace lattice defect and
+the existing discriminant exponent are all retained.
+
+This supplies the local chart and uniformization gate used by the
+actual primary-trace and reached-section arguments.  It does not
+bound the degree of the local unramified extension uniformly, replace
+the global coefficient-field bounds, or by itself construct the
+entire arithmetic cover.  The original theta-series identification,
+determinant-ideal scalars and global norm estimates retain their own
+separate obligations.
