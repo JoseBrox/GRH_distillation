@@ -1,0 +1,247 @@
+\subsection{The actual Gaussian kernel on the full thin slab}
+\label{actual-gaussian-reproduction}
+
+Keep the original Hermitian datum $X$, letter dictionary and complex
+frame measure. Write $p=X.p_0$, $q=r-p$ and
+$J=\operatorname{diag}(I_p,-I_q)$. For the original harmonic
+row-highest family $P_1,\ldots,P_m$ of weight
+$\lambda=\mathrm{wtOf}(c,c',n)$, let
+\[
+ K(x,y)=\sum_j P_j(\partial_z)\overline{P_j}(\partial_w)
+                              k_0(x,y;z,w)\big|_{z=w=0}
+\]
+be the literal source kernel, with ordinary derivatives and its
+original Gaussian prefactor. No orthonormalization is made.
+The full slab, with the original Lebesgue measure, is
+\[
+ {\cal S}_\delta=\{y:\ |(y_\tau^tG_\tau\bar y_\tau-J)_{ab}|<\delta
+                                     \text{ for every }\tau,a,b\}.
+\]
+
+\begin{theorem}\label{actual-gaussian-reproduction-theorem}
+Suppose $n$ is even and $n\ge2r$. There is $\delta_0>0$ such that,
+for $0<\delta\le\delta_0$ and every $x$ in the original frame
+domain, $K(x,\cdot)$ is bounded and absolutely integrable on
+$\mathcal S_\delta$. If some $P_j\ne0$, a real $\rho_\delta>0$
+satisfies
+\begin{equation}\label{gaussian-actual-reproducing}
+       \int_{{\cal S}_\delta}K(x,y)F(y)\,dy=\rho_\delta F(x)
+\end{equation}
+for every holomorphic $F$ of the original Borel weight and bounded
+invariant norm. The integral converges absolutely, and the same
+$\rho_\delta$ works for all $F,x$. For every orthonormal $x_0$,
+\begin{equation}\label{gaussian-actual-rho}
+ \rho_\delta=
+ \frac{\displaystyle\int_{{\cal S}_\delta}|K(y,x_0)|^2\,dy}
+      {K(x_0,x_0)}.
+\end{equation}
+These are the full original thin-slab and reproducing contracts.
+No uniform lower bound in the growing arithmetic family is asserted.
+\end{theorem}
+
+\begin{proof}
+\emph{The actual Gaussian identities.}
+At one place put $L=a_{\rm Lin}(x,y)$, $A=a_{\rm Anti}(x,y)$,
+$\kappa=\tau(X.\kappa_0)$, $G=G_\tau$, $S=-J$, and
+\[
+ Z=\frac{\kappa}{4}(L^{-1}SL)^tG,\quad
+ N=L^{-t}G(\operatorname{Im}Z)^{-1}GA^{-1},\quad M=L^{-t}GA^{-1}.
+\]
+Here $\bar\kappa=-\kappa$ and $-\operatorname{Im}\kappa>0$.
+Let $m(z,w)$ take its first $p$ entries from $z$ and the last
+$q$ from $w$. The original exponent is
+$-\pi\kappa^2\sum_bm(w_b,z_b)^tNm(z_b,w_b)/4$ and its
+prefactor is $(\det L\det A)^{-n/2}$.
+The lower rows of $L$ have kernel the positive plane of $x$,
+and its upper rows have kernel the negative orthogonal
+complement of the positive plane of $y$. Hence $L$ is invertible,
+as is $A$ by swap and conjugation.
+The involution $L^{-1}JL$ has these positive and negative
+eigenspaces. For $v=v_++v_-$, the real part of its Hermitian
+pairing with $v$ is $h(v_+,v_+)-h(v_-,v_-)>0$:
+the cross terms cancel. The original sign of $\kappa$
+therefore gives $\operatorname{Im}Z>0$.
+
+The mixed-row definitions give $SM=MS$ and
+\begin{equation}\label{gaussian-block-identity}
+                  \frac{\kappa}{8i}(SN+NS)=M.
+\end{equation}
+For an algebraic check put $W=(L^{-1}SL)^tG$.
+Then $WG^{-1}W=G$, $W^*G^{-1}W^*=G$ and
+$\operatorname{Im}Z=\kappa(W+W^*)/(8i)$.
+The two involution relations imply
+\[
+ W(W+W^*)^{-1}G+G(W+W^*)^{-1}W=G;
+\]
+Indeed, put $A_0=G^{-1}W$ and $B_0=G^{-1}W^*$.
+After cancelling $G$, multiply on the left and right by
+$A_0+B_0$ and use $A_0^2=B_0^2=I$.
+Multiplication on the left by $L^t$ and on the right by $A$,
+using the mixed-row equalities, proves
+\eqref{gaussian-block-identity}.
+Its same-sign blocks give $M$ and the opposite-sign blocks
+give zero. Thus, up to balanced quadratic exponentials
+in $z$ and in $w$, the Gaussian is exactly
+\begin{equation}\label{gaussian-reduced}
+ (\det L\det A)^{-n/2}
+ \exp\!\left(\pi i\kappa\sum_b
+                   m(w_b,z_b)^tM m(z_b,-w_b)\right).
+\end{equation}
+Each balanced exponent combines $\sum_bz_{ib}z_{jb}$ for
+opposite row blocks, or its $w$ analogue. By the product
+rule its effect on a derivative symbol is the exponential
+of the corresponding contraction operators. Harmonicity
+kills all of them. Thus the polynomial derivatives may
+be applied directly to \eqref{gaussian-reduced}, whose
+matrices are holomorphic in $x$.
+
+For upper triangular $b$,
+$L(xb,y)=L_bL(x,y)$ and $A(xb,y)=U_bA(x,y)$.
+The first $p$ rows of $L_b$ are from the identity and its
+last rows from $b^{-1}$; the first rows of $U_b$ are from
+$b^t$ and its last rows from the identity.
+Their determinant product is
+$\prod_{i<p}b_{ii}\prod_{i\ge p}b_{ii}^{-1}$.
+The corresponding letter change cancels these matrices
+inside \eqref{gaussian-reduced}. The chain rule, original
+triangular row invariance and row degrees give exactly
+$K(xb,y)=\chi_\lambda(b)K(x,y)$, including the half-weight.
+For real unitary $u$, $L\mapsto Lu^{-1}$,
+$A\mapsto A\bar u^{-1}$; Hermitian congruence and
+$|\det u|=1$ give $K(ux,uy)=K(x,y)$.
+Swap interchanges $L$ with $\bar A$ and $A$ with
+$\bar L$; substitution gives
+$K(y,x)=\overline{K(x,y)}$.
+
+At an orthonormal frame the original Gaussian is
+\[
+ c_{x_0}\exp\!\left(\sum_{\tau,i,b}t_\tau
+                     z_{\tau ib}w_{\tau ib}\right),\quad
+ c_{x_0}=\prod_\tau|\det x_{0,\tau}|^n,\quad
+ t_\tau=\pi(-\operatorname{Im}\kappa_\tau)>0.
+\]
+Writing $P_j=\sum_\alpha p_{j,\alpha}X^\alpha$ gives
+\begin{equation}\label{gaussian-fischer-positive}
+ K(x_0,x_0)=c_{x_0}\sum_{j,\alpha}
+          |p_{j,\alpha}|^2\alpha!\prod_\tau t_\tau^{|\alpha_\tau|}>0.
+\end{equation}
+This retains all actual factorials and normalizations
+\cite{gaussian-actual-source}.
+
+\emph{The weight gives the exact decay.}
+For leading minors $\Delta_j(g)$ put
+\[
+ m_\lambda(g)=\det(g)^{\lambda_{r-1}}
+       \prod_{j=1}^{r-1}\Delta_j(g)^{\lambda_{j-1}-\lambda_j}.
+\]
+The original weight decreases within each block and satisfies
+$\lambda_i+n\le\lambda_j$ for $i<p\le j$.
+Only $\Delta_p$ and $\det g$ can have negative exponents;
+both are nonzero throughout the domain relative to an
+orthonormal frame. For $\Delta_p$ use the positive-plane
+and negative-complement intersection argument above.
+
+A holomorphic Borel-weight function with the same left
+diagonal-torus character is determined by its value at $x_0$.
+On the opposite triangular cell $x=x_0lb$, remove
+$\chi_\lambda(b)$ and expand in the strict lower entries
+of $l$. Their torus weights are $e_i-e_j$, $i>j$.
+A strictly increasing linear functional is positive on
+all of them, so only the constant monomial is invariant.
+Uniqueness follows near $x_0$ and then globally by
+holomorphic continuation. The domain is connected:
+indefinite Gram--Schmidt expresses it as the image of
+the connected real unitary and upper triangular groups.
+Applying uniqueness to the actual kernel yields
+\begin{equation}\label{gaussian-minor-formula}
+ K(x,x_0)=K(x_0,x_0)\prod_\tau
+                     m_{\lambda_\tau}(x_{0,\tau}^{-1}x_\tau).
+\end{equation}
+For $g\in U(p,q)$, $|\det g|=1$,
+$|\Delta_p(g)|\ge1$ and $|\Delta_j(g)|\le|\Delta_p(g)|$.
+For $j\le p$ the positive square block has singular values
+at least one, so exterior powers give the minor bound.
+For $j\ge p$, Jacobi's complementary minor identity and
+$g^{-1}=Jg^*J$ reduce it to the negative square block,
+whose determinant has the same absolute value.
+The nonnegative exponents away from $p$ telescope;
+the exponent at $p$ is retained exactly. Hence
+\begin{equation}\label{gaussian-minor-decay}
+                         |m_\lambda(g)|\le|\Delta_p(g)|^{-n}.
+\end{equation}
+At the definite endpoints the right side is one.
+
+\emph{Full matrix-slab integrability.}
+Choose $\delta_0$ so that every Hermitian $H$ in the
+closed entrywise neighborhood of $J$ of radius $\delta_0$
+has all leading minors of the prescribed signs.
+Indefinite Gram--Schmidt gives unique upper triangular
+$b(H)$ with positive diagonal and
+$b(H)^tJ\overline{b(H)}=H$. It is smooth on a larger
+neighborhood, so $b,b^{-1}$ and its diagonal inverses
+are bounded on the closed neighborhood.
+The slab has smooth coordinates $y=x_0g b(H)$,
+$g\in U(p,q)$. The original Lebesgue density is
+$j_{x_0}(H)\,dg\,dH$, positive, smooth and bounded above
+and below. It is independent of $g$: left unitary
+translation preserves Gram and real matrix volume,
+since its determinant is $|\det u|^{2r}=1$.
+The density retains the original frame Jacobian.
+Triangularity gives
+$\Delta_p(gb(H))=\Delta_p(g)\prod_{i<p}b(H)_{ii}$.
+Thus the required integral reduces to
+$\int_{U(p,q)}|\Delta_p(g)|^{-n}\,dg$.
+
+On the quotient by $U(p)\times U(q)$ use the matrix ball
+$Z\in M_{q,p}(\mathbb C)$, $I-Z^*Z>0$. There
+$|\Delta_p(g)|=\det(I-Z^*Z)^{-1/2}$ and invariant
+measure is a positive constant times
+$\det(I-Z^*Z)^{-r}dZ$.
+Indeed $Z'=(C+DZ)(A+BZ)^{-1}$ has derivative
+$(D-Z'B)dZ(A+BZ)^{-1}$ and complex Jacobian
+$\det(g)^p/\det(A+BZ)^r$ by the block determinant formula.
+Also $\det(I-Z'^*Z')=\det(I-Z^*Z)/|\det(A+BZ)|^2$,
+proving the density formula. The compact fibre is finite.
+The remaining integral is
+\[
+              C\int_{I-Z^*Z>0}\det(I-Z^*Z)^{n/2-r}\,dZ<\infty,
+\]
+because its integrand is at most one on a bounded domain.
+This includes the endpoint $n=2r$.
+For $p=0$ or $q=0$ use compactness directly.
+Products over places give full-slab integrability.
+The same bound gives boundedness; a fixed
+nonorthonormal $x=x_0b$ contributes only
+$|\chi_\lambda(b)|$.
+
+\emph{Reproduction with the original scalar.}
+Bounded invariant norm makes $F$ bounded on the slab:
+it equals $|F|$ on orthonormal frames, and bounded
+$b(H)$ contributes a bounded character.
+Let $T_0$ be the compact diagonal torus at $x_0$, with
+probability Haar measure. Its weighted mean
+\[
+ \Pi F(y)=\int_{T_0}\chi_\lambda(t)^{-1}
+                                  F(x_0t x_0^{-1}y)\,dt
+\]
+is holomorphic, has the same Borel weight and left
+torus character, and satisfies $\Pi F(x_0)=F(x_0)$.
+Uniqueness gives
+$\Pi F(y)=F(x_0)K(y,x_0)/K(x_0,x_0)$.
+The slab and original measure are torus invariant,
+and the kernel supplies the cancelling character.
+Absolute integrability permits Fubini, proving
+\eqref{gaussian-actual-rho} and reproduction at $x_0$.
+The numerator is finite since $K$ is bounded and
+integrable, and positive since the slab contains a
+neighborhood on which the continuous kernel is nonzero.
+Unitary invariance gives the same scalar at every
+orthonormal frame; Borel covariance extends to all $x$.
+If $r=0$, the frame space is a point of its original
+zero-dimensional volume one, and the formulas hold directly.
+\end{proof}
+
+The actual spanning consumer retains $\rho_\delta^{-1}$
+and its separate global kernel scalar. This supplies its
+analytic input without estimating global period Gram
+operators uniformly in the arithmetic parameters.

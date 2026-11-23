@@ -437,3 +437,14 @@ full product commutators, distinct finite indices, exact classical scalar,
 adapted period/gauge identities and the original bounded cusp target.
 Exact finite diagnostics and negative controls supplement the human proof;
 no Lean build, spanning theorem or uniform archimedean estimate is asserted.
+
+### Actual Gaussian integrability and reproduction
+
+The [Gaussian certificate](../certificates/geometry-arithmetic-frontier-gaussian-reproduction.json)
+and [independent review](../certificates/geometry-arithmetic-frontier-gaussian-reproduction-review.json)
+authenticate nine pinned modules, including the literal kernel and its
+full spanning consumer. The all-rank proof keeps the original mixed-row
+Gaussian, harmonic contractions, full frame Jacobian and reproducing
+scalar. Exact matrix, minor, Jacobian and Fischer diagnostics check signs
+and normalizations; the endpoint integral follows analytically. These
+records assert neither a Lean build nor a uniform arithmetic period norm.

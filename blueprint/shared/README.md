@@ -407,3 +407,12 @@ value, Borel weight and exact classical scalar. Its original positive-row
 condition gives vanishing Fourier--Jacobi constants, and verified rapid
 decay supplies the actual bounded cusp target. Thus the uniform clearing
 integer applies to these generators. Spanning and uniform norms remain.
+
+The [actual Gaussian reproducing theorem](../../notes/geometry-arithmetic-frontier-gaussian-reproduction.md)
+supplies the original full-slab integrability and reproducing contracts
+for the literal polynomial kernel. Its indefinite Gram coordinates and
+matrix-ball Jacobian prove integrability for even `n>=2r`, including
+equality and all definite/rank-zero endpoints. Compact-torus uniqueness
+gives reproduction with the original positive scalar. All derivative
+factorials, frame measures and the separate global kernel scalar survive;
+no uniform growing-family lower bound or global period estimate is inferred.

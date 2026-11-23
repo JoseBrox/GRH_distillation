@@ -71,8 +71,13 @@ now supplies the section over every coefficient algebra, its literal value
 and exact classical scalar. The original positive row weights kill every
 zero Fourier--Jacobi coefficient; a verified moderate-growth and rapid-decay
 argument puts it in the required bounded cusp space. Thus the same clearing
-integer applies to these actual generators. Spanning and uniform
-archimedean norms remain separate.
+integer applies to these actual generators. The [actual Gaussian
+reproducing theorem](geometry-arithmetic-frontier-gaussian-reproduction.md)
+now proves the full thin-slab integral and reproduction with the original
+frame measure, including the endpoint `n=2r`. Its positive scalar is the
+literal squared-kernel integral divided by its diagonal, and is retained
+in the spanning consumer. The finite Schwartz system, exact global
+class-sum identity and uniform archimedean norms remain separate.
 
 The actual ordinary automorphic modules have faithful good classical
 specializations, and now carry the original universal integral Hecke

@@ -91,6 +91,14 @@ unitary group. This gives the actual bounded cusp target and hence the
 integral image with the established clearing integer. Full spanning and
 uniform archimedean estimates remain.
 
+The [actual Gaussian reproducing theorem](geometry-arithmetic-frontier-gaussian-reproduction.md)
+now proves full-slab absolute integrability and reproduction with the
+literal original kernel. Indefinite Gram coordinates retain the original
+Lebesgue density; the matrix-ball exponent is `n/2-r`, including zero.
+Compact-torus averaging gives the exact positive scalar, with every
+Fischer derivative factor retained. The finite Schwartz and global
+class-sum inputs to spanning remain separate, as do uniform period norms.
+
 ## Actual ordinary modules, types and Galois determinants
 
 The [ordinary module theorem](selmer-integral-frontier-ordinary-diamond.md)

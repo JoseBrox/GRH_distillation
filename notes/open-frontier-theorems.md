@@ -183,7 +183,13 @@ are now constructed. The actual raw theta section is now constructed over
 every coefficient algebra, with its literal value and original classical
 scalar. In the required positive-weight range it belongs to the original
 bounded cusp space, so the same clearing integer gives its integral image.
-The first missing inputs are raw-theta spanning,
+The actual polynomial Gaussian now satisfies the full original
+thin-slab integrability and reproducing contracts, including even `n=2r`,
+rank zero and definite signatures. The proof retains the actual frame
+Jacobian, every derivative factor and the positive reproducing scalar;
+no arithmetic uniform lower bound is inferred.
+The first missing inputs are the finite Schwartz system and exact
+class-sum comparison needed for raw-theta spanning,
 its uniform archimedean estimate and the remaining selected-prime
 divisibility laws for the same maps.
 A constructed integral theta section does not supply the global norm.
