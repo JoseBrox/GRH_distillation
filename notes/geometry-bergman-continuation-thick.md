@@ -110,10 +110,19 @@ No Lean build is performed.
 ## Downstream scope and next attack
 
 For the original thick consumer, S=l1(u1), without an extra field or
-rank factor. To obtain its full asymptotic numerical wrapper one must
-retain and verify lenT*l1(u1)<=C2*unitE and lenT*A^8<=unitE, together
-with sc.b>=100A^4 and the original gap threshold. The analytic theorem
-does not silently supply these numerical host inequalities.
+rank factor. The numerical corollary now proves the exact budget from
+the original HostNum and WtNum records: t*l1(u1)<=834*unitE,
+t*(fr)^8<=unitE, sc.b>=100*(fr)^4, and every required model gap is
+at least t>=C*(fr)^8. Thus B=C*(l1(u1)+(fr)^8) satisfies
+t*B<=835*C*unitE. The quotient is the actual anchored Euclidean
+division; no independently rounded weight is substituted. The proof
+retains all growing field/rank factors and every component/embedding.
+
+The construction of the original Size family and its numerical
+records remains a distinct input. This corollary discharges their
+thick consumer and does not declare those family records constructed
+merely because their source theorems exist. The only added threshold
+L>=C is achieved by increasing x with the same L=x^epsilon.
 
 The most direct next estimates are the exact thin theta-pivot lower
 bound and the global cusp-frame bound. Short integral K-spanning

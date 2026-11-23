@@ -334,14 +334,100 @@ used by the original component Bergman consumer, rather than a change
 to an independently normalized $L^2$ space.
 For its untagged weight $u_1$, the model permutation preserves the
 absolute weight sum, so $S=\ell_1(u_1)$.
-If the original numerical data give
-$\operatorname{lenT}\ell_1(u_1)\leq C_2\operatorname{unitE}$ and
-$\operatorname{lenT}A^8\leq\operatorname{unitE}$, then the same
-$B=C(\ell_1(u_1)+A^8)$ satisfies
-$\operatorname{lenT}B\leq C(C_2+1)\operatorname{unitE}$.
-These numerical inequalities must be checked in their original host
-range when invoking that asymptotic wrapper.
-The theorem supplies the thick analytic estimate and its actual
-arithmetic injectivity.  The thin estimate, global upper section-frame
-bound, point-height estimate and final section remainder remain
-separate obligations.
+
+\paragraph{The original numerical budget.}
+We now check the required budget, rather than assuming a bound on
+the divided weight.  Retain the original \texttt{HostNum} and
+\texttt{WtNum} records, and write
+\[
+ a=fr,\quad d=f\binom r2,\quad t=\operatorname{lenT},
+ \quad P=PP,\quad b=\mathrm{sc}.b,\quad L=\mathrm{sc}.L,
+ \quad E_0=\operatorname{unitE}.
+\]
+Here $i+1<m$, $k\geq m\geq1$ and $d\geq1$; this is the
+original, nonterminal divided-weight range.  The records give
+\begin{equation}\label{bergman-thick-original-numbers}
+ \begin{gathered}
+ L\geq\max(10,C),\qquad P\geq(aL)^{12},\qquad
+ t=\left\lceil P^2d^2k/m\right\rceil,\\
+ Ptd^2L\leq b,\qquad
+ E_0=fmbL\log\log x\geq fmb,\qquad \log\log x\geq1.
+ \end{gathered}
+\end{equation}
+No field or rank is held fixed in these inequalities.
+
+Let $u$ be the original anchored row and let $v=u_1$ be its
+actual quotient.  Put $Q=t+d+1$ and $c_0=\mathrm{cZero}$.
+Both rows vanish at the anchor $k_c-1$.  Their adjacent gaps obey
+\[
+ v_j-v_{j+1}=\left\lfloor
+ \frac{u_j-u_{j+1}+\epsilon_j}{Q}\right\rfloor,
+ \qquad
+ \epsilon_j=\begin{cases}-c_0-2r+2,&j+1=p,\\2,&j+1\ne p.
+ \end{cases}
+\]
+The original weight hypotheses make every numerator nonnegative.
+Since $\epsilon_j\leq2$, summing adjacent gaps from the anchor
+in either direction gives
+\[
+ Q|v_j|\leq |u_j|+2r\leq |u_j|+c_0+4r.
+\]
+For the same original row, the $k_c$ cloud entries are between
+$0$ and $S_0$, and the remaining $r-k_c=m$ entries have absolute
+value at most $8b$.  Thus
+\begin{equation}\label{bergman-thick-divided-l1}
+ t\ell_1(v)\leq f\{rS_0+8mb+r(c_0+4r)\}.
+\end{equation}
+Here $S_0\geq0$ is the original row-width parameter, not the
+absolute model-weight sum $S$ used above.
+
+For completeness, all terms on the right have their prescribed
+budgets.  The defining least-multiple-of-eight formula for $c_0$,
+with $pq\leq r^2$, gives $c_0\leq22f^2r^4$.
+Equation \eqref{bergman-thick-original-numbers} implies
+$f^2r^5\leq P\leq b$, so $r(c_0+4r)\leq26b$.
+The original anchor has absolute value at most $4b$, and its
+lower comparison is $w''\leq2\,\mathrm{anchor}$; hence
+$w''\leq8b$.  The weight record also gives
+$P(S_0+\eta)\leq100w''$ with $\eta\geq0$.
+Since $r\leq P$, it follows that $rS_0\leq800b$.
+Substitution in \eqref{bergman-thick-divided-l1} yields
+\begin{equation}\label{bergman-thick-834}
+                     t\ell_1(u_1)\leq834fmb\leq834E_0.
+\end{equation}
+
+The same division verifies the curvature gaps.  Away from the
+central position, its numerator is at least
+$(Q+1)(Q+1+2r)$, so the quotient gap is at least $t$.
+At the central position write the numerator as $z$ and retain
+the original $h_0$.  The weight hypotheses give
+\[
+ 4Q\leq5t,\qquad
+ h_0\geq4(c_0+2r+Q),\qquad h_0\geq4t^2,\qquad
+ z\geq h_0-c_0-2r+2.
+\]
+Consequently $z-Q\geq3h_0/4$ and
+$\lfloor z/Q\rfloor\geq(z-Q)/Q\geq3h_0/(5t)\geq t$.
+These are the literal row gaps; the original model permutation
+turns them into all within-block and last-to-first gaps above.
+
+Finally $t\geq P^2\geq(aL)^{24}$, so $t\geq Ca^8$.
+Also $P\geq a^8$ and \eqref{bergman-thick-original-numbers} give
+$ta^8\leq b\leq E_0$, while $P\geq100a^4$ gives
+$b\geq100a^4$.  Every point of the original thick part therefore
+meets the injectivity and curvature tests.  With the same
+$B=C(\ell_1(u_1)+a^8)$ we have, uniformly in every component,
+embedding and divided weight,
+\begin{equation}\label{bergman-thick-original-budget}
+             0\leq B,\qquad tB\leq835C E_0,
+             \qquad \operatorname{bergOn}(y)\geq e^{-B}.
+\end{equation}
+This supplies the thick consumer whenever its original numerical
+records hold.  In the original asymptotic family $L=x^\varepsilon$
+with $\varepsilon>0$, the extra requirement $L\geq C$ is met by
+increasing the permitted initial threshold.  Construction of the
+family and its \texttt{Size}, \texttt{HostNum} and \texttt{WtNum}
+records is retained as a separate input; the argument has not
+silently replaced those records by weaker size assumptions.
+The thin estimate, global upper section-frame bound, point-height
+estimate and final section remainder remain separate obligations.

@@ -456,7 +456,7 @@ and [complete propagation](../../notes/selmer-support-continuation-rank-two-prop
 now supply the original `PropagationTheoremGL2`, with its `Ok`, `Big`,
 finite-weight and arithmetic `P1` hypotheses. The proof uses the actual
 ordinary obstruction cone and completed chart, retaining equal
-characteristic and all local-degree costs. The [rank-three theorem](../../notes/selmer-support-continuation-rank-three-propagation.md) now constructs the type-E finite-weight ideal and nonsplit thick links; its [arithmetic transfer](../../notes/selmer-support-continuation-rank-three-transfer.md) verifies the complete original Nice/Thick/P1/P23 conditions. The [finite-point theorem](../../notes/selmer-support-continuation-finite-points.md) supplies the literal AbsMain output for every original complete-DVR test. Global rigidity transfer and the uniform integral Selmer budget remain in both routes.
+characteristic and all local-degree costs. The [rank-three theorem](../../notes/selmer-support-continuation-rank-three-propagation.md) now constructs the type-E finite-weight ideal and nonsplit thick links; its [arithmetic transfer](../../notes/selmer-support-continuation-rank-three-transfer.md) verifies the complete original Nice/Thick/P1/P23 conditions. The [finite-point theorem](../../notes/selmer-support-continuation-finite-points.md) supplies the literal AbsMain output for every original complete-DVR test. The [finite-end transfer](../../notes/selmer-support-continuation-finite-end.md) supplies the exact Galois descent on a single subgroup chosen before all tested representations. The actual auxiliary frame, full global rigidity and uniform integral Selmer budget remain in both routes.
 
 The [finite theta system](../../notes/theta-spanning-continuation-system.md),
 [identity-cover transfer](../../notes/theta-spanning-continuation-raw.md)
@@ -474,7 +474,7 @@ norm correction. [Unramified frames and parallel twists](../../notes/theta-spann
 supply controlled integral sections over the same field. The [original
 key shift and shifted families](../../notes/theta-spanning-continuation-key.md)
 now supply the exact `h0` and `hsh`, with all finite-place and boundary
-factors. The [actual thick peak](../../notes/geometry-bergman-continuation-thick.md) gives the thick-region lower Bergman bound with exact principal-return injectivity, complete quotient metric and regular-weight cuspidality. Thin and upper norm bounds, heights and the numerical section remainder remain.
+factors. The [actual thick peak](../../notes/geometry-bergman-continuation-thick.md) gives the thick-region lower Bergman bound with exact principal-return injectivity, complete quotient metric and regular-weight cuspidality. The original numerical records now give the complete thick budget, including the constant 835 and all quotient-weight gaps. Their construction remains a separate input. Thin and upper norm bounds, heights and the numerical section remainder remain.
 
 The [actual selected-prime chain](../../notes/theta-spanning-continuation-chain.md) now has its point/phase quotient, exact integral coordinates, literal theta kernels and twisted initial source. The selected exponent and positive conjugate gain apply to these prescribed maps and preserve the original frame form and stabilizer masses. Their comparison with the final normalized Poincare maps and all retained restrictions remains.
 
@@ -488,4 +488,4 @@ proves full `InHH` and `PuLinear`, removing exactly the original `HHX`
 projection loss. The [arithmetic minimum theorem](../../notes/global-gram-continuation-minimum.md)
 controls `leastSize` over all nonzero integral submodules on the actual
 period cells. Its weighted far-return consequence retains the cited tail
-theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-quantitative.md) now supplies an explicit normalized moment and weighted L1 bound, with actual character transport removing unspecified frame heights and compact masses. Field, weight, T and Haar dependence remain. Final arithmetic-chain compatibility, intrinsic covolume/near-return control, further target cuts and the uniform trace budget remain.
+theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-quantitative.md) now supplies an explicit normalized moment and weighted L1 bound, with actual character transport removing unspecified frame heights and compact masses. The [actual covolume and normalized budget](../../notes/global-gram-continuation-haar-budget.md) supply literal CovolN and cancel all arbitrary Haar scales. Field, weight and T dependence remain explicit. Final arithmetic-chain compatibility, near-return control, absorption at the literal far cutoff, further target cuts and the uniform trace budget remain.

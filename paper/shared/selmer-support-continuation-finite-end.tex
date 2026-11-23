@@ -1,0 +1,112 @@
+\subsection{Descent through the actual Galois quotient}
+\label{sec:support-finite-end}
+
+Retain an original \texttt{GalLink} $k$ from
+$(\eta,\Psi,\sigma,g_1,B,M,L)$ to a frame $F$ satisfying all its
+original \texttt{Ok} hypotheses, where $\ell\mid M$ and $\sigma^2=1$.
+The field $L$ is the specified number field; it is CM when supplied
+by \texttt{HasFrame}.  Write $U^+=\operatorname{Gal}(\overline{\mathbb Q}/L^+)$
+for the original subgroup fixing its maximal real subfield.
+The exact \texttt{GalLink} includes a continuous surjection
+$p:U^+\to\Gamma$ and
+$\operatorname{Gal}(\overline{\mathbb Q}/L)=U^+\cap\ker\eta$.
+All point and quotient conditions here are those of
+\cite{support-finite-end-source}.
+
+\begin{theorem}[The original normalized lift and finite-end transfer]
+\label{thm:support-finite-end}
+Every original \texttt{OrdPt} $r:G_{\mathbb Q}\to GG_3(A)$ over
+a Noetherian local domain $A$ with local $O$-map gives an original
+normalized lift $\rho$ over the same $A$, with
+\[
+ \rho(p_0(s))=r(s)_{\rm mat}\quad(s\in G_L),\qquad
+ \psi_{v,i}(g)=\Psi(j_v(g))^{1-i}\quad(g\in I_v),            \tag{FE1}
+\]
+where the rightmost values use the prescribed map $O\to A$.
+If $\operatorname{FinPt}(O,F,3)$ holds, then the literal
+\texttt{FinEnd} holds with
+\[
+ U=G_L,\qquad [G_{\mathbb Q}:U]=[L:\mathbb Q].              \tag{FE2}
+\]
+This one $U$ works for every original complete DVR $A$ killing
+$\mathfrak m_O$ and every original ordinary point $r$ over it.
+The theorem retains the actual \texttt{GalLink} as an input.
+\end{theorem}
+
+\begin{proof}
+The original kernel of $p$ is the closed normal closure in $U^+$
+of inertia elements away from $\ell$ with $\eta=\overline\Psi=1$.
+The \texttt{GalLink.teich} condition gives $\Psi=1$ there, and
+\texttt{OrdPt.away} makes $r=1$ on these generators and their
+normal closure.  The matrix-one locus is closed: it is the
+intersection of the closed fibres where the matrix is one modulo
+$\mathfrak m_A^N$, and Krull intersection identifies that
+intersection.  The multiplier on $\ker p$ is $\eta=1$, so
+$\ker p\subset\ker(r|_{U^+})$ for the whole semidirect product.
+Thus $r$ descends to $r':\Gamma\to GG_3(A)$ with
+$r'(p(s))=r(s)$ and multiplier $\delta$.  It remains adically
+continuous, since the continuous surjection from compact $U^+$
+to Hausdorff $\Gamma$ is a quotient map and every matrix reduction
+is locally constant after pullback.  The matrix part on
+$G_0=\ker\delta$ is the required representation $\rho$.
+
+The exact marked identities $p(\sigma)=c$, $p(g_1)=g_0$ and
+$r(\sigma)_{\rm mat}=1$, together with its multiplier $-1$, give
+\[
+ \rho(\operatorname{star}g)=J\rho(g)^tJ.                    \tag{FE3}
+\]
+The two original equations $z_{12}=z_{21}=0$ at $g_1$ make every
+off-diagonal entry of $\rho(g_0)-\rho(\operatorname{star}g_0)$
+zero: in $X-JX^tJ$ the two corner off-diagonal entries are
+identically zero, and the remaining four occur as two opposite
+pairs.  The residual matrix and diagonal characters descend
+unchanged by the exact identity
+$\Psi_F(p(s))=\overline\Psi(s)$.
+
+For each $v$, the original place correspondence supplies
+$\gamma$ with $\eta(\gamma)=1$ and $\operatorname{pl}(v)=\gamma B$.
+Then $d(g)=\gamma^{-1}j_v(g)\gamma$ lies in $D_B$, and lies in
+$I_B$ when $g\in I_v$.  Its multiplier is one by the exact
+local map to $G_0$.  The original \texttt{CondT} gives
+$h\in\operatorname{GL}_3(A)$ with $h\equiv1\pmod{\mathfrak m_A}$
+such that
+\[
+ T(g)=h^{-1}r(d(g))_{\rm mat}h
+\]
+is upper triangular and has its specified diagonal on inertia.
+Set $\psi_{v,i}(g)=T(g)_{ii}$.  These are continuous unit-valued
+characters, with the exact inertia values in (FE1), because
+$\Psi$ is invariant under conjugation.  Moreover
+$r(j_v(g))_{\rm mat}=PT(g)P^{-1}$ for the integral invertible
+matrix $P=r(\gamma)_{\rm mat}h$.
+
+For arbitrary $g_0,g_1,g_2$ in this local group,
+\[
+ (T(g_0)-T(g_0)_{00}I)(T(g_1)-T(g_1)_{11}I)
+                         (T(g_2)-T(g_2)_{22}I)=0.          \tag{FE4}
+\]
+Starting on the right, the three factors take the full space to
+the second flag step, to the first step, and then to zero.
+Conjugation gives the literal ordered local product for $\rho$;
+(FE3) gives its polarized companion with the correct reversal.
+The congruence $h\equiv1$ preserves the prescribed residual
+characters.  This proves the complete normalized lift and (FE1)
+without changing the coefficient ring or lattice.
+
+For the final assertion, choose $U=G_L$ before choosing $A$ or $r$.
+If $A$ is an original DVR killing $\mathfrak m_O$, its $O$-map
+factors through $k(O)$, giving the exact scalar tower for
+\texttt{FinPt}.  For $g\in I_v\cap\ker\Psi_F$, (FE1) and the
+exact character correspondence give $\psi_{v,i}(g)=1$.
+Apply \texttt{FinPt} and then the first identity of (FE1): for
+every $s\in U$, the characteristic polynomial of $r(s)_{\rm mat}$
+equals that of the original residual $r_0(\eta,\Psi)(s)$ mapped
+to $A$.  This is precisely \texttt{FinEnd}, uniformly in every
+tested $A$ and $r$, with index as in (FE2).
+\end{proof}
+
+No bound on the degree of the auxiliary field is inferred from
+its finiteness.  Constructing the original \texttt{HasFrame},
+including its growing local degrees, uniform class-rank bounds,
+two strict cohomology classes and seed conditions, remains a
+separate arithmetic supplier.

@@ -157,7 +157,9 @@ The [rank-three propagation theorem](selmer-support-continuation-rank-three-prop
 
 The [finite-point theorem](selmer-support-continuation-finite-points.md) now supplies the complete original AbsMain: both GoodPt assertions and FinPt with every original DVR/field-test quantifier. A residue-pullback coefficient ring gives the exact universal map, and one balanced upper/lower monomial forces triangularity at fixed characteristic-prime weight.
 
-**First missing construction.** Supply the actual GalLink/auxiliary frame and finite-endomorphism transfer giving two-sided global rigidity, then discharge the moving-family integral Selmer budget. The entire characteristic-prime fibre, nilpotents and integral torsion remain part of these requirements; support coverage gives no uniform nilpotence exponent.
+The [finite-end transfer](selmer-support-continuation-finite-end.md) supplies exact integral Galois descent and the literal FinEnd on one subgroup chosen before every tested DVR and ordinary representation. Its index is exactly the degree of the supplied field; no uniform degree bound is inferred.
+
+**First missing construction.** Construct the actual GalLink/auxiliary frame with every Ok/Big and seed clause, complete two-sided global rigidity, then discharge the moving-family integral Selmer budget. The entire characteristic-prime fibre, nilpotents and integral torsion remain part of these requirements; support coverage gives no uniform nilpotence exponent.
 
 ## W06: the integral theta construction
 
@@ -307,13 +309,13 @@ projector theorem](global-gram-continuation-projectors.md) supplies full
 that particular target cut has exactly zero loss. The
 [arithmetic minimum](global-gram-continuation-minimum.md) controls the
 source's higher-rank `leastSize` by the original quotient norm uniformly
-over the finite columns. The [quantitative seed theorem](global-gram-continuation-quantitative.md) now proves an explicit normalized moment of order `10n^2` and its weighted L1 consequence, without an unspecified compact-mass reciprocal. Exact transport of the original additive character removes uncontrolled frame heights. Under the cited `FarBound`, this gives an explicit far-return integral in terms of the field, T, weights and original Haar ratio. It does not by itself make that contribution small in the final trace budget.
+over the finite columns. The [quantitative seed theorem](global-gram-continuation-quantitative.md) now proves an explicit normalized moment of order `10n^2` and its weighted L1 consequence, without an unspecified compact-mass reciprocal. Exact transport of the original additive character removes uncontrolled frame heights. The [actual covolume theorem](global-gram-continuation-haar-budget.md) now proves literal CovolN and cancels every arbitrary Haar scale against the prescribed period normalizer. Under the cited `FarBound`, the resulting far-return integral has fully explicit field, T and weight dependence. It still requires absorption at the exact source cutoff and the final trace comparison.
 
 **First missing construction.** Identify this Poincare Gram operator with
 the final restricted arithmetic chain and its scalar class-kernel
 dictionary, retaining every further target projection. Prove the uniform
 positive trace deficit/excess bounds for these same maps. In particular
-the remaining intrinsic Haar/covolume factors and near-return contributions must be controlled as the field grows, and the explicit far bound must be absorbed with the actual final normalizers.
+the near-return contributions must be controlled as the field grows, and the explicit far bound must be absorbed at the literal source cutoff with the actual final normalizers.
 
 ## W10: the exact integral geometric supplier
 

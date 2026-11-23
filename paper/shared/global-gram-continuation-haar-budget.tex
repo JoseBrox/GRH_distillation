@@ -1,0 +1,296 @@
+\subsection{The actual unipotent covolume and a Haar-independent seed budget}
+\label{global-gram-haar-budget}
+
+The remaining Haar ratio in the preceding bound is not uniformly
+bounded by the source's measure predicates.  Its subgroup measures
+are arbitrary Haar measures, and \texttt{IsTextNorm} imposes product
+identities without fixing their scale.  The actual period normalizer
+cancels these scales.  We compute the arithmetic covolume needed
+after that cancellation, including the original fractional flag
+ideals.\cite{global-gram-haar-source}
+
+Put $f=[F:\mathbb Q]$, $D=|\operatorname{disc}F|$ and retain
+$n=2r+k+1$, $k\ge1$.  The actual CM extension $E/F$ is unramified
+at every finite place, so $|\operatorname{disc}E|=D^2$ and the
+ordinary complex-embedding covolume of $\mathcal O_E$ is
+$c_E=2^{-f}D$.  This is the literal CM hypothesis: at every
+prime of $E$ some integer differs from its conjugate modulo
+that prime.  A ramified prime in the quadratic extension would
+put conjugation in inertia and contradict this condition.
+The specified fixed field is $F$, so no different real subfield
+is used.  Let
+\begin{equation}\label{global-gram-haar-exponents}
+ \begin{aligned}
+ d_N&=r(2n-2r-1),\qquad
+ \beta=r(r+1)(n-r)+\frac{r(r^2-1)}3,\\
+ e_N&=\frac{d_N}{2}-\beta
+       =-\frac{8r^3+6r^2+6kr^2+r}{6}.
+ \end{aligned}
+\end{equation}
+The group $N$ has real dimension $d_N$ at each real place.
+All its tangent volumes below use the Hilbert--Schmidt metric.
+
+\begin{theorem}[The literal original \texttt{CovolN}]
+\label{global-gram-haar-covolume}
+For the actual setting and word $u$, let $\Gamma_{N,u}$ be the
+source's \texttt{NOinf} and let $F_{N,u}$ be any specified
+fundamental domain.  In the original source coordinate box
+$\operatorname{box}_N(u)$, every original Haar measure satisfies
+\begin{equation}\label{global-gram-haar-source-covolume}
+ \mu_N(F_{N,u})
+  =T_u^{fr}\,2^{-fr(k+r)}D^{e_N}
+                               \mu_N(\operatorname{box}_N(u)).
+\end{equation}
+This is exactly the source's \texttt{CovolN}, including its
+additional factor $2^{-fr(r+1)/2}$ outside \texttt{covolN}.
+After the frame and character transport
+\eqref{global-gram-quantitative-character-scale}, the covolume
+for product Hilbert--Schmidt Haar measure is
+\begin{equation}\label{global-gram-haar-transported-covolume}
+ \operatorname{covol}_{\rm HS}(t^{-1}\Gamma_{N,u}t)
+                        =D^{e_N}c^{-f\beta},\qquad c=g/(2\pi).
+\end{equation}
+No finite-prime index or lattice class has been removed.
+\end{theorem}
+\begin{proof}
+First identify the actual discrete group.  The original
+$x_u$ belongs to the full integral stabilizer $K_0$.
+The membership part of the proved finite-phase theorem gives
+$x_u^{-1}(N_f\cap K_0)x_u\subseteq K_2$.
+Conversely $K_2\subseteq K_0$, and $x_u$ normalizes $K_0$.
+Thus
+\[
+              \Gamma_{N,u}=N(F)\cap\operatorname{Aut}_{\mathcal O_E}(L).
+\]
+This uses the proved membership argument, not an assertion that a
+principal congruence group has index one.  That membership argument
+does not require an additional character-law hypothesis.
+
+The original splitting is the direct sum
+\[
+ L=P\oplus L_b\oplus P^\vee,\qquad
+ P=\bigoplus_{a=0}^{r-1}\mathfrak d^{a-r}e_a,
+ \qquad N_E\mathfrak d=D^2.
+\]
+The Hermitian form pairs $P$ and $P^\vee$ perfectly.  Since $L$
+is self-dual, $L_b$ is self-dual.  Its rank is $b=n-2r=k+1$.
+Before the diagonal character scaling, the standard-frame
+positive metric makes the $e_a,f_a$ Euclidean unit vectors.
+Consequently the normalized covolume of $P$ is
+\[
+                    H(P)=D^{-r(r+1)}.
+\]
+
+Decompose $N$ into upper unitriangular automorphisms of $P$ and
+the radical of the parabolic fixing $P$.  This decomposition
+also holds on integral points: the upper factor and its inverse
+adjoint preserve $P\oplus P^\vee$, and the remaining kernel is
+the integral parabolic radical.  All multiplication Jacobians
+are triangular with diagonal one.
+For the upper factor the $(a,b)$ coordinate, $a<b$, lies in
+$\mathfrak d^{a-b}$.  Its two embedded matrix entries have
+combined squared norm twice the squared complex coordinate.
+The product covolume of these coordinates is therefore
+\[
+ \prod_{a<b}(2^f c_E D^{2(a-b)})
+       =D^{r(r-1)/2-r(r^2-1)/3}.
+\]
+
+For clarity, the radical calculation used here is the established
+``Primitive isotropic sublattices and the unipotent radical''
+calculation.\cite{current-construction-record}
+Its coordinates are $Z\in\operatorname{Hom}(\overline P^{\,*},L_b)$
+and a skew-Hermitian $r\times r$ coordinate $C$, with tangent
+norm $2\|Z\|_{\rm HS}^2+\|C\|_{\rm HS}^2$.
+The integral projection onto $Z$ is surjective: the finite
+unramified extension has an integer $\theta$ with
+$\theta+\bar\theta=1$, and the upper-right block
+$-\theta Z^*J_bZ$ supplies a lift.
+The $Z$ covolume is $D^{br}H(P)^b$.
+The diagonal skew coordinates have covolume $D^{1/2}$,
+and each off-diagonal pair has covolume $D$.
+For the actual direct sum of fractional ideals their total
+determinant factor is $H(P)^r$.  Thus the center contributes
+$D^{r^2/2}H(P)^r$.
+These statements include all dyadic places; trace surjectivity
+uses unramifiedness there as well.
+Multiplication of the radical and upper covolumes yields exactly
+$D^{e_N}$.  Reduction first in the upper coordinates, then in
+$Z$, and then in the center gives a genuine fundamental domain,
+so the calculation is a covolume calculation rather than a
+count of formal coordinates.
+
+We check the literal source box.  Its coordinates are the
+strict upper entries of $x$, the entries
+$y_a=h(f_a,nz)$ and $\phi_{aj}=h(f_a,nw_j)$, and the strict
+upper and imaginary diagonal entries of
+$C=(x^{-1}a-(x^{-1}a)^*)/2$.
+The remaining quadratic Hermitian part is determined by
+unitarity.  They are global triangular coordinates of Jacobian
+one after choosing their tangent densities.  Replacing the
+negative unit vector by $z=\sqrt{T_u}e_-$ multiplies the
+$r$ complex $y$ coordinates by $\sqrt{T_u}$.  The two upper
+matrix blocks and the off-diagonal skew pairs supply respectively
+the factors
+$2^{fr(r-1)/2}$, $2^{fr(k+1)}$ and
+$2^{fr(r-1)/2}$.  Therefore
+\[
+ \operatorname{vol}_{\rm HS}(\operatorname{box}_N(u))
+                         =2^{fr(k+r)}T_u^{-fr}.
+\]
+Divide $D^{e_N}$ by this exact box volume.  Haar uniqueness
+proves \eqref{global-gram-haar-source-covolume} for the given
+measure, with the stated source powers.
+
+Finally conjugation by $D_\eta^{-1}$ has real determinant
+$c^{-\beta}$ on the Lie algebra of $N$ at each place.
+The three exponent contributions are
+\[
+ 2\sum_{a<b}(b-a)=\frac{r(r^2-1)}3,\qquad
+ 2b\sum_a(r-a)=br(r+1),\qquad
+ 2r\sum_a(r-a)=r^2(r+1).
+\]
+Their sum is $\beta$.  The phases of $\eta_a$ have unit
+modulus.  Multiplication over all $f$ embeddings proves
+\eqref{global-gram-haar-transported-covolume}.
+When $r=0$, every group in this calculation is trivial and
+both assertions mean equality with factor one.
+\end{proof}
+
+\paragraph{The intrinsic small-ball ratio.}
+Let $B_N=\prod_v\{n_v:\|n_v\|_{\rm op}\le2\}$ in the
+transported group.  Nilpotence makes the exponential Jacobian
+one for Hilbert--Schmidt Haar measure.  The cube of side
+$2\log2/\sqrt{d_N}$ in an orthonormal Lie basis maps into
+this ball: its Hilbert--Schmidt radius is at most $\log2$,
+and $\|\exp X\|_{\rm op}\le e^{\|X\|_{\rm HS}}$.
+Thus, with the factor interpreted as one when $r=0$,
+\begin{equation}\label{global-gram-haar-ratio}
+ R_N:=\frac{\mu_N(F_{N,u})}{(t^{-1}_*\mu_N)(B_N)}
+ \le D^{e_N}c^{-f\beta}
+           \left(\frac{\sqrt{d_N}}{2\log2}\right)^{fd_N}
+ \le2^{f\beta}n^{fd_N}.
+\end{equation}
+Here $t^{-1}_*\mu_N$ denotes conjugation pushforward.
+The last bound uses $e_N\le0$, $g\ge6$, $\pi<4$,
+$2\log2>1$, $d_N\le n^2$ and $\beta\le n^3$.
+It is independent of the arbitrary Haar scale, the word and
+the sizes of the actual frame vectors.
+
+\paragraph{Formal degree cancels the ambient Haar scalar.}
+For one place put $s_a=\prod_{j=0}^{a-1}j!$.
+The exact Cartan scalar used in
+\eqref{global-gram-quantitative-L1} satisfies
+\begin{equation}\label{global-gram-haar-formal-degree}
+ d_\lambda c_G
+   =\left(\prod_{a<b}|\lambda_a-\lambda_b|\right)
+                         \frac{s_{p-q}}{s_p^2s_q^2}
+   \le(2B)^{n(n-1)/2}.
+\end{equation}
+Here $p=k+r\ge q=r+1$ and both measures are precisely the
+ones defining $d_\lambda$ and $c_G$.
+
+We include the normalization check.  Hilbert--Schmidt volume of
+$U(a)$ is $(2\pi)^{a(a+1)/2}/s_a$.
+Indeed the successive quotients are spheres; their horizontal
+metric at a unit vector is $t^2+2\|z\|^2$, so their volume
+is $2^{a-1}$ times that of the ordinary sphere.  The resulting
+successive volume ratio is $(2\pi)^a/(a-1)!$.
+Complex singular-value coordinates on $M_{p,q}(\mathbb C)$,
+with ordered singular values, have density
+\[
+ \frac{2^q\pi^{pq}}{\prod_{j=1}^q(j-1)!(p-q+j-1)!}
+ \prod_{i<j}(t_i^2-t_j^2)^2\prod_i t_i^{2(p-q)+1}dt.
+\]
+The differential of the singular-value map gives the displayed
+Vandermonde and powers.  Its scalar is fixed by integrating
+$e^{-\operatorname{tr}(Z^*Z)}$: after $x_i=t_i^2$, expansion
+of the two Vandermonde determinants reduces the integral to
+the determinant of $(p-q+i+j-2)!$; factoring each row and
+using the monic rising-factorial Vandermonde evaluates it as
+$\prod_{j=0}^{q-1}j!(p-q+j)!$.
+
+Near zero the quotient Hilbert--Schmidt density is $2^{pq}dZ$,
+whereas the hyperbolic radial Jacobian has the additional
+factor $2^q$ from $\sinh(2t_i)$.
+Multiplying by the compact-group volume therefore gives
+\[
+        c_{G,\rm HS}=(2\pi)^{n(n+1)/2}
+                                \frac{s_{p-q}}{s_p^2s_q^2}.
+\]
+The proved formal-degree formula with compact-dual normalization
+is $\prod_{a<b}|\lambda_a-\lambda_b|/s_n$.
+The compact-dual measure is Hilbert--Schmidt Haar measure divided
+by the volume of $U(n)$, so the Hilbert--Schmidt formal degree
+is the Vandermonde divided by $(2\pi)^{n(n+1)/2}$.
+\cite{current-construction-record}
+This proves the equality in \eqref{global-gram-haar-formal-degree}.
+Rescaling Haar measure changes $d_\lambda$ and $c_G$ inversely,
+so the equality holds for the literal original measure as well.
+Finally $s_{p-q}\le s_p$ and every root difference is at most
+$2B$, proving its upper bound.
+
+\begin{theorem}[A uniform bound with the actual period normalizer]
+\label{global-gram-haar-normalized-budget}
+Retain the preceding actual seed theorem and put
+\[
+ {\cal W}_u^{\rm st}
+  =\int\left(\prod_v\nu_v(g_v)\right)^{4n^2}
+                      \|\widetilde W_u(g)\|dq(g),\qquad
+ \mathcal M_\phi=(\prod_vd_v)e(1).
+\]
+Then the original $c_{0,u}=\texttt{c0X}_u$ satisfies
+\begin{equation}\label{global-gram-haar-normalized-result}
+ \mathcal M_\phi c_{0,u}({\cal W}_u^{\rm st})^2
+ \le\frac1{\dim_{\mathbb C}V_{\pi_u}}
+                  \prod_{v\mid\infty}(2T_u H_v^{7n})^{5n^2}.
+\end{equation}
+Every moving embedding is present, and no Haar or lattice-index
+constant remains unspecified.
+\end{theorem}
+\begin{proof}
+In the standard frame the compact $H$ is Euclidean unitary.
+Consequently $\|nh\|_{\rm op}=\|n\|_{\rm op}$ and the
+product of the local subgroup-ball masses is exactly
+$\mu_H(H)\,(t^{-1}_*\mu_N)(B_N)$.
+Use the literal normalizers
+\[
+ c_{0,u}=\frac{\operatorname{vol}(K_2)\mu_N(F_{N,u})\mu_H(H)}
+                    {\dim V_{\pi_u}},\qquad
+ e(1)=\operatorname{vol}(K_2)^{-1}.
+\]
+Squaring \eqref{global-gram-quantitative-global-L1} cancels
+all these measure factors and gives the exact useful bound
+\[
+ \mathcal M_\phi c_{0,u}({\cal W}_u^{\rm st})^2
+ \le\frac{R_N}{\dim V_{\pi_u}}\prod_v
+   \left[2m\,4^{2pq+1}(d_vc_{G,v})
+                          (2T_u H_v^{6n})^{5n^2}\right].
+\]
+Apply \eqref{global-gram-haar-ratio} and
+\eqref{global-gram-haar-formal-degree}.
+For each place, $H_v\ge\max\{4,n,2B_v,2m\}$,
+$d_N\le n^2$, $\beta\le n^3$ and $2pq+1\le n^2$.
+The extra factors are at most
+$H_v^{n^3+(5/2)n^2+1}\le H_v^{5n^3}$.
+Absorb them by replacing $6n$ with $7n$ in the displayed
+power $5n^2$.  This proves the assertion.
+\end{proof}
+
+Under the unchanged cited \texttt{Deep.FarBound}, let $I_u$ be
+the actual weighted far-return integral on the left of
+\eqref{global-gram-quantitative-far}.  The same normalization
+therefore gives
+\[
+ \mathcal M_\phi c_{0,u} I_u^2
+ \le\frac{(C_u^{\rm st})^2e^{-h\varepsilon^2/8}}
+                {\dim V_{\pi_u}}
+              \prod_v(2T_u H_v^{7n})^{5n^2}.
+\]
+This removes the arbitrary Haar ratio from the actual weighted
+period budget and supplies the literal unipotent covolume.
+Absorbing the remaining explicit field, weight and word terms
+in the original growing-family parameters, controlling the
+near returns, and passing to the final restricted chain trace
+remain separate obligations.  No ambient average has been
+substituted for the weighted period integral.
