@@ -185,7 +185,10 @@ now supplied with every original word and normalization. The
 [off-diagonal theorem](global-norm-frontier-off-diagonal.md) now proves the
 actual inverse-parameter kernel estimate. Ordered Capelli peeling gives
 its lower degree after Jacquet transform, preserving both head normalizers.
-The decaying-function, block-growth and controlled-top-lift steps remain. The global application must retain every
+The [actual compact block-growth theorem](global-norm-frontier-block-growth.md)
+now supplies every original lattice sum with its covolume/pi factor,
+old-word weights, positive residual Gram term and full complex limsup.
+The finite-decay extension and controlled-top-lift steps remain. The global application must retain every
 rational return, all source/target cuts and all arithmetic normalizers.
 An ambient projector estimate or local Gram identity is not the required
 global period-Gram estimate. A strict source deficit must supply any
@@ -197,7 +200,7 @@ aggregate nonvanishing needed by the chosen consumer.
    completed original good cover; construct the raw-theta spanning family.
 2. Construct the original marked characteristic-prime support and apply
    propagation globally; prove two-sided rigidity and the integral Selmer budget.
-3. Complete the positive-rank decaying-function and block estimates, then
+3. Complete the positive-rank finite-decay and controlled-lift estimates, then
    transfer it to the complete period-Gram sum.
 4. Test every newly supplied result against the exact fourth-power tables
    in frontier theorem A. Constants and all accuracy parameters precede

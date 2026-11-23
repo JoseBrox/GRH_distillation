@@ -332,3 +332,13 @@ translations carry it to every valuation test over a finite local
 extension. The established full-primary and mixed-level estimates give
 one `intZ`, with its original uniform size, full finite index and both
 determinant ideals. Raw theta spanning and archimedean norms remain.
+
+The [actual compact block-growth theorem](../../notes/global-norm-frontier-block-growth.md)
+constructs a joint compact model for the free matrix block and proves the
+vector germ in the original Gram norm. Exact point/word weights and both
+Lebesgue conversion factors survive to the lattice estimate. A translation
+mean retains the residual positive-definite term; finite Fejer sums prove
+the original inequality at every sample, with its full complex reciprocal
+limsup. No uniform stationary-phase remainder constant remains in that
+inequality. Finite-decay extension, controlled top lifts and global period
+norms remain separate.

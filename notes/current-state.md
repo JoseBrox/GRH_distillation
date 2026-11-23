@@ -117,10 +117,12 @@ original place and operator hypotheses. The actual compact normalized
 one-coordinate Fourier bound, continuity and diagonal positivity are now
 proved for every original admissible word. The actual off-diagonal kernel
 bound now follows from the prescribed inverse-parameter operator identity,
-with its exact degree reduction after Jacquet transform. Extension to the
-prescribed decaying functions, block-growth estimates, the controlled
-top-lift construction and the global rational-return/period-Gram estimate
-remain separate.
+with its exact degree reduction after Jacquet transform. The [actual compact
+block-growth theorem](global-norm-frontier-block-growth.md) now connects the
+normalized matrix germs to every original lattice sum, preserving all word
+factors, the positive residual Gram term and the full complex limsup.
+Extension to the prescribed decaying functions, controlled top lifts and
+the global rational-return/period-Gram estimate remain separate.
 
 These are closed supplier obligations within larger nodes. Whole-node
 statuses remain ordinary RH **6/9** and Dirichlet GRH **17/31**.

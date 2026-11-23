@@ -223,8 +223,10 @@ unused-block construction, and all rational word corrections remain.
 The original compact off-diagonal kernel bound is now proved, including
 actual `LiftDegAll` and `DegLift`. Its degree is exactly `2j-s` after
 Jacquet transform, with every sign, shift and two-head normalizer retained.
-The next local targets are the decaying-eigenfunction extension, block-growth
-estimate and the actual controlled top lift.
+The original compact block-growth estimate is now proved by the actual
+Banach-valued matrix germ, an invariant mean retaining the residual Gram
+term, and a pointwise Fejer argument on the exact sampling lattice. The
+next local targets are finite-decay extension and actual controlled top lifts.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 

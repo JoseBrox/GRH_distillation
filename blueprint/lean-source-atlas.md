@@ -355,3 +355,12 @@ fixes every quantifier and scalar ideal. The review checks finite-field
 torsion descent, unique translated sections and harmonic base change;
 135 finite-index and 340 Fourier-indicator diagnostics accompany the
 general proof. This applies existing estimates to the actual construction.
+
+The [compact block-growth certificate](../certificates/global-norm-frontier-block-growth.json)
+and [independent review](../certificates/global-norm-frontier-block-growth-review.json)
+authenticate eighteen bounded source interfaces. The audit follows the
+literal original block-growth contract, both normalizations, terminal
+old-word density and every lattice sample. Exact diagnostics cover 303
+lower weights, 177 terminal weights, 708 terminal word factors and twelve
+free-block inverses. The source cutoff, punctured complex limsup and
+positive residual Gram term remain; finite-decay extension is separate.

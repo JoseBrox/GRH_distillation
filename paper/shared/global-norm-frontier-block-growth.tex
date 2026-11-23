@@ -1,0 +1,445 @@
+\subsection{The actual block-growth estimate}
+\label{actual-block-growth}
+
+Fix the original place, normalized tower, top lift and
+$\mathrm{InDDplus2}$ hypotheses, as in the preceding two estimates.
+Let $F$ be an original compact smooth coefficient with a positive
+Gram cutoff.  All forms, word operators and Haar measures below are
+the prescribed ones.  Write $N_{i,w}$ and $E_{i,w}$ for the normalized
+kernel and diagonal of Section~\ref{actual-kernel-fourier}; in
+particular their denominator is the full product
+$S_w=\prod_{(\varepsilon,a)\in w}n(a)$, with $n(a)>0$.
+The finite parameter set $\mathcal Y$ and integers $N,K\ge0$ are
+arbitrary.  Admissibility and permitted extensions have exactly
+their original definitions.  No restriction on the placement of
+the old word is added.\cite{block-growth-source}
+
+\begin{theorem}\label{block-growth-actual}
+Let $b\ge1$, $s\ge2$, $j=b+s-1\le r+1$, and let $h$ be an
+original valid head of size $b-1$.  Fix an admissible word $w$ with
+$|w|+K\le N$.  Suppose that
+\[
+ \sup_{t\ne0}E_{j-1,w'}(h\mathbin{\|}(s-1,t))<\infty
+\]
+for every original permitted extension $w'$ of $w$ by at most $K$
+letters.  For every complex lattice
+$\Lambda=\mathbb Z\omega_1+\mathbb Z\omega_2$ of rank two and
+every $z_0\in\mathbb C$, there is a function $k$ on its original
+dual lattice $\Lambda^\vee$ such that
+\begin{align}
+ \frac{\operatorname{covol}(\Lambda)}\pi
+       \sum_{z\in z_0+\Lambda}E_{j,w}(h\mathbin{\|}(s,z))
+       &\le\sum_{\sigma\in\Lambda^\vee}|k(\sigma)|,
+                                                   \label{block-growth-lattice}\\
+ |k(\sigma)|&\le
+ \limsup_{\substack{t\to0\\t\ne0}}
+ \left|N_{j-1,w}\left(h\mathbin{\|}(s-1,t),
+        h\mathbin{\|}\bigl(s-1,(t^{-1}+\sigma)^{-1}\bigr)\right)\right|.
+                                                   \label{block-growth-limsup}
+\end{align}
+The sums and limsup have their original extended nonnegative
+interpretation.  The limsup is over the full punctured complex
+neighborhood, not a ray or a selected sequence.  This is the
+original compact \texttt{BlockGrowthBound} supplier.
+\end{theorem}
+
+\paragraph{A common compact model for the actual matrix block.}
+We first establish the analytic input, retaining the old word.
+Put $p=b-1$ and $n=s-1$.  Below the terminal level let
+$\rho=r-j\ge0$.  Apply the original $j$th word operator to $F$
+first, retaining its full finite auxiliary-index family.  In the
+original head quotient, integrate the fixed head $h$ and all
+radical coordinates, but leave its final $s\times s$ matrix $Z$
+unintegrated.  Denote the resulting coefficient on $G_\rho$ by
+$\Phi(Z)$.  This is precisely the source's $\mathrm{PhiFun}$
+with a final free block.
+
+Let $\mathcal K\Subset\mathbb C^\times$ be a compact set of
+determinant parameters.  Multiply $\Phi(Z)$ by a smooth determinant
+cutoff equal to one on $\det Z\in\det(J_n)\mathcal K$ and
+supported in a compact subset of $\mathbb C^\times$.  This does
+not change either germ orbit considered below.  The resulting
+function is compact smooth in $Z$ with values in compact smooth
+coefficients on $G_\rho$.  Crucially, those coefficients have
+\emph{one common} compact support and positive Gram cutoff.
+
+Here is the properness argument, beyond a pointwise slice assertion.
+In the block notation of Section~\ref{actual-partial-head-transfer},
+the full head matrix is recovered from the bottom-left block of
+the original group matrix.  Eliminate the fixed head by
+\[
+ Z_{\rm all}=\begin{pmatrix}H&HB\\ AH&AHB+Z\end{pmatrix},
+ \qquad A=(Z_{\rm all})_{21}H^{-1},\quad
+ B=H^{-1}(Z_{\rm all})_{12}.
+\]
+The already proved restricted-root Gaussian elimination bounds
+$H,H^{-1},A,B$ on the compact support of $F$.  Its denominators
+are only the fixed nonzero block determinants of $h$.
+The Schur complement $Z$ is therefore bounded.  Its determinant
+cutoff bounds $Z^{-1}$.  The explicit inverse radical formulas
+\eqref{partial-head-inverse-coordinates} now bound every remaining
+integration variable and the residual group matrix.  Thus the
+whole preimage is compact, not just each fibre.  The exact identity
+\eqref{partial-head-gram} gives a common positive cutoff, since
+$|\det Z_{\rm all}|$ is bounded above.  Differentiation under this
+common compact integral proves the assertion for every derivative.
+The fixed compact actions commute with these coordinates and
+preserve their characters, so the residual equivariance is exactly
+the original one.
+
+Every old word is covered: its coefficients have denominators only
+in the full nonzero head determinant and its fixed, separated
+spectral parameters.  On this chart they are smooth.  The operator
+was applied before inserting the determinant cutoff, so no new
+derivative of that cutoff enters an original word.  Its finite
+matrix of residue coefficients, including all rational word
+corrections, remains unchanged.
+
+The old positive residue form is continuous on each such common
+compact coefficient space in some finite $C^m$ norm.  Indeed the
+established finite-regularity Jacquet pairing bound controls the
+base form; applying the fixed finite-order residue operator only
+increases $m$.  Its rational Gram denominators are bounded by the
+common positive cutoff.  This is the actual pairing and its
+adjointness theorem (\JacquetUnfoldingReference), not a norm chosen
+to replace it.  Complete in that $C^m$ norm if needed.  Thus
+$\Phi$ is a compact smooth Banach-valued matrix function to which
+Theorem~\ref{terminal-density-compact-germ} applies.
+
+The same construction at $j=r+1$ uses the already proved actual
+\texttt{PhiZero} function, followed by the fixed-head partial
+average.  It is compact smooth on $\mathrm{GL}_s(\mathbb C)$.
+The Schur-complement calculation gives the same common support.
+The original positive Gram cutoff is retained.
+
+\paragraph{The vector germ below the terminal level.}
+Positivity of the actual old form gives a Hilbert space and vectors
+$v(Q)$, for all heads of size $j$, with
+\begin{equation}\label{block-growth-low-gram}
+                    N_{j,w}(Q,Q')=\langle v(Q),v(Q')\rangle.
+\end{equation}
+We use an inner product anti-linear in its first variable.
+Since the original coefficient form is linear in its first
+variable, passage from coefficients to these Gram vectors is
+anti-linear.  In particular it conjugates the germ character.
+This also follows by expanding the squared norm of every finite
+linear combination using the exact original kernel.
+
+Set $M=k+2\rho+3$ and let $a_h$ be the unchanged head factor in
+$n\mathrm{Pt}$.  For the two block patterns its defining product
+gives exactly
+\begin{align*}
+ n\mathrm{Pt}(h\mathbin{\|}(n,t),(1,c))
+    &=a_h\bigl(|t|^{n(M+s-2)}|c|^{M-2}\bigr)^2,\\
+ n\mathrm{Pt}(h\mathbin{\|}(s,z))
+    &=a_h|z|^{2s(M+s-3)}.
+\end{align*}
+The empty fixed head is included, with $a_h=1$.
+Put $\mu_h=\sqrt{a_h}/\sqrt{S_w}$.  At $t=x^{-1}$ and
+$c=x^nD$, the first square root is
+$\sqrt{a_h}|D|^{M-2}|t|^{ns}$.  The factor
+$|x|^n$ therefore changes it into
+$\sqrt{a_h}|D|^{M-2}|t|^{n^2}$.
+
+The source planar measure is Lebesgue measure.  For
+$\beta_U=2i$, the self-dual measure in the compact matrix germ is
+$d\mu_{\beta_U}=\pi^{-1}d\operatorname{Re}z\,
+d\operatorname{Im}z$.  The two-block and long-block quotient
+dimensions are $d_B=n(n+3)/2$ and $d_L=n(n+1)/2$ respectively.
+Thus the two source integrals are $\pi^{d_B}\Omega_B$ and
+$\pi^{d_L}\Omega_L$, with $d_B-d_L=n$.  The previously proved
+block factorization has Jacobian one and splits the actual
+character into the old character and the two new corner terms.
+It follows that, uniformly for $D\in\mathcal K$,
+\begin{equation}\label{block-growth-low-germ}
+ \begin{split}
+ \pi^{-n}|x|^n
+       v(h\mathbin{\|}(n,x^{-1}),(1,x^nD))
+  =\sum_{z^s=(-1)^{s+1}D}
+       \frac{\psi_{-\beta_U}(szx)}{s|z|^n}
+                  v(h\mathbin{\|}(s,z))+O_{\mathcal K}(|x|^{-1}).
+ \end{split}
+\end{equation}
+This is an equality with error in the actual Gram norm.
+For the scalar check, the long-block power after dividing by
+$s|z|^n$ is $s(M+s-3)-n=s(M-2)+n^2$, exactly the power in the
+matrix germ after $|D|=|z|^s$ is substituted.  Both sides carry
+the same $\mu_h$ and the same old residue matrix.
+
+The compact-germ proof is uniform on $D\in\mathcal K$: its
+cofactor lower bound, support bounds, distinct critical roots and
+nondegenerate Hessians are uniform on such a compact set.
+No rank-uniform remainder constant is required here.  For small
+$|x|$ the two-block integral vanishes, because its matrix contains
+the unbounded entry $x^{-1}$ whereas $\Phi$ has compact support.
+For intermediate $|x|$ common compactness gives a bound.
+Increasing the constant therefore proves
+\eqref{block-growth-low-germ} with an $O(|x|^{-1})$ bound for
+\emph{all} $x\ne0$.
+
+\paragraph{The terminal vector germ, including its density.}
+At $j=r+1$, the actual terminal type decomposition and positivity
+give finitely many nonnegative numbers $c_i$, compact coefficients
+$F_i$, and fixed linear maps $L_i$ such that, for
+\[
+ v_T(Q)=\bigl(\sqrt{c_i}\,\omega(Q)L_iV_{F_i}(Q)\bigr)_i,
+ \qquad
+ \omega(Q)=\sqrt{n\mathrm{Pt}(Q)}
+          \sqrt{\left(\frac{|\det Q|^2}{G(Q)}\right)^{|w|}},
+\]
+one has
+\begin{equation}\label{block-growth-top-gram}
+              N_{r+1,w}(Q,Q')=\langle v_T(Q'),v_T(Q)\rangle.
+\end{equation}
+For $w\ne\varnothing$ the index is exactly $(e,\rho)$, where
+$e$ is the original tensor index and $\rho$ is an original compact
+type.  The data are
+\[
+ c_{e,\rho}=\frac{\bigl(\sqrt{\operatorname{Re}c_W(w,e,\rho)}\bigr)^2}{S_w},
+ \qquad F_{e,\rho}=\Theta_{w,e}F,\qquad
+ L_{e,\rho}=\operatorname{hsVec}\circ(E_\rho\circ\,\cdot\,),
+\]
+using the compact representative of $\Theta_{w,e}F$ already
+constructed.  For the empty word there is one index, $c=1$,
+$F_i=F$ and $L_i=\operatorname{hsVec}$.  Thus the formula retains
+the actual spectral factors and $S_w$, and is the original
+definition of the top kernel.  The all-head terminal identity
+of Theorem~\ref{terminal-transfer-every-head} identifies its
+singleton fibres with the prescribed preceding integral.
+No finite type projection of a different coefficient is used.
+Each weighted summand is defined to be zero where its original
+vector is zero; its displayed quotients are evaluated only on
+the positive Gram support of that vector.
+
+Write $T_*=TT'>0$.  For the two-block point the exact Gram and
+word factors give, on its nonzero support,
+\[
+ \rho(x,D)=
+ \left(1-\frac{T_*}{|x^nD|^2}\right)^{(k-1-|w|)/2}.
+\]
+Indeed $G=|\det h|^2|x^{-1}|^{2n}(|x^nD|^2-T_*)$ and
+$|\det Q|^2/G=|x^nD|^2/(|x^nD|^2-T_*)$.
+For the long block the latter ratio is one.  The point weights
+are
+\[
+ \begin{split}
+ n\mathrm{Pt}(h\mathbin{\|}(n,t),(1,c))
+       &=a_h|t|^{2n(k+n)}(|c|^2-T_*)^{k-1},\\
+ n\mathrm{Pt}(h\mathbin{\|}(s,z))
+       &=a_h|z|^{2s(k+s-2)}.
+ \end{split}
+\]
+These identities are used only where the coefficient is nonzero;
+the original positive Gram cutoff makes every denominator there
+positive and bounded away from zero on parameter compact sets.
+For large $|x|$ and $D\in\mathcal K$,
+$\rho=1+O_{\mathcal K}(|x|^{-2n})$.  Apply the compact matrix
+germ to each actual \texttt{PhiZero} coefficient, keeping the same
+Lebesgue conversions.  The exponent identity
+$s(k+s-2)-n=s(k-1)+n^2$ gives
+\begin{equation}\label{block-growth-top-germ}
+ \begin{split}
+ |x|^n v_T(h\mathbin{\|}(n,x^{-1}),(1,x^nD))
+   =\sum_{z^s=(-1)^{s+1}D}
+       \psi_{\beta_U}(szx)\frac{\pi^n}{s|z|^n}
+                  v_T(h\mathbin{\|}(s,z))+O_{\mathcal K}(|x|^{-1}).
+ \end{split}
+\end{equation}
+The extra factor $\rho-1$ contributes $O(|x|^{-2n})$ times
+the bounded stationary-phase main expression, hence is absorbed
+because $n\ge1$.  For bounded $x$, the actual support cutoff
+handles any apparent zero of $G$; for $x\to0$ compact matrix
+support again makes the two-block coefficient zero.
+Thus the displayed bound also holds for all $x\ne0$.
+
+\paragraph{One Hilbert-space argument with the exact two scalars.}
+Here are the common data supplied by the two preceding paragraphs.
+There are a Hilbert space $H$, continuous functions
+$u_x(D)$ and $b(z)$ away from their zero arguments, and
+\[
+ \epsilon=(-1)^{s+1},\qquad
+ B(z)=s|z|^{s-1}b(z),\qquad
+ A_x(D)=\sum_{z^s=\epsilon D}\psi_\beta(szx)b(z),
+\]
+such that $u_x-A_x=O_{\mathcal K}(|x|^{-1})$ on every
+$\mathcal K\Subset\mathbb C^\times$ and
+$\sup_{x\ne0}\|u_x\|_{L^2(dD)}^2<\infty$.
+Put
+\[
+ U_x(c)=|x|^{-n}u_x(c/x^n),\qquad
+ A^c_x(c)=|x|^{-n}A_x(c/x^n).
+\]
+Writing $E(z)=E_{j,w}(h\mathbin{\|}(s,z))$ and
+$N(t,t')=N_{j-1,w}(h\mathbin{\|}(n,t),h\mathbin{\|}(n,t'))$,
+the \emph{exact} relations are
+\begin{equation}\label{block-growth-data}
+ E(z)=\kappa_2\|B(z)\|^2,\qquad
+ |N(t,t')|=\kappa_1|\langle U_{1/t},U_{1/t'}\rangle_{L^2}|,
+ \qquad \mathrm{fsv}(\sigma,z)=\psi_\beta(\eta\sigma z),
+\end{equation}
+Here $Q_x(D)=h\mathbin{\|}(n,x^{-1}),(1,x^nD)$ and
+\[
+ \begin{aligned}
+ j\le r:&\quad u_x(D)=\pi^{-n}|x|^nv(Q_x(D)),
+       &&b(z)=\frac{v(h\mathbin{\|}(s,z))}{s|z|^n},\\
+ j=r+1:&\quad u_x(D)=|x|^nv_T(Q_x(D)),
+       &&b(z)=\frac{\pi^nv_T(h\mathbin{\|}(s,z))}{s|z|^n}.
+ \end{aligned}
+\]
+The signs and two scalars are
+\[
+\begin{array}{c|c|c}
+ & (\beta,\eta)&(\kappa_1,\kappa_2)\\ \hline
+ j\le r&(-\beta_U,1)&(\pi^{2n},1)\\
+ j=r+1&(\beta_U,-1)&(1,\pi^{-2n}).
+\end{array}
+\]
+The Gram relations in \eqref{block-growth-data} follow by
+polarizing the already proved exact head integral, including
+its terminal version.  Under $c=x^nD$ the Jacobian is
+$|x|^{2n}$, so the displayed dilation is unitary on $L^2$.
+The assumed bounded diagonal for the extension $w'=w$ therefore
+gives the asserted uniform $L^2$ bound.  The hypotheses on the
+other extensions are preserved, though not needed for this step.
+In both cases $0\le\kappa_2\le\pi\kappa_1$.
+
+We give the remaining argument explicitly.  On a compact annulus
+in $D$, expand $\|A_x(D)\|^2$.  Diagonal root pairs give
+$\int\sum_{z^s=\epsilon D}\|b(z)\|^2\,dD$.
+Every off-diagonal root pair has the nonconstant linear phase
+$\psi_\beta(s(\zeta-1)zx)$, where $\zeta^s=1$, $\zeta\ne1$.
+The change of variables $D=\epsilon^{-1}z^s$ and the
+Riemann--Lebesgue lemma make those integrals tend to zero as
+$|x|\to\infty$.  The compact germ and the uniform $L^2$ bound,
+followed by monotone exhaustion of the annuli, imply
+\[
+ \int_{\mathbb C}\|B(z)\|^2\,dz<\infty.
+\]
+The Jacobian here is exactly $s^2|z|^{2s-2}$.
+Consequently $A_x\in L^2$ for every $x$, with
+$\|A_x\|_2^2\le s\|B\|_2^2$.  In particular $E$ is integrable.
+
+For fixed $\delta\in\mathbb C$, one has
+\begin{equation}\label{block-growth-packet-limit}
+ \begin{split}
+ \langle A^c_x,A^c_{x+\delta}\rangle
+      &\longrightarrow\widehat B(\delta)
+          :=\int\psi_\beta(\delta z)\|B(z)\|^2\,dz,\\
+ \langle U_x-A^c_x,A^c_{x+\delta}\rangle&\longrightarrow0,
+ \qquad
+ \langle A^c_x,U_{x+\delta}-A^c_{x+\delta}\rangle
+      \longrightarrow0.
+ \end{split}
+\end{equation}
+To verify the first limit, in the second root packet choose
+the branch $q_x=(x/(x+\delta))^{n/s}$ tending to one.  Corresponding
+roots differ by $q_x$, and their diagonal phase is
+\[
+ sz\bigl((x+\delta)q_x-x\bigr)\longrightarrow\delta z.
+\]
+Distinct roots give a linear phase whose frequency tends to
+infinity.  On a compact annulus, uniform convergence of the
+amplitudes and Riemann--Lebesgue prove the limit.  The omitted
+tails are uniformly small by Cauchy--Schwarz and the $L^2$ tails
+of $B$; the dilations $q_x$ stay near one.  The same truncation,
+the local germ bound, and the uniform norms of $U_x,A^c_x$ prove
+the other two limits.  This proves the assertions over the full
+complex $|x|\to\infty$ filter, with no angular restriction.
+
+\paragraph{The positive residual term and the punctured limsup.}
+Fix the rank-two dual lattice $\Gamma=\Lambda^\vee$.
+Take a translation-invariant mean $\mathfrak m$ on bounded
+functions on $\Gamma$ which agrees with limits at infinity.
+For clarity, average over larger integer-coordinate squares
+and take a weak-star cluster point.  The boundary-to-volume
+ratio tends to zero, so the cluster point is translation
+invariant; every finite set has mean zero.  Set $U_0=A^c_0=0$
+if necessary and $R_x=U_x-A^c_x$.  All these vectors are uniformly
+bounded in $L^2$.
+
+The function
+\[
+ C(\delta)=\mathfrak m_x\langle R_x,R_{x+\delta}\rangle
+       \qquad(\delta\in\Gamma)
+\]
+is positive definite.  Indeed translation invariance turns
+each finite quadratic sum into the mean of a squared Hilbert
+norm.  Equation~\eqref{block-growth-packet-limit} gives
+\[
+ \mathfrak m_x\langle U_x,U_{x+\delta}\rangle
+                  =\widehat B(\delta)+C(\delta).
+\]
+Define on $\Gamma$
+\begin{equation}\label{block-growth-k}
+ A(\sigma)=\frac{\kappa_2}\pi C(\eta\sigma),\qquad
+ k(\sigma)=\frac1\pi\int\mathrm{fsv}(\sigma,z)E(z)\,dz
+                       +A(\sigma).
+\end{equation}
+Then $A$ is positive definite and
+\[
+ |k(\sigma)|\le\frac{\kappa_2}\pi
+       \limsup_{\substack{|x|\to\infty\\x\in\Gamma}}
+                      |\langle U_x,U_{x+\eta\sigma}\rangle|.
+\]
+Use $\kappa_2/\pi\le\kappa_1$ and
+\eqref{block-growth-data}.  For $\eta=1$, put $t=x^{-1}$.
+For $\eta=-1$, interchange the two Hilbert vectors inside
+the absolute value and put $t=(x-\sigma)^{-1}$.
+In either case the second parameter is precisely
+$(t^{-1}+\sigma)^{-1}$.  The finitely many undefined reciprocal
+values have mean zero.  The limsup along these lattice parameters
+is bounded above by the full punctured complex limsup, proving
+\eqref{block-growth-limsup}.  The residual term has not been
+discarded, and no pointwise limit of its Gram kernels is assumed.
+Extend $A$ and $k$ by zero off $\Gamma$ if functions on all of
+$\mathbb C$ are required, as in the original contract.
+
+\paragraph{Poisson summation with the positive residual term.}
+The function $E$ is continuous off zero, by the common compact
+models and their actual weights.  At zero it is zero, since the
+source coefficient of an invalid head is zero.  Positivity therefore
+makes $E$ lower semicontinuous everywhere.  On the torus
+$\mathbb C/\Lambda$ set
+\[
+        f(z)=\frac{\operatorname{covol}(\Lambda)}\pi
+                         \sum_{\lambda\in\Lambda}E(z+\lambda).
+\]
+It is nonnegative, integrable and lower semicontinuous.  For
+probability Haar measure on that torus its Fourier coefficient is
+$\pi^{-1}\int\mathrm{fsv}(\sigma,z)E(z)\,dz$.
+These normalizations
+explain the exact factor in \eqref{block-growth-lattice}.
+
+Use the product Fejer kernels in any integer basis of $\Gamma$.
+Their coefficient weights are
+$a_L(m,n)=(1-|m|/(L+1))_+(1-|n|/(L+1))_+$.
+Positive definiteness of $A$ gives
+\[
+       \sum_{\sigma\in\Gamma}a_L(\sigma)A(\sigma)
+                           \overline{\mathrm{fsv}(\sigma,z)}\ge0:
+\]
+the sum is the finite positive-definite quadratic form for
+indices in $\{0,\ldots,L\}^2$, divided by $(L+1)^2$.
+It follows from \eqref{block-growth-k} that
+\[
+       (\mathcal F_L*f)(z_0)
+        \le\left|\sum_\sigma a_L(\sigma)k(\sigma)
+                          \overline{\mathrm{fsv}(\sigma,z_0)}\right|
+        \le\sum_\sigma|k(\sigma)|.
+\]
+If the last sum is infinite the desired inequality is automatic.
+Otherwise the same finite-sum inequality applies for every $L$.
+Positivity and concentration of the Fejer kernels, together with
+lower semicontinuity, give
+$f(z_0)\le\liminf_L(\mathcal F_L*f)(z_0)$ at \emph{every} point.
+This proves \eqref{block-growth-lattice}, including the rational
+sampling points and any lattice translate containing zero.
+
+The construction is for every original admissible old word and
+every original head in the theorem.  Its auxiliary compact-germ
+constants may depend on these fixed data; they disappear entirely
+from the final inequality.  In rank $r=0$ the block range is empty.
+This closes the actual compact block-growth supplier.  Extension
+to the final finite-decay coefficient, the arithmetic construction
+of its top lift and integral lattices, and the complete global
+rational-return estimate remain separate obligations.
