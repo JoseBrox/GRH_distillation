@@ -242,8 +242,12 @@ term, and a pointwise Fejer argument on the exact sampling lattice. The
 full original `FormLimit` now extends these kernels through the prescribed
 compact exhaustion at every head, with one fixed finite decay exponent
 and a threshold depending only on the original top-lift constant.
-The next local targets are actual controlled top lifts and the terminal
-degree identity.
+The terminal normal form now proves the original `PolyTop` degree drop
+and its exact leading factor. The ordered radial recurrence and the
+actual first-component word update give `RadAATop`, `TopFirst` and the
+full arbitrary-grid `DegTop`, retaining the prescribed operator and its
+differential realization. The next local target is the actual controlled
+top lift on the valid source cuts.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 

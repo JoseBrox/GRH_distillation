@@ -394,3 +394,13 @@ vanish at odd ell; the original cokernel contract uses modules killed
 by ell. Exact valuation, unit-root and local-cocycle diagnostics accompany
 the arbitrary-rank proof. No auxiliary-prime size or lattice-index bound
 is inferred.
+
+### Actual terminal-degree supplier
+
+The [terminal-degree certificate](../certificates/global-norm-frontier-terminal-degree.json)
+authenticates 20 pinned modules for the exact PolyTop, RadAATop, TopFirst
+and DegTop contracts. Its human proof preserves the actual unitary
+character, ordered Capelli factors, radial gauge, terminal normalizer
+and all grid/word quantifiers. Independent review and exact unitary,
+PBW, Toda and grid diagnostics are recorded in the companion review.
+These records do not assert a Lean build or global norm estimate.

@@ -132,7 +132,10 @@ factors, the positive residual Gram term and the full complex limsup.
 The [finite-decay theorem](global-norm-frontier-finite-decay.md) now proves
 the entire original compact-exhaustion contract at every head, with one
 finite decay exponent for all derivative orders and the original rank and
-word-length threshold. Controlled top lifts, the terminal degree identity
+word-length threshold. The [terminal-degree theorem](global-norm-frontier-terminal-degree.md)
+now proves the exact polynomial reduction, radial identity and arbitrary-grid
+degree extraction for every original head and old word. It retains the
+prescribed operator and its differential realization. Controlled top lifts
 and the global rational-return/period-Gram estimate remain separate.
 
 These are closed supplier obligations within larger nodes. Whole-node

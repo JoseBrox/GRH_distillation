@@ -371,3 +371,11 @@ the exact movement between completions; finite coefficient extension and
 the pro-ell quotient give the full `Core`, `CoreBC` and `Raw` contracts.
 The initial stable support prime is an explicit hypothesis. Neither a
 nonempty characteristic-prime fibre nor a uniform torsion bound is inferred.
+
+The [terminal-degree theorem](../../notes/global-norm-frontier-terminal-degree.md)
+proves the original terminal polynomial drop, its exact leading scalar,
+and the arbitrary-grid degree extraction for all old words and heads.
+Its unitary normal form and ordered radial recurrence retain every
+character, gauge and rational correction. The prescribed top operator
+and its differential realization remain inputs; controlled valid-cut
+top lifts and the global period-Gram estimate are still separate.

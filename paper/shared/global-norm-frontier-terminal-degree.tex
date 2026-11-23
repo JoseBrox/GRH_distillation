@@ -1,0 +1,341 @@
+\subsection{The actual terminal degree extraction}
+\label{actual-terminal-degree}
+
+Retain the original place, normalized tower and compact coefficient
+class, and write $\mathcal V_H(a)$ for their orbital vector.  The
+Hermitian form is linear in its first variable:
+$h(v,w)=w^*Jv$.  Put $R=r+1$, $d=2r+k+1$, and let $D_j$ be the
+prescribed leading paired determinant of size $j$.  For real $y$ set
+\[
+ \mathcal A_yH=D_R^{-1}\operatorname{AA}_r
+                 \left(y+\frac{2r+k}{2}\right)H.
+\]
+Here $\operatorname{AA}_r$ is the original contracted column minor,
+with its coefficients evaluated at the point of differentiation;
+its ordered factors have parameters $u,u-1,\ldots,u-r+1$.
+The definition is extended by zero wherever the original inverse is
+zero.  A compact coefficient with positive Gram cutoff vanishes in
+a neighborhood of that set, so this convention causes no loss of
+smoothness.
+
+\begin{theorem}\label{terminal-degree-actual}
+Let $a=h\mathbin{\|}(s,t)$ satisfy the original terminal head conditions,
+with $s\ge2$, $p=|h|$, $p+s=R$, and $t\ne0$.  For every original
+compact coefficient $H$, the orbital vector
+$y\mapsto\mathcal V_{\mathcal A_yH}(a)$ is a polynomial of degree
+at most $p$, whose coefficient of $y^p$ is
+\begin{equation}\label{terminal-degree-leading}
+             \lambda\mathcal V_H(a),
+             \qquad \lambda=\frac{(-1)^{s-1}}{t}.
+\end{equation}
+
+Keep also the prescribed operator $\Theta$, its actual regular
+radial identity, and its original differential realization
+\texttt{InDDplus2}.  Let $w$ be any old word and $e$ any of its
+tensor indices.  For any $K\ge0$, take arbitrary injective real
+grids $\{y_{a,0},\ldots,y_{a,p}\}$, $0\le a<K$, such that every
+word obtained by prepending the $K$ chosen plus letters is admissible
+for the original cut.  Put
+\[
+       \ell_{a,n}=\prod_{\substack{0\le m\le p\\m\ne n}}
+                             (y_{a,n}-y_{a,m})^{-1}.
+\]
+Then, with the prescribed tail-first word order,
+\begin{align}\label{terminal-degree-grid}
+ \lambda^K\mathcal V_{\Theta_{w,e}F}(a)
+ =\sum_{n\in\{0,\ldots,p\}^K}
+       \left(\prod_{b=0}^{K-1}\ell_{b,n_b}\right)
+       \mathcal V_{\Theta_{(+y_{0,n_0},\ldots,+y_{K-1,n_{K-1}},w),
+                                      (0,\ldots,0,e)}F}(a).
+\end{align}
+Thus the original \texttt{PolyTop}, \texttt{TopFirst} and
+\texttt{DegTop} obligations hold, with all their head, old-word,
+component and grid quantifiers.  This does not construct $\Theta$;
+its two stated source properties remain hypotheses of this theorem.
+\end{theorem}
+
+\begin{proof}
+The original orbital vector is zero for an invalid head, for a
+head of nonpositive Gram, or when no actual unitary representative
+exists.  These conventions are independent of the coefficient.
+Thus the polynomial assertion and every comparison below hold
+with both sides zero in those cases.  The head condition
+\texttt{IsLocPt} alone does not impose positive Gram.  In proving
+the nonzero branch we now assume positive Gram and choose an
+actual representative, as in the definition of the orbital vector.
+
+We first put the actual point into a normal form that preserves its
+right Jacquet value.  Write $V=E\oplus W\oplus E^*$ in paired
+coordinates, so that
+\[
+ J=\begin{pmatrix}0&0&I\\0&J_W&0\\I&0&0\end{pmatrix},
+ \qquad E=\langle e_0,\ldots,e_{r-1}\rangle.
+\]
+For a point $g$ over $a$, put $y_b=g^{-1}e_b=(a_b,w_b,b_b)$.
+The paired matrix is
+$Z_a=\operatorname{diag}(H_h,tJ_s)$, with $J_s$ the reversing
+matrix.  The source convention gives
+\[
+       (b_b)_c=\overline{(Z_a)_{bc}},\qquad
+       h(z',w_b)=(Z_a)_{b,r}.
+\]
+Consequently $b_p=0$, and the $b_b$ with $b\ne p$ form a basis
+of the coordinate hyperplane $B=\{b_p=0\}\subset E^*$.
+Indeed their square submatrix is the conjugate of
+$\operatorname{diag}(H_h,tJ_{s-2})$.  Moreover
+$h(z',w_b)=0$ for $b\ne p$, whereas $h(z',w_p)=t$.
+The vectors $y_b$ are pairwise isotropic.  In particular $w_p$
+is isotropic, while $h(z',z')\ne0$ and $t\ne0$.
+
+Choose $X:E^*\to W$ on $B$ by $Xb_b=w_b$ for $b\ne p$.
+Its image there lies in $z'^\perp$.  Isotropy gives
+\[
+        a_p+X^*J_Ww_p\in\mathbb C e_p.
+\]
+The projection of $w_p$ to $z'^\perp$ has nonzero norm:
+its norm is $-|h(z',w_p)|^2/h(z',z')$.  Thus the remaining
+column $Xe_p\in z'^\perp$ can be chosen so that
+$a_p=-X^*J_Ww_p$.  Prescribe a skew-Hermitian matrix $K$ on $B$ by
+\[
+             Kb_b=a_b+\tfrac12X^*J_WXb_b \quad(b\ne p).
+\]
+This prescription extends to all of $E^*$: on $B\times B$
+the skew-Hermitian compatibility is precisely
+$h(y_b,y_c)=0$; the missing column is then the negative conjugate
+of the already prescribed corresponding row, and the remaining
+diagonal entry can be any purely imaginary number.  Direct block
+multiplication shows that
+\begin{equation}\label{terminal-degree-n0}
+ n_0=\begin{pmatrix}
+ I&-X^*J_W&K-\tfrac12X^*J_WX\\0&I&X\\0&0&I
+ \end{pmatrix}
+\end{equation}
+is unitary, fixes $E$ pointwise and fixes $z'$, and
+\[
+ n_0^{-1}y_b=(0,0,b_b)\ (b\ne p),\qquad
+ n_0^{-1}y_p=(0,w_p,0).
+\]
+It is in the original group $N_0(z')$.  Its flag-root coordinates
+are zero, and its last character coordinate is zero because
+$X^*J_Wz'=0$.  Hence its original character is exactly one.
+This proves the required normal form without dividing by any
+internal minor of the last block \cite{terminal-degree-source}.
+
+Let $\mathcal RH$ be the original right Jacquet average used in
+the inverse-parameter theorem.  It obeys
+\begin{equation}\label{terminal-degree-middle-character}
+ E_{e_b,e_c}\mathcal RH=\mathbf1_{c=b+1}\mathcal RH,
+ \qquad
+ E_{e_b,q}\mathcal RH=\mathbf1_{b=r-1}z'_q\mathcal RH
+                   \quad(q\in W).
+\end{equation}
+These are the derivatives of the prescribed character with
+$c_{\rm Std}=-2i$, including its middle coordinates.  They apply
+to a rightmost generator in any ordered differential word.
+The contracted minor commutes with this right averaging by its
+actual covariance; the compact support makes differentiation under
+the integral valid.  Its covariance under $n_0$ and
+$\psi_{z'}(n_0)=1$ permit the calculation at $gn_0$.
+
+At that point the coefficient rows $\xi_b(q)=h(b_q,n_0^{-1}y_b)$
+are supported on $E\setminus e_p$ if $b\ne p$, and on $W$ if
+$b=p$.  Thus the only nonzero column sets in the contracted
+size-$r$ minor are
+$(e_0,\ldots,\widehat e_p,\ldots,e_{r-1},q)$ with $q\in W$.
+Writing $\epsilon_m=(-1)^{m(m-1)/2}$, their coefficients are
+\[
+  (-1)^{p+r-1}\det H_h\,t^{s-2}\epsilon_{s-2}
+                                      h(b_q,w_p).
+\]
+Expand the quantum minor in its last column.  The rightmost
+middle generator in \eqref{terminal-degree-middle-character}
+kills every row except $e_{r-1}$, whose cofactor sign is one.
+Summing over $q$ yields exactly
+\[
+               \sum_{q\in W}z'_q h(b_q,w_p)=h(z',w_p)=t.
+\]
+There is no conjugation of $t$ in this formula.  The remaining
+upper-chain minor has rows $e_0,\ldots,e_{r-2}$ and columns
+$E\setminus e_p$.  Successive last-column expansions, as in
+\eqref{off-diagonal-col}, remove its last $s-2$ rows and columns.
+Every surviving character and cofactor sign is one; the spectral
+parameter stays $u$.  The result is the principal $p$ by $p$
+minor $Q_p(u)$.  Since
+\[
+ (-1)^{p+r-1}\epsilon_{s-2}=\epsilon_{s-1},\qquad
+ D_R=\det H_h\,t^s\epsilon_s,
+\]
+we obtain, at every such point,
+\begin{equation}\label{terminal-degree-reduction}
+       D_R^{-1}\operatorname{AA}_r(u)\mathcal RH
+                       =\frac{(-1)^{s-1}}{t}\,Q_p(u)\mathcal RH.
+\end{equation}
+The principal minor is monic of degree $p$ in $u$, including
+$Q_0=1$.  The shift $u=y+(2r+k)/2$ leaves its leading coefficient
+unchanged.
+
+The exact head quotient formula expresses $\mathcal V_H(a)$
+as the remaining left quotient integral of $\mathcal RH$.
+Every point in that integral has the same $Z_a$ and $D_R$;
+the preceding argument therefore applies throughout it.
+Compact-family properness gives absolute convergence with the
+original measures and original normalized quotient cut.
+Polynomial coefficients are integrable separately: evaluate at
+$p+1$ distinct parameters and use finite Vandermonde inversion.
+Integrating \eqref{terminal-degree-reduction} proves
+\eqref{terminal-degree-leading}.
+
+We next verify the radial identity needed to use this degree
+decrease with the prescribed word operators.  On the regular
+cell write $g=w(c)\gamma$, $c_j\ne0$, and keep the original gauge
+\[
+ \delta(c)=\prod_{j=0}^{r-1}|c_j|^{2(r-j)+k},\qquad
+ p_j=c_j\partial_{c_j},\qquad
+ \rho_j=r-j+k/2.
+\]
+The paired coefficient rows on this cell have only their
+diagonal $E$ entries $c_j$.  Thus
+$\operatorname{AA}_r(u)=(\prod c_j)Q_r(u)$ there.
+For any left-character-equivariant smooth coefficient, and for
+its right derivatives, the exact cell root and torus rules are
+\begin{align*}
+ E_{e_a,e_b}K(w(c)\gamma)
+   &=\mathbf1_{a=b+1}\frac{c_a}{c_b}K(w(c)\gamma)
+                                             &&(a>b),\\
+ E_{e_j,e_j}K(w(c)\gamma)
+   &=c_j\partial_{c_j}\bigl(K(w(c)\gamma)\bigr).
+\end{align*}
+For the first rule, conjugating the lower root by the cell
+matrix turns it into the left upper root, multiplied by
+$c_a/c_b$; the original character is zero unless $a=b+1$.
+For the second, the two real diagonal curves multiply $c_j$
+by $e^t$ and $e^{it}$, respectively; their complex combination
+is $c_j\partial_{c_j}$.  These calculations retain the actual
+cell matrix, including its reversed paired order.
+
+For completeness, the ordered determinant recurrence uses a
+last-column expansion, followed on its sole surviving nonprincipal
+term by a first-factor row expansion.  All far upper roots vanish
+by the right rule, and all far lower roots by the left rule.
+The adjacent term has the negative cofactor sign and coefficient
+$c_m/c_{m-1}$.  More explicitly, that nonprincipal minor has rows
+$(0,\ldots,m-2,m)$ and columns $(0,\ldots,m-1)$.
+Rotate its last row to first, with sign $(-1)^{m-1}$, and expand
+that first row with its generator on the left.  Only column
+$m-1$ survives the left rule, with the same sign $(-1)^{m-1}$,
+and the remaining minor is $Q_{m-1}(u)$.  Commuting generators
+in this row expansion uses
+$[E_{ab},E_{cd}]=\delta_{bc}E_{ad}-\delta_{da}E_{cb}$;
+the commutator terms cancel the change in the positional shifts.
+Equivalently, for the evaluation functional $\mathcal L$ and
+any product $P$ of diagonal generators with indices at least
+$m+1$, the resulting identity is
+\begin{align}\label{terminal-degree-toda}
+ \mathcal L(Q_{m+1}(u)P)
+   ={}&\mathcal L\bigl(Q_m(u)(u-m+E_{e_m,e_m})P\bigr)\notag\\
+    &-\frac{c_m}{c_{m-1}}\mathcal L(Q_{m-1}(u)P)
+                                                     \quad(m\ge1).
+\end{align}
+Here is the all-rank first-factor formula used above, for arbitrary
+ordered injective row and column lists of length $q$:
+\[
+ Q_{a,b}(u)=\sum_{j=0}^{q-1}(-1)^j
+ T_{a_0b_j}(u-q+1)
+ Q_{a\setminus a_0,\,b\setminus b_j}(u).
+\]
+To prove it, write the defining column alternant and group terms
+in pairs that exchange two adjacent assigned rows.  The displayed
+two-factor identity in the inverse-parameter proof replaces each
+such paired alternant by the corresponding row-ordered alternant,
+reversing the two positional shifts.  Repeating at the next
+adjacent position moves the chosen row past one more factor;
+induction on the number of positions gives the row alternant with
+parameters $u-q+1,u-q+2,\ldots,u$.  Group that alternant by the
+column assigned to its first row.  Its sign is $(-1)^j$ and the
+remaining alternant has parameters $u-q+2,\ldots,u$, which is
+the length-$(q-1)$ minor at parameter $u$.  This proves the formula
+for every $q$, starting with $q=1$, and justifies its use above.
+It explains both
+the unshifted $u$ in the two smaller minors and the $u-m$ in
+the diagonal factor.  The auxiliary diagonal factors commute
+with the root generators being removed, so induction retains
+\eqref{terminal-degree-toda} with those factors present.
+
+The gauge identity
+\[
+       p_j\delta=\rho_j\delta,\qquad
+       \delta\,(y+\rho_j+p_j)K=(y+p_j)(\delta K)
+\]
+now gives, by induction from $Q_0=1$ and $Q_1(u)=u+E_{00}$,
+\begin{equation}\label{terminal-degree-vab}
+ A_0=1,\quad B_0=0,\qquad
+ A_{j+1}=(y+p_j)A_j-c_jB_j,\quad B_{j+1}=c_j^{-1}A_j.
+\end{equation}
+These operators act on the actual gauged Jacquet image.
+Right derivatives preserve left covariance,
+and compact properness justifies all differentiations.  Thus this
+is the original radial comparison, not a replacement differential
+model.  The original terminal coordinate satisfies
+$D_R=(\prod c_j)\zeta$, so division by $D_R$ turns
+\eqref{terminal-degree-vab} into precisely
+$\zeta^{-1}A_r=\texttt{TL.aP}(y)$.  All original Haar constants
+occur on both sides of the same Jacquet integral and remain
+unchanged.  Also $\mathcal A_y$ preserves compact support and
+the positive Gram cutoff.  This proves \texttt{RadAATop}
+\cite{terminal-degree-radial-source}.
+
+Here is the exact first-component word comparison.  Write
+$\mathcal F_w$ for the prescribed terminal frame and
+$\mathcal B_w$ for its ordered site product.  The plus update is
+\[
+ \mathcal F_{(+y,w)}=
+ \iota_{\rm new}\!\left[
+ \begin{pmatrix}\zeta^{-1}&0\\0&\bar\zeta^{-1}\end{pmatrix}
+ \begin{pmatrix}1&0\\G\ell_w(y)&G\end{pmatrix}\right]
+ \mathcal F_w.
+\]
+The old frame is free of the new tensor position; its entries
+commute with the new site operators.  Move it past the new site
+product, whose first column is $(A_r,B_r)^t$, and multiply the
+displayed two by two matrices.  Their first component is
+$\zeta^{-1}A_r$.  Therefore the new bit-zero component is
+\texttt{TL.aP}(y) applied to the old component.  All old frame
+entries, rational inverses and word factors remain in the old
+component; none has been omitted or bounded.  This is the
+bit-zero part of the actual \texttt{WordStep} identity
+\cite{terminal-degree-word-source}.
+
+The differential realization supplies a smooth compact
+representative $H_{w,e}$ of $\Theta_{w,e}F$ on the positive
+Gram domain.  Indeed each of its finitely many terms is a
+finite-order local differential operator there, so it preserves
+the compact support and vanishes below the same positive Gram
+cutoff; extension by zero is smooth.  The original orbital
+vector agrees with that representative at every head, by the
+same quotient formula.  The regular radial comparison just
+proved and the first-component update show that
+$H_{(+y,w),(0,e)}$ and $\mathcal A_yH_{w,e}$ have identical
+regular gauged Jacquet images.  The already proved every-head
+density theorem applies to their compact difference and gives
+\[
+     \mathcal V_{\Theta_{(+y,w),(0,e)}F}(a')
+                       =\mathcal V_{\mathcal A_yH_{w,e}}(a')
+                                   \quad\hbox{for every head }a'.
+\]
+This also proves the full \texttt{TopFirst}, for any compact
+representative agreeing on the stated positive domain.
+
+Finally apply leading-coefficient interpolation to
+\eqref{terminal-degree-leading} repeatedly.  Process the new
+letters in reverse list order, because the rightmost operator
+acts first.  Each extraction multiplies the old orbital vector
+by $\lambda$.  Every intermediate word is a suffix of one of
+the assumed admissible full words and is therefore admissible.
+Reversing the grid indices back gives exactly
+\eqref{terminal-degree-grid}; scalar Lagrange weights commute,
+so this reversal changes neither their product nor the sum.
+For $p=0$ each grid is a singleton and its weight is one.  For
+$K=0$ both sides are the same old orbital vector.  If $r=0$
+there is no terminal head with $s\ge2$, so the degree assertion
+has no instance.  All these cases retain the original conventions.
+\end{proof}
