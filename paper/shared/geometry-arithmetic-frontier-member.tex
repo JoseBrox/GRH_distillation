@@ -1,0 +1,563 @@
+\section{The actual normalized theta uniformization and adelic dictionary}
+\label{sec:actual-normalized-member}
+
+The remaining complex supplier for the good arithmetic cover is an
+identification of the \emph{original} primitive theta line with the
+analytic theta function, including its scalar.  A polarization alone
+would not determine this identification.  Here the primitive graph
+identity fixes its semicharacter.  The integral coefficient action
+then removes the squared theta multiplier, and a Gaussian integral
+fixes the probability normalization exactly.
+
+Retain the original host, datum, rational Hermitian space $V$, and
+coefficient embeddings.  Write $F=E^+$, $r=p+q\ge1$, and
+$K_0=\mathbb Q(\sqrt{-d})$, where $d\equiv7\pmod {16}$ is the
+original prime.  Put $w=(1+\sqrt{-d})/2$, so $w+\bar w=1$.
+The extension $E/F$ is unramified at every finite place.  In this
+section $A=1$, exactly as required by the deep-cover consumer, and
+$M\ge3$ is its original odd half-level.  In particular the half-ideal
+$\mathfrak b$ is extended from $K_0$ and
+$\mathfrak b\bar{\mathfrak b}=M\mathcal O_E$,
+$\mathfrak b+\bar{\mathfrak b}=\mathcal O_E$.
+
+The original lattice at the identity is
+\begin{equation}\label{eq:member-original-lattice}
+ \Lambda_*=\mathfrak a L_0,\qquad
+ \mathfrak a=\texttt{AA},\qquad
+ (\xi_{\rm host})\mathfrak a\bar{\mathfrak a}
+                       =\mathfrak D_{E/\mathbb Q}^{-1}.
+\end{equation}
+Thus $\Lambda_*$, not $L_0$, is trace self-dual.  We keep the exact
+original embedding $\iota:\mathrm{La}\simeq\Lambda_*$, its trace
+pairing, and the source coordinate conventions.  In the actual
+deep-cover datum, $\iota$ is the restriction of the given rational
+frame-coordinate map to $\mathfrak a L_0$; its image and trace
+isometry follow directly from the host identity above, as in
+\texttt{ExistsCtxOkOfPins}, lines 177--206.  Thus the embedding is
+constructed from the prescribed data, not an additional assumption.
+The coordinate conventions are
+\[
+                 G=-V.\mathrm{gram}^{\,t},
+                 \qquad \xi=-\xi_{\rm host}.
+\]
+The form $h_G(v,v')=v^tG\bar v'$ is linear in its first argument.
+For $\tau$ in the prescribed CM type $\Psi$, it has $q$ positive
+directions followed by $p$ negative directions, and
+$\operatorname{Im}\tau(\xi)<0$.  The alternating pairing on every
+component lattice is
+\[
+                 B(v,v')=\operatorname{Tr}_{E/\mathbb Q}
+                                      (-\xi h_G(v,v')).
+\]
+
+\begin{theorem}\label{thm:actual-normalized-member}
+For every good complex embedding of the original coefficient field,
+the original $A=1$ PEL moduli scheme admits the following suppliers.
+\begin{enumerate}
+\item There is an actual finite \texttt{FamilyUnif}, actual
+\texttt{Data} models in the fixed rational space $V$, and an
+\texttt{IsUnf} map to its original framed points.  The characters
+$\chi$ are identically one.  The original period formulas, tangent
+frames, half-level labels, primitive line, rigidification and cube
+structure are preserved.
+\item The weight-reading assertion holds for every original
+$\texttt{Dom}(a,n)$: $a$ is antitone separately at each embedding
+and $n$ is even.  At every frame whose leading Gram minors all have
+absolute value one, the theta section has exactly probability
+$L^2$ norm one in the source metric.
+\item There is an actual adelic dictionary satisfying all six
+\texttt{DictIsUnif} clauses, the original \texttt{DictLat} marking,
+\texttt{ModelW}, and the common orthogonal-base-frame clause.
+Its compact subgroup is precisely the prescribed principal level
+$K(M)$ on $L_0$; its lattice is \eqref{eq:member-original-lattice}.
+Every dictionary frame has all Gram minors of absolute value one.
+\end{enumerate}
+No field extension or scalar relaxation is introduced by these complex
+constructions.  Together with the actual level cover and component
+field of Sections~\ref{sec:actual-level-cover} and
+\ref{sec:actual-component-field}, these suppliers give the original
+\texttt{Deep.Good} cover with its stated field-size budget.
+\end{theorem}
+
+\begin{proof}
+\par\medskip\noindent\textbf{The actual component lattices and families.}
+The Riemann correspondence identifies a complex object with its
+integral homology lattice, its coefficient action, the exact
+alternating pairing, its half-level labels and its positive complex
+structure\cite{member-milne-av}.  The actual primitive line is
+$L=(1,w)^*\mathcal P_\lambda$; hence these data determine also the
+line and its rigidified cube structure.  The original theta
+commutator is
+$\exp(-2\pi i B(v,v')/N)$ on the classes $v/N,v'/N$,
+with the source sign, by the Poincare pairing
+calculation\cite{member-lan}.
+
+The local self-dual-lattice calculation in
+Section~\ref{sec:actual-component-field} applies with the fixed $\xi$:
+all these rational Hermitian spaces are \emph{isometric} to $V$,
+and their lattices are locally isometric to $\Lambda_*$.  At a
+prime dividing $M$, $K_0$ is split.  Indeed an inert or ramified
+prime of $K_0$ would be fixed by conjugation and could not occur
+in two coprime complementary ideals extended from $K_0$.
+At such a place the unitary lattice group is a general linear
+group over the local integer ring.  Its reduction onto every
+finite congruence quotient is surjective.  Complete the half-label
+using the fixed root $\exp(-2\pi i/M)$ and the perfect pairing,
+as in the half/full-level construction.  Consequently the local
+isometries can be chosen to preserve exactly these labels.
+There is no approximation assertion for the unitary group here.
+
+Choose representatives $(\Lambda_i,t_i)$ of the resulting labelled
+integral isometry classes.  Their period domains are connected:
+the positive/negative decomposition domain is a product of
+unitary symmetric domains, and choices of complex eigenbases
+form connected general linear groups.  Local analytic triviality
+of homology and the local period description make each labelled
+class an open and closed analytic component of the actual moduli
+scheme.  There are finitely many components, since this scheme
+is of finite type over $\mathbb C$.  It is nonempty by the original
+datum's positive complex structure.  This proves the required
+finite nonempty indexing, including definite signatures.
+
+Here $t_i:\mathrm{La}\to\Lambda_i$ is an
+$\mathcal O_E$-linear lift of the full label modulo $M$.
+Such a lift exists because $\mathrm{La}$ is projective.  It is an
+isomorphism modulo $M$, precisely the two \texttt{t\_inj},
+\texttt{t\_surj} clauses.  For every positive period map $P$,
+take $\mathbb C^g/P\Lambda_i$, with its original labels, coefficient
+action and primitive line.  Riemann's theorem algebraizes this
+polarized torus and its homomorphisms.  The fine PEL moduli property
+gives its classifying point and exponential.  Their kernel, coefficient
+action, all-$N$ Weil pairings and level labels are exactly the
+corresponding \texttt{FamilyUnif} clauses.
+
+This construction is holomorphic in every holomorphic family of
+periods: the quotient is a proper holomorphic family of polarized
+tori with fixed discrete labels, hence its classifying map to the
+analytic fine moduli space is holomorphic.  Conversely the integral
+homology local system of a pulled-back family is constant on a
+small ball, producing the stipulated local period lift.  Differentiating
+the exponential gives the stipulated unique tangent vector in
+each direction.  The isomorphism criterion for polarized tori
+gives exactly the source fibre criterion, with the half-label
+and $A=1$ congruences.  These are statements about the actual
+moduli family, rather than a new quotient carrying similar points.
+
+\par\medskip\noindent\textbf{The arithmetic frame data.}
+For each representative put
+\[
+ \Gamma_i=\{\gamma\in U(G)(\mathbb Q):
+       \gamma\Lambda_i=\Lambda_i,\quad
+       (\gamma-1)\Lambda_i\subset M\Lambda_i\}.
+\]
+This is exactly the original half-label stabilizer: preservation
+of the pairing and the adjoint coefficient action recover the
+missing half of the label.  It has finite index in the lattice
+stabilizer by reduction modulo $M$.  A common nonzero integer
+clears the values of $h_G$ on $\Lambda_i$, giving the original
+\texttt{den} field.  Choose $\kappa_0=2\xi$ and an integer
+$m_i>0$ such that
+$m_i\kappa_0h_G(\Lambda_i,\Lambda_i)\subset M\mathcal O_E$.
+For an isotropic $v\in\Lambda_i$ and an integral $s\in F$,
+\[
+     u\longmapsto u+m_i s\kappa_0 h_G(u,v)v
+\]
+is unitary, has the same expression with a minus sign as inverse,
+and is congruent to the identity modulo $M$.  This supplies the
+full original transvection clause with one $m_i$, for all $v,s$.
+
+If $\gamma\in\Gamma_i$ preserves a definite complete flag, its
+matrix in an orthogonal flag basis is diagonal unitary.  This is
+true at every infinite place.  Each eigenvalue $\lambda$ of its
+integral $\mathbb Z$-matrix consequently has all conjugates of
+absolute value one, while $(\lambda-1)/M$ is an algebraic integer.
+If $\lambda\ne1$, its norm has absolute value at least one and
+strictly less than one, since $2/M<1$.  Thus every eigenvalue is
+one; diagonalizability gives $\gamma=1$.  This is precisely
+\texttt{Gamma\_free}.  Take $\chi=1$ for every weight.  All remaining
+\texttt{Data} fields follow from the given signature, lattice and
+coefficient action.
+
+\par\medskip\noindent\textbf{The primitive line selects the characteristic.}
+In Appell--Humbert notation the semicharacter of the Poincare
+biextension on $A\times A$ is
+\[
+       \alpha_{\mathcal P}(v,v')=(-1)^{B(v,v')}.
+\]
+Indeed it is trivial on both axes by their rigidifications, and
+the semicharacter identity on the sum of the two axes gives this
+formula.  Pulling back by $(1,w)$ gives, with no translation,
+\begin{equation}\label{eq:member-semicharacter}
+       \alpha_L(v)=(-1)^{B(v,wv)}.
+\end{equation}
+Its alternating form is $B$, because the adjoint of $w$ is
+$\bar w$ and $w+\bar w=1$.  The Appell--Humbert classification
+therefore identifies this very rigidified line, not just its
+polarization\cite{member-milne-cm}.
+
+Write $d=16k+7$ and $e=w^4\bmod8$.  The equation
+$w^2-w=-(4k+2)$ gives
+\[
+       e^2=e,\qquad e+\bar e=1,\qquad e\bmod2=w\bmod2.
+\]
+The two summands $e(\Lambda_i/8\Lambda_i)$ and
+$(1-e)(\Lambda_i/8\Lambda_i)$ are complementary Lagrangians:
+the adjoint of $e$ is $1-e$, so each is isotropic, and perfectness
+pairs them perfectly.  They are free of rank $g$ over
+$\mathbb Z/8$.  Choose a symplectic basis adapted to them and
+lift it to an integral symplectic basis.  Such a lift exists
+because elementary symplectic row operations generate
+$\mathrm{Sp}_{2g}(\mathbb Z/8)$; lifting their parameters to
+$\mathbb Z$ proves surjectivity of reduction.  Choose the
+source sign $B=-\omega_{\mathrm{std}}$ for this basis, denoted
+$(E_1,\ldots,E_g,F_1,\ldots,F_g)$.
+Formula~\eqref{eq:member-semicharacter} is then
+\[
+              \alpha_L(mE+nF)=(-1)^{m^tn}.
+\]
+Thus the original primitive line has \emph{zero} theta
+characteristic in this adapted basis.  For any other fixed
+symplectic basis its half-characteristic is still constant in
+the period parameter; this also supplies the unrestricted
+basis clause in \texttt{FamilyUnif.theta}.
+
+\par\medskip\noindent\textbf{The exact theta normalization.}
+Let $x=(x_\tau)_{\tau\in\Psi}$ be in the original domain
+$GG(\Psi,G,q)$, whose leading Gram minors have the signs of
+$\operatorname{diag}(1_q,-1_p)$.  Use exactly the source periods:
+the $p$ coordinates of type $\tau\in\Psi$ are the last $p$
+coordinates of $x_\tau^{-1}\tau(v)$; the $q$ coordinates of type
+$\bar\tau$ are
+$h_{G,\tau}(x_\tau e_{q-1-i},\tau(v))$, in the specified reversed
+order.  They depend holomorphically on $x$ because $h_G$ is
+linear in its first argument.  Indefinite Gram--Schmidt proves
+that these periods are injective, discrete and span over
+$\mathbb R$, with the positive Riemann form $B$.
+
+Let $h=h(x)$ and $\tau=\tau(x)$ normalize the adapted periods:
+\[
+       hP(E_j)=e_j,\qquad hP(F_j)=\tau e_j,\qquad
+       \tau=\tau^t,\quad Y=\operatorname{Im}\tau>0.
+\]
+The first period matrix is invertible by the Riemann relations,
+so $h,\tau$ are holomorphic on the whole frame domain.
+For the original ordered tangent types $\mathrm{ty}_1,\ldots,
+\mathrm{ty}_g$ put
+\begin{equation}\label{eq:member-kappa}
+ P_\xi=\prod_{\nu=1}^g2|\mathrm{ty}_\nu(\xi)|,\qquad
+ C_\xi=\sqrt{2^g/P_\xi},\qquad
+                       \kappa(x)^2=C_\xi\det h(x).
+\end{equation}
+Choose either square root at each point.  The theta-frame
+section is $\kappa(x)\theta(h(x)z,\tau(x))$, with
+\[
+       \theta(u,\tau)=\sum_{n\in\mathbb Z^g}
+                         \exp(\pi i n^t\tau n+2\pi i n^tu).
+\]
+Its usual factor of automorphy and
+\eqref{eq:member-semicharacter} identify it with a section of
+the actual primitive line, through the comparison equal to one
+at the rigidification.  It is nonzero: its Fourier coefficient
+of index zero is one.  The same Fourier recurrence shows that
+the section space of this principal line is one dimensional.
+For joint holomorphy use the \emph{standard theta factors}
+in $(x,z)$, which are holomorphic in $h,\tau,z$.
+They define a holomorphic rigidified line on the proper
+family of tori.  Its difference from the original primitive
+line is trivial on every fibre by the preceding semicharacter
+calculation.  Relative analytic seesaw identifies this difference
+with a line from the base: proper coherent base change
+\cite[\S7, Satz~5]{member-grauert}, with
+constant fibre dimension $h^0=1$, makes its direct image a
+line and the evaluation map an isomorphism.  The zero
+rigidification trivializes that line.  Thus the normalized
+comparison is jointly holomorphic and its local instances agree.
+
+Together with the exponential derivatives this defines the
+required original framed point.  In the Appell--Humbert frame
+its theta function is
+\[
+ \Theta_x(z)=\kappa(x)e^{q_x(z)}\theta(hz,\tau),\qquad
+ q_x(z)=\frac{\pi}{2}(hz)^tY^{-1}(hz),\qquad
+ H_x=h^tY^{-1}\bar h.
+\]
+The line frame is multiplied by $e^{-q_x}$, which equals one
+at zero.  Its transition functions, rigidification and
+semicharacter automorphy are consequently exactly the
+three original frame clauses.  These metric frames are used
+only at a fixed $x$; $Y^{-1}$ need not depend holomorphically
+on $x$.  Joint holomorphy uses the standard theta frame just
+constructed, rather than this fibrewise metric gauge.
+
+If all leading Gram minors have absolute value one, Gram--Schmidt
+writes $x=x_0b$ with $x_0$ orthogonal and $b$ upper unipotent.
+At $x_0$ the above period coordinates give the diagonal
+Riemann Hermitian matrix with entries
+$2|\mathrm{ty}_\nu(\xi)|$.  The coordinate change induced by
+$b$ has determinant one.  Hence
+\begin{equation}\label{eq:member-hermitian-determinant}
+           \det H_x=P_\xi,\qquad
+           \det H_x\det Y=|\det h|^2,\qquad
+           |\kappa|^2=\sqrt{2^g\det Y}.
+\end{equation}
+On the half-open fundamental parallelepiped
+$z=h^{-1}(u+\tau v)$, $u,v\in[0,1)^g$, the metric factor is
+\[
+ |\Theta_x(z)|^2e^{-\pi H_x(z,z)}
+     =|\kappa|^2|\theta(u+\tau v,\tau)|^2
+                         e^{-2\pi v^tYv}.
+\]
+Integrating first in $u$ kills all unequal Fourier indices.
+The remaining sum over $n$ and integral over $v$ tile
+$\mathbb R^g$, and give
+\begin{equation}\label{eq:member-mean}
+ \operatorname{mean}_{\mathbb C^g/P\Lambda_i}
+        |\Theta_x(z)|^2e^{-\pi H_x(z,z)}
+       =|\kappa|^2\int_{\mathbb R^g}e^{-2\pi t^tYt}\,dt
+       =\frac{|\kappa|^2}{\sqrt{\det(2Y)}}=1.
+\end{equation}
+Absolute convergence, uniformly on the compact parallelepiped,
+justifies the Fourier integration; Tonelli applies to the
+remaining nonnegative sum.  The real Jacobian is the volume
+of that parallelepiped and cancels in the \emph{mean}.
+Thus \eqref{eq:member-mean} is the original quotient by its
+Lebesgue volume, not a changed Haar normalization.
+
+\par\medskip\noindent\textbf{Removal of the arithmetic multiplier.}
+For $\gamma\in\Gamma_i$, let $\delta=\det_E\gamma$.
+It is an algebraic unit, $\delta-1\in M\mathcal O_E$, and
+$|\sigma(\delta)|=1$ for every complex embedding.  If $\delta\ne1$,
+\[
+ M^{[E:\mathbb Q]}
+     \le |N_{E/\mathbb Q}(\delta-1)|
+     \le 2^{[E:\mathbb Q]},
+\]
+a contradiction.  Thus $\det_E\gamma=1$.
+Its integral symplectic matrix commutes with $e$, so in the
+adapted basis its off-diagonal blocks are divisible by $8$.
+Moreover
+\[
+                 \det_{\mathbb Z}(e\gamma+1-e)\equiv1\pmod8.
+\]
+Here $e$ denotes the integral endomorphism $w^4$ before reduction:
+modulo $8$, idempotence gives
+$\det_E(e\gamma+1-e)=e\det_E\gamma+1-e=1$;
+restriction of scalars and the field norm give the displayed
+integral determinant.  The same endomorphism is
+$\operatorname{diag}(A,I)$ modulo $8$, so $\det A\equiv1\pmod8$.
+These statements apply equally to $\gamma^{-1}$ and to the
+transpose block convention for changing periods.
+
+An element of $\mathrm{SL}_g(\mathbb Z)$ lifts $A\bmod8$:
+for $g\ge2$ use elementary generation over the local ring
+$\mathbb Z/8$, and for $g=1$ use $1$.  Factoring off its
+block-diagonal symplectic lift leaves an element of
+$\Gamma_g(8)$.  The squared zero-characteristic theta
+transformation on $\Gamma_g(8)\subset\Gamma_g(4,8)$ is
+\begin{equation}\label{eq:member-theta-square}
+ \theta(j^{-t}u,(A\tau+B)(C\tau+D)^{-1})^2
+       =\det(j)\,e^{2\pi i u^tj^{-1}Cu}\theta(u,\tau)^2,
+       \qquad j=C\tau+D.
+\end{equation}
+The classical theta-constant transformation gives its squared
+scalar exactly one\cite{member-theta-transformation}.  To pass
+from constants to all $u$, first use the \emph{unsquared} function
+\[
+ e^{-\pi i u^tj^{-1}Cu}
+       \theta(j^{-t}u,(A\tau+B)(C\tau+D)^{-1}).
+\]
+Substitution of the two lattice translations shows that this
+function has the same factors as $\theta(u,\tau)$.  The
+one-dimensional Fourier recurrence therefore makes their ratio
+constant in $u$.  On the open set where $\theta(0,\tau)\ne0$ the
+theta-constant formula determines the \emph{square} of this
+constant as $\det j$.  The recurrence is applied to $L$,
+not to the larger section space of $L^2$.
+Analytic continuation gives
+the identity for every $\tau$.  The block
+$\operatorname{diag}(U,U^{-t})$, $\det U=1$, has exact theta
+transformation by reindexing $n\mapsto U^tn$.  Composition
+therefore gives \eqref{eq:member-theta-square} for the actual
+arithmetic period change, with no omitted root of unity.
+
+For $x'=\gamma x$ the period normalization is
+$h'=j^{-t}h$, hence
+$\kappa'^2=\kappa^2/\det j$.  The comparison of the two
+actual primitive lines is rigidified.  Combining its theta
+factor with \eqref{eq:member-theta-square} gives for the
+section ratio $t_0$
+\[
+                          t_0^2
+                          =\kappa'^2\det j/\kappa^2=1.
+\]
+This argument does not evaluate a nonzero theta section at
+zero.  Equivalently one cancels the entire function $\theta^2$
+on its dense nonzero locus and then evaluates the resulting
+entire comparison at zero, where its rigidified value is one.
+It is valid also on the theta-null divisor.
+
+\par\medskip\noindent\textbf{The exact Borel weights and holomorphy.}
+For $x'=xb$, with $b$ upper triangular, write its diagonal
+blocks of sizes $q,p$ as $b_{11},b_{22}$.  The exact period
+coordinate change, in the source type order, is
+\[
+        h_0=\operatorname{diag}(b_{11}^{\,t},b_{22}^{-1}),
+ \qquad \det h_0=\frac{\det b_{11}}{\det b_{22}}.
+\]
+The first block is reordered in the same reversed order as
+the conjugate periods.  It does not change this determinant.
+We have $P'=h_0P$, $h'=hh_0^{-1}$, $\tau'=\tau$, and the
+rigidified section comparison gives
+$t_0^2=(\det h_0)^{-1}$.
+The diagonal tangent changes are $b_{jj}^{-1}$ for $j<q$
+and $b_{jj}$ for $j\ge q$.  Therefore every original even
+$n$ gives exactly the source exponents
+\[
+ \lambda_{\tau j}=
+ \begin{cases}
+  -a(\bar\tau,q-1-j)-n/2,&j<q,\\
+   a(\tau,j-q)+n/2,&j\ge q ,
+ \end{cases}
+\]
+with $\tau,\bar\tau$ relabelled through the given coefficient
+embedding as in \texttt{laU}.  For $\Gamma_i$ the tangent
+change is the identity and $t_0^n=1$.  These prove the two
+transformation clauses with the original character $\chi=1$.
+
+Locally $\det h$ has a holomorphic square root.  Two such
+roots differ by a sign, which every even $n$ removes.
+Thus the chosen pointwise $\kappa$ gives holomorphic readings
+for \emph{all} original $\texttt{Dom}(a,n)$.
+Algebraic readings are holomorphic here: on an affine chart
+of the actual framed moduli torsor, a natural reading on the
+original finite type reduced test algebras is a regular function
+by Yoneda.  The tangent and principal-section frame torsors are
+of finite type, and the already constructed base-change
+property identifies these charts with the source tests.
+No continuity of the arbitrary pointwise choice of sign is used.
+
+Every original complex tangent flag is obtained by these
+period coordinates: its two definite eigenflags give the
+first $q$ columns and the last $p$ quotient columns of $x$;
+the unused upper off-diagonal block is precisely the Borel
+freedom.  The one-dimensional section space supplies the
+remaining nonzero scalar.  The same linear algebra and the
+polarized-torus isomorphism criterion identify two such
+framed flags exactly by $\Gamma_i$ and the original Borel.
+This proves the coverage and fibre clauses of \texttt{IsUnf}.
+Together with \eqref{eq:member-mean} and the family above,
+all its clauses have now been supplied.
+
+\par\medskip\noindent\textbf{The original adelic marking and six dictionary clauses.}
+For $g\in G(\mathbb A)$ define
+\[
+ \Lambda_g=V(\mathbb Q)\cap g_f\widehat{\Lambda_*}.
+\]
+Additive approximation, applied after putting the compact open
+lattice between $N\widehat{\Lambda_*}$ and
+$N^{-1}\widehat{\Lambda_*}$, proves
+$\widehat{\Lambda_g}=g_f\widehat{\Lambda_*}$.
+This is precisely the source \texttt{latG}, whose definition
+first multiplies the unscaled adelic lattice by $\mathfrak a$;
+invertible fractional ideals commute with localization,
+completion and intersection here.  Thus its \texttt{latGHat}
+is precisely the displayed completion.  All lattices, including
+their fractional-ideal defects, are retained.
+
+Choose a purely finite representative $g_i$ for each labelled
+component.  The local isometries with their exact labels
+constructed above supply it.  Choose $t_i$ so that
+\[
+             t_i(a)\equiv(g_i)_f\iota(a)
+                       \pmod{M\widehat{\Lambda_i}} .
+\]
+For every $g$ choose $i$ and $\gamma\in G(\mathbb Q)$ with
+$\gamma g_f\in(g_i)_fK(M)$, and set
+\[
+                 \operatorname{dict}(g)
+                      =(i,(\gamma g)_\infty x_0).
+\]
+Here $x_0$ is a single orthogonal frame for the fixed $G$ at
+all prescribed infinite embeddings.  Choose $\gamma=1$ at
+$g=g_i$.  The original marking is now literal:
+\[
+ \Lambda_i=\Lambda_{\gamma g},\qquad
+ \widehat{t_i(a)}-(\gamma g)_f\widehat{\iota(a)}
+       \in M\widehat{\Lambda_i}
+       \quad(a\in\bar{\mathfrak b}\,\mathrm{La}).
+\]
+This is \texttt{DictLat}, with its original rational multiplier,
+selected half-submodule and source and target completions.
+Principal congruence on $\Lambda_*$ is equivalent to principal
+congruence on $L_0$: locally cancel the invertible ideal
+$\mathfrak a$.  Hence the subgroup is exactly the source
+\texttt{IsLevelK}, not a conjugated replacement.
+
+For completeness, its six uniformization clauses are as follows.
+\begin{enumerate}
+\item Left multiplication by $G(\mathbb Q)$ changes only the
+chosen marking; two markings of a component differ by
+$\Gamma_i$.
+\item Right multiplication by $K(M)$ preserves the lattice and
+its selected label, and has trivial infinite component.
+It therefore also changes the dictionary by $\Gamma_i$ only.
+\item Each $(i,x_0)$ occurs at $g_i$.  Right multiplication by
+$h_\infty$ acts on its frame through
+$x_0^{-1}h_\infty x_0$, exactly the original \texttt{archMat},
+up to the same change of marking.
+\item Every dictionary frame is orthogonal, hence belongs to
+$GG(\Psi,G,q)$ and has all leading Gram minors of absolute
+value one.
+\item Every frame in $GG$ is an orthogonal frame times an
+upper triangular matrix.  The infinite unitary group is
+transitive on orthogonal frames, so the dictionary is onto
+each domain modulo $\Gamma_i$ and that Borel.
+\item If two dictionary frames differ by $\Gamma_i$, the
+rational marking comparison makes their infinite components
+equal.  Their finite quotient preserves $\Lambda_*$ and its
+half-label.  The half/full adjoint argument makes it
+congruent to one modulo $M$; cancellation of $\mathfrak a$
+puts it in the original $K(M)$.  Thus
+$g'=\gamma gk$ for $\gamma\in G(\mathbb Q)$, $k\in K(M)$,
+as required by the final clause.
+\end{enumerate}
+The derivative, period and lattice equations already proved
+give the remaining \texttt{DictLat} clauses with the same
+$x_0$, the original infinite embeddings, and exact
+\texttt{ModelW}.  The actual test-lifting theorem gives
+\texttt{unTest} for these framed points.  This completes the
+claimed Member supplier.
+\end{proof}
+
+\begin{corollary}\label{cor:actual-good-sized-cover}
+Under the original \texttt{Core.Pins}, $j\in\texttt{InR}$,
+$\mathrm{splitBound}\ge5$ and $(15,g_0g_1)=1$, for every $e\ge0$
+there is an actual cover $Y$ satisfying the original
+\texttt{Deep.Good} contract at depth $e$ and budget
+\[
+  \operatorname{fieldSz}(C)+
+       20\bigl(\log(g_0g_1\,15^e)+\log d+1\bigr).
+\]
+It has precisely $p_d=15^e$, original higher half-level
+$M_2=g_0g_1\,15^e$, and $A_2=1$.
+\end{corollary}
+
+\begin{proof}
+Use the actual complementary half-ideal at $15^e$, the actual
+level cover, and the compositum with the $K_0$ ray field of
+modulus $M_2$.  The component-field theorem gives
+\texttt{FnAlgClosed}, normality over $C$, the prescribed roots,
+and exactly the displayed budget.  The preceding theorem
+supplies \texttt{IsUnf}, \texttt{unTest}, trivial characters,
+the six dictionary laws, unit flag minors, \texttt{ModelW},
+and the original common orthogonal marking.  The retained
+host identity for $|\tau(\xi)|$ is the original
+\texttt{xiAbs} clause.  These are precisely all fields of
+\texttt{Deep.Good}; neither an automorphic-character supplier
+nor an enlarged field-size bound is being inserted.
+\end{proof}
+
+The corollary closes the actual good-cover supplier, rather than a
+new abstract sufficient condition.  The global arithmetic section
+estimate, signed boundary comparison and the resulting W10 degree
+bound remain separate obligations.

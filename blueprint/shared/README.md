@@ -259,7 +259,8 @@ compositum with its required normality and field-size bound. Unramified
 integral determinant lifts and the exact reflex map fix all indefinite
 components; the actual central CM action handles both definite endpoints.
 The proof retains every lattice class and generic flag variable. The
-normalized complex theta dictionary and numerical section bounds remain.
+normalized complex theta dictionary is supplied by the following Member
+theorem; numerical section bounds remain.
 
 The [terminal-transfer theorem](../../notes/global-norm-frontier-terminal-transfer.md)
 constructs the original compact top lift and proves `HeadTop` at every
@@ -294,3 +295,11 @@ and last-row peeling preserve the dual spectral shift and give degree
 then transfers it to the prescribed forms; both point normalizers and
 separate finite extension witnesses remain. The decaying-function and
 global rational-return estimates are not inferred from this local bound.
+
+The [normalized Member theorem](../../notes/geometry-arithmetic-frontier-member.md)
+constructs the actual A=1 complex uniformization, primitive theta section,
+probability norm one, squared arithmetic multiplier and every original
+adelic dictionary/marking law. It retains `AA*L0`, all rational returns,
+all even weights and the original sign conventions. With the level and
+component-field suppliers it closes the full original sized `Deep.Good`
+contract in both routes. Short-section bounds and the global norm remain.

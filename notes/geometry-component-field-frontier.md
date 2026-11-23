@@ -12,8 +12,9 @@ without an integral elliptic decomposition. The same compositum has the
 prescribed field-size and relative-normality bounds. The literal
 `FnAlgClosed` includes the source's generic flag variables.
 
-The remaining good-cover frontier is the normalized complex `Member`
-dictionary: the original primitive theta section, probability norm and
-exact squared multiplier must agree with the already constructed level
-cover. Numerical arithmetic section and height bounds remain separate.
+The [normalized Member theorem](geometry-arithmetic-frontier-member.md)
+now supplies the primitive theta section, probability norm, exact squared
+multiplier and all adelic/integral dictionary laws. Together with the
+actual level cover this completes the original sized `Deep.Good` contract.
+Numerical arithmetic section and height bounds remain separate.
 This closes a supplier within W10, not the whole proof-map node.

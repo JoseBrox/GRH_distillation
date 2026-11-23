@@ -317,3 +317,13 @@ match the full original `LiftDegAll`, `DegLift` and
 differentials, ordered dual peeling, actual compact averaging and
 Jacquet-form quotient are retained. Exact noncommutative PBW diagnostics
 supplement the written induction, without asserting a Lean build.
+
+The [normalized Member certificate](../certificates/geometry-arithmetic-frontier-member.json)
+and [independent analytic review](../certificates/geometry-arithmetic-frontier-member-review.json)
+authenticate 26 bounded source interfaces and the actual primitive line,
+period coordinates, probability normalization, all six dictionary clauses
+and exact lattice marking. Four cached primary references are rehashed;
+Grauert's original base-change theorem and corrigendum are separately
+recorded direct readings. The arithmetic and downstream audit is recorded
+in the [root review](../certificates/geometry-arithmetic-frontier-member-arithmetic-review.json).
+These establish the original sized good-cover supplier, not all W10.

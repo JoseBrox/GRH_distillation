@@ -54,12 +54,16 @@ over every coefficient algebra, including nonreduced algebras, and exact
 framed-point lifting. The component-field theorem fixes every original
 component over the quadratic ray-class compositum with the original
 field-size bound, in every rank and including the definite signatures.
-The normalized complex theta dictionary remains the next good-cover input.
+The [normalized complex theta dictionary](geometry-arithmetic-frontier-member.md)
+now supplies the original `IsUnf`, `Member`, all six adelic dictionary laws
+and exact integral marking. Its primitive theta section has probability
+norm one and the prescribed squared multiplier for all even weights.
+Together these construct the full original sized `Deep.Good` cover.
 Numerical arithmetic section and height estimates remain separate.
 
 The reached-section, adapted lattice, full-primary trace and mixed-level
 identities apply to these actual models. They supply the original single
-clearing integer once the remaining good-cover and map comparisons are
+clearing integer once the remaining raw-map comparisons are
 constructed. Theta spanning and the global norm are not inferred from
 integral regularity.
 

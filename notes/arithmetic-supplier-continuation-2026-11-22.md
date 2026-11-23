@@ -68,11 +68,14 @@ constructs the exact finite cover, formal connection over every coefficient
 algebra and original framed lift. The [component-field theorem](geometry-arithmetic-frontier-component-field.md)
 proves that the quadratic ray-class compositum fixes every original
 component, with the prescribed size and normality bounds in every rank.
-The normalized complex theta dictionary remains the next good-cover input.
+The [normalized Member theorem](geometry-arithmetic-frontier-member.md)
+constructs the original primitive theta section with probability norm one,
+its exact squared multiplier, the full adelic dictionary and integral
+markings. Together these complete the original sized `Deep.Good` cover.
 
 The full-primary trace, mixed pullback and arbitrary level-prime estimates
 remain in force for these actual constructions. Their final use still
-requires the good cover and map comparisons. Numerical
+requires the exact raw-map comparisons. Numerical
 arithmetic section and height estimates remain separate.
 
 ## Actual ordinary modules, types and Galois determinants
@@ -182,8 +185,8 @@ aggregate nonvanishing needed by the chosen consumer.
 
 ## Direct next attacks
 
-1. Construct the original good cover on the completed arithmetic level system,
-   then identify and estimate the actual arithmetic section lattices.
+1. Identify and estimate the actual arithmetic section lattices on the
+   completed original good cover; verify the exact raw-map comparison.
 2. Prove algebraic-weight ordinary control and place the new arithmetic
    seed in the actual patched support; apply propagation globally and
    prove the integral Selmer budget.

@@ -141,12 +141,13 @@ are proved. The actual models now have their integral theta section,
 full `Model.N3` uniformization and torsion action, `PushInvertible`,
 and degree-one `SplitFibres`. Reached-section regularity has scalar one.
 Exact mixed pullback and all-place assembly give one original clearing
-integer once the remaining good-cover and map comparisons are supplied.
+integer once the remaining raw-map comparisons are supplied.
 The actual local `Good3` chart is now constructed over a finite unramified
 extension, retaining every eigenlattice defect, the canonical gauge and
 all original harmonic values with no additional valuation loss.
-The first missing inputs are the exact good-cover compatibility,
-theta spanning and the remaining divisibility laws for the same maps.
+The full original sized good cover and its normalized complex dictionary
+are now constructed. The first missing inputs are the exact raw-map
+comparison, theta spanning and remaining divisibility laws for the same maps.
 A constructed integral theta section does not supply the global norm.
 
 ## W08: the actual global period Gram operators
@@ -218,9 +219,8 @@ separate from every local norm identity.
 
 ## W10: the exact integral geometric supplier
 
-**Frontier theorem G.** Complete the remaining good-cover comparisons
-for the now-constructed original
-integral models. Identify their actual integral section lattices,
+**Frontier theorem G.** For the now-constructed original integral models
+and sized good cover, identify their actual integral section lattices,
 heights and prescribed metrics, and construct the short spanning
 families and multiplication bounds required by the established
 geometric-filtration and determinant-degree theorems. Prove the
@@ -254,13 +254,13 @@ formal connection over every coefficient algebra and exact framed lifting.
 The ray-class compositum now supplies the literal `FnAlgClosed`, relative
 normality and the prescribed field-size bound for every original component,
 including all ranks and both definite signatures.
+The normalized complex `Member` theorem now constructs the original
+primitive theta section, probability norm, squared multiplier, all six
+adelic dictionary laws and exact `AA*L0` marking. Together these supply
+the whole original sized `Deep.Good` contract.
 
-**First missing construction.** Complete the original good cover's
-normalized complex `Member` dictionary, including the probability-normalized
-primitive theta section and exact squared multiplier. Preserve its
-integral-lattice comparisons. Identify
-the actual geometric section and height
-inputs and prove their numerical arithmetic remainder. The existing
+**First missing construction.** Identify the actual geometric section and
+height inputs and prove their numerical arithmetic remainder. The existing
 cusp, jet and signed-boundary lemmas are to be applied unchanged.
 
 ## Completion discipline
@@ -270,7 +270,7 @@ the exact proven subobligations. The work-package acceptance lists remain
 in `blueprint/grh/program.json`; the RH product and final budget remain
 in its separate manuscript. No whole node is newly closed by the local
 constructions above. The next research effort belongs to the actual
-good-cover and section construction, the exact arithmetic seed and
+arithmetic section construction, the exact arithmetic seed and
 global marked deformation models, and the
 global period-return estimate, not further optimization of the already
 proved frame inequalities.
