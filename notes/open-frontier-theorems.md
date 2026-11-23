@@ -208,8 +208,11 @@ The original compact `KernelFourierIntegralBound`, continuity at zero
 and full diagonal positivity are now proved with the exact point
 normalization. Every original admissible old word is covered by the
 unused-block construction, and all rational word corrections remain.
-The next local targets are the decaying-eigenfunction extension,
-off-diagonal and block-growth estimates, and the actual controlled top lift.
+The original compact off-diagonal kernel bound is now proved, including
+actual `LiftDegAll` and `DegLift`. Its degree is exactly `2j-s` after
+Jacquet transform, with every sign, shift and two-head normalizer retained.
+The next local targets are the decaying-eigenfunction extension, block-growth
+estimate and the actual controlled top lift.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
 

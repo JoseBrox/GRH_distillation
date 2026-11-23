@@ -309,3 +309,11 @@ match `NP`, `Ew`, every-word `IsExt`, `KernelFourierIntegralBound`,
 `HeadContinuityAtZero` and the full-index `PosAt`. Terminal nonpositive
 Gram parameters are treated by the original zero convention. Exact
 normalization and word-occupancy diagnostics supplement the analytic proof.
+
+The [off-diagonal certificate](../certificates/global-norm-frontier-off-diagonal.json)
+and [independent review](../certificates/global-norm-frontier-off-diagonal-review.json)
+match the full original `LiftDegAll`, `DegLift` and
+`KernelArgumentHypothesisScalar` contracts. The original right-character
+differentials, ordered dual peeling, actual compact averaging and
+Jacquet-form quotient are retained. Exact noncommutative PBW diagnostics
+supplement the written induction, without asserting a Lean build.

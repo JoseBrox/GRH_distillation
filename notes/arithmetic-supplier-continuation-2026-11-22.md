@@ -170,9 +170,11 @@ a rank-uniform remainder. The actual unitary density transfer now proves
 `PhiZero` and `DensC`, and the compact top lift proves terminal `HeadTop`
 under the original place and operator hypotheses. The exact compact
 Fourier kernel estimate, continuity at zero and diagonal positivity are
-now supplied with every original word and normalization. The remaining
-decaying-function, off-diagonal, block-growth and controlled-top-lift
-steps must still be proved. The global application must retain every
+now supplied with every original word and normalization. The
+[off-diagonal theorem](global-norm-frontier-off-diagonal.md) now proves the
+actual inverse-parameter kernel estimate. Ordered Capelli peeling gives
+its lower degree after Jacquet transform, preserving both head normalizers.
+The decaying-function, block-growth and controlled-top-lift steps remain. The global application must retain every
 rational return, all source/target cuts and all arithmetic normalizers.
 An ambient projector estimate or local Gram identity is not the required
 global period-Gram estimate. A strict source deficit must supply any

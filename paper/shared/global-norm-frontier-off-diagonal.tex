@@ -1,0 +1,352 @@
+\subsection{The actual inverse-parameter kernel estimate}
+\label{actual-off-diagonal}
+
+Keep the original place, tower, forms, finite grids and positive
+normalizer $n$ of the preceding Fourier theorem.  Write
+$N_{j,w}(a,b)$ and $E_{j,w}(a)$ for the same normalized
+kernel and its diagonal.  The estimate below concerns every
+original admissible word, rather than only words assigned to
+successive interpolation blocks.
+
+Put $N_*=20(r+1)$, $I=\beta-\alpha\ge6N_*^3+6N_*$ and
+$\eta=28N_*/I$.  Define
+\[
+ A_1=\max_{y\in\mathcal Y}
+       \sqrt{\frac{n(y)n(y+1)}{q_0(y)}},\qquad
+ \Lambda_{j,s}^{\rm arg}=e^{10/49}A_1\eta^{2j-s}
+       \quad(1\le s\le j\le r).
+\]
+For $r\ge1$ let $\Lambda^{\rm arg}$ be the maximum of
+these finitely many positive numbers.  For $r=0$ the
+statement below has no instances, so any positive value
+may be used.  A common scale for this theorem and the
+preceding Fourier theorem is the maximum of their two
+scales, enlarged to one if the consumer requires it.
+
+\begin{theorem}\label{off-diagonal-actual}
+Let $F$ be an actual smooth compact coefficient with positive
+Gram cutoff.  For $1\le s\le j\le r$, let $h$ be any
+relevant head of size $j-s$, and let $t,t'\ne0$.
+For every original admissible word $w$ on $\mathcal Y$,
+every $K\ge0$ with $|w|+K\le N_*$, there are two original
+extensions $w_1,w_2$, each obtained by prepending at most
+$K$ letters and having length at most $N_*$, such that
+\begin{align}\label{off-diagonal-bound}
+ &\left|N_{j,w}\bigl(h\mathbin{\|}(s,t),
+                           h\mathbin{\|}(s,t')\bigr)\right|\notag\\
+ &\quad\le
+ m\bigl(\Lambda^{\rm arg},K,|t^{-1}-{t'}^{-1}|\bigr)
+ \frac{E_{j,w_1}(h\mathbin{\|}(s,t))+
+       E_{j,w_2}(h\mathbin{\|}(s,t'))}{2}.
+\end{align}
+Here $m(\Lambda,K,0)=1$ and
+$m(\Lambda,K,u)=\min(1,(\Lambda/u)^K)$ for $u>0$.
+This supplies the original
+\texttt{KernelArgumentHypothesisScalar} on these grids.
+The proof also supplies the original \texttt{LiftDegAll}
+and \texttt{DegLift}, with their full compact-coefficient,
+head, word and interpolation quantifiers.
+\end{theorem}
+
+\begin{proof}
+We first prove the missing identity for the prescribed
+operators, before applying interpolation.
+Use the paired basis $e_0,\ldots,e_{r-1},w_0,\ldots,w_k,
+f_{r-1},\ldots,f_0$ and the actual complexified right
+derivatives $E_{ab}$.  They satisfy
+\[
+ [E_{ab},E_{cd}]=\delta_{bc}E_{ad}-\delta_{da}E_{cb}.
+\]
+For ordered injective lists $a,b$ of length $m$, let
+$Q_{a,b}(u)$ be the ordered column minor whose factors
+are $T_{ab}(u-\ell)$, with
+$T_{ab}(v)=v\delta_{ab}+E_{ab}$ and $0\le\ell<m$.
+The rightmost factor acts first.  Empty minors are one.
+The last-column and last-row formulas are
+\begin{align}
+ Q_{a,b}(u)
+ &=\sum_{\ell=0}^{m-1}(-1)^{m-1+\ell}
+ Q_{a\setminus a_\ell,\,b\setminus b_{m-1}}(u)
+                  T_{a_\ell b_{m-1}}(u-m+1),
+                                      \label{off-diagonal-col}\\
+ Q_{a,b}(u)
+ &=\sum_{\ell=0}^{m-1}(-1)^{m-1+\ell}
+ Q_{a\setminus a_{m-1},\,b\setminus b_\ell}(u-1)
+                  T_{a_{m-1}b_\ell}(u).
+                                      \label{off-diagonal-row}
+\end{align}
+The first follows by grouping permutations according to
+their last entry.  For the second, the Lie relation gives
+the two-factor identity
+\[
+ T_{ab}(u)T_{cd}(u-1)-T_{cb}(u)T_{ad}(u-1)
+ =T_{ab}(u-1)T_{cd}(u)-T_{ad}(u-1)T_{cb}(u).
+\]
+Apply this identity successively to adjacent positions in
+the alternating sum defining the minor.  The terms with
+the two exchanged row indices have opposite signs;
+the displayed identity replaces their column order by
+row order and moves the spectral shift with the position.
+Induction on the number of positions gives the ordered
+row formula, whose last-row expansion is
+\eqref{off-diagonal-row}.  This argument retains the
+$u-1$ in that formula; treating the generators as
+commuting would give the wrong dual peeling identity
+\cite{off-diagonal-source}.
+
+Let $\mathcal R H$ be the original right average
+\[
+ (\mathcal R H)(g)=\int_{K'\times N'}
+ \overline{\psi_{z',-2i}(n)}\,H(gnk)
+                         \pi'(k)^{-1}\,dk\,dn.
+\]
+Both measures are the original tower measures.  Left
+invariance of $dn$, without a change of normalization,
+gives $(\mathcal R H)(gn)=\psi_{z',-2i}(n)(\mathcal R H)(g)$.
+Differentiating the original character and complexifying
+its two real tangent directions gives
+\begin{equation}\label{off-diagonal-character}
+ E_{ab}\mathcal R H=\chi_{ab}\mathcal R H,
+ \qquad
+ \chi_{e_a,e_b}=\mathbf1_{b=a+1},\qquad
+ \chi_{f_a,f_b}=\mathbf1_{a=b+1}.
+\end{equation}
+These equations are used only in the unipotent root
+directions.  In particular, the second formula uses the
+displayed reversed ambient order on the $f_a$'s.
+The middle-block character values retain the original
+$z'$; they are not replaced, and are not needed for
+the two chain peelings below.
+
+For a fixed $g$, the functional
+$\mathcal L(X)=(X\mathcal R H)(g)$ consequently satisfies
+$\mathcal L(XE_{ab})=\chi_{ab}\mathcal L(X)$ for every
+operator word $X$, whenever $E_{ab}$ is one of these
+root directions.  Equivalently
+it kills the left ideal generated by $E_{ab}-\chi_{ab}$.
+The generators occur on the \emph{right} in this rule.
+
+Put $i=j-s$.  Apply \eqref{off-diagonal-col} to the minor
+with rows $e_0,\ldots,e_{j-2}$ and columns
+$(e_0,\ldots,e_{j-1})\setminus e_i$.
+In its last column, every factor is off diagonal.
+Equation \eqref{off-diagonal-character} kills all terms
+except the row $e_{j-2}$, whose character value and
+cofactor sign are both one.  Repeat until reaching
+the principal $i\times i$ minor.  Thus, modulo that
+left ideal,
+\[
+ Q_{(e_0,\ldots,e_{j-2}),\,
+           (e_0,\ldots,e_{j-1})\setminus e_i}(u)
+ \equiv Q_{(e_0,\ldots,e_{i-1}),\,
+                        (e_0,\ldots,e_{i-1})}(u).
+\]
+For the dual minor use \eqref{off-diagonal-row}, starting
+with rows $(f_0,\ldots,f_{j-1})\setminus f_i$,
+columns $f_0,\ldots,f_{j-2}$, and parameter $v+j-2$.
+Only the last column survives, again with coefficient one.
+Each peeling lowers the parameter by one, so the final
+principal $i\times i$ minor has parameter $v+i-1$.
+If $s=1$ the respective omitted index is already last
+and neither peeling is needed.  If $i=0$ the final
+minor is the empty minor.  These cover both edge cases.
+
+Now use the actual normal representative of
+$a=h\mathbin{\|}(s,t)$.  Its first $j$ paired rows form
+$\operatorname{diag}(H_h,tJ_s)$, where $J_s$ is the
+reversing permutation matrix.  Write
+$\epsilon_s=\det J_s=(-1)^{s(s-1)/2}$.
+The original principal minors are
+\[
+ D_i=\det H_h,\qquad D_j=\det H_h\,t^s\epsilon_s.
+\]
+In the contracted minor of size $j-1$, the only nonzero
+column set omits column $i$.  Its coefficient is
+$\det H_h\,t^{s-1}\epsilon_{s-1}$.
+The dual contraction has its complex conjugate and the
+reversed $f$ order.  The preceding peelings, followed by
+division by $D_j$ or $\overline{D_j}$, therefore give
+\begin{equation}\label{off-diagonal-letter-reduction}
+ \begin{split}
+ L^+_{j,1}(y)\mathcal R H
+    &=(-1)^{s-1}t^{-1}L^+_{i,0}(y)\mathcal R H,\\
+ L^-_{j,1}(y)\mathcal R H
+    &=(-1)^{s-1}\bar t^{-1}L^-_{i,0}(y)\mathcal R H.
+ \end{split}
+\end{equation}
+These equalities hold at that representative and at
+every translate by the original left flag stabilizer.
+Indeed, its action fixes the paired rows and their
+minors, and the contracted differential operators have
+the already proved left covariance.  The spectral
+parameters here are the actual $y+(2r+k)/2$ and
+$y-(2r+k)/2$; the dual size-dependent shift in the
+minor was explicitly retained in its peeling.
+
+We justify applying this calculation to the actual
+slices.  Every old-word component of $F$ has compact
+support and is smooth on $D_j\ne0$.  Localizing in
+$D_j$ around the fixed nonzero value $D_j(a)$ gives
+a globally smooth compact function without changing
+any value or derivative on the integration locus.
+The groups in the right average fix this minor.
+For $g$ in a compact neighborhood, the portion of
+$N'K'$ meeting the support of $H(gnk)$ is compact:
+$nk$ lies in the compact set $g^{-1}\operatorname{supp}H$,
+$k$ lies in a compact group, and $N'$ is closed.
+This proves smoothness of the average and permits
+differentiation under its integral.  The exact right
+covariance of the contracted minors cancels the
+conjugation of the right derivatives.  Hence
+\[
+       \mathcal R(L^\pm_{j,e}(y)H)
+                    =L^\pm_{j,e}(y)\mathcal R H
+                    \quad(e=0,1).
+\]
+There is no averaging constant in this equality.
+
+The proved head quotient factorization expresses the
+Jacquet transform of a slice as the original left
+quotient integral of $\mathcal R H$ at precisely the
+translates used in \eqref{off-diagonal-letter-reduction}.
+All integrals are absolutely convergent by the actual
+compact-family properness theorem; its measure
+factorization is the original normalized tower's
+factorization.  Since $L^\pm_{i,0}(y)$ is a polynomial
+of degree $i$ with leading coefficient the identity,
+\eqref{off-diagonal-letter-reduction} proves:
+after this Jacquet transform, the new bit-one slice
+has degree at most $j-s$, with leading coefficient
+$(-1)^{s-1}t^{-1}$ times the old slice for plus and
+$(-1)^{s-1}\bar t^{-1}$ times the old slice for minus.
+Any fixed real shift of $y$ leaves these leading
+coefficients unchanged.  Its coefficients may be
+integrated separately, since finite Vandermonde
+inversion expresses each as a finite linear
+combination of the absolutely integrable evaluations.
+This is the full original \texttt{LiftDegAll}.
+
+The degree decrease has been proved \emph{after the
+Jacquet transform}.  It need not hold for the slice
+function itself.  To pass to the original residue
+form, take the polynomial coefficients supplied by
+the compact slice theorem.  Uniqueness of polynomial
+coefficients in their Jacquet transforms allows us
+to set coefficients above degree $j-s$ to zero and
+replace the top one by the stated multiple of the
+old slice.  Each difference has zero Jacquet
+transform.  The proved exact Jacquet Gram identity,
+together with the intertwining and preservation of
+the old residue operators, makes each such difference
+invisible in the original form and in every mixed
+contraction of that form.  This uses the actual
+compact coefficient class on both sides; it asserts
+no positivity on a larger radial space.
+
+Let $a=h\mathbin{\|}(s,t)$ and
+$a'=h'\mathbin{\|}(s,t')$, allowing different preceding
+heads of the same size for this algebraic step.
+The fresh mixed contraction is
+$\beta(x_1,y_0)-\beta(x_0,y_1)$, with the plus
+insertion at $y$ and the minus insertion at $y+1$.
+The bit-zero degrees are $j$, with the old vectors
+as leading coefficients.  The Jacquet-reduced
+bit-one degrees just proved are $j-s$.
+Sesquilinearity, linear in the first argument,
+therefore gives degree at most $d=2j-s$ and leading
+coefficient
+\begin{equation}\label{off-diagonal-leading}
+        (-1)^{s-1}(t^{-1}-{t'}^{-1})
+                       \beta(x_{w,a},x_{w,a'}).
+\end{equation}
+In particular, conjugating the negative leading
+coefficient removes the bar on $t'$.
+Iterating this identity tail first through any
+finite list of new parameters and extracting each
+leading coefficient on any injective real grid
+gives the exact source \texttt{DegLift} identity.
+No cut or separation is needed for that identity
+beyond the actual operators' definitions.  The old
+residue matrices enter only as fixed coefficients;
+the same calculation also applies where the source
+assigns a zero value to a scalar inverse at zero.
+No cancellation of such an inverse is used here.
+The nonsingular cut and separation conditions enter
+the positive estimate next.
+
+Return to $h'=h$ and put $\delta=t^{-1}-{t'}^{-1}$.
+At most $|w|$ long blocks contain old underlying
+nodes.  Choose $K$ distinct unoccupied long blocks;
+the bound $|w|+K\le N_*$ guarantees their existence.
+Since $1\le d=2j-s\le2r-1$, each chosen block
+contains its already constructed degree-$d$
+interpolation grid, with absolute coefficient sum
+at most $\eta^d$.  Every simultaneous plus or
+minus extension remains in the original cut,
+and all new--old and new--new shifted distances
+exceed two.  This choice works for every source
+admissible word, including repeated occupancy of
+a single old block.
+
+Apply the proved actual mixed determinant inequality
+to the iterated identity \eqref{off-diagonal-leading}.
+For each new node retain the full correction
+\[
+ q_w(y)=q_0(y)
+ \prod_{(+,u)\in w}\frac{y-u+1}{y-u}
+ \prod_{(-,u)\in w}\frac{u-y}{u-y-1}.
+\]
+The original separated-grid estimate gives
+$\sqrt{n(y)n(y+1)/q_w(y)}\le e^{10/49}A_1$.
+Writing $a_*=n\mathrm{Pt}(a)>0$ and
+$a'_* =n\mathrm{Pt}(a')>0$, the factor
+$\sqrt{a_*a'_*}/S_w$ cancels exactly against
+\[
+ S_{w_+}=S_w\prod_\ell n(y_\ell),\qquad
+ S_{w_-}=S_w\prod_\ell n(y_\ell+1)
+\]
+and the diagonal point normalizers.  Thus
+\[
+ |\delta|^K|N_{j,w}(a,a')|
+ \le(\Lambda_{j,s}^{\rm arg})^K
+   \sum_{\boldsymbol\nu}\theta_{\boldsymbol\nu}
+       \sqrt{E_{j,w_+(\boldsymbol\nu)}(a)
+             E_{j,w_-(\boldsymbol\nu)}(a')},
+ \qquad
+ \theta_{\boldsymbol\nu}\ge0,\quad
+ \sum_{\boldsymbol\nu}\theta_{\boldsymbol\nu}=1.
+\]
+Positivity also gives
+$|N_{j,w}(a,a')|\le\sqrt{E_{j,w}(a)E_{j,w}(a')}$.
+Let $M_1,M_2$ be the separate maxima of the two
+diagonals over $w$ and all the finitely many
+extensions used above.  Each is attained by an
+allowed $w_1,w_2$.  Both geometric means are bounded
+by $\sqrt{M_1M_2}\le(M_1+M_2)/2$.
+For $\delta\ne0$ take the stronger of the two
+estimates; for $\delta=0$ use positivity alone.
+For $K=0$ take $w_1=w_2=w$ and empty products.
+This proves \eqref{off-diagonal-bound} with the
+original extension quantifiers.
+\end{proof}
+
+\paragraph{Scope of the advance.}
+The source writes $j=b+s-1$ with $b\ge1$;
+the preceding head has size $b-1=j-s$, exactly
+the theorem's range.  In particular, this consumer
+does not ask for a terminal $j=r+1$ instance.
+The spectral majorant from the preceding Fourier
+theorem gives the explicit arithmetic bound
+\[
+ \Lambda_{j,s}^{\rm arg}
+ \le e^{10/49}g^{-2r-2}\kappa^{2r+1}
+      80t_v\sqrt{k}\,(28N_*/I)^{2j-s}
+\]
+under its unchanged binary-spectrum and interval
+hypotheses.  All dimensions, shifts, point weights
+and word corrections remain present.  Passage to
+the actual decaying eigenfunctions, the block-growth
+limit and the uniformly controlled top-lift supplier
+are still separate analytic inputs.  This local
+result alone supplies no global arithmetic Gram
+estimate and completes no whole proof-map node.

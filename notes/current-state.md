@@ -103,8 +103,10 @@ frames, compact representations and Haar constants at every head.
 The exact compact top lift and terminal `HeadTop` now hold under their
 original place and operator hypotheses. The actual compact normalized
 one-coordinate Fourier bound, continuity and diagonal positivity are now
-proved for every original admissible word. Extension to the prescribed
-decaying functions, off-diagonal and block-growth estimates, the controlled
+proved for every original admissible word. The actual off-diagonal kernel
+bound now follows from the prescribed inverse-parameter operator identity,
+with its exact degree reduction after Jacquet transform. Extension to the
+prescribed decaying functions, block-growth estimates, the controlled
 top-lift construction and the global rational-return/period-Gram estimate
 remain separate.
 

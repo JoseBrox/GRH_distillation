@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-23",
+  "status": "PASS",
+  "reviewer": "Independent root mathematical and source-interface review",
+  "classification": "Closed original compact LiftDegAll, DegLift and KernelArgumentHypothesisScalar; no whole-node closure",
+  "source_revision": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "whole_nodes_newly_closed": 0,
+  "reviewed_hashes": {
+    "paper/shared/global-norm-frontier-off-diagonal.tex": "b98a7e1881453479364b029b6f196092037f2a76e434a9a83e7b15bb0064f950",
+    "paper/shared/global-norm-frontier-off-diagonal-references.tex": "a8aff1b8d62ec22bb16e1871709bcbb7900a5250ccce618ffae14d321e5ab77e",
+    "notes/global-norm-frontier-off-diagonal.md": "01529f11a5b29bf1240f86e839c46ea2b3c30a66047ab9afac27b14aaa977bd0",
+    "scripts/check_global_norm_frontier_off_diagonal.py": "68d7d0aaf8efd51518a2762fe98edf7a4d6006376eff93a61f38b45404b74b92",
+    "certificates/global-norm-frontier-off-diagonal.json": "6e73d5851ce5a85d7c6004e15d482b27742ca37e1f8653cfe8f1be8cb7b9345e"
+  },
+  "checked": [
+    "Read the entire standard-mathematics proof and compared the exact StatementTBB 64–71 and DegLift 169–178 contracts; b+s−1=j and b−1=j−s, with no terminal j=r+1 claim.",
+    "Read OperatorsCommuteTranslations 11–39 and SigmaFiniteOfHaar 168–215. The original cStd=-2i and reversed dual ambient order give character value one on both paired simple-root chains.",
+    "Checked the universal-enveloping-algebra Laplace formulas: last column keeps the parameter, last row lowers it at every peeling. The annihilating generators occur on the right in a left ideal.",
+    "Checked the unique omitted column of diag(H,t J_s), its determinant ratio (-1)^(s−1)/t and the conjugate dual ratio, including s=1 and the empty preceding head.",
+    "Read FirstDerivativeAtNormalSet 15–55 and 136–219, RightAverageSmoothComm 63–175 and LeftFubiniNormalizedTower 72–120. Localization retains the actual integration locus; compact properness permits differentiation and coefficient integration with the unchanged tower measures.",
+    "The degree reduction is after Jacquet transform only. The exact Jacquet Gram identity and old-operator intertwining make the replacement valid in every mixed residue pairing; no larger-space positivity is used.",
+    "Read DegLiftOf 26–112. Sesquilinearity removes the dual conjugation and gives degree 2j−s with scalar (-1)^(s−1)(t^-1−t_prime^-1); fixed shifts do not change its leading coefficient.",
+    "Checked arbitrary old-word occupancy, unused separated blocks, every rational q correction and exact cancellation of the two distinct point normalizers and old word scale.",
+    "Separate finite extension maxima include the old word at each head, so the same two witnesses give the minimum bound; t=t_prime, K=0 and r=0 are covered.",
+    "Reran the exact checker offline: 290 ordered PBW Laplace cases, 45 signed chain peelings, 30 nonreal block determinants, 56 semidegenerate leading coefficients, 729 two-head normalizations and 256 separate maxima. Finite computations supplement the written all-rank proof."
+  ],
+  "retained_inputs": [
+    "Original place, tower, forms and compact coefficient class",
+    "Decaying-eigenfunction extension with the prescribed differential-order budget",
+    "Exact block-growth limit and uniformly controlled top lifts",
+    "Complete global rational-return sum and the same restricted arithmetic Gram operators"
+  ],
+  "no_Lean_build": true,
+  "reproduce": "python scripts/check_global_norm_frontier_off_diagonal.py --offline"
+}

@@ -286,3 +286,11 @@ Unused grid blocks cover every original admissible word; the same finite
 extension maximum gives both parts of the Fourier minimum. All spectral
 and arithmetic factors remain. Decaying coefficients, block growth,
 controlled top-lift construction and global period norms remain separate.
+
+The [off-diagonal kernel theorem](../../notes/global-norm-frontier-off-diagonal.md)
+proves the original compact inverse-parameter estimate. Ordered last-column
+and last-row peeling preserve the dual spectral shift and give degree
+`2j-s` only after the actual Jacquet transform. The exact Gram identity
+then transfers it to the prescribed forms; both point normalizers and
+separate finite extension witnesses remain. The decaying-function and
+global rational-return estimates are not inferred from this local bound.
