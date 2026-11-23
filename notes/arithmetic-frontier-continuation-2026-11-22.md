@@ -1,5 +1,7 @@
 # Arithmetic continuation: results and next obligations
 
+> **Historical checkpoint — 22 November 2026 (not the current task list).** Its “Working sequence” and “what remains” columns describe the original stage. Later proofs changed those priorities, but the original mathematical statements and source provenance remain valuable. Use the [current checkpoint](current-state.md) and [frontier theorems](open-frontier-theorems.md) for active obligations.
+
 This checkpoint continues the reconstruction from main at
 `1b856f01372ec4287347dbfdef26f0e1f83573e7`. The priority is to supply
 the original arithmetic hypotheses inside open nodes. Existing node counts

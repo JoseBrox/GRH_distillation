@@ -1,5 +1,7 @@
 # Completion, remaining work and paper length
 
+> **Historical planning assessment.** The page counts, estimated publication lengths, status descriptions, and “next tasks” below belong to an earlier project snapshot; in particular, they are **not** the latest manuscript lengths or research agenda. For live status see the [current checkpoint](current-state.md), [progress table](../blueprint/progress.md), and current [RH](../certificates/rh-build.json), [GRH](../certificates/grh-build.json), and [guide](../certificates/guide-build.json) build records. Retained for historical reasoning, not current forecasts.
+
 ## What the present evidence measures
 
 The project has a complete source-import atlas and a complete assignment of

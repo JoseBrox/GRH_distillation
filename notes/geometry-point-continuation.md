@@ -1,5 +1,7 @@
 # The selected tangent degrees at the actual boundary points
 
+> **Later status (23 November 2026).** The subsequent [Hodge--Tate-corrected fibre comparison and local-freeness construction](geometry-hodge-specialization.md) supply the missing corrected integral fibre step identified below. The regularized all-point height identity and final mean-height/rank estimates remain open; see [current state](current-state.md).
+
 ## Result and classification
 
 **Closed obligation within W10:** the actual conjugate-eigenlattice

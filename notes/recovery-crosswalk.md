@@ -1,5 +1,7 @@
 # Recovery crosswalk and continuation index
 
+> **Historical reconstruction crosswalk.** Section counts, artifact lengths and recovery details below refer to the recovered baseline and its stated snapshot, not the latest manuscripts or outstanding tasks. Preserve the recovery hashes and provenance; use the [current checkpoint](current-state.md) and [current RH/GRH programs](../blueprint/progress.md) for present research status.
+
 For the current mathematical route, begin with
 [the continuation checkpoint](current-state.md). The active analytic
 condition is the [weighted scale average](scale-averaged-criterion.md).

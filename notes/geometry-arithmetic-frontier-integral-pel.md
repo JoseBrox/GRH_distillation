@@ -1,5 +1,7 @@
 # The original half-level supplies the actual integral PEL model
 
+> **Later status (23 November 2026).** The later [integral theta/uniformization](geometry-arithmetic-frontier-integral-theta.md), [level symmetries](geometry-arithmetic-frontier-level-symmetry.md), [coordinated level system](geometry-arithmetic-frontier-level-system.md), and [global model](geometry-arithmetic-frontier-global-model.md) supply several stronger conditions listed below as missing. The original local-model theorem and proof remain unchanged. For live outstanding hypotheses consult [current state](current-state.md).
+
 ## Status and frontier
 
 **Closed arithmetic construction subobligation:** the original coefficient field and level supply the individual normal, flat, projective `Model`, with the original semiabelian family and primitive rigidified cubical line, at every prime satisfying the original `GoodAt` condition. No new coefficient-field extension, line power, generic lattice rescaling, or auxiliary moduli cover is used.

@@ -1,5 +1,7 @@
 # The actual lower Bergman bound in the thin region
 
+> **Later status (23 November 2026).** The [component section-degree estimate](geometry-section-continuation.md), [actual tangent-degree comparison](geometry-point-continuation.md), and [corrected integral fibres](geometry-hodge-specialization.md) have since been supplied. The regularized point-height identity and final weighted budget are still separate; see the [live frontier](current-state.md).
+
 ## Result and scope
 
 The ordinary proof in paper/shared/geometry-bergman-continuation-thin.tex

@@ -1,5 +1,7 @@
 # Arithmetic degree of the original component cusp lattice
 
+> **Later status (23 November 2026).** Independent mathematical review and manuscript integration are recorded in the [joint review](../certificates/rigidity-section-orbital-review.json). This theorem supplies the component degree estimate, **not** the all-point height/rank budget. The [corrected tangent-fibre theorem](geometry-hodge-specialization.md) is also now supplied; consult [current state](current-state.md).
+
 ## Frontier theorem and status
 
 The smallest remaining section-degree supplier was the original
@@ -11,8 +13,8 @@ the existing polynomial determinant theorem to the actual geometric
 spaces. Its stronger conclusion is linear in the signed image height.
 
 Classification: **closed obligation: the actual component arithmetic
-section estimate**, subject to completion of independent review before
-integration. This is a supplier inside W10, not completion of W10.
+section estimate**, independently reviewed and integrated; see
+[the joint review](../certificates/rigidity-section-orbital-review.json). This is a supplier inside W10, not completion of W10.
 The all-point corrected-height comparison, final mean-height/rank
 comparisons and any still unconstructed numerical family remain.
 

@@ -1,5 +1,7 @@
 # The actual thick-region Bergman frontier
 
+> **Later status (23 November 2026).** The [thin-region lower bound](geometry-bergman-continuation-thin.md) and the [global upper bound/integral frame](geometry-bergman-continuation-upper.md) have now been supplied. The older “next estimates” at the end of this note are historical; consult the [current checkpoint](current-state.md) for the remaining geometric obligations.
+
 ## Precise proposed result
 
 **Closed obligation; independently reviewed.**

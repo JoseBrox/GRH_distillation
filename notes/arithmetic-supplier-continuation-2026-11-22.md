@@ -1,5 +1,7 @@
 # Current arithmetic suppliers and remaining research
 
+> **Historical checkpoint — 22 November 2026 (not the current task list).** This preserves the then-proved suppliers, hypotheses, and research instructions. Several “Direct next attacks” were subsequently discharged, including theta spanning, support propagation, and rational rigidity. Follow the [live checkpoint](current-state.md) and [frontier theorems](open-frontier-theorems.md) instead. Original claims below are not silently rewritten.
+
 The present objective is to remove the decisive missing arithmetic
 hypotheses, with ordinary RH as the preferred first case. The conventional
 RH and Dirichlet GRH proofs remain incomplete. The

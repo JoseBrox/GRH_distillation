@@ -1,5 +1,7 @@
 # The original degenerate flag fibre estimate
 
+> **Later status (23 November 2026).** The previously missing [degenerate local orbital operator](global-gram-continuation-degenerate-operator.md) is now supplied. The “exact next consumer” paragraph below records the original checkpoint, not the current frontier. The [arithmetic zero-Gram sum](global-gram-continuation-degenerate-next.md), remaining global returns, and final traces are still open.
+
 **Classification: closed obligation — the geometric fibre supplier.**
 The proof is in
 [global-gram-continuation-degenerate-fibres.tex](../paper/shared/global-gram-continuation-degenerate-fibres.tex).

@@ -1,5 +1,18 @@
 # Results proved in the manuscript
 
+> **Current navigation (23 November 2026).** This is a cumulative results catalogue, **not** the live list of open obligations. Earlier “what remains” statements below describe their original checkpoints and may be superseded. For the live status, use the [current checkpoint](../notes/current-state.md), [precise frontier theorems](../notes/open-frontier-theorems.md), [RH manuscript](../paper/rh/main.pdf), [GRH manuscript](../paper/grh/main.pdf), and [shared-results index](../blueprint/shared/README.md). Neither main theorem is established by the reconstruction.
+
+## Current navigation: major supplier updates
+
+| Workstream | Later established suppliers | Still required |
+| --- | --- | --- |
+| W04: integral Selmer | [Type-II rigidity](../notes/selmer-support-continuation-type-two-rigidity.md), [relative equations](../notes/selmer-support-continuation-relative-presentation.md), and [actual local chart](../notes/selmer-support-continuation-local-chart.md) | Admissible trace-family bounds and a uniform moving-family integral Selmer product |
+| W06: theta | [Integral chain](../notes/theta-spanning-continuation-chain.md) and [terminal period/unfolding](../notes/theta-period-continuation.md) | Intervening see-saw, row realization, and identification with the final restricted maps |
+| W08: global norms | [Degenerate local operator](../notes/global-gram-continuation-degenerate-operator.md), [integral minors](../notes/global-gram-continuation-integral-minors.md), and [primitive-subspace mean](../notes/primitive-sublattice-genus-mean.md) | Remaining arithmetic return sums, map compatibility, and positive trace estimates |
+| W10: geometric heights | [Thin-region lower bound](../notes/geometry-bergman-continuation-thin.md), [component section degree](../notes/geometry-section-continuation.md), and [corrected tangent fibres](../notes/geometry-hodge-specialization.md) | Regularized point-height identity, rank/mean-height losses, and numerical family records |
+
+The results below are retained for their original statements, derivations and provenance. **Do not interpret an old “remaining” column as a current research instruction.**
+
 These are mathematical reductions and comparisons. Their proofs are in [the paper](../paper/main.pdf); none establishes the missing arithmetic input for a complete proof of GRH.
 
 ## Shorter suppliers inside the remaining hard steps

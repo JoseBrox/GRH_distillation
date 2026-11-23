@@ -1,6 +1,20 @@
 # What these checks establish
 
-## Current reduction continuation
+> **Current navigation (23 November 2026).** Verification certificates are **versioned evidence**, not an updatable proof-completion score. Older review reports and source/PDF hashes apply to the revisions they record; they must not be rewritten to match later manuscripts. Current research targets are in the [checkpoint](../notes/current-state.md) and [frontier theorems](../notes/open-frontier-theorems.md). No Lean kernel rebuild is claimed.
+
+## Current navigation: recent certificate families
+
+| Workstream | Selected recent proof and review records |
+| --- | --- |
+| Selmer and deformation | [Type-II rigidity](selmer-support-continuation-type-two-rigidity.json), [relative equations](selmer-support-continuation-relative-presentation.json), [local ordinary chart](selmer-support-continuation-local-chart.json) |
+| Integral theta | [Terminal period and Bessel unfolding](theta-period-continuation.json) |
+| Global norms | [Degenerate orbital operator](global-gram-continuation-degenerate-operator.json), [integral minor count](global-gram-continuation-integral-minors.json), [maximal Hermitian mass](maximal-hermitian-mass.json), [primitive genus mean](primitive-sublattice-genus-mean.json) |
+| Geometry | [Thin-region lower bound](geometry-bergman-continuation-thin.json), [actual section degree](geometry-section-continuation.json), [corrected Hodge fibres](geometry-hodge-specialization.json), [boundary-point tangent degrees](geometry-point-continuation.json) |
+| Current compiled manuscripts | [RH build](rh-build.json), [GRH build](grh-build.json), [short guide build](guide-build.json) |
+
+The remainder of this file is a **historical index of checks**, with commands and claims preserved at their original scope. The “current” label in dated sections refers to that historical checkpoint.
+
+## Historical reduction continuation (22 November 2026)
 
 The [reduction review](reduction-continuation-review-2026-11-22.json)
 records six new mathematical suppliers and two precisely delimited norm

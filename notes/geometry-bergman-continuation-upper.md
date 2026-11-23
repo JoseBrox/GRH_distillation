@@ -1,5 +1,7 @@
 # The actual upper cusp norm and integral frame
 
+> **Later status (23 November 2026).** The [thin-region lower bound](geometry-bergman-continuation-thin.md) and [actual section-degree inequality](geometry-section-continuation.md) have since been supplied. References below to the thin lower bound as “remaining” describe this note's earlier stage. The [current frontier](current-state.md) retains the unresolved height/rank and family estimates.
+
 ## Result and classification
 
 **Closed supplier obligations:** the original global upper Bergman,

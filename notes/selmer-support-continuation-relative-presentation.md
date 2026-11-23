@@ -1,5 +1,7 @@
 # The actual global deformation equations
 
+> **Later status (23 November 2026).** The [original ordinary local chart and strict-cocycle comparison](selmer-support-continuation-local-chart.md) were subsequently supplied. The next-step paragraph below records the earlier stage. Admissible family and uniform integral Selmer estimates remain outstanding; see [current state](current-state.md).
+
 ## Frontier and result
 
 **Classification: closed original relative-presentation subobligation

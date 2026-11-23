@@ -1,5 +1,7 @@
 # Rigidity at every original type-I point
 
+> **Later status (23 November 2026).** The subsequent [type-II rigidity theorem](selmer-support-continuation-type-two-rigidity.md) supplies the missing rational type-II case, so the “remaining decisive frontier” section below is historical as to type-II vanishing. The [integral local chart](selmer-support-continuation-local-chart.md) is also supplied. Uniform moving-family Selmer bounds remain open; see [current state](current-state.md).
+
 ## Frontier and result
 
 **Classification: closed type-I rigidity subobligation inside W04.**

@@ -1,5 +1,7 @@
 # A discriminant denominator for actual harmonic chart values
 
+> **Later status (23 November 2026).** The [full primary trace](geometry-arithmetic-frontier-primary-trace.md) and [actual integral theta denominator](geometry-arithmetic-frontier-actual-theta-denominator.md) were subsequently constructed. The “remaining significant step” discussion below refers to this earlier checkpoint; do not infer that these suppliers are still missing. The final theta-map compatibility and norm budget remain open; see [current state](current-state.md).
+
 ## Status and relevance
 
 The shared proof establishes a local supplier for the theta denominator:
