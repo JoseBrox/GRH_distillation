@@ -1,0 +1,220 @@
+\subsection{Rigidity at the original irreducible points}
+\label{sec:support-type-one-rigidity}
+
+Thorne's adjoint Selmer theorem applies over the auxiliary CM field
+already constructed.  This avoids descending the automorphic
+representation before proving rigidity.  The local conditions and the
+action of complex conjugation must still be retained exactly.
+
+Write $K/\mathbf Q$ for the original imaginary quadratic field, $\eta$
+for its character, and $J$ for the $3$ by $3$ antidiagonal matrix with
+antidiagonal entries one.  Let $\Psi=\varepsilon^e\chi$ be the original
+even character, with $e\ge1$ and $\chi$ of finite order; it is not the
+bare cyclotomic character.  The residual character is $\psi$.
+The field $K$ is unramified at the odd coefficient prime $\ell$.
+The original local decomposition group $D$ has an element
+\[
+       x\in D\cap G_K,\qquad \psi(x)^2\ne1.             \tag{TR1}
+\]
+The mark $x$ need not be in inertia.  This distinction retains, in
+particular, the original conductor-one construction at $\ell=3$.
+Write $I$ for the inertia subgroup of $D\cap G_K$.
+
+\begin{lemma}[Irreducibility after restriction]
+\label{lem:support-type-one-strong-irreducibility}
+Let $E/\mathbf Q_\ell$ be finite, and let
+$\rho:G_K\to\mathrm{GL}_3(E)$ be continuous and absolutely irreducible.
+Suppose it has an invariant integral lattice with residual
+semisimplification $\psi\oplus1\oplus\psi^{-1}$.  Suppose
+$\rho|_{D\cap G_K}$ preserves a full flag whose ordered inertia
+characters are $\Psi,1,\Psi^{-1}$, and assume (TR1).
+Then $\rho$ remains absolutely irreducible on every open subgroup of
+$G_K$.  If $L/K$ is finite and $L(\mu_{\ell^\infty})$ is its
+cyclotomic extension, it is also absolutely irreducible on
+$G_{L(\mu_{\ell^\infty})}$.
+\end{lemma}
+
+\begin{proof}
+Work over $\overline{\mathbf Q}_\ell$.  It suffices first to consider
+an open normal subgroup $N$ of $G_K$, by replacing any open subgroup
+with its normal core.  If $\rho|_N$ is reducible, Clifford theory in
+dimension three gives either a scalar action of $N$, or a direct sum
+of three lines permuted transitively by $G_K$.  For completeness,
+restriction is semisimple: the radical of the finite-dimensional image
+algebra of $N$ is stable under conjugation by $G_K$, so its image on
+the irreducible space is zero, by nilpotence.  The isotypic summands
+are permuted transitively and have equal dimensions and multiplicities.
+The alternatives follow since three is prime.
+
+There is $u\in I\cap N$ for which $\Psi(u)$ has infinite order.
+Indeed the cyclotomic image of inertia over the finite local field is
+open in $\mathbf Z_\ell^\times$; imposing membership in $N$ and
+killing the finite character $\chi$ still leaves an open subgroup.
+The three eigenvalues $\Psi(u),1,\Psi(u)^{-1}$ are distinct.
+This rules out the scalar alternative.  In the other alternative
+the three $N$-lines are exactly the three eigenspaces of $\rho(u)$.
+The local ordinary flag is an ordered flag of these lines.  Every
+element of $D\cap G_K$ permutes the lines and preserves this flag,
+so fixes each line.
+
+A transitive subgroup of $S_3$ contains a $3$-cycle.  Choose $g\in G_K$
+acting by such a cycle.  Since $x$ fixes the three lines,
+$\rho(gx^m)$ has trace zero for every $m\ge0$.  Reduction on the
+invariant lattice gives
+\[
+  \alpha\beta^m+1+(\alpha\beta^m)^{-1}=0,
+  \qquad \alpha=\psi(g),\quad\beta=\psi(x).            \tag{TR2}
+\]
+For $m=0,1,2$ the three values $\alpha\beta^m$ are distinct, since
+$\beta^2\ne1$.  Equation (TR2) makes all three roots of
+$T^2+T+1$, a contradiction in every characteristic, including three.
+This proves the assertion for open subgroups.
+
+Here are also the details for the infinite cyclotomic extension.
+Let $\mathcal G$ be the Zariski closure of $\rho(G_L)$.
+The inverse image of its identity component $\mathcal G^0$ is a
+closed subgroup of finite index in the compact group $G_L$, hence is
+open.  Therefore $\mathcal G^0$ acts irreducibly.  Its unipotent
+radical has a nonzero fixed vector and is normal; irreducibility makes
+it act trivially on the whole space.  As $\mathcal G^0$ is a matrix
+group, that radical is trivial.  Thus $\mathcal G^0$ is reductive.
+Its connected center acts by scalars, and
+$\mathcal G^0=Z(\mathcal G^0)^0[\mathcal G^0,\mathcal G^0]$.
+Consequently its derived subgroup acts irreducibly as well.
+The Zariski closure of $\rho([G_L,G_L])$ contains this derived
+subgroup: apply the commutator morphism to the dense image of
+$G_L\times G_L$.  The cyclotomic quotient is abelian, so
+$[G_L,G_L]\subseteq G_{L(\mu_{\ell^\infty})}$.  This proves the
+last assertion, with no assertion about equality of local and global
+cyclotomic intersections.
+\end{proof}
+
+\begin{theorem}[The original type-I rigidity]
+\label{thm:support-type-one-rigidity}
+For either original admitted datum, retain any allowed local ring
+$U$ and its associated normalized global deformation ring $S$.
+Let $f:S\to\overline{\mathbf Q}_\ell$ be a local characteristic-zero
+point, so $|f(\mathfrak m_S)|<1$, and suppose its representation is
+type I: its matrix part $\rho$ on $G_K$ is absolutely irreducible.
+Then
+\[
+                 H_f^1(\mathbf Q,\operatorname{ad}r_f)=0.         \tag{TR3}
+\]
+Here $\operatorname{ad}r_f$ is the original polarized adjoint on
+$M_3(\overline{\mathbf Q}_\ell)$: $G_K$ acts by conjugation by
+$\rho$, and the normalized complex conjugation $c$ acts by
+$X\mapsto-JX^{\mathsf t}J$.
+
+Every original algebra-valued dual-number lift of $f$ has tangent
+cocycle $X-g\cdot X$ for some matrix $X$.  Thus the entire original
+rigidity requirement at type-I points holds.  No residual
+irreducibility, residual image-size condition, or uniform bound on an
+integral Selmer group is imposed or inferred.
+\end{theorem}
+
+\begin{proof}
+\emph{The actual point and its automorphy.}
+The finite-neighbourhood argument of
+Proposition~\ref{prop:selmer-tangent-comparison} puts the point over
+the integers $O_E$ of a finite coefficient extension.  The local
+ordered-flag lemma~\ref{lem:support-integral-ordinary-flag} applies
+to its actual local ring, and the residual representation has the
+specified diagonal characters.  Lemma~\ref{lem:support-type-one-strong-irreducibility}
+therefore applies.
+
+Use the actual auxiliary $L/L^+$ and its original quotient and frame,
+with the full admission, $\mathrm{Ok}$, $\mathrm{Big}$ and seed
+conditions already proved.  The normalized-lift transfer
+Theorem~\ref{thm:support-finite-end} sends $r_f$ to the rank-three
+normalized representation over this same $O_E$.  Restriction to
+$G_L$ is irreducible by the lemma.  The original finite-point
+Theorem~\ref{thm:support-finite-points}
+therefore gives a point of the actual ordinary Hecke quotient whose
+determinant is that of
+\[
+                  \rho_L'=\rho|_{G_L}\,\varepsilon^{-1}.        \tag{TR4}
+\]
+Its ordered inertia characters are
+$\Psi^{1-i}\varepsilon^{-1}$, $i=0,1,2$.  In the original
+Hodge--Tate convention their labels are $1-e(1-i)$, strictly
+increasing because $e\ge1$.  Their remaining factors have finite
+order, so this is an arithmetic point in the precise sense of the
+ordinary-family theorem.  The full arithmetic-point classicality in
+Theorem~\ref{thm:selmer-ordinary-families}, applied to this
+irreducible representation, makes (TR4) the representation of a
+regular algebraic conjugate-self-dual cuspidal representation
+$\Pi$ of $\mathrm{GL}_3(\mathbb A_L)$.  The normalized-lift and
+Hecke determinant identities identify the actual representation,
+not merely its residual determinant.  Enlarging coefficients to
+contain the original coefficient datum changes neither $L$ nor its
+level.  No automorphy descent from $L$ to $K$ is used.
+
+\emph{The adjoint representation.}
+The prescribed polarization is
+\[
+ \rho(cgc^{-1})=J\rho(g)^{-\mathsf t}J.
+\]
+After (TR4) its multiplier on $G_L$ is $\varepsilon^{-2}$;
+on $G_{L^+}$ the polarized multiplier is
+$\eta_{L/L^+}\varepsilon^{-2}$.  In the usual polarized group
+$\mathcal G_3$, the chosen complex conjugation is $(J,1)j$,
+where $j$ acts on the Lie algebra by negative transpose.
+Consequently its adjoint action is exactly
+\[
+                         X\longmapsto-JX^{\mathsf t}J.           \tag{TR5}
+\]
+Scalar Tate twisting does not alter the adjoint action.  Furthermore,
+any polarization of the irreducible $\rho_L'$ is a scalar multiple
+of this one, by Schur's lemma; that scalar does not alter (TR5).
+Thus the adjoint in Thorne's theorem is precisely
+$(\operatorname{ad}r_f)|_{G_{L^+}}$, including its one-dimensional
+trace summand, on which complex conjugation acts by minus one.
+
+Lemma~\ref{lem:support-type-one-strong-irreducibility} also makes
+$(\rho_L')|_{G_{L(\mu_{\ell^\infty})}}$ irreducible.  Thorne's
+Theorem~6.1 now gives
+\[
+             H_f^1(L^+,\operatorname{ad}\rho_L')=0
+                                      \cite{support-type-one-thorne}.
+\]
+Restriction preserves both the unramified local condition away from
+$\ell$ and the Bloch--Kato finite condition at $\ell$.  It is
+injective on global $H^1$ in characteristic zero: corestriction
+composed with restriction is multiplication by $[L^+:\mathbf Q]$.
+This degree may be divisible by $\ell$, but it is invertible in the
+coefficient field.  Equation (TR3) follows.
+
+\emph{The actual dual-number condition.}
+For an original dual-number lift, the same finite-neighbourhood
+argument gives a continuous tangent cocycle over one finite
+coefficient extension.  At $\ell$ use the established
+crystalline-component comparison,
+Proposition~\ref{prop:selmer-crystalline-components}, on the
+original selected saturated components.  Its nonresonance argument
+uses the original factors of $\delta$, including the exponent-one
+case.  It proves crystallinity of the entire dual-number lift after
+the finite local extension killing the original finite inertial
+character.  Thus its self-extension class is in $H_f^1$ there.
+Restriction injectivity for
+$B_{\mathrm{cris}}\otimes\operatorname{ad}r_f$ descends that finite
+condition to the original local group.  This uses the full adjoint
+coefficient module, not an inclusion into a larger representation.
+In particular ordinary triangularity alone is not being used as a
+crystalline criterion.
+
+Away from $\ell$ the original equations kill the open inertia
+subgroup on which $\eta$ and the finite character $\chi$ are trivial;
+here $\Psi=\chi$ on inertia.
+The tangent class therefore factors on inertia through a finite
+group.  Averaging over that group makes it a coboundary, as required
+by the unramified local condition.  The tangent class consequently
+belongs to the group in (TR3) and is zero.  Its primitive over the
+finite coefficient field gives the asserted original coboundary
+after extension to $\overline{\mathbf Q}_\ell$.
+\end{proof}
+
+The theorem closes the type-I part of the original two-sided rigidity
+obligation.  Type-II points have additional rank-two representation
+summands, which are not adjoint representations and are not covered by
+Thorne's theorem.  Their vanishing, and the moving-family integral
+Selmer estimate, remain separate requirements.

@@ -369,21 +369,20 @@ the relevant character phase depends on their difference and is unchanged.
    frame](../notes/selmer-support-continuation-auxiliary-tower.md) and
    common-subgroup finite-end theorem. The [entire original weight-zero
    algebra is now finite](../notes/selmer-support-continuation-integral-finiteness.md),
-   preserving nilpotents and integral torsion. Establish two-sided global rigidity and the uniform weighted product
+   preserving nilpotents and integral torsion. [Type-I global rigidity](../notes/selmer-support-continuation-type-one-rigidity.md) is proved for the original polarized adjoint. Prove the remaining type-II vanishing and the uniform weighted product
    of Selmer orders on the growing fields. The four surviving characters
    do not bound the auxiliary degrees or conormal lengths.
 2. **The same global period maps.** The [actual two-point far-return
    bound](../notes/global-gram-continuation-two-point-far.md) is now
    exponentially small at the original cutoff. Prove the nongeneric
    near-return diagonal and generic orbital estimates, using the proved
-   [tails for every flag length](../notes/global-gram-continuation-length-tail.md). Sum the actual
+   [tails for every flag length](../notes/global-gram-continuation-length-tail.md) and [degenerate fibre volumes](../notes/global-gram-continuation-degenerate-fibres.md), with the original stabilizer measure. Sum the actual
    finite columns, and identify the integral theta chain with the final
    restricted, normalized maps. Bound their prescribed source-deficit
    and target-excess traces with all phase and rank factors retained.
 3. **Sections and heights.** The [global upper bound and entire integral
    cusp frame](../notes/geometry-bergman-continuation-upper.md) are
-   supplied. Prove the original thin-region theta lower bound, point-height
-   comparison and arithmetic section remainder. Use the constructed
+   supplied, as is the [original thin-region lower bound](../notes/geometry-bergman-continuation-thin.md). Prove the point-height comparison and arithmetic section remainder, with the remaining original numerical records. Use the constructed
    models, metrics and short sections throughout.
 4. **Final comparison.** Assemble compatible signed fourth-power tables
    and bound their weighted positive parts on arbitrarily late intervals.

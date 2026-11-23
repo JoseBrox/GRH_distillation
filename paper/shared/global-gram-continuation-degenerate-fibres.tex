@@ -1,0 +1,399 @@
+\subsection{The measure of degenerate flag fibres}
+\label{shared-degenerate-flag-fibres}
+
+We now supply the geometric change of variables needed between
+the original flag integral and the already proved Euclidean
+small Gram determinant estimate~\cite{global-gram-degenerate-euclidean-volume}.
+The stabilizer measure remains
+explicit.  In particular, no probability measure on a noncompact
+unipotent group is introduced.  The construction and normalization
+are those of the pinned source~\cite{global-gram-degenerate-fibres-source}.
+
+\paragraph{The original coordinates.}
+Put $V=E_0\oplus W\oplus F_0$, where $E_0,F_0$ have bases
+$e_1,\ldots,e_r$ and $f_1,\ldots,f_r$, and
+$W=\mathbb C^{k+1}$.  All these coordinates are orthonormal for
+the Euclidean norm.  The indefinite Hermitian form, linear in its
+first argument, has matrix
+\[
+ J=\begin{pmatrix}0&0&I_r\\0&J_W&0\\I_r&0&0\end{pmatrix},
+ \qquad J_W=\operatorname{diag}(1,\ldots,1,-1).
+\]
+Write $h(v,w)=w^*Jv$, $G=U(J)$ and $K=G\cap U(V)$.
+The original dual flag coordinates are here listed in matching
+order.  Reversing their printed order is an orthonormal coordinate
+permutation, with real Jacobian one.
+
+For an upper unitriangular matrix $u$, a matrix
+$B=(B_1,\ldots,B_r)\in\operatorname{Hom}(\mathbb C^r,W)$,
+and a skew Hermitian matrix $S$, set
+\begin{align*}
+ U(u)&=\operatorname{diag}(u,I_{k+1},u^{-*}),\\
+ P(B,S)&=\begin{pmatrix}
+ I_r&-B^*J_W&S-\tfrac12B^*J_WB\\
+ 0&I_{k+1}&B\\0&0&I_r
+ \end{pmatrix}.
+\end{align*}
+The group $N$ consists of the products $U(u)P(B,S)$.
+Its original Haar measure $dn$ is product Lebesgue measure in
+the complex entries $u_{ab}$ for $a<b$, the complex coordinates
+of $B$, the complex entries $S_{ab}$ for $a<b$, and the real
+entries $-iS_{aa}$.  These formulas specify the measure, including
+all factors of two.
+
+For a negative vector $z\in W$, let
+$v_1=e_1,\ldots,v_r=e_r,v_{r+1}=z$ and define
+\begin{align*}
+ L_i(z,x)&=\operatorname{dist}\bigl(x^{-1}v_i,
+       x^{-1}\operatorname{span}(v_1,\ldots,v_{i-1})\bigr),\\
+ S_z(x)&=\max\bigl(1,L_i(z,x),L_i(z,x)^{-1}:1\le i\le r+1\bigr).
+\end{align*}
+All these lengths are positive.  Left multiplication by $N$ and
+right multiplication by $K$ preserve them: the former changes a
+flag vector only by earlier vectors, and the latter is Euclidean
+unitary.  If
+\[
+ t=\operatorname{diag}(a_1,\ldots,a_r,m,a_1^{-1},\ldots,a_r^{-1}),
+ \qquad a_i>0,\quad m\in U(J_W),
+\]
+then $L_i(z,nt)=a_i^{-1}$ for $i\le r$ and $n\in N$.
+
+\paragraph{The common normal form.}
+Fix $1\le j\le r$ and $j+2\le k$.  Partition
+$\{1,\ldots,j\}$ into consecutive blocks; if $j<r$, append
+$\{j+1,\ldots,r\}$ as one further block.  Suppose $g_0\in G$
+and negative $z,z'\in W$ satisfy the following original normal
+form conditions.  There is $c\in\mathbb C$, $|c|=1$, such that
+$g_0z'=cz$; both $g_0$ and $g_0^{-1}$ send
+$E_j=\operatorname{span}(e_1,\ldots,e_j)$ into
+$F_j=\operatorname{span}(f_1,\ldots,f_j)$; and
+$g_0e_a=ce_a$, $g_0f_a=cf_a$ for $a>j$.
+Finally, the $j$ by $j$ matrix
+\[
+ Z_{ab}=h(g_0e_b,e_a)
+\]
+is zero outside its diagonal blocks, and within each block it is
+antidiagonal with nonzero entries of a common absolute value.
+The phases of those entries need not agree.  Let $w$ reverse
+each block and write $\zeta_a=Z_{a,w(a)}$.
+
+Let $D_l(g)$ be the determinant of the leading $l$ by $l$
+submatrix of $(h(ge_b,e_a))_{a,b\le r}$, with $D_0=1$.
+Put $D=|D_j(g_0)|>0$, and suppose $\Delta\ge1$ satisfies
+\[
+ D_l(g_0)\ne0\quad\Longrightarrow\quad
+              |D_l(g_0)|^{-1}\le\Delta\qquad(0\le l\le r).
+\]
+These are precisely the nonzero leading-minor bounds used below.
+
+The following measure and functions also specify the conjugated
+normal form.  Take $\gamma=n_1g_0n_2$ with $n_1,n_2\in N$.
+Let $R_\gamma=N\cap\gamma^{-1}N\gamma$.  At $g_0$, write
+$u_{\rm in}$ for an upper unitriangular matrix supported inside
+the blocks, and let $B_{\rm top},S_{\rm top}$ be supported on
+indices greater than $j$.  Give
+\[
+ R_0=\{U(u_{\rm in})P(B_{\rm top},S_{\rm top})\}
+\]
+product coordinate Lebesgue measure $d\rho$.  The prescribed
+measure on $R_\gamma$ is the image of $s\,d\rho$, $s>0$,
+under $\rho\mapsto n_2^{-1}\rho n_2$.
+We prove below that $R_0=N\cap g_0^{-1}Ng_0$, so this is
+the original common-stabilizer measure.
+
+Write $\mathcal C_\gamma$ for the common $h$-orthogonal
+complement of $E_0+\mathbb Cz'$ and
+$\gamma^{-1}(E_0+\mathbb Cz)$.  Let $Q_\gamma(x)$ be the
+Euclidean orthogonal projection onto
+\[
+       \ker(J-I)\cap x^{-1}(\mathcal C_\gamma+E_0).
+\]
+For vectors $b_1,\ldots,b_j$ and a Euclidean orthogonal
+projection $Q$, put
+$\operatorname{Gram}_Q(b_1,\ldots,b_j)
+ =\|Qb_1\wedge\cdots\wedge Qb_j\|$.  Define the original
+normalized Gram volume by
+\[
+ Y_\gamma(x)=\frac{
+    \operatorname{Gram}_{Q_\gamma(x)}
+       (x^{-1}\gamma^{-1}e_1,\ldots,x^{-1}\gamma^{-1}e_j)}D.
+\]
+Unipotent multiplication preserves the leading minors, so the
+same $D$ and $\Delta$ apply to $\gamma$.
+
+\begin{theorem}[The original degenerate fibre estimate]
+\label{thm:original-degenerate-fibre-estimate}
+Retain all the hypotheses and measures just specified.  Let
+$\varphi:G\to[0,\infty]$ be measurable and satisfy
+\[
+       \int_{R_\gamma}\varphi(\rho x)\,d\mu_R(\rho)
+                           \le1\qquad(x\in G).
+\]
+For every $g\in G$, the set
+$\{n\in N:Y_\gamma(ng)=0\}$ has $dn$-measure zero.
+For $R\ge1$ and $y>0$, one has
+\begin{align}
+ &\int_N\varphi(ng)
+    {\bf1}_{\{S_{z'}(ng),S_z(\gamma ng)\le R,\;
+                         y<Y_\gamma(ng)\le2y\}}\,dn \notag\\
+ &\quad\le\frac{(4r)^{4r^2}}s
+       (R^{2r}\Delta)^{8r^2}
+       \left(\frac{\pi e}{k-1-j}\right)^{j(k-1-j)}
+                         (2y)^{2(k-1-j)}.
+ \label{eq:original-degenerate-fibre-estimate}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+We first take $\gamma=g_0$ and $g=t$ of the displayed Levi
+form, and then prove the transport to arbitrary $\gamma,g$.
+
+\emph{The quotient coordinates have Jacobian one.}
+Let $u_{\rm off}$ be upper unitriangular, with zero entries
+inside every diagonal block.  Let $B_{\rm sec}$ have zero
+columns with index greater than $j$, and let $S_{\rm sec}$ have zero entries
+when both indices exceed $j$.  The section is
+\[
+           \sigma=P(B_{\rm sec},S_{\rm sec})U(u_{\rm off}).
+\]
+Every element of $N$ has a unique expression $\rho\sigma$,
+with $\rho\in R_0$, and
+\begin{equation}\label{eq:degenerate-measure-split}
+                         dn=d\rho\,d\sigma,
+\end{equation}
+where $d\sigma$ is the product of the remaining coordinate
+Lebesgue measures.  Here is a verification of the Jacobian.
+An upper unitriangular $u$ factors uniquely as
+$u=u_{\rm in}u_{\rm off}$: its diagonal blocks determine
+$u_{\rm in}$, and each off-diagonal block is multiplied by
+an inverse unitriangular diagonal block.  All the complex
+determinants of these linear changes are one.
+Moreover
+\begin{align*}
+ P(B,S)P(C,T)
+   &=P\bigl(B+C,S+T+\tfrac12(C^*J_WB-B^*J_WC)\bigr),\\
+ U(u)P(B,S)U(u)^{-1}&=P(Bu^*,uSu^*).
+\end{align*}
+The first identity splits the top and section variables by
+translations in the skew coordinates, so its real Jacobian is
+one.  In the second identity $u$ is unitriangular.  Its action
+on $B$ has determinant one, and its action on the real space
+of skew Hermitian matrices is unitriangular after ordering the
+coordinate pairs from the last indices to the first.  Thus
+that real determinant is also one.  Moving $u_{\rm in}$ past
+$P(B,S)$ and using these two identities proves
+\eqref{eq:degenerate-measure-split}.  Left and right
+multiplication in upper unitriangular coordinates are triangular
+affine changes with diagonal one.  Together with the displayed
+radical identities, this also proves directly that $dn$ and
+$d\rho$ are left and right Haar measures.
+
+For completeness, the stabilizer assertion follows from the
+same matrices.  The normal form gives
+\begin{equation}\label{eq:normal-moved-dual}
+                     g_0^{-1}e_a=\overline{\zeta_a}f_{w(a)}
+                             \qquad(a\le j).
+\end{equation}
+If $U(u)P(B,S)$ belongs to $g_0^{-1}Ng_0$, its action on
+these vectors is upper unitriangular in their displayed order.
+The middle and $E_0$ coordinates of its $f_b$ column, $b\le j$,
+therefore vanish.  The block formulas give $B_b=0$ and
+$S_{ab}=0$ for every $a$ and $b\le j$.  Its remaining
+$f$ coordinates are $\overline{(u^{-1})_{ba}}$.  Since $w$
+reverses the order within each block and preserves the order
+of the blocks, the two triangularity conditions force
+$u^{-1}$, and hence $u$, to be block diagonal.  These are
+exactly the coordinates of $R_0$.  Conversely, a matrix with
+these coordinates is sent into $N$ by conjugation with $g_0$:
+within a block, reversal changes lower triangularity back to
+upper triangularity; the remaining radical acts only on
+$W$ and the last block.  Thus $R_0=N\cap g_0^{-1}Ng_0$.
+
+\emph{Bounding the section coordinates from the two flags.}
+Suppose $S_{z'}(\sigma t),S_z(g_0\sigma t)\le R$, and put
+$M=R^{2r}\Delta\ge1$.  First note that
+\begin{equation}\label{eq:normal-prefix-product}
+                       \left(\prod_{a=1}^{l}|\zeta_a|\right)^{-1}
+                              \le\Delta\qquad(0\le l\le j).
+\end{equation}
+At a block endpoint this product is the absolute value of the
+corresponding nonzero leading minor.  Within a block its
+logarithm interpolates linearly between the two endpoint
+logarithms, since all its entries have the same absolute value.
+The estimate follows from the endpoint bounds, including the
+empty product one.
+
+For $b\le j$ we claim
+\begin{equation}\label{eq:normal-dual-pair-bound}
+     |h(\sigma^{-1}f_b,v)|\le M
+            \quad\hbox{whenever }\|t^{-1}v\|\le R.
+\end{equation}
+Write $b=w(l)$ and use the first $l$ vectors
+$(g_0\sigma t)^{-1}e_a$.  Their exterior product has norm at
+most $R^l$, since their Gram--Schmidt lengths are the first
+$l$ original flag lengths.  Pair them with
+$t^{-1}e_{w(1)},\ldots,t^{-1}e_{w(l-1)},t^{-1}v$.
+Each test vector has norm at most $R$: for the first ones use
+$a_i^{-1}=L_i(z',\sigma t)\le R$.  As $J$ is Euclidean
+unitary, the absolute determinant of these Hermitian pairings
+is at most $R^{2l}$ by the exterior Cauchy--Schwarz inequality.
+By \eqref{eq:normal-moved-dual}, its first $l-1$ rows are
+lower triangular with diagonal entries
+$\overline{\zeta_1},\ldots,\overline{\zeta_{l-1}}$.
+Indeed
+$h(\sigma^{-1}f_b,e_a)=\overline{(u_{\rm off})_{ba}}$;
+entries above this diagonal vanish either by upper
+triangularity or by the zero entries within each block.
+The determinant consequently has absolute value
+\[
+       \left(\prod_{a=1}^l|\zeta_a|\right)
+                           |h(\sigma^{-1}f_b,v)|.
+\]
+Equation~\eqref{eq:normal-prefix-product} and $l\le r$ prove
+\eqref{eq:normal-dual-pair-bound}.
+
+Write $u=u_{\rm off}$, $B=B_{\rm sec}$, $S=S_{\rm sec}$.
+The three components of $\sigma^{-1}f_b$ are
+\[
+ \left(u^{-1}\left(-S_{\cdot b}-\tfrac12(B^*J_WB)_{\cdot b}\right),
+                      -B_b,\;u^*f_b\right).
+\]
+Taking $v=e_a$ in \eqref{eq:normal-dual-pair-bound} bounds
+$|u_{ba}|$ by $M$ for $b\le j$.  The later rows of $u$
+are identity rows, so every entry of $u$ has absolute value
+at most $M$.  Taking $v=mw\in W$ with $\|w\|\le1$ gives
+\[
+                             \|m^{-1}B_b\|\le M.
+\]
+Here $\sup_{\|w\|\le1}|h_W(v,w)|=\|v\|$ because $J_W$
+is Euclidean unitary.  Finally take $v=f_a$, using
+$a_a=L_a(z',\sigma t)^{-1}\le R$.  Every coordinate of
+$u^{-1}(-S_{\cdot b}-\tfrac12(B^*J_WB)_{\cdot b})$ is at
+most $M$ in absolute value.  Multiplying by $u$ bounds its
+untransformed coordinates by $rM^2$.  Since $m\in U(J_W)$,
+\[
+       |(B^*J_WB)_{ab}|\le\|m^{-1}B_a\|\|m^{-1}B_b\|\le M^2.
+\]
+Therefore $|S_{ab}|\le(r+\tfrac12)M^2\le2rM^2$ whenever
+one index is at most $j$.  We have proved the precise boxes
+\begin{equation}\label{eq:degenerate-coordinate-boxes}
+ |u_{ab}|\le M,\qquad \|m^{-1}B_a\|\le M,\qquad
+ |S_{ab}|,\;|-iS_{aa}|\le2rM^2
+\end{equation}
+for their respective section coordinates.
+
+\emph{The projected Gram volume has no further Jacobian.}
+The normal form implies
+\[
+ \mathcal C_{g_0}+E_0=(E_0+\mathbb Cz')^{\perp_h}.
+\]
+Indeed $g_0^{-1}E_j=F_j$, it preserves the remaining
+isotropic lines, and $g_0^{-1}z$ is a nonzero multiple of
+$z'$.  Adding $E_0$ removes exactly the extra orthogonality
+conditions imposed by $F_j$.
+If $v$ lies in $\ker(J-I)$ and
+$\sigma tv\in\mathcal C_{g_0}+E_0$, its $F_0$ coordinates
+are zero; its $E_0$ coordinates are then also zero because
+$Jv=v$.  Thus $v\in W$, its last coordinate is zero, and
+$h_W(mv,z')=0$.  Conversely these conditions imply membership.
+Consequently $Q_{g_0}(\sigma t)$ is the projection in $W$ onto
+\[
+       W_0=\bigl(\operatorname{span}_{\mathbb C}
+             \{e_{k+1},m^*J_Wz'\}\bigr)^\perp,
+          \qquad \dim_{\mathbb C}W_0\ge k-1.
+\]
+It is independent of the section coordinates.  The middle
+component of $(\sigma t)^{-1}f_b$ is $-m^{-1}B_b$.
+Equation~\eqref{eq:normal-moved-dual} shows that the
+determinant of the change of the first $j$ moved vectors is
+$D$.  It cancels the denominator in $Y$.  Hence, writing
+$Q_0$ for the orthogonal projection onto $W_0$,
+\begin{equation}\label{eq:actual-degenerate-gram-coordinate}
+       Y_{g_0}(\sigma t)=
+              \operatorname{Gram}_{Q_0}(m^{-1}B_1,\ldots,m^{-1}B_j).
+\end{equation}
+Taking determinants of $m^*J_Wm=J_W$ gives $|\det m|=1$.
+The real Jacobian of $B_a\mapsto m^{-1}B_a$ is therefore
+exactly one, even when $m$ has large Euclidean norm.
+
+\emph{Integration of the boxes.}
+The functions $S_{z'}(x)$, $S_z(g_0x)$ and $Y_{g_0}(x)$
+are invariant under left multiplication by $R_0$.
+For $Y$, this follows because $R_0$ preserves both flags,
+acts upper unitriangularly on their first $j$ vectors, and
+preserves $\mathcal C_{g_0}+E_0$.  Therefore
+\eqref{eq:degenerate-measure-split} and the assumption on
+$\varphi$ reduce the integral to $1/s$ times the measure
+of the allowable section coordinates.
+By (GV8) and \eqref{eq:actual-degenerate-gram-coordinate}, the
+volume of their $B$ coordinates is at most
+\[
+ \frac{\pi^{j^2+2j}M^{2j^2+4j}}{((j+2)!)^j}
+       \left(\frac{\pi e}{k-1-j}\right)^{j(k-1-j)}
+                             (2y)^{2(k-1-j)}.
+\]
+There are $p\le r(r-1)/2$ complex skew coordinates,
+$j\le r$ real skew coordinates, and
+$h\le r(r-1)/2$ complex upper coordinates.  Their box
+volumes multiply the preceding expression by
+\[
+             (4\pi r^2M^4)^p(4rM^2)^j(\pi M^2)^h.
+\]
+The exponent of $M$ is at most $5r^2+3r\le8r^2$.
+The exponent of $\pi$ is at most $2r^2+r\le3r^2$,
+and the remaining factors $r$ and $2$ are bounded by
+$(4r)^{2p+j}\le(4r)^{r^2}$.  Using $\pi<4$ and dropping
+the factorial denominator proves the required factor
+$(4r)^{4r^2}M^{8r^2}$.  The zero Gram locus has measure
+zero by the same Euclidean Gram theorem and Fubini; all
+coordinate measures here are sigma-finite.
+
+\emph{Transport of the original measure.}
+For arbitrary $g\in G$, write
+$g=n_0t\kappa$ with $n_0\in N$, $\kappa\in K$ and $t$
+as above.  Here is the elementary flag Iwasawa argument.
+Euclidean Gram--Schmidt gives an orthonormal frame adapted to
+$g^{-1}E_1\subset\cdots\subset g^{-1}E_r$.  Its projections
+to the positive and negative eigenspaces of $J$, multiplied by
+$\sqrt2$, are orthonormal frames: all Hermitian pairings in
+the isotropic flag vanish.  Independent unitaries of these
+two eigenspaces therefore give an element of $K$ carrying
+the standard isotropic frame to this frame.  Adjust its
+individual phases so that the diagonal entries of the
+resulting action on $E_0$ are positive.  The transformed
+matrix preserves the standard flag.  Its action on $E_0$
+has positive diagonal $a$, and its induced action on
+$E_0^{\perp_h}/E_0$ is $m\in U(J_W)$.  Dividing by $t$
+leaves precisely a matrix of $N$.
+The change $n\mapsto n_2nn_0$ preserves $dn$, since $N$
+is unimodular.  Right multiplication by $K$ preserves the
+lengths and the projected Gram volume; $K$ commutes with $J$.
+Left multiplication by $n_1,n_2$ changes each leading flag
+matrix by unitriangular row or column operations.  It thus
+preserves every $D_l$, and
+\[
+       Y_{n_1g_0n_2}(x)=Y_{g_0}(n_2x).
+\]
+More explicitly,
+$\mathcal C_{n_1g_0n_2}+E_0=n_2^{-1}(\mathcal C_{g_0}+E_0)$,
+and the first $j$ moved vectors differ by a unitriangular
+matrix; this proves the last identity including its
+normalization.
+Finally set
+$\psi(x)=s\,\varphi(n_2^{-1}x\kappa)$ for $x\in G$.
+The definition of $\mu_R$ gives
+$\int_{R_0}\psi(\rho x)\,d\rho\le1$ for every $x\in G$.
+Apply the already proved normal-form estimate to $\psi$, with
+stabilizer scalar one, and
+change variables by $n_2nn_0$.  Division by $s$ gives
+\eqref{eq:original-degenerate-fibre-estimate}.  The same
+measure-preserving change transports the null-set assertion.
+\end{proof}
+
+The theorem closes the original normal-form fibre supplier,
+including the stabilizer scalar and arbitrary right translates.
+Its hypotheses still require the original normal form and its
+arithmetic measure.  The ensuing orbital estimate must additionally
+use the proved flag-length tails and the arithmetic count of
+leading minors.  Thus this geometric result alone does not yet
+prove the full diagonal zero-Gram bound.

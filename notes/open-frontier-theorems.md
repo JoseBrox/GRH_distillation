@@ -163,7 +163,9 @@ The [auxiliary arithmetic frame](selmer-support-continuation-auxiliary-tower.md)
 
 The [integral finiteness theorem](selmer-support-continuation-integral-finiteness.md) now proves the full original weight-zero algebra finite over the coefficient ring for every original local/global model pair. Integral spectral projectors for the original decomposition-group element and specialization on each selected component retain the ordered local characters, including at the coefficient prime three. Weight-zero projection keeps the entire original global equation quotient, including nilpotents and torsion.
 
-**First missing construction.** Complete two-sided characteristic-zero global rigidity, then discharge the moving-family integral Selmer budget. The new finiteness proof gives no effective nilpotence exponent or uniform integral conormal length.
+The [type-I rigidity theorem](selmer-support-continuation-type-one-rigidity.md) proves vanishing of the original polarized adjoint Selmer group at every irreducible characteristic-zero point. A decomposition-group mark and infinite inertia prove strong irreducibility, including at three. Actual arithmetic-point classicality over the constructed auxiliary field permits Thorne’s adjoint theorem; the full crystalline-component comparison puts every original tangent in its finite local condition.
+
+**First missing construction.** At type-II points, prove vanishing for the two rank-two representation summands, their polarized adjoint and the remaining character line with the original twists. Then discharge the moving-family integral Selmer budget. Neither rational rigidity nor integral finiteness gives an effective nilpotence exponent or uniform integral conormal length.
 
 ## W06: the integral theta construction
 
@@ -321,7 +323,7 @@ dictionary, retaining every further target projection. Prove the uniform
 positive trace deficit/excess bounds for these same maps. In particular
 the near-return contributions and finite-column sums must be controlled as the field grows. The far-return weighted double integral is now exponentially small at the literal source cutoff and with the actual period normalizers; its identification with the final Gram operator is still required.
 
-The [all-length tail theorem](global-gram-continuation-length-tail.md) now supplies the original simultaneous tail estimate for every flag length and its inverse, with the same Bessel coefficient, local character, quotient measure and moment range. Its constants have the original quantifier order. The next near-return requirement is the exact local zero-Gram orbital-operator bound and its global sum; generic returns and final trace comparisons remain separate.
+The [all-length tail theorem](global-gram-continuation-length-tail.md) now supplies the original simultaneous tail estimate for every flag length and its inverse, with the same Bessel coefficient, local character, quotient measure and moment range. Its constants have the original quantifier order. The [degenerate-fibre theorem](global-gram-continuation-degenerate-fibres.md) supplies the exact original projected Gram-volume bound, including the common-stabilizer scalar and arbitrary right translates. A block-minor determinant bounds the actual coordinates; all intervening real Jacobians are one. The next near-return requirement is the exact local zero-Gram orbital-operator bound and its global sum; generic returns and final trace comparisons remain separate.
 
 ## W10: the exact integral geometric supplier
 
@@ -387,11 +389,13 @@ boundary arcs, and supplies both literal `h0` and `hsh`. Its same-field
 short-span bound is `exp(400000*(X^3*S+X^5))`; the original size
 inequalities absorb this after a permitted fixed starting threshold.
 
-The [actual thick-region theorem](geometry-bergman-continuation-thick.md) now supplies the precise lower Bergman estimate `exp(-C(l1(u1)+(fr)^8))`, with an absolute constant and the original chart, metric, component probability and Haar normalization. A tensor/Minkowski argument uses the exact trace-self-dual lattice to prove thick injectivity; a complete-quotient dbar construction and regular-weight cuspidality give the actual cusp peak. The original numerical host inequalities connecting this exponent to `lenT`/`unitE` remain explicit. The remaining analytic lower bound is the thin theta-pivot estimate; the upper bound and entire integral frame are now supplied.
+The [actual thick-region theorem](geometry-bergman-continuation-thick.md) now supplies the precise lower Bergman estimate `exp(-C(l1(u1)+(fr)^8))`, with an absolute constant and the original chart, metric, component probability and Haar normalization. A tensor/Minkowski argument uses the exact trace-self-dual lattice to prove thick injectivity; a complete-quotient dbar construction and regular-weight cuspidality give the actual cusp peak. The original numerical host inequalities connecting this exponent to `lenT`/`unitE` remain explicit. The thin-region lower bound, upper bound and entire integral frame are also supplied below.
 
 The [global upper bound and integral frame](geometry-bergman-continuation-upper.md) now supply the original pointwise upper Bergman, rank and multiplication bounds, and short Z-generators of the entire original cusp lattice. The construction retains the coefficient field, all component masses and the exact numerical frame budgets; no bound on an unspecified integral index is assumed.
 
-**First missing construction.** Prove the thin-region theta lower bound, the actual point-height comparison and the numerical arithmetic section remainder for these same lattices.
+The [thin-region theorem](geometry-bergman-continuation-thin.md) supplies the original lower Bergman bound exp(-2f/(625 rd(E)^2 lambda^2)). It constructs the prescribed determinant jet on the original period torus, retaining the semicharacter and every ordinary-derivative factorial. Exact Gaussian periodization, the finite theta basis and the constant metric comparison on the same component transfer the bound to the actual integral cusp sections. No bound on projected lattice condition numbers is assumed.
+
+**First missing construction.** Prove the actual point-height comparison and numerical arithmetic section remainder for these same lattices, and construct the remaining original numerical family records.
 The existing cusp, jet and signed-boundary lemmas are to be applied unchanged.
 
 ## Completion discipline
@@ -401,6 +405,5 @@ the exact proven subobligations. The work-package acceptance lists remain
 in `blueprint/grh/program.json`; the RH product and final budget remain
 in its separate manuscript. No whole node is newly closed by the local
 constructions above. The next research effort belongs to the actual
-thin-region section and height estimates, integral global rigidity and
-uniform Selmer orders, and near returns in the actual global period maps, not further optimization of the already
-proved frame inequalities.
+point-height and arithmetic section estimates, type-II rigidity and
+uniform integral Selmer orders, and near returns in the actual global period maps.

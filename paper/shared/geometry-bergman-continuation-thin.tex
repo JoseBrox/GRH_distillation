@@ -1,0 +1,599 @@
+\subsection{Theta jets and the lower bound in the thin region}
+\label{shared-actual-thin-bergman}
+
+The issue in the thin region is quantitative nonvanishing of a
+prescribed determinant differential operator.  A short spanning set
+does not give this.  We construct a section of the original period
+torus, and then use the finite theta basis to obtain an actual cusp
+section~\cite{bergman-thin-source}.  Maximizing a determinant over a bounded set of lattice
+frequencies avoids any assumption on the condition number of their
+projections to one complex embedding.
+
+\paragraph{The period torus and its parameters.}
+Let $E$ be a CM field of degree $2f$, put $R=\operatorname{rd}(E)$,
+and let
+\[
+ V=\bigoplus_{\tau:E\hookrightarrow\mathbb C}\mathbb C^{s_\tau},
+ \qquad s_\tau+s_{\bar\tau}=r,\qquad g=\dim_{\mathbb C}V=fr.
+\]
+Use the standard Hermitian form $H$, linear in its first argument.
+The original period lattice $\Gamma\subset V$ is stable under
+$\mathcal O_E$, and $\omega=\operatorname{Im}H$ is integral and
+unimodular on $\Gamma$.  Its semicharacter
+$\varepsilon:\Gamma\to\{1,-1\}$ satisfies
+\[
+ \varepsilon(\gamma+\eta)
+   =\varepsilon(\gamma)\varepsilon(\eta)e^{\pi i\omega(\gamma,\eta)}.
+\]
+We retain its original isotropic normalization:
+$\varepsilon(\gamma)=1$ whenever
+$\omega(a\gamma,\gamma)=0$ for every $a\in\mathcal O_E$.
+Write $\lambda=\min_{0\ne\gamma\in\Gamma}\|\gamma\|$.
+
+For an integer $q\ge1$, let $\mathcal H_q$ consist of the entire
+functions with transformation law
+\[
+ F(z+\gamma)=\varepsilon(\gamma)^q
+  e^{\pi q H(z,\gamma)+\pi q\|\gamma\|^2/2}F(z).
+\]
+Its squared norm is the integral of
+$|F(z)|^2e^{-\pi q\|z\|^2}$ on $V/\Gamma$.
+This is also the probability norm: unimodularity of $\omega$
+gives Euclidean covolume one.  On $V^n$ use the exterior tensor
+power of this line and the product probability measure.
+
+Let $P$ be a product of powers of determinants.  Each determinant
+uses $i\le s_\tau$ rows at one embedding $\tau$, and $i$
+distinct columns among the $n$ copies of $V$.  Its exponent is an
+integer $c\ge1$.  Different determinants have disjoint column
+sets.  Write $D=\sum ic\ge1$ for its degree.  The rows can be any
+specified orthonormal coordinate rows.  The differential operator
+$P(\partial)$ uses ordinary derivatives, with no factorial
+inserted into its definition.
+
+Choose $m\ge1$ with $s_\tau\le m$ at at least one embedding, and
+put
+\begin{gather*}
+ d_*=2fm,\qquad \Omega=2f^{3/2}R,\qquad
+ \theta^2=\frac{fR_0^2R^{21}}q,\qquad
+ b_0=\frac q{R_0^2R^{28}},\qquad t_0=qb_0,\\
+ C=8100m^4d_*^4R^7,\qquad
+ \phi=\begin{cases}2f/(R^2\lambda^2),&\lambda<\theta,\\
+                    0,&\lambda\ge\theta.
+       \end{cases}
+\end{gather*}
+The following follow from the original numerical hypotheses and rank
+conditions:
+\begin{gather}
+ r\ge2,\quad m^4\le f,\quad f^2\le R,\quad R\ge16,
+ \quad q\ge6,\quad R_0^2\ge90(g+D),\label{eq:thin-jet-parameters-a}\\
+ \Omega\theta^2<1,\qquad b_0\ge1,\qquad
+ t_0\ge4D\bigl(7+\log(qD)\bigr)+d_*+1.
+ \label{eq:thin-jet-parameters-b}
+\end{gather}
+Indeed the original ranks have $r=k+m-1$, $m\ge2$ and
+$k\ge m+3$, so $r\ge6$.  The original inequalities include
+$d_*^2\Omega\theta^2<1$ and $90m^2d_*^2R\le q/2$.
+Since $d_*=2fm\ge2$, they imply $\Omega\theta^2<1$ and
+$q\ge180m^2d_*^2R\ge11520$.  The other displayed inequalities
+are retained verbatim.  In particular this argument does not infer
+$r\ge2$ merely from $fr\ge2$.
+
+\begin{theorem}[The required determinant jet]
+\label{thm:actual-thin-determinant-jet}
+Under these hypotheses, there is a section $F$ of the original
+line on $(V/\Gamma)^n$ such that
+\begin{equation}\label{eq:thin-jet-lower}
+ \frac{|P(\partial)F(0)|^2}{\|F\|_2^2}
+   \ge 2^{-3n}16^{-D}
+                  \exp\left(-\frac{2\pi nC\phi}{q}\right).
+\end{equation}
+In particular this implies the prescribed lower bound
+\[
+ (4K_6)^{-n}2^{-(r+2)D}
+                  \exp\left(-\frac{2\pi nC\phi}{q}\right),
+ \qquad K_6=6(2d_*)^{d_*/2}.
+\]
+The theorem concerns the original principally polarized period
+lattice, including its semicharacter and CM action.
+\end{theorem}
+
+\begin{proof}
+\emph{An isotropic sublattice and its dual frequencies.}
+There are $2f$ rationally independent elements of
+$\mathcal O_E$ whose absolute values at all embeddings are at
+most $\Omega$.  Indeed the trace-dual minimum is at least
+$\sqrt{2f}/R$; the transference argument proved in
+Section~\ref{sec:actual-short-theta-generators} gives Euclidean
+length at most $(2f)^{3/2}R$.  A single CM embedding accounts for
+two equal summands in its squared Euclidean norm.
+
+Start with $U=0$ and $I=\Gamma\cap U$.  We build an
+$E$-stable, real isotropic subspace $U$ with the following property:
+if $b$ is the vector in $U$ representing the functional
+$v\mapsto\omega(\gamma,v)$ on $U$, for $\gamma\in\Gamma$,
+then
+\begin{equation}\label{eq:thin-dual-separation}
+             b\ne0\quad\Longrightarrow\quad
+                         \|b\|\ge\frac1{\Omega\theta}.
+\end{equation}
+Suppose $x\in\Gamma\setminus U$ has distance less than
+$\theta$ from $U$.  The property forces $\omega(x,U)=0$,
+since $\Omega\theta^2<1$.  Write $x=u+w$, with $u\in U$;
+then $w$ is orthogonal to $U+iU$ and $\|w\|<\theta$.
+For each of the short rational basis elements $a$, the integer
+$\omega(ax,x)=\omega(aw,w)$ has absolute value less than one.
+It is zero.  Rational linearity gives the same conclusion for
+every $a\in E$.  Thus adjoining the $E$-span of $x$ preserves
+isotropy.
+
+Property~\eqref{eq:thin-dual-separation} is preserved as well.
+If a pairing is already nonzero on the old $U$, use its old
+orthogonal projection.  Otherwise some pairing with $ax$, for
+one of the short rational basis elements $a$, is a nonzero
+integer.  The old component does not contribute, so its absolute
+value is at most $\|b\|\|aw\|\le\|b\|\Omega\theta$.
+This proves the asserted separation.
+
+The process stops after at most $m$ steps.  More explicitly, the
+complexification of an isotropic $E$-subspace of rank $\rho$
+injects into $V$: $U\cap iU=0$.  At every embedding its
+complex dimension is $\rho$, whence $\rho\le s_\tau$ for
+every $\tau$.  At termination put $d=\dim_{\mathbb R}U=2f\rho
+\le d_*$.  The lattice $I=\Gamma\cap U$ is saturated, and
+\begin{equation}\label{eq:thin-quotient-separation}
+ x\in\Gamma\setminus I\quad\Longrightarrow\quad
+                         \operatorname{dist}(x,U)\ge\theta.
+\end{equation}
+The projected vectors used at each step, multiplied by the $2f$
+short coefficient elements, also give a full sublattice of $I$
+with successive Gram--Schmidt lengths at most $\Omega\theta$.
+Consequently
+\begin{equation}\label{eq:thin-isotropic-covolume}
+                         \operatorname{covol}(I)
+                                      \le(\Omega\theta)^d.
+\end{equation}
+The semicharacter is one on $I$ by its retained normalization.
+The space $U$ is zero exactly when $\lambda\ge\theta$.
+
+Write $W=U+iU$ and $A=W^\perp$.  Each period is written
+\[
+                   \gamma=t+ib+a,
+             \qquad t,b\in U,\quad a\in A.
+\]
+Its frequencies $b$ constitute exactly the Euclidean dual lattice
+$L=I^*$ in $U$.  A homomorphism $I\to\mathbb Z$ extends to
+$\Gamma$ because $I$ is saturated, and unimodularity of
+$\omega$ then supplies its representing period.  Thus this is
+an equality of lattices, not an inclusion of unspecified index.
+The periods with $b=0$, modulo $I$, project to a lattice in $A$
+with minimum at least $\theta$.  Every other frequency fibre is
+a translate of that lattice.  By
+\eqref{eq:thin-dual-separation},
+\begin{equation}\label{eq:thin-frequency-minimum}
+ \lambda_L\ge(\Omega\theta)^{-1}\ge\sqrt{b_0}.
+\end{equation}
+The second inequality is equivalent to $f\Omega^2\le R^7$,
+which follows from $f^2\le R$ and $R\ge16$.
+
+\emph{A bounded set controlling every relevant determinant.}
+Let $\mathcal V$ be the closed Voronoi cell of $L$ and put
+$S=L\cap3\mathcal V$.  Then
+\begin{equation}\label{eq:thin-voronoi-convex}
+                            \mathcal V\subset\operatorname{conv}S.
+\end{equation}
+To see this, for $v\in\mathcal V$ choose $\ell\in L$ with
+$2v-\ell\in\mathcal V$.  Then $\ell\in3\mathcal V$ and
+$v=(\ell+(2v-\ell))/2$.  Iterate this identity.  Its remainders
+stay in the compact cell and their coefficients tend to zero;
+the finite set $S$ includes zero, so the limit belongs to its
+closed convex hull.
+
+For $v\in U$ its Voronoi gauge is
+\[
+ \mu(v)=\sup_{0\ne\ell\in L}
+                  \frac{2|\langle v,\ell\rangle|}{\|\ell\|^2}
+                      \le\frac{2\|v\|}{\lambda_L}.
+\]
+Thus $v$ belongs to $\mu(v)\operatorname{conv}S$.
+Moreover the covering radius of $L$ is at most
+$d\lambda_d(L)/2\le d^3/(2\lambda)$, by transference and
+$\lambda_1(I)\ge\lambda$.  Every $u\in S$ consequently has
+\begin{equation}\label{eq:thin-frequency-radius}
+ \|u\|^2\le\frac{9d^6}{4\lambda^2}\le C\phi.
+\end{equation}
+For the last inequality substitute $d\le2fm$ and
+$\phi=2f/(R^2\lambda^2)$; it is implied by
+$f\le1800m^2R^5$.  When $U=0$, set $S=\{0\}$ and only
+use the abelian directions below.
+
+Fix a block of size $i$ and exponent $c$ at $\tau$.  Consider
+the projections to $V_\tau$ of $S$, together with the ball of
+radius $\sqrt{qc}$ in $A\cap V_\tau$.  Maximize the absolute
+value of the specified $i$-row determinant on $i$ choices from
+this compact set, and call its maximum $\Delta$.  The maximum
+controls determinants with columns in the complex balanced convex
+hull as well, by multilinearity and the triangle inequality.
+Give this span the norm whose unit ball is that hull.  For symmetric
+tensors we use its projective tensor norm: the infimum of
+$\sum_j\prod_k\|v_{jk}\|$ over representations as sums of
+symmetrized pure tensors.  Symmetrization is the average over
+permutations.  This specifies the tensor estimates used below.
+
+The real form $U$ pairs $W\cap V_\tau$ with
+$W\cap V_{\bar\tau}$ by conjugation.  A unit vector in the
+first summand is the projection of a vector in $U$ of norm
+$\sqrt2$.  Since $\mathcal V$ contains the radius
+$\lambda_L/2$ ball, \eqref{eq:thin-voronoi-convex} and
+$\lambda_L\ge1$ show that this balanced convex hull contains
+the radius $1/4$ ball in all of $V_\tau$.  Hence
+\begin{equation}\label{eq:thin-leading-determinant}
+                              \Delta\ge4^{-i}.
+\end{equation}
+No lower singular-value bound for a chosen lattice basis is used.
+
+\emph{Actual Appell--Humbert sections.}
+The real form $U\subset W$ defines the complex bilinear form
+$B$ whose restriction to $U$ is its Euclidean form.  Conjugation
+in this real form interchanges $\tau$ and $\bar\tau$.
+Consequently $B(z,z)=0$ on every one-embedding subspace
+$V_\tau$.  For $u\in L$ set
+\[
+ e_u(z)=\exp\left(\frac{\pi q}2B(z_W,z_W)
+                                  +2\pi iB(z_W,u)\right).
+\]
+It has the prescribed transformation law on $I$.
+For a toric column selected above use
+$h=e_u/(2\pi i)^c$.  For an abelian column
+$\sqrt{qc}\,\xi$, where $\xi\in A\cap V_\tau$ is a unit
+vector, use
+\[
+                       h(z)=e_0(z)
+                     \frac{(\sqrt{qc}\,H(z,\xi))^c}{c!}.
+\]
+For an unused column use $h=e_0$.
+Periodize these functions by the original lattice:
+\begin{equation}\label{eq:thin-periodization}
+ \Theta_h(z)=\sum_{\gamma\in\Gamma/I}
+   \varepsilon(\gamma)^q
+   e^{\pi qH(z,\gamma)-\pi q\|\gamma\|^2/2}h(z-\gamma).
+\end{equation}
+The summand is unchanged by changing the representative modulo
+$I$.  The semicharacter identity makes the translation operators
+a representation of $\Gamma$, so the sum belongs to
+$\mathcal H_q$.  To justify the sum, choose the real $U$
+coordinate of each representative in a bounded fundamental
+parallelepiped.  In the remaining coordinates its modulus and
+every derivative on a compact set are bounded by a polynomial
+times a decaying Gaussian.  The frequency lattice and the
+separated affine lattices in $A$ give locally uniform absolute
+convergence.  This also justifies differentiation term by term.
+
+For $\gamma=t+ib+a$, the scalar in the toric summand at zero
+has modulus
+\begin{equation}\label{eq:thin-summand-modulus}
+  \exp\left(-\pi q\|b\|^2-\frac{\pi q}2\|a\|^2
+                                          +2\pi\langle b,u\rangle\right).
+\end{equation}
+Because $u\in3\mathcal V$, this is at most
+$\exp(-\pi(q-3)\|b\|^2-\pi q\|a\|^2/2)$.
+Along $V_\tau$ its linear exponential is exactly
+\[
+            2\pi iH(z,u-qb)+\pi qH(z,a).
+\]
+The toric $c$-jet, after its normalization, is therefore the
+$c$-th power of the functional with column
+$u-qb-(q/(2i))a$, with the conjugation in the second argument
+of $H$ understood.  The identity summand gives the selected column
+$u$.
+
+For the abelian column put $v=\sqrt{qc}\,\xi$.  Its $c$-jet
+is the sum, for $0\le l\le c$, of the symmetric tensors
+\begin{equation}\label{eq:thin-abelian-jet}
+       \frac{\binom cl}{l!}(-H(a,v))^l
+                  H(\,\cdot\,,v)^{c-l}\,\mathcal L_\gamma^l,
+ \qquad \mathcal L_\gamma(z)=-2\pi iqH(z,b)+\pi qH(z,a),
+\end{equation}
+times its scalar Gaussian.  This identity follows by expanding
+the polynomial and exponential before taking the $c$-th
+ordinary derivative.  At $\gamma=0$ only the chosen column
+$v$ remains.  The factorial in this formula is essential.
+
+\emph{Uniform bounds for the error terms.}
+Here are the estimates including their constants.  Put
+\[
+              A_0=q\theta^2\ge90(g+D),\qquad B_0=qb_0=t_0.
+\]
+For a nonzero frequency put $x=\|b\|/\lambda_L\ge1$, and
+put $y=\sqrt q\|a\|$.  Measure a column by the balanced convex
+hull used to define $\Delta$.  A toric jet has total tensor
+coefficient norm at most
+$(1+2qx+y/(2\sqrt c))^c$.
+Formula~\eqref{eq:thin-abelian-jet} bounds the abelian coefficient
+norm by
+\[
+ \sum_{l=0}^c\frac{\binom cl}{l!}
+                  (4\pi q\sqrt c\,xy+\pi y^2)^l.
+\]
+Both are at most
+\begin{equation}\label{eq:thin-nonzero-frequency-polynomial}
+                    (20q\sqrt c\,x)^c(1+y)^{2c}
+                         \quad(b\ne0).
+\end{equation}
+Indeed $1+4\pi q\sqrt c\,xy+\pi y^2$ is at most
+$4(1+4q\sqrt c\,x)(1+y)^2$, and $l!\ge1$.
+For $b=0$ the sharper bound is
+\begin{equation}\label{eq:thin-zero-frequency-polynomial}
+                         \exp(2\sqrt{\pi c}\,y).
+\end{equation}
+For the abelian jet use $\binom cl\le c^l/l!$ and
+$\sum_{l\ge0}t^l/(l!)^2\le e^{2\sqrt t}$; the latter follows
+by comparing with the even terms of the exponential using
+$\binom{2l}l\le4^l$.  For the toric jet use
+$\log(1+y/(2\sqrt c))\le y/(2\sqrt c)$.
+
+We record the elementary packing bounds used here.  In a real
+lattice of dimension $a$ and minimum $\delta$, at most
+$(1+2R/\delta)^a$ points lie in a ball of radius $R$; this
+also holds for any translate.  Split into shells of width
+$\delta/2$.  Since $A_0\ge90(g+D)$, for every affine lattice
+in $A$ with minimum at least $\sqrt{A_0}$ one obtains
+\[
+                         \sum_z e^{-\pi\|z\|^2/4}\le2.
+\]
+There is at most one point in the open radius $\sqrt{A_0}/2$
+ball.  The remaining shells are bounded by
+$\sum_{j\ge1}(j+2)^{2g}e^{-\pi A_0j^2/16}<1$.
+For the lattice itself, excluding zero, the same shell calculation
+starts at $j=2$ and gives
+\[
+                  \sum_{z\ne0}e^{-\pi\|z\|^2/4}
+                         \le4\,4^{2g}e^{-\pi A_0/4}.
+\]
+For example $j+2\le4e^{(j^2-4)/8}$ for $j\ge2$,
+and $j+2\le3e^{(j^2-1)/6}$ for $j\ge1$ prove these displayed
+bounds by a geometric series.
+
+When $b=0$ and $a\ne0$, $y\ge\sqrt{A_0}$, and
+$2\sqrt{\pi c}\,y\le\pi y^2/4$.
+Thus \eqref{eq:thin-zero-frequency-polynomial} and the Gaussian
+give total error at most
+\[
+                 4\,4^{2g}e^{-\pi A_0/4}\le e^{-30D}.
+\]
+For $b\ne0$, use
+\[
+ (1+y)^{2c}e^{-\pi y^2/2}
+                    \le(4c)^c e^{-\pi y^2/4}
+\]
+and the uniform affine-lattice bound.  Summing the frequency
+shells, whose dimension is $d\le d_*$, gives error at most
+\begin{align*}
+ 2(80qD^{3/2})^D
+   \sum_{b\ne0}e^{-\pi q\|b\|^2/2}
+                            (\|b\|/\lambda_L)^D
+ &\le4(120qD^{3/2})^D4^d e^{-\pi B_0/2}\\
+ &\le e^{-30D}.
+\end{align*}
+For the first inequality use the shells $j\ge2$ and
+\[
+ (j+2)^d((j+1)/2)^D
+ \le4^d(3/2)^D e^{(d+D)(j^2-4)/8}.
+\]
+The resulting geometric sum is less than two since
+$B_0\ge d+D+1$.  For the second inequality substitute
+\eqref{eq:thin-jet-parameters-b}; its logarithmic margin is at
+least $30D$, using $\log120<5$, $\log4<1.4$ and $\pi>3$.
+
+Accordingly, every selected column has total nonidentity error,
+in the indicated tensor norm, at most
+\begin{equation}\label{eq:thin-column-error}
+                            \delta=2e^{-30D}\le(8D)^{-1}.
+\end{equation}
+The same upper bound applies to the unused zero-degree column
+by omitting its polynomial factors.  Polarizing the product of
+$c$ determinants expresses its contraction with symmetric
+column tensors as an average of products of $c$ determinants.
+Each factor is bounded by $\Delta$.  Thus the relative error in
+an $i$-column block is at most $(1+\delta)^i-1<1/2$, since
+$i\le D$.  Its jet is at least $\Delta^c/2$ in absolute value.
+Each unused column has value at least $1/2$.
+
+\emph{The original $L^2$ norm.}
+The periodization also has a uniform norm bound; a pointwise
+estimate alone would not suffice.  Absolute convergence of the
+unfolding can be checked before using orthogonality.  Write
+$N(h)=\int_{V/I}|h|^2e^{-\pi q\|z\|^2}$ and let $T_\gamma$
+denote the translation in \eqref{eq:thin-periodization}.
+For a toric column, completing the square gives exactly
+\[
+ \frac{\int_{V/I}|T_\gamma h\,\overline h|
+                            e^{-\pi q\|z\|^2}}{N(h)}
+       =e^{-\pi q\|b\|^2/2-\pi q\|a\|^2/4}.
+\]
+For an abelian column the same ratio is at most this Gaussian
+times $\sum_{l=0}^c(\pi q|H(a,\xi)|^2/4)^l/l!$.
+Indeed translate the $A$ coordinate by $a/2$, bound the product
+of its two polynomial factors by
+$(|H(z,\xi)|^2+|H(a,\xi)|^2/4)^c$, and integrate its monomials.
+These Gaussian-polynomial sums converge by packing, uniformly
+on the finite-volume real $U$ domain.  Thus the absolute double
+sum can be unfolded to $V/I$.
+
+Now integrate first over $U/I$.  The characters are
+$u-qb$, so orthogonality kills every term with $b\ne0$.
+The remaining terms are ordinary Gaussian overlaps in $A$.
+For a toric column their normalized absolute value is
+$e^{-\pi q\|a\|^2/2}$.  For an abelian column it is
+\[
+ e^{-\pi q\|a\|^2/2}
+       \left|\sum_{l=0}^c\binom cl
+              \frac{(-\pi q|H(a,\xi)|^2)^l}{l!}\right|
+ \le e^{-\pi y^2/2+2\sqrt{\pi c}\,y}.
+\]
+This formula follows by integrating monomials in the one
+coordinate $\xi$; its Gaussian moment is
+$c!/(\pi q)^c$.  The preceding zero-frequency tail estimate
+shows that the sum of the absolute nonidentity overlaps is
+less than one.
+
+The squared norm of the unperiodized toric function on $V/I$ is
+\[
+ \operatorname{covol}(I)(2q)^{-d/2}q^{-(g-d)}
+                         e^{2\pi\|u\|^2/q}.
+\]
+Its normalization $(2\pi i)^{-c}$ only decreases this.
+For the abelian polynomial the additional factor is
+$c^c/(\pi^c c!)\le(e/\pi)^c\le1$.
+By \eqref{eq:thin-isotropic-covolume} and $f\Omega^2\le R^7$,
+\[
+ \frac{\Omega\theta}{\sqrt q}\le t_0^{-1/2}\le1.
+\]
+The prefactor of the Gaussian norm is therefore at most one.
+We have proved
+\begin{equation}\label{eq:thin-column-l2}
+                  \|\Theta_h\|_2^2
+                           \le2e^{2\pi\|u\|^2/q},
+\end{equation}
+where $u=0$ for an abelian or unused column.
+
+Take the tensor product of all the selected columns.  The
+determinant blocks and unused columns give
+$|P(\partial)F(0)|\ge2^{-n}4^{-D}$, because their number is at
+most $n$.  Equation~\eqref{eq:thin-column-l2} gives
+$\|F\|_2^2\le2^n e^{2\pi nC\phi/q}$ by
+\eqref{eq:thin-frequency-radius}.  This proves
+\eqref{eq:thin-jet-lower}.  Finally $K_6\ge2$ and $r\ge2$
+give the asserted comparison with the prescribed bound.
+\end{proof}
+
+\paragraph{Return to the actual cusp sections.}
+The required polynomial really has disjoint column sets.  For
+the original antitone exponents, give the minor of size $i$ at
+$\tau$ its own $i$ columns and raise it to
+$a_{\tau,i-1}-a_{\tau,i}$, omitting zero exponents.  This uses at
+most
+$\sum_\tau s_\tau(s_\tau+1)/2\le fr(r+1)/2\le n$ columns.
+Its row degrees telescope to the prescribed exponents.  Different
+embeddings, including conjugate embeddings, use disjoint columns,
+so every harmonic contraction is zero.  The leading minors give
+the required highest-weight relations, and their product is
+nonzero with integral coefficients.  Its degree is $D$, and its
+coefficient sum is at most $r^D$.  This is the actual normalized
+block polynomial; the construction does not use overlapping
+columns of nested minors.
+
+The principally polarized theta section has original probability
+norm one.  Pulling it back by the prescribed half-level generator
+and translating through the finite half-level group gives an
+orthonormal basis of $\mathcal H_M$; on $n$ copies its cardinality
+is $M^{gn}$.  Indeed $\alpha\bar\alpha=M$, and the original
+semicharacter compatibility makes pullback by $\alpha$ a section
+of this very line.  Pullback preserves its probability integral
+by Haar invariance under the finite isogeny; the translations are
+unitary, so every vector has squared norm exactly one.
+The half-level ideal has norm $M^f$, and the original projective
+rank-$r$ lattice has quotient cardinality $M^{fr}$.
+To check completeness, the translations are distinct
+characters for the complementary finite Heisenberg subgroup, so
+they are orthogonal; their number is $M^g=\dim\mathcal H_M$.
+The dimension identity follows directly by writing a theta section
+in Fourier series along a symplectic integral basis: its
+coefficients are determined freely by the $M^g$ residue classes.
+The original normalized theta dictionary identifies these basis
+vectors with its half-level rules.  Before taking absolute values
+the evaluation factor is
+$M^{-D}\kappa(\sqrt{2\xi_R})^D$, with
+$|\kappa|^2=M^D$.  Thus its squared absolute value is exactly
+$(2\xi_R/M)^D$.  The Lie-norm factor is
+$(2\pi\xi_R)^{-D/2}$.  Hence Parseval and
+Theorem~\ref{thm:actual-thin-determinant-jet} give, for the original
+rules $s_\zeta$,
+\begin{equation}\label{eq:thin-actual-theta-sum}
+ M^D\sum_{\zeta}
+       \bigl((2\pi\xi_R)^{-D/2}\|s_\zeta(x)\|\bigr)^2
+             \ge\pi^{-D}\,2^{-3n}16^{-D}
+                           e^{-2\pi nC\phi(x)/M}.
+\end{equation}
+The integrality, harmonicity, cuspidality and original evaluation
+normalization of these rules were established in the actual theta
+construction.  The auxiliary section just constructed selects a
+nonzero value among them; it does not replace their arithmetic
+lattice or their metric.
+
+\begin{theorem}[The original thin-region Bergman bound]
+\label{thm:actual-thin-bergman}
+Retain the original sized good cover, anchored divided weight
+$u_1$, flat-weight comparison and their numerical hypotheses.
+At every coefficient embedding and every point of an original
+component $Z$ satisfying
+$M_{\mathrm{deep}}\lambda(x)^2<b$, one has
+\begin{equation}\label{eq:actual-thin-bergman}
+                  B_Z(x)\ge
+                  \exp\left(-\frac{2f}{625R^2\lambda(x)^2}\right).
+\end{equation}
+Here $\lambda(x)^2$ is exactly the original first minimum
+squared, and $B_Z$ uses the original component probability norm.
+\end{theorem}
+
+\begin{proof}
+We spell out the numerical and metric interfaces.  On the original
+minimal level $M$ the numerical hypotheses give
+\[
+ b\ge1000,\quad gn\le b,\quad r\le n,\quad R^7\le b,
+ \quad b^{16}\le M\le b^{70},\quad 1\le D\le b^2,
+ \quad M_{\mathrm{deep}}\ge bM.
+\]
+They give \eqref{eq:thin-jet-parameters-a}--\eqref{eq:thin-jet-parameters-b}
+for this very period torus.  The deep-to-minimal-level dictionary
+preserves the first minimum and the point metric.  Thus a point
+under consideration has $M\lambda(x)^2<1$ and $\lambda(x)<\theta$, and
+\[
+                     \phi(x)=\frac{2f}{R^2\lambda(x)^2}
+                                      \ge b^{14}.
+\]
+The normalized integral block polynomial has coefficient sum at
+most $e^{Db}$.  The already proved actual raw-theta upper bound,
+with $L=3\log b$ and size bound $b^2$, gives
+\[
+ (2\pi\xi_R)^{-D/2}\sup_z\|s_\zeta(z)\|
+   \le\exp\bigl(Db+9000(3fr\log b)^2b^2\bigr).
+\]
+There is no determinant-index factor for this original principal
+theta family.  Averaging \eqref{eq:thin-actual-theta-sum} over
+its $M^{gn}$ indices gives at least one nonzero value with
+\[
+ -\log\bigl((2\pi\xi_R)^{-D/2}\|s_\zeta(x)\|\bigr)
+ \le3b^3D+\frac{\phi(x)}{2500}+(D+gn)\log M.
+\]
+Indeed the nonconstant coefficient is
+$\pi nC/M\le1/2500$: use $n,m\le b$, $d_*\le2b$,
+$R^7\le b$ and $M\ge b^{16}$.
+The remaining logarithms from
+\eqref{eq:thin-actual-theta-sum} are less than $3b^3D$.
+
+The total terms not containing $\phi$ are at most $10^5b^6$,
+using $fr\le b$, $\log b\le b$ and $\log M\le70b$.
+Since $b\ge1000$ and $\phi\ge b^{14}$, they are at most
+$\phi/2500$.  The same original cusp section therefore satisfies
+\[
+                    \|s_\zeta(x)\|
+                       \ge e^{-\phi(x)/1250}
+                                      \sup_z\|s_\zeta(z)\|.
+\]
+Pull it to the prescribed cover.  The established flat-weight
+comparison from the reference theta weight to $u_1$ gives a
+section $g$ supported on the same $Z$ and a constant $K>0$ with
+$\|g(z)\|=K\|s_\zeta(z)\|$ for every $z$ on $Z$.
+It is the product of the already constructed key and parallel
+twisting sections.  Thus it preserves the ratio on this very
+component.  Take this section supported on $Z$.
+Its original probability $L^2$ norm is at most its supremum norm.
+Squaring the ratio proves \eqref{eq:actual-thin-bergman}.
+\end{proof}
+
+The theorem supplies the lower thin-region norm used in the
+geometric section argument.  The construction of the original
+numerical family remains a separate obligation wherever it is
+still an input.  Point heights and the final arithmetic section
+remainder are not supplied by this analytic theorem.
