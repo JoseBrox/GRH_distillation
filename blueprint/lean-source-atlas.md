@@ -346,3 +346,12 @@ weights, completed-module evaluation and universal-point identification.
 The exact `epsArt` and `UnifVal` contracts fix geometric reciprocity and
 the retained factor `Norm(varpi)/q`. No characteristic-prime support or
 uniform integral torsion conclusion is inferred from this theorem.
+
+The [actual-denominator certificate](../certificates/geometry-arithmetic-frontier-actual-theta-denominator.json)
+and [independent review](../certificates/geometry-arithmetic-frontier-actual-theta-denominator-review.json)
+authenticate eleven bounded source interfaces. `ThClass` and `ThShort`
+identify the literal raw sum, and the original final integral consumer
+fixes every quantifier and scalar ideal. The review checks finite-field
+torsion descent, unique translated sections and harmonic base change;
+135 finite-index and 340 Fourier-indicator diagnostics accompany the
+general proof. This applies existing estimates to the actual construction.

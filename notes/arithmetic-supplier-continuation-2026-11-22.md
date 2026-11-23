@@ -73,10 +73,13 @@ constructs the original primitive theta section with probability norm one,
 its exact squared multiplier, the full adelic dictionary and integral
 markings. Together these complete the original sized `Deep.Good` cover.
 
-The full-primary trace, mixed pullback and arbitrary level-prime estimates
-remain in force for these actual constructions. Their final use still
-requires the exact raw-map comparisons. Numerical
-arithmetic section and height estimates remain separate.
+The [actual integral theta theorem](geometry-arithmetic-frontier-actual-theta-denominator.md)
+now applies the full-primary trace, mixed pullback and level-prime bounds
+to the literal raw-theta value contract. AllTest and harmonic base change
+give the original identity at every valuation test. One `intZ` has the
+required uniform size and keeps the full torsion enumeration, distinct
+normalizing index and determinant ideals. Raw-theta existence/spanning,
+archimedean norms and numerical height estimates remain separate.
 
 ## Actual ordinary modules, types and Galois determinants
 
@@ -191,7 +194,7 @@ aggregate nonvanishing needed by the chosen consumer.
 ## Direct next attacks
 
 1. Identify and estimate the actual arithmetic section lattices on the
-   completed original good cover; verify the exact raw-map comparison.
+   completed original good cover; construct the raw-theta spanning family.
 2. Construct the original marked characteristic-prime support and apply
    propagation globally; prove two-sided rigidity and the integral Selmer budget.
 3. Complete the positive-rank decaying-function and block estimates, then

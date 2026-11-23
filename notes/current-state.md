@@ -62,10 +62,12 @@ Together these construct the full original sized `Deep.Good` cover.
 Numerical arithmetic section and height estimates remain separate.
 
 The reached-section, adapted lattice, full-primary trace and mixed-level
-identities apply to these actual models. They supply the original single
-clearing integer once the remaining raw-map comparisons are
-constructed. Theta spanning and the global norm are not inferred from
-integral regularity.
+identities now supply the [original integral raw-theta implication](geometry-arithmetic-frontier-actual-theta-denominator.md)
+on the actual cover. Its exact value contract is transported to every
+valuation test, retaining both finite indices and determinant ideals.
+One original clearing integer, fixed before the individual generator,
+has the required uniform size. Theta existence/spanning and archimedean
+norms remain separate.
 
 The actual ordinary automorphic modules have faithful good classical
 specializations, and now carry the original universal integral Hecke

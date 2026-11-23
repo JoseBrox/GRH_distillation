@@ -323,3 +323,12 @@ coefficients identify the original point and give `J` in its kernel.
 This supplies the prescribed seeds' occurrence, with no higher-weight
 control surjectivity. Marked characteristic-prime support, global rigidity
 and a moving-family integral torsion bound remain separate.
+
+The [actual integral theta denominator](../../notes/geometry-arithmetic-frontier-actual-theta-denominator.md)
+closes the whole original `CovInt.integral_smul_thLa` implication on the
+constructed cover. The raw value contract already contains the exact
+finite torsion sum; AllTest, harmonic base change and unique normalized
+translations carry it to every valuation test over a finite local
+extension. The established full-primary and mixed-level estimates give
+one `intZ`, with its original uniform size, full finite index and both
+determinant ideals. Raw theta spanning and archimedean norms remain.

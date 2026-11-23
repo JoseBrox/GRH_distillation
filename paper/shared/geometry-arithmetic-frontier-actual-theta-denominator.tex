@@ -1,0 +1,198 @@
+\section{The actual uniform integral theta denominator}
+\label{sec:actual-theta-denominator}
+
+The integral theta estimate now applies to the constructed arithmetic
+cover.  Its value identity is already part of the original raw-theta
+contract: it is a finite torsion sum, with all its indices and scalars.
+The passage from test rings to the actual valuation tests introduces
+no analytic comparison or extra denominator.
+
+Use any original $A=1$ deep cover $Y$ satisfying the source hypotheses,
+its coefficient field $c.F$, higher half-level $M$, and integral cusp
+lattice.  For the actual construction, existence of this cover and
+its exact complex normalization is supplied by
+Corollary~\ref{cor:actual-good-sized-cover}.  Allow every connection
+\texttt{nab} satisfying the original \texttt{IsNab}; its harmonic
+values agree with the constructed canonical chart values.  Put
+\[
+ f=[E:\mathbb Q]/2,\quad r_j=p+q,\quad
+ d_a=\texttt{DF}(\mathrm{Dw},a),\quad
+ \Delta=|\operatorname{disc}(E)|,\quad
+ \kappa=\texttt{sizeK}(\mathrm{Dw},a,n).
+\]
+Here $n$ is the original even theta degree and $a$ the original
+nonnegative harmonic row weight.  Retain the original rational space,
+fractional lattice $\texttt{AA}L_0$, tangent eigenspace lattices,
+primitive line and all source conditions \texttt{CovGmin.Hyp}.
+For the numerical conclusion we use its bounds
+\[
+ L_b\ge1,\quad \log M\le30L_b,\quad
+ \operatorname{fieldSz}(E)\le3L_b,\quad f,R\ge1,
+\]
+where $R=\texttt{D.R.r}$ is the original size rank.  All other
+conditions in that contract, including the weight range and sized
+cover, remain unchanged.
+
+\begin{theorem}[The original integral raw-theta supplier]
+\label{thm:actual-theta-denominator}
+One integer, independent of the individual theta generator, suffices:
+\begin{equation}\label{eq:actual-theta-clearing-integer}
+ N_A=Z= M^{f r_j n+d_a}\Delta^{d_a}
+       =\texttt{intZ}(D,\mathrm{Dw},l_2,n,a)>0,
+ \qquad
+ \log Z\le67(fRL_b)^2\kappa.
+\end{equation}
+More precisely, let $\Lambda\subset E^n$ be the original unimodular
+lattice, trivial at $\texttt{badC}(Y)$ and at $M$, and let the original
+odd $N$ satisfy
+\[
+ M\mid N,\qquad N\mathcal O_E^n\subseteq
+ \Lambda_0:=\Lambda\cap\mathcal O_E^n.
+\]
+Let $P\in\texttt{harmL}(c,\Lambda,a)$ and let
+$\theta\in Y.V(\mathrm{wtZ}(a,n))$ have the original
+\texttt{thLaValAt} value on every original test-ring framed point,
+with level indicator $x_0\in(\mathrm{LevQc})^n$ and its prescribed
+finite Fourier transform.  For every $s\in c.F$ with
+\begin{equation}\label{eq:actual-theta-determinant-scalar}
+ (s)\prod_{\tau:E\hookrightarrow\mathbb C}
+          I_\tau(\Lambda_0)^{m_\tau}
+       \subseteq
+       \prod_{\tau:E\hookrightarrow\mathbb C}
+          I_\tau(\Lambda)^{m_\tau},
+ \qquad m_\tau=\mathrm{Dw.mult}(\tau),
+\end{equation}
+one has
+\[
+                 Zs\theta\in\texttt{AllWt.latW}
+                          (Y.U,\mathrm{wtZ}(a,n)).
+\]
+This is the complete original
+\texttt{CovInt.integral\_smul\_thLa} implication, with $Z$ in place
+of its permitted $Z^2$.  No restriction on the valuations of $M$,
+on the splitting of residue primes in $E$, or on the ramification of
+the coefficient field is added.
+\end{theorem}
+
+\begin{proof}
+\emph{The actual torsion expression at every valuation test.}
+The definition \texttt{thLaValAt} is literally
+\texttt{ShortValAt} with scalar parameter $\beta=1$
+\cite{actual-denominator-source}.  Write
+\[
+ \mathcal Q=(\mathrm{LevQ})^n,\qquad C=|\mathcal Q|=M^{f r_j n},
+ \qquad I=[\Lambda_0:N\mathcal O_E^n]^{r_j}.
+\]
+The torsion group $\mathcal Z$ has the full cardinality
+$[\Lambda:N\mathcal O_E^n]^{r_j}$; it is not replaced by a
+subgroup of cardinality $I$.
+
+Take any of the original finite valuation tests, represented by an
+integral framed point $z$ over a complete discrete valuation ring.
+The actual \texttt{AllTest} supplier in
+Theorem~\ref{thm:actual-level-cover} presents its generic framed
+point as a framed base change of an original reduced finite-type
+test ring.  Apply the assumed raw-theta identity there.  Faithful
+flatness of its witness cover is preserved by base change.  The
+canonical line comparisons, torsion equations and entire
+annihilator-group enumeration pull back, and the canonical
+connection's harmonic values commute with that base change.
+The value of $\theta$ pulls back as well, since it is the same
+algebraic section on the framed-point functor.
+
+This gives actual finite torsion data over an extension of the
+generic field.  They may be taken over a finite algebraic extension:
+all the points are killed by $N^2$, so their coordinates lie in
+finite \'etale generic-fibre torsion schemes.  The sections are
+the unique prescribed normalized pullback and two ordered symmetric
+theta translations of the given theta generator; they are defined
+over the same finite extension.  If the faithful-flat witness
+initially has a larger residue field, retain only this finite field
+of definition.  Uniqueness of these section constructions and
+functoriality of harmonic evaluation preserve the equality.
+
+Thus, with $d=\deg P\le d_a$, the actual identity is exactly
+\begin{equation}\label{eq:actual-theta-torsion-value}
+ \theta(z)=\frac1{CIN^d}
+    \sum_{q\in\mathcal Q}\zeta_M^{\langle x_0,q\rangle}
+    \sum_{u\in\mathcal Z}
+         H\!\left(P;(U_N(u_b,t_{q,b};\theta_z))_b\right).
+\end{equation}
+Here $Nt_{q,b}$ is the original half-level point, $t_{q,b}$ is
+killed by a power of the original half-level ideal, and
+$U_N=T_{t_{q,b}}^{(N^2)}T_{u_b}^{(N^2)}[N]^\natural\theta_z$
+has the original order and pullback normalization.  The Fourier
+coefficient is the prescribed root of unity: summing the class
+indicator in \texttt{phiHat} leaves exactly this one term.
+If one instead writes the original short rule
+$g=\beta_H^{-1}\theta$, its defining identity has the extra factor
+$\beta_H^{-1}$ on the right.  Multiplication by the same
+$\beta_H$ gives \eqref{eq:actual-theta-torsion-value}; no
+determinant-ideal factor has been discarded.
+
+\emph{Integral models and the two prime branches.}
+The actual model and primitive-line supplier, followed by
+Theorem~\ref{thm:actual-good3}, gives the required integral chart
+after an unramified extension.  The original separate tangent
+eigenlattices remain unchanged.  Reached-section regularity and
+the discriminant theorem apply to these actual sections and give
+the original loss $\rho\le d_a\nu(\Delta)$.
+
+At a rational residue prime $\ell\mid M$, local triviality of
+$\Lambda$ makes both determinant ideals in
+\eqref{eq:actual-theta-determinant-scalar} units, so $\nu(s)\ge0$.
+Theorem~\ref{thm:local-level-theta-denominator} bounds each full
+inner sum after multiplication by $M^d I^{-1}N^{-d}$ below by
+$-\rho$, with every exponent $v_\ell(M)$ retained.  Its primary
+group cancels the exact local part of $I$ by invariance of the
+\emph{entire translated product section} before evaluation.
+
+At $\ell\nmid M$, each $t_{q,b}$ has order prime to $\ell$.
+Theorem~\ref{thm:full-primary-theta-trace}, applied after the
+prime-to-$\ell$ translates, bounds
+$sI^{-1}N^{-d}$ times the same full inner sum below by $-\rho$.
+The adapted lattice determinant comparison uses precisely
+\eqref{eq:actual-theta-determinant-scalar}; it does not replace
+$s$ by an integral scalar.  Primary and prime-to-$\ell$ lifts
+commute with their original scalar one.  These are exactly the
+two branches of the all-place argument in
+Section~\ref{sec:geometry-mixed-level}, whose model and chart
+premises have now been supplied.
+
+Multiplication by $\Delta^{d_a}M^{d_a}$ clears both bounds, and
+the factor $C$ cancels the entire finite Fourier average in
+\eqref{eq:actual-theta-torsion-value}.  All Fourier coefficients
+are integral roots of unity.  Under an intervening finite
+extension of ramification index $e'$, the raw valuation and its
+normalizing index both multiply by $e'$, so the original
+normalized valuation is unchanged.  The conclusion therefore
+holds in every original valuation test.  Intersecting those
+conditions is exactly membership in the original cusp lattice.
+
+\emph{The already prescribed uniform size.}
+The exact weight identity and the CM-type cardinality give
+\[
+ \kappa=d_a+f r_j n/2,
+ \qquad f r_j n+d_a\le2\kappa,
+ \qquad d_a\le\kappa.
+\]
+The definition of field size gives
+$\log\Delta\le[E:\mathbb Q]\operatorname{fieldSz}(E)
+\le6fL_b\le7fL_b$, retaining the allowance in the original
+denominator estimate.
+Consequently
+\[
+ \log Z
+  =(f r_j n+d_a)\log M+d_a\log\Delta
+  \le60L_b\kappa+7fL_b\kappa
+  \le67fL_b\kappa
+  \le67(fRL_b)^2\kappa.
+\]
+All parameters are the original ones.  The integer is fixed before
+$x_0,\Lambda,N,P,s$ and the individual theta section are chosen.
+\end{proof}
+
+The remaining short-section inputs are the actual theta spanning
+family and its archimedean norm estimate.  The theorem supplies their
+finite-place lattice bound; it does not infer either of those other
+inputs from integrality.

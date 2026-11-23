@@ -146,14 +146,19 @@ lattice, full-primary trace and arbitrary level-prime theta estimate
 are proved. The actual models now have their integral theta section,
 full `Model.N3` uniformization and torsion action, `PushInvertible`,
 and degree-one `SplitFibres`. Reached-section regularity has scalar one.
-Exact mixed pullback and all-place assembly give one original clearing
-integer once the remaining raw-map comparisons are supplied.
+Exact mixed pullback and all-place assembly now prove the whole original
+`CovInt.integral_smul_thLa` implication on the actual cover: one `intZ`,
+fixed before the generator, clears every original valuation test and
+satisfies the required uniform logarithmic size bound. The literal
+raw-theta value identity transports by harmonic base change; its two
+finite indices and determinant-ideal scalar are retained.
 The actual local `Good3` chart is now constructed over a finite unramified
 extension, retaining every eigenlattice defect, the canonical gauge and
 all original harmonic values with no additional valuation loss.
 The full original sized good cover and its normalized complex dictionary
-are now constructed. The first missing inputs are the exact raw-map
-comparison, theta spanning and remaining divisibility laws for the same maps.
+are now constructed. The first missing inputs are actual raw-theta
+existence/spanning, its archimedean estimate and the remaining selected-prime
+divisibility laws for the same maps.
 A constructed integral theta section does not supply the global norm.
 
 ## W08: the actual global period Gram operators
