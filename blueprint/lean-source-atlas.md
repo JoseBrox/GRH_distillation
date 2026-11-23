@@ -212,3 +212,11 @@ checks all of the uniqueness and specialization quantifiers, including
 the unconstrained values outside the selected half-label submodule and
 the actual two-dimensional toroidal extension. `PartI` is now supplied;
 the larger quantitative W10 obligation remains open.
+
+The [mixed determinant certificate](../certificates/global-norm-frontier-mixed-cauchy.json)
+authenticates the exact `SizeStd`, `SizeStdCpt`, `pairJ` and
+signed determinant corrections. Its
+[independent review](../certificates/global-norm-frontier-mixed-cauchy-review.json)
+checks all-word order, invariant Jacquet domains and degenerate forms;
+it also preserves a separate exact group-algebra order check. Finite
+tests supplement the all-word proof and do not assert a global norm bound.

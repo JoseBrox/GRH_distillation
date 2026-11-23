@@ -117,6 +117,12 @@ The [wave isometry](global-norm-frontier-wave-isometry.md) now preserves
 the exact signed residue forms at every rank and word, with the original
 phase correction, gauges and Haar constant.
 
+The [mixed determinant inequality](global-norm-frontier-mixed-cauchy.md)
+proves the original `SizeStd` and `SizeStdCpt`. An exact fused inverse
+retains all rational corrections and the adjacent shift. Cauchy--Schwarz
+is applied on the actual invariant Jacquet image without inverting a
+possibly degenerate old residue form.
+
 The next local target is the actual partial-head Fourier estimate at
 positive rank, including mixed signed residue forms and lower-dimensional
 root stabilizers. Its eventual global application must retain every
@@ -129,7 +135,7 @@ aggregate nonvanishing needed by the chosen consumer.
 
 1. Construct the original good cover on the completed arithmetic level system,
    then identify and estimate the actual arithmetic section lattices.
-2. Complete the actual Taylor–Wiles auxiliary maps, then attack marked
+2. Use the actual Taylor–Wiles auxiliary maps to attack marked
    deformation support and the full integral Selmer budget.
 3. Prove the positive-rank partial-head Fourier/orbital estimate and
    transfer it to the complete period-Gram sum.

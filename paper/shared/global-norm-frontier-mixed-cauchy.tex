@@ -1,0 +1,193 @@
+\subsection{The mixed determinant inequality for the actual forms}
+\label{actual-mixed-determinant-cauchy}
+
+The next Fourier input compares the plus and minus residue words.
+An exact inverse identity supplies it on the original coefficient
+classes, even when the underlying residue form has a kernel.
+
+Let $w$ be an original signed word and let $y_1,\ldots,y_K$ be
+real insertion parameters.  Assume that both extended words
+$((+,y_1),\ldots,(+,y_K),w)$ and
+$((-,y_1+1),\ldots,(-,y_K+1),w)$ satisfy the original common
+cut and separation greater than two.  Keep the source order:
+lists are processed tail first.  Write these extended words as
+$w_+$ and $w_-$.  Their forms are denoted by $\beta_{w_+}$ and
+$\beta_{w_-}$, and $\beta_w^{[K]}$ is the componentwise extension
+of the old form to the $K$ new two-dimensional factors.
+Set
+\[
+ J=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+ J_K=J^{\otimes K},\qquad
+ \mathcal B_w(x,y)=\beta_w^{[K]}(J_Kx,y).
+\]
+Thus one new factor contributes
+$\beta_w(x_1,y_0)-\beta_w(x_0,y_1)$, exactly the original
+$\mathrm{pairJ}$ convention.
+
+The determinant retained from the original construction is
+\begin{equation}\label{mixed-cauchy-original-q}
+ \begin{split}
+ q_0(Y)&=-TT'\prod_{i=1}^k
+              (Y+\tfrac12+u_i)(Y+\tfrac12+u'_i),\\
+ q_w(Y)&=q_0(Y)
+   \prod_{(+,a)\in w}\frac{Y-a+1}{Y-a}
+   \prod_{(-,a)\in w}\frac{a-Y}{a-Y-1}.
+ \end{split}
+\end{equation}
+The common-cut sign calculation and the stated separations give
+$q_w(y_i)>0$.  No rational correction is discarded
+\cite{mixed-cauchy-source,mixed-cauchy-established}.
+
+\begin{theorem}\label{mixed-cauchy-actual}
+For every original level and all compact smooth coefficient vectors
+with positive Gram cutoff, or all coefficient vectors in the smooth
+class with arbitrarily fast decay of every derivative and the same
+cutoff,
+\begin{equation}\label{mixed-cauchy-exact}
+ |\mathcal B_w(x,y)|^2\prod_{i=1}^Kq_w(y_i)
+           \le\beta_{w_+}(x,x)\,\beta_{w_-}(y,y).
+\end{equation}
+The quadratic values on the right are real and nonnegative.
+This supplies the original \texttt{SizeStd} and \texttt{SizeStdCpt}
+interfaces, with their original measures and normalizations.
+\end{theorem}
+
+\begin{proof}
+We work on the Jacquet images of the stated compact or rapidly
+decreasing group coefficient class.  The established intertwining
+and preservation theorem makes this image invariant under every
+operator polynomial used below, including $A_+$, $A_-$ and $C$.
+Positivity is needed only on this common invariant image.
+The existing contracted-matrix calculation gives the RTT relations
+and both adjacent determinant identities for the current matrix
+$Q_w(Y)$:
+\begin{equation}\label{mixed-cauchy-two-det}
+ Q_w(Y)JQ_w(Y+1)^t=q_w(Y)J,
+ \qquad Q_w(Y+1)^tJQ_w(Y)=q_w(Y)J.
+\end{equation}
+All entries act in the old auxiliary factors and commute with the
+new ones.  These identities retain their validity after every
+original plus or minus update.  Indeed the fresh-factor matrices
+$((Y-a)I-\Pi)/(Y-a-1)$ and
+$((a-Y)I-\Omega)/(a-Y-1)$ satisfy RTT, and their determinants
+in \eqref{mixed-cauchy-two-det} are respectively
+$(Y-a+1)/(Y-a)$ and $(a-Y)/(a-Y-1)$.
+Their coefficient algebras commute with the previous one, so the
+two-dimensional alternating-tensor determinant is multiplicative.
+Induction gives precisely \eqref{mixed-cauchy-original-q}.
+Equivalently this follows by inserting the two displayed fresh
+matrices in the two identities and multiplying their four entries.
+
+For the following calculation relabel the new parameters in
+chronological order, reversing the list if necessary.  The relabeling
+only permutes fresh tensor factors and leaves their tensor $J_K$
+and the product of determinants unchanged.  Put $Q_i=Q_w(y_i)$,
+$Q_i^+=Q_w(y_i+1)$ in the $i$th fresh factor, and let
+\[
+ R_{ij}(d)=\frac{dI-\Pi_{ij}}{d-1},\qquad
+ B_+=\prod_{i=2}^K\prod_{j=1}^{i-1}R_{ij}(y_i-y_j),\qquad
+ B_-=\prod_{i=2}^K\prod_{j=1}^{i-1}R_{ij}(y_j-y_i).
+\]
+Products use the displayed increasing order.  If $A_+$ and $A_-$
+are the additional residue operators beyond the old residue, their
+exact recursions give
+\begin{equation}\label{mixed-cauchy-fused-factors}
+ A_+=Q_1\cdots Q_K B_+,
+ \qquad A_-=(Q_1^+)^t\cdots(Q_K^+)^t B_-.
+\end{equation}
+For the plus word, move each scalar fresh-factor $R$ matrix past
+the later $Q_i$ whose indices it does not meet.  For the minus word,
+the successive contraction matrices multiply on the left of the
+main matrix.  Partial transposition reverses that order and changes
+each contraction into its permutation matrix.  Its argument is
+$(y_j+1)-(y_i+1)=y_j-y_i$, proving the second formula.  The old
+operator coefficients are not reordered in either calculation.
+
+We record the two permutation identities used to cancel these
+factors.  Direct expansion using the permutation relations gives
+\[
+ R_{ij}(d)R_{ij}(-d)=I
+\]
+and the Yang--Baxter identity on three distinct indices, whose
+arguments are their pairwise differences.  Sliding the last row
+of factors past the triangular product on the preceding indices
+reverses that row; induction therefore gives
+\begin{equation}\label{mixed-cauchy-r-inverse}
+                            B_+B_-=B_-B_+=I.
+\end{equation}
+Explicitly, the induction step moves
+$R_{K1}(y_K-y_1)\cdots R_{K,K-1}(y_K-y_{K-1})$
+past the preceding triangular product by one three-index identity
+for each crossed pair.  Its reversed product then cancels the
+corresponding negative-argument row by the two-index identity.
+RTT, moving one new index past each earlier one, also gives
+\begin{equation}\label{mixed-cauchy-r-reversal}
+        Q_1\cdots Q_K B_+=B_+ Q_K\cdots Q_1.
+\end{equation}
+Every denominator in these operations is nonzero under the
+original separation hypotheses.
+
+Set $q_* =\prod_iq_w(y_i)>0$.  The two identities
+\eqref{mixed-cauchy-two-det} give algebraic two-sided inverses
+of each $Q_i$ on the common coefficient class.  They are finite
+operator matrices divided only by the nonzero scalar $q_w(y_i)$;
+no closed-operator invertibility or norm bound is assumed.
+As $J_K$ commutes with each permutation factor,
+\[
+ J_K A_-J_K^{-1}=q_*Q_1^{-1}\cdots Q_K^{-1}B_-.
+\]
+Now \eqref{mixed-cauchy-r-reversal} and
+\eqref{mixed-cauchy-r-inverse} imply the exact fused identity
+\begin{equation}\label{mixed-cauchy-fused-inverse}
+       A_+C=CA_+=q_*I,
+       \qquad C=J_K^{-1}A_-J_K.
+\end{equation}
+The two conjugations by $J_K$ agree because
+$J_K^2=(-1)^KI$.
+
+Write $\langle\cdot,\cdot\rangle_w$ for the old radial
+residue form extended componentwise to the fresh factors.
+The established positivity theorem for the original admissible
+words says that
+\[
+ a(x,y)=\langle A_+x,y\rangle_w,
+ \qquad b(x,y)=\langle A_-x,y\rangle_w
+\]
+are positive semidefinite Hermitian forms.  Thus $A_+$ and $C$
+are self-adjoint relative to $\langle\cdot,\cdot\rangle_w$,
+in the sense of these forms; the old form may be degenerate.
+Apply Cauchy--Schwarz for $a$ to $x$ and $Cz$.  The two identities
+in \eqref{mixed-cauchy-fused-inverse} give
+\[
+ q_*^2|\langle x,z\rangle_w|^2
+       =|a(x,Cz)|^2
+       \le a(x,x)a(Cz,Cz)
+       =q_*a(x,x)\langle Cz,z\rangle_w.
+\]
+Take $z=J_K^{-1}y$ and divide by the positive scalar $q_*$.
+The rightmost form becomes $b(y,y)$, and
+$\langle x,J_K^{-1}y\rangle_w=\langle J_Kx,y\rangle_w$.
+This proves \eqref{mixed-cauchy-exact} for radial forms.  It
+also covers every zero-norm case; the old residue operator has
+never been inverted.  For $K=0$ the assertion is ordinary
+Cauchy--Schwarz for the old positive form.
+
+Finally the established Jacquet compatibility theorem identifies
+each actual form with its radial form times the same fixed
+positive Haar constant.  The constant occurs squared on both
+sides of \eqref{mixed-cauchy-exact} and cancels.  Its independence
+of the word is essential here.  All operators in the proof are
+finite expressions in the recovered contracted entries with
+scalar spectral denominators.  They preserve the compact or
+rapidly decreasing coefficient classes with their positive Gram
+cutoff.  The known integrated positivity and compatibility theorems
+therefore apply on the same domain throughout, and give the claimed
+inequality for the original $\mathrm{formLev}$ and $\mathrm{pairJ}$.
+\end{proof}
+
+Together with the exact wave isometry, this supplies the two
+actual form inequalities used by the already established finite
+interpolation argument.  Identification of the partial-head
+Fourier integrals, including the original root quotients at
+nontrivial block strata, is still required before asserting the
+complete kernel estimate.

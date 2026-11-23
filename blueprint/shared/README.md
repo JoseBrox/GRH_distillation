@@ -157,8 +157,9 @@ The [actual wave-isometry theorem](../../notes/global-norm-frontier-wave-isometr
 proves `VIso` and `VIsoCpt` for all original levels and finite admissible
 signed words. The phase and its prescribed component correction preserve
 the actual residue forms with constant exactly one; the original Haar
-constant and gauges cancel unchanged. The mixed determinant inequality,
-partial-head Fourier transfer and global period estimates remain.
+constant and gauges cancel unchanged. The mixed determinant theorem
+below supplies the next form inequality. Partial-head Fourier transfer
+and global period estimates remain.
 
 The [level-system theorem](../../notes/geometry-arithmetic-frontier-level-system.md)
 closes the full original `N0` and `N2` clauses. It constructs the fine
@@ -183,3 +184,11 @@ filtration and primitive line. All-power theta expansions prove the
 required uniqueness, and the actual monomial chart algebras prove
 nonflat specialization. The good cover, numerical section and height
 estimates, and global norms remain distinct obligations.
+
+The [mixed determinant theorem](../../notes/global-norm-frontier-mixed-cauchy.md)
+closes the original `SizeStd` and `SizeStdCpt` clauses. Its all-word
+fused inverse preserves every rational correction and the exact
+adjacent shift. The proof works on the actual invariant Jacquet image
+and includes degenerate old forms. The common Haar constant cancels
+without changing the measures. The complete partial-head Fourier
+transfer and arithmetic return sum remain open.

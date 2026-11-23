@@ -71,7 +71,9 @@ big cell. The complete original pointwise orbital bound is now proved
 in rank zero, with the stronger estimate b^4/G. No assertion identifies
 ordinary RH with this rank-zero case. The exact wave isometry now holds at every rank and finite admissible
 word, with its prescribed component correction and constant one. The
-mixed determinant/Fourier bound, lower orbital strata, and the complete
+mixed determinant inequality is now proved with every original rational
+correction, including degenerate residue forms. The partial-head Fourier
+transfer, lower orbital strata, and the complete
 global rational-return/period-Gram
 estimate remain open.
 
@@ -719,13 +721,13 @@ the proved proper extension supplies the integral comparison from them.
    prove nonvanishing.
 2. **Arithmetic Selmer models (W04).** Starting from the constructed
    ordinary modules, compact types and integral Galois determinant, supply
-   the actual auxiliary comparison maps, marked deformation models,
+   the marked deformation models,
    patched support and two-sided rigidity. Prove the moving-family
    integral product, keeping the full characteristic-prime fibre and
    all exceptional primes. Apply the existing finite and limiting
    cohomological comparisons unchanged.
-3. **Geometric estimates (W10).** Finish the exact model compatibility
-   clauses, then construct the prescribed section lattices, short
+3. **Geometric estimates (W10).** Use the completed original `PartI`
+   models to construct the good cover and prescribed section lattices, short
    generators, metrics and height inputs. Apply the existing jet,
    determinant, CM and signed-boundary theorems to those actual objects.
    The numerical arithmetic section remainder is still a separate target.

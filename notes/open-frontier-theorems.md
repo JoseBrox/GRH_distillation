@@ -168,7 +168,9 @@ Their finite coefficient expansion holds pointwise throughout the
 original big cell. The complete rank-zero orbital bound is proved,
 with the stronger estimate b^4/G. No assertion identifies ordinary RH
 with rank zero. The exact wave isometry for all signed residue words is also proved.
-The mixed determinant inequality, positive-rank partial-head Fourier
+The mixed determinant inequality now supplies the original `SizeStd`
+and `SizeStdCpt`, with every rational word correction and no inverse of
+a degenerate residue form. The positive-rank partial-head Fourier
 kernel and lower-dimensional orbital comparisons remain first local targets.
 The global arithmetic return sum and period-Gram identity remain
 separate from every local norm identity.
@@ -217,7 +219,7 @@ the exact proven subobligations. The work-package acceptance lists remain
 in `blueprint/grh/program.json`; the RH product and final budget remain
 in its separate manuscript. No whole node is newly closed by the local
 constructions above. The next research effort belongs to the actual
-formal-arc and section construction, actual automorphic
-auxiliary maps and support, and
+good-cover and section construction, actual marked deformation models
+and patched support, and the
 global period-return estimate, not further optimization of the already
 proved frame inequalities.
