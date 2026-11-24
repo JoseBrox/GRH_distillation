@@ -50,3 +50,8 @@ nontrivial odd-conductor twists follows from this argument. The next
 task is to insert this vanishing into the actual exceptional-prime
 integral Selmer construction and check the original uniform length
 bound.
+
+The [actual inertial-frame theorem](rh-dyadic-host-frame.md) inserts
+this vanishing into Xpp for the RH case at 3 and verifies the original
+arithmetic frame, strict lower comparison and crystalline/trace/rigidity
+suppliers. The integral universal-ring upper estimate remains open.

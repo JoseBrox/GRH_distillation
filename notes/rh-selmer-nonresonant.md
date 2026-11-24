@@ -81,3 +81,8 @@ the high 2-power conductor gives strong separation of the unramified
 Frobenius character even though the inertia characters are resonant.
 That local separation alone does not supply the global integral
 comparison or automorphy; both source interfaces remain to be discharged.
+
+The [actual inertial frame theorem](rh-dyadic-host-frame.md) now proves
+that separation, the arithmetic frame and strict lower comparison,
+and the crystalline point/tangent and rigidity/trace implications.
+The first remaining task is ThmS6_s and the original graded estimate.
