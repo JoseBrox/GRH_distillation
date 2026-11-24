@@ -82,7 +82,10 @@ length estimate at 2, using class number one of K and the
 elementary one-prime tower lemma. The
 [exceptional-prime comparison](cubic-exceptional-prime-comparison.md)
 controls the extra integral projection error at 3.
-The uniform genuine cubic lengths at odd primes remain open.
+The [high-dyadic 3-primary theorem](cubic-three-primary-vanishing.md)
+proves integral vanishing of both cubic signs at all twist indices
+when b>=8 and 2^b>=192f (f is the actual odd conductor).
+The remaining genuine cubic odd-prime lengths are open.
 
 The [good-prime reduction](cubic-good-prime-comparison.md) supplies
 an exact centered restriction of the arithmetic quantity to
@@ -108,7 +111,64 @@ For other fixed fields and finite-order target families,
 [general companion selection](general-finite-order-companions.md)
 supplies genuine corrected sums and thin-scale estimates,
 under the parent Dirichlet QRH and classical density/zero-free
-inputs. It does not settle the corresponding geometry.
+inputs. It does not settle the corresponding geometry. The
+[polynomial companion and one-sign transfer](polynomial-one-sign-companion.md)
+now remove the QRH premise from a replacement analytic block:
+q is chosen in a fixed progression with polynomial size by the
+quadratic large sieve and classical density, only three thick
+companions are needed, and the corrected E/k estimate still
+requires actual compatible global maps. The original source
+geometry has not been transferred to the one-sign scheme.
+
+## Independent global interpolation route (finite order)
+
+For a fixed totally imaginary Galois field E, the
+[global interpolation theorem](global-interpolation-lattices.md)
+constructs a single bounded set of O_E(n) integral nodes that tests
+the degree-n integer-valued and divided-difference lattices at all
+finite places. Their exact relative index is
+
+```math
+\log\#(\mathcal P_{n,0}/\mathcal P_{n,1})
+=\int_1^{n+1}\psi_E(t)\,dt .
+```
+
+The [derivative refinement](global-derivative-lattices.md) replaces
+all pairwise divided differences by ordinary derivative evaluations.
+It preserves the integrated index up to O_E((n+1)^(3/2)):
+the local equality is exact at every degree-one prime p>sqrt(n).
+The two global matrices V and V'=(V;VD) have only O_E(n) rows.
+Extra integral sampling nodes make their archimedean Gram
+determinant ratio 1+O_E(1/n) in logarithmic error, while leaving
+the finite lattices unchanged.
+
+**Open global lower bound:** for their saturated image lattices
+L_V, L_V', with the same induced archimedean metrics and normalized
+covolumes, prove
+
+```math
+\log\frac{\mathscr V(L_{V'})}{\mathscr V(L_V)}
+\ge \frac{(n+1)^2}{2}
+     -O_{E,\epsilon}((n+1)^{3/2+\epsilon})
+```
+
+for every epsilon>0 on arbitrarily late whole polynomial windows
+with fixed ratio exponent b>1 at each accuracy. It suffices to
+use the square grid n+1=j^2 and interpolate monotonically.
+The Mellin transform of x/2 - x^(-1) integral_1^x psi_E has
+positive residues at real zeros; hence this bound implies RH
+for zeta_E, and the finite-order Hecke assertion follows if
+it is proved for every such E. In particular E=K is a fully
+independent first nonabelian benchmark. No CM maps, Selmer
+estimate, QRH or ordinary RH is needed for this implication.
+
+Stable Gram matrices do **not** supply the integral covolume
+lower bound. Ordinary Vandermonde bounds have a linear centered
+slack; arbitrary local patching also does not suffice. The
+[exact HNF certificate](../certificates/derivative-lattice-check.json)
+checks only degrees 3–10 in K. This alternative has an actual
+global matrix construction, but its decisive quantitative bound
+remains open.
 
 ## H07I — genuinely infinite-order unitary characters
 
