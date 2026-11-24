@@ -209,7 +209,7 @@ Uniformly over the permitted twists and the entire selected windows,
 \[
  \mathcal K(x,t)=o\bigl(\exp(x^\varepsilon)\bigr);
  \qquad
- \mathcal K(x,t)\le\exp(x^\varepsilon/2)
+ \mathcal K(x,t)\le\exp(x^{9\varepsilon/10})
        \quad\text{eventually}.                             \tag{2.5}
 \]
 
@@ -217,7 +217,7 @@ To verify the uniform assertion, bound \((Nt)^{C_s}\) by
 \(\exp(2C_sx^{\varepsilon/4})\) and \(t\) by \(x^{400}\).
 Every exponent in (2.4), including the logarithms of its polynomial
 terms, is \(o(x^\varepsilon)\). There are only four terms and all
-constants are fixed before \(x\) varies. This proves (2.5).
+constants are fixed before \(x\) varies. Each logarithmic exponent is \(o(x^{9\varepsilon/10})\), so the stronger corrected bound in (2.5) also follows. The earlier exponent \(\varepsilon/2\) was not justified by the first term of (2.4).
 
 ### The actual twist cutoff lies in this window
 

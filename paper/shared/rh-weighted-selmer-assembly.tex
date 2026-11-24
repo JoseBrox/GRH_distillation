@@ -1,0 +1,141 @@
+\subsection{Uniform weighted assembly for ordinary RH}
+\label{rh-weighted-selmer-assembly}
+
+This numerical implication is conditional on the individual length
+estimate (SL3) and the previously reconstructed aggregate estimates.
+In particular it does not constitute a further proof of (SL3).
+
+\begin{proposition}[Weighted assembly from the individual estimates]
+\label{rh-weighted-selmer-assembly-prop}
+Retain the original RH host
+\[
+ E=\mathbf Q(\mu_{2^a})^+(\sqrt{-q},\sqrt{-d}),\qquad
+ N=2^a qd,\qquad [E:\mathbf Q]=2^a,\qquad a=h+2\ge2.
+\]
+Retain its exceptional set \(P\), the projectors
+\eqref{shared-rh-selmer-projectors}, its local conditions, the
+twist cutoff \(t\ge2\), and \(q,d>\max(P\cup\{2t+1\})\).
+Assume the aggregate nonresonant estimate (RN3), the entire
+exponent-one estimate (DC10), the aggregate high-dyadic-conductor
+estimate of Corollary~\ref{cor:rh-selmer-low-dyadic}, and the individual
+remaining Case II estimate (SL3), with uniform absolute constants.
+Then there exist absolute constants \(A_*,C_*>0\) such that
+\[
+ \log\mathcal P(w)\le C_*(Nt)^{A_*}
+\]
+for every finite supported family \(0\le w_\ell\le1\).
+No bound on the number of selected places or on the largest
+nonresonant coefficient prime in the support is needed.
+\end{proposition}
+
+\begin{proof}
+By the integral Fourier comparison, the contribution of an odd
+coefficient prime and a twist is exactly the sum of the
+ramification-normalized lengths of its retained characters,
+multiplied by \(\log\ell\) and \(w_\ell\). All summands are
+nonnegative. First remove all exponent-one terms using (DC10),
+at a cost at most \((2N)^{B_1}\). For every \(2\le e<t\) use
+(RN3) on the entire finite subset of nonresonant primes in the
+support, removing a sum at most \(C_1N[N(e+1)]^{A_1}\).
+It is essential that (RN3) is independent of that subset.
+
+In the remaining sum \(\ell-1\mid2e\), so
+\(\ell\le2e+1\le2t-1\). Thus \(\ell\nmid N\).
+The trivial character is either omitted by the projector
+or has zero length by the Case Z vanishing: outside \(P\) the
+prime is at least five and the trivial character has even
+\(e\). Every retained character is therefore a nontrivial
+even-order character. Remove the high-dyadic-conductor part
+using Corollary~\ref{cor:rh-selmer-low-dyadic}, at a cost at most
+\([N(e+1)]^{B_2}\) for each \(e\).
+
+For the low-conductor part put
+\[
+ a_\ell=\min\{a,\lfloor\log_2(8\ell^2)\rfloor\},
+ \qquad E_{\ell,\mathrm{low}}=
+ \mathbf Q(\mu_{2^{a_\ell}})^+(\sqrt{-q},\sqrt{-d}).
+\]
+The invariants are those of the original Selmer group under
+\(\operatorname{Gal}(E/E_{\ell,\mathrm{low}})\).
+The index is a power of two and hence a unit at \(\ell\);
+restriction and corestriction give the integral comparison,
+including the strict local conditions. The number of characters
+of the reduced field is \(2^{a_\ell}\le8\ell^2\).
+Its conductor parameter is \(N_\ell=2^{a_\ell}qd\), not \(2^{a_\ell}\).
+We apply (SL3) on the original host \(N\), without any
+unstated size hypothesis on a new reduced host. With \(C\) its
+absolute exponent, for each \(e\) the remaining sum is at most
+\[
+ \sum_{\substack{\ell\ \mathrm{odd\ prime}\\\ell-1\mid2e}}
+ 8\ell^2[\ell N(e+1)]^C
+ \ \le\
+ 8(2e+1)^3[(2e+1)N(e+1)]^C.
+\]
+Both quadratic factors have been charged in every
+individual bound, and in the count of the reduced characters.
+There are at most \(t-1\) twist indices; \(e+1\le t\).
+Adding the four nonnegative bounds proves the proposition,
+for example with
+\[
+ A_*=\max\{B_1,A_1+2,B_2+1,2C+4\}
+\]
+and a sufficiently large absolute prefactor \(C_*\).
+Weights can only decrease these bounds.
+\end{proof}
+
+\begin{corollary}[Original allowance on the same windows]
+\label{rh-weighted-selmer-allowance}
+Under the preceding proposition and the supplied-case hypotheses
+\eqref{shared-rh-supplied-cases}, on the original common windows,
+\[
+ \log\mathcal P(w)\le\tfrac12 C_V y(B_0+N_c),
+ \qquad
+ \mathcal V\le C_V y(B_0+N_c)
+\]
+eventually, for every fixed \(C_V>0\), uniformly in the permitted
+finite prime weights, where \(y=x^\varepsilon\),
+\(B_0=fm e^y y\), \(f,m\ge1\), and \(N_c\ge0\).
+\end{corollary}
+
+\begin{proof}
+Fix \(0<\varepsilon<1/52\), and all constants, before increasing
+the window parameter. The same windows supply \(t\le x^{400}\),
+\([E:\mathbf Q]\le8x^{2+8\varepsilon}\), and
+\(\log(Nt)\le2x^{\varepsilon/4}\).
+To see directly why the last estimate retains the two varying
+quadratic factors, use the selected common pair at the left
+endpoint \(U\), with
+\[
+ \log q\le U^{\varepsilon/5},\qquad
+ \log d\le U^{\varepsilon/5}(\log U)^2
+\]
+(up to fixed multiplicative constants in these inequalities).
+At every \(x\) of the prescribed window \(U\le x\le U^J\),
+\[
+ \log(Nt)=a\log2+\log q+\log d+\log t
+ \le \log8+(402+8\varepsilon)\log x
+       +O(U^{\varepsilon/5}(1+(\log U)^2))
+ =o(x^{\varepsilon/4}).
+\]
+The estimate is uniform: the quadratic terms divided by
+\(x^{\varepsilon/4}\) are bounded by a constant times
+\(U^{-\varepsilon/20}(1+(\log U)^2)\).
+The stipulated exponential lower bounds for the same pair
+also imply \(q,d>2t+1\) eventually on this fixed-power window.
+There is no reselection of either quadratic field for the
+Selmer estimate.
+
+The proposition gives \(\log\mathcal P(w)\le
+ C_*\exp(2A_* x^{\varepsilon/4})=o(e^y)\).
+The complementary terms of Proposition~\ref{shared-rh-residual-budget}
+are \(o(e^y)\) as well. Since \(y(B_0+N_c)\ge e^y y^2\),
+each is eventually at most half the specified allowance.
+This proves the two inequalities. The proof is uniform in
+the weights and so permits the original rank-weighted average
+with no change in its weights or field data.
+\end{proof}
+
+The proposition supplies the numerical implication needed in
+the RH specialization, subject to the preceding individual estimates.
+It neither constructs the rest of the compatible arithmetic data
+nor supplies the nontrivial-character version required for GRH.
