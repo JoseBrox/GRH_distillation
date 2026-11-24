@@ -1,30 +1,37 @@
 # Hecke GRH proof program
 
-The preferred route is arithmetic; the spectral trace route is
-an optional alternative. The eight stable nodes are:
+The preferred route is the [elementary arithmetic manuscript](../paper/main.md).
+It does not depend on the Masullo formalization. The smoothed spectral
+route is an optional alternative. H07 has been subdivided into its
+two genuinely distinct arithmetic tasks.
 
 | ID | Responsibility | State | Exact output or remaining task |
 | --- | --- | --- | --- |
-| H01 | Hecke analytic setup | Cited | Classical continuation, functional equation, norm normalization, fixed-character zero count and explicit formula. |
-| H02 | One-sided zero detection | Proved | Detecting profiles, exact obstruction exponent, arbitrary polynomial grids and three compact integrated tests. |
-| H03 | Degree-one prime reduction | Proved | Full smoothed spectral sum equals degree-one prime deficit plus bounded error. |
-| H04 | Galois-field reduction | Proved | Positive induction identity and zero-order inequality for norm pullbacks of every unitary Hecke character. |
-| H05 | Positive arithmetic kernels | Proved | Nonabelian induction/inertia Fourier kernel for genuine finite-order Hecke functions; nonnegative weighted split-prime coefficients for all unitary characters. |
-| H06 | Rational and abelian calibration | Cited | Alpöge's independently verified theorem, abelian factorization and imaginary norm twists in their precise scope. |
-| H07 | Actual arithmetic supplier | Open | Prove the fixed-field weighted split-prime estimate, starting with the S3 benchmark. |
-| H08 | Actual spectral trace supplier | Open (optional) | Prove the normalized one-sided global/local trace budget on actual compatible operators, with full edge convention. |
+| H01 | Classical Hecke setup | Cited | Euler product, continuation, functional equation and class field reciprocity. No explicit formula is needed on the preferred route. |
+| H02 | One-sided zero detection | Proved | Direct Mellin transform and our independently written window lemma; optional smoothed tests retained. |
+| H03 | Degree-one prime reduction | Proved | Higher rational prime powers removed at elementary square-root cost. |
+| H04 | Galois-field reduction | Proved | Positive induction and norm-pullback zero inclusion for all unitary characters. |
+| H05 | Positive arithmetic kernels | Proved | Exact local unit averaging for every unitary character, including ramified powers; finite-order induction kernels retained. |
+| H06 | Rational and abelian base case | Cited | Alpöge's verified result for calibration; for the final independent relative proof use our completed Dirichlet reconstruction, still open. |
+| H07F | Finite-order arithmetic estimate | Open | Relative split-prime counts in Galois fields (or absolute split-prime counts). First benchmark: S3. |
+| H07I | Infinite-order arithmetic estimate | Open | One-sided split-prime phase sums for each normalized infinite-order character, or a positive combined-family estimate. |
+| H08 | Alternative spectral supplier | Open (optional) | Actual compatible geometric trace inequalities; independently prove all necessary external lemmas before making them part of the preferred proof. |
 
-H01 supplies H02 and H03. H04 reduces the field scope and H05 supplies
-positive kernels for H07. H07 then supplies the estimate to H03 and H02,
-proving the reduced critical-line assertion; H04 transfers it to all
-number fields. H08 is an alternative input to H02. H06 calibrates
-the constructions; it does not close H07 or H08.
+H01 supplies the analytic setup, H02–H05 the written reductions.
+The finite-order assertion uses H07F and, for the relative version,
+the abelian base case H06. The infinite-order assertion uses H07I.
+Together with H04 they imply full Hecke GRH. The absolute version
+of H07F does not require H06 as a separate premise. H08 may provide
+an alternative sufficient supplier, but is not a prerequisite.
 
-The finite-order-only program and the S3 test case are milestones
-within H07, not extra proof-completion nodes. The exact quantifiers and
-acceptance conditions are in [open frontier](../notes/open-frontier.md).
-See [manuscript](../paper/main.md) and [progress](progress.md).
+H07F has a concrete first milestone in the [S3 benchmark](../notes/s3-benchmark.md):
+the exact cubic-residue/form description and eta-product real-zero
+exclusion are proved. The remaining complex-zero problem is still
+equivalent to a square-root-scale one-sided prime discrepancy estimate
+(in either direction). Neither H07F nor H07I has been completed.
 
-A finished node is a written implication or cited input, not an assertion
-that its open antecedents hold. No part of an earlier proof-map count has
-been changed.
+See the [open frontier](../notes/open-frontier.md) and
+[progress](progress.md). The map has nine nodes now, formerly eight;
+this is a subdivision of an open node, not a regression or a new
+completion. The counts are structural and incomparable with the more
+finely resolved Dirichlet map.

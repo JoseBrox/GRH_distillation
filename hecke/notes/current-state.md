@@ -1,32 +1,53 @@
 # Hecke GRH continuation checkpoint
 
-Updated 24 November 2026. Hecke GRH remains open.
+Updated 24 November 2026. Full Hecke GRH remains open.
 
-Start from [program](../blueprint/program.md), [manuscript](../paper/main.md)
-and [frontier](open-frontier.md). The [initial transfer note](masullo-transfer.md)
-contains full analytic proofs and Masullo source interfaces. The new
-[Galois reduction](galois-base-change.md) extends the reduction from
-finite-order to all unitary Hecke characters, including infinite order.
+Start with the [independent arithmetic manuscript](../paper/main.md),
+[program](../blueprint/program.md) and [frontier](open-frontier.md).
+The [direct criterion](direct-prime-criterion.md) now supplies the
+entire analytic implication from an ordinary prime-counting deficit,
+with no special smooth profile, explicit formula or Masullo trace.
+The [Galois reduction](galois-base-change.md) covers all unitary
+characters. The [local positivity note](unitary-positive-kernel.md)
+proves exact arithmetic positivity for arbitrary unitary characters,
+including ramification. The earlier
+[smoothed and trace route](../paper/smoothed-and-trace.md) remains
+an optional alternative, fully attributed.
 
-**Next action:** attack H07 for the S3 Dedekind zeta benchmark. Find
-actual arithmetic suppliers in the Dirichlet proof and check their
-compatibility with the new prime coefficients. For H08, attack the
-signed whole-trace budget using actual global norm defects, not only
-local traces. Preserve precise partial results and negative results.
+**Next actions.** H07F: attack the
+[S3 benchmark](s3-benchmark.md). The exact prime condition is
+p=1 mod 3 and 2^((p-1)/3)=1 mod p, or p=u^2+27v^2.
+The cubic Hecke factor has a proved elementary eta-product
+representation and no real zeros; either sign of its relative
+prime discrepancy suffices. Obtain the missing square-root-scale
+bound. Compare the actual arithmetic inputs of the Dirichlet
+program with the explicit Eisenstein ray character. H07I:
+construct a quantitative estimate of the fixed-character split-prime
+phase count, possibly using exact positive phase kernels. Neither
+estimate has been supplied.
 
-Initial map: 6/8 finished reductions or cited inputs; H07 and H08
-remain open, H08 optional. RH and Dirichlet progress is unchanged.
+H07 was subdivided into H07F and H07I, so the map is now **6/9**.
+This does not claim a new closure or a fraction of a proof.
+RH and Dirichlet counts remain unchanged. The independent relative
+route uses our eventual completed Dirichlet proof, not an
+unexplained import of an external formalization; the absolute
+split-prime version avoids even that separate premise.
 
-The [research contribution to issue #5571](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131373425)
-was submitted while claims were paused, not as a Lean PR.
-The discussion of [PR #7347](https://github.com/mccorvie/riemann-masullo/pull/7347)
-clarifies that the remaining exact strip-trace comparison is equivalent
-to the gap; the research fork reports a projective-kernel supplier.
-Recheck those endpoints before reuse. This track does not depend on
-the other project's acceptance or progress.
+## Attribution and verification
 
-## Upstream review
+The [initial transfer note](masullo-transfer.md) credits the
+Masullo/RiemannMasullo test and trace results. The
+[research contribution](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131373425)
+was [reviewed](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131807529)
+but did not close their remaining comparison. No external
+crowdsourced lemma is required by the current preferred proof.
+If H08 is adopted, prove each essential geometric input here.
 
-The [review reply](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131807529) explicitly reports reading our entire note and Alpöge's announcement. It accepts the nature of the one-sided and arithmetic reductions but sees no immediate change to PR #7347, since the actual geometric comparison is still missing. Our alternative would be useful if a quantitative inequality could be proved without the missing exact §12.3 equality. The analytic theorem requires the spectral-diagonal identification for any geometric application, not the full exact global-to-local comparison as an assumption. Do not treat this response as adoption or formal verification. The independent arithmetic track remains the preferred route.
-
-The initial manuscript is published as Markdown with a reproducible TeX/PDF build script. The compiled edition has not yet been produced or checked; raw-repository download was unavailable in the current execution environment.
+The S3 proof uses the classical cubic reciprocity law and Euler
+pentagonal theorem. The exact finite [checker](../scripts/check_s3_eta.py)
+was run: all coefficients through 30000 agree, and 3243 primes
+p>3 were checked, 534 split completely. See the
+[certificate](../certificates/s3-eta-check.json). This is a finite
+coefficient check, not a computation of zero locations. The
+compiled TeX/PDF edition is not yet built or verified; Markdown
+is current and the build script is retained.
