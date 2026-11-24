@@ -1,0 +1,396 @@
+\subsection{The Case II starting tower and marked rational lattice}
+\label{subsec:rh-four-rational-lattice}
+
+We give the reduction for the actual remaining RH datum of
+Theorem~\ref{thm:rh-symplectic-arithmetic-data}. In particular
+$\ell\nmid N$, $\psi\ne1$, $\psi$ has power-of-two order,
+$\psi$ is unramified at $\ell$, and $\mathrm{Sb}=\varnothing$.
+These simplifications are specific to the RH host. Write
+$x=\bar\xi$, $y=\bar\Psi=\bar\epsilon^e\bar\psi$ and
+$\omega=\bar\epsilon$. We use the original two root coordinates:
+\[
+ A=w_{\rm Al}=(1,0),\quad P=w_{\rm Ps}=(0,1),
+ \quad B=w_{\rm Be}=(-1,1),\quad H=w_{\rm Th}=(1,1).
+\]
+The coordinate weights of the four basis vectors are respectively
+$(1,1),(0,1),(1,0),(0,0)$, and the weight of entry $ij$ is their
+difference. The symplectic form pairs positions $0,3$ and $1,2$,
+with the signs in the original adjoint.
+
+\begin{lemma}[The original tame fitted tower for RH Case II]
+\label{lem:rh-four-tame-start}
+For either permissible labeling $\mathrm{pr}$ of the original
+datum, there is a tower $T_0$ satisfying $\mathrm{Fit}$,
+$\mathrm{Two}$, $\mathrm{TameL}$ and $\mathrm{Deep}$.
+Its initial fields can be chosen unramified outside $S$ and three
+new rational primes avoiding any prescribed finite set.
+\end{lemma}
+
+\begin{proof}
+Choose three quadratic characters $\phi,\eta,\eta'$ of distinct
+prime conductors outside $S$ and the prescribed finite set.
+Take $\phi$ even and $\eta,\eta'$ odd, and require each to be
+trivial on the full decomposition groups at the primes of $S$.
+This is achieved by primes respectively congruent to $1,-1,-1$
+modulo $8\prod_{q\in S}q$, by Dirichlet's theorem and quadratic
+reciprocity (for the two odd characters use the discriminant
+$-p$). Define
+\[
+ G_F=\{g:y(g)=\phi(g),\quad\eta(g)=\eta'(g)\},\qquad
+ K=\overline{\mathbb Q}^{\ker\eta},\qquad L=FK.
+\]
+The kernel conditions give a finite abelian extension $F$.
+It is real, since $y$ is even, $\phi$ even and both other
+characters odd. Its degree is even because $\eta\eta'$ is a
+nontrivial quadratic character trivial on $G_F$. The field
+$L$ is CM with maximal real field $F$. On inertia in $G_F$,
+the common value of $\eta,\eta'$ is one, since their conductors
+are disjoint. Thus $L/F$ is everywhere unramified at finite
+places. All primes of $S$ split in $K$. The group index of
+$G_F$ is prime to $\ell$, so the original $\mathrm{TameL}$
+condition holds (in fact the quotient has power-of-two order).
+Since $\psi$ has order prime to $\ell$, $\mathrm{kc}$ and
+$\mathrm{Deep}$ hold automatically. For $\mathrm{kb}$, away
+from $\ell$ the cyclotomic character is unramified, so that
+triviality of the full residual diagonal on inertia implies
+$\bar\psi=1$, hence $\psi=1$. On $G_F$ the character $y$ is
+quadratic. It is unramified: away from the conductor of $\phi$
+use $y=\phi$, and at that conductor use that $y$ itself is
+unramified. It is trivial on the relative $\ell$-adic
+decomposition groups, as $\phi$ is split there. Since $\xi$
+is unramified at $\ell$, the whole residual diagonal is
+trivial on relative inertia. The real quadratic inducing
+field of $\mathrm{Two.quad}$ is the field of $\phi$, split
+at $2,\ell$. Its restriction is nontrivial by the witnesses
+below. The labeling sign replaces $y$ by its inverse in
+root formulas and therefore has no effect on these assertions.
+
+Here are explicit witnesses for all remaining conditions,
+including the order-four conditions. Write $b$ for the dyadic
+conductor exponent of $\psi$, and $2^n$ for the original
+conductor of $\xi$. The order of $\psi$ divides $2^{b+2}$.
+At $\ell$, take the original Frobenius lift $s_\ell$ with
+$\epsilon(s_\ell)=1$, and raise it to $2^{b+2}$.
+Then $y=1$ and $\omega=1$. The value of $x^4$ is not one:
+otherwise faithfulness of $\xi$ on $1+4\mathbb Z/2^n$
+would give
+$\ell^{2^{b+4}}\equiv1\bmod 2^n$, contradicting
+\[
+ n\ge b+6+3\log_2\ell>
+ v_2(\ell^2-1)+b+3 .
+\]
+Here we used the elementary valuation identity
+$v_2(\ell^{2^j}-1)=v_2(\ell^2-1)+j-1$.
+The witness already belongs to $G_F$ and to $G_K$,
+as the three new characters split at $\ell$.
+At $2$, take an inertia element with cyclotomic image
+$3\bmod2^n$ in the dyadic cyclotomic field, and raise it
+to $2^b$. The dyadic character $\psi_2$ has order dividing
+$2^b$, the odd character and $\epsilon$ are unramified
+there, and $x(3)$ has order $2^{n-2}$: the square of $3$
+generates the subgroup of order $2^{n-3}$ of the principal
+units, on which $\xi$ is faithful. Since $n>b+4$, the
+result has $x^4\ne1$, $y=\omega=1$. Again it lies in
+$G_L$. This proves $\mathrm{bigL},\mathrm{big2}$ and
+$\mathrm{locL}$, the latter by its second alternative.
+
+Multiplication by suitable inertia elements at the three
+new primes can independently change the three quadratic
+signs without changing $x,y,\omega$; these original characters
+are unramified there. Thus we can move any prescribed element
+with $y=\pm1$ into $G_L$ with the same values of $x,y,\omega$.
+Moving complex conjugation gives $a\in G_L$ with
+$(x,y,\omega)=(-1,1,-1)$. Let $u$ be the preceding
+witness at $2$, so $x(u)^4\ne1$, $y(u)=\omega(u)=1$.
+Since $\psi$ is a nontrivial power-of-two order character
+of conductor prime to $\ell$, there is an element with
+$\psi=-1$ and $\epsilon=1$: its finite cyclotomic field
+is disjoint from the $\ell$-power cyclotomic field.
+Move it into $G_L$ by the sign changes, and if necessary
+multiply by $u$. This gives $t\in G_L$ with
+$y(t)=-1,\ \omega(t)=1,\ x(t)^2\ne1$.
+Take the mark $g_0=t$. The four diagonal values
+$x(t)y(t),y(t),x(t),1$ are distinct. Every nonzero root
+has nontrivial value at $u$ or $t$, and $u$ gives the
+required order greater than four for $A$.
+For every root-product character $x^i y^{\pm j}$,
+if $i$ is even it differs from $\omega$ at $a$, and if
+$i$ is odd it differs at $u$, because $x(u)$ has power-of-two
+order greater than four. This proves $\mathrm{g2}$ for
+all integer pairs. A quadratic character of $G_L$ permuting
+the diagonal characters must be one of $1,x,y,xy$, by its
+action on $1$. If trivial on $\ker\omega$ it must be $1$,
+using $u,t$. This verifies $\mathrm{g3'}$ exactly as stated,
+including its character-valued condition rather than merely
+an exclusion of one particular quadratic field.
+
+Choose for each prime of $F$ over $\ell$ an absolute
+place extending the fixed place of $K$ above $\ell$.
+This is possible since $K$ is split at $\ell$ and
+$F\cap K=\mathbb Q$; the action of the absolute Galois
+group over $F$ can interchange the two places of $K$.
+The usual transitive action on places extending a fixed
+finite place supplies the original \texttt{cover} and
+\texttt{one}. All fields of $\mathrm{Ok}$ and
+$\mathrm{Two}$ have now been verified with the specified
+labeling and mark.
+\end{proof}
+
+\begin{theorem}[Rational marked lattice reduction]
+\label{thm:rh-four-lat-shape}
+Let $(r,u)$ be an original \texttt{KPair} in any of its
+ambient valued algebraically closed fields, and suppose its
+fraction-field representation satisfies \texttt{Star}.
+There are a permissible labeling $\mathrm{pr}$ and a
+tower as in Lemma~\ref{lem:rh-four-tame-start} such that the
+original rational \texttt{QPair} admits a conjugate integral
+model with \texttt{LatShape} at its mark. The ordered
+inertial characters remain the original $\mathrm{ps}_i$,
+not a relabeled list. The resulting pair still satisfies
+the original \texttt{Small} condition.
+\end{theorem}
+
+\begin{proof}
+Work over the complete DVR inside the ambient valuation
+ring supplied by $\mathrm{Small}$, enlarging its fraction
+field by finite algebraic extensions when needed. Its
+residue field is finite. The residue map into the ambient
+residue field is injective and the ambient field is algebraic
+over its fraction field. A finite extension of a complete
+discretely valued field has a unique extended valuation,
+complete DVR and finite residue field; the given embedding
+therefore preserves integrality and continuity. All matrix
+operations below take place in such rings.
+
+First choose the labeling. On the residual space the
+original $\ell$-adic marked element $s_\ell$ separates
+the blocks $\{0,2\},\{1,3\}$ by \texttt{condD}.
+The first column of the ordinary flag matrix is a
+nonzero eigenvector in the first block. Its component
+at $0$ or $2$ is nonzero. In the latter case if needed
+apply the symplectic permutation interchanging $0,2$
+and $1,3$ (with the signs preserving the form), so the
+first component is a unit. The interchange is permitted:
+if the original component at $2$ is nonzero, the
+first-column identity for the flag for every local group
+element implies $\bar{\mathrm{ps}}_0=\bar{\mathrm{ps}}_2$,
+hence $y=1$ on the entire decomposition group. This is
+precisely \texttt{LabOk}. The first two columns modulo
+the maximal ideal span a stable Lagrangian. Their span
+splits by the two separated blocks at $s_\ell$; the
+second graded character belongs to the other block.
+Thus the intersection with the first block is just
+the first line, and with the second block a line.
+By symplectic orthogonality that second line has
+nonzero component at $1$ when the first line has
+nonzero component at $0$: explicitly if the first
+line has coordinates $(a,0,c,0)$ and the second
+$(0,b,0,d)$, the equation is $ad=bc$ with the
+source signs, and $a\ne0$ precludes $b=0$.
+Consequently the first two leading minors of the
+relabeled flag matrix are units.
+
+Choose the tower of Lemma~\ref{lem:rh-four-tame-start}
+for this labeling. Its mark has pairwise distinct residual
+eigenvalues. Hensel's lemma gives the four uniquely labeled
+eigenvalues over the complete DVR, with unit differences,
+and their spectral projectors give eigenvectors congruent
+to the coordinate basis. The fixed similitude pairs the
+complementary eigenvalues: the form vanishes between
+eigenspaces unless the product of their eigenvalues is
+the multiplier, and the complementary pairings are units
+by reduction. Rescale two eigenvectors by these units to
+obtain a symplectic diagonalization congruent to the
+identity. If the original representation is block
+parabolic in $\{0,2\}\mid\{1,3\}$, the relabeling
+preserves this parabolic, as does the diagonalization:
+the eigenprojectors are polynomials in the marked matrix,
+so eigenvectors obtained from columns respect the invariant
+block.
+
+The transformed flag matrix still has unit leading minors
+of sizes one and two. For a symplectic matrix these imply
+the unit third leading minor, by complementary minors
+and inverse-transpose symmetry. Gaussian elimination
+therefore gives a unique lower-unitriangular times upper
+triangular factorization. Both factors are symplectic:
+apply the group automorphism $g\mapsto J^{-1}g^{-t}J$
+for the antidiagonal alternating form $J$, which preserves
+each triangular subgroup, and use uniqueness.
+Take the lower factor $n$. This leaves every ordered
+local diagonal character unchanged. By the preceding
+residual block description its entries $n_{10},n_{30},
+n_{21}$ vanish modulo the maximal ideal. Symplecticity
+gives $n_{32}=-n_{10}$ and
+$n_{31}=n_{20}-n_{21}n_{10}$ in the source signs,
+so only the weight $-P$ can remain in the lower flag.
+We now have exactly \texttt{NearSplit} and \texttt{QPair}.
+The representation entries off the diagonal have positive
+valuation.
+
+The original $\mathrm{Star}$ hypothesis gives nonzero
+global entries of both weights $\pm P$, and at least one
+of $B,-A,-H$ (\texttt{StarE}). Indeed an absolutely
+irreducible representation spans the full matrix algebra
+over the algebraically closed field. In the block-extension
+alternative the quotient block on $\{1,3\}$ spans its full
+matrix algebra and therefore gives $\pm P$. Block parabolic
+conjugation preserves nonsplitting: if the transformed
+representation were block diagonal, removing the block
+diagonal part of the conjugating matrix would exhibit the
+original splitting by a block unitriangular matrix.
+The nonzero cross-block entry has weight in $\{B,-A,-H\}$.
+
+Let $k_w$ be the minimum of the valuations of nonzero
+global entries of weight $w$ and of the independent lower
+flag entries of that weight, omitting a weight if all are
+zero. These minima exist in the value group of the
+complete DVR, in units of its uniformizer valuation.
+Only $k_{-P}$ may be zero. Consider the rational polyhedron
+\[
+              w_1 a+w_2 b+k_w\ge0
+                       \qquad(k_w\text{ defined}).
+\]
+It contains the origin. Maximize $b$ and then $a$.
+The first maximum is finite by the nonzero $-P$ entry,
+and the second is finite by the nonzero entry of weight
+$B,-A$ or $-H$. Rational linear programming gives an
+attained rational optimum (in fact the denominators divide
+two, from the determinants of the root coefficient
+vectors). Thus a finite extension containing the appropriate
+uniformizer root realizes the optimum by the diagonal
+similitude $\mathrm{diag}(t_1t_2,t_2,t_1,1)$ with
+valuations $a,b$. Conjugate both the representation and
+the flag by this matrix. All entries are integral, using
+the two displayed relations for the dependent lower
+flag entries; every labeled local character and diagonal
+entry is unchanged. Multiplication by the fixed scalars
+preserves continuity in the enlarged complete DVR.
+
+Call a root tight if some corresponding representation
+entry or independent lower flag entry is nonzero after
+reduction. Tight roots are exactly the equalities in the
+polyhedron. Since $b\ge0$, $P$ is not tight. Every tight
+root other than $-P$ has strictly negative value at
+$(a,b)$, since its original valuation was positive.
+
+We can now bypass the six-case enumeration of the original
+lattice argument. The odd strict cocycle vanishing already
+proved for the original six characters has the following
+entry consequence. Suppose all two-step products
+$r(g)_{ih}r(g')_{hj}$ vanish for $h\ne i,j$ in the residual
+pair. Then $r(g)_{ij}/\bar\chi_j(g)$ is a cocycle of weight
+$w_{ij}$ by the multiplication identity and the diagonal
+characters. It satisfies the killing and normalization
+conditions. If its local entry is
+$m(\bar\chi_j-\bar\chi_i)$, the cocycle is a local
+coboundary. For odd $w_{ij}$, strict vanishing makes it
+a global coboundary; normalization at the distinct mark
+makes it zero. The local coefficient $m$ is also zero
+because the two characters differ on the $\ell$-adic
+decomposition group by \texttt{condD}. This argument
+works over any of the residue fields by the finite-span
+coefficient argument in the tower-bound theorem.
+
+Two consequences follow from the first-column flag identity.
+If $-A$ is not tight, then $r_{10}=r_{32}=n_{10}=0$.
+For entry $30$ the two-step products vanish and the
+flag identity gives $r_{30}=n_{30}(\bar\chi_0-\bar\chi_3)$
+locally. Thus the odd-entry consequence kills $r_{30}$
+and $n_{30}$, so $-H$ is not tight. If $B$ and $P$ are
+not tight, then $r_{12}=r_{13}=0$. Entry $10$ has no
+two-step products, and the first-column identity gives
+$r_{10}=n_{10}(\bar\chi_0-\bar\chi_1)$ locally.
+It kills $r_{10},n_{10}$, and the symplectic inverse
+identity kills $r_{32}$ for all group elements.
+Thus $-A$ is not tight.
+
+At the optimum, moving in direction $(1,0)$ must
+be blocked by a tight root in $\{-A,B,-H\}$ (otherwise a
+small positive step is feasible, with only finitely many
+inequalities). If $B$ were not tight, the preceding two
+consequences, with $P$ absent, would exclude both remaining
+roots. Therefore $B$ is tight. Its equality implies
+$a>b\ge0$. Now all of $A,-B,H,P$ have nonnegative scalar
+product with $(a,b)$ and positive original valuations,
+so none is tight. Only $B,-A,-P,-H$ remain. Among these
+roots direction $(-1,1)$ has negative scalar product
+only with $-P$. Maximality of $b$ therefore forces
+$-P$ tight. This proves exactly the needed root support
+$nP$, with $B,-P$ tight, without any sign-pattern case split.
+
+The flag support is consequently $qQ$ and $B$ is a
+global nonzero entry, since there is no lower flag
+coordinate of weight $B$. If $-P$ is global nonzero
+we have the first alternative of \texttt{LatShape}.
+Otherwise the global support is $vV$, and $n_{20}\ne0$.
+Rows $0,2$ are then diagonal. Their first-column local
+flag identity gives $\bar\chi_0=\bar\chi_2$, hence $y=1$
+on the entire local decomposition group. Entry $12$
+of the global representation has no two-step products
+with this support. If it were a local coboundary in the
+specified sense, odd-entry vanishing would kill it globally,
+contrary to tightness of $B$. This proves the second
+alternative of \texttt{LatShape}. All transformations
+have been genuine integral matrices in a finite extension
+of the original discretely valued fraction field, and
+preserved the exact inertial labels. In particular no
+specialization of an arbitrary pseudorepresentation has
+been used.
+\end{proof}
+
+\begin{lemma}[Transport to every deeper tower]
+\label{lem:rh-four-restr-q}
+For the pair of Theorem~\ref{thm:rh-four-lat-shape} and
+each original deeper fitted tower $T\ge T_0$, there is
+a \texttt{Small} pair on $G_{T.F}$ satisfying the exact
+\texttt{restrQ} conclusions and preserving all inertial
+characters.
+\end{lemma}
+\begin{proof}
+For each absolute place of $T.F$ over $\ell$ choose
+$g$ transporting the fixed rational absolute place
+to that place. The transported flag is the column flag
+of $r(g)n$. In the residual support $nP$, row zero is
+diagonal and the only possible entries of row one are
+columns $0,1,2$. The flag of support $qQ$ has diagonal
+one and zero entry $21$. Hence the first two leading
+minors of the product are its first diagonal character
+and the product of its first two diagonal characters.
+They are units. The same Gaussian factorization as above,
+now in the group of symplectic similitudes, gives the
+lower symplectic unitriangular flag and upper triangular
+similitude factor. For the latter factorization use
+$g\mapsto J^{-1}g^{-t}J$ together with the multiplier;
+uniqueness of the lower factor gives multiplier one
+on it. Residually the lower factor has entry $21=0$
+by elimination using row two, which has only columns
+$0,2$. Thus it has support $qQ$. The conjugation identity
+on the local decomposition group gives the original
+ordered diagonal characters, as the characters on the
+rational group are conjugation invariant.
+
+Restriction preserves the global support and the killing
+condition (here $\mathrm{Sb}=\varnothing$), and the new
+mark is an $\ell$-power of the original diagonal mark.
+If $s\in\mathrm{Mu}$, its image in the unramified quotient
+$\widehat{\mathbb Z}$ has $\ell$-power torsion, hence is
+zero. The cyclotomic principal-unit image of $s$ has
+$\ell$-power torsion and is likewise zero. The residual
+cyclotomic character, and the finite characters of
+power-of-two order, are trivial on this local $\ell$-primary
+abelian torsion. It follows that every original inertial
+character is one on $s$. This verifies the exact
+$\mathrm{Mu}$ condition. The transported flag entries
+are integral in the same complete DVR, and restriction
+preserves continuity. This proves all the claimed
+\texttt{restrQ} properties, including \texttt{OverQ}
+and the original local residual characters.
+\end{proof}
+
+The three new primes in the initial tower may be chosen
+away from the discriminant of the fixed quadratic field
+selected for the final trace bound. The further auxiliary
+split primes of the residual-chain argument may also avoid
+that finite set, by Chebotarev. This freedom will permit
+the final fixed-field descent without changing that field.
