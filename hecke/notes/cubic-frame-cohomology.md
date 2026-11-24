@@ -223,3 +223,13 @@ The conditional fixed-field Frobenius polynomial count is
 already available in that model. No uniform bound on the
 adjacent cubic integral length follows yet from these
 rational and residual vanishing statements alone.
+
+## Subsequent use of the residual corner vanishing
+
+The [corner-elimination theorem](cubic-corner-elimination.md)
+uses this residual vanishing to exclude every two-sided reducible
+point under the stated threshold in both characteristics. The
+[actual homogeneous relation count](cubic-high-dyadic-presentation.md)
+removes the negative-corner generator and equation and gives the
+single irreducible curve criterion. The high-dyadic conditional
+length comparison no longer needs cross-block finite Selmer vanishing.

@@ -188,3 +188,13 @@ characteristic-prime and reducible-characteristic-zero
 arithmetic tasks. Actual invariant-ring finiteness, attachment
 of all relevant points, cross-block finite Selmer vanishing
 and the uniform odd-prime length bound remain open.
+
+## Subsequent bypass and direct-field calculation
+
+The [corner-elimination theorem](cubic-corner-elimination.md)
+now excludes both reducible two-sided shapes under its high-dyadic
+residual corner condition. The [actual presentation](cubic-high-dyadic-presentation.md)
+then leaves just irreducible curve exclusion and attachment/rigidity.
+For remaining cases, [direct Euler systems](cubic-eisenstein-euler-systems.md)
+prove the rational rank-one image condition over F and the exact
+rank-two local regulator condition. They do not prove full vanishing.

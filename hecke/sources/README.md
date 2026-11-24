@@ -211,3 +211,25 @@ the new frame. Exact finite verification is recorded separately.
 ## Further local operators, Selmer comparisons and selection
 
 The [formal operator note](../notes/cubic-formal-operator-lattices.md) uses the classical height-one formal-group identification and proves the operator/jet comparison. The [symbol derivative note](../notes/cubic-symbol-derivative-lattices.md) proves the local index and global error; the finite matrix check is separate. The [point-shape theorem](../notes/cubic-point-shapes-and-rigidity.md) uses the parent marked normalization and proves the tensor obstruction (compare E. Studnia, Res. Number Theory, 2026, DOI 10.1007/s40993-026-00718-1). The [local defect theorem](../notes/cubic-three-primary-local-defects.md) uses the conductor-discriminant identity and fixed cubic cyclotomic vanishing. The [unconditional selection](../../notes/unconditional-quadratic-selection.md) uses Thorner--Zaman, Math. Z. 306 (2024), article 54, Theorem 1.1; Thorner, MRL 26 (2019), Theorem 2.3; and Jutila, Math. Scand. 41 (1977), Theorem 1 (1.8). The hypotheses and relative-error formula were checked against the primary sources.
+
+## Corner elimination and the direct Eisenstein-field route
+
+The [corner proof](../notes/cubic-corner-elimination.md) and
+[relation and curve criterion](../notes/cubic-high-dyadic-presentation.md)
+use the actual residual Bernoulli-corner theorem and the parent
+DC4--DC7, DU1--DU2 and integral curve arguments. All required
+local relation lifting is checked for the cubic labels; the
+remaining arithmetic point premises are not imported from the
+rational frame.
+
+The [direct Euler-system audit](../notes/cubic-eisenstein-euler-systems.md)
+uses Rubin, *Euler systems*, Chapter II, Hyp(K,V), Theorems 2.3
+and 2.10, pp. 24--26, verified against the author's text at
+https://swc-math.github.io/aws/1999/99RubinES.pdf . It checks
+Kings--Loeffler--Zerbes arXiv:1503.02888v6, Hypothesis 11.1.2
+and Theorem 11.7.3; Burns--Sakamoto--Sano arXiv:1805.08448v1,
+Hypothesis 3.2; Lei--Loeffler--Zerbes, DOI
+10.1112/S0010437X14008033, Theorem 7.4.2; and Pan,
+arXiv:1901.07166v2, Theorems 1.0.2 and 1.0.4.
+The local rank and unipotent construction are proved in the note.
+The audit is not an exhaustive nonexistence result for Euler systems.

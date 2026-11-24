@@ -51,4 +51,8 @@
 | Unconditional original two-sign corrected companions and thin estimates | Proved using classical progression and density theorems; implemented in parent manuscript sources | [Selection](../../notes/unconditional-quadratic-selection.md) |
 | Exact finite symbol derivative matrix ranks | Six prime/line combinations and 252 degree prefixes | [Script](../scripts/check_cubic_symbol_derivative.py), [certificate](../certificates/cubic-symbol-derivative-check.json) |
 
+| Residual corner elimination excludes two-sided reducible points at high dyadic conductor in both characteristics | Proved | [Corner elimination](../notes/cubic-corner-elimination.md) |
+| Actual high-dyadic homogeneous relations and exact irreducible-curve criterion for finite invariant ring | Proved; numerical length still conditional on point arithmetic | [Presentation and curve criterion](../notes/cubic-high-dyadic-presentation.md) |
+| Rational rank-one image over the Eisenstein field, local rank-two regulator and precise Euler-system sufficiency | Image and rank proved; nonzero classes and full finite vanishing open | [Direct Euler-system alternative](../notes/cubic-eisenstein-euler-systems.md) |
+
 No new full Hecke node, target complex-zero exclusion or Lean verification is claimed.

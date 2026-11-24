@@ -63,3 +63,12 @@ These are obstructions to specific proposed proof steps, not to GRH.
 
 - The normalized cubic cross-block tensor has even-dimensional fixed spaces for every cyclotomic-kernel element. The standard rank-one Euler-system hypothesis fails; this is not a nonvanishing theorem for the Selmer group. See [point shapes](../notes/cubic-point-shapes-and-rigidity.md).
 - The symbol derivative has a local formal commutator interpretation, but the formal additive coordinate is not an integral global meromorphic operator. The new index identity is not a collective degree saving.
+
+- Directly projecting a rational tensor Euler system to a single
+  Eisenstein-field constituent supplies no individual prime-of-F
+  ray-class norm relation. The conjugate Euler factor is not
+  automatically a unit at the rank-one specialization. The rational
+  image condition is restored over F, but the actual residual lattice
+  is reducible and the finite local regulator has dimension two.
+  See [direct Euler systems](../notes/cubic-eisenstein-euler-systems.md).
+  This is unnecessary in the high-dyadic range by [corner elimination](../notes/cubic-corner-elimination.md).

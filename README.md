@@ -106,6 +106,8 @@ The [unconditional two-prime selection](notes/unconditional-quadratic-selection.
 
 The latest Hecke progress also supplies [all-order integral theta operator lattices](hecke/notes/cubic-formal-operator-lattices.md) and their [symbol-derivative relative indices](hecke/notes/cubic-symbol-derivative-lattices.md), [marked point shapes and the rank-one tensor obstruction](hecke/notes/cubic-point-shapes-and-rigidity.md), and [uniform local lifting defects at 3](hecke/notes/cubic-three-primary-local-defects.md). The sharp degree saving and the uniform moving odd-prime lengths remain open.
 
+The Hecke [high-dyadic corner theorem](hecke/notes/cubic-corner-elimination.md) now eliminates the need for a separate Rankin--Selberg rigidity argument in that range. Its [actual presentation and curve criterion](hecke/notes/cubic-high-dyadic-presentation.md) leave only irreducible point arithmetic there. The [direct Eisenstein-field Euler-system alternative](hecke/notes/cubic-eisenstein-euler-systems.md) restores the rational image condition, while the rank-two regulator and genuine system remain open in lower-dyadic cases.
+
 ## Current research priorities
 
 The main task is now to **prove the missing arithmetic inputs**. We keep the preferred proof architecture fixed while attacking its open construction, estimate and compatibility requirements. Simplification is useful when it removes a substantial dependency or materially improves a decisive estimate.

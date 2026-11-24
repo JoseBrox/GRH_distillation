@@ -85,8 +85,8 @@ QED.
 
 This also meets the additional field-fixing requirements in
 Rubin's rational Hyp(F,U): F has class number one and its unit
-group is mu6, so for ell>=5 its ell-power roots of units already
-belong to F. Absolute irreducibility of U follows from that of W_F.
+group is mu6, so for ell>=5 an ell-power root of each unit can
+be chosen in F, and all such roots belong to F(mu_{ell^infinity}). Absolute irreducibility of U follows from that of W_F.
 
 It does NOT meet the stronger integral hypotheses automatically.
 On the cyclotomic kernel the actual distinguished residual

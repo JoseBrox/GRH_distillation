@@ -141,11 +141,40 @@ diagonal rigidity and residual corner vanishing with
 **Latest advances and next direct attacks.**
 
 The [all-order formal operator lattice](cubic-formal-operator-lattices.md) identifies integral theta maps with polynomials integer-valued on actual cubic p-adic lines. The [symbol-derivative index](cubic-symbol-derivative-lattices.md) recovers the truncated prime discrepancy with normalized error O(sqrt(X) log X), without a zeta multiplier. Collective degree/norm saving or normalized period coupling remains open.
-The [marked point theorem](cubic-point-shapes-and-rigidity.md) classifies the two-sided points in either characteristic and proves the obstruction to the standard rank-one tensor Euler-system hypothesis. Actual finite-ring finiteness, automorphy and cross-block finite Selmer vanishing are open.
+The [marked point theorem](cubic-point-shapes-and-rigidity.md) classifies the two-sided points in either characteristic and proves the obstruction to the standard rank-one tensor Euler-system hypothesis. The latest point arithmetic is given below; the lower-dyadic cross-block finite Selmer vanishing and the full moving lengths remain open.
 The [3-primary local defect theorem](cubic-three-primary-local-defects.md) bounds normalized lifting losses by one, controls aggregate residual generator ranks and proves untwisted cubic vanishing at 3. Moving low-dyadic lengths and resonant odd-prime lengths are open.
 The [unconditional two-prime theorem](../../notes/unconditional-quadratic-selection.md) supplies the original two-sign numerical block with all congruences and exponential thin bound, without QRH; both parent manuscript sources and the partial common-window assembly now implement it.
 
-The independent interpolation lower bound and infinite-order phase estimate H07I remain open.
+**High-dyadic bypass.** The [corner elimination](cubic-corner-elimination.md)
+proves that when the actual residual negative corner vanishes (in
+particular at $2^b\ge24\ell(\ell+1)^2$), the minimal integral
+presentation has no weight -2 generator. Every negative entry lies
+in the ideal of actual lower adjacent entries. This excludes all
+two-sided reducible outer-block points in both characteristics.
+The [homogeneous presentation and curve criterion](cubic-high-dyadic-presentation.md)
+prove the exact relation-count supplier with no negative-corner
+equations. The remaining finite-invariant-ring test is precisely
+exclusion of absolutely irreducible characteristic-ell curves;
+the conditional length comparison then needs only the irreducible
+rank-three automorphic spectrum and finite-adjoint rigidity.
+Thus the cubic Rankin--Selberg vanishing is not a required
+input in this range.
+
+**Remaining lower-dyadic rigidity.** The [direct Eisenstein-field alternative](cubic-eisenstein-euler-systems.md)
+recovers Rubin's rational rank-one image hypothesis for
+the individual rank-two constituent using a nonidentity
+unipotent in the cyclotomic kernel. Its actual residual
+lattice still fails the integral big-image hypotheses.
+The singular local regulator has dimension two, by local
+duality, for split or inert coefficient primes. A genuine
+prime-of-F Euler system with nonzero base class would kill
+the strict group; two independent singular localizations
+would then kill the full finite group. No such Euler system
+or regulator is yet supplied. Existing higher-rank descent
+hypotheses checked here do not automatically remove the
+residual or local-quotient obstruction.
+
+**Next:** prove the irreducible curve exclusion and attachment for the actual cubic frame; attack the remaining lower-dyadic lengths and rank-two regulator only where corner elimination fails. The collective global theta estimate, independent interpolation lower bound and infinite-order phase estimate H07I remain open.
 
 ## Status and attribution
 
