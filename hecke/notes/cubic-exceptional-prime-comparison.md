@@ -357,3 +357,8 @@ with the classical class-field/Kummer inputs and
 the exact parent local Selmer condition. Not a new
 kernel-checked Lean theorem or a bound on the
 actual cubic odd-prime lengths.
+
+The [exact field and lattice checker](../scripts/check_s3_field.py)
+verifies the determinant-three evaluation matrix and integrality of
+three times its inverse. See its
+[recorded output](../certificates/s3-field-check.json).

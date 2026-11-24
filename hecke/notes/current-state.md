@@ -107,5 +107,6 @@ New proofs are ordinary mathematics with the explicitly cited
 Dirichlet and classical inputs. No new Lean replay, quantitative
 bound for the target cubic factor, or computational zero check
 is claimed. The prior [finite coefficient check](../certificates/s3-eta-check.json)
-is not a zero test. The Markdown manuscript is current;
+and new [exact field/lattice check](../certificates/s3-field-check.json)
+are not zero tests. The Markdown manuscript is current;
 its compiled TeX/PDF edition is still pending.

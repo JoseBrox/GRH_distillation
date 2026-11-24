@@ -30,5 +30,6 @@
 | Actual cubic torsor, relative Frobenius kernel and polarized CM twists | Proved local realization | [Torsor, §§1–2](../notes/cubic-torsor-realization.md) |
 | Equivariant three-theta-line family with unit sections; exact local divisor patch | Proved local construction; no global degree estimate | [Torsor, §§3–5](../notes/cubic-torsor-realization.md) |
 | General fixed-field finite-order companion selection, genuine corrections and full dyadic thin family | Proved under parent Dirichlet QRH and classical Hecke density/zero-free inputs | [General companions](../notes/general-finite-order-companions.md) |
+| Independent exact S3 discriminant, local decomposition, Minkowski upper bound and projection determinant | Verified with SymPy 1.14.0 | [Script](../scripts/check_s3_field.py), [record](../certificates/s3-field-check.json) |
 
 No new full Hecke node, target complex-zero exclusion or Lean verification is claimed.
