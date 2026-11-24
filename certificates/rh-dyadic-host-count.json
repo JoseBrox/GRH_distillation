@@ -1,5 +1,5 @@
 {
-  "classification": "Closed ordinary RH high-dyadic inertial count at 3, large-conductor Case V at 3, and exponent-one residual product; W04 remains open.",
+  "classification": "Closed ordinary RH large-dyadic inertial count at every admissible odd coefficient prime, including both point types; exponent-one residual product and exact small-dyadic reduction; W04 remains open.",
   "source_repository": "jsmorph/rh",
   "source_commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
   "verification_scope": "Pinned source blob identifiers and inspected bounded excerpts; conventional proof in TeX using earlier manuscript theorems. No Lean build, external computation of Selmer groups, or independent proof review claimed.",
@@ -160,5 +160,18 @@
   "artifacts": [
     "paper/shared/rh-dyadic-host-count.tex",
     "notes/rh-dyadic-host-count.md"
-  ]
+  ],
+  "extension": {
+    "threshold": "2^b > 8 ell^2, ell odd and prime to N",
+    "reduction": "Only higher resonant twists, ell-1 | 2e, in degree <= 8(2e+1)^2 fields retaining q,d",
+    "point_types": "Both type I and type II; no Xpp hypothesis",
+    "proof": "paper/shared/rh-dyadic-host-count.tex",
+    "rh_application": "paper/shared/rh-selmer-low-dyadic.tex",
+    "reference_interfaces": [
+      "BLGGT, Potential automorphy and change of weight, Lemmas 2.2.1-2.2.2, p.540",
+      "Thorne, On the vanishing of adjoint Bloch-Kato Selmer groups of irreducible automorphic Galois representations, arXiv:2207.04925v1, Theorem 6.1",
+      "Kato, p-adic Hodge theory and values of zeta functions of modular forms, Theorem 14.2(1), p.235"
+    ],
+    "verification": "Rechecked the rank-two Hecke admission, N4 intertwiner proof and local and global arithmetic interfaces. No Lean build, Selmer group computation or independent review."
+  }
 }

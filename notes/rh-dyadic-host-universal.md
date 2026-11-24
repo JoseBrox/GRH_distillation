@@ -30,4 +30,4 @@ predicate just proved suffices for its arithmetic point and rigidity
 hypotheses. The actual universal ring, local equations and Selmer
 lengths are unchanged.
 
-The [integral count on this same ring](rh-dyadic-host-count.md) now supplies the original finite-modulus comparison and the high-dyadic-conductor bound at 3. The other resonant terms and W04 remain open.
+The [integral count on this same ring](rh-dyadic-host-count.md) now supplies the original finite-modulus comparison and the high-dyadic-conductor bound at all admissible odd primes, treating both point types. The low-dyadic higher resonant terms and W04 remain open.

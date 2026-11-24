@@ -6,7 +6,7 @@
 
 | Workstream | Later established suppliers | Still required |
 | --- | --- | --- |
-| W04: integral Selmer | [Every RH nonresonant prime](../notes/rh-selmer-nonresonant.md), [dyadic Bernoulli units and residual vanishing at 3](../notes/rh-dyadic-bernoulli-unit.md), and the original local chart and Frobenius spectrum | Resonant integral comparisons and the complete weighted Selmer product |
+| W04: integral Selmer | [Every RH nonresonant prime](../notes/rh-selmer-nonresonant.md), [dyadic Bernoulli units and residual vanishing at 3](../notes/rh-dyadic-bernoulli-unit.md), the [large-dyadic inertial count at all admissible odd primes](../notes/rh-dyadic-host-count.md), and the original local chart and Frobenius spectrum | Higher resonant twists in the reduced dyadic layers and the complete weighted Selmer product |
 | W06: theta | [Integral chain](../notes/theta-spanning-continuation-chain.md) and [terminal period/unfolding](../notes/theta-period-continuation.md) | Intervening see-saw, row realization, and identification with the final restricted maps |
 | W08: global norms | [Integral frame transport](../notes/flag-lattice-transport.md), [stabilizer covolumes](../notes/unipotent-stabilizer-covolume.md), [weighted normal-form sum](../notes/weighted-flag-lattice-sum.md), and the embedded-isometry genus mean | Original term-class correspondence, reciprocal automorphism weights, remaining return sums and final traces |
 | W10: geometric heights | [Actual all-point height](../notes/geometry-point-height.md) and [finite-fibre nefness, original smoothing and signed test](../notes/geometry-height-assembly.md) | General flag positivity and Frobenius-linked corrections, weighted mean height, rank losses and numerical records |

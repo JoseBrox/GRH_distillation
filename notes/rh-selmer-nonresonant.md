@@ -74,4 +74,4 @@ in both directions. Its certificate is
 `certificates/rh-selmer-nonresonant.json`; it does not compute the
 remaining Selmer groups or assert (RN7).
 
-The [actual inertial integral count](rh-dyadic-host-count.md) proves the high-dyadic-conductor bound at 3, closes RH Case V at 3, and bounds the entire exponent-one residual product. For higher twists at 3 only dyadic conductors <=64 remain; the other resonant primes and the original weighted product remain open.
+The [actual inertial integral count](rh-dyadic-host-count.md) proves the high-dyadic-conductor bound at every admissible odd coefficient prime, without Xpp, and bounds the entire exponent-one residual product. For higher resonant twists only dyadic conductors <=8 ell^2 remain, in fields of degree <=8(2e+1)^2. Both quadratic factors still vary. Their estimates and the original weighted product remain open.

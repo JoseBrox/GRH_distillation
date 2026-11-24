@@ -47,5 +47,4 @@ Lean rebuild, an independent review, or a computation of Selmer orders.
 
 The [inertial universal-ring theorem](rh-dyadic-host-universal.md) now
 supplies weight-zero finiteness and the weaker sufficient automorphy
-predicate for the arbitrary-Good count. The exact integral graded
-estimate remains the first outstanding step.
+predicate for the arbitrary-Good count. The [integral graded estimate](rh-dyadic-host-count.md) now treats both point types on this frame at every admissible odd prime, without Xpp. Only the smaller dyadic layers in higher resonant twists and the original weighted product remain open for RH.
