@@ -129,3 +129,49 @@ elementary finite étale descent, Cartier divisors and genus-one
 Riemann–Roch. The parent's theta normalization and centered norm
 data are cited precisely there. None of these local constructions
 supplies the missing global maps or uses a Masullo result as a premise.
+
+## Interpolation lattices and reduced companion/3-primary suppliers
+
+The [global interpolation note](../notes/global-interpolation-lattices.md)
+uses the classical factorial-ideal and p-ordering framework of
+Bhargava, *P-orderings and polynomial functions on arbitrary subsets
+of Dedekind rings*, J. Reine Angew. Math. 490 (1997), 101–127
+([DOI](https://doi.org/10.1515/CRLL.1997.490.101)), and Keith Johnson,
+*Computing r-removed P-orderings and P-orderings of order h*,
+Actes CIRM 2 (2010), 33–40
+([DOI](https://doi.org/10.5802/acirm.31)). The local digit proof,
+bounded simultaneous test set, global maximal-minor calculation and
+integrated prime-count criterion are written in the repository.
+Byszewski–Frączyk–Szumowicz,
+*Simultaneous p-orderings and minimizing volumes in number fields*,
+JNT 173 (2017), 478–511
+([DOI](https://doi.org/10.1016/j.jnt.2016.09.010)), connect factorial
+volumes to Euler–Kronecker constants.
+Frączyk–Szumowicz, [arXiv:1810.11110](https://arxiv.org/abs/1810.11110),
+Theorem A and Corollary 1.4, exclude eventual n-optimal sets of
+size n+1 outside Q and give minimum universal cardinality n+2.
+They do not provide the relative covolume estimate here.
+The [derivative note](../notes/global-derivative-lattices.md)
+proves the new local degree-one comparison and stable
+archimedean sampling directly.
+
+The [polynomial companion theorem](../notes/polynomial-one-sign-companion.md)
+uses Heath-Brown, *A mean value estimate for real character sums*,
+Acta Arith. 72 (1995), 235–275, Theorem 1
+([DOI](https://doi.org/10.4064/aa-72-3-235-275)), for odd
+squarefree summation variables, applied to rational primes.
+Thorner's Theorem 2.3, arXiv:1509.04378v1 p.7, supplies the
+finite-order density subfamily, with exponent
+3(1-sigma)/(2-sigma); we use its weaker consequence.
+The finite exceptional-zero adjustment, derivative correction,
+maximal dyadic-block sums and one-sign transfer are proved in
+the note. No uniform Dirichlet QRH input is used in the
+polynomial selection.
+
+The [cubic 3-primary vanishing](../notes/cubic-three-primary-vanishing.md)
+uses the parent's
+[Bernoulli-unit theorem and cocycle corollary](../../paper/shared/selmer-dyadic-twist-vanishing.tex)
+with Q=9, together with elementary abelian class field theory,
+Kummer duality and the CM unit argument proved there. It
+retains the original strict local kernels and proves integral
+vanishing only under the displayed conductor threshold.
