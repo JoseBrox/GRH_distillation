@@ -2,7 +2,7 @@
 
 The actual corrected Hodge fibres and their permitted projective model refinement are proved in [the specialization note](../notes/geometry-hodge-specialization.md); bounded source and primary-reference evidence is in [the certificate](../certificates/geometry-hodge-specialization.json).
 
-The [rational adapted-normal-form theorem](../notes/flag-adapted-normal-form.md) records the checked interfaces for NFExC and LabC, including the exact signed blocks and normalized leading minors.
+The [rational adapted-normal-form theorem](../notes/flag-adapted-normal-form.md) records the checked interfaces for NFExC and LabC, including the exact signed blocks and normalized leading minors. The [fixed-row theorem](../notes/flag-row-congruence.md) records the actual finite-adelic Levi congruence and complete PerRowC interface.
 
 This view covers every local Lean source file at the pinned source revision. It is separate from the manuscript section atlas and the mathematical proof program.
 
