@@ -49,8 +49,9 @@ In particular, put
                +\sum_{\tau\notin J}r_{i,\tau}.
 \]
 Here $s_{i-1,\tau}$ is the original determinant shift and
-$r_{i,\tau}$ is the first part of the original residual target
-partition in the allowance-removal calculation.  Then
+$r_{i,\tau}$ is the first shifted target weight in the original
+allowance-removal calculation (before translating the partition to
+last entry zero).  Then
 \begin{align}
  T^{d_i}U_iK_i\mathscr S_{i-1}(w)&\subseteq\mathscr S_i(w),
        &U_iK_i&=T^{h|J|}K_iU_{i-1}.
@@ -382,9 +383,97 @@ $\ell<0$.  Iterating the divided conjugate maps proves
 any theta or neighbor map has been used.
 \end{proof}
 
+
+\subsubsection*{Sharp divisibility at the word prime}
+
+\begin{theorem}[Sharp auxiliary-level column valuation]
+\label{thm:actual-sharp-level}
+In the original admissible finite column datum, consider the reference
+column and every admitted twisted column. At a coefficient place $w$
+above its word prime $T$, normalize $v_w(T)=e_w$, the ramification index.
+Let $J_0$ be the prescribed set of top embeddings and $W_\tau$ the
+maximum of the absolute shifted weights $|\lambda_{i,\tau,a}-ih|$
+over all stages and entries, omitting the first entry at a top embedding.
+Set
+\[
+ D=2\sum_\tau W_\tau+fN_m,\qquad
+ L_w=\begin{cases}
+ mD+h|J_0|m(m+1)/2,&w\text{ selected},\\
+ 0,&w\text{ conjugate}.
+ \end{cases}
+\]
+These are exactly the original integers $mE_T(w)$. Every scalar
+$c\in K^\times$ with $v_w(c)\ge e_wL_w$ clears the image of the
+original reference column and of each twisted column on the
+transported reference source lattice. The unscaled twisted column
+has a unique rational lift in $T^{-L_w}\mathscr S_m(w)$, giving its
+original normalized valuation lower bound $-L_w$.
+\end{theorem}
+\begin{proof}
+We first check the signs in the chosen weights. Write $u_{\rm last}$
+for the last initial Harish--Chandra parameter and $b_j,e_j$ for
+the interlacing parameters, separately at each embedding. The actual
+choice gives $u_{\rm last}=U_k+1/2$, where $U_k\le-1$; at top embeddings
+$U_k=-b_{\rm top}^{\rm chosen}-k/2$, with
+$b_{\rm top}^{\rm chosen}\ge0$. Thus the original initial twist exponent
+$b_\tau=-u_{\rm last}-(k-1)/2$ is nonnegative at top embeddings.
+The original inequalities are
+\[
+ -b_0<u_{\rm last},\quad
+ e_j-b_j\ge(t+3)/2,\quad
+ b_{j+1}-e_j\ge(t+3)/2.
+\]
+As $t\ge k$, they imply $e_0\ge k/2$ and
+$e_j\ge k/2+j(t+3)$. The actual stage-$j$ determinant exponent is
+$s_{j,\tau}=e_j-N_j/2$, so $s_{j,\tau}\ge j(t+5)/2\ge0$.
+The shifted last weight at stage $j+1$ is $-s_{j,\tau}$.
+Since $N_{j+1}>1$ it is not an omitted entry, giving
+$s_{j,\tau}\le W_\tau$. At a nontop embedding the first shifted
+weight is also among the weights defining $W_\tau$.
+The original allowance-removal calculation uses precisely this first
+shifted weight, not the first part of a partition independently
+translated to have last entry zero. Therefore its exact clearing
+exponent in \eqref{eq:actual-chain-step} satisfies
+$d_i\le2\sum_\tau W_\tau+fN_{i-1}\le D$.
+
+At a selected place the marking identifies its selected set bijectively
+with $J_0$. The initial scalar exponent
+$a=m\sum_{\tau\in J_0}b_\tau$ is nonnegative.
+Theorem~\ref{thm:actual-theta-chain} gives integrality of
+$T^\ell C_m$ on the original initial lattice, with
+\[
+ \ell=\sum_i d_i+h|J_0|m(m+1)/2-a\le L_w.
+\]
+Multiplication by $cT^{-\ell}$ is integral, since its valuation is
+$v_w(c)-e_w\ell\ge0$. This also covers $\ell<0$.
+At a conjugate place the selected set is empty and the original
+initial lattice is the ramified sublattice of $\mathscr S_0(w)$.
+The conjugate inclusion of Theorem~\ref{thm:actual-theta-chain}
+gives positive $T^{mfh}$ divisibility, so any integral $c$ suffices.
+The selected and conjugate cases exhaust the places over $T$ in
+the original split datum.
+
+The reference chain is the distinguished tuple. For each other tuple
+the original stage-zero identification preserves the ramified lattice
+and commutes with the norm and upper-neighbor operators, as proved
+in Theorem~\ref{thm:actual-theta-chain}. It therefore sends the
+rational-image source into the rational-image source of that tuple,
+including its scalar $T^a$. All tuples have the same prescribed weight
+array and the same selected-place indicator. Hence the maxima
+$W_\tau$ and the bound $L_w$ are unchanged. Apply the preceding
+argument to this transported vector. The original stage-zero block
+embedding identifies its image with the prescribed twisted column
+on the reference source. Taking $c=T^{L_w}$ and dividing the resulting
+integral lift by $T^{L_w}$ proves the claimed rational valuation bound.
+Injectivity of the coefficient embedding gives uniqueness, including
+when the column vanishes. This supplies the original reference
+\texttt{Conclusion5Sharp} and twisted \texttt{ColGeTw} at $T$;
+no period nonvanishing or global norm identity is used.
+\end{proof}
+
 This discharges the selected-prime point-model, integral-coordinate,
-kernel and twisted-source compatibility obligations for the actual
-finite arithmetic theta chain.  It supplies no uniform bound for
+kernel, twisted-source compatibility and sharp auxiliary-level valuation
+obligations for the actual finite arithmetic theta chain.  It supplies no uniform bound for
 the degree or discriminant of $K$.  The comparison of this chain
 with the separately normalized global Poincar\'e period operators,
 and their final retained source and target restrictions, is a further
