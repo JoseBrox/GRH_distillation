@@ -1,0 +1,435 @@
+\subsection{The finite Levi comparison for the actual zero-Gram operator}
+\label{sec:flag-finite-levi}
+
+We complete the two finite interfaces in (GA9), retaining the
+original \(\mathrm{Full}\ X\), column representatives, and
+\(\mathrm{TypedRed}\) throughout. The group in this section is
+\[
+ \mathcal G=\prod_{v\in\mathrm{TR.Pl}}\mathrm{GL}_k(\mathbb F_{q_v}),
+ \qquad U=\prod_v U_k(\mathbb F_{q_v}),
+\]
+where \(U_k\) denotes the upper unitriangular group. Let \(p(x)\)
+be the product of the original adjacent-entry characters on \(U\),
+extended by zero to \(\mathcal G\). Each additive character is
+nontrivial, by the \(\mathrm{psi\_ne}\) field of \(\mathrm{Full}\).
+Define
+\[
+ \gamma(x)=|U|^{-1}\sum_{y\in\mathcal G}p(yxy^{-1}),
+ \qquad \Gamma_1=\gamma(1)=|\mathcal G|/|U|.
+ \tag{FL1}
+\]
+Thus \(\gamma=\mathrm{gamProd}\) and \(\Gamma_1=\mathrm{Gam1}\);
+the finite group is not a replacement for the column space.
+
+\begin{lemma}[Finite Levi Gram bound]
+\label{lem:flag-finite-levi-gram}
+The original matrix \(GG(i,j)=\overline{\gamma(j^{-1}i)}\) satisfies
+\[
+ 0\le GG\le P_g\Gamma_1\,1,\qquad
+ P_g=\prod_v(1+3/q_v)\le2
+ \tag{FL2}
+\]
+under the original standing size conditions.
+\end{lemma}
+\begin{proof}
+First use a single field \(\mathbb F_q\). For a unitary
+representation \(\pi\) of \(G=\mathrm{GL}_k(\mathbb F_q)\),
+\(|U_k|^{-1}\sum_{u\in U_k}p(u)\pi(u)\) is the orthogonal
+projection onto the inverse-character subspace. Its sum of
+conjugates over \(G\) is positive, central, and equals
+\(\sum_x\gamma(x)\pi(x)\). On an irreducible of dimension \(d\)
+it acts by \(|G|m/d\), where \(m\) is the multiplicity of
+that character.
+
+For completeness, the multiplicity-one argument here is the
+elementary finite Gelfand--Graev argument. Bruhat decomposition
+gives representatives \(tw\) for the \(U_k\)-double cosets, with
+\(t\) diagonal and \(w\) a permutation matrix. A double coset
+supporting a nonzero bi-character function must satisfy the
+character-matching condition on \(U_k\cap twU_k(tw)^{-1}\).
+If two adjacent positions \(j,j+1\) in \(w\) have increasing
+values, conjugate the simple root \(1+aE_{j,j+1}\) by \(tw\).
+Its image is an upper root. Matching for all \(a\) forces
+the image root to be simple, and the ratio of its two diagonal
+entries of \(t\) to be one. Indeed a nonsimple root has trivial
+character, and a nontrivial additive character cannot satisfy
+\(\psi(ca)=\psi(a)\) for all \(a\) unless \(c=1\).
+Every increasing run of the permutation therefore consists of
+consecutive integers, and \(t\) is constant on its value interval.
+The intervals are disjoint, their successive transitions are
+descents, and hence they occur in reverse interval order.
+The monomial matrix \(tw\) consequently consists of scalar identity
+blocks in reversed block order. It is fixed by the anti-involution
+\(x\mapsto w_0 x^{\mathsf t} w_0\), where \(w_0\) reverses all
+coordinates. This anti-involution preserves \(U_k\) and the
+adjacent-entry character. It fixes every bi-character function:
+on each supported double coset this follows from its fixed
+representative and the two identical character factors, and on
+the other cosets from the vanishing condition. Convolution is
+reversed by the anti-involution, so the character Hecke algebra
+is commutative. Since over \(\mathbb C\) it is the endomorphism
+algebra of the induced character representation (up to taking the
+opposite algebra), semisimplicity and Frobenius reciprocity give
+\(m\le1\). The argument also applies to the inverse character.
+
+A representation admitting that character has dimension at least
+\(\prod_{a=1}^{k-1}(q^a-1)\). Here is the usual mirabolic induction
+without a character-degree formula. Restrict to the group
+\(\mathrm{GL}_{k-1}\ltimes\mathbb F_q^{k-1}\) fixing the last
+row. A character vector lies in the nonzero weight space of the
+last-column vector group defined by the last coordinate. All its
+\(q^{k-1}-1\) nonzero characters have equally large weight spaces,
+by transitivity of \(\mathrm{GL}_{k-1}\). The stabilizer of the
+chosen character in \(\mathrm{GL}_{k-1}\) is the smaller
+mirabolic group; its chosen weight space contains the same
+adjacent-root character for \(U_{k-1}\). Repeat within that
+weight space, starting the induction at dimension one. This
+argument does not require irreducibility of the restrictions.
+Using \(|U_k|=q^{k(k-1)/2}\), for \(m=1\) we have
+\[
+ \frac{|U_k|}{d}\le
+ \prod_{a=1}^{k-1}(1-q^{-a})^{-1}
+ \le \left(1-\frac1{q-1}\right)^{-1}
+ \le 1+\frac3q\quad(q\ge3).
+\]
+The middle inequality follows by multiplying numbers \(1-x_a\)
+with \(0\le x_a\le1\) and bounding their product below by
+\(1-\sum_a x_a\). For \(m=0\) the convolution is zero.
+Applying this spectral argument to the regular representation,
+then taking tensor products over the actual places, proves the
+matrix inequality in (FL2); transpose or complex conjugation of a
+Hermitian positive matrix leaves its real spectral bounds intact.
+
+To check the number of factors, use the original coefficient
+reduction. At the two completely split rational level primes,
+\(\mathcal O_E/g\mathcal O_E\) consists of \(f\) pairs of copies
+of each of \(\mathbb F_{g_0}\) and \(\mathbb F_{g_1}\),
+exchanged by conjugation. The original idempotent \(e_w\) and
+its conjugate are orthogonal and sum to one modulo \(g\)
+(the faithful reduced lattice detects this equality).
+Thus \(e_w\) selects one factor per pair. The joint surjectivity
+and kernel equality of \(\mathrm{TypedRed}\) identify its
+product of residue fields with exactly this selected ring, as
+in the row-congruence proof. An isomorphism of these products
+permutes primitive field idempotents and preserves their
+characteristics. Hence each \(g_i\) occurs exactly \(f\) times,
+not an unspecified number of times. The size conditions
+\(g_i\ge(kb)^8,\ f\le k,\ b\ge2,\ k\ge32\) now give
+\(\log P_g\le3f/g_0+3f/g_1\le6k/(2k)^8<\log2\).
+\end{proof}
+
+\begin{lemma}[The original columns and their row masses]
+\label{lem:flag-finite-columns}
+For each original row \(\Lambda\), the original finite
+column representatives in that row give a disjoint decomposition
+\[
+ \mathcal G=\coprod_{\rho:\,\lambda(\rho)=\Lambda}
+                   A_\Lambda s_\rho U
+ \tag{FL3}
+\]
+with unique triples \((a,\rho,u)\).
+Here \(s_\rho=\mathrm{scOf}(\rho)\) and
+\(A_\Lambda=\mathrm{Aset}(\Lambda)\) are the actual reductions.
+In particular,
+\[
+ |A_\Lambda|^{-1}=w_{\rm row}(\Lambda),\qquad
+ d_u=d_\pi\sum_\Lambda\#\{\rho:\lambda(\rho)=\Lambda\}
+     =d_\pi\Gamma_1 M .
+ \tag{FL4}
+\]
+\end{lemma}
+\begin{proof}
+Let \(H_u\) be the pointwise stabilizer of the original rational
+vectors \(e_a,f_a,z_u\). Its finite and rational points are
+precisely the groups \(\mathrm{Hfin}\) and \(\mathrm{Gam}\)
+in the column dictionary. A representative \(h_\rho\) defines
+the row lattice by
+\((h_\rho x_u)^{-1}v\in\widehat L_0\). The given \(x_u\) preserves
+\(\widehat L_0\), so this means
+\(v\in h_\rho\widehat L_0\). Local-global equality for integral
+lattices now identifies its finite completion with that lattice.
+Since \(h_\rho\) fixes both hyperbolic frames, the splitting
+of \(L_0\) is also a splitting of every such row, with the same
+isotropic and dual ideals. Only the middle lattice varies.
+In particular its middle quotient \(X^\perp/X\) identifies
+integrally with the middle lattice. The rational \(H_u\)-stabilizer
+of the row therefore identifies, in both directions, with the
+isometries of this quotient fixing the class of \(z_u\): extend
+such an isometry by the identity on the two hyperbolic frames.
+This is the automorphism group in the original row weight.
+It is finite because it is integral and lies in a compact
+product at the real places on the positive complement of \(z_u\).
+
+For the chosen original base column \(h_\Lambda\) of a row,
+all its finite representatives are \(h_\Lambda K_H\), where
+\(K_H=H_u(\mathbb A_f)\cap K\) and \(K\) is the stabilizer of
+\(\widehat L_0\). Their relative matrices, in the level
+coordinates, lie in \(x_u^{-1}K_Hx_u\). We show that reduction
+on this group is onto \(\mathcal G\), and that its inverse
+image of \(U\) is the level subgroup. This is the needed
+column surjectivity, not strong approximation of a rational
+unitary group.
+
+At a place dividing \(g\) the actual different is a unit,
+and \(T=-\langle z_u,z_u\rangle\) is a unit, since the original
+word norm is prime to both level primes. In the \(x_u\)
+coordinates the fixed \(e_a,f_a,x_u^{-1}z_u\) give an integral
+unimodular hyperbolic summand and a unimodular negative line.
+Their orthogonal complement is self-dual of rank \(k\).
+The CM extension is split at the place. Thus the two components
+of this complement are free modules of rank \(k\) over
+\(\mathcal O_{F,v}\), in perfect duality. Its stabilizer is
+\(\mathrm{GL}_k(\mathcal O_{F,v})\), acting by inverse transpose
+on the other component. The original \(e_0,f_0,z_0\) agree
+with the fixed vectors modulo \(g\) by their pinned
+approximations (denominators prime to \(g\) are units here).
+The original \(bw,bwd\) give dual bases of the selected
+and opposite residual complement: this follows from the
+stated Gram congruences and the generation of the reduced
+lattice by these vectors and the fixed frames. Projection
+onto the exact complement changes these vectors by zero
+modulo \(g\). In these bases the coefficients
+\(\langle bwd_i,\kappa bw_j\rangle\) are exactly the selected
+matrix entries of reduction. The determinant is a unit, so
+the fallback branch of \(\mathrm{levi}\) is not used. Any
+invertible residue matrix lifts to an invertible integral
+matrix, with the inverse-transpose action on the dual and
+identity on the fixed summands. Choose these lifts at the
+finitely many places dividing \(g\) and the identity elsewhere;
+this proves simultaneous surjectivity for the actual relative
+column group.
+
+The defining \(K_2\) congruences for the fixed \(e_0,z_0\) are
+automatic on that group. The remaining congruences require
+\(bw_j\) to be fixed modulo its preceding \(bw_i\)'s and the
+isotropic span. They are exactly upper unitriangular reduction.
+The dual action is forced by unitarity; outside \(g\) there
+is no further congruence. The inverse image is therefore
+the original \(x_u^{-1}K_ux_u\). In particular the relative
+matrix from the chosen base to column \(\rho\) reduces
+to \(s_\rho\), as defined in the source.
+
+The rational stabilizer of the row maps to \(\mathcal G\) by
+the same conjugation and reduction; its image is \(A_\Lambda\).
+This map is injective, and the image acts freely on
+\(\mathcal G/U\). Indeed if a finite-order stabilizer element
+has reduction conjugate into \(U\), its action on each
+whole reduced lattice is unipotent: it fixes the hyperbolic
+frames and last vector and acts dually on the other component.
+At a residue characteristic \(p\), a finite-order integral
+matrix with unipotent reduction has \(p\)-power order. To see
+this, raise it to a \(p\)-power to kill the residual unipotent
+part and leave only its prime-to-\(p\) order. For a matrix
+\(B\equiv1\) of prime-to-\(p\) order \(n\),
+\(1+B+\cdots+B^{n-1}\) reduces to the invertible scalar \(n\).
+Thus \(B^n-1=0\) implies \(B=1\). Applying this at both
+distinct rational characteristics forces the original element
+to be the identity. This proves both assertions and gives
+\(|A_\Lambda|^{-1}=w_{\rm row}(\Lambda)\).
+
+The actual \(\mathrm{ColReps}\) assertion gives exactly one
+representative per rational-left and \(K_u\)-right double
+coset. For two representatives defining the fixed row,
+a rational left factor relating them must preserve that row
+because the right factor preserves the completed lattice.
+Conversely such factors give precisely the double cosets
+in the row. By the surjective reduction and its just proved
+inverse-image property these are the
+\(A_\Lambda\backslash\mathcal G/U\) cosets. Thus (FL3) is
+a bijection with the original representatives, not a
+replacement column count. Their weight is the displayed
+reciprocal order, so their number is
+\(\Gamma_1w_{\rm row}(\Lambda)\).
+Finally the original column representation is specified by
+arbitrary vectors of the compact type at the column
+representatives: the rational stabilizer at a column is
+trivial by the same two-characteristic argument. Evaluation
+therefore gives the full column dimension, also in the
+given Riesz identification. This proves (FL4).
+\end{proof}
+
+\begin{lemma}[The original zero-Gram norm expansion]
+\label{lem:flag-finite-norm-expansion}
+In the absolutely convergent original diagonal expansion, let
+\(K''\) denote its nonidentity zero-Gram part. With the
+amplitudes and weights of (GA3), one has
+\[
+ \|K''\|_{\mathrm{HS}}^2
+ \le P_g\Gamma_1\!
+  \sum_{(t,t')\in\mathrm{allPairs}(\mathrm{degSet})}a_ta_{t'} .
+ \tag{FL5}
+\]
+\end{lemma}
+\begin{proof}
+For a pair of rows \(Q=(\Lambda,\Lambda')\), let
+\(Z_Q(i)\) be the sum of the original \(\mathrm{ampN}(t)\)
+operators over zero-Gram nonidentity terms with row
+\((\Lambda,\Lambda',i)\), viewed in their Hilbert--Schmidt
+space. These sums exist by the original absolute convergence.
+In this notation \(\mathrm{vec}(t)\) is the corresponding
+single-row vector of weight
+\(\sqrt{w_{\rm row}(\Lambda)w_{\rm row}(\Lambda')}\).
+
+We first check the finite coefficients of the actual column
+blocks. The normalized base return \(\kappa_t\) preserves the
+integral lattice: the return takes the source row lattice to
+the target row lattice. The original admissibility at \(g\)
+makes its reduction on the isotropic flag upper unitriangular
+and on the last-vector class the identity (the integral
+congruence proof of (FC7)). It therefore acts on the selected
+orthogonal quotient of rank \(k\) by the actual Levi
+matrix \(i(t)\). The adjointness of the complementary
+residue components forces its action on the other component.
+Multiplying by the two relative column matrices (inverse on
+the target) replaces \(i(t)\) by
+\(s_\rho^{-1}i(t)s_{\rho'}\); this is ordinary composition
+of the induced maps on the quotient. The fixed-frame
+congruences are unchanged. In particular the resulting
+return belongs to \(K_2\) precisely when this matrix
+belongs to \(U\).
+
+The original \(\chi_N\) is the finite character of the
+sum of \(\langle f_{0,a},\kappa\,\mathrm{nxt}(e_0,z_0)_a\rangle\),
+divided by \(g\). Both relative column matrices fix the
+\(e_0,f_0,z_0\) modulo \(g\); by unitarity they leave
+each of these pairings unchanged modulo \(g\). All matrices
+and pairings in this computation are integral, and outside
+the level \(g\) is a unit. Hence the finite character is
+unchanged, exactly, not up to an additional scalar.
+The remaining factor \(\chi_L\) uses the adjacent entries
+\(\langle bwd_j,\kappa bw_{j+1}\rangle\), divided by \(g\).
+These coefficients lie in the selected \(e_w\) component,
+and the given \(\mathrm{psi\_eq}\) dictionary identifies the
+character with the product of the prescribed residue
+characters. Thus with the zero outside \(K_2\) the factor
+is precisely \(p(s_\rho^{-1}i(t)s_{\rho'})\).
+This proves the original \(\mathrm{ColPhase}\) and
+\(\mathrm{ChiNIndep}\) identities needed for these blocks.
+It follows directly from the original level-character
+splitting and \(\mathrm{ampN}\) definition that the
+\((\rho,\rho')\)-block of \(K''\) is
+\[
+ B_{\rho,\rho'}=\sum_{i\in\mathcal G}
+               p(s_\rho^{-1}i s_{\rho'})\,Z_Q(i).
+ \tag{FL6}
+\]
+
+Next consider \(a\in A_\Lambda,\ b\in A_{\Lambda'}\).
+They have rational lifts \(\alpha,\beta\) stabilizing their
+row lattices, fixing the original two hyperbolic frames and
+last vector. Multiplication of a rational return by these
+lifts, \(\gamma\mapsto\alpha\gamma\beta^{-1}\), is a
+bijection on the corresponding original double cosets:
+the lifts normalize the respective arithmetic unipotent
+groups. They preserve the admitted-frame condition, the
+Gram-zero condition and identity membership. In detail,
+the paired frames are transported by an isometry fixing
+one flag, and the other lift fixes the second reference
+flag pointwise; integral membership and admission are
+unchanged since the row lattices are preserved. Relevance
+is likewise invariant since the differential root characters
+are preserved by conjugation with an isometry fixing the
+two hyperbolic frames and last vector. This also follows
+directly by transporting the relevant common stabilizer
+and its two characters. The Levi label is changed to
+\(aib^{-1}\).
+
+The \(\chi_N\) character is unchanged by these relative
+matrices, by the preceding fixed-frame calculation.
+In the real integral defining \(\mathrm{OO}_t\), transport
+the stabilizer fundamental set by \(\alpha\) and change
+variables by that same element. The two original functions
+are equivariant under \(H_u(\mathbb R)\) with its given
+unitary compact-type action. Consequently the resulting
+operator differs from the original by left and right
+unitary actions of \(\alpha,\beta\). Both the fundamental
+set transport and replacement by the chosen double-coset
+representative are valid by the already established
+absolute convergence and phase compatibility of the
+orbital expansion. The induced unitary action on the
+Hilbert--Schmidt space is independent of the term.
+Summing on a label fibre gives, in particular, the
+\(\mathrm{SatGram}\) identity
+\[
+ \langle Z_Q(aib^{-1}),Z_Q(ajb^{-1})\rangle
+       =\langle Z_Q(i),Z_Q(j)\rangle.
+ \tag{FL7}
+\]
+This uses saturation of the actual zero-Gram nonidentity
+set, not an arbitrary selection of its terms.
+
+Now expand the norm over the genuine column blocks.
+The character \(p\) is left and right \(U\)-equivariant,
+including on its zero set. Using (FL7), the squared norm
+of \(\sum_i p(x^{-1}iy)Z_Q(i)\) is unchanged on replacing
+\(x,y\) by \(a x u,b y u'\), respectively. The factors
+from \(u,u'\) have modulus one, and (FL7) gives equality
+after the simultaneous change of label. Thus (FL3)
+and the Hilbert--Schmidt block identity give the
+contribution of the pair \(Q\) to the squared norm as
+\[
+ \frac{1}{|A_\Lambda||A_{\Lambda'}||U|^2}
+  \sum_{x,y\in\mathcal G}
+      \left\|\sum_i p(x^{-1}iy)Z_Q(i)\right\|_{\rm HS}^2 .
+\]
+For fixed \(i,j\), the coefficient of the inner product
+(conjugate-linear in the first argument) in this sum before
+division is
+\[
+ \begin{aligned}
+ \sum_{x,y}\overline{p(x^{-1}iy)}p(x^{-1}jy)
+ &=|U|\sum_y p(y^{-1}i^{-1}jy)\\
+ &=|U|^2\gamma(i^{-1}j).
+ \end{aligned}
+\]
+In the first equality substitute \(z=x^{-1}iy\); only
+\(z\in U\) contributes and the character factors cancel.
+Since \(\gamma\) is central and
+\(\gamma(s^{-1})=\overline{\gamma(s)}\),
+this is \(|U|^2 GG(i,j)\), with precisely the original
+orientation. Consequently, if \(V_i\) is the direct sum
+of the vectors
+\(\sqrt{w_{\rm row}(\Lambda)w_{\rm row}(\Lambda')}Z_Q(i)\),
+we obtain the actual norm expansion
+\[
+ \|K''\|_{\rm HS}^2=\sum_{i,j}GG(i,j)
+                             \langle V_i,V_j\rangle .
+\]
+The spectral bound (FL2) applied in each Hilbert-space
+coordinate is at most
+\(P_g\Gamma_1\sum_i\|V_i\|^2\).
+Expanding each row-label sum by the triangle inequality
+gives (FL5), with both row weights, not merely a sum
+over the Levi labels.
+\end{proof}
+
+\begin{theorem}[The diagonal zero-Gram saving on the matched local data]
+\label{thm:flag-zero-gram-saving}
+Under the standing hypotheses and the matched local-data hypothesis
+of the global amplitude theorem, the original diagonal
+nonidentity zero-Gram operator satisfies
+\[
+ \boxed{\displaystyle
+    \|K''_{uu}\|_{\rm HS}^2\le d_u\exp(-kf\log k).}
+ \tag{FL8}
+\]
+In particular the full zero-Gram summation and finite norm
+comparison have no further arithmetic or counting hypothesis.
+The existence of the required matched local data from the
+original standing hypotheses is a separate remaining interface.
+\end{theorem}
+\begin{proof}
+Use (GA7), (FL4) and (FL5):
+\[
+ \|K''_{uu}\|_{\rm HS}^2
+ \le 2\Gamma_1d_\pi M\,e^{-3kf\log k/2}
+ =2d_u e^{-3kf\log k/2}
+ \le d_u e^{-kf\log k}.
+\]
+The final inequality uses \(k\ge32,\ f\ge1\).
+All sums refer to the original full zero-Gram nonidentity set.
+Its amplitude-pair summability is part of (GA7), and the
+operator sum is the given absolutely convergent expansion.
+No assertion concerning generic nonidentity returns or the
+final arithmetic theta comparison follows from this theorem.
+\end{proof}

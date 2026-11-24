@@ -39,10 +39,10 @@ summability. Irrelevance is treated by character cancellation on the
 compact stabilizer quotient.
 
 The source's final bound is with the **full column dimension** duC,
-not merely the compact dimension dpiC. Its remaining finite interfaces
-are the original Levi Gram comparison and
-Gam1*massRows*dpiC<=duC. We do not claim KppDiag or the full W08
-node until these and the local-data existence are verified.
+not merely the compact dimension dpiC. The [finite Levi proof](flag-finite-levi.md) now supplies the
+original Gram comparison and exact column dimension, and hence the
+literal diagonal zero-Gram saving under the matched local-data
+hypothesis. Local-data existence and the full W08 node remain open.
 
 ## Pinned source audit
 
