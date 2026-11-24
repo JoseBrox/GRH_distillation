@@ -45,8 +45,8 @@ allowing either sign of the required one-sided prime-counting estimate.
 
 For the cubic benchmark, our Dirichlet arithmetic method now
 supplies the [relative Fourier balance](hecke/notes/cubic-relative-comparison.md)
-and [finite-order companion selection](hecke/notes/general-finite-order-companions.md)
-(with the stated Dirichlet QRH input). The fixed S3 field has class number
+and [finite-order companion selection](notes/unconditional-quadratic-selection.md)
+(now unconditional with classical density and progression estimates). The fixed S3 field has class number
 one, and its actual moving auxiliary hosts admit the
 [uniform 2-primary Selmer window](hecke/notes/cubic-two-primary-window.md).
 At 3 the [integral character comparison](hecke/notes/cubic-exceptional-prime-comparison.md)
@@ -101,6 +101,10 @@ in ordinary mathematics in this repository. The relative arithmetic
 route uses our completed Dirichlet proof for the abelian base case
 when available; the absolute route does not need that separate input.
 **Hecke GRH remains open.**
+
+The [unconditional two-prime selection](notes/unconditional-quadratic-selection.md), proved by retaining the possible exceptional character in weighted prime correlations, supplies the original thick companions and exponential thin estimates without uniform Dirichlet quasi-RH. Both original auxiliary primes, their splitting congruences and their scale sizes are unchanged. The common-window assembly and both manuscript sources now use this numerical replacement; stronger all-height source zero-free clauses are not claimed.
+
+The latest Hecke progress also supplies [all-order integral theta operator lattices](hecke/notes/cubic-formal-operator-lattices.md) and their [symbol-derivative relative indices](hecke/notes/cubic-symbol-derivative-lattices.md), [marked point shapes and the rank-one tensor obstruction](hecke/notes/cubic-point-shapes-and-rigidity.md), and [uniform local lifting defects at 3](hecke/notes/cubic-three-primary-local-defects.md). The sharp degree saving and the uniform moving odd-prime lengths remain open.
 
 ## Current research priorities
 

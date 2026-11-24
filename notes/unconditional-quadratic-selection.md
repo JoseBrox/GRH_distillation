@@ -298,9 +298,11 @@ for primitive conductors of norm <=H and height <=T.
 For F=Q the standard log-free density theorem for primitive
 Dirichlet characters gives the same needed form with an
 absolute fixed exponent C(1-sigma) in Q^2 T; its precise
-exponent is immaterial. For example use the Bombieri
-log-free density estimate underlying the Gallagher PNT
-([Ramare, Chennai Lectures, Theorems 11.1--11.2](https://ramare-olivier.github.io/Maths/ChennaiLectures2010.pdf)).
+exponent is immaterial. Use Jutila, *On Linnik's constant*, Math. Scand. 41 (1977), 45--62,
+[Theorem 1, (1.8)](https://www.mscand.dk/article/download/11701/9717),
+which for 4/5<=sigma<=1 bounds the total primitive zero count by
+O_epsilon((H^2 T)^((2+epsilon)(1-sigma))). The printed p. 46 has
+been checked; take its fixed auxiliary epsilon equal to one.
 The only property needed here is a fixed finite exponent.
 These are established density theorems, not uniform
 zero-free strips for all characters.
@@ -473,3 +475,13 @@ unconditionally with the classical cited inputs.
 No Selmer, theta/period or final geometric budget is
 deduced from auxiliary selection alone; all such
 obligations in the proof map are retained.
+
+## Implementation
+
+The rational specialization has a complete shared TeX proof in
+[unconditional-quadratic-selection.tex](../paper/shared/unconditional-quadratic-selection.tex),
+now included in both parent manuscripts. The partial cohomological
+window proposition sa-compatible-interval explicitly replaces its
+QRH-dependent selection by that theorem. Its coarse cohomological
+hypothesis is unchanged. The old stronger conditional source theorem
+is retained. The new TeX sources have not been compiled in this turn.

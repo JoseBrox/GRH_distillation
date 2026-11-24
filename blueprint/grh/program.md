@@ -38,7 +38,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Fixed quotient with balanced fibres | proved finite reduction: analytic character identifications must also be fixed |
 | Three mean weights and logarithmic dispersion | proved conditional alternative; exact pooled symmetry is incompatible with the unchanged sparse-top source family and is unnecessary for the preferred direct RH route |
 | Determinant descent and averaged Hilbert-Samuel surplus | proved reductions: actual quotient degrees, excess-rank costs and mean-volume inputs remain to be bounded |
-| Direct RH transfer without weight symmetry | proved and independently reviewed: positive primitive-character kernels permit thick comparison before averaging; the existing large-scale QRH estimate controls thin samples |
+| Direct RH transfer without weight symmetry | proved and independently reviewed: positive primitive-character kernels permit thick comparison before averaging; the unconditional numerical selection now controls the required thin samples (the original stronger source strip remains a separate clause) |
 | Separated-top obstruction and quantitative transport | proved: current source weights forbid exact pooled means and make the absolute transport criterion too large; the direct thick/thin route avoids this detour |
 | Sharper determinant descent, two height moments and correlated frame averages | proved reductions: preserve the section-error coefficient, optimize the component bound, and average the refined nonlinear frame penalty; actual geometric suppliers remain open |
 | Positive-kernel transfer through a fixed quotient | proved for every subgroup: the thick error depends on the fixed target order rather than the growing ambient group; signed projection and thin estimates remain |
@@ -202,7 +202,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r05, r11, r12, r34. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Use uniform Dirichlet quasi-RH and exponent14 where applicable; prove the actual existence and closure conditions for the selected construction.
+**Latest numerical supplier.** The [unconditional selection](../../notes/unconditional-quadratic-selection.md) and [shared proof](../../paper/shared/unconditional-quadratic-selection.tex) supply the thick estimates and required exponential thin bound on the original two-sign fields and simultaneous partial cohomological windows, using classical progression estimates and zero density. No uniform QRH assumption is needed for those numerical conclusions. The stronger source all-height zero-free clause is not reproduced. Prove the remaining existence and closure conditions for the actual selected construction, using exponent14 where applicable. W03 is still partial.
 
 **Acceptance conditions:**
 

@@ -82,8 +82,8 @@ family; it must not be omitted.
 
 After this comparison, only four character terms remain: zeta and three
 quadratic twists. Rearranging leaves one signed quadratic companion.
-The manuscript's simultaneous quadratic selection bounds that companion on
-the required sample interval, conditional on its stated uniform quasi-RH
+The [unconditional two-prime selection](../../notes/unconditional-quadratic-selection.md)
+bounds that companion on the required sample interval, without uniform quasi-RH
 input. Sample intervals must include the short endpoint shifts.
 
 What remains is the **weighted positive-part integral of the locally
