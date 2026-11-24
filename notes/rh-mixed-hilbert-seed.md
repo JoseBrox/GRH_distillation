@@ -31,4 +31,4 @@ External inputs checked against [Dasgupta–Darmon–Pollack, Proposition 2.1](h
 
 ## Next obligations
 
-Supply the original symplectic induction, its lattice and inertia comparison and the rank-four seed and propagation. The separate third-case seed and all arbitrary-point exclusions (F), (E), (A) are still open. The new theorem gives no quantitative uniformity in the auxiliary field. No compiled manuscript or Lean execution is claimed.
+The [marked symplectic induction](rh-symplectic-induction.md) now supplies the original Case II rank-four seed, including the lattice and inertia comparison. Prove propagation from it. The separate third-case seed and all arbitrary-point exclusions (F), (E), (A) are still open. The new theorem gives no quantitative uniformity in the auxiliary field. No compiled manuscript or Lean execution is claimed.

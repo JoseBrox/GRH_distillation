@@ -595,3 +595,5 @@ The original thin-region determinant jet and Bergman bound are reconstructed in 
 - [Actual component section degree](../notes/geometry-section-continuation.md): the original cusp lattices, canonical line, intrinsic Chow height, metric and multiplication realize the determinant theorem, with the literal short-family exponent and component remainder.
 - [Original degenerate orbital operator](../notes/global-gram-continuation-degenerate-operator.md): exact quotient realization, stabilizer scalar, projected Gram product and compact-dimension cancellation; the remaining global arithmetic zero-Gram sum is not supplied.
 - [Actual relative deformation equations](../notes/selmer-support-continuation-relative-presentation.md): every supplied local weighted presentation is retained; relative cohomology and the integral relation-dual injection give precisely one excess global equation in weights -1, 0 and 1 and none in weights -2 and 2. The local ordinary chart remains separate.
+
+- [Case II marked symplectic induction](../notes/rh-symplectic-induction.md): full original SeedIIAlt supplier; arbitrary-point propagation remains open.

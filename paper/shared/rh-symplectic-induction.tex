@@ -1,0 +1,403 @@
+\subsection{The marked symplectic induction in Case II}
+\label{sec:rh-symplectic-induction}
+
+\begin{theorem}[Integral rank-four seed in the second case]
+\label{thm:rh-seed-II-alt}
+Keep the original datum \(D\), the odd coefficient prime \(\ell\),
+and the tower \(T\), with precisely the hypotheses
+\(\texttt{Ctx2}(D)\), \(\texttt{Ok}(T)\), \(\texttt{Two}(T)\), and
+\(\texttt{Deep}(T)\). For every prescribed coefficient embedding
+\(\iota:\overline{\mathbb Q}_{\ell}\simeq\mathbb C\), there is an
+extension of the coefficient DVR and a pair on the original frame
+\(T.\mathrm{fr}(\varnothing)\) satisfying \(\texttt{SeedPairAlt}\),
+\(\texttt{InV}\) after reduction, and the original alternative
+\[
+ \operatorname{Ent}(-w_{\rm Al})\quad\text{or}\quad
+ \bigl(\operatorname{Ent}(w_{\rm Be})\ \text{and}\
+       \operatorname{Ent}(-w_{\rm Th})\bigr).
+\]
+In particular, this is the full supplier \(\texttt{SeedIIAlt}\), using
+the mixed Hilbert seed of Section~\ref{sec:mixed-hilbert-seed} and
+the classical theorems specified below. It is not an assertion of
+automorphy for every point on the tower's deformation space.
+\end{theorem}
+
+\begin{proof}
+We identify all the absolute Galois groups with subgroups of
+\(G_{\mathbb Q}\) using the original algebraic closure. Write
+\(F=T.F,\ L=T.L=FK\), and \(s=T.g_0\in G_F\), where \(K\) is
+the original imaginary quadratic field. Retain every original local
+group, denoted \(D_v\) and \(I_v\) above \(\ell\). Write
+\(\epsilon\) for the cyclotomic character, \(\omega\) for its
+Teichmuller part, \(\xi\) for the finite odd dyadic character of
+\(D\), and put
+\[
+ \alpha_0=\epsilon\omega^{-1}\xi,\qquad
+ \Psi=\epsilon^e\psi,\qquad \nu=\alpha_0\Psi.
+\]
+The ordered frame characters \(\chi_i\), \(0\le i\le3\), are
+\((\nu,\Psi,\alpha_0,1)\) or \((\alpha_0,1,\nu,\Psi)\)
+according to the original ordering parameter. In both orderings
+\(\chi_0\chi_3=\chi_1\chi_2=\nu\), and
+\(\bar\alpha_0=\bar\xi\).
+
+\paragraph{Admission of the Hilbert seed.}
+By \(\texttt{Two.quad}\) there is the specified real quadratic
+field \(k_0\), split at \(2,\ell\). Put \(H=G_{k_0}\) and
+let \(\phi:G_{\mathbb Q}\to\{1,-1\}\) be its quadratic character.
+On \(G_F\), \(\phi=\bar\Psi\) in the residue field: the ratio
+defining \(w_{\rm Ps}\) is \(\Psi\) or \(\Psi^{-1}\), and its
+reduction has square one. Its kernel there is \(G_F\cap H\).
+It is unramified on all relative inertia groups of \(F\).
+By \(\texttt{Ok.dist}\), the four residual characters at \(s\)
+are distinct. Hence \(\phi(s)=-1\), \(\bar\xi(s)\ne\pm1\).
+In particular \(\bar\xi(s^2)\ne1\). On \(G_F\cap H\) and
+on the local groups at \(\ell\), the ordered reductions are
+\((\bar\xi,1,\bar\xi,1)\).
+
+The hypotheses \(\texttt{Two.ord}\), \(\texttt{Two.xi}\),
+\(\texttt{Two.big2}\), \(\texttt{Two.bigL}\) show, respectively,
+that \(\xi\) has \(2\)-power order, is unramified outside \(2\),
+has residual order greater than four on a relative inertia group
+at \(2\), and has nontrivial residual value on every decomposition
+group at \(\ell\). Here the root \(w_{\rm Al}\) has residual
+character \(\bar\xi\). Since \(2,\ell\) split in \(k_0\), these
+statements apply to \(\xi|_H\) at the places of norm \(2\) and
+at each of the two places over \(\ell\). The restriction is totally
+odd. Thus the mixed Hilbert theorem applies with one of the two
+\(\ell\)-adic places selected. It gives an absolutely irreducible
+representation \(r\) of \(H\), over a finite extension of
+\(\mathbb Q_\ell\), irreducible on every open subgroup, satisfying
+\[
+ \det r=\epsilon^k\xi|_H,\qquad
+ \bar r^{\rm ss}=1\oplus\bar\xi|_H,
+ \qquad k,t\ge2,\quad \ell-1\mid k,t.
+\]
+At the two \(\ell\)-adic places its ordered inertia exponents are
+\((k+t,-t)\) and \((k,0)\), and the ordered residual characters on
+the whole decomposition groups are respectively
+\((\bar\xi,1)\) and \((1,\bar\xi)\). The conjugation by \(s\)
+interchanges these places. Away from \(\ell\) its inertia
+representation is exactly \(1\oplus\xi\).
+
+\paragraph{A single marked integral lattice.}
+Enlarge the coefficient field to contain the preceding
+representation and the original coefficients; call its ring of
+integers \(\mathcal O\), maximal ideal \(\mathfrak m\), and
+uniformizer \(\varpi\). Compactness gives a stable lattice for
+\(H\). The eigenvalues of \(r(s^2)\) are distinct modulo
+\(\mathfrak m\), reducing to \(1,\bar\xi(s^2)\). Its integral
+spectral idempotents therefore split that lattice into two
+rank-one summands, giving an eigenbasis in this order. For
+\(h\in H_F=H\cap G_F\), write its matrix in that basis as
+\(\left(\begin{smallmatrix}d_h&b_h\\c_h&f_h\end{smallmatrix}\right)\).
+The traces at \(h\) and \(s^2h\) give
+\(d_h\equiv1,\ f_h\equiv\xi(h)\pmod{\mathfrak m}\).
+Multiplication at \(h,h'\) now gives
+\(b_hc_{h'}\in\mathfrak m\).
+The two families of off-diagonal coefficients are not identically
+zero, by irreducibility on \(H_F\). Their valuations have finite
+integer minima \(B,C\) with \(B+C\ge1\).
+Conjugating by \(\operatorname{diag}(\varpi^{-B},1)\)
+retains the diagonal mark and makes every \(b_h\) integral,
+some a unit, and every \(c_h\) an element of \(\mathfrak m\).
+Consequently in this single basis
+\[
+ \overline{r(h)}=\begin{pmatrix}1&\bar b_h\\0&\bar\xi(h)\end{pmatrix},
+ \qquad h\in H_F,\qquad \bar b_h\ne0\text{ for some }h.
+\]
+Only stability on \(H_F\) is needed below.
+
+\paragraph{Symplectic induction and the mark.}
+Set \(\mu=\epsilon^k\xi\phi\) on \(G_{\mathbb Q}\); it extends
+\(\det r\). On \(G_F\), \(\bar\mu=\bar\nu\).
+Choose square roots \(a,b\) of the two marked eigenvalues in the
+order above, as follows. The first has the unique root reducing
+to \(\bar\chi_3(s)=\pm1\) by Hensel's lemma; call it \(a\).
+Take \(b=\mu(s)/a\). The determinant identity gives the other
+square root, reducing to \(\bar\chi_0(s)\).
+Both are units and \(ab=\mu(s)\).
+
+In the ordinary two-coset realization \(I=\operatorname{Ind}_H^{G_{\mathbb Q}}r\)
+we may use the matrices
+\[
+ I(h)=\operatorname{diag}(r(h),r(s^{-1}hs)),\qquad
+ I(s)=\begin{pmatrix}0&\operatorname{diag}(a^2,b^2)\\1_2&0\end{pmatrix}.
+\]
+The coset relation \(I(s)^2=I(s^2)\) and conjugation by \(s\)
+verify the representation law. With \(J_2=\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)\),
+these matrices preserve \(J_2\oplus abJ_2\) up to multiplier \(\mu\).
+For the fixed change of basis
+\[
+ P=\begin{pmatrix}0&a&0&a\\ b&0&-b&0\\
+                   0&-1&0&1\\1&0&1&0\end{pmatrix},\qquad
+ J=\begin{pmatrix}0&0&0&1\\0&0&1&0\\0&-1&0&0\\-1&0&0&0\end{pmatrix},
+\]
+one has \(P^t(J_2\oplus abJ_2)P=-2abJ\).
+The determinant of \(P\) is a unit, since \(2,a,b\) are units.
+Thus \(R=P^{-1}IP\) has symplectic multiplier \(\mu\) and
+\(R(s)=\operatorname{diag}(b,-a,-b,a)\), with precisely the
+required residual order.
+
+For \(h\in H\), set \(A=r(h), B=r(s^{-1}hs)\), \(\gamma=b/a\).
+Then \(R(h)=M_\gamma(A,B)\), where, with zero-based indices,
+\[
+2M_\gamma(A,B)=
+\begin{pmatrix}
+ A_{11}+B_{11}&A_{10}/\gamma-B_{10}&B_{11}-A_{11}&A_{10}/\gamma+B_{10}\\
+ \gamma A_{01}-B_{01}&A_{00}+B_{00}&-\gamma A_{01}-B_{01}&A_{00}-B_{00}\\
+ B_{11}-A_{11}&-A_{10}/\gamma-B_{10}&A_{11}+B_{11}&-A_{10}/\gamma+B_{10}\\
+ \gamma A_{01}+B_{01}&A_{00}-B_{00}&-\gamma A_{01}+B_{01}&A_{00}+B_{00}
+\end{pmatrix}.
+\]
+In particular for \(h\in H_F\) it is integral and reduces to
+the prescribed diagonal plus entries in positions
+\((1,0),(1,2),(3,0),(3,2)\). This is precisely \(v_V\).
+The same holds on the other coset of \(H_F\) in \(G_F\),
+by multiplication by the marked diagonal matrix.
+At a point with \(\bar A_{01}\ne0\), either
+\(\gamma\bar A_{01}-\bar B_{01}\ne0\), or
+\(\gamma\bar A_{01}+\bar B_{01}\ne0\); in the latter case both
+\((1,2)\) and \((3,0)\) are nonzero. This proves the required
+entry alternative.
+
+Since \(\nu/\mu\) is a principal-unit character on \(G_F\),
+it has a unique square root \(\delta:G_F\to1+\mathfrak m\).
+Indeed squaring is a continuous automorphism of \(1+\mathfrak m\)
+for odd \(\ell\), by Hensel's lemma and uniqueness, so the
+square root is itself a continuous character. Set
+\(Q_r=\delta R|_{G_F}\). It has the exact multiplier \(\nu\)
+and unchanged residual support and mark. More explicitly, for
+\(d=e+1-k\),
+\[
+ \delta^2=\epsilon^d\omega^{-1}\psi\phi^{-1}.
+ \tag{1}\label{eq:seed-II-twist}
+\]
+If \(g\in T.\mathrm{fr}(\varnothing).N\), it is inertia away
+from \(\ell\) with trivial original residual representation.
+Then \(\phi(g)=1\), \(\epsilon(g)=\omega(g)=1\),
+\(\psi(g)=1\) by \(\texttt{Ok.kb}\), and \(\xi(g)=1\)
+since its reduction is one and it has order prime to \(\ell\).
+Both inducing matrices are the identity by the exact tame
+inertia assertion, and (1) gives \(\delta(g)=1\).
+This verifies the original killing condition, not just its reduction.
+
+\paragraph{Integral local flags.}
+For each original \(v\) above \(\ell\), its decomposition group
+is in \(H_F\). One inducing factor has a stable line with
+residual character \(\bar\xi\), the other with residual
+character \(1\). In the marked lattice the first line admits
+a primitive vector \((u,1)^t\), \(u\in\mathcal O\), and the
+second a primitive vector \((1,w)^t\), \(w\in\mathfrak m\).
+Indeed intersect each line with its lattice and take a primitive
+vector. On an element of the local group where \(\bar\xi\ne1\),
+the upper triangular reduction has distinct diagonal values.
+Its \(\bar\xi\)-eigenline has nonzero second coordinate,
+whereas its \(1\)-eigenline is the first coordinate line.
+This proves the assertions for the two primitive vectors
+without changing the marked basis.
+
+Define the lower unipotent matrix
+\[
+ N(p,q,r,z,f)=
+ \begin{pmatrix}1&0&0&0\\p&1&0&0\\q&z&1&0\\r&f&-p&1\end{pmatrix}.
+\]
+It is symplectic if \(f+pz=q\). Use the following two charts:
+\[
+\begin{array}{c|ccccc}
+ &p&q&r&z&f\\ \hline
+ A\text{ has the }\bar\xi\text{-line}
+ &\gamma u&-1&\gamma u&
+ -2w/(1+\gamma uw)&-(1-\gamma uw)/(1+\gamma uw)\\
+ B\text{ has the }\bar\xi\text{-line}
+ &-u&1&u&-2w/(\gamma+uw)&(\gamma-uw)/(\gamma+uw).
+\end{array}
+\]
+Their denominators are units. All entries are integral,
+\(z\in\mathfrak m\) and \(q=\pm1\), and the symplectic identity
+holds. Denote the chosen matrix by \(N_v\).
+Here is a verification of the flag calculation. A matrix with
+eigenline \((u,1)^t\), line character \(x\), quotient character
+\(x'\), has shape
+\[
+ \begin{pmatrix}x'+u j&(x-x'-u j)u\\j&x-ju\end{pmatrix}.
+\]
+For \((1,w)^t\) and characters \(y,y'\) its shape is
+\[
+ \begin{pmatrix}y-iw&i\\(y-y'-iw)w&y'+iw\end{pmatrix}.
+\]
+Substitution in the displayed formula for \(M_\gamma\)
+gives \(N_v^{-1}M_\gamma N_v\) upper triangular with diagonal
+\((x,y,y',x')\) in both charts (where \(x\) always denotes
+the character of the \(\bar\xi\)-line).
+These identities are over the indicated localization of the
+integer polynomial ring. In particular no lifting of a residual
+flag at the expense of integrality is used. Multiplication by
+\(\delta\) retains the flag. Its reductions are ordered as
+\((\bar\xi,1,\bar\xi,1)\), and its inertia exponents before the
+twist are \(m=(k+t,k,0,-t)\).
+The reductions of the lower charts have support in \(q_Q\)
+and entry \((2,0)=\pm1\). This proves \(\texttt{InV}\), including
+its nonvanishing condition at every original place.
+
+To check the original \(\mathrm{Mu}\) condition, an element
+\(g\in\mathrm{Mu}_v\) has an \(\ell\)-power in the closed
+commutator subgroup of \(D_v\). The unramified quotient is
+\(\widehat{\mathbb Z}\), which has no nontrivial finite-order
+element, so \(g\in I_v\). Also \(\epsilon(g)=1\), because
+\(\mathbb Z_\ell^\times\) has no nontrivial \(\ell\)-power torsion
+for odd \(\ell\). By \(\texttt{Ok.ineL}\), \(\bar\psi(g)=1\).
+The depth condition makes \(\psi|_{G_F}\) of order prime to
+\(\ell\), so \(\psi(g)=1\), and (1) gives \(\delta(g)=1\).
+All four diagonal flag characters are therefore one on
+\(\mathrm{Mu}_v\).
+
+Together these give the literal \(\texttt{IsPair}\) and
+\(\texttt{Res}\) conditions of the original frame, since
+\(v_V\subset n_P\), with continuity over the enlarged DVR.
+The local flags are retained as part of this same pair.
+
+\paragraph{Irreducibility on the cyclotomic kernel.}
+Let \(U=G_L\cap\ker\epsilon\) (the source's \(T.G'\)).
+First \(\phi|_U\ne1\). Otherwise \(\phi|_{G_L}\) factors through
+the compact subgroup \(\epsilon(G_L)\subset\mathbb Z_\ell^\times\).
+A continuous quadratic character of its pro-\(\ell\) subgroup
+is trivial. Hence \(\bar\phi|_{G_L}\) is trivial on
+\(\ker\omega\cap G_L\). It permutes the four residual characters
+there, since \(\bar\phi=\bar\Psi=\bar\Psi^{-1}\). The precise
+\(\texttt{Ok.g3'}\) condition would imply \(\phi|_{G_L}=1\),
+contrary to \(\texttt{Ok.g3}\) for \(w_{\rm Ps}\).
+Thus \(k_0\not\subset L\), and \(U\) meets the outside coset.
+
+Put \(V=H\cap G_L\), an open subgroup of \(H\).
+For each of \(r,r^s\), the identity component of the Zariski
+closure of its image on \(V\) acts irreducibly: its inverse image
+is open, and the mixed seed is irreducible on every open
+subgroup. A connected algebraic subgroup of
+\(\mathrm{GL}_2\) acting irreducibly contains \(\mathrm{SL}_2\).
+For the unipotent radical fixes a nonzero subspace, which by
+normality is invariant, hence the radical is trivial; a
+connected reductive subgroup acting irreducibly in dimension two
+cannot be a torus, and its derived group contains
+\(\mathrm{SL}_2\). The closure of the image of the commutator
+of \(V\) therefore contains \(\mathrm{SL}_2\). Since that
+commutator lies in \(V\cap U\), the two representations on
+\(V\cap U\) are irreducible.
+
+They cannot be isomorphic there. If they were, conjugate one
+to agree on \(V\cap U\). This is a normal subgroup of \(V\).
+Schur's lemma then shows that on \(V\) the representations
+differ by a scalar character; their determinants agree,
+so this character has square one. Hence their characteristic
+polynomials agree on every square from \(V\).
+Choose a nonzero power of the original \(\ell\)-inertia element
+with cyclotomic value of infinite order (from the original
+good datum), lying in \(V\); it exists by finite index.
+On its square the two inertia eigenvalue multisets are
+\[
+ \{\epsilon^{k+t},\epsilon^{-t}\},\qquad
+ \{\epsilon^k,1\}.
+\]
+They differ, as \(\epsilon\) has infinite order and \(k,t>0\).
+This contradiction proves nonisomorphism. Now the restriction
+of the induction to \(V\cap U\) is the direct sum of these two
+nonisomorphic simple modules. A proper nonzero invariant
+subspace for \(U\) would have to be one of the summands,
+but an element of \(U\) outside \(H\) interchanges them.
+Thus \(R|_U\), and hence \(Q_r|_U\), is absolutely irreducible.
+
+\paragraph{The cuspidal attachment and its local bounds.}
+Write \(M=k_0L\). The extension \(M/k_0\) is abelian, and
+\(M/L\) is quadratic. Take the Hilbert cuspidal representation
+in the source normalization of Section~\ref{sec:mixed-hilbert-seed}
+and base change it to \(M\) along a cyclic tower. It remains
+cuspidal: at each step a nontrivial self-twist (the obstruction
+in cyclic base change) would, by the unramified characteristic
+polynomials, Chebotarev and semisimplicity, give a nontrivial
+self-twist of the corresponding Galois representation. On the
+kernel of the twisting character that representation remains
+irreducible, so Schur's lemma forces the character to be trivial.
+The base change to \(M\) is not invariant under
+\(\operatorname{Gal}(M/L)\); the two embeddings above each
+embedding of \(L\) restrict to different embeddings of \(k_0\)
+and have distinct weight multisets.
+
+Use cyclic automorphic induction of this cuspidal representation
+to \(L\). It is cuspidal by the noninvariance just proved.
+These applications use Arthur--Clozel's cyclic base change and
+automorphic induction, or Henniart, \emph{Induction automorphe
+globale pour les corps de nombres}, Bull.\ Soc.\ Math.\ France
+140 (2012), Theorems 1--3. The finite local compatibility is
+Theorems 4--5 there, and the infinite-place compatibility is
+the concluding remark of Section 3.7. All these results may
+be applied after unitary normalization and then untwisted.
+
+Use geometric Frobenius for the attachment: the normalized
+rank-two parameters are the eigenvalues of geometric Frobenius
+divided by \(q^{1/2}\). The normalized rank-four parameters
+of the induction therefore require the common extra twist
+\(|\det|\), dividing its parameters by \(q\).
+At a split unramified prime the induced characteristic polynomial
+is the product of the two rank-two polynomials; at an inert
+unramified prime it is \(\det(X^2-r(g^2))\). The second formula
+follows by the two-coset realization and accounts for both square
+roots. These identities verify the rank-four attachment, with
+the factor \(q^{3/2}\) in the source's definition.
+At infinity the multiset in this same normalization is
+\(\{k+t,k,0,-t\}+3/2\), which is regular algebraic.
+Denote the resulting cuspidal representation by \(\Pi\).
+
+We also need the full finite-place window, not merely its
+unramified version. The starting Hilbert packet has holomorphic
+weights \(k+2t+1,k+1\), at least two and of the same parity.
+By Blasius, \emph{Hilbert modular forms and the Ramanujan
+conjecture} (arXiv:math/0511007), Theorem 1, its unitary
+normalization is tempered at every finite place.
+Its local types are principal series with distinct inertia
+characters at its conductor primes, and spherical elsewhere,
+including at \(\ell\), by the mixed Hilbert construction.
+The extension \(M/L\) is unramified at finite places by
+\(\texttt{Two.unr}\) and split above \(2,\ell\).
+Cyclic local base change preserves the principal-series
+parameter description. At split places the local induction
+takes the sum of two such parameters; at nonsplit places the
+starting parameter is unramified (the conductor is over \(2\))
+and induction along an unramified quadratic extension is again
+a sum of unramified characters. All are unitary after the
+single common global normalization. Thus after the final norm
+twist there is one real number \(z_0\) such that every local
+degree-one support character at a finite place of residue size
+\(q\) has absolute value \(q^{z_0}\) on a uniformizer.
+This lies strictly between \(q^{z_0-1/2}\) and
+\(q^{z_0+1/2}\). This is the literal \(\texttt{AllWin}\)
+condition. It holds for the ramified places as well, and uses
+no unknown rank-four Ramanujan assertion.
+
+Finally take \(\kappa=\delta^{-1}|_{G_L}\).
+Then \((Q_r|_{G_L})\otimes\kappa=R|_{G_L}\) is attached
+to \(\Pi\). By depth, \(\psi|_{G_F}\) has finite order dividing
+some positive integer \(m_0\) prime to \(\ell\). Set
+\[
+ h_i=2m_i+d,\qquad a_0=-d,\qquad N_0=2(\ell-1)m_0 .
+\]
+On the open subgroup of \(G_F\) killing \(\omega,\psi\),
+equation (1) and the exact inertia characters prove
+\(\texttt{Wts}(h)\), since \(\phi\) is trivial on local inertia.
+The consecutive gaps of \(h\) are twice integers at least two;
+\(a_0+h_0=2(k+t)\) is even. Moreover
+\((\kappa^2\epsilon^{-a_0})^{N_0}=1\) on \(G_L\),
+again by (1). The twist is continuous and \(N_0>0\).
+These are all the clauses of \(\texttt{IsSeedAlt}\).
+This completes the construction of the original Case II
+seed pair over one finite coefficient extension.
+\end{proof}
+
+The construction separates three issues: a cuspidal seed in rank
+two, the marked integral symplectic induction, and the transport
+of automorphy from the resulting rank-four seed to arbitrary
+points. The theorem proves the second and the seed's own
+automorphic attachment. The last issue still requires the
+residual linkage and the rank-four potential-modularity ideal
+with its arithmetic point and characteristic-prime propagation
+properties. No dimension estimate on that ideal is a consequence
+of the existence of the seed.

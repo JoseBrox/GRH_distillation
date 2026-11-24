@@ -308,3 +308,5 @@ total remainder estimates remain open. Proofs and exact scope are in the
 [RH](../notes/rh-specialization.md), [averaging](../notes/averaged-error-budget.md)
 and [geometric](../notes/geometric-core-lower-bound.md) notes. The
 [short guide](../paper/guide/main.pdf) explains their roles in the proof.
+
+- [Case II marked symplectic induction](../notes/rh-symplectic-induction.md): full original SeedIIAlt supplier; arbitrary-point propagation remains open.
