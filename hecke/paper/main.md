@@ -503,8 +503,8 @@ local equivariance and unitary norm data. The same note
 constructs a local divisor patch realizing the good-prime
 hinges with controlled rounding.
 
-These are actual local objects, but not a global arithmetic
-bound. The patch merely imposes the desired divisibilities;
+These local objects alone do not give a global arithmetic
+bound; the differential construction below goes beyond them. The patch merely imposes the desired divisibilities;
 its source-degree loss is exactly its local index. The global
 label-sensitive theta maps must produce those divisibilities
 while retaining the parent's nonvanishing, degree and norm
@@ -556,6 +556,105 @@ full local restriction maps verify that no torsion is lost
 in passage from residual to integral strict groups.
 The actual conductor threshold is essential. This does not
 bound the lower dyadic layers, or the remaining odd primes.
+
+### Actual cubic coefficient theta operators
+
+The [differential construction](../notes/cubic-differential-theta-maps.md)
+uses the invariant derivation $D_j=2y\partial_x+3x^2\partial_y$
+on $E_j:y^2=x^3+2^{2j}$. On the actual lattice of sections of
+$O(m[0])$, it maps to the next pole order. A polynomial
+$P(D_j)$ is a global equivariant integral operator, with
+the natural character on its coefficient space. At a good
+degree-one prime $v$ over $p$, the Hasse invariant gives
+
+
+```math
+D_j^p=A_{0,p}\bar\omega^{jr_v}D_j\pmod v,
+\qquad A_{0,p}=\binom{(p-1)/2}{(p-1)/3}\not\equiv0\pmod p .
+```
+
+
+Here $r_v$ is the actual cubic Frobenius label. Thus
+$D_j^p-a_p\omega^sD_j$ is divisible by $v$ exactly for
+the matching label $s=jr_v$, with powers supplying higher
+divisibilities. Its coefficient space gives the exact
+simultaneous index, where $B_{j,n}$ imposes reduction-zero
+on the maps from pole order $2n$ to $3n$ at all good $v$
+above $p\le n$:
+
+
+```math
+\log\#(B_{0,n}/(B_{0,n}\cap B_{1,n}))
+=2\sum_{\substack{p\le n,\ p\equiv1(3)\\
+2^{(p-1)/3}\ne1\bmod p}}
+\min(n+1-p,p-1)\log p .
+```
+
+
+Both facts follow on the actual section lattices from the
+p-Lie relation and monic local polynomial kernels.
+With canonical theta metrics there is the uniform estimate
+
+
+```math
+\|P(D_j)\|_{2,m\to m+n}
+\le C(m+1)\sum_{k=0}^n |c_k| B^{n-k}C^k\frac{(m+k)!}{m!},
+\qquad P(T)=\sum_{k=0}^n c_kT^k .
+```
+
+
+The [coefficient-to-theta map](../notes/cubic-theta-coefficient-interface.md)
+is the rank-three trace map
+$f\mapsto\operatorname{Tr}(f(z)(x+z^2)^2)$ from the
+cubic torsor to the even fourth-power theta space.
+Its images of $1,z,z^2$ are $3x^2,12x,12$, hence it
+is an integral isomorphism away from 6 with fixed
+archimedean singular values. It supplies the actual
+cubic coefficient representation; the higher-rank
+p-Lie formula describes its label-sensitive twist.
+For any prescribed monic degree $a$ and local exponents
+$h_v$ with $p_vh_v\le a$, CRT supplies one equivariant
+monic global operator with all the simultaneous matched
+divisibilities, instead of a product whose order grows
+as the sum of the local orders. Its coefficient height
+is bounded by half the log norm of the prescribed
+divisor plus a fixed constant. This pays for the entire
+divisor and does not supply the desired critical-scale
+saving. The original normalized global period chain
+has not yet been identified with these maps.
+
+### Additional cubic Selmer suppliers
+
+The [fixed-conductor joint window](../notes/cubic-fixed-conductor-selmer-window.md)
+combines high-dyadic 3-primary vanishing with a fixed-field
+cyclotomic generator bound for the remaining low dyadic layers.
+It controls both cubic 3-primary sectors at every fixed odd
+conductor on the same windows as the moving 2-primary estimate.
+The one-sign auxiliary prime may be chosen in a fixed
+Chebotarev class, a 3-cycle with $q\equiv3\bmod8$, reducing
+the 2-primary generator bound from 48 to 8. The remaining
+moving low-dyadic 3-primary groups are not covered.
+
+The [new polarized integral model](../notes/cubic-polarized-selmer-model.md)
+uses the diagonal $(a\lambda^{-1},1,a^{-1}\lambda^{-1})$,
+$a=\varepsilon^e\rho^N$. Its adjacent lower root pair is
+the genuine induced cubic module, not a scalar twist of
+the old adjoint. The strict torsion injects into the
+marked conormal dual at each modulus. The
+[cohomological calculation](../notes/cubic-frame-cohomology.md)
+gives the exact high-dyadic relative dimension defects
+$(0,-1,0,1,1)$, rational nonpositive-weight rigidity
+and residual negative-corner vanishing when
+$2^b\ge24\ell(\ell+1)^2$.
+The fixed-Eisenstein-field spectral argument gives a
+polynomial trace-resultant bound conditional on the
+actual finite-ring/point comparison. At reducible
+points the new cross-block condition involves the cubic
+twist of the rank-two representation, a Rankin--Selberg
+Selmer problem not covered by the parent's Dirichlet Kato
+argument. The uniform new odd-prime lengths, automorphy,
+point comparison and critical global geometric estimate
+are still open.
 
 ## 8. An independent global interpolation construction
 

@@ -55,8 +55,21 @@ The arithmetic target now uses only [good rational primes and a biased
 cubic top set](hecke/notes/cubic-good-prime-comparison.md).
 An [actual cubic torsor and equivariant theta family](hecke/notes/cubic-torsor-realization.md)
 realize the local Frobenius labels without a non-CM endomorphism field.
-The global label-sensitive maps, quantitative divisor/norm bounds and
-new odd-prime Selmer estimates remain open.
+Actual [cubic differential theta maps](hecke/notes/cubic-differential-theta-maps.md)
+now supply the Hasse-invariant Frobenius divisibilities, an exact
+split-sensitive simultaneous index and explicit canonical metric bounds.
+The [coefficient-to-theta isomorphism](hecke/notes/cubic-theta-coefficient-interface.md)
+and bounded-order global operators realize both cubic coefficients;
+their CRT height still pays for the divisor.
+The [fixed-conductor Selmer window](hecke/notes/cubic-fixed-conductor-selmer-window.md)
+controls all fixed-odd-conductor cubic sectors at 3 and reduces the
+one-sign 2-primary generator bound to 8.
+The [polarized cubic deformation frame](hecke/notes/cubic-polarized-selmer-model.md)
+and [cohomology count](hecke/notes/cubic-frame-cohomology.md)
+supply the integral torsion injection, exact relative dimensions and
+conditional polynomial spectrum at odd primes. The critical-scale
+global degree/norm estimate, moving low-dyadic sectors at 3 and
+the new automorphy/rigidity-based length comparison remain open.
 
 A new independent global construction uses
 [integer-valued polynomial lattices](hecke/notes/global-interpolation-lattices.md).

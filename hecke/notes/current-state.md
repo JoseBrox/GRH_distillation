@@ -80,7 +80,9 @@ gives a polynomial integral splitting error at 3 (and optional
 [high-dyadic 3-primary vanishing](cubic-three-primary-vanishing.md)
 now deletes every sector with b>=8, 2^b>=192f at all twist
 indices, via residual Bernoulli units and Kummer reflection.
-Lower dyadic layers and genuine sectors at primes >=5 remain.
+The later fixed-conductor window controls the lower dyadic
+layers with fixed odd conductor; moving low-dyadic layers and
+the quantitative length estimates at primes >=5 remain.
 
 The [good-prime comparison](cubic-good-prime-comparison.md) removes
 all higher rational powers and bad first powers after an exact
@@ -102,18 +104,52 @@ controlled rounding, but yields no source-degree lower bound.
 Tensor duplication preserves the old norms and cannot detect
 the cubic term by itself.
 
-**Next direct attacks:** bound the relative saturated covolume of
-the actual global derivative lattices at critical scale; in the
-CM route construct globally controlled,
-label-sensitive integral maps on these orbit bundles, not
-merely an equivariant repeat of the old maps or arbitrary
-local divisor modifications. Prove their divisibilities give
-the good-prime comparison and retain the parent's nonvanishing,
-degree and centered norm estimates on the same data. At odd
-coefficient primes extend the parent's fixed-Eisenstein-field
-Selmer/automorphic count to the new twisted sectors, using the
-integral comparison at 3. The genuine odd-prime bounds and
-global arithmetic supplier remain open.
+## Actual equivariant maps and cubic frame (latest checkpoint)
+
+The [differential maps](cubic-differential-theta-maps.md) are actual
+integral maps of global section lattices on the cubic twists:
+the Hasse-invariant relation encodes the cubic residue label
+in the p-th invariant derivative, and its powers realize
+matched divisibilities. They give a precise simultaneous-index
+formula and canonical Hermitian norm inequalities. The
+[theta coefficient interface](cubic-theta-coefficient-interface.md)
+identifies the three-dimensional torsor with the even fourth-power
+theta space away from 6 (determinant 432), gives the higher-rank
+p-Lie twist and constructs one monic global operator of the
+prescribed order by coefficient CRT. Its coefficient height
+pays for the full prime divisor. It is not the original
+TC/ColIn chain and gives no critical-scale saving. The
+[exact finite verification](../certificates/cubic-theta-check.json)
+checks 228 curve/prime Hasse identities (two generators each)
+and twelve actual stacked ranks.
+
+The [joint fixed-conductor Selmer window](cubic-fixed-conductor-selmer-window.md)
+covers the entire cubic 3-primary contribution with fixed odd
+conductor, including every auxiliary-untwisted dyadic layer,
+simultaneously with the moving 2-primary groups. The one-sign
+Chebotarev selection lowers their generator bound to 8 (or 16
+with the stronger progression). At primes at least 5 the
+[new polarized frame](cubic-polarized-selmer-model.md)
+has the two actual cubic coefficients in adjacent lower roots.
+It supplies the marked integral conormal injection and
+conditional fixed-field Frobenius spectrum. Its
+[cohomological count](cubic-frame-cohomology.md)
+proves the exact high-dyadic defects (0,-1,0,1,1), rational
+diagonal rigidity and residual corner vanishing with
+2^b >= 24 ell(ell+1)^2.
+
+**Next direct attacks:** prove the collective same-map
+degree/norm saving for the simultaneous cubic operators or
+its coupling to the actual parent period chain. Prove the
+new ring's finite-point counting comparison and global
+automorphy, in particular the cubic cross-block finite
+Selmer rigidity at reducible points. The conditional
+polynomial spectrum already handles the global size
+once those inputs are supplied. Control the moving
+low-dyadic 3-primary sectors and remaining low-dyadic
+resonant odd primes. Independently the relative saturated
+covolume of the global derivative lattices is still a
+critical-scale quantitative target. All these are open.
 
 The elementary relative split-prime target E(x)-3C(x) remains
 available independently. H07I, the infinite-order phase estimate,

@@ -488,3 +488,14 @@ chain and automorphic period maps have been
 identified with it. No critical-scale
 prime-discrepancy estimate, global Selmer length
 bound, or complex-zero exclusion is claimed.
+
+## Reproducible checks
+
+Run `python hecke/scripts/check_cubic_theta.py` (NumPy and SymPy).
+The [certificate](../certificates/cubic-theta-check.json) records
+228 curve/prime cases, checking the p-Lie identity on both x and y,
+and 12 exact stacked-matrix rank tests. These are finite consistency
+checks, not proofs of a critical-scale estimate. The
+[coefficient-to-theta interface](cubic-theta-coefficient-interface.md)
+subsequently supplies monic simultaneous operators of the
+prescribed order, with an explicit CRT height cost.

@@ -175,3 +175,35 @@ with Q=9, together with elementary abelian class field theory,
 Kummer duality and the CM unit argument proved there. It
 retains the original strict local kernels and proves integral
 vanishing only under the displayed conductor threshold.
+
+## Actual cubic theta operators and polarized frame
+
+The [differential map theorem](../notes/cubic-differential-theta-maps.md)
+uses the classical p-Lie/Hasse identity for the invariant
+vector field; see Katz--Mazur, *Arithmetic Moduli of Elliptic
+Curves*, (12.4.1.3), p. 354. The coefficient formula uses
+Cartier on the displayed Weierstrass equation. All polynomial
+kernel and local-to-global index arguments are proved in the
+note. The [theta coefficient interface](../notes/cubic-theta-coefficient-interface.md)
+uses finite etale trace, the explicit two-torsion divisor,
+coefficient CRT and the proved canonical metric estimate.
+Neither invokes the parent's final norm inequality for a
+different map.
+
+The [fixed-conductor Selmer window](../notes/cubic-fixed-conductor-selmer-window.md)
+uses Ferrero--Washington only for the fixed abelian base,
+the proved cyclic-prime extension lemma, and the parent's
+[cyclotomic common intervals](../../paper/shared/rh-dyadic-host-frame.tex)
+and determinant/coarse K-theory suppliers as specified there.
+Fixed-field Chebotarev restricts candidates to a positive-density
+class; the polynomial companion theorem supplies selection.
+
+The [polarized model](../notes/cubic-polarized-selmer-model.md)
+and [dimension count](../notes/cubic-frame-cohomology.md)
+use local and global Euler characteristics, Poitou--Tate,
+Shapiro, the parent's [negative-weight rigidity](../../paper/shared/selmer-negative-weight-rigidity.tex),
+[Bernoulli unit theorem](../../paper/shared/selmer-dyadic-twist-vanishing.tex)
+and conditional trace-count mechanism. The cubic cross-block
+Rankin--Selberg rigidity has not been proved or imported as a
+theorem; the parent automorphic premises are not assumed for
+the new frame. Exact finite verification is recorded separately.

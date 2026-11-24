@@ -47,8 +47,21 @@ removes higher powers and ramified primes from the required
 arithmetic supplier and permits a simpler top-set bias.
 The [cubic torsor](../notes/cubic-torsor-realization.md) realizes
 the local Frobenius and normalized orbit theta data on the retained
-CM host. The global label-sensitive maps, their quantitative
-bounds and new odd-prime Selmer estimates are still missing.
+CM host. The [actual equivariant differential maps](../notes/cubic-differential-theta-maps.md)
+give Frobenius-sensitive integral divisibilities, an exact
+simultaneous index and canonical metric bounds. The
+[theta coefficient isomorphism](../notes/cubic-theta-coefficient-interface.md)
+realizes the full torsor and correct-order simultaneous operators.
+A collective centered degree/norm estimate remains missing.
+The [fixed-conductor window](../notes/cubic-fixed-conductor-selmer-window.md)
+controls all fixed-odd-conductor cubic sectors at 3 and the
+one-sign moving 2-primary groups jointly. The
+[polarized rank-three model](../notes/cubic-polarized-selmer-model.md)
+and [frame count](../notes/cubic-frame-cohomology.md)
+supply actual integral conormal injection, local dimensions,
+diagonal rigidity and conditional polynomial spectrum.
+The automorphy/rigidity-based length comparison and remaining
+moving sectors are open.
 The [one-sign polynomial companion](../notes/polynomial-one-sign-companion.md)
 removes QRH from a replacement analytic block, and the
 [high-dyadic 3-primary theorem](../notes/cubic-three-primary-vanishing.md)

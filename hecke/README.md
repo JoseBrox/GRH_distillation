@@ -66,9 +66,21 @@ handles the integral splitting error at 3; its genuine twisted
 lengths remain open. The cubic field cannot be a CM host, but
 [actual polarized twists and an equivariant three-line theta family](notes/cubic-torsor-realization.md)
 realize the required local Frobenius labels on the old CM geometry.
-Global label-sensitive maps, their quantitative degree/divisibility
-and norm bounds, and the remaining odd-prime Selmer estimates
-are not yet supplied.
+Actual [cubic differential theta maps](notes/cubic-differential-theta-maps.md)
+now supply the Hasse-invariant Frobenius divisibilities, an exact
+split-sensitive simultaneous index and explicit canonical metric bounds.
+The [coefficient-to-theta isomorphism](notes/cubic-theta-coefficient-interface.md)
+and bounded-order global operators realize both cubic coefficients;
+their CRT height still pays for the divisor.
+The [fixed-conductor Selmer window](notes/cubic-fixed-conductor-selmer-window.md)
+controls all fixed-odd-conductor cubic sectors at 3 and reduces the
+one-sign 2-primary generator bound to 8.
+The [polarized cubic deformation frame](notes/cubic-polarized-selmer-model.md)
+and [cohomology count](notes/cubic-frame-cohomology.md)
+supply the integral torsion injection, exact relative dimensions and
+conditional polynomial spectrum at odd primes. The critical-scale
+global degree/norm estimate, moving low-dyadic sectors at 3 and
+the new automorphy/rigidity-based length comparison remain open.
 
 A second, independent global arithmetic route now constructs
 [integer-valued polynomial lattices](notes/global-interpolation-lattices.md)
@@ -83,8 +95,8 @@ Selmer theory, but is open. The
 remove the QRH input from a replacement cubic analytic block;
 [high-dyadic 3-primary vanishing](notes/cubic-three-primary-vanishing.md)
 deletes the cubic sectors with 2^b >= 192f and b >= 8, where
-f is the actual odd conductor. The other odd-prime estimates
-and original global label-sensitive maps remain open.
+f is the actual odd conductor. The remaining moving low-dyadic 3-primary and odd-prime estimates,
+and the sharp global degree/norm comparison, remain open.
 
 The [progress inventory](blueprint/progress.md) has 6/9 written
 reductions or cited inputs; the former open node H07 was split

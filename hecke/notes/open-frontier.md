@@ -85,7 +85,8 @@ controls the extra integral projection error at 3.
 The [high-dyadic 3-primary theorem](cubic-three-primary-vanishing.md)
 proves integral vanishing of both cubic signs at all twist indices
 when b>=8 and 2^b>=192f (f is the actual odd conductor).
-The remaining genuine cubic odd-prime lengths are open.
+The bounds below distinguish the now-controlled fixed-conductor
+sectors from the remaining moving odd-prime lengths.
 
 The [good-prime reduction](cubic-good-prime-comparison.md) supplies
 an exact centered restriction of the arithmetic quantity to
@@ -101,11 +102,47 @@ local divisor patch has negligible integer rounding on
 the stated candidate thin profile, but arbitrary patching
 does not give a source-degree lower bound.
 
-The first missing supplier is now a *global* label-sensitive
-family of theta/divisor maps with these actual local data,
-compatible nonvanishing, degree/divisibility and norm bounds,
-and the remaining odd-prime Selmer control. A scalar twist
-or tensor repetition of the old maps cannot supply this.
+The [actual differential theta maps](cubic-differential-theta-maps.md)
+construct equivariant integral operators on the cubic twists'
+even-level theta spaces. Their Hasse-invariant relation makes the
+divisibility depend on the actual cubic Frobenius. The simultaneous
+relative index records a truncated prime discrepancy exactly up to
+O(x) before division by x. Canonical Hermitian norm bounds hold on
+the same maps. The [coefficient interface for theta sections](cubic-theta-coefficient-interface.md)
+embeds the whole cubic torsor integrally into the even fourth-power
+theta space away from 6. It also gives the actual higher-rank
+p-Lie twist and monic simultaneous differential operators of
+the prescribed order. The CRT coefficient height pays for the
+whole imposed divisor, so it cannot imply the centered saving.
+
+**Remaining theta supplier:** prove the collective degree/norm
+comparison for an actual family of these maps, or identify their
+Frobenius-sensitive coupling with the parent's normalized integral
+theta chain and final period operators and verify its bounds there.
+The required estimate is still (11) of the relative comparison
+or the one-sided normalized index discrepancy in Section 5 of
+the differential note, with loss tending to zero. A tensor product,
+individual operator norm, or local-to-global CRT existence theorem
+does not establish it.
+
+**Remaining Selmer supplier:** the
+[fixed-conductor window](cubic-fixed-conductor-selmer-window.md)
+covers all cubic 3-primary sectors with fixed odd conductor and
+the simultaneous moving 2-primary term (rank bound 8 in the
+one-sign Chebotarev selection, 16 if the stronger progression is
+required). The moving low-dyadic 3-primary sectors remain.
+At primes at least 5 the
+[polarized integral model](cubic-polarized-selmer-model.md)
+and [frame cohomology](cubic-frame-cohomology.md) supply exact
+adjacent-root coefficients, finite-modulus conormal injection,
+ordinary marks, high-dyadic relative dimensions, rational
+diagonal rigidity and explicit residual corner vanishing.
+The conditional trace-resultant bound is polynomial in N and e.
+Prove its actual finite-ring/point-count comparison, including
+automorphy and rigidity of the cubic cross-block Rankin--Selberg
+finite Selmer terms; the original Dirichlet Kato input does not
+apply to them by substitution. Then bound the remaining low
+dyadic/resonant sectors and assemble the whole weighted product.
 
 For other fixed fields and finite-order target families,
 [general companion selection](general-finite-order-companions.md)

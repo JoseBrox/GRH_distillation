@@ -31,12 +31,17 @@
 | Equivariant three-theta-line family with unit sections; exact local divisor patch | Proved local construction; no global degree estimate | [Torsor, §§3–5](../notes/cubic-torsor-realization.md) |
 | General fixed-field finite-order companion selection, genuine corrections and full dyadic thin family | Proved under parent Dirichlet QRH and classical Hecke density/zero-free inputs | [General companions](../notes/general-finite-order-companions.md) |
 | Independent exact S3 discriminant, local decomposition, Minkowski upper bound and projection determinant | Verified with SymPy 1.14.0 | [Script](../scripts/check_s3_field.py), [record](../certificates/s3-field-check.json) |
-
 | Fixed-progression polynomial-size quadratic companion selection and true corrected sums; uniform thin family | Proved using classical density and quadratic large sieve, no Dirichlet QRH | [One-sign companions, Theorem 1](../notes/polynomial-one-sign-companion.md) |
 | One-sign cubic arithmetic balance with three companions | Proved scalar transfer; new geometry not supplied | [One-sign comparison, §2](../notes/polynomial-one-sign-companion.md) |
 | High-dyadic cubic strict 3-primary groups with dyadic conductor at least 192 times odd conductor | Proved actual integral vanishing for both cubic signs and every twist index | [3-primary vanishing](../notes/cubic-three-primary-vanishing.md) |
 | Global bounded interpolation set, exact divided-difference lattice and integrated prime-count index | Proved over every fixed number field; critical lower bound open | [Global interpolation](../notes/global-interpolation-lattices.md) |
 | Ordinary derivative lattice with square-root-scale normalized error, linear-size stable value/derivative matrices | Proved; relative saturated-covolume lower bound open | [Derivative lattices](../notes/global-derivative-lattices.md) |
 | Exact global value and derivative HNF indices for degrees 3–10 in the S3 field | Verified with SymPy 1.14.0; no asymptotic assertion | [Script](../scripts/check_derivative_lattice.py), [certificate](../certificates/derivative-lattice-check.json) |
+| Actual equivariant differential theta operators, Hasse-sensitive divisibilities, and exact simultaneous split-sensitive index | Proved; critical-scale global degree estimate open | [Differential maps](../notes/cubic-differential-theta-maps.md) |
+| Cubic torsor to even theta section isomorphism; higher-rank p-Lie twist and simultaneous monic operators of fixed order | Proved; CRT height does not save the divisor | [Theta coefficients](../notes/cubic-theta-coefficient-interface.md) |
+| Fixed-odd-conductor cubic 3-primary lengths on joint windows and moving one-sign 2-primary rank bound 8 | Proved with parent cyclotomic bounds, classical density/sieve and Chebotarev | [Joint window](../notes/cubic-fixed-conductor-selmer-window.md) |
+| New polarized rank-three diagonal, strict conormal injection, marks, and spectral count | Model and local injection proved; quantitative length conditional on point comparison | [Cubic frame](../notes/cubic-polarized-selmer-model.md) |
+| High-dyadic relative dimension defects, rational rigidity, residual corner vanishing | Proved under stated conductor conditions | [Frame cohomology](../notes/cubic-frame-cohomology.md) |
+| Exact finite good-prime Hasse and simultaneous operator ranks | 228 curve/prime tests and 12 stacked rank cases; no asymptotic assertion | [Script](../scripts/check_cubic_theta.py), [certificate](../certificates/cubic-theta-check.json) |
 
 No new full Hecke node, target complex-zero exclusion or Lean verification is claimed.

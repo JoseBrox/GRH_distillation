@@ -49,3 +49,14 @@
   is substantive, not a change of norm.
 
 These are obstructions to specific proposed proof steps, not to GRH.
+
+- The bounded-order simultaneous cubic theta operator is obtained
+  by coefficient CRT. Its height allowance pays for the whole
+  imposed prime divisor, so the individual metric norm bound
+  does not imply the critical-scale collective saving. See
+  [theta coefficient interface, Sections 3--4](../notes/cubic-theta-coefficient-interface.md).
+- At reducible points of the actual polarized cubic frame, the
+  cross-block Selmer module is a cubic Rankin--Selberg twist,
+  not a rational Dirichlet twist of the parent rank-two form.
+  The parent's Kato argument cannot simply be substituted; see
+  [polarized model, Section 5](../notes/cubic-polarized-selmer-model.md).
