@@ -13,6 +13,26 @@ cubic-residue/prime form condition and eta-product real-zero exclusion.
 The Masullo-inspired smoothed/trace route remains a fully attributed
 optional alternative.
 
+## Independent global interpolation construction
+
+The [global interpolation theorem](global-interpolation-lattices.md)
+now realizes the integrated prime-ideal count exactly as an
+index of two global polynomial lattices. A bounded O(n) test set
+works simultaneously at every prime (not one simultaneous
+optimal ordering). The
+[ordinary derivative refinement](global-derivative-lattices.md)
+loses only O_E((n+1)^(3/2)) in the integrated index and gives two
+actual linear-size matrices. Their augmented integral sampling
+makes the archimedean Gram determinant penalty O_E(1/n).
+The remaining sufficient lower bound on the relative saturated
+covolume is (n+1)^2/2 minus O_epsilon((n+1)^(3/2+epsilon))
+on cofinal polynomial windows. It would prove RH for zeta_E
+without the parent geometry or Dirichlet base case. Start with
+E=K; the bound is open. Raw Vandermonde inequalities and
+archimedean conditioning do not supply it.
+The [HNF check](../certificates/derivative-lattice-check.json)
+verifies exact value/derivative indices in degrees 3–10 in K.
+
 ## Direct reuse of the Dirichlet construction
 
 For H07F's first nonabelian benchmark, the
@@ -21,6 +41,13 @@ parent quadratic-prime selection, using its stated Dirichlet QRH input
 and the classical automorphic zero-density theorem. It supplies the
 true corrected sums, derivatives at one and the entire relative
 dyadic family's thin-scale bounds, without a Hecke GRH assumption.
+The [polynomial one-sign companion](polynomial-one-sign-companion.md)
+now gives an unconditional analytic replacement using classical
+density and quadratic large sieve, with one polynomial-size
+auxiliary prime, three genuine corrected companions and a
+full thin family. Its one-sign scalar comparison suffices for
+G_1+2G_lambda if the new E/k bound is proved; it has not been
+realized by the parent geometry.
 The [relative comparison](cubic-relative-comparison.md) proves the
 actual scalar prime-ideal balance and fixed-order projection,
 including every inertia coefficient. Thus only an arithmetic
@@ -49,7 +76,11 @@ with simultaneous auxiliary selection. This settles the
 2-primary arithmetic subobligation of the proposed cubic route.
 The [exceptional-prime comparison](cubic-exceptional-prime-comparison.md)
 gives a polynomial integral splitting error at 3 (and optional
-2-primary sector comparison), not the new twisted 3-adic lengths.
+2-primary sector comparison), not the new twisted 3-adic lengths. The
+[high-dyadic 3-primary vanishing](cubic-three-primary-vanishing.md)
+now deletes every sector with b>=8, 2^b>=192f at all twist
+indices, via residual Bernoulli units and Kummer reflection.
+Lower dyadic layers and genuine sectors at primes >=5 remain.
 
 The [good-prime comparison](cubic-good-prime-comparison.md) removes
 all higher rational powers and bad first powers after an exact
@@ -71,7 +102,9 @@ controlled rounding, but yields no source-degree lower bound.
 Tensor duplication preserves the old norms and cannot detect
 the cubic term by itself.
 
-**Next direct attack:** construct globally controlled,
+**Next direct attacks:** bound the relative saturated covolume of
+the actual global derivative lattices at critical scale; in the
+CM route construct globally controlled,
 label-sensitive integral maps on these orbit bundles, not
 merely an equivariant repeat of the old maps or arbitrary
 local divisor modifications. Prove their divisibilities give
@@ -107,6 +140,7 @@ New proofs are ordinary mathematics with the explicitly cited
 Dirichlet and classical inputs. No new Lean replay, quantitative
 bound for the target cubic factor, or computational zero check
 is claimed. The prior [finite coefficient check](../certificates/s3-eta-check.json)
-and new [exact field/lattice check](../certificates/s3-field-check.json)
+and [exact field/lattice check](../certificates/s3-field-check.json),
+as well as the [derivative-lattice HNF check](../certificates/derivative-lattice-check.json),
 are not zero tests. The Markdown manuscript is current;
 its compiled TeX/PDF edition is still pending.
