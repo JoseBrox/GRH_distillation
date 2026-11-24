@@ -154,8 +154,10 @@ why the verifier uses the independently proved maximal
 order and elementary finite-field/ideal arithmetic.
 The first combined larger run also timed out; each
 displayed certificate was then generated and checked
-separately, and the exact stored three-field verifier
-and two additional certificates were run successfully.
+separately, and all five certificates were then run successfully in one exact
+verification. The Git blob of the verified combined witness data is
+ce5b76969829054c0d19ff7723cc85e7036dadf9, also checked against the
+committed repository data.
 
 ## 4. Consequences for the actual coefficient sectors
 

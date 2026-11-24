@@ -223,3 +223,7 @@ fixed-ratio common windows. A bounded residual rank
 alone does not supply that assertion. In particular
 we have not eliminated those moving exceptional
 sectors by the fixed-field cyclotomic argument.
+
+## Later actual nonvanishing example
+
+The [q=139 construction](cubic-three-primary-nonvanishing-example.md) proves nonzero integral strict torsion at 3 for the two cubic signs of the quadratic sector of that admissible host, at every positive twist weight. Thus the remaining moving length problem cannot be replaced by a blanket zero assertion based only on the progression and cubic Frobenius conditions.

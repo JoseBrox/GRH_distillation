@@ -302,3 +302,7 @@ low-dyadic 3-primary lengths and global critical-scale
 theta/covolume estimates also remain open.
 No higher-rank Euler system, asymptotic prime estimate,
 Lean verification or new full proof node is claimed.
+
+## Later removal of the inertness restriction
+
+The [characterwise strict-control theorem](cubic-characterwise-strict-control.md) supplies exact strict specialization at all coefficient-prime splitting types. The high-dyadic mark kills the class-group correction on the actual adjacent character, so zero base rank for that character is an exact test for integral vanishing and hence for applying the two-negative-weight bypass. The [finite computations](pure-cubic-class-certificates.md) certify small quadratic sectors but not the full high-dyadic moving range.

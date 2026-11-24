@@ -931,6 +931,99 @@ is not established. Outside the stated ranges the irreducible
 curve exclusion, cuspidal attachment, moving exceptional lengths
 and global critical-scale arithmetic estimate remain open.
 
+### Characterwise finite tests and actual certificates
+
+The finite test can be made on the actual adjacent character,
+rather than on the entire nontrivial cubic component.
+The [characterwise strict-control theorem](../notes/cubic-characterwise-strict-control.md)
+writes $\vartheta_e=\lambda(\rho^N)^{-1}\omega_\ell^{-e}$, with
+$\omega_\ell$ the tame cyclotomic character. On the actual
+finite prime-to-$\ell$ splitting field over $F$ and its
+cyclotomic pro-$\ell$ tower, let $Y$ denote the unramified
+abelian module with complete splitting above $\ell$.
+Then the strict group is exactly the dual of
+\[
+ Y_{\vartheta_e}/(\gamma-\langle\varepsilon\rangle(\gamma)^{-e})
+                      Y_{\vartheta_e}.
+\]
+The local inflation maps are injective even at cubic-split
+primes: when the finite character is trivial locally, the
+remaining procyclic local $H^1$ is zero because multiplication
+by the nonzero cyclotomic difference is surjective on the
+divisible coefficient module.
+
+If $g_{\vartheta,n}^{\rm str}$ is the finite-layer class
+rank with coefficient-prime ideal classes killed, the
+coinvariant comparison has at most $s_\vartheta$ local
+generators in its kernel, where $s_\vartheta$ counts the
+places of $F$ over $\ell$ at which the finite character is
+trivial on the decomposition subgroup. Thus $s_\vartheta
+\le 2$ independently of the size of the host. The test
+\[
+ g_{\vartheta,n}^{\rm str}+s_\vartheta<\ell^n
+\]
+supplies vanishing $\mu$ and the same upper bound on the
+number of generators. Eventual success for a fixed character
+is equivalent to its cyclotomic $\mu=0$ assertion. Killing
+the finitely many local decomposition images does not
+change that invariant. This identifies, rather than assumes,
+the remaining nonabelian Iwasawa input.
+
+The existing high-dyadic mark makes the actual adjacent
+finite character nontrivial at every coefficient-prime place.
+Hence $s_{\vartheta_e}=0$, the strict and ordinary class
+components coincide, and the integral finite-layer control
+has zero kernel. The initial class-rank test is then exact:
+\[
+ S_F(D_e)=0
+ \quad\Longleftrightarrow\quad
+ \dim_k(\operatorname{Cl}(L_0)\{\ell\}\otimes O)_{\vartheta_e}/\ell=0.
+\]
+Here the actual finite-modulus local lifting lemma identifies
+the residual strict cohomology with the uniformizer torsion
+of the integral group. The test depends only on the tame
+residue class of $e$. Thus the two-negative-weight elimination
+can be used even at cubic-split coefficient primes whenever
+this precise component vanishes. A successful rank test
+with nonzero initial rank does not imply that vanishing.
+
+The [actual class-number certificates](../notes/pure-cubic-class-certificates.md)
+use the explicit maximal order of
+$L_q=\mathbb Q(\sqrt[3]2,\sqrt{-q})$, Minkowski's ideal-class
+bound, and 368 verified principal-ideal relations. The
+relation determinants prove
+\[
+ \begin{array}{c|ccccc}
+ q&7&11&19&23&43\\ \hline
+ h(L_q)\text{ divides}&18&54&108&288&1620 .
+ \end{array}
+\]
+The integer verification is independent of GRH. At every
+3-cycle coefficient prime $\ell\ne q$ these imply vanishing
+of both cubic strict sectors for the actual quadratic host
+character and positive $e$ divisible by $\ell-1$; the
+quadratic field itself need not be inert there. These five
+fixed small fields do not certify the higher dyadic layers
+or the uniform moving auxiliary selection.
+
+There is a genuine limitation to universal zero tests at
+the exceptional coefficient prime 3. The
+[nonvanishing example](../notes/cubic-three-primary-nonvanishing-example.md)
+uses $q=139$, satisfying the admissible progression and
+cubic 3-cycle condition. Its imaginary quadratic field
+has class number three, and 3 is inert and principal there.
+The nonzero unramified class character gives a strict
+residual class over $F$ by degree-two restriction.
+The cubic character and the cyclotomic character reduce
+trivially at 3 on $G_F$, while the quadratic residual
+character is nontrivial globally. Thus the residual class
+injects into the actual cubic strict torsion for every
+positive twist weight and either cubic sign. This rules out
+blanket vanishing from the congruence and Frobenius
+conditions alone, not a finite-rank certificate or a
+uniform upper length bound. No asymptotic selected window
+is asserted for this fixed example.
+
 ## 9. Remaining work and provenance
 
 The preferred proof is self-contained within the

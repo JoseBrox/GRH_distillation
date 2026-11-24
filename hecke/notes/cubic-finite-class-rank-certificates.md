@@ -321,3 +321,7 @@ In particular it is not legitimate to call the
 general nonabelian mu assertion proved. All identities
 and implications above are ordinary proofs; no
 uncertified class-group calculation is used.
+
+## Later characterwise improvement and actual certificates
+
+The [characterwise strict-control theorem](cubic-characterwise-strict-control.md) replaces the full cubic component by the actual finite adjacent character. The local correction is at most two and is zero at every high-dyadic marked prime, including cubic-split primes. It also proves the converse: eventual success of the finite rank test is equivalent to the corresponding mu=0 assertion. The [five-field certificates](pure-cubic-class-certificates.md) give actual verified quadratic sectors, not a proof of uniform moving success.

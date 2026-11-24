@@ -66,4 +66,9 @@
 | Both negative weights eliminated, invariant ring equals coefficient DVR on certified sectors | Proved when residual adjacent vanishing holds; no irreducible point premise remains there | [Two-negative elimination](../notes/cubic-two-negative-weight-elimination.md) |
 | Exact inert strict specialization and fixed-list common-window bound | Proved for successful fixed finite-rank certificates; moving uniform estimate open | [Specialization, §§3–4](../notes/cubic-two-negative-weight-elimination.md) |
 
+| Characterwise strict specialization at all splitting types; finite test with at most two local correction generators | Proved; local correction zero in actual high-dyadic marked range | [Strict control](../notes/cubic-characterwise-strict-control.md) |
+| Exact high-dyadic adjacent vanishing test at the base class rank, and equivalence of eventual rank-test success with characterwise cyclotomic mu=0 | Proved; universal and moving uniform success open | [Strict control, §§2–3](../notes/cubic-characterwise-strict-control.md) |
+| Five actual pure-cubic/quadratic auxiliary class-number certificates | 368 exact principal-ideal relations, verified with integer HNFs; h divides 18,54,108,288,1620 | [Proof](../notes/pure-cubic-class-certificates.md), [data](../certificates/pure-cubic-class-certificates.json), [verifier](../scripts/verify_pure_cubic_class_certificates.py) |
+| Admissible q=139 yields nonzero cubic strict torsion at 3 for every positive weight | Proved; obstruction to universal zero, not to upper bounds | [Nonvanishing example](../notes/cubic-three-primary-nonvanishing-example.md) |
+
 No new full Hecke node, target complex-zero exclusion or Lean verification is claimed.
