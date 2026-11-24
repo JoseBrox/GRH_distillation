@@ -76,15 +76,39 @@ coefficient system, with the required arithmetic labels. The
 the exact prime-to-six strict Selmer decomposition and the fixed
 cubic integral-projector loss. Its trivial sector is the actual
 Dirichlet host; its two new cubic sectors are over fixed F,
-equivalently induced rank-two coefficients over Q. The new
-uniform length bound, special coefficient primes and geometry
-remain open. Do not identify a common scalar twist of the old
-maps with this new Frobenius count without proof.
+equivalently induced rank-two coefficients over Q. The [2-primary theorem](cubic-two-primary-window.md) supplies
+the full moving cubic host's uniform common-window strict
+length estimate at 2, using class number one of K and the
+elementary one-prime tower lemma. The
+[exceptional-prime comparison](cubic-exceptional-prime-comparison.md)
+controls the extra integral projection error at 3.
+The uniform genuine cubic lengths at odd primes remain open.
 
-The first missing supplier is thus an actual equivariant
-theta/divisor map realizing the relative arithmetic balance,
-together with the compatible degree/divisibility and norm bounds,
-not another reformulation of the zero problem.
+The [good-prime reduction](cubic-good-prime-comparison.md) supplies
+an exact centered restriction of the arithmetic quantity to
+unramified first powers of rational primes split in F, with
+a favorable error sign and a square-root normalized bound.
+Its top set may be restricted to the trivial cubic coset,
+giving the positive family G_1+2G_lambda instead of the
+original prescribed shares. The
+[torsor realization](cubic-torsor-realization.md) supplies
+actual local Frobenius selectors, polarized cubic CM twists,
+and a normalized three-line equivariant theta orbit. Its
+local divisor patch has negligible integer rounding on
+the stated candidate thin profile, but arbitrary patching
+does not give a source-degree lower bound.
+
+The first missing supplier is now a *global* label-sensitive
+family of theta/divisor maps with these actual local data,
+compatible nonvanishing, degree/divisibility and norm bounds,
+and the remaining odd-prime Selmer control. A scalar twist
+or tensor repetition of the old maps cannot supply this.
+
+For other fixed fields and finite-order target families,
+[general companion selection](general-finite-order-companions.md)
+supplies genuine corrected sums and thin-scale estimates,
+under the parent Dirichlet QRH and classical density/zero-free
+inputs. It does not settle the corresponding geometry.
 
 ## H07I — genuinely infinite-order unitary characters
 

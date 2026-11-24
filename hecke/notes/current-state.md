@@ -38,23 +38,59 @@ induced coefficient groups over Q. Integral cubic projectors have
 fixed denominator three; common unitary scalar twists preserve
 adjoint/deformation data with transported conditions.
 
-**Next direct attack:** keep L_0 and construct an actual
-equivariant integral theta/divisor map with the cubic coefficient
-system, whose arithmetic quantity is precisely (4)--(5) in the
-relative comparison. Check its exact polarizations, coefficients,
-Frobenius labels, same-map norm/degree estimates and local
-conditions. A common scalar twist alone does not supply this
-identity. For its possible negative-twist denominators, extend
-the parent's fixed-Eisenstein-field Selmer/automorphic count to
-the actual new cubic sectors of (4) in the coefficient note;
-handle primes two and three separately. No uniform cubic Selmer
-length estimate is supplied yet.
+## Further actual suppliers
+
+The [2-primary theorem](cubic-two-primary-window.md) proves class
+number one of K and unique principal primes over 2 and 3. Its
+respective fixed cyclotomic towers have trivial primary class
+groups. The moving host L_h has a uniform 144-generator strict
+2-adic module and the parent's full common-window sum bound,
+with simultaneous auxiliary selection. This settles the
+2-primary arithmetic subobligation of the proposed cubic route.
+The [exceptional-prime comparison](cubic-exceptional-prime-comparison.md)
+gives a polynomial integral splitting error at 3 (and optional
+2-primary sector comparison), not the new twisted 3-adic lengths.
+
+The [good-prime comparison](cubic-good-prime-comparison.md) removes
+all higher rational powers and bad first powers after an exact
+linear centering. The omitted remainder has the favorable sign
+and is O(x^(1/2+epsilon)) after the stated normalization.
+The arithmetic target may use a top set lying entirely in the
+trivial cubic coset; its positive family is G_1+2G_lambda.
+A fixed signed bias away from 1/3 also works using the abelian
+base case and the cubic real-zero exclusion. Any replacement
+profile must be realized by the actual maps.
+
+The [torsor and theta realization](cubic-torsor-realization.md)
+constructs the actual cubic permutation Frobenius, polarized
+twists of the retained CM geometry and an equivariant orbit of
+three unit-normalized principal theta lines. An individual
+invariant principal line is obstructed in the j-zero model.
+The local divisor patch realizes the good-prime hinges up to
+controlled rounding, but yields no source-degree lower bound.
+Tensor duplication preserves the old norms and cannot detect
+the cubic term by itself.
+
+**Next direct attack:** construct globally controlled,
+label-sensitive integral maps on these orbit bundles, not
+merely an equivariant repeat of the old maps or arbitrary
+local divisor modifications. Prove their divisibilities give
+the good-prime comparison and retain the parent's nonvanishing,
+degree and centered norm estimates on the same data. At odd
+coefficient primes extend the parent's fixed-Eisenstein-field
+Selmer/automorphic count to the new twisted sectors, using the
+integral comparison at 3. The genuine odd-prime bounds and
+global arithmetic supplier remain open.
 
 The elementary relative split-prime target E(x)-3C(x) remains
 available independently. H07I, the infinite-order phase estimate,
 is still open; the finite-coefficient moment lemma transfers to
-its auxiliary finite windows, but the genuine zero-free boxes
-and geometry have only been established for the cubic benchmark.
+its auxiliary finite windows. The
+[general finite-order companion theorem](general-finite-order-companions.md)
+now obtains genuine corrections and full dyadic thin bounds
+over every fixed field by classical Hecke density, with the
+parent's stated Dirichlet QRH input. No infinite-order target
+bound or global geometric supplier follows.
 
 ## Status and attribution
 

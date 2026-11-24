@@ -50,14 +50,25 @@ eta-product formula excluding all positive real zeros of its new
 cubic Hecke factor. Either sign of a one-sided prime discrepancy
 estimate would now suffice for this case, but that estimate is open.
 
-We now reuse a substantial arithmetic part of the Dirichlet method:
-[quadratic companion selection](notes/cubic-companion-selection.md)
-and [the relative prime-ideal comparison](notes/cubic-relative-comparison.md).
-The [coefficient interface](notes/cubic-coefficient-interface.md) isolates
-an exact abelian Selmer contribution and two new cubic sectors over the
-fixed Eisenstein field. The cubic splitting field itself cannot be
-contained in a CM host; we must retain the existing CM field and
-construct compatible maps with a finite cubic coefficient system.
+The Dirichlet analytic block now transfers to
+[general fixed-field finite-order companion families](notes/general-finite-order-companions.md)
+under the stated Dirichlet QRH input. In the cubic case the
+[relative balance](notes/cubic-relative-comparison.md) and
+[good-prime reduction](notes/cubic-good-prime-comparison.md) leave
+only unramified rational first powers in the arithmetic supplier,
+with a simple bias of the top labels.
+
+The [actual 2-primary Selmer window](notes/cubic-two-primary-window.md)
+is proved for the full moving cubic host, using its fixed field's
+class number one and elementary cyclotomic descent. The
+[exceptional-prime comparison](notes/cubic-exceptional-prime-comparison.md)
+handles the integral splitting error at 3; its genuine twisted
+lengths remain open. The cubic field cannot be a CM host, but
+[actual polarized twists and an equivariant three-line theta family](notes/cubic-torsor-realization.md)
+realize the required local Frobenius labels on the old CM geometry.
+Global label-sensitive maps, their quantitative degree/divisibility
+and norm bounds, and the remaining odd-prime Selmer estimates
+are not yet supplied.
 
 The [progress inventory](blueprint/progress.md) has 6/9 written
 reductions or cited inputs; the former open node H07 was split

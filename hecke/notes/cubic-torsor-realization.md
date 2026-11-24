@@ -254,8 +254,16 @@ The direct sum therefore has an actual cyclic
 linearization, with normalized sections permuted
 exactly. After the descent of §2 it gives a rank-three
 vector bundle and equivariant normalized local
-theta families on each of the twists, with
-permutation Frobenius (1) on their labels.
+theta families on each twist. For the explicit
+isomorphisms (3), Frobenius shifts their divisor
+labels by $2j r_v$ modulo three (or its negative
+in the contragredient section convention).
+Thus the nontrivial twists recover the two
+inverse cubic label permutations, and the
+$j=0$ twist has trivial shift. With the matching
+label convention the $j=2$ divisor action gives
+(1) exactly; the unshifted and inverse versions
+are accounted for by the same relabelling.
 
 **Proof.** Each $h_j$ is a disjoint section from
 the origin at every prime away from 6, and its

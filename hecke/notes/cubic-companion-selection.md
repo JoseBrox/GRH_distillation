@@ -1,5 +1,11 @@
 # Transfer of quadratic companion selection to the cubic Hecke benchmark
 
+**Subsequent generalization (same day).** The
+[fixed-field Hecke density version](general-finite-order-companions.md)
+extends (3) and (8) to polynomially growing dyadic families over
+any fixed number field, without the special GL2 induction input.
+This note retains the original cubic proof and its moment lemma.
+
 24 November 2026. This supplies a real analogue of the analytic
 companion-selection block of our Dirichlet reconstruction, including
 the actual logarithmic derivatives, on the first nonabelian example.

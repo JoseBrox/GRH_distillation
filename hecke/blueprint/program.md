@@ -35,9 +35,21 @@ benchmark, with fixed coefficients and actual logarithmic derivatives.
 The [coefficient interface](../notes/cubic-coefficient-interface.md)
 reduces its proposed prime-to-six Selmer denominator to the parent
 abelian term and two equal cubic sectors over a fixed quadratic field.
-The original CM host cannot contain the cubic field, so an actual
-equivariant local-system realization and quantitative arithmetic
-bounds are still missing. Neither H07F nor H07I has been completed.
+The [general finite-order companion theorem](../notes/general-finite-order-companions.md)
+extends the analytic supplier beyond the cubic case.
+The [2-primary theorem](../notes/cubic-two-primary-window.md)
+supplies the full moving cubic host's common-window Selmer bound;
+the [exceptional-prime comparison](../notes/cubic-exceptional-prime-comparison.md)
+supplies the additional integral splitting error at 3, but not
+its twisted lengths. The
+[good-prime comparison](../notes/cubic-good-prime-comparison.md)
+removes higher powers and ramified primes from the required
+arithmetic supplier and permits a simpler top-set bias.
+The [cubic torsor](../notes/cubic-torsor-realization.md) realizes
+the local Frobenius and normalized orbit theta data on the retained
+CM host. The global label-sensitive maps, their quantitative
+bounds and new odd-prime Selmer estimates are still missing.
+Neither H07F nor H07I has been completed.
 
 See the [open frontier](../notes/open-frontier.md) and
 [progress](progress.md). The map has nine nodes now, formerly eight;

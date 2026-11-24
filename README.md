@@ -44,12 +44,19 @@ has a proved eta-product representation, excluding real zeros and
 allowing either sign of the required one-sided prime-counting estimate.
 
 For the cubic benchmark, our Dirichlet arithmetic method now
-supplies the quadratic companion estimates and the relative
-prime-ideal Fourier comparison. An exact Selmer decomposition
-separates the old abelian part from two new cubic sectors over a
-fixed quadratic field. The new geometric construction remains
-open: a non-CM splitting field cannot be used as a CM host.
-See the [cubic transfer](hecke/notes/cubic-relative-comparison.md).
+supplies the [relative Fourier balance](hecke/notes/cubic-relative-comparison.md)
+and [finite-order companion selection](hecke/notes/general-finite-order-companions.md)
+(with the stated Dirichlet QRH input). The fixed S3 field has class number
+one, and its actual moving auxiliary hosts admit the
+[uniform 2-primary Selmer window](hecke/notes/cubic-two-primary-window.md).
+At 3 the [integral character comparison](hecke/notes/cubic-exceptional-prime-comparison.md)
+controls the projection error but not the new twisted lengths.
+The arithmetic target now uses only [good rational primes and a biased
+cubic top set](hecke/notes/cubic-good-prime-comparison.md).
+An [actual cubic torsor and equivariant theta family](hecke/notes/cubic-torsor-realization.md)
+realize the local Frobenius labels without a non-CM endomorphism field.
+The global label-sensitive maps, quantitative divisor/norm bounds and
+new odd-prime Selmer estimates remain open.
 
 The [proof map](hecke/blueprint/proof.svg),
 [checkpoint](hecke/notes/current-state.md) and

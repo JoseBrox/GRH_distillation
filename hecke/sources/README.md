@@ -97,3 +97,35 @@ The [relative comparison](../notes/cubic-relative-comparison.md) and
 the parent's positive-kernel, same-map arithmetic balance, strict
 Selmer and integral-projector framework with precise scope. The
 new CM local-system geometry and uniform estimates are not supplied.
+
+## Further arithmetic suppliers
+
+The [general finite-order companion theorem](../notes/general-finite-order-companions.md)
+uses Jesse Thorner, *Bounded gaps between primes in multidimensional
+Hecke equidistribution problems*, Math. Res. Lett. 26 (2019), 875–901,
+Theorem 2.3, p. 885 ([arXiv:1509.04378](https://arxiv.org/abs/1509.04378),
+[published PDF](https://intlpress.com/api/bgcloud-front/resource/pdf/volume/1806602455200722945-1806602455200722945-806c05b858e3cdd21f784b79edae3766.pdf)).
+Only the finite-order subfamily (m=0) is needed. The published theorem
+and arXiv display were checked. The parent QRH and moment inputs
+remain explicit. The thin-scale proof uses the classical Hecke
+zero-free region including the possible real exceptional zero,
+excluded by the selection or a fixed finite-family adjustment.
+
+The [cubic 2-primary theorem](../notes/cubic-two-primary-window.md)
+uses the parent's
+[cyclotomic descent chapter](../../paper/sections/recovered/12-sec-ct-intervals.tex)
+and coarse K-theory/duality estimate. The fixed-field class-number
+argument is by integral discriminant and Minkowski bounds; the
+one-prime Iwasawa lemma is proved directly. No general nonabelian
+Iwasawa conjecture is used. The
+[exceptional-prime comparison](../notes/cubic-exceptional-prime-comparison.md)
+uses ordinary Shapiro, local Mackey decomposition and Kummer theory,
+retaining the integral cokernels.
+
+The [good-prime reduction](../notes/cubic-good-prime-comparison.md)
+and [torsor realization](../notes/cubic-torsor-realization.md) use
+the parent's [relative Fourier comparison](../notes/cubic-relative-comparison.md),
+elementary finite étale descent, Cartier divisors and genus-one
+Riemann–Roch. The parent's theta normalization and centered norm
+data are cited precisely there. None of these local constructions
+supplies the missing global maps or uses a Masullo result as a premise.

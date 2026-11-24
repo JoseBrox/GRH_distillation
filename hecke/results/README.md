@@ -23,5 +23,12 @@
 | No CM field contains the S3 splitting field | Proved obstruction to naive source substitution | [Relative comparison, §5](../notes/cubic-relative-comparison.md) |
 | Exact prime-to-six strict Selmer decomposition and fixed cubic integral projector cost | Proved; uniform length estimate open | [Coefficient interface, §§1–3](../notes/cubic-coefficient-interface.md) |
 | Common unitary scalar twist of polarized deformation data | Proved for transported conditions; does not create the required relative prime count | [Coefficient interface, §4](../notes/cubic-coefficient-interface.md) |
+| Class number one and unique principal primes over 2 and 3 in the S3 field; vanishing primary class groups in the fixed cyclotomic towers | Proved | [2-primary window, §§1–2](../notes/cubic-two-primary-window.md) |
+| Uniform 144-generator bound for the moving cubic 2-primary module; actual common-window strict Selmer bound | Proved with parent descent and coarse K-theory inputs | [2-primary window, §§3–4](../notes/cubic-two-primary-window.md) |
+| Integral cubic splitting at 3, with polynomial comparison error, and optional full 2-primary sector comparison | Proved; genuine new odd-prime lengths open | [Exceptional primes](../notes/cubic-exceptional-prime-comparison.md) |
+| Exact good-prime centered discrepancy and simpler biased cubic top labels | Proved scalar reduction; same-map estimate open | [Good-prime comparison](../notes/cubic-good-prime-comparison.md) |
+| Actual cubic torsor, relative Frobenius kernel and polarized CM twists | Proved local realization | [Torsor, §§1–2](../notes/cubic-torsor-realization.md) |
+| Equivariant three-theta-line family with unit sections; exact local divisor patch | Proved local construction; no global degree estimate | [Torsor, §§3–5](../notes/cubic-torsor-realization.md) |
+| General fixed-field finite-order companion selection, genuine corrections and full dyadic thin family | Proved under parent Dirichlet QRH and classical Hecke density/zero-free inputs | [General companions](../notes/general-finite-order-companions.md) |
 
-No general new arithmetic estimate or new Lean verification is claimed.
+No new full Hecke node, target complex-zero exclusion or Lean verification is claimed.

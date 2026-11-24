@@ -447,9 +447,80 @@ the actual relative Frobenius kernel. The
 proves that the candidate strict Selmer groups at primes outside
 two and three split exactly into the original abelian sector and
 two equal cubic sectors over the fixed Eisenstein field.
-This permits a precise reuse of the parent algebraic estimates
-where their hypotheses hold, but the new uniform cubic length
-bound and actual geometric comparison remain open.
+### Actual integral and local geometric suppliers
+
+The [2-primary theorem](../notes/cubic-two-primary-window.md)
+proves that the fixed splitting field $K$ has class number one
+and unique principal primes above 2 and 3. The elementary
+one-ramified-prime argument makes the respective primary class
+groups vanish in its fixed cyclotomic towers. For the full
+moving relative host $L_h=K R_h(\sqrt{-q},\sqrt{-d})$, the strict
+2-adic Iwasawa module needs at most 144 generators. The parent's
+descent, determinant-growth and common-interval arguments give,
+with their exact ranges and simultaneous auxiliary choices,
+
+
+```math
+(\log 2)\sum_{1\le e<t}\lambda_2(L_h,e)
+\le \exp(x^{4\epsilon/5}).
+```
+
+
+Thus the actual 2-primary sum, not just a formal component
+comparison, is controlled. The
+[exceptional-prime comparison](../notes/cubic-exceptional-prime-comparison.md)
+uses the integral evaluation
+$\mathbb Z_3[C_3]\to\mathbb Z_3\oplus\mathbb Z_3[\omega]$,
+whose cokernel has order three. The new projection error in
+the strict Selmer comparison is polynomial in the actual
+source scales. This does not bound the genuine twisted lengths
+at 3 or the remaining odd primes.
+
+There is also a simpler sufficient arithmetic supplier.
+The [good-prime comparison](../notes/cubic-good-prime-comparison.md)
+removes the higher rational powers and ramified first powers
+by an exact linear correction to the main term. The omitted
+centered remainder is nonnegative and costs only
+$O(x^{1/2+\epsilon})$ in the displayed normalization.
+A top set in the trivial cubic coset gives the fixed positive
+family $G_1+2G_\lambda$ without the original fine share
+distribution. The new count requires only unramified rational
+first powers split in $F$, with the binary cubic-residue test.
+
+The [torsor construction](../notes/cubic-torsor-realization.md)
+realizes this test by the actual finite étale cover $z^3=2$
+away from 6. On the CM elliptic curves
+$E_j:y^2=x^3+2^{2j}$ the cubic descent cocycle is given by
+$(x,y)\mapsto(\omega x,y)$. The three nonzero two-torsion
+points give an equivariant orbit of symmetric principal
+theta lines, each with a unit-normalized section at the origin.
+The orbit is necessary for this normalization: no single
+invariant symmetric principal line has such a section in
+this model. A direct sum of the orbit lines preserves the
+local equivariance and unitary norm data. The same note
+constructs a local divisor patch realizing the good-prime
+hinges with controlled rounding.
+
+These are actual local objects, but not a global arithmetic
+bound. The patch merely imposes the desired divisibilities;
+its source-degree loss is exactly its local index. The global
+label-sensitive theta maps must produce those divisibilities
+while retaining the parent's nonvanishing, degree and norm
+estimates. Pure tensor repetition or cubic phases do not
+change the divisors, so the new bound cannot be inferred from
+the old norm estimates alone. The global supplier and the
+uniform odd-prime Selmer estimates remain open.
+
+### General finite-order companion selection
+
+The [fixed-field density version](../notes/general-finite-order-companions.md)
+extends the true companion and thin-scale estimates to any
+fixed number field, finite-order target family and polynomially
+growing real dyadic layers. It uses Thorner's Hecke zero-density
+theorem and the same explicitly stated Dirichlet QRH input,
+not special GL2 induction or Hecke GRH. The arithmetic
+construction for these families and all infinite-order
+target estimates remain separate open tasks.
 
 ## 8. Remaining work and provenance
 

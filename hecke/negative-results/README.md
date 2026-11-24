@@ -18,4 +18,19 @@
   limit are not a quantitative estimate of the new weighted split-prime
   deficit.
 
+- At 3, a one-dimensional residual or invariant cubic sector can
+  have arbitrarily large integral length. The exact isogeny error
+  is controlled, but the actual twisted lengths require a new
+  estimate; see [exceptional primes, §4](../notes/cubic-exceptional-prime-comparison.md).
+- In the j-zero cubic CM twist, no invariant symmetric principal
+  theta line has a section nonvanishing at the origin. A
+  three-line orbit bundle is a proved local alternative, not a
+  scalar equivariant replacement; see [torsor, §3](../notes/cubic-torsor-realization.md).
+- Tensor duplication and phase isometries preserve old norms but
+  cannot yield the new cubic divisibilities without label-sensitive
+  maps. Constant cubic weights annihilate both new characters.
+  Arbitrarily imposing local Frobenius divisors merely lowers the
+  patched source degree; it does not bound the prime discrepancy.
+  See [torsor, §§4–5](../notes/cubic-torsor-realization.md).
+
 These are obstructions to specific proposed proof steps, not to GRH.

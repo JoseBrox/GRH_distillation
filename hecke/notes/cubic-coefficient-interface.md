@@ -1,5 +1,14 @@
 # The cubic coefficient interface: exact Selmer reduction without a new CM field
 
+**Subsequent results (same day).** The
+[2-primary common-window theorem](cubic-two-primary-window.md) supplies
+an actual uniform bound for the full moving host at 2; the
+[exceptional-prime comparison](cubic-exceptional-prime-comparison.md)
+controls the integral splitting errors at 3 and 2. The
+[torsor realization](cubic-torsor-realization.md) constructs the
+local coefficient and equivariant theta objects. The global map
+and new odd-prime length estimates remain open.
+
 24 November 2026. This note identifies the reusable integral
 cohomological part of the Dirichlet program for the proposed cubic
 comparison. It is a genuine decomposition for the fields in
