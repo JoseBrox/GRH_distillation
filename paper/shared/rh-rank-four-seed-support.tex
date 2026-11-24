@@ -1,0 +1,331 @@
+\subsection{Support through a rank-four automorphic seed}
+\label{subsec:rh-rank-four-seed-support}
+
+The ordinary-family theorem constructed the actual ordinary Hecke quotient
+in all ranks. Here we use the same quotient, rather than a new ideal
+chosen to contain a particular seed. The adjoint vanishing theorem of
+Thorne replaces the characteristic-zero adjoint-lifting argument in this
+part of the rank-four proof. We also need invariance of the ideal under a
+possibly infinite-order anticyclotomic twist.
+
+\paragraph{The precise ordinary datum.}
+Keep the Hida setting $s$, its original level $V$ with $V.S'=s.S$, the
+coefficient DVR $\mathcal O$, its largeness condition, and the absence of
+primitive $\ell$-th roots in $L$. Here $L/F$ is the prescribed CM extension
+and $\ell$ is odd. Write $B_0$ for the original universal ordinary
+determinant ring, $\Lambda=\mathcal O[[X_1,\ldots,X_N]]$ for its original
+weight algebra, and $J_0$ for the kernel of the actual ordinary Hecke
+action. We use the established ordinary-family theorem: $B_0/J_0$ is
+finite and torsion-free over $\Lambda$; its fixed-weight arithmetic
+points with distinct finite parts of the labeled inertial characters
+detect $J_0$; the arithmetic occurrence theorem and the finite
+anticyclotomic twisting theorem hold for $J_0$. In the rank-four
+application $N=4[F:\mathbb Q]$. All assertions below are about that same
+$J_0$.
+
+\begin{lemma}[Anticyclotomic twisting of the ordinary ideal]
+\label{lem:rh-ordinary-infinite-twist}
+Suppose that $t:G_L\to\mathbb Z_\ell$ is continuous, is
+anticyclotomic for $L/F$, and vanishes on the inertia groups away from
+$\ell$ and on the prescribed local torsion subgroups at $\ell$.
+For $u\in 1+\mathfrak m_{\mathcal O}$, put
+$\beta(g)=u^{t(g)}$. Twisting by $\beta$ defines an automorphism of
+$B_0$ preserving $J_0$.
+\end{lemma}
+\begin{proof}
+The character $(1+Z)^{t(g)}$ over $B_0[[Z]]$ is defined by the binomial
+series. It is continuous for the maximal-ideal topology, is trivial on
+the prescribed subgroups, is anticyclotomic, and has trivial residue.
+Multiply the universal determinant by this character (in degree $i$,
+multiply its coefficient at $g$ by $(1+Z)^{it(g)}$) and multiply each
+labeled local character by the same character. These are the original
+ordinary determinant equations: the polarization is unchanged, each
+factor of the ordered ordinary product is scaled by a unit, and the
+prescribed inertia and torsion conditions are unchanged. The universal
+property therefore gives
+$\tau:B_0\to B_0[[Z]]$.
+
+Let $b\in J_0$ and $x$ be an arithmetic point of the actual Hecke
+quotient with distinct finite parts of its local characters. The images
+of all coefficients of $\tau(b)$ under $x$ are integral and lie in one
+finite coefficient field. For every $\ell$-power root of unity $\zeta$,
+evaluation at $Z=\zeta-1$ gives the finite-order twist of $x$ by
+$\zeta^{t(g)}$. The established finite twisting theorem implies
+$x(\tau(b))|_{Z=\zeta-1}=0$. The evaluated power series over the finite
+coefficient DVR is zero: a nonzero integral power series has only
+finitely many zeros in the open unit disc, by Weierstrass preparation
+after removing its maximal common uniformizer power. This argument
+does not assume that these roots approach zero.
+Fixed-weight density in the ordinary-family theorem now shows,
+coefficient by coefficient, that $\tau(b)\in J_0[[Z]]$.
+Specializing at $Z=u-1$ converges in $B_0$; ideals in its complete
+Noetherian local ring are closed. Consequently the twist sends
+$J_0$ into $J_0$. The same proof for $u^{-1}$ gives the inverse.
+\end{proof}
+
+If a character is supplied instead by the source's condition
+$\ker t\subset\ker\beta$, the image of $t$ is either zero or an open
+subgroup $\ell^a\mathbb Z_\ell$ of $\mathbb Z_\ell$. In the nonzero case
+divide $t$ by $\ell^a$ and use the image of a generator to obtain the
+form of Lemma~\ref{lem:rh-ordinary-infinite-twist}. Its triviality on
+the specified subgroups follows from that of $t$. Thus whenever the
+original two maps $\phi_0,\phi_n:B_0\to B$ of \texttt{Link.IsPhi}
+are defined, with the twists $\kappa$ and $\kappa\beta^n$ respectively,
+\[
+                       \phi_0(J_0)B=\phi_n(J_0)B .             \tag{RS1}
+\]
+Indeed the maps agree after precomposition by the twist on the
+generators (the determinant coefficients and labeled characters);
+the original universal coefficient-generation theorem then gives
+their equality as maps. This proves the ideal invariance used by
+\texttt{hida\_modular\_ideal\_map}; no construction of $\phi_0$
+is being inferred from this identity.
+
+\begin{lemma}[A fixed-weight tangent criterion]
+\label{lem:rh-four-tangent-support}
+Let $x:B_0\to\overline{\mathbb Q}_\ell$ kill $J_0$, and suppose every
+$\mathcal O$-algebra lift of $x$ to dual numbers whose restriction to
+$\Lambda$ is constant is itself constant. Then every prime of $B_0$
+contained in $\ker x$ contains $J_0$.
+\end{lemma}
+\begin{proof}
+The point is over a finite coefficient field. In fact a local algebra
+evaluation from a complete Noetherian local $\mathcal O$-algebra with
+residue field finite over that of $\mathcal O$ into
+$\overline{\mathbb Q}_\ell$ is automatically integral and continuous:
+if a maximal-ideal element had a nonzero image of nonpositive
+valuation, a polynomial vanishing on that image could be taken with
+integral coefficients and unit constant coefficient (use the minimal
+polynomial of its integral inverse). Its evaluation in the original
+ring would be a unit. Every element is a residue lift plus a
+maximal-ideal element. Finitely many generators of the maximal ideal
+and their strictly positive valuations give continuity; approximation
+by polynomials in topological generators then puts the whole image in
+a finite coefficient field. In particular $B_0/\ker x$ is a finite
+$\mathcal O$-module. Any dual-number lift factors through
+$B_0/(\ker x)^2$, also finite over $\mathcal O$, since
+$\ker x/(\ker x)^2$ is finite over $B_0/\ker x$.
+Such lifts are continuous and take values in a finite extension with
+dual numbers.
+
+Write $\mathfrak p=\ker x$ and $\mathfrak a=\mathfrak p\cap\Lambda$.
+The height of $\mathfrak a$ is $N$ since
+$\Lambda/\mathfrak a$ is finite integral over $\mathcal O$ with
+characteristic-zero fraction field. The relative tangent hypothesis
+makes the relative cotangent space at $\mathfrak p$ zero. More
+explicitly the residue fields of the two local rings are finite
+separable extensions of $\operatorname{Frac}(\mathcal O)$, so the
+dual-number cotangent sequence gives
+\[
+ \operatorname{edim}(B_{0,\mathfrak p})
+          \leq\operatorname{edim}(\Lambda_{\mathfrak a})=N.
+\]
+The finite torsion-free $\Lambda$-algebra $B_0/J_0$ is nonzero.
+Every minimal prime of it contracts to zero (minimal primes are
+associated primes and no nonzero element of $\Lambda$ annihilates
+a nonzero element). Choose one contained in $\mathfrak p/J_0$.
+The corresponding domain is integral over the normal domain
+$\Lambda$, and going-down along $\mathfrak a$ gives
+$\dim (B_0/J_0)_{\mathfrak p}\geq N$. Thus $B_{0,\mathfrak p}$
+is regular local of dimension $N$, hence a domain.
+A nonzero ideal in this domain lowers the dimension of its quotient.
+It follows that $(J_0)_{\mathfrak p}=0$. This is precisely the claimed
+containment in every prime below $\mathfrak p$.
+\end{proof}
+
+\begin{theorem}[The ordinary rank-four seed component]
+\label{thm:rh-ordinary-four-seed-component}
+In the ordinary datum above, suppose that $x$ is represented by a
+continuous absolutely irreducible rank-four representation $\rho$ of
+$G_L$ with the original symmetric conjugate pairing
+\[
+        \rho(g)^{\mathsf t}P\rho(cgc^{-1})=\epsilon(g)^{-3}P,
+\]
+where $\epsilon$ is the $\ell$-adic cyclotomic character and $c$ is
+complex conjugation. Suppose $\rho$ is attached to a regular algebraic
+conjugate-self-dual cuspidal representation, its restriction to
+$G_{L(\mu_{\ell^\infty})}$ is absolutely irreducible, and it is
+unramified at the distinguished place. Retain \texttt{Resid.V0ok}:
+the residual characters there are unramified, coincide on the
+decomposition group, and the residue cyclotomic character is nontrivial.
+At every labeled ordinary place suppose the ordered characters on
+inertia have the form
+\[
+         \psi_i=\epsilon^{m_i}\theta_i,\qquad
+          m_i-m_{i+1}\geq2,\quad \theta_i\text{ of finite order},
+\]
+with the $m_i$ allowed to vary by place. The ordered flags are the
+ones specified by $x$. Then $x$ kills $J_0$, and every prime of $B_0$
+below $\ker x$ contains $J_0$.
+\end{theorem}
+\begin{proof}
+The arithmetic occurrence clause of the ordinary-family theorem
+applies: the weights are strictly ordered and the gaps exclude an
+equality of two labeled characters differing by $\epsilon$.
+Local algebraicity follows from local class field theory and the
+displayed inertia formula. The given attachment and pairing are
+exactly the conjugate-self-dual automorphic hypothesis. Thus
+$J_0\subset\ker x$.
+
+We verify the tangent hypothesis of Lemma~\ref{lem:rh-four-tangent-support}.
+Enlarge a finite coefficient field $E$ to contain the point,
+representation, and the given dual-number evaluation. We work over
+$E[\delta]/(\delta^2)$, where $\delta$ is an infinitesimal parameter.
+At the characteristic-zero point, not at the residual point modulo
+$\ell$, the determinant is absolutely irreducible. Chenevier's
+determinant theorem (Theorem 2.22(i) of \emph{The $p$-adic analytic
+space of pseudocharacters of a profinite group}) applied to the
+Cayley--Hamilton quotient gives a representation $\rho'$ lifting
+$\rho$, unique up to conjugation. It is continuous: choose sixteen
+group elements whose matrices form a basis of $M_4(E)$, using
+absolute irreducibility and Burnside's theorem. Their lifted matrices
+form a basis over the dual numbers, by Nakayama, and coefficients of
+each matrix $\rho'(g)$ are obtained from the inverse trace-pairing
+matrix applied to its sixteen continuous traces. The same trace
+pairing shows that the ordered ordinary product and inertia
+relations of the actual determinant ring, not just their
+specializations to characteristic zero, are matrix identities for
+$\rho'$. In particular $\rho'$ is trivial on every prescribed
+residual-trivial old inertia subgroup.
+
+The determinant polarization gives an invertible lifted conjugate
+pairing, by the uniqueness statement in the same theorem applied to
+the twisted conjugate dual. It can be chosen to reduce to $P$.
+Its transpose is also a pairing (apply the relation to $cgc^{-1}$);
+averaging with its transpose keeps it invertible and gives a symmetric
+pairing. An infinitesimal change of basis makes this pairing equal
+to $P$ (over characteristic zero, solve the linearized symmetric
+congruence by taking half its discrepancy). Write
+$\rho'(g)=(1+\delta z(g))\rho(g)$. It follows that $z$ extends to a
+cocycle on $G_F$ with $z(c)=0$ for the polarized adjoint
+representation $\operatorname{ad}\rho$: on $G_L$ the action is
+conjugation, and on $c$ it is the negative transpose conjugated by
+the symmetric pairing. This is the adjoint representation appearing
+in Thorne's theorem, not the unpolarized adjoint over $L$.
+
+At an ordinary place choose one inertia element $g_*$ on which the
+$\psi_i$ are distinct, using the infinite cyclotomic image on the
+common kernel of the finite-order parts. The ordered matrix identity
+with all arguments equal to $g_*$ splits the dual-number lattice
+into four rank-one eigenspaces, since the four eigenvalue
+differences are units over $E[\delta]$. Their order is prescribed.
+In that eigenbasis replace only the argument at position $i$ by
+$g$. The factors to the left are diagonal and invertible on every
+row with index at least $i$; those to the right are diagonal and
+invertible on every column with index at most $i$. Thus the entries
+in those rows and columns of $\rho'(g)-\psi'_i(g)$ are zero.
+For all $i$ this proves the upper triangular flag with diagonal
+$\psi'_i$ on the whole decomposition group. The constant-weight
+hypothesis makes each $\psi'_i$ equal to $\psi_i$ on inertia.
+
+Pass to a finite extension of the local field killing the finite
+inertial factors. The underlying $E$-representation of each
+rank-one dual-number graded piece is crystalline: it is the
+cyclotomic power $\epsilon^{m_i}$ times an unramified
+two-dimensional representation. The same holds for the
+one-dimensional graded pieces of $\rho$. We check the extensions,
+rather than just their graded pieces. If $U,V$ are crystalline
+representations whose cyclotomic exponents in $U$ exceed those in
+$V$ by at least two, $W=\operatorname{Hom}(V,U)$ has strictly
+positive cyclotomic exponents, all at least two. The local
+Bloch--Kato dimension formula gives
+$\dim H^1_f(W)=\dim H^0(W)+[K:\mathbb Q_\ell]\dim W$; the local Euler
+formula gives the same dimension for $H^1(W)$ because
+$H^0(W^*(1))=0$. (The Hodge--Tate weight of $\epsilon$ is $-1$.)
+All such extensions are therefore crystalline. Applying this
+successively to the ordered filtration proves crystallinity of
+both $\rho'$ as an $E$-representation and $\rho$ over this finite
+local extension. The resulting self-extension class is in
+$H^1_f$ there. Restriction on cohomology with coefficients
+$\operatorname{ad}\rho\otimes B_{\rm cris}$ is injective across
+a finite local extension in characteristic zero, by
+restriction--corestriction. Hence the original class belongs to
+$H^1_f$ over the original local field.
+
+At old ramified places away from $\ell$, the inertia condition
+already proved for the actual lift implies that the extension
+class restricts to zero on a finite-index inertia subgroup.
+Again restriction is injective in characteristic zero, so the
+class is unramified. At the distinguished place the original
+representation is unramified. Write $q$ for the residue cardinality
+and $\Phi$ for arithmetic Frobenius. The restriction of $z$ to
+inertia is an additive homomorphism; only its pro-$\ell$ tame
+quotient can have nonzero image. The relation
+$\Phi t\Phi^{-1}=t^q$ gives
+$(\operatorname{Ad}\rho(\Phi)-q)z(t)=0$.
+All eigenvalues of $\operatorname{Ad}\rho(\Phi)$ reduce to $1$,
+since all residual Frobenius eigenvalues coincide, whereas
+$q\not\equiv1\bmod\ell$. This operator is invertible and $z(t)=0$.
+The other places are unramified by the original quotient.
+These checks give the finite local conditions at all places of
+$L$, hence at all places of $F$ by restriction to $L$ and
+injectivity in characteristic zero.
+
+Thorne's Theorem 6.1 (\emph{On the vanishing of adjoint
+Bloch--Kato Selmer groups of irreducible automorphic Galois
+representations}, 2022) applies to the cuspidal regular algebraic
+conjugate-self-dual attachment and the stated irreducibility on
+$G_{L(\mu_{\ell^\infty})}$. It gives
+$H^1_f(F,\operatorname{ad}\rho)=0$.
+Thus $z$ is a coboundary and $\rho'$ is strictly conjugate to the
+constant lift. All determinant coefficients are constant.
+The same marked eigenbasis argument at each local $g_*$ now
+shows that the labeled characters on the whole decomposition
+group are constant as well. The determinant and ordered
+characters determine the original coefficient evaluation, by
+their topological generation and the continuity already checked.
+Every fixed-weight tangent is zero.
+Lemma~\ref{lem:rh-four-tangent-support} proves the assertion.
+\end{proof}
+
+\paragraph{The seed on the original symplectic space.}
+Suppose that the fitted deep tower $T$, its original link $K$,
+and the maps $\phi_n$ of \texttt{Link.IsPhi} have been constructed.
+Let $y:X.A\to\overline{\mathbb Q}_\ell$ be an \texttt{IsSeedAlt}
+point and $R$ its symplectic representation of $G_F$. Write
+$(h_i)$ for its squared inertial weights, and $\kappa_s$ for its
+seed twist with exponent $a_s$ in the source's squared inertia
+formula. The seed condition says that $h_0+a_s$ is even and the
+successive gaps of the $h_i$ are even and at least four. At each
+ordinary place the link has integral exponent $a$ for $\kappa$
+and odd squared exponent $b$ for $\beta$ up to finite characters.
+Choose $n=0$ or $1$ with $h_0+n$ even. The point obtained through
+$\phi_n$ has representation
+\[
+                 \rho=R|_{G_L}\,\kappa\beta^n
+\]
+and ordered inertial exponents $(h_i+2a+nb)/2$, all integral
+with gaps at least two. Its ratio twist
+$\kappa\beta^n/\kappa_s$ has integral inertia exponents at
+every $\ell$-adic place, by the parity condition on $a_s$.
+It is algebraic by global class field theory (locally algebraic
+at $\ell$, finite on inertia elsewhere). Twisting the seed's
+cuspidal regular algebraic attachment by the corresponding
+algebraic Hecke character supplies the attachment of $\rho$.
+The link identity $\kappa\kappa^c\nu\epsilon^3=1$ and
+$\beta\beta^c=1$, with $\nu$ the original similitude, give the
+conjugate pairing $P=J R(c)$, where $J$ is the fixed symplectic
+form. It is symmetric since $R(c)^2=1$ and $\nu(c)=-1$.
+Strong multiplicity one and the paired determinant then give
+conjugate self-duality of this cuspidal attachment.
+Irreducibility on the cyclotomic kernel is part of
+\texttt{IsSeedAlt}. Unramifiedness at the distinguished place is
+the original killing condition together with the link's
+unramifiedness clause. The link's \texttt{v0} is exactly the
+distinguished residual hypothesis of
+Theorem~\ref{thm:rh-ordinary-four-seed-component}.
+
+Apply that theorem to the composed evaluation
+$x=y|_{X.B}\circ\phi_n$. If $\mathfrak q$ is any prime of
+$X.B$ contained in $\ker(y|_{X.B})$, its inverse image under
+$\phi_n$ is a prime below $\ker x$, hence contains $J_0$.
+By (RS1), $\phi_0(J_0)X.B\subset\mathfrak q$. This proves
+the literal \texttt{LocZero} condition for this image ideal.
+For two links the conclusion holds for the sum of their image
+ideals. This argument establishes the seed clause of the
+potential-modularity construction once the original links
+and determinant maps are supplied; it does not assume a
+rank-four global automorphy propagation theorem. In particular
+it uses only the established ordinary \texttt{ModU} for
+seed membership, not the stronger \texttt{ModUAlt} local
+window conclusion at all arithmetic points.
