@@ -1,0 +1,291 @@
+\subsection{Direct irreducible-curve propagation}
+\label{subsec:selmer-p1-direct}
+
+Only the absolutely irreducible branch of ordinary propagation is
+needed for the rank-four characteristic-prime argument. Here we
+verify that branch separately. In particular it needs neither the
+odd-family second-order estimates nor incidence at nonsemisimple
+points.
+
+Retain the ordinary determinant ring, its actual Hecke ideal $J$,
+the CM extension $L/F$, the finite allowed ramification, and the
+hypotheses of Theorem~\ref{thm:selmer-arithmetic-propagation}.
+Write $\Gamma_0$ for the corresponding Galois group over $F$,
+$G_0$ for its index-two subgroup over $L$, and $c$ for the chosen
+complex conjugation. Let $f:B\to A=k[[t]]$ be a NiceI point, with
+$k$ finite of odd characteristic $\ell$. Let $K=k((t))$ and
+$N=\ker(\epsilon|_{G_0})$, with $\epsilon$ the full cyclotomic
+character. Write $\chi$ for its reduction in $k^\times$.
+In the ordinary setup $\chi$ is nontrivial on $G_0$ (in particular
+the distinguished split prime supplies such an element).
+Use the normalized integral representation $\rho$ and symmetric
+pairing of the arithmetic-propagation theorem. The normalization
+and any further splitting of eigenvalues are made by finite
+injective coefficient extension and change of basis, preserving
+$f$'s kernel.
+
+\begin{lemma}[Direct integral trace detection]
+\label{lem:selmer-p1-direct-detection}
+There exist finitely many $\sigma_j\in N$ having separable spectra
+and a constant $C$ such that, for every $m\geq1$, the kernel of
+the detecting map on $H^1(\Gamma_0,W/t^mW)$ has at most $|k|^C$
+elements. Here $W=M_n(A)$ has the polarized dual action
+\[
+ g:Z\mapsto\chi(g)\rho(g)Z\rho(g)^{-1}\quad(g\in G_0),
+ \qquad c:Z\mapsto-\chi(c)Z^T=Z^T ,
+\]
+and the detecting coordinates are
+$\operatorname{tr}(z(\sigma_j)\rho(\sigma_j))$.
+The same assertion holds after a finite injective coefficient
+extension, with its new constant.
+\end{lemma}
+
+\begin{proof}
+First work over $K$. Suppose the traces vanish on all of $N$.
+Since $\chi|_N=1$, the map
+$\dot\rho(g)=z(g)\rho(g)$ on $N$ satisfies the matrix derivation
+rule. Extend $\rho,\dot\rho$ linearly to $K[N]$. If $\rho(a)=0$,
+then for every $b\in K[N]$,
+\[
+ 0=\operatorname{tr}\dot\rho(ab)
+   =\operatorname{tr}(\dot\rho(a)\rho(b)).
+\]
+Absolute irreducibility on $N$ gives $\rho(K[N])=M_n(K)$.
+The matrix trace pairing is perfect in every characteristic:
+test against matrix units. Hence $\dot\rho(a)=0$. It follows
+that $\dot\rho$ induces a derivation of $M_n(K)$, which is inner.
+For example, for a derivation $D$ put
+$X=\sum_i D(E_{i1})E_{1i}$ and apply the Leibniz rule to matrix
+units to obtain $D=[X,-]$. Thus $z|_N$ is a coboundary.
+
+After subtracting that coboundary, the cocycle on $G_0$ is zero
+on $N$. The cocycle rule for $ng=g(g^{-1}ng)$ shows that every
+value commutes with $\rho(N)$, hence is scalar. It therefore
+descends to the abelian quotient $G_0/N$, with action $\chi$.
+Choose $s$ with $\chi(s)\ne1$. Commutativity gives
+\[
+ (\chi(s)-1)z(g)=(\chi(g)-1)z(s).
+\]
+So the remaining cocycle is a coboundary as well.
+Restriction from $\Gamma_0$ to $G_0$ is injective on $H^1$ by
+inflation--restriction, since the quotient has order two.
+This proves detection of the whole polarized dual cohomology;
+no assumption on $n\bmod\ell$ is used. Each coordinate is
+well-defined on cohomology by cyclicity of trace.
+
+Here are the integral details, including cocycles which do not
+lift from a finite truncation. For $i=1,2$,
+$H^i(\Gamma_0,W)$ is the inverse limit of the finite
+$H^i(\Gamma_0,W/t^mW)$. Indeed the cochain transition maps are
+surjective (lift finite-valued continuous cochains), and the
+inverse systems of finite cohomology groups satisfy the
+Mittag--Leffler condition. The finite arithmetic cohomology
+theorems apply because the allowed ramification set includes
+the primes above $\ell$. In particular these inverse limits
+are compact and Hausdorff. The sequence for multiplication by
+$t$ gives an injection
+\[
+ H^i(\Gamma_0,W)/tH^i(\Gamma_0,W)
+       \hookrightarrow H^i(\Gamma_0,W/tW).
+\]
+Lift a finite basis of the image; successive subtraction and
+division by $t$ express every element as a convergent
+$A$-linear combination of those lifts. Convergence in the
+inverse-limit topology follows since $t^mH^i$ maps to zero at
+precision $m$. Thus both $H^1$ and $H^2$ are finite $A$-modules.
+Every continuous Laurent cocycle is bounded on the compact
+group, so inverting $t$ gives precisely the corresponding
+continuous $K$-cohomology.
+
+By density, vanishing of the detecting traces on separable-spectrum
+elements of $N$ implies their vanishing on all of $N$. Finite
+dimensionality therefore selects finitely many such elements
+whose trace functionals inject on $H^1(\Gamma_0,W)\otimes_A K$.
+The exact sequence
+\[
+ 0\longrightarrow H^1(\Gamma_0,W)/t^m
+ \longrightarrow H^1(\Gamma_0,W/t^mW)
+ \longrightarrow H^2(\Gamma_0,W)[t^m]\longrightarrow0
+\]
+bounds the number of nonliftable cosets by the fixed cardinality
+of the $t$-power torsion of $H^2$. On the liftable part, Smith
+normal form of the detecting map on the free quotient of $H^1$,
+and the finite torsion of $H^1$, bound the kernel by a fixed
+power of $|k|$. This proves the uniform assertion. A finite
+extension of the DVR is finite free: expanding in a basis
+commutes with continuous cochains and the trace coordinates.
+Hence rational detection persists, and the same integral argument
+applies with the new coefficient uniformizer.
+\end{proof}
+
+\begin{theorem}[The irreducible part of ordinary propagation]
+\label{thm:selmer-p1-direct}
+For the original ordinary Hecke ideal $J$ and every NiceI point
+$f$ as above, $J\subseteq\ker f$ implies $J\subseteq p$
+for every prime $p\subseteq\ker f$.
+\end{theorem}
+
+\begin{proof}
+We use the actual auxiliary-prime construction and the ordinary
+Taylor--Wiles modules of
+Theorem~\ref{thm:selmer-taylor-wiles}, not a patching assertion
+assuming nonempty support. Apply Lemma~\ref{lem:selmer-p1-direct-detection}
+and split the selected characteristic polynomials by a finite
+coefficient extension. The arithmetic construction of
+Theorem~\ref{thm:selmer-arithmetic-propagation} gives $q$ distinct
+split auxiliary primes at each level $N_0$, with residue norms
+$1\bmod\ell^{N_0}$ and Frobenius approaching the selected
+$\sigma_j$. It retains the entire original local inertia
+conditions. We check the only Selmer estimate needed in this
+irreducible case.
+
+Let $V_m=M_n(A/t^m)$ be the primal polarized adjoint
+(with $c$ acting by negative transpose), paired by the matrix
+trace and the finite-field trace of the coefficient of $t^{m-1}$
+with $W_m=W/t^mW$. Put $\nu=n(n-1)/2$ and $d=[F:\mathbf Q]$.
+At ordinary places use the original upper-triangular condition
+modulo local boundaries, with its diagonal restriction on the
+torsion subgroup. The ordinary local count gives a local
+Selmer-to-invariants ratio at most
+$|k|^{m(n+\nu)d_v+C_v}$:
+each diagonal character has $d_v+1$ parameters before
+subtracting the $n$ diagonal boundary coordinates in the count,
+and the $\nu$ upper roots have the usual local Euler contribution,
+with bounded defects from their noncritical ratios. More precisely
+this is the one-block specialization of
+Proposition~\ref{prop:selmer-first-global-bound}'s local
+calculation, using the scalar count
+\eqref{eq:selmer-ordinary-scalar-count}.
+Old unramified factors are one. At the distinguished place
+the dual invariant module has rank zero by N4; at an auxiliary
+place it has rank $n$ by the distinct roots. Their finite
+invariant orders are bounded by $|k|^{C_0}$ and
+$|k|^{mn+C_j}$, respectively, by the finite linear equation
+count (the auxiliary Frobenius agrees at any fixed precision
+eventually). The global invariant rank is zero: a commuting
+matrix is scalar and a scalar skew matrix is zero. At each
+real place the fixed rank is exactly $\nu$, since the
+polarization is symmetric and $2$ is invertible.
+
+For the relaxed dual group keep only the auxiliary-local
+boundary conditions. An associated cocycle vanishes on each new
+inertia group, because the coefficient action there factors
+through the base quotient. It therefore descends to the base
+Galois group: the new inertia groups normally generate the
+kernel of the restriction to the original ramification set.
+Equivalently use the pro-$\ell$ quotient and its kernel as in
+Proposition~\ref{prop:selmer-tower-detection}. At fixed $m$
+there are finitely many base cocycles; for all sufficiently
+large levels their values at the chosen Frobenius and those
+at $\sigma_j$ agree simultaneously. The local boundary
+condition makes their detecting traces zero. The preceding
+lemma thus bounds the order of the relaxed dual group by a
+constant independent of $m$. Finite Poitou--Tate duality now
+gives the first Selmer bound
+\[
+ \#\operatorname{Sel}_{N_0,m}
+        \le |k|^{mn(d+q)+C},
+\]
+where the Selmer group is taken modulo polarized boundaries.
+The exponent is
+$(n+\nu)\sum_{v\mid\ell}d_v-\nu d+nq=n(d+q)$.
+The constants may depend on this fixed point and the finite
+auxiliary choice, but not on $m$ or sufficiently large $N_0$.
+
+Pass to the one limiting group of the marked construction.
+At each fixed precision the cocycle sets, local restrictions
+and boundaries agree eventually: the finitely generated
+profinite cover, the common limiting kernels and maps, and
+the finite coefficient module give exactly the comparison
+of Proposition~\ref{prop:selmer-limit-comparison}.
+If $a$ bounded Laurent Selmer classes are independent over
+$K$, choose integral representatives. Their independent
+classes modulo boundaries give at least $|k|^{a(m-b)}$
+classes at precision $m$, for one fixed $b$: choose finitely
+many generator values testing the relation with a skew
+primitive and put the resulting finite matrix in Smith
+normal form. Thus $a\le n(d+q)=D_0$.
+No second-order or odd-family statement is required.
+
+For clarity we spell out the final dimension argument. Make
+the harmless unramified coefficient extension and adjoin a
+marked variable $s$ sent to the curve uniformizer, exactly
+as in Theorem~\ref{thm:selmer-marked-propagation}. Form its
+root-splitting algebra, limiting universal ring $R_0$, exact
+relation ideal $I$, and map to the splitting algebra with
+the diamond variables $Y$ killed. Use the same
+discriminant multiplier, ordinary module and coefficient
+variables. The construction of (MP2)--(MP9) uses no
+second-order bound. Proposition~\ref{prop:selmer-patched-support}
+therefore applies at the selected curve prime. Denote the
+completed relation ring there by $R$ and its patched support
+ideal by $S_R$. The latter is nonempty: the given
+$J\subseteq\ker f$ and the exact $Y=0$ fibre identity give
+support at the closed curve point. Every minimal support
+prime $Z$ satisfies
+\[
+                     \dim R/Z\ge1+D_0 .
+\]
+The coefficient DVR is
+$O'=\widehat{O[[s]]_{(\pi)}}$, with residue field $K$.
+
+Since the residual determinant at this completed local
+ring is absolutely irreducible, the one-block polarized
+model of Proposition~\ref{prop:selmer-polarized-model}
+is the full matrix algebra over $R$. Equivalently,
+for the tangent test use Chenevier's absolutely irreducible
+determinant representation theorem over $K[\delta]/(\delta^2)$,
+and normalize the lifted symmetric pairing using $2^{-1}$.
+The lifted pairing is symmetric: transposition changes the
+intertwiner by a scalar of square one, reducing to $+1$,
+hence equal to one. A symmetric pairing $1+\delta H$ is
+made the original one by $1-\delta H/2$.
+An $O'$-constant derivation of $R$ therefore gives a
+polarized primal cocycle. Its actual ordinary identities
+give the local flags and torsion conditions; the old
+inertial and auxiliary equations give the remaining
+Selmer conditions. All values have bounded Laurent
+coordinates: the ring modulo the square of the curve
+kernel is finite over $O[[s]]$, since its first
+conormal module is finite over $k[[s]]$. This is the
+first-order boundedness argument of
+Proposition~\ref{prop:selmer-local-propagation}.
+
+If its cocycle is a polarized boundary, the determinant
+does not vary. Distinct ordinary characters and auxiliary
+roots determine their lifted values by the ordered
+ordinary equations and the separable polynomials.
+The partial-root relations then force all diamond
+coordinates to be constant, since the base auxiliary
+inertia acts trivially. The limiting ring is generated
+by these data and the marked coefficient ring; thus the
+derivation is zero. Consequently
+\[
+ \dim_K\operatorname{Der}_{O'}(R,K)\le D_0 .
+\]
+Choose lifts of a basis of the relative cotangent space.
+Completeness gives a surjection
+$O'[[X_1,\ldots,X_{D_0}]]\to R$ (add zero generators
+if necessary). The inverse image of any minimal support
+prime $Z$ is a prime whose quotient has dimension at
+least $1+D_0$. In this regular local domain of dimension
+$1+D_0$ that prime must be zero. In particular the
+kernel is zero, $R$ is a domain, and $S_R=0$.
+
+Now every prime below the curve prime belongs to the
+patched support after passing to the local completion.
+The exact diamond-zero fibre identity gives containment
+of $J$ at every such prime of the splitting algebra
+over the original ring. Use flat going down and integral
+lying over for the finite free splitting algebra and
+unramified coefficient extension, and faithful flatness
+of completion. Contracting the lifted primes (and
+forgetting $s$) proves $J\subseteq p$ for every
+$p\subseteq\ker f$, as asserted.
+\end{proof}
+
+This proves the actual NiceI conclusion directly from the
+ordinary modules and first-order arithmetic estimate. The
+general NiceE chain theorem remains available for the
+other applications; the RH rank-four use of P1core need
+not use its second-order presentation.
