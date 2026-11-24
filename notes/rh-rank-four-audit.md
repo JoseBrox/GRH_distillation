@@ -1,5 +1,7 @@
 # Fresh audit of the RH rank-four chain and weighted assembly
 
+**Historical audit snapshot.** The four interfaces identified below are addressed in the subsequent [closure review](rh-weighted-selmer-closure.md); consult that review for the current status.
+
 24 November 2026. Audit baseline: `5dfafd71856b4769f0831ca727e81d8b83a44206`.
 Pinned source: `jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`.
 

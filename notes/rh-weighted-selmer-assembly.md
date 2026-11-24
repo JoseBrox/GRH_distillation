@@ -1,6 +1,6 @@
 # Weighted Selmer assembly on the common RH windows
 
-**Status:** numerical implication proved, conditional on (SL3) and the previously reconstructed nonresonant, high-dyadic and exponent-one estimates. The rank-four suppliers require their own verification. This is not a proof of full W04 or of RH.
+**Status:** the RH weighted Selmer supplier is closed in the written reconstruction. The [four-interface review](rh-weighted-selmer-closure.md) supplies the previously retained rank-four premises. The final theorem `thm:rh-weighted-selmer-supplier` applies the numerical implication below with no additional individual-length hypothesis. General Dirichlet W04 and the compatible arithmetic construction remain open.
 
 See [the shared manuscript](../paper/shared/rh-weighted-selmer-assembly.tex), proposition rh-weighted-selmer-assembly-prop and corollary rh-weighted-selmer-allowance. The host remains \(E=\mathbf Q(\mu_{2^a})^+(\sqrt{-q},\sqrt{-d})\), with conductor parameter \(N=2^a qd\). In the low-dyadic reduction \(a_\ell=\min(a,\lfloor\log_2(8\ell^2)\rfloor)\), the conductor parameter is \(2^{a_\ell}qd\) and the degree is \(2^{a_\ell}\le8\ell^2\). No fixed-field assumption is made for either quadratic factor.
 
