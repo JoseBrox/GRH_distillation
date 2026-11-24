@@ -1,0 +1,381 @@
+\subsection{Bernoulli units and the rank-four arithmetic data}
+\label{sec:selmer-dyadic-twist-vanishing}
+
+The rank-four construction uses an auxiliary odd character of large
+dyadic conductor to separate the residual characters, even when the
+original character is trivial on the coefficient-prime decomposition
+group. The following elementary argument gives the full Bernoulli
+unit threshold required in that construction, with the odd conductor
+factor retained.
+
+\begin{theorem}[Uniform Bernoulli units for dyadic twists]
+\label{thm:selmer-dyadic-twist-unit}
+Let $\ell$ be odd, $d\ge1$, $Q=\ell^d$, and
+$h=v_2(Q-1)\ge2$. Let $\varphi$ be a primitive Dirichlet
+character of odd conductor $f$ and order dividing $Q-1$,
+and let $\xi$ be primitive of conductor $M=2^n$.
+Assume
+\[
+       \varphi(-1)\xi(-1)=-1,\qquad f4^h\le M.        \tag{BU1}
+\]
+Then $B_{1,\varphi\xi}$ is an $\ell$-adic unit at every
+prime of its character-value field above $\ell$.
+This includes $\ell\mid f$ and is the full source
+\texttt{LemmaX} assertion.
+\end{theorem}
+
+\begin{proof}
+Work first in characteristic zero, with the chosen
+$\ell$-adic character values. For $u\in\mathbf Z/M\mathbf Z$
+let $\tilde u$ be its representative in $[0,M)$, and put
+\[
+ A(u)=\sum_{\substack{0\le a<fM\\a\equiv u\bmod M}} a\varphi(a),
+ \qquad S=\sum_{a=0}^{f-1}\varphi(a),\qquad
+ g(u)=\frac{A(u)-A(0)}{fM}.
+\]
+The sum of $\varphi(a)$ over the congruence class used
+in $A(u)$ is $S$, independently of $u$, since $f$ and $M$
+are coprime. Shifting the summation by $ft$ modulo $fM$
+gives, for $0\le t<M$,
+\[
+ g(u)-g(u-ft)=\frac{tS}{M}-
+       \sum_{\substack{0\le a<ft\\a\equiv u\bmod M}}\varphi(a).
+                                                               \tag{BU2}
+\]
+Indeed each shifted integer increases by $ft$ and decreases
+by $fM$ precisely when it wraps around the interval.
+The character is unchanged by this shift. The formula
+uses the same integer representatives in both sums.
+
+For each $u$ choose $t$ with $ft\equiv u\bmod M$.
+As $g(0)=0$, (BU2) proves that $g(u)$ is integral and
+its reduction belongs to $\mathbf F_Q$: the reduced
+values of $\varphi$ lie there and $M$ is a unit.
+This step avoids division by the odd conductor in the
+residue field, including when $\ell\mid f$.
+The character $\xi$ is nontrivial by (BU1), which implies
+$n\ge4$. Hence $\sum_u\xi(u)=0$. Grouping the Bernoulli
+sum by residue classes modulo $M$ gives the exact identity
+\[
+              B_{1,\varphi\xi}=\sum_u \xi(u)g(u).               \tag{BU3}
+\]
+In particular this Bernoulli number is integral.
+
+From now on write the reduced values of $\xi,\varphi,g,S$
+without bars, in an algebraic closure of $\mathbf F_\ell$.
+The character $\xi$ is still primitive, since reduction
+preserves roots of unity of power-of-two order.
+Suppose (BU3) reduces to zero. Put $m=n-h$ and
+$s=f2^h$, so that $m\ge h\ge2$ and $s\le2^m<M$.
+For every unit $y$ modulo $M$, changing variables gives
+\[
+                         \sum_x \xi(x)g(xy)=0.                 \tag{BU4}
+\]
+We extract part of this identity by the Frobenius action.
+The order of $Q$ modulo $M$ is $2^{n-h}$, and its powers
+are exactly the residues congruent to one modulo $2^h$.
+This follows from
+$v_2(Q^{2^j}-1)=h+j$, by successive squaring since
+$Q\equiv1\bmod4$. Raise (BU4) to these powers of Frobenius.
+Because $g$ takes values in $\mathbf F_Q$, this gives
+$\sum_x\xi(x)^{1+2^h j}g(xy)=0$ for
+$0\le j<2^{n-h}$. Summing and dividing by $2^{n-h}$,
+which is a unit, gives by a geometric sum
+\[
+ \sum_{x\in H}\xi(x)g(xy)=0,\qquad
+ H=\{x\in(\mathbf Z/M\mathbf Z)^\times:
+                                  \xi(x)^{2^h}=1\}.            \tag{BU5}
+\]
+The cyclic group $1+4\mathbf Z/M\mathbf Z$ is generated
+by $5$, and primitivity of $\xi$ makes it faithful on
+that group. It follows that
+\[
+ H=H_+\sqcup H_-,\qquad
+ H_\pm=\{x:x\equiv\pm1\bmod 2^m\}.
+\]
+Each of the two sets has character sum zero: multiplication
+by $1+M/2\in H_+$ preserves both sets and changes the sign
+of $\xi$. This also covers $m=2$.
+
+Apply (BU5) at $y=1$ and $y=1-s$, both units. Write
+$C=2^h S/M$. For $x\in H_+$ we have $xs=s\bmod M$;
+the only member with representative less than $s$ is
+$1$. Thus (BU2) gives
+\[
+             g(x)-g(x(1-s))=C-\mathbf 1_{x=1}.
+\]
+For $x\in H_-$ we have $xs=-s\bmod M$. The only member
+for which $\widetilde{x+s}<s$ is $x=-1$, with
+$\widetilde{x+s}=s-1$. Applying (BU2) at $x+s$ gives
+\[
+       g(x)-g(x(1-s))=-C+\mathbf 1_{x=-1}\varphi(s-1).
+\]
+These assertions follow directly from $s\le2^m$ and
+the congruences defining $H_\pm$; they include equality
+in (BU1). Since $s$ is a multiple of $f$,
+$\xi(-1)\varphi(s-1)=-1$. Subtracting the two instances
+of (BU5), the terms involving $C$ cancel by the character
+sums just established, while the exceptional terms give
+$-1-1=-2$. This is nonzero in characteristic $\ell$,
+a contradiction. Thus (BU3) has nonzero residue.
+\end{proof}
+
+\begin{corollary}[Unramified cocycles in the original character]
+\label{cor:selmer-dyadic-twist-cocycle}
+Retain (BU1), and let $\gamma$ be the reduction of
+$\varphi\xi$ or its inverse in a field $k$ of
+characteristic $\ell$. A continuous cocycle
+$z:G_{\mathbf Q}\to k(\gamma)$, with the discrete topology
+on $k$, is a coboundary if for every finite inertia group
+$I$ it vanishes on a subgroup of $I\cap\ker\gamma$
+of finite index prime to $\ell$.
+
+This proves the original \texttt{CorX} with its locally
+constant cocycle and relative-index conditions.
+No assumption that $\ell$ is prime to the degree of
+the full cyclotomic field is required.
+\end{corollary}
+
+\begin{proof}
+We first give the characterwise Stickelberger argument
+with its necessary hypotheses. Write $\chi=\varphi\xi$
+or $\chi=(\varphi\xi)^{-1}$ so that $\gamma=\bar\chi$.
+Set $F=\mathbf Q(\mu_{fM})$, $G=\operatorname{Gal}(F/\mathbf Q)$.
+Restriction of $z$ to $G_F$ is a homomorphism, with
+finite image since its domain is compact and its
+target is discrete. It vanishes on inertia in $G_F$:
+if $I_F=I\cap G_F$ and the given subgroup is
+$J\subset I\cap\ker\gamma$, the index
+$[I_F:I_F\cap J]$ divides $[I\cap\ker\gamma:J]$ because
+$I_F$ is normal in $I\cap\ker\gamma$.
+The image of $I_F$ in the additive group of $k$ thus
+has both $\ell$-power order and order prime to $\ell$.
+It is zero. If the original relative-index condition
+is specified by an arbitrary ambient subgroup, first
+intersect it with $I\cap\ker\gamma$.
+Class field theory identifies the restricted homomorphism
+with an additive map $u:\operatorname{Cl}(F)\to k$.
+There are no real places of $F$. The cocycle relation
+and reciprocity give
+\[
+                  u(\sigma_b x)=\bar\chi(b)u(x)
+       \quad ((b,fM)=1).
+\]
+
+For $D=fM$, the classical Stickelberger element is
+$\Theta=D^{-1}\sum_{(a,D)=1,\ 1\le a<D}a\sigma_a^{-1}$.
+For any integer $b$ prime to $D$, $(b-\sigma_b)\Theta$
+is integral (subtract the least positive residues of
+$ba$ modulo $D$). Stickelberger's theorem says that
+this integral group-ring element annihilates
+$\operatorname{Cl}(F)$ \cite[Theorem 4.5.6]{dyadic-bernoulli-sharifi}.
+Its scalar under $\chi$ is
+$(b-\chi(b))B_{1,\chi^{-1}}$.
+Theorem~\ref{thm:selmer-dyadic-twist-unit} gives the
+unit assertion for $\chi^{-1}$, since (BU1) is preserved
+by inversion. There is $b$ with $b-\bar\chi(b)\ne0$
+in $k$: if $\ell\nmid D$ take $b=\ell$; otherwise
+$\bar\chi$ differs from the residual cyclotomic
+character modulo $D$, because its dyadic component
+is primitive of conductor $2^n\ge16$ while the
+cyclotomic character has conductor $\ell$.
+Thus the displayed integral annihilator acts by a
+nonzero scalar on $u$, and $u=0$.
+
+Now $z$ descends to a cocycle of the finite abelian
+group $G$. Choose $g_0$ with $\gamma(g_0)\ne1$,
+which exists by the high dyadic conductor.
+Commutativity gives
+\[
+ (\gamma(g_0)-1)z(g)=(\gamma(g)-1)z(g_0).
+\]
+Division by the nonzero scalar on the left proves
+that $z$ is a coboundary. In particular this step
+does not require averaging over the full group $G$,
+whose order can be divisible by $\ell$.
+\end{proof}
+
+The same Stickelberger argument proves the underlying
+unramified-cocycle implication whenever the inverse
+Bernoulli value at the actual modulus is a unit, the
+finite character has order prime to $\ell$ and its
+reduction is distinct from both the trivial and
+residual cyclotomic characters. These are exactly the
+nontriviality and cyclotomic-exclusion hypotheses in the
+source \texttt{UnramifiedCocycleIsCoboundaryOfBernoulliUnit}.
+The conductor hypothesis of the preceding theorem is
+only needed to supply that unit.
+
+\begin{theorem}[The original RH rank-four arithmetic datum]
+\label{thm:rh-symplectic-arithmetic-data}
+Retain the actual ordinary RH host with modulus
+$N=2^a qd$, a nontrivial character $\psi$ of its
+Galois group, an odd coefficient prime $\ell\nmid N$,
+and $e\ge2$ with $\psi(-1)=(-1)^e$.
+Write $\psi=\psi_2\psi_{\rm odd}$ with dyadic conductor
+$2^b$ and $\psi_{\rm odd}^2=1$. Put
+\[
+ d_0=\operatorname{ord}_4(\ell),\quad
+ h=v_2(\ell^{d_0}-1),\quad
+ n=\left\lceil\log_2\max\{\ell N4^h,
+                                      2^{b+6}\ell^3\}\right\rceil.
+                                                               \tag{BU6}
+\]
+These are exactly the original RH specialization of
+\texttt{f0}, \texttt{n0} and \texttt{Host.nII}.
+After the permitted finite extension of the coefficient
+DVR containing the required roots of unity, there is
+an original \texttt{Raw} datum satisfying every field of
+\texttt{Good} and the original \texttt{OfChar} for Case II
+(with $p_1=m_0=1$). Its dyadic modulus satisfies
+\[
+                            2^n\le128N\ell^5.                  \tag{BU7}
+\]
+In particular this constructs the actual rank-four
+arithmetic datum for every remaining character of (DC11).
+It does not assert automorphy or integral rigidity of
+its deformations.
+\end{theorem}
+
+\begin{proof}
+The finite character $\psi$ has power-of-two order;
+its odd component is quadratic or trivial. Consequently
+the source's prime-to-$\ell$ part is $\psi$ itself,
+its $\ell$-component is trivial, and its \texttt{th1}
+is $\psi_{\rm odd}$. This proves the formulas for
+$d_0,h,n$ in (BU6). Choose an odd primitive character
+$\xi$ of conductor $2^n$, with its values in a finite
+coefficient extension. Such a character is obtained
+by assigning a primitive $2^{n-2}$-th root to $5$ and
+$-1$ to $-1$. The added roots have order prime to
+$\ell$, so adjoining them can be done unramified.
+The length normalization is unchanged under this
+extension by the integral coefficient comparison
+already used for the RH character groups.
+
+In the source's notation take
+\[
+ \Psi=\varepsilon^e\psi,\quad
+ \omega_T=\text{Teichm\"uller lift of }\bar\varepsilon,\quad
+ \alpha=\varepsilon\omega_T^{-1}\xi,\quad
+ \beta=\Psi\alpha^{-1},\quad \tau=\alpha\Psi .
+\]
+Here $\varepsilon$ is the $\ell$-adic cyclotomic character.
+These are precisely \texttt{Psi}, \texttt{om},
+\texttt{al}, \texttt{be}, \texttt{th}, respectively.
+Take the original set $S$ of prime divisors of
+$2\ell N$, choose absolute places over the rational
+primes, and take the original complex conjugation $c$.
+The base diagonal is $(\tau,\Psi,\alpha,1)$, with
+similitude character $\tau$ and weights $(e+1,e,1,0)$.
+The parity condition gives $\Psi(c)=1$,
+$\alpha(c)=\beta(c)=\tau(c)=-1$.
+The orders and ramification of the finite characters
+are as required. The source's exceptional set
+\texttt{Sb} is empty because $\psi$ has order prime
+to $\ell$; its \texttt{T} is $\{\ell\}$.
+In particular $\xi$ is unramified at every place of
+\texttt{T}.
+
+Choose an arithmetic Frobenius lift $s_\ell$ at $\ell$
+with $\varepsilon(s_\ell)=1$. It exists because the
+cyclotomic $\ell$-power extension of $\mathbf Q_\ell$
+is totally ramified, and the cyclotomic character on
+inertia is onto $\mathbf Z_\ell^\times$. Then
+$\Psi(s_\ell)=\psi(\ell)$ and $\xi(s_\ell)=\xi(\ell)$.
+The valuation identity
+\[
+ v_2(\ell^{2^j}-1)=v_2(\ell^2-1)+j-1
+                   \quad(j\ge1)
+\]
+and (BU6) imply
+$n>v_2(\ell^2-1)+b+1$: indeed
+$v_2(\ell^2-1)<2\log_2\ell$ and
+$n\ge b+6+3\log_2\ell$.
+Thus $\ell^{2^{b+2}}\not\equiv1\bmod2^n$.
+This power lies in $1+4\mathbf Z/2^n\mathbf Z$;
+faithfulness of the primitive character there gives
+$\xi(\ell)^{2^{b+2}}\ne1$.
+The order of $\psi$ divides $2^{b+2}$, including
+$b=0$. All these roots have order prime to $\ell$,
+so their orders are preserved by reduction.
+Consequently
+\[
+       \bar\xi(s_\ell)\bar\Psi(s_\ell)^i\ne1
+                         \quad(i\in\mathbf Z).                 \tag{BU8}
+\]
+This proves the source \texttt{condD} for every
+integer $i$, not merely the finitely many matrix weights.
+
+The three reduced characters
+$\bar\alpha,\bar\beta,\bar\tau$ are the reductions
+of the finite characters
+\[
+             \xi,\qquad \omega_T^e\psi\xi^{-1},
+                           \qquad \omega_T^e\psi\xi.
+\]
+All are odd. Their dyadic components have exact conductor
+$2^n$, since $n>b$ and multiplication by a lower-conductor
+character does not change primitivity there. Their
+primitive odd components have conductors dividing
+$\ell qd$ and orders dividing $\ell^{d_0}-1$.
+This also holds for their inverses.
+Thus (BU1) holds for each, by (BU6).
+Suppose a cocycle satisfies the source's \texttt{XVan}
+premises for one of these six characters.
+Away from $\ell$ it vanishes on inertia intersected
+with the kernel of the full residual diagonal; that
+kernel has prime-to-$\ell$ index in the inertia group
+and is contained in the character kernel in question.
+At $\ell$ its local class is a coboundary, hence the
+cocycle is zero on inertia intersected with the
+character kernel. The same local conclusion holds at
+the conjugate places by the cocycle identity.
+Corollary~\ref{cor:selmer-dyadic-twist-cocycle} now
+gives the required global coboundary.
+This proves all six original \texttt{xvan} assertions.
+
+For the original element $\mathrm{ph}$, the sequence
+$s_\ell^{\ell^{j!}}$ converges in the profinite group:
+in every finite quotient the $\ell$-primary component
+of $s_\ell$ is eventually killed and its prime-to-$\ell$
+component is eventually unchanged, because
+$\ell^{j!}\equiv1$ modulo its order for large $j$.
+These compatible limits define the desired element.
+For the second mark choose $g_0$ outside the kernels of
+both $\bar\alpha$ and $\bar\Psi$. These are proper
+subgroups: the first character has high dyadic
+conductor, and the second is nontrivial since $\psi$
+is a nontrivial prime-to-$\ell$ character unramified
+at $\ell$ (the residual cyclotomic factor cannot cancel
+its ramification at a different finite prime).
+The union of two proper subgroups is not a group,
+so such $g_0$ exists. Finally choose $s_0$ in inertia
+at $\ell$ with $\varepsilon(s_0)=1+\ell$.
+It kills both $\psi$ and $\omega_T$ and has infinite
+cyclotomic order. This is the original
+\texttt{decompSigma} condition.
+All other fields of \texttt{Raw.Good} are the
+specified absolute decomposition and inertia groups,
+the ramification and parity conditions checked above,
+and the exact finite set of places. The character
+$\xi$ is the required \texttt{OfChar} character
+with the odd component of conductor one. This verifies
+the actual datum without changing its modulus.
+
+Lastly $4^h\le(\ell^{d_0}-1)^2<\ell^4$ and $2^b\le N$.
+Since the least power of two above a positive integer
+is less than twice it, (BU6) gives (BU7).
+The exponent and its constants are independent of
+the original fields and of $e$.
+\end{proof}
+
+This completes the original arithmetic input to the
+rank-four Case II argument for the remaining RH family,
+and the Bernoulli-unit and unramified-cocycle inputs for
+both RH and GRH with their exact original character
+hypotheses. The remaining rank-four tasks concern
+the actual local components, the characteristic-prime
+finiteness, automorphy and rigidity of the relevant
+points, and their integral length comparison. None
+follows just from (BU7) or from the six residual vanishings.
