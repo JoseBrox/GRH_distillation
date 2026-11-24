@@ -1,0 +1,151 @@
+\subsection{Flag nefness outside the correction primes}
+\label{sec:geometry-uncorrected-flag-nefness}
+
+\begin{lemma}[Degrees from the Hodge and conjugate filtrations]
+\label{lem:geometry-two-filtration-nefness}
+On a smooth projective connected curve \(C\) over an algebraically
+closed field of characteristic \(p>2\), suppose the vector bundles
+\(L,H\) have exact sequences
+\[
+ 0\to L^\vee\to H\to L\to0,\qquad
+ 0\to F_C^*L\to H\to F_C^*L^\vee\to0.
+\]
+Here \(F_C\) is absolute Frobenius. Suppose these sequences respect
+the split unramified CM coefficient action: \(L=\bigoplus_\sigma
+L_\sigma\), duality pairs conjugate labels, and Frobenius permutes the
+labels by \(\varphi(\sigma)=\sigma^p\). Put \(e=-\deg L\). Then
+\[
+ e\ge0,\qquad \deg W\le e/(p-2)\quad(W\subset L\text{ a subbundle}),
+ \qquad \deg L_\sigma=\deg L_{\bar\sigma}.
+ \tag{UN1}
+\]
+\end{lemma}
+\begin{proof}
+Let \(P\) be the maximum degree of saturated subbundles of \(L\),
+including the zero subbundle. It exists: dualizing a generating map
+for a sufficiently positive twist of \(L^\vee\) embeds \(L\) in a
+sum of positive line bundles, and exterior powers give upper bounds
+for the integer degrees in each rank. In particular \(P\ge0\).
+
+Pull a subbundle of degree \(P\) back by Frobenius and inject it in
+\(H\) by the second sequence. Its degree is \(pP\). Project to \(L\)
+by the first sequence. The image has degree at most \(P\), since
+saturation can only increase degree. The kernel in \(L^\vee\) has
+degree at most \(e+P\): for a saturated subbundle \(K\subset L^\vee\),
+\(\deg K=-\deg L+\deg (L^\vee/K)^\vee\le e+P\), since the last
+dual quotient embeds as a subbundle of \(L\). This bound also holds
+without saturation. Additivity of degree gives \(pP\le e+2P\).
+
+Write \(d_\sigma=\deg L_\sigma\) and \(h_\sigma=\deg H_\sigma\).
+The first sequence gives \(h_\sigma=d_\sigma-d_{\bar\sigma}\),
+and the second gives \(h_{\varphi(\sigma)}=p h_\sigma\).
+The permutation has finite orbits, so every \(h_\sigma=0\).
+This proves (UN1).
+\end{proof}
+
+\begin{proposition}[The actual uncorrected finite-place flag bound]
+\label{prop:geometry-uncorrected-flag-nefness}
+For the coordinated original integral models, at each prime
+\(p\notin S\), \(p>2\), \(p\nmid\operatorname{disc}(E)\), the root
+model satisfies \(\mathrm{NefAt}(p,\mu,0)\) for every dominant
+weight satisfying the original threshold
+\[
+ (p-2)(\mu_{\tau,j}-\mu_{\tau,j+1})
+ \ge 4 f\|\mu\|_\infty\qquad(\text{every CM type label }\tau).
+ \tag{UN2}
+\]
+Here \(f=[E:\mathbb Q]/2\), the weights are indexed from \(1\) to
+\(N\), and \(j,N-j\) are the positive ranks of the paired tangent
+eigenspaces. This supplies \(M2\) for the actual good tower,
+for which the prime hypotheses follow from
+\(p\notin\mathrm{InS}(B)\).
+\end{proposition}
+\begin{proof}
+We first supply the exact sequences on the original test curves,
+including curves contained in the boundary. The original unimodular
+symplectic lattice with its \(O_E\)-action has a hyperspecial unitary
+similitude model at this prime: \(O_E\otimes\mathbb Z_p\) is finite
+etale, and the perfect pairing and involution give the reductive
+similitude group after unramified splitting. The underlying principally
+polarized PEL datum is unchanged (the primitive biextension's diagonal
+factor \(2\) is a unit here). Forget the \(p\)-primary part of the
+principal level, if present. The remaining level is neat by
+\(\mathrm{GoodAt}(p)\). The coordinated level transitions and canonical
+normalization construction identify the actual semiabelian family
+with the pullback from this prime-to-\(p\) PEL toroidal model, also on
+the global dominating model and flag modifications by their
+cartesian comparisons.
+
+Use Goldring--Koskivirta, \emph{Strata Hasse invariants, Hecke
+algebras and Galois representations}, Invent. Math. 217 (2019),
+887--984, Theorem 6.2.1 and Lemma 6.2.3, with their canonical
+de Rham and Hodge bundles (Section 6.1). Refine the rational cones
+to admit their log-integral Siegel compactification. For the
+hyperspecial PEL embedding the theorem gives the Hodge and conjugate
+filtrations with their coefficient tensors and Frobenius graded
+isomorphisms on the whole toroidal model. Its canonical Hodge bundle
+is the invariant cotangent bundle of the semiabelian family.
+In de Rham homology the Hodge quotient is \(L=\operatorname{Lie}(G)\)
+and the kernel is \(L^\vee\) with conjugate coefficient action by
+the polarization. Dualizing the cohomological conjugate filtration
+gives subbundle \(F_C^*L\) and quotient \(F_C^*L^\vee\).
+The Frobenius maps raise residue embeddings to their \(p\)-th
+powers. These are the two sequences in
+Lemma~\ref{lem:geometry-two-filtration-nefness}.
+
+For precision, the auxiliary fan refinement does not change the
+arithmetic model or its degree. For an integral projective curve
+of the original special fibre, base change to the algebraic closure
+of the residue field and normalize a component. Pull back the proper
+surjective refinement along its map to the prime-to-\(p\) model.
+A closed point in the nonempty generic fibre of that pullback has
+finite residue degree over the curve function field. Its closure,
+normalized, is a smooth projective curve finite and surjective over
+the chosen curve. The family, coefficient action and Hodge bundle
+pull back along this map, and line-bundle degrees multiply by the
+positive degree of the map. It suffices to prove the sign on this
+test curve. In particular the special-fibre curve need not have an
+abelian generic point. No uniform bound on the auxiliary curve
+degree is needed for nefness.
+
+Since \(p\notin S\), the patched tangent lattices agree with the
+original tangent eigenlattices on the entire curve. The integral
+idempotents of the etale coefficient algebra split the tangent
+bundle and preserve the given subbundle flags. The root line
+numbered \(i\le j\) is the \(i\)-th graded line of \(L_\tau\);
+for \(i>j\) it is the dual of graded line \(N+1-i\) of
+\(L_{\bar\tau}\), precisely the original
+\(\mathrm{rootIdx},\mathrm{rootSgn}\) prescription.
+
+Write \(q=N-j\); let \(a_{\tau,i},b_{\tau,i}\) be the degrees of
+the prefixes of these two flags, starting at zero. By (UN1) all
+are at most \(P=e/(p-2)\), with
+\(a_{\tau,j}=b_{\tau,q}=d_\tau\) and \(\sum_\tau d_\tau=-e/2\).
+Let \(S_\tau\) be the sum of root-line degrees weighted by
+\(\mu_{\tau,i}\). Abel summation in the two flags, suppressing
+\(\tau\) on the weights, gives
+\[
+\begin{split}
+ S_\tau={}&(\mu_j-\mu_{j+1})d_\tau
+ +\sum_{i=1}^{j-1}(\mu_i-\mu_{i+1})a_{\tau,i}\\
+ &+\sum_{i=j+1}^{N-1}(\mu_i-\mu_{i+1})b_{\tau,N-i}.
+\end{split}
+\]
+All displayed differences are nonnegative. Put
+\(g=\min_\tau(\mu_{\tau,j}-\mu_{\tau,j+1})\) and
+\(M=\|\mu\|_\infty\). Because \(d_\tau\le P\),
+\[
+ S_\tau\le g d_\tau+2MP,\qquad
+ \sum_\tau S_\tau\le -ge/2+2fMP\le0
+\]
+by (UN2). The original numerical class has coefficients
+\(-\mu_{\tau,i}\) at the root lines and zero at the extra line
+when its last parameter is \(0\). Its curve degree is therefore
+\(-\sum_\tau S_\tau\ge0\), exactly the required nefness.
+\end{proof}
+
+Together with the corrected-flag theorem at primes in \(S\), this
+establishes both finite-place flag-positivity suppliers. It does not
+establish the two-level arithmetic Chern-class comparison, which
+requires the exact vertical correction sequences and their Frobenius
+relation rather than only numerical degrees on curves.
