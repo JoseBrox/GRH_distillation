@@ -1,0 +1,379 @@
+\subsection{The mixed ordinary Hilbert seed at the original level}
+\label{sec:mixed-hilbert-seed}
+
+Here is a direct construction of the mixed rank-two seed used in the
+second rank-four case. The key is that, on a totally definite
+quaternion algebra, ordinary reduction depends only on the residual
+weight character. No assertion about the rank-four deformation ring
+follows merely from the existence of this seed.
+
+\begin{theorem}[Mixed ordinary weight change]\label{thm:mixed-weight-change}
+Let \(F\) be totally real of even degree and let the odd prime \(p\)
+split completely in \(F\). Let \(\xi\) be a totally odd finite-order
+Galois character, unramified at \(p\), of conductor \(\mathfrak n\).
+Suppose that \(\mathfrak n\) is divisible by a prime of norm \(2\).
+Use arithmetic Frobenius and write \(\epsilon\) for the \(p\)-adic
+cyclotomic character. Fix a nonempty proper subset \(P\) of the primes
+above \(p\), and suppose
+\[
+ \bar\xi^2\ne1,\qquad
+ \bar\xi(\operatorname{Frob}_v)\ne1\quad(v\mid p).
+\]
+Suppose there is a parallel weight \(k+1\) cuspidal Hilbert eigenform
+of character \(\xi\), level \(\mathfrak n\prod_{v\mid p}v\), where
+\(k\ge2\) is divisible by \(p-1\), with the following residual
+eigenvalues in the usual arithmetic Hecke normalization:
+\[
+ \overline{T_{\mathfrak q}}=1+\bar\xi(\mathfrak q)
+ \quad(\mathfrak q\nmid p\mathfrak n),\qquad
+ \overline{U_v}=
+ \begin{cases}1&v\in P,\\ \bar\xi(v)&v\notin P.\end{cases}
+\]
+Then for every \(t\ge2\) divisible by \(p-1\) there is a continuous
+representation \(r:G_F\to\mathrm{GL}_2(\overline{\mathbb Q}_p)\),
+irreducible on every open subgroup, such that
+\[
+ \det r=\epsilon^k\xi,\qquad
+ \bar r^{\rm ss}=1\oplus\bar\xi,\qquad
+ r|_{I_{\mathfrak q}}\simeq1\oplus\xi|_{I_{\mathfrak q}}
+       \quad(\mathfrak q\nmid p).
+\]
+At \(v\mid p\), \(r\) is crystalline and has a stable line and
+quotient with cyclotomic inertia exponents, respectively,
+\[
+ (k+t,-t)\quad(v\in P),\qquad (k,0)\quad(v\notin P).
+\]
+The characters on these lines and quotients reduce respectively to
+\((\bar\xi,1)\) and \((1,\bar\xi)\) on the entire decomposition
+group. The automorphic attachment can be taken spherical at \(p\)
+and outside \(\mathfrak n\), and principal series with distinct
+inertial characters at primes dividing \(\mathfrak n\).
+\end{theorem}
+
+\begin{proof}
+Let \(B/F\) be the quaternion algebra ramified exactly at the real
+places; it exists because the degree is even. Fix its splittings at
+finite places. Jacquet--Langlands transfers the initial cusp form
+without changing its finite local representations. Put
+\(K^p=K_0(\mathfrak n)^p\) and at \(v\mid p\) take the upper
+Iwahori \(I_v\subset\mathrm{GL}_2(\mathbb Z_p)\). Set
+\(K=K^p\prod_{v\mid p}I_v\). At the tame level use the character
+of the lower-right entry prescribed by the initial form (the usual
+nebentypus type). Write \(O\) for a sufficiently large coefficient
+DVR, \(\lambda\) for its uniformizer, and \(\kappa=O/\lambda\).
+
+We first give the integral weight calculation. Put \(m=k-1\).
+For integers \(n_v\ge1,b_v\) with \(n_v+2b_v=m\), let
+\[
+ L=\bigotimes_{v\mid p}
+       \operatorname{Sym}^{n_v}O^2\otimes\det^{b_v},
+ \qquad \tau=\bigotimes_{v\mid p}\tau_v .
+\]
+The common central exponent is \(m\). The ordinary algebraic
+modular forms on \(B\) have a lattice \(M_L\) of functions on
+\(B^\times(\mathbb A_{F,f})\) with left \(B^\times(F)\)-invariance
+and right transformation
+\[
+ f(gzu)=\omega(z)\nu(u^p)\tau(u_p)^{-1}f(g).
+\]
+Here \(\nu\) is the fixed tame type and \(\omega\) is the
+\(p\)-adic avatar of the original automorphic central character:
+if the latter is \(\omega_0\), then
+\(\omega(z)=\omega_0(z)\prod_{v\mid p}z_v^{-m}\).
+In the arithmetic Hecke normalization \(\omega_0=\xi_f|\cdot|_f^{-m}\),
+where \(\xi_f\) denotes the finite idelic character giving the
+arithmetic Hecke values of \(\xi\). The avatar has unit values:
+the contribution of a uniformizer at \(p\) to
+\(|\cdot|_f^{-m}\) is canceled by the algebraic factor, and at other
+places it is a \(p\)-adic unit. It is trivial on \(F^\times\):
+the product of the norm and algebraic factors there is the sign
+of the rational norm to the power \(m\), which cancels the totally
+odd character. On the intersection of the center and \(K\) the
+two right actions agree. Thus the same central character and tame
+type are used at every weight. The description over the coefficient
+field is the usual algebraic modular form description, obtained by
+moving the algebraic action at infinity to the chosen places above
+\(p\). No change of level or of central character is involved.
+
+The projective double coset set
+\[
+ B^\times(F)\backslash B^\times(\mathbb A_{F,f})/
+       (Z(\mathbb A_{F,f})K)
+\]
+is finite. For each representative its rational stabilizer modulo
+\(F^\times\) is finite, by discreteness of the projective rational
+group in the adeles and compactness at infinity and at the indicated
+finite level. At the prime \(u\mid\mathfrak n\) of norm \(2\) this
+stabilizer injects, after conjugation by the local representative,
+into the projective image of an Iwahori in
+\(\mathrm{GL}_2(F_u)\). This is a pro-\(2\) group: the upper
+Borel of \(\mathrm{GL}_2(\mathbb F_2)\) has order \(2\), and the
+principal congruence kernel is pro-\(2\).
+Consequently the finite stabilizer has order a power of \(2\).
+Since \(p\) is odd, taking its invariants is exact over \(O\)
+and \(\kappa\), by the averaging idempotent. Evaluation at the
+coset representatives expresses \(M_L\) as the direct sum of these
+invariant modules; in particular reduction commutes with taking
+the space, and a surjection of residual coefficient modules gives
+a surjection of the residual spaces. This argument includes
+\(p=3\) and does not require an auxiliary neat tame level.
+
+In the \(v\)-factor of \(L/\lambda L\), extract the coefficient of
+\(e_2^{n_v}\), including the determinant character. The resulting
+one-dimensional quotient has Iwahori character
+\[
+ \begin{pmatrix}a&c\\0&d\end{pmatrix}
+   \longmapsto d^{n_v}(ad)^{b_v}.
+\]
+Let \(q_L\) be the tensor product of these quotient maps. If the
+exponents \(n_v,b_v\) are fixed modulo \(p-1\), the scalar quotient
+\(L_{\rm sc}\) is independent of the weights. The pointwise map
+\[
+ \overline M_L\longrightarrow M_{L_{\rm sc}}
+\]
+is surjective by the stabilizer calculation.
+
+The right cosets of \(I_v\operatorname{diag}(p,1)I_v\) can be
+represented by \(h_c=\left(\begin{smallmatrix}p&c\\0&1\end{smallmatrix}\right)\),
+\(c\bmod p\). With the above right transformation rule the
+normalized operator is
+\[
+ U_v^{\rm norm}f(g)=p^{-b_v}\sum_{c\bmod p}\tau_v(h_c) f(gh_c).
+\]
+It preserves \(M_L\), since the factor from \(\det(h_c)^{b_v}\)
+cancels the normalization. On the residual symmetric power the
+individual matrix sends a vector \(x\) to
+\[
+ (c e_1+e_2)^{n_v}\,[e_2^{n_v}]x .
+\]
+Its scalar quotient is just \([e_2^{n_v}]x\). Thus the map to
+the scalar space commutes with the normalized \(U_v\), acting
+there by the sum over the same \(h_c\), and with Hecke operators
+away from \(p\). The scalar operator is well-defined by
+surjectivity and this identity. The product \(U=\prod_{v\mid p}U_v^{\rm norm}\)
+kills the entire kernel of the scalar quotient modulo \(\lambda\):
+each term in its expansion factors through \(q_L\), evaluated
+at the corresponding translated argument. Hence the invertible
+parts for \(U\) are isomorphic for all these weights. For clarity,
+over the residue field the invertible part is the stable image
+of a sufficiently high power of \(U\); restricting a surjection
+to stable images is surjective, and a kernel killed by \(U\)
+has zero intersection with the invertible part. Over \(O\) the
+corresponding direct summand is obtained by the ordinary idempotent
+(the limit of \(U^{j!}\)); it reduces to that stable image.
+This follows also by lifting the coprime factors of the
+characteristic polynomial of \(U\) that reduce to powers of \(X\)
+and polynomials prime to \(X\). Since the \(U_v^{\rm norm}\) commute,
+each is invertible on the ordinary part.
+
+Take \((n_v,b_v)=(k-1,0)\) first, and then take
+\[
+ (n_v,b_v)=
+ \begin{cases}
+ (k+2t-1,-t)&v\in P,\\
+ (k-1,0)&v\notin P .
+ \end{cases}
+\]
+Their scalar quotients are identical. The initial eigenpacket
+has nonzero ordinary reduction, and so it occurs in the ordinary
+part of the new integral space modulo \(\lambda\). The
+Deligne--Serre lifting lemma for the commuting integral Hecke
+operators yields a characteristic-zero eigenpacket with the same
+residual values. One can apply it to the finite \(O\)-algebra
+generated by the operators in the endomorphism ring of the
+ordinary lattice, localize at the given residual maximal ideal,
+and choose a characteristic-zero prime below it; the algebra
+acts faithfully on a free lattice and has no \(O\)-torsion.
+Jacquet--Langlands transfers the resulting representation back
+to a cuspidal \(\mathrm{GL}_2\) representation \(\pi_0\):
+one-dimensional quaternionic representations cannot occur at
+the nonzero symmetric-power weights \(n_v\).
+The finite central character and tame level are unchanged.
+
+We check the local conditions. At \(v\mid p\) the representation
+is Iwahori-spherical with unramified central character. Its local
+generic constituent is either an unramified principal series or
+an unramified twist of Steinberg. In the latter case the raw
+Iwahori Hecke eigenvalue squared is the central value at a
+uniformizer, up to a unit; its valuation is \(m/2\).
+The normalized slope would be \(m/2-b_v=n_v/2>0\), contrary
+to ordinarity. Hence it is spherical. If \(\alpha_v\) is the raw
+ordinary Hecke root, its valuation is \(b_v\) and that of the
+other root is \(n_v+b_v+1\), since the determinant of the
+arithmetic Hecke polynomial is \(p^{m+1}\xi(v)\).
+
+Use the classical Galois representation and local-global
+compatibility theorem for cohomological cuspidal Hilbert
+representations (in particular Skinner's theorem for the local
+compatibility at \(p\); see Bergdall--Hansen, Theorem 6.5.1 and
+Remark 6.5.2). We take the dual of their geometric-Frobenius
+representation, so arithmetic Frobenius has the raw Hecke roots
+and the cyclotomic character has exponent \(+1\). The Hodge
+exponents are \(b_v,n_v+b_v+1\). The eigenline of crystalline
+Frobenius of slope \(-(n_v+b_v+1)\) is weakly admissible:
+its filtered degree is at least \(-(n_v+b_v+1)\), and the
+weak-admissibility inequality forces equality. It thus corresponds
+to the high-exponent Galois line. The quotient is
+\(\epsilon^{b_v}\) times the unramified character with arithmetic
+Frobenius value \(p^{-b_v}\alpha_v\).
+The determinant is \(\epsilon^{m+1}\xi\), first at unramified
+primes and then everywhere by Chebotarev. The normalized
+ordinary eigenvalues and this determinant give exactly the asserted
+two residual characters on the local decomposition groups.
+The residual global characteristic polynomial follows from the
+Hecke congruence, the determinant, and Chebotarev and
+Brauer--Nesbitt.
+
+At \(\mathfrak q\nmid p\), the conductor exponent of the
+Weil--Deligne representation is at most \(a_{\mathfrak q}(\xi)\),
+by the tame \(K_0(\mathfrak n)\)-type and local newform theory.
+It is at least \(a_{\mathfrak q}(\xi)\), by the determinant.
+Here is why equality suffices for the exact inertia assertion.
+In the Artin conductor formula the codimension of the invariants
+of the determinant on every ramification subgroup is at most
+that of the two-dimensional representation, and the monodromy
+term is nonnegative. If the determinant is ramified, equality
+forces a one-dimensional inertia-fixed space, and the two
+inertial characters are \(1,\xi\); the nilpotent monodromy
+commutes with inertia and is zero. If the determinant is
+unramified, equality means conductor zero. Local-global
+compatibility therefore gives the actual asserted inertia
+representation, not just its semisimplification. At a ramified
+prime the Weil representation splits into the two distinct
+inertial eigenspaces, which are stable under Frobenius since
+\(\xi\) is a global character. The corresponding principal series
+has unlinked characters. At the remaining primes the local
+representation is spherical.
+
+Finally the cuspidal Galois representation is irreducible over
+\(\overline{\mathbb Q}_p\). If its restriction to an open subgroup
+is reducible, pass to the open normal core. The orbit of an
+invariant line either consists of exactly two lines, permuted
+transitively, or contains at least three. In the second case the
+core acts by scalars, impossible because the two Hodge exponents
+remain distinct after finite extension. In the first case there
+is a nontrivial quadratic self-twist \(\eta\). Its reduction is
+nontrivial since \(p\ne2\). Reducing the self-twist identity gives
+\(\{1,\bar\xi\}=\{\bar\eta,\bar\eta\bar\xi\}\), forcing
+\(\bar\xi=\bar\eta\), contrary to \(\bar\xi^2\ne1\).
+\end{proof}
+
+\paragraph{Starting eigenpacket.}
+For the hypotheses above, the usual mixed weight-one Eisenstein
+series supplies the starting eigenpacket. We record the argument
+and its exact normalization, so that no divisibility assertion
+about a special \(L\)-value is needed. Write
+\(\mathfrak p_P=\prod_{v\in P}v\) and
+\(\mathfrak p_Q=\prod_{v\mid p,\ v\notin P}v\).
+Use the trivial ray character with modulus \(\mathfrak p_Q\)
+and the ray character \(\xi\) with modulus
+\(\mathfrak n\mathfrak p_P\), extending by zero at primes of
+their respective moduli. Both moduli are nontrivial and the
+parity condition is weight one. The Eisenstein coefficient
+formula of Dasgupta--Darmon--Pollack, Proposition 2.1, gives
+a form of character \(\xi\) and level
+\(\mathfrak n\prod_{v\mid p}v\), with integral normalized
+positive coefficients
+\[
+ c(\mathfrak a)=\sum_{\mathfrak d\mid\mathfrak a}
+       \eta(\mathfrak a/\mathfrak d)\psi(\mathfrak d),
+ \qquad c(1)=1 ,
+\]
+and zero constants at the standard cusps in their component
+description. Its Hecke values away from \(p\mathfrak n\) and
+its \(U_v\) values are precisely the desired ones, by the
+coefficient formulas. We do not assert that it vanishes at
+every cusp.
+
+The weight-raising multiplier needed here is a characteristic-zero
+Hilbert form of level one and trivial finite nebentypus, of positive
+parallel even weight \(k\) divisible by \(p-1\), whose normalized
+expansion at every standard component is \(1\bmod\lambda\).
+The usual Hasse-invariant power lifting theorem supplies it:
+see Goren, \emph{Lectures on Hilbert Modular Varieties and
+Modular Forms}, Chapter 5, Section 6.1, Remark 6.1. For split
+\(p\), use the product of the partial Hasse invariants, of
+parallel weight \(p-1\), with expansion one. Equivalently
+one lifts a sufficiently high power on the minimal compactification
+by ampleness of the parallel Hodge bundle and Serre vanishing.
+If one starts on polarized components, the power can be taken
+even and the lift descended with trivial character by taking
+the product of its translates under the finite component and
+level descent group, acting with the weight-normalized central
+action. The Hasse section is invariant for that action; hence
+the product still has expansion one modulo the uniformizer.
+This norm construction does not divide by the order of a class
+group. In the normalized ideal-coefficient convention one chooses
+the component ideals prime to \(p\) and takes \(k\) divisible by
+\(2(p-1)\), so the factors \(N(\mathfrak t)^{\pm k/2}\)
+are also one modulo \(p\).
+
+Multiplication by this lift gives a nonzero residual eigenpacket
+at weight \(k+1\), at the same level and character, since the
+positive coefficient at \(1\) remains one. The Hecke coefficient
+formulas are compatible modulo \(\lambda\): at primes away from
+\(p\mathfrak n\) the extra factor is \(N\mathfrak q^k\equiv1\),
+and at \(p\) the \(U_v\) formula is the coefficient shift.
+Use the lattice of forms with integral normalized coefficients
+at the standard components. It is finite over \(O\) by the
+\(q\)-expansion principle (finitely many coefficients separate
+the finite-dimensional space) and stable under these operators.
+The Deligne--Serre lemma lifts the residual eigenpacket in the
+full holomorphic space.
+
+The lift cannot be Eisenstein. In weight \(k+1>2\) an Eisenstein
+eigensystem at this character and level is obtained from two
+finite characters \(\eta',\psi'\) with product \(\xi\), and its
+unramified roots are \(\eta'(\mathfrak q)\) and
+\(\psi'(\mathfrak q)N\mathfrak q^k\). The residual unordered
+characters are \(\{1,\bar\xi\}\) by Chebotarev and
+Brauer--Nesbitt. At \(v\mid p\) both characters are unramified:
+their conductor exponents have sum at most one, and their
+product is unramified. The only unit Hecke root there is
+\(\eta'(v)\). It cannot reduce to \(1\) on \(P\) and to
+\(\bar\xi(v)\) on its complement, as both sets are nonempty and
+\(\bar\xi(v)\ne1\) at every such prime. Thus the cuspidal part
+contains the lifted system. This uses separation of ordinary
+refinements, not cuspidality of the weight-one series itself.
+
+\paragraph{Source normalization and scope.}
+For an arithmetic Hecke polynomial with roots \(\alpha,\beta\)
+the normalized Satake parameters of \(\pi_0\) are
+\(q^{-1/2}(\alpha,\beta)\). The source's attachment uses inverse
+(arithmetic) Frobenius and multiplies its normalized Satake
+parameters by \(q^{1/2}\). Accordingly take
+\(\pi=\pi_0^\vee\otimes|\det|\), with normalized parameters
+\(q^{-1/2}(\alpha^{-1},\beta^{-1})\).
+At a real place the quaternion coefficient representation has
+highest weights \(n_v+b_v,b_v\). The Harish--Chandra parameters
+of \(\pi_0\) are
+\(\{-b_v+1/2,-n_v-b_v-1/2\}\); dualizing and twisting as above
+gives \(\{b_v+1/2,n_v+b_v+3/2\}\).
+These are exactly the source's rank-two \(\operatorname{infOf}\)
+parameters for the two cyclotomic exponents. Principal series
+with distinct inertia characters are unlinked, and the other
+places have a Satake parameter. Thus the construction targets
+the original \texttt{MixSeedP} interface, with its original
+field and local orders, not a parallel-weight substitute.
+
+The integral weight-change theorem is independent of the
+Hasse multiplier. The only additional input in the starting
+packet argument is the classical level-one Hasse-power lift
+in the normalized adelic convention described above and the
+weight-one Eisenstein coefficient formula. In particular this
+does not prove the subsequent symplectic induction, the second
+or third case of rank-four propagation, or the final uniform
+Selmer estimate.
+
+\paragraph{References.}
+Dasgupta--Darmon--Pollack, \emph{Hilbert modular forms and the
+Gross--Stark conjecture}, Annals of Mathematics 174 (2011),
+439--484, Proposition 2.1 (including imprimitive moduli);
+Goren, \emph{Lectures on Hilbert Modular Varieties and Modular
+Forms}, CRM Monograph Series 14, 2002, Chapter 5,
+Sections 3 and 6.1;
+Skinner, \emph{A note on the \(p\)-adic Galois representations
+attached to Hilbert modular forms}, Documenta Mathematica 14
+(2009), 241--258;
+Bergdall--Hansen, \emph{On \(p\)-adic \(L\)-functions for Hilbert
+modular forms}, Theorem 6.5.1 and Remark 6.5.2.
