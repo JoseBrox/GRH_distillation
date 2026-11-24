@@ -853,6 +853,14 @@ indices for degrees 3–10, not the asymptotic bound.
 This route is independent of the retained CM and spectral
 alternatives; the infinite-order phase estimate remains open.
 
+### The remaining high-dyadic point problem
+
+For the cubic frame, the [strong-irreducibility and monodromy argument](../notes/cubic-irreducible-monodromy.md) applies to the actual characteristic-prime curves as well as characteristic-zero points. A prime-dimensional imprimitive representation would give a trace identity on the kernel of its finite permutation action, contradicting independence of the distinct restricted residual characters. The dyadic ratios have order greater than six. Finite determinant then forces the connected algebraic monodromy to be semisimple; in dimension three the proper irreducible alternative is orthogonal. Its essentially self-dual residual character relation is impossible for the diagonal $(a\lambda^{-1},1,a^{-1}\lambda^{-1})$, since $a^c=a$ and $\lambda^c=\lambda^{-1}$ with $\lambda$ of order three. The connected group is therefore $\mathrm{SL}_3$.
+
+The [integral trace-generation theorem](../notes/cubic-trace-and-adjoint.md) recovers the three coordinate projectors from the separating mark and writes all balanced entry monomials as closed matrix-cycle traces. The complete invariant algebra is the closed trace algebra, including its torsion and nilpotents. A finite fixed-weight Hecke comparison on the actual characteristic-prime curves would force their characteristic polynomials to be constant, excluding irreducibility. For characteristic-zero points the same note establishes the finite local conditions for the actual dual-number tangents, using the ordered weight filtration and local duality. Cuspidal attachment then implies adjoint vanishing by Thorne's theorem and hence normalized tangent rigidity. These two point premises remain open.
+
+The [automorphic starting-packet construction and audit](../notes/cubic-automorphic-seed-frontier.md) produces an ordinary conjugate-self-dual $2+1$ isobaric packet at auxiliary weights using the parent rank-two construction, for coefficient primes prime to the host conductor. The needed cuspidal GL3 packet is not yet supplied. The symmetric-square seed is excluded by the residual self-duality relation, and the checked level-raising and residually reducible automorphy-lifting theorems have unmet hypotheses. The original deep auxiliary tower additionally requires a new cubic-component class-rank bound. The parent abelian Ferrero–Washington estimate only controls the invariant component. Thus neither irreducible point premise is discharged, and the high-dyadic length comparison remains conditional. The lower-dyadic Euler-system strategy is unchanged.
+
 ## 9. Remaining work and provenance
 
 The preferred proof is self-contained within the

@@ -72,3 +72,6 @@ These are obstructions to specific proposed proof steps, not to GRH.
   is reducible and the finite local regulator has dimension two.
   See [direct Euler systems](../notes/cubic-eisenstein-euler-systems.md).
   This is unnecessary in the high-dyadic range by [corner elimination](../notes/cubic-corner-elimination.md).
+
+- An actual high-dyadic irreducible cubic point has connected monodromy SL3, and its residual diagonal is not essentially self-dual even after CM restriction preserving distinctness. The original symmetric-square seed cannot be used. The ordinary 2+1 packet lacks the required cuspidal rank-three and Steinberg raising suppliers; a large fraction-field image does not repair the individual residual polarization hypotheses of the checked reducible lifting theorem. The abelian Iwasawa rank bound also does not control the new cubic components. See [seed frontier](../notes/cubic-automorphic-seed-frontier.md).
+- Neither the equality of the invariant and trace rings nor rigidity after cuspidal attachment establishes characteristic-prime finiteness. The actual SL3 curves must be excluded, not merely their reducible or finite-image alternatives.

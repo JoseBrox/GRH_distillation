@@ -233,3 +233,10 @@ Hypothesis 3.2; Lei--Loeffler--Zerbes, DOI
 arXiv:1901.07166v2, Theorems 1.0.2 and 1.0.4.
 The local rank and unipotent construction are proved in the note.
 The audit is not an exhaustive nonexistence result for Euler systems.
+
+## Latest high-dyadic point arithmetic
+
+- [Monodromy](../notes/cubic-irreducible-monodromy.md): Clifford theory, independence of characters, and the classification of irreducible connected semisimple subgroups of SL3 in characteristic zero or at least five; for rank one use the Steinberg tensor-product theorem (Jantzen, *Representations of Algebraic Groups*, II.3.17).
+- [Seed frontier](../notes/cubic-automorphic-seed-frontier.md): uses the parent rank-two AS1--AS4 construction and solvable base change. Audits Thorne, *A p-adic approach to the existence of level-raising congruences*, DOI 10.1112/plms.12584, Theorems 6.11 and 7.5; and Allen--Newton--Thorne, *Automorphy lifting for residually reducible l-adic Galois representations, II*, arXiv:1912.11269v2, Theorem 6.1(4)--(6). The exact individual-polarization and Steinberg conditions were checked; those theorems are not asserted for our frame.
+- [Trace and adjoints](../notes/cubic-trace-and-adjoint.md): integral trace generation and the local Bloch--Kato dimension formula, followed by Thorne's Theorem 6.1 in arXiv:2207.04925 (checked against the theorem statement at https://www.dpmms.cam.ac.uk/~jat58/adequate_new.pdf, p. 23). Actual automorphic attachment is still a hypothesis.
+- [Parent handoff](../../notes/hecke-parent-corner-handoff.md) isolates the reusable fixed-inertia corner argument with its original Bernoulli criterion. It does not delete the type-E stratum of the varying-weight auxiliary ring.

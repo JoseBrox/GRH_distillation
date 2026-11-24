@@ -55,4 +55,9 @@
 | Actual high-dyadic homogeneous relations and exact irreducible-curve criterion for finite invariant ring | Proved; numerical length still conditional on point arithmetic | [Presentation and curve criterion](../notes/cubic-high-dyadic-presentation.md) |
 | Rational rank-one image over the Eisenstein field, local rank-two regulator and precise Euler-system sufficiency | Image and rank proved; nonzero classes and full finite vanishing open | [Direct Euler-system alternative](../notes/cubic-eisenstein-euler-systems.md) |
 
+| Strong irreducibility and full connected SL3 monodromy of actual high-dyadic irreducible points | Proved in both characteristics; excludes finite-image, imprimitive and orthogonal alternatives, not all curves | [Monodromy](../notes/cubic-irreducible-monodromy.md) |
+| Ordinary 2+1 isobaric starting datum with cubic labels | Constructed using the parent rank-two seed for coefficient primes prime to the host conductor; cuspidal GL3 seed and propagation open | [Seed frontier](../notes/cubic-automorphic-seed-frontier.md) |
+| Closed trace algebra equals the actual integral invariant ring; finite local conditions for actual tangents | Proved; tangent rigidity follows upon actual cuspidal attachment | [Trace and adjoints](../notes/cubic-trace-and-adjoint.md) |
+| Transfer of fixed-inertia corner elimination to RH and Dirichlet frames | Proved under the corresponding Bernoulli-unit criterion; handoff committed | [Parent handoff](../../notes/hecke-parent-corner-handoff.md) |
+
 No new full Hecke node, target complex-zero exclusion or Lean verification is claimed.

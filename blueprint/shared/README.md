@@ -4,6 +4,8 @@ The two manuscripts have different final targets. Their geometric and integral
 construction still shares substantial mathematics. A result is transferred
 only with its hypotheses, normalization and parameter dependence intact.
 
+**Hecke handoff:** [Corner elimination in the actual rank-three ring](../../notes/hecke-parent-corner-handoff.md), with the RH Bernoulli threshold and general Dirichlet criterion. The fixed-inertia count loses its type-II branch wherever the residual corner vanishes; the auxiliary varying-weight propagation problem is not changed. The same note transfers the prime-dimensional strong-irreducibility test.
+
 | Shared result | Common proof or evidence | Ordinary RH application | Dirichlet GRH application |
 | --- | --- | --- | --- |
 | Original local chart and integral Selmer comparison | [Full proof](../../notes/selmer-support-continuation-local-chart.md) | The actual crystalline component and integral strict-cocycle lift give the one-character trace inequality with its original modulus. | The full equation ideal, all torsion and the original field/conductor quantifiers remain. Uniform trace sums and the weighted product are still required. |

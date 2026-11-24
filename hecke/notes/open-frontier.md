@@ -298,6 +298,12 @@ strip comparison is not an assumption that would complete the proof.
 
 The arithmetic route H07F/H07I is independent of H08.
 
+## Latest high-dyadic point comparisons
+
+The new [full connected monodromy theorem](cubic-irreducible-monodromy.md) excludes imprimitive and orthogonal-type irreducible points in both characteristics: every remaining high-dyadic irreducible point has connected group SL3. The [trace and adjoint comparison](cubic-trace-and-adjoint.md) identifies the entire integral invariant ring with the closed trace algebra, and proves finite local conditions for actual dual-number tangents. Genuine cuspidal attachment therefore implies normalized tangent rigidity by Thorne's theorem, without a separate Euler-system premise. The [automorphic seed audit](cubic-automorphic-seed-frontier.md) constructs an ordinary 2+1 isobaric starting datum from the parent rank-two seed (for coefficient primes prime to the host conductor). It is not the required cuspidal GL3 seed. The symmetric-square route fails even after CM restriction preserving distinct residual constituents; the checked level-raising and reducible lifting theorems do not directly apply. The parent auxiliary class-rank argument also needs a new bound on the nontrivial cubic components over the nonabelian residual splitting field.
+
+**Next:** exclude the remaining SL3 characteristic-prime curves and prove actual cuspidal attachment of the irreducible characteristic-zero points. A finite fixed-weight Hecke trace comparison on the actual curves would suffice for their exclusion. Develop a genuine cuspidal seed and support transfer for the cubic labels, including the auxiliary tower rank input if the parent deep-tower route is retained. Reserve Euler systems for the lower-dyadic cross-block cases. The collective global theta estimate, independent interpolation lower bound, moving Selmer lengths and infinite-order phase estimate H07I remain open.
+
 ## Acceptance
 
 Do not mark H07F or H07I complete until the respective all-field
