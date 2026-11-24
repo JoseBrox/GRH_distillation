@@ -1,0 +1,268 @@
+\subsection{The common-stabilizer measure at the arithmetic reference lattice}
+\label{sec:flag-reference-haar}
+
+We now use the normal form of Section~\ref{sec:flag-adapted-normal-form}
+to evaluate the reference covolume in the \emph{local orbital}
+measure. This is not the Hilbert--Schmidt measure on the Lie
+algebra used in the earlier unipotent-volume calculation.
+
+Write \(\rho=\operatorname{rd}(E)=2v\), \(f=[F:\mathbb Q]\),
+\(A_a=\mathfrak d^{a-r}\), and
+\[
+       L_v=(8v)^{2(r+1)^2f}.
+\]
+Here \(v\ge1\), and \(N_E\mathfrak d=\rho^{2f}\), as in the
+original arithmetic data. Continue with (US1)--(US3). In
+particular the middle space \(W+Ez\) has rank \(k+1\), and its
+lattice \(J\) in the reference construction is self-dual by
+Lemma~\ref{lem:flag-fixed-index-constraint}. No self-duality of the
+whole reference lattice is needed.
+
+\begin{theorem}[Reference and actual common-stabilizer covolumes]
+\label{thm:flag-reference-haar}
+For an actual admitted rational normal form with common tail of
+length \(r-j\), let \(R\) be the common flag unipotent group.
+Use the original real model of this normal form: the first
+isotropic vectors have coordinates \(\rho^{r-a}e_a^{\rm std}\)
+and their duals have coordinates
+\(\rho^{a-r}f_a^{\rm std}\). Let \(\lambda_R\) be product
+Lebesgue Haar measure in the original block-upper, middle and
+skew coordinates, i.e. the product of the source's
+\(\mathrm{lebR0}\) measures with scalar \(1\).
+Then
+\[
+ \frac{v^{k(r-j)f}}{L_v}
+ \ \le\ \operatorname{covol}_{\lambda_R}\Gamma_{\rm ref}
+ \ \le\ v^{k(r-j)f} L_v ,
+ \tag{RH1}
+\]
+where \(\Gamma_{\rm ref}=R(E)\cap\operatorname{Aut}(\Lambda_{\rm ref})\).
+The actual lattice group
+\(\Gamma=R(E)\cap\operatorname{Aut}(\Lambda)\) satisfies
+\[
+ \operatorname{covol}_{\lambda_R}\Gamma
+       \le \omega_N(\Lambda)v^{k(r-j)f} L_v ,
+ \qquad
+ \omega_N(\Lambda)=
+ \frac{[\Gamma_{\rm ref}:\Gamma_{\rm ref}\cap\Gamma]}
+      {[\Gamma:\Gamma_{\rm ref}\cap\Gamma]}.
+ \tag{RH2}
+\]
+In particular the covolumes are finite and strictly positive.
+\end{theorem}
+
+\begin{proof}
+Use the orthogonal splitting (US1), and put \(I=X\cap X'\),
+\(I^*=\langle f_a:a\ge j\rangle\), \(M_E=W+Ez\).
+We write matrices with the conjugate-linear first argument
+convention; this merely conjugates the entries of the matrices
+in (US1). On \(X_j+X'_j\), an element of \(R\) acts on
+\(X_j\) by an upper unitriangular matrix \(U\).
+Its action on \(X'_j\) is forced by the cross-pairing matrix
+\(P\) to be \(P^{-1}(U^*)^{-1}P\), where \(*\) is conjugate
+transpose. Both matrices must be upper unitriangular.
+Since \(P\) is a direct sum of signed antidiagonals, reversing
+indices within each block takes the inverse-transpose upper
+condition into the same condition on the first block. Between
+distinct blocks the inverse-transpose is lower triangular in
+block order; hence its off-block entries must vanish.
+Thus \(U\) is precisely block diagonal upper unitriangular
+on the leading blocks.
+
+On the orthogonal complement \(I+M_E+I^*\), the common
+stabilizer is the usual full flag unipotent group for \(I\).
+It acts trivially on \(I^\perp/I\) in this complement.
+There is no further constraint from the second flag because its
+tail is the first tail multiplied by a fixed norm-one scalar.
+In particular, the middle action is the identity, and not
+the compact stabilizer of \(z\). If \(H_M\) denotes the matrix of
+the middle form, the radical of this parabolic has matrices
+\[
+ p(B,S)=
+ \begin{pmatrix}
+ 1&-B^*H_M&S-\tfrac12 B^*H_MB\\
+ 0&1&B\\0&0&1
+ \end{pmatrix},
+ \qquad S^*=-S,
+\]
+and the remaining upper unitriangular tail acts on \(I\) and
+contragrediently on \(I^*\). This follows by multiplication
+against the Hermitian matrix of the orthogonal splitting.
+Conversely all these matrices preserve both flag filtrations
+and act trivially on both isotropic quotients, so the description
+is exact. Reversal of the dual ordering gives the coordinates
+\(\mathrm{rEl}\) in the source. Let \(n_1\) be the number of upper
+entries in the leading blocks and the tail, and \(n_3\) the number
+of strictly upper entries in the skew tail. Set \(s=r-j\).
+Then \(n_1,n_3\le r^2\) and \(s\le r\).
+
+In the reference lattice, each first isotropic line has
+coefficient ideal \(A_a\), each second leading line has the
+same ideal, and the common dual tail has ideals \(A_a^{-1}\).
+The middle lattice is \(J\). Thus every upper entry with
+indices \(a<b\) is in \(A_a A_b^{-1}=\mathfrak d^{a-b}\).
+These conditions suffice: they are exactly integrality on the
+first upper module, including its inverse, and the paired
+leading action reverses the entry indices inside the same
+block. The two indices are replaced by their reversed pair
+with the same difference \(a-b\); the block scalar cancels,
+and the column signs are units. On the tail the dual action
+is integral by perfect duality. Hence pure upper matrices
+lift every allowed upper coordinate.
+
+For the identity-upper subgroup, the images of
+\(A_b^{-1}f_b\), \(b\ge j\), force \(B_b\in A_b J\).
+Conversely every such family lifts integrally.
+There exists \(w_0\in\mathcal O_E\) with
+\(w_0+\bar w_0=1\): the trace ideal is the unit ideal locally
+at every finite prime by unramifiedness (also at split primes
+and above two), and therefore globally. Replace the upper-right
+block \(-\tfrac12 B^*H_MB\) by \(-w_0 B^*H_MB\). Their difference
+is skew-Hermitian. The entries of \(B^*H_MB\) are in
+\(A_a A_b\) because \(J\) is self-dual and the ideals are
+conjugation invariant. The other off-diagonal block
+\(-B^*H_M\) maps \(J\) into the required first tail module.
+These conditions give an integral unipotent automorphism,
+including its inverse. The central kernel \(B=0\) consists exactly
+of skew matrices with \(S_{ab}\in A_a A_b\). In particular its
+diagonal consists of anti-invariant elements of \(A_a^2\).
+This proves both necessity and surjectivity of the projected
+integral groups; it does not assert that arbitrary integral
+\(B,S\) give an integral matrix with the factor \(1/2\).
+
+The group law on the successive upper-entry quotients (ordered
+by distance from the diagonal), the middle columns and the
+skew kernel is additive, with triangular translation in each
+fibre. The upper matrices act on the middle and skew spaces
+with determinant one. Thus product coordinate Lebesgue
+measure is Haar and covolume is the product of the successive
+additive-lattice covolumes. For a direct justification, reduce
+each quotient into a half-open fundamental parallelepiped
+and lift the reducing translation by the just-proved
+surjectivity. The remaining coordinate changes are
+translations or triangular determinant-one transformations.
+This gives a Borel fundamental set, with its volume computed
+by iterated integration; no rectangular integrality claim
+for the nonabelian group is used.
+
+The complex-embedding covolume of a fractional ideal \(A\) is
+\(v^f N_E(A)\). In the prescribed real coordinates an upper
+entry is multiplied at each place by \(\rho^{b-a}\), and
+an off-diagonal skew entry by \(\rho^{2r-a-b}\).
+The corresponding ideal norms cancel the real Jacobians
+\(\rho^{2f(b-a)}\) and \(\rho^{2f(2r-a-b)}\).
+Each of these coordinates consequently has covolume \(v^f\).
+
+The middle column at index \(b\) is multiplied by
+\(\rho^{r-b}\). For an integral self-dual Hermitian lattice of
+rank \(d\), its embedding covolume in the standard Hermitian
+space of determinant modulus one is \(v^{fd}\).
+Indeed take a pseudo-basis over the Dedekind domain and compute
+the determinant of its real embedding; the absolute norm of
+the Hermitian determinant times the ideal factors is one by
+self-duality. Multiplication by \(A_b\) changes the volume by
+\(N_E(A_b)^d\). The rescaling of the \(d=k+1\) complex
+coordinates cancels this factor exactly. Each middle column
+therefore has covolume \(v^{f(k+1)}\), even if \(J\) is not a
+free \(\mathcal O_E\)-module.
+
+For a skew diagonal coordinate at \(a\), take the full complex
+lattice
+\[
+ \mathcal L=\rho^{2(r-a)}
+            \bigl(\sigma_\tau(A_a^2)\bigr)_\tau
+             \subset \mathbb C^f .
+\]
+It is invariant under conjugation, has covolume \(v^f\), and
+every nonzero vector has sup norm at least one: its product
+of squared coordinate moduli is at least one by the fractional
+ideal norm inequality. The intersections with the real and
+imaginary subspaces are full lattices of rank \(f\), because
+their direct sum contains \(2\mathcal L\). Each has covolume
+at least one by Minkowski's convex body theorem applied to
+the open unit cube. Their product is at most \(4^f v^f\),
+since their direct sum has index at most \(2^{2f}\) in
+\(\mathcal L\). The imaginary covolume therefore lies between
+\(1\) and \((4v)^f\), in particular between \((8v)^{-f}\)
+and \((8v)^f\).
+
+The product formula for the reference group now gives
+\[
+ v^{f(n_1+n_3+(k+1)s)}
+       \prod_{a=j}^{r-1} V_a ,
+ \qquad (8v)^{-f}\le V_a\le(8v)^f.
+\]
+Because \(v\ge1\), \(n_1+n_3+2s\le 2r^2+2r\),
+this implies (RH1), also for an empty tail. The two
+integral stabilizers are commensurable: choose an integer
+\(d>0\) with \(d\Lambda\subseteq\Lambda_{\rm ref}\subseteq
+d^{-1}\Lambda\), then the kernel of the finite action on
+\(d^{-1}\Lambda/d\Lambda\) preserves both lattices; interchange
+the lattices for the opposite index. The finite-index formula
+for the common Haar covolume proves (RH2).
+\end{proof}
+
+\paragraph{Real realization and the two orientations.}
+The real coordinates in this proof come from the actual
+rational frame, not from a new local flag orbit. Complete its
+first flag to a hyperbolic basis by taking, for the first \(j\)
+duals, the dual basis inside the paired leading space \(X'_j\),
+and for the remaining duals the given \(f_a\). They are all
+isotropic, and perpendicular to the last vector. Complete the
+second flag in the same way, using \(c f_a\) on the tail.
+A rational isometry sends the first adapted hyperbolic basis
+to the original hyperbolic basis and sends its last vector
+to the original last vector. On the middle orthogonal
+complement take the canonical isometry through \(X^\perp/X\).
+It sends the last vector correctly because adaptation preserves
+its class there. The resulting isometry acts trivially on all
+graded flag spaces and on \(X^\perp/X\), hence belongs to the
+original flag unipotent group. Apply the same construction
+to the second adapted basis pulled back by the original
+return \(\gamma^{-1}\). Call the two isometries \(m_2,m_A\).
+In the original complex realization \(\phi_\tau\) this gives
+\[
+ \Phi_\tau=\phi_\tau m_2,\qquad
+ g_0=m_A\gamma^{-1}m_2^{-1},\qquad
+ \gamma^{-1}=m_A^{-1}g_0m_2
+\]
+(with the rational maps represented by their complex matrices
+in the latter two equations). The leading block moduli of
+\(g_0\) are constant on each antidiagonal: the original
+pairing is multiplied by
+\(\rho^{-(r-a)-(r-b)}\), constant when \(a+b\) is fixed.
+On the common tail and its duals \(g_0\) acts by \(c^{-1}\)
+at this place, and it maps the last vector by this same scalar.
+Thus these are exactly the source's \(\mathrm{IsFrameOf}\),
+\(\mathrm{IsNormal0}\) and \(\mathrm{lebR0}\) coordinates.
+The measure on the original stabilizer is pushed back by
+\(m_2^{-1}\). For the inverse orientation use the conjugation
+and equal-scalar calculation in the proof of
+Theorem~\ref{thm:actual-local-degenerate-bound}; it is measure
+preserving in the stipulated normal-form measures. Consequently
+(RH2) is the actual \(\mathrm{CovTC}\) bound. It uses the
+relative weight of this adapted form, before the later
+infimum over adapted forms.
+
+For the reference word's base lattice take \(j=0\), identical
+flags, and the given base hyperbolic splitting. Then its
+reference lattice is the base lattice itself and the above
+Lebesgue measure is \(\mathrm{lebN}\). The original membership
+calculation identifies the lattice group with the unipotent
+period lattice (Theorem~\ref{global-gram-haar-covolume}).
+In the normalized local coordinates at \(\theta=1\), the
+original unipotent measure is \(\kappa\,\mathrm{lebN}\), where
+\[
+ \kappa=(2v)^{-rk}2^{r(k+1)+r(r-1)}
+        =2^{r^2}v^{-rk}.
+\]
+Hence the product-coordinate unipotent covolume \(V_N\)
+in the original period normalization satisfies
+\[
+             0<V_N<\infty,\qquad V_N L_v\ge1 .
+ \tag{RH3}
+\]
+Indeed multiply the lower bound (RH1) at \(j=0\) by
+\(\kappa^f\). This is the source's \(\mathrm{CovNC}\).
+In particular all measure factors used in the subsequent
+amplitude estimate have the required sign and finiteness.
