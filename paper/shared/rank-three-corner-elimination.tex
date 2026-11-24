@@ -1,0 +1,125 @@
+\subsection{Removing the negative corner when its residual class vanishes}
+\label{sec:rank-three-corner-elimination}
+
+We use the Hecke-track handoff in the actual fixed-inertia
+rank-three presentation (DC3)--(DC7).  This is a refinement of
+the point comparison, not a new variable-weight automorphy theorem.
+
+\begin{proposition}[Integral negative-corner reduction]
+\label{prop:rank-three-corner-elimination}
+In the original normalized rank-three ring, suppose
+\(H^1_L(-2)=0\), with exactly the local conditions used in
+(DC4).  Then \(n_{-2}=0\), there are no equations of weight
+\(-2\) in the list (DC6), and every two-sided point is type I,
+in either coefficient characteristic.  This also applies
+to two-sided points of the finite-sum graded algebra
+of the ring.
+\end{proposition}
+\begin{proof}
+A relative tangent of weight \(-2\) is a cocycle in the
+negative corner line with the original local conditions.
+It is a coboundary by hypothesis.  Normalization at complex
+conjugation forces its primitive to be fixed by conjugation.
+On the corner line the negative reversing transpose acts
+as minus one.  Since the residue characteristic is odd,
+the primitive, and hence the tangent, is zero.
+The minimal relative presentation in (DC5) therefore
+has no variable of weight \(-2\).
+As the defect in that weight in (DC4) is zero, (DC6)
+has no equation in that weight either.
+
+Every homogeneous monomial of negative degree in the
+minimal power series presentation contains a variable
+of weight \(-1\), since all the other variables have
+nonnegative weights.  The variables were chosen among
+actual entry displacements.  In weight \(-1\) these are
+the two adjacent lower entries.  The same divisibility
+statement holds for a homogeneous series: partition its
+monomials according to the first such variable dividing
+them, then factor out that variable.  This is a finite
+sum of homogeneous series times actual adjacent entries.
+It proves the ideal inclusion both in the complete ring
+and in the algebra of finite sums of homogeneous series,
+without deleting any nilpotent.
+
+By the marked projector classification in the preceding
+integral count, a two-sided type-II point has its outer
+two-dimensional irreducible block separate from the
+middle line, so both adjacent lower entries vanish
+identically.  The ideal inclusion forces all negative
+weights to vanish, contradicting two-sidedness.
+This proof uses neither rationalization nor a passage to
+the reduced scheme.
+\end{proof}
+
+\paragraph{Explicit range in the RH frame.}
+Write \(\psi=\psi_2\psi_{\rm odd}\), with
+\(\psi_{\rm odd}^2=1\) and \(\psi_2\) primitive of conductor
+\(2^b\), as in (DH1).  The residual negative corner
+is \(\overline{\eta_4\epsilon^{-2e}\psi^{-2}}\).
+It is odd and its primitive Teichm\"uller lift has odd
+conductor \(f_0\mid\ell\); its dyadic conductor is
+\(2^{b-1}\) for \(b\ge4\).
+Take \(d=\operatorname{ord}_4(\ell)\) and
+\(h=v_2(\ell^d-1)\).
+The odd factor has order dividing \(\ell-1\).
+If \(\ell\equiv1\bmod4\), then \(2^h\le\ell-1\);
+otherwise \(2^h\le2(\ell+1)\), by the factorization
+of \(\ell^2-1\).
+In particular
+\[
+            2^b\ge8\ell(\ell+1)^2
+       \quad\Longrightarrow\quad
+            f_0\,4^h\le 2^{b-1}.
+\]
+Apply Corollary~\ref{cor:selmer-dyadic-twist-cocycle}.
+Away from \(\ell\) the original inertia kernels have
+prime-to-\(\ell\) index, and at \(\ell\) the local
+coboundary vanishes on the kernel of the coefficient
+character.  Thus its literal relative-index hypotheses
+hold.  This proves \(H^1_L(-2)=0\) in the displayed range.
+At \(\ell=3\) the earlier proof of \texttt{Xpp}
+in Theorem~\ref{thm:rh-dyadic-host-frame} already gives
+the conclusion under (DH1), without the stronger
+threshold.  In these ranges the abstract length comparison
+needs only the irreducible point spectrum and its rigidity,
+not the type-II endpoint vanishing.  For the intermediate
+conductors retain the full preceding proof.
+
+\paragraph{The Dirichlet application.}
+For any admitted parent fixed-inertia rank-three frame,
+let the negative corner be
+\(\bar\gamma=\overline{\eta\Psi^{-2}}\), and suppose
+its primitive finite-order lift is odd, with dyadic
+conductor \(2^{b-1}\), odd conductor \(f_0\), and
+prime-to-\(\ell\) order.  For any \(d\ge1\) such that
+\(4\mid\ell^d-1\) and the odd factor's order divides
+\(\ell^d-1\), the sufficient criterion is
+\[
+                      f_0\,4^{v_2(\ell^d-1)}\le 2^{b-1}.
+\]
+The same original local relative-index checks are
+necessary.  If the moving odd factors are quadratic,
+squaring removes them and \(f_0\mid M_0\ell\) with
+\(M_0\) fixed (including the fixed multiplier's odd
+conductor).  When the odd factor's order divides
+\((\ell-1)s\) for a fixed \(s\) prime to \(\ell\), one
+may choose \(d=2s\operatorname{ord}_s(\ell)\), with
+\(\operatorname{ord}_1(\ell)=1\).  In fact the geometric
+sum for this \(d\) is divisible by \(s\), by grouping
+it into blocks of length \(\operatorname{ord}_s(\ell)\).
+Also \(d\) is even, so the elementary 2-adic valuation
+formula gives \(2^{v_2(\ell^d-1)}\ll_s\ell+1\).
+This yields a sufficient threshold
+\(C_{M_0,s}\ell(\ell+1)^2\).
+The exact displayed criterion is more useful than this
+coarse sufficient one at individual primes.
+
+This reduction does not assert that every Dirichlet datum
+admits the fixed-inertia frame, nor that the auxiliary
+variable-weight ring has no reducible components.  It
+does not change the rank-four construction or the already
+assembled ordinary-RH weighted length estimate.
+The strong-irreducibility test in the same handoff is
+available only under its distinct-ratio and nonscalar
+open-subgroup hypotheses.
