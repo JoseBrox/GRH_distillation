@@ -1,0 +1,711 @@
+\subsection{The integral symplectic model for the remaining RH characters}
+\label{sec:rh-symplectic-integral-model}
+
+The ordinary-RH specialization has a useful simplification not available
+for arbitrary host characters: the set of distinguished local places is
+the singleton \(\{\ell\}\). The six off-block normalizations can therefore
+be made in the local ring before presenting the global ring. This avoids
+a characteristic-zero elimination of integral local equations.
+
+Retain the original datum of
+Theorem~\ref{thm:rh-symplectic-arithmetic-data}, including the selected
+places, \(g_0,s_0,\mathrm{ph}\), and its coefficient DVR \(O\).
+Let \(k\) and \(E\) be its residue and fraction fields, respectively.
+Put
+\[
+ \alpha=\varepsilon\omega_T^{-1}\xi,\qquad
+ \Psi=\varepsilon^e\psi,\qquad \beta=\Psi/\alpha,\qquad
+ \tau=\alpha\Psi .
+\]
+We use indices \(0,1,2,3\), the diagonal base representation
+\[
+ r_0=\operatorname{diag}(\tau,\Psi,\alpha,1)
+\]
+and the original alternating form
+\[
+ J=\begin{pmatrix}
+ 0&0&0&1\\0&0&1&0\\0&-1&0&0\\-1&0&0&0
+ \end{pmatrix}.
+\]
+In particular the similitude is fixed to be \(\tau\).
+The torus acts by conjugation by
+\(\operatorname{diag}(t_1t_2,t_2,t_1,1)\). Write its four positive
+root weights as
+\[
+ A=(1,0),\quad B=(-1,1),\quad P=(0,1),\quad T=(1,1).
+\]
+Their characters on the adjoint of \(r_0\) are
+\(\alpha,\beta,\Psi,\tau\), respectively. The negative roots have
+the inverse characters, and the weight-zero subspace of
+\(\mathfrak{sp}_4\) is two-dimensional and trivial.
+These are the original weights \texttt{wAl}, \texttt{wBe},
+\texttt{wPs}, \texttt{wTh}, and \texttt{wt}; the three pairs
+\(\pm A,\pm B,\pm T\) are the off-block roots.
+
+\begin{theorem}[The actual local ring and its normalized component]
+\label{thm:rh-symplectic-local}
+There is a complete Noetherian local \(O\)-algebra \(L\), with residue
+field \(k\), representing the original framed condition
+\texttt{condL} (including its unnormalized spectral-projector
+equations). Let \(x:L\to O\) be the diagonal augmentation, and
+\(\mathfrak p=\ker x\).
+There is a unique minimal prime \(Q\) of \(L\) contained in
+\(\mathfrak p\). The kernel of the characteristic-zero completed
+local chart at \(\mathfrak p\) is \(Q\), and some \(y\in L\) with
+\(x(y)\ne0\) annihilates \(Q\). The chart is a power series ring
+over \(E\) of dimension \(14\), with the following weight dimensions:
+\[
+ \begin{array}{c|ccc}
+ \text{weight}&0&A,B,P,T&-A,-B,-P,-T\\ \hline
+ \text{dimension per weight}&2&2&1 .
+ \end{array}                                                   \tag{SM1}
+\]
+The chart can be chosen using actual entry displacements, and
+has the density and saturated-power injectivity properties of
+the original \texttt{IsCompl} chart. In particular \(L\) supplies
+\texttt{LocBase} for this singleton local set.
+
+Put \(L^\circ=L/Q\). The original condition \texttt{OnComp}
+is represented by \(L^\circ\), on all complete Noetherian local
+coefficient rings of residue field \(k\), including rings with
+nilpotents and coefficient torsion.
+Let \(C\) be the quotient of \(L^\circ\) by the actual off-block
+entries of \(r(\mathrm{ph})\), where the blocks are
+\(\{0,2\}\) and \(\{1,3\}\). Then \(C\) is a domain, represents
+the original local component with that block normalization,
+and its characteristic-zero completed local chart has dimensions
+\[
+ \begin{array}{c|ccccc}
+ \text{weight}&0&A,B,T&P&-P&-A,-B,-T\\ \hline
+ \text{dimension per weight}&2&1&2&1&0 .
+ \end{array}                                                   \tag{SM2}
+\]
+In fact there is a power-series product
+\[
+ L^\circ \simeq C[[u_1,\ldots,u_6]],                            \tag{SM3}
+\]
+in which the six parameters describe the ordered pair of
+Lagrangian summands determined by \(r(\mathrm{ph})\).
+\end{theorem}
+
+\begin{proof}
+\emph{The literal local equations.}
+The usual framed representation ring is obtained by using matrices
+of finitely many generators of the quotient through which residual
+lifts factor. For clarity, the kernel of the residual representation
+has finitely generated maximal pro-\(\ell\) quotient, by finiteness
+of its first cohomology with \(\mathbf F_\ell\)-coefficients.
+The quotient of the full local group obtained this way is also
+topologically finitely generated. A residual lift factors through it,
+as is seen first in finite coefficient quotients and then by
+separatedness. The group relations give closed equations in finitely
+many matrix coordinates. Impose the fixed similitude and all the
+original equations of \texttt{Ord}, not their localization or
+radical. They are polynomial equations in the matrix entries
+with coefficients in \(O\), and the resulting complete
+Noetherian quotient is \(L\).
+
+Explicitly, with \(I_\ell\) the absolute local inertia subgroup
+and \(\chi_i=(\tau,\Psi,\alpha,1)_i\), the equations at the
+distinguished element \(s_0\) prescribe
+\[
+ \det(X-r(s_0))=\prod_{i=0}^3(X-\chi_i(s_0)).
+\]
+Set \(p_i(X)=\prod_{j\ne i}(X-\chi_j(s_0))\). The other equations
+are
+\[
+ p_j(r(s_0))r(g)p_i(r(s_0))=0\ (i<j),\qquad
+ p_i(r(s_0))(r(s)-\chi_i(s))p_i(r(s_0))=0\ (s\in I_\ell).
+                                                               \tag{SM4}
+\]
+These are precisely the polynomial projectors in the source;
+none has been divided by an element of \(O\).
+
+We describe the completed local ring at the diagonal point,
+over \(E\). Its Artinian functor is the functor of continuous
+lifts of the diagonal representation into finite local
+Artinian \(E\)-algebras with residue field \(E\), subject
+to these same equations. Here continuity is for the
+finite-dimensional \(\ell\)-adic topology. To justify this
+description, let \(D\) be such an Artinian algebra.
+For a continuous lift, its entry displacements from \(r_0\)
+have compact image in the nilpotent maximal ideal \(\mathfrak n_D\).
+They lie in a finite \(O\)-lattice in that ideal. Adjoining
+the finitely many products up to its nilpotence index enlarges
+the lattice to one closed under multiplication. The ring
+consisting of \(O\) plus this lattice is a finite complete
+local \(O\)-algebra with residue field \(k\), and the lift
+takes values there. Its universal map from \(L\) extends
+to the characteristic-zero completion at \(\mathfrak p\).
+Conversely, a map from that completion to \(D\) factors
+through a finite augmentation jet. The rings \(L/\mathfrak p^s\)
+are finite \(O\)-modules, since the finitely many original
+entry displacements generate \(\mathfrak p\). This proves
+continuity of the specialized representation in the
+finite-dimensional topology, and gives the inverse
+construction. No specialization through an arbitrary
+discontinuous evaluation of a power series is used.
+
+On such a coefficient algebra the eigenvalues of \(r(s_0)\)
+are the distinct prescribed elements of \(E\):
+with \(u=1+\ell\) they are \(u^{e+1},u^e,u,1\).
+The normalized spectral idempotents, now permissible over
+\(E\), give four free lines of rank one. The similitude
+relation pairs a line only with its opposite line:
+the product of its eigenvalue with any other non-opposite
+eigenvalue differs from \(\tau(s_0)\), by an invertible
+element whenever the pairing could be nonzero.
+Thus the ordered flag is self-dual for \(J\).
+Equations (SM4) say exactly that this flag is invariant
+and that its four graded inertia characters are
+\(\chi_0,\ldots,\chi_3\). Conversely any such ordered flag
+satisfies (SM4), since the prescribed inertia characters
+give precisely those eigenvalues at \(s_0\), and its
+subspaces are the corresponding ordered sums of eigenlines.
+This equivalence is over the Artinian \(E\)-algebras, not
+an assertion about the characteristic-prime fibre of \(L\).
+
+\emph{The characteristic-zero chart.}
+The fixed-multiplier upper triangular group has four positive
+root directions and a two-dimensional diagonal torus.
+Consider a small extension of the Artinian coefficient
+algebras just used. An ordered self-dual flag near the
+base flag lifts: choose a symplectic basis adapted to it
+and lift that basis, using smoothness of the symplectic
+group. In an adapted basis, the diagonal characters
+of the representation differ from the prescribed characters
+by unramified characters, with two independent ratios
+because the similitude is fixed. They lift across the
+small extension. Indeed their Frobenius values are arbitrary
+units in \(1+\mathfrak n_D\) and, by the nilpotent logarithm
+and exponential, such a value defines a continuous character
+of the unramified group through its \(\mathbf Z_\ell\) quotient.
+
+Lift the upper triangular representation as a continuous
+set map with these diagonal characters. Continuous lifts
+exist by choosing sections in its finite-dimensional
+nilpotent root coordinates. Its multiplication defect
+is a two-cocycle in the small kernel, whose \(G_{\mathbf
+Q_\ell}\)-action is the sum of the four positive-root
+characters of the base. All four second cohomology groups
+vanish. In fact local Tate duality identifies the dual
+of \(H^2(E(\gamma))\) with \(H^0(E(\varepsilon/\gamma))\).
+The characters \(\alpha,\beta,\tau\) are different from
+\(\varepsilon\) at the chosen Frobenius lift by (BU8)
+and \(\varepsilon(s_\ell)=1\). The character \(\Psi\)
+is different from \(\varepsilon\) on inertia since \(e\ge2\).
+Correct the multiplication defect by a continuous
+one-cochain. This produces a lift with the required
+ordered flag and the original equations. It proves formal
+smoothness at \(\mathfrak p\).
+
+For the tangent dimensions, the flag contributes one
+direction per negative root. Each positive root has no
+invariants, because its cyclotomic exponent on a subgroup
+of inertia is positive. Its second cohomology is zero
+as just shown. The local Euler characteristic therefore
+gives dimension one for its first cohomology, and the
+coboundary space has dimension one. These two dimensions
+are the framed tangent directions in each positive root.
+The diagonal directions are exactly the two unramified
+directions. There is no further flag stabilizer dimension:
+the flag associated with (SM4) is unique over the
+Artinian coefficient rings. This proves (SM1).
+Formal smoothness and the dimension calculation identify
+\(\widehat{L_{\mathfrak p}}\) with a power series ring
+in fourteen variables over \(E\).
+
+All representation entries are equivariant for the original
+two-dimensional torus, and the actual entry differences
+separate framed tangents. Select from them a homogeneous
+basis of the cotangent space over \(E\). The formal inverse
+function theorem makes these entries the parameters of
+the chart, so it is equivariant and its augmentation is
+the prescribed \(x\).
+
+For use in the integral statements, the kernel of
+\(L\to\widehat{L_{\mathfrak p}}\) is the unique minimal
+prime \(Q\) contained in \(\mathfrak p\): faithful
+flatness of completion makes \(L_{\mathfrak p}\) a
+domain, and its zero prime contracts to this unique
+minimal prime. The finitely many generators of \(Q\)
+are killed by a common element \(y\notin\mathfrak p\),
+by the description of localization. In particular
+\(x(y)\ne0\). For every \(s\ge1\),
+\[
+ (L/\mathfrak p^s)\otimes_O E
+      \ \simeq\ \widehat{L_{\mathfrak p}}/
+                       (\mathfrak p\widehat{L_{\mathfrak p}})^s .
+                                                               \tag{SM5}
+\]
+Indeed after inverting the nonzero elements of \(O\),
+every element with nonzero augmentation is already a
+unit in this quotient, by the finite geometric expansion
+of its inverse. Equation (SM5) proves both chart
+conditions: every finite jet comes from \(L\) after
+multiplication by a nonzero element of \(O\), and a
+vanishing jet implies membership in the appropriate
+augmentation power after multiplying by such an element
+(and hence also modulo \(Q\)). These are the original
+\texttt{IsCompl.dense} and \texttt{IsCompl.inj}.
+The original \(L\), not just its reduced component,
+represents \texttt{condL}.
+
+We record the graded-ring convention needed here and
+below. A finite set of actual entry differences can
+be chosen to generate the complete ring topologically,
+weight by weight, by the relative cotangent space
+over \(k\) and Nakayama's lemma. Conjugation by
+the torus with entries \(t_i=1+z_i\) over a formal
+extension induces its formal action on the represented
+functor. The kernel of this weighted presentation is
+homogeneous in the coefficientwise sense. To see this,
+reduce to any finite maximal-ideal jet in the target.
+The weight expansion there is a finite Laurent polynomial
+in the \(t_i\). Substitution \(t_i=1+z_i\) is injective
+on such Laurent polynomials over any coefficient ring:
+multiply by a monomial to clear negative exponents and
+translate the variables in the resulting polynomial.
+Thus each weight coefficient of a relation is zero
+in the jet, and separatedness gives the assertion
+in the complete ring. This is a weighted power-series
+presentation \texttt{WPres}, and actual homogeneous
+entries admit homogeneous preimages. The augmentation
+sends every parameter to zero. Its algebra of finite
+sums of homogeneous elements has the source's
+\texttt{SmoothPt} chart: the entry parameters give
+surjectivity of linear coefficients up to scalars.
+For the injectivity clause, a function with augmentation
+and linear part zero is in the augmentation square
+after multiplication by a nonzero scalar by (SM5).
+For a finite sum of homogeneous elements this is also
+true in the graded subalgebra. Indeed the augmentation
+ideal in the complete ring is generated by the finitely
+many homogeneous parameters. Express membership in
+its square by their pairwise products and project the
+coefficients onto the finitely many weights needed
+for the given homogeneous summands. This gives the
+same expression inside the graded subalgebra. Thus
+this chart verifies \texttt{IsChart.inj} with the
+saturated square as specified in the source.
+
+\emph{The actual component and its block normalization.}
+The original \texttt{OnComp} condition asserts
+factorization through a complete local domain carrying
+a diagonal augmentation and the same local equations.
+Such a domain receives a map from \(L\) whose prime
+kernel is contained in \(\mathfrak p\), hence contains
+\(Q\). Conversely \(L/Q\) is such a domain. This proves
+the asserted functorial identification, even for
+coefficient targets that are not reduced.
+
+This component is preserved by symplectic conjugation
+congruent to one, with arbitrary complete local
+coefficients. One can see this directly from the
+factorization definition: conjugate the representation
+over \(L^\circ[[v_1,\ldots,v_{10}]]\) by the universal
+formal symplectic matrix near one. The new ring is a
+domain and has its diagonal augmentation at \(v=0\).
+Every such conjugation is a specialization. The
+same argument for the formal diagonal torus verifies
+homogeneity of the component.
+
+The element \(\mathrm{ph}\) was obtained as the
+prime-to-\(\ell\) part of \(s_\ell\). For a lift
+to any of our complete local rings, its matrix has
+finite order prime to \(\ell\), equal to the order
+of its residual matrix. In each finite maximal-ideal
+quotient the limiting powers defining \(\mathrm{ph}\)
+select exactly the prime-to-\(\ell\) part, and the
+kernel of reduction is an \(\ell\)-group. Hence those
+orders all equal the residual order; pass to the
+limit using separatedness. That order divides
+\(|k^\times|\), since the residual
+representation is diagonal. The corresponding roots
+of unity have unique Teichm\"uller lifts in \(O\).
+Consequently the spectral idempotents of this matrix
+are integral, including when two of its residual
+eigenvalues coincide (use one idempotent per distinct
+eigenvalue).
+
+The spectra on the two prescribed blocks are disjoint.
+They are the Teichm\"uller lifts of the residual
+values \((\bar\alpha\bar\Psi,\bar\alpha)\) and
+\((\bar\Psi,1)\) at \(\mathrm{ph}\).
+Indeed the corresponding residual values at
+\(s_\ell\) and \(\mathrm{ph}\) agree, and every
+cross-block equality is excluded by (BU8).
+Summing the spectral idempotents for the two blocks
+therefore gives two canonically ordered complementary
+rank-two summands, reducing to the original coordinate
+blocks. Both are Lagrangian: on either block the
+product of any two eigenvalues is different modulo
+the maximal ideal from the similitude value, again
+by (BU8). The similitude equation thus kills every
+internal pairing. The cross pairing is perfect.
+
+In the order of these two coordinate Lagrangians,
+use dual bases so that the form is
+\(\left(\begin{smallmatrix}0&I\\-I&0\end{smallmatrix}\right)\).
+An ordered pair of complementary Lagrangians near
+the coordinate pair is uniquely a pair of graphs
+of symmetric \(2\)-by-\(2\) matrices \(U,V\) with
+entries in the maximal ideal. The graphs are complementary
+since \(I-UV\) is invertible. The canonical matrix
+\[
+ h=\begin{pmatrix}I&V\\U&I\end{pmatrix}
+                \begin{pmatrix}I&0\\0&(I-UV)^{-1}\end{pmatrix}
+                                                               \tag{SM6}
+\]
+is symplectic, congruent to one, and carries the
+coordinate pair to these graphs. This follows
+by direct multiplication with the displayed alternating
+form, using the symmetry of \(U,V\).
+Conjugating by \(h^{-1}\) normalizes the two blocks
+of the matrix at \(\mathrm{ph}\), without changing
+the component. Conversely conjugating any such
+normalized representation by \(h\) recovers a
+representation with the given pair of graphs.
+The constructions are inverse and are natural in
+all the complete local coefficient rings. This
+proves (SM3), with the normalized quotient \(C\)
+defined by the actual off-block entry equations.
+In particular \(C\) embeds into the domain \(L^\circ\)
+and is a domain; no integral saturation is involved.
+
+At the characteristic-zero base, the graph parameters
+remove precisely one direction in each of the six
+off-block root spaces. This is seen either from
+the graphs or by infinitesimal conjugation:
+on each such root the commutator with
+\(r_0(\mathrm{ph})\) is nonzero by the disjoint
+spectra. The split product (SM3) and the smooth
+chart of \(L^\circ\) give a regular chart of \(C\)
+over \(E\); it has precisely the dimensions (SM2).
+Choosing actual entry differences for its tangent
+coordinates and for its weighted complete presentation
+works as above. The same finite-jet argument proves
+its saturated-square injectivity. This completes the
+local constructions.
+\end{proof}
+
+\begin{theorem}[The actual relative equations and integral rank-four model]
+\label{thm:rh-symplectic-model}
+For these RH data the original \texttt{Fr} relative relation
+counts hold over \(L\). More generally they hold over the
+normalized component \(C\) of Theorem~\ref{thm:rh-symplectic-local},
+with the local representation fixed over that base.
+In either case there are \(n_j\ge0\) new variables of weight \(j\),
+chosen from actual global entry displacements, with
+\[
+ \begin{split}
+ n_j&=0\quad(j\notin\{0,P,-P\}),\\
+ b_j&=n_j+2\quad(j=0),\\
+ b_j&=n_j+1\quad(j=P,-P),\\
+ b_j&=0\quad(j\notin\{0,P,-P\}),
+ \end{split}                                                   \tag{SM7}
+\]
+where \(b_j\) is the number of homogeneous equations of weight \(j\)
+in a presentation relative to the given local ring; zero equations
+can be added to attain these numbers.
+
+In particular an actual \texttt{Model} exists, with the full
+original integral relation ideal and finite-modulus derivation
+condition. One may take its ambient domain to be
+\[
+ R=C[[X_{j,i}: j\in\{0,P,-P\},\ 1\le i\le n_j]],
+                                                               \tag{SM8}
+\]
+with augmentation zero on the new variables, and
+\[
+ r=n_{-P}+1,\qquad r'=n_P+2,\qquad m=n_0+2.                    \tag{SM9}
+\]
+Its universal normalized quotient has exactly the prescribed
+\texttt{IsPt} functor, rather than just a chosen set of
+characteristic-zero points. Its equation lists are those
+of \texttt{Model}: \(r+1\) equations of weight \(-P\),
+\(r'\) of weight \(P\), and \(m\) of weight zero.
+\end{theorem}
+
+\begin{proof}
+\emph{Relative cohomology.}
+Let \(\Sigma\) be the set of primes dividing \(2\ell N\);
+use \(G_{\mathbf Q,\Sigma}\) and the original maps from the
+absolute local decomposition groups. For \(q\in\Sigma\setminus
+\{\ell\}\), put \(N_q=I_q\cap\ker\bar r_0\).
+Since all the original finite character values on such
+inertia have order prime to \(\ell\), reduction is faithful
+on them. Thus the base representation kills \(N_q\),
+and \(I_q/N_q\) has order prime to \(\ell\).
+In particular the local condition of factoring through
+\(D_q/N_q\) is formally smooth with fixed similitude:
+this group has \(\ell\)-cohomological dimension at most one,
+by its finite prime-to-\(\ell\) inertia and procyclic
+unramified quotient. Lifting into the symplectic group
+is unobstructed over each small extension, with the
+prescribed similitude, by that second-cohomology vanishing.
+
+Let \(M_j\) be the \(j\)-weight subspace of
+\(\mathfrak{sp}_4(k)\), with the action through \(\bar r_0\).
+Use the same relative cochain complex as in (RP5):
+\[
+ {\cal C}_j=
+ \operatorname{Cone}\left(
+ C^\bullet(G_{\mathbf Q,\Sigma},M_j)\longrightarrow
+ C^\bullet(D_\ell,M_j)\ \oplus\
+ \bigoplus_{q\ne\ell}
+ \bigl(C^\bullet(D_q,M_j)/C^\bullet(D_q/N_q,M_j)\bigr)
+ \right)[-1].                                                 \tag{SM10}
+\]
+All cochains are continuous, and the full degree-zero term
+at \(\ell\) is retained. It is the relative complex for
+lifts with the local representation fixed as a matrix
+representation (not fixed only up to conjugacy).
+Its first cohomology identifies with global cocycles
+vanishing at \(D_\ell\) and on each \(N_q\):
+subtract the global coboundary from the local degree-zero
+component at \(\ell\) to make that component zero.
+This representative is unique, since the relative
+degree-zero map at \(\ell\) is the identity on the
+coefficient module.
+
+For \(j=\pm A,\pm B,\pm T\), the original six \texttt{XVan}
+assertions proved in Theorem~\ref{thm:rh-symplectic-arithmetic-data}
+make every such cocycle a global coboundary.
+But \(H^0(D_\ell,M_j)=0\) by (BU8), so the requirement that
+it vanish at \(D_\ell\) kills its coboundary parameter.
+Consequently \(H^1({\cal C}_j)=0\) on the six off-block
+roots. The only other nonzero coefficient modules are
+\(M_{P},M_{-P},M_0\).
+
+For all these modules, \(H^0(\mathbf Q,M_j^\vee(1))=0\).
+The weight-zero and the two \(\Psi\) directions have even
+character, whereas the residual cyclotomic character is odd.
+The six odd root characters have nontrivial dyadic ramification,
+and so cannot equal the residual cyclotomic character, whose
+conductor divides \(\ell\). Poitou--Tate duality therefore
+gives the surjectivity of restriction in global degree two
+to the sum of the local degree-two groups
+\cite{AuxTowerDuality}. Since \(D_q/N_q\) has no cohomology
+above degree one, this implies \(H^3({\cal C}_j)=0\).
+The restriction at \(\ell\) gives \(H^0({\cal C}_j)=0\).
+All cohomology spaces here are finite-dimensional, by
+the finite global and local Galois cohomology theorems.
+The quotient complexes at \(q\ne\ell\) have Euler
+characteristic zero: the local Euler characteristic is
+zero, and \(H^1(D_q/N_q,M_j)\) has the same dimension
+as \(H^0(D_q/N_q,M_j)=H^0(D_q,M_j)\), by the
+procyclic quotient calculation.
+The local Euler characteristic at \(\ell\) is
+\(-\dim M_j\), and the global one over \(\mathbf Q\)
+is \(-\dim M_j^{c=-1}\). Therefore
+\[
+ \dim H^2({\cal C}_j)-\dim H^1({\cal C}_j)
+   =\dim M_j^{c=1}
+   =\begin{cases}
+      2& j=0,\\
+      1& j=P,-P,\\
+      0& \text{otherwise}.
+     \end{cases}                                             \tag{SM11}
+\]
+This is the original \texttt{Raw.Nums} calculation with
+\(S_b=\varnothing\); no symmetry assumption on the
+sizes of the two \(\Psi\)-cohomology groups is needed.
+
+\emph{The integral relative presentation.}
+Take the local ring to be either \(L\) or \(C\), and
+require the actual local matrix representation from
+that ring at \(D_\ell\). Require the fixed similitude
+globally and the literal kernels \(N_q\) elsewhere.
+The resulting complete local global ring \(U_{\mathrm{gl}}\)
+is represented by finitely many entry variables, as
+in the local construction. The local map is the specified
+map from the original local ring; it is not assumed flat.
+For the original \texttt{Fr} the only local framing
+matrix is the identity, because the set of distinguished
+places is \(\{\ell\}\). Thus the construction over \(L\)
+is exactly that framed functor.
+
+The tangent and obstruction argument of
+Theorem~\ref{thm:support-relative-presentation} applies
+to (SM10). More explicitly, relative framed tangents
+are the cocycles just described, hence choose
+\(n_j=\dim H^1({\cal C}_j)\) new entry coordinates
+in each weight. The weighted power-series map from
+the local ring with those variables onto
+\(U_{\mathrm{gl}}\) is surjective by complete
+Nakayama, and its kernel is coefficientwise homogeneous
+by the formal torus argument. To bound its relations
+one applies the small-extension obstruction map to
+the dual of the minimal relative relation space.
+A global matrix lift can be chosen with the prescribed
+similitude, since that group is smooth; at \(\ell\)
+compare with the already specified local matrix lift,
+and at other primes with the unobstructed lifts
+through \(D_q/N_q\). Their multiplication defects and
+differences give precisely the degree-two cocycle of
+(SM10). Vanishing of this obstruction gives a global
+lift with the same local base map. A section of the
+corresponding pushout of the relation extension
+would make the original relation functional zero:
+changing a new variable by an element of the small
+kernel does not change the image of any relation,
+since all its linear coefficients belong to the
+maximal ideal by minimality of the relative variables.
+This is the integral relation-space injection proved
+in the earlier relative presentation theorem.
+It gives at most \(\dim H^2({\cal C}_j)\) equations
+in weight \(j\); the same weight is obtained because
+the matrix entries of the cocycle with values in a
+weight-\(j\) small kernel have that weight. Padding
+with zero equations and using (SM11) gives (SM7).
+If a weighted power-series presentation over \(O\)
+for the chosen local base is specified, retain every
+one of its equations and lift these new relative
+equations homogeneously. No local equation or
+coefficient torsion in the global quotient is
+discarded. This proves both relative assertions,
+including the original \texttt{Fr} counts.
+
+\emph{The actual ambient domain and quotient.}
+Now use \(C\) as the local base. Its local matrix
+representation already satisfies the block
+normalization at \(\mathrm{ph}\), including on
+nilpotent coefficient rings, so the global functor
+over it has precisely this normalization as well.
+Its ambient ring is (SM8), a domain. The remaining
+two original normalizations are
+\[
+ \bigl(r(g_0)+\tau(g_0)r(g_0)^{-1}\bigr)_{02}=0,\qquad
+ \bigl(r(g_0)+\tau(g_0)r(g_0)^{-1}\bigr)_{20}=0 .
+                                                               \tag{SM12}
+\]
+They have weights \(P,-P\), respectively, and vanish
+at \(r_0\). Add their actual homogeneous preimages
+to the relative relation ideal. This produces the
+complete quotient \(S\) of \(R\) and its representation
+\(\rho_u\). By the functorial characterization of
+\(C\) and the explicit equations (SM12), the
+points of \(S\) are exactly the source's
+\texttt{IsPt}: they obey the fixed similitude,
+\texttt{UnrT}, the block and the two marked conditions,
+and the literal local \texttt{OnComp} condition.
+There are no other local component conditions for
+the present \(S_b=\varnothing\).
+Maps from \(S\) are determined by the matrix entries:
+the local base map is uniquely determined by restriction
+of the matrix representation, and the new variables
+are chosen actual entry displacements. This is
+\texttt{Lift.Generates} for this quotient.
+
+The weighted chart of \(R\) is the one of \(C\)
+with the additional variables freely adjoined.
+By (SM2) and (SM7) its weight multiplicities are
+one each at \(A,B,T\), \(n_{-P}+1\) at \(-P\),
+\(n_P+2\) at \(P\), and \(n_0+2\) at zero,
+and vanish elsewhere. The finite-jet and homogeneous
+augmentation-square argument in the local theorem
+gives the exact \texttt{SmoothPt} assertion for the
+graded subalgebra of \(R\). This is the source's
+\texttt{tDims} with (SM9).
+The number of equations at \(-P\), after (SM12),
+is \(n_{-P}+2=r+1\), at \(P\) is \(n_P+2=r'\),
+and at zero is \(n_0+2=m\). There are no equations
+in the six off-block roots. Every zero-weight
+equation vanishes at the diagonal augmentation.
+Also \(r\ge1\) by (SM9).
+Choose the corresponding lists \(F,E_+,Z\);
+their ideal is the entire kernel of the quotient
+map \(R\to S\). All entries of \(\rho_u\) lift
+homogeneously to \(R\), and any such lift evaluates
+at the augmentation to the corresponding entry
+of \(r_0\), since the entire relation ideal vanishes
+at that augmentation. These verify the chart,
+equations, homogeneity and augmentation fields of
+\texttt{Model}.
+
+\emph{The finite-modulus derivation.}
+It remains important to check the actual integral
+lifting field of that structure. Let \(0\ne a\in O\)
+and let \(z\) be any original \texttt{ShaCoc}\((a,z)\):
+it is an \(O/(a)\)-valued continuous cocycle for
+\(\Psi^{-1}\), with the original inertia-kernel
+condition, trivial local class at \(D_\ell\), and
+\(z(g_0)=0\). In the matrix convention used here
+the root vector is exactly
+\[
+ X_-=E_{20}+E_{31}\in\mathfrak{sp}_4(O)_{-P}.
+\]
+Set \(D_a=O\oplus(O/(a))\delta\), with \(\delta^2=0\).
+The matrices
+\[
+ r_a(g)=(1+\delta z(g)X_-)r_0(g)                              \tag{SM13}
+\]
+form a representation with the fixed similitude:
+the root action is \(\Psi^{-1}\) and the
+linear symplectic equation follows from
+\(X_-^{\mathsf t}J+JX_-=0\).
+They kill the prescribed inertia kernels outside
+\(\ell\) by the defining condition on \(z\).
+
+Write \(z(g)=(\Psi(g)^{-1}-1)m_a\) on \(D_\ell\).
+Locally (SM13) is the conjugation of \(r_0\) by
+\(1-\delta m_aX_-\). This is an integral symplectic
+conjugation in the two blocks, congruent to one.
+The representation therefore factors through \(C\)
+at the local place: it satisfies the component
+condition and its matrix at \(\mathrm{ph}\) is
+block diagonal. For the two global equations (SM12),
+\(z(g_0)=0\) also implies \(z(g_0^{-1})=0\).
+Hence (SM13) satisfies the entire original
+\texttt{IsPt} functor, and gives a map \(S\to D_a\)
+reducing to the diagonal augmentation modulo \(\delta\).
+
+The induced modular derivation on \(C\) has an actual
+integral lift: choose any \(m\in O\) lifting \(m_a\),
+and conjugate \(r_0\) locally by \(1-\delta mX_-\)
+over \(O[\delta]/(\delta^2)\).
+This stays in the original component and the block
+normalization for exactly the same reasons. The
+corresponding derivative \(d_C\) is supported in
+weight \(-P\). Lift the modular derivative of each
+new variable of weight \(-P\) to \(O\), and set the
+derivatives of all other new variables to zero.
+By the free power-series description (SM8), these
+values and \(d_C\) give an integral \(O\)-derivation
+\(d_R\) at the augmentation, of weight \(-P\).
+It reduces modulo \(a\) to the derivative of the
+actual map \(R\to S\to D_a\). Consequently it sends
+the entire integral relation ideal into \((a)\),
+not merely a list of equations or their
+characteristic-zero localizations.
+
+Finally the two entries specified by \texttt{Model.der}
+are exactly
+\[
+ \begin{split}
+ d_R(f)\bmod a&=\tau(g)z(g)
+       &&\text{if }f\mapsto(\rho_u(g))_{20},\\
+ d_R(f)\bmod a&=\Psi(g)z(g)
+       &&\text{if }f\mapsto(\rho_u(g))_{31}.
+ \end{split}                                                   \tag{SM14}
+\]
+They follow from (SM13), independently of the chosen
+preimages \(f\), since the whole kernel maps into
+\((a)\). Thus the required derivation lifting is
+valid for every nonzero modulus and every original
+normalized cocycle, with precisely the prescribed
+coefficients and signs. This finishes the construction
+of the actual rank-four integral model.
+\end{proof}
+
+The theorem supplies the model input of
+\texttt{SymplecticGSp4.GaloisRepIneqOfAllIrreducibleNonvanishing}
+for the remaining ordinary-RH Case II family. It is not a
+bound for its integral quotient: the separate hypotheses on
+weight-zero finiteness (\texttt{Fin0}), the block end points
+(\texttt{NoEnd}), irreducible point automorphy and rigidity,
+and the uniform rank-four trace comparison must still be
+established. In particular neither the characteristic-prime
+fibre nor the varying Selmer lengths are controlled just
+by the dimension of the characteristic-zero chart.

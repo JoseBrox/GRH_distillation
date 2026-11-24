@@ -1,0 +1,16 @@
+# The actual rank-four integral deformation model for ordinary RH
+
+**Status: supplier theorem proved; W04 remains open.** [Proof](../paper/shared/rh-symplectic-integral-model.tex).
+
+The construction uses the exact RH arithmetic datum from the preceding Bernoulli/cocycle theorem. Its essential simplification is the singleton distinguished local set: the six off-block entries at ph can be normalized locally, before the relative global presentation. The original general GRH datum can have further local framing variables; this proof makes no assertion about removing them.
+
+## The proved statements
+
+* The full original condL universal framed ring represents its polynomial projector equations, including the characteristic-prime fibre. At the diagonal augmentation its characteristic-zero chart is formally smooth, of dimension 14: two zero-weight directions, two for each positive root, one for each negative root. A unique minimal prime through the augmentation is selected by the original OnComp factorization condition. The finite-jet chart satisfies the exact density and saturated-power injectivity requirements.
+* On this component the two residual spectral blocks at ph have disjoint spectra. Integral projectors give an ordered pair of complementary Lagrangians. Their six graph coordinates split the local component as a formal power-series ring over its actual block-normalized quotient, a domain. No saturation of the normalized quotient is necessary. Its rational chart has one direction for each positive off-block root, two for +Psi, one for -Psi, two of weight zero, and no negative off-block directions.
+* The relative global cohomology calculation gives the original Nums and Fr relation counts, over the full local ring and over the normalized component. The six residual cocycle vanishings kill the off-block relative variables. The counts in weights (-Psi,+Psi,0) are (n_-+1,n_++1,n_0+2). Adding the two marked equations gives precisely the Model counts r+1,r',m, with r=n_-+1, r'=n_++2, m=n_0+2.
+* The ambient domain, weighted chart, universal normalized quotient and all actual entry maps satisfy the original Model fields. The modular negative-root cocycle maps to the original square-zero representation using E20+E31. Its local coboundary lifts to an integral block conjugation; the other variable derivatives lift individually. This gives the integral derivation at every nonzero modulus, killing the entire relation ideal modulo that modulus, with the two prescribed tau(g) and Psi(g) entry factors.
+
+## Next exact obligation
+
+The remaining arithmetic input for this model is the original SymplecticFourImageDense supplier (Fin0, NoEnd, AllIrr), with its actual characteristic-prime point conditions and automorphy, together with rigidity and NumberSp4. Do not deduce these from local characteristic-zero formal smoothness or reuse the rank-two/rank-three propagation theorem in rank four without a new argument. See the [source evidence](../certificates/rh-symplectic-integral-model.json). The proof is a conventional mathematical reconstruction; no Lean rebuild or independent review is claimed.
