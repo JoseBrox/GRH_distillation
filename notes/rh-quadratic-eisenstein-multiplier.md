@@ -1,0 +1,21 @@
+# The quadratic Eisenstein weight-raising multiplier
+
+**Result:** the actual RH Case II mixed starting-packet obligation is supplied without Hasse descent, using the real quadratic field \(k_0\) in the original \(\mathrm{Two.quad}\) datum. The preceding quaternionic integral weight-change argument is unchanged. This is a shorter replacement for the old general Hasse-power descent in the actual consumer; it is not an assertion about arbitrary totally real fields.
+
+Let \(p\) be the original odd split coefficient prime, \(F=k_0\), and \(\chi_F\) its nontrivial even quadratic character. Take \(k_j=(p-1)p^j\). Interpolation and the unit Euler factor give
+\[
+v_p L(1-k_j,\chi_F)=v_p L_p(1-k_j,\chi_F).
+\]
+The latter is eventually constant: \(L_p(1,\chi_F)\ne0\). Indeed, for a primitive \(f\)-th root of unity the product \(u=\prod_{a\in(\mathbb Z/f)^\times}(1-\zeta_f^a)^{\chi_F(a)}\) is positive real and not a root of unity, by the ordinary logarithm formula and \(L(1,\chi_F)\ne0\). It is a \(p\)-adic unit because \(p\nmid f\). The logarithm on the unit group of the finite extension containing \(u\) has torsion kernel; hence \(\log_p u\ne0\). The classical Leopoldt logarithm formula proves the required nonvanishing.
+
+Von Staudt--Clausen gives \(v_p(\zeta(1-k_j))=-1-j\). Therefore \(v_p(\zeta_F(1-k_j))\to-\infty\). For sufficiently large \(j\), the level-one Hilbert Eisenstein series \(E_{k_j}(1,1)\), divided by its common normalized constant \(2^{-[F:\mathbb Q]}\zeta_F(1-k_j)\), has all standard normalized constant terms one and all positive coefficients zero modulo the coefficient maximal ideal. No auxiliary level or polarization descent is used. This is the desired level-one multiplier.
+
+DDP (49) gives a multiplicative component normalization: for products the norm factors \(N(\mathfrak t_\lambda)^{-w/2}\) multiply. Thus the multiplier preserves the normalized coefficient packet on every component, not just the principal component. Its trivial finite character is part of DDP's definition of \(M_k(1,1)\). The original mixed weight-one packet (DDP Prop. 2.1, both moduli nontrivial) is integral at the standard components, has coefficient 1 at the unit ideal and opposite residual ordinary refinements at the two split primes. The Hecke coefficient formulas at weight \(k_j+1\) have the same reduction (the extra norm power \(k_j\) reduces to one away from \(p\)). Deligne--Serre lifting gives a characteristic-zero eigenpacket at the same level and character. The unique ordinary root of a higher weight Eisenstein system would be the same one of its two residual global characters at both split primes, contradicting the mixed refinements. The lifted eigenpacket is cuspidal. This supplies the input of the already written quaternionic weight-change theorem.
+
+## Primary statement checks
+
+* Dasgupta--Darmon--Pollack, [author preprint](https://sites.math.duke.edu/~dasgupta/papers/Dasgupta-Darmon-Pollack.pdf), pp. 18--19, (47)--(52), especially Proposition 2.1, checked against its displayed PDF page. The level-one case has both trivial primitive characters and even weight greater than two; the weight-one starting packet uses two imprimitive moduli. No claim about constants at all nonstandard cusps is needed for the integral normalized-coefficient lattice.
+* Rodrigues Jacinto--Williams, [An introduction to p-adic L-functions](https://msp.org/ent/2025/4-1/ent-v4-n1-p03-p.pdf), Essential Number Theory 4 (2025), 147--149, Thms. 5.20, 6.1. Theorems state interpolation with the \(\omega^{-k}\) twist and the logarithm formula. In this application \(p-1\mid k\), \(p\nmid f\), and \(\chi_F\) is nontrivial even quadratic. The finite unit logarithm argument supplies nonvanishing without the general Leopoldt conjecture.
+* Original source: pinned MixSeedPAlt.lean (blob a1582526e191c722e9d4849f166873cf3d636cb7), the actual quadratic consumer in the marked symplectic induction. The general weight-change theorem conditional on a mixed packet continues to apply to arbitrary original totally real fields.
+
+The old general Hasse argument is preserved in Git history and the [historical supplement](rh-mixed-hasse-descent-historical.md). The new proof is incorporated in [the shared manuscript](../paper/shared/rh-mixed-hilbert-seed.tex), already included by both parents. No Lean replay or manuscript build is claimed.

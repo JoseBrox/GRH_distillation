@@ -289,55 +289,94 @@ The weight-raising multiplier needed here is a characteristic-zero
 Hilbert form of level one and trivial finite nebentypus, of positive
 parallel even weight \(k\) divisible by \(p-1\), whose normalized
 expansion at every standard component is \(1\bmod\lambda\).
-For the general (not necessarily inert) case use
-Andreatta--Goren, \emph{Hilbert modular forms: mod \(p\) and
-\(p\)-adic aspects}, Proposition 7.14(1) and Lemma 11.10(1)
-(arXiv:math/0308040, pp.\ 25 and 46): the first gives
-expansion one at every unramified polarized cusp and the
-second lifts a sufficiently high power of the total Hasse
-invariant at prime-to-\(p\) level \(N\ge4\).
-Choose such a level, refine to full level if necessary, and
-take all polarization components. Their number is finite, so
-by taking powers the lifts on the components have a common
-even weight divisible by \(2(p-1)\).
-Here is the descent to the level and character required in
-this argument. Passing from polarized to adelic components
-uses the finite totally-positive-unit group modulo squares;
-the change of polarization and prime-to-\(p\) level
-identifications preserve the total Hasse invariant, by
-functoriality of Frobenius on \(H^1(\mathcal O)\).
-Equivalently, on the Tate objects each of these changes
-takes the expansion one to expansion one in the transported
-trivialization. At weight divisible by \(2(p-1)\), the
-norm factors in the normalized trivializations, which are
-\(p\)-units, reduce to one. Taking the product of the
-translates of the lift under the finite polarization and
-level descent actions gives an invariant lift of a power
-of the Hasse invariant. This descends in characteristic
-zero, without dividing by the order of the descent group.
+For the actual application to the Case II seed we need this only for
+the real quadratic field \(F=k_0\). There is a particularly short
+construction which does not require descent of a Hasse lift.
 
-For the multiplier of weight \(k\), use the adelic weight
-normalization with real central exponent \(-k\), so that
-multiplication adds \(k\) to the central exponent parameter
-of the weight-one form. At level one the operators
+Let \(\chi_F\) be the primitive quadratic Dirichlet character of \(F\).
+It is nontrivial and even, and its conductor \(f\) is prime to \(p\)
+since \(p\) splits in \(F\). Take \(k_j=(p-1)p^j\), with \(j\) large
+enough that \(k_j>2\). The Kubota--Leopoldt interpolation formula gives
 \[
- R(z)|z|_f^k,\qquad z\in\mathbb A_{F,f}^{\times},
+ L_p(1-k_j,\chi_F)
+   =(1-\chi_F(p)p^{k_j-1})L(1-k_j,\chi_F).
 \]
-on the multiplier factor through the ordinary ideal class
-group: a finite integral unit acts trivially and a rational
-scalar acts trivially after the norm normalization (the
-weight is even). Choose representatives with valuations
-zero at every prime over \(p\). Their action permutes the
-standard components and changes their Tate trivializations
-by prime-to-\(p\) isogenies, hence preserves the normalized
-expansion one modulo the coefficient maximal ideal.
-Taking the product over this finite class group gives a
-level-one multiplier with precisely trivial normalized
-finite central character. This product has the required
-weight, after replacing \(k\) by its multiple, and the
-expansion remains one. Thus no semisimplicity of a mod-\(p\)
-class group action or prime-to-\(p\) class number hypothesis
-has been used.
+There is no Teichm\"uller twist since \(p-1\mid k_j\).
+The Euler factor is a unit. The function on the left is analytic
+at \(1\) because \(\chi_F\ne1\), and \(1-k_j\) tends to \(1\)
+\(p\)-adically. We check that its value at \(1\) is nonzero,
+without a conjectural regulator assertion. Fix a primitive \(f\)-th
+root of unity \(\zeta\) with compatible algebraic embeddings, and put
+\[
+ u=\prod_{a\in(\mathbb Z/f\mathbb Z)^\times}
+                 (1-\zeta^a)^{\chi_F(a)}.
+\]
+This is a \(p\)-adic unit: since \(p\nmid f\), reduction preserves
+the order of \(\zeta\), so every displayed factor is a unit.
+It is positive real under the complex embedding, by pairing \(a\)
+with \(-a\). The usual Dirichlet logarithm formula gives
+\(\log u=-G(\chi_F)L(1,\chi_F)\ne0\), where \(G(\chi_F)\)
+is the nonzero Gauss sum, and where nonvanishing is the classical
+nonvanishing of a nonprincipal Dirichlet \(L\)-function at one.
+Thus \(u\) is not a root of unity.
+In a finite extension of \(\mathbb Q_p\), the logarithm on units
+has precisely the finite roots of unity as its kernel: a positive
+power of a unit lies in the sufficiently deep principal-unit group
+on which logarithm and exponential are inverse. Hence
+\(\log_p u\ne0\). Leopoldt's formula
+\[
+ L_p(1,\chi_F)
+    =-\frac{1-\chi_F(p)/p}{G(\chi_F)}\log_p u
+\]
+now proves the asserted nonvanishing. These are the classical
+Kubota--Leopoldt interpolation and logarithm formulas, e.g.
+Washington, \emph{Introduction to Cyclotomic Fields}, 2nd ed.,
+Chapter 5, or Rodrigues Jacinto--Williams,
+\emph{An introduction to \(p\)-adic \(L\)-functions},
+Essential Number Theory 4 (2025), Theorems 5.20 and 6.1.
+
+By continuity there is a fixed finite valuation \(v\) such that
+\(v_p(L(1-k_j,\chi_F))=v\) for all sufficiently large \(j\).
+On the other hand the von Staudt--Clausen theorem gives
+\(v_p(B_{k_j})=-1\). Therefore
+\[
+ v_p(\zeta_F(1-k_j))
+   =v_p(\zeta(1-k_j))+v_p(L(1-k_j,\chi_F))
+   =-1-j+v\longrightarrow-\infty.
+\]
+This uses the exact factorization of the real quadratic Dedekind
+zeta function, not a uniform estimate for varying auxiliary fields.
+Choose \(j\) so that this valuation is negative and put \(k=k_j\).
+By Dasgupta--Darmon--Pollack, Proposition 2.1 with both ray
+characters and moduli trivial and weight \(k>2\), the level-one
+form \(E_k(1,1)\) has all positive normalized coefficients
+\(\sum_{\mathfrak r\mid\mathfrak a}(N\mathfrak r)^{k-1}\)
+in \(\mathbb Z\). Its normalized constant term at every standard
+component is the same nonzero number
+\[
+                  c=2^{-[F:\mathbb Q]}\zeta_F(1-k).
+\]
+Thus \(H=E_k(1,1)/c\) is a level-one characteristic-zero form of
+trivial character with normalized constant terms one and every
+positive normalized coefficient in the coefficient maximal ideal.
+No primes are added to the level, including above \(p\).
+
+For precision, in the classical component convention of
+Dasgupta--Darmon--Pollack, (49), the factor taking an unnormalized
+Fourier coefficient to its normalized coefficient at a component
+\(\lambda\) is \(N(\mathfrak t_\lambda)^{-w/2}\) in weight \(w\).
+For a product of weights \(1\) and \(k\) this factor is the
+product of the two respective factors. Hence multiplication by
+\(H\) preserves the normalized expansion of the weight-one packet
+modulo the maximal ideal, including its constants, on every
+component. The space with the specified finite character is
+preserved under multiplication: the level-one factor has trivial
+finite diamond character (including the normalized operators
+\(S(\mathfrak m)\) in their definition of \(M_k(1,1)\)).
+Thus the entire normalized adelic central character condition,
+not just the unit determinant subgroup, is retained.
+This construction replaces the proposed general Hasse descent
+in the actual quadratic application.
 
 Multiplication by this lift gives a nonzero residual eigenpacket
 at weight \(k+1\), at the same level and character, since the
@@ -393,12 +432,12 @@ the original \texttt{MixSeedP} interface, with its original
 field and local orders, not a parallel-weight substitute.
 
 The integral weight-change theorem is independent of the
-Hasse multiplier. With the starting packet just constructed,
-this proves the mixed rank-two supplier under the original
-hypotheses, using the stated classical theorems. The only additional input in the starting
-packet argument is the classical level-one Hasse-power lift
-in the normalized adelic convention described above and the
-weight-one Eisenstein coefficient formula. In particular this
+weight-raising multiplier. With the starting packet just constructed,
+this proves the mixed rank-two supplier for the actual real quadratic
+field of the Case II seed, using the stated classical Dirichlet and
+Hilbert Eisenstein theorems. We do not assert the unrestricted
+starting-packet statement for arbitrary totally real fields by
+this argument. In particular this
 does not prove the subsequent symplectic induction, the second
 or third case of rank-four propagation, or the final uniform
 Selmer estimate.
