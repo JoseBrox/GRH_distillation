@@ -27,30 +27,39 @@ The current proof-map counts are **RH: 6/9** and **Dirichlet GRH: 18/31**, as re
 
 ## Beyond Dirichlet characters: Hecke GRH
 
-Our [Hecke research program](hecke/README.md) studies the L-functions of
-unitary characters of idèle class groups of arbitrary number fields.
-Dirichlet characters are the rational-field case; new prime-ideal and
-infinite-order character data make this a genuine extension.
+Our [Hecke research program](hecke/README.md) studies unitary Hecke
+L-functions over arbitrary number fields. Dirichlet characters are
+the rational-field case. The new arithmetic information concerns
+prime ideals and, for infinite-order characters, their phases.
 
-We have proved one-sided analytic reductions, including a sharp
-growth law for the zero-detecting discrepancy and finite-test criteria.
-A positive induction argument reduces arbitrary unitary characters
-to totally imaginary Galois fields. There, a smoothed count of
-completely split rational primes, with nonnegative character-dependent
-weights, suffices at the decisive square-root scale.
+The preferred [arithmetic manuscript](hecke/paper/main.md) gives a
+direct Mellin-transform reduction to ordinary prime counts, without
+an explicit formula or a Masullo trace hypothesis. Positive induction
+reduces every unitary character to a totally imaginary Galois field.
+The two remaining arithmetic tasks are relative counts of completely
+split rational primes (finite order), and character-weighted split-prime
+counts (infinite order). The first nonabelian benchmark is the S3
+splitting field of the polynomial X^3-2. Its new cubic Hecke factor
+has a proved eta-product representation, excluding real zeros and
+allowing either sign of the required one-sided prime-counting estimate.
 
-The [manuscript](hecke/paper/main.md), [proof map](hecke/blueprint/proof.svg),
+The [proof map](hecke/blueprint/proof.svg),
 [checkpoint](hecke/notes/current-state.md) and
-[open frontier](hecke/notes/open-frontier.md) organize this third track.
-Its initial inventory is [6/8](hecke/blueprint/progress.md) written
-reductions or cited inputs, not a fraction of a proof. The new
-arithmetic estimate is still open; the first nonabelian benchmark
-is an S3 Dedekind zeta function. We also investigate a separate
-spectral trace supplier informed by the crowdsourced formalization of
-Masullo, with proper attribution. Our preferred arithmetic route does
-not depend on that project's unresolved gap or its acceptance of our
-contribution. Alpöge's result calibrates the rational and certain
-abelian cases, not the general extension. **Hecke GRH remains open.**
+[open frontier](hecke/notes/open-frontier.md) distinguish the proved
+reductions from the still-open quantitative suppliers. The Hecke
+inventory is [6/9](hecke/blueprint/progress.md), after subdividing
+the former coarse arithmetic node into finite and infinite order.
+These counts are not a percentage of a proof and cannot be compared
+directly with the finer Dirichlet map.
+
+We retain a separate, properly attributed
+[Masullo-inspired spectral alternative](hecke/paper/smoothed-and-trace.md).
+The preferred Hecke proof does not depend on the crowdsourced
+formalization. Any essential imported geometric lemma must be proved
+in ordinary mathematics in this repository. The relative arithmetic
+route uses our completed Dirichlet proof for the abelian base case
+when available; the absolute route does not need that separate input.
+**Hecke GRH remains open.**
 
 ## Current research priorities
 

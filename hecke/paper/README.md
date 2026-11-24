@@ -1,13 +1,20 @@
 # Hecke manuscript
 
-[Main manuscript](main.md) is the version-controlled, human-readable
-edition of the independent Hecke research program. Full technical
-proofs and source interfaces are in the [transfer note](../notes/masullo-transfer.md)
-and [Galois-field reduction](../notes/galois-base-change.md).
+[Main manuscript](main.md) is the current independent arithmetic
+edition. The full proofs within the repository are in the
+[direct-prime criterion](../notes/direct-prime-criterion.md),
+[Galois reduction](../notes/galois-base-change.md),
+[unitary kernels](../notes/unitary-positive-kernel.md) and
+[S3 benchmark](../notes/s3-benchmark.md). No missing arithmetic
+supplier is represented as a proof.
 
-The initial edition is Markdown. Run the reproducible build script
-from this directory with Pandoc and XeLaTeX installed to generate
-a standalone TeX manuscript and its PDF. No built PDF is claimed
-until its compilation and rendering have been verified.
+The [smoothed and trace manuscript](smoothed-and-trace.md) retains
+the earlier alternative with proper attribution, not as a premise
+of the primary route.
+
+The Markdown edition is current. Run the reproducible build script
+with Pandoc and XeLaTeX to produce a standalone TeX source and PDF.
+Neither generated file is claimed compiled or visually checked in
+this checkpoint.
 
     ./build.sh

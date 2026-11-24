@@ -51,3 +51,28 @@ integer-exponent identity counting each cyclic subgroup once and checks
 the twisted Euler factors. No Artin holomorphy assumption is used.
 
 The [review response to our contribution](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131807529) confirms it was read in full but is not an adopted Lean reduction. The missing quantitative supplier remains open.
+
+## Preferred arithmetic route and S3 benchmark
+
+The [direct criterion](../notes/direct-prime-criterion.md) proves the
+ordinary prime-counting Mellin identity and reproduces our Dirichlet
+window lemma in full. It eliminates the explicit formula and all
+RiemannMasullo results from the preferred proof. The
+[unitary positive kernel](../notes/unitary-positive-kernel.md) uses
+only local character orthogonality.
+
+For the explicit cubic character and the split-prime form description,
+see David A. Cox, *Primes of the Form x^2+ny^2* (Wiley, 1989),
+Theorems 9.8(i) and 9.9(i), pp.186–187
+([text](https://www.math.toronto.ca/~ila/Cox-Primes_of_the_form_x2%2Bny2.pdf)).
+The latter special cubic reciprocity identity is the only
+non-elementary input in our explicit character comparison.
+The [S3 note](../notes/s3-benchmark.md) proves the eta-product
+coefficient identity by an elementary lattice bijection and
+Euler's classical pentagonal-number theorem; no modular-form
+dimension assertion or unverified eta-product identification is
+used. The real-zero exclusion follows by positive Mellin integration.
+We do not claim the eta-product identity is new in the literature.
+
+The exact [coefficient checker](../scripts/check_s3_eta.py) and
+[certificate](../certificates/s3-eta-check.json) supplement the proof.

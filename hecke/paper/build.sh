@@ -8,7 +8,7 @@ import re, pathlib, sys
 s=pathlib.Path("main.md").read_text()
 s=re.sub(r"(?ms)^\x60\x60\x60math\s*\n(.*?)^\x60\x60\x60\s*$",lambda m:"$$\n"+m.group(1).strip()+"\n$$\n",s)
 # Avoid duplicating the YAML title in the body of the PDF.
-s=re.sub(r"(?m)^# One-sided arithmetic reductions toward Hecke GRH\s*$","",s,count=1)
+s=re.sub(r"(?m)^# Arithmetic reductions toward Hecke GRH\s*$","",s,count=1)
 pathlib.Path(sys.argv[1]).write_text(s)
 PY
 pandoc "$tmp/input.md" -f markdown+tex_math_dollars -s -t latex \
