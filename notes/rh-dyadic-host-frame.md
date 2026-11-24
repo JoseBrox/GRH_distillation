@@ -44,3 +44,8 @@ obligations. No complete proof-map node is claimed.
 The source ranges are read at the pinned immutable commit. This is a
 conventional mathematical proof and a source-interface check, not a
 Lean rebuild, an independent review, or a computation of Selmer orders.
+
+The [inertial universal-ring theorem](rh-dyadic-host-universal.md) now
+supplies weight-zero finiteness and the weaker sufficient automorphy
+predicate for the arbitrary-Good count. The exact integral graded
+estimate remains the first outstanding step.

@@ -1,0 +1,281 @@
+\subsection{Integral finiteness and automorphy for the inertial ring}
+\label{sec:rh-dyadic-host-universal}
+
+We now transfer the characteristic-prime curve argument to the
+actual ring of the preceding inertial frame.  It is not necessary
+to identify this ring with the saturated local-component ring
+of the nonresonant argument.
+
+\begin{theorem}[Weight-zero finiteness and the required automorphy]
+\label{thm:rh-dyadic-host-universal}
+Retain the ordinary RH host and (DH1), with the original admitted
+\texttt{HostData}.  There is a mark $g_1$ for the original frame
+such that, for every original normalized universal inertial
+representation $u$ over its complete local $O$-algebra $R$,
+the literal module $\operatorname{wpart}(O,u,0)$ is finite over $O$.
+Moreover every type-I point of the original algebra
+$\operatorname{Sring}(O,u)$, with coefficients in
+$\overline{\mathbf Q}_\ell$, has a torus conjugate which is an
+original characteristic-zero point.  Its matrix representation
+$\rho$ over $K=\mathbf Q(i)$ remains absolutely irreducible on
+every open subgroup and on $G_{K(\mu_{\ell^\infty})}$.
+The representation $\rho\epsilon^{-1}$ is attached to a
+regular algebraic conjugate-self-dual cuspidal representation
+over $K$.
+
+These are exactly the finite-module and automorphy properties
+needed in the original \texttt{abstract\_count}, with the
+predicate \texttt{Good} chosen to consist of the displayed
+automorphy and irreducibility properties.  This assertion does
+not assert the additional \texttt{WitA} predicate contained
+in the source's stronger \texttt{BPrime\_s}.
+\end{theorem}
+
+\begin{proof}
+\emph{The common auxiliary frame and the mark.}
+The original \texttt{HostFrameEx} construction
+(Theorems~\ref{thm:support-auxiliary-tower} and
+\ref{thm:support-auxiliary-frame}, with the original seed and
+admission propositions) supplies the actual auxiliary field $L$,
+its frame, its \texttt{GalLink}, and its second mark.
+The hypotheses hold for the present $\psi$:
+the auxiliary integer controlling the odd local character orders
+can be taken to be one, the $\ell$-power part is trivial, and
+the character and decomposition hypotheses were proved in
+Theorem~\ref{thm:rh-dyadic-host-frame}.  In particular $L/\mathbf Q$
+is abelian and $L=L^+K$, as in (AT1).  The second mark furnished
+by this construction has multiplier one and distinct residual
+diagonal values, because its image is the corresponding mark
+of the auxiliary frame.  Take its image in the inertial
+quotient $\Gamma$ for $g_1$.  Use the same complex conjugation,
+the same place above $\ell$, and the same marks throughout.
+
+An original inertial point over a local coefficient domain $A$
+pulls back along $\pi:G_{\mathbf Q}\to\Gamma$ to an original
+\texttt{OrdPt} for this \texttt{GalLink}.  Indeed its multiplier
+and residual conditions and both normalizations are the same.
+Its \texttt{CondT} is precisely the required ordered local
+flag, with a change of basis congruent to one and the original
+inertia characters.  Away from $\ell$ it kills $N_v$, and
+outside the host set it is unramified.  This is at least the
+original \texttt{OrdPt.away} condition, since on inertia away
+from $\ell$ the characters $\Psi$ and $\bar\Psi$ have identical
+kernels.  The conditions at all conjugates of the chosen
+places follow by conjugation.  Adic continuity is preserved
+by pullback.  No local saturation or additional equations
+are imposed on $A$.
+
+\emph{The actual universal algebra and its weights.}
+Write the actual universal ring as
+\[
+             R=O[[z_1,\ldots,z_m]]/I.                           \tag{DU1}
+\]
+Such a presentation can be chosen with each $z_i$ an actual
+matrix-entry displacement from the original base
+representation, hence of weight $w_i\in\{-2,-1,0,1,2\}$.
+Here are details of this standard presentation step.
+Modulo the square of the maximal ideal and the coefficient
+maximal ideal, all entry displacements span the relative
+cotangent space: otherwise a nonzero linear functional
+annihilating them would give two distinct dual-number maps
+with identical universal representations, contradicting
+uniqueness in \texttt{IsUniv}.  Choose a finite spanning family
+and use complete Nakayama, or successive approximation modulo
+powers of the maximal ideal, to obtain the surjection (DU1).
+
+Conjugation by $\operatorname{diag}(t,1,t^{-1})$, for any unit
+$t$ in an allowed target ring, preserves the original
+normalized inertial functor.  In particular it preserves the
+residual diagonal, both normalization equations and the
+condition that the local conjugator reduce to one; the
+conjugating torus commutes with complex conjugation in the
+polarized group.  It preserves \texttt{CondU} as well.
+With $t=1+T$ the universal property over $R[[T]]$
+therefore realizes the operation $z_i\mapsto(1+T)^{w_i}z_i$.
+For a relation in $I$, reduce modulo powers of the maximal
+ideal of $R$ and compare its finitely many surviving Laurent
+weight components in $1+T$.  Substitution of $1+T$ is
+injective on Laurent polynomials over any ring: multiply
+by a power of $1+T$ and translate the polynomial variable.
+Each weight component of the relation consequently vanishes
+in $R$, by separatedness.  Thus $I$ is weight-stable without
+a reducedness assumption.
+
+Write $R_j$ for the image of the formal series of weight $j$.
+This is exactly the literal $\operatorname{wpart}(O,u,j)$.
+One inclusion follows by testing its functional definition
+with the universal map to $R[[T]]$ just constructed and
+comparing the weight components.  More explicitly, at each
+finite maximal-ideal quotient of $R$, any representative
+has a finite weight decomposition, and the identity for
+$1+T$ forces all components other than weight $j$ to vanish;
+passing to the limit gives a weight-$j$ representative.
+For the other inclusion, two maps in that functional definition
+are local: their targets have the same residue field as $O$,
+and a maximal-ideal element cannot map to a nonzero residue
+since subtracting an appropriate coefficient unit would send
+a unit to a nonunit.  They are consequently continuous.
+On the $z_i$ the specified conjugation scales by $t^{w_i}$.
+The identity on a homogeneous formal series follows by
+continuity, since $t$ and $t^{-1}$ are units.
+This checks the original functional definition, not just a
+polynomial subalgebra of $R$.
+
+\emph{The characteristic-prime tests.}
+Let $f:R\to A$ be any local map to a complete characteristic-
+$\ell$ discrete valuation ring with finite residue field.
+Specialization gives the actual normalized inertial point:
+its original local conjugator specializes, and all prescribed
+equations and continuity persist.  Its pullback is the
+\texttt{OrdPt} checked above.  The already proved
+finite-point theorem and the finite-end transfer
+(Theorems~\ref{thm:support-finite-points} and
+\ref{thm:support-finite-end}) supply the characteristic
+polynomials of the base representation on the fixed
+subgroup $G_L$, for every such $A$ and $f$.
+For clarity, those results concern the normalized auxiliary
+lift of this very point over the same $A$; its inertial
+characters on the kernel of the residual prescribed
+character are trivial because $A$ has characteristic $\ell$.
+Thus its \texttt{FinPt} premise is satisfied.
+Lemma~\ref{lem:support-integral-global-triangularity}
+now shows that the diagonal entries are the prescribed ones,
+and that all the positive or all the negative weight
+displacements vanish.  Its proof uses the two original
+marks, and applies to this pullback representation without
+a change of basis.  We have verified precisely the tests
+(IF6) for the actual quotient (DU1).
+Proposition~\ref{prop:support-integral-finiteness-criterion}
+gives $R_0$ finite over $O$, including the entire original
+coefficient torsion and all nilpotents.  By the equality with
+the literal weight-zero module, this proves the required
+finite-module assertion.
+
+\emph{Lifting points of the original graded algebra.}
+Let $\xi:\operatorname{Sring}(O,u)\to
+\overline{\mathbf Q}_\ell$ be an original algebra map.
+The algebra here consists of finite sums of the $R_j$.
+Its restriction to the finite local $O$-algebra $R_0$
+has integral values and sends its maximal ideal into
+the valuation maximal ideal: every element of the latter
+ideal has some power in $\pi_O R_0$, where $\pi_O$ is a
+uniformizer.  In particular this assertion applies to the
+zero-weight variables and to every nonconstant balanced
+monomial.  If $w_i>0>w_j$ and both $\xi(z_i),\xi(z_j)$
+are nonzero, the balanced monomial
+$z_i^{|w_j|}z_j^{w_i}$ gives
+\[
+       |w_j|v_\ell(\xi(z_i))+w_i v_\ell(\xi(z_j))>0.           \tag{DU2}
+\]
+The finitely many inequalities (DU2) guarantee a rational
+number $s$ with
+$v_\ell(\xi(z_i))+w_i s>0$ for every nonzero $\xi(z_i)$:
+each positive-weight lower bound for $s$ is strictly below
+each negative-weight upper bound.  If one set is empty,
+there is only the other set of bounds.  Choose an algebraic
+$t$ with $v_\ell(t)=s$.  Scaling $\xi$ by $t^j$ on weight
+$j$ makes all the variable values lie in the maximal ideal
+of the integers $O'$ of one finite coefficient extension.
+Such an extension exists because only finitely many variable
+values and $t$ are involved.
+
+We justify that evaluation at these values extends the scaled
+map on every weight space, despite the formal series in (DU1).
+For any integer $j$, the set of exponent vectors of
+nonnegative integers with total weight $j$ has finitely many
+minimal elements in the componentwise ordering, by Dickson's
+lemma.  Every such vector lies above one of them, and their
+difference has weight zero.  Partition the monomials by a
+choice of a minimal vector beneath each.  Every weight-$j$
+formal series is therefore a finite sum of those minimal
+monomials multiplied by weight-zero formal series.
+The map on $R_0$ is continuous: its maximal-ideal and
+coefficient-adic topologies are equivalent because it is a
+finite local $O$-algebra.  It agrees with evaluation of
+weight-zero series by approximating them by polynomials in
+the finitely generated monoid of balanced monomials, whose
+nonconstant generators lie in its maximal ideal.
+The finite weight-space decomposition just proved makes
+the same agreement hold at every weight.  For any relation
+in $I$, all its homogeneous parts belong to $I$.  Evaluation
+of each part is zero.  Regrouping the convergent formal series
+by weight is valid because all variable values are strictly
+small.  Hence every relation evaluates to zero and we
+obtain a local homomorphism $R\to O'$.
+
+Specialize $u$ along this map.  By the agreement on all its
+entries and the defining identity \texttt{IsPtHom}, the
+resulting representation is precisely the torus conjugate
+of the original point represented by $\xi$.
+It satisfies the original normalized local and global
+conditions and is adically continuous.  This gives its
+literal \texttt{IsCharZeroPt} witness, with the same
+representation up to the permitted torus conjugation,
+not a new point on a different ring.
+
+\emph{Automorphy of a type-I point.}
+Type I is absolute irreducibility on the multiplier-one
+subgroup.  The original ordinary flag and the separating
+decomposition-group element (DH3) satisfy the hypotheses
+of Lemma~\ref{lem:support-type-one-strong-irreducibility}.
+Thus the matrix representation $\rho$ has all the
+irreducibility properties in the statement, including
+irreducibility after restriction to $G_L$.
+The actual normalized-lift transfer (FE1) over the coefficient
+DVR and the original \texttt{GoodPt} theorem give the
+arithmetic point of the actual auxiliary Hecke quotient,
+with the determinant of $\rho|_{G_L}\epsilon^{-1}$ and
+its exact ordered inertia characters.
+The argument (TR4) in
+Theorem~\ref{thm:support-type-one-rigidity}, using the
+proved arithmetic-point classicality for that quotient,
+therefore gives a regular algebraic conjugate-self-dual
+cuspidal representation of $\mathrm{GL}_3(\mathbf A_L)$
+attached to $\rho|_{G_L}\epsilon^{-1}$.
+Every step uses the original normalized lift; it does not
+require the inertial ring to be the saturated ring.
+
+Apply soluble CM descent
+(Thorne, \emph{Automorphy lifting for residually reducible
+$l$-adic Galois representations}, Lemma 2.7(2))
+to $\rho\epsilon^{-1}$ over $K$.
+Indeed $L/K$ is abelian, the representation on $G_L$
+is irreducible, and its conjugate-dual multiplier is the
+restriction of $\epsilon^{-2}$ on $\mathbf Q$, with
+constant value on complex conjugation.  Descent produces
+a regular algebraic cuspidal representation over $K$
+whose Galois representation is the stated one.
+Its conjugate self-duality in the automorphic normalization
+follows from the original polarized identity with multiplier
+$\epsilon^{-2}$ and strong multiplicity one at the
+unramified places.  The Tate twist and its sign have
+not changed.  This supplies exactly the automorphy and
+irreducibility needed for the preceding rigidity and
+Frobenius-spectrum arguments.
+\end{proof}
+
+\paragraph{Why the stronger automorphy witness is unnecessary.}
+The original \texttt{abstract\_count} is quantified over an
+arbitrary predicate \texttt{Good}.  Its use is only that every
+type-I graded point has this predicate, and that its
+characteristic-zero type-I points with the predicate are rigid
+and have nonzero trace difference.  Take \texttt{Good} to mean
+the irreducibility and automorphy just proved.  The proofs of
+Theorem~\ref{thm:rh-dyadic-host-traces} use only these properties
+of \texttt{BPrime\_s}: the local crystallinity proof and
+the spectrum theorem replace the separate local witness.
+In particular no assertion about the nonresonance of
+all powers of the diagonal character ratios in
+\texttt{WitA} is needed or inferred.  This is a logically
+sufficient weaker interface for the original integral
+counting theorem, not a change to its arithmetic points
+or local conditions.
+
+The remaining step at three in this route is the
+integral graded-algebra estimate for the actual inertial
+universal ring, including the adapted presentation and its
+exact coefficient-torsion contributions.  Once that estimate
+is proved, the arithmetic inputs of the count, the finite
+module, the point automorphy, rigidity, strict length
+comparison and uniform trace bound are all available.
+The full W04 node remains open.

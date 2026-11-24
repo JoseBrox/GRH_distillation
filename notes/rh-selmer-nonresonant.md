@@ -86,3 +86,7 @@ The [actual inertial frame theorem](rh-dyadic-host-frame.md) now proves
 that separation, the arithmetic frame and strict lower comparison,
 and the crystalline point/tangent and rigidity/trace implications.
 The first remaining task is ThmS6_s and the original graded estimate.
+
+The [inertial universal-ring theorem](rh-dyadic-host-universal.md)
+now also supplies actual finiteness and sufficient automorphy for
+AbstractCount. The exact graded-algebra estimate remains.
