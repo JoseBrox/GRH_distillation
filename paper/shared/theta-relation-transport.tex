@@ -1,0 +1,369 @@
+\subsection{Relation transport with the original see-saw scalars}
+\label{sec:theta-relation-transport}
+
+The remaining comparison of the actual theta chain with the normalized
+Poincare operators can be separated into a family realization and an
+exact relation-transfer argument. In this section the family
+realization hypotheses are retained. In particular we do not infer a
+common real test function for a family from the separate existence of
+test functions for its members.
+
+Use the common family of the source \(\mathrm{ValLastX}\):
+the length is \(M=2n+2\), the index \(t\) ranges over the original row
+tuples, and the intermediate column and row operators are
+\(S_{t,j},K_{t,j},\operatorname{io}_{t,j}\), with
+\(\operatorname{ioT}_{t,M-2}\) the last row operator.
+Let \(\operatorname{per}_{t,j}\) denote the intermediate Bessel
+period, with its actual character and translation sums, and let
+\(\operatorname{tail}_t\) be the terminal bilinear period.
+We use all the original scalars, not just their absolute values:
+\[
+ A_{t,j}=cV_t(j)cK_t(j)cK_t(j+1),\qquad
+ B_{t,j}=cI_t(j)cI_t(j+1),
+\]
+\[
+ C_t=\left(\prod_{i=0}^{n}A_{t,2i}\right)cP_t,\qquad
+ D_t=\prod_{j=0}^{M-1}cI_t(j).
+ \tag{RT1}
+\]
+Thus \(C_t=cTop_t(n+1)\), \(D_t=cBot_t\).
+
+\begin{proposition}[Exact downward transport of finite relations]
+\label{prop:theta-downward-relations}
+Assume the original \(\mathrm{LawsX}\) on this common family,
+including its local unfolding laws and the original real
+intertwiner spanning assertions. Use the ordinary analytic
+two-step unfolding and its density assertion on the prescribed
+automorphic spaces. Then every finite relation
+\[
+ \sum_i a_i C_{t_i}\,
+   \operatorname{tail}_{t_i}(\operatorname{up}_{t_i}(n+1)\psi_i,F_i)=0
+ \tag{RT2}
+\]
+implies, for every common pair of real tests \(y,v\),
+\[
+ \sum_i a_i D_{t_i}\,
+ \operatorname{per}_{t_i,0}
+   \bigl(\psi_i,
+   \operatorname{dn}_{t_i}(M-1)\operatorname{ioT}_{t_i,M-2}F_i;
+     y,v\bigr)=0 .
+ \tag{RT3}
+\]
+Here \(\psi_i\) belongs to the original ramification subspace,
+\(\operatorname{up}(j+1)=K_{2j+1}K_{2j}S_{2j}\operatorname{up}(j)\)
+and \(\operatorname{dn}\) is the ordered composition of all
+indicated lower row operators. No scalar has been cancelled on the
+assumption that it is a unit.
+\end{proposition}
+
+\begin{proof}
+We first verify the common finite test coefficients in the source's
+double-lift identity. At an even intermediate step \(j\) and for one
+of the real bi-Weil test functions \(C\) of \(\mathrm{ValX}\) or
+\(\mathrm{ValLastX}\), use the usual real commuting Weil actions
+and the finite-degree Fock description of the prescribed central
+eigenvectors. The real reduction used here is the source's
+\(\mathrm{doubleLift\_reduction\_to\_fockVectors\_uniform}\):
+it writes the double lift as a finite sum of consecutive single
+lifts with pairs of real polynomial vectors \((P_\nu,P'_\nu)\).
+Its uniformity across \(t\) is essential. In applying that
+reduction, \(\mathrm{RealEq}\) identifies the two real actions of
+every member with the same reference real actions, and
+\(\mathrm{RdX}\) supplies their common central character. The
+decomposition is of the fixed real bi-test, not of a member's
+individual finite-adelic theta kernel. Thus the finite family of
+pairs can be used in every member. If the relevant index sets
+are empty, all double-lift sums are zero. In this paragraph the
+real reduction theorem itself is retained as an analytic input.
+
+For each \(P_\nu\), \(\mathrm{KerX}\) writes the sum of the
+single lifts at level \(j\) as
+\[
+ cK_t(j)\sum_{z}a_\nu(z)
+       \operatorname{rd}_{t,j+1}(K_{t,j}\psi,z)
+\]
+in each of the intermediate finite class indices.
+The coefficients \(a_\nu(z)\) have finite support and are
+independent of \(t,\psi\) and of the output class index.
+Applying the second single-lift law with \(P'_\nu\) to each term
+gives the corresponding coefficient family \(b_{\nu,z}(y')\).
+Finite-sum linearity of the integral lifts is valid on the
+continuous automorphic functions of \(\mathrm{RdX}\).
+Therefore the exact common double-lift coefficient is
+\[
+ a(y')=\sum_{\nu,z}a_\nu(z)b_{\nu,z}(y').
+ \tag{RT4}
+\]
+The resulting two-lift sum has coefficient
+\(cK_t(j)cK_t(j+1)\,a(y')\), with the final column
+\(K_{t,j+1}K_{t,j}\psi\). This proves the finite-sum part of
+\(\mathrm{TwoX}\) with a coefficient family independent of \(t\).
+The original ramification conditions are preserved by the two
+\(K\)'s, so both applications of \(\mathrm{KerX}\) are legal.
+
+For an ordinary two-step descent, suppose a finite weighted
+relation of the upper periods is zero for every real test.
+Test the lower periods first on
+\(I_j(P_1,I_{j+1}(P_2,v''))\), where the \(I\)'s are the common
+real intertwiners. The two lift identities in \(\mathrm{Tup.Is}\)
+identify the result, multiplied by \(B_{t,j}\), with the two
+consecutive analytic lifts. The finite translation sums are
+linear. The actual double-step unfolding expresses the
+relevant integral by the iterated integrals of
+\(\mathrm{ValX}\). We use its density and absolute-integrability
+hypotheses, in particular the local compact-coset support
+\(\mathrm{LocFin}\) and rapid decay on the original cuspidal
+row spaces; no interchange of merely conditionally convergent
+integrals is made.
+
+At each pair of real translates in this unfolding,
+\(\mathrm{ValX}\) replaces that iterated integral by \(cV_t(j)\)
+times the period with the real bi-test. Apply (RT4) with
+\(S_{t,j}\psi\) in place of \(\psi\). The last real translate
+of the row vector is a common real linear change \(v''\mapsto
+v_*\), by the right-translation identity for the real model.
+The resulting finite weighted sum is
+\[
+ \sum_{y'}a(y')\sum_i a_i A_{t_i,j}\,
+   \operatorname{per}_{t_i,j+2}
+   (K_{t_i,j+1}K_{t_i,j}S_{t_i,j}\psi_i,G_i;y',v_*).
+ \tag{RT5}
+\]
+Every inner sum is zero by the assumed relation, since the
+tests and coefficients in (RT5) are common to the family.
+The original unfolding density theorem then gives zero for
+the lower relation on the full real spaces. This is
+\(\mathrm{StepX}\) with lower coefficient \(a_iB_{t_i,j}\).
+
+At the last pair of steps the same calculation uses
+\(\mathrm{ValLastX}\) and the terminal integral in place of the
+iterated integrals. Here \(\mathrm{PerX}\) identifies each
+terminal integral on a common test \((y',v'')\) with
+\(cP_t b(y',v'')\operatorname{tail}_t\), with \(b\) independent
+of the row tuple. Thus the lower sum on the intertwiner tests
+is
+\[
+ \sum_{y'}a(y')b(y',v'')\sum_i
+   a_i A_{t_i,M-2}cP_{t_i}\,
+     \operatorname{tail}_{t_i}
+     (K_{t_i,M-1}K_{t_i,M-2}S_{t_i,M-2}\psi_i,F_i).
+ \tag{RT6}
+\]
+Again every inner sum is zero. Linearity is justified on the
+original compact terminal quotient; spanning of the common
+real intertwiners gives the full lower relation.
+This is \(\mathrm{LastX}\).
+
+Finally in (RT2) use \(\mathrm{LastX}\) at \(j=M-2\),
+taking coefficient \(a_i\prod_{k<n}A_{t_i,2k}\) and column
+\(\operatorname{up}_{t_i}(n)\psi_i\).
+The relation at level \(2n\) has coefficient
+\(a_i B_{t_i,2n}\prod_{k<n}A_{t_i,2k}\) and the row
+\(\operatorname{io}_{t_i,2n}\operatorname{ioT}_{t_i,2n}F_i\).
+Descend by \(\mathrm{StepX}\) successively at
+\(2n-2,2n-4,\ldots,0\).
+At each stage replace one final factor \(A_{t,j}\) by
+\(B_{t,j}\) and prepend the two indicated lower row maps.
+This is a finite induction, without division by any of the
+\(A_{t,j}\).
+At level zero the remaining coefficient is precisely
+\(a_iD_{t_i}\). All the upward columns have stayed in the
+prescribed ramification subspaces by \(\mathrm{stabS}\) and
+\(\mathrm{stabK}\). This proves (RT3), also when \(n=0\),
+where only the last step is used.
+\end{proof}
+
+\paragraph{Recovering the bottom relations and the arithmetic row
+coefficients.}
+Keep the actual family links \(\mathrm{LinkZero}\),
+\(\mathrm{LinkTail}\), \(\mathrm{LinkDown}\), \(\mathrm{LinkOnto}\),
+\(\mathrm{LinkComm}\), \(\mathrm{RatioQ}\), and
+\(\mathrm{ServedQ}\). Let \(S\) be the similarity on the word's
+column space supplied by \(\mathrm{LinkComm}\), with
+\(\|S\phi\|=r\|\phi\|\), \(r>0\), and let \(s\ne0\) be its
+common tail scalar. Put
+\[
+ U=S^{-1},\qquad c_t=\frac{C_t s}{D_t}.
+ \tag{RT7}
+\]
+This uses \(D_t\ne0\) from the lift laws and \(C_t\ne0\)
+from \(\mathrm{RatioQ}\). In particular \(U\) is a similarity of
+ratio \(r^{-1}\). To prove the bottom two-term relation of
+\(\mathrm{BotDat.Rel}\), lift its test row \(T_0\) at the base tuple
+by \(\mathrm{LinkOnto}\) and its row \(F\) at tuple \(t\) by
+\(\mathrm{LinkDown}\). Write the corresponding upper rows as
+\(G_0,G_t\).
+Use columns \(\operatorname{col}_0(t_0,U\phi_0)\) and
+\(\operatorname{col}_0(t,U\phi)\). Define \(p(\phi_0)\) to be
+the terminal period of the first column on \(G_0\), multiplied
+by \(C_{t_0}/D_{t_0}\), just as in \(\mathrm{RelOfLinks}\).
+The tail and commutation laws give the second scalar as
+\(c_t\operatorname{perCol}_{u,t}(\phi,F)\).
+If
+\[
+ \alpha\,p(\phi_0)+
+ \alpha'\,c_t\operatorname{perCol}_{u,t}(\phi,F)=0 ,
+ \tag{RT8}
+\]
+apply Proposition~\ref{prop:theta-downward-relations} with the
+two coefficients \(\alpha/D_{t_0}\), \(\alpha'/D_t\).
+At level zero the \(D\)'s cancel \emph{exactly}, and
+\(\mathrm{LinkZero}\) identifies the two periods with the
+original bottom periods on \(T_0\) and the actual row.
+This proves the bottom relation with no unit assumption on
+the individual \(cI,cK,cV,cP\).
+
+The arithmetic property of the ratios in (RT7) is especially
+simple. If \(w\) is a served prime of the coefficient field \(K\)
+and \(t=\mu(w)\) its original served tuple, \(\mathrm{RatioQ}\)
+states
+\[
+ \left(c_t/c_{t_0}\right)^b=q\in\mathbb Q^\times,\qquad b>0,
+ \tag{RT9}
+\]
+with every prime supporting \(q\) among the rational primes
+of the auxiliary set of \(t\).
+The common \(s\) cancels in this ratio.
+By \(\mathrm{ServedQ}\) none of those rational primes is below
+\(w\). If \(c_t/c_{t_0}\) is in the image of \(K\) under the
+chosen embedding, its preimage \(k\) satisfies \(k^b=q\).
+Thus \(b\,v_w(k)=v_w(q)=0\), proving the exact valuation-zero
+claim of \(\mathrm{UnitC}\). No bound on the extension generated
+by a complex root in (RT9) is used.
+
+\begin{lemma}[Anchoring and descent without adjoining row factors]
+\label{lem:theta-anchor-arithmetic-descent}
+Suppose the actual bottom relation has been transported to the
+Poincare pairings by \(\mathrm{BotRel}\), with its column
+isometry \(R\). Suppose a nonzero Poincare witness exists at
+the prescribed common real vector. Then the normalized identity
+of \(\mathrm{MIstar2}\) gives the same base pairing on the original
+rational row spaces, with row coefficients in the original field
+\(K\) satisfying the served-prime valuation-zero property.
+The nonzero analytic scalar of each word must be retained.
+\end{lemma}
+
+\begin{proof}
+Use the actual nonzero pairing \(b_0\) at the witness row
+\(T_0\) and column. The similarity \(U\) and isometry \(R\)
+are invertible in the finite-dimensional column space, so take
+its preimage \(\phi_0\) under \(RU\).
+For the function \(p\) in the bottom relation, \(p(\phi_0)\ne0\):
+otherwise the relation with coefficients \(1,0\) would force
+\(b_0=0\) by \(\mathrm{BotRel}\).
+Apply the relation to \((T_0,\phi_0)\) and the actual row
+\((t,\phi,F)\) using the coefficients
+\(c_t\operatorname{perCol}_{u,t}(\phi,F)\) and \(-p(\phi_0)\).
+It gives
+\[
+ c_t\operatorname{perCol}_{u,t}(\phi,F)b_0
+       =p(\phi_0)b(t,\phi,F).
+ \tag{RT10}
+\]
+The proportionality is therefore nonzero, not just a conclusion
+about kernels. When \(RU\) is replaced by the norm-preserving
+map \(rRU\), the removed common scalar is moved into \(b_0\).
+The original coefficient conjugation transports this map to
+the column-coordinate space. Conjugation does not change its
+norm, by the original norm dictionary for those coordinates.
+After applying the original row shift (an isometry on the
+restricted row space), and the common nonzero Poincare--Bessel
+pairing conversion, (RT10) has the form
+\[
+ z_{u,t}\,\sigma(A_{u,t}(\phi,F))
+ =a_u\langle E V\Theta_t(F),\,P_u U_u\phi\rangle,\qquad
+ z_{u,t}=\frac{c_t}{c_{t_0}},\quad z_{u,t_0}=1,\quad a_u\ne0 .
+ \tag{RT11}
+\]
+Here \(\sigma:K\hookrightarrow\mathbb C\) is the chosen
+embedding, \(A_{u,t}\) is the original algebraic period,
+and the coordinates, possible conjugation of the \(c_t\), and
+row and column maps are the source's
+\(\mathrm{MIid}\) ones. The displayed \(z_{u,t}\) is read after
+that same conjugation. We retain the actual row realization
+and norm dictionaries of this identity; (RT10) alone does not
+construct them.
+
+For clarity, the remaining arithmetic descent in (RT11) can
+be done without adjoining any analytic row ratio. Let
+\(P_q(t)\) be the prescribed rational row quotient and
+\(i_C\) the base row coordinates. At \(t_0\),
+\(\Theta_{t_0}(F)=i_C(P_q(t_0)F)\).
+Since \(z_{u,t_0}=1\), the base period vanishes on
+\(\ker P_q(t_0)\). It therefore defines the original
+rational base pairing \(B_u(\phi,y)\) on the quotient:
+choose a rational right inverse of the surjection
+\(P_q(t_0)\), or equivalently factor through its kernel.
+No integral right inverse is asserted or needed.
+The original row-coordinate identity \(\mathrm{key\_row}\)
+identifies \(\Theta_t(F)\) with \(i_C(M_tP_q(t)F)\),
+where \(M_t\) is the original rational row matrix.
+Consequently (RT11) gives the equality
+\[
+ \sigma\bigl(B_u(\phi,M_tP_q(t)F)\bigr)
+     =z_{u,t}\sigma\bigl(A_{u,t}(\phi,F)\bigr).
+ \tag{RT12}
+\]
+If \(z_{u,t}\in\sigma(K)\), use its unique preimage
+\(\zeta_{u,t}\in K^\times\). Otherwise (RT12) forces the
+entire pairing \(A_{u,t}\) to vanish: a single nonzero
+rational entry would express \(z_{u,t}\) as a ratio of two
+elements of \(\sigma(K)\).
+In the second case the left side also vanishes on every
+rational input. Set \(\zeta_{u,t}=1\) in that case.
+Thus for all the original rational inputs,
+\[
+ B_u(\phi,M_tP_q(t)F)=\zeta_{u,t}A_{u,t}(\phi,F),\qquad
+ \zeta_{u,t_0}=1 .
+ \tag{RT13}
+\]
+At a served \(w\), (RT9) proves \(v_w(\zeta_{u,\mu(w)})=0\)
+in the first case; in the second it is immediate. If the
+source uses conjugate row factors, apply the transported
+valuation condition to those factors, as specified in
+\(\mathrm{MIUnit2}\). Thus the correction preserves every
+required local divisibility length in the actual row tuple.
+We have made no assertion about its valuations at other primes.
+
+For the norm transfer at the base tuple the original
+normalization is essential. If \(n_P>0\) is its prescribed
+normalizer, then the base coordinate frame satisfies
+\[
+ \|y\|_{X_E}=n_P^{-1/2}\|i_Cy\|,\qquad
+ \|Ee\|=n_P^{-1/2}\|e\|\quad(e\in EEl).
+ \tag{RT14}
+\]
+The row shift \(V\) preserves \(EEl\) and its norm.
+Since \(i_C\) identifies the base coordinate space with
+\(EEl\), \(W=i_C^{-1}Vi_C\) preserves the frame norm in
+(RT14). The column map \(U_u\) likewise preserves the
+original \(X_c(u)\) norm. The base case of (RT11),
+extended by complex bilinearity (the row anti-linearity of
+\(E\) is paired with the conjugate-linear argument of the
+Hermitian pairing), is therefore
+\[
+ \sigma B_u(x,y)
+       =a_u\langle E i_C W y,\,P_u U_u x\rangle .
+ \tag{RT15}
+\]
+This is the source's norm factorization \(\mathrm{L1e}\),
+including the nonzero scalar \(a_u\).
+It gives the arithmetic cut-pairing identity using (RT13)
+on the original rational quotient, while keeping the
+restricted Hilbert spaces and frame norms unchanged.
+In particular we do not replace \(a_u\) by one, or infer
+a uniform absolute-height bound for all the \(\zeta_{u,t}\).
+\end{proof}
+
+The preceding arguments supply the finite-test, relation-induction,
+anchoring and arithmetic descent parts of the comparison.
+The outstanding analytic realization is not implicit in them:
+one must still construct \(\mathrm{LawsX}\) and
+\(\mathrm{FamAllQ}\) from the actual finite-prime chain,
+including its real bi-test decomposition, local support,
+both unfolding laws, row lift and onto/commutation assertions,
+and the exact ratios \(\mathrm{RatioQ}\) on the served tuple
+sets. The original nonzero Poincare family and the restricted
+norm and level dictionaries are also indispensable.
+No complete \(\mathrm{MIstar2}\) or W06 conclusion is asserted
+without these suppliers.
