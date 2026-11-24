@@ -1,0 +1,334 @@
+\subsection{Exact corrected Hodge flags at the correction primes}
+\label{sec:geometry-exact-corrected-flags}
+
+We retain the original full-level model, cubical line, torsion
+characters and locally free modules of Section~\ref{sec:geometry-hodge-specialization}.
+At a correction prime \(p\), write \(R=R_p\ge4\) and \(m=R-2\).
+The following argument uses all torsion levels only over the injective
+valued test fields. It does not enlarge the prescribed level or the
+function field of the global model.
+
+\begin{lemma}[A compatible polarized test tower]
+\label{lem:corrected-ht-test-tower}
+At an injective height-one test point above \(p\), let \(C\) be the
+complete algebraically closed valued field, \(O_C\) its valuation ring,
+and \(G\) the pulled-back semiabelian family of dimension \(g\) with
+abelian generic fibre. There is a \(p\)-divisible group \(B/O_C\) of
+height \(2g\) such that:
+\begin{enumerate}
+\item its generic torsion at every level is the original generic
+torsion \(G_C[p^n]\), with all transition maps and coefficient actions;
+\item its invariant cotangent module is \(\omega_G\), with the
+identification at level \(n\) given by (HS5);
+\item the original alternating Weil pairings extend compatibly to
+a morphism \(\lambda:B\to B^D\) whose Tate-module map is an
+isomorphism preserving the original pairing.
+\end{enumerate}
+The kernel of the characteristic-zero Hodge--Tate map
+\[
+ H=\alpha_{B^D}\circ T_p(\lambda):
+ T_p(B)\otimes_{\mathbb Z_p}C\longrightarrow\omega_G\otimes_{O_C} C
+\]
+is Lagrangian for the original pairing (using a compatible system of
+roots of unity to trivialize the Tate twist).
+\end{lemma}
+
+\begin{proof}
+Work first over the henselization of the height-one discrete valuation
+ring of the original model. For every \(n\ge1\), the finite-part theorem
+used in (HS3)--(HS4) gives the finite flat open and closed subgroup
+\(\mathcal H_n\) of \(G[p^n]\) containing the entire closed fibre.
+Pull these subgroups back to \(O_C\). Their complements still have
+empty closed fibre, and the finite-part construction is functorial:
+the inclusion and multiplication-by-\(p\) maps preserve the finite
+parts. Indeed their restrictions from a finite scheme cannot meet
+the complementary open and closed component if they do not meet
+it on the closed fibre. The inclusion
+\(\mathcal H_n\hookrightarrow\mathcal H_{n+1}\) is closed.
+
+Multiplication by \(p\) maps \(\mathcal H_{n+1}\) faithfully flatly
+onto \(\mathcal H_n\). To justify flatness, on the special fibre
+these are the full semiabelian torsion schemes. The map there is
+finite faithfully flat of rank \(p^{2g-r}\), where \(r\) is the
+torus rank of that fibre. Over the henselian DVR both coordinate
+algebras are finite free, of ranks \(p^{(n+1)(2g-r)}\) and
+\(p^{n(2g-r)}\). The finite special-fibre algebra of the target is
+Artinian, and the source is free of the displayed relative rank
+over it. Lift a basis over that algebra. Nakayama's lemma gives
+a surjection from the free module of the same relative rank over
+the integral target coordinate algebra. The two underlying free
+DVR modules have equal rank, so the surjection is an isomorphism.
+This proves faithful flatness before base change, and hence after it.
+In particular the generic finite parts map onto each other.
+
+For each \(n\) apply the explicit induced-coset construction (HS4)
+to \(T_n=G_C[p^n](C)\) and \(H_n=\mathcal H_n(C)\), obtaining \(B_n\).
+An integral section of \(G[p^n]\) factors through \(\mathcal H_n\):
+its closed point belongs to the latter, and its inverse image of
+the complementary open and closed part is empty. Consequently
+\(H_{n+1}\cap T_n=H_n\). The inclusions of generic labels therefore
+induce closed immersions \(B_n\hookrightarrow B_{n+1}\), using the
+finite-part inclusions on the individual copies. The maps
+\(p:T_{n+1}\twoheadrightarrow T_n\) induce maps
+\(B_{n+1}\twoheadrightarrow B_n\), surjective on the coset sets
+and on each copy finite faithfully flat, by the preceding paragraph.
+The choices of representatives cancel by the translation formula
+(HS4). In particular these maps satisfy all their compatibility
+relations; alternatively check the relations on the generic fibres
+and use flatness and separatedness.
+
+The kernel of \(p^n:B_{n+1}\to B_1\) is finite locally free of
+rank \(p^{2gn}\). The inclusion of \(B_n\) factors through it and
+is a closed immersion of finite locally free schemes of equal rank,
+hence an isomorphism. This proves the Barsotti--Tate axioms for
+the system \(B_n\); the same argument gives the usual exact sequences
+at arbitrary levels. It is important here that the ranks of
+\(B_n\) are those of the full generic abelian torsion, not those
+of the intrinsic special-fibre semiabelian torsion.
+The identity copy has cotangent \(\omega_G/p^n\omega_G\).
+These identifications commute with the cotangent restrictions, so
+their limit identifies \(\omega_B\) with \(\omega_G\).
+In particular the dimension of \(B\) is \(g\). Its dual has dimension
+\(2g-g=g\).
+
+At every level the original cubical pairing extends by (HS6).
+The resulting maps \(B_n\to B_n^D\) are compatible: compatibility
+of the Weil pairings with inclusion and multiplication by \(p\)
+holds on the generic fibres, and each equation extends between the
+finite flat schemes. This yields \(\lambda\). The map of Tate modules
+is an isomorphism by the original generic principal polarization;
+we have not asserted that each finite-level \(\lambda_n\) is a
+scheme-theoretic isomorphism. The coefficient action extends by
+the same finite-part and coset construction.
+
+Apply the integral Hodge--Tate complex theorem to \(B\) and \(B^D\)
+(Fargues, \emph{Ann. Sci. ENS} 44 (2011), \S5.3.2, Theorem 2,
+pp.~934--935; see also the finite-group theorem in \S5.4
+already used in (HS8)). Over \(C\) it gives the exact sequence
+\[
+ 0\longrightarrow(\omega_B\otimes C)^\vee(1)
+ \longrightarrow T_p(B)\otimes C
+ \xrightarrow{\alpha_B} \omega_{B^D}\otimes C
+ \longrightarrow0 ,
+\]
+where the first arrow is the transpose of \(\alpha_{B^D}\) via
+Cartier duality. In particular the kernel of \(\alpha_B\) is the
+annihilator of the kernel of \(\alpha_{B^D}\) under the Tate pairing.
+Naturality gives
+\(\alpha_{B^D}\circ T_p(\lambda)=(\lambda^D)^*\circ\alpha_B\).
+Thus \(\ker\alpha_B\subseteq\ker H\). Both kernels have dimension
+\(g\), since \(T_p(\lambda)\) is an isomorphism and both Hodge--Tate
+maps are surjective over \(C\) with rank \(g\). They coincide.
+Using the alternating pairing given by \(\lambda\), the annihilator
+identity becomes \((\ker H)^\perp=\ker H\).
+This is the required orthogonality, including at \(p=2\).
+Only rational exactness of the displayed complex is used here;
+for the integral cokernel bound we retain (HS8) and its factor \(4\).
+\end{proof}
+
+\begin{theorem}[An exact flag sequence modulo the original loss]
+\label{thm:exact-corrected-flag-sequence}
+Keep the original correction prime \(p\), \(\mathrm{HTFree}\) model
+and the original flag with \(\mathrm{RootLines}\). On its
+\(p^{R-2}\)-thickened fibre, for each CM-type embedding \(\sigma\)
+there is an exact sequence of vector bundles
+\[
+ 0\longrightarrow P_\sigma
+ \longrightarrow \mathcal O^{N}
+ \longrightarrow Q_\sigma
+ \longrightarrow0,
+ \qquad
+ P_\sigma=\sigma(\mathfrak D_E)^{-1}
+                  Q_{\bar\sigma}^{\vee},\quad N=p_{\rm sig}+q_{\rm sig}.
+ \tag{HF1}
+\]
+Here \(Q_\sigma\) denotes the restricted image of the original
+corrected cotangent module, with the \emph{conjugate} coefficient
+action on differentials; all bundles in (HF1) are reduced modulo
+\(p^{R-2}\). Thus \(P_\sigma\) is the original selected corrected
+tangent bundle and \(Q_\sigma\) is the dual of the other corrected
+tangent bundle. The sequence uses the original full-level basis
+and normalized Weil pairing. It supplies \(\mathrm{TrivFlagOnHodge}\)
+and the correction-prime \(\mathrm{ModelNefStatement}\) on the
+actual model.
+\end{theorem}
+
+\begin{proof}
+Use the convention on the action on differentials just stated, so
+the names \(Q_\sigma\) here correspond to the source
+\(\mathrm{omHT}\), not to an un-conjugated dual of the
+\(\sigma\)-eigenspace. Before reduction work on the original model
+over \(\mathbb Z_{(p)}\). By (HS8), and the inclusions proved on
+the locally free charts,
+\[
+ p^R\omega_G\ \subset\ p^{R-2}\mathcal N_p,\qquad
+ \mathcal N_p=\langle h(t)\rangle+p^R\omega_G ,
+ \tag{HF2}
+\]
+where \(h(t)\) are local lifts of the actual character differentials.
+For (HF2), \(\kappa_p\mid p^2\) and
+\(\kappa_p\omega_G\subseteq\mathcal N_p\).
+The containment is also valid with the original projected image in
+place of \(\mathcal N_p\). In particular all the character
+differentials are canonically defined in
+\(\mathcal N_p/p^m\mathcal N_p\), irrespective of the lifts.
+Their additivity and coefficient linearity hold there: both were
+identities modulo \(p^R\omega_G\) before using (HF2).
+
+Choose the original \(N\) generators of the free
+\(\mathcal O_E/p^R\mathcal O_E\)-module of generic torsion.
+Their projected differentials now give a global surjective map
+\[
+ q_\sigma:(\mathcal O/p^m)^N\longrightarrow Q_\sigma/p^m Q_\sigma .
+ \tag{HF3}
+\]
+Indeed after projection to the \(\sigma\)-eigenspace the coefficients
+in \(\mathcal O_E\) act through \(\sigma\), and the additional
+\(p^R\omega_G\) generators disappear by (HF2).
+All embeddings of integers are integral on the normal charts.
+This argument does not assume that the idempotent projections are
+integral on the uncorrected cotangent module. It uses precisely
+their locally free images.
+
+Here is the integral normalization of the adjoint. Put
+\(D_p=\mathcal O_E\otimes\mathbb Z_{(p)}\).
+Its inverse different is the trace dual of \(D_p\), and it is
+principal because \(D_p\) is semilocal Dedekind. Choose once a
+generator \(d\) of its different. The original perfect alternating
+balanced pairing of the full level, after choosing the original
+primitive \(p^R\)-th root of unity, is the trace of a unique
+sesquilinear pairing with values in
+\(\mathfrak D_E^{-1}D_p/p^R\mathfrak D_E^{-1}D_p\).
+Indeed the trace-dual identification applied in one variable
+constructs that pairing; the balanced identity gives its conjugate
+linearity in the other variable. The perfectness of the trace
+pairing over \(\mathbb Z/p^R\) implies perfectness of this
+sesquilinear pairing over \(D_p/p^R\).
+Multiplication by \(d\) makes its matrix invertible over that
+ring. Evaluation at \(\sigma\) therefore gives an invertible
+bilinear matrix pairing the two conjugate labelled copies of
+\((\mathcal O/p^m)^N\).
+This is the different-normalized Gram matrix of
+\(\mathrm{HTChart.gram}\); it is defined by the constant full-level
+pairing, not by choosing a fresh Gram form on each chart.
+
+The dual of \(q_{\bar\sigma}\) composed with the inverse of this
+matrix defines an injection \(i_\sigma:P_\sigma/p^m\to
+(\mathcal O/p^m)^N\). In this formula a member of
+\(P_\sigma=\sigma(d)^{-1}Q_{\bar\sigma}^{\vee}\) is first multiplied
+by \(\sigma(d)\) to give a member of the ordinary dual, as required
+by the different-normalized Gram. Equivalently the defining
+adjoint equality is the one for the unscaled pairing and evaluation
+of the member of \(P_\sigma\). This construction is independent of
+the choice of different generator. Since \(Q_{\bar\sigma}\) is
+locally free and \(q_{\bar\sigma}\) is surjective, \(i_\sigma\) is
+locally a split injection, including over a nonreduced thickening.
+
+We claim \(q_\sigma i_\sigma=0\). It is enough to check this at
+the height-one primes above \(p\) of the original normal chart.
+Indeed locally lift the composite to a map of projective modules
+before reduction; its image in the fraction field is divisible
+by \(p^m\) in the target if and only if its quotient by \(p^m\)
+belongs to the target at every height-one prime. This is the
+intersection property of reflexive modules over a normal
+noetherian domain. At height-one primes not over \(p\) the
+divisibility condition is automatic.
+
+At a height-one prime above \(p\), extend faithfully flatly from
+the DVR to the ring of the complete algebraically closed valued
+field. Construct \(B\) by Lemma~\ref{lem:corrected-ht-test-tower}.
+Lift the original level generators to an
+\(\mathcal O_E\otimes\mathbb Z_p\)-basis of \(T_p(B)\);
+Nakayama's lemma, using their basis property modulo \(p^R\),
+justifies the lift. Lift also the chosen root of unity compatibly
+to all levels. The Tate pairing reduces to the original one
+modulo \(p^R\); its trace-dual pairing and its normalized Gram
+do so as well.
+
+The image of the actual Tate Hodge--Tate map
+\(\alpha_{B^D}\circ T_p(\lambda)\) over \(O_C\) is exactly
+\(\mathcal N_p\otimes O_C\). Its reduction in \(\omega_G/p^R\)
+is the original character differential map, since at each level
+the identity copy of \(B_n\) is \(\mathcal H_n\).
+Its cokernel is annihilated by \(\kappa_p\): apply the integral
+Hodge--Tate cokernel bound (or the compatible finite bounds and
+compact finite generation of the image) to \(B^D\).
+In particular its image contains \(p^R\omega_G\).
+The equality of the two images follows.
+The finite free projected modules commute with this flat
+base change, as images of a fixed rational linear map.
+
+Over \(O_C\) therefore one can use the actual Tate Hodge--Tate
+map and actual Tate Gram matrix before reduction. Their maps
+on the projected image lattices are integral and give exactly
+(HF3) and its adjoint after reduction modulo \(p^m\).
+The kernel of the rational Hodge--Tate map is Lagrangian by
+Lemma~\ref{lem:corrected-ht-test-tower}, so the adjoint of the
+conjugate labelled quotient has image in the kernel of the
+labelled quotient. The different normalization merely scales
+that adjoint by a nonzero constant over \(C\).
+The composite of the actual integral maps is consequently zero
+over \(C\), hence over \(O_C\). The congruence between actual
+Tate differentials and the chosen level differentials modulo
+\(p^R\omega_G\), together with (HF2), proves zero composition
+for the original reduced maps. Faithful flatness and the
+reflexive-module argument prove the claim on the original chart.
+
+The ranks of \(P_\sigma\) and \(Q_\sigma\) are respectively
+\(p_{\rm sig}\) and \(q_{\rm sig}\), so they sum to \(N\).
+The split injection and surjection just proved are exact:
+locally quotient the free middle bundle by the split first
+bundle. The induced surjection to \(Q_\sigma\) is between free
+modules of the same rank, hence is an isomorphism over the
+possibly nonreduced local ring. This proves (HF1).
+The maps glue because the original torsion labels, Weil pairing,
+different ideal and classes in (HF2) are global.
+
+Now use the actual flag in \(P_\sigma\), and in \(Q_\sigma\)
+use the reversed dual flag of the other corrected tangent bundle.
+The successive inverse images of this second flag under (HF1),
+following the first flag, give a full flag of subbundles of the
+trivial middle bundle modulo \(p^m\). Its graded line bundles are
+exactly the original root lines, including the inverses and reversal
+in \(\mathrm{rootIdx},\mathrm{rootSgn}\). The flag restricts to every
+special-fibre component without any new base-field extension.
+In particular it supplies the source's \(\mathrm{TrivFlagAt}\)
+on those components. In the coordinate model one can choose a flag
+basis on each original affine chart after localizing as needed;
+the prescribed root-line generators fix the diagonal transition
+factors. The change matrices are upper triangular modulo \(p^m\),
+and the original root monomial ratios are their diagonal entries.
+Equivalently the exact sequence of subbundles is the geometric
+form of the original trivial-flag assertion; no change to the
+coordinate model or to its degree is necessary.
+
+For a complete integral curve on a special-fibre component,
+write \(L_i\) for the successive quotients of this full flag and
+\(F_i\) for its \(i\)-th subbundle (\(F_0=0,F_N=\mathcal O^N\)).
+The determinant of \(F_i\) injects into a trivial exterior-power
+bundle, so \(\deg F_i\le0\): a nonzero component of the induced
+map to a trivial line gives an effective divisor after normalization
+of the curve. Also \(\deg F_N=0\). Thus for decreasing real
+weights \(\mu_1\ge\cdots\ge\mu_N\), summation by parts gives
+\[
+ -\sum_{i=1}^N\mu_i\deg L_i
+ =-\sum_{i=1}^{N-1}(\mu_i-\mu_{i+1})\deg F_i\ \ge0 .
+ \tag{HF4}
+\]
+This is the sign convention of
+\(\mathrm{RootModel.coef}(\mu,0)=-\mu\).
+Sum over the original CM-type labels. It proves precisely
+\(\mathrm{ModelNefStatement}\) at the correction primes.
+The Whitney formula also gives
+\(\prod_i(1+c_1(L_i))=1\) on each component, and the positive-degree
+power sums of these roots vanish there by the Newton identities.
+\end{proof}
+
+The proof establishes the exact Lagrangian comparison and the
+correction-prime general flag positivity, rather than only an
+annihilator inclusion. It does not supply the distinct \(\mathrm{M2}\)
+condition away from the correction set, or the Frobenius-linked
+vertical correction identities comparing two levels. Those remain
+necessary for the complete weighted mean. No numerical change to
+the base-test bound of Section~\ref{sec:geometry-height-assembly}
+is asserted here.

@@ -1,0 +1,27 @@
+# Exact corrected Hodge flags at the correction primes
+
+**Result:** the compatible polarized test tower and exact sequence modulo (p^{R-2}) in [geometry-exact-corrected-flags.tex](../paper/shared/geometry-exact-corrected-flags.tex) strengthen the previous annihilator comparison. They supply the geometric trivial-flag assertion on the original special-fibre components and the dominant-weight ModelNef condition at the correction primes. M2 at the other primes and the two-level Frobenius correction identities remain separate.
+
+The central improvement is to form the induced coset models from the finite parts at **every** p-power level at a single injective height-one valuation. Multiplication by p between the finite parts is faithfully flat: this is true in the special fibre, and lifting a basis over its finite coordinate algebra proves it over the henselian DVR, where both ranks are the prescribed powers of p. Inducing all generic cosets yields the full Barsotti--Tate tower, with height 2g, dimension g, and cotangent equal to the actual semiabelian cotangent. This avoids the incorrect substitution of intrinsic boundary torsion of rank 2g-r. Compatibility of the cubical Weil pairings yields a morphism to its Cartier dual inducing an isomorphism of Tate modules; no integral scheme-level principal polarization of the induced tower is assumed. Naturality of the Hodge--Tate maps and their ranks give equality of kernels after the Tate pairing identification. Fargues's Hodge--Tate complex then makes that kernel Lagrangian.
+
+The original corrected image modules are locally free. Because (p^R\omega\subset p^{R-2}\mathcal N_p), the original level differentials give globally defined surjective maps onto the corrected labelled images modulo (p^{R-2}). The inverse-different trace pairing gives a perfect normalized Gram matrix; the adjoint of the conjugate quotient is split injective. Zero composition is checked with the full compatible tower at height-one points and descends by the intersection property of projective modules over normal rings. The ranks sum to the full level rank N, proving exactness on the nonreduced thickened fibre itself. The exact sequence combines the actual selected tangent flag and the reversed dual of the other flag into a full flag of the trivial rank-N bundle. On every special-fibre curve the determinant of any prefix subbundle has nonpositive degree. Summation by parts with the source's negative coefficient convention proves dominant nefness. The Whitney formula also gives the requisite vanishing power sums on those components.
+
+This argument keeps the prescribed R, all coefficient labels, the different, the full global torsion at the original finite level, and the actual locally free image modules; the auxiliary infinite tower is only over the injective valued test fields. The proof does not assert a globally enlarged level or a new model with smaller height.
+
+## Source interfaces and reference
+
+Pinned jsmorph/rh revision ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de:
+- Development/AutomorphicSpectrum/Statements/GeometryStatements/IsPolLatticePlane.lean: PointHT, original full torsion and rank assumptions.
+- Development/AutomorphicSpectrum/Proofs/GeometryProofs/PointHTOfFarguesHodgeTate.lean, blob 04da605b9889085b5d77e12260478f9ee2abada0: OrdTower and PointHT reduction.
+- Development/AutomorphicSpectrum/Definitions/CommutativeAlgebra/IsCompactUnitaryPointsAtPlaceFstMemCompact.lean, blob 579ca1a9756d7888780141608552813dda65f78a: HTChart, IsDualMap, ExactMod.
+- Development/WeilBound/CoreStatements/HodgeTatePoints/FinrankDualEqOfProjective.lean, blob 1522c2ef3750b12566039c0bc2a51caa102e9ace: chart_sequence, exactness from split injectivity, surjectivity, ranks and zero composite.
+- Development/AutomorphicSpectrum/Definitions/GlobalGeometry/IsHodgeLine.lean, blob 7bbe43898e5f9dc211ce1ecf8c6c290545b6675e: HT labels and rootIdx/rootSgn.
+- Development/AutomorphicSpectrum/Statements/GeometryStatements/TrivFlagOnHodge.lean, blob 73baa5cba609323ebab21577452faeb032c14fb3: trivial flag on each original special-fibre component.
+- Development/AutomorphicSpectrum/Proofs/GeometryProofs/RootLinesWeightBoundOfFree.lean, blob 5136e5b75ecc5224bbe757a547c7acc13d1c927d: ModelNef supplier.
+- Development/AutomorphicSpectrum/Definitions/DivisibilityTowers/Birational.lean: coef = -mu, curveDeg and NefAt.
+
+Primary reference: Laurent Fargues, *La filtration canonique des points de torsion des groupes p-divisibles*, Ann. Sci. ENS 44 (2011), 905–961, Theorem 2, section 5.3.2, printed pp. 934–935, and Theorem 3, section 5.4. DOI 10.24033/asens.2157. Theorem 2 states exactness after inverting p, including that the two Hodge--Tate arrows compose to zero; Theorem 3 supplies the previous finite-group cokernel bound. The original weaker dyadic factor 4 is retained.
+
+## Remaining checks
+
+The construction is a direct conventional argument, not Lean replay. In particular the exact coordinate presentation of TrivFlagMod can be derived by clearing denominators in compatible flag frames; we use its geometric consequence on the original special-fibre components, not a new projective-coordinate bound. The Frobenius identity for the comparison of two levels is not a consequence of flag triviality. It must still be supplied. No M2 claim, full W10 closure, manuscript build or external verification is made.
