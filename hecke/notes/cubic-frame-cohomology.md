@@ -187,18 +187,28 @@ In the high-dyadic range the ordinary flags also give the
 parent's potentially crystalline local alternative at
 characteristic-zero points with the prescribed integral
 inertia type. Indeed the three exponents are $e,0,-e$.
-After killing the fixed finite inertia characters, ordered
-upper-root extensions have negative Hodge--Tate weights
-with the convention of the parent. For exponent difference
-one, equality of the whole ratio with $\varepsilon$ is
-excluded by the three distinct residual values at the mark,
-where $\bar\varepsilon(x)=1$; for larger difference the
-infinite cyclotomic inertia already excludes equality.
-The local Euler-characteristic and Bloch--Kato dimension
-argument of the parent DH7 gives finite extension classes,
-by induction on the flag. Equivalently the ordinary
-representations are potentially crystalline with the
-prescribed finite inertia semisimplification. This is a
+Work over the original coefficient-prime local field of $F$,
+before killing the finite inertia characters. The diagonal
+characters are potentially crystalline (each is a cyclotomic
+power times a finite inertia type and an unramified character).
+The ordered upper-root extension modules have negative
+Hodge--Tate weights with the convention of the parent.
+For exponent difference one, equality of the whole ratio
+with $\varepsilon$ is excluded by the three distinct
+residual values at the mark, where $\bar\varepsilon(x)=1$;
+for larger difference the infinite cyclotomic inertia
+already excludes equality. The local Euler-characteristic
+and Bloch--Kato dimension argument of the parent DH7 gives
+finite extension classes, by induction on the flag: the
+dual Tate twist has no invariants since none of its
+successive characters is trivial. These assertions are
+checked over the original local field, not by assuming
+the mark survives a further restriction. Restrict the
+resulting finite classes to a finite extension where
+the diagonal characters are crystalline. Induction
+using the crystalline extension criterion gives
+potential crystallinity with the prescribed finite
+inertia semisimplification. This is a
 local assertion, and supplies no global automorphic
 attachment.
 
