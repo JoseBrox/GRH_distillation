@@ -599,3 +599,4 @@ The original thin-region determinant jet and Bergman bound are reconstructed in 
 - [Case II marked symplectic induction](../notes/rh-symplectic-induction.md): full original SeedIIAlt supplier; arbitrary-point propagation remains open.
 
 - [Deep Case II residual chain](../notes/rh-case-II-residual-chain.md): the original three polynomial links through good residual points; automorphic support transport remains open.
+- [Rank-four weight-collision bound](../notes/rh-rank-four-weight-collision.md): `off_diagonal_nilpotent_rank_four` and its `ClassicalFixedByIwahori` consumer.

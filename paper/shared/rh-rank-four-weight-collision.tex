@@ -1,0 +1,158 @@
+\subsection{The finite-weight collision bound in rank four}
+\label{sec:rh-rank-four-weight-collision}
+
+We isolate the finite-weight part of the component-propagation argument.
+Unlike the construction of the ordinary automorphic ideal, this part
+requires no automorphy lifting. The source statement is
+\texttt{off\_diagonal\_nilpotent\_rank\_four} in
+\texttt{OffDiagonalNilpotentRankFour.lean}.
+
+\begin{theorem}[Dimension loss at a collision of inertial weights]
+\label{thm:rh-rank-four-weight-collision}
+Retain the original fitted deep tower \(T\), odd prime \(\ell\),
+coefficient DVR \(\Lambda=c'.O\) with uniformizer \(\varpi\),
+and original normalized space \(X\) with coefficient ring \(B=X.B\).
+Write \(d=[T.F:\mathbb Q]\), \(r=\#T.\iota\), and
+\(d_v=[T.F_v:\mathbb Q_\ell]\) for the common local degree at the
+\(r\) selected places, so \(rd_v=d\).
+Let \(\psi_{u,i}(s)=X.\psi(u,i,s)\) be the original diagonal
+local characters, and \(J\subset B\) an ideal satisfying the original
+finite-weight property
+\[
+ \mathfrak m_B^n\subset
+ J+\varpi B+
+ (\psi_{u,i}(s)-1:u\in T.\iota,\ 0\leq i\leq3,\ s\in I_u)
+\]
+for some \(n\), where \(I_u\) denotes the inertia group at \(u\).
+No other part of \texttt{PotentialModularityTower} is needed.
+
+For distinct \(i,j\), a place \(v\), and a prime
+\(\mathfrak q\supset J+\varpi B\) such that
+\[
+ \psi_{v,i}(s)-\psi_{v,j}(s)\in\mathfrak q
+ \qquad(s\in T.U1(v)),
+\]
+one has the literal source bound
+\[
+              \dim B/\mathfrak q+d_v\leq2d+1 .
+\]
+\end{theorem}
+
+\begin{proof}
+Write \(A=B/\mathfrak q\). We use the following elementary facts on
+all further prime quotients of \(A\). Such a quotient \(S\) is a
+complete Noetherian local domain of characteristic \(\ell\), with
+finite residue field. By definition of the original space, the
+images of \(\psi_{u,i}\) are adically continuous characters on the
+decomposition groups. Indeed, the local upper triangular matrix
+equations give multiplicativity of the diagonal entries; their
+products in opposite positions equal the prescribed similitude.
+These identities descend from \(X.A\) to \(B\) by the injective
+coefficient map, and continuity follows from the original
+\texttt{psi\_cont} condition. The diagonal residual characters on
+inertia are all trivial by \(T.Ok.\mathrm{ineL}\), so the inertia
+characters \(\chi_{u,i}\) of \(S\) take values in \(1+\mathfrak m_S\)
+and satisfy
+\[
+                   \chi_{u,i}\chi_{u,3-i}=1 .
+\]
+Here the multiplier is one on inertia after reducing the coefficient
+DVR, again by the same \(\mathrm{ineL}\) condition. These arguments
+give the relevant part of
+\texttt{deformationSpace\_local\_characters\_continuous} directly on
+the original space; no change to its deformation functor is made.
+
+The group \(1+\mathfrak m_S\) is pro-\(\ell\): the successive
+congruence quotients are additive groups of finite characteristic
+\(\ell\). It is torsion-free. For \(\ell\)-power torsion this follows
+from \((z-1)^{\ell^a}=z^{\ell^a}-1\) and the domain condition; for
+prime-to-\(\ell\) torsion, if \(z\equiv1\bmod\mathfrak m_S\) and
+\(z^b=1\), \(b\) prime to \(\ell\), then
+\(1+z+\cdots+z^{b-1}\) is a unit and \(z=1\).
+
+Local class field theory identifies the image of inertia in the
+abelianized decomposition group with the unit group of \(T.F_u\).
+Its maximal pro-\(\ell\) quotient modulo finite torsion is free
+of rank \(d_v\) over \(\mathbb Z_\ell\). Consequently every
+\(\chi_{u,i}|_{I_u}\) factors continuously through this same
+torsion-free quotient \(L_u\). Choose inertia lifts
+\(s_{u,1},\dots,s_{u,d_v}\) of a basis of \(L_u\). Vanishing of
+\(\psi_{u,i}(s_{u,k})-1\) in \(S\) for all \(k\) implies that
+\(\chi_{u,i}\) is trivial on inertia. The lifts depend only on
+the tower, not on the prime quotient.
+
+At \(v\), the cyclotomic character on the pro-\(\ell\) part of the
+unit group is nontrivial and has open image in
+\(1+\ell\mathbb Z_\ell\); for example this is the local norm on
+units up to the reciprocity convention, and a sufficiently deep
+principal-unit subgroup has open norm. It kills finite torsion.
+The induced map on \(L_v\) has kernel a direct summand of
+rank \(d_v-1\) and quotient free of rank one. The image of
+\(T.U1(v)\) contains that kernel: a lift in the principal-unit
+group of a kernel element has trivial cyclotomic value,
+and every relative inertia element has trivial original residual
+representation by \(\mathrm{ineL}\).
+This uses precisely the source definition
+\[
+ T.U1(v)=\{s\in I_v:\epsilon_\ell(s)=1,\
+                         D.\bar r(\operatorname{res}_{\mathbb Q}s)=1\}.
+\]
+Choose \(s_*\in I_v\) in the principal-unit part whose image
+generates the free rank-one quotient. It follows that the
+collision in the theorem, together with the single relation
+\(\psi_{v,i}(s_*)-\psi_{v,j}(s_*)=0\), forces
+\(\chi_{v,i}=\chi_{v,j}\) on all inertia in every prime quotient
+of \(A\). This explains the one additional parameter in the source
+bound. Torsion units introduce no additional parameters.
+
+There are two opposite pairs of labels, \(\{0,3\}\) and
+\(\{1,2\}\). Choose a label \(a\) in the pair other than the pair
+of \(i\), taking \(a=j\) if \(j\ne3-i\). Consider the following
+elements of \(A\):
+\[
+\begin{array}{ll}
+ \psi_{u,a}(s_{u,k})-1
+       & (u\in T.\iota,\ 1\leq k\leq d_v),\\
+ \psi_{u,i}(s_{u,k})-1
+       & (u\ne v,\ 1\leq k\leq d_v),\\
+ \psi_{v,i}(s_*)-\psi_{v,j}(s_*).&
+\end{array}
+\]
+All are in the maximal ideal. Their number is
+\(rd_v+(r-1)d_v+1=2d-d_v+1\).
+Let \(\mathfrak p\) be any prime of \(A\) containing them and set
+\(S=A/\mathfrak p\). The first family forces the character of
+\(a\), and hence of \(3-a\), to be trivial on inertia at every
+place. The second family does the same for \(i,3-i\) away from
+\(v\). At \(v\) the third relation completes the inertial
+collision. If \(j=a\), it makes the character of \(i\) trivial;
+if \(j=3-i\), it forces \(\chi_{v,i}^2=1\), which also makes it
+trivial since the target \(1+\mathfrak m_S\) is torsion-free.
+The opposite character is then trivial as well.
+
+Thus every inertial parameter in the finite-weight hypothesis
+vanishes in \(S\). Since \(J,\varpi B\) already vanish, that
+hypothesis implies \(\mathfrak m_S^n=0\); the domain \(S\) is a
+field. Hence the displayed \(2d-d_v+1\) parameters generate
+an ideal of \(A\) whose radical is its maximal ideal. Krull's
+height theorem gives \(\dim A\leq2d-d_v+1\), as asserted.
+\end{proof}
+
+For the actual component step, the source chooses
+\(N=2d+1-2r\) with \(r\leq C\) and
+\(30(C+1)^2\leq d\). In this range \(d_v=d/r\geq30(C+1)\)
+and \(N\geq d+20C+2\), so the strict inequalities needed by
+\texttt{ch\_core} follow:
+\[
+ d+20C+1<N,\qquad
+ 2d+1+(2+4r)<N+d_v.
+\]
+The second is equivalent to \(d_v>2+6r\).
+These checks retain the original tower threshold.
+Theorem~\ref{thm:rh-rank-four-weight-collision} supplies its
+weight-collision estimate. The characteristic-prime curve
+propagation still needs the actual local chart and reducible-locus
+and irreducible-fibre dimension bounds, and the construction of one
+ideal \(J\) with the remaining automorphic properties.
+In particular, we have not proved \texttt{PMExAlt} or
+\texttt{residual\_charpoly\_rank\_four} by this argument.

@@ -4,7 +4,7 @@
 
 The new proof uses the dimension formula to impose a prescribed one-dimensional tame ramification image at auxiliary split primes while imposing zero cohomology classes at all old bad primes. A finite triangular coefficient module gives the required cup primitives simultaneously with a nonzero root cocycle. All marked and local coordinates are retained. The explicit symplectic matrix law gives the intermediate pair. A compositum of cyclic degree-ell cyclotomic subfields kills its auxiliary inertia; the class-two subgroup has exponent ell even at ell=3. A nonzero root cocycle remains nonzero on the deeper normal subgroup because its residual character is nontrivial there. The original flags are transported by their unique lower/upper triangular factorizations. The three links are polynomial identities using square-zero lower-block ideals, so the proof also works in small finite residue characteristic.
 
-The next missing supplier is PMExAlt and the dimension/characteristic-prime component argument (ClassicalFixedByIwahori), followed by passage from the original rational characteristic-zero or characteristic-prime point to the tower. Existence of a residual chain does not imply that its components are automorphic.
+The [weight-collision estimate](rh-rank-four-weight-collision.md) now supplies the original collision-dimension part of the characteristic-prime component argument. The next missing suppliers are PMExAlt and the remaining component argument (ClassicalFixedByIwahori), followed by passage from the original rational characteristic-zero or characteristic-prime point to the tower. Existence of a residual chain does not imply that its components are automorphic.
 
 ## Pinned sources
 

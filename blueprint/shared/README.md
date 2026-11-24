@@ -526,3 +526,4 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Case II marked symplectic induction](../../notes/rh-symplectic-induction.md): full original SeedIIAlt supplier; arbitrary-point propagation remains open.
 
 - [Deep Case II residual chain](../../notes/rh-case-II-residual-chain.md): the original three polynomial links through good residual points; automorphic support transport remains open.
+- [Rank-four weight-collision bound](../../notes/rh-rank-four-weight-collision.md): the exact dimension loss under the original finite-weight property, not the construction of the automorphic ideal.
