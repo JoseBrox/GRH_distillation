@@ -49,3 +49,5 @@ Artin L-functions](https://lemkeoliver.github.io/papers/27-ApproximateArtin.pdf)
 The [Galois-field note](../notes/galois-base-change.md) proves the
 integer-exponent identity counting each cyclic subgroup once and checks
 the twisted Euler factors. No Artin holomorphy assumption is used.
+
+The [review response to our contribution](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131807529) confirms it was read in full but is not an adopted Lean reduction. The missing quantitative supplier remains open.

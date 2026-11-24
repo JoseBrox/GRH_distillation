@@ -24,3 +24,9 @@ clarifies that the remaining exact strip-trace comparison is equivalent
 to the gap; the research fork reports a projective-kernel supplier.
 Recheck those endpoints before reuse. This track does not depend on
 the other project's acceptance or progress.
+
+## Upstream review
+
+The [review reply](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131807529) explicitly reports reading our entire note and Alpöge's announcement. It accepts the nature of the one-sided and arithmetic reductions but sees no immediate change to PR #7347, since the actual geometric comparison is still missing. Our alternative would be useful if a quantitative inequality could be proved without the missing exact §12.3 equality. The analytic theorem requires the spectral-diagonal identification for any geometric application, not the full exact global-to-local comparison as an assumption. Do not treat this response as adoption or formal verification. The independent arithmetic track remains the preferred route.
+
+The initial manuscript is published as Markdown with a reproducible TeX/PDF build script. The compiled edition has not yet been produced or checked; raw-repository download was unavailable in the current execution environment.
