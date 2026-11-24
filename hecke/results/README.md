@@ -60,4 +60,10 @@
 | Closed trace algebra equals the actual integral invariant ring; finite local conditions for actual tangents | Proved; tangent rigidity follows upon actual cuspidal attachment | [Trace and adjoints](../notes/cubic-trace-and-adjoint.md) |
 | Transfer of fixed-inertia corner elimination to RH and Dirichlet frames | Proved under the corresponding Bernoulli-unit criterion; handoff committed | [Parent handoff](../../notes/hecke-parent-corner-handoff.md) |
 
+| Pure-cubic descent of strict Selmer sectors; explicit comparison at 3 | Proved, exact away from 3; at 3 polynomial loss, not a moving length estimate | [Pure-cubic descent](../notes/pure-cubic-selmer-descent.md) |
+| Class number one of the pure cubic field and inert-prime vanishing for weights divisible by ell-1 | Proved under stated host inertness and class-number conditions | [Pure-cubic descent, §§3–5](../notes/pure-cubic-selmer-descent.md) |
+| Exact class-group coinvariant control with local cubic inertia correction; finite rank certificate | Proved; universal success of the finite test open | [Class-rank certificates](../notes/cubic-finite-class-rank-certificates.md) |
+| Both negative weights eliminated, invariant ring equals coefficient DVR on certified sectors | Proved when residual adjacent vanishing holds; no irreducible point premise remains there | [Two-negative elimination](../notes/cubic-two-negative-weight-elimination.md) |
+| Exact inert strict specialization and fixed-list common-window bound | Proved for successful fixed finite-rank certificates; moving uniform estimate open | [Specialization, §§3–4](../notes/cubic-two-negative-weight-elimination.md) |
+
 No new full Hecke node, target complex-zero exclusion or Lean verification is claimed.

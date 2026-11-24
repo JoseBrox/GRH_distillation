@@ -65,44 +65,9 @@ induced coefficient groups over Q. Integral cubic projectors have
 fixed denominator three; common unitary scalar twists preserve
 adjoint/deformation data with transported conditions.
 
-## Further actual suppliers
+## Earlier proved arithmetic suppliers
 
-The [2-primary theorem](cubic-two-primary-window.md) proves class
-number one of K and unique principal primes over 2 and 3. Its
-respective fixed cyclotomic towers have trivial primary class
-groups. The moving host L_h has a uniform 144-generator strict
-2-adic module and the parent's full common-window sum bound,
-with simultaneous auxiliary selection. This settles the
-2-primary arithmetic subobligation of the proposed cubic route.
-The [exceptional-prime comparison](cubic-exceptional-prime-comparison.md)
-gives a polynomial integral splitting error at 3 (and optional
-2-primary sector comparison), not the new twisted 3-adic lengths. The
-[high-dyadic 3-primary vanishing](cubic-three-primary-vanishing.md)
-now deletes every sector with b>=8, 2^b>=192f at all twist
-indices, via residual Bernoulli units and Kummer reflection.
-The later fixed-conductor window controls the lower dyadic
-layers with fixed odd conductor; moving low-dyadic layers and
-the quantitative length estimates at primes >=5 remain.
-
-The [good-prime comparison](cubic-good-prime-comparison.md) removes
-all higher rational powers and bad first powers after an exact
-linear centering. The omitted remainder has the favorable sign
-and is O(x^(1/2+epsilon)) after the stated normalization.
-The arithmetic target may use a top set lying entirely in the
-trivial cubic coset; its positive family is G_1+2G_lambda.
-A fixed signed bias away from 1/3 also works using the abelian
-base case and the cubic real-zero exclusion. Any replacement
-profile must be realized by the actual maps.
-
-The [torsor and theta realization](cubic-torsor-realization.md)
-constructs the actual cubic permutation Frobenius, polarized
-twists of the retained CM geometry and an equivariant orbit of
-three unit-normalized principal theta lines. An individual
-invariant principal line is obstructed in the j-zero model.
-The local divisor patch realizes the good-prime hinges up to
-controlled rounding, but yields no source-degree lower bound.
-Tensor duplication preserves the old norms and cannot detect
-the cubic term by itself.
+The [2-primary common window](cubic-two-primary-window.md) and [joint fixed-conductor window](cubic-fixed-conductor-selmer-window.md) control the moving 2-primary part and fixed odd-conductor sectors at 3. [Exceptional-prime projection](cubic-exceptional-prime-comparison.md), [high-dyadic 3-primary vanishing](cubic-three-primary-vanishing.md) and [local lifting defects](cubic-three-primary-local-defects.md) retain the actual integral errors. Moving low-dyadic 3-primary lengths are open. The [good-prime comparison](cubic-good-prime-comparison.md) reduces the arithmetic supplier to split rational first powers with a biased cubic top set. The [torsor construction](cubic-torsor-realization.md) supplies the actual polarized local twists and orbit theta lines, not a global degree bound.
 
 ## Actual equivariant maps and cubic frame (latest checkpoint)
 
@@ -176,7 +141,9 @@ residual or local-quotient obstruction.
 
 The new [full connected monodromy theorem](cubic-irreducible-monodromy.md) excludes imprimitive and orthogonal-type irreducible points in both characteristics: every remaining high-dyadic irreducible point has connected group SL3. The [trace and adjoint comparison](cubic-trace-and-adjoint.md) identifies the entire integral invariant ring with the closed trace algebra, and proves finite local conditions for actual dual-number tangents. Genuine cuspidal attachment therefore implies normalized tangent rigidity by Thorne's theorem, without a separate Euler-system premise. The [automorphic seed audit](cubic-automorphic-seed-frontier.md) constructs an ordinary 2+1 isobaric starting datum from the parent rank-two seed (for coefficient primes prime to the host conductor). It is not the required cuspidal GL3 seed. The symmetric-square route fails even after CM restriction preserving distinct residual constituents; the checked level-raising and reducible lifting theorems do not directly apply. The parent auxiliary class-rank argument also needs a new bound on the nontrivial cubic components over the nonabelian residual splitting field.
 
-**Next:** exclude the remaining SL3 characteristic-prime curves and prove actual cuspidal attachment of the irreducible characteristic-zero points. A finite fixed-weight Hecke trace comparison on the actual curves would suffice for their exclusion. Develop a genuine cuspidal seed and support transfer for the cubic labels, including the auxiliary tower rank input if the parent deep-tower route is retained. Reserve Euler systems for the lower-dyadic cross-block cases. The collective global theta estimate, independent interpolation lower bound, moving Selmer lengths and infinite-order phase estimate H07I remain open.
+The [pure-cubic descent](pure-cubic-selmer-descent.md) identifies each cubic strict Selmer sector with the extra direct summand over $C=\mathbb Q(\sqrt[3]2)$ of the rational-twist strict group, exactly away from 3 and up to an explicit polynomial isogeny error at 3. The field $C$ has class number one. For 3-cycle coefficient primes and inert cyclic host fields satisfying the stated class-number test, the entire sector vanishes at weights divisible by $\ell-1$. The [finite class-rank certificate](cubic-finite-class-rank-certificates.md) gives exact cubic coinvariant control at inert primes, and $g_{\lambda,n}+s_\lambda<\ell^n$ certifies a bounded generator rank for the actual fixed auxiliary tower. A zero initial cubic component at inert primes suffices for integral vanishing at every twist weight. The [two-negative-weight elimination and specialization](cubic-two-negative-weight-elimination.md) prove that when this residual adjacent vanishing accompanies the already proved corner vanishing, the full invariant ring is $\mathcal O$ and both irreducible-point premises hold vacuously. The exact inert specialization also supplies a common-window bound for a fixed finite list of successful finite-rank certificates. None of these tests has been proved to succeed uniformly for the moving data.
+
+**Next:** establish the finite class-rank/vanishing criteria on the actual growing host family or a different uniform cubic length bound. Outside the certified vanishing range, exclude the remaining SL3 characteristic-prime curves and prove cuspidal attachment for the actual irreducible points; the symmetric-square seed is obstructed. The genuine cuspidal cubic seed and support propagation remain open. The moving low-dyadic 3-primary lengths, global collective theta/covolume bound and infinite-order phase estimate H07I also remain open. Reserve Euler-system arguments for lower-dyadic cross-block cases.
 
 ## Status and attribution
 

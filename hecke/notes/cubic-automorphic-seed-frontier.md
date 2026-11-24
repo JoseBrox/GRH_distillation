@@ -252,3 +252,7 @@ raising or propagation is automatic. The direct field method
 and higher-rank Euler systems remain reserved for the
 lower-dyadic cross-block cases. Neither of the two original
 point premises is closed by this note.
+
+## Subsequent arithmetic alternative
+
+The [pure-cubic descent](pure-cubic-selmer-descent.md) and [finite class-rank certificates](cubic-finite-class-rank-certificates.md) now reduce the actual cubic component to a degree-three companion and give a sufficient finite arithmetic test for the new auxiliary rank bound. The [two-negative elimination](cubic-two-negative-weight-elimination.md) discharges the point premises on sectors satisfying the finite vanishing criterion. These are partial alternatives to the seed construction, not a general cuspidal attachment or curve exclusion theorem.

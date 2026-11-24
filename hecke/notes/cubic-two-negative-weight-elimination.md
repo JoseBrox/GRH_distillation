@@ -167,7 +167,7 @@ S_{E_0}(D)=
 
 The convention is the lambda-eigenspace for conjugation on X,
 since an equivariant additive map to D has that eigenvalue.
-The identification is independent of the choice of generator.
+The identification is independent of the choice of generator. The displayed quotient is a finitely generated O'-module, by the finite generation of X over the Iwasawa algebra and specialization of that algebra at the indicated cyclotomic value. Thus its O'-linear maps to the discrete torsion module are automatically continuous; equivalently one can write continuous Hom throughout.
 
 Indeed global restriction identifies H^1(E_0,D) with
 the (Delta x Gamma)-equivariant homomorphisms on
