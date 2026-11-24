@@ -1,0 +1,101 @@
+\subsection{The remaining ordinary RH Selmer factors}
+\label{sec:rh-selmer-low-dyadic}
+
+\begin{corollary}[All exponent-one residual factors for RH]
+\label{cor:rh-selmer-exponent-one}
+For every odd $\ell\nmid N$ and every $e\ge1$ in the original
+twist range, the actual character bound (DC2) holds whenever
+$2^b>8\ell^2$, where $2^b$ is its dyadic conductor.
+In particular the complete ordinary RH large-conductor
+Case~V estimate at three is proved.
+
+For the RH residual product of
+Proposition~\ref{shared-rh-integral-product}, there is an
+absolute constant $B$ such that the entire exponent-one
+contribution satisfies, for every choice of its original
+weights $0\le w_\ell\le1$,
+\[
+       \sum_{\ell\ne2}w_\ell(\log\ell)
+                       \operatorname{length}_{\mathbf Z_\ell} M_{\ell,1}
+                         \le (2N)^B .                          \tag{DC10}
+\]
+Here the notation $M_{\ell,1}$ is that of the residual product;
+only its finite supported factors are summed.
+\end{corollary}
+
+\begin{proof}
+Apply Theorem~\ref{thm:rh-dyadic-host-count}.
+At $e=1$ the original threshold is $9216>72$, so every
+required large-conductor factor is included. Summing over at
+most $N$ characters and using the exact integral Fourier
+decomposition gives the bound at three for $T_{3,1}$ in (RN6).
+For all $\ell\ge5$ the exponent one is nonresonant, and
+Theorem~\ref{thm:rh-selmer-all-nonresonant} gives the aggregate
+bound, including primes in the exceptional set and all of
+their character factors. Multiplying each nonnegative summand
+by its weight cannot increase the sum. Enlarge the exponent
+to absorb the fixed constants. This proves (DC10).
+\end{proof}
+
+\begin{corollary}[Reduction of the higher resonant factors]
+\label{cor:rh-selmer-low-dyadic}
+For $e\ge2$ and $\ell-1\mid2e$ with $\ell$ odd, put
+\[
+ c_\ell=\lfloor\log_2(8\ell^2)\rfloor,\qquad
+ E_{\ell,\mathrm{low}}=
+ \mathbf Q(\mu_{2^{\min(a,c_\ell)}})^+
+          (\sqrt{-q},\sqrt{-d}),\qquad
+ H_\ell=\operatorname{Gal}(E/E_{\ell,\mathrm{low}}).
+\]
+Only the character factors of
+\[
+ C_e(1-A_\Delta)A_{H_\ell}S_{\ell,e}                 \tag{DC11}
+\]
+remain in (RN5). The omitted factors, summed over all
+resonant primes for a fixed $e$, have total logarithmic
+order bounded by $[N(e+1)]^B$ for an absolute exponent $B$,
+also with their original weights.
+Moreover
+\[
+ [E_{\ell,\mathrm{low}}:\mathbf Q]\le8\ell^2
+                             \le8(2e+1)^2 .
+\]
+The invariant factors identify with the corresponding
+strict groups of the reduced fields by restriction.
+The two varying quadratic factors are retained.
+\end{corollary}
+
+\begin{proof}
+The size conditions of (RN4) give $\ell\nmid N$.
+In the integral Fourier decomposition, available because
+the Galois group is a $2$-group and $\ell$ is odd, a
+character has dyadic conductor at most $2^{c_\ell}$ if
+and only if it is trivial on $H_\ell$. Its invariant
+part is projected out by $A_{H_\ell}$.
+Every other character has conductor $2^b>8\ell^2$,
+so (DC2) applies to its original strict group.
+Use the normalization and coefficient-field comparison
+of (RN2)--(RN5). There are at most $N$ characters and
+at most $2e+1$ resonant primes, each at most $2e+1$;
+summing gives the asserted bound. The weights lie in
+$[0,1]$ and cannot increase it. The field degree is
+at most four times the real dyadic cyclotomic degree,
+hence at most $2^{c_\ell}\le8\ell^2$.
+
+The extension $E/E_{\ell,\mathrm{low}}$ has degree prime
+to $\ell$. Inflation-restriction identifies cohomology
+of the reduced field with the $H_\ell$-invariants for
+the original discrete $\ell$-primary coefficients.
+At every place restriction on the local cohomology is
+injective since the local index is prime to $\ell$.
+The strict local kernels are therefore preserved in
+both directions. The parity and trivial-character
+projectors commute with restriction, proving (DC11).
+\end{proof}
+
+The next obligation is a uniform integral estimate for
+(DC11), not just a bound for the field degree, followed
+by the original weighted assembly. In particular the
+remaining dyadic conductors at three are at most $64$.
+No general Dirichlet conductor reduction is inferred
+from this RH-specific decomposition.
