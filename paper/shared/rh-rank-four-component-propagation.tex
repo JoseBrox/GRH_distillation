@@ -1,0 +1,504 @@
+\subsection{Propagation across the components of the rank-four space}
+\label{subsec:rh-four-component-propagation}
+
+We now prove the component-support step for the original fitted deep
+tower $T$. Let $F=T.F$, $d=[F:\mathbb Q]$, $r=\#T.\iota$, and
+$d_v=d/r$ (the common local degree at the ordinary places).
+Keep the original complete coefficient DVR $\mathcal O$ and
+residue field $k$, the original frame $\Phi=T.\mathrm{fr}(\varnothing)$,
+and $X$ with its coefficient ring $B=X.B$ and entry ring $A=X.A$.
+Let $J$ be the sum ideal of Theorem~\ref{thm:rh-four-image-ideal}.
+We assume precisely the original \texttt{Fr.Bounds} with constant
+$C$ and the threshold $d\geq30(C+1)^2$. In particular $r\leq C$.
+These are hypotheses on the original tower, not bounds obtained
+by changing the deformation space.
+
+\begin{lemma}[The actual completed chart]
+\label{lem:rh-four-chart-deficit}
+At any original residue evaluation $x:A\to k$ satisfying
+\texttt{IsRes}, write $R=\widehat{A_{\ker x}}$.
+There is a presentation
+\[
+ R=\mathcal O[[u_1,\ldots,u_a]]/(f_1,\ldots,f_b),
+ \qquad a-b\geq 2+2d-2r.
+\]
+The map $A\to R$ is flat, and $R$ represents the original lifts
+of the residue pair at $x$.
+\end{lemma}
+\begin{proof}
+By the original space contract, $A$ is a finite type algebra over
+the complete Noetherian local ring $B$, and its representation
+and flag entries generate it over $B$. Two maps agreeing on
+these entries agree on $B$ by \texttt{genB} (the characteristic
+polynomials and the labeled characters are determined by the
+entries). Hence the original lifting property gives uniqueness
+as well as existence. A map inducing $x$ on the residue field
+extends uniquely to the displayed local completion, for any
+complete local target with that residue field. Localization and
+completion are flat. This identifies the chart with the actual
+marked deformation functor, including the local flags; it is
+not a presentation of the semisimple character space.
+
+Here is the relation count. First omit the local \texttt{Mu}
+equations. Write $M=\mathfrak{sp}_4(k)$ with the adjoint action
+of the residual pair. At an ordinary place let $\mathfrak b_v$
+be the Borel Lie algebra defined by its residual flag.
+The dimensions of $M$ and $\mathfrak b_v$ are ten and six;
+the latter assertion follows from the four positive root
+spaces and the two-dimensional diagonal torus. We use the
+same relative obstruction argument as for the earlier global
+deformation presentation, with the following local complexes.
+At an ordinary place the quotient of local cochains is
+$C^\bullet(G_v,M/\mathfrak b_v)$. Away from $\ell$ it is the
+quotient of $C^\bullet(G_v,M)$ by the inflated cochains of
+$G_v/N_v$, where $N_v=I_v\cap\ker \bar r_{\mathrm{diag}}$ is
+the original killed subgroup. The action of $N_v$ is trivial.
+In the fitted deep tower the original diagonal characters
+on this tame inertia quotient have prime-to-$\ell$ order:
+the cyclotomic character is unramified there and the finite
+characters $\xi,\psi|_{G_F}$ have prime-to-$\ell$ order.
+Consequently $G_v/N_v$ is an extension of a procyclic
+unramified group by a finite group of order prime to $\ell$.
+Its $\ell$-cohomological dimension is at most one and its
+Euler characteristic with coefficients in $M$ is zero.
+Use the shifted cone of restriction from global cochains
+(unramified outside the original finite ramification set,
+including $\ell$) to these local quotients.
+
+The residual representation is triangular after the fixed
+reordering appropriate to \texttt{Res.shape}. Hence the
+composition factors of its matrix adjoint are the quotients
+of the four diagonal characters. Since $\ell\ne2$, the
+symplectic adjoint is a direct summand of the matrix adjoint,
+using the symplectic transpose. The hypothesis \texttt{Ok.g2}
+excludes the residual cyclotomic character among all these
+quotients (and among the trivial factors). Thus
+$H^0(F,M^*(1))=0$. Poitou--Tate duality makes restriction
+in degree two onto the full finite local cohomology
+surjective. Passing to the displayed quotients preserves
+surjectivity, by local cohomological dimension two. The
+shifted cone has no degree-three cohomology.
+
+At a real place complex conjugation has multiplier $-1$,
+so its two eigenspaces are complementary Lagrangians of
+dimension two. Its adjoint fixed space in $M$ has dimension
+four, being the endomorphisms of one Lagrangian with the
+opposite action on the other. Its negative eigenspace has
+dimension six. The global Euler characteristic is therefore
+$-6d$. The local quotients away from $\ell$ have Euler
+characteristic zero, whereas the ordinary local quotients
+have Euler characteristic $-4d_v$. If $h^i$ are the cone
+cohomology dimensions, subtraction gives
+\[
+                       h^1-h^2-h^0=2d.                 \tag{CP1}
+\]
+All these groups are finite-dimensional by finite-module
+Galois cohomology. The same argument works if the tame
+local conditions are first imposed on the maximal allowed
+ramification quotient.
+
+For clarity, the obstruction and tangent interpretations here
+retain the flags. Over a small extension lift the global
+matrices into the symplectic similitude group with the fixed
+multiplier, possible pointwise by smoothness. Their
+multiplication defect is a two-cocycle with coefficients in
+$M$. Lift the local flags in the smooth flag chart and
+compare the defect with the local Borel, producing its
+degree-one primitive in $M/\mathfrak b_v$. At an old tame
+place choose a lift on the inertia quotient (its obstruction
+vanishes in degree two), and compare with the lifted global
+matrices in the quotient of cochains just described.
+These form the relative two-cocycle. Changing the lifts
+changes it by a relative coboundary. Vanishing permits
+correction of the matrices and flags and gives precisely a
+lift satisfying all the local conditions. In degree one this
+same construction gives the tangent space of pairs, of
+dimension $h^1+\dim M-h^0$ before marking, because quotienting
+by infinitesimal global conjugation subtracts the dimension
+of the coboundaries. The standard small-extension
+relation-functional argument bounds the number of minimal
+relations by $h^2$: push out the kernel of a minimal
+power-series presentation along a linear functional and
+observe that vanishing of its obstruction gives a section,
+forcing that functional to vanish by minimality. This is
+the integral argument of the earlier relative presentation,
+not a calculation on its reduced quotient.
+
+The mark is a diagonal matrix with distinct residual
+eigenvalues. Conjugation by the eight off-diagonal root
+directions maps bijectively to the eight off-diagonal
+marking conditions (the factors are differences of distinct
+eigenvalues). It therefore both eliminates eight tangent
+variables and normalizes any lift across a small extension,
+without increasing the obstruction space. The marked
+deficit before the \texttt{Mu} equations is at least
+$h^1-h^2-h^0+2=2d+2$.
+
+Finally the abelianized local decomposition group, by local
+reciprocity, has cyclic $\ell$-primary torsion: it is the
+$\ell$-power roots of unity in the local field. The set
+\texttt{Mu} is its inverse image (an element whose
+$\ell$-power lies in the closed commutator). All diagonal
+characters kill that commutator by continuity. The
+multiplier is trivial on this torsion by the deep condition
+and the absence of $\ell$-torsion in the cyclotomic
+principal units. At most two equations, saying that the
+first two diagonal characters kill a lift of the torsion
+generator, suffice at each place; the other two follow
+from the paired product relation. Subtracting at most $2r$
+from the deficit proves the lemma.
+\end{proof}
+
+\begin{lemma}[Reducible loci in the completed chart]
+\label{lem:rh-four-red-dimension}
+Suppose in addition that $x$ satisfies \texttt{Good}. In the
+chart of the preceding lemma, the reducible locus of the
+generic rank-four representation is contained in a union of
+nine closed loci, each of dimension at most $d+20C+1$.
+\end{lemma}
+\begin{proof}
+Use zero-based indices and the weights
+\[
+ (1,1),(0,1),(1,0),(0,0)
+\]
+on the four coordinates. Write $A_0=(1,0)$, $P=(0,1)$,
+$B_0=(-1,1)$, $H=(1,1)$ for the four source root names
+$wAl,wPs,wBe,wTh$. The eight roots are these and their
+negatives. The marked matrix remains diagonal with distinct
+eigenvalues over every prime quotient of the local ring.
+An invariant subspace over an algebraic closure of a fraction
+field must therefore be spanned by a nonempty proper subset
+$I$ of coordinate vectors. Its symplectic orthogonal is the
+coordinate subset complementary to $\{3-i:i\in I\}$, and is
+invariant too. For a root set $S$ let the corresponding
+closed locus impose all entries outside $S$ off the diagonal.
+The two invariance conditions give the following list of
+possible supports, writing a minus sign for the opposite
+root:
+\[
+\begin{array}{c|l|l}
+ & S & I\text{ (up to replacing by its orthogonal)}\\ \hline
+1&B_0,-B_0,-A_0,-H,-P&3\\
+2&B_0,-B_0,A_0,H,P&0\\
+3&H,-H,P,B_0,-A_0&1\\
+4&H,-H,-P,-B_0,A_0&2\\
+5&A_0,-A_0,-H,-P,-B_0&23\\
+6&A_0,-A_0,H,P,B_0&01\\
+7&P,-P,B_0,-A_0,-H&13\\
+8&P,-P,-B_0,A_0,H&02\\
+9&B_0,-B_0,H,-H&03,\ 12
+\end{array}                                                     \tag{CP2}
+\]
+Indeed delete a root as soon as one entry of that weight is
+forced zero by either invariant coordinate subspace. This
+gives exactly the nine \texttt{redTypes} in the source.
+
+To bound a locus $S$, it suffices to bound the relative
+tangent dimension at the residue pair $c$ by $d+20C$;
+the coefficient uniformizer adds at most one to the
+embedding dimension. If the locus does not contain $c$,
+its local quotient is zero. Otherwise write a tangent
+as $Z(g),Y_v$ in $M$, respectively the cocycle and the
+local flag variation. Its exact conditions are: $Z$
+is a locally constant cocycle killing the prescribed
+inertia and diagonal at the mark; $Z(g)c.r(g)$ has
+support $S$; $Y_v$ belongs to the conjugate strictly
+lower Lie algebra in the flag basis; and
+\[
+ c.n(v)^{-1}\bigl[Z(s)+\operatorname{Ad}(c.r(s))Y_v-Y_v\bigr]c.n(v)
+ \quad\text{is upper triangular}\quad(s\in G_v).       \tag{CP3}
+\]
+We may drop the infinitesimal \texttt{Mu} constraints when
+bounding this tangent.
+
+There is a useful elementary degeneration. Conjugate by
+$\operatorname{diag}(t^{m_0},\ldots,t^{m_3})$, with
+$m_i+m_{3-i}$ constant and every nonzero entry of the
+residual matrices and flags of nonnegative degree.
+Take their degree-zero parts. Filter the tangent space by
+the lowest degree of its entries, including the flag
+variations. For an element of lowest degree $j$, the
+degree-$j$ part satisfies exactly the tangent equations
+at the limiting residual pair. This follows by taking
+the lowest homogeneous degree in the cocycle and
+(CP3); the equations involving inverses use the same
+nonnegative filtration for the inverse matrices, and
+the symplectic transpose preserves degree. Locally
+constant functions remain locally constant under the
+coordinate projections. The successive filtered
+quotients inject into the distinct homogeneous subspaces
+of the limiting tangent. Thus its dimension bounds
+the original tangent dimension, even without choosing
+finitely many generators of the Galois group.
+
+In the first two \texttt{Good} alternatives the support
+$S$ contains either $-P$ and one of $B_0,-A_0$, or
+both $-A_0,-B_0$. For residual shape \texttt{nP} use
+$m=(0,2,1,3)$, and for \texttt{nM} use $(0,1,2,3)$.
+The residual representation becomes diagonal and every
+flag becomes the identity. At a diagonal representation
+every global coordinate of a tangent is a cocycle of the
+corresponding root character (diagonal coordinates have
+trivial character). Absent roots have zero cocycle.
+Lower coordinates are locally coboundaries by (CP3).
+In the rows of (CP2) satisfying either of the stated
+support conditions there is at most one allowed upper
+odd root among $A_0,B_0,H$ (the odd roots are all roots
+except $\pm P$). Hence, after setting that single
+coordinate to zero if necessary, all odd coordinates
+are strict cocycles in the source's \texttt{Str} spaces.
+
+In the remaining \texttt{Good} alternatives the residual
+support is \texttt{vV} and its flag has a nonzero $(2,0)$
+entry $b_v$ with support \texttt{qQ}. The degeneration
+$m=(0,1,0,1)$ keeps just the flag
+\[
+                      1+b_v(E_{20}+E_{31})
+\]
+and makes the representation diagonal. The residual
+local characters satisfy $\chi_0=\chi_2,\chi_1=\chi_3$:
+in the original flag identity its $(2,0)$ entry gives
+$b_v\chi_2=b_v\chi_0$ (row two has no off-diagonal
+entry in support \texttt{vV}), and the paired product
+gives the other equality. Write
+$W=Z(s)+\operatorname{Ad}(\operatorname{diag}(\chi(s)))Y_v-Y_v$.
+Direct multiplication of the limiting flag in (CP3),
+using the symplectic transpose relation on $W$, gives
+\[
+ W_{10}=-b_v W_{12},\qquad
+ W_{30}=-b_v^2W_{12},\qquad
+ W_{21}=2b_vW_{01}+b_v^2W_{03}.                       \tag{CP4}
+\]
+On this decomposition group the three root characters
+in the first two equations agree; those in the last
+equation also agree. Modulo local coboundaries the
+same equations consequently hold for the global
+cocycle coordinates. Each coefficient displayed in
+(CP4) is a unit, including $2b_v$. Thus if any of
+the three negative coordinates is zero or strict, all
+three are strict; if any two of the three positive
+coordinates are zero or strict, the third is strict.
+
+In this case $S$ must contain $-A_0$ or both $B_0,-H$.
+The permitted rows of (CP2) are exactly
+$1,3,5,6,7,9$. In rows $1,3,7$ set the odd coordinate
+$-A_0$ to zero; in rows $5,6$ use $A_0$; in row $9$
+use $H$. In every row after this one deletion the
+negative triple $\{-A_0,B_0,-H\}$ is not fully present
+and at most one of the positive triple
+$\{A_0,-B_0,H\}$ is present. Formula (CP4) now gives
+strictness of all odd coordinates. This argument
+includes the coefficient prime three.
+
+In either degeneration the one exceptional odd
+coordinate has global cocycle dimension at most
+$d+C$ by \texttt{Bounds.odd}. Its kernel maps
+injectively to the ten independent symplectic
+global matrix coordinates and the strictly lower
+flag coordinates at all ordinary places. Each
+global coordinate now belongs to a space of
+dimension at most $C$, by \texttt{Bounds.str} for
+odd roots and \texttt{Bounds.even} for the others.
+The flag coordinates have dimension at most
+$6r\leq6C$ (in fact four per symplectic flag).
+The total tangent dimension is at most
+$d+C+10C+6C\leq d+20C$. A minimal presentation
+over the DVR then proves the required dimension
+bound for the closed locus. No bound on the full
+unrestricted adjoint tangent has been used.
+\end{proof}
+
+\begin{lemma}[Irreducible fibre bound]
+\label{lem:rh-four-fibre}
+Let $\mathfrak q$ be a prime of the completed chart $R$
+at which the representation is absolutely irreducible.
+Then
+\[
+ \dim R/\mathfrak q
+ \leq\dim B/(\mathfrak q\cap B)+2+4r.                 \tag{CP5}
+\]
+\end{lemma}
+\begin{proof}
+Contract the prime to $\mathfrak p\subset A$. Put
+$E=\operatorname{Frac}(B/(\mathfrak p\cap B))$ and
+$E'=\operatorname{Frac}(A/\mathfrak p)$.
+The marked diagonal eigenvalues $\lambda_i$ are
+algebraic over $E$ and distinct. Adjoin them to
+$E$ inside $E'$, obtaining $E_1$. Each coordinate
+spectral projector is a polynomial in the marked
+matrix with coefficients in $E_1$. Consequently
+traces of words in these projectors and the
+representation matrices are in $E_1$: on expanding
+the projectors they become linear combinations of
+traces of group elements, which belong to $B$.
+In particular products of entries around every
+directed cycle lie in $E_1$.
+
+The directed graph of nonzero matrix entries
+(row $i$, column $j$ denotes an edge $j\to i$)
+is strongly connected, since otherwise a proper
+nonempty terminal subset would span an invariant
+coordinate subspace. Choose paths from vertex zero
+to every vertex $i$, let $b_i$ be their nonzero
+entry products and $b_0=1$. Choose also nonzero
+return path products $c_i$. For every nonzero
+entry $R(g)_{ij}$, the two cycle products
+$b_j R(g)_{ij}c_i$ and $b_ic_i$ lie in $E_1$.
+Hence the conjugation by
+$\operatorname{diag}(b_0,b_1,b_2,b_3)$ makes every
+representation entry lie in $E_1$.
+
+The transformed alternating form has paired entries
+proportional to $b_0b_3$ and $b_1b_2$. In the
+transformed coordinates the equations for an
+alternating form of the prescribed multiplier
+have coefficients in $E_1$. Their solution space
+over $E'$ is one-dimensional by absolute
+irreducibility and Schur's lemma, using the
+invertible transformed form. Scalar extension
+preserves the dimension of this linear solution
+space (one can take a finite spanning subset of
+its defining equations). It follows that the
+ratio $b_1b_2/b_3$ belongs to $E_1$.
+All original representation entries therefore
+belong to $E_1(b_1,b_2)$. Each lower symplectic
+unipotent flag is determined polynomially by its
+four coordinates $(1,0),(2,0),(3,0),(2,1)$:
+its other two lower entries are
+$-(1,0)$ and $(2,0)-(2,1)(1,0)$.
+The original entry-generation property gives
+$\operatorname{trdeg}_E E'\leq2+4r$.
+
+Finally the local dimension inequality for a
+finite type algebra over the complete Noetherian
+local ring $B/(\mathfrak p\cap B)$ gives the same
+upper bound for the dimension of
+$(A/\mathfrak p)_{\ker x}$. Completion preserves
+that local dimension, and $R/\mathfrak q$ is a
+quotient of this completion. This proves (CP5);
+it does not assert that a completed fraction field
+has finite transcendence degree.
+\end{proof}
+
+\begin{theorem}[Component-support propagation and the residual chain]
+\label{thm:rh-four-component-chain}
+For the original fitted deep tower satisfying the stated
+\texttt{Bounds} and degree threshold, the ideal $J$
+satisfies the original local assertion
+\[
+ \texttt{SomeIn}(J,\ker x)\ \Longrightarrow\
+ \texttt{AllIn}(J,\ker x)
+\]
+at every \texttt{IsRes}, \texttt{Good} residue pair.
+In particular, starting at a seed, the same ideal
+vanishes on every component through each endpoint
+of the original \texttt{Chain}, and hence on
+every lift of its terminal residue pair.
+\end{theorem}
+\begin{proof}
+Let $N=2d+1-2r$. Grothendieck's connectedness theorem
+for a complete regular local ring modulo $b$ equations,
+applied to Lemma~\ref{lem:rh-four-chart-deficit}, makes
+the graph of minimal primes of $R$ connected when
+an edge joins $\mathfrak p,\mathfrak p'$ with
+$\dim R/(\mathfrak p+\mathfrak p')\geq N+1$.
+(The connectedness dimension is at least
+$(a+1)-b-1$.) Suppose $\mathfrak p$ contains the
+image of $J$. Choose a prime above their sum and
+the coefficient uniformizer with quotient dimension
+at least $N$, by the principal ideal theorem on
+a maximal-dimensional component of the intersection.
+All primes considered below contain $J$.
+
+The threshold implies
+\[
+ d+20C+1<N,\qquad
+ 2d+1+2+4r<N+d_v.                                  \tag{CP6}
+\]
+The second inequality uses $d_v=d/r$ and $r\leq C$.
+Thus the chosen prime cannot lie in any reducible
+locus, by Lemma~\ref{lem:rh-four-red-dimension}.
+Nor can it lie in any of the finitely many local
+collision loci defined by equality of two labeled
+characters on $T.U1(v)$. Indeed the earlier
+weight-collision estimate bounds the dimension of
+its coefficient quotient by $2d+1-d_v$, and
+Lemma~\ref{lem:rh-four-fibre} adds at most $2+4r$.
+This contradicts (CP6). This argument uses the
+finite-weight property of the very same $J$.
+
+One can now cut down to a one-dimensional prime
+quotient avoiding all these bad loci. In the
+complete local domain given by the chosen prime,
+take a nonzero product of one witness outside
+each bad ideal. In dimension greater than one,
+choose a nonzero element of the maximal ideal
+outside the finitely many height-one primes
+containing that product. Every prime minimal
+over the chosen principal ideal has height one
+and avoids the product; the dimension drops by
+one, since the local domain is complete and
+catenary. Repeat until dimension one. The resulting
+complete local domain is of characteristic $\ell$
+and has finite residue field. Its normalization
+is a finite extension, a complete DVR
+$k'[[z]]$ for some finite field $k'$. This gives
+an actual map $A\to k'[[z]]$ with the prescribed
+residue on $B$, on which $J$ vanishes, the generic
+representation is absolutely irreducible, and
+each pair of ordinary characters is separated
+on the required group. Theorem~\ref{thm:rh-four-p1}
+therefore applies. Its all-primes-below-curve
+conclusion, applied to the contraction of
+$\mathfrak p'$, puts $J$ on that component as
+well.
+
+Iterating over the connected graph propagates
+support to all chart minimal primes from any
+one supported chart minimal prime. Flatness
+$A\to R$ lifts each minimal prime of $A$ below
+$\ker x$ to a minimal prime of $R$: local
+completion is faithfully flat over $A_{\ker x}$,
+and going-down gives the minimal-prime
+assertion. Thus \texttt{SomeIn} implies
+\texttt{AllIn} in the literal original space.
+
+For a seed point, the previously proved
+\texttt{LocZero} gives support on every minimal
+prime of $A$ through its kernel, by contracting
+to $B$. Each of these lies below the residue
+kernel of its integral lift, so there is
+\texttt{SomeIn} at the seed residue evaluation.
+The residue of the seed is \texttt{Good} in the
+original chain construction; hence it has
+\texttt{AllIn}. An actual \texttt{Linked}
+polynomial pair gives, by \texttt{Space.line},
+a map $A\to k[t]$ inducing both endpoint
+evaluations. Its prime kernel lies below
+both endpoint kernels. A minimal prime
+under this kernel is supported by
+\texttt{AllIn} at the known endpoint. It
+gives \texttt{SomeIn} at the other endpoint
+and hence \texttt{AllIn} there whenever
+that endpoint is \texttt{Good}. The
+argument is symmetric in the endpoints.
+Induction along the actual finite chain
+establishes the assertion. For any map
+from $A$ to a local domain inducing the
+terminal residue evaluation, its prime
+kernel contains a minimal prime through
+that residue evaluation, so the image of
+$J$ is zero.
+\end{proof}
+
+This is the component-support assertion of
+\texttt{residual\_charpoly\_rank\_four}, with its original
+arithmetic bounds and original degree threshold, together
+with its use along the constructed residual links.
+It proves support for local-domain points; no claim that
+the same ideal annihilates nilpotent coefficient directions
+is made here. The independent task of producing the
+bounded-cocycle constants in the required arbitrarily deep
+towers is retained. The strict local-window and full
+arbitrary-quadratic descent clauses of \texttt{PMExAlt.aut}
+also require a separate argument.
