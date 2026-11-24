@@ -310,3 +310,5 @@ and [geometric](../notes/geometric-core-lower-bound.md) notes. The
 [short guide](../paper/guide/main.pdf) explains their roles in the proof.
 
 - [Case II marked symplectic induction](../notes/rh-symplectic-induction.md): full original SeedIIAlt supplier; arbitrary-point propagation remains open.
+
+- [Deep Case II residual chain](../notes/rh-case-II-residual-chain.md): the original three polynomial links through good residual points; automorphic support transport remains open.

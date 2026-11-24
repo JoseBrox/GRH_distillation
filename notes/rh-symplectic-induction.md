@@ -37,4 +37,4 @@ Classical references: [Henniart 2012](https://numdam.org/item/10.24033/bsmf.2622
 
 ## Remaining frontier
 
-The next separate input is `PMExAlt`: a single potential-modularity ideal with its finite-weight, characteristic-prime propagation, seed membership, purity and arbitrary-point automorphy clauses. The residual linkage and component transport from the seed also have to be established. The rank-four seed does not supply those clauses by itself. The whole W04 node and the three point premises (F), (E), (A) are not closed.
+The next separate input is `PMExAlt`: a single potential-modularity ideal with its finite-weight, characteristic-prime propagation, seed membership, purity and arbitrary-point automorphy clauses. The [deep Case II residual chain](rh-case-II-residual-chain.md) now proves residual linkage. Component transport across those links still has to be established. The rank-four seed does not supply those clauses by itself. The whole W04 node and the three point premises (F), (E), (A) are not closed.

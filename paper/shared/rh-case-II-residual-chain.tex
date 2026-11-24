@@ -1,0 +1,457 @@
+\subsection{The residual chain from an arbitrary Case II point to the seed}
+\label{sec:rh-case-II-chain}
+
+We prove the original three-link residual bridge, not yet the
+transport of the support of the ordinary Hecke algebra across it.
+All group representations over a residue field are continuous
+for the discrete topology. Their images are therefore finite.
+
+\begin{lemma}[Auxiliary ramification in a prescribed line]
+\label{lem:rh-prescribed-ramification}
+Let \(F\) be a number field, \(\ell\) an odd prime, and \(V\)
+a finite-dimensional \(\mathbb F_\ell\)-representation of \(G_F\).
+Let \(S_0\) contain the primes above \(\ell\) and all the finite
+ramified primes of \(V\). Let \(\mathcal Q\) be an infinite set
+of other primes at which both \(V\) and \(\mu_\ell\) are trivial
+as local Galois modules. Given \(0\ne v_0\in V\), there are
+a finite \(S_1\subset\mathcal Q\) and a continuous cocycle
+\(c:G_F\to V\), unramified outside \(S_0\cup S_1\), such that
+\(c\) is a coboundary at every place of \(S_0\), and, for
+some \(q\in S_1\), its restriction to the chosen inertia at \(q\)
+is nonzero with values in \(\mathbb F_\ell v_0\).
+\end{lemma}
+\begin{proof}
+Write \(d=\dim_{\mathbb F_\ell}V\). For each finite set \(S_1\)
+use the Selmer condition zero at \(S_0\), and at each \(q\in S_1\)
+allow all unramified classes and the ramified classes whose
+inertia image lies in \(\mathbb F_\ell v_0\). At a prime of
+\(\mathcal Q\) the latter condition has dimension \(d+1\):
+the trivial module has \(d\) unramified dimensions, and tame
+inertia has one independent \(\mathbb F_\ell\)-valued character
+because \(Nq\equiv1\bmod\ell\). Thus its local Euler
+contribution after subtracting \(h^0\) is one.
+At \(S_0\) the contribution is at least \(-d\); at each
+infinite place it is at least \(-d\), since \(\ell\) is odd.
+The finite Poitou--Tate dimension formula with dual local
+annihilators gives the lower bound
+\[
+ \dim H^1_{\mathcal L}(G_{F,S_0\cup S_1},V)
+ \ \ge\ |S_1|-d(1+|S_0|+[F:\mathbb Q]).
+\]
+Indeed the dual Selmer dimension is nonnegative and the
+global \(h^0\) difference is at least \(-d\).
+The unramified-outside-\(S_0\) cohomology is finite-dimensional
+by the finiteness theorem for Galois cohomology of finite
+modules. Take \(|S_1|\) larger than this dimension plus the
+displayed constant. If all classes were unramified at every
+new prime they would inflate from that fixed finite-dimensional
+space, a contradiction. A class with new ramification has the
+stated properties; restriction of any of its representatives
+to a new inertia group does not depend on the representative
+because the action there is trivial.
+\end{proof}
+
+\paragraph{Application to a marked frame.}
+Fix a tower \(T\) with the original good hypotheses and residue
+field \(k\) (it need not be finite). Denote its residual diagonal
+characters by \(d_i\) and set \(D_g=\operatorname{diag}(d_i(g))\).
+Write \(a_g=d_1(g)/d_0(g)\), \(b_g=d_2(g)/d_0(g)\).
+Thus \(d_3/d_0=ab\). These are the characters of
+\(-w_{\rm Al},-w_{\rm Ps},-w_{\rm Th}\), respectively \(a,b,ab\).
+At the marked element \(s=T.g_0\) all three are different
+from one. At any \(g\in T.\mathrm{fr}(W).N\) all \(d_i(g)=1\).
+
+Consider finitely many locally constant \(b\)-cocycles \(y_j\)
+killing this set \(N\), with \(y_j(s)=0\). Suppose also that at
+each original \(\ell\)-adic place \(y_j(g)=n_{j,v}(1-b_g)\).
+We claim that after enlarging \(W\) only by rational primes
+satisfying the original \(\texttt{T.Splits}\) condition one can
+construct a nonzero normalized \(a\)-cocycle \(x\), and functions
+\(z_j\), with the exact identities
+\[
+\begin{split}
+ x(gh)&=x(g)+a_gx(h),\\
+ z_j(gh)&=z_j(g)+a_gb_gz_j(h)+y_j(g)a_gx(h),\\
+ x(g)&=m_v(1-a_g),\\
+ z_j(g)&=o_{j,v}(1-a_gb_g)-y_j(g)a_gm_v
+       \qquad(g\in D_v).
+\end{split}
+\tag{2}
+\]
+Both \(x,z_j\) vanish on the new killing set and at \(s\).
+This is the source's \(\texttt{cupEx}\) assertion in the
+needed roots.
+
+For this use the triangular representation on coordinates
+\((X,Z_1,\ldots,Z_n)\) given by
+\[
+ \rho(g)(X,Z_j)_j=(a_gX,\ a_gb_gZ_j+y_j(g)a_gX)_j.
+\]
+The cocycle law for each \(y_j\) verifies the representation
+law. The image of \(\rho\) is finite by continuity and
+compactness, even when \(k\) is infinite. Take the finite
+\(\mathbb F_\ell\)-submodule spanned by the orbit of
+\(v_0=(1,0,\ldots,0)\). It is stable and the first coordinate
+of \(v_0\) is nonzero. Set \(S_0\) equal to all places of
+\(F\) above the original \(D.S\cup W\).
+The action is trivial on inertia outside \(S_0\):
+the original good datum has trivial residual characters
+on these inertia groups, and these groups are in the original
+killing set. Choose an infinite set of rational primes
+splitting completely in a finite Galois extension of
+\(\mathbb Q\) containing \(F\), the fixed fields of the
+kernels of the original residual representation and
+\(\omega\), and a normal closure of the field cut out by
+\(\rho\). Chebotarev gives infinitely many such primes, none
+of which need belong to the original bad set. At all places
+over them \(\rho,\mu_\ell\) are trivial. They satisfy the
+literal \(\texttt{T.Splits}\) condition.
+
+Apply Lemma~\ref{lem:rh-prescribed-ramification} and enlarge
+\(W\) by the rational primes below its \(S_1\). The coordinates
+of its cocycle give (2), initially without the marked
+normalizations: at an old local group write the local
+coboundary as \(\rho(g)c_v-c_v\) and negate the coordinates
+of \(c_v\) to obtain \(m_v,o_{j,v}\). On an inertia group
+in the new killing set inside \(S_0\) the action is trivial,
+so the coboundary vanishes; outside \(S_0\) and the newly
+allowed primes the cocycle is unramified. This verifies the
+original killing conditions. Some element of new inertia
+has \(a_g=1\) and \(x(g)\ne0\).
+To normalize at the mark, set
+\[
+ m_*=\frac{x(s)}{1-a_s},\qquad
+ o_{j,*}=\frac{z_j(s)}{1-a_sb_s}.
+\]
+Subtract \(m_*(1-a_g)\) from \(x(g)\), and subtract
+\(o_{j,*}(1-a_gb_g)-y_j(g)a_gm_*\) from \(z_j(g)\).
+This is subtraction of the same global coboundary, with
+the appropriate sign convention. Replace \(m_v,o_{j,v}\)
+by their differences with \(m_*,o_{j,*}\). All identities
+persist, and \(y_j(s)=0\) gives the required marked
+normalizations. The witness with \(a_g=1\) is unchanged.
+
+\paragraph{Realization as symplectic matrices.}
+For a single \(y=y_j\), let
+\[
+ U(x,y,t)=
+ \begin{pmatrix}1&0&0&0\\x&1&0&0\\y&0&1&0\\
+                 t&y&-x&1\end{pmatrix}.
+\]
+This matrix is symplectic for the fixed \(J\) of
+Section~\ref{sec:rh-symplectic-induction}, and
+\[
+ U(x,y,t)U(x',y',t')=
+ U(x+x',y+y',t+t'+yx'-xy').
+\]
+Conjugation by \(D_g\) scales the three coordinates by
+\(a_g,b_g,a_gb_g\). The matrices
+\[
+ r_3(g)=U(x(g),y(g),2z_j(g)-x(g)y(g))D_g,\qquad
+ N_{3,v}=U(m_v,n_{j,v},2o_{j,v}-m_vn_{j,v})
+\]
+therefore give a representation, by (2). On \(D_v\)
+they satisfy \(r_3(g)=N_{3,v}D_gN_{3,v}^{-1}\):
+the local formula for the third coordinate is
+\[
+ (1-a_gb_g)(2o_{j,v}-m_vn_{j,v})
+       +m_vn_{j,v}(b_g-a_g).
+\]
+The representation has support \(q_Q\) and the lower
+flag has the same support. Its mark is diagonal. The
+\(\mathrm{Mu}\) condition holds whenever the original
+residual characters are trivial there, which is part of
+the good tower conditions (\(\mathrm{Mu}\) lies in inertia
+and \(\texttt{Ok.ineL}\) applies). It has exactly the
+same normalized \((2,0)\) entry and flag entry as the
+input \(y_j,n_{j,v}\), and a nonzero \((1,0)\) entry.
+This realizes the source's \(\texttt{gysinAl}\) bridge
+simultaneously for all the given \(y_j\), with a single
+normalized \(x\) and the same \(m_v\).
+
+\paragraph{Two polynomial links.}
+For clarity we record why the requisite interpolations work
+over the polynomial ring, including finite residue fields.
+A symplectic unipotent matrix of support \(n_P\) has the shape
+\[
+ \begin{pmatrix}
+ 1&0&0&0\\x&1&z&0\\y&0&1&0\\t&y&-x+yz&1
+ \end{pmatrix}.
+\]
+In block order \((0,2)\mid(1,3)\) it is block lower triangular;
+its diagonal blocks are determined by \(y\). Thus two
+residual representations with support \(n_P\) and the
+same normalized \((2,0)\) coordinate have identical
+diagonal blocks in that order. The same applies to their
+local flags of support \(q_Q\) if their \((2,0)\) flag
+coordinates agree. In the block triangular algebra the
+strict lower-block ideal has square zero. The entrywise
+interpolants \(A+X(B-A)\) therefore preserve multiplication
+on any pairs with these common diagonal blocks, and preserve
+the symplectic identities (the symplectic adjoint is linear,
+preserves this block triangular algebra and its square-zero
+ideal). The same argument for \(N_v^{-1}r(g)N_v\) shows
+that its interpolant is the entrywise interpolation of the
+two conjugates, hence retains upper triangularity and the
+exact diagonal characters. The mark, the killing conditions
+and local \(\mathrm{Mu}\) equations are preserved. The
+coefficients are locally constant. The flags still have
+support \(q_Q\). This proves \(\texttt{lineP}\) as an
+identity in \(k[X]\), not merely on its field-valued points.
+
+For support \(n_M\) use instead block order \((0,1)\mid(2,3)\).
+Its diagonal blocks are determined by the diagonal and the
+\((1,0)\) coordinate (symplecticity determines \((3,2)\)).
+With this coordinate fixed in the representations and flags,
+the identical square-zero argument proves \(\texttt{lineM}\).
+The second alternative of \(\texttt{Res.shape}\) applies
+throughout this link.
+
+\begin{theorem}[The original deep Case II residual chain]
+\label{thm:rh-deep-II-chain}
+Assume the original \(D.\mathrm{Good}\), Case II, the initial
+tower \(T_0\) with \(\texttt{Ok},\texttt{Two},\texttt{TameL}\),
+and the original rational pair \(c_0\) with
+\(\texttt{LatShape}\) at \(T_0\)'s mark, over the given ambient
+residue field. Then there is a tower \(T_1\) with
+\(T_0.\mathrm{Le}(T_1)\) and \(\texttt{TameL}(T_1)\) such that
+on every deeper \(T\) with \(T_1.\mathrm{Le}(T)\) and
+\(\texttt{Deep}(T)\), the integral seed of
+Theorem~\ref{thm:rh-seed-II-alt} is linked to every original
+residual restriction \(c'_0\) satisfying \(\texttt{OverQ}\)
+and \(\texttt{IsRes}\). The three links are polynomial
+links of the original frame, and all four endpoints are
+\(\texttt{Good}\). In particular this proves the original
+\(\texttt{deep\_tower\_residue\_chain\_exists}\) supplier.
+\end{theorem}
+\begin{proof}
+We explain the restriction, auxiliary fields and three
+links, retaining the original marked flags.
+
+\emph{Restriction and uniqueness.}
+For each chosen local group of an intermediate tower,
+choose a Galois element transporting the original place
+of the smaller field to that place. Apply its representation
+matrix to the original flag and write the resulting flag
+in lower-unipotent coordinates. This is possible in the
+present support: a matrix with diagonal and support \(n_P\)
+factors uniquely as a lower-unipotent matrix of support
+\(q_Q\) times an upper triangular matrix. Indeed the
+unipotent group displayed above has the normal subgroup
+\(z=0\), with quotient the root \((1,2)\); factor off that
+root and the invertible diagonal. This factorization also
+applies after multiplying by the original lower flag.
+Uniqueness follows since a lower unitriangular matrix
+that is upper triangular is the identity. A different
+transporting element differs by an element of the old
+local decomposition group, which stabilizes the original
+flag, so the transported flag is independent of the choice.
+These are precisely the flags in the original \(\texttt{Over}\)
+and \(\texttt{OverQ}\) conditions. The transported graded
+characters remain the original diagonal characters because
+they are global characters.
+
+Restrict \(c_0\) to \(G_{T_0.F}\) and use these flags.
+The representation is normalized at the mark, and the
+\(\mathrm{Mu}\) equation follows from the trivial residual
+diagonal on inertia at \(\ell\). For the killing set away
+from \(\ell\), if the rational prime is outside \(D.T\)
+the original rational killing condition applies. At a bad
+prime in \(D.S_b\), \(\texttt{Ok.kb}\) makes the original
+\(\psi\) trivial on every relative inertia element with
+trivial residual diagonal. Transport to the chosen
+rational inertia group and use the second part of the
+rational killing condition \(I_p\cap\ker\psi\).
+This is exactly the passage from the rational frame
+(\(\ell\) and \(D.S_b\) excluded in its first killing set)
+to the tower frame. The same argument works on every
+further tower. Thus this restriction is the unique
+\(\texttt{OverQ}\) residual restriction, denoted \(p_0\)
+on \(T_0\). Its normalized coordinate
+\(y(g)=p_0.r(g)_{20}/d_0(g)\) is a \(b\)-cocycle by
+the displayed \(n_P\) matrix law. Its local value is
+\(p_0.n(v)_{20}(1-b_g)\), by comparing the first columns
+of \(r(g)N_v=N_v(N_v^{-1}r(g)N_v)\). It kills \(N\)
+and is zero at the mark.
+
+Two elementary facts about restriction will be used.
+First, a cocycle \(f\) for a global residual character
+\(\chi\), nontrivial at a mark in a normal subgroup \(H\),
+cannot vanish identically on \(H\) unless it vanishes
+identically on the whole group: for \(h\in H\),
+\(f(hg)=\chi(h)f(g)\) and
+\(f(g(g^{-1}hg))=f(g)\).
+Apply this to the \((2,0)\) and \((1,2)\) normalized
+coordinates in \(n_P\), which are cocycles. When the
+\((2,0)\) coordinate vanishes identically, the \((1,0)\)
+coordinate is a cocycle as well.
+Second, when a flag is transported by \(r(g)\), its
+new \((2,0)\) lower coordinate is
+\[
+ \frac{r(g)_{20}+r(g)_{22}N_{20}}{r(g)_{00}}.
+ \tag{3}
+\]
+This follows from the first column in the triangular
+factorization, since row two has only its diagonal and
+column-zero entries in support \(n_P\). Thus equality
+of the global and local \((2,0)\) coordinates is
+preserved by simultaneous restriction; if the global
+coordinate is zero and the local one nonzero, the latter
+stays nonzero.
+
+These facts show directly that the initial
+\(\texttt{LatShape}\) alternatives imply the following
+\(\texttt{Good}\) alternatives on any tower with its
+marked element. If \(\operatorname{Ent}(-w_{\rm Ps})\)
+holds initially, both it and \(\operatorname{Ent}(w_{\rm Be})\)
+survive, by the cocycle fact. Otherwise the support is
+\(v_V\) and the \((2,0)\) flag coordinate is nonzero
+by (3). The \((1,0)\) coordinate cannot be identically
+zero initially: if so, use the local first-column identity
+with \(\chi_0=\chi_2\) and \(N_{20}\ne0\); it would give
+\[
+ r(g)_{12}=(N_{10}/N_{20})(d_2(g)-d_1(g))
+\]
+on the original rational decomposition group, contrary
+to the last non-coboundary condition in \(\texttt{LatShape}\).
+This \((1,0)\) coordinate is then a nonzero cocycle and
+survives restriction by the first fact.
+Both initial alternatives are therefore good.
+
+\emph{The auxiliary tower.}
+Apply the preceding cocycle construction on \(T_0\), with
+\(y\) from \(p_0\) (starting \(W=\varnothing\)).
+It gives the bridge \(r_3,N_{3,v}\) of support \(q_Q\)
+with the same \((2,0)\) coordinates and a nonzero
+\((1,0)\) coordinate, over an enlarged set \(W\)
+of split rational primes. In particular the auxiliary
+primes are chosen before the deeper tower or its seed.
+
+For each \(w\in W\) one has \(w\ne\ell\) and
+\(w\equiv1\bmod\ell\). Let \(F_1\) be the compositum
+of \(T_0.F\) with the unique degree-\(\ell\) subfield
+of each \(\mathbb Q(\zeta_w)\). These fields are totally
+real because their degree is odd, and unramified above
+\(\ell\). The compositum is abelian over \(\mathbb Q\);
+over \(T_0.F\) its Galois group is an elementary abelian
+\(\ell\)-group. Keep the old \(K\), ordering, and choose
+the mark \(s^\ell\). Choose the specified local places
+above \(\ell\) with the original restriction to \(K\)
+(which is split there). These give the original
+\(\texttt{Le}\) condition. The tame condition at \(\ell\)
+persists since all added fields are unramified there.
+
+For any \(\texttt{Le}\) extension, the inclusion of
+absolute Galois groups is normal of \(\ell\)-power index
+and the new mark is an \(\ell\)-power of the old one.
+All the original \(\texttt{Ok}\) and \(\texttt{Two}\)
+conditions persist. Here are the details concerning
+the existential clauses: replace a witness by the
+power \(\ell^j\) supplied by \(\texttt{Le}\), which
+preserves every inequality between finite residual
+character values, since their orders are prime to
+\(\ell\); this applies also inside the chosen inertia
+or decomposition groups. The ordering and the
+restriction conditions persist. For \(\texttt{Ok.g3'}\),
+a quadratic permutation character on the smaller
+CM Galois subgroup equals a ratio of two of the
+original characters (fix one index). Extend it by
+this ratio to the old CM Galois group. Taking
+\(\ell^j\)-powers proves that the extension is quadratic,
+trivial on the old \(\ker\omega\), and permutes the
+same characters. The old condition forces it trivial.
+All other clauses are restrictions of universal
+conditions or fixed field and ordering conditions;
+the real degree stays even. This also proves the
+needed composition of tower inclusions. In particular
+each deeper \(T\) in the theorem satisfies
+\(\texttt{Ok},\texttt{Two},\texttt{Deep}\), so the seed
+theorem applies.
+
+On inertia at any new \(w\), the diagonal characters
+are trivial. The bridge takes values in \(U(x,y,t)\),
+which has exponent \(\ell\): its \(n\)-th power is
+\(U(nx,ny,nt)\). Its image is a finite \(\ell\)-group
+(the group of such matrices over the finite span of
+the coordinate values is an \(\ell\)-group, or use
+the central extension by additive groups).
+Wild inertia at \(w\) has trivial image since it is
+pro-\(w\). Tame inertia has procyclic pro-\(\ell\)
+quotient, and its unique quotient of order \(\ell\)
+is killed by the degree-\(\ell\) subfield of
+\(\mathbb Q(\zeta_w)\), which is totally ramified
+at \(w\). Since \(w\) splits in \(T_0.F\), this also
+kills its restriction over \(T_0.F\). Hence the bridge
+restricted to \(G_{F_1}\), and to every deeper field,
+satisfies the killing condition with \(W=\varnothing\).
+This argument works at \(\ell=3\) because the bridge
+has nilpotence class two, not three.
+
+Transport the flags of the bridge and \(p_0\) to the
+deeper \(T\) as above. The bridge flag is transported
+inside \(q_Q\), since its global support is \(q_Q\).
+Equation (3) shows that the two residual restrictions
+have the same \((2,0)\) coordinates globally and at
+the flags. The nonzero \(a\)-cocycle \(x\) survives by
+normal restriction and the nontriviality of \(a\) at
+the new mark. Denote the resulting pairs by \(p'_0,c_3\);
+by uniqueness \(p'_0\) is every admissible \(c'_0\).
+If the \((2,0)\) global coordinate of \(c_3\) is nonzero,
+the first good alternative holds with \(-w_{\rm Al}\).
+If it is zero, that coordinate of \(p'_0\) is zero
+and all the \((2,0)\) flag coordinates are nonzero,
+by the initial good alternatives; \(c_3\) has support
+\(v_V\) and is again good.
+
+\emph{The three links.}
+Project \(c_3.r\) and its flags onto their diagonal
+blocks in order \((0,1)\mid(2,3)\). This is a group
+homomorphism on the lower block parabolic and preserves
+the symplectic multiplier. Since the original local
+conjugates are both lower and upper triangular they
+are diagonal, so the projected local flags still give
+the same diagonal. The resulting representation has
+only the root \(-w_{\rm Al}\) off the diagonal and
+retains its nonzero \((1,0)\) entry. Call the projected
+flags \(N_v^0\). Write \(Q\) for the new integral
+Case II seed reduced into the given residue field, and
+\(q_v=Q.n(v)_{20}\ne0\). Replace each projected flag by
+\[
+ N_v^0(1+q_v(E_{20}+E_{31})).
+\]
+The right factor commutes with the residual diagonal
+on the local group: \(\texttt{Two.atL}\) gives
+\(d_0=d_2,\ d_1=d_3\). Hence the flag equations
+remain valid. This matrix is lower symplectic of
+support \(q_Q\), with the original projected
+\((1,0)\) coordinate and \((2,0)=q_v\).
+Call this pair \(c_4\). It is good by the
+\(\texttt{InV}\) and \(-w_{\rm Al}\) alternative.
+The seed itself is good: the entry alternative in
+Theorem~\ref{thm:rh-seed-II-alt} either gives
+\(-w_{\rm Al}\), or both \(w_{\rm Be},-w_{\rm Th}\);
+in the latter case \(\texttt{Two.bigL}\) supplies
+the required local nontriviality of \(w_{\rm Al}\).
+
+Finally use the polynomial links already proved:
+\[
+ p'_0\ \xrightarrow{\ \texttt{lineP}\ }\ c_3\
+ \xrightarrow{\ \texttt{lineM}\ }\ c_4\
+ \xrightarrow{\ \texttt{lineP}\ }\ \bar Q .
+\]
+The first has equal global and flag \((2,0)\) entries
+by construction and transport. The second has equal
+global and flag \((1,0)\) entries by the projection.
+The third has zero global \((2,0)\) entries on both
+sides and equal flag entries \(q_v\).
+All are in the original frame and all four endpoints
+are good, as verified above. This proves its exact
+chain condition.
+\end{proof}
+
+The theorem constructs the residual links for every deeper
+tower using auxiliary primes chosen at the initial tower.
+It does not say that the three links lie in the support of
+the rank-four ordinary automorphic quotient. That further
+implication is a characteristic-prime component-propagation
+statement and is kept separate.

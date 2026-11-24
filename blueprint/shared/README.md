@@ -524,3 +524,5 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Actual relative deformation equations](../../notes/selmer-support-continuation-relative-presentation.md): every supplied local weighted presentation is retained; relative cohomology and the integral relation-dual injection give precisely one excess global equation in weights -1, 0 and 1 and none in weights -2 and 2. The original local chart and integral strict-cocycle comparison are now supplied in the theorem indexed above.
 
 - [Case II marked symplectic induction](../../notes/rh-symplectic-induction.md): full original SeedIIAlt supplier; arbitrary-point propagation remains open.
+
+- [Deep Case II residual chain](../../notes/rh-case-II-residual-chain.md): the original three polynomial links through good residual points; automorphic support transport remains open.
