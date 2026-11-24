@@ -1,0 +1,461 @@
+\subsection{From transported flag terms to embedded triples}
+\label{sec:flag-term-correspondence}
+
+The comparison below concerns the actual double-coset terms, not
+a count of free choices of their frame representatives.  It uses the
+normal-form arithmetic of the preceding sections.  We separate the
+rational normal-form incidence (existence for each relevant term)
+from the subsequent integral and weighted comparison.
+
+Write \(F=(e_0,\ldots,e_{r-1},z)\), \(X=\langle e_a\rangle_E\),
+\(X_a=\langle e_b:b<a\rangle_E\), and
+\(Q_X=X^\perp/X\).  The norm of \(z\) is \(-T\ne0\).
+Use \(N_F\) for the isometries acting as one on all successive
+isotropic flag quotients and on \(Q_X\).  In particular they
+send \(z\) to \(z+X\).  The source row stabilizer \(P_F\)
+preserves all \(X_a\) and fixes \(z\) itself.
+For a row lattice \(\Lambda\), put
+\(N_\Lambda=N_F\cap\operatorname{Aut}(\Lambda)\).
+Let \(A_a=\mathfrak d^{-(r-a)}\) be the original leading ideals.
+They are conjugation invariant.
+
+\begin{lemma}[Integral movement at a fixed lattice]
+\label{lem:integral-frame-movement}
+Let \(\Lambda\) be unimodular and let \(F,G\) be two flags with
+the same graded vectors, including the last vector modulo \(X\).
+Suppose their prescribed leading ideals are \(A_a\), the last
+leading ideal is \(\mathcal O_E\), and
+\[
+ A_a e_a,\ A_a e'_a\subset\Lambda,\qquad z,z'\in\Lambda .
+\]
+Then there is \(m\in N_\Lambda\) sending every vector of \(F\)
+to its corresponding vector of \(G\).
+\end{lemma}
+
+\begin{proof}
+The successive leading-ideal conditions give
+\[
+ \Lambda\cap(X+Ez)=\bigoplus_{a<r}A_ae_a\oplus\mathcal O_Ez .
+\]
+Indeed subtract the last coefficient and then the preceding
+coefficients in descending order.  This submodule is saturated,
+so its quotient in \(\Lambda\) is torsion free, hence projective
+over the Dedekind ring \(\mathcal O_E\).
+Each coordinate functional on it extends, by a projective splitting,
+to a functional on \(\Lambda\) with values in \(A_a\).
+Represent its \(E\)-linear extension as \(h(-,y_a)\).
+Thus \(h(e_b,y_a)=\delta_{ba}\), \(h(z,y_a)=0\) and
+\(h(\Lambda,y_a)\subset A_a\).  In particular unimodularity
+gives \(A_a^{-1}y_a\subset\Lambda\), using conjugation invariance
+of \(A_a\).  Integrality also gives
+\(h(y_a,y_b)\in A_a A_b\).
+
+Choose the integral trace-one element \(w_0+\bar w_0=1\)
+available in the finite-unramified CM extension, and replace
+\[
+ y_a\longmapsto y_a-w_0\sum_b h(y_a,y_b)e_b .
+\]
+The pairings of these new vectors vanish: the two cross terms
+subtract \(w_0+\bar w_0\) times the old Gram matrix.  All other
+pairings just prescribed are unchanged.  The replacement still
+has \(A_a^{-1}y_a\subset\Lambda\), by the ideal inclusion for
+the Gram entries.  We have split off the unimodular hyperbolic
+summand with lattice
+\(\bigoplus A_ae_a\oplus\bigoplus A_a^{-1}y_a\);
+its rational perpendicular \(C\) contains \(z\).
+Repeat for \(G\), obtaining \(y'_a,C'\).  Both complements
+identify isometrically with \(Q_X\).  The identification
+\(C\to C'\) is orthogonal projection along the new hyperbolic
+summand.  It takes the integral lattice of \(C\) into that of
+\(C'\), because both hyperbolic summands are unimodular.
+Its inverse has the same property.
+
+Match the two hyperbolic bases and use this isometry of
+complements.  The resulting isometry preserves \(\Lambda\),
+acts identically on \(Q_X\), and acts on \(X\) by the prescribed
+unitriangular change.  Since \(z,z'\) are the two lifts of the
+same quotient vector in \(C,C'\), it sends \(z\) to \(z'\).
+This is the required \(m\).
+\end{proof}
+
+\paragraph{Admission of the integral term.}
+The split row lattice and the transported frame give the specified
+leading ideals and the lattice inclusions in the lemma.  The
+source's fixed-congruence condition at every prime dividing \(g\)
+says that the localized isotropic coefficient lattice is generated
+by the frame itself.  Its admissibility condition gives an integral
+upper unitriangular matrix \(\xi\) with
+\(G_a\equiv(F\xi)_a\pmod{g\Lambda_{\mathfrak p}}\)
+at these primes.  Consequently the following literal condition
+holds (the convention is \(X_r=X\), \(Y_r=Y\)):
+\[
+ x'\in\Lambda,\quad x'-tG_a\in Y_a
+ \quad\Longrightarrow\quad
+ \exists x\in\Lambda:\ x-tF_a\in X_a,\quad x-x'\in g\Lambda .
+ \tag{FC1}
+\]
+In fact expand \(x'\) in the frame \(G_b\), \(b\le a\).
+Its coefficients are in \(A_b\), or in \(\mathcal O_E\)
+for the last vector.  Replace \(G_b\) by \((F\xi)_b\).
+This gives a vector in \(\Lambda\), since \(A_b\subset A_i\)
+for \(i\le b\).  Its leading coefficient is unchanged.
+At primes dividing \(g\) the coefficients are integral locally
+and each difference is in \(g\Lambda_{\mathfrak p}\).
+At all other primes \(g\) is a unit.  Intersection of the
+localized lattices proves (FC1) over \(\mathcal O_E\).
+Changing the frame by a same-graded change does not change (FC1)
+or the leading ideals.
+
+The reverse of (FC1) follows by induction through the flag:
+for a given first-flag vector, choose a second-flag vector
+with the same leading coefficient (the leading ideals agree);
+use (FC1), and subtract the resulting first-flag vector.
+The difference belongs to the preceding stage, to which the
+induction applies.  Adding the lifts proves the reverse condition.
+In particular the primitive submodules
+\(\Lambda\cap X\), \(\Lambda\cap Y\) have the same images
+modulo \(g\Lambda\); the analogous assertion holds for
+\(X+Ez\) and \(Y+Ez'\).  This proves the integral
+\texttt{IsAdm} and \texttt{IsTerm} conditions once an adapted
+rational normal form is given.
+
+\begin{proposition}[Term-class multiplicity and uniqueness]
+\label{prop:flag-term-class-multiplicity}
+Fix the source row representative set (one row lattice in each
+\(P_F\)-orbit).  A term is a double coset represented by
+\((\Lambda,\Lambda',\gamma)\), \(\gamma\Lambda'=\Lambda\),
+modulo the two groups \(N_\Lambda,N_{\Lambda'}\).
+Let \(G=\gamma F\).  At fixed \(\Lambda\), two frames are
+equivalent if \(n\in N_\Lambda\) carries one to the other
+up to a same-graded change.  Then every finite set of terms
+in one frame class has total reciprocal row weight at most one.
+Moreover for terms admitting the rational normal form, the
+frame class together with the induced definite-space isometry
+determines the term.
+\end{proposition}
+
+\begin{proof}
+Suppose \(\gamma_1 F,\gamma_2 F\) are equivalent via \(n\).
+The isometry \(g_0=\gamma_2^{-1}n\gamma_1\) sends the first
+source row lattice to the second, and \(g_0F\) has the
+same graded vectors as \(F\).  Both frames at the second
+source row satisfy the preceding lemma, since the prescribed
+ideal multiples and last vector are transported from their rows.
+Choose \(m\in N_{\Lambda'_2}\) with \(mF=g_0F\).
+Then \(a=g_0^{-1}m\) fixes \(F\) pointwise and carries
+\(\Lambda'_2\) to \(\Lambda'_1\).  The uniqueness of the row
+representatives modulo \(P_F\) gives \(\Lambda'_2=\Lambda'_1\).
+Write this common row as \(\Lambda'\); the decomposition is
+\[
+                  \gamma_2=n\gamma_1 a m^{-1}.       \tag{FC2}
+\]
+Here \(a\in P_F\cap\operatorname{Aut}(\Lambda')\).
+
+For a fixed initial term, assign to each term in the frame class
+the induced action of \(a\) on \(Q_X\), choosing one decomposition
+(FC2).  This assignment is injective: if the actions for \(a_1,a_2\)
+agree, \(a_1^{-1}a_2\) fixes every flag vector and acts as one on
+\(Q_X\), hence lies in \(N_{\Lambda'}\).
+Equation (FC2) identifies the original double cosets.
+The image lies in the actual source group \(\operatorname{autLz}(F,\Lambda')\)
+of induced actions, not in a group of lifts to \(V\).
+It is finite, because it preserves the quotient lattice, fixes
+the nonzero-norm vector \(z\), and is unitary on its totally
+definite perpendicular.  A lattice is discrete in the
+simultaneous archimedean embedding, so a bounded set of
+possible images of generators is finite.  Division by
+\(\#\operatorname{autLz}(F,\Lambda')\) proves the weight claim.
+
+For the uniqueness with the definite isometry, write
+\(Y_i=\gamma_i X\), \(S_i=(X+Y_i+Ez+E\gamma_i z)^\perp\).
+The normal form gives
+\[
+                 S_i\cap X=S_i\cap Y_i=X\cap Y_i.       \tag{FC3}
+\]
+Use the fixed definite embedding \(e:W\to V\), where
+\(X^\perp\cap z^\perp=eW\oplus X\).
+The source's induced isometry \(h_i\) is characterized by
+\[
+ y_i\in S_i,\quad y_i-e(h_iw)\in X,\quad
+ y_i-\gamma_i e(w)\in Y_i\qquad(w\in W).
+ \tag{FC4}
+\]
+Its existence and uniqueness are verified below.
+Assume \(h_1=h_2\).  Equation (FC2) and the same-graded
+conditions give \(S_2=nS_1\): \(n\) carries the paired flag
+spans (including their last vectors) onto one another.
+Since \(n^{-1}\) is one on \(Q_X\),
+\(y_1-n^{-1}y_2\in X\cap S_1\subset Y_1\).
+Also \(m^{-1}e(w)-e(w)\in X\), and \(a\) fixes \(X\).
+Thus (FC4) gives
+\[
+ n^{-1}y_2-\gamma_1 a e(w)\in Y_1,\qquad
+                a e(w)-e(w)\in X.
+\]
+Together with \(az=z\) these show that \(a\) is one on
+\(Q_X\); hence \(a\in N_{\Lambda'}\).
+Equation (FC2) now gives equality of the terms.
+\end{proof}
+
+\paragraph{The two definite quotient identifications.}
+For the remaining argument put \(Y=\gamma X\),
+\(S=(X+Y+Ez+E\gamma z)^\perp\), \(I=X\cap Y\).
+In the admitted normal form the first \(j\) vectors of
+each flag have invertible cross pairing, the remaining
+isotropic vectors are common up to the scalar \(c\), and
+the last vectors are proportional after same-graded changes.
+It follows directly from this decomposition that \(S/I\)
+is nondegenerate and totally definite.  Each of the two
+inclusions into the definite quotient of the corresponding
+flag induces an isometry
+\[
+ S/I\simeq (X+Ez)^\perp/X,\qquad
+ S/I\simeq (Y+E\gamma z)^\perp/Y.                    \tag{FC5}
+\]
+For surjectivity, subtract a linear combination of the
+first \(j\) vectors of the corresponding flag, solving the
+invertible cross-pairing system.  The tail and last-vector
+orthogonalities already hold.  The kernel is (FC3).
+The induced map between the two copies of \(W\), using
+\(e\) and \(\gamma e\), is exactly \(h=h_\gamma\)
+of (FC4); it is an isometry by (FC5).
+These statements and their construction are unaffected
+by same-graded changes of either flag.
+
+Let
+\[
+ L_0(\Lambda)=e^{-1}(\Lambda+X),\qquad
+ \widetilde L_F=(\Lambda+X)\cap S,\quad
+ \widetilde L_G=(\Lambda+Y)\cap S.
+\]
+Both tilded modules contain the full vector space \(I\);
+their quotients by \(I\) are lattices.
+Under the first identification in (FC5), they become
+\(L_0(\Lambda)\) and \(hL_0(\Lambda')\).
+By the earlier unimodular-quotient and primitive
+last-vector argument (WF1)--(WF7), both have cyclic
+discriminant module \(\mathcal O_E/T\mathcal O_E\).
+Define the graph in these quotients by the original lifts:
+\[
+ (u',u)\in\widetilde L_G\times\widetilde L_F,\quad
+ u'-\lambda'\in Y,\quad u-\lambda'-gm\in X,
+ \qquad \lambda',m\in\Lambda .                         \tag{FC6}
+\]
+This is precisely (WF2): absorb the \(X\)-lattice summand
+into the second lift.  It contains \(I\times I\).
+Denote the corresponding embedded graph in \(W\times W\)
+by \(\Gamma_\gamma\).
+
+\begin{lemma}[The embedded graph and its fixed index]
+\label{lem:flag-embedded-graph}
+Under the preceding conditions \(\Gamma_\gamma\) is the
+inverse image of an isometry modulo \(g\) from
+\(hL_0(\Lambda')/g hL_0(\Lambda')\) to
+\(L_0(\Lambda)/gL_0(\Lambda)\).
+The datum
+\(d_\gamma=(hL_0(\Lambda'),\Gamma_\gamma)\)
+is an embedded datum of Section~\ref{sec:embedded-isometry-genus-count}
+with index \(x\) equal to the original \(gI\) of its
+normal form, \(1\le x\le\Delta\), and generator bound \(r\).
+\end{lemma}
+
+\begin{proof}
+For \(u'\in\widetilde L_G\), choose \(\lambda'\in\Lambda\)
+with \(u'-\lambda'\in Y\).
+For each \(v\in\Lambda\cap(X+Ez)\), admission gives a
+congruent vector in \(\Lambda\cap(Y+E\gamma z)\),
+which pairs to zero with \(\lambda'\).
+Thus \(h(v,\lambda')/g\in\mathcal O_E\).
+The submodule \(\Lambda\cap(X+Ez)\) is saturated, so
+this functional extends to \(\Lambda\); unimodularity
+represents the extension as \(h(-,m)\) for \(m\in\Lambda\).
+Then \(\lambda'-gm\) is perpendicular to \(X+Ez\).
+By (FC5) subtract an element of \(X\) to obtain
+\(u\in S\), proving that the first projection of the graph
+is onto.  Reverse admission proves the other projection.
+If the first coordinate is zero in \(S/I\), a lift
+\(\lambda'\) in (FC6) belongs to \(\Lambda\cap Y\).
+Match it modulo \(g\Lambda\) with an element of
+\(\Lambda\cap X\).  Then \(u\in g\Lambda+X\), and
+\(u/g\in\widetilde L_F\).  This proves the required
+kernel in the second coordinate; the first kernel follows
+by the reverse argument.  The graph contains both
+multiples by \(g\), by taking the corresponding lifts.
+Finally the pairing of two graph coordinates equals
+the pairing of the chosen lattice lifts: the differences
+are in the respective isotropic subspaces, perpendicular
+to the graph coordinates.  Their two lattice pairings
+are congruent modulo \(g\) by (FC6).  This proves
+the asserted isometry of the reduced modules.
+
+In a fixed normal form identify \(S/I\) with its
+definite complement \(W_N\) in (US1).  The graph is
+then (WF2), with the same diagonal fixed lattice \(K\);
+its index is exactly \(x=[L:K]\).  It lies between one
+and \(\Delta\) by (WF4).  To check the generator condition
+over the ring of integers (not just over \(E\)), map
+\(L\) into \(X/((\Lambda\cap X)+I)\) by taking the
+\(X\)-part of a lift of \(w\in W_N\cap(\Lambda+X)\).
+The map is well-defined and its kernel is precisely
+\(M_0=\operatorname{pr}_{W_N}(\Lambda\cap S)\).
+Locally the finite image is a submodule of the quotient
+of a \(j\)-dimensional fraction-field space by a full
+lattice, and so is generated by at most \(j\) elements
+over the local DVR (use Smith form inside a bounded
+denominator lattice).  A finite torsion module over
+\(\mathcal O_E\) with these local bounds is generated
+globally by at most \(j\) elements: use its finitely many
+primary summands and the Chinese remainder theorem.
+As \(M_0\subset K\), the quotient \(L/K\) is generated
+by at most \(j\le r\) elements as required.
+\end{proof}
+
+\begin{proposition}[Actual row pairs give embedded triples]
+\label{prop:flag-pair-embedded-triple}
+Suppose two terms \(\gamma,\gamma'\) have the same target
+and source row lattices, and satisfy the original
+row congruence
+\[
+ (\gamma'\gamma^{-1}-1)(\Lambda\cap X^\perp)
+       \subset g\Lambda+(\Lambda\cap X).
+ \tag{FC7}
+\]
+Then, with the indices of Lemma~\ref{lem:flag-embedded-graph},
+\((d_\gamma,d_{\gamma'},h_\gamma h_{\gamma'}^{-1})\)
+belongs to the original embedded triple set
+\(\mathcal T_r(x,x';L_0(\Lambda),g)\).
+\end{proposition}
+
+\begin{proof}
+For \(w,v\in W\), (FC4)--(FC6) give the useful
+criterion
+\[
+ (h_\gamma w,v)\in\Gamma_\gamma
+ \quad\Longleftrightarrow\quad
+ \exists l\in\Lambda':\quad
+ e(w)-l\in X,\qquad e(v)-\gamma l\in g\Lambda+X.
+ \tag{FC8}
+\]
+Indeed lift both coordinates to \(S\) using (FC5).
+For the first lift use (FC4); its difference from
+\(\gamma l\) belongs to \(Y\).  For the second
+its difference from \(e(v)\) belongs to \(X\).
+This gives both directions of (FC8).
+
+If \(l\) satisfies the first condition in (FC8), then
+\(\gamma l\in\Lambda\cap Y^\perp\).
+Admission for \(X,Y\) makes the functional
+\(h(-,\gamma l)/g\) integral on \(\Lambda\cap X\).
+Extend it using saturation and represent it by
+\(h(-,m)\), \(m\in\Lambda\), as above.
+Thus \(\gamma l-gm\in\Lambda\cap X^\perp\).
+Applying (FC7), and using that \(\gamma'\gamma^{-1}\)
+preserves \(\Lambda\), proves
+\(\gamma'l-\gamma l\in g\Lambda+X\).
+The criterion (FC8) is therefore unchanged on replacing
+\(\gamma\) by \(\gamma'\), apart from the indicated first
+coordinate isometry.  The lattice equality follows from
+the common source lattice and (FC5).
+These are exactly both isometry conditions (EI2).
+\end{proof}
+
+\paragraph{The sum on a prescribed embedded datum.}
+For a fixed label \(j,(\delta_l)\) and embedded datum \(d\),
+choose at most one term per frame class.
+Partition these representatives by the full signed block
+matrix and scalar \(c\) of their adapted normal forms.
+The bounds (WF12)--(WF13) and the signed block count
+give at most \(8^{r+1}f^2\Delta^{2(2+c_E)}\) parts.
+
+Within a part choose a reference normal form \(N_0\).
+There are isometries \(\sigma_i\in N_F\) carrying
+both frames of \(N_0\) to the corresponding adapted frames
+of \(N_i\).  Here is the linear construction.  Match the
+first \(j\) vectors of the two flags, the common tail,
+the last vector, and the isotropic duals to the tail.
+The Gram matrices of these \(2r+1\) independent vectors
+are identical, by the full signed block matrix, \(c\)
+and \(T\).  Their complements are identified isometrically
+with \(eW\) modulo \(X\), by (FC5) and the choice of tail
+duals.  Match the complement vectors inducing the same
+vectors in that quotient.  This extends to a full isometry
+which is one on \(Q_X\), including its last-vector line.
+On the first frame it is same-graded, hence belongs to \(N_F\).
+
+Pull back \(\Lambda\) by \(\sigma_i^{-1}\).
+The reference first quotient lattice \(\mathcal J\) of (WF1)
+is unchanged: \(\sigma_i\) induces the identity on \(Q_X\).
+The second definite lattice and graph are also unchanged,
+since their embedded data in the fixed \(W\) are precisely
+\(d\) under (FC5).  In detail, \(\sigma_i\) transports \(S/I\)
+to the corresponding quotient, with the identity on its
+image in \(Q_X\); (FC6) transports the graph by that
+same identification on both coordinates.
+Only \(\mathcal J'\) may vary, and (WF10) allows that
+variation with factor \(N_T^2\).
+
+The pulled-back lattices are in distinct orbits of the
+common unipotent group for \(N_0\).  Otherwise, conjugating
+a common unipotent transporter by the two \(\sigma_i\)
+would give an element of \(N_\Lambda\) carrying the
+original second frames to one another up to a same-graded
+change, contradicting the distinct frame classes.
+The weight \(\operatorname{omI}\) is an infimum over adapted
+forms, so each weight is at most the weight for its
+chosen adapted form, which is unchanged by isometric
+transport.  It is constant on a frame class: simultaneous
+transport gives a bijection of adapted forms, and preserves
+their relative stabilizer indices.  The original normal-form
+sum (WF10) now applies within each part.  Multiplying by
+the number of parts gives exactly (WF14), i.e.
+\(\operatorname{datBd}(k,r,\Delta,D_b,N_T,x)\).
+
+\begin{theorem}[Weighted fixed-row comparison]
+\label{thm:weighted-fixed-row-comparison}
+Take a finite collection of original relevant ordered term
+pairs on a fixed target row, with the two prescribed
+labels and indices \(j,j'\).
+Suppose the rational adapted normal forms exist for these
+terms, with the stated signed block matrix, scalar and
+leading-minor label (the original \texttt{NFExC}, \texttt{LabC}
+incidence).  Use their admitted row conditions and the
+original congruence (FC7).
+The weighted sum of the two class weights times the
+reciprocal source row weight is at most
+\[
+ \sum_{1\le x\le\Delta}\sum_{1\le x'\le\Delta'}
+ \#\mathcal T_r(x,x';L_0(\Lambda),g)\,
+ \operatorname{datBd}(k,r,\Delta,D_b,N_T,x)
+ \operatorname{datBd}(k,r,\Delta',D_b',N_T,x').
+ \tag{FC9}
+\]
+The sums range over integers.  There is no extra
+automorphism-group or field-degree factor.
+\end{theorem}
+
+\begin{proof}
+Partition the pairs by the actual triple of
+Proposition~\ref{prop:flag-pair-embedded-triple}, including
+its isometry \(\eta\).  Inside a triple fibre, fix the
+two frame classes.  For each first term there is at most
+one second term of the specified class: its isometry
+is forced by \(h_{\gamma'}=\eta^{-1}h_\gamma\), and
+Proposition~\ref{prop:flag-term-class-multiplicity} gives
+uniqueness.  The sum of the reciprocal source row weights
+of these first terms is at most one by that proposition.
+Both class weights are constant on their classes.
+Consequently the fibre sum is at most the product of the
+two sums of class weights on the prescribed embedded data.
+The preceding \(\operatorname{datBd}\) comparison bounds
+these sums.  Sum over triples and indices, using
+nonnegativity throughout.
+\end{proof}
+
+This proves the lattice, quotient-graph, reciprocal-mass and
+fixed-triple fibre comparison.  To invoke it for every term of
+the original source, the rational normal-form incidence and
+the transport of the original row-label congruence to (FC7)
+must be supplied.  They are not inferred merely from the
+vanishing Gram determinant.  The subsequent genus mean,
+parameter estimates, zero-Gram sum and generic-return and
+finite-column estimates remain distinct steps.
