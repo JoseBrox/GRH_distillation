@@ -49,6 +49,23 @@ The [cubic torsor](../notes/cubic-torsor-realization.md) realizes
 the local Frobenius and normalized orbit theta data on the retained
 CM host. The global label-sensitive maps, their quantitative
 bounds and new odd-prime Selmer estimates are still missing.
+The [one-sign polynomial companion](../notes/polynomial-one-sign-companion.md)
+removes QRH from a replacement analytic block, and the
+[high-dyadic 3-primary theorem](../notes/cubic-three-primary-vanishing.md)
+closes the indicated integral character sectors, not the whole
+odd-prime budget.
+
+An independent finite-order construction uses
+[global interpolation](../notes/global-interpolation-lattices.md)
+and [linear-size derivative lattices](../notes/global-derivative-lattices.md).
+The actual global index equals the integrated Chebyshev count
+up to O_E(n^(3/2)); the added integral sampling gives stable
+archimedean metrics with negligible determinant penalty.
+The quantitative relative saturated-covolume lower bound in
+the [frontier](../notes/open-frontier.md) is still open.
+It would avoid all CM, Selmer and separate abelian inputs
+for the finite-order assertion. The geometry route is retained.
+
 Neither H07F nor H07I has been completed.
 
 See the [open frontier](../notes/open-frontier.md) and
