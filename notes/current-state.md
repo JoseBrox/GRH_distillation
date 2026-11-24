@@ -5,7 +5,7 @@ this reconstruction. This is a short resumption index; complete statements,
 proofs and source evidence belong in the linked files. Earlier versions
 remain in Git history. The repository main branch and the linked proof records give the current state.
 
-Parallel Hecke-GRH research (not a new primary proof-map node): the [Masullo transfer note](hecke-grh-masullo-transfer.md) proves an exact signed trace-growth law, arbitrary polynomial-grid and three-integrated-test criteria, a degree-one prime deficit reduction and nonabelian positive Hecke kernels. The actual trace/prime estimate is open. The note has been [shared on issue #5571](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131373425) without claiming the paused issue or changing its Lean statement.
+Third research level: [Hecke GRH](../hecke/README.md) has its own [checkpoint](../hecke/notes/current-state.md), [proof program](../hecke/blueprint/program.md), [manuscript](../hecke/paper/main.md) and [frontier](../hecke/notes/open-frontier.md). The initial [transfer note](../hecke/notes/masullo-transfer.md) has moved with its old link preserved. The new positive norm-pullback reduction handles every unitary character, including infinite order. The actual weighted split-prime estimate and alternative spectral supplier remain open; the original RH and Dirichlet counts are unchanged.
 
 ## Start here
 

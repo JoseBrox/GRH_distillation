@@ -62,7 +62,11 @@ so the normalization loses no zero-free assertion.
 
 For a real smooth compactly supported profile h write
 
-$$M_h(w)=\int_{\mathbb R}h(t)e^{wt}\,dt,\qquad w_\rho=\rho-1/2.$$
+
+```math
+M_h(w)=\int_{\mathbb R}h(t)e^{wt}\,dt,\qquad w_\rho=\rho-1/2.
+```
+
 
 The following profile can be chosen with arbitrarily short prescribed
 support interval [a,a+L] inside (0,infinity). Let p be the law's density
@@ -73,15 +77,23 @@ the remaining characteristic functions by one. Fourier inversion
 therefore gives a nonnegative C-infinity compactly supported density.
 In particular
 
-$$M_h(w)=e^{a(w+1)}\prod_{n\ge1}
- \frac{e^{L2^{-n}(w+1)}-1}{L2^{-n}(w+1)}.$$
+
+```math
+M_h(w)=e^{a(w+1)}\prod_{n\ge1}
+ \frac{e^{L2^{-n}(w+1)}-1}{L2^{-n}(w+1)}.
+```
+
 
 The factors differ from 1 by a locally summable O(2^{-n}), and none
 vanishes on |Re w|<=1/2. The infinite product is nonzero there.
 This is the profile from the issue discussion. We use either h
 itself, or its sign-chosen polar-free derivative
 
-$$H=h/4-h'',\qquad M_H(w)=(1/4-w^2)M_h(w).$$
+
+```math
+H=h/4-h'',\qquad M_H(w)=(1/4-w^2)M_h(w).
+```
+
 
 Both profiles P=h or H are real and have nonzero transform in the
 open centered strip, with M_P(w)>0 for real -1/2<w<1/2. In addition
@@ -91,13 +103,21 @@ in the presence of real zeros.
 For any fixed 0<=r<R<=1/2 define the band
 B={w: r<=|Re w|<R}. Define the real scalar
 
-$$ f(y)=\Re\sum_{\chi}a_\chi\sum_{w_\rho\in B}
- m_\chi(\rho)M_P(w_\rho)e^{w_\rho y}\quad (y\ge0). \tag{1} $$
+
+```math
+f(y)=\Re\sum_{\chi}a_\chi\sum_{w_\rho\in B}
+ m_\chi(\rho)M_P(w_\rho)e^{w_\rho y}\quad (y\ge0). \tag{1}
+```
+
 
 It is the normalized real band sum on the test
 
-$$\varphi_y(g)=\sum_\chi a_\chi\overline{\chi(g)}P(\log N(g)-y).
- \tag{2}$$
+
+```math
+\varphi_y(g)=\sum_\chi a_\chi\overline{\chi(g)}P(\log N(g)-y).
+ \tag{2}
+```
+
 
 Orthogonality on K isolates exactly the selected characters because
 they are all trivial on tau. The tests vanish on K; for P=H both
@@ -106,7 +126,11 @@ geometric diagonal of the research fork, then its left limit is
 minus the full sum over |Re w|<u under the hypotheses of that result.
 Thus for r>0, (1) equals
 
-$$V^{-1}\Re\big(D_{\varphi_y}(r-)-D_{\varphi_y}(R-)\big). \tag{3}$$
+
+```math
+V^{-1}\Re\big(D_{\varphi_y}(r-)-D_{\varphi_y}(R-)\big). \tag{3}
+```
+
 
 The left limits include all orders at the lower edge of B and exclude
 the upper edge. At R=1/2 the strict critical strip permits the wide
@@ -136,9 +160,13 @@ on compact intervals is justified, and |f(y)|<=C e^{beta y} for y>=0.
 
 Its Laplace transform, initially Re z>1/2, is
 
-$$\Phi(z)=\frac12\sum_{\chi,\rho:\ w_\rho\in B}a_\chi m_\chi(\rho)
+
+```math
+\Phi(z)=\frac12\sum_{\chi,\rho:\ w_\rho\in B}a_\chi m_\chi(\rho)
  \left(\frac{M_P(w_\rho)}{z-w_\rho}+
-       \frac{\overline{M_P(w_\rho)}}{z-\overline{w_\rho}}\right). \tag{4}$$
+       \frac{\overline{M_P(w_\rho)}}{z-\overline{w_\rho}}\right). \tag{4}
+```
+
 
 The sum is normally convergent on compact sets away from the poles
 (the tails have denominators bounded below and coefficients in l^1).
@@ -155,9 +183,13 @@ for right-hand poles also hold for that averaged scalar.
 **Theorem 1 (exact obstruction exponent).** For every b>1 and
 theta>=0,
 
-$$\lim_{U\to\infty}\frac1U\log\left(
+
+```math
+\lim_{U\to\infty}\frac1U\log\left(
  1+\int_U^{bU}f(y)_+e^{-\theta y}\,dy\right)
- =b(\beta-\theta)_+. \tag{5}$$
+ =b(\beta-\theta)_+. \tag{5}
+```
+
 
 Proof. The upper bound follows from the absolute exponential
 bound. For the lower bound it suffices to treat beta>theta.
@@ -190,14 +222,22 @@ x_k=k^q, L=ceil(N^b). Suppose that on an unbounded sequence of
 integers N we have real finite tables B_k>=f(log x_k) for
 N<=k<=L. Let P_B denote their affine interpolant, and put
 
-$$S_N=\int_{N^q}^{L^q}(P_B(x))_+x^{-1-\theta}\,dx.$$
+
+```math
+S_N=\int_{N^q}^{L^q}(P_B(x))_+x^{-1-\theta}\,dx.
+```
+
 
 If liminf log(1+S_N)/log N=0 along that sequence, then beta<=theta.
 Conversely, if beta<=theta the tables of actual sample values
 satisfy the criterion. More precisely, for these actual tables,
 
-$$\lim_{N\to\infty}\frac{\log(1+S_N)}{\log N}
- =qb(\beta-\theta)_+. \tag{6}$$
+
+```math
+\lim_{N\to\infty}\frac{\log(1+S_N)}{\log N}
+ =qb(\beta-\theta)_+. \tag{6}
+```
+
 
 Proof. Set F(x)=f(log x). Absolute convergence of the twice
 differentiated series gives |F''(x)|<=C x^{beta-2}, x>=1. The
@@ -205,7 +245,11 @@ standard chord interpolation remainder on [k^q,(k+1)^q] is bounded
 by (Delta^2/8)sup |F''|. Here Delta/x_k=O_q(k^{-1}), and
 x/x_k is uniformly bounded on each cell. Hence
 
-$$F(x)\le P_B(x)+C_q x^{\beta-2/q}.$$
+
+```math
+F(x)\le P_B(x)+C_q x^{\beta-2/q}.
+```
+
 
 Integrating positive parts against x^{-1-theta} on
 [N^q,N^{qb}] shows that its integral is bounded by S_N plus
@@ -239,14 +283,22 @@ For integer k>=1, rational gamma, omega in the three cube roots
 of unity, and theta in [0,1/2), let W=4-theta and define the
 nonnegative compactly supported weight
 
-$$q_{k,\gamma,\omega}(y)=
+
+```math
+q_{k,\gamma,\omega}(y)=
  1_{[k/8,k/2]}(y)\frac{y^k e^{-4y}}{k!}
- \big(1+\Re(\omega e^{-i\gamma y})\big). \tag{7}$$
+ \big(1+\Re(\omega e^{-i\gamma y})\big). \tag{7}
+```
+
 
 Define a single actual Bruhat test by the profile convolution
 
-$$\Psi_{k,\gamma,\omega}(g)=
- W^k\int q_{k,\gamma,\omega}(y)\varphi_y(g)\,dy.$$
+
+```math
+\Psi_{k,\gamma,\omega}(g)=
+ W^k\int q_{k,\gamma,\omega}(y)\varphi_y(g)\,dy.
+```
+
 
 The profile is smooth because P is smooth, and is supported in
 [a+k/8,a+L+k/2]. Thus it vanishes on K. With P=H its polar
@@ -265,8 +317,12 @@ linearity of choices of auxiliary kernels.
 rational gamma (including 0), along an unbounded sequence of
 integers k which may depend on gamma, one has
 
-$$\liminf \frac1k\log\big(1+\max_{\omega^3=1}
- (J_{k,\gamma,\omega})_+\big)=0. \tag{8}$$
+
+```math
+\liminf \frac1k\log\big(1+\max_{\omega^3=1}
+ (J_{k,\gamma,\omega})_+\big)=0. \tag{8}
+```
+
 
 Then beta<=theta. Conversely beta<=theta gives bounded J,
 uniformly in k and gamma. The three phases must be controlled
@@ -277,24 +333,36 @@ containing zero.
 
 Proof. Write
 
-$$A_k(z)=(-1)^k\Phi^{(k)}(z)/k!
- =\int_0^\infty f(y)y^ke^{-zy}\,dy/k!,\quad \Re z>1/2.$$
+
+```math
+A_k(z)=(-1)^k\Phi^{(k)}(z)/k!
+ =\int_0^\infty f(y)y^ke^{-zy}\,dy/k!,\quad \Re z>1/2.
+```
+
 
 Since |f(y)|<=C e^{y/2}, the omitted tails in (7) cost O(4^{-k}),
 uniformly in gamma and omega. In detail, for lambda=7/2,
 
-$$\int_0^{k/8}\frac{y^ke^{-\lambda y}}{k!}dy
+
+```math
+\int_0^{k/8}\frac{y^ke^{-\lambda y}}{k!}dy
  \le \frac18(e^{9/16}/8)^k,\qquad
  \int_{k/2}^\infty\frac{y^ke^{-\lambda y}}{k!}dy
- \le \frac12(e^{-3/4}/2)^k.$$
+ \le \frac12(e^{-3/4}/2)^k.
+```
+
 
 These follow by exponential tilting with rates 8 and 2 and
 the gamma integral. Both bases are strictly below 1/4
 (use 9/16<log 2<3/4). The factor in parentheses in (7) lies
 in [0,2]. Consequently, if M_k=max_omega (J_{k,gamma,omega})_+,
 
-$$ A_k(4)+\tfrac12|A_k(4+i\gamma)|
- \le W^{-k}M_k+O(4^{-k}), \tag{9}$$
+
+```math
+A_k(4)+\tfrac12|A_k(4+i\gamma)|
+ \le W^{-k}M_k+O(4^{-k}), \tag{9}
+```
+
 
 because max over three cube roots of Re(omega z) is at least
 |z|/2. For gamma=0 and omega=1 we have the stronger
@@ -313,7 +381,11 @@ distance d<D. Choose d<t<D and t smaller than the distance to
 the second nearest pole. Subtracting the nearest pole and
 applying Cauchy's estimates yields
 
-$$A_k(z)=c/(z-z_0)^{k+1}+O(t^{-k}),\quad A_k(4)=O(t^{-k}),$$
+
+```math
+A_k(z)=c/(z-z_0)^{k+1}+O(t^{-k}),\quad A_k(4)=O(t^{-k}),
+```
+
 
 with c nonzero. Equation (9) contradicts (8), by choosing
 M_k<=exp(eta k) along an unbounded sequence with
@@ -341,8 +413,12 @@ Take P=h (not H), the positive undifferentiated profile from
 section 1, and the full band. Define the prime-power coefficient
 for a normalized unitary Hecke character by
 
-$$a_\chi(n)=\sum_{N\mathfrak p^m=n}\log N\mathfrak p\,
- \chi(\mathfrak p)^m,$$
+
+```math
+a_\chi(n)=\sum_{N\mathfrak p^m=n}\log N\mathfrak p\,
+ \chi(\mathfrak p)^m,
+```
+
 
 where the local value is zero when the Hecke Euler factor is
 absent. Let P_A(n)=sum a_chi Re a_chi(n), using the family
@@ -350,7 +426,11 @@ weights (the letter P_A is unrelated to the profile). Write
 a_1 for the weight of the trivial character, or 0 if absent.
 For every rational p and k>=1,
 
-$$|a_\chi(p^k)|\le [F:\mathbb Q]\log p.$$
+
+```math
+|a_\chi(p^k)|\le [F:\mathbb Q]\log p.
+```
+
 
 Indeed only residue degrees dividing k contribute, and the
 sum of all residue degrees above p is at most [F:Q].
@@ -358,9 +438,13 @@ sum of all residue degrees above p is at most [F:Q].
 The individual Hecke explicit formula in the above centered
 convention for the profile h(t-y), supported at t>0, gives
 
-$$ f(y)= a_1 e^{y/2}M_h(1/2)
+
+```math
+f(y)= a_1 e^{y/2}M_h(1/2)
  -\sum_{n\ge1}P_A(n)n^{-1/2} h(\log n-y)
- +O_{F,\mathcal A,h}(e^{-y/2}). \tag{10}$$
+ +O_{F,\mathcal A,h}(e^{-y/2}). \tag{10}
+```
+
 
 Here the conductor/discriminant term is zero since h(-y)=0,
 the other polar term is a_1 e^{-y/2}M_h(-1/2), and the negative
@@ -385,8 +469,12 @@ e^{y+a+L}. Hence the contribution of all rational higher
 prime powers in (10) is O_{F,A,h}(1), uniformly for y>=0.
 Consequently the explicit real **degree-one prime deficit**
 
-$$\mathscr D(y)=a_1 e^{y/2}M_h(1/2)
- -\sum_{p}\frac{P_A(p)}{\sqrt p}\,h(\log p-y) \tag{11}$$
+
+```math
+\mathscr D(y)=a_1 e^{y/2}M_h(1/2)
+ -\sum_{p}\frac{P_A(p)}{\sqrt p}\,h(\log p-y) \tag{11}
+```
+
 
 satisfies f(y)=mathscr D(y)+O(1). All prime sums here are
 finite. Only ideals of rational residue degree one occur
@@ -454,9 +542,13 @@ For a coset a=gN_0 in A and x in G, character orthogonality
 on the finite abelian quotient gives the exact real positive
 function
 
-$$\sum_{\lambda\in\widehat A}\overline{\lambda(a)}
+
+```math
+\sum_{\lambda\in\widehat A}\overline{\lambda(a)}
   \operatorname{tr}V_\lambda(x)
- =\frac1{|N_0|}\#\{u\in G:u^{-1}xu\in gN_0\}. \tag{12}$$
+ =\frac1{|N_0|}\#\{u\in G:u^{-1}xu\in gN_0\}. \tag{12}
+```
+
 
 Indeed the induced-character formula has denominator |H_0|;
 the sum over lambda is |A| times the indicator of gN_0
@@ -466,10 +558,14 @@ at rational p^k, divided by log p, is the trace on the
 invariant vectors V_lambda^{I_p}. Averaging (12) over inertia
 gives
 
-$$K_a(p^k):=\sum_\lambda\overline{\lambda(a)}
+
+```math
+K_a(p^k):=\sum_\lambda\overline{\lambda(a)}
   \operatorname{tr}(V_\lambda(F_p)^k|V_\lambda^{I_p})
  =\frac{\#\{(u,i)\in G\times I_p:
- u^{-1}F_p^k i u\in gN_0\}}{|N_0||I_p|}\ \ge0. \tag{13}$$
+ u^{-1}F_p^k i u\in gN_0\}}{|N_0||I_p|}\ \ge0. \tag{13}
+```
+
 
 Here projection onto the invariants is |I_p|^{-1}sum V(i).
 This proves (13) with every inertia factor and no deleted
@@ -499,8 +595,12 @@ sum_n log(p) K_a(n)(A_0/n-w)_+ + A_0 log w + A_0 C.
 The final constant is independent of w; the log w term
 comes solely from the trivial lambda. Thus, for b<=w<=A_0,
 
-$$K_a^R(w)\ge K_a^R(b)
- -(w-b)\sum_{n\le A_0/b}\log(p) K_a(n).$$
+
+```math
+K_a^R(w)\ge K_a^R(b)
+ -(w-b)\sum_{n\le A_0/b}\log(p) K_a(n).
+```
+
 
 Only prime powers n=p^k occur. This is the same one-sided
 weight comparison as in our direct RH transfer. The full
@@ -597,8 +697,12 @@ self-adjoint (for example J_i J_i^* for actual normed
 restriction maps). If -E_- <= C_1-C_0 <= E_+ for positive
 bounded operators E_+, E_-, write B=(T+T*)/2. Then
 
-$$\Re\operatorname{Tr}(T(C_1-C_0))
- \le \operatorname{Tr}(B_+ E_+)+\operatorname{Tr}(B_- E_-).$$
+
+```math
+\Re\operatorname{Tr}(T(C_1-C_0))
+ \le \operatorname{Tr}(B_+ E_+)+\operatorname{Tr}(B_- E_-).
+```
+
 
 This follows by positivity of the trace pairing with B_+, B_-.
 Only these weighted signed defects, plus the signed explicit

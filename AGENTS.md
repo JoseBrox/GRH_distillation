@@ -22,3 +22,8 @@ Develop a rigorous, readable distillation of the announced GRH proof. Attribute 
 - Bounded output is a context-management measure, never a reason to skip a decisive proof check. Distinguish preserved historical evidence, checks rerun now, cited external verification, and open obligations.
 
 - Keep `notes/current-state.md` below 200 lines as a current resumption index. Link full statements, proofs and verification evidence; do not accumulate historical results or obsolete next steps there. Preserve mathematical detail in the referenced files.
+
+## Independent Hecke GRH extension
+
+- Use `hecke/notes/current-state.md` and `hecke/notes/open-frontier.md` when working on the Hecke track. Maintain `hecke/paper/`, `hecke/blueprint/`, results, limitations and sources alongside the original proof programs. Keep the original RH/Dirichlet priorities unless the user directs otherwise.
+- Report the Hecke proof-map count when working on this track. The independent arithmetic route must not depend on the unresolved Masullo comparison. Cite any reused RiemannMasullo results with their actual hypotheses and verification scope; preserve source links and do not claim an upstream proof or PR merely from a research comment.

@@ -1,6 +1,6 @@
 # Distilling the Generalized Riemann Hypothesis
 
-**[Short guide](paper/guide/main.pdf)** · **[RH manuscript](paper/rh/main.pdf)** · **[Dirichlet GRH manuscript](paper/grh/main.pdf)** · **[RH proof map](blueprint/rh/proof.svg)** · **[GRH proof map](blueprint/grh/proof.svg)** · **[Shared overview](blueprint/overview.svg)** · **[RH program](blueprint/rh/program.md)** · **[GRH program](blueprint/grh/program.md)** · **[Source atlas](blueprint/lean-source-atlas.md)**
+**[Short guide](paper/guide/main.pdf)** · **[RH manuscript](paper/rh/main.pdf)** · **[Dirichlet GRH manuscript](paper/grh/main.pdf)** · **[RH proof map](blueprint/rh/proof.svg)** · **[GRH proof map](blueprint/grh/proof.svg)** · **[Shared overview](blueprint/overview.svg)** · **[RH program](blueprint/rh/program.md)** · **[GRH program](blueprint/grh/program.md)** · **[Source atlas](blueprint/lean-source-atlas.md)** · **[Hecke GRH](hecke/README.md)** · **[Hecke proof map](hecke/blueprint/proof.svg)**
 
 We are developing a simpler, human-readable proof from Levent Alpöge's announced argument for the Riemann Hypothesis and the Generalized Riemann Hypothesis for Dirichlet characters. The aim is to understand the mathematics, replace long arguments by shorter ones where possible, and give complete definitions and proofs in ordinary mathematical language.
 
@@ -11,7 +11,7 @@ L(s,\chi)=\sum_{n=1}^{\infty}\frac{\chi(n)}{n^s}
 \qquad (\mathrm{Re}\,s>1).
 ```
 
-After analytic continuation, Dirichlet GRH says that every zero in the open strip between real parts zero and one lies on the line with real part one half. This is the version studied here; the project does not claim a theorem for every automorphic or number-field L-function.
+After analytic continuation, Dirichlet GRH says that every zero in the open strip between real parts zero and one lies on the line with real part one half. This is the version addressed by Alpöge's theorem. Our new Hecke research track extends the question to unitary characters over arbitrary number fields; that broader theorem has not been proved.
 
 ## Objective and current status
 
@@ -19,17 +19,44 @@ The goal is a **complete and substantially shorter proof in ordinary mathematics
 
 **The human-readable proof is not yet complete.** Several substantial reductions and local arguments are written, but the decisive uniform arithmetic–geometric estimate needed to conclude RH and Dirichlet GRH remains to be established. The manuscripts distinguish proved implications, explicitly cited classical theorems, conditional arguments and outstanding obligations.
 
-## Two concurrent routes
+## Three levels of research
 
-The [ordinary RH manuscript](paper/rh/main.pdf) concentrates on the zeta function and its four-character arithmetic comparison. The [Dirichlet GRH manuscript](paper/grh/main.pdf) treats the general character and conductor. They have separate manuscripts and proof programs, while sharing the geometric, integral and analytic results that apply to both. An improvement in either route is checked in the other with its precise hypotheses.
+The [ordinary RH manuscript](paper/rh/main.pdf) concentrates on the zeta function and its four-character arithmetic comparison. The [Dirichlet GRH manuscript](paper/grh/main.pdf) treats the general character and conductor. They have separate manuscripts and proof programs, while sharing the geometric, integral and analytic results that apply to both. An improvement in either route is checked in the other with its precise hypotheses. A third, independent Hecke GRH research track extends the analytic methods to arbitrary number fields without presuming that the Dirichlet arithmetic constructions apply unchanged.
 
 The current proof-map counts are **RH: 6/9** and **Dirichlet GRH: 18/31**, as recorded in the [progress table](blueprint/progress.md). A finished conditional implication can still require an open arithmetic input. These counts therefore describe the proof program, not a percentage of RH or GRH proved.
+
+## Beyond Dirichlet characters: Hecke GRH
+
+Our [Hecke research program](hecke/README.md) studies the L-functions of
+unitary characters of idèle class groups of arbitrary number fields.
+Dirichlet characters are the rational-field case; new prime-ideal and
+infinite-order character data make this a genuine extension.
+
+We have proved one-sided analytic reductions, including a sharp
+growth law for the zero-detecting discrepancy and finite-test criteria.
+A positive induction argument reduces arbitrary unitary characters
+to totally imaginary Galois fields. There, a smoothed count of
+completely split rational primes, with nonnegative character-dependent
+weights, suffices at the decisive square-root scale.
+
+The [manuscript](hecke/paper/main.md), [proof map](hecke/blueprint/proof.svg),
+[checkpoint](hecke/notes/current-state.md) and
+[open frontier](hecke/notes/open-frontier.md) organize this third track.
+Its initial inventory is [6/8](hecke/blueprint/progress.md) written
+reductions or cited inputs, not a fraction of a proof. The new
+arithmetic estimate is still open; the first nonabelian benchmark
+is an S3 Dedekind zeta function. We also investigate a separate
+spectral trace supplier informed by the crowdsourced formalization of
+Masullo, with proper attribution. Our preferred arithmetic route does
+not depend on that project's unresolved gap or its acceptance of our
+contribution. Alpöge's result calibrates the rational and certain
+abelian cases, not the general extension. **Hecke GRH remains open.**
 
 ## Current research priorities
 
 The main task is now to **prove the missing arithmetic inputs**. We keep the preferred proof architecture fixed while attacking its open construction, estimate and compatibility requirements. Simplification is useful when it removes a substantial dependency or materially improves a decisive estimate.
 
-For each major gap, the [frontier theorems](notes/open-frontier-theorems.md) state a precise target. We attempt that target directly, identify the first missing argument, and test new constructions or other methods against the exact downstream requirement. A useful lemma is not recorded as completion of the larger node that needs it. Ordinary RH is the preferred testing ground, while both routes remain active.
+For each major gap, the [frontier theorems](notes/open-frontier-theorems.md) state a precise target. We attempt that target directly, identify the first missing argument, and test new constructions or other methods against the exact downstream requirement. A useful lemma is not recorded as completion of the larger node that needs it. Ordinary RH remains the preferred testing ground, followed by Dirichlet GRH. The independent Hecke track has its own frontier, manuscripts and checkpoints.
 
 ## The argument in outline
 
