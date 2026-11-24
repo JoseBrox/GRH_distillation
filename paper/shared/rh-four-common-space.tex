@@ -1,0 +1,356 @@
+\subsection{One coefficient space for the seed and the rational point}
+\label{subsec:rh-four-common-space}
+
+We supply the universal-space interface used in the propagation
+argument, keeping the original coefficient and flag equations.
+A complete ring of lifts of the diagonal residual representation
+alone does not have the required universal property at the
+nonsplit residual representations. The distinction between its
+completed homogeneous pieces and the finite-type entry algebra is
+essential.
+
+\begin{theorem}[The original finite-type space in the RH towers]
+\label{thm:rh-four-space}
+Fix one of the original fitted deep RH towers, with frame
+$\Phi=T.\mathrm{fr}(\varnothing)$, and a permitted complete
+coefficient DVR $\mathcal O$ with finite residue field $k$.
+There is a space $(B,A,\mathcal P)$ satisfying every field of
+the original \texttt{Space}: in particular $B$ is complete
+Noetherian local with residue $k$, $B\hookrightarrow A$,
+$A$ is finite type over $B$, and the representation and flags
+in $A$ induce every continuous original lift of every
+\texttt{IsRes} pair over $k$. Moreover each original polynomial
+residual link over $k[t]$ is induced by a map $A\to k[t]$
+whose restriction to $B$ is the residue map.
+\end{theorem}
+
+\begin{proof}
+Start with the complete framed universal ring $R$ of lifts
+of the diagonal residual representation on $\Phi$,
+imposing the prescribed symplectic similitude, the killing
+set $N$, and diagonalization at the mark. Adjoin the complete
+universal deformation rings of the independently labeled
+local characters $\theta_{vi}$, initially without imposing
+the flag equations or the local torsion conditions.
+
+For completeness this ring exists and is Noetherian by the
+following standard finite-generator construction. After
+killing $N$, the relevant group is a quotient of the Galois
+group unramified outside a finite set containing $\ell$:
+outside the original ramification set every inertia element
+belongs to $N$. The kernel of its finite diagonal residual
+representation has finitely generated maximal pro-$\ell$
+quotient, by finiteness of its first cohomology with
+$\mathbb F_\ell$ coefficients (it is a quotient of the
+corresponding finite-extension number-field Galois group,
+with finitely many allowed ramified places). Every lift
+to an Artinian local coefficient ring with finite residue
+field factors through this quotient of the residual kernel.
+The kernel quotient is characteristic and hence normal
+in the full group. The resulting profinite group is
+topologically finitely generated: combine generators of
+the pro-$\ell$ kernel with lifts of generators of the
+finite quotient. Choose these finitely many generators,
+use formal matrix coordinates reducing to their given
+residual values, and impose their profinite group relators.
+In a finite quotient of the coefficient ring the matrices
+are a finite group, so these relators have well-defined
+compatible evaluations, giving equations in the complete
+power series ring. The same construction for the local
+characters uses local class field theory, or finiteness of
+local first cohomology. Completion and passage to compatible
+Artinian quotients represent lifts over arbitrary complete
+Noetherian local rings with residue $k$. The closed
+symplectic, killing, and marking equations are the literal
+matrix-entry equations. This constructs $R$ and the
+universal representation $D$ and independent characters
+$\theta_{vi}$.
+
+Give every representation entry weight
+$\operatorname{wt}(i,j)$, and the local characters weight
+zero. We can present $R$ by finitely many formal coordinates
+of these weights: choose a finite subset of actual entry
+differences from the residual diagonal lifts and of actual
+character differences from their prescribed lifts,
+generating the maximal ideal modulo its square and the
+coefficient uniformizer. Such a subset exists because
+the universal matrix and character coordinates topologically
+generate $R$; Nakayama and completeness give the desired
+surjective power series presentation. The entries on the
+diagonal and all character differences have weight zero.
+The constants used in the off-diagonal differences are
+zero. The torus conjugation
+$\operatorname{diag}(z_1z_2,z_2,z_1,1)$ acts on this
+presentation, with $\mathcal O$ of weight zero, and
+preserves the defining equations by the universal property.
+
+Here and below a formal homogeneous piece is understood in
+the completed sense, not as a polynomial. To justify the
+grading in this topology, use $z_1=1+U,z_2=1+V$ in the
+universal complete ring with two extra formal variables.
+A relation in the presentation, after substitution, is zero
+there. Modulo any power of the maximal ideal of $R$, only
+finitely many monomials survive. Laurent monomials of
+distinct bidegrees are linearly independent after substitution
+of $1+U,1+V$ into a power series ring over any coefficient
+ring (multiply by a common Laurent denominator and use
+the invertible polynomial change of variables). Thus each
+homogeneous part of the relation vanishes modulo every
+power of the maximal ideal, and hence vanishes in $R$.
+This yields the closed homogeneous relation ideal. Every
+actual entry and local character is homogeneous by the same
+argument applied to its transformation law. Write $R_w$ for
+the image of the formal homogeneous series of weight $w$,
+and set
+\[
+                 B_0=R_0,\qquad A_0=\bigoplus_{w}R_w
+                    \ \subset R
+\]
+where the direct sum means finite sums, so $A_0$ is an
+ordinary algebra rather than a completion. Independence
+of the homogeneous pieces follows from the torus
+substitution just used.
+
+We recall the elementary monomial facts ensuring the
+Noetherian and continuity properties of this construction.
+The nonnegative exponent vectors of weight zero form a
+finitely generated affine monoid (equivalently, take the
+integer points of the rational polyhedral cone defined by
+the weight-zero equations). For each fixed weight $w$,
+Dickson's lemma gives finitely many minimal nonnegative
+exponent vectors of that weight in the coordinatewise
+order. Every other exponent vector of that weight is
+one of these plus a weight-zero vector. Hence a homogeneous
+formal series of weight $w$ is a sum of finitely many
+corresponding monomials with coefficients formal series in
+the finitely many generators of weight zero. This assertion
+holds with the coefficient uniformizer included in the
+topology: choose one such decomposition per exponent
+vector; as total monomial degree tends to infinity, the
+degree in weight-zero generators tends to infinity, since
+their degrees and the degrees of the minimal representatives
+are bounded. The same observation shows that for any
+fixed $w$, the intersection of a sufficiently high power
+of the presentation's maximal ideal with that homogeneous
+piece maps into any prescribed power of the weight-zero
+maximal ideal times $R_w$. In passing to the quotient one
+may project a lift to its weight-$w$ component, because the
+relation ideal is closed and homogeneous. These arguments
+prove that $B_0$ is a quotient of a complete power series
+ring on finitely many weight-zero monomials, local with
+residue $k$, that the entry algebra $A_0$ is generated by
+the finitely many original coordinates over $B_0$, and
+that the matrix entries and the coefficient characters
+are continuous in the $B_0$-adic topology in their
+respective homogeneous pieces.
+
+We next prove the required coefficient-generation
+assertion over the actual integral ring, without dividing
+by any factorial. Let $\lambda_i=D(g_0)_{ii}$. These four
+elements of $B_0$ are determined by the characteristic
+polynomial of the diagonal mark and their distinct labeled
+residues, by Hensel's lemma. In particular their differences
+are units in $B_0$. Products of matrix entries along
+directed cycles are obtained as traces of products of
+matrices and the diagonal spectral projectors of the mark.
+Each projector is the explicit polynomial
+\[
+ E_i=\prod_{j\ne i}
+       \frac{D(g_0)-\lambda_j}{\lambda_i-\lambda_j}.
+\]
+Expand the trace using this formula and the representation
+law: it is a finite combination of traces of single group
+elements with coefficients depending on the marked
+eigenvalues and unit differences. The trace itself is the
+negative next-to-leading characteristic-polynomial
+coefficient.
+
+Every weight-zero entry monomial reduces to such cycle
+monomials. To see this directly in the rank-four root
+system, draw an entry $D(g)_{ij}$ as an edge from $j$ to
+$i$, counting repeated factors as separate edges.
+The difference between the incoming and outgoing
+multiplicities at the four vertices is a vector of the form
+$(c,-c,-c,c)$, since its total and its two weight coordinates
+are zero. Decompose the edges into directed cycles and
+paths from vertices with excess outgoing multiplicity to
+vertices with excess incoming multiplicity. If $c>0$,
+a path goes from $\{1,2\}$ to $\{0,3\}$. Reverse the path
+and replace each vertex by its complementary index
+$i\mapsto3-i$. Every edge can be so replaced in the monomial:
+the symplectic inverse identity identifies $D(g)_{ij}$ with
+the entry of $D(g^{-1})$ at $(3-j,3-i)$ times a known unit
+(the similitude and a sign). This changes the imbalance
+vector by $(-1,1,1,-1)$, reducing $c$ by one. When $c<0$,
+the same operation on a path from $\{0,3\}$ to $\{1,2\}$
+increases $c$ by one. Iteration gives an ordinary balanced
+directed graph, a disjoint union of cycles with edge
+multiplicities. Thus the original monomial is a known
+unit times a product of cycle traces. The argument is
+an identity of matrix entries over the original coefficient
+algebra, not just over a field of generic matrices.
+
+Apply this result also to the coordinate differences
+from the prescribed constant diagonal and character
+lifts. Since their constants are of weight zero, their
+balanced products are generated, with completion, by
+the characteristic-polynomial coefficients of all group
+elements and the original independent local characters.
+Two local maps out of $B_0$ into the same complete local
+coefficient ring agreeing on the latter data agree on
+the four marked eigenvalues by their labeled residues,
+on the cycle traces, on every balanced coordinate
+monomial, and therefore on $B_0$ by continuity. This is
+the exact \texttt{genB} uniqueness property.
+
+Adjoin now to $A_0$ the entries of a lower symplectic
+unitriangular flag for each original local place.
+Impose the literal flag equations: the conjugated
+local representations are upper triangular, their ordered
+diagonal entries are the corresponding $\theta_{vi}$,
+and the latter are trivial on $\mathrm{Mu}$. Take the
+quotient $A$ by this ideal and let $B$ be the image of
+$B_0$ therein. The ideal defining $B$ in $B_0$ is closed,
+since $B_0$ is complete Noetherian local, so $B$ has
+the same completeness property. The diagonal residual
+pair with identity flags is one of the residue
+evaluations and shows that this quotient is nonzero
+and has the specified residue field. We now have
+$B\hookrightarrow A$, finite type, and all matrix,
+flag, continuity, characteristic-polynomial, and
+coefficient uniqueness equations in \texttt{Space}.
+In particular every character can be recovered from
+the flag and representation entries, so those entries
+generate $A$ over $B$.
+
+The crucial remaining point is its lift universality.
+Let $(r,n)$ be any original continuous lift of an
+\texttt{IsRes} pair over $k$ to a complete local
+coefficient ring $R'$ with finite residue $k$.
+Take a linear functional $\tau$ on the root lattice
+strictly positive on its allowed residual support:
+$\tau=(-2,-1)$ for $nP$, and $\tau=(-1,-2)$
+for $nM$. Its existence follows directly from the
+four displayed roots in each support set.
+Rescale the entries of $r$ by a formal cocharacter
+$z^{\tau(w)}$, leaving the labeled local characters
+fixed. To implement the rescaling integrally, for
+every $m\ge1$ put $R_m'=R'/\mathfrak m_{R'}^m$ and
+let $I_m$ be its nilpotent maximal ideal. In
+$R_m'((z))$ take the subring
+\[
+      S_m=R_m'[[z]][\, I_m z^{-D}\,],
+      \qquad D\ge \max_w|\tau(w)|.
+\]
+The adjoined generators are nilpotent, so this
+is a finite module over $R_m'[[z]]$, complete local
+with residue $k$ and maximal ideal generated by
+$z$ and the adjoined nilpotent ideal together with
+$I_m$. Every scaled matrix entry belongs to it:
+an entry with negative weight was in $I_m$,
+and each positive-weight entry is divisible by $z$.
+Modulo its maximal ideal the rescaled representation
+is the original split diagonal. Its multiplier,
+killing and marking are unchanged; continuity holds
+because the original entries and characters modulo
+$\mathfrak m_{R'}^m$ are locally constant.
+Thus the universal complete ring $R$ maps to $S_m$.
+
+For each homogeneous series of weight $w$, its
+image is a single Laurent monomial $z^{\tau(w)}$
+times a coefficient in $R_m'$. Indeed this holds
+on every monomial of a homogeneous lift, including
+weight-zero constants, and their partial sums
+converge by continuity of the universal local map.
+The coefficient group $R_m' z^{\tau(w)}$ is a finite
+closed subset of the separated ring $S_m$.
+Consequently evaluation at $z=1$ is well-defined
+on the image of the finite sums $A_0$, as those
+images are Laurent polynomials. These homomorphisms
+to $R_m'$ are compatible in $m$ by uniqueness of
+the universal maps (the rings $S_m$ also map
+compatibly under reduction). Their limit gives a
+map $A_0\to R'$ sending the entries and independent
+characters to the original values. Sending the
+additional flag variables to the original flag
+entries respects every imposed equation, yielding
+$A\to R'$. Its restriction to $B$ is local: balanced
+nonconstant monomials in the off-diagonal entries
+cannot all have weights strictly positive for
+$\tau$; at least one factor is in $\mathfrak m_{R'}$.
+The diagonal and character coordinate differences
+also belong to that ideal. Equivalently this follows
+by taking the coefficient of $z^0$ in the above
+construction modulo $\mathfrak m_{R'}$.
+This proves universality for the original lift
+functor. For a general complete Noetherian local
+target the same proof applies since every Artinian
+quotient with finite residue field is finite.
+
+Finally take an actual polynomial residual pair
+in the source \texttt{Linked} relation over $k[t]$.
+Embed $k[t]$ into $k[[t]]$ and apply lift universality
+to its constant term residual pair. The characteristic
+polynomials throughout the link are the original
+diagonal polynomials: each permitted support $nP$
+or $nM$ is triangular for a fixed coordinate ordering.
+The ordered local characters are also the original
+residual characters, by the link condition.
+The coefficient uniqueness just proved implies
+that the induced map on $B$ is the constant residue
+map. Since $A$ is algebraically generated over $B$
+by the representation and flag entries, all of which
+are polynomials in this map, its image lies in $k[t]$.
+This is the required original line map, including
+its constant coefficient map, not a path through
+unrelated deformation spaces.
+\end{proof}
+
+\begin{corollary}[Simultaneous coefficient realization]
+\label{cor:rh-four-common-coefficients}
+In the preceding theorem one can choose $\mathcal O$ once
+for the rational target, the finite residual chain, the
+two ordinary links and the arithmetic seed, and realize
+all of them in this one space. More precisely the rational
+target is allowed to be of characteristic zero or
+characteristic $\ell$ as in \texttt{Amb.Small}.
+\end{corollary}
+\begin{proof}
+The original ambient residue field is algebraic over a
+finite field by \texttt{Small}. Each residual polynomial
+pair has finitely many polynomials as its matrix-entry
+values, by local constancy and compactness. There are
+only finitely many local flags and finitely many links.
+All coefficients of these polynomials and the original
+residual target therefore lie in one finite field
+extension. Enlarge the coefficient ring to contain a
+lift of that extension, and the finite coefficient
+extension of the arithmetic seed and the ordinary links.
+The inclusion of coefficient rings into the ambient
+valuation ring is prescribed by \texttt{Amb}.
+
+In characteristic zero, the complete DVR of the target
+has finite residue field and fraction field finite over
+$\mathbb Q_\ell$: its uniformizer has a positive integral
+valuation on $\ell$, and the Cohen structure theorem
+(or the usual complete-DVR degree calculation) gives
+the finite extension. The prescribed embeddings agree
+with the original coefficient map, and the compositum
+is a finite extension of this complete valued field.
+In characteristic $\ell$ the complete DVR is a power
+series ring over its finite residue field. Extend its
+constant field to the required residue field, with the
+embedding into the ambient field given by the unique
+finite-field lifts; all prescribed coefficient maps
+factor through that finite field. In both cases the
+enlarged DVR maps locally into the ambient valuation
+ring and still realizes the target continuously.
+We may further enlarge the coefficient ring and target
+DVR to have exactly the same residue field as the
+seed and all intermediate residual evaluations.
+The characteristic-zero seed remains a lift of its
+specified residue after this extension. Every object
+now has the same base ring and residue field; apply
+Theorem~\ref{thm:rh-four-space} to these actual lifts
+and links.
+\end{proof}
