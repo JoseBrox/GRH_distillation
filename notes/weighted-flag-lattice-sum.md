@@ -1,8 +1,7 @@
 # The original weighted normal-form lattice sum
 
 **Classification: closed obligation — the original fixed-normal-form
-weighted arithmetic sum and its finite normal-form parameters.** The
-full per-row term correspondence and W08 remain open.
+weighted arithmetic sum and its finite normal-form parameters.** The full per-row term correspondence and global fixed-label count are now supplied separately; W08 remains open.
 
 The [manuscript section](../paper/shared/weighted-flag-lattice-sum.tex)
 contains the precise definitions and complete proofs. Every index is
@@ -72,9 +71,4 @@ finite-unramified CM field Q(zeta_12). It checks the exponent arithmetic
 exactly. The general proof remains the written lattice and group
 argument, not these finite diagnostics; no Lean build is claimed.
 
-To obtain the full source PerRowC inequality, the remaining frontier
-is precise: assign each original relevant term to an adapted normal
-form; prove the transport identifies its flag classes and embedded
-datum; and divide each compatible term-pair fiber by the original
-row-automorphism order. The numerical arithmetic expression alone
-does not discharge those interfaces.
+The [fixed-row theorem](flag-row-congruence.md) now supplies all the term interfaces of PerRowC. The [global fixed-label theorem](flag-global-pair-count.md) gives PairsP, with the full return-series estimates still open.

@@ -1,0 +1,346 @@
+\subsection{The global fixed-label pair count}
+\label{sec:flag-global-pair-count}
+
+The original fixed-row inequality and embedded-isometry
+genus mean have compatible masses. We first identify their
+normalizations, and then perform the finite parameter sum.
+All lattices and the modulus in this section are those of
+the given full row system.
+
+\begin{lemma}[The primitive last-vector row mass]
+\label{lem:flag-row-genus-mass}
+Let \(Q=X^\perp/X\) be the original isotropic quotient,
+\(z\) the image of the last vector of norm \(-T\),
+and \(W=z^\perp\subset Q\), with its induced positive
+definite hermitian form. For a row \(\Lambda\) let
+\(L_\Lambda\) be the integral lattice in \(W\) obtained
+from the row quotient and intersection with \(W\).
+For any isometry-invariant nonnegative function \(\phi\)
+of these definite lattices, and any genus \(\mathcal G\)
+represented by a row, one has
+\[
+ \sum_{\Lambda:\,L_\Lambda\in\mathcal G}
+     w_{\rm row}(\Lambda)\phi(L_\Lambda)
+  =(T-1)^f
+    \sum_{[L]\in\mathcal G/\cong}
+       \frac{\phi(L)}{|\operatorname{Aut}(L)|}.
+ \tag{RC1}
+\]
+Here \(T\) is the original completely split rational
+prime and \(f=[E:\mathbf Q]/2\).
+\end{lemma}
+\begin{proof}
+The fixed isotropic coefficient ideals are \(A_a\).
+By the given split row decomposition, the row quotient
+is unimodular, \(z\) is primitive (its saturated line
+lattice is exactly \(\mathcal O_Ez\)), and its orthogonal
+complement has discriminant module isomorphic to
+\(\mathcal O_E/T\mathcal O_E\). The last assertion
+also follows from the primitive gluing argument below.
+
+We check that the rows in the given full system are
+precisely representatives of the unimodular lattices in
+\(Q\) containing \(z\) primitively, up to isometries
+fixing \(z\). In the original rational hyperbolic
+decomposition, any such lattice \(M\) lifts to
+\[
+ \bigoplus_a A_ae_a\;\oplus M\;\oplus
+ \bigoplus_a A_a^{-1}f_a
+\]
+where \(f_a\) are the original rational isotropic duals.
+This is a full self-dual lattice because the displayed
+hyperbolic module and \(M\) are self-dual. It belongs
+to the original genus. Indeed at each finite place
+of the totally real field the CM algebra is unramified
+or split. In the split case a self-dual lattice is the
+sum of a free lattice and its perfect dual; in the
+unramified field case a self-dual hermitian lattice
+has an orthogonal integral basis of unit norms. To
+construct it, the nondegenerate residue hermitian form
+has a nonzero norm vector: otherwise polarization by
+scalars and the nonzero residue trace would make
+every pairing zero. Split off a unit-norm line and
+induct. Norms of units surject onto the units of the
+base local field, by the residue-field norm and
+successive lifting using the surjective residue trace.
+Thus all self-dual lattices in this local space have
+the same local isometry type, including at residue
+characteristic two. This proves the required genus
+membership. The fixed flag and its coefficient ideals
+are unchanged, and primitivity of \(z\) is exactly the
+last-vector condition. In particular the original
+fixed-congruence conditions hold at the same primes:
+the isotropic part of the lifted lattice is the
+original fixed coefficient module. The completeness
+clause of the full row system therefore supplies a row
+representative.
+
+Conversely an isometry of two row quotients fixing \(z\)
+lifts to an isometry of the actual split row lattices
+preserving the isotropic flag and fixing the last vector.
+Use the rational isotropic dual bases in their respective
+split decompositions, map the two hyperbolic bases onto
+one another, and use the given quotient isometry on the
+orthogonal summands. Both orthogonal summands identify
+isometrically with \(Q\), also on their integral lattices,
+since the split hyperbolic lattice is self-dual. The
+last vector belongs to the orthogonal summand in each
+decomposition. The lifted isometry therefore satisfies
+the original row equivalence, and uniqueness of the
+given representatives makes the rows equal. The
+source row weight is, by its definition, the inverse
+order of the isometry group of the quotient lattice
+fixing \(z\). This is not the inverse order of the
+whole indefinite lattice stabilizer.
+
+Now put \(Z=\mathcal O_E z\). Unimodular lattices
+\(M\subset Q=W\perp Ez\) with \(M\cap W=L\),
+\(M\cap Ez=Z\) are classified by graphs of
+anti-isometries between the discriminant modules of
+\(L,Z\). To see this, \(M/(L\oplus Z)\) is a self-annihilating
+submodule of \(L^\#/L\oplus Z^\#/Z\) for the induced
+hermitian pairing modulo \(\mathcal O_E\). Primitivity
+makes the two projections injective. Self-annihilation
+then makes both surjective: for example a vector in the
+annihilator of the first projection would give an element
+of \(M/(L\oplus Z)\) supported in the first factor and
+hence zero. The two discriminant modules are thus
+isomorphic and the graph condition is exactly the
+negative-pairing condition. Conversely every such graph
+gives a self-dual lattice with both intersections unchanged.
+
+Since \(Z^\#/Z\simeq \mathcal O_E/T\mathcal O_E\),
+the definite lattices in \(\mathcal G\) have this
+same cyclic discriminant module. The algebra at \(T\)
+is a product of \(f\) pairs of copies of \(\mathbf F_T\),
+with conjugation exchanging the factors of each pair.
+For a generator of a cyclic perfect hermitian module,
+its pairing (after multiplication by \(T\)) is a
+unit fixed by conjugation. Thus the possible
+anti-isometries are given on each pair by two nonzero
+scalars with prescribed nonzero product. There are
+exactly \((T-1)^f\) such anti-isometries. This holds also
+when \(T=2\). The group \(\operatorname{Aut}(L)\)
+acts on these graphs, and the stabilizer of a graph
+is the automorphism group of the glued lattice fixing
+\(z\) (an isometry fixing \(z\) acts identically on \(Ez\)).
+For a finite group acting on a finite set, the sum over
+orbits of inverse stabilizer orders equals the cardinality
+of the set divided by the group order. Applying this
+identity to the graphs for each isometry class of \(L\)
+proves (RC1), with exactly the original row weights.
+\end{proof}
+
+In particular, if an isometry-invariant nonnegative
+quantity has genus sum at most \(\operatorname{Mass}(L)B\),
+(RC1) with this quantity and with \(1\) bounds its
+row-weighted sum by \(\operatorname{massRows} B\).
+One applies the assertion within each genus and then
+adds them. This is the source's \(\mathrm{RowsMeanC}\);
+there is no factor depending on the number of genera
+or on \(T\) in the resulting inequality.
+
+\begin{theorem}[The original global fixed-label bound]
+\label{thm:flag-global-pair-count}
+In the original \(\mathrm{KTwoHypotheses}\), fix
+\(C_H\ge0\), put \(r=r_S\), and take
+\[
+ C_a=\max(1,2(C_H+1),C_T),\quad
+ C_h=300000 C_a,\quad C_p=16.
+\]
+The choices \(C'_0=1,\ C_{l,0}=42C_a\) suffice for
+\(\mathrm{PairsP}\). In particular, for any finite set
+\(\mathscr S\) of actual compatible relevant zero-Gram
+term pairs with fixed positive indices and labels
+\((j,\delta),(j',\delta')\), writing
+\(\Delta=k2Del(j,\delta)\), \(S=k2S(H,j,\delta)\)
+and similarly \(\Delta',S'\), with \(H=b^{C_Hm}\),
+one has
+\[
+ \sum_{(t,t')\in\mathscr S}
+   \mathrm{wt}(t)\mathrm{wt}(t')\,\omega(t)\omega(t')
+ \le \operatorname{massRows}\,
+       E(\Delta,S) E(\Delta',S'),
+ \tag{RC2}
+\]
+where
+\[
+ E(\Delta,S)=\Delta^{k/2}
+     \bigl(b^{C_hm^2 f}\bigr)^{C_hr^4}S^{16k}.
+\]
+Thus the factor is exactly the original \(k2e\), with
+its original exponent \(C_p k\).
+\end{theorem}
+\begin{proof}
+For the chosen original data, let \(\rho=\operatorname{rd}(E)\),
+\(g=g_S\), and \(T=T_u\). The size conditions give
+\[
+ \begin{gathered}
+ m=2r+2,\quad 42C_a\le m,\quad
+ m^4\le f,\quad m^5 f\le k,\quad
+ 42C_a m^2\log b\le k,\quad \log f\le\sqrt r,\\
+ 2\le\rho\le b,\qquad (kb)^8\le g,\qquad
+ 1\le T\le b^{C_am}.
+ \tag{RC3}
+ \end{gathered}
+\]
+Indeed the original scale satisfies \(\log b=L>1\).
+The lower bound \(C'm^5 fL\le k\) and \(C'\ge1\)
+give the displayed rank bound; the \(C_l\) bounds give
+the two displayed bounds with \(42C_a\). The bound
+\(\log\rho\le L\) follows from the root-discriminant
+condition with its positive denominator at least one
+in the admitted size range. The original \(g_S\) is
+the product of the two positive level factors, and the
+first is at least \((kb)^8\). The original prime
+selection gives the completely split \(T\) and its
+stated upper bound. These are the original
+\(\mathrm{pairsPar}\) inequalities.
+
+If \(\mathscr S\) is empty there is nothing to prove.
+Otherwise all parameters for both labels occur on
+actual terms. The original normalized leading minor
+of order \(l\) has norm
+\[
+ N_l=|\mathrm N_{E/\mathbf Q}\delta_l|\,
+        \mathrm N(\mathfrak d)^{-2\operatorname{frameExp}(r,l)}
+    =\prod_{\tau} a_{\tau,l}^{\,2},\qquad
+ a_{\tau,l}=|\tau(\delta_l)|\rho^{-2\operatorname{frameExp}(r,l)}.
+ \tag{RC4}
+\]
+The equality follows from the CM product formula
+and \(\mathrm N(\mathfrak d)=\rho^{2f}\), with one
+embedding from each complex pair. The transported
+integral leading ideals \(A_a=\mathfrak d^{-(r-a)}\)
+show that the fractional ideal of which \(N_l\) is the
+norm is integral: each cross pairing on \(A_ae_a,A_bf_b\)
+is integral, so multiplying the determinant by
+\((\prod_{a<l}A_a)^2\) gives an integral ideal.
+Thus every nonzero \(N_l\) is at least \(1\).
+The normal-form label theorem gives
+\(\Delta=N_j>0\) and \(D_b=\prod_{l\in\mathcal E}N_l\)
+for the original nonzero-minor set \(\mathcal E\).
+The source height factor is
+\[
+ S=\prod_\tau\max\bigl(1,\max_{l\in\mathcal E}
+              a_{\tau,l}/(2H)^{2r}\bigr).
+\]
+Consequently \(S\ge1\) and
+\(N_l\le (2H)^{4rf} S^2\) for every \(l\in\mathcal E\).
+Since \(4rf(1+C_Hm)\le2(C_H+1)m^2f\), put
+\[
+ A=b^{C_a m^2 f},\qquad U=AS^2,\qquad U'=AS'^2.
+\]
+We have \(1\le\Delta\le U,\ 1\le D_b\le U^r\)
+and the analogous bounds for the second label;
+also \(N_T=T^f\le A\).
+
+Let \(P(x,x')\) be the explicit \(\mathrm{pairBd}\)
+of Theorem~\ref{thm:embedded-isometry-genus-mean}
+with the original rank parameter \(r\), and
+\(d(x),d'(x')\) the \(\mathrm{datBd}\) factors of
+Theorem~\ref{thm:fixed-normal-form-weighted-sum}.
+By the original label congruence both terms in a
+compatible pair have equal target and source rows.
+Therefore their two square-root row weights multiply
+to the product of the target and source row weights.
+Partition \(\mathscr S\) by its target row, use
+Theorem~\ref{thm:weighted-fixed-row-comparison}, and
+multiply each resulting estimate by that target row
+weight. Summing over the actual row representatives
+and interchanging the finite index sums gives
+\[
+ \sum_{\mathscr S}\mathrm{wt}(t)\mathrm{wt}(t')
+             \omega(t)\omega(t')
+ \le \operatorname{massRows}
+        \sum_{1\le x\le\lfloor\Delta\rfloor}
+        \sum_{1\le x'\le\lfloor\Delta'\rfloor}
+              P(x,x')d(x)d'(x').
+ \tag{RC5}
+\]
+Indeed the embedded triples are counted by an
+isometry-invariant function of the definite lattice
+(conjugate the two embedded data and their comparison
+isometry). Its genus sum has the required mass factor
+by the proved embedded-isometry mean. The last-vector
+quotient has rank \(k\) and the original discriminant
+module, by the preceding lemma. Applying (RC1) to
+each such function yields (RC5). The genus bound is
+finite; all summands are nonnegative. The argument
+also applies to the source's extended nonnegative-real
+count, followed by restriction to finite real bounds.
+
+It remains to bound this actual finite sum.
+Set \(c=1+\log_2(2f)\le4r\),
+\(D_0=T^{2f}\), \(Y=xx'D_0^2\), and
+\(M=(20f\rho^2)^{2f(6+c)}\rho^f\).
+Since \(D_0\le A^2,\ x\le U,\ x'\le U'\),
+\[
+ Y\le A^6(SS')^2\le (UU')^3 .
+\]
+The size bounds imply \(f\le b^{2r}\),
+\(8^{r+1}\le A,\ f^2\le A\).
+Moreover \(M\le b^{181fr^2}\): use
+\(20f\rho^2\le b^{2r+7}\),
+\(2(2r+7)(6+4r)+1\le181r^2\).
+Thus \(2+2M\le A^{183}\).
+Define
+\[
+ q_0=(32/g)^{kf}(4kf)^{4f}A^{42}.
+\]
+From (RC3), \(A^{42}\le e^{kf}\);
+\(f\le k,\ b\ge2,\ k\ge9\) give
+\[
+ q_0^{1/f}\le (32e/g)^k (4kf)^4
+       \le 256\,2^{-k} k^{8-8k}\le\tfrac12 .
+\]
+Hence \(q_0\le1/2\).
+Writing \(Z_0=(SS')^{14}\ge1\), the two
+bases of powers in the bracket of \(\mathrm{pairBd}\)
+are bounded by \(Z_0/2\): the first is
+\((32/g)^{kf}(4kf)^{4f}Y^7\), and the second is no
+larger because \(D_0xx'\le Y^7\).
+The geometric sum \(\sum_{s=1}^{k-1}2^{-s}\le1\)
+therefore bounds the entire bracket by
+\((2+2M)Z_0^k\).
+As \(6r+10+4c\le32r\), it follows that
+\[
+ P(x,x')\le (xx')^{k/2}
+       (UU')^{96r+183}(SS')^{14k}.
+ \tag{RC6}
+\]
+
+The exact factor \(\mathrm{datBd}\) is
+\[
+ d(x)=(\Delta/x)^{k/2}
+ 8^{r+1}f^2\Delta^{3c+6}N_T^2
+             (D_b\Delta N_T)^{10000(r+1)^3}.
+\]
+Its factor after \((\Delta/x)^{k/2}\) is at most
+\(U^{250000r^4}\): the first two factors cost
+\(U^2\), the next powers cost \(U^{12r+8}\),
+and the last costs at most \(U^{240000r^4}\).
+The analogous bound holds for \(d'(x')\).
+In (RC6) the powers of \(x,x'\) thus cancel exactly.
+There are at most \(UU'\) choices of the two indices.
+Consequently the sum in (RC5) is bounded by
+\[
+ \Delta^{k/2}\Delta'^{k/2}
+       (UU')^{300000r^4}(SS')^{14k},
+\]
+since \(250000r^4+96r+184\le300000r^4\).
+Finally \(k\ge m^5 f\ge m^9\) and \(m\ge42\)
+imply \(300000r^4\le k\). Hence
+\[
+ U^{300000r^4}S^{14k}
+ \le \bigl(b^{C_h m^2 f}\bigr)^{C_h r^4}S^{16k},
+\]
+and likewise for the other label. This proves (RC2)
+with constants chosen before the arithmetic data vary.
+\end{proof}
+
+This is the fixed-label global arithmetic supplier
+\(\mathrm{PairsP}\), not the full zero-Gram return
+estimate. The latter must still combine (RC2) with
+the actual amplitude and distinct-label estimates,
+and then handle generic returns and the finite columns.

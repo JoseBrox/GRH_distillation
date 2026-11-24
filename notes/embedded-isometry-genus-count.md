@@ -2,9 +2,7 @@
 
 **Classification: closed obligation — the full quantitative genus
 mean of the original embedded triples.** This supplies
-DiscNResNeZero.main with its stated constants. The correspondence
-from weighted flag terms to the triples and the complete W08 node
-remain open.
+DiscNResNeZero.main with its stated constants. The weighted term-to-triple correspondence and the fixed-label global count are now also supplied; the complete W08 node remains open.
 
 The definitions and complete proofs are in
 [the manuscript section](../paper/shared/embedded-isometry-genus-count.tex).
@@ -68,26 +66,9 @@ The [proved primitive-sublattice mean](primitive-sublattice-genus-mean.md)
 then cancels the discriminant powers exactly. Summing the fixed
 spaces gives the displayed original genus estimate.
 
-## The next precise frontier
+## Application to the original terms
 
-The original remaining supplier is PerRowC in
-TermPairsRowLatticeCountedViaEmbeddings, lines 114--213.
-For each fixed row lattice and pair of fixed labels, it maps
-the original pairs of flag terms to the actual embedded triples,
-with their indices bounded by the original normalized minors.
-For each fiber it must prove
-
-    sum_(term pairs in fiber)
-       inverse_row_automorphism_order * omega(t) * omega(t')
-       <= datBd(label,x) * datBd(label',x').
-
-Here omega is the source's stabilizer covolume ratio, and datBd
-is its actual finite-data bound. This weighted fiber estimate,
-and its geometric definition on the original normal forms, is
-not supplied by the new triple mean. The consumer
-TermPairCountBoundOfSiegelMassRatios, lines 70--163, subsequently
-combines that correspondence and its finite parameter sum into
-PairsP. No whole W08 node is marked complete.
+The [fixed-row theorem](flag-row-congruence.md) supplies the weighted term-to-triple inequality PerRowC, and the [global fixed-label theorem](flag-global-pair-count.md) combines it with the genus mean and the finite parameter sum to prove PairsP. The full amplitude and return-series estimates remain separate.
 
 ## Verification
 

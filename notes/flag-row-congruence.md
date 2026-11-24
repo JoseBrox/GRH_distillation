@@ -6,7 +6,7 @@ Modulo the original g, the reference hyperbolic pairs, the last line of norm -1,
 
 The [rational normal forms and labels](flag-adapted-normal-form.md) and [term-class theorem](flag-term-correspondence.md) then give PerRowC for arbitrary finite subsets of the original ordered pairs on a fixed row. The bound has the exact integer index range, original reciprocal source automorphism weight, embedded triple cardinality and product of the two datBd factors. The nonnegative extended-real formulation follows by counting only attained triples before enlarging their cardinalities.
 
-This does **not** prove the global zero-Gram norm estimate. Next apply the embedded-isometry genus mean to these actual fixed-row inequalities, check the parameter bounds and local amplitude product, and perform the full sum with the original weights. Generic returns and finite-column estimates remain independent.
+This does **not** prove the global zero-Gram norm estimate. The [global fixed-label theorem](flag-global-pair-count.md) now supplies PairsP by the exact genus comparison and finite parameter sum. Complete the amplitude product and the full zero-Gram sum with the original weights. Generic returns and finite-column estimates remain independent.
 
 ## Pinned source interfaces
 
