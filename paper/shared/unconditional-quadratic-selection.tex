@@ -1,0 +1,255 @@
+\subsection{Unconditional numerical selection on the original two-sign host}
+\label{sec:unconditional-qs}
+
+The averaged arithmetic comparison uses numerical companion and thin-sample
+estimates, not a fixed-width zero-free strip for the auxiliary characters
+at every height.  The following replacement retains both original
+auxiliary primes, their size ranges, and their prescribed splitting
+congruences.  It uses the classical prime number theorem in progressions
+with the exceptional term retained, rather than uniform quasi-RH.
+It was obtained by transferring the fixed-field Hecke companion
+selection back to the rational case.
+
+\begin{theorem}\label{thm:unconditional-qs}
+Fix an integer \(M\ge1\), constants \(A,J\ge1\), and
+\(0<\epsilon<1/52\).  For all sufficiently large \(U\), put
+\[
+ z=U^{\epsilon/5},\quad z'=z(\log U)^2,\quad Q=e^z,\quad D=e^{z'}.
+\]
+There are primes \(Q/2<q<Q\), \(D/2<d<D\), prime to \(2M\),
+with
+\[
+ q\equiv3\bmod8,\qquad d\equiv7\bmod16,\qquad
+ d\equiv-1\bmod q,\qquad d\equiv-1\bmod p
+       \quad(3\le p\le z,\ p\text{ prime}).
+\]
+Let \(\xi\) run over the primitive characters with conductor dividing
+\(8M\), and let \(\chi_l=(\,\cdot\,/l)\).
+Use the primitive realization of every product of characters. For a
+nonprincipal character define the corrected ramp
+\[
+ G_\chi(y)=\sum_{n\le y}\Lambda(n)\chi(n)(y/n-1)
+                  +y\frac{L'}{L}(1,\chi),
+\]
+and use the principal correction \(y(\log y-1-\gamma)\) subtracted
+from its ramp.  Then for \(U\le y\le U^J\), \(i,j\in\{0,1\}\),
+\(i+j>0\),
+\begin{equation}\label{eq:unconditional-companion}
+ |G_{\xi\chi_q^i\chi_d^j}(y)|\le y^{1/2+\epsilon/2},\qquad
+ \left|\frac{L'}{L}(1,\xi\chi_q^i\chi_d^j)\right|\le4\log y .
+\end{equation}
+The choices can be made so that all primitive nontrivial quadratic
+companions of the same base characters multiplied by real dyadic
+cyclotomic characters of height at most \(A(1+\log U)\) have a
+zero-free box \(\Re s\ge1-\delta\), \(|\Im s|\le Q^2\) or \(D^2\)
+according as \(j=0\) or \(j=1\), with fixed \(\delta>0\).
+For the entire resulting family, including the untwisted characters,
+\begin{equation}\label{eq:unconditional-thin}
+ |G_\chi(v)|/v\le e^{-x^{\epsilon/8}}
+ \quad (U\le x\le U^J,\ v\ge e^{x^{\epsilon/3}}/3).
+\end{equation}
+All thresholds depend only on the fixed data.  The assertion does
+not include a fixed-width zero-free strip at unbounded height.
+\end{theorem}
+
+\begin{proof}
+We first establish weighted correlations for selecting the two primes.
+At the \(q\)-stage take \(V=Q\), a fixed modulus \(m_0\) containing
+\(8M\), and a reduced class \(a\equiv3\bmod8\).
+At the \(d\)-stage, after choosing \(q\), take \(V=D\) and the
+modulus \(16q\prod_{3\le p\le z}p\) (prime factors only), enlarged
+by fixed factors needed to avoid \(M\).  The prescribed class
+\(a\equiv7\bmod16\), \(a\equiv-1\) at the other prescribed primes
+is reduced. Denote the stage modulus by \(m\); at the second
+stage \(\log m=O(z)\).  Fix any cutoff exponent \(L\) and moment
+order \(2h\). Consider refined moduli \(ms\) where \(s\) is odd,
+squarefree, prime to \(m\) and \(s\le(2U^L)^{2h}\).
+
+Thorner--Zaman's relative prime number theorem for progressions
+(\emph{Refinements to the prime number theorem for arithmetic
+progressions}, Math.\ Z.\ 306 (2024), article 54,
+\href{https://arxiv.org/abs/2108.10878}{Theorem 1.1})
+applied to \((V/2,V]\) gives the logarithmically weighted count
+in each reduced class \(b\) modulo \(ms\). Its main term is
+\(\varphi(ms)^{-1}\int_{V/2}^V(1-\chi_*(b)t^{\beta_*-1})\,dt\)
+if there is an exceptional real character, and the integrand is one
+otherwise. Its relative error is bounded by
+\[
+ O\left(\exp\left[-c\frac{\log V}
+ {1+\log(ms)+(\log V)^{2/5}(\log\log V)^{1/5}}\right]\right).
+\]
+The theorem's lower-main-term hypothesis holds even in the suppressed
+class: the effective bound \(1-\beta_*\gg(ms)^{-1/2}\) and its
+(1.7) give a main term at least \(V\exp(-O(1+\log(ms)))\), while
+\(\log(ms)=o(\log V)\). Thus the main term eventually exceeds
+\(V^{32/37+\eta_0}\) for a fixed small \(\eta_0>0\).
+At the first stage all \(\log(ms)=O(\log U)\); at the second
+they are \(O(z)\). The relative error is \(O(e^{-c'(\log U)^2})\)
+at both stages.
+
+By the Landau--Page theorem, up to the largest of these moduli there
+is at most one primitive real character with a zero closer to one
+than \(c_0/\log(3\max ms)\), with \(c_0\) sufficiently small.
+Any other exceptional term is absorbed in the same
+\(O(e^{-c'(\log U)^2})\) error relative to the unperturbed main term.
+The single retained character, whenever induced modulo \(ms\), is
+exceptional in the displayed theorem.  Thus the same exception is
+used in all refinements. Give the candidate primes \(l\) weight
+\(\log l\) in the fixed progression modulo \(m\).
+Summing over the reduced classes modulo \(s\) shows that
+\[
+ \left|\mathbb E(l/s)\right|\ll e^{-c'(\log U)^2}
+\]
+for every \(s>1\) as above, apart from at most one \(s_*\).
+Indeed if the exceptional conductor divides \(m\), its term is
+constant across the refinement and cancels in the signed numerator.
+The errors are relative to the same positive main terms and remain
+small even when the original progression is suppressed. If the
+conductor divides \(ms\) but not \(m\), its nontrivial character on
+the \(s\)-factor pairs to zero unless it is precisely the primitive
+quadratic character \((\,\cdot\,/s)\). This requires \(s\) to be the
+part of its primitive conductor outside \(m\), so there is at most
+one exception. Use the trivial correlation bound one for that
+exception. The original progression has weight at least
+\(V\exp(-O(1+\log m))\); consequently deleting \(O(V^\nu)\)
+candidates, for any fixed \(\nu<1\), deletes a vanishing fraction
+of its weight.
+
+This gives a high-moment selection, rather than only a second moment.
+Before selecting the primes, supply at most \(U^{C_0}\) sequences
+\(b_i(p)\), with \(|b_i(p)|\ll\log p\) for \(p\le2U^L\),
+where \(C_0,L\) are fixed. Delete \(2\) and the primes dividing
+\(m\); their total absolute contribution is \(O(1+\log m)=O(z)\)
+throughout the windows. Quadratic reciprocity expresses the remaining
+sign \(\chi_l(p)\) as \((l/p)\) times a fixed sign. Expand the \(2h\)-th
+moment of the real sum up to \(t\), and use real and imaginary parts
+for complex sequences. The terms in which every prime appears an
+even number of times cost at most
+\((2h-1)!!(\sum |b_i(p)|^2)^h\). The terms with odd squarefree product
+other than \(s_*\) cost \(O(e^{-c'(\log U)^2}(\sum|b_i(p)|)^{2h})\).
+For product \(s_*\), remove one occurrence of each of its \(r\) prime
+factors, leaving only even multiplicities. If the term exists,
+\(r\le2h\) is even. Counting pairings bounds their absolute total by
+\[
+ C_h\prod_{p\mid s_*}|b_i(p)|
+       \left(\sum_{p\le t}|b_i(p)|^2\right)^{h-r/2}
+ \le C_h\left(\sum_{p\le t}|b_i(p)|^2\right)^h .
+\]
+Thus the moment is \(O_h((t\log(2t))^h)\), by Chebyshev.
+Markov's inequality and the union bound over the sequences and
+integer cutoffs \(U\le t\le2U^L\), with \(h\) sufficiently large,
+give a vanishing bad fraction for the bound
+\(O(t^{1/2+\epsilon/4})\).  The forced-prime contribution is smaller
+than this bound. First choose \(q\) for the base sequences, then choose
+\(d\) for the doubled sequences \(b_i(p)\), \(b_i(p)\chi_q(p)\).
+This works after the deletion of any \(O(V^\nu)\) candidates at
+each stage.
+
+We use that deletion freedom to select genuine zero-free boxes.
+Jutila's density theorem (\emph{On Linnik's constant},
+Math.\ Scand.\ 41 (1977), 45--62,
+\href{https://www.mscand.dk/article/download/11701/9717}{Theorem 1,
+(1.8)}) bounds the total zero count over primitive characters of
+conductor at most \(H\), \(\Re s\ge1-2\delta\), \(|\Im s|\le T\)
+by \(O((H^2T)^{6\delta})\) for \(0<2\delta\le1/5\), taking its
+fixed auxiliary exponent equal to one. At either selection stage
+the conductors of all indicated dyadic companions are at most
+\(V^{C_1}\) for a fixed \(C_1\); use \(T=V^2\).
+Each primitive companion is ramified at the new candidate prime,
+so distinct candidates have disjoint sets of witnesses to failure.
+For sufficiently small fixed \(\delta\) the number of bad candidates
+is \(O(V^{1/3})\), allowed by the preceding selection.
+There is no growing factor for the number of dyadic characters.
+
+Apply the moment argument to \(\xi(p)\log p\) for the fixed base
+family, with \(L>J\) so large that
+\(L\delta/2>J+\epsilon/5+3\).
+The higher prime powers contribute \(O(\sqrt t)\), by Chebyshev,
+so the actual primitive companion satisfies
+\[
+ P_\chi(t):=\sum_{n\le t}\Lambda(n)\chi(n)
+      =O(t^{1/2+\epsilon/4})\quad(U\le t\le2U^L).
+\]
+The coefficients at new ramified primes are exactly zero, as
+required. Let \(X=U^L\), and choose a smooth cutoff \(w\) equal
+to one on \([0,1]\), zero on \([2,\infty)\).
+The selected zero-free box and the standard Hadamard local
+partial-fraction formula give
+\(-L'/L(s,\chi)=O_\delta(\log(C_\chi(3+|t|)))\) in the smaller
+strip \(\Re s\ge1-\delta/2\), \(|t|\le V^2/2\), where
+\(C_\chi\) is the conductor. Shift the Mellin integral for
+\(\sum \Lambda(n)\chi(n)w(n/X)/n\) from \(\Re w=1\) to
+\(-\delta/2\), using the height \(V^2/2\).  The Mellin transform of
+the smooth cutoff has residue one at zero and rapid vertical decay.
+The vertical error is \(O(X^{-\delta/2}(1+\log C_\chi))\);
+horizontal and tail errors are negligible by that rapid decay.
+Since \(\log C_\chi=O(z')\), our choice of \(L\) gives
+\[
+ -L'/L(1,\chi)=\sum_n\frac{\Lambda(n)\chi(n)}n w(n/X)
+                  +O(U^{-J-1}).
+\]
+This is the genuine logarithmic derivative, not a fitted
+linear correction.  Substitution gives
+\(G_\chi(y)=-P_\chi(y)-y\sum_{n>y}\Lambda(n)\chi(n)w(n/X)/n
++O(yU^{-J-1})\).
+Partial summation yields \(O(y^{1/2+\epsilon/4})\) on the window.
+Splitting the cutoff sum at \(U\) bounds the derivative by
+\(\log U+O(1)+O(U^{-1/2+\epsilon/4})\) using the elementary
+Mertens sum \(\sum_{n\le U}\Lambda(n)/n=\log U+O(1)\).
+Absorbing constants proves \eqref{eq:unconditional-companion}.
+
+Finally the standard classical Dirichlet zero-free region can be used
+for the entire growing dyadic family. The selected boxes exclude
+the possible real exceptional zero of each companion (shrink the
+region constant to fit inside the selected width at height zero).
+The untwisted real characters form a fixed finite family, since the
+dual of the real dyadic tower has just two characters of order
+dividing two. Their possible exceptional zeros are removed by
+shrinking the fixed region constant once more. The principal pole
+is allowed. Thus, with a fixed \(c>0\), the region has width
+\(c/\log(C_\chi(3+|t|))\).
+In the smoothed Perron formula for the corrected ramp at \(v\),
+truncate the initial line \(1+1/\log v\) at
+\(T=e^{\sqrt{\log v}}\) and move to
+\(1-\min(1/8,c/(4\log(C_\chi(T+4))))\).
+All nearby zeros are separated horizontally by the region, giving
+a local partial-fraction bound \(O((1+\log(C_\chi(T+4)))^2)\).
+The residue at one cancels the genuine correction, including the
+double pole of the principal character. The initial tails are
+\(O(v(1+\log v)/T)\), the horizontal edges have the quadratic
+Perron denominator of size \(T^2\), and the remaining vertical
+integral is bounded by its value of \(v^{\Re s}\) times a fixed
+power of the logarithmic parameters. Consequently
+\[
+ \frac{|G_\chi(v)|}{v}\ll
+ (1+\log C_\chi+\log v)^B
+ \exp\left(-c'\frac{\log v}
+                  {1+\log C_\chi+\sqrt{\log v}}\right)
+\]
+for fixed constants \(B,c'>0\).
+Here the actual size bound is
+\(\log C_\chi=O(x^{\epsilon/5}(\log(2x))^2)\),
+uniformly for \(U\le x\le U^J\).
+At \(\log v\ge x^{\epsilon/3}-\log3\), the exponent dominates
+a fixed positive multiple of
+\(\min(x^{2\epsilon/15}/(\log(2x))^2,x^{\epsilon/6})\),
+which in turn dominates \(x^{\epsilon/8}\). This domination
+also absorbs the prefactor uniformly along the entire tail:
+until \(\log v\) reaches \(x^{2\epsilon/5}(\log(2x))^4\)
+its logarithm is \(O(\log x)\), and beyond that the exponent
+is bounded below by a constant times \(\sqrt{\log v}\).
+This proves \eqref{eq:unconditional-thin}.
+\end{proof}
+
+\begin{remark}
+The numerical estimates above remove the QRH premise of the
+auxiliary analytic comparison on these actual scale windows.
+They do not automatically supply a stronger all-height
+zero-free condition used by a different source interface.
+The geometric and full integral Selmer budgets remain separate.
+The fixed-field Hecke version, using the same rational-prime
+correlation argument and Thorner's Hecke zero-density theorem,
+is proved in the repository's
+\href{https://github.com/JoseBrox/GRH_distillation/blob/main/notes/unconditional-quadratic-selection.md}
+{unconditional-selection note}.
+\end{remark}
