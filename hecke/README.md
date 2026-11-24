@@ -70,6 +70,22 @@ Global label-sensitive maps, their quantitative degree/divisibility
 and norm bounds, and the remaining odd-prime Selmer estimates
 are not yet supplied.
 
+A second, independent global arithmetic route now constructs
+[integer-valued polynomial lattices](notes/global-interpolation-lattices.md)
+whose relative index is exactly the integrated prime-ideal count.
+The [derivative refinement](notes/global-derivative-lattices.md)
+replaces pairwise divided differences by linear-size value and
+derivative matrices, with critical-scale error and stable
+archimedean metrics. The remaining relative saturated-covolume
+lower bound would settle Dedekind RH without CM geometry or
+Selmer theory, but is open. The
+[one-sign polynomial companions](notes/polynomial-one-sign-companion.md)
+remove the QRH input from a replacement cubic analytic block;
+[high-dyadic 3-primary vanishing](notes/cubic-three-primary-vanishing.md)
+deletes the cubic sectors with 2^b >= 192f and b >= 8, where
+f is the actual odd conductor. The other odd-prime estimates
+and original global label-sensitive maps remain open.
+
 The [progress inventory](blueprint/progress.md) has 6/9 written
 reductions or cited inputs; the former open node H07 was split
 into the two tasks above. This is not a proof-completion percentage.
