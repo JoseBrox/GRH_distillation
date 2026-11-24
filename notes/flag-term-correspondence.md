@@ -8,7 +8,7 @@ The graph in the definite quotient is obtained by matching the primitive flag su
 
 For paired terms the actual congruence on Lambda intersect X-perp yields the original embedded triple (not an arbitrary mod-g isometry). Its fibre is bounded by the product of the two original datBd expressions, using the preceding fixed-normal-form weighted lattice sum. No extra automorphism-group factor occurs.
 
-The final theorem is deliberately stated **conditional on the exact rational adapted-normal-form incidence (NFExC, LabC) and the original row-label congruence**. The relevant-term proof in the source runs through NFFull and a signed-block cell argument; it is not enough to assume just zero Gram determinant. These two remaining source interfaces must be reconstructed before claiming full PerRowC. The row admission proof itself is included (fixed-congruence local coefficients, integral upper-unitriangular change, then localization). The zero-Gram parameter sum, generic-return and finite-column estimates are not claimed.
+The [rational adapted-normal-form theorem](flag-adapted-normal-form.md) now supplies NFExC and LabC, using relevance as well as the zero-Gram condition. The final theorem therefore requires only the original row-label congruence as its remaining source interface before full PerRowC. The row admission proof itself is included (fixed-congruence local coefficients, integral upper-unitriangular change, then localization). The zero-Gram parameter sum, generic-return and finite-column estimates are not claimed.
 
 ## Source audit
 

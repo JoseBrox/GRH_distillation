@@ -1,0 +1,278 @@
+\subsection{Rational adapted normal forms and the original labels}
+\label{sec:flag-adapted-normal-form}
+
+Let \(E\) be the original CM host, with conjugation denoted
+by a bar. Use a nondegenerate hermitian form \(B\) linear
+in its first variable. Write the two rational flag bases as
+\(e_0,\ldots,e_{r-1},z=e_r\) and
+\(f_0,\ldots,f_{r-1},z'=f_r\).
+Let \(X_i,Y_i\) be the spans of the first \(i\) isotropic
+vectors, \(X=X_r,Y=Y_r\), and \(I=X\cap Y\).
+The last vectors are perpendicular to their respective
+isotropic spaces and have the same norm \(-T\), \(T>0\).
+The original positivity hypothesis says, at each complex
+embedding, that a vector perpendicular to \(X,z\) and not
+in \(X\) has positive norm, and similarly for \(Y,z'\).
+In particular an isotropic vector perpendicular to \(X,z\)
+belongs to \(X\).
+
+An adapted change replaces each vector by itself plus a
+combination of the preceding isotropic vectors (including
+the change of \(z\) by a vector in \(X\)).
+For a skew-hermitian endomorphism \(A\), the flag Lie
+condition is \(Ae_i\in X_i\) for \(i<r\) and
+\(A(X^\perp)\subset X\). Its simple coefficients are the
+coefficients of \(e_i\) in \(Ae_{i+1}\), modulo \(X_i\),
+for \(0\le i<r\). Relevance means that the traces to the
+totally real subfield of the sums of these coefficients
+for the two flags agree whenever both Lie conditions hold.
+These conditions and coefficients are unchanged by adapted
+changes: the flags are unchanged, and conjugation by an
+upper unitriangular matrix on the span of the flag vectors
+preserves the first superdiagonal of a strictly upper
+triangular matrix.
+
+Write \(D_l=\det(B(e_a,f_b))_{0\le a,b<l}\), with \(D_0=1\).
+The zero-Gram condition in the source is
+\[
+ D_{r+1}\overline{D_{r+1}}-T^2D_r\overline{D_r}=0.
+\]
+Both this condition and every leading minor are invariant
+under adapted changes, since the leading matrices are
+multiplied by unitriangular matrices.
+
+\begin{lemma}[The common tail]
+\label{lem:rational-flag-common-tail}
+Under the stated positivity, relevance and zero-Gram
+conditions, put \(j=r-\dim_E I\). Then \(D_j\ne0\);
+there are adapted bases with
+\(f_b=c e_b\) for every \(j\le b\le r\), where
+\(c\overline c=1\). The joint span has radical \(I\).
+\end{lemma}
+
+\begin{proof}
+Neither last vector belongs to \(X+Y\). Indeed, writing
+\(z=x+y\) would give \(B(y,x)=0\) since \(z\perp X\);
+then \(B(z,z)=0\), a contradiction. Interchange the
+flags for the other assertion.
+
+Suppose first that \(I\ne0\). For a nonzero \(u\in I\)
+write
+\[
+ u\equiv a e_i\pmod{X_i},\qquad
+ u\equiv a'f_{i'}\pmod{Y_{i'}},\qquad aa'\ne0.
+\]
+For any \(v\perp X_{i+1}+Y_{i'+1}\), the endomorphism
+\[
+ A_v(w)=B(w,v)u-B(w,u)v
+\]
+is skew-hermitian and satisfies both flag Lie conditions.
+On the first flag its only possibly nonzero simple
+coefficient is \(a B(e_{i+1},v)\); on the second it is
+\(a'B(f_{i'+1},v)\). Apply relevance also with every
+scalar multiple of \(v\). Nondegeneracy of the trace
+pairing of \(E\) over its real subfield and then
+nondegeneracy of \(B\) give
+\[
+ a e_{i+1}-a'f_{i'+1}\in X_{i+1}+Y_{i'+1}.
+\]
+If both successors are isotropic, separating the two
+prefix terms gives a common vector with successor levels
+and the same leading coefficients \(a,a'\). If just one
+successor is the last vector, that vector belongs to
+\(X+Y\), which is impossible. Iterating proves
+\(i=i'\) and \(z'-c z\in X+Y\) with \(c=a/a'\).
+This ratio is unique because \(z\notin X+Y\).
+
+Let \(j_0\) be the minimum leading index of a nonzero
+vector of \(I\). Successor propagation supplies common
+vectors at every level \(j_0,\ldots,r-1\), and no vector
+of \(I\) has lower level in either flag. The successive
+one-dimensional graded quotients show that
+\(\dim I=r-j_0\), so \(j_0=j\), and
+\(X=X_j\oplus I,\ Y=Y_j\oplus I\).
+Choose the common vectors with first leading coefficient
+one and second leading coefficient \(1/c\), and replace
+the tail by them and their \(c\)-multiples, respectively.
+Write \(z'-c z=x+y\) with \(x\in X,y\in Y\). Replace
+\(z,z'\) by \(z+c^{-1}x,z'-y\); they now differ by the
+factor \(c\). Their norms did not change, hence
+\(c\overline c=1\).
+A vector of \(X_j\) perpendicular to \(Y_j\) is
+perpendicular to all of \(Y\) and the adapted \(z'\).
+By positivity it lies in \(I\), hence is zero.
+Thus \(D_j\ne0\).
+
+If \(I=0\), put \(j=r\). If \(D_r=0\), the zero-Gram
+identity forces \(D_{r+1}=0\). There is then a nonzero
+vector \(y'\in Y+Ez'\) perpendicular to \(X,z\).
+It cannot lie in \(Y\), since it would be isotropic
+and belong to \(I\). On the other hand \(D_r=0\)
+supplies a nonzero \(x\in X\) perpendicular to \(Y\).
+One has \(B(x,z')\ne0\) by positivity for the second
+flag and \(I=0\). The nonzero coefficient of \(z'\)
+in \(y'\) contradicts \(B(x,y')=0\).
+Consequently \(D_r\ne0\) (also for \(r=0\)).
+The space \(X+Y\) is nondegenerate; adapt the last
+vectors by subtracting their projections onto it.
+These projections lie respectively in \(X,Y\).
+The new last vectors lie in its orthogonal complement.
+Expanding the last row and column of the cross
+determinant gives
+\(B(z,z')\overline{B(z,z')}=T^2\).
+Write \(z'=cz+w\), \(w\perp z\), in that complement.
+The equality forces \(c\overline c=1\) and \(B(w,w)=0\).
+Since \(w\perp X,z\) and \(I=0\) with
+\(X\cap(X+Y)^\perp=0\), positivity gives \(w=0\).
+
+In both cases the adapted joint span is the orthogonal
+sum of \(X_j+Y_j\), \(Ez\) and \(I\); the first two
+summands are nondegenerate and the third is radical.
+Its dimension is \(r+j+1\). For any vector perpendicular
+to \(X,z\), its projection onto \(X_j+Y_j\) lies in
+\(X_j\); subtracting it gives a vector perpendicular
+to the joint span. The symmetric assertion holds for
+\(Y,z'\). These also give the remaining joint-span
+orthogonality properties of the rational normal form.
+\end{proof}
+
+\begin{lemma}[The signed block matrix]
+\label{lem:rational-flag-signed-block}
+The two leading bases of length \(j\) can be further
+adapted so that their cross matrix is a block diagonal
+matrix of nonzero constant anti-diagonals, multiplied
+in column \(b\) by \((-1)^{r-b}\).
+\end{lemma}
+\begin{proof}
+Use the common-tail bases just constructed and let
+\(Z=(\overline{B(e_a,f_b)})_{a,b<j}\); this conjugation
+is the source cross-matrix convention. For strictly
+upper triangular \(j\)-by-\(j\) matrices \(A,A'\)
+satisfying
+\[
+ A^*Z+ZA'=0,\qquad A^*=\overline A^{\,t},
+\]
+act by \(A,A'\) on \(X_j,Y_j\) in their respective
+bases, and by zero on \((X_j+Y_j)^\perp\).
+The identity is exactly the skew-hermitian condition
+on cross terms. This operator satisfies both flag
+Lie conditions: for instance the projection of
+\(X^\perp\) onto \(X_j+Y_j\) lies in \(X_j\).
+The other simple coefficients, including those at
+the common tail, are zero. If \(s(A)\) denotes the
+sum of the first superdiagonal entries, relevance
+therefore gives equality of the traces of
+\(s(A)\) and \(s(A')\).
+The same holds for \(dA,\overline d A'\) for every
+\(d\in E\), so the trace pairing gives
+\(s(A)=\overline{s(A')}\).
+
+By elimination write \(Z=LPU\), with \(L,U\) lower
+and upper unitriangular, and \(P\) monomial:
+\(P_{\sigma(b),b}=t_b\ne0\) for a permutation
+\(\sigma\). Explicitly, in the first column choose
+the first nonzero entry, eliminate below it by lower
+row operations and to its right by upper column
+operations, then repeat on the remaining ordered
+rows and columns. Invertibility ensures a pivot at
+every step; the earlier cleared pivot rows and columns
+are preserved. The identity just proved passes to \(P\):
+conjugate \(A\) by \(L^*\) and \(A'\) by \(U\) to
+transport the equation, noting that unitriangular
+conjugation preserves \(s\).
+
+If \(c_0<b\) and \(\sigma(c_0)=\sigma(b)+1\), use
+\(A=E_{\sigma(b),\sigma(c_0)}\) and
+\(A'=-(t_b/t_{c_0})E_{c_0,b}\), where \(E_{a,b}\)
+is the matrix unit. They satisfy \(A^*P+PA'=0\).
+The equality \(1=\overline{s(A')}\) forces
+\(b=c_0+1\) and \(t_b=-t_{c_0}\).
+Thus every descent of the inverse permutation
+\(\sigma^{-1}\) is by one. Its maximal descending
+runs are disjoint consecutive intervals; successive
+runs must have increasing intervals because their
+boundary is an ascent. Hence the permutation
+reverses consecutive blocks, with no other
+permutation of the blocks. Within each block the
+\(t_b\) alternate signs, so
+\((-1)^{r-b}t_b\) is constant there.
+Finally change the leading bases by the upper
+unitriangular matrices
+\((\overline L^{-1})^t,U^{-1}\), respectively.
+The cross matrix in the convention of \(B\) is now
+\(\overline P\), with the stated column signs.
+The common vectors and last vectors are untouched.
+The empty leading matrix is allowed.
+\end{proof}
+
+\begin{theorem}[Actual adapted normal-form incidence and labels]
+\label{thm:flag-original-nf-labels}
+For every term of the original relevant zero-Gram
+set the rational adapted normal form exists with
+the original \(j,T,\mathfrak d\), and every adapted
+normal form has the original label, \(\Delta\) and
+\(D_b\). These are the original assertions
+\texttt{NFExC} and \texttt{LabC}.
+\end{theorem}
+\begin{proof}
+The actual relevant-set and representative
+conditions supply relevance of the rational flags,
+the zero-Gram equality, \(T=T_u>0\), and the positivity
+at every embedding. The rational flags are the
+ones attached to the original term, not representatives
+of a different double coset. The preceding two
+lemmas give adapted bases, the common scalar of
+norm one and the required signed block matrix.
+The host conditions supply the original nonzero,
+conjugation-stable ideal \(\mathfrak d\).
+
+To complete the normal form, in the nondegenerate
+orthogonal complement of \(X_j+Y_j+Ez\), choose
+vectors \(d_b\), \(j\le b<r\), satisfying
+\(B(e_a,d_b)=\delta_{ab}\) for the common tail.
+Existence follows by nondegeneracy and independence.
+Replace each \(d_b\) by
+\[
+ d_b-\tfrac12\sum_{a=j}^{r-1} B(d_b,d_a)e_a.
+\]
+Their mutual pairings become zero, while the prescribed
+pairings with the tail are unchanged. They are
+perpendicular to both leading bases and the last
+vector. This is exactly the auxiliary rational dual
+family of the original normal form (take zero in
+the unused indices). No integral splitting or extension
+of the host field is required in this construction.
+
+For an arbitrary adapted normal form the isotropic
+spaces and leading minors are unchanged. Its
+nondegenerate leading matrix and common tail give
+\(j=r-\dim I\), the original \(j_T\).
+The norm of the last vector gives \(T=T_u\).
+For \(0\le l\le j\), the original label is
+\(\overline{D_l}\), because the original cross
+matrix is conjugate to the one used for \(B\).
+The normal-form normalized minor is
+\[
+ n_l=|N_{E/\mathbb Q}(D_l)|\,
+       N(\mathfrak d)^{-2\sum_{a=0}^{l-1}(r-a)} .
+\]
+The original \(\operatorname{frameExp}(r,l)\) is the
+displayed sum, and \(\operatorname{Nloc}\) is the
+absolute norm of the principal fractional ideal
+times \(\mathfrak d^{-2\operatorname{frameExp}(r,l)}\).
+Conjugation preserves the field norm. Thus \(n_l\)
+is exactly \(\operatorname{Nloc}\) of the original
+label, and is nonzero exactly when that label is
+nonzero. In particular \(n_j=\Delta\); the product
+over the nonzero labels for \(1\le l\le j\) is
+exactly \(D_b\), with no factor at \(l=0\).
+Both truncated label functions are zero above \(j\);
+below or at \(j\) they are conjugates of each other.
+This proves every required label equality, including
+when \(j=0\).
+\end{proof}
+
+The rational incidence and its labels are now
+available in the weighted fixed-row comparison.
+They do not themselves imply the original congruence
+between the two row representatives.
