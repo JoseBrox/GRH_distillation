@@ -58,6 +58,19 @@ realize the local Frobenius labels without a non-CM endomorphism field.
 The global label-sensitive maps, quantitative divisor/norm bounds and
 new odd-prime Selmer estimates remain open.
 
+A new independent global construction uses
+[integer-valued polynomial lattices](hecke/notes/global-interpolation-lattices.md).
+Their relative index records the integrated prime-ideal count exactly.
+[Ordinary derivative evaluations](hecke/notes/global-derivative-lattices.md)
+retain that index up to the critical-scale error and reduce the
+construction to linear-size, uniformly conditioned matrices.
+The decisive relative covolume lower bound is still open.
+For the CM route the
+[one-sign polynomial auxiliary selection](hecke/notes/polynomial-one-sign-companion.md)
+uses classical density and large sieve without Dirichlet QRH;
+[high-dyadic 3-primary sectors](hecke/notes/cubic-three-primary-vanishing.md)
+vanish at the stated conductor threshold.
+
 The [proof map](hecke/blueprint/proof.svg),
 [checkpoint](hecke/notes/current-state.md) and
 [open frontier](hecke/notes/open-frontier.md) distinguish the proved
