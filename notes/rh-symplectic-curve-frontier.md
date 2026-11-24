@@ -16,4 +16,6 @@ For the characteristic-zero block endpoints the two determinant magnitudes are e
 
 By the integral comparison theorem these suffice for the remaining RH Case II bound. The source's route to the first two is the actual rank-four mixed seed and promodularity tower. Rank-two/rank-three propagation alone, generic local smoothness, and number-field analogies of function-field deformation results do not establish these targets.
 
+The accompanying exact combinatorial check in `scripts/check-rh-sp4-support.py` enumerates all 4096 off-diagonal patterns. After transitivity, reflection symmetry and exclusion of cross-block two-element components, 41 remain: 37 diagonal-type, three two-block and one full. The two allowed labelled permutations and an explicit strictly positive antisymmetric functional on every diagonal-type support are also checked. This finite calculation does not prove the arithmetic exclusion of cross-block pairs (proved separately in the manuscript), finiteness, or automorphy.
+
 No TeX or Lean build or independent referee review is claimed.
