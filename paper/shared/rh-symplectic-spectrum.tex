@@ -1,0 +1,413 @@
+\subsection{A fixed-field Frobenius bound for the remaining RH points}
+\label{sec:rh-symplectic-spectrum}
+
+The rank-four argument does not need the full source
+\texttt{NumberSp4Alt} (with an integer simultaneously valid for
+all admitted representations and all coefficient primes). The
+original integral length comparison only needs a polynomial
+bound for the sum of valuations at the actual coefficient prime,
+on the actual family of irreducible points. We prove that
+bound using a fixed finite collection of quadratic fields.
+In particular the \texttt{WitA} witness is not needed for this
+quantitative step.
+
+\begin{theorem}[The actual rank-four trace estimate]
+\label{thm:rh-symplectic-spectrum}
+Retain the RH Case II datum of
+Theorem~\ref{thm:rh-symplectic-arithmetic-data}, with coefficient
+prime \(\ell\), host conductor \(N\), twist \(e\ge2\) and
+auxiliary dyadic conductor \(2^n\). Set
+\[
+ M=\ell N2^n,\qquad k=(\ell-1)2^n.
+\]
+There is a choice of an imaginary quadratic field \(K\) from
+the fixed list
+\[
+ \mathcal K=\{\mathbb Q(\sqrt{-7}),\mathbb Q(\sqrt{-11}),
+             \mathbb Q(\sqrt{-19}),\mathbb Q(\sqrt{-43})\}
+\]
+and of a rational prime \(7\le p\le47\), split in \(K\), with
+\(p\nmid M\). The field has a ramified prime outside the
+ramification set of the actual rank-four datum, including \(\ell\).
+
+Use one fixed coefficient isomorphism
+\(\iota:\overline{\mathbb Q}_\ell\simeq\mathbb C\).
+The only automorphy premise in this theorem is that each
+irreducible actual point \(r\) under consideration has
+\(r|_{G_K}\) attached, in the usual geometric algebraic
+normalization, to a regular algebraic cuspidal representation
+of \(\mathrm{GL}_4(\mathbb A_K)\). The source's
+\texttt{IsAut4Alt} implies this premise. No separate
+local compatibility witness is required.
+
+Let \(\sigma\) be arithmetic Frobenius at the chosen \(p\).
+For every finite family \(X\) of pairwise nonisomorphic
+irreducible actual points satisfying that premise,
+\[
+ \begin{split}
+  \operatorname{tr}r(\sigma)&\ne\operatorname{tr}r_0(\sigma)
+                        &&(r\in X),\\
+  (\log\ell)\sum_{r\in X}v_\ell\bigl(
+        \operatorname{tr}r(\sigma)-\operatorname{tr}r_0(\sigma)\bigr)
+       &\le C M^{130} k(e+4)^{13}\log p
+        \le (\ell N(e+1))^{C'} .                         \tag{FS4}
+ \end{split}
+\]
+Here \(v_\ell(\ell)=1\), and \(C,C'\) are absolute constants.
+The choice of \(\sigma\) and the bound are independent of \(X\).
+The same fixed-field automorphy premise suffices for
+Theorem~\ref{thm:rh-symplectic-rigidity}.
+\end{theorem}
+
+\begin{proof}
+\emph{A bounded choice of field and prime.}
+The only odd primes dividing \(M\) belong to \(\{\ell,q,d\}\).
+The four negative fundamental discriminants in \(\mathcal K\)
+have distinct odd prime absolute values, so at least one of
+them is prime to \(M\). The reduced primitive positive definite
+forms of each of these discriminants consist of just one form:
+\((1,1,2),(1,1,3),(1,1,5),(1,1,11)\), respectively. This is
+checked by the reduction inequalities
+\(|b|\le a\le c,\ 3a^2\le |\Delta_K|\), with the usual
+nonnegative boundary convention. Thus each field has class
+number one and unit group \(\{1,-1\}\).
+The following four split primes in each field suffice:
+\[
+ \begin{array}{c|rrrr}
+ \Delta_K&\multicolumn{4}{c}{\text{split primes}}\\ \hline
+ -7&11&23&29&37\\
+ -11&23&31&37&47\\
+ -19&7&11&17&23\\
+ -43&11&13&17&23 .
+ \end{array}
+\]
+Their splitting follows from the quadratic residue symbol.
+At most three of a row's primes divide \(M\).
+Choose a remaining \(p\) and a place \(w\mid p\) in \(K\);
+then \(K_w=\mathbb Q_p\).
+
+Lemma~\ref{lem:rh-symplectic-cyclotomic-irreducibility} proves
+absolute irreducibility on \(G_{K(\mu_{\ell^\infty})}\).
+In particular all restrictions \(r|_{G_K}\) used here are
+irreducible. The restriction map on their isomorphism classes
+is injective: if two restrictions are isomorphic, their
+one-dimensional intertwiner space is stable under \(G_{\mathbb Q}\),
+with action factoring through \(\operatorname{Gal}(K/\mathbb Q)\).
+Consequently the original representations differ by the trivial
+or the nontrivial quadratic twist from this group. The latter
+is impossible since both representations are unramified at
+\(|\Delta_K|\), whereas that twist is ramified there. This
+argument uses the actual ramification set, not a bound for
+the degree of an auxiliary automorphy field.
+
+\emph{A bounded algebraic character to remove the polarization twist.}
+The similitude of \(r\) is
+\(\tau=\varepsilon^{e+1}\delta\), where
+\(\delta=\psi\xi\omega_T^{-1}\) has conductor dividing \(M\) and
+\(\delta(-1)=(-1)^e\). Work with its complex character under
+\(\iota\). The embedding
+\((\mathbb Z/M\mathbb Z)^\times\hookrightarrow
+(\mathcal O_K/M\mathcal O_K)^\times\) is injective.
+A character on a subgroup of a finite abelian group extends
+to the group (successively extend along cyclic quotients
+using roots of unity). Choose an extension \(\vartheta\)
+of \(\delta\) to this larger group. Its values have order
+dividing the order of that group, which is at most \(M^2\).
+Use a fixed embedding of \(K\) into \(\mathbb C\).
+For a fractional ideal \(\mathfrak a=(a)\) prime to \(M\)
+define the ideal character
+\[
+                 \nu(\mathfrak a)=a^{e+4}\vartheta(a\bmod M).
+                                                               \tag{FS5}
+\]
+Here \(a\) is a unit at every prime dividing \(M\); reduction
+is defined after clearing a denominator prime to \(M\).
+This is independent of its generator because the only
+units are \(\pm1\) and
+\(\vartheta(-1)=(-1)^{e+4}\).
+It is multiplicative and is the character on ideals of an
+algebraic Hecke character of conductor dividing \(M\mathcal O_K\):
+on a principal generator congruent to one modulo this ideal
+it is exactly \(a^{e+4}\).
+This also describes its infinity type. Its \(\ell\)-adic
+realization \(\kappa\) is normalized by
+\[
+                 \iota\kappa(\operatorname{Frob}_v^{-1})
+                        =\nu(v)\qquad(v\nmid \ell M).
+\]
+For the \(\ell\)-adic realization of an algebraic Hecke
+character we use global reciprocity with the algebraic factors
+at the embeddings above \(\ell\) removed from the finite
+idele character. In particular its local Weil--Deligne
+inertia at every place is the finite local character of
+\(\nu\) or its inverse according to the reciprocal convention.
+Its conductor divides \(M\mathcal O_K\). At \(\ell\) this
+statement follows by separating the algebraic local factors
+from the finite character: the former are crystalline
+characters at each embedding and do not contribute to
+Weil--Deligne inertia. This is the rank-one local comparison
+used for the algebraic characters in the earlier auxiliary
+tower constructions.
+
+For a prime \(v\nmid \ell M\), the identity
+\(\nu(v)\nu(\bar v)=(Nv)^{e+4}\delta(Nv)\)
+follows directly from (FS5).
+Since \(\varepsilon(\operatorname{Frob}_v^{-1})=(Nv)^{-1}\)
+and \(\iota\delta(\operatorname{Frob}_v^{-1})=\delta(Nv)^{-1}\)
+(with the right side the finite Dirichlet character), Chebotarev
+gives on \(G_K\)
+\[
+                  \kappa\kappa^c=\tau^{-1}\varepsilon^{-3}.
+                                                               \tag{FS6}
+\]
+In particular the point \(r'=r|_{G_K}\otimes\kappa\)
+has conjugate duality \(r'{}^c\simeq r'{}^\vee\varepsilon^{-3}\).
+The arithmetic Frobenius convention in the final trace
+comparison is unchanged.
+
+The assumed automorphic attachment of \(r|_{G_K}\) can be
+twisted by the algebraic Hecke character realizing \(\kappa\).
+This preserves cuspidality and regular algebraicity, since
+at each embedding it shifts all four labeled weights by
+the same integer. Its resulting representation \(\Pi\)
+is conjugate self-dual: (FS6) gives the required local
+contragredient identities at almost all places in the
+geometric normalization \(\operatorname{rec}(\Pi_v
+\otimes|\det|^{(1-4)/2})\).
+Strong multiplicity one gives \(\Pi^\vee\simeq\Pi^c\).
+By Chebotarev the attached semisimple Galois representation
+is exactly \(r'\). This twisting argument uses the
+cuspidal attachment in the premise, not an assumed
+\texttt{WitA} or a new automorphy lifting theorem.
+
+\emph{The conductor and weight of the counting family.}
+The actual local conditions in
+Proposition~\ref{prop:rh-symplectic-local-finite} give
+potential crystallinity at \(\ell\), and its four graded
+inertia characters are those of
+\((\tau,\Psi,\alpha,1)\).
+Their finite parts have conductor dividing \(M\);
+away from \(\ell\) the actual residual inertia kernel
+condition likewise makes the representation factor through
+the finite cyclotomic inertia quotient with modulus \(M\).
+For the latter assertion use the equality of the
+prime-to-\(\ell\) finite character kernels before and
+after reduction. The base cyclotomic powers are
+unramified away from \(\ell\).
+Restriction to \(K\) preserves these conductor bounds:
+local reciprocity and the local norm send
+\(1+M\mathcal O_{K_v}\) into \(1+M\mathbb Z_s\) at a
+place \(v\mid s\).
+Twisting by \(\kappa\) multiplies each finite inertia
+character by another character trivial on
+\(1+M\mathcal O_{K_v}\).
+Its algebraic part at \(\ell\) is potentially crystalline,
+so the monodromy of \(r'\) is zero at all finite places.
+The exact conductor bound for its Weil--Deligne representation
+is therefore
+\[
+                  a_v(r')\le4v(M).
+\]
+Full local--global compatibility for conjugate self-dual
+cohomological cuspidal representations, including the
+monodromy at the coefficient prime, is available by
+Caraiani's Theorem~1.1 in each of the two papers
+\cite{support-spectrum-Caraiani2012,support-spectrum-Caraiani2014}.
+In particular the argument does not require the
+Shin-regular weight condition; the weights at \(e=2\)
+need not be Shin-regular.
+The conductor exponent of \(\Pi_v\) obeys the same bound.
+By the local new-vector theorem and its correction
+\cite{support-spectrum-newvector}, \(\Pi\) has a nonzero
+fixed vector under the principal congruence subgroup
+\[
+ K_4(M^4)=\ker\bigl(\mathrm{GL}_4(\widehat{\mathcal O}_K)
+         \longrightarrow\mathrm{GL}_4(\mathcal O_K/M^4)\bigr).
+                                                               \tag{FS7}
+\]
+This includes the place above the coefficient prime; using
+only semisimplified local compatibility there would not
+justify (FS7).
+
+The labeled Hodge--Tate multisets of \(r|_{G_K}\) are the
+four distinct integers \(-(e+1),-e,-1,0\) at both embeddings,
+using the convention \(\operatorname{HT}(\varepsilon)=-1\).
+The labeled weights of \(r'\) are obtained by adding the
+rank-one weight of \(\kappa\), with the two shifts \(e+4\)
+and zero. Equivalently their multisets, up to interchanging
+the embeddings, are
+\[
+           \{e+4,e+3,4,3\},\qquad \{0,-1,-e,-e-1\}.
+                                                               \tag{FS8}
+\]
+Thus they lie in \([-e-4,e+4]\), and all pairwise
+differences within either embedding are at most \(e+1\).
+The relation between the Hodge--Tate labels and the
+cohomological highest weights is the one in
+BLGGT Theorem~2.1.1(3) \cite{support-spectrum-BLGGT}.
+In particular the two possible highest weight types
+are determined by (FS8) and permutation of embeddings.
+Their coefficient representation has dimension at
+most \((e+4)^{12}\) by the Weyl dimension formula
+(six positive roots at each embedding). Its action on
+the positive split real center is trivial, by conjugate
+self-duality: the sums of the two highest weight types
+cancel. This permits the standard locally symmetric
+space with its real split center divided out.
+
+Let \(\mathcal A\) be the entire finite indexed family of
+conjugate self-dual regular algebraic cuspidal representations
+of \(\mathrm{GL}_4/K\) of either indicated weight type with
+a fixed vector under (FS7). The cardinality counts
+representations, not just their individual trace values.
+Fix a neat finite level \(U_0\) once for each of the four
+fields, and set \(U=U_0\cap K_4(M^4)\).
+The Borel--Serre cell complex for the fixed level lifts
+to that at \(U\) with covering degree at most
+\[
+        [U_0:U]\le |\mathrm{GL}_4(\mathcal O_K/M^4)|
+                                      \le M^{128}.
+\]
+The sum of the cellular cochain dimensions is at most
+this degree times the fixed number of cells times the
+dimension of the coefficient representation.
+Cuspidal cohomology injects into ordinary cohomology,
+and every member of \(\mathcal A\) contributes a nonzero
+summand, distinguished by its Hecke eigensystem.
+Using the Borel--Serre and Clozel results already applied
+in Theorem~\ref{thm:support-spectrum}, we obtain
+\[
+                     |\mathcal A|\le C_K M^{128}(e+4)^{12}.
+                                                               \tag{FS9}
+\]
+Taking the maximum over the four fields makes \(C_K\)
+absolute. Clozel's rationality and Galois conjugation
+theorem preserves the cohomological level and permutes
+the labeled weights; it acts on the Hecke eigenvalues
+in their algebraic normalization. Therefore the family
+of attached geometric Frobenius multisets at \(w\),
+indexed by \(\mathcal A\), is algebraic and
+Galois-stable, with multiplicities. The injectivity of
+restriction proved above and the invertibility of
+the single twist \(\kappa\) ensure that distinct original
+points give distinct indices in this family.
+
+\emph{A nonzero integer controlling all actual trace differences.}
+For \(\Pi\in\mathcal A\) let
+\(\lambda_{\Pi,1},\ldots,\lambda_{\Pi,4}\) be the
+geometrically normalized Frobenius eigenvalues at \(w\).
+They all have absolute value \(p^{3/2}\) under every
+complex embedding, by the conjugate self-dual temperedness
+theorem (Caraiani 2012, Theorem~1.2) and the geometric
+normalization. The companion Galois representations
+at every rational coefficient prime supplied by
+BLGGT Theorem~2.1.1 show that these eigenvalues and
+their inverses are integral away from \(p\):
+each is an eigenvalue of an invertible matrix in a
+stable integral lattice at a good prime.
+At \(p\), the companion representation is crystalline
+since \(\Pi_w\) is unramified, by part~(4) of that
+same theorem. Its Hodge--Tate weights lie in
+\([-e-4,e+4]\) by (FS8). Weak admissibility bounds all
+its Newton slopes in this same interval. To see the
+bound, extend the coefficient field to split Frobenius;
+on a rank-one Frobenius eigenline the induced Hodge
+number is at least the minimum Hodge number, so its
+Newton number is at least that minimum. Apply the same
+argument to the dual for the upper bound.
+Here \(K_w=\mathbb Q_p\), so the bound concerns the
+valuation normalized by \(v_p(p)=1\).
+The same argument applies for every coefficient embedding
+above \(p\); the geometric Frobenius and the crystalline
+Frobenius normalizations can differ by inversion, which
+does not affect this symmetric bound.
+Consequently \(p^{e+4}\lambda_{\Pi,i}^{-1}\) is an
+algebraic integer.
+
+Let \(\mathcal V\) be the Galois orbit of the single
+algebraic integer \(\nu(w)\).
+Every member has modulus \(p^{(e+4)/2}\), and
+\(|\mathcal V|\le2M^2\), by the definition (FS5).
+For \(\Pi\in\mathcal A\) and \(z\in\mathcal V\) set
+\[
+                     t_{\Pi,z}=z\sum_i\lambda_{\Pi,i}^{-1}.
+\]
+These are algebraic, with \(p^{e+4}t_{\Pi,z}\) integral,
+and
+\[
+                       |t_{\Pi,z}|\le4p^{(e+1)/2}.
+                                                               \tag{FS10}
+\]
+For an actual representation the value
+\(\iota\operatorname{tr}r(\sigma)\) is exactly
+\(t_{\Pi,\nu(w)}\), not the geometric trace:
+\(\sigma\) restricts to an arithmetic Frobenius at \(w\)
+because \(p\) splits in \(K\), and the inverse of the
+geometric Frobenius acts with eigenvalues
+\(\lambda_{\Pi,i}^{-1}\). Untwisting multiplies this
+arithmetic trace by \(\nu(w)\).
+
+Let \(\mathcal E\) denote the Galois orbit of the triple
+\[
+       (z_1,z_2,z_3)=
+       (\iota\delta(p),\iota\psi(p),
+                         \iota(\xi\omega_T^{-1})(p)).
+\]
+Here all three are evaluated as Dirichlet character
+values at the integer \(p\). Their orders divide \(k\)
+since \(2^n\ge N\) and the odd host character orders
+divide two. Thus \(|\mathcal E|\le k\).
+For a triple \(z'\in\mathcal E\), put
+\[
+                   T(z')=p^{e+1}z'_1+p^ez'_2+pz'_3+1 .
+\]
+For every such triple, \(|T(z')|\ge
+p^{e+1}-p^e-p-1>(p-2)p^e>4p^{(e+1)/2}\), since
+\(p\ge7\) and \(e\ge2\). This proves nonvanishing
+of every difference with (FS10).
+Form the finite product with its indicated multiplicities,
+\[
+ B=\prod_{\Pi\in\mathcal A}\ \prod_{z\in\mathcal V}\
+      \prod_{z'\in\mathcal E}
+            p^{e+4}\bigl(t_{\Pi,z}-T(z')\bigr).
+                                                               \tag{FS11}
+\]
+The empty product is one.
+It is a nonzero algebraic integer fixed by every
+Galois automorphism of \(\overline{\mathbb Q}/\mathbb Q\),
+hence a nonzero rational integer. The absolute value
+of each factor is at most \(p^{4(e+4)}\), by (FS10) and
+the triangle inequality. By (FS9),
+\[
+        \log|B|\le 8C_K M^{130} k(e+4)^{13}\log p.
+\]
+For any actual family \(X\), the factors associated to
+its distinct indices, the fixed \(z=\nu(w)\), and the
+original triple, are exactly the actual trace differences
+times \(p^{e+4}\). Every other factor has nonnegative
+\(\ell\)-valuation by integrality. Since \(\ell\ne p\),
+the total valuation of these actual trace differences
+is bounded by \(v_\ell(B)\le\log|B|/\log\ell\).
+This proves the first bound in (FS4). The second follows
+from (BU7), \(M\le128 N^2\ell^6\),
+\(k\le128N\ell^6\), and the fixed finite set of primes.
+
+Finally the proof of Theorem~\ref{thm:rh-symplectic-rigidity}
+uses the automorphic attachment only over a field whose
+restriction satisfies (SR2). The present \(K\) has that
+property. The explicit twist (FS6) also gives its
+conjugate self-dual normalization without a
+\texttt{WitA} witness; twisting does not alter the
+adjoint. Thus the same proof of local finite conditions
+and Thorne's theorem proves rigidity under precisely
+the present fixed-field premise.
+\end{proof}
+
+The theorem replaces the quantitative rank-four automorphic
+spectrum supplier for the RH specialization by (FS4). It does
+not prove the existence of the cuspidal attachments in its
+premise, and does not assert the entire simultaneous
+\texttt{NumberSp4Alt} proposition for arbitrary admitted data.
+For the original RH Case II integral comparison it supplies
+the required trace bound once the remaining point arithmetic
+and graded length interfaces are established.

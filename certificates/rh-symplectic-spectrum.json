@@ -1,0 +1,114 @@
+{
+  "classification": "Actual RH rank-four uniform Frobenius trace bound conditional on fixed-field cuspidal attachment. Does not supply the attachment or W04.",
+  "source_repository": "jsmorph/rh",
+  "source_commit": "ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de",
+  "source_interfaces": [
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/CountS.lean",
+      "git_blob_sha1": "fb04113d66fcbe270f6d862d329b4454e265eb5c",
+      "scope": "original arithmetic Frobenius comparison with NumberSp4Alt"
+    },
+    {
+      "path": "lean/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/AutomorphyLifting/IsAutCsdA.lean",
+      "git_blob_sha1": "6922abc68f3988012a84051458a1e3b3594c5f1a",
+      "scope": "original IsAutQA premise includes WitA"
+    }
+  ],
+  "literature": [
+    {
+      "author": "Ana Caraiani",
+      "title": "Monodromy and local-global compatibility for l=p",
+      "url": "https://arxiv.org/pdf/1202.4683",
+      "verified": "Theorem 1.1, first page text and image, without Shin-regularity"
+    },
+    {
+      "author": "Ana Caraiani",
+      "title": "Local-global compatibility and the action of monodromy on nearby cycles",
+      "url": "https://www.ma.imperial.ac.uk/~acaraian/papers/lgc1.pdf",
+      "verified": "Theorems 1.1-1.2, pp. 2312, text and opening page image"
+    },
+    {
+      "author": "Barnet-Lamb, Gee, Geraghty, Taylor",
+      "title": "Potential automorphy and change of weight",
+      "url": "https://arxiv.org/pdf/1010.2561",
+      "verified": "Theorem 2.1.1, printed pp. 33-34 in arXiv version, page images: geometric normalization, purity, labeled weights and crystalline at an unramified place"
+    },
+    {
+      "author": "Jack A. Thorne",
+      "title": "On the vanishing of adjoint Bloch-Kato Selmer groups of irreducible automorphic Galois representations",
+      "url": "https://arxiv.org/pdf/2207.04925",
+      "verified": "Theorem 6.1, p. 24, page image"
+    }
+  ],
+  "exact_computation": {
+    "method": "Python/SymPy; enumerate primitive reduced positive definite forms with a<=sqrt(abs(D)/3), and compute Kronecker symbols at primes >=7",
+    "cases": [
+      [
+        -7,
+        [
+          [
+            1,
+            1,
+            2
+          ]
+        ],
+        [
+          11,
+          23,
+          29,
+          37
+        ]
+      ],
+      [
+        -11,
+        [
+          [
+            1,
+            1,
+            3
+          ]
+        ],
+        [
+          23,
+          31,
+          37,
+          47
+        ]
+      ],
+      [
+        -19,
+        [
+          [
+            1,
+            1,
+            5
+          ]
+        ],
+        [
+          7,
+          11,
+          17,
+          23
+        ]
+      ],
+      [
+        -43,
+        [
+          [
+            1,
+            1,
+            11
+          ]
+        ],
+        [
+          11,
+          13,
+          17,
+          23
+        ]
+      ]
+    ],
+    "actual_execution": "Four class-number-one and four split-prime checks per field passed in the current turn."
+  },
+  "scope": "Conventional proof; no assertion of complete NumberSp4Alt, no actual point automorphy, no uniform Selmer length yet."
+}
