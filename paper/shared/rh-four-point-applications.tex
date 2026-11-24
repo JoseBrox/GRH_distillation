@@ -1,0 +1,504 @@
+\subsection{Applications of the common support to the actual RH points}
+\label{subsec:rh-four-point-applications}
+
+We use the actual RH datum of
+Theorem~\ref{thm:rh-symplectic-arithmetic-data} with $e\geq2$.
+The following argument supplies the three point-arithmetic
+premises of the integral comparison, using the preceding
+reconstruction of the ordinary-family, seed, and component
+suppliers. It only requires a good-prime purity window, not
+the full local statement \texttt{WitA} of the original source.
+
+\begin{lemma}[A nonsplit symplectic extension of a block endpoint]
+\label{lem:rh-four-block-extension}
+Let an original rational \texttt{KPair} have a block-diagonal
+representation $r$ for the blocks $U=\{0,2\}$ and $V=\{1,3\}$.
+Suppose its first block is absolutely irreducible. In either
+coefficient characteristic there exists an original \texttt{KPair}
+with the same characteristic polynomials at every group element
+whose representation satisfies \texttt{BlockExt}, hence
+\texttt{Star}.
+\end{lemma}
+
+\begin{proof}
+Work over a complete DVR $D$ with finite residue field
+$k_D$ of order $q$, uniformizer $\pi$, and the original
+integral representation and flag; a finite enlargement
+is harmless. The \texttt{Small} condition and the common
+coefficient construction above allow this, with all original
+characters realized in the same ring. In particular in
+mixed characteristic the given local embedding of the
+coefficient DVR into the ambient field is compatible with
+the embedding of $\mathbb Z_\ell$: the latter is uniquely
+determined by density of $\mathbb Z$ in its completion
+and continuity of the local embeddings into the rank-one
+valued algebraic extension of the complete fraction field.
+In equal characteristic one uses the unique finite
+constant-field lifts. We write $J_{\rm sp}$ for the
+original alternating form.
+
+The blocks are complementary Lagrangians, and $V$ carries
+the contragredient representation of $U$ twisted by the
+similitude. Thus both blocks are absolutely irreducible.
+In the symplectic Lie algebra let
+\[
+ M=\{Z:Z|_V=0,\quad Z(U)\subset V,\quad
+                Z^\dagger=-Z\}.
+\]
+It is the rank-three free module of symmetric maps
+from $U$ to its paired dual, is stable for
+$\operatorname{Ad}r$, and $ZZ'=0$ for $Z,Z'\in M$.
+The residual characters on this module are
+$\bar\alpha^{-1},\bar\beta,\bar\tau^{-1}$, since its
+independent entries are $10,12,30$ in the original
+ordering. Complex conjugation $c$ acts on $U$ as $-1$
+and on $V$ as $+1$. Indeed its square is one,
+$2$ is invertible, and the unwanted eigensummands
+have zero reduction. Consequently $\operatorname{Ad}r(c)$
+acts on $M$ by $-1$.
+
+The ordinary flag splits integrally along the blocks:
+the unit resultant of the two block characteristic
+polynomials at the original local element $\mathrm{ph}$
+gives the two complementary projectors as polynomials
+in $r(\mathrm{ph})$. These projectors preserve every
+member of the flag. All its successive quotients
+are free, and (BU8) separates the two residual
+blocks at this element. The graded lines thus belong
+to $U,V,U,V$ in that order. Equivalently, after choosing
+bases of each block adapted to the split flag, the
+full flag has the standard interleaved ordering.
+Let $P$ be the submodule of $M$ preserving this
+flag. In the adapted bases the only independent
+permitted entry is $12$; the symmetric-map condition
+sets the other two independent entries to zero.
+Hence $P$ is a rank-one direct summand and $M/P$
+is free of rank two. Both are invariant under the
+local decomposition group.
+
+Write $M_j=M/\pi^jM$ and $P_j=P/\pi^jP$. All
+these are finite $\ell$-primary Galois modules.
+The original local element $s_\ell$ of (BU8) has
+cyclotomic value one and none of the three residual
+characters of $M$ is one there. In particular
+the endomorphism $s_\ell-1$ is invertible on each
+of $M_j$ and $M_j/P_j$. The same is true on their
+Tate duals, since the cyclotomic value is one.
+This proves the necessary local $H^0$ vanishings
+and, by local Tate duality, the local $H^2$
+vanishings at $\ell$. It also proves the global
+$H^0$ vanishing for the Tate dual of $M_j$.
+The global $H^0(M_j)$ is zero by the action of $c$.
+
+At each $p\in S\setminus\{\ell\}$ put
+$N_p=I_p\cap\ker\bar r_0$. By the original killing
+condition (here $\mathrm{Sb}=\varnothing$), $r$ kills
+$N_p$. The local quotient by $N_p$ is an extension
+of the procyclic unramified group by finite
+prime-to-$\ell$ inertia. Its $\ell$-cohomological
+dimension is at most one, and its $H^1$ on $M_j$
+has the same cardinality as $H^0$ (take inertia
+invariants and apply the procyclic calculation).
+Use its inflated $H^1$ as the permitted local
+subgroup. Outside $S$ impose the unramified
+condition. At $\ell$ take the kernel of
+\[
+ H^1(\mathbb Q_\ell,M_j)\longrightarrow
+ H^1(\mathbb Q_\ell,M_j/P_j).
+\]
+The local Euler characteristic formula, with the
+vanishings just checked, gives cardinalities $q^{3j}$
+and $q^{2j}$ respectively. Thus the kernel has
+cardinality at least $q^j$. At the real place the
+cohomology in degree one is zero and the invariants
+are zero, since the action is $-1$ and $\ell$ is odd.
+
+The finite Poitou--Tate Selmer cardinality formula
+now gives at least $q^j$ global classes with these
+local conditions. Indeed the ratio of the Selmer
+group order to the order of the dual Selmer group
+is the global invariant ratio times the product
+of the local ratios (permitted subgroup order
+divided by invariant order). The global ratio
+is one; the local ratios away from $\ell$ and
+at infinity are one; at $\ell$ the ratio is at
+least $q^j$. No characteristic-zero
+automorphy or finiteness of a Selmer lattice has
+been used in this estimate.
+
+Normalize each such cocycle $z_j$ by $z_j(c)=0$.
+There is exactly one representative of the class
+with this normalization because $1-\operatorname{Ad}r(c)=2$
+on $M_j$. The condition at $\ell$ is equivalent
+to the existence of a unique $\bar y_j\in M_j/P_j$
+with
+\[
+ z_j(s)=\operatorname{Ad}r(s)\bar y_j-\bar y_j
+                       \pmod {P_j}\quad(s\in G_{\mathbb Q_\ell}).
+\]
+Uniqueness follows from the local invariant vanishing.
+The inertia conditions away from $\ell$ mean that
+$z_j$ itself kills the prescribed inertia kernels,
+since those kernels act trivially. Therefore the
+set $E_j$ of these normalized pairs is finite,
+has at least $q^j$ elements, and is stable under
+reduction from the higher levels. Call a pair
+primitive if its reduction at level one is nonzero.
+
+There is a primitive pair at every level. To verify
+this carefully, multiplication by $\pi^{m-n}$
+identifies level-$n$ pairs with level-$m$ pairs
+divisible by $\pi^{m-n}$. Divisibility of a pair
+means divisibility both of all the cocycle values
+and of $\bar y$; division respects all the displayed
+equations because the modules $M,M/P$ are free.
+If there were no primitive pair at level $n$, any
+pair at level $m\ge n$ would be divisible by $\pi$.
+Repeatedly divide and reduce to level $n$ until
+all level-$m$ pairs have been identified with
+pairs of level at most $n-1$. This would bound
+$|E_m|$ by $|E_{n-1}|$ for every $m$, contradicting
+$|E_m|\ge q^m$ (put $E_0=\{0\}$). The finite sets
+of primitive pairs at each level now have a
+compatible inverse-limit element: the finite
+intersection property follows by restricting
+one pair from any sufficiently high level.
+This produces a continuous $M$-valued cocycle
+$z$ and $\bar y\in M/P$. They satisfy the integral
+conditions, and $z\ne0$ by the uniqueness of
+the local coboundary parameter. Choose an integral
+lift $y$ of $\bar y$. Multiply $z,y$ by $\pi$,
+so that the residual representation and flag will
+remain unchanged.
+
+Define the new representation and ordinary flag
+matrix by
+\[
+ r'(g)=(1+z(g))r(g),\qquad u'=(1-y)u .
+\]
+Because $M^2=0$ and $M$ is adjoint-stable,
+the cocycle law is precisely the representation
+law for $r'$. The factor $1+z(g)$ is symplectic:
+the quadratic term in its symplectic identity
+vanishes by $M^2=0$, and the linear term by
+$z^\dagger=-z$. The multiplier is unchanged.
+Similarly $1-y$ is symplectic. Conjugating at
+$\ell$ by $1-y$ replaces the extension term by
+$z(s)+y-\operatorname{Ad}r(s)y\in P$; hence the
+original ordered flag is stable and the graded
+characters are unchanged (the action of $P$ on
+its graded lines is zero). The required inertia
+kernels are still killed, and reduction modulo
+$\pi$ leaves the original diagonal and flag
+characters. The new pair is \texttt{Small}, with
+the same complete DVR. All \texttt{KPair} conditions
+are retained.
+
+The extension has the same characteristic
+polynomials, by its block triangular shape.
+If it split by conjugation with a block off-diagonal
+matrix $Y$, then its cocycle would be a coboundary
+$Y-\operatorname{Ad}r(g)Y$ in $\operatorname{Hom}(U,V)$.
+This argument does not require $Y$ to be symplectic.
+At $c$, normalization would give $2Y=0$.
+Thus $Y=0$, which would imply $z=0$.
+This proves nonsplitting and exactly the claimed
+\texttt{BlockExt} condition.
+\end{proof}
+
+\begin{theorem}[RH Case II support for the rational points]
+\label{thm:rh-four-rational-support}
+For every original rational \texttt{KPair} satisfying
+\texttt{Star}, in either coefficient characteristic,
+the actual normalized pair on a fitted deep tower
+lies in the support of the common ordinary Hecke
+image ideal of Theorem~\ref{thm:rh-four-image-ideal}.
+The tower CM field can be chosen unramified at any
+prescribed finite set of rational primes outside the
+ramification set $S$ of the original datum.
+\end{theorem}
+
+\begin{proof}
+Choose the original labeling and initial tower by
+Theorem~\ref{thm:rh-four-lat-shape} and its tame
+tower lemma. All three fresh primes can avoid
+the prescribed finite set. Perform the rational
+lattice normalization, preserving the characteristic
+polynomials and the exact labeled inertia characters.
+
+Apply the deep residual-chain construction of
+Section~\ref{sec:rh-case-II-chain}. Its auxiliary
+primes, chosen by Chebotarev, can also avoid that
+finite set. This fixes the finite starting tower
+$T_1$ and its residual bridge before the numerical
+degree threshold is chosen. Use the uniform
+tower-bound theorem of Section~\ref{subsec:rh-four-uniform-tower-bounds}
+to choose a cyclotomic layer with
+$d\ge30(C+1)^2$. The same $C$ bounds all the
+required cocycle spaces, including those after
+the final coefficient enlargement. Only ramification
+above $\ell$ is added by the cyclotomic layers.
+The deep residual-chain theorem supplies the
+arithmetic seed and the three links on this very
+layer. Transport the actual normalized rational
+pair by Lemma~\ref{lem:rh-four-restr-q}.
+
+The common coefficient realization of
+Section~\ref{subsec:rh-four-common-space} puts the
+characteristic-zero seed, the actual target,
+all residual links and the two ordinary links
+over one coefficient DVR. Its finite-type space
+gives the seed and target maps and the original
+polynomial link maps. Form the common ideal $J$.
+By the seed-local-zero assertion every prime below
+the kernel of the characteristic-zero seed contains
+$J$ on the coefficient ring. In particular the
+residual seed has \texttt{SomeIn}; the component
+propagation theorem gives \texttt{AllIn} there
+and across all three polynomial links. It applies
+in either characteristic and includes the possibly
+nonsplit residue at the actual rational target.
+Thus $J$ vanishes under the target coefficient
+map. The restriction identities and the original
+inertial labels are unchanged. This is the required
+rational-point support conclusion, without asserting
+the full \texttt{PMExAlt.aut} predicate.
+\end{proof}
+
+\begin{theorem}[The point-arithmetic inputs for the RH integral comparison]
+\label{thm:rh-four-point-premises}
+The preceding suppliers imply (F), (E), and (A) in
+Section~\ref{sec:rh-symplectic-length}, for the actual
+remaining RH Case II datum with $e\ge2$. In particular
+the strict good-prime endpoint window suffices; no
+additional assertion of strict windows at ramified
+places or at the coefficient prime is used.
+\end{theorem}
+
+\begin{proof}
+First every point used by the curve and endpoint criteria
+is admitted by the original rational \texttt{KPair}.
+In characteristic zero its flag and exact labels are
+provided by Section~\ref{sec:rh-symplectic-point-rigidity};
+in characteristic $\ell$ use the proper flag scheme
+in the proof of Theorem~\ref{thm:rh-sp4-curve-criterion}.
+The projective flag scheme has a point over a finite
+extension of the fraction field of the curve DVR,
+and the valuative criterion extends it integrally.
+An integral symplectic basis adapted to its isotropic
+flag exists by unimodularity of the symplectic form
+and primitivity of the flag submodules (choose a basis
+of the Lagrangian and its paired dual, correcting
+the latter by a symmetric elementary transformation).
+The graded characters have the prescribed inertial
+values and residual values on the full decomposition
+group: on the marked element $\mathrm{ph}$ this
+is the specified specialization of (SR1), and
+its unramified image generates the prime-to-$\ell$
+part of the unramified quotient. On inertia the
+labels are prescribed. A continuous character to a
+finite residue field has order prime to $\ell$,
+so the unramified prime-to-$\ell$ generator and
+inertia determine its reduction. The small
+coefficient and killing conditions come from the
+actual universal model. Thus the earlier rational
+lattice and support arguments apply to these
+points, and Lemma~\ref{lem:rh-four-block-extension}
+also applies to their block-diagonal endpoints.
+
+\emph{Characteristic-prime exclusion (F).}
+Suppose a forbidden characteristic-prime curve
+of Theorem~\ref{thm:rh-sp4-curve-criterion} existed.
+For an absolutely irreducible rank-four curve
+take its rational representation. For a
+block-diagonal curve with irreducible first
+block replace it by the nonsplit extension of
+Lemma~\ref{lem:rh-four-block-extension}, which
+has exactly the same characteristic polynomials.
+Use Theorem~\ref{thm:rh-four-rational-support}.
+In the target coefficient map on the deep tower,
+every ordinary inertial character is one: the
+point has characteristic $\ell$ and the original
+residual diagonal is trivial on the relative
+inertia by \texttt{Ok.ineL}. The coefficient
+uniformizer is zero as well. The finite-weight
+clause of the common ideal now forces its
+coefficient ring to evaluate through the finite
+residue field, since the image is a domain.
+Consequently the characteristic polynomial of
+every element of $G_F$ equals that of the
+prescribed residual diagonal there. For an
+arbitrary $g\in G_{\mathbb Q}$ take a positive
+power in $G_F$. All its powered eigenvalues
+are algebraic over the finite residue field;
+hence its eigenvalues themselves are algebraic
+over it. The characteristic-polynomial
+coefficients of the original point are integral
+in the curve DVR. An element of that DVR
+algebraic over the finite constant field equals
+its residue lift; thus all original characteristic
+polynomials, and in particular traces, equal
+the prescribed residual ones on $G_{\mathbb Q}$.
+The same conclusion holds for the block
+diagonal point before forming the extension.
+This contradicts the trace-algebra argument
+(CF1)--(CF2) on the actual normalized curve,
+which forbids both absolutely irreducible rank
+four and an irreducible coordinate block when
+traces are the residual diagonal traces. Both
+forbidden types are excluded; the integral
+curve criterion gives (F).
+
+\emph{Characteristic-zero endpoint (E).}
+If an original block-diagonal point had an
+irreducible first block, again form the nonsplit
+extension and apply rational-point support.
+Its ordinary characters have the exact
+prescribed arithmetic weights. The purity
+part of Theorem~\ref{thm:rh-four-image-ideal}
+gives equal complex absolute values for its
+eigenvalues at good primes on the CM tower
+field. At any rational prime outside the
+finite ramification and exceptional sets take
+a positive power of its arithmetic Frobenius
+belonging to the CM field's absolute group;
+it is a power of the corresponding unramified
+Frobenius there. Equality of the absolute
+values of the powered eigenvalues implies
+equality before powering. This applies also
+to the original block-diagonal representation
+because the characteristic polynomials agree
+at every group element. In particular at one
+such prime $p>1$ all four absolute values
+lie in a common strict half-power window
+(indeed they are equal). But (CF3) gives
+the ratio of the two absolute block
+determinants exactly $p^2$. The strict
+window would make that ratio strictly
+less than $p^2$. This contradiction gives
+(E).
+
+\emph{Fixed-field automorphic attachment (A).}
+Fix once and for all $K'$ from the four fields
+of Theorem~\ref{thm:rh-symplectic-spectrum},
+with its specified small split prime. Write
+$q'$ for its odd ramified prime, which lies
+outside $S$. For each irreducible original
+point take the tower of
+Theorem~\ref{thm:rh-four-rational-support},
+choosing its CM field $L$ unramified at $q'$.
+The field $K'$ is not changed as the point,
+tower or coefficient extension changes.
+
+We check the restriction irreducibility needed
+for solvable descent, rather than assuming it.
+If an absolutely irreducible representation
+over an algebraically closed field of
+characteristic zero becomes reducible on a
+normal finite-index subgroup $H$ with abelian
+quotient, it has a nontrivial self twist by a
+character of the quotient. Indeed its restriction
+to $H$ is semisimple: the sum of the finitely
+many conjugates of a simple $H$-submodule
+is semisimple and stable under the full
+group, so is the full space. Then the
+commutant of $H$ has dimension greater
+than one. The quotient acts on it by
+conjugation and splits it into character
+eigenspaces. Its trivial eigenspace consists
+of scalars by irreducibility. A nonzero
+eigenvector of a nontrivial character is an
+intertwiner with the associated self twist,
+and is invertible by Schur's lemma.
+Taking determinants shows that this
+character has order dividing four.
+Since $\ell$ is odd, reduction is injective
+on these character values.
+
+Apply this to $H=G_L$. Reduction of a
+self-twist identity permutes the four
+prescribed residual diagonal characters
+(use the semisimplified residual
+characteristic polynomials, equivalently
+the Brauer--Nesbitt theorem). On $G_L$
+these characters are pairwise distinct
+by \texttt{Ok.g3} and the self-twist
+character is trivial, so the permutation
+must fix each character. The reduced
+self-twist character, hence the character
+itself, is trivial, a contradiction.
+This proves irreducibility over $L$.
+
+The same argument applies with $H=G_{LK'}$,
+since $LK'/\mathbb Q$ is abelian. A self-twist
+character trivial on this group is either
+trivial on $G_L$, which was just excluded,
+or restricts to the nontrivial quadratic
+character of $LK'/L$. The latter is ramified
+at $q'$ because $K'$ is ramified there and
+$L$ is unramified there. On the other hand
+the reduced character is a quotient of
+two of the four original residual
+characters, all unramified at $q'$.
+Injectivity of reduction on the fourth
+roots of unity rules out this ramification.
+Thus restriction to $LK'$ is irreducible too.
+
+The common ordinary Hecke ideal now supplies
+cuspidal regular algebraic attachment over $L$
+for $r|_{G_L}\otimes\kappa$, and untwisting
+by the algebraic character gives the original
+representation. In the source normalization
+the polarization is the original one:
+$\kappa\kappa^c\tau\varepsilon^3=1$,
+so the twisted representation is
+conjugate self dual with multiplier
+$\varepsilon^{-3}$. Equivalently the
+untwisted representation is polarized
+with multiplier $\tau$; the symmetric
+pairing is obtained from $J_{\rm sp}$ by
+inserting $r(c)$ in its second argument,
+since $\tau(c)=-1$ and $r(c)^2=1$.
+This gives the polarized regular
+algebraic cuspidal attachment required
+for the classical soluble-base-change
+and descent theorem. Apply Lemma 2.2.2
+of Barnet-Lamb--Gee--Geraghty--Taylor,
+\emph{Potential automorphy and change of weight},
+Ann.\ Math.\ 179 (2014), 501--609, first to
+$LK'/L$ and then to $LK'/K'$ (both soluble
+Galois extensions of CM fields).
+In each application the representation
+over the larger field is irreducible,
+as just proved. The theorem gives
+polarized regular algebraic cuspidal
+attachment over $K'$ to the original
+restriction of $r$. These are ordinary
+solvable base change and descent, not
+a new residual automorphy lifting
+assumption. We may use the same coefficient
+isomorphism throughout. This is precisely
+(A) of the integral comparison, with the
+fixed quadratic field needed for the
+polynomial trace-counting estimate.
+\end{proof}
+
+\paragraph{Consequence and scope.}
+Substitution in Theorem~\ref{thm:rh-sp4-conditional-length}
+gives, from the preceding suppliers, the individual remaining
+RH Case II bound
+\[
+    (\log\ell)\ell(\ell,e,\psi)
+                    \le (\ell N(e+1))^C .
+\]
+Here $C$ is the absolute exponent of the previously proved
+integral comparison; the degrees and class-group bounds of
+the auxiliary towers do not enter this numerical exponent.
+This argument is restricted to the actual remaining RH
+characters and is not the full original general Dirichlet
+\texttt{PMExAlt.aut}. In particular it does not prove
+\texttt{PotUnl} or the strict windows at all prescribed local
+places. The good-prime window and fixed-field attachment
+are the sufficient replacements used here. The weighted
+product on the final common windows and the other independent
+arithmetic and geometric suppliers remain separate.
