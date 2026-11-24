@@ -1,0 +1,418 @@
+\subsection{A sharp characteristic-prime criterion and the endpoint obstruction}
+\label{sec:rh-sp4-curve-frontier}
+
+The finiteness and endpoint premises of
+Theorem~\ref{thm:rh-sp4-conditional-length} can be stated
+as precise arithmetic exclusions. This is useful because it
+separates the genuinely characteristic-prime difficulty
+from the characteristic-zero count. No flatness of the
+global equation quotient is assumed in the following
+reductions.
+
+\begin{theorem}[Equivalent curve tests for the full invariant algebra]
+\label{thm:rh-sp4-curve-criterion}
+Keep the complete normalized ring \(S\) of the actual RH
+rank-four model and its augmentation, with coefficient
+uniformizer \(\varpi\) and finite residue field \(k\).
+By a characteristic-prime curve we mean any local
+\(O\)-algebra map
+\[
+                  f:S\longrightarrow D
+\]
+to a complete discrete valuation ring of characteristic
+\(\ell\) with finite residue field, using the given
+map \(O\to k\to D\). Let \(u_f\) be its original
+normalized representation, and let \(\bar r_0\) be the
+residual diagonal representation, viewed over the constant
+field of \(D\). The following are equivalent:
+\begin{enumerate}
+\item The full invariant algebra \(S_{(0,0)}\) is finite
+as an \(O\)-module (premise (F)).
+\item On every characteristic-prime curve,
+\(\operatorname{tr}u_f(g)=\operatorname{tr}\bar r_0(g)\)
+for every \(g\in G_{\mathbb Q}\).
+\item On every such curve the semisimplified representation
+over the algebraic closure of \(\operatorname{Frac}D\)
+has finite image.
+\item There is neither an absolutely irreducible
+characteristic-prime curve nor a block-diagonal
+characteristic-prime curve whose first block is
+absolutely irreducible.
+\end{enumerate}
+In condition 4 the blocks and all local conditions are
+exactly those of the model. In condition 3 no fixed
+finite-index subgroup needs to work for all curves.
+\end{theorem}
+
+\begin{proof}
+First record the local flag that survives specialization
+to characteristic \(\ell\).
+Over the fraction field of the actual local domain
+\(L^\circ\), the original spectral equations give the
+ordered invariant full flag and the prescribed inertia
+characters. The values of the graded characters at
+\(\mathrm{ph}\) are fixed as in (SR1).
+Consider the projective flag scheme over \(L^\circ\),
+and in it impose stability under every local group
+matrix, the prescribed scalar actions on its graded
+lines at inertia, and the prescribed graded actions
+at \(\mathrm{ph}\).
+These are closed equations: preservation of a universal
+subbundle is expressed by vanishing of its map to the
+corresponding quotient bundle, and the scalar action
+is the analogous map on each successive quotient.
+Arbitrary intersections of these closed subschemes
+are closed (the flag scheme is Noetherian).
+The resulting scheme is proper over \(L^\circ\)
+and its image contains the generic point.
+Because \(L^\circ\) is a domain, the image is all of
+\(\operatorname{Spec}L^\circ\).
+Every field-valued specialization of the local component
+thus admits such a flag over an algebraic closure of
+the field. This applies to the characteristic-prime
+curve after restriction to the original local ring
+\(C\), which is a quotient of \(L^\circ\).
+It does not assert that the original spectral
+denominators are units in the characteristic-prime
+fibre, nor that the flag there is unique.
+
+The coordinate-projector proof of
+Lemma~\ref{lem:rh-sp4-graph} works over \(D\) as well.
+Its only denominators are the unit resultant of the
+two block characteristic polynomials at \(\mathrm{ph}\)
+and the unit difference of the diagonal entries of
+the compressed marked matrices.
+In particular, the support graph of \(u_f\) is
+transitive, reflexive and self-reflecting.
+If a strongly connected component has size two
+across the coordinate blocks, form its two-dimensional
+coordinate subquotient: take the span of the indices
+\(k\) with \(k\rightsquigarrow i\) and delete the
+two indices in the component to obtain the invariant
+subspace to be quotiented out.
+The local flag just proved supplies an invariant
+line over an algebraic closure of \(\operatorname{Frac}D\).
+On this subquotient \(\mathrm{ph}\) is diagonal with
+distinct eigenvalues, so the invariant line is a
+coordinate line. One of the two globally nonzero
+off-diagonal entries thus vanishes on \(D_\ell\).
+Divide that entry by its minimum nonzero valuation
+factor, now a power of the uniformizer of \(D\),
+and reduce modulo its maximal ideal.
+The same two-dimensional multiplication identity
+gives the nonzero residual cocycle for an off-block
+character used in Lemma~\ref{lem:rh-sp4-graph}.
+It is zero locally at \(\ell\), and satisfies the
+original away-from-\(\ell\) inertia-kernel condition.
+The residual \texttt{XVan} forces it to be a
+coboundary and the separation at \(\mathrm{ph}\)
+forces its primitive to be zero, a contradiction.
+This uses the original residual character, not a
+characteristic-zero local cohomology calculation.
+Thus the same three support alternatives hold on
+curves as in that lemma, but we do not use its
+characteristic-zero ordering of the diagonal type.
+
+We next prove a useful trace argument in every
+coefficient characteristic occurring here, including
+\(\ell=3\).
+Put \(F_D=\operatorname{Frac}D\).
+The four residual characters in \(\bar r_0\) are
+pairwise distinct: the two blocks separate at
+\(\mathrm{ph}\), and within a block their ratio
+\(\bar\Psi\) or its inverse is nontrivial at \(g_0\).
+Thus their diagonal matrix algebra over \(F_D\)
+is the full diagonal algebra, by independence of
+distinct characters. Its ordinary matrix trace
+pairing is nondegenerate, since each coordinate
+has rank one.
+
+Assume that the trace equality of condition 2
+holds on the given curve.
+Let \(\mathscr M\) be the \(F_D\)-algebra spanned
+by the group matrices of \(u_f\).
+There is a surjective homomorphism
+\[
+        \mathscr M\longrightarrow F_D^4,\qquad
+                 u_f(g)\longmapsto\bar r_0(g).
+                                                               \tag{CF1}
+\]
+To see well-definedness, any group-algebra expression
+mapping to zero in \(\mathscr M\) has residual trace
+pairing zero against every group element: use the
+trace equality at all products of group elements.
+The nondegenerate diagonal trace pairing then makes
+its image in \(F_D^4\) zero. This argument does not
+divide by the dimension of a simple summand.
+The map (CF1) preserves the traces.
+Every coordinate projector \(E_{ii}\) lies in the
+integral representation algebra; its image under
+(CF1) is a diagonal idempotent whose reduction is
+\(E_{ii}\), by using its integral group-algebra
+expression. Its entries are zero or one, so it
+is exactly \(E_{ii}\).
+If both opposite off-diagonal entries occur
+nontrivially, \(\mathscr M\) contains \(E_{ij}\)
+and \(E_{ji}\). Both map to zero under (CF1), by
+multiplication with the coordinate projectors.
+Their product \(E_{ii}\) does not, a contradiction.
+The support is consequently diagonal type, and
+\[
+            u_f(g)_{ii}=\operatorname{tr}(E_{ii}u_f(g))
+                      =\bar r_0(g)_{ii}.                 \tag{CF2}
+\]
+In particular no irreducible block of dimension
+at least two can occur under condition 2.
+
+For diagonal-type support on any curve, its four
+diagonal entries are global multiplicative characters.
+Their inertia values at \(\ell\) have bounded finite
+order: the local flag in characteristic \(\ell\)
+has the four prescribed finite residual inertia
+characters, and the diagonal characters are
+eigenvalues of the same inertia matrices.
+At the other finite primes the original inertia
+kernel has finite index, and outside the given finite
+set the representation is unramified.
+A single positive power of each diagonal character
+is therefore unramified at every finite prime;
+class field theory for \(\mathbb Q\) makes that
+power trivial. A finite-order element of \(D^\times\)
+lies in the constant field, since it is algebraic
+over \(k\). Its residual value determines it.
+Thus diagonal-type support implies (CF2) without
+assuming condition 2.
+
+For completeness a diagonal-type support graph
+also makes every balanced nonconstant monomial
+in entry displacements vanish on the curve.
+Choose rational numbers \(d_i\) strictly decreasing
+along the strict arrows of the partial order, so
+\(d_i>d_j\) for \(i\rightsquigarrow j\), \(i\ne j\).
+Replace \(d_i\) by
+\((d_i-d_{3-i})/2\). The inequalities remain strict
+by reflection and the new values have the form
+\((a,b,-b,-a)\). These are the values of a linear
+functional on the two coordinate weights
+\(w_i=(\lambda_i,\mu_i)\), up to a common additive
+constant: use coefficients \(a-b,a+b\).
+Every nonzero off-diagonal entry then has strictly
+positive weight for that functional. Their nonempty
+products cannot have full weight zero.
+The diagonal entry displacements are zero by
+(CF2), proving the balanced-monomial assertion.
+
+Now (F) implies condition 2: the invariant trace
+elements on a curve are integral over the finite
+residue field and reduce to their base values, hence
+are those constants. Conversely, under condition 2,
+the preceding argument makes every nonconstant
+balanced monomial zero on every curve.
+We give the exact integral finiteness step, to
+account also for the possible nilpotents and torsion.
+Choose the finitely many homogeneous generators
+of the original power-series presentation of \(S\),
+and finitely many nonconstant balanced monomials
+generating the zero-weight monoid by Dickson's lemma.
+Their images \(b_1,\ldots,b_s\) generate
+\(S_{(0,0)}\) as a complete local quotient of a
+finite-variable power-series ring over \(O\).
+If some \(b_j\notin\sqrt{\varpi S}\), choose a prime
+of \(S/\varpi S\) avoiding it. In the resulting
+complete local domain its image is nonzero and
+noninvertible. Extend that image to a system of
+parameters; a minimal prime of the other parameters
+avoiding it gives a one-dimensional domain quotient,
+by the height theorem. Its finite normalization is
+a complete DVR of characteristic \(\ell\) with
+finite residue field. The resulting curve does not
+kill \(b_j\), a contradiction.
+This is the curve argument of
+Proposition~\ref{prop:support-integral-finiteness-criterion},
+with the same integral rings and now a two-dimensional
+weight monoid. Therefore each \(b_j^{n_j}\in\varpi S\).
+Weight projection is \(S_{(0,0)}\)-linear and yields
+\((\varpi S)\cap S_{(0,0)}=\varpi S_{(0,0)}\).
+It follows that a power of the maximal ideal
+of the invariant ring lies in \(\varpi S_{(0,0)}\).
+Its quotient modulo \(\varpi\) is finite-dimensional
+over \(k\), and its maximal-ideal and \(\varpi\)-adic
+topologies are equivalent. Complete successive
+approximation lifts a finite generating set over
+\(k\) to a finite generating set over \(O\).
+This proves (F) on the full invariant algebra,
+without deleting any component of \(S\).
+
+Condition 3 implies condition 2 because every
+eigenvalue of every matrix in a finite-image
+semisimplification is a root of unity, hence
+algebraic over \(k\); the characteristic polynomial
+coefficients, lying in \(D\), are then the unique
+constant-field lifts of their residual values.
+Conversely condition 2 gives diagonal-type support
+by (CF1), and (CF2) makes its semisimplification a
+sum of the four original finite residual characters.
+
+Finally, condition 2 excludes both curves in
+condition 4 by (CF1). Under condition 4 use the
+three support alternatives proved above.
+Full support is forbidden. In the block alternative
+at least one interblock direction is absent.
+Scale the other interblock direction towards zero
+by the first torus using powers of the uniformizer
+of \(D\) (or its inverse in the direction that makes
+the surviving entries smaller).
+The finite set of entry-displacement generators
+converges to its block-diagonal specialization
+and remains in the maximal ideal of \(D\).
+Continuous formal evaluation preserves the exact
+equation ideal. This produces a characteristic-prime
+curve with an irreducible first block, also
+forbidden by condition 4. Only diagonal type is
+possible, which already gives condition 2.
+This completes the equivalences.
+\end{proof}
+
+\begin{proposition}[The precise rank-two endpoint obstruction]
+\label{prop:rh-sp4-even-endpoints}
+For any block-diagonal characteristic-zero point of
+the actual model, write \(U,V\) for its two blocks.
+At every good arithmetic Frobenius \(\sigma_p\), for
+\(p\nmid M\) as in Theorem~\ref{thm:rh-symplectic-spectrum},
+and any coefficient isomorphism \(\iota\), one has
+\[
+ |\iota\det U(\sigma_p)|=p^{e+2},\qquad
+ |\iota\det V(\sigma_p)|=p^e .                            \tag{CF3}
+\]
+Thus its four eigenvalues cannot all lie in a strict
+common real-power interval
+\[
+             p^{c-1/2}<|\iota\lambda|<p^{c+1/2}
+                                                               \tag{CF4}
+\]
+for any real \(c\).
+In particular premise (E) would follow from
+such a single good-prime strict interval for
+every block-diagonal point with irreducible first
+block, even if the prime and \(c\) depend on the point.
+
+The first block, twisted by \(\alpha^{-1}\), is an
+ordinary two-dimensional even representation
+with distinct Hodge--Tate weights \(-e,0\) and
+split residual representation
+\(\bar\Psi\oplus1\).
+If the first block is absolutely irreducible,
+the twisted representation remains so. Its
+determinant is a finite-order twist of
+\(\varepsilon^e\).
+The analogous block on a characteristic-prime
+curve, twisted by \(\bar\alpha^{-1}\), is
+locally triangular, has finite-order determinant,
+and has the same split residual representation.
+It cannot have finite image if absolutely irreducible.
+\end{proposition}
+
+\begin{proof}
+The characteristic-zero local flag has the
+labeled values (SR1). Its intersection with the
+two blocks, distinguished by the disjoint
+spectra at \(\mathrm{ph}\), gives the two
+graded inertia characters \(\tau,\alpha\)
+in the first block and \(\Psi,1\) in the
+second. Thus the determinant characters
+have cyclotomic exponents \(e+2,e\) on
+inertia at \(\ell\), respectively, times
+finite-order factors.
+Away from \(\ell\) their inertia images are finite
+by the original kernel condition.
+Dividing by the indicated cyclotomic powers
+therefore gives finite-order global characters,
+as in the class-field argument above.
+At the specified good prime their absolute
+values are one under every coefficient
+isomorphism. The cyclotomic value at
+arithmetic Frobenius is \(p\), proving (CF3).
+
+If every eigenvalue satisfies (CF4), the two
+determinant magnitudes lie strictly between
+\(p^{2c-1}\) and \(p^{2c+1}\).
+Their ratio is strictly less than \(p^2\),
+contradicting (CF3). In particular even a
+strict half-power purity window suffices;
+one need not prove an exact common Weil weight
+or an automorphic identification for these
+endpoints.
+
+The residual first block is
+\(\operatorname{diag}(\bar\tau,\bar\alpha)\);
+division by \(\bar\alpha\) gives
+\(\bar\Psi\oplus1\). The local inertia
+characters after division by \(\alpha\)
+are \(\Psi,1\) and hence have Hodge--Tate
+weights \(-e,0\).
+The block is potentially crystalline by the
+local finite-condition theorem and restriction
+to a direct summand.
+Complex conjugation acts on the first block
+by \(-1\) in the residual representation:
+\(\bar\Psi(c_{\mathbb Q})=1\),
+\(\bar\alpha(c_{\mathbb Q})=-1\).
+Since \(\ell\) is odd and the matrix of complex
+conjugation squares to one, its \(+1\)
+eigenspace is zero (reduce its idempotent
+projector). Hence its characteristic-zero
+action is exactly \(-I\), and twisting by
+\(\alpha^{-1}\) makes it \(I\).
+This is evenness, not the oddness required
+by the classical residually reducible ordinary
+modularity theorem.
+
+In characteristic \(\ell\), use the proper
+flag specialization of
+Theorem~\ref{thm:rh-sp4-curve-criterion}.
+The two residual finite inertia characters
+still belong to the first block by their
+labeled actions at \(\mathrm{ph}\).
+Its determinant is therefore everywhere of
+finite-order inertia, and has finite global
+order by class field theory.
+An absolutely irreducible first block with
+finite image would make both blocks have
+finite image: the fixed similitude pairs the
+blocks perfectly, so the second is the
+dual of the first twisted by the residual
+finite-order similitude.
+The entire semisimplification would then have
+finite image, giving trace equality and
+diagonal type by the proof of
+Theorem~\ref{thm:rh-sp4-curve-criterion},
+a contradiction.
+\end{proof}
+
+\paragraph{Consequences for the source promodularity task.}
+The characteristic-prime argument requires exclusion of
+irreducible rank-four curves and irreducible rank-two
+block endpoints, with the exact original local component.
+Equivalently it is enough to prove finite-image
+semisimplifications individually on all those curves.
+A uniform finite quotient is unnecessary for this
+part of the argument. The characteristic-zero endpoint
+argument needs only (CF4) at one good prime on the
+irreducible-block points. The irreducible rank-four
+characteristic-zero attachment premise is the fixed-field
+premise (A).
+
+Neither exclusion in characteristic \(\ell\) has been
+established here. The number-field group in this
+theorem cannot be replaced by the fundamental group
+of a curve over a finite field.
+Nor can the even two-dimensional endpoint be declared
+modular by ordinary lifting results which assume an
+odd representation. The endpoint exclusion and the
+irreducible attachment still require genuine arithmetic
+input. The pinned source approaches these through
+its rank-four promodularity tower, with a separate
+mixed seed in Case II. In particular neither
+characteristic-zero smoothness, the present support
+classification, nor the finiteness of the base
+rational cotangent space supplies those premises.
