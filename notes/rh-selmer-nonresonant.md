@@ -35,7 +35,7 @@ This specialization is for ordinary RH. Its transfer to a general
 Dirichlet target requires the additional conductor, character-order and
 local-component hypotheses in the original good-data condition.
 
-## Precise remaining frontier
+## Resonant terms
 
 Only `ell-1 | 2e` remains. Therefore `ell <= 2e+1`, and for `e < t` the
 remaining coefficient primes lie below `2t`, independently of the
@@ -74,19 +74,4 @@ in both directions. Its certificate is
 `certificates/rh-selmer-nonresonant.json`; it does not compute the
 remaining Selmer groups or assert (RN7).
 
-The next direct attack is the actual 3-primary large-conductor
-construction in `UnitaryThreeDeformations` and
-`ModularityArgument/ThresholdArguments/DenseThresholdCases`. At 3,
-the high 2-power conductor gives strong separation of the unramified
-Frobenius character even though the inertia characters are resonant.
-That local separation alone does not supply the global integral
-comparison or automorphy; both source interfaces remain to be discharged.
-
-The [actual inertial frame theorem](rh-dyadic-host-frame.md) now proves
-that separation, the arithmetic frame and strict lower comparison,
-and the crystalline point/tangent and rigidity/trace implications.
-The first remaining task is ThmS6_s and the original graded estimate.
-
-The [inertial universal-ring theorem](rh-dyadic-host-universal.md)
-now also supplies actual finiteness and sufficient automorphy for
-AbstractCount. The exact graded-algebra estimate remains.
+The [actual inertial integral count](rh-dyadic-host-count.md) proves the high-dyadic-conductor bound at 3, closes RH Case V at 3, and bounds the entire exponent-one residual product. For higher twists at 3 only dyadic conductors <=64 remain; the other resonant primes and the original weighted product remain open.

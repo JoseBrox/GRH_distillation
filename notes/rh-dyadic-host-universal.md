@@ -30,6 +30,4 @@ predicate just proved suffices for its arithmetic point and rigidity
 hypotheses. The actual universal ring, local equations and Selmer
 lengths are unchanged.
 
-The outstanding step at 3 is the exact integral graded-algebra count
-and its presentation/length comparison. No completed proof-map node,
-full integral upper estimate or Lean rebuild is claimed.
+The [integral count on this same ring](rh-dyadic-host-count.md) now supplies the original finite-modulus comparison and the high-dyadic-conductor bound at 3. The other resonant terms and W04 remain open.
