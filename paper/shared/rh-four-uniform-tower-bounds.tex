@@ -1,0 +1,219 @@
+\subsection{Uniform cocycle bounds on the required deep towers}
+\label{subsec:rh-four-uniform-tower-bounds}
+
+We supply the exact \texttt{Fr.Bounds} and large-degree hypotheses
+of the rank-four component-support theorem. No bound in terms of
+the auxiliary field degree is needed for the constant $C$.
+
+\begin{theorem}[Uniform bounds on the original cyclotomic layers]
+\label{thm:rh-four-x2}
+Let $D$ be the original good datum, $\ell$ odd, and let $T_1$
+be a fitted tower with $F_1=T_1.F$. There exists $C$ such that,
+for every original \texttt{Le} tower $T$ satisfying
+\texttt{IsLayer}$(\ell,m,F_1,T.F)$, and every field $k$ equipped
+with a map from the original coefficient DVR killing its maximal
+ideal, the frame $(T.\mathrm{fr}(\varnothing))$ satisfies
+\texttt{Bounds}$(k,[T.F:\mathbb Q],C)$.
+For every $n$ there is such a tower which is deep and has degree
+at least $n$. In particular after fixing the starting tower,
+one can use $n=30(C+1)^2$ in the component-support theorem.
+\end{theorem}
+\begin{proof}
+Write $\omega=\bar\epsilon$ and denote the original four residual
+diagonal characters by $\bar\chi_i$, over their original finite
+residue field $k_0$. Each has finite order prime to $\ell$.
+Let $F_m=F_1\mathbb Q_m$, where $\mathbb Q_m$ is the degree
+$\ell^m$ subfield of the cyclotomic $\mathbb Z_\ell$-extension
+of $\mathbb Q$. The original \texttt{IsLayer} condition is
+precisely
+\[
+ G_{F_m}=G_{F_1}\cap
+   \{g:\epsilon(g)^{\ell-1}\equiv1\bmod\ell^{m+1}\}.
+\]
+Use the original residual-kernel field
+\[
+ E_m=F_m\,\mathbb Q(\mu_\ell)\,
+         \overline{\mathbb Q}^{\,\bigcap_i\ker\bar\chi_i}.
+\]
+Thus $E_m/E_0$ is a layer of the cyclotomic
+$\mathbb Z_\ell$-extension of the fixed abelian number field
+$E_0$. The extension $E_m/F_m$ is abelian of degree prime
+to $\ell$, because it is cut out over $F_m$ by characters into
+$k_0^\times$. In particular $E_m$ is CM (it contains
+$\mu_\ell$, and is abelian over $\mathbb Q$).
+
+Ferrero--Washington, \emph{The Iwasawa invariant $\mu_p$ vanishes
+for abelian number fields}, Ann.\ Math.\ 109 (1979), 377--395,
+gives $\mu(E_\infty/E_0)=0$. By the Iwasawa structure theorem
+the unramified abelian pro-$\ell$ class-group module over the
+cyclotomic extension is finitely generated over $\mathbb Z_\ell$.
+It follows that the $\ell$-ranks of the ideal class groups
+of the $E_m$ are uniformly bounded, say by $R$.
+One direct way to see the finite-layer implication is to go
+high enough in the cyclotomic extension that all primes over
+$\ell$ are totally ramified in the remaining extension.
+The $\ell$-Hilbert class field of any such layer is then
+disjoint from the remaining cyclotomic extension over that
+layer. Its compositum with the infinite layer is an unramified
+abelian pro-$\ell$ extension there. Its Galois group, the
+$\ell$-part of the class group of that layer, is a quotient
+of the class-group module. The finitely many earlier layers
+can be included by increasing $R$.
+
+The number of places of $E_m$ over the fixed finite rational
+set $S=D.S$ is bounded by a constant $g$, independent of $m$.
+For $\ell$ this follows from total ramification after a fixed
+finite layer. At $p\ne\ell$ the cyclotomic Frobenius is the
+principal-unit part of $p$ (or its inverse in the geometric
+convention); it has infinite order, since $p^{\ell-1}\ne1$
+as a rational integer. It generates an open subgroup in the
+rank-one group $\mathbb Z_\ell$, so the decomposition group
+has finite index in the cyclotomic extension. Summing over
+the primes of $E_0$ above $S$ proves the bound. It also bounds
+the corresponding number of places of $F_m$, in particular
+the number of ordinary places.
+
+For a root weight $w\in\mathbb Z^2$ put
+$\lambda=\overline{\Phi.\mathrm{rt}(w)}$ on $G_{F_m}$, with
+$\Phi=T.\mathrm{fr}(\varnothing)$. We prove the bounds on the
+literal spaces of locally constant cocycles, not just on
+their cohomology. First consider a strict cocycle
+$z\in\Phi.\mathrm{Str}(w)$, i.e. a normalized cocycle
+killing $\Phi.N$ and a coboundary on each ordinary
+decomposition group. Its restriction to $G_{E_m}$ is a
+homomorphism, because $\lambda=1$ there. It kills inertia
+away from $\ell$: those inertia elements have trivial
+original residual diagonal and belong to $\Phi.N$.
+It kills inertia at $\ell$ because the local cocycle is a
+coboundary and the restricted character is trivial.
+For the other choices of places use the cocycle conjugation
+formula, which gives the same vanishing since the restriction
+to $G_{E_m}$ is a homomorphism and $G_{E_m}$ is normal.
+Consequently its restriction factors through the unramified
+abelian $\ell$-class group of $E_m$. The kernel of restriction
+has dimension at most one, by averaging cocycles on the
+finite quotient $\Delta_m=\operatorname{Gal}(E_m/F_m)$,
+whose order is prime to $\ell$. Hence
+\[
+                  \dim_{k_0}\Phi.\mathrm{Str}(w)\leq R+1 .
+\]
+This even treats the trivial root character, for which the
+coboundary space is zero.
+
+Every cocycle in $\Phi.\mathrm{Zgl}(w)$ is unramified
+outside $S$: outside $S$ the residual diagonal is trivial
+on inertia, so the killing condition applies. Inflation--restriction
+and averaging on $\Delta_m$ identify its cohomology class
+with a subspace of the $\omega\lambda^{-1}$ isotypic part of
+\[
+ H^1(G_{E_m,S},k_0(1))
+  \simeq H^1(G_{E_m,S},\mu_\ell)\otimes_{\mathbb F_\ell}k_0.
+\]
+Here $S$ in the subscript of a Galois group means all places
+above the original rational set. The identity of isotypic
+characters follows because the restricted coefficient module
+is trivial and the two twists differ by
+$\lambda\omega^{-1}$. The Kummer sequence for $S$-integers gives
+an exact sequence of $\Delta_m$-modules
+\[
+ 0\longrightarrow
+ \mathcal O_{E_m,S}^{\times}/(\mathcal O_{E_m,S}^{\times})^\ell
+ \longrightarrow H^1(G_{E_m,S},\mu_\ell)
+ \longrightarrow \operatorname{Cl}(\mathcal O_{E_m,S})[\ell]
+ \longrightarrow0.
+\]
+The last term has dimension at most $R$. The free part of
+the ordinary units has rational character the permutation
+representation on the complex places of $E_m$ minus the
+trivial character, by Dirichlet's unit theorem and the
+equivariant logarithmic embedding. Its reduction modulo
+$\ell$ has the same multiplicities for $\Delta_m$: its order
+is prime to $\ell$, so the character idempotents over an
+unramified coefficient DVR containing the roots of unity
+of that order split every integral lattice. The dimensions
+of the reductions are the ranks of those summands.
+The $\ell$-primary torsion of the units contributes at most
+one additional dimension. Enlarging to $S$-units adds at
+most $g$ dimensions, by the valuation sequence: the quotient
+by ordinary units is a subgroup of the free group on the
+$S$-places, hence free of rank at most $g$.
+
+Complex conjugation acts as the central element $c$ of
+$\Delta_m$ since $F_m$ is real. Every complex place has
+stabilizer $\{1,c\}$ in $\Delta_m$ and there are precisely
+$d=[F_m:\mathbb Q]$ orbits. Thus the odd characters have
+multiplicity zero in the free ordinary units, and each
+even character has multiplicity at most $d$. For the original
+even weights $0,w_{\rm Ps},-w_{\rm Ps}$, $\lambda$ is even
+since the original residual $\Psi$ is even, and
+$\omega\lambda^{-1}$ is odd. For every other root the
+same argument gives the general upper bound $d$ for its
+unit contribution. Restoring at most one dimension of
+coboundaries, we obtain
+\[
+ \begin{split}
+ \dim_{k_0}\Phi.\mathrm{Zgl}(w)&\le R+2+g
+     &&(w=0,w_{\rm Ps},-w_{\rm Ps}),\\
+ \dim_{k_0}\Phi.\mathrm{Zgl}(w)&\le d+R+2+g
+     &&(\text{all }w).
+ \end{split}
+\]
+In these inequalities one may retain the extra zero-at-mark
+condition of the original $\mathrm{Zgl}$ throughout; dropping
+it only enlarges the space.
+
+For a selected ordinary place $v$ the local Euler characteristic
+formula and local Tate duality give
+$\dim H^1(G_{F_{m,v}},k_0(\lambda))
+=[F_{m,v}:\mathbb Q_\ell]+\dim H^0(k_0(\lambda))
++\dim H^0(k_0(\omega\lambda^{-1}))$.
+The coboundary dimension is $1-\dim H^0(k_0(\lambda))$.
+Thus the local cocycle dimension is at most
+$[F_{m,v}:\mathbb Q_\ell]+2$. Summing over the original
+representatives of all places over $\ell$ gives at most
+$d+2g$. Taking $C=R+2+2g$ proves all five fields of
+\texttt{Fr.Bounds} over $k_0$.
+
+For any larger field $k$, each locally constant cocycle has
+finite image, by compactness, and its values span a finite
+$k_0$-subspace of $k$. For a strict cocycle include the
+finitely many local coboundary witnesses in that span.
+Expansion in a $k_0$-basis writes it as a finite sum of
+$k_0$-valued cocycles with coefficients in $k$, each satisfying
+the same linear equations, including the mark and killing
+conditions. The identical argument for the finite product
+of local cocycle spaces proves scalar extension of every
+bound, with no assumption that $k$ itself is finite.
+
+Finally we construct the deep layers. Since $F_1$ is finite
+and $\mathbb Q_\infty/\mathbb Q$ infinite,
+$[F_m:\mathbb Q]$ tends to infinity. By \texttt{Ok.kc}
+the $\ell$-primary part of $\psi$ is trivial on
+$G_{F_1}\cap\ker\epsilon$. Its restriction factors continuously
+through the closed subgroup $\epsilon(G_{F_1})$ of
+$\mathbb Z_\ell^\times$. The $\ell$-primary character is
+trivial on the finite prime-to-$\ell$ torsion of that subgroup
+and factors through a finite quotient of its principal-unit
+part. Hence it is trivial on $G_{F_m}$ for all sufficiently
+large $m$. This is exactly \texttt{Deep}. The fields $F_m$
+are abelian and totally real. The fixed $K=T_1.K$, original
+ordering, representatives of the ordinary places above
+$\ell$, and the mark $T_1.g_0^{\ell^m}$ give the original
+\texttt{Le} tower (the relative degree divides $\ell^m$).
+The \texttt{Ok} and \texttt{Fit} properties are preserved by
+the odd-prime-power extension as in the preceding residual-chain
+argument: witnesses may be raised to $\ell$-powers,
+which preserve every inequality of prime-to-$\ell$ residual
+values, and the quadratic-character exclusion extends by
+the corresponding residual ratio. The relative unramified
+quadratic condition persists by base change.
+Taking $m$ sufficiently large gives the required degree
+and all the bounds on this same layer.
+\end{proof}
+
+This proves the arithmetic supplier \texttt{x2} and the required
+\texttt{layerEx} construction. The constant is fixed after the
+auxiliary primes of the residual chain have been chosen, but
+before the large cyclotomic layer is chosen. It is not a uniform
+estimate for the final moving Selmer product, and is not used
+as such.
