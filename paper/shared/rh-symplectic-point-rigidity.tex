@@ -1,0 +1,306 @@
+\subsection{Local finite conditions and rank-four rigidity}
+\label{sec:rh-symplectic-point-rigidity}
+
+Retain the actual ordinary-RH rank-four datum of
+Theorem~\ref{thm:rh-symplectic-arithmetic-data} and the notation of
+Theorem~\ref{thm:rh-symplectic-local}. In particular \(e\geq2\),
+\(\ell\) is odd, the distinguished local set is \(\{\ell\}\),
+and the residual Frobenius separation (BU8) holds. All points below
+satisfy the original \texttt{PtIn} condition, with the actual
+\texttt{OnComp} at \(\ell\). We do not assume finiteness of the
+weight-zero algebra in this section.
+
+\begin{lemma}[Continuity and finite coefficients]
+Every characteristic-zero point of the complete normalized global
+ring, and every dual-number lift of such a point from that ring,
+has its image over a finite coefficient extension and is continuous.
+Consequently these assertions hold for the representations in
+\texttt{EPt} and \texttt{PtIn} over the dual numbers.
+\end{lemma}
+
+\begin{proof}
+Write \(B\) for a complete Noetherian local coefficient algebra,
+with residue field \(k\), and \(f:B\to\overline E\) for an
+\(O\)-algebra map. For \(x\in\mathfrak m_B\) with \(f(x)\ne0\),
+suppose \(v_\ell(f(x))\leq0\). Then \(f(x)^{-1}\) is integral
+over \(O\). If \(P\) is its monic polynomial over \(O\), of
+degree \(d\), the unit \(x^dP(1/x)\) of \(B\) maps to zero,
+a contradiction. Thus all elements of \(\mathfrak m_B\) map
+to elements of strictly positive valuation. Each element of
+\(B\) is the sum of a representative from \(O\) of its residue
+and an element of \(\mathfrak m_B\), so \(|f(B)|\leq1\).
+Finite generation of \(\mathfrak m_B\) gives continuity.
+
+For completeness let \(\mathfrak p=\ker f\). The domain
+\(B/\mathfrak p\) is integral over \(O\). Hence the only prime
+containing \((\ell)+\mathfrak p^2\) is the maximal ideal.
+The quotient \(B/\mathfrak p^2\) is therefore complete for
+the \(\ell\)-adic topology and finite modulo \(\ell\).
+Successive approximation gives its finiteness over \(O\).
+A derivation \(D\) at \(f\) kills \(\mathfrak p^2\), so the
+map \(f+\epsilon D\), with \(\epsilon^2=0\), has bounded image
+in a finite-dimensional algebra over a finite extension of \(E\).
+The same approximation proves continuity of this map
+(as in Proposition~\ref{prop:selmer-tangent-comparison}).
+All the original points under consideration factor through
+the complete normalized quotient constructed in the preceding
+section. This proves the assertion for the representations,
+not just for their traces. No claim is made here about
+points of an arbitrary noncompleted graded algebra.
+\end{proof}
+
+\begin{proposition}[The local finite conditions]
+\label{prop:rh-symplectic-local-finite}
+Every actual characteristic-zero point and every actual dual-number
+lift is crystalline at \(\ell\) after restriction to
+\(\mathbb Q_\ell(\mu_\ell)\). In particular every actual tangent
+cocycle to a characteristic-zero point \(r\) belongs to
+\[
+ H^1_f(\mathbb Q,\mathfrak{sp}_4(\overline E)_{\operatorname{Ad}r}).
+\]
+Here cohomology over \(\overline E\) is taken by finite coefficient
+extension.
+\end{proposition}
+
+\begin{proof}
+Let \(\chi_i=(\tau,\Psi,\alpha,1)_i\) for \(0\le i\le3\).
+Over \(L^\circ[1/\ell]\) the prescribed eigenvalues
+\(\chi_i(s_0)\) are distinct. The polynomial projectors of
+\texttt{Ord} can be divided by their nonzero constant
+denominators there. The resulting idempotents \(P_i\)
+have rank one, the ordered flag is invariant under the
+decomposition group, and its \(i\)-th graded character
+\(\kappa_i\) has inertia character \(\chi_i\).
+This also holds over dual-number coefficient algebras:
+the denominators are invertible scalars and the images
+of the idempotents are free of rank one over the local
+coefficient algebra.
+
+One must check the labels of the Frobenius eigenvalues;
+distinct weights on \(s_0\) alone do not prove the needed
+nonresonance. The element \(\mathrm{ph}\) has, in the universal
+local representation, finite order \(d_0\) prime to \(\ell\)
+dividing \(|k^\times|\), as in the proof of (SM3).
+Thus each
+\[
+ b_i=\operatorname{tr}(P_i r(\mathrm{ph}))
+       \quad\hbox{satisfies}\quad b_i^{d_0}=1.
+\]
+The ring \(L^\circ[1/\ell]\) is a domain, and \(O\) contains the
+Teichm\"uller roots of this order. Factoring the polynomial
+\(X^{d_0}-1\) shows that \(b_i\) is a single constant root.
+Evaluation at the diagonal augmentation fixes that root:
+\[
+ \kappa_i(\mathrm{ph})=\chi_i(\mathrm{ph}).
+ \tag{SR1}
+\]
+This identity is valid on the whole selected component,
+hence also on its dual-number points.
+
+Put \(F_\ell=\mathbb Q_\ell(\mu_\ell)\).
+On inertia of \(F_\ell\) the four graded characters
+are the cyclotomic powers with exponents \(e+1,e,1,0\).
+Indeed \(\xi,\psi\) are unramified at \(\ell\), and the
+Teichm\"uller cyclotomic character is now trivial.
+The element \(\mathrm{ph}\) belongs to \(G_{F_\ell}\)
+and its cyclotomic value is one. For \(i<j\) the ratio
+\(\kappa_i/\kappa_j\) has positive cyclotomic exponent.
+When that exponent is greater than one it differs from
+\(\varepsilon\) already on inertia. When the exponent
+is one its value on \(\mathrm{ph}\), by (SR1), is
+the corresponding value of \(\alpha\), or of \(\beta\)
+if \(e=2\). In either case this value differs from one
+by (BU8). In particular none of these ratios equals
+\(\varepsilon\) on \(G_{F_\ell}\).
+
+We spell out the extension argument to include the actual
+dual-number condition. Work over a sufficiently large finite
+coefficient field. The ordinary flag over dual numbers
+induces a flag of vector spaces over this field whose graded
+pieces have dimension two (dimension one for an ordinary
+point). On \(G_{F_\ell}\) each piece is an unramified
+representation times the indicated cyclotomic power, since
+the exact inertia characters are fixed, even in the
+dual-number lift. Such pieces are crystalline. Inductively
+suppose the preceding subrepresentation \(U\) of the flag
+is crystalline and let \(V\) be the next graded piece.
+Then \(W=\operatorname{Hom}(V,U)\) is crystalline and has
+strictly negative Hodge--Tate weights in the convention
+where \(\varepsilon\) has weight \(-1\).
+The characters of \(W^*(1)\) in its induced filtration
+are nontrivial by the preceding ratio calculation.
+Thus \(H^0(F_\ell,W^*(1))=0\).
+The local Euler characteristic and the crystalline
+Bloch--Kato dimension formula give
+\[
+ \dim H^1(F_\ell,W)=
+ [F_\ell:\mathbb Q_\ell]\dim W+\dim H^0(F_\ell,W)
+ =\dim H^1_f(F_\ell,W).
+\]
+Every such extension is consequently crystalline.
+This proves the induction, including the case \(e=2\).
+
+The vector-space self-extension associated with a
+dual-number tangent now splits over \(B_{\mathrm{cris}}\)
+on \(G_{F_\ell}\). Its cocycle therefore has finite
+local class after restriction. Restriction-corestriction,
+with characteristic-zero coefficients, descends the
+finite class to \(G_{\mathbb Q_\ell}\), first in
+\(\operatorname{End}(r)\). Differentiation of the exact
+fixed-similitude equation places the cocycle in
+\(\mathfrak{sp}_4\). The involution
+\[
+ \theta(X)=-J^{-1}X^tJ
+\]
+commutes with \(\operatorname{Ad}r\), and its \(+1\)
+eigenspace is \(\mathfrak{sp}_4\). The projection
+\((1+\theta)/2\) thus gives the same finite condition
+in this direct summand. Away from \(\ell\), the original
+inertia kernel is killed by the representation and the
+dual-number lift. Their inertia images in the relevant
+cocycle calculation factor through the original finite
+quotient of inertia. Averaging over this quotient in
+characteristic zero gives an unramified local class.
+These are exactly the finite local conditions.
+\end{proof}
+
+\begin{lemma}[Cyclotomic irreducibility without an image-size hypothesis]
+\label{lem:rh-symplectic-cyclotomic-irreducibility}
+Let \(r\) be an absolutely irreducible actual characteristic-zero
+point. Choose an imaginary quadratic field \(K\) with a ramified
+prime outside the finite ramification set of the datum, including
+\(\ell\). Then
+\[
+ r|_{G_{K(\mu_{\ell^\infty})}}
+ \quad\hbox{is absolutely irreducible}.
+ \tag{SR2}
+\]
+In particular \(r|_{G_{\mathbb Q(\mu_{\ell^\infty})}}\)
+is absolutely irreducible.
+\end{lemma}
+
+\begin{proof}
+We use the following elementary observation. If \(H\) is a normal
+subgroup of \(G\) with abelian quotient and an absolutely
+irreducible finite-dimensional characteristic-zero representation
+\(V\) of \(G\) becomes reducible on \(H\), then \(V\) has a
+nontrivial finite-order self-twist through \(G/H\).
+Indeed the sum of the \(G\)-translates of a simple \(H\)-submodule
+is all of \(V\), so restriction to \(H\) is semisimple.
+The trace-zero subspace of \(\operatorname{End}_H(V)\)
+is then nonzero and stable under \(G/H\) acting by conjugation.
+Over an algebraically closed field the commuting linear
+operators of this abelian action have a common eigenvector
+\(T\ne0\) in that subspace. Its character \(\eta\) is nontrivial
+by Schur's lemma. The relation
+\[
+ r(g)Tr(g)^{-1}=\eta(g)T
+\]
+makes \(T\) an intertwiner between irreducible representations,
+hence invertible. Determinants give \(\eta^{\dim V}=1\).
+The character is continuous when \(r\) is, by taking a nonzero
+matrix coordinate of \(T\) in this equality.
+
+Apply the observation with \(H=G_{K(\mu_{\ell^\infty})}\).
+This is an abelian quotient of \(G_{\mathbb Q}\), and
+\(K\) is disjoint from the cyclotomic extension since it
+ramifies at a prime outside \(\ell\).
+A self-twist is trivial on inertia at the chosen ramified
+prime, since \(r\) is unramified there. Its quadratic
+factor is therefore trivial, so the self-twist factors
+through the cyclotomic extension alone.
+On inertia at \(\ell\) a finite self-twist must preserve
+the multiset of four graded characters of \(r\).
+The four distinct cyclotomic exponents \(e+1,e,1,0\)
+cannot be interchanged by a finite-order character:
+restrict further to the kernel of all the finite
+characters and use the infinite image of the cyclotomic
+character. Each of the four inertia characters must
+therefore be fixed individually by the self-twist.
+It follows that the self-twist is trivial on inertia at
+\(\ell\), which surjects onto
+\(\operatorname{Gal}(\mathbb Q(\mu_{\ell^\infty})/\mathbb Q)\).
+This contradicts the nontriviality of \(\eta\) and proves (SR2).
+A suitable \(K\) always exists, for example
+\(\mathbb Q(\sqrt{-q})\) for a prime \(q\equiv3\bmod4\)
+outside the finite ramification set.
+\end{proof}
+
+\begin{theorem}[The rigidity implication for the remaining RH points]
+\label{thm:rh-symplectic-rigidity}
+Suppose an absolutely irreducible actual characteristic-zero
+point \(r\) of the remaining ordinary-RH datum satisfies
+the source automorphy condition \texttt{IsAut4Alt} (equivalently
+the condition \texttt{IsAutQA} used there).
+Then it satisfies the original \texttt{Raw.RigidAt} condition.
+Thus the RH specialization of the rigidity implication
+\texttt{RigiditySymplecticFour} holds, with its original
+automorphy premise, without an additional residual adequacy
+assumption.
+\end{theorem}
+
+\begin{proof}
+Choose \(K\) as in Lemma~\ref{lem:rh-symplectic-cyclotomic-irreducibility}.
+The source \texttt{IsAutQA} applies to every imaginary quadratic
+field where the restriction of the continuous representation
+is irreducible. By (SR2) it supplies a regular algebraic
+cuspidal representation \(\pi\) on \(\mathrm{GL}_4/K\)
+attached to \(r|_{G_K}\).
+The fixed similitude \(\tau=\varepsilon^{e+1}\psi\xi\omega_T^{-1}\)
+is algebraic and is defined on \(G_{\mathbb Q}\).
+The alternating pairing identifies \(r^\vee\otimes\tau\)
+with \(r\), and \(r\) extends across \(K/\mathbb Q\).
+The corresponding conjugate duality of \(\pi\), with the
+algebraic character of \(\mathbb Q\) corresponding to the
+similitude in the attachment normalization, follows at all
+unramified places and hence globally by strong multiplicity one.
+Thus \(\pi\) is polarizable. The polarization on the attached
+Galois representation is symmetric: if \(c\) is complex
+conjugation, \(\tau(c)=-1\), \(r(c)^2=1\), and
+\[
+ P=r(c)J^{-1},\qquad
+ P^t=P,\qquad
+ r(cgc^{-1})=\tau(g)P r(g)^{-t}P^{-1}\quad(g\in G_K).
+ \tag{SR3}
+\]
+This is the polarized adjoint convention, with negative transpose
+on the nonidentity component. Equivalently one may twist the
+attached representation in passing to the chosen standard
+algebraic normalization; this does not change the adjoint
+representation or (SR2).
+
+By Chebotarev and semisimplicity the attached representation
+is the actual restriction (with that normalization).
+The polarization is unique up to scalar by absolute irreducibility.
+Thorne's adjoint vanishing theorem
+\cite[Theorem~6.1]{support-type-one-thorne} now gives
+\[
+ H^1_f(\mathbb Q,\operatorname{ad}_{\mathrm{pol}}(r|_{G_K}))=0:
+\]
+its cyclotomic irreducibility hypothesis is precisely (SR2).
+On \(G_K\) this adjoint is the usual conjugation action on
+\(\operatorname{End}(r)\), and on \(c\) it is
+\[
+ X\longmapsto-PX^tP^{-1}
+   =\operatorname{Ad}(r(c))\theta(X).
+\]
+The involution \(\theta\) commutes with both parts of this action.
+On its \(+1\) eigenspace the action is exactly the usual
+\(\operatorname{Ad}(r)\) on \(\mathfrak{sp}_4\).
+The direct-summand projection therefore yields
+\(H^1_f(\mathbb Q,\mathfrak{sp}_4{}_{\operatorname{Ad}r})=0\).
+By Proposition~\ref{prop:rh-symplectic-local-finite},
+every original dual-number tangent is a coboundary in this
+summand, with a primitive \(X\in\mathfrak{sp}_4\).
+Writing the tangent matrix as \(z(g)r(g)\), the equality
+\(z(g)=X-\operatorname{Ad}(r(g))X\) gives
+\(z(g)r(g)=Xr(g)-r(g)X\), exactly \texttt{Raw.RigidAt}.
+\end{proof}
+
+This argument proves local finite conditions for all actual points
+and the full rigidity implication at automorphic irreducible RH
+points. It does not prove the source's \texttt{AllIrr} automorphy
+premise or \texttt{Fin0} or \texttt{NoEnd}. Potential crystallinity
+does not by itself prove the all-powers nonresonance condition of
+\texttt{PotUnl}. No integral Selmer length bound follows from the
+characteristic-zero vanishing alone.
