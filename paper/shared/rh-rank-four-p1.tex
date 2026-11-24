@@ -1,0 +1,281 @@
+\subsection{The characteristic-prime propagation clause in rank four}
+\label{subsec:rh-four-p1}
+
+The original \texttt{p1} clause can be obtained from the
+ordinary \texttt{P1core} theorem already proved in all ranks.
+The essential point is the regularity condition on the
+cyclotomic kernel of a rank-four characteristic-prime curve.
+We give a direct proof of this condition, using the connected
+components of a linear algebraic group and a degree-four
+Newton polygon calculation.
+
+\begin{lemma}[A regular spectrum in each connected coset]
+\label{lem:rh-four-regular-coset}
+Let $H$ be a Zariski-closed subgroup of $\mathrm{GL}_4$ over
+an algebraically closed field $E$ of odd characteristic.
+Suppose $H$ acts irreducibly, its identity component $H^\circ$
+does not act as a sum of four characters, and $H^\circ$ contains
+a torus whose four weights on the given representation are
+distinct. Then every coset of $H^\circ$ in $H$ contains a
+matrix with four distinct eigenvalues.
+\end{lemma}
+\begin{proof}
+Restriction to the normal subgroup $H^\circ$ is semisimple:
+choose a simple invariant subspace and take the sum of its
+$H$-translates. This sum is semisimple, is nonzero and is all
+of $E^4$. No isomorphic simple summand is repeated since that
+would repeat a weight of the given torus. The action of $H$
+on these distinct summands is transitive, by irreducibility.
+Thus either $H^\circ$ acts irreducibly, or there are precisely
+two summands of dimension two.
+
+Choose a cocharacter of the torus with four distinct integer
+weights $w_1>w_2>w_3>w_4$, after permutation. Such a
+cocharacter exists by avoiding finitely many proper rational
+hyperplanes in the cocharacter lattice. Work in its eigenbasis.
+Consider first a coset which preserves all the simple summands.
+On this coset each diagonal-entry function and each diagonal
+entry of the inverse is nonzero somewhere: on each summand
+the linear span of the matrices of $H^\circ$ is its full
+matrix algebra by Burnside's theorem, and this remains true
+after multiplication by the fixed coset representative.
+The inverse coset has the same property. The coset is an
+irreducible variety; choose a matrix $M$ where all these
+functions are nonzero. In particular the first diagonal entry
+and the last diagonal cofactor of $M$ are nonzero.
+
+Multiply $M$ by $\operatorname{diag}(s^{w_1},\ldots,s^{w_4})$.
+The first, third and fourth elementary coefficients of its
+characteristic polynomial have degrees at infinity
+$w_1$, $w_1+w_2+w_3$, and $\sum_i w_i$, respectively.
+For the second coefficient the largest possible degree is
+$w_1+w_2$, occurring only for the principal minor indexed
+by $1,2$. If this term is nonzero, the four slopes of the
+Newton polygon are distinct. Otherwise the degree is at most
+$w_1+w_3$, strictly below
+$w_1+(w_2+w_3)/2$. The upper Newton polygon then has slopes
+$w_1,(w_2+w_3)/2,w_4$ with horizontal lengths $1,2,1$.
+For the middle edge its reduced polynomial after the
+corresponding scaling is a binomial of degree two with
+nonzero constant term. In odd characteristic it is
+separable, and the two one-step edges also give simple
+roots. In either case the characteristic polynomial over
+the Laurent-series field at infinity is separable.
+Consequently its discriminant as a Laurent polynomial in
+$s$ is not identically zero, and some $s\in E^\times$ gives
+a simple spectrum.
+
+For a coset interchanging the two two-dimensional summands,
+write its matrices in the form
+$\left(\begin{smallmatrix}0&B\\C&0\end{smallmatrix}\right)$.
+By the same full-matrix-span argument there is a matrix in
+the coset with the $(1,1)$ entries of both off-diagonal blocks
+nonzero, after sorting the weights $a_1>a_2$ and $b_1>b_2$
+within the respective blocks. The blocks are invertible.
+Multiplication by the cocharacter gives squared eigenvalues
+with characteristic polynomial
+\[
+ \det(XI_2-B\operatorname{diag}(s^{b_1},s^{b_2})
+                C\operatorname{diag}(s^{a_1},s^{a_2})).
+\]
+Its trace has degree $a_1+b_1$ with nonzero leading
+coefficient, and its determinant has degree
+$a_1+a_2+b_1+b_2<2(a_1+b_1)$. Hence the two squared
+eigenvalues are distinct and nonzero over $E(s)$.
+Their two square roots each are distinct in odd
+characteristic. Specializing away from the zeros of the
+discriminant gives the assertion also in this case.
+\end{proof}
+
+\begin{theorem}[The original rank-four characteristic-prime clause]
+\label{thm:rh-four-p1}
+Keep the fitted deep tower and the ideal $J$ of
+Theorem~\ref{thm:rh-four-image-ideal}. Let
+$y:X.A\to k[[z]]$ be any of the original characteristic-prime
+points in \texttt{PotentialModularityTower.p1}: the coefficient
+residue is the prescribed one, $J$ vanishes, the generic
+symplectic representation is absolutely irreducible, and for
+every selected local place and every pair of labels the two
+characters are distinct on $T.U1(v)$. Then
+$X.\mathrm{LocZero}(J,y)$ holds.
+\end{theorem}
+\begin{proof}
+Write $R$ for its generic symplectic representation and
+$N=G_L\cap\ker\epsilon$. The coefficient field of the
+curve is finite, and the matrices and diagonal characters
+are continuous in the $z$-adic topology: this follows from
+the original maximal-ideal continuity and the fact that
+the coefficient maximal ideal maps into $(z)$.
+The same holds for the representation
+$\rho=R|_{G_L}\bar\kappa$ obtained through either untwisted
+link in characteristic $\ell$. We may use the algebraic
+closure $E$ of $k((z))$ as the field of linear algebra.
+
+First $R|_{G_L}$ is irreducible. Otherwise restriction to
+the normal subgroup of index two is semisimple by the sum
+of translates argument. Its simple constituents can have
+at most two isomorphism classes and their multiplicities
+are equal. In fact multiplicities cannot exceed one here:
+choose an inertia element with four eigenvalues whose
+pairwise ratios have infinite order, as constructed below.
+Such an element is in $G_L$, and repeated isomorphic
+summands would repeat its eigenvalues. The two distinct
+constituents must therefore be interchanged by the outside
+coset. This gives a self-twist of $R$ by the quadratic
+character of $L/F$, using the endomorphism with opposite
+signs on the two summands. Reduction of characteristic
+polynomials gives a permutation of the original residual
+characters by this quadratic character. No two of them
+can have the same restriction to $G_L$, by \texttt{Ok.g3}.
+Thus such a permutation would fix each character and the
+quadratic character would be trivial, a contradiction.
+The scalar twist by $\bar\kappa$ does not affect
+irreducibility.
+
+To obtain the asserted inertia element, fix one selected
+place. On $T.U1(v)$ each of the pairwise ratios of the
+graded characters lies in $1+zk[[z]]$, and is nontrivial
+by hypothesis. This target is torsion-free: its prime-to-$\ell$
+power maps have trivial kernel, and in characteristic
+$\ell$ the $\ell$-power map on the domain is injective.
+Each ratio has infinite image, so its closed kernel in the
+compact local subgroup has infinite index and empty
+interior. A finite union of such kernels cannot cover the
+group. An element outside their union has every
+eigenvalue ratio of infinite order, since the ordinary
+flag gives its eigenvalues as the labeled characters.
+This element belongs to $N$ by the definition of
+$T.U1(v)$. Its powers all have distinct eigenvalues.
+
+Now restrict $\rho$ to $N$. Again the sum of translates
+of any simple constituent gives semisimplicity. The
+preceding element excludes repeated isomorphic
+constituents. If there is more than one constituent, their
+number is two or four by transitivity and equality of
+dimensions. The quotient $G_L/N$, a subgroup of
+$\mathbb Z_\ell^\times$, acts through a transitive
+abelian permutation group on these constituents.
+A faithful transitive abelian permutation group is
+regular, so it has order two or four. It has a nontrivial
+quadratic character $\eta$, trivial on a constituent
+stabilizer. Multiplication by the value of $\eta$ on a
+coset representative, on the corresponding summand,
+gives an intertwiner between $\rho$ and its quadratic
+twist. The finite permutation action is continuous:
+the stabilizers of subspaces are closed, since the
+matrices are continuous, and a closed finite-index
+subgroup of a compact group is open. Consequently
+$\eta$ is continuous and is trivial on the pro-$\ell$
+part of $\epsilon(G_L)$, since $\ell$ is odd. In
+particular it is trivial when $\omega=1$.
+Reduction of characteristic polynomials gives the
+permutation of the four residual characters required
+by \texttt{Ok.g3'}. Its conclusion is that $\eta=1$,
+contradicting construction. Thus $\rho|_N$ is
+absolutely irreducible, the original \texttt{TypeI}
+condition.
+
+We prove \texttt{N3}. Let $H$ be the Zariski closure of
+$\rho(N)$ in $\mathrm{GL}_4(E)$. It acts irreducibly.
+The identity component of the closure of the cyclic
+group generated by the inertia element found above
+is a torus contained in $H^\circ$. The four weights
+are distinct on it, since a ratio trivial on the identity
+component would have finite image on the cyclic group.
+
+We exclude the sum of four characters in
+Lemma~\ref{lem:rh-four-regular-coset}. In that case the
+four weight lines of $H^\circ$ are distinct and the
+whole group $\rho(G_L)$ permutes them, because
+$H^\circ$ is normal in its Zariski closure. The
+permutation group $P\subset S_4$ is transitive by
+irreducibility. On the kernel $Q$ of this permutation
+action, the four diagonal eigenvalues in this basis
+are characters. Their values are integral units in
+the valuation ring of $E$: the characteristic
+polynomials and their unit constant terms come from
+the actual integral curve. Reduce these four
+characters. Their direct sum has the same
+characteristic polynomials on $Q$ as the restrictions
+of the four given residual characters. The
+semisimple-character theorem (or the finite-image
+Brauer--Nesbitt theorem) identifies the two multisets.
+Indeed the given restrictions have finite image,
+and each reduced character value is one of the
+finitely many prescribed values. The reduced
+characters of the four weight lines are transitively
+permuted by conjugation by $G_L$, whereas each of
+the given residual characters is invariant under
+conjugation. It follows that all four reduced
+characters agree on $Q$. Thus every quotient of the
+given residual characters factors through $P$.
+Every cyclic quotient of a subgroup of $S_4$ has
+order at most four: lift a generator of the quotient
+to a permutation, whose order is at most four.
+This contradicts \texttt{Ok.ord}, which supplies a
+root character of order greater than four.
+We have verified every assumption of
+Lemma~\ref{lem:rh-four-regular-coset}.
+
+Every open subgroup of the profinite group $N$ has
+finite index. Its image's Zariski closure contains
+$H^\circ$ since $H$ is a finite union of translates
+of that closed subgroup. Thus the image of every
+nonempty relatively open subset of $N$ is Zariski
+dense in a set containing a coset of $H^\circ$.
+The lemma shows that the discriminant of the
+characteristic polynomial cannot vanish on that
+whole image. This is exactly the required density
+of separable spectra on $N$, not a density assertion
+on the full Galois group in its place.
+
+The \texttt{N1} conditions follow from the distinctness
+on $T.U1(v)$: on that group $\epsilon=1$, so neither
+equality of labeled characters nor equality after a
+cyclotomic twist is possible. At the distinguished
+place the reduction of the matrix has all four
+eigenvalues equal, while the residue cyclotomic
+character at Frobenius is not one. Thus conjugation
+by the Frobenius matrix has eigenvalues reducing to
+$1$. The cyclotomic-twisted intertwiner equation has
+only the zero solution, even on the full generic
+matrix algebra, proving \texttt{N4}. The polarization
+matrix is the original symmetric invertible
+$J_{\rm sp}R(c)$, with $J_{\rm sp}$ the fixed
+symplectic form; the pairing computation is the one
+in the seed-support proof. The original ordered
+flag and residual inertia conditions follow from
+the determinant-map construction. In particular
+the character twist is a unit over $k[[z]]$ and
+changes none of these conditions.
+
+We have proved all four clauses of the original
+\texttt{NiceI} predicate for the actual curve of
+each ordinary determinant ring. The passage
+through the level quotient changes none of the
+density conditions: it is a continuous quotient
+of $G_L$, with cyclotomic character descending;
+the inverse image of a nonempty relatively open
+subset of its cyclotomic kernel is nonempty and
+relatively open in $N$.
+Since $y$ kills the sum ideal, both ordinary
+evaluations kill their respective ordinary Hecke
+ideals. The already proved \texttt{P1core}
+theorem therefore puts the respective Hecke
+ideal in every prime below each ordinary curve
+kernel. Pulling a prime $\mathfrak q$ of $B$
+below $\ker(y|_B)$ back by each link map gives
+two such primes. Hence $J\subset\mathfrak q$,
+which is exactly \texttt{LocZero}.
+\end{proof}
+
+In particular the original sum ideal now satisfies
+\texttt{fin}, \texttt{p1} and \texttt{seed} for
+the fitted deep tower. The characteristic-zero
+\texttt{pur} assertion at the remaining RH weights
+and the restricted cuspidal attachment were proved
+above. Global component-support propagation also
+requires the local chart presentation and its
+reducible-locus dimension estimate; the argument
+here does not replace those by the existence of
+regular spectra.
