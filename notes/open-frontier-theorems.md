@@ -179,7 +179,7 @@ prescribed theta maps on the source and target lattices used in its
 analytic norms. Prove their original selected-prime and auxiliary-level
 image divisibilities for every integral test vector, with the original
 periods, coefficient different, root phases, source twists and chain
-ranks `N(i)=k+i(t+1)`. Obtain any required aggregate nonvanishing from
+ranks `N(i)=k+i(t+1)`. The [sharp auxiliary-level column theorem](theta-sharp-level-closure.md) supplies the original reference and twisted valuation at the word prime. The outstanding comparison must transfer it to the prescribed final maps. Obtain any required aggregate nonvanishing from
 the source deficit of theorem N below; individual maps may be zero.
 
 The type-prime mixed jets, discriminant clearing, adapted arithmetic

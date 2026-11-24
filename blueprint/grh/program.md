@@ -287,7 +287,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, r60. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The actual integral chain, terminal algebraic period and exact Poincare–Bessel unfolding are supplied. Prove the intervening seesaw identities and actual smooth row realization, retain their proportionality factors and restrictions, then identify the same final global maps.
+**Next concrete task.** The actual integral chain, reference and twisted sharp auxiliary-level column valuations, terminal algebraic period and exact Poincare–Bessel unfolding are supplied. Prove the intervening seesaw identities and actual smooth row realization, retain their proportionality factors and restrictions, then identify the same final global maps.
 
 **Acceptance conditions:**
 

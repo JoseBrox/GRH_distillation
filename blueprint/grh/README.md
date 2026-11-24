@@ -16,5 +16,10 @@ character projection can suggest improvements to the general fixed-quotient
 comparison. The [shared-results index](../shared/README.md) records which
 deductions apply to both routes and which additional hypotheses survive.
 
+The JSON, DOT and SVG technical-map views reflect the sharp-level node
+closure. Compiled PDFs, PNG previews and generated hash/build ledgers
+require regeneration from the updated sources; they were not rebuilt in
+this checkpoint.
+
 Run `python scripts/build_route_blueprints.py` to regenerate both routes,
 the field ledger, the source subject map and the public compatibility views.

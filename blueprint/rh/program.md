@@ -34,8 +34,10 @@ selected-prime divisibility compatibility, final arithmetic-map
 identification and uniform trace estimates, and pointwise norm/height
 bounds. The original key shift now supplies both exact short-family
 hypotheses of the degree argument. Four
-characters do not bound fields, ranks or integral defects. No whole node
-is closed by these suppliers.
+characters do not bound fields, ranks or integral defects. The [sharp
+auxiliary-level column valuation](../../notes/theta-sharp-level-closure.md)
+is proved for the original finite chains; the RH construction and
+budget nodes remain open.
 
 ## The analytic target
 

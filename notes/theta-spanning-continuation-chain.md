@@ -151,5 +151,6 @@ including its exact value norm and class masses, and the W08 literal
 Poincare maps `Pu/sqrt(c0X)` with their source inclusions and retained
 target restrictions. Agreement of representation type does not identify
 these maps. Every compact type, `c0X`, period, finite Haar mass and radial
-factor must appear in that comparison. The endpoint W06 count therefore
-does not change on the basis of this local theorem alone.
+factor must appear in that comparison. The [sharp column valuation](theta-sharp-level-closure.md) completes
+the separate auxiliary-level node for the reference and every twisted
+column. The W06 work package remains partial.
