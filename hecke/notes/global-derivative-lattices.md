@@ -395,3 +395,24 @@ global archimedean conditioning estimate.
 There is no claim of a new critical-line
 zero exclusion, of the critical-scale
 prime discrepancy itself, or of a Lean proof.
+
+## 5. Independent finite verification in the cubic field
+
+The [exact HNF script](../scripts/check_derivative_lattice.py) was
+run with SymPy 1.14.0 on the degree-six field of discriminant
+-34992. It independently checks the integral multiplication
+basis and prime ideal norms, then computes the integer
+row-lattice indices for 76 actual evaluation nodes and their
+ordinary derivatives in degrees 3 through 10. The value index
+agrees with the proved all-prime characteristic formula at every
+tested degree, so the finite set tests the full value lattice
+in those degrees. The derivative index is computed directly;
+the divided-difference index for comparison comes from the
+proved local formula, not an independent divided-difference HNF.
+For degrees 3 through 7 the two relative indices coincide;
+in degree 8 they differ by a factor of 4, in degree 9 by 48,
+and in degree 10 by 576. These are concrete examples of the
+small-prime discrepancy that (1) retains. The
+[certificate](../certificates/derivative-lattice-check.json)
+records all integer indices. This finite calculation is not an
+asymptotic estimate or a zero test.
