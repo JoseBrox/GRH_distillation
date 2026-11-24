@@ -76,3 +76,24 @@ We do not claim the eta-product identity is new in the literature.
 
 The exact [coefficient checker](../scripts/check_s3_eta.py) and
 [certificate](../certificates/s3-eta-check.json) supplement the proof.
+
+## Direct Dirichlet arithmetic transfer to the cubic case
+
+The [companion theorem](../notes/cubic-companion-selection.md) reuses
+qs-correlations of the parent's
+[quadratic-selection chapter](../../paper/sections/recovered/11-qs-section.tex)
+and its precise uniform Dirichlet zero-free input. Its additional
+classical inputs are the Hecke quadratic automorphic-induction theorem,
+Lemke Oliver--Thorner's log-free twist density estimate (IMRN 2019,
+Corollary 1.4, [author PDF p.5](https://lemkeoliver.github.io/papers/15-AutoLFZDE.pdf),
+the displayed statement checked), and the nonreal Hecke zero-free
+region (Thorner--Zaman, *A unified and improved Chebotarev density
+theorem*, ANT 13 (2019), Theorem 3.1). The local logarithmic derivative,
+true correction and thin-scale contour deductions are written in full
+in the note.
+
+The [relative comparison](../notes/cubic-relative-comparison.md) and
+[coefficient interface](../notes/cubic-coefficient-interface.md) transfer
+the parent's positive-kernel, same-map arithmetic balance, strict
+Selmer and integral-projector framework with precise scope. The
+new CM local-system geometry and uniform estimates are not supplied.

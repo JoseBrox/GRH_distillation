@@ -15,8 +15,15 @@ The former is exactly the parent Dirichlet character host with fixed
 base character chi_{-3} (order two, conductor three) and the same
 dyadic real field and auxiliary quadratic factors, as in
 [selection-assembly](../../paper/sections/recovered/34-sec-selection-assembly.tex).
-This identification is of the field, not of all its geometric and
-local hypotheses.
+The field also meets the key CM/unramified field condition: complex
+conjugation is nontrivial on each of F, Q(sqrt(-q)) and Q(sqrt(-d)),
+whereas at a finite rational prime at most one of these three factors
+is ramified (their discriminants are pairwise coprime). At two the
+inertia can act on the real dyadic field but on none of the three
+imaginary quadratic factors. Thus complex conjugation is not in any
+finite inertia group of L_0/Q; its relative CM extension over the
+maximal real field is unramified at every finite prime. This proves
+the field-level condition, not all original geometric/local hypotheses.
 
 Over F the extension L/F is abelian, with G=C3 x B' where
 B'=Gal(L_0/F)=C_{2^h} x C2^2. Its characters are lambda^r rho^N,

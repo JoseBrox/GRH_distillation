@@ -28,7 +28,16 @@ H07F has a concrete first milestone in the [S3 benchmark](../notes/s3-benchmark.
 the exact cubic-residue/form description and eta-product real-zero
 exclusion are proved. The remaining complex-zero problem is still
 equivalent to a square-root-scale one-sided prime discrepancy estimate
-(in either direction). Neither H07F nor H07I has been completed.
+(in either direction). The [companion selection](../notes/cubic-companion-selection.md)
+and [relative scalar comparison](../notes/cubic-relative-comparison.md)
+now supply the genuine Dirichlet-style analytic blocks for this
+benchmark, with fixed coefficients and actual logarithmic derivatives.
+The [coefficient interface](../notes/cubic-coefficient-interface.md)
+reduces its proposed prime-to-six Selmer denominator to the parent
+abelian term and two equal cubic sectors over a fixed quadratic field.
+The original CM host cannot contain the cubic field, so an actual
+equivariant local-system realization and quantitative arithmetic
+bounds are still missing. Neither H07F nor H07I has been completed.
 
 See the [open frontier](../notes/open-frontier.md) and
 [progress](progress.md). The map has nine nodes now, formerly eight;

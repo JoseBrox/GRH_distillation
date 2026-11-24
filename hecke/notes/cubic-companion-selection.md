@@ -54,7 +54,9 @@ Two classical Hecke/automorphic inputs are also used.
 quadratic field: a primitive finite-order character of an imaginary
 quadratic field unequal to its conjugate induces a cuspidal GL2/Q
 representation with the same L-function and with conductor dividing
-|disc F| times the norm of its conductor. Norm-pullback twists give
+|disc F| times the norm of its conductor. See also M. Harris,
+[Monomial representations, Eilenberg lecture 3, p.1](https://webusers.imj-prg.fr/~michael.harris/SatoTate/notes/Monomialreps.pdf)
+for the cyclic induction and cuspidality criterion. Norm-pullback twists give
 ordinary Dirichlet twists of this representation, with the exact
 local L-factors. Here lambda^c=lambda^{-1}!=lambda, and the ray
 modulus divides 6O_F, so the fixed induced representation pi is

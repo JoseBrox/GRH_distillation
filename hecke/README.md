@@ -50,6 +50,15 @@ eta-product formula excluding all positive real zeros of its new
 cubic Hecke factor. Either sign of a one-sided prime discrepancy
 estimate would now suffice for this case, but that estimate is open.
 
+We now reuse a substantial arithmetic part of the Dirichlet method:
+[quadratic companion selection](notes/cubic-companion-selection.md)
+and [the relative prime-ideal comparison](notes/cubic-relative-comparison.md).
+The [coefficient interface](notes/cubic-coefficient-interface.md) isolates
+an exact abelian Selmer contribution and two new cubic sectors over the
+fixed Eisenstein field. The cubic splitting field itself cannot be
+contained in a CM host; we must retain the existing CM field and
+construct compatible maps with a finite cubic coefficient system.
+
 The [progress inventory](blueprint/progress.md) has 6/9 written
 reductions or cited inputs; the former open node H07 was split
 into the two tasks above. This is not a proof-completion percentage.

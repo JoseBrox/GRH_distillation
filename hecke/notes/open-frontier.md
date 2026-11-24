@@ -55,12 +55,36 @@ Hecke factor has no real zero in Re(s)>0, by the exact eta-product
 identity. Thus (W) for either sign of E(x)-3C(x) suffices for
 this particular field. The actual bound is still missing.
 
-The next supplier must bound these actual prime discrepancies,
-not just the ordinary coefficients of a theta or eta series.
-Seek an arithmetic identity for the cubic character and quantitative
-control of its logarithmic derivative. Compare actual Dirichlet
-source constructions, including integral theta and norm estimates,
-with this character's explicit primary Eisenstein generators.
+**Reusing the Dirichlet construction.** The
+[cubic companion theorem](cubic-companion-selection.md) supplies
+true corrected quadratic companions and all relative thin arguments
+under the stated parent Dirichlet QRH and classical density/zero-free
+inputs. The [relative scalar comparison](cubic-relative-comparison.md)
+now identifies precisely the sufficient arithmetic discrepancy E/k:
+its prime-ideal kernel, actual main term, weight profiles and all
+ramified factors are explicit. The new target is the same-map
+arithmetic inequality (11) there on cofinal windows, with total
+exponent loss tending to zero. The main terms use only rational
+Dirichlet logarithmic derivatives.
+
+The direct relative field L is not CM and cannot be embedded in
+any CM host, so the original geometric construction cannot simply
+be applied. Instead retain the original admissible field-level CM
+host L_0 and construct actual integral maps using a finite cubic
+coefficient system, with the required arithmetic labels. The
+[coefficient interface](cubic-coefficient-interface.md) supplies
+the exact prime-to-six strict Selmer decomposition and the fixed
+cubic integral-projector loss. Its trivial sector is the actual
+Dirichlet host; its two new cubic sectors are over fixed F,
+equivalently induced rank-two coefficients over Q. The new
+uniform length bound, special coefficient primes and geometry
+remain open. Do not identify a common scalar twist of the old
+maps with this new Frobenius count without proof.
+
+The first missing supplier is thus an actual equivariant
+theta/divisor map realizing the relative arithmetic balance,
+together with the compatible degree/divisibility and norm bounds,
+not another reformulation of the zero problem.
 
 ## H07I — genuinely infinite-order unitary characters
 

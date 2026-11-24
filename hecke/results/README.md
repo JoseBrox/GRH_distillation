@@ -17,5 +17,11 @@
 | S3 eta product and unconditional real-zero exclusion | Proved using Euler's pentagonal theorem | [S3 note, §4](../notes/s3-benchmark.md) |
 | Either sign of a one-sided estimate suffices for the S3 quotient | Proved reduction | [S3 note, §5](../notes/s3-benchmark.md) |
 | Independent coefficient / splitting enumeration through 30000 | Exact finite verification, not a zero test | [Certificate](../certificates/s3-eta-check.json) |
+| High-moment quadratic companion selection for arbitrary bounded prime coefficients, polynomial-size families | Proved under parent Dirichlet QRH | [Companion note, §2](../notes/cubic-companion-selection.md) |
+| Actual corrected cubic quadratic companions, derivative at one and full thin family | Proved under parent Dirichlet input and classical density/zero-free theorems | [Companion note, §§3–4](../notes/cubic-companion-selection.md) |
+| Relative prime-ideal arithmetic balance and fixed cubic projection, including ramification | Proved scalar transfer; arithmetic supplier open | [Relative comparison, §§1–4](../notes/cubic-relative-comparison.md) |
+| No CM field contains the S3 splitting field | Proved obstruction to naive source substitution | [Relative comparison, §5](../notes/cubic-relative-comparison.md) |
+| Exact prime-to-six strict Selmer decomposition and fixed cubic integral projector cost | Proved; uniform length estimate open | [Coefficient interface, §§1–3](../notes/cubic-coefficient-interface.md) |
+| Common unitary scalar twist of polarized deformation data | Proved for transported conditions; does not create the required relative prime count | [Coefficient interface, §4](../notes/cubic-coefficient-interface.md) |
 
 No general new arithmetic estimate or new Lean verification is claimed.

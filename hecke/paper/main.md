@@ -411,7 +411,47 @@ The sign may be fixed on a cofinal subsequence.
 This is the first explicit nonabelian arithmetic
 benchmark. We have not supplied this estimate.
 
-## 7. Remaining work and provenance
+## 7. Reusing the Dirichlet arithmetic machinery in the cubic case
+
+The independent counting reduction is the simplest analytic endpoint.
+For the actual cubic arithmetic estimate we may also use our
+Dirichlet construction's corrected ramps. Let $F=\mathbb Q(\omega)$
+and retain the selected auxiliary quadratic primes $q,d$ and dyadic
+real field $R_h$. The field
+$L_0=F R_h(\sqrt{-q},\sqrt{-d})$ is the parent abelian CM host with
+base character $\chi_{-3}$; its relative CM extension is unramified
+at finite places. Adjoining the cubic field gives a relative abelian
+extension of $F$ with group $C_3\times C_{2^h}\times C_2^2$.
+
+Our [companion theorem](../notes/cubic-companion-selection.md) proves
+simultaneous bounds for the genuine corrected sums of the quadratic
+twists of the cubic character and its powers, including their
+logarithmic derivatives at one. This uses the parent's Dirichlet
+quadratic-correlation lemma, a classical automorphic zero-density
+theorem, and an elementary moment argument. The classical nonreal
+Hecke zero-free region suffices for the entire relative family's
+large-scale thin bounds. There is no assumption of Hecke GRH.
+
+The [relative arithmetic comparison](../notes/cubic-relative-comparison.md)
+gives the exact scalar balance over prime ideals, with all ramified
+Euler factors and the same normalized Fourier averaging as in the
+Dirichlet program. It reduces the benchmark to one concrete
+arithmetic discrepancy bound using the actual integral maps.
+
+The relative extension is not CM, and no CM field contains the
+$S_3$ splitting field. Hence the original PEL host cannot be
+changed by adjoining this field. The remaining construction is
+to retain $L_0$ with a finite cubic coefficient system and realize
+the actual relative Frobenius kernel. The
+[coefficient interface](../notes/cubic-coefficient-interface.md)
+proves that the candidate strict Selmer groups at primes outside
+two and three split exactly into the original abelian sector and
+two equal cubic sectors over the fixed Eisenstein field.
+This permits a precise reuse of the parent algebraic estimates
+where their hypotheses hold, but the new uniform cubic length
+bound and actual geometric comparison remain open.
+
+## 8. Remaining work and provenance
 
 The preferred proof is self-contained within the
 repository relative to the stated classical results;

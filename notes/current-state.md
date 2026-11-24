@@ -5,7 +5,7 @@ this reconstruction. This is a short resumption index; complete statements,
 proofs and source evidence belong in the linked files. Earlier versions
 remain in Git history. The repository main branch and the linked proof records give the current state.
 
-Third research level: [Hecke GRH](../hecke/README.md) has its own [checkpoint](../hecke/notes/current-state.md), [program](../hecke/blueprint/program.md), [manuscript](../hecke/paper/main.md) and [frontier](../hecke/notes/open-frontier.md). Its preferred proof now uses an independent direct prime-count Mellin criterion, Galois norm-pullback reduction and separate finite-order/phase suppliers. The [S3 benchmark](../hecke/notes/s3-benchmark.md) has a proved eta-product real-zero exclusion; the complex-zero estimate remains open. The Hecke map is 6/9 after subdivision of H07. RH and Dirichlet counts are unchanged.
+Third research level: [Hecke GRH](../hecke/README.md) has its own [checkpoint](../hecke/notes/current-state.md), [program](../hecke/blueprint/program.md), [manuscript](../hecke/paper/main.md) and [frontier](../hecke/notes/open-frontier.md). The [cubic benchmark](../hecke/notes/s3-benchmark.md) now reuses the parent's [quadratic companion selection](../hecke/notes/cubic-companion-selection.md), [relative arithmetic balance](../hecke/notes/cubic-relative-comparison.md) and [exact Selmer sector decomposition](../hecke/notes/cubic-coefficient-interface.md). The actual new equivariant map and quantitative estimates remain open. Hecke 6/9; RH and Dirichlet counts unchanged.
 
 ## Start here
 

@@ -4,50 +4,72 @@ Updated 24 November 2026. Full Hecke GRH remains open.
 
 Start with the [independent arithmetic manuscript](../paper/main.md),
 [program](../blueprint/program.md) and [frontier](open-frontier.md).
-The [direct criterion](direct-prime-criterion.md) now supplies the
-entire analytic implication from an ordinary prime-counting deficit,
-with no special smooth profile, explicit formula or Masullo trace.
-The [Galois reduction](galois-base-change.md) covers all unitary
-characters. The [local positivity note](unitary-positive-kernel.md)
-proves exact arithmetic positivity for arbitrary unitary characters,
-including ramification. The earlier
-[smoothed and trace route](../paper/smoothed-and-trace.md) remains
-an optional alternative, fully attributed.
+The [direct criterion](direct-prime-criterion.md) supplies the analytic
+implication from an ordinary prime-count deficit; the
+[Galois reduction](galois-base-change.md) and
+[local positivity](unitary-positive-kernel.md) cover all unitary
+characters. The [S3 benchmark](s3-benchmark.md) proves the exact
+cubic-residue/prime form condition and eta-product real-zero exclusion.
+The Masullo-inspired smoothed/trace route remains a fully attributed
+optional alternative.
 
-**Next actions.** H07F: attack the
-[S3 benchmark](s3-benchmark.md). The exact prime condition is
-p=1 mod 3 and 2^((p-1)/3)=1 mod p, or p=u^2+27v^2.
-The cubic Hecke factor has a proved elementary eta-product
-representation and no real zeros; either sign of its relative
-prime discrepancy suffices. Obtain the missing square-root-scale
-bound. Compare the actual arithmetic inputs of the Dirichlet
-program with the explicit Eisenstein ray character. H07I:
-construct a quantitative estimate of the fixed-character split-prime
-phase count, possibly using exact positive phase kernels. Neither
-estimate has been supplied.
+## Direct reuse of the Dirichlet construction
 
-H07 was subdivided into H07F and H07I, so the map is now **6/9**.
-This does not claim a new closure or a fraction of a proof.
-RH and Dirichlet counts remain unchanged. The independent relative
-route uses our eventual completed Dirichlet proof, not an
-unexplained import of an external formalization; the absolute
-split-prime version avoids even that separate premise.
+For H07F's first nonabelian benchmark, the
+[cubic companion theorem](cubic-companion-selection.md) transfers the
+parent quadratic-prime selection, using its stated Dirichlet QRH input
+and the classical automorphic zero-density theorem. It supplies the
+true corrected sums, derivatives at one and the entire relative
+dyadic family's thin-scale bounds, without a Hecke GRH assumption.
+The [relative comparison](cubic-relative-comparison.md) proves the
+actual scalar prime-ideal balance and fixed-order projection,
+including every inertia coefficient. Thus only an arithmetic
+supplier for its exact E/k remains at that interface.
 
-## Attribution and verification
+The relative field L=K L_0 is not CM; no CM field contains K.
+A direct field substitution in the parent's PEL geometry is invalid.
+The original CM field L_0 is the Dirichlet host with base chi_{-3}
+and satisfies the key unramified CM field condition. The
+[cubic coefficient interface](cubic-coefficient-interface.md)
+proves an exact prime-to-six decomposition of the negative-twist
+strict Selmer groups: the parent abelian term plus two equal cubic
+sectors over the fixed Eisenstein field, equivalently rank-two
+induced coefficient groups over Q. Integral cubic projectors have
+fixed denominator three; common unitary scalar twists preserve
+adjoint/deformation data with transported conditions.
 
-The [initial transfer note](masullo-transfer.md) credits the
-Masullo/RiemannMasullo test and trace results. The
-[research contribution](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131373425)
-was [reviewed](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131807529)
-but did not close their remaining comparison. No external
-crowdsourced lemma is required by the current preferred proof.
-If H08 is adopted, prove each essential geometric input here.
+**Next direct attack:** keep L_0 and construct an actual
+equivariant integral theta/divisor map with the cubic coefficient
+system, whose arithmetic quantity is precisely (4)--(5) in the
+relative comparison. Check its exact polarizations, coefficients,
+Frobenius labels, same-map norm/degree estimates and local
+conditions. A common scalar twist alone does not supply this
+identity. For its possible negative-twist denominators, extend
+the parent's fixed-Eisenstein-field Selmer/automorphic count to
+the actual new cubic sectors of (4) in the coefficient note;
+handle primes two and three separately. No uniform cubic Selmer
+length estimate is supplied yet.
 
-The S3 proof uses the classical cubic reciprocity law and Euler
-pentagonal theorem. The exact finite [checker](../scripts/check_s3_eta.py)
-was run: all coefficients through 30000 agree, and 3243 primes
-p>3 were checked, 534 split completely. See the
-[certificate](../certificates/s3-eta-check.json). This is a finite
-coefficient check, not a computation of zero locations. The
-compiled TeX/PDF edition is not yet built or verified; Markdown
-is current and the build script is retained.
+The elementary relative split-prime target E(x)-3C(x) remains
+available independently. H07I, the infinite-order phase estimate,
+is still open; the finite-coefficient moment lemma transfers to
+its auxiliary finite windows, but the genuine zero-free boxes
+and geometry have only been established for the cubic benchmark.
+
+## Status and attribution
+
+The map remains 6/9: neither H07F nor H07I has closed.
+The new benchmark suppliers are partial results within H07F.
+RH and Dirichlet counts are unchanged. Our final preferred
+proof must be self-contained relative to classical theorems
+and our own completed Dirichlet program. No Masullo result
+is a required premise. The [transfer note](masullo-transfer.md)
+and [source register](../sources/README.md) retain all attribution,
+including the upstream [review](https://github.com/mccorvie/riemann-masullo/issues/5571#issuecomment-7131807529).
+
+New proofs are ordinary mathematics with the explicitly cited
+Dirichlet and classical inputs. No new Lean replay, quantitative
+bound for the target cubic factor, or computational zero check
+is claimed. The prior [finite coefficient check](../certificates/s3-eta-check.json)
+is not a zero test. The Markdown manuscript is current;
+its compiled TeX/PDF edition is still pending.

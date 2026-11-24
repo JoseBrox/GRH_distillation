@@ -43,6 +43,14 @@ splitting field of the polynomial X^3-2. Its new cubic Hecke factor
 has a proved eta-product representation, excluding real zeros and
 allowing either sign of the required one-sided prime-counting estimate.
 
+For the cubic benchmark, our Dirichlet arithmetic method now
+supplies the quadratic companion estimates and the relative
+prime-ideal Fourier comparison. An exact Selmer decomposition
+separates the old abelian part from two new cubic sectors over a
+fixed quadratic field. The new geometric construction remains
+open: a non-CM splitting field cannot be used as a CM host.
+See the [cubic transfer](hecke/notes/cubic-relative-comparison.md).
+
 The [proof map](hecke/blueprint/proof.svg),
 [checkpoint](hecke/notes/current-state.md) and
 [open frontier](hecke/notes/open-frontier.md) distinguish the proved

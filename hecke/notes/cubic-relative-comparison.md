@@ -282,10 +282,8 @@ for E/k on cofinal windows, using our earlier window theorem.
 The appropriate fourth-power or other valid finite sampling
 variant may be used only with its stated hypotheses.
 
-For completeness the Mellin transform of G_psi is
--F'/[s(s-1)] in the notation L'/L with the correcting poles
-at one removed; more explicitly the uncorrected ramp transform
-is - (L'/L)(s)/(s(s-1)). The corrections remove its principal
+For completeness the uncorrected ramp has Mellin transform
+- (L'/L)(s)/(s(s-1)). The corrections remove its principal
 double or nonprincipal simple pole at one. At a critical-strip
 zero rho the residue of G_psi is
 m_rho/[rho(1-rho)], positive on the real interval. For (9)
