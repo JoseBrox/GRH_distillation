@@ -118,7 +118,7 @@ are needed.
 
 Use Heath-Brown, *A mean value estimate for real character sums*,
 Acta Arith. 72 (1995), 235–275, Theorem 1,
-[EuDML record](https://eudml.org/doc/206728).
+[EuDML record](https://doi.org/10.4064/aa-72-3-235-275).
 For arbitrary complex coefficients supported on odd squarefree n,
 
 
