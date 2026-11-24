@@ -1,0 +1,365 @@
+\subsection{The original two links and their common Hecke ideal}
+\label{subsec:rh-rank-four-link-ideal}
+
+We retain the fitted deep tower $T$ of the original rank-four problem.
+Write $F=T.F$, $K=T.K$, $L=FK$, and $S=D.S$ for the original finite
+set of rational primes. Thus $F$ is totally real abelian over
+$\mathbb Q$, $K$ is imaginary quadratic, $L/F$ is unramified at all
+finite places, and the primes of $S$ (including $2,\ell$) split in $K$.
+Let $\epsilon$ be the $\ell$-adic cyclotomic character,
+$\omega$ its Teichmuller part, and $e=D.e$. The source characters are
+\[
+ \alpha=\epsilon\omega^{-1}\xi,\qquad \Psi=\epsilon^e\psi,\qquad
+ \nu=\alpha\Psi .
+\]
+Here $\xi$ is finite of order prime to $\ell$, $\psi$ is finite,
+$\xi(c)=-1$, $\Psi(c)=1$, and both are unramified outside $S$.
+The four characters are $(\nu,\Psi,\alpha,1)$ in the original
+ordering, or its prescribed relabeling. The deep condition makes
+$\psi|_{G_F}$ of order prime to $\ell$. No new tower extension is
+made in this subsection.
+
+\begin{lemma}[Characters for the original link]
+\label{lem:rh-four-link-characters}
+After one finite enlargement of the coefficient field, independent
+of $X$, there are characters $\kappa,\beta:G_L\to\mathcal O^\times$
+and $t:G_L\to\mathbb Z_\ell$ satisfying the character conditions
+of the original \texttt{Link}, including the odd squared inertial
+exponent for $\beta$ and the integral inertial exponent for $\kappa$.
+\end{lemma}
+\begin{proof}
+Let $\psi_0$ be the prime-to-$\ell$ part of $\psi$, and set
+$\eta=(\omega^{e+3}\xi\psi_0)^{-1}$. This is a finite character
+of $G_{\mathbb Q}$ of order prime to $\ell$, unramified outside $S$.
+It is even: $\omega(c)=-1$, $\psi(c)=(-1)^e$, and passage to the
+prime-to-$\ell$ part does not change this value. On $G_F$,
+$\psi_0=\psi$.
+
+We first construct a finite character $\kappa_0$ of $G_K$ of order
+prime to $\ell$, unramified outside $S$, with
+$\kappa_0\kappa_0^c=\eta|_{G_K}$. Use global reciprocity. Choose
+a symmetric finite ray modulus of $K$ supported above $S$,
+with exponents large enough to contain the conductor of the
+rational idele character corresponding to $\eta$ at each split
+component. On the image of the diagonal rational finite unit
+ideles in the finite ray class group prescribe $\eta$. This
+prescription is well defined: an element of that diagonal unit
+group which is trivial in the ray class group agrees modulo the
+ray unit subgroup with a global unit of $K$. The units of $K$
+are $\{\pm1\}$, since $2$ splits in $K$ (the two exceptional
+imaginary quadratic unit fields do not have this property).
+The evenness of $\eta$ and the conductor choice therefore kill
+the kernel. Every rational finite idele can be made a unit idele
+by multiplication by a rational number. The finite-group character
+extends to the whole ray class group since the roots of unity
+in the algebraic closure are divisible. Taking its prime-to-$\ell$
+part leaves the prescribed restriction unchanged. This gives
+$\kappa_0$. For an idele $z$ of $K$, the product $zz^c$ is the
+diagonal image of its norm. Compatibility of reciprocity with the
+norm proves $\kappa_0\kappa_0^c=\eta|_{G_K}$, with the same
+reciprocity convention on the two fields.
+
+Next use the maximal abelian pro-$\ell$ quotient of $G_K$ unramified
+outside $\ell$. Its local principal-unit subgroup has finite index
+by the ray class exact sequence, and is a product of two rank-one
+$\mathbb Z_\ell$-modules because $\ell$ splits in $K$ and its global
+units are finite of order prime to $\ell$. Complex conjugation
+interchanges the two factors. The torsion-free anticyclotomic
+quotient has rank one; identify it with $\mathbb Z_\ell$ and denote
+the resulting character by $t_K$. Both local inertia maps into
+this quotient are nonzero, have open images, and are negatives
+under conjugation. Choose one of the two places and identify the
+cyclotomic principal-unit image on its inertia with
+$1+\ell\mathbb Z_\ell$. By local reciprocity, the homomorphism
+$t_K$ on this pro-$\ell$ part is a nonzero homomorphism of
+rank-one $\mathbb Z_\ell$-modules. If its image is
+$\ell^b\mathbb Z_\ell$, choose an inertia element mapping to
+$\ell^b$ and write $v$ for its cyclotomic principal-unit value.
+Choose a root $u\equiv1$ modulo the maximal ideal with
+$u^{2\ell^b}=v$ in a finite coefficient extension. Such a root
+exists: first take an $\ell^b$-th root of $v$ (its reduction is
+$1$), then its unique principal-unit square root, using odd $\ell$.
+Put $\beta_K(g)=u^{t_K(g)}$ by the continuous binomial power.
+The defining equality on a topological generator gives
+$\beta_K^2=\epsilon/\omega$ on the principal-unit part of that
+inertia group. At the conjugate place the exponent is $-1$.
+Thus on inertia $\beta_K^2\epsilon^{-b_v}$ has finite image
+with $b_v=1$ or $-1$ respectively. In particular the required
+exponent is odd. The character is anticyclotomic, principal-unit
+valued, and trivial away from $\ell$ on inertia.
+
+Put $\gamma=(\epsilon/\omega)^{1/2}$, the unique principal-unit
+square root, and define the characters on $G_L$ by restriction
+and the formula
+\[
+ \beta=\beta_K|_{G_L},\qquad t=t_K|_{G_L},\qquad
+ \kappa=\kappa_0|_{G_L}\,\gamma^{-(e+4)}\beta^{e\bmod 2}.
+\]
+These are the source's characters, with
+\[
+              \kappa\kappa^c\,\nu\,\epsilon^3=1,\qquad
+              \beta\beta^c=1,\qquad t^c=-t .
+\]
+Indeed $\psi=\psi_0$ on $G_L$ and
+$\gamma^2=\epsilon/\omega$, so the first equality is a direct
+multiplication. The characters are continuous and take values
+in a fixed finite coefficient field. Outside $S$, $\kappa$ is
+unramified; on inertia away from $\ell$ its image has order
+prime to $\ell$ because only the finite factor $\kappa_0$ can
+contribute. At each $\ell$-adic place, up to finite order on
+inertia, the exponent of $\kappa$ is
+$[-(e+4)+(e\bmod2)b_v]/2$, an integer.
+If a local element has an $\ell$-power in the closure of the
+commutator subgroup, $\kappa_0$ kills it by its prime-to-$\ell$
+order, $t$ kills it by torsion-freeness, and $\epsilon/\omega$
+kills it by torsion-freeness of $1+\ell\mathbb Z_\ell$.
+Consequently $\kappa$ and $t$ kill the prescribed local
+$\ell$-primary torsion subgroups. This verifies the local
+torsion clause of the original link (also after passage to
+its unramified-outside-$S'$ quotient). The condition
+$\ker t\subset\ker\beta$ is immediate.
+\end{proof}
+
+\begin{theorem}[Two original links and determinant maps]
+\label{thm:rh-four-link-maps}
+For every fitted deep tower the two links in
+\texttt{exists\_two\_links\_same\_kappa\_not\_dvd\_of\_fit\_deep}
+exist with the same $\kappa,\beta,t$ and distinct distinguished
+rational primes. For every sufficiently large original coefficient
+extension and every original space $X$, the original determinant
+maps $\phi_n:B_0\to X.B$ exist for each $n\geq0$ and each link.
+\end{theorem}
+\begin{proof}
+The finite residual diagonal characters on $G_L$ have the
+source's opposite-pair product relation, so their quotients
+generate the group of characters generated by the two root
+coordinates $w\in\mathbb Z^2$. The fitted hypothesis
+\texttt{Ok.g2} says that $\bar\omega$ is not in this group.
+For the finite abelian joint image of the characters, elementary
+duality with characters into the finite coefficient field's
+multiplicative group identifies the double annihilator of any
+subgroup with that subgroup: the exponent of the joint image
+divides the order of that cyclic multiplicative group.
+There is therefore an element of $G_L$ on which all four
+residual diagonal characters agree and $\bar\omega\ne1$.
+
+Apply Chebotarev to a finite Galois extension of $\mathbb Q$
+containing $L$ and the fields cut out by the residual diagonal
+characters and $\bar\omega$. Choose two distinct rational primes
+outside $S$, the discriminant of $L$, and $2$, with Frobenius
+in the indicated conjugacy class. These primes split completely
+in $L$ (as $L/\mathbb Q$ is Galois), and at either chosen place
+of $F$ their residue norm is the rational prime. On its
+decomposition group the four residual characters agree
+and $\bar\epsilon\ne1$, since inertia is trivial and the
+unramified group is generated topologically by Frobenius.
+In particular $L$ contains no primitive $\ell$-th root of
+unity. For each link take the set of places of $F$ over $S$
+together with the respective single distinguished place.
+They all split in $L/F$; at $\ell$ keep precisely the
+original choices $T.\iota$. This is the Hida setting
+\texttt{SetD} in the source. The original level with
+$V.S'=s.S$ is supplied by the established ordinary
+level construction. Equivalently its Galois quotient is the
+kernel of the sign character in the maximal Galois group of
+$F$ unramified outside $s.S$; the quadratic extension
+$L/F$ is itself unramified at every finite place, so that
+kernel is the corresponding quotient for $L$.
+
+For both levels use the characters from
+Lemma~\ref{lem:rh-four-link-characters}. The four residual
+characters are exactly $\overline{\kappa\chi_i}|_{G_L}$,
+distinct by \texttt{Ok.g3}; their ordered local characters
+are their restrictions, and their prescribed local torsion
+characters are $1$. The conjugate pairing on determinants
+follows from $\kappa\kappa^c\nu=\epsilon^{-3}$ and the
+opposite-pair product relation. The residual characters
+factor through the level quotient, by the unramifiedness
+outside $S$ of all factors. At the distinguished prime
+$\kappa$ is unramified, so the preceding Frobenius choice
+gives \texttt{Resid.V0ok}. The coefficient field can be
+enlarged once to contain the characters, the images of
+all embeddings of $L$ into $\overline{\mathbb Q}_\ell$,
+and the original coefficient field. Every further coefficient
+extension then has the required largeness. This constructs
+the original two links without replacing either distinguished
+prime by a prime of higher residue degree.
+
+Write $B=X.B$ and $A_X=X.A$; the original space includes
+the injective coefficient map $B\to A_X$, its universal
+symplectic matrices $R(g)$, labeled flags, and the
+coefficients of $C_g(Z)=\det(Z-R(g))$ and local diagonal
+characters in $B$. Restrict the matrices to $G_L$ and twist
+by $\kappa\beta^n$. All their characteristic polynomials
+have coefficients in $B$, with exactly the prescribed root
+scaling. Their determinant on the group algebra is also
+defined over $B$: the integral Amitsur formula for
+$\det(1-\sum_j Z_j M_j)$ expresses its coefficients using
+the characteristic-polynomial coefficients of words in
+the $M_j$. This formula is a universal polynomial identity
+over $\mathbb Z$ (no division by $4!$); in this application
+every word is again the matrix of a group element. By the
+injectivity $B\to A_X$, the polynomial-law identities hold
+over $B$ and after every scalar extension of $B$.
+The determinant is continuous in the maximal-ideal topology
+by the original coefficient-continuity conditions.
+
+Here are the exact descent and local checks. Outside the
+chosen set of primes, the original residual representation
+and $\kappa$ are trivial on inertia, and the original
+symplectic killing condition and unramifiedness of $\beta$
+make the twisted matrices trivial there. The determinant
+therefore descends to the level quotient: the matrices kill
+the normal subgroup generated by these inertia groups;
+continuity of the characteristic-polynomial coefficients
+into the separated ring $B$ extends this invariance to
+its closure. Amitsur's formula gives the same invariance
+for the whole polynomial law. This argument does not
+require $A_X$ itself to be complete. At an old inertia
+place, if all four twisted residual characters are one,
+the diagonal list includes the trivial original character,
+so $\bar\kappa=1$ and all original residual characters
+are one. The original killing condition on the residual
+kernel makes $R$ the identity there; $\kappa$ is of
+prime-to-$\ell$ order on that inertia, hence it too is
+one, and $\beta$ is unramified. This gives exactly the
+\texttt{Pair.I} trace relations. The ordinary product
+relations hold by the ordered upper triangular flags at
+the original local decomposition groups: the rightmost
+factor kills the last quotient and the successive factors
+lower the image through the flag. Multiplying by the
+twisting character preserves these identities. The
+prescribed local torsion characters are one by the original
+\texttt{Fr.IsPair} conditions and the torsion check of the
+lemma. Finally $R(c)$ conjugates $R(g)$ to $R(cgc^{-1})$,
+and the symplectic relation and
+$\kappa\kappa^c\nu\epsilon^3=1$ prove the determinant
+polarization with multiplier $\epsilon^{-3}$. Thus the
+twisted determinant and the twisted labeled local characters
+constitute a literal \texttt{Pair} over $B$ for the
+original residue datum. Its universal property gives
+$\phi_n$ and exactly the equalities of \texttt{Link.IsPhi}.
+\end{proof}
+
+\begin{theorem}[The original image ideal: finite weights and seed]
+\label{thm:rh-four-image-ideal}
+For the two links of Theorem~\ref{thm:rh-four-link-maps}, let
+$J_0,J'_0$ be their actual ordinary Hecke ideals and
+$\phi_0,\phi'_0$ their untwisted maps. Form
+\[
+                   J=\phi_0(J_0)B+\phi'_0(J'_0)B .
+\]
+This ideal satisfies the original \texttt{fin} and
+\texttt{seed} clauses of \texttt{PotentialModularityTower}.
+For arithmetic weights $D.wts4=(e+1,e,1,0)$ with $e\geq2$,
+it also satisfies the \texttt{pur} clause. At every such
+point where the representation over $G_L$ is irreducible,
+the untwisted representation over $G_L$ has a cuspidal
+regular algebraic attachment.
+\end{theorem}
+\begin{proof}
+For finiteness it suffices to use just the first image ideal.
+Let $\mathfrak q$ be a prime containing that ideal, the
+coefficient uniformizer, and all original inertial
+differences $\psi_i(s)-1$. The domain $C=B/\mathfrak q$
+is a complete local algebra of characteristic $\ell$ with
+the same finite residue field $k$ as the coefficient DVR.
+The composite $B_0\to C$ kills $J_0$. Its restriction to
+the original weight ring is the residual evaluation:
+the inertial characters of the link at $\ell$ are those
+of $X$ multiplied by the fixed $\kappa$, which reduce
+in $C$ to their prescribed residues. The universal
+weight property, or the original weight generators,
+gives the assertion for the whole weight ring.
+Since $B_0/J_0$ is finite over the weight ring, its image
+in $C$ consists of elements integral over $k$.
+
+It follows that all coefficients of $C_g$ for $g\in G_L$
+are algebraic over $k$ (the scalar twist is a fixed residue
+unit), as are all local characters on the chosen ordinary
+groups (these groups lie in $G_L$, since the places split).
+For $g\in G_F$, $g^2\in G_L$. The characteristic-polynomial
+coefficients of a matrix are integral over those of its square:
+with universal eigenvalues $a_1,\ldots,a_4$, take the monic
+polynomial in $Z$ with roots
+$e_i(\pm a_1,\ldots,\pm a_4)$ for all sixteen sign choices,
+where $e_i$ is the $i$-th elementary symmetric polynomial.
+Its coefficients are symmetric polynomials in the squares
+with integral coefficients. It gives a universal matrix
+identity, as can be seen first for matrices with distinct
+eigenvalues over characteristic zero, then by polynomial
+identity over $\mathbb Z$. The original map $B\hookrightarrow A_X$
+lets this identity descend to $B$, so it also holds in $C$.
+This proves that every $C_g$ coefficient is algebraic over $k$.
+
+An element of a local domain with residue field $k$ which
+is algebraic over the finite field $k$ belongs to $k$:
+subtract its residue; a nonzero algebraic element over $k$
+would be a unit and cannot lie in the maximal ideal.
+Thus every characteristic-polynomial coefficient and every
+labeled local character equals its residual value.
+The exact \texttt{Space.genB} uniqueness property now
+makes $B\to C$ equal to residual evaluation. Consequently
+$\mathfrak q=\mathfrak m_B$. Since $B$ is Noetherian,
+the ideal in the \texttt{fin} condition contains a power
+of $\mathfrak m_B$. This proves the precise finite-weight
+clause for $J$.
+
+The seed-support theorem of the preceding subsection,
+applied to each link and using the parity correction and
+the twist-ideal equality (RS1), gives $J\subset\mathfrak q$
+for every prime of $B$ below the kernel of any original
+seed. This is exactly the \texttt{seed} clause.
+
+For the last assertions take a characteristic-zero point
+with the stated arithmetic weights and killing $J$.
+The first link with $\kappa$ already has integral inertial
+exponents: the local squared weights are twice the integers
+$D.wts4$, and $\kappa$ has integral local exponents.
+They are strictly ordered because $e\geq2$. The point is
+therefore an arithmetic point of the actual ordinary
+Hecke quotient. Apply its already established
+arithmetic-point decomposition theorem. Each Speh
+multiplicity greater than one would give two successive
+constituents $\sigma,\sigma\otimes\epsilon^{-1}$ in the
+semisimple Galois representation. Choose stable integral
+lattices in these continuous characteristic-zero
+constituents and reduce. The residual semisimplification
+of the whole representation is the given multiplicity-free
+sum of the four residual characters. Hence some two
+residual characters differ by $\bar\omega$ (take any
+constituent of the first reduced lattice and its twist).
+The common factor $\bar\kappa$ cancels in the quotient.
+This contradicts \texttt{Ok.g2}. Thus all Speh
+multiplicities are one. The ordinary-family purity theorem
+now gives equal complex absolute values of the good
+Frobenius eigenvalues, in its prescribed normalization.
+Undoing the common scalar twist preserves the equality.
+For the rational representation in the \texttt{pur} clause
+restrict Frobenius to the open subgroup $G_L$:
+at primes unramified in the fields and representations,
+Frobenius elements in this subgroup are powers of the
+corresponding Frobenius elements over $L$. The equality of
+absolute values persists under positive powers. This
+implies the strict ratio bound of \texttt{PureW}, with
+the open subgroup and the finite bad-prime product
+required by that definition.
+
+If the restricted representation is absolutely irreducible,
+the established ordinary arithmetic classicality theorem
+gives a cuspidal regular algebraic conjugate-self-dual
+attachment to the twisted representation. Untwist by
+$\kappa^{-1}$, which is an algebraic Hecke character by
+the integral local exponent and finite tame inertia
+conditions. This proves the asserted untwisted
+cuspidal attachment over the actual $L$.
+\end{proof}
+
+The last conclusion is deliberately weaker than the original
+\texttt{aut} clause of \texttt{PMExAlt}: it does not assert
+the simultaneous strict local windows in \texttt{WitA}, or
+their descent to every imaginary quadratic field. The
+characteristic-prime \texttt{p1} clause is also separate.
+In particular neither is a consequence solely of the two
+image-ideal construction and characteristic-zero seed
+support proved here.
