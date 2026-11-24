@@ -1,6 +1,6 @@
 # Current continuation checkpoint
 
-Updated 23 November 2026. RH and Dirichlet GRH are **not yet proved** by
+Updated 24 November 2026. RH and Dirichlet GRH are **not yet proved** by
 this reconstruction. This is a short resumption index; complete statements,
 proofs and source evidence belong in the linked files. Earlier versions
 remain in Git history. The repository main branch and the linked proof records give the current state.
@@ -25,7 +25,7 @@ bound the auxiliary field degrees, geometric dimensions or lattice defects.
 | Obligation | Latest established input | First remaining task |
 | --- | --- | --- |
 | W04: integral Selmer estimate | The actual local chart and fixed-field Frobenius spectrum are proved. For RH, [every nonresonant coefficient prime](rh-selmer-nonresonant.md) is now bounded, including the exceptional set. The [dyadic Bernoulli theorem](rh-dyadic-bernoulli-unit.md) supplies the residual unramified vanishing at 3. | Complete the actual integral comparison at 3 and the remaining resonant primes, then the original weighted product. The reduced fields still retain the varying quadratic factors. |
-| W06: integral theta chain | [Actual selected-prime chain](theta-spanning-continuation-chain.md), including point models, value lattices, phases, both local divisibilities and the original twisted initial source. | The [terminal finite period and Poincare–Bessel unfolding](theta-period-continuation.md) are identified with their exact scalars and masses. Prove the intervening see-saw and actual row realization, then compare the final restricted global operators. |
+| W06: integral theta chain | [Actual selected-prime chain](theta-spanning-continuation-chain.md), including point models, value lattices, phases, both local divisibilities and the original twisted initial source. The [sharp auxiliary-level column theorem](theta-sharp-level-closure.md) completes the separate level node for the reference and every twisted column. | The [terminal finite period and Poincare–Bessel unfolding](theta-period-continuation.md) are identified with their exact scalars and masses. Prove the intervening see-saw and actual row realization, then compare the final restricted global operators. |
 | W08: global norms | The integral minor sum, exact masses and embedded-isometry genus mean are proved. [Integral transport](flag-lattice-transport.md), [all stabilizer layers](unipotent-stabilizer-covolume.md), and the [fixed-normal-form weighted sum](weighted-flag-lattice-sum.md) now give the original bound, with the constraint xi²b² ≤ Delta retained. | Prove the original term-class correspondence and reciprocal automorphism weights. Complete the zero-Gram sum, generic returns, finite columns and final positive traces. |
 | W10: geometric sections and heights | The actual corrected fibres and tangent degrees give the all-point height floor. [Finite-fibre nefness, the original regularizations and the signed determinant test](geometry-height-assembly.md) are now proved, with beta_B ≥ −107 Lambda_B/2 and every vertical factor retained. | Supply the general flag positivity and exact Frobenius-linked correction sequences needed for the weighted mean; then bound section-rank losses and finish the same numerical family. |
 | W02/W11: final arithmetic comparison | [Fourth-power sampling](fourth-power-sampling.md), [direct RH transfer](rh-direct-transfer.md), and [signed averaged criterion](scale-averaged-criterion.md). | Construct compatible finite tables meeting frontier theorem A, with all losses and auxiliary data controlled on the same windows. |
@@ -110,7 +110,7 @@ The [shared-results index](../blueprint/shared/README.md) records exact
 applications and extra hypotheses. The [short guide](../paper/guide/main.tex)
 is a didactic account organized by mathematics, not by research chronology.
 
-Whole-node counts remain **RH 6/9; Dirichlet GRH 17/31**. They count proved
+Whole-node counts are **RH 6/9; Dirichlet GRH 18/31**. The existing technical node `level` is closed. They count proved
 stated implications or adopted cited inputs, not fractions of completed
 proofs. The authoritative status data are
 [progress.json](../blueprint/progress.json).

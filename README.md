@@ -23,7 +23,7 @@ The goal is a **complete and substantially shorter proof in ordinary mathematics
 
 The [ordinary RH manuscript](paper/rh/main.pdf) concentrates on the zeta function and its four-character arithmetic comparison. The [Dirichlet GRH manuscript](paper/grh/main.pdf) treats the general character and conductor. They have separate manuscripts and proof programs, while sharing the geometric, integral and analytic results that apply to both. An improvement in either route is checked in the other with its precise hypotheses.
 
-The current proof-map counts are **RH: 6/9** and **Dirichlet GRH: 17/31**, as recorded in the [progress table](blueprint/progress.md). A finished conditional implication can still require an open arithmetic input. These counts therefore describe the proof program, not a percentage of RH or GRH proved.
+The current proof-map counts are **RH: 6/9** and **Dirichlet GRH: 18/31**, as recorded in the [progress table](blueprint/progress.md). A finished conditional implication can still require an open arithmetic input. These counts therefore describe the proof program, not a percentage of RH or GRH proved.
 
 ## Current research priorities
 

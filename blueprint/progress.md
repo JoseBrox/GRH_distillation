@@ -7,7 +7,7 @@ Counts belong to different views of overlapping mathematics and must not be adde
 | Blueprint | Finished nodes | Partial | Open | Optional alternatives |
 | --- | ---: | ---: | ---: | ---: |
 | Ordinary RH | **6/9** | 0 | 3 | 0 |
-| Dirichlet GRH: technical map | **17/31** | 1 | 10 | 3 |
+| Dirichlet GRH: technical map | **18/31** | 1 | 9 | 3 |
 | Shared overview | **2/9** | 3 | 4 | 0 |
 
 The eleven larger work packages remain a separate measure: **3/11** are written or supplied. These counts are not percentages of an RH or GRH proof.
