@@ -98,6 +98,11 @@ deletes the cubic sectors with 2^b >= 192f and b >= 8, where
 f is the actual odd conductor. The remaining moving low-dyadic 3-primary and odd-prime estimates,
 and the sharp global degree/norm comparison, remain open.
 
+The [all-order formal operator lattice](notes/cubic-formal-operator-lattices.md) identifies integral theta maps with polynomials integer-valued on actual cubic p-adic lines. The [symbol-derivative index](notes/cubic-symbol-derivative-lattices.md) recovers the truncated prime discrepancy with normalized error O(sqrt(X) log X), without a zeta multiplier. Collective degree/norm saving or normalized period coupling remains open.
+The [marked point theorem](notes/cubic-point-shapes-and-rigidity.md) classifies the two-sided points in either characteristic and proves the obstruction to the standard rank-one tensor Euler-system hypothesis. Actual finite-ring finiteness, automorphy and cross-block finite Selmer vanishing are open.
+The [3-primary local defect theorem](notes/cubic-three-primary-local-defects.md) bounds normalized lifting losses by one, controls aggregate residual generator ranks and proves untwisted cubic vanishing at 3. Moving low-dyadic lengths and resonant odd-prime lengths are open.
+The [unconditional two-prime theorem](../notes/unconditional-quadratic-selection.md) supplies the original two-sign numerical block with all congruences and exponential thin bound, without QRH; both parent manuscript sources and the partial common-window assembly now implement it.
+
 The [progress inventory](blueprint/progress.md) has 6/9 written
 reductions or cited inputs; the former open node H07 was split
 into the two tasks above. This is not a proof-completion percentage.

@@ -234,3 +234,7 @@ cubic arithmetic interface without assuming the parent
 normalized period chain has been identified with it.
 No critical-line zero exclusion or full Selmer estimate
 is implied by these index identities alone.
+
+## Exact finite diagnostic
+
+The [script](../scripts/check_cubic_symbol_derivative.py) computes actual Newton polynomial derivative reductions modulo powers of 7 and 13. The completed reduced check verifies six prime/line combinations and 252 degree prefixes; see the [record](../certificates/cubic-symbol-derivative-check.json). A larger run exceeded the execution time limit and is not claimed. This tests local ranks, not the global estimate.

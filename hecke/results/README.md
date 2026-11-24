@@ -44,4 +44,11 @@
 | High-dyadic relative dimension defects, rational rigidity, residual corner vanishing | Proved under stated conductor conditions | [Frame cohomology](../notes/cubic-frame-cohomology.md) |
 | Exact finite good-prime Hasse and simultaneous operator ranks | 228 curve/prime tests and 12 stacked rank cases; no asymptotic assertion | [Script](../scripts/check_cubic_theta.py), [certificate](../certificates/cubic-theta-check.json) |
 
+| Exact all-order theta operator lattices on cubic p-adic lines | Proved; collective degree estimate open | [Formal operators](../notes/cubic-formal-operator-lattices.md) |
+| Symbol derivative relative index, critical error without zeta factor | Proved; centered bound open | [Symbol derivative](../notes/cubic-symbol-derivative-lattices.md) |
+| Marked point classification in both characteristics and rank-one tensor obstruction | Proved; finite-ring, attachment and cross-block vanishing open | [Point shapes](../notes/cubic-point-shapes-and-rigidity.md) |
+| 3-primary local lift defects, aggregate generator estimate and untwisted vanishing | Proved; moving lengths open | [Local defects](../notes/cubic-three-primary-local-defects.md) |
+| Unconditional original two-sign corrected companions and thin estimates | Proved using classical progression and density theorems; implemented in parent manuscript sources | [Selection](../../notes/unconditional-quadratic-selection.md) |
+| Exact finite symbol derivative matrix ranks | Six prime/line combinations and 252 degree prefixes | [Script](../scripts/check_cubic_symbol_derivative.py), [certificate](../certificates/cubic-symbol-derivative-check.json) |
+
 No new full Hecke node, target complex-zero exclusion or Lean verification is claimed.

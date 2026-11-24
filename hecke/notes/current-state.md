@@ -138,28 +138,14 @@ proves the exact high-dyadic defects (0,-1,0,1,1), rational
 diagonal rigidity and residual corner vanishing with
 2^b >= 24 ell(ell+1)^2.
 
-**Next direct attacks:** prove the collective same-map
-degree/norm saving for the simultaneous cubic operators or
-its coupling to the actual parent period chain. Prove the
-new ring's finite-point counting comparison and global
-automorphy, in particular the cubic cross-block finite
-Selmer rigidity at reducible points. The conditional
-polynomial spectrum already handles the global size
-once those inputs are supplied. Control the moving
-low-dyadic 3-primary sectors and remaining low-dyadic
-resonant odd primes. Independently the relative saturated
-covolume of the global derivative lattices is still a
-critical-scale quantitative target. All these are open.
+**Latest advances and next direct attacks.**
 
-The elementary relative split-prime target E(x)-3C(x) remains
-available independently. H07I, the infinite-order phase estimate,
-is still open; the finite-coefficient moment lemma transfers to
-its auxiliary finite windows. The
-[general finite-order companion theorem](general-finite-order-companions.md)
-now obtains genuine corrections and full dyadic thin bounds
-over every fixed field by classical Hecke density, with the
-parent's stated Dirichlet QRH input. No infinite-order target
-bound or global geometric supplier follows.
+The [all-order formal operator lattice](cubic-formal-operator-lattices.md) identifies integral theta maps with polynomials integer-valued on actual cubic p-adic lines. The [symbol-derivative index](cubic-symbol-derivative-lattices.md) recovers the truncated prime discrepancy with normalized error O(sqrt(X) log X), without a zeta multiplier. Collective degree/norm saving or normalized period coupling remains open.
+The [marked point theorem](cubic-point-shapes-and-rigidity.md) classifies the two-sided points in either characteristic and proves the obstruction to the standard rank-one tensor Euler-system hypothesis. Actual finite-ring finiteness, automorphy and cross-block finite Selmer vanishing are open.
+The [3-primary local defect theorem](cubic-three-primary-local-defects.md) bounds normalized lifting losses by one, controls aggregate residual generator ranks and proves untwisted cubic vanishing at 3. Moving low-dyadic lengths and resonant odd-prime lengths are open.
+The [unconditional two-prime theorem](../../notes/unconditional-quadratic-selection.md) supplies the original two-sign numerical block with all congruences and exponential thin bound, without QRH; both parent manuscript sources and the partial common-window assembly now implement it.
+
+The independent interpolation lower bound and infinite-order phase estimate H07I remain open.
 
 ## Status and attribution
 

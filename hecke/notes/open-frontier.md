@@ -115,6 +115,13 @@ p-Lie twist and monic simultaneous differential operators of
 the prescribed order. The CRT coefficient height pays for the
 whole imposed divisor, so it cannot imply the centered saving.
 
+### Latest strengthened local and arithmetic suppliers
+
+The [all-order formal operator lattice](cubic-formal-operator-lattices.md) identifies integral theta maps with polynomials integer-valued on actual cubic p-adic lines. The [symbol-derivative index](cubic-symbol-derivative-lattices.md) recovers the truncated prime discrepancy with normalized error O(sqrt(X) log X), without a zeta multiplier. Collective degree/norm saving or normalized period coupling remains open.
+The [marked point theorem](cubic-point-shapes-and-rigidity.md) classifies the two-sided points in either characteristic and proves the obstruction to the standard rank-one tensor Euler-system hypothesis. Actual finite-ring finiteness, automorphy and cross-block finite Selmer vanishing are open.
+The [3-primary local defect theorem](cubic-three-primary-local-defects.md) bounds normalized lifting losses by one, controls aggregate residual generator ranks and proves untwisted cubic vanishing at 3. Moving low-dyadic lengths and resonant odd-prime lengths are open.
+The [unconditional two-prime theorem](../../notes/unconditional-quadratic-selection.md) supplies the original two-sign numerical block with all congruences and exponential thin bound, without QRH; both parent manuscript sources and the partial common-window assembly now implement it.
+
 **Remaining theta supplier:** prove the collective degree/norm
 comparison for an actual family of these maps, or identify their
 Frobenius-sensitive coupling with the parent's normalized integral

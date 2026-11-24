@@ -60,3 +60,6 @@ These are obstructions to specific proposed proof steps, not to GRH.
   not a rational Dirichlet twist of the parent rank-two form.
   The parent's Kato argument cannot simply be substituted; see
   [polarized model, Section 5](../notes/cubic-polarized-selmer-model.md).
+
+- The normalized cubic cross-block tensor has even-dimensional fixed spaces for every cyclotomic-kernel element. The standard rank-one Euler-system hypothesis fails; this is not a nonvanishing theorem for the Selmer group. See [point shapes](../notes/cubic-point-shapes-and-rigidity.md).
+- The symbol derivative has a local formal commutator interpretation, but the formal additive coordinate is not an integral global meromorphic operator. The new index identity is not a collective degree saving.

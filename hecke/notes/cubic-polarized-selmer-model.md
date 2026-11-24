@@ -669,3 +669,7 @@ length estimate, global prime-discrepancy
 inequality or completed Hecke node follows
 without the remaining arithmetic
 automorphy/rigidity/counting input.
+
+## Later point-shape theorem
+
+The [marked classification](cubic-point-shapes-and-rigidity.md) now proves the two-sided point-shape statement for the fully marked normalization in either characteristic and the even-dimensional fixed-space obstruction to the usual rank-one Euler-system method. The actual finite-ring and cross-block rigidity estimates remain open.

@@ -656,6 +656,49 @@ argument. The uniform new odd-prime lengths, automorphy,
 point comparison and critical global geometric estimate
 are still open.
 
+### All-order theta operators and further Selmer reductions
+
+The [formal-group theorem](../notes/cubic-formal-operator-lattices.md)
+identifies the full good-prime integral operator lattices on sufficiently
+large theta spaces with integer-valued polynomials on the union of
+the lines $c_0\alpha^j\mathbb Z_p$. The lines coincide at split primes
+and have distinct nonzero residue directions otherwise. The
+characteristic exponents are computed by greedy Newton bases.
+The [symbol derivative](../notes/cubic-symbol-derivative-lattices.md)
+requires both $P(D_j)$ and $P'(D_j)$ to be integral. For $m$ lines
+and $n<p^2$, its local relative length is exactly
+$(n+1-m(p-1)-1)_+$; at small primes it is at most
+$(n+1)(1+\lceil\log_2(n+1)\rceil)$. Thus the global relative
+difference has the truncated-prime hinge with error
+$O(X^{3/2}\log X)$ before division by $X=n+1$. Its Mellin
+multiplier has no zeta factor. The collective global degree/norm
+saving remains open, and the symbol derivative is not automatically
+a global commutator with a meromorphic theta coordinate.
+
+The [marked point theorem](../notes/cubic-point-shapes-and-rigidity.md)
+classifies the new two-sided points as irreducible rank three or an
+irreducible outer block with middle line, in either characteristic.
+In the normalized cross-block tensor both determinants equal
+$\chi_{-3}$. Its fixed spaces all have even dimension, so the usual
+rank-one Euler-system hypothesis cannot hold on the cyclotomic kernel.
+The cross-block finite Selmer vanishing and actual point arithmetic
+remain unproved. The [3-primary local comparison](../notes/cubic-three-primary-local-defects.md)
+uses the exact conductor exponent two of the cubic character,
+distinct from the first cyclotomic character's exponent three.
+It bounds normalized lifting losses by one, and aggregate residual
+generator ranks by the moving abelian class-group 3-rank plus
+sixteen per cubic sign. The completely untwisted sectors vanish
+by the fixed cubic cyclotomic calculation and full local condition
+at 3. Integral lengths in the moving exceptional sectors are open.
+
+The [unconditional two-prime theorem](../../notes/unconditional-quadratic-selection.md)
+supplies all the original numerical corrected companion and thin
+estimates without uniform QRH. Both original primes and all congruences
+are retained. It uses classical relative progression estimates and
+zero-density theorems; the rational specialization has been integrated
+in both parent manuscript sources. The stronger all-height source
+clause is not asserted.
+
 ## 8. An independent global interpolation construction
 
 There is a global arithmetic alternative for the finite-order

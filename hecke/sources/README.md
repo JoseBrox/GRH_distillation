@@ -207,3 +207,7 @@ and conditional trace-count mechanism. The cubic cross-block
 Rankin--Selberg rigidity has not been proved or imported as a
 theorem; the parent automorphic premises are not assumed for
 the new frame. Exact finite verification is recorded separately.
+
+## Further local operators, Selmer comparisons and selection
+
+The [formal operator note](../notes/cubic-formal-operator-lattices.md) uses the classical height-one formal-group identification and proves the operator/jet comparison. The [symbol derivative note](../notes/cubic-symbol-derivative-lattices.md) proves the local index and global error; the finite matrix check is separate. The [point-shape theorem](../notes/cubic-point-shapes-and-rigidity.md) uses the parent marked normalization and proves the tensor obstruction (compare E. Studnia, Res. Number Theory, 2026, DOI 10.1007/s40993-026-00718-1). The [local defect theorem](../notes/cubic-three-primary-local-defects.md) uses the conductor-discriminant identity and fixed cubic cyclotomic vanishing. The [unconditional selection](../../notes/unconditional-quadratic-selection.md) uses Thorner--Zaman, Math. Z. 306 (2024), article 54, Theorem 1.1; Thorner, MRL 26 (2019), Theorem 2.3; and Jutila, Math. Scand. 41 (1977), Theorem 1 (1.8). The hypotheses and relative-error formula were checked against the primary sources.

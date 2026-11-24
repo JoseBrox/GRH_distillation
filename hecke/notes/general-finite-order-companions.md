@@ -268,3 +268,7 @@ genuinely infinite-order problem and uniform estimates in varying
 base fields are not included. The proof imports the explicit
 Dirichlet QRH input from the parent reconstruction, not Hecke GRH
 or any conclusion of the crowdsourced Masullo project.
+
+## Later unconditional numerical replacement
+
+The [unconditional two-prime selection](../../notes/unconditional-quadratic-selection.md) now supplies the same original two-sign corrected companions and stronger exponential thin bound with every prescribed congruence, without QRH. The older proof remains valid under its stated hypothesis; the replacement does not assert an all-height fixed-width zero-free strip.
