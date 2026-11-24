@@ -6,9 +6,10 @@ The auxiliary-level denominator has a short product proof which retains
 two favorable terms dropped in the inspected source estimate: the individual
 step dimensions and the power of the auxiliary prime already multiplying
 the actual source lattice. This is a proved improvement **under the actual
-single-step kernel, value-lattice and commutation hypotheses**. It does not
-construct the theta kernels, prove their local laws, or close the integral-map
-node. It applies to RH and Dirichlet GRH without changing either character
+single-step kernel, value-lattice and commutation hypotheses**. This product argument alone does not construct the theta kernels or
+prove their local laws. These inputs and the original sharp valuation have
+since been proved in [the actual theta chain](theta-spanning-continuation-chain.md)
+and [the sharp auxiliary-level theorem](theta-sharp-level-closure.md). It applies to RH and Dirichlet GRH without changing either character
 selection or any normalizer.
 
 The mathematical statement and proof are in
@@ -80,8 +81,8 @@ the exact integer exponent
 
 before replacing it by 2W+fN_m. Here W is the sum of the source's
 uniform absolute weight bounds, s is its determinant shift, and λ is
-the first residual highest weight of the indicated coefficient
-representation. The point kernel first lands in the value lattice
+the first entry of the shifted weight of the indicated coefficient
+representation, before any translation making its last entry zero. The point kernel first lands in the value lattice
 allowing every embedding; each selected U removes its corresponding
 allowance; multiplying by the complementary λ factors removes the
 remaining allowances. This is an identity in the actual value lattices,
@@ -162,10 +163,10 @@ noninvertible U, scalar sharpness, the finite-sum saving in (6), and source
 integrity. These checks supplement the general algebraic proof; they are
 not a proof of the arithmetic kernel laws or a Lean kernel replay.
 
-The local geometric kernels and their original integral value lattices,
-the exact point-pair law, rational realizations, stabilizer-unit property,
-and twisted initial-source identification remain construction inputs.
-Once these are supplied, the full-chain auxiliary-prime estimate is the
-single product calculation above. All other primes, nonvanishing, global
-norm bounds and uniform final assembly remain separate. Existing node
-counts are unchanged.
+The local geometric kernels, value lattices, point-pair law, rational
+realizations, stabilizer units and twisted source identification are
+supplied by the actual theta chain. The sharp auxiliary-level theorem
+applies this product argument with the original signs and valuations,
+closing the auxiliary-level column node. Identification with the final
+global period operators, the remaining primes, nonvanishing, global norm
+bounds and uniform final assembly remain separate.
