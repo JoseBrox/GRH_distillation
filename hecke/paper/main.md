@@ -447,6 +447,7 @@ the actual relative Frobenius kernel. The
 proves that the candidate strict Selmer groups at primes outside
 two and three split exactly into the original abelian sector and
 two equal cubic sectors over the fixed Eisenstein field.
+
 ### Actual integral and local geometric suppliers
 
 The [2-primary theorem](../notes/cubic-two-primary-window.md)
@@ -473,8 +474,9 @@ uses the integral evaluation
 $\mathbb Z_3[C_3]\to\mathbb Z_3\oplus\mathbb Z_3[\omega]$,
 whose cokernel has order three. The new projection error in
 the strict Selmer comparison is polynomial in the actual
-source scales. This does not bound the genuine twisted lengths
-at 3 or the remaining odd primes.
+source scales. The comparison alone does not bound the genuine twisted lengths
+at 3 or the remaining odd primes; the high-dyadic result below
+settles specific sectors.
 
 There is also a simpler sufficient arithmetic supplier.
 The [good-prime comparison](../notes/cubic-good-prime-comparison.md)
@@ -522,7 +524,141 @@ not special GL2 induction or Hecke GRH. The arithmetic
 construction for these families and all infinite-order
 target estimates remain separate open tasks.
 
-## 8. Remaining work and provenance
+### A smaller companion supplier and genuine vanishing at three
+
+The [polynomial auxiliary theorem](../notes/polynomial-one-sign-companion.md)
+replaces the two-sign analytic block by one prime $q\asymp U^J$
+in a fixed reduced progression, for the window $U\le x\le U^J$.
+The classical quadratic large sieve gives, on dyadic blocks,
+a bound of size $U^\kappa(\sqrt N+N/\sqrt q)$ for the prime
+coefficients of the selected companions. Retaining the second
+term even beyond the companion conductor makes it possible to
+recover their true logarithmic derivatives at one by a
+zero-density-selected contour and partial summation.
+The entire growing thin family has a uniform zero-free-region
+estimate at arguments at least $\exp(C(\log U)^2)$.
+No uniform Dirichlet QRH assumption is needed for this
+replacement. Its one-sign scalar comparison gives
+$G_1+2G_\lambda\le E/k+O(x^{1/2+\epsilon})$ with only three
+quadratic companions; the compatible global geometry and
+arithmetic bound for $E/k$ remain open.
+
+The [high-dyadic 3-primary theorem](../notes/cubic-three-primary-vanishing.md)
+also gives an actual integral improvement. For a character with
+even primitive dyadic component of conductor $2^b$ and auxiliary
+quadratic odd conductor $f$, the strict cubic sectors at 3
+vanish for both cubic signs and every twist index provided
+$b\ge8$ and $2^b\ge192f$. Modulo the coefficient uniformizer
+the cubic action is trivial; the parent's Bernoulli-unit
+cocycle theorem kills the odd class-group components, Kummer
+reflection kills the corresponding even components, and the
+full local restriction maps verify that no torsion is lost
+in passage from residual to integral strict groups.
+The actual conductor threshold is essential. This does not
+bound the lower dyadic layers, or the remaining odd primes.
+
+## 8. An independent global interpolation construction
+
+There is a global arithmetic alternative for the finite-order
+assertion that does not use the CM maps or their Selmer bounds.
+Fix a totally imaginary number field $E$ and put
+
+```math
+\mathcal P_{n,r}(E)=
+\{f\in E[X]_{\le n}:[x_0,\ldots,x_s]f\in\mathcal O_E
+\text{ for all integral nodes and }s\le\min(r,n)\}.
+```
+
+The [interpolation proof](../notes/global-interpolation-lattices.md)
+gives the precise local characteristic exponent at residue
+cardinality $q$:
+
+```math
+w_q(k,r)=\sum_{j\ge1}(\lfloor k/q^j\rfloor-r)_+ .
+```
+
+A digit ordering realizes this exponent for the Newton basis.
+Using the successive minima of each prime-power ideal lattice
+and bounded representatives of its residue classes, the same
+explicit set of $O_E(n+1)$ algebraic integers of height
+$O_E((n+1)^{1/[E:\mathbb Q]})$ tests every local polynomial
+lattice of degree at most $n$ (the chosen digit subsequences
+can differ with the place). The actual global maximal-minor
+ideals of the evaluation matrices therefore give
+
+```math
+\log\#(\mathcal P_{n,0}/\mathcal P_{n,1})
+=\sum_{k=0}^n\psi_E(k)=\int_1^{n+1}\psi_E(t)\,dt.
+```
+
+Here $\psi_E$ sums $\log N\mathfrak p$ over prime-ideal powers.
+No Dirichlet base case or Frobenius-divisor patch is a premise
+of the equality.
+
+The [derivative refinement](../notes/global-derivative-lattices.md)
+uses $\Lambda_n=\mathcal P_{n,0}$ and
+$H_n=\{f\in\Lambda_n:f'\in\Lambda_n\}$. At every degree-one
+prime $p>\sqrt n$ the derivative condition recovers the
+first-divided-difference lattice exactly: in the Newton basis
+the derivative reductions on each first residue class give
+triangular systems in the second digit, with leading coefficient
+$m\ne0\bmod p$ for $m=\lfloor k/p\rfloor<p$.
+All omitted places cost only $O_E((n+1)^{3/2})$ by the
+elementary higher-rational-prime-power bound. Thus
+
+```math
+0\le \int_1^{n+1}\psi_E(t)\,dt-\log\#(\Lambda_n/H_n)
+\ll_E (n+1)^{3/2}.
+```
+
+Only values and ordinary derivatives at the bounded test set
+are now needed; the two global matrices are $V$ and
+$V'=(V;VD)$, where $D$ is polynomial differentiation.
+They have linearly many rows. Adding linearly many integral
+points approximating circles of radius of order $n^2$ at
+every embedding makes the scaled value Gram matrices uniformly
+conditioned and the stacked derivative Gram penalty $O_E(1/n)$
+in log determinant, without changing either integral preimage.
+If $\mathscr V$ is the normalized covolume of the actual
+saturated image lattice, this gives
+
+```math
+\log\frac{\mathscr V(L_{V'})}{\mathscr V(L_V)}
+ =\log\#(\Lambda_n/H_n)+O_E(1/n).
+```
+
+The decisive remaining sufficient inequality is
+
+```math
+\log\frac{\mathscr V(L_{V'})}{\mathscr V(L_V)}
+ \ge \frac{(n+1)^2}{2}
+  - O_{E,\epsilon}((n+1)^{3/2+\epsilon})
+```
+
+on arbitrarily late whole fixed-ratio polynomial windows
+at every accuracy. To see the implication, set
+$I_E(x)=\int_1^x\psi_E(t)\,dt$. The Mellin transform of
+$x/2-I_E(x)/x$ equals
+$1/(2(s-1))+\zeta'_E(s)/(s(s+1)\zeta_E(s))$ for $\Re s>1$.
+Its principal pole cancels and at a real zero $\rho>0$
+the residue is positive. Theorem 2.1 therefore applies,
+using monotone interpolation even if the lower bound is
+only supplied at $n+1=j^2$. This would prove RH for $\zeta_E$,
+and for every totally imaginary Galois $E$ would settle
+the finite-order Hecke problem by our Galois reduction.
+
+The covolume inequality is **open**. Local divisibilities
+and stable Gram matrices do not by themselves give the
+integral index lower bound. The actual finite-dimensional
+construction is proved, not the necessary asymptotic
+estimate. The exact
+[HNF check](../certificates/derivative-lattice-check.json)
+in the S3 field verifies the small-degree value/derivative
+indices for degrees 3–10, not the asymptotic bound.
+This route is independent of the retained CM and spectral
+alternatives; the infinite-order phase estimate remains open.
+
+## 9. Remaining work and provenance
 
 The preferred proof is self-contained within the
 repository relative to the stated classical results;
