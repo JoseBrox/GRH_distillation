@@ -1,0 +1,481 @@
+\subsection{Primitive local densities and generic class amplitudes}
+\label{sec:flag-generic-local-amplitude}
+
+We work at a finite place of the original unramified CM extension.
+Write \(F_v\) for the local field, \(E_v\) for its unramified quadratic
+algebra (including the split case), \(O\) for the ring of integers
+of \(E_v\), \(\pi\) for the uniformizer of \(F_v\), and \(q\) for
+its residue cardinality. The involution is denoted by a bar.
+All Haar volumes below are relative to the compact subgroups
+specified in the definitions; in particular we never replace a
+reciprocal stabilizer volume by the number of its orbits.
+
+\begin{lemma}[Uniform primitive density]\label{lem:flag-primitive-density}
+Let \(V\) be a nondegenerate hermitian space of rank \(n\) over
+\(E_v\) having a self-dual lattice \(L_0\). Suppose \(n\ge2m+3\),
+where \(m\ge1\). For an integral hermitian \(m\times m\) matrix
+\(B\), let \(P_j(B)\) count the ordered \(m\)-tuples in
+\(L_0/\pi^j L_0\) with Gram matrix \(B\bmod\pi^j\) and with
+primitive reduction (independent columns in each residue-field
+factor). Then
+\[
+ P_j(B)=q^{(j-1)(2nm-m^2)}P_1(B),\qquad
+ \tfrac34\le \beta(B):=q^{-(2nm-m^2)}P_1(B)\le\tfrac54 .
+\]
+The assertion includes residue characteristic two and singular
+reductions of \(B\).
+\end{lemma}
+\begin{proof}
+At a primitive tuple \(X\), the derivative of the Gram map is
+\(Y\mapsto X^*HY+Y^*HX\). The map \(Y\mapsto X^*HY\)
+is onto because \(X\) is primitive and \(H\) unimodular.
+Every hermitian matrix is \(Z+Z^*\): use the off-diagonal entries
+and the surjective residue trace for the diagonal. This works also
+in characteristic two and in the split algebra. Thus every solution
+at depth \(j\) has exactly \(q^{2nm-m^2}\) lifts at depth \(j+1\).
+
+For the inert residue field, choose the columns successively.
+After \(i\) independent columns, their prescribed pairings impose
+\(i\) independent linear equations over \(\mathbb F_{q^2}\).
+The direction space has dimension \(n-i\) and radical of dimension
+at most \(i\). It has a nondegenerate complement of dimension
+\(h\ge n-2i\). With the other coordinates fixed, completing the
+square on this complement reduces the next norm condition to a
+norm equation in dimension \(h\). The number of solutions differs
+from \(q^{2h-1}\) by at most \((q-1)q^{h-1}\): indeed for a
+nontrivial additive character the one-variable norm sum is \(-q\),
+since every nonzero norm has \(q+1\) preimages, and Fourier
+inversion gives the claimed bound in dimension \(h\). Subtracting
+at most \(q^{2i}\) dependent vectors, the ratio of the number of
+permitted choices to \(q^{2(n-i)-1}\) lies between
+\[
+ 1-q^{1-(n-2i)}-q^{1-2(n-2i)},\qquad
+ 1+q^{1-(n-2i)}.
+\]
+The sum of the first errors over \(0\le i<m\) is at most
+\(q^{-4}/(1-q^{-2})\le1/12\), and that of the second is
+at most \(q^{-9}/(1-q^{-4})\le1/480\).
+Multiplying the bounds gives the result (use
+\(\prod(1-u_i)\ge1-\sum u_i\) and \(\prod(1+u_i)\le e^{\sum u_i}\)).
+
+In the split case the two component matrices \(A,C\) have size
+\(n\times m\), and the prescribed Gram condition is \(C^tA=B_1\).
+First choose \(A\) of full rank, then choose the columns of \(C\)
+in affine spaces of dimension \(n-m\), excluding the span of
+previous columns. The normalized count is between
+\[
+ \prod_{i=0}^{m-1}(1-q^{i-n})(1-q^{i-(n-m)})\quad\hbox{and}\quad1 .
+\]
+The sum of the errors is at most
+\((q^{-(n-m+1)}+q^{-(n-2m+1)})/(1-q^{-1})\le3/16\).
+This proves the two inequalities.
+\end{proof}
+
+\begin{proposition}[Exact primitive-saturation mass]\label{prop:flag-primitive-mass}
+Let \(J\subset V\) be a nondegenerate subspace of rank \(m\) and
+let \(H_J=U(J^\perp)\) act as the identity on \(J\).
+Fix its Haar measure, with the original reference compact subgroup
+of volume one. For any full integral lattice \(M\subset J\), define
+\[
+ {\cal M}(M)=
+ \sum_{\substack{\Lambda=\Lambda^\#,\ \Lambda\cap J=M\\
+                   \bmod H_J(F_v)}}
+ \frac1{\operatorname{vol}(H_J(F_v)\cap\operatorname{Aut}\Lambda)}.
+\]
+If \(x\) is a fixed basis of \(J\), and \(M\) has basis \(xA\), then
+there is a single \(c_x>0\), independent of \(A\), such that
+\[
+ {\cal M}(M)=c_x|\operatorname{N}_{E_v/F_v}\det A|_v^{-(n-m)}
+                      \beta(\operatorname{Gram}(xA)).
+ \tag{GL1}
+\]
+In particular, in the range of Lemma~\ref{lem:flag-primitive-density},
+every such integral \(M\) occurs. If a family of base lattices
+has bases related by determinant-one changes, one can use the
+same constant for the whole family. For an integral overlattice
+\(M'\supset M\), its mass lies between
+\(\tfrac34 c_x [M':M]^{-(n-m)}\) and
+\(\tfrac54 c_x [M':M]^{-(n-m)}\) when \(x\) is a basis of \(M\).
+\end{proposition}
+\begin{proof}
+Use additive Haar measures on tuples and hermitian matrices
+normalized on \(L_0^m\) and on integral hermitian matrices.
+The Gram map is a submersion at independent tuples: the same
+derivative argument over \(F_v\) applies. Its quotient differential
+measure on the nonsingular Gram fibre is invariant under \(U(V)\).
+On each primitive residue cell, take the Gram coordinates and
+\(2nm-m^2\) complementary coordinates. Their derivative is a
+unit matrix up to integral changes of basis. Hensel lifting
+(or the inverse function theorem with unit Jacobian on the
+residue ball) identifies the cell with the product of these
+residue balls. The measure on the fibre in the cell is therefore
+\(q^{-(2nm-m^2)}\). Summing the primitive cells gives exactly
+\(\beta\), not just a lower bound for a neighbourhood of the fibre.
+
+By hermitian Witt extension, the fibre with nonsingular Gram is
+the homogeneous space \(U(V)/H_J\) after choosing the given basis.
+In the split case this is the corresponding statement about a
+pair of dual vector spaces, obtained by extending bases of the
+paired subspaces. The invariant fibre measure is a positive
+multiple of quotient Haar measure. All self-dual lattices of \(V\)
+are isometric: over the unramified field, a unimodular hermitian
+form splits into unit norm lines by choosing a vector of unit norm
+modulo \(\pi\), and unit norms are norms of units (residue norm
+surjectivity and successive trace lifting). In the split case
+a self-dual lattice is a lattice and its dual. Thus
+\(K=U(L_0)\) gives all such lattices by \(U(V)/K\).
+The double cosets for \(H_J\backslash U(V)/K\) with saturation \(M\)
+correspond, by inversion, to the \(K\)-orbits on the primitive
+Gram fibre in \(L_0^m\). A \(K\)-orbit has quotient volume
+\(\operatorname{vol}(K)/\operatorname{vol}(H_J\cap gKg^{-1})\),
+by quotient integration. Both groups are unimodular.
+This gives the reciprocal stabilizer masses in the statement,
+with the same choice of Haar measure on \(H_J\).
+
+Finally right multiplication of tuples by \(A\) has ambient
+Jacobian \(|\operatorname{N}\det A|_v^n\).
+Congruence \(B\mapsto A^*BA\) on hermitian matrices has Jacobian
+\(|\operatorname{N}\det A|_v^m\): check diagonal matrices
+(on diagonal and paired off-diagonal coordinates) and elementary
+matrices, which generate \(\mathrm{GL}_m(E_v)\). It follows that
+the fibre measure is multiplied by
+\(|\operatorname{N}\det A|_v^{n-m}\), whereas the homogeneous
+quotient measure has not changed. This proves (GL1).
+For an overlattice the displayed norm is its additive index,
+as follows from elementary divisors in the field or split
+factors. The count in the preceding lemma is positive, so the
+primitive subset of the fibre is nonempty.
+\end{proof}
+
+\paragraph{The actual local frame classes.}
+Now take the original two frames \(f,f'\) of length \(s=r+1\),
+with their first \(r\) vectors isotropic and last-vector norms
+\(-T,-T'\). Their cross matrix \(Z\) is the signed block-antidiagonal
+point matrix, with consecutive block sizes \(s_1,\ldots,s_b\).
+Inside a block its nonzero entries have a common scalar up to
+sign. The original nonzero Gram invariant is
+\[
+ G=D_s\bar D_s-TT'D_{s-1}\bar D_{s-1},
+ \qquad D_l=\det Z_{[1,l],[1,l]}.
+\]
+We assume the original local admission conditions, including
+\(G\ne0\) and \(\theta=1\) or \(\pi\), and the existence of an
+admitted term. Put \(m=2s\), \(n=k+2r+1\), and
+\[
+ a=v(G)-m v(\theta),\quad
+ d=\sum_{D_l\ne0,\ l>0}v(D_l\bar D_l),\quad
+ P=q^{v(\theta)+a+d}.
+ \tag{GL2}
+\]
+These are the source's \(a,vD,Hp\). The corrected joint lattice
+of a pair of adapted frames \(u,u'\) is
+\[
+ M(u,u')=\langle u_i,\theta^{-1}(u_i'-u_i)\rangle_O .
+\]
+The determinant of its Gram matrix is
+\((-1)^s\theta^{-2s}G\), by the joint Gram determinant identity
+and the indicated change of basis. Its span \(J\) is nondegenerate.
+For an admitted pair the corrected generators are integral,
+and every endpoint minor is integral. Thus \(a,d\ge0\);
+\([M^\#:M]=q^{2a}\). This also gives the defect bound:
+for every integral overlattice \(M_h\) of \(M\) in \(J\),
+\[
+ M\subset M_h\subset M_h^\#\subset M^\#,\qquad
+ [M_h:M]\le q^a.
+ \tag{GL3}
+\]
+The number of such overlattices is at most \(q^{2am}\).
+Indeed every submodule of \(M^\#/M\) has at most \(m\) generators
+over \(O\), by the elementary divisor theorem (choose generators
+componentwise in the split case). Count all ordered lists of
+\(m\) elements. In particular \(P=1\) forces \(M=M_h\).
+
+Let \(U\) denote the upper unitriangular group of size \(s\).
+Write \(S=N_f\cap N_{f'}\) for the rational common unipotent
+stabilizer over \(F_v\), and \(H_J=U(J^\perp)\).
+The two actions commute. A common unipotent is determined by
+its two adapted frame matrices \(A,B\in U(E_v)\), with
+\(A^*ZB=Z\). It fixes \(J^\perp\) pointwise since the difference
+on that subspace lies in the intersection of the two isotropic
+spans, which is zero. Conversely, a pair satisfying this equation
+defines an isometry of \(J\) and extends by the identity on
+\(J^\perp\). It belongs to both flag unipotents: it acts trivially
+on the successive isotropic flag quotients and on the middle
+quotients. For the last assertion, the latter quotient inside
+\(J\) is spanned by the last vector of the first frame and
+the line in the second frame orthogonal to the first \(r\)
+vectors; the last vector is fixed modulo the isotropic span
+and the line is fixed by the unipotent action. The same
+argument applies in the other order and separately in the
+two split factors.
+
+As \(Z\) reverses each consecutive block, conjugating an upper
+triangular matrix by \(Z\) sends its upper entries to lower ones
+exactly within the same block. Hence \(B\) must be block diagonal,
+and \(A\) is determined by \(B\). The group is a product of
+upper unitriangular groups of sizes \(s_j\); the within-block
+signs do not affect integrality. Its reference compact
+\(K_0\) is precisely integral \(B\) in these blocks.
+Normalize \(\operatorname{vol}(K_0)=1\).
+
+The frame-class quotient is the double quotient
+\[
+ S\backslash (U(E_v)\times U(E_v))/Q_\theta,\qquad
+ Q_\theta=\{(A,B)\in U(O)^2:A\equiv B\bmod\theta O\}.
+\]
+An adapted change of each frame is realized by its flag
+unipotent, by extending a triangular change on the isotropic
+vectors and a shift of the last vector into the isotropic
+span. For clarity the extension can be made with a hyperbolic
+splitting: fix the isotropic vectors \(e_i\), add \(h_i\) in the
+middle space to their duals \(d_i\), and send a middle vector
+\(w\) to \(w-\sum_i h(w,h_i)e_i\) (use the convention linear
+in the first variable). Add an isotropic-coordinate matrix to
+the images of the \(d_i\) whose sum with its adjoint is minus
+their middle Gram. The trace-one identity supplies the diagonal
+even at dyadic places. The arbitrary triangular change on
+the \(e_i\) is extended by its inverse adjoint on the duals.
+This construction also gives integral extensions when the
+hyperbolic splitting and the shift coefficients are integral
+and the last vector is primitive in its self-dual middle lattice.
+
+An integral frame class is one with \(Y=A^*ZB\) integral.
+Its weight is
+\[
+ w(C)=1/\operatorname{vol}(S\cap pQ_\theta p^{-1}),\qquad
+ p=(A,B).
+\]
+This is exactly the original \(wC\) since that intersection
+preserves the linked integral frame class. We next prove
+\[
+ w(C)\ge1,\qquad
+ \sum_{C\ {\rm integral}}w(C)\le
+       q^{s(s-1)(d+v(\theta))}\le P^{s(s-1)}.
+ \tag{GL4}
+\]
+
+Normalize the representative in each left \(S\)-coset by
+requiring the diagonal blocks of \(B\) to be identity.
+This uniquely fixes the \(S\)-action. Its remaining coordinates
+are those of the lower unitriangular \(L=A^*\) and off-block
+entries of \(B\); there are at most \(s(s-1)\) coordinates
+over \(E_v\). Haar disintegration in these coordinates
+is ordinary product additive measure: the block-diagonal
+part of \(B\) is the \(S\)-coordinate, and the other changes
+are multiplication by unitriangular matrices, with triangular
+Jacobian of absolute value one. Each \(O\) has additive
+volume one. At the normalized representative the block-diagonal
+part of the second component of \(p^{-1}Sp\) is unchanged.
+Thus its membership in \(Q_\theta\) forces the
+\(S\)-coordinate to be integral; the stabilizer is contained
+in \(K_0\), proving \(w(C)\ge1\).
+
+Here are explicit denominator bounds in the normalized
+coordinates. The leading block determinants of \(Y=LZB\)
+are the corresponding \(D_l\). For a column block \(j>i\),
+the last block row of the inverse leading square of \(Y\)
+through block \(i\), applied to the leading rows of column
+block \(j\), is \(B_{ij}\). Its entries have denominators
+dividing \(D_{\mathrm{end}(i)}\). The Schur complement of the
+leading square through block \(i-1\), evaluated in row
+block \(j\ge i\) and column block \(i\), equals
+\(L_{ji} Z_i\). Therefore the entries of \(L_{ji}\) have
+denominators dividing \(D_{\mathrm{end}(i-1)}z_i\), where
+\(z_i\) is the scalar of \(Z_i\) and \(D_0=1\).
+At each factor of \(E_v\) the valuation of this denominator is
+\[
+ (1-1/s_i)v(D_{\mathrm{end}(i-1)})
+             +(1/s_i)v(D_{\mathrm{end}(i)}).
+\]
+It is nonnegative, and its norm valuation is at most \(d\).
+The same bound holds for the denominators of \(B_{ij}\).
+Consequently each coordinate lies in a fixed fractional ideal
+of additive volume at most \(q^d\). The entire integral region
+in the left quotient has volume at most \(q^{s(s-1)d}\).
+The compact subgroup \(Q_\theta\) has volume
+\(q^{-s(s-1)v(\theta)}\) in the product measure.
+Quotient integration assigns to each right \(Q_\theta\)-orbit
+the volume \(\operatorname{vol}(Q_\theta)w(C)\).
+This proves (GL4), including finiteness. If \(P=1\) the
+normalized coordinates are all integral and \(\theta=1\);
+there is exactly one occupied class and its weight is one.
+
+\paragraph{The datum fibres and their amplitudes.}
+A local datum consists of the original two inner self-dual
+quotient lattices, with primitive last vectors, and their
+level graph. Use the datum and term definitions in
+\texttt{LocNG} or equivalently their \texttt{Frames} coordinates.
+For a fixed datum \(\delta\) and frame class \(C\), let
+\(N_\delta(C)\) count actual lattices in that class, without
+quotienting by the common unipotent. Write \(N_\delta^0(C)\)
+for those satisfying the generic condition
+\(\Lambda\cap J=M(u,u')\), with \(u,u'\) any representative
+of \(C\). The lattice \(M(u,u')\) is independent of the
+representative since the linked changes preserve its generators.
+
+We detail the witness dictionary. In a self-dual lattice with
+primitive isotropic vectors and primitive last vector modulo
+their span, choose duals to the whole primitive frame using
+unimodularity. In particular the isotropic duals pair to zero
+with the last vector. Correct their mutual Gram by isotropic
+coordinates using the surjective integral trace. This splits
+off the hyperbolic planes and gives a self-dual middle lattice.
+The rational isometry from the reference hyperbolic splitting
+to this one, inducing the identity on the quotient by the
+isotropic span, lies in the indicated flag unipotent. This
+constructs the two witnesses in the local term definition
+from such a lattice and its two adapted primitive frames.
+Conversely those witnesses give the stated primitive frames.
+For two witnesses of the same lattice, their adapted frames
+differ by integral triangular matrices: each is a basis
+of the same primitive frame sublattice with fixed graded
+coordinates. Since both pairs satisfy
+\(u_i'\equiv u_i\bmod\theta\Lambda\), these matrices are
+congruent modulo \(\theta\) by primitivity.
+Conversely every linked integral change is realized in the
+same lattice by the integral unipotent extension above.
+The quotient lattices and the level graph are intrinsic to
+\(\Lambda\), since the unipotents act trivially on the
+two quotients. This proves the frame-class dictionary.
+
+If \(\Lambda\cap J=M(u,u')\), both frames are primitive:
+each is part of a basis of \(M\) (use the reverse
+corrected generators for the second), and \(M\) is saturated.
+Thus every self-dual lattice of this saturation gives a
+generic term, with its induced datum. For arbitrary integral
+overlattices of \(M\) we need only the inclusion of admitted
+terms into self-dual lattices of that saturation.
+
+Fix a datum \(\delta\) and an integral class \(C\).
+The common complement lattice \(\Lambda\cap J^\perp\)
+of any generic term is determined by \(\delta\).
+Indeed for \(w\in J^\perp\), membership in its two inner
+lattices together with the level graph means that there are
+lifts \(w+x\), \(w+x'\) in \(\Lambda\), where \(x,x'\) lie in the
+respective isotropic spans, and \(x'-x\in\theta\Lambda\).
+Away from the level this last condition is automatic.
+By generic saturation,
+\(\theta^{-1}(x'-x)\in M(u,u')\). Comparing coefficients
+in the independent combined frame, both \(x\) and \(x'\)
+are integral combinations of the respective frame vectors.
+It follows that \(w\in\Lambda\); the converse is immediate.
+Call this fixed complement lattice \(L\).
+
+For prescribed saturated lattices \(M,L\) in the orthogonal
+summands, a self-dual lattice of \(V\) with these intersections
+is the graph of an anti-isometry of the finite hermitian
+discriminant modules \(M^\#/M\) and \(L^\#/L\).
+Indeed its image in their direct sum is self-orthogonal
+and equal to its orthogonal complement, and neither coordinate
+projection has a kernel by saturation; the order equality
+then forces both projections to be bijective.
+This gives a bijection with anti-isometries, if any exist.
+There are at most \(|M^\#/M|^m=q^{2am}\) such maps, since
+the first module is generated by at most \(m\) elements.
+Thus
+\[
+ N_\delta^0(C)\le q^{2am}. \tag{GL5}
+\]
+
+We now account for the two stabilizer weights. The unipotent
+\(S\) preserves the datum, and the stabilizer of \(C\) is a
+compact open subgroup \(S_C\). Its orbits on lattices in
+that class have cardinality
+\(\operatorname{vol}(S_C)/\operatorname{vol}(S_\Lambda)\).
+Consequently, with \(\mu(\Lambda)=1/\operatorname{vol}(S_\Lambda)\),
+the sum of \(\mu\) over the unipotent orbits in the datum and
+class is exactly \(w(C)N_\delta(C)\); likewise generically.
+The complement group fixes each pair of frames and acts
+equivariantly on the datum. Give it the Haar measure in which
+the reference datum stabilizer has volume one; thus
+\(\mathrm{wt}(\delta)=1/\operatorname{vol}(H_\delta)\).
+These stabilizers are compact open: they preserve full
+quotient lattices, whose intersections with the complement
+give full lattices there, and the additional level graph
+is finite residue data. For each complement orbit of
+data, the complement-orbits of its lattices are the
+\(H_\delta\)-orbits of the fixed fibre. The same orbit-size
+calculation gives the identities and inequality
+\[
+ \sum_{\delta\bmod H_J}\mathrm{wt}(\delta)N_\delta^0(C)
+     ={\cal M}(M(u,u')),\qquad
+ \sum_{\delta\bmod H_J}\mathrm{wt}(\delta)N_\delta(C)
+     \le\sum_{M_h\supset M(u,u')}{\cal M}(M_h).
+ \tag{GL6}
+\]
+These calculations are valid for nonnegative sums before
+finiteness has been established: lattices form a countable
+set and all compact stabilizer orbits on them are finite.
+No assumption of a unique integral lattice in a rational
+double coset has been made.
+
+Every local phase in the amplitude has modulus one.
+Changing witnesses by the linked integral frame changes does
+not change the phase: the difference of the two simple-root
+sums is divisible by \(\theta\), and the underlying additive
+character is integral-trivial. Common unipotent translation
+cancels by relevance. Hence the phase is the original
+well-defined phase on the indicated lattice orbits.
+
+\begin{theorem}[Local generic amplitude and mass]\label{thm:flag-generic-local-amplitude}
+In the original rank range \(k\ge4r+7\), at every occupied
+local nonzero-Gram point set \(e=s(s-1)+4s\).
+Let \(m_\delta,m_\delta^0\) be respectively the total and
+generic unipotent mass in the datum \(\delta\), and \(A_\delta^0\)
+the generic amplitude, with its original phase.
+Let \(nn=\sum_\delta\mathrm{wt}(\delta)m_\delta\).
+For any occupied integral pairing class \(C_*\), let
+\(ngen(C_*)\) be the generic mass in that class, summed over
+data with the same weights. Then
+\[
+ \sum_\delta\mathrm{wt}(\delta)|A_\delta^0|^2
+       \le P^e nn,\qquad
+ 0<ngen(C_*)<\infty,\qquad nn\le2P^e ngen(C_*).
+ \tag{GL7}
+\]
+At \(P=1\) the two comparisons are equalities (with factor
+one, not two). These give the generic local bound with
+\(C_1=39\), and the local pairing-class lower bound with
+\(C_0=9\), in the original concrete finite-place setting.
+\end{theorem}
+\begin{proof}
+By (GL4)--(GL5), \(m_\delta^0\le P^e\).
+Thus \(|A_\delta^0|^2\le(m_\delta^0)^2\le P^e m_\delta\).
+For the second bound use (GL6), (GL3) and (GL1).
+All corrected base frames are related by determinant-one
+changes of the corrected basis, even before integrality,
+so the constant \(c_x\) is the same for every class.
+Here \(n-m=k-1\) and \(n\ge2m+3\).
+Each class contributes at most \(\tfrac54 c_x q^{2am}w(C)\)
+to \(nn\). The chosen occupied class contributes
+\[
+ ngen(C_*)=w(C_*){\cal M}(M(C_*))
+                  \ge\tfrac34 c_x
+\]
+generically; it is finite by (GL1). Thus \(nn\le
+(5/3)P^e ngen(C_*)\le2P^e ngen(C_*)\).
+
+To see that this is the source pairing class, two pairs
+with cross matrices related by linked integral changes
+can first be so adjusted to have equal cross matrices.
+The resulting isometry on \(J\), fixing the complement
+pointwise, is in the two unipotents by the frame argument
+above. Thus equality of the pairing class is precisely
+equality of the double frame class modulo \(S\).
+There is no additional factor from its individual
+integral frame representatives.
+
+At \(P=1\) there is one class of weight one, every saturation
+is generic, and (GL5) gives at most one lattice per datum
+in a fixed class. Every nonempty datum has mass one and
+a single phase of modulus one. Therefore the amplitude square,
+the total mass and the generic mass coincide. Finally
+\(e=s(s-1)+4s=s^2+3s\le39s^2\) and
+\(e\le9s^2+4s\), also at \(r=0\).
+\end{proof}
+
+The proof of (GL7) uses no cancellation among nongeneric
+terms; it is the generic part of the local input, not the
+nongeneric saving \(q^{-(k-2r-5)}\).
+The global class unfolding and the comparison with the
+pinned real orbital integral are separate obligations.
