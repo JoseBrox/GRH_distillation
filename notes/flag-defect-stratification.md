@@ -16,4 +16,4 @@ Pinned interfaces: jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de.
 - Development/AbelianVarietyTheory/Proofs/FlagMeasures/HermitianDoubleCosetSecondTypeFamilyAmpSqLe.lean (family_bound).
 - Formalism/SharpRestriction/CuspSpanNormBounds/IsTermOver.lean, NGAt.
 
-Dependencies: the actual linked frame classes, primitive-saturation mass, discriminant gluing and stabilizer sums GL1–GL7. The large-defect threshold is an original-parameter threshold, not a new hypothesis for the whole local theorem. StepThmBPinnedG and the small full-image phase estimate remain open. No Lean replay or full manuscript compilation was performed for this change.
+Dependencies: the actual linked frame classes, primitive-saturation mass, discriminant gluing and stabilizer sums GL1–GL7. The large-defect threshold is an original-parameter threshold, not a new hypothesis for the whole local theorem. The subsequent [second-type cancellation](flag-second-type-cancellation.md) supplies the remaining small full-image phase estimate and full nongeneric bound. StepThmBPinnedG remains open. No Lean replay or full manuscript compilation was performed for this change.
