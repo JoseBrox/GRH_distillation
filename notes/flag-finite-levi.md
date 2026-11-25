@@ -2,8 +2,9 @@
 
 The finite interfaces in GA9 are now supplied by
 [the finite Levi proof](../paper/shared/flag-finite-levi.tex).
-The exact original diagonal zero-Gram saving follows **under the
-matched local-data hypothesis** of the global amplitude theorem:
+The exact original diagonal zero-Gram saving follows from the
+matched local-data hypothesis of the global amplitude theorem
+(which is now supplied in the concrete regime):
 `||K''_uu||_HS^2 <= duC exp(-k f log k)`.
 Here duC is the full column dimension, not the compact dimension dpiC.
 
