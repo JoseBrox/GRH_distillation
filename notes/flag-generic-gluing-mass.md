@@ -21,3 +21,5 @@ Pinned source: jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de.
 - Existing mass formula and primitive-density references: [maximal Hermitian mass](maximal-hermitian-mass.md), [signed primitive density](global-norm-frontier-primitive-density.md).
 
 The proof is mathematical; it has not been checked by Lean or a manuscript build.
+
+**Continuation:** [Exact AA normalization](flag-aa-normalization.md) now supplies GM11 under the original measure and row hypotheses, hence the mass comparison GM12. The pinned real comparison and weighted point sum remain.

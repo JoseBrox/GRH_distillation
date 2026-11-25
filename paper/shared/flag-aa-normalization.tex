@@ -1,0 +1,559 @@
+\subsection{The exact period normalizer from the adelic gauge calculation}
+\label{sec:flag-aa-normalization}
+
+We retain the original \(\mathrm{MassDataTie}\), the original complete row
+system and the measure data of \(\mathrm{bkU}\), not a newly chosen
+normalization. Write
+\[
+ s=r+1,\quad m=2s,\quad n=k+2r+1,\quad a=2r+1,\quad
+ l=k-1,\quad f=[F:\mathbb Q],\quad D_F=|\operatorname{disc}(F)|.
+\]
+Here \(r\) is the flag length (the source's \(\mathrm{rS}\)), \(k\) is
+the positive middle rank, and \(n\) is the ambient rank (the source's
+\(\mathrm{R.r}\)). The CM quadratic extension \(E/F\) is unramified
+at finite places. The two typed rational primes are completely split
+in \(E\), their product is \(g\), and the marked prime \(T_u\) of a
+row is split and prime to \(g\). We use the standing rank range and
+all the row, frame and compatibility assumptions of the original
+normalization theorem.
+
+At a finite place \(v\), write \(q_v=|\mathcal O_F/\mathfrak p_v|\),
+\(d_v\) for a generator of the different, and \(\eta_v=1\) or \(-1\)
+according as \(E_v\) is split or a field. Use the abbreviations
+\[
+ b_j(v)=\prod_{i=1}^j(1-\eta_v^i q_v^{-i}),\qquad
+ L_j=L_F(j,\eta^j),\qquad
+ A_v(T)=\frac{b_n(v)}{b_k(v)}
+ \begin{cases}1-\eta_v^k q_v^{-k},&v\mid T,\\1,&v\nmid T.\end{cases}
+\]
+Thus \(A_v(T)\) is exactly the source's \(\mathrm{aP}\).
+Put \(A_T=\prod_v A_v(T)\), \(A'=\prod_v A_v(T_{u'})\), and
+\(A_{\rm typ}=\prod_{v\mid g}A_v(T_u)\). The products converge absolutely:
+every nonconstant infinite Euler factor has index at least \(k+1\);
+the factors at marked primes are finite products. All are positive.
+
+\paragraph{The finite self-dual volumes.}
+The prescribed standard additive character has different-conductor
+pairing, by its restriction at infinity and triviality on the
+diagonal field. Its annihilator of \(\mathcal O_{F_v}\) is
+\(d_v^{-1}\mathcal O_{F_v}\). Finite unramifiedness of \(E/F\) gives the
+perfect integral trace pairing on \(\mathcal O_{E_v}\), also in the
+split case and at residue characteristic two. Hence its self-dual
+additive measure gives volume \(|d_v|_v\) to \(\mathcal O_{E_v}\) and
+volume \(|d_v|_v^{1/2}\) to \(\mathcal O_{F_v}\). On the Hermitian
+matrices of size \(h\), the specified pairing is
+\(\frac12\operatorname{Tr}_{E_v/F_v}\operatorname{tr}(AB)\):
+the diagonal has the ordinary \(F_v\) pairing and each off-diagonal
+pair has the trace pairing of \(E_v\). The integral matrix volume
+is therefore \(|d_v|_v^{h^2/2}\); in particular there is no missing
+factor at two. On \(h\)-tuples in the actual self-dual lattice of
+rank \(n\) the volume is \(|d_v|_v^{nh}\). The prescribed Gram-fibre
+measure consequently assigns to the primitive tuples of integral
+Gram matrix \(B\) the volume
+\[
+          |d_v|_v^{nh-h^2/2}\,\beta_v(B).                 \tag{AN1}
+\]
+Here \(\beta_v(B)\) is the normalized primitive density proved in the
+earlier finite-place calculation. Indeed the Gram derivative at
+a primitive tuple is onto on integral Hermitian matrices:
+complete the tuple to an integral basis, use self-duality to choose
+the duals, and solve the diagonal equations by the surjectivity
+of trace. Each primitive solution modulo \(\pi^j\) then has
+\(q_v^{2nh-h^2}\) lifts modulo \(\pi^{j+1}\).
+The ratio of tube volume to target-ball volume is (AN1). This is
+the value of the actual coarea family: the submersion charts give
+continuous integrals on compactly supported tests on the
+independent-tuples locus, so the almost-everywhere disintegration
+and continuity identify the values at the prescribed Gram matrix.
+No regularity of the reduction of \(B\) is needed.
+
+We also need the integral orbit, rather than just the primitive
+density. Two primitive tuples of equal Gram matrix are carried to
+one another by an integral unitary element. Over the residue field
+this is Witt extension for the isometry of their spans; it applies
+to degenerate subspaces as well. In the split case, identify the two
+components of a tuple with an injection and its dual map; an
+isometry respecting their pairings extends by completing the image
+basis and the kernel of the dual map. Reduction of the integral
+unitary group is onto: the equation for the next correction
+\(I+\pi^j X\) in its defining Gram equation is solved by the same
+surjective Hermitian derivative. Once the images of the two tuples
+agree modulo \(\pi^j\), their difference divided by \(\pi^j\)
+prescribes on their common reduced span a map \(L\) satisfying
+\(h(Lx,y)+h(x,Ly)=0\) there. Extend this to a skew-adjoint
+endomorphism of the full reduced space. To do so, choose a basis
+extending the independent tuple, prescribe the entries of the
+skew pairing \(h(Lx,y)\) when the first argument is in that tuple,
+fill in the opposite entries by skew symmetry, and set the
+remaining block to zero. Nondegeneracy gives the endomorphism.
+The split case uses the two dual components of this construction.
+Lift its infinitesimal correction to an exact isometry by successive
+Gram corrections starting at precision \(\pi^{j+1}\). The resulting
+infinite product converges integrally and carries the tuples
+exactly. This proves the required transitivity.
+
+For the source's ordinary places put \(\alpha_i=d_v^{i-r}\),
+\(0\le i\le r\). The upper-entry condition on \(x_{ij}\), \(i<j\),
+is \(\alpha_i^{-1}\alpha_j x_{ij}\in\mathcal O_{E_v}\).
+The box for the two upper matrices thus has self-dual volume
+\[
+       |d_v|_v^{2\sum_{i<j}(1-2(j-i))}.
+\]
+The \(\mathrm{ZZOrd}\) box has entries
+\(Z_{ij}\in d_v^{2r-i-j}\mathcal O_{E_v}\), hence volume
+\(|d_v|_v^{s^2(2r+1)}\). At a typed place \(d_v\) is a unit.
+The upper pair has matching residues, giving volume
+\(q_v^{-2\binom{s}{2}}\). In \(\mathrm{ZZTyp}\) write
+\(Z=T_F+g_v W\), where \(g_v\) is the typed rational prime
+and \(T_F,T_F'\) are the two prescribed Gram matrices.
+The remaining condition is
+\(W+W^*\equiv (T_F'-T_F)/g_v\pmod {g_v}\).
+The right hand side is integral Hermitian, and the reduction map
+\(W\mapsto W+W^*\) is onto (including at two). The resulting volume
+is \(q_v^{-3s^2}\). These are the original boxes, not estimates
+using larger neighborhoods. Their ratios are
+\[
+ \frac{U_v}{Z_v}=
+ \begin{cases}
+ |d_v|_v^{-B_r},& v\nmid g,\\
+ q_v^{s(2r+3)},&v\mid g,
+ \end{cases}
+ \qquad B_r=\frac{(r+1)(8r^2+10r+3)}3 .
+\]
+Since \(\prod_v|d_v|_v=D_F^{-1}\), it follows that
+\[
+    \frac{\mathrm{unitLevelVolume}}{\mathrm{volZZ}}
+             =D_F^{B_r}\,g^{s(2r+3)f}.                  \tag{AN2}
+\]
+
+At a typed place, in the actual integral hyperbolic splitting,
+the graded flag stabilizer has unipotent radical of dimension
+\(d_N=r(2k+2r+1)\) over \(F_v\), with the fixed-last-vector
+middle Levi of rank \(k\). Over the split residue algebra this
+Levi is \(\mathrm{GL}_k(\mathbb F_{q_v})\). All its residue
+elements lift, as do the unipotent parameters. This can be seen
+in the upper, middle and skew coordinates: use arbitrary integral
+upper and middle entries and solve the diagonal trace equations
+integrally. Its reduction consequently has order
+\(q_v^{d_N+k^2}b_k(v)\). The full integral group reduces onto
+\(\mathrm{GL}_n(\mathbb F_{q_v})\), of order \(q_v^{n^2}b_n(v)\).
+The original \(K_{\rm nat,v}\) is exactly the inverse image of
+the first image. Since \(n^2-k^2-d_N=s(2k+2r+1)\), this proves
+the exact index, and hence
+\[
+        \frac{\mu K_{\rm nat}}{\mu K}
+          =\frac{g^{-s(2k+2r+1)f}}{A_{\rm typ}}.         \tag{AN3}
+\]
+For clarity, the local volume of a pair of primitive tuples
+used in \(\mathrm{Mp}\) has the same index, not the index
+of a pointwise stabilizer alone. If \(S_0\) fixes the first
+\(s\)-tuple pointwise and \(S\) fixes its flag and graded
+vectors, then \(S/S_0\) is the upper unitriangular group of
+size \(s\). Its integral image is onto the corresponding
+upper-entry box: the hyperbolic splitting and primitivity of
+the last vector permit every integral shift of that vector.
+The exact local compatibility in \(\mathrm{MassDataTie}\)
+disintegrates \(\mu_S\) as the pointwise Haar measure and
+this self-dual upper-entry measure. Therefore the volume of
+one full primitive orbit is the single upper-box volume
+times \(\mu K/\mu S\). At the typed places the two full
+tuples must have identical residues; for each first residue
+the proportion of the second orbit in that residue is
+the reciprocal of the number of primitive residues of the
+fixed Gram matrix. The residue orbits are transitive by Witt
+extension, and congruence of the two row norms makes their
+residue Gram matrices equal. The pointwise-stabilizer image
+has index \(q_v^{2\binom{s}{2}}\) in the graded-stabilizer
+image, precisely the inverse proportion for the upper pair.
+Combining the two proportions gives
+\[
+   \mathrm{Mp}_v
+       =U_v\,\frac{\mu K_v\mu K_{{\rm nat},v}}
+                        {\mu S_v\mu S'_v}\quad(v\mid g).
+\]
+The ordinary product in the concrete datum is set equal to
+the corresponding ordinary expression by definition
+(\(\mathrm{MassDataConc.bC}\)). Consequently
+\[
+       \mathrm{MM}=U\,\frac{\mu K\mu K_{\rm nat}}{\mu S\mu S'},
+       \qquad U=\mathrm{unitLevelVolume}.              \tag{AN4}
+\]
+In particular the calculation is valid with the actual Haar
+normalizations, without assuming they are probability measures.
+
+The complete standard tuple \(\mathrm{tupH}\) has \(a=2r+1\)
+vectors and Gram matrix the \(r\) hyperbolic pairs and the marked
+line of norm \(-T\). Locally the two hyperbolic bases may be
+rescaled by the reciprocal different-ideal generators to become
+integral, with determinant of the tuple change equal to one.
+This changes neither the Gram determinant nor the fibre volume.
+The resulting tuple is primitive in the original split frame
+lattice. Its residue Gram corank is zero off \(T\) and one
+at \(T\). By (AN1), integral orbit transitivity, and the exact
+primitive-density formula, the compact orbit of the complete
+\(u'\)-tuple has volume
+\[
+    \Omega_v=|d_v|_v^{na-a^2/2} A_v(T_{u'}),\qquad
+    \Omega:=\prod_v\Omega_v=D_F^{-(na-a^2/2)}A'.         \tag{AN5}
+\]
+The fixed-last-vector row mass is the exact mass of
+Lemma~\ref{lem:flag-row-genus-mass}; writing \(C(E,k)\) for the
+unimodular Hermitian mass constant used in (GM1), it is
+\[
+ \rho_0=R_T=C(E,k)T^{kf}P_T,\qquad
+ P_T=\prod_{v\mid T}(1-\eta_v^kq_v^{-k}),\qquad T=T_u.    \tag{AN6}
+\]
+Indeed the cyclic discriminant module of the rank-\(k\) complement
+has \((T-1)^f\) gluing choices at the split marked places. They
+cancel the denominator of its primitive-last-vector mass. Finally
+the definitions of the normalized local factors give
+\[
+ \mathrm{al}=\prod_v\mathrm{alpD}_v=\frac{A_T A'}{A_{\rm typ}},
+ \qquad
+ A_T\prod_{i=k+1}^n L_i=P_T.                            \tag{AN7}
+\]
+
+\paragraph{The global quotient-volume identity.}
+This step can use a classical theorem instead of the full
+regularized Siegel--Weil formula. For a nondegenerate independent
+rational tuple \(X_0\) with Hermitian Gram matrix \(B_0\), let \(G\)
+be the ambient unitary group and \(H\) its pointwise stabilizer
+(the unitary group of the orthogonal complement). Both have
+positive rank here, both have determinant character module with
+the same quadratic Galois action, and both have Tamagawa number
+\(2\). We use the standard unitary Tamagawa measure normalization,
+as explicitly recorded in Harris--Li--Skinner,
+\emph{p-Adic L-functions for unitary Shimura varieties, I},
+Documenta Math. Extra Volume Coates (2006), 393--464, (0.2.1).
+The equality \(2\) for all Hermitian forms also follows from the
+classical Tamagawa theorem for simply connected special unitary
+groups, Ono's formula for the quadratic norm-one torus, and the
+Hasse norm theorem; the determinant map has an algebraic section
+along any nonisotropic rational line. Equivalently it is the
+unitary case of Kottwitz's Tamagawa-number formula.
+
+The Gram map is a submersion on the independent-tuples locus.
+A rational invariant fibre gauge \(\omega_{\rm fib}\) is the ratio
+of rational constant additive top forms in tuple and Hermitian
+matrix coordinates. It is invariant since the unitary action
+preserves the absolute ambient determinant, in fact its
+\(F\)-linear determinant is one. Witt extension identifies the
+nondegenerate fibre with \(G/H\), locally and rationally on its
+points. Choose rational invariant forms on \(G,H\) whose quotient
+on that fibre is \(\omega_{\rm fib}\), using the tangent exact
+sequence at \(X_0\). The specified self-dual additive gauges differ
+from the rational constant coordinate gauges by the square roots
+of the absolute determinants of their rational pairings and the
+scalar self-dual different factors. Multiplying the determinant
+factors over all places gives one by the product formula;
+the different factors are exactly the dimensional discriminant
+normalization in the Tamagawa measures. The two groups have the
+same \(L_F(1,\eta)\) convergence factors (their character modules
+agree), so these cancel in their quotient, globally and at each
+finite place. Thus the Tamagawa quotient on the orbit is exactly
+the product of the given self-dual Gram-fibre measures. At good
+finite places the quotient compact orbit volumes are
+\(b_n(v)/b_{\dim_E H}(v)\); the product converges absolutely in
+the present rank range, so this comparison uses the actual
+restricted product, not a rearrangement of a conditionally
+convergent Euler product.
+
+By uniqueness of Haar measures, the actual \(\mu_G,\mu_H\)
+in \(\mathrm{MeasCompat}\) are proportional to these Tamagawa
+measures. The proportionality constants are equal, since their
+quotient is prescribed to be the same Gram-fibre measure.
+The equality of Tamagawa numbers now proves, for the two
+complete standard row tuples and the original nondegenerate
+\(m\)-tuple \(X_0\),
+\[
+      \mathrm{volHa}=\mathrm{volHa}'=\mathrm{volB}=\mathrm{volG}.
+                                                               \tag{AN8}
+\]
+This uses only the stipulated measure compatibility and the
+classical Tamagawa theorem. It does not require a Siegel--Weil
+identity on the degenerate Gram locus.
+
+For the \(u'\) complete standard tuple, write \(a_\infty>0\)
+for the scalar in the infinite Weil quotient, with the
+prescribed infinite Gram-fibre measure:
+\(d\mu_{G,\infty}=a_\infty\,d\lambda_\infty\,d\mu_{H',\infty}\).
+The analogous finite scalar is \(a_\infty^{-1}\) by the
+actual product compatibility. One can see this by testing the
+global Weil formula on products of nonzero compactly supported
+functions at infinity and characteristic functions of compact
+opens at the finite adeles; uniqueness of the local invariant
+quotient measures gives the two factors and forces their
+product to be one. The compact orbit at finite adeles is
+precisely \(K/(K\cap H')\), with measure \(\Omega\) by (AN5).
+It follows that
+\[
+                    \mu K\,a_\infty=\mu H'\,\Omega.     \tag{AN9}
+\]
+This statement is unchanged if the chosen real and finite
+Haar factors are rescaled in opposite directions.
+
+\paragraph{The infinite quotient and the two-sided Jacobian.}
+We give the real calculation to specify all constants in
+(AN9) and in the disintegration of the original real form.
+At a real place choose the actual orthogonal Witt basis:
+the \(r\) hyperbolic pairs, a positive orthonormal basis of
+rank \(k\), and the normalized negative last vector.
+The matrix of the form in these coordinates is Hermitian
+unitary. Changes between such coordinates preserve the
+Hilbert--Schmidt Lie-gauge measure: identify the Lie algebra
+with skew-Hermitian matrices by multiplication by the form
+matrix, and note that the induced congruence determinant
+is \(|\det P|^{2n}=1\). Thus this computation applies to
+the actual coordinate transport, not just to a special word.
+Denote by \(c_G\) the scalar of the given real Haar measure
+relative to this Lie gauge, by \(h,h'\) the total masses of
+the two compact pointwise complete-frame groups, and by
+\(\kappa,\kappa'\) the scalars of the two real unipotent
+Haar measures in the reference Witt coordinates.
+
+Let \(V_j\) be the Hilbert--Schmidt Lie-gauge volume of
+\(\mathrm U(j)\), with \(V_0=1\). The projection to its last
+unit vector has sphere fibre \(\mathrm U(j-1)\). In the
+horizontal tangent space, each complex off-diagonal entry
+contributes twice its squared modulus to the Lie norm;
+the imaginary diagonal entry contributes its ordinary squared
+modulus. Accordingly its quotient density is \(2^{j-1}\)
+times the sphere's Euclidean density. Integration yields
+\[
+          \frac{V_j}{V_{j-1}}
+             =2^{j-1}\frac{2\pi^j}{(j-1)!}
+             =\frac{(2\pi)^j}{(j-1)!}.                 \tag{AN10}
+\]
+This is the source's \(\mathrm{UnitaryVolumeMass.volU}\), not
+the volume in the gauge where independent off-diagonal complex
+entries have raw Lebesgue measure.
+
+For a fixed nondegenerate real \(a\)-tuple of complete-frame
+Gram determinant of modulus \(T'\), the self-dual Gram-fibre
+measure is \(T'^{\,k}\) times the Hilbert--Schmidt quotient
+gauge on \(G/H'\). To check this determinant explicitly,
+write the frame and orthogonal complement as the columns
+of a matrix \(P\), so \(P^*JP=B\perp I_k\) and
+\(|\det P|^2=|\det B|=T'\). In the tuple tangent coordinates
+\(dX=P\binom{U}{Z}\) use \(S=BU\). The ambient real Lebesgue
+Jacobian is \(|\det B|^a\), and the inverse substitution
+\(U=B^{-1}S\) contributes \(|\det B|^{-2a}\).
+The Gram derivative is \(S+S^*\): the diagonal real part
+has derivative 2 and each complex upper target can be
+used directly, leaving independent skew coordinates.
+The self-dual tuple gauge is \(2^{na}\) times coordinate
+Lebesgue measure and the self-dual Hermitian target gauge is
+\(2^{a(a-1)/2}\) times its coordinate measure. The quotient
+therefore has density
+\(2^{na-a(a+1)/2}|\det B|^{-a}\,dS_{\rm skew}\,dZ\).
+On the group, skew-matrix congruence by \(P\) has Jacobian
+\(|\det P|^{2n}=|\det B|^n\); removing the lower-right
+\(\mathfrak u(k)\) coordinates leaves density
+\(2^{na-a(a+1)/2}|\det B|^{-n}\,dS_{\rm skew}\,dZ\).
+Their ratio is \(|\det B|^{n-a}=T'^k\), as claimed.
+Both gauges are invariant, so the tangent computation
+determines the full quotient measure. Thus the real scalar
+in (AN9) is
+\[
+              a_v=\frac{c_G V_k}{h'T'^k},\qquad
+              a_\infty=\prod_{v\mid\infty}a_v.          \tag{AN11}
+\]
+
+For the two-sided real disintegration, first separate the
+full flag unipotent groups on the big cell. The conditions
+that all the leading cross-pairing minors through rank \(r\)
+are nonzero are exactly the open elimination conditions.
+Triangular row and column operations make their cross
+pairing diagonal, with entries \(c_1,\ldots,c_r\).
+The radical parameters on each side then put the images
+of the isotropic vectors and their duals in the opposite
+standard positions: their middle projections determine
+the middle parameters, and isotropy fixes the symmetric
+part of the remaining top projections. The independent
+skew parameters complete that elimination. The remaining
+isometry is on the \(k+1\) dimensional middle space.
+This construction is unique: after the triangular
+elimination, an ambiguity between the two radical
+elements would fix both opposite full isotropic frames
+and act trivially on the middle quotient, hence is the
+identity. The middle element is then determined.
+In these coordinates the big cell is
+\(n_1 w(c) b n_2^{-1}\) with \(b\in\mathrm U(k,1)\).
+The opposite torus \(w(c)\) exchanges the hyperbolic
+pairs with coefficients \(c_i\) and \(\overline c_i^{-1}\),
+up to the harmless signs of the prescribed Weyl element.
+Its diagonal complex parameter has Lie-gauge density
+\(2\,d^2c_i/|c_i|^2\): both dual entries contribute to
+the squared norm. Left Maurer--Cartan differentiation
+at this section gives the determinant of
+\(\operatorname{Ad}(\operatorname{diag}(c,I,\bar c^{-1}))\)
+on the positive unipotent. An upper \(ij\) entry has
+weight \(c_i/c_j\), the \(k+1\) middle entries for index
+\(i\) have weight \(c_i\), and the skew block has weights
+\(c_i\bar c_j\) (real weight \(|c_i|^2\) on its diagonal).
+The exponent of \(|c_i|\) in the real determinant is
+\(2(r-2i+1)+2(k+1)+2r\), using \(1\le i\le r\).
+Combining the torus differential with this determinant gives
+\[
+         2^r\prod_{i=1}^r |c_i|^{2(k-1)+4(r-i+1)}d^2c_i.
+                                                               \tag{AN12}
+\]
+The density is independent of \(n_1,n_2,b\) by unimodularity,
+translation invariance, and the middle action of determinant
+modulus one on the radical. The Lie subspaces at the Weyl
+element are orthogonal, so there is no additional constant.
+The complement of the big cell is a proper real algebraic
+set in the connected unitary group, hence Haar null.
+This is the actual big-cell Haar formula in the coordinates
+of \(\mathrm{JacConst}\).
+
+In the terminal group \(\mathrm U(k,1)\), put
+\(\zeta=h(z,bz')\) (conjugating this coordinate does not
+change its planar measure). In orthogonal coordinates a
+vector of norm \(-T'\) has form \((x,y)\) with
+\(|y|^2=T'+\|x\|^2\). The one-vector coarea measure for
+the prescribed trace pairing is \(2^k d^{2k}x\,d\arg y\),
+since the norm constraint has radial derivative \(2|y|\).
+As \(|\zeta|^2=T(T'+\|x\|^2)\),
+\[
+ R^{2k-1}dR
+   =T^{-k}(|\zeta|^2-TT')^{k-1}|\zeta|\,d|\zeta|,
+        \qquad R=\|x\|.
+\]
+The compact group fixing \(z\) acts transitively on the
+sphere direction, with normalized pushforward of its Haar
+measure equal to normalized sphere area. The quotient by
+the right compact group has coarea factor \(T'^k\)
+by the same tangent computation used in (AN11), now with
+one vector. Hence the terminal Haar density, with compact
+measures of masses \(h,h'\), is
+\[
+ \frac{2 V_k^2}{(TT')^k V_{k-1}hh'}
+       (|\zeta|^2-TT')^{k-1}d^2\zeta.                  \tag{AN13}
+\]
+The endpoint \(R=0\) has measure zero. This holds for any
+measurable choice of terminal section, by the compact
+averages; the section used in the original datum is one
+such choice.
+
+In the original real variable the cross Gram matrix is
+diagonal with these \(r+1\) entries. Its weight is exactly
+\[
+     (|\zeta|^2-TT')^{k-1}
+               \prod_{i=1}^r |c_i|^{2(k-1)+4(r-i+1)} .
+\]
+The original \(\mathrm{dcInf}\) is twice planar Lebesgue
+measure on each complex coordinate. Therefore the factors
+\(2^r\) in (AN12) and 2 in (AN13) are absorbed, not lost.
+After including the original Haar scalars, the infinite
+disintegration constant at this place is
+\[
+         C_v=\frac{c_G V_k^2}
+               {(TT')^k V_{k-1}hh'\kappa\kappa'} .
+\]
+Use (AN11), (AN10), and the exact unipotent covolume theorem
+\ref{global-gram-haar-covolume}. In its reference
+Hilbert--Schmidt gauges the two original infinite unipotent
+covolumes are both \(D_F^{e_r/2}\), with
+\[
+              e_r=-\frac{8r^3+6r^2+6kr^2+r}{3}.
+\]
+The actual measures multiply these by the respective products
+of \(\kappa,\kappa'\). With \(C=\prod C_v\) the original
+unscaled \(\mathrm{DisintegrationConstant}\), this gives
+\[
+ C\,\mathrm{volH}\,\mathrm{volN}\,\mathrm{volN}'
+    =a_\infty D_F^{e_r}
+          \left(\frac{(2\pi)^k}{(k-1)!}\right)^f T^{-kf}.
+                                                               \tag{AN14}
+\]
+The calculation includes \(r=0\) with empty upper-coordinate
+products. It proves the reference Haar bracket in the
+normalization theorem without a bound on \(c_G\).
+
+\begin{theorem}[The original unscaled \(AA\) identity]
+\label{thm:flag-aa-normalization}
+For the actual \(\mathrm{bkU}\) datum under the original
+\(\mathrm{MassDataTie}\) and the admitted row and finite
+level hypotheses, the equality
+\[
+ \boxed{\displaystyle
+  \mathrm{cExpl}\,\mathrm{massRows}
+           \prod_v\mathrm{alpD}_v
+              =AA\,g^{mf(k-1)} }                       \tag{AN15}
+\]
+holds, where \(AA=(\mathrm{bkU}).AA\). All the measures on
+both sides are the original measures.
+\end{theorem}
+\begin{proof}
+At finite level the actual graded stabilizer has integral
+factorization \(S\cap K=(N\cap K)(H\cap K)\).
+Indeed the projection to the self-dual middle quotient of
+the standard integral splitting preserves its lattice and
+last vector; every such middle isometry has the block
+diagonal integral lift, leaving an integral unipotent.
+The same argument works for the second word. Product Haar
+compatibility consequently gives \(\mu S=\mu N\mu H\) and
+\(\mu S'=\mu N'\mu H'\). Unipotent strong approximation
+(from the rational triangular coordinates and their successive
+additive quotients) identifies the real period fundamental
+domain times \(K_N\) with an adelic fundamental domain, so the
+stipulated total unipotent covolume 1 gives
+\(\mathrm{volN}=1/\mu N\) and \(\mathrm{volN}'=1/\mu N'\).
+The compact middle adelic quotient decomposes according to
+the original row genus; each class has reciprocal stabilizer
+weight, hence
+\(\mathrm{volHa}=R_T\,\mathrm{volH}\,\mu H\).
+This is the same row mass as (AN6).
+
+The definition of \(AA\) in the concrete datum is
+\(\mathrm{volB}\,C\,\mathrm{MM}/(\mathrm{volZZ}\mu K)\):
+the factor \(\mathrm{kapN}\) in the scaled \(\mathrm{Coo}\)
+has been removed in \(\mathrm{bkU}\).
+Substitute (AN4) and the preceding covolume identities:
+\[
+ \frac{AA}{R_T}
+   =\frac{\mathrm{volB}}{\mathrm{volHa}}
+     C\,\mathrm{volH}\,\mathrm{volN}\,\mathrm{volN}'
+       \frac{U}{Z}\frac{\mu K_{\rm nat}}{\mu H'}.
+\]
+All denominators are positive by the Haar constructions.
+Use (AN8), (AN9), (AN2), (AN3), (AN5), (AN14):
+\[
+ \frac{AA}{R_T}
+   =D_F^{e_r+B_r-(na-a^2/2)}
+       \left(\frac{(2\pi)^k}{(k-1)!}\right)^f T^{-kf}
+         \frac{A'}{A_{\rm typ}}\,g^{-mf(k-1)} .
+\]
+The exponent simplifies identically to
+\(-2r(r+1)(k-1)-k+\frac12\).
+By the exact Hermitian mass formula in (GM1),
+\[
+  \frac{C(E,k)}{C(E,k-1)}
+    =D_F^{k-1/2}\left(\frac{(k-1)!}{(2\pi)^k}\right)^f L_k .
+\]
+Multiplying by (AN6) and using (AN7) now yields
+\[
+ AA\,g^{mf(k-1)}
+  =C(E,k-1)D_F^{-2r(r+1)(k-1)}
+                 \left(\prod_{i=k}^n L_i\right)
+                 \frac{A_T A'}{A_{\rm typ}} .
+\]
+The first three factors are exactly the defining
+\(\mathrm{cExpl}\,\mathrm{massRows}\) (including the
+different exponent), and the last ratio is exactly
+\(\prod_v\mathrm{alpD}_v\). This proves (AN15).
+\end{proof}
+
+In particular (GM11) is now supplied, and the generic mass
+comparison (GM12) holds under these actual hypotheses:
+\[
+ \mathrm{ngen}_{\rm tot}\le
+ 2\,AA\,\rho^{2r(r+1)f(k-1)}H_{\rm tot}^{s(s-1)}\,\mathrm{nPt}.
+                                                               \tag{AN16}
+\]
+The remaining generic local supplier must still relate the
+prescribed pinned real quotient measures to the measures
+in the class factorization and retain the correct scale
+in the positive point sum. This normalization proof alone
+does not bound the nonzero-Gram orbital energies.

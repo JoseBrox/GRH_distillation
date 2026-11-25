@@ -544,3 +544,5 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Integral class summation in generic rational cells](../../notes/flag-generic-global-classes.md): local-orbit product, reciprocal row/genus weights, exact height and pinned phase-sensitive class sum; the generic mass reduces to the original definite gluing mass.
 
 - [Exact generic gluing mass and block-end height gain](../../notes/flag-generic-gluing-mass.md): absolute mass and local Jacobian, uniform density product, zero-loss Haar-weight telescoping; the AA and pinned analytic comparisons remain open.
+
+- [Exact AA period normalization](../../notes/flag-aa-normalization.md): GM11 and GM12, including finite Haar ratios and the complete-frame and big-cell Jacobians.
