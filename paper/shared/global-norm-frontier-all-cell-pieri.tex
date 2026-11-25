@@ -1,0 +1,518 @@
+\subsection{Transfer of Pieri expansions to all nonzero-Gram cells}
+\label{sec:all-cell-pieri-transfer}
+
+We retain the original Bessel subgroups, characters, compact
+types, quotient gauges and radial Jacquet norm of
+Sections~\ref{archimedean-pieri-family} and
+\ref{archimedean-iterated-minors}.  The new step is that a
+coefficient with zero radial Jacquet norm has zero orbital
+integral on every relevant nonzero-Gram cell, not just on
+the open cell. This permits a direct weighted-sum argument.
+
+\paragraph{A two-sided relative functional.}
+Write \(S=K_zN\), \(S'=K_{z'}N\), and
+\(\tau(wn)=\pi_W(w)\psi(n)\), with the analogous \(\tau'\).
+These are unitary representations of the indicated
+semidirect products on the compact-type spaces \(W,W'\):
+the compact factors normalize the flag unipotents and
+preserve their characters. Their Haar measures are the
+original compact and unipotent product measures. Use
+inner products linear in the first variable.
+
+Let \(\sigma\) be a discrete series with the original
+large-gap decay on smooth vectors. Its two original
+period-normalized maps are denoted \(B:H^\infty\to W\),
+\(B':H^\infty\to W'\). In particular, for the first map
+the established period factorization is
+\[
+ \int_S\langle\sigma(s)x,v\rangle
+                \overline{\langle\tau(s)a,u\rangle}\,ds
+       =\langle Bx,a\rangle\overline{\langle Bv,u\rangle}.
+                                                        \tag{AP1}
+\]
+The formula includes the case \(B=0\); likewise for
+\(S'\). We use the multiplicity-one theorem for these
+smooth Bessel functionals and the mixed Jacquet identity
+already used in the local Pieri family and Jacquet norm
+proofs. In particular a coefficient
+\[
+ F(h)=\sum_j\langle\sigma(h)y_j,x_j\rangle A_j
+\]
+has original squared radial norm
+\[
+ jNorm2(F)=c_{\rm rad}d_\sigma^{-1}|s_\sigma(F)|^2,\qquad
+ s_\sigma(F)=\sum_j\langle A_jB'y_j,Bx_j\rangle,          \tag{AP2}
+\]
+with the same positive radial factor \(c_{\rm rad}\)
+and formal degree \(d_\sigma\) as before.
+
+Fix any represented relevant point with nonzero Gram
+and representative \(g\). Put \(R=N\cap gN g^{-1}\),
+\(R'=g^{-1}Rg\). Give \(R\) exactly its prescribed
+root-coordinate Haar measure and \(R'\) the transported
+measure. The quotient in \(\mathrm{OrbInt}\) is
+\[
+ \Delta_g R\backslash(S\times S'),\qquad
+       \Delta_g R=\{(a,g^{-1}ag):a\in R\}.
+\]
+The integrand is
+\[
+ \tau(s)F(s^{-1}gs')\tau'(s')^{-1}.
+\]
+It is invariant under the indicated left diagonal action
+by relevance. The identification holds for every admitted
+\(\mathrm{IsOrbQuot}\) measure: the Weil identity first
+forces its support, after pushforward to the orbit
+space, to lie on this quotient, and then determines its
+pushforward there. More explicitly, test the Weil identity
+on compactly supported functions of a quotient coordinate
+and a fiber coordinate with integral one. Local sections
+and a countable partition of unity prove the assertion
+without any requirement that the given measure itself
+be supported on a particular section.
+The nonzero-Gram root-coordinate chart of the flag
+stabilizer is bijective with triangular unipotent
+translation law; product Lebesgue measure, with the
+specified root scalar, is therefore Haar.
+
+All the integrals below converge absolutely, also for
+arbitrary smooth \(x_j,y_j\) in the coefficients, and are
+continuous for finite smooth seminorms in these vectors.
+Here is the quantitative reason for the use of the
+large-gap hypothesis. The terminal quotient properness
+estimate \eqref{finite-decay-terminal-properness} applies
+to the two paired flags: after removing the free
+stabilizer roots, the real noncompact coordinates \(y\)
+have dimension at most \(2n^2\) and
+\[
+                 1+|y|\le C_g'(1+\|h\|)^{64s^2},
+       \qquad n=2r+k+1,\quad s=r+1 ,
+\]
+where \(h\) is their product with \(g\). This estimate is
+for the actual terminal fibre, with its two compact
+factors and root measure; it uses the nondegenerate
+paired-frame Gram matrix and positive orthogonal
+complement, not an inverse of a possibly vanishing
+internal minor. The signed block Cramer formulas
+used in that estimate apply with any fixed exact
+representative \(g\) of the given nonzero-Gram cell;
+only the constant \(C'_g\) changes. A coefficient
+majorized by \(C(1+\|h\|)^{-A}\) is therefore integrable
+if \(A>64s^2(2n^2+1)\). The smooth coefficient bound
+of Theorem~\ref{original-smooth-decay-from-tensor},
+in the original reserve of the shifted family, gives
+\(A\ge (C_g/2)s^4(3sn^2+n^3)-1\). Taking
+\(C_g\ge10^6\) is more than sufficient. The constants
+in this qualitative integrability argument never enter
+a uniform norm estimate.
+
+\begin{theorem}[All-cell factorization of coefficient functionals]
+\label{thm:all-cell-relative-factorization}
+Under these actual period, smooth-decay and quotient
+hypotheses, for a fixed relevant nonzero-Gram orbital
+datum there is a linear operator \(T_{g,\nu}:W'\to W\)
+such that every finite smooth coefficient of \(\sigma\)
+satisfies
+\[
+             \mathrm{OrbInt}(F,g,\nu)
+                     =s_\sigma(F)T_{g,\nu}.             \tag{AP3}
+\]
+In particular \(jNorm2(F)=0\) implies vanishing of
+the original orbital integral at every such datum.
+No nonvanishing assertion for the full space of Bessel
+functionals is needed if a period map is zero.
+\end{theorem}
+
+\begin{proof}
+Choose a measurable section for \(R'\backslash S'\).
+The diagonal quotient disintegrates into the full
+first \(S\) and this second quotient. Indeed apply
+the two successive Weil identities to a compactly
+supported test function on \(S\times S'\): their
+composition is exactly the diagonal Weil identity
+with the same \(R\) measure. Thus the product measures
+on these coordinates have the required normalization.
+The reverse disintegration also holds. Both orders
+are permitted by absolute convergence.
+
+It suffices to consider
+\(F(h)=\langle\sigma(h)y,x\rangle (a\otimes a'^*)\),
+where \((a\otimes a'^*)w=\langle w,a'\rangle a\).
+Integration over the full first \(S\) uses the complex
+conjugate of (AP1) and gives, at \(w\in W'\),
+\[
+  \langle a,Bx\rangle
+        \int_{R'\backslash S'}
+           B(\sigma(gs')y)\,
+                     \langle w,\tau'(s')a'\rangle\,d\dot s'.
+                                                        \tag{AP4}
+\]
+The integrand is independent of the representative
+of \(s'\), since \(B\) is equivariant and relevance
+identifies the two characters on \(R,R'\).
+If \(B=0\), (AP4) gives zero. If \(B'=0\), integrate the
+full second \(S'\) first, using the corresponding
+period identity on that side, to obtain zero as well.
+This reverse integration is essential: a zero period
+form alone has not been identified with the absence
+of other equivariant smooth maps.
+
+Suppose now that both maps are nonzero. Fix \(x,a\)
+with \(\langle a,Bx\rangle\ne0\). Then the integral
+in (AP4) is absolutely convergent and continuous
+in \(y\) for the smooth topology, by the bound for
+the full orbital integral and this fixed nonzero
+factor. For fixed \(w\in W',u\in W\), define a smooth
+linear map \(B_{w,u}:H^\infty\to W'\) by
+\[
+ \langle B_{w,u}y,a'\rangle
+   =\int_{R'\backslash S'}
+       \langle B(\sigma(gs')y),u\rangle
+                    \langle w,\tau'(s')a'\rangle\,d\dot s'.
+\]
+The right side is linear in \(y\), conjugate linear
+in \(a'\); finite dimensionality of \(W'\) gives this
+map and its continuity. The quotient measure is
+right \(S'\)-invariant, since \(R'\) and \(S'\) are
+unimodular. Substitute \(s'\mapsto s't\) to get
+\(B_{w,u}\sigma(t)=\tau'(t)B_{w,u}\).
+By Bessel multiplicity one,
+\(B_{w,u}=c_{w,u}B'\). The scalars \(c_{w,u}\) are
+linear in \(w\), conjugate linear in \(u\), hence
+are the matrix entries of one operator \(T_{g,\nu}\)
+independent of \(x,y,a,a'\).
+Substitution in (AP4) gives
+\[
+ \langle a,Bx\rangle\langle B'y,a'\rangle T_{g,\nu}
+       =\langle (a\otimes a'^*)B'y,Bx\rangle T_{g,\nu}.
+\]
+Summing proves (AP3), and (AP2) proves its last
+assertion. The formula is for the same orbital
+measure on both sides.
+\end{proof}
+
+\paragraph{The same Pieri coefficients on every cell.}
+Use the original signed exterior-Pieri decomposition
+and its positive leading-minor norm and coefficient-sum
+estimates. Fix the finite shift ball allowed by
+\(\mathrm{BesselRangeNearParameter}\).
+For each parameter with nonzero Jacquet image choose
+the original normalized coefficient \(F_\eta\), with
+\(jNorm2(F_\eta)=1\); use zero on a zero image.
+The established mixed Jacquet identity makes the
+nonzero images at distinct parameters orthogonal.
+There is no chamber permutation inside this ball,
+by the retained gap reserve.
+
+For the leading minor \(D_\ell\), multiplying a
+coefficient by \(D_\ell\) is the same finite exterior
+tensor coefficient used in the preceding proof.
+The minor is constant on the two-sided orbit, since
+the frame actions are upper unitriangular and the
+compact groups fix the marked frames. Thus
+\[
+ \mathrm{OrbInt}(D_\ell F_\eta,g,\nu)
+            =D_\ell(\gamma)\mathrm{OrbInt}(F_\eta,g,\nu).
+\]
+The tensor decomposition gives the actual coefficient
+in each shifted representation. On the big cell its
+Jacquet image agrees with \(a_{\eta,I}^{(\ell)}F_{\eta+\mathbf1_I}\)
+after Jacquet integration, by the proved expansion.
+Their difference is a coefficient of the same shifted
+representation (transport by a unitary equivalence
+if necessary), of zero Jacquet norm. By
+Theorem~\ref{thm:all-cell-relative-factorization}
+that difference has zero orbital integral on every
+relevant nonzero-Gram cell. This gives the exact
+expansion
+\[
+ D_\ell(\gamma)\mathrm{OrbInt}(F_\eta,g,\nu)
+ =\sum_{|I|=\ell}a_{\eta,I}^{(\ell)}
+             \mathrm{OrbInt}(F_{\eta+\mathbf1_I},g,\nu)
+                                                        \tag{AP5}
+\]
+with precisely the previous coefficients and the same
+sum bound \(\sum_I|a_{\eta,I}^{(\ell)}|\le b^{C_bm^2}\),
+\(m=2s\). There is no limiting passage between strata.
+In particular, if the original input coefficient has
+zero Jacquet norm, all its orbital evaluations vanish.
+
+For the conjugated minor the tensor factor is the
+dual exterior representation: on the unitary group
+the complex conjugate of a standard coefficient
+is a dual coefficient, using the invariant Hermitian
+form. The admissible shifts are \(-\mathbf1_I\).
+On the radial space multiplication by
+\(\overline{D_\ell}\) is adjoint to multiplication by
+\(D_\ell\), as is seen by integrating their product;
+both products have finite Jacquet norms under the
+retained reserve, or by the finite dual-Pieri
+decomposition and (AP2). Hence the coefficient from
+\(\eta\) to \(\eta-\mathbf1_I\) is the conjugate of
+the already bounded coefficient in the other
+direction. Its column sum is at most
+\(\binom n\ell b^{C_bm^2}\le b^{(C_b+1)m^2}\).
+Use (AP3) exactly as above to transport this equality
+to the nonzero-Gram cells. This supplies the
+all-cell equality in the original
+\(\mathrm{OneStepCellExpansion}\) with an enlargement
+of its uniform coefficient constant by one, under the
+already established regular expansion hypotheses.
+The local pole estimate itself is not proved by
+this transfer.
+
+\subsection{Weighted rotated summation with a rank-dependent pole exponent}
+\label{sec:rank-dependent-rotated-sum}
+
+The source's intermediate \(\mathrm{WeightedExpansionRotated}\)
+uses a shift radius and an inverse-Gram exponent chosen
+before the rank. Neither restriction is needed for the
+actual \(\mathrm{JointNormBoundRotatedUniform}\) consumer.
+The following argument replaces that intermediate
+interface. It uses positive minors only.
+
+\begin{theorem}[Reduction to the near-parameter unweighted orbital bound]
+\label{thm:rotated-sum-from-near-bp}
+Let \(a_w\ge0\), and retain the original
+\(\mathrm{BData}\) at distance zero, with
+\(\kappa=kaRe\), the original section and compact data.
+Retain the actual range with nonempty cloud-gap set
+(in particular the standing interlacing range \(k\ge3\)).
+Suppose the unweighted near-parameter pointwise
+orbital estimate holds with one constant \(C_*\ge1\),
+on the same data and their admissible shifted family:
+\[
+ n_v(\gamma)\operatorname{orbSq}(F_\eta,
+                  \mathrm{turnPt}(\mathrm{ptLoc}(\gamma)))
+ \le b^{C_*m^4}
+   \max\{1,G_{\rm loc}^{-1}\}^{C_*m^2}jNorm2(F_\eta).
+                                                        \tag{AP6}
+\]
+Here \(G_{\rm loc}\) is the original positive Gram
+polynomial at a represented point; it is exactly the
+\(Gpt\) in \(\mathrm{BpIneq}\). The estimate is required
+when the base parameter satisfies its original standard
+bounds and all gaps at least \(200\|\eta\|_1\).
+In particular the prescribed character scale, or its
+rigorously transported estimate, is retained.
+Then the original weighted rotated point sum is bounded by
+\[
+ BSumR\bigl(a\mapsto normWt(a)^{a_ws^2}\bigr)
+             \le b^{C_{\rm rot}m^5 f}\,jSqG.            \tag{AP7}
+\]
+The constants and strengthened base all-gap threshold
+depend only on \(a_w,C_*,C_h\) and the already established
+Pieri constants, not on \(r,k,f\). This is a conditional
+reduction of the actual weighted-sum supplier; it does
+not assume the stronger fixed-radius weighted expansion.
+\end{theorem}
+
+\begin{proof}
+Put \(\rho=\operatorname{rd}(E)\), \(p=a_ws^2\), and
+\[
+       A_s=\lceil C_*m^2\rceil,\qquad L_s=\lceil p\rceil,
+       \qquad M=\lceil 2a_w+4C_*+8\rceil,\qquad P=M s^3 .
+\]
+The original size hypothesis gives \(b\ge2\) and
+\(n\le b\), and \(kaRe=2\pi/(g\rho)\) with
+\(1\le\rho\), \(g\ge1\). From \((kaRe)^{-1}\le b^{C_h}\)
+one gets
+\(\rho\le b^{C_\rho}\), where
+\(C_\rho=\max(0,C_h)+3\).
+This is the original character scale, not a new
+bound on the finite level.
+
+Fix an admitted point \(\gamma\) and place \(v\).
+If there is no relevant represented orbital datum,
+its orbital supremum is zero; if the original
+coefficient has zero Jacquet norm it vanishes by
+(AP3). Otherwise normalize the input to radial
+norm one. The argument below can then be multiplied
+by its original squared Jacquet norm. Denote by
+\(\mathcal E\) the block ends, including \(s\), and by
+\(d_\ell=|\sigma_v(D_\ell^{\rm glob})|\) the
+unnormalized minor moduli. Set \(u_\ell\) equal to
+the corresponding minor moduli on the rotated
+local point. The source's local scale and unit
+rotation give exactly
+\[
+ d_\ell=\rho^{\ell(2r+1-\ell)}u_\ell,\qquad
+ G_{\rm loc}=\rho^{-2rs}G_v,\qquad
+ G_v=|\sigma_v(G_{\rm glob})| .
+\]
+The absolute value in the last equality agrees
+with the positive sign at a represented nonzero-Gram
+point. The relation for \(G_{\rm loc}\) follows
+because the leading minors of lengths \(r,s\)
+have the same scale exponent \(rs\).
+In particular \(0<G_v\le d_s^2\), and
+\(d_\ell\le\rho^{s^2}u_\ell\).
+The source weights are
+\[
+ w_v=\prod_{\ell\in\mathcal E}(1+d_\ell^2)^2,\quad
+ dLoc_v=d_s^2,\quad W_v=G_v\prod_{\ell\in\mathcal E}d_\ell^2 .
+\]
+Choose \(q_\ell=L_s+4\) for each block end, with
+an additional \(A_s+L_s\) at \(s\).
+For a fixed point choose
+\(\alpha_\ell=q_\ell\) when \(u_\ell\ge1\)
+and zero otherwise; non-end exponents are zero.
+Since \(G_v\le d_s^2\), elementary inequalities give
+\[
+ w_v(1+d_s^2)^{A_s/2}W_v^{p/2}
+       \le 2^{2s+A_s/2}\rho^{s^2P}
+                    \prod_\ell u_\ell^{\alpha_\ell}.    \tag{AP8}
+\]
+Indeed \((1+d^2)^2\le4\max(1,d)^4\),
+\((1+d_s^2)^{A_s/2}\le2^{A_s/2}\max(1,d_s)^{A_s}\),
+and the two \(p\) factors at the last minor account
+for the extra \(L_s\). The total monomial degree is
+\[
+ \sum_\ell\alpha_\ell
+ \le s(L_s+4)+A_s+L_s
+ \le (2a_w+4C_*+7)s^3\le P.
+\]
+Thus the monomial is allowed by the actual higher-minor
+Pieri theorem.
+
+All the required shifted parameters lie within
+\(sP=M s^4\) of the base. Let \(C_g^{\rm mom}\)
+be the fixed threshold constant for the existing
+moment theorem, and \(C_q\ge200\) its constant in
+\(q_0\). A base all-gap lower bound \(C_gm^4\)
+with \(C_g\) sufficiently large in terms of these
+constants and \(M\) ensures both
+\[
+ C_gm^4\ge C_g^{\rm mom} P m,\qquad
+ C_gm^4\ge200sP.
+\]
+For the cloud gap (a nonempty finite set) the
+same all-gap bound applies. The original
+noncompact-gap bound gives
+\[
+ \frac{h_{NC}}{C_q\sqrt m}
+ \ge \frac{C_g m^4(3sn^2+n^3)}{C_q}.
+\]
+Taking \(C_g\) also at least \(C_q^2(M+2)\)
+therefore gives the full reserve
+\(q_0\ge s(P+s+1)\). This is precisely the reserve
+needed for the iterated positive-minor theorem,
+including the one-step margin at each intermediate
+shift. All the earlier representation and measure
+parameters remain fixed except the discrete-series
+parameter and its chosen coefficient.
+
+Iterate (AP5) along the selected monomial, with
+the original path-sum bound from the higher
+Jacquet norm theorem. The resulting orbital
+linear combination has coefficient sum at most
+\(b^{C_bm^2P}\); every nonzero final coefficient
+has normalized radial norm one. Take norms on
+each actual orbital datum, use the triangle
+inequality, and take the supremum in the original
+\(\operatorname{orbSq}\). Using (AP6) for the
+shifted coefficients and then (AP8) yields
+\[
+ \begin{split}
+ &w_v^2(1+d_s^2)^{A_s}W_v^p\,
+           n_v\,\operatorname{orbSq}(F)\\
+ &\quad\le
+   2^{4s+A_s}\rho^{2s^2P}
+       b^{2C_bm^2P+C_*m^4}
+       \max(1,\rho^{2rs}/G_v)^{C_*m^2}jNorm2(F)\\
+ &\quad\le b^{C_2m^5}\max(1,1/G_v)^{A_s}jNorm2(F).
+                                                        \tag{AP9}
+ \end{split}
+\]
+Here \(C_2\) is independent of the arithmetic datum.
+For example one may take
+\[
+ C_2=10+(2C_\rho+8C_b)M
+                  +(8C_\rho+20)C_* .
+\]
+To check this bound, use \(P=Ms^3\),
+\(A_s\le(4C_*+1)s^2\), \(m=2s\), \(2\le b\),
+and bound the extra inverse-Gram scaling by
+\(\rho^{2rs C_*m^2}\le b^{8C_\rho C_*s^4}\).
+All powers of \(s\) in the remaining exponent
+are at most \(s^5\). Thus (AP9) has exactly the
+one-place form needed for the source's cancellation,
+but with a rank-dependent \(A_s\).
+
+We reproduce that cancellation with no uniform
+restriction on \(A_s\). Since \(G_{\rm glob}\) is
+a nonzero integral element and lies in the real
+subfield, the product of its absolute values over
+the CM places is at least one. Therefore
+\[
+ \prod_v\max(1,G_v^{-1})^{A_s}
+ \le\prod_v\max(1,G_v)^{A_s}
+ \le\prod_v(1+dLoc_v)^{A_s}.
+\]
+Multiply (AP9) over the \(f\) places and cancel the
+positive finite product on the right. It follows
+that the summand in the original weighted \(BSumR\)
+is bounded by
+\[
+    wPt(\gamma)^{-1} b^{C_2m^5 f}jSqG.                 \tag{AP10}
+\]
+This argument applies to extended nonnegative
+quantities as well: the radial norms are finite,
+a zero norm was dealt with by (AP3), and all
+canceled scalar factors are finite and positive.
+
+For completeness there is a direct elementary
+uniform bound on the remaining reciprocal sum.
+For each algebraic integer \(x\in\mathcal O_E\)
+put \(H(x)=\prod_v(1+|\sigma_v(x)|^2)^{-2}\).
+Partition each complex coordinate into half-unit
+squares with sides parallel to the axes. There
+is at most one embedded algebraic integer per
+product of squares: a nonzero difference would
+have all its complex moduli less than one, in
+contradiction to its nonzero integral norm.
+The sum of the suprema of the one-coordinate
+weight over these squares is less than \(256\).
+Indeed label squares by \((i,j)\in\mathbb Z^2\)
+and put \(h=\max(|i|,|j|)\); the \(8h\) squares
+at height \(h\ge4\) have moduli at least \(h/4\).
+Their total weight is at most
+\(2048\sum_{h\ge4}h^{-3}\le2048/18\), and the
+\(49\) remaining squares each contribute at most
+one. Thus \(\sum_x H(x)\le256^f\).
+
+For a fixed composition of \(s\) into block
+sizes \(t_i\), the tuple of nonzero block-end
+minors consists of algebraic integers, by
+invariance of leading minors under the integral
+cell condition. It determines the block scalar
+at step \(i\) up to at most \(t_i\) possibilities:
+its \(t_i\)-th power is the ratio of the two
+successive minors up to sign. Consequently the
+fiber has cardinality at most
+\(\prod_i t_i\le2^{s-1}\). There are \(2^{s-1}\)
+compositions, and at most \(s\) block ends.
+Using the preceding bound independently for
+these integral minors proves
+\[
+        \sum_{\gamma\ {\rm admitted}}wPt(\gamma)^{-1}
+                 \le2^{2(s-1)}256^{fs}
+                 \le b^{10fs}.
+\]
+No lower bound for an individual complex embedding
+has been assumed. Combining this with (AP10)
+proves (AP7), for example with
+\(C_{\rm rot}=C_2+10\).
+\end{proof}
+
+The pole exponent \(A_s\) and the shift radius \(sP\)
+were chosen as functions of the rank, but the final
+constant and the lower bound on \(C_g\) were chosen
+before the datum. This is the quantifier order of the
+weighted-sum consumer. It bypasses the extra fixed
+\(A\) and fixed \(\mathrm{dist}'\) requirements of the
+intermediate \(\mathrm{WeightedExpansionRotated}\).
+The argument does not prove (AP6), the remaining
+unweighted pointwise theorem at the original local
+scale, nor the automorphic amplitude/row-norm
+comparison in \(\mathrm{StepThmBPinnedG}\).
