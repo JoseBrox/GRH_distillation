@@ -1,0 +1,323 @@
+\subsection{The exact definite gluing mass and the block-end height gain}
+\label{sec:flag-generic-gluing-mass}
+
+Retain the occupied rational cell and corrected primitive lattice
+\(M\subset J\) of Section~\ref{sec:flag-generic-global-classes}.
+Put \(n=k+2r+1,\ m=2r+2,\ l=k-1=n-m\).
+The ambient Hermitian space is \(V\), the positive definite
+complement is \(W=J^\perp\), and \(H=U(W)\).
+At a finite place \(v\) write \(q=q_v\), \(B_v\) for the Gram
+matrix of an integral basis of \(M_v\), and
+\[
+ b_j(v)=\prod_{i=1}^j(1-\eta_v^i q_v^{-i}),\qquad
+ \beta_v=\beta(B_v),
+\]
+where \(\eta_v=1\) at split places and \(-1\) at inert places.
+The density \(\beta_v\) is the normalized primitive tuple density
+of the previous local amplitude proof.  In the following formula
+\(C(E,l)\) is exactly the unimodular mass (MM1), not an
+unspecified measure constant.
+
+\begin{theorem}[Primitive gluing mass]
+\label{thm:flag-generic-gluing-mass}
+Assume \(l\ge1\) and \(k\ge m+4\), as in the original local rank range.
+Suppose \(V_v\) admits a self-dual lattice at every finite place
+and \(M_v\) is integral and nondegenerate.
+Then
+\[
+ \boxed{\displaystyle
+ {\cal G}(M)=C(E,l)
+       \left(\prod_v|\det B_v|_v^{-1}\right)^l
+       \prod_{i=l+1}^{n} L_F(i,\eta^i)\prod_v\beta_v .}
+ \tag{GM1}
+\]
+In particular, the right hand side is finite and positive.
+Here \({\cal G}(M)\) counts the actual self-dual lattices
+with \(\Lambda\cap J=M\), modulo \(H(F)\), weighted by the
+reciprocal orders of their stabilizers in \(H(F)\).
+\end{theorem}
+
+\begin{proof}
+We give the measure calculation, including the determinant
+powers; using only a local mass up to a scalar would not
+suffice.
+
+Fix \(v\). In a self-dual basis of \(V_v\) write the ambient
+Gram matrix as \(H_0\). Use the Haar measure on \(U(V_v)\)
+whose tangent gauge at the identity is additive measure in
+the skew-Hermitian matrix \(H_0X\). Here, and for all skew
+and Hermitian matrices below, integral matrices have additive
+volume one. The stabilizer \(K\) of this self-dual lattice
+has volume \(b_n(v)\). Indeed the smooth integral unitary
+model has surjective reduction, all successive kernels
+have cardinality \(q^{n^2}\), and its finite-field group
+has cardinality \(q^{n^2}b_n(v)\). These assertions also
+hold in residue characteristic two, using surjectivity
+of the residue trace in the differential of the Gram map.
+In the split case this is the corresponding calculation
+for \(\mathrm{GL}_n\). The integral classification of
+unimodular forms over these algebras shows that all
+self-dual lattices form one \(U(V_v)\)-orbit.
+
+Choose a fixed rational basis \(y\) of \(W\) with Gram
+matrix \(C\), and choose a basis \(x\) of \(M_v\) with
+Gram matrix \(B=B_v\). We may scale the rational basis
+\(y\) by a nonzero rational integer to make \(C\) integral
+at all finite places. In the basis \(y\) give \(H(F_v)\)
+the Haar measure \(dh_C\) whose tangent gauge is additive
+measure in \(CX\). Write \(P=(x,y)\) in the ambient
+self-dual basis. Then \(P^*H_0P=B\perp C\) and
+\[
+ |\operatorname{Nm}\det P|_v=|\det B\det C|_v.
+\]
+All absolute values in the calculation are those of \(F_v\)
+with \(|\pi|_v=q^{-1}\).
+
+On the space of \(n\)-by-\(m\) tuples use additive measure
+in the self-dual basis, and on their Gram matrices use the
+integral Hermitian additive measure. Their coarea quotient
+measure on the fibre with Gram \(B\) is denoted \(d\lambda\).
+By the primitive Gram-map lifting argument,
+\[
+ \lambda\{\text{integral primitive tuples with Gram }B\}=\beta_v.
+ \tag{GM2}
+\]
+In fact on every primitive residue ball the Gram differential
+is integrally onto. The \(q^{2nm-m^2}\) lifts per level in
+(GL1) compute precisely this coarea measure. There is no
+condition that the reduction of \(B\) be nonsingular.
+
+Here is the relation between this coarea measure and
+quotient Haar measure. In the basis \(P\), tangent variations
+of the frame \(x\) have coordinates \(U\in M_m(E_v)\),
+\(Z\in M_{l,m}(E_v)\). Additive ambient volume has factor
+\(|\det B\det C|_v^m\). The Gram differential is
+\(BU+U^*B\); changing variables \(S=BU\) has inverse
+Jacobian \(|\det B|_v^{-2m}\).
+The map \(S\mapsto S+S^*\) identifies the integral
+quotient by skew-Hermitian matrices with all integral
+Hermitian matrices: this uses the unit trace pairing, not
+division by two. Thus at the frame \(x\),
+\[
+ d\lambda=|\det B|_v^{-m}|\det C|_v^m\,
+              dS_{\rm skew}\,dZ.
+ \tag{GM3}
+\]
+For the ambient group, the skew gauge in the basis \(P\)
+is obtained by congruence from the skew gauge in the
+self-dual basis. Congruence by any \(A\in\mathrm{GL}_j(E_v)\)
+has Jacobian \(|\operatorname{Nm}\det A|_v^j\) on
+skew-Hermitian matrices of size \(j\). To check this,
+a diagonal matrix has factors \(\operatorname{Nm}a_i\)
+on the diagonal and \(\bar a_i a_j\) on the upper
+off-diagonal coordinates; elementary matrices have
+determinant-one actions. The same computation holds on
+Hermitian matrices and over the split algebra.
+The quotient by the lower-right skew block, which is the
+chosen gauge for \(H\), therefore has density
+\[
+ d(gH)=|\det B\det C|_v^{-n}|\det C|_v^{2m}
+            dS_{\rm skew}\,dZ,
+ \tag{GM4}
+\]
+because its lower-left skew coordinates are \(CZ\).
+Both measures (GM3)--(GM4) are invariant on the fibre,
+which is \(U(V_v)/H(F_v)\) by Witt extension. Indeed
+the action on tuples preserves additive volume, and their
+Gram matrices are unchanged. Hence
+\(d\lambda=|\det B\det C|_v^l\,d(gH)\) everywhere.
+Integral primitive frames in (GM2) are precisely the
+cosets \(gH\) such that \(g^{-1}\Lambda_0\cap J=M_v\).
+Integrating their \(K\)-orbits yields
+\[
+ \sum_{\substack{\Lambda_v=\Lambda_v^\#,\ \Lambda_v\cap J=M_v\\
+                   {}\bmod H(F_v)}}
+ \frac1{\operatorname{vol}_{dh_C} H_{\Lambda_v}}
+       = \frac{\beta_v}{b_n(v)}|\det B_v\det C|_v^{-l}.
+ \tag{GM5}
+\]
+The \(K\)-orbits are open, and the integral primitive
+fibre is compact, so this is a finite sum.
+
+For the global normalization, give \(H(F_v)\) measure
+\(dh_C/b_l(v)\). This is a restricted-product
+normalization, since for almost all \(v\) the rational
+basis \(y\) is unimodular. The volume of
+\(H(F)\backslash H(\mathbb A_{F,f})\) in this measure
+can be computed directly from (MM6). To spell out
+the local conversion, let \(\beta_{\rm iso}(C_v)\)
+denote its stabilized congruence density (MM7) for the
+lattice with basis \(y\). The differential of
+\(g\mapsto g^*Cg\) at the identity is \(CX+X^*C\).
+Coarea on this fibre therefore gives
+\[
+ \operatorname{vol}_{dh_C}\operatorname{Aut}(\mathcal O_{E_v}^l,C)
+              =|\det C|_v^{2l}\beta_{\rm iso}(C_v).
+ \tag{GM6}
+\]
+This equality does not assume the Gram map is smooth
+modulo the maximal ideal. Over the local field the
+differential is onto. The integral solution fibre is
+compact, and all matrices in sufficiently deep
+congruence solution sets are invertible, by taking
+determinants of the Gram congruence. In finitely many
+local submersion charts covering the compact solution
+fibre, the coarea volume equals the limit of the
+ambient volume of these congruence tubes divided by
+the volume of the Gram tube. The complement of the
+charts contains no sufficiently deep solutions by
+compactness. This proves the use of the stabilized
+density, with the indicated gauge conversion; at a
+solution, translation by an integral automorphism
+preserves additive matrix volume.
+
+Apply (MM6) to the full integral lattice
+\(\mathcal O_E^l y\) in the definite space \(W\).
+The discriminant factor there is
+\(\prod_v|\det C|_v^{-l}\).
+The mass of its genus times the volume of its
+stabilizer is the volume of the finite adelic
+quotient, by integration over the double cosets.
+Using (GM6), the local isometry densities cancel.
+The remaining product of \(b_l(v)^{-1}\), with
+the rank-one factor interpreted as the \(L\)-value
+in (MM1), is already in the unimodular mass
+constant; more explicitly the stabilizer ratios
+\(\beta_{\rm iso}(C_v)/b_l(v)\) are one almost
+everywhere, so the cancellation can be made against
+(MM6) for the standard positive definite unimodular
+lattice, with no rearrangement of a conditionally
+convergent product. We obtain
+\[
+ \operatorname{vol}\bigl(H(F)\backslash H(\mathbb A_{F,f})\bigr)
+              =C(E,l)\prod_v|\det C|_v^l .
+ \tag{GM7}
+\]
+The classical Hermitian mass formula used here is the
+same one as in Section~\ref{sec:maximal-hermitian-mass};
+no extra Tamagawa-number convention is needed.
+
+Lattice patching identifies global gluing lattices with
+the restricted product of the local sets in (GM5).
+For each tuple of local orbits its global orbit mass
+is (GM7) divided by the product of its stabilizer
+volumes. Sum this equality over the tuples. On
+multiplying (GM5) by \(b_l(v)\) and using (GM7), all
+\(\det C\) factors cancel, and
+\(\prod_v b_l(v)/b_n(v)=\prod_{i=l+1}^nL_F(i,\eta^i)\).
+At almost every place \(B_v\) is unimodular, so its
+primitive density is exactly \(b_n(v)/b_l(v)\).
+Thus the product before the Euler-factor separation
+has factor one almost everywhere. The separated
+products converge absolutely because \(l+1\ge2\)
+and the primitive density at the remaining places
+is positive in the rank range of the theorem.
+This proves (GM1).
+\end{proof}
+
+\paragraph{Original arithmetic specialization.}
+In the corrected cell,
+\(\prod_v|\det B_v|_v^{-1}=g^{-mf}N_G\)
+by (GC6). Write \(\rho=\operatorname{rd}(E)\), so that
+\(|\operatorname{disc}F|=\rho^f\) since the CM extension is
+unramified at finite places. In the source's
+\(\mathrm{cExpl}\) formula the mass constant
+\(\mathrm{cMass}(E,F,l)\) is \(C(E,l)\): the rank-one
+constant is the definite rank-one unimodular genus mass,
+and the successive mass ratios are those of (MM1).
+Consequently its literal arithmetic normalization is
+\[
+ {\cal G}(M)=
+ \mathrm{cExpl}\,\mathrm{massRows}\,
+     \bigl(\sqrt{|N_{E/\mathbb Q}(G/g^m)|}\bigr)^l
+          \prod_v\beta_v .
+ \tag{GM8}
+\]
+In this expression \(G\) denotes the rational Gram
+invariant, before its normalization at the real places.
+The level factor \(g^m\) comes from the corrected tuple,
+not from an extra choice of Haar measure.
+
+For the original \(k\ge m+f+5\), the density comparison
+with the prescribed \(\mathrm{alpD}\) holds uniformly:
+\[
+ \prod_v\beta_v\le 2\prod_v\mathrm{alpD}_v.
+ \tag{GM9}
+\]
+Indeed the signed primitive-density theorem bounds
+\(\log\beta_v\le 4q_v^{-(k-m)}\) (the stronger even-rank
+bound is available). Each \(\mathrm{alpD}_v\) is the
+product of at most two strings of factors
+\(1-\eta_v^i q_v^{-i}\) with \(i\ge k\). Since
+\(-\log(1-x)\le2x\) for \(0\le x\le1/2\),
+\(-\log\mathrm{alpD}_v\le8q_v^{-k}\).
+Writing \(a=k-m\ge f+5\) and \(m\ge2\), the log ratio
+of the two products is at most
+\[
+ 6f\sum_{j=2}^{\infty} j^{-a}
+ \le6f\,2^{-a}\bigl(1+2/(a-1)\bigr)
+ \le \frac{6}{64}\left(1+\frac25\right)<\log 2.
+\]
+We used \(f2^{-f}\le1/2\) for \(f\ge1\).
+This proof retains the actual local factors at all
+level and marked-prime places.
+
+\paragraph{The block-end telescoping improvement.}
+Let \(s=r+1\), and let the consecutive block lengths
+of the occupied point be \(t_1,\ldots,t_b\), with
+\(e_i=t_1+\cdots+t_i\) and block scalars \(w_i\).
+Define
+\[
+ x_i=\prod_{\tau:F\hookrightarrow\mathbb R}
+      \left|\rho^{-(2r+1+t_i-2e_i)}\tau(w_i)\right|^{2t_i},
+ \qquad P_i=\prod_{j\le i}x_j .
+\]
+At a complex embedding over \(\tau\), the choice of
+extension of \(\tau\) does not affect the absolute value.
+The equality
+\(\sum_{j\le i}t_j(2e_j-t_j)=e_i^2\)
+shows that \(P_i\) is exactly the normalized squared
+block-end determinant in the definition of \(\mathrm{NDPt}\).
+Thus \(P_i\ge1\) on the occupied cells by the
+different-ideal content of the nondegenerate normal form.
+Put \(\alpha_i=2(s-e_i)+t_i-1\).
+The definition of the original Haar weight \(\mathrm{nPt}\)
+then gives the exact telescoping identity
+\[
+ \mathrm{nPt}
+  =N_G^l\prod_i x_i^{\alpha_i}
+  =N_G^l P_b^{t_b-1}
+          \prod_{i<b}P_i^{\,t_i+t_{i+1}}
+  \ \ge\ N_G^l .
+ \tag{GM10}
+\]
+All exponents on the block-end determinants are nonnegative,
+including the last block of size one.  This removes the
+source's loss \(H_{\rm tot}^{6m}\) in its
+\(\mathrm{gram\_invariant\_pow\_le\_haar\_weight}\) estimate.
+
+Combining (GC7), (GM8)--(GM10) gives the sharpened
+generic mass bound with its fully explicit arithmetic
+constant.  In particular, if the original mean-constant
+identity
+\[
+ \mathrm{cExpl}\,\mathrm{massRows}\prod_v\mathrm{alpD}_v
+                   =AA\,g^{mfl}
+ \tag{GM11}
+\]
+is supplied, then
+\[
+ ngen_{\rm tot}
+    \le 2 AA\,\rho^{2r(r+1)fl}
+                H_{\rm tot}^{s(s-1)}\,\mathrm{nPt}.
+ \tag{GM12}
+\]
+The factor \(\rho^{2r(r+1)fl}\) is displayed rather than
+absorbed into a constant. Equations (GM1)--(GM10) are
+unconditional on (GM11), under the specified occupied-cell
+and rank hypotheses. Equation (GM11) is the remaining
+identification with the original period normalization, not
+a consequence of the definite genus mass calculation alone.
+The analytic comparison for an arbitrary selected real
+quotient measure and the uniform rotated Bessel point-sum
+remain separate obligations.
