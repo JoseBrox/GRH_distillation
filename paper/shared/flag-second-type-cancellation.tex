@@ -1,0 +1,486 @@
+\subsection{Second-type cancellation by reversible lattice moves}
+\label{sec:flag-second-type-cancellation}
+
+Keep the actual local data, notation and rank range of
+Sections~\ref{sec:flag-generic-local-amplitude} and
+\ref{sec:flag-defect-stratification}. Write \(R=O_{F_v}\),
+\(h(v,w)=\langle v,w\rangle\) (linear in the first variable),
+\(D\) for the joint frame span (called \(J\) in (GL1)),
+\(W_0=D^\perp\), and
+\[
+ \rho=n-4s=k-2r-3\ge4,\qquad \epsilon=q^{1-\rho}.
+\]
+The two adapted frames are denoted \(f_i^*=u_i\) and
+\(f_i^{\prime *}=u_i'\), \(0\le i\le r\).
+The character \(\psi_0\) is the original additive character
+of \(E_v\), with annihilator of \(O\) under multiplication
+equal to \(O\); on the base field we use a primitive trace
+character of conductor \(R\). No odd residue characteristic
+assumption is made.
+
+\begin{lemma}[Uniform quadratic Fourier and leakage estimates]
+\label{lem:flag-second-type-fourier}
+Let \(\Lambda=\Lambda^\#\), \(Y\subset D\) be any subspace,
+\(U=\Lambda\cap Y^\perp\), \(W=\Lambda\cap W_0\).
+Use probability Haar measure on \(U\), put \(Q(v)=h(v,v)\),
+and let \(Z_a=\{v\in U:Q(v)\in\pi^a R\}\), \(a\ge0\).
+Then
+\[
+ \left|q^a\Pr(Z_a)-1\right|\le\epsilon,\qquad
+ q^a\left|\int_{Z_a}\chi(v)\,dv\right|\le\epsilon
+ \quad(\chi\text{ a nontrivial continuous unitary character of }U).
+ \tag{SC1}
+\]
+Moreover
+\[
+ q^a\Pr\{v\in Z_a:\nexists w\in W,\ h(v,w)=1\}
+ \le 2(1+\epsilon)\epsilon .                         \tag{SC2}
+\]
+In the nonsplit case the right side of (SC2) can be replaced
+by \((1+\epsilon)\epsilon^2\).
+\end{lemma}
+\begin{proof}
+The saturated lattice \(W\) has rank \(n-2s\).
+Its reduction embeds in the perfect hermitian space
+\(\Lambda/\pi\Lambda\), so the radical of its restriction
+has dimension at most \(2s\). In the split case use the
+two component subspaces of dimension \(n-2s\) and their
+pairing; its rank is again at least \(n-4s\).
+Choose a nondegenerate subspace of rank \(\rho\) (in the
+split case paired subspaces of that rank), and lift its
+basis to \(W\). The resulting unimodular hermitian
+sublattice has an orthonormal basis: over the unramified
+field split off a unit-norm line successively, rescaling
+by a unit of the prescribed norm. Such units exist by
+surjectivity of the residue norm and successive trace
+lifting. Over the split algebra choose dual bases.
+This also works at \(q=2\). Orthogonal projection onto
+this summand is integral on \(\Lambda\). Consequently
+\(U=O^\rho\perp U_1\), with the displayed summand in \(W\).
+
+Fourier inversion on \(R/\pi^a R\) gives
+\[
+ q^a 1_{Z_a}(v)=\sum_{t\in\pi^{-a}R/R}\psi_F(t Q(v)).
+\]
+There are \(q^i-q^{i-1}\) characters of conductor exponent
+\(i>0\). On one orthonormal coordinate, for any linear
+unitary additive character \(\eta\) of \(O\), write
+\(I=\int_O\psi_F(t z\bar z)\eta(z)\,dz\).
+Squaring its modulus and substituting \(z=z'+b\) shows
+that the inner integral in \(z'\) vanishes unless
+\(b\in\pi^i O\), by the perfect trace pairing of the
+unramified quadratic algebra (also in the split case).
+Thus \(|I|^2\le q^{-2i}\), uniformly in \(\eta\).
+Factoring the integral on the orthogonal decomposition,
+and bounding the \(U_1\)-factor by one, gives \(q^{-i\rho}\).
+The zero-frequency term is one for the trivial character
+and zero for a nontrivial character. The total nonzero
+frequency error is at most
+\[
+ \sum_{i\ge1}(q^i-q^{i-1})q^{-i\rho}
+ =\frac{(1-q^{-1})\epsilon}{1-\epsilon}\le\epsilon .
+\]
+This proves (SC1), including \(a=0\).
+
+Failure of the pairing condition implies that the image
+ideal \(h(v,W)\subset O\) is proper. In particular all
+\(\rho\) orthonormal coordinates lie in one maximal ideal
+\(\mathfrak p\) of \(O\). Write it as \(\alpha O\),
+where \(\alpha=\pi\) in the nonsplit case and
+\(\alpha=(\pi,1)\) or \((1,\pi)\) in the split case.
+Then \([O:\alpha O]=q^b\), \(N(\alpha)=\pi^b\),
+with \(b=2\) or \(1\), respectively. The restriction
+of the \(\rho\) coordinates costs \(q^{-b\rho}\);
+after rescaling their quadratic form is multiplied
+by \(\pi^b\). Fourier inversion, bounding the
+frequencies \(i\le b\) trivially, gives
+\[
+ q^a\Pr(Z_a,\ z_1,\dots,z_\rho\in\alpha O)
+ \le q^{-b\rho}\left(q^b+
+     \sum_{i>b}(q^i-q^{i-1})q^{-(i-b)\rho}\right)
+ \le (1+\epsilon)q^{b(1-\rho)} .
+\]
+The union of the two maximal ideals in the split case,
+or the single ideal in the nonsplit case, proves (SC2).
+\end{proof}
+
+\begin{lemma}[The actual reversible moves]
+\label{lem:flag-second-type-moves}
+Fix a datum \(\delta\) and a nonempty original
+\(\mathrm{InFF}(\beta,j,\beta_j)\) family, where
+\(j\) is the largest defect level and \(\beta_j\) the
+number of classes of that level. Put
+\(X_j=\operatorname{span}(f_i:i<j)\),
+\(X'_j=\operatorname{span}(f'_i:i<j)\), \(Y=X_j+X'_j\).
+For a term \(\Lambda\) in the family let
+\[
+ B_\Lambda=\{(x,x')\in X_j\times X'_j:
+                          x+x'\in\theta\Lambda\},\qquad
+ U_\Lambda=\Lambda\cap Y^\perp .
+\]
+Take a pair \(b=(x,x')\in B_\Lambda\) of exact level
+\(j\) (the level of \(\theta^{-1}(x+x')\)),
+\(v\in U_\Lambda\), and \(\sigma\in\pi^aO\) with
+\(\sigma+\bar\sigma=h(v,v)\).
+Define
+\[
+ e(z)=z+h(z,v)x-h(z,x)(v+\sigma x),\qquad
+ \Lambda_1=e^{-1}\Lambda .
+ \tag{SC3}
+\]
+Then \(\Lambda_1\) is a term over the same datum;
+the phase changes by
+\[
+ \omega(\Lambda_1)=\omega(\Lambda)\chi_b(v),\qquad
+ \chi_b(v)=\psi_0\left(-\theta^{-1}
+                h(cu_j+c'u'_j,v)\right),           \tag{SC4}
+\]
+where \(c,c'\) are the coefficients at index \(j-1\)
+in \(x,x'\) in their respective adapted frames.
+For every exact-level pair \(b\), \(\chi_b\) is
+nontrivial on \(U_\Lambda\).
+If \(h(v,w)=1\) for some \(w\in\Lambda\cap W_0\),
+then \(\Lambda_1\) belongs to the same family.
+Whenever it belongs to that family, the reverse
+move is \((x,x',-v,\bar\sigma)\).
+\end{lemma}
+\begin{proof}
+All three family parameters are witness independent
+as in the term and frame-class construction.
+For clarity the defining second-type conditions are:
+\(\beta>1\), all defect levels at most \(r\), and
+\(h(p_1,p'_2)\in\theta O\) whenever
+\(p_\nu\in X,\ p'_\nu\in X'\) and
+\(p_\nu+p'_\nu\in\theta\Lambda\).
+Here \(X=X_r,\ X'=X'_r\). In particular \(1\le j\le r\).
+In the independent adapted frame coordinates,
+the level of \(y\in M_h=\Lambda\cap D\) is the
+least \(d\) such that for each \(i\ge d\) the
+coefficients \((A_i,B_i)\) of \(\theta y\) satisfy
+\[
+ B_i\in O,\quad A_i+B_i\in\theta O.
+ \tag{SC5}
+\]
+This is exactly the source's RR condition and
+is equivalent to being represented modulo \(M\)
+by a vector in \(X_d+X'_d\) for \(d\le r\).
+In particular level zero is equivalent to membership
+in \(M\).
+
+Put \(z_0=(x+x')/\theta\in M_h\).
+By (GL3), \(\pi^a z_0\in M\); independent
+coordinates in the two frames imply
+\(\pi^a x,\pi^a x'\in\Lambda\).
+Thus \(\sigma x,\bar\sigma x,\sigma x',\bar\sigma x'\)
+are integral. We also have
+\(h(x',x)=\theta C\), \(C\in O\), by the second-type
+condition and conjugation. Since \(X,X'\) are
+isotropic and \(v\perp Y\), expansion shows that
+\(e\) is an isometry with inverse obtained by
+\((v,\sigma)\mapsto(-v,\bar\sigma)\).
+It fixes \(X_j\), acts by \(z\mapsto z+h(z,v)x\)
+on \(X^\perp\), and preserves the flag with identity
+on its successive quotients, hence belongs to \(N\).
+The analogous \(e'\) built from \(x'\) belongs to \(N'\).
+
+For \(z\in\Lambda\cap (X')^\perp\), direct substitution
+gives the stronger integral congruence
+\[
+ ee'z-z=\theta\{h(z,v)z_0-
+          (h(z,z_0)+C h(z,v))(v+\sigma x)\}
+          \in\theta\Lambda .                       \tag{SC6}
+\]
+The same formula with inverse parameters holds on
+\(\Lambda_1\cap(X')^\perp\): indeed \(x+x'\in
+\theta\Lambda_1\) follows by applying \(e\) to
+\(x+x'\), and \(-v\in\Lambda_1\) follows from
+\(e(v)=v+(\sigma+\bar\sigma)x\).
+Both \(\sigma x,\bar\sigma x\) belong to \(\Lambda_1\)
+because \(e\) fixes \(x\). All integrality hypotheses
+of (SC6) therefore hold on the new lattice.
+These two congruences imply that \(e'\Lambda\)
+and \(e^{-1}\Lambda\) have the same intersection
+with \((X')^\perp\).
+
+We record the integral extension fact used here.
+If two self-dual lattices share their trace on the
+orthogonal of a totally isotropic subspace \(I\),
+there is an isometry fixing \(I^\perp\) pointwise
+taking one to the other. To see this, choose a basis
+of the common primitive intersection with \(I\).
+For either lattice the pairing with that basis is
+onto its integral dual, since the intersection is
+a direct summand and the lattice is self-dual.
+Its kernel is the common trace, and the trace modulo
+the intersection has perfect induced hermitian form.
+Choose the same lifts of a basis of this quotient
+in the trace, giving a unimodular orthogonal summand.
+Choose dual vectors to the basis in \(I\) in the
+orthogonal complement of that summand in each
+lattice, then modify the dual vectors by the original
+isotropic basis to make their Gram matrix zero.
+The required hermitian matrix is of the form
+\(A+A^*\) over \(O\), by trace surjectivity on the
+diagonal. The resulting hyperbolic bases and common
+unimodular summand define the desired isometry.
+The trace spans \(I^\perp\). This proof applies
+componentwise over the split algebra and at dyadic
+places.
+
+Apply this fact with \(I=X'\), to obtain \(g\)
+fixing \((X')^\perp\) pointwise and taking
+\(e'\Lambda\) to \(\Lambda_1\). The new witnesses
+are \(e^{-1}n\) and \(ge'n'\), where \(n,n'\)
+are the old witnesses. The fixed-point property
+of \(g\) implies \(g\in N'\) and \(\psi'(g)=1\).
+The new frame link modulo \(\theta\Lambda_1\)
+follows from (SC6) on each \(u_i'\), together
+with the old link. For the graph datum take old
+representatives \(z'\in\Lambda\cap(X')^\perp\),
+\(z\in\Lambda\cap X^\perp\); replace them by
+\(e'z'\) and \(e^{-1}z\). Their quotient classes
+do not change, and by (SC6)
+\[
+ e'z'-e^{-1}z\in\theta\Lambda_1
+      \quad\Longleftrightarrow\quad z'-z\in\theta\Lambda .
+\]
+The inverse congruence proves the reverse implication
+for every graph pair of the new lattice. Thus the
+same inner data and exact level graph are retained.
+
+The adjacent-coefficient character of \(e\) is
+\(\psi_0(\theta^{-1}c\,h(u_j,v))\).
+Indeed on \(X^\perp\), \(e(f_i)=f_i+h(f_i,v)x\);
+in the sum of adjacent coefficients, entries before
+\(j\) vanish by \(v\perp X_j\), entries after \(j\)
+vanish because \(x\in X_j\). The surviving coefficient
+of \(x\) is \(c\) (unchanged by unipotent frame change),
+and \(u_j-f_j\in X_j\). The primed calculation is
+identical. Multiplicativity of the two characters,
+and \(\psi'(g)=1\), prove (SC4).
+
+To prove nontriviality put \(Z=cu_j+c'u'_j\).
+If \(\chi_b\) is trivial on \(U_\Lambda\), scaling
+by all \(O\)-multiples and the conductor property
+imply \(h(\theta^{-1}Z,U_\Lambda)\subset O\).
+The dual of \(U_\Lambda\) in \(V\) is \(\Lambda+Y\):
+extend the induced integral functional from the
+saturated direct summand \(U_\Lambda\) to \(\Lambda\),
+then use self-duality; the annihilator of its span
+is \(Y\). Write \(\theta^{-1}Z=z+y\), \(z\in\Lambda\),
+\(y\in Y\). Then \(z\in M_h\), but the coefficient
+pair at index \(j\) of \(\theta z\) is \((c,c')\).
+Exact level \(j\) of \(b\) means that the pair
+\((c,c')\) fails (SC5). Thus \(z\) has level at
+least \(j+1\), impossible.
+
+It remains to prove preservation of the family,
+not merely of the datum. Write \(M_1\) and \(M_{h,1}\)
+for the new base and saturated lattices.
+For \(i<j\) both adapted vectors remain unchanged,
+and the other vectors remain jointly independent.
+Thus \(M_1\cap Y=M\cap Y\) and levels on \(Y\)
+coincide. For \(y\in\Lambda\cap Y\), the defining
+second-type test on \(x+x'\) and \(\theta y\)
+implies \(h(y,x)\in O\). Since \(h(y,v)=0\),
+\(e(y)=y-h(y,x)(v+\sigma x)\in\Lambda\).
+Hence \(B=\Lambda\cap Y\subset\Lambda_1\cap Y\).
+
+Suppose there is \(w\in\Lambda\cap W_0\) with
+\(h(v,w)=1\). For \(y\in M_{h,1}\), one has
+\(e(y)\in\Lambda\); pairing with \(w\) yields
+\(h(y,x)\in O\). Therefore
+\(y+h(y,v)x\in M_h\). By the level bound, write
+this as \(y_0+m\) with \(y_0\in B,\ m\in M\).
+The new adapted vectors are \(u_i-h(u_i,v)x\)
+and \(u_i'+h(u_i',v)x'\). Write
+\(m=\sum A_i u_i+\sum B_i\theta^{-1}(u_i'-u_i)\)
+with integral coefficients. The element \(m_1\)
+in \(M_1\) given by the same coefficients satisfies
+\[
+ m_1=m-h(m,v)x+
+        \left(\sum B_i h(u_i',v)\right)z_0 .
+\]
+The last term belongs to \(B\). Also
+\(h(y,v)=h(m,v)\), so \(y\in B+M_1\).
+Consequently \(B\) surjects onto both \(M_h/M\)
+and \(M_{h,1}/M_1\), with the same kernel and
+the same levels. This proves preservation of
+\(\beta,j,\beta_j\) and nonzero defect.
+
+For the remaining second-type test, take
+\(p+p'\in\theta\Lambda_1\), \(p\in X,\ p'\in X'\).
+Write it as \(\theta y_0+\theta m_1\) using
+\(y_0\in B\). Since the two last coefficients
+vanish, the two components of \(\theta m_1\)
+in \(X,X'\) are integral adapted-frame combinations
+in \(\Lambda_1\). Pairing either such component
+with the opposite component of any other linked pair
+is in \(\theta O\), by isotropy and integrality
+of the sum of that other pair divided by \(\theta\).
+Thus the cross test reduces to the representatives
+\(\theta y_0\in\theta\Lambda\), where it is already true.
+This proves second-type preservation. Finally, if
+the target is in the same family, the inverse
+parameters satisfy all the original move conditions:
+the link and integrality were checked above,
+\(v\perp Y\), the level on \(Y\) is unchanged,
+and \(\bar\sigma+\sigma=Q(-v)\).
+\end{proof}
+
+\begin{theorem}[Full second-type and nongeneric local estimates]
+\label{thm:flag-second-type-cancellation}
+For any fixed datum and any second-type family \(\mathcal F\),
+\[
+ |A_\delta(\mathcal F)|
+ \le 7 q^{1-\rho}\,m_\delta(\mathcal F).              \tag{SC7}
+\]
+The same inequality holds for the union of all second-type
+families (not for arbitrary subsets of a family).
+With the original two stabilizer weights,
+\[
+ \|\,\mathrm{nongeneric}\,\|_{\rm amp}^2
+ \le P^{39s^2}q^{-(k-2r-5)}\,nn.                     \tag{SC8}
+\]
+\end{theorem}
+\begin{proof}
+For each term in \(\mathcal F\), use the original
+move coordinates \((b,v,t)\) with
+\(\sigma=Q(v)/2+t\). Normalize Haar measure
+on the product of the lattices \(B_\Lambda,U_\Lambda\)
+and \(T=\pi^a O\cap\ker\operatorname{Tr}_{E/F}\).
+The fraction of exact-level pairs is
+\(\beta_j/\beta\): addition divided by \(\theta\)
+identifies \(B_\Lambda\) with \(B\), which surjects
+onto the defect quotient. For each \(v\) the allowable
+\(t\)'s have measure one if \(v\in Z_a\), and zero
+otherwise, since trace \(O\to R\) is onto and each
+nonempty fibre is a translate of \(T\).
+The division by 2 is only in the field, not in \(O\).
+
+Define a nonnegative kernel \(K(\Lambda,\Lambda_1)\)
+on the actual family by integrating the indicator of
+the move (SC3) with target \(\Lambda_1\), multiplied
+by \(q^a\beta/\beta_j\).
+This is the source's \(\mathrm{kern}\): on the compact
+support the finite index integral is the normalized
+Haar integral of the locally constant integrand.
+Indeed the pair and vector lie in compact lattices,
+and \(t\) in a bounded closed subset of the trace-zero
+space; the level condition is a finite coset test.
+The isometry varies continuously, while the lattice
+stabilizer is open. Thus the map to lattices is
+locally constant and has finite image on this
+compact domain. The scalar, indicator and phase
+integrals can equally be evaluated on a finite
+common congruence quotient. There is no convergence
+assumption on an infinite family of moves.
+
+The product Haar normalizations are identical at
+every term of \(\mathcal F\). To verify this,
+\(M\cap Y\) has basis the first \(j\) adapted
+vectors and their linked differences divided by
+\(\theta\). Its covolume is constant, because the
+two flag basis changes are unipotent triangular.
+Moreover \([B:M\cap Y]=\beta\); hence \(B\) and
+\(B_\Lambda\) have fixed covolume. The restriction
+of the hermitian pairing maps \(\Lambda\) onto
+the integral dual of \(B\) in \(Y^*\), with kernel
+\(U_\Lambda\), because \(B\) is a saturated direct
+summand of \(\Lambda\). The quotient ambient map
+\(V\to Y^*\) is fixed even when \(Y\) is degenerate.
+Since the covolume of \(\Lambda=\Lambda^\#\) in \(V\)
+is fixed, the covolume of \(U_\Lambda\) is fixed too.
+The scalar reference \(T\) does not change.
+The inverse move is \((b,v,t)\mapsto(b,-v,-t)\),
+so the kernel is symmetric. It is equivariant
+under the common stabilizer \(S_t=N\cap N'\):
+the isometry maps both flags and all move conditions
+to themselves, transports the reference lattices,
+and conjugates the Eichler formula. The datum,
+family and phase are invariant under \(S_t\)
+(the original common-stabilizer character agreement
+and witness independence used in the class unfolding).
+
+Before discarding moves leaving \(\mathcal F\),
+the row mass differs from one by at most \(\epsilon\)
+by (SC1). The phase-weighted row sum has modulus
+at most \(\epsilon\) by (SC4) and (SC1), since every
+exact-level pair has a nontrivial character.
+By the preservation lemma all discarded moves
+are in the leakage set (SC2). Consequently
+\[
+ \left|\sum_{\Lambda_1}K(\Lambda,\Lambda_1)-1\right|,
+ \quad\left|\sum_{\Lambda_1}K(\Lambda,\Lambda_1)
+                           \omega(\Lambda_1)\right|
+       \le \epsilon+2(1+\epsilon)\epsilon .        \tag{SC9}
+\]
+These sums run over actual lattices, not orbit
+representatives.
+
+For the quotient step put \(G_\Lambda=
+S_t\cap\operatorname{Aut}(\Lambda)\).
+The reciprocal weight \(\mu(\Lambda)\) has the
+fixed normalization used in (GL6). For a pair
+orbit the mass of targets at fixed source is
+\[
+ \mu(\Lambda)[G_\Lambda:G_\Lambda\cap G_{\Lambda_1}]
+ =1/\operatorname{vol}(G_\Lambda\cap G_{\Lambda_1}),
+\]
+with the same reference normalization on either
+side; equivalently use multiplicativity of finite
+relative indices. It is unchanged on reversing
+the pair. The weights and phases are orbit invariant,
+and there are finitely many term orbits for fixed
+datum by the local class and gluing counts (GL4)--(GL6)
+and (DS5). Summing over pair orbits therefore proves
+\[
+ \sum_{[\Lambda]}\mu(\Lambda)\sum_{\Lambda_1}
+ K(\Lambda,\Lambda_1)\omega(\Lambda_1)
+ =
+ \sum_{[\Lambda]}\mu(\Lambda)\omega(\Lambda)
+                        \sum_{\Lambda_1}K(\Lambda,\Lambda_1).
+\]
+Apply the two row estimates (SC9) to this identity,
+using \(|\omega|=1\). Since \(\epsilon\le1/8\), the
+resulting factor \(2(3+2\epsilon)\epsilon\) is
+at most \(7\epsilon\). This proves (SC7).
+The nonempty families partition the second-type
+terms uniquely, so the ordinary triangle inequality
+at each datum gives (SC7) for their union without
+any factor counting families.
+
+The proof of (DS3) applies also to the square of
+the positive mass, as it used only positive mass
+bounds. Taking \(I=1\) there, the squared norm of
+the second-type amplitude is bounded by
+\[
+ 49 P^{2s^2+10s+11}q^{-1}\epsilon^2 nn .
+\]
+By (DS1) every other nongeneric term has strict
+image, hence by (DS3) contributes squared norm at
+most \(P^{2s^2+10s+11}q^{-l}nn\).
+Use the squared triangle inequality with factor 2.
+In any nonempty nongeneric branch \(P\ge2\);
+\(49\le P^6\), \(l=k-1\ge k-2r-5\), and
+\(q^{-1}\epsilon^2=q^{1-2\rho}\le
+q^{-(k-2r-5)}\). The total is at most
+\(P^{2s^2+10s+19}q^{-(k-2r-5)}nn\),
+which implies (SC8) since
+\(2s^2+10s+19\le39s^2\) for \(s\ge1\).
+For \(P=1\) there are no nongeneric terms; for
+\(r=0\) the second-type family is empty.
+\end{proof}
+
+The reconstruction follows the actual second-type family
+of the pinned source, not an invented graph on isometry
+classes. In particular (SC7) uses the positive reversible
+kernel before passing to the quotient, and (SC8) uses the
+original complement-datum weights. Its new ingredients
+relative to (DS4) are the no-leak move preservation and
+the uniform nontrivial Fourier estimate. The orthogonal
+summand argument removes a conductor-dependent finite
+Gauss-sum derivation; the final sum avoids the count of
+second-type families. This is a finite-place supplier,
+not the generic nonidentity return or the global
+positive-trace estimate.
