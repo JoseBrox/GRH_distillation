@@ -115,3 +115,5 @@ None of these formal records supplies the outstanding mathematical estimates
 in the human-readable reconstruction. New progress must state separately
 what is proved in ordinary mathematics, what is conditional on a cited theorem,
 what was inspected in source, and what was actually executed.
+
+The [subsequent strengthened tools](../notes/adriazola-strengthened-tools.md) refine the three integrations, preserving their application conditions.

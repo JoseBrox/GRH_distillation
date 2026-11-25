@@ -19,7 +19,7 @@ finds substantial explicit hypotheses and repairable local errors, not a
 complete 287-page conventional proof. Three strengthened tools are now
 included in both manuscripts: [arbitrary p-adic Smith windows](padic-smith-window.md),
 [integral isotypic projectors](integral-isotypic-projector.md), and
-[Fitting bounds with repeated residual blocks](residual-block-fitting.md).
+[Fitting bounds with repeated residual blocks](residual-block-fitting.md). The [further refinements](adriazola-strengthened-tools.md) give multiplicity-sensitive Fitting loss, weighted rank-deficient Smith windows and integral central projector clusters; their actual arithmetic application hypotheses remain explicit.
 The last permits individual residual images, with an explicit factorial
 error or a stable determinant law, and preserves normalized defects under
 ramified coefficient extension. Actual family and arithmetic hypotheses

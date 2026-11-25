@@ -1,0 +1,132 @@
+\subsubsection{A residue-class multiplicity bound for the Fitting error}
+\label{sec:adriazola-fitting-multiplicity}
+The factorial correction in the preceding generalization of
+Adriazola's Fitting argument \cite{adriazola-reconstruction}
+can be localized to repeated residual simple representations.
+Keep its determinant-tuple and off-target-kernel assumptions,
+and assume individual residual surjectivity as there.
+Write \(v(\pi)=1\), and first let the residue field have finite
+cardinality \(q\). For \(t\ge0\) integral put
+\[
+ w_q(t)=\sum_{h\ge1}\left\lfloor t/q^h\right\rfloor .
+\]
+Partition the diagonal representations \(j\) by the kernels of
+\(R\to M_{n_j}(k)\) modulo \(\pi\). For a class \(c\) write \(m_c\)
+for its multiplicity and \(n_c\) for its common matrix size.
+
+\begin{theorem}[Multiplicity-sensitive Fitting bound]
+\label{thm:fitting-multiplicity}
+With the notation of the preceding Fitting estimate, one has
+\[
+ \delta_{x_0}\le\sum_j L_j+
+                   b\sum_c n_c w_q(m_c).                 \tag{MF1}
+\]
+In particular the exact bound holds if every \(m_c<q\), irrespective
+of the total number of distinct residual blocks or their dimensions.
+No determinant law after scalar extension is needed. The statement
+holds also for an equal-characteristic DVR. If the residue field
+is infinite, the error is zero.
+\end{theorem}
+\begin{proof}
+We first prove the interpolation estimate used below. Choose representatives
+\(u_0,\ldots,u_{q-1}\) of the residue field, with \(u_0=0\).
+For each nonnegative integer \(i\) write its base-\(q\) expansion
+\(i=\sum_h i_hq^h\) and set \(a_i=\sum_h u_{i_h}\pi^h\).
+For distinct \(i,j\), their first unequal digit gives
+\[
+ v(a_i-a_j)=\max\{h:i\equiv j\bmod q^h\}.
+\]
+In particular the product \(d_t=\prod_{0\le i<t}(a_t-a_i)\)
+has valuation \(w_q(t)\).
+For every \(x\in O\), at least \(\lfloor t/q^h\rfloor\) of the first
+\(t\) points coincide with \(x\) modulo \(\pi^h\), by the
+distribution of the first \(h\) digits. Hence
+\[
+ N_t(X)=d_t^{-1}\prod_{0\le i<t}(X-a_i)
+\]
+takes integral values on \(O\), is zero at \(a_i\) for \(i<t\),
+and equals one at \(a_t\). Include \(N_0=1\).
+For a polynomial \(F\) in finitely many variables of total degree
+at most \(D\), expand \(F=\sum_{|\alpha|\le D}
+c_\alpha\prod_i N_{\alpha_i}(X_i)\). At the points
+\((a_{\alpha_1},\ldots,a_{\alpha_t})\), ordered by total degree,
+the evaluation matrix is unit lower triangular with integral
+entries: a nonzero entry requires coordinatewise inequality.
+Thus if all these values have valuation at least \(B\), all
+\(c_\alpha\) have valuation at least \(B\).
+If \(F\) is homogeneous of degree \(D\) and the coefficient of
+\(X^\alpha\), \(|\alpha|=D\), is a unit, only this Newton basis
+element contributes to that ordinary coefficient. Consequently
+\(v(c_\alpha)=\sum_i w_q(\alpha_i)\), and some evaluation of \(F\)
+has valuation at most that number. This proof uses only finite
+polynomial identities, not completeness.
+
+Return to the block data. We may assume every \(L_j\) is finite.
+As in the preceding Fitting proof, choose bases of the saturated
+images \(W_j\), and let
+\[
+ \Phi(C)=\prod_j\det(\rho_j(C)|_{W_j})
+\]
+for \(C\in M_{b\times a}(R)\). We now specify its coefficient
+variables. The kernels of the residual surjections are maximal
+two-sided ideals in \(R\), because each quotient is a simple
+matrix algebra. Distinct such kernels are comaximal. The
+Chinese remainder map to the product of the distinct quotients
+is surjective: for a fixed quotient choose, in each other
+kernel, an element congruent to one in the fixed quotient,
+and multiply them. The resulting element vanishes in all
+other quotients and equals one in the fixed quotient. Summing
+lifts multiplied by these selectors proves surjectivity.
+Within one class the identifications with full matrix algebras
+differ by a \(k\)-algebra automorphism, hence by conjugation:
+this follows, for example, by transporting the matrix units
+and choosing a basis of their one-dimensional image summands.
+In particular their sizes agree.
+
+Choose lifts of the matrix-unit basis for the product of the
+distinct quotients. Parameterize each entry of \(C\) by
+\(O\)-linear combinations of those lifts, with independent
+variables. Then \(\Phi\) is homogeneous of degree
+\(D_0=b\sum_j n_j\). Modulo \(\pi\), make the just-described
+basis changes in the source and target of each block.
+Up to nonzero determinant factors, the residual polynomial for
+class \(c\) is a product of \(m_c\) determinants
+\(\det(X_c B_j)\); here \(X_c\) is the full
+\(bn_c\)-by-\(an_c\) variable matrix for that quotient and
+\(B_j\) is the full-column-rank matrix of the transformed
+saturated subspace. Each determinant is nonzero as a polynomial:
+\(X_c\) can be chosen a left inverse of \(B_j\).
+The product over all classes is nonzero in the polynomial ring.
+It is separately homogeneous of degree \(m_c\) in the variables
+of each of the \(bn_c\) output rows of \(X_c\).
+Choose any nonzero monomial in this residual polynomial. Its
+multi-index \(\alpha\) therefore satisfies
+\[
+ \sum_i w_q(\alpha_i)
+ \le\sum_c bn_c w_q(m_c)
+\]
+by the row sums and superadditivity of the floor functions.
+The corresponding ordinary coefficient of the original
+homogeneous \(\Phi\) is a unit. Apply the interpolation lemma
+to obtain \(C\) with finite \(v(\Phi(C))\) at most this bound.
+As in the preceding argument, the determinant tuple for \(CP\)
+lies in the original algebra and vanishes off \(x_0\); its
+valuation at \(x_0\) is exactly \(\sum_jL_j+v(\Phi(C))\).
+This proves (MF1). For an infinite residue field, a nonzero
+polynomial has a nonzero residue value, which gives error zero.
+\end{proof}
+
+For mixed characteristic \(\ell\), normalize (MF1) by \(e=v(\ell)\).
+The correction is \(b\sum_c n_c w_q(m_c)/e\), at most
+\(b\sum_c n_c v_\ell(m_c!)\), since \(q\) is a power of \(\ell\)
+and \(e\ge1\). This is no larger than the previous
+\(v_\ell(D_0!)\), by superadditivity. If the multiplicities
+are bounded by \(m\), the error vanishes for \(\ell>m\).
+For example a long collection of pairwise inequivalent residual
+blocks incurs no error even over \(\mathbf F_2\); a collection of
+repeated scalar blocks with multiplicity three costs at most
+\(b\,w_q(3)\) per class, zero over \(\mathbf F_4\).
+For an arithmetic application the classes and their multiplicities
+must be those of the actual residual representations, and the
+original determinant and off-target kernel conditions still apply.
+No global weighted Selmer estimate follows from the algebra alone.

@@ -1,0 +1,88 @@
+\subsubsection{Central separation before the integral AST estimate}
+\label{sec:adriazola-projector-clusters}
+Keep the admissible lattice \(\Lambda\) and algebraic
+\(\mathrm{GL}_r\)-representation from the preceding improvement of
+Adriazola's integral projector argument \cite{adriazola-reconstruction}.
+The quadratic central operator
+\[
+ C=\sum_{a,b=1}^r E_{ab}E_{ba}
+\]
+preserves \(\Lambda\): off-diagonal root operators preserve it
+by admissibility and diagonal operators act by integral weights.
+It commutes with all \(E_{uv}\), as follows by expanding the
+commutator and cancelling the two sums with opposite index shifts.
+On the irreducible of highest weight
+\(\lambda=(\lambda_1,\ldots,\lambda_r)\), its scalar is
+\[
+ c_\lambda=\sum_{a=1}^r\lambda_a(\lambda_a+r+1-2a).
+\]
+Indeed the strictly raising operators kill a highest vector;
+each pair \(a<b\) contributes \(\lambda_a-\lambda_b\)
+after commuting \(E_{ab}\) past \(E_{ba}\).
+
+\begin{theorem}[Integral spectral clusters and reduced projector cost]
+\label{thm:projector-central-clusters}
+Partition the occurring types by \(c_\lambda\bmod p\) in the
+residue field. The projector onto each full cluster preserves
+\(\Lambda\). For a cluster \(B\) write \(V_B,\Lambda_B\) for the
+cluster subspace and its intersection lattice.
+For \(\lambda\in B\), let \(D_{\lambda,B}(p)\) be the
+root-dependent AST/partial-trace bound of the preceding theorem
+computed on \(V_B\), rather than \(V\).
+For any subset \(\Sigma\) of types, a sufficient denominator
+exponent of its projector is
+\[
+ \max_B\min\left\{
+   \max_{\lambda\in B\cap\Sigma}D_{\lambda,B}(p),
+   \max_{\lambda\in B\setminus\Sigma}D_{\lambda,B}(p)\right\}.
+                                                               \tag{MP1}
+\]
+Empty maxima are zero. For a single type with scalar distinct
+from every other type in its cluster, the polynomial separator
+gives the additional sufficient exponent
+\[
+       \sum_{c'\in\{c_\mu:\mu\in B,\ \mu\ne\lambda\}}
+                                      v_p(c_\lambda-c'),       \tag{MP2}
+\]
+where the sum is over distinct scalars. One may take the
+smaller of this and (MP1) for that type.
+\end{theorem}
+\begin{proof}
+For each cluster take the monic product of \(X-c_\lambda\)
+over its distinct scalars. These polynomials for different
+clusters have pairwise unit resultants; hence are comaximal
+over \(O[X]\) (the determinant of the Sylvester matrix gives
+an integral Bezout identity). The Chinese remainder polynomials
+which are one modulo one cluster polynomial and zero modulo the
+others evaluate at \(C\) to integral projectors onto precisely
+the cluster spaces. This works because \(C\) acts semisimply by
+the given scalars. The resulting direct-sum lattice
+decomposition is exact. Each cluster lattice is admissible:
+weight projections and divided powers preserve the intersection
+of the original lattice and the invariant subspace.
+The previous AST estimate now uses only weights of
+\(\operatorname{Hom}(W_\lambda,V_B)\), a subset of the former
+weight support. Summing over the types in \(B\cap\Sigma\)
+costs the maximum of the individual exponents, and the
+complementary sum gives the same projector as identity minus
+that sum. Take the smaller cost; combine clusters using their
+integral projectors. This proves (MP1). Finally
+\(\prod_{c'\ne c_\lambda}(C-c')/(c_\lambda-c')\)
+on the specified cluster equals the single-type projector
+when no other type has its scalar. The numerator is integral
+and the displayed denominator gives (MP2).
+\end{proof}
+
+The same proof partitions by joint residual eigenvalues of
+any finite family of integral central operators: apply the
+individual integral cluster projections successively.
+For example any additional integral central element of the
+enveloping algebra can be used, provided its scalar values are
+known. No separation of equal central characters is assumed.
+In a cluster consisting of only one type, (MP1) is zero.
+The estimate holds at every prime, and gives the balanced Fock
+version by exactly the scalar-extension/descent argument of the
+preceding theorem. It can also control the integral cost of
+retaining a union of types without splitting it into individual
+types. It is relevant to the original loss engines only after
+verifying admissibility of the actual retained lattice.

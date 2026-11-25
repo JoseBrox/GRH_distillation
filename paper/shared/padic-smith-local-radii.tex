@@ -1,0 +1,109 @@
+\subsubsection{Weighted, rank-deficient Smith windows with local radii}
+\label{sec:adriazola-smith-radii}
+The perturbation argument originating in Adriazola's Theorem 12.34
+\cite{adriazola-reconstruction} also bounds the variable part of the
+Smith loss for a generically rank-deficient rectangular matrix.
+Let \(A(z)\) be an \(a\)-by-\(b\) polynomial matrix over \(\mathbf C_p\)
+with integral values at the distinct samples \(z_j\in\mathbf Z_p\);
+put \(n=\min(a,b)\). Fix any nonzero \(d\)-by-\(d\) minor polynomial
+\(F\), where \(1\le d\le n\). Write
+\[
+ F(z)=u\prod_\rho(z-\rho),\qquad
+ c_F=v(u)+\sum_{v(\rho)<0}v(\rho),\qquad
+ s_F=\#\{\rho:v(\rho)\ge0\},
+\]
+counting multiplicities. At sample \(j\) let
+\(\alpha_1(j)\le\cdots\le\alpha_n(j)\) be the Smith exponents,
+including infinity for zero invariants. Give the samples arbitrary
+weights \(w_j\ge0\) and thresholds \(E_j>0\).
+For the Taylor expansions \(A(z_j+y)=\sum_{h\ge0}A_{jh}y^h\), put
+\[
+ R_j=\max\left(\{0\}\cup
+     \{(E_j-v((A_{jh})_{uv}))/h:
+                     h\ge1,\ (A_{jh})_{uv}\ne0\}\right).
+\]
+Define the capped collision cost
+\[
+ C_{\mathbf R,\mathbf w}=
+ \max_k\left(w_kR_k+\sum_{j\ne k}w_j
+                       \min\{R_j,v(z_j-z_k)\}\right).
+\]
+
+\begin{theorem}[Truncated Smith mass in arbitrary weighted samples]
+\label{thm:smith-local-radii}
+One has
+\[
+ \sum_j w_j\sum_{i=1}^d\min(\alpha_i(j),E_j)
+ \le c_F\sum_jw_j+s_F C_{\mathbf R,\mathbf w}.             \tag{MS1}
+\]
+One can replace the right side by the minimum over all nonzero
+minors of the chosen order. If \(d\) is the generic rank, the
+left side measures exactly the additional truncated loss beyond
+the permanent \(n-d\) zero invariants; in particular it dominates
+\(\sum_j w_jE_j(b_{E_j}(j)-(n-d))_+\).
+For a binomial polynomial matrix of degree at most \(\Delta\) with
+integral coefficients, \(R_j\le E_j+\lfloor\log_p\max(1,\Delta)\rfloor\).
+\end{theorem}
+\begin{proof}
+First take rational \(E_j\). For a matrix \(B\) integral over the
+valuation ring and \(v(q_j)=E_j\), the image of
+\([B\ q_j I_a]\) is unchanged by perturbing all entries of \(B\)
+by elements of valuation at least \(E_j\).
+The valuation of the ideal of its \(d\)-minors is the sum
+of its \(d\) smallest Smith exponents, namely
+\(\sum_{i=1}^d\min(\alpha_i(B),E_j)\). This follows by integral
+Smith elimination on the finite generating matrix, and
+determinantal ideals of a finitely generated submodule do not
+depend on the generating columns, by multilinearity.
+Thus the indicated truncated mass is invariant under these
+perturbations, for rectangular matrices as well.
+
+Choose \(y_j\) of valuation \(R_j\) whose leading residue avoids
+the finitely many cancellations with the roots of \(F\) at
+distance of that valuation; the infinite residue field of
+\(\mathbf C_p\) permits the choice, also for \(R_j=0\).
+Then \(A(z_j+y_j)\) is integral and agrees with \(A(z_j)\)
+modulo the valuation threshold \(E_j\), by the definition of
+\(R_j\). Its chosen minor is nonzero and has valuation
+\[
+ c_F+\sum_{v(\rho)\ge0}\min\{R_j,v(z_j-\rho)\}.
+\]
+The first \(d\) truncated exponents are bounded above by
+that valuation, since their untruncated sum at the perturbed
+matrix is the minimum valuation of its nonzero \(d\)-minors.
+For each unit-disk root choose a closest sample \(z_k\),
+that is, one with maximal \(v(z_k-\rho)\).
+For all \(j\ne k\), ultrametricity gives
+\(v(z_j-\rho)\le v(z_j-z_k)\).
+Multiplying by the nonnegative weights and capping by \(R_j\)
+proves (MS1). The real-threshold case follows by increasing
+rational approximation: both the finite maximum defining
+\(R_j\) and all capped expressions are continuous at every
+positive \(E_j\).
+
+For the binomial polynomial case, the Vandermonde identity
+shows every nonconstant Taylor coefficient of \(\binom{z+y}{k}\)
+at \(z\in\mathbf Z_p\) has, after multiplication by
+\(y^h\) with \(v(y)=E+L,\ L=\lfloor\log_p\max(1,\Delta)\rfloor\),
+valuation at least \(E\). To check this coefficientwise,
+write \(\binom{y}{t}=(-1)^{t-1}(y/t)
+\prod_{i=1}^{t-1}(1-y/i)\) for \(1\le t\le\Delta\).
+The coefficient of \(y^h\) has valuation at least
+\(-v_p(t)-(h-1)L\ge-hL\).
+Then \(h(E+L)-hL\ge E\) for \(h\ge1\).
+All remaining binomial values at \(z\) are integral.
+This proves the claimed radius bound and completes the proof.
+\end{proof}
+
+For a constant common threshold \(E\) and unit weights,
+\(C_{\mathbf R,\mathbf w}\) is bounded by
+\(E+L+\max_k\sum_{j\ne k}\min(E+L,v(z_j-z_k))\);
+the capped version improves the earlier untruncated collision
+cost for tightly clustered samples. Formula (MS1) remains
+useful for prescribed nonuniform tolerances and for a family
+with a fixed rank defect. For instance \(A(z)=\mathrm{diag}(z,0)\)
+has an identically zero determinant but the order-one minor
+\(F=z\) controls its sole variable exponent.
+As before, the arithmetic application requires an actual
+integral polynomial family and nonzero minor with controlled
+coefficient content. This result does not identify that family.
