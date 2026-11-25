@@ -603,3 +603,5 @@ The original thin-region determinant jet and Bergman bound are reconstructed in 
 
 - [Deep Case II residual chain](../notes/rh-case-II-residual-chain.md): the original three polynomial links through good residual points; automorphic support transport remains open.
 - [Rank-four weight-collision bound](../notes/rh-rank-four-weight-collision.md): `off_diagonal_nilpotent_rank_four` and its `ClassicalFixedByIwahori` consumer.
+
+The [nonzero-Gram normal count](../notes/flag-nondegenerate-normal-count.md) and [retained zero-Gram trace comparison](../notes/flag-retained-zero-gram-traces.md) record the occupied-point, rational normal multiplicity, distinct-word and retained-period trace interfaces. [Adriazola refinements](../notes/adriazola-strengthened-tools.md) record the integral loss tools and their retained hypotheses.
