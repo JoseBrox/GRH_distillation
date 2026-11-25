@@ -1,0 +1,218 @@
+\subsection{A smaller weighted moment suffices for generic returns}
+\label{sec:flag-generic-reduced-moment}
+
+Retain the original equal-word generic data of
+Section~\ref{sec:flag-generic-pinned-input}, including its
+actual absolutely convergent return expansion and finite
+class and normal dictionary. We give a direct replacement
+for the two Cauchy--Schwarz brackets in the generic
+arithmetic assembly; in particular we do not enlarge
+the mass of the local witness to (GP4).
+
+\begin{lemma}[Generic-only local second moment]
+\label{lem:flag-generic-only-local}
+In the notation of (GL1)--(GL7), for any occupied integral
+reference pairing class \(C_*\) one has
+\[
+ \sum_{\delta\bmod H_J}\mathrm{wt}(\delta)|A_\delta^0|^2
+ \le 2P^{2s^2+2s}\,ngen(C_*).
+ \tag{RM1}
+\]
+The factor two can be replaced by one when \(P=1\).
+\end{lemma}
+\begin{proof}
+By (GL4)--(GL5),
+\(m_\delta^0\le P^{s(s-1)+4s}\).
+Use \(|A_\delta^0|^2\le(m_\delta^0)^2\), but sum the
+generic mass itself rather than the mass over all
+saturations. The exact generic equality in (GL6) gives
+\[
+ \sum_{\delta\bmod H_J}\mathrm{wt}(\delta)m_\delta^0
+   =\sum_C w(C){\cal M}(M(C))
+   \le \tfrac54 c_x P^{s(s-1)} .
+\]
+All corrected bases have the same determinant scaling,
+and \(ngen(C_*)\ge3c_x/4\) as in (GL7).
+The exponent after multiplication is
+\(2s(s-1)+4s=2s^2+2s\).
+At \(P=1\) the unique-class calculation of (GL7)
+gives equality. No contribution of a proper saturation
+occurs in this calculation.
+\end{proof}
+
+\begin{lemma}[A field-uniform endpoint sum]
+\label{lem:flag-endpoint-packing}
+For a CM field \(E\) of degree \(2f\), put
+\[
+ W(z)=\prod_{\tau}(1+|\tau z|^2)^2 ,
+\]
+using one complex embedding above each real place.
+Then
+\[
+ \sum_{z\in\mathcal O_E} W(z)^{-1}
+        \le (100/9)^f < 12^f .
+\]
+On the original space of block points of size \(s\),
+restricted to nonzero block-end minors in \(\mathcal O_E\),
+one consequently has
+\[
+ \sum_w \mathrm{blockMinorWeight}(w)^{-1}
+       \le 14^{fs}.                                      \tag{RM2}
+\]
+\end{lemma}
+\begin{proof}
+The Minkowski image of two distinct algebraic integers
+has difference of complex supremum norm at least one,
+by the nonzero integer norm. The open products of disks
+of radius \(1/2\) about their images are disjoint.
+If \(|u-z|\le1/2\), then
+\[
+ 1+|u|^2\le 1+(|z|+1/2)^2
+                    \le \tfrac53(1+|z|^2).
+\]
+The second inequality follows by completing the square
+in \( (2/3)|z|^2-|z|+5/12\).
+Integrate the weight \(\prod_\tau(1+|u_\tau|^2)^{-2}\)
+over each polydisk. Its volume is \((\pi/4)^f\)
+and the integral of that weight over all
+\(\mathbb C^f\) is \(\pi^f\).
+The result follows first for any finite subset,
+then for the full sum.
+
+For a composition \(s_1+\cdots+s_b=s\), the nonzero
+block-end minors \(D_1,\ldots,D_b\) determine the
+block scalars up to at most \(\prod_h s_h\) choices:
+successive quotients \(D_h/D_{h-1}\), up to the
+fixed antidiagonal sign, prescribe their \(s_h\)-th
+powers. In the original weight there is precisely
+one factor \(W(D_h)\) for each block end.
+We may sum over all integral \(D_h\), dropping every
+further compatibility condition. The bound for this
+composition is \(\prod_h s_h\,12^{fb}\).
+Since \(s_h\le2^{s_h-1}\) for positive integers,
+summing over the \(\binom{s-1}{b-1}\) compositions
+of length \(b\) gives
+\(12^f(12^f+2)^{s-1}\le14^{fs}\).
+This proves (RM2) without a choice of integral
+basis or a field-dependent packing constant.
+\end{proof}
+
+\begin{theorem}[Reduced actual generic point moment]
+\label{thm:flag-reduced-moment}
+Let \(J_2^B(w)\) be the original pinned squared orbital
+amplitude, and use the original \(\mathrm{nPt},N_G,N_D,H\)
+and the normalization
+\[
+ {\cal A}=AA\,\rho^{2r(r+1)f(k-1)}
+\]
+of (GP4). Put \(C=C_{1/2}\) from (NG4),
+\(Q=|\mu(E)|^2 C^{2f}(TT')^{f/2}\), and
+\(p=3s^2+s+2\). In the concrete equal-word case \(T'=T\).
+Define the nonnegative point sum on occupied generic points
+\[
+ {\cal I}_p=\sum_w
+ \mathrm{blockMinorWeight}(w)\,\mathrm{nPt}(w)\,
+                      (N_G(w)N_D(w))^p J_2^B(w).
+\]
+Then the actual scalar corank-one generic portion satisfies
+\[
+ X.\mathrm{pairSum}(X.\mathrm{sc}\,X.\mathrm{genSet})
+       \le 2 X.\mathrm{Gam1}\,{\cal A}\,
+                         14^{fs}Q\,{\cal I}_p.           \tag{RM3}
+\]
+The inequality holds also with \(H(w)^p\) replacing
+\((N_G(w)N_D(w))^p\) in the sum.
+In particular the exponent \(6s^2\) in the prescribed
+\(\mathrm{PointSumInput}\) suffices for this concrete
+generic assembly. The general abstract
+\(\mathrm{GenCutC}\) statement is not being asserted with
+its original independent inputs and that smaller exponent.
+\end{theorem}
+\begin{proof}
+Fix an occupied \(w\). Write \(V_{c,w,\nu}\)
+for its actual grouped vectors \(\mathrm{grpGC}\), where
+\(c\) is the scalar corank-one class and \(\nu\) is the
+rational normal label. Use the finite witness of
+Theorem~\ref{thm:flag-generic-pinned-input}
+before its final enlargement of \(V_0\).
+For any finite collection of these keys, (GP2) and
+the exact row/datum weight comparison (GC4)--(GC5)
+give
+\[
+ \sum_{c,\nu}\|V_{c,w,\nu}\|^2
+ \le J_2^L(w) V_0
+       \prod_{v\in P_*}
+         \sum_{\delta_v}\mathrm{wt}_v(\delta_v)
+                                  |A_v^0(\delta_v)|^2 .
+\]
+Apply (RM1) with the reference pairing classes of the
+chosen generic term. Since \(H_v\ge2\) at every bad
+place, \(2^{|P_*|}\le H(w)=\prod_{v\in P_*}H_v\).
+Use the uninflated generic gluing mass (AN16),
+\[
+  V_0\prod_{v\in P_*}ngen_v
+     \le 2{\cal A} H(w)^{s(s-1)}\mathrm{nPt}(w),
+\]
+and \(J_2^L(w)\le J_2^B(w)\). This proves
+\[
+ \sum_{c,\nu}\|V_{c,w,\nu}\|^2
+ \le 2{\cal A} H(w)^{3s^2+s+1}
+                       \mathrm{nPt}(w)J_2^B(w).        \tag{RM4}
+\]
+All weights and sums here are the original ones.
+The right side is independent of the finite test
+set, so the bound passes to the nonnegative sum.
+
+At each fixed class and point (NG4) with \(\epsilon=1/2\)
+bounds the number of occupied normal labels by
+\(QG_0(w)\), where \(G_0=g^{-2sf}N_G\ge1\).
+All the block-end minors at occupied points are integral
+by (NG1). Put
+\(W_*(w)=\mathrm{blockMinorWeight}(w)G_0(w)>0\).
+For any finite collection of occupied groups in one
+class, weighted Cauchy--Schwarz and (RM2) give
+\[
+ \left\|\sum_{w,\nu} V_{c,w,\nu}\right\|^2
+ \le \left(\sum_{w,\nu} W_*(w)^{-1}\right)
+       \sum_{w,\nu}W_*(w)\|V_{c,w,\nu}\|^2
+ \le Q14^{fs}\sum_{w,\nu}W_*(w)\|V_{c,w,\nu}\|^2 .
+\]
+The original class-square expansion identifies
+\(\mathrm{pairSum}(\mathrm{sc}\,\mathrm{genSet})\)
+with \(\mathrm{Gam1}\) times the sum of these
+class squares. This is precisely the
+\(\mathrm{ClassSquaresSum}/\mathrm{RowFromClasses}\)
+expansion; it uses scalar corank-one equivalence,
+not an orthogonality assertion between unrelated
+point groups. Absolute convergence of the original
+expansion permits the grouping and the limits,
+or the inequalities are obtained on finite groups
+and then passed to the convergent class squares.
+Summing the displayed Cauchy--Schwarz estimate over
+classes and applying (RM4) proves the asserted bound
+because the exact height formula is
+\[
+ H(w)=g^{-(2r+1)f}N_G(w)N_D(w)
+       =g^fG_0(w)N_D(w).
+\]
+Both \(N_D\ge1\) and \(g\ge1\), so \(G_0\le H\)
+and \(H\le N_GN_D\). In particular the original level
+factor gives no additional positive power of \(g\)
+in (RM3). Finally \(3s^2+s+2\le6s^2\) for \(s\ge1\)
+and \(N_GN_D\ge1\).
+\end{proof}
+
+Thus the remaining real weighted estimate needed by
+this route is the original pinned point sum with one
+fixed weight exponent \(6s^2\), in place of the
+\(43s^2\) obtained by the generic abstract assembly
+with (GP3). The retained \(\mathrm{NormInputs}\) and
+\(\mathrm{FrameInputs}\) normalize
+\(\mathrm{Gam1}\,{\cal A}\,I_{\rm re}\) in precisely the
+same way as in the source row estimate.
+No claim is made here that the requisite
+\({\cal I}_{6s^2}\) bound by
+\(\exp(C_B(2s)^5 f\log b)I_{\rm re}\) has been proved.
+In particular the equal-type real orbital estimate
+on the singular block cells remains an analytic
+problem even after the improvement (RM3).

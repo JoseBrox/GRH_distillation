@@ -552,3 +552,5 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Nongeneric defect stratification](../../notes/flag-defect-stratification.md): the original strict-image/first-type local saving and the large-defect second-type saving, plus a weaker unconditional gain on every nongeneric term; small full-image character cancellation remains.
 
 - [All-cell relative functionals and rotated weighted summation](../../notes/global-norm-frontier-all-cell-pieri.md): exact transfer of the local Pieri expansions to relevant nonzero-Gram cells; conditional weighted-sum theorem with rank-dependent pole cancellation. The unweighted near-parameter pointwise estimate remains.
+
+- [Reduced generic point moment](../../notes/flag-generic-reduced-moment.md): generic-only local mass, 14^(fs) endpoint summability, concrete sufficient point weight 6s² (rather than 43s²), with original normalizations; real pointwise estimates remain.
