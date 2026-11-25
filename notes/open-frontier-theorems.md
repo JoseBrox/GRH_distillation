@@ -232,7 +232,7 @@ The [actual local-chain theorem](theta-spanning-continuation-chain.md) now const
 
 ## W08: the actual global period Gram operators
 
-**Latest continuation (25 November).** The [exact AA identity](flag-aa-normalization.md) and [generic pinned local assembly](flag-generic-pinned-input.md) supply the original concrete `StepLocGenPinnedG`. The [all-cell Pieri transfer and rotated-sum reduction](global-norm-frontier-all-cell-pieri.md) remove the lower-stratum coefficient-identification gap and the fixed-radius weighted-expansion detour. The unweighted near-parameter pointwise bound, uniform amplitude and row-norm comparisons, and nongeneric saving remain. These advances do not close W08.
+**Latest continuation (25 November).** The [exact AA identity](flag-aa-normalization.md) and [generic pinned local assembly](flag-generic-pinned-input.md) supply the original concrete `StepLocGenPinnedG`. The [all-cell Pieri transfer and rotated-sum reduction](global-norm-frontier-all-cell-pieri.md) remove the lower-stratum coefficient-identification gap and the fixed-radius weighted-expansion detour. The [second-type cancellation](flag-second-type-cancellation.md) now supplies the full nongeneric finite-place amplitude saving SC8. The unweighted near-parameter pointwise bound and uniform amplitude and row-norm comparisons remain. These advances do not close W08.
 
 
 For the final restricted maps `T_(u,i):V_(u,i)->W_u`, put
