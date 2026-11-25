@@ -1,0 +1,250 @@
+\subsection{Congruence bounds with repeated residual blocks}
+\label{sec:residual-block-fitting}
+
+We refine the elementary Fitting inequality of
+Adriazola~\cite[\S17, Proposition \texttt{w4:prop:fitting}]{adriazola-reconstruction}.
+Joint residual surjectivity removes its residue-field-size condition.
+Individual surjectivity permits repeated residual constituents, with
+the precise alternatives below. These algebraic statements do not
+replace the arithmetic construction of the cocycle module or its
+local estimates.
+
+Let $O$ be a discrete valuation ring, $K$ its fraction field,
+$\varpi$ a uniformizer, $k$ its residue field, and $v(\varpi)=1$.
+Let $X$ be finite, $x_0\in X$, and $T\subset O^X$ an $O$-subalgebra.
+Put
+\[
+ \mathfrak c_{x_0}=\{t(x_0):t\in T,\ t(x)=0\text{ for }x\ne x_0\},
+ \qquad \delta_{x_0}=v(\mathfrak c_{x_0}),
+\]
+with $v(0)=+\infty$ for the zero ideal. Let $R$ be an $O$-algebra,
+possibly noncommutative, and let
+$\rho_x:R\to M_{d_x}(O)$ be $O$-algebra representations.
+Fix $P\in M_{a\times b}(R)$ with $a\ge b\ge1$. Assume:
+\begin{enumerate}
+\item for every $Q\in M_b(R)$, the function
+      $x\mapsto\det\rho_x(Q)$ belongs to $T$;
+\item for $x\ne x_0$, the matrix $\rho_x(P)$ has a nonzero
+      kernel over $K$;
+\item in an integral basis $\rho_{x_0}$ is block upper triangular,
+      with diagonal representations $\rho_j:R\to M_{n_j}(O)$,
+      $1\le j\le g$, where $g,n_j\ge1$.
+\end{enumerate}
+Write $P_j=\rho_j(P)$, $D_0=b\sum_jn_j$, and
+\[
+ L_j=\operatorname{length}_O
+ \ker\bigl(P_j:(K/O)^{bn_j}\to(K/O)^{an_j}\bigr).
+\]
+When all $L_j$ are finite, $P_j$ is injective over $K$.
+Its saturated image $W_j\subset O^{an_j}$ is a free direct summand,
+of rank $bn_j$, and elementary divisors give
+\begin{equation}\label{eq:residual-block-length}
+ L_j=\operatorname{length}_O(W_j/\operatorname{im}P_j).
+\end{equation}
+
+\begin{proposition}[Exact bound with joint residual image]
+\label{prop:residual-block-joint}
+If $R\to\prod_jM_{n_j}(k)$ is onto, then
+\begin{equation}\label{eq:residual-block-exact}
+                       \delta_{x_0}\le\sum_jL_j.
+\end{equation}
+There is no restriction on the size or characteristic of $k$.
+\end{proposition}
+\begin{proof}
+If a length is infinite there is nothing to prove. Otherwise choose
+for each $j$ a linear map
+$Y_j:k^{an_j}\to k^{bn_j}$ that is an isomorphism on
+$W_j/\varpi W_j$. Extend a basis of that subspace to obtain such
+a map. Write $Y_j$ in $b\times a$ blocks of size $n_j$.
+The joint surjection lifts the tuples of blocks, one position at a
+time, to a matrix $C\in M_{b\times a}(R)$.
+Consequently $\rho_j(C)|_{W_j}$ is an isomorphism over $O$.
+
+Set $Q=CP$ and $f(x)=\det\rho_x(Q)$. Assumption 1 puts $f$ in $T$;
+assumption 2 makes it vanish outside $x_0$. Block triangularity and
+\eqref{eq:residual-block-length} give
+\[
+ v(f(x_0))=\sum_jv(\det\rho_j(CP))=\sum_jL_j.
+\]
+Thus $f(x_0)\in\mathfrak c_{x_0}$ proves the inequality.
+\end{proof}
+
+\begin{proposition}[Individual residual images]
+\label{prop:residual-block-large-field}
+Suppose each map $\bar\rho_j:R\to M_{n_j}(k)$ is onto.
+If $k$ is infinite or $|k|>D_0$, then
+\eqref{eq:residual-block-exact} holds.
+\end{proposition}
+\begin{proof}
+Let $S\subset\prod_jM_{n_j}(k)$ be the joint image, viewed as a
+finite-dimensional $k$-vector space. Choose a basis and lifts in $R$.
+On $S^{b\times a}$, the determinant of the $j$th matrix restricted
+to $W_j/\varpi W_j$ is a polynomial of degree $bn_j$.
+It is nonzero: individual surjectivity permits a left inverse
+on this subspace. The product of these determinant polynomials
+is nonzero, since the coordinate polynomial ring of a vector
+space is a domain, and its total degree is $D_0$.
+A nonzero polynomial of total degree less than $|k|$ has a
+nonzero value on $k$-points, by induction on the number of variables;
+the assertion also holds over an infinite field.
+Lift such a point into $R$. The resulting $C$ satisfies the
+same invertibility conditions used in
+Proposition~\ref{prop:residual-block-joint}.
+\end{proof}
+
+\begin{lemma}[Integral grid bound]
+\label{lem:residual-block-grid}
+Suppose $O$ has characteristic zero. Let
+$F\in O[Z_1,\ldots,Z_t]$ have total degree at most $D$ and
+at least one unit coefficient. There exist ordinary integers
+$0\le z_i\le D$ such that
+\[
+                            v(F(z_1,\ldots,z_t))\le v(D!).
+\]
+\end{lemma}
+\begin{proof}
+The Newton expansion of $F$ uses the products
+$\prod_i\binom{Z_i}{a_i}$, $\sum_i a_i\le D$.
+Their coefficients are the iterated finite differences
+$\Delta^aF(0)$, integral linear combinations of values on the stated
+grid. Each denominator in the ordinary monomial expansion of such
+a product divides $\prod_i a_i!$, and this integer divides $D!$.
+If every grid value had valuation greater than $v(D!)$, all finite
+differences would too. Conversion to ordinary monomials would then
+put every coefficient of $F$ in the maximal ideal, a contradiction.
+\end{proof}
+
+\begin{theorem}[Repeated blocks with a factorial error]
+\label{thm:residual-block-factorial}
+Suppose $O$ has characteristic zero and residue characteristic
+$\ell$, and each $\bar\rho_j$ is onto. Then
+\begin{equation}\label{eq:residual-block-factorial}
+                   \delta_{x_0}\le\sum_jL_j+v(D_0!).
+\end{equation}
+With $e_O=v(\ell)$, this becomes
+\[
+ \frac{\delta_{x_0}}{e_O}
+       \le\sum_j\frac{L_j}{e_O}+v_\ell(D_0!),
+ \qquad
+ v_\ell(D_0!)=\sum_{a\ge1}\left\lfloor\frac{D_0}{\ell^a}\right\rfloor
+       \le\frac{D_0}{\ell-1}.
+\]
+Only the original pointwise determinant hypothesis 1 is required.
+\end{theorem}
+\begin{proof}
+Again suppose all lengths finite. Choose lifts in $R$ of a basis
+of the joint residual image $S$. Parameterize each entry of
+$C\in M_{b\times a}(R)$ by $O$-linear combinations of these lifts.
+Fix $O$-bases of $W_j$ and put
+\[
+                 \Phi(C)=\prod_j\det(\rho_j(C)|_{W_j}).
+\]
+The reduction of this polynomial is the nonzero product in
+Proposition~\ref{prop:residual-block-large-field}. Thus $\Phi$ has
+a unit coefficient and total degree $D_0$.
+Lemma~\ref{lem:residual-block-grid} gives $C$ over $R$ with
+$v(\Phi(C))\le v(D_0!)$. Each restricted matrix is invertible over
+$K$. Relative to a basis of $W_j$, elementary divisors give
+\[
+ v(\det\rho_j(CP))
+ =L_j+v(\det(\rho_j(C)|_{W_j})).
+\]
+The determinant function of $CP$ still belongs to $T$ and
+vanishes away from $x_0$. Summing this identity proves
+\eqref{eq:residual-block-factorial}. The normalized formulas follow
+from $v(n)=e_Ov_\ell(n)$ for nonzero integers and the factorization
+of a factorial into prime powers.
+\end{proof}
+
+\begin{corollary}[The total factorial correction]
+\label{cor:residual-block-factorial-sum}
+Let $0\le D_\ell\le D$ be integers and $0\le w_\ell\le W$.
+Then
+\[
+ \sum_\ell w_\ell v_\ell(D_\ell!)\log\ell
+       \le W\log(D!)
+       \le WD\log(\max(2,D)).
+\]
+For several applications indexed by $a$, the same bound holds if
+$D_{a,\ell}\le D$ and $\sum_a w_{a,\ell}\le W$ for every $\ell$.
+If there are at most $m$ applications, each of weight at most $W$,
+the bound is $mW\log(D!)$.
+\end{corollary}
+\begin{proof}
+Use $v_\ell(D_\ell!)\le v_\ell(D!)$ and
+$\sum_\ell v_\ell(D!)\log\ell=\log(D!)$. The same calculation
+uses the total weight at each prime in the multiple-application case.
+\end{proof}
+
+\begin{proposition}[Normalized coefficient extension]
+\label{prop:residual-block-base-change}
+Let $O'/O$ be a finite extension of DVRs with relative ramification
+index $h$. For a finite-length $O$-module $C$,
+\[
+               \operatorname{length}_{O'}(C\otimes_OO')
+                   =h\operatorname{length}_O C.
+\]
+Supported congruence ideals commute with this extension. For a
+lattice $M$ in a decomposed $K$-vector space and projection $\pi_Y$,
+the quotient $\pi_Y(M)/(M\cap V_Y)$ also commutes with it.
+In mixed characteristic with residue characteristic $\ell$, the
+lengths of these quotients divided by $v_O(\ell)$ are unchanged.
+\end{proposition}
+\begin{proof}
+The ring $O'$ is flat over $O$. Elementary divisors reduce the
+length assertion to $C=O/(\varpi^a)$, whose scalar extension has
+length $ha$. The submodule of $T$ supported at $x_0$ is the kernel
+of $T\to O^{X\setminus\{x_0\}}$; flatness preserves this kernel
+and its image under evaluation at $x_0$. It likewise preserves the
+kernels and images defining intersections and projections of the
+lattice, and hence their quotient. Finally
+$v_{O'}(\ell)=h v_O(\ell)$, so the two factors cancel.
+\end{proof}
+
+\begin{proposition}[Exact bound after enlarging the residue field]
+\label{prop:residual-block-stable-law}
+Suppose $O$ is complete, each $\bar\rho_j$ is onto, and assumption 1
+remains valid after every finite unramified extension: for each such
+$O'/O$ and every $Q'\in M_b(R\otimes_OO')$, its determinant tuple
+belongs to $T\otimes_OO'$. Then
+\eqref{eq:residual-block-exact} holds at every residue characteristic.
+\end{proposition}
+\begin{proof}
+If the residue field is infinite or already has size greater than
+$D_0$, apply Proposition~\ref{prop:residual-block-large-field}
+directly. Otherwise it is finite, and completeness supplies a
+finite unramified extension with residue-field size greater than
+$D_0$. Individual residual surjectivity persists
+after base change. Apply
+Proposition~\ref{prop:residual-block-large-field} and descend the
+inequality by Proposition~\ref{prop:residual-block-base-change},
+with relative ramification index one.
+\end{proof}
+
+The stable determinant hypothesis is an additional requirement.
+Pointwise membership over $O$ alone need not imply membership
+after extension: a polynomial such as $Z^q-Z$ vanishes on every
+point of the residue field of order $q$ while being a nonzero
+polynomial. One must verify a determinant polynomial law or its
+concrete arithmetic construction before using
+Proposition~\ref{prop:residual-block-stable-law}.
+
+Nor can an unramified extension always split the characteristic-zero
+eigensystems: $O[T]/(T^2-\varpi)$ needs a ramified extension to
+contain $\sqrt\varpi$. Proposition~\ref{prop:residual-block-base-change}
+permits that extension without changing normalized defects.
+
+\paragraph{Applicability to cyclotomic blocks.}
+The residual characters $\bar\chi^a$ and $\bar\chi^{a+\ell-1}$
+coincide. Their joint image is diagonal, so the source's stronger
+joint-surjectivity hypothesis cannot be checked for a long
+consecutive family literally as written. Each scalar block is
+individually onto, because $R$ is an $O$-algebra. Thus the preceding
+individual-image variants give a corrected algebraic interface.
+The off-target kernels, full residual image of any nonscalar block,
+determinant law when needed, local Selmer estimates, and the actual
+number and weights of applications remain separate arithmetic
+hypotheses. The factorial error is polynomial up to a logarithm
+when the matrix dimensions, weights and application count are
+polynomial in the scale; its absorption into the required global
+budget still has to be checked there.

@@ -1,5 +1,21 @@
 # Audit status
 
+## External conventional reconstruction audit, 25 November 2026
+
+The [audit of Adriazola's 287-page reconstruction](adriazola-reconstruction-2026-11-25.md)
+pins its source revision, answers the six comparison questions, identifies
+explicit hypotheses and local counterexamples, and records three strengthened
+tools integrated into both manuscripts. Supporting reviews cover
+[geometry and coefficients](adriazola-geometry-2026-11-25.md) and
+[Galois, congruences and K1](adriazola-galois-2026-11-25.md).
+This is a critical-dependency audit with selected detailed proof checks,
+not a certification of every lemma or a replay of the original formal proof.
+The [source manifest](../certificates/adriazola-source-audit.json) and
+[integration review](../certificates/adriazola-integration-review.json)
+record exactly what was checked. Counts remain RH 6/9 and Dirichlet GRH 18/31.
+
+## Earlier formal and project audit evidence
+
 The recovered records contain substantially more formal-audit evidence than the
 small source inspection performed when this repository was first started.
 The table below distinguishes those records from checks actually repeated in

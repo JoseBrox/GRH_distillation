@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-25",
+  "external_source_commit": "aa9c86bf2a7d29b08575641fecea19a2a603e87c",
+  "starting_project_commit": "e85b0c946408478b790b0b48ee4f37cab4710c73",
+  "status": "Integrated into both manuscripts after reconciliation with the newer W08 work. Exact checks and final merged-source builds completed; no compilation, reference, or overfull-box failures remain. This is not a proof of RH or Dirichlet GRH.",
+  "mathematical_review": {
+    "smith_window": "Full valuation-ring proof and separate closest-sample/truncation review.",
+    "isotypic_projector": "Full proof reviewed against the primary AST formula; Hom lattice, partial trace, dimension saving and all-prime Fock descent checked.",
+    "fitting": "Two independent proof reviews, including finite-difference factorial loss, base-change lengths and stable determinant-law distinction.",
+    "overall_audit": "Arithmetic and geometry reviewers separately checked the main report; no decisive inaccuracies remained."
+  },
+  "computational_scope": "Exact finite witnesses and examples only; the universal mathematical assertions rest on the written proofs. No complete original Lean replay or every-theorem audit is claimed.",
+  "checks": [
+    {
+      "path": "certificates/padic-smith-window-check.json",
+      "sha256": "09fde186a9a37036826606013553ea038c4a5538a036b61573d4a77f912feae9",
+      "rerun_result": "passed; exact parsed output agrees with recorded certificate"
+    },
+    {
+      "path": "certificates/integral-isotypic-projector-check.json",
+      "sha256": "c385d9f6edb0a016472cbe4ebed4f4ca4f73963cf52faefd882ea77569c9cfaa",
+      "rerun_result": "passed; exact parsed output agrees with recorded certificate"
+    },
+    {
+      "path": "certificates/residual-block-fitting.json",
+      "sha256": "137c95ece792c6665fdd6dd754d05aca9c901e269389ae64b4234ce491c600e8",
+      "rerun_result": "passed; exact parsed output agrees with recorded certificate"
+    }
+  ],
+  "initial_builds": {
+    "rh": {
+      "page_count": 523,
+      "output": {
+        "path": "paper/rh/main.pdf",
+        "bytes": 3034302,
+        "sha256": "19e334c2f09f9eff43f4f30e3ca3e7d1bfd300f4d9e2521394e3ef885014661d"
+      },
+      "passes": 2,
+      "undefined_references_or_citations": 0,
+      "overfull_boxes": 0
+    },
+    "grh": {
+      "page_count": 1135,
+      "output": {
+        "path": "paper/grh/main.pdf",
+        "bytes": 6236101,
+        "sha256": "c90312186d5f5f220f7cbec71e80793fe1465530159db1816e7e6b837e47f6b3"
+      },
+      "passes": 2,
+      "undefined_references_or_citations": 0,
+      "overfull_boxes": 0
+    }
+  },
+  "initial_visual_inspection": {
+    "rh_pages": [
+      253,
+      254,
+      356,
+      357,
+      358,
+      359
+    ],
+    "grh_pages": [
+      462,
+      502,
+      540
+    ],
+    "result": "Readable formulas and references, no clipping or overlap on the inspected pages."
+  },
+  "existing_build_repairs": "Formatting-only repairs to malformed alignment environments, oversized displays and long identifiers; inclusion of an already existing missing bibliography item. Mathematical claims unchanged.",
+  "node_counts": {
+    "rh": {
+      "finished": 6,
+      "total": 9
+    },
+    "dirichlet_grh": {
+      "finished": 18,
+      "total": 31
+    }
+  },
+  "newly_completed_existing_nodes": [],
+  "merged_base_commit": "50315b7a051ec763fd36fdfd9f8006a31a487e2c",
+  "built_head_commit": "9ddbfafe9fddae744f61320d45d6e109da5a462b",
+  "final_builds": {
+    "rh": {
+      "page_count": 538,
+      "output": {
+        "path": "paper/rh/main.pdf",
+        "bytes": 3118945,
+        "sha256": "df13bb6877114dcb2e27b2145a008147108e3f9999aa86a4e70cee65a5881ce3"
+      },
+      "passes": 2,
+      "undefined_references_or_citations": 0,
+      "overfull_boxes": 0,
+      "source_hashes_match_current_files": true,
+      "section_pages": {
+        "residual_block_fitting": [
+          253,
+          256
+        ],
+        "padic_smith_window": [
+          356,
+          358
+        ],
+        "integral_isotypic_projector": [
+          358,
+          361
+        ]
+      }
+    },
+    "grh": {
+      "page_count": 1150,
+      "output": {
+        "path": "paper/grh/main.pdf",
+        "bytes": 6318209,
+        "sha256": "56b3b7ca1738208b8e9500c878b4963b4cbb3fea07be39d93c4ea95aa819f013"
+      },
+      "passes": 2,
+      "undefined_references_or_citations": 0,
+      "overfull_boxes": 0,
+      "source_hashes_match_current_files": true,
+      "section_pages": {
+        "residual_block_fitting": [
+          462,
+          465
+        ],
+        "padic_smith_window": [
+          501,
+          503
+        ],
+        "integral_isotypic_projector": [
+          539,
+          542
+        ]
+      },
+      "legacy_mirror_byte_identical": true
+    }
+  },
+  "final_visual_inspection": {
+    "method": "The full initial visual inspection is reused. Six representative final PDF pages were rendered again at 150% and are byte-identical to their previously inspected page PNGs; all transferred-section page positions are unchanged.",
+    "samples": [
+      {
+        "route": "rh",
+        "page": 253,
+        "section": "fitting",
+        "byte_identical_to_initial_inspected_render": true,
+        "render_sha256": "acce8da9db03adef62afa7e0f8939804b1a85151c2da8efefe18bdd466ed3221"
+      },
+      {
+        "route": "rh",
+        "page": 357,
+        "section": "smith",
+        "byte_identical_to_initial_inspected_render": true,
+        "render_sha256": "f06850c51b5aeb29265a6dc5f05d72d8f61da6945115c9c3465355624d92322e"
+      },
+      {
+        "route": "rh",
+        "page": 358,
+        "section": "projector",
+        "byte_identical_to_initial_inspected_render": true,
+        "render_sha256": "5b85baa93a2b0b8048bb5007adadd8e2f4a76541150cde02b99ba8b482677a82"
+      },
+      {
+        "route": "grh",
+        "page": 462,
+        "section": "fitting",
+        "byte_identical_to_initial_inspected_render": true,
+        "render_sha256": "a8db2cc5dfda13e74311e40869186ddbc941f72a5ed375589173db336b77210b"
+      },
+      {
+        "route": "grh",
+        "page": 502,
+        "section": "smith",
+        "byte_identical_to_initial_inspected_render": true,
+        "render_sha256": "c15efc59877c416d0060fb5675565a1d2c8a73a6aeefd108364f2251b9cc7ad2"
+      },
+      {
+        "route": "grh",
+        "page": 540,
+        "section": "projector",
+        "byte_identical_to_initial_inspected_render": true,
+        "render_sha256": "17f76e4da7953b0f8a2ac998258332ac601300d5b4b5e5a2de605e2939e95aae"
+      }
+    ],
+    "result": "Readable formulas and references; no clipping or overlap on the inspected pages.",
+    "additional_layout_repairs_after_merge": []
+  },
+  "final_source_hashes": [
+    {
+      "path": "paper/shared/padic-smith-window.tex",
+      "sha256": "a8ab1bb16a33ac399e3cbcd2e144ab44f0e99bee7d7324f19e155e2bbd60f802"
+    },
+    {
+      "path": "paper/shared/integral-isotypic-projector.tex",
+      "sha256": "24bc8352a46aadb4bea8c453926a7dee5e293225d92f6b6b210c2356648b85c1"
+    },
+    {
+      "path": "paper/shared/residual-block-fitting.tex",
+      "sha256": "cd14696207d4b86c01cd03985cf5a79d7bf80053cd629b61dd9fdfd5429bb2e7"
+    },
+    {
+      "path": "paper/shared/adriazola-transfer-references.tex",
+      "sha256": "67cd721dc7ba9a6aa2f1caa00caa6597484af6f299938c69e3e37f5927cf8896"
+    },
+    {
+      "path": "scripts/check_padic_smith_window.py",
+      "sha256": "4ef9bd536a63461566a9b687dd7d2bd41b597cfd75052afe7f331842c0f6b70f"
+    },
+    {
+      "path": "scripts/check_integral_isotypic_projector.py",
+      "sha256": "9dac4f140f87c5aa775332736a4934571c30f9489b7d0e2005d6fc660fc27d1c"
+    },
+    {
+      "path": "scripts/check_residual_block_fitting.py",
+      "sha256": "871c87452826c3ca1b13093511dbf2c156cca50010a19b6eb0fa1e0844462133"
+    }
+  ],
+  "prior_exact_checks_reused": "All three exact-check scripts and stored certificates retain their initially verified hashes; they were not unnecessarily rerun after the merge.",
+  "initial_source_hashes": [
+    {
+      "path": "paper/shared/padic-smith-window.tex",
+      "sha256": "a8ab1bb16a33ac399e3cbcd2e144ab44f0e99bee7d7324f19e155e2bbd60f802"
+    },
+    {
+      "path": "paper/shared/integral-isotypic-projector.tex",
+      "sha256": "24bc8352a46aadb4bea8c453926a7dee5e293225d92f6b6b210c2356648b85c1"
+    },
+    {
+      "path": "paper/shared/residual-block-fitting.tex",
+      "sha256": "cd14696207d4b86c01cd03985cf5a79d7bf80053cd629b61dd9fdfd5429bb2e7"
+    },
+    {
+      "path": "paper/shared/adriazola-transfer-references.tex",
+      "sha256": "5850e67249e19a82181a581ae28a821c32b1c58190f0d771037ba3fa44330f7d"
+    },
+    {
+      "path": "scripts/check_padic_smith_window.py",
+      "sha256": "4ef9bd536a63461566a9b687dd7d2bd41b597cfd75052afe7f331842c0f6b70f"
+    },
+    {
+      "path": "scripts/check_integral_isotypic_projector.py",
+      "sha256": "9dac4f140f87c5aa775332736a4934571c30f9489b7d0e2005d6fc660fc27d1c"
+    },
+    {
+      "path": "scripts/check_residual_block_fitting.py",
+      "sha256": "871c87452826c3ca1b13093511dbf2c156cca50010a19b6eb0fa1e0844462133"
+    }
+  ]
+}

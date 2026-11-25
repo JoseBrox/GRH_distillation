@@ -4,6 +4,14 @@
 
 ## Current navigation: major supplier updates
 
+**25 November external transfer.** The [Adriazola audit](../audit/adriazola-reconstruction-2026-11-25.md)
+adds three proved shared tools with source attribution:
+[Smith bounds on arbitrary p-adic windows](../notes/padic-smith-window.md),
+[root-dependent isotypic-projector denominators](../notes/integral-isotypic-projector.md),
+and [Fitting inequalities allowing repeated residual blocks](../notes/residual-block-fitting.md).
+Their actual arithmetic applications remain conditional on the hypotheses
+stated in those notes. No whole proof-map node is newly completed.
+
 | Workstream | Later established suppliers | Still required |
 | --- | --- | --- |
 | W04: integral Selmer | [RH nonresonant](../notes/rh-selmer-nonresonant.md) and [large-dyadic inertial count](../notes/rh-dyadic-host-count.md); [full Bernoulli-unit/cocycle theorem and RH rank-four datum](../notes/selmer-dyadic-twist-vanishing.md); [integral symplectic model](../notes/rh-symplectic-integral-model.md); [finite local conditions and rigidity implication](../notes/rh-symplectic-point-rigidity.md); [fixed-field rank-four spectrum](../notes/rh-symplectic-spectrum.md); [conditional integral comparison](../notes/rh-symplectic-length.md); [curve and endpoint criteria](../notes/rh-symplectic-curve-frontier.md); [mixed ordinary Hilbert weight change](../notes/rh-mixed-hilbert-seed.md) | Characteristic-prime curve exclusions, block-endpoint exclusion and fixed-field attachment; weighted assembly on the same windows |

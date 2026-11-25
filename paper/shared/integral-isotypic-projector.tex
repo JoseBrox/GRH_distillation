@@ -1,0 +1,244 @@
+\subsection{Integral isotypic projectors with root-dependent denominators}
+\label{integral-isotypic-projector-section}
+
+The following arithmetic estimate refines Adriazola's proof of the
+isotypic-projector bound in Theorem~12.54 (B7) of the reconstruction.
+The use of the extremal projector on $\operatorname{Hom}(W,V)$ and the
+partial-trace identity are taken from that argument.
+\cite{adriazola-reconstruction}
+We retain a separate binomial denominator for each root, retain the
+dimension factor in the partial trace, and include the prime~$2$.
+The estimate concerns integral representation theory; the arithmetic
+theta maps and their coefficient lattices must still be identified
+before it can be applied to the global construction.
+
+Let $p$ be any prime, let $K/\mathbb Q_p$ be finite with valuation
+ring $\mathcal O$, and normalize $v$ by $v(p)=1$.  Let $V$ be a
+finite-dimensional algebraic representation of the split group
+$\mathrm{GL}_r$ over $K$.  Call a full $\mathcal O$-lattice
+$\Lambda\subset V$ \emph{admissible} if it is the direct sum of
+its intersections with the diagonal weight spaces, and every root
+divided power $E_{ab}^{(k)}=E_{ab}^k/k!$, for $a\ne b$ and $k\ge0$,
+preserves~$\Lambda$.
+
+Fix an occurring highest weight $\lambda$, choose an irreducible
+subrepresentation $W\subset V$ of that type, and write
+$n_\lambda=\dim_K W$.  Let $e_\lambda$ be the canonical projector
+onto the whole $\lambda$-isotypic summand of~$V$.  For the positive
+root $\alpha=\epsilon_a-\epsilon_b$, $a<b$, put $h_\alpha=b-a$ and
+\begin{align*}
+ \mathcal K_{\alpha,\lambda}
+   &=\{k\ge1:k\alpha\text{ is a weight of }
+                         \operatorname{Hom}_K(W,V)\},\\
+ c_{\alpha,\lambda}(p)
+   &=\max\left(\{0\}\cup
+       \left\{v_p\binom{h_\alpha+k}{k}:
+                       k\in\mathcal K_{\alpha,\lambda}\right\}\right),\\
+ C_\lambda(p)&=\sum_{\alpha>0}c_{\alpha,\lambda}(p),
+ \qquad
+ D_\lambda(p)=\max\{0,C_\lambda(p)-v_p(n_\lambda)\}.
+\end{align*}
+The weight sets are finite and independent of the chosen copy of $W$.
+For $r=1$ the sum over roots is zero.
+
+\begin{theorem}[Integral isotypic-projector bound]
+\label{integral-isotypic-projector-theorem}
+For every admissible lattice $\Lambda$,
+\[
+             p^{D_\lambda(p)}e_\lambda\Lambda\subseteq\Lambda.
+\]
+For a subset $\Sigma$ of the occurring irreducible types, the projector
+$e_\Sigma=\sum_{\lambda\in\Sigma}e_\lambda$ satisfies
+\[
+       p^{\max_{\lambda\in\Sigma}D_\lambda(p)}e_\Sigma\Lambda
+                  \subseteq\Lambda.
+\]
+The empty subset has projector zero and denominator exponent zero.
+These are sufficient denominator exponents; no optimality is asserted
+in general.
+\end{theorem}
+
+\begin{proof}
+First consider an algebraic representation $U$ with an admissible
+lattice $L$, and let $P_U$ be its invariant projector.  It kills all
+nonzero weight spaces.  On the zero-weight space $U_0$, the
+Asherova--Smirnov--Tolstoy extremal projector is a normally ordered
+product over positive roots of the factors
+\begin{equation}\label{integral-isotypic-ast-factor}
+ P_\alpha\big|_{U_0}
+  =\sum_{k\ge0}(-1)^k
+       \binom{h_\alpha+k}{k}^{-1}
+                  f_\alpha^{(k)}e_\alpha^{(k)}.
+\end{equation}
+Indeed the usual coefficient of $f_\alpha^k e_\alpha^k$ is
+$(-1)^k/[k!(h_\alpha+1)\cdots(h_\alpha+k)]$ on $U_0$.
+Replacing both powers by divided powers gives
+\eqref{integral-isotypic-ast-factor}.
+All denominators here are nonzero positive integers, and the sums
+terminate on a finite-dimensional representation.  The product
+formula and its annihilation equations are the classical extremal
+projector theorem.\cite{ast-extremal-original,tolstoy-extremal-review}
+
+Each root factor preserves $U_0$, and its $k$th term is zero there
+unless $k\alpha$ is a weight of $U$.  Define $c_\alpha$ using this
+weight set as above.  Divided-power stability shows that the factor
+maps $L\cap U_0$ into $p^{-c_\alpha}(L\cap U_0)$, whence their product
+has denominator exponent at most $\sum_{\alpha>0}c_\alpha$.
+To identify the product with $P_U$ on $U_0$, decompose $U$ into
+irreducibles.  Its image is killed by the positive roots and has
+weight zero.  A zero-weight highest vector in an irreducible
+algebraic representation of $\mathrm{GL}_r$ generates a trivial
+representation.  On the trivial summands all root factors are the
+identity.  Thus the product is exactly the invariant projector on
+$U_0$.  Nontrivial determinant characters have nonzero diagonal
+weight and cause no exception.  The integral weight decomposition
+therefore gives
+\begin{equation}\label{integral-isotypic-invariant-bound}
+                p^{\sum_{\alpha>0}c_\alpha}P_U L\subseteq L.
+\end{equation}
+
+Put $\Lambda_W=\Lambda\cap W$.  It is a full admissible lattice in
+$W$: the intersection is full, and both its weight projections and
+its root divided powers are inherited from $\Lambda$ and $W$.
+On $H=\operatorname{Hom}_K(W,V)$ put
+\[
+                 L_H=\operatorname{Hom}_{\mathcal O}
+                                      (\Lambda_W,\Lambda).
+\]
+The integral weight decompositions make $L_H$ weight graded.  If
+$X$ is a root operator, left and right composition commute, so
+\[
+ X^{(k)}\cdot\varphi
+    =\sum_{i+j=k}(-1)^j X^{(i)}\circ\varphi\circ X^{(j)}.
+\]
+Every term preserves $L_H$; hence this lattice is admissible.
+Equation~\eqref{integral-isotypic-invariant-bound} gives
+$p^{C_\lambda(p)}P_H L_H\subseteq L_H$.
+
+Choose an $\mathcal O$-basis $b_1,\ldots,b_n$ of $\Lambda_W$, with
+dual basis $b_1^*,\ldots,b_n^*$, where $n=n_\lambda$.  The exact
+partial-trace identity is
+\begin{equation}\label{integral-isotypic-partial-trace}
+ e_\lambda(v)=n\sum_{i=1}^nP_H(b_i^*\otimes v)(b_i).
+\end{equation}
+To check it, restrict $v$ to an irreducible summand $U\subset V$.
+If $U$ has a different type, $\operatorname{Hom}_K(W,U)$ has no
+invariants.  Otherwise choose an intertwiner $\psi:W\to U$.
+Under this identification, the invariant projector on
+$\operatorname{End}_K(W)$ is $A\mapsto\operatorname{tr}(A)I/n$.
+This follows from Schur's lemma and the invariant trace functional.
+The right side of \eqref{integral-isotypic-partial-trace} is then
+$\sum_i b_i^*(\psi^{-1}v)\psi(b_i)=v$, as required.
+
+For $v\in\Lambda$, every $b_i^*\otimes v$ lies in $L_H$.
+The identity and the invariant-projector estimate imply
+\[
+ e_\lambda\Lambda
+       \subseteq n_\lambda p^{-C_\lambda(p)}\Lambda
+       =p^{v_p(n_\lambda)-C_\lambda(p)}\Lambda.
+\]
+This proves the stated bound.  A sum of projectors with integral
+denominator exponents at most $D$ also has integral denominator
+exponent at most $D$, proving the assertion for~$\Sigma$.
+\end{proof}
+
+\begin{corollary}[A bound from the weight width]
+\label{integral-isotypic-width-bound}
+Suppose each coordinate of all weights of $V$ lies in an interval
+of length at most the nonnegative integer $L$.  For $r\ge2$,
+\[
+ C_\lambda(p)
+ \le\sum_{1\le a<b\le r}\max_{0\le k\le L}
+                   v_p\binom{b-a+k}{k}
+ \le\binom r2\lfloor\log_p(L+r-1)\rfloor.
+\]
+In particular, $p>L+r-1$ implies that all isotypic projectors
+preserve $\Lambda$.  For $r=1$ the denominator cost is zero.
+\end{corollary}
+
+\begin{proof}
+Every weight of $W$ is a weight of $V$.  Thus $k\alpha$ in
+$\operatorname{Hom}(W,V)$ forces $k\le L$.  The factorial valuation
+formula writes the binomial valuation as the sum, over $i\ge1$, of
+\[
+ \left\lfloor\frac{h+k}{p^i}\right\rfloor
+ -\left\lfloor\frac h{p^i}\right\rfloor
+ -\left\lfloor\frac k{p^i}\right\rfloor.
+\]
+Each term is zero or one and vanishes for $p^i>h+k$.  Since
+$h\le r-1$, this gives the claimed bound.  The zero-root case
+does not require evaluating a logarithm.
+\end{proof}
+
+For example, take $V=\operatorname{Sym}^a(K^2)\otimes
+\operatorname{Sym}^b(K^2)$ and $d=a+b$.  Its constituent
+$\det^j\otimes\operatorname{Sym}^{d-2j}(K^2)$,
+$0\le j\le\min(a,b)$, has dimension $d-2j+1$.  The positive-root
+weights in the relevant Hom representation are $k\alpha$ for
+$1\le k\le d-j$.  Consequently the theorem gives the sufficient
+denominator exponent
+\begin{equation}\label{integral-isotypic-gl2-bound}
+ D_j(p)=\max\{0,\lfloor\log_p(d-j+1)\rfloor-v_p(d-2j+1)\}.
+\end{equation}
+For $a=b=1$ the dimension factor cancels the apparent denominator
+at $p=3$, and both projectors are integral there.  At $p=2$ the
+bound is one and is sharp on the ordinary tensor lattice, because
+the projectors are $(I\pm\mathrm{swap})/2$.
+
+\begin{corollary}[Balanced Fock coefficients at every prime]
+\label{integral-isotypic-balanced-fock}
+In a polynomial representation built from vector and covector
+letters, restricted to any fixed multidegree, put
+\[
+ v_{\mathrm{BB}}\left(\sum_\beta F_\beta x^\beta\right)
+     =\min_\beta\left(v(F_\beta)+\tfrac12v_p(\beta!)\right),
+ \qquad \mathcal B=\{F:v_{\mathrm{BB}}(F)\ge0\},
+\]
+with $v_{\mathrm{BB}}(0)=+\infty$.  The lattice $\mathcal B$ is
+admissible for every prime, including $2$.  If $e_\Sigma$ has
+exponent $D$ in Theorem~\ref{integral-isotypic-projector-theorem},
+then, without any assumption that $\sqrt p\in K$,
+\[
+       v_{\mathrm{BB}}(e_\Sigma F)\ge v_{\mathrm{BB}}(F)-D.
+\]
+\end{corollary}
+
+\begin{proof}
+The factorial weights make $\mathcal B$ a full weight-graded lattice.
+For one vector letter the root action is $x_a\partial_b$.  Write
+the two exponents of a monomial as $n,m$.  If $k\le m$, the change
+in its coefficient-plus-factorial valuation under the $k$th divided
+power is
+\[
+ \tfrac12v_p\frac{m!}{(m-k)!}
+ +\tfrac12v_p\frac{(n+k)!}{n!}-v_p(k!)\ge0,
+\]
+because both factorial quotients are divisible by $k!$.  If $k>m$
+the image is zero.  For a covector letter the action has a minus
+sign, which does not affect valuation.  Root actions on separate
+letters commute, so their divided powers have the integral
+multinomial expansion into products of divided powers.  Thus
+$\mathcal B$ is admissible.
+
+For nonzero $F$, extend to $K'=K(\sqrt p)$ and define the balanced
+lattice there by the same coefficient inequalities.  Every possible
+value of $v_{\mathrm{BB}}(F)$ lies in the value group of $K'$, so
+choose $c\in K'$ with $v(c)=-v_{\mathrm{BB}}(F)$.  Apply the
+integral theorem over $K'$ to $cF$ and divide the resulting
+valuation inequality by this scalar.  Coefficient valuations and
+the canonical projector agree with those over $K$, giving the
+assertion.  This argument claims no equality between the base
+change of $\mathcal B$ and the balanced lattice over $K'$;
+such integral lattices need not coincide.
+\end{proof}
+
+The root costs and the dimension saving improve the sufficient
+denominator bound itself.  They do not provide the source-test
+systems, their ranks, the subsequent Fock detection estimates, or
+the normalized arithmetic theta maps needed in the global loss
+engine.  An independent exact check constructs the projectors as
+rational polynomials in the $\mathfrak{sl}_2$ Casimir for
+$0\le a\le b\le5$.  The accompanying script verifies 56 projectors
+and 280 prime cases, including $p=2$, with 99 strict improvements
+over the common coarse bound.  These finite checks illustrate the
+theorem and do not replace its proof.
