@@ -548,3 +548,5 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Exact AA period normalization](../../notes/flag-aa-normalization.md): GM11 and GM12, including finite Haar ratios and the complete-frame and big-cell Jacobians.
 
 - [Generic pinned local supplier](../../notes/flag-generic-pinned-input.md): exact root scale and finite family witness, StepLocGenPinnedG; analytic weighted point sum remains.
+
+- [Nongeneric defect stratification](../../notes/flag-defect-stratification.md): the original strict-image/first-type local saving and the large-defect second-type saving, plus a weaker unconditional gain on every nongeneric term; small full-image character cancellation remains.

@@ -1,0 +1,262 @@
+\subsection{Saturation-index stratification and nongeneric savings}
+\label{sec:flag-defect-stratification}
+
+Keep the local notation of Section~\ref{sec:flag-generic-local-amplitude},
+including \(s=r+1\), \(m=2s\), \(n=k+2r+1\), \(l=n-m=k-1\),
+and \(P=\mathrm{Hp}=q^{v(\theta)+a+d}\). We work with the actual
+admitted term lattices and their two stabilizer weights.
+Assume \(k\ge4r+7\), and that the point has a term.
+For a fixed frame-class representative let
+\[
+ M=M(u,u'),\qquad M_h=\Lambda\cap J,\qquad
+ \beta=[M_h:M]=q^i.
+\]
+All indices here are additive cardinalities, in particular at a split
+place. By (GL3), \(0\le i\le a\). A term is nongeneric precisely when
+\(i\ge1\). We establish a gain without any phase estimate on the
+strict-image branch of the defect stratification, and on the
+large-defect branch of the remaining terms.
+
+\begin{lemma}[The complement image]
+\label{lem:flag-defect-image}
+Put \(W=J^\perp\), and let \(L_\delta\subset W\) be the
+intersection of the two inner quotient lattices, with the additional
+condition that the pair of quotient classes \((w,w)\) is in the
+prescribed level graph when \(\theta\ne1\).
+For a term over \(\delta\) this is a lattice containing
+\(L=\Lambda\cap W\), and there is a canonical \(O\)-linear injection
+\[
+ L_\delta/L\ \longrightarrow\ M_h/M,\qquad
+ w\longmapsto [\theta^{-1}(x'-x)],
+ \tag{DS1}
+\]
+where \(x\in X,\ x'\in X'\) satisfy
+\(w+x,w+x'\in\Lambda,\ x'-x\in\theta\Lambda\).
+Its image is the original \(\mathrm{Ihat}/M\), so
+\([L_\delta:L]=\mathrm{cardI}=q^j\), with \(0\le j\le i\).
+For a nongeneric term which is not of the original
+\(\mathrm{TypeBe}\), one has \(j<i\).
+\end{lemma}
+\begin{proof}
+The quotient maps embed \(W\) in each inner quotient. Their
+inverse images of the two inner lattices are full lattices there;
+the graph condition is a linear congruence. Equivalently
+\(L_\delta\) consists of the \(w\) admitting the indicated lifts:
+at ordinary places this is just the two membership conditions
+because \(\theta=1\). This is exactly the source's complement
+datum and \(\mathrm{TauRel}\).
+
+The difference of two choices of \(x\) belongs to
+\(\Lambda\cap X=\sum_{b<s-1}Ou_b\), and similarly on the
+primed side, by primitivity of the two adapted frames.
+Write the two differences as \(u c\) and \(u' c'\), using
+only the first \(r\) entries. If \(\theta=1\) their difference
+is already in \(M\). At a level place the lift condition
+gives \(u'c'-uc\in\theta\Lambda\). Since \(u'\equiv u\)
+modulo \(\theta\Lambda\) and \(u\) is primitive,
+\(c'\equiv c\bmod\theta O^r\). Thus
+\[
+ \theta^{-1}(u'c'-uc)=u\,\theta^{-1}(c'-c)
+                          +\theta^{-1}(u'-u)c'\in M .
+\]
+This proves independence of the lifts. Add and scale lifts to
+prove linearity. The value belongs to \(M_h/M\).
+If it is zero, the independence of the two joint frames
+shows \(x,x'\) are integral combinations of their own
+first \(r\) vectors: indeed the coefficients in
+\(\theta M\) are of the form \((\theta c-b,b)\)
+with \(c,b\in O^s\). Hence \(w\in L\).
+Conversely \(w\in L\) admits zero lifts. This proves (DS1)
+and the asserted image description, since the image is
+already an \(O\)-module.
+
+For the last assertion, suppose \(i>0\) and \(j=i\).
+Every element of \(M_h/M\) then has a representative
+\(\theta^{-1}(x'-x)\) from the two isotropic spans.
+The two last-vector coefficients of \(\theta y\) for
+any \(y\in M_h\) therefore satisfy the source's
+\(\mathrm{RR}\) condition: the primed coefficient
+is integral and the sum of the two coefficients belongs
+to \(\theta O\). This proves \(\mathrm{levC}(y)\le r\).
+For the other condition in \(\mathrm{TypeBe}\), take
+\(a_\nu\in X,\ a'_\nu\in X'\) with
+\(a_\nu+a'_\nu\in\theta\Lambda\), for \(\nu=1,2\).
+By surjectivity of (DS1) choose \(w\in L_\delta\) with
+lifts \(x,x'\) such that
+\[
+ (a_1+a'_1)-(x'-x)\in\theta M .
+\]
+Comparison of the independent frame coefficients shows
+\(a_1+x\in\sum_{b<r}Ou_b\subset\Lambda\).
+Also \(w+x\in\Lambda\), with \(w\perp J\), so
+\(\langle x,a_2+a'_2\rangle\in\theta O\).
+Because \(X\) is totally isotropic this implies
+\(\langle x,a'_2\rangle\in\theta O\).
+Similarly \(\langle a_1+x,a'_2\rangle\in\theta O\).
+Subtracting proves \(\langle a_1,a'_2\rangle\in\theta O\).
+Together with nongenericity and the level condition this is
+exactly \(\mathrm{TypeBe}\), a contradiction.
+\end{proof}
+
+\begin{lemma}[Uniform sublattice count]
+\label{lem:flag-defect-sublattices}
+For a free rank-\(l\) lattice over \(O\), the number of
+sublattices of additive index \(q^j\) is at most
+\[
+             16(j+1)q^{(l-1)j}. \tag{DS2}
+\]
+In the unramified nonsplit case it is zero for odd \(j\),
+and at most \(4q^{(l-1)j}\) otherwise.
+\end{lemma}
+\begin{proof}
+Over a discrete valuation ring of residue size \(Q\),
+successive elimination in a fixed ordered basis gives
+the triangular normal forms with diagonal valuations
+\(d_1,\dots,d_l\ge0\), \(\sum d_\nu=d\), and, for fixed
+valuations, exactly \(Q^{\sum_{\nu=1}^l(\nu-1)d_\nu}\)
+choices of off-diagonal residue entries (reverse the
+basis order if using the other triangular convention).
+The number of index \(Q^d\) sublattices is therefore
+at most
+\[
+ Q^{(l-1)d}\prod_{\nu=1}^{l-1}(1-Q^{-\nu})^{-1}
+       <4Q^{(l-1)d}.
+\]
+For the last bound use \(Q\ge2\) and
+\(\prod_{\nu\ge3}(1-2^{-\nu})\ge
+1-\sum_{\nu\ge3}2^{-\nu}=3/4\);
+the first two factors multiply to \(3/8\).
+At an inert place \(Q=q^2\); at a split place distribute
+\(j\) as \(j_1+j_2\), count each factor with \(Q=q\),
+and sum over the \(j+1\) possible decompositions.
+This proves (DS2).
+\end{proof}
+
+\begin{theorem}[Strict-image and large-defect amplitude gain]
+\label{thm:flag-defect-stratification}
+Write \(A_\delta(\mathcal P)\) for the original phase-weighted
+amplitude restricted to a predicate \(\mathcal P\) on the
+actual terms, and
+\[
+ \|\mathcal P\|_{\rm amp}^2
+       =\sum_\delta \mathrm{wt}(\delta)|A_\delta(\mathcal P)|^2 .
+\]
+The following bounds hold in the original local rank range:
+\[
+ \begin{split}
+ \|\,i\ge1,\ j<i\,\|_{\rm amp}^2
+    &\le P^{2s^2+10s+11}q^{-l}\,nn,\\
+ \|\,i\ge I\,\|_{\rm amp}^2
+    &\le P^{2s^2+10s+11}q^{-I}\,nn
+                      \qquad(I\ge1).
+ \end{split}                                                   \tag{DS3}
+\]
+Both also hold for any further invariant restriction of the
+indicated terms. The union of the strict-image branch and
+the large-defect branch \(i\ge k-2r-5\) satisfies the original
+nongeneric amplitude bound
+\[
+ \|\,i>j\ \text{or}\ i\ge k-2r-5\,\|_{\rm amp}^2
+        \le P^{39s^2}q^{-(k-2r-5)}\,nn.                    \tag{DS4}
+\]
+When \(P=1\) all these predicates are empty. The only
+nongeneric terms not covered by (DS4) have
+\(1\le i=j<k-2r-5\); they belong to \(\mathrm{TypeBe}\).
+\end{theorem}
+\begin{proof}
+Set \(e=s^2+3s\), \(e_0=s^2+7s\).
+For a fixed integral frame class \(C\) the possible
+\(M_h\) are at most \(q^{2am}\) by (GL3).
+For fixed \(\delta,M_h\) and \(j\), the complement
+\(L\) is a sublattice of the fixed \(L_\delta\)
+of index \(q^j\). Lemma~\ref{lem:flag-defect-sublattices}
+bounds the number of choices. For fixed \(M_h,L\),
+the anti-isometric discriminant gluing argument of
+(GL5), now applied to \(M_h\), bounds the number of
+self-dual lattices by \(q^{2am}\): its discriminant
+module is a quotient of a submodule of \(M^\#/M\)
+and is generated by at most \(m\) elements over \(O\).
+Thus (GL4), followed by the exact orbit weights
+of (GL6), gives, for fixed \(\delta\) and \(i,j\),
+\[
+ m_\delta(i,j)\le
+ 16(j+1)P^{e_0}q^{(l-1)j},
+ \qquad e_0=s(s-1)+4m.
+ \tag{DS5}
+\]
+Indeed \(q^{4am}\le P^{4m}\), so this bound has no
+hidden dependence on the ambient rank. All counts
+are upper bounds, permitting every further restriction.
+
+Independently, summing over the complement orbits by
+(GL6) and applying (GL1) to the overlattices of index
+\(q^i\) gives
+\[
+ \sum_\delta \mathrm{wt}(\delta)m_\delta(i)
+       \le \tfrac54 c_x P^e q^{-il}
+       \le \tfrac53 P^e q^{-il}nn.                  \tag{DS6}
+\]
+Here \(c_x\) is the common Haar scalar for all corrected
+frame classes. For the last step use any occupied
+reference class \(C_*\):
+\(nn\ge ngen(C_*)=w(C_*){\cal M}(M(C_*))
+\ge3c_x/4\) by (GL6), (GL4) and (GL1).
+This does not require that the reference term itself
+be generic.
+
+The modulus of an amplitude over a subset is at most
+its mass. For \(i\ge1\), sum (DS5) over \(0\le j<i\)
+and use \(\sum_{h=0}^{b} q^{(l-1)h}\le
+2q^{(l-1)b}\) (here \(l\ge6\)).
+The pointwise mass bound is
+\(32 i P^{e_0}q^{(l-1)(i-1)}\).
+Multiplying by (DS6) bounds the squared amplitude norm
+on this \(i\)-stratum by
+\[
+ \tfrac{160}{3} i P^{e_0+e}q^{-l-(i-1)}nn .
+\]
+For the whole stratum \(i\ge1\), summation over \(j\le i\)
+instead gives the bound
+\(\tfrac{160}{3}(i+1)P^{e_0+e}q^{-i}nn\).
+These are inequalities for the original two
+reciprocal-stabilizer weights; they do not count
+unweighted representatives of those groups.
+
+Use the triangle inequality in weighted \(\ell^2\)
+over the data for the sum of amplitudes at the distinct
+indices \(i\), not the sum of their absolute squares.
+Since \(i\le a\),
+\[
+ \sum_{i\ge I}^{a}\sqrt{i+1}\,q^{-i/2}
+ \le\frac{\sqrt{a+1}\,q^{-I/2}}{1-2^{-1/2}},
+\]
+and the analogous strict-image sum has the same bound
+with \(q^{-I/2}\) replaced by \(1\), after removing
+\(q^{-l/2}\). The square of the denominator inverse
+is \(6+4\sqrt2<12\). Consequently the squared norms
+are bounded by \(640(a+1)P^{e_0+e}nn\) times
+the respective gains. In a nonempty nongeneric branch
+\(P\ge q^a\ge2\), \(a+1\le P\), and \(640\le 2^{10}\).
+This proves (DS3), with \(e_0+e=2s^2+10s\).
+For (DS4), disjointly assign strict-image terms to
+the first estimate and the remaining terms with
+\(i\ge k-2r-5\) to the second. Cauchy--Schwarz for
+the sum of these two amplitudes costs at most \(4\le P^2\).
+The rank inequality gives \(l\ge k-2r-5\), and
+\(2s^2+10s+13\le39s^2\) for every \(s\ge1\).
+Thus (DS4) follows. Lemma~\ref{lem:flag-defect-image}
+identifies the missing terms.
+\end{proof}
+
+For example, taking \(I=1\) in (DS3) already gives a
+uniform nongeneric gain \(q^{-1}\), without cancellation
+and without enlarging the original height exponent.
+At an inert place the same proof starts at \(I=2\).
+For \(a<k-2r-5\) the large-defect branch is empty;
+this is not a proof that the remaining terms vanish.
+In that case the unresolved local problem is precisely
+phase cancellation on the small full-image defect strata.
+The source's second-type family estimate
+\(\mathrm{amplitude\_le\_mass\_secondType\_family}\)
+supplies the stronger gain on that branch, but its
+character calculation has not been reconstructed here.
