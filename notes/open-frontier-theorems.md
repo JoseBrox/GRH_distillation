@@ -426,3 +426,6 @@ global period maps.
 The [nonzero-Gram normal count](flag-nondegenerate-normal-count.md) supplies occupied-point and rational normal multiplicity steps in both nonzero-Gram branches; local amplitudes and integral class sums remain open.
 
 The [retained zero-Gram trace comparison](flag-retained-zero-gram-traces.md) also proves off-diagonal vanishing in the concrete distinct-type family. It charges the full zero-Gram branch once in trace norm after the actual source cuts, retaining target leakage. The arithmetic theta-chain dictionary and the nonzero-Gram trace budget remain open.
+
+
+- [W10 alternating Frobenius tails and finite wall/rank interfaces](geometry-flag-tail-and-wall.md): uniform original remainder bounds; exact cutoff comparison from finite qualitative wall tests under the specified symmetry and linkage hypotheses; finite sufficient lower-image-degree certificate. Actual wall limits, volume/metric comparison, and section vanishing remain open.

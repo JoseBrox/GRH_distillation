@@ -1,0 +1,166 @@
+\subsection{Finite wall tests and the finite-rank interface}
+\label{sec:flag-finite-wall}
+The exact finite-cutoff comparison does not require the quantitative
+wall approximation \texttt{ThmW} or coefficient error
+\(O(\log B/B)\) of \texttt{ThmBA}. For this purpose it suffices
+to establish qualitative convergence at finitely many fixed
+rational weights on each cross-block wall. The number and choice
+of these tests may depend on the fixed tower. They are not
+new samples of the moving prime-sum parameter.
+
+\paragraph{Exact comparison from qualitative wall limits.}
+Fix the actual tower and write \(J_B=I_B/v\) for its normalized
+arithmetic intersection functional on degree \(d+1\).
+Assume the exact \texttt{Prop6} relation on this tower, the
+source Frobenius shape condition, within-block antisymmetry
+\texttt{I8} for \(J_B-H\), the wall vanishing of \(H\) in
+\texttt{I9}, and the transitive label symmetry \texttt{PropA}
+of \(J_B\) and invariance of \(H\) under that group.
+For each label \(\tau\), consider the cross wall
+\(u_{\tau,p-1}=u_{\tau,p}\). Its relatively open dominant
+part, with all other adjacent gaps strict, contains a
+relatively open set of rational test weights of norm
+less than \(1/2\). Require \(J_B(\ell_u^{d+1})\to0\) for
+a fixed finite set of such tests whose evaluations determine
+the restrictions of polynomials of degree at most \(d+1\)
+to this wall. Such a set exists: evaluations on the rational
+points of the open part separate polynomials on the wall
+(by density and the polynomial identity principle); finite
+dimensionality gives a finite spanning subset of evaluations.
+
+Here is a proof of the reduction. By (FA1)--(FA3), \(R_B\)
+from (FA7) is a well-defined linear functional, and \(R_B\to0\)
+coefficientwise on the fixed finite-dimensional space, by
+absolute convergence for \(k\ge2\). Let
+\[
+ S=\sum_\tau\mathcal S_\tau,\qquad T=\sum_\tau\mathcal T_\tau
+\]
+be the two shift functionals of the tower-intersection reduction.
+In the exact \texttt{Prop6} change, the non-tail contribution
+is in \(\operatorname{span}(S,T)\). Indeed the subtracted
+rank term in \texttt{deltaTerm} is
+\(-(\log\ell)/(\ell-1)\) times the total first-block derivative.
+The degree-one geometric-series part has coefficient
+\[
+ \kappa_\ell=\frac{\log\ell}{N}\sum_{a\ge1}\ell^{-a}
+                 \mathrm{lieRank}(\mathrm{frob}(\ell,\tau,a))
+\]
+times the total derivative, independent of \(\tau\) by
+the Frobenius shape. For \(k\ge2\) the total derivative is
+zero on \(p_{\tau k}Q_{\tau k}\), since multiplication by
+a positive full power sum has zero alternating degree.
+These are exactly the signs in
+\texttt{PowerSumDeltaDecomposition}. Extending by (FA1), the
+change from \(B_0\) to \(B\) is
+\[
+ J_{B_0}-J_B
+  =\sum_{B_0<\ell\le B,\ {\rm good\ prime}}
+       \left(-\frac{\log\ell}{\ell-1}S+\kappa_\ell T\right)
+       +R_{B_0}-R_B .
+\]
+Therefore the class of \(J_B-H-R_B\) modulo
+\(\operatorname{span}(S,T)\) is independent of \(B\).
+
+To see that it is zero, identify a functional \(L\) with the
+homogeneous polynomial \(L(\ell_u^{d+1})\); this is an isomorphism
+by the multinomial formula. The polynomials of \(J_B-H\)
+are alternating inside the two blocks, in each label, by
+\texttt{I8}. They tend to zero at the chosen cross-wall tests.
+Inside the fixed finite-dimensional space of within-block
+alternating polynomials, the common kernel of these evaluations
+is the full Vandermonde times a block-invariant linear polynomial.
+In fact the evaluations force vanishing on the entire indicated
+wall; permutations within the blocks force vanishing on every
+cross wall. The within-block Vandermonde factors were already
+present. Divisibility by all distinct linear differences then
+gives the assertion, since the total degree is \(d+1\).
+The remaining linear polynomial is constant-coefficient on
+each block. Intersect with the transitive label-invariant
+subspace supplied by \texttt{PropA} and invariance of \(H\).
+The coefficients are then common across labels.
+This two-dimensional kernel is exactly \(\operatorname{span}(S,T)\)
+under the isomorphism, by the exact shift formulas on
+\(\ell_u^{d+1}\) and the flag degree product formula.
+On a fixed complement of the kernel the evaluation map has
+a linear left inverse, so the complement coefficients of
+\(J_B-H\) tend to zero. Since \(R_B\to0\), the constant quotient
+class identified above is zero. For each fixed cutoff \(B\)
+there consequently exist \(A_B,b_B\) with
+\[
+ J_B=H-A_B S-b_B T+R_B .
+\]
+This is the exact source \texttt{IdentAt} and its extension
+to all degree-\(d+1\) polynomials. It avoids estimating the
+interpolation inverse as the field or dimension grows.
+The assertion is conditional on the actual within-block
+antisymmetry, label symmetry, wall convergence and two-cutoff
+linkage; this argument does not establish those geometric
+premises. In particular the determinant test alone does not
+prove wall convergence.
+
+\paragraph{Finite certificate for the lower image degree.}
+For a projective normal variety \(X\) of dimension \(D\)
+over the coefficient number field, let \(A\) be the original nef
+weight line, with actual birational cusp-section system
+\(V\subset H^0(X,A)\); include the cusp boundary conditions
+in this system. On the normalization of its base-ideal blow-up
+\(\pi:Y\to X\), write \(L=\pi^*A-E\), where \(E\) is the
+effective Cartier divisor of the actual base ideal.
+Then \(L\) is basepoint free and \(L^D=\delta\), the degree
+of the actual cusp-section image. Let \(A'\) be the modified
+nef weight line (the source \(u'\)).
+It is sufficient to find a section \(\theta\) of
+\(a(A-A')\), for some positive integer \(a\), whose pullback
+satisfies \(\operatorname{div}(\pi^*\theta)\ge aE\).
+Only the finitely many prime divisors in \(\operatorname{Supp}(E)\)
+need to be tested; elsewhere the divisor of the section is
+already effective. The valuations, including exceptional ones,
+must be those of the normalized blow-up of the actual system,
+not just the boundary primes of \(X\).
+The resulting section exhibits \(a(L-\pi^*A')\) as effective.
+Since \(L\) and \(\pi^*A'\) are nef, intersect this effective
+divisor with
+\(\sum_{i=0}^{D-1}L^i(\pi^*A')^{D-1-i}\) to deduce
+\[
+ \delta=L^D\ge(A')^D .
+ \tag{FW1}
+\]
+The argument uses intersection positivity, not an asymptotic
+rank threshold. No all-valuations test is necessary for this
+sufficient certificate for the degree comparison.
+
+For the actual weight shift \(u'_{\tau i}=u_{\tau i}
++3N{\bf1}_{i\ge p}\), provided \(u'\) remains strictly
+dominant, the exact proportionality and Vandermonde formula
+give the degree ratio
+\[
+ \frac{(A')^D}{A^D}
+  =\prod_{\tau,a<p,b\ge p}\left(1-\frac{3N}{u_{\tau a}-u_{\tau b}}\right).
+ \tag{FW2}
+\]
+All within-block differences cancel. Thus, if the divisor
+certificate and actual top-degree proportionality hold,
+the image loss \(\rho=1-\delta/A^D\) is bounded by
+\[
+ 0\le\rho\le1-\prod_{\tau,a<p,b\ge p}
+ \left(1-\frac{3N}{u_{\tau a}-u_{\tau b}}\right)
+ \le 3N\sum_{\tau,a<p,b\ge p}\frac1{u_{\tau a}-u_{\tau b}}.
+\]
+The nonnegative lower bound uses \(L\le\pi^*A\) with both nef.
+This retains the entire cross-gap distribution, rather than
+only its minimum. In the finite-jet supplier already proved,
+take any \(0\le\rho_*<1\) majorizing this loss. The actual
+jet-count inequality gives, in its notation,
+\[
+ \frac{d_{\rm sec}}{d_{\rm lower}}\le
+ \frac{\binom{\lfloor(t+D+3)/(1-\rho_*)\rfloor+D}{D}}
+      {\binom{t-1}{D}}
+\]
+when \(d_{\rm lower}=\delta\binom{t-1}{D}\) and the other
+stated weight/section hypotheses of that supplier hold.
+Here the normalizations and section lattice have not been
+changed. This is a finite sufficient rank estimate; it does
+not construct \(\theta\), whose exceptional-divisor
+vanishing is still a substantive obligation. Merely knowing
+that the base locus is supported on the cusp boundary
+does not give the required multiplicity.

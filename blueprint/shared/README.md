@@ -563,3 +563,6 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Retained theta columns and prescribed positive traces](../../notes/retained-column-positive-traces.md): exact scalar-bearing Gram transport, literal finite-projector comparison, the sharper joint restriction cost `g+b`, and fixed-normalizer trace/second-moment identities. The actual common theta row and moving concentration budgets remain open.
 
 - [Weighted scalar positive traces and height bridge](../../notes/weighted-height-and-scalar-traces.md): mass-weighted scalar deviation and weighted second moments with the actual prescribed normalizer; exact vertical comparison on isometrically linked models, conditional mean constant 135. The moving realization and same-window budget are not established.
+
+
+- [W10 alternating Frobenius tails and finite wall/rank interfaces](../../notes/geometry-flag-tail-and-wall.md): uniform original remainder bounds; exact cutoff comparison from finite qualitative wall tests under the specified symmetry and linkage hypotheses; finite sufficient lower-image-degree certificate. Actual wall limits, volume/metric comparison, and section vanishing remain open.
