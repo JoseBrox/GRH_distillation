@@ -54,3 +54,5 @@ Remaining: StepLocGenPinnedG, StepThmBPinnedG, integral
 class amplitude sums and final analytic comparisons. No
 universal statement about fallback points or all integral
 term representatives is inferred from an occupied-point count.
+
+A further bound for each fixed epsilon>0 is mu(E)^2 C_epsilon^(2f) (TT')^(epsilon f) G0^(2epsilon), with C_epsilon explicit and independent of E. See (NG4).

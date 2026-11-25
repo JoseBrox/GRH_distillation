@@ -536,3 +536,5 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Rank-four weight-collision bound](../../notes/rh-rank-four-weight-collision.md): the exact dimension loss under the original finite-weight property, not the construction of the automorphic ideal.
 
 - [Nondegenerate flag cells and rational-normal count](../../notes/flag-nondegenerate-normal-count.md): full level and different content, occupied points, and rational normal multiplicities; integral class amplitudes remain open.
+
+- [Off-diagonal zero-Gram and retained trace cost](../../notes/flag-retained-zero-gram-traces.md): entire zero-Gram contribution, with exact target leakage and prescribed normalization.

@@ -421,3 +421,5 @@ remaining Selmer prime cases, and weighted near returns in the actual
 global period maps.
 
 The [nonzero-Gram normal count](flag-nondegenerate-normal-count.md) supplies occupied-point and rational normal multiplicity steps in both nonzero-Gram branches; local amplitudes and integral class sums remain open.
+
+The [retained zero-Gram trace comparison](flag-retained-zero-gram-traces.md) also proves off-diagonal vanishing in the concrete distinct-type family. It charges the full zero-Gram branch once in trace norm after the actual source cuts, retaining target leakage. The arithmetic theta-chain dictionary and the nonzero-Gram trace budget remain open.

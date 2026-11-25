@@ -1,0 +1,218 @@
+\subsection{Zero-Gram off-diagonal vanishing and retained trace costs}
+\label{sec:flag-retained-zero-gram-traces}
+
+We continue with the original period family, including its
+concrete standing hypotheses and absolutely convergent orbital
+expansion. We allow distinct original words, with last-vector norms
+\(-T,-T'\), and use the original compact types. No identification
+of the Poincare maps with an additional arithmetic theta chain
+is assumed in this subsection.
+
+\begin{lemma}[Unequal-norm zero-Gram returns]
+\label{lem:zero-gram-unequal-norm}
+For a relevant return with \(G=0\), the two full flags have adapted
+bases with common tail \(f_b=c e_b\), \(j\le b\le r\),
+where \(j=r-\dim(X\cap Y)\) and \(c\bar c=T'/T\).
+The leading \(j\)-by-\(j\) cross pairing is nondegenerate.
+There is a common compact \(U(k)\) at each real place, fixing both
+full flags pointwise and mapping isomorphically to each of their
+positive rank-\(k\) quotient groups.
+\end{lemma}
+\begin{proof}
+The common-tail argument of
+Lemma~\ref{lem:rational-flag-common-tail} works verbatim up to
+the norm equation: the skew-Hermitian successor relation and
+the proof that neither negative last vector belongs to \(X+Y\)
+use no equality of their norms. If \(X\cap Y\ne0\), the common
+tail and \(z'=cz\) after adaptation follow as there, and
+comparison of norms now gives \(c\bar c=T'/T\).
+The same perpendicularity argument gives nondegeneracy of the
+leading cross pairing.
+
+If \(X\cap Y=0\), the argument excluding \(D_r=0\) uses only
+the implication \(D_r=0\Rightarrow D_{r+1}=0\), which still
+holds for the equation
+\(|D_{r+1}|^2=TT'|D_r|^2\). The last vectors may then be made
+perpendicular to the nondegenerate space \(X+Y\) by adapted
+changes. Its complement has negative index one. The zero-Gram
+equation becomes \(|B(z,z')|^2=TT'\). The orthogonal component of
+\(z'\) to the negative line \(Ez\) has squared norm zero, so
+vanishes by positivity. This gives the same norm equation
+for the last-vector ratio, also when \(r=0\).
+
+Split off the nondegenerate leading paired space of signature
+\((j,j)\), the common negative line, and the remaining shared
+isotropic space of dimension \(r-j\) together with isotropic
+duals, chosen perpendicular to the preceding summands by
+Hermitian Witt decomposition. Their complement \(W\) is positive
+of rank \(k\). The group acting on \(W\) and fixing all the
+other summands pointwise fixes both adapted frames, hence both
+original frames. Projection from \(W\) to each positive
+quotient \((X^\perp\cap z^\perp)/X\) and
+\((Y^\perp\cap (z')^\perp)/Y\) is an isometric isomorphism.
+This gives the two asserted identifications of compact groups.
+\end{proof}
+
+\begin{theorem}[Off-diagonal zero-Gram vanishing]
+\label{thm:flag-offdiagonal-zero-gram}
+If the two prescribed irreducible compact types differ at at
+least one real place, every original zero-Gram return has
+zero orbital operator. In particular the distinct-word
+condition in the original DataNW gives the off-diagonal
+vanishing on that concrete standing family.
+\end{theorem}
+\begin{proof}
+An irrelevant return contributes zero by integration of the
+nontrivial relative character over its compact arithmetic
+unipotent quotient, as in the original relevance vanishing.
+For a relevant return use the compact group \(C\) at the
+place where the types differ from the preceding lemma.
+It normalizes the intersection \(R_\infty\) of the two
+real flag unipotent groups because it fixes both frames.
+The relative character on \(R_\infty\) is trivial by
+relevance. The original orbital integral over the arithmetic
+stabilizer quotient is thus its finite covolume times
+the integral over \(R_\infty\backslash G_\infty\), with
+compatible measures. This is just Weil integration for
+the original stabilizer; the integrand, not each seed,
+descends. Absolute convergence in the original standing
+regime justifies this operation.
+
+Left multiplication by \(C\) acts on that quotient.
+Its Haar-measure multiplier is one: conjugation on the
+unipotent stabilizer has positive determinant modulus,
+a continuous multiplicative character of a compact group.
+On the first seed the action of \(C\) is the original
+compact representation through the positive quotient.
+Indeed decompose an element of \(C\) into the fixed Levi
+lift of its action on that quotient and an element of
+the flag unipotent. The latter fixes the entire first
+frame, so its simple-root character is trivial.
+For the second seed use the conjugate by the return and
+the analogous decomposition. The two quotient maps are
+induced by the complex-linear isometries of \(W\) in the
+preceding lemma, so introduce no outer or conjugate
+automorphism of the compact representation.
+
+Changing variables by this compact action in the
+quotient orbital integral gives the intertwining identity
+for the two compact types on this one factor. By Schur's
+lemma that operator is zero. Tensoring with the other
+place factors, or applying Schur's lemma to the two
+representations restricted to this factor, gives zero for
+the global operator, with the original finite phase and
+covolume unchanged. Distinctness in DataNW is the
+inequality of the ordered type parameters at each real
+place, hence the two irreducible representations are
+inequivalent. This proves the assertion.
+\end{proof}
+
+\paragraph{Trace comparison on the actual retained columns.}
+Write \(A_i\) for the normalized period maps of
+Theorem~\ref{global-gram-entry-unfold}, using the antilinear
+isometric column dictionary there. The index \(i\) can range
+over any finite subfamily of the original words.
+Let \(d_i\) denote their actual full column dimensions,
+and \(J_i\) the isometric inclusions of the retained
+source subspaces of ranks \(r_i\). Let \(\Pi\) be the
+actual orthogonal target projection of rank \(D_0>0\).
+Write \(R_0=\sum_i r_i>0\), and let \(s_i\ge0\) be
+prescribed scalar weights on the period maps (take
+\(s_i=1\) for the unweighted case). Set
+\(F_i=s_i A_iJ_i\), \(F=(F_i)_i\), and
+\[
+ K=F^*F,\qquad L=F^*(1-\Pi)F\succeq0,\qquad
+ K_0=K-L .
+\]
+The source Gram for the retained maps is \(\operatorname{diag}K_0\)
+(block-diagonal compression, not the entrywise diagonal),
+and the target Gram is \(\Pi FF^*\Pi\) on its retained range.
+For any prescribed \(c>0\), define
+\[
+ {\cal D}_c(B)=
+ \operatorname{tr}\big((c/R_0)I-\operatorname{diag}B\big)_+
+ +\operatorname{tr}\big(B-(c/D_0)I\big)_+
+\]
+for a Hermitian operator \(B\) on the retained source sum.
+The nonzero eigenvalues of the two Grams \(K_0\) and
+\(\Pi FF^*\Pi\) coincide, with multiplicities; the remaining
+zero eigenvalues do not contribute to the upper positive
+trace at the strictly positive threshold. Hence the
+normalized actual pair of positive traces is exactly
+\({\cal D}_c(K_0)/c\).
+
+\begin{lemma}[One trace-norm cost, including target leakage]
+\label{lem:retained-gram-error-trace}
+If \(K=B+E\) with \(B,E\) Hermitian, then
+\[
+ {\cal D}_c(K_0)\le {\cal D}_c(B)+\|E\|_1+\operatorname{tr}L.
+ \tag{RT1}
+\]
+No positivity of the approximate Gram \(B\) is required.
+\end{lemma}
+\begin{proof}
+The variational formula for the trace of the positive part
+gives
+\[
+ \operatorname{tr}((c/R_0)I-\operatorname{diag}K_0)_+
+ \le \operatorname{tr}((c/R_0)I-\operatorname{diag}B)_+
+       +\operatorname{tr}E_-+\operatorname{tr}L.
+\]
+Indeed each block-diagonal contraction \(P\) testing the
+first trace satisfies
+\(-\operatorname{tr}(PE)\le\operatorname{tr}E_-\) and
+\(\operatorname{tr}(PL)\le\operatorname{tr}L\).
+For the target trace use \(K_0\le K\) and
+\(\operatorname{tr}(K-(c/D_0)I)_+
+\le\operatorname{tr}(B-(c/D_0)I)_++\operatorname{tr}E_+\).
+The sum proves (RT1). This charges the signed error once,
+rather than using two triangle inequalities with its full
+trace norm.
+\end{proof}
+
+\begin{corollary}[The entire zero-Gram branch costs exponentially little]
+\label{cor:retained-zero-gram-cost}
+Use the concrete standing family of the diagonal zero-Gram
+bound and Theorem~\ref{thm:flag-offdiagonal-zero-gram}.
+Let \(B\) be the retained compression of the full weighted
+period Gram with its nonidentity zero-Gram contributions
+removed. Then
+\[
+ g_c+b_c\le
+ \frac{{\cal D}_c(B)+\operatorname{tr}L}{c}
+ +\frac{e^{-kf\log(k)/2}}c\sum_i s_i^2\sqrt{r_i d_i}.
+ \tag{RT2}
+\]
+In particular for \(s_i=1\) and \(c=R_0\) the last term is
+at most
+\(e^{-kf\log(k)/2}\sqrt{\sum_i d_i/R_0}\).
+\end{corollary}
+\begin{proof}
+The omitted operator is block diagonal by off-diagonal
+vanishing. Its full diagonal block on the original column
+space has Hilbert--Schmidt norm at most
+\(\sqrt{d_i}\exp(-kf\log(k)/2)\) by the established
+diagonal zero-Gram theorem. If desired take Hermitian
+parts of both the remaining and omitted blocks; their sum
+is Hermitian and this does not increase the norm bound.
+The original column isometry preserves the bound.
+Compression by \(J_i\) does not increase the
+Hilbert--Schmidt norm. Its rank-\(r_i\) trace norm is
+bounded by the square root of that rank times the
+Hilbert--Schmidt norm. Summation over the diagonal blocks,
+with the weights \(s_i^2\), bounds \(\|E\|_1\) in (RT1).
+Cauchy--Schwarz gives the unweighted special case.
+\end{proof}
+
+This is a comparison on the actual period columns, for arbitrary
+orthogonal source and target restrictions. In particular it requires
+no cardinality estimate for all pairs of excluded columns.
+It keeps the exact target leakage
+\(\operatorname{tr}L=\sum_i s_i^2\|(1-\Pi)A_iJ_i\|_{\rm HS}^2\)
+and the prescribed normalization \(c\).
+No conclusion about the sign or size of the remaining nonzero-Gram
+kernel is inferred; nor is the arithmetic metric and lattice
+dictionary for the final theta maps inferred from an operator
+compression. The Adriazola integral central-cluster projectors
+can be used for the source cuts when the corresponding actual
+arithmetic lattice admissibility has been established.
