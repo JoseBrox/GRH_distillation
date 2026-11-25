@@ -1,0 +1,395 @@
+% W10: relative Chern comparison on the original labelled lattice family.
+\subsection{The two Frobenius corrections by relative Chern characters}
+\label{sec:relative-chern-correction}
+
+The following argument replaces the root-by-root computation of the
+two-level correction by a calculation with two short exact sequences.
+It is a numerical descent theorem: its input is the original
+\emph{pointwise} torsion-lattice identities, not the desired global
+Chern comparison. In particular those pointwise identities still need
+a proof for the actual torsion orders.
+
+Let \(X\) be an integral, normal, projective flat model of relative
+dimension \(d\) over an excellent mixed-characteristic DVR. Let
+\(Z=X_{p=0}\), where the rational prime \(p\) is nonzero in the
+base, and suppose that a base element \(w\) satisfies
+\(w^{p-1}=up\) with \(u\) a unit. The generic fibre is denoted \(X_\eta\).
+Write \(T=\mathcal O_X^n\). All lattices below carry their
+specified generic identifications, and all maps between them are
+the prescribed coordinate maps. We use the same
+labels \(\tau\) and Frobenius permutation \(\phi\) as in the source.
+The four bundles are written \(L_\tau,W_\tau,O_\tau,O_\tau^{\rm HT}\),
+where \(L\) denotes the old Lie bundle and \(O\) the old
+cotangent bundle, and
+\[
+ L_\tau\subset W_\tau\subset w^{-1}L_\tau,\qquad
+ O_\tau^{\rm HT}\subset O_\tau\subset w^{-1}O_\tau^{\rm HT}.
+\]
+No identification of the two different corrected bundles is made.
+
+Here is the lattice input, in coordinate notation. It is exactly the
+part of \texttt{LieLatticeData.Base} and \texttt{Facts} used in this
+calculation. Let \(\mathbb F\) be the finite field of the torsion
+coordinates, \(M\subset\mathcal O_X^{\mathbb F^n}\) the original
+function lattice, containing the constants and a power of \(p\) times
+the full function lattice. Write \(\chi_\tau\) for the original
+character functions with \(\chi_\tau(0)=0,\chi_\tau(1)=1\). Put
+\[
+ A_\tau=\{a:\ \sum_i a_i\chi_\tau(x_i)
+                      \in M+p\mathcal O_X^{\mathbb F^n}\},
+ \qquad H_\tau=A_\tau^\vee .
+\]
+Here and below all constructions on lattices are sheaf constructions;
+duals use the given standard pairing. The lattice \(A_\tau\)
+lies in \(T\), by evaluation at the coordinate vectors. We require
+\(wT\subset A_\tau\). The original two graphs
+\(\Gamma_\tau\subset L_{\tau,\eta}\oplus T_\eta\) and
+\(\Delta_\tau\subset T_\eta\oplus O_{\tau,\eta}\)
+have the following projections and coordinate kernels:
+\[
+\begin{array}{c|cc|cc}
+ &\operatorname{pr}_1&\operatorname{pr}_2&
+ \ker(\operatorname{pr}_1)&\ker(\operatorname{pr}_2)\\ \hline
+ \Gamma_\tau &w^{-1}W_\tau&C_\tau^{\rm all}&T&W_\tau\\
+ \Delta_\tau &w^{-1}T&w^{-1}O_\tau^{\rm HT}
+      &O_\tau^{\rm HT}&C_\tau^{\rm all}
+\end{array}
+\]
+where \(C_\tau^{\rm all}=\operatorname{pr}_2\Gamma_\tau\).
+The two extra facts are
+\[
+ \operatorname{pr}_1(\Gamma_\tau\cap(L_{\tau,\eta}\oplus H_\tau))
+       =w^{-1}L_\tau,\qquad
+ \operatorname{pr}_2(\Delta_\tau\cap(H_\tau\oplus O_{\tau,\eta}))
+       =O_\tau.                                                    \tag{RC1}
+\]
+
+For the second graph calculation let \(V_i\) be the space of functions
+vanishing on the span of the first \(i\) coordinate vectors of
+\(\mathbb F^n\); hence \(V_n=0\). Let \(\Theta_\tau\) be the
+original graph from the augmentation lattice to the dual Lie
+lattice. Its first projection is \(M\cap V_0\), its second
+projection is \(L_\tau^\vee\), and its second-coordinate-only
+kernel is \(p L_\tau^\vee\). Define
+\[
+\begin{split}
+ I_{\tau i}&=\{a:\ a\chi_\tau(x_i)\in M+V_{i+1}\},\\
+ K_{\tau i}&=\operatorname{pr}_2(\Theta_\tau
+                         \cap(V_i\oplus L_{\tau,\eta}^\vee)),\\
+ B_{\tau i}&=\{(a,b):\
+       (a\chi_\tau(x_i),b)\in\Theta_\tau+(V_{i+1}\oplus0)\}.
+\end{split}
+\]
+Indices \(i\) for the coordinates run from \(0\) to \(n-1\);
+\(K_{\tau i}\) is defined also at \(i=n\).
+For \(A_\tau\) use the decreasing coordinate filtration given by
+\(a_j=0\) for \(j<i\), and denote the image at coordinate \(i\) by
+\(D_{\tau i}\). The other three pointwise facts required are
+\[
+ D_{\tau i}=I_{\tau i},\qquad
+ \operatorname{pr}_2 B_{\tau i}=K_{\tau i},\qquad
+ \ker(\operatorname{pr}_2 B_{\phi\tau,i})
+            =\langle a^p:a\in I_{\tau i}\rangle_{\mathcal O_X}.
+                                                                    \tag{RC2}
+\]
+In the last formula the kernel is identified with its first
+coordinate. This is the \emph{span of powers}, not a map
+\(a\mapsto a^p\) asserted to be additive in mixed characteristic.
+
+\paragraph{Putting the pointwise facts on one auxiliary model.}
+The following elementary flattening observation allows us to start
+with the source's \texttt{TestFacts} instead of assuming (RC1)--(RC2)
+on the entire original model.
+
+\begin{lemma}[Simultaneous lattice diagram]
+\label{lem:relative-chern-lattice-diagram}
+Suppose that the original coherent lattice family has the indicated
+base projections, kernels and inclusions, with the four bundles and
+\(M\) locally free. Suppose the six facts
+\(wT\subset A_\tau\), (RC1) and (RC2) hold after extension to
+each of the algebraically closed, complete rank-one valued fields
+in the source's injective test-point hypothesis, with every
+lattice interpreted as its generated lattice there.
+There is a common normal projective birational modification,
+an isomorphism over \(X_\eta\), on which these facts hold
+as sheaf identities and all bundles, filtered pieces and graph
+projections needed below are locally free. The original four
+bundles on it are their pullbacks.
+\end{lemma}
+\begin{proof}
+For any coherent fractional module of constant generic rank,
+take the closure of the generic identity quotient in its relative
+Grassmannian of quotients of that rank, and normalize.
+The tautological quotient is the pullback modulo torsion:
+the kernel is generically zero and the quotient is locally free.
+Thus any finite list of coherent image lattices can be made
+locally free in succession. A surjection onto a locally free
+image splits locally. Consequently its kernel (and the intersection
+that this kernel represents) is locally free if its domain is
+locally free, and these constructions now commute with every
+extension to a valued test field. More explicitly, for a fixed
+linear subspace use the image in the quotient by that subspace.
+For the intersection of two lattices in one space use the image
+of their direct sum under subtraction, i.e.\ their sum lattice.
+Once that image is locally free, the kernel is the intersection
+and the short exact sequence remains exact on pullback.
+The image of a further coordinate projection is treated by
+one more such modification. All subsequent pullbacks preserve
+the locally split sequences already obtained.
+
+For the present finite diagram apply this procedure first to
+\(M+p\mathcal O^{\mathbb F^n}\), its quotient by the range of
+the linear character map, and the coordinate flag in \(A_\tau\).
+This constructs \(A_\tau,D_{\tau i},H_\tau\) with their actual
+generic identifications. For \(I_{\tau i}\) use the restriction
+image of \(M\) on the first \(i+1\) coordinates, followed by
+intersection with the line spanned by \(\chi_\tau(x_i)\).
+The latter line has coordinate \(\chi_\tau(1)=1\).
+For \(K_{\tau i}\) and \(B_{\tau i}\) use the restriction
+images of \(\Theta_\tau\) (retaining the second coordinate for
+\(B_{\tau i}\)), the corresponding kernels and the intersections
+with that character line times the dual Lie space.
+For (RC1) take the sums with \(w^{-1}W_\tau\oplus H_\tau\)
+and \(H_\tau\oplus w^{-1}O_\tau^{\rm HT}\), respectively, and
+the indicated coordinate images. Also flatten the image of
+the restricted \(\Gamma_\tau\) in its second coordinate.
+These are finitely many coherent images and kernels.
+
+The original graphs have the required locally free
+presentations: for \(\Gamma_\tau\) use the first projection
+with kernel \(T\); for \(\Delta_\tau\) use the first projection
+with kernel \(O_\tau^{\rm HT}\); and for \(\Theta_\tau\) use the
+first projection with kernel \(pL_\tau^\vee\). The augmentation
+lattice \(M\cap V_0\) is a direct summand since \(1\in M\).
+The second projection of \(\Delta_\tau\) is onto the locally
+free \(w^{-1}O_\tau^{\rm HT}\), so its first-coordinate kernel
+is also locally free. This is \(C_\tau^{\rm all}\), and hence
+the second projection sequence of \(\Gamma_\tau\) is locally
+split as well. Thus the base identities survive all pullbacks.
+Over \(X_\eta\) the graphs are the coordinate direct products
+and the function lattice is full; all the above images have
+constant rank there. The modifications are therefore vertical.
+
+On the final normal model take any height-one point over \(p\).
+Its local ring is a DVR. Extend its fraction field, via completion
+and completed algebraic closure, to an algebraically closed
+complete rank-one valued field. The valuation ring is faithfully
+flat over that DVR: it is torsion free and the local maximal
+ideal has proper extension. All the indicated images, intersections
+and duals commute with this extension by the split sequences.
+The resulting test field contains the original function field
+injectively and has positive valuation of \(p\); the original
+\texttt{TestFacts} applies to the original chart and its
+generated lattices. Faithful flatness yields the required equalities
+or inclusions over the height-one local ring itself.
+For the last equality in (RC2), a locally free fractional
+line is principal on each trivialization; its span of \(p\)-th
+powers is its ordinary product ideal of order \(p\), also
+locally free. Thus both sides of each required comparison
+are locally free lattices. On a normal scheme such lattices
+are the intersections of their height-one localizations
+inside their rational vector space. All facts follow globally,
+including at points of codimension greater than one.
+\end{proof}
+
+The auxiliary modification in the lemma is used only for
+intersection equalities. No uniform degree, height or number of
+charts of it is needed. In particular it is not a replacement
+for the prescribed tower or its sections.
+
+\paragraph{Relative numerical classes.}
+For two bundles \(E,F\) with the same generic identification,
+write \([E:F]\) for the relative \(K\)-class supported on
+\(Z\), with sign \(E-F\). If \(F\subset E\) it is represented
+by the two-term resolution of \(E/F\). In general one can
+use a common sublattice \(p^a E\subset E\cap F\) and subtract
+the two quotient classes; additivity makes this independent
+of \(a\). All exact sequences used below respect their generic
+identifications. We use the localized Chern character of
+perfect complexes (Fulton, \emph{Intersection Theory},
+second edition, \S18.1, Theorem 18.1, Proposition 18.1 and
+Corollary 18.1.2). Its additivity and projection formula apply
+to the proper models over the DVR, including singular
+special fibres. For an original complementary monomial \(Q\)
+of degree \(d+1-k\) in line classes, write
+\[
+ c_k(E:F;Q)=k!\deg_Z
+       \bigl(Q\,\operatorname{ch}^{Z}_k([E:F])\cap[X]\bigr).
+\]
+The degree is taken on the supporting fibre, \emph{before}
+pushing forward to \(X\). Forgetting the support would make
+the principal scalar divisors vanish incorrectly.
+
+For a pair of lines \(E,F\) the expression is the vertical
+divisor of their generic ratio intersected with
+\(\sum_{j=0}^{k-1}c_1(E)^jc_1(F)^{k-1-j}Q\).
+This follows by applying the localized character to the
+two-term line inclusion (or subtracting two inclusions
+through a common smaller line). Hence, by additivity along
+matched flags, \(c_k(E:F;Q)\) is precisely the source's
+mixed-difference power sum \texttt{ck}, including the sign
+\(x-x'\). Two consequences used here are
+\[
+\begin{split}
+ c_k(J^{\otimes p}:\mathcal O;Q)
+   &=p^k c_k(J:\mathcal O;Q) \quad(J\text{ a fractional line}),\\
+ c_k(w^{-1}E:E;Q)
+   &= k\,\deg_Z\bigl(Q P_{k-1}(E)\cap[\operatorname{div}(w)]\bigr),
+                                                               \tag{RC3}
+\end{split}
+\]
+where \(P_j(E)=j!\operatorname{ch}_j(E)\).
+For the second identity tensor the Cartier divisor resolution
+by \(E\): its normal line \(\mathcal O(\operatorname{div}(w))\)
+is trivial, so there are no higher self-intersection terms.
+For the first identity use the line formula and
+\(c_1(J^{\otimes p})=p c_1(J)\), with the ratio divisor
+also multiplied by \(p\). In particular the normalized
+power-sum factor \(k\) in the second line is necessary.
+
+\begin{theorem}[Two relative Chern identities and the finite orbit formula]
+\label{thm:relative-chern-two-identities}
+Under the base and test hypotheses of
+Lemma~\ref{lem:relative-chern-lattice-diagram}, set, for the original
+complementary monomial \(Q\),
+\[
+ h_\tau=c_k(H_\tau:T;Q),\qquad
+ \ell_\tau=k\deg_Z\bigl(QP_{k-1}(L_\tau)
+                              \cap[\operatorname{div}(p)]\bigr).
+\]
+For every \(1\le k\le d+1\) the original two-level numerical
+relation is
+\[
+\begin{split}
+ c_k(L_\tau:W_\tau;Q)+c_k(O_\tau:O_\tau^{\rm HT};Q)
+     &=h_\tau-\ell_\tau/(p-1),\\
+ p^kh_\tau&=h_{\phi\tau}+\ell_{\phi\tau}.                 \tag{RC4}
+\end{split}
+\]
+If the orbit of \(\tau\) under \(\phi\) has length \(m\), then
+\[
+ h_\tau=\frac{\sum_{a=1}^{m}p^{k(m-a)}
+                                  \ell_{\phi^a\tau}}{p^{km}-1}.
+                                                               \tag{RC5}
+\]
+These are the exact \texttt{Relations} and
+\texttt{LabelChernComparison}, not estimates or asymptotic
+formulas. They descend to the original model and hold with
+any original homogeneous complementary polynomial by linearity.
+\end{theorem}
+\begin{proof}
+Work first on the common model. Let
+\[
+ C_\tau=\operatorname{pr}_2\bigl(\Gamma_\tau
+                  \cap(L_{\tau,\eta}\oplus H_\tau)\bigr).
+\]
+The restricted graph has first projection \(w^{-1}L_\tau\),
+first-coordinate-only kernel \(W_\tau\), and
+second-coordinate-only kernel \(T\). Taking the quotient by
+\(W_\tau\oplus T\) in two ways gives
+\[
+ C_\tau/T\simeq w^{-1}L_\tau/W_\tau.
+\]
+The restricted second graph has first projection \(H_\tau\)
+because \(H_\tau\subset w^{-1}T\); its second projection
+is \(O_\tau\). Its two coordinate kernels are
+\(C_\tau\) and \(O_\tau^{\rm HT}\). Taking the quotient
+by their direct sum gives
+\(H_\tau/C_\tau\simeq O_\tau/O_\tau^{\rm HT}\).
+The three quotients are supported on \(Z\). Additivity in
+relative \(K\)-theory therefore proves the exact identity
+\[
+ [H_\tau:T]=[L_\tau:W_\tau]+[O_\tau:O_\tau^{\rm HT}]
+                         +[w^{-1}L_\tau:L_\tau].            \tag{RC6}
+\]
+Apply (RC3) and \((p-1)\operatorname{div}(w)=\operatorname{div}(p)\).
+This gives the first equality of (RC4).
+
+For the other identity, the first projection of \(B_{\tau i}\)
+is \(I_{\tau i}\): a witness in \(M\) restricting to
+\(a\chi_\tau(x_i)\) vanishes at zero, so has a preimage in
+\(\Theta_\tau\). The second-coordinate-only kernel is
+\(K_{\tau,i+1}\). By (RC2) the second projection is
+\(K_{\tau i}\) and the first-coordinate-only kernel is
+\(I_{\phi^{-1}\tau,i}^{\otimes p}\).
+Taking the quotient of the graph by the two kernels gives
+\[
+ I_{\tau i}/I_{\phi^{-1}\tau,i}^{\otimes p}
+                       \simeq K_{\tau i}/K_{\tau,i+1}.
+\]
+All these are quotients of locally free lattices, and the
+isomorphism is induced by the original graph. Equivalently
+one can compare its two locally split projection sequences.
+Dualizing those sequences, with the generic coordinate
+identifications unchanged, gives
+\[
+ [I_{\tau i}^{\vee}:(I_{\phi^{-1}\tau,i}^{\vee})^{\otimes p}]
+                   =[K_{\tau i}^{\vee}:K_{\tau,i+1}^{\vee}].
+                                                               \tag{RC7}
+\]
+This sign is important: both dual comparisons reverse the
+respective inclusions. The coordinate filtration of \(A_\tau\)
+has graded lines \(D_{\tau i}=I_{\tau i}\); the dual filtration
+gives
+\([H_\tau:T]=\sum_i[I_{\tau i}^\vee:\mathcal O]\).
+Also \(K_{\tau0}=L_\tau^\vee\), \(K_{\tau n}=pL_\tau^\vee\),
+by the two projection conditions of \(\Theta_\tau\).
+Sum (RC7), apply the first identity of (RC3), and telescope
+the right side. The result is
+\[
+ h_\tau-p^kh_{\phi^{-1}\tau}
+   =c_k(L_\tau:p^{-1}L_\tau;Q)=-\ell_\tau,
+\]
+the second equality of (RC4) after relabelling.
+
+Iterate this equality exactly \(m\) times; since \(p^{km}>1\),
+division gives (RC5). No infinite tower of Chern identities
+or convergence of model corrections is involved.
+All auxiliary pullbacks of the original class comparisons
+have unchanged numerical values by the localized projection
+formula, since the birational map pushes the fundamental
+cycle to the original one with degree one.
+The same formula applies to \(\operatorname{div}(p)\)
+and the old bundle roots. Hence (RC4)--(RC5) prove the
+numerical identities on the original model.
+\end{proof}
+
+For clarity, the coefficient of \(\ell_{\tau'}\) in the
+first line of (RC4) is zero outside the orbit and within
+the orbit is exactly
+\[
+ \frac{p^{k(m-a)}}{p^{km}-1}
+             -\frac{\mathbf1_{\tau'=\tau}}{p-1},
+ \qquad \tau'=\phi^a\tau,\quad 1\le a\le m .
+\]
+This agrees with the source's \texttt{co}: group its geometric
+series into complete periods. In particular the absolute row sum
+is
+\[
+ \frac1{p-1}+\frac1{p^k-1}-\frac2{p^{km}-1}.
+\]
+Summing over a complete orbit gives the simpler identity
+\[
+ \sum_{\tau\ {\rm in\ orbit}}
+  (c_k(L_\tau:W_\tau;Q)+c_k(O_\tau:O_\tau^{\rm HT};Q))
+ =\left(\frac1{p^k-1}-\frac1{p-1}\right)
+                      \sum_{\tau\ {\rm in\ orbit}}\ell_\tau .
+\]
+In particular the aggregate first correction is zero on
+each complete orbit for \(k=1\). This cancellation does not
+say that a single labelled first correction is zero.
+
+With the original dual and sign identifications of the
+corrected Hodge flags, the old Lie power sums in the labels
+\(\tau,\bar\tau\) are exactly the two entries of \texttt{liePs},
+and the left side of (RC4) is the original full flag power
+sum difference for the corresponding label. Thus the formula
+has precisely the coefficients of \texttt{FlagChernComparison}.
+This final identification must use the actual labelled
+bundle pairs at each correction prime, not merely bundles
+with equal ranks. The previously established trivial
+corrected-flag theorem handles the separate fibre-vanishing
+condition. This calculation leaves the actual test-point
+torsion-order facts, the global two-level model linkage,
+the weighted tower mean and the section-rank losses to be
+completed; it does not establish W10 or the final RH budget.
