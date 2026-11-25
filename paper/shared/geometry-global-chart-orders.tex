@@ -1,0 +1,356 @@
+\subsection{Canonical chart orders and their differential graphs}
+\label{sec:geometry-global-chart-orders}
+
+The function-order comparison in
+Section~\ref{sec:geometry-witt-additive-lattice} admits a
+direct descent proof. In particular a nonflat dominant
+change of the original chart does not require a new
+estimate of its torsion order.
+
+\begin{theorem}[Completion of a split quasi-finite group]
+\label{thm:geometry-canonical-chart-order}
+Let \(A\) be a normal noetherian domain with fraction field \(K\),
+and \(\mathscr G/\operatorname{Spec}A\) a separated, flat,
+quasi-finite group scheme of finite presentation with
+specified generic fibre the constant finite commutative group
+\(T_K\). Define
+\[
+ M_A=\{f\in A^T:\text{ for every }t\in T,\ 
+          (x\mapsto f(t+x))\text{ extends regularly on }\mathscr G\}.
+                                                               \tag{GO1}
+\]
+The extensions refer to the prescribed generic labels.
+Then \(M_A\) is a finite locally free Hopf order in \(K^T\).
+The evaluation embedding
+\(\mathscr G\to\operatorname{Spec}M_A\) is an open immersion,
+and its translates by the specified sections of \(T\) cover
+\(\operatorname{Spec}M_A\).
+For every injective homomorphism \(A\to A'\) to an integral
+domain, with the same generic labels after base change,
+\[
+ M_{A'}=\operatorname{image}(A'\otimes_A M_A\longrightarrow (A')^T),
+                                                               \tag{GO2}
+\]
+and the indicated map is injective. The definition on the
+left uses the actual base-changed group, even when \(A'\)
+is a nondiscrete valuation ring or the base change is not flat.
+If the original group is the kernel of \([n]\) on a smooth
+commutative group scheme, its completed order has the actual
+cotangent module \(\omega/n\omega\), where \(\omega\) is the
+invariant cotangent bundle of that smooth group. Its evaluation
+derivative at the identity is the original differential,
+naturally under (GO2).
+\end{theorem}
+
+\begin{proof}
+First suppose \(A\) is henselian local. The henselian finite-part
+theorem gives a finite open and closed subscheme
+\(\mathscr H\subset\mathscr G\) containing the closed fibre.
+One can obtain this directly by factoring the quasi-finite
+separated morphism as an open immersion into a finite scheme
+(Zariski's main theorem), and using the decomposition of a
+finite algebra over a henselian local ring into its local
+factors. A local factor whose closed point belongs to the open
+is contained in the open. The finite part is flat; it is a
+subgroup since identity, multiplication and inverse preserve
+it on the closed fibre. In checking multiplication, the
+inverse image of the complementary open and closed part in
+the finite scheme \(\mathscr H\times_A\mathscr H\) must be
+empty: otherwise its closed fibre would be nonempty.
+The same argument checks the other operations.
+
+Put \(H=\mathscr H(K)\subset T\). Quotient by the finite
+locally free closed subgroup \(\mathscr H\). The quotient
+\(\mathscr Q=\mathscr G/\mathscr H\) is a group algebraic
+space and \(\mathscr G\to\mathscr Q\) is an fppf
+\(\mathscr H\)-torsor (Stacks, Tag 06PH). In particular
+this map is finite locally free, by descent.
+The quotient is flat and locally of finite presentation over
+\(A\) by faithfully flat descent, and is quasi-compact.
+Its identity section is open and closed, as can be checked
+after pullback to \(\mathscr G\), where its preimage is
+\(\mathscr H\). Its diagonal, obtained by inverse and
+difference from that section, is therefore open and closed.
+Consequently the quotient is separated and unramified, and
+hence \'etale. Its generic fibre is \((T/H)_K\).
+The normalization of \(\operatorname{Spec}A\) in this
+generic fibre is a disjoint union of \(|T/H|\) copies of
+\(\operatorname{Spec}A\): \(A\) is integrally closed.
+Zariski's main theorem for quasi-finite separated algebraic
+spaces (Stacks, Tags 05W4 and 05W7) thus identifies
+\(\mathscr Q\) with
+\[
+                      \coprod_{\alpha\in T/H} U_\alpha
+\]
+for open subschemes \(U_\alpha\subset\operatorname{Spec}A\)
+containing their respective generic points. The identity open
+is the whole base. In applying the normalization version of
+the theorem, \(\mathscr Q\) is normal, since it is \'etale
+over the normal base; its generic fibre is schematically
+dense, since it is flat.
+
+For each coset choose the original generic representative
+\(t_\alpha\), choosing \(t_0=0\). Its point in the finite
+torsor over \(U_\alpha\) extends uniquely to a section:
+on each normal affine open of \(U_\alpha\), its coordinates
+are integral over the normal ring and belong to its fraction
+field. These sections agree on overlaps. Translation by
+this section identifies the corresponding part of
+\(\mathscr G\) with \(\mathscr H|_{U_\alpha}\), with the
+literal prescribed generic identification \(h\mapsto
+t_\alpha+h\).
+
+Now form \(\mathscr B\) as the disjoint union of copies of
+\(\mathscr H\) indexed by \(T/H\). Equip it with the
+induced group law, namely translation by the section of
+\(\mathscr H\) corresponding to
+\(t_\alpha+t_\beta-t_{\alpha+\beta}\in H\) when adding in
+the two copies. Each such generic section extends over
+\(A\), by finiteness and normality as above. The cocycle
+identities follow in \(H\) and hence for the sections.
+The change of coset representatives gives the canonical
+translation isomorphism, so this construction preserves all
+generic labels. The group \(\mathscr B\) is finite locally
+free and its restriction to the open subschemes just
+described is the original \(\mathscr G\). Compatibility of
+the group maps can also be checked on the schematically
+dense generic fibres of the flat products. All generic
+labels extend to sections of \(\mathscr B\), and translating
+the identity copy \(\mathscr H\) covers \(\mathscr B\).
+
+Its function algebra in \(A^T\) is precisely
+\[
+             \{f\in A^T:\ f(t_\alpha+{-})|_H
+                              \in\mathcal O(\mathscr H)
+                               \text{ for every }\alpha\}.
+\]
+Every function in this algebra and every translate is
+regular on \(\mathscr G\). Conversely (GO1) implies the
+displayed conditions by restriction to \(\mathscr H\).
+Thus \(\mathcal O(\mathscr B)=M_A\), not just an abstract
+isomorphic order. This proves the theorem on a henselian
+normal local base.
+
+For a general normal noetherian \(A\), the flatness of
+\(\mathscr G/A\) gives injective restriction of its regular
+functions to the generic fibre; this can be checked on
+affine opens by torsion freeness. The local regularity
+condition at every point in (GO1) is equivalent to extension
+to a global section, by this uniqueness and the sheaf
+property. In particular the set in (GO1) is already an
+algebra; taking the algebra it generates, as in
+\texttt{btOrder}, does not change it.
+
+Here is the descent check, including the distinction between
+flat and nonflat base changes. For a flat extension to an
+integral domain \(A_1\), the global sections of
+\(\mathscr G\) commute with extension of scalars, by a finite
+affine-cover equalizer (intersections are affine since the
+morphism is separated over an affine base). The kernel
+description
+\[
+ M_A=\ker\left(A^T\longrightarrow
+       \bigoplus_{t\in T} K^T/\Gamma(\mathscr G,\mathcal O),
+                   \ f\longmapsto(f(t+{-}))_{t\in T}\right)
+\]
+therefore commutes with flat base change. The localization
+\(K\otimes_A A_1\) injects into the fraction field of \(A_1\);
+the functions being tested are in \((A_1)^T\), and the
+base-changed global sections already lie in that
+localization. Thus the resulting kernel is exactly
+\(M_{A_1}\) as defined with the actual fraction field.
+Apply this to localization at each prime and its
+henselization; these are flat extensions and normal local
+domains. The module \(M_A\subset A^T\) is finite because
+\(A\) is noetherian. Since it becomes locally free of rank
+\(|T|\) on these faithfully flat local extensions, it is
+finite projective. Its Hopf operations in generic
+coordinates descend from those on the henselizations:
+membership in \(M_A\otimes M_A\) and \(M_A\) is checked
+faithfully flat locally. The identity and associativity
+equations hold generically and hence integrally. The
+canonical morphism \(\mathscr G\to\operatorname{Spec}M_A\)
+is an open immersion with the translate-cover property by
+the same faithfully flat local tests. This constructs
+\(\mathscr B\) globally.
+
+Finally let \(A\to A'\) be injective without assuming
+flatness. The base change of the just-constructed
+\(\mathscr B\) is still finite locally free, has the
+prescribed split generic fibre, and contains the actual
+\(\mathscr G_{A'}\) as an open with the same translate cover.
+The projective \(A'\)-module \(A'\otimes_A M_A\) embeds in
+\((A')^T\): its map is injective generically and its domain
+is torsion-free. A function satisfying (GO1) over \(A'\)
+extends regularly on every translated open, by translating
+its extensions on \(\mathscr G_{A'}\). These extensions agree
+on overlaps because both equal the specified generic function
+and the opens are flat over \(A'\). They glue to a global
+function of the finite flat base change of \(\mathscr B\).
+The converse holds by restriction and the translation
+action. This proves (GO2); no base-change assertion for
+global sections of a general nonproper scheme under a
+nonflat map has been used.
+
+For the last assertion, the identity section lies in the
+open subgroup, so its cotangent module is unchanged by the
+completion. The cotangent sequence for the kernel of
+multiplication by \(n\) on the smooth group identifies this
+module with \(\omega/n\omega\): the map on invariant
+differentials is \(n\,1\).
+Equivalently, each tangent point over the dual numbers of
+\(A/nA\) lies uniquely in the kernel, and evaluation of a
+function at that point has first-order term its differential.
+This proves both the asserted derivative identification and
+its naturality, including in (GO2).
+\end{proof}
+
+\begin{corollary}[The original chart function and graph identities]
+\label{cor:geometry-original-chart-identity}
+Use an original \texttt{ChartPack} and \texttt{chartD}
+at an odd correction prime \(p\) unramified in the coefficient
+field, with the source's labelled generic torsion and tangent
+coordinates and the original full-level corrected image bundles.
+For every dominant test-ring extension, its generated
+\texttt{funLat} and \texttt{thLat} are the actual induced
+finite-field torsion order and the actual differential graph
+of Section~\ref{sec:geometry-witt-additive-lattice}.
+In particular on the height-one test fields of any common
+normal modification with the original bundles pulled back,
+the six identities \(wT\subset A_\tau\), (RC1) and (RC2) hold,
+using the local additive-lattice theorem there.
+\end{corollary}
+
+\begin{proof}
+By \texttt{tors\(_1\)} and \texttt{pts\(_1\)} of
+\texttt{ChartPack}, its quasi-finite group is exactly the
+kernel of \([p]\) with the original labelled generic points.
+Theorem~\ref{thm:geometry-canonical-chart-order} identifies
+\texttt{btOrder} with the coordinate algebra of its
+canonical completion, and (GO2) proves the required generated
+base change for \texttt{testOrd}. At a henselian valuation-ring
+test point this completion is the induced-coset order:
+the finite open part and the prescribed generic translations
+characterize it by (GO1). The same construction works at the
+higher level \(p^{R_p}\). For the latter level its
+character differentials are the original Weil differentials,
+by the cubical pairing and the last assertion of the theorem.
+Thus there is no freedom to replace the pairing by another
+one when applying the local additive-lattice proof.
+
+The unramified coefficient algebra \(\mathcal O_E/p\)
+is a product of finite fields. Its action extends from the
+original group to the completed order: a pullback of a
+function satisfying (GO1) satisfies (GO1), since the action
+is a homomorphism with the specified generic labels.
+The equations of the coefficient action and the equation
+\([p]=0\) hold on the completion by generic density.
+For the selected residue field \(F\), the source's
+\(pq,sc\) give the projection and inclusion of that product
+factor. The idempotents split the completed group scheme
+into the product of its actual factors (use \(e,1-e\) for
+an idempotent \(e\)). The coordinate restriction to the
+chosen factor is surjective, with its pullback along the
+projection as a section. In particular \texttt{funLat}
+is exactly the function order of this factor in the
+prescribed coordinates \(F^n\), and its generated base
+change is that same factor of (GO2). This is the literal
+\texttt{testOrdW} dictionary, not merely equality of ranks.
+
+All labelled cotangent eigenspaces at this prime are integral
+direct summands, because the coefficient algebra is
+unramified at \(p\) and its embeddings split over the
+original normal base with the prescribed constants.
+Over the test ring their characters modulo \(p\) are the
+Teichm\"uller lifts with the prescribed residue labels:
+the prime-to-\(p\) roots of unity have unique lifts with
+that residue and the unramified embedding gives precisely
+those lifts. Let \(M\) denote the selected factor's order
+and \(M^+\) its augmentation ideal. For a label \(\tau\) the
+original \texttt{IsDerAtOne} condition is exactly
+\[
+         \bar u = d f|_\tau\quad
+                     \text{in }L_\tau^\vee/p L_\tau^\vee.
+\]
+Indeed \texttt{IsDerAtOne} tests the actual value on all
+dual-number tangent vectors modulo \(p\); the last assertion
+of Theorem~\ref{thm:geometry-canonical-chart-order} makes
+this equivalent to the displayed differential congruence.
+The character factor's function pulls back to the full
+order by the actual projection, as required in
+\texttt{thLat}. Evaluating on the original basis
+\(b(e(\tau))\) gives precisely its second coordinate.
+It follows that the generators in the definition of
+\texttt{thLat} already form the graph
+\[
+        \{(f,u)\in M^+\oplus L_\tau^\vee:
+                         d f|_\tau=\bar u\}.
+                                                               \tag{GO3}
+\]
+Any element of the displayed graph admits a full cotangent
+lift: take the indicated component and lift its remaining
+components using the direct-summand decomposition.
+This also checks the converse of the source's existential
+definition, not just its inclusion in (GO3).
+
+The first projection in (GO3) is onto \(M^+\), with kernel
+\(p L_\tau^\vee\). The augmentation ideal is projective:
+it is the complement of the constants in the projective
+order \(M\). Hence this sequence splits locally. The graph
+of the congruence pulls back to the graph of the actual
+base-changed differential even under a nonflat dominant
+base change. Explicitly choose a local lift of the map
+\(M^+\to L_\tau^\vee/pL_\tau^\vee\) to \(L_\tau^\vee\);
+the graph is its graph plus \(0\oplus pL_\tau^\vee\),
+and the same description holds after base change.
+The surjectivity of the differential onto the labelled
+cotangent quotient gives the full second projection.
+Its kernel and equivariance give exactly the three
+square-ideal/character pins of the torsion-character flag
+argument. In particular no assertion about arbitrary
+base change of the kernel of a nonprojective image is used.
+
+The original high-level character-differential image
+lattice and its dual are those constructed in
+Section~\ref{sec:geometry-exact-corrected-flags}.
+The quotient and its adjoint give the maps \(q,i\) modulo
+\(p^{R_p-2}\) on the original locally free bundles.
+They have the exact ranks and form of (HF1), so reduction
+modulo \(w\) is exact, and lifts exist on the original
+affine charts by projectivity. Their graph lattices
+\(\Gamma,\Delta\) are independent of the lifts: changing
+\(i\) on \(W\) by \(p^{R_p-2}T\) changes it on
+\(w^{-1}W\) by an element of \(T\); changing \(q\) on
+\(T\) by \(p^{R_p-2}O^{\rm HT}\) changes it on
+\(w^{-1}T\) by an element of \(O^{\rm HT}\).
+This also proves that the graphs glue. The projection
+conditions of \texttt{Base} follow from (HF1) modulo \(w\)
+and the sandwich \(L\subset W\subset w^{-1}L\) and
+its cotangent counterpart. In particular the second-coordinate
+projection of \(\Gamma\) is the first-coordinate kernel
+of \(\Delta\): this is precisely exactness modulo \(w\).
+The graphs are locally free via their first projection
+sequences. The function order is full after inverting
+\(p\), since the torsion group there is \'etale with
+split generic fibre and its finite completion is constant;
+hence locally it contains a power of \(p\) times the full
+function lattice. These verify the base inputs to the
+relative Chern calculation.
+
+At every required height-one valuation ring (including
+exceptional ones after a common modification), all these
+objects are now the actual canonical objects by (GO2),
+(GO3), and the locally free pullback just established.
+Apply (AL1)--(AL3), quotient generation and the exact
+cotangent-sequence argument of the preceding sections.
+They give all six original pointwise lattice identities
+with the actual fixed generic coordinates. The common
+model lemma for relative Chern characters now applies
+to these very charts. No postulated compatibility between
+unrelated torsion representations has been inserted.
+\end{proof}
+
+The corollary uses the already written local additive-lattice
+theorem, and thus inherits its proof obligations. It discharges
+the separate chart realization/base-change interface; it is
+not a substitute for an independent review of that local theorem.

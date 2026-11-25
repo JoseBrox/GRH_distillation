@@ -2,6 +2,8 @@
 
 ## W10: exact numerical consequence of the local calculation
 
+**Later continuation:** [canonical chart completion and isometric linkage](geometry-global-chart-metric-link.md) supplies the global chart pullback and exact two-level metric comparison under the original model/limit data, using the local theorem. The remaining flag-height/remainder/volume and rank inputs still have to be assembled.
+
 [Proof in the shared manuscript](../paper/shared/geometry-two-level-weighted-bridge.tex).
 
 The new vertical bridge assumes the actual two cutoff models pulled back with their root bundles and generic metrics, differences supported at the new correction primes, the exact corrected flag on those fibres, and RC4–RC5 there. It proves the exact power-sum comparison without a mixed-root remainder: in the product difference, put the complementary polynomial on the old roots; the remaining term contains the new power sum on a new corrected fibre and vanishes by the trivial-flag identity. Normalized arithmetic degrees are invariant under the common birational refinement or a finite common coefficient extension.

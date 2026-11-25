@@ -1,0 +1,370 @@
+\subsection{Isometric linkage of the original cutoff models}
+\label{sec:geometry-original-metric-link}
+
+We next prove the original two-cutoff linkage on the
+\texttt{RootOrigin}/\texttt{GoodOrigin} data. The argument
+uses one common cover and one identity of regularizing
+potentials, rather than comparing two arbitrary choices
+of metric constants.
+
+\begin{theorem}[Common model and exact two-level power-sum comparison]
+\label{thm:geometry-original-metric-link}
+Retain the actual fixed data and the original two cutoff
+models with correction sets \(S_0\subset S\).
+Use the source's hypotheses that the normal projective
+models have the full prescribed generic torsion, their
+corrected cotangent modules and labelled images are
+locally free at correction primes, and their actual
+patched flags are flags of vector bundles. Assume the
+\texttt{RootOrigin} identifications with the same fixed
+data, including the cubical pullbacks, the actual root
+line presentations, the original singular Hodge norms
+and the original regularizations. At the common primes
+the full levels agree. All ramified coefficient primes
+and \(2\) are in \(S_0\).
+Then the two models have a common normal projective
+generically finite comparison model on which the actual
+root pairs have vertical difference supported at \(S\setminus S_0\)
+and have exactly isometric generic smooth metrics for
+all sufficiently small positive regularization parameters.
+The comparison retains the actual normalization degrees.
+On this common model the relative Chern identities
+(RC4)--(RC5) and the original fibre power-sum vanishing
+hold at the new primes. Consequently the original
+\texttt{Prop6} comparison of normalized power-sum intersections
+holds whenever the prescribed limiting intersections exist.
+No extra height term arises from making the comparison model
+or choosing its projective coordinate presentation.
+\end{theorem}
+\begin{proof}
+\paragraph{One common geometric model.}
+Let \(K_f\) denote the fixed generic flag field in
+\texttt{FixedData}. The embeddings \(g_i:K_f\to K_i\)
+of the two origin fields identify the same map to the
+original moduli component and the same generic flag:
+these are exactly \texttt{g\_over} and \texttt{g\_flag}.
+Choose the two finite extensions in a common algebraic
+closure of \(K_f\), and take their compositum \(K_*\).
+No linear disjointness is required. The integers
+\[
+                 e_i=[K_*:K_i],\qquad d_i=[K_i:K_f]
+\]
+satisfy \(e_0d_0=e_1d_1=[K_*:K_f]\).
+Take the closure of the common generic correspondence
+in the product of the two projective models, then its
+normalization in \(K_*\). These are proper constructions;
+normalization is finite since the models are excellent.
+They give a normal projective integral model \(X_*\)
+with dominant maps to both original models of degrees
+\(e_i\). In particular it is flat over \(\mathbf Z\).
+The two induced morphisms to the original moduli model
+coincide: they agree generically and the target is separated.
+The original \texttt{SABMap} is a group pullback and
+pulls back the coefficient action and cubical line.
+Thus the two semiabelian families, their polarizations
+and their generic tangent identifications on \(X_*\)
+are literally identified by base change from this common
+moduli map. This argument does not use an isogeny between
+unrelated abelian varieties.
+
+The ordinary cotangent bundle of a smooth group commutes
+with arbitrary base change. At a correction prime the
+module of character differentials is the inverse image
+of the span of the specified full-level character
+differentials in \(\omega/p^{R_p}\omega\).
+All generic torsion points already occur over the original
+field, so the full list after pullback is exactly the same
+list, not a proper subset. Their differentials commute with
+dominant base change by the original cubical pairing
+(or by Theorem~\ref{thm:geometry-canonical-chart-order}
+and its cotangent identification at level \(p^{R_p}\)).
+In the original projected cotangent images this description
+gives their generated pullbacks. Since those images are
+locally free, taking their duals commutes with pullback.
+For the \texttt{htW} label the original inverse-different
+factor is an invertible ideal from the coefficient ring;
+it pulls back as that same factor. This proves exact
+compatibility also at the ramified primes of \(S_0\).
+For \texttt{dR} at the primes outside \(S_0\), the
+coefficient algebra is unramified and split after the
+prescribed embedding of the constants. Its eigenspaces are
+direct summands and commute with pullback.
+These are the actual formulas \texttt{htOmEig},
+\texttt{htDual}, \texttt{htW} and \texttt{Lat.patch}, with
+the prescribed two different conventions for the two labels.
+
+For a locally free lattice with a flag by subbundles,
+pullback of its flag is the actual intersection with the
+pulled-back rational flag: locally the subbundle has a
+locally free complement, and that complement is torsion
+free after pullback to the integral comparison model.
+This proves the identification without commuting an
+arbitrary unsaturated intersection with base change.
+The generic flags of the two origins agree by
+\texttt{g\_flag}. Consequently their pulled-back root
+lines are the actual graded lines of the two patched
+lattices, with the prescribed reversal and duality for
+the second block. At every point outside the new
+correction fibres those lattices, flags and graded lines
+agree, including their natural generic identifications.
+At a new prime the old and new flags are respectively
+the de Rham and the corrected flag of the same group.
+The canonical root-pair isomorphism off the new fibres
+is therefore a rational section of the old/new line ratio
+with divisor supported on the new fibres, not an
+arbitrary rational section with a horizontal divisor.
+
+For applying the relative Chern identities at a new prime,
+work over the local ring of the appropriate constant
+number field at that prime, which is a DVR. Its ring of
+integers embeds in the normal comparison charts by
+integral closedness. We may include all the constants
+and the prescribed roots of unity from the finite levels
+in \(K_*\), already present in the full-level data.
+In particular \(w\) has \(w^{p-1}=up\) at the new prime.
+At each such prime all coefficient labels are unramified;
+the determinant and flag bundles needed in the relative
+comparison are locally free by the original hypotheses.
+If a further auxiliary refinement is needed for the
+images in the relative Chern diagram, use
+Lemma~\ref{lem:relative-chern-lattice-diagram}.
+By Corollary~\ref{cor:geometry-original-chart-identity},
+the actual chart test identities hold at its height-one
+fields. Thus Theorem~\ref{thm:relative-chern-two-identities}
+gives (RC4)--(RC5) for the two pulled-back flags.
+Its left side uses the tangent roots in the first block
+and the reversed dual roots in the second block, exactly
+the \texttt{rootIdx}/\texttt{rootSgn} convention; the
+different is a unit at this prime. The old Lie power
+sums on the right are therefore the source's
+\texttt{liePs}, with the indicated signs in the
+second block. For the new flag the exact sequence (HF1)
+gives the fibre power-sum vanishing, including
+multiplicities when intersecting on a nonreduced fibre.
+All these statements keep the original roots by pullback.
+
+The permutation used here is independent of the auxiliary
+constant-field place: since the coefficient field \(E\)
+is abelian Galois, at an unramified rational prime the
+arithmetic Frobenius element \(\mathrm{Fr}_p\) is independent
+of the prime of \(E\). Precomposition of the labelled
+embeddings by that element has the source convention
+\(\chi_{\phi\tau}=\chi_\tau^p\). It either preserves
+both CM half-types or interchanges them, according to its
+restriction to the original imaginary quadratic field.
+This is the original Frobenius shape, not a new choice
+of orientation.
+
+\paragraph{Exact metric agreement.}
+On the common complex interior the old and new singular
+Hodge metrics on a given generic root line coincide,
+under the actual generic identification. Indeed the
+Hermitian form of the polarized abelian scheme is
+functorial for the cubical pullbacks just described.
+A flag quotient norm is the corresponding quotient of
+the same positive Gram form (the square root of the
+successive leading-minor ratio); taking the dual changes
+it to the inverse norm in precisely the source's second
+block. At complex points the correction primes are
+invertible, so the patched lattices do not change this
+generic flag or the metric. This is the original
+\texttt{Flag.IsHodgeLine}/\texttt{SecNorm} prescription.
+
+For clarity we verify the actual regularization, not just
+the singular metric. Write \(z_i\) for the projections of
+a common complex point in the original coordinate models.
+For each model the map to the common analytic space
+\(\mathrm{Sys}.X\) is identified by the fixed homogeneous
+coordinate block \(\mathrm{Fx}.yf\).
+The two blocks are proportional at every point of the
+comparison: their projective morphisms coincide on the
+generic fibre and hence everywhere by separatedness.
+The factor relating two nonzero homogeneous
+representatives is nonzero. The original \texttt{pt\_inj}
+and \texttt{\(\pi\)\_pt} show that the corresponding
+analytic points are the same, say \(x\).
+One may make this verification on the dense analytic
+open covered by the original realizations; their
+\texttt{J} is the top ideal and their interior clause
+selects the common abelian locus. There is no assertion
+that a chosen analytic lift of an arbitrary point is
+unique, only that its image in the fixed analytic space
+is the same.
+
+Let \(h^{\rm sing}_{i,\tau k}\) and \(h^t_{i,\tau k}\)
+be the positive homogeneous metric functions for the
+singular and smoothed lines, with the original inverse
+norm convention of \texttt{HermLine.h}.
+For each prefix \(j\) the three defining identities
+\texttt{fund\_sing}, \texttt{Re.line\_eq}, and
+\texttt{fund\_reg} imply on the complex interior
+\[
+ \sum_{k\le j}\log h^t_{i,\tau k}(z_i)
+  =\sum_{k\le j}\log h^{\rm sing}_{i,\tau k}(z_i)
+      +\mathrm{Sys.ph}(\tau,j,x)
+      -\mathrm{Sys.phT}(\tau,j,t,x),\quad 0<t\le t_0.       \tag{GL1}
+\]
+This follows by substituting the equality for the
+smoothed reference metric into the prefix identity.
+Taking consecutive prefix differences (with empty prefix
+zero) shows that for each root, the correction of its
+logarithmic metric is a fixed function of \(t,x\), identical
+for the two origins. The singular isometry therefore
+implies the exact smoothed isometry. In particular the
+argument uses the full scalar norm in
+\texttt{SecNorm}, not just the curvature of the metric.
+
+To express it in the original homogeneous presentation,
+add a very ample coordinate block to embed \(X_*\) as
+a closed subscheme of the product of the two coordinate
+spaces and this additional projective space. Pullback of
+the old coordinate blocks defines the required block maps.
+A rational section of the old/new root ratio is represented
+by a quotient of two multihomogeneous forms \(f_r/g_r\),
+with multidegree difference the old degree minus the new
+degree. To see existence, trivialize the ratio over a
+dense coordinate chart by the corresponding coordinate
+monomial, express the remaining rational function as a
+quotient in the additional projective coordinate chart,
+and homogenize, multiplying by powers of the chosen
+coordinate entries to achieve the specified degree
+difference. Clear scalar denominators equally in numerator
+and denominator. If \(e_0,e_1\) are the two original
+root trivializing scalars, choose the generic ratio
+\(e_1/e_0\), as in \texttt{Flag.TwoLevels}.
+This is precisely the rational section of the old/new
+ratio specified above. The defining equality
+\texttt{SecNorm} for a common generic section gives
+\[
+              |f_r(z)|\,h^t_{1,r}(z)
+                        =|g_r(z)|\,h^t_{0,r}(z).
+                                                               \tag{GL2}
+\]
+For example on a coordinate chart the norm of an
+element \(s\) of the root line is the absolute value of
+\(s/(e_i\prod z_j^{a_{i,j}})\) times the homogeneous
+coordinate scale and divided by \(h^t_{i,r}\).
+Cancel the common section and use the generic equality
+\(f_r/g_r=e_1/e_0\) with the stated degrees.
+This fixes the orientation of (GL2), rather than
+deducing it from equality of curvatures.
+The equality extends to all complex points by continuity
+of the smooth positive metrics and the homogeneous forms.
+The common generic line isomorphism has no horizontal
+zero or pole; equivalently it is a smooth isometry on
+the entire complex fibre. If the source requires a
+positive-parameter metric beyond the range \(t\le t_0\),
+extend the second metric by transport of the first metric
+using this isomorphism. For \(0<t\le t_0\) keep the
+original two metrics. The extension does not affect any
+limit at zero and is smooth and conjugation invariant
+at each fixed parameter. This gives \texttt{IsChange}
+with the literal vertical and isometry clauses.
+
+The auxiliary ample line also agrees on the common model:
+its coordinate block defines the same morphism to the
+fixed projective space, and its metric is the same
+\(\mathrm{Fx.hf}\). The factor \(k_A\) is the same by
+\texttt{kA\_eq}. Thus this isometry does not introduce a
+change in the perturbing ample line or a metric
+renormalization.
+
+\paragraph{Normalized intersections and the local sum.}
+In the original normalization \(\delta_i=[c.F:\mathbf Q]d_i\).
+On the common model take \(\delta_*=[c.F:\mathbf Q][K_*:K_f]\).
+Thus
+\[
+                       \delta_*=e_i\delta_i .
+\]
+For every smooth arithmetic intersection of the original
+pulled-back lines the projection formula multiplies the
+unnormalized number by \(e_i\), and the geometric
+intersection by the same factor. Division by \(\delta_*\)
+therefore gives exactly the original normalized number,
+with \(k_A\) unchanged. In particular for each fixed
+positive smoothing parameter in the original range, the
+intersection functions of the common model are the two
+original ones. Taking their prescribed limits preserves
+this equality; no convergence uniform in the cutoffs or
+the generic degree is needed. Any auxiliary birational
+modification used for the local lattices has degree one
+in this comparison. This proves the \texttt{PP} and
+geometric parts of the original linkage.
+
+Apply the vertical comparison lemma of
+Section~\ref{sec:geometry-two-level-weighted-bridge} on
+this common model before taking the smoothing limit.
+The root \(p_{k,\tau}\) is the sum of the \(k\)-th
+powers of the indicated full flag roots, and \(Q\) is
+any homogeneous complementary polynomial of degree \(d+1-k\).
+All mixed terms involving \(Q(x)-Q(y)\) vanish by the
+new fibre power-sum identity, as in that lemma.
+The remaining terms are exactly (RC4)--(RC5) with
+\(Q\) on the old roots. Since the metrics are isometric
+generically, these are purely vertical arithmetic
+intersections with their original \(\log p\) factors.
+The local class is \(k\) times the indicated old
+\((k-1)\)-st power sum times the principal fibre
+\([\operatorname{div}(p)]\), with the Frobenius orbit
+coefficients. Equivalently it is the original
+\(\mathrm{bracket}_{j,\phi_p,p,k,\tau}\,Q\) evaluated on
+the old fibre, including the fibre's multiplicities.
+
+Specialization of a proper flat model identifies the
+degree of the intersection of line classes on this fibre
+with their generic geometric intersection degree.
+This follows, for example, by writing the classes as
+differences of relatively very ample classes and
+polarizing the constancy of the generic and special
+Hilbert polynomial; hence it applies to these signed
+root monomials as well. Over a constant extension the
+ramification multiplicity in \(\operatorname{div}(p)\)
+and the residue degree in the arithmetic degree are both
+included; working over \(\mathbf Z\) adds all these
+places automatically. Thus after division by
+\(\delta_*\) the sum for each \(p\) is
+\(\log p\) times the old normalized geometric functional
+on the bracket polynomial. There is no loss proportional
+to the chosen normalization degree.
+
+In the notation of the source, writing \(B_0,B\) for the
+cutoffs, \(a\) for the original component and
+\(\operatorname{geo}_{B_0,a}\) for its normalized
+geometric functional, we have proved
+\[
+ \begin{split}
+ &\mathrm{PPc}(B_0,a,p_{k,\tau}Q)
+       -\mathrm{PPc}(B,a,p_{k,\tau}Q)\\
+ &\hspace{10mm}=\sum_{p\in S\setminus S_0}
+       \log p\,\operatorname{geo}_{B_0,a}
+                (\mathrm{bracket}_{j,\phi_p,p,k,\tau}Q).
+ \end{split}                                                     \tag{GL3}
+\]
+If the original proportionality
+\(\operatorname{geo}_{B_0,a}=v_a\deg_{\mathrm{Fl}}\)
+is used, this is exactly the source's \texttt{Prop6}:
+the finite orbit formula (RC5) equals its geometric-series
+coefficient, so the summand is \(v_a\) times its
+\texttt{deltaTerm}. The set of primes is exactly
+\(\{p:B_0<p\le B,\ p\ {\rm prime},\ p\notin\mathrm{bad}\}\)
+when the original cutoff sets are used.
+This proves the required two-level comparison for the
+actual root models, with the same normalization and
+regularization; it makes no claim of small complexity for
+the common comparison cover.
+\end{proof}
+
+The theorem is an ordinary arithmetic-intersection
+reconstruction of \texttt{link\_step} and
+\texttt{LinkedTower} under the original model, metric and
+limit inputs, using the new local lattice suppliers.
+In particular it establishes the two-level power-sum
+formula needed for the weighted height calculation.
+It does not by itself prove the source's remaining
+same-tower flag-height, remainder, proportionality,
+volume and finite section-rank estimates; nor does it
+replace proof of existence of the original
+\texttt{GoodOrigin} data or convergence by a formal
+comparison theorem. The conditional weighted-height
+bound in Section~\ref{sec:geometry-two-level-weighted-bridge}
+now has the exact local correction and linkage supplier.

@@ -18,7 +18,10 @@ The proof for an arbitrary abelian scheme uses Zarhin's trick and product compat
 
 With the original pairing and the original high-level corrected image lattices, the two literal Tate-map identities yield (RC1): the specified finite-level maps differ by p^m in the original lattices, and p^m is divisible by w. Thus the graph comparisons on w^{-1}W and H are unchanged. For the first differential graph of the canonical order, the three chart pins and (RC2) follow by exact cotangent sequences and the previous coordinate-ideal theorem.
 
-## Interface still required
+## Interface supplied in the next checkpoint
+
+The [canonical chart completion and metric linkage](geometry-global-chart-metric-link.md) now prove the separate global chart identity and exact two-level correction on the original model data. The following paragraph records the previous boundary of the local theorem; its independent review is still required.
+
 
 The preceding proof calculates the canonical finite flat order and actual differential graph, and not merely some abstract groups of the same ranks. The global chart data must still be matched to that canonical construction after the common comparison modification: the source's generated pullback of funLat / testOrdW / chartD and its derivative graph must equal these actual objects at each height-one field. In particular, a generic equality does not suffice under nonflat chart changes. Alternatively construct a coherent comparison diagram on the fixed generic flag component with the same four root bundles and these exact test identities. Then descend via the already proved relative Chern comparison and establish the global two-level metric linkage and weighted tower estimate. This proof does not assert that these global steps have been completed.
 
