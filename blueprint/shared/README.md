@@ -540,3 +540,5 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Off-diagonal zero-Gram and retained trace cost](../../notes/flag-retained-zero-gram-traces.md): entire zero-Gram contribution, with exact target leakage and prescribed normalization.
 
 - [Generic local amplitudes and primitive mass](../../notes/flag-generic-local-amplitude.md): exact primitive densities and stabilizer masses, linked frame-class weights and the improved generic local estimates. Global pinned inputs remain open.
+
+- [Integral class summation in generic rational cells](../../notes/flag-generic-global-classes.md): local-orbit product, reciprocal row/genus weights, exact height and pinned phase-sensitive class sum; the generic mass reduces to the original definite gluing mass.

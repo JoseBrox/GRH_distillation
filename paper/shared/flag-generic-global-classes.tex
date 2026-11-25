@@ -1,0 +1,493 @@
+\subsection{Integral class summation in a nonzero-Gram rational cell}
+\label{sec:flag-generic-global-classes}
+
+We retain the nonzero-Gram point, the two actual rational flags and
+the local terms of Section~\ref{sec:flag-generic-local-amplitude}.
+Write \(S\) for the intersection of their unipotent radicals and
+\(H=U(J^\perp)\) for the pointwise stabilizer of their joint span \(J\).
+The ambient signature is \((k+r,r+1)\); since \(J\) is nondegenerate
+of dimension \(2r+2\) and contains an isotropic \(r\)-plane with a
+perpendicular negative vector, it has signature \((r+1,r+1)\).
+Thus \(H\) is compact at every infinite place. The notation \(S(F)\)
+denotes rational isometries of the Hermitian space over \(E\).
+The block calculation in the preceding subsection identifies \(S\)
+over \(F\) with a product of restrictions of scalars of upper
+unitriangular groups over \(E\).
+
+At a finite place \(v\), use precisely the scaled frames of the
+original \texttt{GFrames}: their \(i\)-th vectors are
+\(c_v^{i-r}f_i,c_v^{i-r}f'_i\), where
+\(c_vg=\delta_v\theta_v\), \(\delta_v\) generates the different of
+\(F_v/\mathbb Q_p\), and \(\theta_v=1\) away from \(g\) and is a
+uniformizer at the split level places. In particular
+\(v(c_v)=v(\delta_v)\), since \(g\) is the product of the two
+distinct split rational primes. The local spaces, inner lattices
+and graphs are transported by this scaling, not changed.
+
+\begin{lemma}[Integral local-to-global orbit product]\label{lem:generic-global-orbits}
+Fix an occupied global datum \(d=(d_v)_v\), and one term lattice
+\(\Lambda_0\) over it. Let \(\mathcal X(d)\) consist of the global
+self-dual term lattices over \(d\), with the original local
+admission conditions at every finite place. For every \(v\) let
+\(\mathcal X_v(d_v)\) be the corresponding local term lattices.
+Localization induces a bijection
+\[
+ S(F)\backslash\mathcal X(d)\ \longrightarrow\
+       \prod_v' S(F_v)\backslash\mathcal X_v(d_v).
+ \tag{GC1}
+\]
+The restricted product uses the orbit of \(\Lambda_{0,v}\).
+If \(K_v^0\) is the original reference subgroup of \(S(F_v)\),
+normalize its Haar measure to one. Then the original relative
+global weight is
+\[
+ \mu(\Lambda)=
+ \frac{[\Gamma^0:\Gamma^0\cap\Gamma_\Lambda]}
+      {[\Gamma_\Lambda:\Gamma^0\cap\Gamma_\Lambda]}
+      =\prod_v\mu_v(\Lambda_v),
+ \qquad
+ \mu_v(\Lambda_v)=
+       \operatorname{vol}(S(F_v)_{\Lambda_v})^{-1},
+ \tag{GC2}
+\]
+where \(\Gamma^0=S(F)\cap\prod_vK_v^0\) and
+\(\Gamma_\Lambda=S(F)\cap\prod_v S(F_v)_{\Lambda_v}\).
+\end{lemma}
+\begin{proof}
+A restricted family of local lattices patches uniquely to a global
+lattice. Indeed choose a nonzero rational integer \(N\) bounding all
+the finitely many changes between \(N\Lambda_0\) and
+\(N^{-1}\Lambda_0\). The primary decomposition of
+\(N^{-1}\Lambda_0/N\Lambda_0\) patches the prescribed local submodules
+to exactly one submodule; duality, the lattice quotient conditions
+and the level congruences can all be checked after localization.
+This gives surjectivity of (GC1).
+
+For injectivity, the local transporters between two lattices in the
+same local orbits form nonempty open cosets of the local stabilizers.
+They contain the identity at all but finitely many places. The
+product is therefore a nonempty open subset of \(S(\mathbb A_{F,f})\).
+In the block-unitriangular coordinates, ordinary additive
+approximation in \(E\) gives density of \(S(F)\) in this finite
+adelic group. Explicitly, to approximate finitely many entries
+while remaining integral in the required fractional ideals
+elsewhere, enlarge a common denominator supported at those
+places and apply the Chinese remainder theorem to its fractional
+ideal. The matrix entries and their inverse entries are polynomial
+coordinates; the resulting approximation is an element of \(S(F)\).
+It transports the lattices locally everywhere and hence globally.
+
+For (GC2), put \(K=\prod_v S(F_v)_{\Lambda_v}\) and
+\(K^0=\prod_vK_v^0\). The same density identifies the two rational
+indices with the indices of \(K,K^0\) over their open intersection.
+Their ratio is \(\operatorname{vol}(K^0)/\operatorname{vol}(K)\).
+It is a finite product: the groups agree at almost every place,
+where the two flags have integral corrected joint lattice of unit
+determinant and the reference split coordinates apply.
+\end{proof}
+
+Only finitely many places, denoted \(P_*\), have \(H_v\ne1\),
+where \(H_v\) is the local height of (GL2). At a place outside
+\(P_*\), (GL4)--(GL7) give one orbit over each occupied datum, of
+weight one. This orbit can be represented using the base frames:
+the normalized frame class is the identity class, the joint
+lattice is self-dual, and the complement splits off. Its phase
+is one, using identity frame witnesses. At a place in \(P_*\)
+the generic mass of a fixed datum is finite by (GL4)--(GL5).
+The weights of the occupied frame classes and of each lattice
+orbit are at least one, by the stabilizer inclusion in the proof
+of (GL4). Thus there are finitely many generic orbits for each
+fixed local datum.
+
+For a generic lattice use the original finite phase
+\(\omega_v\), the quotient of the two local simple-root
+characters on witnesses. It is invariant under the common
+unipotent. Consequently the phase-product formula and (GC1)--(GC2)
+give the exact identities
+\[
+ \begin{split}
+ A^0(d)&=\sum_{[\Lambda]\in S(F)\backslash\mathcal X(d)
+                              \atop \Lambda\ {\rm generic}}
+               \mu(\Lambda)\prod_v\omega_v(d_v,\Lambda_v)
+                =\prod_{v\in P_*} A_v^0(d_v),\\
+ m^0(d)&=\sum_{[\Lambda]\ {\rm generic}}\mu(\Lambda)
+                =\prod_{v\in P_*}m_v^0(d_v).
+ \end{split} \tag{GC3}
+\]
+A zero local generic mass makes both sides zero. These are
+finite sums, not estimates obtained by bounding the number of
+terms in a rational double coset.
+
+\paragraph{Complement genera and the original row weights.}
+For local occupied data \(d_v\), let \(H_{d_v}\) be their
+stabilizers in \(H(F_v)\). Choose one global occupied datum
+\(d^0\), normalize the Haar measures on \(H(F_v)\) by
+\(\operatorname{vol}(H_{d_v^0})=1\), and write
+\[
+ V_0=\operatorname{vol}\bigl(H(F)\backslash H(\mathbb A_{F,f})\bigr),
+ \qquad \mathrm{wt}_v(d_v)=1/\operatorname{vol}(H_{d_v}).
+\]
+Here the rational group is discrete in the finite adeles: a
+compact set bounds denominators, while the real compactness
+bounds the rational matrices at all infinite places, leaving a
+finite set in the resulting arithmetic lattice. The mass is
+finite by the usual finiteness of classes of definite Hermitian
+lattices in a fixed genus, since the stabilizers are compact
+open. This finiteness can also be applied to the complement
+lattice of the reference datum and its finite residue graph;
+passing to a finite-index subgroup changes the mass by a
+finite factor. The actual reference genus mass is \(V_0\).
+
+Consider a tuple of occupied local datum orbits, with the
+reference orbit almost everywhere. It is realized globally:
+choose term lattices in the prescribed local data and patch
+them as in (GC1). All global data in the resulting genus are
+parametrized by the double cosets
+\[
+          H(F)\backslash H(\mathbb A_{F,f})/\prod_v H_{d_v}.
+\]
+The same patching shows that every double coset gives occupied
+data. Quotient integration on each double coset now gives
+\[
+ \sum_{[d']\in\mathrm{gen}(d)}
+              \frac1{|H(F)_{d'}|}
+           =V_0\prod_v\mathrm{wt}_v(d_v).
+ \tag{GC4}
+\]
+No strong approximation for the definite unitary group is
+asserted or required.
+
+Here is the precise interpretation for the original row
+classes. Their keys are the two fixed row lattices with their
+relative quotient graph (the finite Levi label) and the
+rational unipotent double coset. Keep the full set of original
+row representatives. Fix a rational cell \(F,F'\), and denote
+a term by an isometry \(\gamma:\Lambda_R\to\Lambda_L\) between
+two such row lattices. An adapted mover \(\rho\) transports its
+two flags to \(F,F'\) up to upper unitriangular changes.
+The moved lattice is \(\rho\Lambda_L\).
+Its two inner lattices are the images in the respective
+isotropic quotients. Its graph is induced by
+\[
+       g\Lambda+(\Lambda\cap X)+(\Lambda\cap X'),
+       \qquad X=\langle f_0,\ldots,f_{r-1}\rangle_E
+ \tag{GC5}
+\]
+and the analogous \(X'\). In (GC5), a pair of quotient vectors
+belongs to the graph when representatives have difference in
+this module. Localizing this criterion and dividing the
+isotropic graded generators by \(c_v^{r-i}\) gives exactly
+the local \(\theta_v\)-graph; the factor \(g/\theta_v\) is a
+local unit. Membership of the representatives and equality of
+the graph can be checked locally, since all the modules in
+(GC5) are lattices in their spans. Away from the level, the
+difference condition is vacuous. At level places the
+finite-adelic identification in the fixed-row congruence
+calculation identifies equality of these graphs with equality
+of the original \texttt{iotaOf} (not just equality of its
+determinant). Thus the intrinsic datum in this cell is exactly
+the two quotient lattices and the original row-label relation.
+
+For a fixed key with representative \(\gamma_0,\rho\), write a
+rational return as \(\gamma=n^{-1}\gamma_0m\), with \(n,m\) in
+the left and right rational flag unipotents. Move its lattice
+by \(\rho n\). The two inner lattices do not change, because
+the unipotents act trivially on the respective isotropic
+quotients. By (GC5), equality of the original row label is
+precisely equality of the moved graph. Hence all moved
+lattices of this key lie over its fixed datum \(d\).
+Conversely, for any global term lattice over \(d\), its local
+witnesses make it a local translate of \(\rho\Lambda_L\) by
+the first flag unipotent, and of
+\(\rho\gamma_0\Lambda_R\) by the second. Indeed the witness
+splits the hyperbolic summands and leaves exactly the
+prescribed inner lattice. The two rational unipotents are
+split over \(F\) (one can use their triangular hyperbolic
+coordinates and the trace-one correction as in
+Section~\ref{sec:flag-reference-haar}); the same additive
+approximation argument produces \(n,m\) globally with
+\[
+       \rho n\Lambda_L=\Lambda=\rho\gamma_0m\Lambda_R.
+\]
+The map \(n^{-1}\gamma_0m\) is thus integral between the original
+rows. Its adapted frame conditions and level admission follow
+locally from the witness conditions, so globally by lattice
+intersection and the Chinese remainder theorem. It has the
+given row label by (GC5). This constructs a term of the
+original key. Two choices of \(n,m\) for one rational return
+differ by a common unipotent after transport to the base cell.
+Changing an integral return by either integral flag unipotent
+does not change the moved orbit. Conversely if two moved
+lattices differ by a common rational unipotent, its pullbacks
+through the two movers preserve the corresponding original
+row lattices, and hence are integral flag unipotents. This
+proves the inverse implication. Therefore (GC1) counts
+precisely the original integral terms of a fixed key. It
+does not identify distinct terms inside the rational double
+coset.
+
+For a fixed global datum, let \(A_L,A_R\) be the finite
+automorphism groups of its two definite inner lattices fixing
+their last vectors, identified with the corresponding
+\(\mathrm{autLz}\) of the original rows. The two row
+identifications form torsors under these groups modulo
+integral flag unipotents. To see that every identification
+lifts, split off the isotropic ideal modules and their duals
+in a self-dual lattice as in the fixed-row construction:
+the middle lattice carries the given inner isometry and the
+map on hyperbolic summands is the identity in the adapted
+coordinates. Different choices of such a splitting act
+trivially on the graded flag spaces and on the isotropic
+quotient, hence differ by an integral flag unipotent.
+The same argument gives an adapted rational realization
+with the prescribed fractional flag ideals.
+
+Two pairs of identifications give the same row/rational-cell
+key if and only if their induced data are related by an
+isometry of the two base flags. In fact equality of rational
+double cosets provides the two rational unipotent
+translations which, combined with the identifications, give
+one simultaneous adapted isometry of both flags. Such an
+isometry lies in \(S(F)H(F)\): on the two frame spans its
+action is exactly a compatible pair of upper unitriangular
+matrices, and its remaining action is an isometry of
+\(J^\perp\). The common unipotent acts trivially on the
+data, and equality of the row labels is equality of the
+graph by (GC5). Hence the remaining isometry is precisely an
+element of \(H(F)_d\). Conversely such an element preserves
+both inner lattices and the graph, so its simultaneous change
+of the two identifications preserves the key. This action is
+free on the pair of identifications, because an element of
+\(H\) acting trivially on an isotropic quotient is the
+identity (the complement embeds in that quotient).
+The number of keys over the datum class is therefore
+\[
+          |A_L|\,|A_R|/|H(F)_d|.
+\]
+Each key has squared row weight \(1/(|A_L||A_R|)\). Their
+sum is exactly \(1/|H(F)_d|\). In particular, on any subset
+of keys closed under the prescribed local datum relation, or
+on any finite subcollection of it, the row-weight sum over
+one tuple of local datum classes is bounded by the right side
+of (GC4). This is the required genus-weight unfolding.
+The argument is about keys, not about a single representative
+for each key's integral terms.
+
+\paragraph{The absolute arithmetic height and generic mass.}
+Write \(f=[F:\mathbb Q]\), \(\rho=\operatorname{rd}(E)\)
+(in this paragraph \(\rho\) is a number, not a flag mover),
+and let \(D_l\) be the rational nonzero endpoint minors, with
+\(G\) the rational joint Gram invariant. Set
+\[
+ N_G=\prod_{\tau:F\hookrightarrow\mathbb R}
+                    |\tau(G)|\,\rho^{-2r(r+1)},\qquad
+ N_D=\prod_{l\ {\rm endpoint}}\prod_\tau
+             |\tau(D_l)|^2\,\rho^{-2l(2r+1-l)} .
+\]
+At a split complex embedding the absolute square means the
+embedding of \(D_l\overline{D_l}\); at every finite place
+the same norm expression applies. Scaling the two frames
+multiplies the \(l\)-th endpoint minor by
+\(c_v^{-l(2r+1-l)}\). Both terms in the Gram invariant have
+factor \(c_v^{-2r(r+1)}\). Since \(E/F\) is unramified at
+finite places, \(N_F\mathfrak d_F=\rho^f\).
+The ideal product formula thus gives
+\[
+ \prod_v q_v^{a_v}=g^{-2(r+1)f}N_G,\qquad
+ \prod_v q_v^{d_v}=N_D,\qquad
+ H_{\rm tot}:=\prod_vH_v=g^{-(2r+1)f}N_GN_D.
+ \tag{GC6}
+\]
+These are the original \(H_p\) and \(HPt\) with all level
+powers retained. In particular \(H_{\rm tot}\ge1\), and
+\(N_D\ge1\) on an occupied point.
+
+For each \(v\) choose the actual occupied reference pairing
+class \(C_v\) used to define the generic mass; outside
+\(P_*\) it is the unique class. Their frame witnesses can
+be chosen as the localizations of one pair of rational
+adapted frames \(u,u'\) up to linked integral changes.
+Indeed the required local cosets in the two unitriangular
+groups are open, and additive approximation in their
+entries meets the finitely many specified cosets with
+integrality relative to the frame ideals elsewhere.
+Let \(M\) be the full lattice in the nondegenerate joint
+space \(J\) with these corrected local generators; it exists
+by the same patching argument. Define the literal gluing mass
+\[
+ {\cal G}(M)=
+ \sum_{\Lambda=\Lambda^\#,\ \Lambda\cap J=M\ \bmod H(F)}
+                       |H(F)_\Lambda|^{-1}.
+\]
+This is a finite sum, since the positive complement has
+fixed discriminant module and there are finitely many
+definite lattices of that discriminant up to isometry, with
+only finitely many gluing maps. It is nonzero by the primitive
+local density and patching.
+
+At a fixed global datum \(d\) the mass of its generic terms
+in the selected frame classes equals
+\(\prod_v w(C_v)\) times the number of global lattices over
+\(d\) having these prescribed frames and saturation \(M\).
+This follows from (GC1)--(GC2) and the fixed-frame count
+in (GL6): the lattices in the prescribed frames patch
+bijectively with the local lattices in those frames.
+Unfolding the complement orbits by (GC4) yields the exact
+identity and its bound
+\[
+ ngen_{\rm tot}:=V_0\prod_{v\in P_*}ngen_v(C_v)
+       =\left(\prod_{v\in P_*}w(C_v)\right){\cal G}(M)
+       \le H_{\rm tot}^{s(s-1)}{\cal G}(M),\qquad s=r+1.
+ \tag{GC7}
+\]
+Here \({\cal G}(M)\) is the source's \texttt{glueSum} for
+the adapted rational pair, with its original fixed-frame
+pointwise stabilizer weights. The product does not contain
+a factor for the number of arbitrary adapted representatives.
+This sharpens the intermediate source loss \(3s^2\).
+Equation (GC7) is a reduction to a definite gluing mass,
+not yet a comparison of that mass with the source's
+normalized mean constant \(AA\).
+
+\paragraph{Real pinned scalar and the phase.}
+At a relevant nonzero-Gram point, write \(b(w)\) for the
+number of strict upper entries within its consecutive
+blocks (the source's \(\#\mathrm{FreeE}(w)\)).
+The reference rational common unipotent has block entries
+\(x_{ij}\in\mathfrak d^{-(j-i)}\), since the corresponding
+scaled local entries are \(c_v^{j-i}x_{ij}\). The other
+frame's action is obtained by the reversed inverse
+adjoint on each block, and this preserves the same
+integrality conditions. In the pinned real coordinates
+the free entries are obtained by conjugating the second
+frame's matrix by the upper triangular frame change and
+scaling each height \(h=j-i\) by \(\rho^h\).
+For clarity, if \(B=1+X\) is this block matrix, and \(U\)
+is any upper unitriangular frame change, then
+\((U^{-1}XU)_{ij}=X_{ij}\) plus a linear combination of
+entries \(X_{ab}\) with \(b-a<j-i\).
+This follows directly by expanding the two products, and
+remains true after restriction to the original free
+entries. The diagonal change from the prescribed real
+flag basis to the unit coordinates gives the factor
+\(\rho^{j-i}\); the other changes in the real frame have
+diagonal one (unit complex factors have no effect on
+the absolute Jacobian). This is the pinned chart, rather
+than a new Haar measure on \(S(F_\infty)\).
+Consequently the coordinate change has triangular Jacobian
+one after those indicated diagonal scalings.
+
+The lattice of a single free coordinate of height \(h\)
+has complex embedding volume
+\[
+   2^{-f}\sqrt{|\operatorname{disc}E|}\,
+   N_E(\mathfrak d^{-h})\,\rho^{2hf}
+      =(\rho/2)^f.
+\]
+The original pinned Haar density for each free complex entry
+at each real place is \(ka/(g\pi)=2/(\rho g)\).
+Multiplication over the \(f\) real places and the \(b(w)\)
+free entries gives \(g^{-fb(w)}\).
+Successive reduction in order of entry height gives a
+fundamental domain, since multiplication and conjugation
+have triangular translation laws. Thus the product volume
+also holds for the nonabelian group, including the empty
+set of entries. Finally (GC2) or the common finite-index
+formula gives the actual covolume
+\[
+         \operatorname{covol}(\Gamma_\Lambda)
+                        =g^{-fb(w)}\mu(\Lambda).
+ \tag{GC8}
+\]
+This calculation uses the reference root normalization of
+the source's \texttt{IsPinnedR}. It does not equate an
+arbitrary, not yet pinned quotient measure with that
+normalization.
+
+For the phase, put
+\(s(A)=\sum_i A_{i,i+1}\) for an upper unitriangular
+frame matrix, so \(s(AB)=s(A)+s(B)\).
+Let \(U,U'\) be the two adapted changes of a moved term,
+and \(\xi\) its actual integral admission witness. The
+two compatible local frame matrices are \(U\) and
+\(U'\xi^{-1}\) in the rational frames.
+Local scaling multiplies their simple-root sums by
+\(c_v\). The original local character is
+\(\psi_{0,v}(x)=\psi_{E,v}(-x/\delta_v)\), evaluated
+at the simple-root sum divided by \(\theta_v\).
+The exact identity \(c_vg=\delta_v\theta_v\) therefore
+gives
+\[
+ \omega_v=
+ \psi_{E,v}\bigl((-s(U)+s(U')-s(\xi))/g\bigr).
+\]
+The global additive product formula, with the original
+real sign convention, gives
+\[
+ \prod_v\omega_v
+   =\psi_\infty(s(U))^{-1}\psi_\infty(s(U'))
+                          \psi_\infty(s(\xi))^{-1},
+ \qquad
+ \psi_\infty(x)=\exp(2\pi i\,\operatorname{Tr}_{E/\mathbb Q}(x)/g).
+ \tag{GC9}
+\]
+Equivalently, this follows by applying the product formula
+to each of the three root sums; the finite characters
+are trivial away from finitely many places. This keeps the
+integral admission phase rather than making all terms
+positive.
+
+For a fixed row key and rational double coset with point
+\(w\), the real orbital integral is the same operator
+after transport by the two rational flag unipotents,
+up to their simple-root characters and the covolume
+of their common stabilizer. This follows by changing
+variables in the two unipotent quotients: relevance is
+exactly what makes their shared character quotient
+trivial on \(S\), and integration over the arithmetic
+stabilizer first gives its covolume. In the pinned
+real quotient normalization the resulting operator is
+\(J_w(\nu)\), with the original global scalar
+\(\mathrm{scl}\,\mathrm{vol}(K_2)\). Unipotent translation
+of the witnesses contributes the ratio of their two
+characters. The factor from the original level character
+is \(\psi_\infty(s(\xi))^{-1}\). By (GC9) their product
+is the finite phase times a fixed unit depending only on
+the base mover. More explicitly, if the original
+base mover has matrices \(U_0,U'_0\), replacing them
+by \(U_0 A,U'_0 A'\) multiplies the right side of (GC9)
+by \(\psi_\infty(s(A))^{-1}\psi_\infty(s(A'))\), with
+the new admission witness retained. This is precisely
+the factor from the change of variables and its level
+character. Absorb the fixed unit in \(T_w\), so
+\(\|T_w\|_{\rm HS}=\|J_w(\nu)\|_{\rm HS}\).
+Thus on this pinned cell each amplitude is
+\(g^{-fb(w)}\mu(\Lambda)\prod_v\omega_v\,T_w\).
+Summing the original weighted vectors over the generic
+integral returns of this key gives, by (GC3),
+\[
+ \left\|\sum_{t\ {\rm generic\ in\ key}}\operatorname{vec}(t)
+            \right\|^2
+ =\mathrm{wt}(\mathrm{key})^2\,g^{-2fb(w)}
+                  \|J_w(\nu)\|_{\rm HS}^2
+                   \prod_{v\in P_*}|A_v^0(d_v)|^2.
+ \tag{GC10}
+\]
+The Hilbert--Schmidt normalization is the original one.
+This is an equality of the phase-sensitive sum, rather
+than a Cauchy--Schwarz loss in the number of integral terms.
+If the local generic set is empty both sides vanish.
+If the real operator vanishes, (GC10) still holds as a
+homogeneous equality, with no division by its norm.
+
+Equations (GC3)--(GC10) provide the class-summation
+and genus-weight components of the generic local input.
+They apply to the original pinned real cell measures;
+an additional comparison is needed wherever the selected
+measure is only a bounded scalar multiple of these
+measures. To finish \texttt{StepLocGenPinnedG}, one must
+make that scalar comparison uniformly on the whole
+family and identify \({\cal G}(M)\) with the explicit
+mean mass, including the source's \(AA\) normalization.
+The point-sum estimate in \texttt{StepThmBPinnedG}
+is not a consequence of the arithmetic identities alone.

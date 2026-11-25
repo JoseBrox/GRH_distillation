@@ -25,3 +25,7 @@ All paths below are relative to lean/src of jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17
 - Development/AbelianVarietyTheory/Proofs/FlagMeasures/TotalLeGeneric.lean, 6e26cf19494b52c8454e9f3ad8afd6fe257512ac, lines 97–170; AmpSqLeHeightMulMass.lean, 082ac913cb7e01ae0a659e6cb28f1b8ea7867bf9, generic part: local amplitude and total-to-generic mass estimates.
 
 The proof works directly with the underlying integral lattice and local Haar measures, rather than treating the imported Lean theorem names as proofs. It is not a Lean replay. The normalization of the subsequent real pinned Haar product and the global genus/row dictionary still need to be established in StepLocGenPinnedG. StepThmBPinnedG still needs its analytic point-sum comparison.
+
+## Subsequent integration
+
+The exact residue-field primitive-density formula was already available in [the signed density refinement](global-norm-frontier-primitive-density.md). The new contribution is its primitive-saturation Haar-mass and integral-class consumer, with an independent uniform bound. The [integral class summation theorem](flag-generic-global-classes.md) now gives the global orbit product, weighted genus unfolding and the phase-sensitive pinned class sum. Normalized mean mass and uniform pinned-measure comparison remain.
