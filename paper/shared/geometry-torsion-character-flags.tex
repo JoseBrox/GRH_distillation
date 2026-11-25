@@ -1,0 +1,320 @@
+\subsection{Torsion-character flags by finite flat cotangent sequences}
+\label{sec:geometry-torsion-character-flags}
+The following local calculation separates the finite flat algebra from
+the geometric inputs to the test-point theorem of
+Section~\ref{sec:geometry-relative-chern-comparison}.
+It applies to the original coordinate flag, not just a flag adapted to
+a valuation-ring basis.
+
+Let \(R\) be the valuation ring of an algebraically closed complete
+rank-one mixed-characteristic field \(C\), with additive valuation
+\(v(p)=1\). Put \(F=\mathbf F_{p^f}\), \(q=p^f\), and
+\(N=F^n\), and let \(G\) be a finite locally free commutative
+\(F\)-module scheme over \(R\), with its specified generic
+identification \(G(C)=N\). Write \(M=\mathcal O(G)\subset R^N\)
+for its evaluation lattice. We use the fundamental Teichm\"uller
+characters \(\chi_\tau:F\to R\), extended by zero at zero, indexed
+by the Frobenius orbit, so
+\(\chi_{\phi\tau}=\chi_\tau^p\).
+Write \(F_i\subset N\) for the first \(i\) coordinate subspace and
+\(G_i\subset G\) for its schematic closure (\(0\le i\le n\)).
+These closures are finite locally free: their coordinate algebras
+are the finitely generated torsion-free images of \(M\) under
+restriction to \(F_i\). Over a valuation ring such modules are free.
+The group and field actions descend because the corresponding
+generic identities hold in torsion-free algebras.
+We use the classical finite locally free subgroup quotient theorem
+(for commutative finite locally free groups), so \(G/G_i\) is
+finite locally free and \(G\to G/G_i\) is a \(G_i\)-torsor.
+In particular these assertions do not require a discrete valuation.
+
+Let \(A_\tau\subset R^n\) consist of coefficient vectors \(a\)
+such that \(\sum_j a_j\chi_\tau(x_j)\) is in \(M+pR^N\).
+Let \(D_{\tau i}\) be its coordinate-\(i\) image on vectors with
+coordinates \(<i\) zero. Let \(I_{\tau i}\subset R\) consist of
+\(c\) such that \(c\chi_\tau(x_i)\) on \(F_{i+1}\) is the
+restriction of a function of \(M\). These are the original
+\texttt{af}, \texttt{dId} and \texttt{xId}, respectively.
+All these coefficient lattices are finitely generated: the
+conditions are images or kernels of finite matrices over a
+valuation ring, for which finite Smith elimination applies.
+All \(D_{\tau i}\) and \(I_{\tau i}\) are nonzero principal ideals.
+For the first statement below, \(w\in R\) satisfies
+\(w^{p-1}\in pR^\times\).
+
+\paragraph{1. Annihilator and discriminant.}
+One has \(wR^n\subset A_\tau\) for every \(\tau\).
+In fact, for each \(\mathbf F_p\)-linear form
+\(\mu:N\to\mathbf F_p\), the generic character
+\(\zeta_p^{\mu(x)}\) extends to \(G\): it is a generic point of
+the finite Cartier dual, and \(R\) is integrally closed.
+Set
+\[
+ \ell(z)=\sum_{a=1}^{p-1}(-1)^{a+1}(z-1)^a/a,\qquad
+ u=\zeta_p-1 .
+\]
+The formal logarithm identity through degree \(p-1\), whose
+coefficients are \(p\)-integral, gives
+\(\ell(\zeta_p^b)\equiv b\ell(\zeta_p)\pmod{pR}\)
+for \(0\le b<p\): terms of degree at least \(p\) in \(u\)
+have valuation \(>1\). Moreover \(v(\ell(\zeta_p))=1/(p-1)\).
+Thus \(w\mu\) has a lift modulo \(p\) in \(M\), using integer
+representatives of \(\mu\). In an \(\mathbf F_p\)-basis of \(F\),
+each \(\chi_\tau(x_j)\) is a linear combination of such
+coordinate functions modulo \(p\), since its lift is additive
+modulo \(p\). This proves the inclusion. Evaluation at the
+coordinate vectors proves \(A_\tau\subset R^n\).
+
+For any of the groups \(P\) in this discussion, write
+\(\lambda(P)=v(\det\mathcal O(P))\) in the full evaluation
+lattice on its split generic points, and let
+\(d(P)=\operatorname{length}_v\omega_{P/R}\).
+Here the latter length of a finitely presented torsion module
+is the sum of valuations of its nonzero Smith invariants.
+There is an exact identity
+\begin{equation}\label{eq:torsion-character-discriminant}
+  2\lambda(P)=|P(C)|d(P).
+\end{equation}
+To see this without any tightness hypothesis, first recall why
+cotangent lengths are additive. Finite locally free group schemes
+are local complete intersections (SGA 3, Exp.~III, 4.15).
+Their cotangent complexes at the identity are two-term complexes
+of finite locally free modules in degrees \(-1,0\).
+In the generically \'{e}tale case the degree-\(-1\)
+differential is injective: its generic localization is an
+isomorphism and its domain is torsion-free. In an exact finite
+locally free group sequence \(H\to P\to Q\), transitivity for
+the cotangent complex, and flat base change to the identity
+fibre \(H\) of \(P\to Q\), give
+\[
+ 0\longrightarrow\omega_Q\longrightarrow\omega_P
+       \longrightarrow\omega_H\longrightarrow0 .
+\]
+All maps are the original differential maps. In particular
+\(d(P)=d(H)+d(Q)\), also after applying any unit-group
+character idempotent.
+
+For a rank-one \(F\)-module scheme \(Q_i=G_{i+1}/G_i\),
+the nonconstant augmentation character components all have rank
+one. By Raynaud's classification (Cor.~1.5.1 of
+\emph{Sch\'emas en groupes de type \((p,\ldots,p)\)},
+Bull.~SMF 102 (1974), 241--280), if
+\(I_{\tau i}=c_{\tau i}R\), the fundamental generators
+\(X_\tau=c_{\tau i}\chi_\tau\) give the presentation
+\[
+ \mathcal O(Q_i)=
+ R[X_\tau:\tau]/(X_\tau^p-\delta_{\tau i}X_{\phi\tau}:\tau),
+ \qquad
+ \delta_{\tau i}=c_{\tau i}^{p}/c_{\phi\tau,i}.
+\]
+The coefficient ideals here are indeed the specified
+\(I_{\tau i}\): a function on \(G_{i+1}\) constant on the
+generic \(G_i\)-cosets is invariant under \(G_i\) on the
+whole product, by flatness. Faithfully flat descent identifies
+it with a function on \(Q_i\). Conversely every function on
+\(Q_i\) pulls back to \(G_{i+1}\) and lifts to \(M\).
+
+The presentation implies, with the indicated coefficient
+identification and not just up to isomorphism of lengths,
+\begin{equation}\label{eq:torsion-character-cotangent}
+ \omega_{Q_i,\tau}=I_{\tau i}/I_{\phi^{-1}\tau,i}^{\otimes p}.
+\end{equation}
+Here the tensor power is its product ideal in \(R\).
+The monomials with exponents \(0,\ldots,p-1\) in the
+\(X_\tau\) form a basis. Their unscaled evaluation matrix
+is a unit matrix in determinant, because the nonconstant
+monomials enumerate the \(q-1\) multiplicative characters
+on \(F^\times\), extended by zero at zero. Consequently
+\[
+ \lambda(Q_i)=\tfrac12 q(p-1)\sum_\tau v(c_{\tau i}),
+ \qquad d(Q_i)=(p-1)\sum_\tau v(c_{\tau i}).
+\]
+For a finite locally free \(H\)-torsor \(P\to Q\), the relative
+discriminant ideal is the extension of the discriminant of
+\(H/R\): this can be checked after the faithfully flat
+base change trivializing the torsor. Transitivity of the
+trace discriminant then makes
+\(\lambda(P)/|P(C)|\) additive in \(H,Q\).
+Indeed the generic trace pairing on the split coordinate
+algebra is the dot product, whose Gram determinant in an
+integral evaluation basis has valuation \(2\lambda(P)\).
+Induction on the schematic coordinate flag, using the
+rank-one formula, proves
+\eqref{eq:torsion-character-discriminant} for \(G\) and every
+coordinate quotient \(G/G_i\).
+
+\paragraph{2. The two exact step-graph identities.}
+We specify the still-required geometric interface to the
+original graph \(\Theta_\tau\).
+Assume its first projection is the augmentation ideal \(M^+\),
+its second projection is \(L_\tau^\vee\), and its second-coordinate
+kernel is \(pL_\tau^\vee\), as in \texttt{Base.th}.
+Assume also the three original chart pins: the graph contains
+\(((M^+)^2,0)\); it is equivariant under \(F^\times\) acting by
+\(g(x)\mapsto g(ax)\) and by multiplication by \(\chi_\tau(a)\)
+on the second coordinate; and on the \(\chi_\tau\)-eigenspace
+\((g,0)\) in the graph implies \(g\in(M^+)^2\).
+These are exactly the pins of
+\texttt{chartD\_th\_sqIdeal\_mem\_and\_smul\_mem\_and\_eig\_mem\_sqIdeal}.
+They imply the actual map of the graph modulo \(p\) is
+\[
+ M^+\longrightarrow\omega_{G,\tau}
+               \xrightarrow{\ \sim\ } L_\tau^\vee/pL_\tau^\vee.
+\]
+Indeed the kernel over a fixed first coordinate is
+\(pL_\tau^\vee\); apply the character projector (with the
+unit denominator \(q-1\)) to obtain surjectivity and
+injectivity on the indicated augmentation quotient.
+
+Let \(K_{\tau i}\subset L_\tau^\vee\) be the second
+projection of the graph restricted to functions vanishing on
+\(F_i\). Since restriction \(M\to\mathcal O(G_i)\) is onto,
+the image modulo \(p\) is precisely the kernel of
+\(\omega_{G,\tau}\to\omega_{G_i,\tau}\). This follows directly
+by lifting a sum of products in the augmentation square.
+The preceding exact cotangent sequence gives
+\[
+ K_{\tau i}/K_{\tau,i+1}
+       \simeq\omega_{Q_i,\tau}
+       =I_{\tau i}/I_{\phi^{-1}\tau,i}^{\otimes p}.
+\]
+For the original step graph \(B_{\tau i}\), the map to this
+quotient sends \(c\) to the differential class of
+\(c\chi_\tau(x_i)\) restricted to \(G_{i+1}\).
+Its first projection is \(I_{\tau i}\); for any lift of this
+restricted function to \(M\) the class of its second coordinate
+modulo \(K_{\tau,i+1}\) is independent of the lift.
+Conversely all elements of \(K_{\tau,i+1}\) can be added to the
+second coordinate using functions zero on \(F_{i+1}\).
+The preceding quotient isomorphism therefore proves the
+literal identities
+\[
+ \operatorname{pr}_2 B_{\tau i}=K_{\tau i},\qquad
+ \ker(\operatorname{pr}_2:B_{\phi\tau,i}\to K_{\phi\tau,i})
+     =I_{\tau i}^{\otimes p}.
+\]
+The last kernel is identified via its first coordinate.
+This establishes two of the three identities of RC2 without
+any product equality of cotangent lengths of the full order
+or its intermediate flags. It does not replace the chart pins
+by an arbitrary abstract isomorphism of cotangent modules.
+
+\paragraph{3. The coordinate ideal equality from quotient generation.}
+Call a function affine modulo \(p\) if, after subtraction of
+its value at zero, it is additive on the split points modulo
+\(pR\). Suppose the coordinate algebra of \(G/G_i\) is generated
+over \(R\) by such functions, for every \(0\le i<n\). This is
+precisely the quotient-generation premise \texttt{GenAF}:
+invariant functions descend by the finite flat torsor, and
+conversely pull back. Under this single premise we prove
+\begin{equation}\label{eq:torsion-character-coordinate}
+ D_{\tau i}=I_{\tau i}
+\end{equation}
+without a further full-order tightness hypothesis.
+
+Let \(J_{\tau i}\subset I_{\tau i}\) consist of coefficients
+of restrictions to \(Q_i\subset G/G_i\) of affine-modulo-\(p\)
+functions in the augmentation \(\chi_\tau\)-eigenspace of
+\(\mathcal O(G/G_i)\). Pullback to \(G\) shows
+\(J_{\tau i}\subset D_{\tau i}\): such a function modulo
+\(p\) is a linear combination of the \(\chi_\tau(x_j)\) with
+\(j\ge i\). For clarity the fundamental characters give an
+\(R/pR\)-basis of additive coordinate functions, since their
+evaluation matrix on an \(\mathbf F_p\)-basis of \(F\)
+is invertible modulo the maximal ideal. Its reduction is a
+Moore matrix: a nonzero additive polynomial of degree at
+most \(p^{f-1}\) cannot vanish at all \(p^f\) field elements.
+Projection onto the chosen character is permitted since
+\(q-1\) is a unit. The coefficient at \(i\) can be taken to
+be the actual value on the \(i\)-th coordinate vector.
+
+By generation and restriction to the closed subgroup \(Q_i\),
+the differentials of these functions generate its cotangent
+module. Subtract their values at zero and project onto the
+\(\chi_\tau\)-component; projection preserves additivity
+modulo \(p\). Formula \eqref{eq:torsion-character-cotangent}
+gives
+\[
+ I_{\tau i}=J_{\tau i}+I_{\phi^{-1}\tau,i}^{\otimes p}.
+\]
+Whenever the second ideal is strictly smaller than the first,
+this forces \(J_{\tau i}=I_{\tau i}\), since the first ideal is
+principal over a local valuation ring. At an equality step
+the result propagates along Frobenius: the \(p\)-th power of
+an affine-modulo-\(p\) augmentation eigenfunction is again
+one, at the successor character. If every step is an equality
+then all \(I_{\tau i}=R\), by cycling the valuations. In that
+case \(Q_i\) is constant by the presentation. At least one
+\(J_{\tau i}\) must be the unit ideal: otherwise all the
+generating functions would restrict to constants modulo the
+maximal ideal on this constant subgroup. Indeed after removal
+of constants their reductions are additive and hence sums
+of their fundamental projections. This would contradict
+generation of its full residue function algebra. Propagating
+once around the orbit now proves \(J_{\tau i}=I_{\tau i}\)
+in every case. We obtain \(I_{\tau i}\subset D_{\tau i}\).
+
+For the reverse conclusion in degrees, let \(m=fn\),
+\(h=|N|=p^m\), and let \(A\subset R^m\) be the full additive
+coefficient lattice, expressed in any \(\mathbf F_p\)-coordinate
+basis. It contains \(wR^m\), is contained in \(R^m\), and
+decomposes into the \(A_\tau\) by the unit character projectors
+and the invertible Moore change of basis above. Put
+\[
+ \alpha=v(\det A)=\sum_{\tau,i}v(D_{\tau i}).
+\]
+In a Smith basis \(\epsilon_j b_j\) for \(A\), the \(b_j\)
+are the rows of a unit matrix, and
+\(0\le v(\epsilon_j)\le 1/(p-1)\).
+Choose lifts \(g_j\in M\) of these linear forms modulo \(p\).
+For \(p>2\), the normalized functions \(g_j/\epsilon_j\)
+are integral and reduce to the independent linear forms
+\(b_j\). For \(p=2\) the same argument works unless
+\(v(\epsilon_j)=1\); in this case take the exact lift by
+linear combination of the functions \(2\mu(x)=1-(-1)^{\mu(x)}\),
+which belong to \(M\) by Cartier duality.
+
+The evaluation matrix of the monomials in the normalized
+functions, with each exponent \(0,\ldots,p-1\), is invertible
+over \(R\). In the residue field this follows by the invertible
+linear change from the \(m\) original coordinates: the new
+linear forms generate the full function algebra, and their
+\(p\)-th powers are linear combinations of themselves, so the
+\(p^m\) indicated monomials span and form a basis.
+The unnormalized monomials belong to \(M\) and have
+evaluation determinant valuation
+\(\frac12 h(p-1)\alpha\).
+It follows that
+\[
+ \lambda(G)\le\tfrac12 h(p-1)\alpha,\qquad
+ \alpha\ge d(G)/(p-1)=\sum_{\tau,i}v(I_{\tau i})
+\]
+by \eqref{eq:torsion-character-discriminant} and cotangent
+additivity. The inclusions already proved give the opposite
+inequality term by term, and hence equality in every term.
+Principal ideals in a valuation ring with the same valuation
+are equal. This proves \eqref{eq:torsion-character-coordinate}.
+
+The same determinant calculation gives a convenient sufficient
+condition for the quotient-generation premise itself. For any
+coordinate quotient \(P\), if its additive coefficient lattice
+satisfies \((p-1)\alpha(P)=d(P)\), the above unnormalized
+monomials have exactly the determinant valuation of
+\(\mathcal O(P)\); their inclusion is therefore equality.
+They generate the order by affine-modulo-\(p\) functions.
+Thus just the original additive-coefficient degree equality
+on these quotient orders suffices, without separate
+discriminant identities. This last equality is not asserted
+for arbitrary finite flat groups by the argument.
+
+In summary, the annihilator inclusion is automatic for the
+finite flat order, the two step-graph identities use only the
+literal chart pins, and the remaining coordinate comparison
+uses quotient generation (or its sufficient determinant
+equality). The proof replaces the full \texttt{FlagConcl}
+length-and-ideal comparison as an input to the relative
+Chern calculation. At the original geometric test points one
+must still realize the specified order, the chart pins and
+quotient generation, and the exact Hodge image and kernel
+comparisons RC1. In particular the existence of an induced
+finite flat group alone does not prove all \texttt{TestFacts}.
