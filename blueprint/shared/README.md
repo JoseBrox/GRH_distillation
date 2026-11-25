@@ -549,7 +549,8 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 
 - [Generic pinned local supplier](../../notes/flag-generic-pinned-input.md): exact root scale and finite family witness, StepLocGenPinnedG; analytic weighted point sum remains.
 
-- [Nongeneric defect stratification](../../notes/flag-defect-stratification.md): the original strict-image/first-type local saving and the large-defect second-type saving, plus a weaker unconditional gain on every nongeneric term; small full-image character cancellation remains.
+- [Nongeneric defect stratification](../../notes/flag-defect-stratification.md): the original strict-image/first-type local saving and the large-defect second-type saving, plus a weaker unconditional gain on every nongeneric term; the full saving follows from the next item.
+- [Second-type cancellation](../../notes/flag-second-type-cancellation.md): reversible Eichler moves, nontrivial quadratic Fourier cancellation, exact orbit weights, and the complete nongeneric local saving SC8.
 
 - [All-cell relative functionals and rotated weighted summation](../../notes/global-norm-frontier-all-cell-pieri.md): exact transfer of the local Pieri expansions to relevant nonzero-Gram cells; conditional weighted-sum theorem with rank-dependent pole cancellation. The unweighted near-parameter pointwise estimate remains.
 
