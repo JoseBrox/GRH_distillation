@@ -1,0 +1,341 @@
+\subsection{Retained column isometries and positive traces at a fixed scale}
+\label{sec:retained-column-positive-traces}
+
+All inner products in this subsection are conjugate-linear in the
+first variable. The comparison parameter is always the originally
+prescribed positive number; no observed norm is substituted for it.
+
+\begin{lemma}[The scalar-bearing retained column dictionary]
+\label{lem:retained-column-isometry}
+Let \(E,H,C_i,V_i\) be finite-dimensional complex Hermitian spaces.
+Let \(J:E\to H\) be an antiunitary isometric embedding, \(V:E\to E\)
+and \(U_i:V_i\to V_i\) unitary, and \(I_i:V_i\to C_i\) isometric.
+Suppose the actual bilinear forms and period maps \(P_i:C_i\to H\)
+satisfy
+\[
+ B_i(x,y)=a_i\langle JVy,P_iI_iU_ix\rangle,\qquad a_i\ne0.
+ \tag{RCT1}
+\]
+There is a linear coisometry \(C:H\to E^\vee\) with
+\[
+ C(h)(y)=\langle JVy,h\rangle,\qquad
+ CC^*=1,\qquad C^*C=\Pi_{J(E)},\qquad
+ B_i=a_iCP_iI_iU_i.
+\]
+Here \(E^\vee\) is the complex bilinear dual with its dual norm.
+Let \(j_i:V_i^0\to V_i\) be isometries and \(\Pi_0\) an
+orthogonal projection on \(E^\vee\). Put
+\(\Pi=C^*\Pi_0C\), \(J_i=I_iU_ij_i\), and fix the actual
+normalizers \(c_i>0\). The retained maps
+\(T_i=c_i^{-1/2}\Pi_0B_ij_i\) then have exact Gram blocks
+\[
+ T_i^*T_j=
+ \frac{\bar a_i a_j}{\sqrt{c_ic_j}}\,
+                 J_i^*P_i^*\Pi P_jJ_j
+ \tag{RCT2}
+\]
+and target Gram
+\[
+ \sum_iT_iT_i^*
+ =C\left(\sum_i\frac{|a_i|^2}{c_i}
+                    \Pi P_iJ_iJ_i^*P_i^*\Pi\right)C^*.
+ \tag{RCT3}
+\]
+\end{lemma}
+\begin{proof}
+The two conjugations in \(\langle JVy,h\rangle\) make it
+linear in \(y\), and it is linear in \(h\) by convention.
+Its dual norm is the norm of the orthogonal projection of
+\(h\) onto \(J(E)\). Thus \(C\) restricts to a linear
+isometry from \(J(E)\) onto \(E^\vee\), proving the two
+coisometry identities. In particular \(\Pi\) is an orthogonal
+projection with range in \(J(E)\), and
+\(\Pi_0C=C\Pi\). Now (RCT1) gives
+\[
+ T_i=(a_i/\sqrt{c_i})\,C\Pi P_iJ_i.
+\]
+Taking adjoints and using \(C^*C\Pi=\Pi\) proves
+(RCT2)--(RCT3).
+\end{proof}
+
+The phases of \(a_i\) can be absorbed in unitary source
+coordinates. Their moduli cannot: the weights \(|a_i|^2/c_i\)
+remain in the target Gram and in the diagonal source blocks.
+A nonzero comparison scalar alone is not an isometry for a
+preassigned arithmetic metric. Thus (RCT1), for the actual
+theta and period maps, is an explicit application hypothesis.
+
+\paragraph{The finite projector at the actual row evaluation.}
+The finite part of the retained-row comparison has an exact
+normalization. We spell it out to separate it from the remaining
+onto-row and theta-period identities. Let \(K_f\) be the original
+finite compact group, let \(K(g)\) be its normal congruence subgroup,
+and put
+\[
+ \Gamma=K_f/K(g),\qquad v_g=\mu_f(K(g))\in(0,\infty).
+\]
+Write \(e_{\rm an}=\sum_{\gamma\in\Gamma}e_\gamma\gamma\)
+for the original finite idempotent. The analytic operator is
+\[
+ G_{\rm an}f=\int_{K_f}
+       \frac{e_{\bar k}}{v_g}R(k)f\,d\mu_f(k),
+ \qquad R(k)f(x)=f(xk).
+                                                        \tag{RP1}
+\]
+Thus its kernel is divided by the volume of the congruence
+subgroup, not by \(|\Gamma|\) or by a compact-type dimension.
+
+Let \(M\) be the prescribed automorphic multiplicity space,
+with its finite action \(\rho\), and let
+\(\sigma:\Gamma\xrightarrow{\sim}\Gamma_{\rm TC}\)
+be the original identification of the two finite quotient groups.
+For the prescribed common lowest vector \(v_0\), group
+identification \(\iota\), and finite placement \(t\), the actual
+translated evaluation is
+\[
+ E_t(T)(x)=T(v_0)(\iota^{-1}(x)t).
+                                                        \tag{RP2}
+\]
+In the following lemma its values are assumed to belong to the
+original \(L^2\) space. The two finite pins mean explicitly that
+\[
+ R(k)E_t(T)=E_t\bigl(\rho(\sigma(\bar k))T\bigr)
+ \quad(k\in K_f),\qquad
+ e_{\rm TC}(\sigma\gamma)=\overline{e_\gamma}.
+                                                        \tag{RP3}
+\]
+The first equality is in \(L^2\), and the second uses the original
+coefficient embedding. They are the source's level-action and
+coefficient-matching clauses. Let \(\mathfrak c\) denote complex conjugation
+of functions, an antiunitary map on this \(L^2\) space.
+
+\begin{lemma}[Exact finite projector transport]
+\label{lem:retained-finite-projector-transport}
+Under (RP1)--(RP3), one has
+\[
+       \mathfrak c G_{\rm an} \mathfrak c\,E_t(T)=E_t(e_{\rm TC}T)
+                                                        \tag{RP4}
+\]
+for every \(T\in M\), with no additional scalar. Consequently
+\[
+ E_t(e_{\rm TC}M)=\mathfrak c G_{\rm an}\mathfrak c\bigl(E_t(M)\bigr).
+                                                        \tag{RP5}
+\]
+If the actual evaluation is additionally onto the prescribed
+automorphic row space and satisfies its original norm identity
+\(\|E_tT\|^2=c_{\rm ev}\|T\|_M^2\), with
+\(c_{\rm ev}>0\), its normalization by
+\(c_{\rm ev}^{-1/2}\) identifies these two retained spaces
+isometrically.
+\end{lemma}
+
+\begin{proof}
+Choose a representative \(k_\gamma\) of each reduction class.
+The first pin implies that \(E_t(T)\) is right \(K(g)\)-invariant
+and that its translate is constant, as an \(L^2\) vector, on
+each fibre \(k_\gamma K(g)\). Every fibre has Haar measure
+\(v_g\). Integrating (RP1) fibre by fibre therefore gives
+\[
+ G_{\rm an}f=\sum_{\gamma\in\Gamma}
+                      e_\gamma R(k_\gamma)f
+\]
+for \(f\) in the evaluation image, and also for its complex
+conjugate. The denominator \(v_g\) cancels the actual fibre
+volume. Literal right translation commutes with complex
+conjugation. Hence (RP3) gives
+\[
+ \begin{split}
+ \mathfrak c G_{\rm an} \mathfrak c E_t(T)
+   &=\sum_\gamma\overline{e_\gamma}R(k_\gamma)E_t(T)\\
+   &=E_t\left(\sum_\gamma
+           e_{\rm TC}(\sigma\gamma)\rho(\sigma\gamma)T\right)
+     =E_t(e_{\rm TC}T).
+ \end{split}
+\]
+The expression is independent of the chosen representatives.
+Taking images proves (RP5). The additional positive norm identity
+makes the normalized evaluation an isometry, and the additionally
+assumed onto statement makes its restriction onto the retained
+target. These last two properties have not been inferred from the
+finite projector computation.
+\end{proof}
+
+\paragraph{The remaining common row map and its scalar.}
+The normalized finite theta dictionary identifies the algebraic
+terminal class pairing with its complex evaluation. To identify
+that pairing with the literal Poincare columns, the missing
+comparison is the same one in the source's \(\mathrm{RowTieT}\)
+and \(\mathrm{MIid}\): a single semilinear row map \(e_R\)
+must satisfy
+\[
+ \Theta_{\mu_0}(j_R e_Vy)=\lambda\,
+              e_R(\iota_{\mu_0}c_Fy),\qquad \lambda\ne0,
+                                                        \tag{RP6}
+\]
+on the original row quotient, be onto the specified good row
+space, and have its original common norm ratio. Its translated
+evaluation must be the same row realization used in (RP4).
+The anchored see-saw identity must then hold with that map,
+for every word and the actual columns.
+
+For precision, write \(\epsilon\) for the fixed identity or
+complex-conjugation coefficient transport. In the source's joined
+identity let \(d.a_u\ne0\) be the anchored analytic scalar,
+\(\lambda\) the scalar in (RP6), and \(\kappa_u\ne0\) the
+pairing conversion between the same row evaluation and the
+literal Poincare realization. Conjugating the row and column
+norm-preserving maps through their prescribed similarities gives
+unitaries \(V,U_u\); their norm ratios cancel in this conjugation.
+The resulting scalar in the bilinear dictionary is exactly
+\[
+ a_u=\epsilon(d.a_u\lambda)\kappa_u,\qquad
+ B_u(x,y)=a_u\langle JV y,\,P_u I_u U_u x\rangle.
+                                                        \tag{RP7}
+\]
+Here the Hilbert product is conjugate-linear in its first argument,
+\(J\) is the original antiunitary row inclusion, and \(I_u\)
+is the original source inclusion. The formula follows first on
+the algebraic coordinate bases from the base-tuple see-saw
+identity, (RP6), and the pairing conversion; bilinearity extends
+it to all complex arguments. With
+\(\widehat P_u=c_{0X,u}^{-1/2}P_u\), the scalar in (RP7)
+becomes \(a_u\sqrt{c_{0X,u}}\). Neither (RP4) nor the finite
+theta dictionary proves that its modulus is one. The actual
+onto-row and anchored identities in (RP6)--(RP7) remain to be
+supplied; the finite-projector lemma does not assume their
+conclusion under a change of notation.
+
+\input{shared/retained-actual-row-evaluation}
+
+\paragraph{Why separate norm identities do not supply this map.}
+There is a finite-dimensional obstruction to replacing the common
+row identity by the separate norms of the columns. Take two
+one-dimensional source spaces and target \(\mathbb C^2\).
+Let the two period columns be \(P_1z=ze_1\), \(P_2z=ze_2\),
+and let the two candidate theta columns be
+\(B_1z=ze_1\), \(B_2z=ze_1\). All four columns are isometries.
+Their block-diagonal source Gram operators are both \(I_2\).
+No common target
+unitary and separate nonzero source scalars can identify the
+families, since one pair of image lines is orthogonal and the
+other pair coincides. At the same prescribed normalizer \(c=2\),
+the target operators are respectively \(I_2\) and
+\(\operatorname{diag}(2,0)\); their normalized target excesses
+are \(0\) and \(1/2\), although both source deficits vanish.
+This example does not refute the actual theta comparison. It
+shows why the common row realization is a necessary mathematical
+step before transferring the positive-trace estimates.
+
+\begin{lemma}[Restrictions under positive operator majorants]
+\label{lem:retained-positive-majorants}
+For maps \(T_i:V_i\to W\), put
+\[
+ S=\bigoplus_iT_i^*T_i,\qquad Q=\sum_iT_iT_i^*,\qquad
+ R=\sum_i\dim V_i>0,\qquad D=\dim W>0.
+\]
+Suppose \(S\ge\alpha I-E_s\) and \(Q\le\beta I+E_t\),
+where \(\alpha,\beta\ge0\) and \(E_s,E_t\ge0\).
+Restrict by source isometries \(j_i\) and a target projection
+\(\Pi\) of rank \(d>0\), with total source rank \(R_0>0\).
+For \(c_0>0\), let \(g_0,b_0\) be the prescribed positive
+traces of these restricted maps. Then
+\[
+ \begin{split}
+ c_0(g_0+b_0)\le{}&
+ \operatorname{tr}(j^*E_sj)+\operatorname{tr}E_t+\beta(D-d)\\
+ &+(c_0-\alpha R_0)_++(\beta d-c_0)_+,
+ \end{split}
+ \tag{RCT4}
+\]
+where \(j=\bigoplus_i j_i\).
+\end{lemma}
+\begin{proof}
+Write \(Q'=\sum_iT_ij_ij_i^*T_i^*\le Q\). The positive
+source loss caused by \(\Pi\) has trace
+\(L=\operatorname{tr}((1-\Pi)Q')\), at most
+\(\beta(D-d)+\operatorname{tr}((1-\Pi)E_t)\).
+The source positive trace is at most
+\[
+ \operatorname{tr}(j^*E_sj)+L+(c_0-\alpha R_0)_+.
+\]
+The target positive trace is at most
+\(\operatorname{tr}(\Pi E_t\Pi)+(\beta d-c_0)_+\).
+These assertions follow from the variational formula for
+the trace of a positive part. Adding them proves (RCT4):
+the two complementary traces of \(E_t\) sum to its full
+trace without requiring any operators to commute.
+\end{proof}
+
+Taking \(\alpha=c/R,\ \beta=c/D\) and the original positive
+deficit and excess operators gives
+\eqref{shared-prescribed-restriction-theta}. In particular
+the target excess is charged once under both restrictions.
+The formula remains available when the final scale \(c_0\)
+is prescribed independently of the retained ranks.
+
+\begin{theorem}[Second moments at the original normalizer]
+\label{thm:retained-trace-fixed-moment}
+For the actual final maps, let \(S,Q,R,D\) be as above and
+\(M=\operatorname{tr}S=\operatorname{tr}Q\). At any
+prescribed \(c>0\),
+\[
+ g_c+b_c=
+ \frac{\|S-(c/R)I\|_1+\|Q-(c/D)I\|_1}{2c}.
+ \tag{RCT5}
+\]
+Consequently
+\[
+ g_c+b_c\le
+ \frac{\sqrt{R\operatorname{tr}(S^2)-2cM+c^2}
+       +\sqrt{D\operatorname{tr}(Q^2)-2cM+c^2}}{2c}.
+ \tag{RCT6}
+\]
+If known \(\varepsilon,\eta\ge0\) satisfy
+\[
+ R\|S-(c/R)I\|_{\rm HS}^2\le\varepsilon c^2,\qquad
+ D\operatorname{tr}(Q^2)\le(1+\eta)M^2,
+\]
+then
+\[
+ g_c+b_c\le
+ \frac{\sqrt{\varepsilon}
+       +\sqrt{\varepsilon+\eta(1+\sqrt{\varepsilon})^2}}2.
+ \tag{RCT7}
+\]
+These statements include \(M=0\).
+\end{theorem}
+\begin{proof}
+For a Hermitian operator \(A\),
+\(\operatorname{tr}A_+=(\|A\|_1+\operatorname{tr}A)/2\).
+Apply this first to \((c/R)I-S\), then to \(Q-(c/D)I\).
+Their traces \(c-M\) and \(M-c\) cancel, giving (RCT5).
+The trace-norm/Hilbert--Schmidt inequality in dimensions
+\(R,D\), followed by expansion of the two squares, gives
+(RCT6). The two radicands are respectively
+\(R\|S-(c/R)I\|_{\rm HS}^2\) and
+\(D\|Q-(c/D)I\|_{\rm HS}^2\), so are nonnegative.
+
+Under the last hypotheses, Cauchy--Schwarz gives
+\(|M/c-1|\le\sqrt{\varepsilon}\). Therefore
+\[
+ \frac{D\operatorname{tr}(Q^2)-2cM+c^2}{c^2}
+ \le\eta(M/c)^2+(M/c-1)^2
+ \le\eta(1+\sqrt{\varepsilon})^2+\varepsilon.
+\]
+Substitution in (RCT6) proves (RCT7).
+\end{proof}
+
+If these formulas give a bound \(E_u\) for the actual
+\(g_u+b_u\) at each required parameter, the established
+height comparison yields
+\[
+ P_{\rm norm}(x)\le\kappa(x)^{-1}\operatorname{avg}_u
+                  \min\{H_u,E_u(U_u+H_u)\}.
+ \tag{RCT8}
+\]
+Every weight, map, retained subspace and positive normalizer
+in this implication is the prescribed one. It neither
+constructs the common arithmetic theta/period family nor
+provides the numerical second-moment errors for its moving
+windows. Those are separate hypotheses, still required
+before (RCT8) supplies the final arithmetic budget.

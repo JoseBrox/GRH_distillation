@@ -1,6 +1,6 @@
 # Reduced generic archimedean moment
 
-[Mathematical proof](../paper/shared/flag-generic-reduced-moment.tex). This is a direct concrete replacement of the arithmetic brackets in the generic assembly, not an assertion that StepThmBPinnedG is proved.
+[Mathematical proof](../paper/shared/flag-generic-reduced-moment.tex). This is a direct concrete replacement of the arithmetic brackets in the generic assembly. The separate [pointwise and normalization continuation](w08-analytic-and-retained-continuation.md) now supplies the analytic point sum needed here.
 
 - RM1: sum only generic saturation masses. The original weighted local second moment is bounded by 2 Hp^(2s²+2s) ngen(C), s=r+1, with constant one at good places.
 - RM2: uniform summability by disjoint complex polydisks around the CM Minkowski lattice. The bound is 14^(fs), instead of 64^(fs), for the original inverse block-minor weight summed over integral block-end points. No restriction on the field discriminant is needed.
@@ -16,4 +16,4 @@ Pinned source jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de:
 - Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/MainEqSteps.lean: A≥C1+C0+38 in abstract consumer.
 - Formalism/SharpRestriction/CuspSpanNormBounds/BesselShellMomentBounds.lean (blob 6280709a4f1303e4f5afae10333c8174593795b3), lines 509–556 and 815–992: same point weight and one-place-to-global passage. No stronger analytic estimate is inferred from the arithmetic packing proof.
 
-The remaining real pointwise estimates and their transfer to the actual pinned Jacquet norm are open; proving the smaller moment is sufficient for the generic row calculation without proving the full quantified StepThmBPinnedG. The separate small full-image nongeneric defect phase estimate is now supplied by [SC1–SC8](flag-second-type-cancellation.md). No Lean replay or manuscript build was performed.
+The real pointwise estimate and exact pinned Jacquet normalization are now supplied for the actual family. This smaller moment remains useful because it reduces the weight needed in the generic row calculation. The separate small full-image nongeneric defect phase estimate is now supplied by [STC1–STC8](flag-second-type-cancellation.md). The new second-type proof has passed independent mathematical review and exact finite Fourier checks. No Lean replay is claimed.

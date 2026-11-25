@@ -1,0 +1,133 @@
+\subsection{A concrete positive-trace budget from the original period kernels}
+\label{sec:retained-period-window-budget}
+
+This statement isolates the remaining quantitative inputs on the
+actual period family.  The normalizers are the original seed
+normalizers, and the total calibration is prescribed independently
+of the observed trace.  The hypotheses below are estimates for
+the literal period Gram blocks, not for substitute column maps.
+
+Let \(A_u=c_{0X,u}^{-1/2}P_u:C_u\to H\) be the original
+finite family, with \(d_u=\dim C_u\), \(D=\dim H>0\),
+\(R=\sum_u d_u>0\), and \(D_*>0\) the original proposed
+dimension main term.  Put
+\[
+ K_{uu'}=A_u^*A_{u'},\qquad
+ S=\bigoplus_uK_{uu},\qquad Q=\sum_uA_uA_u^*.
+                                                        \tag{PW1}
+\]
+Assume the actual kernel estimates
+\[
+ \|K_{uu}-I\|_{\rm HS}^2\le q^2d_u,
+ \qquad
+ \|K_{uu'}\|_{\rm HS}^2
+       \le(1+\tau)\frac{d_ud_{u'}}{D_*}\quad(u\ne u'),
+ \qquad q,\tau\ge0 .                                  \tag{PW2}
+\]
+These are the diagonal defect and the distinct-word estimate.
+In the original source route one may take
+\[
+ q=\sqrt{x_K}+\sqrt{C_0/\Gamma},\qquad
+ \tau=b^{-6},\qquad x_K=\exp(-kf\log k),                 \tag{PW3}
+\]
+once the nonzero-Gram diagonal remainder and the distinct-word
+scalar estimate have been established.  Formula (PW3) is a
+consequence of those estimates, not a replacement for them.
+
+\begin{theorem}\label{thm:retained-period-window-budget}
+Write
+\[
+ \sigma=D_*/R,\qquad \xi=|D/D_*-1|,\qquad
+ \mathcal E=\frac12\left(q+
+  \sqrt{(1+\xi)\bigl(1+\tau+(1+q)^2\sigma\bigr)-1+2q}
+                         \right).                      \tag{PW4}
+\]
+At the prescribed calibration \(c=R\), the original source
+and target positive traces satisfy \(g_R+b_R\le\mathcal E\).
+For actual source isometries \(j_u:C_u^0\to C_u\) and an
+actual target projection \(\Pi\), write
+\[
+ R_0=\sum_u\dim C_u^0>0,\qquad d=\operatorname{rank}\Pi>0,
+ \qquad r_0=R_0/R,\qquad v_0=d/D.
+\]
+If the prescribed retained calibration is \(c_0=R_0\), then
+the same retained maps \(\Pi A_uj_u\) satisfy
+\[
+ g_0+b_0\le
+       \frac{\mathcal E+\max\{1-r_0,1-v_0\}}{r_0}.
+                                                        \tag{PW5}
+\]
+For an arbitrary prescribed \(c_0=\theta R>0\), the conclusion
+instead retains the exact calibration terms:
+\[
+ g_0+b_0\le
+ \frac{\mathcal E+1-v_0+(\theta-r_0)_++(v_0-\theta)_+}
+      {\theta}.                                       \tag{PW6}
+\]
+No equality between \(c_0\) and an observed trace is used.
+\end{theorem}
+
+\begin{proof}
+Let \(M=\operatorname{tr}S=\operatorname{tr}Q\).  Summing
+the diagonal estimate in (PW2) gives
+\[
+ \|S-I\|_{\rm HS}^2\le q^2R,
+       \qquad |M-R|\le qR.                             \tag{PW7}
+\]
+The second assertion is Cauchy--Schwarz on the whole direct
+sum.  Also
+\(\|K_{uu}\|_{\rm HS}\le(1+q)\sqrt{d_u}\).
+Using the same common target for every column gives the exact
+identity
+\[
+ \operatorname{tr}(Q^2)=\sum_{u,u'}\|K_{uu'}\|_{\rm HS}^2.
+\]
+Consequently
+\[
+ \operatorname{tr}(Q^2)
+       \le(1+\tau)R^2/D_*+(1+q)^2R.                    \tag{PW8}
+\]
+The discarded diagonal subtraction in the off-diagonal sum
+is nonnegative.  Equations (PW7)--(PW8) imply
+\[
+ \frac{D\operatorname{tr}(Q^2)-2RM+R^2}{R^2}
+ \le(1+\xi)\bigl(1+\tau+(1+q)^2\sigma\bigr)-1+2q.
+                                                        \tag{PW9}
+\]
+The right-hand side is nonnegative because all four parameters
+\(\xi,\tau,\sigma,q\) are nonnegative.  The exact prescribed
+trace identity and the Hilbert--Schmidt bound in
+Theorem~\ref{thm:retained-trace-fixed-moment}, applied with
+\(c=R\), now give (PW4).  Apply the joint source/target
+restriction inequality with this same prescribed calibration
+to obtain (PW6).  For \(\theta=r_0\), its extra numerator is
+\[
+       1-v_0+(v_0-r_0)_+=\max\{1-v_0,1-r_0\},
+\]
+which gives (PW5).
+\end{proof}
+
+For example, when \(q,\xi\le1\),
+\[
+ \mathcal E\le\tfrac12q+
+                  \tfrac12\sqrt{\xi+2\tau+8\sigma+2q}.
+                                                        \tag{PW10}
+\]
+Thus quantitative bounds for the four original numbers
+\(q,\xi,\tau,\sigma\), together with the actual retained
+rank fractions and calibration, give a numerical bound at
+every requested window.  At each arithmetic parameter this
+may be substituted into the established norm penalty as
+\[
+ P_{\rm norm}(x)\le\kappa(x)^{-1}
+       \operatorname{avg}_u
+           \min\{H_u,\mathcal E_{0,u}(U_u+H_u)\},        \tag{PW11}
+\]
+where \(\mathcal E_{0,u}\) is (PW5) or (PW6) for the actual
+maps and scalars.  To prove the moving arithmetic budget one
+must establish those bounds uniformly at the required samples
+and identify the retained theta columns with these normalized
+period columns, including every scalar modulus.  The newly
+proved pointwise estimate and weighted point sum alone do not
+supply the distinct-word leading constant \(1+\tau\) in (PW2),
+the dimension comparison \(\xi\), or that common-row identity.

@@ -535,23 +535,29 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Deep Case II residual chain](../../notes/rh-case-II-residual-chain.md): the original three polynomial links through good residual points; automorphic support transport remains open.
 - [Rank-four weight-collision bound](../../notes/rh-rank-four-weight-collision.md): the exact dimension loss under the original finite-weight property, not the construction of the automorphic ideal.
 
-- [Nondegenerate flag cells and rational-normal count](../../notes/flag-nondegenerate-normal-count.md): full level and different content, occupied points, and rational normal multiplicities; integral class amplitudes remain open.
+- [Nondegenerate flag cells and rational-normal count](../../notes/flag-nondegenerate-normal-count.md): full level and different content, occupied points and rational normal multiplicities; the later generic class and gluing results supply the corresponding amplitude inputs.
 
 - [Off-diagonal zero-Gram and retained trace cost](../../notes/flag-retained-zero-gram-traces.md): entire zero-Gram contribution, with exact target leakage and prescribed normalization.
 
-- [Generic local amplitudes and primitive mass](../../notes/flag-generic-local-amplitude.md): exact primitive densities and stabilizer masses, linked frame-class weights and the improved generic local estimates. Global pinned inputs remain open.
+- [Generic local amplitudes and primitive mass](../../notes/flag-generic-local-amplitude.md): exact primitive densities and stabilizer masses, linked frame-class weights and the improved generic local estimates. The later gluing, AA and analytic comparison results supply the pinned inputs.
 
 - [Integral class summation in generic rational cells](../../notes/flag-generic-global-classes.md): local-orbit product, reciprocal row/genus weights, exact height and pinned phase-sensitive class sum; the generic mass reduces to the original definite gluing mass.
 
-- [Exact generic gluing mass and block-end height gain](../../notes/flag-generic-gluing-mass.md): absolute mass and local Jacobian, uniform density product, zero-loss Haar-weight telescoping; the AA and pinned analytic comparisons remain open.
+- [Exact generic gluing mass and block-end height gain](../../notes/flag-generic-gluing-mass.md): absolute mass and local Jacobian, uniform density product, zero-loss Haar-weight telescoping; the subsequent AA and exact pinned comparison results supply those normalizations.
 
 - [Exact AA period normalization](../../notes/flag-aa-normalization.md): GM11 and GM12, including finite Haar ratios and the complete-frame and big-cell Jacobians.
 
-- [Generic pinned local supplier](../../notes/flag-generic-pinned-input.md): exact root scale and finite family witness, StepLocGenPinnedG; analytic weighted point sum remains.
+- [Generic pinned local supplier](../../notes/flag-generic-pinned-input.md): exact root scale and finite family witness, StepLocGenPinnedG, combined below with the completed analytic point-sum supplier.
 
 - [Nongeneric defect stratification](../../notes/flag-defect-stratification.md): the original strict-image/first-type local saving and the large-defect second-type saving, plus a weaker unconditional gain on every nongeneric term; the full saving follows from the next item.
-- [Second-type cancellation](../../notes/flag-second-type-cancellation.md): reversible Eichler moves, nontrivial quadratic Fourier cancellation, exact orbit weights, and the complete nongeneric local saving SC8.
+- [Second-type cancellation](../../notes/flag-second-type-cancellation.md): reversible Eichler moves, nontrivial quadratic Fourier cancellation, exact orbit weights, and the complete nongeneric local saving STC8.
 
-- [All-cell relative functionals and rotated weighted summation](../../notes/global-norm-frontier-all-cell-pieri.md): exact transfer of the local Pieri expansions to relevant nonzero-Gram cells; conditional weighted-sum theorem with rank-dependent pole cancellation. The unweighted near-parameter pointwise estimate remains.
+- [All-cell relative functionals and rotated weighted summation](../../notes/global-norm-frontier-all-cell-pieri.md): exact transfer of the local Pieri expansions to relevant nonzero-Gram cells; weighted-sum reduction with rank-dependent pole cancellation. The sufficient pointwise theorem and exact finite-family reserve check now discharge its analytic premise.
 
-- [Reduced generic point moment](../../notes/flag-generic-reduced-moment.md): generic-only local mass, 14^(fs) endpoint summability, concrete sufficient point weight 6s² (rather than 43s²), with original normalizations; real pointwise estimates remain.
+- [Reduced generic point moment](../../notes/flag-generic-reduced-moment.md): generic-only local mass, 14^(fs) endpoint summability, concrete sufficient point weight 6s² (rather than 43s²), with original normalizations; the actual pointwise and norm suppliers are now supplied.
+
+- [Archimedean pointwise and retained-trace continuation](../../notes/w08-analytic-and-retained-continuation.md): adaptive quadratic grid, spectral energy, direct PBW cutoff limit, compact Wigner chains and exact character transport; the original spectral reserve is checked for the full finite family used by the point sum. Independent mathematical review is complete; the stronger full near-parameter interface is not asserted.
+
+- [Exact pinned amplitude and row norm](../../notes/flag-exact-norm-comparison.md): one common row scalar cancels, giving `Cfac=K0^-1` and `C1=Ca=Cn=0` in the actual `StepThmBPinnedG` route.
+
+- [Retained theta columns and prescribed positive traces](../../notes/retained-column-positive-traces.md): exact scalar-bearing Gram transport, literal finite-projector comparison, the sharper joint restriction cost `g+b`, and fixed-normalizer trace/second-moment identities. The actual common theta row and moving concentration budgets remain open.

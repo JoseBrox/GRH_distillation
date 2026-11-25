@@ -1,0 +1,288 @@
+\subsection{Removing the Gram cutoff at level zero}
+\label{actual-gram-cutoff-pbw}
+
+The cutoff can be removed without estimating differentiated terminal
+word densities.  The reason is that the original level-zero form is a
+Jacquet pairing with a product of central Capelli operators.  Compact
+invariance of the Gram polynomial and a relative
+Poincare--Birkhoff--Witt filtration bound the
+number of derivatives which can hit the cutoff independently of the
+compact dimension.  This gives a sufficient quadratic Gram power;
+it does not assert the sharper source statement for every smaller
+admissible power.
+
+Put $s=r+1$, $n=k+2r+1$, and retain the original Hermitian space
+$V=U\oplus W\oplus U^\vee$, with $\dim U=r$ and $W$ of
+signature $(k,1)$.  The original right compact group
+$K=K_{z'}$ fixes $U,U^\vee,z'$ and acts unitarily on
+$W'_+=W\cap(z')^\perp$.  Thus $K\simeq U(k)$.
+It is this particular subgroup which is used below.  Its invariance
+is required only of the Gram polynomial.  The input coefficient
+need not be finite under this compact group or covariant for a
+specified compact type.
+
+Write $\mathcal G$ for the full-group Gram polynomial.  The proved
+cofactor construction gives polynomial coordinates $\Omega_j$, each
+of degree $s$, such that
+\begin{equation}\label{pbw-gram-squares}
+ \mathcal G=T'\sum_{j=1}^k|\Omega_j|^2,\qquad T'>0.
+\end{equation}
+The identity holds on the entire group, including the zero set.
+Both $\mathcal G$ and all original leading Bessel minors are
+right $K$-invariant, because $K$ fixes the vectors defining their
+columns.  The decay seminorms $\|\cdot\|_{A,m}$ and the derivatives
+\[
+ L_XF(g)=\left.\frac d{dt}F(e^{-tX}g)\right|_0,
+ \qquad R_XF(g)=\left.\frac d{dt}F(ge^{tX})\right|_0
+\]
+are those of the established Jacquet pairing theorem, named
+\emph{Equality at every positive character} in the construction
+of regularization, unfolding, and Jacquet adjointness.  Let $B$ be
+any exponent for which that theorem gives
+\begin{equation}\label{pbw-pairing-bound}
+ |\beta(F,H)|\le C_B\|F\|_{B,4}\|H\|_{B,4}
+ \quad(F,H\in\mathcal C_B^5).
+\end{equation}
+The original finite-decay reserve supplies such a $B$.
+
+\paragraph{The actual level-zero identity.}
+For an original admissible word $w=((\epsilon_1,t_1),\ldots,
+(\epsilon_L,t_L))$, put
+\[
+ \mathcal C_w=\prod_{j=1}^L\sigma\mathcal C_V(t_j),
+ \qquad \sigma=(-1)^{k-l_0},
+\]
+where $\mathcal C_V(t)$ is the original full Capelli operator,
+with parameter $t+(n-1)/2$.  All factors commute.  Both signs of
+letter use their actual numerical parameter $t_j$; in particular a
+negative grid letter retains its shift $y+1$.  The original forms
+obey
+\begin{equation}\label{pbw-level-zero-identity}
+ \operatorname{RR}_{0,w}(F;\varnothing,\varnothing)
+                    =\beta(\mathcal C_wF,F).
+\end{equation}
+Here is the reduction, including the word corner.  At level zero
+the bit-zero letter is the identity, the bit-one letter is zero,
+and the empty-head slice is the identity.  Thus only the all-zero
+auxiliary index contributes to the form.  In the original residue
+recursion, an unused tensor coordinate is free in the old residue;
+the first column of the dressed $00$ transfer entry at that index
+is the bare $Q_{00}$ times the all-zero vector.  All other columns
+are killed by freeness at the new coordinate.  Consequently
+\[
+ (R_{l::w})_{00}=(R_w)_{00}Q_{00}(t_l).
+\]
+The same equation holds for a negative letter since transposition
+does not change the $00$ entry.  Induction, with the empty residue
+equal to the identity, gives the reversed product of $Q_{00}$'s.
+At level zero $Q_{00}(t)=\sigma\mathcal C_V(t)$, so central
+commutativity removes the reversal and proves
+\eqref{pbw-level-zero-identity}.  This is a finite algebraic
+reduction of the prescribed residue form; no terminal integral
+limit is used.
+
+\begin{lemma}[Derivatives which can hit a compact-invariant multiplier]
+\label{pbw-relative-order}
+Let $q=2(n-k)=4s-2$.  For every word of length $L$, the original
+operator $\mathcal C_w$ is a finite sum
+\begin{equation}\label{pbw-reduced-word}
+ \mathcal C_w=\sum_\alpha c_\alpha
+ R_{X_{\alpha,1}}\cdots R_{X_{\alpha,h_\alpha}}
+ R_{Z_{\alpha,1}}\cdots R_{Z_{\alpha,v_\alpha}},
+ \qquad h_\alpha\le qL,\quad h_\alpha+v_\alpha\le nL,
+\end{equation}
+where $Z_{\alpha,j}\in\mathfrak k_{\mathbb C}$ and all Lie
+directions and scalar coefficients are constant.  Consequently,
+for every smooth right $K$-invariant scalar function $\eta$,
+\[
+ \mathcal C_w(\eta f)=\sum_\alpha c_\alpha
+ R_{X_{\alpha,1}}\cdots R_{X_{\alpha,h_\alpha}}
+ \bigl(\eta\,R_{Z_{\alpha,1}}\cdots
+                      R_{Z_{\alpha,v_\alpha}}f\bigr).
+\]
+In particular at most $qL$ derivatives of this expression can hit
+$\eta$, although as many as $nL$ may hit $f$.
+\end{lemma}
+
+\begin{proof}
+Choose a basis adapted to $W'_+$ and its complement.  The
+complexified Lie algebra of $K$ is the $k\times k$ block
+$\mathfrak k_{\mathbb C}=\mathfrak{gl}_k$ inside
+$\mathfrak{gl}_n$.  Let $\mathfrak p_0$ be the span of matrix
+units with at least one index outside this block.  Then
+$[\mathfrak k_{\mathbb C},\mathfrak p_0]\subset\mathfrak p_0$.
+Give a word degree equal to its number of $\mathfrak p_0$ factors;
+compact factors have degree zero.
+
+In the original source convention, the generators are
+$E_{ab}=R_{h_1(E_{ab}^{\rm mat})}
+       +iR_{h_2(E_{ab}^{\rm mat})}$, where
+$h_1(Z)=(Z-H^{-1}Z^*H)/2$ and
+$h_2(Z)=(Z+H^{-1}Z^*H)/(2i)$.  Thus they are precisely the
+complexified right derivatives; $h_1(Z)+ih_2(Z)=Z$.
+The full Capelli determinant is independent of the chosen basis,
+and in this basis it is its usual column determinant with scalar
+diagonal shifts.  In any permutation term, at most $n-k$ factors
+have their column outside the compact block, and at most another
+$n-k$ have their row outside it.  Thus every term contains at most
+$q$ noncompact factors.  Scalar choices from the diagonal shifts
+can only reduce that count.  Expanding a product of $L$ such
+determinants gives degree at most $qL$.
+
+Move all compact Lie algebra factors to the right using
+$XY=YX+[X,Y]$.  A commutator of a compact factor and an outside
+factor is again outside, so the degree never increases.  PBW,
+or induction on the number of misplaced compact factors and word
+length, terminates this process.  Every term is an outside word
+of length at most $qL$ followed by a word in
+$U(\mathfrak k_{\mathbb C})$.  The original total length is
+at most $nL$ and every commutator reduces total length, proving
+both bounds in \eqref{pbw-reduced-word}.  Since $R_Z\eta=0$
+for every $Z\in\mathfrak k_{\mathbb C}$, the compact suffix
+commutes with multiplication by $\eta$ and acts only on $f$.
+
+The argument is applied to the whole product.  It does not assume
+that an individual quantum minor is central, that intermediate
+outputs preserve a fixed type, or that the coefficient itself
+has finite compact type.  The right derivatives have the
+convention $g\exp(tX)$, and the compact directions are those of
+the actual $K_{z'}$.  Thus their annihilation of $\eta$ is exact.
+If one instead starts with the left convention
+$L_XF(g)=dF(e^{-tX}g)/dt|_0$, the corresponding principal
+anti-automorphism reverses words and changes the indicated signs.
+Both operations preserve the outside-factor filtration, so the
+same order bound holds; no equality of naively ordered left and
+right generators is asserted.
+\end{proof}
+
+\begin{lemma}[Uniform cutoff error]
+\label{pbw-cutoff-error}
+Let $\chi\in C^\infty(\mathbb R)$ equal zero on $[0,1/2]$
+and one on $[1,\infty)$, and let $p,m\ge0$ be integers with
+$2p>m$.  For $0<\epsilon\le1$ and every smooth $f$,
+\begin{equation}\label{pbw-error-estimate}
+ \|\bigl(\chi(\mathcal G/\epsilon)-1\bigr)
+                \mathcal G^pf\|_{B,m}
+ \le C\epsilon^{p-m/2}\|f\|_{B+sm,m}.
+\end{equation}
+The constant is independent of $\epsilon$.
+\end{lemma}
+
+\begin{proof}
+On the real vector space underlying $\mathbb C^k$, set
+\[
+ h_\epsilon(v)=
+ (\chi(T'\|v\|^2/\epsilon)-1)(T'\|v\|^2)^p.
+\]
+The function $h_1$ is smooth and compactly supported, including
+at $v=0$, and
+$h_\epsilon(v)=\epsilon^ph_1(v/\sqrt\epsilon)$.
+Its derivative of order $a$ is therefore bounded by
+$C_a\epsilon^{p-a/2}$, uniformly in $v$.
+Every invariant derivative of every $\Omega_j$ is a polynomial
+of degree at most $s$: invariant differentiation is linear on
+matrix entries and does not increase degree.  The ordered chain
+rule applied to $h_\epsilon(\Omega(g))$ thus bounds any mixed
+left/right derivative of total length $j\le m$ by
+\[
+ C_j\epsilon^{p-j/2}M(g)^{sj}.
+\]
+Here $M(g)\ge1$ on the group, and $\epsilon\le1$ permits
+replacing every smaller chain-rule order by $j$.  The product
+rule with $f$ proves \eqref{pbw-error-estimate}.  In particular,
+the estimate covers the singular set $\mathcal G=0$; no local
+extension across that set is being assumed.
+\end{proof}
+
+\begin{corollary}\label{pbw-cutoff-word-error}
+Put $m=5+qN$ and $J=5+nN$.  If $2p>m$ and $|w|\le N$, then
+\[
+ \|\mathcal C_w[(\chi(\mathcal G/\epsilon)-1)
+                         \mathcal G^pf]\|_{B,5}
+ \le C_w\epsilon^{p-m/2}\|f\|_{B+sm,J}
+                 \qquad(0<\epsilon\le1).
+\]
+\end{corollary}
+
+\begin{proof}
+In each term of \eqref{pbw-reduced-word}, the compact suffix
+acts only on $f$.  Apply Lemma~\ref{pbw-cutoff-error} with
+order $h_\alpha+5$ to that compact derivative of $f$.
+At most $h_\alpha+5\le m$ derivatives hit the scalar error,
+and the total number hitting $f$ is at most
+$h_\alpha+v_\alpha+5\le J$.  Every complexified Lie direction
+is a fixed complex linear combination of real directions, so
+the original real derivative seminorms control these terms.
+Summing the finite expansion proves the estimate.
+\end{proof}
+
+\begin{theorem}[Level-zero cutoff convergence]
+\label{pbw-level-zero-cutoff}
+Fix $N\ge0$, put $m=5+(4s-2)N$, and choose an integer $p$ with
+$2p>m$.  Suppose $f$ is smooth with all finite derivative
+seminorms at one decay exponent $A$, and
+$A\ge B+2sp$.  Put
+\[
+ F=\mathcal G^pf,\qquad
+ F_\epsilon=\chi(\mathcal G/\epsilon)\mathcal G^pf.
+\]
+For every original admissible word $|w|\le N$,
+\begin{equation}\label{pbw-level-zero-limit}
+ \operatorname{RR}_{0,w}(F_\epsilon;\varnothing,\varnothing)
+ \longrightarrow
+ \operatorname{RR}_{0,w}(F;\varnothing,\varnothing)
+                    \qquad(\epsilon\downarrow0).
+\end{equation}
+The same conclusion holds for the original normalized energies,
+with their original fixed positive normalizers.
+For $N=3s$, the choice $p=6s^2$ satisfies the required inequality
+in every rank, including $s=1$.
+\end{theorem}
+
+\begin{proof}
+Since $sm<2sp$, the hypothesis supplies
+$\|f\|_{B+sm,J}<\infty$ for $J=5+nN$.
+Lemma~\ref{pbw-cutoff-error} gives $F_\epsilon\to F$ in
+$\mathcal C_B^5$, and Corollary~\ref{pbw-cutoff-word-error}
+gives $\mathcal C_wF_\epsilon\to\mathcal C_wF$ in the same
+space.  The uncut $F$ and $\mathcal C_wF$ belong to that space:
+$\mathcal G^p$ is a polynomial of degree $2sp$, and invariant
+derivatives do not increase its degree.  Thus they are controlled
+by finitely many seminorms of $f$ at exponent $B+2sp$.
+The error estimates then put the cutoff functions and their word
+images in the same pairing domain before any use of continuity.
+
+Use \eqref{pbw-level-zero-identity},
+\eqref{pbw-pairing-bound}, and the exact identity
+\[
+ \beta(\mathcal C_wF_\epsilon,F_\epsilon)
+       -\beta(\mathcal C_wF,F)
+ =\beta(\mathcal C_w(F_\epsilon-F),F_\epsilon)
+       +\beta(\mathcal C_wF,F_\epsilon-F).
+\]
+Both terms tend to zero.  This is convergence of the original
+quadratic integral, not merely of its integrand at individual
+points.  Dividing by the original fixed positive word normalizer
+and taking the real part proves the normalized assertion.
+Finally, when $N=3s$,
+\[
+ m=12s^2-6s+5<12s^2=2p\qquad(s\ge1).
+\]
+\end{proof}
+
+\paragraph{Combination with the normalized spectral estimate.}
+If the same-form spectral calculation supplies
+$E_{0,w}(F)\le jN^2(F)$ for all the allowed words, then the
+finite maximum in \eqref{adaptive-all-head-bound} and
+Theorem~\ref{pbw-level-zero-cutoff} give precisely
+\eqref{adaptive-uncut-endpoint}, with $p=6s^2$.
+For a polynomial compact-type shift $A$ of degree at most $d_A$,
+apply the theorem to $f=F_0A$; its required reserve is
+$A_0-d_A-2sp\ge B$.
+All constants in the PBW expansion and
+cutoff error are used only to establish this exact limit.  They
+do not become factors in the resulting pointwise inequality.
+The uniform constants still come solely from the grid scale,
+the scalar all-head recursion, the normalized spectral estimate,
+and the subsequent determinant moment and compact-type
+comparisons.

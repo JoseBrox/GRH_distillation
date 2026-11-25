@@ -1,0 +1,482 @@
+\subsection{Exact amplitude and row-norm comparisons}
+\label{sec:flag-exact-norm-comparison}
+
+We keep the actual local data of
+Theorem~\ref{thm:flag-local-data}, their original
+Harish--Chandra parameter, and every prescribed pinned
+quotient measure. The comparison scalar in the row
+consumer is allowed to depend on the fixed row. It must
+be chosen before all represented points and radial
+sections, but need not have a separate uniform bound.
+The same scalar occurs in the pointwise factorization
+and the radial integral, and can be cancelled exactly.
+This observation removes a normalization loss from the
+remaining pointwise problem.\cite{current-construction-record}
+
+Here and below \(r\ge0\), \(k\ge1\), \(s=r+1\),
+\(n=2r+k+1\), \(m=2r+2\), and \(f\) is the number of
+real places. We work in the concrete standing amplitude
+regime, with its integrable discrete-series projector,
+original arithmetic ties, and large-gap smooth-decay
+reserve. We use the period and mixed Jacquet identities
+and the all-cell factorization from
+Section~\ref{sec:all-cell-pieri-transfer}. The two radial
+equations in the given admissible mass datum will be
+displayed explicitly below. Thus no construction of a
+different mass datum is implicit in the argument.
+
+\begin{theorem}[Exact comparisons for the actual row]
+\label{thm:flag-exact-norm-comparison}
+Fix the original pair of words \(u,u'\), the actual
+matched local data, an admissible mass datum, and an
+admitted pinned global quotient measure. Let
+\(J_{\rm pin}^2(w)\) denote the squared Hilbert--Schmidt
+norm of the literal pinned global orbital operator at
+a represented relevant nonzero-Gram row point \(w\).
+There are a constant \(K_0>0\) and, at each real place
+\(v\), a single finite compact-finite coefficient \(F_v\)
+of the original local discrete series such that
+\begin{align}
+ \mathrm{OrbInt}(F_v,g_v)
+       &=\mathcal J_v(g_v),                         \label{eq:flag-exact-local}\\
+ jNorm2(F_v)&=M_v<\infty,                            \label{eq:flag-exact-radial}\\
+ \prod_v\|\mathcal J_v(g_v)\|_{\rm HS}^{\,2}
+       &=K_0J_{\rm pin}^2(w),                       \label{eq:flag-exact-point}\\
+ \prod_v M_v&=K_0I_{\rm re}.                        \label{eq:flag-exact-row}
+\end{align}
+The first equality holds at every relevant nonzero-Gram
+cell, for every admitted orbital quotient measure at
+canonical root scale \(1\). Here \(\mathcal J_v\) is the
+actual normalized local amplitude and \(M_v\) its original
+squared radial integral. The second and fourth equalities
+hold for every admitted radial section. The constants
+\(K_0\) and \(F_v\) are independent of the represented
+point, the section, and the auxiliary finite-place data
+in the point-sum consumer.
+
+Consequently the actual uniform amplitude and row-norm
+comparisons hold with
+\[
+ \theta=\theta'=1,\qquad K_v=1,\qquad
+ C_1=C_a=C_n=0,\qquad C_{\rm fac}=K_0^{-1}.
+                                                        \tag{EN1}
+\]
+In particular
+\[
+ C_{\rm fac}\prod_vjNorm2(F_v)=I_{\rm re}.
+                                                        \tag{EN2}
+\]
+For the generic pinned consumer take \(u'=u\).
+\end{theorem}
+
+\begin{proof}
+\emph{A coefficient that matches the actual amplitude
+on every cell.}
+First work at one real place. Write \(G\) for the
+unitary group and \(S=N\rtimes K\), \(S'=N'\rtimes K'\)
+for the two original Bessel subgroups, with their fixed
+compact and unipotent product Haar measures. The two
+period-normalized maps are denoted
+\[
+ B:\mathcal H^\infty\longrightarrow W,\qquad
+ B':\mathcal H^\infty\longrightarrow W'.
+\]
+The maps are nonzero for these actual data. To see the
+point that is needed here, the integrable coefficient
+of the given lowest vector defines a convolution
+idempotent on the equivariant quotient Hilbert space.
+It fixes the nonzero given seed. On compactly supported
+smooth sections, disintegration of its kernel and the
+original period identity express that kernel as the
+rank-one kernel of the period-normalized map. If this
+map were zero, the idempotent would vanish on a dense
+subspace and hence everywhere, contradicting its action
+on the seed. The absolute convergence needed for this
+kernel computation is supplied by the original smooth
+coefficient decay, as in the extraction of
+Section~\ref{sec:flag-local-data} and the quotient-mass
+proof in \texttt{global-norm-frontier-quotient-mass.tex}
+of the construction record.\cite{current-construction-record}
+More explicitly, with inner products linear in the first variable,
+the projector coefficient and its quotient kernel are
+\[
+ \begin{split}
+ e(h)&=d_\sigma\langle v_0,\sigma(h)v_0\rangle,\\
+ K(x,y)&=\int_S e(x^{-1}ty)\tau(t)\,dt\\
+       &=d_\sigma\bigl[B\sigma(x)v_0
+                              \otimes(B\sigma(y)v_0)^*\bigr].
+ \end{split}
+\]
+The last equality is the conjugate of the period identity (AP1),
+tested on two vectors of \(W\). If \(B=0\), this kernel and hence
+the projector vanish, contradicting its nonzero fixed seed.
+The same argument applies to \(B'\). This establishes
+nonvanishing from the actual seed, rather than from
+multiplicity one alone.
+
+Multiplicity one now identifies the actual local
+functions with
+\[
+ \Phi(g)=\alpha B\sigma(g)v_0,\qquad
+ \Phi'(g)=\alpha'B'\sigma(g)v_0,
+ \qquad \|v_0\|=1,
+                                                        \tag{EN3}
+\]
+where \(\alpha,\alpha'\ne0\) are finite constants.
+The vector \(v_0\) is the original common smooth lowest
+vector, normalized to length one. Let \(c_N>0\) be the
+given scalar in the definition of the actual amplitude:
+\[
+ \mathcal J(g)=\frac{\alpha\overline{\alpha'}}{c_N}
+       \int_{R'\backslash G}
+       B\sigma(gx)v_0\otimes(B'\sigma(x)v_0)^*
+                    \,d\dot x ,
+ \quad R'=g^{-1}(N\cap gN'g^{-1})g .
+                                                        \tag{EN4}
+\]
+Changing the lowest vector to unit length only changes
+\(\alpha,\alpha'\). The factor \(c_N\) is retained
+literally.
+
+Compact-finite smooth vectors are dense in the smooth
+topology, so choose \(x,y\) with \(Bx\ne0\) and
+\(B'y\ne0\). Put
+\[
+ S_0=\|Bx\|^2\|B'y\|^2>0,\qquad
+ F_0(h)=\langle\sigma(h)y,x\rangle
+                   \bigl(Bx\otimes(B'y)^*\bigr).
+\]
+The all-cell factorization
+Theorem~\ref{thm:all-cell-relative-factorization} gives
+\(\mathrm{OrbInt}(F_0,g)=S_0T_g\), with the original
+root measure on \(R=N\cap gN'g^{-1}\). Define
+\[
+ q_{B'}=\int_{S'\backslash G}
+                \|B'\sigma(x)v_0\|^2\,d\dot x .
+                                                        \tag{EN5}
+\]
+By (EN3) and the positive finite quotient mass of the
+given \(\Phi'\), one has \(0<q_{B'}<\infty\). Keeping this
+number unevaluated avoids any convention concerning
+compact-type dimension or formal degree.
+
+We claim the exact identity
+\[
+ \int_{R'\backslash G}
+       B\sigma(gx)v_0\otimes(B'\sigma(x)v_0)^*
+                         \,d\dot x=q_{B'}T_g .
+                                                        \tag{EN6}
+\]
+Indeed, divide (AP4) by its fixed nonzero first factor.
+Its remaining integral, evaluated at a vector \(w\in W'\),
+is
+\[
+ \int_{R'\backslash S'}
+ B\sigma(gs')z\,\langle w,\tau'(s')a'\rangle\,d\dot s'
+           =\langle B'z,a'\rangle T_gw .
+                                                        \tag{EN7}
+\]
+Set \(z=\sigma(x)v_0\), \(a'=B'\sigma(x)v_0\), and
+integrate over \(S'\backslash G\). Equivariance gives
+\(\tau'(s')a'=B'\sigma(s'x)v_0\). The two successive
+Weil identities disintegrate \(R'\backslash G\) over
+\(S'\backslash G\), with fibre \(R'\backslash S'\).
+They give (EN6), with the exact original measures.
+
+Here is an absolute-convergence check for that last
+operation. It also proves that the amplitude in (EN4)
+exists at each cell, before any uniform pointwise
+estimate is used. Choose a symmetric submultiplicative
+Frobenius norm \(N\ge1\) on \(G\). The original
+smooth-decay theorem gives
+\[
+ |\langle\sigma(h)v_0,z\rangle|
+                  \le C_zN(h)^{-a}
+                                                        \tag{EN8}
+\]
+for each fixed smooth test vector \(z\). Choose
+\[
+ b>64s^2(2n^2+1),\qquad a>b+4n^2.
+                                                        \tag{EN9}
+\]
+For instance \(b=256s^2(n^2+1)\) is sufficient, and
+the original large-gap reserve provides a larger \(a\).
+The group-volume bound in
+the quotient-mass proof in the construction record gives
+\(\int_G N(x)^{b-a}\,dx<\infty\).
+For any \(h_1,h_2\in G\), symmetry and
+submultiplicativity imply
+\[
+ \begin{split}
+ &\int_GN(h_1x)^{-a}N(h_2x)^{-a}\,dx\\
+ &\hspace{5mm}\le
+ N(h_1h_2^{-1})^{-b}
+                 \int_GN(y)^{b-a}\,dy .
+ \end{split}                                           \tag{EN10}
+\]
+Indeed \(N(h_1h_2^{-1})\le N(h_1x)N(h_2x)\);
+allocate \(b\) powers to this inequality, discard
+one remaining factor, which is at most one, and
+apply left invariance of Haar measure.
+
+Expand both period maps through the period identity,
+using fixed test vectors on which they are nonzero.
+For the resulting three-variable integrand the
+simultaneous \(R'\)-action is
+\[
+ a'\cdot(s,s',x)
+       =((ga'g^{-1})s,\ a's',\ a'x).
+\]
+Relevance cancels the two character factors.
+The quotient of \(S\times S'\times G\) by this action
+has two disintegrations: one first integrates
+the two full period subgroups over \(R'\backslash G\),
+and the other first integrates \(G\) over
+\(\Delta_gR\backslash(S\times S')\). Both follow by
+composing the defining Weil identities. Tonelli's
+theorem applies to the absolute values. Equation (EN10),
+with \(h_1=s^{-1}g\), \(h_2=s'^{-1}\), bounds the entire
+absolute integral by a fixed finite constant times
+\[
+ \left(\int_GN(y)^{b-a}\,dy\right)
+ \left(\int_{\Delta_gR\backslash(S\times S')}
+                    N(s^{-1}gs')^{-b}\,d\dot{(s,s')}\right).
+                                                        \tag{EN11}
+\]
+The second integral is finite by the terminal quotient
+properness estimate used in the all-cell factorization:
+its real noncompact dimension is at most \(2n^2\) and
+its inverse-coordinate exponent is at most \(64s^2\).
+Thus (EN9) suffices. This proves the required absolute
+integrability and justifies Fubini in (EN6). The
+properness constant may depend on this fixed \(g\);
+it enters no uniform inequality.
+
+It now suffices to take the single coefficient
+\[
+ F=\frac{\alpha\overline{\alpha'}q_{B'}}{c_NS_0}F_0 .
+                                                        \tag{EN12}
+\]
+Equations (EN4), (EN6) and the all-cell factorization
+prove \eqref{eq:flag-exact-local} on every cell. The
+coefficient and its scalar have been chosen before
+\(g\) and before the orbital quotient measure. At
+canonical root scale, changing the measure representing
+the quotient does not change these integrals: the Weil
+identity determines its pushforward to the quotient,
+and the integrands are invariant along the stabilizer.
+
+On the big cell the equality just proved identifies
+the radial integral defining \(jNorm2(F)\) with the
+original \(M_v\), for the same section and the same
+weight. The mixed Jacquet identity (AP2) gives
+\[
+ jNorm2(F)=c_{\rm rad}d_\sigma^{-1}|s_\sigma(F)|^2
+                                                           <\infty .
+                                                        \tag{EN13}
+\]
+This proves \eqref{eq:flag-exact-radial} without a
+pointwise bound. No estimate for the scalar in (EN12)
+is required.
+
+\emph{The scalar in the actual pinned factorization.}
+Write \(V_K>0\) for the original level volume and put
+\[
+ c_u=\frac{\mu_{N,u}(F_{N,u})\mu_{H,u}(H_u)}
+                              {\dim V_u},
+ \qquad c_{0X,u}=V_Kc_u .
+                                                        \tag{EN14}
+\]
+The mass datum uses \(c_u\); the Poincare normalization
+uses \(c_{0X,u}\). For each place let \(L_{u,v}\) be the
+original positive finite squared quotient mass and put
+\[
+ c_{u,v}=\frac{L_{u,v}}{\dim V_{u,v}}>0,\qquad
+ \kappa_v=(c_{u,v}c_{u',v})^{-1}.
+                                                        \tag{EN15}
+\]
+All displayed dimensions are positive, since the
+corresponding seed is nonzero. The literal definitions
+of the matched local data give
+\[
+ \mathcal J_v
+       =a_vU_vJ_v(U'_v)^{-1},\qquad
+ a_v=c_{u,v}^{-1}\sqrt{\frac{c_{u,v}}{c_{u',v}}},
+ \qquad |a_v|^2=\kappa_v ,
+                                                        \tag{EN16}
+\]
+where \(U_v,U'_v\) are the unitary frame and compact-type
+identifications and \(J_v\) is the original unnormalized
+local operator. The squared global scalar is exactly
+\[
+ s_{\rm gl}
+       =\left(\frac{V_K}{\sqrt{c_{0X,u}c_{0X,u'}}}\right)^2
+       =(c_uc_{u'})^{-1}.
+                                                        \tag{EN17}
+\]
+Thus set
+\[
+             K_0=c_uc_{u'}\prod_v\kappa_v>0 .
+                                                        \tag{EN18}
+\]
+
+The canonical root measures in (EN16) are exactly the
+transported original ones. In root coordinates the
+conjugating frame map is a permutation and reindexing
+with scale one. In the original character convention,
+the density per complex root is
+\(\kappa_{\rm char}/\pi\), where
+\(\kappa_{\rm char}=\mathrm{ka}/g_{\rm ar}\);
+the transported formula
+\((2\,\mathrm{ka}/g_{\rm ar})/(2\pi)\) is the same
+density. Here \(g_{\rm ar}>0\) is the original
+arithmetic character scale, not the orbital
+representative. There is no extra root-scale factor.
+The triangular root-coordinate group law preserves
+this Haar measure, including in cells with vanishing
+internal minors. Relevance makes the rank-one
+integrand invariant along the stabilizer, so the
+preceding Weil-uniqueness argument applies to every
+admitted pinned quotient measure.
+
+The product Weil formula for the original global
+quotient and the tensor-product identity for the
+Hilbert--Schmidt norm now give
+\[
+ J_{\rm pin}^2(w)=s_{\rm gl}\prod_v\|J_v(g_v)\|_{\rm HS}^2,
+ \qquad
+ \prod_v\|\mathcal J_v(g_v)\|_{\rm HS}^2
+             =\left(\prod_v\kappa_v\right)
+                         \prod_v\|J_v(g_v)\|_{\rm HS}^2 .
+\]
+These are \eqref{eq:flag-exact-point} and (EN18).
+No division by a pointwise orbital value has been
+made, so zero values are included.
+
+\emph{The same scalar in the radial integral.}
+Put \(\rho=\mathrm{rd}(E)>0\). For \(0\le a<r\), set
+\[
+       \lambda_a=\rho^{-2(r-a)},\qquad
+       M_a=2(r-a)+k+1 .
+\]
+The original diagonal Gram parameter \(z\) and the
+normalized local radial parameter \(q\) satisfy
+\[
+       q_a=\lambda_a z_a\quad(a<r),\qquad q_r=z_r .
+                                                        \tag{EN19}
+\]
+The original determinant and diagonal Jacobian are
+\[
+ \begin{split}
+ G(\operatorname{diag}z)
+    &=\prod_{a<r}|z_a|^2\,(|z_r|^2-TT'),\\
+ \operatorname{Jac}(\operatorname{diag}z)
+    &=\prod_{a<r}|z_a|^{4(r-a)}.
+ \end{split}
+\]
+Consequently their product weight is
+\[
+ W(z)=\prod_{a<r}|z_a|^{2(M_a-2)}
+                         (|z_r|^2-TT')^{k-1}.
+                                                        \tag{EN20}
+\]
+The arithmetic parameter measure is \(2\,dx\,dy\)
+in each complex coordinate, whereas \(M_v\) uses
+\(dx\,dy\). The real Jacobian of (EN19) is
+\(\prod_{a<r}\lambda_a^2\). It follows that
+\[
+ K_{\rm pl}=2^{r+1}
+              \prod_{a<r}\lambda_a^{-2(M_a-1)}>0,
+ \qquad
+       \left(\prod_v\kappa_v\right)I_C
+                        =K_{\rm pl}^{\,f}\prod_vM_v .
+                                                        \tag{EN21}
+\]
+First interpret this equation as an equality of
+nonnegative extended integrals. It follows by Tonelli
+and the displayed change of variables, with the exact
+Hilbert--Schmidt scalar in (EN16). Two representatives
+with the same diagonal Gram data differ by the given
+two Bessel subgroups; their amplitudes differ by
+unitary factors. Hence the calculation holds for
+every admitted section. The excluded hyperplanes
+\(z_a=0\) and the boundary circle
+\(|z_r|^2=TT'\) have Lebesgue measure zero. This remains
+valid for \(k=1\), when the boundary weight has exponent
+zero, and for \(r=0\), when the empty product gives
+\(K_{\rm pl}=2\).
+
+By \eqref{eq:flag-exact-radial} the right side of
+(EN21) is finite. The positive finite factor on its
+left proves finiteness of the original carrier energy.
+Only now pass to real values; in particular finiteness
+has not been inferred from a real-valued truncation
+of an extended integral.
+
+The elementary exponent identity
+\[
+ \sum_{j=1}^r4j(2j+k)
+   =2r(r+1)(k-1)+\frac{r(r+1)(8r+10)}3
+\]
+gives
+\[
+ K_{\rm pl}^{\,f}
+   =2^{f(r+1)}
+       \rho^{2r(r+1)(k-1)f}
+       \rho^{fr(r+1)(8r+10)/3}.                         \tag{EN22}
+\]
+The two literal radial equations in the admissible
+mass datum are
+\[
+ \begin{split}
+ (c_uc_{u'})^{-1}I_C&=2^{f(r+1)}I_{\rm rat},\\
+ I_{\rm rat}
+    &=\rho^{2r(r+1)(k-1)f}
+           \rho^{fr(r+1)(8r+10)/3}I_{\rm re}.
+ \end{split}                                           \tag{EN23}
+\]
+Combining (EN21)--(EN23) and cancelling the positive
+finite \(K_{\rm pl}^{\,f}\) proves
+\[
+      \prod_vM_v
+        =c_uc_{u'}\left(\prod_v\kappa_v\right)I_{\rm re}
+        =K_0I_{\rm re},
+\]
+which is \eqref{eq:flag-exact-row}.
+
+\emph{The consumer quantifiers.}
+The matched data have canonical root scale \(1\);
+at \(C_1=0\) the permitted root window consists of
+that scale alone. Equation \eqref{eq:flag-exact-local}
+therefore supplies the amplitude comparison with
+\(K_v=1\) and \(C_a=0\), for all admitted quotient
+measures. Equations \eqref{eq:flag-exact-point} and
+\eqref{eq:flag-exact-row} supply the pointwise product
+factorization and row-norm comparison with
+\(C_{\rm fac}=K_0^{-1}\), \(C_n=0\).
+The row consumer chooses \(C_{\rm fac}\) after fixing
+the row but before all represented points, all
+sections, and its auxiliary \(\nu_L,n_{\rm gen}\);
+(EN18) has exactly this dependence. The local
+coefficient scalars, local masses, and \(K_0\) can
+vary with the arithmetic data, but cancel before
+any uniform inequality is applied. This proves
+(EN1)--(EN2).
+\end{proof}
+
+\paragraph{Boundary of the comparison theorem.}
+The theorem supplies the uniform amplitude and
+row-norm part of the actual generic pinned route.
+Combined with the pointwise estimate (AP6) and the
+weighted rotated summation of
+Theorem~\ref{thm:rotated-sum-from-near-bp}, it gives the
+original \(\mathrm{StepThmBPinnedG}\) point sum with its
+original \(I_{\rm re}\) and pinned measure. There is no
+additional exponent from amplitude normalization or
+row norm. The pointwise estimate for the required family is
+proved in Theorem~\ref{thm:archimedean-pointwise-sufficient},
+with its full reserve checked in
+Proposition~\ref{prop:archimedean-ap7-reserve}.
+This cancellation does not identify the retained
+theta columns or establish the positive-trace
+concentration required later.

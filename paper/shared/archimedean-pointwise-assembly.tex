@@ -1,0 +1,248 @@
+\subsection{A sufficient pointwise theorem in the original norm}
+\label{sec:archimedean-pointwise-assembly}
+
+We now assemble the pointwise estimate at the single quadratic
+Gram power needed by the arithmetic consumer. This avoids the
+stronger requirement that the estimate hold at every smaller
+power in the source's intermediate interface.
+
+Put \(s=r+1\), \(m=2s\), \(n=k+2s-1\), and let
+\(\delta=\|\lambda'-\lambda\|_1\). The coefficient \(F\)
+has Harish--Chandra parameter \(\lambda'\). Retain the original local
+parameter, character, representation and section hypotheses,
+including the standard shape, interlacing, separating-gap or
+cut alternative, and the noncompact-gap smooth-decay reserve.
+Let \(C_J\ge1\) be the constant in the established iterated
+leading-minor estimate
+\[
+ jN^2(D_s^L F)\le b^{2C_Jm^2L}jN^2(F),
+ \qquad \delta+s(L+s+1)\le q_0 .                       \tag{PA1}
+\]
+The existing moment theorem also requires all gaps of the base
+parameter to be at least \(C_g^{\rm mom}Lm\). For the powers
+used below, \(Lm\le96s^3\), so this follows from the original
+\(C_gm^3\) bound after a fixed enlargement of \(C_g\).
+Here \(q_0\) is the original minimum of the noncompact and cloud
+gap reserves, with both original divisors retained. The estimate
+and its actual integer-family construction are given in
+\texttt{global-norm-frontier-iterated-minors.tex} and
+\texttt{global-norm-frontier-jacquet-gram.tex}.\cite{current-construction-record}
+
+\begin{theorem}[Pointwise bound with an explicit sufficient reserve]
+\label{thm:archimedean-pointwise-sufficient}
+Under the original local hypotheses, take the all-gap constant
+above a fixed threshold depending only on \(C_h\) and the
+previously established analytic supplier constants. Assume also
+\[
+ \operatorname{AllGaps}(\lambda,200\delta),\qquad
+                    q_0\ge\delta+s(48s^2+s+1).         \tag{PA2}
+\]
+For every original finite compact-finite coefficient \(F\), every
+admitted radial section, and every represented relevant point
+\(\gamma\) with \(G_L(\gamma)>0\), one has
+\[
+ n_L(\gamma)\operatorname{orbSq}_L(F,\gamma)
+ \le b^{C_*m^4}\max\{1,G_L(\gamma)^{-1}\}^{C_*m^2}
+                              \mathcal N_L(F).          \tag{PA3}
+\]
+The same conclusion holds at any nonzero-Gram point, interpreting
+the original orbital supremum as zero if there is no representative.
+All norms, point weights, characters and quotient measures in
+(PA3) are the original ones. The constant is independent of
+\(r,k,F,\gamma\), and the section. With the preceding choice
+of \(C_J\), the deliberately generous value
+\[
+               C_*=64+16\max(C_h,0)+24C_J              \tag{PA4}
+\]
+is sufficient. The actual character is \(\kappa=1\) or
+\(\kappa=\mathrm{ka}\), as in the local consumer.
+\end{theorem}
+
+\begin{proof}
+We first use the standard character and the original normalized
+analytic tower. Set
+\[
+ p=6s^2,\qquad
+ a=\begin{cases}0,&u\ne u',\\30s^2+6,&u=u',\end{cases}
+ \qquad L=2p+a\le48s^2,
+ \qquad d=sL\le48s^3 .                                \tag{PA5}
+\]
+The equal-type case has the original separating adjacent gap,
+so the two compact shifts of length \(a\) exist once its fixed
+gap constant is at least \(36\). Their parameters stay between
+the original adjacent endpoints, hence retain the bound \(b\).
+Each shifted pair has a cut of width \(a\); the unshifted
+different-type pair has its prescribed cut. Both contain the
+quadratic grid of Section~\ref{actual-adaptive-pointwise}.
+At the exceptional index, precisely the two inequalities omitted
+in (NC3) may change; all its other interlacing inequalities remain
+the original ones. The adjacent gap preserves (NC4).
+
+Choose
+\[
+                         c=\delta+d+1 .                \tag{PA6}
+\]
+The original all-gap bound \(C_gm^3\), together with the first
+condition in (PA2), implies \(4c+8\le\operatorname{gap}_{\min}
+(\lambda)\) after a fixed enlargement of \(C_g\).
+Indeed the maximum of \(8C_gs^3\) and \(200\delta\) is at
+least \(4C_gs^3+100\delta\), which dominates
+\(4\delta+192s^3+12\) for \(C_g\ge51\).
+Since every \(|\lambda_j|\le b\), this also gives
+\(c+2\le b\). The original shape bound gives \(k\le b\)
+and \(b\ge3\). In particular all spectral shifts of degree
+at most \(d\) stay in the same regular chamber.
+
+In the standard-character realization the original height
+hypotheses give
+\(b^{-2C_hm}\le T,T'\le b^{2C_hm}\); replacing \(C_h\)
+by its nonnegative part is harmless. Take
+\(\nu(t)=\prod_j(|t+\lambda_j|+c)\).
+Lemma~\ref{lem:archimedean-normalizer-comparison} supplies
+the grid scale \(\Lambda_0=b^{(6+2\max(C_h,0))m}\).
+Condition (PA2) supplies the original shift family needed in
+Theorem~\ref{thm:archimedean-spectral-word-energy}, and
+(PA6) supplies its precise spectral majorant.
+
+The original noncompact-gap hypothesis and smooth-decay theorem
+give a common decay exponent large enough for both the fixed
+Gram-cutoff exhaustion and the level-zero pairing. To check the
+order of the constants, put \(X=3sn^2+n^3\). The previously
+proved exhaustion needs at most a fixed multiple of \(s^4X\)
+after the polynomial degree loss, whereas (PA5) loses at most
+\(48s^3\) powers. The original smooth-decay lower bound is
+\((C_g/2)s^4X-1\). A fixed increase of \(C_g\) supplies both
+budgets. It is independent of the number of differentiations:
+all finite derivative seminorms have that same decay exponent.
+
+Let \(A\) be the identity in the different-type case, or one
+of the two cofactor-polynomial maps in the equal-type case.
+It has degree at most \(as\). Apply the compact pointwise
+theorem first with a spatial exhaustion and the fixed positive
+Gram cutoff
+\[
+                 H_\varepsilon=\chi(G/\varepsilon)G^pFA.
+\]
+The established fixed-cutoff exhaustion gives the same inequality
+for this finite-decay coefficient. At a fixed positive-Gram point,
+\(\varepsilon<G(\gamma)\) makes the cutoff identically one
+on the entire orbital integration locus. Its point energy is
+therefore exactly \(G(\gamma)^{2p}E(FA;\gamma)\).
+There is no limiting passage from the big cell to another stratum.
+
+Theorem~\ref{pbw-level-zero-cutoff} applies with word budget
+\(N=3s\), since
+\[
+             5+(4s-2)3s=12s^2-6s+5<2p .
+\]
+It gives convergence of the actual quadratic level-zero forms.
+Theorem~\ref{thm:archimedean-spectral-word-energy} bounds their
+limits by the same \(jN^2(G^pFA)\). There are only finitely
+many words. Letting \(\varepsilon\) decrease to zero in
+(NC15) gives
+\[
+ E(FA;\gamma)
+ \le b^{(8+2\max(C_h,0))m^2}G(\gamma)^{-2p}
+                                      jN^2(G^pFA).     \tag{PA7}
+\]
+No constant used only in proving convergence survives this limit.
+
+If \(u\ne u'\), use \(0\le G\le|D_s|^2\) on the radial
+domain and then (PA1) with \(L=2p\).
+If \(u=u'\), use the two-shift orbital and norm comparisons
+of Section~\ref{actual-wigner-orbital-transport}. The factors
+\((T')^a\) cancel exactly, and (PA1) applies with \(L=2p+a\).
+In either case, with an unnecessary factor two in the first,
+\[
+ E(F;\gamma)
+ \le 2(3b)^{2a}b^{(8+2\max(C_h,0))m^2+2C_Jm^2L}
+                   G(\gamma)^{-L}jN^2(F).              \tag{PA8}
+\]
+For \(b\ge3\), \(a\le36s^2=9m^2\), and \(m\ge2\),
+the factor before \(G^{-L}\) is at most
+\[
+                   b^{(13+\max(C_h,0)+24C_J)m^4}.
+                                                        \tag{PA9}
+\]
+
+We record the exact conversion from this analytic tower to the
+literal local orbital supremum. If \(h_\gamma\) is the number
+of complex stabilizer roots, then \(h_\gamma\le s^2\).
+Let \(c_N>0\) be the ratio of the two original unipotent Haar
+conventions and put \(A_N=(\kappa_Nc_N)^4>0\).
+The same two unipotent integrations occur in the orbital and
+radial maps. In each complex stabilizer root, the standard
+canonical measure is \(\pi^{-1}\) times Lebesgue measure;
+the quotient Weil identity gives the reciprocal factor.
+The resulting identities are
+\[
+ \begin{split}
+ n_L(\gamma)\operatorname{orbSq}_L(F,\gamma)
+      &=A_N\pi^{2h_\gamma}E(F;\gamma),\\
+ \mathcal N_L(F)&=A_NjN^2(F).
+ \end{split}                                           \tag{PA10}
+\]
+Unitary frame identifications preserve Hilbert--Schmidt norms.
+Weil uniqueness identifies every admitted quotient measure at a
+fixed representative. Compact and unipotent fibre covariance,
+together with those unitary identifications, identifies the
+values for different representatives. Thus (PA10) includes their
+supremum. These are the explicit root and pair-measure
+calculations in the original orbital-square normalization and
+standard Bessel scale comparison.\cite{current-construction-record}
+This calculation neither bounds \(A_N\) nor divides by a norm:
+multiply (PA8) by \(A_N\) and use both identities.
+Since \(\pi^{2h_\gamma}\le b^{m^4}\), its only loss is one
+in the exponent of (PA9). Also \(L\le12m^2\), so
+\(G^{-L}\le\max(1,G^{-1})^{12m^2}\).
+
+Finally, for the actual character \(\kappa=\mathrm{ka}\), use
+Proposition~\ref{prop:archimedean-character-transport}. Its exact
+frame transform preserves the representation parameters and the
+reserve (PA2). The original bounds
+\(a,a^{-1}\le b^{\max(C_h,0)}\), together with \(L\le48s^2\),
+bound the extra factor by
+\[
+ b^{2\max(C_h,0)rs(1+L)}
+                  \le b^{7\max(C_h,0)m^4}.             \tag{PA11}
+\]
+Every exponent containing \(k\) has already cancelled in that
+proposition. The constant (PA4) dominates (PA9), the root factor,
+(PA11), and the pole coefficient \(12\).
+
+If a required period map or radial norm is zero, the all-cell
+factorization gives zero orbital evaluations; all preceding
+homogeneous inequalities still hold. A represented point has
+nonnegative Gram by the cofactor identity. Hence at negative
+Gram there are no admitted representatives and the orbital
+supremum is zero. This proves the asserted nonzero-Gram version.
+\end{proof}
+
+The reserve (PA2) is part of this theorem and must be checked in
+its application. In particular, an all-gap bound proportional
+to \(\delta\) alone has not been substituted for the original
+\(q_0\) condition. The ensuing arithmetic application supplies
+this reserve for its entire actual finite shift family.
+
+\begin{corollary}[The original unshifted pointwise consumer]
+\label{cor:archimedean-unshifted-pointwise}
+In the original arithmetic range with nonempty cloud-gap set,
+the pointwise estimate (PA3) holds for \(\lambda'=\lambda\)
+under the original standard hypotheses, after a fixed increase
+of their gap threshold. No additional spectral-reserve premise
+is needed in this unshifted case.
+\end{corollary}
+\begin{proof}
+Let \(C_q\ge1\) be the fixed constant in the original definition
+of \(q_0\). The original all-gap bound \(C_gm^3\) and
+noncompact-gap bound imply
+\[
+ q_0\ge C_gm^3/C_q^2=8C_gs^3/C_q^2.
+\]
+The nonempty cloud-gap condition is essential in this step;
+it holds in the actual pinned arithmetic range.
+Since \(s(48s^2+s+1)\le50s^3\), the fixed choice
+\(C_g\ge(25/4)C_q^2\), in addition to the preceding fixed
+thresholds, supplies (PA2) at \(\delta=0\).
+Apply Theorem~\ref{thm:archimedean-pointwise-sufficient}.
+\end{proof}

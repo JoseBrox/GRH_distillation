@@ -1,0 +1,171 @@
+\subsection{The original quantified pinned point-sum conclusion}
+\label{sec:archimedean-pinned-row-closure}
+
+The gap threshold in Proposition~\ref{prop:archimedean-ap7-reserve}
+is an internal analytic constant. Denote it by \(\Gamma_g\).
+It is distinct from the external constant \(C_g\) in the
+original arithmetic context. The latter is fixed before the
+requested weight, and is not changed in the following argument.
+The original quantifiers permit enlargement of the fixed
+thresholds \(C'_0,C_{\ell,0}\). This supplies \(\Gamma_g\)
+without adding a hypothesis on the row.
+\cite{current-construction-record}
+
+\begin{theorem}[The literal pinned generic point sum]
+\label{thm:archimedean-pinned-row-closure}
+Fix six real constants
+\[
+                 C_g,c_b,C_w,c_T,C_T,C_0
+\]
+and a weight \(A\in\mathbb N\). There are constants
+\(C_B\ge0,C'_0,C_{\ell,0}\) such that the following holds.
+For every \(C'\ge C'_0\), \(C_\ell\ge C_{\ell,0}\), every
+original setting \(D,\mathrm{large}_2,X,Y,u\) satisfying
+\(\mathrm{Ctx}(C_g,c_b,C_w,c_T,C_T,C_0,C',C_\ell)\),
+every original arithmetic mass tie and admissible mass datum,
+and every original pinned quotient measure \(\nu\), one has,
+for all auxiliary \(\nu_L,n_{\rm gen}\),
+\[
+ \mathrm{PointSumInput}\!\left(
+   \mathrm{genT}(Y.tO(u,u)),\,
+   \mathrm{NOfG}(Y,u,\nu_L,\nu,n_{\rm gen}),\,
+   A(r+1)^2,\,
+   e^{C_Bm^5f\log b}I_{\rm re}\right).
+                                                        \tag{PC1}
+\]
+Here \(b=\mathrm{large}_2.sc.b\), \(m=2r+2\), and
+\(I_{\rm re}\) is the real integral in the given admissible
+mass datum. Thus (PC1) is the original
+\(\mathrm{StepThmBPinnedG}\) statement, with its original
+measure and real integral.
+\end{theorem}
+
+\begin{proof}
+Fix the six external constants and \(A\). Put
+\[
+ \beta=\max\{2,C_w\},\qquad
+ C_h=|C_T|+\tfrac18+2|C_g|,\qquad B=b^\beta.
+                                                        \tag{PC2}
+\]
+Apply Proposition~\ref{prop:archimedean-ap7-reserve} with
+requested weight \(a_w=A\) and this \(C_h\).
+It gives \(C_{\rm rot}\) and an internal threshold
+\(\Gamma_{g,0}\), depending only on the fixed constants
+and \(A\). Increase it to
+\(\Gamma_g=\max\{\Gamma_{g,0},0\}\), and set
+\[
+                 C_B=\beta\max\{C_{\rm rot},0\}.
+                                                        \tag{PC3}
+\]
+Choose \(C'_0\) above the already established local-data,
+exact-comparison and occupied-point thresholds. Choose
+\(C_{\ell,0}\) above their corresponding thresholds and
+above \(8\) and \(128\Gamma_g\).
+These choices are made before the setting, rank, row, mass
+datum, point and measures.
+
+The original size hypotheses imply
+\[
+       m\ge C_\ell\ge\max\{8,128\Gamma_g\},
+                         \qquad k\ge m.
+                                                        \tag{PC4}
+\]
+The literal standard-hypothesis conversion
+\(\mathrm{stdOfHyp\_rec}\) requires
+\[
+\begin{gathered}
+ C_\ell\ge8,\quad C_h\ge0,\quad \beta\ge2,
+ \quad C_w\le\beta,\quad C_T\le\beta C_h,
+ \quad \tfrac18+2C_g\le\beta C_h,\\
+              128|C_s|\le m,\qquad |C'_s|\le m.
+\end{gathered}                                         \tag{PC5}
+\]
+All these hold with \(C_s=C'_s=\Gamma_g\), by (PC2)
+and (PC4). Its conclusion supplies the original
+\(\mathrm{StdHyp}\) at analytic size \(B\), with the
+noncompact-gap threshold \(\Gamma_g\), and supplies
+\[
+       \mathrm{AllGaps}(\lambda_v,\Gamma_g k m^3)
+       \quad\Longrightarrow\quad
+       \mathrm{AllGaps}(\lambda_v,\Gamma_g m^4)
+                                                        \tag{PC6}
+\]
+at every real place. The implication uses \(k\ge m\).
+Moreover \(k\ge8\), so the cloud-gap set required in the
+weighted proof is nonempty. Consequently the reserve
+and all shifted-family hypotheses of (AR9) follow from
+the existing context. In particular no quantified pointwise
+statement outside that finite shift family is used.
+
+The actual local data and
+Theorem~\ref{thm:flag-exact-norm-comparison} give one
+coefficient at each place, the canonical root scale
+\(\theta=1\), and one positive constant \(K_0\) such that
+\[
+ J_{\rm pin}^2(w)
+       =K_0^{-1}\prod_v\|\mathcal J_v(w)\|_{\rm HS}^2,
+ \qquad
+ K_0^{-1}\prod_v jNorm2(F_v)=I_{\rm re}.
+                                                        \tag{PC7}
+\]
+These are exactly the original amplitude and row-norm
+comparisons with \(C_a=C_n=C_1=0\), \(K_v=1\), and
+\(C_{\rm fac}=K_0^{-1}\). The prescribed unitary phase
+rotation identifies their local orbitals with those in
+\(BSumR\) and preserves their radial norms.
+
+For a finite set \(S\) of occupied generic row points,
+the established row-point dictionary chooses an integral
+normal-form point \(w(\gamma)\) above each \(\gamma\in S\).
+The choice is injective: equality of normal-form points
+implies equality of their original row labels. Every such
+point has the required positive Gram at each real place.
+The original weight comparison has constant one:
+\[
+\begin{split}
+ &\mathrm{blockMinorWeight}(\gamma)\,n(\gamma)
+       \{NG(\gamma)ND(\gamma)\}^{A(r+1)^2}\\
+ &\hspace{1cm}\le
+ wPt(w(\gamma))\,ptWeightG(w(\gamma))
+                  normWt(w(\gamma))^{A(r+1)^2}.
+\end{split}                                           \tag{PC8}
+\]
+It follows from the exact point-density identity and
+\(NG\,ND\le normWt\), retaining the original root
+discriminant factors. Multiply (PC8) by the nonnegative
+pinned orbital square and use (PC7). The finite sum is
+bounded by \(K_0^{-1}BSumR\). Applying (AR9) at size \(B\)
+and then (PC7) gives
+\[
+ K_0^{-1}BSumR
+ \le B^{C_{\rm rot}m^5f}I_{\rm re}
+ \le e^{C_Bm^5f\log b}I_{\rm re}.
+                                                        \tag{PC9}
+\]
+The last inequality uses \(I_{\rm re}\ge0\), which follows
+also from (PC7). This argument never divides by that integral,
+so the zero-norm case is included.
+
+Finally, in the literal definition of \(\mathrm{NOfG}\),
+the fields used in this point sum are
+\[
+\begin{aligned}
+ \mathrm{jacobianSquareBound}&=J_{\rm pin}^2,
+       & n&=nPt,\\
+ NG&=NGPt, & ND&=NDPt.
+\end{aligned}
+\]
+They do not depend on
+\(\nu_L\) or \(n_{\rm gen}\); these auxiliary data enter
+other fields. The occupied-point argument and (PC8) hold
+for every choice of those auxiliary fields. The coefficients
+and \(K_0\) were chosen before them. Thus (PC9) holds with
+the full universal quantifiers in (PC1).
+
+There is no circular threshold choice: \(C_h,\beta,C_*\),
+\(C_{\rm rot}\) and \(\Gamma_g\) are fixed first from the
+six external constants and \(A\); only then are
+\(C'_0,C_{\ell,0}\) fixed. The subsequent lower bound on
+\(m\) is a consequence of the original context, not an
+extra condition imposed after the row is given.
+\end{proof}

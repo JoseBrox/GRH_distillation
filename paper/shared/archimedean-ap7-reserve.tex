@@ -1,0 +1,138 @@
+\subsection{The exact reserve required by the weighted point sum}
+\label{sec:archimedean-ap7-reserve}
+
+The sufficient pointwise theorem
+\ref{thm:archimedean-pointwise-sufficient} is enough for every
+shift used in the positive-minor proof of (AP7).  In particular,
+that proof does not require a pointwise theorem for every
+near-parameter range allowed by the stronger source interface.
+All norms, orbital integrals, character scales and measures in
+the argument below are those in the original \(\mathrm{BData}\).
+
+Write \(s=r+1\), \(m=2s\), and \(n=2r+k+1\).  Let
+\(C_q\ge200\) be the fixed constant in the already established
+moment theorem, and let \(C_g^{\rm mom}\) be its fixed all-gap
+threshold.  The original definition is
+\[
+ q_0=\frac1{C_q}\min\left\{
+        \frac{h_{NC}}{C_q\sqrt m},\ \operatorname{cloudGap}\right\}.
+                                                        \tag{AR1}
+\]
+The cloud-gap set is retained as a nonempty finite set, as in
+the actual weighted-sum consumer.  Its minimum is therefore
+bounded below by any lower bound for all spectral gaps.
+
+\begin{proposition}\label{prop:archimedean-ap7-reserve}
+Fix the requested weight \(a_w\ge0\), and take the pointwise
+constant supplied by Theorem~\ref{thm:archimedean-pointwise-sufficient},
+for example
+\[
+                 C_*=64+16\max\{C_h,0\}+24C_J,
+\]
+where \(C_J\ge0\) is its fixed moment constant.  Set
+\[
+                  M=\lceil2a_w+4C_*+8\rceil,
+                      P=Ms^3 .                         \tag{AR2}
+\]
+Choose the internal analytic base threshold \(\Gamma_g\) so that
+\[
+ \Gamma_g\ge\max\left\{C_{g,0},\ C_q^2(M+50),\
+                   200(M+50),\ C_g^{\rm mom}(M+50)\right\},
+                                                        \tag{AR3}
+\]
+where \(C_{g,0}\) denotes the other fixed local thresholds
+in the sufficient pointwise theorem and the original construction.
+Then the original strengthened base all-gap hypothesis
+\(\operatorname{AllGaps}(\lambda_0,\Gamma_gm^4)\), together with
+the original noncompact-gap hypothesis, supplies
+\[
+       q_0\ge s\bigl(P+48s^2+s+1\bigr).                 \tag{AR4}
+\]
+Consequently every shifted coefficient used in the positive-minor
+proof of (AP7) satisfies the exact pointwise reserve.  The
+weighted-sum estimate (AP7) follows without an additional
+rank-dependent or shift-dependent hypothesis.
+\end{proposition}
+
+\begin{proof}
+Put \(K=3sn^2+n^3\ge1\).  The original noncompact-gap
+hypothesis and the strengthened all-gap hypothesis give
+\[
+ \frac{h_{NC}}{C_q\sqrt m}\ge\frac{\Gamma_gm^4K}{C_q},
+       \qquad \operatorname{cloudGap}\ge \Gamma_gm^4.
+\]
+Using \(C_q\ge1\) in (AR1), we obtain
+\[
+ q_0\ge\frac{\Gamma_gm^4}{C_q^2}\min\{K,C_q\}
+      \ge\frac{\Gamma_gm^4}{C_q^2}
+      \ge16(M+50)s^4.                                  \tag{AR5}
+\]
+For \(s\ge1\),
+\[
+ s(P+48s^2+s+1)
+      =Ms^4+48s^3+s^2+s\le(M+50)s^4,
+\]
+which proves (AR4).  The harmless factor \(16\) in
+(AR5) is unused.
+
+In the proof of (AP7), each selected positive-minor monomial
+has total exponent at most \(P\).  Its exterior-Pieri shifts
+therefore satisfy \(\delta=\|\lambda'-\lambda_0\|_1\le sP\).
+The sufficient pointwise proof uses the Gram power \(p_0=6s^2\)
+and a compact Wigner chain of length \(a\le36s^2\).  Thus
+\[
+             L=2p_0+a\le48s^2,
+                  d=sL\le48s^3 .                      \tag{AR6}
+\]
+Its required moment reserve follows directly from (AR4):
+\[
+       \delta+s(L+s+1)
+             \le s(P+48s^2+s+1)\le q_0.                \tag{AR7}
+\]
+This simultaneously contains the smaller reserve
+\(s(P+s+1)\le q_0\) for the positive-minor iteration itself.
+
+The all-gap assumptions are also simultaneous.  Since
+\(Pm=2Ms^4\), \(Lm\le96s^3\), and
+\(\delta+d\le(M+48)s^4\), (AR3) gives
+\[
+ \begin{split}
+ \Gamma_gm^4&\ge C_g^{\rm mom}\max\{Pm,Lm\},\\
+ \Gamma_gm^4&\ge200(\delta+d).
+ \end{split}                                           \tag{AR8}
+\]
+In particular the required lower bound \(200\delta\)
+holds, and all signed standard and dual-standard shifts in
+the pointwise proof stay in the original regular chamber.
+The original compact data and the base parameter are the
+ones used for the spectral normalizer; they are unchanged
+as the coefficient parameter varies.
+
+Apply Theorem~\ref{thm:archimedean-pointwise-sufficient} to
+every final coefficient in the positive-minor expansion.
+It supplies exactly (AP6), with the same \(C_*\), for the
+family actually used in that expansion.  The proof of
+Theorem~\ref{thm:rotated-sum-from-near-bp} then gives
+\[
+ BSumR\bigl(\gamma\mapsto normWt(\gamma)^{a_ws^2}\bigr)
+       \le b^{C_{\rm rot}m^5f}\,jSqG.
+                                                        \tag{AR9}
+\]
+Its positive-minor selection, global product-formula
+cancellation, and reciprocal-weight sum require no estimate
+outside this family.  The constants in (AR3) and (AR9)
+depend on the requested fixed weight and the original
+fixed analytic constants, and not on \(r,k,f\).
+\end{proof}
+
+Together with the exact uniform amplitude and row-norm
+comparisons, (AR9) supplies the weighted analytic input
+used by \(\mathrm{StepThmBPinnedG}\).  This conclusion uses the fourth-power all-gap hypothesis in the
+consumer's analytic reduction. Its internal fixed threshold
+\(\Gamma_g\) is distinct from the externally prescribed
+\(C_g\): the original existential representation-size and
+level thresholds are chosen afterward to supply it.
+The literal quantifier argument is given in
+Theorem~\ref{thm:archimedean-pinned-row-closure}.
+It does not assert the stronger full near-parameter
+\(\mathrm{ThmBpDS}\) statement outside (AR7).

@@ -1,0 +1,332 @@
+\subsection{Exact transport from the actual character to the standard character}
+\label{sec:archimedean-character-transport}
+
+The canonical root-Haar scale \(\theta=1\) does not make the
+actual character parameter equal to one. After the prescribed
+phase rotation, the actual local datum has
+\[
+       c=-2ia,\qquad
+       a=\mathrm{kaRe}(D)
+         =\frac{D.\mathrm{host.ka}}{g_0g_1}>0 .
+\]
+The parameter \(a\) and the root-Haar scale \(\theta\) are
+different quantities. We now transport this datum to \(c_1=-2i\)
+and calculate the pointwise and radial factors together.
+Every factor whose exponent contains \(k\) cancels exactly.
+The calculation uses the original root, quotient and radial
+normalizations.\cite{current-construction-record}
+
+\begin{proposition}[Character transport without a compact-rank loss]
+\label{prop:archimedean-character-transport}
+Let \(s=r+1\), \(k\ge1\), and let \(L\) be an actual local
+Bessel datum with character \(c=-2ia\), \(a>0\), and the
+period, smooth-decay and all-cell factorization hypotheses
+already established. Let \(F\) be a finite compact-finite
+coefficient of its discrete series. There is a standard-character
+datum \(L_1\), with the same discrete series and compact
+parameters, and a single finite compact-finite coefficient
+\(F_1\), chosen before all points and radial sections, with
+the following properties. The pointwise identities below apply
+to every relevant original point on the nonzero-Gram locus
+\(\mathcal G_L(\gamma)>0\); the radial identity uses the
+original big cell up to its null boundary.
+
+Put
+\[
+ \eta=a^{-1},\qquad \tau=a^r,\qquad
+ t_j=\tau\eta^{r-j}=a^j\quad(0\le j\le r).
+                                                        \tag{CT1}
+\]
+The new negative vectors are \(z_1=\tau z\), \(z'_1=\tau z'\);
+thus \(T_1=\tau^2T\), \(T'_1=\tau^2T'\).
+The prescribed point transform \(\gamma\mapsto\gamma_1\)
+has Gram matrix
+\[
+       Z_1=\operatorname{diag}(t_j)\,
+                       Z\,\operatorname{diag}(t_j).
+                                                        \tag{CT2}
+\]
+Let \(P_\gamma\) be the original root pattern, and write
+\[
+ d_\gamma=|P_\gamma|,\qquad
+ S_\gamma=\sum_{(i,j)\in P_\gamma}(j-i),\qquad
+ \alpha_\gamma=\eta^{d_\gamma-2S_\gamma}.
+\]
+Define the positive numbers
+\[
+ J=\tau^{4s}\eta^{2rs}=a^{2rs},\qquad
+ W=\prod_{j=0}^r
+        t_j^{\,4(2(r-j)+k-1)} .
+                                                        \tag{CT3}
+\]
+With the original notation for point weight, orbital square,
+Gram polynomial and squared radial norm, one has
+\begin{align}
+ \mathrm{orbSq}_{L_1}(F_1,\gamma_1)
+      &=\alpha_\gamma^{-2}
+                         \mathrm{orbSq}_L(F,\gamma),
+                                                        \label{eq:character-orb}\\
+ \mathrm{ptWeight}_{L_1}(\gamma_1)
+      &=W\alpha_\gamma^2\eta^{-2d_\gamma}
+                             \mathrm{ptWeight}_L(\gamma),
+                                                        \label{eq:character-weight}\\
+ \mathcal N_{L_1}(F_1)&=JW\mathcal N_L(F),
+                                                        \label{eq:character-norm}\\
+ \mathcal G_{L_1}(\gamma_1)&=J\mathcal G_L(\gamma).
+                                                        \label{eq:character-gram}
+\end{align}
+These identities include every admitted quotient measure
+and radial section, transported as described in the proof.
+In particular a standard-character estimate
+\[
+ \mathrm{ptWeight}_{L_1}(\gamma_1)
+       \mathrm{orbSq}_{L_1}(F_1,\gamma_1)
+ \le B(\mathcal G_{L_1}(\gamma_1))\mathcal N_{L_1}(F_1)
+\]
+implies the actual-character estimate
+\[
+ \mathrm{ptWeight}_L(\gamma)\mathrm{orbSq}_L(F,\gamma)
+ \le a^{2rs-2d_\gamma}
+               B(a^{2rs}\mathcal G_L(\gamma))\mathcal N_L(F).
+                                                        \tag{CT4}
+\]
+No division by a radial norm or an orbital value is required.
+\end{proposition}
+
+\begin{proof}
+Let \(D\) act on the first isotropic basis vector of index
+\(j<r\) by \(t_j\), on the opposite vector by \(t_j^{-1}\),
+and on the middle space by the identity. This is an element
+of the original unitary group. Put
+\[
+                  \chi(g)=D^{-1}gD .
+                                                        \tag{CT5}
+\]
+The last frame vector is scaled separately, by \(\tau\).
+Then
+\[
+ Df_j(z_1)=t_jf_j(z)
+\]
+also at \(j=r\). Taking Hermitian pairings proves (CT2).
+The elementary root-coordinate calculation gives
+\[
+ \ell_{z_1}(\chi(n))=\eta^{-1}\ell_z(n).
+                                                        \tag{CT6}
+\]
+Consequently the new character \(c_1=\eta c=-2i\) satisfies
+\(\psi_1(\chi(n))=\psi_0(n)\).
+Conjugation normalizes the unipotent subgroup and preserves
+its Haar class. Give the new unipotent and compact measures
+their exact pushforwards under \(\chi\); their positive
+scalar normalizations are retained. The group Haar measure
+is unchanged by this inner automorphism. The compact
+parameters and the discrete series are unchanged.
+
+Initially set \(\widetilde F=F\circ\chi^{-1}\).
+This is a finite smooth coefficient of the same representation:
+if \(F(g)=P\sigma(g)Q\), then
+\[
+ \widetilde F(g)
+       =(P\sigma(D))\,\sigma(g)\,(\sigma(D^{-1})Q).
+                                                        \tag{CT7}
+\]
+Smoothness is preserved by the representation action.
+Conjugation need not preserve finiteness under the chosen
+maximal compact subgroup, so that assertion is not used.
+To supply the literal compact-finite consumer, use the
+period-normalized maps. Exact substitution in their period
+identities gives
+\[
+          B_1=B_0\sigma(D),\qquad B'_1=B'_0\sigma(D).
+                                                        \tag{CT8}
+\]
+If either period map is zero, the all-cell factorization makes
+the orbital evaluations and radial norm zero; take \(F_1=0\).
+Otherwise these maps are nonzero, and
+\(s_{\sigma,1}(\widetilde F)=s_{\sigma,0}(F)\).
+Choose one compact-finite rank-one coefficient \(H\)
+with \(s_{\sigma,1}(H)\ne0\), as in the proof of
+Theorem~\ref{thm:flag-exact-norm-comparison}, and put
+\[
+ F_1=\frac{s_{\sigma,1}(\widetilde F)}
+                         {s_{\sigma,1}(H)}H .
+                                                        \tag{CT9}
+\]
+The all-cell factorization
+Theorem~\ref{thm:all-cell-relative-factorization}
+shows that \(F_1\) and \(\widetilde F\) have identical
+orbital evaluations at every relevant nonzero-Gram point
+and identical radial norms. If the numerator in (CT9)
+is zero, take \(F_1=0\); the same factorization proves
+all these evaluations vanish. This choice is independent
+of the point and section.
+
+We next track the canonical root measure, still at
+root-Haar scale \(1\). The root pattern is unchanged by
+(CT2). In its complex coordinate indexed by \((i,j)\),
+conjugation scales the coordinate by \(t_j/t_i\).
+The prescribed density per complex coordinate is
+proportional to the absolute value of the character
+parameter. Thus the new canonical root Haar measure is
+\[
+ \mu_{R,1}
+      =\alpha_\gamma\,\chi_*\mu_{R,0},\qquad
+ \alpha_\gamma
+      =\eta^{d_\gamma}
+           \prod_{(i,j)\in P_\gamma}(t_j/t_i)^2
+      =\eta^{d_\gamma-2S_\gamma}.
+                                                        \tag{CT10}
+\]
+This scalar is forced by the root-coordinate Jacobian;
+it is not a choice of a new free normalization.
+The defining Weil identity therefore gives the new
+orbital quotient measure as
+\(\alpha_\gamma^{-1}\) times the pushforward of the old one.
+Substitution in the absolutely convergent orbital integral,
+using (CT6) and (CT7), gives
+\[
+       \mathrm{OrbInt}_{L_1}(\widetilde F,\chi(g))
+             =\alpha_\gamma^{-1}\mathrm{OrbInt}_L(F,g).
+                                                        \tag{CT11}
+\]
+The transform and its inverse give a bijection on all
+admitted representatives, root measures and orbital quotient
+measures. Taking squared Hilbert--Schmidt norms and then
+the defining supremum proves \eqref{eq:character-orb};
+(CT9) allows replacement by \(F_1\).
+
+For clarity, the point-density identity can be checked
+block by block. A block of length \(h\), beginning at
+index \(A\), has \(q=r+1-A-h\) remaining indices after it.
+Its nonzero block entry \(\xi\) is multiplied by
+\[
+                  \tau^2\eta^{2q+h-1}.
+\]
+Except for a terminal singleton, its original density
+factor is
+\[
+                 |\xi|^{\,2h(2q+k+h-2)}.
+\]
+For a terminal singleton the factor is instead
+\((|\xi|^2-TT')^{k-1}\); it has the same scaling
+because \(T,T'\) are both multiplied by \(\tau^2\).
+The two elementary exponent identities are
+\[
+ \begin{split}
+ 4\sum_{v=0}^{h-1}(2(q+v)+k-1)
+       &=4h(2q+k+h-2),\\
+ 4\sum_{v=0}^{h-1}(q+v)(2(q+v)+k-1)
+       &=(2q+h-1)\,2h(2q+k+h-2)
+                  +4\,\frac{h(h^2-1)}6 .
+ \end{split}                                           \tag{CT12}
+\]
+They follow by summing \(1,v,v^2\).
+The last term is four times the sum of \(j-i\) over
+pairs in that block. Multiplying over all blocks gives
+\[
+       \mathrm{ptWeight}_{L_1}(\gamma_1)
+                =W\eta^{-4S_\gamma}
+                                \mathrm{ptWeight}_L(\gamma).
+                                                        \tag{CT13}
+\]
+Since
+\(\alpha_\gamma^2\eta^{-2d_\gamma}=\eta^{-4S_\gamma}\),
+this proves \eqref{eq:character-weight}. This computation
+uses the actual block density, and does not assume that
+internal leading minors are nonzero.
+
+On the big cell the root pattern is empty. Hence
+(CT11) has scalar one. Its radial variables change by
+\[
+ (q_0,\ldots,q_{r-1},\zeta)
+       \longmapsto
+ (t_0^2q_0,\ldots,t_{r-1}^2q_{r-1},\tau^2\zeta).
+                                                        \tag{CT14}
+\]
+This real change of variables has Jacobian
+\[
+       \left(\prod_{j<r}t_j^4\right)\tau^4
+                    =\tau^{4s}\eta^{2rs}=J.
+                                                        \tag{CT15}
+\]
+The original radial weight has factor \(W\):
+its exponents at \(q_j\) are \(2(2(r-j)+k-1)\),
+and its terminal factor has exponent \(k-1\).
+This proves \eqref{eq:character-norm} by Tonelli and
+the exact change of variables. The excluded zero
+coordinates and the Gram-boundary circle have measure
+zero, also when \(k=1\); if \(r=0\), the first product
+is empty.
+
+Finally every leading minor of order \(\ell\) in
+(CT2) is multiplied by \(\prod_{j<\ell}t_j^2\).
+In
+\[
+       \mathcal G=|\Delta_{r+1}|^2-TT'|\Delta_r|^2
+\]
+both terms are therefore multiplied by \(J\), proving
+\eqref{eq:character-gram}. Multiplying
+\eqref{eq:character-orb} and \eqref{eq:character-weight}
+and comparing with \eqref{eq:character-norm} cancels
+the entire positive factor \(W\). The remaining factor
+is
+\[
+              J\eta^{2d_\gamma}=a^{2rs-2d_\gamma},
+\]
+which proves (CT4). All cancellations concern positive
+finite scalars; zero orbital values and zero radial
+norms require no separate division.
+\end{proof}
+
+\begin{corollary}[Uniform cost of the actual-character return]
+\label{cor:archimedean-character-return}
+Suppose \(b>1\), \(a,a^{-1}\le b^{C_h}\), and the retained
+standard-character family satisfies
+\[
+ \mathrm{ptWeight}_{L_1}(\gamma_1)
+      \mathrm{orbSq}_{L_1}(F_1,\gamma_1)
+ \le b^B
+       \max\{1,\mathcal G_{L_1}(\gamma_1)^{-1}\}^{p}
+                           \mathcal N_{L_1}(F_1),
+ \qquad p\ge0 .
+\]
+Then the original datum satisfies
+\[
+ \mathrm{ptWeight}_L(\gamma)\mathrm{orbSq}_L(F,\gamma)
+ \le b^{B+2C_hrs(1+p)}
+       \max\{1,\mathcal G_L(\gamma)^{-1}\}^{p}
+                                      \mathcal N_L(F).
+                                                        \tag{CT16}
+\]
+The parameter, compact types, and spectral reserve are
+unchanged. In particular \(p=O(s^2)\) gives an additional
+exponent \(O(C_hs^4)\), with no dependence on \(k\).
+\end{corollary}
+\begin{proof}
+The root pattern consists of pairs of indices in the
+same block, so
+\[
+             0\le2d_\gamma\le r(r+1)=rs.
+\]
+Thus \(0\le2rs-2d_\gamma\le2rs\). Also
+\[
+ \max\{1,(a^{2rs}\mathcal G)^{-1}\}
+       \le\max\{1,a^{-2rs}\}\max\{1,\mathcal G^{-1}\}.
+\]
+Insert these two bounds in (CT4). The inequalities on
+\(a,a^{-1}\) imply \(C_h\ge0\), and give (CT16).
+For the original local admissibility gate,
+\[
+ T_1(1/a)^{2r}=T,\qquad T'_1(1/a)^{2r}=T',
+ \qquad T_1=Ta^{2r}\ge1,\quad T'_1=T'a^{2r}\ge1.
+\]
+These are exactly its original standardized size data
+and its two lower-bound hypotheses. Thus this transport
+does not enlarge the required spectral family or consume
+any additional shifted-weight reserve.
+\end{proof}
+
+This proposition transports only a standard-character
+pointwise estimate proved on the stated retained family.
+It does not assert such an estimate for a larger family
+or for a weaker spectral-reserve hypothesis.

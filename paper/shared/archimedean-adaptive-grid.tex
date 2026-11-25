@@ -1,0 +1,478 @@
+\subsection{Quadratic cut grids and pointwise control on every head}
+\label{actual-adaptive-pointwise}
+
+This subsection retains the original place, normalized tower, top
+lift, regular-radial identity, and $\mathrm{InDDplus2}$ hypotheses of
+the compact Fourier, inverse-parameter, and block-growth proofs
+in the construction record~\cite{current-construction-record}.
+The coefficient is smooth and compact with a positive Gram cutoff.
+All kernels $N_{j,w}$, diagonals $E_{j,w}$, quotient measures, and
+positive word normalizers are the prescribed ones.  In particular,
+no assertion about a discrete-series coefficient without a Gram
+cutoff is included in the theorem below.
+
+Put $s=r+1$, $N=3s$, and $M=N(2r+1)$.  Write
+\[
+ q_0(y)=-TT'\prod_{i=1}^k
+ (y+\tfrac12+u_i)(y+\tfrac12+u'_i),\qquad
+ S_w=\prod_{(\epsilon,t)\in w}\nu(t),
+\]
+where $\nu(t)>0$ at every permitted letter parameter.
+Suppose the original cut has endpoints given by $u_\ell,u'_\ell$,
+contains the interval
+\[
+ [-\max(u_\ell,u'_\ell)+2,
+  -\min(u_\ell,u'_\ell)-2],
+ \qquad |u_\ell-u'_\ell|\ge5M,
+\]
+and has $q_0>0$ on the nodes used below.  As always, the cut
+condition includes regularity of the original operators at these
+parameters.  Set $a=\min(u_\ell,u'_\ell)$ and
+\[
+ \mathcal Y=\{-a-3-5i:0\le i<M\}.
+\]
+An allowed word is an original admissible word with letters
+$(+,y)$ or $(-,y+1)$, $y\in\mathcal Y$; its numerical letter
+parameters are pairwise more than two apart.
+Assume that
+\begin{equation}\label{adaptive-normalizer-premise}
+ \nu(y)\nu(y+1)\le\Lambda_0^2q_0(y)
+ \quad(y\in\mathcal Y),\qquad \Lambda_0>0,
+\end{equation}
+and put $\Lambda=\max\{1,\Lambda_0(5/4)^{N/2}\}$.
+
+\begin{lemma}\label{adaptive-grid-lemma}
+The exact Fourier and inverse-parameter inequalities of those
+proofs hold on $\mathcal Y$ with scale
+$\Lambda$, for every allowed $w$ and every $K\ge0$ with
+$|w|+K\le N$.  This grid fits the quadratic cut allowance
+$30s^2+6$.
+\end{lemma}
+
+\begin{proof}
+The smallest node is $-a-5M+2$, and the largest shifted node is
+$-a-2$.  Thus every $y,y+1$ lies in the displayed cut interval.
+Distinct underlying nodes are five apart.  An admissible old word
+uses each underlying node at most once.  For $0\le d\le2r$,
+\[
+ M-|w|\ge(N-|w|)(2r+1)\ge K(d+1).
+\]
+Consequently one can choose $K$ disjoint blocks of $d+1$ unused
+nodes.  Every choice of one node per block gives simultaneous plus
+and minus extensions with all new--new and new--old numerical
+distances greater than two.  For a block $y_0,\ldots,y_d$, the
+leading-coefficient Lagrange weights satisfy
+\[
+ c_j=\prod_{i\ne j}(y_j-y_i)^{-1},\qquad
+ \sum_{j=0}^d|c_j|\le(d+1)5^{-d}\le1.
+\]
+The last inequality includes $d=0$.
+
+At a fresh node the exact old-word correction is
+\[
+ q_w(y)=q_0(y)
+  \prod_{(+,t)\in w}\left(1+\frac1{y-t}\right)
+  \prod_{(-,t)\in w}\left(1+\frac1{t-1-y}\right).
+\]
+For a negative old letter $t=z+1$, its denominator is $z-y$.
+All displayed denominators therefore have modulus at least five,
+and every real factor is at least $4/5$.  Hence
+\[
+ q_w(y)\ge(4/5)^{|w|}q_0(y)>0,\qquad
+ \sqrt{\nu(y)\nu(y+1)/q_w(y)}\le\Lambda.
+\]
+This applies at every intermediate insertion, since its word
+length is at most $N$.
+
+The exact Capelli coefficient identities in the cited Fourier and
+off-diagonal proofs hold on arbitrary injective fresh real grids.
+Their respective degrees are $2j\le2r$ and
+$2j-t\le2r-1$.  Apply those identities to the blocks just chosen.
+The mixed determinant inequality, original wave isometry, and
+identities $S_{w_+}=S_w\prod\nu(y_i)$ and
+$S_{w_-}=S_w\prod\nu(y_i+1)$ give the same positive weighted
+averages as in those proofs, now with the coefficient-sum bound
+one and insertion ratio at most $\Lambda$.  Taking the finite
+diagonal maxima proves both inequalities.  All original signs,
+shifted parameters, old-word factors, and point normalizers remain
+present.  Finally $5M=30s^2-15s\le30s^2+6$.
+\end{proof}
+
+\begin{theorem}\label{adaptive-all-head-pointwise}
+Under these hypotheses, every valid original head $\gamma$ of
+total size $s$ satisfies
+\begin{equation}\label{adaptive-all-head-bound}
+ E_{s,\varnothing}(\gamma)
+ \le(6\Lambda^2)^s
+       \max_{\substack{w\text{ allowed}\\|w|\le3s}}
+                      E_{0,w}(\varnothing).
+\end{equation}
+More generally, appending any valid head of total size $t$ costs
+at most $(6\Lambda^2)^t$ and at most $3t$ additional letters,
+provided the total word budget does not exceed $N$.
+\end{theorem}
+
+\begin{proof}
+Write $\mathcal W_K(w)$ for the finite set of allowed extensions
+of $w$ by at most $K$ letters.  Define
+$m(\Lambda,3,0)=1$ and
+$m(\Lambda,3,x)=\min\{1,(\Lambda/x)^3\}$ for $x>0$.
+
+For a singleton appended to a head $h$ of size $j$, put
+$B=\max_{v\in\mathcal W_3(w)}E_{j,v}(h)$.
+The Fourier inequality of Lemma~\ref{adaptive-grid-lemma}
+bounds the transform of the actual continuous integrable density
+$H(c)=N_{j+1,w}(h\mathbin\Vert(1,c),h\mathbin\Vert(1,c))$
+by $B m(\Lambda,3,|z|)$, even when the maximizing extension
+depends on $z$.  The original character is
+$\exp(zc-\bar z\bar c)$ and its planar inversion constant is
+$\pi^{-2}$.  Since
+\[
+ \int_{\mathbb C}m(\Lambda,3,|z|)\,dz=3\pi\Lambda^2,
+\]
+pointwise Fourier inversion for this continuous representative gives
+\begin{equation}\label{adaptive-singleton-step}
+ E_{j+1,w}(h\mathbin\Vert(1,c))
+       \le(3/\pi)\Lambda^2B\le6\Lambda^2B.
+\end{equation}
+The integrable transform is established by the same explicit
+majorant; no almost-everywhere replacement is used.
+
+For a block of size $t\ge2$, let its new total level be $j$.
+Suppose all $E_{j-1,v}(h\mathbin\Vert(t-1,z))$, with
+$z\ne0$ and $v\in\mathcal W_3(w)$, are bounded by $B$.
+The inverse-parameter inequality gives, for every fixed
+$\sigma\in\mathbb C$,
+\[
+ \limsup_{\substack{z\to0\\z\ne0}}
+ \left|N_{j-1,w}\left(h\mathbin\Vert(t-1,z),
+ h\mathbin\Vert(t-1,(z^{-1}+\sigma)^{-1})\right)\right|
+ \le B m(\Lambda,3,|\sigma|).
+\]
+The exceptional reciprocal parameter is absent from a sufficiently
+small punctured neighborhood.  Thus this is the full complex
+limsup required in the original block-growth theorem.
+
+Use the primal lattice
+$\mathscr L=(\pi/\Lambda)(\mathbb Z+i\mathbb Z)$.
+For the prescribed character its dual is
+$\Lambda(\mathbb Z+i\mathbb Z)$ and its covolume is
+$\pi^2/\Lambda^2$.  Choose the translate containing the target
+parameter.  Positivity permits keeping that single summand in the
+block-growth inequality.  The dual sum is bounded by
+\[
+ B\left(1+\sum_{(a,b)\in\mathbb Z^2\setminus\{0\}}
+              (a^2+b^2)^{-3/2}\right)
+ \le B\left(1+8\sum_{n\ge1}n^{-2}\right)
+ \le17B<6\pi B.
+\]
+Here the square shell $\max(|a|,|b|)=n$ has $8n$ points,
+each of Euclidean norm at least $n$, and
+$\sum n^{-2}\le1+\int_1^\infty x^{-2}dx=2$.
+Dividing by the exact left factor
+$\operatorname{covol}(\mathscr L)/\pi=\pi/\Lambda^2$
+proves
+\begin{equation}\label{adaptive-block-step}
+ E_{j,w}(h\mathbin\Vert(t,z_0))\le6\Lambda^2B.
+\end{equation}
+
+Induct on the size of a block, with
+\eqref{adaptive-singleton-step} as base and
+\eqref{adaptive-block-step} as induction step.  The induction
+supplies the required uniform bound on preceding diagonals, so
+the finiteness premise of block growth is verified at each step.
+Concatenate the blocks.  An extension of an extension is an
+allowed extension, and the added lengths sum to at most $3t$.
+Only finite maxima occur, so no number-of-words or number-of-cells
+factor is introduced.  The empty preceding head gives
+\eqref{adaptive-all-head-bound}.  For $r=0$, only the singleton
+step is needed.
+\end{proof}
+
+\paragraph{Uniform scale, conditional on the spectral majorant.}
+If $b\ge3$, $C\ge0$, $m=2s$, and the original spectral comparison
+gives $\Lambda_0\le b^{(6+C)m}$, then
+\[
+ \Lambda\le b^{(7+C)m},\qquad
+ (6\Lambda^2)^s\le b^{(8+C)m^2}.
+\]
+Indeed $(5/4)^{3s/2}\le b^{2s}$ and $6\le b^2$.
+The explicit spectral comparison (NC1)--(NC15) below supplies
+this premise; the adaptive grid and pointwise recursion can
+therefore be applied with this scale.
+
+\paragraph{The precise uncut endpoint.}
+For an actual discrete-series coefficient $F$, let
+$F_\epsilon=\chi(G/\epsilon)G^pFA$, where $\chi=0$ on
+$[0,1/2]$, $\chi=1$ on $[1,\infty)$, and $A$ is the identity
+or a prescribed polynomial compact-type shift.  Applying the
+theorem after the established fixed-cutoff exhaustion requires
+\begin{equation}\label{adaptive-uncut-endpoint}
+ \limsup_{\epsilon\downarrow0}
+ \max_{|w|\le3s}E_{0,w}(F_\epsilon)
+       \le jN^2(G^pFA).
+\end{equation}
+This requires both convergence of the differentiated cutoffs and
+the same-form normalized spectral word-energy inequality for
+$G^pFA$.  Neither follows from the compact interpolation theorem.
+For $A=1$, if this endpoint holds, orbital invariance of $G$ gives
+the conditional pointwise estimate
+\[
+ E_F(\gamma)\le(6\Lambda^2)^sG(\gamma)^{-2p}
+                   jN^2(G^pF).
+\]
+For equal compact types, the compact two-shift lower and contraction
+upper bounds are proved in
+Section~\ref{sec:archimedean-wigner-two-chain}, and their transport
+to the actual ambient polynomial and radial operators is proved
+in Section~\ref{actual-wigner-orbital-transport}. The endpoint
+\eqref{adaptive-uncut-endpoint} follows from the spectral-word
+and direct PBW cutoff theorems. Their exact hypotheses and the
+final application are assembled in
+Theorem~\ref{thm:archimedean-pointwise-sufficient}.
+
+\paragraph{An explicit normalizer comparison on the original cut.}
+The next estimate supplies the normalizer premise in
+\eqref{adaptive-normalizer-premise}. Its exponent depends on the
+rank parameter \(m=2r+2\), rather than on the number \(k\) of
+compact entries. The cancellation comes from interlacing on the
+two sides of the exceptional cut index.
+
+\begin{lemma}[Two-bracket normalizer comparison]
+\label{lem:archimedean-normalizer-comparison}
+Let \(r\ge0\), \(k\ge1\), \(m=2r+2\), \(1\le\ell\le k\),
+and let \(C,b,c\) be real numbers with
+\[
+ C\ge0,\qquad c\ge1,\qquad b\ge c+2,\qquad b\ge k.
+\]
+Let \(\lambda_1,\ldots,\lambda_{k+m-1}\) and
+\(u_1,\ldots,u_k,u'_1,\ldots,u'_k\) be real numbers such that
+\[
+ |\lambda_j|\le b,\qquad |u_\ell|\le b,\qquad |u'_\ell|\le b,
+                                                        \tag{NC1}
+\]
+and assume
+\[
+ \lambda_{j+1}+2c\le\lambda_j\qquad(1\le j\le k-2).
+                                                        \tag{NC2}
+\]
+For each \(v=u,u'\), require the following interlacing
+inequalities away from the cut index:
+\[
+ \begin{array}{ll}
+ \lambda_j+\tfrac12\le v_j
+       & (1\le j<k,\ j\ne\ell),\\
+ v_{j+1}+\tfrac12\le\lambda_j
+       & (1\le j<k,\ j+1\ne\ell).
+ \end{array}                                            \tag{NC3}
+\]
+Require also the cross separation
+\[
+ \max(u_{j+1},u'_{j+1})+1
+             \le\min(u_j,u'_j)\qquad(1\le j<k).
+                                                        \tag{NC4}
+\]
+Suppose \(T,T'\ge b^{-Cm}\), and let \(y\) belong to the
+original closed cut, meaning that either
+\[
+       u_\ell+2\le-y\le u'_\ell-2
+\]
+or the same inequalities with \(u,u'\) exchanged hold.
+For a nonnegative normalizer satisfying
+\[
+ 0\le\nu(t)\le
+       \prod_{j=1}^{k+m-1}(|t+\lambda_j|+c)
+       \qquad(t\in\mathbb R),
+                                                        \tag{NC5}
+\]
+put
+\[
+ q_0(y)=-TT'\prod_{i=1}^k
+             (y+\tfrac12+u_i)(y+\tfrac12+u'_i).
+\]
+Then \(q_0(y)>0\) and
+\[
+ \nu(y)\nu(y+1)
+       \le b^{(11+2C)m}q_0(y)
+       \le b^{2(6+C)m}q_0(y).                           \tag{NC6}
+\]
+All index ranges with an upper endpoint below their lower
+endpoint are interpreted as empty.
+\end{lemma}
+
+\begin{proof}
+By symmetry assume \(u_\ell+2\le-y\le u'_\ell-2\).
+Set
+\[
+ a_j=(|y+\lambda_j|+c)(|y+1+\lambda_j|+c),\qquad
+ p_i=|(y+\tfrac12+u_i)(y+\tfrac12+u'_i)|.
+                                                        \tag{NC7}
+\]
+The cut and (NC1) give \(|y|\le b-2\), while \(b\ge3\).
+Thus every \(a_j\) is nonnegative and
+\[
+ a_j\le(3b)^2\le b^4.                                  \tag{NC8}
+\]
+The cut entry has one negative and one positive factor.
+For \(i<\ell\), both factors in \(p_i\) are positive,
+by (NC4); for \(i>\ell\), both are negative.
+Moreover each of their absolute values is at least one.
+At \(i=\ell\) the two absolute values are at least
+\(3/2\) and \(5/2\), respectively. In particular,
+\[
+ p_i\ge1\quad(1\le i\le k),\qquad
+              q_0(y)=TT'\prod_{i=1}^kp_i>0.             \tag{NC9}
+\]
+
+We first record the elementary chain estimate that will be used
+on each side. Suppose \(h\le b\) is a nonnegative integer and
+\[
+ 0\le A_j\le(d_j+1+c)^2,\qquad
+ d_j\ge\tfrac52+2cj,\qquad
+ P_j\ge(d_j+1)^2
+       \qquad(0\le j<h).
+\]
+Writing \(D_j=d_j+1\), the quotient \(A_j/P_j\) is at most
+\((1+c/D_j)^2\). Its \(j=0\) bound is
+\(K_c=(1+2c/7)^2\). For \(j\ge1\),
+\[
+ \left(1+\frac{c}{D_j}\right)^2
+ \le\left(1+\frac1{2j}\right)^2
+ \le\frac{2j+1}{2j-1}.
+                                                        \tag{NC10}
+\]
+The last inequality is equivalent to \(4j^2-1\le4j^2\).
+The odd factors telescope. For \(h\ge1\) the product is
+at most \(K_c(2h-1)\), and for all \(h\ge0\) it is at most
+\(K_c(2h+1)\). Since
+\[
+ 1+\frac{2c}{7}\le\frac b2,\qquad 2h+1\le4b,
+\]
+we obtain the uniform chain bound
+\[
+                 \prod_{j=0}^{h-1}A_j
+                         \le b^3\prod_{j=0}^{h-1}P_j .
+                                                        \tag{NC11}
+\]
+The case \(h=0\) is included because \(b\ge1\).
+
+For the left chain take the spectral indices
+\(s=1,\ldots,\ell-2\) in reverse order. If this chain is
+nonempty, write \(s=\ell-2-j\) and put
+\[
+        d_j=y+\lambda_s,\qquad A_j=a_s,\qquad P_j=p_s .
+\]
+The inequalities
+\[
+ \lambda_{\ell-2}\ge u_{\ell-1}+\tfrac12,\qquad
+ u_{\ell-1}\ge u'_\ell+1,\qquad y+u'_\ell\ge2
+\]
+show that \(d_0\ge7/2\). Iterating (NC2) gives
+\(d_j\ge7/2+2cj\), which is more than the lower bound
+needed in (NC11). On the other hand, (NC3) gives
+\[
+ y+\tfrac12+u_s\ge d_j+1,\qquad
+ y+\tfrac12+u'_s\ge d_j+1.
+\]
+Consequently \(p_s\ge(d_j+1)^2\), while
+\[
+ a_s=(d_j+c)(d_j+1+c)\le(d_j+1+c)^2.
+\]
+The number of indices is at most \(k\le b\), so (NC11) yields
+\[
+       \prod_{s=1}^{\ell-2}a_s
+                          \le b^3\prod_{s=1}^{\ell-2}p_s.
+                                                        \tag{NC12}
+\]
+
+For the right chain take \(s=\ell+1+j\), with
+\(\ell+1\le s\le k-1\), and put
+\[
+ d_j=-y-\lambda_s-1,\qquad A_j=a_s,\qquad P_j=p_{s+1}.
+\]
+If the chain is nonempty, (NC3), (NC4), and the cut give
+\[
+ \lambda_{\ell+1}\le u_{\ell+1}-\tfrac12
+                         \le u_\ell-\tfrac32
+                         \le-y-\tfrac72.
+\]
+Hence \(d_0\ge5/2\), and (NC2) gives \(d_j\ge5/2+2cj\).
+Also (NC3) gives
+\[
+ y+\tfrac12+u_{s+1}\le-(d_j+1),\qquad
+ y+\tfrac12+u'_{s+1}\le-(d_j+1).
+\]
+Thus the same chain estimate applies and gives
+\[
+       \prod_{s=\ell+1}^{k-1}a_s
+                          \le b^3\prod_{i=\ell+2}^{k}p_i.
+                                                        \tag{NC13}
+\]
+
+The two spectral chains are disjoint. Among the first \(k-1\)
+spectral indices they leave at most the two indices
+\(\ell-1,\ell\); there are \(m\) further spectral indices
+from \(k\) through \(k+m-1\). Thus at most \(m+2=2r+4\)
+indices remain unpaired. Apply (NC8) to these indices and
+(NC12)--(NC13) to the chains. By (NC9), inserting any missing
+compact factors only increases the product. We obtain
+\[
+ \begin{split}
+ \prod_{j=1}^{k+m-1}a_j
+   &\le b^{4(m+2)+6}\prod_{i=1}^kp_i\\
+   &=b^{8r+22}\prod_{i=1}^kp_i
+     \le b^{11m}\prod_{i=1}^kp_i .
+ \end{split}                                           \tag{NC14}
+\]
+The last inequality uses \(8r+22\le11(2r+2)\).
+For \(k=1\), both chains are empty and there are only \(m\)
+spectral indices; the same upper bound applies. For
+\(\ell=1\) or \(\ell=k\), one chain is empty and at most
+one exceptional index lies among the first \(k-1\).
+Thus no boundary index has been used outside its stated range.
+
+Finally (NC5), \(TT'\ge b^{-2Cm}>0\), and (NC9) imply
+\[
+ \nu(y)\nu(y+1)
+ \le\prod_{j=1}^{k+m-1}a_j
+ \le b^{11m}(TT')^{-1}q_0(y)
+ \le b^{(11+2C)m}q_0(y).
+\]
+Since \(b\ge1\) and \(m\ge2\), this implies the stated weaker
+exponent \(2(6+C)m\) as well.
+\end{proof}
+
+\begin{corollary}[Explicit scale for the quadratic cut grid]
+\label{cor:adaptive-explicit-normalizer}
+Under the hypotheses of the preceding lemma at every node of
+the original quadratic cut grid, the premise
+\eqref{adaptive-normalizer-premise} holds with
+\[
+                    \Lambda_0=b^{(6+C)m}.
+\]
+Retain the tower, top lift, regular-radial identity and
+\(\mathrm{InDDplus2}\) hypotheses of
+Theorem~\ref{adaptive-all-head-pointwise}. With \(s=r+1\),
+\(m=2s\), and word budget \(N=3s\), its conclusion becomes
+\[
+ E_{s,\varnothing}(\gamma)
+      \le b^{(8+C)m^2}
+           \max_{\substack{w\ {\rm allowed}\\|w|\le3s}}
+                           E_{0,w}(\varnothing).
+                                                        \tag{NC15}
+\]
+\end{corollary}
+\begin{proof}
+The first assertion is (NC6). The scale in that theorem is
+\(\Lambda=b^{(6+C)m}(5/4)^{3s/2}\), since its factors exceed one.
+Its cost is therefore
+\[
+ (6\Lambda^2)^s
+    =6^s b^{4(6+C)s^2}(5/4)^{3s^2}
+    \le b^{(27+4C)s^2+2s}
+    \le b^{(8+C)m^2}.
+\]
+Here \(b\ge3\) gives \(6\le b^2\) and \(5/4\le b\), and
+\(s\ge1\) gives \(2s\le5s^2\). No uncut coefficient estimate
+or removal of the Gram cutoff is implicit in this corollary.
+\end{proof}

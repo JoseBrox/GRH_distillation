@@ -78,7 +78,7 @@ For the actual restricted maps \(T_{i,0}=\Pi T_iJ_i\), define
 \(g_0,b_0\) using the final dimensions and
 \(c_0=c\max(r,v)\). Then
 \begin{equation}\label{shared-prescribed-restriction-bound}
- g_0+b_0\le\frac{g_c+2b_c+1-\min(r,v)}{\max(r,v)},\qquad
+ g_0+b_0\le\frac{g_c+b_c+1-\min(r,v)}{\max(r,v)},\qquad
  \sum_i\|T_{i,0}\|_{\rm HS}^2
  \ge c(r+v-1-g_c-b_c).
 \end{equation}
@@ -88,17 +88,32 @@ restrictions, without assuming any positive mass beforehand.
 
 \begin{proof}
 Write \(Q'=\sum_iT_iJ_iJ_i^*T_i^*\le Q\).
-The mass lost at the target is at most \(c(1-v+b_c)\), while
-source compression retains at least \(c(r-g_c)\). This proves
-the second assertion. Compression cannot increase a positive trace.
-If, more generally, the final normalization is \(c\theta\), then
-compression, positive-trace subadditivity and the scalar threshold
-changes give
+Put \(E_s=((c/R)I-S)_+\) and \(E_t=(Q-(c/D)I)_+\).
+The mass lost at the target is
+\(L=\operatorname{tr}((1-\Pi)Q')\), and
 \[
- g_0\le\frac{g_c+1-v+b_c+(\theta-r)_+}{\theta},\qquad
- b_0\le\frac{b_c+(v-\theta)_+}{\theta}.
+ L\le c(1-v)+\operatorname{tr}((1-\Pi)E_t).
 \]
-Substitute \(\theta=\max(r,v)\).
+Source compression retains mass at least \(c(r-g_c)\).
+Since \(\operatorname{tr}E_t=cb_c\), this proves the
+second assertion. More generally let the final prescribed
+normalization be \(c\theta\), with \(\theta>0\).
+Writing \(J=\bigoplus_iJ_i\), the variational formula gives
+\[
+ c\theta g_0\le\operatorname{tr}(J^*E_sJ)+L
+                                      +c(\theta-r)_+,
+ \qquad
+ c\theta b_0\le\operatorname{tr}(\Pi E_t\Pi)
+                                      +c(v-\theta)_+.
+\]
+The two complementary compressions of the same \(E_t\)
+have traces summing to \(cb_c\). Therefore
+\begin{equation}\label{shared-prescribed-restriction-theta}
+ g_0+b_0\le
+ \frac{g_c+b_c+1-v+(\theta-r)_++(v-\theta)_+}{\theta}.
+\end{equation}
+Substitute \(\theta=\max(r,v)\). No commutation with
+\(\Pi\) is assumed; the target excess is charged once.
 \end{proof}
 
 The constants can improve when the mass decreases under restriction.

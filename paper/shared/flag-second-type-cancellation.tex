@@ -17,6 +17,7 @@ of \(E_v\), with annihilator of \(O\) under multiplication
 equal to \(O\); on the base field we use a primitive trace
 character of conductor \(R\). No odd residue characteristic
 assumption is made.
+As in the original local datum, \(\psi_0(\bar z)=\psi_0(z)\).
 
 \begin{lemma}[Uniform quadratic Fourier and leakage estimates]
 \label{lem:flag-second-type-fourier}
@@ -28,15 +29,16 @@ Then
 \[
  \left|q^a\Pr(Z_a)-1\right|\le\epsilon,\qquad
  q^a\left|\int_{Z_a}\chi(v)\,dv\right|\le\epsilon
- \quad(\chi\text{ a nontrivial continuous unitary character of }U).
- \tag{SC1}
+ \tag{STC1}
 \]
+The second inequality holds for every nontrivial continuous
+unitary additive character \(\chi\) of \(U\).
 Moreover
 \[
  q^a\Pr\{v\in Z_a:\nexists w\in W,\ h(v,w)=1\}
- \le 2(1+\epsilon)\epsilon .                         \tag{SC2}
+ \le 2(1+\epsilon)\epsilon .                         \tag{STC2}
 \]
-In the nonsplit case the right side of (SC2) can be replaced
+In the nonsplit case the right side of (STC2) can be replaced
 by \((1+\epsilon)\epsilon^2\).
 \end{lemma}
 \begin{proof}
@@ -80,7 +82,7 @@ frequency error is at most
  \sum_{i\ge1}(q^i-q^{i-1})q^{-i\rho}
  =\frac{(1-q^{-1})\epsilon}{1-\epsilon}\le\epsilon .
 \]
-This proves (SC1), including \(a=0\).
+This proves (STC1), including \(a=0\).
 
 Failure of the pairing condition implies that the image
 ideal \(h(v,W)\subset O\) is proper. In particular all
@@ -101,7 +103,7 @@ frequencies \(i\le b\) trivially, gives
  \le (1+\epsilon)q^{b(1-\rho)} .
 \]
 The union of the two maximal ideals in the split case,
-or the single ideal in the nonsplit case, proves (SC2).
+or the single ideal in the nonsplit case, proves (STC2).
 \end{proof}
 
 \begin{lemma}[The actual reversible moves]
@@ -126,14 +128,14 @@ Define
 \[
  e(z)=z+h(z,v)x-h(z,x)(v+\sigma x),\qquad
  \Lambda_1=e^{-1}\Lambda .
- \tag{SC3}
+ \tag{STC3}
 \]
 Then \(\Lambda_1\) is a term over the same datum;
 the phase changes by
 \[
  \omega(\Lambda_1)=\omega(\Lambda)\chi_b(v),\qquad
  \chi_b(v)=\psi_0\left(-\theta^{-1}
-                h(cu_j+c'u'_j,v)\right),           \tag{SC4}
+                h(cu_j+c'u'_j,v)\right),           \tag{STC4}
 \]
 where \(c,c'\) are the coefficients at index \(j-1\)
 in \(x,x'\) in their respective adapted frames.
@@ -159,7 +161,7 @@ least \(d\) such that for each \(i\ge d\) the
 coefficients \((A_i,B_i)\) of \(\theta y\) satisfy
 \[
  B_i\in O,\quad A_i+B_i\in\theta O.
- \tag{SC5}
+ \tag{STC5}
 \]
 This is exactly the source's RR condition and
 is equivalent to being represented modulo \(M\)
@@ -188,7 +190,7 @@ gives the stronger integral congruence
 \[
  ee'z-z=\theta\{h(z,v)z_0-
           (h(z,z_0)+C h(z,v))(v+\sigma x)\}
-          \in\theta\Lambda .                       \tag{SC6}
+          \in\theta\Lambda .                       \tag{STC6}
 \]
 The same formula with inverse parameters holds on
 \(\Lambda_1\cap(X')^\perp\): indeed \(x+x'\in
@@ -197,7 +199,12 @@ The same formula with inverse parameters holds on
 \(e(v)=v+(\sigma+\bar\sigma)x\).
 Both \(\sigma x,\bar\sigma x\) belong to \(\Lambda_1\)
 because \(e\) fixes \(x\). All integrality hypotheses
-of (SC6) therefore hold on the new lattice.
+of (STC6) therefore hold on the new lattice: for the
+primed vectors use
+\[
+ e(\tau x')=\tau x'-\tau\theta C(v+\sigma x)\in\Lambda,
+ \qquad \tau\in\{\sigma,\bar\sigma\}.
+\]
 These two congruences imply that \(e'\Lambda\)
 and \(e^{-1}\Lambda\) have the same intersection
 with \((X')^\perp\).
@@ -234,12 +241,12 @@ are \(e^{-1}n\) and \(ge'n'\), where \(n,n'\)
 are the old witnesses. The fixed-point property
 of \(g\) implies \(g\in N'\) and \(\psi'(g)=1\).
 The new frame link modulo \(\theta\Lambda_1\)
-follows from (SC6) on each \(u_i'\), together
+follows from (STC6) on each \(u_i'\), together
 with the old link. For the graph datum take old
 representatives \(z'\in\Lambda\cap(X')^\perp\),
 \(z\in\Lambda\cap X^\perp\); replace them by
 \(e'z'\) and \(e^{-1}z\). Their quotient classes
-do not change, and by (SC6)
+do not change, and by (STC6)
 \[
  e'z'-e^{-1}z\in\theta\Lambda_1
       \quad\Longleftrightarrow\quad z'-z\in\theta\Lambda .
@@ -257,7 +264,7 @@ vanish because \(x\in X_j\). The surviving coefficient
 of \(x\) is \(c\) (unchanged by unipotent frame change),
 and \(u_j-f_j\in X_j\). The primed calculation is
 identical. Multiplicativity of the two characters,
-and \(\psi'(g)=1\), prove (SC4).
+and \(\psi'(g)=1\), prove (STC4).
 
 To prove nontriviality put \(Z=cu_j+c'u'_j\).
 If \(\chi_b\) is trivial on \(U_\Lambda\), scaling
@@ -271,7 +278,7 @@ is \(Y\). Write \(\theta^{-1}Z=z+y\), \(z\in\Lambda\),
 \(y\in Y\). Then \(z\in M_h\), but the coefficient
 pair at index \(j\) of \(\theta z\) is \((c,c')\).
 Exact level \(j\) of \(b\) means that the pair
-\((c,c')\) fails (SC5). Thus \(z\) has level at
+\((c,c')\) fails (STC5). Thus \(z\) has level at
 least \(j+1\), impossible.
 
 It remains to prove preservation of the family,
@@ -333,22 +340,29 @@ and \(\bar\sigma+\sigma=Q(-v)\).
 For any fixed datum and any second-type family \(\mathcal F\),
 \[
  |A_\delta(\mathcal F)|
- \le 7 q^{1-\rho}\,m_\delta(\mathcal F).              \tag{SC7}
+ \le 7 q^{1-\rho}\,m_\delta(\mathcal F).              \tag{STC7}
 \]
 The same inequality holds for the union of all second-type
 families (not for arbitrary subsets of a family).
 With the original two stabilizer weights,
 \[
  \|\,\mathrm{nongeneric}\,\|_{\rm amp}^2
- \le P^{39s^2}q^{-(k-2r-5)}\,nn.                     \tag{SC8}
+ \le P^{39s^2}q^{-(k-2r-5)}\,nn.                     \tag{STC8}
 \]
 \end{theorem}
 \begin{proof}
 For each term in \(\mathcal F\), use the original
 move coordinates \((b,v,t)\) with
-\(\sigma=Q(v)/2+t\). Normalize Haar measure
-on the product of the lattices \(B_\Lambda,U_\Lambda\)
-and \(T=\pi^a O\cap\ker\operatorname{Tr}_{E/F}\).
+\(\sigma=Q(v)/2+t\). On the fixed ambient additive space
+\[
+ (X_j\times X'_j)\times Y^\perp
+              \times\ker\operatorname{Tr}_{E/F}
+\]
+take product Haar measure normalized so that
+\(B_\Lambda,U_\Lambda\), and
+\(T=\pi^a O\cap\ker\operatorname{Tr}_{E/F}\)
+each have volume one. The scalar variable ranges over
+the entire trace-zero space; it is not restricted to \(T\).
 The fraction of exact-level pairs is
 \(\beta_j/\beta\): addition divided by \(\theta\)
 identifies \(B_\Lambda\) with \(B\), which surjects
@@ -357,10 +371,12 @@ onto the defect quotient. For each \(v\) the allowable
 otherwise, since trace \(O\to R\) is onto and each
 nonempty fibre is a translate of \(T\).
 The division by 2 is only in the field, not in \(O\).
+In residue characteristic two the allowable translate of
+\(T\) need not be \(T\) itself. Its Haar measure is still one.
 
 Define a nonnegative kernel \(K(\Lambda,\Lambda_1)\)
 on the actual family by integrating the indicator of
-the move (SC3) with target \(\Lambda_1\), multiplied
+the move (STC3) with target \(\Lambda_1\), multiplied
 by \(q^a\beta/\beta_j\).
 This is the source's \(\mathrm{kern}\): on the compact
 support the finite index integral is the normalized
@@ -401,19 +417,38 @@ and conjugates the Eichler formula. The datum,
 family and phase are invariant under \(S_t\)
 (the original common-stabilizer character agreement
 and witness independence used in the class unfolding).
+Here the character agreement also has a direct coordinate
+check. Define \(Z_{ab}=h(f'_b,f_a)\) in the fixed relevant
+reference frames. Write the two frame matrices of \(h\in S_t\) as
+upper unitriangular \(A,B\); the signed block-antidiagonal
+cross matrix \(Z\) satisfies
+\(\bar A^{\,t}Z=ZB^{-1}\).
+The block-reversal involution pairs adjacent entries inside
+each block. Consecutive nonzero entries of \(Z\) have
+opposite signs, while an adjacent entry crossing a block
+boundary is forced to vanish by triangularity. Thus
+\[
+ \overline{\sum_{i=0}^{r-1}A_{i,i+1}}
+       =-\sum_{i=0}^{r-1}(B^{-1})_{i,i+1}
+       =\sum_{i=0}^{r-1}B_{i,i+1}.
+\]
+Since \(\theta\) lies in \(F\) and \(\psi_0\) is
+conjugation invariant, the two simple-root characters
+agree. This proves the phase invariance used in the
+quotient sum.
 
 Before discarding moves leaving \(\mathcal F\),
 the row mass differs from one by at most \(\epsilon\)
-by (SC1). The phase-weighted row sum has modulus
-at most \(\epsilon\) by (SC4) and (SC1), since every
+by (STC1). The phase-weighted row sum has modulus
+at most \(\epsilon\) by (STC4) and (STC1), since every
 exact-level pair has a nontrivial character.
 By the preservation lemma all discarded moves
-are in the leakage set (SC2). Consequently
+are in the leakage set (STC2). Consequently
 \[
  \left|\sum_{\Lambda_1}K(\Lambda,\Lambda_1)-1\right|,
  \quad\left|\sum_{\Lambda_1}K(\Lambda,\Lambda_1)
                            \omega(\Lambda_1)\right|
-       \le \epsilon+2(1+\epsilon)\epsilon .        \tag{SC9}
+       \le \epsilon+2(1+\epsilon)\epsilon .        \tag{STC9}
 \]
 These sums run over actual lattices, not orbit
 representatives.
@@ -429,7 +464,9 @@ orbit the mass of targets at fixed source is
 \]
 with the same reference normalization on either
 side; equivalently use multiplicativity of finite
-relative indices. It is unchanged on reversing
+relative indices. The group \(S_t\) is unipotent, hence
+unimodular; conjugation does not change these orbit weights.
+The displayed pair mass is unchanged on reversing
 the pair. The weights and phases are orbit invariant,
 and there are finitely many term orbits for fixed
 datum by the local class and gluing counts (GL4)--(GL6)
@@ -441,13 +478,13 @@ and (DS5). Summing over pair orbits therefore proves
  \sum_{[\Lambda]}\mu(\Lambda)\omega(\Lambda)
                         \sum_{\Lambda_1}K(\Lambda,\Lambda_1).
 \]
-Apply the two row estimates (SC9) to this identity,
+Apply the two row estimates (STC9) to this identity,
 using \(|\omega|=1\). Since \(\epsilon\le1/8\), the
 resulting factor \(2(3+2\epsilon)\epsilon\) is
-at most \(7\epsilon\). This proves (SC7).
+at most \(7\epsilon\). This proves (STC7).
 The nonempty families partition the second-type
 terms uniquely, so the ordinary triangle inequality
-at each datum gives (SC7) for their union without
+at each datum gives (STC7) for their union without
 any factor counting families.
 
 The proof of (DS3) applies also to the square of
@@ -466,7 +503,7 @@ In any nonempty nongeneric branch \(P\ge2\);
 \(q^{-1}\epsilon^2=q^{1-2\rho}\le
 q^{-(k-2r-5)}\). The total is at most
 \(P^{2s^2+10s+19}q^{-(k-2r-5)}nn\),
-which implies (SC8) since
+which implies (STC8) since
 \(2s^2+10s+19\le39s^2\) for \(s\ge1\).
 For \(P=1\) there are no nongeneric terms; for
 \(r=0\) the second-type family is empty.
@@ -474,8 +511,8 @@ For \(P=1\) there are no nongeneric terms; for
 
 The reconstruction follows the actual second-type family
 of the pinned source, not an invented graph on isometry
-classes. In particular (SC7) uses the positive reversible
-kernel before passing to the quotient, and (SC8) uses the
+classes. In particular (STC7) uses the positive reversible
+kernel before passing to the quotient, and (STC8) uses the
 original complement-datum weights. Its new ingredients
 relative to (DS4) are the no-leak move preservation and
 the uniform nontrivial Fourier estimate. The orthogonal

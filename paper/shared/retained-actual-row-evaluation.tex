@@ -1,0 +1,164 @@
+\paragraph{The reference row identity and its exact evaluation factor.}
+There are two further exact consequences of the original row pins.
+They do not require choosing a new row space or a new normalizer.
+The hypotheses in the following statement refer to the prescribed
+complex theta model and Petersson realization; their construction
+for the same moving family remains an application obligation.
+
+\begin{lemma}[Reference rows with the original pins]
+\label{lem:retained-reference-row-pins}
+Let \(K\) be the original totally complex number field,
+\(\sigma:K\hookrightarrow\mathbb C\) its prescribed embedding,
+and \(\epsilon\) the prescribed identity or complex conjugation.
+Put \(\sigma_\epsilon=\epsilon\circ\sigma\).
+Write \(V_K=K^n\), \(W_K=K^d\) for the original point and
+row coordinates.  Let \(E\) be the original finite-dimensional
+complex row space, \(j_E\) its \(\sigma\)-semilinear algebraic
+embedding, and \(e_{RR}\) the prescribed \(K\)-linear
+coordinate isomorphism onto the algebraic row space.  Assume that
+the vectors \(j_Ee_{RR}(e_a)\) span \(E\).
+
+In the prescribed complex theta model define the complex linear map
+\[
+ i_C(z)=\sum_{a=1}^d z_a\,
+            \Theta_{\mu_0}(j_R\operatorname{cr}(e_a)).
+                                                        \tag{RE1}
+\]
+Here the composite \(\Theta_{\mu_0}j_R\) is
+\(\sigma_\epsilon\)-semilinear, \(\operatorname{cr}\) and
+\(e_V\) are \(K\)-linear, and all these maps are the original
+ones.  Suppose the
+actual coordinate and reference-tuple pins read
+\[
+\begin{split}
+ \iota_{\mu_0}c_F(\sigma y)&=j_Ee_{RR}(P_qy),\\
+ e_R(j_Ee_{RR}(w))&=i_C(\sigma_\epsilon w),\\
+ \Theta_{\mu_0}(j_Re_Vy)
+      &=\Theta_{\mu_0}(j_R\operatorname{cr}(P_qy)),
+ \qquad y\in V_K,\quad w\in W_K .
+\end{split}                                             \tag{RE2}
+\]
+The map \(e_R\) is \(\epsilon\)-semilinear.  In the first
+line, the original reference row matrix is the identity; thus
+this line is the source's \(\mathrm{IotaRd}\) pin after
+\(\mathrm{rowMat}_{\mu_0}=I\), not a new choice of coordinates.
+Then the reference theta identity has exactly the scalar one:
+\[
+ \Theta_{\mu_0}(j_Re_Vy)
+       =e_R\bigl(\iota_{\mu_0}c_F(\sigma y)\bigr).
+                                                        \tag{RE3}
+\]
+If, in addition, the original good row space is
+\(H_\Theta^0=\operatorname{range}i_C\), and its original
+lattice norm tie is
+\[
+ \|i_C(\sigma_\epsilon w)\|^2
+       =n_P\|j_Ee_{RR}(w)\|^2\quad(w\in W_K),
+       \qquad n_P>0,                                   \tag{RE4}
+\]
+then \(e_R\) is onto \(H_\Theta^0\) and
+\(\|e_RF\|=\sqrt{n_P}\|F\|\) for every \(F\in E\).
+The number \(n_P\) is the original row mass.
+\end{lemma}
+
+\begin{proof}
+Expanding \(w\) in the original coordinate basis gives
+\[
+ i_C(\sigma_\epsilon w)
+       =\Theta_{\mu_0}(j_R\operatorname{cr}(w)).
+\]
+Substitution into the three equalities (RE2) proves (RE3);
+no nonzero comparison scalar is introduced in this calculation.
+
+For the range and norm assertions put
+\(g(z)=\sum_a z_a j_Ee_{RR}(e_a)\).
+This is onto \(E\), and the second pin in (RE2), first on
+the coordinate basis and then by semilinearity, gives
+\[
+            e_Rg(z)=i_C(\epsilon z).
+\]
+Coordinatewise \(\epsilon\) is bijective, so the ranges of
+\(e_R\) and \(i_C\) coincide.  Since \(K\) is totally
+complex, \(\sigma(K)\) contains a nonreal number.  Its
+\(\mathbb Q\)-span together with \(1\) is dense in
+\(\mathbb C\); hence \(\sigma(K)^d\) is dense in
+\(\mathbb C^d\).  Equation (RE4), evaluated at the points
+\(z=\sigma w\), and continuity of the two finite-dimensional
+norms imply \(\|e_Rg(z)\|^2=n_P\|g(z)\|^2\) for every
+\(z\).  Surjectivity of \(g\) gives the assertion.
+\end{proof}
+
+\begin{lemma}[The prescribed evaluation fixes the row normalization]
+\label{lem:retained-evaluation-normalization}
+Let \(\mathcal H_M\) be the original Petersson Hilbert model,
+and let \(h:\mathcal H_M\to M\) be its injective realization
+in the automorphic multiplicity space, preserving its original
+Petersson inner product.  Let \(M^0\subset\operatorname{range}h\)
+be the prescribed good multiplicity space.  Suppose the actual
+linear row map \(e_E:E\to\mathcal H_M\) satisfies
+\[
+ \operatorname{range}e_E=h^{-1}(M^0),\qquad
+ \|e_EF\|^2=n_P\|F\|^2.                               \tag{RE5}
+\]
+For the same normalized lowest vector, group identification and
+finite placement as in (RP2), assume that the actual evaluation
+\(E_t:M^0\to H^0\) is onto the prescribed good automorphic
+row space and satisfies
+\[
+ \|E_tT\|^2=c_{\rm ev}\|T\|_M^2,\qquad c_{\rm ev}>0.
+                                                        \tag{RE6}
+\]
+Then the actual row isometry is
+\[
+ jF=(c_{\rm ev}n_P)^{-1/2}E_t(h(e_EF)).                 \tag{RE7}
+\]
+It maps \(E\) onto \(H^0\).  In particular its almost
+everywhere formula uses the same \(E_t\) as the finite projector
+identity (RP4), with the displayed positive factor.
+\end{lemma}
+
+\begin{proof}
+The positive norm identity in (RE5) makes \(e_E\) injective.
+Together with injectivity of \(h\), its range identity and
+\(M^0\subset\operatorname{range}h\), this shows that
+\(h e_E:E\to M^0\) is a linear isomorphism.
+The norm of its evaluated value is exactly
+\[
+ \|E_t(h(e_EF))\|^2=c_{\rm ev}n_P\|F\|^2.
+\]
+Equation (RE6) also makes evaluation injective.  The assumed
+onto statement makes the composite onto \(H^0\).  Multiplying
+by the displayed positive square root proves (RE7).
+If \(E\ne0\), this is the unique positive normalization of
+that particular composite which is an isometry.  If \(E=0\),
+the formula still defines the same zero isomorphism, without
+asserting uniqueness of a scalar from its action on zero vectors.
+\end{proof}
+
+Here \(c_{\rm ev}\) is not silently set to one.  In the
+source realization it is fixed by the actual Haar comparison
+\[
+       (\iota^{-1})_*\mu_{A,\mathrm{actual}}
+                   =c_{\rm ev}\nu_0 .                 \tag{RE8}
+\]
+With the original fundamental domains and normalized lowest
+vector, quotient integration and the allowed finite translation
+give (RE6) with precisely this scalar.  The original
+Petersson model, quotient transfer and onto evaluation are
+required for this assertion; it is not a consequence of a
+finite idempotent alone.
+
+These lemmas refine the application boundary in (RP6)--(RP7).
+Once the actual complex-model coordinate, good-range and lattice
+norm pins have been supplied, (RP6) may be taken with \(\lambda=1\).
+Once the same actual Petersson model, (RE5) and onto evaluation
+have been supplied, the row factor is exactly (RE7).
+The finite TC/ColIn period dictionary supplies neither (RE4)--(RE6)
+for that global model nor the anchored see-saw identity for all
+words.  The joined scalar remains
+\(a_u=\epsilon(d.a_u)\kappa_u\), and comparison with
+\(P_u/\sqrt{c_{0X,u}}\) still retains
+\(a_u\sqrt{c_{0X,u}}\).  In particular, these exact row
+identities do not establish that its modulus is one, and do not
+by themselves transfer an unweighted period trace estimate to
+the actual retained theta columns.

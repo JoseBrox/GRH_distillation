@@ -218,7 +218,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The local chart and fixed-field spectrum supply the original nonresonant case; for RH this covers every nonresonant prime. Dyadic Bernoulli units supply its residual unramified vanishing at3. Complete the resonant integral comparisons and the original weighted product; retain nontrivial odd-conductor twists in GRH.
+**Next concrete task.** The [RH weighted Selmer assembly](../notes/rh-weighted-selmer-assembly.md) now has written suppliers for its individual RH inputs and its stated weighted bound. The general Dirichlet W04, including its actual odd-conductor and character-weighted integral comparisons, remains open. Retain both varying quadratic factors and construct the compatible numerical family with the geometric and norm suppliers; see the [current checkpoint](../notes/current-state.md).
 
 **Acceptance conditions:**
 
@@ -330,7 +330,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The embedded-isometry genus mean, integral reference-lattice transport, all stabilizer layers and exact fixed-normal-form weighted sum are supplied. Prove the original term-class correspondence with reciprocal row-automorphism weights, then the zero-Gram sum, generic returns, finite columns and final positive traces.
+**Next concrete task.** The generic local input, complete nongeneric cancellation, all-cell pointwise estimate on its required spectral family, exact character transport, and uniform amplitude/row-norm comparisons are supplied; together they prove the actual StepThmBPinnedG analytic point sum. See the [current W08 continuation](../notes/w08-analytic-and-retained-continuation.md). Construct the matching common theta/Petersson row and anchored all-word scalar comparison. Supply the remaining diagonal loop, near-one distinct-word, actual dimension and moving retained-window estimates, then the prescribed positive-trace budget. W08 remains open.
 
 **Acceptance conditions:**
 
@@ -391,7 +391,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** The actual all-point height floor, finite-fibre determinant nefness, tied regularizations and signed base-test bound beta_B >= -107 Lambda_B/2 are supplied. Construct the general flag positivity and exact Frobenius-linked correction sequences for the weighted mean; then bound rank losses and finish the numerical family.
+**Next concrete task.** The actual all-point height floor, finite-fibre determinant nefness, tied regularizations and signed base-test bound beta_B >= -107 Lambda_B/2 are supplied. The corrected and uncorrected flag theorems supply general finite-place positivity (including M2). Prove the exact Frobenius-linked correction sequences for the weighted mean; then bound rank losses and finish the numerical family.
 
 **Acceptance conditions:**
 
@@ -487,9 +487,9 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W04: The local chart and fixed-field spectrum supply the original nonresonant case; for RH this covers every nonresonant prime. Dyadic Bernoulli units supply its residual unramified vanishing at3. Complete the resonant integral comparisons and the original weighted product; retain nontrivial odd-conductor twists in GRH. Ordinary RH remains the preferred testing ground.
-1. W06/W08: The embedded-isometry genus mean, integral reference-lattice transport, all stabilizer layers and exact fixed-normal-form weighted sum are supplied. Prove the original term-class correspondence with reciprocal row-automorphism weights, then the zero-Gram sum, generic returns, finite columns and final positive traces. The terminal period is supplied; original row realization and intervening seesaw identities remain.
-1. W10: The actual all-point height floor, finite-fibre determinant nefness, tied regularizations and signed base-test bound beta_B >= -107 Lambda_B/2 are supplied. Construct the general flag positivity and exact Frobenius-linked correction sequences for the weighted mean; then bound rank losses and finish the numerical family.
+1. W04: The [RH weighted Selmer assembly](../notes/rh-weighted-selmer-assembly.md) now has written suppliers for its individual RH inputs and its stated weighted bound. The general Dirichlet W04, including its actual odd-conductor and character-weighted integral comparisons, remains open. Retain both varying quadratic factors and construct the compatible numerical family with the geometric and norm suppliers; see the [current checkpoint](../notes/current-state.md).
+1. W06/W08: The generic local input, complete nongeneric cancellation, all-cell pointwise estimate on its required spectral family, exact character transport, and uniform amplitude/row-norm comparisons are supplied; together they prove the actual StepThmBPinnedG analytic point sum. See the [current W08 continuation](../notes/w08-analytic-and-retained-continuation.md). Construct the matching common theta/Petersson row and anchored all-word scalar comparison. Supply the remaining diagonal loop, near-one distinct-word, actual dimension and moving retained-window estimates, then the prescribed positive-trace budget. W08 remains open.
+1. W10: The actual all-point height floor, finite-fibre determinant nefness, tied regularizations and signed base-test bound beta_B >= -107 Lambda_B/2 are supplied. The corrected and uncorrected flag theorems supply general finite-place positivity (including M2). Prove the exact Frobenius-linked correction sequences for the weighted mean; then bound rank losses and finish the numerical family.
 1. W02/W11: assemble compatible signed arithmetic budgets at every required fourth-power sample, with all accuracy parameters fixed before the windows grow.
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.

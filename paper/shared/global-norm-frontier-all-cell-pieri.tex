@@ -2,9 +2,10 @@
 \label{sec:all-cell-pieri-transfer}
 
 We retain the original Bessel subgroups, characters, compact
-types, quotient gauges and radial Jacquet norm of
-Sections~\ref{archimedean-pieri-family} and
-\ref{archimedean-iterated-minors}.  The new step is that a
+types, quotient gauges and radial Jacquet norm of the signed
+Pieri-family and iterated-minor proofs in the construction
+record~\cite{current-construction-record}.
+The new step is that a
 coefficient with zero radial Jacquet norm has zero orbital
 integral on every relevant nonzero-Gram cell, not just on
 the open cell. This permits a direct weighted-sum argument.
@@ -80,7 +81,8 @@ arbitrary smooth \(x_j,y_j\) in the coefficients, and are
 continuous for finite smooth seminorms in these vectors.
 Here is the quantitative reason for the use of the
 large-gap hypothesis. The terminal quotient properness
-estimate \eqref{finite-decay-terminal-properness} applies
+estimate in \texttt{global-norm-frontier-finite-decay.tex}
+of that record applies
 to the two paired flags: after removing the free
 stabilizer roots, the real noncompact coordinates \(y\)
 have dimension at most \(2n^2\) and
@@ -99,7 +101,7 @@ representative \(g\) of the given nonzero-Gram cell;
 only the constant \(C'_g\) changes. A coefficient
 majorized by \(C(1+\|h\|)^{-A}\) is therefore integrable
 if \(A>64s^2(2n^2+1)\). The smooth coefficient bound
-of Theorem~\ref{original-smooth-decay-from-tensor},
+in \texttt{global-norm-frontier-pieri-family.tex},
 in the original reserve of the shifted family, gives
 \(A\ge (C_g/2)s^4(3sn^2+n^3)-1\). Taking
 \(C_g\ge10^6\) is more than sufficient. The constants
@@ -293,8 +295,10 @@ polynomial at a represented point; it is exactly the
 \(Gpt\) in \(\mathrm{BpIneq}\). The estimate is required
 when the base parameter satisfies its original standard
 bounds and all gaps at least \(200\|\eta\|_1\).
-In particular the prescribed character scale, or its
-rigorously transported estimate, is retained.
+The required family consists only of the final coefficients in
+the positive-minor expansion below, whose shifts satisfy
+\(\|\eta\|_1\le sP\). In particular the prescribed character
+scale, or its rigorously transported estimate, is retained.
 Then the original weighted rotated point sum is bounded by
 \[
  BSumR\bigl(a\mapsto normWt(a)^{a_ws^2}\bigr)
@@ -421,8 +425,8 @@ shifted coefficients and then (AP8) yields
        b^{2C_bm^2P+C_*m^4}
        \max(1,\rho^{2rs}/G_v)^{C_*m^2}jNorm2(F)\\
  &\quad\le b^{C_2m^5}\max(1,1/G_v)^{A_s}jNorm2(F).
-                                                        \tag{AP9}
  \end{split}
+ \tag{AP9}
 \]
 Here \(C_2\) is independent of the arithmetic datum.
 For example one may take
@@ -512,7 +516,12 @@ before the datum. This is the quantifier order of the
 weighted-sum consumer. It bypasses the extra fixed
 \(A\) and fixed \(\mathrm{dist}'\) requirements of the
 intermediate \(\mathrm{WeightedExpansionRotated}\).
-The argument does not prove (AP6), the remaining
-unweighted pointwise theorem at the original local
-scale, nor the automorphic amplitude/row-norm
-comparison in \(\mathrm{StepThmBPinnedG}\).
+The unweighted estimate (AP6) for precisely this finite shifted
+family is supplied by
+Theorem~\ref{thm:archimedean-pointwise-sufficient} and
+Proposition~\ref{prop:archimedean-ap7-reserve}. The latter
+checks its explicit spectral reserve using the consumer's
+original fourth-power all-gap hypothesis. The exact amplitude
+and row-norm comparison needed for
+\(\mathrm{StepThmBPinnedG}\) is supplied in
+Section~\ref{sec:flag-exact-norm-comparison}.

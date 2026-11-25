@@ -1,0 +1,132 @@
+\subsection{The normalized level-zero word energy}
+\label{sec:archimedean-spectral-word-energy}
+
+We use the original positive Jacquet pairing \(\beta\) and the
+exact level-zero word identity, with all Haar and compact-type
+normalizations unchanged. The inputs from the construction record
+are the signed standard and dual-standard Pieri decompositions
+and the mixed Jacquet orthogonality formula. Their proofs are in
+\texttt{global-norm-frontier-pieri-family.tex} and
+\texttt{global-norm-frontier-jacquet-gram.tex}.\cite{current-construction-record}
+We retain their smooth-decay, original period-normalization, and
+shift-reserve hypotheses. Orthogonality will eliminate dependence
+on the number or the norms of the tensor projections.
+
+Let \(s=r+1\), \(n=2r+k+1\), and let \(F\) be a finite smooth
+coefficient of the original discrete series of real
+Harish--Chandra parameter \(\lambda'=(\lambda'_j)_{j=0}^{n-1}\).
+Let \(A(g)\) be a finite operator-valued polynomial of degree at
+most \(d_A\) in the entries of \(g\) and their conjugates.
+For an integer \(p\ge0\) put
+\[
+                  H(g)=G(g)^pF(g)A(g),\qquad
+                         d=2sp+d_A .                  \tag{SE1}
+\]
+The Gram polynomial has degree \(2s\), so the polynomial
+multiplier has degree at most \(d\).
+
+\begin{theorem}[Same-form spectral bound]
+\label{thm:archimedean-spectral-word-energy}
+Assume that the original signed standard and dual-standard
+families and mixed Jacquet identity are available throughout
+the shift ball \(\|\eta\|_1\le d\) about \(\lambda'\), that
+the parameters stay in the same regular chamber, and that the
+original smooth-decay reserve supplies absolute convergence of
+the pairings below. Let \(\lambda\) be the base parameter and
+\(c\ge1\) satisfy
+\[
+                  |\lambda'_j-\lambda_j|+d\le c-1
+                      \quad(0\le j<n).
+                                                        \tag{SE2}
+\]
+Define
+\[
+ \nu(t)=\prod_{j=0}^{n-1}(|t+\lambda_j|+c),\qquad
+                 S_w=\prod_{(\epsilon,t)\in w}\nu(t).
+                                                        \tag{SE3}
+\]
+Then, for every admissible original word \(w\),
+\[
+                      E_{0,w}(H)\le\beta(H,H)=jN^2(H).
+                                                        \tag{SE4}
+\]
+There is no coefficient count or compact-type dimension in
+(SE4). The conclusion includes \(jN^2(H)=0\).
+\end{theorem}
+
+\begin{proof}
+Each entry of \(g\) is a coefficient of the standard
+representation. On the unitary group, each conjugate entry is
+a linear combination of coefficients of the dual standard
+representation, since \(g^{-1}=Jg^*J\) for the original
+Hermitian matrix \(J\). Hence every multiplier monomial in
+(SE1) is a coefficient of a tensor product of at most \(d\)
+standard or dual-standard factors. Apply the signed one-step
+Pieri decomposition successively in the original family.
+Each step changes one parameter coordinate by \(+1\) or \(-1\);
+all intermediate shifts have \(\ell^1\)-norm at most \(d\)
+and are allowed by the stated reserve.
+
+This expresses \(H\) as a finite sum of smooth coefficients
+with parameters \(\lambda'+\eta\), \(\|\eta\|_1\le d\).
+Combine all summands with the same final parameter:
+\[
+                          H=\sum_{\eta\in\mathcal S}H_\eta.
+                                                        \tag{SE5}
+\]
+Distinct parameters in this fixed chamber have distinct central
+characters. The mixed Jacquet identity gives
+\[
+ \begin{split}
+ \beta(H_\eta,H_\zeta)&=0\quad(\eta\ne\zeta),\\
+ \beta(H,H)&=\sum_{\eta\in\mathcal S}\beta(H_\eta,H_\eta),
+ \qquad \beta(H_\eta,H_\eta)\ge0.
+ \end{split}                                           \tag{SE6}
+\]
+The signed tensor form obtains the coefficients; the form in
+(SE6) is the original positive radial pairing. No bound on the
+indefinite tensor projections is needed.
+
+The full central Capelli operator \(\mathscr C(t)\) acts on
+\(H_\eta\) by the real scalar
+\[
+                   p_\eta(t)=\prod_j(t+\lambda'_j+\eta_j).
+\]
+The exact empty-head identity is
+\[
+ E_{0,w}(H)=S_w^{-1}
+      \operatorname{Re}\beta(\mathscr C_w H,H),
+                                                        \tag{SE7}
+\]
+where \(\mathscr C_w\) is the ordered product of the full
+Capelli operators at the original numerical letter parameters,
+with their prescribed real signs. The signs have modulus one;
+no letter shift or word normalizer is omitted. Its eigenvalue
+on \(H_\eta\) is a real number \(a_{w,\eta}\) with
+\[
+ |a_{w,\eta}|=\prod_{(\epsilon,t)\in w}|p_\eta(t)|
+                                      \le S_w .         \tag{SE8}
+\]
+Indeed, (SE2) and \(|\eta_j|\le d\) give
+\[
+ |t+\lambda'_j+\eta_j|
+       \le |t+\lambda_j|+|\lambda'_j-\lambda_j|+d
+       \le |t+\lambda_j|+c.
+\]
+It follows from (SE6)--(SE8) that
+\[
+ \operatorname{Re}\beta(\mathscr C_wH,H)
+      =\sum_\eta a_{w,\eta}\beta(H_\eta,H_\eta)
+      \le S_w\sum_\eta\beta(H_\eta,H_\eta).
+\]
+Divide by \(S_w>0\) and use the unchanged empty-word radial
+identity \(\beta(H,H)=jN^2(H)\). If this norm vanishes,
+every nonnegative term in (SE6) vanishes, so the argument
+also proves the zero-norm case.
+\end{proof}
+
+This theorem bounds the uncut coefficient. It does not itself
+justify differentiating a Gram cutoff and then removing it.
+In particular it cannot be applied directly to
+\(\chi(G/\varepsilon)H\), whose nonpolynomial cutoff does
+not have the finite spectral decomposition (SE5).

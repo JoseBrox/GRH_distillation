@@ -122,7 +122,7 @@ and the **prescribed** positive normalization
 
 \[
  g_0+b_0\le
- \frac{g+2b+1-\min(r,v)}{\max(r,v)},\qquad
+ \frac{g+b+1-\min(r,v)}{\max(r,v)},\qquad
  M_0:=\sum_i\|T_{i,0}\|_{\rm HS}^2
        \ge c(r+v-1-g-b).                               \tag{6}
 \]
@@ -140,18 +140,24 @@ by the target projection satisfies
 Compression does not increase a positive trace. The source compression
 has trace at least \(c(r-g)\), which proves the mass estimate. More
 generally, for any final normalization \(c_0=c\theta\), \(\theta>0\),
-the variational identity and \((A+B)_+\)'s trace subadditivity give
+keep the single positive majorant \(E_t=(Q-(c/D)I)_+\).
+The source loss satisfies
+\(L_t\le c(1-v)+\operatorname{tr}((1-\Pi)E_t)\);
+the target excess is at most
+\(\operatorname{tr}(\Pi E_t\Pi)+c(v-\theta)_+\).
+The variational identity therefore gives
 
 \[
- g_0\le\frac{g+1-v+b+(\theta-r)_+}{\theta},\qquad
- b_0\le\frac{b+(v-\theta)_+}{\theta}.                  \tag{7}
+ g_0+b_0\le
+ \frac{g+b+1-v+(\theta-r)_++(v-\theta)_+}{\theta}.      \tag{7}
 \]
 
-For the first inequality, compress \((c/R)I-S\), add the positive
-operator lost at the target, then account for the scalar threshold
-change. For the second, use \(Q_0\le\Pi Q\Pi\) and account for the
-target threshold change. Substitution of \(\theta=\max(r,v)\)
-proves (6). Only the original arithmetic restrictions are used.
+The complementary compressions charge \(\operatorname{tr}E_t=cb\)
+once; no commutation with \(\Pi\) is assumed. Substitution of
+\(\theta=\max(r,v)\) proves (6). This sharpens the earlier
+\(g+2b\) numerator without changing any arithmetic restrictions.
+See [the retained-column and fixed-normalizer moment proof](retained-column-positive-traces.md)
+for the general positive-majorant version and exact second-moment formulas.
 
 ## 3. Why the prescribed normalization can be better
 

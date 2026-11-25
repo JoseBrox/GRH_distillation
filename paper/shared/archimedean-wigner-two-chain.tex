@@ -1,0 +1,203 @@
+\subsection{Two compact Wigner chains with a uniform lower bound}
+\label{sec:archimedean-wigner-two-chain}
+
+We isolate the compact representation calculation used when the two
+compact types coincide. The classical input is the orthonormal
+Gelfand--Tsetlin branching theorem for \(U(k)\), together with the
+one-step Clebsch--Gordan coefficient formulas for tensoring with the
+standard representation and its dual. We use the normalization in
+Appendix~A of Grinko--Burchardt--Ozols.\cite{grinko-burchardt-ozols-wigner}
+The estimates below are proved from those formulas; no assertion about
+a formal proof replay is involved.
+
+Write \(k=n+1\ge2\). A highest weight
+\(\lambda_0\ge\cdots\ge\lambda_n\), with every \(\lambda_j\in\mathbb Z\),
+has shifted labels \(L_j=\lambda_j-j\).
+Thus \(L_0>\cdots>L_n\) are integers. A summand of its
+restriction to the subgroup \(U(n)\) fixing the last standard vector
+has shifted labels \(M_0,\ldots,M_{n-1}\), with
+\[
+                 L_{j+1}<M_j\le L_j\quad(0\le j<n).
+                                                        \tag{WC1}
+\]
+The restriction is an orthogonal, multiplicity-free sum of these
+summands. In these labels, the squares of the two normalized one-step
+coefficients at the last standard vector are
+\[
+ \begin{split}
+ w_+(L,M,l)&=
+ \frac{\prod_{j=0}^{n-1}|M_j-L_l-1|}
+      {\prod_{i\ne l}|L_i-L_l|},\\
+ w_-(L,M,l)&=
+ \frac{\prod_{j=0}^{n-1}|M_j-L_l|}
+      {\prod_{i\ne l}|L_i-L_l|}.
+ \end{split}                                           \tag{WC2}
+\]
+Here the raising or lowering of the \(l\)-th label is required to
+remain dominant. An absent branch has coefficient zero.
+
+\begin{lemma}[No rank loss in a nonzero one-step coefficient]
+\label{lem:wigner-one-step-lower}
+Assume (WC1), \(D\ge1\),
+\(L_0-L_l\le D\), and \(L_l-L_n\le D\).
+If the numerator defining \(w_+\), respectively \(w_-\), is nonzero,
+then the corresponding squared coefficient \(w_+\) or \(w_-\)
+is at least \(D^{-2}\).
+\end{lemma}
+
+\begin{proof}
+Set \(d_i=\max(1,|L_i-L_l|)\). In particular \(d_l=1\),
+and strict integral ordering gives \(d_i=|L_i-L_l|\) for \(i\ne l\).
+For either numerator in (WC2), its factor with index \(j\) is at least
+\(d_{j+1}\) when \(j<l\), and at least \(d_j\) when \(j\ge l\).
+For example, when \(j<l\), integrality gives
+\(M_j\ge L_{j+1}+1\). For \(w_+\) this gives
+\(M_j-L_l-1\ge L_{j+1}-L_l\); if \(j+1=l\), the
+nonzero-numerator assumption improves the possible zero to at least
+one. For \(w_-\) the same lower bound is immediate. When \(j\ge l\),
+use \(M_j\le L_j\le L_l\); the only possible zero requiring the
+same improvement is now in \(w_-\) at \(j=l\).
+
+The product of these lower bounds is
+\[
+ P_l=\left(\prod_{j<l}d_{j+1}\right)
+                   \left(\prod_{j\ge l}d_j\right).
+\]
+The identity
+\[
+             \prod_{i\ne l}d_i=d_0d_nP_l
+                                                        \tag{WC3}
+\]
+holds also for \(l=0,n\), with empty products equal to one.
+All interior factors cancel and \(d_l=1\). Thus either nonzero
+coefficient is at least \((d_0d_n)^{-1}\ge D^{-2}\).
+\end{proof}
+
+\begin{theorem}[Two-chain contraction inequality]
+\label{thm:wigner-two-chain-lower}
+Let \(V_\lambda\) be the irreducible unitary representation just
+described. Choose \(0\le i<n\), \(N\in\mathbb Z_{\ge0}\), and
+\(b\ge1\) such that
+\[
+ L_i-L_{i+1}\ge2N+1,\qquad N\le b,
+                    \qquad L_0-L_n\le2b .              \tag{WC4}
+\]
+There are two polynomial maps, of total degree \(N\) in
+\(\omega,\overline\omega\),
+\[
+ \begin{split}
+ A_+(\omega)&:V_{\lambda+Ne_{i+1}}\longrightarrow V_\lambda,\\
+ A_-(\omega)&:V_{\lambda-Ne_i}\longrightarrow V_\lambda,
+ \qquad \omega\in\mathbb C^k,
+ \end{split}
+\]
+equivariant for \(U(k)\) and homogeneous of degree \(N\) under
+real scalar multiplication. They satisfy
+\[
+                  \|A_\pm(\omega)\|_{\rm op}
+                                  \le\|\omega\|^N       \tag{WC5}
+\]
+and, for every \(v\in V_\lambda\),
+\[
+ \|\omega\|^{2N}\|v\|^2
+ \le(3b)^{2N}
+       \bigl(\|A_+(\omega)^*v\|^2+
+                         \|A_-(\omega)^*v\|^2\bigr).    \tag{WC6}
+\]
+Neither bound contains an additional factor depending on \(k\) or
+the dimensions of the representation spaces.
+\end{theorem}
+
+\begin{proof}
+At each raising step use the isometric irreducible inclusion
+\(V_{\lambda+e_l}\hookrightarrow V_\lambda\otimes\mathbb C^k\)
+and contract the standard factor against \(\omega\). At each
+lowering step use the corresponding isometric inclusion into
+\(V_\lambda\otimes(\mathbb C^k)^*\) and contract against the
+dual vector determined by \(\omega\). These contractions are
+conjugate linear or linear in \(\omega\), respectively; both are
+polynomial in \(\omega,\overline\omega\), equivariant, and of
+operator norm at most \(\|\omega\|\).
+Compose \(N\) raising steps at index \(i+1\), or \(N\) lowering
+steps at index \(i\), in the order from the final shifted space
+back to \(V_\lambda\). Condition (WC4) ensures dominance of all
+intermediate weights. This constructs the maps and proves (WC5).
+For \(N=0\), use the identity twice; (WC6) is then immediate.
+We henceforth assume \(N>0\).
+
+First take \(\omega=e_k\). Every step intertwines the subgroup
+\(U(k-1)\) fixing \(e_k\); its adjoint therefore preserves the
+branch label \(M\). On any branch that survives all stages,
+the eigenvalue of \(A_+(e_k)A_+(e_k)^*\), respectively
+\(A_-(e_k)A_-(e_k)^*\), is
+\[
+ \prod_{t=0}^{N-1}w_+(L+te_{i+1},M,i+1),\qquad
+ \prod_{t=0}^{N-1}w_-(L-te_i,M,i).                       \tag{WC7}
+\]
+This follows inductively from (WC2): the adjoint carries the
+branch into the branch with the same \(M\), and the next positive
+operator is scalar on that branch. If a branch disappears, that
+chain kills it at the first zero coefficient. We use only a chain
+for which all branches survive.
+
+Fix a branch \(M\) of the original representation. If
+\[
+                        M_i\ge L_{i+1}+N+1,             \tag{WC8}
+\]
+then (WC1) remains true after replacing \(L_{i+1}\) by
+\(L_{i+1}+t\), for every \(0\le t\le N\).
+None of the raising numerators vanishes for \(t<N\).
+Indeed the index \(i\) is separated from
+\(L_{i+1}+t+1\) by (WC8). For \(j<i\), interlacing gives
+\(M_j>L_i\), and for \(j>i\) it gives \(M_j\le L_{i+1}\).
+These exclude every other possible zero.
+
+If (WC8) fails, integrality gives
+\(M_i\le L_{i+1}+N\). The gap in (WC4) then implies
+\[
+                       M_i<L_i-N .                     \tag{WC9}
+\]
+Consequently (WC1) survives every lowering step
+\(L_i\mapsto L_i-t\), \(0\le t\le N\), and no lowering
+numerator vanishes for \(t<N\). At index \(i\) use (WC9);
+at smaller indices use \(M_j>L_i\); at larger indices use
+\(M_j\le L_{i+1}\). This proves that at least one of the
+two complete chains survives with nonzero coefficients.
+
+At any such stage the changed label differs from its original
+value by at most \(N\le b\). Its distance to either endpoint
+of the current ordered list is at most \(3b\), since the
+original span is at most \(2b\). Lemma~\ref{lem:wigner-one-step-lower}
+therefore bounds every factor in the successful product (WC7)
+below by \((3b)^{-2}\). On every original branch, the sum of the
+two positive operators has eigenvalue at least \((3b)^{-2N}\).
+Orthogonality of the branch decomposition proves (WC6) at \(e_k\).
+
+Unitary covariance proves it at every unit vector, since \(U(k)\)
+acts transitively on the unit sphere. Positive real homogeneity
+proves it at every nonzero vector. At zero both sides vanish
+when \(N>0\), completing the proof.
+\end{proof}
+
+\paragraph{Relation to the local compact-type convention.}
+The compact parameter in the local problem is expressed in coordinates
+\(u_{j+1}=L_j+c\), with a common real offset \(c\).
+Its differences and its updates by \(\pm N\) are exactly those above;
+in particular \(|u_j|\le b\) gives the span bound in (WC4).
+This is a change of parameter coordinates, not the assertion that
+every real offset defines a character of \(U(k)\). Honest common
+character twists are \(\det^q\), \(q\in\mathbb Z\); they may be
+applied to both sides of each intertwiner and leave the norms and
+coefficient formulas unchanged.
+An isometric identification of the positive compact quotient with
+\(\mathbb C^k\) replaces \(\|\omega\|^2\) in (WC5)--(WC6) by
+its original positive Hermitian form. Thus the estimate is
+independent of the choice of orthonormal quotient frame.
+
+This proves the compact two-chain lower bound and the contraction
+upper bound used in the equal-type argument. To obtain the full
+archimedean estimate one must still transport these maps to the
+actual ambient polynomial and radial operators, retain their
+normalizations, and justify the uniform differential-word estimate
+and removal of the Gram cutoff. The compact calculation alone
+does not prove (AP6).

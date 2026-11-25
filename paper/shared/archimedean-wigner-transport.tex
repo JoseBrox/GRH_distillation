@@ -1,0 +1,188 @@
+\subsection{Transport of the two compact shifts to the actual orbital norm}
+\label{actual-wigner-orbital-transport}
+
+Retain the original full-group cofactor construction from
+\emph{A regular coefficient for the inverse terminal operator}
+(the construction denoted \texttt{rl-section}, also used in
+the actual top-lift proof), the place data, its quotient measures,
+and the two compact maps from the compact Wigner theorem.
+Write $s=r+1$ and let $a\ge1$ be their
+chain length (in the equal-type application, $a=30s^2+6$).
+Identify $W'_+=W\cap(z')^\perp$ with $\mathbb C^k$ by a fixed
+orthonormal basis.  Let the original right compact representation
+be $\pi'$ on $W_0$, and the shifted representations be $\pi_+$
+on $W_+$ and $\pi_-$ on $W_-$.  The compact theorem supplies
+polynomial maps
+\[
+ A_\pm:W'_+\longrightarrow\operatorname{Hom}(W_\pm,W_0)
+\]
+of total degree at most $a$ in the real coordinates (equivalently,
+in the complex coordinates and their conjugates), with
+\begin{align}
+ A_\pm(h\omega)&=\pi'(h)A_\pm(\omega)\pi_\pm(h)^{-1},
+                                                        \label{wigner-transport-cov}\\
+ \|A_\pm(\omega)\|&\le\|\omega\|^a,\label{wigner-transport-upper}\\
+ \|\omega\|^{2a}\|v\|^2
+ &\le\kappa^2\bigl(\|A_+(\omega)^*v\|^2
+                         +\|A_-(\omega)^*v\|^2\bigr)
+ \quad(v\in W_0).                                      \label{wigner-transport-lower}
+\end{align}
+Here $h\in K_{z'}\simeq U(k)$, and the compact theorem gives
+$\kappa=(3b)^a$.  These maps may be transported by unitary
+intertwiners from a highest-weight model to the actual compact
+representations; every displayed norm and covariance is preserved.
+
+Let $\Omega(g)\in W'_+$ be the actual cofactor vector and define
+\[
+              \mathcal A_\pm(g)=A_\pm(\Omega(g)).
+\]
+The proved cofactor identities are
+\begin{align}
+ \|\Omega(g)\|^2&=\mathcal G(g)/T',\label{wigner-transport-gram}\\
+ \Omega(k_L^{-1}n_L^{-1}g n_Rk_R)&=k_R^{-1}\Omega(g),
+                                                        \label{wigner-transport-omega}
+\end{align}
+for the original $k_L\in K_z$, $k_R\in K_{z'}$ and both
+unipotent radicals.  No intermediate minor is assumed nonzero
+in these identities.  Indeed the triangular action of the two
+unipotent groups on the indicated frames gives
+$Z(g')=A^*Z(g)B$ with $A,B$ upper triangular unipotent;
+$\operatorname{adj}(Z)Z=\det(Z)I$ and the corresponding
+adjugate transformation show that the cofactor vector transforms
+by $k_R^{-1}n_R^{-1}$ after the left action cancels.
+The projection to $W'_+$ removes the $U$-radical part of
+$n_R^{-1}$, leaving exactly
+\eqref{wigner-transport-omega}.  These polynomial identities
+extend across vanishing minors.  Since each coordinate of $\Omega$ is a
+polynomial of degree $s$ in the conjugate matrix entries,
+every matrix entry of $\mathcal A_\pm$ is a polynomial of
+degree at most $as$ on the full group.  In particular no inverse
+Gram factor occurs in these shift maps.
+
+For a coefficient $F(g):W_0\to W_p$, set
+$F_\pm(g)=F(g)\mathcal A_\pm(g)$, and use the shifted right
+type $\pi_\pm$ in the corresponding original orbital integral.
+
+\begin{proposition}\label{wigner-transport-orbital}
+At every valid original representative $g_\gamma$ with
+$\mathcal G(g_\gamma)>0$, the orbital maps obey
+\begin{equation}\label{wigner-transport-orbital-factor}
+ \operatorname{Orb}_\pm(F_\pm;g_\gamma)
+       =\operatorname{Orb}_0(F;g_\gamma)
+                         A_\pm(\Omega(g_\gamma)).
+\end{equation}
+This equality has the original quotient and compact Haar
+normalizations on both sides.  Let $E_0(F;\gamma)$ and
+$E_\pm(F_\pm;\gamma)$ denote the original empty-word point
+energies in these three compact types.  Then
+\begin{align}
+ (\mathcal G(\gamma)/T')^a E_0(F;\gamma)
+ &\le\kappa^2\{E_+(F_+;\gamma)+E_-(F_-;\gamma)\},
+                                                        \label{wigner-transport-point-lower}\\
+ E_\pm(F_\pm;\gamma)
+ &\le(\mathcal G(\gamma)/T')^a E_0(F;\gamma).
+                                                        \label{wigner-transport-point-upper}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Write $g'=k_L^{-1}n_L^{-1}g_\gamma n_Rk_R$.  Equations
+\eqref{wigner-transport-cov} and
+\eqref{wigner-transport-omega} give
+\[
+ \mathcal A_\pm(g')
+   =\pi'(k_R)^{-1}A_\pm(\Omega(g_\gamma))\pi_\pm(k_R).
+\]
+The integrand for the shifted orbital integral, before its common
+unit-modulus character, is therefore
+\begin{align*}
+ \pi(k_L)F(g')\mathcal A_\pm(g')\pi_\pm(k_R)^{-1}
+ &=\pi(k_L)F(g')\pi'(k_R)^{-1}
+                                    A_\pm(\Omega(g_\gamma)).
+\end{align*}
+The final matrix is independent of every integration variable.
+It factors out on the right, proving
+\eqref{wigner-transport-orbital-factor}.  The character, both
+unipotent integrations, compact averages, and discarded-stabilizer
+quotient cut are unchanged.  For compact coefficients this is
+ordinary integration of the exact integrand identity.  The same
+identity applies to the prescribed finite-decay coefficients by
+the established absolute quotient-integrability bounds at each
+fixed valid representative, or by their proved compact exhaustion.
+
+Put $B=\operatorname{Orb}_0(F;g_\gamma)$.  Applying
+\eqref{wigner-transport-lower} to $B^*e$ for an orthonormal
+basis $e$ of $W_p$ and summing gives
+\[
+ \|\Omega\|^{2a}\|B\|_{\rm HS}^2
+ \le\kappa^2(\|BA_+(\Omega)\|_{\rm HS}^2
+                       +\|BA_-(\Omega)\|_{\rm HS}^2).
+\]
+Likewise \eqref{wigner-transport-upper} gives
+$\|BA_\pm(\Omega)\|_{\rm HS}^2
+ \le\|\Omega\|^{2a}\|B\|_{\rm HS}^2$.
+The original point-density factor depends on $k,r,T,T'$ and
+$\gamma$, all unchanged by the compact-type shift.  Multiply
+the Hilbert--Schmidt inequalities by that common nonnegative
+factor and use \eqref{wigner-transport-gram}.  This proves
+both energy estimates without a representation-dimension factor.
+\end{proof}
+
+\begin{corollary}\label{wigner-transport-moment}
+For every integer $p\ge0$, whenever the indicated finite-decay
+norms are defined,
+\begin{equation}\label{wigner-transport-norm-upper}
+ jN_\pm^2(\mathcal G^pF\mathcal A_\pm)
+       \le (T')^{-a}jN_0^2(D_s^{\,2p+a}F).
+\end{equation}
+The squared norm on the right is the original leading-minor
+Jacquet norm in the original compact type.
+\end{corollary}
+
+\begin{proof}
+The polynomial $\mathcal G$ is invariant under both original
+compact and unipotent actions.  Multiplication by
+$\mathcal G^p$ therefore multiplies the orbital map at $\gamma$
+by $\mathcal G(\gamma)^p$.  On the positive domain,
+\[
+ 0<\mathcal G=|D_s|^2-TT'|D_{s-1}|^2\le|D_s|^2.
+\]
+Multiplying \eqref{wigner-transport-point-upper} by
+$\mathcal G^{2p}$ gives
+\[
+ E_\pm(\mathcal G^pF\mathcal A_\pm;\gamma)
+ \le (T')^{-a}|D_s(\gamma)|^{2(2p+a)} E_0(F;\gamma).
+\]
+The complex polynomial $D_s$ is itself invariant under the same
+actions, so the right side is exactly
+$(T')^{-a}E_0(D_s^{2p+a}F;\gamma)$.  Integrate over the
+original big-cell norm variables with their original measures.
+The point-density is the same in both compact types.  Tonelli
+proves the inequality even before finiteness; the stated moment
+bound supplies finiteness in the application.
+\end{proof}
+
+\paragraph{Cancellation in the equal-type estimate.}
+Suppose each shifted type has the established different-type
+pointwise inequality with the same numerical factor $C$:
+\[
+ E_\pm(F_\pm;\gamma)
+       \le C\,\mathcal G(\gamma)^{-2p}
+                        jN_\pm^2(\mathcal G^pF_\pm).
+\]
+Combining the proposition and corollary gives the exact bound
+\begin{equation}\label{wigner-transport-combined}
+ E_0(F;\gamma)
+ \le 2C\kappa^2\mathcal G(\gamma)^{-2p-a}
+                              jN_0^2(D_s^{2p+a}F).
+\end{equation}
+The $T'^a$ from the pointwise lower bound cancels the
+$(T')^{-a}$ from the norm comparison.  With $p=6s^2$ and
+$a=30s^2+6$, the inverse-Gram exponent is
+$2p+a=42s^2+6\le48s^2$ and the polynomial degree required
+by the spectral decomposition is
+$2sp+as=42s^3+6s\le48s^3$.
+Thus both retain the required quadratic pole order and cubic
+spectral reserve.  The existing leading-minor moment theorem
+and the compact bound $\kappa=(3b)^a$ supply the remaining
+uniform factor in the original unshifted norm.

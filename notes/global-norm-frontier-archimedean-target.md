@@ -1,5 +1,13 @@
 # The next normalized archimedean estimate
 
+**Historical target record.** The [25 November continuation](w08-analytic-and-retained-continuation.md)
+now proves the original unshifted pointwise estimate and supplies the
+entire reserved finite shifted family used by `StepThmBPinnedG`, together
+with exact amplitude and row-norm comparisons. The stronger intermediate
+full near-parameter interface is not asserted. The diagnosis and counts
+below record this note's earlier stage; the current frontier is the
+actual retained theta-row bridge and moving positive-trace estimates.
+
 ## What the local density argument now supplies
 
 The [scalar-pair theorem](global-norm-frontier-scalar-density.md) proves
