@@ -1,0 +1,273 @@
+\subsection{The complete generic pinned local input}
+\label{sec:flag-generic-pinned-input}
+
+Retain the concrete setting of the equal-word generic branch,
+with the standing hypotheses and the actual \(\mathrm{Ctx}\),
+\(\mathrm{MassDataTie}\), \(\mathrm{MassDataAdmissible}\) and
+\(\mathrm{Pinned}\) data. The following supplies
+\(\mathrm{StepLocGenPinnedG}\) in this setting, with no estimate
+for the real orbital energy used in its proof.
+
+\begin{lemma}[Exact scale and the actual normalized class square]
+\label{lem:flag-pin-scale}
+Let \(\nu_B\) be any of the original pinned real quotient
+measure assignments. For a representable rational point \(w\)
+let \(b(w)=\#\mathrm{FreeE}(w)\), the number of pairs \(i<j\)
+belonging to one block of the point. There is a positive scale
+\(s_{\rm pin}(\gamma)\le1\) on the real group, equal to one on
+its regular locus, such that
+\[
+  s_{\rm pin}(\mathrm{gamW}(w))=g^{-fb(w)} .              \tag{GP1}
+\]
+Let \(\nu_L=s_{\rm pin}\nu_B\) denote multiplication of each
+quotient measure by the scalar assigned to its point.
+If the point is occupied by a nonzero generic term, then
+\[
+ \begin{split}
+ J_2^L(w)&=g^{-2fb(w)}J_2^B(w)>0,\\
+ \frac{\|\mathrm{grpGC}(c,w,\nu)\|^2}{J_2^L(w)}
+       &=\mathrm{wt}(c)^2
+             \prod_{v\in P_*}|A_v^0(d_v)|^2             \tag{GP2}
+ \end{split}
+\]
+for every nonempty generic key \((c,\nu)\) at this point.
+The symbols \(J_2^L,J_2^B\) are the actual \(\mathrm{J2of}\)
+with the two indicated measures; \(P_*\) is the finite
+bad-place set of (GC3).
+\end{lemma}
+\begin{proof}
+For any real group element that exactly represents a rational
+point, the pattern of vanishing leading minors of its signed
+cross matrix determines all the block ends: at a block
+antidiagonal matrix with nonzero block scalars the nonzero
+leading minors occur precisely at the block ends. Hence the
+integer \(b(w)=\sum_j \binom{t_j}{2}\), where \(t_j\) are
+the block sizes, is independent of the point representative.
+In fact the full point is determined, since the real embeddings
+of \(E\) and the fixed coordinate transport are injective.
+If the real group element is regular, all these leading minors
+are nonzero, and \(b(w)=0\). Set \(s_{\rm pin}(\gamma)\)
+equal to \(g^{-fb(w)}\) on the exactly representable locus,
+and one elsewhere. This is a well-defined scalar assignment;
+no integration over the parameter of this assignment is needed.
+Since \(g\ge1\), the asserted bounds hold globally, including
+the real group elements not occurring in the arithmetic sum.
+The pinned quotient conditions remain valid as quotient
+conditions after rescaling: rescale the stabilizer Haar measure
+in the opposite direction in the Weil formula. On the regular
+locus neither measure changes.
+
+At an occupied nonzero-Gram point its rational adapted frames
+have the unique signed block-antidiagonal cross matrix described
+in Section~\ref{sec:flag-nondegenerate-normal-count}. At each
+infinite place they can be realized with the first flag fixed:
+extend the isometry of the first adapted frame to a Witt
+basis, and extend the second frame isometry in the same
+nondegenerate ambient space. This gives a representative in
+\(\mathrm{IsPtRep}\), with the original signed cross matrix
+at every place. Thus \(\mathrm{J2of}\) uses its represented
+branch, not the fallback zero. The orbital integral \(J_w\)
+in (GC10) is precisely
+\(\mathrm{scl}\,\mathrm{vol}(K_2)\) times the original
+\(\mathrm{OO}\) with the pinned quotient measure. Linearity
+of that integral in the measure gives the first equality
+in (GP2). Its positivity is not inferred from positivity
+of a sum of local phases: the individual term equation
+preceding (GC10) shows that a nonzero term vector forces
+\(J_w(\nu_B)\ne0\). Its finite phase has modulus one and
+its arithmetic covolume and row weight are positive.
+Now (GC10), which retains the complete sum over integral
+returns in a rational key, gives the second equality in
+(GP2) by dividing by the positive \(J_2^L(w)\).
+For an empty key the original sum is zero and its
+normalized square is zero.
+\end{proof}
+
+\begin{theorem}[Generic local supplier]
+\label{thm:flag-generic-pinned-input}
+Under the actual hypotheses above, one can take the uniform
+constants
+\[
+                   C_1=4,\qquad C_0=1,\qquad C_{\rm St}=0,
+                   \qquad e_1=2.                      \tag{GP3}
+\]
+In particular the weaker original allowances \(C_1=39,C_0=9\)
+also suffice. With
+\[
+ {\cal A}=AA\,\rho^{2r(r+1)f(k-1)},\qquad
+ N_{\rm gen}(w)=2{\cal A}\,
+             H(w)^{10s^2+12s+1}\,\mathrm{nPt}(w),        \tag{GP4}
+\]
+the original data \(\mathrm{NOfG}(Y,u,\nu_L,\nu_B,N_{\rm gen})\)
+satisfy \(\mathrm{LocalInputG}\) and \(\mathrm{GenMassInput}\)
+on \(\mathrm{genT}\). The measure bound is in fact
+\(J_2^L\le J_2^B\). The function (GP4) is defined by the
+displayed expression on the original point space, even
+at points not occupied by nonzero terms.
+\end{theorem}
+\begin{proof}
+We describe the finite local witness required by the quantifiers
+in \(\mathrm{LocalInputG}\). In particular, we do not assume
+an infinite set of local data is a finite type.
+
+Fix an occupied point, and fix an arbitrary finite test set
+\(\mathcal F\) of original class and rational normal pairs.
+Choose one nonzero generic term at the point, which exists
+by \(\mathrm{IsPt}\) for \(\mathrm{genT}\).
+Take its two rational adapted flags as in (GC1)--(GC10):
+put their cross matrix in the prescribed signed point
+normal form, and transport every other term at this point
+to the same two rational flags. The transport exists by
+adapted upper triangular changes followed by Hermitian
+Witt extension on the nondegenerate joint span.
+Changes on the joint span which preserve its two adapted
+flags belong to the common unipotent, and changes on the
+orthogonal complement belong to its definite unitary group.
+Thus the two inner lattices and their level graph of a
+nonempty key are well defined up to the complement action.
+Here the class \(c=\mathrm{clsG}(t)\) records the row and its
+scalar/corank-one equivalence; it therefore fixes the two
+row lattices. The normal \(\nu=\mathrm{nmlOf}(t)\) is
+exactly the rational double coset, not a selected
+representative of it. Equality of the row and normal
+is precisely the fixed-key comparison in (GC5);
+refining by \(\mathrm{clsG}\) does not split this
+key: under rational unipotent transport with the same
+row the quotient maps and graph are unchanged, and
+the scalar equality holds for the resulting common
+nonzero-Gram flag data. This is the scalar/normal
+comparison proved in the nondegenerate normal-count
+section.
+
+Use the local scaled flags and the reference datum of the
+chosen term at each place. A place is bad if and only if
+\(\mathrm{Hp}>1\): in (GL2) all valuations
+\(v(\theta),a,d\) are nonnegative, and this height is a
+power of the residue size. When it is one the place is
+ordinary and all the block-end determinants and the
+joint Gram determinant are units, exactly the
+\(\mathrm{PrimeTo}\) condition. There are finitely many
+bad places \(P_*\). Their height product is the prescribed
+\(H(w)\), by (GC6). At every other place the integral
+frame class is unique by (GL4), the joint lattice is
+self-dual, and the lattice splits as the joint lattice
+plus a self-dual complement. Integral self-dual lattices
+of the given local complement are isometric: this is
+the unramified Hermitian elementary-divisor classification
+(or the lattice and its dual in the split case). Therefore
+all occupied data outside \(P_*\) have the reference
+complement orbit, and their single generic amplitude
+has weight and phase one by (GC3). This last assertion
+is about the term over a given datum; it does not assert
+that the global definite class number is one.
+
+At each \(v\in P_*\), let \(\mathcal D_v\) consist of the
+finitely many complement-orbit representatives arising
+from the nonempty tested keys, together with the chosen
+reference datum. Choose the local weights and amplitudes
+exactly as in (GL6)--(GL7):
+\[
+ \mathrm{wt}_v(d)=1/\operatorname{vol}(H(F_v)_d),\qquad
+ a_Z(v,d)=A_v^0(d),\qquad
+ nn_v=\sum_{d\ {\rm all\ local\ orbits}}\!
+                \mathrm{wt}_v(d)m_d .
+\]
+The complement measures give the reference stabilizers
+volume one. Take \(ngen_v\) to be the mass
+\(ngen_v(C_v)\) in the local pairing class supplied
+by the chosen generic term. This mass sums over all
+local data; it is not truncated to \(\mathcal D_v\).
+The sums are finite and positive as required by (GL7).
+Choose \(V_0\) as in (GC4) and \(rw(c)\) as the squared
+row weight (zero on an unused class). Assign to each
+nonempty tested key its tuple of \(\mathcal D_v\) data.
+Assign none to every empty or untested key. This defines
+the optional datum map on the whole class/normal space.
+For the unused \(a_N\) of the abstract record one can
+use zero; \(\mathrm{LocalInputG}\) does not require
+the nongeneric bound.
+
+The positivity and residue-size conditions of
+\(\mathrm{LocalNG.Basic}\) are now immediate from the
+volume definitions and (GL2), since a bad height is
+at least its residue size. The finite local sums satisfy
+\(\mathrm{ZAt}\) by (GL7), because
+\[
+        e=s^2+3s\le4s^2\qquad(s\ge1).
+\]
+Likewise \(nn_v\le2H_v^{s^2+3s}ngen_v\)
+implies the required
+\(nn_v\le8H_v^{C_0s^2+4s}ngen_v\) with \(C_0=1\).
+Every place in this record is bad; had a good place
+been retained, its mass equality would hold by (GL7).
+The proof of (GC4)--(GC5) applies to any finite subset
+of keys with a fixed tuple of local data. Its result
+is exactly \(\mathrm{Unfold}\):
+\[
+ \sum_{x\in \mathcal F'} rw(x.1)
+          \le V_0\prod_{v\in P_*}\mathrm{wt}_v(d_v).
+\]
+The inequality is preserved by the optional-map
+restriction to tested keys; no equality of sums over
+all possible keys is required by this input.
+Equation (GP2) proves the prescribed exact equality
+of normalized class squares and
+\(\mathrm{weightedGenericAmplitudeSq}\) on \(\mathcal F\),
+including the keys assigned none.
+
+Finally, the original mass of this finite witness is
+\(M_{\mathcal F}=V_0\prod_{v\in P_*}ngen_v\).
+The exact relative stabilizer formula (GC7), the
+gluing mass calculation and Theorem
+\ref{thm:flag-aa-normalization} give
+\[
+ 0<M_{\mathcal F}\le
+         2{\cal A}\,H(w)^{s(s-1)}\,\mathrm{nPt}(w).
+\]
+This is (AN16) for the pairing classes of the chosen
+generic term. In particular the chosen reference
+corrected span lattice is the actual one of that
+term; it has the full required different and level
+content, and its complement is definite. No
+arbitrary choice of a local pairing class is made
+without a global rational reference.
+
+Since \(H(w)\ge1\) and \(s(s-1)\le10s^2+12s+1\),
+we have \(M_{\mathcal F}\le N_{\rm gen}(w)\).
+Enlarge only \(V_0\) by the positive multiplier
+\(N_{\rm gen}(w)/M_{\mathcal F}\ge1\). This does not
+change the local amplitudes, local masses, height,
+or normalized class-square equalities. It preserves
+\(\mathrm{Unfold}\) in its inequality direction and
+makes \(\mathrm{ngenTot}=N_{\rm gen}(w)\) exactly,
+as required by \(\mathrm{LocalInputG}\).
+This harmless enlargement is not a change of the
+Haar measures in the earlier class-factorization
+or gluing arguments. It is only an enlargement of
+the upper-bound record after those arguments.
+The product over an empty \(P_*\) is interpreted as
+one. Thus the construction works for every finite
+test set, even an empty one.
+
+By (GM10) the original \(\mathrm{nPt}(w)\) is
+nonnegative (indeed positive on occupied points).
+The defining exponent in \(\mathrm{GenMassInput}\)
+is \(10s^2+6(2r+2)+1=10s^2+12s+1\).
+Equation (GP4) therefore gives that input with
+\(e_1=2\). The global scale satisfies
+\(s_{\rm pin}^2\le1=\mathrm{b}^{0}\), proving the
+claimed uniform \(C_{\rm St}=0\).
+These constants are absolute and do not depend
+on the dimension, field, point, or finite test set;
+all standing thresholds may consequently be chosen
+before the arithmetic datum. This completes the
+generic pinned local input.
+\end{proof}
+
+The separate analytic point-sum input uses
+\(\nu_B\), not \(\nu_L\). In particular this theorem
+does not replace its stabilizer-root gauge by the
+scaled gauge, and it does not make an estimate
+for \(\mathrm{StepThmBPinnedG}\). The local theorem
+also does not claim the nongeneric cancellation
+saving \(q^{-(k-2r-5)}\).

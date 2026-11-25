@@ -38,3 +38,5 @@ Under Development/AbelianVarietyTheory/Proofs/FlagMeasures:
 - MovedTermLatticeIsGlobalTermPhase.lean (3206a9f842f5fd11e93515b10fc8929b70555b30), main; RowTermAmplitudeEqMassMulPhase.lean (29c62073075ebc7687dae206d9bdc4241efd5e06), 67–112; RowDoubleCosetSumNormSqBound.lean (32f443b691b03a3ddb0f511ccb5af86e293d1727), row_coset_sum_norm_sq.
 
 The proof uses standard lattice patching, adelic quotient integration and finite genus finiteness. It is not a Lean replay. The exact pinned covolume and phase equations are derived in the original coordinates; no bound is claimed for a different arbitrary real Haar normalization.
+
+**Continuation:** [Generic pinned local supplier](flag-generic-pinned-input.md) now assembles the actual StepLocGenPinnedG. The real weighted point sum remains.

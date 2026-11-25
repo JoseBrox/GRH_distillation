@@ -546,3 +546,5 @@ theorem. The [quantitative seed theorem](../../notes/global-gram-continuation-qu
 - [Exact generic gluing mass and block-end height gain](../../notes/flag-generic-gluing-mass.md): absolute mass and local Jacobian, uniform density product, zero-loss Haar-weight telescoping; the AA and pinned analytic comparisons remain open.
 
 - [Exact AA period normalization](../../notes/flag-aa-normalization.md): GM11 and GM12, including finite Haar ratios and the complete-frame and big-cell Jacobians.
+
+- [Generic pinned local supplier](../../notes/flag-generic-pinned-input.md): exact root scale and finite family witness, StepLocGenPinnedG; analytic weighted point sum remains.
