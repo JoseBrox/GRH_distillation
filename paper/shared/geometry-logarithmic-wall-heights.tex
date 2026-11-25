@@ -1,0 +1,425 @@
+\subsection{Logarithmic tangent slopes and fixed-reference wall limits}
+\label{sec:logarithmic-wall-heights}
+
+The following argument supplies the logarithmic slope estimate needed
+in the reference point-height comparison. In particular, it is not
+enough to bound the maximum tangent slope linearly in the Faltings
+height. We use ordinary derivatives, rather than divided powers, and
+integral theta translations rather than powers of a single section.
+
+\paragraph{Integral theta translations.}
+Let \(A/K\) be a principally polarized abelian variety of dimension
+\(g\ge1\), with semistable reduction, and let \(\mathcal E\) be the Lie
+lattice of its N\'eron identity component, with the Riemann metric
+of the polarization. Write \(\deg_n\) for arithmetic degree divided
+by the degree of the number field, and put
+\[
+ H=2+g+\max(0,-\deg_n\mathcal E).
+\]
+Replacing the Riemann norm by the fixed normalization used for
+Faltings metrics changes degrees by \(O(g)\) and slopes by \(O(1)\).
+We prove, with absolute constants,
+\[
+                 \mu_{\max}(\mathcal E)\ll\log H.       \tag{LW1}
+\]
+All field extensions below are harmless for normalized line degrees.
+In particular the semistable Lie lattice commutes with base change
+and the metrics at the extended embeddings are the original metrics.
+
+Set \(m=6\lceil H\rceil,\ n=m^2,\ R=m^{2g}\). After a finite
+extension choose a symmetric rigidified ample line \(L\) inducing
+the principal polarization. Use the Moret--Bailly model with all
+\(A[m^2]\) as prescribed sections. The precise references are
+Pazuki, \emph{Theta height and Faltings height}, Bull. Soc. Math.
+France 140 (2012), 19--49, Theorem 3.4(i), (iv), (v),
+Propositions 2.5 and 5.1
+(\texttt{https://www.numdam.org/item/10.24033/bsmf.2623.pdf}).
+The smooth semiabelian model is open in the N\'eron model and
+has the same identity tangent lattice. Its cubical extension
+\(\mathcal L\) has normalized Haar \(L^2\) metrics on its pushforward.
+The rank-one pushforward \(\pi_*\mathcal L\) has normalized degree
+\(-h_F(A)/2-g\log(2\pi)/4\) in Pazuki's conventions.
+Principalize this invertible module after a further finite field
+extension, using its pulled-back lattice, and take an integral
+generator \(s\). Thus
+\[
+ \mathop{\rm av}_{\sigma}\log\|s\|_{2,\sigma}
+             \le \tfrac12\max(0,-\deg_n\mathcal E)+C g .
+\]
+Here and below \(\mathop{\rm av}_{\sigma}\) averages all embeddings
+with their usual multiplicities. Proposition 5.1 is important
+integrally: multiplication by \(m\) and the good translations by
+\(A[m^2]\) give isometries
+\([m]^*\mathcal L\simeq\mathcal L^n\) and
+\(t_x^*\mathcal L^n\simeq\mathcal L^n\).
+Taking the translates of the pullback of \(s\) for representatives
+of \(A[m^2]/A[m]\) gives \(R\) integral sections \(s_1,\ldots,s_R\)
+spanning the generic \(H^0(A,L^n)\). Every one has sup norm
+\(M_\sigma=\|s\|_{\sup,\sigma}\), not \(M_\sigma^n\).
+Only the integral sections near the identity and their spanning
+over the field will be used.
+
+\paragraph{A uniform bound for the mean log sup norm.}
+Write \(\rho_\sigma\) for the shortest nonzero period in the
+Riemann metric. In the principally polarized complex torus the
+Euclidean covolume for this metric is one. A ball of radius
+\(r_\sigma=\min(1,\rho_\sigma/3)\) centered at any point embeds
+in the torus. In a holomorphic Gaussian frame centered there,
+the point norm is the absolute value of the holomorphic
+coefficient times \(\exp(-\pi\|z\|^2/2)\), with a unit frame
+at the center. The ball mean-value inequality gives
+\[
+ M_\sigma\le e^{\pi/2}
+       \frac{\sqrt{g!}}{\pi^{g/2}r_\sigma^g}\|s\|_{2,\sigma}.
+\]
+For the inverse period length use Gaudron--R\'emond,
+\emph{Th\'eor\`eme des p\'eriodes et degr\'es minimaux
+d'isog\'enies}, Comment. Math. Helv. 89 (2014), 343--403,
+Proposition 3.6
+(\texttt{https://lmbp.uca.fr/\string~gaudron/art11.pdf}).
+It bounds \(\mathop{\rm av}\rho_\sigma^{-2}\) by
+\(11\max(1,h(A),\log\deg_L A)\). Its modified height differs
+from the stable Faltings height by \(O(g)\);
+\(\deg_L A=g!\). Jensen's inequality for \(\log\) then gives
+\(\mathop{\rm av}\log^+(\rho_\sigma^{-1})\ll\log H\).
+Consequently
+\[
+ \mathop{\rm av}_{\sigma}\log M_\sigma
+                \le H/2+C g\log H.                    \tag{LW2}
+\]
+All constants are independent of \(m\), the field extension and the
+abelian variety.
+
+\paragraph{Integral directional jets.}
+Fix a nonzero integral tangent vector \(v\).
+Equip the coefficient module \(\mathcal O_K^R\) with the standard
+Hermitian norm. For \(j\ge0\), let \(F_j\) be the saturated kernel
+of the first \(j\) derivatives at the identity of
+\(\sum_i a_i s_i\) along the invariant vector field \(v\).
+On \(F_j\) the derivative of order \(j\) defines an integral
+map to the identity fibre, identified with \(\mathcal O_K\)
+using the rigidification of \(\mathcal L^n\). To check this
+assertion use, at each finite place, a local algebraic frame
+with the prescribed value at one. The invariant derivation
+preserves the integral local ring. Changing such a frame
+does not change the derivative on \(F_j\), since every lower
+derivative of the section is zero. The same argument identifies
+the archimedean derivative with the derivative in the holomorphic
+Gaussian frame on the line \(zv\) in the universal cover. No
+factor \(1/j!\) has been asserted integral.
+
+Put \(J=n/3\), an integer. For every \(0\le j\le J\), the
+derivative is nonzero on \(F_j\otimes K\). Indeed \(L^3\) is
+very ample; take a section \(a\) nonzero at one and a section
+\(b\) with simple zero along the specified tangent direction.
+Then \(a^{J-j}b^j\) has exactly order \(j\) in that
+direction. The translated sections span its coefficient space
+over \(K\), and clearing denominators gives a coefficient
+vector in \(F_j\). Thus \(F_j/F_{j+1}\) has rank one.
+The argument also works for \(g=1\).
+
+For a coefficient vector of norm at most one, the holomorphic
+coefficient on \(zv\) is bounded by
+\(\sqrt R M_\sigma\exp(\pi n\|v_\sigma\|^2 |z|^2/2)\).
+Cauchy's formula at radius \(\sqrt{j/(\pi n)}/\|v_\sigma\|\)
+and \(j!\le j^j\) show that the norm of the integral jet map
+on \(F_j/F_{j+1}\), with the quotient metric, is at most
+\[
+ B_{\sigma,j}=\sqrt R\, M_\sigma
+         (\sqrt{\pi e n j}\,\|v_\sigma\|)^j
+ \quad (j\ge1),\qquad B_{\sigma,0}=\sqrt R\, M_\sigma .
+\]
+Taking the infimum over lifts is legitimate because the jet
+annihilates \(F_{j+1}\). An integral generically injective map
+of a Hermitian line into the trivial line of norm one bounds
+its normalized degree above by the mean log operator norm.
+On the other hand the degree of the quotient
+\(\mathcal O_K^R/F_{J+1}\) is nonnegative: its dual is a
+saturated submodule of a standard Hermitian lattice, whose
+determinant has degree at most zero by the product formula
+on any nonzero Pl\"ucker coordinate. Additivity with the
+subquotient metrics now gives
+\[
+ 0\le\sum_{j=0}^J\deg_n(F_j/F_{j+1})
+ \le (J+1)(\tfrac12\log R+\mathop{\rm av}\log M_\sigma)
+ +\frac{J(J+1)}2
+       (\tfrac12\log(\pi e n J)+\mathop{\rm av}\log\|v_\sigma\|).
+\]
+In particular
+\[
+ -\mathop{\rm av}\log\|v_\sigma\|
+ \le \tfrac12\log(\pi e n J)
+       +\frac{\log R+2\mathop{\rm av}\log M_\sigma}{J}
+ \ll\log H.                                           \tag{LW3}
+\]
+For the last estimate \(J=m^2/3\ge12H^2,\ 
+\log R=2g\log m,\ g\le H\), and (LW2) suffice.
+This bound applies to every integral vector, also after further
+field extension. For any saturated line after finite extension,
+principalize it and take a generator; its normalized degree is
+bounded by (LW3). The absolute Siegel lemma (Zhang; see
+Gaudron--R\'emond, \emph{Minima, pentes et alg\`ebre
+tensorielle}, Israel J. Math. 195 (2013), 565--591,
+Theorem 1.1) bounds the maximum slope by the supremum of such
+absolute line degrees plus \(\log g\). This proves (LW1).
+Rank zero requires no assertion about a maximum slope.
+
+\paragraph{The semiabelian and flag comparisons.}
+For the boundary application, the following elementary
+extension observation avoids any surjectivity assertion about
+the integral map onto the abelian quotient. Suppose that the
+actual tangent module \(E\) has a saturated toric kernel \(T\),
+and its torsion-free quotient injects as a full lattice into
+the abelian tangent module \(E_A\). Assume the toric metric
+is comparable to a standard cocharacter lattice with fixed
+constants, and the map \(E/T\to E_A\) with its quotient metric
+has uniformly bounded archimedean operator norms. These
+are metric requirements, not just generic exactness.
+Writing \(C\) for a common constant (for a fixed tower),
+\[
+ -\deg_n E_A\le-\deg_n E+C,\qquad
+ \mu_{\max}(E)\le
+       \max(\mu_{\max}(T),\mu_{\max}(E_A)+C).
+\]
+For the first inequality use the determinant of the integral
+injection, whose finite index has the favorable sign.
+For the second intersect any saturated subbundle with \(T\)
+and take its image in \(E_A\); its quotient metric dominates
+the induced metric up to the stated operator-norm constant.
+Add degrees and divide by the sum of the ranks.
+This also proves the assertion when one block is zero.
+In particular (LW1) gives a logarithmic slope bound on
+\(E\) for the reference-point argument under these exact
+uniform metric identifications.
+
+Here is the required flag-height consequence, stated with
+the geometric identifications explicit. On a fixed projective
+reference flag variety let \(h_A\ge0\) be a height of the fixed
+ample auxiliary line (a bounded shift is permitted).
+Assume the actual orthogonal flag comparison of
+\texttt{FibreInput}:
+the first-block root heights differ by uniformly bounded
+amounts from the graded degrees of the saturated flag \(W\);
+the last block differs by bounded amounts from the negatives
+of the graded degrees of the reverse flag \(S\).
+The total signed determinant is bounded, with its original
+flat unit; the paired orthogonal determinants give
+\(-\deg_n E\ll1+h_A\). The latter bound also follows from
+the usual comparison of the heights of the fixed determinant
+lines with the ample height. Retain the preceding toric and
+abelian metric comparison. For dominant weights \(u\) with
+\(\|u\|_\infty\le2\), summation by parts writes the negative
+weighted root sum as a sum of nonnegative adjacent gaps
+times negative degrees of \(W\)-prefixes and \(S\)-prefixes,
+including the middle gap times \(-\deg_n W\), plus a bounded
+flat-determinant term. Every prefix degree is at most
+\(N\mu_{\max}(E)\) when \(\mu_{\max}(E)\ge0\);
+one may use its positive part otherwise.
+Hence (LW1) gives
+\[
+       h_{\mathrm{ref}}(u,x)\ge-C\log(2+h_A(x)).        \tag{LW4}
+\]
+The hypotheses here refer to the actual reference point
+metrics, including at its boundary. The new slope proof
+does not identify a generically isomorphic lattice with
+the prescribed Hermitian fibre.
+
+\paragraph{Wall convergence without a uniform smoothing rate.}
+We record a strengthened comparison on the linked tower
+of Section~\ref{sec:flag-finite-wall}. The following proof uses
+the actual model nefness and the source smoothing
+normalization, and needs convergence of mixed intersections
+only on one fixed reference model.
+
+More precisely, fix a tower. Retain the established common
+model and isometric linkage, with its normalized cover
+degrees, and the actual auxiliary ample line with its fixed
+generic metric. Assume the reference flag and quotient
+metric identifications in (LW4), and the original prefix
+smoothing estimates: for dominant weights of bounded norm
+the smoothed height minus the fixed smooth reference height
+is between \(-C(1+\log(1/s))\) and \(C\) at parameter
+\(t=\exp(-1/s^2)\), before the finite-place changes.
+These are the bounds obtained by summation by parts in
+\texttt{RootTowerUniformHeightBound} from the prefix potentials
+and the bounded final flat prefix. Also retain the original
+semipositive smoothings, the fibre nefness threshold
+\texttt{ModelNef}, \texttt{M2}, the nef auxiliary line,
+the top-degree proportionality, and the qualitative limits
+of all degree-\(d+1\) mixed intersections on the one reference
+model. In the common models the finite-place sandwiches
+are the original root-lattice sandwiches, not bounds on
+heights of individually chosen points.
+
+We first derive the fixed-tower coefficient bound. Choose
+finitely many fixed rational strictly dominant weights
+and strictly positive rational auxiliary coefficients
+so their \((d+1)\)-st powers span the polynomial space of
+degree \(d+1\) in the root and auxiliary variables. This
+is possible by the polynomial identity principle on an
+open cone. Choose a fixed cutoff \(B_0\) so that all these
+lines are nef on the fibres at primes above \(B_0\), by
+the original \texttt{M2} threshold. Use a common comparison
+model for \(B_0,B\). For each of these fixed lines, the
+difference of the pullbacks is vertical and bounded in
+both directions, at each new prime \(\ell\), by a constant
+times \(\gamma_\ell\operatorname{div}(\ell)\).
+Here the original corrected-lattice sandwich gives
+\(\gamma_\ell\ll1/(\ell-1)\) for odd new primes; the finitely
+many exceptional primes contribute a fixed constant.
+This sandwich passes to the saturated flag subquotients:
+intersect the two bounding lattices with a flag subspace
+and take images in the next quotient. Common model
+pullbacks use the already locally free flag bundles.
+At every new fibre both line bundles are nef.
+Telescoping their top arithmetic powers and intersecting
+the two divisor bounds against the mixed nef products
+bounds the absolute change by a constant times
+\(\sum_{\ell\le B}\gamma_\ell\log\ell\).
+The mixed products against \(\operatorname{div}(\ell)\)
+have the corresponding generic intersection degrees after
+normalization by the cover degree; those degrees are fixed.
+There is no archimedean difference at a common smoothing
+parameter by isometric linkage. Chebyshev's prime bound
+and partial summation give \(O(1+\log B)\) for the sum.
+Passing to the reference limits and interpolating in the
+fixed polynomial space therefore gives
+\[
+               |\operatorname{PP}_B(F)|\ll_F1+\log B.   \tag{LW5}
+\]
+Equivalently this holds with a fixed constant for a fixed
+monomial basis. No uniform bound in the varying tower
+dimension is needed by the finite wall test argument.
+
+In fact the difference of the normalized arithmetic
+intersection functionals at two smoothing parameters is
+independent of \(B\). Pull back both models to the common
+model; their metrics agree at each parameter, and the
+change of an arithmetic intersection with the metric is
+an archimedean integral. The cover degree cancels.
+Hence
+\[
+ \operatorname{Ar}_{B,t}(F)-\operatorname{PP}_B(F)
+   =\operatorname{Ar}_{B_0,t}(F)-\operatorname{PP}_{B_0}(F).
+                                                               \tag{LW6}
+\]
+Existence of the limits on the right gives existence on
+the left, and the right side is \(o(1)\) uniformly over
+bounded coefficient vectors \(F\), by finite dimensionality.
+This removes the need for a quantitative smoothing rate
+uniform in the cutoff. It does not establish the reference
+mixed-intersection limits themselves.
+
+Take one of the rational wall tests \(u\) of norm less than
+\(1/2\), with exactly the selected cross-block adjacent gap
+zero and all other adjacent gaps strict. Put \(\theta=5f/B\),
+raise the first block in that label by \(2\theta\), obtaining
+\(u_\theta\), and put \(s=\theta^2,\ v=u_\theta-s\nu\)
+with the original fixed \(\nu\).
+For large \(B\) the other gaps remain strictly positive and
+\((B-2)\) times each cross gap exceeds \(4f\|v\|_\infty\).
+Thus the original fibre thresholds and the smoothing
+positivity make the rational smoothed line
+\(\overline D_B=\overline L_B(v)+s\overline A_B\)
+relatively nef, with ample generic fibre (the strictly
+dominant class is nef and the auxiliary line is ample).
+Clear denominators when applying arithmetic intersection
+and successive-minima inequalities. Its geometric degree
+is \(O(\theta)\): the root-only degree vanishes at \(u\)
+by the Vandermonde product and changes by \(O(\theta)\),
+and adding the auxiliary class changes the degree by
+\(O(s)\). These polynomial estimates use the fixed
+normalized generic intersection functional.
+
+By (LW4), the original prefix bounds and the same
+finite-place sandwich, all points satisfy
+\[
+ h_{\overline D_B}(x)\ge s h_A(x)-C\log(2+h_A(x))
+                       -C\log(B/s)-C.
+\]
+Minimizing the first two terms for \(h_A\ge0\) gives an
+all-point lower bound \(-C'\log(B/s)\). The elementary
+inequality follows either by differentiation or from
+\(\log z\le az-1-\log a\) for \(z,a>0\).
+For the upper bound there is a Zariski dense family of
+points with bounded \(h_A\) on the fixed reference variety:
+a finite projective linear projection to projective
+space gives such points above the dense set of torsion
+points in its affine torus. All lifts have bounded
+height by the pullback ample height identity. Use the
+dominant common covers to lift this dense set to each
+tower model, discarding any closed exceptional locus.
+Their normalized reference heights stay bounded.
+The upper prefix comparison and the finite sandwiches
+give an upper bound \(C'\log(B/s)\) on that dense set.
+
+The arithmetic successive-minima theorem (Zhang,
+\emph{Positive line bundles on arithmetic varieties},
+J. Amer. Math. Soc. 8 (1995), 187--221, (5.2)) sandwiches
+the top arithmetic power divided by \((d+1)\) times the
+generic degree between the all-point infimum and the
+essential minimum for this relatively semipositive line.
+The preceding lower and dense upper bounds therefore give
+\[
+             |\operatorname{Ar}_{B,t}(D_B^{d+1})|
+                    \ll\theta\log(B/s)=O(\log B/B).
+\]
+Use (LW6) on the bounded coefficient family of these
+powers and then (LW5) on the difference from \(\ell_u^{d+1}\),
+whose coefficients are \(O(\theta)\). This proves
+\[
+                  \operatorname{PP}_B(\ell_u^{d+1})\longrightarrow0.
+                                                               \tag{LW7}
+\]
+The argument applies separately to every fixed wall test,
+as required for the exact cutoff identity. Unlike the
+original uniform \texttt{ThmW}, this statement needs no
+estimate for the rate of the reference smoothing limit.
+The qualitative reference convergence, semipositive
+metrics, actual uniform fibre identifications and
+proportionality are retained hypotheses of this
+application; the argument has not supplied them simply
+from equality of generic line bundles.
+
+\paragraph{Base-ideal multiplicities along transverse arcs.}
+There is a separate way to use the already reconstructed
+thin-region lower Bergman estimate for the finite divisor
+certificate. On the normalized blow-up of the actual
+cusp-section system, let \(D\) be a prime divisor of its
+base divisor \(E\), and take a transverse complex analytic
+arc through a general smooth point of \(D\), with punctured
+arc in the interior. Let \(b_D=\operatorname{ord}_D E\).
+For a fixed orthonormal basis of the complex space of
+cusp sections, write its coefficients in a local frame of
+the pulled-back weight line. Their common minimum order
+is exactly \(b_D\); after division by \(t^{b_D}\) at least
+one coefficient has nonzero limit. Thus if the metric
+has sublogarithmic growth in this frame along the arc,
+\[
+       \log\mathcal B(x(t))=-2 b_D\log(1/|t|)
+                                  +o(\log(1/|t|)).
+\]
+This uses the full actual section system, not an arbitrary
+nonzero section, and applies to exceptional divisors as
+well as strict transforms. At a point of the interior
+where the system is basepoint free there is no such
+divisor. The source lower bound
+\(\mathcal B(x)\ge\exp(-\Phi(x)/625)\) then gives
+\[
+ b_D\le\frac1{1250}
+             \limsup_{t\to0}\frac{\Phi(x(t))}{\log(1/|t|)}.
+                                                               \tag{LW8}
+\]
+In the source divisor construction the desired theta
+section has weight \(8N\,\mathrm{hodgeWt}\), and lower
+valuation \(8\phi_D/625\) at the original monodromy
+valuation of \(D\). If this section is constructed with
+that lower bound and if the arc comparison gives
+\(\limsup\Phi(x(t))/\log(1/|t|)\le6\phi_D\), then (LW8)
+implies \(8b_D\le24\phi_D/625\).
+Its cube has the weight \(8(A-A')\) and dominates
+\(8E\), proving (FW1). This is a sufficient finite
+arc estimate, not a proof that the theta section or
+the stated monodromy comparison has already been supplied.
+Both must use the actual cusp system, canonical metric
+and normalized divisorial valuation.

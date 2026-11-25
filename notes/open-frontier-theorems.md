@@ -429,3 +429,8 @@ The [retained zero-Gram trace comparison](flag-retained-zero-gram-traces.md) als
 
 
 - [W10 alternating Frobenius tails and finite wall/rank interfaces](geometry-flag-tail-and-wall.md): uniform original remainder bounds; exact cutoff comparison from finite qualitative wall tests under the specified symmetry and linkage hypotheses; finite sufficient lower-image-degree certificate. Actual wall limits, volume/metric comparison, and section vanishing remain open.
+
+
+### W10 continuation: logarithmic tangent slope
+
+See [the new slope and reference-wall argument](geometry-logarithmic-wall-heights.md). The stable abelian Lie maximum-slope theorem is proved with the integral theta translations and directional jets. The qualitative wall-limit proof retains the explicit reference fibre/metric, positivity, proportionality and fixed-reference mixed-limit inputs. The exceptional-divisor arc test retains the actual lower-valuation theta section and monodromy comparison. W06 and W08 remain open.
