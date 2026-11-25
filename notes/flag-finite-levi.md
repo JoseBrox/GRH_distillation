@@ -32,11 +32,11 @@ the actual column blocks by the finite double-coset bijection gives
 the original GG matrix, with its conjugation and row weights intact.
 Combining with GA7 gives FL8, with no further arithmetic loss.
 
-**Remaining:** construct the matched local lowest-vector Bessel
-data (LocDatC in the exact standing regime), and then establish the
-generic nonidentity return estimates and the final retained
-arithmetic theta Gram / positive-trace comparisons. W08 remains
-open. No claim of a Lean replay or complete manuscript compilation.
+The [matched local-data construction](flag-local-data.md) now supplies
+GoodLoc on the concrete standing amplitude hypotheses, so the stated
+diagonal zero-Gram bound is proved in that regime. **Remaining:** the
+generic nonidentity return estimates and the final retained arithmetic
+theta Gram / positive-trace comparisons. W08 remains open. No claim of a Lean replay or complete manuscript compilation.
 
 ## Pinned source audit
 

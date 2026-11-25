@@ -1,0 +1,356 @@
+\subsection{The matched local data from the given period seed}
+\label{sec:flag-local-data}
+
+The preceding diagonal estimate retains the original
+\(\mathrm{LocDatC}\) data. We now supply them in the concrete
+standing regime in which the amplitude theorem uses them.
+In particular we use the given
+\(\mathrm{ConcTie}\), including integrability of \(X.\mathrm{ph}\),
+and the given arithmetic ties, including \(\mathrm{dsigTie}\).
+We do not require the stronger universal \(\mathrm{BesselOfW}\)
+statement without the integrable-projector hypothesis.
+
+\begin{lemma}[Extraction by a discrete-series projector]
+\label{lem:flag-bessel-extraction}
+Let \(G\) be a real reductive group, \((\sigma,\mathcal H)\)
+an irreducible unitary square-integrable representation with
+formal degree \(d>0\) for Haar measure \(dg\), and \(w\) a
+smooth unit vector. Let \(S\) be a closed unimodular subgroup
+and \(\xi:S\to\mathrm U(V)\) a smooth unitary representation
+on a finite-dimensional Hilbert space. Let \(W:G\to V\) be
+continuous, satisfy \(W(sx)=\xi(s)W(x)\), and have nonzero
+finite squared norm for the invariant quotient measure.
+Suppose
+\[
+ e(g)=d\,\overline{\langle w,\sigma(g)w\rangle}\in L^1(G),
+ \qquad R(e)W=W ,
+ \tag{LD1}
+\]
+where \(R(g)W(x)=W(xg)\) and \(R(e)\) is the integrated
+operator on the equivariant quotient Hilbert space.
+Then there is a linear map \(B:\mathcal H^\infty\to V\)
+satisfying
+\[
+ B(\sigma(s)v)=\xi(s)B(v),\qquad
+ W(g)=B(\sigma(g)w),
+\]
+and bounded on smooth vectors by a finite sum of the
+Hilbert norms of enveloping-algebra derivatives.
+\end{lemma}
+\begin{proof}
+The Hilbert space of equivariant \(L^2\)-sections has a strongly
+continuous unitary right action. Schur orthogonality for the
+square-integrable representation gives, in the group
+convolution algebra with the stated Haar measure,
+\[
+ e^*=e,\qquad e*e=e,\qquad
+ e*\delta_g*e=\langle w,\sigma(g)w\rangle e.
+ \tag{LD2}
+\]
+For the last identity, at \(x\) the integral on the left is
+\[
+ d^2\int_G
+ \overline{\langle w,\sigma(y)w\rangle}
+ \langle \sigma(x)w,\sigma(y)\sigma(g)w\rangle\,dy
+   =\langle w,\sigma(g)w\rangle e(x),
+\]
+using the conjugate-linear first-argument convention.
+The convolution is defined in \(L^1\); the displayed integral
+also converges by Cauchy--Schwarz and square integrability.
+The same calculation at \(g=1\) gives idempotence.
+Thus \(R(e)\) is an orthogonal projection and (LD1)--(LD2)
+give
+\[
+ \langle R(g_1)W,R(g_2)W\rangle
+   =\|W\|^2\langle \sigma(g_1)w,\sigma(g_2)w\rangle .
+\]
+It follows that
+\(\sigma(g)w\mapsto R(g)W\) extends linearly to a
+well-defined scaled isometry \(T:\mathcal H\to L^2(S\backslash
+G;\xi)\), because the orbit span of \(w\) is dense by
+irreducibility. The isometry intertwines the two actions.
+
+For clarity, evaluation is made on smooth vectors, not on
+arbitrary \(L^2\) representatives. On the smooth homogeneous
+space \(S\backslash G\) with its associated smooth vector bundle,
+a smooth vector of the right action is a smooth section.
+Indeed, on a relatively compact local trivialization the
+right-action derivatives are differential operators with
+smooth coefficients, whose tangent parts span the tangent
+space. Locally any coordinate derivative is a smooth
+linear combination of these and a zeroth-order operator.
+Applying this repeatedly and multiplying by a compactly
+supported cutoff bounds ordinary Sobolev norms of any fixed
+order by finitely many quotient \(L^2\) norms of right-action
+derivatives. The invariant quotient measure has smooth positive
+density on the chart. Sobolev embedding, first in arbitrarily
+high orders and then in order strictly above half the chart
+dimension, proves both smoothness and bounded evaluation.
+This argument applies to weak derivatives of \(L^2\)-sections:
+smoothness of the orbit map gives all such derivatives in
+\(L^2\). In particular for a real Lie-algebra basis there
+exist a finite set \(\mathcal D\) of words in that basis
+(including the empty word) and a finite constant \(C\) such
+that
+\[
+ \|(Tv)(1)\|\le C\sum_{D\in\mathcal D}
+            \|R_*(D)Tv\|_{L^2}
+       = C\|W\|\sum_{D\in\mathcal D}\|\sigma_*(D)v\|.
+\]
+Set \(B(v)=(Tv)(1)\) using the unique smooth section.
+The intertwining property and equivariance of the section
+give the first required identity. Since \(Tw=W\) in \(L^2\),
+the smooth representative agrees everywhere with the
+given continuous \(W\), by the full support of the quotient
+measure. This proves the second identity and the asserted
+derivative bound. The bound is qualitative, as required
+in \(\mathrm{IsCWCont}\); no rank-uniform Sobolev constant
+is used.
+\end{proof}
+
+\begin{theorem}[The actual local-data consumer]
+\label{thm:flag-local-data}
+For the concrete setting used in the original amplitude
+theorem, with its given \(\mathrm{ConcTie}\) and
+\(\mathrm{dsigTie}\), there exist the original
+\(C:\mathrm{Choice}\ X\ 1\) and \(h_B:\mathrm{WuBessel}\ C\)
+with \(\mathrm{GoodLoc}(C,h_B)\).
+The assertion is simultaneous for the actual words and real
+places. In particular the local-data hypothesis of (FL8)
+does not require a further local existence conjecture.
+\end{theorem}
+\begin{proof}
+We give the construction using the original frames and measures.
+At a real place the two given isotropic frames form dual
+hyperbolic bases. Complete their scaled vectors to a Hermitian
+basis of the given signature by taking an orthonormal basis
+of the orthogonal complement. The first frame is scaled
+by \(\ell^{r-a}\) and the dual by
+\(\overline{\ell}^{-(r-a)}\), where
+\(\ell=\mathrm{frS}(D)=\mathrm{ka}/(2\pi)\ne0\).
+This yields exactly the matrices \(Q_\tau,Q_\tau^{-1}\)
+of \(\mathrm{IsTranspC}\), independently of the word.
+It transports each given \(z_u\) into the middle space
+and preserves its norm \(-\mathrm{Tr}(D,u)\), which is
+strictly negative. The compact stabilizer of \(z_u\)
+in this middle space is the unitary group of its positive
+orthogonal complement. Transport of the given orthonormal
+frame \(wfr_{u,\tau}\) identifies its prescribed compact
+representation with \(\mathrm{piB}\); its matrix entries
+are precisely those of the original \(h_J\)-pairings.
+Thus the column highest weight is unchanged.
+
+The transported discrete series is \(\mathrm{sigB}\).
+The two Hermitian signature models are identified by the
+given signature ordering and a Cayley isometry to \(Hpk\).
+Conjugating through that isometry identifies the
+Harish--Chandra parameter with \(\mathrm{lamD}(D,\tau)\):
+the original \(\mathrm{eps\_eq}\) and
+\(\mathrm{lam\_eq}\) fields give these equalities entrywise.
+In particular it has the required discrete-series parameter.
+The original \(w_\tau\) is a unit vector in the lowest
+compact type. The maximal compact subgroup transported
+by \(Q_\tau\) is conjugate to the compact subgroup in the
+chosen Cayley model. Choose \(y_\tau\) realizing that
+conjugation with the same signature ordering.
+Equivalently, if \(A=Q_\tau P^{-1}\) in signature
+coordinates (using the given sign-coordinate identification),
+the Cayley-conjugated representation is
+\(g\mapsto\sigma(A g A^{-1})\), and one may take
+\(y_\tau=Q_\tau^{-1}A Q_\tau\).
+Then \(v_{0,\tau}=\mathrm{sigB}(y_\tau)w_\tau\) is
+exactly a unit lowest-type vector for this representation.
+Both \(w_\tau\) and \(v_{0,\tau}\) are smooth. We use the
+classical Harish--Chandra admissibility theorem for
+irreducible unitary representations of real reductive
+groups and its consequence that their compact-finite
+vectors are smooth (Knapp, \emph{Representation Theory
+of Semisimple Groups}, Chapter VIII). Concretely, in
+each finite-dimensional compact isotypic space the
+smooth vectors are dense by convolution smoothing and
+compact projection, hence equal the whole space.
+The lowest-type subspace consists of compact-finite
+vectors. This is the precise smoothness needed here.
+
+Use the pushforward \(\mu_{G,\tau}\) of the original real
+Haar measure by \(Q_\tau^{-1}(\cdot)Q_\tau\), probability Haar
+measure \(\mu_{W,u,\tau}\) on the compact stabilizer of the
+last vector, and exactly the original
+\(\mu_{N,\tau}=\mathrm{haarLie}(N,\mathrm{kapN}(D,1))\).
+The latter is positive Haar measure by the unipotent
+coordinate calculation, with the specified positive scalar.
+The full stabilizer \(S_{u,\tau}\) is the semidirect
+product of this compact group and the flag unipotent.
+Indeed reduction on the isotropic quotient fixes \(z_u\)
+and acts on its orthogonal complement, and the kernel is
+the unipotent radical; the fixed dual hyperbolic frame
+gives the splitting. Conjugation by the compact factor
+preserves unipotent Haar measure (its modular multiplier
+is a positive character of a compact group).
+Thus the stated product \(\mu_S\) is Haar, and \(S_{u,\tau}\)
+is unimodular and closed. Choose an invariant quotient
+measure by the Weil formula with these measures.
+These are the data of \(\mathrm{Choice}\), including all
+\(\mathrm{GoodW}\) measure and norm conditions.
+The choices of \(Q_\tau,y_\tau\) were common to the words;
+the compact stabilizer and quotient measure use the actual
+word vector.
+
+Write \(W_{u,\tau}\) for the given \(\mathrm{Wloc}\) in
+these coordinates, and \(e_\tau\) for its prescribed
+formal-degree-normalized matrix coefficient, as in
+\(\mathrm{eFun}\). We verify the local hypotheses directly
+from the actual global seed. The given pure-tensor map
+is the restriction of a unitary tensor identification:
+the identity on inner products makes the linear extension
+well-defined and isometric, and its span condition makes
+it onto. The global squared norm is one, so no local
+factor vanishes identically. Apply global equivariance to
+an element supported at just one real place and to fixed
+nonzero values at all the other places. Cancellation of
+their nonzero tensors gives the local compact and
+unipotent equivariance. The character is the original
+one after coordinate transport: each root coordinate
+\(\langle f_a,\kappa\,\mathrm{nxt}(e,z)_a\rangle\)
+becomes \(\ell\) times the corresponding normalized root
+coordinate, including the final root evaluated on \(z_u\).
+Hence their sum becomes \(\ell L\), where \(L\) is the
+sum in the local character. The actual exponential has
+argument \(2\pi i(\ell L+\overline{\ell L})/g\),
+which is \(i(2\,\mathrm{ka}/g)\operatorname{Re}L\).
+This is precisely \(\mathrm{psiS}\), not a freely
+rescaled character. The compact action uses the given
+tensor equivariance and \(wfr\)-basis. These verify the
+local \(\mathrm{IsSPsiEquiv}\) assertion.
+
+The global unipotent and compact measures differ from
+the products of the corresponding chosen local measures
+only by strictly positive finite Haar constants.
+The Weil formulas then identify the global quotient
+measure on invariant functions with the inverse scalar
+times the product local quotient measures. Consequently
+the actual global norm-one condition, by Tonelli, implies
+that every \(\|W_{u,\tau}\|_{L^2(S_{u,\tau}\backslash G_\tau)}^2\)
+is positive and finite: all factors are positive since
+the local functions are continuous and nonzero, and a
+single infinite factor would make the product infinite.
+All measures have full support on the quotient.
+This argument keeps the original \(W_{u,\tau}\), without
+making separate choices of their scalar normalizations.
+
+By the given formal degree definition and Schur
+orthogonality, \(\mathrm{ph}\) is precisely the product of
+the \(e_\tau\)'s, for the product real Haar measure
+(\(\mathrm{phInf\_eq}\)). Each coefficient is nonzero
+near the identity. Integrability of the actual global
+\(\mathrm{ph}\), supplied by \(\mathrm{ConcTie}\), and
+Tonelli therefore give \(e_\tau\in L^1\) at every place.
+The original global pointwise convolution identity uses
+this product kernel. In the quotient Hilbert space it
+implies
+\[
+     \bigotimes_\tau R(e_\tau)W_{u,\tau}
+                =\bigotimes_\tau W_{u,\tau}.
+\]
+Indeed the integrated operator is bounded by the
+\(L^1\)-norm of the kernel, the product right action is
+the action on the tensor product of quotient-section
+spaces, and Fubini gives the displayed factorization.
+The global pointwise identity agrees almost everywhere
+with the integrated operator: on relatively compact
+quotient charts, integration against compactly supported
+test sections and Fubini identify the two, since the
+integrated \(L^2\) norm is finite. No convergence beyond
+the given \(L^1\) kernel and \(L^2\) sections is required
+for that identification. By (LD2) each \(R(e_\tau)\)
+is an orthogonal projection. Equality of the pure-tensor
+norms and contraction in every factor of positive norm
+give \(R(e_\tau)W_{u,\tau}=W_{u,\tau}\) in its own
+Hilbert space.
+
+The original local-data definition also requires the
+pointwise convolution identity and integrability at every
+point. These follow from the given global pointwise
+assertion, not just from equality in \(L^2\).
+Fix one place and any point there; choose points at the
+other places where their local \(W\)'s are nonzero.
+Continuity and the nonzero coefficient at identity
+give positive integrals of their absolute convolution
+integrands on small neighborhoods. The global absolute
+integrability and Tonelli give absolute integrability
+of the local convolution at the chosen point.
+The local convolution functions thus exist everywhere.
+Fubini in the global reproduction identity gives equality
+of the two products of tensors at all tuples of points.
+Fix nonzero anchor values in the factors; this equality
+forces the local convolution functions to be nonzero
+constant multiples of their respective original functions
+(with constants independent of the point in a factor).
+Their \(L^2\) identities just proved make each multiple
+one. Thus the pointwise identities hold everywhere,
+as required in \(\mathrm{LocFactor}\).
+
+Apply Lemma~\ref{lem:flag-bessel-extraction} in each
+transported local group to the given \(W_{u,\tau}\).
+It constructs a map \(B_{u,\tau}\) on the smooth vectors,
+whose restriction to the given orbit is precisely the
+given \(\mathrm{Wloc}\). Extend it by zero off the smooth
+vectors as a function on the Hilbert space. The original
+\(\mathrm{IsBesselMapSm}\) requires linearity and
+equivariance only on smooth vectors, so this extension
+satisfies its exact domain requirements. The derivative
+bound in that lemma is the original \(\mathrm{IsCWCont}\)
+with a finite list of Lie-algebra words. Smoothness on
+the real matrix group agrees with the specified
+\(\mathrm{SmoothOnH}\), since the group is an embedded
+smooth submanifold and a smooth map on it extends
+locally by a smooth chart retraction.
+We obtain \(\mathrm{WuBessel}\ C\) simultaneously,
+without a Bessel multiplicity-one assertion.
+
+Finally \(\Phi_{u,\tau}(x)=B_{u,\tau}(\mathrm{sigB}(x)
+v_{0,\tau})=W_{u,\tau}(x y_\tau)\) in the normalized
+coordinates. Right translation is unitary on the
+quotient Hilbert space. Its squared norm is therefore
+the very same positive finite local mass. Define
+\(c_N\) as this squared norm divided by the actual compact
+dimension, as in \(\mathrm{cOf}\); it is strictly positive.
+The diagonal scalar \(\mathrm{sclOf}\) equals one, and
+the two squared-norm requirements of \(\mathrm{GoodS}\)
+are now identities. For the formal degree requirement,
+in the given Cayley model the transported discrete series
+has exactly the given signature and Harish--Chandra
+parameter. Schur orthogonality for its Haar measure
+scaled by the original \(\mathrm{cdScale}\) provides
+its formal degree; applying the given \(\mathrm{dsigTie}\)
+identifies that degree with \(D.\mathrm{dsig}(\tau)\).
+This is the required formal degree for the scaled
+measure, distinct from the unscaled \(d\) in (LD1).
+All remaining conditions of \(\mathrm{GoodS}\) have been
+verified above. This proves \(\mathrm{GoodLoc}(C,h_B)\).
+\end{proof}
+
+\begin{corollary}[Diagonal zero-Gram bound in the concrete standing regime]
+\label{cor:flag-zero-gram-concrete}
+Under the original amplitude hypotheses (including the given
+\(\mathrm{Ties}\), \(\mathrm{KTwoHypotheses}\) and
+\(\mathrm{ConcTie}\)), and the original absolutely convergent
+orbital expansion, the diagonal nonidentity zero-Gram
+operator satisfies
+\[
+ \sum_{t\in\mathrm{degSet}}\|\mathrm{op}(t)\|_{\rm HS}<\infty,
+ \qquad
+ \|K''_{uu}\|_{\rm HS}^2\le d_u e^{-kf\log k}.
+\]
+This is the actual diagonal zero-Gram norm estimate needed
+on the concrete data. It leaves the generic-return estimates
+and the subsequent arithmetic comparison open.
+\end{corollary}
+\begin{proof}
+Theorem~\ref{thm:flag-local-data} supplies the matched data of
+Theorem~\ref{thm:flag-zero-gram-saving}. The estimates and
+thresholds in (GA1)--(GA8) are unchanged; the construction
+here adds no numerical threshold. Absolute convergence of
+the restricted operator series follows by restricting the
+given \(\mathrm{AbsConv}\) series. Apply (FL8).
+\end{proof}

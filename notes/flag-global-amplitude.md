@@ -42,7 +42,9 @@ The source's final bound is with the **full column dimension** duC,
 not merely the compact dimension dpiC. The [finite Levi proof](flag-finite-levi.md) now supplies the
 original Gram comparison and exact column dimension, and hence the
 literal diagonal zero-Gram saving under the matched local-data
-hypothesis. Local-data existence and the full W08 node remain open.
+hypothesis. The [matched local-data construction](flag-local-data.md)
+now supplies this hypothesis in the concrete original standing regime.
+The generic-return and final arithmetic norm comparisons remain open.
 
 ## Pinned source audit
 
