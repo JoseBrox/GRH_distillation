@@ -419,3 +419,5 @@ constructions above. The next research effort belongs to the actual
 two-level vertical correction, weighted mean-height and rank estimates, the
 remaining Selmer prime cases, and weighted near returns in the actual
 global period maps.
+
+The [nonzero-Gram normal count](flag-nondegenerate-normal-count.md) supplies occupied-point and rational normal multiplicity steps in both nonzero-Gram branches; local amplitudes and integral class sums remain open.

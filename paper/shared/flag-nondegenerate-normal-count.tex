@@ -1,0 +1,260 @@
+\subsection{Nondegenerate cells and normal multiplicities}
+\label{sec:flag-nondegenerate-normal-count}
+
+We work with actual admitted nonzero-Gram returns, including
+nongeneric ones. Write \(E/F\) for the CM host, \(f=[F:\mathbf Q]\),
+\(\rho=\operatorname{rd}(E)\), and \(\mathfrak d\) for the extended
+different, of absolute norm \(\rho^{2f}\). The level \(g\) is the
+product of the two split rational primes, prime to \(\mathfrak d\).
+Use the pairing \(B\) linear in its first variable. A return is an
+isometry \(\gamma_t:\Lambda'\to\Lambda\) of the actual row lattices.
+Write its target and transported source frames as
+\((e_0,\dots,e_r)\), \((f_0,\dots,f_r)\), with last vectors \(z,z'\)
+of norms \(-T,-T'\), isotropic spans \(X,Y_t=\gamma_t X'\), and
+signature \((k+r,r+1)\). Put
+\[
+ w_a=r-a,\quad w=r(r+1),\quad w_l=\sum_{a<l}w_a,\quad
+ Z_{ab}=B(f_b,e_a),\quad D_l=\det Z_{[0,l),[0,l)},
+ \quad D_0=1,\quad G=D_{r+1}\bar D_{r+1}-TT'D_r\bar D_r.
+\]
+The actual weighted lattice conditions give
+\(e_a,f_a\in\mathfrak d^{w_a}\Lambda\).
+Above \(g\), admission says that the full second frame is the
+first frame times an integral upper unitriangular matrix modulo
+\(g\Lambda_{\mathfrak p}\).
+
+\begin{lemma}[Occupied nonzero-Gram points]
+If \(G\ne0\), then \(G\) is totally positive. For a relevant term,
+\(Z\operatorname{diag}((-1)^{r-b})\) lies in the unique original
+block-antidiagonal point cell under lower and upper unitriangular
+multiplication over \(E\).
+\end{lemma}
+\begin{proof}
+The Gram determinant of the concatenated frames is
+\((-1)^{r+1}G\): in the conjugate-linear-first convention its
+diagonal blocks are \(-TE_{rr},-T'E_{rr}\), and its upper cross
+block is \(Z\). Swapping block columns and taking the rank-one
+Schur determinant proves the identity for invertible \(Z\),
+hence identically. The joint span \(J_t\) is nondegenerate of
+dimension \(2r+2\) and has negative index \(r+1\), since it
+contains the first isotropic \(r\)-plane and its perpendicular
+negative vector. Its complement \(H_t\) is positive of rank
+\(k-1\). The determinant sign gives total positivity of \(G\),
+so \(D_{r+1}\ne0\).
+
+If \(A,A'\) are strictly upper triangular with
+\(A^*Z+ZA'=0\), acting by these on the two frame spans and by
+zero on \(H_t\) gives a skew-Hermitian endomorphism. It belongs
+to both flag Lie algebras: it lowers the flags; in \(X^\perp\)
+the second-frame component lies in the one-dimensional kernel
+of the first \(r\) rows of \(Z\). That line is invariant under
+\(A'\) by skew-Hermitianity, so nilpotence makes its action zero.
+The reverse argument applies to \(Y_t\). Relevance equates the
+traces of the immediate-superdiagonal sums \(s(A),s(A')\).
+Applying relevance also to \(dA,\bar d A'\) for every \(d\in E\)
+gives \(s(A)=\overline{s(A')}\) by trace nondegeneracy.
+The signed monomial reduction argument of
+Lemma~\ref{lem:rational-flag-signed-block}, now in size \(r+1\),
+therefore applies. The permutations reverse consecutive blocks,
+with alternating signs removed by the displayed column signs.
+Uniqueness of the monomial representative in a
+lower-unitriangular/upper-unitriangular double cell follows by
+successive pivot elimination (the first nonzero position and
+value in the first column are invariant, and one continues on
+the remaining ordered rows and columns). These operations adapt
+the two flags, preserving their graded vectors and last-vector
+classes. The leading minors are unchanged. Changing the original
+return representative by either flag unipotent likewise
+only adapts the frames.
+\end{proof}
+
+\begin{lemma}[Full level content of the two normals]
+\label{lem:nonzero-gram-normal-content}
+For every \(l\), \(D_l\in\mathfrak d^{2w_l}\). For \(1\le l\le r\),
+\(D_l\in(g)^l\), and \(D_{r+1}\in(g)^r\). Moreover
+\[
+ G\in(g)^{2(r+1)}\mathfrak d^{2w}.
+ \tag{NG1}
+\]
+Define the source's adjugate normal vectors by
+\[
+ \omega=\sum_b(\operatorname{adj}Z)_{br}f_b,\qquad
+ y=T\omega+D_{r+1}z,\qquad
+ y'=\gamma_t^{-1}y(F',F),
+\]
+where the reverse-pair construction uses \(T'\).
+They are perpendicular to their respective isotropic spans
+and last vectors and have norms \(TG,T'G\).
+Their quotient classes belong to
+\(\mathfrak c Q_\Lambda,\mathfrak c Q_{\Lambda'}\), where
+\[
+ Q_\Lambda=(X^\perp\cap\Lambda)/(X\cap\Lambda),\qquad
+ Q_{\Lambda'}=((X')^\perp\cap\Lambda')/(X'\cap\Lambda'),
+ \qquad \mathfrak c=(g)^{r+1}\mathfrak d^w.                 \tag{NG2}
+\]
+\end{lemma}
+\begin{proof}
+The weighted lattice conditions give cross-entry content
+\(\mathfrak d^{w_a+w_b}\); determinant expansion proves the
+different assertions. Above \(g\), the first \(r\) cross rows
+vanish modulo \(g\). Subtract the first frame times the
+admission matrix from the second frame in the joint Gram
+determinant: the last \(r+1\) rows and columns of the new
+matrix each have a factor \(g\). This proves (NG1) by
+coprimality of \(g,\mathfrak d\), and the cross-row condition
+gives the other minor divisibilities.
+
+The adjugate identity gives \(B(\omega,e_a)=0\) for \(a<r\)
+and \(B(\omega,z)=D_{r+1}\). Its norm is
+\(-T'D_r\bar D_r\), by the second frame's internal Gram
+matrix. These give the asserted properties of \(y\), and
+reversal gives those of \(y'\). The cofactor omitting row
+\(r\) and column \(b\) lies in \(\mathfrak d^{w-w_b}\);
+multiplying by \(f_b\) shows \(y\in\mathfrak d^w\Lambda\).
+At a prime above \(g\), write the cofactors as \(a_b\in(g)^r\).
+Admission gives \(f_b\in X+g\Lambda_{\mathfrak p}\) for \(b<r\)
+and \(z'\in z+X+g\Lambda_{\mathfrak p}\). Thus
+\[
+ \omega\equiv a_rz\pmod{X+g^{r+1}\Lambda_{\mathfrak p}},
+ \qquad D_{r+1}=\sum_b Z_{rb}a_b\equiv-Ta_r\pmod{g^{r+1}} .
+\]
+Therefore \(y\in X+g^{r+1}\Lambda_{\mathfrak p}\).
+Perpendicularity to \(X\) makes the lattice vector in this
+expression also perpendicular to \(X\). Reversing the
+admission using the inverse unitriangular matrix, then
+transporting by \(\gamma_t^{-1}\), gives the same source
+condition. Local intersection proves (NG2).
+\end{proof}
+
+In the actual point normalization put
+\[
+ N_G=\prod_\tau\rho^{-2w}\tau(G),\qquad
+ N_D=\prod_{l\ {\rm block\ end}}\prod_\tau
+              \rho^{-4w_l}|\tau(D_l)|^2,\qquad
+ G_0=g^{-2f(r+1)}N_G.
+\]
+Here \(\tau\) ranges over real places of \(F\) with a chosen
+complex extension. Each endpoint factor is the norm of the
+integral ideal \((D_l)\mathfrak d^{-2w_l}\).
+The ideal \((G)(g)^{-2(r+1)}\mathfrak d^{-2w}\) is integral
+and extended from \(F\); its \(F\)-norm is \(G_0\), a positive
+integer. In particular these are the actual occupied-point
+StepPointsG and StepNormOneG inequalities, strengthened to
+\(N_G\ge g^{2f(r+1)}\). The original height factor
+\(g^{-(2r+1)f}N_GN_D\) is at most \(g^fN_GN_D\).
+
+\begin{theorem}[Level-saving rational normal count]
+\label{thm:nonzero-gram-normal-count}
+Fix an actual row pair, a corank-one class of nonzero-Gram
+returns and an occupied point. The number of rational
+unipotent double cosets in that class and point is at most
+\[
+             |\mu(E)|^2(TT')^fG_0^2 .                     \tag{NG3}
+\]
+This proves the occupied normal-count input for the generic
+scalar classes and the nongeneric corank-one classes, with
+the source's larger bound
+\(\rho^{12wf}(TT')^{6f}N_G^6\) replaced by (NG3).
+It does not count integral double cosets.
+\end{theorem}
+\begin{proof}
+Put \(P=(X^\perp\cap z^\perp)/X\), and \(P'\) for the fixed
+source flag. Both are positive of rank \(k\). The two
+isometric injections of \(H_t\) into \(P,P'\), the latter
+via \(\gamma_t^{-1}\), define a graph \(\mathcal H_t\)
+of dimension \(k-1\) in \(P\oplus P'\).
+The source's ThPairs conditions
+\(h_1-h_2\in X\) and
+\(\gamma_2\gamma_1^{-1}h_1-h_2\in Y_{t_2}\) say precisely
+that the two graph vectors agree. Both projections of
+each graph are injective. Hence
+\[
+ \dim\operatorname{Th}=\dim(\mathcal H_{t_1}\cap\mathcal H_{t_2}),
+ \quad s_0=1\ \Longleftrightarrow\
+                  \mathcal H_{t_1}=\mathcal H_{t_2}.
+\]
+This proves the corank-one equivalence relation, including
+\(k=1\). Within it the generic scalar refinement is also
+an equivalence: the spaces Ylift and Ylift' in the source
+project onto the perpendicular lines to the two graph
+projections, and SgRel records the two last-vector
+coefficients of the difference of lifts in the direct
+sum of the two frame spans. They are unique and independent
+of lifts modulo the corresponding isotropic spaces.
+On identifying the two perpendicular lines by the fixed
+quotient coordinates \(P,P'\), IsScalar says exactly that
+these coefficient functions coincide. Restriction to such
+a class can only reduce the count.
+
+Fix a base term \(t_0\) in this class and point. The two
+normal classes lie on fixed perpendicular lines and have
+norms \(TG,T'G\) by the preceding lemma. Write
+\([y_t]=a_t[y_{t_0}], [y'_t]=a'_t[y'_{t_0}]\).
+These are the source coefficient ratios obtained by
+pairing with the base normal and dividing by its norm.
+Each has relative norm one. The fractional ideal
+\[
+ I=\{a\in E:a[y_{t_0}]\in\mathfrak c Q_\Lambda\}
+\]
+contains all \(a_t\), and is nonzero by (NG2); the class
+of the base vector is nonzero. The integral pairing on
+the quotient gives \(TG I\bar I\subseteq
+\mathfrak c\bar{\mathfrak c}\). Taking absolute ideal
+norms gives \(N_E I\ge1/(T^f G_0)\).
+Similarly \(N_E I'\ge1/((T')^fG_0)\) for the source.
+
+To verify the rational-normal separation, suppose two
+terms have identical pairs of ratios. Adapt both pairs
+of frames to the same cross matrix (remove the fixed
+column signs from the common signed point).
+The map on their joint spans sending the adapted
+frames to each other is an isometry, since their full
+Gram matrices agree. Extend it by the isometry of
+the two complements given by the common target graph
+projection. This extension \(\sigma\) is rational and
+also respects the source graph projection.
+
+Under unitriangular adaptations \(A,B\) the cross
+matrix becomes \(A^*ZB\); the adjugate vector in the
+ambient space is unchanged because
+\((A^*)^{-1}e_r^{\rm coord}=e_r^{\rm coord}\).
+The determinant is unchanged. Hence the normal changes
+only by an element of the isotropic span; the reverse
+normal does likewise. The extension \(\sigma\) thus
+fixes the first quotient normal class, the graph
+projection and the last-vector class. These span
+\(X^\perp/X\). It fixes each graded flag vector, so
+\(\sigma\in N(E)\), the original flag unipotent.
+On the source side
+\(s'=\gamma_1^{-1}\sigma^{-1}\gamma_2\) fixes every
+graded vector and acts trivially on the isotropic
+quotient by the common graph and equality of source
+normals. Thus \(s'\in N'(E)\), and
+\(\gamma_2=\sigma\gamma_1s'\).
+Choosing one representative of each occurring rational
+double coset gives an injection into pairs of ratios.
+
+For any fractional ideal \(I\) and nonzero \(m\), an
+element \(a\in I\) satisfying \(a\bar a=m\) determines
+the integral ideal \(A=(a)I^{-1}\), of norm
+\(L=\sqrt{|N_E(m)|}/N_E I\). Its product with its
+conjugate is fixed. At distinct conjugate primes with
+fixed total exponent \(e\), at most \(e+1\le q^e\)
+choices occur, with \(q\) their common absolute norm;
+at fixed primes there is at most one choice.
+Thus the number of ideals is at most \(L\). In one
+ideal the elements differ by norm-one integral units,
+which are roots of unity by Kronecker. This proves the
+stronger norm-equation count \(|\mu(E)|L\) whenever the
+solution set is nonempty. Applying it to \(I,I'\) with
+\(m=1\) gives (NG3). Finally \(|\mu(E)|\le8f^2\) by
+\(\varphi(n)^2\ge n/2\) and \(\varphi(|\mu(E)|)\le2f\).
+For \(T,T'\ge3\) we have \(64f^4\le(TT')^{4f}\);
+\(G_0\le N_G\), \(N_G\ge1\), prove the original bound.
+\end{proof}
+
+This supplies the occupied-point and rational-normal
+arithmetic steps of the original nondegenerate-return
+calculation. The integral amplitude sum within each
+rational double coset, local generic amplitudes, and
+the restricted arithmetic theta comparison remain separate.
