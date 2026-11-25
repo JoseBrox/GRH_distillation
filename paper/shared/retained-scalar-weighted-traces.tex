@@ -1,0 +1,115 @@
+\subsection{Scalar-bearing trace estimates with the prescribed normalizer}
+\label{sec:retained-scalar-weighted-traces}
+
+The remaining common-family comparison must retain the scalar
+moduli in Section~\ref{sec:retained-column-positive-traces}.
+They need not, however, be estimated by a uniform maximum
+over all words. The following two elementary estimates
+preserve the prescribed normalizer and allow a weighted
+arithmetic bound.
+
+Let \(T_i:V_i\to W\) be maps of finite-dimensional Hermitian
+spaces, with \(d_i=\dim V_i\), \(R=\sum_i d_i>0\),
+\(D=\dim W>0\), \(c>0\). Write
+\(S_i=T_i^*T_i\), \(Q_i=T_iT_i^*\),
+\(m_i=\operatorname{tr}S_i=\operatorname{tr}Q_i\).
+For scalar factors \(a_i\) put \(\rho_i=|a_i|^2\),
+\(S_\rho=\bigoplus_i\rho_i S_i\), \(Q_\rho=\sum_i\rho_i Q_i\).
+For any such family let \(g,b\) be the normalized positive
+source deficit and target excess, both with the specified \(c\).
+
+\begin{proposition}[Weighted scalar stability]
+\label{prop:retained-weighted-scalar-stability}
+For the rescaled maps \(a_iT_i\) one has
+\[
+ \begin{split}
+ c g_\rho&\le cg+\sum_i(1-\rho_i)_+m_i,\\
+ c b_\rho&\le cb+\sum_i(\rho_i-1)_+m_i,\\
+ g_\rho+b_\rho&\le g+b+c^{-1}\sum_i|\rho_i-1|m_i .
+ \end{split}                                                       \tag{ST1}
+\]
+These inequalities hold as stated after any prescribed
+source and target orthogonal cuts, with \(m_i\) the
+mass of the actual compressed maps and \(R,D,c\) their
+prescribed dimensions and normalizer.
+\end{proposition}
+\begin{proof}
+The function \(A\mapsto\operatorname{tr}A_+\) on Hermitian
+matrices is monotone in the positive-semidefinite order
+and subadditive, by its variational formula
+\(\sup_{0\le P\le1}\operatorname{tr}(PA)\).
+The source difference is bounded above by
+\(\bigoplus_i(1-\rho_i)_+S_i\), and the target difference
+by \(\sum_i(\rho_i-1)_+Q_i\).
+Apply these facts to the two positive parts. Scalars
+commute with the prescribed cuts, so the same argument
+works for compressed maps. Adding the two allowances
+charges each absolute scalar deviation exactly once.
+\end{proof}
+
+In particular suppose the exact common-family comparison
+on the retained spaces gives \(T_i^{\rm actual}=a_iT_i\)
+up to source unitaries and a common target isometry.
+If the unscaled family has proved budget \(E\), then
+the contribution to the final norm penalty is at most
+\[
+ \kappa^{-1}\operatorname{avg}_u
+ \min\left\{H_u,\,
+  \left(E_u+c_u^{-1}\sum_i|\rho_{ui}-1|m_{ui}\right)
+                      (U_u+H_u)\right\}.                  \tag{ST2}
+\]
+The scalar-deviation allowance may itself be bounded in this
+clipped weighted average. Neither an individual
+\(\rho_{ui}=1\) nor a uniform maximum of their deviations
+is necessary. A choice of a common alternative reference
+scale is harmless only if its positive traces are computed
+relative to the actual \(c_u\).
+
+There is also a direct weighted second-moment formulation,
+useful when the scalars are not close to one. Suppose
+\[
+ \|S_i-1_{V_i}\|_{\rm HS}\le e_i\sqrt{d_i},\qquad
+ \|T_i^*T_j\|_{\rm HS}^2\le
+          (1+\eta)d_i d_j/D_*\quad(i\ne j)
+\]
+for the actual comparison dimension \(D_*>0\).
+Set
+\[
+ M_0=\sum_i\rho_i d_i,\quad
+ \Delta=\sum_i\rho_i e_i d_i,\quad
+ B_\rho=\sum_i\rho_i^2(1+e_i)^2d_i,\quad
+ C_\rho=\sum_i\rho_i^2d_i^2 .
+\]
+Then the following fully explicit bound holds:
+\begin{equation}\label{eq:retained-weighted-second-moment}
+ g_\rho+b_\rho\le\frac{1}{2c}
+ \left[
+ \sum_i|\rho_i-c/R|d_i+\Delta+
+ \sqrt{D B_\rho+
+   \frac{D(1+\eta)}{D_*}(M_0^2-C_\rho)-2c(M_0-\Delta)+c^2}
+ \right].
+\end{equation}
+Indeed the source trace norm is at most the sum inside
+the first two terms by the triangle inequality and the
+trace/Hilbert--Schmidt inequality on each block.
+The actual common mass is in
+\([M_0-\Delta,M_0+\Delta]\).
+For the target,
+\(\operatorname{tr}Q_\rho^2=
+\sum_{i,j}\rho_i\rho_j\|T_i^*T_j\|_{\rm HS}^2\);
+the diagonal terms give \(B_\rho\), the off-diagonal
+terms give \((1+\eta)(M_0^2-C_\rho)/D_*\).
+Now use the exact prescribed-normalizer trace-norm identity
+(M1) of the preceding section, bounding the target trace
+norm by the square root in its actual dimension \(D\).
+The radicand is nonnegative, since it majorizes the
+square of the target Hilbert--Schmidt error times \(D\).
+No row-wise maximum of \(e_i\) or \(\rho_i\) occurs.
+
+These results are sufficient trace and budget reductions,
+not a construction of the actual \(a_i\), the common target,
+the reference dimension, or the off-diagonal estimates.
+The same-data anchored see-saw and moving concentration
+hypotheses remain required. In particular none of these
+inequalities justifies using a different \(c\) in an
+arithmetic height or covolume comparison.

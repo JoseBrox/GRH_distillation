@@ -1,0 +1,120 @@
+\subsection{The two-level metric bridge and the remaining weighted height bound}
+\label{sec:geometry-two-level-weighted-bridge}
+
+We record the precise arithmetic intersection consequence of the local
+calculations. This separates the geometric linkage of the two original
+models from the subsequent estimates of their weight polynomials.
+
+\begin{lemma}[Vertical comparison on the actual common model]
+\label{lem:geometry-two-level-vertical-bridge}
+Suppose the two cutoffs \(B_0\le B_1\) have a common normal
+projective comparison model with their specified root line bundles
+\(X_i,Y_i\), pulled back with the original metrics. Assume:
+\begin{enumerate}
+\item their generic identifications are isometries, and the
+  differences of the finite lattices are supported on the new
+  correction primes \(S(B_1)\setminus S(B_0)\);
+\item on each such fibre the new roots in each prescribed label
+  are the graded lines of the trivial flagged bundle, as in (HF1);
+\item the old and new root bundles at that prime obey the actual
+  two relative Chern identities (RC4)--(RC5), with their
+  original labelling and dual conventions.
+\end{enumerate}
+Then, for every \(k\ge1\) and every complementary root monomial
+\(Q\) of degree \(d+1-k\), the difference of the original arithmetic
+intersections of \(p_{k,\tau}Q\) is exactly the sum of their local
+relative Chern comparisons with \(Q\) evaluated on the old roots,
+each multiplied by the prime's logarithm and the original
+arithmetic normalization factor. There is no additional
+mixed-root remainder.
+\end{lemma}
+\begin{proof}
+Use arithmetic first Chern classes \(x_i,y_i\) of the two
+metrized line bundles, and the equality
+\[
+ p_{k,\tau}(x)Q(x)-p_{k,\tau}(y)Q(y)
+ = [p_{k,\tau}(x)-p_{k,\tau}(y)]Q(x)
+   +p_{k,\tau}(y)[Q(x)-Q(y)] .
+\]
+The generic isometries identify \(x_i-y_i\) with arithmetic
+classes of vertical Cartier divisors, with zero archimedean
+part. Telescope each monomial in \(Q(x)-Q(y)\) using these
+differences. The degree of each resulting term in the last
+summand is zero: intersect on its supporting special fibre,
+where \(p_{k,\tau}(y)=0\) by the exact trivial flag and the
+Whitney formula. This remains true on a nonreduced special
+fibre, by applying the intersection to its component cycles
+with their multiplicities. The first summand is the arithmetic
+realization of the relative Chern comparison of the two
+root bundles; this is precisely the power sum of the vertical
+line differences multiplied by their mixed-degree polynomial
+and by \(Q(x)\). Its evaluation is the local number in (RC4),
+with \(\log p\) and the original residue degree multiplicities.
+The projection formula shows invariance under a common
+birational refinement and, for normalized arithmetic degrees,
+under a finite common coefficient extension. For the latter,
+both the total arithmetic degrees and the field-degree
+denominator are multiplied by the extension degree.
+Linearity gives the same identity for complementary
+polynomials. This proves the stated comparison, without
+discarding a principal vertical divisor before its fibre
+intersection is taken.
+\end{proof}
+
+This lemma gives the usual two-level power-sum comparison
+once the same-model and isometry hypotheses have been supplied.
+It does not obtain those hypotheses by changing the metrics
+or by choosing unrelated root bundles at the two cutoffs.
+In particular the first-order local argument in
+Section~\ref{sec:geometry-witt-additive-lattice} must still
+be matched to the global charts as stated there.
+
+Here is the exact numerical consequence of the already proved
+base test for the original weighted-height reduction.
+Use the notation of \texttt{tower-intersection-reduction.md}:
+\(\Lambda_B=\log(B\operatorname{rd}(E))+|\lambda_E|\),
+\(f=|\Psi|\), \(N=p+q\), \(3q+1\le N\), \(f\ge2\),
+and \(L(u)=\sum_{\tau,i}|u_{\tau i}|\),
+\(W(u)=\sum_\tau(u_{\tau0}-u_{\tau,N-1})\).
+These \(p,q\) denote the signature, not a correction prime.
+Suppose the exact two-polynomial comparison (2.1) of that
+note and its bounds (2.4) have been established on the
+same chosen tower, with the original common signed
+determinant coefficient \(|c_B|\le4\Lambda_B\).
+The signed base-test theorem now supplies
+\(\beta_B\ge-107\Lambda_B/2\).
+Consequently the block-sensitive elimination gives
+\[
+ \sigma_B(u)\ge
+ -K_BL(u)-2qW(u),
+ \quad
+ Z=\tfrac{107}{2}\Lambda_B+
+       \tfrac12\log(N+1)+\frac8{5fq},
+ \quad
+ K_B=\max\{Z,(q/p)Z+(N/p)4\Lambda_B\}.
+\]
+For the original \(B\ge\max(128,4fN^2)\) one has
+\(Z\le55\Lambda_B\): indeed
+\(\log(N+1)\le\log B\), \(8/(5fq)\le4/5\le\log B\).
+As \(q/p\le1/2\), \(N/p\le3/2\), the other entry in the
+maximum is at most \((55/2+6)\Lambda_B\).
+Thus
+\begin{equation}\label{eq:geometry-conditional-mean55}
+ \sigma_B(u)\ge-55\Lambda_BL(u)-2qW(u).
+\end{equation}
+With equal component volumes and the actual prescribed
+norm/count-volume comparison \(s_Z=\sigma_Z-2c_2(E,B)L(u)\)
+of \texttt{mean-volume-supplier.md}, the finite-place
+bound \(c_2\le40(\log B+\log\operatorname{rd}(E))\) yields
+\[
+ \frac1{|\mathcal Z|}\sum_Zs_Z\ge
+       -135\Lambda_BL(u)-2qW(u).
+\]
+All constants are independent of the growing datum.
+The displayed weighted bound is conditional only on the
+specified remaining same-tower comparison and its flag
+height/remainder bounds and norm dictionary. Neither
+the source's name of a comparison theorem nor the
+local test identities alone establishes these inputs.
+The finite section-rank comparison and the final
+same-window arithmetic budget are separate.
