@@ -253,6 +253,40 @@ infinite-place condition. Once the common numbers are algebraic, their
 product formula is an ordinary number-field statement. No identification
 of ℂ with a local algebraic closure is needed in the human exposition.
 
+**Application to the actual terminal value coordinates.**
+The uniform conjugate norm bounds in the source can be converted
+to the bound on the common determinant without assuming algebraicity
+of individual theta values. The terminal definite forms embed by
+evaluation at class representatives into a finite coordinate space
+with rational positive definite Gram matrix \(H\): it is a direct
+sum of the integral Weyl Gram matrices times the rational class
+weights. For a matrix \(W\) with the images of the completed basis
+as columns put \(g=\det(W^*HW)\), \(c\) complex conjugation and
+\(\sigma^c=c\sigma c\). Then
+\[
+ \sigma(g)=\det((\sigma^c W)^*H(\sigma W)).
+\]
+Apply Cauchy--Schwarz in the \(D\)-th exterior power of this
+positive metric:
+\[
+ |\sigma(g)|\le
+ \det((\sigma W)^*H(\sigma W))^{1/2}
+ \det((\sigma^c W)^*H(\sigma^c W))^{1/2}.
+\]
+In particular a bound \(C+Q\) on the logarithmic squared
+covolume in *every* transported metric yields
+\(\log|\sigma(g)|\le C+Q\) for every \(\sigma\).
+The bounded-conjugate observation now proves \(g\) algebraic.
+The same observation applies to the common height multiplier.
+For each place of a number field containing these two common
+scalars, extend the associated embedding to a coefficient
+isomorphism as in the source; the mixed local Gram identity
+then gives the required inequality at that place. No common
+number field is required for the infinitely many individual
+twisted determinants. This calculation only needs the actual
+uniform norm and pairing inputs, not a separate algebraicity
+theorem for the entire family of theta kernels.
+
 ## 4. Completion at its exact cost
 
 Here is a precise arithmetic version suitable for reuse. The coefficient

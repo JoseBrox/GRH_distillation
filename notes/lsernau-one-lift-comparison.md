@@ -130,10 +130,95 @@ with \(G_\xi^*v\) is \(M^{l_1}\) times the sum of the Cartan
 product values paired with \(v((h,c)g_{i,\xi})\).
 This identifies precisely the finite quantity to unfold.
 
-The two analytic suppliers for (2) are the uniform
-integral and size estimates for the first factors and the
-divided-lattice product forms, and the first-factor period
-identity. After the latter and the common kernel identity,
+The finite gluing estimates themselves admit the following
+more direct uniform calculation. At a coefficient embedding
+away from the twist, suppose the divided-splitting gauge
+estimate of the source holds: the Cartan product value
+of a product form costs at most \(|M|_\ell^{-l_1}\) times
+the product of the two transported gauges. Suppose the
+first factor has gauge at most one and the tuple is
+integral. The multiplier \(M^{l_1}\) in (2) cancels this
+cost exactly. The integral character on the supporting
+class takes unit values and every first-factor stabilizer
+is trivial. Thus every term of the scaled sum has gauge
+at most one; ultrametricity proves the gluing-integrality
+assertion, with no factor for the number of classes.
+It suffices to prove the divided-splitting and first-factor
+estimates, not a further uniform integral theorem on the
+completed gluing map.
+
+For the untwisted archimedean estimate put
+\(A=fmb(\log b)^2\). Let \(I\) index the pairs \((i,c)\),
+\(H_i\) be the number of first-factor classes for \(i\),
+and \(H_V\) the number of target classes.
+Use the pointwise first-factor estimate
+\(\|\sigma\mathrm{firstFactor}\|^2\le e^A\),
+and the source's pointwise product-form bound:
+its norm is at most \(g_0\) times the product of
+the norms of the first factor and \(u_{i,c}\).
+Both are the actual weight norms, at every
+\(\sigma\). The latter is the exact Cartan norm
+on the two disjoint blocks followed by the
+class-support bound. For a target class \(x\),
+triangle inequality followed by Cauchy--Schwarz,
+*on the tuple index*, gives
+\[
+ \|(\sigma G_1)(\sigma u)(x)\|
+ \le M^{l_1}g_0e^{A/2}
+       \sum_{(i,c)\in I}H_i\|\sigma u_{i,c}\|
+ \le M^{l_1}g_0e^{A/2}
+       \Big(\sum_{(i,c)\in I}H_i^2\Big)^{1/2}
+       \|\sigma u\|.
+\]
+Summing the squares with class weights at most one proves
+\[
+ \|\sigma G_1\|_{\rm op}^2
+ \le M^{2l_1}g_0^2 H_V e^A
+                     \sum_{(i,c)\in I}H_i^2.              \tag{2a}
+\]
+Here the domain is the direct sum tuple metric, and
+the target metric is the class sum of the rational
+Weyl Gram forms. Compared with bounding each tuple
+entry by the whole tuple norm before summing, this
+saves a factor \(|I|\) when the \(H_i\) are equal,
+and at least that factor in the corresponding
+worst-case bound. The source class bounds are
+\(H_i,H_V\le e^b\), so it suffices that
+\(2l_1\log M+2\log g_0+3b+\log|I|\le A\)
+to recover \(\|\sigma G_1\|\le e^A\).
+
+There is also no need to count frame vectors to estimate
+\(U_1\) at infinity. Work in the ambient finite value
+coordinates at target classes and the full space of tuples.
+Both metrics have rational Gram matrices, using the
+class weights on the target. Thus for \(c\) complex
+conjugation and \(\sigma^c=c\sigma c\),
+\[
+ \sigma(G_1^*)=(\sigma^c G_1)^*,\qquad
+ \|\sigma U_1\|_{\rm op}
+ \le g_0h^2\|\sigma G_1\|_{\rm op}\|\sigma^c G_1\|_{\rm op}.
+                                                               \tag{2b}
+\]
+For the adjoint formula on target forms, restrict
+the ambient adjoint to that form subspace; the tuple
+space is the full finite direct sum. The identity follows
+by transposing the value matrix and inserting the two
+rational metric matrices. It does not assume that
+\(\sigma\) commutes with \(c\).
+If (2a) gives the source bound \(\|\sigma G_1\|\le e^A\),
+then \(2A+\log g_0+2\log h\) is a valid value of \(A_j\)
+in Section 4. The source's \(3A\) follows whenever
+\(\log g_0+2\log h\le A\). This separates the
+analytic first-factor input from the finite operator
+estimates and preserves the small hook and class
+losses without counting the tight frame. The full
+source estimates for the first factor, the local
+divided splitting, and the class and scale bounds
+are still required.
+
+The analytic suppliers for (2) are now the first-factor,
+product-form and divided-splitting estimates used above,
+the numerical class bounds, and the first-factor period identity. After the latter and the common kernel identity,
 the source has a map \(P^\circ:W\to T\) such that
 \[
  c_\xi G_\xi^*L_\xi=P^\circ                                \tag{3}
@@ -470,7 +555,8 @@ Readable source [72fead1](https://github.com/lsernau/grh-lean/tree/72fead102f663
    Fock pairing, integral frame and CM weight isometries.
 2. [LiftVolumeHeight](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src/New/OneLift/LiftVolumeHeight.lean)
    (179--443, 625--803; blob 7773d1334443460b5c920472da37b9e4b77ddb99).
-3. OneLift/ComparisonOperator/GluingMaps (330--380, 999--1084;
+3. OneLift/ComparisonOperator/GluingMaps (330--380, 542--624,
+   731--802, 999--1084;
    blob e162c6d6d22870776e550830ae808f0f04abdc4c).
 4. OneLift/TestedForms (373--426, 519--635).
 5. [DenominatorBound](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src/New/Congruences/FirstOrder/DenominatorBound.lean)
