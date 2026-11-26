@@ -133,7 +133,7 @@ witness is allowed; the preceding [degree-independent specialization](lsernau-tw
 Fix an actual representation over O' and a fixed set of homogeneous
 linear conditions. Let Z be the module of continuous cocycles in
 (Frac(O')/O')^n satisfying those conditions and the inertia conditions.
-Every element of Z has finite image and is torsion. Multiplication by
+Every element of Z has finite image and is torsion. Division by
 p^M identifies the coefficient torsion subgroup with O'/p^M via
 
     u mod p^M ↦ p^{-M}u mod O'.

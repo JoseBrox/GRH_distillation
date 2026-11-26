@@ -277,13 +277,17 @@ The [finite presentation and line-witness theorem](../notes/lsernau-finite-selme
 now supplies a common finite polynomial matrix, sharp padded minors,
 strict-cutoff passage to divisible coefficients, and the bounded Selmer
 witness conditional on the actual auxiliary-prime and tied-length bounds.
+The [classical-duality descent](../notes/lsernau-classical-tied-descent.md)
+now proves the tied-length bound and bounded number of auxiliary primes
+from the precise singleton and paired Frobenius/character prime supply,
+using the finite Greenberg–Wiles formula and a short mirror pairing.
 It also replaces the Selmer line's linear level requirement by a
 logarithmic radius cost. The cofinal arithmetic supplier and
 Stickelberger-system witnesses remain open.
 
 Reconstruct the remaining arithmetic in this order:
 
-1. Prove the cofinal auxiliary-prime selection and bounded tied-group
+1. Prove the precise cofinal auxiliary-prime supply for the established tied-group
    theorem (including the scalar-inertia, matrix-span, local-condition
    and reciprocity inputs), and the Stickelberger-system witnesses.
    Then apply the proved finite presentation, Selmer line-witness,
@@ -370,7 +374,7 @@ dependence; the finite-order result does not settle them.
 
 The finite-presentation, conditional Selmer line-witness and
 evaluation-to-length comparison are now written and proved. The first
-remaining deliverable is the auxiliary-prime/tied-length theorem and the
+remaining deliverable is the singleton and paired Frobenius/character prime supply and the
 Stickelberger-system witnesses, followed by the one-lift denominator
 bound. The simultaneous specialization step is already proved with
 stronger shared error control. In parallel, build the
