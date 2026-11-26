@@ -419,8 +419,8 @@ and normalized theta function; the preceding maximum
 is thus bounded by one constant \(C_d\ge1\) independent
 of the torsion order and of \(q\). This is the needed
 bound for the integral vacuum. The following section proves the scalar translated-jet
-covariance. Its common adelic transport is still required
-for the sharp archimedean kernel estimates.
+covariance. Its common adelic transport is supplied by
+[the common jet comparison](lsernau-common-jet-conjugation.md).
 
 ## 5a. The complete scalar translated jet
 
@@ -492,11 +492,10 @@ This proves scalar translated-jet covariance, including
 zero constant terms, on the actual marked model. It
 also applies term by term to the integral standard
 vacuum's finite Fourier/product realization with its
-algebraic linear forms and torsion shifts. What is not
-provided by this argument is one common finite adelic
-transport realizing the conjugate products and the
-semilinear equivariance for all moved nonstandard kernels.
-That stronger common jet conjugation is still needed.
+algebraic linear forms and torsion shifts. The [common jet comparison](lsernau-common-jet-conjugation.md)
+fixes the remaining torsion phase using the algebraic sections,
+constructs one compatible adelic transport, and proves the
+semilinear comparison for the actual moved definite kernels.
 
 ## 6. Actual normalization of the standard vacuum
 
@@ -593,8 +592,10 @@ denominators is introduced. The [nonstandard transport chapter](lsernau-nonstand
 supplies exact pointed-space transport and the mixed summation laws.
 The [marked Hecke index chapter](lsernau-marked-hecke-index.md) supplies
 the exceptional-prime colength and its repeated-product comparison.
-The full semilinear conjugation of jets, sharp opposite tests,
-and the common-kernel gauge and uniform global estimates remain.
+The [common jet comparison](lsernau-common-jet-conjugation.md)
+supplies the full definite semilinear jet law and uniform Schur bound.
+Sharp opposite tests, common-kernel gauge assembly and uniform
+quotient estimates remain.
 
 Source: Lib/Weil/Construction/ThetaDictionary.lean,
 252--336,430--508,539--622

@@ -440,12 +440,10 @@ the standard choice of the product phase therefore give
  \tag{12}
 \]
 Permutations of compatible sign coordinates preserve the
-chosen product phase as well (the corresponding permutation
-is an integral unitary with positive real vacuum multiplier
-in the signed standard product realization; equivalently
-use the canonical tensor identification carrying the vacuum
-and the translates, and reorder the product of the line
-functionals). No analogous exact phase is asserted for an
+chosen product phase as well: use the canonical vacuum-preserving
+coordinate reindexing, not the Weil action of a permutation matrix
+(which can have a determinant phase in negative coordinates), and
+reorder the product of the line functionals. No analogous exact phase is asserted for an
 arbitrary semilinear complex conjugation without its separate
 comparison. Its invariant functional is at least a unit
 multiple, by uniqueness and the quotient-mean normalization.
@@ -458,9 +456,9 @@ period on each edge. Inserting a fixed rational
 isometry on the hom space of a dual pair consequently
 introduces no arbitrary unit scalar beyond the prescribed
 Weil operator and the dual-pair determinant characters.
-The common arithmetic jet identities still require
-the full Galois-semilinear comparison and their sharp local
-tests; the global integral see-saw still needs its
+The [common jet comparison](lsernau-common-jet-conjugation.md)
+supplies the semilinear comparison and uniform definite Schur bound.
+The arithmetic jet identities still require their sharp local tests; the global integral see-saw still needs its
 unfolding, absolute majorants on the unitary quotient,
 and nonvanishing. In particular (7), which concerns
 rational additive lattice summation for a fixed splitting,
