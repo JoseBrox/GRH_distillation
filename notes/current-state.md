@@ -11,18 +11,18 @@ of the target conductor and 18480.
 | Part of the preferred proof | Established and remaining |
 | --- | --- |
 | Analytic endpoint | [One-sided zero detection and quadratic-twist selection](lsernau-zero-detection.md), [prime reduction](lsernau-moment-and-prime-reductions.md): proved relative to the stated classical inputs and the missing arithmetic remainder. |
-| Common theta data | The exact source normalization and nonzero common diagram remain to be constructed; the integral kernel and jet bounds must hold on those same spaces. |
+| Common theta data | [Finite theta chapter](lsernau-common-theta-finite.md) identifies the actual spaces and levels, proves free class integration and the joint-tensor chain formula, and fixes the normalization. Global see-saw, injectivity, and uniform kernel bounds remain open. |
 | A — short integral forms | The common divisibilities, archimedean squared norm and finite clearing index are open on the preferred source data. |
-| B — spanning | [Two-moment lemma](lsernau-moment-and-prime-reductions.md) and [dimension/compression interface](lsernau-common-moment-interface.md) proved. Establish equality of good-form multiplicities and the actual two numerical unfolding estimates. |
+| B — spanning | Exact ramified dimension and direct restriction of the two moments proved in the [finite theta chapter](lsernau-common-theta-finite.md). Conditional rank and index bounds sharpened. Establish good-form multiplicities and actual unfolding estimates. |
 | C — selected twists | [Small-twist theorem](lsernau-general-small-twist.md) proved under its stated data hypotheses. [Main-summand datum construction](lsernau-main-summand-data.md) gives the matrix span, scalar normalization, rank and smaller defect bound once attached local-type-compatible representations are supplied. [Critical-value systems](lsernau-critical-value-systems.md) gives integral group-ring construction and a uniform constant inverse-ratio height conditional on the actual scaled kernels and period formulas. |
 | C — determinant | Prove the projection denominator, the exact one-lift Gram and exchange identities, the one-lift volume ratios and the complement construction. The determinant algebra and the factorization of the ratio from those Gram identities are written. |
 | Final comparison | [Signed determinant inequality](lsernau-mathematical-extraction-2026-11-26.md) is proved abstractly. Apply it at one common family of scales and divide by the actual positive rank and prime-sum normalizer. |
 
 ### Immediate priorities
 
-1. Construct the common theta/level/lattice diagram and prove its
-   local integral kernel bounds, Rallis norm and rank-two period
-   identities. Establish the global Poincare unfolding estimates
+1. Prove the uniform local integral bounds, global see-saw identity,
+   injectivity, Rallis norm and rank-two period identities on the
+   specified common spaces and levels. Establish the global Poincare unfolding estimates
    and good-form multiplicity comparison on this diagram.
 2. Establish Galois attachment and type/Hodge compatibility on the
    actual common eigensystems, including the normalized lift trace

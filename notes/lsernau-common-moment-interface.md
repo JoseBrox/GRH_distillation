@@ -121,17 +121,17 @@ translates is at most
 They span at least \((1-4b^{-2})D_{\rm good}\)
 dimensions. This proves the exact desired scalar
 spanning conclusion on the full source subject
-to (2) and (3). The chosen spanning integral
-source family must span this same coordinate
-space; an additional restriction of the source
-does not automatically preserve (3) with its
-smaller dimension.
+to (2) and (3). For the actual ramified source, use the exact dimension and restricted
+moment theorem in [the common finite theta chapter](lsernau-common-theta-finite.md#5-restrict-the-actual-scalar-moments-before-selecting-translates).
+It proves the same rank target directly on that subspace with the
+correspondingly adjusted deficit and second moment.
 
 The outstanding analytic work is the proof of
 (3) for the actual Poincare map, including
 unipotent covolume, off-diagonal sums and the
-good-type loss. The exact common theta diagram
-and its integral jet estimates remain open.
+good-type loss. The finite upper-chain evaluation and normalization are given in the
+common finite theta chapter; the global see-saw identity and uniform
+integral jet estimates remain open.
 No legacy whole node is closed by these
 finite-dimensional arguments.
 

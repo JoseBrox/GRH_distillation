@@ -214,6 +214,8 @@ Use our local theta, Poisson, integral projector and scalar-transport
 work wherever its hypotheses match. Our old family and the new one are
 not identical by notation; each reuse needs an explicit dictionary.
 
+The [common finite theta chapter](../notes/lsernau-common-theta-finite.md) specifies the actual levels and finite-class chain construction, proves the exact ramified-source dimension, and transfers the full-source moments and index to that source. The see-saw, injectivity and actual uniform arithmetic estimates are still required.
+
 ### Module 3 — Short integral images
 
 Construct a spanning set of integral source forms. Prove its theta-jet

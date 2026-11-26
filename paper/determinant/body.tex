@@ -102,27 +102,47 @@ The proof of selection and the exact constant in (2) belong to
 the cited mathematical chapter, not to the missing arithmetic step.
 
 \section{The common arithmetic data}
-Here and below \emph{the common arithmetic construction is not
-yet supplied by this manuscript}. The source uses
-\(E=\Q(\sqrt{-d},\zeta_{q_1})\), Hermitian spaces, two level primes
-\(p_0,p_1\), a further level, weights at the complex embeddings,
-and a chain of \(m\) theta lifts. Write \(D\) for the target
-dimension, \(a=xb\) for the derivative order, and \(f\) for the
-number of complex places of \(E\). Denote the normalized
-Poincar\'e map by \(B\), its translates by \(A_t\), and the
-chain map at twist \(\xi\) by \(\Theta_\xi\).
-The required diagram compares the composite theta lift of the
-source with \(\Theta_\xi B\) times one specified nonzero scalar.
-The complex and integral lattices, projectors, local kernels
-and measures must be defined once for all three estimates below.
+Work on one admissible set of the readable source parameters:
+\(E=\Q(\sqrt{-d},\zeta_{q_1})\), \(m\) even,
+\(k=r+1-m\), \(t=5r\). The upper definite spaces have ranks
+\(n_j=k+j(t+1)\); the lower Bessel space has rank \(r\), and
+the lower chain has ranks \(r+jt\), ending in the definite
+space of rank \(n_m-1\). The
+\prooflink{notes/lsernau-common-theta-finite.md}{common finite theta chapter}
+specifies the signs, parameters, principal levels at the two
+chosen split primes, and the last-row level at the auxiliary prime
+\(N\). On the upper chain these levels have trivial stabilizers:
+a finite stabilizer embeds into an odd-prime principal congruence
+subgroup of a general linear group, which is torsion-free.
+Consequently the jointly invariant combination of upper theta
+kernels is an exact finite sum of products of jet maps over
+tuples of class representatives, with no stabilizer denominators.
+This follows by successive class integration, without requiring
+individual summands of the tensor to be level-invariant.
 
-The \prooflink{blueprint/merged-proof-plan.md}{exact data plan}
-specifies the source parameter ranges and hypotheses. The
-existence of a single family with these ranges, positive target
-dimension, nonzero chain determinants, and the exact integral
-and archimedean normalizations remains an obligation. Local
-lemmas from the alternative geometric route may be used only
-with an explicit matching dictionary.
+Use the Riesz representative \(\mathcal P\) of the Bessel period
+and the scaled map \(P=(\mathrm{vol}J\,\nu)^{-1/2}\mathcal P\)
+in the prescribed source coordinates. Let \(E_0\) denote the
+central good-type projector and \(\rho(s)\) the finite level action.
+At a coefficient embedding \(\iota\), the target lattice consists
+of vectors whose lower-chain images \(\Theta_\xi y\) are integral
+for every allowed twist. The normalized maps used below are
+\[
+ y_s=c_Bc_{\rm ss}^{-1}|\mathcal G|\rho(s)E_0\mathcal P\phi,
+ \qquad
+ c_B=\prod_{\ell\in S}\ell^{-\lfloor g_\ell-e_\ell\rfloor}.
+\]
+Here \(S\) is the source's set of gain and error primes,
+including \(N\), \(c_{\rm ss}\ne0\) is the common see-saw
+scalar, and \(g_\ell,e_\ell\) are the required local gains
+and losses. The finite consequences of this normalization
+are proved in the linked chapter.
+
+The global see-saw identity, injectivity, existence of
+admissible data at the required scales, actual kernel bounds
+and the precise analytic normalizations remain arithmetic
+obligations. In particular the class-sum identity is not
+itself the global unfolding.
 
 \section{Short forms and enough forms}
 The short-form input (A) asks for a spanning family of integral
@@ -186,13 +206,28 @@ projector \(E\), and the finite group \(\mathcal G\), it
 suffices to bound the unprojected moment
 \(\sum_g\|P^*\rho(g)P\|_{\rm HS}^2\) and the positive
 deficit of \(P^*EP\). Compression of the averaged positive
-operator cannot increase its squared trace. The source's
-two numerical bounds, if established, give \(e=19b^{-4}\)
-in (4), so \(n\ge(1-4b^{-2})D\) with at most
-\(4D\log b/d_S+1\) translates for \(b\ge3\).
-The actual global unfolding estimates and the comparison of
-multiplicities remain open, as does compatibility with
-the integral source family in (A).
+operator cannot increase its squared trace. The source's two numerical bounds, if established, give
+\(e=19b^{-4}\) on the full source. The ramified source used
+in (A) is the intersection of the nontrivial-character
+parts of \(f\) commuting scalar actions at \(N\).
+Free-level class counting gives its exact dimension
+\[
+ d_S=d_X(1-1/(N-1))^f.
+\]
+It is spanned by applying the integral operator
+\(\prod_w(1-T_w)\) to the integral source generators.
+The parameter inequality \(f/(N-1)\le b^{-8}\)
+then permits restriction of both moments with
+\(2\delta+\epsilon\le20b^{-4}\), as proved in the
+common finite theta chapter. Thus at most
+\(\lceil4D\log b/d_S\rceil\) translates of the actual
+ramified source suffice for \(n\ge(1-4b^{-2})D\).
+If the common local source colength estimates hold,
+the selected translates have one-sided logarithmic
+index at most \(5D\log(1+2b^2)fa(\log b)^3\).
+The remaining work is to prove the global unfolding,
+the comparison of multiplicities and the uniform integral
+and analytic kernel bounds.
 
 \section{Long forms from selected twists}
 For input (C), the source forms \(\Theta_\xi\) must realize a
