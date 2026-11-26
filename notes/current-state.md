@@ -12,7 +12,7 @@ of the target conductor and 18480.
 | --- | --- |
 | Analytic endpoint | [One-sided zero detection and quadratic-twist selection](lsernau-zero-detection.md), [prime reduction](lsernau-moment-and-prime-reductions.md): proved relative to the stated classical inputs and the missing arithmetic remainder. |
 | Common theta data | [Finite theta chapter](lsernau-common-theta-finite.md) identifies the actual spaces and levels, proves free class integration and the joint-tensor chain formula, and fixes the normalization. Global see-saw, injectivity, and uniform kernel bounds remain open. |
-| A — short integral forms | [Scalar CM supplier](lsernau-cm-theta-normal-form.md) proves the actual marked good equation, torsion integrality, derivative ring and scalar non-split normal form. [Charged jet chapter](lsernau-charged-jet-estimate.md) proves the finite Fourier/product transfer from the specified Weil inputs, the multivariable normal form, and the strengthened uniform charged Schur bound. [Standard Weil normalization](lsernau-weil-normalization.md) proves the prescribed lattice, splitting character, coprime frames, finite and archimedean period factors, integral vacuum and scalar torsion conjugate bound in the classical standard model. [Marked-prime charges](lsernau-marked-chain-charges.md) proves the actual collision formula, full marks, diagram and charged-filling comparison, whole-prefix Hecke propagation with at least half the transfer allowance, and the exact weight-degree auxiliary-prime index. Remaining: common kernel transport and local Hecke identity, exceptional edge elementary divisors and auxiliary double-lift identity, sharp tests, full jet conjugation and archimedean squared norm. |
+| A — short integral forms | [Scalar CM supplier](lsernau-cm-theta-normal-form.md) proves the actual marked good equation, torsion integrality, derivative ring and scalar non-split normal form. [Charged jet chapter](lsernau-charged-jet-estimate.md) proves the finite Fourier/product transfer from the specified Weil inputs, the multivariable normal form, and the strengthened uniform charged Schur bound. [Standard Weil normalization](lsernau-weil-normalization.md) proves the prescribed lattice, splitting character, coprime frames, finite and archimedean period factors, integral vacuum, scalar torsion conjugate bound and translated scalar-jet covariance in the classical standard model. [Marked-prime charges](lsernau-marked-chain-charges.md) proves the actual collision formula, full marks, diagram and charged-filling comparison, whole-prefix Hecke propagation with at least half the transfer allowance, and the exact weight-degree auxiliary-prime index. Remaining: common kernel transport and local Hecke identity, exceptional edge elementary divisors and auxiliary double-lift identity, sharp tests, common adelic jet conjugation and archimedean squared norm. |
 | B — spanning | Exact ramified dimension and direct restriction of the two moments proved in the [finite theta chapter](lsernau-common-theta-finite.md). Conditional rank and index bounds sharpened. [Positive-type moment](lsernau-positive-type-moment.md) proves the finite maximal-fixer closure with factor 1+3b^{-4}. [Global quotient and cut identities](lsernau-global-cut-unfolding.md) establishes the class-return Gram and weighted cut integration and level cancellation under the actual local/convergence inputs. Establish those inputs, good-form multiplicities, identity, terminal-fixer and open-cell estimates. |
 | C — attachment | [Two-string cancellation](lsernau-galois-two-string.md) constructs disjoint torus characters and proves all-rank cancellation, spherical clauses and normalized lift trace compatibility from the actual theta polynomial, odd-rank and local-global inputs. [Odd-rank patching](lsernau-odd-rank-patching.md) proves the open-normal-subgroup extension and sharp splitting-degree reduction. Establish the protected global steps, actual weak base change, split-case attachment and Iwahori/Shintani local compatibility. |
 | C — selected twists | [Small-twist theorem](lsernau-general-small-twist.md) proved under its stated data hypotheses. [Main-summand datum construction](lsernau-main-summand-data.md) gives the matrix span, scalar normalization, rank and smaller defect bound once attached local-type-compatible representations are supplied. [Critical-value systems](lsernau-critical-value-systems.md) gives integral group-ring construction and a uniform constant inverse-ratio height conditional on the actual scaled kernels and period formulas. |
@@ -21,17 +21,20 @@ of the target conductor and 18480.
 
 ### Immediate priorities
 
-1. Use the proved standard Weil normalization and marked-chain charge comparison to establish the local kernel transport/Hecke identity, exceptional edge elementary divisors, auxiliary double-lift identity, sharp tests, full jet conjugation and global see-saw identity,
-   injectivity, Rallis norm and rank-two period identities on the
-   specified common spaces and levels. Establish the global Poincare unfolding estimates
-   and good-form multiplicity comparison on this diagram.
-2. Establish the two nonzero theta lifts with their exact Hecke
-   polynomials, odd-rank attachment and the nonspherical labelled
-   local-global clauses on the common eigensystems. Apply the
-   proved cancellation, Selmer datum and critical-value
-   constructions and small-twist theorem.
-3. Prove the integral projection denominator and one-lift
-   comparison, then assemble the chain ratio and final signed budget.
+1. Complete the actual nonstandard Weil kernel transport, local Hecke
+   identity, exceptional edge elementary divisors, auxiliary double-lift
+   identity, common adelic jet conjugation and sharp tests.
+2. Supply the local Bessel integral, actual period recursion and
+   absolute majorants for the global cut calculation. Prove the nonzero
+   common see-saw scalar, identity/open-cell/terminal-fixer estimates,
+   multiplicities, and the Rallis norm and rank-two period identities.
+3. Prove the protected global steps, actual weak base change, split-case
+   attachment and Iwahori/Shintani comparison, and the two nonzero
+   theta lifts. Apply the proved Galois gluing and cancellation,
+   Selmer datum and critical-value constructions.
+4. Supply the arithmetic tied-row length, local-defect and triangle/detection
+   bounds and trace-ideal integral action. Obtain the individual separators,
+   then assemble the one-lift and chain determinant comparisons.
 
 ## The small-twist proof library
 

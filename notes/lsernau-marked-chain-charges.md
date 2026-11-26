@@ -380,7 +380,7 @@ condition
 where the first compact neighborhood can be shrunk to
 \(K_N\cap dK_Nd^{-1}\); rational weak approximation
 via the Cayley transform supplies \(r_c=\gamma_c c\).
-The two points commute with \(d\). Transport at each
+The two prescribed base points commute with \(d\). Transport at each
 coefficient embedding now gives a standard value lattice
 for \(M_\vee\) and the diagonal-weight lattice for \(M_L\).
 The rational change of representative acts by the prescribed
