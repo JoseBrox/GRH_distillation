@@ -2,9 +2,9 @@
 
 This chapter proves the two finite polynomial-geometric ingredients of the
 exceptional edge estimate and its first lattice-inclusion bound. It also
-proves the final branching gauge comparison with its precise scalar. The
-middle pairing/averaging and defect-dimension argument of the exceptional
-Hecke theorem is not supplied here. In particular the improved first
+proves the final branching gauge comparison with its precise scalar. The companion [middle-edge chapter](lsernau-exceptional-middle-edge.md)
+proves the defect dimensions, invariant single-copy average and conditional
+pairing colength; the Frobenius-contracted edge average is still open. In particular the improved first
 inclusion bound below does not by itself imply the Hecke elementary-divisor
 theorem.
 
@@ -512,12 +512,12 @@ Lib/GLn/Branching/NormBound.lean,303–373,656–end (blob
 ## Remaining exceptional and terminal work
 
 The weighted depth bound (4)–(6) and exact volume (7) are
-unconditional for their specified local models. They isolate
-the middle defect/averaging problem: one still has to prove
-the dimension bound converting the actual mod-\(p\) Levi
-conditions to the Pieri volume, the integral invariant averaging
-and congruence lemma, and the middle edge-pairing colength on
-the actual marked level. Do not infer the final exceptional
+unconditional for their specified local models. The companion
+[middle-edge chapter](lsernau-exceptional-middle-edge.md) proves the
+actual defect-dimension estimate, the integral root and halfway pairing
+congruences, the single-copy invariant average and the conditional
+pairing-colength deduction. The missing input is the actual contracted
+edge averaging matrix with its stepwise pairing congruence. Do not infer the final exceptional
 Hecke elementary-divisor bound or replace its
 \(\mathrm{divisorConstant}\) throughout by (5) without checking
 the other losses in ElementaryDivisorTheorem.lean. The terminal
