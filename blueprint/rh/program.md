@@ -1,5 +1,13 @@
 # A shorter program for ordinary RH
 
+**Preferred plan, 26 November 2026:** use the
+[short-forms/spanning/determinant route](../merged-proof-plan.md), beginning
+with the conductor-one target and the new source's admissible fixed modulus.
+The selected-twist lower bound replaces W10 as the first supplier to
+reconstruct. The following four-character and geometric program is retained
+as an alternative and a collection of reusable results. No whole node is
+closed, and its arithmetic objects require a dictionary before transfer.
+
 **The RH transfer is now proved without any weight-symmetry hypothesis.
 The compatible arithmetic and geometric estimate needed to finish the proof
 remains open.**

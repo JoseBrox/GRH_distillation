@@ -1,12 +1,12 @@
 # Full proof program
 
-A proof-wide work program traced from the pinned source endpoint. Complete source imports and endpoint-field accounting do not constitute a full theorem-dependency or mathematical verification.
+Retained original-source work packages and reuse inventory. The preferred research route is now the [six-module determinant plan](../merged-proof-plan.md), adopted after the pinned Sernau–Anthropic audit on 26 November 2026. The original atlas and endpoint fields below do not describe the dependency graph of that new route; no node is closed by reorganizing the plan.
 
 ## Preferred target
 
-One compatible arithmetic construction at each required fourth-power argument of every chosen interval, with a signed finite-table bound whose averaged and interpolated positive part has subpower growth at exponents tending to one half. The continuous averaged criterion remains available.
+Construct the same short integral theta images, enough independent images and selected-twist determinant correction, then prove the signed budget nmR <= -(D-n)H+nE_A+E_B+I+Q on the new source scales. The exact common scalar, local clearing costs, completion cost and target prime remainder are retained. Use the readable source fixed-modulus analytic ending. Our averaged finite-table criterion remains an optional weaker endpoint after an exact remainder dictionary.
 
-The complete coherent-family route remains an available supplier. Its separate Galois-construction supplier is replaced in the preferred route by the fully compared classical theorem; independent theta and geometric obligations are retained.
+The [Sernau–Anthropic rewrite](../../audit/lsernau-audit-2026-11-26.md), pinned at 72fead102f663d5c7a407964a13dc0cf9d977207, supplies the source interfaces to reconstruct. The [ordinary determinant extraction](../../notes/lsernau-mathematical-extraction-2026-11-26.md) and [mean-deficit spanning and prime reductions](../../notes/lsernau-moment-and-prime-reductions.md) are proved abstract improvements. Selected twists replace the old general untwisted W04 requirement; the determinant lower bound replaces W10 as the preferred supplier. Their actual arithmetic hypotheses remain open in our human reconstruction. Preserve the original construction below as an alternative and reusable library.
 
 The eleven work packages below are responsibilities in a research program, not eleven already proved theorems or a claim of minimal logical independence.
 
@@ -126,6 +126,11 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Integral normal-form transport and all stabilizer layers | Closed stated supplier obligation with original objects and quantifiers; the full work package remains open. |
 | Exact weighted lattice sum at each fixed normal form | Closed stated supplier obligation with original objects and quantifiers; the full work package remains open. |
 | Actual finite-fibre nefness, regularizations and signed determinant test | Closed stated supplier obligation with original objects and quantifiers; the full work package remains open. |
+| Selected-twist determinant architecture | Adopted research plan from pinned lsernau/grh-lean; exact arithmetic reconstruction remains open. Replaces the old W10 supplier and general untwisted W04 as default blocking tasks, without closing their nodes. |
+| One common determinant with combined correction and exact completion | Ordinary product-formula and Schur-complement proof written and independently reviewed; keeps averaged embeddings, conjugate local clearing and signed rank deficit. Actual twist-height suppliers remain open. |
+| Mean-deficit spanning by arbitrary weighted maps | Ordinary proof written and independently reviewed: average positive source deficit and one covariance moment imply an exact affine codimension recurrence with logarithmic selection cost. Arithmetic moments remain open. |
+| Fixed-modulus PNT at the larger cutoff | Ordinary proof and Laurent-constant identification written and independently reviewed. Applies with fixed auxiliary character before the limit; does not replace the finite-height quadratic-twist selection theorem. |
+| Hecke rank-one zero structural defect for selected twists | Proved over suitable imaginary quadratic fields for odd-order anticyclotomic lines; applies to both cubic sectors at all coefficient primes at least 5. Small newly twisted lengths depend on the general twisting theorem; no untwisted bound or Hecke closure. |
 
 ## Work packages
 
@@ -154,7 +159,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r02, r03, r04. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Use the proved finite-integer-table criterion or its continuous averaged version. Fix the analytic family, averaging width and interval exponent at each accuracy. Tables may differ on overlapping intervals; their actual comparisons must hold at every sampled integer.
+**Next concrete task.** Preferred route: reconstruct the exact new prime remainder, finite-height quadratic-twist selection and one-sided residue criterion; use fixed-modulus PNT at the larger cutoff with the additive constant identified. Our interval/sampling reductions remain optional alternatives with an exact transform dictionary.
 
 **Acceptance conditions:**
 
@@ -174,7 +179,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Use the direct thick/thin comparison and retain the signed companion. Construct finite fourth-power tables on arbitrarily late windows; bound their signed averaged-interpolation cost. Every sampled construction retains the same-map and same-lattice conditions; no measurable family over a continuum is needed.
+**Next concrete task.** Preferred route: construct the common source, target, theta chains, coefficient lattices and normalized Poincare images of the revised plan. Prove the new signed determinant comparison at every sufficiently large integer scale. The original finite-table target remains available after identifying the analytic remainder.
 
 **Acceptance conditions:**
 
@@ -199,7 +204,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r05, r11, r12, r34. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Use uniform Dirichlet quasi-RH and exponent14 where applicable; prove the actual existence and closure conditions for the selected construction.
+**Next concrete task.** Preferred route: fix q0 and auxiliary quadratic d before the scale grows; reconstruct the readable rewrite admissible data and finite-height twist selection. Its large-cutoff analytic ending needs fixed-modulus PNT. Do not transfer the old moving-character or all-height source clauses without checking their consumers.
 
 **Acceptance conditions:**
 
@@ -218,7 +223,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The [RH weighted Selmer assembly](../../notes/rh-weighted-selmer-assembly.md) now has written suppliers for its individual RH inputs and its stated weighted bound. The general Dirichlet W04, including its actual odd-conductor and character-weighted integral comparisons, remains open. Retain both varying quadratic factors and construct the compatible numerical family with the geometric and norm suppliers; see the [current checkpoint](../../notes/current-state.md).
+**Next concrete task.** Preferred route: reconstruct the general selected-twist theorem and the same-lattice first-order denominator comparison, including simultaneous first m powers, scalar inertia, duality, local losses and an all-prime normalized budget. The original RH weighted Selmer supplier remains proved in its stated scope; the old general Dirichlet untwisted W04 target remains an alternative.
 
 **Acceptance conditions:**
 
@@ -287,7 +292,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r35, r36, r37, r38, r39, r40, r41, r42, r43, r44, r45, r46, r47, r48, r49, r50, r51, r52, r53, r54, r55, r56, r57, r58, r59, r60. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The actual integral chain, reference and twisted sharp auxiliary-level column valuations, terminal algebraic period and exact Poincare–Bessel unfolding are supplied. Prove the intervening seesaw identities and actual smooth row realization, retain their proportionality factors and restrictions, then identify the same final global maps.
+**Next concrete task.** Preferred route: construct the exact new common theta diagram, nonzero see-saw scalar, integral coefficient pairings and twist-compatible restrictions. Reuse the original selected-prime chain and sharp auxiliary-level result only after an explicit field/lattice/map dictionary. The older source obligations are retained below.
 
 **Acceptance conditions:**
 
@@ -330,7 +335,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10, r61, r62, r63, r64, r65, r66, r67, r68, r69, r70. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The generic local input, complete nongeneric cancellation, all-cell pointwise estimate on its required spectral family, exact character transport, and uniform amplitude/row-norm comparisons are supplied; together they prove the actual StepThmBPinnedG analytic point sum. See the [current W08 continuation](../../notes/w08-analytic-and-retained-continuation.md). Construct the matching common theta/Petersson row and anchored all-word scalar comparison. Supply the remaining diagonal loop, near-one distinct-word, actual dimension and moving retained-window estimates, then the prescribed positive-trace budget. W08 remains open.
+**Next concrete task.** Preferred route: establish the actual normalized mean source deficit and scalar second moment for the new Poincare maps. Use the stronger weighted covering lemma; retain off-diagonal correlations, masses, multiplicities and projector losses. Existing StepThmBPinnedG and retained-column bounds are candidate suppliers with their actual parameter and scalar hypotheses.
 
 **Acceptance conditions:**
 
@@ -372,7 +377,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r71, r72, r73, r74, r75, r76, r77. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Map the remaining source counting/irreducibility interfaces to the reconstructed spectral estimates and precise classical inputs.
+**Next concrete task.** Preferred route: identify the new good target projector, nonzero dimension and multiplicity comparison used by the scalar moments. Keep the original finite-group and spectral counting work as candidate inputs with an exact type/level dictionary.
 
 **Acceptance conditions:**
 
@@ -391,7 +396,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r10. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** The actual all-point height floor, finite-fibre determinant nefness, tied regularizations and signed base-test bound beta_B >= -107 Lambda_B/2 are supplied. The corrected and uncorrected flag theorems supply general finite-place positivity (including M2). Prove the exact Frobenius-linked correction sequences for the weighted mean; then bound rank losses and finish the numerical family.
+**Next concrete task.** Retained alternative supplier: the preferred lower bound is now the selected-twist determinant route in the revised plan. The original wall/divisor and weighted geometric mean assertions retain their current open status. Continue them only when a specific new-route application or obstruction requires them; no W10 closure is claimed.
 
 **Acceptance conditions:**
 
@@ -459,7 +464,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r04, r10, r34, r96. Stable section ids are in the [inventory](../module-inventory.md).
 
-**Next concrete task.** Combine the one-mean geometric bound, the actual finite-place Selmer product and valid trace or energy penalties for the same maps. Assemble fourth-power tables and bound their signed averaged-interpolation positive parts. All accuracy parameters remain fixed while the cofinal windows grow.
+**Next concrete task.** Preferred route: combine the exact signed determinant budget with actual rank, index and completion costs, then normalize to the fixed-modulus prime remainder. Construct RH first and retain fixed target-conductor dependence for Dirichlet GRH. The original averaged geometric budget remains an alternative.
 
 **Acceptance conditions:**
 
@@ -487,10 +492,11 @@ The [adopted classical Galois substitution](../../notes/classical-galois-substit
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. W04: The [RH weighted Selmer assembly](../../notes/rh-weighted-selmer-assembly.md) now has written suppliers for its individual RH inputs and its stated weighted bound. The general Dirichlet W04, including its actual odd-conductor and character-weighted integral comparisons, remains open. Retain both varying quadratic factors and construct the compatible numerical family with the geometric and norm suppliers; see the [current checkpoint](../../notes/current-state.md).
-1. W06/W08: The generic local input, complete nongeneric cancellation, all-cell pointwise estimate on its required spectral family, exact character transport, and uniform amplitude/row-norm comparisons are supplied; together they prove the actual StepThmBPinnedG analytic point sum. See the [current W08 continuation](../../notes/w08-analytic-and-retained-continuation.md). Construct the matching common theta/Petersson row and anchored all-word scalar comparison. Supply the remaining diagonal loop, near-one distinct-word, actual dimension and moving retained-window estimates, then the prescribed positive-trace budget. W08 remains open.
-1. W10: The actual all-point height floor, finite-fibre determinant nefness, tied regularizations and signed base-test bound beta_B >= -107 Lambda_B/2 are supplied. The corrected and uncorrected flag theorems supply general finite-place positivity (including M2). Prove the exact Frobenius-linked correction sequences for the weighted mean; then bound rank losses and finish the numerical family.
-1. W02/W11: assemble compatible signed arithmetic budgets at every required fourth-power sample, with all accuracy parameters fixed before the windows grow.
+1. Reconstruct the selected-twist Selmer theorem and its integral projection-denominator application with every actual coefficient, local and all-prime hypothesis; prioritize this over the old general untwisted W04 branch.
+1. Construct the same normalized theta objects for shortness, spanning and the lower determinant. Prove the exact nonzero scalar identities and the scalar first/second moments; retain the old W06/W08 work only through a verified dictionary.
+1. Prove the one-lift and chain determinant-ratio budgets, complete the independent family at its actual Schur-complement cost, and assemble the signed inequality of the revised plan. W10 is an alternative supplier.
+1. Finish finite-height quadratic-twist selection and the exact fixed-modulus one-sided endpoint; establish the conductor-one instance before the arbitrary fixed Dirichlet conductor.
+1. For Hecke, use the proved zero structural-defect rank-one specialization as input to new twisted groups; construct their actual cubic theta/determinant-ratio realization and retain exceptional primes and infinite-order phases.
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
 

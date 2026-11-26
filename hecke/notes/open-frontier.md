@@ -1,5 +1,14 @@
 # Current Hecke frontier
 
+**26 November 2026 update.** The
+[selected-twist transfer plan](lsernau-transfer-plan-2026-11-26.md)
+adds a preferred attack for the cubic benchmark: zero structural defect
+at coefficient primes at least 5, followed by the general twisting
+theorem and an actual determinant-ratio comparison. Only the structural
+lemma is proved here. The original untwisted length targets below remain
+open; no H07F or H07I closure is inferred. The exact cubic theta realization,
+the exceptional primes and the critical-scale global budget remain needed.
+
 The [direct prime criterion](direct-prime-criterion.md) eliminates
 the explicit formula and all Masullo trace hypotheses from the
 preferred arithmetic route. For a real deficit D, the required budget

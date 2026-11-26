@@ -1,5 +1,9 @@
 # Distilling the Generalized Riemann Hypothesis
 
+**[Revised proof plan: short forms, spanning, and one determinant](blueprint/merged-proof-plan.md)** ·
+[Audit of the Sernau–Anthropic rewrite](audit/lsernau-audit-2026-11-26.md) ·
+[Hecke transfer](hecke/notes/lsernau-transfer-plan-2026-11-26.md)
+
 **[Short guide](paper/guide/main.pdf)** · **[RH manuscript](paper/rh/main.pdf)** · **[Dirichlet GRH manuscript](paper/grh/main.pdf)** · **[RH proof map](blueprint/rh/proof.svg)** · **[GRH proof map](blueprint/grh/proof.svg)** · **[Shared overview](blueprint/overview.svg)** · **[RH program](blueprint/rh/program.md)** · **[GRH program](blueprint/grh/program.md)** · **[Source atlas](blueprint/lean-source-atlas.md)** · **[Hecke GRH](hecke/README.md)** · **[Hecke proof map](hecke/blueprint/proof.svg)**
 
 We are developing a simpler, human-readable proof from Levent Alpöge's announced argument for the Riemann Hypothesis and the Generalized Riemann Hypothesis for Dirichlet characters. The aim is to understand the mathematics, replace long arguments by shorter ones where possible, and give complete definitions and proofs in ordinary mathematical language.
@@ -110,23 +114,23 @@ The Hecke [high-dyadic corner theorem](hecke/notes/cubic-corner-elimination.md) 
 
 ## Current research priorities
 
-The main task is now to **prove the missing arithmetic inputs**. We keep the preferred proof architecture fixed while attacking its open construction, estimate and compatibility requirements. Simplification is useful when it removes a substantial dependency or materially improves a decisive estimate.
+The preferred route now follows the **[revised determinant plan](blueprint/merged-proof-plan.md)**. The new source reorganizes the comparison into short integral images, enough independent images, and a lower bound for the same corrected determinant. We have proved stronger ordinary versions of the scalar comparison and spanning lemma. The selected-twist route is the first lower-bound supplier to reconstruct; the original W10 geometric and general untwisted W04 programs remain alternatives.
 
-For each major gap, the [frontier theorems](notes/open-frontier-theorems.md) state a precise target. We attempt that target directly, identify the first missing argument, and test new constructions or other methods against the exact downstream requirement. A useful lemma is not recorded as completion of the larger node that needs it. Ordinary RH remains the preferred testing ground, followed by Dirichlet GRH. The independent Hecke track has its own frontier, manuscripts and checkpoints.
+The immediate tasks are the selected-twist theorem and its integral denominator application, the common theta diagram, and the actual scalar second moments and determinant ratios. Ordinary RH remains first. Exact maps, coefficient lattices, measures and normalizations must agree before old results can be reused. The [original frontier](notes/open-frontier-theorems.md) remains a detailed supplier inventory. A useful abstract lemma or route change does not complete an old node.
 
 ## The argument in outline
 
 The strategy connects three kinds of mathematics:
 
-1. **Detect zeros through prime sums.** An analytic criterion turns the desired zero statement into bounds for corrected prime sums. Finite tables at fourth powers suffice, with the required growth control on arbitrarily late intervals. Signed contributions are combined before their positive part is bounded.
-2. **Construct arithmetic maps.** Galois representations, Selmer groups, theta series and geometric section spaces produce integral maps. Divisibility at finite primes and norms at complex embeddings give two ways to measure those same maps.
-3. **Make the bounds meet.** The arithmetic and analytic estimates must use the same objects, measures, lattices and normalizations. Their combined error must be small enough as the auxiliary construction grows.
+1. **Construct short integral images.** Theta divisibility and complex norm bounds make normalized arithmetic forms short by an amount recording a prime-sum error.
+2. **Find enough independent images.** A mean source-deficit bound and one second moment control the rank supplied by a small collection of translates.
+3. **Compare one determinant.** Prime-specific twists and the product formula force a lower bound for that same squared covolume, with both local clearing costs and the complementary dimensions retained. The common main term cancels, leaving a prime-sum bound; a one-sided analytic criterion then excludes zeros.
 
 For ordinary RH, an eventual one-sided bound for the corrected zeta prime sum, with exponent arbitrarily close to one half, already suffices. The more flexible finite-table criterion allows averaging and cancellation. Neither criterion creates the arithmetic estimates it requires.
 
 ## What has been established
 
-The [short guide](paper/guide/main.pdf) explains the mechanisms; the manuscripts and linked construction files give the technical statements and proofs.
+The [new determinant proof](notes/lsernau-mathematical-extraction-2026-11-26.md), [mean-deficit spanning and fixed-modulus prime estimates](notes/lsernau-moment-and-prime-reductions.md), and [Hecke structural transfer](hecke/notes/lsernau-transfer-plan-2026-11-26.md) are written in ordinary mathematics. They do not yet supply all arithmetic inputs of the revised plan. The following inventory and the existing manuscripts record the substantial work on the original route.
 
 - **Analytic reductions.** The criteria detecting zeros through prime sums, the finite sampling argument and the four-character RH comparison are proved.
 - **The prescribed geometric spaces.** The original models, line bundles, boundary comparisons and level changes are constructed. Both lower section-norm bounds, the global upper bound and short generators of the entire integral cusp lattice are proved. The arithmetic degree of that same lattice satisfies the required component inequality. The tangent-degree and corrected-fibre comparisons apply to the actual boundary points. Their determinant and boundary metric now give the original uniform height floor at every point. The original determinant is nef on every finite fibre, its prescribed smoothing is constructed, and its signed intersection has the required lower bound. The general flag comparison and weighted mean height remain.
@@ -137,6 +141,8 @@ The [short guide](paper/guide/main.pdf) explains the mechanisms; the manuscripts
 These results remove concrete inputs from the open frontier. Their scope matters: an identity at fixed arithmetic data does not establish a useful bound across a growing family.
 
 ## What remains to prove
+
+For the preferred route, the [six-module plan](blueprint/merged-proof-plan.md#4-six-modules-in-the-order-they-should-be-written) gives the current targets. The older frontier below is retained for reuse and alternative suppliers; its W10 geometric certificate is no longer a prerequisite of the selected-twist route.
 
 The [technical frontier](notes/open-frontier-theorems.md) separates five connected obligations:
 

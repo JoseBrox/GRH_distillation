@@ -4,6 +4,14 @@
 
 ## Current navigation: major supplier updates
 
+**26 November determinant route.** The
+[common-determinant and Schur-complement proof](../notes/lsernau-mathematical-extraction-2026-11-26.md),
+[mean-deficit covering and fixed-modulus prime reductions](../notes/lsernau-moment-and-prime-reductions.md),
+and [Hecke zero structural-defect theorem](../hecke/notes/lsernau-transfer-plan-2026-11-26.md)
+are proved with their actual hypotheses. Their arithmetic applications
+are explicit open suppliers in the [revised plan](../blueprint/merged-proof-plan.md).
+No whole proof-map node is newly completed.
+
 **25 November external transfer.** The [Adriazola audit](../audit/adriazola-reconstruction-2026-11-25.md)
 adds three proved shared tools with source attribution:
 [Smith bounds on arbitrary p-adic windows](../notes/padic-smith-window.md),

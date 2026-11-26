@@ -1,5 +1,12 @@
 # Hecke GRH proof program
 
+**Preferred new attack (26 November 2026):** follow the
+[Sernau selected-twist transfer plan](../notes/lsernau-transfer-plan-2026-11-26.md)
+for the cubic benchmark. The zero structural-defect lemma is proved at
+coefficient primes at least 5; small twisted lengths and their global
+determinant-ratio realization remain separate tasks. The older suppliers
+below retain their stated scope, and the Hecke count remains 6/9.
+
 The preferred route is the [elementary arithmetic manuscript](../paper/main.md).
 It does not depend on the Masullo formalization. The smoothed spectral
 route is an optional alternative. H07 has been subdivided into its

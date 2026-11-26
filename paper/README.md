@@ -1,5 +1,13 @@
 # Mathematical manuscripts
 
+The **[revised proof plan](../blueprint/merged-proof-plan.md)** is the
+current research guide after the Sernau–Anthropic audit. Its ordinary
+[determinant](../notes/lsernau-mathematical-extraction-2026-11-26.md) and
+[spanning/prime-sum](../notes/lsernau-moment-and-prime-reductions.md)
+arguments are written separately. The existing manuscripts below preserve
+the earlier four-character/geometric route and its reusable proofs; they
+have not been relabelled as a completed reconstruction of the new source.
+
 | Route | Manuscript | Source | Research program |
 | --- | --- | --- | --- |
 | Ordinary Riemann hypothesis | [RH paper](rh/main.pdf) | [TeX entry](rh/main.tex) | [RH program](../blueprint/rh/program.md) |

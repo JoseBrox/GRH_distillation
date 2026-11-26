@@ -1,7 +1,16 @@
 # Current frontier theorems
 
-These are construction and estimate targets, not completed results. The
-preferred architecture is fixed. Ordinary RH is the first test case;
+**26 November 2026: preferred-route change.** The
+[revised determinant plan](../blueprint/merged-proof-plan.md) now supplies
+the active six-module frontier: the exact prime remainder, common theta
+objects, short integral images, scalar moments, selected-twist determinant
+lower bound and final signed budget. The general untwisted Selmer and
+geometric wall/divisor suppliers below are retained alternatives. They
+are not automatically completed or needed by the new route. Reuse requires
+the exact field/lattice/map/metric dictionary. No proof-map count changes.
+
+The following are the **original-route** construction and estimate targets,
+not completed results. Ordinary RH is the first test case;
 Dirichlet GRH keeps its separate target character and conductor. All
 parameters, lattices, maps and normalizations below are those in the
 current manuscripts. A result closes a node only after the whole stated

@@ -1,9 +1,20 @@
 # Current continuation checkpoint
 
-Updated 25 November 2026. RH and Dirichlet GRH are **not yet proved** by
+Updated 26 November 2026. RH and Dirichlet GRH are **not yet proved** by
 this reconstruction. This is a short resumption index; complete statements,
 proofs and source evidence belong in the linked files. Earlier versions
 remain in Git history. The repository main branch and the linked proof records give the current state.
+
+## Preferred route after the Sernau audit
+
+Start with the **[revised determinant proof plan](../blueprint/merged-proof-plan.md)**.
+The [pinned audit](../audit/lsernau-audit-2026-11-26.md) confirms that the new source targets ordinary RH and Dirichlet GRH, not general Hecke GRH. Its [formal audit](../audit/lsernau-formal-audit-2026-11-26.md) separates source checks, upstream checker reports and the actual local build record.
+
+The preferred route now compares **short integral images, enough independent images, and one corrected determinant**. The [ordinary determinant proof](lsernau-mathematical-extraction-2026-11-26.md) retains the combined local correction, exact complementary determinant and favorable signed rank deficit. The [moment and prime reductions](lsernau-moment-and-prime-reductions.md) prove a stronger average-deficit spanning lemma and a fixed-modulus PNT ending, including the additive constant.
+
+**Next:** reconstruct the selected-twist Selmer theorem and its integral denominator application; construct the common theta diagram and prove its scalar first/second moments; then establish the exact chain determinant ratios and signed budget. RH remains first. The old general untwisted W04 and geometric W10 suppliers are retained alternatives, not prerequisites of this new route. Their original assertions remain open where recorded below; no node is closed by this change of plan. The existing map counts remain RH 6/9, Dirichlet 18/31 and Hecke 6/9.
+
+For Hecke, the [new transfer plan](../hecke/notes/lsernau-transfer-plan-2026-11-26.md) proves zero structural defect for suitable odd-order anticyclotomic lines, including both cubic sectors at every coefficient prime at least 5. Small lengths after additional twists still depend on the general twisting theorem, and the theta/determinant-ratio realization remains open.
 
 Third research level: [Hecke GRH](../hecke/README.md) has its own [checkpoint](../hecke/notes/current-state.md), [program](../hecke/blueprint/program.md), [manuscript](../hecke/paper/main.md) and [frontier](../hecke/notes/open-frontier.md). The [full formal operator lattice](../hecke/notes/cubic-formal-operator-lattices.md) and [symbol derivative](../hecke/notes/cubic-symbol-derivative-lattices.md) give exact higher local divisibilities and a critical-error relative index, without the zeta multiplier. The [marked point classification](../hecke/notes/cubic-point-shapes-and-rigidity.md) covers both point characteristics and proves the rank-one tensor Euler-system obstruction. The [local 3-primary defect theorem](../hecke/notes/cubic-three-primary-local-defects.md) controls integral lift losses and proves untwisted cubic vanishing, not uniform moving lengths. The [high-dyadic corner elimination](../hecke/notes/cubic-corner-elimination.md) excludes reducible points and the [actual presentation](../hecke/notes/cubic-high-dyadic-presentation.md) reduces finiteness to irreducible curves; [direct Eisenstein-field Euler systems](../hecke/notes/cubic-eisenstein-euler-systems.md) restore rational image but leave a rank-two regulator. Hecke 6/9; the global degree saving and remaining odd-prime length bounds are open.
 
@@ -26,10 +37,11 @@ ramified coefficient extension. Actual family and arithmetic hypotheses
 remain; no whole node is closed. The existing K1 bound is already stronger
 than the reconstruction's proposed shortcut.
 
-1. Read this file and the relevant row below. Keep the preferred proof
-   architecture fixed unless a substantial mathematical improvement appears.
-2. Open the corresponding target in [frontier theorems](open-frontier-theorems.md),
-   then its latest proof note. Locate a declaration before reading source.
+1. Read the revised determinant plan above. The older work-package rows
+   below are a retained supplier and alternative-route inventory.
+2. Open the corresponding new module, or an explicitly reused original
+   target in [frontier theorems](open-frontier-theorems.md). Locate a
+   declaration before reading source.
 3. Attack the missing arithmetic construction or uniform bound. Check that
    it supplies the same objects and quantifiers as its downstream consumer.
 4. Commit a reviewed result or a precise obstruction promptly. Update the
@@ -39,7 +51,7 @@ Prioritize ordinary RH. Aim for roughly 70% direct attacks, 20% verification
 and 10% consequential simplification. Four surviving RH characters do not
 bound the auxiliary field degrees, geometric dimensions or lattice defects.
 
-## Active obligations
+## Retained original-route obligations and reusable suppliers
 
 | Obligation | Latest established input | First remaining task |
 | --- | --- | --- |
@@ -135,7 +147,10 @@ proofs. The authoritative status data are
 
 ## Source and verification discipline
 
-The pinned Lean mirror is
+The preferred new source is
+`lsernau/grh-lean@72fead102f663d5c7a407964a13dc0cf9d977207`;
+its [formal audit](../audit/lsernau-formal-audit-2026-11-26.md) records the
+actual static and execution evidence. The retained original Lean mirror is
 `jsmorph/rh@ecd09ff9b4aaf6c08f2b5ef17dc49ca9648a77de`.
 The [source atlas](../blueprint/lean-source-atlas.md) and compressed import
 index preserve the earlier traversal of 175,187 local modules. Reachability,

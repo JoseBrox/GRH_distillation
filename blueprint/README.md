@@ -1,10 +1,19 @@
 # Proof blueprint
 
-Start with the **[full proof program](full-proof-program.md)**. It tracks the
-source-wide mathematical requirements, the smaller sufficient target, and
-the exact conditions for adopting a simplification. Its eleven work packages
+Start with the **[revised determinant proof plan](merged-proof-plan.md)**,
+adopted after the 26 November audit of the Sernau–Anthropic rewrite. The
+main comparison is short forms, enough independent images and one
+corrected determinant. Its arithmetic suppliers remain explicit.
+
+The **[full original-source program](full-proof-program.md)** retains the
+earlier mathematical requirements and the exact conditions for reuse.
+Its eleven work packages
 account for all 46 fields of the endpoint construction while retaining their
 shared data and nonvacuity requirements.
+
+The diagrams and their unchanged counts describe these existing interfaces;
+they do not certify the new route or turn an alternative into a completed
+node. The revised plan identifies the new critical path and its exact budget.
 
 This directory separates mathematical interfaces, manuscript organisation,
 and the complete local source import graph. An import graph is not a proof-term

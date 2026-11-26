@@ -1,6 +1,18 @@
 # Hecke GRH continuation checkpoint
 
-Updated 25 November 2026. Full Hecke GRH remains open.
+Updated 26 November 2026. Full Hecke GRH remains open.
+
+**New priority after the Sernau audit:** the
+[selected-twist transfer plan](lsernau-transfer-plan-2026-11-26.md)
+proves zero structural defect for a general family of rank-one
+anticyclotomic characters, including both cubic sectors at every
+coefficient prime at least 5 and every permitted dyadic level. Reconstruct
+the general twisting theorem, then couple these new twists to the actual
+cubic theta maps and determinant-ratio height bound. This is an alternative
+to bounding the old untwisted moving groups; it does not supply their
+lengths. Primes 2 and 3 and the global critical-scale estimate remain.
+The new Dirichlet formal theorem does not prove general Hecke GRH.
+Hecke remains 6/9; see the [revised parent plan](../../blueprint/merged-proof-plan.md).
 
 Start with the [independent arithmetic manuscript](../paper/main.md),
 [program](../blueprint/program.md) and [frontier](open-frontier.md).
