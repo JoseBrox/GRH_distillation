@@ -12,7 +12,7 @@ of the target conductor and 18480.
 | --- | --- |
 | Analytic endpoint | [One-sided zero detection and quadratic-twist selection](lsernau-zero-detection.md), [prime reduction](lsernau-moment-and-prime-reductions.md): proved relative to the stated classical inputs and the missing arithmetic remainder. |
 | Common theta data | [Finite theta chapter](lsernau-common-theta-finite.md) identifies the actual spaces and levels, proves free class integration and the joint-tensor chain formula, and fixes the normalization. Global see-saw, injectivity, and uniform kernel bounds remain open. |
-| A — short integral forms | The common divisibilities, archimedean squared norm and finite clearing index are open on the preferred source data. |
+| A — short integral forms | [Scalar CM supplier](lsernau-cm-theta-normal-form.md) proves the actual marked good equation, torsion integrality, derivative ring and scalar non-split normal form. Establish higher-rank Weil-product realization, charged jet and sharp test estimates, common divisibilities, archimedean squared norm and finite clearing index. |
 | B — spanning | Exact ramified dimension and direct restriction of the two moments proved in the [finite theta chapter](lsernau-common-theta-finite.md). Conditional rank and index bounds sharpened. Establish good-form multiplicities and actual unfolding estimates. |
 | C — attachment | [Two-string cancellation](lsernau-galois-two-string.md) constructs disjoint torus characters and proves all-rank cancellation, spherical clauses and normalized lift trace compatibility from the actual theta polynomial, odd-rank and local-global inputs. Prove those suppliers. |
 | C — selected twists | [Small-twist theorem](lsernau-general-small-twist.md) proved under its stated data hypotheses. [Main-summand datum construction](lsernau-main-summand-data.md) gives the matrix span, scalar normalization, rank and smaller defect bound once attached local-type-compatible representations are supplied. [Critical-value systems](lsernau-critical-value-systems.md) gives integral group-ring construction and a uniform constant inverse-ratio height conditional on the actual scaled kernels and period formulas. |
@@ -21,7 +21,7 @@ of the target conductor and 18480.
 
 ### Immediate priorities
 
-1. Prove the uniform local integral bounds, global see-saw identity,
+1. Transfer the proved scalar CM normal form to the actual Weil products and charged jets, and prove the uniform local integral bounds, global see-saw identity,
    injectivity, Rallis norm and rank-two period identities on the
    specified common spaces and levels. Establish the global Poincare unfolding estimates
    and good-form multiplicity comparison on this diagram.

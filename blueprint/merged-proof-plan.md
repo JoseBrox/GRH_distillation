@@ -218,6 +218,8 @@ The [common finite theta chapter](../notes/lsernau-common-theta-finite.md) speci
 
 ### Module 3 — Short integral images
 
+The [scalar CM supplier](../notes/lsernau-cm-theta-normal-form.md) establishes the marked good model, integral theta sections, derivative ring, and exact scalar non-split normal form by classical CM potential good reduction and coefficient recursion. The remaining local problem is the actual Weil-product and charged jet realization, together with the sharp tests.
+
 Construct a spanning set of integral source forms. Prove its theta-jet
 divisibilities and complex norm bounds on the same source lattice.
 Normalize by the exact prime gain and the see-saw scalar. Prove the
