@@ -138,7 +138,7 @@ def main() -> None:
 
     modules = [dict(n) for n in allocation["nodes"]]
     known = {n["path"] for n in modules}
-    manuscript = ROOT / "paper/grh/main.tex"
+    manuscript = ROOT / "paper/archive/grh/main.tex"
     main_tex = manuscript.read_text()
     input_matches = list(re.finditer(r"\\input\{(sections/[^}]+)\}", main_tex))
     actual = {"paper/" + m[1] + ".tex" for m in input_matches}

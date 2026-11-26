@@ -1,25 +1,5 @@
 # Dirichlet GRH
 
-Read the [GRH manuscript](../../paper/grh/main.pdf), the
-[full research program](program.md), and the [technical proof map](proof.svg).
-The [field ledger](field-ledger.md) assigns all 46 fields of the final
-construction while keeping their common data and compatibility requirements.
+The [active Dirichlet manuscript](../../paper/grh/main.tex) uses the [common determinant argument](../../paper/determinant/body.tex) for arbitrary fixed target conductor. The [preferred plan](../merged-proof-plan.md) is the authoritative current mathematical dependency program.
 
-The editable mathematical plan is [program.json](program.json); the editable
-technical map is [map.json](map.json). Their completion counts are in
-[status.json](status.json) and the [progress table](../progress.md).
-The eleven larger work packages and the technical map have different
-granularity; neither count measures a fraction of a complete proof.
-
-The [RH route](../rh/README.md) is researched concurrently. Its smaller
-character projection can suggest improvements to the general fixed-quotient
-comparison. The [shared-results index](../shared/README.md) records which
-deductions apply to both routes and which additional hypotheses survive.
-
-The JSON, DOT and SVG technical-map views reflect the sharp-level node
-closure. Compiled PDFs, PNG previews and generated hash/build ledgers
-require regeneration from the updated sources; they were not rebuilt in
-this checkpoint.
-
-Run `python scripts/build_route_blueprints.py` to regenerate both routes,
-the field ledger, the source subject map and the public compatibility views.
+The [old program](program.md), [46-field ledger](field-ledger.md), and [technical map](proof.svg) describe the original reconstruction and its reusable results. Their count (18/31) does not measure new-route completion. The [historical archive](../../paper/archive/README.md) retains the old manuscript. The [shared library](../shared/README.md) supplies only lemmas whose actual hypotheses match.

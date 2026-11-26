@@ -1,0 +1,306 @@
+\section{Statement, mechanism, and status}
+Fix a modulus \(q\), divisible by \(18480\), and a prime
+\(d\equiv q/2-1\pmod q\). Put \(\kappa=(\,\cdot\,/d)\), the quadratic
+character of conductor \(d\). The analytic goal is the bound
+\[
+ R_{q,d}(x)\le C_{q,d,\varepsilon}x^{-1/2+\varepsilon}
+ \qquad (x\text{ sufficiently large}),
+ \tag{1}
+\]
+for the corrected prime sum defined in the next section. The modulus
+and auxiliary prime are fixed before \(x\) grows.
+
+The proof is organized around one arithmetic comparison. Divisibility
+produces short integral theta images. A moment estimate selects almost
+a basis from their translates. Separate twists at the coefficient
+primes bound the determinant of that same family from the opposite
+direction. A common term cancels and leaves (1). The number of
+successive theta lifts is of order \(\sqrt{x}\).
+
+This is a reconstruction of the argument of Levent Alp\"oge with Claude,
+using the \href{\sourcepin}{Sernau--Anthropic rewriting} as the principal
+source. Our mathematical proofs are distinct from the published formal
+verification. We do not claim that the present ordinary reconstruction
+is complete. In particular the arithmetic constructions in Sections 3--5
+are open as indicated. The detailed working proofs, not Lean declarations
+or assertions about source length, are the \emph{mathematical} references.
+
+\section{An exact analytic criterion}
+For each character \(\psi\bmod q\), let \(E_\psi(s)\) be \(L(s,\psi)\)
+with its pole removed by multiplying by \(s-1\) in the principal case.
+Set
+\[
+ P(s)=\prod_{\psi\bmod q}E_\psi(s),\qquad
+ Q(s)=\prod_{\psi\bmod q}L(s,\psi\kappa),\qquad
+ G(s)=\frac{Q'/Q(s)-P'/P(s)-1}{\varphi(q)}.
+\]
+These products have no pole on the right half-plane. Put \(c=G(1)\)
+and
+\[
+ R_{q,d}(x)=\sum_{\substack{n\le x\\n\equiv1\pmod q}}
+ \Lambda(n)(1-\kappa(n))(1/n-1/x)
+ -\frac{\log x}{\varphi(q)}-c.
+\]
+Orthogonality and termwise integration in \(\Rea s>1\) give
+\[
+ \int_1^\infty R_{q,d}(x)x^{-s}\,dx
+ =\frac{G(s)/s-c}{s-1}.
+ \tag{2}
+\]
+Indeed the integral of \((1/n-1/x)x^{-s}\) from \(n\) to infinity
+is \(n^{-s}/[s(s-1)]\). The logarithmic derivative has principal
+term \(s/[\varphi(q)(s-1)]\) after subtracting \(G\).
+The singularity of (2) at 1 is removable. At a zero \(\rho\ne1\)
+in \(\Rea s>0\) the residue is
+\[
+ \frac{\ord_\rho P-\ord_\rho Q}{\varphi(q)\rho(1-\rho)}.
+ \tag{3}
+\]
+
+\begin{lemma}[One-sided zero detection]
+Let \(1/2<\beta<1\). Suppose \(R_{q,d}(x)=O_{\rm upper}
+(x^{\beta-1})\) and \(\ord_t Q\le\ord_t P\) for real
+\(\beta<t<1\). Then the products \(P,Q\) have identical zero
+multiplicities in \(\Rea s>\beta\).
+\end{lemma}
+\begin{proof}
+Writing \(x=e^u\), subtract the transform in (2) from
+\(K/(s-\beta)\) for a sufficiently large \(K\). The difference is
+the Laplace transform of the nonnegative density
+\(Ke^{\beta u}-e^uR_{q,d}(e^u)\). It converges for \(\Rea s\)
+large. If its real abscissa of convergence \(a\) exceeded \(\beta\),
+positivity would make the residue at \(a\) nonnegative, whereas
+(3) makes it nonpositive. It is zero, so \(a\) would be a regular
+point. This is impossible for a positive Laplace transform:
+the Taylor series at a real point slightly to the right of \(a\),
+expanded towards the left, has nonnegative integral terms.
+Convergence past \(a\) would imply convergence of the defining
+integral there by monotone convergence. Thus \(a\le\beta\).
+Equation (2) is holomorphic to the right of \(\beta\);
+(3) proves the assertion.
+\end{proof}
+
+The \prooflink{notes/lsernau-zero-detection.md}{finite-box
+quadratic-twist selection theorem} is proved in ordinary mathematics:
+for fixed \(q,\beta,H\), all but
+\(O_{q,\beta,H}(X^{1-(\beta-1/2)/18})\) primes \(d\le X\)
+in the chosen progression give no zeros of any \(L(s,\psi\kappa)\)
+on \(\Rea s\ge\beta,\ |\Im s|\le H\).
+Its proof uses the character theta transformation, a truncated
+M\"obius Mellin integral, three-lines, and the Jacobi second
+moment from quadratic reciprocity and P\'olya--Vinogradov. The
+reciprocal sum over the bad primes converges; the reciprocal sum
+over the progression diverges. Hence a good prime exists.
+
+For a proposed zero of \(P\) to the right of \(1/2\), choose
+\(\beta\) below its real part and then a good \(d\). Bound (1)
+with \(\varepsilon<\beta-1/2\) contradicts the lemma.
+The functional equation excludes zeros on the other side.
+The imprimitive Euler factors are nonzero in \(\Rea s>0\).
+Thus (1) for the admissible fixed moduli and primes suffices.
+The proof of selection and the exact constant in (2) belong to
+the cited mathematical chapter, not to the missing arithmetic step.
+
+\section{The common arithmetic data}
+Here and below \emph{the common arithmetic construction is not
+yet supplied by this manuscript}. The source uses
+\(E=\Q(\sqrt{-d},\zeta_{q_1})\), Hermitian spaces, two level primes
+\(p_0,p_1\), a further level, weights at the complex embeddings,
+and a chain of \(m\) theta lifts. Write \(D\) for the target
+dimension, \(a=xb\) for the derivative order, and \(f\) for the
+number of complex places of \(E\). Denote the normalized
+Poincar\'e map by \(B\), its translates by \(A_t\), and the
+chain map at twist \(\xi\) by \(\Theta_\xi\).
+The required diagram compares the composite theta lift of the
+source with \(\Theta_\xi B\) times one specified nonzero scalar.
+The complex and integral lattices, projectors, local kernels
+and measures must be defined once for all three estimates below.
+
+The \prooflink{blueprint/merged-proof-plan.md}{exact data plan}
+specifies the source parameter ranges and hypotheses. The
+existence of a single family with these ranges, positive target
+dimension, nonzero chain determinants, and the exact integral
+and archimedean normalizations remains an obligation. Local
+lemmas from the alternative geometric route may be used only
+with an explicit matching dictionary.
+
+\section{Short forms and enough forms}
+The short-form input (A) asks for a spanning family of integral
+source vectors whose normalized images have squared norms at
+most \(\exp(H-mR+E_A)\) at every relevant conjugate. Here \(H\)
+is the main amount and \(R\) is the source's total remainder,
+not yet the analytic remainder \(R_{q,d}\). The input also
+controls the finite clearing index for every selected translate.
+Both the actual divisibility and the short norm estimate on the
+common maps are open.
+
+The following elementary part of input (B) is proved. Let
+\(A_t:S\to T\) be maps between finite-dimensional Hilbert spaces
+with probabilities \(p_t\), \(d_S=\dim S>0\), \(D=\dim T>0\).
+Set
+\[
+ K=\sum_t p_t A_tA_t^*,\qquad
+ \delta=d_S^{-1}\sum_t p_t\Tr(I-A_t^*A_t)_+.
+\]
+Suppose
+\[
+ \Tr K^2\le (1+\epsilon)d_S^2/D,\qquad
+ e=2\delta+\epsilon<1,\quad \epsilon\ge0.
+ \tag{4}
+\]
+\begin{proposition}[Spanning from two scalar moments]
+For \(e<\eta<1\), at most
+\[
+ k=\left\lceil (2D/d_S)\log((1-e)/(\eta-e))\right\rceil
+\]
+maps span a subspace of dimension at least \((1-\eta)D\).
+\end{proposition}
+\begin{proof}
+For a subspace \(F\subset T\) of dimension \(\alpha D\), let
+\(U_t=A_t^{-1}F\). The positive source deficit bounds
+\(\dim U_t-\|A_tP_{U_t}\|_{\rm HS}^2\).
+Since \(A_tU_t\subset F\), averaging and using Cauchy--Schwarz
+give
+\[
+ \sum_t p_t\dim U_t
+ \le d_S\delta+\Tr(P_FK)
+ \le d_S(\delta+\sqrt{\alpha(1+\epsilon)})
+ \le d_S(1+\alpha+e)/2.
+\]
+Some map adds rank at least \(d_S(1-\alpha-e)/2\).
+Also \(\delta d_S\ge d_S-D\), so \(d_S<2D\).
+The missing share \(r=1-\alpha\) obeys
+\(r_{\rm new}\le (1-\lambda)r+\lambda e\) with
+\(\lambda=d_S/(2D)\), until it is at most \(e\).
+Iteration from \(r=1\) proves the result.
+\end{proof}
+
+The open arithmetic task is to prove (4) for the actual
+Poincar\'e map with its source and target measures and its
+retained integral subspace. The source and target comparisons
+must use the same normalization as (A), up to a recorded scalar.
+The \prooflink{notes/lsernau-moment-and-prime-reductions.md}
+{full moment lemma} records the sharper recurrence.
+
+\section{Long forms from selected twists}
+For input (C), the source forms \(\Theta_\xi\) must realize a
+nonzero determinant \(Z(\xi)=\det(\Theta_\xi^*\Theta_\xi)\).
+The quotient \(Z(1)/Z(\xi)\) compares Gram determinants on
+\emph{the same basis}. One can choose \(\xi\) separately at
+each finite place, but not apply the product formula to the
+varying \(Z(\xi)\).
+
+\subsection{The small-twist theorem}
+The abstract theorem is supplied by the following
+dependency-ordered proofs:
+\begin{enumerate}
+\item \prooflink{notes/lsernau-auxiliary-prime-supply.md}
+{Auxiliary primes}: class field theory and Chebotarev construct
+paired primes with the prescribed anticyclotomic characters.
+\item \prooflink{notes/lsernau-classical-tied-descent.md}
+{Tied Selmer descent}: ordinary Greenberg--Wiles duality and
+reciprocity give short tied groups and a cardinality bound
+independent of the later torsion level.
+\item \prooflink{notes/lsernau-finite-selmer-presentations.md}
+{Finite presentations}: a common polynomial matrix, sharp
+Smith minors and a strict length cutoff give small Selmer witnesses.
+\item \prooflink{notes/lsernau-twist-specialization.md}
+{Torsion specialization}: a single tuple of roots of unity
+works for arbitrarily many prescribed polynomials and signed powers.
+\item \prooflink{notes/lsernau-general-small-twist.md}
+{Combined theorem}: integral critical-value systems with Euler
+factor norm relations have polynomial witnesses on a line.
+All length excesses, value-valuation excesses, and tame inertia
+costs over any finite set of signed powers can share one arbitrarily
+small error.
+\end{enumerate}
+These are ordinary mathematical proofs under the explicit
+Selmer datum and integral Stickelberger-system hypotheses.
+They do not assert those hypotheses for the actual moving
+automorphic representations or actual critical L-values.
+
+The remaining lower-bound work is to construct those data,
+verify the local rank and defect bounds and integral measures,
+and convert them into projection-denominator bounds on the
+same coefficient lattices. The comparison operator for one
+lift, its exact L-value formula, the exchange/chain identities,
+and a complement basis with a summable cost must then be supplied.
+The earlier W10 metric and divisor construction is not a
+prerequisite of this route.
+
+\section{The final comparison}
+Here is the proved scalar argument. Suppose an independent
+family \(y_1,\ldots,y_n\) in the target is selected, \(0<n\le D\).
+Complete it to a basis. Write \(g\ne0\) for its full untwisted
+Gram determinant in a number field \(F\); \(C\) is a bound
+for the selected logarithmic squared covolume, and \(Q_0\)
+bounds the complementary archimedean cost. At each finite
+place \(v\) suppose \(g=u_v r_v\) with both factors nonzero.
+Local integrality bounds \(\log|u_v|_v\le i_v\).
+Suppose a \emph{single} \(h\in F^\times\) and nonnegative
+\(b_v\) satisfy \(\log|hr_v|_v\le b_v\), with
+\[
+ I=\sum_{v\ {\rm finite}}\omega_v i_v,\qquad
+ B_0=[F:\Q]^{-1}\sum_\sigma\log|\sigma h|
+       +\sum_{v\ {\rm finite}}\omega_v b_v,
+ \quad \omega_v=[F_v:\Q_p]/[F:\Q].
+\]
+Here absolute values extend the usual normalized ones, and
+the sums include all places. Apply the product formula to
+\(g\) and \(h\). The result is
+\[
+ 0\le C+I+Q_0+B_0.
+ \tag{5}
+\]
+In the actual Gram comparison clearing both conjugate sides
+gives \(I=2\delta_{\rm clear}\). The correction \(r_v\)
+includes the determinant ratio and the complementary clearing
+factors; these must be combined before bounding their heights.
+See the \prooflink{notes/lsernau-mathematical-extraction-2026-11-26.md}
+{determinant proof} for the basis and clearing identities.
+
+Hadamard and the lower determinant supplier require
+\(C\le n(H-mR+E_A)\), \(B_0\le-DH+E_B\).
+Substitution into (5) gives the exact signed test
+\[
+ nmR\le -(D-n)H+nE_A+E_B+I+Q_0.
+ \tag{6}
+\]
+The missing-rank term is favorable only when \(H\ge0\);
+it cannot be discarded otherwise.
+
+For orientation, the readable source provides the sufficient
+interface \(H\ge0\), \(n\ge(1-4/b^2)D\), and
+\[
+ \begin{split}
+ C&\le n(H-mR+fa\log^4 b),\\
+ D(H-3fa\log^4 b)&\le C+2\delta_{\rm clear},\\
+ \delta_{\rm clear}&\le 10D\log(1+2b^2)fa\log^3 b.
+ \end{split}
+ \tag{7}
+\]
+On its scale range this yields \(mR\le fa\log^5 b\):
+for sufficiently large \(b\), \(n\ge D/2\);
+after division by \(n\) the sum of errors is
+\(O(fa\log^4 b)\le fa\log^5 b\).
+The inequalities (7) are the source's arithmetic suppliers,
+\emph{not} new proven estimates for the objects in Section 3.
+
+\section{From the arithmetic comparison to the theorem}
+The exact source prime identity (proved in the
+\prooflink{notes/lsernau-moment-and-prime-reductions.md}
+{fixed-modulus reduction}) gives from (7)
+\[
+ R_{q,d}(x)\le \frac{\varphi(q)(\log b)^6}{m}
+     +|R_{q,d}(x_1)|+\log b\,|R_{1,d}(x_1)|.
+ \tag{8}
+\]
+The fixed-modulus classical prime number theorem makes the last
+two terms smaller than every power of \(x^{-1}\), since \(q,d\)
+are fixed first and the admissible construction has
+\(\log x_1\ge x^{\varepsilon/12}\).
+With \(m\ge\sqrt x\), \(\log b\ll x^\varepsilon\),
+(8) implies (1), after choosing a smaller accuracy parameter.
+The integer-to-real interpolation costs \(O(1/x)\).
+Thus the remaining work is the compatible arithmetic input,
+not another analytic zero criterion.

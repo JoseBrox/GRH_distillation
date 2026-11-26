@@ -97,7 +97,7 @@ def main():
     (OUT / "progress.md").write_text("\n".join(lines)+"\n")
     for route, key in [("rh", "rh"), ("grh", "technical")]:
         (OUT / route / "status.json").write_text(json.dumps(maps[key], indent=2, ensure_ascii=False)+"\n")
-    paths = ["paper/grh/main.tex", "blueprint/rh/map.json", "blueprint/rh/program.md",
+    paths = ["paper/archive/grh/main.tex", "paper/determinant/body.tex", "blueprint/rh/map.json", "blueprint/rh/program.md",
              "blueprint/grh/map.json", "blueprint/grh/program.json", "blueprint/grh/program.md",
              "blueprint/grh/field-ledger.md", "blueprint/progress.json", "blueprint/progress.md",
              "blueprint/rh/proof.svg", "blueprint/rh/proof.png", "blueprint/grh/proof.svg",

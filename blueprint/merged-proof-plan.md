@@ -13,8 +13,9 @@ starting from our own revision
 original argument to Levent Alpöge and Claude and its shortening to a
 collaboration with Anthropic. See the [audit](../audit/lsernau-audit-2026-11-26.md)
 and [formal verification record](../audit/lsernau-formal-audit-2026-11-26.md).
-An [eight-page readable version](../paper/revised-plan/main.pdf) presents
-the mechanism, strengthened tools, and remaining tasks.
+The [active shared mathematical manuscript](../paper/determinant/body.tex)
+and [short guide](../paper/guide/main.tex) now present the proof in
+mathematical dependency order. Earlier PDF editions are historical.
 
 The [architecture and readability audit](../audit/merged-plan-readability-2026-11-26.md)
 classifies the old eleven packages (four replaced, four adapted, three

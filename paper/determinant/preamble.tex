@@ -1,0 +1,33 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\else
+  \usepackage{fontspec}
+  \setmainfont{Latin Modern Roman}
+\fi
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=25mm,headheight=14pt]{geometry}
+\usepackage{microtype,booktabs,enumitem,xcolor,fancyhdr,xurl}
+\usepackage[colorlinks,linkcolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\setlist{topsep=3pt,itemsep=2pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\DeclareMathOperator{\Tr}{tr}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\ord}{ord}
+\newcommand{\prooflink}[2]{\href{https://github.com/JoseBrox/GRH_distillation/blob/main/#1}{#2}}
+\newcommand{\sourcepin}{https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small The determinant route}
+\fancyhead[R]{\small Working manuscript}
+\fancyfoot[C]{\thepage}

@@ -5,7 +5,8 @@ Develop a rigorous, readable distillation of the announced GRH proof. Attribute 
 - Write standard mathematics. Define objects and state all hypotheses and ranges.
 - Distinguish proofs, conditional results, cited results, conjectures, and computational evidence.
 - Check decisive estimates, constant dependence, limiting arguments, and boundary cases. Preserve meaningful negative results.
-- Organize the paper by mathematical dependencies. Keep recovery and chronological records outside it.
+- Organize every active manuscript and README by mathematical dependencies, not chronology. A change of preferred proof plan requires replacing the affected text, removing superseded prerequisites from active contents, and synchronizing the introduction, theorem statements, proof inputs, navigation, and open-obligation summary. Preserve alternative proofs in the archive or linked mathematical library; never append a second competing main narrative.
+- Keep the shared RH/Dirichlet mathematical body in `paper/determinant/body.tex` with target-specific entrypoints. Update the Hecke manuscript where transfers change its actual dependencies. The plan, source attribution and README must agree about which route is preferred. Rebuild current PDFs after source changes; if unable to publish them, do not present older PDFs or build hashes as current. Keep historical editions explicitly labelled and retain old mathematical results.
 - Cite immutable source revisions. Do not infer that an imported theorem is proved merely from its name.
 - Include reproducible scripts and checkable outputs for decisive computations. Do not call an unrun computation or unbuilt Lean project verified.
 - Commit coherent checkpoints to `main` as ready, as authorized by the owner. Never force-push or discard unrelated work.
