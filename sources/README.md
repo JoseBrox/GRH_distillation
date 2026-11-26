@@ -40,6 +40,20 @@ source hashes and the distinction between upstream verification reports,
 checks repeated here and ordinary mathematical reconstruction. The source
 is Apache 2.0, copyright 2026 Anthropic, PBC.
 
+### How we use this source
+
+We take the readable edition as the principal extraction source for the
+short-forms/spanning/selected-twist determinant route, consulting the compact
+edition only with an explicit compatibility proof. We reconstruct the
+arithmetic suppliers in conventional mathematics, retain shorter compatible
+results from our earlier Alpöge distillation, and prove any strengthened
+replacements before applying them. The original geometric and untwisted
+branches remain documented alternatives, not claims of completion.
+See the [architecture and readability audit](../audit/merged-plan-readability-2026-11-26.md)
+and [preferred proof plan](../blueprint/merged-proof-plan.md).
+For the Hecke program only the exact transferable lemmas are used; the
+external theorem is Dirichlet GRH, not general Hecke GRH.
+
 ## Our contributions
 
 The exposition, mathematical reconstructions, checks, and limitations developed here are distinct from the original announced proof. A proof of a reduction is not a verification of its difficult input. Cite each imported result and state every unresolved input explicitly.

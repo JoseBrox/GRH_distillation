@@ -16,6 +16,14 @@ and [formal verification record](../audit/lsernau-formal-audit-2026-11-26.md).
 An [eight-page readable version](../paper/revised-plan/main.pdf) presents
 the mechanism, strengthened tools, and remaining tasks.
 
+The [architecture and readability audit](../audit/merged-plan-readability-2026-11-26.md)
+classifies the old eleven packages (four replaced, four adapted, three
+retaining their principal role) and specifies acceptance gates G0–G7.
+For the final human paper use a short common-data/A/B/C narrative plus
+only the necessary dependency-ordered proofs. Keep research alternatives
+outside that narrative. Treat the untwisted full-basis determinant as the
+common scalar; the local twisted determinants themselves vary.
+
 ## 1. The idea a reader should learn first
 
 A nonzero algebraic number cannot be small at every place: its ordinary
