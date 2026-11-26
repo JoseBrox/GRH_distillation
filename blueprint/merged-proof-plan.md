@@ -330,6 +330,8 @@ projector refinements only after identifying their coefficient modules.
 Our old RH weighted Selmer theorem remains a proved supplier in its own
 scope; it does not automatically construct these twists.
 
+The [one-lift chapter](../notes/lsernau-one-lift-comparison.md) reconstructs the exact comparison from the finite gluing formula, including the integral tight frame, mixed pairings and simultaneous diagonal separator. It proves the conditional signed three-exchange ratio budget $50m+k(4B+10-\mathrm{directionAmount})$ using the constant ratio bound. The individual first-order separators, actual gluing and period estimates, products spanning and sharp tests remain to be established.
+
 ### Module 6 — Assemble the signed budget, then specialize
 
 Apply (3), divide by the actual positive rank and the exact prime-sum
