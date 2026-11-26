@@ -290,16 +290,21 @@ now proves the system-polynomial witnesses as well, assembles the
 abstract source theorem for arbitrary finite signed powers, and gives
 one total budget for the length and evaluation excesses and tame inertia.
 Both Selmer and system line arguments have logarithmic radius cost.
-The actual Selmer data, critical-value systems and their defect bounds
-remain separate arithmetic obligations.
+The [datum construction](../notes/lsernau-main-summand-data.md)
+now proves the scalar-inertia, matrix-span, rank and defect conditions
+from the attached main-summand representations with the source's type
+and Hodge compatibility. Its strengthened normalized bound is
+\(((4f+2)n+1)v_\ell(G)\) instead of \((4f+3)n v_\ell(G)\).
+The attachment on the common theta eigensystems, their exact trace
+identity, and the integral critical-value measures remain to be proved.
 
 Reconstruct the remaining arithmetic in this order:
 
-1. Construct the actual Selmer data, verify their scalar-inertia,
-   matrix-span, local-rank and defect bounds, and construct the integral
-   Stickelberger systems of critical values (including their exact
-   Euler-factor and ratio identities). Then apply the proved general
-   small-twist theorem on those data.
+1. Establish the attachment and local type/Hodge compatibility for the
+   common theta eigensystems, including the normalized lift trace identity.
+   Apply the proved Selmer datum construction, and construct the integral
+   Stickelberger systems from critical-value measures. Apply the proved
+   general small-twist theorem to the resulting family.
 2. The first-order congruence-to-projection-denominator comparison on
    the actual coefficient lattice, with normalized lengths retained.
 3. The comparison operator and one-lift determinant identity, with
@@ -382,9 +387,9 @@ dependence; the finite-order result does not settle them.
 
 The finite-presentation, conditional Selmer line-witness and
 evaluation-to-length comparison are now written and proved. The first
-remaining deliverable is the actual moving-datum construction and defect
-estimates and the integral critical-value systems, followed by the
-one-lift denominator bound. The abstract small-twist theorem is proved
+remaining deliverable is the attachment and type compatibility on the
+common theta spaces and the integral critical-value measures, followed by
+the one-lift denominator bound. The abstract small-twist theorem is proved
 with stronger shared error control. In parallel, build the
 common theta diagram and the scalar second-moment supplier for the same
 admissible data. These are the central mathematical tasks.
