@@ -158,19 +158,14 @@ lift in terms of the finite tied-row determinants, without
 a loss for the number of eigensystems or matrix size.
 They also apply at small coefficient primes.
 
-## Remaining arithmetic boundary
+## Arithmetic continuation
 
-The construction is a proof **given** the actual tied rows and
-the trace ideal, characteristic-polynomial algebra, and block
-separators \(b_0,b_1\). The next required step is to produce these
-on the common eigensystems and prove the source's uniform
-valuation bound for the right side of (4), including the
-rank-one character blocks, the local inertia/Hodge conditions,
-and the tied Selmer group comparison. The ensuing step must
-extract the coefficient of the required product of the
-auxiliary variables in the actual congruence algebra.
-No arbitrary element of \(S\) with controlled value is being
-identified with an integral automorphic projection operator.
-The individual first-order separator theorem and the final
-denominator estimate therefore remain conditional on these
-arithmetic steps.
+The [tied-row construction](lsernau-tied-row-construction.md)
+constructs the main and character matrices from the precise
+arithmetic length and triangle hypotheses and proves the
+squarefree coefficient bound. The remaining steps are the
+local-defect and triangle/detection estimates on the enlarged
+eigensystem family, and the actual integral action of the
+trace-ideal coefficient at the auxiliary places. Neither
+this chapter nor the tied-row calculation alone gives an
+integral automorphic projection operator.
