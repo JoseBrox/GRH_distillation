@@ -109,7 +109,9 @@ These settings were inspected. No skip-kernel or trust-level option was
 found. Changing elaboration heuristics is not an additional mathematical
 axiom; any resulting theorem still needs the final kernel/axiom check.
 
-## 3. Upstream verification claims and our verification boundary
+## 3. Verification evidence and our local boundary
+
+### Author-reported checks
 
 The [readable README, checks section](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh/README.md#L27-L30)
 reports successful compilation, the axiom list
@@ -139,6 +141,42 @@ does not itself license calling it a standard black box. We must verify a
 matching classical theorem or supply a written proof for every essential
 nonclassical supplier.
 
+### Independent published checks, inspected here
+
+Andrew Sutherland's [MIT verification report](https://math.mit.edu/~drew/shortgrh/),
+updated 26 November at 02:50 UTC, corroborates complete formal checks of
+this exact revision. We downloaded and inspected both axiom logs, both
+module-replay tables, three successful paranoid Comparator logs and the
+compact con-ron statement-comparison log. The replay tables cover exactly
+our 803/794 production modules; every row is successful. Both editions'
+remote paranoid runs pass, and the compact edition has a second passing
+run. The smaller-machine readable run was operator-stopped for memory
+usage, without a verdict; the larger-machine run passed.
+
+We independently compared all **1,625 hashes** in the
+[published source manifest](https://math.mit.edu/~drew/shortgrh/source-files.sha256)
+with our pinned checkout: all match. The manifest omits only the root
+`README.md` and `LICENSE` among the 1,627 tracked files. Exact downloaded
+URLs, SHA-256 hashes and checked outcomes are in the
+[external verification record](lsernau-external-verification-2026-11-26.json).
+These are independently executed checks whose published evidence we
+inspected, not kernel runs performed in this session. We did not download
+or recheck the multi-gigabyte proof exports.
+
+To reproduce the source-manifest comparison:
+
+```sh
+curl --fail --location \
+  https://math.mit.edu/~drew/shortgrh/source-files.sha256 \
+  --output published-source-files.sha256
+python scripts/audit_lsernau_sources.py /path/to/grh-lean \
+  --source-manifest published-source-files.sha256 \
+  --output audit/lsernau-source-inventory-2026-11-26.json
+```
+
+The script pins the downloaded manifest's SHA-256 as well as the repository
+revision, checks every listed file, and reports the two omitted root files.
+
 ### Local execution record
 
 The initially available environment had no Lean/Lake executable. We
@@ -158,18 +196,29 @@ was acquired successfully. The machine has 9 logical CPUs and about
 9.7 GiB RAM, below the upstream full-build recommendation of 24 GB;
 concurrency must be constrained.
 
-**Execution checkpoint:** source and interface checks have run;
-dependency-cache acquisition and the compact build/replay are being
-attempted. No completed local build, final axiom printout, or independent
-kernel replay is claimed at this checkpoint. The final execution record
-will replace this paragraph after the attempt completes.
+**Final local execution checkpoint, 2026-11-26T11:01:18Z.** The cache download and
+decompression completed for all 9,031 dependency modules. The compact
+build accepted **32 of 794 production modules**, including
+`Statements`; no source-proof error appeared. We intentionally stopped
+the slow duplicate build after checking the independent full-verification
+logs and source manifest. The interruption returned exit code 130.
+The build used `LEAN_NUM_THREADS=3`. Warnings concern the older module-import style and
+deprecated tactic syntax. The exact module list, tool and dependency pins,
+and snapshot timestamp are in
+[`lsernau-build-status-2026-11-26.json`](lsernau-build-status-2026-11-26.json).
 
-The reproducible commands, after installing the pinned toolchain and
-making its `bin` directory available, are:
+This is a **partial build**, not verification of a final RH/GRH theorem.
+`Main` has not been compiled; the final theorem axiom printout, full
+kernel replay and independent checker have **not** been run. The accepted
+module count is not a percentage of a mathematical proof. No conclusion
+about completion follows from a clean partial log.
+
+To resume from the retained build cache after this run stops, use the
+following commands after making the pinned toolchain's `bin` directory
+available. On a fresh checkout, run `lake exe cache get` first:
 
 ```sh
 cd grh-lean/grh-compact
-lake exe cache get
 LEAN_NUM_THREADS=3 lake build
 lake env lean scripts/PrintAxioms.lean
 lake env leanchecker --fresh Main
@@ -201,18 +250,20 @@ Particularly important interfaces are:
 ## 5. What follows for our program
 
 No wrong-statement, admitted-production-proof, custom-axiom, or obvious
-trust-bypass defect was found in the checks above. This is strong reason
-to treat the new source as a serious candidate supplier, not proof that
-every proposed conventional simplification is correct. Its formal
-theorem is materially stronger in completion status than our unfinished
-human reconstruction if its reported checks hold, while its line count
-alone does not measure the length or readability of a conventional proof.
+trust-bypass defect was found in the checks above. Published independent
+verification corroborates complete formal acceptance. This supports using
+the new source as a supplier, while every proposed conventional
+simplification still needs its own proof. The formal development is
+materially stronger in completion status than our unfinished human
+reconstruction; its line count alone does not measure the length or
+readability of a conventional proof.
 
 For integration, keep three claims distinct:
 
-1. **Formal source result:** the pinned source contains the stated theorem
-   and upstream reports complete machine verification; local verification
-   has the scope recorded above.
+1. **Formal source result:** the pinned source contains the stated theorem,
+   and independent published verification corroborates complete machine
+   acceptance; our own local execution has the separate scope recorded
+   above.
 2. **Mathematical extraction:** an internal theorem supplies the precise
    object, norm, lattice, quantifier order and uniformity needed by a
    downstream argument. This requires checking its definitions and use.

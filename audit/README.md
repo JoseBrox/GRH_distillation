@@ -4,8 +4,10 @@
 
 The [pinned comparison audit](lsernau-audit-2026-11-26.md) and
 [formal statement/trust audit](lsernau-formal-audit-2026-11-26.md) distinguish
-the actual Dirichlet statements, static source checks, upstream checker
-reports and locally repeated execution. The
+the actual Dirichlet statements, static source checks, independently
+published multiple-kernel verification, and our partial local execution.
+The primary verification's 1,625 published source hashes match our checkout.
+The
 [source inventory](lsernau-source-inventory-2026-11-26.json) is reproducible.
 The [revised proof plan](../blueprint/merged-proof-plan.md) adopts the
 short-forms/spanning/determinant architecture, with newly proved abstract

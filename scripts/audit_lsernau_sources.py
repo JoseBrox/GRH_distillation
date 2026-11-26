@@ -14,6 +14,7 @@ import subprocess
 from pathlib import Path
 
 PIN = "72fead102f663d5c7a407964a13dc0cf9d977207"
+MIT_MANIFEST_SHA256 = "cd537287df9d0580afa93fcf7237370967520295f38075805964e4d4bbb9f1f8"
 WATCH = re.compile(
     r"\b(?:axiom|sorry|admit|unsafe|opaque|implemented_by|extern|native_decide|"
     r"ofReduceBool|sorryAx|run_meta|run_elab|run_tac|addDecl|addAndCompile|"
@@ -92,6 +93,36 @@ def file_record(path: Path, root: Path) -> dict:
     }
 
 
+def compare_published_manifest(root: Path, path: Path) -> dict:
+    """Compare the MIT source manifest captured on 2026-11-26 with this checkout."""
+    data = path.read_bytes()
+    digest = hashlib.sha256(data).hexdigest()
+    if digest != MIT_MANIFEST_SHA256:
+        raise SystemExit(f"published manifest hash changed: {digest}")
+    entries = {}
+    for line in data.decode().splitlines():
+        expected, name = line.split(None, 1)
+        name = name.removeprefix("*")
+        source = (root / name).resolve()
+        if Path(name).is_absolute() or not source.is_relative_to(root):
+            raise SystemExit(f"unsafe source-manifest path: {name}")
+        if name in entries or not re.fullmatch(r"[0-9a-f]{64}", expected):
+            raise SystemExit("invalid or duplicate source-manifest entry")
+        if not source.is_file() or hashlib.sha256(source.read_bytes()).hexdigest() != expected:
+            raise SystemExit(f"source-manifest mismatch: {name}")
+        entries[name] = expected
+    tracked = set(subprocess.check_output(
+        ["git", "-C", str(root), "ls-files"], text=True).splitlines())
+    return {
+        "url": "https://math.mit.edu/~drew/shortgrh/source-files.sha256",
+        "sha256": digest,
+        "entries": len(entries), "matched": len(entries),
+        "mismatches": [],
+        "tracked_files_not_in_manifest": sorted(tracked - entries.keys()),
+        "manifest_files_not_tracked": sorted(entries.keys() - tracked),
+    }
+
+
 def inspect(root: Path, edition: str) -> dict:
     folder = root / edition
     files = sorted((folder / "src").rglob("*.lean"))
@@ -153,6 +184,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--source-manifest", type=Path,
+                        help="Optional MIT source-files.sha256; its captured hash is pinned.")
     args = parser.parse_args()
     root = args.source.resolve()
     revision = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], text=True).strip()
@@ -166,6 +199,8 @@ def main() -> None:
               "editions": {name: inspect(root, name) for name in ("grh", "grh-compact")},
               "identical_statement_files": (root / "grh/src/Statements.lean").read_bytes()
               == (root / "grh-compact/src/Statements.lean").read_bytes()}
+    if args.source_manifest:
+        result["published_source_manifest"] = compare_published_manifest(root, args.source_manifest)
     text = json.dumps(result, indent=2, ensure_ascii=False) + "\n"
     if args.output:
         args.output.write_text(text)

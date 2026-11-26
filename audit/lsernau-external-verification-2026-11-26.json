@@ -1,0 +1,155 @@
+{
+  "inspected_at_utc": "2026-11-26T11:01:18Z",
+  "kind": "Inspection of independently published verification logs; these checker executions were not run by us.",
+  "source_revision": "72fead102f663d5c7a407964a13dc0cf9d977207",
+  "report": {
+    "url": "https://math.mit.edu/~drew/shortgrh/",
+    "author": "Andrew Sutherland",
+    "reported_update_utc": "2026-11-26T02:50:00Z",
+    "downloaded_html_sha256": "a6be960f88fe6bbabc5ef4a0b1d35ed8062623d3791f8d139e61fbaa42de1914"
+  },
+  "downloaded_evidence_files": [
+    {
+      "file": "source-files.sha256",
+      "bytes": 192400,
+      "sha256": "cd537287df9d0580afa93fcf7237370967520295f38075805964e4d4bbb9f1f8",
+      "url": "https://math.mit.edu/~drew/shortgrh/source-files.sha256"
+    },
+    {
+      "file": "exports.sha256",
+      "bytes": 259,
+      "sha256": "9ba41e35d5b0857fe18d5bbb4d8b1707bd5e6336e091470f60d5c5fbeba10d79",
+      "url": "https://math.mit.edu/~drew/shortgrh/exports.sha256"
+    },
+    {
+      "file": "readable-axioms.log",
+      "bytes": 1254,
+      "sha256": "78c2329a9d68ab0aa16fa381690525c18413a1c818536f54acbe7750bfa00d63",
+      "url": "https://math.mit.edu/~drew/shortgrh/readable-axioms.log"
+    },
+    {
+      "file": "compact-axioms.log",
+      "bytes": 1252,
+      "sha256": "b60d35c22c66934c0ad0b96ac7f33b08b06cd4012e119da75563c6c8d6bd1769",
+      "url": "https://math.mit.edu/~drew/shortgrh/compact-axioms.log"
+    },
+    {
+      "file": "readable-lake-comparator-paranoid-remote.log",
+      "bytes": 65588,
+      "sha256": "7557041cd29ffe0b8e57d1fcb0d809c2827d2baf2e81f26d97f3f1f15b042881",
+      "url": "https://math.mit.edu/~drew/shortgrh/readable-lake-comparator-paranoid-remote.log"
+    },
+    {
+      "file": "compact-lake-comparator-paranoid-remote.log",
+      "bytes": 199379,
+      "sha256": "d4ec5069774b0dc38e910adfd57b3ead6f04ed7e5c704d2ddc1df6b3e0fd6cd2",
+      "url": "https://math.mit.edu/~drew/shortgrh/compact-lake-comparator-paranoid-remote.log"
+    },
+    {
+      "file": "compact-lake-comparator-paranoid-local.log",
+      "bytes": 166718,
+      "sha256": "e261c4380e56bdf3d880f5ef9787429f8a1f3941d964dc126c27a5f541a64eb0",
+      "url": "https://math.mit.edu/~drew/shortgrh/compact-lake-comparator-paranoid-local.log"
+    },
+    {
+      "file": "readable-replay-leanchecker.results.txt",
+      "bytes": 42081,
+      "sha256": "dd08f088afafd6a1dde6b34ac122eceed5890d1ee3f81ecdf4b9575bd2ed1573",
+      "url": "https://math.mit.edu/~drew/shortgrh/readable-replay-leanchecker.results.txt"
+    },
+    {
+      "file": "compact-replay-leanchecker.results.txt",
+      "bytes": 39430,
+      "sha256": "afda4b95fb0c64a06d3b4935398836470a7840009fc4a154f00db29ae78838c5",
+      "url": "https://math.mit.edu/~drew/shortgrh/compact-replay-leanchecker.results.txt"
+    },
+    {
+      "file": "compact-standalone-con-ron-compare.log",
+      "bytes": 1338,
+      "sha256": "fe96560210ab6b98b7ff5fd5f24d371f722f23255f12b77d9b12f851054c7c03",
+      "url": "https://math.mit.edu/~drew/shortgrh/compact-standalone-con-ron-compare.log"
+    }
+  ],
+  "axiom_log_checks": {
+    "readable": {
+      "theorem_count": 5,
+      "all_expected_theorems_present": true,
+      "all_axiom_sets_exactly_standard_three": true
+    },
+    "compact": {
+      "theorem_count": 5,
+      "all_expected_theorems_present": true,
+      "all_axiom_sets_exactly_standard_three": true
+    }
+  },
+  "module_replay_table_checks": {
+    "readable": {
+      "rows": 803,
+      "every_status_ok": true,
+      "exact_production_module_coverage": true
+    },
+    "compact": {
+      "rows": 794,
+      "every_status_ok": true,
+      "exact_production_module_coverage": true
+    }
+  },
+  "paranoid_comparator_log_checks": {
+    "readable-lake-comparator-paranoid-remote.log": {
+      "final_acceptance_present": true,
+      "accepted_checker_stages": [
+        "nanoda",
+        "Lean paranoid",
+        "lean4lean",
+        "con-leche",
+        "con-ron",
+        "Lean default"
+      ]
+    },
+    "compact-lake-comparator-paranoid-remote.log": {
+      "final_acceptance_present": true,
+      "accepted_checker_stages": [
+        "nanoda",
+        "Lean paranoid",
+        "lean4lean",
+        "con-leche",
+        "con-ron",
+        "Lean default"
+      ]
+    },
+    "compact-lake-comparator-paranoid-local.log": {
+      "final_acceptance_present": true,
+      "accepted_checker_stages": [
+        "nanoda",
+        "Lean paranoid",
+        "lean4lean",
+        "con-leche",
+        "con-ron",
+        "Lean default"
+      ]
+    }
+  },
+  "compact_con_ron_comparison": {
+    "all_five_theorems_explicitly_justified": true,
+    "exit_zero_present": true
+  },
+  "source_manifest_comparison": {
+    "entries": 1625,
+    "matched": 1625,
+    "mismatches": [],
+    "unlisted_tracked_files": [
+      "LICENSE",
+      "README.md"
+    ],
+    "sha256": "cd537287df9d0580afa93fcf7237370967520295f38075805964e4d4bbb9f1f8",
+    "reproducible_script": "scripts/audit_lsernau_sources.py --source-manifest"
+  },
+  "readable_smaller_machine_run": "Reported operator termination for memory usage, without a verdict; the larger-machine paranoid run passed.",
+  "published_export_hashes_not_recomputed": {
+    "readable solution": "baf221c81749bf4bcbd6cd56238adfb4e8e780c38ef92d6a7ab458d57df36fc1",
+    "compact solution": "ab7b4223b9bd748a1aa68bdb63afb6d6264121fc834aadba7ba3d3796c32115b",
+    "challenge (both editions)": "20eb99a04b40f6afe1b44931e7ee82b15208542517dc588ace9634acffc41694"
+  },
+  "large_proof_exports_downloaded": false,
+  "independent_checkers_rerun_locally": false
+}
