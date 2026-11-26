@@ -6,7 +6,7 @@ Retained original-source work packages and reuse inventory. The preferred resear
 
 Construct the same short integral theta images, enough independent images and selected-twist determinant correction, then prove the signed budget nmR <= -(D-n)H+nE_A+E_B+I+Q on the new source scales. The exact common scalar, local clearing costs, completion cost and target prime remainder are retained. Use the readable source fixed-modulus analytic ending. Our averaged finite-table criterion remains an optional weaker endpoint after an exact remainder dictionary.
 
-The [Sernau–Anthropic rewrite](../audit/lsernau-audit-2026-11-26.md), pinned at 72fead102f663d5c7a407964a13dc0cf9d977207, supplies the source interfaces to reconstruct. The [ordinary determinant extraction](../notes/lsernau-mathematical-extraction-2026-11-26.md) and [mean-deficit spanning and prime reductions](../notes/lsernau-moment-and-prime-reductions.md) are proved abstract improvements. Selected twists replace the old general untwisted W04 requirement; the determinant lower bound replaces W10 as the preferred supplier. Their actual arithmetic hypotheses remain open in our human reconstruction. Preserve the original construction below as an alternative and reusable library.
+The [Sernau–Anthropic rewrite](../audit/lsernau-audit-2026-11-26.md), pinned at 72fead102f663d5c7a407964a13dc0cf9d977207, supplies the source interfaces to reconstruct. The [ordinary determinant extraction](../notes/lsernau-mathematical-extraction-2026-11-26.md) and [mean-deficit spanning and prime reductions](../notes/lsernau-moment-and-prime-reductions.md) are proved abstract improvements. Selected twists replace the old general untwisted W04 requirement; the determinant lower bound replaces W10 as the preferred supplier. Their actual arithmetic hypotheses remain open in our human reconstruction. Preserve the original construction below as an alternative and reusable library. The exact zero-detection endpoint, finite-box quadratic-twist selection and degree-independent shared-error torsion specialization are now proved in ordinary mathematics; finite Selmer presentations, bounded witnesses and their length comparison remain open.
 
 The eleven work packages below are responsibilities in a research program, not eleven already proved theorems or a claim of minimal logical independence.
 
@@ -131,6 +131,9 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 | Mean-deficit spanning by arbitrary weighted maps | Ordinary proof written and independently reviewed: average positive source deficit and one covariance moment imply an exact affine codimension recurrence with logarithmic selection cost. Arithmetic moments remain open. |
 | Fixed-modulus PNT at the larger cutoff | Ordinary proof and Laurent-constant identification written and independently reviewed. Applies with fixed auxiliary character before the limit; does not replace the finite-height quadratic-twist selection theorem. |
 | Hecke rank-one zero structural defect for selected twists | Proved over suitable imaginary quadratic fields for odd-order anticyclotomic lines; applies to both cubic sectors at all coefficient primes at least 5. Small newly twisted lengths depend on the general twisting theorem; no untwisted bound or Hecke closure. |
+| Degree-independent simultaneous torsion specialization with one total positive error; choose torsion order before polynomial degrees and cofinal presentation level; signed powers cost only their prime-power part. | proved abstract theorem; finite arithmetic presentations and bounded witnesses remain necessary |
+| Exact one-sided zero detection keeps net all-character multiplicities. Finite-box quadratic-twist selection has an ordinary theta-mollifier proof with a Jacobi second moment and only reciprocal-prime divergence in the final prime choice. | proved analytic endpoint relative to named classical theorems and the arithmetic remainder bound |
+| Zero structural defect over arbitrary CM fields for suitable odd-order anticyclotomic lines and coprime-order rational twists; local odd exponent removes conductor restrictions and permits an odd-ramification-index variant. | proved structural theorem; no untwisted length or determinant realization follows |
 
 ## Work packages
 
@@ -159,7 +162,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r02, r03, r04. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Preferred route: reconstruct the exact new prime remainder, finite-height quadratic-twist selection and one-sided residue criterion; use fixed-modulus PNT at the larger cutoff with the additive constant identified. Our interval/sampling reductions remain optional alternatives with an exact transform dictionary.
+**Next concrete task.** Preferred route: the exact remainder transform, finite-height quadratic-twist selection and one-sided residue criterion are now proved in notes/lsernau-zero-detection.md, relative to classical inputs and the arithmetic bound. Supply that bound using the same remainder and the fixed-modulus large-cutoff reduction. Interval/sampling criteria remain optional alternatives with an exact transform dictionary.
 
 **Acceptance conditions:**
 
@@ -204,7 +207,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r05, r11, r12, r34. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Preferred route: fix q0 and auxiliary quadratic d before the scale grows; reconstruct the readable rewrite admissible data and finite-height twist selection. Its large-cutoff analytic ending needs fixed-modulus PNT. Do not transfer the old moving-character or all-height source clauses without checking their consumers.
+**Next concrete task.** Preferred route: fix q0 and the auxiliary quadratic d before the scale grows. The finite-height twist selection is now proved; reconstruct the readable rewrite admissible arithmetic data. Its large-cutoff ending needs only fixed-modulus PNT. Do not transfer old moving-character or all-height source clauses without checking consumers.
 
 **Acceptance conditions:**
 
@@ -223,7 +226,7 @@ The outer inputs are: Finite-GL character theory (Green); VWin from the exact Ro
 
 **Existing manuscript coverage.** r13, r14, r16, r17, r27, r28, r29, r30, r31, r32, r33. Stable section ids are in the [inventory](module-inventory.md).
 
-**Next concrete task.** Preferred route: reconstruct the general selected-twist theorem and the same-lattice first-order denominator comparison, including simultaneous first m powers, scalar inertia, duality, local losses and an all-prime normalized budget. The original RH weighted Selmer supplier remains proved in its stated scope; the old general Dirichlet untwisted W04 target remains an alternative.
+**Next concrete task.** Preferred route: construct the finite Selmer presentations, bounded witnesses and evaluation-to-length comparison, then apply the proved degree-independent simultaneous specialization with its common error. Establish the actual first-order denominator bound, simultaneous first m powers, scalar inertia, duality, local losses and all-prime normalized budget. The original RH weighted supplier retains its stated scope; the general untwisted W04 remains an alternative.
 
 **Acceptance conditions:**
 
@@ -492,11 +495,11 @@ The [adopted classical Galois substitution](../notes/classical-galois-substituti
 
 Read W01 → W02 → W11 first to fix the final target, then work on the suppliers. The immediate research priorities are:
 
-1. Reconstruct the selected-twist Selmer theorem and its integral projection-denominator application with every actual coefficient, local and all-prime hypothesis; prioritize this over the old general untwisted W04 branch.
-1. Construct the same normalized theta objects for shortness, spanning and the lower determinant. Prove the exact nonzero scalar identities and the scalar first/second moments; retain the old W06/W08 work only through a verified dictionary.
-1. Prove the one-lift and chain determinant-ratio budgets, complete the independent family at its actual Schur-complement cost, and assemble the signed inequality of the revised plan. W10 is an alternative supplier.
-1. Finish finite-height quadratic-twist selection and the exact fixed-modulus one-sided endpoint; establish the conductor-one instance before the arbitrary fixed Dirichlet conductor.
-1. For Hecke, use the proved zero structural-defect rank-one specialization as input to new twisted groups; construct their actual cubic theta/determinant-ratio realization and retain exceptional primes and infinite-order phases.
+1. Construct the finite Selmer presentations and bounded witnesses, apply the proved simultaneous torsion specialization, and establish evaluation-to-length and integral projection-denominator comparisons on the actual coefficient modules.
+1. Construct the same normalized theta objects for shortness, spanning and the lower determinant. Prove exact nonzero scalar identities and scalar first/second moments; reuse old W06/W08 work through a verified dictionary.
+1. Prove one-lift and chain determinant-ratio budgets, complete the independent family at its actual Schur-complement cost, and assemble the signed inequality. W10 remains an alternative supplier.
+1. Apply the completed exact analytic endpoint to the resulting remainder bound, first at conductor one with admissible q0=18480, then for an arbitrary fixed Dirichlet conductor.
+1. For Hecke, use zero structural defect over CM fields with the precise odd-prime and coprime-order hypotheses. Construct the new twisted cubic theta/determinant realization; retain exceptional primes and infinite-order phases.
 
 After each result, update its precise status and loss/normalization ledger, run the coverage checks, and commit a coherent checkpoint to main. A candidate shortcut is not adopted until its hypotheses and all surviving branches are accounted for.
 

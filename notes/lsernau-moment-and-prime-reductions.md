@@ -341,7 +341,7 @@ The compact edition uses a different, movable-cutoff window argument
 and an $8\varepsilon$ allowance. The preferred ordinary exposition
 uses (P1)–(P4), keeping the readable edition's fixed-parameter construction.
 
-## 3. What the final zero-detection step still requires
+## 3. The final zero-detection step and its separate proof
 
 The source's analytic criterion does **not** infer all Dirichlet GRH
 from (P4) for one arbitrary quadratic twist. Its hypothesis ranges over
@@ -355,11 +355,13 @@ That choice precedes the limit $x\to\infty$, so the constants in
 quadratic-twist selection theorem. In the source this is
 `exists_entireL_quadTwist_ne_zero`, used explicitly in
 [`New/Reduction/Zeros/Criterion.lean`, lines 37–108](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src/New/Reduction/Zeros/Criterion.lean#L37-L108).
-Its ordinary proof and all fixed-modulus hypotheses belong on the new
-audit list. The source's proposition about real residues and our existing
-one-sided Mellin argument can be compared after identifying the exact
-prime-sum transform. Mere nonnegativity of $a(n)$ is not a replacement
-for that residue argument.
+The [ordinary zero-detection note](lsernau-zero-detection.md) now supplies
+this theorem by a theta mollifier, three-lines and an elementary Jacobi
+second moment. It also proves the exact transform, the real-residue
+argument and a weaker net-multiplicity selection interface. Thus the
+analytic endpoint is complete relative to the named classical results
+and the arithmetic remainder bound. Mere nonnegativity of $a(n)$ is not
+a replacement for the residue argument.
 
 For ordinary RH one may instead retain our direct zeta criterion if an
 actual comparison to the zeta remainder is supplied. The old four-term

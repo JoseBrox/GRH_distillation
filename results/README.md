@@ -7,7 +7,9 @@
 **26 November determinant route.** The
 [common-determinant and Schur-complement proof](../notes/lsernau-mathematical-extraction-2026-11-26.md),
 [mean-deficit covering and fixed-modulus prime reductions](../notes/lsernau-moment-and-prime-reductions.md),
-and [Hecke zero structural-defect theorem](../hecke/notes/lsernau-transfer-plan-2026-11-26.md)
+[shared-error torsion specialization](../notes/lsernau-twist-specialization.md),
+[exact zero detection and finite-box twist selection](../notes/lsernau-zero-detection.md),
+and [Hecke zero structural-defect theorem over CM fields](../hecke/notes/lsernau-transfer-plan-2026-11-26.md)
 are proved with their actual hypotheses. Their arithmetic applications
 are explicit open suppliers in the [revised plan](../blueprint/merged-proof-plan.md).
 No whole proof-map node is newly completed.

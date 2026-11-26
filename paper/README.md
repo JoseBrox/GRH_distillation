@@ -1,7 +1,9 @@
 # Mathematical manuscripts
 
 The **[revised proof plan](../blueprint/merged-proof-plan.md)** is the
-current research guide after the Sernau–Anthropic audit. Its ordinary
+current research guide after the Sernau–Anthropic audit; the
+[eight-page version](revised-plan/main.pdf) explains its mechanism and
+remaining arithmetic tasks. Its ordinary
 [determinant](../notes/lsernau-mathematical-extraction-2026-11-26.md) and
 [spanning/prime-sum](../notes/lsernau-moment-and-prime-reductions.md)
 arguments are written separately. The existing manuscripts below preserve
@@ -10,6 +12,7 @@ have not been relabelled as a completed reconstruction of the new source.
 
 | Route | Manuscript | Source | Research program |
 | --- | --- | --- | --- |
+| Preferred determinant route | [Revised plan](revised-plan/main.pdf) | [TeX source](revised-plan/main.tex) | [Detailed plan](../blueprint/merged-proof-plan.md) |
 | Ordinary Riemann hypothesis | [RH paper](rh/main.pdf) | [TeX entry](rh/main.tex) | [RH program](../blueprint/rh/program.md) |
 | Dirichlet generalized Riemann hypothesis | [GRH paper](grh/main.pdf) | [TeX entry](grh/main.tex) | [GRH program](../blueprint/grh/program.md) |
 | Introduction to both routes | [Short guide](guide/main.pdf) | [TeX source](guide/main.tex) | [Proof maps](../blueprint/README.md) |
@@ -46,6 +49,7 @@ python scripts/build_paper.py --rh
 python scripts/build_paper.py --grh
 python scripts/build_paper.py --guide
 python scripts/build_paper.py --companion
+python scripts/build_paper.py --revised-plan
 python scripts/build_route_blueprints.py
 ```
 

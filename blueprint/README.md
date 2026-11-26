@@ -4,6 +4,8 @@ Start with the **[revised determinant proof plan](merged-proof-plan.md)**,
 adopted after the 26 November audit of the Sernau–Anthropic rewrite. The
 main comparison is short forms, enough independent images and one
 corrected determinant. Its arithmetic suppliers remain explicit.
+The [eight-page version](../paper/revised-plan/main.pdf) includes the
+newly proved spanning, specialization and analytic reductions.
 
 The **[full original-source program](full-proof-program.md)** retains the
 earlier mathematical requirements and the exact conditions for reuse.

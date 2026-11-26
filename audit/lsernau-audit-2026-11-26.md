@@ -50,6 +50,22 @@ mathematician has read the whole proof and that no conventional paper is
 provided. An axiom inventory, an import inventory and a successful build
 answer different questions from a human reconstruction.
 
+**Independent verification is now documented.**
+[Andrew Sutherland's MIT report](https://math.mit.edu/~drew/shortgrh/)
+records successful full builds, axiom checks, all-module replay and
+sandboxed multiple-kernel Comparator checks for both editions at this
+exact revision. The compact paranoid run passed on two machines;
+the readable run passed on the larger machine. A smaller-machine readable
+run was intentionally stopped for memory, not rejected mathematically.
+[Michael Rubinstein's Waterloo-linked report](https://mrubinst.github.io/grh-lean-compact-check/)
+independently records compact-edition success, with its sandbox limitation
+explicit. We checked the primary logs and matched all 1,625 files in
+Sutherland's published source-hash manifest against our pinned checkout.
+This is materially stronger evidence than the author's README alone.
+Our own build was partial, and checking these logs does not mean that
+we executed their full computations locally. Exact evidence and the
+final local checkpoint are in the formal audit.
+
 The [independent static audit and local execution record](lsernau-formal-audit-2026-11-26.md)
 now record the actual checks. A lexical scan found no watched placeholder,
 axiom or environment-mutation token in production source; the five
@@ -104,14 +120,28 @@ proves an arbitrary weighted-family covering theorem from a *mean*
 positive source deficit and one covariance moment, with an improved
 affine recurrence and logarithmic selection cost. Its fixed-modulus
 prime-sum argument checks the additive constant and removes the larger
-cutoff error without a moving-conductor estimate. Finite-height twist
-selection remains a separate analytic supplier.
+cutoff error without a moving-conductor estimate. The
+[zero-detection note](../notes/lsernau-zero-detection.md) now proves
+finite-height quadratic-twist selection, the exact transform and one-sided
+Landau implication in ordinary mathematics. Its weakened interface only
+requires the correct net multiplicity on the real interval and at the
+proposed zero. The arithmetic remainder estimate remains open.
+
+The [torsion-specialization proof](../notes/lsernau-twist-specialization.md)
+chooses the torsion order independently of polynomial degrees and family
+size, before the cofinal presentation level. It strengthens individual
+error bounds to one total positive error and improves the radius loss for
+simultaneous signed powers to their prime-power part. The actual finite
+Selmer presentations, bounded witnesses and length conversion are not
+supplied by this lemma.
 
 The [Hecke transfer](../hecke/notes/lsernau-transfer-plan-2026-11-26.md)
 proves the exact abelian-induced boundary of the immediate Dirichlet
-reduction and a zero structural-defect theorem for suitable odd-order
-anticyclotomic coefficient lines. The latter includes both cubic sectors
-at every coefficient prime at least 5. Small lengths after additional
+reduction and a zero structural-defect theorem over arbitrary CM fields
+for suitable odd-order anticyclotomic coefficient lines with coprime-order
+rational twists. A local odd-exponent argument removes rational-conductor
+restrictions. The theorem includes both cubic sectors at every coefficient
+prime at least 5 and all permitted dyadic levels. Small lengths after additional
 twists still depend on the general twisting theorem; the old untwisted
 lengths and the determinant-ratio geometry are not supplied.
 
@@ -122,8 +152,9 @@ formalization of our new lemmas.
 ## Adopted plan and remaining work
 
 The **[revised proof plan](../blueprint/merged-proof-plan.md)** is now the
-preferred continuation. Reconstruct the selected-twist theorem and its
-integral denominator application; build the exact common theta diagram;
+preferred continuation. Reconstruct the finite Selmer presentations and
+bounded witnesses, apply the proved specialization, and establish the
+length and integral denominator comparisons; build the exact common theta diagram;
 establish its scalar moments, one-lift and chain determinant ratios; then
 assemble the signed budget and exact prime-sum endpoint. Use the
 conductor-one instance first, then the arbitrary fixed conductor.

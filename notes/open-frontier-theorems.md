@@ -8,6 +8,11 @@ lower bound and final signed budget. The general untwisted Selmer and
 geometric wall/divisor suppliers below are retained alternatives. They
 are not automatically completed or needed by the new route. Reuse requires
 the exact field/lattice/map/metric dictionary. No proof-map count changes.
+The [analytic endpoint](lsernau-zero-detection.md) and
+[degree-independent torsion specialization](lsernau-twist-specialization.md)
+are now proved. The immediate arithmetic target is the finite Selmer
+presentation, its bounded witnesses and evaluation-to-length comparison,
+alongside the common theta construction and scalar moments.
 
 The following are the **original-route** construction and estimate targets,
 not completed results. Ordinary RH is the first test case;

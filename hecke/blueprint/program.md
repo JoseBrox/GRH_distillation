@@ -2,8 +2,10 @@
 
 **Preferred new attack (26 November 2026):** follow the
 [Sernau selected-twist transfer plan](../notes/lsernau-transfer-plan-2026-11-26.md)
-for the cubic benchmark. The zero structural-defect lemma is proved at
-coefficient primes at least 5; small twisted lengths and their global
+for the cubic benchmark. The zero structural-defect lemma is proved over
+CM fields with the stated local and coprime-order hypotheses, including
+all cubic coefficient primes at least 5 and all permitted dyadic levels.
+The degree-independent specialization is also proved; small twisted lengths and their global
 determinant-ratio realization remain separate tasks. The older suppliers
 below retain their stated scope, and the Hecke count remains 6/9.
 

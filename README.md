@@ -1,6 +1,7 @@
 # Distilling the Generalized Riemann Hypothesis
 
 **[Revised proof plan: short forms, spanning, and one determinant](blueprint/merged-proof-plan.md)** ·
+[Eight-page version](paper/revised-plan/main.pdf) ·
 [Audit of the Sernau–Anthropic rewrite](audit/lsernau-audit-2026-11-26.md) ·
 [Hecke transfer](hecke/notes/lsernau-transfer-plan-2026-11-26.md)
 
@@ -130,7 +131,7 @@ For ordinary RH, an eventual one-sided bound for the corrected zeta prime sum, w
 
 ## What has been established
 
-The [new determinant proof](notes/lsernau-mathematical-extraction-2026-11-26.md), [mean-deficit spanning and fixed-modulus prime estimates](notes/lsernau-moment-and-prime-reductions.md), and [Hecke structural transfer](hecke/notes/lsernau-transfer-plan-2026-11-26.md) are written in ordinary mathematics. They do not yet supply all arithmetic inputs of the revised plan. The following inventory and the existing manuscripts record the substantial work on the original route.
+The [new determinant proof](notes/lsernau-mathematical-extraction-2026-11-26.md), [mean-deficit spanning and fixed-modulus prime estimates](notes/lsernau-moment-and-prime-reductions.md), [degree-independent simultaneous torsion specialization](notes/lsernau-twist-specialization.md), and [Hecke structural transfer over CM fields](hecke/notes/lsernau-transfer-plan-2026-11-26.md) are written in ordinary mathematics. The [exact analytic endpoint](notes/lsernau-zero-detection.md), including finite-height quadratic-twist selection, is proved relative to its named classical inputs and the remaining arithmetic remainder bound. These results do not yet supply all arithmetic inputs of the revised plan. The following inventory and the existing manuscripts record the substantial work on the original route.
 
 - **Analytic reductions.** The criteria detecting zeros through prime sums, the finite sampling argument and the four-character RH comparison are proved.
 - **The prescribed geometric spaces.** The original models, line bundles, boundary comparisons and level changes are constructed. Both lower section-norm bounds, the global upper bound and short generators of the entire integral cusp lattice are proved. The arithmetic degree of that same lattice satisfies the required component inequality. The tangent-degree and corrected-fibre comparisons apply to the actual boundary points. Their determinant and boundary metric now give the original uniform height floor at every point. The original determinant is nef on every finite fibre, its prescribed smoothing is constructed, and its signed intersection has the required lower bound. The general flag comparison and weighted mean height remain.

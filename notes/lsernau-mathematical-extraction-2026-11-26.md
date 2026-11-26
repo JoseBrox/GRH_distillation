@@ -121,7 +121,7 @@ twists to make the **twisted** Selmer groups small. It does not ask first for
 our old uniform bound on the original untwisted moving groups.
 
 The general theorem `exists_anticyclotomic_twist` in
-[`GeneralTheorem.lean`, 367--465](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src/New/Congruences/Selmer/GeneralTheorem.lean#L367-L465)
+[`GeneralTheorem.lean`, 367--456](https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src/New/Congruences/Selmer/GeneralTheorem.lean#L367-L456)
 starts from finitely many Selmer data and optional Stickelberger systems.
 Each datum has a finite defect $\beta_T$, a suitable inertial scalar, a
 full matrix-span condition, and a bound on its local-condition ranks.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the RH manuscript, Dirichlet-GRH manuscript, guide, or companion.
+"""Build the RH or GRH manuscript, guide, companion, or revised plan.
 
 A normal TeX installation is used unchanged. If a Debian TeX tree is present
 but its generated filename database or format is missing, the fallback reads
@@ -101,8 +101,9 @@ def main() -> int:
     choice.add_argument("--grh", action="store_true", help="Build the Dirichlet-GRH manuscript (default).")
     choice.add_argument("--companion", action="store_true", help="Build the retained analytic companion instead.")
     choice.add_argument("--guide", action="store_true", help="Build the short didactic guide instead (at most twelve pages).")
+    choice.add_argument("--revised-plan", action="store_true", help="Build the revised determinant proof plan (at most twelve pages).")
     args = parser.parse_args()
-    engine = "pdflatex" if args.companion else "xelatex"
+    engine = "pdflatex" if args.companion or args.revised_plan else "xelatex"
     route = "grh"
     if args.rh:
         route = "rh"
@@ -116,6 +117,10 @@ def main() -> int:
         route = "guide"
         PAPER = ROOT / "paper/guide"
         BUILD = ROOT / "build/guide"
+    elif args.revised_plan:
+        route = "revised-plan"
+        PAPER = ROOT / "paper/revised-plan"
+        BUILD = ROOT / "build/revised-plan"
     if not shutil.which(engine):
         raise RuntimeError("A TeX installation with " + engine + " is required.")
     BUILD.mkdir(parents=True, exist_ok=True)
@@ -148,9 +153,9 @@ def main() -> int:
     if not matches:
         raise RuntimeError("Could not verify the document's page count.")
     page_count = int(matches[-1])
-    if args.guide:
+    if args.guide or args.revised_plan:
         if page_count > 12:
-            raise RuntimeError(f"The short guide has {page_count} pages; reorganize it to keep at most twelve.")
+            raise RuntimeError(f"The {route} has {page_count} pages; reorganize it to keep at most twelve.")
     output = PAPER / "main.pdf"
     shutil.copyfile(BUILD / "main.pdf", output)
     sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -169,7 +174,7 @@ def main() -> int:
         "sources": [{"path": str(p.relative_to(ROOT)), "sha256": sha(p)} for p in inputs],
         "output": {"path": str(output.relative_to(ROOT)), "bytes": output.stat().st_size, "sha256": sha(output)},
     }
-    if args.guide:
+    if args.guide or args.revised_plan:
         certificate["editorial_page_limit"] = 12
     destination = ROOT / f"certificates/{route}-build.json"
     destination.parent.mkdir(parents=True, exist_ok=True)

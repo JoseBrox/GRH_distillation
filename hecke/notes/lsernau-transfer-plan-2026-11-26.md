@@ -105,8 +105,12 @@ a sum of characters, its image is abelian, so its faithful quotient
 $G/C$ is abelian. Conversely every complex representation of a
 finite abelian group is a sum of characters. QED.
 
-Applied to the finite Galois group of the normal closure of $M$, the
-fixed field of $C$ is that normal closure. Thus the induced
+This also applies when $F/\mathbb Q$ is not Galois. Let $L$ be the
+normal closure of $M$, take $G=\operatorname{Gal}(L/\mathbb Q)$
+and $H=\operatorname{Gal}(L/F)$, and inflate the faithful character
+of $\operatorname{Gal}(M/F)$. Then $N=\operatorname{Gal}(L/M)$.
+The fixed field of $C$ is the compositum of all conjugates of $M$,
+which is $L$ by definition; hence $C=1$. Thus the induced
 representation of a finite-order Hecke character decomposes into
 Dirichlet characters exactly when this normal closure is abelian over
 $\mathbb Q$. The induction identity for Euler factors then gives
@@ -195,22 +199,25 @@ Nor does $\beta_T=0$ assert that this untwisted group vanishes.
 
 ## 4. A stronger elementary specialization: zero structural defect
 
-The following lemma improves the immediate cubic specialization by
-identifying a general rank-one mechanism. Its proof does not use the
+The following theorem improves the immediate cubic specialization by
+identifying a rank-one mechanism over any CM field. Its proof does not use the
 upstream twisting theorem, RH, GRH, Iwasawa $\mu=0$, automorphy,
 or moving class-number estimates.
 
-**Theorem 4.1.** Let $F$ be an imaginary quadratic field of
-discriminant $D_F$, and let $c$ be its conjugation. Let
+**Theorem 4.1.** Let $F$ be a CM number field of absolute
+discriminant $D_F$, and let $c$ be its complex conjugation. Let
 $\lambda$ be a finite-order character of $G_F$, of odd order
 $r>1$, satisfying $\lambda^c=\lambda^{-1}$. Suppose its inertia
 image is nontrivial at some finite place $v_0$ of residue
 characteristic different from an odd prime $\ell$. Assume
 $\ell\nmid rD_F$.
 
-For a finite collection of rational Dirichlet characters $\eta_i$
-of 2-power order and conductor prime to $D_F$, integers $n_i$,
-and signs $s_i\in\{1,-1\}$, consider the rank-one lattices
+For a finite collection of finite-order rational Dirichlet characters
+$\eta_i$, put $e=\operatorname{lcm}_i\operatorname{ord}(\eta_i)$
+(with $e=1$ for an empty collection). Assume $\ell\nmid e$ and
+$\gcd(r,e)=1$. No condition on their conductors is needed.
+For integers $n_i$ and signs $s_i\in\{1,-1\}$, consider the
+rank-one lattices
 
 ```math
 T_i=O\bigl(\lambda^{s_i}(\eta_i|_{G_F})\varepsilon_\ell^{n_i}\bigr),
@@ -237,8 +244,9 @@ of order prime to $\ell$ have to be included initially.
 **Proof.** There are four short checks.
 
 **Scalar element and first-prime defects.** On inertia at $v_0$,
-the combined image of all $\eta_i$ is a 2-group, whereas the
-nontrivial image of $\lambda$ has odd order. Consequently the
+the combined image of all $\eta_i$ has order with prime factors
+dividing $e$, whereas the nontrivial image of $\lambda$ has order
+dividing $r$. These orders are coprime. Consequently the
 intersection of the kernels of the $\eta_i$ still surjects onto
 the inertia image of $\lambda$. Choose $\gamma$ in this
 intersection with $\zeta=\lambda(\gamma)\ne1$. Its order is
@@ -264,14 +272,29 @@ character and inverts $\lambda$,
 ```
 
 The residual character on the right extends to $G_\mathbb Q$.
-It is odd, since $1-2n_i$ is odd and a squared character is even.
-It is unramified at all primes dividing $D_F$, by the hypotheses
-on $\eta_i$ and $\ell$. If its restriction to $G_F$ were
-trivial, it would be either the trivial character or the quadratic
-character of $F/\mathbb Q$. Oddness excludes the former, and
-unramifiedness at the discriminant excludes the latter. It follows
-that some Galois element has unit difference between the two
-characters. Thus every equivariant map
+Choose a place $w\mid\ell$ of $F$. Since $\ell\nmid D_F$,
+$F_w/\mathbb Q_\ell$ is unramified, so their absolute inertia
+groups are equal. On rational inertia any one-dimensional residual
+character $\bar\eta_i$ is a power $\bar\varepsilon_\ell^{a_i}$.
+Here is the elementary reason, including a larger coefficient
+residue field: wild inertia is pro-$\ell$ and hence maps trivially
+to the multiplicative group of that finite field; tame inertia is
+procyclic; and Frobenius conjugation raises its elements to the
+$\ell$-th power. Conjugation is invisible in a one-dimensional
+character, so every image value satisfies $z^{\ell-1}=1$ and lies
+in $\mathbb F_\ell^\times$. The residual cyclotomic character
+generates the characters of this quotient.
+
+The ratio in (6), restricted to this inertia group, is therefore
+
+```math
+\bar\varepsilon_\ell^{\,1-2n_i-2a_i}.                       \tag{6a}
+```
+
+Its exponent is odd, whereas $\ell-1$ is even, so this character
+is nontrivial. Some Galois element consequently has a unit
+difference between $\rho_i$ and $\rho_i^{*c}$.
+Thus every equivariant map
 $T_i/a\to(T_i/a)^{*c}$ is zero for every nonzero $a\in O$,
 so $b_{\rm glob}=0$.
 
@@ -308,6 +331,28 @@ The representation is continuous and unramified outside $S_i$.
 Together these observations verify all the remaining conditions.
 QED.
 
+**Scope of the hypotheses.** The dyadic rational characters used in
+our cubic application automatically satisfy the coprime-order condition.
+More generally, that condition can be replaced by the existence of an
+element in the common kernel of the $\eta_i$ on $I_{v_0}$ on which
+$\lambda$ is nontrivial. The discriminant condition can also be weakened:
+the local argument needs only one place $w\mid\ell$ with odd
+ramification index. Indeed $I_{F_w}$ then has odd index in
+$I_{\mathbb Q_\ell}$, so it cannot kill the even-order character
+in (6a). The stated unramified hypothesis is a simple sufficient case.
+Neither variant supplies a determinant comparison or an untwisted
+Selmer bound.
+
+The condition at $\ell$ cannot simply be discarded. For example take
+$F=\mathbb Q(\zeta_{15})$, $\ell=5$, the cubic anticyclotomic
+character of $F(\sqrt[3]2)/F$, $\eta=1$ and $n=0$.
+Since 2 is unramified in $F$, the polynomial $X^3-2$ is Eisenstein
+at a place above 2, so the extension is nontrivial and ramified there; meanwhile
+$\mu_5\subset F$ makes $\bar\varepsilon_5|_{G_F}=1$.
+Thus the two residual characters in (6) coincide, and
+$\operatorname{Hom}_{G_F}(T/5,(T/5)^{*c})\ne0$.
+The global structural defect is not zero in this example.
+
 **Cubic specialization.** Take
 $F=\mathbb Q(\omega)$, $\lambda$ from
 $F(\sqrt[3]2)/F$, and $\ell\ge5$. The place above 2 is a
@@ -316,7 +361,8 @@ $X^3-2$ is Eisenstein over $F_2$. Since $F_2$ contains the
 cube roots of unity, the resulting cubic extension is cyclic and
 totally ramified. Thus inertia has image $C_3$. The actual
 rational characters of our moving dyadic and auxiliary quadratic
-hosts have 2-power order and conductor prime to 3, exactly as required.
+hosts have 2-power order, so their orders are coprime to 3 and to
+every $\ell\ge5$; no restriction on their conductors is required.
 Taking $n_i=-e_i$ includes all their strict negative Tate twists,
 with either cubic sign and no high-dyadic threshold.
 
@@ -335,6 +381,13 @@ is an auxiliary $\ell$-power anticyclotomic character $\psi$,
 trivial above $\ell$, for which the strict Selmer groups of
 $T_i\psi^j$, $1\le j\le m$, have normalized length at most
 $\epsilon$.
+
+The degree-independent torsion-specialization ingredient of that
+theorem now has a complete ordinary proof in
+[one torsion point for many integral polynomials](../../notes/lsernau-twist-specialization.md),
+including a common total error and simultaneous signed powers. The
+auxiliary-prime construction, finite Selmer presentations and their
+evaluation-to-length conversion remain necessary arithmetic suppliers.
 
 Here strict means the kernel of the restrictions to inertia at every
 finite place away from $\ell$ and to the full decomposition group at
@@ -393,7 +446,7 @@ criterion and actual cubic theta coefficients.
 
 | Order | Work | Completion condition |
 |---|---|---|
-| 1 | Audit and re-prove the general horizontal twisting theorem in ordinary mathematics, specialized first to Theorem 4.1 | A full proof of the source-dependent corollary, including descent, coefficient extension and local relations |
+| 1 | Finish the ordinary proof of the general horizontal twisting theorem, specialized first to Theorem 4.1; the degree-independent torsion step is supplied | A full proof of the source-dependent corollary, including auxiliary primes, presentations, descent, coefficient extension and local relations |
 | 2 | Couple the existing cubic theta maps to one common twisted target space | Exact equality of maps, integral lattices, cubic labels and pairings |
 | 3 | Prove the corresponding determinant-ratio bound | Total height and denominator loss at the critical scale, with coefficient-prime-dependent twists allowed |
 | 4 | Insert the existing split-prime/one-sign reduction | A bound for the *same* arithmetic discrepancy on cofinal windows, with exponent loss tending to zero |

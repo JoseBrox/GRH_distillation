@@ -8,7 +8,13 @@ The new [Sernau source inventory](../audit/lsernau-source-inventory-2026-11-26.j
 and [formal audit](../audit/lsernau-formal-audit-2026-11-26.md) record the
 pinned rewrite and the actual scope of static and execution checks.
 Source inventory, partial compilation, full build and dependency replay
-are separate verification levels. The [revised plan](../blueprint/merged-proof-plan.md)
+are separate verification levels. The audit also records the independently
+published verification and the matching source-hash manifest.
+The [further-reductions review](lsernau-further-reductions-review.json)
+records the new analytic, specialization and CM results; the earlier
+integration review retains its original checkpoint hashes.
+The [revised-plan build](revised-plan-build.json) records the eight-page PDF.
+The [revised plan](../blueprint/merged-proof-plan.md)
 keeps its ordinary mathematical suppliers explicit.
 
 | Workstream | Selected recent proof and review records |

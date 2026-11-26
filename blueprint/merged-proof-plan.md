@@ -13,6 +13,8 @@ starting from our own revision
 original argument to Levent Alpöge and Claude and its shortening to a
 collaboration with Anthropic. See the [audit](../audit/lsernau-audit-2026-11-26.md)
 and [formal verification record](../audit/lsernau-formal-audit-2026-11-26.md).
+An [eight-page readable version](../paper/revised-plan/main.pdf) presents
+the mechanism, strengthened tools, and remaining tasks.
 
 ## 1. The idea a reader should learn first
 
@@ -167,12 +169,18 @@ $x$, because $q_0,d$ are fixed first. The resulting bound has
 exponent $-1/2+6\varepsilon$. The integer-to-real interpolation
 has a smaller $O(1/x)$ cost.
 
-The final Dirichlet zero criterion also requires finite-height quadratic
-twist selection. A putative zero determines the accuracy and a bounded
+The [ordinary zero-detection proof](../notes/lsernau-zero-detection.md)
+now supplies the finite-height quadratic-twist selection and the exact
+one-sided Landau argument, including cancellation between all character
+factors, the real-residue sign, and regularity at $s=1$. Its selection
+proof uses theta integrals, three-lines and a Jacobi second moment;
+the final prime choice needs only fixed-progression reciprocal-prime
+divergence. A putative zero determines the accuracy and a bounded
 rectangle; choose a suitable $d$ next and then keep it fixed while
-$x$ grows. Reconstruct that selection and the real-residue argument
-explicitly. Fixed-modulus prime number theory alone does not eliminate
-possible zeros of the auxiliary twists.
+$x$ grows. Thus this module is complete relative to the named classical
+theorems and the still-open arithmetic remainder estimate. An even
+weaker selection interface only needs nonnegative net real multiplicity
+and unequal net multiplicity at the proposed zero.
 
 **RH first.** Start with the conductor-one target and the admissible
 fixed modulus $q_0=18480$. Do not substitute $q_0=1$ into a
@@ -252,11 +260,19 @@ at that prime, including the inverse value ratios. It need not serve all
 coefficient primes. The corrected local products must equal one common
 nonzero algebraic determinant.
 
-Reconstruct, in this order:
+The [degree-independent torsion specialization](../notes/lsernau-twist-specialization.md)
+is now proved, with a common total error across all polynomial minors
+and signed powers. Its torsion order is chosen before polynomial degrees
+and the cofinal presentation level; only the prime-power part of the
+power exponents costs radius. This removes a possible circular choice.
+It does not construct the presentations or their bounded witnesses.
 
-1. The finite Selmer presentation and twist specialization, including
-   the actual scalar-inertia, matrix-span, local-condition and duality
-   hypotheses.
+Reconstruct the remaining arithmetic in this order:
+
+1. The finite Selmer presentation, bounded witnesses and
+   evaluation-to-length comparison, including the actual scalar-inertia,
+   matrix-span, local-condition and duality hypotheses; then apply the
+   proved simultaneous specialization.
 2. The first-order congruence-to-projection-denominator comparison on
    the actual coefficient lattice, with normalized lengths retained.
 3. The comparison operator and one-lift determinant identity, with
@@ -317,8 +333,13 @@ The determinant/product-formula comparison works over number fields.
 The source's selected-twist principle is also formulated over CM fields,
 with substantial explicit hypotheses. Our
 [Hecke transfer note](../hecke/notes/lsernau-transfer-plan-2026-11-26.md)
-checks a useful odd-order anticyclotomic class of coefficient lines and
-specializes it to the cubic benchmark away from 2 and 3. This is a
+proves zero structural defect over arbitrary CM fields for odd-order
+anticyclotomic coefficient lines with coprime-order rational twists,
+at odd coefficient primes unramified in the CM field. A local odd-exponent
+argument removes the earlier rational-conductor restrictions; one
+completion of odd ramification index is an available weakening.
+The theorem specializes to both cubic sectors at every coefficient
+prime at least 5 and every permitted dyadic level. This is a
 structural input for *newly twisted* Selmer groups. It neither bounds the
 original untwisted groups nor pays the determinant-ratio cost.
 
@@ -332,15 +353,17 @@ dependence; the finite-order result does not settle them.
 
 ## 7. The next concrete deliverables
 
-The first deliverable is a complete ordinary proof of the selected-twist
-theorem with its precise coefficient hypotheses, followed immediately by
-its use in the one-lift denominator comparison. In parallel, build the
+The first deliverable is a complete ordinary proof of the finite-presentation
+and bounded-witness part of the selected-twist theorem, followed by the
+evaluation-to-length comparison and its use in the one-lift denominator
+bound. The specialization step is already proved with stronger shared
+error control. In parallel, build the
 common theta diagram and the scalar second-moment supplier for the same
 admissible data. These are the central mathematical tasks.
 
-Next extract the finite-height quadratic-twist selection and close the
-analytic endpoint for the exact remainder. Then assemble (3) at the
-source scales. Stop expanding the old wall/divisor or general untwisted
+The analytic endpoint for the exact remainder is now written out.
+Assemble (3) at the source scales to supply its remaining hypothesis.
+Stop expanding the old wall/divisor or general untwisted
 deformation branches unless the new route needs one of their specific
 lemmas or encounters a concrete obstruction.
 
@@ -348,6 +371,8 @@ For every imported theorem, either provide an ordinary proof or an exact
 classical reference whose hypotheses match. The source's `Lib` label is
 not sufficient: its own reference inventory records incomplete checks.
 Keep source-byte checks, Lean builds, kernel/dependency replay, and human
-mathematical proofs as distinct evidence. A successful formal check would
-strengthen confidence in the new source while leaving our conventional
-reconstruction work to be done.
+mathematical proofs as distinct evidence. Independent primary verification
+reports now document successful full builds, axiom checks and multiple
+kernel checks of this exact revision; their logs and provenance are
+recorded in the formal audit. Our own local build is partial. This strong
+formal evidence leaves the conventional reconstruction work above to be done.

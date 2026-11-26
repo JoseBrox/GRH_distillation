@@ -4,8 +4,11 @@
 [selected-twist transfer plan](lsernau-transfer-plan-2026-11-26.md)
 adds a preferred attack for the cubic benchmark: zero structural defect
 at coefficient primes at least 5, followed by the general twisting
-theorem and an actual determinant-ratio comparison. Only the structural
-lemma is proved here. The original untwisted length targets below remain
+theorem and an actual determinant-ratio comparison. The structural
+lemma now works over arbitrary CM fields under its stated local and
+coprime-order hypotheses, and the degree-independent specialization
+step is proved separately. The finite presentations, bounded witnesses
+and length comparison are still needed. The original untwisted length targets below remain
 open; no H07F or H07I closure is inferred. The exact cubic theta realization,
 the exceptional primes and the critical-scale global budget remain needed.
 

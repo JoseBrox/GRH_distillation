@@ -4,10 +4,13 @@ Updated 26 November 2026. Full Hecke GRH remains open.
 
 **New priority after the Sernau audit:** the
 [selected-twist transfer plan](lsernau-transfer-plan-2026-11-26.md)
-proves zero structural defect for a general family of rank-one
-anticyclotomic characters, including both cubic sectors at every
-coefficient prime at least 5 and every permitted dyadic level. Reconstruct
-the general twisting theorem, then couple these new twists to the actual
+proves zero structural defect over arbitrary CM fields for rank-one
+odd-order anticyclotomic characters with coprime-order rational twists,
+without conductor restrictions on the latter. It includes both cubic sectors at every
+coefficient prime at least 5 and every permitted dyadic level. The
+[degree-independent specialization](../../notes/lsernau-twist-specialization.md)
+is proved; reconstruct the finite presentations and bounded witnesses
+for the general twisting theorem, then couple these new twists to the actual
 cubic theta maps and determinant-ratio height bound. This is an alternative
 to bounding the old untwisted moving groups; it does not supply their
 lengths. Primes 2 and 3 and the global critical-scale estimate remain.
