@@ -450,10 +450,13 @@ ValuationAtLevel.lean, 1--62
 
 ## Remaining boundary
 
-The diagram comparison, charge covering and finite propagation
-algebra are proved above. The actual local unitary theta
-transport, (6), source-level equivariance at \(N\) and its
-double-lift identity, the edge elementary-divisor bound and
-the full admissible-parameter existence must still be proved.
-The two global estimates cannot be replaced by the conditional
-local chain bounds in this note.
+The [split transfer and level chapter](lsernau-split-transfer-and-level-lifts.md)
+now supplies (6) by finite-field kernel counting on the actual
+unramified Weil pair, and proves the auxiliary-level Up equivariance
+and double-lift identity, relative to the standard rational
+theta-kernel equivariance. It also gives the exact signed
+scalar loss and a smaller last-column Fourier denominator.
+The edge elementary-divisor estimate, final branching gauge,
+nonstandard global kernel transport and admissible-parameter
+existence are still needed. The two global estimates cannot
+be replaced by these local chain bounds.
