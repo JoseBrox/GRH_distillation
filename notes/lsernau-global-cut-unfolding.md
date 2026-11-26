@@ -222,11 +222,12 @@ level from the transpose, is not the source identity.
 
 ## 4. Iterate the normalized see-saw calculation
 
-Assume the local double-lift/period identity on every
-one of the actual graded pairs, with its specified
-\(\mathrm{unfoldStage}\) function and Schwartz data
-and with the support and absolute integrability just
-used. Transposing each lift against the conjugate
+The [graded period theorem](lsernau-graded-period-unfolding.md)
+proves the one-step and double-step period identities, with
+absolute convergence against rapid inputs and a nonzero
+fixed scalar at each double step. To iterate on the actual
+\(\mathrm{unfoldStage}\) functions we still require their
+level, equivariance, support and terminal Fock matching. Transposing each lift against the conjugate
 test form is then ordinary Fubini applied to its
 theta integral (the index multiplies the same integral
 in both orders). Inserting the local period identity
@@ -286,8 +287,8 @@ analytic hypotheses. The substantial remaining
 work is to establish the exact common local Bessel
 formula/reproducing kernel and class decomposition,
 the absolute majorants for the Poincare series and
-returns, the actual period recursion/double-lift
-identity with its lattice-bound support, the
+returns, the lattice-bound support and matching of the
+proved period recursion to the upper finite data, the
 terminal coefficient factorization and a nonzero
 common scalar, and the open/terminal/identity
 amplitude estimates. None is implied by formal
