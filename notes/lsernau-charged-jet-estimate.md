@@ -77,10 +77,10 @@ standard Fock form, because the elliptic area is
 At every lattice vector in \(bL\), these forms take values in
 \(\Omega_0\mathcal O_K\), by the integral trace pairing.
 The product has exactly the canonical multiplier at \(bL\):
-the marked elliptic multiplier on a period is
-\(\exp(\pi i E_{\rm ell}(\bar\omega l,l))\) in the source's
-Riemann-form convention, and multiplying these signs adds the
-pulled-back Riemann forms. The forms are \(K\)-linear and thus
+the source's marked elliptic multiplier on a period is its
+canonical multiplier for the Riemann form and scalar
+\(\bar\omega\). Multiplication of these multipliers adds the
+pulled-back Riemann forms in the canonical exponential formula. The forms are \(K\)-linear and thus
 commute with this scalar. Equivalently this is the defining
 canonical multiplier identity in TightFrames.lean, 824ff.;
 no new normalization of the signs is made.
