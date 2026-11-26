@@ -1,10 +1,11 @@
 # Exceptional edge: root estimate, defect count, averaging and pairing
 
-The remaining local comparison is reduced to the construction of the
-Frobenius-contracted averaging matrix. We prove the integral root estimate,
-the actual residue defect dimension bound, the single-copy invariant
-average, and the final pairing colength with its precise input and improved
-loss. The single-copy average is not itself the required edge matrix.
+We prove the integral root estimate, residue defect dimension bound,
+single-copy invariant average, its actual Frobenius-factor contraction,
+and the exceptional edge-pairing colength theorem with an improved loss.
+The proof uses the polynomial geometry and outer edge-inclusion bounds
+of the companion chapter. All estimates here concern the specified local
+edge model, not yet the full global marked-level comparison.
 
 Sources throughout are the immutable
 [lsernau/grh-lean@72fead1](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src/New/UpperBound/ElementaryDivisors).
@@ -285,9 +286,11 @@ Let \(O\) be a characteristic-zero valuation domain, \(p\) a
 nonunit, \(W\) local with residue size \(q\), \(\iota:W\to O\)
 a ring map, and \(L\) the block diagonal Levi of rank \(k\).
 Let \(D+k\le q\) and \(D<p^f\).
-Write the matrix variables in the source order \(X_{ji}\) for
-entry \(i,j\); the monomial's row weight is its sum of input
-(column) indices weighted by arbitrary integers \(\rho_j\).
+Write \(X_{bc}\) for the physical matrix entry in row \(b\), column
+\(c\). The row weight is the sum of its row indices weighted by
+arbitrary integers \(\rho_b\). In the coefficient tensor below the
+variable \(X_{ji}\) corresponds to the matrix entry \(i,j\) of
+the transposed generic matrix.
 Fix a threshold \(T\). There is an \(O\)-linear functional
 \(I\) on the polynomial algebra invariant under \(X\mapsto
 g^{-1}Xg\) for \(g\in\iota(L(W))\), vanishing on monomials
@@ -301,7 +304,7 @@ and all high-row-weight coefficients of all Levi conjugates of
 
 Here is a direct construction. In degree \(d\le D\), put
 \(U=(O^k)^{\otimes d}\). Let \(\mathcal A\) be the span of the
-coefficient matrices of the generic block diagonal matrix
+coefficient matrices of the transposed generic block diagonal matrix
 raised to tensor power \(d\). It is exactly the \(O\)-span
 of the evaluations \(g^{\otimes d}\) for \(g\in\iota(L(W))\).
 To prove this, first work over \(W\). The degree-\(d\) monomial
@@ -355,12 +358,11 @@ with \(d\) copies of the matrix recovers the polynomial;
 the tensor is the unique symmetric tensor giving that polynomial,
 since the characteristic is zero. The substitution by
 \(g^{-1}Xg\) therefore conjugates \(D_\psi\) by the tensor power
-of \(g^t\) (or its inverse, depending on which direction of
-substitution is used). This follows also in degree one by
-writing the polynomial as \(\sum_{ij}a_{ij}X_{ji}\):
-the matrix \(a\) becomes \(g^{-t}a g^t\).
-Both tensor powers preserve \(U_+\), since the transposed
-matrices are still in the Levi. The identity over the fraction
+of \(g\). In degree one this is the trace identity
+\(\operatorname{tr}(a g^{-1}Xg)=\operatorname{tr}(gag^{-1}X)\).
+In degree \(d\) the same trace identity on tensor powers gives
+\(D_{\psi(g^{-1}Xg)}=g^{\otimes d}D_\psi(g^{-1})^{\otimes d}\).
+Both tensor powers preserve \(U_+\). The identity over the fraction
 field implies the integral matrix identity. Thus both traces,
 hence \(I_d\), are invariant.
 
@@ -395,9 +397,233 @@ Source: InvariantAverage.lean 229–278,287–345,346–401,628–696,
 The proof uses only tensor coefficient matrices, interpolation
 and two traces.
 
-## 5. Pairing colength: exact finite-lattice deduction
+## 5. Actual contracted edge average
 
-This section is conditional only on the *edge* averaging operator.
+Write \(h=\ell/2\) (the source calls the half-length \(\ell\)).
+Use the crossing root \(a=r-1,r\), its weights
+\(\eta_b=\mathbf1_{b=r}-\mathbf1_{b=a}\), and the deep indicator
+\(e_{bs}=1\) in rows \(b\ge r\) at even letters and \(b<r\) at
+odd letters, zero otherwise. Set \(\epsilon_s=1\) at even letters
+and \(-1\) at odd letters. In this section \(i,j,s\) are cyclic
+letter indices, and \([j]\) denotes the representative in
+\(\{0,\ldots,\ell-1\}\). Assume
+\[
+ \ell k(h+2)n+n+k<P^h.
+ \tag{8}
+\]
+
+**The actual polynomial matrix.** For each letter take an independent
+generic \(k\times k\) matrix \(X_j\). Let
+\(F_{s,d}=X_{s-d}^{[P^d]}\), where the superscript means
+entrywise powering, not matrix powering. The row \(b\) of \(M_s\)
+is taken from
+\[
+ F_{s,m-1}\cdots F_{s,0},\qquad m=h+e_{bs},
+\]
+at even letters, and from the adjugate transpose of that product
+at odd letters. Define
+\[
+ \mathcal P(X)=\bigotimes_s\operatorname{Sym}^n(M_s).
+ \tag{9}
+\]
+The symmetric powers use the polynomial coefficient basis, with
+matrix entries acting by \(x_c\mapsto\sum_b M_{bc}x_b\).
+Thus (9) is the source substitutionOperator, and
+\(\mathcal P(1,\ldots,1)=1\).
+
+For a change of frame \(g\in\mathrm{GL}_k(W)\) write
+\(G_s=\iota_s(g)\). Define \(\mathcal P^g\) by the same recipe but
+with
+\[
+ F^g_{s,d}=G_s(G_{s-d}^{-1}X_{s-d}G_{s-d})^{[P^d]}G_s^{-1}.
+\]
+The Frobenius congruences imply \(F^g_{s,d}\equiv F_{s,d}\pmod p\)
+as polynomial matrices: modulo \(p\) the entrywise \(P^d\)-power
+is a ring endomorphism and carries the entries of \(G_{s-d}\)
+to the corresponding entries of \(G_s\). This remains true when
+\(O/(p)\) is not reduced. Each entry is homogeneous of degree
+\(P^d\) in the one copy \(s-d\).
+For \(g\) in the two-block Levi, one has exactly
+\[
+ \mathcal P^g(X)
+ =\rho(g)\mathcal P((G_j^{-1}X_jG_j)_j)\rho(g)^{-1}.
+ \tag{10}
+\]
+Indeed the outer \(G_s\)'s telescope in the products; for the
+adjugate transpose the conjugation becomes by \(G_s^{-t}\).
+Both these matrices mix rows only within blocks, where the
+length \(m=h+e_{bs}\) is constant. Hence row selection commutes
+with left multiplication; right multiplication is uniform in
+all rows. Passing to symmetric powers proves (10).
+
+**Uniform coefficient estimate.** Fix a copy \(i\) and choose
+\(\varepsilon=1/2\) or \(-1/2\). Give variable \(X_{j,bc}\) weight
+\[
+ \omega(j,b,c)=\frac{\varepsilon}{P^h}
+ \begin{cases}
+ \eta_b,&j=i,\\
+ (P^{[j-i]}/q)(\eta_b-\eta_c),&j\ne i.
+ \end{cases}
+\]
+Let \(u=1/(2P^h)\). All absolute weights are at most \(1/P^h\).
+For \(0\le d\le h\) the entry \(F^g_{s,d;bc}\) has level at
+least \(P^d\omega(s-d,b,c)\) in the weighted coefficient
+filtration of Section 1: the pure power has exactly this
+level, and the difference is divisible by \(p=w^2\), with
+all monomials of weight at least \(-1\) by homogeneity.
+The target level is at most \(1\). This argument is independent
+of the frame and requires no estimate on its entries beyond
+integrality of \(g\) and \(g^{-1}\).
+
+Define the row potentials
+\[
+ A_{sd}(b)=
+ \frac{\varepsilon\eta_bP^{d+[s-d-i]}}{qP^h}.
+\]
+Their sum over \(b\) is zero and \(|A_{s0}(b)|\le u\).
+Every factor entry has level at least
+\[
+ A_{s,d+1}(b)-A_{sd}(c)-u.
+ \tag{11}
+\]
+For \(s-d\ne i\) the potential difference is exactly
+\(P^d\omega(s-d,b,c)\). At \(s-d=i\) it is that quantity
+minus \(A_{sd}(c)\), whose absolute value is at most \(u\)
+since \(d\le h\le\ell\). This is the only cyclic-wrap error.
+
+In the matrix product of \(m\) factors, (11) telescopes along
+each matrix-index path, yielding level
+\(A_{sm}(b)-(m+1)u\) in row \(b\).
+For the adjugate transpose the cofactor uses every row except
+\(b\), so the sum-zero identity gives level
+\(-A_{sm}(b)-(k-1)(m+1)u\).
+For either parity one may therefore use the common row bound
+\[
+ \epsilon_s A_{s,h+e_{bs}}(b)-k(h+2)u.
+\]
+The coefficient in row \(\beta\) of a symmetric power uses
+exactly \(\beta_{bs}\) entries of each output row \(b\);
+all multinomial multiplicities are integral. Taking products
+over the letters, every entry in row \(\beta\) of
+\(\mathcal P^g\) has level at least
+\[
+ \varepsilon(1-q^{-1})D_{i+h}(\beta)-\ell nk(h+2)u.
+ \tag{12}
+\]
+Here the exact potential identity is
+\(\epsilon_s A_{s,h+e_{bs}}(b)=
+\varepsilon(1-q^{-1})D_{i+h}(e_{bs}^{\rm basis})\),
+where \(e_{bs}^{\rm basis}\) is the exponent vector supported
+at the variable \((b,s)\).
+To check it, ignore \(b\notin\{a,r\}\), where both sides vanish.
+At the shallow root variable \(e_{bs}=0\) the exponent after
+cancelling \(P^h\) is \([s-i-h]\).
+At the deep root variable the exponent is
+\(1+[s-i-h-1]\); it equals the same representative except
+at \(s=i+h\), when it equals \(\ell\). This replaces \(1/q\)
+by \(1\), exactly adding the extra \(1-q^{-1}\) in the
+definition of the defect. The factor \(\epsilon_s\eta_b\)
+provides the respective positive or negative sign.
+
+For a monomial \(\nu\) in all matrix copies define
+\[
+ W_i(\nu)=P^{-h}\left(
+ {\rm row}_i(\nu)+
+ \sum_{j\ne i}\frac{P^{[j-i]}}q
+ ({\rm row}_j(\nu)-{\rm col}_j(\nu))\right),
+\]
+with row and column sums weighted by \(\eta\).
+Its weight for the filtration is \(\varepsilon W_i(\nu)\).
+If its coefficient in row \(\beta\) is not divisible by
+\(w^c\), where \(c\ge1\), (12) for both signs gives
+\[
+ |W_i(\nu)-(1-q^{-1})D_{i+h}(\beta)|\le 2c+1
+\]
+because \(\ell nk(h+2)u\le 1/2\) by (8).
+The geometric series in the defect gives
+\(|D_{i+h}(\beta)|\le n(1+1/(P-1))\le 2n\le q\).
+Consequently, with \(t=3kc\),
+\[
+ |W_i(\nu)-D_{i+h}(\beta)|\le 2c+2\le t.
+ \tag{13}
+\]
+The degree of each entry of \(\mathcal P^g\) in any one
+copy is at most \(D_0=\ell nk(h+2)P^h\): at most \(h+1\)
+factors of degree at most \(P^h\) enter each row, an adjugate
+uses \(k-1\) rows, and the symmetric powers and tensor product
+use \(n\ell\) row entries. This also bounds all polynomials
+remaining after integral contractions in other copies.
+
+**Contraction and exact congruence.** Set \(f=\log_p q\) and
+\(c_0=k^2 f\). The size assumption (8) implies \(D_0+k<q=p^f\).
+Apply Section 4 to each copy, with threshold \(2tP^h\), to
+obtain \(I_j\). Let \(\mathrm{ev}_j=p^{c_0}\mathrm{ev}_1\)
+on that copy. Both functionals are invariant under Levi
+conjugation and kill monomials with unequal row and column
+weights. For a subset \(J\) of the letters, put
+\[
+ V_J=(\bigotimes_j L_j)\mathcal P(X),\qquad
+ L_j=\begin{cases}I_j&j\in J,\\\mathrm{ev}_j&j\notin J.\end{cases}
+\]
+This is a matrix over \(O\), with \(V_\varnothing=p^{\ell c_0}1\).
+
+For any input \(v\), let \(f_i^g\) be the polynomial vector
+in \(X_i\) obtained from \(\mathcal P^g(X)\rho(g)v\) by
+applying \(L_j\) for \(j\ne i\). Equation (10) and invariance
+in the contracted copies give
+\[
+ f_i^1(G_i^{-1}X_iG_i)=\rho(g)^{-1}f_i^g(X_i),
+ \qquad L_i(f_i^g)=\rho(g)V_Jv.
+ \tag{14}
+\]
+If a coefficient at \(\alpha\) in component \(\beta\) of
+\(f_i^g\) is not divisible by \(w^c\), at least one
+summand in its finite contraction has a nondivisible
+coefficient in \(\mathcal P^g\) and nonzero contracted
+monomials. All the latter have zero row-column difference.
+Applying (13) to that summand gives the actual one-copy
+estimate
+\[
+ \big|P^{-h}{\rm row}(\alpha)-D_{i+h}(\beta)\big|\le t.
+ \tag{15}
+\]
+For \(J\) all letters, if \(D_{i+h}(\beta)>3t\), any coefficient
+in \(f_i^g\) not divisible by \(w^c\) has row weight above
+\(2tP^h\). The functional \(I_i\) annihilates it. By (14),
+every such coefficient of \(\rho(g)V_Jv\) is divisible by
+\(w^c\), for every Levi \(g\). Thus \(V_Jv\in C\).
+
+For \(i\notin J\) and a halfway value \(v'\in M_0\), take the
+one-copy polynomial \(\psi=(v')^t b f_i^1\), with degree
+at most \(D_0\). For any Levi \(g\), (14) expresses its
+conjugate as \((v')^t b\rho(g)^{-1}f_i^g\).
+If \({\rm row}(\alpha)>2tP^h\), each summand of the
+coefficient of \(X^\alpha\) in this expression is divisible
+by \(w^c\): either its polynomial coefficient is divisible,
+or (15) forces \(D_{i+h}(\beta)>t\), in which case
+\((v')^t b\rho(g)^{-1}e_\beta\) is divisible by \(w^c\)
+by Section 2. Section 4 applied to this very polynomial
+now yields \(I_i(\psi)\equiv\mathrm{ev}_i(\psi)\pmod{w^c}\).
+These evaluations are respectively the pairings against
+\(V_{J\cup\{i\}}v\) and \(V_Jv\). Telescoping over all copies
+proves that the actual edge average \(\mathcal V=V_{\rm all}\)
+satisfies
+\[
+ \mathcal Vv\in C,\qquad
+ (v')^t b\mathcal Vv\equiv p^{\ell c_0}(v')^t b v\pmod{w^c}.
+ \tag{16}
+\]
+No averaging over an infinite group or division by its order
+occurs. This is precisely the missing contracted operator.
+
+Sources: FrobeniusFactors.lean 55–136,154–249,269–440,470–end
+(blob 93ef987eaa567c7af9113dc171bb0fe3fce68e3b);
+AveragingMap.lean 195–626
+(blob 2dae6791402c66a14f7e5e6e7726af0f36ee7001).
+
+## 6. Pairing colength: exact finite-lattice deduction
+
+Use the edge averaging operator just constructed in (16).
 Let \(O\) now be a valuation domain and \(L=O^{R}\),
 \(E=O^{I R}\) the vertex and edge coefficient modules
 (\(R=|V|B\)). Interpret the edge module as
@@ -415,7 +641,7 @@ matrices with left inverses \(R_0,R'_0\); their values lie in
 with \(Q'\), the source integral invertible edge transitions,
 and the diagonal weights \(b\), with
 \(bb'=p^{\ell c_0}1\).
-The required missing edge operator \(\mathcal V\) acts on \(O^B\),
+The edge operator \(\mathcal V\) acts on \(O^B\),
 takes values in \(C\), and satisfies
 \[
  (h')^t b\mathcal V h\equiv p^{\ell c_0}(h')^t b h
@@ -493,20 +719,73 @@ Hence the actual truncated determinant divides \(p^l\) with
 \]
 One may also take the trivial bound \(mR\). This retains the
 source normalization and improves the final finite-lattice budget
-provided the missing edge average is supplied.
+with the supplied edge average.
 
 Source: ElementaryDivisorTheorem.lean 64–259,617–736,926–1147
 (blob c7a66dabe124dd7e8305815c509da7f642f4e8ec).
 
-## Remaining link in the exceptional-prime theorem
+## 7. Source parameter range and final local bound
 
-The integral root and halfway pairing congruences, residue dimension
-bound, single-copy invariant functional and final lattice deduction
-are now proved. Still required is the actual \(\mathcal V\) of
-Section 5: Frobenius-factor polynomial bounds, contractions of
-the single-copy averages, and the stepwise pairing congruence
-(FrobeniusFactors.lean, blob 93ef987eaa567c7af9113dc171bb0fe3fce68e3b;
-AveragingMap.lean 201–626, blob 2dae6791402c66a14f7e5e6e7726af0f36ee7001).
-In particular the full exceptional elementary-divisor theorem is
-not claimed, and the sharpened budget must not yet be used as an
-unconditional global estimate. No new Lean replay is asserted.
+The actual source degree hypotheses (IsLargeDegree) are
+\[
+ 0<r\le k/2,\quad 0<\theta\le1,\quad n^4\le q,\qquad
+ (\ell k\log q/\theta)^5P^{3r}\le n.
+\]
+They imply (8) and the defect-count range, without any
+additional asymptotic assumption. Indeed \(\ell k\ge4\),
+\(\log q\ge1\), hence \(n\ge(\ell k)^5\) and
+\(q\ge 2^{40}\), so \(\log q\ge27\). Since
+\(h+2\le\ell k\), \(k<n\), and \(n\ge(\ell k)^2+2\),
+\[
+ \ell k(h+2)n+n+k<n^2\le P^h.
+\]
+Put \(U=\ell k\log q\). From \(\log p\ge2/3\),
+\(c_0\le(3/2)k^2\log q\),
+\(c=5\ell c_0\le(15/2)kU\), and \(t=3kc\).
+The degree assumption gives \(U^5P^{3r}\le\theta n\).
+In particular
+\[
+ 8\ell ktP^{2r}\le180\ell k^3 U P^{2r}
+ \le U^5P^{3r}\le\theta n
+\]
+since \(U\ge27\ell k\). Also \(t\ge2(k+1)\) and
+\(\ell c_0\ge2\). Thus the count, construction and colength
+deduction all apply at the specified source parameters.
+
+For completeness the diagonal pairing used in these arguments
+is integral: write \(m_\beta=\prod_s\binom{n}{\beta_s}\),
+\(b_\beta=p^{\ell c_0}/m_\beta\), \(b'_\beta=m_\beta\).
+The multinomial carry bound in Section 4 and \(n<q\)
+give integrality, and \(b b'=p^{\ell c_0}1\).
+The coefficient basis of \(\operatorname{Sym}^n O^k\)
+has the usual transpose-adjoint diagonal form with entries
+\(1/\binom{n}{\beta_s}\) (expand the symmetric tensor
+pairing over the fraction field). For the alternating letters,
+the matrices for \(g^t\) are also the transposes of those
+for \(g\). Tensoring proves precisely the source adjointness.
+
+Combining Sections 1–6 with the outer edge-inclusion
+calculation, for the actual finite edge model of the source
+(with its given vertex/edge indexing, integral transition
+maps and paired restrictions), the exponent of the truncated
+determinant is at most
+\[
+ R\min\{m,\ c_{\rm depth}+\min(m,2\ell c_0)
+                  +\theta(m-2\ell c_0)_+\}.
+ \tag{17}
+\]
+The estimate includes the full middle-edge comparison, with
+the small Smith factors counted rather than paid twice.
+Since \(\ell c_0\le \ell n/P^{2r}\) by
+\(c_0\le U^2\) and the degree hypothesis, the ordinary source
+budget \(3c_{\rm div}+\theta m\) also follows using the
+outer source bound \(c_{\rm depth}\le c_{\rm div}\), where
+\(c_{\rm div}=\ell n(P^{-2r}+r^2/(kP))\).
+
+Sources: Edges.lean 425–490; ElementaryDivisorTheorem.lean
+380–616,617–736,926–1147. This closes the local exceptional
+middle-edge estimate. Identifying the local edge model and
+the prescribed global marked-level and Weil transport maps,
+and all subsequent analytic and arithmetic obligations, remain
+separate. The proof is a conventional reconstruction from the
+pinned source; no new Lean replay is asserted.

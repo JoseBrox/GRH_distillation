@@ -3,10 +3,9 @@
 This chapter proves the two finite polynomial-geometric ingredients of the
 exceptional edge estimate and its first lattice-inclusion bound. It also
 proves the final branching gauge comparison with its precise scalar. The companion [middle-edge chapter](lsernau-exceptional-middle-edge.md)
-proves the defect dimensions, invariant single-copy average and conditional
-pairing colength; the Frobenius-contracted edge average is still open. In particular the improved first
-inclusion bound below does not by itself imply the Hecke elementary-divisor
-theorem.
+proves the defect dimensions, invariant averaging including the actual
+Frobenius-factor contraction, and sharpened pairing colength for the
+specified finite edge model.
 
 Sources are pinned to
 [lsernau/grh-lean@72fead1](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src).
@@ -509,18 +508,11 @@ fca6112cfbc1551723c2406e3b29e4829c0fd60c);
 Lib/GLn/Branching/NormBound.lean,303–373,656–end (blob
 550eb19ce621ee04baedcab3bbaa8f0687a528d7).
 
-## Remaining exceptional and terminal work
+## Remaining terminal and global work
 
-The weighted depth bound (4)–(6) and exact volume (7) are
-unconditional for their specified local models. The companion
-[middle-edge chapter](lsernau-exceptional-middle-edge.md) proves the
-actual defect-dimension estimate, the integral root and halfway pairing
-congruences, the single-copy invariant average and the conditional
-pairing-colength deduction. The missing input is the actual contracted
-edge averaging matrix with its stepwise pairing congruence. Do not infer the final exceptional
-Hecke elementary-divisor bound or replace its
-\(\mathrm{divisorConstant}\) throughout by (5) without checking
-the other losses in ElementaryDivisorTheorem.lean. The terminal
-branching gauge is proved from (9); the bounded normalization
-of that matrix, common nonstandard transport and uniform
-analytic estimates are separate remaining requirements.
+The local exceptional-prime edge estimate is now complete in the
+[companion chapter](lsernau-exceptional-middle-edge.md), including the
+middle pairing and its full source parameter range. The quantitative
+branching normalization, global identification of the marked-level
+edge and Weil transport maps, and analytic estimates remain separate
+requirements.
