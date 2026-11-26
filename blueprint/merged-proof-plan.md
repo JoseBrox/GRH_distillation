@@ -273,14 +273,21 @@ is now proved, with a common total error across all polynomial minors
 and signed powers. Its torsion order is chosen before polynomial degrees
 and the cofinal presentation level; only the prime-power part of the
 power exponents costs radius. This removes a possible circular choice.
-It does not construct the presentations or their bounded witnesses.
+The [finite presentation and line-witness theorem](../notes/lsernau-finite-selmer-presentations.md)
+now supplies a common finite polynomial matrix, sharp padded minors,
+strict-cutoff passage to divisible coefficients, and the bounded Selmer
+witness conditional on the actual auxiliary-prime and tied-length bounds.
+It also replaces the Selmer line's linear level requirement by a
+logarithmic radius cost. The cofinal arithmetic supplier and
+Stickelberger-system witnesses remain open.
 
 Reconstruct the remaining arithmetic in this order:
 
-1. The finite Selmer presentation, bounded witnesses and
-   evaluation-to-length comparison, including the actual scalar-inertia,
-   matrix-span, local-condition and duality hypotheses; then apply the
-   proved simultaneous specialization.
+1. Prove the cofinal auxiliary-prime selection and bounded tied-group
+   theorem (including the scalar-inertia, matrix-span, local-condition
+   and reciprocity inputs), and the Stickelberger-system witnesses.
+   Then apply the proved finite presentation, Selmer line-witness,
+   evaluation-to-length and simultaneous specialization theorems.
 2. The first-order congruence-to-projection-denominator comparison on
    the actual coefficient lattice, with normalized lengths retained.
 3. The comparison operator and one-lift determinant identity, with
@@ -361,11 +368,12 @@ dependence; the finite-order result does not settle them.
 
 ## 7. The next concrete deliverables
 
-The first deliverable is a complete ordinary proof of the finite-presentation
-and bounded-witness part of the selected-twist theorem, followed by the
-evaluation-to-length comparison and its use in the one-lift denominator
-bound. The specialization step is already proved with stronger shared
-error control. In parallel, build the
+The finite-presentation, conditional Selmer line-witness and
+evaluation-to-length comparison are now written and proved. The first
+remaining deliverable is the auxiliary-prime/tied-length theorem and the
+Stickelberger-system witnesses, followed by the one-lift denominator
+bound. The simultaneous specialization step is already proved with
+stronger shared error control. In parallel, build the
 common theta diagram and the scalar second-moment supplier for the same
 admissible data. These are the central mathematical tasks.
 
