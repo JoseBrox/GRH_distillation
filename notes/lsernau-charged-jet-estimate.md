@@ -504,6 +504,11 @@ entrywise charged Schur-jet bound for (6).
 
 ## Remaining arithmetic boundary
 
+The finite normalization inputs of Sections 1--2 are supplied in the
+[standard Weil normalization](lsernau-weil-normalization.md), relative
+to the classical standard Weil theta dictionary. The boundary below
+concerns the transport to the common nonstandard and global kernels.
+
 The finite products and the divisibility theorem here
 supply the local argument once the specified Weil
 lattice, integral vacuum, period factor, and coprime
