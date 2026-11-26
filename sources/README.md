@@ -28,6 +28,18 @@ Both papers are attributed to **OpenAI, with human assistance**, as stated in th
 
 The dates distinguish the approaches; they do not imply progressively stronger conclusions. Precise statements and the scope of checking belong in the audit and paper.
 
+## Sernau–Anthropic rewrite (26 November 2026)
+
+The new comparison source is
+[`lsernau/grh-lean@72fead102f663d5c7a407964a13dc0cf9d977207`](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207).
+It credits Alpöge and Claude for the original proof, and Anthropic
+collaboration for the shortening. Its readable and compact editions export
+RH and Dirichlet GRH, not general Hecke GRH. The
+[pinned audit](../audit/lsernau-audit-2026-11-26.md) records the exact scope,
+source hashes and the distinction between upstream verification reports,
+checks repeated here and ordinary mathematical reconstruction. The source
+is Apache 2.0, copyright 2026 Anthropic, PBC.
+
 ## Our contributions
 
 The exposition, mathematical reconstructions, checks, and limitations developed here are distinct from the original announced proof. A proof of a reduction is not a verification of its difficult input. Cite each imported result and state every unresolved input explicitly.
