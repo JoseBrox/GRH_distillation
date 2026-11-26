@@ -764,8 +764,9 @@ these bounds, with no stabilizer denominators.
 
 Reference: ThetaLiftGauge.lean,100--325
 (blob 5c3212c92e2d1a52ada40b2f4822800d0a8c16ea).
-The nonstandard lower-chain kernel transport, common
-period and injectivity, full adelic conjugation of
-jets, final branching restriction in the prescribed
-scale, and the exceptional edge elementary-divisor
-estimate are distinct outstanding inputs.
+The [exceptional polynomial chapter](lsernau-exceptional-polynomial-geometry.md)
+proves the terminal gauge with its precise level scalar, relative to the
+integer branching intertwiner, and the outer edge-inclusion bounds.
+The bounded branching normalization, middle edge estimate, nonstandard
+lower-chain kernel transport, common period and injectivity, and full
+adelic conjugation of jets remain distinct outstanding inputs.

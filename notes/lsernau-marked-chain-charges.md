@@ -456,7 +456,9 @@ unramified Weil pair, and proves the auxiliary-level Up equivariance
 and double-lift identity, relative to the standard rational
 theta-kernel equivariance. It also gives the exact signed
 scalar loss and a smaller last-column Fourier denominator.
-The edge elementary-divisor estimate, final branching gauge,
-nonstandard global kernel transport and admissible-parameter
+The [exceptional polynomial chapter](lsernau-exceptional-polynomial-geometry.md)
+proves the depth estimate, outer edge inclusions, exact Pieri volume and
+terminal gauge identity. The middle edge estimate, bounded branching
+normalization, nonstandard global kernel transport and admissible-parameter
 existence are still needed. The two global estimates cannot
 be replaced by these local chain bounds.
