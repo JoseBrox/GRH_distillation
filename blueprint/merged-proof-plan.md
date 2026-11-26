@@ -260,7 +260,7 @@ weighted choices and unequal individual errors. In the group case,
 $\operatorname{tr}K^2$ is the mean of
 $\|B^*\rho(g)B\|_{\rm HS}^2$.
 
-The [finite dimension and compression argument](../notes/lsernau-common-moment-interface.md) proves the definite-space mass dimension formula, and shows that the unprojected second moment suffices after compression by the good projector. The source bounds, if established, give the required rank share with at most $4D\log b/d_S+1$ translates. The hard task is to establish these moments for the actual arithmetic maps and prove the equality of good-form multiplicities. Unfolding, multiplicities, off-diagonal terms, local labels,
+The [finite dimension and compression argument](../notes/lsernau-common-moment-interface.md) proves the definite-space mass dimension formula, and shows that the unprojected second moment suffices after compression by the good projector. The source bounds, if established, give the required rank share with at most $4D\log b/d_S+1$ translates. The hard task is to establish these moments for the actual arithmetic maps and prove the equality of good-form multiplicities. The [global cut chapter](../notes/lsernau-global-cut-unfolding.md) proves the quotient and weighted-cut identities, including exact index cancellation, conditional on the local Bessel and theta-period formulas and absolute majorants. Multiplicities, off-diagonal estimates, local labels,
 stabilizers and normalizing masses remain on the critical path. Prefer
 these scalar outputs over unnecessarily strong pointwise conditioning.
 Choose the missing-rank tolerance jointly with the complement and index
@@ -338,7 +338,7 @@ scope; it does not automatically construct these twists.
 
 The [one-lift chapter](../notes/lsernau-one-lift-comparison.md) reconstructs the exact comparison from the finite gluing formula, including the integral tight frame, finite gauge cancellation, tuple Cauchy--Schwarz and conjugated adjoint bounds, mixed pairings and simultaneous diagonal separator. It proves the conditional signed three-exchange ratio budget $50m+k(4B+10-\mathrm{directionAmount})$ using the constant ratio bound. The individual first-order separators, actual gluing and period estimates, products spanning and sharp tests remain to be established.
 
-The [two-string attachment chapter](../notes/lsernau-galois-two-string.md) proves the CM torus character separation, cancellation of the two odd-rank character strings, spherical direct-summand compatibility and passage from normalized split Hecke polynomials to the global row decomposition. Its nonzero theta-lift, odd-rank attachment and nonspherical labelled local-global inputs are still required.
+The [two-string attachment chapter](../notes/lsernau-galois-two-string.md) proves the CM torus character separation, cancellation of the two odd-rank character strings, spherical direct-summand compatibility and passage from normalized split Hecke polynomials to the global row decomposition. The [odd-rank patching chapter](../notes/lsernau-odd-rank-patching.md) proves extension from the step kernels and local-label descent with the actual splitting degree. Nonzero theta lifts, protected steps, actual weak base change, split-case attachment and Iwahori/Shintani compatibility are still required.
 
 ### Module 6 — Assemble the signed budget, then specialize
 

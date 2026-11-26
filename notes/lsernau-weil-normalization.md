@@ -418,10 +418,85 @@ normalized differential have the same period lattice
 and normalized theta function; the preceding maximum
 is thus bounded by one constant \(C_d\ge1\) independent
 of the torsion order and of \(q\). This is the needed
-bound for the integral vacuum. It does not prove
-the transformation of arbitrary translated *jets*;
-that stronger covariance is a separate requirement for
-the sharp archimedean kernel estimates.
+bound for the integral vacuum. The following section proves the scalar translated-jet
+covariance. Its common adelic transport is still required
+for the sharp archimedean kernel estimates.
+
+## 5a. The complete scalar translated jet
+
+The division-function argument also supplies all Taylor
+coefficients, not only the absolute values at torsion.
+Choose \(\alpha=(1+\sqrt{-d})/2\), of norm \(N_\alpha>1\).
+The quotient
+\[
+ R_\alpha(z)=\theta(\alpha z)/\theta(z)^{N_\alpha}
+\]
+is elliptic by the multiplier calculation of the scalar
+chapter. Its divisor is the algebraic pullback divisor
+minus \(N_\alpha\) times the theta divisor, and \(R_\alpha(0)=1\).
+It is therefore algebraic on the actual normalized marked
+curve and transports under each coefficient automorphism
+to the corresponding normalized division function, with
+\(\alpha\) transported as the CM endomorphism.
+Use the local additive parameter \(z\) given by the
+integral of the normalized invariant differential.
+Its expansion in an algebraic formal parameter is
+algebraic coefficientwise, and compatible with this
+transport, by formal integration and inversion.
+
+Writing \(g=-\log\theta\), comparison of formal series
+gives
+\[
+ (N_\alpha-\alpha^n)[z^n]g=[z^n]\log R_\alpha.
+\]
+For \(n=1\) and \(n>2\) the scalar is nonzero by the
+complex absolute values, and for \(n=2\) because
+\(\alpha\) is nonreal and \(\alpha^2\ne\alpha\bar\alpha\).
+The constant of \(g\) is zero.
+This proves algebraicity and exact conjugate covariance
+of the normalized scalar theta Taylor series, without
+requiring the full theorem of complex multiplication for
+an adelic family.
+
+For a torsion shift \(v\) choose a positive integer \(N\)
+with \(Nv\in\Lambda\). The elliptic function
+\[
+ R_{N,v}(z)= (T_v\theta)(Nz)/\theta(z)^{N^2}
+\]
+uses the same twisted translation as the scalar chapter.
+Its ellipticity follows from \(Nv\in\Lambda\) and the
+isogeny multiplier. Its divisor is algebraic.
+Choose a torsion point \(w\) at which neither numerator
+nor denominator vanishes (only finitely many points
+are excluded). The normalized torsion evaluation of
+the numerator equals a root of unity times the normalized
+evaluation \(\theta[v+Nw]\); the phase is the exponential
+of the alternating Hermitian pairing on rational lattice
+vectors. The Gaussian factors cancel against those
+of the denominator, by the norm \(N^2\) of the
+multiplication map. Thus \(R_{N,v}(w)\) is algebraic
+by Section 5. The rational function with this divisor
+and this nonzero value is unique. On every conjugate
+curve the two corresponding normalized values differ
+after transport by a root of unity: raise the scalar
+theta values to a power killing their torsion shifts,
+squared, and use their division functions in Section 5.
+The translation phases are themselves roots of unity.
+Consequently the full germ of \(R_{N,v}\) transports
+up to a single root of unity, independent of the
+Taylor coefficient. The same holds for \(T_v\theta\)
+after multiplication by \(\theta^{N^2}\) and substitution
+\(z\mapsto z/N\).
+
+This proves scalar translated-jet covariance, including
+zero constant terms, on the actual marked model. It
+also applies term by term to the integral standard
+vacuum's finite Fourier/product realization with its
+algebraic linear forms and torsion shifts. What is not
+provided by this argument is one common finite adelic
+transport realizing the conjugate products and the
+semilinear equivariance for all moved nonstandard kernels.
+That stronger common jet conjugation is still needed.
 
 ## 6. Actual normalization of the standard vacuum
 
