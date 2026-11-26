@@ -237,6 +237,8 @@ between different fields or levels.
 
 ### Module 4 — Enough images from two scalar moments
 
+The [positive-type moment chapter](../notes/lsernau-positive-type-moment.md) proves the finite singular-minor and maximal-fixer closure with the sharper factor 1+3b^{-4}, conditional on the actual identity, terminal-fixer and open-cell estimates.
+
 For maps $A_t:S\to T$, with probabilities $p_t$, set
 
 
@@ -265,6 +267,8 @@ Choose the missing-rank tolerance jointly with the complement and index
 costs in (3); no particular tolerance is sacred.
 
 ### Module 5 — Long forms through selected twists
+
+The [Ribet polynomial chapter](../notes/lsernau-ribet-polynomial.md) proves the integral common-element algebra from the exact tied-row interface. The remaining individual-separator step is the construction and valuation of those rows and trace relations, followed by the required auxiliary-variable coefficient extraction and integral action.
 
 At each coefficient prime choose a suitable anticyclotomic twist. One
 twist must serve the required finite family and its first $m$ powers
