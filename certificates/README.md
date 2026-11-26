@@ -13,7 +13,7 @@ published verification and the matching source-hash manifest.
 The [further-reductions review](lsernau-further-reductions-review.json)
 records the new analytic, specialization and CM results; the earlier
 integration review retains its original checkpoint hashes.
-The [revised-plan build](revised-plan-build.json) records the eight-page PDF.
+The [revised-plan build](revised-plan-build.json) records the historical eight-page PDF. The active manuscripts have since been reorganized; see the [archive](../paper/archive/README.md) and [current manuscript publication status](../paper/README.md). No old PDF hash certifies a new source.
 The [revised plan](../blueprint/merged-proof-plan.md)
 keeps its ordinary mathematical suppliers explicit.
 
@@ -23,7 +23,7 @@ keeps its ordinary mathematical suppliers explicit.
 | Integral theta | [Terminal period and Bessel unfolding](theta-period-continuation.json) |
 | Global norms | [Embedded-isometry mean](embedded-isometry-genus-count.json), [unipotent covolume](unipotent-stabilizer-covolume.json), [integral transport](flag-lattice-transport.json), [weighted normal-form sum](weighted-flag-lattice-sum.json) and [review](weighted-flag-lattice-sum-review.json) |
 | Geometry | [All-point height](geometry-point-height.json), [signed determinant assembly](geometry-height-assembly.json) and [independent review](geometry-height-assembly-review.json) |
-| Current compiled manuscripts | [RH build](rh-build.json), [GRH build](grh-build.json), [short guide build](guide-build.json) |
+| Historical compiled manuscripts | [RH build](rh-build.json), [GRH build](grh-build.json), [short guide build](guide-build.json) |
 
 The remainder of this file is a **historical index of checks**, with commands and claims preserved at their original scope. The “current” label in dated sections refers to that historical checkpoint.
 

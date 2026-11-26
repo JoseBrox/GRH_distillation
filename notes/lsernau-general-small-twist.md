@@ -16,11 +16,14 @@ Claude, especially [StickelbergerSystems][systems] 193–281,
 results already written in this repository, not a formal
 theorem as an unproved mathematical premise.
 
-This note does **not** construct the systems from the
-critical L-values, verify the actual moving representations
-and their defect bounds, or obtain the projection denominator.
-These are the next applications. No whole legacy proof-map
-node is closed by this result.
+This theorem assumes the datum and integral system conditions.
+The [datum construction](lsernau-main-summand-data.md) derives those
+conditions from the attached type-compatible representations; the
+[critical-value construction](lsernau-critical-value-systems.md)
+derives the systems from the actual scaled-kernel and period inputs.
+Those attachment, kernel and analytic formula inputs, and the
+projection denominator, are still required. No whole legacy
+proof-map node is closed by this theorem.
 
 ## 1. The system and its finite witness
 
@@ -373,13 +376,12 @@ automorphic datum already meets those
 hypotheses. In particular the following
 remain to be proved for the revised route:
 
-* the actual Selmer data, local rank
-  conditions and uniform normalized
-  defect/first-prime bounds;
-* construction of the Stickelberger
-  systems from the integral critical-value
-  measures and exact L-value ratio
-  identities (LValueSystems and ClassSums);
+* attachment of the actual representations with the source's
+  local types and labelled Hodge data, as required by the
+  [datum construction](lsernau-main-summand-data.md);
+* uniform kernel integrality and critical-value norm and period
+  formulas, as required by the
+  [system construction](lsernau-critical-value-systems.md);
 * the first-order projection denominator
   and the one-lift/chain determinant ratios
   on the common theta maps;
