@@ -696,25 +696,45 @@ matrices above \(p\) preserve the module. Locally above
 \(p\) the Weil operator fixes the vacuum and sends
 integral-after-\(\delta\) translations to such translations.
 At the other places, a moved vacuum has an expansion in
-the orthogonal lattice-Heisenberg translates with
-coefficients of the form roots of unity times the
-inverse conjugate multiplier and local additive phases.
-The intersection indices and the finite multiplier
-only use powers of residue characteristics away from
-\(p\), which are \(p\)-units; hence all these coefficients
-are \(p\)-integral. More explicitly the intertwining
-and lattice-stabilizer conditions restrict the possible
-cosets to a finite subgroup of the dual lattice quotient;
-each nonzero coefficient is a value of the character
-of that subgroup times the vacuum coefficient.
-This is the usual lattice Heisenberg representation:
-the coefficient equation follows by commuting a
-translate of the original vacuum through the subgroup
-fixing the moved vacuum. It gives the same conclusion
-for nonintegral adelic points away from \(p\), including
-at places fixed by conjugation, since the lattice
-intersection index and multiplier there are supported
-only at their residue characteristic.
+the orthogonal lattice-Heisenberg translates of the standard
+vacuum. To justify its coefficient integrality, write \(L\)
+for the self-dual symplectic lattice in the Heisenberg model
+and \(L'=gL\). The moved vacuum is an eigenvector for the
+signed Heisenberg operators of \(L'\), with eigenvalues
+differing from the conjugated standard-lattice action only
+by roots of unity. Its coefficient against the standard
+vacuum is nonzero, by the prescribed multiplier formula.
+In particular the two vacuum vectors have identical
+eigenvalues on \(L\cap L'\), since those operators are
+unitary. By the Heisenberg commutator, a translate indexed
+by \(x\bmod L\) can have nonzero coefficient only if
+\(x\in(L\cap L')^\perp=L+L'\), where the perpendicular uses
+the conductor pairing. The equality follows by duality of
+full local lattices (or Smith reduction). Choose the
+representative \(x\in L'\) of each such coset. The coefficient
+then differs from the standard vacuum coefficient by only
+a root of unity, by the eigenvector property. There are
+finitely many such cosets. This argument applies also at
+nonsplit places; it uses the full symplectic lattice, not a
+split polarization.
+
+The vacuum coefficient is the inverse conjugate of the
+prescribed finite multiplier. For a finite unitary element
+integral above \(p\), the determinant ideal of its
+saturating lattice is a unit at every place above \(p\).
+The value of \(\chi_{\rm fin}=\upsilon|\cdot|^{-1/2}\) on
+that determinant is a coefficient-prime unit: raising
+the ideal to a principal power expresses the corresponding
+character power as a product of CM embeddings of a
+generator (up to a finite-order factor), as in the
+period-factor proof of the normalization chapter. That
+generator is a unit above \(p\), and the same argument
+applies after complex conjugation. Thus the vacuum
+coefficient and all nonzero expansion coefficients are
+\(p\)-integral, not merely bounded in complex absolute
+value. Above \(p\) the local translate is still the
+vacuum, so this finite expansion respects the required
+integral-after-\(\delta\) translation support.
 An algebraic determinant character of a finite
 unitary element integral above \(p\) has unit value
 at the coefficient prime by its prescribed infinity
