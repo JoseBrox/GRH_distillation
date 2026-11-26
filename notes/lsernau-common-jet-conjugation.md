@@ -61,32 +61,28 @@ Appell--Humbert formula: the extra commutator involving
 translate is a period. The algebraically transported divisor
 of \(g_s\) is the divisor of \(g'_s\): the zero classes solve
 \(N z+s\Omega_0=T\) with \(T\) the marked 2-torsion class;
-all are torsion in \(\Lambda/(2N^2)\) and transport by
+all are torsion in \((2N^2)^{-1}\Lambda/\Lambda\) and transport by
 \(\mathcal O_K\)-linearity to the corresponding solutions
 with \(s v'\) and \(T'\). There are exactly \(N^2\) simple
 zeros on each curve. Hence the transported section is
 \(c\,g'_s\) for a constant \(c\ne0\).
 
-To identify \(c\), first observe that \(w,w'\) are of order
-\(2N^2>2\), so \(\theta(w),\theta'(w')\ne0\).
-The algebraic description by ratios implies, for each degree-\(m\)
-section \(h\) and its transport \(h^\sigma\),
-\[
-       h^\sigma(w')=\mu^m\sigma(h(w)),
-       \qquad \mu=\theta'(w')/\sigma(\theta(w))\ne0.
-\]
-At \(aw,aw'\) with \(a\in\mathcal O_K\), the same law has
-factor \(\mu^{m a\bar a}\): apply the identity at \(w,w'\)
-to \(h(az)\), a section of degree \(m a\bar a\), whose
-transport is \(h^\sigma(az)\) because \(\sigma(a)=a\).
-The case \(a=0\) follows directly from the Taylor constant.
-At \(z=-Ns w\), the functions \(g_s(z)\) and \(\theta(Nz)\)
-are both \(\theta(s\Omega_0/2)\); the exponential factor
-is 1 and theta is even. Likewise on the primed curve.
-The latter section has exactly conjugated Taylor coefficients.
-Applying the evaluation law at \(a=-Ns\) to both sections
-cancels their identical factor \(\mu^{N^2 a\bar a}\).
-If the common value is nonzero, this gives \(c=1\).
+To identify \(c\), compare \(g_s\) with the degree-\(N^2\)
+section \(h(z)=\theta(Nz)\), whose transported section is
+\(h'(z)=\theta'(Nz)\) by exact Taylor covariance.
+The ratio \(g_s/h\) is an algebraic elliptic function,
+with transported ratio \(c\,g'_s/h'\).
+At \(z=-Ns w\) and its corresponding torsion point
+\(z'=-Ns w'\), the numerator and denominator agree on
+each curve: their values are respectively
+\(\theta(s\Omega_0/2)\) and \(\theta'(sv'/2)\), since
+the translation exponential is 1 and theta is even.
+Vanishing of the denominator at these two points is
+equivalent by transport of its zero divisor. If the
+denominator is nonzero, the ratio at \(z\) is 1, hence
+its conjugate ratio at \(z'\) is 1. This gives \(c=1\)
+without comparing the individual (possibly transcendental)
+section values.
 If it is zero, then \(s\Omega_0/2\) and \(s v'/2\) are
 congruent to the marked 2-torsion points. The respective
 translates by twice these halfperiods have value \(-1\)
@@ -266,7 +262,7 @@ Put \(\mathcal L=\widehat{\mathcal O}_E^n\) in the normalized
 finite coordinates, and let \(W(x)\) be the signed translation,
 so \(W(x)v=v\) for \(x\in\mathcal L\), where \(v\) is the unit
 vacuum. By (4) the sign (the source semicharacter evaluated
-on \(x^*x/2\)) also transforms correctly, hence
+on its prescribed fixed scalar multiple of \(x^*x/2\)) also transforms correctly, hence
 \(L_\sigma W(x)=W(bx)L_\sigma\).
 By norm surjectivity on units of the unramified local
 quadratic algebras, write \(b=u a\) where \(u\bar u=1\)
@@ -380,8 +376,8 @@ is its vector of archimedean coordinates. For distinct
 such rational vectors, their difference again satisfies
 the finite lattice condition. Its squared archimedean
 length is \(\operatorname{Tr}_{E/K}(\bar\delta^t J\delta)\),
-a positive integer: finite integrality is precisely
-\(\alpha\bar\alpha=\mathfrak D_{E/K}^{-1}\), and the trace
+a positive integer: finite integrality uses precisely the equality of fractional ideals
+\((\alpha\bar\alpha)=\mathfrak D_{E/K}^{-1}\), and the trace
 is real and belongs to \(\mathcal O_K\).
 Thus these points in \(\mathbb R^{2nf}\) have mutual
 distances at least 1, independently of the pointed space,

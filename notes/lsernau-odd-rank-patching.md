@@ -79,7 +79,7 @@ supplier guarantees only an approximation.
 
 Take the fixed spherical test place \(w\), coefficient prime
 \(\ell\), and the finite nonspherical support \(S\).
-Use the source's quadratic step \(E_0/E\) that protects these
+Use the [protected quadratic step](lsernau-protected-quadratic-steps.md) \(E_0/E\) that protects these
 places, with open normal step kernel \(N_0\).
 The step has finitely many ramified inertia generators whose
 images generate \(G/N_0\); call their set \(I\).
