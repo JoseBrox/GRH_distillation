@@ -7,10 +7,10 @@ standard-space theta model, including the primes dividing the cyclotomic
 conductor. It uses classical CM elliptic curves, class field theory,
 the first Kronecker limit formula, and the classical adelic Weil
 representation with its rationally invariant Heisenberg theta
-functional. The rational **unitary-group** invariance and compatibility
-of the theta functional on the nonstandard spaces of the global
-see-saw must still be established; no independent global kernel
-unfolding is inferred from the standard lattice calculation.
+functional. The [nonstandard transport chapter](lsernau-nonstandard-weil-transport.md)
+proves rational unitary-group invariance and exact phase-compatible
+transport of the theta functional on the nonstandard spaces.
+Global kernel unfolding and uniform quotient estimates are separate.
 
 All source references are to
 [lsernau/grh-lean@72fead1](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src).
@@ -589,11 +589,12 @@ realization. In particular its homogeneous derivative
 bound with \(\bar\delta\sqrt{-d}\) and its level-one
 non-split Frobenius normal form apply there.
 No loss for the number of terms or translation
-denominators is introduced. The exact finite-to-global
-transport of Weil operators on the common diagram,
-the conjugation of the full jets, the sharp opposite
-tests and the exceptional-prime Hecke colength and
-chain divisibility comparison remain separate steps.
+denominators is introduced. The [nonstandard transport chapter](lsernau-nonstandard-weil-transport.md)
+supplies exact pointed-space transport and the mixed summation laws.
+The [marked Hecke index chapter](lsernau-marked-hecke-index.md) supplies
+the exceptional-prime colength and its repeated-product comparison.
+The full semilinear conjugation of jets, sharp opposite tests,
+and the common-kernel gauge and uniform global estimates remain.
 
 Source: Lib/Weil/Construction/ThetaDictionary.lean,
 252--336,430--508,539--622
