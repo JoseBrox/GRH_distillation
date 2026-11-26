@@ -332,6 +332,8 @@ scope; it does not automatically construct these twists.
 
 The [one-lift chapter](../notes/lsernau-one-lift-comparison.md) reconstructs the exact comparison from the finite gluing formula, including the integral tight frame, mixed pairings and simultaneous diagonal separator. It proves the conditional signed three-exchange ratio budget $50m+k(4B+10-\mathrm{directionAmount})$ using the constant ratio bound. The individual first-order separators, actual gluing and period estimates, products spanning and sharp tests remain to be established.
 
+The [two-string attachment chapter](../notes/lsernau-galois-two-string.md) proves the CM torus character separation, cancellation of the two odd-rank character strings, spherical direct-summand compatibility and passage from normalized split Hecke polynomials to the global row decomposition. Its nonzero theta-lift, odd-rank attachment and nonspherical labelled local-global inputs are still required.
+
 ### Module 6 — Assemble the signed budget, then specialize
 
 Apply (3), divide by the actual positive rank and the exact prime-sum
