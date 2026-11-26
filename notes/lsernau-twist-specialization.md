@@ -4,9 +4,10 @@
 here in ordinary mathematics.** They reconstruct the degree-independent
 roots-of-unity ingredient of
 [`lsernau/grh-lean@72fead102f663d5c7a407964a13dc0cf9d977207`][source],
-and strengthen its error bookkeeping. The finite arithmetic presentations
-and auxiliary-prime constructions to which the ingredient is applied
-remain separate obligations.
+and strengthen its error bookkeeping. The finite arithmetic presentations and auxiliary-prime constructions
+were proved subsequently and are combined in the
+[general small-twist theorem](lsernau-general-small-twist.md). Its
+actual moving-datum and critical-value system hypotheses remain.
 
 The source attributes the underlying proof to Levent Alpöge with Claude
 and the shorter rewriting to Sernau, Anthropic colleagues and Claude.
@@ -368,13 +369,12 @@ Whether this improves the final arithmetic exponent requires
 tracking their structural defects and their occurrences in the
 actual determinant identity.
 
-What is still missing from an ordinary proof of the general twist
-theorem is the arithmetic supplier of (7.1): the auxiliary-prime
-construction, finite Selmer presentations, sharp minors and their
-witnesses, descent and the exact evaluation-to-length implication.
-This note completes the roots-of-unity specialization ingredient
-conditional on those precise interfaces; it does not prove their
-arithmetic hypotheses.
+The arithmetic supplier of (7.1) is now proved under the source's
+datum and system hypotheses in the [general small-twist theorem](lsernau-general-small-twist.md),
+using the subsequent proofs of auxiliary-prime supply, tied descent,
+finite presentations and both kinds of witnesses. This note remains
+an independent valuation lemma; construction of the actual moving
+data and critical-value systems is not a consequence of it.
 
 ## 8. Necessary hypotheses and verification
 

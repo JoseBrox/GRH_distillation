@@ -284,17 +284,21 @@ using the finite Greenberg–Wiles formula and a short mirror pairing.
 The [CM prime-supply proof](../notes/lsernau-auxiliary-prime-supply.md)
 now supplies both of those existence hypotheses by ordinary
 Chebotarev and class field theory, preserving all character conditions.
-It also replaces the Selmer line's linear level requirement by a
-logarithmic radius cost. The cofinal arithmetic supplier and
-Stickelberger-system witnesses remain open.
+The [general small-twist theorem](../notes/lsernau-general-small-twist.md)
+now proves the system-polynomial witnesses as well, assembles the
+abstract source theorem for arbitrary finite signed powers, and gives
+one total budget for the length and evaluation excesses and tame inertia.
+Both Selmer and system line arguments have logarithmic radius cost.
+The actual Selmer data, critical-value systems and their defect bounds
+remain separate arithmetic obligations.
 
 Reconstruct the remaining arithmetic in this order:
 
-1. Use the proved cofinal auxiliary-prime supply and tied-group
-   theorem (including the scalar-inertia, matrix-span, local-condition
-   and reciprocity inputs), and the Stickelberger-system witnesses.
-   Then apply the proved finite presentation, Selmer line-witness,
-   evaluation-to-length and simultaneous specialization theorems.
+1. Construct the actual Selmer data, verify their scalar-inertia,
+   matrix-span, local-rank and defect bounds, and construct the integral
+   Stickelberger systems of critical values (including their exact
+   Euler-factor and ratio identities). Then apply the proved general
+   small-twist theorem on those data.
 2. The first-order congruence-to-projection-denominator comparison on
    the actual coefficient lattice, with normalized lengths retained.
 3. The comparison operator and one-lift determinant identity, with
@@ -377,10 +381,10 @@ dependence; the finite-order result does not settle them.
 
 The finite-presentation, conditional Selmer line-witness and
 evaluation-to-length comparison are now written and proved. The first
-remaining deliverable is the actual moving-datum defect estimates and the
-Stickelberger-system witnesses, followed by the one-lift denominator
-bound. The simultaneous specialization step is already proved with
-stronger shared error control. In parallel, build the
+remaining deliverable is the actual moving-datum construction and defect
+estimates and the integral critical-value systems, followed by the
+one-lift denominator bound. The abstract small-twist theorem is proved
+with stronger shared error control. In parallel, build the
 common theta diagram and the scalar second-moment supplier for the same
 admissible data. These are the central mathematical tasks.
 

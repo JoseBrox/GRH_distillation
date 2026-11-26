@@ -5,9 +5,9 @@
 and the conditional small-witness theorem for the actual tied-prime
 interface of the readable Sernau source. This completes the algebraic
 part of that interface without any moving deformation-ring argument.
-The construction and uniform cardinality of suitable tied primes,
-their initial tied Selmer bounds, and the Stickelberger systems'
-witnesses are separate arithmetic obligations.
+The tied-prime construction, its uniform cardinality and tied-length
+bounds were proved subsequently, and the [general small-twist theorem](lsernau-general-small-twist.md) now also supplies the system witnesses.
+Actual moving-datum and critical-value hypotheses remain to be checked.
 
 Source: the Alpöge–Claude proof as rewritten by Sernau in collaboration
 with Anthropic and Claude, at [72fead102f663d5c7a407964a13dc0cf9d977207][pin].
@@ -361,8 +361,10 @@ inferred from them.
 
 The subsequent [prime-supply proof](lsernau-auxiliary-prime-supply.md) and [classical descent](lsernau-classical-tied-descent.md) now supply the combined auxiliary-prime
 selection and bounded tied-length theorem (AuxiliaryPrimes, Count,
-Mirror, Descent), followed by the Stickelberger-system witness and
-the first-order projection-denominator application. No whole legacy
+Mirror, Descent). The [general small-twist theorem](lsernau-general-small-twist.md)
+supplies the system witnesses and combines the abstract results.
+The actual datum and system construction and first-order
+projection-denominator application remain. No whole legacy
 proof-map node is closed by the algebraic completion above.
 
 [pin]: https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207

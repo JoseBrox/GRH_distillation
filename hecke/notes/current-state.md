@@ -9,9 +9,11 @@ odd-order anticyclotomic characters with coprime-order rational twists,
 without conductor restrictions on the latter. It includes both cubic sectors at every
 coefficient prime at least 5 and every permitted dyadic level. The
 [degree-independent specialization](../../notes/lsernau-twist-specialization.md)
-is proved; reconstruct the finite presentations and bounded witnesses
-for the general twisting theorem, then couple these new twists to the actual
-cubic theta maps and determinant-ratio height bound. This is an alternative
+is proved. The [general small-twist theorem](../../notes/lsernau-general-small-twist.md)
+now gives the common finite presentations, bounded witnesses and
+cofinal prime selection for CM fields under its stated hypotheses.
+Verify the actual cubic data and critical-value systems, then couple
+these twists to the cubic theta maps and determinant-ratio height bound. This is an alternative
 to bounding the old untwisted moving groups; it does not supply their
 lengths. Primes 2 and 3 and the global critical-scale estimate remain.
 The new Dirichlet formal theorem does not prove general Hecke GRH.
