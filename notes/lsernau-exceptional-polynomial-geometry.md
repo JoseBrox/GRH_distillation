@@ -5,7 +5,8 @@ exceptional edge estimate and its first lattice-inclusion bound. It also
 proves the final branching gauge comparison with its precise scalar. The companion [middle-edge chapter](lsernau-exceptional-middle-edge.md)
 proves the defect dimensions, invariant averaging including the actual
 Frobenius-factor contraction, and sharpened pairing colength for the
-specified finite edge model.
+specified finite edge model. The [branching chapter](lsernau-branching-normalization.md)
+constructs the bounded integral matrix used in the terminal restriction.
 
 Sources are pinned to
 [lsernau/grh-lean@72fead1](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src).
@@ -437,9 +438,9 @@ powers, so clearing determinant powers and comparing coefficients in
 complex solution space is one dimensional; a nonzero rational
 solution, cleared of denominators, is integral. This existence
 argument uses the classical branching rule (the source cites
-Goodman–Wallach, Theorem 8.1.1). It does not estimate the
-integer scalar of the resulting matrix; the source's bounded
-normalization is important for the archimedean bound.
+Goodman–Wallach, Theorem 8.1.1). It does not estimate the integer scalar. The [branching normalization](lsernau-branching-normalization.md)
+constructs the actual matrix with the bounded tail-hook scalar and
+proves the Gram-norm bound, so (9) can be used with that matrix.
 
 The actual restriction is
 \[
@@ -512,7 +513,10 @@ Lib/GLn/Branching/NormBound.lean,303–373,656–end (blob
 
 The local exceptional-prime edge estimate is now complete in the
 [companion chapter](lsernau-exceptional-middle-edge.md), including the
-middle pairing and its full source parameter range. The quantitative
-branching normalization, global identification of the marked-level
-edge and Weil transport maps, and analytic estimates remain separate
-requirements.
+middle pairing and its full source parameter range. The
+[branching normalization](lsernau-branching-normalization.md) also
+supplies the bounded integral matrix for (9). Global identification
+of the marked-level edge and nonstandard Weil transport maps, and
+analytic estimates remain separate requirements. The improved local
+budget must be carried through each global charge comparison before
+replacing the source divisorConstant throughout.
