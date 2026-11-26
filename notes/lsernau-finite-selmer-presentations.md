@@ -359,7 +359,7 @@ inferred from them.
 | [AuxiliaryPrimes.lean][aux] 429–483 | Paired auxiliary-prime conditions and slopes; existence not proved here. |
 | [GeneralTheorem.lean][gen] 392–430 | Order of choices for the simultaneous twisting theorem. |
 
-The remaining critical arithmetic task is the combined auxiliary-prime
+The subsequent [prime-supply proof](lsernau-auxiliary-prime-supply.md) and [classical descent](lsernau-classical-tied-descent.md) now supply the combined auxiliary-prime
 selection and bounded tied-length theorem (AuxiliaryPrimes, Count,
 Mirror, Descent), followed by the Stickelberger-system witness and
 the first-order projection-denominator application. No whole legacy

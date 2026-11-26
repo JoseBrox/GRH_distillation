@@ -5,8 +5,9 @@ construction:** the terminal tied-length estimate and a uniform
 bound on the number of descent primes. This note substitutes the
 classical finite Greenberg–Wiles formula for the custom module of
 relations used in the Sernau–Anthropic proof. It retains the exact
-paired-prime constraints and all coefficient lengths. No Lean replay
-or independent verification of the prime construction is claimed.
+paired-prime constraints and all coefficient lengths. The [subsequent CM prime-supply proof](lsernau-auxiliary-prime-supply.md)
+now establishes the separate prime-supply input. No Lean replay
+is claimed.
 
 Source: [Sernau–Anthropic, revision 72fead1][source], based on
 Alpöge and Claude. See [Count][count] 205–548, [Mirror][mirror]

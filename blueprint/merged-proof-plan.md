@@ -281,13 +281,16 @@ The [classical-duality descent](../notes/lsernau-classical-tied-descent.md)
 now proves the tied-length bound and bounded number of auxiliary primes
 from the precise singleton and paired Frobenius/character prime supply,
 using the finite Greenberg–Wiles formula and a short mirror pairing.
+The [CM prime-supply proof](../notes/lsernau-auxiliary-prime-supply.md)
+now supplies both of those existence hypotheses by ordinary
+Chebotarev and class field theory, preserving all character conditions.
 It also replaces the Selmer line's linear level requirement by a
 logarithmic radius cost. The cofinal arithmetic supplier and
 Stickelberger-system witnesses remain open.
 
 Reconstruct the remaining arithmetic in this order:
 
-1. Prove the precise cofinal auxiliary-prime supply for the established tied-group
+1. Use the proved cofinal auxiliary-prime supply and tied-group
    theorem (including the scalar-inertia, matrix-span, local-condition
    and reciprocity inputs), and the Stickelberger-system witnesses.
    Then apply the proved finite presentation, Selmer line-witness,
@@ -374,7 +377,7 @@ dependence; the finite-order result does not settle them.
 
 The finite-presentation, conditional Selmer line-witness and
 evaluation-to-length comparison are now written and proved. The first
-remaining deliverable is the singleton and paired Frobenius/character prime supply and the
+remaining deliverable is the actual moving-datum defect estimates and the
 Stickelberger-system witnesses, followed by the one-lift denominator
 bound. The simultaneous specialization step is already proved with
 stronger shared error control. In parallel, build the
