@@ -378,8 +378,7 @@ remaining $D^{\eta/2}$ and use $f\le D$.
 For the square denominators,
 
 ```math
-\sum_{(nm)_{\rm odd}\ {
-m square}}
+\sum_{(nm)_{\rm odd}\ \mathrm{square}}
                     w_j(nu)w_j(mu)\ll u^{-1}\log(2/u).         \tag{4.8}
 ```
 
