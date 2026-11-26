@@ -218,7 +218,7 @@ The [common finite theta chapter](../notes/lsernau-common-theta-finite.md) speci
 
 ### Module 3 — Short integral images
 
-The [scalar CM supplier](../notes/lsernau-cm-theta-normal-form.md) establishes the marked good model, integral theta sections, derivative ring, and exact scalar non-split normal form by classical CM potential good reduction and coefficient recursion. The remaining local problem is the actual Weil-product and charged jet realization, together with the sharp tests.
+The [scalar CM supplier](../notes/lsernau-cm-theta-normal-form.md) establishes the marked good model, integral theta sections, derivative ring, and exact scalar non-split normal form by classical CM potential good reduction and coefficient recursion. The [charged jet theorem](../notes/lsernau-charged-jet-estimate.md) gives finite Fourier inversion, product factorization from the precise Weil inputs, the Frobenius coupling, and a uniform Schur-jet bound with a smaller direction-congruence cost (a finite min-cut) and exact factorial loss. Remaining: the actual Weil-lattice, vacuum and period normalization inputs, comparison of charges on the chain and sharp test vectors.
 
 Construct a spanning set of integral source forms. Prove its theta-jet
 divisibilities and complex norm bounds on the same source lattice.
