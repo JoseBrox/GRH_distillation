@@ -175,12 +175,24 @@ The missing share \(r=1-\alpha\) obeys
 Iteration from \(r=1\) proves the result.
 \end{proof}
 
-The open arithmetic task is to prove (4) for the actual
-Poincar\'e map with its source and target measures and its
-retained integral subspace. The source and target comparisons
-must use the same normalization as (A), up to a recorded scalar.
-The \prooflink{notes/lsernau-moment-and-prime-reductions.md}
-{full moment lemma} records the sharper recurrence.
+The \prooflink{notes/lsernau-common-moment-interface.md}
+{finite dimension and moment argument} counts the definite
+principal-level forms by class mass, using the triviality of
+stabilizers at a split principal level. Once the good-form
+multiplicities agree across the source spaces, the target
+dimension is at most \(|\mathcal G|d_\infty\mathrm{mass}_r\).
+For the source's scaled Poincar\'e map \(P\), the good
+projector \(E\), and the finite group \(\mathcal G\), it
+suffices to bound the unprojected moment
+\(\sum_g\|P^*\rho(g)P\|_{\rm HS}^2\) and the positive
+deficit of \(P^*EP\). Compression of the averaged positive
+operator cannot increase its squared trace. The source's
+two numerical bounds, if established, give \(e=19b^{-4}\)
+in (4), so \(n\ge(1-4b^{-2})D\) with at most
+\(4D\log b/d_S+1\) translates for \(b\ge3\).
+The actual global unfolding estimates and the comparison of
+multiplicities remain open, as does compatibility with
+the integral source family in (A).
 
 \section{Long forms from selected twists}
 For input (C), the source forms \(\Theta_\xi\) must realize a
@@ -242,12 +254,51 @@ Selmer data \emph{from} the attached type-compatible representations;
 the attachment and its trace identity on the common theta
 eigensystems remain to be proved.
 
-The remaining lower-bound work is to establish those attachment
-inputs and the integral critical-value measures, and convert the
-resulting twist bounds into projection-denominator bounds on the
-same coefficient lattices. The comparison operator for one
-lift, its exact L-value formula, the exchange/chain identities,
-and a complement basis with a summable cost must then be supplied.
+\subsection{Critical values and the chain correction}
+The \prooflink{notes/lsernau-critical-value-systems.md}
+{integral-system construction} expands the squared norms of
+the rank-\(2z\) character lifts for \(z\ge2\), and the
+rank-two determinant period square for \(z=1\), into group-ring
+elements. The finite stabilizer denominators divide \(G\);
+an idelic Hilbert 90 pushforward produces the exact
+Stickelberger systems from these measures, with no division
+by a torus class number. The remaining inputs are the uniform
+scaled-kernel integrality and the exact analytic norm and
+period formulas, including nonvanishing of the base values.
+
+The initial tame value \(\lambda\ne1\) is a root of unity.
+Its exact valuation \(v_\ell(1-\lambda)\) is zero unless its
+order is an \(\ell\)-power, when it is at most
+\(1/(\ell-1)\). In the small-twist theorem the base measure
+evaluation cancels, and a critical ratio \(R_\xi\) satisfies
+\[
+ v_\ell(\iota R_\xi)\le2v_\ell(1-\lambda)+2^{-\ell}.
+\]
+Choosing a fixed initial place above \(p_0\) except at
+\(\ell=p_0\), when a place above \(p_1\) is used, gives
+a total inverse-ratio height less than
+\(4\log 2+3/2<5\) per critical pair, in the source's
+height convention. This is conditional on the actual
+measure inputs just stated. It is uniform over the
+coefficient isomorphisms and the auxiliary level.
+
+With the common chain and the single-lift Rallis Gram
+identities, determinant multiplicativity gives
+\[
+ \frac{Z(\xi)}{Z(1)}
+ =\left(N_Q^{e/2}\prod_{i<j}\mathcal R_{ij}(\xi)\right)^D
+       \prod_{j=1}^m\frac{\Delta_j(\xi)}{\Delta_j(1)},
+\]
+where \(\Delta_j\) are the single-lift volumes, the first
+factor is the exchange correction, and every volume must be
+nonzero. The correction before exponent \(D\) has inverse
+height at most \(5t\,m(m-1)/2\) under the above hypotheses.
+The exchange/Rallis identities themselves remain open.
+
+The remaining lower-bound work is the attachment and
+critical-value inputs, the projection denominator, the
+single-lift comparison operators and determinant ratios,
+and the complement basis on the common lattices.
 The earlier W10 metric and divisor construction is not a
 prerequisite of this route.
 

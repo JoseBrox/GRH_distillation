@@ -254,8 +254,7 @@ weighted choices and unequal individual errors. In the group case,
 $\operatorname{tr}K^2$ is the mean of
 $\|B^*\rho(g)B\|_{\rm HS}^2$.
 
-The hard task is to establish these moments for the actual arithmetic
-maps. Unfolding, multiplicities, off-diagonal terms, local labels,
+The [finite dimension and compression argument](../notes/lsernau-common-moment-interface.md) proves the definite-space mass dimension formula, and shows that the unprojected second moment suffices after compression by the good projector. The source bounds, if established, give the required rank share with at most $4D\log b/d_S+1$ translates. The hard task is to establish these moments for the actual arithmetic maps and prove the equality of good-form multiplicities. Unfolding, multiplicities, off-diagonal terms, local labels,
 stabilizers and normalizing masses remain on the critical path. Prefer
 these scalar outputs over unnecessarily strong pointwise conditioning.
 Choose the missing-rank tolerance jointly with the complement and index
@@ -295,16 +294,25 @@ now proves the scalar-inertia, matrix-span, rank and defect conditions
 from the attached main-summand representations with the source's type
 and Hodge compatibility. Its strengthened normalized bound is
 \(((4f+2)n+1)v_\ell(G)\) instead of \((4f+3)n v_\ell(G)\).
-The attachment on the common theta eigensystems, their exact trace
-identity, and the integral critical-value measures remain to be proved.
+The [critical-value construction](../notes/lsernau-critical-value-systems.md)
+supplies the group-ring pushforward and integral coefficient algebra
+from the source's scaled-kernel integrality and exact analytic period
+formulas. In its actual ratio estimate the fixed base evaluation
+cancels. The exact root-of-unity valuation gives inverse-ratio height
+less than \(5\) per critical pair, uniformly over coefficient primes
+and isomorphisms. The exchange correction before exponent \(D\)
+therefore costs at most \(5t\,m(m-1)/2\) once the system and chain inputs
+hold. The attachment on the common theta eigensystems, their trace
+identity, the kernel integrality and the period formulas remain open.
 
 Reconstruct the remaining arithmetic in this order:
 
 1. Establish the attachment and local type/Hodge compatibility for the
    common theta eigensystems, including the normalized lift trace identity.
-   Apply the proved Selmer datum construction, and construct the integral
-   Stickelberger systems from critical-value measures. Apply the proved
-   general small-twist theorem to the resulting family.
+   Apply the proved Selmer datum construction. Prove the uniform scaled
+   kernel integrality and analytic norm/period formulas of the critical
+   value construction, which then gives the systems and their ratio
+   budget. Apply the proved general small-twist theorem.
 2. The first-order congruence-to-projection-denominator comparison on
    the actual coefficient lattice, with normalized lengths retained.
 3. The comparison operator and one-lift determinant identity, with
@@ -387,9 +395,9 @@ dependence; the finite-order result does not settle them.
 
 The finite-presentation, conditional Selmer line-witness and
 evaluation-to-length comparison are now written and proved. The first
-remaining deliverable is the attachment and type compatibility on the
-common theta spaces and the integral critical-value measures, followed by
-the one-lift denominator bound. The abstract small-twist theorem is proved
+remaining deliverable is attachment and type compatibility on the common
+theta spaces, scaled-kernel integrality and the analytic critical-value
+norm and period formulas, followed by the one-lift denominator bound. The abstract small-twist theorem is proved
 with stronger shared error control. In parallel, build the
 common theta diagram and the scalar second-moment supplier for the same
 admissible data. These are the central mathematical tasks.

@@ -294,8 +294,8 @@ by compactness, and contains it. Pass to a common finite
 extension for the finite family. Enlarging this field by
 unramified extensions makes the residue cardinality as large
 as desired while keeping the absolute ramification index.
-For any integer \(M>\max_i B_i+1\), choose it large enough
-that the residue cardinality exceeds
+For any integer \(M>\max_i B_i+1\), enlarge the unramified coefficient extension
+so that the residue cardinality exceeds
 \(2n_i\operatorname{ord}_\pi(\ell^M)+1\) for all \(i\).
 The preceding bounds hold after these extensions; no
 circularity in the choice of \(M\) results.
