@@ -6,9 +6,10 @@ diagram of the source. The local gain budget is unchanged or improved.
 It uses the charged-jet theorem and standard Weil normalization already
 proved in this repository. The transport of these estimates to the
 common kernels, including their exact unramified Hecke-polynomial identity,
-is an explicit input below. The exceptional-prime elementary-divisor
-estimate and the local double-lift relation at the auxiliary prime are
-not proved here.
+is an explicit input below. The [marked Hecke index chapter](lsernau-marked-hecke-index.md)
+proves the global exceptional-prime source index, using the local
+middle-edge theorem. The auxiliary double-lift relation is proved in
+the split transfer chapter under the stated kernel equivariance.
 
 All source references below refer to
 [lsernau/grh-lean@72fead1](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src).
@@ -346,9 +347,13 @@ gain \(G_p-2L_p\) on \(Y^m\) of the integral source.
 On the other summand \(p^{\lceil2mfa/p\rceil}\) times the
 integral source the unmarked (5) and (1) already give gain
 at least \(G_p-L_p\). The same bound \(G_p-2L_p\) therefore
-holds on their sum. The missing index estimate for this sum
-is exactly the elementary-divisor theorem for the actual
-scaled edge operator, not a further charge comparison.
+holds on their sum. The index estimate for this very sum is supplied by the
+[marked Hecke index chapter](lsernau-marked-hecke-index.md),
+which identifies the scaled operator with the local edge
+model and proves the repeated-product bound
+\(\dim X(6fa/p+1/m)\), in place of the source's
+\(\dim X(14fa/p+1/m)\). No change to the gauge allowance
+is inferred from this index improvement.
 
 At small nonexceptional primes (5) and Section 1 give
 \(G_p-2L_p\) on the whole integral source. Outside those
@@ -458,7 +463,8 @@ theta-kernel equivariance. It also gives the exact signed
 scalar loss and a smaller last-column Fourier denominator.
 The [exceptional polynomial chapter](lsernau-exceptional-polynomial-geometry.md)
 proves the depth estimate, outer edge inclusions, exact Pieri volume and
-terminal gauge identity. The middle edge estimate, bounded branching
-normalization, nonstandard global kernel transport and admissible-parameter
-existence are still needed. The two global estimates cannot
+terminal gauge identity. The middle-edge and bounded branching chapters
+complete those local comparisons, and the marked Hecke index chapter
+completes their global source-index propagation. Nonstandard global
+kernel transport and admissible-parameter existence remain necessary. The two global estimates cannot
 be replaced by these local chain bounds.

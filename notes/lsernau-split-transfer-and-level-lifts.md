@@ -787,6 +787,9 @@ Reference: ThetaLiftGauge.lean,100--325
 The [exceptional polynomial chapter](lsernau-exceptional-polynomial-geometry.md)
 proves the terminal gauge with its precise level scalar, relative to the
 integer branching intertwiner, and the outer edge-inclusion bounds.
-The bounded branching normalization, middle edge estimate, nonstandard
-lower-chain kernel transport, common period and injectivity, and full
-adelic conjugation of jets remain distinct outstanding inputs.
+The [middle-edge theorem](lsernau-exceptional-middle-edge.md),
+[bounded branching theorem](lsernau-branching-normalization.md) and
+[marked Hecke index](lsernau-marked-hecke-index.md) complete the
+local pairing, terminal integral normalization and marked index.
+Nonstandard lower-chain kernel transport, common period and injectivity,
+and full adelic conjugation of jets remain distinct outstanding inputs.

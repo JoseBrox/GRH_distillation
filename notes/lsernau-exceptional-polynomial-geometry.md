@@ -515,8 +515,7 @@ The local exceptional-prime edge estimate is now complete in the
 [companion chapter](lsernau-exceptional-middle-edge.md), including the
 middle pairing and its full source parameter range. The
 [branching normalization](lsernau-branching-normalization.md) also
-supplies the bounded integral matrix for (9). Global identification
-of the marked-level edge and nonstandard Weil transport maps, and
-analytic estimates remain separate requirements. The improved local
-budget must be carried through each global charge comparison before
-replacing the source divisorConstant throughout.
+supplies the bounded integral matrix for (9). The [marked Hecke index chapter](lsernau-marked-hecke-index.md)
+identifies the marked-level edges and propagates the improved local
+index budget. Nonstandard Weil transport and analytic estimates
+remain separate requirements; the gauge allowance is unchanged.

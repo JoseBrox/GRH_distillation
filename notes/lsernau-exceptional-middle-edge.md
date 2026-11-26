@@ -784,8 +784,8 @@ outer source bound \(c_{\rm depth}\le c_{\rm div}\), where
 
 Sources: Edges.lean 425–490; ElementaryDivisorTheorem.lean
 380–616,617–736,926–1147. This closes the local exceptional
-middle-edge estimate. Identifying the local edge model and
-the prescribed global marked-level and Weil transport maps,
-and all subsequent analytic and arithmetic obligations, remain
-separate. The proof is a conventional reconstruction from the
+middle-edge estimate. The [marked Hecke index chapter](lsernau-marked-hecke-index.md)
+identifies this local model with the actual marked-level operator
+and propagates (17) through the full chain. Global Weil transport
+and subsequent analytic and arithmetic obligations remain separate. The proof is a conventional reconstruction from the
 pinned source; no new Lean replay is asserted.
