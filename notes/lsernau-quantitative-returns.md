@@ -689,7 +689,7 @@ already includes it. With `a=i` and `r^2>8n`, the right side is at most
 
 \[
  C_{\rm ret}=2K^{2nrf}
- \le2b^{(214n^2+2n)rf}.
+ \le2b^{(268n^2+2n)rf}.
  \tag{23}
 \]
 
@@ -761,7 +761,7 @@ For the source numerical range
 \]
 
 (25) is at most `nu_U b^(-k^3 f)/2`. Here is a direct check of the
-margin. Set `A=214n^2+2n`. For `n>=23`, `A<=12n^3<=k`, so
+margin. Set `A=268n^2+2n`. For `n>=23`, `A<=12n^3<=k`, so
 `Ar<=r^2`. Since `r>=501`,
 
 \[
