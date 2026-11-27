@@ -4,9 +4,10 @@
 and compatibility mechanism in the readable source. In particular,
 one need not construct even-rank Galois representations independently
 if odd-rank attachment, the two actual theta lifts, and their
-spherical local clauses have been proved. Those suppliers, and the
-local-global theorem for labelled nonspherical places, remain open
-in this reconstruction.
+spherical local clauses have been proved. The [compact-real lift chapter](lsernau-compact-real-lifts.md) now
+supplies the two nonzero lifts using the normalized convergent Rallis
+formula and split polynomial transfer. Odd-rank attachment and the
+local-global theorem for labelled nonspherical places remain open.
 
 ## 1. Two characters with disjoint strings, on the actual CM torus
 
@@ -78,7 +79,7 @@ eigensystem of positive rank \(n\). Set \(s=n+1\), so \(n+s=2n+1\)
 is odd and in the convergent range of the source theta lift.
 Use the two characters constructed in Section 1.
 
-The required arithmetic input is the existence of two nonzero
+The compact-real lift chapter supplies two nonzero
 definite theta lifts at rank \(2n+1\) with the exact spherical
 Hecke polynomials of the source. After normalization by the
 avatar of \(\theta_{i;s,s}\), these polynomials are
@@ -182,8 +183,8 @@ Then \(P_w\) kills the original operator. At
 operator on the crystalline module, not to ordinary
 inertia matrices. This distinction is essential.
 
-Thus, conditional on the actual nonzero theta lifts
-and odd-rank attachment with spherical clauses,
+Thus, using the nonzero theta lifts and conditional on
+odd-rank attachment with spherical clauses,
 the even-rank attachment and spherical local
 compatibility need no independent automorphic
 existence argument. This does not remove the source's

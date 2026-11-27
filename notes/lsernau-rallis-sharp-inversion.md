@@ -611,16 +611,10 @@ formula on that type is
                                                                \tag{10}
 \]
 In particular \(Ly=0\) implies \(y=0\), because one
-may take \(y'=R_Ay\) and use (8). For the actual
-compact real source in Galois attachment, Schur
-orthogonality gives the edge scalar directly:
-if the matrix coefficient of \(v\) on the indicated
-irreducible type is nonzero, its convolution with
-the contragredient coefficient has positive trace
-on that type, and the matching rank-one edge
-gives its positive scalar. Nonvanishing of the
-specific edge for the source parameters is still
-to be checked from the real branching construction.
+may take \(y'=R_Ay\) and use (8). For the actual compact real source in Galois attachment,
+[compact real edges](lsernau-compact-real-lifts.md) now
+checks the edge by Cauchy multiplicity one and compact
+Schur orthogonality, giving \(Z_v=\|v\|^2/e(1)>0\).
 For noncompact real sources the specified discrete
 series edge and its nonzero formal-degree integral
 remain hypotheses of this conclusion.
