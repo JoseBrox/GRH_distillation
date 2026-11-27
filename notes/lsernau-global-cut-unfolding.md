@@ -284,10 +284,11 @@ The global quotient and level factors, including
 cut multiplicities and the finite tensor assembly,
 are thus established under the source local and
 analytic hypotheses. The substantial remaining
-work is to establish the exact common local Bessel
-formula/reproducing kernel and class decomposition,
-the absolute majorants for the Poincare series and
-returns, the lattice-bound support and the open/terminal/identity
+work is to establish the stationary-point lower bound and Sobolev/Poincare return
+estimates (the [Bessel majorant chapter](lsernau-bessel-majorants.md)
+proves the coefficient decay, normalized reproduction, real product
+formula and sharper majorant and cutoff tail given the stationary
+lower bound), the lattice-bound support and the open/terminal/identity
 amplitude estimates. The real/finite and terminal coefficient
 factorization is proved in the terminal matching chapter; no
 nonvanishing hypothesis on the raw common scalar is needed. None is implied by formal
