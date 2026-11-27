@@ -118,8 +118,13 @@ value factor). Its infinity type is algebraic by the prescribed
 weight of charW. With epsilon the cyclotomic character, geometric
 Frobenius has epsilon^(-1)=q.
 
-All excluded places form a finite set. Equality (2) thus extends to
-every Galois element by Chebotarev and continuity of characteristic
+Apart from finitely many level, twist and coefficient places, (2)
+holds at the split places of E/E^+. These have density one as places
+of E: inert places have squared residue norm and their sum of inverse
+norms converges, while there are only finitely many ramified places.
+Every nonempty conjugation-invariant open Frobenius neighborhood has
+positive Chebotarev density and thus meets this set. Equality (2)
+extends to every Galois element by continuity of characteristic
 polynomials. Brauer–Nesbitt, applied to the two semisimple
 characteristic-zero representations, gives the stronger identity
 

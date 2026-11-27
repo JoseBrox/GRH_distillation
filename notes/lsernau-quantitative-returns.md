@@ -8,7 +8,7 @@ preferred construction. They do not supply the identity, terminal-fixer or
 open-cell *second-moment* bounds, or good-form multiplicities.
 
 Two improvements are useful. The local convolution restriction costs
-`P^(268 n^2)`, in place of the source's `P^(2000 n^2)`. The arithmetic return
+`P^(214 n^2)`, in place of the source's `P^(2000 n^2)`. The arithmetic return
 count retains `(1 + 4 N b^(74n))^(2nrf)`, instead of enlarging it to
 `b^(12 n^3 r f)`. Neither improvement is needed to change the main proof
 architecture.
@@ -275,23 +275,39 @@ gives
 `3+(5+8P^2)P+(P+(5+8P^2)P(2+8P^2))(1+2P)` as an upper bound for
 `||Gamma||`; it is at most `P^12` for `P>=8`.
 
-If `Y` is within `P^-6` of a matrix bounded by `P>=4`, the inverse
-identity gives `||Y^-1||<=2P` and
-`|xi(Y)-xi(Z)|<=2P^-4`. Hence `nu(Y)^2>=nu(Z)^2/2`, and `Y` is bounded
-by `2P`. Apply Cauchy's inequality to the holomorphic function
-`Gamma(Z,T)` on the product of these balls. After restricting to
-`T=Z*`, this gives the convenient bounds
+For the real section T=Z*, direct differentiation gives much
+smaller bounds than the complex Cauchy estimate. At a matrix
+satisfying (1), put C=FT^{-1}-B A(T,Z). The exact operator
+norms of the diagonal factors in (9) give
 
 \[
- \|\gamma_Z\|\le P^{18},\qquad \|D\gamma_Z\|\le P^{25}.
- \tag{11}
+ \|A\|\le1+P^2,\quad |s|\le1,\quad s^{-1}\le P,\quad
+ \|B\|\le(P^2+2)P,\quad \|C\|\le2P^5.
 \]
 
-In particular, if a real coordinate curve `p(t)` has speed at most
-`P^2/4` and `||a||<=P^20`, then `g(t)=gamma_{p(t)}a` has right
-logarithmic derivative of norm at most `P^85`. Indeed,
-`||g^-1||<=P^(18+20)` and `||g'||<=P^(25+2+20)`. Here
-`||g^-1||=||g||` because `J` is a hermitian involution.
+In a real tangent direction of operator norm one,
+the inverse derivative has norm at most P^2,
+|d xi|<=P^2, |ds|<=P^3 and |d(s^{-1})|<=P^5.
+Indeed s^2=1-|xi|^2 and s>=P^{-1}. The product rule gives
+\[
+ \|dA\|\le2P^3,\quad
+ \|dB\|\le3P^4+P^2+2\le4P^4,\quad
+ \|dC\|\le P^2+4P^4(1+P^2)+2(P^2+2)P^4\le7P^6.
+\]
+Substitution in Gamma yields
+\[
+ \|\gamma_Z\|\le3+(P^2+2)P+2P^6\le P^7,\qquad
+ \|D\gamma_Z\|\le4P^4+7P^7+2P^{10}\le P^{11}.
+ \tag{11}
+\]
+All inequalities hold for P>=8. Since J is a Hermitian
+involution, the inverse section has the same operator norm.
+For an elementary real or imaginary matrix-entry coordinate,
+the speed is one. On right translating by a with norm at most
+P^20 the logarithmic derivative is conjugated by a, costing
+at most P^40. Its norm is therefore at most P^(7+11+40)=P^58,
+instead of the earlier P^85. This direct estimate uses only
+the real slice of the section and its actual formula.
 
 The measure comparison required below is
 
@@ -434,27 +450,27 @@ right logarithmic speed `C` has norm at most
 `Lambda C sum_a ||V_aw||`. Suppose `A Lambda<=P^44`, `P>=8r`, and that
 the entire ball `B(Z,P^-6)` satisfies (1) and `Delta>=c>0`.
 Use ordinary real and imaginary matrix-entry coordinates, in which
-the coordinate vectors have norm at most `P^2/4`. Put
+the elementary coordinate vectors have operator norm one. Put
 
 \[
- d=2n^2,\qquad\varepsilon=P^{-129}.
+ d=2n^2,\qquad\varepsilon=P^{-102}.
 \]
 
 This cube lies inside `B(Z,P^-6)`: the coordinate map has norm at most
 `2n^2`, and `P>=8r`. On `||u||<=P^20`, (11) changes the derivative
-constant to `Lambda P^85`, so that `A Lambda P^85<=P^129`.
-The one-coordinate factor in (15) is at most `4P^129`.
+constant to `Lambda P^58`, so that `A Lambda P^58<=P^102`.
+The one-coordinate factor in (15) is at most `4P^102`.
 By (13), the cube integral is bounded by `(2P^2)^d K_0` if
 `||V_w||_{L^2(U\G)}^2<=K_0` for `|w|<=d`. Therefore
 
 \[
  \int_{\|u\|\le P^{20}}
    \|V_\varnothing(\gamma_Z(uh)^{-1})\|^2d\mu_c(h,u)
- \le P^{264n^2}K_0,
+ \le P^{210n^2}K_0,
  \tag{16}
 \]
 
-because `(4P^129)(2P^2)=8P^131<=P^132`.
+because `(4P^102)(2P^2)=8P^104<=P^105`.
 
 ### Theorem 3: restriction of a Bessel convolution
 
@@ -464,7 +480,7 @@ integrable, square-integrable, and supported on `||y||<=P^20`, then
 \[
  \int_{\|u\|\le P^{20}}
  \left\|\int_G\phi(y)W(\gamma_Z(uh)^{-1}y)dy\right\|^2d\mu_c(h,u)
- \le P^{268n^2}\frac{\|W\|_{L^2(U\backslash G)}^2}{d_\pi}
+ \le P^{214n^2}\frac{\|W\|_{L^2(U\backslash G)}^2}{d_\pi}
                   \|\phi\|_{L^2(G)}^2.
  \tag{17}
 \]
@@ -673,7 +689,7 @@ already includes it. With `a=i` and `r^2>8n`, the right side is at most
 
 \[
  C_{\rm ret}=2K^{2nrf}
- \le2b^{(268n^2+2n)rf}.
+ \le2b^{(214n^2+2n)rf}.
  \tag{23}
 \]
 
@@ -745,7 +761,7 @@ For the source numerical range
 \]
 
 (25) is at most `nu_U b^(-k^3 f)/2`. Here is a direct check of the
-margin. Set `A=268n^2+2n`. For `n>=23`, `A<=12n^3<=k`, so
+margin. Set `A=214n^2+2n`. For `n>=23`, `A<=12n^3<=k`, so
 `Ar<=r^2`. Since `r>=501`,
 
 \[

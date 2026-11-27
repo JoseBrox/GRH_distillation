@@ -2,8 +2,7 @@
 
 This chapter proves the finite algebra and idelic construction of
 the Stickelberger systems, with an improved all-prime ratio bound.
-The geometric kernel integrality and the rank-two analytic period identity
-are retained as explicit input statements. The [stable-range norm theorem](lsernau-normalized-transfer-critical-norm.md) now supplies the analytic norm and omitted-factor identities for z≥2. They must hold on the
+The [integral critical-kernel chapter](lsernau-integral-critical-kernels.md) supplies the geometric kernel integrality for z≥2. The rank-two analytic period identity remains an explicit input. The [stable-range norm theorem](lsernau-normalized-transfer-critical-norm.md) now supplies the analytic norm and omitted-factor identities for z≥2. They must hold on the
 actual source levels; ordinary proofs of them are not supplied here.
 
 Sources: [AlgebraicPartIntegrality][integral] 101–249, 257–403;
@@ -42,7 +41,7 @@ kernel input is
  \qquad K_a(h)=\mathrm{pointKernel}_{\nu,1_Q}(u_a,h),
  \tag{1}
 \]
-with the following integrality assertion: each
+with the following integrality assertion, proved in the integral critical-kernel chapter: each
 \(c_\nu K_a(h)\) is in the transported integral Weyl lattice
 at \(h\), for every coefficient embedding at every prime
 away from \(N_Q\). The Gram form of that lattice is integral
