@@ -273,8 +273,7 @@ The [local tied derivative proof](../notes/lsernau-local-tied-derivatives.md)
 establishes the spherical chain lemma, integral trace algebra, and
 local norm-derivative identities from the labelled all-powers
 local-global input and actual root-chain selectors. The loss for
-the derivative is logarithmic in the rank. The arithmetic
-length/defect and triangle/detection bounds remain open.
+the derivative is logarithmic in the rank. The [triangle detection chapter](../notes/lsernau-triangle-detection.md) proves a level-independent detector of size at most y^4, exact cyclotomic-product valuations and triangular selection conditional on actual Kummer relations and allowed Frobenius data. Arithmetic length/defect estimates, the strict relation-supply dimension theorem and actual root-chain selectors remain open.
 
 At each coefficient prime choose a suitable anticyclotomic twist. One
 twist must serve the required finite family and its first $m$ powers

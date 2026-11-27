@@ -384,9 +384,7 @@ In particular (4) does not imply the source's
  \le \mathrm{sel}+2t'\mathrm{ram}+r'\mathrm{loc}
                   +\mathrm{denominatorError}
 \]
-without those estimates. Nor have we proved the diamond/Frobenius
-operator identities for the trace ideal and the root-chain
-condition at the actual auxiliary places. Those supply the
+without those estimates. The [local derivative chapter](lsernau-local-tied-derivatives.md) now proves the diamond/Frobenius operator identities conditional on the labelled local-global input and root-chain selectors. The [triangle detection chapter](lsernau-triangle-detection.md) supplies the uniform detector, cyclotomic separation loss and the triangular selection from the actual Kummer-relation and allowed-Frobenius inputs. The remaining arithmetic supplier and selector existence are not established. Those supply the
 integral action of the extracted coefficient on the desired
 projection, in TiedTraces.lean and DenominatorBound.lean.
 This is a construction and valuation proof of the tied-row
