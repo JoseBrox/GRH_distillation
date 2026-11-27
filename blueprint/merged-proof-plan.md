@@ -269,6 +269,12 @@ costs in (3); no particular tolerance is sacred.
 ### Module 5 — Long forms through selected twists
 
 The [Ribet polynomial chapter](../notes/lsernau-ribet-polynomial.md) proves the integral common-element algebra from the exact tied-row interface. The [tied-row chapter](../notes/lsernau-tied-row-construction.md) constructs the main and character matrices from their arithmetic length, triangle and detection inputs; it proves the exact common squarefree coefficient and valuation bound. The remaining individual-separator step is to establish those arithmetic inputs, the auxiliary trace-ideal relations and the coefficient's integral action.
+The [local tied derivative proof](../notes/lsernau-local-tied-derivatives.md)
+establishes the spherical chain lemma, integral trace algebra, and
+local norm-derivative identities from the labelled all-powers
+local-global input and actual root-chain selectors. The loss for
+the derivative is logarithmic in the rank. The arithmetic
+length/defect and triangle/detection bounds remain open.
 
 At each coefficient prime choose a suitable anticyclotomic twist. One
 twist must serve the required finite family and its first $m$ powers

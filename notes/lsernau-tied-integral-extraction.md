@@ -78,7 +78,8 @@ Fix a nonzero scalar modulus \(r\in\mathcal O\).
 Write \(T_j(g),B_j(g)\in C\) for the source tame and
 Frobenius trace elements, so the tied relation is
 \(T_j(g)-X_j B_j(g)\). The required local operator
-identities, explicitly left as inputs, are integral
+identities, now proved from the labelled local-global and root-chain
+inputs in [local tied derivatives](lsernau-local-tied-derivatives.md), are integral
 local derivatives \(\partial_j\) satisfying
 \[
  D_jT_j(g)=0,\qquad \partial_jT_j(g)\equiv D_jB_j(g)\pmod{rR}
@@ -210,9 +211,12 @@ Combining this argument with the tied-row common-element
 construction supplies the final global integral action
 **conditional** on the local identities (3)–(4), the root
 chain and congruence-block selectors, and the valuation
-bounds for the chosen polynomial. The arithmetic task
-is now to establish these inputs at the actual auxiliary
-places and for every projected eigensystem; in particular
+bounds for the chosen polynomial. The local derivative chapter establishes (3)–(4) and the spherical
+chain lemma, conditional on the labelled all-powers local-global
+input and the actual root-chain selector. It also proves a sharper
+auxiliary modulus loss. The arithmetic task is now to establish
+those remaining inputs and the valuation budget for every projected
+eigensystem; in particular
 we have not yet constructed individual unconditional
 integral congruence separators. The local Iwahori
 comparison and local-defect/triangle/detection
