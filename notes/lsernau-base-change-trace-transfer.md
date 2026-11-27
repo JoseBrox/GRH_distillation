@@ -356,6 +356,6 @@ classical Hilbert 90, Landherr and faithfully flat descent.
 Global matching roots and the matching compact family are
 now supplied in the linked chapter. The specific transfer levels
 and matching products are proved in the specific transfer chapter.
-The actual common finite Shintani characters remain. The
+The [finite Shintani label chapter](lsernau-shintani-label-transfer.md) supplies the actual finite characters on the one Frobenius coset needed here. The
 subsequent local-global attachment theorem is separate.
 No new Lean replay is asserted.

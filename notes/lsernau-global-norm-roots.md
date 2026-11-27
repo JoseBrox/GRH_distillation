@@ -441,7 +441,7 @@ This establishes the general matching compact family
 and the global root construction. The [specific Hecke transfer chapter](lsernau-specific-hecke-transfer.md)
 now incorporates the prescribed matching functions and proves the
 particular levels and multiplication of matching products.
-The common finite Shintani characters still need to be supplied. The labelled
+The [finite Shintani label chapter](lsernau-shintani-label-transfer.md) supplies the finite characters on the selected Frobenius coset. The labelled
 Galois local-global theorem is not a consequence of
 these norm-root identities alone.
 

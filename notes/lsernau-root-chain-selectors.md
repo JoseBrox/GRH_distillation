@@ -174,8 +174,9 @@ residue degree greater than one contribute a bounded series
 to Dirichlet density at 1, and can be omitted in a positive
 density Chebotarev condition. We also avoid the finitely
 many places and their conjugates excluded by the previous
-triangle rows. For prime norm and a CM field, the
-prime is split over the maximal real subfield.
+triangle rows. For prime norm the prime is split over the maximal real subfield here:
+exclude the finitely many ramified places of that quadratic extension,
+so residue degree one precludes inertia.
 
 This is exactly the allowed-Frobenius condition used in
 [triangle detection](lsernau-triangle-detection.md).

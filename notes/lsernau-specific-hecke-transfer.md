@@ -333,7 +333,8 @@ products for the weak base-change theorem, relative to
 the already proved norm-root/trace chapters. It supplies
 weak transfer with no local labels and transfer of
 prescribed local matching data when the latter are proved.
-It does not yet supply the common finite Shintani characters,
-other special local matching data, split-case attachment
-or labelled local-global compatibility. No new Lean replay
+The [finite Shintani label chapter](lsernau-shintani-label-transfer.md)
+supplies the special local data for squarefree Green labels, via classical
+finite-field character theorems. Split-case Galois attachment and labelled
+local-global compatibility remain. No new Lean replay
 or independent verification is asserted.
