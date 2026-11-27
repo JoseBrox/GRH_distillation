@@ -4,75 +4,72 @@ RH and Dirichlet GRH are **not yet proved by this ordinary reconstruction**.
 Read the [active common manuscript](../paper/determinant/body.tex) and
 [authoritative dependency plan](../blueprint/merged-proof-plan.md).
 For RH first fix modulus 18480; for Dirichlet allow any fixed multiple
-of the target conductor and 18480.
+of the target conductor and 18480. Source revision throughout:
+`72fead102f663d5c7a407964a13dc0cf9d977207`, readable `grh/src/` tree.
 
 ## Mathematical dependencies
 
-| Part of the preferred proof | Established and remaining |
+| Part | Established suppliers and exact remaining boundary |
 | --- | --- |
-| Analytic endpoint | [One-sided zero detection and quadratic-twist selection](lsernau-zero-detection.md), [prime reduction](lsernau-moment-and-prime-reductions.md): proved relative to the stated classical inputs and the missing arithmetic remainder. |
-| Common theta data | [Finite theta chapter](lsernau-common-theta-finite.md) identifies the actual spaces and levels, proves free class integration and the joint-tensor chain formula, and fixes the normalization. [Graded period unfolding](lsernau-graded-period-unfolding.md) proves height growth, rapid-input quotient convergence, surviving Bessel orbits, exact additive and rational-orbit unfolding, and the normalized double-period reduction with a nonzero fixed scalar. [Convergent Rallis formula](lsernau-rallis-sharp-inversion.md) matches the classical convergent Siegel–Weil input, gives Schwartz absolute doubling and the sharp finite suppliers, and proves a quantitative inverse bound for the vacuum series and integrated lift injectivity on a supplied nonzero real edge. [Compact real edges](lsernau-compact-real-lifts.md) supplies the required real vectors and their positive zeta integrals for definite-to-definite stable-range lifts. [Terminal period matching](lsernau-terminal-period-matching.md) identifies the last pair, separates the real/finite evaluated data, proves the uniform terminal coefficient and branching formula, and removes the unnecessary nonvanishing condition on the raw see-saw scalar. [Real grid parameters](lsernau-real-grid-parameters.md) verifies the actual signatures, parity, gaps and shifted block rules for both grids, the row chain and offset triangles. Noncompact harmonic, projection and smearing, full-chain see-saw and quantitative kernel bounds remain open. |
-| A — short integral forms | [Scalar CM supplier](lsernau-cm-theta-normal-form.md) proves the actual marked good equation, torsion integrality, derivative ring and scalar non-split normal form. [Charged jet chapter](lsernau-charged-jet-estimate.md) proves the finite Fourier/product transfer from the specified Weil inputs, the multivariable normal form, and the strengthened uniform charged Schur bound. [Standard Weil normalization](lsernau-weil-normalization.md) proves the prescribed lattice, splitting character, coprime frames, finite and archimedean period factors, integral vacuum, scalar torsion conjugate bound and translated scalar-jet covariance in the classical standard model. [Marked-prime charges](lsernau-marked-chain-charges.md) proves the actual collision formula, full marks, diagram and charged-filling comparison, whole-prefix Hecke propagation with at least half the transfer allowance, and the exact weight-degree auxiliary-prime index. [Split transfer and level lifts](lsernau-split-transfer-and-level-lifts.md) proves the exact local split Hecke polynomial, gluing tensor, double-lift/Up identities, source-level preservation and sharper Fourier loss at N, and the definite gauge comparison relative to rational theta equivariance. [Exceptional polynomial geometry](lsernau-exceptional-polynomial-geometry.md) proves the simultaneous weighted depth bound, sharper edge-inclusion determinant bound, exact Pieri-cone volume and terminal gauge from the integral branching intertwiner. [Middle edge](lsernau-exceptional-middle-edge.md) proves the integral root gain and halfway pairing divisibility, defect dimensions, single-copy invariant averaging, actual Frobenius-factor contraction and stepwise pairing congruence, and sharpened pairing colength throughout the source degree range. [Bounded branching](lsernau-branching-normalization.md) constructs the integral intertwiner, its tail-hook normalization and exact Gram contraction. [Marked Hecke index](lsernau-marked-hecke-index.md) identifies the actual global edges and propagates the sharper index through all marked operators, repetitions and ramified intersection. [Nonstandard Weil transport](lsernau-nonstandard-weil-transport.md) fixes the exact hyperbolic Levi phase, proves rational invariance by doubling, canonical pointed transport, tensor products and absolute mixed theta summation for a fixed splitting. [Common jet comparison](lsernau-common-jet-conjugation.md) proves compatible scalar torsion lifts with exact phases, the common finite semilinear jet and Weil law, the uniform Gaussian vacuum bound with a smaller lattice term, and the conjugated Schur-jet operator estimate. Remaining: sharp tests, full common-kernel gauge and chain squared-norm assembly. |
-| B — spanning | Exact ramified dimension and direct restriction of the two moments proved in the [finite theta chapter](lsernau-common-theta-finite.md). Conditional rank and index bounds sharpened. [Positive-type moment](lsernau-positive-type-moment.md) proves the finite maximal-fixer closure with factor 1+3b^{-4}. [Global quotient and cut identities](lsernau-global-cut-unfolding.md) establishes the class-return Gram and weighted cut integration and level cancellation under the actual local/convergence inputs. The graded period theorem supplies the local unfolding and double-period steps and their rapid-input convergence. [Bessel majorants](lsernau-bessel-majorants.md) proves coefficient decay, uniform covering, normalized Bessel reproduction and norm-period identity, the sharper majorant and cutoff tail given the stationary lower bound, and the adelic real Bessel formula from the filling system. [Finite support and cuts](lsernau-support-to-cut.md) proves the graded lattice and Fourier support induction, exceptional split-lattice vanishing and finite cuts with integral weights. [Stationary Bessel period](lsernau-stationary-bessel.md) constructs the actual stationary frame and proves the local lower period from the classical coefficient formula with a sharper bound, giving the normalized majorant with exponent 119r². Establish Sobolev and Poincare-series return estimates, good-form multiplicities, identity, terminal-fixer and open-cell estimates. |
-| C — attachment | [Two-string cancellation](lsernau-galois-two-string.md) constructs disjoint torus characters and proves all-rank cancellation, spherical clauses and normalized lift trace compatibility from the actual theta polynomial, odd-rank and local-global inputs. [Odd-rank patching](lsernau-odd-rank-patching.md) proves the open-normal-subgroup extension and sharp splitting-degree reduction. [Protected quadratic steps](lsernau-protected-quadratic-steps.md) proves the required field and character construction, exact splitting and inertia generation. The compact edge chapter and sharp finite Rallis construction supply the two nonzero odd-rank lifts with their spherical polynomials. [Base-change trace transfer](lsernau-base-change-trace-transfer.md) proves the definite weighted trace, the groupoid comparison with matching roots, spectral extraction and Shintani label preservation from the actual matching and finite-character inputs, as well as rational and split-unramified cocycle descent. [Global norm roots](lsernau-global-norm-roots.md) proves the CM norm Hasse principle, universal polynomial roots and matching compact families. [Specific Hecke transfer](lsernau-specific-hecke-transfer.md) constructs the exact levels, split matched products and spectral weak base change under the source Step and local matching hypotheses, including the empty-local-data case. [Finite Shintani labels](lsernau-shintani-label-transfer.md) supplies the required labelled automorphic base change from classical Green/Shintani/Macdonald theorems, with exact norm-pullback normalization on the selected Frobenius coset. Remaining: split-case Galois attachment and labelled Iwahori local-global compatibility. |
-| C — selected twists | [Small-twist theorem](lsernau-general-small-twist.md) proved under its stated data hypotheses. [Main-summand datum construction](lsernau-main-summand-data.md) gives the matrix span, scalar normalization, rank and smaller defect bound once attached local-type-compatible representations are supplied. [Critical-value systems](lsernau-critical-value-systems.md) gives integral group-ring construction and a uniform constant inverse-ratio height conditional on the actual scaled kernels and period formulas. |
-| C — determinant | [One-lift comparison](lsernau-one-lift-comparison.md): integral Weyl frame, finite gluing gauge and norm calculation, adjoint, projection and simultaneous separator calculation, exact determinant ratio and sharper conditional signed budget. [Ribet polynomial](lsernau-ribet-polynomial.md) proves the integral tied-row common-element algebra. [Tied rows and coefficient](lsernau-tied-row-construction.md) constructs the main and character matrices and proves the exact squarefree-coefficient budget under the local-defect and triangle/detection hypotheses. [Integral top-coefficient extraction](lsernau-tied-integral-extraction.md) proves the global auxiliary-level norm and projected integral action given the local trace/derivative identities and root-chain selectors. [Local tied derivatives](lsernau-local-tied-derivatives.md) proves the two spherical lattice recursions, the root-chain estimate, the integral trace and residual indicator operators from attachment, and the local derivative identities from the labelled all-powers local-global theorem and root-chain selector. It improves the auxiliary-modulus loss from factorial to logarithmic size in rank. [Triangle detection](lsernau-triangle-detection.md) proves a uniform residual-induction detecting set of size at most y^4, exact cyclotomic losses, and triangular selection given the allowed-Frobenius condition. [Kummer relations](lsernau-kummer-relations.md) proves the strict relation supply for every torsion level, including dyadic, by residual Greenberg–Wiles and full-coefficient Poitou–Tate comparison. [Root-chain selectors](lsernau-root-chain-selectors.md) proves the actual allowed-Frobenius condition, triangular auxiliary primes, common complementary polynomial and weak selector from spherical attachment and main-summand scalar inertia, with a least-common-multiple refinement. Remaining: actual labelled attachment, arithmetic length/defect, period and spanning identities, kernel estimates, sharp tests and complement construction. |
-| Final comparison | [Signed determinant inequality](lsernau-mathematical-extraction-2026-11-26.md) is proved abstractly. Apply it at one common family of scales and divide by the actual positive rank and prime-sum normalizer. |
+| Analytic endpoint | [Zero detection](lsernau-zero-detection.md) and [prime reduction](lsernau-moment-and-prime-reductions.md) prove the final implication from the stated arithmetic remainder, including quadratic-twist selection and the one-sided Landau argument. |
+| Common finite theta data | [Finite theta](lsernau-common-theta-finite.md), [graded unfolding](lsernau-graded-period-unfolding.md), [terminal matching](lsernau-terminal-period-matching.md), [convergent Rallis and sharp data](lsernau-rallis-sharp-inversion.md) and [real grid parameters](lsernau-real-grid-parameters.md) supply the finite classes, exact period reductions, stable-range Gram identity under classical Siegel–Weil, definite real edges, finite vacuum inverse, and actual grid block rules. Full-chain see-saw, compatible nonzero volumes and quantitative kernel/projection control remain. |
+| Noncompact real edges | [Explicit harmonics and smoothing](lsernau-noncompact-real-edges.md) proves the product of minors, matching weights, uniqueness, Fischer saturation, centred Casimir comparison and compact reproducing bump. Positive nonzero projection and exact compact-support smearing are proved **conditional on the stated positive polar, root-cone and large-gap rigidity package**. The full noncompact `IsEdge` supplier is not marked complete. |
+| A — short integral forms | The [scalar CM](lsernau-cm-theta-normal-form.md), [charged jet](lsernau-charged-jet-estimate.md), [Weil normalization](lsernau-weil-normalization.md), [marked chain](lsernau-marked-chain-charges.md), [split transfer](lsernau-split-transfer-and-level-lifts.md), [exceptional geometry](lsernau-exceptional-polynomial-geometry.md), [middle edge](lsernau-exceptional-middle-edge.md), [bounded branching](lsernau-branching-normalization.md), [marked Hecke index](lsernau-marked-hecke-index.md), [nonstandard transport](lsernau-nonstandard-weil-transport.md) and [common jet](lsernau-common-jet-conjugation.md) chapters supply their stated algebraic and local norm estimates. Remaining: arithmetic sharp lower tests, common-kernel gauge and chain squared-norm assembly. |
+| B — returns and spanning | [Bessel majorants](lsernau-bessel-majorants.md), [stationary period](lsernau-stationary-bessel.md), [finite support/cuts](lsernau-support-to-cut.md) and [quantitative returns](lsernau-quantitative-returns.md) give the derivative/Schur bound, exact Gram coarea, local exponent 268n², integral frame separation, free-level weighted packing, absolute Poincare convergence and source truncation bound under the explicit coefficient and bounded-reduction hypotheses. [Global cuts](lsernau-global-cut-unfolding.md) now have the required absolute convergence. [Positive-type closure](lsernau-positive-type-moment.md) and [dimension/compression](lsernau-common-moment-interface.md) remain conditional on the actual identity, terminal-fixer, open-cell and other second-moment estimates and good-form multiplicities. |
+| C — spherical attachment | [Split attachment](lsernau-split-galois-attachment.md) supplies the classical spherical Galois representation at every coefficient prime, including 2, with conjugate-Weyl weights, geometric Frobenius and crystalline period actions checked. It uses Labesse and the explicit cuspidal-factor construction with Chenevier–Harris. [Protected steps](lsernau-protected-quadratic-steps.md), [odd-rank patching](lsernau-odd-rank-patching.md) and [two-string cancellation](lsernau-galois-two-string.md) provide the field and representation reductions. |
+| C — labelled local compatibility | [Trace transfer](lsernau-base-change-trace-transfer.md), [norm roots](lsernau-global-norm-roots.md), [specific Hecke transfer](lsernau-specific-hecke-transfer.md) and [finite Shintani labels](lsernau-shintani-label-transfer.md) supply their stated automorphic transfers. The split attachment chapter now proves unramified sorted Iwahori extraction, pro-Iwahori Hilbert 90, descent index k times the joint unit-character image, and the finite noncommutative all-powers-to-inertia lemma. Remaining: actual dominant Iwahori double-coset matching, finite-product-type sorted extraction and compatible tower instantiation. |
+| C — selected twists | [Small twists](lsernau-general-small-twist.md), [main-summand data](lsernau-main-summand-data.md) and [critical-value systems](lsernau-critical-value-systems.md) prove their constructions under the displayed attached local types, scaled-kernel and period inputs. The exact inverse-ratio height is below 5 per critical pair. Those concrete inputs remain required. |
+| C — lengths and individual operators | [Integral separators](lsernau-integral-separators.md) proves finite local Tate-duality counts, the Smith-lattice lift of relation-respecting cocycles, the local defect-to-colength inequality and the global tied-length bound, also for divisible coefficients. Combined with [Ribet algebra](lsernau-ribet-polynomial.md), [tied rows](lsernau-tied-row-construction.md), [local derivatives](lsernau-local-tied-derivatives.md), [integral extraction](lsernau-tied-integral-extraction.md), [triangle detection](lsernau-triangle-detection.md), [Kummer relations](lsernau-kummer-relations.md) and [root-chain selectors](lsernau-root-chain-selectors.md), this constructs individual detected integral operators under the **numerical crystalline-defect and remaining labelled/local hypotheses**. Hyperplane avoidance assembles them without extra valuation loss. A strict spectral projector instead pays the largest Smith exponent of its congruence module. [Fontaine–Laffaille zero defect](lsernau-fontaine-laffaille-zero-defect.md) now proves vanishing for the unramified crystalline aligned-window range, including all p∤M with λ_p=0 and the stronger threshold p≥b+δ+W+η+2. |
+| Final comparison | [One-lift comparison](lsernau-one-lift-comparison.md) and the [signed determinant inequality](lsernau-mathematical-extraction-2026-11-26.md) are proved under their stated common-lattice inputs. Apply at one common family of scales and divide by the actual positive rank and prime-sum normalizer. |
 
-### Immediate priorities
+## Immediate priorities
 
-1. Apply the exact transport and common definite Schur-jet bound;
-   complete uniform chain gauge/norm assembly and sharp tests. Use
-   the proved split transfer, auxiliary double-lift, depth and Pieri
-   calculations and terminal gauge identity.
-2. Supply Sobolev and quantitative
-   Poincare return estimates. Use the proved finite cuts and
-   Bessel formula, decay, majorant and cutoff tail. Apply the proved graded period
-   recursion and terminal matching, and prove identity/open-cell/terminal-fixer estimates,
-   multiplicities, verify the required real edges for the proved Rallis formula, and establish the rank-two period identities.
-3. Apply the proved unlabelled and labelled weak base change; supply split-case
-   attachment and Iwahori local-global comparison; use the proved compact-real
-   lifts and sharp-data Rallis theorem. Apply the proved Galois gluing and cancellation,
-   Selmer datum and critical-value constructions.
-4. Supply the arithmetic tied-row length, local-defect and triangle/detection
-   bounds (with the proved detector, triangle and root-chain suppliers conditional on attachment), and the labelled local-global input of the proved local trace/derivative
-   identities. Apply the proved integral coefficient extraction to obtain the individual separators,
-   then assemble the one-lift and chain determinant comparisons.
+1. Supply the normalized noncompact discrete-series positive polar and
+   rigidity/root-cone package; apply the proved Fock and exact smoothing
+   argument, and quantify the inverse projection on the actual real edges.
+2. Finish the actual dominant Iwahori matching and finite-product-type
+   sorted extraction. Combine these with the proved spherical attachment,
+   tame index descent and finite all-powers lemma in the permitted global towers.
+3. Prove the remaining positive numerical crystalline defect estimate
+   below the Fontaine–Laffaille threshold and at the tame level primes.
+   The zero-loss branch, the defect-to-length comparison and the
+   conditional individual denominator operators are now written.
+4. Use the quantitative return theorem to establish the actual identity,
+   terminal-fixer, open-cell and remaining second moments and multiplicities;
+   finish full-chain see-saw, sharp lower tests, gauge/norm assembly and
+   the determinant complement construction on the same data.
 
-## The small-twist proof library
+## Verification and resumption
 
-The theorem above uses [auxiliary primes](lsernau-auxiliary-prime-supply.md),
-[classical duality descent](lsernau-classical-tied-descent.md),
-[finite presentations](lsernau-finite-selmer-presentations.md) and
-[degree-independent specialization](lsernau-twist-specialization.md).
-The cofinal parameter choice and the shared excess budget are part
-of the established abstract result.
+The exact-arithmetic [Fock script](../scripts/check_noncompact_fock_bridge.py)
+was rerun successfully: 68 Casimir identities and 2,064 row/column
+commutations; a rank-(2,3) noncompact example satisfies the full large
+source gap; the rank-(4,4) determinant example tests only the formulas.
+See its [certificate](../certificates/noncompact-fock-bridge.json).
+No analytic projection, completion or infinite theorem is certified by
+those finite checks. The quantitative restriction and coarea constants
+were independently audited and the convolution conventions fixed.
 
-## Hecke extension
+The [recovery index](recovery-crosswalk.md),
+[source atlas](../blueprint/lean-source-atlas.md),
+[formal audit](../audit/lsernau-formal-audit-2026-11-26.md) and
+[attribution](../sources/README.md) separate external formal verification,
+our partial local build, source-byte checks and ordinary mathematical proofs.
+No fresh Lean replay or external mathematical review is asserted.
+The current RH and GRH PDFs were rebuilt (12 pages each), as was the
+one-page guide, with stabilized references and no overfull boxes. Revised
+sections and both target title pages were visually inspected; see the
+[build records](../paper/README.md). Compilation is not proof verification.
+
+## Independent Hecke track and retained alternatives
 
 Read the [Hecke checkpoint](../hecke/notes/current-state.md) and
-[active manuscript](../hecke/paper/main.md).
-The CM structural theorem and small-twist theorem are available
-under their explicit conditions. The cubic datum realization,
-critical-value formulas and common theta comparison remain open;
-exceptional primes and infinite-order phase bounds require separate work.
-
-## Historical alternatives and evidence
-
-The [old checkpoint at the pre-reorganization revision](https://github.com/JoseBrox/GRH_distillation/blob/6b74526223ae1724fa7872c27664b6a565f15244/notes/current-state.md)
-indexes the extensive earlier Selmer, theta, global-norm and geometric
-results. They remain possible suppliers after an exact matching
-dictionary, not extra prerequisites. The [archive](../paper/archive/README.md)
-preserves the original manuscript and PDFs.
-
-The [source audit](../audit/lsernau-audit-2026-11-26.md),
-[formal verification record](../audit/lsernau-formal-audit-2026-11-26.md)
-and [source atlas](../blueprint/lean-source-atlas.md) distinguish external
-formal verification, our partial local build and ordinary mathematical
-reconstruction. See [attribution](../sources/README.md).
+[Hecke manuscript](../hecke/paper/main.md) before changing that track.
+Its cubic datum realization, critical-value formulas, common theta
+comparison, exceptional primes and infinite-order phases remain separate.
+The [historical archive](../paper/archive/README.md) and
+[pre-reorganization checkpoint](https://github.com/JoseBrox/GRH_distillation/blob/6b74526223ae1724fa7872c27664b6a565f15244/notes/current-state.md)
+preserve prior work without adding superseded prerequisites.
 
 Legacy proof-map counts: RH **6/9**, Dirichlet **18/31**, Hecke **6/9**.
-No whole node is closed merely by changing the preferred route.
-The reorganized TeX is current; older compiled PDFs are archived,
-not new builds. No fresh Lean replay, external mathematical review,
-or new PDF build is claimed for these changes.
+No whole legacy node is closed by these supplier advances.
