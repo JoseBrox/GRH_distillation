@@ -336,8 +336,6 @@ All source references are to
 The proofs of (1)--(5) are unconditional under the stated
 cyclotomic-field hypotheses. The row construction (6)--(7)
 is conditional on the allowed-Frobenius condition; the actual relation supply is now proved by classical duality in [Kummer relations](lsernau-kummer-relations.md).
-allowed-Frobenius property. The strict dimension theorem for
-the real-field Kummer relations, the actual root-chain selectors,
-and the remaining local-defect and length estimates are still
-required. No claim of a completed triangle supplier or new
-Lean replay is made.
+The actual root-chain selectors and the remaining local-defect and
+length estimates are still required. No claim of a completed triangle
+supplier or new Lean replay is made.
