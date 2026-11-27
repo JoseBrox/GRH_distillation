@@ -7,3 +7,7 @@ Read the [active manuscript](paper/main.md), [precise analytic criterion](notes/
 The analytic reduction to positive prime deficits is proved under its stated classical hypotheses. The first nonabelian cubic factor has a direct eta-product real-zero exclusion. The parent selected-twist argument applies over CM fields under exact datum and integral-system conditions; a structural defect vanishes for the specified cubic lines at coefficient primes at least 5. The global theta and determinant comparison, exceptional primes, and infinite-order phase bounds remain open. The [active manuscript](paper/main.md) presents the arithmetic route by dependency, not as a ledger of accumulated alternatives.
 
 The [legacy map](blueprint/proof.svg) records 6/9 of its original nodes; this is not a completion fraction of Hecke GRH. The [parent proof plan](../blueprint/merged-proof-plan.md) and [source attribution](../sources/README.md) give the exact scope of imported results.
+
+## Independent analytic audit
+
+The [audit of Liu's joint marked-moment paper, Hexagon 2611.00421v2](audit/liu-2611.00421v2/review.md) includes an exact [endpoint certificate](audit/liu-2611.00421v2/check_endpoint.py), quantitative finite-stage loss, generalized centered power-free estimates, refined prime partitions and twisted Heilbronn transfer. The claimed half-plane is not independently certified; these refinements neither improve its overall endpoint nor close the arithmetic proof. They are retained as an independent analytic route, not a new dependency of the preferred manuscript.
