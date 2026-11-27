@@ -4,7 +4,7 @@
 
 The finite-dimensional algebra underlying the real theta edge can be proved directly. This chapter gives the matching-weight calculation, an explicit product of minors, its uniqueness, the Fischer orthogonality argument, and the centred Casimir comparison. It also proves a compact reproducing-bump lemma and explains exactly why smoothing gives an equality in the source Banach space.
 
-The passage from these results to the full noncompact edge is **conditional on the discrete-series kernel package stated in §6**. In particular, the large-gap Casimir-rigidity assertion and the normalized Flensted–Jensen polar formula are not proved merely by reading their Lean declarations. No full `IsEdge` supplier is marked complete here. The actual grid parameters are supplied separately in [the real-grid chapter](lsernau-real-grid-parameters.md). Quantitative return estimates, including their remaining analytic hypotheses, belong to [the quantitative-return chapter](lsernau-quantitative-returns.md).
+The analytic package stated in §6 is now supplied in [the classical discrete-series chapter](lsernau-discrete-series-suppliers.md), which checks Sun's exact polar formula, the Dirac inequality and Vogan–Zuckerman's recognition theorem in these conventions. Consequently the positive nonzero projection and exact compact-support smearing proved below apply to the specified representations. [The projection-bound chapter](lsernau-projection-lower-bound.md) also gives an explicit reciprocal bound on the harmonic line. The actual grid parameters are supplied separately in [the real-grid chapter](lsernau-real-grid-parameters.md). Quantitative arithmetic returns belong to [the quantitative-return chapter](lsernau-quantitative-returns.md). Global theta assembly and full-chain gauge bounds remain separate; no whole historical proof-map node is closed here.
 
 All source references below concern `lsernau/grh-lean` at the immutable readable revision
 `72fead102f663d5c7a407964a13dc0cf9d977207`, under `grh/src/`. The arguments reconstruct the mathematics of that source; they are not a new Lean replay.
@@ -429,7 +429,7 @@ The Haar measure in (6.1) must be the measure used in all subsequent convolution
 
 The source proves (6.2) from a quantitative coefficient-decay estimate and uses \(l\) of gap \(500n^3+A\). This chapter does not infer (6.2) just from square integrability. Section 7 below shows that weighted integrability of all derived kernels follows from (6.2) and the compact reproducing bump; it need not be a separate assumption.
 
-**6.2 Positive polar kernel.** With probability Haar measure on \(K\), let \(m_\Lambda\) be the compact highest-vector coefficient, and \(a_\Lambda=\int_K|m_\Lambda(k)|^2dk>0\). The normalized Flensted–Jensen polar formula must imply the following identity. For a \(K\)-highest vector \(x\) of weight \(\Lambda\) in a representation with invariant positive form \(B\), if \(g=k_0z\), \(z>0\), then the \(K\times K\) average of
+**6.2 Positive polar kernel.** With probability Haar measure on \(K\), let \(m_\Lambda\) be the compact highest-vector coefficient, and \(a_\Lambda=\int_K|m_\Lambda(k)|^2dk>0\). The normalized Flensted–Jensen polar formula gives the following identity. For a \(K\)-highest vector \(x\) of weight \(\Lambda\) in a representation with invariant positive form \(B\), if \(g=k_0z\), \(z>0\), then the \(K\times K\) average of
 \(e_l(k_1^{-1}gk_2)B(x,\pi(k_1^{-1}gk_2)x)\) is
 
 \[
@@ -440,7 +440,7 @@ The source proves (6.2) from a quantitative coefficient-decay estimate and uses 
 
 where \(W_l\) is the relevant product of principal minors and is positive on positive-definite matrices. In the source notation \(W_l=\texttt{weightMinors}(-\texttt{paramAddRho}\ l)\). All constants in (6.3) are positive. Its normalization and phase matter; an unnormalized character identity does not suffice.
 
-**6.3 Root-cone support and large-gap rigidity.** The compact highest weights of the discrete series lie in \(\Lambda+\mathcal C_l\). Moreover, in a strongly continuous representation of growth \(O(\|g\|^A)\), preserving a continuous positive-definite Hermitian form, a compact-highest vector \(x\) of weight \(\Lambda\), with derived quadratic Casimir equal to a real scalar \(c\ge\kappa_l\), has coefficient
+**6.3 Root-cone support and Casimir rigidity.** The compact highest weights of the discrete series lie in \(\Lambda+\mathcal C_l\). Moreover, in a strongly continuous representation of growth \(O(\|g\|^A)\), preserving a continuous positive-definite Hermitian form, a smooth compact-highest vector \(x\) of weight \(\Lambda\), with derived quadratic Casimir equal to a real scalar \(c\ge\kappa_l\), has coefficient
 
 \[
  B(x,\pi(g)x)=B(x,x)c_l(g),\qquad
@@ -448,9 +448,9 @@ where \(W_l\) is the relevant product of principal minors and is positive on pos
  \tag{6.4}
 \]
 
-This is the substantive rigidity input. Having the same quadratic Casimir in an arbitrary representation is not, by itself, a proof of (6.4). The compact-highest hypothesis, positivity and the large-gap condition are all used in the source's filtration argument.
+This is the substantive rigidity input. Having the same quadratic Casimir in an arbitrary representation is not, by itself, a proof of (6.4). The compact-highest hypothesis and positivity are essential. The ordinary supplier proof needs only regular integral parameters for rigidity: the bottom PRV component forces \(c\le\kappa_l\) by the Dirac inequality, and equality invokes Vogan–Zuckerman's Proposition 6.1. The large gap is used for weighted integrability.
 
-The source files `FlenstedJensen/SquareIntegrability.lean`, `Rigidity/HighestVectorsAndFiltration.lean`, and `Rigidity/KernelFixes.lean` contain these assertions and their formal dependencies. An ordinary proof of the complete package remains a separate obligation. The construction and conditional implications in this chapter do not conceal it.
+The source files `FlenstedJensen/SquareIntegrability.lean`, `Rigidity/HighestVectorsAndFiltration.lean`, and `Rigidity/KernelFixes.lean` contain these assertions and their formal dependencies. [The supplier chapter](lsernau-discrete-series-suppliers.md) supplies all of \(\mathrm{DS}(l,A)\) by ordinary mathematics relative to its explicitly cited classical theorems. It includes the compact-center and Casimir normalization, exact principal-minor formula, weighted integration, and passage from irreducible unitary representations to this positive-form Banach setting.
 
 ## 7. An exact compact reproducing bump
 
@@ -506,9 +506,9 @@ The matrix norm is submultiplicative and bounded below by 1 on the group, so wei
  \tag{7.3}
 \]
 
-The same statement holds for mixed left and right derivatives. This supplies the integrability needed for integration by parts, once (6.2) is known. It provides no uniform estimate for \(a^{-1}\), the support or the derivatives of \(\beta\) as the parameter varies; those require an additional quantitative construction.
+For mixed left and right derivatives, use \(e_l=\beta*e_l*\beta\), move the two families of derivatives to the two compact outer factors, and apply weighted Young's inequality twice. This supplies the integrability needed for integration by parts, once (6.2) is known. It provides no uniform estimate for \(a^{-1}\), the support or the derivatives of \(\beta\) as the parameter varies; those require an additional quantitative construction.
 
-## 8. The nonzero projected harmonic, conditionally on the kernel package
+## 8. The nonzero projected harmonic
 
 Let \(X\) be the source's Fock Banach space of integrable vacuum coefficients. It has a continuous positive-definite Hermitian form \(B\), and the commuting oscillator actions \(\pi,\pi'\) are strongly continuous and satisfy
 
@@ -520,6 +520,8 @@ Let \(X\) be the source's Fock Banach space of integrable vacuum coefficients. I
 
 The norm on \(X\) is not the norm induced by \(B\). All operators below are defined as Bochner integrals in this Banach space. Weighted integrability with \(A=nm\) is therefore the relevant hypothesis. Matching gives the required margin because
 \(500(n+m)^3\ge500n^3+nm\) and likewise with \(m\) in place of \(n\).
+
+Polynomial Gaussian vectors are smooth for both actions **in the Banach norm of \(X\)**, with derived actions (1.1) and (1.2). One can check this in the local Gaussian integral formula for the oscillator action: a parameter derivative of order \(s\) is bounded by \(C_s(1+\|y\|)^{\deg P+2s}e^{-c\|y\|^2}\), with \(c>0\) uniform on a small identity neighborhood. The coherent vectors \(H_yv_0\) have constant \(X\)-norm, so Bochner dominated differentiation applies at every order. Differentiation gives the quadratic creation/annihilation operators, and the determinant characters give the displayed scalar shifts. This is the analytic content of `Fock.hasDerivAt_realWeil` in `PolynomialVectors.lean`, followed by `OscillatorRep.derives` in `OscillatorPair.lean` (lines 476–482). In particular it is a Banach-space derivative statement, stronger than differentiation of scalar matrix coefficients alone.
 
 Set
 
@@ -571,7 +573,7 @@ One can check this last implication without an irreducibility claim. Equation (6
 
 ## 9. Exact compact-support smearing
 
-For every polynomial \(P\), assuming the package of §6 for both parameters, there exists one function \(\beta_P\in C_c^\infty(G')\) such that
+For every polynomial \(P\), using the supplied package of §6 for both parameters, there exists one function \(\beta_P\in C_c^\infty(G')\) such that
 
 \[
  \boxed{\quad P_lP=\pi'(\beta_P)P_l\Phi.\quad}
@@ -596,6 +598,16 @@ Finally, suppose \(Q\) is row compact-highest of weight \(\nu\notin\Lambda+\math
 \[
  P_l\pi(g)Q=0\quad(g\in G).
 \]
+
+Explicitly, put \(q_\nu(k)=\dim\tau_\nu\,\overline{m_\nu(k)}\,dk\), so \(\pi(q_\nu)Q=Q\). Inserting this identity in \(P_l\pi(g)Q\), then substituting \(y=hgk\), makes its coefficient at \(\pi(y)Q\) equal to
+
+\[
+ \int_K q_\nu(k)e_l(yk^{-1}g^{-1})
+ =d_l\langle\sigma_l(g^{-1})v,
+       \sigma_l(q_\nu)\sigma_l(y^{-1})v\rangle=0.
+\]
+
+Here \(\sigma_l\) is the genuine discrete series; its \(\nu\)-type is absent by root-cone support. Compactness of \(K\) and weighted integrability justify the substitution and Fubini.
 
 Differentiation gives \(P_l\rho(Y)Q=0\) for all row matrices \(Y\). All the hypotheses of §4.3 now hold, so \(\mathscr G=\mathcal P\), proving (9.1).
 
@@ -625,9 +637,9 @@ The source group acts through the column representation twisted by \(\det^{-\gam
  =\frac{B(\Phi,\pi(e_{-l})\Phi)}{d_l}>0.
 \]
 
-The unswapped argument gives the reverse half edge with conjugate kernels. This identifies the signs and positive denominator needed by `Lift.lean`; it is still conditional on §6, as are (8.3) and (9.1).
+The unswapped argument gives the reverse half edge with conjugate kernels. This identifies the signs and positive denominator needed by `Lift.lean`; the classical supplier chapter supplies §6 on both sides.
 
-There is a useful, but non-uniform, finite-degree consequence. Fix a degree bound \(D_0\) and choose the Fischer orthonormal monomial basis \(b_1,\ldots,b_N\) of \(\mathcal P_{\le D_0}\). Choose a function \(\beta_j\) satisfying (9.1) for each \(b_j\), and define
+There is an immediate finite-degree consequence. Fix a degree bound \(D_0\) and choose the Fischer orthonormal monomial basis \(b_1,\ldots,b_N\) of \(\mathcal P_{\le D_0}\). Choose a function \(\beta_j\) satisfying (9.1) for each \(b_j\), and define
 
 \[
  \mathcal S_{D_0}\left(\sum_jc_jb_j\right)=\sum_jc_j\beta_j.
@@ -643,7 +655,7 @@ This is a linear exact smoothing operator with support in the fixed compact set
  \tag{10.1}
 \]
 
-This proves bounded exact smoothing on every fixed finite-degree space. The constant in (10.1) is finite, but its growth with the Harish-Chandra parameters, degree or rank has not been estimated. Consequently (10.1) is not the quantitative return estimate required by the determinant argument. Nor does positive nonvanishing in (8.3) provide the needed reciprocal-norm bound. Those dependencies must stay visible in the quantitative-return analysis.
+This proves bounded exact smoothing on every fixed finite-degree space. [The quantitative smearing chapter](lsernau-quantitative-local-smearing.md) now replaces this uncontrolled basis choice with integer truncated spanning matrices, Cramer's rule and a fixed Cayley bump. It supplies a common compact support, explicit differential word length, a simultaneous rational denominator for the algebraic operators and explicit weighted smooth seminorms. The bounds use the original polynomial's Fischer norm and contain large factorial losses; they are not asserted to fit the full-chain budget. The [projection-bound chapter](lsernau-projection-lower-bound.md) separately supplies an explicit reciprocal norm on the harmonic line. An inverse bounded solely in the projected Hilbert norm and a global arithmetic theta-test lower bound still need further arguments.
 
 The local identities can be paired with a global theta kernel only when the global integral and its real convolution are justified in the same normed model. They then give the source's universal type and smearing clauses. The cusp, rapid-decay and quantitative Poincare assertions remain additional analytic assertions; they are not formal consequences of the polynomial identities alone.
 
@@ -660,6 +672,7 @@ The source normalization was checked directly in the following files:
 | `Lib/DiscreteSeries/Theta/LocalCorrespondence.lean` | layer construction, lines 128–446; saturation, lines 535–599; analytic bridge, lines 627–815 | `768df29f7cc12b6c814dacea70ca8d4afcef6d36` |
 | `Lib/DiscreteSeries/Theta/CasimirComparison.lean` | normal ordering and comparison, lines 284–447 | `0fc14857f6fc71c98197388c25aa05ce64851942` |
 | `Lib/Weil/Fock/OscillatorPair.lean` | harmonic coefficient, lines 253–294; positive-definite coefficient, lines 424–466; oscillator structure, lines 471 onward | `d53f5db7e3a2e3b2be2afcb537fd65a1d6af1dda` |
+| `Lib/Weil/Fock/PolynomialVectors.lean` | Banach Gaussian-integral differentiation, lines 267–305; derived polynomial action, lines 370–463 | `f9e3549bd687c5010525af5ee0031a2ff82e5afd` |
 | `Lib/DiscreteSeries/Rigidity/KernelFixes.lean` | normalized kernel; weighted integration; positivity; rigidity; reproducer implications | `2a41b692a2e3af63716d039f57acd193e848e6cc` |
 | `Lib/DiscreteSeries/FlenstedJensen/SquareIntegrability.lean` | decay and the discrete-series realization | `d6cc5f4a9f2831f12a22e272581732bb436688b9` |
 | `Lib/DiscreteSeries/Rigidity/HighestVectorsAndFiltration.lean` | filtration, Casimir growth and coefficient rigidity | `e9814b21cc102732e5840c7d160de1cce92df4cc` |
@@ -668,4 +681,4 @@ Pinned source directory: [the real theta correspondence](https://github.com/lser
 
 The exact-arithmetic script [check_noncompact_fock_bridge.py](../scripts/check_noncompact_fock_bridge.py) was run successfully. It checks 68 centred-Casimir identities and 2,064 row/column commutations on a bounded family of monomials, for both global signs. It also checks highest weights, both termwise harmonicity conditions and normalization at the matching matrix for a genuine large-gap noncompact example of ranks 2 and 3, and a rank-4 determinant example with 21 monomials. The latter intentionally does not meet the source gap and checks only the polynomial formulas. The output is [noncompact-fock-bridge.json](../certificates/noncompact-fock-bridge.json). These finite checks support the convention audit; the general algebraic proofs above do not depend on a finite search, and no analytic assertion is computationally certified.
 
-The remaining local obligation is now specific: supply the genuine normalized discrete-series coefficient with weighted integrability, prove its positive polar formula in these conventions, and establish the large-gap rigidity/root-cone package of §6. The finite Fock construction, its uniqueness and the exact smoothing implication need no additional theta-correspondence theorem. The [quantitative-return chapter](lsernau-quantitative-returns.md) supplies explicit Schur and Sobolev constants from a genuine integrable discrete-series coefficient. It does not bound the inverse of a nonzero theta projection or supply the remaining kernel package.
+The [classical supplier chapter](lsernau-discrete-series-suppliers.md) completes the normalized local package of §6, and the [projection-bound chapter](lsernau-projection-lower-bound.md) makes (8.3) quantitative. The finite Fock construction, its uniqueness and exact smoothing need no further theta-correspondence theorem. [Quantitative local smearing](lsernau-quantitative-local-smearing.md) controls the finite-degree maps in the original polynomial norm. The [quantitative-return chapter](lsernau-quantitative-returns.md) supplies the Schur and restriction constants, arithmetic packing and absolute Poincare sums. Remaining work includes fitting the local costs into the full-chain budget, the actual global theta-test lower values, and gauge, norm and see-saw assembly.

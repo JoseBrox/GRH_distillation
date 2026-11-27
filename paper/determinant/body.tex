@@ -183,19 +183,76 @@ The \prooflink{notes/lsernau-noncompact-real-edges.md}{noncompact real
 chapter} constructs the matching highest polynomial explicitly as a
 product of nested minors. The Fischer pairing proves its uniqueness
 and the required polynomial saturation; a centred Casimir identity
-matches the two infinitesimal characters. For a genuine discrete-series
+matches the required quadratic Casimir eigenvalues. For a genuine discrete-series
 lowest-type coefficient \(e\), compact highest-type averaging and a
 small smooth bump give a single \(\beta\in C_c^\infty\) with
 \(\beta*e=e=e*\beta\). Weighted integrability then permits every
 required derivative to move onto the compact factor.
-Under the precise positive polar, root-cone and large-gap rigidity
-package stated in that chapter, the projected highest polynomial
-\(x\) has positive norm and every projected polynomial equals
-\(\pi'(\beta_P)x\) for one compactly supported smooth function
-\(\beta_P\). Polynomial saturation proves exact equality in the
-Banach completion. The normalized discrete-series package and a
-uniform inverse-projection bound remain obligations; qualitative
-nonvanishing does not supply that quantitative bound.
+The \prooflink{notes/lsernau-discrete-series-suppliers.md}{classical
+supplier chapter} supplies the exact analytic package. Sun's
+published Theorem 6.3 and formula (26) give the normalized polar
+coefficient in principal-minor coordinates. The bottom PRV component
+has weight \(\lambda-\rho_c\), so the Dirac inequality forces
+\[
+ c\le\|\lambda\|^2-\|\rho\|^2=\kappa_\lambda.
+\]
+Under the required reverse Casimir inequality, equality and
+Vogan--Zuckerman's Proposition 6.1 identify the representation.
+This rigidity needs regular integral parameters; the large gap
+supplies weighted integrability. A bounded test-function argument
+passes the Casimir identity through the unitary direct integral,
+giving the assertion in the original positive-form Banach space.
+
+The projected highest polynomial \(x=P_l\Phi\) therefore has
+positive norm, and every projected polynomial equals
+\(\pi'(\beta_P)x\) for one compactly supported smooth \(\beta_P\).
+Polynomial saturation proves exact equality in the Banach completion.
+The \prooflink{notes/lsernau-projection-lower-bound.md}{projection
+bound} makes this nonvanishing quantitative. If the row rank is \(r\),
+the column rank is \(m\), \(D=\deg\Phi\), \(|l_i|\le L\), and
+\(T=D+rm+2r(L+r+1)+1\), then
+\[
+ \frac{\|P_l\Phi\|_B^2}{\|\Phi\|_F^2}
+ \ge\frac{(48T)^{-2r^2}}{4\dim\tau_\Lambda}.
+\]
+Positive polar averaging gives the small-ball lower bound;
+coefficient decay and ambient matrix packing cancel the formal
+degree and Haar scale. This controls the harmonic line in the
+invariant Hilbert norm.
+
+The \prooflink{notes/lsernau-quantitative-local-smearing.md}{quantitative
+smearing theorem} makes the polynomial saturation effective.
+For a cutoff \(B\ge d_0=\deg\Phi\), it constructs a linear map
+\(\mathcal S_B\) from polynomials of degree at most \(B\) to
+\(C_c^\infty(G')\), with one common compact support and
+\[
+ \pi'(\mathcal S_B P)x=P_lP.
+\]
+Integral highest-weight relations give a full-rank spanning matrix
+at each degree. Cramer's rule and induction require differential
+words of length at most
+\[
+ s_*=(m-1)d_0+\left\lfloor\frac{B-d_0}{2}\right\rfloor.
+\]
+If \(N=\binom{rm+B}{rm}\) and \(H_0\) is the explicit integral
+matrix-height bound in that chapter, then for integral input
+polynomials the differential-word coefficients have a common integer
+denominator at most \((N!H_0^N)^{B-d_0+1}\). This concerns the
+algebraic differential operators; the smooth bump's normalizing scalar
+need not be algebraic.
+A Cayley-coordinate probability bump of radius \(\delta\) has
+mixed derivative \(L^1\)-seminorms bounded by
+\[
+ (K_m/\delta)^s(s+1)!(s!)^2,
+ \qquad K_m=8192m(m^2+1)^3.
+\]
+Compact highest-type averaging normalizes it to reproduce \(x\).
+Moving the finite differential words onto this bump gives explicit
+weighted smooth seminorms for \(\mathcal S_B\), measured against
+the input Fischer norm. The construction does not bound the inverse
+on the entire projected quotient by its Hilbert norm. Its large
+costs must still fit the global arithmetic sharp tests and full-chain
+gauge and norm estimates.
 
 \section{Short forms and enough forms}
 
@@ -531,18 +588,26 @@ The \prooflink{notes/lsernau-global-norm-roots.md}{global norm-root chapter}
 supplies the global matching roots and the matching compact families
 by cyclic norm equations and finite free local polynomial algebras.
 
-\paragraph{The split spherical Galois supplier.}
+\paragraph{Spherical attachment at every rank and coefficient prime.}
 The \prooflink{notes/lsernau-split-galois-attachment.md}{split attachment
-chapter} verifies the classical input at every coefficient prime,
-including \(2\). The standard definite unitary group is quasi-split
+chapter} verifies the classical input on the source Weil-data fields
+at every positive rank and coefficient prime, including \(2\). The standard
+definite unitary group is quasi-split
 at every finite place: the CM quadratic extension is unramified
 because the field contains \(i\) and \(\zeta_3\), and \(-1\) is
 a local unit norm. Labesse's base change and discrete cuspidal
 factors, followed by the explicit Tate and character twists of
 Guerberoff's construction, reduce attachment to Chenevier--Harris's
-any-prime cuspidal theorem. Its monodromy bound forces actual
-unramifiedness at a spherical place away from the coefficient prime;
-its crystalline clause supplies the exact Frobenius polynomial above it.
+any-prime cuspidal theorem. Labesse's compact-infinity hypothesis
+holds, and the real degree is divisible by four since the field contains
+\(\mathbb Q(\zeta_{16})^+\). The given finite-unramified Weil splitting
+character supplies the parity characters in the cuspidal construction.
+Thus no additional imaginary-quadratic splitting or odd-rank
+condition is needed here. Local unramified base change and the
+monodromy bound force actual unramifiedness at any spherical finite
+place away from the coefficient prime; the crystalline clause gives
+crystallinity above it. At split places the exact Frobenius polynomial
+is the one displayed below.
 
 The conjugate Weyl coefficient, geometric reciprocity and Hodge
 sign are checked explicitly. For highest weight
@@ -563,11 +628,48 @@ Finally, a noncommutative exponential-polynomial recurrence shows
 that the positive Frobenius-power identities imply the inertia
 annihilator; at most
 \((n(n-1)+1)\binom{2n-1}{n}\) powers suffice.
-The remaining labelled local-global obligations are the actual
-dominant Iwahori double-coset matching, extraction of the sorted
-exponent from the prescribed finite product type, and their compatible
-global tower instantiation. They are not consequences of spherical
-attachment alone.
+The \prooflink{notes/lsernau-iwahori-dominant-matching.md}{dominant
+matching proof} twisted-conjugates each element of the strict Iwahori
+double coset to a diagonal element by nested compact congruence conditions. Polynomial
+interpolation then gives one matching root for every matrix with the
+specified characteristic polynomial; principal-unit norms and the
+trace-one Hilbert--90 argument preserve the exact support and labels.
+The \prooflink{notes/lsernau-iwahori-type-sorting.md}{finite-type
+extraction} starts from the prescribed parabolic product character.
+A rank-two averaging identity proves injectivity of the dominant
+operators and exchanges every out-of-order pair of eigencharacters.
+Only strict inversions are exchanged, so ties and repeated labels
+cause no division by a vanishing root difference.
+The \prooflink{notes/lsernau-shintani-product-types.md}{full finite
+Shintani product} preserves the determinant-block multiplicities
+through genuine semidirect parabolic induction.
+
+The \prooflink{notes/lsernau-tame-local-global-assembly.md}{prime-tower
+assembly} supplies the global steps and descent. Prime-exponent
+character approximation puts auxiliary ramification at places of
+rational-prime norm, hence at CM-split places. Symmetrizing the
+character gives a degree-\(p\) CM extension, also for \(p=2\);
+it is unramified above \(p\), has an integral trace-one element,
+and admits the required extension of the Weil data by a half-different
+supported on conjugate pairs. The auxiliary character is trivial
+on the whole distinguished decomposition group.
+
+For each chosen positive Weil element \(s\), the extension is
+chosen to keep \(s\) in
+\(H=\ker(\nu+\nu^c)\cap\ker\nu\).
+Weak base change and Chebotarev identify the two semisimple
+Galois representations on \(H\). The intertwiner transports the
+actual polynomial operator, including on potentially crystalline
+periods. The induction reaches the spherical case in a tower of
+total degree exactly \(k|C|\le k(q-1)\).
+The finite all-powers lemma gives the inertia identities.
+A tower unramified at the distinguished place first splits a
+squarefree Green label; the
+product-type transfer, sorted extraction and same descent then
+give its full labelled annihilator with the prescribed repeated
+determinant factors. Finite inertia away from the coefficient prime,
+potential crystallinity above it, and the labelled jumps descend
+at the same time.
 
 \subsection{From the attached main summands to Selmer data}
 The \prooflink{notes/lsernau-main-summand-data.md}{datum construction}
@@ -588,9 +690,9 @@ this gives the normalized datum defect
 \]
 where \(G\) is the chosen finite group order. The source's bound
 \((4f+3)r v_\ell(G)\) follows. This argument constructs the
-Selmer data \emph{from} the attached type-compatible representations;
-the attachment and its trace identity on the common theta
-eigensystems remain to be proved.
+Selmer data \emph{from} the attached type-compatible representations.
+Attachment is supplied above; the compatible normalized theta-lift
+trace identity on the common eigensystems remains to be proved.
 
 \subsection{Critical values and the chain correction}
 The \prooflink{notes/lsernau-critical-value-systems.md}
@@ -636,8 +738,8 @@ its stated real-edge hypotheses. The full-chain exchange identity,
 its compatible nonzero volumes and its quantitative application
 remain to be established.
 
-The remaining lower-bound work is the attachment and
-critical-value inputs, the projection denominator, the
+The remaining lower-bound work is the compatible theta-lift trace
+identity and critical-value inputs, the uniform projection denominator, the
 single-lift comparison operators and determinant ratios,
 and the complement basis on the common lattices.
 The earlier W10 metric and divisor construction is not a
@@ -677,6 +779,47 @@ Restriction and the normalized tame-generator conditions yield
 This proves the passage from local defects to tied-row lengths,
 including divisible coefficients. The numerical bound on these
 defects remains a distinct arithmetic input.
+
+\paragraph{A finite cost for each fixed family.}
+The \prooflink{notes/lsernau-fixed-relation-smith-bounds.md}{fixed-relation
+Smith theorem} gives a different bound at every prime. For the fixed
+potentially crystalline family \(u_x\), use left multiplication on
+\(M=\bigoplus_x\operatorname{Mat}_{n_x}(O)\), and put
+\[
+ A(g)=(u_x(g)-1)_x,\qquad I=\sum_g O A(g),\qquad
+ H=\operatorname{Hom}_O(I,T).
+\]
+The lattice \(I\) need not be saturated. The cocycle extension
+\(I\oplus O\) embeds equivariantly into \(M\oplus O\) by
+\((i,a)\mapsto(i+a\,\mathrm{Id},a)\). Crystalline exactness after a
+common finite Galois extension, followed by finite Galois averaging,
+shows \(A\in Z_f(I)\). No integral bound on a period lift is assumed.
+Every relation-respecting modular cocycle is uniquely \(q\circ A\)
+for an equivariant \(q:I\to T/p^nT\).
+
+A finite stack of the matrices \(\rho_H(g)-1\) generates their full
+integral row module. If its nonzero Smith entries have valuations
+\(a_1,\ldots,a_q\), and \(e_O=v_O(p)\), then
+\[
+ \operatorname{length}_O
+ \frac{(H/p^nH)^{G_{E_v}}}{H^{G_{E_v}}/p^nH^{G_{E_v}}}
+ =\sum_j\min(e_On,a_j),\qquad
+ \kappa_{T,v}=\frac1{e_O}\sum_j a_j.
+\]
+Integral equivariant maps produce crystalline cocycles, so this
+obstruction bounds the actual crystalline colength. A finite stack
+with the correct rational kernel already gives an upper bound;
+one nonzero maximal-rank minor supplies a certified cost.
+Equality of residual and rational equivariant-map dimensions gives
+\(\kappa_{T,v}=0\). Global restriction yields the same tied-length
+comparison with \(\sum_{v\mid p}\kappa_{T,v}\) in place of the dual
+defects, including divisible coefficients.
+
+This bound is uniform in torsion precision for a fixed family.
+It is not uniform as the family varies: even a weight-zero unramified
+rank-one example has arbitrarily large Smith cost while its actual
+crystalline colength is zero. The prescribed positive-loss estimate
+therefore remains a separate obligation.
 
 \paragraph{Zero defect in the Fontaine--Laffaille range.}
 The \prooflink{notes/lsernau-fontaine-laffaille-zero-defect.md}{zero-defect
@@ -723,9 +866,19 @@ proves the strict dimension theorem in all residue characteristics by
 residual Greenberg--Wiles and full-coefficient Poitou--Tate duality.
 The \prooflink{notes/lsernau-root-chain-selectors.md}{root-chain construction}
 supplies these selectors from spherical attachment and scalar inertia.
-Under the stated numerical defect, Selmer, triangle and labelled
-attachment hypotheses, these constructions produce each detected
-integral operator with its explicit valuation budget. Over an
+Using the supplied labelled attachment, these constructions produce
+each detected integral operator under the numerical defect, Selmer,
+triangle and auxiliary-precision hypotheses. For a fixed family the
+Smith theorem substitutes the explicit budget
+\[
+ B_p^{\rm fixed}=s+2t'a+\sum_i\sum_{v\mid p}\kappa_{T_i,v}
+                     +\operatorname{denominatorError}_p.
+\]
+Each actual main or character summand is charged once. All tied-row
+and extraction inequalities must hold with this substituted budget;
+increasing an auxiliary modulus may change the family and its Smith
+cost, so finiteness alone does not establish that parameter choice.
+Over an
 unramified coefficient extension with residue field larger than the
 number of eigensystems, one linear combination preserves the best
 valuation in every column: avoid the corresponding finitely many
@@ -764,9 +917,10 @@ and injective, gives the exact squared-volume comparison
 where \(\Gamma_\xi\) is the source three-exchange Hecke
 product and \(|c_1/c_\xi|^2=\Gamma_\xi/\Gamma_1\).
 
-The remaining first-order congruence theorem must supply a
-diagonal clearing map for each lift generator with its own
-valuation bound \(b_i\). An integral linear combination
+The preceding first-order congruence construction supplies a
+diagonal clearing map for each lift generator once its numerical
+arithmetic and extraction hypotheses hold. Their uniform verification
+must give the required valuation bounds \(b_i\). An integral linear combination
 avoiding finitely many residue-field hyperplanes gives one
 simultaneous operator \(\Lambda\) with
 \(v_\ell(\det\Lambda)\le\sum_i b_i\).

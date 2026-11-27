@@ -3,8 +3,9 @@
 We use the actual lowest-K-type coefficient and Bessel quotient
 measures of the source, not an arbitrary rapidly decreasing kernel.
 The stationary-point lower bound that supplies a nonzero normalized
-Bessel system, and the arithmetic return estimates, remain distinct
-obligations. The results here establish the coefficient decay,
+Bessel system is proved in [the stationary chapter](lsernau-stationary-bessel.md);
+the arithmetic returns are proved in [the return chapter](lsernau-quantitative-returns.md).
+The results here establish the coefficient decay,
 absolute integration, reproducing identity, norm/period identity and
 the quantitative majorant and cut-tail argument from that lower
 bound. They reduce the exponent 99 in the source covering/degree
@@ -416,9 +417,11 @@ All source references are pinned to
   Classical coefficient input: M. Flensted-Jensen, Ann. of Math.
   111 (1980), 253--311; B. Sun, Compos. Math. 143 (2007),
   matrix coefficients of cohomologically induced representations,
-  Theorem 1.1 (arXiv:math/0403440). We have matched the source
-  formula (1), not independently reproduced the classical
-  discrete-series existence theorem.
+  published Theorem 6.3 and §6.3, formula (26), p. 220.
+  The source header's “Theorem 1.1” is not the correct published
+  locator. [The supplier chapter](lsernau-discrete-series-suppliers.md)
+  checks the exact principal-minor formula (1), bottom-type
+  multiplicity, classical realization and positive polar average.
 * New/Spanning/Bessel/LargeFunction.lean 478--735,
   blob 29296c8227e564ce43a8ac5b6581031d8958bdb5;
   CutTailBound.lean 61--186, 214--380,
@@ -429,5 +432,6 @@ All source references are pinned to
 The near-identity and covering constants (3)--(6) are new
 ordinary estimates. The Bessel majorant and tail estimates
 (12)--(14) follow with the exact source hypothesis (11).
-The [stationary period chapter](lsernau-stationary-bessel.md) supplies the actual stationary point and lower period under the filling inequalities; the resulting exponent is 119r². The local Sobolev estimates, Poincare return and open-cell estimates must still be proved to obtain the full moments.
+The [stationary period chapter](lsernau-stationary-bessel.md) supplies the actual stationary point and lower period under the filling inequalities; the resulting exponent is 119r². The [quantitative return chapter](lsernau-quantitative-returns.md) supplies local Schur and restriction estimates, arithmetic weighted returns, absolute Poincare convergence and the truncation bound. The actual identity, terminal-fixer, open-cell and other second-moment estimates and good-form multiplicities remain required.
 No fresh Lean replay is asserted.
+

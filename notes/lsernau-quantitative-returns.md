@@ -13,11 +13,13 @@ count retains `(1 + 4 N b^(74n))^(2nrf)`, instead of enlarging it to
 `b^(12 n^3 r f)`. Neither improvement is needed to change the main proof
 architecture.
 
-The normalized discrete-series coefficient is a classical input, as in
-[Bessel majorants](lsernau-bessel-majorants.md). All uses of that input are
-specified below. In particular, this chapter does not replace the
-noncompact Casimir-rigidity argument needed for a theta lift by a Sobolev
-estimate.
+The normalized discrete-series coefficient is supplied by the exact
+specialization of classical theorems in
+[the discrete-series supplier chapter](lsernau-discrete-series-suppliers.md).
+[Bessel majorants](lsernau-bessel-majorants.md) proves its elementary
+minor decay. All uses of that input are specified below. The separate
+Casimir-rigidity and noncompact projection arguments are supplied in
+the local chapters; the estimates here concern restrictions and returns.
 
 ## 1. Normalizations and precise inputs
 
@@ -795,9 +797,15 @@ It is not the main second-moment theorem. It does not prove that the
 return operator is close to the identity, that the Poincare map is
 injective, or that its image has the desired multiplicities. Those
 questions require the separate identity, open-cell, terminal-fixer and
-remaining-orbit estimates. Likewise, supplying an actual noncompact
-theta edge still requires the normalized projection/rigidity package
-identified in [noncompact real edges](lsernau-noncompact-real-edges.md).
+remaining-orbit estimates. The normalized noncompact coefficient,
+root-cone and rigidity package is supplied in
+[classical discrete-series suppliers](lsernau-discrete-series-suppliers.md).
+The [noncompact real construction](lsernau-noncompact-real-edges.md),
+[projection bound](lsernau-projection-lower-bound.md) and
+[quantitative local smearing](lsernau-quantitative-local-smearing.md)
+therefore provide their actual local inputs. Fitting their costs into
+the global sharp tests and full-chain gauge/norm estimates remains
+separate from this return theorem.
 
 ## Source correspondence and verification scope
 

@@ -12,54 +12,63 @@ of the target conductor and 18480. Source revision throughout:
 | Part | Established suppliers and exact remaining boundary |
 | --- | --- |
 | Analytic endpoint | [Zero detection](lsernau-zero-detection.md) and [prime reduction](lsernau-moment-and-prime-reductions.md) prove the final implication from the stated arithmetic remainder, including quadratic-twist selection and the one-sided Landau argument. |
-| Common finite theta data | [Finite theta](lsernau-common-theta-finite.md), [graded unfolding](lsernau-graded-period-unfolding.md), [terminal matching](lsernau-terminal-period-matching.md), [convergent Rallis and sharp data](lsernau-rallis-sharp-inversion.md) and [real grid parameters](lsernau-real-grid-parameters.md) supply the finite classes, exact period reductions, stable-range Gram identity under classical Siegel–Weil, definite real edges, finite vacuum inverse, and actual grid block rules. Full-chain see-saw, compatible nonzero volumes and quantitative kernel/projection control remain. |
-| Noncompact real edges | [Explicit harmonics and smoothing](lsernau-noncompact-real-edges.md) proves the product of minors, matching weights, uniqueness, Fischer saturation, centred Casimir comparison and compact reproducing bump. Positive nonzero projection and exact compact-support smearing are proved **conditional on the stated positive polar, root-cone and large-gap rigidity package**. The full noncompact `IsEdge` supplier is not marked complete. |
+| Common finite theta data | [Finite theta](lsernau-common-theta-finite.md), [graded unfolding](lsernau-graded-period-unfolding.md), [terminal matching](lsernau-terminal-period-matching.md), [convergent Rallis and sharp data](lsernau-rallis-sharp-inversion.md) and [real grid parameters](lsernau-real-grid-parameters.md) supply their finite classes, exact period reductions, stable-range Gram identity under classical Siegel–Weil, definite real edges, finite vacuum inverse and actual grid block rules. Full-chain see-saw, compatible nonzero volumes and quantitative global norm assembly remain. |
+| Noncompact local representations | [Explicit harmonics](lsernau-noncompact-real-edges.md) proves the product of minors, weights, uniqueness, Fischer saturation and centred Casimir comparison. [Classical discrete-series suppliers](lsernau-discrete-series-suppliers.md) supplies the normalized positive polar formula, root-cone support and positive-form rigidity, using Sun, Vogan–Zuckerman and the Dirac inequality with checked hypotheses. Nonzero projection and exact compact-support smearing therefore hold for the actual local representations. |
+| Quantitative local control | [Projection lower bound](lsernau-projection-lower-bound.md) gives squared norm ratio at least (48T)^(-2r²)/(4 dim τ), with T=D+rm+2r(L+r+1)+1. [Quantitative local smearing](lsernau-quantitative-local-smearing.md) gives a linear map on every finite degree range with common compact support, explicit differential order, Cramer denominators and weighted smooth seminorms. It measures the original Fischer norm; the full projected-quotient inverse and compatibility of its large costs with the global budget remain. |
 | A — short integral forms | The [scalar CM](lsernau-cm-theta-normal-form.md), [charged jet](lsernau-charged-jet-estimate.md), [Weil normalization](lsernau-weil-normalization.md), [marked chain](lsernau-marked-chain-charges.md), [split transfer](lsernau-split-transfer-and-level-lifts.md), [exceptional geometry](lsernau-exceptional-polynomial-geometry.md), [middle edge](lsernau-exceptional-middle-edge.md), [bounded branching](lsernau-branching-normalization.md), [marked Hecke index](lsernau-marked-hecke-index.md), [nonstandard transport](lsernau-nonstandard-weil-transport.md) and [common jet](lsernau-common-jet-conjugation.md) chapters supply their stated algebraic and local norm estimates. Remaining: arithmetic sharp lower tests, common-kernel gauge and chain squared-norm assembly. |
-| B — returns and spanning | [Bessel majorants](lsernau-bessel-majorants.md), [stationary period](lsernau-stationary-bessel.md), [finite support/cuts](lsernau-support-to-cut.md) and [quantitative returns](lsernau-quantitative-returns.md) give the derivative/Schur bound, exact Gram coarea, local exponent 268n², integral frame separation, free-level weighted packing, absolute Poincare convergence and source truncation bound under the explicit coefficient and bounded-reduction hypotheses. [Global cuts](lsernau-global-cut-unfolding.md) now have the required absolute convergence. [Positive-type closure](lsernau-positive-type-moment.md) and [dimension/compression](lsernau-common-moment-interface.md) remain conditional on the actual identity, terminal-fixer, open-cell and other second-moment estimates and good-form multiplicities. |
-| C — spherical attachment | [Split attachment](lsernau-split-galois-attachment.md) supplies the classical spherical Galois representation at every coefficient prime, including 2, with conjugate-Weyl weights, geometric Frobenius and crystalline period actions checked. It uses Labesse and the explicit cuspidal-factor construction with Chenevier–Harris. [Protected steps](lsernau-protected-quadratic-steps.md), [odd-rank patching](lsernau-odd-rank-patching.md) and [two-string cancellation](lsernau-galois-two-string.md) provide the field and representation reductions. |
-| C — labelled local compatibility | [Trace transfer](lsernau-base-change-trace-transfer.md), [norm roots](lsernau-global-norm-roots.md), [specific Hecke transfer](lsernau-specific-hecke-transfer.md) and [finite Shintani labels](lsernau-shintani-label-transfer.md) supply their stated automorphic transfers. The split attachment chapter now proves unramified sorted Iwahori extraction, pro-Iwahori Hilbert 90, descent index k times the joint unit-character image, and the finite noncommutative all-powers-to-inertia lemma. Remaining: actual dominant Iwahori double-coset matching, finite-product-type sorted extraction and compatible tower instantiation. |
-| C — selected twists | [Small twists](lsernau-general-small-twist.md), [main-summand data](lsernau-main-summand-data.md) and [critical-value systems](lsernau-critical-value-systems.md) prove their constructions under the displayed attached local types, scaled-kernel and period inputs. The exact inverse-ratio height is below 5 per critical pair. Those concrete inputs remain required. |
-| C — lengths and individual operators | [Integral separators](lsernau-integral-separators.md) proves finite local Tate-duality counts, the Smith-lattice lift of relation-respecting cocycles, the local defect-to-colength inequality and the global tied-length bound, also for divisible coefficients. Combined with [Ribet algebra](lsernau-ribet-polynomial.md), [tied rows](lsernau-tied-row-construction.md), [local derivatives](lsernau-local-tied-derivatives.md), [integral extraction](lsernau-tied-integral-extraction.md), [triangle detection](lsernau-triangle-detection.md), [Kummer relations](lsernau-kummer-relations.md) and [root-chain selectors](lsernau-root-chain-selectors.md), this constructs individual detected integral operators under the **numerical crystalline-defect and remaining labelled/local hypotheses**. Hyperplane avoidance assembles them without extra valuation loss. A strict spectral projector instead pays the largest Smith exponent of its congruence module. [Fontaine–Laffaille zero defect](lsernau-fontaine-laffaille-zero-defect.md) now proves vanishing for the unramified crystalline aligned-window range, including all p∤M with λ_p=0 and the stronger threshold p≥b+δ+W+η+2. |
+| B — returns and spanning | [Bessel majorants](lsernau-bessel-majorants.md), [stationary period](lsernau-stationary-bessel.md), [finite support/cuts](lsernau-support-to-cut.md) and [quantitative returns](lsernau-quantitative-returns.md) give the derivative/Schur bound, exact Gram coarea, local exponent 268n², integral frame separation, free-level weighted packing, absolute Poincare convergence and source truncation bound under the explicit coefficient and bounded-reduction hypotheses. [Global cuts](lsernau-global-cut-unfolding.md) have the required absolute convergence. [Positive-type closure](lsernau-positive-type-moment.md) and [dimension/compression](lsernau-common-moment-interface.md) remain conditional on the actual identity, terminal-fixer, open-cell and other second moments and good-form multiplicities. |
+| C — spherical attachment | [Split attachment](lsernau-split-galois-attachment.md) supplies the classical spherical Galois representation at every positive rank and coefficient prime, including 2, on the source's actual Weil-data fields. Labesse, the explicit cuspidal-factor construction and Chenevier–Harris give the normalized unramified, crystalline and labelled Hodge clauses. The older protected quadratic, odd-rank and two-string route is an alternative, not a prerequisite. |
+| C — labelled local compatibility | [Dominant matching](lsernau-iwahori-dominant-matching.md), [finite-type sorting](lsernau-iwahori-type-sorting.md), [full Shintani products](lsernau-shintani-product-types.md) and [prime CM assembly](lsernau-tame-local-global-assembly.md) complete the selected sorted-Iwahori and labelled polynomial assertions, including repeated determinant labels, finite inertia and potential crystallinity. The CM steps preserve Weil data and trace-one integers, and restriction to the common kernel transports actual period operators. A positive Weil element of degree k needs tower degree exactly k times the joint unit-character image, at most k(q−1). The finite all-powers lemma avoids an infinite tower. |
+| C — selected twists | [Small twists](lsernau-general-small-twist.md), [main-summand data](lsernau-main-summand-data.md) and [critical-value systems](lsernau-critical-value-systems.md) prove their constructions under the displayed inputs. Attachment and local types are now supplied; the compatible normalized theta-lift trace identity, scaled-kernel integrality and critical-value norm/period formulas remain. The exact inverse-ratio height is below 5 per critical pair. |
+| C — arithmetic lengths | [Integral separators](lsernau-integral-separators.md) proves finite local duality counts, the relation-cocycle lift, defect-to-colength comparison and global tied-length bound, including divisible coefficients. [Fontaine–Laffaille zero defect](lsernau-fontaine-laffaille-zero-defect.md) gives vanishing for the unramified aligned-window range, including every p∤M with λ_p=0 and the stronger threshold p≥b+δ+W+η+2. The source-uniform positive-loss and tame level-prime bounds remain open. |
+| C — fixed-family costs and individual operators | [Fixed-relation Smith bounds](lsernau-fixed-relation-smith-bounds.md) gives cost κ=Σa_j/e_O at every prime for a fixed potentially crystalline family. The actual relation lattice may be unsaturated; the universal cocycle is nevertheless crystalline by rational extension and Galois descent. A certified rational kernel and one maximal-rank minor give an upper bound. Equality of residual and rational equivariant Hom dimensions gives zero cost. The [tied-row](lsernau-tied-row-construction.md), [local derivative](lsernau-local-tied-derivatives.md), [integral extraction](lsernau-tied-integral-extraction.md), [triangle](lsernau-triangle-detection.md), [Kummer](lsernau-kummer-relations.md) and [selector](lsernau-root-chain-selectors.md) arguments give individual detected integral operators under the remaining Selmer, detection and auxiliary-precision conditions. Enlarging the auxiliary modulus may change the family and κ, so a compatible uniform parameter choice is not proved. Hyperplane avoidance combines the operators without extra valuation loss. |
 | Final comparison | [One-lift comparison](lsernau-one-lift-comparison.md) and the [signed determinant inequality](lsernau-mathematical-extraction-2026-11-26.md) are proved under their stated common-lattice inputs. Apply at one common family of scales and divide by the actual positive rank and prime-sum normalizer. |
 
 ## Immediate priorities
 
-1. Supply the normalized noncompact discrete-series positive polar and
-   rigidity/root-cone package; apply the proved Fock and exact smoothing
-   argument, and quantify the inverse projection on the actual real edges.
-2. Finish the actual dominant Iwahori matching and finite-product-type
-   sorted extraction. Combine these with the proved spherical attachment,
-   tame index descent and finite all-powers lemma in the permitted global towers.
-3. Prove the remaining positive numerical crystalline defect estimate
-   below the Fontaine–Laffaille threshold and at the tame level primes.
-   The zero-loss branch, the defect-to-length comparison and the
-   conditional individual denominator operators are now written.
-4. Use the quantitative return theorem to establish the actual identity,
+1. Fit the quantitative noncompact local constructions into the actual
+   arithmetic sharp tests and common-chain gauge/squared-norm estimates;
+   prove the full-chain see-saw with compatible nonzero volumes.
+2. Establish the compatible normalized theta-lift trace identity,
+   scaled-kernel integrality and critical-value norm/period formulas on
+   those same eigensystems and lattices; apply the proved small-twist theorem.
+3. Prove the remaining source-uniform crystalline bounds below the
+   Fontaine–Laffaille threshold and at level primes, or control the new
+   Smith costs as auxiliary families vary. Retain all tied-row precision
+   inequalities and sum the actual all-prime denominator budget.
+4. Use the quantitative return theorem to prove the actual identity,
    terminal-fixer, open-cell and remaining second moments and multiplicities;
-   finish full-chain see-saw, sharp lower tests, gauge/norm assembly and
-   the determinant complement construction on the same data.
+   finish the complement construction and signed determinant comparison.
 
 ## Verification and resumption
 
 The exact-arithmetic [Fock script](../scripts/check_noncompact_fock_bridge.py)
 was rerun successfully: 68 Casimir identities and 2,064 row/column
-commutations; a rank-(2,3) noncompact example satisfies the full large
-source gap; the rank-(4,4) determinant example tests only the formulas.
-See its [certificate](../certificates/noncompact-fock-bridge.json).
-No analytic projection, completion or infinite theorem is certified by
-those finite checks. The quantitative restriction and coarea constants
-were independently audited and the convolution conventions fixed.
+commutations, including one noncompact full-gap example. The
+[discrete-series convention script](../scripts/check_discrete_series_suppliers.py)
+checks 3,362 dominance/bottom-PRV cases, 16,416 lowered-PRV cases
+(8,442 strict), and 84 Cholesky/minor cases. The
+[finite smearing script](../scripts/check_quantitative_local_smearing.py)
+checks 23 full-rank integral spanning matrices in four cases, of maximum
+dimension 84. Its small noncompact examples test algebra below the full
+source gap, as the certificate explicitly records. These are finite
+algebra checks, not computational proofs of the analytic theorems.
+
+The [source-ledger verifier](../scripts/check_local_source_ledgers.py) checks
+61 cached Git blobs and all 69 exact path/SHA ledger rows in the listed notes;
+its [certificate](../certificates/local-real-galois-integral-source-checks.json)
+records the scope. The new local, Galois and arithmetic arguments received
+independent internal audits of their decisive steps. No numerical
+Galois invariance matrix, fresh Lean replay or external mathematical
+review is claimed.
 
 The [recovery index](recovery-crosswalk.md),
 [source atlas](../blueprint/lean-source-atlas.md),
 [formal audit](../audit/lsernau-formal-audit-2026-11-26.md) and
-[attribution](../sources/README.md) separate external formal verification,
-our partial local build, source-byte checks and ordinary mathematical proofs.
-No fresh Lean replay or external mathematical review is asserted.
-The current RH and GRH PDFs were rebuilt (12 pages each), as was the
-one-page guide, with stabilized references and no overfull boxes. Revised
-sections and both target title pages were visually inspected; see the
-[build records](../paper/README.md). Compilation is not proof verification.
+[attribution](../sources/README.md) distinguish external formal evidence,
+our partial local build, source-byte checks and ordinary proofs.
+Current PDF build and visual-review details are in
+[the manuscript index](../paper/README.md). Compilation is not proof verification.
 
 ## Independent Hecke track and retained alternatives
 

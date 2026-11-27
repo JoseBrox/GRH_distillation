@@ -9,11 +9,17 @@ extra valuation loss. In particular, a finite-level crystalline condition
 is never assumed to be self-dual merely because the rational Bloch–Kato
 condition is self-dual.
 
-The numerical bound for the local defect is a separate input. Its
-Kummer-chart proof has not been reconstructed here. Accordingly the
-operators constructed below are conditional on that bound, the actual
-labelled Galois attachment, and the stated character-triangle and detection
-inputs. This chapter does not complete the denominator theorem or GRH.
+The source-uniform numerical bound for the local defect is a separate
+input. Its positive-loss integral-comparison proof has not been
+reconstructed here. The [labelled attachment and local compatibility
+assembly](lsernau-tame-local-global-assembly.md) supplies the Galois input
+on the actual Weil-data fields. The operators below retain the numerical
+defect, Selmer, character-triangle, detection and auxiliary-precision
+hypotheses. The [Fontaine–Laffaille theorem](lsernau-fontaine-laffaille-zero-defect.md)
+proves the zero-loss range, and the [fixed-relation Smith theorem](lsernau-fixed-relation-smith-bounds.md)
+supplies an alternative finite, data-dependent budget at every prime.
+Neither a uniform parameter choice for that alternative nor the full
+denominator theorem or GRH is concluded.
 
 All source references are to [lsernau/grh-lean, readable revision
 72fead102f663d5c7a407964a13dc0cf9d977207][source]. The original proof is
@@ -477,9 +483,14 @@ argument requires (20), not a rational spectral idempotent multiplied
 by an uncontrolled product of eigenvalue differences.
 
 The new content in this chapter is the explicit proof of its local
-length input (14) and the assembly below. Hypotheses 1–4 are retained
-where their ordinary proofs remain incomplete; (20) is not claimed
-unconditionally for the moving automorphic family.
+length input (14) and the assembly below. The labelled attachment in
+hypothesis 1 is supplied by the linked Galois chapters. Hypotheses 1–4
+retain their compatibility and numerical requirements on the chosen
+data, including all extraction-precision inequalities; (20) is not
+claimed unconditionally for the moving automorphic family.
+The [fixed-family variant](lsernau-fixed-relation-smith-bounds.md#6-global-length-and-individual-integral-separators)
+replaces the defect term by a sum of certified Smith costs, while
+retaining those requirements and their dependence on the family.
 
 ## 7. Lossless assembly of the individual operators
 
@@ -596,10 +607,11 @@ the exact prime-cost identity (18), and the operator assembly
 used as evidence for an infinite mathematical statement.
 No Lean replay is asserted.
 
-The remaining arithmetic core is the ordinary proof of (16), plus
-the actual labelled attachment and whichever character-triangle,
-detection and Selmer-size suppliers have not yet been discharged
-in the linked chapters.
+The remaining arithmetic core is the positive-loss ordinary proof of
+(16), together with the compatible theta-lift trace identities and
+whichever character-triangle, detection and Selmer-size estimates have
+not yet been discharged in the linked chapters. The fixed-family Smith
+alternative still requires uniform control as the auxiliary data vary.
 
 [source]: https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207
 [BK]: https://math.stanford.edu/~conrad/BSDseminar/refs/BKTamagawa.pdf

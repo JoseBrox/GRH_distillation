@@ -1,10 +1,11 @@
-# Split-case attachment and the exact remaining tame local comparison
+# Standard definite attachment and labelled Iwahori compatibility
 
 ## Scope and result
 
-This chapter supplies the split-case **spherical Galois attachment for every
-coefficient prime**, relative to precisely stated published automorphic
-Galois theorems. It proves unramified sorted Iwahori extraction, with
+This chapter supplies **spherical Galois attachment in every positive rank
+and at every coefficient prime** on the source's standard definite groups
+over fields with Weil data, relative to precisely stated published
+automorphic Galois theorems. It proves unramified sorted Iwahori extraction, with
 equal absolute values permitted. It also proves three parts of the tame local argument:
 the pro-unipotent Iwahori Hilbert 90 calculation, the finite-index
 descent calculation, and the passage from positive Frobenius powers to
@@ -12,14 +13,24 @@ inertia annihilators. The last argument works in a noncommutative
 endomorphism algebra and gives a finite bound on the number of powers
 needed.
 
-The full labelled local-global supplier is **not** declared complete:
-the actual strictly dominant Iwahori double-coset matching and the
-sorted-exponent extraction from the specified finite product type still require
-an ordinary proof in this reconstruction. Section 7 states exactly how
-these suppliers finish the argument. We use the explicit cuspidal-factor
+The [dominant matching addendum](lsernau-iwahori-dominant-matching.md)
+now proves actual Iwahori matching, including the universal determinant
+condition, and exact eigencharacter transfer under the source Step
+hypotheses. The [finite-type sorting addendum](lsernau-iwahori-type-sorting.md)
+proves extraction from the specified finite product type, including
+equal absolute values and repeated determinant labels. The
+[prime-step and descent chapter](lsernau-tame-local-global-assembly.md)
+now instantiates the global towers and actual period-operator descent;
+the [selected-coset product theorem](lsernau-shintani-product-types.md)
+supplies every determinant block in the finite Shintani transfer.
+Together they prove the full labelled local-global assertion at
+CM-split places. We use the explicit cuspidal-factor
 construction underlying Guerberoff's unitary theorem, with
 Chenevier--Harris's any-prime theorem for the factors. This avoids
-importing the odd-prime restriction of Guerberoff's surrounding setup.
+importing the odd-prime and coefficient-place splitting restrictions
+of Guerberoff's surrounding model setup. The actual Weil-data fields
+need no auxiliary imaginary quadratic splitting condition or odd-rank
+restriction for this classical construction.
 
 All Lean comparisons use
 [lsernau/grh-lean, revision
@@ -41,7 +52,11 @@ conjugate-self-dual cuspidal representation of
 monodromy domination away from \(\ell\); (b) gives the Hodge numbers;
 (c) gives crystallinity and the exact characteristic polynomial of
 linear crystalline Frobenius at spherical \(\ell\)-adic places.
-There is no requirement that \(\ell\) be unramified in \(E\).
+There is no requirement that \(\ell\) be unramified in \(E\), that
+its places split over \(E^+\), or that the rank be odd. General
+Hypotheses 1.1 in that paper are exactly cohomology with algebraic
+coefficients and conjugate self-duality. The splitting and parity
+conditions used earlier in its proof are removed in Theorem 3.2.3.
 
 We now explain the passage from cuspidal factors to the unitary group,
 since it also removes an unnecessary prime restriction. Guerberoff's
@@ -89,6 +104,23 @@ unramified above any prescribed finite set of places unramified in
 spherical place. This character construction has no restriction on
 the rational coefficient prime.
 
+On the actual source fields with Weil data these choices are
+explicit. Their splitting character \(\upsilon\) is unramified at
+every finite place, satisfies \(\upsilon^c=\upsilon^{-1}\), and at
+the embedding chosen by the CM type has phase \(z/|z|\), with
+inverse phase at its conjugate. Take
+\[
+ \psi_i=\begin{cases}\upsilon,&n-n_i\text{ odd},\\1,&n-n_i\text{ even},\end{cases}
+ \qquad
+ \chi_i=\begin{cases}\upsilon,&a_i,b_i\text{ both even},\\1,&\text{otherwise}.\end{cases}
+\]
+These are exactly the allowed parity characters in Guerberoff's
+construction, simultaneously unramified at all finite places.
+The source definition has phase exponent \(1\), not \(2\): see
+\(\operatorname{SplittingChar}\) in
+\(\texttt{Lib/Weil/Construction/WeilData.lean}\), lines 55--73,
+blob \(\texttt{ceb2c06f66e704f84e22611c364b67d9a0db6aa7}\).
+
 The normalization can be checked directly. Relative to the parameter
 of \(\rho_i\), the norm exponent in the \(j\)-th summand of (1.1)
 is
@@ -102,8 +134,11 @@ Thus these are exactly the parameters of \(\Pi_i\), with the
 rank-\(n\) twist \(\|\cdot\|^{(1-n)/2}\). The same shifts of
 archimedean parameters give the Hodge weights below.
 
-At a spherical split place all the cuspidal factors \(\Sigma_i\)
-are spherical: compatibility of local Langlands with the discrete
+At every spherical finite place the local base change is spherical.
+For a CM-split place this is the split local correspondence; at a
+CM-nonsplit place it is the unramified local base change in Labesse's
+Corollary 5.3. All the cuspidal factors \(\Sigma_i\)
+are then spherical: compatibility of local Langlands with the discrete
 isobaric construction makes their parameters summands of the total
 parameter, which has trivial inertia and zero monodromy. Away from
 \(\ell\), Chenevier--Harris (a′) therefore forces both trivial
@@ -184,12 +219,20 @@ hyperspecial maximal compact group: the unimodular hermitian lattice
 over an unramified quadratic extension gives the unramified integral
 unitary model.
 
-The source split-case hypotheses place every prime above \(\ell\)
-over a split prime of its imaginary quadratic subfield. Such a place
-cannot be fixed by CM conjugation; hence every place of \(E^+\) above
-\(\ell\) splits in \(E\). The distinguished place \(u\) in that
-statement is split as well. Consequently all finite-place hypotheses
-of the construction in Section 1 hold, for every \(\ell\).
+The real field \(E^+\) contains \(\mathbb Q(\zeta_{16})^+\), of
+degree four, so \([E^+:\mathbb Q]\) is even and at least two.
+This verifies Labesse's degree hypothesis and the even-rank inner-form
+parity condition \([E^+:\mathbb Q]n/2\in2\mathbb Z\) when \(n\)
+is even. Quasi-splitness has also been verified directly above.
+Labesse's property \((*)\) is automatic because the real group is
+compact, as his discussion preceding Corollary 5.3 explicitly states.
+
+Thus the construction applies to the standard definite group in every
+rank on a field with Weil data. The auxiliary imaginary quadratic
+subfield and its splitting conditions in the source's
+\(\operatorname{sphericalCompat\_of\_split}\) are hypotheses of
+that particular source proof; this classical construction does not
+need them. Its local spherical assertion includes CM-nonsplit places.
 
 ## 3. Normalizations and the resulting spherical supplier
 
@@ -261,21 +304,30 @@ these are the eigenvalues of
 The positive real square root of \(q\) is used in both appearances;
 (3.3) itself has only integral powers of \(q\).
 
-**Theorem 3.1 (split spherical attachment).**
-Let \(E\), \(u\), and \(\kappa\) satisfy the source split-case
-hypotheses. Let \(f\ne0\) be an eigenform of
+**Theorem 3.1 (standard definite spherical attachment).**
+Let \(E\) be a CM field with the source Weil data and chosen CM type,
+let \(n\ge1\), and let \(\ell\) be any prime. Let \(f\ne0\) be an eigenform of
 weight \(\kappa\) on the standard definite unitary group of rank \(n\),
 with prime-norm Hecke system \(P\). Then there is a continuous
 semisimple representation
 \[
  r:G_E\longrightarrow\mathrm{GL}_n(\overline{\mathbb Q}_\ell)
 \]
-attached to \(P\) in the source's sense. If \(f\) is spherical at \(u\),
-every representation attached to \(P\) is unramified at \(u\nmid\ell\),
-or crystalline at \(u\mid\ell\), has jumps (3.2), and is killed by
-\(\iota_\ell Q\) on every geometric Frobenius whenever \(Q\) is a
-Hecke polynomial of \(f\) at \(u\). Above \(\ell\), “killed” has the
-source's period-endomorphism meaning.
+attached to \(P\) in the source's sense. It is de Rham at every place
+above \(\ell\), with all embedding-labelled jumps (3.2).
+For every finite place \(u\) where \(f\) is spherical, every
+representation attached to \(P\) is unramified at \(u\nmid\ell\),
+or crystalline at \(u\mid\ell\). If in addition \(u\) is CM-split,
+then \(\iota_\ell Q\) kills every geometric Frobenius whenever
+\(Q\) is a Hecke polynomial of \(f\) at \(u\). Above \(\ell\),
+“kills” has the source's period-endomorphism meaning.
+These are exactly the clauses of \(\operatorname{SphericalCompat}\)
+for the standard group, including spherical CM-nonsplit places.
+
+The original split-case statement without Weil data is also covered
+by the prescribed-finite-set parity-character construction in
+Section 1. The explicit choice from \(\upsilon\) proves the stronger
+uniform statement needed for all the fields in the tame towers.
 
 **Proof.** First take \(n\ge2\). At a fixed compact open level the
 definite form space is finite-dimensional. Its invariant positive
@@ -343,11 +395,11 @@ uniformizer values, and its two jumps are
 \(-\kappa_2(\tau)\), \(+\kappa_2(\tau)\). This proves the rank-one case
 directly. \(\square\)
 
-The theorem supplies the split spherical case needed by the existing
-odd-rank patching and all-rank cancellation chapters when their other
-stated hypotheses hold. It does not assert that the source's
-independent PEL/cohomology/weight-congruence construction has been
-reproved here.
+This proves the full spherical supplier used in Section 7. It also
+supplies the initial split case in the preserved odd-rank patching
+and all-rank cancellation chapters. Those are alternative source
+constructions; the PEL/cohomology/weight-congruence argument itself
+has not been reconstructed by the classical theorem used here.
 
 ### 3.2. A sorted unramified exponent survives spherical averaging
 
@@ -740,10 +792,12 @@ a diagonal matrix with a principal unit in one position lies in
 eigenvalue is therefore one. Since its absolute-value factor is
 also one, the corresponding \(\xi_i\) kills principal units.
 
-## 7. Exact conditional completion of the tame argument
+## 7. Assembly of the tame and labelled local assertions
 
-The following is a proved reduction, with its inputs displayed.
-Suppose a class of global eigenforms is supplied with:
+The following records the logical assembly, with all its inputs
+displayed. For the source standard definite forms over fields with
+Weil data, each input is now supplied by this chapter and the linked
+proofs:
 
 1. spherical attachment and compatibility at every stage of the
    cyclic base changes used below;
@@ -792,8 +846,8 @@ Finite Shintani transfer preserves the roots of \(c\) and pulls
 the determinant characters back by residue-field norm.
 
 At the top of this tower the squarefree part is a product of
-distinct linear characters. If the actual finite-type-to-sorted-
-Iwahori extraction is supplied, the preceding argument gives
+distinct linear characters. The actual finite-product-to-sorted-
+Iwahori extraction in the linked addendum makes the preceding argument give
 \[
  \prod_{z\in\operatorname{Roots}
        (c\prod_b(X-x_b)^{t_b})}
@@ -820,14 +874,23 @@ to identify the roots in (7.2), not just an unordered appeal to
 “the usual inertial type.”
 
 The established spherical theorem of Section 3 supplies input 1
-in the split regime, and Sections 3.2--3.3 supply input 2, including
-equal absolute values. Existing global trace transfer
-and the finite Shintani chapter supply substantial parts of the
-base-change route. This chapter does **not** identify their
-general “supplied local matching” hypothesis with the missing
-actual Iwahori datum.
+in every positive rank on all these Weil-data fields, and Sections
+3.2--3.3 supply input 2, including
+equal absolute values. The [dominant matching addendum](lsernau-iwahori-dominant-matching.md)
+constructs the actual Iwahori datum and proves input 4 under the source
+Step and protected-place hypotheses, using the existing trace transfer.
+The [finite-type sorting addendum](lsernau-iwahori-type-sorting.md)
+supplies the type extraction used after the finite Shintani tower.
+The [prime-step and descent chapter](lsernau-tame-local-global-assembly.md)
+supplies inputs 3 and 5, with the complete Weil-data extension and
+the actual period intertwiner. Its positive-valuation tower has total
+degree exactly \(k|C|\), where \(C\) is the joint unit-character image.
+The [finite Shintani product theorem](lsernau-shintani-product-types.md)
+extends the squarefree transfer to every repeated determinant block.
+Thus no globalization or common-kernel hypothesis is left uninstantiated
+for this standard definite labelled theorem.
 
-## 8. What the reference audit rules out, and what remains
+## 8. The scope of the local conclusion
 
 An arbitrary Iwahori-fixed representation need not have zero
 monodromy: the Steinberg representation is the basic example.
@@ -849,21 +912,18 @@ monodromy, but identifying that target for the precise finite
 type is an additional argument. It must not be inferred merely
 from the presence of pro-\(p\) Iwahori invariants.
 
-Remaining ordinary work on this branch is now specific:
+The completed assembly identifies precisely the labelled period
+action required by the arithmetic defect argument. It supplies its
+Galois attachment, finite-type, labelled Hodge-jump and polynomial
+inputs. A numerical crystalline defect estimate is a separate
+assertion and is not obtained by naming that local action.
 
-- prove strictly dominant pro-\(p\) Iwahori double-coset matching
-  with its common polynomial root, universal determinant
-  condition and coset normalization;
-- prove the finite-product-type sorted-exponent extraction,
-  including equal absolute values;
-- instantiate the tame globalization/descent hypotheses in
-  Section 7 throughout the required tower, then identify the
-  labelled period action used by the arithmetic defect chapter.
-
-The sorted unramified extraction, the direct all-powers algebra,
-the trace-one Iwahori cocycle calculation, the exact index decrease
-and the splitting-degree refinement require none of these remaining
-claims.
+The source's protected quadratic steps, odd-rank patching and
+two-string cancellation remain useful alternative reconstructions
+of its attachment route. The classical spherical construction here
+already supplies attachment in every rank on Weil-data fields,
+so those reductions and their nonzero theta-lift inputs are not
+prerequisites of the local theorem proved here.
 
 ## Source crosswalk and verification scope
 
@@ -879,6 +939,7 @@ claims.
 | ../LocalGL/Iwahori/QuadraticRelation.lean | averaging and monomial translates, 377--480 | f7624dae612e561b3d27ceb5d05cee80003f7f8c |
 | ../LocalGL/Iwahori/HeckeDegrees.lean | dominant double-coset normalization; hyperplane recurrence; partial Satake formula | 4bfc4da3628c746b24e28d1f452358305cb303ad |
 | ../Adelic/AutomorphicForms/SmoothAlgebraicForms.lean | conjugate coefficient representation, 99--106 | eae8aeee0f2ce44e750145943d80ef40c559530c |
+| ../Weil/Construction/WeilData.lean | actual phase-one splitting character and Weil-data hypotheses, 55--89 | ceb2c06f66e704f84e22611c364b67d9a0db6aa7 |
 | ../PadicHodge/Crystalline/Basic.lean | Weil pairs, 130--134; linear Frobenius and annihilators, 216--275 | 6cfb275fa2f6a73ec50b79f28a6319ea0b5082c9 |
 | ../PadicHodge/Crystalline/HodgeTateJumps.lean | jump sign and Hodge--Tate frame, 35--48, 83--87 | 36c6b789f356ca4245eb58f1468e944b638ded12 |
 

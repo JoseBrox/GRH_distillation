@@ -12,8 +12,12 @@ Shintani theorem in the following form.
 
 * T. Shintani, "Two remarks on irreducible characters of finite general
   linear groups", J. Math. Soc. Japan 28 (1976), 396–414.
+  [Published full paper](https://www.jstage.jst.go.jp/article/jmath1948/28/2/28_2_396/_pdf).
+  Lemmas 2-8 and 2-9 give compatibility with finite parabolic induction.
 * C. Bonnafé, "On a theorem of Shintani", J. Algebra 218 (1999), 229–245,
-  [DOI](https://doi.org/10.1006/jabr.1998.7797). The extension on the
+  [DOI](https://doi.org/10.1006/jabr.1998.7797),
+  [published full text](https://imag.umontpellier.fr/~bonnafe/Travaux/shintani.pdf),
+  Theorem 4.3.1(a). The extension on the
   cyclic semidirect product can be chosen with positive Shintani descent,
   without a residual minus sign.
 * A. J. Silberger and E.-W. Zink, "Explicit Shintani base change and the
@@ -25,11 +29,14 @@ Shintani theorem in the following form.
   In Green's language, the regular-character orbits split under the
   new Frobenius, and the partition on each resulting orbit is unchanged.
 
-The bibliography, scope of the extension result and equation (1.1) were
-checked against the published abstracts. We invoke these classical
-theorems, not a reconstruction of their proofs. The third statement is
-the explicit parametrization theorem, which is stronger than mere
-existence of the Shintani bijection. No Ramanujan bound is used.
+The full text of Bonnafé's Theorem 4.3.1(a) and Shintani's induction
+Lemmas 2-8 and 2-9 was inspected for the product-type addendum.
+The bibliography and explicit parametrization equation (1.1) in the
+third paper were checked against its publisher's abstract. We invoke
+these classical theorems, not a reconstruction of their proofs. The
+third statement is the explicit parametrization theorem, which is
+stronger than mere existence of the Shintani bijection. No Ramanujan
+bound is used.
 
 Let k have q elements, k' have q^p elements, with p prime. Use the same
 faithful multiplicative character T of a common algebraic closure of k
@@ -41,8 +48,11 @@ thetaChar, greenTau, labelChar, IsLabel); LiftingGreenCharacters.lean,
 653–end. In the Green parametrization each participating Frobenius orbit
 has partition (1). The sign in tau_P is the positive-character convention
 of the source; these are actual cuspidal characters and the product over
-distinct orbits is irreducible. For the purpose here we only use the
-squarefree labels, not a formula for labels with repeated factors.
+distinct orbits is irreducible. This chapter treats the squarefree
+factor. The [product-type addendum](lsernau-shintani-product-types.md)
+supplies its parabolic product with all repeated determinant blocks
+in the source; it retains their ranks and gives a genuine positive
+selected-coset extension.
 
 ## Exact character transport, with the source normalization
 
@@ -162,15 +172,20 @@ has the required label at u. In particular the twisted spectral
 extraction of the specific transfer chapter produces an actual
 weak base-change eigenform with that label.
 
-This supplies the finite-character and local matching inputs to
-the labelled *automorphic transfer* using the precise finite-field
-theorems above. It does not attach a Galois representation to that
-eigenform, prove split-case attachment, give the Iwahori
-all-powers local-global identities, or prove the crystalline clauses.
-Those are separate remaining tasks.
+This supplies the squarefree finite-character and local matching
+inputs to labelled automorphic transfer. The
+[product-type addendum](lsernau-shintani-product-types.md) extends it
+to the full prescribed character, including repeated determinant
+blocks, and proves trace positivity and absorption without requiring
+the product to be irreducible. The [split attachment chapter](lsernau-split-galois-attachment.md)
+supplies spherical Galois attachment, and the linked Iwahori chapters
+handle dominant matching and sorted extraction. Their global
+descent and crystalline assertions are separate from finite
+Shintani transfer.
 
 Source dictionary: readable revision
 [72fead1](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src),
 Lib/LocalGL/Green/TauFunctions.lean, Lib/LocalGL/Shintani/CosetDescent.lean,
 LiftingGreenCharacters.lean 653–end, and
 Lib/GaloisRep/BaseChange/ShintaniLift.lean 244–end.
+
