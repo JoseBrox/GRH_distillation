@@ -9,7 +9,7 @@ prime, including the small-prime and tame cases, and therefore supplies
 individual integral separators with a finite, data-dependent cost under
 the other hypotheses of the existing separator construction.
 
-The bound is not the source's uniform crystalline-defect estimate. Its
+The [uniform inertia-relation refinement](lsernau-uniform-inertia-relations.md) gives a smaller cohomological cap and a family-independent bound whenever the rational inertia actions factor through a fixed potentially crystalline algebra. Without that additional hypothesis, the present bound is not the source's uniform crystalline-defect estimate. Its
 matrix depends on the actual representations and their lattices. In
 particular, it need not remain bounded when an auxiliary automorphic
 family varies. Section 7 gives a rank-one example in which this Smith
