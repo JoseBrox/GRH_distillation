@@ -214,9 +214,10 @@ chain and congruence-block selectors, and the valuation
 bounds for the chosen polynomial. The local derivative chapter establishes (3)–(4) and the spherical
 chain lemma, conditional on the labelled all-powers local-global
 input and the actual root-chain selector. It also proves a sharper
-auxiliary modulus loss. The arithmetic task is now to establish
-those remaining inputs and the valuation budget for every projected
-eigensystem; in particular
+auxiliary modulus loss. The [root-chain chapter](lsernau-root-chain-selectors.md)
+constructs the actual selectors and auxiliary primes from spherical attachment
+and scalar inertia. The arithmetic task is now to establish actual labelled
+attachment and the valuation budget for every projected eigensystem; in particular
 we have not yet constructed individual unconditional
 integral congruence separators. The local Iwahori
 comparison and local-defect/triangle/detection

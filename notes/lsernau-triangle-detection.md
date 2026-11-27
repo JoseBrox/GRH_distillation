@@ -4,7 +4,7 @@ This chapter proves a smaller, level-independent detecting set and the exact
 cyclotomic separation loss. It then derives the triangular Frobenius
 construction from the [Kummer-relation theorem](lsernau-kummer-relations.md) and the prescribed
 allowed-Frobenius condition. No even-part class-number bound is assumed.
-It is important that the relation supplier itself is not yet proved here.
+The relation supplier is proved in the linked chapter. The allowed-Frobenius property is supplied by [root-chain selectors](lsernau-root-chain-selectors.md) from spherical attachment and scalar inertia.
 
 ## 1. One detecting set for all coefficient rings, levels and exponents
 
@@ -336,6 +336,5 @@ All source references are to
 The proofs of (1)--(5) are unconditional under the stated
 cyclotomic-field hypotheses. The row construction (6)--(7)
 is conditional on the allowed-Frobenius condition; the actual relation supply is now proved by classical duality in [Kummer relations](lsernau-kummer-relations.md).
-The actual root-chain selectors and the remaining local-defect and
-length estimates are still required. No claim of a completed triangle
+The root-chain selectors are constructed in the linked chapter; actual attachment and the remaining local-defect and length estimates are still required. No claim of a completed triangle
 supplier or new Lean replay is made.
