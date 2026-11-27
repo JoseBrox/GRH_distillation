@@ -562,7 +562,7 @@ At infinity the negative principal minor of the new
 matrix is the positive principal minor of \(M^{-1}\);
 Jacobi's inverse-minor formula gives the ratio
 \(\Delta_\infty(M)/\Delta_\infty(M')=\overline{\det M}\).
-Both absolute values are 1 in this ratio. Compare the
+The ratio has absolute value one. Compare the
 nonzero vacuum overlaps to fix the scalar exactly.
 For the hom action \(\det M=(\det g')^{\dim V}
 (\det g)^{-\dim V'}\), giving precisely the additional
@@ -704,8 +704,5 @@ the identification of the initial real Bessel reproducing
 kernel with its specific normalization, its quantitative
 identity and return estimates, and the nonvanishing of the
 final scalar after all real integrals still need to be
-established. The Rallis Gram formula, its sharp data and
-invertibility of its particular convolution operator also
-remain separate: (9) proves convergence for rapid inputs,
-not injectivity of an integrated lift. No fresh Lean
+established. The [Rallis chapter](lsernau-rallis-sharp-inversion.md) supplies the separate stable-range Gram formula, its sharp finite data and quantitative convolution inversion for Schwartz data, using the classical convergent Siegel–Weil theorem. The real edge checks remain separate; (9) alone is not an injectivity theorem. No fresh Lean
 replay is asserted.

@@ -429,3 +429,5 @@ reports now document successful full builds, axiom checks and multiple
 kernel checks of this exact revision; their logs and provenance are
 recorded in the formal audit. Our own local build is partial. This strong
 formal evidence leaves the conventional reconstruction work above to be done.
+
+The [convergent Rallis and sharp-data chapter](../notes/lsernau-rallis-sharp-inversion.md) supplies the normalized stable-range Gram formula and inverse bound for the finite vacuum series on the Schwartz data, using the classical convergent Siegel–Weil theorem. The real edge and its type projection must still be checked for each application.
