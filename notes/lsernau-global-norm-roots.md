@@ -438,10 +438,10 @@ IsMatchingLevel family for every union of orbits,
 as used in IsBaseChangeLevel.
 
 This establishes the general matching compact family
-and the global root construction. Further work on the
-particular transfer levels must still incorporate the
-prescribed local Hecke functions, their multiplication
-and common finite Shintani characters. The labelled
+and the global root construction. The [specific Hecke transfer chapter](lsernau-specific-hecke-transfer.md)
+now incorporates the prescribed matching functions and proves the
+particular levels and multiplication of matching products.
+The common finite Shintani characters still need to be supplied. The labelled
 Galois local-global theorem is not a consequence of
 these norm-root identities alone.
 

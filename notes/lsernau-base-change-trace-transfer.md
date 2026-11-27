@@ -3,7 +3,7 @@
 We prove the weighted class-trace comparison and extraction of a labelled
 eigenvector once the actual matching roots and levels exist. We also prove
 the rational descent of the norm-one cocycle and the integral local
-cocycle splitting at split unramified places. The [global norm-root chapter](lsernau-global-norm-roots.md) now supplies the global matching-root existence and the general matching compact-level construction. The particular Hecke transfer levels, split-case Galois attachment and labelled local-global theorem remain.
+cocycle splitting at split unramified places. The [global norm-root chapter](lsernau-global-norm-roots.md) now supplies the global matching-root existence and the general matching compact-level construction. The [specific Hecke transfer chapter](lsernau-specific-hecke-transfer.md) supplies the transfer levels and matching products. Split-case attachment and labelled local-global compatibility remain.
 
 Throughout, E'/E is one of the source's cyclic prime-degree CM steps.
 Write sigma for its generator, p for its degree, and j for the two
@@ -255,23 +255,23 @@ these polynomials. Their product P is the projector to the
 theta block on both spaces. It is exact even with nilpotents.
 
 If tr(B|W_theta) is nonzero, (3) shows
-tr(P(T'_i)B'S) is nonzero. In the finer decomposition of W'
-under the whole commuting family, S permutes the blocks by
-sigma (it intertwines translation at g with that at sigma(g)).
-B' preserves the blocks, as does P, acting there by zero or
-one. A summand moved by S contributes zero to this trace.
-Some sigma-fixed character extending theta therefore has
-B' nonzero on its block. Its B'-image is a nonzero invariant
-space for the whole commuting family. Simultaneous
+tr(P(T'_i)B'S) is nonzero. Decompose W' under the full spherical commuting family,
+which S permutes by sigma; no corresponding assertion about
+the local generators is needed. Both P' and B' preserve
+these spherical blocks. A block moved by S contributes zero
+to the trace. On a sigma-fixed spherical block V, P'B' must
+therefore have nonzero image. That image lies in the selected
+local generalized eigenspace and is invariant under the whole
+commuting family. Simultaneous
 triangularization supplies a common eigenvector in that image.
 Its eigenvalues are the chosen character, and in particular
 match theta and are constant on the sigma-orbits of the
 spherical operators. This also applies when B' is not
 self-adjoint or invertible.
 
-The actual transfer-level existence and stability of matching
-products in PrimeDegreeTransfer.lean are separate inputs.
-Once supplied, this argument proves the required weak transfer
+The specific Hecke transfer chapter proves the actual
+transfer-level existence and stability of matching products.
+Together these arguments prove the required weak transfer
 eigenvector, including the choice in the image of the
 distinguished local operator. No positivity of the twisted
 trace on the target is used.
@@ -354,8 +354,8 @@ with the precise source global matching inputs retained.
 The local descent and rational coboundary argument use
 classical Hilbert 90, Landherr and faithfully flat descent.
 Global matching roots and the matching compact family are
-now supplied in the linked chapter. The particular transfer
-levels, multiplication of matching Hecke functions and actual
-common finite Shintani characters remain. The
+now supplied in the linked chapter. The specific transfer levels
+and matching products are proved in the specific transfer chapter.
+The actual common finite Shintani characters remain. The
 subsequent local-global attachment theorem is separate.
 No new Lean replay is asserted.

@@ -273,7 +273,7 @@ The [local tied derivative proof](../notes/lsernau-local-tied-derivatives.md)
 establishes the spherical chain lemma, integral trace algebra, and
 local norm-derivative identities from the labelled all-powers
 local-global input and actual root-chain selectors. The loss for
-the derivative is logarithmic in the rank. The [triangle detection chapter](../notes/lsernau-triangle-detection.md) proves a level-independent detector of size at most y^4, exact cyclotomic-product valuations and triangular selection conditional on allowed Frobenius data. The [Kummer relation chapter](../notes/lsernau-kummer-relations.md) proves the strict dimension theorem, including at 2, by a residual Greenberg–Wiles bound and full-coefficient Poitou–Tate comparison. Arithmetic length/defect and actual root-chain selectors remain open.
+the derivative is logarithmic in the rank. The [triangle detection chapter](../notes/lsernau-triangle-detection.md) proves a level-independent detector of size at most y^4, exact cyclotomic-product valuations and triangular selection conditional on allowed Frobenius data. The [Kummer relation chapter](../notes/lsernau-kummer-relations.md) proves the strict dimension theorem, including at 2, by a residual Greenberg–Wiles bound and full-coefficient Poitou–Tate comparison. [Root-chain selectors](../notes/lsernau-root-chain-selectors.md) supplies the actual allowed primes and common complementary polynomial from spherical attachment and scalar inertia. Arithmetic length/defect and labelled attachment remain open.
 
 At each coefficient prime choose a suitable anticyclotomic twist. One
 twist must serve the required finite family and its first $m$ powers
