@@ -429,7 +429,5 @@ All source references are pinned to
 The near-identity and covering constants (3)--(6) are new
 ordinary estimates. The Bessel majorant and tail estimates
 (12)--(14) follow with the exact source hypothesis (11).
-The remaining stationary nonvanishing/period lower bound,
-local Sobolev estimates, Poincare return and open-cell
-estimates must still be proved to obtain the full moments.
+The [stationary period chapter](lsernau-stationary-bessel.md) supplies the actual stationary point and lower period under the filling inequalities; the resulting exponent is 119r². The local Sobolev estimates, Poincare return and open-cell estimates must still be proved to obtain the full moments.
 No fresh Lean replay is asserted.
