@@ -209,11 +209,12 @@ times a combination of vacua with coefficients cleared by
 into the scalar common to all twists. The new coefficients
 are integral away from the twist and their untwisted conjugate
 absolute sum is at most \(B_0^{3m}\), given the source bound
-\(B_0^m\) before clearing. The raw scalar's nonvanishing
-cannot be obtained just by choosing an inverse; it follows
-if the lower chain is injective and \(\mathcal P\) is nonzero
-on the ramified space (as follows from the moment bounds
-below). Support, weight, level equivariance, and the initial
+\(B_0^m\) before clearing. The raw scalar is allowed to vanish. If its product with the
+raw coefficient normalization is zero, take the common outer
+scalar to be one and every datum zero. Otherwise absorb the
+nonzero product divided by the coefficient denominator into
+the common scalar. This is the exact source normalization
+proved in [terminal matching](lsernau-terminal-period-matching.md). Support, weight, level equivariance, and the initial
 unfolding identity still have to be proved.
 
 Let \(S\) be the small nonsplit primes together with \(N\),

@@ -227,7 +227,7 @@ proves the one-step and double-step period identities, with
 absolute convergence against rapid inputs and a nonzero
 fixed scalar at each double step. To iterate on the actual
 \(\mathrm{unfoldStage}\) functions we still require their
-level, equivariance, support and terminal Fock matching. Transposing each lift against the conjugate
+level, equivariance and support. The [terminal matching chapter](lsernau-terminal-period-matching.md) establishes the real/finite separation and terminal Fock coefficient and branching pairing. Transposing each lift against the conjugate
 test form is then ordinary Fubini applied to its
 theta integral (the index multiplies the same integral
 in both orders). Inserting the local period identity
@@ -287,10 +287,9 @@ analytic hypotheses. The substantial remaining
 work is to establish the exact common local Bessel
 formula/reproducing kernel and class decomposition,
 the absolute majorants for the Poincare series and
-returns, the lattice-bound support and matching of the
-proved period recursion to the upper finite data, the
-terminal coefficient factorization and a nonzero
-common scalar, and the open/terminal/identity
-amplitude estimates. None is implied by formal
+returns, the lattice-bound support and the open/terminal/identity
+amplitude estimates. The real/finite and terminal coefficient
+factorization is proved in the terminal matching chapter; no
+nonvanishing hypothesis on the raw common scalar is needed. None is implied by formal
 Fubini or by (1)--(4). In particular this is not
 yet the complete analytic or see-saw supplier.

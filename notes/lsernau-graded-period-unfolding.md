@@ -697,12 +697,11 @@ TwoEdges.lean 65--219; New/UpperBound/Seesaw/UnfoldingStages.lean
 The one-step unfolding (9) and the double-step identity (13)
 are now available on the actual graded model with their
 nonzero volume and flip-phase factors. They may be iterated
-where the intermediate equivariant functions and the actual
-zero-term-to-upper-datum matching have been proved.
-The support-to-cut and terminal Fock-functional matching,
-the identification of the initial real Bessel reproducing
-kernel with its specific normalization, its quantitative
-identity and return estimates, and the nonvanishing of the
-final scalar after all real integrals still need to be
-established. The [Rallis chapter](lsernau-rallis-sharp-inversion.md) supplies the separate stable-range Gram formula, its sharp finite data and quantitative convolution inversion for Schwartz data, using the classical convergent Siegel–Weil theorem. The real edge checks remain separate; (9) alone is not an injectivity theorem. No fresh Lean
+with the [terminal matching chapter](lsernau-terminal-period-matching.md),
+which proves the real/finite separation, intermediate coefficient
+match and terminal branching formula. The support-to-cut bounds,
+initial real Bessel reproducing kernel and its quantitative
+identity and return estimates remain open. The raw final scalar
+need not be nonzero: the actual source normalization handles
+the zero case with the zero datum. The [Rallis chapter](lsernau-rallis-sharp-inversion.md) supplies the separate stable-range Gram formula, its sharp finite data and quantitative convolution inversion for Schwartz data, using the classical convergent Siegel–Weil theorem. The real edge checks remain separate; (9) alone is not an injectivity theorem. No fresh Lean
 replay is asserted.
