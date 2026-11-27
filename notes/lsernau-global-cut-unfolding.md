@@ -136,8 +136,9 @@ from a different kernel.
 For a lower-chain stage \(j>0\), write
 \(H=G_{j,f}\), \(S=R_{j,f}\), \(A=K_{j,f}\),
 \(J=J_j(\xi)\subset A\), and \(S_0=S\cap A\).
-Use the prescribed compact lattice-bound set meeting
-the orbits where the unfolded period can be nonzero.
+Use the compact lattice-bound set meeting
+the orbits where the unfolded period can be nonzero, constructed in
+[finite support and cuts](lsernau-finite support and cuts (proved in the linked chapter).md).
 Its image in the discrete set \(H/J\) is finite.
 Choose one representative \(xJ\) of each \(S\)-orbit
 meeting this set. The finite cut \(T\) is the union
