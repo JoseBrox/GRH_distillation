@@ -3,9 +3,7 @@
 We prove the weighted class-trace comparison and extraction of a labelled
 eigenvector once the actual matching roots and levels exist. We also prove
 the rational descent of the norm-one cocycle and the integral local
-cocycle splitting at split unramified places. The global matching-root
-existence, the general matching-level construction, split-case Galois
-attachment and the labelled local-global theorem are not proved here.
+cocycle splitting at split unramified places. The [global norm-root chapter](lsernau-global-norm-roots.md) now supplies the global matching-root existence and the general matching compact-level construction. The particular Hecke transfer levels, split-case Galois attachment and labelled local-global theorem remain.
 
 Throughout, E'/E is one of the source's cyclic prime-degree CM steps.
 Write sigma for its generator, p for its degree, and j for the two
@@ -159,8 +157,8 @@ unitary matrices. The matching-root identities supply:
 
 These are the outputs of exists_isMatchingRoots and the
 matching-function property in TwistedTraceIdentity.lean.
-They are hypotheses here; existence of the root polynomials
-for the source's IsStep is a separate arithmetic theorem.
+They are proved in the global norm-root chapter from the
+source's IsStep and the actual matching test functions.
 Assume also every norm-one cocycle in C splits in C.
 Put C_0=j^{-1}(C), L_0=j^{-1}(L).
 
@@ -355,8 +353,9 @@ The weighted trace and spectral/label arguments are proved
 with the precise source global matching inputs retained.
 The local descent and rational coboundary argument use
 classical Hilbert 90, Landherr and faithfully flat descent.
-The existence of the global matching roots, the general
-transfer levels, and the actual common finite Shintani
-characters must still be matched to those inputs. The
+Global matching roots and the matching compact family are
+now supplied in the linked chapter. The particular transfer
+levels, multiplication of matching Hecke functions and actual
+common finite Shintani characters remain. The
 subsequent local-global attachment theorem is separate.
 No new Lean replay is asserted.

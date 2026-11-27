@@ -318,7 +318,7 @@ therefore costs at most \(5t\,m(m-1)/2\) once the system and chain inputs
 hold. The attachment on the common theta eigensystems, their trace
 identity, the kernel integrality and the period formulas remain open.
 
-The [base-change trace chapter](../notes/lsernau-base-change-trace-transfer.md) supplies the weighted class-trace comparison, spectral and Shintani label extraction from the actual global matching inputs, and the rational and split-unramified cocycle descent. Global matching-root existence, general levels and common finite characters, split-case attachment and labelled local-global compatibility are still required.
+The [base-change trace chapter](../notes/lsernau-base-change-trace-transfer.md) supplies the weighted class-trace comparison, spectral and Shintani label extraction from the actual global matching inputs, and the rational and split-unramified cocycle descent. Global matching-root existence, general levels and common finite characters, split-case attachment and labelled local-global compatibility are still required. The [global norm-root chapter](../notes/lsernau-global-norm-roots.md) establishes the CM norm Hasse principle, polynomial roots and general matching compact family. The specific Hecke transfer levels and matching products and labelled local-global theorem remain.
 
 Reconstruct the remaining arithmetic in this order:
 
