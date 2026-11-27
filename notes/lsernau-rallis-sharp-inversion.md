@@ -611,7 +611,7 @@ formula on that type is
                                                                \tag{10}
 \]
 In particular \(Ly=0\) implies \(y=0\), because one
-may take \(y'=R_Ay\) and use (8). For the actual compact real source in Galois attachment,
+may test against the finite partial sums defining \(R_Ay\) and pass to their Hilbert-norm limit using (8). Each partial sum is a finite linear combination of rapid translates; no rapid-decay claim about the infinite sum is needed. For the actual compact real source in Galois attachment,
 [compact real edges](lsernau-compact-real-lifts.md) now
 checks the edge by Cauchy multiplicity one and compact
 Schur orthogonality, giving \(Z_v=\|v\|^2/e(1)>0\).

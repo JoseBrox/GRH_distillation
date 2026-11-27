@@ -2,8 +2,8 @@
 
 This chapter proves the finite algebra and idelic construction of
 the Stickelberger systems, with an improved all-prime ratio bound.
-The geometric kernel integrality and the analytic period identities
-are retained as explicit input statements. They must hold on the
+The geometric kernel integrality and the rank-two analytic period identity
+are retained as explicit input statements. The [stable-range norm theorem](lsernau-normalized-transfer-critical-norm.md) now supplies the analytic norm and omitted-factor identities for z≥2. They must hold on the
 actual source levels; ordinary proofs of them are not supplied here.
 
 Sources: [AlgebraicPartIntegrality][integral] 101–249, 257–403;
@@ -126,7 +126,7 @@ the composite embedding with complex conjugation.
 Thus \(F_Q(\tau)=|G s_\nu\Lambda_{\nu,\tau}|^2\)
 is also an integral measure.
 
-The remaining **analytic inputs** are the exact
+The **analytic inputs** are the exact
 theta norm formula and determinant period formula:
 for \(z\ge2\) the scaled norm divided by
 \(N_Q^{2z-1}\) is a fixed nonzero multiple of
