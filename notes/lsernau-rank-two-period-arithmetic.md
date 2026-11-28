@@ -9,18 +9,21 @@ modulus, and proves its exact Euler insertion law. The finite datum is
 unchanged when the squared chosen modulus is replaced by its radical;
 this substantially reduces the denominator.
 
-The remaining analytic assertion is a nonzero constant, independent of
-the fully ramified auxiliary twist, relating this period square to
+The [rank-two analytic norm theorem](lsernau-rank-two-period-norm.md)
+supplies a positive constant, independent of the fully ramified
+auxiliary twist, relating this period square to
 
 \[
  N_Q\left|L^{M\cup Q}(1,(\nu\tau)^{-\mathrm{BC}})\right|^2.
  \tag{A}
 \]
 
-We do **not** deduce (A) or nonvanishing of the initial period from
-integrality or the Euler insertion law. The stable-range rank-one norm
-formula does not apply at this endpoint. Section 6 identifies the
-specific complementary-theta exchange that would supply (A).
+Its proof uses equal-rank Hecke transfer, anisotropic Siegel–Weil,
+explicit local doubling integrals and the degree-one functional
+equation. In particular (A) and nonvanishing of the initial period
+are not inferred from integrality or Euler insertion. Together the
+two chapters complete the \(z=1\) critical-value supplier. Section 6
+also records the source's complementary-theta exchange as an alternative.
 
 The proved inputs used here are the
 [normalized integral vacuum](lsernau-weil-normalization.md),
@@ -277,8 +280,10 @@ class number, character-group order, or Fourier normalization is
 introduced in (12). The only Fourier denominator has already been
 paid in (4).
 
-This proves the previously explicit uniform-kernel and integral-measure
-inputs at \(z=1\). It does not assert \(F_\varnothing(1)\ne0\).
+This proves the uniform-kernel and integral-measure inputs at \(z=1\).
+The nonvanishing \(F_\varnothing(1)\ne0\) is supplied by the
+[analytic norm theorem](lsernau-rank-two-period-norm.md), using the
+nonzero Hecke value at 1 and positive local factors.
 
 ## 4. Exact finite Hecke insertion in every rank
 
@@ -368,9 +373,9 @@ spurious nonvanishing assertion for every stated modulus. The full
 Stickelberger-system theorem needs nonvanishing at the empty auxiliary
 modulus and the additional fully ramified interpolation formula (A).
 
-## 6. What remains analytic, and where it occurs in the source
+## 6. The analytic supplier and the source exchange alternative
 
-The analytic identity needed to finish the \(z=1\) branch is
+The [analytic norm chapter](lsernau-rank-two-period-norm.md) proves
 
 \[
  |\Lambda_Q(\tau)|^2
@@ -382,8 +387,9 @@ The analytic identity needed to finish the \(z=1\) branch is
 
 for fully ramified twists, together with the nonzero base case. The
 factor contributed by the fixed chosen places is absorbed in
-\(C_\nu\). Once (20) is proved in this precise normalization,
-(14) and (19) complete the \(z=1\) system in
+\(C_\nu\). The proof matches the actual splitting character, determinant
+vector, radical datum, local Haar conventions and conductor.
+Equations (14), (19) and (20) therefore complete the \(z=1\) system in
 [critical-value systems](lsernau-critical-value-systems.md), and the
 already proved small-twist and inverse-ratio bounds apply.
 
@@ -400,9 +406,13 @@ analytic suppliers. Ordinary stable-range Siegel–Weil, or a statement
 of a toric-period theorem without matching these characters, data and
 normalizations, does not supply them.
 
-This chapter therefore closes the uniform arithmetic and exact Euler
-parts of the endpoint, while retaining (20) as the explicit unresolved
-analytic part. It does not claim a new proof of RH or GRH.
+The new analytic proof bypasses this three-exchange alternative for
+the endpoint: its equal-rank lift is constant by Hecke norm saturation
+and strong approximation, so one anisotropic Siegel–Weil formula and
+explicit rank-two local integrals suffice. The fully ramified base
+is nonzero by an elementary Euler-product proof that the relevant
+unitary Hecke \(L\)-value at 1 is nonzero. This completes the endpoint
+supplier, without claiming the remaining global RH or GRH argument.
 
 ## Source and finite-check ledger
 

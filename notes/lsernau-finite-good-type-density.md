@@ -1,5 +1,12 @@
 # Exact finite good-type density and the bad-type bound
 
+For the preferred moment proof, the [finite Bessel transfer](lsernau-bessel-good-type-transfer.md)
+uses the counts and admissible inequalities below directly in the
+actual Bessel spectral measure. Its sharp lower weight is at least
+the Plancherel weight computed here, and it removes the separate
+conjugacy-averaged local mass estimate from the bad-type trace.
+The exact Plancherel results below remain valid and useful.
+
 ## Result and scope
 
 This proves the finite bad-type supplier used by the actual

@@ -168,3 +168,11 @@ and terminal-fixer contributions follows from these identities.
 Those remain separate arithmetic estimates. Injectivity of the full
 Poincare map is not asserted. Good-form multiplicities are now supplied
 independently by the [two-place theorem](lsernau-good-form-multiplicities.md).
+
+The [finite Bessel good-type theorem](lsernau-bessel-good-type-transfer.md)
+adds the exact one-prime trace `tr r_psi(g)=d_X psi(g)` and transfers
+the good-label count directly to this trace. Its operator compression
+lemma deduces the identity and good-source deficits from the two
+restricted moments on `R G_i`. This replaces the separate
+conjugacy-averaged local mass calculation for the bad-type trace;
+it does not estimate the non-Bessel rational returns.

@@ -1,6 +1,6 @@
 # What these checks establish
 
-> **Verification scope.** Verification certificates are **versioned evidence**, not an updatable proof-completion score. Older review reports and source/PDF hashes apply to the revisions they record; they must not be rewritten to match later manuscripts. Current research targets are in the [checkpoint](../notes/current-state.md) and [frontier theorems](../notes/open-frontier-theorems.md). No Lean kernel rebuild is claimed.
+> **Verification scope.** Verification certificates are **versioned evidence**, not an updatable proof-completion score. Older review reports and source/PDF hashes apply to the revisions they record; they must not be rewritten to match later manuscripts. Current research targets are in the [checkpoint](../notes/current-state.md) and [dependency plan](../blueprint/merged-proof-plan.md). No Lean kernel rebuild is claimed.
 
 ## Current navigation: recent certificate families
 
@@ -25,7 +25,29 @@ keeps its ordinary mathematical suppliers explicit.
 | Geometry | [All-point height](geometry-point-height.json), [signed determinant assembly](geometry-height-assembly.json) and [independent review](geometry-height-assembly-review.json) |
 | Active compiled manuscripts | [RH build](rh-build.json), [GRH build](grh-build.json), [short guide build](guide-build.json) |
 
-## Active supplier proofs and their verification
+## Active structural simplifications and proof closures
+
+The [structural review](structural-simplification-review.json) records the
+new ordinary proofs, independent internal checks, precise hypotheses and
+remaining boundaries. The primary references are identified in each note.
+
+| Supplier | Reproducible verification and scope |
+| --- | --- |
+| [Actual common-chain transport](../notes/lsernau-common-chain-transport.md), [norm budget](../notes/lsernau-common-chain-norm-budget.md), [six-copy comparison](../notes/lsernau-six-copy-test-transport.md) | [Checker](../scripts/check_common_chain_transport.py), [certificate](common-chain-transport.json): exact finite gluing/Gram identities, integral monomial contractions, rank and vacuum exponents, pinned source blobs and the numerical cost ledger. Minkowski counting and the uniform norm argument are written proofs. The analytic see-saw and general product-form gluing remain separate. |
+| [Rank-one false-lift periods](../notes/lsernau-rank-one-false-lift-periods.md) | [Checker](../scripts/check_rank_one_false_lift_periods.py), [certificate](rank-one-false-lift-periods.json): 11 source blobs, 2,870 projection entries, 17,640 congruence stabilizers, 9,792 Gaussian-binomial coefficients, 384 norm products and 8,448 transfer exponents. The ordinary proof closes the actual rank-one test; the higher-rank gluing periods are not claimed. |
+| [Direct Bessel good-type transfer](../notes/lsernau-bessel-good-type-transfer.md) | [Checker](../scripts/check_bessel_good_type_transfer.py), [certificate](bessel-good-type-transfer.json): 10 balanced/one-sided induction comparisons over 45,294 subgroup matrices, 8,268 exact rational weight inequalities and 246 cuspidal equalities. Andrews–Thiem's primary theorem, mirabolic induction and the actual trace identity justify the general result. Analytic strip estimates are retained hypotheses. |
+| [Rank-two analytic period](../notes/lsernau-rank-two-period-norm.md) | [Checker](../scripts/check_rank_two_period_norm.py), [certificate](rank-two-period-norm.json): 3 symbolic rational identities, 390 Cartan/Euler coefficient comparisons, 17,764 finite matrices and 17 Fock norms, with pinned sources and primary-reference hashes. The constant-lift and anisotropic Siegel–Weil proof closes the fully ramified norm and nonzero initial period; computation does not substitute for those theorems. |
+| [Exact cyclotomic loss and aggregate budget](../notes/lsernau-exact-cyclotomic-loss-and-budget.md) | [Checker](../scripts/check_exact_cyclotomic_loss.py), [certificate](exact-cyclotomic-loss.json): 32 exact cyclic/coinvariant cases and 8 sparse all-prime integer certificates, with source hashes. The actual growing-field nonabelian projection budget is still open. |
+| [Weighted lattice average](../notes/lsernau-link-lattice-counting.md) | [Checker](../scripts/check_link_lattice_counting.py), [certificate](link-lattice-counting.json): 534 Smith types, 93,762 explicit nonzero rows, 80 Hermitian complement and 20 Gaussian-integer index identities, 180 local zeta coefficients and 1,260 weight trades. The ordinary proof retains the essential conductor gain. |
+| [Three-quotient frame count](../notes/lsernau-corank-frame-fibres.md) | [Checker](../scripts/check_corank_frame_fibres.py), [certificate](corank-frame-fibres.json): 36 exact integral-move cases, 18 skew solutions, six universal exponent certificates and six source blobs. Together with the lattice theorem this proves the full weighted pair count in the specified cell, corank and discriminant range. |
+| [Link congruence and torsion-index gain](../notes/lsernau-link-gain-index.md) | [Checker](../scripts/check_link_gain_index.py), [certificate](link-gain-index.json): 125 graph pairs, 100 determinant examples, 174 nondegenerate congruence examples, 120 finite-group/Hermite comparisons and 60 bordered minors. The written proof isolates one still-open integral link-lattice cut. |
+| [Conditional single-link reduction](../notes/lsernau-single-link-energy-frontier.md) | [Checker](../scripts/check_single_link_energy.py), [certificate](single-link-energy-frontier.json): seven source blobs and universal exact scale comparisons. The integral cut, gauge-specific orbit bound and zero-term reduction remain explicit hypotheses; neither restricted moment is claimed proved. |
+
+The previous five-supplier review below is a frozen earlier checkpoint.
+Its hashes and then-open boundaries are retained as historical evidence;
+the new review records later closures and current artifact hashes.
+
+## Earlier five-supplier verification
 
 The [supplier review](supplier-closure-review.json) records the exact
 scope of the ordinary proofs, independent internal mathematical reviews,
@@ -37,7 +59,7 @@ organized by their use in the determinant argument:
 | [All-prime sharp scalar tests](../notes/lsernau-sharp-scalar-couplings.md) | [Script](../scripts/check_sharp_scalar_couplings.py), [certificate](sharp-scalar-couplings.json): 108 exact derivative-coefficient cases, 51,456 large-prime weight cases and 3,396 sparse-weight cases, 1,068 with nonempty couplings. Nine source blobs are checked. The formal-group and analytic theta assertions are proved in the note, not by this enumeration. |
 | [Good-form multiplicities](../notes/lsernau-good-form-multiplicities.md) | [Script](../scripts/check_good_form_multiplicities.py), [certificate](good-form-multiplicity-conventions.json): 98,458 signature tuples and all regular degree-two cuspidal characters of GL2(F2) and GL2(F3), with exact cyclotomic orthogonality, unipotent averages and projector convolution. The automorphic comparison uses the specified Harris–Labesse theorems. |
 | [Finite good-type density](../notes/lsernau-finite-good-type-density.md) | [Script](../scripts/check_finite_good_type_density.py), [certificate](finite-good-type-density.json): 5,504 polynomials, 4,041 exact regular-label masses, 136 allowed-label counts and 816 tuple-deficit comparisons. The universal argument and admissible numerical estimates are written proofs relative to Green's character theorem. |
-| [Rank-two period arithmetic](../notes/lsernau-rank-two-period-arithmetic.md) | [Script](../scripts/check_rank_two_period_arithmetic.py), [certificate](rank-two-period-arithmetic.json): 397,442 prime-square residue matrices, 72 q-binomial/corank identities, 8 Laurent Euler squares and 528 denominator-exponent comparisons. The fully ramified analytic period and nonzero base value remain open. |
+| [Rank-two period arithmetic](../notes/lsernau-rank-two-period-arithmetic.md) | [Script](../scripts/check_rank_two_period_arithmetic.py), [certificate](rank-two-period-arithmetic.json): 397,442 prime-square residue matrices, 72 q-binomial/corank identities, 8 Laurent Euler squares and 528 denominator-exponent comparisons. The finite checker does not prove analytic interpolation; that assertion is now supplied by the separate rank-two analytic proof above. |
 | [Uniform bounded-class crystalline loss](../notes/lsernau-bounded-class-crystalline-loss.md) | [Source verifier](../scripts/check_bounded_class_crystalline_sources.py), [record](bounded-class-crystalline-loss-sources.json): three pinned interfaces and Liu's published reference. The Artinian-cohomology proof is qualitative; no numerical loss constant is computed. |
 
 The combined [source-ledger verifier](../scripts/check_supplier_closure_sources.py)

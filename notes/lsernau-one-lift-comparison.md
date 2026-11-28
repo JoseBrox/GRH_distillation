@@ -2,10 +2,16 @@
 
 This chapter reconstructs the finite linear-algebra and height parts of
 the comparison for the actual descent pair at step \(j\).
-The gluing kernels, their period identity, the products-spanning
-theorem, and the first-order congruence separator are explicit
-remaining arithmetic inputs. In particular a short Selmer group
-alone does not bound an arbitrary automorphic projection denominator.
+The upper chain has separate proved [finite transport](lsernau-common-chain-transport.md)
+and [norm bounds](lsernau-common-chain-norm-budget.md). The general
+product-form gluing operator below still requires its stated first-factor,
+integral product-form and analytic pairing inputs. The
+[six-copy test](lsernau-six-copy-test-transport.md) and
+[rank-one false-lift periods](lsernau-rank-one-false-lift-periods.md)
+supply the sharp critical comparison; they do not supply the general
+higher-rank gluing periods. Products spanning and the numerical
+congruence budget also remain inputs. A short Selmer group alone does
+not bound an arbitrary projection denominator.
 
 ## 1. Integral frames in the actual coefficient representation
 
@@ -426,8 +432,11 @@ the class weights are cleared and the test form is
 integral at the conjugate embedding. The determinant
 cost then increases by \(d\,v_\ell(g_0)\).
 
-Apply this to (4), assuming its integrality and false-lift
-orthogonality. The operator \(\Lambda C_\xi\) preserves
+Apply this to (4) on the common analytic datum, assuming its
+higher-rank false-lift orthogonality. The separate rank-one period
+proof supplies the sharp critical test, not this general implication.
+Together with the stated integral product-form gluing inputs, that
+hypothesis makes \(\Lambda C_\xi\) preserve
 the integral true lifts. Scale an eigenvector to primitive
 integral coordinates as above: its eigenvalue is integral
 because its image is integral and one coordinate is a unit.
@@ -567,9 +576,12 @@ Readable source [72fead1](https://github.com/lsernau/grh-lean/tree/72fead102f663
    blob ddfc466fb70a096b21707df61c6a0af498151f6c);
    AlgebraicPartSize, heightLe_norm_trivialLift_sq.
 
-Remaining: uniform first-factor/gluing estimates, (3) and
-products spanning, false-lift period vanishing, the construction
-of each separator in (8) (including the local comparison
-and congruence bounds), and the three signed arithmetic
-suppliers in Section 5. The finite calculations above
-neither assert nor re-prove those formal theorems.
+Remaining: first-factor and integral product-form estimates for (2),
+the compatible full analytic datum and (3), higher-rank
+false-lift periods for the general gluing map, products spanning,
+and the numerical local comparison, congruence and
+extraction costs for each separator in (8). Their exact required
+sum is isolated in the [aggregate budget](lsernau-exact-cyclotomic-loss-and-budget.md),
+§4. The definite finite-chain norm, rank-two analytic endpoint and
+actual rank-one false-lift period are now supplied by their separate
+proofs; those closures do not prove the full signed arithmetic bound.

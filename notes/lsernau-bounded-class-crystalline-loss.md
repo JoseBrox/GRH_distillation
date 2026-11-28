@@ -21,6 +21,14 @@ denominator budget, remain open. What is removed is dependence on the
 auxiliary family and its congruence precision once the original local
 data and target lattice are fixed.
 
+The [exact cyclotomic calculation](lsernau-exact-cyclotomic-loss-and-budget.md)
+now shows that a constant for this entire interval class must in general
+grow at least linearly with the interval width, even for a fixed trivial
+target over \(\mathbb Q_p\). The source's much sparser labelled weight
+sets cannot be discarded in a proposed small numerical replacement.
+That chapter also proves the aggregate projection-cost criterion needed
+by the signed determinant; qualitative finiteness alone does not imply it.
+
 The new classical input is Tong Liu's bounded-weight torsion-limit
 theorem [Liu]. The passage from that theorem to uniform finite colength
 is proved below; no effective constant is inferred from a limit.

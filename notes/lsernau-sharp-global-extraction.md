@@ -6,8 +6,12 @@ Weil lattice, with one common algebraic normalizing factor at all
 coefficient places. The [sharp scalar and coupling chapter](lsernau-sharp-scalar-couplings.md)
 supplies that lower bound, its actual frame and the required admissible
 weight estimates. Together the chapters give the arithmetic sharp test
-on the supplied admissible data. Their use in the global chain maps
-remains separate.
+on the supplied admissible data. The [six-copy comparison theorem](lsernau-six-copy-test-transport.md)
+now transports the smaller test into the actual four-block point-form
+pairing, with Fourier factor `M^(6f)`. The twelve-copy formulas below
+remain the compatible original interface. The upper common chain has
+a different tensor product; its gauge and finite norm propagation
+are supplied by [common-chain transport](lsernau-common-chain-transport.md).
 
 Source: pinned readable revision 72fead102f663d5c7a407964a13dc0cf9d977207,
 New/Derivatives/Sharpness/BoundAttained.lean, 105--453,

@@ -9,9 +9,10 @@ supplies uniform kernel integrality, the integral period-square measure,
 and exact Euler insertion for \(z=1\), with a smaller denominator after
 radical reduction. The [stable-range norm theorem](lsernau-normalized-transfer-critical-norm.md)
 supplies the analytic norm and omitted-factor identities for \(z\ge2\).
-The rank-two nonzero analytic period identity remains the explicit
-endpoint input; the ordinary proofs of the other suppliers are in those
-linked chapters on the actual source levels.
+The [rank-two norm theorem](lsernau-rank-two-period-norm.md) supplies
+the fully ramified endpoint identity and its nonzero base. Thus both
+critical-value branches have ordinary arithmetic and analytic suppliers
+on the actual source levels.
 
 Sources: [AlgebraicPartIntegrality][integral] 101–249, 257–403;
 [ClassSums][classes] 62–153, 169–386, 390–end;
@@ -153,14 +154,15 @@ the squared determinant period has factor
 \(N_Q |L(1,(\nu\tau)^{-1})|^2\) on fully
 ramified twists and the source's determinant
 Euler-factor identity on arbitrary tame characters.
-Uniform kernel integrality is proved for both branches, and the
-stable-range norm identity and its nonzero base value are supplied.
+Uniform kernel integrality, the analytic identities and the nonzero
+base values are proved for both branches in the linked chapters.
 At \(z=1\), the rank-two arithmetic chapter also proves the exact
 Euler-factor identity for every imprimitive character of a stated
-modulus. The remaining input is the fully ramified analytic period
-formula and its nonzero base value. Neither follows from the integral
-measure identity; imprimitive periods may in fact vanish at an
-inserted place where the unitary Euler parameter equals 1.
+modulus. Its fully ramified analytic formula and nonzero base follow
+from the separate rank-two norm theorem, which checks the actual
+characters, local test vectors and conductor. Imprimitive periods
+may still vanish at an inserted place where the unitary Euler
+parameter equals 1; the system includes these Euler zeros.
 
 ## 2. From these measures to the actual systems
 
@@ -251,9 +253,9 @@ small-twist theorem, and (4) becomes
  \tag{6}
 \]
 The common initial evaluation is nonzero.
-These formulas construct the systems once the
-specific kernel and period inputs in Section 1
-are supplied; no further integrality theorem
+These formulas construct the systems using the
+proved kernel and period inputs in Section 1;
+no further integrality theorem
 for L-values, or Fourier inversion with
 nonunit denominator, is needed.
 

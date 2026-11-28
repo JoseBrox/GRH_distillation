@@ -1,453 +1,325 @@
-# Preferred proof plan: short forms, spanning, and one determinant
+# Preferred proof plan: three constructions and one determinant
 
-**Revised 27 November 2026.** This is the preferred research and exposition
-plan for ordinary RH and Dirichlet GRH. It replaces the requirement to
-finish the original W04/W10 suppliers before trying the new determinant
-route. It is a plan with proved abstract reductions and explicitly open
-arithmetic suppliers, **not a completed human proof of RH or GRH**.
+**Revised 28 November 2026.** This is the dependency plan for the ordinary
+reconstruction of RH and Dirichlet GRH. It contains proved reductions and
+explicitly open arithmetic suppliers; it is **not a completed proof**.
+The [shared manuscript](../paper/determinant/body.tex) follows this order.
+The [reading guide](../paper/guide/main.pdf) explains the mechanism.
 
-The comparison is with
-[`lsernau/grh-lean@72fead102f663d5c7a407964a13dc0cf9d977207`](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207),
-starting from our own revision
-`74d18f39aa5db2b02e1ca83078b57768c5d92885`. The new source attributes the
-original argument to Levent Alpöge and Claude and its shortening to a
-collaboration with Anthropic. See the [audit](../audit/lsernau-audit-2026-11-26.md)
-and [formal verification record](../audit/lsernau-formal-audit-2026-11-26.md).
-The [active shared mathematical manuscript](../paper/determinant/body.tex)
-and [short guide](../paper/guide/main.tex) now present the proof in
-mathematical dependency order. Earlier PDF editions are historical.
+The immutable comparison source is readable `grh/src/` at
+[`lsernau/grh-lean@72fead102f663d5c7a407964a13dc0cf9d977207`](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207).
+The original argument is attributed to Levent Alpöge and Claude; see
+[sources](../sources/README.md), the [formal audit](../audit/lsernau-formal-audit-2026-11-26.md)
+and the [architecture audit](../audit/merged-plan-readability-2026-11-26.md).
+The original W04/W10 geometric route is retained as an alternative,
+not imposed as an additional prerequisite.
 
-The [architecture and readability audit](../audit/merged-plan-readability-2026-11-26.md)
-classifies the old eleven packages (four replaced, four adapted, three
-retaining their principal role) and specifies acceptance gates G0–G7.
-For the final human paper use a short common-data/A/B/C narrative plus
-only the necessary dependency-ordered proofs. Keep research alternatives
-outside that narrative. Treat the untwisted full-basis determinant as the
-common scalar; the local twisted determinants themselves vary.
+## 1. The exact acceptance test
 
-## 1. The idea a reader should learn first
-
-A nonzero algebraic number cannot be small at every place: its ordinary
-absolute values and its prime-adic absolute values satisfy the product
-formula. The proof tries to arrange two incompatible descriptions of
-one determinant.
-
-Arithmetic divisibility makes certain theta forms unusually short after
-normalization. A second-moment argument shows that enough of these forms
-are independent to occupy almost the whole target space. Other theta
-lifts, chosen separately at each coefficient prime, then force the same
-corrected determinant to be large. Comparing its upper and lower bounds
-limits a prime-sum error. The number of repeated lifts is about
-$\sqrt x$, and dividing by this number gives the square-root scale.
-
-The challenge is to construct the objects realizing that comparison.
-The product formula itself does not create the divisibility, independence,
-nonvanishing or uniform denominator estimates.
-
-## 2. What changes, and why
-
-| Part | Previous preferred supplier | Revised choice |
-| --- | --- | --- |
-| Final explanation | A compatible geometric degree, analytic norm and Selmer budget | One squared determinant, its local clearing index, and a signed main-term cancellation |
-| Lower bound | W10 section degrees, reference metrics, wall limits and divisor certificate | Selected-twist determinant comparison; retain W10 as an alternative |
-| Congruences | Uniform lengths for the original moving untwisted Selmer groups | Prime-specific anticyclotomic twists, with a simultaneous denominator and value-ratio budget |
-| Enough independent forms | Full retained-space trace/norm program | Mean positive source deficit and one scalar second moment, with an explicit greedy rank bound |
-| Large-cutoff prime error | Uniform estimates for a larger moving character family | Fixed-modulus prime number theorem on the readable source's fixed auxiliary character |
-| Analytic endpoint | Our one-sided Mellin criterion, plus flexible interval and sampling variants | Keep the one-sided principle; use the new source's exact prime remainder and twist selection, unless an exact bridge to our old remainder is proved |
-| General Hecke GRH | Separate arithmetic extension over number fields | Keep that separation; transfer the scalar and twisting principles only with their actual hypotheses |
-
-This is a better *current plan for human exposition*: its main comparison
-is shorter, and it has a complete formal source to inspect instead of an
-unconstructed lower-bound supplier. It does not establish that every new
-arithmetic supplier is simpler, or that the final conventional proof will
-be elementary. Theta lifting, automorphic forms, Galois representations,
-local integral comparison and Selmer arguments remain substantial inputs.
-
-The readable and compact editions are not interchangeable line by line.
-They use different analytic endings and error allowances. Use the
-readable edition as the base for ordinary proofs; consult the compact
-edition for alternatives, then prove the relevant substitutions.
-
-## 3. The exact comparison to prove
-
-Let the target have dimension $D>0$. Select independent vectors
-$y_1,\ldots,y_n$, with $n>0$, and let $C$ bound the logarithm
-of their squared covolume at the infinite places. Let $I$ be the
-sum of both conjugate-side local clearing costs. In the symmetric
-normalization $I=2\delta$, where $\delta$ is the clearing index.
-Let $Q$ be the cost of completing the family to a basis. The common
-determinant argument proves
-
+Work on one common integral target of dimension $D$. Choose $n>0$
+independent normalized theta images and complete them to a basis. Let
+$C$ bound their logarithmic squared covolume at infinity, $I$ be both
+conjugate-side local clearing costs, and $Q$ be the actual complement
+cost. In the symmetric normalization, $I=2\delta$.
+The [finite determinant proof](../notes/lsernau-mathematical-extraction-2026-11-26.md)
+gives
 
 ```math
-0\le C+I+Q+B,                         \tag{1}
+0\le C+I+Q+B,
 ```
 
-
-where $B$ is a height bound for the **combined** selected-twist
-correction, with one common algebraic multiplier. Shortness and the
-determinant-ratio estimate must supply
-
+where $B$ is a height bound for the **combined** selected-twist correction,
+with one common algebraic multiplier. The three constructions must give
 
 ```math
-C\le n(H-mR+E_A),\qquad B\le-DH+E_B.                       \tag{2}
+C\le n(H-mR+E_A),\qquad B\le-DH+E_B.
 ```
 
-
-Here $R$ is the exact signed prime remainder, $m>0$ the number
-of lifts and $H$ the common main term. Thus
-
+Consequently
 
 ```math
-\boxed{\quad
- nmR\le-(D-n)H+nE_A+E_B+I+Q.
- \quad}                                                       \tag{3}
+\boxed{nmR\le-(D-n)H+nE_A+E_B+I+Q.}                 \tag{1}
 ```
 
+Keep the actual fraction $n/D$ and the signed missing-rank term.
+When $H\ge0$ it is favorable; otherwise its size must be controlled.
+Charge the actual complement determinant and combine corrections before
+taking heights. An arbitrary metric rescaling or an uncontrolled missing
+subspace invalidates the comparison.
 
-This is the principal acceptance test. Keep the actual fraction $n/D$
-and the signed term $-(D-n)H$. If $H\ge0$, the latter is
-favorable. Without a sign theorem it must be retained or bounded.
-Charge the actual complement determinant, rather than its rank times a
-worst norm, whenever possible. Combine correction factors before taking
-their heights, so that their cancellations survive.
-
-A full ordinary proof of (1)–(3), including the common scalar, conjugate
-clearing matrices, product formula and Schur complement, is in the
-[determinant extraction](../notes/lsernau-mathematical-extraction-2026-11-26.md).
-It also explains why an uncontrolled missing subspace or an unrecorded
-metric rescaling invalidates the argument.
-
-For comparison, the readable source provides the sufficient estimates
-
+The source's sufficient targets are
 
 ```math
-D(H-3L)\le C+2\delta,\qquad
- C\le n(H-mR+L),\qquad L=fa(\log b)^4,
+D(H-3L)\le C+2\delta,\quad C\le n(H-mR+L),\quad
+L=fa(\log b)^4,
 ```
-
 
 ```math
 n\ge(1-4/b^2)D,\qquad
- \delta\le10D\log(1+2b^2)\,fa(\log b)^3,
+\delta\le10D\log(1+2b^2)fa(\log b)^3,
 ```
 
+with $H\ge0$. They imply $mR\le fa(\log b)^5$ on the actual scales.
+They are acceptance bounds, not all established ordinary suppliers.
+The refined inequality (1) permits weaker aggregate bounds.
 
-and $H\ge0$. These imply
-$mR\le fa(\log b)^5$ on its scale range. They are a complete
-source interface, not arithmetic estimates independently proved here.
-Our refinement retains their exact signed rank contribution and allows
-weaker, averaged hypotheses at the abstract level.
+## 2. Common data: one normalization throughout
 
-## 4. Six modules, in the order they should be written
+Fix $E=\mathbf Q(\sqrt{-d},\zeta_{q_1})$, an even number $m$ of lifts,
+$k=r+1-m$ and $t=5r$. The upper ranks are $n_j=k+j(t+1)$;
+the lower Bessel rank is $r$, with lower-chain ranks $r+jt$.
+Use the actual levels, characters, lattices, Haar measures and
+coefficient metrics of [common finite theta data](../notes/lsernau-common-theta-finite.md).
+The upper principal levels have trivial stabilizers. Joint invariance
+of the completed tensor suffices; individual summands need not be invariant.
 
-### Module 1 — The prime error and the last analytic implication
+The [Weil normalization](../notes/lsernau-weil-normalization.md),
+[nonstandard transport](../notes/lsernau-nonstandard-weil-transport.md)
+and [common jet comparison](../notes/lsernau-common-jet-conjugation.md)
+fix phases, rational equivariance and conjugation before any twist varies.
+The [graded period unfolding](../notes/lsernau-graded-period-unfolding.md)
+and [terminal matching](../notes/lsernau-terminal-period-matching.md)
+prove individual period identities with their volume factors.
+The [Rallis identity](../notes/lsernau-rallis-sharp-inversion.md) gives
+stable-range injectivity for supplied nonzero real edges. A raw terminal
+scalar can vanish; the full common-chain nonzero-volume assertion is
+still needed.
 
-Fix a modulus $q_0$ divisible by 18480 and an auxiliary prime
-$d\equiv q_0/2-1\pmod{q_0}$. Define the exact remainder
+At noncompact real edges, the [explicit harmonics](../notes/lsernau-noncompact-real-edges.md),
+[classical discrete-series inputs](../notes/lsernau-discrete-series-suppliers.md),
+[projection bound](../notes/lsernau-projection-lower-bound.md) and
+[quantitative smoothing](../notes/lsernau-quantitative-local-smearing.md)
+are proved with their exact hypotheses. The harmonic-line norm and finite
+polynomial smoothing do not yet control the entire projected quotient
+or its total global cost.
 
+## 3. Construction A: short integral theta images
+
+The [CM scalar construction](../notes/lsernau-cm-theta-normal-form.md)
+and [charged jets](../notes/lsernau-charged-jet-estimate.md) supply the
+local arithmetic kernels. The
+[common-chain transport theorem](../notes/lsernau-common-chain-transport.md)
+then proves the actual global finite gauge in one step. If
+$\delta\bar\delta=M$, the jet normalization $\bar\delta j_0$
+cancels the translation denominator $\delta$. The auxiliary gluing has
+exactly $D_N=N^{fm(n_0+n_m)/4}$ terms; its vacuum compression is a
+left inverse and its restricted Gram operator is $D_N I$.
+Joint invariance and the free upper levels give exact finite class sums.
+This proves baseline integrality and transports the charged nonsplit gain.
+
+The [norm-budget theorem](../notes/lsernau-common-chain-norm-budget.md)
+closes the actual all-conjugate squared-norm bound, with remainder
+$108fa\log b$ instead of $fa(\log b)^3$ (109 for the indicated terminal
+class norm). A short definite class count records a bounded Gram matrix
+and an intermediate module between $O_E^n$ and $G^{-1}O_E^n$.
+Minkowski's second theorem and finite subgroup counting replace the
+quantitative adelic-approximation/short-column class-count supplier.
+The theorem uses the original admissible scales and fixed vacuum constant.
+
+The [scalar sharpness theorem](../notes/lsernau-sharp-scalar-couplings.md)
+needs six copies. The [actual six-copy comparison](../notes/lsernau-six-copy-test-transport.md)
+uses blocks $(6,4,4,2z-14)$ in the same rank-$2z$ target, with integral
+monomial contraction, exact vacuum cancellation and class sums. It halves
+the sharp Fourier exponent from $12f$ to $6f$. The residual flat block
+stays in the existing stable range. The
+[rank-one false-lift theorem](../notes/lsernau-rank-one-false-lift-periods.md)
+proves its actual orthogonality in the improved range $33<2z$.
+Two compact finite orbits give bottom vanishing. A first nonzero tower
+lift would be cuspidal and bounded, but the actual split Hecke polynomial
+is invertible there. Fourier separation, with the good-place vacuum
+level retained, then gives the block period. This removes the
+quantitative hyperbolic-plane recursion for the actual rank-one case.
+
+The [exceptional geometry](../notes/lsernau-exceptional-polynomial-geometry.md),
+[middle-edge bound](../notes/lsernau-exceptional-middle-edge.md),
+[branching matrix](../notes/lsernau-branching-normalization.md) and
+[marked Hecke index](../notes/lsernau-marked-hecke-index.md) supply their
+local corrections. The marked truncated colength improves the coefficient
+14 to 6. The remaining work is the analytic see-saw construction of the
+common datum, compatible nonzero volumes, exceptional-prime corrections
+and the remaining noncompact global cost. The definite finite-chain
+integrality and asymptotic norm are no longer open obligations.
+
+## 4. Construction B: enough independent images
+
+The [return theorem](../notes/lsernau-quantitative-returns.md) gives the
+exact Gram coarea, integral-frame separation, absolute Poincaré
+convergence and quantitative truncation. The
+[Bessel-subgroup identity](../notes/lsernau-bessel-subgroup-moment.md)
+computes the normalized main contribution. The
+[two-place theorem](../notes/lsernau-good-form-multiplicities.md) proves
+actual occurrence and equal good Hecke multiplicities using Harris–Labesse.
+
+The preferred finite argument is now
+[direct Bessel good-type transfer](../notes/lsernau-bessel-good-type-transfer.md).
+Andrews–Thiem changes the balanced hook radical to its one-sided form;
+the mirabolic generic representation then supplies a common lower
+multiplicity, with equality for cuspidals. Together with the
+[exact allowed/primitive counts](../notes/lsernau-finite-good-type-density.md),
+this gives bad-type mass at most $2b^{-9}$ at each chosen prime.
+The actual Bessel source trace equals its induced-character mass exactly.
+No conjugacy-averaged local integral estimate is required for this step.
+
+The [weighted lattice theorem](../notes/lsernau-link-lattice-counting.md)
+proves the exact class-lattice average, including its $N^{-kf}$ gain.
+The [frame-fibre proof](../notes/lsernau-corank-frame-fibres.md) uses
+explicit integral moves and three finite quotients to close the full
+weighted near-pair count. Its family includes the specified cell index;
+reduction of the analytic terms to that family is a separate obligation.
+The [link-gain proof](../notes/lsernau-link-gain-index.md) supplies
+the congruence determinant gain, reciprocal torsion-index cancellation
+and near-term gauge bound. It reduces the discriminant estimate to one
+precise integral link-lattice cut; that cut also places pairs in the
+proved corank and height range. The
+[single-link reduction](../notes/lsernau-single-link-energy-frontier.md)
+proves the complete summation step and scale comparisons from that cut,
+the gauge-specific orbit bound and zero-term classification.
+Under those explicit hypotheses it gives both
+strips with the stronger bound $9b^{-40}|R|\dim X$ and source deficit
+at most $5b^{-9}\dim X$. The pair-count theorem alone does not supply that
+package. These are the precise shared prerequisites of the following
+restricted estimates.
+
+Let $r_\psi$ be the exact subgroup operator, extended by zero, and
+$D_g=P^*\rho(g)P-r_\psi(g)$. The remaining restricted estimates are
 
 ```math
-R_{q,d}(x)=\sum_{n\le x\atop n\equiv1\ (q)}
+\sum_{g\in RG_i}\|D_g\|_{\rm HS}^2
+       \le b^{-12}|R|\dim X,\qquad i=0,1.                 \tag{2}
+```
+
+Equivariance and contractive right convolution by the bad central
+projectors prove from (2) both the identity estimate and mean positive
+source deficit at most $4b^{-6}\dim X$. These conclusions should not
+be pursued as additional analytic suppliers. The restricted estimates
+(2), terminal-fixer and open-cell moments, and their remaining analytic
+terms are still to be proved. The
+[positive-type argument](../notes/lsernau-positive-type-moment.md) and
+[common moment interface](../notes/lsernau-common-moment-interface.md)
+then yield the quantitative independent family. Keep all source/target
+weights and the actual positive rank.
+
+## 5. Construction C: one aggregate arithmetic budget
+
+[Spherical attachment](../notes/lsernau-split-galois-attachment.md),
+[dominant matching](../notes/lsernau-iwahori-dominant-matching.md),
+[type sorting](../notes/lsernau-iwahori-type-sorting.md),
+[Shintani products](../notes/lsernau-shintani-product-types.md) and
+[CM tower assembly](../notes/lsernau-tame-local-global-assembly.md)
+supply the normalized representations and labelled local compatibility,
+including coefficient prime 2. Use these on the actual common good
+Hecke modules; the older quadratic/odd-rank attachment route is optional.
+
+The [Selmer datum](../notes/lsernau-main-summand-data.md),
+[critical systems](../notes/lsernau-critical-value-systems.md) and
+[small-twist theorem](../notes/lsernau-general-small-twist.md) give the
+selected-twist construction under the stated value and arithmetic inputs.
+[Normalized transfer and critical norms](../notes/lsernau-normalized-transfer-critical-norm.md)
+and [integral kernels](../notes/lsernau-integral-critical-kernels.md)
+supply the stable-range formulas. The
+[rank-two arithmetic theorem](../notes/lsernau-rank-two-period-arithmetic.md)
+gives the endpoint measure and exact Euler relation. The
+[rank-two period theorem](../notes/lsernau-rank-two-period-norm.md) closes
+the fully ramified analytic norm and nonzero base case. Equal-rank Hecke
+transfer forces a constant theta lift; anisotropic Siegel–Weil at
+$m=n=2$, explicit Cartan integrals and the Hecke functional equation
+replace three complementary theta exchanges.
+
+[Integral separators](../notes/lsernau-integral-separators.md),
+[tied rows](../notes/lsernau-tied-row-construction.md),
+[local derivatives](../notes/lsernau-local-tied-derivatives.md),
+[triangle detection](../notes/lsernau-triangle-detection.md),
+[Kummer relations](../notes/lsernau-kummer-relations.md) and
+[root selectors](../notes/lsernau-root-chain-selectors.md) supply detected
+integral operators under their remaining numerical hypotheses.
+Residue-field hyperplane avoidance combines them with no additional
+valuation loss. A short Selmer group alone does not bound an arbitrary
+spectral projector denominator.
+
+[Fontaine–Laffaille](../notes/lsernau-fontaine-laffaille-zero-defect.md)
+settles the aligned large-prime zero-loss range. The
+[Smith](../notes/lsernau-fixed-relation-smith-bounds.md),
+[inertia-algebra](../notes/lsernau-uniform-inertia-relations.md) and
+[bounded-class](../notes/lsernau-bounded-class-crystalline-loss.md)
+theorems supply fixed-data finiteness; the last is uniform in the full
+auxiliary family, rank and precision. Its growing-field numerical cost
+is not proved. The [exact cyclotomic theorem](../notes/lsernau-exact-cyclotomic-loss-and-budget.md)
+shows that a width-only bound can incur genuine linear loss. It also
+gives an effective sparse cyclotomic-inertia bound, a hypothesis not
+established for the actual nonabelian family.
+
+Only the following aggregate arithmetic inequality is needed. Put
+$L=\log b$, $B_0=faL^3/(mk)$, $A=3fmbL^2$ and $\Delta=J-P$.
+Let $\Lambda_j$ be the full-projection determinant cost, and
+$C_{j,\alpha}$ the projected-pairing height at the $k/2$ main pairs.
+The [aggregate comparison](../notes/lsernau-exact-cyclotomic-loss-and-budget.md#4-the-aggregate-projection-budget-is-the-needed-input)
+proves that
+
+```math
+\mathscr A=\frac1d\sum_j\Lambda_j+2\sum_{j,\alpha}C_{j,\alpha}
+ \le faL^4-mA-50m^2-mk(3B_0+10)                         \tag{3}
+```
+
+suffices when the norm and sharp-test costs are at most $B_0$.
+It retains the favorable direction term $-mk\Delta$ in the full
+inverse determinant. Every Selmer, detection and local denominator
+cost must be included. There is no need for the original uniform
+worst-case bound on each prime, eigensystem and critical pair.
+Qualitative finiteness or auxiliary-precision enlargement does not
+imply (3).
+
+## 6. Finish at one common scale, then apply the analytic criterion
+
+Prove the remaining common-chain analytic identities, higher-rank
+gluing periods, moment bounds, aggregate budget and complement estimate at the same
+admissible parameters. Insert them into (1), divide by the actual
+positive rank and exact prime-sum normalizer, and control every error.
+
+For fixed $q_0$ divisible by 18480 and a permitted prime
+$d\equiv q_0/2-1\pmod{q_0}$, the exact analytic remainder is
+
+```math
+R_{q,d}(x)=\sum_{n\le x,\ n\equiv1\ (q)}
  \Lambda(n)(1-\chi_{-d}(n))(1/n-1/x)
- -{\log x\over\varphi(q)}-c_{q,d}.
+ -\frac{\log x}{\varphi(q)}-c_{q,d}.
 ```
 
-
-The constant is fixed by the Laurent expansion of the logarithmic
-derivative. Its precise identification matters: omitting its finite
-correction destroys a decaying remainder. The
-[ordinary proof](../notes/lsernau-moment-and-prime-reductions.md#2-the-larger-cutoff-needs-only-fixed-modulus-prime-estimates)
-checks that normalization and proves the large-cutoff estimate from the
-classical prime number theorem.
-
-For each fixed accuracy $\varepsilon>0$, it suffices to construct
-the data for all sufficiently large integers $x$, with
-$m\ge\sqrt x$, $\log b\ll x^\varepsilon$ and
-$\log x_1\ge x^{\varepsilon/12}$. The exact prime identity gives
-
+The [prime reduction](../notes/lsernau-moment-and-prime-reductions.md)
+identifies the necessary Laurent constant and proves the large-cutoff
+estimate by the fixed-modulus prime number theorem. For each fixed
+accuracy, the arithmetic construction must work for every sufficiently
+large integer $x$, with $m\ge\sqrt x$, $\log b\ll x^\varepsilon$
+and $\log x_1\ge x^{\varepsilon/12}$. Then
 
 ```math
-R_{q_0,d}(x)\le {\varphi(q_0)(\log b)^6\over m}
+R_{q_0,d}(x)\le\frac{\varphi(q_0)(\log b)^6}{m}
        +|R_{q_0,d}(x_1)|+\log b\,|R_{1,d}(x_1)|.
 ```
 
+The [zero-detection proof](../notes/lsernau-zero-detection.md) supplies
+the finite-height quadratic-twist selection, one-sided Landau argument,
+residue sign, functional-equation reflection and imprimitive-factor
+checks. Choose the accuracy and auxiliary prime for a putative zero,
+then keep them fixed while $x$ grows. For RH use $q_0=18480$;
+for Dirichlet use a fixed multiple of 18480 and the target conductor.
+Optional averaging/sampling variants need not be added when the
+stronger pointwise interface is met.
 
-The last two terms are smaller than every prescribed negative power of
-$x$, because $q_0,d$ are fixed first. The resulting bound has
-exponent $-1/2+6\varepsilon$. The integer-to-real interpolation
-has a smaller $O(1/x)$ cost.
+## 7. Verification and the separate Hecke extension
 
-The [ordinary zero-detection proof](../notes/lsernau-zero-detection.md)
-now supplies the finite-height quadratic-twist selection and the exact
-one-sided Landau argument, including cancellation between all character
-factors, the real-residue sign, and regularity at $s=1$. Its selection
-proof uses theta integrals, three-lines and a Jacobi second moment;
-the final prime choice needs only fixed-progression reciprocal-prime
-divergence. A putative zero determines the accuracy and a bounded
-rectangle; choose a suitable $d$ next and then keep it fixed while
-$x$ grows. Thus this module is complete relative to the named classical
-theorems and the still-open arithmetic remainder estimate. An even
-weaker selection interface only needs nonnegative net real multiplicity
-and unequal net multiplicity at the proposed zero.
+Every imported theorem needs an ordinary proof or a primary reference
+with checked hypotheses. A source `Lib` label is not a substitute.
+The [verification index](../certificates/README.md) distinguishes exact
+finite computations, pinned bytes, internal review, classical inputs
+and formal evidence. There is no new full Lean replay.
 
-**RH first.** Start with the conductor-one target and the admissible
-fixed modulus $q_0=18480$. Do not substitute $q_0=1$ into a
-construction requiring 18480 to divide it. The old four-character RH
-route remains available, but requires an exact bridge to these new data.
+The [Hecke transfer plan](../hecke/notes/lsernau-transfer-plan-2026-11-26.md)
+records the CM structural inputs already proved for newly twisted
+Selmer groups. Dirichlet GRH does not settle the nonabelian cubic
+benchmark or infinite-order Hecke characters. Their common theta data,
+exceptional primes, critical ratios and phase dependence remain separate.
 
-### Module 2 — One set of actual theta objects
-
-Construct the CM field $E=\mathbf Q(\sqrt{-d},\zeta_{q_1})$,
-the places and weights, Hermitian spaces, levels, coefficient lattices,
-Poincaré map, target projector and the upper and lower theta chains.
-Define the normalized images once and use them throughout A, B and C.
-
-The required diagram must commute with its exact nonzero scalar for
-every permitted twist, at every coefficient prime and after the relevant
-restrictions. Give the finite and infinite Haar measures and the norm
-conventions next to that diagram. Prove that the target and the selected
-chain determinants are nonzero. A formal product formula does not
-supply nonvanishing.
-
-Use our local theta, Poisson, integral projector and scalar-transport
-work wherever its hypotheses match. Our old family and the new one are
-not identical by notation; each reuse needs an explicit dictionary.
-
-The [common finite theta chapter](../notes/lsernau-common-theta-finite.md) specifies the actual levels and finite-class chain construction, proves the exact ramified-source dimension, and transfers the full-source moments and index to that source.
-
-The [convergent Rallis and sharp-data chapter](../notes/lsernau-rallis-sharp-inversion.md) supplies the normalized stable-range Gram formula and inverse bound for the finite vacuum series on Schwartz data, using the classical convergent Siegel–Weil theorem. The compact real edge chapter supplies the definite case. The [real grid parameter chapter](../notes/lsernau-real-grid-parameters.md) verifies the exact signatures, parity, gaps and shifted block rules. The [noncompact real chapter](../notes/lsernau-noncompact-real-edges.md) constructs the highest polynomial as a product of minors, proves uniqueness and Fischer saturation, and checks the centred Casimir identity. The [classical supplier chapter](../notes/lsernau-discrete-series-suppliers.md) supplies the normalized coefficient, exact positive polar formula, root-cone support and Casimir rigidity, with all representation-theoretic hypotheses and Banach completion checked. The noncompact chapter therefore proves nonzero projection and exact compact-support smearing for the actual local representations. The [projection estimate](../notes/lsernau-projection-lower-bound.md) gives ratio at least (48T)^(-2r²)/(4 dim τ), where T=D+rm+2r(L+r+1)+1, and hence an explicit reciprocal norm on the harmonic line. The [quantitative local smearing theorem](../notes/lsernau-quantitative-local-smearing.md) now gives a linear map on every finite degree range with common compact support, explicit differential order, integral Cramer denominators and weighted smooth seminorms. It measures input size in the original Fischer norm. Fitting those large costs into the chain budget, controlling the whole projected quotient by its Hilbert norm, and full-chain see-saw and gauge/norm assembly remain separate obligations. The scalar least-valuation bounds and their actual admissible frame are now supplied in [sharp scalar couplings](../notes/lsernau-sharp-scalar-couplings.md), and [global extraction](../notes/lsernau-sharp-global-extraction.md) supplies the resulting common arithmetic indicator.
-
-The [normalized transfer and critical norm](../notes/lsernau-normalized-transfer-critical-norm.md) gives the rectangular sharp mass and a common finite Hecke operator for the Rallis series on any fixed finite collection of spaces. It also supplies the normalized Galois representation identity on occurring comparison eigensystems and the exact positive critical norm at z≥2. The [integral critical kernels](../notes/lsernau-integral-critical-kernels.md) completes the z≥2 gauge and group-ring measure. The [two-place multiplicity theorem](../notes/lsernau-good-form-multiplicities.md) supplies good-form occurrence and exact common finite Hecke multiplicities. The [rank-two arithmetic theorem](../notes/lsernau-rank-two-period-arithmetic.md) supplies the endpoint integral gauge, measure and Euler relations. Its fully ramified analytic period and the full-chain metric comparison remain separate.
-
-### Module 3 — Short integral images
-
-The [scalar CM supplier](../notes/lsernau-cm-theta-normal-form.md) establishes the marked good model, integral theta sections, derivative ring, and exact scalar non-split normal form by classical CM potential good reduction and coefficient recursion. The [charged jet theorem](../notes/lsernau-charged-jet-estimate.md) gives finite Fourier inversion, product factorization from the precise Weil inputs, the Frobenius coupling, and a uniform Schur-jet bound with a smaller direction-congruence cost (a finite min-cut) and exact factorial loss. The [standard Weil normalization](../notes/lsernau-weil-normalization.md) supplies the actual lattice, splitting character, coprime frames, integral vacuum, period factors and scalar translated-jet covariance in the classical standard model. The [marked-chain chapter](../notes/lsernau-marked-chain-charges.md) establishes the actual partner collision count, full marks, signed diagram comparison, exact filling charges, improved Hecke-prefix propagation conditional on local transfer, and auxiliary weight-degree index. The [split transfer and level chapter](../notes/lsernau-split-transfer-and-level-lifts.md) establishes the actual local Hecke polynomial by finite-field subspace counting, the auxiliary-prime gluing and double-lift identity, the source-level Up invariance, a sharper last-column Fourier loss and the definite gauge comparison under rational theta equivariance. The [exceptional polynomial chapter](../notes/lsernau-exceptional-polynomial-geometry.md) proves the simultaneous depth dimension bound by a weighted finite-point ideal, sharpens the outer edge-inclusion cost, proves the exact Pieri volume by alternating polynomials, and proves terminal gauge transport from the integral branching intertwiner. The [middle-edge chapter](../notes/lsernau-exceptional-middle-edge.md) proves the integral root gain, halfway pairing congruences, residue defect dimension, invariant averaging with the actual Frobenius-factor contraction and stepwise pairing congruence, and sharpened local pairing colength throughout the source degree range. The [bounded branching chapter](../notes/lsernau-branching-normalization.md) constructs the integral intertwiner by tensor contraction and controls its tail-hook normalization. The [marked Hecke index chapter](../notes/lsernau-marked-hecke-index.md) matches the actual scaled Hecke operators to the edge pairing, and propagates the sharpened index through the full repeated product and ramified intersection, keeping the gauge allowance separate. The [nonstandard transport chapter](../notes/lsernau-nonstandard-weil-transport.md) identifies the normalized Levi multiplier by its exact finite and real phase, proves rational unitary invariance and canonical pointed and orthogonal-product transport, and gives the mixed zero-term law and absolute additive summation. The [common jet comparison](../notes/lsernau-common-jet-conjugation.md) proves the exact common torsion-phase transport and semilinear finite Weil/Schrödinger laws and the definite Schur-jet upper bound, improving the lattice packing term to logarithmic size O(rank times log rank) in the exponent. The [sharp scalar theorem](../notes/lsernau-sharp-scalar-couplings.md) proves the all-prime derivative lower bound, theta cancellation, sparse coupling gain and near-pair carry estimate on the actual admissible weights. It verifies the coprime frame, its unit row and all required numerical thresholds. Six copies suffice, but the active comparison retains the existing twelve-copy maps by padding. [Global extraction](../notes/lsernau-sharp-global-extraction.md) consequently supplies the actual indicator tests with a single common height factor. Remaining: their transport into the comparison maps, chain gauge and squared-norm assembly.
-
-Construct a spanning set of integral source forms. Prove its theta-jet
-divisibilities and complex norm bounds on the same source lattice.
-Normalize by the exact prime gain and the see-saw scalar. Prove the
-resulting bound $H-mR+E_A$ for squared norms and a local clearing
-index for every finite collection of chosen translates.
-
-The finite projection, the prime at the auxiliary level, ramified source
-restriction and rounding of prime exponents must all appear in the
-ledger. The map used for the spanning moment may be rescaled for near
-isometry; prove equality of ranges and retain that scalar in this module.
-
-The already written sharp level-column, theta-jet and integral-projector
-arguments are candidate suppliers. They do not transfer automatically
-between different fields or levels.
-
-### Module 4 — Enough images from two scalar moments
-
-The [positive-type moment chapter](../notes/lsernau-positive-type-moment.md) proves the finite singular-minor and maximal-fixer closure with the sharper factor 1+3b^{-4}, conditional on the actual identity, terminal-fixer and open-cell estimates.
-
-The [finite good-type density theorem](../notes/lsernau-finite-good-type-density.md) proves exact allowed-label and primitive counts, the sharp minimum Green Plancherel mass and the exact good-tuple deficit. It verifies the admissible size inequalities giving total discarded identity coefficient at most b^{-8} for the actual two-prime projector. This closes the finite bad-type supplier, without claiming the analytic Poincare-moment estimate.
-
-For maps $A_t:S\to T$, with probabilities $p_t$, set
-
-
-```math
-\delta_S={1\over\dim S}\sum_t p_t
-       \operatorname{tr}(I-A_t^*A_t)_+,\qquad
- K=\sum_t p_tA_tA_t^*.
-```
-
-
-It is enough to control $\delta_S$ and
-$\operatorname{tr}K^2\le(1+\epsilon)(\dim S)^2/\dim T$.
-Require $2\delta_S+\epsilon<\eta<1$, where $\eta$ is the chosen
-missing-dimension tolerance before any source restriction.
-The [proved covering lemma](../notes/lsernau-moment-and-prime-reductions.md#1-two-scalar-moments-suffice-for-spanning)
-then gives an explicit missing-rank recurrence and a logarithmic bound
-for the number of selected maps. It permits average source defects,
-weighted choices and unequal individual errors. In the group case,
-$\operatorname{tr}K^2$ is the mean of
-$\|B^*\rho(g)B\|_{\rm HS}^2$.
-
-The [finite dimension and compression argument](../notes/lsernau-common-moment-interface.md) proves the definite-space mass dimension formula, and shows that the unprojected second moment suffices after compression by the good projector. The source bounds, if established, give the required rank share with at most $4D\log b/d_S+1$ translates. The [two-place multiplicity theorem](../notes/lsernau-good-form-multiplicities.md) supplies exact equality of the good finite Hecke modules. It checks the primitive cuspidal labels at two split places, the allowable finite-type projectors, the refined Harris–Labesse spectral argument and cancellation of the real signs. The hard task is to establish the moments for the actual arithmetic maps. The [global cut chapter](../notes/lsernau-global-cut-unfolding.md) proves the quotient and weighted-cut identities, including exact index cancellation, conditional on the local Bessel and theta-period formulas and absolute majorants. The [graded period unfolding](../notes/lsernau-graded-period-unfolding.md) proves polynomial height reduction, absolute convergence against rapid inputs, the two surviving-orbit calculations, one-step Bessel unfolding, and the exact double-period reduction with the rank-twisted determinant cancellation and nonzero scalar. The [terminal matching chapter](../notes/lsernau-terminal-period-matching.md) proves the real/finite separation, terminal coefficient factorization and branching pairing. The raw scalar is allowed to vanish; rescale the nonzero case and use zero data in the zero case. The [Bessel majorant chapter](../notes/lsernau-bessel-majorants.md) proves the coefficient decay, uniform covering, reproduction and norm-period identity, and improves the normalized majorant and cutoff tail from the stationary lower bound; it supplies the real Bessel formula from the actual normalized filling system. The [finite support chapter](../notes/lsernau-support-to-cut.md) proves the bounded-orbit induction from the actual lattice Fourier support, removes the split-lattice exception by ramified-source vanishing, and constructs the finite weighted cuts. The [stationary Bessel chapter](../notes/lsernau-stationary-bessel.md) supplies the stationary frame and quantitative lower period from the classical coefficient realization and filling inequalities, with improved normalized majorant exponent 119r². The [quantitative return chapter](../notes/lsernau-quantitative-returns.md) proves the Casimir filtration and Schur estimate, the exact Gram-cell coarea, and a local convolution restriction with exponent 214n² in place of 2000n². Its integral frame separation and free-level class-fibre argument give weighted return constant at most 2(1+4Nb^(74n))^(2nrf). Layer integration gives absolute Poincare convergence, the absolute class-return identity and the source truncation error, under the specified coefficient and bounded-reduction hypotheses. The [exact Bessel-subgroup moment](../notes/lsernau-bessel-subgroup-moment.md) computes its contribution and the full-minus-cut operator-norm bound, without a class-number loss. The non-Bessel identity, terminal-fixer, open-cell and other second-moment estimates remain on the critical path. Prefer
-these scalar outputs over unnecessarily strong pointwise conditioning.
-Choose the missing-rank tolerance jointly with the complement and index
-costs in (3); no particular tolerance is sacred.
-
-### Module 5 — Long forms through selected twists
-
-The [Ribet polynomial chapter](../notes/lsernau-ribet-polynomial.md) proves the integral common-element algebra from the exact tied-row interface. The [tied-row chapter](../notes/lsernau-tied-row-construction.md) constructs the main and character matrices from their arithmetic length, triangle and detection inputs; it proves the exact common squarefree coefficient and valuation bound. The [integral separator chapter](../notes/lsernau-integral-separators.md) proves the arithmetic length comparison from local defects by finite local Tate duality, including the coboundary cardinalities, and a full Smith-lattice lift of every relation-respecting cocycle. Global restriction and normalized tame generators bound the main length by the original Selmer length plus the local dual defects. The individual detected operators then follow from the numerical defect and triangle/detection hypotheses, using the supplied labelled attachment. Residue-field hyperplane avoidance assembles them without extra valuation loss. Strict spectral projectors have a separate congruence-module cost, equal to the largest Smith exponent.
-The [local tied derivative proof](../notes/lsernau-local-tied-derivatives.md)
-establishes the spherical chain lemma, integral trace algebra, and
-local norm-derivative identities from the labelled all-powers
-local-global input and actual root-chain selectors. The loss for
-the derivative is logarithmic in the rank. The [triangle detection chapter](../notes/lsernau-triangle-detection.md) proves a level-independent detector of size at most y^4, exact cyclotomic-product valuations and triangular selection conditional on allowed Frobenius data. The [Kummer relation chapter](../notes/lsernau-kummer-relations.md) proves the strict dimension theorem, including at 2, by a residual Greenberg–Wiles bound and full-coefficient Poitou–Tate comparison. [Root-chain selectors](../notes/lsernau-root-chain-selectors.md) supplies the actual allowed primes and common complementary polynomial from spherical attachment and scalar inertia. The [Fontaine–Laffaille zero-defect theorem](../notes/lsernau-fontaine-laffaille-zero-defect.md) proves modular functoriality of integral finite cohomology for unramified crystalline lattices with aligned labelled windows of width at most p−2 including zero. Its fixed-endpoint filtered Frobenius lift gives zero defect, and even an integral crystalline lift of every relation-respecting cocycle. The conventional cyclotomic and weight data imply vanishing for p∤M and p≥b+δ+W+η+2, covering the entire zero-loss branch. The remaining source-uniform positive-loss and level-prime numerical bounds remain open; labelled local compatibility, the passage from defects to arithmetic lengths, and individual-operator assembly under the numerical bounds are proved.
-
-The [fixed-relation Smith theorem](../notes/lsernau-fixed-relation-smith-bounds.md) gives a finite alternative at every prime for a fixed potentially crystalline family. Its universal relation cocycle is crystalline in the actual, possibly unsaturated, relation lattice. Modular equivariant-map obstructions have exact length Σ min(e_O n,a_j), and the normalized loss is at most κ=Σ a_j/e_O. A certified rational kernel and one nonzero maximal-rank minor suffice for an upper bound; equality of residual and rational invariant dimensions gives zero cost. Summing over actual local summands replaces the local-defect term in the individual separator budget. All Selmer, detection and auxiliary-precision inequalities are retained. The enlarged family, and hence the raw Smith sum κ, may change with the auxiliary modulus. The [bounded local-class theorem](../notes/lsernau-bounded-class-crystalline-loss.md) bounds the actual obstruction uniformly over the full enlarged family, its ranks and precisions, using a common crystallizing extension and bounded weight interval. This removes that auxiliary-family circularity, but the non-effective constants do not establish the growing-field all-prime budget.
-
-At each coefficient prime choose a suitable anticyclotomic twist. One
-twist must serve the required finite family and its first $m$ powers
-at that prime, including the inverse value ratios. It need not serve all
-coefficient primes. The corrected local products must equal one common
-nonzero algebraic determinant.
-
-The [degree-independent torsion specialization](../notes/lsernau-twist-specialization.md)
-is now proved, with a common total error across all polynomial minors
-and signed powers. Its torsion order is chosen before polynomial degrees
-and the cofinal presentation level; only the prime-power part of the
-power exponents costs radius. This removes a possible circular choice.
-The [finite presentation and line-witness theorem](../notes/lsernau-finite-selmer-presentations.md)
-now supplies a common finite polynomial matrix, sharp padded minors,
-strict-cutoff passage to divisible coefficients, and the bounded Selmer
-witness conditional on the actual auxiliary-prime and tied-length bounds.
-The [classical-duality descent](../notes/lsernau-classical-tied-descent.md)
-now proves the tied-length bound and bounded number of auxiliary primes
-from the precise singleton and paired Frobenius/character prime supply,
-using the finite Greenberg–Wiles formula and a short mirror pairing.
-The [CM prime-supply proof](../notes/lsernau-auxiliary-prime-supply.md)
-now supplies both of those existence hypotheses by ordinary
-Chebotarev and class field theory, preserving all character conditions.
-The [general small-twist theorem](../notes/lsernau-general-small-twist.md)
-now proves the system-polynomial witnesses as well, assembles the
-abstract source theorem for arbitrary finite signed powers, and gives
-one total budget for the length and evaluation excesses and tame inertia.
-Both Selmer and system line arguments have logarithmic radius cost.
-The [datum construction](../notes/lsernau-main-summand-data.md)
-now proves the scalar-inertia, matrix-span, rank and defect conditions
-from the attached main-summand representations with the source's type
-and Hodge compatibility. Its strengthened normalized bound is
-\(((4f+2)n+1)v_\ell(G)\) instead of \((4f+3)n v_\ell(G)\).
-The [critical-value construction](../notes/lsernau-critical-value-systems.md)
-supplies the group-ring pushforward and integral coefficient algebra
-from the source's scaled-kernel integrality and exact analytic period
-formulas. In its actual ratio estimate the fixed base evaluation
-cancels. The exact root-of-unity valuation gives inverse-ratio height
-less than \(5\) per critical pair, uniformly over coefficient primes
-and isomorphisms. The exchange correction before exponent \(D\)
-therefore costs at most \(5t\,m(m-1)/2\) once the system and chain inputs
-hold. Attachment, labelled local conditions, the normalized rational
-theta-lift identity and good-form occurrence are supplied. Scaled kernel
-integrality and the stable-range norm are supplied as well. The
-[rank-two arithmetic theorem](../notes/lsernau-rank-two-period-arithmetic.md)
-constructs the z=1 integral measure with scale
-M^(4f+h)d^(h/2) times the fixed vacuum and jet scales, and proves its
-exact Euler relation, including possible imprimitive zeros. The fully
-ramified analytic period and nonzero base case remain open.
-
-The [base-change trace chapter](../notes/lsernau-base-change-trace-transfer.md) supplies the weighted class-trace comparison, spectral and Shintani label extraction from the actual global matching inputs, and the rational and split-unramified cocycle descent. The [global norm-root chapter](../notes/lsernau-global-norm-roots.md) establishes the CM norm Hasse principle, polynomial roots and general matching compact family. The [specific Hecke transfer](../notes/lsernau-specific-hecke-transfer.md) supplies the exact levels and matching products. The [finite Shintani label chapter](../notes/lsernau-shintani-label-transfer.md) and its [product-type extension](../notes/lsernau-shintani-product-types.md) supply the positive selected-coset character for the full Green and determinant product, retaining all block ranks. The [spherical attachment chapter](../notes/lsernau-split-galois-attachment.md) applies at every rank and coefficient prime, including 2, on the actual Weil-data fields; the explicit cuspidal-factor construction uses Labesse and Chenevier–Harris without the older auxiliary splitting restriction. It proves the exact Hodge, geometric-Frobenius and crystalline normalizations. [Dominant matching](../notes/lsernau-iwahori-dominant-matching.md) supplies the universal polynomial root and character transfer; [finite-product sorting](../notes/lsernau-iwahori-type-sorting.md) supplies the sorted eigenvector, including ties. [Prime-tower assembly](../notes/lsernau-tame-local-global-assembly.md) constructs the required CM extensions with trace-one integers and Weil data, proves restriction conjugacy on the common kernel, and transports actual period-operator identities. This completes the sorted and labelled local assertions for these definite eigensystems. The positive-Weil-element tower has degree exactly k times the joint unit-character image, at most k(q−1); the finite all-powers lemma gives inertia without an infinite tower. The older odd-rank and two-string route remains an alternative source reconstruction.
-
-Reconstruct the remaining arithmetic in this order:
-
-1. Use the proved attachment, labelled compatibility, normalized lift
-   identity and multiplicity comparison on the common eigensystems.
-   Apply the Selmer datum construction. Prove the analytic rank-two
-   period and its nonzero base case; combine it with the proved integral
-   measure and Euler relations and the stable-range systems. Then apply
-   the general small-twist theorem and its critical-ratio budget.
-2. The first-order congruence-to-projection-denominator comparison on
-   the actual coefficient lattice, with normalized lengths retained.
-3. The comparison operator and one-lift determinant identity, with
-   false-lift restrictions and Hecke-value factors explicit.
-4. The chain/exchange identity and selected-twist value-ratio bounds.
-5. The completion family and one summable all-prime budget for (3).
-
-The general twist theorem uses finite presentations and specialization,
-rather than the original moving untwisted rank-two/rank-three/rank-four
-propagation problem. Its application uses the supplied Galois and local Hodge inputs; the analytic rank-two
-critical period and the common-chain comparison remain. Reuse our Smith-window, Fitting and
-projector refinements only after identifying their coefficient modules.
-Our old RH weighted Selmer theorem remains a proved supplier in its own
-scope; it does not automatically construct these twists.
-
-The [one-lift chapter](../notes/lsernau-one-lift-comparison.md) reconstructs the exact comparison from the finite gluing formula, including the integral tight frame, finite gauge cancellation, tuple Cauchy--Schwarz and conjugated adjoint bounds, mixed pairings and simultaneous diagonal separator. It proves the conditional signed three-exchange ratio budget $50m+k(4B+10-\mathrm{directionAmount})$ using the constant ratio bound. Individual first-order separators now follow under the stated arithmetic and extraction inequalities, with either the source-uniform defect budget or the fixed-family Smith budget. Their uniform numerical application, actual gluing and period estimates, products spanning and transport of the proved sharp tests into these maps remain to be established.
-
-The [two-string attachment chapter](../notes/lsernau-galois-two-string.md) proves the CM torus character separation, cancellation of the two odd-rank character strings, spherical direct-summand compatibility and passage from normalized split Hecke polynomials to the global row decomposition. The [odd-rank patching chapter](../notes/lsernau-odd-rank-patching.md) proves extension from the step kernels and local-label descent with the actual splitting degree. The [protected-step chapter](../notes/lsernau-protected-quadratic-steps.md) proves the arithmetic field and character construction, splitting, inertia generation and norm criterion. The compact real edge and sharp-data Rallis chapters supply nonzero definite theta lifts, and the specific Hecke and Shintani label chapters supply weak base change. The split attachment chapter supplies the spherical Galois theorem at all coefficient primes. The dominant Iwahori matching, finite-product sorting and permitted prime CM towers are now supplied and assembled above. This paragraph records the alternative odd-rank/two-string source reconstruction; it adds no unfinished local-compatibility prerequisite to the preferred route.
-
-The [uniform inertia-relation theorem](../notes/lsernau-uniform-inertia-relations.md) gives a sharper cohomological cap on the fixed-family Smith cost, and a precision- and twist-independent bound for fixed potentially crystalline rational inertia algebras. This covers the selected main-summand lifts. The [bounded-class theorem](../notes/lsernau-bounded-class-crystalline-loss.md) supplies qualitative uniformity for the entire enlarged family: precision saturation places all obstructions in one Artinian module, and a nonzero divisible part would contradict Liu’s torsion-crystalline limit theorem. The actual summand classes admit a common tame crystallizing extension, including at level primes, and coefficient extension preserves the normalized bound. Only the constants as the base field, targets and weights grow, and their signed all-prime application, remain numerical obligations.
-
-### Module 6 — Assemble the signed budget, then specialize
-
-Apply (3), divide by the actual positive rank and the exact prime-sum
-normalizer, and verify every error at the same values of the parameters.
-First obtain the conductor-one instance. Then carry the fixed target
-conductor through the same construction. Reflect zeros with the
-functional equation and treat the principal pole and imprimitive Euler
-factors explicitly.
-
-Our scale averaging and finite sampling are optional weakenings of the
-final arithmetic target. Use them if they remove a genuinely difficult
-supplier. They are not extra requirements when the source's stronger
-eventual pointwise comparison has been reconstructed.
-
-## 5. Existing work: retain, adapt, or set aside
-
-| Existing work | Use in the revised plan |
-| --- | --- |
-| One-sided Mellin criterion; fixed-accuracy quantifiers | Retain; compare exact transform and residue signs for the new remainder |
-| Fourth-power sampling and signed averaging | Optional weaker final acceptance test; verify the new remainder's interpolation constants |
-| W06 exact divisibilities, selected-prime chain and sharp level column | Reuse after the field/lattice/map dictionary is supplied |
-| W07 local archimedean and residue results | Reuse only on the actual new parameter range |
-| W08 amplitude, Poisson, Gram and weighted positive-trace work | Candidate inputs to Module 4's scalar moments; retain all source/target weights |
-| RH weighted Selmer assembly | Preserve as an established supplier for the original route; test exact compatibility before reuse |
-| Integral Smith windows, Fitting bounds, projector clusters | Reuse in Module 5 where they improve the actual denominator estimate |
-| W10 geometric wall/divisor program | Preserve as an alternative lower-bound supplier and source of CM metric facts; no longer the default blocking task |
-| Original full source atlas and 46-field ledger | Preserve as a navigation record for the original source, not the dependency graph of the new route |
-
-The existing map counts remain RH **6/9**, Dirichlet GRH **18/31** and
-Hecke GRH **6/9**. No old node is declared solved by choosing a different
-route. These counts refer to their existing stated interfaces; they are
-not completion percentages for this new plan.
-
-## 6. Hecke GRH: an opportunity with a precise boundary
-
-Dirichlet GRH supplies the abelian rational-field portion of the Hecke
-problem. The occurrence of auxiliary Hecke L-values in the new proof
-does not extend its exported zero theorem to arbitrary number fields.
-The first nonabelian cubic factor and general infinite-order characters
-still require arithmetic input beyond Dirichlet characters.
-
-The determinant/product-formula comparison works over number fields.
-The source's selected-twist principle is also formulated over CM fields,
-with substantial explicit hypotheses. Our
-[Hecke transfer note](../hecke/notes/lsernau-transfer-plan-2026-11-26.md)
-proves zero structural defect over arbitrary CM fields for odd-order
-anticyclotomic coefficient lines with coprime-order rational twists,
-at odd coefficient primes unramified in the CM field. A local odd-exponent
-argument removes the earlier rational-conductor restrictions; one
-completion of odd ramification index is an available weakening.
-The theorem specializes to both cubic sectors at every coefficient
-prime at least 5 and every permitted dyadic level. This is a
-structural input for *newly twisted* Selmer groups. It neither bounds the
-original untwisted groups nor pays the determinant-ratio cost.
-
-Prioritize a fixed-CM realization of this new route for the cubic
-benchmark, while retaining the existing torsor/operator constructions.
-The non-CM splitting field cannot simply be inserted into CM geometry.
-The exceptional primes, common theta realization and critical-scale
-ratio/degree estimate remain explicit. For infinite-order characters,
-retain the phase, infinity type, conductor and archimedean-parameter
-dependence; the finite-order result does not settle them.
-
-## 7. The next concrete deliverables
-
-The finite-presentation, conditional Selmer line-witness and
-evaluation-to-length comparison are now written and proved. The first
-remaining deliverable is the normalized lift trace on the common theta
-spaces, scaled-kernel integrality and the analytic critical-value norm
-and period formulas, followed by the uniform one-lift denominator bound. The abstract small-twist theorem is proved
-with stronger shared error control. In parallel, build the
-common theta diagram and the scalar second-moment supplier for the same
-admissible data. These are the central mathematical tasks.
-
-The analytic endpoint for the exact remainder is now written out.
-Assemble (3) at the source scales to supply its remaining hypothesis.
-Stop expanding the old wall/divisor or general untwisted
-deformation branches unless the new route needs one of their specific
-lemmas or encounters a concrete obstruction.
-
-For every imported theorem, either provide an ordinary proof or an exact
-classical reference whose hypotheses match. The source's `Lib` label is
-not sufficient: its own reference inventory records incomplete checks.
-Keep source-byte checks, Lean builds, kernel/dependency replay, and human
-mathematical proofs as distinct evidence. Independent primary verification
-reports now document successful full builds, axiom checks and multiple
-kernel checks of this exact revision; their logs and provenance are
-recorded in the formal audit. Our own local build is partial. This strong
-formal evidence leaves the conventional reconstruction work above to be done.
+Historical node counts remain RH **6/9**, Dirichlet **18/31**,
+Hecke **6/9**. Changing the preferred route does not prove an old open
+node. Earlier supplier proofs and alternative constructions remain
+available through their files, the source atlas and Git history.

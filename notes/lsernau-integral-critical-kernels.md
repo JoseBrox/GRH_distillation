@@ -7,8 +7,9 @@ and gauge suppliers. In particular, it does not deduce integrality
 from the Euler product norm. The
 [rank-two period arithmetic](lsernau-rank-two-period-arithmetic.md)
 supplies the \(z=1\) kernel integrality and exact Euler insertion with
-a further radical-level saving. Its analytic nonzero period identity
-remains separate.
+a further radical-level saving. Its fully ramified analytic period
+identity and nonzero base are proved in
+[the rank-two norm chapter](lsernau-rank-two-period-norm.md).
 
 ## 1. Finite datum and its exact clearing factor
 
@@ -172,8 +173,9 @@ retained, or the smaller integer C_nu used consistently.
 
 This proves the integral measure and analytic norm suppliers
 for the stable-range z>=2 branch on the common CM lattice.
-The z=1 period, the remaining determinant ratios, and the
-global short-form/complement comparison are not consequences
+The z=1 branch is completed by the separate rank-two arithmetic and
+analytic norm chapters linked above. The remaining determinant ratios
+and the global short-form/complement comparison are not consequences
 of this rank-one calculation.
 
 Source dictionary: pinned readable revision

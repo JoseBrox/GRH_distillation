@@ -128,13 +128,45 @@ moment theorem in [the common finite theta chapter](lsernau-common-theta-finite.
 It proves the same rank target directly on that subspace with the
 correspondingly adjusted deficit and second moment.
 
-The outstanding analytic work is the proof of
-(3) for the actual Poincare map, including
-unipotent covolume, off-diagonal sums and the
-good-type loss. The finite upper-chain evaluation and normalization are given in the
-common finite theta chapter; the global see-saw identity and uniform
-integral jet estimates remain open.
+The [finite Bessel transfer](lsernau-bessel-good-type-transfer.md)
+now supplies the actual good-type trace directly, with discarded
+share at most `2 b^(-9)` at each chosen prime. It uses the unique
+generic mirabolic representation and avoids the source's
+conjugacy-averaged character square norm and its local mass-integral
+supplier. Given the two restricted non-Bessel moments
+`sum_(g in R G_i) ||P* rho(g) P-r_psi(g)||_HS^2 <= b^(-12)|R|d_X`,
+one equivariant convolution argument proves both the identity
+estimate and the sharper source deficit `4 b^(-6)d_X`.
+Thus these two deficits are no longer separate analytic obligations.
+The restricted moments themselves, and the all-group open-cell,
+terminal-fixer and remaining-term estimates, are still open.
+
+The [common-chain transport theorem](lsernau-common-chain-transport.md)
+supplies the genuine baseline integral gauge, charged-gain transport
+and an explicit all-conjugate finite-chain norm. The
+[norm-budget theorem](lsernau-common-chain-norm-budget.md) evaluates
+that cost within the original error. The analytic see-saw datum,
+compatible nonzero volumes and exceptional corrections remain separate.
 No legacy whole node is closed by these
 finite-dimensional arguments.
+
+The [single-link reduction](lsernau-single-link-energy-frontier.md)
+proves that one common orbit-size, discriminant-gain and weighted
+pair-count package supplies both restricted moments, with the stronger
+conditional bound \(9b^{-40}|R|d_X\) and source deficit \(5b^{-9}d_X\).
+The [weighted lattice theorem](lsernau-link-lattice-counting.md)
+now proves the raw lattice mean, retaining its \(N^{-kf}\) saving.
+The [corank-sensitive frame fibres](lsernau-corank-frame-fibres.md)
+now complete the weighted pair count in its specified discriminant
+and corank range, with one source-class factor and one Bessel-label
+factor. The [link-gain theorem](lsernau-link-gain-index.md) supplies
+the graph and corank relations, congruence determinant gain,
+reciprocal torsion-index cancellation, and actual near-term gauge
+bound. The remaining pair gains and their range bounds now follow
+from its single open integral link-lattice cut inequality. That cut,
+the gauge-specific orbit bound, and classification of
+zero-discriminant terms remain inputs.
+Thus the new reduction consolidates the restricted analytic frontier
+without asserting those moments from the pair count alone.
 
 [s]: https://github.com/lsernau/grh-lean/blob/72fead102f663d5c7a407964a13dc0cf9d977207/grh/src/New/Spanning/SecondMoment/SpanningTheorem.lean

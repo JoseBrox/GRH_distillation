@@ -267,8 +267,11 @@ factors, with no additional scalar after the N_Q normalization.
 This supplies the z>=2 analytic norm and norm-relation inputs of
 the [critical-value systems](lsernau-critical-value-systems.md).
 It does not use a bound for an L-value in the critical strip.
-The boundary z=1 has n=2, outside this convergent stable range;
-its determinant-period identity remains a separate problem.
+The boundary z=1 has n=2, outside this convergent stable range.
+Its determinant-period identity and nonzero base are proved separately
+in [the rank-two norm chapter](lsernau-rank-two-period-norm.md), using
+the equal-rank Hecke identity (1), anisotropic Siegel–Weil, and explicit
+doubling integrals.
 The integrality of the point kernels and conjugated Gram pairings
 is also separate from (7).
 
