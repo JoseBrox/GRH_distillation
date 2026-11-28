@@ -611,7 +611,15 @@ The remaining arithmetic core is the positive-loss ordinary proof of
 (16), together with the compatible theta-lift trace identities and
 whichever character-triangle, detection and Selmer-size estimates have
 not yet been discharged in the linked chapters. The fixed-family Smith
-alternative still requires uniform control as the auxiliary data vary.
+alternative is now supplemented by the
+[bounded-class theorem](lsernau-bounded-class-crystalline-loss.md): the
+actual crystalline colength has one finite bound for the entire enlarged
+family, all auxiliary precisions and finite coefficient extensions,
+with the original local data and target fixed. This follows from Liu's
+bounded-weight torsion-limit theorem and the Artinian local cohomology
+argument. The remaining requirement is a sufficient numerical bound as
+the original field, target and weights grow; no value for the new
+constant is asserted.
 
 [source]: https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207
 [BK]: https://math.stanford.edu/~conrad/BSDseminar/refs/BKTamagawa.pdf

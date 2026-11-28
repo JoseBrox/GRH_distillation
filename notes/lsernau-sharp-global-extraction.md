@@ -3,8 +3,11 @@
 This chapter proves the passage from a least-valuation bound for the
 scalar CM products to an actual finite indicator test on the source
 Weil lattice, with one common algebraic normalizing factor at all
-coefficient places. It does not prove the scalar least-valuation
-bound itself.
+coefficient places. The [sharp scalar and coupling chapter](lsernau-sharp-scalar-couplings.md)
+supplies that lower bound, its actual frame and the required admissible
+weight estimates. Together the chapters give the arithmetic sharp test
+on the supplied admissible data. Their use in the global chain maps
+remains separate.
 
 Source: pinned readable revision 72fead102f663d5c7a407964a13dc0cf9d977207,
 New/Derivatives/Sharpness/BoundAttained.lean, 105--453,
@@ -29,9 +32,10 @@ resolution
  \sum_i c_i\,\tau(w_i)\overline{\sigma(w_i)}
        =M\delta_{\tau\sigma}.
 \]
-The lower-bound input also requires every c_i >= 3|l|; the existence
-of a suitable frame with the additional local unit-vector property
-belongs to that input.
+The lower-bound input also requires every c_i >= 3|l|. The sharp scalar
+chapter specializes the coprime Weil frame to length M with
+c_i >= 6fb >= 3|l| and supplies a row with unit coefficients at every
+fixed coefficient embedding, including the places dividing q_1.
 
 For any nonnegative e_i with 3e_i<=c_i, the entire section
 \[
@@ -139,7 +143,7 @@ half-modulus denominator M^{mf}, not M^{2mf}.
 
 Use m=12 as in the source. Fix the weight vector l=(l_tau) with
 kappa_tau<=l_tau<=kappa_tau+x^42, and let S_p denote the
-source localPrimeSumTotal. The remaining scalar input
+source localPrimeSumTotal. The proved scalar input
 leastValLE_twelve says that, for every coefficient place, one can
 choose multiindices alpha_b with sum_b alpha_b=l and monomial
 sections as in section 1 whose product of coefficients has valuation
@@ -151,8 +155,10 @@ at most
 Here B_tau=prod_{j=1}^{n_0}(max(l_tau-n_0,0)+j),
 n_0=ceil(6b/k). The bound on multiplicities ensures that these
 monomial sections are available: their exponents have degree
-at most |l|. Equation (2) is precisely the scalar estimate that
-must be proved, not a consequence of (1).
+at most |l|. Equation (2) is supplied by the separate sharp scalar
+proof; it is not a consequence of the Fourier inequality (1).
+That proof needs only six copies, with six degree-zero factors
+appended for this existing twelve-copy interface.
 
 Because the copies use disjoint variables, the coefficient at the
 combined multiindex gamma=(alpha_b) in the product equals the
@@ -191,10 +197,13 @@ is used; it does not hold for arbitrary weights and scales.
 
 ## Remaining boundary
 
-This completes the global realization and extraction from (2).
-It does not establish (2), its tight-frame and coupling inputs,
-or the later passage of these test coefficients into all of the
-actual comparison and determinant maps. In particular the
-scalar least-valuation cases in Sharpness/Cases.lean and their
-inputs must be reconstructed independently. The whole arithmetic
-sharpness node remains open.
+The scalar estimate (2), its tight frame, the unit row, the coupling
+gain and the admissible weight cases are now proved in the linked
+sharp scalar chapter. Thus the actual twelve-copy sharp indicator
+and its common factor are supplied on the specified admissible data.
+The passage of these tests into all actual comparison and determinant
+maps, the common-chain gauge and squared norms, and the full-chain
+see-saw are still open. A six-copy version of the extraction has
+Fourier denominator M^(6f), but replacing later twelve-copy maps
+requires its own tensor comparison; no resulting improvement to the
+final global budget is asserted here. No whole legacy node is closed.

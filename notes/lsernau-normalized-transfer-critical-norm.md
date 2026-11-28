@@ -10,9 +10,11 @@ eigensystem, strengthen it to a representation identity, and evaluate
 the stable-range rank-one critical norm. We use the classical
 stable-range Siegel–Weil input with the measures fixed in
 [Rallis inversion](lsernau-rallis-sharp-inversion.md).
-The occurrence of an eigensystem in the definite comparison space is
-a separate multiplicity input; the present proof does not assume an
-attachment theorem for the indefinite group.
+The [two-place multiplicity theorem](lsernau-good-form-multiplicities.md)
+supplies occurrence and equality of multiplicities in the definite
+comparison space for every existing good eigensystem. Thus attachment
+is used on that definite space; no separate indefinite attachment
+theorem is required.
 
 ## 1. Transfer to the actual theta integral
 
@@ -141,9 +143,9 @@ inertia, with no additional twisting ambiguity. It is not a new
 integral splitting of the chosen lattices: semisimple rational
 identification does not split a congruence lattice.
 The labelled local and Hodge constraints on R are supplied separately
-by the previous attachment chapters. The missing global occurrence
-of the good eigensystems and their common multiplicities is not
-deduced from (3).
+by the previous attachment chapters. Global occurrence and the common
+multiplicities are supplied by the two-place theorem, rather than
+deduced from (3). This does not assert that a given theta image is nonzero.
 
 ## 3. Exact mass for all rectangular sharp blocks
 
@@ -303,9 +305,12 @@ projector has trace the multiplicity. For the possibly
 noncommutative full algebra, use the semisimple image and its
 central simple-factor idempotents; equality of all traces gives
 equal multiplicities of simple modules, hence equal determinants
-for each common element. The required automorphic trace
-comparison itself remains to be proved. This argument does not
-replace it with equality of total dimensions.
+for each common element. The required automorphic trace comparison
+is now proved in [good-form multiplicities](lsernau-good-form-multiplicities.md),
+using the two split cuspidal places and the normalized real signs.
+Thus the common Hecke realization gives equal Rallis-operator
+determinants on these equal-rank good spaces. Nonvanishing in a
+chain of rank-changing theta maps remains a separate requirement.
 
 ## Source correspondence
 

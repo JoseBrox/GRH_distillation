@@ -2,8 +2,16 @@
 
 This chapter proves the finite algebra and idelic construction of
 the Stickelberger systems, with an improved all-prime ratio bound.
-The [integral critical-kernel chapter](lsernau-integral-critical-kernels.md) supplies the geometric kernel integrality for z≥2. The rank-two analytic period identity remains an explicit input. The [stable-range norm theorem](lsernau-normalized-transfer-critical-norm.md) now supplies the analytic norm and omitted-factor identities for z≥2. They must hold on the
-actual source levels; ordinary proofs of them are not supplied here.
+The [integral critical-kernel chapter](lsernau-integral-critical-kernels.md)
+supplies geometric kernel integrality for \(z\ge2\), and the
+[rank-two period arithmetic](lsernau-rank-two-period-arithmetic.md)
+supplies uniform kernel integrality, the integral period-square measure,
+and exact Euler insertion for \(z=1\), with a smaller denominator after
+radical reduction. The [stable-range norm theorem](lsernau-normalized-transfer-critical-norm.md)
+supplies the analytic norm and omitted-factor identities for \(z\ge2\).
+The rank-two nonzero analytic period identity remains the explicit
+endpoint input; the ordinary proofs of the other suppliers are in those
+linked chapters on the actual source levels.
 
 Sources: [AlgebraicPartIntegrality][integral] 101–249, 257–403;
 [ClassSums][classes] 62–153, 169–386, 390–end;
@@ -102,9 +110,19 @@ denominator there.
 
 At \(z=1\), the source uses the rank-two determinant
 period \(\Lambda_{\nu,\tau}\) with the fixed splitting
-character and homogeneous jet degree
-\(2\sum_v(c(v)-1)\). Its input is the uniform
-kernel scale \(s_\nu\ne0\) of [classes] 232–310.
+character and homogeneous jet degree \(h=2\sum_v(c(v)-1)\).
+The rank-two arithmetic chapter proves that its tame finite datum
+depends only on the radical of the stated modulus, including at the
+chosen places. It supplies the uniform nonzero kernel scale
+\[
+ s_\nu=\mathrm{vacuumScale}^4\mathrm{jetScale}^{h}
+                  M^{4f+h}d^{h/2},
+\]
+in place of the source's
+\(\mathrm{vacuumScale}^4\mathrm{jetScale}^{h}M^{16f+2h}d^h\).
+The ratio of the original scale to this one is an integer, so either
+scale can consistently be used in the system. With residue lifts
+taken at the radical level, the proof below applies directly.
 The finite expansion of \(G s_\nu\Lambda_{\nu,\tau}\)
 has coefficients
 \[
@@ -135,10 +153,14 @@ the squared determinant period has factor
 \(N_Q |L(1,(\nu\tau)^{-1})|^2\) on fully
 ramified twists and the source's determinant
 Euler-factor identity on arbitrary tame characters.
-In particular we still need the uniform kernel
-integrality and both analytic formulas, including
-nonvanishing of the base value. They cannot be
-inferred from (3).
+Uniform kernel integrality is proved for both branches, and the
+stable-range norm identity and its nonzero base value are supplied.
+At \(z=1\), the rank-two arithmetic chapter also proves the exact
+Euler-factor identity for every imprimitive character of a stated
+modulus. The remaining input is the fully ramified analytic period
+formula and its nonzero base value. Neither follows from the integral
+measure identity; imprimitive periods may in fact vanish at an
+inserted place where the unitary Euler parameter equals 1.
 
 ## 2. From these measures to the actual systems
 

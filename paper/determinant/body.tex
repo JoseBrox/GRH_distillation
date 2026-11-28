@@ -371,8 +371,37 @@ the source one-row length, and \(f\) counts complex places.
 The ramified intersection does not increase the index.
 This improves the index part of the arithmetic budget,
 not the gauge allowance. The common definite jet law and
-its uniform Schur estimate are proved; the chain gauge and
-squared-norm assembly and the scalar least-valuation estimates remain to be supplied. The \prooflink{notes/lsernau-sharp-global-extraction.md}{sharp extraction chapter} establishes the global indicator realization and common height-controlled factor from those scalar estimates.
+its uniform Schur estimate are proved. The chain gauge and
+squared-norm assembly remain to be supplied.
+
+\paragraph{Sharp scalar tests at every prime.}
+The \prooflink{notes/lsernau-sharp-scalar-couplings.md}{scalar sharpness
+theorem} supplies the least-valuation bound on the actual admissible
+weights and the fixed CM period scale. Put
+\(n_\sharp=\lceil6b/k\rceil\) and
+\(B_\tau=\prod_{j=1}^{n_\sharp}((\ell_\tau-n_\sharp)_++j)\).
+There are six scalar integral theta sections, of total multidegree
+\(\ell\), with product coefficient \(a_\ell\) satisfying
+\[
+ v(\ell!)+v(a_\ell)\le S_p+2\sum_\tau v(B_\tau),\qquad v(p)=1.
+\]
+The formal-group derivative minima are superadditive. Their values
+at powers of the residue cardinality give the sharp scalar bound.
+An isotropic sum of three squares at odd primes, or five squares
+at 2, cancels the theta factor integrally. At inert primes, a
+logarithmic-derivative argument extracts the unique coupling term;
+sparse near pairs have disjoint ends, so their factorial cost is
+one binomial carry count per coordinate. The proof checks the
+small- and large-prime weight cases, the coprime frame's unit row,
+its multiplicities and its size against the stated admissible
+inequalities.
+Padding by six degree-zero factors supplies the existing twelve-copy
+interface. The \prooflink{notes/lsernau-sharp-global-extraction.md}{global
+extraction} therefore gives the actual arithmetic indicator and one
+common height-controlled factor
+\(M^{12f}c_0\prod_\tau B_\tau^2\). The six-copy refinement does
+not automatically change the normalization of the later comparison
+maps; the active argument retains their twelve-copy definitions.
 
 The short-form input (A) asks for a spanning family of integral
 source vectors whose normalized images have squared norms at
@@ -424,12 +453,32 @@ The missing share \(r=1-\alpha\) obeys
 Iteration from \(r=1\) proves the result.
 \end{proof}
 
+\paragraph{Equal good-form multiplicities.}
+The \prooflink{notes/lsernau-good-form-multiplicities.md}{two-place
+comparison} proves equality of the finite Hecke modules of good forms
+on \(Y_0,W_1,\ldots,W_m\). Each good tuple has a primitive
+cuspidal finite general-linear label at one place above each of the
+two distinct level primes. A Cartan-intertwining calculation makes
+both local components supercuspidal. The exact finite-type projector
+is a sum of truncated supercuspidal coefficients. Harris--Labesse's
+Proposition 1.10.6 and the refined argument of Theorems 3.1.5--3.1.6
+therefore compare the specified real discrete series, without an
+unverified stronger regularity hypothesis.
+
+For signatures \((p_v,q_v)\), the real transfer sign is
+\((-1)^{\sum_vp_vq_v}\). Finite isometry and the quadratic norm
+product formula imply that \(\sum_v(q'_v-q_v)\) is even;
+\(q(n-q)\equiv(n-1)q\pmod2\) makes the total relative sign one.
+Normalized real minimal idempotents have rank one, so no compact-type
+dimension or packet-cardinality factor intervenes. Varying the finite
+tests, including their central cutoffs, identifies multiplicities of
+the full finite representations, not just dimensions.
+
 The \prooflink{notes/lsernau-common-moment-interface.md}
 {finite dimension and moment argument} counts the definite
 principal-level forms by class mass, using the triviality of
-stabilizers at a split principal level. Once the good-form
-multiplicities agree across the source spaces, the target
-dimension is at most \(|\mathcal G|d_\infty\mathrm{mass}_r\).
+stabilizers at a split principal level. The proved comparison gives
+the target bound \(D\le|\mathcal G|d_\infty\mathrm{mass}_r\).
 For the source's scaled Poincar\'e map \(P\), the good
 projector \(E\), and the finite group \(\mathcal G\), it
 suffices to bound the unprojected moment
@@ -454,8 +503,8 @@ ramified source suffice for \(n\ge(1-4b^{-2})D\).
 If the common local source colength estimates hold,
 the selected translates have one-sided logarithmic
 index at most \(5D\log(1+2b^2)fa(\log b)^3\).
-The comparison of good-form multiplicities and the uniform integral
-and analytic kernel bounds remain obligations. Absolute convergence
+The common-chain integral and analytic kernel estimates remain
+obligations. Absolute convergence
 and the local restriction estimate have the following separate proof.
 
 \paragraph{Quantitative restrictions and arithmetic returns.}
@@ -492,7 +541,7 @@ weighted return bound
 Combined with the Bessel majorant, this proves absolute Poincar\'e
 convergence, the justified class-return Gram identity and the
 truncation error \(\nu_U b^{-k^3f}/2\) in the stated source range.
-The \prooflink{notes/lsernau-bessel-subgroup-moment.md}{exact Bessel-subgroup calculation} gives normalized subgroup matrices that are unitary on the reduced subgroup, zero outside it, and the identity at its identity element. Its summed squared Hilbert--Schmidt norm is the subgroup order times the source dimension. The full-minus-cut operator norm is at most $b^{-k^3 f}/2$. Non-Bessel return estimates and equality of multiplicities remain open.
+The \prooflink{notes/lsernau-bessel-subgroup-moment.md}{exact Bessel-subgroup calculation} gives normalized subgroup matrices that are unitary on the reduced subgroup, zero outside it, and the identity at its identity element. Its summed squared Hilbert--Schmidt norm is the subgroup order times the source dimension. The full-minus-cut operator norm is at most $b^{-k^3 f}/2$. The non-Bessel second-moment estimates remain open.
 
 \paragraph{Normalized lift and integral critical values.}
 The \prooflink{notes/lsernau-normalized-transfer-critical-norm.md}
@@ -504,10 +553,47 @@ The \prooflink{notes/lsernau-integral-critical-kernels.md}
 {integral kernel chapter} supplies their transported integral gauges
 and group-ring measures, with denominator
 $M^{fn+L}d^{\lceil L/2\rceil}$ in its rank-$n$, row-degree-$L$
-notation. The rank-two period and common eigensystem occurrence
-remain open.
+notation. The two-place comparison now supplies occurrence of every
+existing good eigensystem on the definite space. The rank-two endpoint
+has the integral construction below; its analytic period identity
+remains open.
 
 \paragraph{Finite closure of the second moment.}
+The \prooflink{notes/lsernau-finite-good-type-density.md}{finite
+good-type theorem} supplies the exact density of the good projector.
+For residue size \(q_w\), rank \(r\ge2\), and forbidden root
+exponent \(h_{\rm forb}\), put
+\(a_q=1+\gcd(h_{\rm forb},q_w-1)\). The number \(A_r\) of
+allowed squarefree monic labels has generating series
+\[
+ \sum_{r\ge0}A_r t^r
+   =\frac{1-q_wt^2}{(1-q_wt)(1+t)^{a_q}}.
+\]
+Green's degree formula gives the sharp minimum label mass
+\[
+ \omega_r=\frac{\prod_{j=1}^r(1-q_w^{-j})}
+                   {q_w^r(1-q_w^{-r})^2}.
+\]
+Exactly \(\varphi(q_w^r-1)/r\) labels are primitive, and all
+are allowed. Their total mass is exactly
+\(p_* =\varphi(q_w^r-1)\omega_r/r\).
+For \(f\) factors the discarded share therefore obeys
+\[
+ \beta\le1-(A_r\omega_r)^f+(A_r\omega_r-p_*)^f
+       \le f\varepsilon_*+e^{-fp_*},
+ \quad
+ \varepsilon_*=
+ \frac{\gcd(h_{\rm forb},q_w-1)+2}{q_w}
+                   +\sum_{j=1}^r q_w^{-j}.
+\]
+The elementary totient bound \(N/\varphi(N)\le1+2\log N\)
+recovers the source's sufficient exponential estimate. The chapter
+checks its size inequalities directly on the admissible data, giving
+total discarded identity coefficient at most \(b^{-8}\) for the
+two-prime projector.
+This is a finite group-algebra estimate; it does not estimate the
+Poincar\'e kernel away from its main contribution.
+
 The \prooflink{notes/lsernau-positive-type-moment.md}{positive-type
 moment chapter} controls the mass of singular leading minors by
 counting their kernels with finite Fourier orthogonality.
@@ -704,8 +790,10 @@ this gives the normalized datum defect
 where \(G\) is the chosen finite group order. The source's bound
 \((4f+3)r v_\ell(G)\) follows. This argument constructs the
 Selmer data \emph{from} the attached type-compatible representations.
-Attachment is supplied above; the compatible normalized theta-lift
-trace identity on the common eigensystems remains to be proved.
+Attachment, the normalized rational theta-lift identity and occurrence
+on the definite comparison space are supplied above. Integral lattice
+splitting and nonvanishing of the full chain do not follow from that
+rational identity.
 
 \subsection{Critical values and the chain correction}
 The \prooflink{notes/lsernau-critical-value-systems.md}
@@ -715,9 +803,50 @@ rank-two determinant period square for \(z=1\), into group-ring
 elements. The finite stabilizer denominators divide \(G\);
 an idelic Hilbert 90 pushforward produces the exact
 Stickelberger systems from these measures, with no division
-by a torus class number. The remaining inputs are the uniform
-scaled-kernel integrality and the exact analytic norm and
-period formulas, including nonvanishing of the base values.
+by a torus class number. The integral-kernel chapter supplies the
+stable-range gauge and norm formula for \(z\ge2\).
+
+\begin{samepage}
+For \(z=1\), the
+\prooflink{notes/lsernau-rank-two-period-arithmetic.md}{rank-two
+arithmetic theorem} observes that the tame determinant datum factors
+through the radical of its stated modulus. If
+\(h=2\sum_\sigma(c_\sigma-1)\), its uniform integral scale is
+\[
+ S_\nu=\mathrm{vacuumScale}^{4}\mathrm{jetScale}^{h}
+                       M^{4f+h}d^{h/2}.
+\]
+\end{samepage}
+The identity-residue Fourier expansion has exactly \(4\) matrix
+coordinates over the chosen half modulus. The charged-jet bound and
+rational unitary invariance then give integrality at every coefficient
+embedding away from the auxiliary norm \(N_Q\). Clearing stabilizers
+by \(G\) gives an integral measure with evaluations
+\(A_Q(\tau)=GS_\nu\Lambda_Q(\tau)\); multiplying by its conjugate
+inverse gives \(F_Q(\tau)=|GS_\nu\Lambda_Q(\tau)|^2\).
+The scale saves the integer factor
+\(M^{12f+h}d^{h/2}\) from the older sufficient scale.
+
+The finite \(q\)-binomial identity inserts the invertible-matrix
+indicator. For an added unramified place of residue order \(q_w\),
+put \(y=(\nu\tau)(\varpi_w/\bar\varpi_w)\). Invariance of the
+quotient integral, without assuming that individual translates
+preserve the old level, gives exactly
+\[
+ \Lambda_{Q\cup\{w\}}(\tau)
+   =(1-y^{-1})(1-q_w^{-1}y^{-1})\Lambda_Q(\tau).
+\]
+Its absolute square is the required Euler norm relation. It can
+vanish for imprimitive twists with \(y=1\).
+The remaining analytic input is the fully ramified identity
+\[
+ |\Lambda_Q(\tau)|^2=C_\nu N_Q
+       |L^{M\cup Q}(1,(\nu\tau)^{-\mathrm{BC}})|^2,
+ \qquad C_\nu>0,
+\]
+and the nonzero base case. Neither follows by substituting \(z=1\)
+in the convergent stable-range formula. The source uses a
+complementary-theta exchange; that analytic supplier remains explicit.
 
 The initial tame value \(\lambda\ne1\) is a root of unity.
 Its exact valuation \(v_\ell(1-\lambda)\) is zero unless its
@@ -751,8 +880,8 @@ its stated real-edge hypotheses. The full-chain exchange identity,
 its compatible nonzero volumes and its quantitative application
 remain to be established.
 
-The remaining lower-bound work is the compatible theta-lift trace
-identity and critical-value inputs, the uniform projection denominator, the
+The remaining lower-bound work is the analytic rank-two period,
+the quantitative uniform projection denominator, the
 single-lift comparison operators and determinant ratios,
 and the complement basis on the common lattices.
 The earlier W10 metric and divisor construction is not a
@@ -839,8 +968,54 @@ The \prooflink{notes/lsernau-uniform-inertia-relations.md}
 of the auxiliary precision and unramified twists when every member
 of the family factors on inertia through a fixed potentially
 crystalline rational algebra. This covers the selected main-summand
-lifts; it does not yet cover the full enlarged family or bound the
-growing-field constants.
+lifts. The following argument covers the full enlarged family
+without a fixed rational inertia algebra.
+
+\paragraph{Uniform loss for the full bounded local class.}
+Fix a local field \(K\), a coefficient DVR \(O\) with fraction field
+\(F\), a lattice \(T\), a finite Galois extension \(L/K\), and a
+weight interval \([a,b]\) containing zero. Assume \(V=F\otimes T\)
+is crystalline over \(L\) with these weights. Let \(\mathcal C\)
+be the torsion subquotients of crystalline lattices with those
+weights after restriction to \(L\), allowing arbitrary rank. Put
+\[
+ A=V/T,\qquad
+ \mathcal F=\operatorname{im}(H_f^1(K,V)\to H^1(K,A)).
+\]
+Let \(\mathcal S\) consist of the classes represented at some
+precision by an extension of \(O/\pi^n\) by \(T/\pi^nT\)
+belonging to \(\mathcal C\). The
+\prooflink{notes/lsernau-bounded-class-crystalline-loss.md}{bounded-class
+theorem} proves that \(C=\mathcal S/\mathcal F\) has finite length.
+
+Here is the decisive compactness argument. Subquotient closure makes
+membership independent of precision and of the chosen representative;
+Baer addition makes \(\mathcal S\) a module containing the divisible
+module \(\mathcal F\). The ambient quotient is an Artinian
+\(O\)-module. If \(C\) had infinite length, its divisible part
+would give a coherent tower of nonzero obstructed classes. Finiteness
+of local cohomology at each precision lifts that tower to one integral
+cocycle. Every reduction of its extension lattice is torsion crystalline
+over \(L\) in the same bounded interval. Tong Liu's unrestricted
+torsion-limit theorem makes its rational extension crystalline over
+\(L\). Finite Galois averaging puts the original rational cocycle in
+\(H_f^1(K,V)\), contradicting the tower's nonzero obstruction.
+
+The universal relation extension is a crystalline subrepresentation
+of \(\bigoplus_y\operatorname{Mat}_{n_y}(F)\oplus F\). Its modular
+pushouts therefore lie in \(\mathcal C\), so \(\operatorname{length}_O C\)
+bounds every relation-respecting crystalline colength, independently of
+the auxiliary family, its rank and its congruence precision. Coordinate
+pushouts show that the normalized bound persists under any finite
+coefficient extension with the target lattice extended from \(T\).
+
+The actual enlarged family \(Y\) lies in this class. Away from level
+primes take \(L=K\). At a level prime its finite tame period action
+is killed by one fixed exponent, so a common tame extension works
+for every member. This includes the dyadic and ramified small-prime
+cases. The constant is non-effective: its size as \(E\), the
+targets and the weights grow, and its contribution to the final
+signed budget, remain unproved.
 
 \paragraph{Zero defect in the Fontaine--Laffaille range.}
 The \prooflink{notes/lsernau-fontaine-laffaille-zero-defect.md}{zero-defect
@@ -867,8 +1042,8 @@ applies whenever \(p\nmid M\) and
 \(p\ge b+\delta+W+\eta+2\). In particular it covers the entire
 zero-loss branch \(p\nmid M\), \(\lambda_p=0\), because
 \(\lambda_p=0\) implies \(p>2b\), and all conductor primes are
-at most \(Q<b\). The level-prime and remaining positive-loss bounds
-are still required. At the primes covered here the tied length pays
+at most \(Q<b\). Explicit level-prime and positive-loss bounds on
+the growing global data are still required. At the primes covered here the tied length pays
 no crystalline defect term.
 The \prooflink{notes/lsernau-local-tied-derivatives.md}{local
 derivative proof} establishes the spherical chain estimate by
@@ -895,10 +1070,13 @@ Smith theorem substitutes the explicit budget
  B_p^{\rm fixed}=s+2t'a+\sum_i\sum_{v\mid p}\kappa_{T_i,v}
                      +\operatorname{denominatorError}_p.
 \]
-Each actual main or character summand is charged once. All tied-row
-and extraction inequalities must hold with this substituted budget;
-increasing an auxiliary modulus may change the family and its Smith
-cost, so finiteness alone does not establish that parameter choice.
+Each actual main or character summand is charged once. The bounded-class
+theorem permits the replacement
+\(\sum\kappa_{T_i,v}\mapsto e_O^{-1}\sum\operatorname{length}_O C_{i,v}\),
+which is fixed before enlarging the auxiliary family or precision.
+This removes the family-versus-precision circularity of the raw Smith
+cost. All other tied-row and extraction inequalities remain, and the
+new constants have not been bounded on the growing global data.
 Over an
 unramified coefficient extension with residue field larger than the
 number of eigensystems, one linear combination preserves the best

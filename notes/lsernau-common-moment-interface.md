@@ -38,15 +38,17 @@ specified Haar normalization.
 
 For the actual source \(W_m\), take its algebraic weight
 and \(K'=D.\mathrm{chosenLevel}\).
-If the equality of eigensystem multiplicities with
-\(Y_0\) on good forms is established, then
+The [two-place multiplicity theorem](lsernau-good-form-multiplicities.md)
+identifies its good eigensystems, including their multiplicities,
+with those on \(Y_0\). Thus
 \[
  D_{\rm good}=\dim(D.e_0 V_{Y_0})
      \le |\mathcal G|\,d_\infty\,\mathrm{mass}_r.       \tag{2}
 \]
-The equality of multiplicities across these Hermitian
-spaces is a separate arithmetic theorem. Formula (1)
-does not assume or prove it.
+That theorem uses the primitive cuspidal type at one split place
+above each of the two distinct level primes and the precise
+Harris--Labesse comparison. Formula (1) then gives (2); no
+nonvanishing of the good space is inferred from this upper bound.
 
 ## 2. A single compression for the second moment
 
@@ -121,7 +123,7 @@ translates is at most
 They span at least \((1-4b^{-2})D_{\rm good}\)
 dimensions. This proves the exact desired scalar
 spanning conclusion on the full source subject
-to (2) and (3). For the actual ramified source, use the exact dimension and restricted
+to (3), since (2) is now supplied. For the actual ramified source, use the exact dimension and restricted
 moment theorem in [the common finite theta chapter](lsernau-common-theta-finite.md#5-restrict-the-actual-scalar-moments-before-selecting-translates).
 It proves the same rank target directly on that subspace with the
 correspondingly adjusted deficit and second moment.

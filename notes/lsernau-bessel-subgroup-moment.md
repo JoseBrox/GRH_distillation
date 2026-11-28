@@ -165,5 +165,6 @@ Equation (1) computes its Bessel term exactly and (2) deals
 with the truncation. No small bound on the non-Bessel contribution
 at s=1, on mixed cross terms in the moment, or on the open-cell
 and terminal-fixer contributions follows from these identities.
-Those remain separate arithmetic estimates. Neither injectivity
-of the full Poincare map nor good-form multiplicities is asserted.
+Those remain separate arithmetic estimates. Injectivity of the full
+Poincare map is not asserted. Good-form multiplicities are now supplied
+independently by the [two-place theorem](lsernau-good-form-multiplicities.md).

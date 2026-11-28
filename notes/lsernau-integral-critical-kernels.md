@@ -4,8 +4,11 @@ This supplies the z>=2 point-kernel integrality input of
 [critical-value systems](lsernau-critical-value-systems.md), using
 the already constructed scalar CM, integral vacuum, charged-jet
 and gauge suppliers. In particular, it does not deduce integrality
-from the Euler product norm. The rank-two period input at z=1 is
-not included.
+from the Euler product norm. The
+[rank-two period arithmetic](lsernau-rank-two-period-arithmetic.md)
+supplies the \(z=1\) kernel integrality and exact Euler insertion with
+a further radical-level saving. Its analytic nonzero period identity
+remains separate.
 
 ## 1. Finite datum and its exact clearing factor
 

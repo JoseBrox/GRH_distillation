@@ -1,6 +1,6 @@
 # What these checks establish
 
-> **Current navigation (23 November 2026).** Verification certificates are **versioned evidence**, not an updatable proof-completion score. Older review reports and source/PDF hashes apply to the revisions they record; they must not be rewritten to match later manuscripts. Current research targets are in the [checkpoint](../notes/current-state.md) and [frontier theorems](../notes/open-frontier-theorems.md). No Lean kernel rebuild is claimed.
+> **Verification scope.** Verification certificates are **versioned evidence**, not an updatable proof-completion score. Older review reports and source/PDF hashes apply to the revisions they record; they must not be rewritten to match later manuscripts. Current research targets are in the [checkpoint](../notes/current-state.md) and [frontier theorems](../notes/open-frontier-theorems.md). No Lean kernel rebuild is claimed.
 
 ## Current navigation: recent certificate families
 
@@ -23,7 +23,30 @@ keeps its ordinary mathematical suppliers explicit.
 | Integral theta | [Terminal period and Bessel unfolding](theta-period-continuation.json) |
 | Global norms | [Embedded-isometry mean](embedded-isometry-genus-count.json), [unipotent covolume](unipotent-stabilizer-covolume.json), [integral transport](flag-lattice-transport.json), [weighted normal-form sum](weighted-flag-lattice-sum.json) and [review](weighted-flag-lattice-sum-review.json) |
 | Geometry | [All-point height](geometry-point-height.json), [signed determinant assembly](geometry-height-assembly.json) and [independent review](geometry-height-assembly-review.json) |
-| Historical compiled manuscripts | [RH build](rh-build.json), [GRH build](grh-build.json), [short guide build](guide-build.json) |
+| Active compiled manuscripts | [RH build](rh-build.json), [GRH build](grh-build.json), [short guide build](guide-build.json) |
+
+## Active supplier proofs and their verification
+
+The [supplier review](supplier-closure-review.json) records the exact
+scope of the ordinary proofs, independent internal mathematical reviews,
+remaining obligations and current artifacts. The five suppliers are
+organized by their use in the determinant argument:
+
+| Supplier | Reproducible check and precise scope |
+| --- | --- |
+| [All-prime sharp scalar tests](../notes/lsernau-sharp-scalar-couplings.md) | [Script](../scripts/check_sharp_scalar_couplings.py), [certificate](sharp-scalar-couplings.json): 108 exact derivative-coefficient cases, 51,456 large-prime weight cases and 3,396 sparse-weight cases, 1,068 with nonempty couplings. Nine source blobs are checked. The formal-group and analytic theta assertions are proved in the note, not by this enumeration. |
+| [Good-form multiplicities](../notes/lsernau-good-form-multiplicities.md) | [Script](../scripts/check_good_form_multiplicities.py), [certificate](good-form-multiplicity-conventions.json): 98,458 signature tuples and all regular degree-two cuspidal characters of GL2(F2) and GL2(F3), with exact cyclotomic orthogonality, unipotent averages and projector convolution. The automorphic comparison uses the specified Harris–Labesse theorems. |
+| [Finite good-type density](../notes/lsernau-finite-good-type-density.md) | [Script](../scripts/check_finite_good_type_density.py), [certificate](finite-good-type-density.json): 5,504 polynomials, 4,041 exact regular-label masses, 136 allowed-label counts and 816 tuple-deficit comparisons. The universal argument and admissible numerical estimates are written proofs relative to Green's character theorem. |
+| [Rank-two period arithmetic](../notes/lsernau-rank-two-period-arithmetic.md) | [Script](../scripts/check_rank_two_period_arithmetic.py), [certificate](rank-two-period-arithmetic.json): 397,442 prime-square residue matrices, 72 q-binomial/corank identities, 8 Laurent Euler squares and 528 denominator-exponent comparisons. The fully ramified analytic period and nonzero base value remain open. |
+| [Uniform bounded-class crystalline loss](../notes/lsernau-bounded-class-crystalline-loss.md) | [Source verifier](../scripts/check_bounded_class_crystalline_sources.py), [record](bounded-class-crystalline-loss-sources.json): three pinned interfaces and Liu's published reference. The Artinian-cohomology proof is qualitative; no numerical loss constant is computed. |
+
+The combined [source-ledger verifier](../scripts/check_supplier_closure_sources.py)
+checks 29 ledger rows against 26 distinct immutable Git blobs and the
+Harris–Labesse and Liu primary PDFs. Its [record](supplier-closure-source-checks.json)
+also hashes the five proof notes. Run it with `--offline` after its cache
+has been populated. Source-byte verification, finite computation, ordinary
+mathematical proof and Lean kernel replay are separate kinds of evidence;
+no new Lean replay or external mathematical review is claimed.
 
 The remainder of this file is a **historical index of checks**, with commands and claims preserved at their original scope. The “current” label in dated sections refers to that historical checkpoint.
 

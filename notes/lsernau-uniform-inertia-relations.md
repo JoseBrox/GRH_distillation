@@ -10,6 +10,14 @@ representation by arbitrary unramified characters, with arbitrary
 stable lattices. It is not asserted for every enlarged-level
 automorphic eigensystem in the source.
 
+For the entire enlarged family, the
+[bounded-class theorem](lsernau-bounded-class-crystalline-loss.md)
+now proves a finite uniform loss from one fixed crystallizing extension
+and bounded Hodge interval, using Liu's torsion-limit theorem. It does
+not require a common rational inertia algebra. The present chapter is
+retained for its more explicit Smith certificate; the growing-field
+numerical budget remains open in both approaches.
+
 ## 1. Cap the fixed-family loss by local cohomology
 
 Use K, O, F, T, uniformizer varpi, e_O and R_n(T;u) of the
@@ -208,12 +216,14 @@ include the fixed inertia relations of X. The theorem supplies
 a uniform bound for Y if its members also factor through a
 fixed potentially crystalline inertia algebra, or if the
 tied-row proof can be arranged using only such a subfamily.
-Neither assertion has been established for the actual Y.
-Moreover the constants of (4) are fixed as twists vary, but
-not estimated on the growing E and T in the final prime-sum
-argument. Thus this result solves a uniformity problem for
-fixed rational inertia data, not the required numerical
-source-uniform positive-loss bound in general.
+Neither assertion has been established for the actual Y, and neither
+is needed by the [bounded-class theorem](lsernau-bounded-class-crystalline-loss.md).
+That theorem applies directly to Y's common crystalline or tame local
+class and gives a finite precision- and family-independent loss for
+fixed original local data, also under coefficient extensions. Its
+constant and the constants of (4) are not estimated on the growing E
+and T in the final prime-sum argument. The required numerical
+source-uniform positive-loss bound therefore remains open.
 
 Source: pinned readable revision 72fead102f663d5c7a407964a13dc0cf9d977207,
 New/Congruences/LocalLoss/Basic.lean 356–385, 506–541

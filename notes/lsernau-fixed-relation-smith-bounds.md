@@ -15,6 +15,14 @@ particular, it need not remain bounded when an auxiliary automorphic
 family varies. Section 7 gives a rank-one example in which this Smith
 cost is arbitrarily large although the actual crystalline loss is zero.
 
+The [bounded-class theorem](lsernau-bounded-class-crystalline-loss.md)
+now proves that the actual loss, rather than this possibly inflated
+Smith cost, is bounded uniformly over every auxiliary family with one
+fixed crystallizing extension and bounded weights. This applies to the
+full source family Y for fixed original data and persists under finite
+coefficient extension. Its constant is not computed; the explicit
+growing-field positive-loss bound remains open.
+
 The new argument is ordinary mathematics. It uses rational crystalline
 admissibility, elementary module theory over a discrete valuation ring,
 and the previously reconstructed global length and integral extraction
@@ -520,13 +528,14 @@ combination argument then supplies a simultaneous operator with
 determinant valuation at most
 \((\dim Z)B_p^{\mathrm{fixed}}\), under its stated hypotheses.
 
-Finiteness of the fixed cost does not by itself show that one can
-choose auxiliary data satisfying these numerical inequalities.
-Changing an auxiliary modulus can change the enlarged family and
-therefore its Smith cost. The corollary applies to data for which
-the required inequalities are established; it does not resolve
-that possible dependence by increasing the modulus without a
-further bound.
+Finiteness of this fixed-family Smith cost alone does not justify
+increasing an auxiliary modulus: the resulting family and its Smith
+cost can change. The [bounded-class theorem](lsernau-bounded-class-crystalline-loss.md)
+supplies the required qualitative family-independent replacement for
+the actual local loss, under the source's common local classes. It
+removes this loss's dependence on auxiliary precision. The remaining
+extraction inequalities must still be met, and the replacement constant
+must still be bounded as the original global data grow.
 
 Where the hypotheses of
 [Fontaine–Laffaille zero-defect](lsernau-fontaine-laffaille-zero-defect.md)
@@ -599,8 +608,9 @@ They do not give a bound for \(D_{\mathcal Q}(T^*)\) when
 and do not give the source's prescribed numerical
 \(\delta_p\). The example shows why the latter cannot be obtained
 by bounding this Smith cost using the Hodge–Tate window alone.
-Uniform control as auxiliary families vary remains necessary for
-the source's asymptotic application.
+The bounded-class theorem supplies auxiliary-family uniformity for the
+actual loss, without bounding the Smith cost in this example. Numerical
+control as the original global data grow remains necessary.
 
 ## 8. Exact location of the remaining uniform positive loss
 
